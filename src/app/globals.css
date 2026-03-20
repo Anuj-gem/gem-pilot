@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gem-surface text-gem-text-primary;
+  }
+
+  ::selection {
+    @apply bg-gem-gold/20 text-gem-gold-light;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gem-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gem-border-light;
+  }
+}
+
+@layer components {
+  .gem-container {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .gem-card {
+    @apply bg-gem-surface-raised border border-gem-border rounded-lg;
+  }
+
+  .gem-btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-gem-gold text-gem-surface font-medium rounded
+           hover:bg-gem-gold-light transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .gem-btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           border border-gem-border text-gem-text-primary rounded
+           hover:border-gem-gold hover:text-gem-gold transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .gem-input {
+    @apply w-full bg-gem-surface border border-gem-border rounded px-4 py-3
+           text-gem-text-primary placeholder:text-gem-text-muted
+           focus:outline-none focus:border-gem-gold/50 focus:ring-1 focus:ring-gem-gold/20
+           transition-colors duration-200;
+  }
+
+  .gem-label {
+    @apply block text-sm text-gem-text-secondary mb-2;
+  }
+
+  .gem-divider {
+    @apply border-t border-gem-border;
+  }
+
+  /* Score ring */
+  .score-ring {
+    @apply relative inline-flex items-center justify-center;
+  }
+  .score-ring svg circle {
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+}
