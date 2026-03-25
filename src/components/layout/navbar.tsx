@@ -1,14 +1,37 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase-client";
 
-interface NavbarProps {
-  isLoggedIn?: boolean;
-}
-
-export function Navbar({ isLoggedIn = false }: NavbarProps) {
+export function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setIsLoggedIn(!!user);
+    });
+
+    // Listen for auth state changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session?.user);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+  };
 
   return (
     <nav className="border-b border-gem-border bg-gem-surface/80 backdrop-blur-md sticky top-0 z-50">
@@ -56,7 +79,10 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
             >
               Settings
             </Link>
-            <button className="text-sm text-gem-text-muted hover:text-gem-text-secondary transition-colors">
+            <button
+              onClick={handleSignOut}
+              className="text-sm text-gem-text-muted hover:text-gem-text-secondary transition-colors"
+            >
               Sign Out
             </button>
           </div>

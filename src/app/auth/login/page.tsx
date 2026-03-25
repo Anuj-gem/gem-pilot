@@ -2,11 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
+import { createClient } from "@/lib/supabase-client";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/dashboard";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,17 +22,15 @@ export default function LoginPage() {
     setError("");
 
     try {
-      // TODO: Replace with real Supabase auth
-      // const { error } = await supabase.auth.signInWithPassword({ email, password });
-      // if (error) throw error;
+      const supabase = createClient();
+      const { error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (authError) throw authError;
 
-      // Mock: simulate login
-      await new Promise((r) => setTimeout(r, 800));
-      if (!email || !password) {
-        throw new Error("Please enter your email and password.");
-      }
-      localStorage.setItem("gem_user", JSON.stringify({ email, name: email.split("@")[0] }));
-      router.push("/dashboard");
+      router.push(redirect);
+      router.refresh();
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {

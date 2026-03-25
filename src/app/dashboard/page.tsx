@@ -20,6 +20,27 @@ interface JobWithReport extends AnalysisJob {
   report_summary?: ReportSummary;
 }
 
+// Left-border accent color per verdict tier
+const verdictAccent: Record<Verdict, string> = {
+  "STRONG SIGNAL": "#34d399",   // emerald-400
+  "WORTH THE READ": "#C9A84C",  // gem-gold
+  MIXED:           "transparent",
+  PASS:            "transparent",
+};
+
+function verdictBorderStyle(verdict: Verdict | null) {
+  if (!verdict) return {};
+  const color = verdictAccent[verdict] ?? "transparent";
+  return { borderLeft: `3px solid ${color}` };
+}
+
+function percentileLabel(p: number | null): string | null {
+  if (p === null || p === undefined) return null;
+  if (p >= 90) return `Top ${100 - p}%`;
+  if (p <= 10) return `Bottom ${p + 1}%`;
+  return `>${p}th pctl`;
+}
+
 export default function DashboardPage() {
   const [jobs, setJobs] = useState<JobWithReport[]>([]);
   const [reports, setReports] = useState<ReportSummary[]>([]);
@@ -28,7 +49,6 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch jobs and reports in parallel
         const [jobsRes, reportsRes] = await Promise.all([
           fetch("/api/jobs").catch(() => null),
           fetch("/api/reports").catch(() => null),
@@ -47,15 +67,12 @@ export default function DashboardPage() {
           reportList = data.reports || [];
         }
 
-        // Merge: show jobs with their report summaries,
-        // plus any reports that don't have a matching job (e.g. CLI-generated)
         const jobShowIds = new Set(jobList.map((j) => j.show_id));
         const enrichedJobs: JobWithReport[] = jobList.map((j) => ({
           ...j,
           report_summary: reportList.find((r) => r.show_id === j.show_id),
         }));
 
-        // Reports without matching jobs (generated via CLI)
         const orphanReports = reportList.filter(
           (r) => !jobShowIds.has(r.show_id)
         );
@@ -80,14 +97,37 @@ export default function DashboardPage() {
       .replace(/_/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase());
 
+  // Tally verdicts across all completed items for the summary bar
+  const allVerdicts: (Verdict | null)[] = [
+    ...jobs.map((j) => j.report_summary?.verdict ?? null),
+    ...reports.map((r) => r.verdict),
+  ];
+
+  const verdictCounts: Record<string, number> = {};
+  for (const v of allVerdicts) {
+    if (v) verdictCounts[v] = (verdictCounts[v] || 0) + 1;
+  }
+  const pendingCount = jobs.filter(
+    (j) => j.status === "pending" || j.status === "processing"
+  ).length;
+
+  const VERDICT_ORDER: Verdict[] = ["STRONG SIGNAL", "WORTH THE READ", "MIXED", "PASS"];
+  const VERDICT_LABELS: Record<Verdict, string> = {
+    "STRONG SIGNAL": "Strong Signal",
+    "WORTH THE READ": "Worth the Read",
+    MIXED: "Mixed",
+    PASS: "Pass",
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar isLoggedIn />
+      <Navbar />
 
       <main className="flex-1 py-12">
         <div className="gem-container">
+
           {/* Header */}
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="font-display text-3xl font-bold">Your Scripts</h1>
               <p className="text-sm text-gem-text-secondary mt-1">
@@ -98,6 +138,32 @@ export default function DashboardPage() {
               Upload Script
             </Link>
           </div>
+
+          {/* Verdict summary bar */}
+          {!loading && totalItems > 0 && (
+            <div className="flex items-center gap-6 mb-8 px-5 py-3 rounded-lg bg-gem-surface-raised border border-gem-border text-sm">
+              {VERDICT_ORDER.map((v) =>
+                verdictCounts[v] ? (
+                  <span key={v} className="flex items-center gap-2">
+                    <span
+                      className="inline-block w-2 h-2 rounded-full"
+                      style={{ background: verdictAccent[v] || "#6A6A70" }}
+                    />
+                    <span className="font-medium text-gem-text-primary">
+                      {verdictCounts[v]}
+                    </span>
+                    <span className="text-gem-text-muted">{VERDICT_LABELS[v]}</span>
+                  </span>
+                ) : null
+              )}
+              {pendingCount > 0 && (
+                <span className="flex items-center gap-2 ml-auto">
+                  <span className="inline-block w-2 h-2 rounded-full bg-gem-text-muted animate-pulse" />
+                  <span className="text-gem-text-muted">{pendingCount} processing</span>
+                </span>
+              )}
+            </div>
+          )}
 
           {loading && (
             <div className="flex justify-center py-16">
@@ -124,23 +190,24 @@ export default function DashboardPage() {
             </div>
           )}
 
-          {/* Job list */}
+          {/* Script list */}
           {totalItems > 0 && (
-            <div className="space-y-3">
-              {/* Jobs (most recent first) */}
+            <div className="space-y-2">
+
+              {/* Jobs */}
               {jobs.map((job) => {
                 const isComplete = job.status === "completed" && job.report_summary;
-                const href = isComplete
-                  ? `/report/${job.show_id}`
-                  : job.status === "processing" || job.status === "pending"
-                    ? "#"
-                    : "#";
+                const href = isComplete ? `/report/${job.show_id}` : "#";
+                const verdict = job.report_summary?.verdict ?? null;
+                const percentile = job.report_summary?.percentile ?? null;
+                const pctLabel = percentileLabel(percentile);
 
                 return (
                   <Link
                     key={job.job_id}
                     href={href}
                     className="gem-card p-5 flex items-center justify-between hover:border-gem-gold/20 transition-colors block"
+                    style={verdictBorderStyle(verdict)}
                   >
                     <div className="flex-1 min-w-0">
                       <h3 className="font-medium text-gem-text-primary truncate">
@@ -159,6 +226,11 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-4 ml-4">
                       {isComplete && job.report_summary ? (
                         <>
+                          {pctLabel && (
+                            <span className="text-xs font-mono text-gem-text-muted hidden sm:inline">
+                              {pctLabel}
+                            </span>
+                          )}
                           <span className="font-mono text-sm text-gem-text-secondary">
                             {job.report_summary.weighted_score?.toFixed(1)}
                           </span>
@@ -185,38 +257,47 @@ export default function DashboardPage() {
                 );
               })}
 
-              {/* Orphan reports (generated via CLI, no job) */}
-              {reports.map((r) => (
-                <Link
-                  key={r.show_id}
-                  href={`/report/${r.show_id}`}
-                  className="gem-card p-5 flex items-center justify-between hover:border-gem-gold/20 transition-colors block"
-                >
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-medium text-gem-text-primary truncate">
-                      {prettyTitle(r.show_id)}
-                    </h3>
-                    <p className="text-sm text-gem-text-muted mt-0.5">
-                      {r.generated_at
-                        ? new Date(r.generated_at).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                            year: "numeric",
-                          })
-                        : ""}
-                    </p>
-                  </div>
+              {/* Orphan reports (CLI-generated) */}
+              {reports.map((r) => {
+                const pctLabel = percentileLabel(r.percentile);
+                return (
+                  <Link
+                    key={r.show_id}
+                    href={`/report/${r.show_id}`}
+                    className="gem-card p-5 flex items-center justify-between hover:border-gem-gold/20 transition-colors block"
+                    style={verdictBorderStyle(r.verdict)}
+                  >
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-medium text-gem-text-primary truncate">
+                        {prettyTitle(r.show_id)}
+                      </h3>
+                      <p className="text-sm text-gem-text-muted mt-0.5">
+                        {r.generated_at
+                          ? new Date(r.generated_at).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            })
+                          : ""}
+                      </p>
+                    </div>
 
-                  <div className="flex items-center gap-4 ml-4">
-                    <span className="font-mono text-sm text-gem-text-secondary">
-                      {r.weighted_score?.toFixed(1)}
-                    </span>
-                    {r.verdict && (
-                      <VerdictBadge verdict={r.verdict} size="sm" />
-                    )}
-                  </div>
-                </Link>
-              ))}
+                    <div className="flex items-center gap-4 ml-4">
+                      {pctLabel && (
+                        <span className="text-xs font-mono text-gem-text-muted hidden sm:inline">
+                          {pctLabel}
+                        </span>
+                      )}
+                      <span className="font-mono text-sm text-gem-text-secondary">
+                        {r.weighted_score?.toFixed(1)}
+                      </span>
+                      {r.verdict && (
+                        <VerdictBadge verdict={r.verdict} size="sm" />
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           )}
         </div>

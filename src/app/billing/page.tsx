@@ -1,71 +1,75 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { createClient } from "@/lib/supabase-client";
+
+interface Profile {
+  email: string;
+  name: string | null;
+  subscription_status: string;
+  trial_ends_at: string | null;
+}
 
 export default function BillingPage() {
-  const [plan] = useState({
-    status: "trialing" as const,
-    trialEnds: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
-    amount: 99,
-    interval: "month",
-  });
+  const router = useRouter();
+  const [profile, setProfile] = useState<Profile | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const statusLabels: Record<string, { label: string; color: string }> = {
-    trialing: { label: "Free Trial", color: "text-gem-gold" },
-    active: { label: "Active", color: "text-gem-pass" },
-    canceled: { label: "Canceled", color: "text-gem-text-muted" },
-    past_due: { label: "Past Due", color: "text-gem-danger" },
-    none: { label: "No Plan", color: "text-gem-text-muted" },
+  useEffect(() => {
+    (async () => {
+      const supabase = createClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) {
+        router.push("/auth/login");
+        return;
+      }
+      const { data } = await supabase
+        .from("profiles")
+        .select("email, name, subscription_status, trial_ends_at")
+        .eq("id", user.id)
+        .single();
+      setProfile(data);
+      setLoading(false);
+    })();
+  }, [router]);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
   };
 
-  const status = statusLabels[plan.status];
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin h-8 w-8 border-2 border-gem-gold border-t-transparent rounded-full" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar isLoggedIn />
+      <Navbar />
 
       <main className="flex-1 py-12">
         <div className="gem-container max-w-2xl">
           <h1 className="font-display text-3xl font-bold mb-8">Settings & Billing</h1>
 
-          {/* Subscription */}
+          {/* Access */}
           <div className="gem-card p-8 mb-6">
-            <h2 className="font-display text-xl font-semibold mb-6">Subscription</h2>
+            <h2 className="font-display text-xl font-semibold mb-6">Access</h2>
 
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gem-text-secondary">Plan</span>
-                <span className="text-sm font-medium text-gem-text-primary">
-                  GEM Pro &mdash; ${plan.amount}/{plan.interval}
-                </span>
-              </div>
-
-              <div className="gem-divider" />
-
-              <div className="flex items-center justify-between">
                 <span className="text-sm text-gem-text-secondary">Status</span>
-                <span className={`text-sm font-medium ${status.color}`}>
-                  {status.label}
-                </span>
+                <span className="text-sm font-medium text-gem-pass">Active</span>
               </div>
-
-              {plan.status === "trialing" && (
-                <>
-                  <div className="gem-divider" />
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gem-text-secondary">Trial ends</span>
-                    <span className="text-sm text-gem-text-primary">
-                      {new Date(plan.trialEnds).toLocaleDateString("en-US", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </span>
-                  </div>
-                </>
-              )}
 
               <div className="gem-divider" />
 
@@ -73,29 +77,6 @@ export default function BillingPage() {
                 <span className="text-sm text-gem-text-secondary">Scripts analyzed</span>
                 <span className="text-sm text-gem-text-primary">Unlimited</span>
               </div>
-            </div>
-
-            <div className="mt-8 flex gap-3">
-              <button
-                onClick={() => {
-                  // TODO: Redirect to Stripe Customer Portal
-                  alert("This will redirect to Stripe Customer Portal when connected.");
-                }}
-                className="gem-btn-secondary text-sm"
-              >
-                Manage Subscription
-              </button>
-              {plan.status === "trialing" && (
-                <button
-                  onClick={() => {
-                    // TODO: Redirect to Stripe Checkout
-                    alert("This will redirect to Stripe Checkout when connected.");
-                  }}
-                  className="gem-btn-primary text-sm"
-                >
-                  Add Payment Method
-                </button>
-              )}
             </div>
           </div>
 
@@ -108,7 +89,7 @@ export default function BillingPage() {
                 <label className="gem-label">Email</label>
                 <input
                   type="email"
-                  defaultValue="producer@example.com"
+                  defaultValue={profile?.email || ""}
                   className="gem-input"
                   disabled
                 />
@@ -117,12 +98,15 @@ export default function BillingPage() {
                 <label className="gem-label">Name</label>
                 <input
                   type="text"
-                  defaultValue=""
+                  defaultValue={profile?.name || ""}
                   placeholder="Your name"
                   className="gem-input"
+                  disabled
                 />
               </div>
-              <button className="gem-btn-secondary text-sm">Update Profile</button>
+              <button onClick={handleSignOut} className="gem-btn-secondary text-sm">
+                Sign Out
+              </button>
             </div>
           </div>
 

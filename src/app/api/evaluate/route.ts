@@ -1,22 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireSubscription } from "@/lib/auth-guard";
 
 const API_URL = process.env.GEM_API_URL || "http://localhost:8000";
+const API_SECRET = process.env.GEM_API_SECRET || "";
 
 export async function POST(req: NextRequest) {
+  // Auth + subscription check
+  const { user, error } = await requireSubscription();
+  if (error) return error;
+
   try {
-    // Forward the multipart form data to FastAPI
     const formData = await req.formData();
 
-    const res = await fetch(`${API_URL}/api/evaluate`, {
+    // Forward the show_id query param if provided by the client
+    const showId = req.nextUrl.searchParams.get("show_id");
+    let upstreamUrl = `${API_URL}/api/evaluate`;
+    const params = new URLSearchParams();
+    if (showId) params.set("show_id", showId);
+    if (user) params.set("user_id", user.id);
+    if (params.toString()) upstreamUrl += `?${params.toString()}`;
+
+    const res = await fetch(upstreamUrl, {
       method: "POST",
       body: formData,
+      headers: API_SECRET ? { "X-API-Secret": API_SECRET } : {},
     });
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({ detail: "Evaluation failed" }));
       return NextResponse.json(
         { error: err.detail || "Evaluation failed" },
-        { status: res.status }
+        { status: res.status },
       );
     }
 
@@ -25,7 +39,7 @@ export async function POST(req: NextRequest) {
   } catch (e: any) {
     return NextResponse.json(
       { error: e.message || "Failed to connect to scoring engine" },
-      { status: 502 }
+      { status: 502 },
     );
   }
 }

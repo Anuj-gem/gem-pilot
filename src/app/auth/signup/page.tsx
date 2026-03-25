@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
+import { createClient } from "@/lib/supabase-client";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -19,20 +20,40 @@ export default function SignupPage() {
     setError("");
 
     try {
-      // TODO: Replace with real Supabase auth
-      // const { error } = await supabase.auth.signUp({
-      //   email, password,
-      //   options: { data: { name } }
-      // });
-      // if (error) throw error;
+      const supabase = createClient();
 
-      // Mock: simulate signup
-      await new Promise((r) => setTimeout(r, 800));
-      if (!email || !password) {
-        throw new Error("Please fill in all fields.");
+      // 1. Create the Supabase user
+      const { data, error: authError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { name } },
+      });
+      if (authError) throw authError;
+
+      // If email confirmation is required, Supabase returns a user but no session
+      if (data.user && !data.session) {
+        setError(
+          "Check your email for a confirmation link, then come back and sign in.",
+        );
+        setLoading(false);
+        return;
       }
-      localStorage.setItem("gem_user", JSON.stringify({ email, name }));
-      router.push("/dashboard");
+
+      // 2. Redirect to Stripe Checkout for the subscription
+      const checkoutRes = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const checkout = await checkoutRes.json();
+
+      if (checkout.url) {
+        window.location.href = checkout.url;
+      } else {
+        // Stripe not configured yet — just go to dashboard
+        router.push("/dashboard");
+        router.refresh();
+      }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Signup failed");
     } finally {
@@ -49,7 +70,7 @@ export default function SignupPage() {
           <div className="text-center mb-8">
             <h1 className="font-display text-2xl font-bold mb-2">Start your free trial</h1>
             <p className="text-sm text-gem-text-secondary">
-              7 days free &middot; $99/month after &middot; Cancel anytime
+              Create your account to get started
             </p>
           </div>
 

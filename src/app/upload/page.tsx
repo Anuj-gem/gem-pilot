@@ -16,6 +16,15 @@ const PROCESSING_STEPS = [
   "Generating producer report...",
 ];
 
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export default function UploadPage() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -23,12 +32,13 @@ export default function UploadPage() {
   const [phase, setPhase] = useState<Phase>("upload");
   const [dragActive, setDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [scriptTitle, setScriptTitle] = useState("");
   const [processingStep, setProcessingStep] = useState(0);
   const [error, setError] = useState("");
 
   const handleFile = useCallback((file: File) => {
     setError("");
-    const maxSize = 50 * 1024 * 1024; // 50MB for OCR PDFs
+    const maxSize = 50 * 1024 * 1024;
     if (file.size > maxSize) {
       setError("File too large. Maximum size is 50MB.");
       return;
@@ -41,6 +51,13 @@ export default function UploadPage() {
     }
 
     setSelectedFile(file);
+    // Pre-populate title from filename (cleaned up)
+    const baseName = file.name.replace(/\.[^.]+$/, ""); // strip extension
+    const pretty = baseName
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+      .trim();
+    setScriptTitle(pretty);
   }, []);
 
   const handleDrop = useCallback(
@@ -57,13 +74,15 @@ export default function UploadPage() {
     setPhase("processing");
     setProcessingStep(0);
 
+    // Derive show_id from the title the producer entered
+    const showId = slugify(scriptTitle || selectedFile.name.replace(/\.[^.]+$/, ""));
+
     try {
-      // Upload to FastAPI backend
       const formData = new FormData();
       formData.append("file", selectedFile);
 
       setProcessingStep(0);
-      const res = await fetch("/api/evaluate", {
+      const res = await fetch(`/api/evaluate?show_id=${encodeURIComponent(showId)}`, {
         method: "POST",
         body: formData,
       });
@@ -78,7 +97,7 @@ export default function UploadPage() {
 
       // Poll for completion
       let attempts = 0;
-      const maxAttempts = 300; // 5 minutes at 1s intervals
+      const maxAttempts = 300;
       while (attempts < maxAttempts) {
         await new Promise((r) => setTimeout(r, 1000));
         attempts++;
@@ -88,9 +107,7 @@ export default function UploadPage() {
 
         const jobData = await statusRes.json();
 
-        // Update progress indicator based on status
         if (jobData.status === "processing") {
-          // Animate through steps based on elapsed time
           const elapsed = attempts;
           if (elapsed > 3) setProcessingStep(2);
           if (elapsed > 8) setProcessingStep(3);
@@ -104,7 +121,9 @@ export default function UploadPage() {
         }
 
         if (jobData.status === "failed") {
-          throw new Error(jobData.error || "Analysis failed");
+          // Log the raw error for debugging but never surface internal details to the user
+          console.error("[GEM] Job failed:", jobData.error);
+          throw new Error("Analysis failed. Please try again.");
         }
       }
 
@@ -117,7 +136,7 @@ export default function UploadPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar isLoggedIn />
+      <Navbar />
 
       <main className="flex-1 flex items-center justify-center py-16">
         <div className="w-full max-w-lg gem-container">
@@ -127,8 +146,8 @@ export default function UploadPage() {
                 Upload a script
               </h1>
               <p className="text-sm text-gem-text-secondary text-center mb-8">
-                Drop a pilot script and we&apos;ll evaluate its transcendence
-                potential across 10 dimensions.
+                Drop a pilot script and we&apos;ll evaluate its breakout potential
+                across 10 dimensions — verdict in 30–90 seconds.
               </p>
 
               {error && (
@@ -212,13 +231,54 @@ export default function UploadPage() {
                 )}
               </div>
 
+              {/* Script title input — shown once a file is selected */}
+              {selectedFile && (
+                <div className="mt-4">
+                  <label className="gem-label" htmlFor="script-title">
+                    Script title
+                  </label>
+                  <input
+                    id="script-title"
+                    type="text"
+                    value={scriptTitle}
+                    onChange={(e) => setScriptTitle(e.target.value)}
+                    placeholder="e.g. The Sopranos"
+                    className="gem-input"
+                  />
+                  <p className="text-xs text-gem-text-muted mt-1.5">
+                    Used as the report title — edit if the filename isn&apos;t the show name.
+                  </p>
+                </div>
+              )}
+
               <button
                 onClick={startAnalysis}
-                disabled={!selectedFile}
+                disabled={!selectedFile || !scriptTitle.trim()}
                 className="gem-btn-primary w-full mt-6"
               >
                 Analyze Script
               </button>
+
+              {/* What the producer will get */}
+              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                {[
+                  { label: "Verdict", desc: "Strong Signal → Pass tier" },
+                  { label: "10 dimensions", desc: "Scored vs. winner avg" },
+                  { label: "Producer read", desc: "Takeaway + key risks" },
+                ].map(({ label, desc }) => (
+                  <div
+                    key={label}
+                    className="rounded border border-gem-border bg-gem-surface-raised px-3 py-3"
+                  >
+                    <p className="text-xs font-semibold text-gem-text-primary mb-0.5">
+                      {label}
+                    </p>
+                    <p className="text-[11px] text-gem-text-muted leading-snug">
+                      {desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

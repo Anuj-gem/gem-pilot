@@ -20,26 +20,48 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
+from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 # ─── Path Setup ──────────────────────────────────────────────────────────────────
 # Add the autoresearch src/ to Python path so we can import the engine directly
-ENGINE_DIR = Path(__file__).resolve().parent.parent.parent / "autoresearch"
+ENGINE_DIR = Path(os.environ.get("AUTORESEARCH_DIR", "")).resolve() if os.environ.get("AUTORESEARCH_DIR") else Path(__file__).resolve().parent.parent / "autoresearch"
 sys.path.insert(0, str(ENGINE_DIR / "src"))
 os.chdir(str(ENGINE_DIR))  # engine expects CWD = autoresearch root
+
+# ─── Config ──────────────────────────────────────────────────────────────────────
+API_SECRET = os.environ.get("GEM_API_SECRET", "")
+ALLOWED_ORIGINS = os.environ.get(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,https://app.gem.studio",
+).split(",")
 
 # ─── App ─────────────────────────────────────────────────────────────────────────
 app = FastAPI(title="GEM API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://app.gem.studio"],
+    allow_origins=[o.strip() for o in ALLOWED_ORIGINS],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+def _verify_api_secret(request: Request):
+    """Verify the shared secret between Next.js and FastAPI (production only)."""
+    if not API_SECRET:
+        return  # No secret configured — skip (local dev)
+    provided = request.headers.get("X-API-Secret", "")
+    if provided != API_SECRET:
+        raise HTTPException(status_code=403, detail="Invalid API secret")
+
+
+@app.get("/health")
+async def health():
+    """Health check endpoint for Docker / load balancer."""
+    return {"status": "ok", "engine_dir": str(ENGINE_DIR)}
 
 # ─── Storage ─────────────────────────────────────────────────────────────────────
 UPLOADS_DIR = ENGINE_DIR / "data" / "uploads"
@@ -115,13 +137,18 @@ def run_scoring_pipeline(job_id: str, file_path: Path, show_id: str, use_llm: bo
     except Exception as e:
         import traceback
         error_detail = str(e)
-        # Surface rate limit errors with a helpful message
+        # Translate technical errors into clean, user-safe messages
         if "429" in error_detail or "rate limit" in error_detail.lower():
-            error_detail = "OpenAI rate limit hit. Add billing credits at platform.openai.com/settings/billing and retry."
+            error_detail = "The analysis service is temporarily unavailable. Please try again in a few minutes."
         elif "AuthenticationError" in type(e).__name__ or "401" in error_detail:
-            error_detail = "Invalid OpenAI API key. Check your OPENAI_API_KEY and restart the server."
+            error_detail = "The analysis service is not properly configured. Please contact support."
+        elif "OPENAI_API_KEY" in error_detail or "api_key" in error_detail.lower() or "export " in error_detail:
+            error_detail = "The analysis service is not properly configured. Please contact support."
         elif "timeout" in error_detail.lower():
-            error_detail = "Request to OpenAI timed out. The script may be too large or the API is slow. Try again."
+            error_detail = "Analysis timed out. The script may be too large — try a shorter excerpt or try again."
+        elif len(error_detail) > 200 or "\n" in error_detail:
+            # Any other verbose / multi-line internal error: keep it generic
+            error_detail = "Analysis failed due to an internal error. Please try again."
         print(f"[GEM] Job {job_id} failed: {error_detail}")
         print(traceback.format_exc())
         job_data = json.loads(job_file.read_text())
@@ -135,14 +162,17 @@ def run_scoring_pipeline(job_id: str, file_path: Path, show_id: str, use_llm: bo
 
 @app.post("/api/evaluate")
 async def evaluate_script(
+    request: Request,
     background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     show_id: Optional[str] = None,
+    user_id: Optional[str] = None,
 ):
     """
     Upload a script file and start evaluation.
     Returns immediately with a job_id. Poll /api/jobs/{job_id} for status.
     """
+    _verify_api_secret(request)
     # Validate file type
     ext = Path(file.filename or "").suffix.lower()
     if ext not in (".pdf", ".txt", ".md", ".fountain"):
@@ -169,6 +199,7 @@ async def evaluate_script(
     job_data = {
         "job_id": job_id,
         "show_id": show_id,
+        "user_id": user_id,
         "filename": file.filename,
         "file_size": len(content),
         "status": "pending",
@@ -187,13 +218,18 @@ async def evaluate_script(
 
 
 @app.get("/api/jobs/{job_id}")
-async def get_job_status(job_id: str):
+async def get_job_status(request: Request, job_id: str, user_id: Optional[str] = None):
     """Poll job status. Returns report when complete."""
+    _verify_api_secret(request)
     job_file = JOBS_DIR / f"{job_id}.json"
     if not job_file.exists():
         raise HTTPException(404, "Job not found")
 
     job_data = json.loads(job_file.read_text())
+
+    # User scoping: only return jobs that belong to this user
+    if user_id and job_data.get("user_id") and job_data["user_id"] != user_id:
+        raise HTTPException(404, "Job not found")
 
     # If completed, include the report
     if job_data["status"] == "completed" and job_data.get("report_id"):
@@ -205,8 +241,9 @@ async def get_job_status(job_id: str):
 
 
 @app.get("/api/reports/{show_id}")
-async def get_report(show_id: str):
+async def get_report(request: Request, show_id: str, user_id: Optional[str] = None):
     """Retrieve a completed report by show_id."""
+    _verify_api_secret(request)
     report_path = REPORTS_DIR / f"{show_id}.json"
     if not report_path.exists():
         raise HTTPException(404, "Report not found")
@@ -214,8 +251,9 @@ async def get_report(show_id: str):
 
 
 @app.get("/api/reports")
-async def list_reports():
+async def list_reports(request: Request, user_id: Optional[str] = None):
     """List all available reports."""
+    _verify_api_secret(request)
     reports = []
     for f in sorted(REPORTS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
         try:
@@ -230,6 +268,23 @@ async def list_reports():
         except Exception:
             pass
     return {"reports": reports}
+
+
+@app.get("/api/jobs")
+async def list_jobs(request: Request, user_id: Optional[str] = None):
+    """List all jobs, optionally filtered by user_id."""
+    _verify_api_secret(request)
+    jobs = []
+    for f in sorted(JOBS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
+        try:
+            data = json.loads(f.read_text())
+            # User scoping
+            if user_id and data.get("user_id") and data["user_id"] != user_id:
+                continue
+            jobs.append(data)
+        except Exception:
+            pass
+    return {"jobs": jobs}
 
 
 @app.get("/api/jobs")
