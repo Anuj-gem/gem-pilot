@@ -269,8 +269,8 @@ async def list_reports(request: Request, user_id: Optional[str] = None):
         try:
             data = json.loads(f.read_text())
             show_id = data.get("show_id", f.stem)
-            # Filter by user_id if provided
-            if user_id and show_user_map.get(show_id) and show_user_map[show_id] != user_id:
+            # Only show reports that explicitly belong to this user
+            if user_id and show_user_map.get(show_id) != user_id:
                 continue
             reports.append({
                 "show_id": show_id,
@@ -292,9 +292,10 @@ async def list_jobs(request: Request, user_id: Optional[str] = None):
     for f in sorted(JOBS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
         try:
             data = json.loads(f.read_text())
-            # Filter by user_id if provided
-            if user_id and data.get("user_id") and data["user_id"] != user_id:
-                continue
+            if user_id:
+                # Only show jobs that explicitly belong to this user
+                if data.get("user_id") != user_id:
+                    continue
             jobs.append(data)
         except Exception:
             pass
