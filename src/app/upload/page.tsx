@@ -151,8 +151,11 @@ export default function UploadPage() {
               <h1 className="text-3xl font-semibold text-zinc-950 text-center mb-2">
                 Upload a script
               </h1>
-              <p className="text-sm text-zinc-500 text-center mb-8">
+              <p className="text-sm text-zinc-500 text-center mb-2">
                 Drop a pilot script and we&apos;ll evaluate its breakout potential in minutes.
+              </p>
+              <p className="text-xs text-zinc-400 text-center mb-8">
+                GEM is calibrated for <span className="font-medium text-zinc-500">TV pilots and series scripts</span>. Feature film scripts are not currently supported.
               </p>
 
               {error && (

@@ -16,14 +16,14 @@ export default function LandingPage() {
             {/* Left: headline + CTAs + stats */}
             <div>
               <div className="mb-5 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-800">
-                Producer-grade script intelligence at startup pricing
+                TV pilot evaluation &mdash; producer-grade, startup pricing
               </div>
               <h1 className="text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl">
                 Serious script analysis.
                 <span className="block text-emerald-700">Not serious pricing.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
-                GEM helps producers, development teams, and serious writers evaluate scripts with
+                GEM helps producers, development teams, and serious writers evaluate <span className="font-medium text-zinc-800">TV pilot scripts</span> with
                 structured, high-quality story intelligence — at a fraction of the cost of
                 traditional coverage and competing tools.
               </p>

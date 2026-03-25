@@ -700,16 +700,12 @@ export default function ReportPage() {
                 {upsideBullets.map((b, i) => (
                   <div key={i} className="flex gap-3">
                     <span className="text-emerald-600 mt-0.5 shrink-0 text-sm">→</span>
-                    <div>
+                    <p className="text-sm text-zinc-600 leading-relaxed">
                       {b.title && (
-                        <p className="text-sm font-semibold text-zinc-950 mb-0.5">
-                          {b.title}
-                        </p>
+                        <span className="font-semibold text-zinc-950">{b.title}. </span>
                       )}
-                      <p className="text-sm text-zinc-600 leading-relaxed">
-                        {b.note}
-                      </p>
-                    </div>
+                      {b.note}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -724,16 +720,12 @@ export default function ReportPage() {
                 {riskBullets.map((b, i) => (
                   <div key={i} className="flex gap-3">
                     <span className="text-red-500 mt-0.5 shrink-0 text-sm">→</span>
-                    <div>
+                    <p className="text-sm text-zinc-600 leading-relaxed">
                       {b.title && (
-                        <p className="text-sm font-semibold text-zinc-950 mb-0.5">
-                          {b.title}
-                        </p>
+                        <span className="font-semibold text-zinc-950">{b.title}. </span>
                       )}
-                      <p className="text-sm text-zinc-600 leading-relaxed">
-                        {b.note}
-                      </p>
-                    </div>
+                      {b.note}
+                    </p>
                   </div>
                 ))}
               </div>
