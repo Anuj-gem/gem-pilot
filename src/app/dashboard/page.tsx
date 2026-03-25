@@ -22,8 +22,8 @@ interface JobWithReport extends AnalysisJob {
 
 // Left-border accent color per verdict tier
 const verdictAccent: Record<Verdict, string> = {
-  "STRONG SIGNAL": "#34d399",   // emerald-400
-  "WORTH THE READ": "#C9A84C",  // gem-gold
+  "STRONG SIGNAL": "#16a34a",   // emerald-600
+  "WORTH THE READ": "#b45309",  // amber-700
   MIXED:           "transparent",
   PASS:            "transparent",
 };
@@ -120,7 +120,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-zinc-50">
       <Navbar />
 
       <main className="flex-1 py-12">
@@ -129,8 +129,8 @@ export default function DashboardPage() {
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="font-display text-3xl font-bold">Your Scripts</h1>
-              <p className="text-sm text-gem-text-secondary mt-1">
+              <h1 className="text-3xl font-semibold text-zinc-950">Your Scripts</h1>
+              <p className="text-sm text-zinc-500 mt-1">
                 {totalItems} {totalItems === 1 ? "analysis" : "analyses"} to date
               </p>
             </div>
@@ -141,25 +141,25 @@ export default function DashboardPage() {
 
           {/* Verdict summary bar */}
           {!loading && totalItems > 0 && (
-            <div className="flex items-center gap-6 mb-8 px-5 py-3 rounded-lg bg-gem-surface-raised border border-gem-border text-sm">
+            <div className="flex items-center gap-6 mb-8 px-5 py-3 rounded-2xl bg-white border border-zinc-200 text-sm shadow-sm">
               {VERDICT_ORDER.map((v) =>
                 verdictCounts[v] ? (
                   <span key={v} className="flex items-center gap-2">
                     <span
                       className="inline-block w-2 h-2 rounded-full"
-                      style={{ background: verdictAccent[v] || "#6A6A70" }}
+                      style={{ background: verdictAccent[v] || "#71717a" }}
                     />
-                    <span className="font-medium text-gem-text-primary">
+                    <span className="font-semibold text-zinc-950">
                       {verdictCounts[v]}
                     </span>
-                    <span className="text-gem-text-muted">{VERDICT_LABELS[v]}</span>
+                    <span className="text-zinc-500">{VERDICT_LABELS[v]}</span>
                   </span>
                 ) : null
               )}
               {pendingCount > 0 && (
                 <span className="flex items-center gap-2 ml-auto">
-                  <span className="inline-block w-2 h-2 rounded-full bg-gem-text-muted animate-pulse" />
-                  <span className="text-gem-text-muted">{pendingCount} processing</span>
+                  <span className="inline-block w-2 h-2 rounded-full bg-zinc-300 animate-pulse" />
+                  <span className="text-zinc-500">{pendingCount} processing</span>
                 </span>
               )}
             </div>
@@ -173,16 +173,15 @@ export default function DashboardPage() {
 
           {/* Empty state */}
           {!loading && totalItems === 0 && (
-            <div className="gem-card p-16 text-center">
-              <div className="w-16 h-16 rounded-full bg-gem-gold/10 border border-gem-gold/20 flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl text-gem-gold">&#9998;</span>
+            <div className="gem-card p-16 text-center shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl text-zinc-400">&#9998;</span>
               </div>
-              <h2 className="font-display text-xl font-semibold mb-2">
+              <h2 className="text-xl font-semibold text-zinc-950 mb-2">
                 No scripts yet
               </h2>
-              <p className="text-sm text-gem-text-secondary max-w-md mx-auto mb-6">
-                Upload your first pilot script to get a full breakout analysis
-                across 10 dimensions.
+              <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">
+                Upload your first pilot script to get a full breakout analysis.
               </p>
               <Link href="/upload" className="gem-btn-primary">
                 Upload Your First Script
@@ -206,14 +205,14 @@ export default function DashboardPage() {
                   <Link
                     key={job.job_id}
                     href={href}
-                    className="gem-card p-5 flex items-center justify-between hover:border-gem-gold/20 transition-colors block"
+                    className="gem-card p-5 flex items-center justify-between hover:border-zinc-300 hover:shadow-sm transition-all block"
                     style={verdictBorderStyle(verdict)}
                   >
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-gem-text-primary truncate">
+                      <h3 className="font-medium text-zinc-950 truncate">
                         {prettyTitle(job.show_id)}
                       </h3>
-                      <p className="text-sm text-gem-text-muted mt-0.5">
+                      <p className="text-sm text-zinc-400 mt-0.5">
                         {new Date(job.created_at).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -227,11 +226,11 @@ export default function DashboardPage() {
                       {isComplete && job.report_summary ? (
                         <>
                           {pctLabel && (
-                            <span className="text-xs font-mono text-gem-text-muted hidden sm:inline">
+                            <span className="text-xs font-mono text-zinc-400 hidden sm:inline">
                               {pctLabel}
                             </span>
                           )}
-                          <span className="font-mono text-sm text-gem-text-secondary">
+                          <span className="font-mono text-sm text-zinc-600">
                             {job.report_summary.weighted_score?.toFixed(1)}
                           </span>
                           {job.report_summary.verdict && (
@@ -242,15 +241,15 @@ export default function DashboardPage() {
                           )}
                         </>
                       ) : job.status === "processing" ? (
-                        <span className="text-sm text-gem-gold animate-pulse">
+                        <span className="text-sm text-emerald-700 animate-pulse">
                           Analyzing...
                         </span>
                       ) : job.status === "pending" ? (
-                        <span className="text-sm text-gem-text-muted">
+                        <span className="text-sm text-zinc-400">
                           Queued
                         </span>
                       ) : job.status === "failed" ? (
-                        <span className="text-sm text-gem-danger">Failed</span>
+                        <span className="text-sm text-red-600">Failed</span>
                       ) : null}
                     </div>
                   </Link>
@@ -264,14 +263,14 @@ export default function DashboardPage() {
                   <Link
                     key={r.show_id}
                     href={`/report/${r.show_id}`}
-                    className="gem-card p-5 flex items-center justify-between hover:border-gem-gold/20 transition-colors block"
+                    className="gem-card p-5 flex items-center justify-between hover:border-zinc-300 hover:shadow-sm transition-all block"
                     style={verdictBorderStyle(r.verdict)}
                   >
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-gem-text-primary truncate">
+                      <h3 className="font-medium text-zinc-950 truncate">
                         {prettyTitle(r.show_id)}
                       </h3>
-                      <p className="text-sm text-gem-text-muted mt-0.5">
+                      <p className="text-sm text-zinc-400 mt-0.5">
                         {r.generated_at
                           ? new Date(r.generated_at).toLocaleDateString("en-US", {
                               month: "short",
@@ -284,11 +283,11 @@ export default function DashboardPage() {
 
                     <div className="flex items-center gap-4 ml-4">
                       {pctLabel && (
-                        <span className="text-xs font-mono text-gem-text-muted hidden sm:inline">
+                        <span className="text-xs font-mono text-zinc-400 hidden sm:inline">
                           {pctLabel}
                         </span>
                       )}
-                      <span className="font-mono text-sm text-gem-text-secondary">
+                      <span className="font-mono text-sm text-zinc-600">
                         {r.weighted_score?.toFixed(1)}
                       </span>
                       {r.verdict && (

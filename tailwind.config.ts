@@ -6,26 +6,34 @@ const config: Config = {
     extend: {
       colors: {
         gem: {
-          gold: "#C9A84C",
-          "gold-light": "#E0C878",
-          "gold-dark": "#A07C28",
-          surface: "#0A0A0C",
-          "surface-raised": "#111114",
-          "surface-overlay": "#1A1A1F",
-          border: "#2A2A30",
-          "border-light": "#3A3A42",
-          "text-primary": "#F0EDE6",
-          "text-secondary": "#9A9A9E",
-          "text-muted": "#6A6A70",
-          pass: "#2D8B4E",
-          consider: "#B8860B",
-          develop: "#8B6914",
-          prioritize: "#C9A84C",
-          danger: "#C0392B",
+          // Accent (emerald — replaces gold for badges, labels, highlights)
+          gold: "#15803d",          // emerald-700
+          "gold-light": "#16a34a",  // emerald-600
+          "gold-dark": "#166534",   // emerald-800
+          // Surfaces (light mode)
+          surface: "#ffffff",
+          "surface-raised": "#f9fafb",   // zinc-50
+          "surface-overlay": "#f4f4f5",  // zinc-100
+          // Borders
+          border: "#e4e4e7",       // zinc-200
+          "border-light": "#d4d4d8", // zinc-300
+          // Text
+          "text-primary": "#09090b",   // zinc-950
+          "text-secondary": "#52525b", // zinc-600
+          "text-muted": "#71717a",     // zinc-500
+          // Verdict colours
+          pass: "#15803d",
+          consider: "#b45309",
+          develop: "#92400e",
+          prioritize: "#15803d",
+          danger: "#dc2626",
+          // Dark CTA button
+          cta: "#09090b",
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        // Keep display alias pointing at Inter (drops serif)
+        display: ["var(--font-body)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },

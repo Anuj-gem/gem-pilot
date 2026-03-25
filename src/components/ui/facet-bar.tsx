@@ -31,30 +31,30 @@ export function DimensionBar({
     score >= 8
       ? "bg-emerald-500"
       : score >= 6
-        ? "bg-gem-gold"
+        ? "bg-emerald-700"
         : score >= 4
-          ? "bg-amber-600"
-          : "bg-gem-text-muted";
+          ? "bg-amber-500"
+          : "bg-zinc-400";
 
   const weightLabel =
     weight >= 2.0 ? "HIGH" : weight >= 0.5 ? "MED" : "LOW";
   const weightColor =
     weight >= 2.0
-      ? "text-gem-gold"
+      ? "text-emerald-700"
       : weight >= 0.5
-        ? "text-gem-text-secondary"
-        : "text-gem-text-muted";
+        ? "text-zinc-500"
+        : "text-zinc-400";
 
   return (
     <div
-      className={`gem-card p-4 transition-colors duration-200 ${
-        expandable ? "cursor-pointer hover:border-gem-border-light" : ""
+      className={`p-4 transition-colors duration-200 ${
+        expandable ? "cursor-pointer hover:bg-zinc-50 rounded-xl" : ""
       }`}
       onClick={() => expandable && setExpanded(!expanded)}
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-gem-text-primary">
+          <span className="text-sm font-medium text-zinc-950">
             {meta?.label || dimensionId}
           </span>
           <span className={`text-[10px] font-mono uppercase ${weightColor}`}>
@@ -62,13 +62,13 @@ export function DimensionBar({
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-sm font-mono text-gem-text-secondary">
+          <span className="text-sm font-mono text-zinc-500">
             {score.toFixed(1)}/10
           </span>
           {vsWinnerAvg !== undefined && vsWinnerAvg !== 0 && (
             <span
               className={`text-xs font-mono ${
-                vsWinnerAvg > 0 ? "text-emerald-400" : "text-red-400"
+                vsWinnerAvg > 0 ? "text-emerald-600" : "text-red-500"
               }`}
             >
               {vsWinnerAvg > 0 ? "+" : ""}
@@ -76,14 +76,14 @@ export function DimensionBar({
             </span>
           )}
           {expandable && (
-            <span className="text-gem-text-muted">
+            <span className="text-zinc-400">
               {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             </span>
           )}
         </div>
       </div>
 
-      <div className="h-1.5 bg-gem-surface rounded-full overflow-hidden">
+      <div className="h-1.5 bg-zinc-100 rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full transition-all duration-1000 ease-out ${barColor}`}
           style={{ width: `${pct}%` }}
@@ -91,12 +91,12 @@ export function DimensionBar({
       </div>
 
       {expanded && (
-        <div className="mt-3 pt-3 border-t border-gem-border">
-          <p className="text-sm text-gem-text-secondary leading-relaxed">
+        <div className="mt-3 pt-3 border-t border-zinc-100">
+          <p className="text-sm text-zinc-600 leading-relaxed">
             {reasoning}
           </p>
           {winnerAvg !== undefined && (
-            <p className="mt-2 text-xs text-gem-text-muted">
+            <p className="mt-2 text-xs text-zinc-400">
               Winner average: {winnerAvg.toFixed(1)}/10 &middot; Weight:{" "}
               {weight.toFixed(1)}
             </p>

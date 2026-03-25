@@ -54,7 +54,7 @@ export default function UploadPage() {
 
     setSelectedFile(file);
     // Pre-populate title from filename (cleaned up)
-    const baseName = file.name.replace(/\.[^.]+$/, ""); // strip extension
+    const baseName = file.name.replace(/\.[^.]+$/, "");
     const pretty = baseName
       .replace(/[-_]+/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase())
@@ -76,7 +76,6 @@ export default function UploadPage() {
     setPhase("processing");
     setProcessingStep(0);
 
-    // Derive show_id from the title the producer entered
     const showId = slugify(scriptTitle || selectedFile.name.replace(/\.[^.]+$/, ""));
 
     try {
@@ -128,7 +127,6 @@ export default function UploadPage() {
         }
 
         if (jobData.status === "failed") {
-          // Log the raw error for debugging but never surface internal details to the user
           console.error("[GEM] Job failed:", jobData.error);
           throw new Error("Analysis failed. Please try again.");
         }
@@ -142,34 +140,33 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-zinc-50">
       {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} />}
       <Navbar />
 
-      <main className="flex-1 flex items-center justify-center py-16">
-        <div className="w-full max-w-lg gem-container">
+      <main className="flex-1 flex items-center justify-center py-16 px-6">
+        <div className="w-full max-w-lg">
           {phase === "upload" && (
             <div className="animate-fade-in">
-              <h1 className="font-display text-3xl font-bold text-center mb-2">
+              <h1 className="text-3xl font-semibold text-zinc-950 text-center mb-2">
                 Upload a script
               </h1>
-              <p className="text-sm text-gem-text-secondary text-center mb-8">
-                Drop a pilot script and we&apos;ll evaluate its breakout potential
-                across 10 dimensions — verdict in 30–90 seconds.
+              <p className="text-sm text-zinc-500 text-center mb-8">
+                Drop a pilot script and we&apos;ll evaluate its breakout potential in minutes.
               </p>
 
               {error && (
-                <div className="text-sm text-gem-danger bg-gem-danger/10 border border-gem-danger/20 rounded px-4 py-3 mb-4">
+                <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-2xl px-4 py-3 mb-4">
                   <p className="font-semibold mb-1">Analysis failed</p>
                   <p>{error}</p>
                   {error.toLowerCase().includes("rate limit") && (
-                    <p className="mt-2 text-gem-text-muted">
+                    <p className="mt-2 text-zinc-500">
                       Add billing credits at{" "}
                       <a
                         href="https://platform.openai.com/settings/billing"
                         target="_blank"
                         rel="noreferrer"
-                        className="underline text-gem-gold"
+                        className="underline text-emerald-700"
                       >
                         platform.openai.com/settings/billing
                       </a>{" "}
@@ -189,13 +186,13 @@ export default function UploadPage() {
                 onDrop={handleDrop}
                 onClick={() => fileInputRef.current?.click()}
                 className={`
-                  gem-card p-12 text-center cursor-pointer transition-all duration-200
+                  rounded-2xl border-2 p-12 text-center cursor-pointer transition-all duration-200 bg-white
                   ${
                     dragActive
-                      ? "border-gem-gold bg-gem-gold/5"
+                      ? "border-zinc-950 bg-zinc-50"
                       : selectedFile
-                        ? "border-gem-gold/30"
-                        : "border-dashed hover:border-gem-text-muted"
+                        ? "border-emerald-200 bg-emerald-50/30"
+                        : "border-dashed border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50/50"
                   }
                 `}
               >
@@ -211,35 +208,33 @@ export default function UploadPage() {
 
                 {selectedFile ? (
                   <div className="space-y-3">
-                    <div className="w-12 h-12 rounded-lg bg-gem-gold/10 border border-gem-gold/20 flex items-center justify-center mx-auto">
-                      <span className="text-gem-gold text-lg">&#128196;</span>
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mx-auto">
+                      <span className="text-emerald-600 text-lg">&#128196;</span>
                     </div>
-                    <p className="font-medium text-gem-text-primary">
+                    <p className="font-medium text-zinc-950">
                       {selectedFile.name}
                     </p>
-                    <p className="text-xs text-gem-text-muted">
+                    <p className="text-xs text-zinc-400">
                       {(selectedFile.size / 1024).toFixed(0)} KB &middot; Click
                       to choose a different file
                     </p>
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    <div className="w-12 h-12 rounded-lg bg-gem-surface border border-gem-border flex items-center justify-center mx-auto">
-                      <span className="text-gem-text-muted text-lg">
-                        &#8593;
-                      </span>
+                    <div className="w-12 h-12 rounded-2xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mx-auto">
+                      <span className="text-zinc-400 text-lg">&#8593;</span>
                     </div>
-                    <p className="text-sm text-gem-text-secondary">
+                    <p className="text-sm text-zinc-600">
                       Drag and drop your script, or click to browse
                     </p>
-                    <p className="text-xs text-gem-text-muted">
+                    <p className="text-xs text-zinc-400">
                       PDF or TXT &middot; Scanned PDFs supported via OCR
                     </p>
                   </div>
                 )}
               </div>
 
-              {/* Script title input — shown once a file is selected */}
+              {/* Script title input */}
               {selectedFile && (
                 <div className="mt-4">
                   <label className="gem-label" htmlFor="script-title">
@@ -253,7 +248,7 @@ export default function UploadPage() {
                     placeholder="e.g. The Sopranos"
                     className="gem-input"
                   />
-                  <p className="text-xs text-gem-text-muted mt-1.5">
+                  <p className="text-xs text-zinc-400 mt-1.5">
                     Used as the report title — edit if the filename isn&apos;t the show name.
                   </p>
                 </div>
@@ -276,12 +271,12 @@ export default function UploadPage() {
                 ].map(({ label, desc }) => (
                   <div
                     key={label}
-                    className="rounded border border-gem-border bg-gem-surface-raised px-3 py-3"
+                    className="rounded-2xl border border-zinc-200 bg-white px-3 py-3 shadow-sm"
                   >
-                    <p className="text-xs font-semibold text-gem-text-primary mb-0.5">
+                    <p className="text-xs font-semibold text-zinc-950 mb-0.5">
                       {label}
                     </p>
-                    <p className="text-[11px] text-gem-text-muted leading-snug">
+                    <p className="text-[11px] text-zinc-400 leading-snug">
                       {desc}
                     </p>
                   </div>
@@ -295,12 +290,11 @@ export default function UploadPage() {
               <div className="mb-8">
                 <LoadingSpinner size={48} />
               </div>
-              <h2 className="font-display text-2xl font-bold mb-2">
+              <h2 className="text-2xl font-semibold text-zinc-950 mb-2">
                 Analyzing your script
               </h2>
-              <p className="text-sm text-gem-text-secondary mb-8">
-                This typically takes 30&ndash;90 seconds. Scanned PDFs may take
-                longer.
+              <p className="text-sm text-zinc-500 mb-8">
+                This typically takes 30&ndash;90 seconds. Scanned PDFs may take longer.
               </p>
 
               <div className="space-y-3 text-left max-w-sm mx-auto">
@@ -309,10 +303,10 @@ export default function UploadPage() {
                     key={step}
                     className={`flex items-center gap-3 text-sm transition-all duration-300 ${
                       i < processingStep
-                        ? "text-gem-gold"
+                        ? "text-emerald-600"
                         : i === processingStep
-                          ? "text-gem-text-primary"
-                          : "text-gem-text-muted"
+                          ? "text-zinc-950"
+                          : "text-zinc-300"
                     }`}
                   >
                     <span className="w-5 text-center">

@@ -39,18 +39,18 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex-1 flex items-center justify-center py-16">
+    <div className="flex-1 flex items-center justify-center py-16 px-6">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <h1 className="font-display text-2xl font-bold mb-2">Welcome back</h1>
-          <p className="text-sm text-gem-text-secondary">
+          <h1 className="text-2xl font-semibold text-zinc-950 mb-2">Welcome back</h1>
+          <p className="text-sm text-zinc-500">
             Sign in to your GEM account
           </p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
           {error && (
-            <div className="text-sm text-gem-danger bg-gem-danger/10 border border-gem-danger/20 rounded px-4 py-3">
+            <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
               {error}
             </div>
           )}
@@ -84,9 +84,9 @@ function LoginForm() {
           </button>
         </form>
 
-        <p className="text-sm text-gem-text-muted text-center mt-6">
+        <p className="text-sm text-zinc-500 text-center mt-6">
           Don&apos;t have an account?{" "}
-          <Link href="/auth/signup" className="text-gem-gold hover:text-gem-gold-light">
+          <Link href="/auth/signup" className="text-emerald-700 font-medium hover:text-emerald-800">
             Start free trial
           </Link>
         </p>

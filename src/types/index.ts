@@ -90,29 +90,29 @@ export const VERDICT_META: Record<
 > = {
   "STRONG SIGNAL": {
     label: "Strong Signal",
-    colorClass: "text-emerald-400",
-    bgClass: "bg-emerald-400/10 border-emerald-400/30",
+    colorClass: "text-emerald-700",
+    bgClass: "bg-emerald-50 border-emerald-200",
     description:
       "Exceptional breakout potential. The DNA of transcendent television.",
   },
   "WORTH THE READ": {
     label: "Worth the Read",
-    colorClass: "text-gem-gold",
-    bgClass: "bg-gem-gold/10 border-gem-gold/30",
+    colorClass: "text-amber-700",
+    bgClass: "bg-amber-50 border-amber-200",
     description:
       "Above-average signal. Worth a full read — real upside even if not all cylinders are firing.",
   },
   MIXED: {
     label: "Mixed",
-    colorClass: "text-gem-text-secondary",
-    bgClass: "bg-gem-surface-overlay border-gem-border",
+    colorClass: "text-zinc-600",
+    bgClass: "bg-zinc-100 border-zinc-300",
     description:
       "Some dimensions show promise, others underperform. Significant revision needed.",
   },
   PASS: {
     label: "Pass",
-    colorClass: "text-gem-text-muted",
-    bgClass: "bg-gem-surface-raised border-gem-border",
+    colorClass: "text-zinc-500",
+    bgClass: "bg-zinc-50 border-zinc-200",
     description:
       "Does not meet the threshold on the dimensions most predictive of transcendence.",
   },

@@ -18,26 +18,26 @@ const PRODUCER_VERDICT: Record<
 > = {
   "STRONG SIGNAL": {
     label: "READ NOW",
-    color: "#34d399",
-    borderColor: "#34d399",
-    bg: "rgba(52, 211, 153, 0.06)",
+    color: "#15803d",      // emerald-700
+    borderColor: "#16a34a", // emerald-600
+    bg: "#f0fdf4",          // emerald-50
   },
   "WORTH THE READ": {
     label: "WORTH A READ",
-    color: "#C9A84C",
-    borderColor: "#C9A84C",
-    bg: "rgba(201, 168, 76, 0.06)",
+    color: "#b45309",      // amber-700
+    borderColor: "#d97706", // amber-600
+    bg: "#fffbeb",          // amber-50
   },
   MIXED: {
     label: "CONSIDER",
-    color: "#9A9A9E",
-    borderColor: "#3A3A42",
-    bg: "transparent",
+    color: "#52525b",      // zinc-600
+    borderColor: "#d4d4d8", // zinc-300
+    bg: "#fafafa",          // zinc-50
   },
   PASS: {
     label: "PASS",
-    color: "#6A6A70",
-    borderColor: "#2A2A30",
+    color: "#71717a",      // zinc-500
+    borderColor: "#e4e4e7", // zinc-200
     bg: "transparent",
   },
 };
@@ -544,8 +544,8 @@ export default function ReportPage() {
 
   if (error || !report)
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-        <p className="text-gem-text-secondary">{error || "Report not found"}</p>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-zinc-50">
+        <p className="text-zinc-500">{error || "Report not found"}</p>
         <button onClick={() => router.push("/dashboard")} className="gem-btn-secondary text-sm">
           Back to Dashboard
         </button>
@@ -577,15 +577,15 @@ export default function ReportPage() {
 
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
-    <main className="min-h-screen pb-24">
+    <main className="min-h-screen pb-24 bg-zinc-50">
 
       {/* ── Page header ─────────────────────────────────────────────────── */}
-      <div className="border-b border-gem-border">
+      <div className="border-b border-zinc-200 bg-white">
         <div className="gem-container py-5">
           <div className="flex items-center justify-between">
             <button
               onClick={() => router.push("/dashboard")}
-              className="flex items-center gap-2 text-sm text-gem-text-secondary hover:text-gem-gold transition-colors"
+              className="flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
             >
               <ArrowLeft size={15} />
               Dashboard
@@ -596,17 +596,17 @@ export default function ReportPage() {
                 <button
                   onClick={() => prevId && router.push(`/report/${prevId}`)}
                   disabled={!prevId}
-                  className="flex items-center gap-1.5 text-xs text-gem-text-muted hover:text-gem-gold transition-colors disabled:opacity-30 disabled:cursor-not-allowed px-2 py-1 rounded border border-transparent hover:border-gem-border"
+                  className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed px-2 py-1 rounded border border-transparent hover:border-zinc-200"
                 >
                   <ArrowLeft size={12} /> Prev
                 </button>
-                <span className="text-gem-text-muted text-xs px-1 font-mono">
+                <span className="text-zinc-400 text-xs px-1 font-mono">
                   {currentIdx + 1} / {showIds.length}
                 </span>
                 <button
                   onClick={() => nextId && router.push(`/report/${nextId}`)}
                   disabled={!nextId}
-                  className="flex items-center gap-1.5 text-xs text-gem-text-muted hover:text-gem-gold transition-colors disabled:opacity-30 disabled:cursor-not-allowed px-2 py-1 rounded border border-transparent hover:border-gem-border"
+                  className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-700 transition-colors disabled:opacity-30 disabled:cursor-not-allowed px-2 py-1 rounded border border-transparent hover:border-zinc-200"
                 >
                   Next <ArrowRight size={12} />
                 </button>
@@ -614,10 +614,10 @@ export default function ReportPage() {
             )}
           </div>
 
-          <h1 className="font-display text-2xl md:text-3xl text-gem-text-primary mt-4">
+          <h1 className="text-2xl md:text-3xl font-semibold text-zinc-950 mt-4">
             {title}
           </h1>
-          <p className="text-xs text-gem-text-muted mt-1 font-mono uppercase tracking-wider">
+          <p className="text-xs text-zinc-400 mt-1 font-mono uppercase tracking-wider">
             GEM Script Evaluation &middot;{" "}
             {new Date(report.generated_at).toLocaleDateString()} &middot;{" "}
             {report.engine_version}
@@ -629,10 +629,11 @@ export default function ReportPage() {
 
         {/* ── 1. Verdict Block ─────────────────────────────────────────────── */}
         <section
-          className="rounded-lg border border-gem-border overflow-hidden mb-8"
+          className="rounded-2xl border overflow-hidden mb-8 shadow-sm"
           style={{
             borderLeftWidth: "4px",
             borderLeftColor: verdictInfo.borderColor,
+            borderColor: verdictInfo.borderColor,
             background: verdictInfo.bg,
           }}
         >
@@ -640,21 +641,21 @@ export default function ReportPage() {
             {/* Producer verdict label + score */}
             <div className="flex items-start justify-between gap-4 mb-3">
               <div
-                className="font-display text-3xl md:text-4xl font-bold tracking-tight leading-none"
+                className="text-3xl md:text-4xl font-bold tracking-tight leading-none"
                 style={{ color: verdictInfo.color }}
               >
                 {verdictInfo.label}
               </div>
               <div className="text-right shrink-0 pt-1">
-                <div className="text-lg font-mono font-bold text-gem-text-muted">
+                <div className="text-lg font-mono font-bold text-zinc-500">
                   {v.weighted_score.toFixed(1)}
                 </div>
-                <div className="text-[10px] font-mono text-gem-text-muted">/ 100</div>
+                <div className="text-[10px] font-mono text-zinc-400">/ 100</div>
               </div>
             </div>
 
             {/* One-line summary */}
-            <p className="text-base text-gem-text-primary leading-relaxed mb-4">
+            <p className="text-base text-zinc-950 leading-relaxed mb-4">
               {v.one_line}
             </p>
 
@@ -663,7 +664,7 @@ export default function ReportPage() {
               {metadataTags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium text-gem-text-secondary border border-gem-border rounded-full px-3 py-0.5"
+                  className="text-xs font-medium text-zinc-600 border border-zinc-300 rounded-full px-3 py-0.5 bg-white"
                 >
                   {tag}
                 </span>
@@ -674,39 +675,38 @@ export default function ReportPage() {
         </section>
 
         {/* ── 2. The Analysis ──────────────────────────────────────────────── */}
-        <section className="mb-8 pb-8 border-b border-gem-border">
-          <p className="text-[10px] font-mono font-bold tracking-widest text-gem-text-muted uppercase mb-3">
+        <section className="mb-8 pb-8 border-b border-zinc-200">
+          <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-3">
             The Analysis
           </p>
-          <p className="text-sm text-gem-text-secondary leading-relaxed mb-3">
-            {/* Strip any GEM corpus percentile callouts from the model-generated takeaway */}
+          <p className="text-sm text-zinc-600 leading-relaxed mb-3">
             {report.producer_takeaway.replace(/\.\s*Outscores?\s+\d+%[^.]*\./gi, ".").replace(/\s+/g, " ").trim()}
           </p>
-          <p className="text-sm text-gem-text-secondary leading-relaxed">
+          <p className="text-sm text-zinc-600 leading-relaxed">
             {marketPosition}
           </p>
         </section>
 
         {/* ── 4. Why It Could Sell / What May Hold It Back ─────────────────── */}
-        <section className="mb-8 pb-8 border-b border-gem-border">
+        <section className="mb-8 pb-8 border-b border-zinc-200">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             {/* Upside */}
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase mb-4">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-emerald-700 uppercase mb-4">
                 Why It Could Sell
               </p>
               <div className="space-y-4">
                 {upsideBullets.map((b, i) => (
                   <div key={i} className="flex gap-3">
-                    <span className="text-emerald-400 mt-0.5 shrink-0 text-sm">→</span>
+                    <span className="text-emerald-600 mt-0.5 shrink-0 text-sm">→</span>
                     <div>
                       {b.title && (
-                        <p className="text-sm font-semibold text-gem-text-primary mb-0.5">
+                        <p className="text-sm font-semibold text-zinc-950 mb-0.5">
                           {b.title}
                         </p>
                       )}
-                      <p className="text-sm text-gem-text-secondary leading-relaxed">
+                      <p className="text-sm text-zinc-600 leading-relaxed">
                         {b.note}
                       </p>
                     </div>
@@ -717,20 +717,20 @@ export default function ReportPage() {
 
             {/* Risk */}
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-red-400 uppercase mb-4">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-red-600 uppercase mb-4">
                 What May Hold It Back
               </p>
               <div className="space-y-4">
                 {riskBullets.map((b, i) => (
                   <div key={i} className="flex gap-3">
-                    <span className="text-red-400/70 mt-0.5 shrink-0 text-sm">→</span>
+                    <span className="text-red-500 mt-0.5 shrink-0 text-sm">→</span>
                     <div>
                       {b.title && (
-                        <p className="text-sm font-semibold text-gem-text-primary mb-0.5">
+                        <p className="text-sm font-semibold text-zinc-950 mb-0.5">
                           {b.title}
                         </p>
                       )}
-                      <p className="text-sm text-gem-text-secondary leading-relaxed">
+                      <p className="text-sm text-zinc-600 leading-relaxed">
                         {b.note}
                       </p>
                     </div>
@@ -743,11 +743,11 @@ export default function ReportPage() {
         </section>
 
         {/* ── 5. What Would Unlock This ────────────────────────────────────── */}
-        <section className="mb-10 pb-8 border-b border-gem-border">
-          <p className="text-[10px] font-mono font-bold tracking-widest text-gem-text-muted uppercase mb-3">
+        <section className="mb-10 pb-8 border-b border-zinc-200">
+          <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-3">
             What Would Unlock This
           </p>
-          <p className="text-sm text-gem-text-secondary leading-relaxed">
+          <p className="text-sm text-zinc-600 leading-relaxed">
             {packagingNote}
           </p>
         </section>
@@ -756,20 +756,20 @@ export default function ReportPage() {
         <section className="mb-8">
           <button
             onClick={() => setAnalyticsOpen(!analyticsOpen)}
-            className="w-full flex items-center justify-between gem-card p-4 hover:border-gem-border-light transition-colors group"
+            className="w-full flex items-center justify-between gem-card p-4 hover:border-zinc-300 hover:shadow-sm transition-all group"
           >
             <div className="flex items-center gap-3">
-              <span className="text-xs font-bold text-gem-text-muted uppercase tracking-widest">
+              <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">
                 Deep Analytics
               </span>
-              <span className="text-xs font-mono text-gem-text-muted">
+              <span className="text-xs font-mono text-zinc-400">
                 10 dimensions &nbsp;&middot;&nbsp;
-                <span className="text-emerald-400/80">{dimAbove} at/above benchmark</span>
+                <span className="text-emerald-600">{dimAbove} at/above benchmark</span>
                 &nbsp;&middot;&nbsp;
-                <span className="text-red-400/80">{dimBelow} significantly below</span>
+                <span className="text-red-500">{dimBelow} significantly below</span>
               </span>
             </div>
-            <span className="text-gem-text-muted group-hover:text-gem-gold transition-colors">
+            <span className="text-zinc-400 group-hover:text-zinc-700 transition-colors">
               {analyticsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </span>
           </button>
@@ -789,19 +789,19 @@ export default function ReportPage() {
                   groupDims.length;
 
                 return (
-                  <div key={groupName} className="gem-card overflow-hidden">
+                  <div key={groupName} className="gem-card overflow-hidden shadow-sm">
                     {/* Group header */}
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-gem-border bg-gem-surface-overlay">
-                      <span className="text-xs font-bold text-gem-text-secondary uppercase tracking-widest">
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-200 bg-zinc-50">
+                      <span className="text-xs font-bold text-zinc-600 uppercase tracking-widest">
                         {groupName}
                       </span>
                       <span
                         className={`text-xs font-mono ${
                           avgGap >= 0.5
-                            ? "text-emerald-400"
+                            ? "text-emerald-600"
                             : avgGap <= -1
-                            ? "text-red-400"
-                            : "text-gem-text-muted"
+                            ? "text-red-500"
+                            : "text-zinc-400"
                         }`}
                       >
                         {vsWinnerLabel(avgGap)}
@@ -809,7 +809,7 @@ export default function ReportPage() {
                     </div>
 
                     {/* Dimension bars */}
-                    <div className="divide-y divide-gem-border/50">
+                    <div className="divide-y divide-zinc-100">
                       {groupDims.map((d) => (
                         <div key={d.dimension} className="px-4 py-1">
                           <DimensionBar

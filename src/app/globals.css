@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -18,11 +17,11 @@
   }
 
   body {
-    @apply bg-gem-surface text-gem-text-primary;
+    @apply bg-white text-zinc-950;
   }
 
   ::selection {
-    @apply bg-gem-gold/20 text-gem-gold-light;
+    @apply bg-emerald-100 text-emerald-900;
   }
 
   /* Scrollbar */
@@ -33,10 +32,10 @@
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-gem-border rounded-full;
+    @apply bg-zinc-300 rounded-full;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gem-border-light;
+    @apply bg-zinc-400;
   }
 }
 
@@ -45,37 +44,41 @@
     @apply max-w-6xl mx-auto px-6;
   }
 
+  /* Card: white bg, zinc-200 border, very rounded */
   .gem-card {
-    @apply bg-gem-surface-raised border border-gem-border rounded-lg;
+    @apply bg-white border border-zinc-200 rounded-2xl;
   }
 
+  /* Primary button: dark zinc, white text, very rounded */
   .gem-btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3
-           bg-gem-gold text-gem-surface font-medium rounded
-           hover:bg-gem-gold-light transition-colors duration-200
+           bg-zinc-950 text-white font-semibold rounded-2xl
+           hover:opacity-90 transition-opacity duration-200
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
+  /* Secondary button: outlined */
   .gem-btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3
-           border border-gem-border text-gem-text-primary rounded
-           hover:border-gem-gold hover:text-gem-gold transition-colors duration-200
+           border border-zinc-300 text-zinc-800 font-semibold rounded-2xl
+           hover:bg-zinc-50 transition-colors duration-200
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
+  /* Inputs */
   .gem-input {
-    @apply w-full bg-gem-surface border border-gem-border rounded px-4 py-3
-           text-gem-text-primary placeholder:text-gem-text-muted
-           focus:outline-none focus:border-gem-gold/50 focus:ring-1 focus:ring-gem-gold/20
+    @apply w-full bg-white border border-zinc-200 rounded-xl px-4 py-3
+           text-zinc-900 placeholder:text-zinc-400
+           focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-200
            transition-colors duration-200;
   }
 
   .gem-label {
-    @apply block text-sm text-gem-text-secondary mb-2;
+    @apply block text-sm text-zinc-600 mb-2 font-medium;
   }
 
   .gem-divider {
-    @apply border-t border-gem-border;
+    @apply border-t border-zinc-200;
   }
 
   /* Score ring */

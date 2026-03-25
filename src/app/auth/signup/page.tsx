@@ -50,20 +50,20 @@ export default function SignupPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <div className="flex-1 flex items-center justify-center py-16">
+      <div className="flex-1 flex items-center justify-center py-16 px-6">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <h1 className="font-display text-2xl font-bold mb-2">
+            <h1 className="text-2xl font-semibold text-zinc-950 mb-2">
               Start evaluating scripts
             </h1>
-            <p className="text-sm text-gem-text-secondary">
+            <p className="text-sm text-zinc-500">
               2 free evaluations included. No credit card required.
             </p>
           </div>
 
           <form onSubmit={handleSignup} className="space-y-4">
             {error && (
-              <div className="text-sm text-gem-danger bg-gem-danger/10 border border-gem-danger/20 rounded px-4 py-3">
+              <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
                 {error}
               </div>
             )}
@@ -108,14 +108,14 @@ export default function SignupPage() {
               {loading ? "Creating account..." : "Create Free Account"}
             </button>
 
-            <p className="text-xs text-gem-text-muted text-center">
+            <p className="text-xs text-zinc-400 text-center">
               By signing up you agree to our Terms of Service and Privacy Policy.
             </p>
           </form>
 
-          <p className="text-sm text-gem-text-muted text-center mt-6">
+          <p className="text-sm text-zinc-500 text-center mt-6">
             Already have an account?{" "}
-            <Link href="/auth/login" className="text-gem-gold hover:text-gem-gold-light">
+            <Link href="/auth/login" className="text-emerald-700 font-medium hover:text-emerald-800">
               Sign in
             </Link>
           </p>
