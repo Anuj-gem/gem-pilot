@@ -252,14 +252,28 @@ async def get_report(request: Request, show_id: str, user_id: Optional[str] = No
 
 @app.get("/api/reports")
 async def list_reports(request: Request, user_id: Optional[str] = None):
-    """List all available reports."""
+    """List reports filtered by user_id."""
     _verify_api_secret(request)
+    # Build a map of show_id → user_id from job files so we can filter reports
+    show_user_map: dict = {}
+    for jf in JOBS_DIR.glob("*.json"):
+        try:
+            jd = json.loads(jf.read_text())
+            if jd.get("show_id") and jd.get("user_id"):
+                show_user_map[jd["show_id"]] = jd["user_id"]
+        except Exception:
+            pass
+
     reports = []
     for f in sorted(REPORTS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
         try:
             data = json.loads(f.read_text())
+            show_id = data.get("show_id", f.stem)
+            # Filter by user_id if provided
+            if user_id and show_user_map.get(show_id) and show_user_map[show_id] != user_id:
+                continue
             reports.append({
-                "show_id": data.get("show_id", f.stem),
+                "show_id": show_id,
                 "verdict": data.get("verdict", {}).get("label"),
                 "weighted_score": data.get("verdict", {}).get("weighted_score"),
                 "percentile": data.get("verdict", {}).get("percentile"),
@@ -272,33 +286,16 @@ async def list_reports(request: Request, user_id: Optional[str] = None):
 
 @app.get("/api/jobs")
 async def list_jobs(request: Request, user_id: Optional[str] = None):
-    """List all jobs, optionally filtered by user_id."""
+    """List jobs filtered by user_id."""
     _verify_api_secret(request)
     jobs = []
     for f in sorted(JOBS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
         try:
             data = json.loads(f.read_text())
-            # User scoping
+            # Filter by user_id if provided
             if user_id and data.get("user_id") and data["user_id"] != user_id:
                 continue
             jobs.append(data)
         except Exception:
             pass
     return {"jobs": jobs}
-
-
-@app.get("/api/jobs")
-async def list_jobs():
-    """List all jobs (most recent first)."""
-    jobs = []
-    for f in sorted(JOBS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
-        try:
-            jobs.append(json.loads(f.read_text()))
-        except Exception:
-            pass
-    return {"jobs": jobs}
-
-
-@app.get("/health")
-async def health():
-    return {"status": "ok", "engine_dir": str(ENGINE_DIR)}
