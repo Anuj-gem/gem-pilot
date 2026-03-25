@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { PaywallModal } from "@/components/ui/paywall-modal";
 
 type Phase = "upload" | "processing" | "done";
 
@@ -35,6 +36,7 @@ export default function UploadPage() {
   const [scriptTitle, setScriptTitle] = useState("");
   const [processingStep, setProcessingStep] = useState(0);
   const [error, setError] = useState("");
+  const [showPaywall, setShowPaywall] = useState(false);
 
   const handleFile = useCallback((file: File) => {
     setError("");
@@ -89,6 +91,11 @@ export default function UploadPage() {
 
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
+        if (res.status === 402 || errData.code === "SUBSCRIPTION_REQUIRED") {
+          setPhase("upload");
+          setShowPaywall(true);
+          return;
+        }
         throw new Error(errData.error || "Upload failed");
       }
 
@@ -136,6 +143,7 @@ export default function UploadPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} />}
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center py-16">

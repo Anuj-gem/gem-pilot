@@ -29,37 +29,42 @@ export async function requireAuth() {
 }
 
 /**
- * Validates auth AND checks subscription is active or trialing.
- * Returns error response if not subscribed.
+ * Validates auth AND checks the user can run an evaluation.
  *
- * NOTE: Stripe/payments not yet configured — subscription check is bypassed.
- * Re-enable the check below once Stripe is hooked up.
+ * Rules:
+ *  - Active subscribers → always allowed
+ *  - Free users → allowed if evals_used < 2
+ *  - Anyone else (canceled, past_due, exceeded free tier) → 402 with paywall flag
  */
 export async function requireSubscription() {
-  // Bypass subscription gate until Stripe is configured
-  return requireAuth();
-
-  /* --- re-enable when Stripe is live ---
   const result = await requireAuth();
   if (result.error) return result;
 
   const { profile } = result;
-  const status = profile?.subscription_status;
-  const allowed = ["active", "trialing"];
+  const status = profile?.subscription_status ?? "free";
+  const evalsUsed = profile?.evals_used ?? 0;
 
-  if (!status || !allowed.includes(status)) {
-    return {
-      ...result,
-      error: NextResponse.json(
-        {
-          error: "Active subscription required",
-          subscription_status: status || "none",
-        },
-        { status: 403 },
-      ),
-    };
+  // Active paid subscriber — always allowed
+  if (status === "active") {
+    return result;
   }
 
-  return result;
-  --- end Stripe gate --- */
+  // Free tier — allow up to 2 evaluations
+  if (status === "free" && evalsUsed < 2) {
+    return result;
+  }
+
+  // Everything else: free tier exhausted, canceled, past_due, etc.
+  return {
+    ...result,
+    error: NextResponse.json(
+      {
+        error: "Free evaluations used. Subscribe to continue.",
+        code: "SUBSCRIPTION_REQUIRED",
+        evals_used: evalsUsed,
+        subscription_status: status,
+      },
+      { status: 402 },
+    ),
+  };
 }

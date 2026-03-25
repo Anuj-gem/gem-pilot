@@ -22,7 +22,6 @@ export default function SignupPage() {
     try {
       const supabase = createClient();
 
-      // 1. Create the Supabase user
       const { data, error: authError } = await supabase.auth.signUp({
         email,
         password,
@@ -30,30 +29,16 @@ export default function SignupPage() {
       });
       if (authError) throw authError;
 
-      // If email confirmation is required, Supabase returns a user but no session
+      // Email confirmation is disabled — user gets a session immediately
       if (data.user && !data.session) {
-        setError(
-          "Check your email for a confirmation link, then come back and sign in.",
-        );
+        setError("Check your email for a confirmation link, then sign in.");
         setLoading(false);
         return;
       }
 
-      // 2. Redirect to Stripe Checkout for the subscription
-      const checkoutRes = await fetch("/api/stripe/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const checkout = await checkoutRes.json();
-
-      if (checkout.url) {
-        window.location.href = checkout.url;
-      } else {
-        // Stripe not configured yet — just go to dashboard
-        router.push("/dashboard");
-        router.refresh();
-      }
+      // Go straight to the upload page — let them use their 2 free evals
+      router.push("/upload");
+      router.refresh();
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Signup failed");
     } finally {
@@ -68,9 +53,11 @@ export default function SignupPage() {
       <div className="flex-1 flex items-center justify-center py-16">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <h1 className="font-display text-2xl font-bold mb-2">Start your free trial</h1>
+            <h1 className="font-display text-2xl font-bold mb-2">
+              Start evaluating scripts
+            </h1>
             <p className="text-sm text-gem-text-secondary">
-              Create your account to get started
+              2 free evaluations included. No credit card required.
             </p>
           </div>
 
@@ -118,12 +105,11 @@ export default function SignupPage() {
             </div>
 
             <button type="submit" disabled={loading} className="gem-btn-primary w-full">
-              {loading ? "Creating account..." : "Create Account"}
+              {loading ? "Creating account..." : "Create Free Account"}
             </button>
 
             <p className="text-xs text-gem-text-muted text-center">
               By signing up you agree to our Terms of Service and Privacy Policy.
-              Your trial includes unlimited script analyses under our fair use policy.
             </p>
           </form>
 

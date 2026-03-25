@@ -10,7 +10,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
  * POST /api/stripe/checkout
  *
  * Creates a Stripe Checkout Session for a new subscriber.
- * - Attaches 7-day free trial
  * - Links the Supabase user ID as metadata so the webhook can match them
  * - Returns the checkout URL
  */
@@ -59,7 +58,6 @@ export async function POST(req: NextRequest) {
       payment_method_types: ["card"],
       line_items: [{ price: process.env.STRIPE_PRICE_ID!, quantity: 1 }],
       subscription_data: {
-        trial_period_days: 7,
         metadata: { supabase_user_id: user.id },
       },
       success_url: `${appUrl}/dashboard?checkout=success`,
