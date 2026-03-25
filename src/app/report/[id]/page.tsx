@@ -703,17 +703,27 @@ export default function ReportPage() {
                 Why It Could Sell
               </p>
               <div className="space-y-4">
-                {upsideBullets.map((b, i) => (
-                  <div key={i} className="flex gap-3">
-                    <span className="text-emerald-600 mt-0.5 shrink-0 text-sm">→</span>
-                    <p className="text-sm text-zinc-600 leading-relaxed">
-                      {b.title && (
-                        <span className="font-semibold text-zinc-950">{b.title}. </span>
-                      )}
-                      {b.note}
-                    </p>
-                  </div>
-                ))}
+                {upsideBullets.map((b, i) => {
+                  // Normalize: if no title, try to parse "Title: note" from the note text
+                  let title = b.title;
+                  let note = b.note;
+                  if (!title) {
+                    const idx = note.indexOf(": ");
+                    if (idx > 0 && idx < 60) {
+                      title = note.slice(0, idx);
+                      note = note.slice(idx + 2);
+                    }
+                  }
+                  return (
+                    <div key={i} className="flex gap-3">
+                      <span className="text-emerald-600 mt-0.5 shrink-0 text-sm">→</span>
+                      <p className="text-sm text-zinc-600 leading-relaxed">
+                        {title && <span className="font-semibold text-zinc-950">{title}. </span>}
+                        {note}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -723,17 +733,26 @@ export default function ReportPage() {
                 What May Hold It Back
               </p>
               <div className="space-y-4">
-                {riskBullets.map((b, i) => (
-                  <div key={i} className="flex gap-3">
-                    <span className="text-red-500 mt-0.5 shrink-0 text-sm">→</span>
-                    <p className="text-sm text-zinc-600 leading-relaxed">
-                      {b.title && (
-                        <span className="font-semibold text-zinc-950">{b.title}. </span>
-                      )}
-                      {b.note}
-                    </p>
-                  </div>
-                ))}
+                {riskBullets.map((b, i) => {
+                  let title = b.title;
+                  let note = b.note;
+                  if (!title) {
+                    const idx = note.indexOf(": ");
+                    if (idx > 0 && idx < 60) {
+                      title = note.slice(0, idx);
+                      note = note.slice(idx + 2);
+                    }
+                  }
+                  return (
+                    <div key={i} className="flex gap-3">
+                      <span className="text-red-500 mt-0.5 shrink-0 text-sm">→</span>
+                      <p className="text-sm text-zinc-600 leading-relaxed">
+                        {title && <span className="font-semibold text-zinc-950">{title}. </span>}
+                        {note}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
