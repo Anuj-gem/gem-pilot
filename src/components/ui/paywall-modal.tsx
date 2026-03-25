@@ -75,7 +75,7 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
         <div className="rounded border border-gem-border bg-gem-surface-raised px-6 py-5 mb-6">
           <div className="flex items-baseline gap-1 mb-1">
             <span className="font-display text-3xl font-bold text-gem-text-primary">
-              $49.99
+              $49
             </span>
             <span className="text-sm text-gem-text-muted">/ month</span>
           </div>
@@ -108,7 +108,7 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
           disabled={loading}
           className="gem-btn-primary w-full"
         >
-          {loading ? "Redirecting to checkout..." : "Subscribe — $49.99 / mo"}
+          {loading ? "Redirecting to checkout..." : "Subscribe — $49 / mo"}
         </button>
 
         <p className="text-xs text-gem-text-muted text-center mt-3">

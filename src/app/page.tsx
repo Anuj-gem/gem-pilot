@@ -42,7 +42,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-sm text-gem-text-muted mt-4">
-            No credit card required &middot; 2 free evaluations &middot; Then $49.99/month
+            No credit card required &middot; 2 free evaluations &middot; Then $49/month
           </p>
         </div>
       </section>
@@ -69,7 +69,7 @@ export default function LandingPage() {
                 icon: "◆",
                 title: "Half the price of anything comparable",
                 description:
-                  "Coverage services charge $200–$500 per script. Competing tools run $200+/month. GEM is $49.99/month for unlimited evaluations — built for working producers, not production company expense accounts.",
+                  "Coverage services charge $200–$500 per script. Competing tools run $200+/month. GEM is $49/month for unlimited evaluations — built for working producers, not production company expense accounts.",
               },
               {
                 icon: "◆",
@@ -186,7 +186,7 @@ export default function LandingPage() {
 
           <div className="gem-card max-w-md mx-auto p-8 border-gem-gold/20">
             <div className="flex items-baseline justify-center gap-1 mb-1">
-              <span className="text-4xl font-display font-bold text-gem-text-primary">$49.99</span>
+              <span className="text-4xl font-display font-bold text-gem-text-primary">$49</span>
               <span className="text-gem-text-secondary">/month</span>
             </div>
             <p className="text-sm text-gem-gold font-medium mb-1">Start with 2 free evaluations</p>
@@ -217,7 +217,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-sm text-gem-text-muted mt-10">
-            Coverage readers charge $200–500 <em>per script</em>. GEM is $49.99 for the whole month.
+            Coverage readers charge $200–500 <em>per script</em>. GEM is $49 for the whole month.
           </p>
         </div>
       </section>
