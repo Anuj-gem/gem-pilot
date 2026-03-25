@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireSubscription } from "@/lib/auth-guard";
-import { createServerSupabaseClient } from "@/lib/supabase-server";
+import { createServiceClient } from "@/lib/supabase-server";
 
 const API_URL = process.env.GEM_API_URL || "http://localhost:8000";
 const API_SECRET = process.env.GEM_API_SECRET || "";
@@ -37,10 +37,12 @@ export async function POST(req: NextRequest) {
 
     const data = await res.json();
 
-    // Increment evals_used for free-tier users
+    // Increment evals_used — must use service role client since the RPC
+    // only grants execute to service_role, not authenticated/anon
     if (user) {
-      const supabase = createServerSupabaseClient();
-      await supabase.rpc("increment_evals_used", { user_id: user.id });
+      const adminClient = createServiceClient();
+      const { error: rpcError } = await adminClient.rpc("increment_evals_used", { user_id: user.id });
+      if (rpcError) console.error("Failed to increment evals_used:", rpcError);
     }
 
     return NextResponse.json(data);
