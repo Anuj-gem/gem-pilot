@@ -130,38 +130,40 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Five Facets */}
+      {/* Analysis Depth */}
       <section className="py-24 border-t border-gem-border">
         <div className="gem-container">
           <h2 className="font-display text-3xl font-bold text-center mb-4">
-            Five dimensions of breakout potential
+            The deepest read your script will ever get
           </h2>
-          <p className="text-gem-text-secondary text-center max-w-xl mx-auto mb-16">
-            Every script is evaluated on the dimensions that actually predict
-            whether material connects with audiences and buyers.
+          <p className="text-gem-text-secondary text-center max-w-2xl mx-auto mb-16">
+            A coverage reader reads once and writes notes. GEM reads thousands of signals
+            across your script — language, structure, character construction, concept architecture,
+            pacing, market positioning — then synthesizes them into the dimensions that actually
+            separate transcendent pilots from the pile.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 label: "Market Appeal",
-                desc: "Commercial viability, pitch-ability, and audience reach.",
+                desc: "From logline clarity to franchise potential — GEM reads whether your concept sells itself, or has to be explained.",
               },
               {
                 label: "Concept Hook",
-                desc: "Is the premise clear, compelling, and instantly graspable?",
+                desc: "Not just whether the premise is interesting. Whether it creates a world compelling enough to live in for 60 episodes.",
               },
               {
                 label: "Character Appeal",
-                desc: "Lead magnetism, durability, and long-term investment potential.",
+                desc: "Great pilots are built on characters audiences can't stop thinking about. GEM evaluates magnetism, durability, and long-run investment potential.",
               },
               {
                 label: "Originality & Boldness",
-                desc: "Creative risk-taking, distinctive voice, and freshness.",
+                desc: "Not just whether it's different — whether it's different in a way that feels earned. Voice, risk-taking, the courage to be something.",
               },
               {
                 label: "Narrative Momentum",
-                desc: "Pacing, urgency, stakes escalation, and episode-two pull.",
+                desc: "Does this pilot earn episode two? GEM reads pacing, urgency, stakes construction, and the mechanics of compulsion.",
               },
             ].map((facet) => (
               <div
@@ -169,7 +171,7 @@ export default function LandingPage() {
                 className="gem-card p-6 space-y-3 hover:border-gem-gold/20 transition-colors"
               >
                 <h3 className="font-medium text-gem-text-primary">{facet.label}</h3>
-                <p className="text-sm text-gem-text-secondary">{facet.desc}</p>
+                <p className="text-sm text-gem-text-secondary leading-relaxed">{facet.desc}</p>
               </div>
             ))}
           </div>
