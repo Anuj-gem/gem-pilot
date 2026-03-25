@@ -35,12 +35,6 @@ export default function LandingPage() {
                 >
                   Try 2 Scripts Free
                 </Link>
-                <a
-                  href="#report"
-                  className="rounded-2xl border border-zinc-300 px-6 py-3 text-base font-semibold text-zinc-800 transition hover:bg-zinc-50"
-                >
-                  View sample analysis
-                </a>
               </div>
               <p className="mt-3 text-sm text-zinc-500">No credit card required &middot; 2 free evaluations &middot; Then $49/month</p>
 
@@ -236,19 +230,13 @@ export default function LandingPage() {
                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Ideal for producers, dev teams, reps, and serious writers</div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Cancel anytime — no long-term commitment</div>
               </div>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8">
                 <Link
                   href="/auth/signup"
                   className="rounded-2xl bg-white px-6 py-3 font-semibold text-zinc-950 transition hover:opacity-90"
                 >
                   Try 2 Scripts Free
                 </Link>
-                <a
-                  href="#report"
-                  className="rounded-2xl border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-                >
-                  See sample report
-                </a>
               </div>
               <p className="mt-5 text-xs text-zinc-500">
                 Coverage readers charge $200–500 <em>per script</em>. GEM is $49 for the whole month.
