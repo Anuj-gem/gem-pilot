@@ -152,7 +152,14 @@ function getUpsideBullets(
     report.highlights?.type === "why_it_stands_out" &&
     report.highlights.bullets.length >= 3
   ) {
-    return report.highlights.bullets.slice(0, 3).map((b) => ({ title: "", note: b }));
+    return report.highlights.bullets.slice(0, 3).map((b) => {
+      // Parse "Dimension Name: explanation text" into title + note
+      const colonIdx = b.indexOf(": ");
+      if (colonIdx > 0 && colonIdx < 60) {
+        return { title: b.slice(0, colonIdx), note: b.slice(colonIdx + 2) };
+      }
+      return { title: "", note: b };
+    });
   }
 
   // Explicit strengths from the model
@@ -619,8 +626,7 @@ export default function ReportPage() {
           </h1>
           <p className="text-xs text-zinc-400 mt-1 font-mono uppercase tracking-wider">
             GEM Script Evaluation &middot;{" "}
-            {new Date(report.generated_at).toLocaleDateString()} &middot;{" "}
-            {report.engine_version}
+            {new Date(report.generated_at).toLocaleDateString()}
           </p>
         </div>
       </div>

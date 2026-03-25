@@ -95,12 +95,6 @@ export function DimensionBar({
           <p className="text-sm text-zinc-600 leading-relaxed">
             {reasoning}
           </p>
-          {winnerAvg !== undefined && (
-            <p className="mt-2 text-xs text-zinc-400">
-              Winner average: {winnerAvg.toFixed(1)}/10 &middot; Weight:{" "}
-              {weight.toFixed(1)}
-            </p>
-          )}
         </div>
       )}
     </div>
