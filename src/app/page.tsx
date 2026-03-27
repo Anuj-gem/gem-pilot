@@ -7,314 +7,246 @@ export default function LandingPage() {
     <div className="min-h-screen flex flex-col bg-white text-zinc-900">
       <Navbar />
 
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden border-b border-zinc-200">
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-50 via-white to-emerald-50" />
-        <div className="relative gem-container py-20 lg:py-28">
-          <div className="grid items-center gap-14 lg:grid-cols-2">
-
-            {/* Left: headline + CTAs */}
-            <div>
-              <div className="mb-5 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-800">
-                Built to find breakouts — not just analyze scripts
-              </div>
-              <h1 className="text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl">
-                The AI that was trained
-                <span className="block text-emerald-700">to spot the next hit.</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
-                GEM analyzed thousands of signals across the most successful TV pilots ever made — and built a model that can read your script the same way a top-tier development executive would. For{" "}
-                <span className="font-semibold text-zinc-900">$49/month. Unlimited scripts.</span>
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href="/auth/signup"
-                  className="rounded-2xl bg-zinc-950 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:opacity-90"
-                >
-                  Try 2 Scripts Free
-                </Link>
-              </div>
-              <p className="mt-3 text-sm text-zinc-500">No credit card required &middot; 2 free evaluations &middot; Then $49/month, unlimited</p>
-
-              <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
-                <div className="rounded-2xl border border-zinc-200 bg-white p-4">
-                  <div className="text-2xl font-semibold text-zinc-950">1,000s</div>
-                  <div className="mt-1 text-sm text-zinc-500">of signals per script</div>
-                </div>
-                <div className="rounded-2xl border border-zinc-200 bg-white p-4">
-                  <div className="text-2xl font-semibold text-zinc-950">$49</div>
-                  <div className="mt-1 text-sm text-zinc-500">unlimited/month</div>
-                </div>
-                <div className="rounded-2xl border border-zinc-200 bg-white p-4">
-                  <div className="text-2xl font-semibold text-zinc-950">&lt;5 min</div>
-                  <div className="mt-1 text-sm text-zinc-500">full report, every time</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: abstract report mockup */}
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-r from-emerald-100 to-zinc-100 blur-2xl opacity-60" />
-              <div className="relative rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-2xl">
-
-                {/* Report header */}
-                <div className="flex items-center justify-between border-b border-zinc-100 pb-4">
-                  <div>
-                    <div className="text-xs font-medium uppercase tracking-widest text-zinc-400">GEM Analysis</div>
-                    <div className="mt-1 text-lg font-semibold text-zinc-950">THE LAST BROADCAST</div>
-                  </div>
-                  <div className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800">
-                    STRONG SIGNAL
-                  </div>
-                </div>
-
-                {/* Score + verdict */}
-                <div className="mt-5 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-4">
-                    <div className="text-xs font-medium text-emerald-700 uppercase tracking-wider">Hit Confidence</div>
-                    <div className="mt-2 text-5xl font-bold text-emerald-800 leading-none">83</div>
-                    <div className="mt-2 text-xs text-emerald-700 leading-relaxed">Strong commercial potential across multiple dimensions</div>
-                  </div>
-                  <div className="rounded-2xl bg-zinc-50 border border-zinc-100 p-4">
-                    <div className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Producer Take</div>
-                    <div className="mt-2 text-sm font-medium text-zinc-900 leading-snug">
-                      Clear audience, strong pilot propulsion, and real series viability.
-                    </div>
-                    <div className="mt-2 text-xs text-zinc-500 leading-relaxed">Worth prioritizing.</div>
-                  </div>
-                </div>
-
-                {/* Abstract signal bars */}
-                <div className="mt-5">
-                  <div className="text-xs font-medium text-zinc-400 uppercase tracking-wider mb-3">Signal Analysis</div>
-                  <div className="space-y-2.5">
-                    {[
-                      { label: "Commercial Viability", pct: 91, color: "bg-emerald-500" },
-                      { label: "Audience & Market Fit", pct: 86, color: "bg-emerald-400" },
-                      { label: "Series Longevity", pct: 84, color: "bg-emerald-400" },
-                      { label: "Execution Risk", pct: 72, color: "bg-amber-400" },
-                    ].map(({ label, pct, color }) => (
-                      <div key={label}>
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-xs text-zinc-600">{label}</span>
-                          <span className="text-xs font-semibold text-zinc-700">{pct}</span>
-                        </div>
-                        <div className="h-1.5 w-full rounded-full bg-zinc-100">
-                          <div
-                            className={`h-1.5 rounded-full ${color}`}
-                            style={{ width: `${pct}%` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Teaser insight */}
-                <div className="mt-5 rounded-2xl border border-zinc-200 bg-white p-4">
-                  <div className="text-xs font-medium text-zinc-400 uppercase tracking-wider mb-2">Top Insight</div>
-                  <p className="text-sm text-zinc-700 leading-relaxed">
-                    <span className="font-semibold text-zinc-950">Hook anchors the whole pilot.</span> The premise opens a world audiences can&apos;t get elsewhere — and the character dynamics are engineered to sustain it beyond episode one.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
+      {/* ── 1. Hero ── */}
+      <section className="relative overflow-hidden border-b border-zinc-200 bg-white">
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 to-white" />
+        <div className="relative gem-container py-24 lg:py-32 text-center max-w-3xl mx-auto">
+          <h1 className="text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl leading-[1.1]">
+            AI script analysis for producers and development teams
+          </h1>
+          <p className="mt-6 text-xl leading-8 text-zinc-600">
+            Find breakout scripts faster. Skip weak ones earlier.<br />
+            <span className="font-semibold text-zinc-900">Just $49/month unlimited</span> — far cheaper than traditional coverage.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/auth/signup"
+              className="inline-block rounded-2xl bg-zinc-950 px-8 py-3.5 text-base font-semibold text-white shadow-sm transition hover:opacity-90"
+            >
+              Try GEM Free
+            </Link>
           </div>
+          <p className="mt-3 text-sm text-zinc-400">No credit card required &middot; 2 free evaluations included</p>
         </div>
       </section>
 
-      {/* ── How GEM is built ── */}
+      {/* ── 2. Pain / Problem ── */}
+      <section className="bg-zinc-950 text-white py-20 lg:py-24">
+        <div className="gem-container max-w-2xl mx-auto text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400 mb-6">The problem with read piles</p>
+          <h2 className="text-3xl font-semibold sm:text-4xl leading-snug">
+            Most read piles have two problems.
+          </h2>
+          <div className="mt-8 space-y-4 text-left max-w-lg mx-auto">
+            <div className="flex items-start gap-4">
+              <span className="mt-1 shrink-0 text-zinc-500 text-lg leading-none">—</span>
+              <p className="text-zinc-300 text-lg">The standout script is easy to miss.</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="mt-1 shrink-0 text-zinc-500 text-lg leading-none">—</span>
+              <p className="text-zinc-300 text-lg">Too much time gets wasted on scripts that were never worth serious attention.</p>
+            </div>
+          </div>
+          <p className="mt-10 text-xl text-zinc-100 font-medium">
+            GEM is built to help solve both.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 3. GEM vs Traditional Coverage ── */}
       <section className="py-20 lg:py-24 border-b border-zinc-100">
         <div className="gem-container">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">The model behind the score</div>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
-              We studied what makes great TV.
-              <span className="block text-emerald-700">Then we built a model around it.</span>
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-4">Why GEM instead of traditional coverage</p>
+            <h2 className="text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
+              A better way to work through a read pile.
             </h2>
-            <p className="mt-5 text-lg text-zinc-600 max-w-2xl mx-auto">
-              GEM wasn&apos;t trained on generic text. It was built by studying the most successful, transcendent pilots in TV history — extracting the signals that separate a breakout from a pass, then turning that into a scoring engine that runs on every script.
-            </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                icon: "◈",
-                title: "Trained on successful series",
-                copy: "We analyzed hundreds of the most commercially and critically successful TV pilots ever made — studying what they got right and why. That body of knowledge is baked into every GEM report.",
-              },
-              {
-                icon: "⟡",
-                title: "Thousands of signals per script",
-                copy: "GEM doesn't read a script like a reader — it processes thousands of structural, character, commercial, and craft signals simultaneously. The result is analysis that goes far deeper than any single pass can.",
-              },
-              {
-                icon: "◎",
-                title: "Built for decision-making",
-                copy: "Every output is structured to answer the actual question: does this deserve my attention? You get a clear verdict, a confidence score, and the reasoning behind it — not a summary of what you already read.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
-                <div className="text-3xl text-emerald-600 mb-4">{item.icon}</div>
-                <div className="text-xl font-semibold text-zinc-950">{item.title}</div>
-                <p className="mt-4 text-base leading-7 text-zinc-600">{item.copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── The real comparison ── */}
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="gem-container py-20 lg:py-24">
-          <div className="mx-auto max-w-3xl text-center mb-14">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Why GEM wins</div>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
-              Every other option makes you
-              <span className="block">choose a bad tradeoff.</span>
-            </h2>
-            <p className="mt-5 text-lg text-zinc-600">
-              Traditional coverage is expensive and slow. Generic AI tools are fast but shallow and unreliable.
-              GEM is the only option built specifically to find what makes TV pilots break through — at a price that doesn&apos;t make you ration your reads.
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto rounded-[2rem] border border-zinc-200 bg-white overflow-hidden shadow-sm">
-            {/* Header */}
-            <div className="grid grid-cols-3 bg-zinc-100 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-              <div>Option</div>
-              <div>Quality</div>
-              <div>Cost</div>
-            </div>
-
-            {/* Competitors (merged) */}
-            <div className="grid grid-cols-3 border-t border-zinc-200 px-6 py-5 text-sm text-zinc-600">
-              <div className="font-medium text-zinc-800">Coverage readers</div>
-              <div>Useful — but one person&apos;s subjective read</div>
-              <div>$150–$500 <em>per script</em></div>
-            </div>
-            <div className="grid grid-cols-3 border-t border-zinc-200 px-6 py-5 text-sm text-zinc-600">
-              <div className="font-medium text-zinc-800">Generic AI tools</div>
-              <div>Shallow, inconsistent, not built for TV</div>
-              <div>Low price, low trust</div>
-            </div>
-
-            {/* GEM row — highlighted */}
-            <div className="grid grid-cols-3 border-t-2 border-emerald-200 bg-emerald-50 px-6 py-5 text-sm">
-              <div className="font-bold text-zinc-950">GEM</div>
-              <div className="text-zinc-700">Trained AI — thousands of signals, calibrated to what actually breaks through</div>
-              <div className="font-bold text-emerald-700">$49/month<br /><span className="text-xs font-normal text-zinc-500">unlimited scripts</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── What you get + Pricing ── */}
-      <section className="py-20 lg:py-24">
-        <div className="gem-container">
-          <div className="grid gap-8 lg:grid-cols-2">
-
-            {/* What you get */}
-            <div className="rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
-              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">What you get</div>
-              <h3 className="mt-4 text-3xl font-semibold text-zinc-950">A report built for triage, not praise</h3>
-              <p className="mt-3 text-zinc-500 text-base">Everything in a GEM report is designed to answer one question: is this worth your time?</p>
-              <ul className="mt-6 space-y-4 text-zinc-600">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Traditional */}
+            <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8">
+              <div className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-5">Traditional Coverage</div>
+              <ul className="space-y-4">
                 {[
-                  "A clear verdict — Strong Signal, Worth the Read, Mixed, or Pass — so you know immediately where a script stands",
-                  "A Hit Confidence score synthesized from thousands of signals across your script",
-                  "Structured reasoning across commercial, character, and craft dimensions",
-                  "Upside and risk analysis in plain language — actionable, not vague",
-                  "Results in under 5 minutes — evaluate your whole pile, not just what you can afford",
+                  "Pay per script — costs add up fast",
+                  "Slow turnaround",
+                  "Inconsistent quality, reader to reader",
+                  "Often more summary than signal",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-0.5 shrink-0 text-emerald-600 font-bold">✓</span>
+                  <li key={item} className="flex items-start gap-3 text-zinc-600">
+                    <span className="mt-1 shrink-0 text-zinc-300 font-bold">✗</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Pricing card — dark */}
-            <div id="pricing" className="rounded-[2rem] bg-zinc-950 p-8 text-white shadow-xl flex flex-col justify-between">
+            {/* GEM */}
+            <div className="rounded-[2rem] border border-emerald-200 bg-emerald-50 p-8">
+              <div className="text-xs font-semibold uppercase tracking-widest text-emerald-700 mb-5">GEM</div>
+              <ul className="space-y-4">
+                {[
+                  "$49/month — unlimited scripts",
+                  "Instant analysis, every time",
+                  "Built to surface breakout potential",
+                  "Helps you rule out weak scripts early",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-zinc-700">
+                    <span className="mt-1 shrink-0 text-emerald-600 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center mt-10 text-zinc-500 text-sm">
+            Coverage readers charge $150–$500 <em>per script</em>. GEM is $49 for the entire month.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 4. Sample Decision Output ── */}
+      <section className="py-20 lg:py-24 bg-zinc-50 border-b border-zinc-100">
+        <div className="gem-container">
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-4">What GEM tells you</p>
+            <h2 className="text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
+              Built to help you decide.<br />Not just analyze.
+            </h2>
+            <p className="mt-5 text-lg text-zinc-500 max-w-xl mx-auto">
+              Every GEM report answers the question that actually matters: is this worth my time?
+            </p>
+          </div>
+
+          {/* Decision card mockup */}
+          <div className="max-w-xl mx-auto rounded-[2rem] border border-zinc-200 bg-white shadow-xl overflow-hidden">
+            {/* Header */}
+            <div className="bg-zinc-950 px-6 py-5 flex items-center justify-between">
               <div>
-                <div className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Simple pricing</div>
-                <h3 className="mt-4 text-5xl font-bold">$49
-                  <span className="text-2xl font-normal text-zinc-400">/month</span>
-                </h3>
-                <p className="mt-2 text-xl font-semibold text-emerald-300">Unlimited scripts.</p>
-                <p className="mt-3 max-w-md text-zinc-400 text-sm leading-relaxed">
-                  Not $150 per read. Not a per-script fee that makes you ration your evaluations. One flat price — evaluate every script in your pipeline, all month long.
-                </p>
-
-                <div className="mt-8 space-y-3 text-sm text-zinc-200">
-                  <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                    <span className="text-emerald-400">✓</span>
-                    <span>Start with 2 free evaluations — no credit card required</span>
-                  </div>
-                  <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                    <span className="text-emerald-400">✓</span>
-                    <span>Unlimited script evaluations after subscribing</span>
-                  </div>
-                  <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                    <span className="text-emerald-400">✓</span>
-                    <span>For producers, development teams, reps, and serious writers</span>
-                  </div>
-                  <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                    <span className="text-emerald-400">✓</span>
-                    <span>Cancel anytime — no commitment, no catch</span>
-                  </div>
-                </div>
+                <div className="text-xs font-medium uppercase tracking-widest text-zinc-400">GEM Analysis</div>
+                <div className="mt-1 text-lg font-semibold text-white">THE LAST BROADCAST</div>
               </div>
-
-              <div className="mt-8">
-                <Link
-                  href="/auth/signup"
-                  className="inline-block rounded-2xl bg-white px-6 py-3.5 font-semibold text-zinc-950 transition hover:opacity-90"
-                >
-                  Try 2 Scripts Free →
-                </Link>
-                <p className="mt-4 text-xs text-zinc-500">
-                  Coverage readers charge $150–$500 <em>per script</em>.<br />GEM is $49 for the entire month — unlimited reads.
-                </p>
+              <div className="rounded-full bg-emerald-500 px-4 py-1.5 text-sm font-bold text-white">
+                STRONG SIGNAL
               </div>
             </div>
 
+            {/* Verdict line */}
+            <div className="px-6 py-5 border-b border-zinc-100">
+              <div className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-2">Bottom line</div>
+              <p className="text-zinc-900 text-base font-medium leading-snug">
+                Worth serious attention. Strong hook, clear audience, real series viability.
+              </p>
+            </div>
+
+            {/* Signal rows */}
+            <div className="px-6 py-5 space-y-3">
+              <div className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-3">Key signals</div>
+              {[
+                { label: "Breakout potential", value: "High", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+                { label: "Commercial signal", value: "High", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+                { label: "Hook strength", value: "Strong", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+                { label: "Series longevity", value: "Strong", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+                { label: "Execution risk", value: "Low–Moderate", color: "text-amber-700 bg-amber-50 border-amber-200" },
+              ].map(({ label, value, color }) => (
+                <div key={label} className="flex items-center justify-between">
+                  <span className="text-sm text-zinc-600">{label}</span>
+                  <span className={`rounded-lg border px-2.5 py-1 text-xs font-semibold ${color}`}>{value}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Ruling */}
+            <div className="bg-zinc-50 border-t border-zinc-100 px-6 py-4">
+              <p className="text-sm text-zinc-500 italic">
+                &ldquo;Feels like something worth prioritizing, not just something worth admiring.&rdquo;
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
-      <section className="border-t border-zinc-200 bg-zinc-950 text-white">
-        <div className="gem-container py-20 text-center lg:py-24">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400 mb-4">Stop rationing your reads</div>
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Evaluate every script
-            <span className="block text-emerald-400">with producer-grade AI.</span>
+      {/* ── 5. 3-Card Benefits ── */}
+      <section className="py-20 lg:py-24 border-b border-zinc-100">
+        <div className="gem-container">
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-4">What GEM is built to do</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Surface breakout material",
+                copy: "Identify scripts with real hook, upside, and commercial potential — before they get buried in the pile.",
+              },
+              {
+                title: "Kill weak scripts early",
+                copy: "See quickly when a script likely isn't worth deeper attention. Stop spending time on reads that go nowhere.",
+              },
+              {
+                title: "Scale across the pile",
+                copy: "Use GEM on every script without paying per read. Evaluate more, miss less, spend your attention where it counts.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
+                <div className="text-xl font-semibold text-zinc-950">{item.title}</div>
+                <p className="mt-4 text-base leading-7 text-zinc-500">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Pricing ── */}
+      <section id="pricing" className="py-20 lg:py-24 bg-zinc-50 border-b border-zinc-100">
+        <div className="gem-container max-w-lg mx-auto text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-4">Pricing</p>
+          <div className="text-7xl font-bold text-zinc-950">$49</div>
+          <div className="mt-1 text-2xl font-medium text-zinc-500">/month</div>
+          <div className="mt-3 text-xl font-semibold text-emerald-700">Unlimited scripts.</div>
+
+          <p className="mt-6 text-zinc-500 leading-relaxed">
+            Use GEM as a first-pass filter across your entire read pile.<br />
+            No more paying script by script just to figure out what&apos;s worth reading.
+          </p>
+
+          <div className="mt-8">
+            <Link
+              href="/auth/signup"
+              className="inline-block rounded-2xl bg-zinc-950 px-8 py-3.5 text-base font-semibold text-white shadow-sm transition hover:opacity-90"
+            >
+              Try GEM Free
+            </Link>
+          </div>
+          <p className="mt-3 text-sm text-zinc-400">No credit card required &middot; 2 free evaluations &middot; Cancel anytime</p>
+        </div>
+      </section>
+
+      {/* ── 7. Final CTA ── */}
+      <section className="bg-zinc-950 text-white py-20 lg:py-24">
+        <div className="gem-container max-w-2xl mx-auto text-center">
+          <h2 className="text-4xl font-semibold sm:text-5xl tracking-tight">
+            Find breakout scripts faster.<br />
+            <span className="text-emerald-400">Skip weak ones earlier.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-zinc-400">
-            $49/month. Unlimited scripts. Analysis trained on what actually makes TV break through —
-            not generic AI, not expensive-per-read coverage.
+          <p className="mt-5 text-zinc-400 text-lg">
+            $49/month. Unlimited scripts. No per-read fees.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Link
               href="/auth/signup"
-              className="rounded-2xl bg-white px-6 py-3.5 font-semibold text-zinc-950 transition hover:opacity-90"
+              className="rounded-2xl bg-white px-8 py-3.5 font-semibold text-zinc-950 transition hover:opacity-90"
             >
-              Try 2 Scripts Free →
+              Try GEM Free
             </Link>
             <Link
               href="/auth/login"
-              className="rounded-2xl border border-white/20 px-6 py-3.5 font-semibold text-zinc-200 transition hover:bg-white/10"
+              className="rounded-2xl border border-white/20 px-8 py-3.5 font-semibold text-zinc-300 transition hover:bg-white/10"
             >
               Sign In
             </Link>
           </div>
-          <p className="mt-4 text-sm text-zinc-500">No credit card required. Takes 30 seconds to sign up.</p>
         </div>
       </section>
 
