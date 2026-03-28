@@ -63,7 +63,7 @@ export async function GET(_req: NextRequest) {
   const { user, error } = await requireAuth();
   if (error) return error;
 
-  const ADMIN_EMAIL = process.env.GEM_ADMIN_EMAIL || "anujkommareddy@gmail.com";
+  const ADMIN_EMAIL = process.env.GEM_ADMIN_EMAIL || "anuj@gem.studio";
   const isAdmin = user!.email === ADMIN_EMAIL;
 
   try {
