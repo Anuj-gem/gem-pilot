@@ -16,8 +16,16 @@ interface ReportSummary {
   generated_at: string | null;
 }
 
+interface GEMSubmission {
+  show_id: string;
+  title: string | null;
+  status: "pending_review" | "published";
+  created_at: string;
+}
+
 interface JobWithReport extends AnalysisJob {
   report_summary?: ReportSummary;
+  submission?: GEMSubmission;
 }
 
 // Left-border accent color per verdict tier
@@ -49,13 +57,15 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [jobsRes, reportsRes] = await Promise.all([
+        const [jobsRes, reportsRes, submissionsRes] = await Promise.all([
           fetch("/api/jobs").catch(() => null),
           fetch("/api/reports").catch(() => null),
+          fetch("/api/submissions").catch(() => null),
         ]);
 
         let jobList: AnalysisJob[] = [];
         let reportList: ReportSummary[] = [];
+        let submissionList: GEMSubmission[] = [];
 
         if (jobsRes?.ok) {
           const data = await jobsRes.json();
@@ -67,17 +77,42 @@ export default function DashboardPage() {
           reportList = data.reports || [];
         }
 
+        // Note: /api/submissions without a show_id returns admin-only data.
+        // For writers, we get their submissions via the individual report fetches.
+        // Here we just use it to surface pending_review status on the dashboard.
+        if (submissionsRes?.ok) {
+          const data = await submissionsRes.json();
+          submissionList = data.submissions || [];
+        }
+
+        const submissionMap = new Map(submissionList.map((s) => [s.show_id, s]));
+
         const jobShowIds = new Set(jobList.map((j) => j.show_id));
         const enrichedJobs: JobWithReport[] = jobList.map((j) => ({
           ...j,
           report_summary: reportList.find((r) => r.show_id === j.show_id),
+          submission: submissionMap.get(j.show_id),
+        }));
+
+        // Also surface pending_review submissions that may not have a job entry
+        const pendingOnlySubmissions = submissionList.filter(
+          (s) => s.status === "pending_review" && !jobShowIds.has(s.show_id)
+        );
+        const pendingJobs: JobWithReport[] = pendingOnlySubmissions.map((s) => ({
+          job_id: `sub-${s.show_id}`,
+          show_id: s.show_id,
+          user_id: "",
+          status: "pending" as const,
+          created_at: s.created_at,
+          filename: null,
+          submission: s,
         }));
 
         const orphanReports = reportList.filter(
           (r) => !jobShowIds.has(r.show_id)
         );
 
-        setJobs(enrichedJobs);
+        setJobs([...enrichedJobs, ...pendingJobs]);
         setReports(orphanReports);
       } catch {
         // Silent fail — empty dashboard
@@ -108,7 +143,9 @@ export default function DashboardPage() {
     if (v) verdictCounts[v] = (verdictCounts[v] || 0) + 1;
   }
   const pendingCount = jobs.filter(
-    (j) => j.status === "pending" || j.status === "processing"
+    (j) => j.submission?.status === "pending_review" ||
+           j.status === "pending" ||
+           j.status === "processing"
   ).length;
 
   const VERDICT_ORDER: Verdict[] = ["STRONG SIGNAL", "WORTH THE READ", "MIXED", "PASS"];
@@ -159,7 +196,7 @@ export default function DashboardPage() {
               {pendingCount > 0 && (
                 <span className="flex items-center gap-2 ml-auto">
                   <span className="inline-block w-2 h-2 rounded-full bg-zinc-300 animate-pulse" />
-                  <span className="text-zinc-500">{pendingCount} processing</span>
+                  <span className="text-zinc-500">{pendingCount} under review</span>
                 </span>
               )}
             </div>
@@ -195,22 +232,25 @@ export default function DashboardPage() {
 
               {/* Jobs */}
               {jobs.map((job) => {
+                const isPendingReview = job.submission?.status === "pending_review";
                 const isComplete = job.status === "completed" && job.report_summary;
-                const href = isComplete ? `/report/${job.show_id}` : "#";
+                // Always link to /report — it handles both pending and published states
+                const href = `/report/${job.show_id}`;
                 const verdict = job.report_summary?.verdict ?? null;
                 const percentile = job.report_summary?.percentile ?? null;
                 const pctLabel = percentileLabel(percentile);
+                const displayTitle = job.submission?.title || prettyTitle(job.show_id);
 
                 return (
                   <Link
                     key={job.job_id}
                     href={href}
                     className="gem-card p-5 flex items-center justify-between hover:border-zinc-300 hover:shadow-sm transition-all block"
-                    style={verdictBorderStyle(verdict)}
+                    style={isPendingReview ? { borderLeft: "3px solid #d4d4d8" } : verdictBorderStyle(verdict)}
                   >
                     <div className="flex-1 min-w-0">
                       <h3 className="font-medium text-zinc-950 truncate">
-                        {prettyTitle(job.show_id)}
+                        {displayTitle}
                       </h3>
                       <p className="text-sm text-zinc-400 mt-0.5">
                         {new Date(job.created_at).toLocaleDateString("en-US", {
@@ -223,7 +263,12 @@ export default function DashboardPage() {
                     </div>
 
                     <div className="flex items-center gap-4 ml-4">
-                      {isComplete && job.report_summary ? (
+                      {isPendingReview ? (
+                        <span className="flex items-center gap-1.5 text-sm text-zinc-500">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-zinc-400 animate-pulse" />
+                          Under Review
+                        </span>
+                      ) : isComplete && job.report_summary ? (
                         <>
                           {pctLabel && (
                             <span className="text-xs font-mono text-zinc-400 hidden sm:inline">
@@ -243,10 +288,6 @@ export default function DashboardPage() {
                       ) : job.status === "processing" ? (
                         <span className="text-sm text-emerald-700 animate-pulse">
                           Analyzing...
-                        </span>
-                      ) : job.status === "pending" ? (
-                        <span className="text-sm text-zinc-400">
-                          Queued
                         </span>
                       ) : job.status === "failed" ? (
                         <span className="text-sm text-red-600">Failed</span>

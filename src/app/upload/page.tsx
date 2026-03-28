@@ -10,10 +10,9 @@ type Phase = "upload" | "processing" | "done";
 
 const PROCESSING_STEPS = [
   "Uploading your script...",
-  "Extracting text from PDF...",
-  "Scoring across 10 dimensions...",
-  "Comparing against benchmark shows...",
-  "Generating your feedback report...",
+  "Script received...",
+  "Saving your submission...",
+  "Almost there...",
 ];
 
 const MAX_IMAGES = 5;
@@ -130,23 +129,13 @@ export default function UploadPage() {
     const showId = slugify(showTitle || selectedFile.name.replace(/\.[^.]+$/, ""));
 
     try {
-      const formData = new FormData();
-      formData.append("file", selectedFile);
-      if (pitch.trim()) formData.append("pitch", pitch.trim());
-      if (seasonPlan.trim()) formData.append("season_plan", seasonPlan.trim());
-      if (castingVision.trim()) formData.append("casting_vision", castingVision.trim());
-      if (imdbUrl.trim()) formData.append("imdb_url", imdbUrl.trim());
-      const validCollaborators = collaborators.filter((c) => c.name.trim() && c.email.trim());
-      if (validCollaborators.length) {
-        formData.append("collaborators", JSON.stringify(validCollaborators));
-      }
-      conceptImages.forEach((img, i) => {
-        formData.append(`concept_image_${i}`, img.file);
-      });
+      // Step 1: Submit script to the evaluation engine
+      const scriptForm = new FormData();
+      scriptForm.append("file", selectedFile);
 
       const res = await fetch(`/api/evaluate?show_id=${encodeURIComponent(showId)}`, {
         method: "POST",
-        body: formData,
+        body: scriptForm,
       });
 
       if (!res.ok) {
@@ -154,42 +143,57 @@ export default function UploadPage() {
         throw new Error(errData.error || "Upload failed");
       }
 
-      const { job_id, show_id } = await res.json();
+      const { show_id } = await res.json();
       setProcessingStep(1);
 
-      let attempts = 0;
-      const maxAttempts = 300;
-      while (attempts < maxAttempts) {
-        await new Promise((r) => setTimeout(r, 1000));
-        attempts++;
-
-        const statusRes = await fetch(`/api/jobs/${job_id}`);
-        if (!statusRes.ok) continue;
-
-        const jobData = await statusRes.json();
-
-        if (jobData.status === "processing") {
-          const elapsed = attempts;
-          if (elapsed > 3) setProcessingStep(2);
-          if (elapsed > 8) setProcessingStep(3);
-          if (elapsed > 15) setProcessingStep(4);
-        }
-
-        if (jobData.status === "completed") {
-          setPhase("done");
-          router.push(`/report/${show_id}`);
-          return;
-        }
-
-        if (jobData.status === "failed") {
-          console.error("[GEM] Job failed:", jobData.error);
-          throw new Error("Analysis failed. Please try again.");
+      // Step 2: Upload concept images to Supabase Storage (if any)
+      const conceptImageUrls: string[] = [];
+      if (conceptImages.length > 0) {
+        const { createClient } = await import("@/lib/supabase-client");
+        const supabase = createClient();
+        for (const img of conceptImages) {
+          const ext = img.file.name.split(".").pop() || "jpg";
+          const path = `${show_id}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+          const { error: uploadError } = await supabase.storage
+            .from("concept-images")
+            .upload(path, img.file);
+          if (!uploadError) {
+            const { data: urlData } = supabase.storage
+              .from("concept-images")
+              .getPublicUrl(path);
+            if (urlData?.publicUrl) conceptImageUrls.push(urlData.publicUrl);
+          }
         }
       }
+      setProcessingStep(2);
 
-      throw new Error("Analysis timed out. Please try again.");
+      // Step 3: Save submission metadata to Supabase
+      const validCollaborators = collaborators.filter(
+        (c) => c.name.trim() && c.email.trim()
+      );
+
+      await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          show_id: show_id || showId,
+          title: showTitle,
+          pitch: pitch.trim() || null,
+          season_plan: seasonPlan.trim() || null,
+          casting_vision: castingVision.trim() || null,
+          imdb_url: imdbUrl.trim() || null,
+          collaborators: validCollaborators,
+          concept_image_urls: conceptImageUrls,
+        }),
+      });
+
+      setProcessingStep(3);
+
+      // Step 4: Redirect immediately — writer sees pending view
+      setPhase("done");
+      router.push(`/report/${show_id || showId}`);
     } catch (err: any) {
-      setError(err.message || "Analysis failed. Please try again.");
+      setError(err.message || "Submission failed. Please try again.");
       setPhase("upload");
     }
   };
@@ -517,10 +521,10 @@ export default function UploadPage() {
                 <LoadingSpinner size={48} />
               </div>
               <h2 className="text-2xl font-semibold text-zinc-950 mb-2">
-                Reading your script
+                Submitting...
               </h2>
               <p className="text-sm text-zinc-500 mb-8">
-                Uploading your script now. Your review will be delivered within 24 hours.
+                Just a moment while we receive your script and submission.
               </p>
               <div className="space-y-3 text-left max-w-sm mx-auto">
                 {PROCESSING_STEPS.map((step, i) => (

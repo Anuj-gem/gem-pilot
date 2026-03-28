@@ -497,6 +497,248 @@ function generatePDF(
   win.document.close();
 }
 
+// ─── Types ─────────────────────────────────────────────────────────────────────
+
+interface GEMSubmission {
+  id: string;
+  show_id: string;
+  title: string | null;
+  pitch: string | null;
+  season_plan: string | null;
+  casting_vision: string | null;
+  imdb_url: string | null;
+  collaborators: { name: string; email: string }[];
+  concept_image_urls: string[];
+  status: "pending_review" | "published";
+  created_at: string;
+}
+
+interface GEMComment {
+  id: string;
+  user_id: string;
+  author_name: string;
+  is_gem_team: boolean;
+  body: string;
+  created_at: string;
+}
+
+// ─── Comment Section Component ─────────────────────────────────────────────────
+
+function CommentSection({ showId }: { showId: string }) {
+  const [comments, setComments] = useState<GEMComment[]>([]);
+  const [body, setBody] = useState("");
+  const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    fetch(`/api/submissions/${showId}/comments`)
+      .then((r) => r.json())
+      .then(({ comments: c }) => setComments(c || []))
+      .catch(() => {});
+  }, [showId]);
+
+  const send = async () => {
+    if (!body.trim() || sending) return;
+    setSending(true);
+    try {
+      const res = await fetch(`/api/submissions/${showId}/comments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ body }),
+      });
+      if (res.ok) {
+        const { comment } = await res.json();
+        setComments((prev) => [...prev, comment]);
+        setBody("");
+      }
+    } finally {
+      setSending(false);
+    }
+  };
+
+  return (
+    <section className="mt-10 pt-8 border-t border-zinc-200">
+      <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-4">
+        Messages
+      </p>
+
+      {comments.length === 0 && (
+        <p className="text-sm text-zinc-400 mb-4">
+          Have a question about your submission? Leave a message and we&apos;ll reply here.
+        </p>
+      )}
+
+      {comments.length > 0 && (
+        <div className="space-y-3 mb-4">
+          {comments.map((c) => (
+            <div
+              key={c.id}
+              className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                c.is_gem_team
+                  ? "bg-zinc-950 text-white ml-8"
+                  : "bg-white border border-zinc-200 text-zinc-700 mr-8"
+              }`}
+            >
+              <p className="font-semibold text-xs mb-1 opacity-60">
+                {c.is_gem_team ? "GEM" : c.author_name} &middot;{" "}
+                {new Date(c.created_at).toLocaleDateString("en-US", {
+                  month: "short", day: "numeric",
+                })}
+              </p>
+              <p>{c.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="flex gap-2">
+        <textarea
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+          placeholder="Write a message..."
+          rows={2}
+          className="gem-input flex-1 resize-none text-sm"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) send();
+          }}
+        />
+        <button
+          onClick={send}
+          disabled={!body.trim() || sending}
+          className="gem-btn-primary self-end text-sm px-4 disabled:opacity-50"
+        >
+          Send
+        </button>
+      </div>
+    </section>
+  );
+}
+
+// ─── Pending View ──────────────────────────────────────────────────────────────
+
+function PendingView({
+  showId,
+  submission,
+}: {
+  showId: string;
+  submission: GEMSubmission;
+}) {
+  const router = useRouter();
+  const title = submission.title || showId
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  return (
+    <main className="min-h-screen pb-24 bg-zinc-50">
+      <div className="border-b border-zinc-200 bg-white">
+        <div className="gem-container py-5">
+          <button
+            onClick={() => router.push("/dashboard")}
+            className="flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+          >
+            <ArrowLeft size={15} />
+            My Scripts
+          </button>
+          <h1 className="text-2xl md:text-3xl font-semibold text-zinc-950 mt-4">{title}</h1>
+          <p className="text-xs text-zinc-400 mt-1 font-mono uppercase tracking-wider">
+            Submitted {new Date(submission.created_at).toLocaleDateString("en-US", {
+              month: "long", day: "numeric", year: "numeric",
+            })}
+          </p>
+        </div>
+      </div>
+
+      <div className="gem-container mt-8 max-w-3xl">
+
+        {/* Status banner */}
+        <div className="rounded-2xl bg-zinc-950 text-white px-6 py-5 mb-8 flex items-start gap-4">
+          <span className="text-xl mt-0.5 animate-pulse">&#9679;</span>
+          <div>
+            <p className="font-semibold text-base mb-1">Under Review</p>
+            <p className="text-sm text-zinc-300 leading-relaxed">
+              We&apos;ve received your script and submission. A personalized review will be delivered within 24 hours — we&apos;ll update this page when it&apos;s ready.
+            </p>
+          </div>
+        </div>
+
+        {/* Submission recap */}
+        <div className="space-y-5">
+
+          {submission.pitch && (
+            <div className="gem-card p-5 shadow-sm">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-2">
+                Your Pitch
+              </p>
+              <p className="text-sm text-zinc-700 leading-relaxed whitespace-pre-line">
+                {submission.pitch}
+              </p>
+            </div>
+          )}
+
+          {submission.season_plan && (
+            <div className="gem-card p-5 shadow-sm">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-2">
+                Season 1 Framework
+              </p>
+              <p className="text-sm text-zinc-700 leading-relaxed whitespace-pre-line">
+                {submission.season_plan}
+              </p>
+            </div>
+          )}
+
+          {submission.casting_vision && (
+            <div className="gem-card p-5 shadow-sm">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-2">
+                Dream Casting
+              </p>
+              <p className="text-sm text-zinc-700 leading-relaxed whitespace-pre-line">
+                {submission.casting_vision}
+              </p>
+            </div>
+          )}
+
+          {submission.concept_image_urls.length > 0 && (
+            <div className="gem-card p-5 shadow-sm">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-3">
+                Visual Concepts
+              </p>
+              <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+                {submission.concept_image_urls.map((url, i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={i}
+                    src={url}
+                    alt={`Concept ${i + 1}`}
+                    className="aspect-square w-full object-cover rounded-xl border border-zinc-200"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {submission.imdb_url && (
+            <div className="gem-card p-5 shadow-sm">
+              <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-2">
+                IMDb
+              </p>
+              <a
+                href={submission.imdb_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-zinc-700 hover:text-zinc-950 underline"
+              >
+                {submission.imdb_url}
+              </a>
+            </div>
+          )}
+
+        </div>
+
+        <CommentSection showId={showId} />
+      </div>
+    </main>
+  );
+}
+
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ReportPage() {
@@ -504,21 +746,35 @@ export default function ReportPage() {
   const router  = useRouter();
   const showId  = params.id as string;
 
-  const [report, setReport]           = useState<GEMReport | null>(null);
-  const [loading, setLoading]         = useState(true);
-  const [error, setError]             = useState<string | null>(null);
+  const [report, setReport]             = useState<GEMReport | null>(null);
+  const [submission, setSubmission]     = useState<GEMSubmission | null>(null);
+  const [loading, setLoading]           = useState(true);
+  const [error, setError]               = useState<string | null>(null);
   const [deepDiveOpen, setDeepDiveOpen] = useState(false);
-  const [showIds, setShowIds]         = useState<string[]>([]);
+  const [showIds, setShowIds]           = useState<string[]>([]);
 
   useEffect(() => {
     if (!showId) return;
     (async () => {
       try {
-        const [reportRes, listRes] = await Promise.all([
-          fetch(`/api/reports/${showId}`),
+        const [reportRes, listRes, submissionRes] = await Promise.all([
+          fetch(`/api/reports/${showId}`).catch(() => null),
           fetch("/api/reports").catch(() => null),
+          fetch(`/api/submissions/${showId}`).catch(() => null),
         ]);
-        if (!reportRes.ok) throw new Error("Report not found");
+
+        if (submissionRes?.ok) {
+          const { submission: sub } = await submissionRes.json();
+          setSubmission(sub || null);
+
+          // If pending_review and we have a submission record, show pending view
+          if (sub?.status === "pending_review") {
+            setLoading(false);
+            return;
+          }
+        }
+
+        if (!reportRes?.ok) throw new Error("Report not found");
         setReport(await reportRes.json());
         if (listRes?.ok) {
           const { reports } = await listRes.json();
@@ -538,6 +794,11 @@ export default function ReportPage() {
         <LoadingSpinner size={40} />
       </div>
     );
+
+  // Pending review — show submission info + waiting state
+  if (submission?.status === "pending_review") {
+    return <PendingView showId={showId} submission={submission} />;
+  }
 
   if (error || !report)
     return (
@@ -841,8 +1102,11 @@ export default function ReportPage() {
           )}
         </section>
 
+        {/* ── Comments ─────────────────────────────────────────────────────── */}
+        <CommentSection showId={showId} />
+
         {/* ── Footer: export + nav ──────────────────────────────────────────── */}
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex items-center justify-between pt-8">
           <button
             onClick={() =>
               generatePDF(
