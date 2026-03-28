@@ -16,6 +16,8 @@ const PROCESSING_STEPS = [
   "Generating your feedback report...",
 ];
 
+const MAX_IMAGES = 5;
+
 function slugify(s: string): string {
   return s
     .toLowerCase()
@@ -25,15 +27,23 @@ function slugify(s: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+interface ImagePreview {
+  file: File;
+  url: string;
+}
+
 export default function UploadPage() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null);
 
   const [phase, setPhase] = useState<Phase>("upload");
   const [dragActive, setDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [scriptTitle, setScriptTitle] = useState("");
   const [processingStep, setProcessingStep] = useState(0);
+  const [imdbUrl, setImdbUrl] = useState("");
+  const [conceptImages, setConceptImages] = useState<ImagePreview[]>([]);
   const [error, setError] = useState("");
 
   const handleFile = useCallback((file: File) => {
@@ -69,6 +79,30 @@ export default function UploadPage() {
     [handleFile]
   );
 
+  const handleImages = useCallback((files: FileList) => {
+    const allowed = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+    const maxImageSize = 10 * 1024 * 1024; // 10MB per image
+    const newImages: ImagePreview[] = [];
+
+    Array.from(files).forEach((file) => {
+      if (!allowed.includes(file.type)) return;
+      if (file.size > maxImageSize) return;
+      newImages.push({ file, url: URL.createObjectURL(file) });
+    });
+
+    setConceptImages((prev) => {
+      const combined = [...prev, ...newImages];
+      return combined.slice(0, MAX_IMAGES);
+    });
+  }, []);
+
+  const removeImage = (index: number) => {
+    setConceptImages((prev) => {
+      URL.revokeObjectURL(prev[index].url);
+      return prev.filter((_, i) => i !== index);
+    });
+  };
+
   const startAnalysis = async () => {
     if (!selectedFile) return;
     setPhase("processing");
@@ -79,6 +113,10 @@ export default function UploadPage() {
     try {
       const formData = new FormData();
       formData.append("file", selectedFile);
+      if (imdbUrl.trim()) formData.append("imdb_url", imdbUrl.trim());
+      conceptImages.forEach((img, i) => {
+        formData.append(`concept_image_${i}`, img.file);
+      });
 
       setProcessingStep(0);
       const res = await fetch(`/api/evaluate?show_id=${encodeURIComponent(showId)}`, {
@@ -144,7 +182,7 @@ export default function UploadPage() {
                 Submit your script
               </h1>
               <p className="text-sm text-zinc-500 text-center mb-2">
-                Upload your pilot script and get detailed feedback in minutes — completely free.
+                Submit your pilot script. You&apos;ll get a personalized review within 24 hours — completely free.
               </p>
               <p className="text-xs text-zinc-400 text-center mb-8">
                 GEM is calibrated for <span className="font-medium text-zinc-500">TV pilots and series scripts</span>. Feature film scripts are not currently supported.
@@ -220,24 +258,122 @@ export default function UploadPage() {
                 )}
               </div>
 
-              {/* Script title input */}
+              {/* Additional fields — shown once a file is selected */}
               {selectedFile && (
-                <div className="mt-4">
-                  <label className="gem-label" htmlFor="script-title">
-                    Script title
-                  </label>
-                  <input
-                    id="script-title"
-                    type="text"
-                    value={scriptTitle}
-                    onChange={(e) => setScriptTitle(e.target.value)}
-                    placeholder="e.g. The Sopranos"
-                    className="gem-input"
-                  />
-                  <p className="text-xs text-zinc-400 mt-1.5">
-                    This will be the title on your feedback report.
-                  </p>
-                </div>
+                <>
+                  {/* Script title */}
+                  <div className="mt-4">
+                    <label className="gem-label" htmlFor="script-title">
+                      Script title
+                    </label>
+                    <input
+                      id="script-title"
+                      type="text"
+                      value={scriptTitle}
+                      onChange={(e) => setScriptTitle(e.target.value)}
+                      placeholder="e.g. The Sopranos"
+                      className="gem-input"
+                    />
+                    <p className="text-xs text-zinc-400 mt-1.5">
+                      This will be the title on your feedback report.
+                    </p>
+                  </div>
+
+                  {/* Concept images */}
+                  <div className="mt-6">
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="gem-label mb-0">
+                        Visual concepts <span className="text-zinc-400 font-normal">(optional)</span>
+                      </label>
+                      {conceptImages.length < MAX_IMAGES && (
+                        <button
+                          type="button"
+                          onClick={() => imageInputRef.current?.click()}
+                          className="text-xs text-zinc-500 hover:text-zinc-800 transition-colors"
+                        >
+                          + Add images
+                        </button>
+                      )}
+                    </div>
+                    <input
+                      ref={imageInputRef}
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp,image/gif"
+                      multiple
+                      className="hidden"
+                      onChange={(e) => {
+                        if (e.target.files?.length) handleImages(e.target.files);
+                      }}
+                    />
+
+                    {conceptImages.length === 0 ? (
+                      <button
+                        type="button"
+                        onClick={() => imageInputRef.current?.click()}
+                        className="w-full rounded-2xl border-2 border-dashed border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50/50 transition-all duration-200 p-6 text-center"
+                      >
+                        <p className="text-sm text-zinc-500">
+                          Used AI to visualize your world? Add concept images, character renders, or mood boards.
+                        </p>
+                        <p className="text-xs text-zinc-400 mt-1">
+                          Up to {MAX_IMAGES} images &middot; JPG, PNG, or WebP
+                        </p>
+                      </button>
+                    ) : (
+                      <div className="space-y-2">
+                        <div className="grid grid-cols-5 gap-2">
+                          {conceptImages.map((img, i) => (
+                            <div key={i} className="relative group aspect-square">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={img.url}
+                                alt={`Concept ${i + 1}`}
+                                className="w-full h-full object-cover rounded-xl border border-zinc-200"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => removeImage(i)}
+                                className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-zinc-900 text-white rounded-full text-[10px] leading-none flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                              >
+                                &#x2715;
+                              </button>
+                            </div>
+                          ))}
+                          {conceptImages.length < MAX_IMAGES && (
+                            <button
+                              type="button"
+                              onClick={() => imageInputRef.current?.click()}
+                              className="aspect-square rounded-xl border-2 border-dashed border-zinc-200 bg-white hover:border-zinc-300 flex items-center justify-center text-zinc-400 hover:text-zinc-600 transition-all"
+                            >
+                              <span className="text-xl leading-none">+</span>
+                            </button>
+                          )}
+                        </div>
+                        <p className="text-xs text-zinc-400">
+                          {conceptImages.length} of {MAX_IMAGES} images &middot; Hover to remove
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* IMDb */}
+                  <div className="mt-4">
+                    <label className="gem-label" htmlFor="imdb-url">
+                      IMDb profile <span className="text-zinc-400 font-normal">(optional)</span>
+                    </label>
+                    <input
+                      id="imdb-url"
+                      type="url"
+                      value={imdbUrl}
+                      onChange={(e) => setImdbUrl(e.target.value)}
+                      placeholder="https://www.imdb.com/name/..."
+                      className="gem-input"
+                    />
+                    <p className="text-xs text-zinc-400 mt-1.5">
+                      Link us to your credits if you have them. Not required — great writing speaks for itself.
+                    </p>
+                  </div>
+                </>
               )}
 
               <button
@@ -280,7 +416,7 @@ export default function UploadPage() {
                 Reading your script
               </h2>
               <p className="text-sm text-zinc-500 mb-8">
-                This typically takes 30&ndash;90 seconds. Scanned PDFs may take longer.
+                Uploading your script now. Your review will be delivered within 24 hours.
               </p>
 
               <div className="space-y-3 text-left max-w-sm mx-auto">
