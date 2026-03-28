@@ -32,6 +32,11 @@ interface ImagePreview {
   url: string;
 }
 
+interface Collaborator {
+  name: string;
+  email: string;
+}
+
 export default function UploadPage() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -40,10 +45,14 @@ export default function UploadPage() {
   const [phase, setPhase] = useState<Phase>("upload");
   const [dragActive, setDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [scriptTitle, setScriptTitle] = useState("");
-  const [processingStep, setProcessingStep] = useState(0);
-  const [imdbUrl, setImdbUrl] = useState("");
+  const [showTitle, setShowTitle] = useState("");
+  const [pitch, setPitch] = useState("");
+  const [seasonPlan, setSeasonPlan] = useState("");
+  const [castingVision, setCastingVision] = useState("");
   const [conceptImages, setConceptImages] = useState<ImagePreview[]>([]);
+  const [imdbUrl, setImdbUrl] = useState("");
+  const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
+  const [processingStep, setProcessingStep] = useState(0);
   const [error, setError] = useState("");
 
   const handleFile = useCallback((file: File) => {
@@ -61,13 +70,12 @@ export default function UploadPage() {
     }
 
     setSelectedFile(file);
-    // Pre-populate title from filename (cleaned up)
     const baseName = file.name.replace(/\.[^.]+$/, "");
     const pretty = baseName
       .replace(/[-_]+/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase())
       .trim();
-    setScriptTitle(pretty);
+    setShowTitle(pretty);
   }, []);
 
   const handleDrop = useCallback(
@@ -81,7 +89,7 @@ export default function UploadPage() {
 
   const handleImages = useCallback((files: FileList) => {
     const allowed = ["image/jpeg", "image/png", "image/webp", "image/gif"];
-    const maxImageSize = 10 * 1024 * 1024; // 10MB per image
+    const maxImageSize = 10 * 1024 * 1024;
     const newImages: ImagePreview[] = [];
 
     Array.from(files).forEach((file) => {
@@ -90,10 +98,7 @@ export default function UploadPage() {
       newImages.push({ file, url: URL.createObjectURL(file) });
     });
 
-    setConceptImages((prev) => {
-      const combined = [...prev, ...newImages];
-      return combined.slice(0, MAX_IMAGES);
-    });
+    setConceptImages((prev) => [...prev, ...newImages].slice(0, MAX_IMAGES));
   }, []);
 
   const removeImage = (index: number) => {
@@ -103,22 +108,42 @@ export default function UploadPage() {
     });
   };
 
+  const addCollaborator = () => {
+    setCollaborators((prev) => [...prev, { name: "", email: "" }]);
+  };
+
+  const updateCollaborator = (index: number, field: keyof Collaborator, value: string) => {
+    setCollaborators((prev) =>
+      prev.map((c, i) => (i === index ? { ...c, [field]: value } : c))
+    );
+  };
+
+  const removeCollaborator = (index: number) => {
+    setCollaborators((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const startAnalysis = async () => {
     if (!selectedFile) return;
     setPhase("processing");
     setProcessingStep(0);
 
-    const showId = slugify(scriptTitle || selectedFile.name.replace(/\.[^.]+$/, ""));
+    const showId = slugify(showTitle || selectedFile.name.replace(/\.[^.]+$/, ""));
 
     try {
       const formData = new FormData();
       formData.append("file", selectedFile);
+      if (pitch.trim()) formData.append("pitch", pitch.trim());
+      if (seasonPlan.trim()) formData.append("season_plan", seasonPlan.trim());
+      if (castingVision.trim()) formData.append("casting_vision", castingVision.trim());
       if (imdbUrl.trim()) formData.append("imdb_url", imdbUrl.trim());
+      const validCollaborators = collaborators.filter((c) => c.name.trim() && c.email.trim());
+      if (validCollaborators.length) {
+        formData.append("collaborators", JSON.stringify(validCollaborators));
+      }
       conceptImages.forEach((img, i) => {
         formData.append(`concept_image_${i}`, img.file);
       });
 
-      setProcessingStep(0);
       const res = await fetch(`/api/evaluate?show_id=${encodeURIComponent(showId)}`, {
         method: "POST",
         body: formData,
@@ -132,7 +157,6 @@ export default function UploadPage() {
       const { job_id, show_id } = await res.json();
       setProcessingStep(1);
 
-      // Poll for completion
       let attempts = 0;
       const maxAttempts = 300;
       while (attempts < maxAttempts) {
@@ -192,31 +216,22 @@ export default function UploadPage() {
                 <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-2xl px-4 py-3 mb-4">
                   <p className="font-semibold mb-1">Something went wrong</p>
                   <p>{error}</p>
-                  {error.toLowerCase().includes("rate limit") && (
-                    <p className="mt-2 text-zinc-500">
-                      We&apos;re experiencing high demand. Please try again in a few minutes.
-                    </p>
-                  )}
                 </div>
               )}
 
-              {/* Drop zone */}
+              {/* Script drop zone */}
               <div
-                onDragOver={(e) => {
-                  e.preventDefault();
-                  setDragActive(true);
-                }}
+                onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
                 onDragLeave={() => setDragActive(false)}
                 onDrop={handleDrop}
                 onClick={() => fileInputRef.current?.click()}
                 className={`
                   rounded-2xl border-2 p-12 text-center cursor-pointer transition-all duration-200 bg-white
-                  ${
-                    dragActive
-                      ? "border-zinc-950 bg-zinc-50"
-                      : selectedFile
-                        ? "border-emerald-200 bg-emerald-50/30"
-                        : "border-dashed border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50/50"
+                  ${dragActive
+                    ? "border-zinc-950 bg-zinc-50"
+                    : selectedFile
+                      ? "border-emerald-200 bg-emerald-50/30"
+                      : "border-dashed border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50/50"
                   }
                 `}
               >
@@ -225,22 +240,16 @@ export default function UploadPage() {
                   type="file"
                   accept=".pdf,.txt,.md,.fountain"
                   className="hidden"
-                  onChange={(e) => {
-                    if (e.target.files?.[0]) handleFile(e.target.files[0]);
-                  }}
+                  onChange={(e) => { if (e.target.files?.[0]) handleFile(e.target.files[0]); }}
                 />
-
                 {selectedFile ? (
                   <div className="space-y-3">
                     <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mx-auto">
                       <span className="text-emerald-600 text-lg">&#128196;</span>
                     </div>
-                    <p className="font-medium text-zinc-950">
-                      {selectedFile.name}
-                    </p>
+                    <p className="font-medium text-zinc-950">{selectedFile.name}</p>
                     <p className="text-xs text-zinc-400">
-                      {(selectedFile.size / 1024).toFixed(0)} KB &middot; Click
-                      to choose a different file
+                      {(selectedFile.size / 1024).toFixed(0)} KB &middot; Click to choose a different file
                     </p>
                   </div>
                 ) : (
@@ -248,44 +257,87 @@ export default function UploadPage() {
                     <div className="w-12 h-12 rounded-2xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mx-auto">
                       <span className="text-zinc-400 text-lg">&#8593;</span>
                     </div>
-                    <p className="text-sm text-zinc-600">
-                      Drag and drop your script, or click to browse
-                    </p>
-                    <p className="text-xs text-zinc-400">
-                      PDF or TXT &middot; Scanned PDFs supported via OCR
-                    </p>
+                    <p className="text-sm text-zinc-600">Drag and drop your script, or click to browse</p>
+                    <p className="text-xs text-zinc-400">PDF or TXT &middot; Scanned PDFs supported via OCR</p>
                   </div>
                 )}
               </div>
 
-              {/* Additional fields — shown once a file is selected */}
+              {/* Extended submission form — shown once file is selected */}
               {selectedFile && (
-                <>
-                  {/* Script title */}
-                  <div className="mt-4">
-                    <label className="gem-label" htmlFor="script-title">
-                      Script title
-                    </label>
+                <div className="mt-6 space-y-5">
+
+                  {/* Show title */}
+                  <div>
+                    <label className="gem-label" htmlFor="show-title">Show title</label>
                     <input
-                      id="script-title"
+                      id="show-title"
                       type="text"
-                      value={scriptTitle}
-                      onChange={(e) => setScriptTitle(e.target.value)}
+                      value={showTitle}
+                      onChange={(e) => setShowTitle(e.target.value)}
                       placeholder="e.g. The Sopranos"
                       className="gem-input"
                     />
+                  </div>
+
+                  {/* The pitch */}
+                  <div>
+                    <label className="gem-label" htmlFor="pitch">
+                      The pitch <span className="text-zinc-400 font-normal">(required)</span>
+                    </label>
+                    <textarea
+                      id="pitch"
+                      value={pitch}
+                      onChange={(e) => setPitch(e.target.value)}
+                      placeholder="Sell us on it. What makes this show special — and why does it need to exist right now?"
+                      rows={4}
+                      className="gem-input resize-none"
+                    />
                     <p className="text-xs text-zinc-400 mt-1.5">
-                      This will be the title on your feedback report.
+                      Not a logline. Tell us what you believe about this show.
+                    </p>
+                  </div>
+
+                  {/* Season 1 framework */}
+                  <div>
+                    <label className="gem-label" htmlFor="season-plan">
+                      Season 1 framework <span className="text-zinc-400 font-normal">(optional)</span>
+                    </label>
+                    <textarea
+                      id="season-plan"
+                      value={seasonPlan}
+                      onChange={(e) => setSeasonPlan(e.target.value)}
+                      placeholder={"How many episodes? What's the arc? How does it end?\nBullet points are fine — we just want to know you've thought past the pilot."}
+                      rows={4}
+                      className="gem-input resize-none"
+                    />
+                  </div>
+
+                  {/* Dream casting */}
+                  <div>
+                    <label className="gem-label" htmlFor="casting">
+                      Dream casting <span className="text-zinc-400 font-normal">(optional)</span>
+                    </label>
+                    <textarea
+                      id="casting"
+                      value={castingVision}
+                      onChange={(e) => setCastingVision(e.target.value)}
+                      placeholder="Is there someone born to play a role in this? Real names or archetypes — whoever you see when you close your eyes."
+                      rows={3}
+                      className="gem-input resize-none"
+                    />
+                    <p className="text-xs text-zinc-400 mt-1.5">
+                      The right casting vision can open doors. Don&apos;t be shy.
                     </p>
                   </div>
 
                   {/* Concept images */}
-                  <div className="mt-6">
+                  <div>
                     <div className="flex items-center justify-between mb-1">
                       <label className="gem-label mb-0">
                         Visual concepts <span className="text-zinc-400 font-normal">(optional)</span>
                       </label>
-                      {conceptImages.length < MAX_IMAGES && (
+                      {conceptImages.length > 0 && conceptImages.length < MAX_IMAGES && (
                         <button
                           type="button"
                           onClick={() => imageInputRef.current?.click()}
@@ -301,11 +353,8 @@ export default function UploadPage() {
                       accept="image/jpeg,image/png,image/webp,image/gif"
                       multiple
                       className="hidden"
-                      onChange={(e) => {
-                        if (e.target.files?.length) handleImages(e.target.files);
-                      }}
+                      onChange={(e) => { if (e.target.files?.length) handleImages(e.target.files); }}
                     />
-
                     {conceptImages.length === 0 ? (
                       <button
                         type="button"
@@ -313,7 +362,7 @@ export default function UploadPage() {
                         className="w-full rounded-2xl border-2 border-dashed border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50/50 transition-all duration-200 p-6 text-center"
                       >
                         <p className="text-sm text-zinc-500">
-                          Used AI to visualize your world? Add concept images, character renders, or mood boards.
+                          Used AI to visualize your world? Add concept art, character renders, or mood boards.
                         </p>
                         <p className="text-xs text-zinc-400 mt-1">
                           Up to {MAX_IMAGES} images &middot; JPG, PNG, or WebP
@@ -333,7 +382,7 @@ export default function UploadPage() {
                               <button
                                 type="button"
                                 onClick={() => removeImage(i)}
-                                className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-zinc-900 text-white rounded-full text-[10px] leading-none flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-zinc-900 text-white rounded-full text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                               >
                                 &#x2715;
                               </button>
@@ -349,15 +398,13 @@ export default function UploadPage() {
                             </button>
                           )}
                         </div>
-                        <p className="text-xs text-zinc-400">
-                          {conceptImages.length} of {MAX_IMAGES} images &middot; Hover to remove
-                        </p>
+                        <p className="text-xs text-zinc-400">{conceptImages.length} of {MAX_IMAGES} images &middot; Hover to remove</p>
                       </div>
                     )}
                   </div>
 
                   {/* IMDb */}
-                  <div className="mt-4">
+                  <div>
                     <label className="gem-label" htmlFor="imdb-url">
                       IMDb profile <span className="text-zinc-400 font-normal">(optional)</span>
                     </label>
@@ -373,37 +420,94 @@ export default function UploadPage() {
                       Link us to your credits if you have them. Not required — great writing speaks for itself.
                     </p>
                   </div>
-                </>
+
+                  {/* Collaborators */}
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <div>
+                        <label className="gem-label mb-0">
+                          Collaborators <span className="text-zinc-400 font-normal">(optional)</span>
+                        </label>
+                        <p className="text-xs text-zinc-400 mt-0.5">
+                          Co-writers, directors, showrunners — anyone who should see the review.
+                        </p>
+                      </div>
+                    </div>
+
+                    {collaborators.length > 0 && (
+                      <div className="space-y-2 mb-2">
+                        {collaborators.map((collab, i) => (
+                          <div key={i} className="flex gap-2 items-center">
+                            <input
+                              type="text"
+                              value={collab.name}
+                              onChange={(e) => updateCollaborator(i, "name", e.target.value)}
+                              placeholder="Name"
+                              className="gem-input flex-1"
+                            />
+                            <input
+                              type="email"
+                              value={collab.email}
+                              onChange={(e) => updateCollaborator(i, "email", e.target.value)}
+                              placeholder="Email"
+                              className="gem-input flex-1"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => removeCollaborator(i)}
+                              className="w-8 h-8 shrink-0 rounded-xl border border-zinc-200 bg-white text-zinc-400 hover:text-zinc-800 hover:border-zinc-300 flex items-center justify-center transition-colors text-sm"
+                            >
+                              &#x2715;
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={addCollaborator}
+                      className="text-sm text-zinc-500 hover:text-zinc-800 transition-colors flex items-center gap-1.5"
+                    >
+                      <span className="text-base leading-none">+</span> Add collaborator
+                    </button>
+                  </div>
+
+                </div>
               )}
 
               <button
                 onClick={startAnalysis}
-                disabled={!selectedFile || !scriptTitle.trim()}
-                className="gem-btn-primary w-full mt-6"
+                disabled={!selectedFile || !showTitle.trim() || !pitch.trim()}
+                className="gem-btn-primary w-full mt-8"
               >
                 Submit for Feedback
               </button>
 
+              {selectedFile && !pitch.trim() && (
+                <p className="text-xs text-zinc-400 text-center mt-2">
+                  Add your pitch to continue.
+                </p>
+              )}
+
               {/* What the writer will get */}
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                {[
-                  { label: "Full report", desc: "Strengths + areas to develop" },
-                  { label: "10 dimensions", desc: "Scored against top shows" },
-                  { label: "Next steps", desc: "Clear guidance on what to focus on" },
-                ].map(({ label, desc }) => (
-                  <div
-                    key={label}
-                    className="rounded-2xl border border-zinc-200 bg-white px-3 py-3 shadow-sm"
-                  >
-                    <p className="text-xs font-semibold text-zinc-950 mb-0.5">
-                      {label}
-                    </p>
-                    <p className="text-[11px] text-zinc-400 leading-snug">
-                      {desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {!selectedFile && (
+                <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                  {[
+                    { label: "Full report", desc: "Strengths + areas to develop" },
+                    { label: "10 dimensions", desc: "Scored against top shows" },
+                    { label: "Next steps", desc: "Clear guidance on what to focus on" },
+                  ].map(({ label, desc }) => (
+                    <div
+                      key={label}
+                      className="rounded-2xl border border-zinc-200 bg-white px-3 py-3 shadow-sm"
+                    >
+                      <p className="text-xs font-semibold text-zinc-950 mb-0.5">{label}</p>
+                      <p className="text-[11px] text-zinc-400 leading-snug">{desc}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -418,25 +522,16 @@ export default function UploadPage() {
               <p className="text-sm text-zinc-500 mb-8">
                 Uploading your script now. Your review will be delivered within 24 hours.
               </p>
-
               <div className="space-y-3 text-left max-w-sm mx-auto">
                 {PROCESSING_STEPS.map((step, i) => (
                   <div
                     key={step}
                     className={`flex items-center gap-3 text-sm transition-all duration-300 ${
-                      i < processingStep
-                        ? "text-emerald-600"
-                        : i === processingStep
-                          ? "text-zinc-950"
-                          : "text-zinc-300"
+                      i < processingStep ? "text-emerald-600" : i === processingStep ? "text-zinc-950" : "text-zinc-300"
                     }`}
                   >
                     <span className="w-5 text-center">
-                      {i < processingStep
-                        ? "\u2713"
-                        : i === processingStep
-                          ? "\u25CF"
-                          : "\u25CB"}
+                      {i < processingStep ? "\u2713" : i === processingStep ? "\u25CF" : "\u25CB"}
                     </span>
                     {step}
                   </div>
