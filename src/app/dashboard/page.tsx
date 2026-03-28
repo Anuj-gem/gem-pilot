@@ -104,7 +104,11 @@ export default function DashboardPage() {
           user_id: "",
           status: "pending" as const,
           created_at: s.created_at,
-          filename: null,
+          filename: "",
+          file_size: 0,
+          error: null,
+          report_id: null,
+          completed_at: null,
           submission: s,
         }));
 
