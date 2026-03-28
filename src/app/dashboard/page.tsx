@@ -113,10 +113,10 @@ export default function DashboardPage() {
 
   const VERDICT_ORDER: Verdict[] = ["STRONG SIGNAL", "WORTH THE READ", "MIXED", "PASS"];
   const VERDICT_LABELS: Record<Verdict, string> = {
-    "STRONG SIGNAL": "Strong Signal",
-    "WORTH THE READ": "Worth the Read",
-    MIXED: "Mixed",
-    PASS: "Pass",
+    "STRONG SIGNAL": "GEM Select",
+    "WORTH THE READ": "On Our Radar",
+    MIXED: "Development Notes",
+    PASS: "Keep Writing",
   };
 
   return (
@@ -129,13 +129,13 @@ export default function DashboardPage() {
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-3xl font-semibold text-zinc-950">Your Scripts</h1>
+              <h1 className="text-3xl font-semibold text-zinc-950">My Scripts</h1>
               <p className="text-sm text-zinc-500 mt-1">
-                {totalItems} {totalItems === 1 ? "analysis" : "analyses"} to date
+                {totalItems} {totalItems === 1 ? "submission" : "submissions"} to date
               </p>
             </div>
             <Link href="/upload" className="gem-btn-primary">
-              Upload Script
+              Submit New Script
             </Link>
           </div>
 
@@ -181,10 +181,10 @@ export default function DashboardPage() {
                 No scripts yet
               </h2>
               <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">
-                Upload your first pilot script to get a full breakout analysis.
+                Submit your first pilot script to get detailed feedback — completely free.
               </p>
               <Link href="/upload" className="gem-btn-primary">
-                Upload Your First Script
+                Submit Your First Script
               </Link>
             </div>
           )}

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createMiddlewareClient } from "@/lib/supabase-middleware";
 
 // Routes that require authentication
-const PROTECTED_ROUTES = ["/dashboard", "/upload", "/report", "/billing"];
+const PROTECTED_ROUTES = ["/dashboard", "/upload", "/report"];
 
 // Routes that authenticated users should be redirected away from
 const AUTH_ROUTES = ["/auth/login", "/auth/signup"];
@@ -41,7 +41,6 @@ export const config = {
     "/dashboard/:path*",
     "/upload/:path*",
     "/report/:path*",
-    "/billing/:path*",
     "/auth/:path*",
   ],
 };

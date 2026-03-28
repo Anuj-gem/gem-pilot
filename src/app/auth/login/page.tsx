@@ -62,7 +62,7 @@ function LoginForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="gem-input"
-              placeholder="you@production.com"
+              placeholder="you@email.com"
               required
             />
           </div>
@@ -87,7 +87,7 @@ function LoginForm() {
         <p className="text-sm text-zinc-500 text-center mt-6">
           Don&apos;t have an account?{" "}
           <Link href="/auth/signup" className="text-emerald-700 font-medium hover:text-emerald-800">
-            Start free trial
+            Create free account
           </Link>
         </p>
       </div>

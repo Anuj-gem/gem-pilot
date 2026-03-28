@@ -23,25 +23,25 @@ export const DIMENSION_META: Record<
     label: "Audience Appeal & Marketability",
     shortLabel: "Market Appeal",
     description:
-      "Can you pitch it? Is it commercially viable across formats and audiences?",
+      "How wide is the potential audience? Could a buyer see where this fits in their lineup?",
   },
   tonal_specificity: {
     label: "Tonal Specificity",
     shortLabel: "Tone",
     description:
-      "Distinctiveness and control of the show's tonal fingerprint — the hardest quality to fake.",
+      "How distinctive and controlled is your show's voice? Tone is the hardest thing to fake.",
   },
   world_density_and_texture: {
     label: "World Density & Texture",
     shortLabel: "World",
     description:
-      "Is the world a story-generating machine? Does it feel lived-in and rich?",
+      "Does your world feel lived-in? Does it generate stories on its own?",
   },
   conceptual_hook_clarity: {
     label: "Conceptual Hook & Clarity",
     shortLabel: "Hook",
     description:
-      "Can you explain it in two sentences? Does the hook land in the pilot?",
+      "Can you explain your show in two sentences? Does the hook land in the pilot?",
   },
   resonant_originality: {
     label: "Resonant Originality",
@@ -53,31 +53,31 @@ export const DIMENSION_META: Record<
     label: "Relationship Density & Ensemble Engine",
     shortLabel: "Ensemble",
     description:
-      "Do the character relationships generate conflict automatically?",
+      "Do your character relationships generate conflict naturally? That's the engine of a series.",
   },
   character_appeal_and_long_term_potential: {
     label: "Character Appeal & Longevity",
     shortLabel: "Characters",
     description:
-      "Are the leads charismatic and durable? Can they sustain multiple seasons?",
+      "Are your leads compelling enough to carry multiple seasons? Do they have real contradictions?",
   },
   latent_depth_slow_burn_potential: {
     label: "Latent Depth & Slow-Burn Potential",
     shortLabel: "Depth",
     description:
-      "Is there more beneath the surface that will reveal itself over time?",
+      "Is there more beneath the surface? The best shows reveal new layers over time.",
   },
   creative_originality_and_boldness: {
     label: "Creative Originality & Boldness",
     shortLabel: "Boldness",
     description:
-      "How fresh is the voice or approach? Does it take genuine creative risks?",
+      "How fresh is your voice? Are you taking genuine creative risks that pay off?",
   },
   narrative_momentum_engagement: {
     label: "Narrative Momentum & Engagement",
     shortLabel: "Momentum",
     description:
-      "Does it move? Does it compel you to the next episode? Clear stakes and escalation?",
+      "Does it move? Does each scene build tension and pull us toward the next episode?",
   },
 };
 
@@ -89,32 +89,32 @@ export const VERDICT_META: Record<
   { label: string; colorClass: string; bgClass: string; description: string }
 > = {
   "STRONG SIGNAL": {
-    label: "Strong Signal",
+    label: "GEM Select",
     colorClass: "text-emerald-700",
     bgClass: "bg-emerald-50 border-emerald-200",
     description:
-      "Exceptional breakout potential. The DNA of transcendent television.",
+      "This script stands out. We want to talk to you about development.",
   },
   "WORTH THE READ": {
-    label: "Worth the Read",
+    label: "On Our Radar",
     colorClass: "text-amber-700",
     bgClass: "bg-amber-50 border-amber-200",
     description:
-      "Above-average signal. Worth a full read — real upside even if not all cylinders are firing.",
+      "Real strengths here. With targeted development, this could break through.",
   },
   MIXED: {
-    label: "Mixed",
+    label: "Development Notes",
     colorClass: "text-zinc-600",
     bgClass: "bg-zinc-100 border-zinc-300",
     description:
-      "Some dimensions show promise, others underperform. Significant revision needed.",
+      "Promising elements alongside clear gaps. Here's what to focus on next.",
   },
   PASS: {
-    label: "Pass",
+    label: "Keep Writing",
     colorClass: "text-zinc-500",
     bgClass: "bg-zinc-50 border-zinc-200",
     description:
-      "Does not meet the threshold on the dimensions most predictive of transcendence.",
+      "Not where it needs to be yet — but every great writer started somewhere. Here's your roadmap.",
   },
 };
 

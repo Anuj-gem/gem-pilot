@@ -9,36 +9,40 @@ import { DimensionBar } from "@/components/ui/facet-bar";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import type { GEMReport, Verdict, DimensionId } from "@/types";
 
-// ─── Producer-Facing Verdict Map ──────────────────────────────────────────────
-// Translates internal model tiers into producer-legible decision language.
+// ─── Writer-Facing Verdict Map ──────────────────────────────────────────────
+// Translates internal model tiers into constructive, writer-facing language.
 
-const PRODUCER_VERDICT: Record<
+const WRITER_VERDICT: Record<
   Verdict,
-  { label: string; color: string; borderColor: string; bg: string }
+  { label: string; color: string; borderColor: string; bg: string; encouragement: string }
 > = {
   "STRONG SIGNAL": {
-    label: "READ NOW",
+    label: "GEM SELECT",
     color: "#15803d",      // emerald-700
     borderColor: "#16a34a", // emerald-600
     bg: "#f0fdf4",          // emerald-50
+    encouragement: "This script stands out. Our development team has been notified.",
   },
   "WORTH THE READ": {
-    label: "WORTH A READ",
+    label: "ON OUR RADAR",
     color: "#b45309",      // amber-700
     borderColor: "#d97706", // amber-600
     bg: "#fffbeb",          // amber-50
+    encouragement: "There's real strength here. With focused development, this could break through.",
   },
   MIXED: {
-    label: "CONSIDER",
+    label: "DEVELOPMENT NOTES",
     color: "#52525b",      // zinc-600
     borderColor: "#d4d4d8", // zinc-300
     bg: "#fafafa",          // zinc-50
+    encouragement: "We see promising elements in your writing. Here's where to focus your next draft.",
   },
   PASS: {
-    label: "PASS",
+    label: "KEEP WRITING",
     color: "#71717a",      // zinc-500
     borderColor: "#e4e4e7", // zinc-200
     bg: "transparent",
+    encouragement: "This script isn't where it needs to be yet — but every draft teaches you something. Here's your roadmap forward.",
   },
 };
 
@@ -49,7 +53,7 @@ function dim(report: GEMReport, id: string): number {
 }
 
 // ─── Metadata Tags ────────────────────────────────────────────────────────────
-// 2-3 quick-read tags that frame the project for a producer at a glance.
+// 2-3 quick-read tags that frame the script for the writer at a glance.
 
 function deriveMetadataTags(report: GEMReport): string[] {
   const audience   = dim(report, "audience_appeal_marketability");
@@ -68,24 +72,24 @@ function deriveMetadataTags(report: GEMReport): string[] {
   else if (audience >= 6)   tags.push("Prestige / Targeted");
   else                      tags.push("Specialty / Niche");
 
-  // Packaging angle — most relevant single signal
-  if (character >= 7.5)                          tags.push("Talent-Driven");
-  else if (tonal >= 7.5 && originality >= 7)     tags.push("Creator-Led");
-  else if (world >= 7.5)                         tags.push("World-Building");
+  // Strongest creative signal
+  if (character >= 7.5)                          tags.push("Character-Driven");
+  else if (tonal >= 7.5 && originality >= 7)     tags.push("Voice-Driven");
+  else if (world >= 7.5)                         tags.push("World-Driven");
 
   // Notable qualifier — only surface if clearly meaningful
   if (depth >= 8)           tags.push("Slow-Burn Potential");
-  else if (hook < 5.5)      tags.push("Concept Risk");
-  else if (momentum < 5.5)  tags.push("Pacing Risk");
+  else if (hook < 5.5)      tags.push("Hook Needs Work");
+  else if (momentum < 5.5)  tags.push("Pacing Needs Work");
 
   return tags.slice(0, 3);
 }
 
 // ─── Script Quality Assessment ───────────────────────────────────────────────
-// A conversational read on the script's creative qualities, grounded in model
-// signals. Focused purely on what's on the page — no buyer or market language.
+// A conversational read on the script's creative qualities, written directly
+// to the writer. Constructive and specific.
 
-function deriveMarketPositioning(report: GEMReport): string {
+function deriveCreativeAssessment(report: GEMReport): string {
   const audience    = dim(report, "audience_appeal_marketability");
   const character   = dim(report, "character_appeal_and_long_term_potential");
   const tonal       = dim(report, "tonal_specificity");
@@ -99,38 +103,38 @@ function deriveMarketPositioning(report: GEMReport): string {
 
   // Concept / hook
   if (hook >= 8) {
-    sentences.push("The concept is sharply defined and immediately compelling — the premise lands with full clarity from the first read.");
+    sentences.push("Your concept is sharply defined and immediately compelling — the premise lands with full clarity from the first read.");
   } else if (hook >= 6.5) {
-    sentences.push("The concept is clear and workable, though it could land with more force if sharpened in its opening pages.");
+    sentences.push("Your concept is clear and workable. Consider sharpening the hook in your opening pages to make it land with even more force.");
   } else {
-    sentences.push("The conceptual hook needs the most attention — the core premise doesn't fully land on first read.");
+    sentences.push("The conceptual hook is the area that needs the most attention — we'd encourage you to clarify and sharpen your core premise so it lands on first read.");
   }
 
   // Character & world
   if (character >= 8 && world >= 8) {
     sentences.push("Both character and world feel fully realized — the script earns genuine investment in its people and its setting.");
   } else if (character >= 7.5 && ensemble >= 7) {
-    sentences.push("Character is the clear asset — the lead and ensemble are drawn with real specificity and long-run potential.");
+    sentences.push("Character is your clear strength — the lead and ensemble are drawn with real specificity and long-run potential.");
   } else if (world >= 8) {
-    sentences.push("The world is richly built and generates story naturally — the setting carries significant weight on its own.");
+    sentences.push("Your world-building is a standout — the setting feels richly textured and generates story naturally.");
   } else if (character < 6) {
-    sentences.push("Character development is the primary limiting factor — strengthening specificity here would have an outsized impact.");
+    sentences.push("Character depth is the area with the most room to grow — deepening your characters' contradictions and specificity would have the biggest impact on the read.");
   }
 
   // Tone & originality
   if (tonal >= 7.5 && originality >= 7.5) {
-    sentences.push("A distinctive tonal voice and genuine creative originality give the material a memorable and differentiated identity.");
+    sentences.push("You have a distinctive voice and genuine creative originality — that combination gives your writing a memorable identity.");
   } else if (tonal >= 7) {
-    sentences.push("Tone is managed consistently and gives the material a clear, recognizable register throughout.");
+    sentences.push("Your tonal control is solid — the script has a consistent, recognizable register throughout.");
   } else if (originality >= 8) {
-    sentences.push("There's real creative boldness here — the script takes risks that pay off.");
+    sentences.push("There's real creative boldness here — you're taking risks that pay off, and that's exactly what makes writing stand out.");
   } else if (tonal < 6) {
-    sentences.push("Tonal inconsistency is a drag on the read — the material would benefit from a more decisive commitment to its register.");
+    sentences.push("We'd encourage you to commit more decisively to your show's tone — the material would benefit from a clearer, more consistent register.");
   }
 
   // Depth & breadth of appeal
   if (depth >= 8.5) {
-    sentences.push("Latent thematic depth gives this strong long-term resonance potential well beyond the pilot.");
+    sentences.push("The latent thematic depth here gives your script strong long-term resonance potential well beyond the pilot.");
   } else if (audience >= 8 && character >= 7.5) {
     sentences.push("The combination of broad appeal and strong characters suggests real staying power across multiple seasons.");
   }
@@ -138,10 +142,10 @@ function deriveMarketPositioning(report: GEMReport): string {
   return sentences.join(" ");
 }
 
-// ─── Upside Bullets ───────────────────────────────────────────────────────────
-// Always 3. Uses explicit strengths first, then falls back to highest-scoring dims.
+// ─── Strength Bullets ───────────────────────────────────────────────────────
+// Always 3. What's working in the script — lead with the positive.
 
-function getUpsideBullets(
+function getStrengthBullets(
   report: GEMReport,
 ): { title: string; note: string }[] {
   const result: { title: string; note: string }[] = [];
@@ -153,7 +157,6 @@ function getUpsideBullets(
     report.highlights.bullets.length >= 3
   ) {
     return report.highlights.bullets.slice(0, 3).map((b) => {
-      // Parse "Dimension Name: explanation text" into title + note
       const colonIdx = b.indexOf(": ");
       if (colonIdx > 0 && colonIdx < 60) {
         return { title: b.slice(0, colonIdx), note: b.slice(colonIdx + 2) };
@@ -184,11 +187,10 @@ function getUpsideBullets(
   return result.slice(0, 3);
 }
 
-// ─── Risk Bullets ─────────────────────────────────────────────────────────────
-// Always 3 real-world friction points. Only surfaces genuine gaps — never
-// mis-frames a strong dimension as a risk just to fill a slot.
+// ─── Growth Area Bullets ─────────────────────────────────────────────────────
+// Always 3 constructive areas for development. Framed as opportunities, not failures.
 
-function getRiskBullets(
+function getGrowthBullets(
   report: GEMReport,
 ): { title: string; note: string }[] {
   const result: { title: string; note: string }[] = [];
@@ -223,18 +225,7 @@ function getRiskBullets(
     }
   }
 
-  // 4. Extract risk clause from the model's one_line verdict (e.g. "but risks X")
-  if (result.length < 3) {
-    const oneLine = report.verdict?.one_line ?? "";
-    const riskMatch = oneLine.match(/\bbut\b([^.]+)\./i);
-    if (riskMatch) {
-      const clause = riskMatch[1].trim();
-      const note = clause.charAt(0).toUpperCase() + clause.slice(1) + ".";
-      result.push({ title: "Market Watchout", note });
-    }
-  }
-
-  // 5. Script-signal-based watchouts (audience ceiling, hook risk, pacing)
+  // 4. Script-signal-based growth areas
   if (result.length < 3) {
     const audience    = dim(report, "audience_appeal_marketability");
     const hook        = dim(report, "conceptual_hook_clarity");
@@ -243,23 +234,23 @@ function getRiskBullets(
 
     const candidates: { title: string; note: string; threshold: boolean }[] = [
       {
-        title: "Audience Ceiling",
-        note: "Buyer pool may be narrower than comparable breakout scripts — commercial packaging and targeting will be critical.",
+        title: "Audience Reach",
+        note: "Consider whether there are ways to broaden your script's appeal without compromising your creative vision.",
         threshold: audience < 7.5,
       },
       {
-        title: "Pitch Clarity",
-        note: "The concept hook may need sharper articulation to land efficiently in a pitch room or one-sheet format.",
+        title: "Hook Clarity",
+        note: "Your concept hook could land more sharply — try articulating your show's premise in two sentences and let that clarity guide your opening pages.",
         threshold: hook < 7,
       },
       {
-        title: "Pacing Risk",
-        note: "Act structure and stakes escalation may benefit from development attention before going wide.",
+        title: "Pacing & Momentum",
+        note: "The script's momentum could be tightened — look at your act structure and consider escalating stakes earlier.",
         threshold: momentum < 7,
       },
       {
-        title: "Crowded Lane",
-        note: "Comp positioning could be challenging — similar projects in the market may create competitive friction.",
+        title: "Distinctive Voice",
+        note: "Finding a more distinctive angle or voice would help your script stand apart from similar projects in the market.",
         threshold: originality < 7,
       },
     ];
@@ -269,19 +260,19 @@ function getRiskBullets(
     }
   }
 
-  // 6. Tier-aware generic watchouts for strong scripts with no flagged gaps
+  // 5. Tier-aware guidance for scripts with no flagged gaps
   if (result.length < 3) {
     const tier = report.verdict?.label;
     const generic: { title: string; note: string }[] = tier === "PASS" || tier === "MIXED"
       ? [
-          { title: "Concept Fundamentals", note: "Core issues would require meaningful revision before this is competitive in a pitch context." },
-          { title: "Market Fit", note: "Limited commercial positioning in the current version — development strategy should address this early." },
-          { title: "Competitive Context", note: "Read against similar projects currently in development to calibrate differentiation and buyer fit." },
+          { title: "Core Concept", note: "Your premise would benefit from a fundamental rethink — ask yourself what makes this show uniquely yours, and build from there." },
+          { title: "Market Readiness", note: "Before submitting widely, consider how your script positions against what's currently being bought and what's missing from the market." },
+          { title: "Fresh Perspective", note: "Try reading your script as if you've never seen it before. What questions does it leave unanswered? What would make you turn to page two?" },
         ]
       : [
-          { title: "Development Stage", note: "Evaluate whether the script is ready for a wide pitch or benefits from focused development before broader exposure." },
-          { title: "Buyer Timing", note: "Market timing and current buyer mandates will determine whether this lands in the right room at the right moment." },
-          { title: "Competitive Context", note: "Read against similar projects in development at target buyers to assess differentiation and positioning." },
+          { title: "Polish Pass", note: "Your script is strong — a focused polish pass on your weakest dimension could be the difference between good and undeniable." },
+          { title: "Market Timing", note: "Consider the current landscape and whether your script fills a gap that buyers are actively looking to fill." },
+          { title: "Competitive Positioning", note: "Read widely in your genre to make sure your script is differentiated enough to stand out in a crowded field." },
         ];
     for (const w of generic) {
       if (result.length >= 3) break;
@@ -292,11 +283,10 @@ function getRiskBullets(
   return result.slice(0, 3);
 }
 
-// ─── Development Note ─────────────────────────────────────────────────────────
-// What the script most needs, grounded in model signals. Focused on creative
-// and craft priorities — not packaging or talent attachment.
+// ─── Next Steps Note ─────────────────────────────────────────────────────────
+// The single most impactful thing the writer could do next.
 
-function derivePackagingNote(report: GEMReport): string {
+function deriveNextSteps(report: GEMReport): string {
   const depth      = dim(report, "latent_depth_slow_burn_potential");
   const ensemble   = dim(report, "relationship_density_and_ensemble_engine");
   const originality = dim(report, "creative_originality_and_boldness");
@@ -309,47 +299,47 @@ function derivePackagingNote(report: GEMReport): string {
   if (biggestGap) {
     const gapNotes: Record<string, string> = {
       conceptual_hook_clarity:
-        "Sharpening the concept hook in the opening pages would have the highest single impact on first-read traction.",
+        "Your highest-leverage move: sharpen the concept hook in the opening pages. Make your premise impossible to misunderstand.",
       audience_appeal_marketability:
-        "Strengthening the commercial hook — without compromising the creative vision — would broaden the script's reach.",
+        "Consider how to broaden your script's commercial appeal without losing what makes it yours. That balance is your next challenge.",
       character_appeal_and_long_term_potential:
-        "Deepening character contradictions and long-term arc potential would meaningfully raise the script's ceiling.",
+        "Deepen your lead character's contradictions and long-term arc potential — that's what separates good scripts from great ones.",
       narrative_momentum_engagement:
-        "Tightening act structure and escalating stakes earlier would materially improve the read-through experience.",
+        "Focus on tightening your act structure and escalating stakes earlier. The read should feel propulsive from page one.",
       tonal_specificity:
-        "Committing more decisively to a specific tone would give the material a clearer and more consistent register.",
+        "Commit more decisively to your show's specific tone. When you find your register and hold it, everything else comes into focus.",
       world_density_and_texture:
-        "Further developing the world's implicit story-generating machinery would strengthen the multi-season case.",
+        "Build out your world's implicit story-generating machinery — the details and systems that make audiences feel like they've been dropped into a real place.",
       relationship_density_and_ensemble_engine:
-        "Sharpening ensemble dynamics and relationship conflicts would add significant story-engine value.",
+        "Sharpen your ensemble dynamics — when character relationships generate conflict on their own, you've built a real engine for the series.",
       resonant_originality:
-        "Finding a more distinctive angle or voice would help the script stand out on its own terms.",
+        "Push harder to find what's uniquely yours in this material. The best scripts feel both surprising and inevitable.",
       creative_originality_and_boldness:
-        "Leaning harder into creative risk-taking would elevate the script's distinctiveness and long-term memorability.",
+        "Lean harder into your creative instincts — the script would benefit from bolder choices and more genuine risk-taking.",
       latent_depth_slow_burn_potential:
-        "Seeding more latent thematic depth would strengthen the slow-burn and long-term engagement case.",
+        "Seed more layers beneath the surface. The scripts that endure are the ones that keep revealing new depth on repeat viewings.",
     };
     return gapNotes[biggestGap.dimension]
-      ?? `Improving ${biggestGap.display_name} is the highest-leverage development priority at this stage.`;
+      ?? `Improving ${biggestGap.display_name} is your highest-leverage priority for the next draft.`;
   }
 
   // No significant gaps — point to the most productive refinement direction
   if (depth < 7.5) {
-    return "Seeding more latent thematic depth would strengthen the slow-burn and long-term engagement potential.";
+    return "Your script is in good shape. To push it further, seed more latent thematic depth — the kind that rewards audiences who come back.";
   }
   if (ensemble < 7) {
-    return "Sharpening ensemble dynamics and relationship texture would add meaningful story-engine value.";
+    return "Strong foundation. To elevate it, sharpen your ensemble dynamics — the relationships between characters should generate conflict automatically.";
   }
   if (originality < 7.5) {
-    return "Leaning harder into the script's more distinctive elements would elevate its creative boldness and memorability.";
+    return "You're close. The next step is to lean harder into what makes this material distinctly yours — that's what makes a script unforgettable.";
   }
 
   // Strong script with no clear gaps
   const weakest = [...report.dimensions].sort((a, b) => a.vs_winner_avg - b.vs_winner_avg)[0];
-  return `Development energy is best spent preserving what works while pushing ${weakest.display_name.toLowerCase()} further — that's the highest-leverage refinement at this stage.`;
+  return `This is strong work. If you're looking for where to push further, ${weakest.display_name.toLowerCase()} is the one area with the most room to grow — but you're already well above average.`;
 }
 
-// ─── Dimension Grouping for Analytics Appendix ────────────────────────────────
+// ─── Dimension Grouping for Deep Dive ────────────────────────────────────
 
 const DIMENSION_GROUPS: Record<string, string[]> = {
   "Concept & Voice": [
@@ -380,17 +370,17 @@ function vsWinnerLabel(gap: number): string {
   return "Significantly below benchmark";
 }
 
-// ─── PDF Generation — Producer Memo Format ───────────────────────────────────
+// ─── PDF Generation — Writer Feedback Format ───────────────────────────────
 
 function generatePDF(
   report: GEMReport,
   title: string,
-  producerVerdict: string,
+  writerVerdict: string,
   metadataTags: string[],
-  marketPositioning: string,
-  upsideBullets: { title: string; note: string }[],
-  riskBullets: { title: string; note: string }[],
-  packagingNote: string,
+  creativeAssessment: string,
+  strengthBullets: { title: string; note: string }[],
+  growthBullets: { title: string; note: string }[],
+  nextSteps: string,
 ) {
   const v = report.verdict;
   const win = window.open("", "_blank", "width=800,height=1100");
@@ -404,7 +394,7 @@ function generatePDF(
     bullets
       .map(
         (b) => `<div class="bullet">
-          <span class="bullet-arrow" style="color:${color}">→</span>
+          <span class="bullet-arrow" style="color:${color}">\u2192</span>
           <div>${b.title ? `<strong>${b.title}.</strong> ` : ""}${b.note}</div>
         </div>`,
       )
@@ -414,7 +404,7 @@ function generatePDF(
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>GEM — ${title}</title>
+<title>GEM Feedback \u2014 ${title}</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:#111; background:#fff; font-size:12px; line-height:1.6; }
@@ -460,44 +450,44 @@ function generatePDF(
 <body>
 <div class="page">
 
-  <p class="eyebrow">GEM Script Evaluation</p>
+  <p class="eyebrow">GEM Script Feedback</p>
   <div class="score-row">
     <h1>${title}</h1>
     <span class="score-num">${v.weighted_score.toFixed(1)} / 100</span>
   </div>
-  <p class="meta">${new Date(report.generated_at).toLocaleDateString("en-US", { year:"numeric", month:"long", day:"numeric" })} · ${report.engine_version}</p>
+  <p class="meta">${new Date(report.generated_at).toLocaleDateString("en-US", { year:"numeric", month:"long", day:"numeric" })} \xb7 ${report.engine_version}</p>
 
   <div class="verdict-block">
-    <div class="verdict-label">${producerVerdict}</div>
+    <div class="verdict-label">${writerVerdict}</div>
     <p class="verdict-one-line">${v.one_line}</p>
     <div class="tags">${tagHTML}</div>
   </div>
 
   <div class="section">
-    <p class="section-label">The Analysis</p>
+    <p class="section-label">Our Read</p>
     <p>${report.producer_takeaway.replace(/\.\s*Outscores?\s+\d+%[^.]*\./gi, ".").replace(/\s+/g, " ").trim()}</p>
-    <p style="margin-top:8px">${marketPositioning}</p>
+    <p style="margin-top:8px">${creativeAssessment}</p>
   </div>
 
   <div class="two-col section" style="border-top:1px solid #eee; padding-top:16px;">
     <div>
-      <p class="section-label" style="color:#1a7a45">Why It Could Sell</p>
-      ${bulletHTML(upsideBullets, "#1a7a45")}
+      <p class="section-label" style="color:#1a7a45">What\u2019s Working</p>
+      ${bulletHTML(strengthBullets, "#1a7a45")}
     </div>
     <div>
-      <p class="section-label" style="color:#b22222">What May Hold It Back</p>
-      ${bulletHTML(riskBullets, "#b22222")}
+      <p class="section-label" style="color:#b45309">Where to Focus Next</p>
+      ${bulletHTML(growthBullets, "#b45309")}
     </div>
   </div>
 
   <div class="section">
-    <p class="section-label">What Would Unlock This</p>
-    <p>${packagingNote}</p>
+    <p class="section-label">Your Next Step</p>
+    <p>${nextSteps}</p>
   </div>
 
   <div class="footer">
-    <span>GEM — Greenlight Evaluation Model</span>
-    <span>${report.engine_version} · ${new Date(report.generated_at).toLocaleDateString()}</span>
+    <span>GEM \u2014 Greenlight Evaluation Model</span>
+    <span>${report.engine_version} \xb7 ${new Date(report.generated_at).toLocaleDateString()}</span>
   </div>
 
 </div>
@@ -517,7 +507,7 @@ export default function ReportPage() {
   const [report, setReport]           = useState<GEMReport | null>(null);
   const [loading, setLoading]         = useState(true);
   const [error, setError]             = useState<string | null>(null);
-  const [analyticsOpen, setAnalyticsOpen] = useState(false);
+  const [deepDiveOpen, setDeepDiveOpen] = useState(false);
   const [showIds, setShowIds]         = useState<string[]>([]);
 
   useEffect(() => {
@@ -554,19 +544,19 @@ export default function ReportPage() {
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-zinc-50">
         <p className="text-zinc-500">{error || "Report not found"}</p>
         <button onClick={() => router.push("/dashboard")} className="gem-btn-secondary text-sm">
-          Back to Dashboard
+          Back to My Scripts
         </button>
       </div>
     );
 
   // ── Derived values ──────────────────────────────────────────────────────────
   const v              = report.verdict;
-  const verdictInfo    = PRODUCER_VERDICT[v.label];
+  const verdictInfo    = WRITER_VERDICT[v.label];
   const metadataTags   = deriveMetadataTags(report);
-  const marketPosition = deriveMarketPositioning(report);
-  const upsideBullets  = getUpsideBullets(report);
-  const riskBullets    = getRiskBullets(report);
-  const packagingNote  = derivePackagingNote(report);
+  const creativeAssessment = deriveCreativeAssessment(report);
+  const strengthBullets  = getStrengthBullets(report);
+  const growthBullets    = getGrowthBullets(report);
+  const nextSteps        = deriveNextSteps(report);
 
   const title = showId
     .replace(/[-_]/g, " ")
@@ -595,7 +585,7 @@ export default function ReportPage() {
               className="flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
             >
               <ArrowLeft size={15} />
-              Dashboard
+              My Scripts
             </button>
 
             {showIds.length > 1 && (
@@ -625,7 +615,7 @@ export default function ReportPage() {
             {title}
           </h1>
           <p className="text-xs text-zinc-400 mt-1 font-mono uppercase tracking-wider">
-            GEM Script Evaluation &middot;{" "}
+            GEM Script Feedback &middot;{" "}
             {new Date(report.generated_at).toLocaleDateString()}
           </p>
         </div>
@@ -644,7 +634,7 @@ export default function ReportPage() {
           }}
         >
           <div className="p-6 md:p-8">
-            {/* Producer verdict label + score */}
+            {/* Writer verdict label + score */}
             <div className="flex items-start justify-between gap-4 mb-3">
               <div
                 className="text-3xl md:text-4xl font-bold tracking-tight leading-none"
@@ -659,6 +649,11 @@ export default function ReportPage() {
                 <div className="text-[10px] font-mono text-zinc-400">/ 100</div>
               </div>
             </div>
+
+            {/* Encouragement line */}
+            <p className="text-base text-zinc-700 leading-relaxed mb-3">
+              {verdictInfo.encouragement}
+            </p>
 
             {/* One-line summary */}
             <p className="text-base text-zinc-950 leading-relaxed mb-4">
@@ -680,31 +675,30 @@ export default function ReportPage() {
           </div>
         </section>
 
-        {/* ── 2. The Analysis ──────────────────────────────────────────────── */}
+        {/* ── 2. Our Read ──────────────────────────────────────────────── */}
         <section className="mb-8 pb-8 border-b border-zinc-200">
           <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-3">
-            The Analysis
+            Our Read
           </p>
           <p className="text-sm text-zinc-600 leading-relaxed mb-3">
             {report.producer_takeaway.replace(/\.\s*Outscores?\s+\d+%[^.]*\./gi, ".").replace(/\s+/g, " ").trim()}
           </p>
           <p className="text-sm text-zinc-600 leading-relaxed">
-            {marketPosition}
+            {creativeAssessment}
           </p>
         </section>
 
-        {/* ── 4. Why It Could Sell / What May Hold It Back ─────────────────── */}
+        {/* ── 3. What's Working / Where to Focus Next ─────────────────── */}
         <section className="mb-8 pb-8 border-b border-zinc-200">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            {/* Upside */}
+            {/* Strengths */}
             <div>
               <p className="text-[10px] font-mono font-bold tracking-widest text-emerald-700 uppercase mb-4">
-                Why It Could Sell
+                What&apos;s Working
               </p>
               <div className="space-y-4">
-                {upsideBullets.map((b, i) => {
-                  // Normalize: if no title, try to parse "Title: note" from the note text
+                {strengthBullets.map((b, i) => {
                   let title = b.title;
                   let note = b.note;
                   if (!title) {
@@ -716,7 +710,7 @@ export default function ReportPage() {
                   }
                   return (
                     <div key={i} className="flex gap-3">
-                      <span className="text-emerald-600 mt-0.5 shrink-0 text-sm">→</span>
+                      <span className="text-emerald-600 mt-0.5 shrink-0 text-sm">&rarr;</span>
                       <p className="text-sm text-zinc-600 leading-relaxed">
                         {title && <span className="font-semibold text-zinc-950">{title}. </span>}
                         {note}
@@ -727,13 +721,13 @@ export default function ReportPage() {
               </div>
             </div>
 
-            {/* Risk */}
+            {/* Growth areas */}
             <div>
-              <p className="text-[10px] font-mono font-bold tracking-widest text-red-600 uppercase mb-4">
-                What May Hold It Back
+              <p className="text-[10px] font-mono font-bold tracking-widest text-amber-700 uppercase mb-4">
+                Where to Focus Next
               </p>
               <div className="space-y-4">
-                {riskBullets.map((b, i) => {
+                {growthBullets.map((b, i) => {
                   let title = b.title;
                   let note = b.note;
                   if (!title) {
@@ -745,7 +739,7 @@ export default function ReportPage() {
                   }
                   return (
                     <div key={i} className="flex gap-3">
-                      <span className="text-red-500 mt-0.5 shrink-0 text-sm">→</span>
+                      <span className="text-amber-600 mt-0.5 shrink-0 text-sm">&rarr;</span>
                       <p className="text-sm text-zinc-600 leading-relaxed">
                         {title && <span className="font-semibold text-zinc-950">{title}. </span>}
                         {note}
@@ -759,39 +753,39 @@ export default function ReportPage() {
           </div>
         </section>
 
-        {/* ── 5. What Would Unlock This ────────────────────────────────────── */}
+        {/* ── 4. Your Next Step ────────────────────────────────────────── */}
         <section className="mb-10 pb-8 border-b border-zinc-200">
           <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-3">
-            What Would Unlock This
+            Your Next Step
           </p>
           <p className="text-sm text-zinc-600 leading-relaxed">
-            {packagingNote}
+            {nextSteps}
           </p>
         </section>
 
-        {/* ── 6. Analytics Appendix ────────────────────────────────────────── */}
+        {/* ── 5. Deep Dive — Dimension Breakdown ────────────────────────── */}
         <section className="mb-8">
           <button
-            onClick={() => setAnalyticsOpen(!analyticsOpen)}
+            onClick={() => setDeepDiveOpen(!deepDiveOpen)}
             className="w-full flex items-center justify-between gem-card p-4 hover:border-zinc-300 hover:shadow-sm transition-all group"
           >
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">
-                Deep Analytics
+                Deep Dive
               </span>
               <span className="text-xs font-mono text-zinc-400">
                 10 dimensions &nbsp;&middot;&nbsp;
                 <span className="text-emerald-600">{dimAbove} at/above benchmark</span>
                 &nbsp;&middot;&nbsp;
-                <span className="text-red-500">{dimBelow} significantly below</span>
+                <span className="text-amber-600">{dimBelow} need attention</span>
               </span>
             </div>
             <span className="text-zinc-400 group-hover:text-zinc-700 transition-colors">
-              {analyticsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              {deepDiveOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </span>
           </button>
 
-          {analyticsOpen && (
+          {deepDiveOpen && (
             <div className="mt-3 space-y-3">
               {Object.entries(DIMENSION_GROUPS).map(([groupName, dimIds]) => {
                 const groupDims = dimIds
@@ -817,7 +811,7 @@ export default function ReportPage() {
                           avgGap >= 0.5
                             ? "text-emerald-600"
                             : avgGap <= -1
-                            ? "text-red-500"
+                            ? "text-amber-600"
                             : "text-zinc-400"
                         }`}
                       >
@@ -856,16 +850,16 @@ export default function ReportPage() {
                 title,
                 verdictInfo.label,
                 metadataTags,
-                marketPosition,
-                upsideBullets,
-                riskBullets,
-                packagingNote,
+                creativeAssessment,
+                strengthBullets,
+                growthBullets,
+                nextSteps,
               )
             }
             className="gem-btn-primary text-sm flex items-center gap-2"
           >
             <FileText size={14} />
-            Download Producer Memo
+            Download Feedback Report
           </button>
 
           {showIds.length > 1 && (

@@ -36,7 +36,7 @@ export default function SignupPage() {
         return;
       }
 
-      // Go straight to the upload page — let them use their 2 free evals
+      // Go straight to the upload page
       router.push("/upload");
       router.refresh();
     } catch (err: unknown) {
@@ -54,10 +54,10 @@ export default function SignupPage() {
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
             <h1 className="text-2xl font-semibold text-zinc-950 mb-2">
-              Start evaluating scripts
+              Submit your script to GEM
             </h1>
             <p className="text-sm text-zinc-500">
-              2 free evaluations included. No credit card required.
+              Get detailed feedback on your writing — completely free.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="gem-input"
-                placeholder="you@production.com"
+                placeholder="you@email.com"
                 required
               />
             </div>

@@ -31,40 +31,9 @@ export async function requireAuth() {
 /**
  * Validates auth AND checks the user can run an evaluation.
  *
- * Rules:
- *  - Active subscribers → always allowed
- *  - Free users → allowed if evals_used < 2
- *  - Anyone else (canceled, past_due, exceeded free tier) → 402 with paywall flag
+ * GEM is now free for all writers — no paywall, no limits.
+ * This function exists for forward compatibility (e.g. rate limiting).
  */
 export async function requireSubscription() {
-  const result = await requireAuth();
-  if (result.error) return result;
-
-  const { profile } = result;
-  const status = profile?.subscription_status ?? "free";
-  const evalsUsed = profile?.evals_used ?? 0;
-
-  // Active paid subscriber — always allowed
-  if (status === "active") {
-    return result;
-  }
-
-  // Free tier — allow up to 2 evaluations
-  if (status === "free" && evalsUsed < 2) {
-    return result;
-  }
-
-  // Everything else: free tier exhausted, canceled, past_due, etc.
-  return {
-    ...result,
-    error: NextResponse.json(
-      {
-        error: "Free evaluations used. Subscribe to continue.",
-        code: "SUBSCRIPTION_REQUIRED",
-        evals_used: evalsUsed,
-        subscription_status: status,
-      },
-      { status: 402 },
-    ),
-  };
+  return requireAuth();
 }

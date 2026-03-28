@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "GEM — Greenlight Evaluation Model",
-  description: "AI-powered script analysis for producers. Upload a script, get a structured first-read report on its breakout potential.",
+  description: "Submit your script and get detailed AI-powered feedback across 10 dimensions. Free for every writer. GEM is looking for the best undiscovered scripts in the world.",
 };
 
 export default function RootLayout({

@@ -5,16 +5,15 @@ import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
-import { PaywallModal } from "@/components/ui/paywall-modal";
 
 type Phase = "upload" | "processing" | "done";
 
 const PROCESSING_STEPS = [
-  "Uploading script...",
+  "Uploading your script...",
   "Extracting text from PDF...",
   "Scoring across 10 dimensions...",
-  "Computing percentile rank...",
-  "Generating producer report...",
+  "Comparing against benchmark shows...",
+  "Generating your feedback report...",
 ];
 
 function slugify(s: string): string {
@@ -36,7 +35,6 @@ export default function UploadPage() {
   const [scriptTitle, setScriptTitle] = useState("");
   const [processingStep, setProcessingStep] = useState(0);
   const [error, setError] = useState("");
-  const [showPaywall, setShowPaywall] = useState(false);
 
   const handleFile = useCallback((file: File) => {
     setError("");
@@ -90,11 +88,6 @@ export default function UploadPage() {
 
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
-        if (res.status === 402 || errData.code === "SUBSCRIPTION_REQUIRED") {
-          setPhase("upload");
-          setShowPaywall(true);
-          return;
-        }
         throw new Error(errData.error || "Upload failed");
       }
 
@@ -141,7 +134,6 @@ export default function UploadPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
-      {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} />}
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center py-16 px-6">
@@ -149,10 +141,10 @@ export default function UploadPage() {
           {phase === "upload" && (
             <div className="animate-fade-in">
               <h1 className="text-3xl font-semibold text-zinc-950 text-center mb-2">
-                Upload a script
+                Submit your script
               </h1>
               <p className="text-sm text-zinc-500 text-center mb-2">
-                Drop a pilot script and we&apos;ll evaluate its breakout potential in minutes.
+                Upload your pilot script and get detailed feedback in minutes — completely free.
               </p>
               <p className="text-xs text-zinc-400 text-center mb-8">
                 GEM is calibrated for <span className="font-medium text-zinc-500">TV pilots and series scripts</span>. Feature film scripts are not currently supported.
@@ -160,20 +152,11 @@ export default function UploadPage() {
 
               {error && (
                 <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-2xl px-4 py-3 mb-4">
-                  <p className="font-semibold mb-1">Analysis failed</p>
+                  <p className="font-semibold mb-1">Something went wrong</p>
                   <p>{error}</p>
                   {error.toLowerCase().includes("rate limit") && (
                     <p className="mt-2 text-zinc-500">
-                      Add billing credits at{" "}
-                      <a
-                        href="https://platform.openai.com/settings/billing"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline text-emerald-700"
-                      >
-                        platform.openai.com/settings/billing
-                      </a>{" "}
-                      then try again.
+                      We&apos;re experiencing high demand. Please try again in a few minutes.
                     </p>
                   )}
                 </div>
@@ -252,7 +235,7 @@ export default function UploadPage() {
                     className="gem-input"
                   />
                   <p className="text-xs text-zinc-400 mt-1.5">
-                    Used as the report title — edit if the filename isn&apos;t the show name.
+                    This will be the title on your feedback report.
                   </p>
                 </div>
               )}
@@ -262,15 +245,15 @@ export default function UploadPage() {
                 disabled={!selectedFile || !scriptTitle.trim()}
                 className="gem-btn-primary w-full mt-6"
               >
-                Analyze Script
+                Submit for Feedback
               </button>
 
-              {/* What the producer will get */}
+              {/* What the writer will get */}
               <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                 {[
-                  { label: "Verdict", desc: "Strong Signal → Pass tier" },
-                  { label: "10 dimensions", desc: "Scored vs. winner avg" },
-                  { label: "Producer read", desc: "Takeaway + key risks" },
+                  { label: "Full report", desc: "Strengths + areas to develop" },
+                  { label: "10 dimensions", desc: "Scored against top shows" },
+                  { label: "Next steps", desc: "Clear guidance on what to focus on" },
                 ].map(({ label, desc }) => (
                   <div
                     key={label}
@@ -294,7 +277,7 @@ export default function UploadPage() {
                 <LoadingSpinner size={48} />
               </div>
               <h2 className="text-2xl font-semibold text-zinc-950 mb-2">
-                Analyzing your script
+                Reading your script
               </h2>
               <p className="text-sm text-zinc-500 mb-8">
                 This typically takes 30&ndash;90 seconds. Scanned PDFs may take longer.
@@ -314,10 +297,10 @@ export default function UploadPage() {
                   >
                     <span className="w-5 text-center">
                       {i < processingStep
-                        ? "✓"
+                        ? "\u2713"
                         : i === processingStep
-                          ? "●"
-                          : "○"}
+                          ? "\u25CF"
+                          : "\u25CB"}
                     </span>
                     {step}
                   </div>

@@ -2,15 +2,30 @@
 
 ## Product Context
 
-GEM is a script evaluation tool built for **professional TV series producers**. The core user is someone actively managing a reading pipeline — receiving scripts from agents, writers, and reps, and needing to prioritize which ones are worth their time before committing to a full read. They are experienced, time-constrained, and have high standards. The app should feel like a trusted analyst's desk, not a consumer product.
+GEM is a writer-facing script submission and feedback platform, powered by AI. Writers submit their TV pilot scripts and receive detailed, constructive feedback across 10 dimensions — the same framework used by top development teams. The service is **completely free** for all writers.
 
-**Primary job the product does:** Give a producer a fast, credible, structured signal on whether a pilot script has breakout potential — before they commit hours to reading it.
+GEM is positioning as a **production company** that uses AI to discover undiscovered writing talent at scale. The best scripts that come through the pipeline get flagged for human review by the development team, with the goal of finding projects to develop and produce.
+
+**Primary job the product does:** Give every writer honest, detailed, constructive feedback on their pilot script — and surface the best undiscovered material for development.
 
 **Key user behaviors to design for:**
-- Uploading multiple scripts in batches and scanning verdicts quickly
-- Returning to compare past reads across a slate
-- Sharing or printing a report to discuss with a development team
-- Trusting the model's read enough to act on it (prioritize, pass, or flag for closer look)
+- Submitting a script and receiving feedback within minutes
+- Understanding what's working and what needs development
+- Resubmitting improved drafts over time
+- (Top tier) Being contacted by GEM's development team
+
+**Writer-facing verdict tiers:**
+- **GEM Select** — Script stands out. Development team notified.
+- **On Our Radar** — Real strengths. With development, could break through.
+- **Development Notes** — Promising elements alongside clear gaps.
+- **Keep Writing** — Not there yet, but here's the roadmap forward.
+
+**Tone principles for feedback:**
+- Always lead with what's working
+- Frame gaps as distance from the bar, not failures
+- Be constructive and specific, never dismissive
+- "Not a fit for what we're looking for right now" rather than "this is bad"
+- Writers should leave feeling they got something valuable, regardless of score
 
 ## Model Architecture
 
@@ -35,19 +50,8 @@ The scoring engine (`autoresearch/`) is a separate concern from the web app (`ge
 - Creative Originality & Boldness
 - Narrative Momentum & Engagement
 
-**Verdict tiers:** STRONG SIGNAL → WORTH THE READ → MIXED → PASS
-
-**Key report fields used in the UI:**
-- `verdict.label` — top-level tier
-- `verdict.weighted_score` — 0–100 composite
-- `verdict.percentile` — corpus ranking
-- `verdict.one_line` — GEM's one-sentence read
-- `confidence` — HIGH / MEDIUM / LOW
-- `read_recommendation` — e.g. "Not a priority read", "Worth your time"
-- `opportunity_type` — e.g. "Strong sample, uneven execution"
-- `strengths[]` / `risks[]` — top dimensions working / holding it back
-- `producer_takeaway` — full analytical paragraph
-- `dimensions[]` — all 10 with score, winner_avg, vs_winner_avg, reasoning
+**Internal verdict tiers (from engine):** STRONG SIGNAL → WORTH THE READ → MIXED → PASS
+**Writer-facing labels:** GEM Select → On Our Radar → Development Notes → Keep Writing
 
 ## Tech Stack
 
@@ -56,9 +60,12 @@ The scoring engine (`autoresearch/`) is a separate concern from the web app (`ge
 - **Fonts:** Playfair Display (display/headings), Inter (body), JetBrains Mono (data/scores)
 - **Design tokens:** `gem-` prefix (gem-gold, gem-surface, gem-surface-raised, gem-border, gem-text-primary/secondary/muted, gem-danger)
 - **Storage:** JSON files on disk (no database in local mode); Supabase schema exists for production
+- **Billing:** Stripe integration exists but is currently disabled — all evaluations are free
 
 ## Active Development Notes
 
 - The `autoresearch/` folder is being optimized in a parallel track — do not modify it unless asked
-- The web app (`gem-app/`) is being refined for the producer UX — this is the active workstream
+- The web app (`gem-app/`) has been pivoted from producer-facing SaaS to writer-facing submission platform
+- Paywall/billing has been removed — all evaluations are free
 - The app is currently tested locally; no production deployment in progress
+- Next phase: developing production partner relationships to route top-scoring scripts
