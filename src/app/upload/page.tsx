@@ -210,10 +210,10 @@ export default function UploadPage() {
                 Submit your script
               </h1>
               <p className="text-sm text-zinc-500 text-center mb-2">
-                Submit your pilot script. You&apos;ll get a personalized review within 24 hours — completely free.
+                Upload your script and get a personalized review plus production company recommendations — completely free.
               </p>
               <p className="text-xs text-zinc-400 text-center mb-8">
-                GEM is calibrated for <span className="font-medium text-zinc-500">TV pilots and series scripts</span>. Feature film scripts are not currently supported.
+                <span className="font-medium text-zinc-500">TV pilots, series scripts, and feature screenplays</span> are all supported.
               </p>
 
               {error && (
@@ -293,12 +293,12 @@ export default function UploadPage() {
                       id="pitch"
                       value={pitch}
                       onChange={(e) => setPitch(e.target.value)}
-                      placeholder="Sell us on it. What makes this show special — and why does it need to exist right now?"
+                      placeholder="Sell us on it. What makes this project special — and why does it need to exist right now?"
                       rows={4}
                       className="gem-input resize-none"
                     />
                     <p className="text-xs text-zinc-400 mt-1.5">
-                      Not a logline. Tell us what you believe about this show.
+                      Not a logline. Tell us what you believe about this project.
                     </p>
                   </div>
 
@@ -499,7 +499,7 @@ export default function UploadPage() {
                 <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                   {[
                     { label: "Full report", desc: "Strengths + areas to develop" },
-                    { label: "10 dimensions", desc: "Scored against top shows" },
+                    { label: "Company matches", desc: "Best-fit production companies" },
                     { label: "Next steps", desc: "Clear guidance on what to focus on" },
                   ].map(({ label, desc }) => (
                     <div

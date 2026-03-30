@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import {
-  ArrowLeft, ArrowRight, ChevronDown, ChevronUp, FileText,
+  ArrowLeft, ArrowRight, ChevronDown, ChevronUp, FileText, Building2, ExternalLink,
 } from "lucide-react";
+import type { CompanyMatch } from "@/lib/match-engine";
 import { DimensionBar } from "@/components/ui/facet-bar";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import type { GEMReport, Verdict, DimensionId } from "@/types";
@@ -752,6 +753,8 @@ export default function ReportPage() {
   const [error, setError]               = useState<string | null>(null);
   const [deepDiveOpen, setDeepDiveOpen] = useState(false);
   const [showIds, setShowIds]           = useState<string[]>([]);
+  const [companyMatches, setCompanyMatches] = useState<CompanyMatch[]>([]);
+  const [matchesOpen, setMatchesOpen]       = useState(true);
 
   useEffect(() => {
     if (!showId) return;
@@ -763,9 +766,11 @@ export default function ReportPage() {
           fetch(`/api/submissions/${showId}`).catch(() => null),
         ]);
 
+        let sub: GEMSubmission | null = null;
         if (submissionRes?.ok) {
-          const { submission: sub } = await submissionRes.json();
-          setSubmission(sub || null);
+          const data = await submissionRes.json();
+          sub = data.submission || null;
+          setSubmission(sub);
 
           // If pending_review and we have a submission record, show pending view
           if (sub?.status === "pending_review") {
@@ -775,10 +780,29 @@ export default function ReportPage() {
         }
 
         if (!reportRes?.ok) throw new Error("Report not found");
-        setReport(await reportRes.json());
+        const reportData = await reportRes.json();
+        setReport(reportData);
         if (listRes?.ok) {
           const { reports } = await listRes.json();
           setShowIds((reports as { show_id: string }[]).map((r) => r.show_id));
+        }
+
+        // Fetch company matches based on report data + submission pitch
+        const matchLogline = sub?.pitch || reportData.verdict?.one_line || reportData.producer_takeaway || "";
+        if (matchLogline) {
+          fetch("/api/match", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              logline: matchLogline,
+              title: sub?.title || showId,
+              notes: reportData.producer_takeaway || "",
+              top_n: 5,
+            }),
+          })
+            .then((r) => r.ok ? r.json() : null)
+            .then((data) => { if (data?.matches) setCompanyMatches(data.matches); })
+            .catch(() => {});
         }
       } catch (e: any) {
         setError(e.message);
@@ -1024,7 +1048,139 @@ export default function ReportPage() {
           </p>
         </section>
 
-        {/* ── 5. Deep Dive — Dimension Breakdown ────────────────────────── */}
+        {/* ── 5. Company Matches ─────────────────────────────────────────── */}
+        {companyMatches.length > 0 && (
+          <section className="mb-8">
+            <button
+              onClick={() => setMatchesOpen(!matchesOpen)}
+              className="w-full flex items-center justify-between gem-card p-4 hover:border-zinc-300 hover:shadow-sm transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <Building2 size={16} className="text-emerald-600" />
+                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">
+                  Production Company Matches
+                </span>
+                <span className="text-xs font-mono text-zinc-400">
+                  {companyMatches.length} companies
+                </span>
+              </div>
+              <span className="text-zinc-400 group-hover:text-zinc-700 transition-colors">
+                {matchesOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              </span>
+            </button>
+
+            {matchesOpen && (
+              <div className="mt-3 space-y-3">
+                <p className="text-sm text-zinc-500 px-1">
+                  Based on your script&apos;s genre, tone, and budget profile, these production companies are the best fit for your project.
+                </p>
+
+                {companyMatches.map((match, i) => (
+                  <div key={match.company_id} className="gem-card overflow-hidden shadow-sm">
+                    {/* Company header */}
+                    <div className="flex items-start justify-between px-5 py-4 border-b border-zinc-100">
+                      <div className="flex items-start gap-3">
+                        <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-zinc-100 text-xs font-bold text-zinc-500 font-mono shrink-0">
+                          {i + 1}
+                        </span>
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h3 className="font-semibold text-zinc-950">{match.company_name}</h3>
+                            {match.website && (
+                              <a
+                                href={match.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-zinc-400 hover:text-zinc-600 transition-colors"
+                              >
+                                <ExternalLink size={12} />
+                              </a>
+                            )}
+                          </div>
+                          {match.key_contact && (
+                            <p className="text-xs text-zinc-400 mt-0.5">{match.key_contact}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <span className="font-mono text-sm font-bold text-zinc-500">
+                          {match.score.toFixed(0)}
+                        </span>
+                        <span className="text-[10px] font-mono text-zinc-400"> / 100</span>
+                      </div>
+                    </div>
+
+                    {/* Match details */}
+                    <div className="px-5 py-4 space-y-3">
+                      {/* Why it's a fit */}
+                      {match.reasons.length > 0 && (
+                        <div>
+                          <p className="text-[10px] font-mono font-bold tracking-widest text-emerald-600 uppercase mb-2">
+                            Why this is a fit
+                          </p>
+                          <div className="space-y-1.5">
+                            {match.reasons.map((reason, ri) => (
+                              <div key={ri} className="flex gap-2 text-sm text-zinc-600">
+                                <span className="text-emerald-500 shrink-0 mt-0.5">&#10003;</span>
+                                <span>{reason}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Warnings */}
+                      {match.warnings.length > 0 && (
+                        <div>
+                          <p className="text-[10px] font-mono font-bold tracking-widest text-amber-600 uppercase mb-2">
+                            Watch out for
+                          </p>
+                          <div className="space-y-1.5">
+                            {match.warnings.map((warning, wi) => (
+                              <div key={wi} className="flex gap-2 text-sm text-zinc-600">
+                                <span className="text-amber-500 shrink-0 mt-0.5">&#9888;</span>
+                                <span>{warning}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* How to approach */}
+                      <div className="pt-2 border-t border-zinc-100">
+                        <p className="text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase mb-1">
+                          How to approach
+                        </p>
+                        <p className="text-sm text-zinc-500 leading-relaxed">
+                          {match.submission_path}
+                        </p>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {match.genres.slice(0, 4).map((g) => (
+                          <span
+                            key={g}
+                            className="text-[10px] font-medium text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5"
+                          >
+                            {g}
+                          </span>
+                        ))}
+                        {match.budget_range && (
+                          <span className="text-[10px] font-mono text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5">
+                            ${match.budget_range.min_m}M–${match.budget_range.max_m}M
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* ── 6. Deep Dive — Dimension Breakdown ────────────────────────── */}
         <section className="mb-8">
           <button
             onClick={() => setDeepDiveOpen(!deepDiveOpen)}
