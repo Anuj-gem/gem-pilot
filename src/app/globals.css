@@ -1,91 +1,88 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
 
 :root {
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --gem-black: #0a0a0a;
+  --gem-white: #fafafa;
+  --gem-gray-50: #f5f5f5;
+  --gem-gray-100: #e5e5e5;
+  --gem-gray-200: #d4d4d4;
+  --gem-gray-300: #a3a3a3;
+  --gem-gray-400: #737373;
+  --gem-gray-500: #525252;
+  --gem-gray-600: #404040;
+  --gem-gray-700: #262626;
+  --gem-gray-800: #171717;
+  --gem-accent: #6366f1;
+  --gem-accent-hover: #4f46e5;
+  --gem-success: #22c55e;
+  --gem-warning: #f59e0b;
 }
 
-@layer base {
-  html {
-    font-family: var(--font-body);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    @apply bg-white text-zinc-950;
-  }
-
-  ::selection {
-    @apply bg-emerald-100 text-emerald-900;
-  }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    @apply w-1.5;
-  }
-  ::-webkit-scrollbar-track {
-    @apply bg-transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-zinc-300 rounded-full;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-zinc-400;
-  }
+@theme inline {
+  --color-background: var(--gem-black);
+  --color-foreground: var(--gem-white);
+  --color-accent: var(--gem-accent);
+  --color-accent-hover: var(--gem-accent-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-@layer components {
-  .gem-container {
-    @apply max-w-6xl mx-auto px-6;
-  }
+body {
+  background: var(--gem-black);
+  color: var(--gem-white);
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
 
-  /* Card: white bg, zinc-200 border, very rounded */
-  .gem-card {
-    @apply bg-white border border-zinc-200 rounded-2xl;
-  }
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--gem-gray-800);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gem-gray-600);
+  border-radius: 3px;
+}
 
-  /* Primary button: dark zinc, white text, very rounded */
-  .gem-btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3
-           bg-zinc-950 text-white font-semibold rounded-2xl
-           hover:opacity-90 transition-opacity duration-200
-           disabled:opacity-50 disabled:cursor-not-allowed;
-  }
+/* Tag pill styles */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--gem-gray-600);
+  color: var(--gem-gray-300);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+.tag-pill:hover {
+  border-color: var(--gem-accent);
+  color: var(--gem-white);
+}
+.tag-pill.active {
+  background: var(--gem-accent);
+  border-color: var(--gem-accent);
+  color: white;
+}
 
-  /* Secondary button: outlined */
-  .gem-btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3
-           border border-zinc-300 text-zinc-800 font-semibold rounded-2xl
-           hover:bg-zinc-50 transition-colors duration-200
-           disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-
-  /* Inputs */
-  .gem-input {
-    @apply w-full bg-white border border-zinc-200 rounded-xl px-4 py-3
-           text-zinc-900 placeholder:text-zinc-400
-           focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-200
-           transition-colors duration-200;
-  }
-
-  .gem-label {
-    @apply block text-sm text-zinc-600 mb-2 font-medium;
-  }
-
-  .gem-divider {
-    @apply border-t border-zinc-200;
-  }
-
-  /* Score ring */
-  .score-ring {
-    @apply relative inline-flex items-center justify-center;
-  }
-  .score-ring svg circle {
-    transition: stroke-dashoffset 1s ease-in-out;
-  }
+/* Input styles */
+input, textarea, select {
+  background: var(--gem-gray-800) !important;
+  border: 1px solid var(--gem-gray-600);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--gem-white);
+  font-size: 0.875rem;
+  width: 100%;
+  transition: border-color 0.15s ease;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--gem-accent);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--gem-gray-400);
 }

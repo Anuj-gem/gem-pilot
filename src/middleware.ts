@@ -1,46 +1,55 @@
-import { NextRequest, NextResponse } from "next/server";
-import { createMiddlewareClient } from "@/lib/supabase-middleware";
-
-// Routes that require authentication
-const PROTECTED_ROUTES = ["/dashboard", "/upload", "/report"];
-
-// Routes that authenticated users should be redirected away from
-const AUTH_ROUTES = ["/auth/login", "/auth/signup"];
+import { createServerClient } from '@supabase/ssr'
+import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  const { supabase, response } = createMiddlewareClient(request);
-  const { pathname } = request.nextUrl;
+  let supabaseResponse = NextResponse.next({ request })
 
-  // Refresh the session (important — keeps cookies alive)
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          )
+          supabaseResponse = NextResponse.next({ request })
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          )
+        },
+      },
+    }
+  )
 
-  // If user is not authenticated and trying to access protected route → redirect to login
-  const isProtected = PROTECTED_ROUTES.some((route) =>
-    pathname.startsWith(route),
-  );
+  const { data: { user } } = await supabase.auth.getUser()
+
+  // Protected routes - redirect to login if not authenticated
+  const protectedPaths = ['/profile/edit', '/projects/new', '/messages', '/onboarding']
+  const isProtected = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path))
+
   if (isProtected && !user) {
-    const loginUrl = new URL("/auth/login", request.url);
-    loginUrl.searchParams.set("redirect", pathname);
-    return NextResponse.redirect(loginUrl);
+    const url = request.nextUrl.clone()
+    url.pathname = '/login'
+    url.searchParams.set('redirect', request.nextUrl.pathname)
+    return NextResponse.redirect(url)
   }
 
-  // If user IS authenticated and on auth pages → redirect to dashboard
-  const isAuthRoute = AUTH_ROUTES.some((route) => pathname.startsWith(route));
-  if (isAuthRoute && user) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+  // Redirect logged-in users away from login/signup
+  if (user && (request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/signup')) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/discover'
+    return NextResponse.redirect(url)
   }
 
-  return response;
+  return supabaseResponse
 }
 
 export const config = {
   matcher: [
-    // Match all protected + auth routes, skip static files and API routes
-    "/dashboard/:path*",
-    "/upload/:path*",
-    "/report/:path*",
-    "/auth/:path*",
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
-};
+}
