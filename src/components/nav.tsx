@@ -36,7 +36,7 @@ export default function Nav() {
         <Link href={user ? '/discover' : '/'} className="flex items-center gap-2">
           <span className="text-lg font-bold tracking-tight">GEM</span>
           <span className="text-[10px] uppercase tracking-widest text-[var(--gem-gray-400)] hidden sm:inline">
-            AI-Native Creator Network
+            Creator Network
           </span>
         </Link>
 
