@@ -31,10 +31,10 @@ export default function Nav() {
   return (
     <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)] sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href={user ? '/discover' : '/'} className="flex items-center gap-2">
+        <Link href={user ? '/dashboard' : '/'} className="flex items-center gap-2">
           <span className="text-lg font-bold tracking-tight">GEM</span>
           <span className="text-[10px] uppercase tracking-widest text-[var(--gem-gray-400)] hidden sm:inline">
-            Script Discovery
+            Script Evaluation
           </span>
         </Link>
 

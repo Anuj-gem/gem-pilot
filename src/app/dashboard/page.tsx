@@ -54,11 +54,21 @@ export default async function DashboardPage() {
               const eval_ = Array.isArray(rawEval) ? rawEval[0] : rawEval
               const tierMeta = eval_ ? TIER_META[eval_.tier as Tier] : null
 
+              const hasReport = !!eval_
+              const Wrapper = hasReport ? Link : 'div'
+              const wrapperProps = hasReport
+                ? { href: `/report/${eval_.id}` }
+                : {}
+
               return (
-                <Link
+                <Wrapper
                   key={sub.id}
-                  href={eval_ ? `/report/${eval_.id}` : '#'}
-                  className="group flex items-center gap-4 p-4 rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)] bg-[var(--gem-gray-900)] transition-colors"
+                  {...(wrapperProps as any)}
+                  className={`group flex items-center gap-4 p-4 rounded-xl border bg-[var(--gem-gray-900)] transition-colors ${
+                    hasReport
+                      ? 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)] cursor-pointer'
+                      : 'border-[var(--gem-gray-800)] opacity-60'
+                  }`}
                 >
                   <div className="w-10 h-10 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
                     <FileText size={18} className="text-[var(--gem-gray-400)]" />
@@ -81,8 +91,6 @@ export default async function DashboardPage() {
                         day: 'numeric',
                         year: 'numeric',
                       })}
-                      {sub.status === 'processing' && ' — Processing...'}
-                      {sub.status === 'failed' && ' — Failed'}
                     </p>
                   </div>
 
@@ -104,7 +112,14 @@ export default async function DashboardPage() {
                       )}
                     </div>
                   )}
-                </Link>
+
+                  {sub.status === 'failed' && (
+                    <span className="text-xs text-red-400/70 shrink-0">Failed</span>
+                  )}
+                  {sub.status === 'processing' && (
+                    <span className="text-xs text-amber-400/70 shrink-0 animate-pulse">Processing...</span>
+                  )}
+                </Wrapper>
               )
             })}
           </div>
