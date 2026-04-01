@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Upload, FileText, ArrowRight } from 'lucide-react'
 import { setPendingFile } from '@/lib/pending-file'
+import { trackHeroUpload } from '@/lib/posthog'
 
 export function HeroUpload() {
   const router = useRouter()
@@ -28,6 +29,7 @@ export function HeroUpload() {
 
   const handleGo = () => {
     if (!file) return
+    trackHeroUpload()
     setPendingFile(file)
     router.push('/submit?from=hero')
   }

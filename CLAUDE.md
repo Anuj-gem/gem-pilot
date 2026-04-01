@@ -13,7 +13,8 @@ Live at: https://gem-pilot.vercel.app
 - **Payments**: Stripe Checkout + Webhooks ($20/mo, 1 free eval before paywall)
 - **AI**: OpenAI GPT-5.4 Mini for script evaluation (~$0.027/script)
 - **Deploy**: Vercel (auto-deploy on push to `main`)
-- **Styling**: CSS custom properties (--gem-*), no Tailwind
+- **Styling**: Tailwind 4 + CSS custom properties (--gem-*)
+- **Analytics**: PostHog (events, funnels, A/B testing, session replay)
 
 ## Key architecture decisions
 
@@ -50,8 +51,11 @@ src/
     supabase-server.ts    # Server-side Supabase client
     supabase-browser.ts   # Client-side Supabase client
     stripe.ts             # Stripe instance
+    posthog.ts            # PostHog init + named conversion events
+    pending-file.ts       # Client-side file store for hero -> submit handoff
   types/index.ts          # All TypeScript types, tier system, dimension weights
-  middleware.ts           # Auth guard for /dashboard, /submit, /report, /onboarding
+  middleware.ts           # Auth guard for /dashboard only
+  data/sample-reports.ts  # Hardcoded GoT evaluation for landing page showcase
 ```
 
 ## Supabase tables
@@ -69,10 +73,19 @@ src/
 3. **Subscriber**: Dashboard -> Submit -> Report (unlimited)
 4. **Discovery**: Discover page -> Search/filter -> Click script -> Report page -> Like
 
+## Analytics (PostHog)
+
+Conversion funnel events tracked in `src/lib/posthog.ts`:
+`landing_page_viewed` → `hero_file_uploaded` → `signup_started` → `signup_completed` → `evaluation_started` → `evaluation_completed` → `upgrade_prompt_shown` → `subscribe_clicked` → `subscription_activated` → `script_published`
+
+PostHog also auto-captures clicks and pageviews. Feature flags and A/B testing are available for autoresearch-style experimentation.
+
+Env vars: `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST` (defaults to `https://us.i.posthog.com`)
+
 ## Stale code (to clean up)
 
 Old pages from the pre-pivot producer SaaS version still exist but are not linked in nav:
-`/messages`, `/projects`, `/projects/new`, `/projects/[id]`, `/profile/edit`, `/creators/[id]`, `/discover/search`
+`/messages`, `/projects`, `/projects/new`, `/projects/[id]`, `/profile/edit`, `/creators/[id]`, `/discover/search`, `/onboarding`
 
 ## Commands
 

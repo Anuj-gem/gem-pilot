@@ -1,10 +1,14 @@
 import Link from 'next/link'
-import { ArrowRight, FileText, BarChart3, Lightbulb, Clapperboard, CheckCircle, Trophy, TrendingUp, Heart, Calendar } from 'lucide-react'
+import { ArrowRight, CheckCircle, Calendar } from 'lucide-react'
 import { HeroUpload } from '@/components/hero-upload'
+import { ReportShowcase } from '@/components/report-showcase'
+import { LandingTracking } from '@/components/landing-tracking'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <LandingTracking />
+
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-800)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -41,7 +45,7 @@ export default function Home() {
           Get scored like a pro. Get seen by the industry.
         </h1>
         <p className="text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-10">
-          Upload your screenplay and get a professional evaluation in under a minute — five scored
+          Upload your screenplay and get a professional evaluation in under 60 seconds — five scored
           dimensions, development notes, and production analysis. Then publish your best work to
           the GEM leaderboard where top scripts rank publicly by score.
         </p>
@@ -70,121 +74,106 @@ export default function Home() {
       {/* Divider */}
       <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
-      {/* Two-pillar value prop */}
+      {/* See a Real Report — showcase section */}
+      <section className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
+        <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">See for yourself</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">This is what your evaluation looks like.</h2>
+        <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-10 sm:mb-14">
+          We ran the Game of Thrones pilot through GEM. Scores, development notes, production
+          analysis — the same report every writer gets. Your first evaluation is free.
+        </p>
+
+        <div className="grid md:grid-cols-5 gap-8 md:gap-10 items-start">
+          {/* Showcase card — takes 3 of 5 cols */}
+          <div className="md:col-span-3">
+            <ReportShowcase />
+          </div>
+
+          {/* What's inside breakdown — takes 2 of 5 cols */}
+          <div className="md:col-span-2 space-y-6">
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">Weighted GEM Score + Tier</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                Five dimensions — audience appeal, character strength, originality, hook, and
+                momentum — weighted by what matters for getting made. One score, one tier.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">Development Notes</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                What's working, what's hurting, with evidence pulled from your script. Actionable
+                feedback for your next draft — not a form letter.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">Production Reality Check</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                Cast requirements, locations, VFX, rights flags, platform fit. The feasibility
+                questions a producer asks before taking a meeting.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">Comparables</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                Automatic comp titles with reasoning — know where your script sits in the market
+                before anyone asks.
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <Link
+                href="/signup"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+              >
+                Try it free with your script
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
+
+      {/* The Leaderboard */}
       <section className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
-        <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">Two things other platforms can't do</p>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16">A real evaluation and a real audience.</h2>
+        <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">Beyond feedback</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Your score is a ranking.</h2>
+        <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-10 sm:mb-14">
+          Publish your script to the GEM leaderboard and compete publicly against every other
+          screenplay on the platform. The best work rises to the top.
+        </p>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Evaluation pillar */}
-          <div className="space-y-8">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <BarChart3 size={20} className="text-[var(--gem-accent)]" />
-                <h3 className="text-xl font-bold">The Evaluation</h3>
-              </div>
-              <p className="text-sm text-[var(--gem-gray-400)] mb-6">
-                Not a form letter. A scored, structured report built on the same rubric used
-                to evaluate produced film and television.
-              </p>
-            </div>
-
-            <div className="space-y-5 pl-1">
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
-                  <Trophy size={14} className="text-[var(--gem-accent)]" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold mb-0.5">Weighted GEM Score + Tier</h4>
-                  <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                    Five dimensions — audience appeal, character strength, originality, hook, and
-                    momentum — weighted by what matters for getting made. One score, one tier.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
-                  <Lightbulb size={14} className="text-amber-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold mb-0.5">Development Notes</h4>
-                  <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                    What's working, what's hurting, with evidence from your script. Actionable
-                    notes for your next draft.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
-                  <Clapperboard size={14} className="text-emerald-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold mb-0.5">Production Reality Check</h4>
-                  <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                    Cast requirements, locations, VFX, rights flags, platform fit. The feasibility
-                    questions a producer asks before taking a meeting.
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
+          <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
+            <h3 className="text-sm font-semibold text-white mb-2">Public Rankings</h3>
+            <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+              Scripts ranked by GEM score with tier badges. Search by genre, format, or title.
+            </p>
           </div>
-
-          {/* Leaderboard pillar */}
-          <div className="space-y-8">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <TrendingUp size={20} className="text-emerald-400" />
-                <h3 className="text-xl font-bold">The Leaderboard</h3>
-              </div>
-              <p className="text-sm text-[var(--gem-gray-400)] mb-6">
-                Your score isn't just feedback — it's a ranking. Publish your script and
-                compete publicly against every other screenplay on the platform.
-              </p>
-            </div>
-
-            <div className="space-y-5 pl-1">
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
-                  <TrendingUp size={14} className="text-emerald-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold mb-0.5">Public Rankings by Score</h4>
-                  <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                    Scripts ranked by GEM score with tier badges. Search by genre, format,
-                    or title. The best work rises to the top.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
-                  <Heart size={14} className="text-red-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold mb-0.5">Community Likes</h4>
-                  <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                    Other writers and industry readers can like your script. Sort the leaderboard
-                    by most liked to see what's resonating.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0">
-                  <FileText size={14} className="text-blue-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold mb-0.5">Unlimited Scripts & Ideas</h4>
-                  <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                    Post as many scripts as you want. Features, pilots, shorts, limited
-                    series — every idea gets scored and can go public.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
+            <h3 className="text-sm font-semibold text-white mb-2">Community Likes</h3>
+            <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+              Writers and industry readers can like your script. Sort the leaderboard by what's resonating.
+            </p>
           </div>
+          <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
+            <h3 className="text-sm font-semibold text-white mb-2">Unlimited Scripts</h3>
+            <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+              Features, pilots, shorts, limited series — every idea gets scored and can go public.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <Link
+            href="/discover"
+            className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline"
+          >
+            Browse the leaderboard now
+            <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 
@@ -209,7 +198,7 @@ export default function Home() {
             <div className="text-3xl font-bold text-[var(--gem-gray-700)] mb-3">02</div>
             <h3 className="font-semibold mb-2">Get your score</h3>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-              In under a minute you'll have a full evaluation — scored dimensions,
+              In under 60 seconds you'll have a full evaluation — scored dimensions,
               development notes, and production analysis.
             </p>
           </div>
@@ -235,10 +224,14 @@ export default function Home() {
       {/* Divider */}
       <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
-      {/* Pricing */}
+      {/* Pricing — with anchoring */}
       <section className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
         <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">Pricing</p>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16">Everything. $20 a month.</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Everything. $20 a month.</h2>
+        <p className="text-sm text-[var(--gem-gray-400)] mb-10 sm:mb-14 max-w-lg">
+          Traditional coverage services charge $50–150 per script read. GEM gives you unlimited
+          evaluations, a public leaderboard, and results in under a minute.
+        </p>
 
         <div className="max-w-sm mx-auto">
           <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-8">

@@ -8,6 +8,7 @@ import Nav from '@/components/nav'
 import { PaywallModal } from '@/components/ui/paywall-modal'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackUpgradePromptShown, trackSubscribeClick } from '@/lib/posthog'
 
 export default function SubmitPage() {
   return (
@@ -136,6 +137,7 @@ function SubmitPageInner() {
     setStep('evaluating')
     setError(null)
     setProgress('Analyzing your script — this takes about 30 seconds...')
+    trackEvalStart({ title, source: fromHero ? 'hero' : 'submit' })
 
     try {
       const formData = new FormData()
@@ -160,6 +162,7 @@ function SubmitPageInner() {
         throw new Error(data.error || 'Evaluation failed')
       }
 
+      trackEvalComplete({ score: data.weighted_score, tier: data.tier })
       router.push(`/report/${data.evaluation_id}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -175,6 +178,7 @@ function SubmitPageInner() {
 
     if (!user) {
       // Not logged in — show signup step
+      trackSignupStart()
       setStep('signup')
       return
     }
@@ -214,6 +218,7 @@ function SubmitPageInner() {
     }
 
     // We have a session — update state and evaluate
+    trackSignupComplete()
     setUser(data.user)
     setFreeEvalUsed(false)
     setSigningUp(false)
@@ -385,6 +390,7 @@ function SubmitPageInner() {
 
             <button
               onClick={async () => {
+                trackSubscribeClick('submit_upgrade_gate')
                 const res = await fetch('/api/stripe/checkout', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },

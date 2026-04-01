@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { CheckCircle, ArrowRight, X } from 'lucide-react'
+import { trackUpgradePromptShown, trackSubscribeClick } from '@/lib/posthog'
 
 interface UpgradeBannerProps {
   delayMs?: number
@@ -13,11 +14,15 @@ export function UpgradeBanner({ delayMs = 60000 }: UpgradeBannerProps) {
   const [dismissed, setDismissed] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), delayMs)
+    const timer = setTimeout(() => {
+      setVisible(true)
+      trackUpgradePromptShown('report_banner')
+    }, delayMs)
     return () => clearTimeout(timer)
   }, [delayMs])
 
   const handleSubscribe = async () => {
+    trackSubscribeClick('report_banner')
     setLoading(true)
     try {
       const res = await fetch('/api/stripe/checkout', {
