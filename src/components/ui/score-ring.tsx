@@ -20,10 +20,11 @@ export function ScoreRing({
   const offset = circumference - (score / 100) * circumference;
 
   const getColor = (s: number) => {
-    if (s >= 90) return "#16a34a"; // emerald-600 — STRONG SIGNAL
-    if (s >= 72) return "#b45309"; // amber-700 — WORTH THE READ
-    if (s >= 50) return "#71717a"; // zinc-500 — MIXED
-    return "#a1a1aa"; // zinc-400 — PASS
+    if (s >= 80) return "#34d399"; // emerald-400 — Exceptional
+    if (s >= 70) return "#fbbf24"; // amber-400 — Strong
+    if (s >= 60) return "#60a5fa"; // blue-400 — Promising
+    if (s >= 50) return "#a1a1aa"; // zinc-400 — Early Stage
+    return "#71717a"; // zinc-500 — Needs Rework
   };
 
   return (
@@ -37,7 +38,7 @@ export function ScoreRing({
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#e4e4e7"
+          stroke="#262626"
           strokeWidth={strokeWidth}
         />
         <circle
@@ -53,7 +54,7 @@ export function ScoreRing({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-3xl font-bold text-zinc-950">
+        <span className="text-3xl font-bold text-[var(--gem-white)]">
           {Math.round(score)}
         </span>
         <span className="text-xs text-zinc-400 uppercase tracking-wider">

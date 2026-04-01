@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { Compass, FolderOpen, MessageCircle, User, Plus, LogOut, Menu, X } from 'lucide-react'
+import { Compass, FolderOpen, MessageCircle, User, Plus, LogOut, Menu, X, FileText } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -36,7 +36,7 @@ export default function Nav() {
         <Link href={user ? '/discover' : '/'} className="flex items-center gap-2">
           <span className="text-lg font-bold tracking-tight">GEM</span>
           <span className="text-[10px] uppercase tracking-widest text-[var(--gem-gray-400)] hidden sm:inline">
-            Creator Network
+            Script Discovery
           </span>
         </Link>
 
@@ -63,11 +63,11 @@ export default function Nav() {
                 )
               })}
               <Link
-                href="/projects/new"
+                href="/submit"
                 className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
               >
-                <Plus size={16} />
-                New Project
+                <FileText size={16} />
+                Submit Script
               </Link>
               <button
                 onClick={handleSignOut}
@@ -122,12 +122,12 @@ export default function Nav() {
             )
           })}
           <Link
-            href="/projects/new"
+            href="/submit"
             onClick={() => setMobileOpen(false)}
             className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white"
           >
-            <Plus size={16} />
-            New Project
+            <FileText size={16} />
+            Submit Script
           </Link>
           <button
             onClick={handleSignOut}
