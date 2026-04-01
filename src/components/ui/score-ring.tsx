@@ -29,7 +29,7 @@ export function ScoreRing({
 
   return (
     <div
-      className={`score-ring ${className}`}
+      className={`relative ${className}`}
       style={{ width: size, height: size }}
     >
       <svg width={size} height={size} className="-rotate-90">

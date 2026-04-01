@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { Compass, FolderOpen, MessageCircle, User, Plus, LogOut, Menu, X, FileText } from 'lucide-react'
+import { LayoutDashboard, Compass, LogOut, Menu, X, FileText } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -24,10 +24,8 @@ export default function Nav() {
   }
 
   const links = user ? [
+    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/discover', label: 'Discover', icon: Compass },
-    { href: '/projects', label: 'Projects', icon: FolderOpen },
-    { href: '/messages', label: 'Messages', icon: MessageCircle },
-    { href: `/creators/${user.id}`, label: 'Profile', icon: User },
   ] : []
 
   return (
