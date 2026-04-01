@@ -107,6 +107,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    // 1b. Check subscription / free eval
+    const serviceClient = createServiceClient();
+    const { data: profile } = await serviceClient
+      .from("profiles")
+      .select("subscription_status, free_eval_used")
+      .eq("id", user.id)
+      .single();
+
+    const isSubscribed = profile?.subscription_status === "active";
+    const hasFreeEval = !profile?.free_eval_used;
+
+    if (!isSubscribed && !hasFreeEval) {
+      return NextResponse.json(
+        { error: "subscription_required", message: "Subscribe to evaluate more scripts" },
+        { status: 403 }
+      );
+    }
+
     // 2. Parse form data
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
@@ -133,8 +151,6 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-
-    const serviceClient = createServiceClient();
 
     // 3. Create submission record
     const { data: submission, error: subError } = await serviceClient
@@ -214,11 +230,18 @@ export async function POST(request: NextRequest) {
         throw new Error("Failed to store evaluation");
       }
 
-      // 8. Mark submission as completed
+      // 8. Mark submission as completed + mark free eval as used
       await serviceClient
         .from("script_submissions")
         .update({ status: "completed" })
         .eq("id", submission.id);
+
+      if (!isSubscribed && hasFreeEval) {
+        await serviceClient
+          .from("profiles")
+          .update({ free_eval_used: true })
+          .eq("id", user.id);
+      }
 
       return NextResponse.json({
         submission_id: submission.id,

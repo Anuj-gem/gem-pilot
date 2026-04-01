@@ -30,18 +30,15 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Modal */}
-      <div className="relative w-full max-w-md bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-2xl animate-fade-in">
-        {/* Close button */}
+      <div className="relative w-full max-w-md bg-[var(--gem-gray-800)] rounded-2xl border border-[var(--gem-gray-700)] p-8 shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-zinc-400 hover:text-zinc-600 transition-colors"
+          className="absolute top-4 right-4 text-[var(--gem-gray-400)] hover:text-white transition-colors"
           aria-label="Close"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
@@ -53,37 +50,31 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
           </svg>
         </button>
 
-        {/* Icon */}
-        <div className="w-12 h-12 rounded-2xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-6">
-          <span className="text-zinc-600 text-xl">✦</span>
-        </div>
-
-        <h2 className="text-2xl font-semibold text-zinc-950 mb-2">
-          You&apos;ve used your free evaluations
+        <h2 className="text-xl font-bold text-white mb-2">
+          Your free evaluation has been used
         </h2>
-        <p className="text-sm text-zinc-500 mb-6">
-          Your 2 free script evaluations are up. Subscribe to keep evaluating —
-          unlimited scripts, results in minutes.
+        <p className="text-sm text-[var(--gem-gray-400)] mb-6">
+          Subscribe to keep evaluating — unlimited scripts, full reports, results in under a minute.
         </p>
 
-        {/* Pricing */}
-        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 px-6 py-5 mb-6">
+        <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">
           <div className="flex items-baseline gap-1 mb-1">
-            <span className="text-3xl font-semibold text-zinc-950">$49</span>
-            <span className="text-sm text-zinc-400">/ month</span>
+            <span className="text-3xl font-bold text-white">$20</span>
+            <span className="text-sm text-[var(--gem-gray-400)]">/ month</span>
           </div>
           <ul className="space-y-2 mt-3">
             {[
               "Unlimited script evaluations",
-              "10-dimension scoring vs. winner avg",
-              "Full producer report every time",
+              "5-dimension scoring with weighted GEM score",
+              "Full development notes + production analysis",
+              "Public profile on the Discover leaderboard",
               "Cancel anytime",
             ].map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-2 text-sm text-zinc-600"
+                className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]"
               >
-                <span className="text-emerald-600 text-xs">✓</span>
+                <span className="text-emerald-400 text-xs">&#10003;</span>
                 {item}
               </li>
             ))}
@@ -91,7 +82,7 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
         </div>
 
         {error && (
-          <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3 mb-4">
+          <div className="text-sm text-red-300 bg-red-950/30 border border-red-800 rounded-lg px-4 py-3 mb-4">
             {error}
           </div>
         )}
@@ -99,12 +90,12 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
         <button
           onClick={handleSubscribe}
           disabled={loading}
-          className="gem-btn-primary w-full"
+          className="w-full py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
         >
-          {loading ? "Redirecting to checkout..." : "Subscribe — $49 / mo"}
+          {loading ? "Redirecting to checkout..." : "Subscribe — $20 / mo"}
         </button>
 
-        <p className="text-xs text-zinc-400 text-center mt-3">
+        <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">
           Secure payment via Stripe. Cancel anytime.
         </p>
       </div>

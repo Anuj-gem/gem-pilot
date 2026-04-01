@@ -1,13 +1,15 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, useRef, useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import Nav from '@/components/nav'
-import { Upload, FileText, Loader2, AlertCircle } from 'lucide-react'
+import { PaywallModal } from '@/components/ui/paywall-modal'
+import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings } from 'lucide-react'
 
 export default function SubmitPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const supabase = createClient()
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -16,6 +18,34 @@ export default function SubmitPage() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState<string | null>(null)
+  const [showPaywall, setShowPaywall] = useState(false)
+  const [subscriptionStatus, setSubscriptionStatus] = useState<string | null>(null)
+  const [freeEvalUsed, setFreeEvalUsed] = useState<boolean | null>(null)
+
+  const justSubscribed = searchParams.get('subscribed') === 'true'
+
+  // Check subscription status on mount
+  useEffect(() => {
+    async function checkAccess() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('subscription_status, free_eval_used')
+        .eq('id', user.id)
+        .single()
+
+      if (profile) {
+        setSubscriptionStatus(profile.subscription_status)
+        setFreeEvalUsed(profile.free_eval_used)
+      }
+    }
+    checkAccess()
+  }, [])
+
+  const isSubscribed = subscriptionStatus === 'active'
+  const hasFreeEval = freeEvalUsed === false
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0]
@@ -30,7 +60,6 @@ export default function SubmitPage() {
       }
       setFile(selected)
       setError(null)
-      // Auto-fill title from filename if empty
       if (!title) {
         const name = selected.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ')
         setTitle(name)
@@ -55,6 +84,12 @@ export default function SubmitPage() {
     }
   }
 
+  const handleManageSubscription = async () => {
+    const res = await fetch('/api/stripe/portal', { method: 'POST' })
+    const data = await res.json()
+    if (data.url) window.location.href = data.url
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!file || !title) return
@@ -64,7 +99,6 @@ export default function SubmitPage() {
     setProgress('Uploading script...')
 
     try {
-      // Check auth
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) {
         router.push('/login?redirect=/submit')
@@ -84,11 +118,17 @@ export default function SubmitPage() {
 
       const data = await res.json()
 
+      if (data.error === 'subscription_required') {
+        setShowPaywall(true)
+        setSubmitting(false)
+        setProgress(null)
+        return
+      }
+
       if (!res.ok || data.status === 'failed') {
         throw new Error(data.error || 'Evaluation failed')
       }
 
-      // Redirect to report
       router.push(`/report/${data.evaluation_id}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -97,17 +137,58 @@ export default function SubmitPage() {
     }
   }
 
+  // Determine button text
+  let buttonText = 'Evaluate my script'
+  if (hasFreeEval && !isSubscribed) {
+    buttonText = 'Evaluate my script — free'
+  } else if (isSubscribed) {
+    buttonText = 'Evaluate my script'
+  }
+
   return (
     <>
       <Nav />
       <div className="max-w-lg mx-auto px-4 py-10">
+        {justSubscribed && (
+          <div className="flex items-start gap-2 p-3 rounded-lg bg-emerald-950/30 border border-emerald-800 text-emerald-300 text-sm mb-6">
+            <CheckCircle size={16} className="mt-0.5 shrink-0" />
+            You're subscribed — evaluate unlimited scripts.
+          </div>
+        )}
+
         <h1 className="text-2xl font-bold mb-1">Submit a script</h1>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-8">
-          Upload your screenplay and get a professional development evaluation with scores, insights, and production analysis.
+        <p className="text-sm text-[var(--gem-gray-400)] mb-2">
+          Upload your screenplay and get a professional evaluation with scores, development notes, and production analysis.
         </p>
 
+        {/* Subscription status badge */}
+        {subscriptionStatus !== null && (
+          <div className="flex items-center gap-3 mb-8">
+            {isSubscribed ? (
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-950/50 border border-emerald-700 text-emerald-400">
+                <CheckCircle size={12} /> Subscribed — unlimited evals
+              </span>
+            ) : hasFreeEval ? (
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
+                1 free evaluation available
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[var(--gem-gray-800)] border border-[var(--gem-gray-600)] text-[var(--gem-gray-400)]">
+                Subscribe to evaluate scripts
+              </span>
+            )}
+            {isSubscribed && (
+              <button
+                onClick={handleManageSubscription}
+                className="inline-flex items-center gap-1 text-xs text-[var(--gem-gray-400)] hover:text-white transition-colors"
+              >
+                <Settings size={12} /> Manage
+              </button>
+            )}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Title */}
           <div>
             <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">
               Script title
@@ -121,7 +202,6 @@ export default function SubmitPage() {
             />
           </div>
 
-          {/* File upload */}
           <div>
             <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">
               Script file (PDF)
@@ -153,9 +233,7 @@ export default function SubmitPage() {
                   <span className="text-sm text-[var(--gem-gray-300)]">
                     Drop your PDF here or click to browse
                   </span>
-                  <span className="text-xs text-[var(--gem-gray-500)] mt-1">
-                    Max 10MB
-                  </span>
+                  <span className="text-xs text-[var(--gem-gray-500)] mt-1">Max 10MB</span>
                 </>
               )}
               <input
@@ -168,7 +246,6 @@ export default function SubmitPage() {
             </div>
           </div>
 
-          {/* Error */}
           {error && (
             <div className="flex items-start gap-2 p-3 rounded-lg bg-red-950/30 border border-red-800 text-red-300 text-sm">
               <AlertCircle size={16} className="mt-0.5 shrink-0" />
@@ -176,7 +253,6 @@ export default function SubmitPage() {
             </div>
           )}
 
-          {/* Submit button */}
           <button
             type="submit"
             disabled={submitting || !file || !title}
@@ -188,16 +264,17 @@ export default function SubmitPage() {
                 {progress}
               </span>
             ) : (
-              'Evaluate my script — $20'
+              buttonText
             )}
           </button>
 
           <p className="text-xs text-center text-[var(--gem-gray-500)]">
             Your script is evaluated by AI using the same rubric applied to produced film and television.
-            Results include dimension scores, development notes, and production analysis.
           </p>
         </form>
       </div>
+
+      {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} />}
     </>
   )
 }
