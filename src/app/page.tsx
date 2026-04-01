@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, FileText, BarChart3, Lightbulb, Clapperboard, CheckCircle, Trophy, TrendingUp, Heart } from 'lucide-react'
+import { HeroUpload } from '@/components/hero-upload'
 
 export default function Home() {
   return (
@@ -44,19 +45,14 @@ export default function Home() {
           dimensions, development notes, and production analysis. Then publish your best work to
           the GEM leaderboard where top scripts rank publicly by score.
         </p>
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href="/signup"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
-          >
-            Evaluate your first script free
-            <ArrowRight size={16} />
-          </Link>
+        <HeroUpload />
+
+        <div className="flex items-center gap-4 mt-5">
           <Link
             href="/discover"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
+            className="text-sm text-[var(--gem-gray-400)] hover:text-white transition-colors"
           >
-            Browse the leaderboard
+            or browse the leaderboard &rarr;
           </Link>
         </div>
       </section>

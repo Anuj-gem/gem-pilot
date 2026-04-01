@@ -32,7 +32,7 @@ export default function SignupPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      router.push('/onboarding')
+      router.push('/submit')
       router.refresh()
     }
   }
@@ -41,7 +41,7 @@ export default function SignupPage() {
     <div className="min-h-[calc(100vh-56px)] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-1">Join GEM</h1>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-8">Create your creator profile</p>
+        <p className="text-sm text-[var(--gem-gray-400)] mb-8">Create an account to evaluate your scripts</p>
 
         <form onSubmit={handleSignup} className="space-y-4">
           <div>
