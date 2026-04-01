@@ -8,6 +8,7 @@ import { ProductionReality } from '@/components/report/production-reality'
 import { OverallTake } from '@/components/report/overall-take'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
+import { UpgradeBanner } from '@/components/report/upgrade-banner'
 import type { ScriptEvaluation, ScriptSubmission } from '@/types'
 
 interface PageProps {
@@ -53,6 +54,7 @@ export default async function ReportPage({ params }: PageProps) {
     .eq('evaluation_id', id)
 
   let userLiked = false
+  let showUpgradeBanner = false
   if (user) {
     const { data: existingLike } = await supabase
       .from('script_likes')
@@ -61,6 +63,19 @@ export default async function ReportPage({ params }: PageProps) {
       .eq('user_id', user.id)
       .maybeSingle()
     userLiked = !!existingLike
+
+    // Check if user needs upgrade prompt (used free eval, not subscribed)
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('subscription_status, free_eval_used')
+      .eq('id', user.id)
+      .single()
+
+    if (profile) {
+      const isSubscribed = profile.subscription_status === 'active'
+      const freeEvalUsed = profile.free_eval_used === true
+      showUpgradeBanner = freeEvalUsed && !isSubscribed
+    }
   }
 
   return (
@@ -108,6 +123,9 @@ export default async function ReportPage({ params }: PageProps) {
         {/* Production Reality Check */}
         <ProductionReality production={report.production_reality} />
       </div>
+
+      {/* Timed upgrade prompt for free-tier users */}
+      {showUpgradeBanner && <UpgradeBanner delayMs={60000} />}
     </>
   )
 }

@@ -340,6 +340,81 @@ function SubmitPageInner() {
     )
   }
 
+  // ─── Upgrade required (free eval used, not subscribed) ──
+  const needsUpgrade = authChecked && user && freeEvalUsed === true && !isSubscribed
+
+  if (needsUpgrade) {
+    return (
+      <>
+        <Nav />
+        <div className="max-w-md mx-auto px-4 py-16">
+          <div className="text-center mb-10">
+            <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-3">
+              Free evaluation used
+            </p>
+            <h1 className="text-2xl font-bold mb-3">
+              Ready to keep going?
+            </h1>
+            <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed max-w-sm mx-auto">
+              You've seen what GEM can do. Subscribe for unlimited evaluations and
+              put every script you write on the leaderboard.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-8 mb-6">
+            <div className="flex items-baseline gap-1 mb-1">
+              <span className="text-4xl font-bold">$20</span>
+              <span className="text-[var(--gem-gray-400)]">/ month</span>
+            </div>
+            <p className="text-sm text-[var(--gem-gray-400)] mb-6">Unlimited everything. Cancel anytime.</p>
+
+            <ul className="space-y-3 mb-8">
+              {[
+                'Unlimited script evaluations',
+                'Unlimited scripts on the leaderboard',
+                'Full scored report every time',
+                'Development notes + production analysis',
+                'All formats — features, pilots, shorts',
+              ].map(item => (
+                <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
+                  <CheckCircle size={16} className="text-emerald-400 mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <button
+              onClick={async () => {
+                const res = await fetch('/api/stripe/checkout', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({}),
+                })
+                const data = await res.json()
+                if (data.url) window.location.href = data.url
+              }}
+              className="w-full py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+            >
+              Subscribe — $20 / mo
+            </button>
+            <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">
+              Secure checkout via Stripe.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/dashboard"
+              className="text-sm text-[var(--gem-gray-500)] hover:text-white transition-colors"
+            >
+              Back to dashboard
+            </Link>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   // ─── Upload step (default) ─────────────────────────────
   return (
     <>
