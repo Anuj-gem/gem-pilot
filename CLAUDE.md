@@ -82,6 +82,13 @@ PostHog also auto-captures clicks and pageviews. Feature flags and A/B testing a
 
 Env vars: `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST` (defaults to `https://us.i.posthog.com`)
 
+## A/B Testing (autoresearch-style)
+
+Landing page elements with `data-experiment="flag-name"` can have their text swapped via PostHog feature flag payloads — no deploy needed. See `EXPERIMENTS.md` for the full framework, experiment queue, and measurement methodology. Key components:
+- `TrackSection` — fires `section_viewed` when a section is 50%+ visible for 1 second
+- `TrackedCTA` — fires `cta_clicked` with location/label on every CTA click
+- `LandingExperiments` — reads PostHog feature flags and applies text overrides
+
 ## Stale code (to clean up)
 
 Old pages from the pre-pivot producer SaaS version still exist but are not linked in nav:
