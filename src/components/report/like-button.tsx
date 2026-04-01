@@ -1,20 +1,28 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Heart } from 'lucide-react'
 
 interface LikeButtonProps {
   evaluationId: string
   initialLiked: boolean
   initialCount: number
+  loggedIn?: boolean
 }
 
-export function LikeButton({ evaluationId, initialLiked, initialCount }: LikeButtonProps) {
+export function LikeButton({ evaluationId, initialLiked, initialCount, loggedIn = true }: LikeButtonProps) {
+  const router = useRouter()
   const [liked, setLiked] = useState(initialLiked)
   const [count, setCount] = useState(initialCount)
   const [loading, setLoading] = useState(false)
 
   const toggle = async () => {
+    if (!loggedIn) {
+      router.push(`/login?redirect=/report/${evaluationId}`)
+      return
+    }
+
     setLoading(true)
     try {
       const res = await fetch(`/api/scripts/${evaluationId}/like`, {

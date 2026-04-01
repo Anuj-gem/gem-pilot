@@ -9,7 +9,7 @@ export function DevelopmentAssessment({ assessment }: DevelopmentAssessmentProps
   return (
     <div className="space-y-6">
       {/* What's Working */}
-      <div className="p-6 rounded-xl border border-[var(--gem-gray-700)]">
+      <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
         <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-400 mb-5">
           <CheckCircle2 size={14} />
           What&apos;s working
@@ -33,7 +33,7 @@ export function DevelopmentAssessment({ assessment }: DevelopmentAssessmentProps
       </div>
 
       {/* What's Hurting */}
-      <div className="p-6 rounded-xl border border-[var(--gem-gray-700)]">
+      <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
         <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 mb-5">
           <AlertTriangle size={14} />
           What needs work

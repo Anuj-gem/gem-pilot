@@ -7,7 +7,7 @@ interface ProductionRealityProps {
 
 export function ProductionReality({ production }: ProductionRealityProps) {
   return (
-    <div className="p-6 rounded-xl border border-[var(--gem-gray-700)]">
+    <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
       <h2 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)] mb-6">
         Production Reality Check
       </h2>

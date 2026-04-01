@@ -94,6 +94,7 @@ export default async function ReportPage({ params }: PageProps) {
             evaluationId={id}
             initialLiked={userLiked}
             initialCount={likeCount ?? 0}
+            loggedIn={!!user}
           />
         </div>
 

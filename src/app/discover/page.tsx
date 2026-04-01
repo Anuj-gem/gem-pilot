@@ -88,7 +88,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         />
 
         {scripts.length > 0 ? (
-          <ScriptGrid scripts={scripts} userLikes={Array.from(userLikes)} />
+          <ScriptGrid scripts={scripts} userLikes={Array.from(userLikes)} loggedIn={!!user} />
         ) : (
           <div className="text-center py-20">
             <p className="text-[var(--gem-gray-400)] text-sm">

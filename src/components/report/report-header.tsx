@@ -36,9 +36,9 @@ export function ReportHeader({
   return (
     <div className="space-y-6">
       {/* Title + Score */}
-      <div className="flex items-start justify-between gap-6">
+      <div className="flex items-start justify-between gap-4 sm:gap-6">
         <div className="flex-1 min-w-0">
-          <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{title}</h1>
           <p className="text-sm text-[var(--gem-gray-400)] mt-1">
             by {author} — {date}
           </p>
@@ -60,7 +60,12 @@ export function ReportHeader({
         </div>
 
         <div className="shrink-0">
-          <ScoreRing score={weightedScore} size={100} strokeWidth={5} label="GEM score" />
+          <div className="hidden sm:block">
+            <ScoreRing score={weightedScore} size={100} strokeWidth={5} label="GEM score" />
+          </div>
+          <div className="sm:hidden">
+            <ScoreRing score={weightedScore} size={72} strokeWidth={4} label="GEM score" />
+          </div>
         </div>
       </div>
 

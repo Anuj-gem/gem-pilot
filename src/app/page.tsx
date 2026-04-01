@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, FileText, BarChart3, Lightbulb, Clapperboard, CheckCircle, Trophy, TrendingUp, Heart } from 'lucide-react'
+import { ArrowRight, FileText, BarChart3, Lightbulb, Clapperboard, CheckCircle, Trophy, TrendingUp, Heart, Calendar } from 'lucide-react'
 import { HeroUpload } from '@/components/hero-upload'
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 pt-28 pb-24">
+      <section className="max-w-4xl mx-auto px-6 pt-16 pb-16 sm:pt-28 sm:pb-24">
         <p className="text-sm uppercase tracking-widest text-[var(--gem-accent)] mb-4">
           Score. Rank. Get Discovered.
         </p>
@@ -47,13 +47,23 @@ export default function Home() {
         </p>
         <HeroUpload />
 
-        <div className="flex items-center gap-4 mt-5">
+        <div className="flex flex-wrap items-center gap-4 mt-6">
           <Link
             href="/discover"
-            className="text-sm text-[var(--gem-gray-400)] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
           >
-            or browse the leaderboard &rarr;
+            Browse the leaderboard
+            <ArrowRight size={14} />
           </Link>
+          <a
+            href="https://calendly.com/anuj-gem/15-minute-intro-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
+          >
+            <Calendar size={14} />
+            Talk to the founder
+          </a>
         </div>
       </section>
 
@@ -61,9 +71,9 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
       {/* Two-pillar value prop */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
+      <section className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
         <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">Two things other platforms can't do</p>
-        <h2 className="text-3xl font-bold mb-16">A real evaluation and a real audience.</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16">A real evaluation and a real audience.</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Evaluation pillar */}
@@ -182,11 +192,11 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
       {/* How it works */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
+      <section className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
         <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">How it works</p>
-        <h2 className="text-3xl font-bold mb-16">Upload. Score. Publish. Climb.</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16">Upload. Score. Publish. Climb.</h2>
 
-        <div className="grid sm:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
           <div>
             <div className="text-3xl font-bold text-[var(--gem-gray-700)] mb-3">01</div>
             <h3 className="font-semibold mb-2">Upload your script</h3>
@@ -226,9 +236,9 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
       {/* Pricing */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
+      <section className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
         <p className="text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-4">Pricing</p>
-        <h2 className="text-3xl font-bold mb-16">Everything. $20 a month.</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16">Everything. $20 a month.</h2>
 
         <div className="max-w-sm mx-auto">
           <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-8">
@@ -270,25 +280,46 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
       {/* CTA */}
-      <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <h2 className="text-3xl font-bold mb-4">Your script deserves more than a drawer.</h2>
+      <section className="max-w-4xl mx-auto px-6 py-16 sm:py-24 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Your script deserves more than a drawer.</h2>
         <p className="text-[var(--gem-gray-300)] max-w-lg mx-auto leading-relaxed mb-10">
           Get a real evaluation. Publish to the leaderboard. Let the work speak for itself.
         </p>
-        <Link
-          href="/signup"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
-        >
-          Get Started Free
-          <ArrowRight size={16} />
-        </Link>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/signup"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+          >
+            Get Started Free
+            <ArrowRight size={16} />
+          </Link>
+          <a
+            href="https://calendly.com/anuj-gem/15-minute-intro-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
+          >
+            <Calendar size={16} />
+            Talk to the founder
+          </a>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-[var(--gem-gray-800)] py-8">
         <div className="max-w-5xl mx-auto px-6 flex items-center justify-between text-xs text-[var(--gem-gray-500)]">
           <span>GEM</span>
-          <span>&copy; {new Date().getFullYear()}</span>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://calendly.com/anuj-gem/15-minute-intro-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Talk to us
+            </a>
+            <span>&copy; {new Date().getFullYear()}</span>
+          </div>
         </div>
       </footer>
     </div>
