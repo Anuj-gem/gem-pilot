@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import Nav from '@/components/nav'
@@ -8,6 +8,14 @@ import { PaywallModal } from '@/components/ui/paywall-modal'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings } from 'lucide-react'
 
 export default function SubmitPage() {
+  return (
+    <Suspense>
+      <SubmitPageInner />
+    </Suspense>
+  )
+}
+
+function SubmitPageInner() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const supabase = createClient()
