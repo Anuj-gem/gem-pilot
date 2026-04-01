@@ -48,7 +48,10 @@ export default async function DashboardPage() {
         {submissions && submissions.length > 0 ? (
           <div className="space-y-3">
             {submissions.map((sub: any) => {
-              const eval_ = sub.script_evaluations?.[0]
+              // script_evaluations is a 1-to-1 relation (unique submission_id)
+              // Supabase may return it as object or array depending on schema detection
+              const rawEval = sub.script_evaluations
+              const eval_ = Array.isArray(rawEval) ? rawEval[0] : rawEval
               const tierMeta = eval_ ? TIER_META[eval_.tier as Tier] : null
 
               return (

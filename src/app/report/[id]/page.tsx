@@ -72,7 +72,7 @@ export default async function ReportPage({ params }: PageProps) {
           {isOwner && (
             <VisibilityToggle
               submissionId={submission.id}
-              initialPublic={submission.is_public}
+              initialPublic={submission.is_public ?? false}
             />
           )}
           <LikeButton
