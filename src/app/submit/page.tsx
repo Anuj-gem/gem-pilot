@@ -9,6 +9,7 @@ import { PaywallModal } from '@/components/ui/paywall-modal'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackUpgradePromptShown, trackSubscribeClick } from '@/lib/posthog'
+import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeClicked } from '@/lib/gtag'
 
 export default function SubmitPage() {
   return (
@@ -138,6 +139,7 @@ function SubmitPageInner() {
     setError(null)
     setProgress('Analyzing your script — this takes about 30 seconds...')
     trackEvalStart({ title, source: fromHero ? 'hero' : 'submit' })
+    gtagEvalStarted()
 
     try {
       const formData = new FormData()
@@ -219,6 +221,7 @@ function SubmitPageInner() {
 
     // We have a session — update state and evaluate
     trackSignupComplete()
+    gtagSignupCompleted()
     setUser(data.user)
     setFreeEvalUsed(false)
     setSigningUp(false)
@@ -391,6 +394,7 @@ function SubmitPageInner() {
             <button
               onClick={async () => {
                 trackSubscribeClick('submit_upgrade_gate')
+                gtagSubscribeClicked()
                 const res = await fetch('/api/stripe/checkout', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },

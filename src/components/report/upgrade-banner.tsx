@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { CheckCircle, ArrowRight, X } from 'lucide-react'
 import { trackUpgradePromptShown, trackSubscribeClick } from '@/lib/posthog'
+import { gtagSubscribeClicked } from '@/lib/gtag'
 
 interface UpgradeBannerProps {
   delayMs?: number
@@ -23,6 +24,7 @@ export function UpgradeBanner({ delayMs = 60000 }: UpgradeBannerProps) {
 
   const handleSubscribe = async () => {
     trackSubscribeClick('report_banner')
+    gtagSubscribeClicked()
     setLoading(true)
     try {
       const res = await fetch('/api/stripe/checkout', {
