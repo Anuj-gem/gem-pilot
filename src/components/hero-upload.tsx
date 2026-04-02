@@ -35,20 +35,20 @@ export function HeroUpload() {
   }
 
   return (
-    <div className="mt-10 max-w-lg">
+    <div className="mt-8 sm:mt-10 max-w-lg">
       {!file ? (
         <div
           onDragOver={e => e.preventDefault()}
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
-          className="flex items-center gap-4 px-5 py-4 rounded-xl border-2 border-dashed border-[var(--gem-gray-600)] hover:border-[var(--gem-accent)] cursor-pointer transition-colors group"
+          className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-dashed border-[var(--gem-gray-600)] hover:border-[var(--gem-accent)] cursor-pointer transition-colors group active:border-[var(--gem-accent)] active:bg-[var(--gem-accent)]/5"
         >
-          <div className="w-10 h-10 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0 group-hover:border-[var(--gem-accent)]/40 transition-colors">
-            <Upload size={18} className="text-[var(--gem-gray-400)] group-hover:text-[var(--gem-accent)] transition-colors" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] flex items-center justify-center shrink-0 group-hover:border-[var(--gem-accent)]/40 transition-colors">
+            <Upload size={16} className="text-[var(--gem-gray-400)] group-hover:text-[var(--gem-accent)] transition-colors sm:w-[18px] sm:h-[18px]" />
           </div>
-          <div>
-            <p className="text-sm font-medium text-white">Drop your screenplay here to get started</p>
-            <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB — your first evaluation is free</p>
+          <div className="min-w-0">
+            <p className="text-sm font-medium text-white">Drop your screenplay here</p>
+            <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB — first evaluation is free</p>
           </div>
           <input
             ref={fileInputRef}
@@ -59,9 +59,9 @@ export function HeroUpload() {
           />
         </div>
       ) : (
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-3 flex-1 px-4 py-3 rounded-xl border border-[var(--gem-accent)] bg-[var(--gem-accent)]/5">
-            <FileText size={18} className="text-[var(--gem-accent)] shrink-0" />
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-3 flex-1 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-[var(--gem-accent)] bg-[var(--gem-accent)]/5">
+            <FileText size={16} className="text-[var(--gem-accent)] shrink-0 sm:w-[18px] sm:h-[18px]" />
             <div className="min-w-0">
               <p className="text-sm font-medium text-white truncate">{file.name}</p>
               <p className="text-xs text-[var(--gem-gray-400)]">{(file.size / 1024).toFixed(0)} KB</p>
@@ -69,7 +69,7 @@ export function HeroUpload() {
           </div>
           <button
             onClick={handleGo}
-            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors shrink-0"
+            className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] active:bg-[var(--gem-accent-hover)] transition-colors shrink-0"
           >
             Evaluate
             <ArrowRight size={16} />
