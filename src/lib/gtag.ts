@@ -83,8 +83,9 @@ export function gtagSubscribeCompleted(value = 20) {
   if (CONVERSIONS.SUBSCRIBE_COMPLETED) sendConversion(CONVERSIONS.SUBSCRIBE_COMPLETED, value)
 }
 
-/** Generic page view (for enhanced conversions) */
+/** Generic page view — fires both config update and explicit page_view event */
 export function gtagPageView(url: string) {
   if (!GA_ADS_ID) return
   gtag('config', GA_ADS_ID, { page_path: url })
+  gtag('event', 'page_view', { page_path: url, send_to: GA_ADS_ID })
 }
