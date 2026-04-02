@@ -8,8 +8,8 @@ import Nav from '@/components/nav'
 import { PaywallModal } from '@/components/ui/paywall-modal'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackUpgradePromptShown, trackSubscribeClick } from '@/lib/posthog'
-import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeClicked } from '@/lib/gtag'
+import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackUpgradePromptShown, trackSubscribeClick, trackSubscriptionActivated } from '@/lib/posthog'
+import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeClicked, gtagSubscribeCompleted } from '@/lib/gtag'
 
 export default function SubmitPage() {
   return (
@@ -64,6 +64,12 @@ function SubmitPageInner() {
       if (!title) setTitle(name)
     }
 
+    // Fire subscription conversion events when returning from Stripe checkout
+    if (justSubscribed) {
+      trackSubscriptionActivated()
+      gtagSubscribeCompleted()
+    }
+
     async function checkAuth() {
       const { data: { user } } = await supabase.auth.getUser()
       setUser(user)
@@ -83,7 +89,7 @@ function SubmitPageInner() {
       }
     }
     checkAuth()
-  }, [])
+  }, [justSubscribed])
 
   const isSubscribed = subscriptionStatus === 'active'
   const hasFreeEval = freeEvalUsed === false
