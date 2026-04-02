@@ -1,16 +1,23 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { SAMPLE_GOT_REPORT, SHOWCASE_DIMENSIONS } from '@/data/sample-reports'
 import { TIER_META } from '@/types'
 import { ScoreRing } from '@/components/ui/score-ring'
-import { ArrowRight, ChevronRight, CheckCircle2, AlertTriangle } from 'lucide-react'
+import { ArrowRight, CheckCircle2, AlertTriangle, Users, MapPin, Clapperboard, Tv } from 'lucide-react'
 import Link from 'next/link'
 
 const report = SAMPLE_GOT_REPORT
 const tier = TIER_META[report.evaluation.tier]
+const prod = report.evaluation.production_reality
 
-type Tab = 'scores' | 'working' | 'take'
+type Tab = 'scores' | 'notes' | 'production' | 'comparables'
+const TABS: { key: Tab; label: string }[] = [
+  { key: 'scores', label: 'Score & Tier' },
+  { key: 'notes', label: 'Dev Notes' },
+  { key: 'production', label: 'Production' },
+  { key: 'comparables', label: 'Comps' },
+]
 
 export function ReportShowcase() {
   const [activeTab, setActiveTab] = useState<Tab>('scores')
@@ -32,16 +39,21 @@ export function ReportShowcase() {
     return () => clearInterval(interval)
   }, [])
 
-  // Auto-cycle tabs
+  // Auto-cycle tabs, reset timer on manual click
+  const [cycleKey, setCycleKey] = useState(0)
   useEffect(() => {
-    const tabs: Tab[] = ['scores', 'working', 'take']
     const interval = setInterval(() => {
       setActiveTab(prev => {
-        const idx = tabs.indexOf(prev)
-        return tabs[(idx + 1) % tabs.length]
+        const idx = TABS.findIndex(t => t.key === prev)
+        return TABS[(idx + 1) % TABS.length].key
       })
     }, 6000)
     return () => clearInterval(interval)
+  }, [cycleKey])
+
+  const handleTabClick = useCallback((key: Tab) => {
+    setActiveTab(key)
+    setCycleKey(k => k + 1) // restart auto-cycle timer
   }, [])
 
   return (
@@ -71,15 +83,11 @@ export function ReportShowcase() {
 
       {/* Tab bar */}
       <div className="flex border-b border-[var(--gem-gray-800)]">
-        {([
-          ['scores', 'Scores'],
-          ['working', 'What\'s Working'],
-          ['take', 'Overall Take'],
-        ] as [Tab, string][]).map(([key, label]) => (
+        {TABS.map(({ key, label }) => (
           <button
             key={key}
-            onClick={() => setActiveTab(key)}
-            className={`flex-1 px-3 py-2.5 text-xs font-medium transition-colors ${
+            onClick={() => handleTabClick(key)}
+            className={`flex-1 px-2 sm:px-3 py-2.5 text-[11px] sm:text-xs font-medium transition-colors ${
               activeTab === key
                 ? 'text-white border-b-2 border-[var(--gem-accent)] -mb-px'
                 : 'text-[var(--gem-gray-500)] hover:text-[var(--gem-gray-300)]'
@@ -91,7 +99,9 @@ export function ReportShowcase() {
       </div>
 
       {/* Tab content */}
-      <div className="p-5 sm:p-6 min-h-[200px]">
+      <div className="p-5 sm:p-6 min-h-[220px]">
+
+        {/* ─── Score & Tier ──────────────────────────── */}
         {activeTab === 'scores' && (
           <div className="space-y-3">
             {SHOWCASE_DIMENSIONS.map(dim => (
@@ -108,10 +118,14 @@ export function ReportShowcase() {
                 </div>
               </div>
             ))}
+            <p className="text-[10px] text-[var(--gem-gray-500)] pt-2">
+              Weighted by what matters for getting made — audience appeal and character strength count most.
+            </p>
           </div>
         )}
 
-        {activeTab === 'working' && (
+        {/* ─── Development Notes ─────────────────────── */}
+        {activeTab === 'notes' && (
           <div className="space-y-4">
             {report.evaluation.development_assessment.working.slice(0, 2).map((point, i) => (
               <div key={i} className="flex gap-2.5">
@@ -138,15 +152,75 @@ export function ReportShowcase() {
           </div>
         )}
 
-        {activeTab === 'take' && (
-          <div>
-            <p className="text-sm text-[var(--gem-gray-200)] leading-relaxed line-clamp-6">
-              {report.evaluation.development_assessment.overall_take}
-            </p>
-            <div className="flex flex-wrap gap-1.5 mt-4">
+        {/* ─── Production Reality Check ──────────────── */}
+        {activeTab === 'production' && (
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <h4 className="flex items-center gap-1.5 text-xs font-medium text-[var(--gem-gray-200)]">
+                <Users size={12} className="text-[var(--gem-gray-400)]" />
+                Cast
+              </h4>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                {prod.cast.speaking_roles} speaking roles, {prod.cast.leads} leads.
+                Name talent: <span className="text-amber-400">required</span>
+              </p>
+            </div>
+            <div className="space-y-1.5">
+              <h4 className="flex items-center gap-1.5 text-xs font-medium text-[var(--gem-gray-200)]">
+                <MapPin size={12} className="text-[var(--gem-gray-400)]" />
+                Locations
+              </h4>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                {prod.locations.distinct_count} distinct. {prod.locations.interior_exterior_mix}.
+              </p>
+            </div>
+            <div className="space-y-1.5">
+              <h4 className="flex items-center gap-1.5 text-xs font-medium text-[var(--gem-gray-200)]">
+                <Clapperboard size={12} className="text-[var(--gem-gray-400)]" />
+                Technical
+              </h4>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed line-clamp-3">
+                {prod.technical.vfx_requirements}
+              </p>
+            </div>
+            <div className="space-y-1.5">
+              <h4 className="flex items-center gap-1.5 text-xs font-medium text-[var(--gem-gray-200)]">
+                <Tv size={12} className="text-[var(--gem-gray-400)]" />
+                Platform Fit
+              </h4>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed line-clamp-3">
+                {prod.platform_fit.recommended_lane}. {prod.platform_fit.content_level}.
+              </p>
+            </div>
+            <div className="col-span-2 flex flex-wrap gap-1.5 pt-1">
+              {prod.locations.expensive_flags.map(flag => (
+                <span
+                  key={flag}
+                  className="text-[10px] px-2 py-0.5 rounded-full bg-amber-950/30 border border-amber-800/40 text-amber-400"
+                >
+                  {flag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ─── Comparables ───────────────────────────── */}
+        {activeTab === 'comparables' && (
+          <div className="space-y-4">
+            {report.evaluation.format_detection.comparables.map((comp, i) => (
+              <div key={i}>
+                <p className="text-sm font-medium text-white">{comp.title}</p>
+                <p className="text-xs text-[var(--gem-gray-400)] mt-1 leading-relaxed">
+                  {comp.why}
+                </p>
+              </div>
+            ))}
+            <div className="flex flex-wrap gap-1.5 pt-2">
               {[
                 report.evaluation.format_detection.genre_primary,
                 ...report.evaluation.format_detection.genre_tags,
+                report.evaluation.format_detection.tone.split(',')[0],
               ].map(tag => (
                 <span
                   key={tag}
