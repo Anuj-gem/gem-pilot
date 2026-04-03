@@ -64,17 +64,20 @@ export default async function ReportPage({ params }: PageProps) {
       .maybeSingle()
     userLiked = !!existingLike
 
-    // Check if user needs upgrade prompt (used free eval, not subscribed)
+    // Check if user needs upgrade prompt (trial expired or free eval used, not subscribed)
     const { data: profile } = await supabase
       .from('profiles')
-      .select('subscription_status, free_eval_used')
+      .select('subscription_status, free_eval_used, trial_ends_at')
       .eq('id', user.id)
       .single()
 
     if (profile) {
       const isSubscribed = profile.subscription_status === 'active'
+      const trialEnded = profile.trial_ends_at
+        ? new Date(profile.trial_ends_at) <= new Date()
+        : false
       const freeEvalUsed = profile.free_eval_used === true
-      showUpgradeBanner = freeEvalUsed && !isSubscribed
+      showUpgradeBanner = !isSubscribed && (trialEnded || (freeEvalUsed && !profile.trial_ends_at))
     }
   }
 

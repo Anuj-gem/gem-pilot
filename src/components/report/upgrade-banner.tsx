@@ -1,15 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { CheckCircle, ArrowRight, X } from 'lucide-react'
+import { CheckCircle, ArrowRight, X, Clock } from 'lucide-react'
 import { trackUpgradePromptShown, trackSubscribeClick } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
 
 interface UpgradeBannerProps {
   delayMs?: number
+  trialExpired?: boolean
 }
 
-export function UpgradeBanner({ delayMs = 60000 }: UpgradeBannerProps) {
+export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeBannerProps) {
   const [visible, setVisible] = useState(false)
   const [loading, setLoading] = useState(false)
   const [dismissed, setDismissed] = useState(false)
@@ -53,15 +54,17 @@ export function UpgradeBanner({ delayMs = 60000 }: UpgradeBannerProps) {
 
         <div className="sm:flex sm:items-start sm:gap-6">
           <div className="flex-1 mb-5 sm:mb-0">
-            <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2">
-              You've used your free evaluation
+            <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
+              <Clock size={12} />
+              {trialExpired ? 'Your free trial has ended' : 'You\'ve used your free evaluation'}
             </p>
             <h3 className="text-lg font-bold text-white mb-2">
               Keep evaluating. Keep climbing the leaderboard.
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">
-              For $20/month, get unlimited evaluations and post as many scripts as you
-              want to the public leaderboard. Every draft scored. Every idea ranked.
+              {trialExpired
+                ? 'Your 48-hour trial is over. For $20/month, unlock unlimited evaluations and post every script to the public leaderboard.'
+                : 'For $20/month, get unlimited evaluations and post as many scripts as you want to the public leaderboard. Every draft scored. Every idea ranked.'}
             </p>
             <ul className="space-y-1.5 text-sm text-[var(--gem-gray-300)]">
               {[

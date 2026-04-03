@@ -1,13 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { CheckCircle, X } from 'lucide-react'
+import { CheckCircle, X, Clock } from 'lucide-react'
 
 interface PaywallModalProps {
   onClose: () => void
+  trialExpired?: boolean
 }
 
-export function PaywallModal({ onClose }: PaywallModalProps) {
+export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -45,15 +46,17 @@ export function PaywallModal({ onClose }: PaywallModalProps) {
           <X size={20} />
         </button>
 
-        <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2">
-          Free evaluation used
+        <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
+          <Clock size={12} />
+          {trialExpired ? 'Your free trial has ended' : 'Free evaluation used'}
         </p>
         <h2 className="text-xl font-bold text-white mb-2">
           Keep evaluating. Keep climbing.
         </h2>
         <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
-          You've seen what a GEM evaluation looks like. Subscribe to evaluate unlimited
-          scripts and post every one to the public leaderboard.
+          {trialExpired
+            ? 'Your 48-hour trial is over — but your scripts are just getting started. Subscribe for unlimited evaluations and leaderboard posts.'
+            : 'You\'ve seen what a GEM evaluation looks like. Subscribe to evaluate unlimited scripts and post every one to the public leaderboard.'}
         </p>
 
         <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">

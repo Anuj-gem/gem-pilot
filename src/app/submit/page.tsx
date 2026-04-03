@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase-browser'
 import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
 import { PaywallModal } from '@/components/ui/paywall-modal'
-import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight } from 'lucide-react'
+import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight, Clock } from 'lucide-react'
 import Link from 'next/link'
 import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackUpgradePromptShown, trackSubscribeClick, trackSubscriptionActivated } from '@/lib/posthog'
 import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeClicked, gtagSubscribeCompleted } from '@/lib/gtag'
@@ -41,6 +41,7 @@ function SubmitPageInner() {
   // Subscription state
   const [subscriptionStatus, setSubscriptionStatus] = useState<string | null>(null)
   const [freeEvalUsed, setFreeEvalUsed] = useState<boolean | null>(null)
+  const [trialEndsAt, setTrialEndsAt] = useState<string | null>(null)
 
   // Signup fields (for unauthenticated users)
   const [fullName, setFullName] = useState('')
@@ -78,13 +79,14 @@ function SubmitPageInner() {
       if (user) {
         const { data: profile } = await supabase
           .from('profiles')
-          .select('subscription_status, free_eval_used')
+          .select('subscription_status, free_eval_used, trial_ends_at')
           .eq('id', user.id)
           .single()
 
         if (profile) {
           setSubscriptionStatus(profile.subscription_status)
           setFreeEvalUsed(profile.free_eval_used)
+          setTrialEndsAt(profile.trial_ends_at)
         }
       }
     }
@@ -92,7 +94,19 @@ function SubmitPageInner() {
   }, [justSubscribed])
 
   const isSubscribed = subscriptionStatus === 'active'
-  const hasFreeEval = freeEvalUsed === false
+  const hasActiveTrial = trialEndsAt ? new Date(trialEndsAt) > new Date() : false
+  const hasFreeEval = freeEvalUsed === false && !trialEndsAt // legacy: pre-trial users only
+
+  // Helper: format trial time remaining
+  const getTrialTimeLeft = () => {
+    if (!trialEndsAt) return ''
+    const diff = new Date(trialEndsAt).getTime() - Date.now()
+    if (diff <= 0) return ''
+    const hours = Math.floor(diff / (1000 * 60 * 60))
+    if (hours >= 1) return `${hours}h left on trial`
+    const minutes = Math.floor(diff / (1000 * 60))
+    return `${minutes}m left on trial`
+  }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0]
@@ -354,8 +368,9 @@ function SubmitPageInner() {
     )
   }
 
-  // ─── Upgrade required (free eval used, not subscribed) ──
-  const needsUpgrade = authChecked && user && freeEvalUsed === true && !isSubscribed
+  // ─── Upgrade required (trial expired or free eval used, not subscribed) ──
+  const trialExpired = trialEndsAt ? new Date(trialEndsAt) <= new Date() : false
+  const needsUpgrade = authChecked && user && !isSubscribed && (trialExpired || (freeEvalUsed === true && !trialEndsAt))
 
   if (needsUpgrade) {
     return (
@@ -364,14 +379,15 @@ function SubmitPageInner() {
         <div className="max-w-md mx-auto px-4 py-16">
           <div className="text-center mb-10">
             <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-3">
-              Free evaluation used
+              {trialExpired ? 'Trial ended' : 'Free evaluation used'}
             </p>
             <h1 className="text-2xl font-bold mb-3">
               Ready to keep going?
             </h1>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed max-w-sm mx-auto">
-              You've seen what GEM can do. Subscribe for unlimited evaluations and
-              put every script you write on the leaderboard.
+              {trialExpired
+                ? 'Your 48-hour free trial has ended. Subscribe to keep getting the producer\'s perspective on every script.'
+                : 'You\'ve seen what GEM can do. Subscribe for unlimited evaluations and put every script you write on the leaderboard.'}
             </p>
           </div>
 
@@ -455,6 +471,10 @@ function SubmitPageInner() {
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-950/50 border border-emerald-700 text-emerald-400">
                 <CheckCircle size={12} /> Subscribed — unlimited evals
               </span>
+            ) : hasActiveTrial ? (
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
+                <Clock size={12} /> Free trial — {getTrialTimeLeft()}
+              </span>
             ) : hasFreeEval ? (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
                 1 free evaluation available
@@ -479,7 +499,7 @@ function SubmitPageInner() {
         {authChecked && !user && (
           <div className="flex items-center gap-3 mb-8">
             <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
-              Your first evaluation is free
+              <Clock size={12} /> 48-hour free trial — no credit card required
             </span>
           </div>
         )}
@@ -563,7 +583,7 @@ function SubmitPageInner() {
         </form>
       </div>
 
-      {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} />}
+      {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} trialExpired={trialExpired} />}
     </>
   )
 }

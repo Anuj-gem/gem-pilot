@@ -107,20 +107,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // 1b. Check subscription / free eval
+    // 1b. Check subscription / trial period
     const serviceClient = createServiceClient();
     const { data: profile } = await serviceClient
       .from("profiles")
-      .select("subscription_status, free_eval_used")
+      .select("subscription_status, free_eval_used, trial_ends_at")
       .eq("id", user.id)
       .single();
 
     const isSubscribed = profile?.subscription_status === "active";
-    const hasFreeEval = !profile?.free_eval_used;
+    const hasActiveTrial = profile?.trial_ends_at
+      ? new Date(profile.trial_ends_at) > new Date()
+      : false;
+    // Keep legacy free_eval_used check for users who signed up before trial system
+    const hasFreeEval = !profile?.free_eval_used && !profile?.trial_ends_at;
 
-    if (!isSubscribed && !hasFreeEval) {
+    if (!isSubscribed && !hasActiveTrial && !hasFreeEval) {
       return NextResponse.json(
-        { error: "subscription_required", message: "Subscribe to evaluate more scripts" },
+        { error: "subscription_required", message: "Your trial has ended. Subscribe to keep evaluating scripts." },
         { status: 403 }
       );
     }
@@ -236,7 +240,8 @@ export async function POST(request: NextRequest) {
         .update({ status: "completed" })
         .eq("id", submission.id);
 
-      if (!isSubscribed && hasFreeEval) {
+      // Mark legacy free eval as used (only for pre-trial users without trial_ends_at)
+      if (!isSubscribed && hasFreeEval && !profile?.trial_ends_at) {
         await serviceClient
           .from("profiles")
           .update({ free_eval_used: true })
