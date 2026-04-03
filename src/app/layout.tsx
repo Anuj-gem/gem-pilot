@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Suspense } from "react"
 import { Geist, Geist_Mono } from "next/font/google"
 import { PostHogProvider } from "@/components/posthog-provider"
@@ -8,10 +8,15 @@ import "./globals.css"
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export const metadata: Metadata = {
   title: "GEM — AI Script Evaluation",
   description: "Upload your screenplay and get a professional evaluation in under a minute. Scored dimensions, development notes, production analysis, and tier placement — built on the same rubric used for produced film and television.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   openGraph: {
     title: "GEM — AI Script Evaluation",
     description: "Get the evaluation a producer would give your script. Upload, score, improve.",
@@ -21,13 +26,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full overflow-x-hidden`}>
-      <body className="min-h-full flex flex-col bg-[var(--gem-black)] text-[var(--gem-white)] antialiased overflow-x-hidden w-full">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
+      <body className="min-h-full flex flex-col bg-[var(--gem-black)] text-[var(--gem-white)] antialiased">
         <GoogleAdsScript />
         <Suspense fallback={null}>
           <PostHogProvider />
         </Suspense>
-        {children}
+        <div className="flex-1 min-w-0 w-full overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   )
