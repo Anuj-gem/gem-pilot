@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { LayoutDashboard, Compass, LogOut, Menu, X, FileText } from 'lucide-react'
+import { LayoutDashboard, Compass, LogOut, Menu, X, FileText, Home, Plus } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -64,8 +64,8 @@ export default function Nav() {
                 href="/submit"
                 className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
               >
-                <FileText size={16} />
-                Submit Script
+                <Plus size={16} />
+                Submit
               </Link>
               <button
                 onClick={handleSignOut}
@@ -76,19 +76,37 @@ export default function Nav() {
               </button>
             </div>
 
-            {/* Mobile: leaderboard + hamburger */}
+            {/* Mobile nav — context-aware quick actions + hamburger */}
             <div className="md:hidden flex items-center gap-1">
-              <Link
-                href="/discover"
-                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm transition-colors ${
-                  pathname.startsWith('/discover')
-                    ? 'bg-[var(--gem-gray-700)] text-white'
-                    : 'text-[var(--gem-gray-300)]'
-                }`}
-              >
-                <Compass size={16} />
-                <span className="text-xs">Discover</span>
-              </Link>
+              {pathname.startsWith('/discover') ? (
+                <Link
+                  href="/dashboard"
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs text-[var(--gem-gray-300)] transition-colors"
+                >
+                  <Home size={16} />
+                </Link>
+              ) : (
+                <Link
+                  href="/discover"
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs transition-colors ${
+                    pathname.startsWith('/discover')
+                      ? 'bg-[var(--gem-gray-700)] text-white'
+                      : 'text-[var(--gem-gray-300)]'
+                  }`}
+                >
+                  <Compass size={16} />
+                  Discover
+                </Link>
+              )}
+              {!pathname.startsWith('/submit') && (
+                <Link
+                  href="/submit"
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs bg-[var(--gem-accent)] text-white"
+                >
+                  <Plus size={14} />
+                  Submit
+                </Link>
+              )}
               <button
                 className="p-2 text-[var(--gem-gray-300)]"
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -137,8 +155,8 @@ export default function Nav() {
             onClick={() => setMobileOpen(false)}
             className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white"
           >
-            <FileText size={16} />
-            Submit Script
+            <Plus size={16} />
+            Submit
           </Link>
           <button
             onClick={handleSignOut}
