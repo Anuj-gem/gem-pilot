@@ -20,7 +20,7 @@ export default function Home() {
           <div className="flex items-center gap-3 sm:gap-4">
             <Link
               href="/discover"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors hidden sm:inline"
+              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"
             >
               Leaderboard
             </Link>

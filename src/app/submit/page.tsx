@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
-import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight } from 'lucide-react'
+import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight, Compass } from 'lucide-react'
 import Link from 'next/link'
 import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackSubscriptionActivated } from '@/lib/posthog'
 import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted } from '@/lib/gtag'
@@ -452,6 +452,25 @@ function SubmitPageInner() {
             Your script is evaluated by AI using the same rubric applied to produced film and television.
           </p>
         </form>
+
+        {/* Leaderboard nudge */}
+        <div className="mt-8 p-4 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
+          <div className="flex items-start gap-3">
+            <Compass size={18} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
+            <div>
+              <p className="text-sm text-[var(--gem-gray-300)]">
+                Don&apos;t have a script handy? Browse the leaderboard to see how other writers&apos; screenplays scored.
+              </p>
+              <Link
+                href="/discover"
+                className="inline-flex items-center gap-1.5 mt-2 text-sm text-[var(--gem-accent)] hover:underline"
+              >
+                Browse the leaderboard
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

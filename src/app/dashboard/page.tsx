@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import { TIER_META, type Tier } from '@/types'
-import { FileText, Plus, Eye, EyeOff, Lock } from 'lucide-react'
+import { FileText, Plus, Eye, EyeOff, Lock, Compass, ArrowRight } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -58,6 +58,15 @@ export default async function DashboardPage() {
 
         {submissions && submissions.length > 0 ? (
           <div className="space-y-3">
+            {/* Leaderboard nudge at top on mobile */}
+            <Link
+              href="/discover"
+              className="sm:hidden flex items-center gap-2 p-3 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors mb-2"
+            >
+              <Compass size={16} className="text-[var(--gem-accent)] shrink-0" />
+              <span className="flex-1">See how other writers scored on the leaderboard</span>
+              <ArrowRight size={14} className="shrink-0" />
+            </Link>
             {submissions.map((sub: any) => {
               // script_evaluations is a 1-to-1 relation (unique submission_id)
               // Supabase may return it as object or array depending on schema detection
@@ -145,12 +154,22 @@ export default async function DashboardPage() {
             <p className="text-[var(--gem-gray-400)] text-sm mb-4">
               No scripts submitted yet.
             </p>
-            <Link
-              href="/submit"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-            >
-              Submit your first script
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                href="/submit"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+              >
+                Submit your first script
+              </Link>
+              <Link
+                href="/discover"
+                className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-white transition-colors"
+              >
+                <Compass size={14} />
+                Browse the leaderboard
+                <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         )}
       </div>

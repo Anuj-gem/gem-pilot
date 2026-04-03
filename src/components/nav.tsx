@@ -76,13 +76,26 @@ export default function Nav() {
               </button>
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden p-2 text-[var(--gem-gray-300)]"
-              onClick={() => setMobileOpen(!mobileOpen)}
-            >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+            {/* Mobile: leaderboard + hamburger */}
+            <div className="md:hidden flex items-center gap-1">
+              <Link
+                href="/discover"
+                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm transition-colors ${
+                  pathname.startsWith('/discover')
+                    ? 'bg-[var(--gem-gray-700)] text-white'
+                    : 'text-[var(--gem-gray-300)]'
+                }`}
+              >
+                <Compass size={16} />
+                <span className="text-xs">Discover</span>
+              </Link>
+              <button
+                className="p-2 text-[var(--gem-gray-300)]"
+                onClick={() => setMobileOpen(!mobileOpen)}
+              >
+                {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </>
         ) : (
           <div className="flex items-center gap-3">
