@@ -102,14 +102,33 @@ export async function POST(request: NextRequest) {
     })
     .eq('id', userId)
 
-  // 4. Update Stripe customer with supabase_user_id metadata
+  // 4. Claim the anonymous submission that triggered this purchase
+  const redirectReport = session.metadata?.redirect_report || null
+  if (redirectReport) {
+    // redirectReport is the evaluation ID — find its submission and claim it
+    const { data: evalRow } = await adminSupabase
+      .from('script_evaluations')
+      .select('submission_id')
+      .eq('id', redirectReport)
+      .single()
+
+    if (evalRow?.submission_id) {
+      await adminSupabase
+        .from('script_submissions')
+        .update({ user_id: userId })
+        .eq('id', evalRow.submission_id)
+        .is('user_id', null) // only claim if still anonymous
+    }
+  }
+
+  // 5. Update Stripe customer with supabase_user_id metadata
   if (stripeCustomerId) {
     await stripe.customers.update(stripeCustomerId, {
       metadata: { supabase_user_id: userId },
     })
   }
 
-  // 5. Sign the user in via the regular Supabase client (sets auth cookies)
+  // 6. Sign the user in via the regular Supabase client (sets auth cookies)
   const cookieStore = await cookies()
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -142,9 +161,6 @@ export async function POST(request: NextRequest) {
       message: 'Account created! Please log in with your email and password.',
     })
   }
-
-  // Get redirect report from Stripe session metadata
-  const redirectReport = session.metadata?.redirect_report || null
 
   return NextResponse.json({
     success: true,
