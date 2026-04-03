@@ -24,17 +24,49 @@ export async function POST(request: NextRequest) {
   )
 
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
 
-  // Parse optional redirect_report from body
+  // Parse body
   let redirectReport: string | null = null
+  let anonymous = false
   try {
     const body = await request.json()
     redirectReport = body.redirect_report || null
+    anonymous = body.anonymous === true
   } catch {
     // No body or invalid JSON — that's fine
+  }
+
+  const origin = process.env.NEXT_PUBLIC_APP_URL || 'https://gem-pilot.vercel.app'
+
+  // ─── Anonymous flow: no account yet, Stripe collects email ────────
+  if (!user && anonymous) {
+    const session = await stripe.checkout.sessions.create({
+      mode: 'subscription',
+      allow_promotion_codes: true,
+      line_items: [
+        {
+          price: process.env.STRIPE_PRICE_ID!,
+          quantity: 1,
+        },
+      ],
+      success_url: redirectReport
+        ? `${origin}/complete-signup?session_id={CHECKOUT_SESSION_ID}&report=${redirectReport}`
+        : `${origin}/complete-signup?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: redirectReport
+        ? `${origin}/report/${redirectReport}?cancelled=true`
+        : `${origin}/?cancelled=true`,
+      metadata: {
+        anonymous: 'true',
+        redirect_report: redirectReport || '',
+      },
+    })
+
+    return NextResponse.json({ url: session.url })
+  }
+
+  // ─── Authenticated flow: existing user ────────────────────────────
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
   // Check if user already has a Stripe customer
@@ -70,10 +102,6 @@ export async function POST(request: NextRequest) {
       .eq('id', user.id)
   }
 
-  const origin = process.env.NEXT_PUBLIC_APP_URL || 'https://gem-pilot.vercel.app'
-
-  // After checkout, redirect to the report that triggered the purchase (if any)
-  // Otherwise redirect to submit page
   const successUrl = redirectReport
     ? `${origin}/report/${redirectReport}?subscribed=true`
     : `${origin}/submit?subscribed=true`

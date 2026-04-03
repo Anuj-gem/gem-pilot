@@ -19,20 +19,19 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
     gtagSubscribeClicked()
     setLoading(true)
 
-    if (!isLoggedIn) {
-      // Anonymous user: send to signup, then they'll come back
-      window.location.href = `/signup?redirect=/report/${evaluationId}`
-      return
-    }
-
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ redirect_report: evaluationId }),
+        body: JSON.stringify({
+          redirect_report: evaluationId,
+          // If not logged in, tell checkout API to run the anonymous flow
+          ...(isLoggedIn ? {} : { anonymous: true }),
+        }),
       })
       const data = await res.json()
       if (data.url) window.location.href = data.url
+      else setLoading(false)
     } catch {
       setLoading(false)
     }
@@ -65,7 +64,7 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
               disabled={loading}
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
             >
-              {loading ? 'Redirecting...' : isLoggedIn ? 'Subscribe — $20/mo' : 'Sign up to subscribe'}
+              {loading ? 'Redirecting...' : 'Subscribe — $20/mo'}
               {!loading && <ArrowRight size={16} />}
             </button>
             <p className="text-xs text-[var(--gem-gray-500)] mt-2">

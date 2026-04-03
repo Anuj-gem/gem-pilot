@@ -9,7 +9,6 @@ import { ProductionReality } from '@/components/report/production-reality'
 import { OverallTake } from '@/components/report/overall-take'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
-import { BlurredSection } from '@/components/report/blurred-section'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import type { ScriptEvaluation, ScriptSubmission } from '@/types'
@@ -78,7 +77,10 @@ export default async function ReportPage({ params }: PageProps) {
     isSubscribed = profile?.subscription_status === 'active'
   }
 
-  const showBlurred = !isSubscribed
+  // Public leaderboard posts are always fully visible.
+  // Blur only applies to the viewer's own non-subscribed evaluations.
+  const isPublicPost = submission.is_public === true
+  const showBlurred = !isSubscribed && !isPublicPost
 
   // Get like count and whether current user has liked
   const { count: likeCount } = await supabase
@@ -130,37 +132,16 @@ export default async function ReportPage({ params }: PageProps) {
           genre={report.format_detection.genre_primary}
           genreTags={report.format_detection.genre_tags}
           tone={report.format_detection.tone}
-          comparables={showBlurred ? [] : report.format_detection.comparables}
+          comparables={report.format_detection.comparables}
           createdAt={eval_.created_at}
+          blurComparables={showBlurred}
         />
 
-        {/* Report sections — blurred for non-subscribers */}
-        {showBlurred ? (
-          <>
-            <BlurredSection sectionLabel="The Overall Take">
-              <OverallTake take={report.development_assessment.overall_take} />
-            </BlurredSection>
-
-            <BlurredSection sectionLabel="Score Breakdown">
-              <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} />
-            </BlurredSection>
-
-            <BlurredSection sectionLabel="Development Assessment">
-              <DevelopmentAssessment assessment={report.development_assessment} />
-            </BlurredSection>
-
-            <BlurredSection sectionLabel="Production Reality">
-              <ProductionReality production={report.production_reality} />
-            </BlurredSection>
-          </>
-        ) : (
-          <>
-            <OverallTake take={report.development_assessment.overall_take} />
-            <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} />
-            <DevelopmentAssessment assessment={report.development_assessment} />
-            <ProductionReality production={report.production_reality} />
-          </>
-        )}
+        {/* Report sections — each component handles its own selective blurring */}
+        <OverallTake take={report.development_assessment.overall_take} blurred={showBlurred} />
+        <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} blurred={showBlurred} />
+        <DevelopmentAssessment assessment={report.development_assessment} blurred={showBlurred} />
+        <ProductionReality production={report.production_reality} blurred={showBlurred} />
       </div>
 
       {/* Sticky subscribe CTA for non-subscribers */}

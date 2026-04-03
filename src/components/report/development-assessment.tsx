@@ -3,9 +3,18 @@ import { CheckCircle2, AlertTriangle } from 'lucide-react'
 
 interface DevelopmentAssessmentProps {
   assessment: DevelopmentAssessmentType
+  blurred?: boolean
 }
 
-export function DevelopmentAssessment({ assessment }: DevelopmentAssessmentProps) {
+function BlurredText({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="select-none pointer-events-none" style={{ filter: 'blur(8px)' }} aria-hidden="true">
+      {children}
+    </span>
+  )
+}
+
+export function DevelopmentAssessment({ assessment, blurred = false }: DevelopmentAssessmentProps) {
   return (
     <div className="space-y-6">
       {/* What's Working */}
@@ -18,15 +27,23 @@ export function DevelopmentAssessment({ assessment }: DevelopmentAssessmentProps
           {assessment.working.map((point, i) => (
             <div key={i} className="space-y-1.5">
               <h3 className="text-sm font-medium text-[var(--gem-white)]">
-                {point.point}
+                {blurred ? <BlurredText>{point.point}</BlurredText> : point.point}
               </h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
                 <span className="text-[var(--gem-gray-300)] font-medium">Evidence: </span>
-                {point.evidence}
+                {blurred ? <BlurredText>{point.evidence}</BlurredText> : point.evidence}
               </p>
-              <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
-                {point.why_it_works}
-              </p>
+              {blurred ? (
+                <div className="select-none pointer-events-none" style={{ filter: 'blur(8px)' }} aria-hidden="true">
+                  <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
+                    {point.why_it_works}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
+                  {point.why_it_works}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -42,15 +59,23 @@ export function DevelopmentAssessment({ assessment }: DevelopmentAssessmentProps
           {assessment.hurting.map((point, i) => (
             <div key={i} className="space-y-1.5">
               <h3 className="text-sm font-medium text-[var(--gem-white)]">
-                {point.point}
+                {blurred ? <BlurredText>{point.point}</BlurredText> : point.point}
               </h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
                 <span className="text-[var(--gem-gray-300)] font-medium">Evidence: </span>
-                {point.evidence}
+                {blurred ? <BlurredText>{point.evidence}</BlurredText> : point.evidence}
               </p>
-              <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed italic">
-                {point.suggestion}
-              </p>
+              {blurred ? (
+                <div className="select-none pointer-events-none" style={{ filter: 'blur(8px)' }} aria-hidden="true">
+                  <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed italic">
+                    {point.suggestion}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed italic">
+                  {point.suggestion}
+                </p>
+              )}
             </div>
           ))}
         </div>
