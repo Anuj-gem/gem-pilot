@@ -1,12 +1,22 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, Suspense } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-browser'
 
 export default function SignupPage() {
+  return (
+    <Suspense>
+      <SignupPageInner />
+    </Suspense>
+  )
+}
+
+function SignupPageInner() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const redirect = searchParams.get('redirect')
   const supabase = createClient()
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -32,7 +42,7 @@ export default function SignupPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      router.push('/submit')
+      router.push(redirect || '/submit')
       router.refresh()
     }
   }
@@ -91,7 +101,7 @@ export default function SignupPage() {
 
         <p className="mt-6 text-center text-sm text-[var(--gem-gray-400)]">
           Already have an account?{' '}
-          <Link href="/login" className="text-[var(--gem-accent)] hover:underline">
+          <Link href={redirect ? `/login?redirect=${encodeURIComponent(redirect)}` : '/login'} className="text-[var(--gem-accent)] hover:underline">
             Log in
           </Link>
         </p>

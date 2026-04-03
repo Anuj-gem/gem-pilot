@@ -5,11 +5,10 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
-import { PaywallModal } from '@/components/ui/paywall-modal'
-import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight, Clock } from 'lucide-react'
+import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackUpgradePromptShown, trackSubscribeClick, trackSubscriptionActivated } from '@/lib/posthog'
-import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeClicked, gtagSubscribeCompleted } from '@/lib/gtag'
+import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackSubscriptionActivated } from '@/lib/posthog'
+import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted } from '@/lib/gtag'
 
 export default function SubmitPage() {
   return (
@@ -36,14 +35,11 @@ function SubmitPageInner() {
   const [file, setFile] = useState<File | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState<string | null>(null)
-  const [showPaywall, setShowPaywall] = useState(false)
 
   // Subscription state
-  const [subscriptionStatus, setSubscriptionStatus] = useState<string | null>(null)
-  const [freeEvalUsed, setFreeEvalUsed] = useState<boolean | null>(null)
-  const [trialEndsAt, setTrialEndsAt] = useState<string | null>(null)
+  const [isSubscribed, setIsSubscribed] = useState(false)
 
-  // Signup fields (for unauthenticated users)
+  // Signup fields (for unauthenticated users coming from mobile)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -79,34 +75,15 @@ function SubmitPageInner() {
       if (user) {
         const { data: profile } = await supabase
           .from('profiles')
-          .select('subscription_status, free_eval_used, trial_ends_at')
+          .select('subscription_status')
           .eq('id', user.id)
           .single()
 
-        if (profile) {
-          setSubscriptionStatus(profile.subscription_status)
-          setFreeEvalUsed(profile.free_eval_used)
-          setTrialEndsAt(profile.trial_ends_at)
-        }
+        setIsSubscribed(profile?.subscription_status === 'active')
       }
     }
     checkAuth()
   }, [justSubscribed])
-
-  const isSubscribed = subscriptionStatus === 'active'
-  const hasActiveTrial = trialEndsAt ? new Date(trialEndsAt) > new Date() : false
-  const hasFreeEval = freeEvalUsed === false && !trialEndsAt // legacy: pre-trial users only
-
-  // Helper: format trial time remaining
-  const getTrialTimeLeft = () => {
-    if (!trialEndsAt) return ''
-    const diff = new Date(trialEndsAt).getTime() - Date.now()
-    if (diff <= 0) return ''
-    const hours = Math.floor(diff / (1000 * 60 * 60))
-    if (hours >= 1) return `${hours}h left on trial`
-    const minutes = Math.floor(diff / (1000 * 60))
-    return `${minutes}m left on trial`
-  }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0]
@@ -151,7 +128,7 @@ function SubmitPageInner() {
     if (data.url) window.location.href = data.url
   }
 
-  // Run the actual evaluation
+  // Run the actual evaluation (works for both authenticated and anonymous users)
   const runEvaluation = async () => {
     if (!file || !title) return
 
@@ -173,8 +150,8 @@ function SubmitPageInner() {
 
       const data = await res.json()
 
-      if (data.error === 'subscription_required') {
-        setShowPaywall(true)
+      if (data.error === 'rate_limit') {
+        setError(data.message || 'Rate limit reached. Subscribe for unlimited access.')
         setStep('upload')
         setProgress(null)
         return
@@ -185,6 +162,7 @@ function SubmitPageInner() {
       }
 
       trackEvalComplete({ score: data.weighted_score, tier: data.tier })
+      // Always redirect to report — it handles blurred vs full based on subscription
       router.push(`/report/${data.evaluation_id}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -198,18 +176,12 @@ function SubmitPageInner() {
     e.preventDefault()
     if (!file || !title) return
 
-    if (!user) {
-      // Not logged in — show signup step
-      trackSignupStart()
-      setStep('signup')
-      return
-    }
-
-    // Logged in — go straight to evaluation
+    // Everyone can evaluate — anonymous or logged in
+    // The paywall is on the report page, not here
     await runEvaluation()
   }
 
-  // Handle inline signup then auto-evaluate
+  // Handle inline signup then auto-evaluate (for users who clicked signup on mobile)
   const handleSignupAndEvaluate = async (e: React.FormEvent) => {
     e.preventDefault()
     setSigningUp(true)
@@ -229,35 +201,22 @@ function SubmitPageInner() {
       return
     }
 
-    // Supabase signUp with email confirmation disabled returns a session immediately.
-    // If email confirmation IS enabled, data.user exists but data.session may be null.
     if (data.user && !data.session) {
-      // Email confirmation required — tell user to check email
       setError('Check your email to confirm your account, then come back and log in to evaluate.')
       setSigningUp(false)
       setStep('upload')
       return
     }
 
-    // We have a session — update state and evaluate
     trackSignupComplete()
     gtagSignupCompleted()
     setUser(data.user)
-    setFreeEvalUsed(false)
     setSigningUp(false)
 
     // Small delay for auth to propagate to cookies
     await new Promise(r => setTimeout(r, 500))
 
     await runEvaluation()
-  }
-
-  // Determine button text for logged-in users
-  let buttonText = 'Evaluate my script'
-  if (!user) {
-    buttonText = 'Evaluate my script — free'
-  } else if (hasFreeEval && !isSubscribed) {
-    buttonText = 'Evaluate my script — free'
   }
 
   // ─── Evaluating state ──────────────────────────────────
@@ -277,24 +236,23 @@ function SubmitPageInner() {
     )
   }
 
-  // ─── Signup step (landing page conversion flow) ─────────
+  // ─── Signup step (only used if user explicitly needs to sign up mid-flow) ───
   if (step === 'signup') {
     return (
       <>
         <Nav />
         <div className="max-w-sm mx-auto px-4 py-10">
-          {/* Context bar */}
           <div className="flex items-center gap-3 p-3 rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] mb-8">
             <FileText size={16} className="text-[var(--gem-accent)] shrink-0" />
             <div className="min-w-0">
               <p className="text-sm font-medium text-white truncate">{title}</p>
-              <p className="text-xs text-[var(--gem-gray-500)]">Ready to evaluate — create an account to continue</p>
+              <p className="text-xs text-[var(--gem-gray-500)]">Ready to evaluate — create an account to save your results</p>
             </div>
           </div>
 
           <h1 className="text-2xl font-bold mb-1">Create your account</h1>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8">
-            Sign up to get your free evaluation. Takes 10 seconds.
+            Sign up to save evaluations and track your scripts.
           </p>
 
           <form onSubmit={handleSignupAndEvaluate} className="space-y-4">
@@ -368,85 +326,6 @@ function SubmitPageInner() {
     )
   }
 
-  // ─── Upgrade required (trial expired or free eval used, not subscribed) ──
-  const trialExpired = trialEndsAt ? new Date(trialEndsAt) <= new Date() : false
-  const needsUpgrade = authChecked && user && !isSubscribed && (trialExpired || (freeEvalUsed === true && !trialEndsAt))
-
-  if (needsUpgrade) {
-    return (
-      <>
-        <Nav />
-        <div className="max-w-md mx-auto px-4 py-16">
-          <div className="text-center mb-10">
-            <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-3">
-              {trialExpired ? 'Trial ended' : 'Free evaluation used'}
-            </p>
-            <h1 className="text-2xl font-bold mb-3">
-              Ready to keep going?
-            </h1>
-            <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed max-w-sm mx-auto">
-              {trialExpired
-                ? 'Your 48-hour free trial has ended. Subscribe to keep getting the producer\'s perspective on every script.'
-                : 'You\'ve seen what GEM can do. Subscribe for unlimited evaluations and put every script you write on the leaderboard.'}
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-8 mb-6">
-            <div className="flex items-baseline gap-1 mb-1">
-              <span className="text-4xl font-bold">$20</span>
-              <span className="text-[var(--gem-gray-400)]">/ month</span>
-            </div>
-            <p className="text-sm text-[var(--gem-gray-400)] mb-6">Unlimited everything. Cancel anytime.</p>
-
-            <ul className="space-y-3 mb-8">
-              {[
-                'Unlimited script evaluations',
-                'Unlimited scripts on the leaderboard',
-                'Full scored report every time',
-                'Development notes + production analysis',
-                'All formats — features, pilots, shorts',
-              ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
-                  <CheckCircle size={16} className="text-emerald-400 mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <button
-              onClick={async () => {
-                trackSubscribeClick('submit_upgrade_gate')
-                gtagSubscribeClicked()
-                const res = await fetch('/api/stripe/checkout', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({}),
-                })
-                const data = await res.json()
-                if (data.url) window.location.href = data.url
-              }}
-              className="w-full py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
-            >
-              Subscribe — $20 / mo
-            </button>
-            <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">
-              Secure checkout via Stripe.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/dashboard"
-              className="text-sm text-[var(--gem-gray-500)] hover:text-white transition-colors"
-            >
-              Back to dashboard
-            </Link>
-          </div>
-        </div>
-      </>
-    )
-  }
-
   // ─── Upload step (default) ─────────────────────────────
   return (
     <>
@@ -455,33 +334,25 @@ function SubmitPageInner() {
         {justSubscribed && (
           <div className="flex items-start gap-2 p-3 rounded-lg bg-emerald-950/30 border border-emerald-800 text-emerald-300 text-sm mb-6">
             <CheckCircle size={16} className="mt-0.5 shrink-0" />
-            You're subscribed — evaluate unlimited scripts.
+            You&apos;re subscribed — evaluate unlimited scripts with full reports.
           </div>
         )}
 
         <h1 className="text-2xl font-bold mb-1">Submit a script</h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-          Upload your screenplay and get a professional evaluation with scores, development notes, and production analysis.
+          Upload your screenplay and see how it scores. Subscribe for the full report with development notes and comparables.
         </p>
 
-        {/* Subscription status badge (logged-in users only) */}
-        {authChecked && user && subscriptionStatus !== null && (
+        {/* Subscription status badge */}
+        {authChecked && user && (
           <div className="flex items-center gap-3 mb-8">
             {isSubscribed ? (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-950/50 border border-emerald-700 text-emerald-400">
-                <CheckCircle size={12} /> Subscribed — unlimited evals
-              </span>
-            ) : hasActiveTrial ? (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
-                <Clock size={12} /> Free trial — {getTrialTimeLeft()}
-              </span>
-            ) : hasFreeEval ? (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
-                1 free evaluation available
+                <CheckCircle size={12} /> Subscribed — full reports unlocked
               </span>
             ) : (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[var(--gem-gray-800)] border border-[var(--gem-gray-600)] text-[var(--gem-gray-400)]">
-                Subscribe to evaluate scripts
+                Free — score visible, full report requires subscription
               </span>
             )}
             {isSubscribed && (
@@ -495,11 +366,11 @@ function SubmitPageInner() {
           </div>
         )}
 
-        {/* Not logged in — show free eval badge */}
+        {/* Not logged in badge */}
         {authChecked && !user && (
           <div className="flex items-center gap-3 mb-8">
             <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
-              <Clock size={12} /> 48-hour free trial — no credit card required
+              Free to evaluate — no account needed
             </span>
           </div>
         )}
@@ -574,7 +445,7 @@ function SubmitPageInner() {
             disabled={!file || !title}
             className="w-full py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            {buttonText}
+            Evaluate my script
           </button>
 
           <p className="text-xs text-center text-[var(--gem-gray-500)]">
@@ -582,8 +453,6 @@ function SubmitPageInner() {
           </p>
         </form>
       </div>
-
-      {showPaywall && <PaywallModal onClose={() => setShowPaywall(false)} trialExpired={trialExpired} />}
     </>
   )
 }

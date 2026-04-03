@@ -1,9 +1,9 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { stripe } from '@/lib/stripe'
 
-export async function POST() {
+export async function POST(request: NextRequest) {
   const cookieStore = await cookies()
 
   const supabase = createServerClient(
@@ -26,6 +26,15 @@ export async function POST() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
+  // Parse optional redirect_report from body
+  let redirectReport: string | null = null
+  try {
+    const body = await request.json()
+    redirectReport = body.redirect_report || null
+  } catch {
+    // No body or invalid JSON — that's fine
   }
 
   // Check if user already has a Stripe customer
@@ -63,6 +72,12 @@ export async function POST() {
 
   const origin = process.env.NEXT_PUBLIC_APP_URL || 'https://gem-pilot.vercel.app'
 
+  // After checkout, redirect to the report that triggered the purchase (if any)
+  // Otherwise redirect to submit page
+  const successUrl = redirectReport
+    ? `${origin}/report/${redirectReport}?subscribed=true`
+    : `${origin}/submit?subscribed=true`
+
   const session = await stripe.checkout.sessions.create({
     customer: customerId,
     mode: 'subscription',
@@ -73,9 +88,14 @@ export async function POST() {
         quantity: 1,
       },
     ],
-    success_url: `${origin}/submit?subscribed=true`,
-    cancel_url: `${origin}/submit?cancelled=true`,
-    metadata: { supabase_user_id: user.id },
+    success_url: successUrl,
+    cancel_url: redirectReport
+      ? `${origin}/report/${redirectReport}?cancelled=true`
+      : `${origin}/submit?cancelled=true`,
+    metadata: {
+      supabase_user_id: user.id,
+      redirect_report: redirectReport || '',
+    },
   })
 
   return NextResponse.json({ url: session.url })

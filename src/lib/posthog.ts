@@ -105,3 +105,21 @@ export const trackSubscriptionActivated = () =>
 /** User makes script public */
 export const trackScriptPublished = () =>
   trackEvent('script_published')
+
+// ─── Blurred Report Funnel ─────────────────────────────────────────
+
+/** Anonymous user completes an evaluation (no account) */
+export const trackAnonymousEvalComplete = (props?: { score?: number; tier?: string }) =>
+  trackEvent('anonymous_eval_completed', props)
+
+/** User views a blurred report (non-subscriber) */
+export const trackBlurredReportViewed = (props?: { evaluationId?: string }) =>
+  trackEvent('blurred_report_viewed', props)
+
+/** User clicks subscribe from blurred report */
+export const trackSubscribeFromReport = (props?: { evaluationId?: string }) =>
+  trackEvent('subscribe_from_report_clicked', props)
+
+/** User unlocks full report after subscribing */
+export const trackReportUnlocked = (props?: { evaluationId?: string }) =>
+  trackEvent('report_unlocked', props)

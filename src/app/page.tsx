@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Calendar, Zap, Shield, TrendingUp, Eye, Clock } from 'lucide-react'
+import { ArrowRight, CheckCircle, Calendar } from 'lucide-react'
 import { HeroUpload } from '@/components/hero-upload'
 import { ReportShowcase } from '@/components/report-showcase'
 import { LandingTracking } from '@/components/landing-tracking'
@@ -33,10 +33,10 @@ export default function Home() {
             <TrackedCTA
               href="/signup"
               event="cta_clicked"
-              properties={{ location: 'nav', label: 'Start Free Trial' }}
+              properties={{ location: 'nav', label: 'Sign Up' }}
               className="text-sm px-4 py-2 rounded-lg bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
             >
-              Start Free Trial
+              Sign Up
             </TrackedCTA>
           </div>
         </div>
@@ -68,19 +68,19 @@ export default function Home() {
             <HeroUpload />
           </div>
 
-          {/* Mobile: trial CTA button (users won't have PDFs on phone) */}
+          {/* Mobile: signup CTA (users won't have PDFs on phone) */}
           <div className="sm:hidden">
             <TrackedCTA
               href="/signup"
               event="cta_clicked"
-              properties={{ location: 'hero_mobile', label: 'Start 48hr Free Trial' }}
+              properties={{ location: 'hero_mobile', label: 'Create Free Account' }}
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] active:bg-[var(--gem-accent-hover)] transition-colors"
             >
-              Start your 48-hour free trial
+              Create your free account
               <ArrowRight size={16} />
             </TrackedCTA>
             <p className="text-xs text-[var(--gem-gray-500)] text-center mt-2.5">
-              $20/month after trial. No credit card required.
+              See your score free. Subscribe for the full report.
             </p>
           </div>
 
@@ -161,10 +161,10 @@ export default function Home() {
                 <TrackedCTA
                   href="/signup"
                   event="cta_clicked"
-                  properties={{ location: 'showcase', label: 'Start free trial' }}
+                  properties={{ location: 'showcase', label: 'Get Started Free' }}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
                 >
-                  Start your free trial
+                  Get started free
                   <ArrowRight size={14} />
                 </TrackedCTA>
               </div>
@@ -274,52 +274,54 @@ export default function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Try it free for 48 hours.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">See your score free. Unlock everything for $20/mo.</h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-lg">
-            Full access to everything — unlimited evaluations, the complete report, and
-            the leaderboard. Then $20/month to keep going.
+            Upload your script and see how it scores — no account needed. Subscribe to
+            unlock full reports, development notes, and leaderboard access.
           </p>
 
-          <div className="max-w-sm mx-auto">
-            <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-6 sm:p-8">
-              {/* Trial callout */}
-              <div className="flex items-center gap-2 mb-4 px-3 py-2 rounded-lg bg-[var(--gem-accent)]/10 border border-[var(--gem-accent)]/20">
-                <Clock size={14} className="text-[var(--gem-accent)] shrink-0" />
-                <span className="text-xs font-medium text-[var(--gem-accent)]">48-hour free trial — unlimited access</span>
+          <div className="max-w-md mx-auto">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              {/* Free tier */}
+              <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-5 sm:p-6">
+                <div className="text-sm font-semibold text-white mb-1">Free</div>
+                <p className="text-xs text-[var(--gem-gray-400)] mb-4">No account required</p>
+                <ul className="space-y-2.5">
+                  {[
+                    'Upload any screenplay',
+                    'See your score + tier',
+                    'Up to 5 evals per day',
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
+                      <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl font-bold">$20</span>
-                <span className="text-[var(--gem-gray-400)]">/ month</span>
+              {/* Paid tier */}
+              <div className="rounded-2xl border border-[var(--gem-accent)]/40 bg-[var(--gem-accent)]/5 p-5 sm:p-6">
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-2xl font-bold">$20</span>
+                  <span className="text-xs text-[var(--gem-gray-400)]">/ mo</span>
+                </div>
+                <p className="text-xs text-[var(--gem-gray-400)] mb-4">Cancel anytime</p>
+                <ul className="space-y-2.5">
+                  {[
+                    'Full detailed reports',
+                    'Unlimited evaluations',
+                    'Publish to leaderboard',
+                    'Development notes',
+                    'Market comparables',
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
+                      <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-sm text-[var(--gem-gray-400)] mb-5 sm:mb-6">After trial. Cancel anytime.</p>
-
-              <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
-                {[
-                  'Unlimited script evaluations',
-                  'Full development + production analysis',
-                  'Market comps and packaging intel',
-                  'Publish to the public leaderboard',
-                  'All formats — features, pilots, shorts',
-                ].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
-                    <CheckCircle size={16} className="text-emerald-400 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <TrackedCTA
-                href="/signup"
-                event="cta_clicked"
-                properties={{ location: 'pricing', label: 'Start 48hr Free Trial' }}
-                className="block w-full text-center py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
-              >
-                Start your 48-hour free trial
-              </TrackedCTA>
-              <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">
-                No credit card required.
-              </p>
             </div>
           </div>
         </section>
@@ -333,17 +335,17 @@ export default function Home() {
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Know how a producer would read your script.</h2>
           <p className="text-[var(--gem-gray-300)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10">
-            Get a development-level evaluation. Publish to the leaderboard. 48 hours
-            free — no credit card, no commitment.
+            Upload your screenplay and see your score in under a minute. No account
+            needed — just drag and drop.
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <TrackedCTA
               href="/signup"
               event="cta_clicked"
-              properties={{ location: 'bottom_cta', label: 'Start 48hr Free Trial' }}
+              properties={{ location: 'bottom_cta', label: 'Get Started Free' }}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
             >
-              Start your free trial
+              Get started free
               <ArrowRight size={16} />
             </TrackedCTA>
             <TrackedCTA

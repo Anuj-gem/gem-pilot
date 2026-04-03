@@ -7,6 +7,9 @@ import type { GEMEvaluation, Tier } from "@/types";
 // Allow up to 60 seconds for script evaluation
 export const maxDuration = 60;
 
+// Rate limit: max anonymous evals per IP per 24 hours
+const ANON_RATE_LIMIT = 5;
+
 // Create a Supabase client with service role for writes
 function createServiceClient() {
   return createServerClient(
@@ -39,6 +42,15 @@ async function createAuthClient() {
         },
       },
     }
+  );
+}
+
+// Get client IP from request headers
+function getClientIp(request: NextRequest): string {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
   );
 }
 
@@ -97,39 +109,51 @@ async function evaluateScript(scriptText: string): Promise<{
 
 export async function POST(request: NextRequest) {
   try {
-    // 1. Authenticate user
+    const serviceClient = createServiceClient();
+    const clientIp = getClientIp(request);
+
+    // 1. Try to authenticate (optional — anonymous evals allowed)
     const authClient = await createAuthClient();
     const {
       data: { user },
     } = await authClient.auth.getUser();
 
-    if (!user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // 2. Check access: subscriber gets unlimited, everyone else is rate-limited
+    let isSubscribed = false;
+    if (user) {
+      const { data: profile } = await serviceClient
+        .from("profiles")
+        .select("subscription_status")
+        .eq("id", user.id)
+        .single();
+
+      isSubscribed = profile?.subscription_status === "active";
     }
 
-    // 1b. Check subscription / trial period
-    const serviceClient = createServiceClient();
-    const { data: profile } = await serviceClient
-      .from("profiles")
-      .select("subscription_status, free_eval_used, trial_ends_at")
-      .eq("id", user.id)
-      .single();
+    // Rate limit for non-subscribers (authenticated or anonymous)
+    if (!isSubscribed) {
+      const twentyFourHoursAgo = new Date(
+        Date.now() - 24 * 60 * 60 * 1000
+      ).toISOString();
 
-    const isSubscribed = profile?.subscription_status === "active";
-    const hasActiveTrial = profile?.trial_ends_at
-      ? new Date(profile.trial_ends_at) > new Date()
-      : false;
-    // Keep legacy free_eval_used check for users who signed up before trial system
-    const hasFreeEval = !profile?.free_eval_used && !profile?.trial_ends_at;
+      const { count } = await serviceClient
+        .from("script_submissions")
+        .select("id", { count: "exact", head: true })
+        .eq("submitted_by_ip", clientIp)
+        .gte("created_at", twentyFourHoursAgo);
 
-    if (!isSubscribed && !hasActiveTrial && !hasFreeEval) {
-      return NextResponse.json(
-        { error: "subscription_required", message: "Your trial has ended. Subscribe to keep evaluating scripts." },
-        { status: 403 }
-      );
+      if ((count ?? 0) >= ANON_RATE_LIMIT) {
+        return NextResponse.json(
+          {
+            error: "rate_limit",
+            message: `You've reached the limit of ${ANON_RATE_LIMIT} free evaluations per day. Subscribe for unlimited access.`,
+          },
+          { status: 429 }
+        );
+      }
     }
 
-    // 2. Parse form data
+    // 3. Parse form data
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
     const title = formData.get("title") as string | null;
@@ -156,15 +180,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. Create submission record
+    // 4. Create submission record (user_id is null for anonymous)
     const { data: submission, error: subError } = await serviceClient
       .from("script_submissions")
       .insert({
-        user_id: user.id,
+        user_id: user?.id || null,
         title,
         filename: file.name,
         file_size: file.size,
         status: "processing",
+        submitted_by_ip: clientIp,
       })
       .select()
       .single();
@@ -178,29 +203,30 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      // 4. Upload PDF to Supabase Storage
+      // 5. Upload PDF to Supabase Storage (only for authenticated users)
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
-      const storagePath = `${user.id}/${submission.id}/${file.name}`;
 
-      const { error: uploadError } = await serviceClient.storage
-        .from("scripts")
-        .upload(storagePath, buffer, {
-          contentType: "application/pdf",
-          upsert: false,
-        });
+      if (user) {
+        const storagePath = `${user.id}/${submission.id}/${file.name}`;
+        const { error: uploadError } = await serviceClient.storage
+          .from("scripts")
+          .upload(storagePath, buffer, {
+            contentType: "application/pdf",
+            upsert: false,
+          });
 
-      if (uploadError) {
-        console.error("Storage upload error:", uploadError);
-        // Non-fatal — continue with evaluation
-      } else {
-        await serviceClient
-          .from("script_submissions")
-          .update({ file_url: storagePath })
-          .eq("id", submission.id);
+        if (uploadError) {
+          console.error("Storage upload error:", uploadError);
+        } else {
+          await serviceClient
+            .from("script_submissions")
+            .update({ file_url: storagePath })
+            .eq("id", submission.id);
+        }
       }
 
-      // 5. Extract text from PDF
+      // 6. Extract text from PDF
       const scriptText = await extractPdfText(buffer);
 
       if (!scriptText || scriptText.trim().length < 100) {
@@ -209,11 +235,11 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      // 6. Run evaluation
+      // 7. Run evaluation
       const { evaluation, inputTokens, outputTokens, cost } =
         await evaluateScript(scriptText);
 
-      // 7. Store evaluation
+      // 8. Store evaluation
       const { data: evalRecord, error: evalError } = await serviceClient
         .from("script_evaluations")
         .insert({
@@ -234,24 +260,17 @@ export async function POST(request: NextRequest) {
         throw new Error("Failed to store evaluation");
       }
 
-      // 8. Mark submission as completed + mark free eval as used
+      // 9. Mark submission as completed
       await serviceClient
         .from("script_submissions")
         .update({ status: "completed" })
         .eq("id", submission.id);
 
-      // Mark legacy free eval as used (only for pre-trial users without trial_ends_at)
-      if (!isSubscribed && hasFreeEval && !profile?.trial_ends_at) {
-        await serviceClient
-          .from("profiles")
-          .update({ free_eval_used: true })
-          .eq("id", user.id);
-      }
-
       return NextResponse.json({
         submission_id: submission.id,
         evaluation_id: evalRecord.id,
         status: "completed",
+        is_subscriber: isSubscribed,
       });
     } catch (evalErr) {
       // Mark submission as failed

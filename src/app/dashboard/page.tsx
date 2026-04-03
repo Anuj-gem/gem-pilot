@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import { TIER_META, type Tier } from '@/types'
-import { FileText, Plus, Eye, EyeOff } from 'lucide-react'
+import { FileText, Plus, Eye, EyeOff, Lock } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -14,6 +14,15 @@ export default async function DashboardPage() {
   if (!user) {
     redirect('/login?redirect=/dashboard')
   }
+
+  // Check subscription status
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+
+  const isSubscribed = profile?.subscription_status === 'active'
 
   // Fetch user's submissions with evaluations
   const { data: submissions } = await supabase
@@ -33,7 +42,9 @@ export default async function DashboardPage() {
           <div>
             <h1 className="text-2xl font-bold">Your Scripts</h1>
             <p className="text-sm text-[var(--gem-gray-400)] mt-1">
-              All your submitted scripts and evaluations
+              {isSubscribed
+                ? 'All your submitted scripts and evaluations'
+                : 'Subscribe to unlock full reports and leaderboard access'}
             </p>
           </div>
           <Link
@@ -95,20 +106,25 @@ export default async function DashboardPage() {
                   </div>
 
                   {eval_ && (
-                    <div className="text-right shrink-0">
-                      <div className={`text-lg font-bold ${
-                        eval_.weighted_score >= 80 ? 'text-emerald-400' :
-                        eval_.weighted_score >= 70 ? 'text-amber-400' :
-                        eval_.weighted_score >= 60 ? 'text-blue-400' :
-                        eval_.weighted_score >= 50 ? 'text-zinc-400' :
-                        'text-zinc-500'
-                      }`}>
-                        {Math.round(eval_.weighted_score)}
+                    <div className="text-right shrink-0 flex items-center gap-3">
+                      <div>
+                        <div className={`text-lg font-bold ${
+                          eval_.weighted_score >= 80 ? 'text-emerald-400' :
+                          eval_.weighted_score >= 70 ? 'text-amber-400' :
+                          eval_.weighted_score >= 60 ? 'text-blue-400' :
+                          eval_.weighted_score >= 50 ? 'text-zinc-400' :
+                          'text-zinc-500'
+                        }`}>
+                          {Math.round(eval_.weighted_score)}
+                        </div>
+                        {tierMeta && (
+                          <span className={`text-xs ${tierMeta.colorClass}`}>
+                            {tierMeta.label}
+                          </span>
+                        )}
                       </div>
-                      {tierMeta && (
-                        <span className={`text-xs ${tierMeta.colorClass}`}>
-                          {tierMeta.label}
-                        </span>
+                      {!isSubscribed && (
+                        <Lock size={14} className="text-[var(--gem-gray-500)]" />
                       )}
                     </div>
                   )}

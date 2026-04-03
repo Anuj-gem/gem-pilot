@@ -48,7 +48,7 @@ export function HeroUpload() {
           </div>
           <div className="min-w-0">
             <p className="text-sm font-medium text-white">Drop your screenplay here</p>
-            <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB — first evaluation is free</p>
+            <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB — no account needed</p>
           </div>
           <input
             ref={fileInputRef}
