@@ -96,7 +96,7 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
     const uploadForm = new FormData();
     uploadForm.append(
       "file",
-      new Blob([buffer], { type: "application/pdf" }),
+      new Blob([new Uint8Array(buffer)], { type: "application/pdf" }),
       "screenplay.pdf"
     );
     uploadForm.append("purpose", "user_data");
