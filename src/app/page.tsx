@@ -254,7 +254,7 @@ export default async function Home() {
             </h2>
             <p className="text-sm sm:text-base text-[var(--gem-gray-300)] max-w-2xl mx-auto leading-relaxed">
               Selznick was developed to identify high-quality writers who may be overlooked by Hollywood.
-              Our scoring system is built on thousands of data points, calibrated against real-world
+              Selznick is built on thousands of data points, calibrated against real-world
               audience reception and informed by the creative instincts behind content that has collectively
               reached over 500 million people.
             </p>
@@ -463,7 +463,7 @@ export default async function Home() {
             </Link>
           )}
 
-          <p className="text-[var(--gem-gray-300)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10">
+          <p className="text-xl sm:text-2xl font-bold text-[var(--gem-gray-100)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10 animate-[fadeInUp_1s_ease-out]">
             Where does yours rank?
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">

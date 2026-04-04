@@ -114,6 +114,12 @@ body {
   background-clip: text;
 }
 
+/* Fade-in-up animation for CTA text */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Subtle violet radial glow for hero section (legacy) */
 .hero-gradient {
   background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.04) 0%, transparent 70%);

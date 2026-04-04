@@ -171,7 +171,7 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
               <p className="text-xs uppercase tracking-widest text-[var(--gem-gold)] font-medium">Top of the Leaderboard</p>
             </div>
             <p className="text-xs text-[var(--gem-gray-400)] mb-3">
-              These writers scored the highest. Create your account, submit your screenplay, and join them.
+              Score your script to see where you rank
             </p>
             <div className="space-y-2">
               {topScripts.map((script: any, idx: number) => (

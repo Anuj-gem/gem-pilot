@@ -54,7 +54,7 @@ export function SearchBar({
       </form>
 
       {/* Format pills */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+      <div className="flex gap-2 flex-wrap">
         <button
           onClick={() => updateParams({ format: '' })}
           className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors shrink-0 ${
@@ -81,7 +81,7 @@ export function SearchBar({
       </div>
 
       {/* Genre pills */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+      <div className="flex gap-2 flex-wrap">
         <button
           onClick={() => updateParams({ genre: '' })}
           className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors shrink-0 ${
