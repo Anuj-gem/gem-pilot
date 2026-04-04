@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Calendar, Sparkles, Brain, BarChart3, Target, Star } from 'lucide-react'
-import { HeroUpload } from '@/components/hero-upload'
+import { ArrowRight, CheckCircle, Calendar, Sparkles, Brain, BarChart3, Target, Star, Upload } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
@@ -68,44 +67,35 @@ export default async function Home() {
           <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="absolute -bottom-20 -left-40 w-60 h-60 bg-gradient-to-tr from-emerald-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-          <p className="relative text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-accent)] mb-3 sm:mb-4">
-            Drop your script. See what a producer sees.
-          </p>
+          <div className="relative flex items-center gap-2 mb-5 sm:mb-6 flex-wrap">
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Script Development Review</span>
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Public Script Leaderboard</span>
+          </div>
           <h1
             className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Free screenplay scoring. Instant. Unlimited.
+            Your Script Development Partner — Unlimited Script Reviews
           </h1>
           <p
             className="relative text-base sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Upload any script and get your GEM score and tier in under a minute. Create a free account to get started. Subscribe to unlock the full development read.
+            Get a producer&apos;s perspective on your script — then publish your best work to our public leaderboard to get the industry&apos;s eyes on it.
           </p>
 
-          {/* Desktop: file upload */}
-          <div className="hidden sm:block">
-            <HeroUpload />
-          </div>
+          {/* CTA */}
+          <TrackedCTA
+            href="/signup"
+            event="cta_clicked"
+            properties={{ location: 'hero', label: 'Sign Up for Free Script Review' }}
+            className="relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] active:bg-[var(--gem-accent-hover)] transition-colors text-sm sm:text-base"
+          >
+            <Upload size={18} />
+            Sign Up for Free Script Review
+          </TrackedCTA>
 
-          {/* Mobile: CTA */}
-          <div className="sm:hidden">
-            <TrackedCTA
-              href="/signup"
-              event="cta_clicked"
-              properties={{ location: 'hero_mobile', label: 'Create Free Account' }}
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] active:bg-[var(--gem-accent-hover)] transition-colors"
-            >
-              Create your free account
-              <ArrowRight size={16} />
-            </TrackedCTA>
-            <p className="text-xs text-[var(--gem-gray-500)] text-center mt-2.5">
-              See your score free. Subscribe for the full report.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mt-6">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mt-5">
             <TrackedCTA
               href="/discover"
               event="cta_clicked"
@@ -239,10 +229,10 @@ export default async function Home() {
               <div className="w-9 h-9 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-3">
                 <Brain size={18} className="text-indigo-600" />
               </div>
-              <h3 className="text-sm font-semibold mb-1.5">10 Scoring Dimensions</h3>
+              <h3 className="text-sm font-semibold mb-1.5">Thousands of Signals Per Script</h3>
               <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Not a single score from a chatbot. Ten research-backed dimensions — from audience appeal
-                to tonal specificity — each independently weighted by optimization research.
+                Every evaluation analyzes thousands of signals across your screenplay — character depth,
+                market positioning, structural momentum, tonal coherence — not just a single number from a chatbot.
               </p>
             </div>
 
@@ -250,10 +240,10 @@ export default async function Home() {
               <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-3">
                 <BarChart3 size={18} className="text-emerald-600" />
               </div>
-              <h3 className="text-sm font-semibold mb-1.5">Calibrated on Real Outcomes</h3>
+              <h3 className="text-sm font-semibold mb-1.5">Decades of Film &amp; TV Research</h3>
               <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Weights were optimized against actual audience reception data — IMDB ratings, viewership,
-                genre-normalized performance — not subjective taste.
+                Our model is built on research across thousands of produced films and series going back
+                decades — combined with real human insight to calibrate what actually works on screen.
               </p>
             </div>
 
