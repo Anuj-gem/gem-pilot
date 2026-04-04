@@ -4,13 +4,14 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/nav'
 import { ReportHeader } from '@/components/report/report-header'
 import { ScoreCard } from '@/components/report/score-card'
-import { DevelopmentAssessment } from '@/components/report/development-assessment'
+import { WhatsSpecialSection } from '@/components/report/whats-special'
+import { WhatsHoldingItBackSection } from '@/components/report/whats-holding-it-back'
 import { ProductionReality } from '@/components/report/production-reality'
-import { OverallTake } from '@/components/report/overall-take'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ReportAnalytics } from '@/components/report/report-analytics'
+import { normalizeEvaluation } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission } from '@/types'
 
 interface PageProps {
@@ -64,6 +65,9 @@ export default async function ReportPage({ params }: PageProps) {
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAnonymousSubmission = !submission.user_id
+
+  // Normalize v2/v3 evaluation shape
+  const { classification, comparables, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
 
   // Determine if user can see full report
   let isSubscribed = false
@@ -122,25 +126,31 @@ export default async function ReportPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Header: title, tier, weighted score — ALWAYS VISIBLE */}
+        {/* Header: title, tier, weighted score, tags, comparables */}
         <ReportHeader
           title={submission.title}
           author={submission.profiles?.full_name ?? 'Anonymous'}
           tier={eval_.tier}
           weightedScore={eval_.weighted_score}
-          format={report.format_detection.format}
-          genre={report.format_detection.genre_primary}
-          genreTags={report.format_detection.genre_tags}
-          tone={report.format_detection.tone}
-          comparables={report.format_detection.comparables}
+          format={classification.format}
+          genre={classification.genre_primary}
+          genreTags={classification.genre_tags}
+          tone={classification.tone}
+          comparables={comparables}
           createdAt={eval_.created_at}
           blurComparables={showBlurred}
         />
 
-        {/* Report sections — each component handles its own selective blurring */}
-        <OverallTake take={report.development_assessment.overall_take} blurred={showBlurred} />
+        {/* Dimension Scores */}
         <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} blurred={showBlurred} />
-        <DevelopmentAssessment assessment={report.development_assessment} blurred={showBlurred} />
+
+        {/* What Makes This Special */}
+        <WhatsSpecialSection data={whatsSpecial} blurred={showBlurred} />
+
+        {/* What Needs Development */}
+        <WhatsHoldingItBackSection data={whatsHoldingItBack} blurred={showBlurred} />
+
+        {/* Production Reality */}
         <ProductionReality production={report.production_reality} blurred={showBlurred} />
       </div>
 

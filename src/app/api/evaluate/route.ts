@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import { GEM_EVALUATION_PROMPT } from "@/lib/evaluation-prompt";
-import type { GEMEvaluation, Tier } from "@/types";
+import { GEM_EVALUATION_PROMPT_V3 } from "@/lib/evaluation-prompt-v3";
+import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
+import type { GEMEvaluation } from "@/types";
 
 // Allow up to 60 seconds for script evaluation
 export const maxDuration = 60;
@@ -61,9 +62,11 @@ async function extractPdfText(buffer: Buffer): Promise<string> {
   return data.text;
 }
 
-// Call GPT-5.4 Mini for evaluation
+// Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
 async function evaluateScript(scriptText: string): Promise<{
   evaluation: GEMEvaluation;
+  weightedScore: number;
+  tier: string;
   inputTokens: number;
   outputTokens: number;
   cost: number;
@@ -77,7 +80,7 @@ async function evaluateScript(scriptText: string): Promise<{
     body: JSON.stringify({
       model: "gpt-5.4-mini",
       messages: [
-        { role: "system", content: GEM_EVALUATION_PROMPT },
+        { role: "system", content: GEM_EVALUATION_PROMPT_V3 },
         {
           role: "user",
           content: `Please evaluate the following screenplay submission:\n\n---\n\n${scriptText}`,
@@ -98,13 +101,23 @@ async function evaluateScript(scriptText: string): Promise<{
     data.choices[0].message.content
   ) as GEMEvaluation;
 
+  // Calculate weighted score and tier in code (not from LLM)
+  const scores = evaluation.scores as Record<string, { score: number }>;
+  // Ensure all 10 dimensions have scores — default missing to 5
+  const safeScores: Record<string, { score: number }> = {};
+  for (const dim of DIMENSION_IDS) {
+    safeScores[dim] = scores[dim] ?? { score: 5 };
+  }
+  const weightedScore = calculateWeightedScore(safeScores as any);
+  const tier = calculateTier(weightedScore);
+
   const inputTokens = data.usage?.prompt_tokens ?? 0;
   const outputTokens = data.usage?.completion_tokens ?? 0;
   // GPT-5.4 Mini: $0.75/M input, $4.50/M output
   const cost =
     (inputTokens / 1_000_000) * 0.75 + (outputTokens / 1_000_000) * 4.5;
 
-  return { evaluation, inputTokens, outputTokens, cost };
+  return { evaluation, weightedScore, tier, inputTokens, outputTokens, cost };
 }
 
 export async function POST(request: NextRequest) {
@@ -235,8 +248,8 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      // 7. Run evaluation
-      const { evaluation, inputTokens, outputTokens, cost } =
+      // 7. Run evaluation (v3 prompt — score + tier calculated in code)
+      const { evaluation, weightedScore, tier, inputTokens, outputTokens, cost } =
         await evaluateScript(scriptText);
 
       // 8. Store evaluation
@@ -244,8 +257,8 @@ export async function POST(request: NextRequest) {
         .from("script_evaluations")
         .insert({
           submission_id: submission.id,
-          weighted_score: evaluation.weighted_score,
-          tier: evaluation.tier,
+          weighted_score: weightedScore,
+          tier: tier,
           evaluation: evaluation,
           model: "gpt-5.4-mini",
           input_tokens: inputTokens,

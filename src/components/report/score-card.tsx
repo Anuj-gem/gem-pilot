@@ -3,7 +3,7 @@
 import { DIMENSION_IDS, DIMENSION_META, type DimensionId, type DimensionScore } from '@/types'
 
 interface ScoreCardProps {
-  scores: Record<DimensionId, DimensionScore>
+  scores: Record<string, DimensionScore>
   weightedScore: number
   blurred?: boolean
 }
@@ -81,7 +81,7 @@ export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardP
       </div>
 
       <div className="space-y-5">
-        {DIMENSION_IDS.map(id => (
+        {DIMENSION_IDS.filter(id => scores[id] != null).map(id => (
           <DimensionBar
             key={id}
             id={id}

@@ -2,14 +2,15 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { SAMPLE_GOT_REPORT, SHOWCASE_DIMENSIONS } from '@/data/sample-reports'
-import { TIER_META } from '@/types'
+import { TIER_META, type Tier, normalizeEvaluation } from '@/types'
 import { ScoreRing } from '@/components/ui/score-ring'
 import { ArrowRight, CheckCircle2, AlertTriangle, Users, MapPin, Clapperboard, Tv } from 'lucide-react'
 import Link from 'next/link'
 
 const report = SAMPLE_GOT_REPORT
-const tier = TIER_META[report.evaluation.tier]
+const tier = TIER_META[report.tier as Tier]
 const prod = report.evaluation.production_reality
+const { comparables, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report.evaluation)
 
 type Tab = 'scores' | 'notes' | 'production' | 'comparables'
 const TABS: { key: Tab; label: string }[] = [
@@ -25,7 +26,7 @@ export function ReportShowcase() {
 
   // Animate score ring on mount
   useEffect(() => {
-    const target = report.evaluation.weighted_score
+    const target = report.weighted_score
     let current = 0
     const step = target / 40
     const interval = setInterval(() => {
@@ -68,7 +69,7 @@ export function ReportShowcase() {
             {report.title}
           </h3>
           <p className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-            {report.author} · {report.evaluation.format_detection.format}
+            {report.author} · {report.evaluation.classification?.format ?? report.evaluation.format_detection?.format}
           </p>
           <span
             className={`inline-flex items-center mt-3 px-3 py-1 rounded border text-xs font-medium uppercase tracking-widest ${tier.bgClass} ${tier.colorClass}`}
@@ -127,28 +128,30 @@ export function ReportShowcase() {
         {/* ─── Development Notes ─────────────────────── */}
         {activeTab === 'notes' && (
           <div className="space-y-4">
-            {report.evaluation.development_assessment.working.slice(0, 2).map((point, i) => (
+            {whatsSpecial.strengths.slice(0, 2).map((s, i) => (
               <div key={i} className="flex gap-2.5">
                 <CheckCircle2 size={14} className="text-emerald-400 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">{point.point}</p>
+                  <p className="text-sm font-medium text-white">{s.dimension_or_area}</p>
                   <p className="text-xs text-[var(--gem-gray-400)] mt-1 leading-relaxed line-clamp-2">
-                    {point.why_it_works}
+                    {s.what_it_means}
                   </p>
                 </div>
               </div>
             ))}
-            <div className="flex gap-2.5">
-              <AlertTriangle size={14} className="text-amber-400 mt-0.5 shrink-0" />
-              <div>
-                <p className="text-sm font-medium text-white">
-                  {report.evaluation.development_assessment.hurting[0].point}
-                </p>
-                <p className="text-xs text-[var(--gem-gray-400)] mt-1 leading-relaxed line-clamp-2">
-                  {report.evaluation.development_assessment.hurting[0].suggestion}
-                </p>
+            {whatsHoldingItBack.themes.length > 0 && (
+              <div className="flex gap-2.5">
+                <AlertTriangle size={14} className="text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">
+                    {whatsHoldingItBack.themes[0].theme}
+                  </p>
+                  <p className="text-xs text-[var(--gem-gray-400)] mt-1 leading-relaxed line-clamp-2">
+                    {whatsHoldingItBack.themes[0].risk}
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 
@@ -208,7 +211,7 @@ export function ReportShowcase() {
         {/* ─── Comparables ───────────────────────────── */}
         {activeTab === 'comparables' && (
           <div className="space-y-4">
-            {report.evaluation.format_detection.comparables.map((comp, i) => (
+            {comparables.map((comp, i) => (
               <div key={i}>
                 <p className="text-sm font-medium text-white">{comp.title}</p>
                 <p className="text-xs text-[var(--gem-gray-400)] mt-1 leading-relaxed">
@@ -218,10 +221,10 @@ export function ReportShowcase() {
             ))}
             <div className="flex flex-wrap gap-1.5 pt-2">
               {[
-                report.evaluation.format_detection.genre_primary,
-                ...report.evaluation.format_detection.genre_tags,
-                report.evaluation.format_detection.tone.split(',')[0],
-              ].map(tag => (
+                report.evaluation.classification?.genre_primary ?? '',
+                ...(report.evaluation.classification?.genre_tags ?? []),
+                (report.evaluation.classification?.tone ?? '').split(',')[0],
+              ].filter(Boolean).map(tag => (
                 <span
                   key={tag}
                   className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] text-[var(--gem-gray-400)]"
