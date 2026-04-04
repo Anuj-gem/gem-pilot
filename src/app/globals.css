@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  /* ── Light theme: warm, hopeful, Hollywood editorial ── */
-  --gem-black: #faf9f7;        /* page background — warm off-white */
+  /* ── Light theme: vivid, premium, Hollywood editorial ── */
+  --gem-black: #FFFFFF;         /* page background — pure white */
   --gem-white: #1a1a1a;        /* primary text — near-black */
-  --gem-gray-50: #111827;
-  --gem-gray-100: #1f2937;
-  --gem-gray-200: #374151;     /* strong secondary text */
-  --gem-gray-300: #4b5563;     /* secondary text */
-  --gem-gray-400: #6b7280;     /* muted text */
-  --gem-gray-500: #9ca3af;     /* placeholders, subtle labels */
-  --gem-gray-600: #d1d5db;     /* subtle dividers */
-  --gem-gray-700: #e5e7eb;     /* borders */
-  --gem-gray-800: #f3f4f6;     /* raised surfaces / cards */
-  --gem-gray-900: #f9fafb;     /* slightly raised bg */
-  --gem-accent: #6366f1;       /* indigo — primary action */
-  --gem-accent-hover: #4f46e5;
+  --gem-gray-50: #1C1917;      /* stone-900 — heaviest text */
+  --gem-gray-100: #292524;     /* stone-800 */
+  --gem-gray-200: #44403C;     /* stone-700 — strong secondary text */
+  --gem-gray-300: #57534E;     /* stone-600 — secondary text */
+  --gem-gray-400: #78716C;     /* stone-500 — muted text */
+  --gem-gray-500: #A8A29E;     /* stone-400 — placeholders, subtle labels */
+  --gem-gray-600: #D6D3D1;     /* stone-300 — subtle dividers */
+  --gem-gray-700: #E7E5E4;     /* stone-200 — borders */
+  --gem-gray-800: #F5F5F4;     /* stone-100 — raised surfaces / cards */
+  --gem-gray-900: #FAFAF9;     /* stone-50 — slightly raised bg */
+  --gem-accent: #7C3AED;       /* violet-600 — primary action */
+  --gem-accent-hover: #6D28D9; /* violet-700 */
   --gem-success: #16a34a;
   --gem-warning: #d97706;
-  --gem-gold: #b8860b;         /* dark goldenrod — Hollywood motif */
+  --gem-gold: #D4A017;         /* luminous gold — Hollywood motif */
 
-  /* Tier colors (readable on light) */
+  /* Tier colors (readable on light — unchanged) */
   --tier-greenlight: #059669;  /* emerald-600 */
   --tier-optionable: #d97706;  /* amber-600 */
   --tier-needs-dev: #6b7280;   /* gray-500 */
@@ -68,20 +68,55 @@ body {
 .section-accent::after {
   content: '';
   display: block;
-  width: 40px;
+  width: 48px;
   height: 2px;
   background: var(--gem-gold);
   margin-top: 8px;
   border-radius: 1px;
 }
 
-/* Warm card hover effect */
+/* Card hover effect (legacy — kept for compat) */
 .card-hover {
   transition: all 0.2s ease;
 }
 .card-hover:hover {
-  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
   border-color: var(--gem-gray-600);
+}
+
+/* ── New design system utilities ── */
+
+/* Premium card surface with subtle shadow and violet glow on hover */
+.card-glass {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--gem-gray-700);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+.card-glass:hover {
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  border-color: var(--gem-gray-600);
+}
+
+/* Accent glow on interactive elements */
+.glow-accent {
+  transition: box-shadow 0.2s ease;
+}
+.glow-accent:hover {
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Gold shimmer for hero text */
+.text-gold-shimmer {
+  background: linear-gradient(135deg, #D4A017 0%, #F2D06B 50%, #D4A017 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle violet radial glow for hero section */
+.hero-gradient {
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.04) 0%, transparent 70%);
 }
 
 /* Tag pill styles */

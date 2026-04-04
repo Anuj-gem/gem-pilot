@@ -83,7 +83,7 @@ function ScriptRow({
   return (
     <Link
       href={`/report/${script.evaluation_id}`}
-      className="group block rounded-xl border border-[var(--gem-gray-700)] bg-white/50 hover:border-[var(--gem-gray-500)] transition-colors overflow-hidden"
+      className="group block rounded-xl card-glass overflow-hidden"
     >
       <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier)}` }}>
         {/* Rank + Score — left column */}
@@ -138,7 +138,7 @@ function ScriptRow({
           {/* Tags */}
           <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
             {script.format && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-medium">
                 {script.format}
               </span>
             )}

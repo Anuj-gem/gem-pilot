@@ -41,7 +41,7 @@ export default async function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-          <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-gold-shimmer">GEM</span>
           <div className="flex items-center gap-3 sm:gap-4">
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Leaderboard
@@ -63,9 +63,9 @@ export default async function Home() {
 
       {/* Hero */}
       <TrackSection name="hero">
-        <section className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-12 sm:pt-24 sm:pb-20">
+        <section className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-12 sm:pt-24 sm:pb-20 hero-gradient">
           {/* Subtle decorative gradient */}
-          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-br from-violet-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="absolute -bottom-20 -left-40 w-60 h-60 bg-gradient-to-tr from-emerald-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
           <div className="relative flex items-center gap-2 mb-5 sm:mb-6 flex-wrap">
@@ -73,7 +73,7 @@ export default async function Home() {
             <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Public Leaderboard</span>
           </div>
           <h1
-            className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
+            className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)] text-gold-shimmer"
             data-experiment="hero-headline"
           >
             We help you get your screenplay made.
@@ -121,7 +121,7 @@ export default async function Home() {
                 <Link
                   key={script.evaluation_id ?? script.id ?? idx}
                   href={`/report/${script.evaluation_id ?? script.id}`}
-                  className="group block rounded-xl border border-[var(--gem-gray-700)] bg-white/50 hover:border-[var(--gem-gray-500)] transition-colors overflow-hidden"
+                  className="group block rounded-xl card-glass overflow-hidden"
                 >
                   <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier ?? '')}` }}>
                     {/* Rank + Score — left column */}
@@ -171,7 +171,7 @@ export default async function Home() {
                       {/* Tags */}
                       <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
                         {script.format && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-medium">
                             {script.format}
                           </span>
                         )}
@@ -207,7 +207,7 @@ export default async function Home() {
               href="/submit"
               event="cta_clicked"
               properties={{ location: 'leaderboard_snapshot', label: 'Submit yours' }}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
               Submit yours to see where it ranks
               <ArrowRight size={14} />
@@ -247,9 +247,9 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
-            <div className="p-5 rounded-xl bg-gradient-to-br from-[var(--gem-gray-800)] to-white border border-[var(--gem-gray-700)]">
-              <div className="w-9 h-9 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-3">
-                <Brain size={18} className="text-indigo-600" />
+            <div className="p-5 rounded-xl card-glass">
+              <div className="w-9 h-9 rounded-lg bg-violet-50 border border-violet-100 flex items-center justify-center mb-3">
+                <Brain size={18} className="text-violet-600" />
               </div>
               <h3 className="text-sm font-semibold mb-1.5">Thousands of Signals Per Script</h3>
               <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
@@ -258,7 +258,7 @@ export default async function Home() {
               </p>
             </div>
 
-            <div className="p-5 rounded-xl bg-gradient-to-br from-[var(--gem-gray-800)] to-white border border-[var(--gem-gray-700)]">
+            <div className="p-5 rounded-xl card-glass">
               <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-3">
                 <BarChart3 size={18} className="text-emerald-600" />
               </div>
@@ -269,7 +269,7 @@ export default async function Home() {
               </p>
             </div>
 
-            <div className="p-5 rounded-xl bg-gradient-to-br from-[var(--gem-gray-800)] to-white border border-[var(--gem-gray-700)]">
+            <div className="p-5 rounded-xl card-glass">
               <div className="w-9 h-9 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center mb-3">
                 <Target size={18} className="text-amber-600" />
               </div>
@@ -308,17 +308,17 @@ export default async function Home() {
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">How it works</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-12 sm:mb-16 font-[family-name:var(--font-display)]">Three simple steps.</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-gradient-to-b from-[var(--gem-gray-800)] to-transparent">
-              <div className="w-8 h-8 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center text-sm font-bold text-[var(--gem-accent)] mb-3">1</div>
+            <div className="p-5 rounded-xl card-glass">
+              <div className="w-8 h-8 rounded-full bg-violet-50 border border-violet-100 flex items-center justify-center text-sm font-bold text-[var(--gem-accent)] mb-3">1</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your screenplay</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Drop your PDF and Selznick analyzes it across 10 research-backed dimensions in under a minute.</p>
             </div>
-            <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-gradient-to-b from-[var(--gem-gray-800)] to-transparent">
+            <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-sm font-bold text-emerald-600 mb-3">2</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Get your producer read</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Score, verdict, development notes, and a full production analysis — the kind of feedback that normally costs hundreds.</p>
             </div>
-            <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-gradient-to-b from-[var(--gem-gray-800)] to-transparent">
+            <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center text-sm font-bold text-amber-600 mb-3">3</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Publish and climb the leaderboard</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Put your best work in front of the industry. Rewrite, resubmit, and watch your ranking rise.</p>
@@ -360,7 +360,7 @@ export default async function Home() {
                 href="/submit"
                 event="cta_clicked"
                 properties={{ location: 'pricing', label: 'Get your free score' }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
               >
                 Get your free score
                 <ArrowRight size={14} />
@@ -410,7 +410,7 @@ export default async function Home() {
               href="/submit"
               event="cta_clicked"
               properties={{ location: 'bottom_cta', label: 'Get Started Free' }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
               Upload your script free
               <ArrowRight size={16} />
