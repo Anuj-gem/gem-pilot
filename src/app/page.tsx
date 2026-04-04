@@ -274,10 +274,10 @@ export default function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">See your score free. Unlock everything for $20/mo.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Score your script free. Unlimited. No account needed.</h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-lg">
-            Upload your script and see how it scores — no account needed. Subscribe to
-            unlock full reports, development notes, and leaderboard access.
+            Upload as many scripts as you want and see your GEM score and tier instantly.
+            Subscribe to unlock the full development read, production analysis, and leaderboard publishing.
           </p>
 
           <div className="max-w-md mx-auto">
@@ -289,8 +289,8 @@ export default function Home() {
                 <ul className="space-y-2.5">
                   {[
                     'Upload any screenplay',
-                    'See your score + tier',
-                    'Up to 5 evals per day',
+                    'GEM score + tier instantly',
+                    'Unlimited — no account needed',
                   ].map(item => (
                     <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
                       <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
@@ -309,11 +309,10 @@ export default function Home() {
                 <p className="text-xs text-[var(--gem-gray-400)] mb-4">Cancel anytime</p>
                 <ul className="space-y-2.5">
                   {[
-                    'Full detailed reports',
-                    'Unlimited evaluations',
-                    'Publish to leaderboard',
-                    'Development notes',
+                    'Full development reads',
                     'Production analysis',
+                    'Publish to leaderboard',
+                    'Everything free users see, plus the full report',
                   ].map(item => (
                     <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
                       <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
