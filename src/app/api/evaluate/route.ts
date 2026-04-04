@@ -107,10 +107,10 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
     return { text: data.text, usedOcr: false };
   }
 
-  // Fallback: scanned PDF — upload to OpenAI Files API, then OCR via Chat Completions
+  // Fallback: scanned PDF — upload to OpenAI Files API, then OCR via Chat Completions (GPT-4o)
   const extractedLen = data.text?.trim().length ?? 0;
   console.log(
-    `[OCR] pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o-mini OCR.`
+    `[OCR] pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o OCR.`
   );
   console.log(`[OCR] PDF size: ${(buffer.length / 1_000_000).toFixed(1)}MB, pages: ${data.numpages ?? "unknown"}`);
 
@@ -149,7 +149,8 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // Step 3: OCR via Chat Completions with file reference
-    console.log("[OCR] Calling Chat Completions with file reference...");
+    // Use GPT-4o (not mini) for better vision/OCR on scanned page images
+    console.log("[OCR] Calling Chat Completions (gpt-4o) with file reference...");
     const ocrRes = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -157,8 +158,12 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
+        model: "gpt-4o",
         messages: [
+          {
+            role: "system",
+            content: "You are an OCR text extraction tool. Your job is to read scanned document pages and output the raw text. This PDF contains scanned page images of a screenplay. You MUST read the text visible in the page images and transcribe it. Output ONLY the extracted text, nothing else.",
+          },
           {
             role: "user",
             content: [
@@ -170,13 +175,13 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
               },
               {
                 type: "text",
-                text: "Extract ALL text from this screenplay PDF. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.",
+                text: "This is a scanned screenplay PDF. The pages are images. Read and transcribe ALL visible text from every page. Output ONLY the raw screenplay text — preserve character names, dialogue, scene headings (INT./EXT.), and formatting. No commentary or explanations.",
               },
             ],
           },
         ],
         temperature: 0,
-        max_tokens: 16000,
+        max_tokens: 100000,
       }),
     });
 
@@ -198,10 +203,14 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
 
     const ocrText = result.choices?.[0]?.message?.content ?? "";
     console.log(`[OCR] Extracted ${ocrText.length} chars of text`);
+    console.log(`[OCR] First 300 chars: ${ocrText.substring(0, 300)}`);
 
-    if (!ocrText || ocrText.trim().length < 100) {
+    // A 60-page screenplay should produce thousands of chars — 191 chars means the model
+    // returned a failure message instead of actual text. Require at least 1000 chars.
+    if (!ocrText || ocrText.trim().length < 1000) {
+      console.error(`[OCR] Insufficient text (${ocrText.length} chars). Model likely failed to OCR.`);
       throw new Error(
-        "Could not extract readable text from this PDF. The file may be corrupted, password-protected, or contain only images that could not be read."
+        "Could not extract readable text from this scanned PDF. Please try uploading a higher-quality scan, or a digitally-created PDF."
       );
     }
 
