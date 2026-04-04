@@ -54,78 +54,98 @@ function getClientIp(request: NextRequest): string {
   );
 }
 
-// Extract text from PDF — tries pdf-parse first, falls back to GPT-4o-mini vision OCR
+// Check if extracted text is real readable content (not garbled scanned PDF noise)
+function isTextReadable(text: string): boolean {
+  const cleaned = text.replace(/\s+/g, " ").trim();
+  if (cleaned.length < 100) return false;
+
+  // Ratio of normal ASCII chars (letters, digits, common punctuation, spaces) to total
+  const readableChars = cleaned.replace(/[^a-zA-Z0-9 .,;:'"!?()\-\n]/g, "");
+  const ratio = readableChars.length / cleaned.length;
+  if (ratio < 0.65) return false;
+
+  // Check that words look like real English (contain vowels, reasonable length)
+  const words = cleaned.split(/\s+/);
+  const realWords = words.filter(
+    (w) => w.length >= 2 && w.length <= 30 && /[aeiouAEIOU]/.test(w)
+  ).length;
+  return realWords / words.length > 0.4;
+}
+
+// Extract text from PDF — tries pdf-parse first, falls back to GPT-4o-mini OCR via Responses API
 async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: boolean }> {
   // Try standard text extraction first (fast, free)
   const pdfParse = (await import("pdf-parse")).default;
   const data = await pdfParse(buffer);
 
-  if (data.text && data.text.trim().length >= 100) {
+  // Check QUALITY not just length — scanned PDFs produce garbled chars that pass length checks
+  if (data.text && isTextReadable(data.text)) {
     return { text: data.text, usedOcr: false };
   }
 
-  // Fallback: scanned PDF — use GPT-4o-mini vision to OCR
-  console.log("pdf-parse returned insufficient text, falling back to GPT-4o-mini vision OCR");
+  // Fallback: scanned PDF — use GPT-4o-mini via OpenAI Responses API (natively supports PDFs)
+  const extractedLen = data.text?.trim().length ?? 0;
+  console.log(
+    `pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o-mini OCR.`
+  );
 
   const base64Pdf = buffer.toString("base64");
-  const totalPages = data.numpages || 1;
 
-  // Process in batches of 20 pages (OpenAI limit per request is ~20 images)
-  const batchSize = 20;
-  const allText: string[] = [];
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      input: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "input_text",
+              text: "Extract ALL text from this screenplay PDF. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.",
+            },
+            {
+              type: "input_file",
+              filename: "screenplay.pdf",
+              file_data: `data:application/pdf;base64,${base64Pdf}`,
+            },
+          ],
+        },
+      ],
+      temperature: 0,
+    }),
+  });
 
-  for (let start = 0; start < totalPages; start += batchSize) {
-    const end = Math.min(start + batchSize, totalPages);
-    const pageRange = `pages ${start + 1}-${end}`;
-    console.log(`OCR processing ${pageRange} of ${totalPages}`);
-
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "user",
-            content: [
-              {
-                type: "text",
-                text: `Extract ALL text from ${start === 0 && end >= totalPages ? 'this screenplay PDF' : `pages ${start + 1}-${end} of this screenplay PDF`}. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.`,
-              },
-              {
-                type: "file",
-                file: {
-                  filename: "screenplay.pdf",
-                  file_data: `data:application/pdf;base64,${base64Pdf}`,
-                },
-              },
-            ],
-          },
-        ],
-        temperature: 0,
-        max_tokens: 16000,
-      }),
-    });
-
-    if (!response.ok) {
-      const err = await response.text();
-      console.error(`OCR API error for ${pageRange}:`, err);
-      throw new Error(`OCR failed: ${response.status}`);
-    }
-
-    const result = await response.json();
-    const pageText = result.choices?.[0]?.message?.content ?? "";
-    allText.push(pageText);
-
-    // If single batch covers all pages, no need to loop
-    if (end >= totalPages) break;
+  if (!response.ok) {
+    const err = await response.text();
+    console.error("OCR API error:", err);
+    throw new Error(`OCR failed: ${response.status}`);
   }
 
-  const fullText = allText.join("\n\n");
-  return { text: fullText, usedOcr: true };
+  const result = await response.json();
+
+  // Responses API returns output[].content[].text
+  const ocrText =
+    result.output
+      ?.filter((o: any) => o.type === "message")
+      ?.map((o: any) =>
+        o.content
+          ?.filter((c: any) => c.type === "output_text")
+          ?.map((c: any) => c.text)
+          ?.join("")
+      )
+      ?.join("\n\n") ?? "";
+
+  if (!ocrText || ocrText.trim().length < 100) {
+    throw new Error(
+      "Could not extract readable text from this PDF. The file may be corrupted, password-protected, or contain only images that could not be read."
+    );
+  }
+
+  return { text: ocrText, usedOcr: true };
 }
 
 // Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
