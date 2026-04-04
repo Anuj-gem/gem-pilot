@@ -136,9 +136,7 @@ export default async function ReportPage({ params }: PageProps) {
           genre={classification.genre_primary}
           genreTags={classification.genre_tags}
           tone={classification.tone}
-          comparables={comparables}
           createdAt={eval_.created_at}
-          blurComparables={showBlurred}
         />
 
         {/* What Makes This Special */}
@@ -153,18 +151,18 @@ export default async function ReportPage({ params }: PageProps) {
         {/* Production Reality */}
         <ProductionReality production={report.production_reality} blurred={showBlurred} />
 
-        {/* Comparables */}
+        {/* Comparables (moved from header to bottom) */}
         {comparables && comparables.length > 0 && (
-          <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
+          <div className={`p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]${showBlurred ? ' blur-sm select-none' : ''}`}>
             <h2 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)] mb-4">
               Comparables
             </h2>
             <div className="space-y-3">
               {comparables.map((comp: any, i: number) => (
-                <div key={i} className={showBlurred ? 'blur-sm select-none' : ''}>
+                <div key={i}>
                   <span className="text-sm font-medium text-[var(--gem-white)]">{comp.title}</span>
-                  {comp.similarity_note && (
-                    <p className="text-xs text-[var(--gem-gray-400)] mt-0.5">{comp.similarity_note}</p>
+                  {(comp.similarity_note || comp.why) && (
+                    <span className="text-sm text-[var(--gem-gray-400)]"> — {comp.similarity_note || comp.why}</span>
                   )}
                 </div>
               ))}

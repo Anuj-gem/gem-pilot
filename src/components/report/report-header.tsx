@@ -1,6 +1,5 @@
-import { TIER_META, type Tier, type Comparable } from '@/types'
+import { TIER_META, type Tier } from '@/types'
 import { ScoreRing } from '@/components/ui/score-ring'
-import { Lock } from 'lucide-react'
 
 interface ReportHeaderProps {
   title: string
@@ -11,9 +10,7 @@ interface ReportHeaderProps {
   genre: string
   genreTags: string[]
   tone: string
-  comparables: Comparable[]
   createdAt: string
-  blurComparables?: boolean
 }
 
 export function ReportHeader({
@@ -25,9 +22,7 @@ export function ReportHeader({
   genre,
   genreTags,
   tone,
-  comparables,
   createdAt,
-  blurComparables = false,
 }: ReportHeaderProps) {
   const tierMeta = TIER_META[tier]
   const date = new Date(createdAt).toLocaleDateString('en-US', {
@@ -82,48 +77,6 @@ export function ReportHeader({
         <span className="tag-pill">{tone}</span>
       </div>
 
-      {/* Comparables */}
-      {comparables.length > 0 && (
-        blurComparables ? (
-          <div className="relative">
-            <div className="select-none pointer-events-none" style={{ filter: 'blur(8px)' }} aria-hidden="true">
-              <div className="p-4 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-800)]/50">
-                <h3 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)] mb-3">
-                  Comparable works
-                </h3>
-                <div className="space-y-2">
-                  {comparables.map((comp, i) => (
-                    <div key={i} className="text-sm">
-                      <span className="font-medium text-[var(--gem-white)]">{comp.title}</span>
-                      <span className="text-[var(--gem-gray-400)]"> — {comp.why}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center bg-[var(--gem-gray-900)]/40 backdrop-blur-[2px] rounded-xl">
-              <div className="text-center px-6">
-                <Lock size={20} className="mx-auto mb-2 text-[var(--gem-gray-400)]" />
-                <p className="text-sm text-[var(--gem-gray-300)] font-medium">Comparable Works</p>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="p-4 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-800)]/50">
-            <h3 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)] mb-3">
-              Comparable works
-            </h3>
-            <div className="space-y-2">
-              {comparables.map((comp, i) => (
-                <div key={i} className="text-sm">
-                  <span className="font-medium text-[var(--gem-white)]">{comp.title}</span>
-                  <span className="text-[var(--gem-gray-400)]"> — {comp.why}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )
-      )}
     </div>
   )
 }
