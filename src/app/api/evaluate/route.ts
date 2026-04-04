@@ -83,105 +83,80 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
     return { text: data.text, usedOcr: false };
   }
 
-  // Fallback: scanned PDF — upload to OpenAI Files API, then OCR via Responses API
+  // Fallback: scanned PDF — OCR via OpenAI Responses API (inline base64 PDF)
   const extractedLen = data.text?.trim().length ?? 0;
   console.log(
-    `pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o-mini OCR.`
+    `[OCR] pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o-mini OCR.`
   );
 
-  let fileId: string | null = null;
+  const base64Pdf = buffer.toString("base64");
+  const payloadSizeMB = (base64Pdf.length / 1_000_000).toFixed(1);
+  console.log(`[OCR] PDF base64 size: ${payloadSizeMB}MB, pages: ${data.numpages ?? "unknown"}`);
 
-  try {
-    // Step 1: Upload PDF to OpenAI Files API
-    const uploadForm = new FormData();
-    uploadForm.append(
-      "file",
-      new Blob([new Uint8Array(buffer)], { type: "application/pdf" }),
-      "screenplay.pdf"
-    );
-    uploadForm.append("purpose", "user_data");
+  const ocrRes = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      input: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "input_text",
+              text: "Extract ALL text from this screenplay PDF. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.",
+            },
+            {
+              type: "input_file",
+              filename: "screenplay.pdf",
+              file_data: `data:application/pdf;base64,${base64Pdf}`,
+            },
+          ],
+        },
+      ],
+    }),
+  });
 
-    const uploadRes = await fetch("https://api.openai.com/v1/files", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: uploadForm,
-    });
-
-    if (!uploadRes.ok) {
-      const uploadErr = await uploadRes.text();
-      console.error("File upload error:", uploadErr);
-      throw new Error("OCR file upload failed");
-    }
-
-    const uploadResult = await uploadRes.json();
-    fileId = uploadResult.id;
-    console.log(`Uploaded PDF to OpenAI Files API: ${fileId}`);
-
-    // Step 2: OCR via Responses API with file reference
-    const ocrRes = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        input: [
-          {
-            role: "user",
-            content: [
-              {
-                type: "input_text",
-                text: "Extract ALL text from this screenplay PDF. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.",
-              },
-              {
-                type: "input_file",
-                file_id: fileId,
-              },
-            ],
-          },
-        ],
-      }),
-    });
-
-    if (!ocrRes.ok) {
-      const ocrErr = await ocrRes.text();
-      console.error("OCR Responses API error:", ocrErr);
-      throw new Error("OCR text extraction failed");
-    }
-
-    const result = await ocrRes.json();
-
-    // Responses API returns output[].content[].text
-    const ocrText =
-      result.output
-        ?.filter((o: any) => o.type === "message")
-        ?.map((o: any) =>
-          o.content
-            ?.filter((c: any) => c.type === "output_text")
-            ?.map((c: any) => c.text)
-            ?.join("")
-        )
-        ?.join("\n\n") ?? "";
-
-    if (!ocrText || ocrText.trim().length < 100) {
-      throw new Error(
-        "Could not extract readable text from this PDF. The file may be corrupted, password-protected, or contain only images that could not be read."
-      );
-    }
-
-    return { text: ocrText, usedOcr: true };
-  } finally {
-    // Clean up uploaded file from OpenAI
-    if (fileId) {
-      fetch(`https://api.openai.com/v1/files/${fileId}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
-      }).catch((e) => console.error("File cleanup error:", e));
-    }
+  // Log full response details for debugging
+  const responseText = await ocrRes.text();
+  console.log(`[OCR] API status: ${ocrRes.status}, response length: ${responseText.length}`);
+  if (!ocrRes.ok) {
+    console.error(`[OCR] API error response:`, responseText.substring(0, 500));
+    throw new Error("OCR: Could not extract text from this scanned PDF.");
   }
+
+  let result: any;
+  try {
+    result = JSON.parse(responseText);
+  } catch {
+    console.error(`[OCR] Non-JSON response:`, responseText.substring(0, 500));
+    throw new Error("OCR: Unexpected response from text extraction service.");
+  }
+
+  // Responses API: output[].type=message → content[].type=output_text → .text
+  const ocrText =
+    result.output
+      ?.filter((o: any) => o.type === "message")
+      ?.map((o: any) =>
+        o.content
+          ?.filter((c: any) => c.type === "output_text")
+          ?.map((c: any) => c.text)
+          ?.join("")
+      )
+      ?.join("\n\n") ?? "";
+
+  console.log(`[OCR] Extracted ${ocrText.length} chars of text`);
+
+  if (!ocrText || ocrText.trim().length < 100) {
+    throw new Error(
+      "Could not extract readable text from this PDF. The file may be corrupted, password-protected, or contain only images that could not be read."
+    );
+  }
+
+  return { text: ocrText, usedOcr: true };
 }
 
 // Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
