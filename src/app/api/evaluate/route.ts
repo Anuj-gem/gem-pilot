@@ -54,22 +54,46 @@ function getClientIp(request: NextRequest): string {
   );
 }
 
-// Check if extracted text is real readable content (not garbled scanned PDF noise)
+// Check if extracted text is real readable screenplay content (not garbled scanned PDF noise)
 function isTextReadable(text: string): boolean {
   const cleaned = text.replace(/\s+/g, " ").trim();
-  if (cleaned.length < 100) return false;
 
-  // Ratio of normal ASCII chars (letters, digits, common punctuation, spaces) to total
+  // 1. Must have substantial content — a screenplay is 20,000+ words
+  const words = cleaned.split(/\s+/).filter((w) => w.length >= 2);
+  console.log(
+    `[TextCheck] chars=${cleaned.length}, words=${words.length}, first200="${cleaned.substring(0, 200)}"`
+  );
+
+  if (words.length < 500) {
+    console.log(`[TextCheck] FAIL: only ${words.length} words (need 500+)`);
+    return false;
+  }
+
+  // 2. Ratio of normal ASCII chars to total — garbled text has lots of control/special chars
   const readableChars = cleaned.replace(/[^a-zA-Z0-9 .,;:'"!?()\-\n]/g, "");
   const ratio = readableChars.length / cleaned.length;
-  if (ratio < 0.65) return false;
+  if (ratio < 0.75) {
+    console.log(`[TextCheck] FAIL: readable ratio ${ratio.toFixed(2)} (need 0.75+)`);
+    return false;
+  }
 
-  // Check that words look like real English (contain vowels, reasonable length)
-  const words = cleaned.split(/\s+/);
+  // 3. Words should look like English — contain vowels, reasonable length
   const realWords = words.filter(
-    (w) => w.length >= 2 && w.length <= 30 && /[aeiouAEIOU]/.test(w)
+    (w) => w.length >= 2 && w.length <= 25 && /[aeiouAEIOU]/.test(w)
   ).length;
-  return realWords / words.length > 0.4;
+  const wordRatio = realWords / words.length;
+  if (wordRatio < 0.5) {
+    console.log(`[TextCheck] FAIL: real word ratio ${wordRatio.toFixed(2)} (need 0.5+)`);
+    return false;
+  }
+
+  // 4. Screenplay pattern check — look for at least some common formatting
+  const screenplayPatterns =
+    /\b(INT\.|EXT\.|FADE IN|FADE OUT|CUT TO|DISSOLVE TO|CONTINUED|CONT'D)\b/i;
+  const hasPatterns = screenplayPatterns.test(text);
+  console.log(`[TextCheck] PASS: words=${words.length}, ratio=${ratio.toFixed(2)}, wordRatio=${wordRatio.toFixed(2)}, screenplayPatterns=${hasPatterns}`);
+
+  return true;
 }
 
 // Extract text from PDF — tries pdf-parse first, falls back to GPT-4o-mini OCR via Responses API
@@ -318,10 +342,19 @@ export async function POST(request: NextRequest) {
 
       // 6. Extract text from PDF (with OCR fallback for scanned PDFs)
       const { text: scriptText, usedOcr } = await extractPdfText(buffer);
+      console.log(`[Evaluate] Extracted ${scriptText?.length ?? 0} chars, usedOcr=${usedOcr}`);
 
       if (!scriptText || scriptText.trim().length < 100) {
         throw new Error(
           "Could not extract enough text from the PDF. The file may be corrupted or contain no readable content."
+        );
+      }
+
+      // Double-check: if we didn't use OCR, verify text is actually readable
+      // (belt-and-suspenders — isTextReadable should catch this, but just in case)
+      if (!usedOcr && !isTextReadable(scriptText)) {
+        throw new Error(
+          "The PDF appears to be a scanned document that could not be read. Please upload a digitally-created PDF, or a higher-quality scan."
         );
       }
 
