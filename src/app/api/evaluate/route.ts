@@ -107,80 +107,114 @@ async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: 
     return { text: data.text, usedOcr: false };
   }
 
-  // Fallback: scanned PDF — OCR via OpenAI Responses API (inline base64 PDF)
+  // Fallback: scanned PDF — upload to OpenAI Files API, then OCR via Chat Completions
   const extractedLen = data.text?.trim().length ?? 0;
   console.log(
     `[OCR] pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o-mini OCR.`
   );
+  console.log(`[OCR] PDF size: ${(buffer.length / 1_000_000).toFixed(1)}MB, pages: ${data.numpages ?? "unknown"}`);
 
-  const base64Pdf = buffer.toString("base64");
-  const payloadSizeMB = (base64Pdf.length / 1_000_000).toFixed(1);
-  console.log(`[OCR] PDF base64 size: ${payloadSizeMB}MB, pages: ${data.numpages ?? "unknown"}`);
+  let fileId: string | null = null;
 
-  const ocrRes = await fetch("https://api.openai.com/v1/responses", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      input: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "input_text",
-              text: "Extract ALL text from this screenplay PDF. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.",
-            },
-            {
-              type: "input_file",
-              filename: "screenplay.pdf",
-              file_data: `data:application/pdf;base64,${base64Pdf}`,
-            },
-          ],
-        },
-      ],
-    }),
-  });
-
-  // Log full response details for debugging
-  const responseText = await ocrRes.text();
-  console.log(`[OCR] API status: ${ocrRes.status}, response length: ${responseText.length}`);
-  if (!ocrRes.ok) {
-    console.error(`[OCR] API error response:`, responseText.substring(0, 500));
-    throw new Error("OCR: Could not extract text from this scanned PDF.");
-  }
-
-  let result: any;
   try {
-    result = JSON.parse(responseText);
-  } catch {
-    console.error(`[OCR] Non-JSON response:`, responseText.substring(0, 500));
-    throw new Error("OCR: Unexpected response from text extraction service.");
-  }
-
-  // Responses API: output[].type=message → content[].type=output_text → .text
-  const ocrText =
-    result.output
-      ?.filter((o: any) => o.type === "message")
-      ?.map((o: any) =>
-        o.content
-          ?.filter((c: any) => c.type === "output_text")
-          ?.map((c: any) => c.text)
-          ?.join("")
-      )
-      ?.join("\n\n") ?? "";
-
-  console.log(`[OCR] Extracted ${ocrText.length} chars of text`);
-
-  if (!ocrText || ocrText.trim().length < 100) {
-    throw new Error(
-      "Could not extract readable text from this PDF. The file may be corrupted, password-protected, or contain only images that could not be read."
+    // Step 1: Upload PDF to OpenAI Files API
+    const uploadForm = new FormData();
+    uploadForm.append(
+      "file",
+      new Blob([new Uint8Array(buffer)], { type: "application/pdf" }),
+      "screenplay.pdf"
     );
-  }
+    uploadForm.append("purpose", "user_data");
 
-  return { text: ocrText, usedOcr: true };
+    console.log("[OCR] Uploading PDF to OpenAI Files API...");
+    const uploadRes = await fetch("https://api.openai.com/v1/files", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: uploadForm,
+    });
+
+    if (!uploadRes.ok) {
+      const uploadErr = await uploadRes.text();
+      console.error("[OCR] File upload error:", uploadErr);
+      throw new Error("OCR: Failed to upload PDF for processing.");
+    }
+
+    const uploadResult = await uploadRes.json();
+    fileId = uploadResult.id;
+    console.log(`[OCR] File uploaded: ${fileId}, status: ${uploadResult.status}`);
+
+    // Step 2: Wait briefly for file processing
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Step 3: OCR via Chat Completions with file reference
+    console.log("[OCR] Calling Chat Completions with file reference...");
+    const ocrRes = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "user",
+            content: [
+              {
+                type: "file",
+                file: {
+                  file_id: fileId,
+                },
+              },
+              {
+                type: "text",
+                text: "Extract ALL text from this screenplay PDF. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.",
+              },
+            ],
+          },
+        ],
+        temperature: 0,
+        max_tokens: 16000,
+      }),
+    });
+
+    const responseText = await ocrRes.text();
+    console.log(`[OCR] Chat Completions status: ${ocrRes.status}, response length: ${responseText.length}`);
+
+    if (!ocrRes.ok) {
+      console.error("[OCR] Chat Completions error:", responseText.substring(0, 500));
+      throw new Error("OCR: Failed to extract text from scanned PDF.");
+    }
+
+    let result: any;
+    try {
+      result = JSON.parse(responseText);
+    } catch {
+      console.error("[OCR] Non-JSON response:", responseText.substring(0, 500));
+      throw new Error("OCR: Unexpected response from text extraction service.");
+    }
+
+    const ocrText = result.choices?.[0]?.message?.content ?? "";
+    console.log(`[OCR] Extracted ${ocrText.length} chars of text`);
+
+    if (!ocrText || ocrText.trim().length < 100) {
+      throw new Error(
+        "Could not extract readable text from this PDF. The file may be corrupted, password-protected, or contain only images that could not be read."
+      );
+    }
+
+    return { text: ocrText, usedOcr: true };
+  } finally {
+    // Clean up uploaded file
+    if (fileId) {
+      fetch(`https://api.openai.com/v1/files/${fileId}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
+      }).catch((e) => console.error("[OCR] File cleanup error:", e));
+    }
+  }
 }
 
 // Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
