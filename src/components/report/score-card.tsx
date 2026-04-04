@@ -76,7 +76,7 @@ export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardP
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)]">
-          Dimension Scores
+          Story Analysis
         </h2>
       </div>
 

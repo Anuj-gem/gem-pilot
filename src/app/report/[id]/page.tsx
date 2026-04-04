@@ -141,17 +141,36 @@ export default async function ReportPage({ params }: PageProps) {
           blurComparables={showBlurred}
         />
 
-        {/* Dimension Scores */}
-        <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} blurred={showBlurred} />
-
         {/* What Makes This Special */}
         <WhatsSpecialSection data={whatsSpecial} blurred={showBlurred} />
 
         {/* What Needs Development */}
         <WhatsHoldingItBackSection data={whatsHoldingItBack} blurred={showBlurred} />
 
+        {/* Story Analysis (10 dimension scores) */}
+        <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} blurred={showBlurred} />
+
         {/* Production Reality */}
         <ProductionReality production={report.production_reality} blurred={showBlurred} />
+
+        {/* Comparables */}
+        {comparables && comparables.length > 0 && (
+          <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
+            <h2 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)] mb-4">
+              Comparables
+            </h2>
+            <div className="space-y-3">
+              {comparables.map((comp: any, i: number) => (
+                <div key={i} className={showBlurred ? 'blur-sm select-none' : ''}>
+                  <span className="text-sm font-medium text-[var(--gem-white)]">{comp.title}</span>
+                  {comp.similarity_note && (
+                    <p className="text-xs text-[var(--gem-gray-400)] mt-0.5">{comp.similarity_note}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Sticky subscribe CTA for non-subscribers */}
