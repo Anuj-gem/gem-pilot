@@ -336,7 +336,16 @@ export default async function Home() {
             <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-violet-50 border border-violet-100 flex items-center justify-center text-sm font-bold text-[var(--gem-accent)] mb-3">1</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your screenplay</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Drop your PDF and Selznick analyzes it across thousands of research-backed dimensions in under a minute.</p>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">Drop your PDF and Selznick analyzes it across thousands of research-backed dimensions in under a minute.</p>
+              <TrackedCTA
+                href="/submit"
+                event="cta_clicked"
+                properties={{ location: 'how_it_works', label: 'Submit your script' }}
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+              >
+                Submit your script
+                <ArrowRight size={14} />
+              </TrackedCTA>
             </div>
             <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-sm font-bold text-emerald-600 mb-3">2</div>
@@ -346,7 +355,10 @@ export default async function Home() {
             <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center text-sm font-bold text-amber-600 mb-3">3</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Publish and climb the leaderboard</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Put your best work in front of the industry. Rewrite, resubmit, and watch your ranking rise.</p>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">Put your best work in front of the industry. Rewrite, resubmit, and watch your ranking rise.</p>
+              <Link href="/discover" className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-accent)] font-medium hover:underline">
+                Browse the leaderboard <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
         </section>
@@ -358,11 +370,7 @@ export default async function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Other sites charge hundreds for generic AI. We don&apos;t.</h2>
-          <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-xl leading-relaxed">
-            Most &quot;AI script analysis&quot; tools charge $200–$500 per read and give you a ChatGPT wrapper.
-            GEM gives you advanced, research-backed analysis for free — and our full suite of professional tools costs 10x less than you&apos;d pay anywhere else.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-14 font-[family-name:var(--font-display)]">Other sites charge hundreds for generic coverage and no help. We do the opposite.</h2>
 
           <div className="max-w-lg mx-auto">
             <div className="rounded-2xl border border-[var(--gem-gray-700)] p-6 sm:p-8 mb-4">
@@ -374,7 +382,7 @@ export default async function Home() {
                 <div className="text-2xl font-bold text-emerald-600">$0</div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['Advanced AI script analysis — not a chatbot wrapper', 'GEM score, verdict, and report preview instantly', 'Unlimited submissions', 'Create an account to save your reports'].map(item => (
+                {['Research-backed review of your script', 'Unlimited submissions'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
                     {item}
@@ -432,13 +440,40 @@ export default async function Home() {
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-            This script is #{topScripts && topScripts.length > 0 ? '1' : 'trending'} on GEM right now.
+            This script is #1 on GEM right now.
           </h2>
+
+          {/* #1 leaderboard preview card */}
           {topScripts && topScripts.length > 0 && (
-            <p className="text-lg text-[var(--gem-accent)] mb-6 sm:mb-8">
-              &quot;{topScripts[0].title || 'Untitled'}&quot; — {(typeof topScripts[0].weighted_score === 'number' ? topScripts[0].weighted_score.toFixed(1) : 'N/A')} score
-            </p>
+            <Link
+              href={`/report/${topScripts[0].evaluation_id ?? topScripts[0].id}`}
+              className="group block max-w-md mx-auto rounded-xl card-glass overflow-hidden mb-6 sm:mb-8 text-left"
+            >
+              <div className="flex" style={{ borderLeft: `4px solid ${tierColor(topScripts[0].tier ?? '')}` }}>
+                <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
+                  <span className="text-base sm:text-lg font-bold tabular-nums text-[var(--gem-gold)]">#1</span>
+                  <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(topScripts[0].tier ?? '') }}>
+                    {typeof topScripts[0].weighted_score === 'number' ? Math.round(topScripts[0].weighted_score) : '—'}
+                  </span>
+                  <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
+                </div>
+                <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
+                  <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
+                    {topScripts[0].title || 'Untitled'}
+                  </h3>
+                  <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
+                    by {topScripts[0].author_name || topScripts[0].author || 'Anonymous'}
+                  </div>
+                  {topScripts[0].tier && (
+                    <span className={`inline-block mt-2 text-[10px] px-2.5 py-1 rounded-full border font-semibold ${tierBg(topScripts[0].tier)}`}>
+                      {tierLabel(topScripts[0].tier)}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </Link>
           )}
+
           <p className="text-[var(--gem-gray-300)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10">
             Where does yours rank?
           </p>
