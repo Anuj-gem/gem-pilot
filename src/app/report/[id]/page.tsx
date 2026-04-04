@@ -10,6 +10,8 @@ import { ProductionReality } from '@/components/report/production-reality'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
+import { ExpiryCountdown } from '@/components/report/expiry-countdown'
+import { InlineSignup } from '@/components/report/inline-signup'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { normalizeEvaluation } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission } from '@/types'
@@ -44,7 +46,7 @@ export default async function ReportPage({ params }: PageProps) {
     .select(`
       *,
       script_submissions (
-        id, user_id, title, filename, file_size, status, is_public, created_at,
+        id, user_id, title, filename, file_size, status, is_public, created_at, expires_at,
         profiles ( full_name, avatar_url )
       )
     `)
@@ -65,6 +67,8 @@ export default async function ReportPage({ params }: PageProps) {
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAnonymousSubmission = !submission.user_id
+  const hasExpiry = isAnonymousSubmission && !!submission.expires_at
+  const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
 
   // Normalize v2/v3 evaluation shape
   const { classification, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
@@ -109,8 +113,16 @@ export default async function ReportPage({ params }: PageProps) {
   return (
     <>
       <Nav />
+      {hasExpiry && !isExpired && (
+        <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
+      )}
       <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+        {/* Inline signup for anonymous users — right at the top, before the report */}
+        {isAnonymousSubmission && (
+          <InlineSignup submissionId={submission.id} evaluationId={id} />
+        )}
+
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
         {!isAnonymousSubmission && (
           <div className="flex items-center gap-3 flex-wrap">

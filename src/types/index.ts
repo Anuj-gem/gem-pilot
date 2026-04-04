@@ -324,7 +324,7 @@ export function normalizeEvaluation(raw: GEMEvaluation) {
 
 export interface ScriptSubmission {
   id: string;
-  user_id: string;
+  user_id: string | null;
   title: string;
   filename: string;
   file_url: string | null;
@@ -333,6 +333,7 @@ export interface ScriptSubmission {
   is_public: boolean;
   error_message: string | null;
   created_at: string;
+  expires_at: string | null;
   // joined
   profiles?: { full_name: string; avatar_url: string | null };
   script_evaluations?: ScriptEvaluation[];

@@ -124,28 +124,22 @@ export async function POST(request: NextRequest) {
     const serviceClient = createServiceClient();
     const clientIp = getClientIp(request);
 
-    // 1. Authenticate — login required to evaluate
+    // 1. Check auth — optional. Anonymous evals allowed for PLG flow.
     const authClient = await createAuthClient();
     const {
       data: { user },
     } = await authClient.auth.getUser();
 
-    if (!user) {
-      return NextResponse.json(
-        { error: "Authentication required. Please log in to evaluate scripts." },
-        { status: 401 }
-      );
-    }
-
-    // 2. Check subscription status (used for analytics)
+    // 2. Check subscription status if logged in
     let isSubscribed = false;
-    const { data: profile } = await serviceClient
-      .from("profiles")
-      .select("subscription_status")
-      .eq("id", user.id)
-      .single();
-
-    isSubscribed = profile?.subscription_status === "active";
+    if (user) {
+      const { data: profile } = await serviceClient
+        .from("profiles")
+        .select("subscription_status")
+        .eq("id", user.id)
+        .single();
+      isSubscribed = profile?.subscription_status === "active";
+    }
 
     // 3. Parse form data
     const formData = await request.formData();
@@ -174,16 +168,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 4. Create submission record
+    // 4. Create submission record (user_id is null for anonymous evals)
+    // Anonymous submissions expire in 10 minutes — claimed when user signs up
+    const expiresAt = !user
+      ? new Date(Date.now() + 10 * 60 * 1000).toISOString()
+      : null;
+
     const { data: submission, error: subError } = await serviceClient
       .from("script_submissions")
       .insert({
-        user_id: user.id,
+        user_id: user?.id ?? null,
         title,
         filename: file.name,
         file_size: file.size,
         status: "processing",
         submitted_by_ip: clientIp,
+        ...(expiresAt ? { expires_at: expiresAt } : {}),
       })
       .select()
       .single();
@@ -201,7 +201,7 @@ export async function POST(request: NextRequest) {
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
 
-      const storagePath = `${user.id}/${submission.id}/${file.name}`;
+      const storagePath = `${user?.id ?? "anonymous"}/${submission.id}/${file.name}`;
       const { error: uploadError } = await serviceClient.storage
         .from("scripts")
         .upload(storagePath, buffer, {

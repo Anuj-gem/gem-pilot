@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { CheckCircle, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import { trackSubscribeClick, trackSubscribeFromReport } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
 
@@ -70,6 +71,12 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
             <p className="text-xs text-[var(--gem-gray-500)] mt-2">
               Cancel anytime. Secure checkout via Stripe.
             </p>
+            <Link
+              href="/discover"
+              className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+            >
+              Or browse the leaderboard to see full reports <ArrowRight size={10} />
+            </Link>
           </div>
         </div>
       </div>

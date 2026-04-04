@@ -4,6 +4,8 @@ import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-browser'
+import { trackSignupStart, trackSignupComplete } from '@/lib/posthog'
+import { gtagSignupCompleted } from '@/lib/gtag'
 
 export default function SignupPage() {
   return (
@@ -28,8 +30,9 @@ function SignupPageInner() {
     e.preventDefault()
     setLoading(true)
     setError('')
+    trackSignupStart()
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error: signupError } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -38,20 +41,26 @@ function SignupPageInner() {
       },
     })
 
-    if (error) {
-      setError(error.message)
+    if (signupError) {
+      setError(signupError.message)
       setLoading(false)
-    } else {
-      router.push(redirect || '/submit')
-      router.refresh()
+      return
     }
+
+    trackSignupComplete()
+    gtagSignupCompleted()
+
+    router.push(redirect || '/submit')
+    router.refresh()
   }
 
   return (
     <div className="min-h-[calc(100vh-56px)] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-1">Join GEM</h1>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-8">Create an account to evaluate your scripts</p>
+        <p className="text-sm text-[var(--gem-gray-400)] mb-8">
+          Create an account to save your evaluations and track your progress.
+        </p>
 
         <form onSubmit={handleSignup} className="space-y-4">
           <div>

@@ -123,3 +123,21 @@ export const trackSubscribeFromReport = (props?: { evaluationId?: string }) =>
 /** User unlocks full report after subscribing */
 export const trackReportUnlocked = (props?: { evaluationId?: string }) =>
   trackEvent('report_unlocked', props)
+
+// ─── Inline Signup Funnel (report page) ────────────────────────────
+
+/** Inline signup form shown on report page */
+export const trackInlineSignupShown = (props?: { evaluationId?: string }) =>
+  trackEvent('inline_signup_shown', props)
+
+/** User starts inline signup (form submitted) */
+export const trackInlineSignupStarted = (props?: { evaluationId?: string }) =>
+  trackEvent('inline_signup_started', props)
+
+/** User completes inline signup successfully */
+export const trackInlineSignupCompleted = (props?: { evaluationId?: string }) =>
+  trackEvent('inline_signup_completed', props)
+
+/** Anonymous report expired (timer hit zero) */
+export const trackReportExpired = (props?: { evaluationId?: string }) =>
+  trackEvent('report_expired', props)
