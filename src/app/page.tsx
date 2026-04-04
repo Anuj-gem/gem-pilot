@@ -68,6 +68,10 @@ export default async function Home() {
           <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
           <div className="absolute -bottom-20 -left-40 w-60 h-60 bg-gradient-to-tr from-emerald-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
+          <div className="relative flex items-center gap-2 mb-5 sm:mb-6 flex-wrap">
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Free Script Evaluation</span>
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Public Leaderboard</span>
+          </div>
           <h1
             className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
@@ -78,20 +82,22 @@ export default async function Home() {
             className="relative text-base sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Get a producer-style score and a public leaderboard to showcase your best work to the industry.
+            Get a free script evaluation then publish to our public leaderboard to showcase your best work to the industry.
           </p>
 
           {/* Upload — no account needed */}
           <HeroUpload />
 
-          <p className="text-xs text-[var(--gem-gray-500)] mt-4">
-            Not ready to submit?{' '}
-            <TrackedCTA href="/discover" event="cta_clicked" properties={{ location: 'hero', label: 'Browse the leaderboard' }} className="text-[var(--gem-accent)] hover:underline">Browse the leaderboard</TrackedCTA>
-            {' · '}
-            <TrackedCTA href="https://calendly.com/anuj-gem/15-minute-intro-call" event="calendly_cta_clicked" properties={{ location: 'hero' }} target="_blank" rel="noopener noreferrer" className="text-[var(--gem-accent)] hover:underline">Talk to our team</TrackedCTA>
-            {' · '}
-            <TrackedCTA href="/signup" event="cta_clicked" properties={{ location: 'hero', label: 'Create account' }} className="text-[var(--gem-accent)] hover:underline">Create an account</TrackedCTA>
-          </p>
+          <div className="mt-5">
+            <TrackedCTA
+              href="/signup"
+              event="cta_clicked"
+              properties={{ location: 'hero', label: 'Create account' }}
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-600)] text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
+            >
+              Create an account
+            </TrackedCTA>
+          </div>
         </section>
       </TrackSection>
 
@@ -227,7 +233,7 @@ export default async function Home() {
           <div className="text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[var(--gem-gold)]/10 border border-[var(--gem-gold)]/20 text-[var(--gem-gold)] text-sm sm:text-base font-semibold mb-5 tracking-wide">
               <Sparkles size={16} />
-              The GEM Scoring System
+              Our scoring system, Selznick
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
               Built on real research.<br className="hidden sm:block" /> Not vibes.
@@ -304,34 +310,18 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-gradient-to-b from-[var(--gem-gray-800)] to-transparent">
               <div className="w-8 h-8 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center text-sm font-bold text-[var(--gem-accent)] mb-3">1</div>
-              <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your script</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-3">Drop your PDF and GEM instantly analyzes it across 10 research-backed dimensions.</p>
-              <TrackedCTA
-                href="/submit"
-                event="cta_clicked"
-                properties={{ location: 'how_it_works', label: 'Upload now' }}
-                className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] hover:underline font-medium"
-              >
-                Upload now <ArrowRight size={12} />
-              </TrackedCTA>
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your screenplay</h3>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Drop your PDF and Selznick analyzes it across 10 research-backed dimensions in under a minute.</p>
             </div>
             <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-gradient-to-b from-[var(--gem-gray-800)] to-transparent">
               <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-sm font-bold text-emerald-600 mb-3">2</div>
-              <h3 className="text-base sm:text-lg font-semibold mb-2">Get your free score</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Score, tier, and a blurred report preview — free, no account needed. Subscribe to unlock the full producer read.</p>
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Get your producer read</h3>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Score, verdict, development notes, and a full production analysis — the kind of feedback that normally costs hundreds.</p>
             </div>
             <div className="p-5 rounded-xl border border-[var(--gem-gray-700)] bg-gradient-to-b from-[var(--gem-gray-800)] to-transparent">
               <div className="w-8 h-8 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center text-sm font-bold text-amber-600 mb-3">3</div>
-              <h3 className="text-base sm:text-lg font-semibold mb-2">Publish and climb</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-3">Rewrite and resubmit. Watch your ranking rise on the leaderboard.</p>
-              <TrackedCTA
-                href="/discover"
-                event="cta_clicked"
-                properties={{ location: 'how_it_works', label: 'View the leaderboard' }}
-                className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] hover:underline font-medium"
-              >
-                View the leaderboard <ArrowRight size={12} />
-              </TrackedCTA>
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Publish and climb the leaderboard</h3>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Put your best work in front of the industry. Rewrite, resubmit, and watch your ranking rise.</p>
             </div>
           </div>
         </section>
@@ -343,19 +333,24 @@ export default async function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Get started free. Seriously.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Script coverage costs $200–$500. Ours is free.</h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-lg leading-relaxed">
-            Get a free score. Get a free report preview. No account needed to try it.
-            Create an account to save your reports, or subscribe for the full producer read and leaderboard publishing.
+            Most coverage services charge hundreds per script and take days to deliver.
+            GEM gives you a score, a verdict, and a report preview in under a minute — completely free, no account needed.
           </p>
 
-          <div className="max-w-md mx-auto grid grid-cols-2 gap-4 sm:gap-6">
-            <div className="rounded-2xl border border-[var(--gem-gray-700)] p-5 sm:p-6">
-              <div className="text-sm font-semibold mb-1">Free</div>
-              <p className="text-xs text-[var(--gem-gray-400)] mb-4">No credit card</p>
-              <ul className="space-y-2.5">
-                {['Free GEM score instantly', 'Free report preview', 'Create an account to save reports', 'Unlimited evaluations'].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
+          <div className="max-w-lg mx-auto">
+            <div className="rounded-2xl border border-[var(--gem-gray-700)] p-6 sm:p-8 mb-4">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-lg font-bold">Free</div>
+                  <p className="text-xs text-[var(--gem-gray-400)]">No account needed to start</p>
+                </div>
+                <div className="text-2xl font-bold text-emerald-600">$0</div>
+              </div>
+              <ul className="space-y-2.5 mb-5">
+                {['GEM score and verdict instantly', 'Report preview with every evaluation', 'Unlimited submissions', 'Save reports when you create an account'].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
                     {item}
                   </li>
@@ -365,33 +360,30 @@ export default async function Home() {
                 href="/submit"
                 event="cta_clicked"
                 properties={{ location: 'pricing', label: 'Get your free score' }}
-                className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-[var(--gem-gray-600)] text-xs font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
               >
                 Get your free score
+                <ArrowRight size={14} />
               </TrackedCTA>
             </div>
-            <div className="rounded-2xl border-2 border-[var(--gem-accent)]/30 bg-indigo-50/50 p-5 sm:p-6">
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-2xl font-bold">$20</span>
-                <span className="text-xs text-[var(--gem-gray-400)]">/ mo</span>
+
+            <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-800)]/30 p-5 sm:p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-semibold">Want the full suite?</div>
+                  <p className="text-xs text-[var(--gem-gray-400)] mt-0.5">
+                    Full development reads, production analysis, and leaderboard publishing — $20/mo, cancel anytime.
+                  </p>
+                </div>
+                <TrackedCTA
+                  href="/submit"
+                  event="cta_clicked"
+                  properties={{ location: 'pricing', label: 'Learn more' }}
+                  className="shrink-0 px-4 py-2 rounded-lg border border-[var(--gem-gray-600)] text-xs font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
+                >
+                  Upgrade
+                </TrackedCTA>
               </div>
-              <p className="text-xs text-[var(--gem-gray-400)] mb-4">Cancel anytime</p>
-              <ul className="space-y-2.5">
-                {['Full development reads', 'Production analysis', 'Publish to leaderboard', 'Everything free users get, plus the full report'].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
-                    <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <TrackedCTA
-                href="/submit"
-                event="cta_clicked"
-                properties={{ location: 'pricing', label: 'Try free first' }}
-                className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[var(--gem-accent)] text-xs font-medium text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-              >
-                Try free first
-              </TrackedCTA>
             </div>
           </div>
         </section>
