@@ -54,10 +54,10 @@ export function ScoreRing({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-3xl font-bold text-[var(--gem-white)]">
+        <span className={`font-bold text-[var(--gem-white)] ${size <= 80 ? 'text-2xl' : 'text-3xl'}`}>
           {Math.round(score)}
         </span>
-        <span className="text-xs text-zinc-400 uppercase tracking-wider">
+        <span className={`text-zinc-400 uppercase tracking-wider whitespace-nowrap ${size <= 80 ? 'text-[9px]' : 'text-xs'}`}>
           {label}
         </span>
       </div>
