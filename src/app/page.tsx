@@ -5,6 +5,7 @@ import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
 import { LandingExperiments } from '@/components/landing-experiments'
 import { HeroUpload } from '@/components/hero-upload'
+import { MobileNav } from '@/components/mobile-nav'
 import { createClient } from '@/lib/supabase-server'
 
 function tierColor(tier: string) {
@@ -40,9 +41,10 @@ export default async function Home() {
 
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
-          <div className="flex items-center gap-3 sm:gap-4">
+          {/* Desktop nav */}
+          <div className="hidden sm:flex items-center gap-4">
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Leaderboard
             </Link>
@@ -58,6 +60,8 @@ export default async function Home() {
               Sign Up
             </TrackedCTA>
           </div>
+          {/* Mobile hamburger */}
+          <MobileNav />
         </div>
       </nav>
 
@@ -89,7 +93,19 @@ export default async function Home() {
           {/* Upload — no account needed */}
           <HeroUpload />
 
-          {/* Secondary CTA — hidden on mobile, upload is the only action */}
+          {/* Mobile: "Not ready?" + small create account */}
+          <div className="mt-4 sm:hidden">
+            <p className="text-xs text-[var(--gem-gray-500)] mb-2">Not ready to submit a screenplay?</p>
+            <TrackedCTA
+              href="/signup"
+              event="cta_clicked"
+              properties={{ location: 'hero_mobile', label: 'Create Free Account' }}
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg border border-[var(--gem-gray-600)] text-xs text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
+            >
+              Create Free Account
+            </TrackedCTA>
+          </div>
+          {/* Desktop: standard create account */}
           <div className="mt-5 hidden sm:block">
             <TrackedCTA
               href="/signup"
@@ -116,7 +132,10 @@ export default async function Home() {
       <TrackSection name="leaderboard_snapshot">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
           <div className="flex items-center gap-2 mb-2 sm:mb-4">
-            <Star size={14} className="text-[var(--gem-gold)]" />
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+            </span>
             <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live from the leaderboard</p>
           </div>
           <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how your screenplay ranks.</h2>
@@ -317,7 +336,7 @@ export default async function Home() {
             <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-violet-50 border border-violet-100 flex items-center justify-center text-sm font-bold text-[var(--gem-accent)] mb-3">1</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your screenplay</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Drop your PDF and Selznick analyzes it across 10 research-backed dimensions in under a minute.</p>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Drop your PDF and Selznick analyzes it across thousands of research-backed dimensions in under a minute.</p>
             </div>
             <div className="p-5 rounded-xl card-glass">
               <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-sm font-bold text-emerald-600 mb-3">2</div>
@@ -339,10 +358,10 @@ export default async function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Script coverage costs $200–$500. Ours is free.</h2>
-          <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-lg leading-relaxed">
-            Most coverage services charge hundreds per script and take days to deliver.
-            GEM gives you a score, a verdict, and a report preview in under a minute — completely free, no account needed.
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Other sites charge hundreds for generic AI. We don&apos;t.</h2>
+          <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-xl leading-relaxed">
+            Most &quot;AI script analysis&quot; tools charge $200–$500 per read and give you a ChatGPT wrapper.
+            GEM gives you advanced, research-backed analysis for free — and our full suite of professional tools costs 10x less than you&apos;d pay anywhere else.
           </p>
 
           <div className="max-w-lg mx-auto">
@@ -350,12 +369,12 @@ export default async function Home() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="text-lg font-bold">Free</div>
-                  <p className="text-xs text-[var(--gem-gray-400)]">No account needed to start</p>
+                  <p className="text-xs text-[var(--gem-gray-400)]">No account needed</p>
                 </div>
                 <div className="text-2xl font-bold text-emerald-600">$0</div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['GEM score and verdict instantly', 'Report preview with every evaluation', 'Unlimited submissions', 'Save reports when you create an account'].map(item => (
+                {['Advanced AI script analysis — not a chatbot wrapper', 'GEM score, verdict, and report preview instantly', 'Unlimited submissions', 'Create an account to save your reports'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
                     {item}
@@ -373,23 +392,35 @@ export default async function Home() {
               </TrackedCTA>
             </div>
 
-            <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-800)]/30 p-5 sm:p-6">
-              <div className="flex items-center justify-between">
+            <div className="rounded-2xl border border-[var(--gem-accent)]/20 bg-[var(--gem-accent)]/5 p-6 sm:p-8">
+              <div className="flex items-center justify-between mb-4">
                 <div>
-                  <div className="text-sm font-semibold">Want the full suite?</div>
-                  <p className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-                    Full development reads, production analysis, and leaderboard publishing — $20/mo, cancel anytime.
-                  </p>
+                  <div className="text-lg font-bold">Pro</div>
+                  <p className="text-xs text-[var(--gem-gray-400)]">Everything in Free, plus</p>
                 </div>
-                <TrackedCTA
-                  href="/submit"
-                  event="cta_clicked"
-                  properties={{ location: 'pricing', label: 'Learn more' }}
-                  className="shrink-0 px-4 py-2 rounded-lg border border-[var(--gem-gray-600)] text-xs font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
-                >
-                  Upgrade
-                </TrackedCTA>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold text-[var(--gem-accent)]">$20</span>
+                  <span className="text-xs text-[var(--gem-gray-400)]">/mo</span>
+                </div>
               </div>
+              <ul className="space-y-2.5 mb-5">
+                {['Full development reads with production analysis', 'Character breakdowns and market positioning', 'Publish to the public leaderboard', 'Cancel anytime'].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
+                    <CheckCircle size={14} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <TrackedCTA
+                href="/signup"
+                event="cta_clicked"
+                properties={{ location: 'pricing', label: 'Start with Pro' }}
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-[var(--gem-accent)] text-[var(--gem-accent)] text-sm font-medium hover:bg-[var(--gem-accent)] hover:text-white transition-colors"
+              >
+                Start with Pro
+                <ArrowRight size={14} />
+              </TrackedCTA>
+              <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">That&apos;s less than the price of a single script coverage from most services.</p>
             </div>
           </div>
         </section>

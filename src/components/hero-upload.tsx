@@ -47,8 +47,8 @@ export function HeroUpload() {
             <Upload size={16} className="text-[var(--gem-gray-400)] group-hover:text-[var(--gem-accent)] transition-colors sm:w-[18px] sm:h-[18px]" />
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-medium text-[var(--gem-white)]">Drop your screenplay here</p>
-            <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB — no account needed</p>
+            <p className="text-sm font-medium text-[var(--gem-white)]">Get free script reviews <span className="text-xs font-normal text-[var(--gem-gray-500)]">— no account needed</span></p>
+            <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB</p>
           </div>
           <input
             ref={fileInputRef}
