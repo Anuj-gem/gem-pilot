@@ -110,59 +110,71 @@ export default async function Home() {
           </p>
 
           {topScripts && topScripts.length > 0 ? (
-            <div className="rounded-xl border border-[var(--gem-gray-700)] overflow-hidden bg-white/50">
+            <div className="space-y-3">
               {topScripts.map((script: any, idx: number) => (
                 <Link
                   key={script.evaluation_id ?? script.id ?? idx}
                   href={`/report/${script.evaluation_id ?? script.id}`}
-                  className={`flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-4 sm:py-5 hover:bg-[var(--gem-gray-800)] transition-colors ${
-                    idx > 0 ? 'border-t border-[var(--gem-gray-700)]' : ''
-                  }`}
+                  className="group block rounded-xl border border-[var(--gem-gray-700)] bg-white/50 hover:border-[var(--gem-gray-500)] transition-colors overflow-hidden"
                 >
-                  {/* Rank */}
-                  <span className={`w-7 text-center font-bold tabular-nums shrink-0 ${
-                    idx < 3 ? 'text-base' : 'text-sm text-[var(--gem-gray-500)]'
-                  }`} style={idx < 3 ? { color: 'var(--gem-gold)' } : undefined}>
-                    {idx + 1}
-                  </span>
-
-                  {/* Title + author + tags */}
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-semibold truncate">{script.title || 'Untitled'}</div>
-                    <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">{script.author_name || script.author || 'Anonymous'}</div>
-                    <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-                      {script.format && (
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
-                          {script.format}
-                        </span>
-                      )}
-                      {script.genre && (
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
-                          {script.genre}
-                        </span>
-                      )}
+                  <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier ?? '')}` }}>
+                    {/* Rank + Score — left column */}
+                    <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
+                      <span className={`text-xs font-medium mb-1 ${
+                        idx < 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-500)]'
+                      }`}>#{idx + 1}</span>
+                      <span className="text-2xl sm:text-3xl font-bold tabular-nums" style={{ color: tierColor(script.tier ?? '') }}>
+                        {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
+                      </span>
+                      <span className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
                     </div>
-                  </div>
 
-                  {/* Score + Verdict */}
-                  <div className="shrink-0 text-right">
-                    <div className="text-lg font-bold tabular-nums" style={{ color: tierColor(script.tier ?? '') }}>
-                      {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
-                    </div>
-                    <div className="text-[9px] uppercase tracking-wider text-[var(--gem-gray-500)] leading-tight">GEM Score</div>
-                    {script.tier && (
-                      <div className="mt-1.5">
-                        <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-0.5">Verdict</div>
-                        <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${tierBg(script.tier)}`}>
-                          {tierLabel(script.tier)}
+                    {/* Content — center */}
+                    <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
+                            {script.title || 'Untitled'}
+                          </h3>
+                          <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
+                            by {script.author_name || script.author || 'Anonymous'}
+                          </div>
+                        </div>
+                        {/* Verdict badge */}
+                        {script.tier && (
+                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-semibold shrink-0 ${tierBg(script.tier)}`}>
+                            {tierLabel(script.tier)}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Logline or overall take */}
+                      {(script.logline || script.overall_take) && (
+                        <p className="text-xs text-[var(--gem-gray-400)] mt-2 line-clamp-2 leading-relaxed">
+                          {script.logline || script.overall_take}
+                        </p>
+                      )}
+
+                      {/* Tags + View Report */}
+                      <div className="flex items-center justify-between mt-3">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {script.format && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
+                              {script.format}
+                            </span>
+                          )}
+                          {script.genre && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
+                              {script.genre}
+                            </span>
+                          )}
+                        </div>
+                        <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium group-hover:underline">
+                          View Full Report <ArrowRight size={12} />
                         </span>
                       </div>
-                    )}
+                    </div>
                   </div>
-
-                  {/* View Full Report */}
-                  <span className="text-xs text-[var(--gem-accent)] font-medium shrink-0 hidden sm:block">View Report</span>
-                  <ArrowRight size={14} className="text-[var(--gem-accent)] shrink-0 hidden sm:block" />
                 </Link>
               ))}
             </div>

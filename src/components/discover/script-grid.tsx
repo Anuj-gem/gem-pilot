@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Heart, Mail } from 'lucide-react'
+import { Heart, Mail, ArrowRight } from 'lucide-react'
 import { TIER_META } from '@/types'
 import type { LeaderboardEntry, Tier } from '@/types'
 
@@ -21,7 +21,7 @@ interface ScriptGridProps {
 
 export function ScriptGrid({ scripts, userLikes, loggedIn = true }: ScriptGridProps) {
   return (
-    <div className="divide-y divide-[var(--gem-gray-700)]">
+    <div className="space-y-3">
       {scripts.map((script, index) => (
         <ScriptRow
           key={script.evaluation_id}
@@ -83,81 +83,99 @@ function ScriptRow({
   return (
     <Link
       href={`/report/${script.evaluation_id}`}
-      className="group flex items-center gap-4 py-4 sm:py-5 px-1 hover:bg-[var(--gem-gray-800)]/50 transition-colors -mx-1 rounded-lg"
+      className="group block rounded-xl border border-[var(--gem-gray-700)] bg-white/50 hover:border-[var(--gem-gray-500)] transition-colors overflow-hidden"
     >
-      {/* Rank */}
-      <div className="w-8 shrink-0 text-center">
-        <span className={`font-bold tabular-nums ${
-          rank <= 3 ? 'text-xl' : 'text-base text-[var(--gem-gray-500)]'
-        }`} style={rank <= 3 ? { color: 'var(--gem-gold)' } : undefined}>
-          {rank}
-        </span>
-      </div>
+      <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier)}` }}>
+        {/* Rank + Score — left column */}
+        <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
+          <span className={`text-xs font-medium mb-1 ${
+            rank <= 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-500)]'
+          }`}>#{rank}</span>
+          <span className="text-2xl sm:text-3xl font-bold tabular-nums" style={{ color: tierColor(script.tier) }}>
+            {Math.round(script.weighted_score)}
+          </span>
+          <span className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
+        </div>
 
-      {/* Score — labeled */}
-      <div className="shrink-0 w-12 text-center">
-        <span className="text-lg font-bold tabular-nums" style={{ color: tierColor(script.tier) }}>
-          {Math.round(script.weighted_score)}
-        </span>
-        <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] leading-tight">Score</div>
-      </div>
-
-      {/* Info */}
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-0.5">
-          <h3 className="text-sm sm:text-base font-semibold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-            {script.title}
-          </h3>
-          {isNew && (
-            <span className="text-[10px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded-full whitespace-nowrap shrink-0 border border-emerald-200">
-              NEW
+        {/* Content — center */}
+        <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
+                  {script.title}
+                </h3>
+                {isNew && (
+                  <span className="text-[10px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded-full whitespace-nowrap shrink-0 border border-emerald-200">
+                    NEW
+                  </span>
+                )}
+              </div>
+              <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
+                by {script.author_name}
+              </div>
+            </div>
+            {/* Verdict badge */}
+            <span className={`text-[10px] px-2.5 py-1 rounded-full border font-semibold shrink-0 ${tierMeta?.bgClass ?? ''} ${tierMeta?.colorClass ?? ''}`}>
+              {tierMeta?.label ?? script.tier}
             </span>
+          </div>
+
+          {/* Logline or overall take */}
+          {(script.logline || script.overall_take) && (
+            <p className="text-xs text-[var(--gem-gray-400)] mt-2 line-clamp-2 leading-relaxed">
+              {script.logline || script.overall_take}
+            </p>
           )}
-        </div>
-        <div className="text-xs text-[var(--gem-gray-400)]">
-          {script.author_name}
-        </div>
-        <div className="flex gap-1.5 mt-1">
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100">
-            {script.format}
-          </span>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">
-            {script.genre}
-          </span>
+
+          {/* Tags + Actions */}
+          <div className="flex items-center justify-between mt-3">
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {script.format && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
+                  {script.format}
+                </span>
+              )}
+              {script.genre && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
+                  {script.genre}
+                </span>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
+              {/* Contact */}
+              <a
+                href={`mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${script.title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${script.author_name} regarding their script "${script.title}" on the GEM leaderboard.`)}`}
+                onClick={(e) => e.stopPropagation()}
+                className="text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] transition-colors"
+                title="Contact writer"
+              >
+                <Mail size={14} />
+              </a>
+
+              {/* Like */}
+              <button
+                onClick={handleLike}
+                disabled={loading}
+                className={`flex items-center gap-1 text-xs transition-colors ${
+                  liked
+                    ? 'text-red-500'
+                    : 'text-[var(--gem-gray-500)] hover:text-red-500'
+                } ${loading ? 'opacity-50' : ''}`}
+              >
+                <Heart size={14} fill={liked ? 'currentColor' : 'none'} />
+                {likeCount > 0 && <span>{likeCount}</span>}
+              </button>
+
+              {/* View Report */}
+              <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium group-hover:underline">
+                View Report <ArrowRight size={12} />
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Tier badge — GEM Verdict */}
-      <div className="shrink-0 hidden sm:block text-center">
-        <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-0.5">Verdict</div>
-        <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium ${tierMeta?.bgClass ?? ''} ${tierMeta?.colorClass ?? ''}`}>
-          {tierMeta?.label ?? script.tier}
-        </span>
-      </div>
-
-      {/* Contact */}
-      <a
-        href={`mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${script.title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${script.author_name} regarding their script "${script.title}" on the GEM leaderboard.`)}`}
-        onClick={(e) => e.stopPropagation()}
-        className="text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] transition-colors shrink-0"
-        title="Contact writer"
-      >
-        <Mail size={14} />
-      </a>
-
-      {/* Like */}
-      <button
-        onClick={handleLike}
-        disabled={loading}
-        className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs transition-colors shrink-0 ${
-          liked
-            ? 'text-red-500'
-            : 'text-[var(--gem-gray-500)] hover:text-red-500'
-        } ${loading ? 'opacity-50' : ''}`}
-      >
-        <Heart size={14} fill={liked ? 'currentColor' : 'none'} />
-        {likeCount > 0 && <span>{likeCount}</span>}
-      </button>
     </Link>
   )
 }
