@@ -157,9 +157,12 @@ function SubmitPageInner() {
 
       if (data.error) {
         // Show user-friendly message, never raw API errors
-        const friendly = data.error?.includes?.('OCR') || data.error?.includes?.('extract')
-          ? 'We had trouble reading your PDF. Try re-scanning at higher quality, or use a digitally-created PDF if possible.'
-          : 'Something went wrong evaluating your script. Please try again.'
+        let friendly: string
+        if (data.error === 'SCANNED_PDF') {
+          friendly = 'It looks like this is a scanned PDF. We currently only support digitally-created PDFs (from Final Draft, WriterSolo, Highland, etc). Please re-export your script as a digital PDF and try again.'
+        } else {
+          friendly = 'Something went wrong evaluating your script. Please try again.'
+        }
         setError(friendly)
         setStep('upload')
         setProgress(null)
@@ -236,7 +239,7 @@ function SubmitPageInner() {
       'Analyzing your script — this takes about 30 seconds...',
       'Reading structure, characters, and dialogue...',
       'Scoring across research-backed dimensions...',
-      'Scanned PDFs may take a bit longer — hang tight...',
+      'Almost done — finalizing your report...',
     ]
     setProgress(messages[0])
     const timers = messages.slice(1).map((msg, i) =>
@@ -316,7 +319,7 @@ function SubmitPageInner() {
             </div>
 
             {error && (
-              <div className="flex items-start gap-2 p-3 rounded-lg bg-red-950/30 border border-red-800 text-red-300 text-sm">
+              <div className="flex items-start gap-2 p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
                 <AlertCircle size={16} className="mt-0.5 shrink-0" />
                 {error}
               </div>
@@ -460,7 +463,7 @@ function SubmitPageInner() {
           </div>
 
           {error && (
-            <div className="flex items-start gap-2 p-3 rounded-lg bg-red-950/30 border border-red-800 text-red-300 text-sm">
+            <div className="flex items-start gap-2 p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
               <AlertCircle size={16} className="mt-0.5 shrink-0" />
               {error}
             </div>

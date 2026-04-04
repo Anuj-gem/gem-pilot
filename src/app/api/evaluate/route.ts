@@ -5,8 +5,8 @@ import { GEM_EVALUATION_PROMPT_V3 } from "@/lib/evaluation-prompt-v3";
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
 import type { GEMEvaluation } from "@/types";
 
-// Allow up to 120 seconds for script evaluation (scanned PDFs need OCR via vision API)
-export const maxDuration = 120;
+// Allow up to 60 seconds for script evaluation
+export const maxDuration = 60;
 
 
 
@@ -54,176 +54,26 @@ function getClientIp(request: NextRequest): string {
   );
 }
 
-// Check if extracted text is real readable screenplay content (not garbled scanned PDF noise)
-function isTextReadable(text: string): boolean {
-  const cleaned = text.replace(/\s+/g, " ").trim();
-
-  // 1. Must have substantial content — a screenplay is 20,000+ words
-  const words = cleaned.split(/\s+/).filter((w) => w.length >= 2);
-  console.log(
-    `[TextCheck] chars=${cleaned.length}, words=${words.length}, first200="${cleaned.substring(0, 200)}"`
-  );
-
-  if (words.length < 500) {
-    console.log(`[TextCheck] FAIL: only ${words.length} words (need 500+)`);
-    return false;
-  }
-
-  // 2. Ratio of normal ASCII chars to total — garbled text has lots of control/special chars
-  const readableChars = cleaned.replace(/[^a-zA-Z0-9 .,;:'"!?()\-\n]/g, "");
-  const ratio = readableChars.length / cleaned.length;
-  if (ratio < 0.75) {
-    console.log(`[TextCheck] FAIL: readable ratio ${ratio.toFixed(2)} (need 0.75+)`);
-    return false;
-  }
-
-  // 3. Words should look like English — contain vowels, reasonable length
-  const realWords = words.filter(
-    (w) => w.length >= 2 && w.length <= 25 && /[aeiouAEIOU]/.test(w)
-  ).length;
-  const wordRatio = realWords / words.length;
-  if (wordRatio < 0.5) {
-    console.log(`[TextCheck] FAIL: real word ratio ${wordRatio.toFixed(2)} (need 0.5+)`);
-    return false;
-  }
-
-  // 4. Screenplay pattern check — look for at least some common formatting
-  const screenplayPatterns =
-    /\b(INT\.|EXT\.|FADE IN|FADE OUT|CUT TO|DISSOLVE TO|CONTINUED|CONT'D)\b/i;
-  const hasPatterns = screenplayPatterns.test(text);
-  console.log(`[TextCheck] PASS: words=${words.length}, ratio=${ratio.toFixed(2)}, wordRatio=${wordRatio.toFixed(2)}, screenplayPatterns=${hasPatterns}`);
-
-  return true;
-}
-
-// Extract text from PDF — tries pdf-parse first, falls back to GPT-4o-mini OCR via Responses API
-async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: boolean }> {
-  // Try standard text extraction first (fast, free)
+// Extract text from PDF using pdf-parse
+async function extractPdfText(buffer: Buffer): Promise<string> {
   const pdfParse = (await import("pdf-parse")).default;
   const data = await pdfParse(buffer);
 
-  // Check QUALITY not just length — scanned PDFs produce garbled chars that pass length checks
-  if (data.text && isTextReadable(data.text)) {
-    return { text: data.text, usedOcr: false };
-  }
+  const text = data.text?.trim() ?? "";
 
-  // Fallback: scanned PDF — upload to OpenAI Files API, then OCR via Chat Completions (GPT-4o)
-  const extractedLen = data.text?.trim().length ?? 0;
-  console.log(
-    `[OCR] pdf-parse text not readable (${extractedLen} chars extracted, failed quality check). Falling back to GPT-4o OCR.`
-  );
-  console.log(`[OCR] PDF size: ${(buffer.length / 1_000_000).toFixed(1)}MB, pages: ${data.numpages ?? "unknown"}`);
+  // Check if we got real readable text (not garbled scanned PDF noise)
+  const words = text.replace(/\s+/g, " ").split(/\s+/).filter((w) => w.length >= 2);
+  const readableChars = text.replace(/[^a-zA-Z0-9 .,;:'"!?()\-\n]/g, "");
+  const ratio = text.length > 0 ? readableChars.length / text.length : 0;
 
-  let fileId: string | null = null;
-
-  try {
-    // Step 1: Upload PDF to OpenAI Files API
-    const uploadForm = new FormData();
-    uploadForm.append(
-      "file",
-      new Blob([new Uint8Array(buffer)], { type: "application/pdf" }),
-      "screenplay.pdf"
+  if (words.length < 500 || ratio < 0.75) {
+    // This is a scanned PDF or otherwise unreadable — tell the user clearly
+    throw new Error(
+      "SCANNED_PDF"
     );
-    uploadForm.append("purpose", "user_data");
-
-    console.log("[OCR] Uploading PDF to OpenAI Files API...");
-    const uploadRes = await fetch("https://api.openai.com/v1/files", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: uploadForm,
-    });
-
-    if (!uploadRes.ok) {
-      const uploadErr = await uploadRes.text();
-      console.error("[OCR] File upload error:", uploadErr);
-      throw new Error("OCR: Failed to upload PDF for processing.");
-    }
-
-    const uploadResult = await uploadRes.json();
-    fileId = uploadResult.id;
-    console.log(`[OCR] File uploaded: ${fileId}, status: ${uploadResult.status}`);
-
-    // Step 2: Wait briefly for file processing
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    // Step 3: OCR via Chat Completions with file reference
-    // Use GPT-4o (not mini) for better vision/OCR on scanned page images
-    console.log("[OCR] Calling Chat Completions (gpt-4o) with file reference...");
-    const ocrRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o",
-        messages: [
-          {
-            role: "system",
-            content: "You are an OCR text extraction tool. Your job is to read scanned document pages and output the raw text. This PDF contains scanned page images of a screenplay. You MUST read the text visible in the page images and transcribe it. Output ONLY the extracted text, nothing else.",
-          },
-          {
-            role: "user",
-            content: [
-              {
-                type: "file",
-                file: {
-                  file_id: fileId,
-                },
-              },
-              {
-                type: "text",
-                text: "This is a scanned screenplay PDF. The pages are images. Read and transcribe ALL visible text from every page. Output ONLY the raw screenplay text — preserve character names, dialogue, scene headings (INT./EXT.), and formatting. No commentary or explanations.",
-              },
-            ],
-          },
-        ],
-        temperature: 0,
-        max_tokens: 100000,
-      }),
-    });
-
-    const responseText = await ocrRes.text();
-    console.log(`[OCR] Chat Completions status: ${ocrRes.status}, response length: ${responseText.length}`);
-
-    if (!ocrRes.ok) {
-      console.error("[OCR] Chat Completions error:", responseText.substring(0, 500));
-      throw new Error("OCR: Failed to extract text from scanned PDF.");
-    }
-
-    let result: any;
-    try {
-      result = JSON.parse(responseText);
-    } catch {
-      console.error("[OCR] Non-JSON response:", responseText.substring(0, 500));
-      throw new Error("OCR: Unexpected response from text extraction service.");
-    }
-
-    const ocrText = result.choices?.[0]?.message?.content ?? "";
-    console.log(`[OCR] Extracted ${ocrText.length} chars of text`);
-    console.log(`[OCR] First 300 chars: ${ocrText.substring(0, 300)}`);
-
-    // A 60-page screenplay should produce thousands of chars — 191 chars means the model
-    // returned a failure message instead of actual text. Require at least 1000 chars.
-    if (!ocrText || ocrText.trim().length < 1000) {
-      console.error(`[OCR] Insufficient text (${ocrText.length} chars). Model likely failed to OCR.`);
-      throw new Error(
-        "Could not extract readable text from this scanned PDF. Please try uploading a higher-quality scan, or a digitally-created PDF."
-      );
-    }
-
-    return { text: ocrText, usedOcr: true };
-  } finally {
-    // Clean up uploaded file
-    if (fileId) {
-      fetch(`https://api.openai.com/v1/files/${fileId}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
-      }).catch((e) => console.error("[OCR] File cleanup error:", e));
-    }
   }
+
+  return text;
 }
 
 // Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
@@ -383,21 +233,13 @@ export async function POST(request: NextRequest) {
           .eq("id", submission.id);
       }
 
-      // 6. Extract text from PDF (with OCR fallback for scanned PDFs)
-      const { text: scriptText, usedOcr } = await extractPdfText(buffer);
-      console.log(`[Evaluate] Extracted ${scriptText?.length ?? 0} chars, usedOcr=${usedOcr}`);
+      // 6. Extract text from PDF
+      const scriptText = await extractPdfText(buffer);
+      console.log(`[Evaluate] Extracted ${scriptText.length} chars`);
 
       if (!scriptText || scriptText.trim().length < 100) {
         throw new Error(
           "Could not extract enough text from the PDF. The file may be corrupted or contain no readable content."
-        );
-      }
-
-      // Double-check: if we didn't use OCR, verify text is actually readable
-      // (belt-and-suspenders — isTextReadable should catch this, but just in case)
-      if (!usedOcr && !isTextReadable(scriptText)) {
-        throw new Error(
-          "The PDF appears to be a scanned document that could not be read. Please upload a digitally-created PDF, or a higher-quality scan."
         );
       }
 
