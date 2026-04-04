@@ -5,8 +5,8 @@ import { GEM_EVALUATION_PROMPT_V3 } from "@/lib/evaluation-prompt-v3";
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
 import type { GEMEvaluation } from "@/types";
 
-// Allow up to 60 seconds for script evaluation
-export const maxDuration = 60;
+// Allow up to 120 seconds for script evaluation (scanned PDFs need OCR via vision API)
+export const maxDuration = 120;
 
 
 
@@ -54,11 +54,78 @@ function getClientIp(request: NextRequest): string {
   );
 }
 
-// Extract text from PDF using pdf-parse
-async function extractPdfText(buffer: Buffer): Promise<string> {
+// Extract text from PDF — tries pdf-parse first, falls back to GPT-4o-mini vision OCR
+async function extractPdfText(buffer: Buffer): Promise<{ text: string; usedOcr: boolean }> {
+  // Try standard text extraction first (fast, free)
   const pdfParse = (await import("pdf-parse")).default;
   const data = await pdfParse(buffer);
-  return data.text;
+
+  if (data.text && data.text.trim().length >= 100) {
+    return { text: data.text, usedOcr: false };
+  }
+
+  // Fallback: scanned PDF — use GPT-4o-mini vision to OCR
+  console.log("pdf-parse returned insufficient text, falling back to GPT-4o-mini vision OCR");
+
+  const base64Pdf = buffer.toString("base64");
+  const totalPages = data.numpages || 1;
+
+  // Process in batches of 20 pages (OpenAI limit per request is ~20 images)
+  const batchSize = 20;
+  const allText: string[] = [];
+
+  for (let start = 0; start < totalPages; start += batchSize) {
+    const end = Math.min(start + batchSize, totalPages);
+    const pageRange = `pages ${start + 1}-${end}`;
+    console.log(`OCR processing ${pageRange} of ${totalPages}`);
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "user",
+            content: [
+              {
+                type: "text",
+                text: `Extract ALL text from ${start === 0 && end >= totalPages ? 'this screenplay PDF' : `pages ${start + 1}-${end} of this screenplay PDF`}. Return ONLY the raw text content exactly as written — no commentary, no formatting changes, no summaries. Preserve line breaks and dialogue formatting.`,
+              },
+              {
+                type: "file",
+                file: {
+                  filename: "screenplay.pdf",
+                  file_data: `data:application/pdf;base64,${base64Pdf}`,
+                },
+              },
+            ],
+          },
+        ],
+        temperature: 0,
+        max_tokens: 16000,
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.text();
+      console.error(`OCR API error for ${pageRange}:`, err);
+      throw new Error(`OCR failed: ${response.status}`);
+    }
+
+    const result = await response.json();
+    const pageText = result.choices?.[0]?.message?.content ?? "";
+    allText.push(pageText);
+
+    // If single batch covers all pages, no need to loop
+    if (end >= totalPages) break;
+  }
+
+  const fullText = allText.join("\n\n");
+  return { text: fullText, usedOcr: true };
 }
 
 // Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
@@ -218,12 +285,12 @@ export async function POST(request: NextRequest) {
           .eq("id", submission.id);
       }
 
-      // 6. Extract text from PDF
-      const scriptText = await extractPdfText(buffer);
+      // 6. Extract text from PDF (with OCR fallback for scanned PDFs)
+      const { text: scriptText, usedOcr } = await extractPdfText(buffer);
 
       if (!scriptText || scriptText.trim().length < 100) {
         throw new Error(
-          "Could not extract enough text from the PDF. Please ensure the file contains readable text (not scanned images)."
+          "Could not extract enough text from the PDF. The file may be corrupted or contain no readable content."
         );
       }
 

@@ -219,6 +219,23 @@ function SubmitPageInner() {
     await runEvaluation()
   }
 
+  // Cycle loading messages
+  const [loadingPhase, setLoadingPhase] = useState(0)
+  useEffect(() => {
+    if (step !== 'evaluating') return
+    const messages = [
+      'Analyzing your script — this takes about 30 seconds...',
+      'Reading structure, characters, and dialogue...',
+      'Scoring across research-backed dimensions...',
+      'Scanned PDFs may take a bit longer — hang tight...',
+    ]
+    setProgress(messages[0])
+    const timers = messages.slice(1).map((msg, i) =>
+      setTimeout(() => setProgress(msg), (i + 1) * 12000)
+    )
+    return () => timers.forEach(clearTimeout)
+  }, [step])
+
   // ─── Evaluating state ──────────────────────────────────
   if (step === 'evaluating') {
     return (
