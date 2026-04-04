@@ -16,7 +16,7 @@ function DimensionBar({ id, score, reasoning, blurred }: { id: DimensionId; scor
   const getBarColor = (s: number) => {
     if (s >= 8) return 'bg-emerald-500'
     if (s >= 6) return 'bg-amber-500'
-    if (s >= 4) return 'bg-zinc-500'
+    if (s >= 4) return 'bg-gray-500'
     return 'bg-red-500/70'
   }
 

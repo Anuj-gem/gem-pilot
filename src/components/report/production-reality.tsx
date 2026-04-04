@@ -51,7 +51,7 @@ export function ProductionReality({ production, blurred = false }: ProductionRea
               </p>
               <p>
                 Name talent:{' '}
-                <span className={production.cast.requires_name_talent ? 'text-amber-400' : 'text-emerald-400'}>
+                <span className={production.cast.requires_name_talent ? 'text-amber-600' : 'text-emerald-600'}>
                   {production.cast.requires_name_talent ? 'Yes' : 'No'}
                 </span>
               </p>
@@ -59,7 +59,7 @@ export function ProductionReality({ production, blurred = false }: ProductionRea
                 <p className="text-xs">{production.cast.name_talent_reason}</p>
               )}
               {production.cast.child_actors && (
-                <p className="text-xs text-amber-400/70">Child actors required</p>
+                <p className="text-xs text-amber-600">Child actors required</p>
               )}
               {production.cast.casting_challenges && production.cast.casting_challenges.length > 0 && (
                 <div className="mt-1.5 space-y-0.5">
@@ -90,7 +90,7 @@ export function ProductionReality({ production, blurred = false }: ProductionRea
               {production.locations.expensive_flags.length > 0 && (
                 <div className="flex flex-wrap gap-1 mt-1">
                   {production.locations.expensive_flags.map((flag, i) => (
-                    <span key={i} className="text-xs px-2 py-0.5 rounded bg-amber-950/30 border border-amber-800/50 text-amber-400">
+                    <span key={i} className="text-xs px-2 py-0.5 rounded bg-amber-50 border border-amber-200 text-amber-600">
                       {flag}
                     </span>
                   ))}
@@ -127,7 +127,7 @@ export function ProductionReality({ production, blurred = false }: ProductionRea
                 <p><span className="text-[var(--gem-gray-300)]">Night shoots:</span> {production.technical.night_shoots}</p>
               )}
               {production.technical.animals && (
-                <p className="text-xs text-amber-400/70">Animals required</p>
+                <p className="text-xs text-amber-600">Animals required</p>
               )}
               {production.technical.other_flags?.map((flag, i) => (
                 <p key={i} className="text-xs">{flag}</p>
@@ -168,7 +168,7 @@ export function ProductionReality({ production, blurred = false }: ProductionRea
         {rightsFlags.length > 0 && (
           <div>
             <h3 className="flex items-center gap-2 text-sm font-medium text-[var(--gem-gray-200)] mb-2">
-              <AlertCircle size={14} className="text-amber-400" />
+              <AlertCircle size={14} className="text-amber-600" />
               Rights & Clearance Flags ({rightsFlags.length})
             </h3>
             <BlurWrap blurred={blurred}>

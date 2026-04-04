@@ -1,22 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --gem-black: #0a0a0a;
-  --gem-white: #fafafa;
-  --gem-gray-50: #f5f5f5;
-  --gem-gray-100: #e5e5e5;
-  --gem-gray-200: #d4d4d4;
-  --gem-gray-300: #a3a3a3;
-  --gem-gray-400: #737373;
-  --gem-gray-500: #525252;
-  --gem-gray-600: #404040;
-  --gem-gray-700: #262626;
-  --gem-gray-800: #171717;
-  --gem-accent: #6366f1;
+  /* ── Light theme: warm, hopeful, Hollywood editorial ── */
+  --gem-black: #faf9f7;        /* page background — warm off-white */
+  --gem-white: #1a1a1a;        /* primary text — near-black */
+  --gem-gray-50: #111827;
+  --gem-gray-100: #1f2937;
+  --gem-gray-200: #374151;     /* strong secondary text */
+  --gem-gray-300: #4b5563;     /* secondary text */
+  --gem-gray-400: #6b7280;     /* muted text */
+  --gem-gray-500: #9ca3af;     /* placeholders, subtle labels */
+  --gem-gray-600: #d1d5db;     /* subtle dividers */
+  --gem-gray-700: #e5e7eb;     /* borders */
+  --gem-gray-800: #f3f4f6;     /* raised surfaces / cards */
+  --gem-gray-900: #f9fafb;     /* slightly raised bg */
+  --gem-accent: #6366f1;       /* indigo — primary action */
   --gem-accent-hover: #4f46e5;
-  --gem-success: #22c55e;
-  --gem-warning: #f59e0b;
-  --gem-gold: #d4a847;
+  --gem-success: #16a34a;
+  --gem-warning: #d97706;
+  --gem-gold: #b8860b;         /* dark goldenrod — Hollywood motif */
+
+  /* Tier colors (readable on light) */
+  --tier-greenlight: #059669;  /* emerald-600 */
+  --tier-optionable: #d97706;  /* amber-600 */
+  --tier-needs-dev: #6b7280;   /* gray-500 */
 }
 
 @theme inline {
@@ -45,7 +52,7 @@ body {
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
-/* Scrollbar styling */
+/* Scrollbar — light */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -65,8 +72,8 @@ body {
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
-  border: 1px solid var(--gem-gray-600);
-  color: var(--gem-gray-300);
+  border: 1px solid var(--gem-gray-700);
+  color: var(--gem-gray-400);
   background: transparent;
   transition: all 0.15s ease;
 }
@@ -82,8 +89,8 @@ body {
 
 /* Input styles */
 input, textarea, select {
-  background: var(--gem-gray-800) !important;
-  border: 1px solid var(--gem-gray-600);
+  background: white !important;
+  border: 1px solid var(--gem-gray-700);
   border-radius: 8px;
   padding: 10px 14px;
   color: var(--gem-white);
@@ -96,5 +103,5 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--gem-accent);
 }
 input::placeholder, textarea::placeholder {
-  color: var(--gem-gray-400);
+  color: var(--gem-gray-500);
 }

@@ -40,7 +40,7 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
       <div className="relative w-full max-w-md bg-[var(--gem-gray-800)] rounded-2xl border border-[var(--gem-gray-700)] p-8 shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[var(--gem-gray-400)] hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
           aria-label="Close"
         >
           <X size={20} />
@@ -50,7 +50,7 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           <Clock size={12} />
           {trialExpired ? 'Your free trial has ended' : 'Free evaluation used'}
         </p>
-        <h2 className="text-xl font-bold text-white mb-2">
+        <h2 className="text-xl font-bold text-[var(--gem-white)] mb-2">
           Keep evaluating. Keep climbing.
         </h2>
         <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
@@ -61,7 +61,7 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
 
         <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">
           <div className="flex items-baseline gap-1 mb-1">
-            <span className="text-3xl font-bold text-white">$20</span>
+            <span className="text-3xl font-bold text-[var(--gem-white)]">$20</span>
             <span className="text-sm text-[var(--gem-gray-400)]">/ month</span>
           </div>
           <ul className="space-y-2 mt-3">

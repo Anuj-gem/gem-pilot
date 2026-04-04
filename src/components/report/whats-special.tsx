@@ -18,7 +18,7 @@ function BlurWrap({ blurred, children }: { blurred: boolean; children: React.Rea
 function SourceBadge({ source }: { source: string }) {
   const label = source === 'production' ? 'Production' : source === 'both' ? 'Script + Production' : 'Script'
   return (
-    <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/30 border border-emerald-800/40 text-emerald-400/70">
+    <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-600">
       {label}
     </span>
   )
@@ -27,7 +27,7 @@ function SourceBadge({ source }: { source: string }) {
 export function WhatsSpecialSection({ data, blurred = false }: Props) {
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
-      <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-400 mb-4">
+      <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-600 mb-4">
         <CheckCircle2 size={14} />
         What makes this special
       </h2>

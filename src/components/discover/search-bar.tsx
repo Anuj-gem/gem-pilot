@@ -49,7 +49,7 @@ export function SearchBar({
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by title or author..."
-          className="w-full pl-9 pr-4 py-2 rounded-lg bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] text-sm text-white placeholder:text-[var(--gem-gray-500)] focus:outline-none focus:border-[var(--gem-accent)]"
+          className="w-full pl-9 pr-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm text-[var(--gem-white)] placeholder:text-[var(--gem-gray-500)] focus:outline-none focus:border-[var(--gem-accent)]"
         />
       </form>
 
@@ -60,7 +60,7 @@ export function SearchBar({
           className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors shrink-0 ${
             !initialFormat
               ? 'bg-[var(--gem-accent)] text-white'
-              : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:text-white border border-[var(--gem-gray-700)]'
+              : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
           }`}
         >
           All Formats
@@ -72,7 +72,7 @@ export function SearchBar({
             className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors shrink-0 ${
               initialFormat === f
                 ? 'bg-[var(--gem-accent)] text-white'
-                : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:text-white border border-[var(--gem-gray-700)]'
+                : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
             }`}
           >
             {f}
@@ -87,7 +87,7 @@ export function SearchBar({
           className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors shrink-0 ${
             !initialGenre
               ? 'bg-[var(--gem-accent)] text-white'
-              : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:text-white border border-[var(--gem-gray-700)]'
+              : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
           }`}
         >
           All Genres
@@ -99,7 +99,7 @@ export function SearchBar({
             className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors shrink-0 ${
               initialGenre === g
                 ? 'bg-[var(--gem-accent)] text-white'
-                : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:text-white border border-[var(--gem-gray-700)]'
+                : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
             }`}
           >
             {g}
@@ -120,7 +120,7 @@ export function SearchBar({
             className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors ${
               initialSort === opt.value || (!initialSort && opt.value === 'score')
                 ? 'bg-[var(--gem-accent)] text-white'
-                : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:text-white border border-[var(--gem-gray-700)]'
+                : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
             }`}
           >
             {opt.label}

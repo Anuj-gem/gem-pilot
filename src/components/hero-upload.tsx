@@ -47,7 +47,7 @@ export function HeroUpload() {
             <Upload size={16} className="text-[var(--gem-gray-400)] group-hover:text-[var(--gem-accent)] transition-colors sm:w-[18px] sm:h-[18px]" />
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-medium text-white">Drop your screenplay here</p>
+            <p className="text-sm font-medium text-[var(--gem-white)]">Drop your screenplay here</p>
             <p className="text-xs text-[var(--gem-gray-500)]">PDF, up to 10MB — no account needed</p>
           </div>
           <input
@@ -63,7 +63,7 @@ export function HeroUpload() {
           <div className="flex items-center gap-3 flex-1 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-[var(--gem-accent)] bg-[var(--gem-accent)]/5">
             <FileText size={16} className="text-[var(--gem-accent)] shrink-0 sm:w-[18px] sm:h-[18px]" />
             <div className="min-w-0">
-              <p className="text-sm font-medium text-white truncate">{file.name}</p>
+              <p className="text-sm font-medium text-[var(--gem-white)] truncate">{file.name}</p>
               <p className="text-xs text-[var(--gem-gray-400)]">{(file.size / 1024).toFixed(0)} KB</p>
             </div>
           </div>

@@ -18,7 +18,7 @@ function BlurWrap({ blurred, children }: { blurred: boolean; children: React.Rea
 function SourceBadge({ source }: { source: string }) {
   const label = source === 'production' ? 'Production' : source === 'both' ? 'Script + Production' : 'Script'
   return (
-    <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-950/30 border border-amber-800/40 text-amber-400/70">
+    <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 border border-amber-200 text-amber-600">
       {label}
     </span>
   )
@@ -27,7 +27,7 @@ function SourceBadge({ source }: { source: string }) {
 export function WhatsHoldingItBackSection({ data, blurred = false }: Props) {
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
-      <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 mb-4">
+      <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-600 mb-4">
         <AlertTriangle size={14} />
         What needs development
       </h2>

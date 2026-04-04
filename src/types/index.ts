@@ -12,22 +12,22 @@ export const TIER_META: Record<
 > = {
   "Greenlight Material": {
     label: "Greenlight Material",
-    colorClass: "text-emerald-400",
-    bgClass: "bg-emerald-950/50 border-emerald-700",
+    colorClass: "text-emerald-700",
+    bgClass: "bg-emerald-50 border-emerald-200",
     description: "This script reads like top-tier produced material — distinctive voice, strong commercial instincts, and production-ready craft.",
     range: "85+",
   },
   "Optionable": {
     label: "Optionable",
-    colorClass: "text-amber-400",
-    bgClass: "bg-amber-950/50 border-amber-700",
+    colorClass: "text-amber-700",
+    bgClass: "bg-amber-50 border-amber-200",
     description: "",
     range: "60–85",
   },
   "Needs Development": {
     label: "Needs Development",
-    colorClass: "text-zinc-400",
-    bgClass: "bg-zinc-800/50 border-zinc-600",
+    colorClass: "text-gray-500",
+    bgClass: "bg-gray-50 border-gray-200",
     description: "",
     range: "Below 60",
   },

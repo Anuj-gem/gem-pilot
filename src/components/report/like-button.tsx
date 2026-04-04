@@ -44,7 +44,7 @@ export function LikeButton({ evaluationId, initialLiked, initialCount, loggedIn 
       disabled={loading}
       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors border ${
         liked
-          ? 'border-red-700 bg-red-950/50 text-red-400 hover:bg-red-950/70'
+          ? 'border-red-200 bg-red-50 text-red-500 hover:bg-red-100'
           : 'border-[var(--gem-gray-600)] bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:bg-[var(--gem-gray-700)]'
       } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
     >

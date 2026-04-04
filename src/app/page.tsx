@@ -7,6 +7,12 @@ import { TrackedCTA } from '@/components/tracked-cta'
 import { LandingExperiments } from '@/components/landing-experiments'
 import { createClient } from '@/lib/supabase-server'
 
+function tierColor(tier: string) {
+  if (tier === 'Greenlight Material') return 'var(--tier-greenlight)'
+  if (tier === 'Optionable') return 'var(--tier-optionable)'
+  return 'var(--tier-needs-dev)'
+}
+
 export default async function Home() {
   const supabase = await createClient()
   const { data: topScripts } = await supabase
@@ -14,26 +20,21 @@ export default async function Home() {
     .select('*')
     .order('weighted_score', { ascending: false })
     .limit(8)
+
   return (
     <div className="min-h-screen">
       <LandingTracking />
       <LandingExperiments />
 
-      {/* Nav — compact on mobile, spaced on desktop */}
-      <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-800)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
+      {/* Nav */}
+      <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
           <div className="flex items-center gap-3 sm:gap-4">
-            <Link
-              href="/discover"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"
-            >
+            <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Leaderboard
             </Link>
-            <Link
-              href="/login"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"
-            >
+            <Link href="/login" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Log in
             </Link>
             <TrackedCTA
@@ -67,12 +68,12 @@ export default async function Home() {
             Upload any script and get your GEM score and tier in under a minute. No account needed. Subscribe to unlock the full development read.
           </p>
 
-          {/* Desktop: file upload drop zone */}
+          {/* Desktop: file upload */}
           <div className="hidden sm:block">
             <HeroUpload />
           </div>
 
-          {/* Mobile: signup CTA (users won't have PDFs on phone) */}
+          {/* Mobile: CTA */}
           <div className="sm:hidden">
             <TrackedCTA
               href="/signup"
@@ -93,7 +94,7 @@ export default async function Home() {
               href="/discover"
               event="cta_clicked"
               properties={{ location: 'hero', label: 'Browse the leaderboard' }}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-600)] transition-colors"
             >
               Browse the leaderboard
               <ArrowRight size={14} />
@@ -104,7 +105,7 @@ export default async function Home() {
               properties={{ location: 'hero' }}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-600)] transition-colors"
             >
               <Calendar size={14} />
               Talk to the founder
@@ -113,64 +114,46 @@ export default async function Home() {
         </section>
       </TrackSection>
 
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
-      {/* Live from the Leaderboard */}
+      {/* Live from the Leaderboard — clean list */}
       <TrackSection name="leaderboard_snapshot">
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Live from the leaderboard</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 font-[family-name:var(--font-display)]">Real scripts. Real scores.</h2>
-          <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-8 sm:mb-12">
-            Updated constantly. Top-ranked screenplays from writers building their craft with GEM.
+          <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-8 sm:mb-10">
+            Top-ranked screenplays from writers building their craft with GEM.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {topScripts && topScripts.length > 0 ? (
-              topScripts.map((script, idx) => (
-                <div
-                  key={script.id}
-                  className="p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] hover:bg-[var(--gem-gray-800)] transition-colors"
-                >
-                  <div className="text-xs text-[var(--gem-gray-500)] mb-2">#{idx + 1}</div>
-                  <h3 className="text-sm font-semibold text-white mb-1 truncate">
-                    {script.title || 'Untitled'}
-                  </h3>
-                  <p className="text-xs text-[var(--gem-gray-400)] mb-3 truncate">
-                    by {script.author || 'Anonymous'}
-                  </p>
-                  <div className="flex items-end justify-between mb-3">
-                    <div>
-                      <div className="text-2xl font-bold text-[var(--gem-accent)]">
-                        {typeof script.weighted_score === 'number'
-                          ? script.weighted_score.toFixed(1)
-                          : 'N/A'}
-                      </div>
-                      <div className="text-xs text-[var(--gem-gray-400)]">GEM Score</div>
-                    </div>
-                    {script.tier && (
-                      <span className="px-2.5 py-1 rounded-full bg-[var(--gem-accent)]/10 text-xs font-medium text-[var(--gem-accent)]">
-                        {script.tier}
-                      </span>
-                    )}
+          {topScripts && topScripts.length > 0 ? (
+            <div className="divide-y divide-[var(--gem-gray-700)]">
+              {topScripts.map((script: any, idx: number) => (
+                <div key={script.id ?? idx} className="flex items-center gap-4 py-3.5 sm:py-4">
+                  <span className={`w-6 text-center font-bold tabular-nums ${
+                    idx < 3 ? 'text-base' : 'text-sm text-[var(--gem-gray-500)]'
+                  }`} style={idx < 3 ? { color: 'var(--gem-gold)' } : undefined}>
+                    {idx + 1}
+                  </span>
+                  <span className="w-10 text-center text-lg font-bold tabular-nums" style={{ color: tierColor(script.tier ?? '') }}>
+                    {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-semibold truncate">{script.title || 'Untitled'}</div>
+                    <div className="text-xs text-[var(--gem-gray-400)]">{script.author_name || script.author || 'Anonymous'}</div>
                   </div>
                   {script.genre && (
-                    <div className="flex flex-wrap gap-1">
-                      <span className="px-2 py-1 rounded-full bg-[var(--gem-gray-800)] text-xs text-[var(--gem-gray-300)]">
-                        {script.genre}
-                      </span>
-                    </div>
+                    <span className="hidden sm:inline text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">
+                      {script.genre}
+                    </span>
                   )}
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-8 text-[var(--gem-gray-400)]">
-                Loading leaderboard...
-              </div>
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center py-8 text-[var(--gem-gray-400)]">Loading leaderboard...</p>
+          )}
 
-          <div className="mt-8 sm:mt-10 text-center">
+          <div className="mt-6 sm:mt-8">
             <TrackedCTA
               href="/discover"
               event="cta_clicked"
@@ -184,107 +167,83 @@ export default async function Home() {
         </section>
       </TrackSection>
 
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
       {/* How it works */}
       <TrackSection name="how_it_works">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">How it works</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-12 sm:mb-16">Three simple steps.</h2>
-
+          <h2 className="text-2xl sm:text-3xl font-bold mb-12 sm:mb-16 font-[family-name:var(--font-display)]">Three simple steps.</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-accent)] mb-3">1</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your script</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Drop your PDF and GEM instantly analyzes it.
-              </p>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Drop your PDF and GEM instantly analyzes it.</p>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-accent)] mb-3">2</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Get your producer read</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Score, tier, development notes, and production analysis in under a minute.
-              </p>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Score, tier, development notes, and production analysis in under a minute.</p>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-accent)] mb-3">3</div>
               <h3 className="text-base sm:text-lg font-semibold mb-2">Publish and climb</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Rewrite and resubmit. Watch your ranking rise on the leaderboard.
-              </p>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">Rewrite and resubmit. Watch your ranking rise on the leaderboard.</p>
             </div>
           </div>
         </section>
       </TrackSection>
 
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
       {/* Pricing */}
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Score your script free. Unlimited. No account needed.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Score your script free. Unlimited.</h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8 sm:mb-14 max-w-lg">
             Upload as many scripts as you want and see your GEM score and tier instantly.
             Subscribe to unlock the full development read, production analysis, and leaderboard publishing.
           </p>
 
-          <div className="max-w-md mx-auto">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {/* Free tier */}
-              <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-5 sm:p-6">
-                <div className="text-sm font-semibold text-white mb-1">Free</div>
-                <p className="text-xs text-[var(--gem-gray-400)] mb-4">No account required</p>
-                <ul className="space-y-2.5">
-                  {[
-                    'Upload any screenplay',
-                    'GEM score + tier instantly',
-                    'Unlimited — no account needed',
-                  ].map(item => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
-                      <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div className="max-w-md mx-auto grid grid-cols-2 gap-4 sm:gap-6">
+            <div className="rounded-2xl border border-[var(--gem-gray-700)] p-5 sm:p-6">
+              <div className="text-sm font-semibold mb-1">Free</div>
+              <p className="text-xs text-[var(--gem-gray-400)] mb-4">No account required</p>
+              <ul className="space-y-2.5">
+                {['Upload any screenplay', 'GEM score + tier instantly', 'Unlimited — no account needed'].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
+                    <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border-2 border-[var(--gem-accent)]/30 bg-indigo-50/50 p-5 sm:p-6">
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-2xl font-bold">$20</span>
+                <span className="text-xs text-[var(--gem-gray-400)]">/ mo</span>
               </div>
-
-              {/* Paid tier */}
-              <div className="rounded-2xl border border-[var(--gem-accent)]/40 bg-[var(--gem-accent)]/5 p-5 sm:p-6">
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-2xl font-bold">$20</span>
-                  <span className="text-xs text-[var(--gem-gray-400)]">/ mo</span>
-                </div>
-                <p className="text-xs text-[var(--gem-gray-400)] mb-4">Cancel anytime</p>
-                <ul className="space-y-2.5">
-                  {[
-                    'Full development reads',
-                    'Production analysis',
-                    'Publish to leaderboard',
-                    'Everything free users see, plus the full report',
-                  ].map(item => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
-                      <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="text-xs text-[var(--gem-gray-400)] mb-4">Cancel anytime</p>
+              <ul className="space-y-2.5">
+                {['Full development reads', 'Production analysis', 'Publish to leaderboard', 'Everything free users see, plus the full report'].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
+                    <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
       </TrackSection>
 
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
       {/* Bottom CTA */}
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
             This script is #{topScripts && topScripts.length > 0 ? '1' : 'trending'} on GEM right now.
           </h2>
           {topScripts && topScripts.length > 0 && (
@@ -311,7 +270,7 @@ export default async function Home() {
               properties={{ location: 'bottom_cta' }}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-white hover:border-[var(--gem-gray-500)] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-600)] transition-colors"
             >
               <Calendar size={16} />
               Talk to the founder
@@ -321,16 +280,11 @@ export default async function Home() {
       </TrackSection>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--gem-gray-800)] py-6 sm:py-8">
+      <footer className="border-t border-[var(--gem-gray-700)] py-6 sm:py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between text-xs text-[var(--gem-gray-500)]">
           <span>GEM</span>
           <div className="flex items-center gap-4">
-            <a
-              href="https://calendly.com/anuj-gem/15-minute-intro-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
+            <a href="https://calendly.com/anuj-gem/15-minute-intro-call" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gem-white)] transition-colors">
               Talk to us
             </a>
             <span>&copy; {new Date().getFullYear()}</span>

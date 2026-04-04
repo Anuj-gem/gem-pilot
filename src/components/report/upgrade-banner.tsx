@@ -47,7 +47,7 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
       <div className="max-w-2xl mx-auto rounded-2xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-800)] shadow-2xl shadow-black/40 p-6 sm:p-8">
         <button
           onClick={() => setDismissed(true)}
-          className="absolute top-4 right-4 text-[var(--gem-gray-500)] hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-[var(--gem-gray-500)] hover:text-[var(--gem-white)] transition-colors"
         >
           <X size={18} />
         </button>
@@ -58,7 +58,7 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
               <Clock size={12} />
               {trialExpired ? 'Your free trial has ended' : 'You\'ve used your free evaluation'}
             </p>
-            <h3 className="text-lg font-bold text-white mb-2">
+            <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
               Keep evaluating. Keep climbing the leaderboard.
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">
@@ -82,7 +82,7 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
 
           <div className="sm:flex sm:flex-col sm:items-end sm:shrink-0">
             <div className="text-right mb-3 hidden sm:block">
-              <span className="text-2xl font-bold text-white">$20</span>
+              <span className="text-2xl font-bold text-[var(--gem-white)]">$20</span>
               <span className="text-sm text-[var(--gem-gray-400)]"> / mo</span>
             </div>
             <button

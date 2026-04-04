@@ -48,8 +48,8 @@ export default function Nav() {
                     href={link.href}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
                       active
-                        ? 'bg-[var(--gem-gray-700)] text-white'
-                        : 'text-[var(--gem-gray-300)] hover:text-white hover:bg-[var(--gem-gray-800)]'
+                        ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
+                        : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                     }`}
                   >
                     <Icon size={16} />
@@ -66,7 +66,7 @@ export default function Nav() {
               </Link>
               <button
                 onClick={handleSignOut}
-                className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-white hover:bg-[var(--gem-gray-800)] transition-colors"
+                className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
                 title="Sign out"
               >
                 <LogOut size={16} />
@@ -87,8 +87,8 @@ export default function Nav() {
                   href="/discover"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs transition-colors ${
                     pathname.startsWith('/discover')
-                      ? 'bg-[var(--gem-gray-700)] text-white'
-                      : 'text-[var(--gem-gray-300)]'
+                      ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
+                      : 'text-[var(--gem-gray-400)]'
                   }`}
                 >
                   <Trophy size={16} />
@@ -116,13 +116,13 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <Link
               href="/discover"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"
+              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
             >
               Leaderboard
             </Link>
             <Link
               href="/login"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"
+              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
             >
               Log in
             </Link>
@@ -146,7 +146,7 @@ export default function Nav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[var(--gem-gray-300)] hover:text-white hover:bg-[var(--gem-gray-800)]"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:bg-[var(--gem-gray-800)]"
               >
                 <Icon size={16} />
                 {link.label}
@@ -163,7 +163,7 @@ export default function Nav() {
           </Link>
           <button
             onClick={handleSignOut}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[var(--gem-gray-400)] hover:text-white w-full text-left"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] w-full text-left"
           >
             <LogOut size={16} />
             Sign Out

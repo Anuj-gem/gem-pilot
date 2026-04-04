@@ -42,7 +42,7 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
       <div className="max-w-3xl mx-auto px-4 py-5 sm:py-6">
         <div className="sm:flex sm:items-center sm:justify-between gap-6">
           <div className="mb-4 sm:mb-0">
-            <h3 className="text-base font-bold text-white mb-1">
+            <h3 className="text-base font-bold text-[var(--gem-white)] mb-1">
               Unlock the full producer read
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)]">
@@ -51,7 +51,7 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
             <ul className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
               {['Full development reads', 'Production analysis', 'Publish to leaderboard'].map(item => (
                 <li key={item} className="flex items-center gap-1.5 text-xs text-[var(--gem-gray-300)]">
-                  <CheckCircle size={12} className="text-emerald-400 shrink-0" />
+                  <CheckCircle size={12} className="text-emerald-600 shrink-0" />
                   {item}
                 </li>
               ))}

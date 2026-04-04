@@ -245,7 +245,7 @@ function SubmitPageInner() {
           <div className="flex items-center gap-3 p-3 rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] mb-8">
             <FileText size={16} className="text-[var(--gem-accent)] shrink-0" />
             <div className="min-w-0">
-              <p className="text-sm font-medium text-white truncate">{title}</p>
+              <p className="text-sm font-medium text-[var(--gem-white)] truncate">{title}</p>
               <p className="text-xs text-[var(--gem-gray-500)]">Ready to evaluate — create an account to save your results</p>
             </div>
           </div>
@@ -358,7 +358,7 @@ function SubmitPageInner() {
             {isSubscribed && (
               <button
                 onClick={handleManageSubscription}
-                className="inline-flex items-center gap-1 text-xs text-[var(--gem-gray-400)] hover:text-white transition-colors"
+                className="inline-flex items-center gap-1 text-xs text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
               >
                 <Settings size={12} /> Manage
               </button>

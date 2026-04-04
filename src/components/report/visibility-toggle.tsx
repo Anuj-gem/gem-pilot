@@ -34,7 +34,7 @@ export function VisibilityToggle({ submissionId, initialPublic }: VisibilityTogg
       disabled={loading}
       className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors border ${
         isPublic
-          ? 'border-emerald-700 bg-emerald-950/50 text-emerald-400 hover:bg-emerald-950/70'
+          ? 'border-emerald-200 bg-emerald-50 text-emerald-600 hover:bg-emerald-100'
           : 'border-[var(--gem-gray-600)] bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:bg-[var(--gem-gray-700)]'
       } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
     >
