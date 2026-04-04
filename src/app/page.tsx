@@ -68,20 +68,20 @@ export default async function Home() {
           <div className="absolute -bottom-20 -left-40 w-60 h-60 bg-gradient-to-tr from-emerald-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
           <div className="relative flex items-center gap-2 mb-5 sm:mb-6 flex-wrap">
-            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Script Development Review</span>
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Free Script Review</span>
             <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Public Script Leaderboard</span>
           </div>
           <h1
             className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Your Script Development Partner — Unlimited Script Reviews
+            Personal Development Executive For Writers — For Free
           </h1>
           <p
             className="relative text-base sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Get a producer&apos;s perspective on your script — then publish your best work to our public leaderboard to get the industry&apos;s eyes on it.
+            Get a producer-style score for your script, publish your best work, and climb the GEM leaderboard for industry exposure.
           </p>
 
           {/* CTA */}
@@ -140,7 +140,7 @@ export default async function Home() {
                 <Link
                   key={script.evaluation_id ?? script.id ?? idx}
                   href={`/report/${script.evaluation_id ?? script.id}`}
-                  className={`flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 sm:py-4 hover:bg-[var(--gem-gray-800)] transition-colors ${
+                  className={`flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-4 sm:py-5 hover:bg-[var(--gem-gray-800)] transition-colors ${
                     idx > 0 ? 'border-t border-[var(--gem-gray-700)]' : ''
                   }`}
                 >
@@ -151,38 +151,42 @@ export default async function Home() {
                     {idx + 1}
                   </span>
 
-                  {/* Score */}
-                  <span className="w-10 text-center text-lg font-bold tabular-nums shrink-0" style={{ color: tierColor(script.tier ?? '') }}>
-                    {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
-                  </span>
-
-                  {/* Title + author */}
+                  {/* Title + author + tags */}
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-semibold truncate">{script.title || 'Untitled'}</div>
-                    <div className="text-xs text-[var(--gem-gray-400)]">{script.author_name || script.author || 'Anonymous'}</div>
+                    <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">{script.author_name || script.author || 'Anonymous'}</div>
+                    <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                      {script.format && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
+                          {script.format}
+                        </span>
+                      )}
+                      {script.genre && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
+                          {script.genre}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Tags */}
-                  <div className="hidden sm:flex items-center gap-1.5 shrink-0">
+                  {/* Score + Verdict */}
+                  <div className="shrink-0 text-right">
+                    <div className="text-lg font-bold tabular-nums" style={{ color: tierColor(script.tier ?? '') }}>
+                      {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
+                    </div>
+                    <div className="text-[9px] uppercase tracking-wider text-[var(--gem-gray-500)] leading-tight">GEM Score</div>
                     {script.tier && (
-                      <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${tierBg(script.tier)}`}>
-                        {tierLabel(script.tier)}
-                      </span>
-                    )}
-                    {script.format && (
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
-                        {script.format}
-                      </span>
-                    )}
-                    {script.genre && (
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
-                        {script.genre}
-                      </span>
+                      <div className="mt-1.5">
+                        <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-0.5">Verdict</div>
+                        <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${tierBg(script.tier)}`}>
+                          {tierLabel(script.tier)}
+                        </span>
+                      </div>
                     )}
                   </div>
 
                   {/* Arrow */}
-                  <ArrowRight size={14} className="text-[var(--gem-gray-500)] shrink-0" />
+                  <ArrowRight size={14} className="text-[var(--gem-gray-500)] shrink-0 hidden sm:block" />
                 </Link>
               ))}
             </div>

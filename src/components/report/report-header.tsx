@@ -71,18 +71,24 @@ export function ReportHeader({
         </div>
       </div>
 
-      {/* Tier + tags row */}
+      {/* Tier (GEM Verdict) + tags row */}
       <div className="flex items-center flex-wrap gap-2">
-        <span
-          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
-          style={{ backgroundColor: tierColor(tier) }}
-        >
-          {tierMeta.label}
-        </span>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict:</span>
+          <span
+            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
+            style={{ backgroundColor: tierColor(tier) }}
+          >
+            {tierMeta.label}
+          </span>
+        </div>
+        <span className="text-[var(--gem-gray-600)]">·</span>
+        {format && <span className="tag-pill">{format}</span>}
+        {genre && <span className="tag-pill">{genre}</span>}
         {genreTags.map(tag => (
           <span key={tag} className="tag-pill">{tag}</span>
         ))}
-        <span className="tag-pill">{tone}</span>
+        {tone && <span className="tag-pill">{tone}</span>}
       </div>
 
       {tierMeta.description && (

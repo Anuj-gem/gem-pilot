@@ -94,11 +94,12 @@ function ScriptRow({
         </span>
       </div>
 
-      {/* Score — plain text */}
+      {/* Score — labeled */}
       <div className="shrink-0 w-12 text-center">
         <span className="text-lg font-bold tabular-nums" style={{ color: tierColor(script.tier) }}>
           {Math.round(script.weighted_score)}
         </span>
+        <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] leading-tight">Score</div>
       </div>
 
       {/* Info */}
@@ -126,8 +127,9 @@ function ScriptRow({
         </div>
       </div>
 
-      {/* Tier badge */}
-      <div className="shrink-0 hidden sm:block">
+      {/* Tier badge — GEM Verdict */}
+      <div className="shrink-0 hidden sm:block text-center">
+        <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-0.5">Verdict</div>
         <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium ${tierMeta?.bgClass ?? ''} ${tierMeta?.colorClass ?? ''}`}>
           {tierMeta?.label ?? script.tier}
         </span>
