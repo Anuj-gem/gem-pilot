@@ -41,7 +41,7 @@ export default async function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-          <span className="text-lg sm:text-xl font-bold tracking-tight text-gold-shimmer">GEM</span>
+          <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
           <div className="flex items-center gap-3 sm:gap-4">
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Leaderboard
@@ -73,7 +73,7 @@ export default async function Home() {
             <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Public Leaderboard</span>
           </div>
           <h1
-            className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)] text-gold-shimmer"
+            className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
             We help you get your screenplay made.
