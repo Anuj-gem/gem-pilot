@@ -167,9 +167,9 @@ export default async function ReportPage({ params }: PageProps) {
         <ProductionReality production={report.production_reality} blurred={showBlurred} />
       </div>
 
-      {/* Sticky subscribe CTA for non-subscribers */}
-      {showBlurred && (
-        <SubscribeGate evaluationId={id} isLoggedIn={!!user} />
+      {/* Subscribe overlay — only for logged-in free users, not anonymous */}
+      {showBlurred && user && (
+        <SubscribeGate evaluationId={id} isLoggedIn={true} />
       )}
     </>
   )
