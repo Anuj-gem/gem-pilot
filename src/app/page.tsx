@@ -261,7 +261,7 @@ export default async function Home() {
               Our scoring system, Selznick
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-              Built on real research.<br className="hidden sm:block" /> Not vibes.
+              Based on Real Research.<br className="hidden sm:block" /> Not Generic Coverage.
             </h2>
             <p className="text-sm sm:text-base text-[var(--gem-gray-300)] max-w-2xl mx-auto leading-relaxed">
               Selznick was developed to identify high-quality writers who may be overlooked by Hollywood.

@@ -27,19 +27,16 @@ function DimensionBar({ id, score, reasoning, blurred }: { id: DimensionId; scor
           <span className="text-sm font-medium text-[var(--gem-gray-200)]">
             {meta.shortLabel}
           </span>
-          <span className="text-sm font-bold text-[var(--gem-gray-500)]">
-            —/10
+          <span className="text-sm font-bold text-[var(--gem-gray-500)] blur-sm select-none">
+            ?/10
           </span>
         </div>
-        <div className="h-2 rounded-full bg-[var(--gem-gray-700)] overflow-hidden">
+        <div className="h-2 rounded-full bg-[var(--gem-gray-700)] overflow-hidden blur-sm select-none">
           <div
-            className="h-full rounded-full bg-[var(--gem-gray-600)]"
-            style={{ width: '100%', opacity: 0.3 }}
+            className={`h-full rounded-full ${getBarColor(score)}`}
+            style={{ width: `${pct}%` }}
           />
         </div>
-        <p className="text-xs text-[var(--gem-gray-500)] mt-1">
-          {meta.description}
-        </p>
       </div>
     )
   }
