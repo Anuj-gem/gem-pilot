@@ -1,4 +1,3 @@
-import { Mail } from 'lucide-react'
 import { TIER_META, type Tier } from '@/types'
 
 interface ReportHeaderProps {
@@ -43,21 +42,10 @@ export function ReportHeader({
       <div className="flex items-start justify-between gap-4 sm:gap-6">
         <div className="flex-1 min-w-0">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight font-[family-name:var(--font-display)]">{title}</h1>
-          <p className="text-sm text-[var(--gem-gray-400)] mt-1.5 flex items-center gap-2">
-            by {author}
-            {author !== 'Anonymous' && (
-              <a
-                href={`mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${author} regarding their script "${title}" on the GEM leaderboard.`)}`}
-                className="text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] transition-colors"
-                title="Contact writer"
-              >
-                <Mail size={14} />
-              </a>
-            )}
-            <span className="text-[var(--gem-gray-600)]">·</span>
-            {date}
+          <p className="text-sm text-[var(--gem-gray-400)] mt-1.5">
+            by {author} <span className="text-[var(--gem-gray-600)]">·</span> {date}
           </p>
-          <p className="text-sm text-[var(--gem-gray-300)] mt-0.5">{format} · {genre}</p>
+          <p className="text-sm text-[var(--gem-gray-300)] mt-0.5">{format} · {genre}{tone ? ` · ${tone}` : ''}</p>
         </div>
 
         {/* Score — clean text, no ring */}
@@ -71,24 +59,15 @@ export function ReportHeader({
         </div>
       </div>
 
-      {/* Tier (GEM Verdict) + tags row */}
-      <div className="flex items-center flex-wrap gap-2">
-        <div className="flex items-center gap-1.5">
-          <span className="text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict:</span>
-          <span
-            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
-            style={{ backgroundColor: tierColor(tier) }}
-          >
-            {tierMeta.label}
-          </span>
-        </div>
-        <span className="text-[var(--gem-gray-600)]">·</span>
-        {format && <span className="tag-pill">{format}</span>}
-        {genre && <span className="tag-pill">{genre}</span>}
-        {genreTags.map(tag => (
-          <span key={tag} className="tag-pill">{tag}</span>
-        ))}
-        {tone && <span className="tag-pill">{tone}</span>}
+      {/* Tier (GEM Verdict) */}
+      <div className="flex items-center gap-1.5">
+        <span className="text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict:</span>
+        <span
+          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
+          style={{ backgroundColor: tierColor(tier) }}
+        >
+          {tierMeta.label}
+        </span>
       </div>
 
       {tierMeta.description && (

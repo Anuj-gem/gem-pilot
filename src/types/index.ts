@@ -19,8 +19,8 @@ export const TIER_META: Record<
   },
   "Optionable": {
     label: "Optionable",
-    colorClass: "text-amber-700",
-    bgClass: "bg-amber-50 border-amber-200",
+    colorClass: "text-blue-700",
+    bgClass: "bg-blue-50 border-blue-200",
     description: "",
     range: "60–85",
   },

@@ -78,9 +78,8 @@ export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardP
   )
 
   const top3 = sortedDimensions.slice(0, 3)
-  const bottom3 = sortedDimensions.slice(-3).reverse()
 
-  const visibleDimensions = showAll ? sortedDimensions : [...top3, ...bottom3]
+  const visibleDimensions = showAll ? sortedDimensions : top3
 
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
@@ -91,39 +90,26 @@ export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardP
       </div>
 
       <div className="space-y-5">
-        {visibleDimensions.map((id, idx) => (
-          <div key={id}>
-            {!showAll && idx === 3 && (
-              <div className="flex items-center justify-center py-3">
-                <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
-                <button
-                  onClick={() => setShowAll(!showAll)}
-                  className="px-3 text-xs text-[var(--gem-accent)] hover:underline cursor-pointer"
-                >
-                  Show all {DIMENSION_IDS.filter(id => scores[id] != null).length} dimensions
-                </button>
-                <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
-              </div>
-            )}
-            <DimensionBar
-              id={id}
-              score={scores[id].score}
-              reasoning={scores[id].reasoning}
-              blurred={blurred}
-            />
-          </div>
+        {visibleDimensions.map((id) => (
+          <DimensionBar
+            key={id}
+            id={id}
+            score={scores[id].score}
+            reasoning={scores[id].reasoning}
+            blurred={blurred}
+          />
         ))}
 
-        {showAll && (
-          <div className="flex items-center justify-center pt-3">
-            <button
-              onClick={() => setShowAll(false)}
-              className="text-xs text-[var(--gem-accent)] hover:underline cursor-pointer"
-            >
-              Show less
-            </button>
-          </div>
-        )}
+        <div className="flex items-center justify-center pt-1">
+          <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-3 text-xs text-[var(--gem-accent)] hover:underline cursor-pointer"
+          >
+            {showAll ? 'Show less' : `Show all ${DIMENSION_IDS.filter(id => scores[id] != null).length} dimensions`}
+          </button>
+          <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+        </div>
       </div>
     </div>
   )

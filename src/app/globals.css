@@ -22,7 +22,7 @@
 
   /* Tier colors (readable on light — unchanged) */
   --tier-greenlight: #059669;  /* emerald-600 */
-  --tier-optionable: #d97706;  /* amber-600 */
+  --tier-optionable: #2563EB;  /* blue-600 */
   --tier-needs-dev: #6b7280;   /* gray-500 */
 }
 

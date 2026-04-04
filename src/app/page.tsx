@@ -16,7 +16,7 @@ function tierColor(tier: string) {
 
 function tierBg(tier: string) {
   if (tier === 'Greenlight Material') return 'bg-emerald-50 text-emerald-700 border-emerald-200'
-  if (tier === 'Optionable') return 'bg-amber-50 text-amber-700 border-amber-200'
+  if (tier === 'Optionable') return 'bg-blue-50 text-blue-700 border-blue-200'
   return 'bg-gray-100 text-gray-500 border-gray-200'
 }
 
