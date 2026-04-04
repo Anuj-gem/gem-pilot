@@ -210,21 +210,21 @@ export default async function Home() {
       <TrackSection name="credibility">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--gem-gold)]/10 border border-[var(--gem-gold)]/20 text-[var(--gem-gold)] text-xs font-medium mb-4">
-              <Sparkles size={12} />
-              Named after David O. Selznick
+            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[var(--gem-gold)]/10 border border-[var(--gem-gold)]/20 text-[var(--gem-gold)] text-sm sm:text-base font-semibold mb-5 tracking-wide">
+              <Sparkles size={16} />
+              Selznick 3
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
               Built on real research.<br className="hidden sm:block" /> Not vibes.
             </h2>
             <p className="text-sm sm:text-base text-[var(--gem-gray-300)] max-w-2xl mx-auto leading-relaxed">
-              GEM&apos;s scoring model was developed through thousands of data points, calibrated against
+              GEM&apos;s scoring model, Selznick, was developed through thousands of data points, calibrated against
               real-world audience reception, and informed by the creative instincts behind content
               that has collectively reached over 500 million people.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
             <div className="p-5 rounded-xl bg-gradient-to-br from-[var(--gem-gray-800)] to-white border border-[var(--gem-gray-700)]">
               <div className="w-9 h-9 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-3">
                 <Brain size={18} className="text-indigo-600" />
@@ -258,16 +258,6 @@ export default async function Home() {
               </p>
             </div>
 
-            <div className="p-5 rounded-xl bg-gradient-to-br from-[var(--gem-gray-800)] to-white border border-[var(--gem-gray-700)]">
-              <div className="w-9 h-9 rounded-lg bg-rose-50 border border-rose-100 flex items-center justify-center mb-3">
-                <Sparkles size={18} className="text-rose-500" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1.5">Thousands of Signals</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                The model draws on enriched data from thousands of produced screenplays, informed by
-                perspectives from top creators whose work has reached global audiences.
-              </p>
-            </div>
           </div>
 
           <div className="text-center mt-8 sm:mt-10">
