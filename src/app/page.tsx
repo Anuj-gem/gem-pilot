@@ -63,23 +63,24 @@ export default async function Home() {
 
       {/* Hero */}
       <TrackSection name="hero">
-        <section className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-12 sm:pt-24 sm:pb-20 hero-gradient">
-          {/* Subtle decorative gradient */}
-          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-br from-violet-100/40 via-amber-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-          <div className="absolute -bottom-20 -left-40 w-60 h-60 bg-gradient-to-tr from-emerald-50/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+        <section className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-8 sm:pt-24 sm:pb-16 hero-backdrop">
+          {/* Decorative gradient orbs */}
+          <div className="absolute -top-20 -right-40 w-80 h-80 bg-gradient-to-br from-violet-200/50 via-amber-100/30 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -bottom-10 -left-32 w-60 h-60 bg-gradient-to-tr from-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-          <div className="relative flex items-center gap-2 mb-5 sm:mb-6 flex-wrap">
-            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Free Script Evaluation</span>
-            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] font-medium bg-white">Public Leaderboard</span>
+          {/* Tags — hidden on mobile for cleaner viewport */}
+          <div className="relative hidden sm:flex items-center gap-2 mb-6 flex-wrap">
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-gold)]/30 text-[var(--gem-gold)] font-medium bg-[var(--gem-gold)]/5">Free Script Evaluation</span>
+            <span className="text-xs px-3 py-1 rounded-full border border-[var(--gem-accent)]/30 text-[var(--gem-accent)] font-medium bg-[var(--gem-accent)]/5">Public Leaderboard</span>
           </div>
           <h1
-            className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
+            className="relative text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
             We help you get your screenplay made.
           </h1>
           <p
-            className="relative text-base sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
+            className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-6 sm:mb-10"
             data-experiment="hero-subhead"
           >
             Get a free script evaluation then publish to our public leaderboard to showcase your best work to the industry.
@@ -88,7 +89,8 @@ export default async function Home() {
           {/* Upload — no account needed */}
           <HeroUpload />
 
-          <div className="mt-5">
+          {/* Secondary CTA — hidden on mobile, upload is the only action */}
+          <div className="mt-5 hidden sm:block">
             <TrackedCTA
               href="/signup"
               event="cta_clicked"
@@ -101,19 +103,23 @@ export default async function Home() {
         </section>
       </TrackSection>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
+      {/* Gold accent divider — Hollywood motif */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center gap-3">
+          <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+          <Star size={12} className="text-[var(--gem-gold)]" fill="currentColor" />
+          <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+        </div>
+      </div>
 
       {/* Live from the Leaderboard — rich list with tags */}
       <TrackSection name="leaderboard_snapshot">
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
-          <div className="flex items-center gap-2 mb-3 sm:mb-4">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
+          <div className="flex items-center gap-2 mb-2 sm:mb-4">
             <Star size={14} className="text-[var(--gem-gold)]" />
             <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live from the leaderboard</p>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 font-[family-name:var(--font-display)]">See how your screenplay ranks.</h2>
-          <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-8 sm:mb-10">
-            Our leaderboard ranks the top unproduced screenplays we&apos;ve evaluated. Submit yours to see where it ranks.
-          </p>
+          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how your screenplay ranks.</h2>
 
           {topScripts && topScripts.length > 0 ? (
             <div className="space-y-3">
