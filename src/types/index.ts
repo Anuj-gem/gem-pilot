@@ -365,6 +365,8 @@ export interface LeaderboardEntry {
   tier: Tier;
   format: string;
   genre: string;
+  tone: string | null;
+  genre_tags: string[] | null;
   logline: string | null;
   overall_take: string | null;
   like_count: number;

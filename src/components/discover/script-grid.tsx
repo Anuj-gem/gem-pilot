@@ -88,13 +88,13 @@ function ScriptRow({
       <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier)}` }}>
         {/* Rank + Score — left column */}
         <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-          <span className={`text-xs font-medium mb-1 ${
-            rank <= 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-500)]'
+          <span className={`text-base sm:text-lg font-bold tabular-nums ${
+            rank <= 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-400)]'
           }`}>#{rank}</span>
-          <span className="text-2xl sm:text-3xl font-bold tabular-nums" style={{ color: tierColor(script.tier) }}>
+          <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(script.tier) }}>
             {Math.round(script.weighted_score)}
           </span>
-          <span className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
+          <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
         </div>
 
         {/* Content — center */}
@@ -128,22 +128,35 @@ function ScriptRow({
             </p>
           )}
 
-          {/* Tags + Actions */}
-          <div className="flex items-center justify-between mt-3">
-            <div className="flex items-center gap-1.5 flex-wrap">
-              {script.format && (
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
-                  {script.format}
-                </span>
-              )}
-              {script.genre && (
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
-                  {script.genre}
-                </span>
-              )}
-            </div>
+          {/* Tone */}
+          {script.tone && (
+            <p className="text-[11px] text-[var(--gem-gray-500)] mt-1.5 italic truncate">
+              {script.tone}
+            </p>
+          )}
 
-            <div className="flex items-center gap-2">
+          {/* Tags */}
+          <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
+            {script.format && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 font-medium">
+                {script.format}
+              </span>
+            )}
+            {script.genre && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
+                {script.genre}
+              </span>
+            )}
+            {script.genre_tags && script.genre_tags.map((tag) => (
+              <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-gray-50 text-gray-600 border border-gray-200 font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Actions row */}
+          <div className="flex items-center justify-between mt-3">
+            <div className="flex items-center gap-3">
               {/* Contact */}
               <a
                 href={`mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${script.title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${script.author_name} regarding their script "${script.title}" on the GEM leaderboard.`)}`}
@@ -167,12 +180,12 @@ function ScriptRow({
                 <Heart size={14} fill={liked ? 'currentColor' : 'none'} />
                 {likeCount > 0 && <span>{likeCount}</span>}
               </button>
-
-              {/* View Report */}
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium group-hover:underline">
-                View Report <ArrowRight size={12} />
-              </span>
             </div>
+
+            {/* View Report — visible on all screens */}
+            <span className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium group-hover:underline">
+              View Full Report <ArrowRight size={12} />
+            </span>
           </div>
         </div>
       </div>
