@@ -43,10 +43,6 @@ export function ReportHeader({
             {author !== 'Anonymous' && (
               <a
                 href={`mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${author} regarding their script "${title}" on the GEM leaderboard.`)}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.location.href = `mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${author} regarding their script "${title}" on the GEM leaderboard.`)}`
-                }}
                 className="text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] transition-colors"
                 title="Contact writer"
               >
