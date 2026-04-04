@@ -1,0 +1,200 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "short film",
+      "genre_primary": "science fiction",
+      "genre_tags": [
+        "thriller",
+        "action"
+      ],
+      "tone": "tense, emotional, heightened"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is immediately legible: a father uses teleportation to rescue his kidnapped daughter, with the opening rooftop-to-alley jump and the phone-call concealment device establishing a clean, high-stakes hook fast. The emotional engine is broad and accessible, but the short-film format and the relatively niche sci-fi premise keep it from feeling mass-market in the way a larger franchise concept would."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is easy to explain in two sentences because the script establishes the rules early: James can teleport, his daughter Rosie is trapped, and they must coordinate through a covert phone call to escape. The black app, the line-of-sight rule, and the blind-jump idea all arrive quickly and make the story engine clear."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "James and Rosie are emotionally effective as a pair, especially in the clapping communication sequence and the final airborne rescue, but they are built primarily around one urgent situation rather than layered contradiction. Nora, Davidson, and Edgar are functional antagonistic forces, yet they read more as pressure pieces than deeply distinctive characters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar rescue premise and gives it a fresh execution through telepathic-like phone communication, a child’s clapping code, and the escalating use of teleportation in confined spaces. The final physics-driven airborne sequence is bold and cinematic, though the underlying setup still sits within recognizable action-thriller territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is highly propulsive: it moves from rooftop teleportation to the cell, to the office building, to the warehouse confrontation, and then into a sustained escape climax without losing the central objective. The escalation is clear at each turn, especially once the collar is introduced and Rosie’s blind jump becomes the ticking-clock crisis."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of a teleporting father, a kidnapped child, and a covert communication system feels fresh and immediately playable, especially because the powers are tied to physical risk and spatial logic. It is not wholly unprecedented, but the specific mechanics of the blind jump and the final midair correction give it that 'of course this exists' quality more than most genre shorts."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world has enough texture to support the premise—ceramic comm chips, collars, tactical teams, silent surveillance, and a blank eighth floor—but it remains mostly a functional container for the chase. The office building and warehouse are specific enough to feel real, yet the larger system behind the kidnapping is only lightly sketched."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently tense and emotional, with a strong parent-child urgency, but it mostly plays as a straightforward sci-fi action thriller. The child-centered vulnerability and the brutal teleportation deaths give it some identity, though not a highly singular tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are hints of deeper backstory in the references to Mommy’s death, Edgar’s family connection, and James being 'hardened by the extraordinary,' but the script stays focused on immediate survival. It suggests more beneath the surface without fully opening those layers on the page."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The James-Rosie bond is the engine, and the James-Nora-Davidson-Edgar triangle creates effective opposition, but the relationships do not generate many independent combinations beyond the central rescue dynamic. Edgar’s personal tie to Rosie adds some extra charge, yet the script is still fundamentally a two-hander with antagonistic satellites."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 5,
+        "leads": 2,
+        "series_regulars": 3,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The concept is clear and contained enough to cast on performance and fit rather than requiring star power to explain the premise.",
+        "casting_challenges": [
+          "A young child actor is essential and carries substantial emotional weight",
+          "Edgar is described as an MMA-fighter type, implying a physically capable performer",
+          "James and Rosie must plausibly read as father and daughter with strong emotional chemistry"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "mostly interior with some exterior rooftop/alley/sky coverage",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Rooftop and skyline work in downtown Los Angeles",
+          "Office building interiors with multiple floors and a blank eighth-floor buildout",
+          "Warehouse/tactical team space",
+          "Sky/falling sequence requiring controlled visual effects and safety coordination",
+          "Crowd panic in the law firm lobby and MacArthur Park landing"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Teleportation effects, electric bursts from Rosie, repeated midair blips, and the final airborne rescue sequence require compositing and cleanup, though the effects are conceptually contained.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Rubber bullets, stun-gun wires, collar effects, body impacts, and fight choreography for Edgar’s takedown of guards.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Amazon is specifically referenced as the source of Rosie’s clothes."
+        },
+        {
+          "type": "brand",
+          "detail": "iPhone is specifically named and used as a plot device."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or festival-to-platform short film lane",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "As a short, it plays as a contained genre showcase built around a single rescue set-piece and a strong emotional payoff."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Adam Project",
+        "why": "Like this script, it pairs sci-fi mechanics with a father-child emotional rescue dynamic and uses accessible genre rules to keep the audience oriented through action."
+      },
+      {
+        "title": "Chronicle",
+        "why": "It matches the combination of young-adult-adjacent powers, escalating physical danger, and a contained effects footprint that depends on a few strong visual set-pieces rather than massive worldbuilding."
+      },
+      {
+        "title": "The Invisible Man",
+        "why": "Not for plot similarity, but because it uses a tight, high-stakes containment setup, a vulnerable protagonist, and a clean commercial hook that can be executed at a relatively controlled production scale."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook clarity",
+          "what_it_means": "The premise is instantly pitchable, which is a major asset for buyers, festival programmers, and audiences alike; the story engine is understandable within the first pages.",
+          "evidence": "James teleports, uses a black app to locate Rosie, and communicates with her through a covert phone call and clapping code.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The script is built like a pressure cooker, which is ideal for a short film because it delivers a complete escalation curve without sagging.",
+          "evidence": "It moves from alley surveillance to office infiltration to warehouse confrontation to the airborne rescue climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Audience appeal & marketability",
+          "what_it_means": "The emotional promise is broad: a father trying to save his child is universally legible, and the sci-fi wrapper gives it genre lift.",
+          "evidence": "The James-Rosie bond is established immediately and pays off in the final embrace at MacArthur Park.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "The story is ambitious but still contained enough to be feasible for a short-film budget if executed smartly, with a limited cast and a manageable number of principal locations.",
+          "evidence": "Most of the action is concentrated in a rooftop, alley, office building, monitor room, warehouse, and park landing.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Creative originality & boldness",
+          "what_it_means": "The communication mechanics and the physics-based blind jump give the script a memorable action identity that can stand out in a crowded sci-fi short field.",
+          "evidence": "The clapping yes/no system and the final midair rotation/jump sequence are distinctive set-piece ideas.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a clear emotional register—tense, urgent, and protective—which makes it easy to market as a suspenseful genre piece with heart.",
+          "evidence": "Rosie’s fear of the collar and James’s desperate coaching create a consistent emotional pressure throughout.",
+          "source": "script"
+        }
+      ],
+      "headline": "BLIND JUMP is a clean, high-concept short with immediate emotional stakes and a strong genre engine: a teleporting father, a trapped child, and a rescue plan that turns spatial logic into suspense. It has the kind of contained-but-cinematic premise that can play hard in festivals and online, with enough visual invention and heart to feel more expensive than it is."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Worldbuilding is functional rather than expansive",
+          "risk": "The script’s setting and antagonist system are clear enough to support the action, but not dense enough to suggest a larger story universe or deeper institutional texture.",
+          "evidence": "The blank eighth floor, tactical teams, collars, and monitor room are effective, but the larger organization behind them remains mostly generic.",
+          "source": "script"
+        },
+        {
+          "theme": "Character differentiation is limited outside the central duo",
+          "risk": "James and Rosie carry the piece, but the supporting characters are mostly role-function antagonists, which limits ensemble value and reduces the sense of a larger dramatic ecosystem.",
+          "evidence": "Nora, Davidson, and Edgar are defined primarily by their job functions and pressure tactics rather than distinct personal worlds.",
+          "source": "script"
+        },
+        {
+          "theme": "Effects and stunt execution are non-trivial for a short",
+          "risk": "Although contained, the repeated teleportation, airborne falling sequence, electric bursts, and fight beats require careful technical execution that can strain a modest production if not well-resourced.",
+          "evidence": "The final rescue depends on multiple midair blips, compositing, and safety-managed action beats.",
+          "source": "both"
+        },
+        {
+          "theme": "Rights and clearance are light but present",
+          "risk": "The use of named consumer brands is not a major blocker, but it does create avoidable clearance cleanup in production paperwork and post.",
+          "evidence": "Amazon and iPhone are explicitly named in the script.",
+          "source": "script"
+        },
+        {
+          "theme": "The emotional backstory is suggestive but not deeply mined",
+          "risk": "The script hints at a larger history—Mommy’s death, James’s guilt, Edgar’s family tie—but keeps those elements mostly as pressure points, so the piece lands as a strong short rather than a deeply layered one.",
+          "evidence": "The references to Rosie’s mother and James being blamed for her death are central but not elaborated beyond the immediate rescue context.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development issue is not clarity; it’s scale and depth. The script is already a strong, producible short on the page, but its supporting world and character ecosystem are lean, so the project’s value depends on execution of the central set-piece and emotional payoff rather than on broader narrative richness."
+    }
+  },
+  "weightedScore": 61,
+  "tier": "Optionable",
+  "inputTokens": 10146,
+  "outputTokens": 2812,
+  "cost": 0.020263499999999997
+}

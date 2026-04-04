@@ -10,14 +10,13 @@ import Link from 'next/link'
 const report = SAMPLE_GOT_REPORT
 const tier = TIER_META[report.tier as Tier]
 const prod = report.evaluation.production_reality
-const { comparables, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report.evaluation)
+const { whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report.evaluation)
 
-type Tab = 'scores' | 'notes' | 'production' | 'comparables'
+type Tab = 'scores' | 'notes' | 'production'
 const TABS: { key: Tab; label: string }[] = [
   { key: 'scores', label: 'Score & Tier' },
   { key: 'notes', label: 'Dev Notes' },
   { key: 'production', label: 'Production' },
-  { key: 'comparables', label: 'Comps' },
 ]
 
 export function ReportShowcase() {
@@ -208,33 +207,6 @@ export function ReportShowcase() {
           </div>
         )}
 
-        {/* ─── Comparables ───────────────────────────── */}
-        {activeTab === 'comparables' && (
-          <div className="space-y-4">
-            {comparables.map((comp, i) => (
-              <div key={i}>
-                <p className="text-sm font-medium text-white">{comp.title}</p>
-                <p className="text-xs text-[var(--gem-gray-400)] mt-1 leading-relaxed">
-                  {comp.why}
-                </p>
-              </div>
-            ))}
-            <div className="flex flex-wrap gap-1.5 pt-2">
-              {[
-                report.evaluation.classification?.genre_primary ?? '',
-                ...(report.evaluation.classification?.genre_tags ?? []),
-                (report.evaluation.classification?.tone ?? '').split(',')[0],
-              ].filter(Boolean).map(tag => (
-                <span
-                  key={tag}
-                  className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] text-[var(--gem-gray-400)]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* CTA footer */}

@@ -1,0 +1,175 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "other",
+      "genre_primary": "crime",
+      "genre_tags": [
+        "comedy",
+        "heist"
+      ],
+      "tone": "broad, amateurish, comedic"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 2,
+        "reasoning": "The submission signals a crime-comedy heist premise, but the page does not yet communicate a marketable emotional promise or a clear audience-facing hook beyond the title 'Bad boys; the final heist.' The cast list suggests a loose ensemble of ex-criminals, a cop, a stay-at-home dad, and a wrestler, but there is no actual scene material to show how that combination plays as a commercial engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 2,
+        "reasoning": "The premise is only implied through the title and cast list: a group of ex-criminals and associates are apparently involved in a heist. However, there is no story setup, inciting incident, or mission statement on the page beyond 'Paul: alejandro boss, mission giver,' so the hook does not land early or clearly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 2,
+        "reasoning": "The cast list gives functional labels like 'leader,' 'wildcard,' 'brain and planner,' and 'comic release,' but these are archetypes rather than dramatized characters. Names like Pat rick/Ben, Billy, Alejandro, Michal, and Jerry suggest an ensemble, yet no relationships, contradictions, or distinctive behavior are shown on the page to make them durable or especially appealing."
+      },
+      "creative_originality_and_boldness": {
+        "score": 2,
+        "reasoning": "There is a mildly unusual mix of roles—wrestler, cop, Dollar Tree worker, stay-at-home dad—but the page presents them as a list rather than a fresh dramatic angle. The title and setup read as generic crime-comedy territory, and the inclusion of a Disney quote on the title page does not create a distinctive voice on its own."
+      },
+      "narrative_momentum_engagement": {
+        "score": 1,
+        "reasoning": "There is no actual narrative on the page yet: Act 1 begins, but no scene action, conflict, or escalation is provided. Because the script stops at the cast list and title page material, there is no evidence of pacing, stakes, or a structure that compels continued reading."
+      },
+      "resonant_originality": {
+        "score": 1,
+        "reasoning": "At this stage the script does not yet deliver the 'of course this exists' feeling. The combination of ex-criminals and a heist is familiar, and the page does not yet reveal a surprising premise or inevitable twist that would make the concept feel newly resonant."
+      },
+      "world_density_and_texture": {
+        "score": 1,
+        "reasoning": "The world is only sketched through occupations and labels: wrestler, cop, Dollar Tree worker, stay-at-home dad, real estate agent, 7-Eleven ensemble. Those details hint at a contemporary working-class milieu, but there are no rules, institutions, or social dynamics on the page to make the world feel textured or story-generating."
+      },
+      "tonal_specificity": {
+        "score": 2,
+        "reasoning": "The intended tone appears to be broad comedy mixed with crime, but the page does not establish a distinctive tonal identity. The misspellings, placeholder names, and the Disney quote create an informal, homemade feel, but not a controlled or ownable tone."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 2,
+        "reasoning": "There are hints of hidden backstory in the labels 'ex-crimal,' 'still a criminal,' and 'knows about bad boys,' which suggest some internal history among the group. But because none of that is dramatized, the page does not yet imply deeper thematic or emotional reserves beyond the basic heist setup."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 2,
+        "reasoning": "The cast list implies a web—Ben, Billy, Alejandro, Michal, Jerry, Abigail, a manager, a rival, and a 7-Eleven ensemble—but the relationships are only identified in functional terms. There is no evidence yet that any two characters generate strong scene material or that the ensemble has a repeatable engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The material does not appear to depend on star casting to sell a high-concept premise; however, the current page is too thin to attract name talent on concept alone.",
+        "casting_challenges": [
+          "Child actors for three roles: ages 7, 4, and 1-2",
+          "Potentially specific physicality for a wrestler character",
+          "Potential ethnicity/cultural specificity for Alejandro and ensemble is unclear from the page but may matter depending on later scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 3,
+        "interior_exterior_ratio": "mostly interior based on the listed roles, but not enough script pages to confirm",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "7-Eleven ensemble scene may require store access or a built set",
+          "Child-heavy home setting could add scheduling complexity"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No VFX requirements are visible on the provided page.",
+        "stunts_level": "none",
+        "sfx_needs": "No practical effects are visible on the provided page.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Disney's Meet the Robinsons is quoted on the title page."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or low-budget independent feature",
+        "content_level": "PG-13 equivalent to mature, depending on later dialogue and violence",
+        "series_engine_or_release_model": "As presented, this reads more like a feature ensemble crime-comedy than a series engine; the current page does not establish an episodic procedural structure."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Brothers Grimsby",
+        "why": "A broad crime-comedy built around mismatched criminal-adjacent characters and juvenile humor, with the same challenge of selling tone and ensemble chemistry more than plot complexity."
+      },
+      {
+        "title": "Logan Lucky",
+        "why": "A working-class heist setup with an ensemble of oddball specialists, where the appeal comes from character mix and low-to-mid-budget producibility rather than spectacle."
+      },
+      {
+        "title": "Pain & Gain",
+        "why": "A crime story driven by exaggerated personalities and comic criminal incompetence, matching the script's implied broad, offbeat ensemble energy and contemporary setting."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Production reality / cast footprint",
+          "what_it_means": "The project appears to be a contained contemporary ensemble piece with no visible VFX, no heavy stunt load, and no period burden, which makes it potentially affordable if the script stays grounded.",
+          "evidence": "The cast list is built around a small group of named roles and a 7-Eleven ensemble, with no visible effects-heavy elements on the page.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Ensemble potential",
+          "what_it_means": "The character roster suggests a built-in team dynamic—leader, wildcard, planner, comic relief, boss, rival—which is the right raw material for a commercially legible crime-comedy if the script later delivers scenes that exploit those functions.",
+          "evidence": "Ben is labeled the leader, Billy the wildcard, Alejandro the brain and planner, Michal the bad boy, and Jerry the comic release.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Contemporary working-class texture",
+          "what_it_means": "The occupations listed point toward an accessible, blue-collar milieu that can be relatable to a broad audience and can support a grounded, character-driven tone.",
+          "evidence": "Wrestler, cop, Dollar Tree worker, stay-at-home dad, real estate agent, and a 7-Eleven ensemble.",
+          "source": "script"
+        }
+      ],
+      "headline": "At a production level, this is a potentially manageable contemporary ensemble crime-comedy with a clear low-budget footprint and a cast mix that could support a marketable team dynamic. If the full script delivers on the implied character chemistry, it has the ingredients for a modestly commercial, character-driven heist piece that can be made without major technical risk."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Insufficient script evidence / premature evaluation risk",
+          "risk": "The submission currently contains only a title page, cast list, and the start of Act 1, so there is not enough dramatic material to assess structure, pacing, dialogue, or payoff. That makes the project impossible to greenlight on the page as submitted.",
+          "evidence": "The script stops after 'Act 1' with no scenes provided.",
+          "source": "script"
+        },
+        {
+          "theme": "Concept clarity and market positioning",
+          "risk": "The heist premise is only implied, so buyers cannot yet tell what makes this version of a crime-comedy distinct from dozens of similar ensemble capers. Without a sharper hook, the project reads as generic rather than ownable.",
+          "evidence": "The only premise cues are the title 'Bad boys; the final heist' and the cast list roles.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone and voice are not yet controlled on the page",
+          "risk": "The informal spelling, placeholder names, and inserted Disney quote create an amateur presentation that may make it harder for a producer to trust the script's tonal command. That is a packaging and confidence issue before it is a creative one.",
+          "evidence": "The title page includes 'Directed by' and 'Written by' credits, a Disney quote, and multiple misspellings such as 'spirct,' 'curtelly,' and 'ex-crimal.'",
+          "source": "script"
+        },
+        {
+          "theme": "Casting and family logistics",
+          "risk": "The inclusion of three child roles plus a wife and home-life material suggests scheduling complexity and potential content-balance issues if the film leans between family comedy and criminal material.",
+          "evidence": "Kid 1 age 7, kid 2 age 4, baby girl age 1 or 2, and Abigail as Jerry's wife are all listed in the cast.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights/clearance exposure",
+          "risk": "The quoted Disney line introduces a clearance question and signals that the script may rely on outside material without a clear rights strategy.",
+          "evidence": "The title page quotes Disney's 'Meet the Robinsons.'",
+          "source": "script"
+        }
+      ],
+      "headline": "The core development issue is that the submission does not yet provide enough screenplay to evaluate the actual movie, while the presentation itself currently signals an undercontrolled voice and a generic crime-comedy frame. From a producer's perspective, the project needs a fully dramatized script before anyone can judge whether the ensemble premise is commercially viable or merely familiar."
+    }
+  },
+  "weightedScore": 17.3,
+  "tier": "Needs Development",
+  "inputTokens": 3659,
+  "outputTokens": 2580,
+  "cost": 0.014354249999999999
+}

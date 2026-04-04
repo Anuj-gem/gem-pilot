@@ -1,0 +1,253 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical crime thriller",
+      "genre_tags": [
+        "serial killer",
+        "period drama"
+      ],
+      "tone": "Gritty, heightened, morally corrosive"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script has a very clear commercial engine: Eliot Ness chasing the Cleveland Torso Murders, with the opening Clifton Club sequence immediately establishing fame, politics, and murder. The true-story framing, recognizable Ness brand, and serial-killer premise give it broad genre appeal, while the period setting and bleak moral turn narrow it somewhat versus a four-quadrant thriller."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise is legible within the first few pages and the story engine is explicit: Ness moves to Cleveland, gets pulled into a torso-murder case, and becomes obsessed with catching the killer. The script repeatedly clarifies the hook through the first torso discovery in Kingsbury Run, the press nickname 'Mad Butcher,' and the later false confession/cover-up machinery."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ness is strongly defined as a public hero with private insecurity, especially in the party confrontation with Sweeney, his fixation on the Capone legacy, and his unraveling after the case goes cold. Edna, Marlow, and Evaline each have distinct functions and emotional pressure points, though Ness remains the dominant center of gravity and the supporting cast is less durable than the lead."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar historical-crime figure and pushes him into a darker, more psychologically corrosive arena than the usual Ness story. The boldest choice is making the investigation increasingly about Ness's ego, marriage, and public myth, culminating in the fire-settlement of Kingsbury Run and the false conviction of Dolezal."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script moves with strong procedural escalation: party humiliation, first body discovery, press pressure, false suspect, political interference, the Kingsbury Run sweep, and the final reveal of Francis Sweeney. The midsection sustains tension well through alternating domestic and investigative scenes, though the final third becomes more episodic as the case narrows and then resolves through a long confrontation."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The combination of Eliot Ness, the Cleveland Torso Murders, and the idea that the city's celebrated lawman may be complicit in a moral catastrophe feels fresh and inevitable. The bird motif, the Clifton Club social world, and the eventual reveal of the surgeon-politician killer give the material a distinctive identity beyond standard serial-killer fare."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Cleveland in 1934 feels socially stratified and story-generating: the Clifton Club, City Hall, the police station, Kingsbury Run, the sheriff's office, the morgue, and the asylum all carry distinct class and power textures. The script uses the city as an ecosystem of elites, cops, labor, and the dispossessed, especially in the Kingsbury Run sequences and the political backroom scenes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a distinctive blend of prestige-period crime, noir fatalism, and political corruption, with occasional bursts of operatic violence. Scenes like the club party, the burning shantytown, and the final train-station humiliation give the script a hard, ownable flavor that is not generic procedural."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the murder plot, the script is really about mythmaking, shame, class violence, and the cost of public identity. The Ness/Edna/Francis triangle, Marlow's closeted life, and the repeated tension between truth and narrative all suggest deeper thematic payoff beyond the immediate case."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Ness-Edna marriage, Ness-Marlow partnership, and Ness-Sweeney antagonism all generate recurring material, and Francis/Evaline add useful pressure. Still, the script is fundamentally lead-driven; the ensemble supports the engine rather than creating a fully combinatorial web where any pairing can sustain scenes indefinitely."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The project is built on Eliot Ness as a recognizable historical figure and would benefit from a strong, bankable lead to anchor a prestige period thriller; Francis Sweeney and Edna also need high-caliber casting to sell the emotional and political turns.",
+        "casting_challenges": [
+          "Eliot Ness must carry both heroic authority and moral collapse",
+          "Edna requires a performer who can play restraint, intelligence, and emotional steel",
+          "Francis Sweeney needs to read as charming, privileged, and dangerous",
+          "Marlow requires a nuanced performance with coded sexuality and loyalty",
+          "Child actor needed for the Kingsbury Run tent-city sequence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Period (1930s)",
+        "expensive_flags": [
+          "period-built Cleveland streets and interiors",
+          "Clifton Club ballroom and rotunda gala sequences",
+          "Kingsbury Run shantytown/tent city burn sequence",
+          "night exterior car chase and ravine drop",
+          "hospital, morgue, police station, city hall, and asylum period dressing",
+          "crowd scenes at the club, city hall, station, and tent city"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical period recreation and atmospheric enhancement; some likely cleanup for fire, crowd extension, and ravine/car stunt safety, but no overt fantasy or creature VFX.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fire effects for the Kingsbury Run burn, practical body-mutilation makeup, car chase impacts, and the ravine crash sequence.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Eliot Ness"
+        },
+        {
+          "type": "real_person",
+          "detail": "Al Capone"
+        },
+        {
+          "type": "real_person",
+          "detail": "Harold Burton"
+        },
+        {
+          "type": "real_person",
+          "detail": "Leonard Keeler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Martin Sweeney"
+        },
+        {
+          "type": "real_person",
+          "detail": "Clayton Fritchey"
+        },
+        {
+          "type": "real_person",
+          "detail": "Big Paulie Polizzi / Alphonse Polizzi"
+        },
+        {
+          "type": "real_person",
+          "detail": "The Cleveland Torso Murders / Mad Butcher case is based on real historical events and may require careful legal review for defamation and factual portrayal, especially around Francis Sweeney as the implied killer."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named songs are used; jazz and phonograph music are referenced generically."
+        },
+        {
+          "type": "brand",
+          "detail": "Plain-Dealer, Life, Ford V8, Chevrolet, Folgers, and other period brands are referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to prestige theatrical-to-platform or streamer prestige feature rather than broadcast."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Zodiac",
+        "why": "Like this script, it turns a real serial-killer case into an obsession-driven procedural where the investigation becomes a moral and psychological trap rather than a simple whodunit."
+      },
+      {
+        "title": "L.A. Confidential",
+        "why": "The period crime world, corruption among civic elites, and the way public image collides with private rot make this a strong tonal and commercial match, even though the historical setting is different."
+      },
+      {
+        "title": "The Untouchables",
+        "why": "The Ness brand, lawman mythology, and gangster-era prestige packaging align directly, but this script is darker and more morally compromised than the more heroic version of that territory."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / marketability",
+          "what_it_means": "The project has an immediately pitchable engine: Eliot Ness versus the Cleveland Torso Murders. That gives buyers a clean historical hook with built-in audience recognition and a strong genre promise.",
+          "evidence": "The opening frames Ness as 'America’s most famous lawman' moving to Cleveland to hunt 'The Mad Butcher of Kingsbury Run.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script owns a prestige-noir identity that can be marketed as elevated adult crime drama rather than generic true-crime content.",
+          "evidence": "The Clifton Club, the Kingsbury Run burn, the political backroom scenes, and the final train-station humiliation all reinforce a bleak, elegant, morally corrosive tone.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "Cleveland is not just backdrop; it is a social machine with class divisions, political pressure, and institutional conflict that can sustain a feature-length narrative and potentially more.",
+          "evidence": "The script moves through City Hall, the police station, the sheriff’s office, the morgue, the Clifton Club, the shantytown, and the asylum, each with distinct power dynamics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The story has thematic weight beyond the murder plot, which increases awards and prestige potential.",
+          "evidence": "Ness’s obsession with his public myth, Edna’s insistence on honesty, Marlow’s coded private life, and the repeated tension between truth and narrative all point to deeper character drama.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Ness is a strong lead because he is both iconic and damaged; that combination is commercially durable and gives the actor a real showcase.",
+          "evidence": "He is repeatedly shown as admired in public, brittle in private, and increasingly self-destructive as the case slips away.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the period setting, the script is largely grounded and practical, with no heavy VFX dependency, making it viable for a premium-budget feature rather than an effects-heavy gamble.",
+          "evidence": "The biggest set pieces are period interiors, a fire sequence, a car chase, and a ravine crash; the rest is dialogue-driven investigation.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Relationship engine",
+          "what_it_means": "The Ness/Edna/Marlow/Francis triangle creates recurring dramatic pressure that can keep the audience engaged even when the investigation pauses.",
+          "evidence": "The script repeatedly returns to domestic scenes, secret meetings, and shifting loyalties between Ness, Edna, Marlow, Evaline, and Francis.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige historical crime thriller with a clean, marketable hook and a dark, ownable tone. It pairs a famous American lawman with one of the most infamous unsolved murder cases in U.S. history, then deepens the package with class warfare, political corruption, and a morally compromised hero. The result is a feature that feels both commercially legible and awards-adjacent, with enough period texture and character tension to justify serious buyer attention."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget and period-scale exposure",
+          "risk": "The 1930s setting, multiple period civic locations, crowd scenes, fire, and stunt work push this above modest indie scale and into a more expensive prestige lane.",
+          "evidence": "The Clifton Club gala, the Kingsbury Run tent-city burn, the ravine chase, the city hall rotunda, and the asylum sequence all require substantial period dressing and controlled production environments.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and legal sensitivity",
+          "risk": "Because the script uses real historical figures and implies a specific real-world killer, the project will need careful legal review around defamation, estate issues, and factual portrayal.",
+          "evidence": "Eliot Ness, Al Capone, Leonard Keeler, Martin Sweeney, and the Cleveland Torso Murders are all directly invoked, while Francis Sweeney is positioned as the killer.",
+          "source": "both"
+        },
+        {
+          "theme": "Lead-centric structure",
+          "risk": "The script depends heavily on Ness as the engine of every major turn, which limits ensemble flexibility and increases casting pressure on the lead.",
+          "evidence": "Most major scenes are built around Ness's reactions, decisions, or confrontations; Marlow and Edna are strong supports but not equal engines.",
+          "source": "script"
+        },
+        {
+          "theme": "Moral bleakness and audience distance",
+          "risk": "The script intentionally makes Ness increasingly unsympathetic, especially in the Kingsbury Run burn and the Dolezal cover-up, which may narrow mainstream audience warmth even as it strengthens prestige credibility.",
+          "evidence": "Ness orders the shantytown fire left to burn, pushes the false confession narrative, and repeatedly chooses ego over empathy.",
+          "source": "script"
+        },
+        {
+          "theme": "Procedural repetition in the middle third",
+          "risk": "Several investigation beats follow a similar pattern of clue, confrontation, and political obstruction, which can create a sense of repetition if not handled with a very strong director and edit.",
+          "evidence": "The Dolezal false lead, the repeated press manipulation, and the back-and-forth with Davis, Burton, and Sweeney all use similar argumentative structures.",
+          "source": "script"
+        },
+        {
+          "theme": "Content intensity",
+          "risk": "Graphic mutilation, a child in the tent-city sequence, a dead pet, and a prolonged burn sequence push the material into mature territory and may limit platform breadth.",
+          "evidence": "The torso bodies, Lucy's death, the burning shantytown, and the interrogation violence are all explicit and sustained.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting and performance specificity",
+          "risk": "The project needs a very particular ensemble to land: a charismatic but brittle Ness, a steel-edged Edna, a dangerous Francis, and a Marlow who can carry coded subtext without overstatement.",
+          "evidence": "The script's emotional turns rely on these roles reading instantly and credibly in period dialogue-heavy scenes.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is scale versus control: this is a strong prestige package, but it needs enough budget and casting firepower to sell the period world and the historical names without losing the intimacy that makes it work. The other major risk is tonal and moral balance — the script is compelling because Ness becomes compromised, but that same choice can make the audience harder to hold if the production doesn’t land the character psychology with precision."
+    }
+  },
+  "weightedScore": 78.7,
+  "tier": "Optionable",
+  "inputTokens": 38351,
+  "outputTokens": 3584,
+  "cost": 0.04489125000000001
+}

@@ -1,0 +1,233 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Corporate thriller",
+      "genre_tags": [
+        "psychological thriller",
+        "satirical drama"
+      ],
+      "tone": "heightened, sleek, venomous, propulsive"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script has a very clear commercial promise: a ruthless Wall Street power struggle wrapped around a murder cover-up and media manipulation. Scenes like Evelyn’s MSNBC interview, the gala stabbing, the viral-video fallout, and the final boardroom/press-conference reversals give it a strong hook for adult thriller audiences."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise is easy to explain from the opening pages: a high-powered PE executive is implicated in a murder during a corporate takeover battle, and the story becomes a fight over who controls the narrative and the company. The opening explosion, the gala death, and the later reveal that the murder story itself is weaponized make the engine legible immediately."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Evelyn is sharply drawn as a controlled, wounded operator with a buried emotional life, especially in the penthouse scenes, the mother/graveyard material, and the final music-box release. Nicole and Magnus also have strong opposing energies—Nicole’s polished compliance mask and Magnus’s swaggering opportunism—though Evelyn remains the dominant engine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar corporate-thriller framework and pushes it into a more stylized, media-native arena, especially with the repeated use of social video, app footage, PR spin, and the final fake-out narrative. The intercutting of boardroom politics with murder logistics and market manipulation gives it a confident, contemporary edge."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "It moves with real force: the gala incident, the detective pressure, the red-flag report, the security-footage hunt, the Akros bid, and the final stock/press collapse all escalate cleanly. The structure keeps turning the screw with new reversals, and the ending lands as a decisive payoff rather than a stall."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The strongest original idea is the fusion of elite finance, murder, and algorithmic reputation warfare—where a takeover battle is fought through surveillance footage, viral content, and market moves. The rooftop confrontation and the final reveal that the public story was engineered feel both surprising and inevitable within the script’s logic."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world feels specific and operationally rich: private equity, activist investors, law firms, internal security contractors, hedge funds, media outlets, and elite clubs all have distinct functions in the plot. Locations like Revio HQ, the Core Club, the Mahjong parlor, Blackwood Security, and the various finance spaces create a layered ecosystem rather than a generic corporate backdrop."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: glossy, vicious, and darkly comic, with characters speaking in sharpened, profane one-liners while the stakes remain genuinely lethal. The script’s voice is recognizable in scenes like the MSNBC interview, the gala humiliation, and the final rooftop/press sequence, where satire and menace coexist."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the power-play surface, the script keeps hinting at deeper wounds: Evelyn’s father, her mother’s illness, the ballet imagery, and the safe/music box reveal. Those elements suggest a richer emotional story than the plot initially advertises, though the script still prioritizes momentum and control over sustained interiority."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "There is strong recurring friction among Evelyn, Nicole, Charles, Magnus, Teddy, and Crowder, and several pairings generate material on their own—Evelyn/Charles, Evelyn/Nicole, Evelyn/Magnus, Evelyn/Teddy. It is still primarily Evelyn-centered, but the boardroom, legal, and investigative relationships are robust enough to sustain the feature’s engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The script depends on star power for Evelyn, Magnus, and likely Charles to sell the upscale, high-status world and the verbal sparring; the material is built around charisma and authority.",
+        "casting_challenges": [
+          "Evelyn requires a very specific blend of glamour, menace, and emotional fracture",
+          "Nicole must play polished, controlled, and subtly duplicitous",
+          "Magnus needs to read as both tech-bro charismatic and dangerous",
+          "A child actor is required for Cora",
+          "Henry requires sign-language performance and wheelchair-bound physicality",
+          "Crowder needs a very specific Queens-lawman voice and presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 30,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Helicopter travel and heliport scenes",
+          "Luxury penthouses and multiple high-end Manhattan interiors",
+          "Gala/charity event with large crowd and extras",
+          "Boardroom and office tower environments with premium production design",
+          "Luxury yacht sequence",
+          "Porsche chase/crash and SUV pursuit",
+          "Explosion at corporate headquarters",
+          "Multiple elite clubs/restaurants requiring upscale dressing",
+          "Police precinct, townhome, and security-office locations across Manhattan/Jersey City/Queens"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Explosion at Revio HQ, helicopter inserts, car crash/flip, crowd/phone-footage composites, and some digital enhancement for skyline and action coverage.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical explosion, vehicle impacts, gunfire, blood effects, and body aftermath work.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "MSNBC, DealBook, SEC, BlackRock, Skadden, Columbia Law, Le Bernardin, Core Club, Carlyle, Plaza, One Vanderbilt, Hudson Yards, and other real-world institutions/venues are referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "Marlboro Golds, Gucci, Christian Dior, Valentino, Cartier, Patek Philippe, Mercedes, Porsche, MSNBC, Telegram, and other brands are prominently named."
+        },
+        {
+          "type": "named_music",
+          "detail": "The Rolling Stones are referenced through the gala music cue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Greek mythology material, specifically Semele/Zeus framing and the book motif, is used as a thematic device but not in a way that appears rights-problematic."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable theatrical-style feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best suited to a prestige thriller launch with strong marketing around power, scandal, and viral manipulation."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Social Network",
+        "why": "Like this script, it turns elite ambition, legal maneuvering, and personal betrayal into a sleek, dialogue-driven power drama where the business mechanics are inseparable from the emotional warfare."
+      },
+      {
+        "title": "Succession",
+        "why": "The match is in the tone and ecosystem: ultra-wealthy operators, boardroom brinkmanship, media optics, and a constant sense that every relationship is also a transaction."
+      },
+      {
+        "title": "Fair Play",
+        "why": "This is a strong comp for the gendered power dynamics inside a high-finance environment, especially the way professional legitimacy, intimacy, and public perception become weapons."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and commercially legible, which lowers buyer confusion and makes the project easy to market as a prestige thriller.",
+          "evidence": "The opening explosion, the gala murder, and the takeover battle are all established within the first act.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Audience appeal & marketability",
+          "what_it_means": "It sits at the intersection of finance, murder, and media scandal—three proven audience magnets—so it has a broad adult-thriller lane with strong trailer moments.",
+          "evidence": "MSNBC interview, viral footage, board vote pressure, and the stock-price collapse all provide clear hook points.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a brandable voice: glossy, profane, satirical, and dangerous, which helps it stand out in a crowded prestige-thriller field.",
+          "evidence": "The dialogue style and the repeated collision of elite polish with violent consequence define the piece.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "The setting is not just backdrop; it is an engine of institutions, money, and surveillance that can support strong marketing and, if desired, future expansion.",
+          "evidence": "Private equity firms, law firms, activist traders, security contractors, clubs, media outlets, and boardrooms all actively drive the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Evelyn is a strong lead vehicle: glamorous, ruthless, wounded, and emotionally legible, which is exactly the kind of role that attracts talent and awards attention.",
+          "evidence": "Her controlled public persona, private breakdowns, and final emotional release give the role range.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The script has a clean escalation path with multiple reversals, making it feel like a true event feature rather than a static corporate drama.",
+          "evidence": "The gala incident, the security-footage hunt, the Akros bid, the rooftop trap, and the final public takedown all keep the engine moving.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the upscale setting, the script is still fundamentally a dialogue-and-location thriller rather than a VFX spectacle, which keeps it within a manageable premium-budget range.",
+          "evidence": "Most scenes are in offices, clubs, cars, penthouses, and restaurants, with only a handful of expensive action beats.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The mythology, mother/daughter memory, and music-box ending give the film emotional aftertaste and prestige positioning beyond a simple cat-and-mouse thriller.",
+          "evidence": "The Semele framing, the graveyard scene, and the final safe/music-box reveal add a second layer under the corporate plot.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sleek, high-status corporate thriller with a killer hook: a ruthless finance queen gets pulled into a murder scandal, then turns the machinery of media, law, and markets into a weapon. It has a star-making lead, a distinctive voice, and a premium-scale world that feels expensive on screen without requiring tentpole spectacle."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Lead-centric engine",
+          "risk": "The script is strongest when Evelyn is driving; outside her, the story can feel like a series of functional moves rather than a fully distributed ensemble engine.",
+          "evidence": "Most major turns are filtered through Evelyn’s decisions, with Charles, Magnus, Nicole, Teddy, and Crowder largely orbiting her trajectory.",
+          "source": "script"
+        },
+        {
+          "theme": "Dialogue density and tonal compression",
+          "risk": "The voice is sharp, but the constant barrage of quips and hard-edged exchanges can flatten emotional contrast if not carefully cast and directed.",
+          "evidence": "Nearly every major scene uses the same high-intensity, profanity-forward register, from boardrooms to private confrontations.",
+          "source": "script"
+        },
+        {
+          "theme": "Production exposure",
+          "risk": "The script is not cheap: helicopters, luxury venues, gala crowds, a yacht, car stunts, a major explosion, and multiple premium Manhattan locations push it into a higher-budget lane.",
+          "evidence": "The gala, heliport, yacht, Porsche crash, SUV chase, and Revio explosion are all visible cost drivers.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The number of named brands, institutions, and real-world references creates a meaningful clearance burden and potential legal cleanup.",
+          "evidence": "MSNBC, DealBook, BlackRock, Skadden, Columbia, Telegram, Gucci, Dior, Valentino, Cartier, Patek Philippe, and multiple real venues are named on the page.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting dependency",
+          "risk": "The project likely needs recognizable, high-caliber performers to land the power dynamics and make the elite world feel credible rather than generic.",
+          "evidence": "Evelyn, Magnus, Charles, and Nicole all require very specific screen presence and verbal precision.",
+          "source": "script"
+        },
+        {
+          "theme": "Emotional payoff arrives late",
+          "risk": "The deeper interiority is effective, but much of it is withheld until the final stretch, which may make the film feel colder than intended for some buyers or audiences.",
+          "evidence": "Evelyn’s mother/ballet material and the music-box release are saved for the end rather than integrated more evenly.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development risk is not the premise; it’s executional load. This is a premium, cast-dependent thriller with significant location, clearance, and action costs, and it relies on a very precise tonal balance so the sharp satire doesn’t crowd out the emotional core."
+    }
+  },
+  "weightedScore": 79,
+  "tier": "Optionable",
+  "inputTokens": 38600,
+  "outputTokens": 3307,
+  "cost": 0.0438315
+}

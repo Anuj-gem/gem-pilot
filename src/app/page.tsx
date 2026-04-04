@@ -150,10 +150,10 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-white mb-1.5">Market Comparables</h3>
+                <h3 className="text-sm font-semibold text-white mb-1.5">Production Reality</h3>
                 <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                  Automatic comp titles with reasoning — know where your script sits in the
-                  market before anyone asks.
+                  Deep budget, cast, and location analysis — understand what it takes to get
+                  your script made before you pitch.
                 </p>
               </div>
 
@@ -313,7 +313,7 @@ export default function Home() {
                     'Unlimited evaluations',
                     'Publish to leaderboard',
                     'Development notes',
-                    'Market comparables',
+                    'Production analysis',
                   ].map(item => (
                     <li key={item} className="flex items-start gap-2 text-xs text-[var(--gem-gray-300)]">
                       <CheckCircle size={14} className="text-emerald-400 mt-0.5 shrink-0" />

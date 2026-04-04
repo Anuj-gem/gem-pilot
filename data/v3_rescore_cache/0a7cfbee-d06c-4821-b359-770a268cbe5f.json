@@ -1,0 +1,218 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic comedy",
+      "genre_tags": [
+        "speculative",
+        "ensemble"
+      ],
+      "tone": "heightened, witty, horny, bittersweet"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise is instantly legible and commercially sticky: in a near-future America where premarital sex is outlawed except for one annual night, Owen and Hannah spend the night racing through Manhattan to lose their virginity/heartbreak. The opening steakhouse breakup, the 7:00 p.m. biosensor shift, and the city-wide scramble for condoms create a clean, high-concept hook with broad rom-com accessibility and a strong trailer premise."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands on page one with the title card and the rule: premarital sex is illegal except one night a year. The story engine is clear throughout the night—two lonely people keep colliding while trying to find the right partner before the countdown expires—and the final leap-year button makes the premise easy to summarize in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Owen and Hannah are both sharply defined by behavior: Owen’s boyish earnestness, Winnie-the-Pooh obsession, and pizza-maker competence contrast with his emotional paralysis; Hannah’s ambition, sarcasm, and romantic idealism are established through her boss calls, musical dreams, and fixation on Sebastian. Their friction in the liquor store, train, and pizza shop gives them durable chemistry, though this is a feature, so the score reflects arc completion rather than series durability."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar romantic-comedy structure and gives it a bold speculative wrapper, then commits to a very specific citywide-night-of-chaos conceit. The fake-out Sebastian sequence, the biosensor reveal, the secret train-depot party, and the final leap-year tag all show confidence in playful structural misdirection and tonal escalation."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is highly propulsive because every scene has a deadline pressure or a fresh obstacle: no condoms, no money, closed venues, police, a secret party, and the ticking countdown. The Owen/Hannah collision pattern keeps the story moving, and the pizza-shop convergence followed by the final reveal of their mutual choice gives the feature a satisfying forward drive."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The premise feels like an inevitable commercial idea once stated, but the execution adds fresh specifics: biosensor tattoos that shift from red to green, a one-night sex economy, and a Manhattan nightlife ecosystem built around the mandate. The Owen/Hannah dynamic becomes more than a gimmick because their repeated near-misses and mutual self-sabotage make the concept emotionally and structurally coherent."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has enough texture to feel story-generating: Abbott Labs biosensors, the Marriage First Mandate, sex tourism, black-market condoms, secret parties, and a city reorganized around one annual release valve. The setting is not just backdrop; it shapes every obstacle, from the CVS shortage to the police interrogation and the exclusive train-depot club."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinctly horny, ironic, and romantic with a polished studio-comedy rhythm, but it also has a slightly dystopian edge. The script can jump from breakup devastation to absurdist comedy to sincere yearning, as seen in the cab banter, the urgent-care condom gag, and the quiet pizza-shop intimacy."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the premise, the script hints at deeper themes around loneliness, performative romance, and how state control distorts intimacy. Owen’s ring, Hannah’s musical ambition, Clarissa’s ambivalence, and the final leap-year setup suggest more emotional life than the surface sex-comedy premise initially promises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "This is primarily a two-hander, but the supporting relationships are functional and occasionally generative: Owen/Clarissa, Hannah/Arya, Owen/Linda, and the various one-night encounters all create distinct relational textures. The script is strongest when Owen and Hannah bounce off each other, though the ensemble is not broad enough to feel like a true multi-character engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The concept is strong enough to sell on premise, but the romantic-comedy lane and speculative hook would benefit from recognizable leads; it is not strictly dependent on name talent to understand or function.",
+        "casting_challenges": [
+          "Hannah is explicitly described as Spanish for Sebastian's counterpart dynamic and the script references specific ethnic/physical types in multiple supporting roles",
+          "Troy is a 13/14-year-old boy, requiring a child actor and careful content handling",
+          "Douglas Pierce is a recognizable older leading-man type, and Sebastian is written as a very specific Spanish romantic fantasy figure"
+        ]
+      },
+      "locations": {
+        "distinct_count": 19,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "near-future contemporary",
+        "expensive_flags": [
+          "New York City night exteriors",
+          "crowded holiday/celebration street scenes",
+          "secret upscale party/train depot set",
+          "police station set",
+          "penthouse location",
+          "multiple taxi/subway/motorcycle/limo moves across Manhattan",
+          "fireworks and citywide celebration atmosphere",
+          "hospital/ambulance sequence",
+          "crowd-heavy nightlife environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical with light enhancement for the biosensor color shift, countdown graphics, fireworks, and occasional citywide atmosphere work; no heavy effects dependency.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical effects for fireworks ambience, police lights, minor physical comedy, and the biosensor/tattoo color change; no major stunt set pieces.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Senator Hal Holloway is explicitly compared to JD Vance in the script text, creating a real-person resemblance/clearance sensitivity."
+        },
+        {
+          "type": "named_music",
+          "detail": "Marvin Gaye's 'Let's Get It On' and 'Apocalypse' by Cigarettes After Sex are specifically named and used in scene construction."
+        },
+        {
+          "type": "brand",
+          "detail": "Walgreens, Prius, Equinox, Abbott Labs, Trojan, CVS, Gianni's, Craigslist, Game of Thrones, Tinder, Seagram's, Durex, and CNN are all named prominently."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Winnie the Pooh references and framed quotes may require caution depending on usage and prominence."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; commercially best as a streamer-friendly date-night comedy with a high-concept hook and strong marketing trailer."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Palm Springs",
+        "why": "Like this script, it pairs a high-concept temporal gimmick with a romantic two-hander and uses repetition of one night to build chemistry, comedy, and emotional payoff without requiring a huge production footprint."
+      },
+      {
+        "title": "The Lobster",
+        "why": "It shares the speculative social rule governing intimacy and the deadpan, slightly absurd treatment of romance as a regulated system, though this script is lighter and more commercially accessible."
+      },
+      {
+        "title": "Before We Go",
+        "why": "This is a contained, city-night romantic feature driven by two strangers moving through New York, with the same reliance on dialogue chemistry, nocturnal momentum, and emotional reveal over spectacle."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and easy to market, which is a major advantage for buyers looking for a clean hook that can be communicated in one sentence.",
+          "evidence": "Premarital sex is outlawed except for one night a year; the entire feature is built around the countdown and the annual release valve.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Audience appeal & marketability",
+          "what_it_means": "This has broad rom-com appeal with a speculative twist, making it attractive to both date-night audiences and viewers who want a fresh genre wrapper.",
+          "evidence": "The breakup, the citywide scramble, the secret party, and the final romantic convergence all play in a familiar but elevated commercial lane.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The ticking clock and constant obstacles create a built-in engine that keeps the feature moving and gives the ending real payoff.",
+          "evidence": "The night is structured around the 7:00 p.m. biosensor change and the countdown to dawn, with repeated setbacks like closed stores, police, and missed connections.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a brandable tone: horny, witty, romantic, and lightly dystopian, which helps it stand out in a crowded rom-com market.",
+          "evidence": "The blend of urgent condom comedy, city nightlife absurdity, and sincere emotional beats in the pizza shop is distinctive.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "The near-future social system feels usable beyond this one story, which gives the property franchise-like texture even as a feature.",
+          "evidence": "Biosensor tattoos, Abbott Labs, the Marriage First Mandate, sex tourism, black-market condoms, and secret elite venues all imply a larger world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "This is relatively producible for a concept-driven feature: mostly contemporary NYC locations, light VFX, and no major effects burden.",
+          "evidence": "The script relies on apartments, bars, streets, a train, a pizza shop, and a few premium interiors rather than large-scale spectacle.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Character chemistry",
+          "what_it_means": "Owen and Hannah generate the kind of friction-and-affection dynamic that can carry a romantic feature and sell the emotional payoff.",
+          "evidence": "Their banter in the liquor store, train, police station, and pizza shop repeatedly turns antagonism into attraction.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept romantic comedy with a built-in clock, a vivid near-future rule set, and a strong two-hander at its center. It feels commercially legible, trailer-friendly, and producible at a manageable scale, while still offering enough tonal personality and world texture to stand out in the marketplace."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Rights and clearance exposure",
+          "risk": "The script is packed with named brands, music cues, and a real-person political resemblance, which creates avoidable legal and clearance work for production and distribution.",
+          "evidence": "Abbott Labs, Trojan, CVS, Walgreens, Tinder, Game of Thrones, Marvin Gaye, Cigarettes After Sex, and the JD Vance-like senator reference all appear on the page.",
+          "source": "both"
+        },
+        {
+          "theme": "Night-shoot and location complexity",
+          "risk": "Although not effects-heavy, the feature is heavily dependent on nighttime Manhattan exteriors, moving vehicles, and multiple distinct locations, which raises schedule and logistics risk.",
+          "evidence": "The story moves from steakhouse to subway to cab to bars to rooftop to police station to secret club to penthouse to hospital and back across the city.",
+          "source": "production"
+        },
+        {
+          "theme": "Casting sensitivity",
+          "risk": "The script depends on a very specific romantic-comedy chemistry and several sharply typed supporting roles, which makes casting important to the project’s viability.",
+          "evidence": "Owen, Hannah, Sebastian, Douglas, Vivian, Nia, and Troy are all written with distinct physical and tonal requirements, and the story’s success hinges on the leads’ charm.",
+          "source": "both"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script walks a line between raunchy comedy, sincere romance, and speculative satire; if any one element is overplayed, the project could feel uneven in execution.",
+          "evidence": "It jumps from condom scarcity and sexual banter to police detention, elite fetish-party imagery, and a tender final emotional turn.",
+          "source": "script"
+        },
+        {
+          "theme": "Feature-only depth",
+          "risk": "The world is vivid, but the story is fundamentally contained to one night and one romantic outcome, so the property’s expansion potential is limited unless the concept is reimagined for series.",
+          "evidence": "The narrative resolves the central question by dawn and ends with a leap-year tag rather than opening a larger ongoing engine.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development risk is not story comprehension; it’s execution discipline. This is a marketable, producible concept, but it carries real clearance, casting, and night-shoot complexity, and it needs careful tonal control so the satire, sex comedy, and romance all land in the same movie."
+    }
+  },
+  "weightedScore": 77,
+  "tier": "Optionable",
+  "inputTokens": 26934,
+  "outputTokens": 3183,
+  "cost": 0.034524
+}

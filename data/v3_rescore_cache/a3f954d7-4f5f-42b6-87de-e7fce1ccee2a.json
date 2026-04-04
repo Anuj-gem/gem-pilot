@@ -1,0 +1,218 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "psychological",
+        "supernatural"
+      ],
+      "tone": "gritty, ominous, tragic, escalating"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script has a very clear commercial promise: a family grief drama that turns into an occult possession horror, with the escalation from the funeral to the seance to the attic reveal to the final treehouse ritual giving it a strong word-of-mouth hook. The set pieces around Charlie’s allergy, Peter’s panic attack, the seance, and the final body-horror transformation are memorable and trailer-friendly."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise is legible almost immediately in the funeral-home opening, where Annie’s miniature art, the dead grandmother, Charlie’s odd behavior, and the family’s emotional fracture are all established before the supernatural thread fully ignites. By the support-group and Joan scenes, the story engine is clear: grief, inherited trauma, and a hidden occult inheritance driving the family toward catastrophe."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Annie is a strong lead because she is both controlling and vulnerable, especially in the support-group confession and the later insistence that she is trying to protect Peter. Peter has a compelling arc from detached teen to terrified victim, and Charlie’s strange, silent presence gives the family a durable emotional and uncanny center. Steve is less psychologically rich than Annie, but he functions well as the rational counterweight until the collapse."
+      },
+      "creative_originality_and_boldness": {
+        "score": 9,
+        "reasoning": "The miniature-house motif is not just decorative; it becomes the script’s governing visual and thematic language, culminating in the final reveal that the house itself is a model-like trap. The choice to make the horror feel like inherited family pathology before it becomes overtly demonic is bold, and the script repeatedly commits to unsettling images like the treehouse, the severed heads, and the ceiling-crawling Annie."
+      },
+      "narrative_momentum_engagement": {
+        "score": 9,
+        "reasoning": "The script is relentlessly escalating: funeral, strange signs, school incidents, party catastrophe, seance, attic discovery, possession, and final ritual all build with increasing dread. Even the quieter scenes, like Annie at Joan’s apartment or Steve confronting Peter, are loaded with forward pressure, and the ending decisively opens into a larger mythic horror payoff."
+      },
+      "resonant_originality": {
+        "score": 9,
+        "reasoning": "The script feels like a fresh synthesis of domestic drama and occult horror, where the family’s emotional damage is inseparable from the supernatural mechanics. The idea that the mother’s miniatures are both art objects and a literal map of the family’s doom is one of those rare hooks that feels surprising and inevitable at the same time."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is richly textured through Annie’s workshop, the psychiatric office, the school, the support group, the cemetery, and Joan’s apartment, all of which feel like parts of a coherent social ecosystem around grief and care. The occult layer also has internal rules and iconography—sigils, books, rituals, the northwest orientation, the treehouse host body—that give the world depth beyond the immediate plot."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is highly specific: domestic realism, deadpan family friction, and slow-burn dread gradually give way to full-body supernatural terror. Scenes like Annie’s awkward support-group speech, Peter’s school humiliation, and the final ritual all belong to the same tonal universe, which is bleak, intimate, and increasingly apocalyptic."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 9,
+        "reasoning": "Beneath the horror mechanics, the script suggests deep material about maternal guilt, inherited mental illness, family blame, and the terror of identity being shaped by lineage. The repeated references to Annie’s mother, the sleepwalking incident, and the family’s history of death and estrangement create a sense that the supernatural is exposing something already broken rather than inventing it."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Annie/Steve marriage, Annie/Peter resentment, Annie/Charlie identification, and Steve/Peter emotional distance all generate meaningful friction, and the dinner-table blowup is a strong example of the ensemble combusting in one room. Joan later adds a second relational axis that reframes the family dynamic, though the script is still primarily driven by the Graham family rather than a broad ensemble."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The material depends heavily on Annie and Steve carrying the emotional credibility of the family drama, and the final act requires performers who can sell extreme psychological and supernatural escalation without losing audience trust.",
+        "casting_challenges": [
+          "Charlie requires a very specific androgynous, unsettling child performance",
+          "Peter needs to play teen vulnerability, panic, and possession convincingly",
+          "Annie must sustain a wide range from controlled grief to breakdown to apparent possession",
+          "The script benefits from strong older supporting actors for Joan and Dr. Mason"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "treehouse build and elevated access",
+          "miniature prop and insert work throughout",
+          "attic set with flies and corpse reveal",
+          "fire and burning-body effects",
+          "night exterior woods sequences",
+          "school and party crowd scenes",
+          "car crash/roadside aftermath",
+          "final ritual with many nude extras and stylized lighting"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Supernatural movement, floating/crawling Annie, possession effects, headless body reveals, and the final treehouse tableau likely require compositing, rig removal, and some digital enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical gore, decapitation aftermath, burning effects, flies/infestation, corpse makeup, and controlled fire work are central.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Lexapro, Serafem, and other pharmaceutical references are named in Steve’s office scene."
+        },
+        {
+          "type": "real_person",
+          "detail": "No obvious real people are referenced by name in a rights-sensitive way."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named music is featured."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script references Sophocles and specific mythic/demonic material, but these are public-domain elements rather than clear licensing blockers."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Best suited to a festival-to-platform or specialty theatrical release model; the story is feature-shaped and depends on a single escalating reveal rather than episodic engine."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Babadook",
+        "why": "Like this script, it turns grief, parenting stress, and psychological collapse into a contained supernatural horror engine, with the domestic interior becoming the site of the monster."
+      },
+      {
+        "title": "Hereditary",
+        "why": "The match is especially strong on family trauma, occult inheritance, shocking body horror, and the way a seemingly intimate family drama expands into a ritualistic supernatural catastrophe."
+      },
+      {
+        "title": "The Witch",
+        "why": "It shares the slow-burn dread, oppressive atmosphere, and sense of an unseen ritual system operating beneath family life, while also feeling producible at a relatively contained scale."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and easy to market: a grieving family’s private trauma becomes the doorway to an occult possession story. That clarity is valuable because it gives buyers a clean emotional and genre promise from the opening stretch.",
+          "evidence": "The funeral, the miniature house motif, the support-group confession, and the later seance/ritual reveal all establish one coherent engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Creative originality & boldness",
+          "what_it_means": "The miniature-art concept gives the script an ownable visual identity that can anchor marketing, posters, and audience memory. It also makes the horror feel authored rather than generic.",
+          "evidence": "Annie’s workshop, the replicated Graham house, and the final reveal that the house itself resembles a miniature are central to the script’s identity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a rare tonal control that can attract both elevated-horror audiences and prestige-drama viewers. That broadens its commercial lane beyond standard genre-only buyers.",
+          "evidence": "The support-group confession, the dinner-table blowup, and the final possession sequence all feel like the same movie rather than separate modes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth & slow-burn potential",
+          "what_it_means": "The story carries thematic weight about inherited damage, maternal guilt, and family blame, which gives the horror emotional stickiness and critical upside.",
+          "evidence": "Annie’s history of estrangement, the sleepwalking incident, and the repeated references to the family’s deaths all suggest a deeper psychological architecture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The script is structurally propulsive and keeps escalating into bigger set pieces, which is a strong sign for audience retention and trailer construction.",
+          "evidence": "The progression from funeral to support group to party accident to seance to attic discovery to final ritual is relentless.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the ambitious imagery, much of the story is interior-driven and cast-light, which keeps it within a plausible mid-budget horror range rather than a large-scale effects picture.",
+          "evidence": "Most scenes are in the house, workshop, school, car, or apartment, with only a few major set-piece exteriors and crowd scenes.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Casting value",
+          "what_it_means": "The material offers major showcase roles for prestige actors, especially the mother, father, and son, which increases packageability and awards-adjacent appeal.",
+          "evidence": "Annie’s breakdowns, Steve’s controlled collapse, and Peter’s panic/possession arc all give actors substantial range.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a premium horror package with a sharply ownable visual identity, a clean high-concept engine, and serious emotional weight. It feels both commercially legible and artistically elevated: a family trauma story that can sell on dread, iconography, and a devastating final escalation, while staying contained enough to be producible at a disciplined budget."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget exposure in the final act",
+          "risk": "The ending requires multiple expensive-looking elements at once: heavy makeup/gore, fire effects, floating/crawling supernatural movement, nude extras, a large ritual tableau, and a highly stylized treehouse climax. That pushes the film into a more demanding production lane than the early domestic scenes suggest.",
+          "evidence": "The attic corpse, Steve’s burning, Annie’s ceiling movement, the treehouse worshippers, and the final crowned body all stack practical and visual effects requirements.",
+          "source": "production"
+        },
+        {
+          "theme": "Casting dependency on performance precision",
+          "risk": "The movie lives or dies on whether the central family can sell extreme tonal shifts without breaking audience belief. If Annie, Steve, or Peter feel even slightly off, the emotional and supernatural logic weakens fast.",
+          "evidence": "The support-group confession, the dinner argument, the possession scene, and the final breakdowns all require unusually controlled performances.",
+          "source": "both"
+        },
+        {
+          "theme": "Audience tolerance for bleakness",
+          "risk": "The script is relentlessly punishing, with very little comic relief or release. That can strengthen prestige-horror appeal, but it narrows the audience compared with more accessible genre titles.",
+          "evidence": "The story moves from funeral to child death to family rupture to possession to ritual sacrifice with almost no respite.",
+          "source": "script"
+        },
+        {
+          "theme": "Complex occult exposition",
+          "risk": "The final movement introduces a lot of ritual language, symbols, and lore in a short span, which can create clarity risk if not staged and designed very carefully. The film needs the audience to understand enough to feel the reveal without getting lost in mythology.",
+          "evidence": "The Paimon material, sigils, books, chants, and Joan’s explanation all arrive late and densely.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and clearance housekeeping",
+          "risk": "The script is mostly clean, but the pharmaceutical brand references and any production use of specific occult text styling or iconography should be checked for clearance and design consistency. Not a major blocker, but worth managing early.",
+          "evidence": "Lexapro and Serafem are named in Steve’s office scene, and the script uses specific ritual language and symbols repeatedly.",
+          "source": "both"
+        }
+      ],
+      "headline": "The main development challenge is not the premise; it’s execution discipline. This is a demanding horror film that needs exacting casting, precise visual effects planning, and careful control of the mythology so the emotional devastation lands without the audience feeling overloaded or confused. "
+    }
+  },
+  "weightedScore": 84,
+  "tier": "Greenlight Material",
+  "inputTokens": 48169,
+  "outputTokens": 3231,
+  "cost": 0.050666249999999996
+}

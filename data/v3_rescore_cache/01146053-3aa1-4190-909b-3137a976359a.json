@@ -1,0 +1,222 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy drama",
+      "genre_tags": [
+        "coming-of-age",
+        "spiritual",
+        "period"
+      ],
+      "tone": "earnest, whimsical, heightened, sentimental"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear in the hospital-to-afterlife framing of Sage’s suicide attempt and the Christmas Eve intervention by Jesus and the spirit guides, which gives the piece a legible uplift engine. That said, the script’s very specific dialect, theological conceit, and 1960s/1970s music-culture references narrow the audience compared with a broader commercial fantasy-drama."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early: a suicidal teen dies on the wrong day, is sent to a liminal hospital-like afterlife, and is guided by Jesus and the spirits of Jimi Hendrix, Jim Morrison, and Janis Joplin. The contract/clock structure and the Christmas Eve deadline create a clear story engine, though the Aisling framing device takes time to fully clarify."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Sage is defined by pain, anger, and guardedness, and his gradual softening through the guitar and the spirit-guides gives him an arc. The supporting figures are vivid—especially Janis as the emotional bridge and Hendrix as the volatile comic wildcard—but they function more as thematic emissaries than deeply contradictory characters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by combining a suicide-afterlife premise with Jesus as a bureaucratic guide and dead rock icons as spirit counselors. The Aisling narration, archaic Irish-inflected dialogue, and the collision of sacred, pop, and mythic registers make the voice unmistakable on the page."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The opening hospital sequence, the reveal of the contract, and the arrival of the spirit guides create strong forward motion, and the final reveal around Sage’s birth and choice gives the ending shape. The middle section, however, is heavily dialogue-driven and repetitive in its back-and-forth around whether Sage will stay, which slightly blunts propulsion."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of Jesus as a dry, overworked administrator and Jimi Hendrix/Jim Morrison/Janis Joplin as inept but well-meaning spirit guides is fresh yet immediately legible. The Christmas Nun/Aisling frame adds a second layer of mythic surprise that feels unusual rather than arbitrary."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific metaphysical system with contracts, predetermined plans, birthday rules, and a Heaven bureaucracy, and it mirrors that with a textured 1970s rock-club world in Woodland Hills. The Creation Club, the ritualized band room, and the convent framing suggest a larger off-screen universe with its own customs and hierarchies."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very ownable tonal blend: earnest spiritual fable, irreverent pop-culture comedy, and sentimental redemption story. The contrast between Aisling’s lyrical narration, Jesus’s deadpan bureaucracy, and the profane banter of the rock legends creates a tone that is hard to confuse with anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface fantasy, the script is about attachment, self-worth, and the idea that a life only becomes real through participation and choice. The final reveal that Sage was never fully 'born' and the Aisling frame about choice and grace suggest a deeper metaphysical and emotional architecture than the plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Sage/Jesus dynamic is strong, and the trio of Janis/Jimi/Jim generates recurring comic and emotional friction, especially in the band-room scenes. Still, the ensemble is somewhat functionally arranged around Sage’s journey rather than operating as a truly combinatorial web where many pairings independently generate story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 2,
+        "series_regulars": 5,
+        "child_actors": false,
+        "requires_name_talent": true,
+        "name_talent_reason": "Jesus and the three spirit guides are the main selling points, and the script depends on the audience accepting iconic figures like Jimi Hendrix, Jim Morrison, Janis Joplin, and Jesus in recognizable, charismatic form.",
+        "casting_challenges": [
+          "Requires credible portrayals of Jesus and three highly recognizable deceased celebrities",
+          "Aisling requires a very specific Irish brogue and heightened storytelling style",
+          "Sage is written as a teen with a very particular emotional stillness and woundedness"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "period (1962 and 1976)",
+        "expensive_flags": [
+          "Two period timelines requiring distinct production design",
+          "Hospital/emergency room set",
+          "Convent interior and hallway",
+          "Night exterior lot and club frontage",
+          "Band room with smoke-heavy atmosphere",
+          "Potential music-clearance-sensitive performance environment"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Supernatural transitions, soul separation, parchment appearing magically, and the 3D/photo-to-life effect for the spirit icons.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical smoke, lighting cues, and simple magical reveals such as the scroll and soul-body separation effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Jesus Christ is depicted as a speaking character."
+        },
+        {
+          "type": "real_person",
+          "detail": "Jimi Hendrix is depicted as a speaking character."
+        },
+        {
+          "type": "real_person",
+          "detail": "Jim Morrison is depicted as a speaking character."
+        },
+        {
+          "type": "real_person",
+          "detail": "Janis Joplin is depicted as a speaking character."
+        },
+        {
+          "type": "named_music",
+          "detail": "May the Road Rise Up to Meet You, Break on Through (To the Other Side), Stairway to Heaven, Happy Birthday, Silent Night, and Jingle Bells are all specifically named or performed."
+        },
+        {
+          "type": "brand",
+          "detail": "Martin D-28 guitar is specifically identified."
+        },
+        {
+          "type": "brand",
+          "detail": "Muzak and transistor radio are referenced in a way that may require clearance only if branded usage is emphasized in production."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable or streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "As a feature, this fits a festival-to-platform or specialty streaming release model; the engine is a spiritual coming-of-age journey framed by afterlife choice and music-driven intervention."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Book of Life",
+        "why": "Like this script, it uses a stylized afterlife framework, music-forward emotional storytelling, and a visually and tonally heightened approach to death, memory, and family connection."
+      },
+      {
+        "title": "Defending Your Life",
+        "why": "The bureaucratic afterlife, the idea of a soul being evaluated through a life review, and the blend of comedy with existential stakes make it a strong tonal and structural match."
+      },
+      {
+        "title": "The Fisher King",
+        "why": "It shares the mix of wounded protagonists, spiritual redemption, urban melancholy, and magical-realist intervention, while also feeling like a prestige, performance-driven feature rather than a broad commercial fantasy."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Creative originality and boldness",
+          "what_it_means": "The script has a highly ownable premise that is difficult to confuse with other projects, which is valuable for buyers looking for a distinct hook and a clear marketing identity.",
+          "evidence": "Jesus as a bureaucratic guide, plus Jimi Hendrix, Jim Morrison, and Janis Joplin as spirit guides for a suicidal teen.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Conceptual hook and clarity",
+          "what_it_means": "The story engine is easy to pitch in one sentence and is built around a deadline, a choice, and a supernatural intervention, which supports both development and audience comprehension.",
+          "evidence": "Sage is told he has until the clock rings to decide whether to stay, with the entire night structured around that choice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a sharply branded voice that blends reverence, irreverence, and sentiment in a way that could stand out in a crowded prestige-fantasy field.",
+          "evidence": "Aisling’s lyrical Irish narration, Jesus’s dry banter, and the profane but affectionate rock-star dialogue.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth and slow-burn potential",
+          "what_it_means": "The surface fantasy is carrying a deeper thesis about choice, attachment, and the reality of a life only becoming real through participation, which gives the material emotional durability.",
+          "evidence": "The final revelation that Sage was never fully 'born' and the closing emphasis on 'Our Choices.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Despite the ambitious concept, the script is mostly contained to a handful of interiors and a few night exteriors, which keeps it within a manageable feature budget if the rights issue is solved.",
+          "evidence": "Hospital room, convent room, band room, club exterior, and vacant lot are the primary settings.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Ensemble chemistry",
+          "what_it_means": "The trio of Janis/Jimi/Jim creates a lively, repeatable dynamic that can carry scenes and generate both comedy and pathos without relying solely on the lead.",
+          "evidence": "Their banter, bickering, and eventual harmony around Sage’s birthday song and Christmas performance.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a highly distinctive, performance-friendly fantasy drama with a premium, festival-ready hook: a suicidal teen gets one night with Jesus and the ghosts of rock-and-roll icons to decide whether to stay alive. The concept is commercially legible, tonally ownable, and emotionally aspirational, with a contained enough footprint to be producible if the rights and casting pieces come together."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Rights and casting complexity",
+          "risk": "The script’s most marketable elements are also its biggest legal and casting hurdles: it depends on depicting Jesus and three deceased celebrities as speaking characters, which raises estate, likeness, and approval concerns and likely requires recognizable name talent.",
+          "evidence": "Jesus, Jimi Hendrix, Jim Morrison, and Janis Joplin all appear as dialogue-heavy characters; multiple songs are explicitly named and performed.",
+          "source": "both"
+        },
+        {
+          "theme": "Dialogue density and tonal repetition",
+          "risk": "Large portions of the script are built from extended conversational exchanges in a heightened dialect, which can slow momentum and make the piece feel more literary than cinematic if not executed with exceptional rhythm.",
+          "evidence": "The long hospital exchange with Jesus and the extended band-room conversations with the spirit trio repeat the same emotional beats around Sage’s decision.",
+          "source": "script"
+        },
+        {
+          "theme": "Audience accessibility",
+          "risk": "The very specific Irish-inflected narration, theological mechanics, and 1960s/70s music references create a strong identity but also narrow the immediate mainstream audience and may complicate broad marketing.",
+          "evidence": "Aisling’s stylized voice dominates the framing, and the plot leans heavily on knowledge of the named musicians and their cultural symbolism.",
+          "source": "script"
+        },
+        {
+          "theme": "Production and period cost",
+          "risk": "The dual-timeframe structure and period-specific environments require multiple distinct production-design passes, which pushes the project above a simple contained-drama budget even before rights and music costs are considered.",
+          "evidence": "1962 convent scenes and 1976 hospital/club scenes, plus period wardrobe, set dressing, and music atmosphere.",
+          "source": "production"
+        },
+        {
+          "theme": "Emotional engine depends on a very specific tone",
+          "risk": "The script’s success depends on the audience accepting a delicate blend of sincerity, comedy, and spiritual whimsy; if any one element is miscast or overplayed, the material could tip into parody or sentimentality.",
+          "evidence": "Jesus jokes about being at the office, the rock icons speak in profane banter, and Aisling’s narration remains earnest throughout.",
+          "source": "script"
+        }
+      ],
+      "headline": "The core development risk is not the premise; it’s executional fragility. This material needs precise casting, rights clearance, and tonal control to preserve its originality without collapsing into novelty, parody, or an expensive rights-and-music problem."
+    }
+  },
+  "weightedScore": 68,
+  "tier": "Optionable",
+  "inputTokens": 36186,
+  "outputTokens": 3094,
+  "cost": 0.0410625
+}

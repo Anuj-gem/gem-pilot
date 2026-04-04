@@ -149,21 +149,7 @@ List each individually:
 
 ---
 
-## STEP 4: Comparables
-
-Now that you have the full picture — scores, strengths, weaknesses, and production profile — select 2-3 produced film/TV titles that are genuine comparables.
-
-Match on the COMBINATION of:
-- Similar dimension profile (where the script is strong and weak)
-- Similar production scale and budget tier
-- Similar tone and genre territory
-- Similar target audience
-
-For each comparable, explain in one specific sentence what makes it a real match — not just surface genre similarity.
-
----
-
-## STEP 5: What Makes This Special
+## STEP 4: What Makes This Special
 
 Your job here is to explain why this script has commercial and creative potential — why a producer or buyer should be excited. Think like someone pitching this to a greenlight committee, not like someone giving the writer story notes.
 
@@ -182,7 +168,7 @@ THEN, after listing the strengths, write a headline: 2-3 sentences that synthesi
 
 ---
 
-## STEP 6: What Needs Development
+## STEP 5: What Needs Development
 
 Your job here is to flag what stands between this script and production — for both the writer and a hypothetical producer. This is not about rewriting the story. It's about identifying the risks and gaps that would come up in a real development process.
 
@@ -258,9 +244,6 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
       "series_engine_or_release_model": ""
     }
   },
-  "comparables": [
-    {"title": "", "why": ""}
-  ],
   "whats_special": {
     "strengths": [
       {"dimension_or_area": "", "what_it_means": "", "evidence": "", "source": "script|production|both"}

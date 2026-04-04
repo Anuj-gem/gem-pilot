@@ -1,0 +1,223 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Dark comedy",
+      "genre_tags": [
+        "satire",
+        "psychological drama"
+      ],
+      "tone": "heightened, literate, acidic, sexually charged, and increasingly grotesque"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is immediately legible as a toxic literary-couple satire with sex, scandal, and publishing-world gossip, and the article/rebuttal/public-shaming escalation gives it a strong trailer-friendly engine. The New York Mag / New Yorker / Columbia ecosystem, plus the viral-response montage and the pregnancy stakes, create clear commercial hooks, though the literary-industry specificity narrows the audience somewhat."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is easy to explain from the opening train-to-Beacon setup and the central article: a struggling writer publishes a confessional piece about her husband, triggering a public and marital war. The story engine is established early through the doctor visit, the book-reading humiliation, and the decision to publish 'Mommy or Me?,' which cleanly launches the conflict."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Anya is vivid and contradictory from the start—self-loathing, horny, ambitious, and defensive—especially in the bar scene, the OBGYN visit, and her late-night writing montage. Chris is equally legible as vain, charming, and needy, with his Columbia lectures and later counter-article; the pair have durable friction, though they are more sharply defined as types than as deeply surprising people."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a risky, highly stylized approach: direct-address reaction montages, literary-world name-dropping, erotic power-play, and body-horror imagery like the blood-cheek motif and the dog biting off fingers. The tonal confidence in scenes like the hidden-camera bathhouse sequence and the final book-launch ambiguity makes it feel authored rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps escalating through publication, backlash, counter-publication, cheating exposure, pregnancy, breakup, and the final tragic-comic river sequence. It does have a long middle section of literary-social maneuvering and repeated argument beats, but the public fallout and relationship reversals keep the read moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The central idea of a literary couple weaponizing autofiction against each other feels fresh and immediately inevitable, especially in the way the article becomes both career move and marital grenade. The specific combination of publishing satire, sexual humiliation, and bodily self-destruction gives the premise a distinct identity rather than a generic 'toxic marriage' story."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The New York literary ecosystem is rendered as a functioning social machine: Columbia, New York Mag, The New Yorker, bathhouses, readings, editors, blurbs, Google alerts, and online pile-ons all feel interconnected. Scenes like the bookstore Q&A, the Columbia classroom, and the publishing-office meetings show a world with status hierarchies and gossip economies that generate story."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very ownable blend of intellectual satire, erotic humiliation, and emotional cruelty, with recurring motifs like cheek-biting, bodily fluids, and public embarrassment. The tone is not just 'dark comedy'; it is specifically literary, horny, and self-lacerating, and the reaction montages sharpen that identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface scandal, the script keeps hinting at deeper anxieties about authorship, gendered recognition, fertility, and the cost of self-exposure, especially in the doctor scene, the Marcus tapes revelation, and the final pregnancy/river imagery. The ending suggests a larger emotional and thematic afterlife, though the script is still fairly explicit about its concerns rather than deeply withholding."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Anya/Chris is the core engine, but the supporting web is meaningfully active: Nora as confidante, Marcus as mirror/foil, Lorelei as gatekeeper, Ron as industry pressure, and Izzy as temptation and consequence. The ensemble is not Seinfeld-level combinatorial, but multiple pairings generate distinct scenes and tensions rather than functioning as mere satellites."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 2,
+        "series_regulars": 6,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The material depends heavily on the charisma and comic/sexual chemistry of Anya and Chris, and the publishing-world satire will play best if the leads are recognizable enough to sell the high-concept scandal premise.",
+        "casting_challenges": [
+          "Lead roles require actors who can handle explicit sexual material, rapid-fire literary dialogue, and emotional volatility",
+          "Maggie requires a child actor",
+          "Nana the dog is a major on-screen presence and must be trainable",
+          "Several roles are age- and type-specific to the New York literary milieu"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "New York City and Hudson Valley locations",
+          "Train, ferry, river, and waterfront work",
+          "Russian bathhouse set pieces",
+          "Columbia University interiors",
+          "Bookstore/event crowd scenes",
+          "Hospital sequence",
+          "Multiple restaurant/bar/nightlife locations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly limited to stylized montage transitions and the underwater/falling imagery; no heavy effects dependency.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood effects, finger amputation gag, vomiting/blood mouth effects, and dog attack choreography.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "David Grann, Kathy Acker, Hunter Biden, Janet Malcolm, Annie Ernaux, Elizabeth Wurtzel, Patti Smith, David Remnick, and other named public figures are referenced."
+        },
+        {
+          "type": "named_music",
+          "detail": "Patti Smith's 'Land: Horses/Land of a Thousand Dances/La Mer(de)' and Shostakovich/Bartók cues are specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "New York Mag, The New Yorker, Columbia University, Rolling Stone, US Weekly, PornHub, Spotify, YouTube, GoodReads, Reddit, Instagram, Twisted Tea, Four Loko, Bubble Shooter, and other brands/platforms are prominently used."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Use of real magazine mastheads, article-style framing, and named literary works/publications may require clearances depending on final production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming",
+        "content_level": "mature, explicit",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or prestige streaming launch, with the article/reaction structure and explicit sexual content making broadcast a poor fit."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Marriage Story",
+        "why": "Like this script, it turns a relationship breakdown into an emotionally escalating public process, but with a more grounded, prestige-drama execution and a similarly actor-driven two-hander core."
+      },
+      {
+        "title": "The Souvenir",
+        "why": "It shares the intimate, self-lacerating, semi-autobiographical energy and the sense of a creative woman trying to separate art, desire, and self-destruction, though this script is much more satirical and commercially hooky."
+      },
+      {
+        "title": "You Hurt My Feelings",
+        "why": "Both scripts mine the anxieties of writers, spouses, and literary-class status games, but this one pushes the premise into far more explicit, scandal-driven, and sexually charged territory."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and easy to market: a literary couple turns autofiction into a public marital weapon. That gives buyers a clean hook with built-in curiosity, controversy, and a strong trailer premise.",
+          "evidence": "The article 'Mommy or Me?' and the later rebuttal article create a clear escalation from private conflict to public spectacle.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a highly ownable voice that blends literary satire, erotic power games, and bodily grotesquerie. That distinct tone is a branding asset because it feels hard to confuse with other relationship comedies.",
+          "evidence": "The cheek-biting motif, the hidden-camera bathhouse sequence, the blood-spit imagery, and the final applause/jeering ambiguity all reinforce a singular identity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "The New York publishing and academic ecosystem is not just backdrop; it is a story engine with status hierarchies, gossip channels, and career consequences. That supports both audience fascination and potential expansion into adjacent stories.",
+          "evidence": "Columbia, New York Mag, The New Yorker, readings, editors, Google alerts, and online backlash all actively shape the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Anya and Chris are both vivid, flawed, and playable, which is crucial for a two-hander. Their contradictions create casting appeal and give the project a strong performance-forward identity.",
+          "evidence": "Anya is ambitious but self-sabotaging; Chris is charming but vain and controlling, and their scenes repeatedly pivot on attraction mixed with resentment.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Commercial viability / production reality",
+          "what_it_means": "The script is largely contained to contemporary interiors and recognizable urban locations, which keeps it within a manageable prestige-budget range despite the provocative content.",
+          "evidence": "Most scenes are in apartments, bars, classrooms, offices, bookstores, and a bathhouse, with only a few river/ferry/hospital set pieces.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Audience appeal",
+          "what_it_means": "The script has strong hate-watch and conversation-starting potential because it is built around public embarrassment, literary gossip, and relationship warfare. That can drive word-of-mouth even beyond the core literary audience.",
+          "evidence": "The reaction montages show strangers, colleagues, and family members all consuming and reacting to the articles.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "Under the scandal, the script is really about authorship, gendered recognition, fertility panic, and the cost of turning life into material. That gives the project thematic weight beyond the surface provocation.",
+          "evidence": "The doctor visit, the fertility anxiety, the publishing gatekeeping, and the final river imagery all point to deeper emotional stakes.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, highly marketable prestige feature with a very ownable voice: a toxic literary marriage turned into public spectacle, with sex, status, and authorship all weaponized in a way that feels both contemporary and conversation-driving. The script’s biggest assets are its clear hook, strong two-lead engine, and richly specific New York publishing world, all wrapped in a tone that is provocative enough to stand out in a crowded marketplace."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget and logistics exposure",
+          "risk": "While mostly contained, the script still carries meaningful production cost through New York/Hudson Valley travel, bathhouse work, crowd scenes, hospital material, night exteriors, and a major animal performer. The finger-amputation gag and blood-heavy climax also require careful practical effects execution.",
+          "evidence": "Train/ferry/river sequences, the Russian bathhouse, Columbia interiors, the bookstore event, the hospital, and Nana’s attack all appear on the page.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The script is saturated with real publications, platforms, brands, and named public figures, which creates clearance work and possible legal sensitivity around depiction of the literary world. That can slow development and complicate distribution if not managed early.",
+          "evidence": "References to The New Yorker, New York Mag, Columbia, Rolling Stone, PornHub, Reddit, Instagram, Patti Smith, David Grann, Janet Malcolm, Annie Ernaux, and others are woven throughout.",
+          "source": "both"
+        },
+        {
+          "theme": "Audience specificity",
+          "risk": "The material is highly legible to a literate, coastal, media-savvy audience, but the publishing-industry satire and name-dense dialogue may limit broad four-quadrant reach. It is marketable, but not universally accessible in the way a more broadly commercial dramedy would be.",
+          "evidence": "Much of the conflict depends on New York literary status, MFA culture, magazine politics, and author-brand anxiety.",
+          "source": "script"
+        },
+        {
+          "theme": "Character sympathy volatility",
+          "risk": "Both leads are intentionally abrasive, manipulative, and sexually transgressive, which is a strength creatively but a risk commercially if the audience cannot find an emotional anchor. The script repeatedly asks viewers to enjoy people who behave badly in public and private.",
+          "evidence": "The article betrayal, cheating, public humiliation, and the final violent domestic fight all push the leads into morally messy territory.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script sustains a very specific heightened register, but it also swings from satire to explicit sex to body horror to near-tragedy. That boldness is distinctive, yet it requires precise execution to avoid feeling overstuffed or tonally unstable on screen.",
+          "evidence": "The piece moves from literary banter to OBGYN humiliation to bathhouse cocaine to dog-mauling to a tragic river drowning and then back to applause at a book launch.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting dependency",
+          "risk": "The project lives or dies on the chemistry and comedic precision of the two leads, plus the ability to sell both eroticism and emotional damage. If the casting is merely adequate, the whole premise loses its edge.",
+          "evidence": "Nearly every major scene is built around Anya and Chris sparring, seducing, or publicly humiliating each other.",
+          "source": "production"
+        }
+      ],
+      "headline": "The main development risk is not the premise; it’s executional control. This is a sharp, provocative feature with real commercial heat, but it sits at the intersection of rights complexity, tone sensitivity, and casting dependency, so the project will need disciplined packaging to preserve its edge without losing audience access."
+    }
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 35739,
+  "outputTokens": 3499,
+  "cost": 0.04254975
+}

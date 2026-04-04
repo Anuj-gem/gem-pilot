@@ -65,20 +65,6 @@ export const SAMPLE_GOT_REPORT: {
         reasoning: 'Stark/Lannister, Ned/Robert, Ned/Catelyn, Jon/Ned, Dany/Viserys — every pairing generates its own story engine. The ensemble is inexhaustible.',
       },
     },
-    comparables: [
-      {
-        title: 'The Sopranos',
-        why: 'Ensemble-driven drama where power struggles between morally gray characters drive narrative tension, similar production ambition and budget tier.',
-      },
-      {
-        title: 'Succession',
-        why: 'Ruthless family dynamics, sharp dialogue, and relationship density that independently generates story from any character pairing.',
-      },
-      {
-        title: 'The Wire',
-        why: 'World density as story engine — the setting itself generates narrative through institutional hierarchy and competing interests.',
-      },
-    ],
     whats_special: {
       strengths: [
         {

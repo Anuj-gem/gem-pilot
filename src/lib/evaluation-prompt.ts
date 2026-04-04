@@ -14,7 +14,6 @@ Before scoring, identify what you're reading. State:
 - **Format**: Feature film, TV pilot (half-hour or hour), limited series, short film, anthology, webseries, or other
 - **Genre**: Primary genre + up to 2 secondary genre tags (e.g., "Supernatural Drama / Coming-of-Age / Southern Gothic")
 - **Tone**: (e.g., grounded, heightened, satirical, magical realist, gritty, comedic, thriller, etc.)
-- **Comparable works**: 2-3 produced film/TV titles this most resembles, and why in one line each
 
 If the submission doesn't function as the format it appears to be (e.g., labeled as a pilot but is actually a collection of unconnected scenes), say so directly.
 
@@ -158,10 +157,7 @@ Return the evaluation as structured JSON. Note: the overall_take field must be a
     "format": "",
     "genre_primary": "",
     "genre_tags": [],
-    "tone": "",
-    "comparables": [
-      {"title": "", "why": ""}
-    ]
+    "tone": ""
   },
   "scores": {
     "audience_appeal_marketability": {"score": 0, "reasoning": ""},

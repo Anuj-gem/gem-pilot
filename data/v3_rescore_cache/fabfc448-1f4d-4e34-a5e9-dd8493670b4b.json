@@ -1,0 +1,224 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "satire",
+        "supernatural thriller"
+      ],
+      "tone": "heightened, darkly comedic, satirical, increasingly grotesque"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial engine in the Paxton family’s wealth, the demon-possession premise, and the escalating domestic siege around D.J. and Hayden. Scenes like the first exorcism reveal, Rudy’s attack, and the FBI sting give it trailer-friendly set pieces, while Carol’s final Stepford-style turn provides a memorable button. The audience is narrower than a four-quadrant horror title because the satire is very specific to class, race, and elite hypocrisy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is easy to state early: a wealthy Texas family hires a demonologist to “fix” their son after a violent incident, only for the mother to discover the exorcist is a manipulative parasite using supernatural control to protect the family’s status. The hook lands by the end of the first act with Andrew’s reveal as a real force, and the story engine stays legible through the FBI pressure, the witness tampering, and the possession battle."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Carol is the standout: her party-host warmth, defensive humor, and eventual feral protectiveness give her a strong arc from accommodating wife to active combatant. D.J. has a compelling split between soulful artist and entitled heir, especially in the rap scene and the later “rich zombie” behavior. Andrew is vivid but more function than contradiction; Hayden is sympathetic but mostly serves as catalyst rather than a fully dimensional co-lead."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by fusing possession horror with class satire, racial hypocrisy, and elite family corruption. The demonologist as a centuries-old parasite embedded in wealth is a strong, risky choice, and the script repeatedly commits to uncomfortable tonal turns, from the “Latina angels” party scene to the final domestic brainwashing. It feels authored rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is highly propulsive once the first disturbance hits D.J.’s room and keeps escalating through Hayden’s injury, the dog attack, the exorcism, the FBI call, the road capture, and the final showdown. Each major sequence changes the power balance, and the ending delivers a full reversal with Andrew’s death and the final hint of D.J. contamination. The only slack is in the middle stretch where the family debates Andrew’s legitimacy, but the scenes are still conflict-driven."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a demonologist who is actually a long-running possession parasite embedded in a wealthy family is fresh and immediately playable. It feels like a concept that could only exist in this exact social ecosystem: Texas money, inherited power, racialized control, and spiritual language weaponized as class maintenance. The final reveal that Andrew is not just a con man but an ancient occupier gives the premise a satisfying inevitability."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Paxton world is specific and story-generating: McMansion wealth, golf-club politics, offshore money, lawyers, caterers, security, and inherited influence all shape the plot. The family’s social hierarchy is visible in scenes with Beverly, Roy, the accountants, the FBI, and the legal team. The world is rich, though it is mostly concentrated inside one household and its immediate orbit rather than a broader institutional ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: a glossy, affluent domestic drama that keeps curdling into supernatural horror and savage satire. The script can move from a joking party exchange to a blood-soaked dog attack to a possession exorcism without losing its identity, because the voice stays sharp and contemptuous of privilege. The repeated comic use of wealth-signaling details, like the Swiss chocolate and the house’s curated luxury, makes the tone ownable."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the possession plot, the script suggests deeper themes about assimilation, self-erasure, inherited power, motherhood, and the moral cost of comfort. Carol’s miscarriages, her chameleon identity, and the family’s long history with Andrew all imply a larger mythology and emotional wound. The depth is real, though the script often states its themes directly rather than withholding them."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Carol/Matt/Andrew triangle is strong, and nearly every pairing generates conflict: Carol vs. Beverly, Carol vs. Roy, Carol vs. D.J., Matt vs. Andrew, and Carol vs. Hayden. The family dinner-party setup, the exorcism scenes, and the legal negotiation all create reusable relationship pressure. This is not a solo-protagonist piece; it has a workable ensemble engine centered on power, loyalty, and manipulation."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The script leans heavily on Carol, Andrew, and Matt as star-driving roles, and the concept benefits from recognizable adults to sell the tonal blend and the prestige-horror angle.",
+        "casting_challenges": [
+          "D.J. is written as a specific age and must credibly perform music and possession beats",
+          "Hayden and Christina require Latina casting and credible emotional specificity",
+          "Andrew requires a performer who can play charming, sinister, and physically authoritative",
+          "Carol needs a lead who can handle comedy, class satire, and horror escalation"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "mostly interior with several exterior driveway/roadway sequences",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "large McMansion interiors and exteriors",
+          "multiple luxury vehicles",
+          "roadside capture sequence",
+          "FBI raid with vehicles and tactical presence",
+          "night exterior at skate ramp",
+          "rain sequence",
+          "hospital/urgent care scene",
+          "possible police/FBI crowd and stunt coordination"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Visible psychic energy waves, room distortion, telekinetic force, possession effects, body contortions, and a few supernatural kill moments.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Blood, dog attack effects, broken glass injury, neck snaps, gun handling, and practical possession/distortion beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "F.B.I. Agent Lopez is fictional, but the script references real institutions and uses a real-life style tip line call; no specific real person by name is central."
+        },
+        {
+          "type": "brand",
+          "detail": "iPhone, Mac, Ford Bronco, Corvette Z06, Infiniti QX80, Range Rover, Glock 19, T-M-Z, and Swiss chocolate are all prominently named."
+        },
+        {
+          "type": "named_music",
+          "detail": "The script references 'Rolling Stone' as a song title and uses hip-hop/rap performance cues, though no clear plot-critical licensed song is required."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "No obvious external IP is required, but the script’s use of branded products and media references would need standard clearance review."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable or streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a prestige horror-satire title for streaming or limited theatrical with strong word-of-mouth."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Get Out",
+        "why": "Like this script, it uses a domestic social setting to expose racialized control and elite predation, with horror mechanics that are inseparable from the satire."
+      },
+      {
+        "title": "Ready or Not",
+        "why": "It matches the contained wealthy-household siege structure, the escalating violence inside a luxury estate, and the darkly comic tone that turns privilege into a horror engine."
+      },
+      {
+        "title": "The Menu",
+        "why": "It shares the class-satire bite, the controlled upscale setting, and the sense that a polished elite world is hiding a grotesque system underneath."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / resonant originality",
+          "what_it_means": "The script has a clean, pitchable premise with a genuinely fresh twist: supernatural possession is used as a mechanism of class control inside a wealthy family. That makes it easy to market and easy to remember.",
+          "evidence": "Andrew’s demonologist reveal, the family’s inherited influence, and the final turn that the demon works for the wealthy system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The voice is ownable. It blends upscale domestic comedy, social satire, and escalating horror in a way that feels specific enough to brand and trailer.",
+          "evidence": "The party scenes, the Swiss chocolate ritual, the “Latina angels” exchange, and the abrupt shifts into possession and violence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Carol is a strong commercial lead: funny, status-conscious, maternal, and increasingly ferocious. She gives the movie an emotional anchor and a clear audience surrogate.",
+          "evidence": "Her party-host persona, her protectiveness over D.J., her resistance to Andrew, and her final refusal to stay passive.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The script has a strong escalation ladder and multiple set pieces that would keep a viewer engaged and give marketing clear moments to sell.",
+          "evidence": "Hayden’s injury, Rudy’s attack, the exorcism, the FBI sting, the roadside capture, and the final shootout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "The Paxton household is more than a backdrop; it is a system of money, inheritance, legal pressure, and social performance that can sustain the plot and support repeat viewing.",
+          "evidence": "The accountants, lawyers, security concerns, offshore money, golf-club politics, and family hierarchy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the supernatural elements, the script is largely contained to one house and a handful of nearby locations, which keeps it in a manageable budget tier for a premium horror title.",
+          "evidence": "Most scenes occur in the Paxton house, with limited exterior road and neighborhood sequences.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Ensemble engine",
+          "what_it_means": "The relationships are inherently combustible, which gives the piece strong replay value and makes the family dynamic itself part of the hook.",
+          "evidence": "Carol vs. Beverly, Carol vs. Roy, Matt vs. Andrew, Carol vs. D.J., and the shifting alliances around Hayden.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, marketable prestige-horror feature with a memorable hook: a wealthy Texas family’s demonologist is actually a supernatural parasite using possession to preserve power, money, and control. The script pairs a contained production footprint with a highly ownable tone — part class satire, part domestic horror, part dark comedy — and gives the movie a strong lead in Carol, whose emotional arc can carry both audience empathy and franchise-level recognition."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget and effects exposure",
+          "risk": "The script is not effects-free; it requires repeated supernatural energy effects, possession contortions, telekinetic kills, blood-heavy violence, a dog attack, and multiple night and rain sequences. That pushes it above a simple contained thriller and into a more expensive horror execution.",
+          "evidence": "The room-shaking possession scenes, Lopez and Lewis’s deaths, Rudy’s attack, the roadside capture, and the final supernatural confrontation.",
+          "source": "production"
+        },
+        {
+          "theme": "Casting dependency",
+          "risk": "The piece depends on a very specific lead performance from Carol and a charismatic, dangerous Andrew. If either role is miscast, the whole tonal balance collapses.",
+          "evidence": "Carol must carry comedy, maternal emotion, and horror; Andrew must be seductive, funny, and terrifying across the entire film.",
+          "source": "production"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script’s satire is sharp, but it also leans into broad, heightened dialogue and extreme reversals. That creates a real risk of tonal whiplash if the production doesn’t land the balance between camp, horror, and social critique.",
+          "evidence": "The rapid shifts from party banter to possession to legal thriller to grotesque violence to Stepford-style ending.",
+          "source": "script"
+        },
+        {
+          "theme": "Character depth imbalance",
+          "risk": "Carol is richly drawn, but Hayden, Christina, Roy, and Beverly function more as pressure points than fully developed engines. That is fine for a feature, but it limits emotional breadth and makes the story rely heavily on the central triangle.",
+          "evidence": "Hayden’s role is mostly catalytic; Roy and Beverly primarily embody the family system; Andrew dominates the mythos.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and clearance housekeeping",
+          "risk": "The script is full of branded objects and named institutions, which is manageable but will require standard clearance attention and could create friction in legal review or product placement decisions.",
+          "evidence": "iPhone, Mac, Range Rover, Corvette, Infiniti, Ford Bronco, Glock, T-M-Z, and the FBI references.",
+          "source": "production"
+        },
+        {
+          "theme": "Mature content and platform narrowing",
+          "risk": "The violence, language, possession imagery, and sexualized power dynamics make this firmly mature. That narrows the natural buyer pool to premium cable, streaming, or specialty theatrical rather than broad broadcast or family-adjacent lanes.",
+          "evidence": "Graphic dog attack, neck snaps, profanity, implied nudity, and the final possession/violence escalation.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is not the premise — it’s execution risk. This is a strong, ownable horror-satire feature, but it needs the right cast, the right tonal discipline, and a producer comfortable with moderate VFX and mature-content positioning to fully realize its commercial upside."
+    }
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 31477,
+  "outputTokens": 3460,
+  "cost": 0.03917775
+}

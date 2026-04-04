@@ -1,0 +1,219 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_tags": [
+        "crime",
+        "revenge"
+      ],
+      "tone": "gritty, heightened, suspenseful, morally dark"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial engine in Minnow’s abduction/revenge pursuit, with immediate genre promises established at the Wolf’s Mouth opening, the truck-stop predation, and the later reveal of a serial-killer network. The hook is easy to pitch and the emotional stakes are legible, but the material is very dark and violent, which narrows the audience relative to a broader four-quadrant thriller."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is understandable early: a damaged drifter uses herself as bait to hunt a highway predator who may be tied to her missing sister. The script keeps clarifying the engine through the FBI meeting, Buck’s profiling, and the transformation sequence, so the story is easy to summarize in two sentences even before the later twist."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Minnow is vivid because she is both vulnerable and ferocious, especially in the truck-cab escape and the final confrontation where she oscillates between grief and brutality. Buck also has a strong contradiction—data-driven, paternal, and morally compromised—but the supporting characters are more functional than deeply dimensional, and Minnow’s arc is more cathartic than psychologically expansive on the page."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold, pulpy approach to serial-killer material by fusing roadside Americana, survival-thriller mechanics, and a late-stage identity twist. The use of music as menace, the truck as a moving prison, and the eventual reveal that Minnow is herself a long-running vigilante killer all show confidence and willingness to escalate beyond standard procedural crime storytelling."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is highly propulsive once Minnow is taken, with repeated reversals: the truck-stop baiting, the abduction, the escape, the Buck partnership, the mountain pursuit, the Trooper betrayal, and the final house reveal. The structure keeps renewing the threat and the objective, and the ending adds a strong final turn with the journalist reveal and Alaska coda."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It feels like a fresh combination of familiar parts: a highway predator story, a damaged female avenger, and a conspiracy of missing women. The late reveal that Minnow is not just a victim but a serial retaliator gives the premise an 'of course' inevitability that recontextualizes the whole script, even if the broad revenge-thriller framework is recognizable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The I-80 corridor is rendered with enough specificity to feel lived-in: truck stops, rest areas, stockyards, motels, homeless encampments, and the bureaucratic indifference of the FBI. The world also has a story engine in the public-record loopholes, long-haul trucking, and transient populations, though it remains more a functional corridor than a deeply layered social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinctive because it mixes bleak exploitation-thriller violence with odd, almost flirtatious roadside banter and a recurring musical motif that becomes psychologically loaded. Scenes like Minnow’s diner seduction, the truck-cab captivity set to Benson Boone, and Buck’s deadpan profiling give the script a recognizable tonal identity that is hard to mistake for a generic crime thriller."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The script suggests deeper material beneath the revenge plot through Minnow’s trauma history, Buck’s guilt over his daughter, the institutional dismissal of marginalized victims, and the final identity inversion. The closing reveal that Minnow is a serial avenger adds substantial hidden depth, though much of that depth is delivered as twist rather than gradually accrued subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Minnow and Buck have a strong lead-partner dynamic built on mutual need, distrust, and shared obsession, and the Trooper adds a useful third point of tension. But the script is still fundamentally driven by Minnow’s singular mission, with most other characters serving the plot rather than generating a broad web of recurring relational material."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The script is concept-forward and could be cast on performance rather than star power, though recognizable talent would help sell the dark subject matter.",
+        "casting_challenges": [
+          "Minnow requires a physically demanding lead who can play vulnerability, seduction, rage, and action convincingly.",
+          "Buck needs an older, believable data-obsessed investigator type with emotional weight.",
+          "The Trooper must read as trustworthy before the reveal and then pivot into menace.",
+          "A child actor is required for the truck-cab sequence and the missing-child backstory."
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Long-distance highway travel across multiple Nevada/Utah-style locations",
+          "Mountain climb sequence with difficult-access terrain",
+          "Salt flats exterior",
+          "Life-flight helicopter rescue",
+          "Hospital trauma sequence",
+          "Cellar/remote-house climax with multiple interior sets",
+          "Truck cab and rig build for extended action coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical, with limited needs for helicopter plates, possible cleanup for rescue shots, and minor enhancement for the mountain and truck-driving continuity.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Blood, injuries, smoke/fire in the truck cab, arrow impacts, throat injury, broken thumb/finger work, and practical restraint effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Big Thief's 'Vampire Empire' and Benson Boone's 'Beautiful Things' are specifically named and function as scene-defining cues."
+        },
+        {
+          "type": "brand",
+          "detail": "Multiple brands and named products are referenced prominently, including Subaru, Longhorns, Colt McCoy, Mastercard, Amazon, Beretta, Jack Daniel's, and Intelius."
+        },
+        {
+          "type": "real_person",
+          "detail": "Colt McCoy is referenced by name."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable",
+        "content_level": "mature, explicit",
+        "series_engine_or_release_model": "As a feature, this fits a festival-to-platform or streamer thriller release model; the material is too violent and morally dark for broadcast, and the music/brand specificity suggests a stylized adult audience."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Wind River",
+        "why": "Like this script, it combines a missing-person investigation, harsh landscape storytelling, and a morally urgent female-centered pursuit, while operating in a grounded, adult thriller lane with strong atmospheric production value."
+      },
+      {
+        "title": "No Country for Old Men",
+        "why": "The highway predator energy, sparse roadside geography, and escalating cat-and-mouse violence are a real match, especially in the way ordinary spaces become existentially dangerous and the antagonist feels like a force rather than a conventional villain."
+      },
+      {
+        "title": "The Night Of",
+        "why": "The script shares that title’s interest in institutional indifference, criminal stigma, and how one bad night can spiral into a larger system of violence and misrecognition, even though this project is more pulpy and action-driven."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / marketability",
+          "what_it_means": "The premise is instantly pitchable and commercially legible: a damaged woman uses herself as bait to hunt a highway predator tied to a missing sibling case. That gives buyers a clean genre promise with a strong emotional engine.",
+          "evidence": "Minnow’s bait-and-hunt strategy, the truck-stop predation, and the missing-sister pursuit are established early and kept central.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Creative originality / tonal specificity",
+          "what_it_means": "The script has an ownable tonal blend—roadside Americana, serial-killer dread, dark humor, and heightened revenge violence—that makes it feel branded rather than generic. That distinctiveness helps it stand out in a crowded thriller market.",
+          "evidence": "The diner flirtation, the truck-cab captivity set to pop music, and Buck’s deadpan profiling voice create a signature flavor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The story keeps changing shape without losing its core objective, which is exactly what a thriller needs to sustain audience engagement. Each act introduces a new layer of danger or revelation, culminating in a strong final identity twist.",
+          "evidence": "Minnow’s abduction, escape, partnership with Buck, mountain pursuit, Trooper betrayal, and the journalist reveal all re-energize the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script has a substantial hidden layer beneath the surface revenge plot, which increases rewatch value and discussion potential. The final reveal reframes the entire story as a meditation on grief, identity, and predation.",
+          "evidence": "The closing journalist scene reveals Minnow’s multiple identities and long history of vigilante killings.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "The I-80 corridor, truck-stop ecosystem, and institutional blind spots create a world that can support sustained tension and audience immersion. The setting is not just backdrop; it actively shapes the story mechanics.",
+          "evidence": "Rest stops, stockyards, homeless encampments, FBI offices, motels, and remote desert terrain all function as story nodes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the scope of the story, the script is still fundamentally a contained contemporary thriller with a manageable cast and a limited number of recurring core players. That keeps it within a plausible premium-streaming budget band rather than requiring tentpole scale.",
+          "evidence": "Most of the action centers on Minnow, Buck, the Trooper, the Trucker, and a handful of supporting roles, with a contemporary setting and mostly practical effects.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Performance opportunity",
+          "what_it_means": "Minnow is a showcase role because she is constantly shifting between seduction, survival, rage, and grief. That gives the project a strong casting hook and awards-adjacent performance potential if executed well.",
+          "evidence": "Her truck-stop baiting, physical escape, and final confrontation all demand a wide emotional and physical range.",
+          "source": "script"
+        }
+      ],
+      "headline": "MINNOW is a dark, propulsive highway thriller with a genuinely ownable voice: part missing-person revenge story, part serial-predator cat-and-mouse, part character study of a woman who has turned trauma into a weapon. The script’s strongest commercial assets are its clear hook, relentless momentum, and late-stage identity reversal, all wrapped in a contemporary, producible road-movie framework that feels premium and brandable."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Violence and moral extremity narrow the audience",
+          "risk": "The script’s explicit brutality, torture, and predatory subject matter make it a strong genre piece but limit broad mainstream reach. It is likely best suited to adult thriller buyers rather than wide theatrical or broadcast-friendly buyers.",
+          "evidence": "Truck-cab captivity, torture on the salt flats, throat injuries, arrow wounds, and the final execution-style violence are all played in detail.",
+          "source": "script"
+        },
+        {
+          "theme": "The story depends on a strong lead and precise performance tone",
+          "risk": "Minnow has to carry seduction, action, trauma, and a late twist without losing audience sympathy. If the casting is off, the whole project could tilt from compelling to alienating.",
+          "evidence": "She is asked to play bait, victim, avenger, and secret serial killer across the same narrative.",
+          "source": "script"
+        },
+        {
+          "theme": "The final twist recontextualizes the story in a way that may divide viewers",
+          "risk": "The journalist reveal that Minnow is actually Margot Reynolds and has been killing for years is a major structural swing. That can be exciting, but it also risks feeling like a retroactive genre pivot if audiences wanted a more straightforward rescue/revenge thriller.",
+          "evidence": "The ending reveals multiple identities, a long vigilante history, and a new Alaska target after the apparent resolution.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The script uses named songs, brands, and real-person references in ways that would require clearance review and could complicate production or distribution if not addressed early.",
+          "evidence": "Big Thief, Benson Boone, Colt McCoy, Mastercard, Amazon, Subaru, Beretta, Jack Daniel's, and Intelius are all named on the page.",
+          "source": "script"
+        },
+        {
+          "theme": "Production exposure from travel and action geography",
+          "risk": "Although contemporary, the script spans many locations and includes difficult terrain, a helicopter rescue, truck builds, and night exteriors. That pushes the budget above a simple contained thriller.",
+          "evidence": "Highway stops, stockyards, hospital, mountain climb, salt flats, remote house, and life-flight sequences all appear.",
+          "source": "script"
+        },
+        {
+          "theme": "Secondary characters are functional rather than deeply generative",
+          "risk": "Buck, the Trooper, and the Trucker all serve the plot effectively, but the ensemble is not especially expansive. That limits long-tail relationship engine value if the project were ever adapted beyond a feature.",
+          "evidence": "Most supporting roles exist to advance Minnow’s mission or reveal information rather than to create a broad web of ongoing dynamics.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development risk is not clarity; it’s calibration. The script is clear, bold, and highly playable as a thriller, but it lives at the intersection of extreme violence, a demanding lead role, and a late twist that radically changes the audience’s understanding of the protagonist. On the production side, the road-movie scope and rights-clearance issues are manageable but real, so the project needs a buyer who wants a dark, adult, high-concept genre piece rather than a broad commercial thriller."
+    }
+  },
+  "weightedScore": 72,
+  "tier": "Optionable",
+  "inputTokens": 28148,
+  "outputTokens": 3471,
+  "cost": 0.0367305
+}

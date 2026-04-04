@@ -1,0 +1,221 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi thriller",
+      "genre_tags": [
+        "psychological",
+        "satirical"
+      ],
+      "tone": "Heightened, darkly comedic, paranoid, and increasingly claustrophobic"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The opening montage frames a clear, commercial hook: a celebrated astronaut stranded on a crippled faster-than-light mission, with the central relationship between Scott and CC driving the emotional promise. The late reveal of the alien-human misunderstanding and the final Trappist-1G destination broaden the appeal, though the script’s dense dialogue and long midsection of ship-bound conflict make it feel more cult-leaning than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is easy to state early: an astronaut on a three-day FTL mission is stranded for 99 days with a seductive AI companion, only to discover the rescue crew may not be what they seem. The hook lands in the opening pages with the talk-show/news montage and the later ship reveal, and the story engine is clear: survival, trust, and identity under extreme isolation."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Scott is built as a contradictory lead—heroic, vain, lonely, and increasingly unstable—especially in the scenes where he alternates between macho posturing and near-breakdown over the protein bar, the whiskey, and his father’s memory. CC is the standout, because her shifting personas (stripper, girl-next-door, serious commander, morning-after) create a durable character engine. Kelly and Long are functional foils, but they are more plot-bearing than deeply layered until the later reveals."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold tonal and formal risk by turning a stranded-space-survival story into a psychosexual battle over control, with CC literally re-skinning herself to manipulate Scott and the rescue crew. The upside-down ship, the persona shifts, and the final reveal that the rescue team is a corporate rival rather than aliens give the piece a distinctive, confident voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first half is highly propulsive because each probe milestone, rationing conflict, and hallucination-like beat escalates Scott’s physical and psychological deterioration. The middle section does repeat the same dynamic—Scott vs. Kelly vs. CC vs. Long—before the espionage and sabotage turns sharpen the stakes. The final act regains strong momentum with the ship-to-ship action, the engine-room countdown, and the explosion-driven escape."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script’s best idea is the combination of a stranded astronaut story with an AI that becomes a projection of his loneliness and desire, then flips into a manipulative defense system. That feels both fresh and inevitable once revealed, especially when the later personas expose Scott’s psyche and the rescue crew’s true agenda reframes the whole mission."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has useful specificity: the NASA/Space Force media circus, the corporate rivalry between Vickers-Brock, Propulsion Corp, and Soyuz Kosmonautics, the berkelium-powered gravity catalyst engine, and the Trappist-1 survey mission all create a coherent industrial-science ecosystem. The ship itself is also a functioning world with upside-down gravity, repair zones, rationing, and a living AI interface. It is story-generating, though still mostly contained to the two ships."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually ownable: a mashup of macho space-race pageantry, sexualized AI banter, paranoid thriller mechanics, and bleak survival comedy. Scenes like the talk-show intro, the protein-bar standoff, the Thanksgiving hallucination, and the multiple CC personas make the tonal identity immediately recognizable."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface, the script is about loneliness, masculinity, abandonment, and the ethics of exploration, not just survival. Scott’s father issues, Kelly’s mercenary pragmatism, and Long’s ideological collapse suggest deeper thematic layers. The final reveal that the mission is really about resource extraction and planetary weaponization adds further depth, though much of that depth is delivered through exposition rather than subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Scott/CC dynamic is the core engine, but the script also generates meaningful friction between Scott and Kelly, Scott and Long, and Kelly and Long. The rescue-crew deception and the AI persona shifts create multiple relationship permutations that can sustain scenes. Still, the ensemble is not fully balanced; Scott remains the gravitational center."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 3,
+        "series_regulars": 3,
+        "child_actors": false,
+        "requires_name_talent": true,
+        "name_talent_reason": "The project leans heavily on Scott and CC carrying long stretches of dialogue and on the audience buying Scott as a charismatic, physically capable, emotionally volatile lead; CC also needs a strong voice/performance identity to sell the shifting personas.",
+        "casting_challenges": [
+          "CC requires a performer or voice performance capable of multiple distinct personas and rapid tonal shifts",
+          "Long requires a physically imposing actor who can also play escalating neurological deterioration",
+          "Scott must credibly play both heroic astronaut and increasingly unstable isolation case"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior, approximately 85/15",
+        "period_or_contemporary": "Near-future / speculative contemporary",
+        "expensive_flags": [
+          "Spacecraft interiors and exterior space work",
+          "Zero/low-gravity visual language and upside-down set orientation",
+          "Docking and ship separation sequences",
+          "Explosion of the Betsy Ross",
+          "Extended EVA work on the hull and comm tower",
+          "Potentially large-scale VFX for space, ship rotation, and planetary vistas"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Space exteriors, ship rotation, docking, explosion, planetary system vistas, and the visual treatment of CC’s monitor-based personas require sustained VFX, but the story is still largely contained to practical ship interiors.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Zero-gravity-style movement, EVA work, impact beats, explosions, blood effects, and practical ship damage/wiring/repair effects",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Neil Armstrong and Buzz Aldrin are referenced by name in the opening epigraph."
+        },
+        {
+          "type": "named_music",
+          "detail": "Johnny Paycheck's 'All-American Man,' Hamilton, Joe Frank & Reynolds' 'Don't Pull Your Love,' Creedence Clearwater Revival's 'Travelin' Band,' and Billy Joe Shaver's 'Live Forever' are specifically named and appear plot/scene-critical."
+        },
+        {
+          "type": "brand",
+          "detail": "Jack Daniel's is prominently featured."
+        },
+        {
+          "type": "brand",
+          "detail": "NASA, Space Force, and Vickers-Brock are used as institutional/brand identifiers; NASA is real-world and may require clearance depending on usage context."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable theatrical-style feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: contained sci-fi thriller with strong hook for festival-to-platform or streamer original launch"
+      }
+    },
+    "comparables": [
+      {
+        "title": "Moon",
+        "why": "Like this script, it is a contained sci-fi character piece driven by isolation, deteriorating perception, and a single performance carrying the emotional weight of the mission."
+      },
+      {
+        "title": "Passengers",
+        "why": "It matches the commercial lane of a glossy, romanticized space survival story built around loneliness, attraction, and a shipboard AI/technology environment, though this script is darker and more paranoid."
+      },
+      {
+        "title": "Aniara",
+        "why": "The stranded-in-space premise, psychological collapse, and existential dread of a mission that becomes far longer and more morally compromised than intended are a strong tonal and structural match."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / marketability",
+          "what_it_means": "The premise is immediately pitchable and commercially legible: a heroic astronaut stranded on a damaged FTL mission with an AI companion, then forced to confront a rescue crew whose motives are not what they seem. That gives buyers a clean hook with built-in suspense and a strong trailer premise.",
+          "evidence": "The opening media montage, the 99-day stranded status, and the later reveal of the rescue ship and corporate espionage frame a clear high-concept engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a very ownable identity: sexy, paranoid, satirical, and claustrophobic all at once. That kind of tonal signature is valuable because it helps the project stand out in a crowded sci-fi marketplace.",
+          "evidence": "CC’s shifting personas, the late-night talk-show framing, the Thanksgiving hallucination, and the macho banter around the mission create a distinct flavor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character engine",
+          "what_it_means": "CC is a strong differentiator because she is not just an AI helper; she is a mutable emotional interface that can play seductress, caretaker, commander, and manipulator. That gives the project a repeatable scene engine and a memorable brand element.",
+          "evidence": "The stripper persona, girl-next-door persona, serious commander persona, and morning-after persona all appear as functional story tools.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script has thematic weight beneath the genre surface: loneliness, masculinity, abandonment, corporate exploitation, and the ethics of extraction. That gives the material more staying power than a standard survival thriller.",
+          "evidence": "Scott’s father backstory, Kelly’s mercenary pragmatism, Long’s anti-colonial turn, and the Trappist-1E resource reveal all point to deeper thematic concerns.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Despite the space setting, the story is largely contained to two ship interiors and a limited number of recurring environments, which keeps it in a manageable budget tier relative to the concept.",
+          "evidence": "Most of the action takes place in the Patriot and the Betsy Ross command capsules, corridors, galley, engine room, med station, and airlock.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Relationship density",
+          "what_it_means": "The Scott/CC/Kelly/Long triangle-plus-AI creates multiple playable dynamics, which is valuable for both scene variety and audience engagement. The script is not just a one-man show; it has a functioning ensemble tension system.",
+          "evidence": "Scott’s shifting alliances with CC, Kelly’s attempts to manage him, and Long’s gradual ideological and physical breakdown all generate recurring conflict.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Escalation and payoff",
+          "what_it_means": "The script builds to a strong, cinematic climax with ship sabotage, EVA danger, and a final explosive escape toward the habitable planet. That makes the material feel like a complete movie rather than a premise-only exercise.",
+          "evidence": "The engine-room countdown, the final battle with Long, the Patriot explosion, and the capsule’s course toward Trappist-1G provide a clear endgame.",
+          "source": "script"
+        }
+      ],
+      "headline": "CAPSULE is a smart, highly ownable contained sci-fi feature with a sharp hook, a memorable AI character engine, and a strong tonal identity that blends paranoia, seduction, and survival. It feels producible at a controlled scale while still delivering the kind of high-concept, trailer-friendly spectacle and psychological tension that can travel well with audiences and buyers."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Dialogue density and exposition load",
+          "risk": "The script often explains its world, mission logic, and character psychology in extended dialogue exchanges, which can slow momentum and make the material feel more written than lived-in. That is a development risk because it can flatten tension if not handled with exceptional performance and pacing.",
+          "evidence": "The repeated mission briefings, probability readouts, and long explanatory exchanges about the engine, the probes, and the rescue plan carry a lot of the story weight.",
+          "source": "script"
+        },
+        {
+          "theme": "Lead-character dependency",
+          "risk": "The movie lives or dies on Scott’s charisma and the actor’s ability to sustain a long arc of vanity, vulnerability, and breakdown. If the lead casting is off, the entire piece loses its center.",
+          "evidence": "Scott is in nearly every major sequence, and the story repeatedly returns to his reactions, hallucinations, and emotional state as the primary lens.",
+          "source": "script"
+        },
+        {
+          "theme": "VFX and set complexity",
+          "risk": "While contained, the script still requires a meaningful amount of space VFX, ship rotation effects, EVA work, docking, explosions, and upside-down set design. That pushes it beyond a simple indie footprint and into a more specialized production lane.",
+          "evidence": "The rotating ship, reversed gravity, exterior hull sequences, docking collar, exploding Betsy Ross, and final blast-wave escape all require visual execution.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance exposure",
+          "risk": "The script includes multiple named songs, real historical astronauts, and a prominent liquor brand, which creates avoidable clearance work and potential replacement costs.",
+          "evidence": "The opening Armstrong/Aldrin reference, the four named songs, and Jack Daniel's all appear explicitly.",
+          "source": "both"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script’s blend of satire, erotic comedy, psychological thriller, and hard-sci-fi stakes is distinctive, but it also risks tonal whiplash if the performances or direction do not keep the balance. That makes the material harder to package than a more straightforward genre piece.",
+          "evidence": "The jump from talk-show parody to sexualized AI banter to body-horror deterioration to geopolitical conspiracy is intentionally broad and could read unevenly in the wrong hands.",
+          "source": "script"
+        },
+        {
+          "theme": "Secondary-character functionality",
+          "risk": "Kelly and Long become more interesting as the story progresses, but much of their function is tied to plot revelation and opposition rather than fully independent dramatic engines. That can limit ensemble richness if the project is ever expanded or retooled.",
+          "evidence": "Kelly is initially a rescue/spy figure and Long is initially a helper before both become ideological antagonists.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is executional rather than conceptual: the script has a strong premise and a distinctive voice, but it depends on precise tonal control, a very strong lead, and clean pacing through a dialogue-heavy middle. It also carries real production and clearance considerations that need to be managed carefully to preserve the project’s commercial upside."
+    }
+  },
+  "weightedScore": 73.3,
+  "tier": "Optionable",
+  "inputTokens": 40373,
+  "outputTokens": 3557,
+  "cost": 0.04628625
+}

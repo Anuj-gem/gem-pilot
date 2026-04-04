@@ -43,13 +43,13 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         <div className="sm:flex sm:items-center sm:justify-between gap-6">
           <div className="mb-4 sm:mb-0">
             <h3 className="text-base font-bold text-white mb-1">
-              See your full evaluation
+              Unlock the full producer read
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)]">
-              Unlock the complete report — comparables, development notes, production analysis, and more.
+              Your score is free. Subscribe to see what a development exec would actually say about your script.
             </p>
             <ul className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
-              {['Full reports', 'Unlimited evals', 'Leaderboard access'].map(item => (
+              {['Full development reads', 'Production analysis', 'Publish to leaderboard'].map(item => (
                 <li key={item} className="flex items-center gap-1.5 text-xs text-[var(--gem-gray-300)]">
                   <CheckCircle size={12} className="text-emerald-400 shrink-0" />
                   {item}

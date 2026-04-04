@@ -1,0 +1,223 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy drama",
+      "genre_tags": [
+        "coming-of-age",
+        "sports"
+      ],
+      "tone": "mythic, earnest, heightened, sentimental"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear emotional promise in Dakota’s search for identity and belonging, anchored by the football/recruiting thread and the spiritual quest. The homecoming-game climax, the dog/warrior bond, and the reservation-school setting give it a family-friendly inspirational lane, but the very specific Native-history mythology and long dream-vision structure narrow the audience compared with a more conventional sports drama."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise becomes legible early: a Lakota teen quarterback with concussion-induced visions is guided by ancestral imagery and a spirit dog toward a sacred bundle and a sense of self. The opening 1867 prologue, the 2011 birthday/recruiting setup, and the recurring cross-cutting between Dakota and Ko’la establish the engine clearly, though the time-shifted structure takes a while to fully orient."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Dakota is a strong lead because he is cocky, vulnerable, defensive, and yearning for legitimacy, especially in the restaurant scene where he performs his 'Captain Native America' persona and later admits he’s not a 'real Indian.' Wach and Sage give him contrasting pressures—faith and skepticism—while Curly functions as a memorable emotional companion. For a feature, the arc resolves cleanly, though the supporting cast is more functional than deeply layered."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by fusing Lakota history, reincarnation, football, and a spirit-animal mythology into a single narrative. The repeated mirror structure between Dakota and Ko’la, the flute as a cross-era object, and the idea of a dog as a warrior guide are distinctive choices. The voice is confident and unapologetically specific, even when the execution is occasionally over-explanatory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script has strong forward motion in its recurring pattern of blackout/awakening, each time advancing Dakota closer to Bear Butte, the monastery, and the bundle. The football stakes and the spiritual stakes are both clear, but the middle section becomes repetitive through multiple dream transitions and explanatory exchanges, which softens urgency before the final convergence."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of a modern reservation quarterback, a 19th-century Lakota/Irish parallel romance, and a sacred object that bridges identity and history feels fresh and commercially ownable. It is not just a novelty layer; the football and spiritual threads are structurally intertwined. Still, the script often states its themes directly, which reduces the sense of inevitability that would push it into the highest tier."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific world across the reservation school, museum, powwow, monastery, trailer park, and Bear Butte ceremony space. The winter counts, medicine bundle lore, black-market artifact angle, and football culture create a story-generating ecosystem. The world is rich, though some of the institutional details are more illustrative than deeply dramatized."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusually earnest and mythic, but it is also grounded by contemporary teen banter, coach comedy, and the bluntness of Sage’s dialogue. Scenes like the 'Free Bird' chant at the diner and the coach’s motivational swagger give it a recognizable flavor. The tonal identity is distinct, though the script sometimes oscillates between sacred reverence and broad comic shorthand."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the surface quest, the script is about inheritance, cultural memory, adoption/foster care, and the difference between performance and identity. The reveal of BB’s lineage, the monastery archive, and the bundle’s survival all suggest a deeper historical and emotional architecture. The final sense that Dakota is not just finding an object but a home gives the story real slow-burn resonance."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Dakota/Wach/Sage triangle has workable recurring energy, and Curly adds a strong nonverbal relationship engine. Coach Thomas also gives the present-day world a useful authority figure. But the script is still fundamentally driven by Dakota’s interior journey rather than a truly combinatorial ensemble where any pair of characters can generate independent story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "requires_name_talent": false,
+        "name_talent_reason": "The material is concept-driven and culturally specific rather than star-dependent; however, a recognizable lead could help market an earnest inspirational fantasy-drama.",
+        "casting_challenges": [
+          "Lakota authenticity is essential for Dakota, Wach, Sage, Chatan, Ko’la, Thunderhead, and the Leader",
+          "Betty Burkhart requires a strong Irish accent and period physicality",
+          "Curly requires a highly trained dog performer with significant screen presence",
+          "The script depends on a convincing young athlete for Dakota and a believable football coach"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 6:8",
+        "period_or_contemporary": "both contemporary and period (1867-1877)",
+        "expensive_flags": [
+          "period prairie and village recreations",
+          "battle aftermath imagery and large historical crowd gathering at Little Big Horn",
+          "powwow event with multiple tribes and contest activity",
+          "Bear Butte sacred site exteriors",
+          "private jet travel",
+          "monastery and cemetery locations",
+          "football stadium/game coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Spirit transformations, smoke morphs, hawk imagery, meteor shower, dream-vision transitions, and the fire-wall sequence at the end would require compositing and some creature/atmospheric enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Fire pit ignition, flaming arrows, smoke/fire effects, wolf attack choreography, football action, and practical blood/injury effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Lynyrd Skynyrd's 'Free Bird' is repeatedly referenced and sung, and the chant-to-song connection is plot-adjacent."
+        },
+        {
+          "type": "brand",
+          "detail": "Multiple brand and institutional references appear, including Air Force, cell phone/tablet use, German Shepherd, and Pow Wow Hotel and Casino."
+        },
+        {
+          "type": "real_person",
+          "detail": "Historical figures and events are referenced by name, including Sitting Bull, Crazy Horse, Red Cloud, and Little Big Horn."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script uses historical Native cultural material and specific ceremonial terminology that may require sensitivity review and clearances depending on production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "As a feature, it plays as an inspirational mythic drama with sports appeal; as a release model, it fits festival-to-platform or prestige streaming more naturally than wide theatrical."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Green Knight",
+        "why": "Like this script, it uses a mythic quest structure, symbolic objects, and a heightened spiritual tone to explore identity rather than just plot mechanics, while remaining a medium-budget, prestige-leaning fantasy drama."
+      },
+      {
+        "title": "Field of Dreams",
+        "why": "The combination of sports, family legacy, and supernatural visitation makes this a real tonal and commercial cousin, especially in how the emotional payoff comes from reconciliation and belief rather than competition alone."
+      },
+      {
+        "title": "Smoke Signals",
+        "why": "The Native American coming-of-age perspective, reservation specificity, and blend of humor, pain, and cultural memory make it a strong match, though this script is more overtly fantastical and sports-driven."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook and resonant originality",
+          "what_it_means": "The script has a highly ownable premise: a modern Lakota quarterback’s identity crisis is fused with ancestral memory, sacred objects, and a spirit-guide mythology. That combination gives buyers a clean elevator pitch and a fresh lane in the inspirational fantasy space.",
+          "evidence": "Dakota’s 2011 recruiting/birthday setup, the recurring blackouts into Ko’la’s life, and the flute/medicine bundle bridge between eras.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The story is built on themes of inheritance, adoption, cultural continuity, and self-recognition, which gives it emotional durability beyond the surface quest. That depth supports strong audience attachment and repeat-viewing value.",
+          "evidence": "Dakota’s foster-care backstory, the monastery reveal, BB’s lineage, and the final recognition that home is not just a place but a self.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density and texture",
+          "what_it_means": "The reservation school, museum, powwow, Bear Butte ceremony, trailer park, and monastery create a world that feels specific and expandable. That specificity makes the project feel less generic and more brandable.",
+          "evidence": "The Winter Count room, the powwow hotel/casino, the sacred site at Bear Butte, and the reservation football program.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "The story is ambitious but not effects-heavy in a way that would force it into tentpole territory. Most of the value comes from performance, atmosphere, and a few contained supernatural set pieces, which keeps it viable for a prestige indie or streaming budget.",
+          "evidence": "The spirit transformations, fire pit sequences, and wolf attack are the main technical lifts; most scenes are dialogue-driven and location-based.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Dakota is commercially useful because he is both aspirational and wounded: a gifted athlete with swagger, insecurity, and a real need for belonging. That makes him easy to root for and gives the film a strong emotional center.",
+          "evidence": "His 'Captain Native America' persona, his fixation on football and recruiting, and his resistance to the spiritual explanation until the end.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Relationship engine",
+          "what_it_means": "The Dakota/Wach/Sage triangle gives the story a workable present-day support system with contrasting energies: faith, skepticism, and guarded vulnerability. That helps the film stay conversational and accessible between the more mythic passages.",
+          "evidence": "Their diner scene, the limo exchanges, and the repeated arguments over the bundle and ceremonies.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a recognizable blend of sacred myth, sports-movie momentum, and blunt contemporary humor. That tonal mix can be a selling point because it distinguishes the project from standard inspirational dramas.",
+          "evidence": "The 'Free Bird' chant, Coach Marshall’s motivational patter, and the solemn spirit-vision material all coexist in the same script.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a distinctive, emotionally legible feature with a real commercial lane: a spiritually charged coming-of-age sports drama rooted in Lakota identity, memory, and belonging. The script’s biggest asset is that it feels both culturally specific and broadly inspirational, with enough mythic texture and contained production scale to attract a prestige streamer or specialty producer looking for something ownable."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Repetition and pacing drag in the middle",
+          "risk": "The repeated blackout/awakening structure and explanatory dream conversations create a risk of audience fatigue before the story reaches its final convergence. In development terms, this can weaken retention and make the feature feel longer than it is.",
+          "evidence": "Multiple successive transitions between Dakota and Ko’la, with similar beats of awakening, guidance, and reorientation, recur across the middle and late sections.",
+          "source": "script"
+        },
+        {
+          "theme": "Over-explanation of theme and mythology",
+          "risk": "The script often states its spiritual thesis directly, which reduces mystery and can make the material feel didactic rather than cinematic. That can limit emotional surprise and make the film feel more like a lesson than an experience.",
+          "evidence": "Repeated dialogue about the circle, the true self, medicine, and the soul remembering itself, especially in the Chatan/Wach/Samuel exchanges.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting and authenticity sensitivity",
+          "risk": "The project depends on culturally specific performances across multiple Native roles, plus a period Irish character and a convincing animal performer. That raises the bar for casting and cultural consultation, and any misstep would be highly visible.",
+          "evidence": "Lakota dialogue/subtitles throughout, historical tribal figures, Betty Burkhart’s Irish accent, and Curly’s central role.",
+          "source": "both"
+        },
+        {
+          "theme": "Moderate production complexity",
+          "risk": "While not a VFX-heavy tentpole, the script still requires period recreations, sacred-site exteriors, football coverage, fire and smoke effects, and animal work. That pushes it above a simple indie footprint and requires disciplined budgeting.",
+          "evidence": "1867-1877 prairie material, Little Big Horn gathering imagery, Bear Butte ceremony, stadium sequences, flaming arrows, and wolf attacks.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance exposure",
+          "risk": "The use of named songs, historical figures, and culturally sensitive material creates a nontrivial clearance and sensitivity burden. That is manageable, but it adds legal and development friction.",
+          "evidence": "Free Bird, Sitting Bull, Crazy Horse, Red Cloud, Little Big Horn, and the monastery/history material.",
+          "source": "both"
+        },
+        {
+          "theme": "Feature ending is emotionally satisfying but not franchise-generating",
+          "risk": "The story resolves cleanly as a feature, but it does not naturally open into a larger ongoing engine. That is fine for a film, but it limits sequel or series expansion unless the concept is restructured.",
+          "evidence": "The final homecoming, bundle return, and identity resolution provide closure rather than a new ongoing premise.",
+          "source": "script"
+        }
+      ],
+      "headline": "The core development challenge is balance: the script has a powerful, distinctive mythic premise, but it leans hard on repetition and explanation to carry the audience through the spiritual mechanics. It also sits in a moderate-complexity production lane that will require careful casting, cultural consultation, and budget discipline to preserve the material’s authenticity and emotional impact."
+    }
+  },
+  "weightedScore": 67,
+  "tier": "Optionable",
+  "inputTokens": 41400,
+  "outputTokens": 3509,
+  "cost": 0.0468405
+}

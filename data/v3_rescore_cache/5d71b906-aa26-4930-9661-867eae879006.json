@@ -1,0 +1,216 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "TV pilot (hour)",
+      "genre_primary": "Supernatural thriller",
+      "genre_tags": [
+        "psychological drama",
+        "time travel"
+      ],
+      "tone": "grounded, eerie, emotionally intense, slightly satirical"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is legible and commercially legible: a high-achieving college student is pulled into a campus mystery involving a dead student, a creepy professor, and apparent time displacement. The Morgan College setting, the Discord/ghost-chat culture, and the final reveal that Jessica can access the past give it a clear YA-adjacent thriller promise, though the emotional and conceptual density makes it narrower than a broad broadcast procedural."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early with Jessica being chased by a black void on campus, then sharpened by the Discord lore around Henry Maddox and Professor Maddox’s claim that Jessica may be the mysterious J.W. The episode engine becomes clear by the end: Jessica can move through time/psychic states tied to trauma, and Maddox is the gatekeeper to that mystery."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jessica is a strong lead because she is high-functioning, funny, and then destabilized in a way that feels specific in the dorm scenes with Kerri and the later breakdowns with Maddox. Kerri is a good stabilizing foil, Donovan has useful awkwardness and obsession, and Henry/Maddox create a durable father-son mirror, but the pilot still centers heavily on Jessica and Maddox rather than a fully balanced ensemble."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by fusing campus-goth atmosphere, trauma psychology, time slippage, and a meta-Discord mythology around a dead student. The repeated use of the black void, the steam tunnels, and the emotional-therapy/time-travel linkage gives it a distinctive authorial stamp rather than a generic supernatural setup."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The episode keeps introducing new destabilizing information: the campus chase, the Discord lore, the tunnel screening of Henry’s suicide, the temporal shift into 1999, and the final confrontation with Maddox. It does have some explanatory stretches in the middle, especially around Maddox’s therapy language and the campus investigation beats, but the ending clearly opens the series engine."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The strongest version of the premise is surprisingly inevitable: a hyper-competent student with unresolved maternal trauma discovers that emotional dysregulation is the mechanism for time travel, while a professor weaponizes that vulnerability. The combination of campus social systems, trauma theory, and literal temporal displacement feels fresh rather than merely novel."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Morgan College feels like a lived-in ecosystem with elite-academic status markers, dorm hierarchies, Discord gossip, steam tunnels, old yearbooks, and a hidden frat house that used to be a dorm. The campus history and social rituals are story-generating, though the world is still primarily serving the central mystery rather than operating as a fully independent institutional machine."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: collegiate prestige satire, eerie supernatural dread, and emotionally raw trauma drama all coexist in the same scenes. The opening drunken Martin Eden riff, the Discord mockery, and the later horror-tinged time-slip sequences create a tonal identity that would be recognizable from a single scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot suggests deeper layers beneath the surface mystery: Jessica’s mother’s illness, Maddox’s grief over Henry, the possibility that trauma is both symptom and mechanism, and the idea that the campus itself is a kind of psychic machine. The final beat with Maddox calling her J.W. implies a larger mythology that can sustain long-form revelation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Jessica/Kerri friendship has real snap, and Jessica/Donovan/Maddox/Henry form a useful web, but the pilot is still fundamentally driven by Jessica’s experience. The supporting relationships are functional and sometimes intriguing, yet they do not yet generate the kind of combinatorial ensemble energy that would make every pairing equally rich."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": false,
+        "requires_name_talent": false,
+        "name_talent_reason": "The script is concept-forward and the lead roles are playable by emerging talent; no single role is written as a star vehicle that must be filled by a major name to make the premise work.",
+        "casting_challenges": [
+          "Jessica must carry substantial emotional range and physical distress across the episode",
+          "Maddox needs to read as both charismatic and unsettling, with authority and intimacy",
+          "Henry and Jessica’s mother require strong age-specific casting in multiple time periods",
+          "The mother/younger-self flash material implies careful age continuity and resemblance considerations"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary with 1999 period sequences",
+        "expensive_flags": [
+          "period recreation for 1999 campus scenes",
+          "temporal-reality visual transitions",
+          "steam tunnels and underground corridor build",
+          "frat house interior/exterior plus possible fire-damaged history",
+          "multiple campus buildings and dorm interiors",
+          "flashback/flash-cut sequences requiring distinct period styling"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "The black void monster, reality overlap with two moons/dual landscapes, temporal shifts, and disappearance effects require compositing and visual design, though not on a heavy-CGI scale.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical lighting shifts, door locks, tunnel blackout beats, phone signal failures, and the suicide video playback are the main effects needs.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Krzysztof Penderecki is referenced by name through 'Threnody for the Victims of Hiroshima.'"
+        },
+        {
+          "type": "named_music",
+          "detail": "A specific pop song is sung drunkenly in the opening, but the title is not named in the excerpt."
+        },
+        {
+          "type": "brand",
+          "detail": "Solo cup, Prius, Twilight, Discord, YouTube, and The Matrix are all named or clearly branded references."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The use of Twilight and The Matrix as explicit cultural references may be clearable as dialogue, but they are prominent enough to note."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mystery-thriller driven by Jessica learning to access the past through trauma-linked temporal events while uncovering the campus mythology around Henry and Maddox."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Yellowjackets",
+        "why": "Like this script, it combines psychological trauma, a mystery box structure, and a dual-time framework where emotional damage and survival logic drive the supernatural/uncanny engine."
+      },
+      {
+        "title": "Legion",
+        "why": "This matches the script’s willingness to make mental-state instability, perception shifts, and reality-bending visuals part of the storytelling grammar rather than just background characterization."
+      },
+      {
+        "title": "The OA",
+        "why": "The pilot shares that show’s blend of intimate emotional mystery, time/space disruption, and a belief that personal trauma can open a portal into a larger metaphysical system."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is easy to pitch and has a built-in engine: a hyper-competent student discovers that her emotional dysregulation lets her move through time and into a campus mystery. That gives buyers a clean hook with episodic and serialized potential.",
+          "evidence": "Jessica’s campus chase, the Discord mythology around J.W., the 1999 jump, and the final reveal with Maddox all establish the engine on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a brandable identity: elite-college satire, eerie supernatural dread, and intimate trauma drama are fused into one lane. That makes it easier to market as something ownable rather than generic genre fare.",
+          "evidence": "The opening drunken Martin Eden riff, the Discord jokes, the black void chase, and the therapy-like time travel all coexist in the same episode.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The pilot implies a larger mythology about grief, memory, and inherited instability, which is valuable for series longevity. It suggests the show can deepen without changing its core premise.",
+          "evidence": "Maddox’s grief over Henry, Jessica’s mother’s illness, and the repeated framing of trauma as the mechanism behind the phenomena.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "Morgan College feels like a specific ecosystem with its own social codes, history, and hidden spaces. That supports ongoing story generation and gives the series a strong setting identity.",
+          "evidence": "The steam tunnels, yearbooks, Discord lore, hidden frat house, and campus prestige details all build a textured environment.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Despite the supernatural premise, the show is mostly contained to a campus, dorms, offices, and a few recurring interiors. That keeps the budget in a manageable premium-cable/streaming range rather than pushing it into effects-heavy spectacle.",
+          "evidence": "Most scenes are in dorms, classrooms, offices, tunnels, and nearby campus exteriors, with only moderate VFX needs.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Character engine",
+          "what_it_means": "Jessica, Kerri, Donovan, Henry, and Maddox create a useful relational web with built-in tension, attraction, and mistrust. That gives the series enough interpersonal friction to sustain episodes beyond the mystery.",
+          "evidence": "Jessica/Kerri’s friendship, Donovan’s obsession, Henry’s attraction/paranoia, and Maddox’s manipulative authority all create distinct dynamics.",
+          "source": "script"
+        }
+      ],
+      "headline": "BOUNDARIES has a strong, ownable hook: a high-achieving college student discovers that her trauma can literally bend time, and the campus around her is hiding a mythic, emotionally charged secret. It feels premium and brandable, with a distinctive tonal blend, a contained production footprint, and enough mythology to support a long-running serialized thriller."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Lead-only propulsion",
+          "risk": "The pilot is compelling, but it is heavily dependent on Jessica’s perspective and emotional volatility. If the lead casting doesn’t land, the whole series loses a lot of its force because the supporting ensemble is not yet equally engine-like.",
+          "evidence": "Nearly every major turn is filtered through Jessica’s reactions, from the opening chase to the final door-shut beat with Maddox.",
+          "source": "script"
+        },
+        {
+          "theme": "Expository density",
+          "risk": "The middle of the episode leans on explanation through Maddox, Discord lore, and trauma language, which can slow momentum and make the mythology feel more spoken than dramatized. That creates a risk of audience fatigue if the series keeps front-loading interpretation.",
+          "evidence": "The long Maddox conversations about Henry, J.W., trauma, and emotional dysregulation carry a lot of the conceptual load.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script is distinctive, but it is balancing satire, horror, campus drama, and psychological melodrama at once. That is a strength creatively, but it also creates a risk of tonal drift if future episodes do not keep the blend disciplined.",
+          "evidence": "The script moves from drunken comedy to ghost-story dread to assault tension to therapy-like metaphysics within the same episode.",
+          "source": "script"
+        },
+        {
+          "theme": "Production complexity from temporal effects",
+          "risk": "The show is not effects-heavy in a blockbuster sense, but the dual-reality visuals, black void monster, time slips, and 1999 recreations will still require careful design and budget discipline. The concept is contained, but not cheap.",
+          "evidence": "Two moons, overlapping landscapes, the void creature, tunnel blackouts, and period campus scenes all require visible execution.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance exposure",
+          "risk": "The script uses several recognizable cultural references and a named composer piece, which is manageable but still adds clearance work. It is not a dealbreaker, but it is a real development/admin consideration.",
+          "evidence": "Penderecki, Twilight, The Matrix, Discord, YouTube, Prius, and branded party imagery are all explicitly referenced.",
+          "source": "both"
+        },
+        {
+          "theme": "Platform positioning",
+          "risk": "The material is too dark, serialized, and psychologically specific for broadcast, but it may need a buyer comfortable with ambiguity and genre hybridity. That narrows the lane to premium cable or streaming.",
+          "evidence": "The suicide video, assault implication, trauma-driven time travel, and mature campus material all push it away from broad network sensibilities.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is not the idea — it’s the execution balance. The script needs a buyer and production team comfortable with a psychologically dense, genre-blending series that depends on a very specific lead performance, disciplined mythology delivery, and moderate visual execution to stay coherent and marketable."
+    }
+  },
+  "weightedScore": 72,
+  "tier": "Optionable",
+  "inputTokens": 19529,
+  "outputTokens": 3280,
+  "cost": 0.02940675
+}

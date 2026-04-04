@@ -1,0 +1,213 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "TV pilot (half-hour)",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "meta-industry",
+        "fan-culture"
+      ],
+      "tone": "self-aware, affectionate, satirical, lightly dramatic"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is immediately legible to a specific audience: fandom, collectibles, indie filmmaking, and IP obsession, especially in the opening pitch-reel gag with Draco and the Kickstarter tag. But the premise is niche by design, and the script’s pleasure depends on familiarity with fan-film culture and genre nerdery rather than a broad, universal engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise is clear early: a collectibles-store owner and his circle try to mount a Space Fleet fan film using real actors, while a deposition frame suggests legal trouble. The opening pitch reel, the North Carolina store, and Kevin’s pivot from bootleg props to 'real film' establish the story engine cleanly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Kevin is an energetic hustler with delusion and charm, especially in the bar speech and his relentless pitching; Jon has a grounded, wounded professionalism that plays well in the Big 5 and garage scenes; Tam adds intelligence and bite. The ensemble has durable friction, though Kevin is the clearest engine and some supporting players are more functional than deeply surprising."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "A fan-film comedy framed by depositions and built around the absurdity of unauthorized franchise devotion is a fresh angle, and the script commits to the bit with mock-legal openings, pitch-reel inserts, and a finale that turns the whole enterprise into a sales pitch. The boldness is in treating fan culture as both ridiculous and emotionally sincere."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves briskly through Kevin’s discovery, Jon’s recruitment, Armando’s appearance, and the pivot to making a trailer, with each scene adding a new pressure point. The deposition frame creates forward curiosity, and the ending lands on a new story door rather than a closed resolution."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of fan-film obsession, legal jeopardy, and sincere nostalgia feels novel and immediately understandable, especially in the contrast between the grim deposition room and the earnest warehouse production. It is not a totally unprecedented premise, but the specific blend of IP worship and small-business hustle has a strong 'of course this exists' quality."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Marshall Comics is a specific, story-generating world: memorabilia, props, Kickstarter culture, conventions, shipping orders, and the social hierarchy of collectors all feed the plot. The fan community, the store, and the deposition/legal aftermath create a textured ecosystem rather than a generic workplace."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct tonal blend of affectionate satire, geek-pathos, and mock-epic absurdity, especially in the cut between the ominous Draco pitch reel and the mundane warehouse/store reality. Scenes like Manny’s emotional monologue about Wingood and Kevin’s grandiose bar speech give it a recognizable voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material beneath the comedy: Jon’s abandoned film career, Sarah’s concern about Hollywood, Tam’s hidden ambition, and Manny’s identity through representation. Still, on the page the pilot mostly plays the surface-level comic engine, with only moderate evidence of a larger dramatic architecture."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Kevin/Jon is a strong push-pull dynamic, Manny/Kevin creates comic power struggles, Jon/Tam has mutual recognition, and Jon/Sarah adds domestic stakes. The ensemble can generate multiple combinations of conflict, though Kevin remains the gravitational center."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 3,
+        "series_regulars": 6,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The script is built around recognizable-but-not-essential character actors and a single legacy guest role (Armando Garcia), but it does not require marquee star power to function on the page.",
+        "casting_challenges": [
+          "Armando Garcia is written as an older legacy genre actor with specific gravitas and fan recognition.",
+          "Tam requires a sharp, youthful presence with comedic intelligence and cultural specificity.",
+          "Dani is a child role with meaningful dialogue and scene presence."
+        ]
+      },
+      "locations": {
+        "distinct_count": 9,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Space/ship opening sequence",
+          "Potentially large prop and costume inventory",
+          "Bar/restaurant scenes with extras",
+          "Warehouse set dressing with extensive collectibles"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Opening space imagery, pitch-reel style spaceship visuals, and inserted Space Fleet episode footage are implied; the main body is largely practical and low-VFX.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical props, costumes, laser pistol/rifle hero props, and mock sci-fi production inserts.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Space Fleet is a fictional franchise within the script, but the entire premise is built around unauthorized use of a recognizable sci-fi property analogue and fan-film culture."
+        },
+        {
+          "type": "brand",
+          "detail": "Big 5 Sporting Goods, Starbucks, Subaru Outback, iMac, Vimeo, Kickstarter, Reddit, Twitter, Costco, Netflix, AFI, and New York Times are all named."
+        },
+        {
+          "type": "real_person",
+          "detail": "Derek is referenced as a real-world Hollywood roommate who is 'making Superman,' and the script also references Armando Garcia as a fictional actor within the story world."
+        },
+        {
+          "type": "named_music",
+          "detail": "No clearly plot-critical licensed songs are named, but the script repeatedly calls for iconic sci-fi theme music and heroic score cues."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Serialized workplace/ensemble comedy-drama driven by the making of the fan film, the legal fallout, and the shifting alliances inside the collectibles-store ecosystem."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Offer",
+        "why": "Like this script, it turns behind-the-scenes movie-making into a comic-industrial process with a lot of industry in-jokes, but it also depends on a real production obsession and a mix of earnestness and absurdity."
+      },
+      {
+        "title": "Party Down",
+        "why": "The ensemble lives in a service-industry hustle world where ambition, humiliation, and side dreams collide in contained locations, and the comedy comes from people trying to look bigger than their circumstances."
+      },
+      {
+        "title": "Fanboys",
+        "why": "It shares the affectionate, self-aware fandom perspective and the emotional sincerity beneath the jokes, while also being a niche, IP-adjacent comedy aimed at genre devotees."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is easy to pitch and easy to program: a fan-film hustle becomes a legal/comic engine, which is attractive to buyers looking for a clean, high-concept workplace comedy with a built-in audience.",
+          "evidence": "The opening pitch reel, the deposition frame, and Kevin’s pivot to making a 'real film' with real actors establish the engine immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has an ownable voice that blends mock-epic fandom, business absurdity, and sincere emotional attachment to genre storytelling, which makes it brandable and easier to market than a generic comedy.",
+          "evidence": "The cut from Draco’s ominous villain monologue to a Kickstarter pitch, plus Manny’s heartfelt speech about Wingood and Kevin’s grandiose bar performance, define the tone.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "Marshall Comics and the surrounding fan ecosystem feel like a real, expandable world with built-in episode fuel, recurring business pressures, and a community of collectors and devotees.",
+          "evidence": "The store warehouse, props, memorabilia, Kickstarter pages, autograph event, and shipping orders all function as story infrastructure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Relationship density",
+          "what_it_means": "The ensemble has multiple playable pairings, which is valuable for a series because it creates many possible comic and emotional combinations without needing new external engines every episode.",
+          "evidence": "Kevin/Jon, Kevin/Manny, Jon/Tam, and Jon/Sarah each generate distinct friction and warmth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Most of the script is contained in practical interiors with modest technical demands, which lowers budget risk and makes the concept viable for cable/streaming or a lean indie series model.",
+          "evidence": "The story lives in the law office, warehouse/store, bar, car, house, and a few simple exterior moments, with only minor VFX implied.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent audience identity",
+          "what_it_means": "The script speaks directly to fandom, collectibles culture, and aspirational creative misfits, which gives it a clear niche audience that can be mobilized if positioned correctly.",
+          "evidence": "Kevin’s Kickstarter obsession, Manny’s lifelong identification with Space Fleet, and Tam’s hidden creative ambition all target that audience lane.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharply ownable, low-to-moderate cost ensemble comedy with a built-in fandom audience and a very clear tonal identity. The combination of a legal-frame hook, a collectibles-store world, and a sincere behind-the-scenes showbiz hustle gives it real series potential and a strong pitchable identity for streaming or premium cable."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Niche audience concentration",
+          "risk": "The script’s appeal is strongest for genre fans and people already fluent in fan-film culture, which narrows the immediate commercial lane compared with broader workplace or family comedies.",
+          "evidence": "Much of the humor depends on Space Fleet lore, Kickstarter behavior, prop collecting, and the emotional logic of fandom.",
+          "source": "script"
+        },
+        {
+          "theme": "Lead-engine dependence",
+          "risk": "Kevin carries much of the propulsion, and if the casting doesn’t land his specific mix of delusion, charm, and salesmanship, the whole project can flatten.",
+          "evidence": "Kevin drives the discovery, the pitch, the recruitment, the bar speech, and the final sales pitch; many scenes orbit his momentum.",
+          "source": "script"
+        },
+        {
+          "theme": "Limited depth on the page",
+          "risk": "The pilot hints at richer emotional material, but much of it remains in setup mode, so the long-term dramatic payoff is not yet fully proven on the page.",
+          "evidence": "Jon’s abandoned directing career, Sarah’s concerns, and Tam’s ambitions are introduced, but the pilot mostly resolves into the trailer-shoot premise.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and legal exposure",
+          "risk": "The entire premise is built around unauthorized franchise use and public-facing fan production, which creates obvious clearance, legal, and brand-sensitivity concerns for any real production.",
+          "evidence": "The deposition scenes, the repeated 'not authorized' language, the Kickstarter/publicity emphasis, and the explicit attempt to use the real actors all foreground legal risk.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting and audience-accessibility constraints",
+          "risk": "The script benefits from older legacy-actor energy, a sharp young female foil, and a believable child role, but those parts need precise casting to avoid feeling like types.",
+          "evidence": "Armando, Tam, and Dani all have specific tonal functions and must land quickly in a dialogue-heavy pilot.",
+          "source": "script"
+        },
+        {
+          "theme": "Production/legal realism of the premise",
+          "risk": "As written, the story’s central business idea is commercially funny but legally precarious, which could make buyers wary unless the rights posture is clearly controlled.",
+          "evidence": "Kevin openly discusses raising millions around Space Fleet, using real actors, and assuming the studio won’t care.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is not the premise clarity; it’s the combination of niche audience targeting and real-world rights exposure. The script is strongest as a sharply branded ensemble comedy, but it will need a very clear production and legal path to make the concept feel viable rather than merely funny on the page."
+    }
+  },
+  "weightedScore": 70,
+  "tier": "Optionable",
+  "inputTokens": 14000,
+  "outputTokens": 3066,
+  "cost": 0.024297
+}

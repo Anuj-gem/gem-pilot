@@ -1,0 +1,218 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Crime",
+        "Fantasy"
+      ],
+      "tone": "Broad, heightened, irreverent, profane, and whimsical with deadpan religious-mystical elements"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear hook in the opening church-confessional setup and the later Nepal/Kumari material, but the appeal is narrower because the comedy is highly dialect-specific and aggressively profane. The Al Capone/mafioso/church premise and the celebrity-casting fantasy of Stallone, Travolta, and Bardot give it some commercial sizzle, yet the audience promise is less immediately universal than the concept suggests."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise becomes clear early: Rocco, a Brooklyn mob-adjacent wannabe filmmaker, believes he’s cursed and recounts how a botched trip to Nepal and a living goddess changed his life. The confessional frame with Father Frank and the repeated explanation of the curse, vendettas, and Dutton’s monk obsession make the story engine understandable, though the layered flashback structure takes time to fully settle."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Rocco is vivid and comic, especially in the confessional scenes where his vanity, insecurity, and self-mythologizing collide. Father Frank has a sturdy foil function, and Elke/Ujesh/Bhairavi add color, but most characters are built as comic functions around Rocco rather than as deeply surprising people; the feature arc resolves cleanly rather than suggesting much beyond this story."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The mashup of 1970s Brooklyn mob culture, Catholic confession, celebrity meta-fiction, and Nepalese living-goddess mythology is unusually audacious. Scenes like the Radio City screening, the monk-guided Nepal journey, and the final shrine sacrifice sequence show a writer willing to push into strange, specific territory rather than stay in generic crime-comedy lanes."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script has forward motion because each anecdote escalates the curse and the Nepal journey, and the final shrine confrontation provides a clear payoff. However, the long confessional retelling structure creates repetition, with multiple explanatory passages about the curse, the movie, and the vendettas that slow momentum between the more vivid set pieces."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea of a vain Brooklyn filmmaker being dragged through a karmic, mob-adjacent spiritual odyssey is fresh and memorable. It is not just a novelty element; the curse, the false identity, and the living goddess all connect into a single comic-mythic engine that feels odd in a good way, even if the tonal execution is very broad."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific social world around Flatbush, Catholic ritual, mob hierarchy, and the rules of Nepalese religious life. Details like the confessional booth, the Five Families, the Hell’s Kitchen production office, the tuk-tuk travel, and the Navarati shrine line create a textured world that feels story-generating rather than merely decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a highly ownable tone: profane Brooklyn patter colliding with spiritual earnestness and absurd celebrity-movie fantasy. The script’s voice is unmistakable in scenes where Father Frank tries to impose moral order on Rocco’s manic, slang-heavy storytelling, and that tonal collision is consistent throughout."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the comedy, there are themes of identity, shame, fatherlessness, contrition, and the desire to be seen as worthy, especially in the mother-vision and the final act of self-sacrifice. Still, the script mostly surfaces those ideas through plot mechanics and comic dialogue rather than building a deep subtextual engine."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Rocco/Father Frank pairing is strong and gives the script its best recurring dynamic, and the Nepal trio plus Bhairavi/Elke/Ujesh create a workable secondary cluster. But the story is still fundamentally Rocco-centered, with the supporting characters serving the plot more than generating independent relationship webs."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 9,
+        "leads": 2,
+        "series_regulars": 5,
+        "child_actors": false,
+        "requires_name_talent": true,
+        "name_talent_reason": "The script explicitly imagines Sylvester Stallone, John Travolta, and Brigitte Bardot in key movie-within-the-movie roles, and the celebrity meta-gag is part of the concept's appeal.",
+        "casting_challenges": [
+          "Rocco requires a very specific Brooklyn-Italian dialect and comic rhythm",
+          "Father Frank needs age, warmth, and authority",
+          "Bhairavi is a child/young teen with a central spiritual function",
+          "Elke and Ujesh require strong accent work and precise comic timing",
+          "The script references real celebrities as characters in the film-within-the-film"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with substantial exterior flashbacks",
+        "period_or_contemporary": "Period (1976)",
+        "expensive_flags": [
+          "Period-built Brooklyn church/rectory and 1970s New York street dressing",
+          "Radio City Music Hall event sequence",
+          "International Nepal locations",
+          "Kathmandu streets and rural road travel",
+          "Crowded shrine/festival sequence with police presence",
+          "Tuk-tuk travel and remote forest camping",
+          "Multiple distinct country-specific environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "A few supernatural/visual gag moments: levitating monk, candle/firework effects, the mother-vision transformation, and some stylized montage transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fire effects, candle flare-up, chicken handling, hair-cutting montage, and crowd movement at the shrine.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Al Capone, Mae Josephine Coughlin, Sylvester Stallone, John Travolta, Brigitte Bardot, Mickey Rooney, Dennis Dutton, and Mickey Rooney-like/real-name references are all used by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named music is used in the excerpt."
+        },
+        {
+          "type": "brand",
+          "detail": "Gucci is prominently referenced in Rocco's wardrobe description."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script uses real celebrity likenesses and a film-within-a-film conceit that may require clearance or legal review depending on final production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or specialty streamer rather than broad theatrical wide release."
+      }
+    },
+    "comparables": [
+      {
+        "title": "In Bruges",
+        "why": "Like this script, it mixes crime-world pressure, Catholic guilt, and profane comedy, with a strong lead/foil dynamic and a tone that swings between absurdity and moral consequence."
+      },
+      {
+        "title": "The Pope of Greenwich Village",
+        "why": "The Brooklyn/Italian-American milieu, criminal undercurrent, and comic-earnest male bonding make it a strong tonal and audience match, especially for the way neighborhood identity drives the story."
+      },
+      {
+        "title": "The Big Lebowski",
+        "why": "This is a similarly shaggy, voice-driven odyssey where a self-mythologizing protagonist gets pulled through a bizarre, escalating chain of events that feels both comic and strangely fated."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Creative originality and tonal specificity",
+          "what_it_means": "The script has a highly ownable voice and a mashup premise that is easy to pitch and hard to confuse with anything else, which is valuable in a crowded comedy market.",
+          "evidence": "Brooklyn confessional framing, mob-culture slang, celebrity meta-casting, and Nepalese living-goddess mythology all coexist in one story world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Conceptual hook and marketable premise",
+          "what_it_means": "The story engine is legible: a cursed Brooklyn filmmaker recounts how a mob-adjacent trip to Nepal forced him into a spiritual and romantic reckoning. That is a clean, high-concept logline for buyers.",
+          "evidence": "The confessional structure, the curse, the vendettas, and the Nepal retrieval mission are all established clearly by the midpoint.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density and texture",
+          "what_it_means": "The script moves through distinct, specific worlds—Flatbush Catholicism, 1970s mob culture, and Nepalese religious life—giving it expansion potential and a sense of scale beyond a simple comedy premise.",
+          "evidence": "St. Mary Star of the Sea, Radio City, Hell’s Kitchen offices, Kathmandu streets, rural roads, and the Navarati shrine sequence all feel materially distinct.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Contained core relationship",
+          "what_it_means": "The Father Frank/Rocco dynamic gives the script a stable emotional and comic spine, which helps audience orientation even as the story gets increasingly surreal.",
+          "evidence": "Nearly every flashback is filtered through the confessional exchange, with Father Frank acting as the skeptical moral counterweight.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint relative to scope",
+          "what_it_means": "Although the story travels internationally, the actual set pieces are mostly dialogue-driven and character-based, with limited heavy VFX or stunt burden. That keeps the project more feasible than the premise might first suggest.",
+          "evidence": "The supernatural elements are mostly implied or practical, and the biggest sequences are conversational or crowd-based rather than effects-driven.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Latent thematic depth",
+          "what_it_means": "Under the comedy, the script has a real emotional engine around shame, forgiveness, identity, and the desire to be worthy of family and faith, which can help it resonate beyond pure gag value.",
+          "evidence": "The mother-vision, Father Frank’s insistence on contrition, and Rocco’s final act of self-sacrifice all point to a deeper moral arc.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a bold, highly ownable feature comedy with a distinctive voice: a profane Brooklyn confessional collides with mob mythology, celebrity fantasy, and Nepalese spiritual adventure. The script’s biggest commercial asset is that it feels unlike anything else on the page while still offering a clear emotional spine, a memorable lead, and a producible mix of dialogue-driven comedy and vivid set pieces."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Audience narrowing from extreme voice and dialect",
+          "risk": "The heavy Brooklyn phonetic dialogue and relentless profanity are part of the identity, but they also narrow accessibility and can create a barrier for broader mainstream audiences if not handled with the right cast and positioning.",
+          "evidence": "Rocco’s dialogue is written in dense dialect throughout, and the script leans hard into swearing, accent comedy, and cultural specificity.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and legal complexity",
+          "risk": "The use of numerous real people by name, plus celebrity likenesses in the movie-within-the-movie, creates clearance and estate/publicity-rights exposure that would need to be addressed before production.",
+          "evidence": "Al Capone, Brigitte Bardot, Sylvester Stallone, John Travolta, Mickey Rooney, and Dennis Dutton are all referenced directly.",
+          "source": "script"
+        },
+        {
+          "theme": "Production scope and period/international cost",
+          "risk": "The story spans 1976 Brooklyn, Radio City, Kathmandu, rural Nepal, and a festival shrine sequence, which pushes the project beyond a simple contained indie and into a more expensive period-international production profile.",
+          "evidence": "Multiple period New York locations, a large public event, international travel, tuk-tuk sequences, and remote camping are all on the page.",
+          "source": "script"
+        },
+        {
+          "theme": "Narrative repetition in the confessional frame",
+          "risk": "The story is engaging in pieces, but the repeated back-and-forth explanation of the curse, the vendettas, and the movie project can flatten momentum and make the middle feel over-expository.",
+          "evidence": "Father Frank repeatedly asks for clarification while Rocco restates the same causal chain across multiple flashbacks.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script mixes broad comedy, spiritual sincerity, sexual farce, and mystical revelation; that can be a strength, but it also creates a risk of tonal whiplash if the performance and direction do not unify it.",
+          "evidence": "The script jumps from mob violence and curse comedy to levitation, maternal apparition, and explicit sexual aftermath in quick succession.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting dependency",
+          "risk": "The piece depends heavily on a very specific lead performance and on strong supporting actors who can handle accent, rhythm, and sincerity without collapsing into caricature.",
+          "evidence": "Rocco, Father Frank, Elke, Ujesh, and Bhairavi all require precise tonal control, and the script’s celebrity meta-gag raises the bar further.",
+          "source": "both"
+        }
+      ],
+      "headline": "The main development challenge is not the premise; it is execution risk. The script needs the right cast, the right tonal discipline, and a production plan that can absorb period New York plus international Nepal without losing the comic-mythic identity that makes it distinctive."
+    }
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 33788,
+  "outputTokens": 3296,
+  "cost": 0.040173
+}

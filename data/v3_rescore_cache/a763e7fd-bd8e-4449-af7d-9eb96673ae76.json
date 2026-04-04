@@ -1,0 +1,194 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "short film",
+      "genre_primary": "horror",
+      "genre_tags": [
+        "family drama",
+        "coming-of-age"
+      ],
+      "tone": "grounded, eerie, emotionally intimate, suspenseful"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and emotionally accessible: a child spends a night realizing his mother may be a werewolf, with the father absent and the aunt trying to contain the situation. The horror hook is clean, but as a short film it is still a niche genre play rather than broad four-quadrant material."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook arrives immediately in the opening pages with Connor overhearing his mother and Aunt Minnie arguing, the full moon imagery, the locked bedroom, and the eventual reveal of Evie in a transformed state. In two sentences, this is easy to pitch and the story engine is clear: a child is trapped in a house with a mother who transforms at night."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Connor is a strong point-of-view character because his confusion, loyalty, and fear are dramatized through concrete actions like texting 'DADDY COME' and sneaking back to his mother’s room. Evie and Minnie are vivid in the moment, but the short form limits deeper arc complexity; the emotional payoff lands more as a contained revelation than a fully layered character journey."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar werewolf premise and filters it through a child’s domestic perspective, with the mother’s transformation treated as a family secret rather than a monster-movie event. The boldness is in the tonal restraint and the use of mundane details like meatloaf, iPad games, and bedtime routines against the horror reveal."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is tightly built around one escalating night: the argument, the father call, the locked door, Connor’s investigation, and the final bedside reveal. Each beat increases tension and curiosity, and the ending provides a satisfying emotional release without overextending the premise."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The combination of a child’s domestic anxiety, a mother’s monthly transformation, and the emotional logic of a family hiding a supernatural condition feels fresh and immediately playable. It is recognizable as a werewolf story, but the specific family dynamics and child-eye framing make it feel inevitable rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world is specific in the details of the Barton house, the Pacific Northwest moonlit woods, and the family’s coded language around Evie’s condition, but it remains a contained domestic setting. There is not much off-screen institutional or social world beyond the immediate family and the implied custody/divorce situation."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct tonal identity: tender family drama played inside a low-key horror framework, with the child’s misunderstanding of adult behavior driving the dread. Scenes like the meatloaf dinner, the bedtime reassurance, and the final bedside embrace create a very specific blend of warmth and unease."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface monster premise, the script hints at divorce, custody conflict, inherited trauma, and a mother trying to prepare her child for a condition she has lived with since childhood. The final line and Evie’s admission about seeing her father suggest deeper emotional material without fully unpacking it."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Connor-Evie-Minnie triangle is functional and emotionally clear, and the absent father adds pressure, but this is not an ensemble engine. The story depends primarily on Connor’s relationship to his mother, with Minnie serving as a containment figure rather than a fully generative relational node."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 2,
+        "series_regulars": 2,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The script is short, contained, and concept-driven; it does not require star power to sell the premise on the page.",
+        "casting_challenges": [
+          "A believable 6-year-old lead is essential and must carry a large share of audience identification.",
+          "Evie requires a performer who can play exhausted, volatile, maternal, and physically transformed within a very small runtime.",
+          "The transformed Evie needs either a strong physical performer, prosthetics, or a carefully designed partial reveal."
+        ]
+      },
+      "locations": {
+        "distinct_count": 5,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Night exterior moonlit woods shots",
+          "Practical transformation/monster reveal setup",
+          "House interior continuity across multiple rooms at night"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "The script can be done mostly practically, but the full-moon emphasis, the beast silhouette, and any subtle transformation enhancement may require light VFX cleanup or augmentation.",
+        "stunts_level": "minor",
+        "sfx_needs": "Claw mark makeup, fur effects, torn bedding, chain/lock practicals, bloodless injury makeup, and sound design-driven creature moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "iPad"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "festival short / streaming anthology short",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Contained short-form release; the story is self-contained rather than episodic."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Babadook",
+        "why": "Like this script, it uses a domestic interior and a parent-child bond to turn horror into an emotional family pressure cooker, with the monster element functioning as a metaphorical and literal threat."
+      },
+      {
+        "title": "A Monster Calls",
+        "why": "It matches the child-centered emotional perspective and the way a fantastical creature is used to process family illness, fear, and grief rather than just deliver scares."
+      },
+      {
+        "title": "The Wolf of Snow Hollow",
+        "why": "Not for scale, but for the werewolf premise being treated as a human and family problem first, with genre mechanics grounded in character behavior and emotional dysfunction."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable, which is a major advantage for a short film: buyers, programmers, and audiences can understand the emotional and genre promise in one breath.",
+          "evidence": "Connor’s night in the Barton house, the full moon, the locked bedroom, and the final transformed reveal establish the engine immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has an ownable identity: intimate family drama with horror tension, which makes it easier to market as more than a generic creature short.",
+          "evidence": "Bedtime routines, meatloaf dinner, the iPad distraction, and the mother’s bedside reassurance all sit inside the same eerie night.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The story is compact and escalating, which is exactly what a short film needs to feel satisfying and festival-ready.",
+          "evidence": "The script moves from argument to secrecy to the father call to the locked door to Connor’s discovery of Evie’s transformed state.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "This is a contained, low-location short that can be produced at a manageable budget relative to its genre payoff.",
+          "evidence": "Most of the action occurs in one house over one night, with only brief exterior moon/woods inserts.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Casting practicality",
+          "what_it_means": "The cast is small and focused, which reduces scheduling complexity and keeps the emotional center concentrated.",
+          "evidence": "Only Connor, Evie, Aunt Minnie, and Joel speak, with Joel existing primarily as a voice on the phone.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script implies a larger emotional history around inheritance, divorce, and maternal shame, giving the piece more resonance than a simple monster reveal.",
+          "evidence": "Evie’s comments about her father, the judge, and wanting Connor to know who she really is suggest a deeper family wound.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept short with a strong emotional spine: a child’s first real encounter with his mother’s hidden monster side. It is producible, memorable, and tonally distinct, with enough intimacy and genre payoff to play well on the festival circuit and in curated short-form programming."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Short-form scope limits depth",
+          "risk": "The piece is effective, but the emotional and mythic material is only lightly sketched, so the script’s impact depends heavily on execution rather than on a deeply layered dramatic architecture.",
+          "evidence": "The story resolves in a single night with one central reveal and a quick morning-after button.",
+          "source": "script"
+        },
+        {
+          "theme": "World is intentionally narrow",
+          "risk": "The setting is strong but mostly contained to one house, which limits expansion potential and makes the project feel more like a one-off short than a scalable IP engine.",
+          "evidence": "Nearly every scene takes place inside the Barton house, with the outside world only implied through the father, custody, and the woods.",
+          "source": "script"
+        },
+        {
+          "theme": "Creature effects and night photography",
+          "risk": "Even though the script is modest, the horror payoff still requires convincing transformation design, creature silhouette work, and sustained night coverage, which can quickly elevate costs for a short.",
+          "evidence": "The full moon setup, beast reveal, claw mark, chains, and howl-driven suspense all depend on effective practical and sound design.",
+          "source": "production"
+        },
+        {
+          "theme": "Child performance dependency",
+          "risk": "The entire piece lives or dies on Connor’s ability to carry confusion, fear, and tenderness without feeling precocious or mechanical.",
+          "evidence": "He is present in nearly every scene, drives the investigation, and anchors the final emotional beat with Evie.",
+          "source": "production"
+        },
+        {
+          "theme": "Brand and clearance simplicity is good, but not zero-risk",
+          "risk": "The script is mostly clean, but the named iPad reference is a minor clearance consideration if the project is packaged for distribution.",
+          "evidence": "Connor’s device is explicitly described as an iPad throughout the opening and closing beats.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development question is not whether the concept works — it does — but whether the emotional and visual payoff can justify the runtime and production effort. It is a strong short-film package with modest scale, but it will need disciplined execution in performance, sound, and creature design to land at the level the premise promises."
+    }
+  },
+  "weightedScore": 68.7,
+  "tier": "Optionable",
+  "inputTokens": 8179,
+  "outputTokens": 2676,
+  "cost": 0.01817625
+}

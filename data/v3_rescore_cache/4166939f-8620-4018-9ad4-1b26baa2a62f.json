@@ -1,0 +1,239 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_tags": [
+        "Horror",
+        "Drama"
+      ],
+      "tone": "Grounded, suspenseful, emotionally manipulative, and increasingly horrific with a darkly sentimental undercurrent"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The opening crash in the cornfield, the dog POV conceit, and the serial-killer reveal create a very easy-to-pitch hook with broad genre appeal. The emotional engine is also clear: Gary’s bond with Asher, then Cameron, then Kat gives the movie a built-in heart that can widen the audience beyond horror fans."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise is legible almost immediately: a dog survives a car crash, is adopted by a lonely handyman, and gradually realizes his new owner is a killer. The script establishes the story engine early through Gary’s POV, the shelter adoption, the basement, and the repeated “good boy” conditioning."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Gary is highly durable as a lead because he is simple, readable, and emotionally expressive without dialogue, especially in the shelter, the utility closet, and the final mauling. Cameron is also a strong antagonist because his wounded-child persona, his missing pinky, and his need to be called a good boy make him contradictory rather than generic."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The dog-centered POV is a bold formal choice, and the script commits to it in scenes like the crash, the vent sequences, and the basement reveal. The “good boy” psychological loop is a distinctive villain mechanism that gives the horror a specific identity rather than a standard slasher structure."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps escalating through clear turns: crash, shelter, adoption, neighbor suspicion, basement discovery, Kat’s captivity, the failed escape, and the final cornfield showdown. The repeated use of Gary’s sensory curiosity to move him from one discovery to the next keeps the story moving even when the audience knows more than he does."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a fresh combination of elements that should click quickly: a loyal family dog trapped with a serial killer who believes he is the dog’s owner. The final reveal that Gary is not just a witness but the protector in a rescue story gives the premise an inevitable, satisfying shape."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Indiana exurban/farm setting, Lowe’s job, Kroger rotisserie chicken, Colts fandom, the shelter, and the cornfield combine to create a specific working-class Midwest world. The abandoned farmhouse, soundproof basement, and farm machinery also make the environment story-generating rather than generic."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: a sincere dog movie colliding with serial-killer horror, all filtered through canine sensory logic and deadpan domestic detail. Scenes like Gary eating chicken in the utility closet, Cameron watching the Colts, and the grotesque combine climax create a tonal blend that is hard to mistake for another project."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the thriller mechanics, the script suggests trauma, captivity, and identity damage through Cameron’s nightmare, the basement cage imagery, and the repeated “good boy” ritual. The final shelter beat also implies a larger emotional afterlife for Gary and Kat, though the script mostly keeps its depth in service of the thriller."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Gary/Cameron bond, Gary/Kat alliance, and Cameron/Randy antagonism all generate usable tension, and the triangle shifts meaningfully over the course of the film. It is not a sprawling ensemble, but the relationships are strong enough that each new pairing changes the story dynamics."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The concept is strong enough to sell on premise and execution; however, a recognizable actor as Cameron could help broaden the horror audience, but it is not structurally required.",
+        "casting_challenges": [
+          "A highly trained dog performer is essential and must carry the film emotionally and physically.",
+          "A child actor is required for Asher, though the role is brief.",
+          "Cameron needs to play both affable and deeply unhinged without tipping too early.",
+          "Kat must sustain a large portion of the second half with physical distress and emotional reaction."
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with several key exterior set pieces",
+        "period_or_contemporary": "Contemporary",
+        "expensive_flags": [
+          "Night cornfield sequence",
+          "Combine harvester action in a field",
+          "Crash sequence with vehicle damage and aftermath",
+          "Basement set with soundproofing and practical confinement",
+          "Animal shelter kennel environment",
+          "Police/ambulance response at climax",
+          "Potentially weather-dependent farm and cornfield work"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical, with likely cleanup/compositing for dog POV framing, crash aftermath, and mauling enhancement if needed.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Vehicle crash, broken glass, blood effects, shears injury, electric collar shock effects, and practical gore for the final mauling.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Toyota RAV4"
+        },
+        {
+          "type": "brand",
+          "detail": "Kroger"
+        },
+        {
+          "type": "brand",
+          "detail": "Lowe’s Home Improvement"
+        },
+        {
+          "type": "brand",
+          "detail": "Indianapolis Colts"
+        },
+        {
+          "type": "brand",
+          "detail": "Waffle House"
+        },
+        {
+          "type": "brand",
+          "detail": "Long John Silver’s"
+        },
+        {
+          "type": "brand",
+          "detail": "adidas"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Bad Moon Rising\" by CCR"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical genre release",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; the engine is a contained survival-thriller escalating from domestic bonding to captivity and escape."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Good Boy",
+        "why": "A pet-centered horror premise with an emotional animal lead and a domestic setting that turns threatening, matching the script’s blend of attachment, dread, and creature-point-of-view storytelling."
+      },
+      {
+        "title": "The Black Phone",
+        "why": "Like this script, it pairs a child-abduction horror framework with a contained villain lair, a sympathetic captive, and a strong emotional rescue engine that keeps the genre material accessible."
+      },
+      {
+        "title": "Cujo",
+        "why": "This is a real tonal and commercial match because it uses a dog in a life-or-death thriller context, with a rural setting, escalating danger, and a simple survival premise that can be sold on concept."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / marketability",
+          "what_it_means": "The premise is instantly pitchable and easy to market, which is a major advantage in a crowded genre field. A dog as the emotional lead in a serial-killer thriller gives buyers a clean hook and audiences a clear reason to sample it.",
+          "evidence": "The script opens with Gary’s POV in the crash, then reveals Cameron’s basement and the “good boy” ritual as the central horror mechanism.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Gary is an unusually strong nonverbal protagonist because his motivations are legible, his loyalty is emotionally immediate, and his behavior can drive the plot without exposition. That makes the movie accessible across language and demographic lines.",
+          "evidence": "Gary’s attachment to Asher, his fear in the shelter, his comfort with Cameron, and his protective shift toward Kat all read clearly through action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a brandable tonal identity: heartfelt dog movie, Midwest domestic detail, and serial-killer horror. That combination is distinctive enough to stand out in both horror and broader genre conversations.",
+          "evidence": "Kroger rotisserie chicken, Colts games, Lowe’s workwear, and the basement captivity ritual all coexist in one coherent tone.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The story keeps generating new turns from Gary’s sensory curiosity, so the engine is inherently propulsive. That is valuable for audience retention because each discovery naturally leads to the next escalation.",
+          "evidence": "The shoe in the woods, the basement vent, Kat’s messages, the police welfare check, and the final cornfield escape all arise from Gary following smells, sounds, and food.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "The setting is specific enough to feel lived-in and inexpensive enough to remain commercially viable. The Midwest exurban farm world gives the film texture without requiring a huge scale.",
+          "evidence": "Indiana roads, Greenwood shelter, Lowe’s, the combine, the cornfield, and the neighborly suburban/farm boundary all create a coherent local ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "The film is largely contained to a manageable number of locations and a small cast, which supports a mid-budget genre model. That makes it attractive for streaming, specialty theatrical, or a producer looking for a contained horror package.",
+          "evidence": "Most of the action stays in Cameron’s house, basement, yard, truck, Lowe’s, shelter, and the farm/cornfield.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script has emotional and psychological subtext beyond the thriller mechanics, especially around captivity, trauma, and the need to be seen as “good.” That gives the project more staying power than a simple gimmick horror title.",
+          "evidence": "Cameron’s childhood cage memory, his nightmares, the repeated “good boy” exchanges, and the final shelter return all imply deeper damage and healing.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a highly marketable contained horror feature with a genuinely fresh hook: a dog POV thriller that turns into a serial-killer captivity story and then into a rescue movie. It has a clear emotional engine, a distinctive tonal identity, and a production footprint that stays mostly in manageable interiors and a few high-impact exterior set pieces, making it attractive for genre buyers who want something both commercial and ownable."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Production exposure from animal and action execution",
+          "risk": "The film depends on a dog performance that must carry complex emotional beats, physical danger, and precise blocking across a large portion of the runtime. That creates execution risk even before accounting for the crash, mauling, electric collar, and combine sequence.",
+          "evidence": "Gary is on screen for nearly every scene, including the crash aftermath, vent sequences, collar shock, and final field rescue.",
+          "source": "both"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The script uses multiple recognizable brands and a named song, which adds clearance work and potential substitution costs. For a contained genre film, those are manageable but still real production/legal friction points.",
+          "evidence": "Toyota RAV4, Lowe’s, Kroger, Indianapolis Colts, Waffle House, adidas, Long John Silver’s, and \"Bad Moon Rising\" are all specifically named.",
+          "source": "both"
+        },
+        {
+          "theme": "Tone management in the final act",
+          "risk": "The script shifts from suspense to extreme gore and then back to emotional uplift, which is effective on the page but can be difficult to balance in production and marketing. If the horror is too soft, the climax loses impact; if it is too hard, the sentimental dog-movie promise may narrow the audience.",
+          "evidence": "The final mauling of Cameron, Kat’s rescue, and the shelter reunion all sit very close together tonally.",
+          "source": "script"
+        },
+        {
+          "theme": "Budget creep from set-piece requirements",
+          "risk": "Although the film is mostly contained, the crash, the night cornfield chase, the combine sequence, and the police/ambulance climax all require careful staging and effects work. Those moments can push a modest package into a more expensive lane if not tightly controlled.",
+          "evidence": "The opening collision, the combine running over the cocoon, and the final pursuit through the cornfield are the biggest cost drivers.",
+          "source": "production"
+        },
+        {
+          "theme": "Character depth is strongest in the villain, less so in the supporting human roles",
+          "risk": "Cameron is richly drawn, but Kat and the surrounding humans are more functional than layered, which limits the ensemble’s long-tail value. The movie works because of the central premise, not because of a broad web of secondary characters.",
+          "evidence": "Kat’s role is primarily survival and reaction; Randy functions mainly as suspicion and obstacle; the family and shelter staff are mostly plot utilities.",
+          "source": "script"
+        },
+        {
+          "theme": "Feature-only engine",
+          "risk": "The premise is strong as a one-time feature, but it does not naturally suggest a repeatable episodic engine. That means the commercial upside is concentrated in a single release rather than franchise or series expansion.",
+          "evidence": "The story is structured as a contained adoption-to-escape arc with a definitive ending at the shelter.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is execution, not premise: this is a strong concept with a clear audience, but it lives or dies on precise animal performance, disciplined effects work, and tonal control in the climax. It is commercially attractive as a contained feature, yet the production package needs to stay lean and the clearance/casting plan needs to be clean to preserve the script’s upside."
+    }
+  },
+  "weightedScore": 77,
+  "tier": "Greenlight Material",
+  "inputTokens": 28653,
+  "outputTokens": 3382,
+  "cost": 0.03670875
+}

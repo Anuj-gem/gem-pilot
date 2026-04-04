@@ -1,0 +1,236 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "neo-noir",
+        "mystery/thriller"
+      ],
+      "tone": "gritty, elegiac, heightened, melancholic"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script has obvious four-quadrant awareness through the K/Joi relationship, the mystery of the child, and the return of Deckard and Wallace as legacy characters. The opening retirement of Sapper Morton, the Joi ad reveal, and the Vegas/Deckard section all provide clear trailer moments and franchise-level recognition, though the density and seriousness keep it from being broadly casual."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise is legible almost immediately: a replicant blade runner uncovers evidence that a replicant gave birth, and the search leads him into a conspiracy involving Wallace, Deckard, and the hidden child. The Sapper farm opening, the bone discovery, and the DNA match in Denabase establish the story engine cleanly and early."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "K is defined by restraint, competence, and a buried longing that becomes visible in the Joi scenes and the memory investigation. Joi, Joshi, Luv, Wallace, and Deckard each have strong, distinct behavioral signatures, with the K/Joi dynamic and the K/Joshi authority tension carrying the emotional weight of the feature."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by making the emotional center a relationship with a projected companion, then complicating that with the Mariette overlay and the eventual deletion of Joi. The Wallace creche, the trash-mesa orphanage, and the Vegas hologram fight are visually and conceptually daring choices rather than standard genre beats."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The investigation escalates cleanly from Sapper’s farm to the morgue, Wallace Tower, Ana’s lab, the orphanage, Vegas, and the sea-wall climax. Each major reveal changes K’s understanding of himself or the case, and the final act keeps tightening the noose with Luv’s pursuit and Wallace’s capture of Deckard."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script’s strongest original turn is that the protagonist’s identity crisis is built around a false but emotionally real memory, then inverted by the reveal that he is not the child after all. The Joi ad at the end, the bee in Vegas, and the child-birth mystery all feel fresh in combination, even though the underlying noir investigation structure is familiar."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "The world is richly engineered: the protein farm, the LAPD processing hall, Wallace’s tomb-like tower, the memory lab, the trash mesas, the orphanage inside the tanker, and the dead Vegas strip all feel like functioning social ecosystems. The script repeatedly shows hierarchies, labor systems, and off-screen histories, especially in the orphanage, Wallace Corp, and the scavenger economy."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unmistakable: mournful futurism, hard-boiled procedural language, and sensual melancholy are fused with religious imagery and corporate feudalism. The Sapper dinner scene, Joi’s domestic intimacy, Wallace’s biblical rhetoric, and the Vegas hologram sequence all belong to one coherent tonal identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the mystery plot is a meditation on memory, personhood, labor, reproduction, and manufactured love. The Ana scenes, the repeated baseline tests, the Wallace theology, and the final inversion of K’s identity all suggest a deeper thematic architecture than the surface investigation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The script is still fundamentally K-driven, but the relationships are strong enough to generate recurring material: K/Joi, K/Joshi, K/Luv, K/Deckard, and K/Wallace each have a distinct dynamic. The ensemble is not as combinatorially rich as a true workplace or hangout show, but for a feature it has a strong relational web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "Deckard, Wallace, and Joi are legacy-facing roles that materially benefit from marquee casting; the film also depends on a star-level K to carry the emotional center.",
+        "casting_challenges": [
+          "Joi requires a performance that can read as both synthetic and deeply intimate",
+          "Luv needs extreme physical presence and controlled menace",
+          "Wallace is a blind, mythic corporate titan with very specific vocal and physical demands",
+          "Mariette/Freysa require strong specificity and accent/ethnic authenticity where scripted"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "futuristic near-future",
+        "expensive_flags": [
+          "large-scale cityscape vistas",
+          "Wallace Tower interiors",
+          "memory lab forest simulation",
+          "Vegas ruins and hologram-heavy sequence",
+          "Sepulveda Sea Wall climax with water interaction",
+          "multiple Spinner aerial sequences",
+          "trash mesa and orphanage set build",
+          "extensive crowd/background density in city and market scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Spinners, holographic Joi, Wallace barracuda drones, memory-lab environment transformations, Vegas hologram performers, drone strike, sea-wall storm action, and multiple large-scale city extensions require substantial VFX.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical fight choreography in Sapper’s farm, Luv’s hand-to-hand violence, explosions in Vegas, vehicle crash, water impact at the sea wall, and practical blood/injury effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Rick Deckard is a legacy character from the Blade Runner property and requires underlying rights clearance."
+        },
+        {
+          "type": "real_person",
+          "detail": "Rachael is a legacy character from the Blade Runner property and requires underlying rights clearance."
+        },
+        {
+          "type": "real_person",
+          "detail": "Tyrell Corporation, Wallace Corp, and related franchise elements are IP-dependent."
+        },
+        {
+          "type": "named_music",
+          "detail": "Sinatra's 'Summer Wind' is specifically named and used as a recurring emotional cue."
+        },
+        {
+          "type": "named_music",
+          "detail": "Chopin is specifically referenced on the piano sheet music."
+        },
+        {
+          "type": "named_music",
+          "detail": "Elvis' 'Suspicious Minds' and 'Can't Help Falling In Love' are used in the Vegas sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Wallace Corp, LAPD, Reprise Records, and other branded references appear in-world; some are fictional, but the script also uses real-world brand-like references in dialogue and signage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; event-level theatrical with premium streaming follow-on potential, driven by spectacle, legacy IP recognition, and high-concept mystery."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Blade Runner",
+        "why": "This is the clearest match because the script shares the same noir-investigation structure, existential replicant questions, and rain-soaked urban futurism, while also relying on a lone detective moving through a hostile corporate world."
+      },
+      {
+        "title": "Blade Runner 2049",
+        "why": "The production scale, tonal melancholy, and emphasis on memory, identity, and synthetic intimacy align directly with the script’s heavy VFX cityscapes, Joi relationship, and Wallace-era mythology."
+      },
+      {
+        "title": "Minority Report",
+        "why": "Like this script, it combines a procedural chase with a larger conspiracy about identity and state control, and it lives in a premium sci-fi lane where the world is dense, expensive, and built around a single investigator unraveling a system."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The central mystery is instantly pitchable and commercially legible, which is rare for a dense sci-fi feature. That makes the script easy to market as a high-concept event with a clean emotional question at its core.",
+          "evidence": "The Sapper retirement, the hidden bones, the pregnant replicant reveal, and the DNA match all establish a single engine: K is hunting the truth of a forbidden birth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a strong, ownable identity that blends noir fatalism, corporate theology, and intimate melancholy. That kind of tonal signature is valuable because it differentiates the project from generic sci-fi and makes it brandable.",
+          "evidence": "The baseline test, Wallace’s biblical speeches, Joi’s domestic projection, and the Vegas hologram sequence all feel of one piece.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "The setting is not just decorative; it is a functioning ecosystem with labor, class, and off-screen history. That gives the property depth and makes the world feel expandable and premium.",
+          "evidence": "The protein farm, the orphanage trash economy, Wallace’s memory vault, the market sex district, and the sea wall all suggest a lived-in civilization with rules and pressure points.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "K, Joi, Luv, Joshi, Wallace, and Deckard each have sharply differentiated screen identities, which supports both audience attachment and casting value. The script gives actors clear behavioral hooks rather than generic archetypes.",
+          "evidence": "K’s restraint, Joi’s adaptive intimacy, Luv’s icy precision, Joshi’s weary authority, Wallace’s mythic grandiosity, and Deckard’s battered isolation are all distinct on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Commercial spectacle",
+          "what_it_means": "The script contains multiple trailer-ready set pieces that justify a premium budget and theatrical positioning. That matters because the project can sell on image, scale, and legacy recognition, not just plot.",
+          "evidence": "The Vegas hologram fight, the trash-mesa drone strike, the sea-wall climax, and the Wallace creche sequence are all visually distinctive and high-impact.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script carries thematic weight about memory, manufactured love, and what counts as a soul, which gives it prestige value beyond genre mechanics. That supports awards-adjacent positioning and long-tail discussion.",
+          "evidence": "Ana’s memory philosophy, Joi’s artificial intimacy, the baseline tests, and K’s identity collapse all point to a deeper meditation on personhood.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Although expensive, the script is built around a coherent set of recurring environments and signature effects rather than constant one-off spectacle. That makes the spend feel purposeful and franchise-grade rather than chaotic.",
+          "evidence": "The film repeatedly returns to the city, Wallace Tower, the apartment complex, the memory lab, and the sea wall, with VFX concentrated in a few major sequences.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a premium, event-level sci-fi feature with a clean high-concept hook, a deeply ownable tone, and a world rich enough to justify the scale. It offers legacy-IP recognition, marquee casting opportunities, and a set of visually unforgettable sequences that make it feel both commercially durable and culturally sticky."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget and VFX exposure",
+          "risk": "The script is heavily dependent on expensive visual effects, large-scale environment builds, and complex digital performance work, which pushes it firmly into tentpole territory.",
+          "evidence": "Spinner flights, holographic Joi, Wallace’s drones, the memory-lab forest, the Vegas resurrection sequence, the drone strike on the trash mesa, and the sea-wall water action all require substantial post and production resources.",
+          "source": "script"
+        },
+        {
+          "theme": "Rights and franchise dependency",
+          "risk": "The material is not standalone in a legal or commercial sense; it depends on Blade Runner IP, legacy characters, and recognizable franchise mythology.",
+          "evidence": "Deckard, Rachael, Tyrell/Wallace lineage, and the replicant canon are central to the story’s meaning and cannot be separated from the underlying property.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting dependency",
+          "risk": "The project’s emotional and commercial success depends on very specific casting choices, especially for K, Joi, Wallace, Luv, and Deckard.",
+          "evidence": "K must carry the film’s emotional arc, Joi must feel both synthetic and human, Wallace must project mythic authority, Luv must be physically formidable, and Deckard must read as an iconic legacy return.",
+          "source": "script"
+        },
+        {
+          "theme": "Narrative density",
+          "risk": "The script is elegant in structure but very dense in information, which can create comprehension risk for a broad audience if the material is not handled with extreme clarity in execution.",
+          "evidence": "The story moves through baseline tests, DNA analysis, memory science, corporate theology, hidden birth records, and multiple legacy reveals in a relatively compressed feature runtime.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone and audience narrowing",
+          "risk": "The tone is sophisticated and mournful rather than broadly playful, which limits mass-market accessibility even though it strengthens prestige appeal.",
+          "evidence": "The baseline interrogation, the bleak labor worlds, the melancholy Joi relationship, and Wallace’s biblical monologues all lean heavily into adult, reflective sci-fi.",
+          "source": "script"
+        },
+        {
+          "theme": "Technical complexity in the climax",
+          "risk": "The final act combines aerial pursuit, water-based action, hand-to-hand combat, and multiple character payoffs, creating a high-risk production and editorial sequence.",
+          "evidence": "The transport ambush at the sea wall, the underwater struggle, Joi’s destruction, and the Deckard rescue all stack multiple expensive elements at once.",
+          "source": "script"
+        }
+      ],
+      "headline": "The core development challenge is not the idea; it’s the scale and precision required to execute it. This is a dense, expensive, rights-dependent event film that needs top-tier casting, disciplined visual execution, and very careful audience management to land at the level the script is aiming for."
+    }
+  },
+  "weightedScore": 83,
+  "tier": "Greenlight Material",
+  "inputTokens": 44371,
+  "outputTokens": 3473,
+  "cost": 0.04890675
+}

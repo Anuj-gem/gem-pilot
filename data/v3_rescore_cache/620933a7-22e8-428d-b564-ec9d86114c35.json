@@ -1,0 +1,247 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "action",
+        "thriller"
+      ],
+      "tone": "grounded-to-heightened, militarized, ominous, pulpy"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial engine: a UN translator pulled into a covert river mission that escalates into a lost-craft/alien-contact thriller, with set pieces like the convoy ambush, the burning oil field, and the temple reveal. The hook is easy to pitch and the final image of the watch thrown into the river gives it a clean thematic button, but the material is niche in its geopolitical setting and leans hard into military-sci-fi, which narrows broad four-quadrant appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is legible early: Reese is recruited upriver to translate for a joint U.S./UN operation searching for a lost DARPA craft, and the mission becomes stranger as the team encounters anomalous signals, a buried helicopter, and eventually an alien vehicle in a temple. The story engine is established by the Broyles briefing in the UN office and reinforced by the river journey, so the audience always knows what the immediate objective is even as the mystery deepens."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Reese is a strong lead because she is competent in languages, morally resistant to Broyles, and emotionally marked by her dead daughter and the watch she keeps checking; those details give her contradiction and vulnerability. Broyles is also memorable as a charming, ruthless operator, and Benny’s quiet, otherworldly presence adds intrigue, though the supporting team is more functional than deeply individualized, with several Delta operators reading as interchangeable banter engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by fusing Congo river war-movie texture with alien-contact sci-fi, then layering in temporal distortion, engineered glyphs, and a nonhuman pilot who drinks Coke and speaks in aphorisms. The repeated time-stutter inside the craft and the reveal that Benny is not human are confident, high-concept choices that push beyond standard military adventure."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script is consistently moving: convoy attack, river travel, refinery stop, hostage encounter, village detour, helicopter discovery, temple infiltration, and final countdown. It does occasionally pause for dialogue-heavy ideological exchanges between Reese, Broyles, and Niles, but each stop tends to feed the next escalation, and the final act has strong urgency once the strike is called in."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The combination of a Congo river expedition, covert U.S. black-ops logistics, and a hidden alien craft feels fresh and immediately usable as a pitch. The script’s best originality comes from making the river itself a story engine—Le Fleuve as a corridor of commerce, violence, and myth—while the alien material is introduced through grounded military procedure rather than pure spectacle."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Congo setting is richly textured through refinery infrastructure, overloaded barges, river commerce, Mbuti village life, oil piracy, and the layered presence of UN, contractors, State, DARPA, Boko, and local communities. The world feels like a functioning ecosystem with competing power centers, and the river journey naturally reveals new zones and rules rather than simply serving as backdrop."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinctive because it blends hard-edged military banter, moral discomfort, and eerie sci-fi mystery with occasional dark humor, like Broyles’ casual profanity, Benny’s Coke habit, and the team’s gallows jokes amid carnage. The script could be identified from a single scene because it consistently mixes procedural realism with uncanny, mythic intrusion."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the action, the script suggests larger themes about foreign intervention, exploitation, language, grief, and the ethics of control, especially in Reese’s conflict with Broyles and Niles’ cynical worldview. Benny’s identity, the 10-year-old mission, and the alien technology all imply deeper mythology, though some of that depth is delivered more as exposition than as fully dramatized mystery."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Reese/Broyles tension is strong and the Reese/Benny dynamic has real slow-burn appeal, but the ensemble is still mostly organized around Reese as observer and Broyles as driver. The Delta team provides texture and banter, yet most of their relationships are not distinct enough to generate many independent story combinations beyond mission-function support."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 3,
+        "series_regulars": 7,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "Broyles is a charismatic, morally ambiguous engine who would benefit from a recognizable lead; Benny also has a major reveal and needs a strong performer to sell the tonal pivot. The script’s scale and genre mix would be easier to finance and market with at least one known face.",
+        "casting_challenges": [
+          "African and Congolese/local roles are story-essential and should be authentically cast",
+          "Benny requires a performer who can play restrained, enigmatic, and physically otherworldly",
+          "Several military roles require credible tactical presence",
+          "Mbuti village roles include specific Indigenous casting considerations",
+          "Child performers are required for the sick children and village scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Congo river exteriors",
+          "remote jungle travel",
+          "large riverboat/sternwheeler build or retrofit",
+          "oil refinery exteriors and interiors",
+          "burning oil field",
+          "temple set with multiple chambers and trap mechanics",
+          "night jungle sequences",
+          "crowd/village scenes",
+          "helicopter wreck and explosion",
+          "large-scale destruction in final act"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Alien craft reveal, temporal stutter/time reset, geometric drones, implosion/energy effects, Rod of God strike, helicopter blast, atmospheric anomalies, and environmental destruction all require substantial VFX.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, gunfire, vehicle flips, practical blood effects, body impacts, burning environments, collapsing stone-trap mechanics, and creature-like body transformation effects on Benny.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Minnie Mouse watch"
+        },
+        {
+          "type": "brand",
+          "detail": "McDonalds receipt"
+        },
+        {
+          "type": "brand",
+          "detail": "Boar’s Head Bold Cajun smoked turkey"
+        },
+        {
+          "type": "brand",
+          "detail": "Coke"
+        },
+        {
+          "type": "brand",
+          "detail": "Harry Potter"
+        },
+        {
+          "type": "brand",
+          "detail": "Monster energy drink"
+        },
+        {
+          "type": "brand",
+          "detail": "Copenhagen chewing tobacco"
+        },
+        {
+          "type": "brand",
+          "detail": "Heckler & Koch, Remington, Teledyne FLIR, GoPro, Blackhawk, DARPA, Centcom, Wright-Patterson references"
+        },
+        {
+          "type": "real_person",
+          "detail": "Kipling is a literary reference, not a real person in-story; no direct real-person cameo references are apparent"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable or streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; commercially best as a festival-to-platform or streamer genre title rather than broad theatrical four-quadrant."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Lost City of Z",
+        "why": "Like this script, it uses a jungle expedition and colonial/modern extraction tension as the backbone of a character-driven journey, but with a more expensive, remote-location production profile and a similarly adult, prestige-adventure audience."
+      },
+      {
+        "title": "Annihilation",
+        "why": "It matches the blend of scientific mission, eerie environmental mystery, and escalating unreality, while also sharing the need for strong tonal control and substantial VFX to sell the final-act conceptual turn."
+      },
+      {
+        "title": "Sicario",
+        "why": "The covert-operation structure, moral ambiguity around intervention, and militarized tension in hostile territory are very close, even though this script adds a sci-fi layer and a more exoticized, river-based setting."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook and clarity",
+          "what_it_means": "The premise is easy to sell in one sentence and gives buyers a clean genre promise: a translator on a covert Congo mission discovers a buried alien event. That clarity is valuable because it makes the script marketable even before the mythology is unpacked.",
+          "evidence": "Reese is recruited upriver to help locate a lost DARPA craft, and the mission escalates from a river search to a hidden temple and alien contact.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density and texture",
+          "what_it_means": "The Congo river corridor feels like a living system of trade, corruption, insurgency, and local survival, which gives the project expansion potential and makes the setting itself part of the hook.",
+          "evidence": "Refinery docks, overloaded passenger barges, oil piracy, Mbuti village life, Boko territory, and UN/State/DARPA overlap all appear on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has an ownable identity because it mixes tactical realism, gallows humor, and uncanny sci-fi without losing its sense of place. That makes it easier to brand than a generic jungle thriller.",
+          "evidence": "Broyles’ profanity-laced pragmatism, Benny’s Coke habit, and the team’s banter coexist with bodycam glyphs, time distortion, and the alien craft reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production scale relative to spectacle",
+          "what_it_means": "Although the finale is effects-heavy, much of the movie is built from contained river travel, dialogue scenes, and a limited number of recurring locations, which helps keep the budget from becoming pure tentpole territory.",
+          "evidence": "The boat, refinery, village, and temple are the main recurring spaces, with the biggest spend concentrated in the final act and a few set pieces.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Lead character viability",
+          "what_it_means": "Reese is a strong audience surrogate because she is competent, skeptical, and emotionally wounded, which gives the film a human anchor inside a high-concept genre frame.",
+          "evidence": "Her language expertise, resistance to Broyles, and the recurring watch/daughter motif give her a clear inner life.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Secondary character intrigue",
+          "what_it_means": "Benny is a highly marketable mystery figure: calm, strange, and ultimately nonhuman. That kind of reveal can generate strong word-of-mouth and gives the movie a memorable iconographic element.",
+          "evidence": "His ankle monitor, scarred body, Coke habit, and final transformation into the craft create a distinctive character arc.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Contained ensemble dynamics",
+          "what_it_means": "The Reese/Broyles/Benny triangle gives the film a workable emotional and ideological engine, with enough friction to sustain tension across the journey.",
+          "evidence": "Reese challenges Broyles’ ethics, Broyles manipulates the mission, and Benny quietly mediates while hiding his true nature.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a commercially legible, high-concept jungle sci-fi thriller with a strong lead, a memorable mystery figure, and a setting that feels expensive on screen in the right way. The Congo river world is vivid and story-generating, and the final-act alien reveal gives the project a genuine genre lift that could play well for premium buyers looking for elevated action with a distinctive identity."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget exposure in the final act",
+          "risk": "The script’s payoff depends on heavy VFX, large-scale destruction, and multiple expensive environments, which pushes it toward a high-budget lane and raises financing risk if the package is not strong.",
+          "evidence": "Alien craft effects, time-loop visuals, geometric drones, a Rod of God strike, helicopter explosion, burning oil fields, and a large temple set all stack in the back half.",
+          "source": "both"
+        },
+        {
+          "theme": "Casting dependency on name value and authenticity",
+          "risk": "The project likely needs recognizable talent to open, but it also requires culturally specific casting across Congolese, Mbuti, and military roles, which narrows the pool and complicates packaging.",
+          "evidence": "Broyles drives the movie, Benny carries the mystery, and the local roles are essential to the plot rather than decorative.",
+          "source": "both"
+        },
+        {
+          "theme": "Rights and clearance clutter",
+          "risk": "The script contains a lot of branded and named references that would need clearance or substitution, creating avoidable legal and continuity work in development.",
+          "evidence": "Minnie Mouse watch, McDonalds receipt, Boar’s Head, Coke, Harry Potter, Monster, Copenhagen, GoPro, Blackhawk, Teledyne FLIR, and other named hardware/brands are used on the page.",
+          "source": "script"
+        },
+        {
+          "theme": "Dialogue-heavy ideological passages slow the engine",
+          "risk": "Several scenes pause the forward motion for worldview debates about intervention, aid, and exploitation, which can be valuable thematically but may soften momentum for a mainstream thriller audience.",
+          "evidence": "The rooftop exchange with Niles, the hallway confrontation with Broyles, and repeated Reese/Broyles arguments about the mission and local responsibility.",
+          "source": "script"
+        },
+        {
+          "theme": "Supporting ensemble is functional rather than deeply differentiated",
+          "risk": "The Delta team provides texture, but most of them are defined by banter and tactical function, which limits relationship-driven story value and makes some roles feel castable but not especially memorable.",
+          "evidence": "Dugan, Greer, Malcom, and Olson mostly serve as mission support, comic relief, or tactical operators with limited individual arcs.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone balance between grounded war thriller and cosmic sci-fi",
+          "risk": "The script successfully builds from realism into the surreal, but the leap into alien/time-manipulation territory is so large that some buyers may worry about audience whiplash or positioning confusion.",
+          "evidence": "The movie moves from convoy violence and refinery politics to a hidden craft that rewinds time and absorbs Benny into itself.",
+          "source": "script"
+        }
+      ],
+      "headline": "The core development challenge is scale control: the script wants to be a grounded geopolitical thriller and a full-on cosmic sci-fi event, and both modes are working against the same budget and packaging realities. It also carries some rights cleanup and casting complexity, so the project will need a strong commercial package to justify the production ambition and to make the tonal leap feel like a feature, not a liability."
+    }
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 37130,
+  "outputTokens": 3610,
+  "cost": 0.04409250000000001
+}

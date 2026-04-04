@@ -1,0 +1,216 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Coming-of-age comedy-drama",
+      "genre_tags": [
+        "family dysfunction",
+        "summer romance"
+      ],
+      "tone": "Warm, awkward, bittersweet, profane, observational"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The emotional promise is instantly legible in the opening station-wagon scene: a lonely 14-year-old stuck in the back seat for a summer with his mom and her new boyfriend. The beach-town setting, first-crush thread with Susanna, and Owen’s charismatic waterpark world give it broad teen-to-adult appeal, while the profanity and adult messiness keep it from being four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands immediately: Duncan is trapped in a summer with a family he doesn’t feel part of, and he finds belonging at Water Wizz with Owen. The script establishes the story engine early through the 'three' insult, the beach-house social ecosystem, and Duncan’s job at the park, which cleanly organizes the narrative."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Duncan’s passivity, embarrassment, and eventual confidence arc are clear from the opening mirror conversation through his 'Pop 'n Lock' transformation. Owen is a standout supporting lead—funny, permissive, and emotionally wounded in the Caitlin scenes—while Susanna, Pam, and even Peter each have distinct comic and emotional identities."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldness comes from its specific comic voice and the unusual pairing of a shy teen with a waterpark mentor, plus the way it treats adult dysfunction as the backdrop to a kid’s summer awakening. Much of the structure is familiar coming-of-age material, but the execution is confident and character-driven rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps moving through a series of clear social escalations: beach-house discomfort, waterpark discovery, first job, party integration, romantic tension, and the late-summer rupture with Pam and Trent. The final water-slide payoff is a strong structural release because it converts Duncan’s internal growth into a public, crowd-pleasing event."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea of a shy kid finding identity at a waterpark is fresh and immediately playable, especially with the 'Pop 'n Lock' nickname and the slide-passing challenge. It is not radically unprecedented, but it feels like a specific, ownable version of a familiar summer-coming-of-age story."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Water Wizz is more than a backdrop: the park has its own hierarchy, slang, rituals, and recurring faces like Owen, Caitlin, Roddy, Lewis, and the kids on Devil’s Peak. The beach-house neighborhood also has texture through Betty’s house, the clambake, the Keegans, and the social politics of the summer colony."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is highly identifiable: profane, awkward, affectionate, and lightly raunchy, with jokes that come from social discomfort rather than punchline machinery. Scenes like Betty’s blunt dinner-table oversharing, Owen’s deadpan park patter, and the Candyland breakdown create a distinct blend of cringe comedy and sincere emotion."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the comedy, the script is about abandonment, self-worth, and the way adults normalize betrayal around kids. The Pam/Trent dynamic, Owen/Caitlin’s stalled relationship, and Susanna’s father absence all suggest deeper emotional material, though the script mostly keeps those layers in service of the immediate summer story."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The script generates material from multiple pairings: Duncan/Owen, Duncan/Pam, Duncan/Susanna, Pam/Trent, Owen/Caitlin, Betty/Pam, Betty/Peter, and the broader beach-house group. It is not a giant ensemble, but the relationship web is rich enough that secondary characters repeatedly create story pressure rather than just filling space."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The script is character- and ensemble-driven, not dependent on star casting to be intelligible or commercially legible.",
+        "casting_challenges": [
+          "Duncan must read as believably 14 and emotionally interior",
+          "Susanna must feel age-appropriate yet slightly older and more self-possessed",
+          "Peter requires a very specific comic performance and an eye patch",
+          "Betty and Owen need strong comic timing to carry the tone"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "Contemporary",
+        "expensive_flags": [
+          "Large waterpark set pieces and crowd control",
+          "Boat day with multiple characters",
+          "Beach party/clambake with extras",
+          "Night party at waterpark employee lounge",
+          "Fireworks/beach sequence",
+          "Potentially weather-dependent beach and waterpark exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical crowd and waterpark staging; no major digital spectacle indicated.",
+        "stunts_level": "minor",
+        "sfx_needs": "Water-slide action, falls/tumbles, practical water effects, party chaos, vomiting gag, and crowd reaction staging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "REO Speedwagon 'Can’t Fight This Feeling' and Mr. Mister 'Kyrie' are specifically named and used as scene texture."
+        },
+        {
+          "type": "brand",
+          "detail": "Water Wizz is a real-world branded waterpark name and appears as a central setting identifier."
+        },
+        {
+          "type": "brand",
+          "detail": "Pac Man is specifically named and used as a recognizable arcade game reference."
+        },
+        {
+          "type": "brand",
+          "detail": "Vaurnet sunglasses, Mount Gay, and other branded references appear in dialogue/action."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical indie",
+        "content_level": "Mature PG-13 / R-leaning comedy-drama",
+        "series_engine_or_release_model": "Feature release model; best as a modest-budget theatrical or festival-to-platform title built on character comedy and summer nostalgia."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Way Way Back",
+        "why": "This is the clearest comp because it shares the same emotional architecture: a shy teen, a summer beach setting, a charismatic older mentor, and a humiliating family dynamic that resolves through belonging."
+      },
+      {
+        "title": "Adventureland",
+        "why": "Like this script, it uses a seasonal amusement-park job as a social coming-of-age engine, balancing deadpan comedy, first love, and the awkwardness of young adulthood in a contained, affordable setting."
+      },
+      {
+        "title": "Kings of Summer",
+        "why": "The match is in tone and audience: a youth-centered summer escape story with comic specificity, emotional undercurrent, and a strong sense of adolescent self-invention against unstable family life."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and easy to market: a neglected teen finds confidence and belonging over one summer at a waterpark. That clarity is valuable because buyers can understand the emotional promise in a single sentence.",
+          "evidence": "The opening 'three' conversation, the beach-house setup, and Duncan’s move into Water Wizz establish the engine immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Duncan, Owen, Pam, and Susanna are all distinct enough to support audience attachment, which is crucial for a character-driven comedy-drama. The script gives each of them a recognizable behavioral rhythm rather than generic archetypes.",
+          "evidence": "Duncan’s silence, Owen’s rapid-fire teasing, Pam’s polite strain, and Susanna’s dry intelligence all read clearly across multiple scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "Water Wizz feels like a lived-in ecosystem with its own rules, staff hierarchy, and social rituals. That kind of specificity makes the movie feel ownable and gives the setting real commercial identity.",
+          "evidence": "Recurring figures like Caitlin, Roddy, Lewis, and the Devil’s Peak culture create a mini-world rather than a generic summer-job backdrop.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a very sellable tonal signature: profane, awkward, affectionate, and emotionally honest. That combination is hard to fake and helps the project stand out in a crowded coming-of-age field.",
+          "evidence": "Betty’s blunt dinner-table monologues, Owen’s deadpan park banter, and the Candyland scene all point to the same voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The story has a clean escalation path and a satisfying public payoff, which is important for audience retention and word of mouth. Duncan’s internal growth becomes visible in the final slide sequence, giving the movie a crowd-pleasing finish.",
+          "evidence": "The slide-passing challenge and the final return to the station wagon create a strong endgame.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "This is a relatively contained, producible movie for its scale: contemporary, mostly practical, and centered on a limited number of recurring locations. That makes it attractive for indie financing or streamer acquisition.",
+          "evidence": "The beach house, waterpark, and a handful of nearby exteriors carry most of the film.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Relationship density",
+          "what_it_means": "The script has multiple relationship engines that can sustain scenes without plot machinery. That gives the film replay value and makes the ensemble feel commercially richer than a simple lead-and-sidekick setup.",
+          "evidence": "Duncan/Owen, Duncan/Pam, Duncan/Susanna, Pam/Trent, Owen/Caitlin, and Betty/Peter all generate distinct comic and emotional energy.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a highly marketable, character-driven summer comedy-drama with a clear emotional hook, a distinctive voice, and a memorable setting that functions like an IP world. It feels modest in production scale but rich in audience appeal: funny enough to sell on tone, heartfelt enough to resonate, and specific enough to own."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Budget and logistics exposure",
+          "risk": "The waterpark, beach-party, boat, fireworks, and night-party material create a production footprint that is still manageable, but materially more expensive than a simple contained dramedy. Weather dependence and crowd staging increase schedule risk.",
+          "evidence": "Multiple large exterior sequences at Water Wizz, the clambake, the boat outing, and the fireworks beach scenes all require coordination and extras.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The script uses named songs, branded products, and a real-world waterpark identity, which creates clearance work and potential replacement costs. None of these are fatal, but they are real development and legal tasks.",
+          "evidence": "REO Speedwagon, Mr. Mister, Pac Man, Vaurnet, Mount Gay, and Water Wizz are all explicitly referenced.",
+          "source": "production"
+        },
+        {
+          "theme": "Casting dependency on tone",
+          "risk": "The movie lives or dies on comic timing and emotional precision from a small set of roles, especially Owen, Betty, Pam, and Duncan. If those performances are off, the whole tonal balance can flatten.",
+          "evidence": "Owen’s rapid-fire banter, Betty’s abrasive humor, and Duncan’s near-silent reactions are central to the script’s effect.",
+          "source": "production"
+        },
+        {
+          "theme": "Familiarity of the underlying arc",
+          "risk": "The emotional journey is effective but not structurally surprising: lonely kid, summer job, first love, family rupture, self-assertion. That familiarity is commercially useful, but it limits the script’s sense of radical novelty.",
+          "evidence": "The story beats track a recognizable coming-of-age template even though the setting and voice are specific.",
+          "source": "script"
+        },
+        {
+          "theme": "Adult dysfunction as the dominant pressure",
+          "risk": "A large portion of the dramatic tension comes from the Pam/Trent/Joan triangle and the beach-house social politics, which can make the movie feel more adult than teen if not carefully positioned. That affects audience targeting and trailer strategy.",
+          "evidence": "The Candyland breakdown, the late-night confrontation, and the final departure are all driven by adult relationship collapse.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development risk is not story comprehension; it’s execution discipline. The script is commercially legible and emotionally strong, but it depends on precise casting, controlled production logistics, and a clean tonal balance between teen wish-fulfillment, adult dysfunction, and broad comedy."
+    }
+  },
+  "weightedScore": 79,
+  "tier": "Greenlight Material",
+  "inputTokens": 35790,
+  "outputTokens": 3188,
+  "cost": 0.0411885
+}

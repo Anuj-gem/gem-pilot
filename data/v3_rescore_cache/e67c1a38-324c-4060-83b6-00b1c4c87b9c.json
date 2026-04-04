@@ -1,0 +1,222 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Psychological thriller",
+      "genre_tags": [
+        "crime",
+        "mystery"
+      ],
+      "tone": "grounded, tense, paranoid, grim"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The opening trunk-abduction, the repeated roadside kidnappings, and the final home-invasion sting create a strong commercial thriller promise with a clear fear engine. The hook is easy to pitch and the escalation from Idaho to Montana to Nevada gives it a broad suspense appeal, though the darker, more ambiguous back half and the prolonged uncertainty around the perpetrator narrow the mass-audience lift."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is immediately legible in the opening pages: Val wakes in a car trunk, is abandoned, then repeatedly re-abducted by the same unseen force. The script keeps the story engine clear through the police interviews, the Luthe suspicion, and the recurring postcard motif, so the viewer always understands the central question even when the truth shifts."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Val is a strong lead because she is both vulnerable and combative: she’s a teacher, a smoker, a survivor, and later someone willing to weaponize fear against Luthe. Delgado also has real appeal as the earnest cop who becomes emotionally entangled, especially in the hospital and couch scenes. The characters are durable, but Val’s emotional state is so dominated by trauma that she is more compelling as a pressure vessel than as a broadly charismatic protagonist."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold structural gamble by repeatedly recontextualizing the abductions across different landscapes and time jumps, then ending on a final image that suggests the threat may still be alive. The late pivot from apparent victimhood to possible perpetration by Val is also a strong risk, especially in the interrogation and final confrontation sections."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is highly propulsive in its first half: trunk, field, highway, hospital, relapse, second abduction, desert, and then the investigation all keep the narrative moving. The middle investigation sections maintain momentum through new evidence, the bar confrontation, and the desert chase, and the ending on the final home intrusion is a clean demand for more. The only drag is the extended procedural back-and-forth around Luthe and Bowman, which briefly slows the thriller drive."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea of a woman repeatedly abducted, released, and psychologically destabilized by a hidden antagonist is fresh because the script makes the uncertainty itself the engine. The repeated use of postcards, sleepcasts, and location-specific abduction cycles gives the premise an ownable shape that feels both strange and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has good regional specificity: Plain City/Weber County, Boise, Butte, Logan, Ogden, Salt Lake, and the Western highway network all create a believable geography of isolation and jurisdictional drift. The police apparatus, church background, teacher life, storage units, roadside bars, and suburban homes all feel usable, though the world is still primarily serving the thriller rather than generating many independent story systems."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: a grim, paranoid thriller with flashes of emotional intimacy and a recurring sense of moral contamination. The sleepcast motif, the blunt police dialogue, the religious undertow in Val and Willa’s home, and the repeated sound design of trunks, breathing, and engines give the script a recognizable identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the kidnapping plot, the script suggests deeper material about guilt, memory, religious shame, family control, and the need to impose meaning on random violence. The final reveal that Val may be withholding the truth, plus the Bowman/Kane thread, implies a larger psychological and thematic architecture than the surface thriller initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Val/Delgado relationship is the strongest recurring engine, and Val/Willa and Val/Luthe each have meaningful tension. But the script is still fundamentally driven by Val’s ordeal rather than by a truly combinatorial ensemble; Nyback, Monette, Landry, and the others function more as pressure points than as independently generative relationship nodes."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 2,
+        "series_regulars": 5,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The script is concept-driven and can be sold on premise rather than star power, though a recognizable lead would help for a thriller of this intensity.",
+        "casting_challenges": [
+          "Val must carry extreme emotional range across trauma, paranoia, rage, and ambiguity",
+          "Delgado needs warmth, authority, and chemistry with Val",
+          "Luthe/Bowman/possible masked antagonist requires a performer who can play menace without overplaying",
+          "Child roles appear in multiple scenes, including the mother/son highway scene, Luthe’s son, and Bowman’s daughter"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with frequent exterior road and wilderness sequences",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "Multiple state-to-state road and wilderness settings",
+          "Desert sequence with chase, gunfire, and explosion",
+          "Forest night rain sequence",
+          "Hospital, police, and storage-facility coverage across multiple jurisdictions",
+          "Car trunk confinement and vehicle chase setups",
+          "Home-invasion and night exterior work"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical thriller work; some likely cleanup for car movement, gunfire impacts, and the desert explosion, but no heavy creature or fantasy effects.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Car trunk openings, vehicle pursuit, gunshots, taser hit, explosion, river struggle, and practical blood/injury effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Billy Preston's 'Will It Go Round in Circles' is used in the final trunk/desert transition and is narratively significant."
+        },
+        {
+          "type": "brand",
+          "detail": "Peloton, Ring, Chevrolet, Ford, Buick, Lincoln, American Express, Miller Light, Captain America, and Spotify are all referenced or visible."
+        },
+        {
+          "type": "real_person",
+          "detail": "Matthew McConaughey is referenced in the sleepcast gag."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Lost is referenced as a TV rerun; Captain America is used as a toy reference."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; commercially best as a festival-to-platform or streamer thriller with strong hook marketing and a contained but escalating mystery."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Invisible Man",
+        "why": "Like this script, it turns domestic space and intimate relationships into a sustained paranoia engine, with a trauma-forward heroine and a threat that may be both external and psychologically destabilizing."
+      },
+      {
+        "title": "Wind River",
+        "why": "The Western geography, law-enforcement texture, isolated roads, and bleak emotional register match the script’s use of regional space as a thriller amplifier rather than just a backdrop."
+      },
+      {
+        "title": "Prisoners",
+        "why": "It shares the same grim, morally charged mystery structure where suspicion shifts across multiple men, the investigation becomes emotionally corrosive, and the audience is asked to sit inside uncertainty for most of the runtime."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / marketability",
+          "what_it_means": "The abduction-release-repeat engine is instantly pitchable and gives the film a clean, high-tension commercial premise that can be sold in one sentence.",
+          "evidence": "Val is taken, abandoned, taken again, and the pattern escalates across Idaho, Montana, Nevada, and Utah.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a strong ownable identity: trauma thriller, religious guilt, roadside Americana, and procedural dread all fused into one mood.",
+          "evidence": "Sleepcasts, crucifixes, police interviews, truck stops, and trunk/breathing sound motifs recur throughout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The story keeps renewing itself with new locations, new suspects, and new evidence, which is valuable for audience retention and trailer construction.",
+          "evidence": "Each major section escalates from abduction to investigation to desert chase to final confrontation to epilogue sting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "There is more here than a simple kidnap thriller; the script has thematic weight around guilt, memory, family control, and the human need to assign blame.",
+          "evidence": "Val’s history with her father, Holly, and Willa repeatedly reframes the present-day violence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Relationship engine",
+          "what_it_means": "Val and Delgado give the project an emotional spine beyond the mystery, which helps both audience investment and sequel/series-adjacent conversation.",
+          "evidence": "Their scenes move from professional support to intimacy to rupture, especially in the couch and hotel-room sequences.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Despite the scope of the story, the script is mostly built from practical locations and contained scenes, which keeps it viable for a mid-budget thriller.",
+          "evidence": "Cars, houses, police rooms, bars, storage units, a hospital, and a desert/forest chase are the main production elements.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Casting opportunity",
+          "what_it_means": "The lead role is a substantial showcase for a strong actor, and the supporting cop role is equally playable, which helps packaging.",
+          "evidence": "Val’s arc spans terror, denial, rage, seduction, guilt, and final ambiguity; Delgado evolves from procedural support to emotional counterweight.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, marketable psychological thriller with a clean hook, a strong female lead, and a distinctive regional dread that feels both commercial and ownable. It has the kind of escalating, trailer-friendly structure that can attract a streamer or premium-cable buyer, while the Val/Delgado dynamic and the final ambiguity give it enough emotional and thematic weight to stand out from standard abduction fare."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Casting and performance dependency",
+          "risk": "The film lives or dies on Val’s ability to carry prolonged trauma and ambiguity, and on the antagonist being convincing across multiple identities and false leads.",
+          "evidence": "Val dominates nearly every major sequence, while the story repeatedly shifts suspicion between Luthe, Bowman, and the masked figure.",
+          "source": "script"
+        },
+        {
+          "theme": "Procedural clarity versus ambiguity",
+          "risk": "The script’s strength is mystery, but the repeated reversals and late reframing risk frustrating viewers if the final truth feels too withheld or too elastic.",
+          "evidence": "The investigation repeatedly clears and re-suspicionizes Luthe, then pivots to Bowman/Kane and ends with Val still refusing certainty.",
+          "source": "script"
+        },
+        {
+          "theme": "Budget exposure from geography and action",
+          "risk": "The multiple states, night exteriors, forest rain, desert chase, gunfire, explosion, and vehicle work push this above a simple contained-thriller budget.",
+          "evidence": "Idaho field, Montana forest, Nevada desert, Utah roads, storage facility, and river sequence all require distinct setups.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The script carries a non-trivial clearance burden from music, brands, and pop-culture references, which can create legal and budget friction in production.",
+          "evidence": "Billy Preston, Matthew McConaughey, Lost, Peloton, Ring, Chevrolet, Ford, Buick, Lincoln, American Express, Miller Light, and Captain America are all referenced.",
+          "source": "production"
+        },
+        {
+          "theme": "Emotional harshness",
+          "risk": "The material is relentlessly grim, with abuse, death, stalking, kidnapping, and psychological collapse dominating the runtime, which narrows the audience and platform fit.",
+          "evidence": "Val’s mother dies, her dog is poisoned, she is repeatedly abducted, and the ending leaves her still under threat.",
+          "source": "script"
+        },
+        {
+          "theme": "Relationship fallout",
+          "risk": "The Val/Delgado bond is compelling, but the script intentionally breaks it in a way that may reduce the emotional anchor if not carefully handled in production or marketing.",
+          "evidence": "Their intimacy turns into a rupture in the hotel-room confrontation, and Delgado exits the story emotionally wounded.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is that the script’s mystery engine is strong, but it relies on a lot of controlled ambiguity, multiple false suspects, and a final reframing that must land cleanly or the audience will feel strung along. On the production side, it is still a mid-budget thriller with meaningful location and action demands, so the project needs disciplined packaging and a very clear plan for how to preserve the tension without inflating cost or confusing the audience."
+    }
+  },
+  "weightedScore": 72.3,
+  "tier": "Optionable",
+  "inputTokens": 45004,
+  "outputTokens": 3255,
+  "cost": 0.048400500000000006
+}

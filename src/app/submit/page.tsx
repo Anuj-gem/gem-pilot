@@ -150,8 +150,8 @@ function SubmitPageInner() {
 
       const data = await res.json()
 
-      if (data.error === 'rate_limit') {
-        setError(data.message || 'Rate limit reached. Subscribe for unlimited access.')
+      if (data.error) {
+        setError(data.message || 'Something went wrong. Please try again.')
         setStep('upload')
         setProgress(null)
         return
@@ -340,7 +340,7 @@ function SubmitPageInner() {
 
         <h1 className="text-2xl font-bold mb-1">Submit a script</h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-          Upload your screenplay and see how it scores. Subscribe for the full report with development notes and comparables.
+          Upload your screenplay and see how it scores. Subscribe for the full report with development notes and production analysis.
         </p>
 
         {/* Subscription status badge */}

@@ -151,11 +151,6 @@ export function calculateTier(weightedScore: number): Tier {
 
 // ─── Evaluation Report Shape (v3 — matches GPT output) ────────────
 
-export interface Comparable {
-  title: string;
-  why: string;
-}
-
 export interface Classification {
   format: string;
   genre_primary: string;
@@ -164,9 +159,7 @@ export interface Classification {
 }
 
 /** @deprecated use Classification — kept for v2 backward compat */
-export interface FormatDetection extends Classification {
-  comparables: Comparable[];
-}
+export interface FormatDetection extends Classification {}
 
 export interface DimensionScore {
   score: number;
@@ -279,7 +272,6 @@ export interface ProductionReality {
 export interface GEMEvaluation {
   // v3 fields
   classification?: Classification;
-  comparables?: Comparable[];
   whats_special?: WhatsSpecial;
   whats_holding_it_back?: WhatsHoldingItBack;
 
@@ -304,9 +296,6 @@ export function normalizeEvaluation(raw: GEMEvaluation) {
     tone: raw.format_detection?.tone ?? "",
   };
 
-  const comparables: Comparable[] =
-    raw.comparables ?? raw.format_detection?.comparables ?? [];
-
   // Convert v2 working/hurting to v3 whats_special / whats_holding_it_back
   const whatsSpecial: WhatsSpecial = raw.whats_special ?? {
     strengths: (raw.development_assessment?.working ?? []).map((w) => ({
@@ -328,7 +317,7 @@ export function normalizeEvaluation(raw: GEMEvaluation) {
     headline: "",
   };
 
-  return { classification, comparables, whatsSpecial, whatsHoldingItBack };
+  return { classification, whatsSpecial, whatsHoldingItBack };
 }
 
 // ─── Database Models ────────────────────────────────────────────────

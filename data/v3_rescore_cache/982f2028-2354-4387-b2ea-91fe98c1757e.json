@@ -1,0 +1,224 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Legal drama",
+      "genre_tags": [
+        "family tragedy",
+        "psychological drama"
+      ],
+      "tone": "grounded, mournful, emotionally heightened"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear, emotionally legible hook in the opening bridge suicide attempt and the later malpractice case against the hospital, which gives it a strong logline and a built-in adult audience. The courtroom spine, the brother relationship, and the recovery arc around Adam make it accessible, though the subject matter is heavy and the appeal is more prestige-drama than broad four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early: a lawyer sues the hospital after his brother dies following a suicide attempt and discharge, while his own grief and alcoholism threaten the case. The script establishes the story engine quickly through the bridge opening, the death certificate, the hospital records, and the trial structure."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Adam is a strong lead because he is both competent and broken, especially in the courtroom scenes where he is sharp with Galloway but self-destructive in private, like the vodka bottle in the briefcase before trial. Marc is affecting through flashbacks and voicemail, but as a feature the character work is more about completion of arc than long-term durability."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar legal-drama framework and grounds it in a suicide-discharge malpractice case with a very specific emotional and medical context. The repeated bridge imagery, the voicemail structure, and the final intercut between the missed call and the suicide attempt give it a confident, if not wholly unprecedented, formal identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story moves with clear escalation from grief to investigation to deposition to trial, and the late ambush over the death certificate creates a strong procedural jolt. There is some repetition in the middle with multiple conversations that restate Adam’s guilt and the hospital’s defensiveness, but the courtroom pressure keeps the read moving."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of a malpractice trial, a brother’s suicide, and the protagonist’s own near-collapse is fresh enough to feel ownable, especially with the bridge/boardwalk motif tying the family history together. It is not a wholly new premise, but the emotional logic feels specific and inevitable once the script reveals its shape."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The legal and medical worlds are recognizable and functional, with enough detail in the psychiatric unit, depositions, and courtroom procedure to support the story. Still, the world mostly serves the plot rather than generating a larger ecosystem, and the script does not build much beyond the immediate case and family circle."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is distinctly elegiac and bruised, with recurring images of bridges, boardwalks, donuts, vodka, and winter light giving the script a recognizable emotional palette. It balances courtroom seriousness with intimate family grief, though it stays in one register for much of the runtime."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the legal case, the script suggests deeper material about inherited guilt, masculinity, addiction, and the limits of care, especially through Adam, Mary, and the father flashbacks. The final voicemail/bridge intercut implies a larger emotional architecture than the plot alone, even if the script is ultimately quite explicit about its themes."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Adam-Mary-Marty-Shannon-Galloway web gives the script more than a solo-protagonist structure, and several pairings generate real tension, especially Adam/Mary and Adam/Galloway. Even so, the story still lives primarily on Adam’s shoulders, with the supporting characters functioning more as emotional mirrors than as independently generative engines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 2,
+        "series_regulars": 5,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "A recognizable lead would help, but the material is not dependent on star casting to be intelligible or sellable.",
+        "casting_challenges": [
+          "The story requires a convincing 30s/40s family resemblance between Adam and Marc across flashbacks and present-day scenes.",
+          "Child and teen versions of Adam and Marc are needed in multiple flashbacks.",
+          "Dr. Myers and Dr. Andrews need to play credible, specific medical professionals under pressure."
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary with flashbacks to 1991, 1993, and 2013",
+        "expensive_flags": [
+          "George Washington Bridge night exterior",
+          "Verrazano Bridge references and implied bridge jump imagery",
+          "Baseball stadium flashback with crowd and period recreation",
+          "Boardwalk / amusement ride sequence at Seaside Heights",
+          "Courtroom and hospital interiors repeated across multiple days"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly atmospheric enhancement for bridge exteriors, skyline plates, and the final intercut bridge imagery; no heavy effects-driven sequences.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical hospital, courtroom, and car-rain effects; no major stunt package beyond the implied bridge jump and roller coaster ride coverage.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Tito's vodka is named specifically."
+        },
+        {
+          "type": "brand",
+          "detail": "Chili's is named specifically."
+        },
+        {
+          "type": "brand",
+          "detail": "Donut Castle is referenced by name."
+        },
+        {
+          "type": "real_person",
+          "detail": "Connie Mack World Series is named as a real event."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Tornado roller coaster and Seaside Heights boardwalk references may require location/brand clearances depending on usage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to prestige drama, festival-to-platform, or limited theatrical with awards positioning."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Manchester by the Sea",
+        "why": "Like this script, it is a grief-driven adult drama built around a man whose emotional damage collides with family responsibility, and its commercial lane is prestige, not broad commercial spectacle."
+      },
+      {
+        "title": "The Judge",
+        "why": "It matches the combination of family trauma, legal conflict, and a protagonist whose personal collapse is inseparable from the case, with a similarly actor-forward, courtroom-centered structure."
+      },
+      {
+        "title": "A Civil Action",
+        "why": "The hospital-malpractice spine, the procedural pressure, and the moral exhaustion of pursuing accountability against a powerful institution make this a real tonal and market match."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly legible and emotionally loaded, which makes it easy to pitch and easy for an audience to understand why the case matters.",
+          "evidence": "The opening bridge attempt, the brother’s death, and the hospital lawsuit are all established early and cleanly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Audience appeal & marketability",
+          "what_it_means": "This has a clear prestige-drama lane with awards-friendly emotional stakes and a strong adult audience for legal/family tragedy material.",
+          "evidence": "Courtroom confrontations, family grief, and the hospital accountability story are all familiar but durable commercial ingredients.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Adam is a strong lead role for an actor because he is competent, wounded, and increasingly unstable, giving the project a clear performance hook.",
+          "evidence": "He is sharp in deposition and trial scenes but also drinking in private, missing calls, and nearly collapsing before trial.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has an ownable emotional texture that could help it stand out in a crowded prestige-drama field.",
+          "evidence": "Recurring bridge imagery, boardwalk memories, donuts, vodka, and winter courthouse exteriors create a consistent identity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The material suggests more than a single-case drama; it has built-in themes of guilt, addiction, family inheritance, and the limits of care that can resonate beyond the plot.",
+          "evidence": "Adam’s alcoholism, Mary’s complicity, Marty’s parallel grief, and the father flashbacks all widen the emotional field.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "The script is relatively contained for a feature drama, with a manageable cast and a mostly interior, dialogue-driven footprint.",
+          "evidence": "Most scenes are in courtrooms, homes, offices, diners, and hospitals, with only a few expensive exterior set pieces.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Rights/clearance profile",
+          "what_it_means": "There are some clearance items, but nothing that appears structurally fatal to production.",
+          "evidence": "The named brands and real-world references are limited and mostly incidental rather than plot-critical.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a strong prestige feature package: a clean, pitchable legal-drama engine wrapped around a deeply felt family tragedy, with a lead role that gives an actor real awards-caliber material. The script’s emotional specificity, contained production footprint, and clear audience lane make it commercially viable for streaming, premium cable, or a festival-to-platform release strategy."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Repetition of grief and guilt beats",
+          "risk": "The script repeatedly returns to Adam’s self-blame, drinking, and missed-call guilt in multiple scenes, which can flatten momentum and make the middle feel emotionally redundant.",
+          "evidence": "Several conversations with Mary, Marty, Shannon, and Amy restate the same internal conflict rather than advancing it materially.",
+          "source": "script"
+        },
+        {
+          "theme": "Procedural credibility and legal specificity",
+          "risk": "The courtroom material is compelling, but the late ambush about the medical examiner and the death-certificate rule feels like a writerly device that may invite scrutiny from legal-savvy viewers.",
+          "evidence": "The mistrial threat over cause-of-death proof arrives very late and functions as a surprise obstacle rather than an organically seeded legal complication.",
+          "source": "script"
+        },
+        {
+          "theme": "Melodramatic density",
+          "risk": "The script stacks suicidality, alcoholism, family death, breakup, malpractice, and multiple grief revelations into one feature, which can push the tone toward overdetermined rather than lived-in.",
+          "evidence": "Adam’s collapse, Marty’s dead partner, Shannon’s father, Mary’s guilt, and the father flashbacks all arrive as additional emotional weight in the same narrative lane.",
+          "source": "script"
+        },
+        {
+          "theme": "Supporting character utility",
+          "risk": "Several supporting roles function primarily as thematic instruments for Adam’s journey, which limits ensemble vitality and reduces the sense of a broader world.",
+          "evidence": "Galloway, Shannon, Elena, Dr. Andrews, and Marty each deliver important information or perspective, but few have independent story momentum beyond Adam’s case.",
+          "source": "script"
+        },
+        {
+          "theme": "Production cost concentration",
+          "risk": "While the overall footprint is manageable, the bridge exteriors, boardwalk/amusement imagery, courtroom schedule, and multiple night scenes create a cost profile above a simple contained drama.",
+          "evidence": "The opening on the George Washington Bridge, the Seaside Heights/Tornado material, and repeated night exteriors all add logistical complexity.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance housekeeping",
+          "risk": "The script will require a modest but real clearance pass for brands and real-world references, which is manageable but not zero-friction.",
+          "evidence": "Tito's, Chili's, Donut Castle, Connie Mack World Series, and the named bridge/boardwalk references are all present on the page.",
+          "source": "production"
+        }
+      ],
+      "headline": "The main development risk is not the premise; it’s the accumulation of familiar grief beats and late-stage procedural turns that can make the script feel more engineered than inevitable. On the production side, it remains viable, but the bridge/boardwalk imagery and night-heavy schedule mean it is not a no-risk contained drama."
+    }
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 21911,
+  "outputTokens": 3070,
+  "cost": 0.030248249999999997
+}

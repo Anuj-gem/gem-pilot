@@ -1,0 +1,224 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic dramedy",
+      "genre_tags": [
+        "coming-of-age",
+        "ensemble",
+        "satirical"
+      ],
+      "tone": "Wry, conversational, emotionally earnest, and satirical with bursts of broad comedy"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial promise in the Ben/Scott odd-couple dynamic and the Vineyard setting, especially in scenes like the ferry reveal, the Black Dog lunchroom meet-cute, and the wedding-party chaos. The hook is easy to pitch as a class-and-culture collision on Martha’s Vineyard, though the very specific local politics and dense dialogue narrow the audience somewhat."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early: a frustrated young writer from the Vineyard gets entangled with a wealthy, erratic older insider and a politically volatile ex-girlfriend, all against a time-warped island backdrop. The ferry opening, the 1950s wardrobe gag, and the immediate Scott/Ben exchange establish the story engine quickly and cleanly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Scott is sharply defined as angry, aspirational, and wounded, while Ben is charismatic, self-destructive, and oddly paternal; their scenes in the car and at dinner give both contradiction and momentum. Rebecca and Kate also have distinct energies, but the script is still primarily powered by Scott and Ben rather than a fully balanced ensemble."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a fresh angle by turning Martha’s Vineyard into a social ecosystem where old money, local labor, political vanity, and tourist mythology collide. The 1950s time-travel framing, the Jaws/Illumination Night texture, and the willingness to push into revenge-porn, blackmail, and class humiliation give it a confident, risky voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through a series of escalating set pieces: ferry arrival, island tour, blackmail scheme, wedding confrontation, party disaster, hospital fallout, and final reconciliation. It does sag a bit in the middle with extended dialogue scenes, but the wedding and party sequences restore urgency and the ending delivers a satisfying emotional turn."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of Vineyard insider culture, class resentment, and romantic self-discovery feels specific and ownable, especially in the way the island functions as both paradise and trap. It is not a wholly unprecedented premise, but the script’s blend of local specificity and social satire makes it feel fresh rather than derivative."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Vineyard is rendered as a living system with ferries, Chappaquiddick, the Black Dog, the Tabernacle, Illumination Night, the Jaws jetty, up-island/down-island distinctions, and the social codes around old money and locals. Those details are not decorative; they drive character behavior, status conflict, and the story’s emotional stakes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a recognizable tonal blend of coastal nostalgia, class satire, romantic yearning, and profane comedy. Scenes like the brass-ring carousel, the dinner-table philosophy, and the porn-star trap show a voice that can pivot from sincere to outrageous without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the comedy, the script is about grief, inherited privilege, emotional immaturity, and the difficulty of leaving a place that defines you. Ben’s dead child, Scott’s dead father, Kate’s abandoned identity, and Rebecca’s desperation all suggest deeper emotional reservoirs beyond the surface banter."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Scott/Ben relationship is the core engine, but the script also generates material from Scott/Kate, Scott/Rebecca, Ben/Kate, and Ben/Rebecca. The wedding-house scenes and dinner sequences show that multiple pairings can produce conflict, though the ensemble is still organized around one dominant axis."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": false,
+        "requires_name_talent": true,
+        "name_talent_reason": "Ben Carter and Todd Straite are the kind of high-visibility, high-charisma roles that would benefit from recognizable actors to sell the tonal swing and the class-comedy premise.",
+        "casting_challenges": [
+          "Kate is explicitly African descent and adopted Jewish, which is story-essential.",
+          "Rebecca requires a very specific mix of beauty, volatility, and vulnerability.",
+          "Ben needs to play wealthy, damaged, funny, and emotionally credible across a wide range.",
+          "Todd must read as a polished political operator with enough charm to be believable as a public figure."
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 40/60",
+        "period_or_contemporary": "Contemporary with extensive 1950s wardrobe/flashback-style presentation and vintage references",
+        "expensive_flags": [
+          "Multiple ferry sequences and water-adjacent production",
+          "Beach and harbor locations",
+          "Chappaquiddick and up-island travel coverage",
+          "Beach Plum Inn wedding/event setup",
+          "Crowded party sequence with extras, music, and security",
+          "Night beach and road scenes",
+          "Potentially difficult access and weather dependence on Martha’s Vineyard locations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Only light enhancement implied for the fantasy-like montage and any cleanup of island vistas; no major effects story.",
+        "stunts_level": "minor",
+        "sfx_needs": "Car breakdown, physical scuffles, thrown objects, and the emergency-room aftermath; mostly practical.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Ted Kennedy, Mary Jo Kopechne, John Belushi, Clinton, Doug Liman, Ted Danson, Mary Steenburgen, Maggie Haberman, Bernie Madoff, Sandy Koufax, Bruce Willis, Paris Hilton, Ronald Reagan, and others are referenced by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "The script references 'The End' by The Doors and uses a John Barry score reference in the montage."
+        },
+        {
+          "type": "brand",
+          "detail": "Fox News, Red Sox, Black Dog, Look Magazine, IMDB, TMZ, Heineken, Sam Adams, McDonald’s, Applebee’s, Scientology, and other brands/entities are named."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Jaws, The Twilight Zone, The Godfather, The Wild Bunch, Looney Tunes, Charlie Brown, The Six Million Dollar Man, and The Secret are all referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "As written, this is a feature with a contained release model; the strongest lane is festival-to-platform or streamer acquisition, given the dialogue-heavy, character-driven, adult-comedy profile."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Big Chill",
+        "why": "Like this script, it uses a specific social milieu and a group dynamic to process grief, class, and adulthood through conversation-heavy scenes rather than plot mechanics."
+      },
+      {
+        "title": "The Way Way Back",
+        "why": "It matches the coming-of-age-through-summer-setting, the emotional outsider perspective, and the mix of comedy with wounded family dynamics, though this script is more adult and more satirical."
+      },
+      {
+        "title": "Palm Springs",
+        "why": "The tonal blend of romantic comedy, existential drift, and a contained social environment with escalating emotional stakes is a real match, even though this script is more grounded and less high-concept."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly communicable and commercially legible: a Vineyard local gets pulled into the orbit of a wealthy island insider and a politically explosive romantic mess. That gives buyers a clean hook with a built-in class-comedy engine.",
+          "evidence": "The ferry opening, Ben's 1950s wardrobe reveal, and Scott recognizing him from the old café establish the story engine immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "The Vineyard is not just a backdrop; it is a branded, story-generating ecosystem with its own rituals, geography, and class codes. That makes the script feel ownable and gives it franchise-like texture even as a standalone feature.",
+          "evidence": "Black Dog, Chappaquiddick, Illumination Night, the Jaws jetty, the ferry system, and up-island/down-island distinctions all shape the action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a distinct voice that can move from romantic sincerity to profane social satire without feeling generic. That kind of tonal identity is valuable for marketing because it is easy to describe and hard to imitate.",
+          "evidence": "The brass-ring carousel scene, the dinner-table philosophy, and the party/honey-trap sequence all carry the same irreverent but heartfelt signature.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Ben and Scott are both flawed but watchable, and their relationship creates a durable emotional engine. That makes the project attractive as a star-driven two-hander with strong supporting turns.",
+          "evidence": "Their ferry meeting, car arguments, dinner banter, and final reconciliation all show a relationship that can carry the movie.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script has genuine emotional undercurrents around grief, inheritance, and belonging, which gives it more value than a simple hangout comedy. That depth broadens audience connection and awards-season credibility at the margins.",
+          "evidence": "Ben's dead son, Scott's dead father, Kate's abandoned identity, and Rebecca's desperation all point to deeper emotional stakes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Despite the island travel and party sequences, this is still fundamentally a dialogue-driven, practical-location feature without heavy VFX or large-scale action. That keeps it within a realistic mid-budget lane.",
+          "evidence": "Most scenes are in cars, restaurants, beaches, homes, and ferry terminals, with only minor technical demands.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Casting opportunity",
+          "what_it_means": "The roles are vivid and actor-friendly, especially Ben, Scott, Rebecca, and Kate. That improves packaging potential and gives the project a real shot at attracting talent who want sharp dialogue and emotional range.",
+          "evidence": "Ben's comic volatility, Rebecca's volatility-with-vulnerability, and Kate's poised intelligence all read as showcase parts.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a smart, highly marketable Vineyard comedy-drama with a strong identity: a class-satire romance powered by vivid local texture, star-friendly roles, and a clear emotional engine about grief, belonging, and self-worth. It feels producible, ownable, and easy to pitch, with enough tonal bite and heart to stand out in the adult dramedy space."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Rights and clearance exposure",
+          "risk": "The script is loaded with real-person references, brand names, and IP touchpoints, which creates legal review burden and potential clearance costs for a production company.",
+          "evidence": "Ted Kennedy, Mary Jo Kopechne, John Belushi, Doug Liman, Maggie Haberman, TMZ, Jaws, The Godfather, The Wild Bunch, Looney Tunes, and multiple brands are all named.",
+          "source": "production"
+        },
+        {
+          "theme": "Budget and logistics concentration",
+          "risk": "The story depends on Martha's Vineyard-specific locations, ferry movement, beach access, night exteriors, and event scenes, which pushes the production beyond a simple contained indie and makes weather and permitting meaningful risks.",
+          "evidence": "The ferry terminal, Chappaquiddick, Dike Bridge, beach parking lot, Beach Plum Inn wedding, and party house all require location coordination and likely company moves.",
+          "source": "production"
+        },
+        {
+          "theme": "Tone management",
+          "risk": "The script asks the audience to move between sincere grief, broad comedy, political satire, sexual humiliation, and romantic yearning. That range is a strength, but it also creates execution risk if casting or direction misses the balance.",
+          "evidence": "The script jumps from Ben's dead-child confession to revenge-porn blackmail to a blowjob trap to a tearful reconciliation and then a sentimental ending.",
+          "source": "script"
+        },
+        {
+          "theme": "Lead dependency",
+          "risk": "The movie lives or dies on the chemistry and charisma of Ben and Scott, with Rebecca and Kate functioning more as catalytic forces than fully independent engines. That makes casting and performance quality unusually important.",
+          "evidence": "Most major turns are driven by Ben coaching, provoking, or rescuing Scott, and by Scott reacting to Ben's orbit.",
+          "source": "script"
+        },
+        {
+          "theme": "Dialogue density",
+          "risk": "The script is very talky, and several scenes are built around extended ideological sparring rather than visual escalation. That can play well with the right cast, but it also risks softness in pacing and audience fatigue if not staged dynamically.",
+          "evidence": "Long exchanges at the ferry, in the car, at dinner, and in the house carry much of the narrative load.",
+          "source": "script"
+        },
+        {
+          "theme": "Mature content and audience narrowing",
+          "risk": "The revenge-porn setup, explicit sexual material, profanity, and political references place the project firmly in adult territory, limiting broad family or four-quadrant reach.",
+          "evidence": "The blowjob-video trap, repeated sexual banter, and explicit language are central to the plot rather than incidental.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is not the premise; it is execution discipline. This script needs the right cast, the right tonal control, and a producer comfortable with rights clearance and location complexity, because the material is commercially attractive but highly sensitive to balance and packaging."
+    }
+  },
+  "weightedScore": 75,
+  "tier": "Optionable",
+  "inputTokens": 30053,
+  "outputTokens": 3406,
+  "cost": 0.037866750000000005
+}

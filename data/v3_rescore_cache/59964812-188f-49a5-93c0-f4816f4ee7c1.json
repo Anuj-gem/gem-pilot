@@ -1,0 +1,228 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Art-world thriller",
+        "Crime",
+        "Satire"
+      ],
+      "tone": "Smart, literate, heightened, satirical, and emotionally grounded"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial engine in the Ross/Brett scheme around a lost masterpiece, a billionaire father, and an art-world con that escalates into FBI involvement, especially in the Christie’s and auction-house sequences. The hook is easy to pitch and the New York art-world setting gives it prestige appeal, though the art-specific milieu and dense jargon narrow the audience somewhat."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early: Ross, a struggling painter/restorer, is recruited by Brett and Amara to forge 'Landscape with Woman' for a billionaire father obsessed with the work. The script keeps the story engine legible through the Freeport delivery, the forgery process in Brett’s apartment, and the authentication/auction plan."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Ross is compelling because she is talented but economically cornered, as established in the grant interview, Christie’s restoration job, eviction notice, and student loan pressure. Brett is equally durable: privileged, strategic, wounded, and volatile, with the father/approval dynamic and the later betrayal giving her real contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a fresh angle on forgery by making the central question not just 'can she fake it?' but 'can a story, market, and class system make the fake real?' The repeated art-theory digressions, superscripted economic details, and dual-perspective structure are confident stylistic choices that distinguish the piece."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps generating reversals: the initial pitch, Ross’s refusal, the training/research montage, the betrayal reveal, the FBI sting, the auction escalation, and the final gallery payoff. The middle is long, but each major turn changes Ross’s leverage or understanding, so the script remains propulsive."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The combination of a broke painter, a trans art-world operator, a billionaire father, and a forgery scheme that becomes a commentary on authenticity and value feels novel and inevitable at once. The strongest example is the pivot from 'make a copy' to a story-driven market manipulation that weaponizes authentication and collector psychology."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "The NYC art ecosystem is richly specific: Christie’s restoration grotto, Armory fair, Freeports, the Met, the Cloisters, Chelsea openings, collectors, consultants, catalogues raisonnés, and the social codes around Yale, galleries, and patronage. The world is not just backdrop; it drives the plot, the economics, and the status games."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinctive: a blend of art-world satire, class comedy, emotional vulnerability, and caper-thriller mechanics. Scenes like Ross’s humiliating sales pitch, Brett’s deadpan wealth rituals, and the FBI/auction climax create a recognizable voice that could be identified from the page."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the caper, the script is about visibility, authorship, class, trans identity, and the hunger to be seen by the right person. The father/daughter material, Ross’s dead father and meritocracy wound, and the final Boys & Girls Club coda all suggest deeper thematic payoff beyond the plot mechanics."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Ross and Brett generate strong two-hander energy, and Amara adds a third point of tension that keeps the scheme unstable. The script also uses secondary relationships well—Ross with Mullet, Brett with her mother and father, Brett with Stephen, Ross with the gallerist—so the ensemble has real combinatorial value."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The project would benefit from recognizable talent to sell a dialogue-heavy, art-world-specific feature with a morally ambiguous lead duo and a high-concept but niche premise.",
+        "casting_challenges": [
+          "Brett is explicitly trans; authenticity and casting sensitivity are essential.",
+          "Ross requires a performer who can carry vulnerability, comic frustration, and intellectual specificity.",
+          "The Billionaire, Amara, and Stephen need strong, precise casting to make the class dynamics land.",
+          "A few child roles appear in flashbacks and the Boys & Girls Club material."
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "Contemporary",
+        "expensive_flags": [
+          "New York City art-world locations",
+          "Christie's / museum / gallery access look",
+          "Porto, Portugal travel sequence",
+          "Private jet and Teterboro airport",
+          "Luxury apartments and high-end interiors",
+          "Auction house crowd scenes",
+          "Museum and institutional permissions if shot on location"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly invisible or compositional work for art inserts, crowd augmentation, and a few stylized flashback transitions; no major creature or effects work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical Narcan overdose beat, auction-house commotion, minor physical confrontation/shoulder-check moment, and prop-driven forgery/authentication materials.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Brock Colyar is a real New York Magazine reporter and is named repeatedly."
+        },
+        {
+          "type": "real_person",
+          "detail": "The script references real figures and institutions in the art world, including Christie’s, the Met, Whitney, Guggenheim, Yale, and named experts/collectors in a way that may invite clearance review."
+        },
+        {
+          "type": "brand",
+          "detail": "Numerous brands are named prominently, including Christie’s, Hauser and Wirth, New York Magazine, Daily Mail, Uniqlo, Tito’s, Rick Owens, Gucci, Ligne Roset, Calacatta marble, and others."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical music is specifically named."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script centers on a specific lost artwork, 'Landscape with Woman,' and references catalogues raisonnés, auction records, and art-historical works that may require careful clearance if based on real provenance or identifiable works."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical indie",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or prestige limited theatrical rollout given the dialogue density, art-world specificity, and star-driven appeal."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Square",
+        "why": "Like this script, it satirizes elite art-world behavior while using institutions, status, and performance of taste as the real engine of the drama."
+      },
+      {
+        "title": "The Talented Mr. Ripley",
+        "why": "It matches the blend of class aspiration, identity performance, beautiful surfaces, and a morally slippery con centered on access to wealth and cultural capital."
+      },
+      {
+        "title": "Emily the Criminal",
+        "why": "It shares the pressure-cooker feel of an economically cornered protagonist pulled into a criminal scheme by the promise of money, with a grounded, contemporary urban production profile."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and commercially legible: a struggling painter is recruited into an art forgery scheme that becomes a battle over authenticity, class, and who gets to define value.",
+          "evidence": "Ross is asked to paint 'Landscape with Woman' for Brett’s billionaire father, and the plan evolves through authentication, auction manipulation, and FBI pressure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density & texture",
+          "what_it_means": "The script has enough art-world specificity to feel premium and expandable, giving buyers a world that feels expensive, insider, and story-generating rather than generic.",
+          "evidence": "Christie’s restoration grotto, Freeports, the Armory, the Met, the Cloisters, catalogues raisonnés, collectors, consultants, and gallery politics all actively shape the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Character appeal",
+          "what_it_means": "Ross and Brett are both commercially useful leads: one is economically desperate but artistically serious, the other is privileged, strategic, and emotionally damaged. Their friction creates a strong two-hander engine.",
+          "evidence": "Ross’s eviction/student-loan pressure and Brett’s father-driven gallery ambition are established early and then collide in the forgery scheme.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The voice is ownable: it mixes art-world satire, romantic tension, class comedy, and caper mechanics in a way that feels sophisticated but accessible.",
+          "evidence": "The script moves from humiliating grant interviews and collector small talk to FBI jackets, auction theatrics, and deadpan wealth rituals.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The story has thematic weight beyond the caper, which helps it travel as prestige material and gives it awards-adjacent positioning.",
+          "evidence": "It repeatedly ties art to visibility, inheritance, trans identity, family damage, and the difference between being good and being seen.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the upscale setting, the script is mostly dialogue- and performance-driven, with limited effects and a manageable number of core locations, making it viable below tentpole scale.",
+          "evidence": "Most scenes are in apartments, galleries, museums, bars, and streets, with only modest technical demands.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Commercial hook",
+          "what_it_means": "The forgery/auction climax gives the movie a built-in trailer moment and a satisfying escalation path that can sell the audience on stakes quickly.",
+          "evidence": "The Christie’s auction, FBI intervention, and final market manipulation create a clean, high-stakes set piece.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, premium-feeling art-world caper with a sharp emotional core and a highly ownable voice. It combines a clear commercial hook, a richly textured New York milieu, and two strong lead roles into a package that could attract talent and buyers looking for something sophisticated, contemporary, and conversation-worthy."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Rights and clearance exposure",
+          "risk": "The script uses a number of real institutions, brands, and a named real-life reporter, which creates avoidable legal and clearance friction for production and distribution.",
+          "evidence": "Brock Colyar is named directly; Christie’s, the Met, Whitney, Guggenheim, Yale, Daily Mail, Uniqlo, and multiple luxury brands are repeatedly referenced.",
+          "source": "script"
+        },
+        {
+          "theme": "Budget creep from upscale world-building",
+          "risk": "Although not effects-heavy, the script asks for a lot of expensive-looking environments and travel, which can push the project above a modest indie budget if not carefully managed.",
+          "evidence": "Porto travel, private jets, Teterboro, luxury apartments, auction houses, museums, and crowd-heavy art events are all central to the story.",
+          "source": "script"
+        },
+        {
+          "theme": "Dialogue density and insider specificity",
+          "risk": "The script is smart and specific, but some of the art-market explanation and institutional detail may play as dense or exclusionary for a broader audience if not handled with strong casting and direction.",
+          "evidence": "Extended passages explain Freeports, provenance, authentication, catalogues raisonnés, and auction mechanics in detail.",
+          "source": "script"
+        },
+        {
+          "theme": "Lead casting dependency",
+          "risk": "The movie depends heavily on the chemistry and precision of Ross and Brett; if either role is undercast, the whole piece loses its engine.",
+          "evidence": "Nearly every major turn is driven by their two-hander dynamic, with Amara functioning as a third pressure point rather than a full ensemble spread.",
+          "source": "script"
+        },
+        {
+          "theme": "Mature, niche audience profile",
+          "risk": "The subject matter is sophisticated and adult, but not broadly four-quadrant; the audience is likely prestige-minded rather than mass-market.",
+          "evidence": "The script centers on art-world labor, class resentment, trans identity, and market manipulation rather than conventional action or broad comedy.",
+          "source": "script"
+        },
+        {
+          "theme": "Length and structural sprawl",
+          "risk": "The screenplay is ambitious and richly layered, but the number of reversals, flashbacks, and explanatory passages creates a long-form feel that may challenge pacing in a feature runtime.",
+          "evidence": "The story repeatedly revisits the same scheme from different angles, with extended flashbacks to Brett’s family history and multiple explanatory digressions about art history and forgery.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development risk is not the idea; it’s the execution footprint. This is a sophisticated, high-specificity feature that needs careful control over rights, budget, and pacing so the intelligence of the material doesn’t become a barrier to access or production."
+    }
+  },
+  "weightedScore": 80.3,
+  "tier": "Optionable",
+  "inputTokens": 39807,
+  "outputTokens": 3269,
+  "cost": 0.04456575
+}

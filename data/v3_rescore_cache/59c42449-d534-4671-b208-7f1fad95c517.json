@@ -1,0 +1,218 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "thriller",
+        "coming-of-age"
+      ],
+      "tone": "Heightened, suspenseful, emotionally earnest, with satirical corporate-bureaucratic edges"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The opening forest chase, the body-swapping/shapeshifting reveal, and the teen-movie emotional spine around Ava, Shannon, Liam, and Christy give this a clear commercial engine. The town-wide manhunt, secret lab, and billionaire conspiracy broaden the hook beyond YA, but the premise is still niche enough that it will likely sell best as elevated genre rather than four-quadrant mainstream."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the cold open: a terrified child fleeing armed pursuers turns out to be a shapeshifter, and the story engine becomes clear once Ava starts seeing impossible transformations around town. By the midpoint, the script cleanly explains the rules through Priscilla, Wilma, and June, and the final reveal that Ava is actually Madison gives the premise a strong structural twist."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ava/Madison is built as a sympathetic, insecure lead with a strong emotional contradiction: she wants to be seen, but her power literally erases identity. June is vivid and complicated, especially once she reveals she can shapeshift too, and Priscilla/Wolcott provide strong antagonistic pressure. Liam, Shannon, and Christy are functional but mostly serve the plot rather than opening deeper character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by making identity theft literal, then tying it to class, self-image, and corporate exploitation. The sequence where Ava becomes Christy in the locker room, then later discovers she is actually Madison, is a strong formal and thematic choice that feels specific rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is highly propulsive: the opening chase, the roadblock, the school confrontation, the mall chase, the secret-lab reveal, and the final lab fire all escalate cleanly. It keeps turning over new information at a steady clip, and the late reveal that Ava is Madison recontextualizes the entire story in a way that sustains momentum through the climax."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea of a girl whose shapeshifting is entangled with memory, self-loathing, and social aspiration feels fresh and immediately legible. The reveal that the protagonist has been living inside another girl’s identity, plus the corporate use of shapeshifters as blackmail assets, gives the script a 'never seen this, but of course' quality."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The small-town setting, the school, the burger joint, the mall, the secret forest lab, and the corporate security apparatus create a coherent local ecosystem with enough texture to feel story-generating. The world is strongest when it shows how the company has infiltrated schools, police, and local commerce, though the larger outside world remains mostly implied rather than deeply dramatized."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends teen insecurity, paranoid sci-fi thriller mechanics, and a surprisingly earnest emotional register. Scenes like Ava’s crush humiliation at Sammy’s, the school interrogation, and the body-swap panic in the mall give the script a distinct flavor, though it occasionally leans on familiar thriller beats and explanatory dialogue."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the chase plot, the script is about identity, class resentment, parental love, and the seduction of power. The late-stage emotional turn between Madison and the real Ava, plus June’s own compromised role, suggests deeper thematic material that could support more than one viewing and potentially more story."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Ava/Shannon friendship, Ava/June tension, Ava/Liam crush, and the adversarial triangle with Priscilla/Wolcott/Jamieson create a workable web of relationships. It is not a pure ensemble piece, but the script repeatedly generates scenes from pairings rather than isolating the protagonist, which gives it solid relational energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 3,
+        "series_regulars": 7,
+        "child_actors": true,
+        "requires_name_talent": true,
+        "name_talent_reason": "The project would benefit from recognizable talent for the lead teen role and especially for Priscilla/Wolcott-level authority figures, because the premise is high-concept and the script depends on audience trust in the emotional and thriller mechanics.",
+        "casting_challenges": [
+          "Requires a young female lead who can play multiple identities/body states convincingly",
+          "Requires a child performer for Madison",
+          "Requires actors who can believably shift between different bodies/forms without losing continuity",
+          "Ethnicity/body continuity is story-critical in several shapeshift transitions"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Contemporary",
+        "expensive_flags": [
+          "Large school sequences with crowds",
+          "Mall chase with multiple public spaces",
+          "Secret lab build with multiple specialized rooms",
+          "Forest roadblock/chase with helicopters, police, and multiple vehicles",
+          "Fire/explosion sequence in the lab",
+          "Multiple night exterior chase scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Frequent shapeshift transformations, body morphing, identity swaps, and some flash-cut memory effects; mostly practical/visual-compositing driven rather than full-CG spectacle.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Foam spray effects, burns, fire ignition, stun-gun/cattle-prod impacts, gunfire, body convulsions, and lab explosion/fire effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Eric Huntington is a fictional billionaire, but the script references a 'dead billionaire in Mexico' news story and a New York Times reporter; no obvious life-rights issue from the page alone."
+        },
+        {
+          "type": "brand",
+          "detail": "Trader Joe's, CNN, TikTok, Google, iPhone, Beretta APX Carry, Purina, and Ford are all named on the page."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Indiana Jones is referenced in dialogue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable theatrical feature",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "As written, this reads as a feature with a contained but expandable mythology; the engine is identity-shifting pursuit, corporate conspiracy, and the emotional question of who gets to own a life."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Freaks",
+        "why": "Like this script, it centers on a young girl discovering a hidden power while being hunted by a larger system, and it balances intimate emotional stakes with a contained sci-fi conspiracy."
+      },
+      {
+        "title": "The Faculty",
+        "why": "The high school infiltration, paranoia about who is really who, and the teen ensemble moving through a small-town threat make this a strong tonal and structural cousin, even though the mechanism here is shapeshifting rather than possession."
+      },
+      {
+        "title": "Paper Girls",
+        "why": "It matches the mix of adolescent identity crisis, genre escalation, and emotional coming-of-age under pressure, with a similar need for clear rules, strong female leads, and a mystery that keeps widening."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook / resonant originality",
+          "what_it_means": "The premise is instantly pitchable and commercially legible: a teen shapeshifter story that turns identity, class, and self-worth into the actual mechanics of the plot. That gives buyers a clean hook with thematic depth.",
+          "evidence": "The opening chase, the body-copying rules, and the late reveal that Ava is actually Madison.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The script is not just a chase thriller; it has a built-in emotional engine about being seen, being valued, and inheriting a damaged self-image. That creates awards-adjacent emotional resonance inside a genre package.",
+          "evidence": "Ava's insecurity, June's 'I always know who you are' bond, and Madison's final connection to the pendant and the note.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Narrative momentum",
+          "what_it_means": "The story keeps escalating with new reversals and reveals, which is a strong sign for audience retention and trailerability. It has a clear forward drive and multiple set-piece moments.",
+          "evidence": "Forest chase, roadblock, school confrontation, mall escape, lab fire, final reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density",
+          "what_it_means": "The small-town corporate takeover, school infiltration, and secret-lab infrastructure create a world that feels operational rather than decorative. That supports strong production design and franchise potential if desired.",
+          "evidence": "Company SUVs at school, private security in town, secret forest lab, public disinformation campaign.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a distinct blend of teen awkwardness, paranoid sci-fi, and emotional sincerity that makes it ownable. It can be marketed as both a thriller and an identity story.",
+          "evidence": "The crush scenes at Sammy's, the locker-room transformation, and the found-family ending.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the scope, the story is mostly contained to a small number of recurring environments and a limited core cast, which keeps it in a manageable budget tier for a genre feature.",
+          "evidence": "House, school, mall, woods, warehouse, and secret lab recur throughout.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Casting appeal",
+          "what_it_means": "The lead role is a showcase part for a young actor because it requires vulnerability, physicality, and multiple identity states. That can help attract talent and give the project a strong performance hook.",
+          "evidence": "Ava/Madison/Christy/older-body transformations and the final emotional turn.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a clean, high-concept genre feature with a real emotional spine: a teen shapeshifter thriller that turns identity crisis into the engine of the plot. It has enough set pieces, mythology, and thematic bite to feel commercial, but it also has a distinctive point of view and a contained enough footprint to be producible without blockbuster scale."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Explanatory density and late-rule clarification",
+          "risk": "The script spends a lot of time explaining the mechanics of copying, memory loss, foam, and identity transfer through dialogue and reversals, which can create comprehension risk if the audience falls behind. The late reveal that Ava is Madison is effective, but it also means the audience is asked to reprocess a large amount of prior action.",
+          "evidence": "Priscilla's conference-room explanation, Wilma's memory talk, June's exposition, and the final identity reveal.",
+          "source": "script"
+        },
+        {
+          "theme": "Casting and performance complexity",
+          "risk": "The lead must play multiple bodies, ages, and identities, and the story depends on the audience tracking subtle continuity across those shifts. That is a real casting and editorial risk, especially for a first-time or less recognizable lead.",
+          "evidence": "Ava-Christy, Ava-Grandma, Ava-Eric, Madison-Ava, Madison-Eric, and the real Ava/Madison split.",
+          "source": "both"
+        },
+        {
+          "theme": "Production exposure in action sequences",
+          "risk": "The mall chase, helicopter roadblock, lab fire, explosions, and multiple night exteriors push the project above a simple contained indie and into a more expensive genre lane. It is still manageable, but not cheap.",
+          "evidence": "Helicopter search, public roadblock, mall pursuit, secret-lab inferno, and final evacuation.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance clutter",
+          "risk": "The script uses a number of named brands and cultural references that will need clearance review, and the Indiana Jones line is especially notable as a direct IP reference. None are fatal, but they add development cleanup.",
+          "evidence": "Trader Joe's, CNN, TikTok, Google, iPhone, Purina, Beretta, Ford, and Indiana Jones.",
+          "source": "production"
+        },
+        {
+          "theme": "Secondary character utility over depth",
+          "risk": "Several supporting roles function primarily as plot operators or emotional mirrors rather than fully independent engines, which limits ensemble value and long-tail series potential. The script is strongest when focused on Ava/Madison and June.",
+          "evidence": "Liam, Christy, Jamieson, Mills, and even Shannon are often used to move the plot or reflect Ava's state.",
+          "source": "script"
+        },
+        {
+          "theme": "Tonal strain between teen drama and biotech thriller",
+          "risk": "The script is generally controlled, but it has to bridge crush comedy, body horror, corporate conspiracy, and moral melodrama. That breadth is a strength, but it also creates a risk of tonal whiplash if not carefully staged and cast.",
+          "evidence": "Sammy's flirtation, locker-room transformation, lab torture, and the final found-family ending.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is not the idea; it is managing clarity and execution around a very demanding identity-shift premise. The script also carries real production and casting complexity, so the path to screen depends on keeping the rules legible, the tone controlled, and the transformation effects believable without overspending."
+    }
+  },
+  "weightedScore": 72.3,
+  "tier": "Optionable",
+  "inputTokens": 35340,
+  "outputTokens": 3339,
+  "cost": 0.0415305
+}

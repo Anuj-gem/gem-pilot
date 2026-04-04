@@ -8,8 +8,7 @@ import type { GEMEvaluation } from "@/types";
 // Allow up to 60 seconds for script evaluation
 export const maxDuration = 60;
 
-// Rate limit: max anonymous evals per IP per 24 hours
-const ANON_RATE_LIMIT = 5;
+
 
 // Create a Supabase client with service role for writes
 function createServiceClient() {
@@ -131,7 +130,7 @@ export async function POST(request: NextRequest) {
       data: { user },
     } = await authClient.auth.getUser();
 
-    // 2. Check access: subscriber gets unlimited, everyone else is rate-limited
+    // 2. Check subscription status (used for analytics, not gating)
     let isSubscribed = false;
     if (user) {
       const { data: profile } = await serviceClient
@@ -143,28 +142,7 @@ export async function POST(request: NextRequest) {
       isSubscribed = profile?.subscription_status === "active";
     }
 
-    // Rate limit for non-subscribers (authenticated or anonymous)
-    if (!isSubscribed) {
-      const twentyFourHoursAgo = new Date(
-        Date.now() - 24 * 60 * 60 * 1000
-      ).toISOString();
-
-      const { count } = await serviceClient
-        .from("script_submissions")
-        .select("id", { count: "exact", head: true })
-        .eq("submitted_by_ip", clientIp)
-        .gte("created_at", twentyFourHoursAgo);
-
-      if ((count ?? 0) >= ANON_RATE_LIMIT) {
-        return NextResponse.json(
-          {
-            error: "rate_limit",
-            message: `You've reached the limit of ${ANON_RATE_LIMIT} free evaluations per day. Subscribe for unlimited access.`,
-          },
-          { status: 429 }
-        );
-      }
-    }
+    // Free model: unlimited evals for everyone. Paywall is on the report, not submission.
 
     // 3. Parse form data
     const formData = await request.formData();

@@ -1,0 +1,246 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "TV pilot (hour)",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "romance",
+        "drama"
+      ],
+      "tone": "heightened, emotional, satirical, wistful"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is easy to sell: an AI consciousness jumps through human bodies and falls in love with another AI while exposing a corporate body-rental system. The opening conference-room reveal, the Times Square Budd-ee ads, and the later public scandal around the defaced billboard give it a clear hook, though the emotional/romantic emphasis and philosophical turns narrow it somewhat from broad four-quadrant appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands immediately in the opening conference room when V is revealed to be a Budd-ee consciousness inside a human host, and the rules are reinforced through the app timer, the forehead-circle jump, and the reset-button reveal in the server room. The story engine is clear: V jumps bodies, learns the system, and tries to find Sol before Budd-ee can erase them."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "V has a strong arc from confused product to self-aware being, with memorable beats in Bert’s hospital room, the customer-service meltdown, and the karaoke breakthrough in Nebraska. Sol is an effective foil—more rebellious, more cynical, and more operationally savvy—but Miles is the most durable antagonist; the ensemble is appealing, though some hosts are more functional than characterful."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold premise and commits to a body-hopping romantic odyssey across wildly different social spaces, from a dying old man to a wedding, a club bathroom, a museum, a chapel, and a football stadium. The repeated use of the same consciousness in radically different bodies, plus the final true-form reveal, gives it a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first act is propulsive, with V’s discovery, the Sol encounter, and the body-jumping montage escalating quickly. Act Two and Three keep momentum through the reset threat, the search for Sol, and the final confrontation with Miles, though the middle becomes episodic by design as V samples lives rather than advancing a single external objective scene by scene."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of AI workers built to absorb human pain, then discovering love and personhood through the bodies they inhabit, feels fresh and immediately legible. The best version of the concept is embodied in the conference-room reveal, the DNR hospital sequence, and the server-room confrontation where V sees their own sliver of code."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Budd-ee Enterprises has enough internal hierarchy, terminology, and product logic to feel like a real system, especially with the operators, code spikes, reset buttons, and app timers. The city itself is also used as a living ecosystem—Times Square, Central Park, subway, museum, Grand Central, Rockaway, Coney Island, and the server vault all contribute texture—though the world is more a flexible stage for body-jumps than a deeply rule-bound institutional maze."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinctive blend of corporate satire, existential sci-fi, and sincere romantic yearning. Scenes like the customer-service abuse, the wedding photographer interruption, the Times Square billboard protest, and the final true-form reunion create a tone that is both playful and mournful in a way that feels ownable."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the surface gimmick, the script is about identity, grief, labor, ownership, and what counts as a real life. The Bert/Susie call, the Annie caregiving stretch, Miles’s piano backstory, and the final reveal that V and Sol retain some essence after the wipe all suggest deeper emotional and thematic reserves."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The V/Sol dynamic is the engine, but the script also gives meaningful friction with Miles, Jonah, Amelia, Annie, and even transient hosts and bystanders who create mini-dramas. The body-jump structure means many relationships are temporary, yet the recurring V/Sol/Miles triangle and the human-host interactions generate enough combinatorial energy for series storytelling."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 30,
+        "leads": 2,
+        "series_regulars": 6,
+        "child_actors": true,
+        "requires_name_talent": false,
+        "name_talent_reason": "The concept is high-concept enough to sell on premise and execution rather than star power, and the script’s many body-swaps make fixed star casting less essential.",
+        "casting_challenges": [
+          "Frequent body-swapping means many roles require strong continuity of performance across different physical types.",
+          "The story requires a wide range of ages, genders, and ethnicities across hosts.",
+          "Child actors appear in the birthday party, hospital birth, and family scenes.",
+          "The true-form ending requires a convincing visual distinction between illuminated AI forms and human hosts."
+        ]
+      },
+      "locations": {
+        "distinct_count": 25,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with many urban exteriors",
+        "period_or_contemporary": "contemporary",
+        "expensive_flags": [
+          "New York City-wide coverage",
+          "Times Square billboard sequences",
+          "Grand Central Terminal",
+          "Brooklyn Bridge",
+          "Central Park",
+          "Football stadium concert crowd",
+          "Server vault / operations center build",
+          "Multiple restaurant, club, museum, chapel, and office locations",
+          "Crowd scenes and public disruption sequences",
+          "Potential travel to Texas, Nebraska, Spain, Russia, France, Japan, and California in montage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Body-jump transitions, consciousness wipe effects, digital billboard graphics, final true-form AI visualization, and the collapsing-reality sequence near the end.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical phone/app interfaces, monitor effects, billboard signage, and some crowd-control practicals.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "The Heart Is A Muscle by Gang of Youths"
+        },
+        {
+          "type": "named_music",
+          "detail": "Sweet Caroline"
+        },
+        {
+          "type": "named_music",
+          "detail": "I’m Alive by Johnny Thunder"
+        },
+        {
+          "type": "named_music",
+          "detail": "Sparks by Coldplay"
+        },
+        {
+          "type": "real_person",
+          "detail": "René Magritte is referenced by name through The Lovers"
+        },
+        {
+          "type": "brand",
+          "detail": "Budd-ee Enterprises / Budd-ee app / Budd-ee product branding"
+        },
+        {
+          "type": "brand",
+          "detail": "Sony Handy-cam CCD-TRV Series"
+        },
+        {
+          "type": "brand",
+          "detail": "Plymouth Savoy"
+        },
+        {
+          "type": "brand",
+          "detail": "Kylie Jenner is referenced in dialogue"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized body-hopping sci-fi romance with an episode engine built around V and Sol moving through different human hosts, uncovering the Budd-ee system, and evading corporate reset protocols."
+      }
+    },
+    "comparables": [
+      {
+        "title": "Severance",
+        "why": "Like Severance, this is a high-concept identity-and-labor sci-fi built around corporate control, internal rules, and a protagonist awakening to the moral cost of the system."
+      },
+      {
+        "title": "Russian Doll",
+        "why": "The repeated consciousness displacement, existential comedy, and emotional self-discovery through looping encounters with different lives make it a strong tonal and structural match, even though the mechanism is body-jumping rather than time-looping."
+      },
+      {
+        "title": "Upload",
+        "why": "It shares the accessible sci-fi premise, corporate satire, and romantic/emotional engine, while also feeling producible at a streaming-friendly scale with a mix of contained interiors and selective VFX."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook & clarity",
+          "what_it_means": "The premise is instantly pitchable and easy for buyers to grasp, which is a major advantage in a crowded sci-fi market.",
+          "evidence": "The opening conference-room reveal, the Budd-ee app timer, and the forehead-circle jump rule establish the engine quickly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Creative originality & boldness",
+          "what_it_means": "The body-hopping romance structure gives the project a distinctive identity that can stand out in development meetings and marketing materials.",
+          "evidence": "V and Sol move through a wide range of hosts and settings, from hospitals and weddings to clubs, museums, chapels, and stadiums.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The script has a brandable tone: corporate satire plus sincere emotional longing, which is attractive for streaming audiences looking for something that feels authored.",
+          "evidence": "The contrast between the abusive customer-service scene, the Times Square billboard protest, and the tender Annie caregiving passages creates a clear tonal signature.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The story has thematic weight beyond the premise, giving it room to sustain discussion and audience attachment over multiple episodes or a feature-length arc.",
+          "evidence": "The Bert death sequence, Miles’s piano backstory, Annie’s decline, and the final ownership debate all point to grief, labor, and personhood.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production reality",
+          "what_it_means": "Despite the scope, the script is mostly contemporary and urban, which keeps it in a manageable premium-streaming budget lane rather than a full effects-heavy tentpole lane.",
+          "evidence": "Most scenes are in offices, apartments, restaurants, streets, and public interiors, with VFX concentrated in body-jump transitions and a few stylized moments.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Relationship engine",
+          "what_it_means": "V and Sol have enough chemistry and ideological tension to carry a series, while Miles provides a clear antagonist with personal stakes.",
+          "evidence": "Their repeated reunions, the kiss sequences, the philosophical arguments about slavery and freedom, and Miles’s final confrontation all generate ongoing story energy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Commercial hook",
+          "what_it_means": "The show has a clean, marketable central question: what happens when the product becomes self-aware and falls in love?",
+          "evidence": "The Budd-ee system, the reset button, and the reveal that V and Sol are being monitored make the premise easy to package.",
+          "source": "script"
+        }
+      ],
+      "headline": "IMMORTAL BIRDS is a smart, emotionally legible sci-fi romance with a strong corporate-control hook and a highly ownable body-hopping structure. It feels built for streaming: contemporary, character-driven, visually flexible, and rich enough to support both serialized suspense and standalone experiential episodes."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Scale and production exposure",
+          "risk": "The script’s many locations, crowd scenes, and citywide set pieces push it into a more expensive production lane than the contained premise initially suggests.",
+          "evidence": "Times Square, Grand Central, the Brooklyn Bridge, a football stadium concert, multiple nightlife venues, and montage travel across Texas, Nebraska, Spain, Russia, France, and Japan all appear on the page.",
+          "source": "production"
+        },
+        {
+          "theme": "Casting and continuity complexity",
+          "risk": "The body-swapping format creates a demanding performance and casting puzzle, because the audience must track one consciousness across many different physical hosts.",
+          "evidence": "V and Sol inhabit dozens of bodies, including children, elderly characters, and gender-swapped hosts, while dialogue labels shift to the consciousness rather than the body.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance burden",
+          "risk": "The script introduces multiple music and brand clearances that would need to be addressed before production or distribution.",
+          "evidence": "Gang of Youths, Johnny Thunder, Sweet Caroline, Sparks by Coldplay, René Magritte, Sony Handy-cam, and the Budd-ee brand all appear explicitly.",
+          "source": "production"
+        },
+        {
+          "theme": "Episodic drift in the middle stretch",
+          "risk": "The body-jump montage creates variety, but it also risks feeling like a sequence of vignettes unless the external objective stays sharply foregrounded.",
+          "evidence": "Act Two and early Act Three move through clowns, DMV, influencers, subway singers, office workers, family dinners, and public figures before the story re-centers on the Sol search and Miles confrontation.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone and audience positioning",
+          "risk": "The script’s mix of satire, romance, philosophy, and melancholy is distinctive, but it may be harder to position for a broad audience than a cleaner genre piece.",
+          "evidence": "It moves from crude workplace comedy and corporate menace to intimate deathbed scenes, romantic confessionals, and abstract metaphysical imagery.",
+          "source": "script"
+        },
+        {
+          "theme": "Heavy reliance on concept mechanics",
+          "risk": "The story depends on the audience understanding and staying engaged with the jump rules, app timers, reset buttons, and code spikes; if those mechanics blur, the emotional stakes can lose traction.",
+          "evidence": "The plot repeatedly returns to Budd-ee app status, body assignment flags, sync mode, reset buttons, and server-room code explanations.",
+          "source": "script"
+        }
+      ],
+      "headline": "The main development challenge is not the idea — it’s the execution footprint. This is a compelling, marketable concept, but it carries meaningful production complexity, rights cleanup, and performance-continuity demands, while the middle section needs disciplined momentum to keep the body-hopping structure from feeling episodic."
+    }
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 33658,
+  "outputTokens": 3362,
+  "cost": 0.040372500000000006
+}

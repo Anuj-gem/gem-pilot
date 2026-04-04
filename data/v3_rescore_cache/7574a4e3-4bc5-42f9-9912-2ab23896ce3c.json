@@ -1,0 +1,256 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical adventure",
+      "genre_tags": [
+        "espionage",
+        "fantasy"
+      ],
+      "tone": "Heightened, witty, pulpy, and mythic with satirical period texture"
+    },
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial engine in Sir W’s race against time to deliver the Rose of Jericho and warn Roosevelt about Pearl Harbor, which gives it a built-in historical hook and a strong end-of-world urgency in the bunker and White House sequences. The marketability is boosted by the globe-trotting artifact-chase structure through Cairo, Berlin, and Washington, but the dense period specificity, long dialogue stretches, and unusual tonal register make it more of a prestige-genre play than a broad four-quadrant crowd-pleaser."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is legible early: a mysterious, ageless artifact broker with extraordinary senses is interrogated in December 1941 while he recounts a mission to retrieve a healing plant and stop a catastrophe. The hook becomes fully clear once the script reveals the Pearl Harbor map and the Rose of Jericho, and the story engine is easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sir W is highly distinctive in the interrogation room, especially in the way he reads the men by scent, tobacco, and cologne, and in his mix of vanity, courtesy, and moral compromise. Ying, Mahmoud, and the Roosevelt-adjacent officials add texture, but the script is still very Sir W-centric; the supporting characters are vivid in scene, yet not all are developed as durable engines beyond their immediate function."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by combining a mythic artifact trader, occult healing lore, and the Pearl Harbor lead-up inside a highly stylized period adventure. The choice to make the protagonist an almost folkloric operator who can smell people’s identities, fly solo for days, and negotiate with Nazis, Egyptians, and Native communities gives the piece a confident, unusual identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The interrogation frame creates a strong forward pull because each reveal escalates the stakes: the Nazi medal, the Rose of Jericho, the Cairo theft, the Japanese map, and finally the Pearl Harbor warning. The middle section is long and talky, but the structure keeps paying off with new information and the final reveal lands with real urgency when the soldier announces war."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script feels like an original pulp-historical hybrid rather than a familiar war drama, especially in the way the Pearl Harbor warning is embedded inside a magical artifact caper and a prisoner interrogation. The combination of Sir W’s sensory powers, the Rose of Jericho, and the December 7 map is novel yet immediately understandable once it clicks."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is richly populated with specific institutions and subcultures: the Munitions Building interrogation, Greenwich Village artifact trade, Standing Rock reservation, Cairo black market, Berlin embassy circuit, and the Reich bunker. The script repeatedly uses concrete tradecraft, period objects, and social codes—tobacco, cologne, disguises, secret rooms, and coded access—to make the world feel operational rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is highly ownable: a fastidious, self-amused raconteur narrates outrageous historical espionage with old-world politeness, dry wit, and occasional menace. The script’s voice is recognizable in the way Sir W speaks around danger, and in the contrast between refined language and pulpy action, from the shackled interrogation to the absurdly courteous Nazi and embassy encounters."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the adventure surface, the script suggests deeper material about time, memory, moral compromise, cultural theft, and the cost of being ageless. The Mahmoud relationship, the reservation sequence, and Sir W’s repeated emphasis on debt, time, and “what belongs where” imply a larger ethical universe, though the pilot/feature page itself mostly keeps those themes in service of plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "There is good scene-to-scene chemistry between Sir W and the three interrogators, and the Sir W/Ying and Sir W/Mahmoud dynamics add emotional and transactional variety. Still, the script is fundamentally built around one dominant protagonist and a series of one-off encounters rather than a true ensemble web where multiple pairings can independently generate story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": false,
+        "requires_name_talent": true,
+        "name_talent_reason": "The script is heavily dependent on a charismatic lead to carry long stretches of ornate dialogue and on recognizable supporting authority figures for commercial lift, especially in the Roosevelt/Hitler-adjacent material.",
+        "casting_challenges": [
+          "Sir W is written as a very specific age-less, African and Hispanic-descended man with refined British diction and extraordinary physical ease",
+          "Ying requires a convincing gender-disguise performance and bilingual ability",
+          "Multiple historical figures and ethnic-specific roles appear across several countries",
+          "The three interrogators are defined by regional accents and must play as a comic trio"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Period (1941, with flashbacks to 1765, 1885, 1895, 1930s)",
+        "expensive_flags": [
+          "Multiple period-built environments across Washington D.C., New York, North Dakota reservation, Cairo, Berlin, and the White House",
+          "Aircraft travel and flight scenes",
+          "Crowded street and embassy sequences",
+          "Bunker and White House period interiors",
+          "Desert and reservation exteriors",
+          "Extensive costume and production design requirements for 1940s and earlier flashbacks"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily visualizations, point-of-view stylization, aircraft exteriors, and a few period environment enhancements; no major fantasy creatures or large-scale digital spectacle.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical shackles, gun/war-room tension, prop artifact handling, plane boarding/landing, and a few action beats like injections and rapid movement.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Franklin D. Roosevelt"
+        },
+        {
+          "type": "real_person",
+          "detail": "Eleanor Roosevelt"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Heinrich Himmler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Martin Bormann"
+        },
+        {
+          "type": "real_person",
+          "detail": "General Hiroshi Ōshima"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Chattanooga Choo Choo\""
+        },
+        {
+          "type": "named_music",
+          "detail": "Mozart's The Marriage of Figaro and Die Zauberflöte"
+        },
+        {
+          "type": "brand",
+          "detail": "Camel cigarettes"
+        },
+        {
+          "type": "brand",
+          "detail": "Old Spice"
+        },
+        {
+          "type": "brand",
+          "detail": "Wildroot"
+        },
+        {
+          "type": "brand",
+          "detail": "Caron Pour un Homme"
+        },
+        {
+          "type": "brand",
+          "detail": "Lockheed Hudson aircraft"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical references to the War Merit Cross / Kriegsverdienstkreuz and specific wartime institutions may require careful clearance and fact-checking, though they are generally public-history elements rather than proprietary IP."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or prestige streaming with historical-genre positioning rather than broad theatrical four-quadrant release."
+      }
+    },
+    "comparables": [
+      {
+        "title": "The Man from U.N.C.L.E.",
+        "why": "Like this script, it blends period espionage, globe-trotting locations, and a stylishly heightened tone, but it also relies on charismatic banter and a sleek, commercially legible spy engine rather than realism."
+      },
+      {
+        "title": "Indiana Jones and the Last Crusade",
+        "why": "The artifact-chase structure, occult object, Nazi antagonists, and pulp-historical momentum are a real match, though this script is more dialogue-forward and politically specific, with a more adult, literary voice."
+      },
+      {
+        "title": "The English Patient",
+        "why": "The desert-to-war-to-memory structure, the international wartime setting, and the sense of a mysterious central figure carrying hidden history align well, even though this script is more playful and genre-driven than romantic or meditative."
+      }
+    ],
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Conceptual hook and historical engine",
+          "what_it_means": "The script has a clean, pitchable premise anchored to a world-event climax, which makes it easy to market as a high-concept historical adventure with built-in stakes.",
+          "evidence": "Sir W is interrogated in December 1941 while recounting how he retrieved the Rose of Jericho and discovered a map pointing to Pearl Harbor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal specificity",
+          "what_it_means": "The voice is highly ownable, which is valuable for branding and for attracting talent who want to play in a distinctive tonal lane.",
+          "evidence": "Sir W’s refined, self-amused speech pattern and the comic friction with the three interrogators create a recognizable rhythm scene after scene.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World density and texture",
+          "what_it_means": "The setting is not just backdrop; it generates story opportunities across multiple countries, institutions, and black-market systems, which supports franchise or sequel thinking if desired.",
+          "evidence": "The script moves through Washington, Greenwich Village, Standing Rock, Cairo’s Berka, Berlin, the Reich bunker, and the White House, each with specific social rules and tradecraft.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "Despite the international scope, the script is mostly dialogue- and character-driven, with limited VFX and no large-scale action set pieces, which keeps it more producible than the premise initially suggests.",
+          "evidence": "Most of the runtime is interrogation, travel, and contained interiors; the biggest visual demands are period design, aircraft, and location dressing.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Latent depth",
+          "what_it_means": "The material carries ethical and emotional subtext about time, debt, cultural ownership, and moral compromise, which gives the project prestige potential beyond a simple adventure.",
+          "evidence": "The Mahmoud relationship, the reservation sequence, and Sir W’s repeated reflections on time and artifacts suggest a larger thematic architecture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lead role",
+          "what_it_means": "Sir W is a showcase part for a star with range: wit, authority, sensuality, secrecy, and physical ease across multiple cultures and languages.",
+          "evidence": "He dominates the interrogation, pilots alone, navigates disguise, and carries the emotional weight of the Mahmoud and Ying relationships.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a rare historical adventure with a genuinely ownable voice: part artifact caper, part espionage thriller, part mythic origin story for a man who can move through the world like a legend. It offers a prestige-friendly period canvas, a strong central role, and a climax tied to one of the most recognizable dates in modern history, which gives buyers both commercial clarity and brand distinction."
+    },
+    "whats_holding_it_back": {
+      "themes": [
+        {
+          "theme": "Casting and performance dependency",
+          "risk": "The script lives or dies on a very specific lead performance; without a magnetic actor who can sustain long, ornate monologues and sell the character’s contradictions, the material could feel mannered rather than charismatic.",
+          "evidence": "Sir W carries nearly every scene, while the interrogators and supporting figures function mostly as foils or receivers of exposition.",
+          "source": "both"
+        },
+        {
+          "theme": "Period and location cost exposure",
+          "risk": "The story’s international sweep and multiple historical settings push the project into a materially expensive period production, even though the action is relatively contained.",
+          "evidence": "Washington D.C., New York, North Dakota, Cairo, Berlin, the White House, the bunker, and flashbacks to 1765, 1885, and 1895 all require distinct period dressing and design.",
+          "source": "production"
+        },
+        {
+          "theme": "Rights and clearance complexity",
+          "risk": "The script is loaded with real historical figures, named songs, and recognizable brands, which increases legal review, clearance, and fact-checking workload.",
+          "evidence": "Roosevelt, Hitler, Himmler, Bormann, Ōshima, \"Chattanooga Choo Choo,\" Mozart, Camel, Old Spice, and other named references appear throughout.",
+          "source": "production"
+        },
+        {
+          "theme": "Dialogue density and pacing risk",
+          "risk": "Large stretches of explanation-heavy dialogue, especially in the interrogation frame and the Cairo/Berlin recounting, could challenge audience momentum if not staged with exceptional rhythm and visual invention.",
+          "evidence": "Much of the script is Sir W narrating events to the three men rather than scenes unfolding in immediate dramatic conflict.",
+          "source": "script"
+        },
+        {
+          "theme": "Tone and audience positioning",
+          "risk": "The blend of pulpy adventure, historical tragedy, and comic period banter is distinctive but not easy to place cleanly in the marketplace, which can complicate packaging and buyer expectations.",
+          "evidence": "The script moves from witty interrogation comedy to Nazi bunker intrigue to Pearl Harbor catastrophe without ever settling into a conventional single-genre lane.",
+          "source": "script"
+        },
+        {
+          "theme": "Mature historical sensitivity",
+          "risk": "The script engages with racism, colonial extraction, Nazi politics, and Native American history in a stylized way, which will require careful handling in development and marketing to avoid backlash or tonal misread.",
+          "evidence": "The reservation material, the black-market artifact trade, and the Nazi-era sequences all carry sensitive historical and cultural material.",
+          "source": "script"
+        }
+      ],
+      "headline": "The core development challenge is not the premise; it is executional control. The script needs a production and casting package strong enough to support a very specific lead, a costly period canvas, and a dialogue-driven structure that must stay propulsive while navigating sensitive historical material and a crowded rights-clearance landscape."
+    }
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 32615,
+  "outputTokens": 3558,
+  "cost": 0.04047225
+}
