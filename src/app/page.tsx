@@ -477,14 +477,12 @@ export default async function Home() {
               <ArrowRight size={16} />
             </TrackedCTA>
             <TrackedCTA
-              href="https://calendly.com/anuj-gem/15-minute-intro-call"
-              event="calendly_cta_clicked"
+              href="mailto:info@gem.studio"
+              event="contact_cta_clicked"
               properties={{ location: 'bottom_cta' }}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-600)] transition-colors"
             >
-              Talk to the founder
+              Get in touch
             </TrackedCTA>
           </div>
         </section>
@@ -495,8 +493,8 @@ export default async function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between text-xs text-[var(--gem-gray-500)]">
           <span>GEM</span>
           <div className="flex items-center gap-4">
-            <a href="https://calendly.com/anuj-gem/15-minute-intro-call" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gem-white)] transition-colors">
-              Talk to us
+            <a href="mailto:info@gem.studio" className="hover:text-[var(--gem-white)] transition-colors">
+              Get in touch
             </a>
             <span>&copy; {new Date().getFullYear()}</span>
           </div>

@@ -22,7 +22,7 @@ export const GA_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-1805741127
 // conversion labels, uncomment and replace the values below.
 
 export const CONVERSIONS = {
-  EVAL_STARTED: '', // no separate conversion action yet — fires as custom event
+  EVAL_STARTED: 'AW-18057411275/C_u1CJqX5JUcEMv1uKJD',
   SIGNUP_COMPLETED: 'AW-18057411275/N-SNCNSsmJQcEMv1uKJD',
   SUBSCRIBE_CLICKED: '', // fires as custom event (subscribe_clicked)
   SUBSCRIBE_COMPLETED: 'AW-18057411275/PeevCNy1g5QcEMv1uKJD',
