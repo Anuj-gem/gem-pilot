@@ -1,13 +1,19 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Calendar } from 'lucide-react'
 import { HeroUpload } from '@/components/hero-upload'
-import { ReportShowcase } from '@/components/report-showcase'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
 import { LandingExperiments } from '@/components/landing-experiments'
+import { createClient } from '@/lib/supabase-server'
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient()
+  const { data: topScripts } = await supabase
+    .from('leaderboard')
+    .select('*')
+    .order('weighted_score', { ascending: false })
+    .limit(8)
   return (
     <div className="min-h-screen">
       <LandingTracking />
@@ -46,21 +52,19 @@ export default function Home() {
       <TrackSection name="hero">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-12 sm:pt-24 sm:pb-20">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-accent)] mb-3 sm:mb-4">
-            Your AI development executive
+            Drop your script. See what a producer sees.
           </p>
           <h1
-            className="text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl"
+            className="text-[1.75rem] leading-[1.15] sm:text-5xl md:text-[3.5rem] font-bold tracking-tight sm:leading-[1.1] mb-5 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            AI that helps your screenplay get made.
+            Free screenplay scoring. Instant. Unlimited.
           </h1>
           <p
             className="text-base sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            See your script through a producer&apos;s lens — market positioning, budget
-            feasibility, packaging potential, and what makes it easy or hard to sell.
-            Publish your best work to the GEM leaderboard and get seen.
+            Upload any script and get your GEM score and tier in under a minute. No account needed. Subscribe to unlock the full development read.
           </p>
 
           {/* Desktop: file upload drop zone */}
@@ -112,109 +116,68 @@ export default function Home() {
       {/* Divider */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
 
-      {/* See a Real Report — showcase section */}
-      <TrackSection name="showcase">
+      {/* Live from the Leaderboard */}
+      <TrackSection name="leaderboard_snapshot">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
-          <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">See for yourself</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">A real evaluation, not a demo.</h2>
-          <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-8 sm:mb-14">
-            We ran the Game of Thrones pilot through GEM. This is the actual report — the
-            same analysis every writer gets.
+          <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Live from the leaderboard</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 font-[family-name:var(--font-display)]">Real scripts. Real scores.</h2>
+          <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-8 sm:mb-12">
+            Updated constantly. Top-ranked screenplays from writers building their craft with GEM.
           </p>
 
-          <div className="grid md:grid-cols-5 gap-6 md:gap-10 items-start">
-            <div className="md:col-span-3">
-              <ReportShowcase />
-            </div>
-
-            <div className="md:col-span-2 space-y-5 sm:space-y-6">
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1.5">Weighted GEM Score + Tier</h3>
-                <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                  Five dimensions — audience appeal, character strength, originality, hook, and
-                  momentum — weighted by what matters for getting made. One score, one tier.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1.5">Development Intelligence</h3>
-                <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                  What&apos;s working, what&apos;s hurting, and why — with evidence pulled from your
-                  script. The notes a development exec would give before a greenlight meeting.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1.5">Production Reality Check</h3>
-                <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                  Cast requirements, locations, VFX, rights flags, platform fit. The feasibility
-                  questions a producer asks before taking a meeting.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1.5">Production Reality</h3>
-                <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                  Deep budget, cast, and location analysis — understand what it takes to get
-                  your script made before you pitch.
-                </p>
-              </div>
-
-              <div className="pt-1 sm:pt-2">
-                <TrackedCTA
-                  href="/signup"
-                  event="cta_clicked"
-                  properties={{ location: 'showcase', label: 'Get Started Free' }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {topScripts && topScripts.length > 0 ? (
+              topScripts.map((script, idx) => (
+                <div
+                  key={script.id}
+                  className="p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] hover:bg-[var(--gem-gray-800)] transition-colors"
                 >
-                  Get started free
-                  <ArrowRight size={14} />
-                </TrackedCTA>
+                  <div className="text-xs text-[var(--gem-gray-500)] mb-2">#{idx + 1}</div>
+                  <h3 className="text-sm font-semibold text-white mb-1 truncate">
+                    {script.title || 'Untitled'}
+                  </h3>
+                  <p className="text-xs text-[var(--gem-gray-400)] mb-3 truncate">
+                    by {script.author || 'Anonymous'}
+                  </p>
+                  <div className="flex items-end justify-between mb-3">
+                    <div>
+                      <div className="text-2xl font-bold text-[var(--gem-accent)]">
+                        {typeof script.weighted_score === 'number'
+                          ? script.weighted_score.toFixed(1)
+                          : 'N/A'}
+                      </div>
+                      <div className="text-xs text-[var(--gem-gray-400)]">GEM Score</div>
+                    </div>
+                    {script.tier && (
+                      <span className="px-2.5 py-1 rounded-full bg-[var(--gem-accent)]/10 text-xs font-medium text-[var(--gem-accent)]">
+                        {script.tier}
+                      </span>
+                    )}
+                  </div>
+                  {script.genre && (
+                    <div className="flex flex-wrap gap-1">
+                      <span className="px-2 py-1 rounded-full bg-[var(--gem-gray-800)] text-xs text-[var(--gem-gray-300)]">
+                        {script.genre}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-8 text-[var(--gem-gray-400)]">
+                Loading leaderboard...
               </div>
-            </div>
-          </div>
-        </section>
-      </TrackSection>
-
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-800)]" /></div>
-
-      {/* The Leaderboard — elevated since hero promises it */}
-      <TrackSection name="leaderboard">
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
-          <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">The leaderboard</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Your script, ranked publicly.</h2>
-          <p className="text-sm text-[var(--gem-gray-400)] max-w-2xl leading-relaxed mb-8 sm:mb-14">
-            Publish your best work to the GEM leaderboard. Scripts are ranked by score
-            and visible to everyone — writers, producers, and the rest of the industry.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            <div className="p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
-              <h3 className="text-sm font-semibold text-white mb-1.5 sm:mb-2">Public Rankings</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Scripts ranked by GEM score with tier badges. Search by genre, format, or title.
-              </p>
-            </div>
-            <div className="p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
-              <h3 className="text-sm font-semibold text-white mb-1.5 sm:mb-2">Community Likes</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Writers and readers can like your script. Sort by what&apos;s resonating.
-              </p>
-            </div>
-            <div className="p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
-              <h3 className="text-sm font-semibold text-white mb-1.5 sm:mb-2">Every Format</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Features, pilots, shorts, limited series — every idea gets scored and can go public.
-              </p>
-            </div>
+            )}
           </div>
 
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-8 sm:mt-10 text-center">
             <TrackedCTA
               href="/discover"
               event="cta_clicked"
-              properties={{ location: 'leaderboard_section', label: 'Browse leaderboard' }}
+              properties={{ location: 'leaderboard_snapshot', label: 'See all scripts' }}
               className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline"
             >
-              Browse the leaderboard now
+              See all scripts on the leaderboard
               <ArrowRight size={14} />
             </TrackedCTA>
           </div>
@@ -228,39 +191,28 @@ export default function Home() {
       <TrackSection name="how_it_works">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">How it works</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-16">Upload. Read. Rewrite. Repeat.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-12 sm:mb-16">Three simple steps.</h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gray-700)] mb-2 sm:mb-3">01</div>
-              <h3 className="text-sm sm:text-base font-semibold mb-1.5 sm:mb-2">Upload your script</h3>
-              <p className="text-xs sm:text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Any format — pilot, feature, short, limited series. Drop a PDF
-                and GEM handles the rest.
+              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-accent)] mb-3">1</div>
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Upload your script</h3>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
+                Drop your PDF and GEM instantly analyzes it.
               </p>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gray-700)] mb-2 sm:mb-3">02</div>
-              <h3 className="text-sm sm:text-base font-semibold mb-1.5 sm:mb-2">Get the producer&apos;s read</h3>
-              <p className="text-xs sm:text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Scored dimensions, development notes, production analysis,
-                and market comps — the full picture.
+              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-accent)] mb-3">2</div>
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Get your producer read</h3>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
+                Score, tier, development notes, and production analysis in under a minute.
               </p>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gray-700)] mb-2 sm:mb-3">03</div>
-              <h3 className="text-sm sm:text-base font-semibold mb-1.5 sm:mb-2">Go public</h3>
-              <p className="text-xs sm:text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Publish to the GEM leaderboard. Your script ranked by score
-                alongside every other screenplay on the platform.
-              </p>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gray-700)] mb-2 sm:mb-3">04</div>
-              <h3 className="text-sm sm:text-base font-semibold mb-1.5 sm:mb-2">Rewrite and climb</h3>
-              <p className="text-xs sm:text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Use the notes to improve your draft. Resubmit, get a new score,
-                and watch your ranking rise.
+              <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-accent)] mb-3">3</div>
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Publish and climb</h3>
+              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
+                Rewrite and resubmit. Watch your ranking rise on the leaderboard.
               </p>
             </div>
           </div>
@@ -332,10 +284,16 @@ export default function Home() {
       {/* Bottom CTA */}
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Know how a producer would read your script.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+            This script is #{topScripts && topScripts.length > 0 ? '1' : 'trending'} on GEM right now.
+          </h2>
+          {topScripts && topScripts.length > 0 && (
+            <p className="text-lg text-[var(--gem-accent)] mb-6 sm:mb-8">
+              &quot;{topScripts[0].title || 'Untitled'}&quot; — {(typeof topScripts[0].weighted_score === 'number' ? topScripts[0].weighted_score.toFixed(1) : 'N/A')} score
+            </p>
+          )}
           <p className="text-[var(--gem-gray-300)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10">
-            Upload your screenplay and see your score in under a minute. No account
-            needed — just drag and drop.
+            Where does yours rank?
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <TrackedCTA

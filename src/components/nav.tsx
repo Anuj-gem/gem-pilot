@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { LayoutDashboard, Compass, LogOut, Menu, X, FileText, Home, Plus } from 'lucide-react'
+import { LayoutDashboard, Trophy, LogOut, Menu, X, FileText, Home, Plus } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -25,7 +25,7 @@ export default function Nav() {
 
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'Discover', icon: Compass },
+    { href: '/discover', label: 'Leaderboard', icon: Trophy },
   ] : []
 
   return (
@@ -33,9 +33,6 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href={user ? '/dashboard' : '/'} className="flex items-center gap-2">
           <span className="text-lg font-bold tracking-tight">GEM</span>
-          <span className="text-[10px] uppercase tracking-widest text-[var(--gem-gray-400)] hidden sm:inline">
-            Script Evaluation
-          </span>
         </Link>
 
         {user ? (
@@ -94,8 +91,8 @@ export default function Nav() {
                       : 'text-[var(--gem-gray-300)]'
                   }`}
                 >
-                  <Compass size={16} />
-                  Discover
+                  <Trophy size={16} />
+                  Leaderboard
                 </Link>
               )}
               {!pathname.startsWith('/submit') && (
@@ -117,6 +114,12 @@ export default function Nav() {
           </>
         ) : (
           <div className="flex items-center gap-3">
+            <Link
+              href="/discover"
+              className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"
+            >
+              Leaderboard
+            </Link>
             <Link
               href="/login"
               className="text-sm text-[var(--gem-gray-300)] hover:text-white transition-colors"

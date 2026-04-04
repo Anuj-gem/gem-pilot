@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Heart } from 'lucide-react'
+import { Heart, Mail } from 'lucide-react'
+import { ScoreRing } from '@/components/ui/score-ring'
 import { TIER_META } from '@/types'
 import type { LeaderboardEntry, Tier } from '@/types'
 
@@ -71,63 +72,85 @@ function ScriptRow({
     }
   }
 
-  const scoreColor =
-    script.weighted_score >= 80 ? 'text-emerald-400' :
-    script.weighted_score >= 70 ? 'text-amber-400' :
-    script.weighted_score >= 60 ? 'text-blue-400' :
-    script.weighted_score >= 50 ? 'text-zinc-400' :
-    'text-zinc-500'
+  // Check if script is new (created within last 7 days)
+  const isNew = script.created_at &&
+    new Date().getTime() - new Date(script.created_at).getTime() < 7 * 24 * 60 * 60 * 1000
 
   return (
     <Link
       href={`/report/${script.evaluation_id}`}
-      className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)] bg-[var(--gem-gray-900)] transition-colors"
+      className="group flex items-center gap-4 p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)] bg-[var(--gem-gray-900)] transition-colors"
     >
-      {/* Rank */}
-      <div className="w-6 sm:w-8 text-center shrink-0">
-        <span className={`text-base sm:text-lg font-bold ${rank <= 3 ? 'text-[var(--gem-accent)]' : 'text-[var(--gem-gray-500)]'}`}>
+      {/* Rank number */}
+      <div className="shrink-0">
+        <span className={`font-bold ${
+          rank <= 3 ? 'text-2xl text-amber-400' : 'text-lg text-[var(--gem-gray-500)]'
+        }`}>
           {rank}
         </span>
       </div>
 
       {/* Score ring */}
-      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 flex items-center justify-center shrink-0 ${
-        script.weighted_score >= 80 ? 'border-emerald-500' :
-        script.weighted_score >= 70 ? 'border-amber-500' :
-        script.weighted_score >= 60 ? 'border-blue-500' :
-        script.weighted_score >= 50 ? 'border-zinc-500' :
-        'border-zinc-600'
-      }`}>
-        <span className={`text-xs sm:text-sm font-bold ${scoreColor}`}>
-          {Math.round(script.weighted_score)}
-        </span>
+      <div className="shrink-0">
+        <ScoreRing
+          score={script.weighted_score}
+          size={48}
+          strokeWidth={3}
+        />
       </div>
 
-      {/* Info */}
+      {/* Info section */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-0.5">
-          <h3 className="font-medium text-sm sm:text-base text-white truncate group-hover:text-[var(--gem-accent)] transition-colors">
+        <div className="flex items-center gap-2 mb-1">
+          <h3 className="text-base font-semibold text-white truncate group-hover:text-[var(--gem-accent)] transition-colors">
             {script.title}
           </h3>
-          <span className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full border shrink-0 ${tierMeta?.bgClass ?? ''} ${tierMeta?.colorClass ?? ''}`}>
-            {tierMeta?.label ?? script.tier}
+          {isNew && (
+            <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded-full whitespace-nowrap shrink-0">
+              NEW
+            </span>
+          )}
+        </div>
+        <div className="text-xs text-[var(--gem-gray-400)] mb-1">
+          {script.author_name}
+        </div>
+        <div className="flex gap-2 mb-1">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--gem-accent)]/10 text-[var(--gem-accent)]">
+            {script.format}
+          </span>
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400">
+            {script.genre}
           </span>
         </div>
-        <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-[var(--gem-gray-400)]">
-          <span className="truncate">{script.author_name}</span>
-          <span className="text-[var(--gem-gray-600)]">&middot;</span>
-          <span className="hidden sm:inline">{script.format}</span>
-          <span className="hidden sm:inline text-[var(--gem-gray-600)]">&middot;</span>
-          <span className="truncate">{script.genre}</span>
-        </div>
         {script.logline && (
-          <p className="text-[10px] sm:text-xs text-[var(--gem-gray-500)] mt-1 line-clamp-1 hidden sm:block">
+          <p className="text-xs text-[var(--gem-gray-500)] line-clamp-1">
             {script.logline}
           </p>
         )}
       </div>
 
-      {/* Like */}
+      {/* Tier badge */}
+      <div className="shrink-0">
+        <span className={`text-[10px] px-2 py-0.5 rounded-full border ${tierMeta?.bgClass ?? ''} ${tierMeta?.colorClass ?? ''}`}>
+          {tierMeta?.label ?? script.tier}
+        </span>
+      </div>
+
+      {/* Contact button */}
+      <a
+        href={`mailto:contact@gem.studio?subject=Regarding "${script.title}" on GEM&body=I'd like to connect with ${encodeURIComponent(script.author_name)} regarding their script "${script.title}" on the GEM leaderboard.`}
+        onClick={(e) => {
+          e.stopPropagation()
+          e.preventDefault()
+          window.location.href = `mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${script.title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${script.author_name} regarding their script "${script.title}" on the GEM leaderboard.`)}`
+        }}
+        className="text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] transition-colors shrink-0"
+        title="Contact writer"
+      >
+        <Mail size={14} />
+      </a>
+
+      {/* Like button */}
       <button
         onClick={handleLike}
         disabled={loading}

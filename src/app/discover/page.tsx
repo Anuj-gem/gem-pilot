@@ -72,9 +72,9 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
       <Nav />
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold mb-1">Discover Scripts</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-1 font-[family-name:var(--font-display)]">Leaderboard</h1>
           <p className="text-sm text-[var(--gem-gray-400)]">
-            Explore top-rated screenplays scored by GEM
+            The best scripts scored by GEM — updated live
           </p>
         </div>
 

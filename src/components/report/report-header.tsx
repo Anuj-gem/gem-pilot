@@ -1,3 +1,4 @@
+import { Mail } from 'lucide-react'
 import { TIER_META, type Tier } from '@/types'
 import { ScoreRing } from '@/components/ui/score-ring'
 
@@ -36,10 +37,25 @@ export function ReportHeader({
       {/* Title + Score */}
       <div className="flex items-start justify-between gap-4 sm:gap-6">
         <div className="flex-1 min-w-0">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{title}</h1>
-          <p className="text-sm text-[var(--gem-gray-400)] mt-1">
-            by {author} — {date}
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight font-[family-name:var(--font-display)]">{title}</h1>
+          <p className="text-sm text-[var(--gem-gray-400)] mt-1 flex items-center gap-2">
+            by {author}
+            {author !== 'Anonymous' && (
+              <a
+                href={`mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${author} regarding their script "${title}" on the GEM leaderboard.`)}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  window.location.href = `mailto:contact@gem.studio?subject=${encodeURIComponent(`Regarding "${title}" on GEM`)}&body=${encodeURIComponent(`I'd like to connect with ${author} regarding their script "${title}" on the GEM leaderboard.`)}`
+                }}
+                className="text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] transition-colors"
+                title="Contact writer"
+              >
+                <Mail size={14} />
+              </a>
+            )}
+            — {date}
           </p>
+          <p className="text-sm text-[var(--gem-gray-300)] mt-1">{format} · {genre}</p>
 
           {/* Tier badge */}
           <div className="mt-4">
@@ -67,10 +83,8 @@ export function ReportHeader({
         </div>
       </div>
 
-      {/* Format & Genre tags */}
+      {/* Genre tags & tone pill */}
       <div className="flex flex-wrap gap-2">
-        <span className="tag-pill active">{format}</span>
-        <span className="tag-pill active">{genre}</span>
         {genreTags.map(tag => (
           <span key={tag} className="tag-pill">{tag}</span>
         ))}

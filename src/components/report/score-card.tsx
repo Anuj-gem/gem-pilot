@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { DIMENSION_IDS, DIMENSION_META, type DimensionId, type DimensionScore } from '@/types'
 
 interface ScoreCardProps {
@@ -72,6 +73,18 @@ function DimensionBar({ id, score, reasoning, blurred }: { id: DimensionId; scor
 }
 
 export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardProps) {
+  const [showAll, setShowAll] = useState(false)
+
+  // Get all dimensions sorted by score (highest first)
+  const sortedDimensions = DIMENSION_IDS.filter(id => scores[id] != null).sort(
+    (a, b) => scores[b].score - scores[a].score
+  )
+
+  const top3 = sortedDimensions.slice(0, 3)
+  const bottom3 = sortedDimensions.slice(-3).reverse()
+
+  const visibleDimensions = showAll ? sortedDimensions : [...top3, ...bottom3]
+
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
       <div className="flex items-center justify-between mb-6">
@@ -81,15 +94,39 @@ export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardP
       </div>
 
       <div className="space-y-5">
-        {DIMENSION_IDS.filter(id => scores[id] != null).map(id => (
-          <DimensionBar
-            key={id}
-            id={id}
-            score={scores[id].score}
-            reasoning={scores[id].reasoning}
-            blurred={blurred}
-          />
+        {visibleDimensions.map((id, idx) => (
+          <div key={id}>
+            {!showAll && idx === 3 && (
+              <div className="flex items-center justify-center py-3">
+                <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="px-3 text-xs text-[var(--gem-accent)] hover:underline cursor-pointer"
+                >
+                  Show all {DIMENSION_IDS.filter(id => scores[id] != null).length} dimensions
+                </button>
+                <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+              </div>
+            )}
+            <DimensionBar
+              id={id}
+              score={scores[id].score}
+              reasoning={scores[id].reasoning}
+              blurred={blurred}
+            />
+          </div>
         ))}
+
+        {showAll && (
+          <div className="flex items-center justify-center pt-3">
+            <button
+              onClick={() => setShowAll(false)}
+              className="text-xs text-[var(--gem-accent)] hover:underline cursor-pointer"
+            >
+              Show less
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

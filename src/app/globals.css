@@ -16,6 +16,7 @@
   --gem-accent-hover: #4f46e5;
   --gem-success: #22c55e;
   --gem-warning: #f59e0b;
+  --gem-gold: #d4a847;
 }
 
 @theme inline {
@@ -25,6 +26,7 @@
   --color-accent-hover: var(--gem-accent-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
 *, *::before, *::after {
