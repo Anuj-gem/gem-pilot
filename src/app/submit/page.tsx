@@ -148,17 +148,26 @@ function SubmitPageInner() {
         body: formData,
       })
 
-      const data = await res.json()
+      let data: any
+      try {
+        data = await res.json()
+      } catch {
+        throw new Error('Something went wrong evaluating your script. Please try again.')
+      }
 
       if (data.error) {
-        setError(data.message || 'Something went wrong. Please try again.')
+        // Show user-friendly message, never raw API errors
+        const friendly = data.error?.includes?.('OCR') || data.error?.includes?.('extract')
+          ? 'We had trouble reading your PDF. Try re-scanning at higher quality, or use a digitally-created PDF if possible.'
+          : 'Something went wrong evaluating your script. Please try again.'
+        setError(friendly)
         setStep('upload')
         setProgress(null)
         return
       }
 
       if (!res.ok || data.status === 'failed') {
-        throw new Error(data.error || 'Evaluation failed')
+        throw new Error('Something went wrong evaluating your script. Please try again.')
       }
 
       trackEvalComplete({ score: data.weighted_score, tier: data.tier })
