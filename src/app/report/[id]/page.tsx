@@ -69,22 +69,25 @@ export default async function ReportPage({ params }: PageProps) {
   // Normalize v2/v3 evaluation shape
   const { classification, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
 
-  // Determine if user can see full report
-  let isSubscribed = false
-  if (user) {
-    const { data: profile } = await serviceClient
+  // Determine blur: based on the submission OWNER's subscription, not the viewer's.
+  // If the owner is subscribed and the post is public, everyone sees it fully.
+  // If the owner is NOT subscribed (or cancelled), the report is blurred for everyone
+  // except the owner themselves seeing their own score/tier (header is always visible).
+  let ownerIsSubscribed = false
+  if (submission.user_id) {
+    const { data: ownerProfile } = await serviceClient
       .from('profiles')
       .select('subscription_status')
-      .eq('id', user.id)
+      .eq('id', submission.user_id)
       .single()
 
-    isSubscribed = profile?.subscription_status === 'active'
+    ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
   }
 
-  // Public leaderboard posts are always fully visible.
-  // Blur only applies to the viewer's own non-subscribed evaluations.
   const isPublicPost = submission.is_public === true
-  const showBlurred = !isSubscribed && !isPublicPost
+  // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
+  // Blur if: owner is NOT subscribed AND post is NOT public
+  const showBlurred = !ownerIsSubscribed && !isPublicPost
 
   // Get like count and whether current user has liked
   const { count: likeCount } = await supabase
@@ -111,7 +114,7 @@ export default async function ReportPage({ params }: PageProps) {
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
         {!isAnonymousSubmission && (
           <div className="flex items-center gap-3 flex-wrap">
-            {isOwner && isSubscribed && (
+            {isOwner && ownerIsSubscribed && (
               <VisibilityToggle
                 submissionId={submission.id}
                 initialPublic={submission.is_public ?? false}

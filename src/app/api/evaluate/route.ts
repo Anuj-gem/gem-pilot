@@ -124,25 +124,28 @@ export async function POST(request: NextRequest) {
     const serviceClient = createServiceClient();
     const clientIp = getClientIp(request);
 
-    // 1. Try to authenticate (optional — anonymous evals allowed)
+    // 1. Authenticate — login required to evaluate
     const authClient = await createAuthClient();
     const {
       data: { user },
     } = await authClient.auth.getUser();
 
-    // 2. Check subscription status (used for analytics, not gating)
-    let isSubscribed = false;
-    if (user) {
-      const { data: profile } = await serviceClient
-        .from("profiles")
-        .select("subscription_status")
-        .eq("id", user.id)
-        .single();
-
-      isSubscribed = profile?.subscription_status === "active";
+    if (!user) {
+      return NextResponse.json(
+        { error: "Authentication required. Please log in to evaluate scripts." },
+        { status: 401 }
+      );
     }
 
-    // Free model: unlimited evals for everyone. Paywall is on the report, not submission.
+    // 2. Check subscription status (used for analytics)
+    let isSubscribed = false;
+    const { data: profile } = await serviceClient
+      .from("profiles")
+      .select("subscription_status")
+      .eq("id", user.id)
+      .single();
+
+    isSubscribed = profile?.subscription_status === "active";
 
     // 3. Parse form data
     const formData = await request.formData();
@@ -171,11 +174,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 4. Create submission record (user_id is null for anonymous)
+    // 4. Create submission record
     const { data: submission, error: subError } = await serviceClient
       .from("script_submissions")
       .insert({
-        user_id: user?.id || null,
+        user_id: user.id,
         title,
         filename: file.name,
         file_size: file.size,
@@ -194,27 +197,25 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      // 5. Upload PDF to Supabase Storage (only for authenticated users)
+      // 5. Upload PDF to Supabase Storage
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
 
-      if (user) {
-        const storagePath = `${user.id}/${submission.id}/${file.name}`;
-        const { error: uploadError } = await serviceClient.storage
-          .from("scripts")
-          .upload(storagePath, buffer, {
-            contentType: "application/pdf",
-            upsert: false,
-          });
+      const storagePath = `${user.id}/${submission.id}/${file.name}`;
+      const { error: uploadError } = await serviceClient.storage
+        .from("scripts")
+        .upload(storagePath, buffer, {
+          contentType: "application/pdf",
+          upsert: false,
+        });
 
-        if (uploadError) {
-          console.error("Storage upload error:", uploadError);
-        } else {
-          await serviceClient
-            .from("script_submissions")
-            .update({ file_url: storagePath })
-            .eq("id", submission.id);
-        }
+      if (uploadError) {
+        console.error("Storage upload error:", uploadError);
+      } else {
+        await serviceClient
+          .from("script_submissions")
+          .update({ file_url: storagePath })
+          .eq("id", submission.id);
       }
 
       // 6. Extract text from PDF

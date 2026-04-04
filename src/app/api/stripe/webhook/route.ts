@@ -78,13 +78,25 @@ export async function POST(request: NextRequest) {
         ? subscription.customer
         : subscription.customer.id
 
-      await supabase
+      // 1. Update profile status
+      const { data: cancelledProfile } = await supabase
         .from('profiles')
         .update({
           subscription_status: 'cancelled',
           stripe_subscription_id: null,
         })
         .eq('stripe_customer_id', customerId)
+        .select('id')
+        .single()
+
+      // 2. Remove all user's submissions from the leaderboard (set is_public = false)
+      if (cancelledProfile?.id) {
+        await supabase
+          .from('script_submissions')
+          .update({ is_public: false })
+          .eq('user_id', cancelledProfile.id)
+          .eq('is_public', true)
+      }
       break
     }
 

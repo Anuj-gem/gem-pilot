@@ -64,6 +64,26 @@ body {
   border-radius: 3px;
 }
 
+/* Subtle Hollywood motif: gold accent underline for section headers */
+.section-accent::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gem-gold);
+  margin-top: 8px;
+  border-radius: 1px;
+}
+
+/* Warm card hover effect */
+.card-hover {
+  transition: all 0.2s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  border-color: var(--gem-gray-600);
+}
+
 /* Tag pill styles */
 .tag-pill {
   display: inline-flex;
