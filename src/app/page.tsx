@@ -93,27 +93,16 @@ export default async function Home() {
           {/* Upload — no account needed */}
           <HeroUpload />
 
-          {/* Mobile: "Not ready?" + small create account */}
-          <div className="mt-4 sm:hidden">
+          {/* Secondary CTA */}
+          <div className="mt-4 sm:mt-5">
             <p className="text-xs text-[var(--gem-gray-500)] mb-2">Not ready to submit a screenplay?</p>
             <TrackedCTA
               href="/signup"
               event="cta_clicked"
-              properties={{ location: 'hero_mobile', label: 'Create Free Account' }}
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg border border-[var(--gem-gray-600)] text-xs text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
+              properties={{ location: 'hero', label: 'Create Free Account' }}
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl bg-[var(--gem-accent)] text-white text-xs sm:text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
             >
               Create Free Account
-            </TrackedCTA>
-          </div>
-          {/* Desktop: standard create account */}
-          <div className="mt-5 hidden sm:block">
-            <TrackedCTA
-              href="/signup"
-              event="cta_clicked"
-              properties={{ location: 'hero', label: 'Create account' }}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--gem-gray-600)] text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-400)] transition-colors"
-            >
-              Create an account
             </TrackedCTA>
           </div>
         </section>
