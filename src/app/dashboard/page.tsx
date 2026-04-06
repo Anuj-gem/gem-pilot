@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import { TIER_META, type Tier } from '@/types'
-import { FileText, Plus, Eye, Lock, Compass, ArrowRight } from 'lucide-react'
+import { FileText, Plus, Eye, Lock, Compass, ArrowRight, RefreshCw } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -177,11 +177,23 @@ export default async function DashboardPage() {
                   </div>
                 )
 
+                const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
+
                 if (hasReport) {
                   return (
-                    <Link key={sub.id} href={`/report/${eval_.id}`}>
-                      {inner}
-                    </Link>
+                    <div key={sub.id} className="flex items-center gap-2">
+                      <Link href={`/report/${eval_.id}`} className="flex-1 min-w-0">
+                        {inner}
+                      </Link>
+                      <Link
+                        href={reviseHref}
+                        title="Submit a revised draft of this script"
+                        className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] text-[var(--gem-gray-400)] hover:text-[var(--gem-accent)] hover:bg-[var(--gem-gray-800)] transition-colors"
+                      >
+                        <RefreshCw size={11} />
+                        Submit revision
+                      </Link>
+                    </div>
                   )
                 }
                 return <div key={sub.id}>{inner}</div>
