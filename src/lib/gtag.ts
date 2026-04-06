@@ -60,8 +60,15 @@ export function gtagEvalStarted() {
   if (CONVERSIONS.EVAL_STARTED) sendConversion(CONVERSIONS.EVAL_STARTED)
 }
 
-/** User completes signup */
+/** User completes signup — idempotent per session to prevent Google Ads double-counting */
 export function gtagSignupCompleted() {
+  if (typeof window === 'undefined') return
+  try {
+    if (sessionStorage.getItem('gem_gtag_signup_fired') === '1') return
+    sessionStorage.setItem('gem_gtag_signup_fired', '1')
+  } catch {
+    // sessionStorage blocked — fall through and fire anyway
+  }
   gtag('event', 'signup_completed', { event_category: 'conversion' })
   if (CONVERSIONS.SIGNUP_COMPLETED) sendConversion(CONVERSIONS.SIGNUP_COMPLETED)
 }

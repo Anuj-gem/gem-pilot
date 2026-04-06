@@ -109,9 +109,17 @@ export const trackSampleReportClick = () =>
 export const trackSignupStart = () =>
   trackEvent('signup_started')
 
-/** User completes signup */
-export const trackSignupComplete = () =>
+/** User completes signup — idempotent per session to prevent duplicate Google Ads conversions */
+export const trackSignupComplete = () => {
+  if (typeof window === 'undefined') return
+  try {
+    if (sessionStorage.getItem('gem_signup_completed_fired') === '1') return
+    sessionStorage.setItem('gem_signup_completed_fired', '1')
+  } catch {
+    // sessionStorage blocked — fall through and fire anyway
+  }
   trackEvent('signup_completed')
+}
 
 /** User starts an evaluation */
 export const trackEvalStart = (props?: { title?: string; source?: string }) =>
