@@ -1,10 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { CheckCircle, ArrowRight, X } from 'lucide-react'
 import Link from 'next/link'
 import { trackSubscribeClick, trackSubscribeFromReport } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
+
+const STORAGE_KEY = 'gem_upgrade_dismissed_date'
+
+function todayString() {
+  return new Date().toISOString().slice(0, 10) // YYYY-MM-DD
+}
 
 interface SubscribeGateProps {
   evaluationId: string
@@ -13,7 +19,18 @@ interface SubscribeGateProps {
 
 export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) {
   const [loading, setLoading] = useState(false)
+  // Start as not dismissed; useEffect will correct it after mount
   const [dismissed, setDismissed] = useState(false)
+
+  // On mount: if user already dismissed the modal today, start in banner mode
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY)
+      if (stored === todayString()) setDismissed(true)
+    } catch {
+      // localStorage blocked — leave as modal
+    }
+  }, [])
 
   const handleSubscribe = async () => {
     trackSubscribeClick(dismissed ? 'bottom_banner' : 'blurred_report')
@@ -66,7 +83,10 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
       <div className="relative w-full max-w-md rounded-2xl border border-[var(--gem-gray-600)] bg-[var(--gem-black)] shadow-2xl shadow-black/60 p-6 sm:p-8 pointer-events-auto">
         {/* Close button */}
         <button
-          onClick={() => setDismissed(true)}
+          onClick={() => {
+            try { localStorage.setItem(STORAGE_KEY, todayString()) } catch { /* blocked */ }
+            setDismissed(true)
+          }}
           className="absolute top-4 right-4 text-[var(--gem-gray-500)] hover:text-[var(--gem-white)] transition-colors cursor-pointer"
           aria-label="Close"
         >
