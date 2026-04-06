@@ -15,13 +15,52 @@ export const viewport: Viewport = {
   maximumScale: 1,
 }
 
+const SITE_URL = "https://www.gem.studio"
+const SITE_NAME = "GEM"
+const DEFAULT_TITLE = "GEM — AI Script Evaluation"
+const DEFAULT_DESCRIPTION = "Upload your screenplay and get a professional evaluation in under a minute. Scored dimensions, development notes, production analysis, and tier placement — built on the same rubric used for produced film and television."
+const SHORT_DESCRIPTION = "Get the evaluation a producer would give your script. Upload, score, improve."
+
 export const metadata: Metadata = {
-  title: "GEM — AI Script Evaluation",
-  description: "Upload your screenplay and get a professional evaluation in under a minute. Scored dimensions, development notes, production analysis, and tier placement — built on the same rubric used for produced film and television.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: "%s — GEM",
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "GEM" }],
+  keywords: [
+    "screenplay evaluation",
+    "script coverage",
+    "AI screenwriting",
+    "script feedback",
+    "screenwriting tools",
+    "script reader",
+    "screenplay score",
+    "producer feedback",
+  ],
   openGraph: {
-    title: "GEM — AI Script Evaluation",
-    description: "Get the evaluation a producer would give your script. Upload, score, improve.",
-    siteName: "GEM",
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: SHORT_DESCRIPTION,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: SHORT_DESCRIPTION,
+    site: "@gem_studio",
+    creator: "@gem_studio",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 }
 
