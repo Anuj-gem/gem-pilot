@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
-import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight, Compass } from 'lucide-react'
+import { Upload, FileText, Loader2, AlertCircle, CheckCircle, ArrowRight, Compass } from 'lucide-react'
 import Link from 'next/link'
 import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackBlurredReportViewed, trackSubscriptionActivated, identifyUser } from '@/lib/posthog'
 import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted } from '@/lib/gtag'
@@ -120,12 +120,6 @@ function SubmitPageInner() {
         setTitle(name)
       }
     }
-  }
-
-  const handleManageSubscription = async () => {
-    const res = await fetch('/api/stripe/portal', { method: 'POST' })
-    const data = await res.json()
-    if (data.url) window.location.href = data.url
   }
 
   // Run the actual evaluation (works for both authenticated and anonymous users)
@@ -400,21 +394,13 @@ function SubmitPageInner() {
         {authChecked && user && (
           <div className="flex items-center gap-3 mb-8">
             {isSubscribed ? (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-950/50 border border-emerald-700 text-emerald-400">
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-600 text-white">
                 <CheckCircle size={12} /> Subscribed — full reports unlocked
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[var(--gem-gray-800)] border border-[var(--gem-gray-600)] text-[var(--gem-gray-400)]">
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[var(--gem-gray-600)] text-white">
                 Free — score visible, full report requires subscription
               </span>
-            )}
-            {isSubscribed && (
-              <button
-                onClick={handleManageSubscription}
-                className="inline-flex items-center gap-1 text-xs text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-              >
-                <Settings size={12} /> Manage
-              </button>
             )}
           </div>
         )}
@@ -422,7 +408,7 @@ function SubmitPageInner() {
         {/* Not logged in badge */}
         {authChecked && !user && (
           <div className="flex items-center gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-950/50 border border-blue-700 text-blue-400">
+            <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
               Free to evaluate — no account needed
             </span>
           </div>
