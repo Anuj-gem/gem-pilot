@@ -40,11 +40,18 @@ export default function ShareButtons({
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false)
 
-  const shareUrl =
+  // Base URL (without tracking params) — canonical share target
+  const baseUrl =
     url ??
     (typeof window !== 'undefined'
-      ? window.location.href
+      ? `${window.location.origin}${window.location.pathname}`
       : `https://www.gem.studio/report/${evaluationId}`)
+
+  // Append ?ref=share&channel=X for PostHog funnel tracking
+  const withRef = (channel: string) => {
+    const sep = baseUrl.includes('?') ? '&' : '?'
+    return `${baseUrl}${sep}ref=share&channel=${channel}`
+  }
 
   const scoreStr = typeof score === 'number' ? Math.round(score).toString() : null
   const tweetText = scoreStr
@@ -54,7 +61,6 @@ export default function ShareButtons({
   const emailSubject = scoreStr
     ? `My GEM score: ${scoreStr}/100 — "${title}"`
     : `Check out my script on GEM — "${title}"`
-  const emailBody = `${tweetText}\n\n${shareUrl}`
 
   const track = (channel: string) => {
     try {
@@ -65,18 +71,19 @@ export default function ShareButtons({
   }
 
   const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    shareUrl
+    withRef('facebook')
   )}`
   const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     tweetText
-  )}&url=${encodeURIComponent(shareUrl)}`
+  )}&url=${encodeURIComponent(withRef('twitter'))}`
+  const emailBody = `${tweetText}\n\n${withRef('email')}`
   const emailHref = `mailto:?subject=${encodeURIComponent(
     emailSubject
   )}&body=${encodeURIComponent(emailBody)}`
 
   const onCopy = async () => {
     try {
-      await navigator.clipboard.writeText(shareUrl)
+      await navigator.clipboard.writeText(withRef('copy_link'))
       setCopied(true)
       track('copy_link')
       setTimeout(() => setCopied(false), 2000)

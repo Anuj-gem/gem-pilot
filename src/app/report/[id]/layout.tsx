@@ -3,30 +3,66 @@ import { createClient } from '@supabase/supabase-js'
 
 type Params = { id: string }
 
-async function getReportMeta(id: string) {
+type ReportMeta = {
+  title: string
+  score: number | null
+  tier: string | null
+  rank: number | null
+  totalPublic: number | null
+}
+
+async function getReportMeta(id: string): Promise<ReportMeta | null> {
   try {
+    // Service-role key bypasses RLS — safe server-side only.
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      { auth: { persistSession: false } }
     )
-    const { data } = await supabase
+
+    const { data: evalRow } = await supabase
       .from('script_evaluations')
-      .select('weighted_score, tier, script_submissions(title)')
+      .select('weighted_score, tier, submission_id')
       .eq('id', id)
       .single()
 
-    if (!data) return null
-    const sub = Array.isArray((data as any).script_submissions)
-      ? (data as any).script_submissions[0]
-      : (data as any).script_submissions
-    return {
-      title: (sub?.title as string) ?? 'Screenplay',
-      score:
-        typeof (data as any).weighted_score === 'number'
-          ? Math.round((data as any).weighted_score)
-          : null,
-      tier: ((data as any).tier as string) ?? null,
+    if (!evalRow) return null
+
+    const submissionId = (evalRow as any).submission_id as string
+    const score =
+      (evalRow as any).weighted_score !== null
+        ? Number((evalRow as any).weighted_score)
+        : null
+    const tier = ((evalRow as any).tier as string) ?? null
+
+    const { data: subRow } = await supabase
+      .from('script_submissions')
+      .select('title, is_public')
+      .eq('id', submissionId)
+      .single()
+
+    const title = ((subRow as any)?.title as string) ?? 'Screenplay'
+    const isPublic = Boolean((subRow as any)?.is_public)
+
+    let rank: number | null = null
+    let totalPublic: number | null = null
+    if (isPublic && score !== null) {
+      const { data: publicScores } = await supabase
+        .from('script_evaluations')
+        .select('weighted_score, script_submissions!inner(is_public)')
+        .eq('script_submissions.is_public', true)
+        .not('weighted_score', 'is', null)
+
+      if (Array.isArray(publicScores)) {
+        const scores = publicScores
+          .map((r: any) => Number(r.weighted_score))
+          .filter((n) => !Number.isNaN(n))
+        totalPublic = scores.length
+        rank = scores.filter((s) => s > score).length + 1
+      }
     }
+
+    return { title, score, tier, rank, totalPublic }
   } catch {
     return null
   }
@@ -61,15 +97,20 @@ export async function generateMetadata({
     }
   }
 
-  const scoreStr = meta.score !== null ? `${meta.score}/100` : ''
+  const scoreStr = meta.score !== null ? `${Math.round(meta.score)}/100` : ''
   const tierStr = meta.tier ?? ''
   const headline = scoreStr
     ? `${meta.title} — ${scoreStr}${tierStr ? ` (${tierStr})` : ''}`
     : meta.title
 
+  const rankStr =
+    meta.rank !== null && meta.totalPublic !== null && meta.totalPublic > 1
+      ? ` Ranked #${meta.rank} of ${meta.totalPublic} on the GEM leaderboard.`
+      : ''
+
   const description = scoreStr
-    ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM's AI screenplay evaluation. See how your script compares.`
-    : `${meta.title} on GEM — AI-powered screenplay evaluation. See how your script compares.`
+    ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM's AI screenplay evaluation.${rankStr} Get your script read in 60 seconds.`
+    : `${meta.title} on GEM — AI-powered screenplay evaluation. Get your script read in 60 seconds.`
 
   return {
     title: headline,
