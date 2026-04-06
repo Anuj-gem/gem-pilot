@@ -78,7 +78,7 @@ export async function generateMetadata({
 
   const fallbackTitle = 'Script Evaluation'
   const fallbackDescription =
-    'See how this screenplay scored on GEM — AI-powered screenplay evaluation.'
+    'See how this screenplay scored on GEM — producer-grade screenplay evaluation.'
 
   if (!meta) {
     return {
@@ -109,8 +109,8 @@ export async function generateMetadata({
       : ''
 
   const description = scoreStr
-    ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM's AI screenplay evaluation.${rankStr} Get your script read in 60 seconds.`
-    : `${meta.title} on GEM — AI-powered screenplay evaluation. Get your script read in 60 seconds.`
+    ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM — a producer-grade read of your screenplay.${rankStr} Get yours read in 60 seconds.`
+    : `${meta.title} on GEM — a producer-grade read of your screenplay. Get yours read in 60 seconds.`
 
   return {
     title: headline,

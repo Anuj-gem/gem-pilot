@@ -502,7 +502,7 @@ function SubmitPageInner() {
           </button>
 
           <p className="text-xs text-center text-[var(--gem-gray-500)]">
-            Your script is evaluated by AI using the same rubric applied to produced film and television.
+            Your script is evaluated using the same rubric applied to produced film and television.
           </p>
         </form>
 

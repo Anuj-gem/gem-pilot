@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'GEM — AI Script Evaluation'
+export const alt = 'GEM — Get Read By A Selznick'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -85,7 +85,7 @@ export default async function OpengraphImage() {
               fontWeight: 600,
             }}
           >
-            AI Screenplay Evaluation
+            Producer-Grade Screenplay Evaluation
           </div>
         </div>
       </div>
