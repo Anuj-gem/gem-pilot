@@ -5,6 +5,7 @@ import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
 import { LandingExperiments } from '@/components/landing-experiments'
 import { MobileNav } from '@/components/mobile-nav'
+import { SubscribeCTA } from '@/components/subscribe-cta'
 import { createClient } from '@/lib/supabase-server'
 
 function tierColor(tier: string) {
@@ -448,15 +449,13 @@ export default async function Home() {
                   </li>
                 ))}
               </ul>
-              <TrackedCTA
-                href="/signup"
-                event="cta_clicked"
-                properties={{ location: 'pricing', label: 'Start with Pro' }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-[var(--gem-accent)] text-[var(--gem-accent)] text-sm font-medium hover:bg-[var(--gem-accent)] hover:text-white transition-colors"
+              <SubscribeCTA
+                location="pricing"
+                label="Start with Pro"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-[var(--gem-accent)] text-[var(--gem-accent)] text-sm font-medium hover:bg-[var(--gem-accent)] hover:text-white transition-colors disabled:opacity-50"
               >
                 Start with Pro
-                <ArrowRight size={14} />
-              </TrackedCTA>
+              </SubscribeCTA>
               <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">That&apos;s less than the price of a single script coverage from most services.</p>
             </div>
           </div>

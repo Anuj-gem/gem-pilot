@@ -60,14 +60,19 @@ function CompleteSignupInner() {
 
       if (data.login_failed) {
         // Account created but auto-login failed — send to login
-        router.push(reportId ? `/login?redirect=/report/${reportId}` : '/login')
+        router.push(
+          reportId
+            ? `/login?redirect=/report/${reportId}`
+            : '/login?redirect=/submit'
+        )
         return
       }
 
-      // Success — go to the full report
+      // Success — go to the full report if we came from one,
+      // otherwise straight to the submit page so they can upload.
       const redirectTo = data.redirect_report
         ? `/report/${data.redirect_report}?subscribed=true`
-        : '/dashboard'
+        : '/submit?subscribed=true'
 
       router.push(redirectTo)
       router.refresh()
@@ -86,9 +91,11 @@ function CompleteSignupInner() {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-4">
               Payment successful
             </div>
-            <h1 className="text-2xl font-bold">Set up your account</h1>
+            <h1 className="text-2xl font-bold">Set up your writer profile</h1>
             <p className="text-sm text-[var(--gem-gray-400)] mt-1">
-              Choose a password to access your reports anytime.
+              {reportId
+                ? 'Choose a password to access your reports anytime.'
+                : 'Choose a password — then upload your first script.'}
             </p>
           </div>
 
@@ -127,7 +134,11 @@ function CompleteSignupInner() {
               disabled={loading}
               className="w-full py-2.5 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
             >
-              {loading ? 'Setting up...' : 'View my full report'}
+              {loading
+                ? 'Setting up...'
+                : reportId
+                ? 'View my full report'
+                : 'Continue to upload'}
             </button>
           </form>
         </div>
