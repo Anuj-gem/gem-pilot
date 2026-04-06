@@ -129,8 +129,10 @@ export default async function DashboardPage() {
                   year: 'numeric',
                 })
 
-                const inner = (
-                  <div className={`group flex items-center gap-4 py-4 ${!hasReport ? 'opacity-50' : ''}`}>
+                const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
+
+                const rowContent = (
+                  <div className={`flex items-center gap-4 py-4 ${!hasReport ? 'opacity-50' : ''}`}>
                     {/* Score */}
                     <div className="w-12 shrink-0 text-center">
                       {eval_ ? (
@@ -142,12 +144,17 @@ export default async function DashboardPage() {
                       )}
                     </div>
 
-                    {/* Info */}
+                    {/* Info — title + tier pill on one line, date below */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-sm font-semibold truncate group-hover:text-[var(--gem-accent)] transition-colors">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="text-sm font-semibold truncate">
                           {sub.title}
                         </h3>
+                        {tierMeta && (
+                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
+                            {tierMeta.label}
+                          </span>
+                        )}
                         {sub.is_public && (
                           <Eye size={12} className="text-emerald-600 shrink-0" />
                         )}
@@ -158,13 +165,6 @@ export default async function DashboardPage() {
                       <div className="text-xs text-[var(--gem-gray-500)] mt-0.5">{dateStr}</div>
                     </div>
 
-                    {/* Tier */}
-                    {tierMeta && (
-                      <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
-                        {tierMeta.label}
-                      </span>
-                    )}
-
                     {/* Status */}
                     {sub.status === 'failed' && (
                       <span className="text-xs text-red-500 shrink-0">Failed</span>
@@ -173,30 +173,29 @@ export default async function DashboardPage() {
                       <span className="text-xs text-amber-600 animate-pulse shrink-0">Processing...</span>
                     )}
 
-                    <ArrowRight size={14} className="text-[var(--gem-gray-500)] shrink-0" />
+                    {/* Actions — two clear buttons with breathing room */}
+                    {hasReport && (
+                      <div className="flex items-center gap-2 shrink-0 ml-2">
+                        <Link
+                          href={reviseHref}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
+                        >
+                          <RefreshCw size={12} />
+                          Revise
+                        </Link>
+                        <Link
+                          href={`/report/${eval_.id}`}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                        >
+                          View full report
+                          <ArrowRight size={12} />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 )
 
-                const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
-
-                if (hasReport) {
-                  return (
-                    <div key={sub.id} className="group/row relative">
-                      <Link href={`/report/${eval_.id}`} className="block">
-                        {inner}
-                      </Link>
-                      <Link
-                        href={reviseHref}
-                        title="Submit a revised draft of this script"
-                        aria-label="Submit revision"
-                        className="absolute right-8 top-1/2 -translate-y-1/2 p-1.5 rounded-md text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] hover:bg-[var(--gem-gray-800)] opacity-0 group-hover/row:opacity-100 transition-opacity"
-                      >
-                        <RefreshCw size={13} />
-                      </Link>
-                    </div>
-                  )
-                }
-                return <div key={sub.id}>{inner}</div>
+                return <div key={sub.id}>{rowContent}</div>
               })}
             </div>
           </>
