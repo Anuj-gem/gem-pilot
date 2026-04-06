@@ -181,17 +181,17 @@ export default async function DashboardPage() {
 
                 if (hasReport) {
                   return (
-                    <div key={sub.id} className="flex items-center gap-2">
-                      <Link href={`/report/${eval_.id}`} className="flex-1 min-w-0">
+                    <div key={sub.id} className="group/row relative">
+                      <Link href={`/report/${eval_.id}`} className="block">
                         {inner}
                       </Link>
                       <Link
                         href={reviseHref}
                         title="Submit a revised draft of this script"
-                        className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] text-[var(--gem-gray-400)] hover:text-[var(--gem-accent)] hover:bg-[var(--gem-gray-800)] transition-colors"
+                        aria-label="Submit revision"
+                        className="absolute right-8 top-1/2 -translate-y-1/2 p-1.5 rounded-md text-[var(--gem-gray-500)] hover:text-[var(--gem-accent)] hover:bg-[var(--gem-gray-800)] opacity-0 group-hover/row:opacity-100 transition-opacity"
                       >
-                        <RefreshCw size={11} />
-                        Submit revision
+                        <RefreshCw size={13} />
                       </Link>
                     </div>
                   )
