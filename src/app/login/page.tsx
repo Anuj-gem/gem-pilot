@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-browser'
+import { identifyUser } from '@/lib/posthog'
 
 export default function LoginPage() {
   return (
@@ -28,11 +29,19 @@ function LoginContent() {
     setLoading(true)
     setError('')
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) {
       setError(error.message)
       setLoading(false)
     } else {
+      // Identify returning users in PostHog so their person profile is
+      // kept in sync with their email (required for CDP email functions)
+      if (data.user?.id) {
+        identifyUser(data.user.id, {
+          email: data.user.email ?? email,
+          full_name: (data.user.user_metadata as { full_name?: string } | null)?.full_name,
+        })
+      }
       router.push(redirect)
       router.refresh()
     }

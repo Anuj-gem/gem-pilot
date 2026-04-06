@@ -7,7 +7,7 @@ import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight, Compass } from 'lucide-react'
 import Link from 'next/link'
-import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackSubscriptionActivated } from '@/lib/posthog'
+import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackSubscriptionActivated, identifyUser } from '@/lib/posthog'
 import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted } from '@/lib/gtag'
 
 export default function SubmitPage() {
@@ -218,6 +218,15 @@ function SubmitPageInner() {
       setSigningUp(false)
       setStep('upload')
       return
+    }
+
+    // Identify in PostHog so downstream CDP functions (welcome email, etc.)
+    // can access the email via person.properties.email
+    if (data.user?.id) {
+      identifyUser(data.user.id, {
+        email,
+        full_name: fullName,
+      })
     }
 
     trackSignupComplete()

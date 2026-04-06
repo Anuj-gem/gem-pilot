@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircle, ArrowRight, Star } from 'lucide-react'
 import { createClient } from '@/lib/supabase-browser'
-import { trackSignupStart, trackSignupComplete } from '@/lib/posthog'
+import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
 
 function tierColor(tier: string) {
@@ -68,6 +68,15 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
       setError(signupError.message)
       setLoading(false)
       return
+    }
+
+    // Identify the user in PostHog so the person profile is created with
+    // their email — required for downstream CDP functions (welcome email, etc.)
+    if (data.user?.id) {
+      identifyUser(data.user.id, {
+        email,
+        full_name: fullName,
+      })
     }
 
     trackSignupComplete()
