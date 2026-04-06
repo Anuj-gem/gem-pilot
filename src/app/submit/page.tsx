@@ -31,7 +31,7 @@ function SubmitPageInner() {
   const [authChecked, setAuthChecked] = useState(false)
 
   // Form state
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useState(() => searchParams.get('title') ?? '')
   const [file, setFile] = useState<File | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState<string | null>(null)
