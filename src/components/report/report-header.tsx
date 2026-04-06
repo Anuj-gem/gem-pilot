@@ -1,4 +1,5 @@
 import { TIER_META, type Tier } from '@/types'
+import { ReportActions } from './report-actions'
 
 interface ReportHeaderProps {
   title: string
@@ -75,6 +76,9 @@ export function ReportHeader({
           {tierMeta.description}
         </p>
       )}
+
+      {/* Revise CTA + Share buttons — client component, reads eval id from pathname */}
+      <ReportActions title={title} score={weightedScore} tier={tier} />
     </div>
   )
 }

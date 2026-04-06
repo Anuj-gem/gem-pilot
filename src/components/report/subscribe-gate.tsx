@@ -44,8 +44,8 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <p className="text-sm text-[var(--gem-gray-300)]">
-            <span className="font-medium text-[var(--gem-white)]">Unlock the full read</span>
-            <span className="hidden sm:inline"> — development notes, production analysis & leaderboard access</span>
+            <span className="font-medium text-[var(--gem-white)]">Unlock your notes</span>
+            <span className="hidden sm:inline"> — then rewrite and watch your score climb</span>
           </p>
           <button
             onClick={handleSubscribe}
@@ -74,14 +74,14 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         </button>
 
         <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-          Unlock the full producer read
+          Unlock your notes — then rewrite and watch your score climb.
         </h3>
         <p className="text-sm text-[var(--gem-gray-400)] mb-5">
-          Your score is free. Subscribe to see what a development exec would actually say about your script.
+          Your score is free. Subscribe to see exactly what to change, upload your next draft, and track the score with every revision.
         </p>
 
         <ul className="space-y-2 mb-6">
-          {['Full development reads', 'Production analysis', 'Publish to leaderboard'].map(item => (
+          {['Full development notes', 'Unlimited revisions, tracked', 'Publish to leaderboard'].map(item => (
             <li key={item} className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]">
               <CheckCircle size={14} className="text-emerald-600 shrink-0" />
               {item}
