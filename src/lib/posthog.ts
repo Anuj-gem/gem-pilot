@@ -22,6 +22,35 @@ export function initPostHog() {
   })
 
   initialized = true
+
+  // Capture gclid from Google Ads auto-tagging and persist as person + super property
+  captureGclid()
+}
+
+/**
+ * Extract gclid (Google Click ID) from the URL on landing and store it
+ * as a PostHog person property so we can attribute signups to Google Ads.
+ *
+ * Google Ads auto-tagging only appends ?gclid=... to the URL — it does NOT
+ * add UTM params. This function bridges that gap so PostHog can see which
+ * users came from paid Google clicks.
+ */
+function captureGclid() {
+  if (typeof window === 'undefined') return
+  const params = new URLSearchParams(window.location.search)
+  const gclid = params.get('gclid')
+  if (!gclid) return
+
+  // Set as person property (persists across sessions)
+  posthog.setPersonPropertiesForFlags({ gclid })
+  posthog.people?.set({
+    gclid,
+    gclid_first_seen: new Date().toISOString(),
+    acquisition_source: 'google_ads',
+  })
+
+  // Also register as a super property so every subsequent event includes it
+  posthog.register({ gclid, acquisition_source: 'google_ads' })
 }
 
 export { posthog }
@@ -37,6 +66,8 @@ export function trackPageView(url: string) {
 
 export function trackEvent(event: string, properties?: Record<string, unknown>) {
   if (!initialized) return
+  // gclid is auto-attached via posthog.register() super properties,
+  // so every event already carries it — no need to manually inject.
   posthog.capture(event, properties)
 }
 
@@ -87,7 +118,12 @@ export const trackEvalStart = (props?: { title?: string; source?: string }) =>
   trackEvent('evaluation_started', props)
 
 /** Evaluation completes */
-export const trackEvalComplete = (props?: { score?: number; tier?: string }) =>
+export const trackEvalComplete = (props?: {
+  score?: number
+  tier?: string
+  title?: string
+  evaluationId?: string
+}) =>
   trackEvent('evaluation_completed', props)
 
 /** User sees upgrade prompt */
@@ -113,7 +149,12 @@ export const trackAnonymousEvalComplete = (props?: { score?: number; tier?: stri
   trackEvent('anonymous_eval_completed', props)
 
 /** User views a blurred report (non-subscriber) */
-export const trackBlurredReportViewed = (props?: { evaluationId?: string }) =>
+export const trackBlurredReportViewed = (props?: {
+  evaluationId?: string
+  title?: string
+  score?: number
+  tier?: string
+}) =>
   trackEvent('blurred_report_viewed', props)
 
 /** User clicks subscribe from blurred report */

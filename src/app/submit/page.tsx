@@ -7,7 +7,7 @@ import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, Settings, ArrowRight, Compass } from 'lucide-react'
 import Link from 'next/link'
-import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackSubscriptionActivated, identifyUser } from '@/lib/posthog'
+import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackBlurredReportViewed, trackSubscriptionActivated, identifyUser } from '@/lib/posthog'
 import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted } from '@/lib/gtag'
 
 export default function SubmitPage() {
@@ -173,7 +173,22 @@ function SubmitPageInner() {
         throw new Error('Something went wrong evaluating your script. Please try again.')
       }
 
-      trackEvalComplete({ score: data.weighted_score, tier: data.tier })
+      trackEvalComplete({
+        score: data.weighted_score,
+        tier: data.tier,
+        title: data.title ?? title,
+        evaluationId: data.evaluation_id,
+      })
+      // Fire blurred_report_viewed for non-subscribers so the Upgrade Nudge
+      // CDP function has the event + properties it needs.
+      if (!data.is_subscriber) {
+        trackBlurredReportViewed({
+          evaluationId: data.evaluation_id,
+          title: data.title ?? title,
+          score: data.weighted_score,
+          tier: data.tier,
+        })
+      }
       // Always redirect to report — it handles blurred vs full based on subscription
       router.push(`/report/${data.evaluation_id}`)
     } catch (err) {

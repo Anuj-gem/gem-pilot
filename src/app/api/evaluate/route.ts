@@ -279,6 +279,9 @@ export async function POST(request: NextRequest) {
         evaluation_id: evalRecord.id,
         status: "completed",
         is_subscriber: isSubscribed,
+        weighted_score: weightedScore,
+        tier,
+        title,
       });
     } catch (evalErr) {
       // Mark submission as failed
