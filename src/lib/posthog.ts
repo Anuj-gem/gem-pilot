@@ -146,9 +146,9 @@ export const trackSubscribeClick = (location: string) =>
 export const trackSubscriptionActivated = () =>
   trackEvent('subscription_activated')
 
-/** User makes script public */
-export const trackScriptPublished = () =>
-  trackEvent('script_published')
+/** User makes script public (published to leaderboard) */
+export const trackScriptPublished = (props: { title: string; score?: number; submissionId: string }) =>
+  trackEvent('script_published', props)
 
 // ─── Blurred Report Funnel ─────────────────────────────────────────
 
