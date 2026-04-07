@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Heart, Mail, ArrowRight } from 'lucide-react'
 import { TIER_META } from '@/types'
 import type { LeaderboardEntry, Tier } from '@/types'
+import { tierLabel } from '@/lib/tier-display'
 
 function tierColor(tier: string) {
   if (tier === 'Greenlight Material') return 'var(--tier-greenlight)'
@@ -117,7 +118,7 @@ function ScriptRow({
             </div>
             {/* Verdict badge */}
             <span className={`text-[10px] px-2.5 py-1 rounded-full border font-semibold shrink-0 ${tierMeta?.bgClass ?? ''} ${tierMeta?.colorClass ?? ''}`}>
-              {tierMeta?.label ?? script.tier}
+              {tierLabel(script.tier as Tier)}
             </span>
           </div>
 

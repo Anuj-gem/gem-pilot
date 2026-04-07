@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
-import { trackScriptPublished, trackSubscribeClick } from '@/lib/posthog'
-import { gtagSubscribeClicked } from '@/lib/gtag'
+import { trackScriptPublished, trackUpgradePromptShown } from '@/lib/posthog'
 
 interface VisibilityToggleProps {
   submissionId: string
@@ -24,29 +23,18 @@ export function VisibilityToggle({
   const [loading, setLoading] = useState(false)
   const [justPublished, setJustPublished] = useState(false)
 
-  const goToUpgrade = async () => {
-    trackSubscribeClick('visibility_toggle')
-    gtagSubscribeClicked()
-    setLoading(true)
-    try {
-      const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({}),
-      })
-      const data = await res.json()
-      if (data.url) window.location.href = data.url
-      else setLoading(false)
-    } catch {
-      setLoading(false)
-    }
+  const openUpgradeModal = () => {
+    trackUpgradePromptShown('visibility_toggle')
+    // Re-open the SubscribeGate modal instead of bouncing straight to Stripe.
+    // SubscribeGate listens for this event and resets its dismissed state.
+    window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
   }
 
   const toggle = async () => {
     if (!isSubscribed) {
-      // Non-subscribers clicking the toggle hit the upgrade flow instead
-      // of actually flipping visibility.
-      await goToUpgrade()
+      // Non-subscribers clicking the toggle re-open the familiar upgrade modal
+      // instead of being punted to Stripe.
+      openUpgradeModal()
       return
     }
 

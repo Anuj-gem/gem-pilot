@@ -32,6 +32,16 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
     }
   }, [])
 
+  // Allow other components (e.g. the visibility toggle) to re-open the modal
+  useEffect(() => {
+    const handler = () => {
+      try { localStorage.removeItem(STORAGE_KEY) } catch { /* blocked */ }
+      setDismissed(false)
+    }
+    window.addEventListener('gem:open-upgrade-modal', handler)
+    return () => window.removeEventListener('gem:open-upgrade-modal', handler)
+  }, [])
+
   const handleSubscribe = async () => {
     trackSubscribeClick(dismissed ? 'bottom_banner' : 'blurred_report')
     trackSubscribeFromReport({ evaluationId })

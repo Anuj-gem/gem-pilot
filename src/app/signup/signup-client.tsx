@@ -16,8 +16,8 @@ function tierColor(tier: string) {
 
 function tierLabel(tier: string) {
   if (tier === 'Greenlight Material') return 'Greenlight'
-  if (tier === 'Optionable') return 'Optionable'
-  return 'Development'
+  if (tier === 'Optionable') return 'Option Ready'
+  return 'Shows Promise'
 }
 
 function tierBg(tier: string) {
