@@ -94,10 +94,10 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
   return (
     <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] p-4 sm:p-5">
       <h3 className="text-sm font-bold text-[var(--gem-white)] mb-1">
-        Claim your report — and your spot on the Discovery Board.
+        Claim your report — then get it in front of the industry.
       </h3>
       <p className="text-xs text-[var(--gem-gray-400)] mb-4">
-        Free accounts keep their report forever and can publish to the board where producers, managers, and our production partners read what&apos;s climbing.
+        A free account keeps your report forever. Upgrade to publish to the Discovery Board, where producers, managers, and our production partners read what&apos;s climbing.
       </p>
 
       <form onSubmit={handleSignup} className="space-y-3">
