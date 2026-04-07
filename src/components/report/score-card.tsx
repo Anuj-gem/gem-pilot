@@ -7,6 +7,10 @@ interface ScoreCardProps {
   scores: Record<string, DimensionScore>
   weightedScore: number
   blurred?: boolean
+  /** When true, render the card chrome + section header normally but fully blur
+   *  every dimension (no visible labels). Used for anonymous viewers.
+   */
+  fullBlur?: boolean
 }
 
 function DimensionBar({ id, score, reasoning, blurred }: { id: DimensionId; score: number; reasoning: string; blurred?: boolean }) {
@@ -70,7 +74,7 @@ function DimensionBar({ id, score, reasoning, blurred }: { id: DimensionId; scor
   )
 }
 
-export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardProps) {
+export function ScoreCard({ scores, weightedScore, blurred = false, fullBlur = false }: ScoreCardProps) {
   const [showAll, setShowAll] = useState(false)
 
   // Get all dimensions sorted by score (highest first)
@@ -81,6 +85,38 @@ export function ScoreCard({ scores, weightedScore, blurred = false }: ScoreCardP
   const top3 = sortedDimensions.slice(0, 3)
 
   const visibleDimensions = showAll ? sortedDimensions : top3
+
+  // Full blur mode: chrome + header visible, dimensions fully blurred.
+  if (fullBlur) {
+    return (
+      <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)]">
+            Story Analysis
+          </h2>
+        </div>
+        <div
+          className="space-y-5 select-none pointer-events-none"
+          style={{ filter: 'blur(8px)' }}
+          aria-hidden="true"
+        >
+          {top3.map((id) => (
+            <div key={id}>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-sm font-medium text-[var(--gem-gray-200)]">
+                  {DIMENSION_META[id].shortLabel}
+                </span>
+                <span className="text-sm font-bold text-[var(--gem-gray-500)]">?/10</span>
+              </div>
+              <div className="h-2 rounded-full bg-[var(--gem-gray-700)] overflow-hidden">
+                <div className="h-full rounded-full bg-[var(--gem-gray-500)]" style={{ width: '60%' }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">

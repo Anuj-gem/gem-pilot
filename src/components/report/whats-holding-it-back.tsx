@@ -4,6 +4,10 @@ import { AlertTriangle, ChevronDown } from 'lucide-react'
 interface Props {
   data: WhatsHoldingItBack
   blurred?: boolean
+  /** When true, render the card chrome + section header normally but fully blur
+   *  everything inside (no selective first-sentence teaser). Used for anonymous viewers.
+   */
+  fullBlur?: boolean
 }
 
 function BlurWrap({ blurred, children }: { blurred: boolean; children: React.ReactNode }) {
@@ -31,7 +35,37 @@ function SourceBadge({ source }: { source: string }) {
   )
 }
 
-export function WhatsHoldingItBackSection({ data, blurred = false }: Props) {
+export function WhatsHoldingItBackSection({ data, blurred = false, fullBlur = false }: Props) {
+  // Full blur mode: chrome + header visible, everything below fully blurred.
+  if (fullBlur) {
+    return (
+      <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
+        <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-600 mb-4">
+          <AlertTriangle size={14} />
+          What needs development
+        </h2>
+        <BlurWrap blurred={true}>
+          {data.headline && (
+            <p className="text-sm text-[var(--gem-gray-200)] leading-relaxed mb-5">
+              {data.headline}
+            </p>
+          )}
+          <div className="space-y-3">
+            {data.themes.map((t, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <ChevronDown size={14} className="text-[var(--gem-gray-500)] mt-0.5 shrink-0" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-[var(--gem-white)]">{t.theme}</p>
+                  <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mt-1">{t.risk}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </BlurWrap>
+      </div>
+    )
+  }
+
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
       <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-600 mb-4">

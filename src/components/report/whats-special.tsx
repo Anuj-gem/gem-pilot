@@ -4,6 +4,10 @@ import { CheckCircle2, ChevronDown } from 'lucide-react'
 interface Props {
   data: WhatsSpecial
   blurred?: boolean
+  /** When true, render the card chrome + section header normally but fully blur
+   *  everything inside (no selective first-sentence teaser). Used for anonymous viewers.
+   */
+  fullBlur?: boolean
 }
 
 function BlurWrap({ blurred, children }: { blurred: boolean; children: React.ReactNode }) {
@@ -31,7 +35,35 @@ function SourceBadge({ source }: { source: string }) {
   )
 }
 
-export function WhatsSpecialSection({ data, blurred = false }: Props) {
+export function WhatsSpecialSection({ data, blurred = false, fullBlur = false }: Props) {
+  // Full blur mode: chrome + header visible, everything below fully blurred.
+  if (fullBlur) {
+    return (
+      <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
+        <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-600 mb-4">
+          <CheckCircle2 size={14} />
+          What makes this special
+        </h2>
+        <BlurWrap blurred={true}>
+          <p className="text-sm text-[var(--gem-gray-200)] leading-relaxed mb-5">
+            {data.headline}
+          </p>
+          <div className="space-y-3">
+            {data.strengths.map((s, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <ChevronDown size={14} className="text-[var(--gem-gray-500)] mt-0.5 shrink-0" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-[var(--gem-white)]">{s.dimension_or_area}</p>
+                  <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mt-1">{s.what_it_means}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </BlurWrap>
+      </div>
+    )
+  }
+
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
       <h2 className="flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-600 mb-4">

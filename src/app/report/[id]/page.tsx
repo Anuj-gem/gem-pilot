@@ -167,11 +167,11 @@ export default async function ReportPage({ params }: PageProps) {
         />
 
         {/* Report sections.
-            - fullBlur (anonymous viewer): each section wrapped in a blur div, with a
-              per-section "Create your profile to see more" lock overlay.
-            - showBlurred && user (logged-in free): components handle their own selective
-              blur, and each section gets a "Get GEM Pro for full review" lock overlay.
-            - Otherwise (owner / subscribed / public): rendered normally.
+            - fullBlur (anonymous viewer): each component renders its card chrome and
+              header clearly but fully blurs its body. Centered lock CTA overlay.
+            - showBlurred && user (logged-in free): components handle selective blur
+              internally. Centered lock CTA overlay.
+            - Otherwise (owner / subscribed / public): rendered normally, no overlay.
          */}
         {(() => {
           const lockVariant: 'signup' | 'pro' | null = fullBlur
@@ -182,52 +182,46 @@ export default async function ReportPage({ params }: PageProps) {
 
           const wrap = (node: React.ReactNode, key: string) => (
             <div key={key} className="relative">
-              {fullBlur ? (
-                <div
-                  className="select-none pointer-events-none"
-                  style={{ filter: 'blur(8px)' }}
-                  aria-hidden="true"
-                >
-                  {node}
-                </div>
-              ) : (
-                node
-              )}
+              {node}
               {lockVariant && (
-                <SectionLock
-                  variant={lockVariant}
-                  evaluationId={id}
-                  position={fullBlur ? 'center' : 'bottom'}
-                />
+                <SectionLock variant={lockVariant} evaluationId={id} position="center" />
               )}
             </div>
           )
 
-          // When fullBlur we pass blurred={false} to the children (the outer wrapper
-          // blurs everything). When selectively blurred for logged-in users, we keep
-          // the existing blurred={showBlurred} behavior.
-          const childBlurred = fullBlur ? false : showBlurred
-
           return (
             <>
               {wrap(
-                <WhatsSpecialSection data={whatsSpecial} blurred={childBlurred} />,
+                <WhatsSpecialSection
+                  data={whatsSpecial}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
+                />,
                 'special'
               )}
               {wrap(
-                <WhatsHoldingItBackSection data={whatsHoldingItBack} blurred={childBlurred} />,
+                <WhatsHoldingItBackSection
+                  data={whatsHoldingItBack}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
+                />,
                 'holding'
               )}
               {wrap(
                 <ScoreCard
                   scores={report.scores}
                   weightedScore={eval_.weighted_score}
-                  blurred={childBlurred}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
                 />,
                 'scores'
               )}
               {wrap(
-                <ProductionReality production={report.production_reality} blurred={childBlurred} />,
+                <ProductionReality
+                  production={report.production_reality}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
+                />,
                 'production'
               )}
             </>

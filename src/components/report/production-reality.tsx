@@ -7,6 +7,10 @@ import { Users, MapPin, Clapperboard, AlertCircle, Tv, ChevronDown } from 'lucid
 interface ProductionRealityProps {
   production: ProductionRealityType
   blurred?: boolean
+  /** When true, render the card chrome + section header normally but fully blur
+   *  the summary and details. Used for anonymous viewers.
+   */
+  fullBlur?: boolean
 }
 
 function BlurWrap({ blurred, children }: { blurred: boolean; children: React.ReactNode }) {
@@ -58,11 +62,30 @@ function buildSummary(production: ProductionRealityType): string {
   return parts.join(' · ')
 }
 
-export function ProductionReality({ production, blurred = false }: ProductionRealityProps) {
+export function ProductionReality({ production, blurred = false, fullBlur = false }: ProductionRealityProps) {
   const [expanded, setExpanded] = useState(false)
   const rightsFlags = normalizeRightsFlags(production.rights_flags)
   const locationMix = production.locations?.interior_exterior_ratio ?? production.locations?.interior_exterior_mix ?? ''
   const summary = buildSummary(production)
+
+  // Full blur mode: chrome + header visible, summary + expand button fully blurred.
+  if (fullBlur) {
+    return (
+      <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
+        <h2 className="text-xs uppercase tracking-widest text-[var(--gem-gray-400)] mb-3">
+          Development Risks to Address
+        </h2>
+        <div
+          className="select-none pointer-events-none"
+          style={{ filter: 'blur(8px)' }}
+          aria-hidden="true"
+        >
+          <p className="text-sm font-medium text-[var(--gem-gray-300)]">{summary}</p>
+          <p className="text-xs text-[var(--gem-accent)] mt-3">Show full breakdown</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="p-4 sm:p-6 rounded-xl border border-[var(--gem-gray-700)]">
