@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 
 const SITE_URL = "https://www.gem.studio"
 const SITE_NAME = "GEM"
-const DEFAULT_TITLE = "GEM — Get Read By A Selznick"
+const DEFAULT_TITLE = "GEM — The read every screenwriter deserves"
 const DEFAULT_DESCRIPTION = "Upload your screenplay and get a producer-grade evaluation in under a minute. Scored dimensions, development notes, production analysis, and tier placement — built on the same rubric used for produced film and television."
 const SHORT_DESCRIPTION = "Get the read a producer would give your script. Upload, score, improve."
 
