@@ -46,7 +46,8 @@ export default async function Home() {
 
   const featuredSamples = (sampleRows ?? [])
     .map((r: any) => {
-      const ev = r.script_evaluations?.[0]
+      const evRaw = r.script_evaluations
+      const ev = Array.isArray(evRaw) ? evRaw[0] : evRaw
       if (!ev) return null
       return {
         slug: r.sample_slug as string,
@@ -74,6 +75,9 @@ export default async function Home() {
           <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
           {/* Desktop nav */}
           <div className="hidden sm:flex items-center gap-4">
+            <Link href="/sample" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
+              Samples
+            </Link>
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Leaderboard
             </Link>

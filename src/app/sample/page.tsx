@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { unstable_noStore as noStore } from 'next/cache'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { SampleGrid, type SampleGridItem } from '@/components/sample/sample-grid'
@@ -31,14 +32,15 @@ type SampleRow = ScriptSubmission & {
   sample_genre: string | null
   sample_type: string | null
   is_sample: boolean | null
-  script_evaluations: ScriptEvaluation[] | null
+  script_evaluations: ScriptEvaluation | ScriptEvaluation[] | null
 }
 
 export default async function SampleIndexPage({ searchParams }: PageProps) {
+  noStore()
   const { type } = await searchParams
   const supabase = await createClient()
 
-  const { data: rows } = await supabase
+  const { data: rows, error: rowsError } = await supabase
     .from('script_submissions')
     .select(`
       id, title, sample_slug, sample_author, sample_year, sample_genre, sample_type, is_sample,
@@ -47,9 +49,15 @@ export default async function SampleIndexPage({ searchParams }: PageProps) {
     .eq('is_sample', true)
     .eq('status', 'completed')
 
+  if (rowsError) {
+    console.error('[sample/page] supabase error:', rowsError)
+  }
+  console.log('[sample/page] fetched rows:', rows?.length ?? 0)
+
   const mapped: (SampleGridItem | null)[] = (rows ?? []).map((r): SampleGridItem | null => {
     const row = r as unknown as SampleRow
-    const ev = row.script_evaluations?.[0]
+    const evRaw = row.script_evaluations
+    const ev = Array.isArray(evRaw) ? evRaw[0] : evRaw
     if (!ev) return null
     const rawEval = ev.evaluation as GEMEvaluation
     const { classification } = normalizeEvaluation(rawEval)

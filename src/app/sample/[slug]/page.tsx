@@ -23,7 +23,7 @@ type SampleRow = ScriptSubmission & {
   sample_genre: string | null
   sample_type: string | null
   is_sample: boolean | null
-  script_evaluations: ScriptEvaluation[] | null
+  script_evaluations: ScriptEvaluation | ScriptEvaluation[] | null
 }
 
 async function loadSample(slug: string) {
@@ -40,7 +40,8 @@ async function loadSample(slug: string) {
 
   if (error || !data) return null
   const row = data as unknown as SampleRow
-  const ev = row.script_evaluations?.[0]
+  const evRaw = row.script_evaluations
+  const ev = Array.isArray(evRaw) ? evRaw[0] : evRaw
   if (!ev) return null
   return { row, ev }
 }
