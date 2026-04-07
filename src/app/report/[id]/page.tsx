@@ -12,6 +12,7 @@ import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
+import { SectionLock } from '@/components/report/section-lock'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { normalizeEvaluation } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission } from '@/types'
@@ -92,6 +93,10 @@ export default async function ReportPage({ params }: PageProps) {
   // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
   // Blur if: owner is NOT subscribed AND post is NOT public
   const showBlurred = !ownerIsSubscribed && !isPublicPost
+  // Anonymous viewers (not logged in) get the ORIGINAL full blur — selective blur was
+  // leaking enough value that people were bouncing instead of signing up. Logged-in free
+  // viewers keep the current selective blur (teaser first sentence + dimension labels).
+  const fullBlur = showBlurred && !user
 
   // Get like count and whether current user has liked
   const { count: likeCount } = await supabase
@@ -118,9 +123,12 @@ export default async function ReportPage({ params }: PageProps) {
       )}
       <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
-        {/* Inline signup for anonymous users — right at the top, before the report */}
+        {/* Inline signup for anonymous users — right at the top, before the report.
+            id="inline-signup" is the scroll target for per-section lock CTAs below. */}
         {isAnonymousSubmission && (
-          <InlineSignup submissionId={submission.id} evaluationId={id} />
+          <div id="inline-signup" className="rounded-xl transition-shadow duration-500">
+            <InlineSignup submissionId={submission.id} evaluationId={id} />
+          </div>
         )}
 
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
@@ -158,17 +166,73 @@ export default async function ReportPage({ params }: PageProps) {
           isOwner={isOwner}
         />
 
-        {/* What Makes This Special */}
-        <WhatsSpecialSection data={whatsSpecial} blurred={showBlurred} />
+        {/* Report sections.
+            - fullBlur (anonymous viewer): each section wrapped in a blur div, with a
+              per-section "Create your profile to see more" lock overlay.
+            - showBlurred && user (logged-in free): components handle their own selective
+              blur, and each section gets a "Get GEM Pro for full review" lock overlay.
+            - Otherwise (owner / subscribed / public): rendered normally.
+         */}
+        {(() => {
+          const lockVariant: 'signup' | 'pro' | null = fullBlur
+            ? 'signup'
+            : showBlurred && user
+              ? 'pro'
+              : null
 
-        {/* What Needs Development */}
-        <WhatsHoldingItBackSection data={whatsHoldingItBack} blurred={showBlurred} />
+          const wrap = (node: React.ReactNode, key: string) => (
+            <div key={key} className="relative">
+              {fullBlur ? (
+                <div
+                  className="select-none pointer-events-none"
+                  style={{ filter: 'blur(8px)' }}
+                  aria-hidden="true"
+                >
+                  {node}
+                </div>
+              ) : (
+                node
+              )}
+              {lockVariant && (
+                <SectionLock
+                  variant={lockVariant}
+                  evaluationId={id}
+                  position={fullBlur ? 'center' : 'bottom'}
+                />
+              )}
+            </div>
+          )
 
-        {/* Story Analysis (10 dimension scores) */}
-        <ScoreCard scores={report.scores} weightedScore={eval_.weighted_score} blurred={showBlurred} />
+          // When fullBlur we pass blurred={false} to the children (the outer wrapper
+          // blurs everything). When selectively blurred for logged-in users, we keep
+          // the existing blurred={showBlurred} behavior.
+          const childBlurred = fullBlur ? false : showBlurred
 
-        {/* Production Reality */}
-        <ProductionReality production={report.production_reality} blurred={showBlurred} />
+          return (
+            <>
+              {wrap(
+                <WhatsSpecialSection data={whatsSpecial} blurred={childBlurred} />,
+                'special'
+              )}
+              {wrap(
+                <WhatsHoldingItBackSection data={whatsHoldingItBack} blurred={childBlurred} />,
+                'holding'
+              )}
+              {wrap(
+                <ScoreCard
+                  scores={report.scores}
+                  weightedScore={eval_.weighted_score}
+                  blurred={childBlurred}
+                />,
+                'scores'
+              )}
+              {wrap(
+                <ProductionReality production={report.production_reality} blurred={childBlurred} />,
+                'production'
+              )}
+            </>
+          )
+        })()}
       </div>
 
       {/* Subscribe overlay — only for logged-in free users, not anonymous */}
