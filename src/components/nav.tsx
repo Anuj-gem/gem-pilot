@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { LayoutDashboard, Trophy, LogOut, Menu, X, FileText, Home, Plus } from 'lucide-react'
+import { LayoutDashboard, Trophy, LogOut, Menu, X, FileText, Home, Plus, Sparkles } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -26,6 +26,7 @@ export default function Nav() {
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/discover', label: 'Leaderboard', icon: Trophy },
+    { href: '/sample', label: 'Samples', icon: Sparkles },
   ] : []
 
   return (
@@ -119,6 +120,12 @@ export default function Nav() {
               className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
             >
               Leaderboard
+            </Link>
+            <Link
+              href="/sample"
+              className="hidden sm:inline text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
+            >
+              Samples
             </Link>
             <Link
               href="/login"
