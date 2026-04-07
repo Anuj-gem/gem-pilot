@@ -97,11 +97,19 @@ export async function generateMetadata({
     }
   }
 
+  // Display-friendly tier label (keeps DB values stable while updating UI copy)
+  const tierLabelFor = (t: string | null): string => {
+    if (t === 'Optionable') return 'Option Ready'
+    if (t === 'Needs Development') return 'Shows Promise'
+    return t ?? ''
+  }
+
   const scoreStr = meta.score !== null ? `${Math.round(meta.score)}/100` : ''
-  const tierStr = meta.tier ?? ''
+  const tierStr = tierLabelFor(meta.tier)
+  // Clean metadata title — tier lives on the OG card image, not in the text.
   const headline = scoreStr
-    ? `${meta.title} — ${scoreStr}${tierStr ? ` (${tierStr})` : ''}`
-    : meta.title
+    ? `${meta.title} — ${scoreStr} on GEM`
+    : `${meta.title} — GEM Script Evaluation`
 
   const rankStr =
     meta.rank !== null && meta.totalPublic !== null && meta.totalPublic > 1
