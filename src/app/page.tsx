@@ -444,6 +444,9 @@ export default async function Home() {
             <h2 className="text-2xl sm:text-4xl font-bold font-[family-name:var(--font-display)]">
               Producer Eval&nbsp;+&nbsp;Industry Exposure&nbsp;=&nbsp;Your Break
             </h2>
+            <p className="mt-3 text-sm sm:text-base uppercase tracking-[0.2em] text-[var(--gem-gold)]/90 font-semibold">
+              Scored. Ranked. Circulated.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -468,11 +471,11 @@ export default async function Home() {
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Two</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Industry Exposure</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Publish to the public leaderboard to put your best work in front of the industry. Top-ranked scripts get
-                featured across our channels, and in-app industry connections are rolling out soon.
+                Publish to the Discovery Board and put your best work in front of the industry. Top-ranked scripts get
+                circulated weekly to our network of producers, managers, and production partners.
               </p>
               <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-[var(--gem-gold)]/80">
-                <Sparkles size={11} /> Industry connections coming soon
+                <Sparkles size={11} /> New partners added monthly
               </div>
             </div>
 

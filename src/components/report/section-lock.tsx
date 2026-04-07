@@ -30,10 +30,16 @@ export function SectionLock({ variant, evaluationId, position = 'center' }: Sect
 
   const label =
     variant === 'signup'
-      ? 'Create your profile to see more'
-      : 'Get GEM Pro for full review'
+      ? 'Create a free account to keep this report'
+      : 'Publish this to the Discovery Board'
 
-  const cta = variant === 'signup' ? 'Create account' : 'Upgrade — $20/mo'
+  const subtext =
+    variant === 'pro'
+      ? 'Unlocks the full development read + puts your script in front of our production partners.'
+      : null
+
+  const cta =
+    variant === 'signup' ? 'Claim + join the Discovery Board' : 'Get GEM Pro — $20/mo'
 
   const handleClick = async () => {
     if (variant === 'signup') {
@@ -92,6 +98,11 @@ export function SectionLock({ variant, evaluationId, position = 'center' }: Sect
           <Lock size={14} className="text-[var(--gem-accent)]" />
           <span className="text-xs sm:text-sm font-medium">{label}</span>
         </div>
+        {subtext && (
+          <p className="text-[11px] sm:text-xs text-[var(--gem-gray-400)] leading-snug -mt-1">
+            {subtext}
+          </p>
+        )}
         <button
           onClick={handleClick}
           disabled={loading}

@@ -75,10 +75,18 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
   if (success) {
     return (
       <div className="rounded-xl border border-emerald-700 bg-emerald-950/30 p-4 sm:p-5">
-        <p className="text-sm font-semibold text-emerald-300">Account created — your report is saved.</p>
-        <p className="text-xs text-emerald-400/80 mt-1">
-          Subscribe to unlock the full producer read and publish to the leaderboard.
+        <p className="text-sm font-semibold text-emerald-300">You&apos;re in. Now get circulated.</p>
+        <p className="text-xs text-emerald-400/80 mt-1 mb-3">
+          Upgrade to publish this report to the Discovery Board and put your script in front of the industry.
         </p>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+        >
+          Publish to the Discovery Board — $20/mo
+          <ArrowRight size={14} />
+        </button>
       </div>
     )
   }
@@ -86,10 +94,10 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
   return (
     <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] p-4 sm:p-5">
       <h3 className="text-sm font-bold text-[var(--gem-white)] mb-1">
-        Create your account to save this report
+        Claim your report — and your spot on the Discovery Board.
       </h3>
       <p className="text-xs text-[var(--gem-gray-400)] mb-4">
-        Otherwise it expires when the timer runs out.
+        Free accounts keep their report forever and can publish to the board where producers, managers, and our production partners read what&apos;s climbing.
       </p>
 
       <form onSubmit={handleSignup} className="space-y-3">
@@ -138,7 +146,7 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
             </>
           ) : (
             <>
-              Save my report
+              Claim my report
               <ArrowRight size={14} />
             </>
           )}

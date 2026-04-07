@@ -72,9 +72,9 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
       <Nav />
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-1 font-[family-name:var(--font-display)]">Leaderboard</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-1 font-[family-name:var(--font-display)]">The Discovery Board</h1>
           <p className="text-sm text-[var(--gem-gray-400)]">
-            The best scripts scored by GEM — updated live
+            Scripts circulated to our production partners. Updated weekly.
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
             <p className="text-[var(--gem-gray-400)] text-sm">
               {params.q
                 ? 'No scripts match your search.'
-                : 'No public scripts yet. Submit your script and make it public to appear here.'}
+                : 'The Discovery Board refreshes weekly. Submit, score high, and publish to get circulated.'}
             </p>
           </div>
         )}
