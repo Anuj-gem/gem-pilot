@@ -64,7 +64,7 @@ export function ReportHeader({
           {isOwner && (
             <Link
               href={`/submit?title=${encodeURIComponent(title)}`}
-              className="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium bg-[var(--gem-accent)]/15 text-[var(--gem-accent)] hover:bg-[var(--gem-accent)]/25 transition-colors"
+              className="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium border border-[var(--gem-accent)] text-[var(--gem-accent)] hover:bg-[var(--gem-accent)] hover:text-white transition-colors"
             >
               <RefreshCw size={11} />
               Revise
