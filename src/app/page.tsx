@@ -72,7 +72,14 @@ export default async function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/90 backdrop-blur-sm">
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-          <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
+          <Link href="/" className="flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="inline-block w-3 h-3 sm:w-3.5 sm:h-3.5 rotate-45"
+              style={{ background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)' }}
+            />
+            <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
+          </Link>
           {/* Desktop nav */}
           <div className="hidden sm:flex items-center gap-4">
             <Link href="/sample" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
@@ -193,62 +200,6 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Credibility / Selznick — MOVED UP: answers "why trust you" before the leaderboard */}
-      <TrackSection name="credibility">
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[var(--gem-gold)]/10 border border-[var(--gem-gold)]/20 text-[var(--gem-gold)] text-sm sm:text-base font-semibold mb-5 tracking-wide">
-              <Sparkles size={16} />
-              Our scoring system, Selznick
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-              Named for a legend.<br className="hidden sm:block" /> Built to do his job.
-            </h2>
-            <p className="text-sm sm:text-base text-[var(--gem-gray-300)] max-w-2xl mx-auto leading-relaxed">
-              Selznick was built to identify great writers the industry overlooks. It&apos;s calibrated against thousands of data points,
-              real-world audience reception, and the creative instincts behind content that has reached over 500 million people.
-            </p>
-            <p className="text-xs text-[var(--gem-gray-500)] italic max-w-lg mx-auto mt-4">
-              Named for David O. Selznick — the producer who discovered talent before anyone else did. GEM is built to do the same.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
-            <div className="p-5 rounded-xl card-glass">
-              <div className="w-9 h-9 rounded-lg bg-violet-50 border border-violet-100 flex items-center justify-center mb-3">
-                <Brain size={18} className="text-violet-600" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1.5">Thousands of Signals Per Script</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Every read analyzes thousands of signals across your screenplay — character depth, market positioning, structural momentum, tonal coherence.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl card-glass">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-3">
-                <BarChart3 size={18} className="text-emerald-600" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1.5">Decades of Film &amp; TV Research</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Built on research across thousands of produced films and series going back decades — calibrated to what actually works on screen.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl card-glass">
-              <div className="w-9 h-9 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center mb-3">
-                <Target size={18} className="text-amber-600" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1.5">Producer-Grade Analysis</h3>
-              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Every report reads like a development executive&apos;s notes — strengths, weaknesses, market positioning, production reality.
-              </p>
-            </div>
-          </div>
-        </section>
-      </TrackSection>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
-
       {/* Live from the Leaderboard — rich list with tags */}
       <TrackSection name="leaderboard_snapshot">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
@@ -353,6 +304,62 @@ export default async function Home() {
               See all scripts on the leaderboard
               <ArrowRight size={14} />
             </TrackedCTA>
+          </div>
+        </section>
+      </TrackSection>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
+
+      {/* Credibility / Selznick */}
+      <TrackSection name="credibility">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[var(--gem-gold)]/10 border border-[var(--gem-gold)]/20 text-[var(--gem-gold)] text-sm sm:text-base font-semibold mb-5 tracking-wide">
+              <Sparkles size={16} />
+              Our scoring system, Selznick
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
+              Built to Spot Great Scripts
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--gem-gray-300)] max-w-2xl mx-auto leading-relaxed">
+              Selznick was built to identify great writers the industry overlooks. It&apos;s calibrated against thousands of data points,
+              real-world audience reception, and the creative instincts behind content that has reached over 500 million people.
+            </p>
+            <p className="text-xs text-[var(--gem-gray-500)] italic max-w-lg mx-auto mt-4">
+              Named for David O. Selznick — the producer who discovered talent before anyone else did. GEM is built to do the same.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
+            <div className="p-5 rounded-xl card-glass">
+              <div className="w-9 h-9 rounded-lg bg-violet-50 border border-violet-100 flex items-center justify-center mb-3">
+                <Brain size={18} className="text-violet-600" />
+              </div>
+              <h3 className="text-sm font-semibold mb-1.5">Thousands of Signals Per Script</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                Every read analyzes thousands of signals across your screenplay — character depth, market positioning, structural momentum, tonal coherence.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-xl card-glass">
+              <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-3">
+                <BarChart3 size={18} className="text-emerald-600" />
+              </div>
+              <h3 className="text-sm font-semibold mb-1.5">Decades of Film &amp; TV Research</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                Built on research across thousands of produced films and series going back decades — calibrated to what actually works on screen.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-xl card-glass">
+              <div className="w-9 h-9 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center mb-3">
+                <Target size={18} className="text-amber-600" />
+              </div>
+              <h3 className="text-sm font-semibold mb-1.5">Producer-Grade Analysis</h3>
+              <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
+                Every report reads like a development executive&apos;s notes — strengths, weaknesses, market positioning, production reality.
+              </p>
+            </div>
           </div>
         </section>
       </TrackSection>

@@ -2,23 +2,25 @@ import { ImageResponse } from 'next/og'
 import { createClient } from '@supabase/supabase-js'
 
 export const runtime = 'edge'
-export const alt = 'GEM Script Evaluation'
+export const alt = 'GEM Sample Report'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
-type ReportData = {
+type SampleData = {
   title: string
   author: string | null
+  year: number | null
+  type: string | null
   score: number | null
   tier: string | null
 }
 
-// Service-role key bypasses RLS — safe here because this runs server-side
-// in the edge runtime and the key is never sent to the client.
-async function getReportData(id: string): Promise<ReportData> {
-  const fallback: ReportData = {
-    title: 'Screenplay',
+async function getSampleData(slug: string): Promise<SampleData> {
+  const fallback: SampleData = {
+    title: 'Sample Screenplay',
     author: null,
+    year: null,
+    type: null,
     score: null,
     tier: null,
   }
@@ -29,53 +31,40 @@ async function getReportData(id: string): Promise<ReportData> {
       { auth: { persistSession: false } }
     )
 
-    const { data: evalRow } = await supabase
-      .from('script_evaluations')
-      .select('weighted_score, tier, submission_id')
-      .eq('id', id)
-      .single()
-
-    if (!evalRow) return fallback
-
-    const submissionId = (evalRow as any).submission_id as string
-    const score =
-      typeof (evalRow as any).weighted_score === 'number'
-        ? (evalRow as any).weighted_score
-        : (evalRow as any).weighted_score !== null
-        ? Number((evalRow as any).weighted_score)
-        : null
-    const tier = ((evalRow as any).tier as string) ?? null
-
     const { data: subRow } = await supabase
       .from('script_submissions')
-      .select('title, user_id')
-      .eq('id', submissionId)
+      .select('id, title, sample_author, sample_year, sample_type')
+      .eq('is_sample', true)
+      .eq('sample_slug', slug)
       .single()
 
-    const title = ((subRow as any)?.title as string) ?? fallback.title
-    const userId = ((subRow as any)?.user_id as string | null) ?? null
+    if (!subRow) return fallback
 
-    // Fetch author display name from profiles (nullable — anonymous submissions)
-    let author: string | null = null
-    if (userId) {
-      const { data: profileRow } = await supabase
-        .from('profiles')
-        .select('full_name')
-        .eq('id', userId)
-        .single()
-      const fullName = ((profileRow as any)?.full_name as string | null) ?? null
-      if (fullName && fullName.trim().length > 0) {
-        author = fullName.trim()
-      }
+    const { data: evalRow } = await supabase
+      .from('script_evaluations')
+      .select('weighted_score, tier')
+      .eq('submission_id', (subRow as any).id)
+      .single()
+
+    const score =
+      evalRow && (evalRow as any).weighted_score !== null
+        ? Number((evalRow as any).weighted_score)
+        : null
+    const tier = ((evalRow as any)?.tier as string) ?? null
+
+    return {
+      title: ((subRow as any).title as string) ?? fallback.title,
+      author: ((subRow as any).sample_author as string | null) ?? null,
+      year: ((subRow as any).sample_year as number | null) ?? null,
+      type: ((subRow as any).sample_type as string | null) ?? null,
+      score,
+      tier,
     }
-
-    return { title, author, score, tier }
   } catch {
     return fallback
   }
 }
 
-// Display label overrides — DB values stay stable, UI copy evolves here.
 function tierLabel(tier: string | null): string {
   if (tier === 'Optionable') return 'Option Ready'
   if (tier === 'Needs Development') return 'Shows Promise'
@@ -83,47 +72,36 @@ function tierLabel(tier: string | null): string {
   return tier ?? ''
 }
 
-// Tier gradient (c1 -> c2) and shadow rgb
 function tierGradient(tier: string | null): { c1: string; c2: string; rgb: string } {
   if (tier === 'Greenlight Material') return { c1: '#16a34a', c2: '#15803d', rgb: '22, 163, 74' }
   if (tier === 'Needs Development') return { c1: '#f59e0b', c2: '#d97706', rgb: '245, 158, 11' }
-  // Optionable / default
   return { c1: '#3b82f6', c2: '#2563eb', rgb: '59, 130, 246' }
 }
 
-// Grab the first name for the CTA — falls back gracefully
-function firstName(full: string | null): string | null {
-  if (!full) return null
-  const first = full.trim().split(/\s+/)[0]
-  return first || null
-}
-
-export default async function ReportOpengraphImage({
+export default async function SampleOpengraphImage({
   params,
 }: {
-  params: Promise<{ id: string }> | { id: string }
+  params: Promise<{ slug: string }> | { slug: string }
 }) {
   const resolved = await Promise.resolve(params as any)
-  const id = (resolved?.id as string) ?? ''
-  const { title, author, score, tier } = await getReportData(id)
+  const slug = (resolved?.slug as string) ?? ''
+  const { title, author, year, type, score, tier } = await getSampleData(slug)
 
   const scoreDisplay = score !== null ? Math.round(score).toString() : '—'
   const tierText = tierLabel(tier)
   const grad = tierGradient(tier)
 
-  const authorFirst = firstName(author)
-  const possessive = authorFirst
-    ? `${authorFirst}${authorFirst.endsWith('s') ? "'" : "'s"}`
-    : null
-  const ctaText = possessive
-    ? `Read the review for ${possessive} screenplay`
-    : 'Read the full review'
-
-  // Adaptive title sizing + truncation (satori does not support -webkit-box line clamp)
+  // Truncate long titles (satori does not support line clamp)
   const MAX_TITLE_LEN = 80
   const displayTitle = title.length > MAX_TITLE_LEN ? title.slice(0, MAX_TITLE_LEN - 1) + '…' : title
   const titleLen = displayTitle.length
   const titleFontSize = titleLen > 60 ? 52 : titleLen > 40 ? 62 : titleLen > 24 ? 72 : 80
+
+  const bylineParts: string[] = []
+  if (author) bylineParts.push(author)
+  if (year) bylineParts.push(String(year))
+  if (type) bylineParts.push(type)
+  const byline = bylineParts.join(' · ')
 
   return new ImageResponse(
     (
@@ -135,13 +113,13 @@ export default async function ReportOpengraphImage({
           flexDirection: 'column',
           padding: '64px 80px',
           background:
-            'radial-gradient(ellipse at top right, rgba(124, 58, 237, 0.28) 0%, transparent 55%), radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.15) 0%, transparent 55%), linear-gradient(135deg, #0a0a0a 0%, #1a0b2e 100%)',
+            'radial-gradient(ellipse at top right, rgba(124, 58, 237, 0.32) 0%, transparent 55%), radial-gradient(ellipse at bottom left, rgba(124, 58, 237, 0.18) 0%, transparent 55%), linear-gradient(135deg, #0a0a0a 0%, #1a0b2e 100%)',
           fontFamily: 'system-ui, -apple-system, sans-serif',
           color: '#ffffff',
           position: 'relative',
         }}
       >
-        {/* Top bar — wordmark left, eyebrow right */}
+        {/* Top bar — wordmark + GEM SAMPLE badge */}
         <div
           style={{
             display: 'flex',
@@ -149,14 +127,7 @@ export default async function ReportOpengraphImage({
             justifyContent: 'space-between',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 14,
-            }}
-          >
-            {/* Diamond mark */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div
               style={{
                 width: 18,
@@ -182,22 +153,32 @@ export default async function ReportOpengraphImage({
             style={{
               display: 'flex',
               alignItems: 'center',
+              gap: 10,
               fontSize: 20,
-              fontWeight: 700,
+              fontWeight: 800,
               letterSpacing: 4,
               textTransform: 'uppercase',
-              color: '#a78bfa',
-              padding: '10px 20px',
-              border: '1.5px solid rgba(167, 139, 250, 0.4)',
+              color: '#ffffff',
+              padding: '12px 24px',
+              border: '1.5px solid rgba(167, 139, 250, 0.6)',
               borderRadius: 999,
-              background: 'rgba(124, 58, 237, 0.12)',
+              background: 'linear-gradient(135deg, rgba(167, 139, 250, 0.25) 0%, rgba(124, 58, 237, 0.35) 100%)',
             }}
           >
-            Script Evaluation
+            <div
+              style={{
+                width: 14,
+                height: 14,
+                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                transform: 'rotate(45deg)',
+                display: 'flex',
+              }}
+            />
+            GEM Sample
           </div>
         </div>
 
-        {/* Hero — title, byline, score + tier */}
+        {/* Hero */}
         <div
           style={{
             flex: 1,
@@ -225,18 +206,18 @@ export default async function ReportOpengraphImage({
           >
             &ldquo;{displayTitle}&rdquo;
           </div>
-          {author && (
+          {byline && (
             <div
               style={{
-                fontSize: 28,
+                fontSize: 26,
                 fontWeight: 400,
                 color: '#9ca3af',
                 fontStyle: 'italic',
-                marginBottom: 40,
+                marginBottom: 36,
                 display: 'flex',
               }}
             >
-              by {author}
+              {byline}
             </div>
           )}
           <div
@@ -244,7 +225,7 @@ export default async function ReportOpengraphImage({
               display: 'flex',
               alignItems: 'center',
               gap: 28,
-              marginTop: author ? 0 : 24,
+              marginTop: byline ? 0 : 24,
             }}
           >
             <div
@@ -313,7 +294,7 @@ export default async function ReportOpengraphImage({
           </div>
         </div>
 
-        {/* Footer — CTA */}
+        {/* Footer */}
         <div
           style={{
             display: 'flex',
@@ -325,13 +306,13 @@ export default async function ReportOpengraphImage({
         >
           <div
             style={{
-              fontSize: 24,
+              fontSize: 22,
               fontWeight: 600,
               color: '#e5e7eb',
               display: 'flex',
             }}
           >
-            {ctaText}
+            See how GEM reads a produced screenplay
           </div>
           <div
             style={{

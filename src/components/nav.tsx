@@ -33,6 +33,11 @@ export default function Nav() {
     <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)] sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href={user ? '/dashboard' : '/'} className="flex items-center gap-2">
+          <span
+            aria-hidden="true"
+            className="inline-block w-3 h-3 rotate-45"
+            style={{ background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)' }}
+          />
           <span className="text-lg font-bold tracking-tight">GEM</span>
         </Link>
 
