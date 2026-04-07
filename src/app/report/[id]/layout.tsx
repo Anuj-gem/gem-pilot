@@ -106,10 +106,8 @@ export async function generateMetadata({
 
   const scoreStr = meta.score !== null ? `${Math.round(meta.score)}/100` : ''
   const tierStr = tierLabelFor(meta.tier)
-  // Clean metadata title — tier lives on the OG card image, not in the text.
-  const headline = scoreStr
-    ? `${meta.title} — ${scoreStr} on GEM`
-    : `${meta.title} — GEM Script Evaluation`
+  // Clean metadata title — score/tier live on the OG card image, not in the text.
+  const headline = `${meta.title} — GEM Script Evaluation`
 
   const rankStr =
     meta.rank !== null && meta.totalPublic !== null && meta.totalPublic > 1

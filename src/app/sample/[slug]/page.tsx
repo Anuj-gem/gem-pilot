@@ -53,8 +53,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Sample not found' }
   }
   const { row, ev } = loaded
-  const title = `${row.title} — GEM Sample Report (Score: ${Math.round(ev.weighted_score)})`
-  const description = `See how GEM scored ${row.title}${row.sample_author ? ` by ${row.sample_author}` : ''} — full producer-grade report, free to read.`
+  const title = `${row.title} — GEM Script Evaluation`
+  const description = `${row.title}${row.sample_author ? ` by ${row.sample_author}` : ''} scored ${Math.round(ev.weighted_score)}/100 on GEM — full producer-grade evaluation, free to read.`
   return {
     title,
     description,
