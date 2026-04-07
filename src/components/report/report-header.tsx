@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RefreshCw } from 'lucide-react'
-import { TIER_META, type Tier } from '@/types'
+import { type Tier } from '@/types'
+import { tierLabel, tierDescription } from '@/lib/tier-display'
 import { ReportActions } from './report-actions'
 
 interface ReportHeaderProps {
@@ -34,7 +35,8 @@ export function ReportHeader({
   createdAt,
   isOwner = false,
 }: ReportHeaderProps) {
-  const tierMeta = TIER_META[tier]
+  const displayLabel = tierLabel(tier)
+  const displayDescription = tierDescription(tier)
   const date = new Date(createdAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -80,13 +82,13 @@ export function ReportHeader({
           className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
           style={{ backgroundColor: tierColor(tier) }}
         >
-          {tierMeta.label}
+          {displayLabel}
         </span>
       </div>
 
-      {tierMeta.description && (
+      {displayDescription && (
         <p className="text-sm text-[var(--gem-gray-400)] max-w-lg leading-relaxed">
-          {tierMeta.description}
+          {displayDescription}
         </p>
       )}
 

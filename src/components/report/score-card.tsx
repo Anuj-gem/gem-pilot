@@ -32,8 +32,9 @@ function DimensionBar({ id, score, reasoning, blurred }: { id: DimensionId; scor
           </span>
         </div>
         <div className="h-2 rounded-full bg-[var(--gem-gray-700)] overflow-hidden blur-sm select-none">
+          {/* When blurred, don't leak the score via the tier color — use neutral gray */}
           <div
-            className={`h-full rounded-full ${getBarColor(score)}`}
+            className="h-full rounded-full bg-[var(--gem-gray-500)]"
             style={{ width: `${pct}%` }}
           />
         </div>

@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import { TIER_META, type Tier } from '@/types'
+import { tierLabel } from '@/lib/tier-display'
 import { FileText, Plus, Eye, Lock, Compass, ArrowRight, RefreshCw } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
@@ -152,7 +153,7 @@ export default async function DashboardPage() {
                         </h3>
                         {tierMeta && (
                           <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
-                            {tierMeta.label}
+                            {tierLabel(eval_.tier as Tier)}
                           </span>
                         )}
                         {sub.is_public && (

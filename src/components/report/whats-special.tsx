@@ -15,6 +15,13 @@ function BlurWrap({ blurred, children }: { blurred: boolean; children: React.Rea
   )
 }
 
+function splitFirstSentence(text: string): { first: string; rest: string } {
+  if (!text) return { first: '', rest: '' }
+  const match = text.match(/^.*?[.!?](?:\s|$)/)
+  if (!match) return { first: text, rest: '' }
+  return { first: match[0].trim(), rest: text.slice(match[0].length).trim() }
+}
+
 function SourceBadge({ source }: { source: string }) {
   const label = source === 'production' ? 'Production' : source === 'both' ? 'Script + Production' : 'Script'
   return (
@@ -32,12 +39,33 @@ export function WhatsSpecialSection({ data, blurred = false }: Props) {
         What makes this special
       </h2>
 
-      {/* Headline */}
-      <BlurWrap blurred={blurred}>
+      {/* Headline — tease the first sentence when blurred */}
+      {blurred ? (
+        (() => {
+          const { first, rest } = splitFirstSentence(data.headline)
+          return (
+            <p className="text-sm text-[var(--gem-gray-200)] leading-relaxed mb-5">
+              <span>{first}</span>
+              {rest && (
+                <>
+                  {' '}
+                  <span
+                    className="select-none pointer-events-none inline-block align-bottom"
+                    style={{ filter: 'blur(8px)' }}
+                    aria-hidden="true"
+                  >
+                    {rest}
+                  </span>
+                </>
+              )}
+            </p>
+          )
+        })()
+      ) : (
         <p className="text-sm text-[var(--gem-gray-200)] leading-relaxed mb-5">
           {data.headline}
         </p>
-      </BlurWrap>
+      )}
 
       {/* Strengths list */}
       <div className="space-y-3">

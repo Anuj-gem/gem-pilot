@@ -2,20 +2,54 @@
 
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
-import { trackScriptPublished } from '@/lib/posthog'
+import { trackScriptPublished, trackSubscribeClick } from '@/lib/posthog'
+import { gtagSubscribeClicked } from '@/lib/gtag'
 
 interface VisibilityToggleProps {
   submissionId: string
   initialPublic: boolean
   title?: string
   score?: number
+  isSubscribed?: boolean
 }
 
-export function VisibilityToggle({ submissionId, initialPublic, title = '', score }: VisibilityToggleProps) {
+export function VisibilityToggle({
+  submissionId,
+  initialPublic,
+  title = '',
+  score,
+  isSubscribed = false,
+}: VisibilityToggleProps) {
   const [isPublic, setIsPublic] = useState(initialPublic)
   const [loading, setLoading] = useState(false)
+  const [justPublished, setJustPublished] = useState(false)
+
+  const goToUpgrade = async () => {
+    trackSubscribeClick('visibility_toggle')
+    gtagSubscribeClicked()
+    setLoading(true)
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      })
+      const data = await res.json()
+      if (data.url) window.location.href = data.url
+      else setLoading(false)
+    } catch {
+      setLoading(false)
+    }
+  }
 
   const toggle = async () => {
+    if (!isSubscribed) {
+      // Non-subscribers clicking the toggle hit the upgrade flow instead
+      // of actually flipping visibility.
+      await goToUpgrade()
+      return
+    }
+
     setLoading(true)
     try {
       const res = await fetch(`/api/scripts/${submissionId}/visibility`, {
@@ -26,9 +60,11 @@ export function VisibilityToggle({ submissionId, initialPublic, title = '', scor
       if (res.ok) {
         const nowPublic = !isPublic
         setIsPublic(nowPublic)
-        // Fire PostHog event only when publishing (not when unpublishing)
         if (nowPublic) {
           trackScriptPublished({ title, score, submissionId })
+          setJustPublished(true)
+          // brief pulse on publish
+          setTimeout(() => setJustPublished(false), 1500)
         }
       }
     } finally {
@@ -42,12 +78,14 @@ export function VisibilityToggle({ submissionId, initialPublic, title = '', scor
       disabled={loading}
       className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors border ${
         isPublic
-          ? 'border-emerald-200 bg-emerald-50 text-emerald-600 hover:bg-emerald-100'
+          ? 'border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
           : 'border-[var(--gem-gray-600)] bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:bg-[var(--gem-gray-700)]'
-      } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+      } ${justPublished ? 'animate-pulse ring-2 ring-emerald-300' : ''} ${
+        loading ? 'opacity-50 cursor-not-allowed' : ''
+      }`}
     >
       {isPublic ? <Eye size={14} /> : <EyeOff size={14} />}
-      {isPublic ? 'Public on Discover' : 'Private'}
+      {isPublic ? 'Public on Discover' : 'Hidden from leaderboard'}
     </button>
   )
 }

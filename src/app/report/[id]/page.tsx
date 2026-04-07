@@ -126,12 +126,13 @@ export default async function ReportPage({ params }: PageProps) {
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
         {!isAnonymousSubmission && (
           <div className="flex items-center gap-3 flex-wrap">
-            {isOwner && ownerIsSubscribed && (
+            {isOwner && (
               <VisibilityToggle
                 submissionId={submission.id}
                 initialPublic={submission.is_public ?? false}
                 title={submission.title}
                 score={eval_?.weighted_score ?? undefined}
+                isSubscribed={ownerIsSubscribed}
               />
             )}
             <LikeButton
