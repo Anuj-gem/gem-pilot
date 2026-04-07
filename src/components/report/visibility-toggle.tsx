@@ -2,13 +2,16 @@
 
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
+import { trackScriptPublished } from '@/lib/posthog'
 
 interface VisibilityToggleProps {
   submissionId: string
   initialPublic: boolean
+  title?: string
+  score?: number
 }
 
-export function VisibilityToggle({ submissionId, initialPublic }: VisibilityToggleProps) {
+export function VisibilityToggle({ submissionId, initialPublic, title = '', score }: VisibilityToggleProps) {
   const [isPublic, setIsPublic] = useState(initialPublic)
   const [loading, setLoading] = useState(false)
 
@@ -21,7 +24,12 @@ export function VisibilityToggle({ submissionId, initialPublic }: VisibilityTogg
         body: JSON.stringify({ is_public: !isPublic }),
       })
       if (res.ok) {
-        setIsPublic(!isPublic)
+        const nowPublic = !isPublic
+        setIsPublic(nowPublic)
+        // Fire PostHog event only when publishing (not when unpublishing)
+        if (nowPublic) {
+          trackScriptPublished({ title, score, submissionId })
+        }
       }
     } finally {
       setLoading(false)
