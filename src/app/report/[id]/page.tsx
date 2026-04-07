@@ -130,6 +130,8 @@ export default async function ReportPage({ params }: PageProps) {
               <VisibilityToggle
                 submissionId={submission.id}
                 initialPublic={submission.is_public ?? false}
+                title={submission.title}
+                score={eval_?.weighted_score ?? undefined}
               />
             )}
             <LikeButton
@@ -152,6 +154,7 @@ export default async function ReportPage({ params }: PageProps) {
           genreTags={classification.genre_tags}
           tone={classification.tone}
           createdAt={eval_.created_at}
+          isOwner={isOwner}
         />
 
         {/* What Makes This Special */}

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { RefreshCw } from 'lucide-react'
 import { TIER_META, type Tier } from '@/types'
 import { ReportActions } from './report-actions'
 
@@ -11,6 +13,7 @@ interface ReportHeaderProps {
   genreTags: string[]
   tone: string
   createdAt: string
+  isOwner?: boolean
 }
 
 function tierColor(tier: Tier) {
@@ -29,6 +32,7 @@ export function ReportHeader({
   genreTags,
   tone,
   createdAt,
+  isOwner = false,
 }: ReportHeaderProps) {
   const tierMeta = TIER_META[tier]
   const date = new Date(createdAt).toLocaleDateString('en-US', {
@@ -57,6 +61,15 @@ export function ReportHeader({
           <div className="text-[11px] uppercase tracking-widest text-[var(--gem-gray-500)] mt-0.5">
             GEM score
           </div>
+          {isOwner && (
+            <Link
+              href={`/submit?title=${encodeURIComponent(title)}`}
+              className="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium bg-[var(--gem-accent)]/15 text-[var(--gem-accent)] hover:bg-[var(--gem-accent)]/25 transition-colors"
+            >
+              <RefreshCw size={11} />
+              Revise
+            </Link>
+          )}
         </div>
       </div>
 
