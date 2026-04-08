@@ -93,10 +93,10 @@ export default async function ReportPage({ params }: PageProps) {
   // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
   // Blur if: owner is NOT subscribed AND post is NOT public
   const showBlurred = !ownerIsSubscribed && !isPublicPost
-  // Anonymous viewers (not logged in) get the ORIGINAL full blur — selective blur was
-  // leaking enough value that people were bouncing instead of signing up. Logged-in free
-  // viewers keep the current selective blur (teaser first sentence + dimension labels).
-  const fullBlur = showBlurred && !user
+  // Every non-paid viewer (anonymous OR logged-in free) gets full blur. The selective
+  // blur for logged-in free users was leaking enough value that paid conversions dried
+  // up — reverted to full blur across the board while keeping the same lock CTAs.
+  const fullBlur = showBlurred
 
   // Get like count and whether current user has liked
   const { count: likeCount } = await supabase
