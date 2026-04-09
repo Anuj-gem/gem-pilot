@@ -71,15 +71,15 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <p className="text-sm text-[var(--gem-gray-300)]">
-            <span className="font-medium text-[var(--gem-white)]">Scored. Ranked. Circulated.</span>
-            <span className="hidden sm:inline"> — publish to the Discovery Board</span>
+            <span className="font-medium text-[var(--gem-white)]">GEM Pro:</span> Unlimited evaluations
+            <span className="hidden sm:inline"> + Discovery Board</span>
           </p>
           <button
             onClick={handleSubscribe}
             disabled={loading}
             className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
           >
-            {loading ? 'Redirecting...' : '$20/mo'}
+            {loading ? 'Redirecting...' : 'Start membership — $20/mo'}
             {!loading && <ArrowRight size={14} />}
           </button>
         </div>
@@ -104,14 +104,14 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         </button>
 
         <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-          Unlock this report.
+          GEM Pro — $20/month
         </h3>
         <p className="text-sm text-[var(--gem-gray-400)] mb-5">
-          Your score, full development read, and production breakdown — plus publish to the Discovery Board where producers, managers, and our production partners see what&apos;s climbing.
+          Unlimited evaluations. Your full score, GEM verdict, and development read on every draft. Publish to the Discovery Board where producers, managers, and our production partners track what&apos;s rising.
         </p>
 
         <ul className="space-y-2 mb-6">
-          {['Your full score + GEM verdict', 'Development notes + production breakdown', 'Unlimited revisions, tracked', 'Published to the Discovery Board'].map(item => (
+          {['Unlimited evaluations — every draft, every script', 'Your full score + GEM verdict on every report', 'Development notes + production breakdown', 'Published to the Discovery Board'].map(item => (
             <li key={item} className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]">
               <CheckCircle size={14} className="text-emerald-600 shrink-0" />
               {item}
@@ -124,7 +124,7 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
           disabled={loading}
           className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
         >
-          {loading ? 'Redirecting...' : 'Subscribe — $20/mo'}
+          {loading ? 'Redirecting...' : 'Start your membership — $20/mo'}
           {!loading && <ArrowRight size={16} />}
         </button>
 

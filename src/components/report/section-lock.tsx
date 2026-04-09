@@ -31,15 +31,15 @@ export function SectionLock({ variant, evaluationId, position = 'center' }: Sect
   const label =
     variant === 'signup'
       ? 'Create a free account to keep this report'
-      : 'Unlock this report'
+      : 'See what GEM Pro members see'
 
   const subtext =
     variant === 'pro'
-      ? 'Full score, development read, and production breakdown — plus publish to the Discovery Board for producers and managers to see.'
+      ? 'Unlimited evaluations, full scores, and a spot on the Discovery Board.'
       : null
 
   const cta =
-    variant === 'signup' ? 'Claim + join the Discovery Board' : 'Unlock — $20/mo'
+    variant === 'signup' ? 'Claim + join the Discovery Board' : 'Start your membership — $20/mo'
 
   const handleClick = async () => {
     if (variant === 'signup') {
