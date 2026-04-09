@@ -4,7 +4,8 @@ import Link from 'next/link'
 import Nav from '@/components/nav'
 import { TIER_META, type Tier } from '@/types'
 import { tierLabel } from '@/lib/tier-display'
-import { FileText, Plus, Eye, Lock, Compass, ArrowRight, RefreshCw } from 'lucide-react'
+import { FileText, Plus, Eye, Lock, Compass, ArrowRight, RefreshCw, Sparkles } from 'lucide-react'
+import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 
 export const dynamic = 'force-dynamic'
 
@@ -43,22 +44,33 @@ export default async function DashboardPage() {
     <>
       <Nav />
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-8 gap-4 flex-wrap">
           <div>
             <h1 className="text-3xl font-bold font-[family-name:var(--font-display)]">Your Portfolio</h1>
             <p className="text-sm text-[var(--gem-gray-400)] mt-1">
               {isSubscribed
                 ? 'All your submitted scripts and evaluations'
-                : 'Subscribe to unlock full reports and leaderboard access'}
+                : 'Unlock your scores, full reports, and leaderboard access'}
             </p>
           </div>
-          <Link
-            href="/submit"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-          >
-            <Plus size={16} />
-            New Script
-          </Link>
+          <div className="flex items-center gap-2">
+            {!isSubscribed && (
+              <UnlockTrigger
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm border border-[var(--gem-accent)] text-[var(--gem-accent)] hover:bg-[var(--gem-accent)] hover:text-white transition-colors"
+                ariaLabel="Unlock your score"
+              >
+                <Sparkles size={16} />
+                Unlock your score
+              </UnlockTrigger>
+            )}
+            <Link
+              href="/submit"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+            >
+              <Plus size={16} />
+              New Script
+            </Link>
+          </div>
         </div>
 
         {submissions && submissions.length > 0 ? (
@@ -91,13 +103,37 @@ export default async function DashboardPage() {
                     </div>
                     {highestScore !== null && (
                       <div>
-                        <div className="text-3xl font-bold" style={{ color: 'var(--tier-greenlight)' }}>{Math.round(highestScore)}</div>
+                        {isSubscribed ? (
+                          <div className="text-3xl font-bold" style={{ color: 'var(--tier-greenlight)' }}>{Math.round(highestScore)}</div>
+                        ) : (
+                          <UnlockTrigger ariaLabel="Unlock your highest score">
+                            <span
+                              className="block text-3xl font-bold text-[var(--gem-gray-500)] select-none"
+                              style={{ filter: 'blur(10px)' }}
+                              aria-hidden="true"
+                            >
+                              {Math.round(highestScore)}
+                            </span>
+                          </UnlockTrigger>
+                        )}
                         <div className="text-xs text-[var(--gem-gray-400)] mt-1">Highest</div>
                       </div>
                     )}
                     {avgScore !== null && (
                       <div>
-                        <div className="text-3xl font-bold" style={{ color: 'var(--tier-optionable)' }}>{Math.round(avgScore)}</div>
+                        {isSubscribed ? (
+                          <div className="text-3xl font-bold" style={{ color: 'var(--tier-optionable)' }}>{Math.round(avgScore)}</div>
+                        ) : (
+                          <UnlockTrigger ariaLabel="Unlock your average score">
+                            <span
+                              className="block text-3xl font-bold text-[var(--gem-gray-500)] select-none"
+                              style={{ filter: 'blur(10px)' }}
+                              aria-hidden="true"
+                            >
+                              {Math.round(avgScore)}
+                            </span>
+                          </UnlockTrigger>
+                        )}
                         <div className="text-xs text-[var(--gem-gray-400)] mt-1">Average</div>
                       </div>
                     )}
@@ -137,9 +173,21 @@ export default async function DashboardPage() {
                     {/* Score */}
                     <div className="w-12 shrink-0 text-center">
                       {eval_ ? (
-                        <span className="text-xl font-bold tabular-nums" style={{ color: tierColor(eval_.tier) }}>
-                          {Math.round(eval_.weighted_score)}
-                        </span>
+                        isSubscribed ? (
+                          <span className="text-xl font-bold tabular-nums" style={{ color: tierColor(eval_.tier) }}>
+                            {Math.round(eval_.weighted_score)}
+                          </span>
+                        ) : (
+                          <UnlockTrigger as="span" ariaLabel="Unlock this score">
+                            <span
+                              className="inline-block text-xl font-bold tabular-nums text-[var(--gem-gray-500)] select-none"
+                              style={{ filter: 'blur(8px)' }}
+                              aria-hidden="true"
+                            >
+                              {Math.round(eval_.weighted_score)}
+                            </span>
+                          </UnlockTrigger>
+                        )
                       ) : (
                         <span className="text-sm text-[var(--gem-gray-500)]">—</span>
                       )}
