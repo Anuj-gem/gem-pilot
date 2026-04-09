@@ -122,7 +122,7 @@ export default async function ReportPage({ params }: PageProps) {
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
       <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+      <div className={`max-w-3xl mx-auto px-4 py-8 space-y-8 ${showBlurred ? 'pb-32' : ''}`}>
         {/* Inline signup for anonymous users — right at the top, before the report.
             id="inline-signup" is the scroll target for per-section lock CTAs below. */}
         {isAnonymousSubmission && (

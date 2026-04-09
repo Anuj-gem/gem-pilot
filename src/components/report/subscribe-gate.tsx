@@ -104,14 +104,14 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         </button>
 
         <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-          Get your script circulated.
+          Unlock this report.
         </h3>
         <p className="text-sm text-[var(--gem-gray-400)] mb-5">
-          Pro unlocks the full development read, unlimited revisions, and publishes you to the Discovery Board where producers, managers, and our production partners see what&apos;s climbing.
+          Your score, full development read, and production breakdown — plus publish to the Discovery Board where producers, managers, and our production partners see what&apos;s climbing.
         </p>
 
         <ul className="space-y-2 mb-6">
-          {['Published to the Discovery Board', 'Circulated to our production partners', 'Full development notes + production breakdown', 'Unlimited revisions, tracked'].map(item => (
+          {['Your full score + GEM verdict', 'Development notes + production breakdown', 'Unlimited revisions, tracked', 'Published to the Discovery Board'].map(item => (
             <li key={item} className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]">
               <CheckCircle size={14} className="text-emerald-600 shrink-0" />
               {item}

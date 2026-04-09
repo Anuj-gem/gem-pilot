@@ -31,15 +31,15 @@ export function SectionLock({ variant, evaluationId, position = 'center' }: Sect
   const label =
     variant === 'signup'
       ? 'Create a free account to keep this report'
-      : 'Publish this to the Discovery Board'
+      : 'Unlock this report'
 
   const subtext =
     variant === 'pro'
-      ? 'Unlocks the full development read + puts your script in front of our production partners.'
+      ? 'Full score, development read, and production breakdown — plus publish to the Discovery Board for producers and managers to see.'
       : null
 
   const cta =
-    variant === 'signup' ? 'Claim + join the Discovery Board' : 'Get GEM Pro — $20/mo'
+    variant === 'signup' ? 'Claim + join the Discovery Board' : 'Unlock — $20/mo'
 
   const handleClick = async () => {
     if (variant === 'signup') {
@@ -58,32 +58,12 @@ export function SectionLock({ variant, evaluationId, position = 'center' }: Sect
       return
     }
 
-    // variant === 'pro' — logged-in free user. Re-open the SubscribeGate modal.
-    // If for some reason it's not mounted, fall back to direct checkout.
+    // variant === 'pro' — logged-in free user. Re-open the SubscribeGate modal,
+    // which handles Stripe checkout from its own subscribe button.
     trackSubscribeClick('section_lock')
     trackSubscribeFromReport({ evaluationId })
     gtagSubscribeClicked()
-
     window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
-
-    // Fallback: if the gate isn't mounted (edge case), kick off checkout directly.
-    setTimeout(async () => {
-      const modalOpen = document.querySelector('[data-gem-upgrade-modal-open="true"]')
-      if (modalOpen) return
-      setLoading(true)
-      try {
-        const res = await fetch('/api/stripe/checkout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ redirect_report: evaluationId }),
-        })
-        const data = await res.json()
-        if (data.url) window.location.href = data.url
-        else setLoading(false)
-      } catch {
-        setLoading(false)
-      }
-    }, 100)
   }
 
   const positionClasses =
