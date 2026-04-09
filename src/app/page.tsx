@@ -120,13 +120,13 @@ export default async function Home() {
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            We help you get your screenplay made.
+            Free screenplay feedback. From a producer's perspective.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Find out if your script is good. Top-scoring scripts get ranked on the Discovery Board and shared directly with our industry partners.
+            Upload your script, get a research-backed report in 60 seconds. Top scorers land on the Discovery Board and get shared with industry partners.
           </p>
 
           {/* Primary + secondary CTA */}
