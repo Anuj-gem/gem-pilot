@@ -126,7 +126,7 @@ export default async function Home() {
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            GEM helps screenwriters get read, get noticed, and get made.
+            Find out if your script is good. Top-scoring scripts get published to the Discovery Board and shared directly with our industry partners.
           </p>
 
           {/* Primary + secondary CTA */}
