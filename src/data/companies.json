@@ -1,0 +1,3157 @@
+[
+  {
+    "id": "a24",
+    "name": "A24",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "independent",
+      "prestige",
+      "arthouse",
+      "horror",
+      "drama",
+      "experimental"
+    ],
+    "tone_profile": [
+      "prestige",
+      "indie",
+      "artistic",
+      "elevated_genre"
+    ],
+    "budget_range": {
+      "min_m": 10,
+      "max_m": 50
+    },
+    "recent_credits": [
+      {
+        "title": "Civil War",
+        "year": 2024,
+        "genre": "sci-fi thriller",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Marty Supreme",
+        "year": 2025,
+        "genre": "sports drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Invite",
+        "year": 2026,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Death of Robin Hood",
+        "year": 2026,
+        "genre": "action thriller",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Tony",
+        "year": 2026,
+        "genre": "biopic drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "The Riders (adaptation, Brad Pitt attached)",
+      "Mother Mary (pop star thriller with Charli xcx soundtrack)",
+      "Backrooms (animated found-footage)",
+      "Multiple untitled projects in development"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "A24 operates through established relationships and known producers. Works across indie and prestige genres. Known for taking creative risks.",
+    "key_people": [
+      {
+        "name": "Daniel Kasman",
+        "title": "Senior Vice President of Acquisitions",
+        "focus": "film acquisitions and development"
+      }
+    ],
+    "hq_location": "New York City, USA",
+    "website": "a24films.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Leading independent distributor and producer. Valued at $3.5B. Releases 18-20 films annually. Known for discovering emerging talent.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "blumhouse",
+    "name": "Blumhouse Productions",
+    "type": "production_financing",
+    "parent_deal": "Universal",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "horror",
+      "thriller",
+      "supernatural"
+    ],
+    "tone_profile": [
+      "commercial",
+      "elevated_genre",
+      "horror-focused"
+    ],
+    "budget_range": {
+      "min_m": 3,
+      "max_m": 12
+    },
+    "recent_credits": [
+      {
+        "title": "Wolf Man",
+        "year": 2025,
+        "genre": "horror",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Black Phone 2",
+        "year": 2025,
+        "genre": "supernatural horror",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Five Nights at Freddy's 2",
+        "year": 2025,
+        "genre": "horror thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "SOULM8TE",
+        "year": 2026,
+        "genre": "sci-fi thriller",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "The Exorcist Reboot",
+        "year": 2026,
+        "genre": "supernatural horror",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "12 horror films in development for 2025-2026",
+      "New projects from directors Lee Cronin and Mike Flanagan"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Blumhouse focuses on horror and thriller content. Known for efficient, low-budget production model. Requires producer/agent relationships.",
+    "key_people": [
+      {
+        "name": "Jason Blum",
+        "title": "Founder and CEO",
+        "focus": "overall strategy and production"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "blumhouse.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Low-budget horror pioneer. Operates on $3-12M budgets with high ROI model. 112+ films produced. Part of Universal ecosystem.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "plan_b_entertainment",
+    "name": "Plan B Entertainment",
+    "type": "production",
+    "parent_deal": null,
+    "medium": [
+      "feature_film"
+    ],
+    "genres": [
+      "prestige drama",
+      "biography",
+      "thriller",
+      "action comedy"
+    ],
+    "tone_profile": [
+      "prestige",
+      "commercial",
+      "awards-focused"
+    ],
+    "budget_range": {
+      "min_m": 15,
+      "max_m": 80
+    },
+    "recent_credits": [
+      {
+        "title": "Bob Marley: One Love",
+        "year": 2024,
+        "genre": "biography",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Beetlejuice Beetlejuice",
+        "year": 2024,
+        "genre": "horror comedy",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Nickel Boys",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Wolfs",
+        "year": 2024,
+        "genre": "action comedy",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Mickey 17",
+        "year": 2025,
+        "genre": "sci-fi comedy",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "F1 (Formula 1 film)",
+      "The Adventures of Cliff Booth (in post-production)",
+      "Americanah (in development)",
+      "Animal (in development)",
+      "Ocean's 14 (in development)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Plan B specializes in prestige mid-budget films ($15-80M range). Focuses on literary adaptations and awards-caliber content. Requires established representation.",
+    "key_people": [
+      {
+        "name": "Brad Pitt",
+        "title": "Founder and Producer",
+        "focus": "overall creative direction and producing"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "planbent.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Oscar-winning production company. Specializes in prestige mid-budget films. 38+ films in library. Strong awards strategy.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "neon",
+    "name": "NEON",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film"
+    ],
+    "genres": [
+      "independent",
+      "arthouse",
+      "thriller",
+      "drama",
+      "horror"
+    ],
+    "tone_profile": [
+      "prestige",
+      "indie",
+      "awards-focused",
+      "bold"
+    ],
+    "budget_range": {
+      "min_m": 4,
+      "max_m": 20
+    },
+    "recent_credits": [
+      {
+        "title": "Anora",
+        "year": 2024,
+        "genre": "comedy drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Longlegs",
+        "year": 2024,
+        "genre": "horror thriller",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "The Seed of the Sacred Fig",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "It Was Just an Accident",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [
+      "I Love Boosters (Boots Riley, lower $20M range)",
+      "Alpha (Julia Ducournau)",
+      "They Follow (It Follows sequel)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "NEON focuses on distinctive indie films with strong artistic vision. Masterful marketing and distribution strategy. Requires producer relationships.",
+    "key_people": [
+      {
+        "name": "Tom Quinn",
+        "title": "CEO and Co-Founder",
+        "focus": "overall strategy and acquisitions"
+      },
+      {
+        "name": "Tim League",
+        "title": "Co-Founder",
+        "focus": "programming and partnerships"
+      }
+    ],
+    "hq_location": "New York City, USA",
+    "website": "neon.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "6 Palme d'Or wins. 39 Oscar nominations, 11 wins. Partial stake sold to Department M in 2026. Known for innovative marketing.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "searchlight_pictures",
+    "name": "Searchlight Pictures",
+    "type": "studio_label",
+    "parent_deal": "Disney/20th Century Studios",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "prestige drama",
+      "biography",
+      "arthouse",
+      "thriller",
+      "independent"
+    ],
+    "tone_profile": [
+      "prestige",
+      "awards-focused",
+      "artistic"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 30
+    },
+    "recent_credits": [
+      {
+        "title": "A Complete Unknown",
+        "year": 2024,
+        "genre": "biography",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Roses",
+        "year": 2025,
+        "genre": "comedy",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Rental Family",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Testament of Ann Lee",
+        "year": 2025,
+        "genre": "musical drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Wild Horse Nine",
+        "year": 2026,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "In the Blink of an Eye (2026)",
+      "Ready or Not 2: Here I Come (2026)",
+      "46 films in various development stages"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Searchlight produces and distributes independent and prestige films. Oscar-winning label. Requires established representation and producer relationships.",
+    "key_people": [
+      {
+        "name": "David S. Greenbaum",
+        "title": "President",
+        "focus": "overall leadership and strategy"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "searchlightpictures.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "8 Best Picture winners. 185+ films in library. Part of Disney. Known for launching careers and discovering talent.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "annapurna_pictures",
+    "name": "Annapurna Pictures",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "animated_film"
+    ],
+    "genres": [
+      "prestige drama",
+      "arthouse",
+      "animated",
+      "art films"
+    ],
+    "tone_profile": [
+      "prestige",
+      "artistic",
+      "bold"
+    ],
+    "budget_range": {
+      "min_m": 20,
+      "max_m": 60
+    },
+    "recent_credits": [
+      {
+        "title": "The Testament of Ann Lee",
+        "year": 2025,
+        "genre": "musical drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Moomin film (Rebecca Sugar directing and writing)",
+      "Stray (video game adaptation)",
+      "Foo (Chris Wedge directing)",
+      "Untitled Nick Bruno film (Spielbergian high concept)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Annapurna focuses on prestige content with artistic vision. Active in both live-action and animation divisions. Expanding into game adaptations.",
+    "key_people": [
+      {
+        "name": "Megan Ellison",
+        "title": "Founder and President",
+        "focus": "overall creative direction and acquisitions"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "annapurna.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Oscar-winning production company. Two divisions: live-action films and Annapurna Animation. Active in Annapurna Interactive game adaptations.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "participant_media",
+    "name": "Participant Media",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "documentary"
+    ],
+    "genres": [
+      "prestige drama",
+      "documentary",
+      "socially conscious"
+    ],
+    "tone_profile": [
+      "prestige",
+      "social impact"
+    ],
+    "budget_range": {
+      "min_m": 10,
+      "max_m": 40
+    },
+    "recent_credits": [
+      {
+        "title": "Blknws",
+        "year": 2024,
+        "genre": "documentary",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Rob Peace",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Grab",
+        "year": 2024,
+        "genre": "documentary",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "White Bird",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "Participant Media ceased operations in April 2024 after 20 years. Skeletal holding company remains to oversee library of 135 films. No new development.",
+    "key_people": [
+      {
+        "name": "Jeff Skoll",
+        "title": "Founder",
+        "focus": "historical founder (company closed 2024)"
+      }
+    ],
+    "hq_location": "Los Angeles, California (inactive)",
+    "website": "participantmedia.com",
+    "status": "inactive",
+    "diversity_focus": true,
+    "notes": "COMPANY CLOSED APRIL 2024. Founded by eBay co-founder Jeff Skoll. 135+ films in library. Focus was socially impactful content and documentaries.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "macro",
+    "name": "Macro",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "digital_content"
+    ],
+    "genres": [
+      "comedy",
+      "drama",
+      "prestige",
+      "diverse voices"
+    ],
+    "tone_profile": [
+      "commercial",
+      "diverse",
+      "cultural"
+    ],
+    "budget_range": {
+      "min_m": 10,
+      "max_m": 40
+    },
+    "recent_credits": [
+      {
+        "title": "One of Them Days",
+        "year": 2025,
+        "genre": "comedy",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Eternal Return",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Wizkid: Long Live Lagos",
+        "year": 2025,
+        "genre": "documentary",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Hell Fighter",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "I Am Not Your Perfect Mexican Daughter (America Ferrera directing debut at Orion Pictures)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "MACRO focuses on voices and perspectives of Black people and people of color. Multi-platform content creation. Film Studios division expanded in 2025.",
+    "key_people": [
+      {
+        "name": "Charles D. King",
+        "title": "Founder and CEO",
+        "focus": "overall strategy and production"
+      },
+      {
+        "name": "Jeremy Stein",
+        "title": "EVP Development & Production",
+        "focus": "film development pipeline (hired Oct 2025)"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "staymacro.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Award-winning multiplatform company founded 2015. Dedicated to diverse voices and perspectives. Operates Macro Film Studios and digital platforms.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "killer_films",
+    "name": "Killer Films",
+    "type": "production",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "arthouse",
+      "independent",
+      "experimental",
+      "drama"
+    ],
+    "tone_profile": [
+      "prestige",
+      "indie",
+      "bold"
+    ],
+    "budget_range": {
+      "min_m": 8,
+      "max_m": 25
+    },
+    "recent_credits": [
+      {
+        "title": "On Swift Horses",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "The Last Day",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Materialists",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Mad Bills to Pay",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Late Fame",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "Killer Films produces independent, artfully-crafted films. NYC-based. Known for supporting experimental and unconventional narratives.",
+    "key_people": [
+      {
+        "name": "Christine Vachon",
+        "title": "Co-Founder and Producer",
+        "focus": "overall production and creative direction"
+      },
+      {
+        "name": "Pamela Koffler",
+        "title": "Co-Founder and Producer",
+        "focus": "production and development"
+      }
+    ],
+    "hq_location": "New York City, USA",
+    "website": "killerfilms.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Independent production company founded 1995. 150+ films produced. Known for bold, artistic filmmaking. Strong reputation in arthouse cinema.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "filmnation_entertainment",
+    "name": "FilmNation Entertainment",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "theater"
+    ],
+    "genres": [
+      "prestige drama",
+      "independent",
+      "international"
+    ],
+    "tone_profile": [
+      "prestige",
+      "artistic",
+      "awards-focused"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 35
+    },
+    "recent_credits": [
+      {
+        "title": "Anora",
+        "year": 2024,
+        "genre": "comedy drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Conclave",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Crow",
+        "year": 2024,
+        "genre": "action thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Babes",
+        "year": 2024,
+        "genre": "comedy",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Treasure",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [
+      "Maria (Pablo Larrain, Angelina Jolie)",
+      "Roofman (2025)",
+      "The Shrouds (2025)",
+      "Novocaine (2025)",
+      "Wildwood (2025)",
+      "The Invite (2026)",
+      "The House of the Spirits (2026)",
+      "Carolina Caroline (2026)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "FilmNation produces and finances prestigious independent and international films. Oscar-winning track record. Multi-platform company including theater division.",
+    "key_people": [
+      {
+        "name": "Juliette Howell",
+        "title": "Producer",
+        "focus": "film production and development"
+      }
+    ],
+    "hq_location": "London / Los Angeles",
+    "website": "filmnation.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Prolific production company with 59+ film credits. Operates across film, TV, theater, and podcasts. International presence and portfolio.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "topic_studios",
+    "name": "Topic Studios",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "documentary"
+    ],
+    "genres": [
+      "prestige drama",
+      "indie",
+      "documentary"
+    ],
+    "tone_profile": [
+      "prestige",
+      "artistic",
+      "awards-focused"
+    ],
+    "budget_range": {
+      "min_m": 8,
+      "max_m": 30
+    },
+    "recent_credits": [
+      {
+        "title": "A Real Pain",
+        "year": 2024,
+        "genre": "dramedy",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Splitsville",
+        "year": 2025,
+        "genre": "comedy",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "It's Never Over, Jeff Buckley",
+        "year": 2025,
+        "genre": "documentary",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Folktales",
+        "year": 2025,
+        "genre": "documentary",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Scorn",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [
+      "No One Cares (Julianne Moore, Paul Giamatti, Jesse Eisenberg directing)",
+      "Wicker (Olivia Colman, acquired by Black Bear)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Topic Studios produces prestigious independent films and documentaries. Focused on character-driven narratives and quality storytelling.",
+    "key_people": [
+      {
+        "name": "Ryan Heller",
+        "title": "Head of Film & Docs",
+        "focus": "film and documentary strategy"
+      }
+    ],
+    "hq_location": "New York City, USA",
+    "website": "topicstudios.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Focused production company founded by former Endeavor executive. TV division shuttered Jan 2024. New multi-year joint venture with Fifth Season for premium TV.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "sight_unseen_pictures",
+    "name": "Sight Unseen Pictures",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "independent",
+      "drama",
+      "thriller"
+    ],
+    "tone_profile": [
+      "indie",
+      "artistic"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 20
+    },
+    "recent_credits": [
+      {
+        "title": "Sight Unseen",
+        "year": 2024,
+        "genre": "crime drama",
+        "medium": "limited_series",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "Newly established independent production company. Limited public information available on recent slate development.",
+    "key_people": [
+      {
+        "name": "Julia Lebedev",
+        "title": "Producer and Partner",
+        "focus": "production"
+      },
+      {
+        "name": "Eddie Vaisman",
+        "title": "Producer and Partner",
+        "focus": "production"
+      },
+      {
+        "name": "Oren Moverman",
+        "title": "Filmmaker and Partner",
+        "focus": "creative direction"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "sightunseen.com",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "New production and financing company founded by Julia Lebedev, Eddie Vaisman, and filmmaker Oren Moverman. Limited filmography to date.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "3000_pictures",
+    "name": "3000 Pictures",
+    "type": "studio_label",
+    "parent_deal": "Sony Pictures Entertainment",
+    "medium": [
+      "feature_film"
+    ],
+    "genres": [
+      "prestige drama",
+      "indie",
+      "literary adaptations"
+    ],
+    "tone_profile": [
+      "prestige",
+      "awards-focused",
+      "literary"
+    ],
+    "budget_range": {
+      "min_m": 20,
+      "max_m": 60
+    },
+    "recent_credits": [],
+    "current_development_slate": [
+      "Broken Country (Clare Leslie Hall novel adaptation, Reese Witherspoon and Lauren Neustadter producing)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "3000 Pictures specializes in literary-to-screen adaptations. Joint venture with HarperCollins. Focuses on book-to-film content.",
+    "key_people": [
+      {
+        "name": "Elizabeth Gabler",
+        "title": "President and Founder",
+        "focus": "overall strategy and literary acquisitions"
+      }
+    ],
+    "hq_location": "Culver City, California",
+    "website": "3000pictures.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Launched 2019 when former Fox 2000 Pictures president and staff joined Sony. Literacy-to-screen division. Named after Elizabeth Gabler.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "black_bear_pictures",
+    "name": "Black Bear Pictures",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film"
+    ],
+    "genres": [
+      "thriller",
+      "drama",
+      "indie",
+      "horror"
+    ],
+    "tone_profile": [
+      "commercial",
+      "thriller-focused"
+    ],
+    "budget_range": {
+      "min_m": 8,
+      "max_m": 30
+    },
+    "recent_credits": [
+      {
+        "title": "Immaculate",
+        "year": 2024,
+        "genre": "horror thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Shell",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Relay",
+        "year": 2025,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Monkey",
+        "year": 2025,
+        "genre": "horror thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Christy",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [
+      "Tuner (2026)",
+      "In the Grey (2026)",
+      "Whistle (2026)",
+      "Shelter (2026)",
+      "Guy Ritchie film (Cannes market project)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Black Bear Pictures produces thrillers and genre films. Strong track record with horror and psychological thrillers. Established relationships model.",
+    "key_people": [
+      {
+        "name": "Niels Bartha",
+        "title": "Founder",
+        "focus": "overall production strategy"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "blackbearpictures.com",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Active production company with 28+ films. Focus on thrillers and genre content. Strong development pipeline through 2026.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "picturestart",
+    "name": "Picturestart",
+    "type": "production_financing",
+    "parent_deal": "Fifth Season (multi-year deal)",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "prestige drama",
+      "commercial",
+      "indie"
+    ],
+    "tone_profile": [
+      "commercial",
+      "prestige",
+      "character-driven"
+    ],
+    "budget_range": {
+      "min_m": 10,
+      "max_m": 40
+    },
+    "recent_credits": [
+      {
+        "title": "Bad Genius",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Am I OK?",
+        "year": 2024,
+        "genre": "comedy drama",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "Sweethearts",
+        "year": 2024,
+        "genre": "romance drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Together",
+        "year": 2025,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "4 Kids Walk Into a Bank",
+        "year": 2026,
+        "genre": "comedy heist",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Chosen Ones (in development)",
+      "Fire & Ice (in development)",
+      "Monster (in development)",
+      "Showboat (in development)",
+      "The Masque of the Red Death (in development)",
+      "The Nowhere Game (in development)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Picturestart creates 'Discovery of Voice' content. Founded by former studio head Erik Feig. Multi-year partnership with Fifth Season for expanded production.",
+    "key_people": [
+      {
+        "name": "Erik Feig",
+        "title": "Executive Chairman and Largest Investor",
+        "focus": "overall strategy and development"
+      },
+      {
+        "name": "Jessica Switch",
+        "title": "Senior Production Executive",
+        "focus": "production oversight"
+      },
+      {
+        "name": "Julia Hammer",
+        "title": "Senior Production Executive",
+        "focus": "production oversight"
+      },
+      {
+        "name": "Emily Wissink",
+        "title": "Senior Production Executive",
+        "focus": "production oversight"
+      }
+    ],
+    "hq_location": "Los Angeles, California",
+    "website": "picturestart.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Founded 2023 by Erik Feig. NENT Group investor. Multi-year deal with Fifth Season (Oct 2025) for expanded film and TV co-production.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "lionsgate",
+    "name": "Lionsgate Studios",
+    "type": "studio_label",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_film"
+    ],
+    "genres": [
+      "action",
+      "thriller",
+      "horror",
+      "sci-fi",
+      "drama",
+      "comedy"
+    ],
+    "tone_profile": [
+      "commercial",
+      "prestige",
+      "genre",
+      "franchise"
+    ],
+    "budget_range": {
+      "min_m": 8,
+      "max_m": 185
+    },
+    "recent_credits": [
+      {
+        "title": "Megalopolis",
+        "year": 2024,
+        "genre": "sci-fi",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "Francis Ford Coppola directed, $120M budget"
+      },
+      {
+        "title": "The Hunger Games: Sunrise on the Reaping",
+        "year": 2025,
+        "genre": "sci-fi",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "The Strangers: Chapter 1",
+        "year": 2024,
+        "genre": "horror",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [
+      "Power Ballad",
+      "Michael",
+      "Glenrothan",
+      "Do Not Enter",
+      "The Gates",
+      "I Can Only Imagine 2"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Works through established production partners. Starz separation completed May 2025, focusing on ~12 wide theatrical releases annually.",
+    "key_people": [
+      {
+        "name": "Jon Feltheimer",
+        "title": "CEO",
+        "focus": "studio strategy"
+      }
+    ],
+    "hq_location": "Santa Monica, CA",
+    "website": "https://www.lionsgatestudios.com/",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Major studio recently separated from Starz. Strong IP portfolio including Hunger Games, John Wick franchises. Balanced approach to budget tiers.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "stx_entertainment",
+    "name": "STX Entertainment",
+    "type": "production|production_financing",
+    "parent_deal": "Crown Productions (A-CAP)",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "action",
+      "thriller",
+      "comedy",
+      "adventure"
+    ],
+    "tone_profile": [
+      "commercial",
+      "star-driven"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 20
+    },
+    "recent_credits": [
+      {
+        "title": "Greenland 2: Migration",
+        "year": 2026,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Revived distribution operations under new CEO Peter Coleman"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Revived in January 2026 after acquisition by Crown Productions. Targeting $5-20M budget films. Mid-budget focused model.",
+    "key_people": [
+      {
+        "name": "Peter Coleman",
+        "title": "CEO",
+        "focus": "operations"
+      },
+      {
+        "name": "Robert Simonds",
+        "title": "Founder",
+        "focus": "development"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.stxentertainment.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Founded 2014 by Robert Simonds and Bill McGlashan. Recently revived after ownership change. Specializes in mid-budget ensemble films.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "eone_entertainment",
+    "name": "Entertainment One (eOne)",
+    "type": "production|production_financing",
+    "parent_deal": "Lionsgate (acquired Dec 2023)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_film"
+    ],
+    "genres": [
+      "animated",
+      "family",
+      "horror",
+      "action"
+    ],
+    "tone_profile": [
+      "commercial",
+      "accessible"
+    ],
+    "budget_range": {
+      "min_m": 15,
+      "max_m": 150
+    },
+    "recent_credits": [
+      {
+        "title": "Transformers One",
+        "year": 2024,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Den of Thieves 2: Pantera",
+        "year": 2025,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Dust Bunny",
+        "year": 2025,
+        "genre": "family",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Everything's Going to Be Great",
+      "Freaky Tales"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Operates under Lionsgate umbrella post-acquisition. eOne Canada rebranded as Lionsgate Canada in June 2024.",
+    "key_people": [
+      {
+        "name": "eOne Films",
+        "title": "Operating Entity",
+        "focus": "theatrical"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.lionsgatestudios.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "UK-based producer acquired by Lionsgate. Strong in animated and family content. Handles theatrical and TV production.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "anonymous_content",
+    "name": "Anonymous Content",
+    "type": "production|production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "documentary"
+    ],
+    "genres": [
+      "drama",
+      "prestige",
+      "thriller",
+      "documentary"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated",
+      "auteur-driven"
+    ],
+    "budget_range": {
+      "min_m": 10,
+      "max_m": 80
+    },
+    "recent_credits": [
+      {
+        "title": "Disclaimer",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "limited_series",
+        "budget_tier": "high",
+        "notes": "Directed by Alfonso Cuar\u00f3n, starring Cate Blanchett"
+      },
+      {
+        "title": "Nickel Boys",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid",
+        "notes": "Based on Colson Whitehead novel"
+      },
+      {
+        "title": "Meet the Barbarians",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Death and the Penguin",
+      "Panopticon",
+      "Perfect Days",
+      "S\u00f3crates documentary series"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Expanding internationally with joint ventures in Germany, Australia, Brazil, and Italy. AC Studios handles premium content.",
+    "key_people": [
+      {
+        "name": "David Levine",
+        "title": "Partner",
+        "focus": "development"
+      },
+      {
+        "name": "Nick Shumaker",
+        "title": "Partner",
+        "focus": "development"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.anonymouscontent.com/",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Award-winning production company with prestige focus. Strong in limited series and adapted literature. International expansion in progress.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "scott_free_productions",
+    "name": "Scott Free Productions",
+    "type": "production",
+    "parent_deal": "20th Century Studios (select projects), Warner Bros (Blade Runner 2099, Alien: Earth)",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "sci-fi",
+      "action",
+      "epic",
+      "thriller"
+    ],
+    "tone_profile": [
+      "prestige",
+      "high-budget",
+      "auteur-driven"
+    ],
+    "budget_range": {
+      "min_m": 80,
+      "max_m": 250
+    },
+    "recent_credits": [
+      {
+        "title": "Alien: Romulus",
+        "year": 2024,
+        "genre": "sci-fi",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "Directed by Fede \u00c1lvarez, $80M budget, $349M worldwide"
+      },
+      {
+        "title": "Gladiator II",
+        "year": 2024,
+        "genre": "epic",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "Directed and produced by Ridley Scott, $240-250M budget"
+      }
+    ],
+    "current_development_slate": [
+      "You Should Be Dancing (Bee Gees biopic)",
+      "The Dog Stars (post-apocalyptic sci-fi, Aug 2026)",
+      "Blade Runner 2099 (series)",
+      "Alien: Earth (series)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "High-budget exclusive partnership with Ridley Scott. Strong genre focus on sci-fi and epic narratives. Series adaptations strategy.",
+    "key_people": [
+      {
+        "name": "Ridley Scott",
+        "title": "Founder/Director/Producer",
+        "focus": "creative direction"
+      },
+      {
+        "name": "Michael Jackman",
+        "title": "President",
+        "focus": "operations"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://scottfree.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Named after artist and filmmaker. Ridley Scott-centric company with significant IP in sci-fi and action franchises. Recent CAA signing marks new representation.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "bad_robot_productions",
+    "name": "Bad Robot Productions",
+    "type": "production_financing",
+    "parent_deal": "Warner Bros. (first-look, non-exclusive film & TV)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_series"
+    ],
+    "genres": [
+      "sci-fi",
+      "thriller",
+      "action",
+      "mystery"
+    ],
+    "tone_profile": [
+      "commercial",
+      "elevated genre",
+      "high-concept"
+    ],
+    "budget_range": {
+      "min_m": 30,
+      "max_m": 200
+    },
+    "recent_credits": [
+      {
+        "title": "Flowervale Street",
+        "year": 2025,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "500 Rads",
+      "7 Minutes in Heaven",
+      "A Hope More Powerful Than the Sea",
+      "Billy Summers",
+      "Boilerplate",
+      "Cloverfield Sequel",
+      "Duster (Max series)",
+      "Speed Racer (adaptations)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "J.J. Abrams directing first feature in years. Two-year Warner Bros. first-look deal closed December 2024. 26 films in development.",
+    "key_people": [
+      {
+        "name": "J.J. Abrams",
+        "title": "Founder/Producer/Director",
+        "focus": "creative"
+      },
+      {
+        "name": "Katie McGrath",
+        "title": "Producer",
+        "focus": "development"
+      }
+    ],
+    "hq_location": "Burbank, CA",
+    "website": "https://www.badbadrobot.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Founded by J.J. Abrams. Strong in mystery-box narratives and high-concept sci-fi. Previous $250M deal; current deal less expensive given market conditions.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "legendary_entertainment",
+    "name": "Legendary Entertainment",
+    "type": "production_financing",
+    "parent_deal": "Paramount Pictures (3-year distribution, excludes China)",
+    "medium": [
+      "feature_film",
+      "streaming_film"
+    ],
+    "genres": [
+      "action",
+      "sci-fi",
+      "adventure",
+      "fantasy"
+    ],
+    "tone_profile": [
+      "commercial",
+      "blockbuster",
+      "franchise-driven"
+    ],
+    "budget_range": {
+      "min_m": 80,
+      "max_m": 250
+    },
+    "recent_credits": [
+      {
+        "title": "Godzilla x Kong: The New Empire",
+        "year": 2024,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "A Minecraft Movie",
+        "year": 2025,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "high"
+      },
+      {
+        "title": "The Toxic Avenger",
+        "year": 2025,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Street Fighter (Oct 2026, first under Paramount deal)",
+      "Dune: Part Three (Warner Bros. distributes, 2026)",
+      "Magic: The Gathering",
+      "Duke Nukem",
+      "Animal Friends (Aug 2025)",
+      "Godzilla x Kong: Supernova (2027)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Paramount deal excludes China distribution (handled by Legendary East). Warner Bros. continues to distribute select Legendary franchises.",
+    "key_people": [
+      {
+        "name": "Joshua Grode",
+        "title": "CEO",
+        "focus": "operations"
+      }
+    ],
+    "hq_location": "Burbank, CA",
+    "website": "https://www.legendary.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Major producer of tentpole franchises. Recent Sony deal lapse due to underperforming releases. Strong in monster movies and video game adaptations.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "monkeypaw_productions",
+    "name": "Monkeypaw Productions",
+    "type": "production",
+    "parent_deal": "Universal (production partnership)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "short_film"
+    ],
+    "genres": [
+      "horror",
+      "thriller",
+      "mystery"
+    ],
+    "tone_profile": [
+      "prestige",
+      "horror",
+      "social commentary"
+    ],
+    "budget_range": {
+      "min_m": 20,
+      "max_m": 120
+    },
+    "recent_credits": [
+      {
+        "title": "HIM",
+        "year": 2025,
+        "genre": "horror",
+        "medium": "feature_film",
+        "budget_tier": "mid",
+        "notes": "Stars Marlon Wayans, psychological horror"
+      }
+    ],
+    "current_development_slate": [
+      "No Drama Initiative shorts (5 films premiered at TIFF 2025)",
+      "Fourth Peele feature (removed from 2026 schedule)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Jordan Peele-led company focused on horror and social commentary. No Drama Initiative nurtures emerging horror filmmakers. Recent development layoffs.",
+    "key_people": [
+      {
+        "name": "Jordan Peele",
+        "title": "Founder/Director",
+        "focus": "creative"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.monkeypawproductions.com/",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Horror-focused with themes of social commentary. Partnership with TIFF and Universal on emerging filmmaker initiative. Known for Peele's directorial work.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "regency_enterprises",
+    "name": "Regency Enterprises (New Regency)",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_series"
+    ],
+    "genres": [
+      "thriller",
+      "drama",
+      "action",
+      "prestige"
+    ],
+    "tone_profile": [
+      "prestige",
+      "commercial",
+      "mid-to-high budget"
+    ],
+    "budget_range": {
+      "min_m": 40,
+      "max_m": 200
+    },
+    "recent_credits": [
+      {
+        "title": "Deep Water",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "Directed by Adrian Lyne, first film in nearly two decades"
+      }
+    ],
+    "current_development_slate": [
+      "A Bittersweet Life",
+      "I Am Chippendales",
+      "Mother Trucker",
+      "Black Hole (Netflix series)",
+      "Man on Fire (thriller series)",
+      "Malcolm in the Middle revival (Disney+)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Founded 1991 by Arnon Milchan. 59 completed films, 33 in development, 3 in pre-production. Balanced film and TV approach.",
+    "key_people": [
+      {
+        "name": "Arnon Milchan",
+        "title": "Founder",
+        "focus": "creative strategy"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.newregency.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Long-established independent producer with robust pipeline. Strong in prestige drama and thrillers. Strategic partnerships with Netflix and Disney+.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "color_force",
+    "name": "Color Force",
+    "type": "production_financing",
+    "parent_deal": "Sony Pictures (overall film deal, 2024), FX (renewed through 2027)",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "action",
+      "drama",
+      "prestige",
+      "adaptation"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated adaptation",
+      "character-driven"
+    ],
+    "budget_range": {
+      "min_m": 30,
+      "max_m": 150
+    },
+    "recent_credits": [
+      {
+        "title": "Clipped",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "American Sports Story: Aaron Hernandez",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "American Love Story (2025, Carolyn Bessette-Kennedy focus)",
+      "Sunrise on the Reaping (Hunger Games adaptation)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Founded 2007 by Nina Jacobson. Recent Sony film deal with Khaliah Neal as head of film. Strong in adaptation of literary properties.",
+    "key_people": [
+      {
+        "name": "Nina Jacobson",
+        "title": "Founder/Producer",
+        "focus": "creative strategy"
+      },
+      {
+        "name": "Brad Simpson",
+        "title": "Partner",
+        "focus": "development"
+      },
+      {
+        "name": "Khaliah Neal",
+        "title": "Head of Film",
+        "focus": "film oversight"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.colorforce.com/",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Produced Hunger Games franchise. Strong in prestige television and literary adaptations. Renewed FX deal through 2027.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "temple_hill_entertainment",
+    "name": "Temple Hill Entertainment",
+    "type": "production",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "horror",
+      "action",
+      "thriller",
+      "adaptation"
+    ],
+    "tone_profile": [
+      "genre",
+      "commercial",
+      "elevated horror"
+    ],
+    "budget_range": {
+      "min_m": 15,
+      "max_m": 120
+    },
+    "recent_credits": [
+      {
+        "title": "Smile 2",
+        "year": 2024,
+        "genre": "horror",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "$138M worldwide gross"
+      },
+      {
+        "title": "Bagman",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      },
+      {
+        "title": "The Supremes at Earl's All-You-Can-Eat",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "My Oxford Year (2025)",
+      "Clown in a Cornfield (2025)",
+      "Children of Blood and Bone (Jan 2027, Paramount)",
+      "Monitor (horror)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Established 2006 by Wyck Godfrey and Marty Bowen. 50 films in development. Produced Twilight and Maze Runner franchises.",
+    "key_people": [
+      {
+        "name": "Wyck Godfrey",
+        "title": "Founder",
+        "focus": "creative"
+      },
+      {
+        "name": "Marty Bowen",
+        "title": "Founder",
+        "focus": "development"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.templehillent.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Horror specialists with commercial sensibility. Strong franchise producers (Twilight, Maze Runner). Recent partnership with Protagonist Pictures.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "21_laps_entertainment",
+    "name": "21 Laps Entertainment",
+    "type": "production",
+    "parent_deal": "Netflix (exclusive distribution partnership)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_series",
+      "animated_series"
+    ],
+    "genres": [
+      "sci-fi",
+      "thriller",
+      "drama",
+      "horror"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated genre",
+      "character-driven"
+    ],
+    "budget_range": {
+      "min_m": 20,
+      "max_m": 200
+    },
+    "recent_credits": [
+      {
+        "title": "Deadpool & Wolverine",
+        "year": 2024,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "Executive produced, $1.3B+ worldwide (highest R-rated film)"
+      },
+      {
+        "title": "The Perfect Couple",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Stranger Things Season 5",
+        "year": 2025,
+        "genre": "sci-fi",
+        "medium": "streaming_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Stranger Things: Tales From '85 (animated, 2026)",
+      "Never Lie (psychological thriller)",
+      "Madonna limited series",
+      "The Blanks (Grady Hendrix adaptation)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Founded and run by Shawn Levy. Exclusive Netflix partnership with strong IP in Stranger Things. Expanding into feature film production.",
+    "key_people": [
+      {
+        "name": "Shawn Levy",
+        "title": "Founder/Executive Producer",
+        "focus": "creative vision"
+      },
+      {
+        "name": "Dan Cohen",
+        "title": "Executive Producer",
+        "focus": "development"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://21laps.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Netflix exclusive partnership. Produced Stranger Things phenomenon. Record-breaking year with Deadpool film. Expanding to feature films and animation.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "vertigo_entertainment",
+    "name": "Vertigo Entertainment",
+    "type": "production",
+    "parent_deal": "AWA Studios (horror partnership)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_series"
+    ],
+    "genres": [
+      "horror",
+      "thriller",
+      "sci-fi",
+      "adaptation"
+    ],
+    "tone_profile": [
+      "horror",
+      "prestige",
+      "elevated genre"
+    ],
+    "budget_range": {
+      "min_m": 20,
+      "max_m": 150
+    },
+    "recent_credits": [
+      {
+        "title": "Salem's Lot",
+        "year": 2024,
+        "genre": "horror",
+        "medium": "limited_series",
+        "budget_tier": "high",
+        "notes": "HBO Max premiere, Stephen King adaptation"
+      },
+      {
+        "title": "A Minecraft Movie",
+        "year": 2025,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "high",
+        "notes": "Co-produced with Legendary"
+      },
+      {
+        "title": "It: Welcome to Derry",
+        "year": 2025,
+        "genre": "horror",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Resident Evil (2026)",
+      "21st Century Robot",
+      "Adventure Time",
+      "Calling Me Home",
+      "Die Bad",
+      "In A Dark Place",
+      "Keloid"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Founded by Roy Lee. Partnership with AWA Studios for horror content pipeline. 42 films in development.",
+    "key_people": [
+      {
+        "name": "Roy Lee",
+        "title": "Founder/Producer",
+        "focus": "creative"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://vertigofilms.com/",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Horror and thriller specialist. AWA partnership creates new storytelling pipeline. Strong in Stephen King adaptations. 36 projects in production.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "wayfare_entertainment",
+    "name": "Wayfarer Studios",
+    "type": "production",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "documentary",
+      "unscripted"
+    ],
+    "genres": [
+      "drama",
+      "inspirational",
+      "thriller",
+      "family"
+    ],
+    "tone_profile": [
+      "prestige",
+      "social impact",
+      "character-driven",
+      "human stories"
+    ],
+    "budget_range": {
+      "min_m": 10,
+      "max_m": 80
+    },
+    "recent_credits": [
+      {
+        "title": "Eleanor the Great",
+        "year": 2026,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid",
+        "notes": "Directed by Scarlett Johansson, Cannes world premiere"
+      },
+      {
+        "title": "Code 3",
+        "year": 2025,
+        "genre": "action",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "It Ends with Us",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Ezra",
+      "The Garfield Movie",
+      "A Nice Indian Boy",
+      "The Senior",
+      "Empire Waist"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Co-founded by Justin Baldoni. Self-financing model. Focus on inspirational and socially conscious content across formats.",
+    "key_people": [
+      {
+        "name": "Justin Baldoni",
+        "title": "Co-Founder",
+        "focus": "creative/production"
+      },
+      {
+        "name": "Steve Sarowitz",
+        "title": "Co-Founder",
+        "focus": "financing"
+      },
+      {
+        "name": "Jamey Heath",
+        "title": "CEO",
+        "focus": "operations"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://www.wayfarerstudios.com/",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Independent model with self-financing. Strong in socially conscious content. Documentary division active. Diverse content across platforms.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "range_media_partners",
+    "name": "Range Media Partners",
+    "type": "production_financing",
+    "parent_deal": "FilmNation Entertainment (co-production pact)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "streaming_film"
+    ],
+    "genres": [
+      "drama",
+      "prestige",
+      "thriller",
+      "independent"
+    ],
+    "tone_profile": [
+      "prestige",
+      "character-driven",
+      "elevated independent"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 80
+    },
+    "recent_credits": [
+      {
+        "title": "A Complete Unknown",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Longlegs",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Babes",
+        "year": 2024,
+        "genre": "comedy",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [
+      "Lou Reed biopic (based on 'Lou Reed: The King of New York')",
+      "Soul Train (stage musical adaptation)",
+      "Sweetwater (AI on Screen)",
+      "Lucid (AI on Screen)"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Co-production agreement with FilmNation targets 4-6 films per year. Expanding development pipeline with director partnerships.",
+    "key_people": [
+      {
+        "name": "Range Studios Leadership",
+        "title": "Management",
+        "focus": "film production"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://rangeproductions.com/",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Banner 2024 year with prestige productions. Partnership with Google on AI-focused content. Working with established and emerging directors.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "wiip",
+    "name": "wiip",
+    "type": "production",
+    "parent_deal": null,
+    "medium": [
+      "limited_series",
+      "series",
+      "feature_film"
+    ],
+    "genres": [
+      "prestige_drama",
+      "limited_series",
+      "comedy",
+      "drama"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated",
+      "character_driven"
+    ],
+    "budget_range": {
+      "min_m": 8,
+      "max_m": 25
+    },
+    "recent_credits": [
+      {
+        "title": "Mare of Easttown",
+        "year": 2021,
+        "genre": "drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Dickinson",
+        "year": 2019,
+        "genre": "comedy_drama",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "The Summer I Turned Pretty",
+        "year": 2022,
+        "genre": "romance_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "White House Plumbers",
+        "year": 2023,
+        "genre": "drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Bodkin",
+        "year": 2024,
+        "genre": "dark_comedy_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "The Undertow",
+      "The Off Weeks"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Does not accept unsolicited submissions. Only accepts material through recognized literary agents.",
+    "key_people": [
+      {
+        "name": "Paul Lee",
+        "title": "Founder/CEO",
+        "focus": "Overall production and development"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://wiip.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Talent-first production company known for prestige limited series and character-driven drama. Acquired by South Korean company in 2021. Emmy award-winning credits.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "a-plus-e-studios",
+    "name": "A+E Studios",
+    "type": "production",
+    "parent_deal": "A+E Networks",
+    "medium": [
+      "series",
+      "limited_series",
+      "documentary",
+      "reality"
+    ],
+    "genres": [
+      "drama",
+      "documentary",
+      "reality",
+      "historical"
+    ],
+    "tone_profile": [
+      "elevated_genre",
+      "prestige",
+      "commercial"
+    ],
+    "budget_range": {
+      "min_m": 2,
+      "max_m": 12
+    },
+    "recent_credits": [
+      {
+        "title": "Unchained Reaction",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "Established studio unit of A+E Networks. Submit through agents.",
+    "key_people": [
+      {
+        "name": "A+E Networks",
+        "title": "Parent Company",
+        "focus": "Strategic oversight"
+      }
+    ],
+    "hq_location": "New York, NY",
+    "website": "https://www.aetv.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Award-winning studio unit of A+E Networks focusing on high-quality scripted entertainment for linear and non-linear platforms.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "imagine-television",
+    "name": "Imagine Television",
+    "type": "production",
+    "parent_deal": null,
+    "medium": [
+      "series",
+      "limited_series",
+      "feature_film",
+      "documentary"
+    ],
+    "genres": [
+      "drama",
+      "comedy",
+      "prestige_drama",
+      "documentary"
+    ],
+    "tone_profile": [
+      "prestige",
+      "commercial",
+      "elevated"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 30
+    },
+    "recent_credits": [
+      {
+        "title": "The Studio",
+        "year": 2024,
+        "genre": "comedy",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Fight for Glory: 2024 World Series",
+        "year": 2024,
+        "genre": "documentary",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "David Blaine: Do Not Attempt",
+        "year": 2024,
+        "genre": "documentary",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Friday Night Lights reboot",
+      "24 reboot",
+      "Wild Things"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Contact through agents. Selective with submissions.",
+    "key_people": [
+      {
+        "name": "Ron Howard",
+        "title": "Co-Founder",
+        "focus": "Creative direction and production"
+      },
+      {
+        "name": "Brian Grazer",
+        "title": "Co-Founder",
+        "focus": "Development and production"
+      },
+      {
+        "name": "Justin Wilkes",
+        "title": "President",
+        "focus": "Day-to-day operations"
+      },
+      {
+        "name": "Jeb Brody",
+        "title": "President, Imagine Features",
+        "focus": "Feature films"
+      }
+    ],
+    "hq_location": "Burbank, CA",
+    "website": "https://imagine-entertainment.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Prestigious company exploring strategic sale. Known for high-profile reboots and franchise projects. Strong track record in both TV and film.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "amblin-television",
+    "name": "Amblin Television",
+    "type": "production",
+    "parent_deal": "Amblin Entertainment/Amblin Partners",
+    "medium": [
+      "series",
+      "limited_series",
+      "animated_series",
+      "feature_film"
+    ],
+    "genres": [
+      "drama",
+      "sci_fi",
+      "animation",
+      "prestige_drama"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated",
+      "commercial"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 35
+    },
+    "recent_credits": [
+      {
+        "title": "Masters of the Air",
+        "year": 2024,
+        "genre": "historical_drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Jurassic World: Chaos Theory",
+        "year": 2024,
+        "genre": "sci_fi_adventure",
+        "medium": "series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Additional Spielberg-directed projects"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Only accepts submissions through established representation.",
+    "key_people": [
+      {
+        "name": "Steven Spielberg",
+        "title": "Chairman/Founder",
+        "focus": "Creative vision and flagship productions"
+      },
+      {
+        "name": "Jeff Small",
+        "title": "CEO",
+        "focus": "Day-to-day operations"
+      },
+      {
+        "name": "Terry Press",
+        "title": "President of Strategy & Communications",
+        "focus": "Strategic partnerships"
+      }
+    ],
+    "hq_location": "Universal Studios, CA",
+    "website": "https://amblin.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Premier production company founded by Steven Spielberg. Known for prestige television and films. Recent deal with Universal for distribution and co-financing.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "fremantle",
+    "name": "Fremantle",
+    "type": "production",
+    "parent_deal": "Paramount Global",
+    "medium": [
+      "series",
+      "limited_series",
+      "reality",
+      "unscripted",
+      "animated_series"
+    ],
+    "genres": [
+      "drama",
+      "reality",
+      "unscripted",
+      "competition"
+    ],
+    "tone_profile": [
+      "commercial",
+      "elevated_genre",
+      "prestige"
+    ],
+    "budget_range": {
+      "min_m": 1,
+      "max_m": 15
+    },
+    "recent_credits": [
+      {
+        "title": "Sense of Attraction",
+        "year": 2024,
+        "genre": "reality_dating",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Picnic at Hanging Rock",
+        "year": 2018,
+        "genre": "prestige_drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through established agencies or via Fremantle's development contacts.",
+    "key_people": [
+      {
+        "name": "Andrea Scrosati",
+        "title": "Group COO/CEO Continental Europe",
+        "focus": "Strategic oversight"
+      }
+    ],
+    "hq_location": "London, UK (Global operations)",
+    "website": "https://www.fremantlemedia.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Major European super-indie with global reach. 2024 restructuring merged US and Europe scripted operations. Recently acquired Beach House Pictures and Asacha Media Group.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "sony-pictures-television",
+    "name": "Sony Pictures Television",
+    "type": "studio_label",
+    "parent_deal": "Sony Pictures Entertainment",
+    "medium": [
+      "series",
+      "limited_series",
+      "animated_series",
+      "kids_content"
+    ],
+    "genres": [
+      "drama",
+      "comedy",
+      "sci_fi",
+      "animation",
+      "action"
+    ],
+    "tone_profile": [
+      "commercial",
+      "prestige",
+      "elevated_genre"
+    ],
+    "budget_range": {
+      "min_m": 2,
+      "max_m": 25
+    },
+    "recent_credits": [
+      {
+        "title": "The Boys",
+        "year": 2019,
+        "genre": "superhero_drama",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "The Last of Us",
+        "year": 2023,
+        "genre": "post_apocalyptic_drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Cobra Kai",
+        "year": 2020,
+        "genre": "action_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Outlander",
+        "year": 2014,
+        "genre": "historical_romance",
+        "medium": "series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Vought Rising",
+      "Reading Rainbow revival"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through major agencies only.",
+    "key_people": [
+      {
+        "name": "Katherine Pope",
+        "title": "President of SPT Studios",
+        "focus": "Scripted, unscripted and kids content"
+      }
+    ],
+    "hq_location": "Culver City, CA",
+    "website": "https://sonypicturestelevision.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Major studio division of Sony. Large slate across multiple genres. Strong track record with streaming platforms. Kids content division produces Emmy-winning content.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "ucp",
+    "name": "Universal Content Productions (UCP)",
+    "type": "production",
+    "parent_deal": "NBCUniversal/Comcast",
+    "medium": [
+      "series",
+      "limited_series",
+      "animated_series"
+    ],
+    "genres": [
+      "drama",
+      "sci_fi",
+      "horror",
+      "comedy"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated_genre",
+      "commercial"
+    ],
+    "budget_range": {
+      "min_m": 3,
+      "max_m": 20
+    },
+    "recent_credits": [
+      {
+        "title": "Ted",
+        "year": 2024,
+        "genre": "comedy",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Chucky",
+        "year": 2021,
+        "genre": "horror",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Resident Alien",
+        "year": 2021,
+        "genre": "sci_fi_comedy",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Umbrella Academy",
+        "year": 2019,
+        "genre": "sci_fi_drama",
+        "medium": "series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Usher music drama series"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through agents. Part of NBCUniversal infrastructure.",
+    "key_people": [
+      {
+        "name": "NBCUniversal",
+        "title": "Parent Company",
+        "focus": "Strategic oversight"
+      }
+    ],
+    "hq_location": "Universal Studios, CA",
+    "website": "https://www.instagram.com/ucp",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Major streaming and cable production company. Known for genre content and franchise adaptations. Evolved from Universal Cable Productions to UCP in 2019.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "twentieth-television",
+    "name": "20th Television",
+    "type": "studio_label",
+    "parent_deal": "Disney Television Studios",
+    "medium": [
+      "series",
+      "limited_series",
+      "comedy"
+    ],
+    "genres": [
+      "drama",
+      "comedy",
+      "action"
+    ],
+    "tone_profile": [
+      "commercial",
+      "elevated",
+      "prestige"
+    ],
+    "budget_range": {
+      "min_m": 2,
+      "max_m": 20
+    },
+    "recent_credits": [
+      {
+        "title": "9-1-1",
+        "year": 2018,
+        "genre": "procedural_drama",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "High Potential",
+        "year": 2024,
+        "genre": "crime_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Grey's Anatomy",
+        "year": 2005,
+        "genre": "medical_drama",
+        "medium": "series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "ABC's flagship production arm following ABC Signature dissolution in October 2024.",
+    "key_people": [
+      {
+        "name": "Karey Burke",
+        "title": "Leadership",
+        "focus": "20th Television operations"
+      }
+    ],
+    "hq_location": "Burbank, CA",
+    "website": "https://www.disneytelevisionstudios.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Major Disney subsidiary. Absorbed ABC Signature in October 2024. Large slate across network and streaming platforms.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "abc-signature",
+    "name": "ABC Signature",
+    "type": "studio_label",
+    "parent_deal": "Disney Television Studios (DISSOLVED)",
+    "medium": [
+      "series",
+      "limited_series"
+    ],
+    "genres": [
+      "drama",
+      "comedy"
+    ],
+    "tone_profile": [
+      "commercial",
+      "prestige"
+    ],
+    "budget_range": {
+      "min_m": 2,
+      "max_m": 15
+    },
+    "recent_credits": [
+      {
+        "title": "Criminal Minds: Evolution",
+        "year": 2022,
+        "genre": "crime_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "DISSOLVED October 1, 2024. Operations folded into 20th Television.",
+    "key_people": [],
+    "hq_location": "Burbank, CA",
+    "website": "",
+    "status": "inactive",
+    "diversity_focus": true,
+    "notes": "Closed in October 2024 as part of Disney restructuring. Legacy shows now produced by 20th Television including Grey's Anatomy and Criminal Minds: Evolution.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "lionsgate-television",
+    "name": "Lionsgate Television",
+    "type": "production",
+    "parent_deal": "Lionsgate Entertainment",
+    "medium": [
+      "series",
+      "limited_series",
+      "animated_series",
+      "reality"
+    ],
+    "genres": [
+      "drama",
+      "sci_fi",
+      "horror",
+      "action",
+      "reality"
+    ],
+    "tone_profile": [
+      "commercial",
+      "elevated_genre",
+      "prestige"
+    ],
+    "budget_range": {
+      "min_m": 2,
+      "max_m": 20
+    },
+    "recent_credits": [
+      {
+        "title": "Ghosts",
+        "year": 2021,
+        "genre": "supernatural_comedy",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "The Rookie",
+        "year": 2018,
+        "genre": "procedural_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Mythic Quest",
+        "year": 2020,
+        "genre": "comedy_drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      },
+      {
+        "title": "Acapulco",
+        "year": 2021,
+        "genre": "drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "John Wick: Under the High Table",
+      "The Studio",
+      "The Hunting Wives"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through representatives.",
+    "key_people": [
+      {
+        "name": "Gary Goodman",
+        "title": "Head of Production",
+        "focus": "Development and production"
+      }
+    ],
+    "hq_location": "Santa Monica, CA",
+    "website": "https://www.lionsgatetelevision.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Major television producer with 20+ premium series in development. Expanded significantly via December 2023 eOne acquisition. Strong presence across all major platforms.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "village-roadshow",
+    "name": "Village Roadshow Television",
+    "type": "production",
+    "parent_deal": "Village Roadshow Entertainment Group",
+    "medium": [
+      "series",
+      "limited_series",
+      "feature_film"
+    ],
+    "genres": [
+      "drama",
+      "comedy",
+      "animation"
+    ],
+    "tone_profile": [
+      "commercial",
+      "prestige",
+      "elevated"
+    ],
+    "budget_range": {
+      "min_m": 3,
+      "max_m": 18
+    },
+    "recent_credits": [
+      {
+        "title": "Apples Never Fall",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Good Cop/Bad Cop"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through agents.",
+    "key_people": [
+      {
+        "name": "Village Roadshow Entertainment Group",
+        "title": "Parent Company",
+        "focus": "Strategic oversight"
+      }
+    ],
+    "hq_location": "Burbank, CA",
+    "website": "https://vreg.com",
+    "status": "uncertain",
+    "diversity_focus": true,
+    "notes": "Major production company. Reported Chapter 11 bankruptcy filing in March 2025 due to studio expansion costs, staff layoffs, and arbitration disputes. Operations may be impacted.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "sierra-affinity",
+    "name": "Sierra/Affinity",
+    "type": "production_financing",
+    "parent_deal": "Entertainment One (eOne) subsidiary",
+    "medium": [
+      "feature_film",
+      "limited_series"
+    ],
+    "genres": [
+      "drama",
+      "international",
+      "prestige"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated"
+    ],
+    "budget_range": {
+      "min_m": 2,
+      "max_m": 15
+    },
+    "recent_credits": [
+      {
+        "title": "Alpine-set thriller",
+        "year": 2024,
+        "genre": "thriller",
+        "medium": "feature_film",
+        "budget_tier": "low"
+      }
+    ],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "Primarily handles third-party representation and financing. Limited unsolicited material.",
+    "key_people": [
+      {
+        "name": "Entertainment One",
+        "title": "Parent Company",
+        "focus": "Overall operations"
+      }
+    ],
+    "hq_location": "International (Global reach)",
+    "website": "https://www.sierra-affinity.com",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Independent film finance, production and foreign sales company. Formed 2011 from merger of Sierra Pictures and Affinity International. eOne subsidiary focuses on global marketplace appeal.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "fifth-season",
+    "name": "Fifth Season (formerly Endeavor Content)",
+    "type": "production_financing",
+    "parent_deal": "CJ ENM (South Korean conglomerate, 75% owned) / Toho (Japanese, 25% owned as of Dec 2023)",
+    "medium": [
+      "feature_film",
+      "limited_series",
+      "series"
+    ],
+    "genres": [
+      "prestige_drama",
+      "limited_series",
+      "drama"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated",
+      "character_driven"
+    ],
+    "budget_range": {
+      "min_m": 8,
+      "max_m": 30
+    },
+    "recent_credits": [
+      {
+        "title": "Severance",
+        "year": 2022,
+        "genre": "sci_fi_thriller",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Lady in the Lake",
+        "year": 2024,
+        "genre": "crime_drama",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Chief of War",
+        "year": 2024,
+        "genre": "action_drama",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "The Savant",
+        "year": 2024,
+        "genre": "drama",
+        "medium": "series",
+        "budget_tier": "mid"
+      }
+    ],
+    "current_development_slate": [
+      "Severance Season 2",
+      "Nine Perfect Strangers Season 2",
+      "The Last Anniversary"
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through established representation.",
+    "key_people": [
+      {
+        "name": "CJ ENM / Toho",
+        "title": "Strategic investors",
+        "focus": "Financing and oversight"
+      }
+    ],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://fifthseason.com",
+    "status": "active",
+    "diversity_focus": true,
+    "notes": "Rebranded from Endeavor Content in September 2022. Now under CJ ENM/Toho ownership. Produces $1B+ annual slate across prestige TV and film. Known for high-end prestige content.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "endeavor-content",
+    "name": "Endeavor Content",
+    "type": "production_financing",
+    "parent_deal": "REBRANDED to Fifth Season (2022)",
+    "medium": [],
+    "genres": [],
+    "tone_profile": [],
+    "budget_range": {
+      "min_m": 0,
+      "max_m": 0
+    },
+    "recent_credits": [],
+    "current_development_slate": [],
+    "open_to_unsolicited": false,
+    "submission_notes": "REBRANDED. See Fifth Season for current operations.",
+    "key_people": [],
+    "hq_location": "Los Angeles, CA",
+    "website": "https://fifthseason.com",
+    "status": "inactive",
+    "diversity_focus": true,
+    "notes": "Rebranded to Fifth Season in September 2022. No longer operates under Endeavor Content name.",
+    "last_updated": "2026-03-30"
+  },
+  {
+    "id": "mrc",
+    "name": "MRC (Media Rights Capital)",
+    "type": "production_financing",
+    "parent_deal": null,
+    "medium": [
+      "feature_film",
+      "series",
+      "limited_series"
+    ],
+    "genres": [
+      "prestige_drama",
+      "thriller",
+      "political",
+      "drama"
+    ],
+    "tone_profile": [
+      "prestige",
+      "elevated",
+      "commercial"
+    ],
+    "budget_range": {
+      "min_m": 5,
+      "max_m": 25
+    },
+    "recent_credits": [
+      {
+        "title": "House of Cards",
+        "year": 2013,
+        "genre": "political_thriller",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Ozark",
+        "year": 2017,
+        "genre": "crime_thriller",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "Poker Face",
+        "year": 2023,
+        "genre": "mystery_thriller",
+        "medium": "series",
+        "budget_tier": "high"
+      },
+      {
+        "title": "The Terminal List",
+        "year": 2022,
+        "genre": "action_thriller",
+        "medium": "limited_series",
+        "budget_tier": "high"
+      }
+    ],
+    "current_development_slate": [
+      "Ted: The Animated Series",
+      "M.I.A."
+    ],
+    "open_to_unsolicited": false,
+    "submission_notes": "Submit through agents and representatives.",
+    "key_people": [
+      {
+        "name": "Modi Wiczyk",
+        "title": "Co-Founder",
+        "focus": "Strategic production"
+      },
+      {
+        "name": "Asif Satchu",
+        "title": "Co-Founder",
+        "focus": "Strategic production"
+      }
+    ],
+    "hq_location": "West Hollywood, CA",
+    "website": "https://www.mrcentertainment.com",
+    "status": "active",
+    "diversity_focus": false,
+    "notes": "Prestigious independent production company founded 2004. Develops, finances and produces film and television. Strong prestige drama track record across HBO, Netflix, and other platforms.",
+    "last_updated": "2026-03-30"
+  }
+]

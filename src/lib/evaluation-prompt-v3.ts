@@ -1,18 +1,26 @@
 // GEM Evaluation Prompt v3 — 10 dimensions, v3 weights, streamlined
 // Weighted score + tier + production tags all calculated in code, NOT by the LLM
+// Format is now a WRITER-DECLARED input (Feature film | Series), not model-inferred.
 
-export const GEM_EVALUATION_PROMPT_V3 = `You are a senior development executive evaluating a screenplay submission. Read the full script carefully before producing your evaluation.
+export type DeclaredFormat = 'Feature film' | 'Series';
+
+export function buildGemEvaluationPromptV3(declaredFormat: DeclaredFormat): string {
+  const formatLine =
+    declaredFormat === 'Series'
+      ? `The writer has declared this script as a **Series** (TV pilot). Treat format as fixed — evaluate it as a pilot for an ongoing series, not as a feature film. Genre and tone are still for you to classify.`
+      : `The writer has declared this script as a **Feature film**. Treat format as fixed — evaluate it as a feature film, not as a TV pilot or series. Genre and tone are still for you to classify.`;
+
+  return `You are a senior development executive evaluating a screenplay submission. Read the full script carefully before producing your evaluation.
+
+${formatLine}
 
 ---
 
 ## STEP 1: Classification
 
-- **Format**: Feature film, TV pilot (half-hour or hour), limited series, short film, or other
+- **Format**: ${declaredFormat} (declared by the writer — do not reclassify)
 - **Genre**: Primary genre + up to 2 secondary tags
 - **Tone**: (e.g., grounded, heightened, satirical, gritty, comedic, etc.)
-
-**Format calibration — use structural intent, not commercial potential:**
-The primary signal is whether the story *ends* or *opens*. A feature film resolves its central conflict and completes the protagonist's arc — even if the world feels rich or the characters feel expandable, if the story reaches a definitive conclusion, it's a feature. A TV pilot deliberately withholds resolution: it establishes a world and ongoing relationships, then ends on a hook that demands a next episode. Page count is a supporting signal (features typically 85–130pp; hour pilots typically 45–65pp; half-hour pilots 22–35pp) but not definitive on its own. A large ensemble, strong world-building, or franchise potential does NOT make something a pilot — those are scoring dimensions, not format indicators. When signals conflict, ask: does this script reach an ending, or does it open a door?
 
 ---
 
@@ -267,5 +275,10 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 1. **Score the script on the page.** Not the concept, not what it could become with rewrites.
 2. **Every claim must point to the script.** If you can't cite a specific scene, character, or line, don't say it.
 3. **Be honest about commercial reality.** Kindness without honesty is not kindness.
-4. **Adapt to format.** A short film and a TV pilot have different success criteria.
+4. **Adapt to format.** The writer has declared this as a ${declaredFormat} — every judgment should be made through that lens.
 5. **The report is the product.** Every sentence should earn its place.`;
+}
+
+// Legacy export kept for backward compatibility — defaults to Feature film.
+// Prefer buildGemEvaluationPromptV3(declaredFormat) in new code.
+export const GEM_EVALUATION_PROMPT_V3 = buildGemEvaluationPromptV3('Feature film');
