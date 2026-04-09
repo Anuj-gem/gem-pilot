@@ -97,25 +97,31 @@ export function ReportHeader({
         </div>
       </div>
 
-      {/* Tier (GEM Verdict) — hidden when blurred to avoid leaking the score qualitatively */}
-      {!blurred && (
-        <>
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict:</span>
-            <span
-              className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
-              style={{ backgroundColor: tierColor(tier) }}
-            >
-              {displayLabel}
-            </span>
-          </div>
+      {/* Tier (GEM Verdict) — visible label, blurred pill for free viewers so they see what's gated */}
+      <div className="flex items-center gap-1.5">
+        <span className="text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict:</span>
+        {blurred ? (
+          <span
+            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white bg-[var(--gem-gray-500)] select-none"
+            style={{ filter: 'blur(6px)' }}
+            aria-hidden="true"
+          >
+            {displayLabel}
+          </span>
+        ) : (
+          <span
+            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
+            style={{ backgroundColor: tierColor(tier) }}
+          >
+            {displayLabel}
+          </span>
+        )}
+      </div>
 
-          {displayDescription && (
-            <p className="text-sm text-[var(--gem-gray-400)] max-w-lg leading-relaxed">
-              {displayDescription}
-            </p>
-          )}
-        </>
+      {displayDescription && !blurred && (
+        <p className="text-sm text-[var(--gem-gray-400)] max-w-lg leading-relaxed">
+          {displayDescription}
+        </p>
       )}
 
       {/* Revise CTA + Share buttons — client component, reads eval id from pathname */}

@@ -200,9 +200,21 @@ export default async function DashboardPage() {
                           {sub.title}
                         </h3>
                         {tierMeta && (
-                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
-                            {tierLabel(eval_.tier as Tier)}
-                          </span>
+                          isSubscribed ? (
+                            <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
+                              {tierLabel(eval_.tier as Tier)}
+                            </span>
+                          ) : (
+                            <UnlockTrigger as="span" ariaLabel="Unlock your GEM verdict">
+                              <span
+                                className="text-[10px] px-2.5 py-1 rounded-full border border-[var(--gem-gray-700)] font-medium shrink-0 text-[var(--gem-gray-500)] bg-[var(--gem-gray-800)] select-none inline-block"
+                                style={{ filter: 'blur(5px)' }}
+                                aria-hidden="true"
+                              >
+                                {tierLabel(eval_.tier as Tier)}
+                              </span>
+                            </UnlockTrigger>
+                          )
                         )}
                         {sub.is_public && (
                           <Eye size={12} className="text-emerald-600 shrink-0" />
