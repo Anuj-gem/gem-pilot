@@ -152,7 +152,9 @@ export default async function ReportPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Header: title, tier, weighted score, tags */}
+        {/* Header: title, tier, weighted score, tags.
+            Score is blurred for free/unsubscribed viewers (including the owner themselves)
+            — the score is the key unlock and part of what you pay for. */}
         <ReportHeader
           title={submission.title}
           author={submission.profiles?.full_name ?? 'Anonymous'}
@@ -164,6 +166,7 @@ export default async function ReportPage({ params }: PageProps) {
           tone={classification.tone}
           createdAt={eval_.created_at}
           isOwner={isOwner}
+          blurred={showBlurred}
         />
 
         {/* Report sections.
