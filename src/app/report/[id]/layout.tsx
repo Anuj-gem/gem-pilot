@@ -9,6 +9,7 @@ type ReportMeta = {
   tier: string | null
   rank: number | null
   totalPublic: number | null
+  unlocked: boolean
 }
 
 async function getReportMeta(id: string): Promise<ReportMeta | null> {
@@ -37,12 +38,27 @@ async function getReportMeta(id: string): Promise<ReportMeta | null> {
 
     const { data: subRow } = await supabase
       .from('script_submissions')
-      .select('title, is_public')
+      .select('title, is_public, user_id')
       .eq('id', submissionId)
       .single()
 
     const title = ((subRow as any)?.title as string) ?? 'Screenplay'
     const isPublic = Boolean((subRow as any)?.is_public)
+    const ownerUserId = ((subRow as any)?.user_id as string | null) ?? null
+
+    // Gate: unlocked only if owner is an active subscriber OR post is public
+    // (public toggle already requires subscription). Mirrors report page gate.
+    let ownerIsSubscribed = false
+    if (ownerUserId) {
+      const { data: ownerProfile } = await supabase
+        .from('profiles')
+        .select('subscription_status')
+        .eq('id', ownerUserId)
+        .single()
+      ownerIsSubscribed =
+        ((ownerProfile as any)?.subscription_status as string | null) === 'active'
+    }
+    const unlocked = ownerIsSubscribed || isPublic
 
     let rank: number | null = null
     let totalPublic: number | null = null
@@ -62,7 +78,7 @@ async function getReportMeta(id: string): Promise<ReportMeta | null> {
       }
     }
 
-    return { title, score, tier, rank, totalPublic }
+    return { title, score, tier, rank, totalPublic, unlocked }
   } catch {
     return null
   }
@@ -104,19 +120,25 @@ export async function generateMetadata({
     return t ?? ''
   }
 
-  const scoreStr = meta.score !== null ? `${Math.round(meta.score)}/100` : ''
-  const tierStr = tierLabelFor(meta.tier)
   // Clean metadata title — score/tier live on the OG card image, not in the text.
   const headline = `${meta.title} — GEM Script Evaluation`
 
-  const rankStr =
-    meta.rank !== null && meta.totalPublic !== null && meta.totalPublic > 1
-      ? ` Ranked #${meta.rank} of ${meta.totalPublic} on the GEM leaderboard.`
-      : ''
-
-  const description = scoreStr
-    ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM — a producer-grade read of your screenplay.${rankStr} Get yours read in 60 seconds.`
-    : `${meta.title} on GEM — a producer-grade read of your screenplay. Get yours read in 60 seconds.`
+  // LOCKED: never leak score or tier in description. This is load-bearing —
+  // score in og:description would defeat the paywall via link previews.
+  let description: string
+  if (!meta.unlocked) {
+    description = `${meta.title} on GEM — a producer-grade read of your screenplay. Get yours read in 60 seconds.`
+  } else {
+    const scoreStr = meta.score !== null ? `${Math.round(meta.score)}/100` : ''
+    const tierStr = tierLabelFor(meta.tier)
+    const rankStr =
+      meta.rank !== null && meta.totalPublic !== null && meta.totalPublic > 1
+        ? ` Ranked #${meta.rank} of ${meta.totalPublic} on the GEM leaderboard.`
+        : ''
+    description = scoreStr
+      ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM — a producer-grade read of your screenplay.${rankStr} Get yours read in 60 seconds.`
+      : `${meta.title} on GEM — a producer-grade read of your screenplay. Get yours read in 60 seconds.`
+  }
 
   return {
     title: headline,

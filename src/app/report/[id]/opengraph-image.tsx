@@ -11,16 +11,20 @@ type ReportData = {
   author: string | null
   score: number | null
   tier: string | null
+  unlocked: boolean
 }
 
 // Service-role key bypasses RLS — safe here because this runs server-side
 // in the edge runtime and the key is never sent to the client.
 async function getReportData(id: string): Promise<ReportData> {
+  // Fallback defaults to LOCKED. Underleak is safer than overleak — score must
+  // never leak via OG image, that would defeat the paywall through link previews.
   const fallback: ReportData = {
     title: 'Screenplay',
     author: null,
     score: null,
     tier: null,
+    unlocked: false,
   }
   try {
     const supabase = createClient(
@@ -48,28 +52,37 @@ async function getReportData(id: string): Promise<ReportData> {
 
     const { data: subRow } = await supabase
       .from('script_submissions')
-      .select('title, user_id')
+      .select('title, user_id, is_public')
       .eq('id', submissionId)
       .single()
 
     const title = ((subRow as any)?.title as string) ?? fallback.title
     const userId = ((subRow as any)?.user_id as string | null) ?? null
+    const isPublic = Boolean((subRow as any)?.is_public)
 
-    // Fetch author display name from profiles (nullable — anonymous submissions)
+    // Fetch author display name + subscription status from profiles
+    // (nullable — anonymous submissions are always locked)
     let author: string | null = null
+    let ownerIsSubscribed = false
     if (userId) {
       const { data: profileRow } = await supabase
         .from('profiles')
-        .select('full_name')
+        .select('full_name, subscription_status')
         .eq('id', userId)
         .single()
       const fullName = ((profileRow as any)?.full_name as string | null) ?? null
       if (fullName && fullName.trim().length > 0) {
         author = fullName.trim()
       }
+      ownerIsSubscribed =
+        ((profileRow as any)?.subscription_status as string | null) === 'active'
     }
 
-    return { title, author, score, tier }
+    // Gate rule mirrors the report page: unlocked if owner is an active
+    // subscriber OR the post is public (public toggle requires subscription).
+    const unlocked = ownerIsSubscribed || isPublic
+
+    return { title, author, score, tier, unlocked }
   } catch {
     return fallback
   }
@@ -105,11 +118,13 @@ export default async function ReportOpengraphImage({
 }) {
   const resolved = await Promise.resolve(params as any)
   const id = (resolved?.id as string) ?? ''
-  const { title, author, score, tier } = await getReportData(id)
+  const { title, author, score, tier, unlocked } = await getReportData(id)
 
-  const scoreDisplay = score !== null ? Math.round(score).toString() : '—'
-  const tierText = tierLabel(tier)
-  const grad = tierGradient(tier)
+  // LOCKED path: never render score or tier. This is load-bearing — leaking
+  // the number in the social share image defeats the paywall.
+  const scoreDisplay = unlocked && score !== null ? Math.round(score).toString() : '—'
+  const tierText = unlocked ? tierLabel(tier) : ''
+  const grad = tierGradient(unlocked ? tier : null)
 
   const authorFirst = firstName(author)
   const possessive = authorFirst
@@ -239,78 +254,99 @@ export default async function ReportOpengraphImage({
               by {author}
             </div>
           )}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 28,
-              marginTop: author ? 0 : 24,
-            }}
-          >
+          {unlocked ? (
             <div
               style={{
                 display: 'flex',
-                alignItems: 'baseline',
-                padding: '14px 28px',
-                borderRadius: 16,
-                background: 'rgba(255,255,255,0.06)',
-                border: '2px solid rgba(255,255,255,0.14)',
+                alignItems: 'center',
+                gap: 28,
+                marginTop: author ? 0 : 24,
               }}
             >
               <div
                 style={{
-                  fontSize: 72,
-                  fontWeight: 900,
-                  color: '#ffffff',
-                  lineHeight: 1,
-                  letterSpacing: -2,
                   display: 'flex',
-                }}
-              >
-                {scoreDisplay}
-              </div>
-              <div
-                style={{
-                  fontSize: 28,
-                  fontWeight: 600,
-                  color: '#9ca3af',
-                  marginLeft: 4,
-                  display: 'flex',
-                }}
-              >
-                /100
-              </div>
-            </div>
-            {tierText && (
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  padding: '18px 30px',
-                  borderRadius: 999,
-                  fontSize: 22,
-                  fontWeight: 800,
-                  textTransform: 'uppercase',
-                  letterSpacing: 2.5,
-                  background: `linear-gradient(135deg, ${grad.c1} 0%, ${grad.c2} 100%)`,
-                  color: '#ffffff',
-                  boxShadow: `0 8px 32px rgba(${grad.rgb}, 0.35)`,
+                  alignItems: 'baseline',
+                  padding: '14px 28px',
+                  borderRadius: 16,
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '2px solid rgba(255,255,255,0.14)',
                 }}
               >
                 <div
                   style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: '50%',
-                    background: '#ffffff',
-                    marginRight: 10,
+                    fontSize: 72,
+                    fontWeight: 900,
+                    color: '#ffffff',
+                    lineHeight: 1,
+                    letterSpacing: -2,
                     display: 'flex',
                   }}
-                />
-                {tierText}
+                >
+                  {scoreDisplay}
+                </div>
+                <div
+                  style={{
+                    fontSize: 28,
+                    fontWeight: 600,
+                    color: '#9ca3af',
+                    marginLeft: 4,
+                    display: 'flex',
+                  }}
+                >
+                  /100
+                </div>
               </div>
-            )}
-          </div>
+              {tierText && (
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '18px 30px',
+                    borderRadius: 999,
+                    fontSize: 22,
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: 2.5,
+                    background: `linear-gradient(135deg, ${grad.c1} 0%, ${grad.c2} 100%)`,
+                    color: '#ffffff',
+                    boxShadow: `0 8px 32px rgba(${grad.rgb}, 0.35)`,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: '50%',
+                      background: '#ffffff',
+                      marginRight: 10,
+                      display: 'flex',
+                    }}
+                  />
+                  {tierText}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                padding: '18px 34px',
+                borderRadius: 999,
+                fontSize: 24,
+                fontWeight: 700,
+                letterSpacing: 1.5,
+                textTransform: 'uppercase',
+                background: 'rgba(255,255,255,0.06)',
+                border: '2px solid rgba(255,255,255,0.14)',
+                color: '#e5e7eb',
+                marginTop: author ? 0 : 24,
+              }}
+            >
+              Screenplay Evaluation
+            </div>
+          )}
         </div>
 
         {/* Footer — CTA */}
