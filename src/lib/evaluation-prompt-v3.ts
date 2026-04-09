@@ -11,6 +11,9 @@ export const GEM_EVALUATION_PROMPT_V3 = `You are a senior development executive 
 - **Genre**: Primary genre + up to 2 secondary tags
 - **Tone**: (e.g., grounded, heightened, satirical, gritty, comedic, etc.)
 
+**Format calibration — use structural intent, not commercial potential:**
+The primary signal is whether the story *ends* or *opens*. A feature film resolves its central conflict and completes the protagonist's arc — even if the world feels rich or the characters feel expandable, if the story reaches a definitive conclusion, it's a feature. A TV pilot deliberately withholds resolution: it establishes a world and ongoing relationships, then ends on a hook that demands a next episode. Page count is a supporting signal (features typically 85–130pp; hour pilots typically 45–65pp; half-hour pilots 22–35pp) but not definitive on its own. A large ensemble, strong world-building, or franchise potential does NOT make something a pilot — those are scoring dimensions, not format indicators. When signals conflict, ask: does this script reach an ending, or does it open a door?
+
 ---
 
 ## STEP 2: Score Card (10 Dimensions, 1-10)
