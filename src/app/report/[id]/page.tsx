@@ -177,11 +177,12 @@ export default async function ReportPage({ params }: PageProps) {
             - Otherwise (owner / subscribed / public): rendered normally, no overlay.
          */}
         {(() => {
-          const lockVariant: 'signup' | 'pro' | null = fullBlur
-            ? 'signup'
-            : showBlurred && user
-              ? 'pro'
-              : null
+          // Pick the CTA by viewer auth state, not blur mode:
+          //   - logged-in free viewer  → 'pro'   (Stripe upgrade modal)
+          //   - anonymous viewer       → 'signup' (claim/signup flow)
+          const lockVariant: 'signup' | 'pro' | null = showBlurred
+            ? (user ? 'pro' : 'signup')
+            : null
 
           const wrap = (node: React.ReactNode, key: string) => (
             <div key={key} className="relative">
