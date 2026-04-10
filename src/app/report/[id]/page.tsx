@@ -9,10 +9,9 @@ import { WhatsHoldingItBackSection } from '@/components/report/whats-holding-it-
 import { ProductionReality } from '@/components/report/production-reality'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
-import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
-import { InlineSignup } from '@/components/report/inline-signup'
-import { SectionLock } from '@/components/report/section-lock'
+import { UpgradeCard } from '@/components/report/upgrade-card'
+import { StickyBottomBar } from '@/components/report/sticky-bottom-bar'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { normalizeEvaluation } from '@/types'
@@ -131,12 +130,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />
         )}
 
-        {/* Inline signup for anonymous users — right at the top, before the report.
-            id="inline-signup" is the scroll target for per-section lock CTAs below. */}
-        {isAnonymousSubmission && (
-          <div id="inline-signup" className="rounded-xl transition-shadow duration-500">
-            <InlineSignup submissionId={submission.id} evaluationId={id} />
-          </div>
+        {/* Upgrade card for all free viewers — replaces InlineSignup (anonymous)
+            and SubscribeGate modal (logged-in free). Non-dismissable. */}
+        {showBlurred && (
+          <UpgradeCard evaluationId={id} isLoggedIn={!!user} />
         )}
 
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
@@ -177,73 +174,34 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           blurred={showBlurred}
         />
 
-        {/* Report sections.
-            - fullBlur (anonymous viewer): each component renders its card chrome and
-              header clearly but fully blurs its body. Centered lock CTA overlay.
-            - showBlurred && user (logged-in free): components handle selective blur
-              internally. Centered lock CTA overlay.
-            - Otherwise (owner / subscribed / public): rendered normally, no overlay.
-         */}
-        {(() => {
-          // Pick the CTA by viewer auth state, not blur mode:
-          //   - logged-in free viewer  → 'pro'   (Stripe upgrade modal)
-          //   - anonymous viewer       → 'signup' (claim/signup flow)
-          const lockVariant: 'signup' | 'pro' | null = showBlurred
-            ? (user ? 'pro' : 'signup')
-            : null
-
-          const wrap = (node: React.ReactNode, key: string) => (
-            <div key={key} className="relative">
-              {node}
-              {lockVariant && (
-                <SectionLock variant={lockVariant} evaluationId={id} position="center" />
-              )}
-            </div>
-          )
-
-          return (
-            <>
-              {wrap(
-                <WhatsSpecialSection
-                  data={whatsSpecial}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'special'
-              )}
-              {wrap(
-                <WhatsHoldingItBackSection
-                  data={whatsHoldingItBack}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'holding'
-              )}
-              {wrap(
-                <ScoreCard
-                  scores={report.scores}
-                  weightedScore={eval_.weighted_score}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'scores'
-              )}
-              {wrap(
-                <ProductionReality
-                  production={report.production_reality}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'production'
-              )}
-            </>
-          )
-        })()}
+        {/* Report sections — no per-section lock overlays. UpgradeCard at top +
+            StickyBottomBar at bottom handle the upgrade CTA for free viewers. */}
+        <WhatsSpecialSection
+          data={whatsSpecial}
+          blurred={showBlurred && !fullBlur}
+          fullBlur={fullBlur}
+        />
+        <WhatsHoldingItBackSection
+          data={whatsHoldingItBack}
+          blurred={showBlurred && !fullBlur}
+          fullBlur={fullBlur}
+        />
+        <ScoreCard
+          scores={report.scores}
+          weightedScore={eval_.weighted_score}
+          blurred={showBlurred && !fullBlur}
+          fullBlur={fullBlur}
+        />
+        <ProductionReality
+          production={report.production_reality}
+          blurred={showBlurred && !fullBlur}
+          fullBlur={fullBlur}
+        />
       </div>
 
-      {/* Subscribe overlay — only for logged-in free users, not anonymous */}
-      {showBlurred && user && (
-        <SubscribeGate evaluationId={id} isLoggedIn={true} />
+      {/* Sticky bottom bar — persistent upgrade CTA for all free viewers */}
+      {showBlurred && (
+        <StickyBottomBar evaluationId={id} isLoggedIn={!!user} />
       )}
     </>
   )
