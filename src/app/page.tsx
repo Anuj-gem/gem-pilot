@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Sparkles, Brain, BarChart3, Target, Star, FileText, Megaphone, Trophy } from 'lucide-react'
+import { ArrowRight, CheckCircle, Sparkles, Brain, BarChart3, Target, Star, FileText, Users, Trophy } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
@@ -86,7 +86,7 @@ export default async function Home() {
               Samples
             </Link>
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
-              Leaderboard
+              For Producers
             </Link>
             <Link href="/login" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Log in
@@ -114,19 +114,19 @@ export default async function Home() {
 
           {/* Eyebrow */}
           <div className="relative mb-4 sm:mb-6">
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[var(--gem-gold)] font-semibold">For Screenwriters</span>
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[var(--gem-gold)] font-semibold">For Screenwriters &amp; Producers</span>
           </div>
           <h1
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Free screenplay feedback. From a producer's perspective.
+            Your script deserves the right producer. We make the introduction.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Upload your script, get a research-backed report in 60 seconds. Top scorers land on the Discovery Board and get shared with industry partners.
+            Submit your screenplay for a free producer-grade evaluation. We identify what makes it strong, match it to the right people, and put it into circulation with our production partners.
           </p>
 
           {/* Primary + secondary CTA */}
@@ -141,12 +141,12 @@ export default async function Home() {
               <ArrowRight size={16} />
             </TrackedCTA>
             <TrackedCTA
-              href="/signup"
+              href="/discover"
               event="cta_clicked"
-              properties={{ location: 'hero', label: 'Create writer profile' }}
+              properties={{ location: 'hero', label: 'For producers' }}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-200)] text-sm sm:text-base font-medium hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
             >
-              Create your writer profile
+              See how it works for producers
             </TrackedCTA>
           </div>
 
@@ -159,8 +159,8 @@ export default async function Home() {
                   <FileText size={22} className="text-[var(--gem-accent)] sm:hidden" />
                   <FileText size={32} className="text-[var(--gem-accent)] hidden sm:block" />
                 </div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Producer</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Eval</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Development</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Read</div>
               </div>
 
               <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">+</div>
@@ -168,11 +168,11 @@ export default async function Home() {
               {/* Exposure */}
               <div className="flex flex-col items-center text-center flex-1 min-w-0">
                 <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-400/20 to-amber-400/5 border border-amber-400/30 flex items-center justify-center mb-2 sm:mb-3">
-                  <Megaphone size={22} className="text-amber-400 sm:hidden" />
-                  <Megaphone size={32} className="text-amber-400 hidden sm:block" />
+                  <Users size={22} className="text-amber-400 sm:hidden" />
+                  <Users size={32} className="text-amber-400 hidden sm:block" />
                 </div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Industry</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Exposure</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Producer</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Match</div>
               </div>
 
               <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">=</div>
@@ -208,9 +208,9 @@ export default async function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live from the leaderboard</p>
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Scripts in Circulation</p>
           </div>
-          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how your screenplay ranks.</h2>
+          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">Recently matched with our production partners.</h2>
 
           {topScripts && topScripts.length > 0 ? (
             <div className="space-y-3">
@@ -292,7 +292,7 @@ export default async function Home() {
               properties={{ location: 'leaderboard_snapshot', label: 'Submit yours' }}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
-              Submit yours to see where it ranks
+              Submit yours to get in the pipeline
               <ArrowRight size={14} />
             </TrackedCTA>
             <TrackedCTA
@@ -301,7 +301,7 @@ export default async function Home() {
               properties={{ location: 'leaderboard_snapshot', label: 'See all scripts' }}
               className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline font-medium"
             >
-              See all scripts on the leaderboard
+              Learn how matching works (for producers)
               <ArrowRight size={14} />
             </TrackedCTA>
           </div>
@@ -316,17 +316,16 @@ export default async function Home() {
           <div className="text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[var(--gem-gold)]/10 border border-[var(--gem-gold)]/20 text-[var(--gem-gold)] text-sm sm:text-base font-semibold mb-5 tracking-wide">
               <Sparkles size={16} />
-              Our scoring system, Selznick
+              Powered by Selznick
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-              Built to Spot Great Scripts
+              Built to Spot What the Industry Misses
             </h2>
             <p className="text-sm sm:text-base text-[var(--gem-gray-300)] max-w-2xl mx-auto leading-relaxed">
-              Selznick was built to identify great writers the industry overlooks. It&apos;s calibrated against thousands of data points,
-              real-world audience reception, and the creative instincts behind content that has reached over 500 million people.
+              Selznick reads every script the way a great development executive would &mdash; then goes further. It&apos;s calibrated against thousands of produced films and series, real-world audience data, and the patterns behind content that reached over 500 million people. When we match a script to a producer, we know why it fits.
             </p>
             <p className="text-xs text-[var(--gem-gray-500)] italic max-w-lg mx-auto mt-4">
-              Named for David O. Selznick — the producer who discovered talent before anyone else did. GEM is built to do the same.
+              Named for David O. Selznick — the producer who saw what others missed. GEM is built to do the same, at scale.
             </p>
           </div>
 
@@ -335,9 +334,9 @@ export default async function Home() {
               <div className="w-9 h-9 rounded-lg bg-violet-50 border border-violet-100 flex items-center justify-center mb-3">
                 <Brain size={18} className="text-violet-600" />
               </div>
-              <h3 className="text-sm font-semibold mb-1.5">Thousands of Signals Per Script</h3>
+              <h3 className="text-sm font-semibold mb-1.5">Deep Script Intelligence</h3>
               <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Every read analyzes thousands of signals across your screenplay — character depth, market positioning, structural momentum, tonal coherence.
+                Every submission is analyzed across character depth, market positioning, narrative structure, tonal coherence, and production viability — so we know exactly who it&apos;s right for.
               </p>
             </div>
 
@@ -345,9 +344,9 @@ export default async function Home() {
               <div className="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-3">
                 <BarChart3 size={18} className="text-emerald-600" />
               </div>
-              <h3 className="text-sm font-semibold mb-1.5">Decades of Film &amp; TV Research</h3>
+              <h3 className="text-sm font-semibold mb-1.5">Calibrated Against What Actually Works</h3>
               <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Built on research across thousands of produced films and series going back decades — calibrated to what actually works on screen.
+                Built on research across thousands of produced films and series — Selznick knows what succeeds on screen and uses that to evaluate and match new work.
               </p>
             </div>
 
@@ -355,9 +354,9 @@ export default async function Home() {
               <div className="w-9 h-9 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center mb-3">
                 <Target size={18} className="text-amber-600" />
               </div>
-              <h3 className="text-sm font-semibold mb-1.5">Producer-Grade Analysis</h3>
+              <h3 className="text-sm font-semibold mb-1.5">Reports That Move Projects Forward</h3>
               <p className="text-xs text-[var(--gem-gray-400)] leading-relaxed">
-                Every report reads like a development executive&apos;s notes — strengths, weaknesses, market positioning, production reality.
+                Every report reads like a development executive&apos;s notes — strengths, weaknesses, market positioning, comparable titles, and a clear path to what&apos;s next.
               </p>
             </div>
           </div>
@@ -375,10 +374,10 @@ export default async function Home() {
               <p className="text-xs sm:text-sm uppercase tracking-widest text-violet-400 font-medium">GEM Sample Library</p>
             </div>
             <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 font-[family-name:var(--font-display)]">
-              See how GEM scores produced screenplays.
+              See how Selznick reads produced screenplays.
             </h2>
             <p className="text-sm text-[var(--gem-gray-400)] mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-              Breaking Bad. Inception. The Sopranos. Game of Thrones. Every sample report is generated by the same engine that will score your script — free to read, no signup.
+              Breaking Bad. Inception. The Sopranos. Game of Thrones. Every sample was evaluated by the same system that reads your script — so you can see exactly what producers will see.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -442,10 +441,10 @@ export default async function Home() {
           <div className="text-center mb-10 sm:mb-14">
             <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">How GEM works</p>
             <h2 className="text-2xl sm:text-4xl font-bold font-[family-name:var(--font-display)]">
-              Producer Eval&nbsp;+&nbsp;Industry Exposure&nbsp;=&nbsp;Your Break
+              Development Read&nbsp;+&nbsp;Producer Match&nbsp;=&nbsp;Your Break
             </h2>
             <p className="mt-3 text-sm sm:text-base uppercase tracking-[0.2em] text-[var(--gem-gold)]/90 font-semibold">
-              Scored. Ranked. Circulated.
+              Read. Matched. Circulated.
             </p>
           </div>
 
@@ -456,10 +455,9 @@ export default async function Home() {
                 <FileText size={22} className="text-[var(--gem-accent)]" />
               </div>
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step One</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Producer Eval</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Development Read</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Upload your screenplay and get a producer-grade read in under a minute — score, verdict, development notes,
-                and a full production analysis built on the same rubric used for produced film and television.
+                Upload your screenplay and get a development-grade read in under a minute — score, verdict, development notes, comparable titles, and a full production analysis. Know exactly where you stand before anyone else reads it.
               </p>
             </div>
 
@@ -469,13 +467,12 @@ export default async function Home() {
                 <Megaphone size={22} className="text-amber-400" />
               </div>
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Two</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Industry Exposure</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Producer Match</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Publish to the Discovery Board and put your best work in front of the industry. Top-ranked scripts get
-                circulated weekly to our network of producers, managers, and production partners.
+                Based on your script&apos;s genre, tone, budget range, and strengths, we match it to producers actively looking for that kind of project. Top-scoring scripts get direct introductions. Everything else enters the open pipeline.
               </p>
               <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-[var(--gem-gold)]/80">
-                <Sparkles size={11} /> New partners added monthly
+                <Sparkles size={11} /> Matched by genre, tone, and fit
               </div>
             </div>
 
@@ -487,8 +484,7 @@ export default async function Home() {
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Three</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Your Break</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Rewrite, resubmit, and climb. The best writers rise to the top — and GEM is built to help them get the
-                attention they&apos;ve been waiting for.
+                Rewrite, resubmit, and improve your match potential. The best scripts rise — and GEM is built to make sure the right people are watching when they do.
               </p>
             </div>
           </div>
@@ -513,7 +509,7 @@ export default async function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-14 font-[family-name:var(--font-display)]">Other sites charge hundreds for generic coverage and no help. We do the opposite.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-14 font-[family-name:var(--font-display)]">Other services charge hundreds for generic notes and zero introductions. We do the opposite.</h2>
 
           <div className="max-w-lg mx-auto">
             <div className="rounded-2xl border border-[var(--gem-gray-700)] p-6 sm:p-8 mb-4">
@@ -525,7 +521,7 @@ export default async function Home() {
                 <div className="text-2xl font-bold text-emerald-600">$0</div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['Research-backed review of your script', 'Unlimited submissions'].map(item => (
+                {['Full development read of your script', 'Unlimited submissions'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
                     {item}
@@ -555,7 +551,7 @@ export default async function Home() {
                 </div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['Full development reads with production analysis', 'Character breakdowns and market positioning', 'Publish to the public leaderboard', 'Cancel anytime'].map(item => (
+                {['Full development reads with production analysis', 'Character breakdowns and market positioning', 'Get your script circulated to production partners', 'Cancel anytime'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
                     {item}
@@ -569,7 +565,7 @@ export default async function Home() {
               >
                 Start with Pro
               </SubscribeCTA>
-              <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">That&apos;s less than the price of a single script coverage from most services.</p>
+              <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">Less than one script coverage — and we actually introduce you to producers.</p>
             </div>
           </div>
         </section>
@@ -581,7 +577,7 @@ export default async function Home() {
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-            This script is #1 on GEM right now.
+            This script is being circulated to producers right now.
           </h2>
 
           {/* #1 leaderboard preview card */}
@@ -616,7 +612,7 @@ export default async function Home() {
           )}
 
           <p className="text-xl sm:text-2xl font-bold text-[var(--gem-gray-100)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10 animate-[fadeInUp_1s_ease-out]">
-            Where does yours rank?
+            Is yours ready?
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <TrackedCTA
@@ -625,16 +621,16 @@ export default async function Home() {
               properties={{ location: 'bottom_cta', label: 'Get Started Free' }}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
-              Upload your script free
+              Submit your script — free
               <ArrowRight size={16} />
             </TrackedCTA>
             <TrackedCTA
-              href="mailto:info@gem.studio"
-              event="contact_cta_clicked"
-              properties={{ location: 'bottom_cta' }}
+              href="/discover"
+              event="cta_clicked"
+              properties={{ location: 'bottom_cta', label: 'Producer CTA' }}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-600)] transition-colors"
             >
-              Get in touch
+              I&apos;m a producer — tell me more
             </TrackedCTA>
           </div>
         </section>
