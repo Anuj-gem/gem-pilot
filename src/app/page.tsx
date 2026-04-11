@@ -28,11 +28,6 @@ function tierLabel(tier: string) {
 
 export default async function Home() {
   const supabase = await createClient()
-  const { data: topScripts } = await supabase
-    .from('leaderboard')
-    .select('*')
-    .order('weighted_score', { ascending: false })
-    .limit(8)
 
   // Featured sample reports — produced screenplays scored by GEM (social proof)
   const { data: sampleRows } = await supabase
@@ -200,108 +195,118 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Live from the Leaderboard — rich list with tags */}
-      <TrackSection name="leaderboard_snapshot">
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
+      {/* How Producers Use GEM */}
+      <TrackSection name="producer_experience">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
           <div className="flex items-center gap-2 mb-2 sm:mb-4">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-            </span>
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Scripts in Circulation</p>
+            <Users size={14} className="text-[var(--gem-gold)]" />
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">The Producer Experience</p>
           </div>
-          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">Recently matched with our production partners.</h2>
+          <h2 className="text-xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">Your scripts land in front of the right people.</h2>
+          <p className="text-sm sm:text-base text-[var(--gem-gray-400)] mb-8 sm:mb-12 max-w-2xl">
+            Producers on GEM get a curated feed matched to what they&apos;re looking for — plus full access to search the entire database by genre, score, format, and more.
+          </p>
 
-          {topScripts && topScripts.length > 0 ? (
-            <div className="space-y-3">
-              {topScripts.map((script: any, idx: number) => (
-                <Link
-                  key={script.evaluation_id ?? script.id ?? idx}
-                  href={`/report/${script.evaluation_id ?? script.id}`}
-                  className="group block rounded-xl card-glass overflow-hidden"
-                >
-                  <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier ?? '')}` }}>
-                    {/* Rank + Score — left column */}
-                    <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-                      <span className={`text-base sm:text-lg font-bold tabular-nums ${
-                        idx < 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-400)]'
-                      }`}>#{idx + 1}</span>
-                      <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(script.tier ?? '') }}>
-                        {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
-                      </span>
-                      <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Matched Feed mockup */}
+            <div className="rounded-2xl card-glass p-5 sm:p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500/20 to-violet-500/5 border border-violet-500/30 flex items-center justify-center">
+                  <Target size={16} className="text-violet-400" />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-white">Personalized Feed</div>
+                  <div className="text-[10px] text-[var(--gem-gray-500)]">Matched to your preferences</div>
+                </div>
+              </div>
+              {/* Fake feed items */}
+              <div className="space-y-2.5">
+                {[
+                  { title: 'Untitled Thriller', score: 84, genre: 'Thriller', tag: 'Greenlight' },
+                  { title: 'Harbor Lights', score: 77, genre: 'Drama', tag: 'Optionable' },
+                  { title: 'The Long Way Back', score: 81, genre: 'Drama', tag: 'Greenlight' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 rounded-lg bg-[var(--gem-gray-800)]/40 border border-[var(--gem-gray-700)]/50 px-3 py-2.5">
+                    <div className="text-center shrink-0 w-10">
+                      <div className="text-lg font-bold tabular-nums text-[var(--gem-gold)]">{item.score}</div>
+                      <div className="text-[7px] uppercase tracking-wider text-[var(--gem-gray-500)]">Score</div>
                     </div>
-
-                    {/* Content — center */}
-                    <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0">
-                          <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                            {script.title || 'Untitled'}
-                          </h3>
-                          <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-                            by {script.author_name || script.author || 'Anonymous'}
-                          </div>
-                        </div>
-                        {/* Verdict badge */}
-                        {script.tier && (
-                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-semibold shrink-0 ${tierBg(script.tier)}`}>
-                            {tierLabel(script.tier)}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
-                        {script.format && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-medium">
-                            {script.format}
-                          </span>
-                        )}
-                        {script.genre && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
-                            {script.genre}
-                          </span>
-                        )}
-                        {script.genre_tags && Array.isArray(script.genre_tags) && script.genre_tags.map((tag: string) => (
-                          <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-gray-50 text-gray-600 border border-gray-200 font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* View Report — visible on all screens */}
-                      <div className="mt-3">
-                        <span className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium group-hover:underline">
-                          View Full Report <ArrowRight size={12} />
-                        </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-semibold text-white truncate">{item.title}</div>
+                      <div className="flex items-center gap-1.5 mt-1">
+                        <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">{item.genre}</span>
+                        <span className={`text-[9px] px-1.5 py-0.5 rounded-full border font-medium ${item.tag === 'Greenlight' ? 'bg-emerald-50 text-emerald-700 border-emerald-100' : 'bg-blue-50 text-blue-700 border-blue-100'}`}>{item.tag}</span>
                       </div>
                     </div>
+                    <ArrowRight size={12} className="text-[var(--gem-gray-500)] shrink-0" />
                   </div>
-                </Link>
-              ))}
+                ))}
+              </div>
+              <div className="mt-3 text-[10px] text-[var(--gem-gray-500)] text-center italic">New matches delivered daily based on your slate</div>
             </div>
-          ) : (
-            <p className="text-center py-8 text-[var(--gem-gray-400)]">Loading leaderboard...</p>
-          )}
 
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            {/* Searchable Database mockup */}
+            <div className="rounded-2xl card-glass p-5 sm:p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400/20 to-amber-400/5 border border-amber-400/30 flex items-center justify-center">
+                  <BarChart3 size={16} className="text-amber-400" />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-white">Script Database</div>
+                  <div className="text-[10px] text-[var(--gem-gray-500)]">Search, filter, discover</div>
+                </div>
+              </div>
+              {/* Fake search/filter UI */}
+              <div className="rounded-lg bg-[var(--gem-gray-800)]/40 border border-[var(--gem-gray-700)]/50 p-3 mb-3">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <div className="flex-1 h-7 rounded-md bg-[var(--gem-gray-700)]/50 border border-[var(--gem-gray-700)] px-2.5 flex items-center">
+                    <span className="text-[10px] text-[var(--gem-gray-500)]">Search by title, genre, logline...</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {['Feature Film', 'Thriller', 'Score 75+', 'Low Budget'].map((f) => (
+                    <span key={f} className="text-[9px] px-2 py-1 rounded-full bg-[var(--gem-accent)]/10 text-[var(--gem-accent)] border border-[var(--gem-accent)]/20 font-medium">{f}</span>
+                  ))}
+                </div>
+              </div>
+              {/* Fake results */}
+              <div className="space-y-2">
+                {[
+                  { title: 'Midnight in Marfa', score: 79, format: 'Feature', genres: 'Thriller / Neo-Western' },
+                  { title: 'Second Chances', score: 72, format: 'Feature', genres: 'Drama / Romance' },
+                  { title: 'The Hollow Men', score: 86, format: 'Feature', genres: 'Thriller / Political' },
+                  { title: 'Bright Noise', score: 74, format: 'Feature', genres: 'Comedy / Satire' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center justify-between rounded-md bg-[var(--gem-gray-800)]/30 px-2.5 py-2 border border-[var(--gem-gray-700)]/30">
+                    <div className="min-w-0">
+                      <div className="text-[11px] font-semibold text-white truncate">{item.title}</div>
+                      <div className="text-[9px] text-[var(--gem-gray-500)]">{item.format} &middot; {item.genres}</div>
+                    </div>
+                    <div className="text-sm font-bold tabular-nums text-[var(--gem-gold)] shrink-0 ml-3">{item.score}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 text-[10px] text-[var(--gem-gray-500)] text-center italic">Full reports, contact info, and request reads — all in one place</div>
+            </div>
+          </div>
+
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <TrackedCTA
               href="/submit"
               event="cta_clicked"
-              properties={{ location: 'leaderboard_snapshot', label: 'Submit yours' }}
+              properties={{ location: 'producer_experience', label: 'Submit your script' }}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
-              Submit yours to get in the pipeline
+              Submit your script
               <ArrowRight size={14} />
             </TrackedCTA>
             <TrackedCTA
               href="/discover"
               event="cta_clicked"
-              properties={{ location: 'leaderboard_snapshot', label: 'See all scripts' }}
+              properties={{ location: 'producer_experience', label: 'Producer info' }}
               className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline font-medium"
             >
-              Learn how matching works (for producers)
+              I&apos;m a producer — tell me more
               <ArrowRight size={14} />
             </TrackedCTA>
           </div>
@@ -577,42 +582,11 @@ export default async function Home() {
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-            This script is being circulated to producers right now.
+            Every great script deserves to be found.
           </h2>
 
-          {/* #1 leaderboard preview card */}
-          {topScripts && topScripts.length > 0 && (
-            <Link
-              href={`/report/${topScripts[0].evaluation_id ?? topScripts[0].id}`}
-              className="group block max-w-md mx-auto rounded-xl card-glass overflow-hidden mb-6 sm:mb-8 text-left"
-            >
-              <div className="flex" style={{ borderLeft: `4px solid ${tierColor(topScripts[0].tier ?? '')}` }}>
-                <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-                  <span className="text-base sm:text-lg font-bold tabular-nums text-[var(--gem-gold)]">#1</span>
-                  <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(topScripts[0].tier ?? '') }}>
-                    {typeof topScripts[0].weighted_score === 'number' ? Math.round(topScripts[0].weighted_score) : '—'}
-                  </span>
-                  <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
-                </div>
-                <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
-                  <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                    {topScripts[0].title || 'Untitled'}
-                  </h3>
-                  <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-                    by {topScripts[0].author_name || topScripts[0].author || 'Anonymous'}
-                  </div>
-                  {topScripts[0].tier && (
-                    <span className={`inline-block mt-2 text-[10px] px-2.5 py-1 rounded-full border font-semibold ${tierBg(topScripts[0].tier)}`}>
-                      {tierLabel(topScripts[0].tier)}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </Link>
-          )}
-
-          <p className="text-xl sm:text-2xl font-bold text-[var(--gem-gray-100)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10 animate-[fadeInUp_1s_ease-out]">
-            Is yours ready?
+          <p className="text-base sm:text-lg text-[var(--gem-gray-400)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10">
+            Submit yours, get your development read, and let us put it in front of the right people.
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <TrackedCTA
