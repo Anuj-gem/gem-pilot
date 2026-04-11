@@ -464,7 +464,7 @@ export default async function Home() {
             {/* Industry Exposure */}
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-400/5 border border-amber-400/30 flex items-center justify-center mb-4">
-                <Megaphone size={22} className="text-amber-400" />
+                <Users size={22} className="text-amber-400" />
               </div>
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Two</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Producer Match</h3>
