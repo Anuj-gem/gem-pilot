@@ -236,7 +236,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
             <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Script Database</p>
           </div>
           <h2 className="text-xl sm:text-2xl font-bold mb-2 font-[family-name:var(--font-display)]">
-            {scripts.length}+ scripts evaluated and ready to read.
+            Scripts evaluated and ready to read.
           </h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-6 sm:mb-8 max-w-2xl leading-relaxed">
             Every script below has a full Selznick report — genre, score, development notes, comparable titles, and production analysis. Apply for producer access to search, filter, and request reads.
