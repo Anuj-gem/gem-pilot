@@ -56,15 +56,19 @@ export function UpgradeCard({ evaluationId, isLoggedIn }: UpgradeCardProps) {
         </span>
       </div>
 
-      <h3 className="text-[17px] sm:text-[19px] font-bold mb-3 leading-tight">
-        Get your script in front of the industry.
+      <h3 className="text-[17px] sm:text-[19px] font-bold mb-2 leading-tight">
+        See your score. Get matched with producers.
       </h3>
+
+      <p className="text-[13px] text-white/60 mb-4 leading-relaxed">
+        Your evaluation is complete. Subscribe to unlock your full score, detailed development notes, and get your script circulated to our production partners.
+      </p>
 
       <div className="flex flex-col gap-2 mb-4">
         {[
-          { icon: Users, color: 'text-emerald-400', label: 'Publish to the Discovery Board' },
-          { icon: FileText, color: 'text-violet-400', label: 'Full review & production analysis' },
-          { icon: RefreshCw, color: 'text-amber-400', label: 'Unlimited scripts & revisions' },
+          { icon: Users, color: 'text-emerald-400', label: 'Matched with producers looking for your genre' },
+          { icon: FileText, color: 'text-violet-400', label: 'Full score, verdict, and development notes' },
+          { icon: RefreshCw, color: 'text-amber-400', label: 'Unlimited evaluations on every draft' },
         ].map(({ icon: Icon, color, label }) => (
           <div key={label} className="flex items-center gap-2.5">
             <div className="w-[26px] h-[26px] rounded-md bg-white/10 flex items-center justify-center shrink-0">

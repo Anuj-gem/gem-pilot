@@ -48,9 +48,9 @@ export function StickyBottomBar({ evaluationId, isLoggedIn }: StickyBottomBarPro
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
       <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         <div className="min-w-0">
-          <span className="text-sm font-semibold text-[var(--gem-white)]">GEM Pro</span>
+          <span className="text-sm font-semibold text-[var(--gem-white)]">Your score is ready</span>
           <span className="text-xs sm:text-sm text-[var(--gem-gray-400)]">
-            {' '}— <span className="hidden sm:inline">Discovery Board + full report</span><span className="sm:hidden">Board + full report</span>
+            {' '}— <span className="hidden sm:inline">unlock it + get matched with producers</span><span className="sm:hidden">unlock + get matched</span>
           </span>
         </div>
         <button
