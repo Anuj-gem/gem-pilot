@@ -6,12 +6,13 @@ import { ReportHeader } from '@/components/report/report-header'
 import { ScoreCard } from '@/components/report/score-card'
 import { WhatsSpecialSection } from '@/components/report/whats-special'
 import { WhatsHoldingItBackSection } from '@/components/report/whats-holding-it-back'
-import { ProductionReality } from '@/components/report/production-reality'
+// ProductionReality is now rendered inside WhatsHoldingItBackSection
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { UpgradeCard } from '@/components/report/upgrade-card'
 import { StickyBottomBar } from '@/components/report/sticky-bottom-bar'
+import { SubmitCta } from '@/components/report/submit-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { normalizeEvaluation } from '@/types'
@@ -95,9 +96,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
   // Blur if: owner is NOT subscribed AND post is NOT public
   const showBlurred = !ownerIsSubscribed && !isPublicPost
-  // Every non-paid viewer (anonymous OR logged-in free) gets full blur. The selective
-  // blur for logged-in free users was leaking enough value that paid conversions dried
-  // up — reverted to full blur across the board while keeping the same lock CTAs.
+  // Free viewers see: score + verdict + What's Good headline (visible),
+  // strength details + What to Address + Story Analysis (fully blurred).
+  // Primary CTA pushes 2nd eval submission, secondary CTA pushes upgrade.
   const fullBlur = showBlurred
 
   // Get like count and whether current user has liked
@@ -130,12 +131,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />
         )}
 
-        {/* Upgrade card for all free viewers — replaces InlineSignup (anonymous)
-            and SubscribeGate modal (logged-in free). Non-dismissable. */}
-        {showBlurred && (
-          <UpgradeCard evaluationId={id} isLoggedIn={!!user} />
-        )}
-
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
         {!isAnonymousSubmission && (
           <div className="flex items-center gap-3 flex-wrap">
@@ -158,8 +153,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         {/* Header: title, tier, weighted score, tags.
-            Score is blurred for free/unsubscribed viewers (including the owner themselves)
-            — the score is the key unlock and part of what you pay for. */}
+            Score + verdict are now VISIBLE to all users (free and paid). */}
         <ReportHeader
           title={submission.title}
           author={submission.profiles?.full_name ?? 'Anonymous'}
@@ -171,32 +165,46 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           tone={classification.tone}
           createdAt={eval_.created_at}
           isOwner={isOwner}
-          blurred={showBlurred}
+          blurred={false}
         />
 
-        {/* Report sections — no per-section lock overlays. UpgradeCard at top +
-            StickyBottomBar at bottom handle the upgrade CTA for free viewers. */}
+        {/* What's Special — headline always visible, strength details blurred for free */}
         <WhatsSpecialSection
           data={whatsSpecial}
-          blurred={showBlurred && !fullBlur}
-          fullBlur={fullBlur}
+          blurred={showBlurred}
+          fullBlur={false}
         />
+
+        {/* Primary CTA for free viewers: submit another script.
+            Anonymous → create account first, then redirect to dashboard.
+            Logged-in free → go to /submit. */}
+        {showBlurred && (
+          <SubmitCta
+            isLoggedIn={!!user}
+            submissionId={submission.id}
+            evaluationId={id}
+            isAnonymousSubmission={isAnonymousSubmission}
+          />
+        )}
+
+        {/* Everything below is fully blurred for free users */}
         <WhatsHoldingItBackSection
           data={whatsHoldingItBack}
-          blurred={showBlurred && !fullBlur}
+          blurred={false}
           fullBlur={fullBlur}
+          production={report.production_reality}
         />
         <ScoreCard
           scores={report.scores}
           weightedScore={eval_.weighted_score}
-          blurred={showBlurred && !fullBlur}
+          blurred={false}
           fullBlur={fullBlur}
         />
-        <ProductionReality
-          production={report.production_reality}
-          blurred={showBlurred && !fullBlur}
-          fullBlur={fullBlur}
-        />
+
+        {/* Secondary CTA: upgrade card — shown after blurred content */}
+        {showBlurred && (
+          <UpgradeCard evaluationId={id} isLoggedIn={!!user} />
+        )}
       </div>
 
       {/* Sticky bottom bar — persistent upgrade CTA for all free viewers */}
