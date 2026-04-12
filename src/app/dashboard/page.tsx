@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Nav from '@/components/nav'
 import { TIER_META, type Tier } from '@/types'
 import { tierLabel } from '@/lib/tier-display'
-import { FileText, Plus, Eye, Lock, Compass, ArrowRight, RefreshCw, Sparkles } from 'lucide-react'
+import { FileText, Plus, Eye, Compass, ArrowRight, RefreshCw, Sparkles } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 
 export const dynamic = 'force-dynamic'
@@ -50,17 +50,17 @@ export default async function DashboardPage() {
             <p className="text-sm text-[var(--gem-gray-400)] mt-1">
               {isSubscribed
                 ? 'All your submitted scripts and evaluations'
-                : 'Unlock your scores, full reports, and leaderboard access'}
+                : 'Submit scripts, get scored, and climb the leaderboard'}
             </p>
           </div>
           <div className="flex items-center gap-2">
             {!isSubscribed && (
               <UnlockTrigger
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm border border-[var(--gem-accent)] text-[var(--gem-accent)] hover:bg-[var(--gem-accent)] hover:text-white transition-colors"
-                ariaLabel="Unlock your score"
+                ariaLabel="Upgrade to GEM Pro"
               >
                 <Sparkles size={16} />
-                Unlock your score
+                Upgrade to GEM Pro
               </UnlockTrigger>
             )}
             <Link
@@ -103,37 +103,13 @@ export default async function DashboardPage() {
                     </div>
                     {highestScore !== null && (
                       <div>
-                        {isSubscribed ? (
-                          <div className="text-3xl font-bold" style={{ color: 'var(--tier-greenlight)' }}>{Math.round(highestScore)}</div>
-                        ) : (
-                          <UnlockTrigger ariaLabel="Unlock your highest score">
-                            <span
-                              className="block text-3xl font-bold text-[var(--gem-gray-500)] select-none"
-                              style={{ filter: 'blur(10px)' }}
-                              aria-hidden="true"
-                            >
-                              {Math.round(highestScore)}
-                            </span>
-                          </UnlockTrigger>
-                        )}
+                        <div className="text-3xl font-bold" style={{ color: 'var(--tier-greenlight)' }}>{Math.round(highestScore)}</div>
                         <div className="text-xs text-[var(--gem-gray-400)] mt-1">Highest</div>
                       </div>
                     )}
                     {avgScore !== null && (
                       <div>
-                        {isSubscribed ? (
-                          <div className="text-3xl font-bold" style={{ color: 'var(--tier-optionable)' }}>{Math.round(avgScore)}</div>
-                        ) : (
-                          <UnlockTrigger ariaLabel="Unlock your average score">
-                            <span
-                              className="block text-3xl font-bold text-[var(--gem-gray-500)] select-none"
-                              style={{ filter: 'blur(10px)' }}
-                              aria-hidden="true"
-                            >
-                              {Math.round(avgScore)}
-                            </span>
-                          </UnlockTrigger>
-                        )}
+                        <div className="text-3xl font-bold" style={{ color: 'var(--tier-optionable)' }}>{Math.round(avgScore)}</div>
                         <div className="text-xs text-[var(--gem-gray-400)] mt-1">Average</div>
                       </div>
                     )}
@@ -173,21 +149,9 @@ export default async function DashboardPage() {
                     {/* Score */}
                     <div className="w-12 shrink-0 text-center">
                       {eval_ ? (
-                        isSubscribed ? (
-                          <span className="text-xl font-bold tabular-nums" style={{ color: tierColor(eval_.tier) }}>
-                            {Math.round(eval_.weighted_score)}
-                          </span>
-                        ) : (
-                          <UnlockTrigger as="span" ariaLabel="Unlock this score">
-                            <span
-                              className="inline-block text-xl font-bold tabular-nums text-[var(--gem-gray-500)] select-none"
-                              style={{ filter: 'blur(8px)' }}
-                              aria-hidden="true"
-                            >
-                              {Math.round(eval_.weighted_score)}
-                            </span>
-                          </UnlockTrigger>
-                        )
+                        <span className="text-xl font-bold tabular-nums" style={{ color: tierColor(eval_.tier) }}>
+                          {Math.round(eval_.weighted_score)}
+                        </span>
                       ) : (
                         <span className="text-sm text-[var(--gem-gray-500)]">—</span>
                       )}
@@ -200,27 +164,12 @@ export default async function DashboardPage() {
                           {sub.title}
                         </h3>
                         {tierMeta && (
-                          isSubscribed ? (
-                            <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
-                              {tierLabel(eval_.tier as Tier)}
-                            </span>
-                          ) : (
-                            <UnlockTrigger as="span" ariaLabel="Unlock your GEM verdict">
-                              <span
-                                className="text-[10px] px-2.5 py-1 rounded-full border border-[var(--gem-gray-700)] font-medium shrink-0 text-[var(--gem-gray-500)] bg-[var(--gem-gray-800)] select-none inline-block"
-                                style={{ filter: 'blur(5px)' }}
-                                aria-hidden="true"
-                              >
-                                {tierLabel(eval_.tier as Tier)}
-                              </span>
-                            </UnlockTrigger>
-                          )
+                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
+                            {tierLabel(eval_.tier as Tier)}
+                          </span>
                         )}
                         {sub.is_public && (
                           <Eye size={12} className="text-emerald-600 shrink-0" />
-                        )}
-                        {!isSubscribed && !sub.is_public && (
-                          <Lock size={12} className="text-[var(--gem-gray-500)] shrink-0" />
                         )}
                       </div>
                       <div className="text-xs text-[var(--gem-gray-500)] mt-0.5">{dateStr}</div>

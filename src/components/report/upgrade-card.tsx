@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowRight, Sparkles, Users, FileText, RefreshCw } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { trackSubscribeClick, trackSubscribeFromReport } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
 
@@ -48,47 +48,25 @@ export function UpgradeCard({ evaluationId, isLoggedIn }: UpgradeCardProps) {
   }
 
   return (
-    <div className="rounded-xl bg-[var(--gem-gray-50)] text-white p-4 sm:p-5 mb-6">
-      <div className="flex items-center gap-2 mb-1.5">
-        <Sparkles size={15} className="text-[var(--gem-gold)]" />
-        <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--gem-gold)]">
-          GEM Pro
-        </span>
-      </div>
-
-      <h3 className="text-[17px] sm:text-[19px] font-bold mb-2 leading-tight">
-        See your score. Publish to the leaderboard.
+    <div className="rounded-xl border-2 border-[var(--gem-gold)]/30 bg-white p-5 sm:p-6 mb-6 text-center">
+      <h3 className="text-[17px] sm:text-[19px] font-bold text-[var(--gem-white)] mb-2 leading-tight">
+        Want the full picture?
       </h3>
 
-      <p className="text-[13px] text-white/60 mb-4 leading-relaxed">
-        Your evaluation is complete. Subscribe to unlock your full score, detailed development notes, and publish your best work to the public leaderboard.
+      <p className="text-[13px] text-[var(--gem-gray-400)] mb-5 leading-relaxed max-w-md mx-auto">
+        Unlock development notes, score breakdowns, production analysis, and unlimited evaluations on every draft.
       </p>
-
-      <div className="flex flex-col gap-2 mb-4">
-        {[
-          { icon: Users, color: 'text-emerald-400', label: 'Publish to the leaderboard and get discovered' },
-          { icon: FileText, color: 'text-violet-400', label: 'Full score, verdict, and development notes' },
-          { icon: RefreshCw, color: 'text-amber-400', label: 'Unlimited evaluations on every draft' },
-        ].map(({ icon: Icon, color, label }) => (
-          <div key={label} className="flex items-center gap-2.5">
-            <div className="w-[26px] h-[26px] rounded-md bg-white/10 flex items-center justify-center shrink-0">
-              <Icon size={14} className={color} />
-            </div>
-            <span className="text-[13px] sm:text-sm font-medium">{label}</span>
-          </div>
-        ))}
-      </div>
 
       <button
         onClick={handleUpgrade}
         disabled={loading}
-        className="w-full flex items-center justify-center gap-2 py-2.5 sm:py-3 rounded-lg bg-[var(--gem-accent)] text-white text-[13px] sm:text-sm font-semibold hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors cursor-pointer"
+        className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-lg bg-[var(--gem-gold)] text-white text-[13px] sm:text-sm font-semibold hover:brightness-110 disabled:opacity-50 transition-all cursor-pointer"
       >
-        {loading ? 'Redirecting to checkout…' : 'Start your membership — $20/mo'}
+        {loading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
         {!loading && <ArrowRight size={14} />}
       </button>
 
-      <p className="text-[10px] text-white/40 text-center mt-1.5">
+      <p className="text-[10px] text-[var(--gem-gray-500)] text-center mt-2">
         Cancel anytime · Secure checkout via Stripe
       </p>
     </div>
