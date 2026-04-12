@@ -46,7 +46,7 @@ export function MobileNav() {
               onClick={() => setOpen(false)}
               className="block px-4 py-2.5 text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors rounded-lg hover:bg-[var(--gem-gray-800)]"
             >
-              For Producers
+              Leaderboard
             </Link>
           </div>
         </div>

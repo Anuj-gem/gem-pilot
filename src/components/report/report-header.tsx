@@ -7,11 +7,11 @@ import { ReportActions } from './report-actions'
 /** Teaser copy keyed by tier — gives free viewers a taste without revealing the score. */
 const TIER_TEASERS: Record<Tier, string> = {
   'Greenlight Material':
-    'Selznick flagged this script as having exceptional potential. Subscribe to see your full score, detailed development notes, and get your script in front of producers.',
+    'Selznick flagged this script as having exceptional potential. Subscribe to see your full score, development notes, and where you rank on the leaderboard.',
   'Optionable':
-    'Selznick identified real strengths in this script — there\'s something here worth developing. Subscribe to see your full score, development notes, and get matched with producers.',
+    'Selznick identified real strengths in this script — there\'s something here worth developing. Subscribe to see your full score, detailed feedback, and publish to the leaderboard.',
   'Needs Development':
-    'Selznick completed your evaluation and found areas with genuine promise. Subscribe to see your full score, detailed feedback, and what it would take to get this script in front of producers.',
+    'Selznick completed your evaluation and found areas with genuine promise. Subscribe to see your full score, detailed feedback, and how to climb the leaderboard.',
 }
 
 interface ReportHeaderProps {

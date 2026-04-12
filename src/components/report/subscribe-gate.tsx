@@ -107,11 +107,11 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
           GEM Pro — $20/month
         </h3>
         <p className="text-sm text-[var(--gem-gray-400)] mb-5">
-          Unlimited evaluations. Your full score, GEM verdict, and development read on every draft. Publish to the Discovery Board where producers, managers, and our production partners track what&apos;s rising.
+          Unlimited evaluations. Your full score, GEM verdict, and development read on every draft. Publish your best work to the leaderboard and see how you rank.
         </p>
 
         <ul className="space-y-2 mb-6">
-          {['Unlimited evaluations — every draft, every script', 'Your full score + GEM verdict on every report', 'Development notes + production breakdown', 'Published to the Discovery Board'].map(item => (
+          {['Unlimited evaluations — every draft, every script', 'Your full score + GEM verdict on every report', 'Development notes + production breakdown', 'Publish your best scripts to the leaderboard'].map(item => (
             <li key={item} className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]">
               <CheckCircle size={14} className="text-emerald-600 shrink-0" />
               {item}

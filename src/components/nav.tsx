@@ -25,7 +25,7 @@ export default function Nav() {
 
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'For Producers', icon: Trophy },
+    { href: '/discover', label: 'Leaderboard', icon: Trophy },
     { href: '/sample', label: 'Samples', icon: Sparkles },
   ] : []
 
@@ -98,7 +98,7 @@ export default function Nav() {
                   }`}
                 >
                   <Trophy size={16} />
-                  For Producers
+                  Leaderboard
                 </Link>
               )}
               {!pathname.startsWith('/submit') && (

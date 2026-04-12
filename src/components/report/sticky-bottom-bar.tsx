@@ -50,7 +50,7 @@ export function StickyBottomBar({ evaluationId, isLoggedIn }: StickyBottomBarPro
         <div className="min-w-0">
           <span className="text-sm font-semibold text-[var(--gem-white)]">Your score is ready</span>
           <span className="text-xs sm:text-sm text-[var(--gem-gray-400)]">
-            {' '}— <span className="hidden sm:inline">unlock it + get matched with producers</span><span className="sm:hidden">unlock + get matched</span>
+            {' '}— <span className="hidden sm:inline">unlock it + publish to the leaderboard</span><span className="sm:hidden">unlock + publish</span>
           </span>
         </div>
         <button
