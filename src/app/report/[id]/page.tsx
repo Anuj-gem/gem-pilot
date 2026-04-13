@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Nav from '@/components/nav'
 import { ReportHeader } from '@/components/report/report-header'
 import { ScoreCard } from '@/components/report/score-card'
@@ -9,7 +9,6 @@ import { WhatsHoldingItBackSection } from '@/components/report/whats-holding-it-
 // ProductionReality is now rendered inside WhatsHoldingItBackSection
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
-import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { UpgradeCard } from '@/components/report/upgrade-card'
 import { StickyBottomBar } from '@/components/report/sticky-bottom-bar'
 import { SubmitCta } from '@/components/report/submit-cta'
@@ -71,8 +70,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAnonymousSubmission = !submission.user_id
-  const hasExpiry = isAnonymousSubmission && !!submission.expires_at
-  const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
+  const isPublicSubmission = submission.is_public === true
+
+  // Gate: anonymous (unclaimed) reports are not viewable by anyone who isn't
+  // logged in. This forces the signup-during-eval flow and prevents people
+  // from sharing raw anon-eval links to bypass account creation.
+  // Logged-in users viewing an anon report still see it (e.g., admin/testing).
+  if (isAnonymousSubmission && !user) {
+    redirect(`/login?redirect=${encodeURIComponent(`/report/${id}`)}`)
+  }
+
+  // Gate: private reports (not public) are only viewable by the owner or
+  // anyone logged in. (Non-owners get login wall.)
+  if (!isAnonymousSubmission && !isPublicSubmission && !user) {
+    redirect(`/login?redirect=${encodeURIComponent(`/report/${id}`)}`)
+  }
 
   // Normalize v2/v3 evaluation shape
   const { classification, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
@@ -124,9 +136,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   return (
     <>
       <Nav />
-      {hasExpiry && !isExpired && (
-        <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
-      )}
       <ReportAnalytics evaluationId={id} isBlurred={false} />
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
         {/* Private demo banner — shown when ?for=Writer+Name is present in the URL */}

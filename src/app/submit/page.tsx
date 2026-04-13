@@ -52,6 +52,11 @@ function SubmitPageInner() {
   // Flow control
   const [step, setStep] = useState<FlowStep>('upload')
 
+  // Eval-in-flight state (used when anon user needs to sign up while eval runs)
+  const [evalResult, setEvalResult] = useState<{ evaluation_id: string; submission_id: string } | null>(null)
+  const [evalFailed, setEvalFailed] = useState<string | null>(null)
+  const [evalRunning, setEvalRunning] = useState(false)
+
   const justSubscribed = searchParams.get('subscribed') === 'true'
   const fromHero = searchParams.get('from') === 'hero'
 
@@ -137,59 +142,38 @@ function SubmitPageInner() {
     }
   }
 
-  // Run the actual evaluation (works for both authenticated and anonymous users)
-  const runEvaluation = async () => {
-    if (!file || !title || !declaredFormat) return
-
-    setStep('evaluating')
-    setError(null)
-    setProgress('Analyzing your script — this takes about 30 seconds...')
-    trackEvalStart({ title, source: fromHero ? 'hero' : 'submit' })
-    gtagEvalStarted()
-
+  // Fire off the evaluation request. Returns the response data or null on handled error.
+  // For anon flow we kick this off in the background and handle completion separately.
+  const fireEvalRequest = async (): Promise<{ evaluation_id: string; submission_id: string } | null> => {
+    if (!file || !title || !declaredFormat) return null
     try {
       const formData = new FormData()
       formData.append('file', file)
       formData.append('title', title)
       formData.append('declared_format', declaredFormat)
 
-      const res = await fetch('/api/evaluate', {
-        method: 'POST',
-        body: formData,
-      })
-
+      const res = await fetch('/api/evaluate', { method: 'POST', body: formData })
       let data: any
-      try {
-        data = await res.json()
-      } catch {
-        throw new Error('Something went wrong evaluating your script. Please try again.')
-      }
+      try { data = await res.json() } catch { throw new Error('eval_json_parse') }
 
-      // Paywall: user has used their 2 free evals and is not subscribed.
       if (res.status === 402 || data.error === 'paywall') {
         setPaywalled(true)
         setEvalsUsed(data.free_evals_used ?? 2)
         setStep('upload')
         setProgress(null)
-        return
+        return null
       }
 
       if (data.error) {
-        // Show user-friendly message, never raw API errors
-        let friendly: string
-        if (data.error === 'SCANNED_PDF') {
-          friendly = 'It looks like this is a scanned PDF. We currently only support digitally-created PDFs (from Final Draft, WriterSolo, Highland, etc). Please re-export your script as a digital PDF and try again.'
-        } else {
-          friendly = 'Something went wrong evaluating your script. Please try again.'
-        }
-        setError(friendly)
-        setStep('upload')
-        setProgress(null)
-        return
+        const friendly = data.error === 'SCANNED_PDF'
+          ? 'It looks like this is a scanned PDF. We currently only support digitally-created PDFs (from Final Draft, WriterSolo, Highland, etc). Please re-export your script as a digital PDF and try again.'
+          : 'Something went wrong evaluating your script. Please try again.'
+        setEvalFailed(friendly)
+        return null
       }
-
       if (!res.ok || data.status === 'failed') {
-        throw new Error('Something went wrong evaluating your script. Please try again.')
+        setEvalFailed('Something went wrong evaluating your script. Please try again.')
+        return null
       }
 
       trackEvalComplete({
@@ -198,37 +182,68 @@ function SubmitPageInner() {
         title: data.title ?? title,
         evaluationId: data.evaluation_id,
       })
-      // Fire blurred_report_viewed for non-subscribers so the Upgrade Nudge
-      // CDP function has the event + properties it needs.
-      if (!data.is_subscriber) {
-        trackBlurredReportViewed({
-          evaluationId: data.evaluation_id,
-          title: data.title ?? title,
-          score: data.weighted_score,
-          tier: data.tier,
-        })
+      return { evaluation_id: data.evaluation_id, submission_id: data.submission_id }
+    } catch {
+      setEvalFailed('Something went wrong evaluating your script. Please try again.')
+      return null
+    }
+  }
+
+  // Logged-in flow: run eval synchronously, redirect when done.
+  const runEvaluation = async () => {
+    if (!file || !title || !declaredFormat) return
+    setStep('evaluating')
+    setError(null)
+    setProgress('Analyzing your script — this takes about 30 seconds...')
+    trackEvalStart({ title, source: fromHero ? 'hero' : 'submit' })
+    gtagEvalStarted()
+
+    const result = await fireEvalRequest()
+    if (!result) {
+      // Either paywalled (state already set) or failed
+      if (evalFailed) {
+        setError(evalFailed)
+        setEvalFailed(null)
       }
-      // Always redirect to report — it handles blurred vs full based on subscription
-      router.push(`/report/${data.evaluation_id}`)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong')
       setStep('upload')
       setProgress(null)
+      return
     }
+    router.push(`/report/${result.evaluation_id}`)
+  }
+
+  // Anon flow: kick off eval in background AND switch to signup step simultaneously.
+  const startAnonFlow = () => {
+    if (!file || !title || !declaredFormat) return
+    setStep('signup')
+    setError(null)
+    setEvalRunning(true)
+    setEvalResult(null)
+    setEvalFailed(null)
+    trackEvalStart({ title, source: fromHero ? 'hero' : 'submit' })
+    gtagEvalStarted()
+    // Fire and forget — result is captured in state
+    fireEvalRequest().then((result) => {
+      setEvalRunning(false)
+      if (result) setEvalResult(result)
+    })
   }
 
   // Handle the main submit button
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!file || !title || !declaredFormat) return
-
-    // Everyone can evaluate — anonymous or logged in
-    // The paywall is on the report page, not here
-    await runEvaluation()
+    if (user) {
+      await runEvaluation()
+    } else {
+      startAnonFlow()
+    }
   }
 
-  // Handle inline signup then auto-evaluate (for users who clicked signup on mobile)
-  const handleSignupAndEvaluate = async (e: React.FormEvent) => {
+  // Sign up the anon user. The eval is already running in the background.
+  // After signup: poll/wait for the eval to finish, then assign the submission
+  // to the user and redirect to the report.
+  const handleAnonSignup = async (e: React.FormEvent) => {
     e.preventDefault()
     setSigningUp(true)
     setError(null)
@@ -236,9 +251,7 @@ function SubmitPageInner() {
     const { data, error: signupError } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        data: { full_name: fullName },
-      },
+      options: { data: { full_name: fullName } },
     })
 
     if (signupError) {
@@ -248,30 +261,52 @@ function SubmitPageInner() {
     }
 
     if (data.user && !data.session) {
-      setError('Check your email to confirm your account, then come back and log in to evaluate.')
+      setError('Check your email to confirm your account, then come back and log in to view your report.')
       setSigningUp(false)
-      setStep('upload')
       return
     }
 
-    // Identify in PostHog so downstream CDP functions (welcome email, etc.)
-    // can access the email via person.properties.email
     if (data.user?.id) {
-      identifyUser(data.user.id, {
-        email,
-        full_name: fullName,
-      })
+      identifyUser(data.user.id, { email, full_name: fullName })
     }
-
     trackSignupComplete()
     gtagSignupCompleted()
     setUser(data.user)
-    setSigningUp(false)
 
-    // Small delay for auth to propagate to cookies
+    // Wait for eval to finish (up to 90s)
+    const deadline = Date.now() + 90_000
+    while (evalRunning && !evalResult && !evalFailed && Date.now() < deadline) {
+      await new Promise(r => setTimeout(r, 500))
+    }
+
+    if (evalFailed) {
+      setError(evalFailed)
+      setSigningUp(false)
+      setStep('upload')
+      setEvalFailed(null)
+      return
+    }
+    if (!evalResult) {
+      setError('Your evaluation is still running. Please wait a moment and refresh.')
+      setSigningUp(false)
+      return
+    }
+
+    // Let auth cookies propagate
     await new Promise(r => setTimeout(r, 500))
 
-    await runEvaluation()
+    // Link the anon submission to the newly created user
+    try {
+      await fetch('/api/assign-submission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ submission_id: evalResult.submission_id }),
+      })
+    } catch {
+      // non-fatal — user still gets their report
+    }
+
+    router.push(`/report/${evalResult.evaluation_id}`)
   }
 
   // Kick off Stripe checkout from the paywall card
@@ -330,26 +365,38 @@ function SubmitPageInner() {
     )
   }
 
-  // ─── Signup step (only used if user explicitly needs to sign up mid-flow) ───
+  // ─── Signup step — eval runs in background while user signs up ───
   if (step === 'signup') {
+    const evalStatus = evalFailed
+      ? { label: 'Evaluation failed', color: 'text-red-400', spinning: false }
+      : evalResult
+        ? { label: 'Evaluation ready — sign up to view', color: 'text-emerald-400', spinning: false }
+        : { label: 'Evaluating your script…', color: 'text-[var(--gem-accent)]', spinning: true }
+
     return (
       <>
         <Nav />
         <div className="max-w-sm mx-auto px-4 py-10">
-          <div className="flex items-center gap-3 p-3 rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] mb-8">
-            <FileText size={16} className="text-[var(--gem-accent)] shrink-0" />
+          <div className="flex items-center gap-3 p-3 rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] mb-6">
+            {evalStatus.spinning ? (
+              <Loader2 size={16} className="animate-spin text-[var(--gem-accent)] shrink-0" />
+            ) : evalResult ? (
+              <CheckCircle size={16} className="text-emerald-400 shrink-0" />
+            ) : (
+              <AlertCircle size={16} className="text-red-400 shrink-0" />
+            )}
             <div className="min-w-0">
               <p className="text-sm font-medium text-[var(--gem-white)] truncate">{title}</p>
-              <p className="text-xs text-[var(--gem-gray-500)]">Ready to evaluate — create an account to save your results</p>
+              <p className={`text-xs ${evalStatus.color}`}>{evalStatus.label}</p>
             </div>
           </div>
 
-          <h1 className="text-2xl font-bold mb-1">Create your account</h1>
-          <p className="text-sm text-[var(--gem-gray-400)] mb-8">
-            Sign up to save evaluations and track your scripts.
+          <h1 className="text-2xl font-bold mb-1">Create your account to see your report</h1>
+          <p className="text-sm text-[var(--gem-gray-400)] mb-6">
+            Your evaluation is running now. Sign up while you wait — we&apos;ll take you straight to the report when it&apos;s ready.
           </p>
 
-          <form onSubmit={handleSignupAndEvaluate} className="space-y-4">
+          <form onSubmit={handleAnonSignup} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">Full name</label>
               <input
@@ -398,11 +445,11 @@ function SubmitPageInner() {
               {signingUp ? (
                 <span className="flex items-center justify-center gap-2">
                   <Loader2 size={18} className="animate-spin" />
-                  Creating account...
+                  {evalResult ? 'Opening your report…' : 'Finishing up…'}
                 </span>
               ) : (
                 <span className="flex items-center justify-center gap-2">
-                  Create account & evaluate
+                  Create account & view report
                   <ArrowRight size={16} />
                 </span>
               )}
