@@ -57,6 +57,15 @@ function SubmitPageInner() {
   const [evalFailed, setEvalFailed] = useState<string | null>(null)
   const [evalRunning, setEvalRunning] = useState(false)
 
+  // Refs mirror the eval state so the async polling loop in handleAnonSignup
+  // can see live values instead of stale closure captures.
+  const evalResultRef = useRef<{ evaluation_id: string; submission_id: string } | null>(null)
+  const evalFailedRef = useRef<string | null>(null)
+  const evalRunningRef = useRef(false)
+  useEffect(() => { evalResultRef.current = evalResult }, [evalResult])
+  useEffect(() => { evalFailedRef.current = evalFailed }, [evalFailed])
+  useEffect(() => { evalRunningRef.current = evalRunning }, [evalRunning])
+
   const justSubscribed = searchParams.get('subscribed') === 'true'
   const fromHero = searchParams.get('from') === 'hero'
 
@@ -169,10 +178,12 @@ function SubmitPageInner() {
           ? 'It looks like this is a scanned PDF. We currently only support digitally-created PDFs (from Final Draft, WriterSolo, Highland, etc). Please re-export your script as a digital PDF and try again.'
           : 'Something went wrong evaluating your script. Please try again.'
         setEvalFailed(friendly)
+        evalFailedRef.current = friendly
         return null
       }
       if (!res.ok || data.status === 'failed') {
         setEvalFailed('Something went wrong evaluating your script. Please try again.')
+        evalFailedRef.current = 'Something went wrong evaluating your script. Please try again.'
         return null
       }
 
@@ -218,14 +229,21 @@ function SubmitPageInner() {
     setStep('signup')
     setError(null)
     setEvalRunning(true)
+    evalRunningRef.current = true
     setEvalResult(null)
+    evalResultRef.current = null
     setEvalFailed(null)
+    evalFailedRef.current = null
     trackEvalStart({ title, source: fromHero ? 'hero' : 'submit' })
     gtagEvalStarted()
-    // Fire and forget — result is captured in state
+    // Fire and forget — result is captured in state + refs
     fireEvalRequest().then((result) => {
       setEvalRunning(false)
-      if (result) setEvalResult(result)
+      evalRunningRef.current = false
+      if (result) {
+        setEvalResult(result)
+        evalResultRef.current = result
+      }
     })
   }
 
@@ -273,21 +291,29 @@ function SubmitPageInner() {
     gtagSignupCompleted()
     setUser(data.user)
 
-    // Wait for eval to finish (up to 90s)
-    const deadline = Date.now() + 90_000
-    while (evalRunning && !evalResult && !evalFailed && Date.now() < deadline) {
-      await new Promise(r => setTimeout(r, 500))
+    // Wait for eval to finish (up to 120s). Read from refs, NOT closure-captured
+    // state, so we see live values as the background eval completes.
+    const deadline = Date.now() + 120_000
+    while (
+      !evalResultRef.current &&
+      !evalFailedRef.current &&
+      Date.now() < deadline
+    ) {
+      await new Promise(r => setTimeout(r, 400))
     }
 
-    if (evalFailed) {
-      setError(evalFailed)
+    if (evalFailedRef.current) {
+      const msg = evalFailedRef.current
+      setError(msg)
       setSigningUp(false)
       setStep('upload')
       setEvalFailed(null)
+      evalFailedRef.current = null
       return
     }
-    if (!evalResult) {
-      setError('Your evaluation is still running. Please wait a moment and refresh.')
+    const result = evalResultRef.current
+    if (!result) {
+      setError('Your evaluation is taking longer than expected. Please refresh in a moment to see your report.')
       setSigningUp(false)
       return
     }
@@ -300,13 +326,13 @@ function SubmitPageInner() {
       await fetch('/api/assign-submission', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ submission_id: evalResult.submission_id }),
+        body: JSON.stringify({ submission_id: result.submission_id }),
       })
     } catch {
       // non-fatal — user still gets their report
     }
 
-    router.push(`/report/${evalResult.evaluation_id}`)
+    router.push(`/report/${result.evaluation_id}`)
   }
 
   // Kick off Stripe checkout from the paywall card
