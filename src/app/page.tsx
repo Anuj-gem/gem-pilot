@@ -120,16 +120,16 @@ export default async function Home() {
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Free screenplay feedback. From a producer's perspective.
+            Score your screenplay in under a minute.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Upload your script, get a research-backed report in 60 seconds. Two evaluations free — then $20/mo for unlimited drafts and revisions.
+            Upload a PDF. Selznick — our scoring system — returns a detailed evaluation with a score, a breakdown, and specific notes you can take into the rewrite. First two evaluations are free. $20/month after that for unlimited.
           </p>
 
-          {/* Primary + secondary CTA */}
+          {/* Primary CTA */}
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <TrackedCTA
               href="/submit"
@@ -137,57 +137,15 @@ export default async function Home() {
               properties={{ location: 'hero', label: 'Submit your script' }}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm sm:text-base font-semibold hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
-              Submit your script — free
+              Evaluate my script — free
               <ArrowRight size={16} />
             </TrackedCTA>
-            <TrackedCTA
-              href="/signup"
-              event="cta_clicked"
-              properties={{ location: 'hero', label: 'Create writer profile' }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[var(--gem-gray-700)] text-[var(--gem-gray-200)] text-sm sm:text-base font-medium hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
-            >
-              Create your writer profile
-            </TrackedCTA>
           </div>
 
-          {/* Equation visual: Eval + Exposure = Break */}
-          <div className="relative mt-12 sm:mt-16">
-            <div className="flex items-center justify-center gap-3 sm:gap-6 max-w-2xl mx-auto">
-              {/* Eval */}
-              <div className="flex flex-col items-center text-center flex-1 min-w-0">
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-500/5 border border-violet-500/30 flex items-center justify-center mb-2 sm:mb-3">
-                  <FileText size={22} className="text-[var(--gem-accent)] sm:hidden" />
-                  <FileText size={32} className="text-[var(--gem-accent)] hidden sm:block" />
-                </div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Producer</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Eval</div>
-              </div>
-
-              <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">+</div>
-
-              {/* Exposure */}
-              <div className="flex flex-col items-center text-center flex-1 min-w-0">
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-400/20 to-amber-400/5 border border-amber-400/30 flex items-center justify-center mb-2 sm:mb-3">
-                  <Megaphone size={22} className="text-amber-400 sm:hidden" />
-                  <Megaphone size={32} className="text-amber-400 hidden sm:block" />
-                </div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Industry</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Exposure</div>
-              </div>
-
-              <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">=</div>
-
-              {/* Break */}
-              <div className="flex flex-col items-center text-center flex-1 min-w-0">
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[var(--gem-gold)]/25 to-[var(--gem-gold)]/5 border border-[var(--gem-gold)]/40 flex items-center justify-center mb-2 sm:mb-3">
-                  <Trophy size={22} className="text-[var(--gem-gold)] sm:hidden" />
-                  <Trophy size={32} className="text-[var(--gem-gold)] hidden sm:block" />
-                </div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Your</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Break</div>
-              </div>
-            </div>
-          </div>
+          <p className="relative mt-4 text-xs sm:text-sm text-[var(--gem-gray-400)]">
+            Leaderboard is optional — you choose whether to publish.{' '}
+            <Link href="/discover" className="text-[var(--gem-accent)] hover:underline">See the leaderboard →</Link>
+          </p>
         </section>
       </TrackSection>
 
@@ -200,7 +158,8 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Live from the Leaderboard — rich list with tags */}
+      {/* Live from the Leaderboard — rich list with tags (hidden per new landing direction) */}
+      {false && (
       <TrackSection name="leaderboard_snapshot">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
           <div className="flex items-center gap-2 mb-2 sm:mb-4">
@@ -307,8 +266,7 @@ export default async function Home() {
           </div>
         </section>
       </TrackSection>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
+      )}
 
       {/* Credibility / Selznick */}
       <TrackSection name="credibility">
@@ -436,7 +394,8 @@ export default async function Home() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
-      {/* How it works — expanded Eval + Exposure = Break */}
+      {/* How it works — expanded Eval + Exposure = Break (hidden per new landing direction) */}
+      {false && (
       <TrackSection name="how_it_works">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <div className="text-center mb-10 sm:mb-14">
@@ -506,6 +465,19 @@ export default async function Home() {
           </div>
         </section>
       </TrackSection>
+      )}
+
+      {/* Leaderboard — one line, optional */}
+      <TrackSection name="leaderboard_link">
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 py-10 text-center">
+          <p className="text-sm sm:text-base text-[var(--gem-gray-300)]">
+            There&apos;s a public leaderboard, too. Publishing your score is optional — you decide after you see the report.{' '}
+            <Link href="/discover" className="text-[var(--gem-accent)] hover:underline font-medium">
+              See the leaderboard →
+            </Link>
+          </p>
+        </section>
+      </TrackSection>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
@@ -513,19 +485,19 @@ export default async function Home() {
       <TrackSection name="pricing">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Pricing</p>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-14 font-[family-name:var(--font-display)]">Other sites charge hundreds for generic coverage and no help. We do the opposite.</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-14 font-[family-name:var(--font-display)]">Start free. Keep going for $20/month.</h2>
 
           <div className="max-w-lg mx-auto">
             <div className="rounded-2xl border border-[var(--gem-gray-700)] p-6 sm:p-8 mb-4">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="text-lg font-bold">Free</div>
-                  <p className="text-xs text-[var(--gem-gray-400)]">No account needed</p>
+                  <p className="text-xs text-[var(--gem-gray-400)]">No credit card</p>
                 </div>
                 <div className="text-2xl font-bold text-emerald-600">$0</div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['Research-backed review of your script', 'Unlimited submissions'].map(item => (
+                {['2 full evaluations', 'Complete reports — no blur, no upsell'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
                     {item}
@@ -538,7 +510,7 @@ export default async function Home() {
                 properties={{ location: 'pricing', label: 'Get your free score' }}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
               >
-                Get your free score
+                Start with a free evaluation
                 <ArrowRight size={14} />
               </TrackedCTA>
             </div>
@@ -555,7 +527,7 @@ export default async function Home() {
                 </div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['Full development reads with production analysis', 'Character breakdowns and market positioning', 'Publish to the public leaderboard', 'Cancel anytime'].map(item => (
+                {['Unlimited evaluations', 'Rerun after every rewrite to see the score move', 'Publish to the leaderboard (optional)', 'Cancel anytime'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
                     {item}
@@ -569,7 +541,7 @@ export default async function Home() {
               >
                 Start with Pro
               </SubscribeCTA>
-              <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">That&apos;s less than the price of a single script coverage from most services.</p>
+              <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">Less than the price of a single coverage from most services.</p>
             </div>
           </div>
         </section>
@@ -581,42 +553,10 @@ export default async function Home() {
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-            This script is #1 on GEM right now.
+            Get a real read on your next draft.
           </h2>
-
-          {/* #1 leaderboard preview card */}
-          {topScripts && topScripts.length > 0 && (
-            <Link
-              href={`/report/${topScripts[0].evaluation_id ?? topScripts[0].id}`}
-              className="group block max-w-md mx-auto rounded-xl card-glass overflow-hidden mb-6 sm:mb-8 text-left"
-            >
-              <div className="flex" style={{ borderLeft: `4px solid ${tierColor(topScripts[0].tier ?? '')}` }}>
-                <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-                  <span className="text-base sm:text-lg font-bold tabular-nums text-[var(--gem-gold)]">#1</span>
-                  <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(topScripts[0].tier ?? '') }}>
-                    {typeof topScripts[0].weighted_score === 'number' ? Math.round(topScripts[0].weighted_score) : '—'}
-                  </span>
-                  <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
-                </div>
-                <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
-                  <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                    {topScripts[0].title || 'Untitled'}
-                  </h3>
-                  <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-                    by {topScripts[0].author_name || topScripts[0].author || 'Anonymous'}
-                  </div>
-                  {topScripts[0].tier && (
-                    <span className={`inline-block mt-2 text-[10px] px-2.5 py-1 rounded-full border font-semibold ${tierBg(topScripts[0].tier)}`}>
-                      {tierLabel(topScripts[0].tier)}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </Link>
-          )}
-
-          <p className="text-xl sm:text-2xl font-bold text-[var(--gem-gray-100)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10 animate-[fadeInUp_1s_ease-out]">
-            Where does yours rank?
+          <p className="text-base sm:text-lg text-[var(--gem-gray-300)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10">
+            Upload a PDF. Selznick reads it and returns your score, a breakdown, and specific notes — in under a minute. First two are free.
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <TrackedCTA
