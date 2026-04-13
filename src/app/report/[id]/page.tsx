@@ -77,11 +77,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Normalize v2/v3 evaluation shape
   const { classification, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
 
-  // Determine blur: based on the submission OWNER's subscription, not the viewer's.
-  // If the owner is subscribed and the post is public, everyone sees it fully.
-  // If the owner is NOT subscribed (or cancelled), the report is blurred for everyone
-  // except the owner themselves seeing their own score/tier (header is always visible).
+  // Reports are now fully visible to all viewers — no blur. The paywall lives
+  // at submission time (3rd+ eval requires GEM Pro). UpgradeCard is shown to
+  // non-subscriber owners as a soft upsell, with messaging tuned to where they
+  // are in the 2-free-evals lifecycle.
   let ownerIsSubscribed = false
+  let ownerEvalCount = 0
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
       .from('profiles')
@@ -90,16 +91,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .single()
 
     ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
+
+    if (!ownerIsSubscribed) {
+      const { count } = await serviceClient
+        .from('script_submissions')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', submission.user_id)
+      ownerEvalCount = count ?? 0
+    }
   }
 
-  const isPublicPost = submission.is_public === true
-  // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
-  // Blur if: owner is NOT subscribed AND post is NOT public
-  const showBlurred = !ownerIsSubscribed && !isPublicPost
-  // Free viewers see: score + verdict + What's Good headline (visible),
-  // strength details + What to Address + Story Analysis (fully blurred).
-  // Primary CTA pushes 2nd eval submission, secondary CTA pushes upgrade.
-  const fullBlur = showBlurred
+  // Show upgrade CTA to non-subscriber owners viewing their own report.
+  const showUpgradeCta = isOwner && !ownerIsSubscribed && !isAnonymousSubmission
 
   // Get like count and whether current user has liked
   const { count: likeCount } = await supabase
@@ -124,8 +127,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
-      <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
-      <div className={`max-w-3xl mx-auto px-4 py-8 space-y-8 ${showBlurred ? 'pb-32' : ''}`}>
+      <ReportAnalytics evaluationId={id} isBlurred={false} />
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
         {/* Private demo banner — shown when ?for=Writer+Name is present in the URL */}
         {forWriter && (
           <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />
@@ -168,17 +171,38 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           blurred={false}
         />
 
-        {/* What's Special — headline always visible, strength details blurred for free */}
+        {/* Full report — no blur. Everyone who can see this page sees it fully. */}
         <WhatsSpecialSection
           data={whatsSpecial}
-          blurred={showBlurred}
+          blurred={false}
           fullBlur={false}
         />
 
-        {/* Primary CTA for free viewers: submit another script.
-            Anonymous → create account first, then redirect to dashboard.
-            Logged-in free → go to /submit. */}
-        {showBlurred && (
+        <WhatsHoldingItBackSection
+          data={whatsHoldingItBack}
+          blurred={false}
+          fullBlur={false}
+          production={report.production_reality}
+        />
+        <ScoreCard
+          scores={report.scores}
+          weightedScore={eval_.weighted_score}
+          blurred={false}
+          fullBlur={false}
+        />
+
+        {/* Upgrade nudge — shown to non-subscriber owners. Copy adapts to where
+            they are in the 2-free-evals lifecycle. */}
+        {showUpgradeCta && (
+          <UpgradeCard
+            evaluationId={id}
+            isLoggedIn={!!user}
+            evalsUsed={ownerEvalCount}
+          />
+        )}
+
+        {/* Got another script? Push a 2nd eval to non-subscriber owners who still have one left. */}
+        {showUpgradeCta && ownerEvalCount < 2 && (
           <SubmitCta
             isLoggedIn={!!user}
             submissionId={submission.id}
@@ -186,29 +210,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isAnonymousSubmission={isAnonymousSubmission}
           />
         )}
-
-        {/* Everything below is fully blurred for free users */}
-        <WhatsHoldingItBackSection
-          data={whatsHoldingItBack}
-          blurred={false}
-          fullBlur={fullBlur}
-          production={report.production_reality}
-        />
-        <ScoreCard
-          scores={report.scores}
-          weightedScore={eval_.weighted_score}
-          blurred={false}
-          fullBlur={fullBlur}
-        />
-
-        {/* Secondary CTA: upgrade card — shown after blurred content */}
-        {showBlurred && (
-          <UpgradeCard evaluationId={id} isLoggedIn={!!user} />
-        )}
       </div>
 
-      {/* Sticky bottom bar — persistent upgrade CTA for all free viewers */}
-      {showBlurred && (
+      {/* Sticky bottom bar — persistent CTA for non-subscriber owners */}
+      {showUpgradeCta && (
         <StickyBottomBar evaluationId={id} isLoggedIn={!!user} />
       )}
     </>

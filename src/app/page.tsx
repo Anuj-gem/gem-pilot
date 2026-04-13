@@ -126,7 +126,7 @@ export default async function Home() {
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Upload your script, get a research-backed report in 60 seconds. Publish your best work to the leaderboard and see how you rank.
+            Upload your script, get a research-backed report in 60 seconds. Two evaluations free — then $20/mo for unlimited drafts and revisions.
           </p>
 
           {/* Primary + secondary CTA */}

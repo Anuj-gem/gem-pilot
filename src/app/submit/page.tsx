@@ -7,8 +7,8 @@ import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
 import { Upload, FileText, Loader2, AlertCircle, CheckCircle, ArrowRight, Compass } from 'lucide-react'
 import Link from 'next/link'
-import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackBlurredReportViewed, trackSubscriptionActivated, identifyUser } from '@/lib/posthog'
-import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted } from '@/lib/gtag'
+import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackBlurredReportViewed, trackSubscriptionActivated, trackSubscribeClick, identifyUser } from '@/lib/posthog'
+import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted, gtagSubscribeClicked } from '@/lib/gtag'
 
 export default function SubmitPage() {
   return (
@@ -37,8 +37,11 @@ function SubmitPageInner() {
   const [error, setError] = useState<string | null>(null)
   const [progress, setProgress] = useState<string | null>(null)
 
-  // Subscription state
+  // Subscription state + free-eval count
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [evalsUsed, setEvalsUsed] = useState<number | null>(null)
+  const [paywalled, setPaywalled] = useState(false)
+  const [upgradeLoading, setUpgradeLoading] = useState(false)
 
   // Signup fields (for unauthenticated users coming from mobile)
   const [fullName, setFullName] = useState('')
@@ -80,7 +83,18 @@ function SubmitPageInner() {
           .eq('id', user.id)
           .single()
 
-        setIsSubscribed(profile?.subscription_status === 'active')
+        const subscribed = profile?.subscription_status === 'active'
+        setIsSubscribed(subscribed)
+
+        if (!subscribed) {
+          const { count } = await supabase
+            .from('script_submissions')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', user.id)
+          const used = count ?? 0
+          setEvalsUsed(used)
+          if (used >= 2) setPaywalled(true)
+        }
       }
     }
     checkAuth()
@@ -149,6 +163,15 @@ function SubmitPageInner() {
         data = await res.json()
       } catch {
         throw new Error('Something went wrong evaluating your script. Please try again.')
+      }
+
+      // Paywall: user has used their 2 free evals and is not subscribed.
+      if (res.status === 402 || data.error === 'paywall') {
+        setPaywalled(true)
+        setEvalsUsed(data.free_evals_used ?? 2)
+        setStep('upload')
+        setProgress(null)
+        return
       }
 
       if (data.error) {
@@ -249,6 +272,28 @@ function SubmitPageInner() {
     await new Promise(r => setTimeout(r, 500))
 
     await runEvaluation()
+  }
+
+  // Kick off Stripe checkout from the paywall card
+  const handleUpgrade = async () => {
+    trackSubscribeClick('submit_paywall')
+    gtagSubscribeClicked()
+    setUpgradeLoading(true)
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      })
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url
+      } else {
+        setUpgradeLoading(false)
+      }
+    } catch {
+      setUpgradeLoading(false)
+    }
   }
 
   // Cycle loading messages
@@ -389,21 +434,21 @@ function SubmitPageInner() {
 
         <h1 className="text-2xl font-bold mb-1">Submit a script</h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-          Upload your screenplay and see how it scores. Subscribe for the full report with development notes and production analysis.
+          Upload your screenplay and see how it scores against the rubric applied to produced film and television.
         </p>
 
-        {/* Subscription status badge */}
+        {/* Subscription / free-eval status badges */}
         {authChecked && user && (
           <div className="flex items-center gap-3 mb-8">
             {isSubscribed ? (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-600 text-white">
-                <CheckCircle size={12} /> Subscribed — full reports unlocked
+                <CheckCircle size={12} /> GEM Pro — unlimited evaluations
               </span>
-            ) : (
+            ) : evalsUsed !== null ? (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[var(--gem-gray-600)] text-white">
-                Free — score visible, full report requires subscription
+                {Math.max(0, 2 - evalsUsed)} of 2 free evaluations remaining
               </span>
-            )}
+            ) : null}
           </div>
         )}
 
@@ -411,11 +456,35 @@ function SubmitPageInner() {
         {authChecked && !user && (
           <div className="flex items-center gap-3 mb-8">
             <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
-              Free to evaluate — no account needed
+              Your first evaluation is free
             </span>
           </div>
         )}
 
+        {/* Paywall — user has used both free evals */}
+        {paywalled && (
+          <div className="rounded-xl border-2 border-[var(--gem-gold)]/40 bg-white p-6 mb-6 text-center">
+            <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
+              You&apos;ve used your 2 free evaluations
+            </h3>
+            <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto">
+              Upgrade to GEM Pro for unlimited evaluations — compare scores across every draft and revision.
+            </p>
+            <button
+              onClick={handleUpgrade}
+              disabled={upgradeLoading}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[var(--gem-gold)] text-white text-sm font-semibold hover:brightness-110 disabled:opacity-50 transition-all cursor-pointer"
+            >
+              {upgradeLoading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
+              {!upgradeLoading && <ArrowRight size={14} />}
+            </button>
+            <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">
+              Cancel anytime · Secure checkout via Stripe
+            </p>
+          </div>
+        )}
+
+        {!paywalled && (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">
@@ -518,6 +587,7 @@ function SubmitPageInner() {
             Your script is evaluated using the same rubric applied to produced film and television.
           </p>
         </form>
+        )}
 
         {/* Leaderboard nudge */}
         <div className="mt-8 p-4 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">

@@ -40,10 +40,29 @@ export default async function DashboardPage() {
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
+  const totalSubmissions = submissions?.length ?? 0
+  const evalsRemaining = Math.max(0, 2 - totalSubmissions)
+
   return (
     <>
       <Nav />
       <div className="max-w-4xl mx-auto px-4 py-8">
+        {!isSubscribed && totalSubmissions > 0 && (
+          <div className="mb-6 flex items-center justify-between gap-3 p-3 rounded-lg border border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5 flex-wrap">
+            <p className="text-sm text-[var(--gem-gray-300)]">
+              {evalsRemaining > 0
+                ? `You've used ${totalSubmissions} of 2 free evaluations. ${evalsRemaining} remaining.`
+                : "You've used both free evaluations — upgrade to keep evaluating."}
+            </p>
+            <UnlockTrigger
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all"
+              ariaLabel="Upgrade to GEM Pro"
+            >
+              <Sparkles size={12} />
+              Upgrade to GEM Pro — $20/mo
+            </UnlockTrigger>
+          </div>
+        )}
         <div className="flex items-center justify-between mb-8 gap-4 flex-wrap">
           <div>
             <h1 className="text-3xl font-bold font-[family-name:var(--font-display)]">Your Portfolio</h1>
