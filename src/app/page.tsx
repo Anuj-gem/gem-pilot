@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Sparkles, Brain, BarChart3, Target, Star, FileText, Megaphone, Trophy } from 'lucide-react'
+import { ArrowRight, CheckCircle, Sparkles, Brain, BarChart3, Target, Star } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
@@ -14,25 +14,8 @@ function tierColor(tier: string) {
   return 'var(--tier-needs-dev)'
 }
 
-function tierBg(tier: string) {
-  if (tier === 'Greenlight Material') return 'bg-emerald-50 text-emerald-700 border-emerald-200'
-  if (tier === 'Optionable') return 'bg-blue-50 text-blue-700 border-blue-200'
-  return 'bg-gray-100 text-gray-500 border-gray-200'
-}
-
-function tierLabel(tier: string) {
-  if (tier === 'Greenlight Material') return 'Greenlight'
-  if (tier === 'Optionable') return 'Option Ready'
-  return 'Shows Promise'
-}
-
 export default async function Home() {
   const supabase = await createClient()
-  const { data: topScripts } = await supabase
-    .from('leaderboard')
-    .select('*')
-    .order('weighted_score', { ascending: false })
-    .limit(8)
 
   // Featured sample reports — produced screenplays scored by GEM (social proof)
   const { data: sampleRows } = await supabase
@@ -158,115 +141,6 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Live from the Leaderboard — rich list with tags (hidden per new landing direction) */}
-      {false && (
-      <TrackSection name="leaderboard_snapshot">
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
-          <div className="flex items-center gap-2 mb-2 sm:mb-4">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-            </span>
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live from the leaderboard</p>
-          </div>
-          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how your screenplay ranks.</h2>
-
-          {topScripts && topScripts.length > 0 ? (
-            <div className="space-y-3">
-              {topScripts.map((script: any, idx: number) => (
-                <Link
-                  key={script.evaluation_id ?? script.id ?? idx}
-                  href={`/report/${script.evaluation_id ?? script.id}`}
-                  className="group block rounded-xl card-glass overflow-hidden"
-                >
-                  <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier ?? '')}` }}>
-                    {/* Rank + Score — left column */}
-                    <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-                      <span className={`text-base sm:text-lg font-bold tabular-nums ${
-                        idx < 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-400)]'
-                      }`}>#{idx + 1}</span>
-                      <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(script.tier ?? '') }}>
-                        {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
-                      </span>
-                      <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
-                    </div>
-
-                    {/* Content — center */}
-                    <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0">
-                          <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                            {script.title || 'Untitled'}
-                          </h3>
-                          <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-                            by {script.author_name || script.author || 'Anonymous'}
-                          </div>
-                        </div>
-                        {/* Verdict badge */}
-                        {script.tier && (
-                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-semibold shrink-0 ${tierBg(script.tier)}`}>
-                            {tierLabel(script.tier)}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
-                        {script.format && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-medium">
-                            {script.format}
-                          </span>
-                        )}
-                        {script.genre && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium">
-                            {script.genre}
-                          </span>
-                        )}
-                        {script.genre_tags && Array.isArray(script.genre_tags) && script.genre_tags.map((tag: string) => (
-                          <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-gray-50 text-gray-600 border border-gray-200 font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* View Report — visible on all screens */}
-                      <div className="mt-3">
-                        <span className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium group-hover:underline">
-                          View Full Report <ArrowRight size={12} />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <p className="text-center py-8 text-[var(--gem-gray-400)]">Loading leaderboard...</p>
-          )}
-
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-            <TrackedCTA
-              href="/submit"
-              event="cta_clicked"
-              properties={{ location: 'leaderboard_snapshot', label: 'Submit yours' }}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
-            >
-              Submit yours to see where it ranks
-              <ArrowRight size={14} />
-            </TrackedCTA>
-            <TrackedCTA
-              href="/discover"
-              event="cta_clicked"
-              properties={{ location: 'leaderboard_snapshot', label: 'See all scripts' }}
-              className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline font-medium"
-            >
-              See all scripts on the leaderboard
-              <ArrowRight size={14} />
-            </TrackedCTA>
-          </div>
-        </section>
-      </TrackSection>
-      )}
 
       {/* Credibility / Selznick */}
       <TrackSection name="credibility">
@@ -392,80 +266,6 @@ export default async function Home() {
         </TrackSection>
       )}
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
-
-      {/* How it works — expanded Eval + Exposure = Break (hidden per new landing direction) */}
-      {false && (
-      <TrackSection name="how_it_works">
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
-          <div className="text-center mb-10 sm:mb-14">
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">How GEM works</p>
-            <h2 className="text-2xl sm:text-4xl font-bold font-[family-name:var(--font-display)]">
-              Upload&nbsp;·&nbsp;Score&nbsp;·&nbsp;Publish&nbsp;·&nbsp;Rise
-            </h2>
-            <p className="mt-3 text-sm sm:text-base uppercase tracking-[0.2em] text-[var(--gem-gold)]/90 font-semibold">
-              Scored. Ranked. Discovered.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            {/* Producer Eval */}
-            <div className="p-6 sm:p-7 rounded-2xl card-glass">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-violet-500/5 border border-violet-500/30 flex items-center justify-center mb-4">
-                <FileText size={22} className="text-[var(--gem-accent)]" />
-              </div>
-              <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step One</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Producer Eval</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Upload your screenplay and get a producer-grade read in under a minute — score, verdict, development notes,
-                and a full production analysis built on the same rubric used for produced film and television.
-              </p>
-            </div>
-
-            {/* Industry Exposure */}
-            <div className="p-6 sm:p-7 rounded-2xl card-glass">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-400/5 border border-amber-400/30 flex items-center justify-center mb-4">
-                <Megaphone size={22} className="text-amber-400" />
-              </div>
-              <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Two</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Publish Your Best Work</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Post your top scripts to the public leaderboard. See how you rank against other writers and put your best
-                work where it can be discovered.
-              </p>
-              <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-[var(--gem-gold)]/80">
-                <Sparkles size={11} /> Updated live as new scripts are evaluated
-              </div>
-            </div>
-
-            {/* Your Break */}
-            <div className="p-6 sm:p-7 rounded-2xl card-glass">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--gem-gold)]/25 to-[var(--gem-gold)]/5 border border-[var(--gem-gold)]/40 flex items-center justify-center mb-4">
-                <Trophy size={22} className="text-[var(--gem-gold)]" />
-              </div>
-              <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Three</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Your Break</h3>
-              <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Rewrite, resubmit, and climb. The best writers rise to the top — and GEM is built to help them get the
-                attention they&apos;ve been waiting for.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-10 sm:mt-14">
-            <TrackedCTA
-              href="/submit"
-              event="cta_clicked"
-              properties={{ location: 'how_it_works', label: 'Submit your script' }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-semibold hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
-            >
-              Submit your script — free
-              <ArrowRight size={16} />
-            </TrackedCTA>
-          </div>
-        </section>
-      </TrackSection>
-      )}
 
       {/* Leaderboard — one line, optional */}
       <TrackSection name="leaderboard_link">
