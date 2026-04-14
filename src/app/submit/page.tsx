@@ -39,7 +39,6 @@ function SubmitPageInner() {
 
   // Subscription state + free-eval count
   const [isSubscribed, setIsSubscribed] = useState(false)
-  const [evalsUsed, setEvalsUsed] = useState<number | null>(null)
   const [paywalled, setPaywalled] = useState(false)
   const [upgradeLoading, setUpgradeLoading] = useState(false)
 
@@ -100,15 +99,7 @@ function SubmitPageInner() {
         const subscribed = profile?.subscription_status === 'active'
         setIsSubscribed(subscribed)
 
-        if (!subscribed) {
-          const { count } = await supabase
-            .from('script_submissions')
-            .select('id', { count: 'exact', head: true })
-            .eq('user_id', user.id)
-          const used = count ?? 0
-          setEvalsUsed(used)
-          if (used >= 2) setPaywalled(true)
-        }
+        // Unlimited free evals now — no client-side paywall gate.
       }
     }
     checkAuth()
@@ -167,7 +158,6 @@ function SubmitPageInner() {
 
       if (res.status === 402 || data.error === 'paywall') {
         setPaywalled(true)
-        setEvalsUsed(data.free_evals_used ?? 2)
         setStep('upload')
         setProgress(null)
         return null
@@ -510,38 +500,31 @@ function SubmitPageInner() {
           Upload your screenplay and see how it scores against the rubric applied to produced film and television.
         </p>
 
-        {/* Subscription / free-eval status badges */}
-        {authChecked && user && (
+        {/* Status badge — evals are unlimited for everyone. Subscribers see the full
+            score + critique immediately; free viewers get tier + strengths, and unlock
+            the rest for $20/mo. */}
+        {authChecked && (
           <div className="flex items-center gap-3 mb-8">
             {isSubscribed ? (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-600 text-white">
-                <CheckCircle size={12} /> GEM Pro — unlimited evaluations
+                <CheckCircle size={12} /> Full reports unlocked
               </span>
-            ) : evalsUsed !== null ? (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[var(--gem-gray-600)] text-white">
-                {Math.max(0, 2 - evalsUsed)} of 2 free evaluations remaining
+            ) : (
+              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
+                Unlimited free evaluations · Top-scored scripts get surfaced
               </span>
-            ) : null}
+            )}
           </div>
         )}
 
-        {/* Not logged in badge */}
-        {authChecked && !user && (
-          <div className="flex items-center gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
-              Your first evaluation is free
-            </span>
-          </div>
-        )}
-
-        {/* Paywall — user has used both free evals */}
+        {/* Paywall — user has used their free evaluation */}
         {paywalled && (
           <div className="rounded-xl border-2 border-[var(--gem-gold)]/40 bg-white p-6 mb-6 text-center">
             <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-              You&apos;ve used your 2 free evaluations
+              Unlock unlimited evaluations
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto">
-              Upgrade to GEM Pro for unlimited evaluations — compare scores across every draft and revision.
+              $20/month — every draft, every script, the full score and development read. Cancel anytime.
             </p>
             <button
               onClick={handleUpgrade}

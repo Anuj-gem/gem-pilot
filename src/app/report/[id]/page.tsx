@@ -1,17 +1,18 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import Nav from '@/components/nav'
 import { ReportHeader } from '@/components/report/report-header'
 import { ScoreCard } from '@/components/report/score-card'
 import { WhatsSpecialSection } from '@/components/report/whats-special'
 import { WhatsHoldingItBackSection } from '@/components/report/whats-holding-it-back'
-// ProductionReality is now rendered inside WhatsHoldingItBackSection
+import { ProductionReality } from '@/components/report/production-reality'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
-import { UpgradeCard } from '@/components/report/upgrade-card'
-import { StickyBottomBar } from '@/components/report/sticky-bottom-bar'
-import { SubmitCta } from '@/components/report/submit-cta'
+import { SubscribeGate } from '@/components/report/subscribe-gate'
+import { ExpiryCountdown } from '@/components/report/expiry-countdown'
+import { InlineSignup } from '@/components/report/inline-signup'
+import { SectionLock } from '@/components/report/section-lock'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { normalizeEvaluation } from '@/types'
@@ -70,31 +71,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAnonymousSubmission = !submission.user_id
-  const isPublicSubmission = submission.is_public === true
-
-  // Gate: anonymous (unclaimed) reports are not viewable by anyone who isn't
-  // logged in. This forces the signup-during-eval flow and prevents people
-  // from sharing raw anon-eval links to bypass account creation.
-  // Logged-in users viewing an anon report still see it (e.g., admin/testing).
-  if (isAnonymousSubmission && !user) {
-    redirect(`/login?redirect=${encodeURIComponent(`/report/${id}`)}`)
-  }
-
-  // Gate: private reports (not public) are only viewable by the owner or
-  // anyone logged in. (Non-owners get login wall.)
-  if (!isAnonymousSubmission && !isPublicSubmission && !user) {
-    redirect(`/login?redirect=${encodeURIComponent(`/report/${id}`)}`)
-  }
+  const hasExpiry = isAnonymousSubmission && !!submission.expires_at
+  const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
 
   // Normalize v2/v3 evaluation shape
   const { classification, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
 
-  // Reports are now fully visible to all viewers — no blur. The paywall lives
-  // at submission time (3rd+ eval requires GEM Pro). UpgradeCard is shown to
-  // non-subscriber owners as a soft upsell, with messaging tuned to where they
-  // are in the 2-free-evals lifecycle.
+  // Determine blur: based on the submission OWNER's subscription, not the viewer's.
+  // If the owner is subscribed and the post is public, everyone sees it fully.
+  // If the owner is NOT subscribed (or cancelled), the report is blurred for everyone
+  // except the owner themselves seeing their own score/tier (header is always visible).
   let ownerIsSubscribed = false
-  let ownerEvalCount = 0
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
       .from('profiles')
@@ -103,18 +90,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .single()
 
     ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
-
-    if (!ownerIsSubscribed) {
-      const { count } = await serviceClient
-        .from('script_submissions')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', submission.user_id)
-      ownerEvalCount = count ?? 0
-    }
   }
 
-  // Show upgrade CTA to non-subscriber owners viewing their own report.
-  const showUpgradeCta = isOwner && !ownerIsSubscribed && !isAnonymousSubmission
+  const isPublicPost = submission.is_public === true
+  // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
+  // Blur if: owner is NOT subscribed AND post is NOT public
+  const showBlurred = !ownerIsSubscribed && !isPublicPost
+  // Every non-paid viewer (anonymous OR logged-in free) gets full blur. The selective
+  // blur for logged-in free users was leaking enough value that paid conversions dried
+  // up — reverted to full blur across the board while keeping the same lock CTAs.
+  const fullBlur = showBlurred
 
   // Get like count and whether current user has liked
   const { count: likeCount } = await supabase
@@ -136,11 +121,22 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   return (
     <>
       <Nav />
-      <ReportAnalytics evaluationId={id} isBlurred={false} />
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+      {hasExpiry && !isExpired && (
+        <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
+      )}
+      <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
+      <div className={`max-w-3xl mx-auto px-4 py-8 space-y-8 ${showBlurred ? 'pb-32' : ''}`}>
         {/* Private demo banner — shown when ?for=Writer+Name is present in the URL */}
         {forWriter && (
           <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />
+        )}
+
+        {/* Inline signup for anonymous users — right at the top, before the report.
+            id="inline-signup" is the scroll target for per-section lock CTAs below. */}
+        {isAnonymousSubmission && (
+          <div id="inline-signup" className="rounded-xl transition-shadow duration-500">
+            <InlineSignup submissionId={submission.id} evaluationId={id} />
+          </div>
         )}
 
         {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
@@ -165,7 +161,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         {/* Header: title, tier, weighted score, tags.
-            Score + verdict are now VISIBLE to all users (free and paid). */}
+            Score is blurred for free/unsubscribed viewers (including the owner themselves)
+            — the score is the key unlock and part of what you pay for. */}
         <ReportHeader
           title={submission.title}
           author={submission.profiles?.full_name ?? 'Anonymous'}
@@ -177,53 +174,75 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           tone={classification.tone}
           createdAt={eval_.created_at}
           isOwner={isOwner}
-          blurred={false}
+          blurred={showBlurred}
         />
 
-        {/* Full report — no blur. Everyone who can see this page sees it fully. */}
-        <WhatsSpecialSection
-          data={whatsSpecial}
-          blurred={false}
-          fullBlur={false}
-        />
+        {/* Report sections.
+            - fullBlur (anonymous viewer): each component renders its card chrome and
+              header clearly but fully blurs its body. Centered lock CTA overlay.
+            - showBlurred && user (logged-in free): components handle selective blur
+              internally. Centered lock CTA overlay.
+            - Otherwise (owner / subscribed / public): rendered normally, no overlay.
+         */}
+        {(() => {
+          // Pick the CTA by viewer auth state, not blur mode:
+          //   - logged-in free viewer  → 'pro'   (Stripe upgrade modal)
+          //   - anonymous viewer       → 'signup' (claim/signup flow)
+          const lockVariant: 'signup' | 'pro' | null = showBlurred
+            ? (user ? 'pro' : 'signup')
+            : null
 
-        <WhatsHoldingItBackSection
-          data={whatsHoldingItBack}
-          blurred={false}
-          fullBlur={false}
-          production={report.production_reality}
-        />
-        <ScoreCard
-          scores={report.scores}
-          weightedScore={eval_.weighted_score}
-          blurred={false}
-          fullBlur={false}
-        />
+          const wrap = (node: React.ReactNode, key: string) => (
+            <div key={key} className="relative">
+              {node}
+              {lockVariant && (
+                <SectionLock variant={lockVariant} evaluationId={id} position="center" />
+              )}
+            </div>
+          )
 
-        {/* Upgrade nudge — shown to non-subscriber owners. Copy adapts to where
-            they are in the 2-free-evals lifecycle. */}
-        {showUpgradeCta && (
-          <UpgradeCard
-            evaluationId={id}
-            isLoggedIn={!!user}
-            evalsUsed={ownerEvalCount}
-          />
-        )}
-
-        {/* Got another script? Push a 2nd eval to non-subscriber owners who still have one left. */}
-        {showUpgradeCta && ownerEvalCount < 2 && (
-          <SubmitCta
-            isLoggedIn={!!user}
-            submissionId={submission.id}
-            evaluationId={id}
-            isAnonymousSubmission={isAnonymousSubmission}
-          />
-        )}
+          return (
+            <>
+              {/* What's Working — always fully visible, even for free viewers.
+                  Tier + strengths are the free tier of value; score + critique are gated. */}
+              <WhatsSpecialSection
+                data={whatsSpecial}
+                blurred={false}
+                fullBlur={false}
+              />
+              {wrap(
+                <WhatsHoldingItBackSection
+                  data={whatsHoldingItBack}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
+                />,
+                'holding'
+              )}
+              {wrap(
+                <ScoreCard
+                  scores={report.scores}
+                  weightedScore={eval_.weighted_score}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
+                />,
+                'scores'
+              )}
+              {wrap(
+                <ProductionReality
+                  production={report.production_reality}
+                  blurred={showBlurred && !fullBlur}
+                  fullBlur={fullBlur}
+                />,
+                'production'
+              )}
+            </>
+          )
+        })()}
       </div>
 
-      {/* Sticky bottom bar — persistent CTA for non-subscriber owners */}
-      {showUpgradeCta && (
-        <StickyBottomBar evaluationId={id} isLoggedIn={!!user} />
+      {/* Subscribe overlay — only for logged-in free users, not anonymous */}
+      {showBlurred && user && (
+        <SubscribeGate evaluationId={id} isLoggedIn={true} />
       )}
     </>
   )

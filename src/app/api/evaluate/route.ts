@@ -145,11 +145,10 @@ export async function POST(request: NextRequest) {
       data: { user },
     } = await authClient.auth.getUser();
 
-    // 2. Check subscription status + free-eval gate if logged in.
-    //    Model: 2 free evals per account. 3rd+ requires active subscription.
-    //    Anonymous users can always run an eval (they are, by definition, on their 1st).
+    // 2. Subscription check — informational only. Evals are unlimited for everyone.
+    //    Free viewers see tier + what's working. Score, critique, and production
+    //    breakdown are blurred on the report and unlock with a $20/mo subscription.
     let isSubscribed = false;
-    let freeEvalsUsed = 0;
     if (user) {
       const { data: profile } = await serviceClient
         .from("profiles")
@@ -157,26 +156,6 @@ export async function POST(request: NextRequest) {
         .eq("id", user.id)
         .single();
       isSubscribed = profile?.subscription_status === "active";
-
-      if (!isSubscribed) {
-        const { count } = await serviceClient
-          .from("script_submissions")
-          .select("id", { count: "exact", head: true })
-          .eq("user_id", user.id);
-        freeEvalsUsed = count ?? 0;
-
-        if (freeEvalsUsed >= 2) {
-          return NextResponse.json(
-            {
-              error: "paywall",
-              message:
-                "You've used your 2 free evaluations. Upgrade to GEM Pro for unlimited evaluations.",
-              free_evals_used: freeEvalsUsed,
-            },
-            { status: 402 }
-          );
-        }
-      }
     }
 
     // 3. Parse form data
