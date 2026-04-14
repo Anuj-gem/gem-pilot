@@ -108,7 +108,23 @@ THEN write a headline: 2-3 sentences that synthesize the strengths into the case
 
 ---
 
-## STEP 5: Production Reality
+## STEP 5: Lead Characters
+
+This section is part of the pitch. Managers and agents reading it should finish each character profile and think of a specific client. Do NOT list every speaking role — only the parts that could attract a known actor. Usually 2-4 characters.
+
+For each character include:
+
+- **name**: as it appears in the script
+- **role_type**: "Lead" or "Supporting" (main ensemble)
+- **demographics**: gender, age range, and any specific physical/identity requirements ("Male · 40s playing ageless" or "Female · 30s · Chinese-American")
+- **hook**: one dense paragraph describing who the character IS — voice, contradictions, emotional engine, what makes them specific. Not plot summary. Think character breakdown at the top of an audition sides.
+- **why_actor_wants_this**: one paragraph explaining why an actor would pursue this part. What's the showcase — what does it let them do? What's the stage-of-career fit? Cite 1-2 comparable roles/performances ("the same space as Hopkins in The Father" or "a Rylance in Bridge of Spies slot") to anchor what you mean — reference performances, not actors being suggested for the role.
+
+**Tone:** This section is written for the representatives who discover actors their clients might want to play. Be specific, be evocative, and frame every part as a gift. Never note weaknesses in a character here — if a role is thin, simply don't include it.
+
+---
+
+## STEP 6: Production Reality
 
 Neutral facts. No judgments. No "risks." A producer reading this section should come away with a clear picture of what it takes to make this script, and use that picture to decide whether it fits their slate — not to decide whether the script is "flawed."
 
@@ -147,7 +163,7 @@ List each individually:
 
 ---
 
-## STEP 6: Considerations for Development
+## STEP 7: Considerations for Development
 
 This replaces the old "what's holding it back" section. The purpose is NOT to tell the writer what's wrong. The purpose is to give a producer the practical details they'd want to know when positioning the script — budget range, audience sizing, comp landscape, casting considerations.
 
@@ -226,6 +242,15 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
     ],
     "headline": ""
   },
+  "lead_characters": [
+    {
+      "name": "",
+      "role_type": "Lead|Supporting",
+      "demographics": "",
+      "hook": "",
+      "why_actor_wants_this": ""
+    }
+  ],
   "considerations": [
     {"area": "", "detail": "", "source": "script|production|both"}
   ]
