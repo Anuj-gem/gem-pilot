@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { RefreshCw } from 'lucide-react'
+import { RefreshCw, Upload } from 'lucide-react'
 import { type Tier } from '@/types'
 import { tierLabel, tierDescription, tierCutoffLabel, TIER_ORDER } from '@/lib/tier-display'
 import { ReportActions } from './report-actions'
@@ -131,6 +131,19 @@ export function ReportHeader({
           {displayDescription}
         </p>
       )}
+
+      {/* Inline "submit another" CTA — sits right under the tier summary so the
+          ask (send us more work) is always adjacent to the verdict, regardless
+          of tier. Works for all three tiers: greenlight writers send more to
+          amplify, option-ready writers send revisions, not-ready writers send
+          a different script. */}
+      <Link
+        href="/submit"
+        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors"
+      >
+        <Upload size={14} />
+        Send another script or draft
+      </Link>
 
       {/* Revise CTA + Share buttons — client component, reads eval id from pathname */}
       <ReportActions title={title} score={weightedScore} tier={tier} />

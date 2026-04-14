@@ -13,11 +13,11 @@ const TIER_LABEL_OVERRIDES: Record<Tier, string> = {
 
 const TIER_DESCRIPTION_OVERRIDES: Record<Tier, string> = {
   'Greenlight Material':
-    'This is the top tier — the scripts we actively push to producers and managers in our network. Distinctive voice, strong commercial instincts, production-ready craft.',
+    'This is the top tier — the scripts we actively push to producers and managers in our network. Expect an email from us shortly. In the meantime, see the review below and send us any other scripts or drafts you want us to consider.',
   'Optionable':
-    'Strong enough to circulate with a focused revision. You\'re one pass away from being in front of our industry partners.',
+    'This is very good, and we\'ll be circulating it to our network. There may be a few things holding it back — see the review below and keep sharpening. Got another draft or script? Send it over and we\'ll consider it too.',
   'Needs Development':
-    'We think this is very good, but is not yet a fit for our network. See the review details below for how to raise your score.',
+    'We think this is very good, but not yet a fit for our network. See the review below for what to tighten — and if you have another draft or script, send it over and we\'ll take a look.',
 }
 
 // Score cutoffs (inclusive lower bound). Keep in sync with
