@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { RefreshCw } from 'lucide-react'
 import { type Tier } from '@/types'
-import { tierLabel, tierDescription } from '@/lib/tier-display'
+import { tierLabel, tierDescription, tierCutoffLabel, TIER_ORDER } from '@/lib/tier-display'
 import { ReportActions } from './report-actions'
 
 interface ReportHeaderProps {
@@ -38,7 +38,6 @@ export function ReportHeader({
   isOwner = false,
   blurred = false,
 }: ReportHeaderProps) {
-  const displayLabel = tierLabel(tier)
   const displayDescription = tierDescription(tier)
   const date = new Date(createdAt).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -97,20 +96,38 @@ export function ReportHeader({
         </div>
       </div>
 
-      {/* Tier (GEM Verdict) — always visible, even for free viewers. This is the "how
-          your script stands" signal; the score + critique are what's gated. */}
-      <div className="flex items-center gap-1.5">
-        <span className="text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict:</span>
-        <span
-          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
-          style={{ backgroundColor: tierColor(tier) }}
-        >
-          {displayLabel}
-        </span>
+      {/* Tier ladder (GEM Verdict) — always visible. Shows all 3 tiers with score
+          cutoffs; only the one the script qualifies for is filled in. Others are
+          greyed out so the writer sees exactly where they stand + what's above. */}
+      <div className="space-y-3">
+        <span className="block text-[10px] uppercase tracking-wider text-[var(--gem-gray-500)] font-medium">GEM Verdict</span>
+        <div className="grid grid-cols-3 gap-2">
+          {TIER_ORDER.map(t => {
+            const active = t === tier
+            return (
+              <div
+                key={t}
+                className={`rounded-lg border px-3 py-2.5 text-center transition-colors ${
+                  active
+                    ? 'border-transparent text-white'
+                    : 'border-[var(--gem-gray-700)] bg-transparent text-[var(--gem-gray-500)]'
+                }`}
+                style={active ? { backgroundColor: tierColor(t) } : undefined}
+              >
+                <div className={`text-[11px] sm:text-xs font-semibold uppercase tracking-wider leading-tight ${active ? 'text-white' : 'text-[var(--gem-gray-400)]'}`}>
+                  {tierLabel(t)}
+                </div>
+                <div className={`text-[10px] mt-1 font-medium ${active ? 'text-white/80' : 'text-[var(--gem-gray-600)]'}`}>
+                  {tierCutoffLabel(t)}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
 
       {displayDescription && (
-        <p className="text-sm text-[var(--gem-gray-400)] max-w-lg leading-relaxed">
+        <p className="text-sm text-[var(--gem-gray-300)] max-w-lg leading-relaxed">
           {displayDescription}
         </p>
       )}
