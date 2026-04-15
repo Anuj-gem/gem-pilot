@@ -30,79 +30,108 @@ export function ContactWriter({ evaluationId, writerName, state }: Props) {
     // writer_not_pro — nothing to do
   }
 
-  const copy = getCopy(state, writerName)
-  const locked = state !== 'live'
+  if (state === 'live') {
+    return (
+      <>
+        <div
+          className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
+          style={{
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
+            borderColor: 'rgba(124,58,237,0.28)',
+          }}
+        >
+          <div className="min-w-0">
+            <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
+              Interested in this script?
+            </p>
+            <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+              Reach out to {writerName} directly.
+            </p>
+          </div>
+          <button
+            onClick={handleClick}
+            className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+            style={{ background: 'var(--gem-accent)', color: '#fff' }}
+          >
+            <Mail size={14} />
+            Contact writer
+          </button>
+        </div>
+        {open && (
+          <ContactModal
+            evaluationId={evaluationId}
+            writerName={writerName}
+            onClose={() => setOpen(false)}
+          />
+        )}
+      </>
+    )
+  }
+
+  // Locked variants — prominent-looking disabled button + small upgrade link underneath.
+  const headline =
+    state === 'owner_upsell'
+      ? 'Producers and reps want to reach you here'
+      : `${writerName} isn’t reachable on GEM yet`
+  const detail =
+    state === 'owner_upsell'
+      ? 'Only GEM Pro writers can receive inbound from the industry. Upgrade to turn this on.'
+      : `${writerName} isn’t on GEM Pro — contact is locked until they upgrade.`
 
   return (
-    <>
-      <div
-        className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
+    <div
+      className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
+      style={{
+        background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
+        borderColor: 'rgba(124,58,237,0.28)',
+      }}
+    >
+      <div className="min-w-0">
+        <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
+          {headline}
+        </p>
+        <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+          {detail}
+        </p>
+        {state === 'owner_upsell' && (
+          <button
+            onClick={handleClick}
+            className="mt-2 inline-flex items-center gap-1 text-[12px] font-semibold cursor-pointer"
+            style={{ color: 'var(--gem-accent)', background: 'transparent', padding: 0 }}
+          >
+            Upgrade to GEM Pro — $20/mo →
+          </button>
+        )}
+      </div>
+      <button
+        disabled
+        aria-disabled="true"
+        title={
+          state === 'owner_upsell'
+            ? 'Upgrade to GEM Pro to receive messages'
+            : 'Writer is not on GEM Pro'
+        }
+        className="relative flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold cursor-not-allowed"
         style={{
-          background: locked
-            ? 'var(--gem-gray-900)'
-            : 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
-          borderColor: locked ? 'var(--gem-gray-700)' : 'rgba(124,58,237,0.28)',
+          background: 'var(--gem-accent)',
+          color: '#fff',
+          opacity: 0.5,
         }}
       >
-        <div className="min-w-0">
-          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
-            {copy.title}
-          </p>
-          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
-            {copy.subtitle}
-          </p>
-        </div>
-        <button
-          onClick={handleClick}
-          disabled={state === 'writer_not_pro'}
-          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors disabled:cursor-not-allowed"
-          style={
-            locked
-              ? {
-                  background: 'var(--gem-gray-800)',
-                  color: 'var(--gem-gray-300)',
-                  border: '1px solid var(--gem-gray-700)',
-                }
-              : { background: 'var(--gem-accent)', color: '#fff' }
-          }
+        <Mail size={14} />
+        Contact writer
+        <span
+          className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full grid place-items-center"
+          style={{
+            background: 'var(--gem-white)',
+            border: '1px solid var(--gem-gray-700)',
+          }}
         >
-          {locked ? <Lock size={14} /> : <Mail size={14} />}
-          {copy.cta}
-        </button>
-      </div>
-
-      {open && (
-        <ContactModal
-          evaluationId={evaluationId}
-          writerName={writerName}
-          onClose={() => setOpen(false)}
-        />
-      )}
-    </>
+          <Lock size={10} style={{ color: 'var(--gem-gray-300)' }} />
+        </span>
+      </button>
+    </div>
   )
-}
-
-function getCopy(state: ContactWriterState, writerName: string) {
-  switch (state) {
-    case 'live':
-      return {
-        title: 'Interested in this script?',
-        subtitle: `Reach out to ${writerName} directly.`,
-        cta: 'Contact writer',
-      }
-    case 'owner_upsell':
-      return {
-        title: 'Get discovered by industry',
-        subtitle: 'Upgrade to GEM Pro so producers and reps can reach you here.',
-        cta: 'Upgrade — $20/mo',
-      }
-    case 'writer_not_pro':
-      return {
-        title: 'Writer isn’t on GEM Pro yet',
-        subtitle: `${writerName} hasn’t upgraded — contact through GEM isn’t available until they do.`,
-        cta: 'Not reachable',
-      }
-  }
 }
 
 function ContactModal({
