@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { LayoutDashboard, Trophy, LogOut, Menu, X, FileText, Home, Plus, Sparkles } from 'lucide-react'
+import { LayoutDashboard, Compass, LogOut, Menu, X, FileText, Home, Plus, Sparkles } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -25,7 +25,7 @@ export default function Nav() {
 
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'Leaderboard', icon: Trophy },
+    { href: '/discover', label: 'Discover', icon: Compass },
     { href: '/sample', label: 'Samples', icon: Sparkles },
   ] : []
 
@@ -97,8 +97,8 @@ export default function Nav() {
                       : 'text-[var(--gem-gray-400)]'
                   }`}
                 >
-                  <Trophy size={16} />
-                  Leaderboard
+                  <Compass size={16} />
+                  Discover
                 </Link>
               )}
               {!pathname.startsWith('/submit') && (
@@ -124,7 +124,7 @@ export default function Nav() {
               href="/discover"
               className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
             >
-              Leaderboard
+              Discover
             </Link>
             <Link
               href="/sample"

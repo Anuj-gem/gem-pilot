@@ -66,7 +66,7 @@ export default async function DashboardPage() {
             <p className="text-sm text-[var(--gem-gray-400)] mt-1">
               {isSubscribed
                 ? 'All your submitted scripts and evaluations'
-                : 'Submit scripts, get scored, and climb the leaderboard'}
+                : 'Submit scripts, get positioned, and get surfaced to producers'}
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -134,13 +134,13 @@ export default async function DashboardPage() {
               })()}
             </div>
 
-            {/* Leaderboard nudge (mobile) */}
+            {/* Discover nudge (mobile) */}
             <Link
               href="/discover"
               className="sm:hidden flex items-center gap-2 p-3 rounded-lg border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors mb-6"
             >
               <Compass size={16} className="text-[var(--gem-accent)] shrink-0" />
-              <span className="flex-1">See how other writers scored on the leaderboard</span>
+              <span className="flex-1">Browse other writers on Discover</span>
               <ArrowRight size={14} className="shrink-0" />
             </Link>
 
@@ -243,7 +243,7 @@ export default async function DashboardPage() {
                 className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
               >
                 <Compass size={14} />
-                Browse the leaderboard
+                Browse Discover
                 <ArrowRight size={14} />
               </Link>
             </div>

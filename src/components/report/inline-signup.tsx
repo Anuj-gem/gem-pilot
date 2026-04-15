@@ -97,7 +97,7 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
         Claim your report — then get it in front of the industry.
       </h3>
       <p className="text-xs text-[var(--gem-gray-400)] mb-4">
-        A free account keeps your report forever. Upgrade to publish to the Discovery Board, where producers, managers, and our production partners read what&apos;s climbing.
+        A free account keeps your report forever. Upgrade to feature your script on Discover, where producers, managers, and our production partners search for promising writers.
       </p>
 
       <form onSubmit={handleSignup} className="space-y-3">

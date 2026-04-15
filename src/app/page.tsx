@@ -68,7 +68,7 @@ export default async function Home() {
               Samples
             </Link>
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
-              Leaderboard
+              Discover
             </Link>
             <Link href="/login" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Log in
@@ -182,15 +182,15 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Live from the Leaderboard — rich list with tags */}
-      <TrackSection name="leaderboard_snapshot">
+      {/* Live from Discover — rich list with tags */}
+      <TrackSection name="discover_snapshot">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-12 sm:py-24">
           <div className="flex items-center gap-2 mb-2 sm:mb-4">
             <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live from the leaderboard</p>
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live on Discover</p>
           </div>
           <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how writers are positioning their scripts.</h2>
 
@@ -252,14 +252,14 @@ export default async function Home() {
               ))}
             </div>
           ) : (
-            <p className="text-center py-8 text-[var(--gem-gray-400)]">Loading leaderboard...</p>
+            <p className="text-center py-8 text-[var(--gem-gray-400)]">Loading Discover...</p>
           )}
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <TrackedCTA
               href="/submit"
               event="cta_clicked"
-              properties={{ location: 'leaderboard_snapshot', label: 'Submit yours' }}
+              properties={{ location: 'discover_snapshot', label: 'Submit yours' }}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
               Get your script positioned
@@ -268,10 +268,10 @@ export default async function Home() {
             <TrackedCTA
               href="/discover"
               event="cta_clicked"
-              properties={{ location: 'leaderboard_snapshot', label: 'See all scripts' }}
+              properties={{ location: 'discover_snapshot', label: 'See all scripts' }}
               className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline font-medium"
             >
-              See all scripts on the leaderboard
+              Browse Discover
               <ArrowRight size={14} />
             </TrackedCTA>
           </div>
@@ -449,7 +449,7 @@ export default async function Home() {
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Three</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Your Break</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Rewrite, resubmit, and climb. The best writers rise to the top — and GEM is built to help them get the
+                Rewrite, resubmit, and get surfaced. The best writers rise to the top — and GEM is built to help them get the
                 attention they&apos;ve been waiting for.
               </p>
             </div>
@@ -517,7 +517,7 @@ export default async function Home() {
                 </div>
               </div>
               <ul className="space-y-2.5 mb-5">
-                {['Full development reads with production analysis', 'Character breakdowns and market positioning', 'Publish to the public leaderboard', 'Cancel anytime'].map(item => (
+                {['Full development reads with production analysis', 'Character breakdowns and market positioning', 'Featured on Discover for producers and reps', 'Cancel anytime'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
                     {item}
@@ -546,7 +546,7 @@ export default async function Home() {
             Featured on the Discovery Board.
           </h2>
 
-          {/* Newest leaderboard preview card */}
+          {/* Newest Discover preview card */}
           {topScripts && topScripts.length > 0 && (
             <Link
               href={`/report/${topScripts[0].evaluation_id ?? topScripts[0].id}`}

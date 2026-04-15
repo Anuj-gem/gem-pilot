@@ -645,19 +645,19 @@ function SubmitPageInner() {
         </form>
         )}
 
-        {/* Leaderboard nudge */}
+        {/* Discover nudge */}
         <div className="mt-8 p-4 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
           <div className="flex items-start gap-3">
             <Compass size={18} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
             <div>
               <p className="text-sm text-[var(--gem-gray-300)]">
-                Don&apos;t have a script handy? Browse the Discovery Board to see how other writers are positioning their screenplays.
+                Don&apos;t have a script handy? Browse Discover to see how other writers are positioning their screenplays.
               </p>
               <Link
                 href="/discover"
                 className="inline-flex items-center gap-1.5 mt-2 text-sm text-[var(--gem-accent)] hover:underline"
               >
-                Browse the leaderboard
+                Browse Discover
                 <ArrowRight size={14} />
               </Link>
             </div>

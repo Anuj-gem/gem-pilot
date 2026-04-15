@@ -93,7 +93,7 @@ export const trackLandingView = () =>
 export const trackHeroUpload = () =>
   trackEvent('hero_file_uploaded')
 
-/** Visitor clicks "Browse the leaderboard" */
+/** Visitor clicks "Browse Discover" */
 export const trackLeaderboardClick = () =>
   trackEvent('leaderboard_cta_clicked')
 
@@ -146,7 +146,7 @@ export const trackSubscribeClick = (location: string) =>
 export const trackSubscriptionActivated = () =>
   trackEvent('subscription_activated')
 
-/** User makes script public (published to leaderboard) */
+/** User makes script public (featured on Discover) */
 export const trackScriptPublished = (props: { title: string; score?: number; submissionId: string }) =>
   trackEvent('script_published', props)
 
