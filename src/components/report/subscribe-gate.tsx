@@ -1,16 +1,12 @@
 'use client'
-
+// Upgrade modal — only opens when an upgrade CTA in the app dispatches
+// 'gem:open-upgrade-modal'. No longer auto-opens on page load (the report
+// already has inline upgrade CTAs + the Contact/Commercial Potential teases).
+// Copy leans into what Pro unlocks most immediately: getting featured on Discover.
 import { useState, useEffect } from 'react'
-import { CheckCircle, ArrowRight, X } from 'lucide-react'
-import Link from 'next/link'
+import { CheckCircle, ArrowRight, X, Sparkles } from 'lucide-react'
 import { trackSubscribeClick, trackSubscribeFromReport } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
-
-const STORAGE_KEY = 'gem_upgrade_dismissed_date'
-
-function todayString() {
-  return new Date().toISOString().slice(0, 10) // YYYY-MM-DD
-}
 
 interface SubscribeGateProps {
   evaluationId: string
@@ -18,32 +14,18 @@ interface SubscribeGateProps {
 }
 
 export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) {
+  const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
-  // Start as not dismissed; useEffect will correct it after mount
-  const [dismissed, setDismissed] = useState(false)
 
-  // On mount: if user already dismissed the modal today, start in banner mode
+  // Only opens on event — no auto-open on mount.
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY)
-      if (stored === todayString()) setDismissed(true)
-    } catch {
-      // localStorage blocked — leave as modal
-    }
-  }, [])
-
-  // Allow other components (e.g. the visibility toggle) to re-open the modal
-  useEffect(() => {
-    const handler = () => {
-      try { localStorage.removeItem(STORAGE_KEY) } catch { /* blocked */ }
-      setDismissed(false)
-    }
+    const handler = () => setOpen(true)
     window.addEventListener('gem:open-upgrade-modal', handler)
     return () => window.removeEventListener('gem:open-upgrade-modal', handler)
   }, [])
 
   const handleSubscribe = async () => {
-    trackSubscribeClick(dismissed ? 'bottom_banner' : 'blurred_report')
+    trackSubscribeClick('upgrade_modal')
     trackSubscribeFromReport({ evaluationId })
     gtagSubscribeClicked()
     setLoading(true)
@@ -65,56 +47,51 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
     }
   }
 
-  // ── Sticky bottom banner (after modal is dismissed) ──
-  if (dismissed) {
-    return (
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <p className="text-sm text-[var(--gem-gray-300)]">
-            <span className="font-medium text-[var(--gem-white)]">Unlock your score + full critique</span>
-            <span className="hidden sm:inline"> — and get surfaced to our industry network</span>
-          </p>
-          <button
-            onClick={handleSubscribe}
-            disabled={loading}
-            className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
-          >
-            {loading ? 'Redirecting...' : 'Unlock — $20/mo'}
-            {!loading && <ArrowRight size={14} />}
-          </button>
-        </div>
-      </div>
-    )
-  }
+  if (!open) return null
 
-  // ── Center modal (default state on page load) ──
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 pointer-events-none">
-      <div className="relative w-full max-w-md rounded-2xl border border-[var(--gem-gray-600)] bg-[var(--gem-black)] shadow-2xl shadow-black/60 p-6 sm:p-8 pointer-events-auto">
-        {/* Close button */}
+    <div
+      onClick={() => setOpen(false)}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-sm rounded-2xl border border-[var(--gem-gray-600)] bg-[var(--gem-black)] shadow-2xl shadow-black/60 p-6"
+      >
         <button
-          onClick={() => {
-            try { localStorage.setItem(STORAGE_KEY, todayString()) } catch { /* blocked */ }
-            setDismissed(true)
-          }}
-          className="absolute top-4 right-4 text-[var(--gem-gray-500)] hover:text-[var(--gem-white)] transition-colors cursor-pointer"
+          onClick={() => setOpen(false)}
+          className="absolute top-3 right-3 text-[var(--gem-gray-500)] hover:text-[var(--gem-white)] transition-colors"
           aria-label="Close"
         >
-          <X size={18} />
+          <X size={16} />
         </button>
 
-        <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-          Unlock your full report — $20/month
+        <div
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] uppercase tracking-[0.14em] font-bold mb-3"
+          style={{ background: 'rgba(124,58,237,0.12)', color: 'var(--gem-accent)' }}
+        >
+          <Sparkles size={11} />
+          GEM Pro
+        </div>
+
+        <h3 className="text-base font-bold text-[var(--gem-white)] mb-1 leading-snug">
+          Get your scripts in front of producers and reps — $20/mo
         </h3>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-5">
-          We use GEM to decide which scripts to surface to our industry network. See your score, the full critique, and what to fix — then keep revising until it lands.
+        <p className="text-[13px] text-[var(--gem-gray-400)] mb-4 leading-snug">
+          Pro writers get featured on Discover, where our industry network searches for promising scripts.
         </p>
 
-        <ul className="space-y-2 mb-6">
-          {['Your GEM score, unblurred', 'Full critique: what\u2019s holding it back + how to fix', 'Production + development read', 'Top-scored scripts get surfaced to our industry network', 'Unlimited evaluations on every draft'].map(item => (
-            <li key={item} className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]">
-              <CheckCircle size={14} className="text-emerald-600 shrink-0" />
-              {item}
+        <ul className="space-y-1.5 mb-5">
+          {[
+            'Feature unlimited scripts on Discover',
+            'Producers + reps can contact you directly',
+            'Your Commercial Potential score, unblurred',
+            'Full Details tab: production, dimensions, notes',
+            'Unlimited evaluations on every draft',
+          ].map(item => (
+            <li key={item} className="flex items-start gap-2 text-[13px] text-[var(--gem-gray-300)]">
+              <CheckCircle size={13} className="text-emerald-500 shrink-0 mt-0.5" />
+              <span>{item}</span>
             </li>
           ))}
         </ul>
@@ -122,22 +99,15 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         <button
           onClick={handleSubscribe}
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
+          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-semibold hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
         >
-          {loading ? 'Redirecting...' : 'Unlock your report — $20/mo'}
-          {!loading && <ArrowRight size={16} />}
+          {loading ? 'Redirecting…' : 'Upgrade to Pro — $20/mo'}
+          {!loading && <ArrowRight size={14} />}
         </button>
 
-        <p className="text-xs text-[var(--gem-gray-500)] mt-3 text-center">
+        <p className="text-[11px] text-[var(--gem-gray-500)] mt-2.5 text-center">
           Cancel anytime. Secure checkout via Stripe.
         </p>
-
-        <Link
-          href="/discover"
-          className="mt-3 flex items-center justify-center gap-1.5 text-xs text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-        >
-          Or browse full sample reports <ArrowRight size={10} />
-        </Link>
       </div>
     </div>
   )
