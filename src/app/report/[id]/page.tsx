@@ -1,29 +1,57 @@
+// v4 report — positioning-first. No scores or tiers in the Pitch view.
+// Pitch tab (public): hook, what makes this special, lead characters.
+// Details tab (private to the writer, paid unlock for viewers):
+//   production reality, considerations for development, dimension analysis (with X/10).
+//
+// Gate model — unchanged from v3: blur is driven by the SUBMISSION OWNER's subscription.
+//   ownerIsSubscribed  → report is fully unlocked for everyone
+//   !ownerIsSubscribed → free tease: pitch hook + headline + 2 strengths; everything else
+//                        is blurred behind SectionLock CTAs (pro for logged-in, signup for
+//                        anonymous). Owner always sees their own report fully.
+//
+// Dimension scores are shown as "X/10" in Details. For free viewers they blur to "?/10"
+// which is the tease the writer said entices upgrade.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/nav'
-import { ReportHeader } from '@/components/report/report-header'
-import { ScoreCard } from '@/components/report/score-card'
-import { WhatsSpecialSection } from '@/components/report/whats-special'
-import { WhatsHoldingItBackSection } from '@/components/report/whats-holding-it-back'
-import { ProductionReality } from '@/components/report/production-reality'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
-import { SectionLock } from '@/components/report/section-lock'
+import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
+import { ReportTabs } from '@/components/report/report-tabs'
+import { ContactWriter } from '@/components/report/contact-writer'
+import {
+  DetailsView,
+  SectionHeader,
+  LeadCharacterCard,
+  LockedLeadCharacterCard,
+} from '@/components/report/details-view'
 import { normalizeEvaluation } from '@/types'
-import type { ScriptEvaluation, ScriptSubmission } from '@/types'
+import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
 
 interface PageProps {
   params: Promise<{ id: string }>
   searchParams: Promise<{ for?: string }>
 }
 
-// Service client for reading anonymous submissions
+// v4-specific fields that aren't in the shared GEMEvaluation type yet.
+interface V4Extras {
+  positioning_hook?: string
+  lead_characters?: {
+    name: string
+    role_type: string
+    demographics: string
+    hook: string
+    why_actor_wants_this: string
+  }[]
+  considerations?: { area: string; detail: string; source?: string }[]
+}
+
 function createServiceClient() {
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -44,7 +72,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const serviceClient = createServiceClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Use service client to fetch evaluation (works for anonymous submissions too)
   const { data: evaluation, error } = await serviceClient
     .from('script_evaluations')
     .select(`
@@ -57,8 +84,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     .eq('id', id)
     .single()
 
-  if (error || !evaluation) {
-    notFound()
+  if (error || !evaluation) notFound()
+
+  // Preview-only override: if USE_PENDING_EVALS=1 is set on this deployment
+  // (positioning-rebuild preview), swap the evaluation payload (score, tier,
+  // report JSON) with the rescored v4 row from script_evaluations_pending
+  // matched by submission_id. Falls through silently if no pending row exists.
+  if (process.env.USE_PENDING_EVALS === '1') {
+    const subId = (evaluation as any).submission_id
+    if (subId) {
+      const { data: pending } = await serviceClient
+        .from('script_evaluations_pending')
+        .select('weighted_score, tier, evaluation')
+        .eq('submission_id', subId)
+        .maybeSingle()
+      if (pending) {
+        ;(evaluation as any).weighted_score = pending.weighted_score
+        ;(evaluation as any).tier = pending.tier
+        ;(evaluation as any).evaluation = pending.evaluation
+      }
+    }
   }
 
   const eval_ = evaluation as ScriptEvaluation & {
@@ -67,20 +112,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     }
   }
 
-  const report = eval_.evaluation
+  const report = eval_.evaluation as GEMEvaluation & V4Extras
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAnonymousSubmission = !submission.user_id
   const hasExpiry = isAnonymousSubmission && !!submission.expires_at
   const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
+  const writerName = submission.profiles?.full_name ?? 'the writer'
 
-  // Normalize v2/v3 evaluation shape
-  const { classification, whatsSpecial, whatsHoldingItBack } = normalizeEvaluation(report)
+  const { classification, whatsSpecial } = normalizeEvaluation(report)
 
-  // Determine blur: based on the submission OWNER's subscription, not the viewer's.
-  // If the owner is subscribed and the post is public, everyone sees it fully.
-  // If the owner is NOT subscribed (or cancelled), the report is blurred for everyone
-  // except the owner themselves seeing their own score/tier (header is always visible).
+  // Gate logic (subscription-only):
+  //   Only paying subscribers see full reports. This applies to EVERYONE,
+  //   including the writer who uploaded the script — the owner is the highest-
+  //   intent conversion target, so we don't give them a free full view of their
+  //   own work. Free tier universally = hook + headline + 2 strengths, rest blurred.
   let ownerIsSubscribed = false
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
@@ -88,20 +134,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .select('subscription_status')
       .eq('id', submission.user_id)
       .single()
-
     ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
   }
 
-  const isPublicPost = submission.is_public === true
-  // Show full report if: owner is subscribed, OR post is public (which requires subscription to toggle on)
-  // Blur if: owner is NOT subscribed AND post is NOT public
-  const showBlurred = !ownerIsSubscribed && !isPublicPost
-  // Every non-paid viewer (anonymous OR logged-in free) gets full blur. The selective
-  // blur for logged-in free users was leaking enough value that paid conversions dried
-  // up — reverted to full blur across the board while keeping the same lock CTAs.
-  const fullBlur = showBlurred
+  let viewerIsSubscribed = false
+  if (user) {
+    const { data: viewerProfile } = await serviceClient
+      .from('profiles')
+      .select('subscription_status')
+      .eq('id', user.id)
+      .single()
+    viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
+  }
 
-  // Get like count and whether current user has liked
+  // Content blur gate = WRITER's subscription status (not viewer's).
+  // Pro writer → report is unblurred for everyone. Free writer → blurred for everyone,
+  // including the owner (the owner blur is the upsell pressure).
+  const unlocked = ownerIsSubscribed
+  const showBlurred = !unlocked
+  // Login is required to reach this page, so any locked viewer is a free member.
+  const lockVariant: 'signup' | 'pro' | null = showBlurred ? 'pro' : null
+
   const { count: likeCount } = await supabase
     .from('script_likes')
     .select('*', { count: 'exact', head: true })
@@ -118,6 +171,32 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     userLiked = !!existingLike
   }
 
+  // Free tease: first 2 strengths fully visible, remainder locked.
+  const allStrengths = whatsSpecial.strengths ?? []
+  const visibleStrengths = unlocked ? allStrengths : allStrengths.slice(0, 2)
+  const lockedStrengthCount = unlocked ? 0 : Math.max(0, allStrengths.length - 2)
+
+  const positioningHook = report.positioning_hook ?? ''
+  const leadCharacters = report.lead_characters ?? []
+  const considerations = report.considerations ?? []
+  const production = report.production_reality
+  const scores = report.scores ?? {}
+
+  // Contact Writer state matrix — gated ONLY by the WRITER's subscription.
+  // Anyone (free or paid) can contact a Pro writer. Free writers are not reachable.
+  //   - owner on free tier  → owner_upsell  (upgrade to become reachable)
+  //   - owner on Pro        → hide (can't message self)
+  //   - non-owner, writer Pro  → live (viewer tier doesn't matter)
+  //   - non-owner, writer free → writer_not_pro
+  let contactState: 'live' | 'owner_upsell' | 'writer_not_pro' | null = null
+  if (!isAnonymousSubmission && !!submission.user_id) {
+    if (isOwner) {
+      contactState = ownerIsSubscribed ? null : 'owner_upsell'
+    } else {
+      contactState = ownerIsSubscribed ? 'live' : 'writer_not_pro'
+    }
+  }
+
   return (
     <>
       <Nav />
@@ -125,21 +204,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
       <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
-      <div className={`max-w-3xl mx-auto px-4 py-8 space-y-8 ${showBlurred ? 'pb-32' : ''}`}>
-        {/* Private demo banner — shown when ?for=Writer+Name is present in the URL */}
-        {forWriter && (
-          <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />
-        )}
 
-        {/* Inline signup for anonymous users — right at the top, before the report.
-            id="inline-signup" is the scroll target for per-section lock CTAs below. */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24 space-y-8">
+        {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
+
         {isAnonymousSubmission && (
           <div id="inline-signup" className="rounded-xl transition-shadow duration-500">
             <InlineSignup submissionId={submission.id} evaluationId={id} />
           </div>
         )}
 
-        {/* Owner controls + like (only for authenticated non-anonymous submissions) */}
         {!isAnonymousSubmission && (
           <div className="flex items-center gap-3 flex-wrap">
             {isOwner && (
@@ -160,90 +234,199 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Header: title, tier, weighted score, tags.
-            Score is blurred for free/unsubscribed viewers (including the owner themselves)
-            — the score is the key unlock and part of what you pay for. */}
-        <ReportHeader
-          title={submission.title}
-          author={submission.profiles?.full_name ?? 'Anonymous'}
-          tier={eval_.tier}
-          weightedScore={eval_.weighted_score}
-          format={classification.format}
-          genre={classification.genre_primary}
-          genreTags={classification.genre_tags}
-          tone={classification.tone}
-          createdAt={eval_.created_at}
-          isOwner={isOwner}
-          blurred={showBlurred}
-        />
+        {/* Title + meta */}
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--gem-white)] tracking-tight leading-tight mb-3">
+            {submission.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--gem-gray-400)]">
+            {classification.format && <span>{classification.format}</span>}
+            {classification.genre_primary && (
+              <>
+                <span className="text-[var(--gem-gray-500)]">·</span>
+                <span>{classification.genre_primary}</span>
+              </>
+            )}
+            {classification.genre_tags?.map((t, i) => (
+              <span
+                key={i}
+                className="px-2.5 py-0.5 rounded-full text-xs text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
+              >
+                {t}
+              </span>
+            ))}
+            {classification.tone && (
+              <>
+                <span className="text-[var(--gem-gray-500)]">·</span>
+                <span className="italic text-[var(--gem-gray-500)]">{classification.tone}</span>
+              </>
+            )}
+            {submission.created_at && (
+              <>
+                <span className="text-[var(--gem-gray-500)]">·</span>
+                <span className="text-[var(--gem-gray-500)]">
+                  Posted {new Date(submission.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </span>
+              </>
+            )}
+          </div>
+        </div>
 
-        {/* Report sections.
-            - fullBlur (anonymous viewer): each component renders its card chrome and
-              header clearly but fully blurs its body. Centered lock CTA overlay.
-            - showBlurred && user (logged-in free): components handle selective blur
-              internally. Centered lock CTA overlay.
-            - Otherwise (owner / subscribed / public): rendered normally, no overlay.
-         */}
-        {(() => {
-          // Pick the CTA by viewer auth state, not blur mode:
-          //   - logged-in free viewer  → 'pro'   (Stripe upgrade modal)
-          //   - anonymous viewer       → 'signup' (claim/signup flow)
-          const lockVariant: 'signup' | 'pro' | null = showBlurred
-            ? (user ? 'pro' : 'signup')
-            : null
-
-          const wrap = (node: React.ReactNode, key: string) => (
-            <div key={key} className="relative">
-              {node}
-              {lockVariant && (
-                <SectionLock variant={lockVariant} evaluationId={id} position="center" />
-              )}
+        {/* Positioning hook — always visible */}
+        {positioningHook && (
+          <div
+            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8"
+            style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
+          >
+            <div
+              aria-hidden
+              className="absolute left-0 top-5 bottom-5 rounded-r"
+              style={{ width: 3, background: 'var(--gem-gold)' }}
+            />
+            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
+              The Pitch
             </div>
-          )
+            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
+              {positioningHook}
+            </p>
+          </div>
+        )}
 
-          return (
+        {/* Contact writer — live / upsell / writer-not-pro depending on state */}
+        {contactState && (
+          <ContactWriter
+            evaluationId={id}
+            writerName={writerName}
+            state={contactState}
+            isLoggedIn={!!user}
+          />
+        )}
+
+        <ReportTabs
+          showDetails={isOwner}
+          detailsLocked={!unlocked}
+          pitch={
             <>
-              {/* What's Working — always fully visible, even for free viewers.
-                  Tier + strengths are the free tier of value; score + critique are gated. */}
-              <WhatsSpecialSection
-                data={whatsSpecial}
-                blurred={false}
-                fullBlur={false}
-              />
-              {wrap(
-                <WhatsHoldingItBackSection
-                  data={whatsHoldingItBack}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'holding'
+              {!unlocked && lockVariant && (
+                <InlineUpgradeCTA
+                  evaluationId={id}
+                  label="You're seeing a preview of this report"
+                  subtext="Upgrade to read every writer's full pitch and message them directly."
+                />
               )}
-              {wrap(
-                <ScoreCard
-                  scores={report.scores}
-                  weightedScore={eval_.weighted_score}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'scores'
-              )}
-              {wrap(
-                <ProductionReality
-                  production={report.production_reality}
-                  blurred={showBlurred && !fullBlur}
-                  fullBlur={fullBlur}
-                />,
-                'production'
-              )}
+
+              {/* What Makes This Special */}
+              <section className="mb-12">
+                <SectionHeader label="What Makes This Special" />
+                {whatsSpecial.headline && (
+                  <p className="text-base sm:text-lg text-[var(--gem-gray-200)] leading-relaxed mb-6">
+                    {whatsSpecial.headline}
+                  </p>
+                )}
+                <div className="space-y-3">
+                  {visibleStrengths.map((s, i) => (
+                    <div
+                      key={i}
+                      className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
+                    >
+                      <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
+                        {s.dimension_or_area}
+                      </p>
+                      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
+                        {s.what_it_means}
+                      </p>
+                      {s.evidence && (
+                        <p className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed">
+                          {s.evidence}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                  {lockedStrengthCount > 0 && (
+                    <>
+                      {/* Fully blur the entire locked strength — dimension label
+                          included. The first 2 visible strengths carry the value
+                          proof; leaking more detail weakens the upgrade pressure. */}
+                      {allStrengths.slice(2).map((s, i) => (
+                        <div
+                          key={i}
+                          className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white select-none"
+                          style={{ filter: 'blur(5px)' }}
+                        >
+                          <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
+                            {s.dimension_or_area}
+                          </p>
+                          <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
+                            {s.what_it_means}
+                          </p>
+                          {s.evidence && (
+                            <p className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed">
+                              {s.evidence}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                      {lockVariant && <InlineUpgradeCTA evaluationId={id} />}
+                    </>
+                  )}
+                </div>
+              </section>
+
+              {/* Lead Characters */}
+              <section className="mb-12">
+                <SectionHeader label="Lead Characters" />
+                <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
+                  The parts inside this script and why an actor would chase them.
+                </p>
+                {leadCharacters.length === 0 ? (
+                  <p className="text-sm text-[var(--gem-gray-500)] italic">
+                    No lead character breakdown available for this report.
+                  </p>
+                ) : unlocked ? (
+                  <div className="space-y-3">
+                    {leadCharacters.map((c, i) => (
+                      <LeadCharacterCard key={i} c={c} />
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    {lockVariant && <InlineUpgradeCTA evaluationId={id} />}
+                    <div className="space-y-3">
+                      {leadCharacters.map((c, i) => (
+                        <LockedLeadCharacterCard key={i} c={c} />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </section>
             </>
-          )
-        })()}
+          }
+          details={
+            unlocked ? (
+              <DetailsView
+                scores={scores}
+                production={production}
+                considerations={considerations}
+                overallScore={eval_?.weighted_score ?? null}
+                showScores
+                locked={false}
+              />
+            ) : (
+              <DetailsView
+                scores={scores}
+                production={production}
+                considerations={considerations}
+                overallScore={eval_?.weighted_score ?? null}
+                showScores={false}
+                locked={true}
+                evaluationId={id}
+              />
+            )
+          }
+        />
       </div>
 
-      {/* Subscribe overlay — only for logged-in free users, not anonymous */}
-      {showBlurred && user && (
-        <SubscribeGate evaluationId={id} isLoggedIn={true} />
-      )}
+      {showBlurred && user && <SubscribeGate evaluationId={id} isLoggedIn={true} />}
     </>
   )
 }

@@ -117,6 +117,14 @@ function authorFor(item) {
     'Limitless': 'Leslie Dixon',
     'Collateral': 'Stuart Beattie',
     'Hellboy': 'Guillermo del Toro, Peter Briggs',
+    'Get Out': 'Jordan Peele',
+    'La La Land': 'Damien Chazelle',
+    'Django Unchained': 'Quentin Tarantino',
+    'Juno': 'Diablo Cody',
+    'Succession': 'Jesse Armstrong',
+    'Stranger Things': 'The Duffer Brothers',
+    'Mad Men': 'Matthew Weiner',
+    'Fleabag': 'Phoebe Waller-Bridge',
   }
   return map[item.title] || null
 }
@@ -128,6 +136,7 @@ async function postEvaluate(item, pdfPath) {
   const fd = new FormData()
   fd.append('file', blob, `${item.slug}.pdf`)
   fd.append('title', item.title)
+  if (item.declared_format) fd.append('declared_format', item.declared_format)
 
   const res = await fetch(`${API_BASE}/api/evaluate`, { method: 'POST', body: fd })
   const json = await res.json().catch(() => ({}))

@@ -37,55 +37,118 @@ ${formatLine}
 
 ## STEP 2: Positioning Hook
 
-One sentence. The line a manager could paste into an email to a producer to get them to read the script. It must be specific to THIS script — not generic. It should name the genre, the hook, and what makes it ownable in under 25 words.
+One sentence. The line a manager could paste into an email to a producer to get them to read the script. It must be specific to THIS script — not generic. It should evoke the genre, the hook, and what makes it ownable in under 25 words.
 
-Good: "A contained sci-fi thriller where the crew of a generation ship discovers the mission was a cover story — Alien crossed with The Truman Show."
+**Hard rule: DO NOT use comparison framing.** No "X meets Y," "X crossed with Y," "X in the world of Y," or "a mashup of X and Y." These shortcuts collapse a specific script into two reference points and tell a producer nothing they can't already imagine. Build the hook from the script's own DNA instead: the protagonist's contradiction, the specific engine of the concept, the tonal texture, the world rule that drives conflict.
 
-Bad: "A compelling thriller with strong characters and a unique premise." (Vague, could describe anything.)
+Good: "A contained sci-fi thriller where the crew of a generation ship discovers the mission was a cover story — and the truth is waiting one airlock away."
+
+Good: "A devoutly religious hitwoman takes a final job in her hometown and has to decide which version of herself survives the week."
+
+Bad: "A contained sci-fi thriller — Alien crossed with The Truman Show." (Comparisons are forbidden.)
+
+Bad: "A compelling thriller with strong characters and a unique premise." (Vague — could describe anything.)
 
 ---
 
 ## STEP 3: Score Card (10 Dimensions, 1-10) — INTERNAL SIGNAL ONLY
 
-Score the script on each dimension. These scores are for internal calibration and are NOT shown to the writer. But every score MUST reference specific scenes, characters, or structural choices.
+Score the script on each dimension. These scores are for internal calibration and are only shown to the writer in a private section — they drive a weighted average that the writer sees. Every score MUST reference specific scenes, characters, or structural choices.
 
-**Calibration:**
+**CRITICAL — Scoring calibration is separate from tone.**
+The numeric \`score\` value MUST be calibrated honestly against the anchors below. The advocate framing applies ONLY to the prose in the \`reasoning\` field — it MUST NOT inflate the number. A script with a clear hook but thin characters should still score low on character even if the pitch positions the thinness as opportunity. Do not drift scores upward out of encouragement. Baseline professional craft = 5. Most produced scripts land 5-7. 8+ is genuinely distinctive. 9+ is rare.
+
+**Overall calibration:**
 - 5 = Baseline produced quality. Competent, professional, not memorable.
 - 7-8 = High-potential. Distinctive qualities, stands out from the crowd.
 - 9-10 = Exceptional signal. Cultural resonance and lasting impact.
 - Below 5 = Below produced quality. Identifiable craft gaps or structural problems.
 
-**Reasoning style:** Write the reasoning field in advocate voice. Describe what the dimension IS in this script — the texture, the choice, the effect — not what it lacks. If a dimension is weak, state the version of the script where it works. ("The ensemble leans on the protagonist; a stronger B-story for the sister would expand the engine" — NOT "weak ensemble, B-stories underdeveloped.")
+**Reasoning style (prose only, not the number):** Write the reasoning field in advocate voice. Describe what the dimension IS in this script — the texture, the choice, the effect — not what it lacks. If a dimension is weak, state the version of the script where it works. ("The ensemble leans on the protagonist; a stronger B-story for the sister would expand the engine" — NOT "weak ensemble, B-stories underdeveloped.") But again: the number itself stays honest. A 5 with graceful prose is still a 5.
 
 ### 1. Audience Appeal & Marketability
 How broadly appealing and marketable is this? Is the emotional promise immediately clear?
 
+- 8-10: Multi-quadrant appeal, obvious word-of-mouth hooks, genre with proven staying power
+- 5-7: Clear audience exists but narrower; appeal is real but not explosive
+- 1-4: Niche or unclear audience; hard to articulate who this is for
+
 ### 2. Conceptual Hook & Clarity
 Can you explain the premise in 2 sentences? Does the hook emerge early? Are stakes and story engine established?
+
+- 8-10: High-concept or immediately intriguing; hook arrives early; casual viewer can follow
+- 5-7: Premise is clear but not distinctive; or distinctive but takes too long to land
+- 1-4: Unclear what this is about; overly complex; no identifiable hook
 
 ### 3. Character Appeal & Long-Term Potential
 Are the leads charismatic, contradictory, and durable? Do relationships generate sustainable story engines?
 
+For features/shorts: assess character depth and arc completion rather than multi-season durability.
+
+- 8-10: Visible desires + contradictions; distinctive ensemble; clear engines for future story
+- 5-7: Characters function but lack surprise or depth
+- 1-4: Flat, interchangeable, or generic characters
+
 ### 4. Creative Originality & Boldness
 How fresh is the voice, angle, or approach? Does it take risks?
+
+- 8-10: Novel angle or entirely fresh concept; confident stylistic choices; earned surprises
+- 5-7: Some distinctive elements but largely familiar execution
+- 1-4: Derivative; by-the-book; no identifiable voice
 
 ### 5. Narrative Momentum & Engagement
 Does it move? Are stakes clear and escalating? Does it compel you to keep reading?
 
+For features/shorts: does the structure build to a satisfying climax? For pilots: does the ending open story doors?
+
+- 8-10: Propulsive pacing; meaningful escalation; ending demands more
+- 5-7: Adequate pacing but some slack; stakes could be clearer
+- 1-4: Meandering; unclear stakes; no urgency
+
 ### 6. Resonant Originality
-Does the script feel fresh in a way that also lands immediately — not just novel, but surprising AND inevitable?
+Does the script feel fresh in a way that also lands immediately — not just novel, but surprising AND inevitable? The "I've never seen this, but of course this exists" quality.
+
+- 9-10: Completely original yet instantly obvious why it works (Breaking Bad: chemistry teacher becomes meth cook)
+- 7-8: Fresh angle that is novel and intriguing but takes a beat to fully land (The Americans: sleeper agents as married couple)
+- 5-6: One unusual hook on an otherwise familiar show
+- 3-4: Surface-level freshness — one unusual element on a derivative premise
+- 1-2: Pure imitation with no distinguishing angle
 
 ### 7. World Density & Texture
 How rich, layered, and story-generating is the world? Is the setting an engine, not just a backdrop?
 
+- 9-10: World has rules, hierarchies, and tensions that create ongoing story potential; large off-screen world with visible edges (The Wire: Baltimore's institutional ecosystem)
+- 7-8: Dense social rules and texture; world is specific and story-generating (Mad Men: 1960s ad agency world)
+- 5-6: Some texture but world is mostly a container for cases/episodes
+- 3-4: Generic setting with no distinctive social texture
+- 1-2: Featureless setting with no story-generating capacity
+
 ### 8. Tonal Specificity
-How distinct and hard-to-imitate is the script's tonal identity? Could you identify this from a single scene?
+How distinct and hard-to-imitate is the script's tonal identity? Could you identify this show from a single scene?
+
+- 9-10: Unmistakable blend of elements unique to this show (Fleabag: raw grief + dark comedy + direct intimacy; Atlanta: surrealist Black Southern absurdism)
+- 7-8: Specific flavor that distinguishes it from the field (Succession: cringe-comedy-tragedy for the ultra-wealthy)
+- 5-6: Consistent tone but nothing that distinguishes it from similar shows
+- 3-4: Still figuring out what kind of show it wants to be
+- 1-2: No tonal identity; mood shifts arbitrarily
 
 ### 9. Latent Depth & Slow-Burn Potential
-Does it suggest deeper long-term payoff? Are there hidden reserves beneath the surface?
+Does the pilot suggest deeper long-term payoff? Are there hidden reserves beneath the surface that will reward continued viewing?
+
+- 9-10: Appears simple on surface but contains seeds of extraordinary depth (Schitt's Creek: fish-out-of-water comedy hiding a show about family love; Mad Men: Don Draper's surface hiding a reinvented identity)
+- 7-8: Deliberately withholding — you sense enormous depth but see only the surface (Severance)
+- 5-6: Some character mystery that suggests more depth than average
+- 3-4: What you see is what you get
+- 1-2: Completely surface-level; no sense of depth beneath what is shown
 
 ### 10. Relationship Density & Ensemble Engine
-How much recurring story energy exists in the relationships between characters?
+How much recurring story energy exists in the relationships between characters? Is it a web of dynamics, or a protagonist with satellites?
+
+- 9-10: Any two characters in a room generate material; secondary relationships independently interesting (Seinfeld: George/Jerry vs Elaine/Jerry vs Kramer/George — infinite combinatorial energy; The Office: even Kevin and Angela generate storylines)
+- 7-8: Ensemble creates a system where any subset generates material (Parks and Rec)
+- 5-6: Solid lead-partner dynamic and decent supporting cast
+- 3-4: Show lives or dies on the lead alone; supporting cast is functional
+- 1-2: Solo protagonist or relationships too thin to constitute an ensemble engine
 
 ---
 

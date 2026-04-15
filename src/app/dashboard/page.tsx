@@ -2,18 +2,21 @@ import { createClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { TIER_META, type Tier } from '@/types'
-import { tierLabel } from '@/lib/tier-display'
-import { FileText, Plus, Eye, Compass, ArrowRight, RefreshCw, Sparkles } from 'lucide-react'
+import {
+  FileText,
+  Plus,
+  Eye,
+  EyeOff,
+  Compass,
+  ArrowRight,
+  RefreshCw,
+  Sparkles,
+  Users,
+  Lock,
+} from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 
 export const dynamic = 'force-dynamic'
-
-function tierColor(tier: string) {
-  if (tier === 'Greenlight Material') return 'var(--tier-greenlight)'
-  if (tier === 'Optionable') return 'var(--tier-optionable)'
-  return 'var(--tier-needs-dev)'
-}
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -25,7 +28,7 @@ export default async function DashboardPage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status')
+    .select('subscription_status, full_name')
     .eq('id', user.id)
     .single()
 
@@ -35,122 +38,74 @@ export default async function DashboardPage() {
     .from('script_submissions')
     .select(`
       id, title, status, is_public, created_at,
-      script_evaluations ( id, weighted_score, tier )
+      script_evaluations ( id, evaluation, created_at )
     `)
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
   const totalSubmissions = submissions?.length ?? 0
+  const publicCount =
+    submissions?.filter((s: any) => s.is_public).length ?? 0
+
+  const firstName =
+    profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
 
   return (
     <>
       <Nav />
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 py-8 sm:py-10">
+        {/* Upgrade banner — subscribers only see nothing here */}
         {!isSubscribed && totalSubmissions > 0 && (
-          <div className="mb-6 flex items-center justify-between gap-3 p-3 rounded-lg border border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5 flex-wrap">
-            <p className="text-sm text-[var(--gem-gray-300)]">
-              Unlock your score + full critique — top-scored scripts get surfaced to our industry network.
-            </p>
+          <div className="mb-8 flex items-center justify-between gap-3 p-3.5 rounded-xl border border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5 flex-wrap">
+            <div className="flex items-center gap-2.5">
+              <Sparkles size={14} className="text-[var(--gem-gold)] shrink-0" />
+              <p className="text-sm text-[var(--gem-gray-200)] leading-snug">
+                <span className="font-semibold text-[var(--gem-white)]">Upgrade to GEM Pro</span>{' '}
+                <span className="text-[var(--gem-gray-400)]">— get featured on Discover so producers can find you.</span>
+              </p>
+            </div>
             <UnlockTrigger
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all"
-              ariaLabel="Unlock your report"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all shrink-0"
+              ariaLabel="Upgrade to Pro"
             >
-              <Sparkles size={12} />
-              Unlock — $20/mo
+              Upgrade — $20/mo
             </UnlockTrigger>
           </div>
         )}
-        <div className="flex items-center justify-between mb-8 gap-4 flex-wrap">
+
+        {/* Header */}
+        <div className="flex items-start justify-between mb-8 gap-4 flex-wrap">
           <div>
-            <h1 className="text-3xl font-bold font-[family-name:var(--font-display)]">Your Portfolio</h1>
-            <p className="text-sm text-[var(--gem-gray-400)] mt-1">
-              {isSubscribed
-                ? 'All your submitted scripts and evaluations'
-                : 'Submit scripts, get scored, and climb the leaderboard'}
+            <h1 className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)] leading-tight">
+              Welcome back, {firstName}.
+            </h1>
+            <p className="text-sm text-[var(--gem-gray-400)] mt-2">
+              {totalSubmissions === 0
+                ? 'Submit your first script to get a full evaluation and positioning report.'
+                : isSubscribed
+                  ? `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} in your portfolio · ${publicCount} on Discover`
+                  : `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} evaluated. Post to Discover to get in front of our industry network.`}
             </p>
           </div>
-          <div className="flex items-center gap-2">
-            {!isSubscribed && (
-              <UnlockTrigger
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm border border-[var(--gem-accent)] text-[var(--gem-accent)] hover:bg-[var(--gem-accent)] hover:text-white transition-colors"
-                ariaLabel="Upgrade to GEM Pro"
-              >
-                <Sparkles size={16} />
-                Upgrade to GEM Pro
-              </UnlockTrigger>
-            )}
-            <Link
-              href="/submit"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-            >
-              <Plus size={16} />
-              New Script
-            </Link>
-          </div>
+          <Link
+            href="/submit"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors shrink-0"
+          >
+            <Plus size={16} />
+            New Script
+          </Link>
         </div>
 
         {submissions && submissions.length > 0 ? (
           <>
-            {/* Personal stats */}
-            <div className="flex gap-8 mb-8 pb-8 border-b border-[var(--gem-gray-700)]">
-              {(() => {
-                const totalScripts = submissions.length
-                const evaluations = submissions
-                  .map(sub => {
-                    const rawEval = sub.script_evaluations
-                    return Array.isArray(rawEval) ? rawEval[0] : rawEval
-                  })
-                  .filter(Boolean)
-
-                const scores = evaluations
-                  .map(e => e.weighted_score)
-                  .filter(s => typeof s === 'number')
-
-                const highestScore = scores.length > 0 ? Math.max(...scores) : null
-                const avgScore = scores.length > 0
-                  ? (scores.reduce((a, b) => a + b, 0) / scores.length)
-                  : null
-
-                return (
-                  <>
-                    <div>
-                      <div className="text-3xl font-bold">{totalScripts}</div>
-                      <div className="text-xs text-[var(--gem-gray-400)] mt-1">Scripts</div>
-                    </div>
-                    {highestScore !== null && (
-                      <div>
-                        <div className="text-3xl font-bold" style={{ color: 'var(--tier-greenlight)' }}>{Math.round(highestScore)}</div>
-                        <div className="text-xs text-[var(--gem-gray-400)] mt-1">Highest</div>
-                      </div>
-                    )}
-                    {avgScore !== null && (
-                      <div>
-                        <div className="text-3xl font-bold" style={{ color: 'var(--tier-optionable)' }}>{Math.round(avgScore)}</div>
-                        <div className="text-xs text-[var(--gem-gray-400)] mt-1">Average</div>
-                      </div>
-                    )}
-                  </>
-                )
-              })()}
-            </div>
-
-            {/* Leaderboard nudge (mobile) */}
-            <Link
-              href="/discover"
-              className="sm:hidden flex items-center gap-2 p-3 rounded-lg border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors mb-6"
-            >
-              <Compass size={16} className="text-[var(--gem-accent)] shrink-0" />
-              <span className="flex-1">See how other writers scored on the leaderboard</span>
-              <ArrowRight size={14} className="shrink-0" />
-            </Link>
-
-            {/* Script list — clean, no floating boxes */}
-            <div className="divide-y divide-[var(--gem-gray-700)]">
+            {/* Script cards */}
+            <div className="space-y-3 mb-10">
               {submissions.map((sub: any) => {
                 const rawEval = sub.script_evaluations
                 const eval_ = Array.isArray(rawEval) ? rawEval[0] : rawEval
-                const tierMeta = eval_ ? TIER_META[eval_.tier as Tier] : null
                 const hasReport = !!eval_
+                const positioningHook: string | null =
+                  eval_?.evaluation?.positioning_hook ?? null
 
                 const dateStr = new Date(sub.created_at).toLocaleDateString('en-US', {
                   month: 'short',
@@ -160,69 +115,134 @@ export default async function DashboardPage() {
 
                 const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
 
-                const rowContent = (
-                  <div className={`flex items-center gap-4 py-4 ${!hasReport ? 'opacity-50' : ''}`}>
-                    {/* Score */}
-                    <div className="w-12 shrink-0 text-center">
-                      {eval_ ? (
-                        <span className="text-xl font-bold tabular-nums" style={{ color: tierColor(eval_.tier) }}>
-                          {Math.round(eval_.weighted_score)}
-                        </span>
-                      ) : (
-                        <span className="text-sm text-[var(--gem-gray-500)]">—</span>
+                return (
+                  <div
+                    key={sub.id}
+                    className={`group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)] transition-colors p-5 ${
+                      !hasReport ? 'opacity-60' : ''
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-4 flex-wrap">
+                      <div className="flex-1 min-w-0">
+                        {/* Title + state pills */}
+                        <div className="flex items-center gap-2 flex-wrap mb-1.5">
+                          <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
+                            {sub.title}
+                          </h3>
+                          {sub.is_public ? (
+                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium">
+                              <Eye size={10} />
+                              On Discover
+                            </span>
+                          ) : hasReport ? (
+                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-500)] font-medium">
+                              <EyeOff size={10} />
+                              Private
+                            </span>
+                          ) : null}
+                          {sub.status === 'failed' && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 font-medium">
+                              Failed
+                            </span>
+                          )}
+                          {sub.status === 'processing' && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-medium animate-pulse">
+                              Processing
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Positioning hook or placeholder */}
+                        {positioningHook ? (
+                          <p className="text-sm text-[var(--gem-gray-300)] leading-snug line-clamp-2 mb-2">
+                            {positioningHook}
+                          </p>
+                        ) : hasReport ? (
+                          <p className="text-sm text-[var(--gem-gray-500)] italic mb-2">
+                            Report ready — open to see the positioning.
+                          </p>
+                        ) : null}
+
+                        <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
+                      </div>
+
+                      {/* Actions */}
+                      {hasReport && (
+                        <div className="flex items-center gap-2 shrink-0">
+                          <Link
+                            href={reviseHref}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
+                          >
+                            <RefreshCw size={12} />
+                            Revise
+                          </Link>
+                          <Link
+                            href={`/report/${eval_.id}`}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                          >
+                            View report
+                            <ArrowRight size={12} />
+                          </Link>
+                        </div>
                       )}
                     </div>
-
-                    {/* Info — title + tier pill on one line, date below */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-sm font-semibold truncate">
-                          {sub.title}
-                        </h3>
-                        {tierMeta && (
-                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-medium shrink-0 ${tierMeta.bgClass} ${tierMeta.colorClass}`}>
-                            {tierLabel(eval_.tier as Tier)}
-                          </span>
-                        )}
-                        {sub.is_public && (
-                          <Eye size={12} className="text-emerald-600 shrink-0" />
-                        )}
-                      </div>
-                      <div className="text-xs text-[var(--gem-gray-500)] mt-0.5">{dateStr}</div>
-                    </div>
-
-                    {/* Status */}
-                    {sub.status === 'failed' && (
-                      <span className="text-xs text-red-500 shrink-0">Failed</span>
-                    )}
-                    {sub.status === 'processing' && (
-                      <span className="text-xs text-amber-600 animate-pulse shrink-0">Processing...</span>
-                    )}
-
-                    {/* Actions — two clear buttons with breathing room */}
-                    {hasReport && (
-                      <div className="flex items-center gap-2 shrink-0 ml-2">
-                        <Link
-                          href={reviseHref}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
-                        >
-                          <RefreshCw size={12} />
-                          Revise
-                        </Link>
-                        <Link
-                          href={`/report/${eval_.id}`}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-                        >
-                          View full report
-                          <ArrowRight size={12} />
-                        </Link>
-                      </div>
-                    )}
                   </div>
                 )
-
-                return <div key={sub.id}>{rowContent}</div>
               })}
+            </div>
+
+            {/* What's next rail */}
+            <div className="border-t border-[var(--gem-gray-700)] pt-8">
+              <h2 className="text-xs uppercase tracking-[0.14em] text-[var(--gem-gray-500)] font-semibold mb-4">
+                What&apos;s next
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <Link
+                  href="/submit"
+                  className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
+                >
+                  <Plus size={16} className="text-[var(--gem-accent)] mb-2" />
+                  <div className="text-sm font-semibold mb-1">Submit another draft</div>
+                  <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
+                    Test a new angle, a rewrite, or a different script.
+                  </div>
+                </Link>
+
+                {!isSubscribed ? (
+                  <UnlockTrigger
+                    className="group rounded-xl border border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5 hover:border-[var(--gem-gold)] p-4 transition-colors text-left w-full"
+                    ariaLabel="Post to Discover"
+                  >
+                    <Lock size={16} className="text-[var(--gem-gold)] mb-2" />
+                    <div className="text-sm font-semibold mb-1">Post to Discover</div>
+                    <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
+                      Unlock with Pro — get your script in front of producers and reps.
+                    </div>
+                  </UnlockTrigger>
+                ) : (
+                  <Link
+                    href="/discover"
+                    className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
+                  >
+                    <Compass size={16} className="text-[var(--gem-accent)] mb-2" />
+                    <div className="text-sm font-semibold mb-1">Manage Discover posts</div>
+                    <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
+                      Publish more drafts and check who&apos;s reading.
+                    </div>
+                  </Link>
+                )}
+
+                <Link
+                  href="/discover"
+                  className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
+                >
+                  <Users size={16} className="text-[var(--gem-accent)] mb-2" />
+                  <div className="text-sm font-semibold mb-1">Browse Discover</div>
+                  <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
+                    See what other writers are putting in front of the industry.
+                  </div>
+                </Link>
+              </div>
             </div>
           </>
         ) : (
@@ -243,7 +263,7 @@ export default async function DashboardPage() {
                 className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
               >
                 <Compass size={14} />
-                Browse the leaderboard
+                Browse Discover
                 <ArrowRight size={14} />
               </Link>
             </div>

@@ -131,12 +131,8 @@ export async function generateMetadata({
   } else {
     const scoreStr = meta.score !== null ? `${Math.round(meta.score)}/100` : ''
     const tierStr = tierLabelFor(meta.tier)
-    const rankStr =
-      meta.rank !== null && meta.totalPublic !== null && meta.totalPublic > 1
-        ? ` Ranked #${meta.rank} of ${meta.totalPublic} on the GEM leaderboard.`
-        : ''
     description = scoreStr
-      ? `${meta.title} scored ${scoreStr}${tierStr ? ` — ${tierStr}` : ''} on GEM — a producer-grade read of your screenplay.${rankStr} Get yours read in 60 seconds.`
+      ? `${meta.title} — featured on GEM Discover. A producer-grade read of the screenplay. Get yours read in 60 seconds.`
       : `${meta.title} on GEM — a producer-grade read of your screenplay. Get yours read in 60 seconds.`
   }
 

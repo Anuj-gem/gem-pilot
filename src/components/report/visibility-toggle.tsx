@@ -73,7 +73,7 @@ export function VisibilityToggle({
       }`}
     >
       {isPublic ? <Eye size={14} /> : <EyeOff size={14} />}
-      {isPublic ? 'Public on Discover' : 'Hidden from leaderboard'}
+      {isPublic ? 'Public on Discover' : 'Hidden from Discover'}
     </button>
   )
 }

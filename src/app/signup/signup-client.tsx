@@ -8,24 +8,6 @@ import { createClient } from '@/lib/supabase-browser'
 import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
 
-function tierColor(tier: string) {
-  if (tier === 'Greenlight Material') return 'var(--tier-greenlight)'
-  if (tier === 'Optionable') return 'var(--tier-optionable)'
-  return 'var(--tier-needs-dev)'
-}
-
-function tierLabel(tier: string) {
-  if (tier === 'Greenlight Material') return 'Greenlight'
-  if (tier === 'Optionable') return 'Option Ready'
-  return 'Shows Promise'
-}
-
-function tierBg(tier: string) {
-  if (tier === 'Greenlight Material') return 'bg-emerald-50 text-emerald-700 border-emerald-200'
-  if (tier === 'Optionable') return 'bg-blue-50 text-blue-700 border-blue-200'
-  return 'bg-gray-100 text-gray-500 border-gray-200'
-}
-
 interface SignupPageClientProps {
   topScripts: any[]
 }
@@ -169,7 +151,7 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
           </div>
         </div>
 
-        {/* Leaderboard tease */}
+        {/* Discover tease */}
         {topScripts.length > 0 && (
           <div>
             <div className="flex items-center gap-2 mb-3">
@@ -177,44 +159,36 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <p className="text-xs uppercase tracking-widest text-[var(--gem-gold)] font-medium">Top of the Leaderboard</p>
+              <p className="text-xs uppercase tracking-widest text-[var(--gem-gold)] font-medium">Recently on Discover</p>
             </div>
             <p className="text-xs text-[var(--gem-gray-400)] mb-3">
-              Score your script to see where you rank
+              Real writers putting their scripts in front of the industry.
             </p>
             <div className="space-y-2">
               {topScripts.map((script: any, idx: number) => (
                 <Link
                   key={script.evaluation_id ?? idx}
                   href={`/report/${script.evaluation_id}`}
-                  className="group flex items-center gap-3 rounded-lg border border-[var(--gem-gray-700)] p-3 hover:border-[var(--gem-gray-500)] transition-colors"
-                  style={{ borderLeft: `3px solid ${tierColor(script.tier ?? '')}` }}
+                  className="group block rounded-lg border border-[var(--gem-gray-700)] p-3 hover:border-[var(--gem-gray-500)] transition-colors"
+                  style={{ borderLeft: `3px solid var(--gem-gold)` }}
                 >
-                  <span className={`text-sm font-bold tabular-nums shrink-0 ${idx < 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-400)]'}`}>
-                    #{idx + 1}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-sm font-semibold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                      {script.title || 'Untitled'}
-                    </div>
-                    <div className="text-xs text-[var(--gem-gray-400)]">
-                      by {script.author_name || 'Anonymous'}
-                    </div>
+                  <div className="text-sm font-semibold truncate group-hover:text-[var(--gem-accent)] transition-colors">
+                    {script.title || 'Untitled'}
                   </div>
-                  <div className="text-right shrink-0">
-                    <div className="text-sm font-bold tabular-nums" style={{ color: tierColor(script.tier ?? '') }}>
-                      {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
-                    </div>
-                    <span className={`text-[9px] px-1.5 py-0.5 rounded-full border font-semibold ${tierBg(script.tier ?? '')}`}>
-                      {tierLabel(script.tier ?? '')}
-                    </span>
+                  <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
+                    by {script.author_name || 'Anonymous'}
                   </div>
+                  {script.positioning_hook && (
+                    <p className="text-xs text-[var(--gem-gray-300)] mt-1.5 leading-snug line-clamp-2">
+                      {script.positioning_hook}
+                    </p>
+                  )}
                 </Link>
               ))}
             </div>
             <div className="mt-3 text-center">
               <Link href="/discover" className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium hover:underline">
-                See the full leaderboard <ArrowRight size={12} />
+                Browse Discover <ArrowRight size={12} />
               </Link>
             </div>
           </div>

@@ -59,17 +59,17 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
               {trialExpired ? 'Your free trial has ended' : 'You\'ve used your free evaluation'}
             </p>
             <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-              Keep evaluating. Keep climbing the leaderboard.
+              Keep evaluating. Keep getting surfaced to producers.
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">
               {trialExpired
-                ? 'Your 48-hour trial is over. For $20/month, unlock unlimited evaluations and post every script to the public leaderboard.'
-                : 'For $20/month, get unlimited evaluations and post as many scripts as you want to the public leaderboard. Every draft scored. Every idea ranked.'}
+                ? 'Your 48-hour trial is over. For $20/month, unlock unlimited evaluations and feature every script on Discover for producers and reps.'
+                : 'For $20/month, get unlimited evaluations and feature as many scripts as you want on Discover. Every draft positioned. Every idea surfaced to industry.'}
             </p>
             <ul className="space-y-1.5 text-sm text-[var(--gem-gray-300)]">
               {[
                 'Unlimited script evaluations',
-                'Unlimited leaderboard posts',
+                'Unlimited scripts featured on Discover',
                 'All formats — features, pilots, shorts',
               ].map(item => (
                 <li key={item} className="flex items-center gap-2">
