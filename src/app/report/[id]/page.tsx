@@ -25,6 +25,7 @@ import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ReportTabs } from '@/components/report/report-tabs'
 import { ContactWriter } from '@/components/report/contact-writer'
+import { Lock } from 'lucide-react'
 import { DIMENSION_META, normalizeEvaluation, type DimensionId } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
 
@@ -380,23 +381,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 locked={false}
               />
             ) : (
-              <>
-                {lockVariant && (
-                  <InlineUpgradeCTA
-                    evaluationId={id}
-                    label="The Details tab is a Pro feature"
-                    subtext="See production reality, dimension scores, and development notes in full."
-                  />
-                )}
-                <DetailsView
-                  scores={scores}
-                  production={production}
-                  considerations={considerations}
-                  overallScore={eval_?.weighted_score ?? null}
-                  showScores={false}
-                  locked={true}
-                />
-              </>
+              <DetailsView
+                scores={scores}
+                production={production}
+                considerations={considerations}
+                overallScore={eval_?.weighted_score ?? null}
+                showScores={false}
+                locked={true}
+                evaluationId={id}
+              />
             )
           }
         />
@@ -414,6 +407,7 @@ function DetailsView({
   overallScore,
   showScores,
   locked,
+  evaluationId,
 }: {
   scores: Record<string, { score: number; reasoning: string }>
   production: GEMEvaluation['production_reality']
@@ -421,6 +415,7 @@ function DetailsView({
   overallScore: number | null
   showScores: boolean
   locked: boolean
+  evaluationId?: string
 }) {
   const blurStyle: React.CSSProperties = locked
     ? { filter: 'blur(5px)', userSelect: 'none' as const }
@@ -432,9 +427,19 @@ function DetailsView({
     showScores && overallScore !== null ? `${Math.round(overallScore)}/100` : '?/100'
   return (
     <>
+      {/* Privacy note — slim inline treatment, comes first so writers know this
+          section is for their eyes only before they see the score or upgrade ask. */}
+      <div className="flex items-center gap-2 text-[12px] text-[var(--gem-gray-400)] mb-4">
+        <Lock size={12} className="shrink-0" />
+        <span>
+          <strong className="text-[var(--gem-white)] font-semibold">Private to you.</strong>{' '}
+          This tab isn&apos;t shared when your report is circulated.
+        </span>
+      </div>
+
       {/* Overall Score — owner-only, blurred on free tier to drive upgrade */}
       <div
-        className="rounded-2xl p-6 mb-6 flex items-center justify-between gap-4"
+        className="rounded-2xl p-6 mb-3 flex items-center justify-between gap-4"
         style={{
           background: 'linear-gradient(135deg, rgba(124,58,237,0.10), rgba(124,58,237,0.02) 70%)',
           border: '1px solid rgba(124,58,237,0.28)',
@@ -456,27 +461,16 @@ function DetailsView({
         </div>
       </div>
 
-      {/* Privacy banner */}
-      <div
-        className="flex items-start gap-3 p-4 rounded-xl mb-8"
-        style={{
-          background: 'rgba(124, 58, 237, 0.06)',
-          border: '1px solid rgba(124, 58, 237, 0.22)',
-        }}
-      >
-        <div
-          className="flex-shrink-0 w-8 h-8 rounded-full grid place-items-center text-white text-sm"
-          style={{ background: 'var(--gem-accent)' }}
-        >
-          🔒
+      {/* Upgrade CTA — only when the Details tab is locked (free writer viewing own report). */}
+      {locked && evaluationId && (
+        <div className="mb-8">
+          <InlineUpgradeCTA
+            evaluationId={evaluationId}
+            label="Unlock your Overall Score and full Details"
+            subtext="Production reality, dimension scores, and development notes."
+          />
         </div>
-        <p className="text-[13px] text-[var(--gem-gray-200)] leading-relaxed m-0">
-          <strong className="text-[var(--gem-white)] font-semibold">Private to you.</strong>{' '}
-          This section isn&apos;t shared when your report is circulated — it&apos;s yours for
-          reference. Use it to sharpen your pitch, navigate budget conversations, and understand
-          where the script lives in the market.
-        </p>
-      </div>
+      )}
 
       {/* Production Reality */}
       {production && (
@@ -709,10 +703,9 @@ function LockedLeadCharacterCard({
   return (
     <div className="border border-[var(--gem-gray-700)] rounded-xl p-6 bg-white">
       <div className="flex items-baseline justify-between gap-3 flex-wrap mb-2">
-        <p
-          className="text-xl font-semibold text-[var(--gem-white)] tracking-tight m-0"
-          style={blurStyle}
-        >
+        {/* Name stays sharp on locked reports — showing we identified the character
+            by name is a stronger tease than blurring it. */}
+        <p className="text-xl font-semibold text-[var(--gem-white)] tracking-tight m-0">
           {c.name}
         </p>
         <span className="text-[11px] uppercase tracking-[0.1em] text-[var(--gem-gray-500)]">

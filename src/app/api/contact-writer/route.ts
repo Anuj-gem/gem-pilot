@@ -50,9 +50,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json().catch(() => ({}))
     const evaluationId = typeof body.evaluation_id === 'string' ? body.evaluation_id : null
     const message = typeof body.message === 'string' ? body.message.trim() : ''
-    if (!evaluationId || message.length < 10) {
+    if (!evaluationId || message.length < 1) {
       return NextResponse.json(
-        { error: 'Message must be at least 10 characters.' },
+        { error: 'Message is empty.' },
         { status: 400 }
       )
     }
