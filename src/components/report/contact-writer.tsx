@@ -5,20 +5,34 @@
 //   - Not signed in  → scrolls to / opens signup
 //   - Signed in      → opens modal to compose email (routed through Postmark)
 import { useState } from 'react'
-import { Mail } from 'lucide-react'
+import { Mail, Lock } from 'lucide-react'
 
 interface Props {
   evaluationId: string
   writerName: string
   isLoggedIn: boolean
+  locked?: boolean
 }
 
-export function ContactWriter({ evaluationId, writerName, isLoggedIn }: Props) {
+export function ContactWriter({ evaluationId, writerName, isLoggedIn, locked }: Props) {
   const [open, setOpen] = useState(false)
 
   const handleClick = () => {
+    if (locked) {
+      if (!isLoggedIn) {
+        const el = document.getElementById('inline-signup')
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          return
+        }
+        window.location.href = `/signup?next=/report/${evaluationId}`
+        return
+      }
+      // Logged-in viewer but writer not subscribed → send to subscribe
+      window.location.href = `/subscribe?next=/report/${evaluationId}`
+      return
+    }
     if (!isLoggedIn) {
-      // Hand off to the existing inline signup anchor if present; otherwise send to /signup
       const el = document.getElementById('inline-signup')
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -35,25 +49,37 @@ export function ContactWriter({ evaluationId, writerName, isLoggedIn }: Props) {
       <div
         className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
         style={{
-          background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
-          borderColor: 'rgba(124,58,237,0.28)',
+          background: locked
+            ? 'var(--gem-gray-900)'
+            : 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
+          borderColor: locked ? 'var(--gem-gray-700)' : 'rgba(124,58,237,0.28)',
         }}
       >
         <div className="min-w-0">
           <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
-            Interested in this script?
+            {locked ? 'Reach the writer directly' : 'Interested in this script?'}
           </p>
-          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-500)] m-0 mt-0.5">
-            Reach out to {writerName} directly. {isLoggedIn ? '' : 'Free account required.'}
+          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+            {locked
+              ? 'Upgrade to message writers and unlock industry connections.'
+              : `Reach out to ${writerName} directly. ${isLoggedIn ? '' : 'Free account required.'}`}
           </p>
         </div>
         <button
           onClick={handleClick}
-          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-white text-sm font-semibold transition-colors"
-          style={{ background: 'var(--gem-accent)' }}
+          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+          style={
+            locked
+              ? {
+                  background: 'var(--gem-gray-800)',
+                  color: 'var(--gem-gray-300)',
+                  border: '1px solid var(--gem-gray-700)',
+                }
+              : { background: 'var(--gem-accent)', color: '#fff' }
+          }
         >
-          <Mail size={14} />
-          Contact writer
+          {locked ? <Lock size={14} /> : <Mail size={14} />}
+          {locked ? 'Upgrade to contact' : 'Contact writer'}
         </button>
       </div>
 

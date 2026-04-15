@@ -96,7 +96,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const { classification, whatsSpecial } = normalizeEvaluation(report)
 
-  // Gate logic: owner's subscription drives it.
+  // Gate logic (viewer-centric):
+  //   - Owner always sees their own report fully.
+  //   - Everyone else must be a subscriber to see the full report.
+  // Login is required to create a report, so there is no anonymous-submission unlock.
+  // Owner subscription and public-post status still affect discoverability / submission
+  // lifecycle elsewhere, but do NOT unlock the report for a free viewer.
   let ownerIsSubscribed = false
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
@@ -107,14 +112,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
   }
 
-  const isPublicPost = submission.is_public === true
-  // Fully unlocked if: owner is subscribed, OR the owner explicitly made it public,
-  // OR the current viewer is the owner.
-  const unlocked = ownerIsSubscribed || isPublicPost || isOwner
+  let viewerIsSubscribed = false
+  if (user) {
+    const { data: viewerProfile } = await serviceClient
+      .from('profiles')
+      .select('subscription_status')
+      .eq('id', user.id)
+      .single()
+    viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
+  }
+
+  const unlocked = isOwner || viewerIsSubscribed
   const showBlurred = !unlocked
-  const lockVariant: 'signup' | 'pro' | null = showBlurred
-    ? (user ? 'pro' : 'signup')
-    : null
+  // Login is required to reach this page, so any locked viewer is a free member.
+  const lockVariant: 'signup' | 'pro' | null = showBlurred ? 'pro' : null
 
   const { count: likeCount } = await supabase
     .from('script_likes')
@@ -143,8 +154,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
 
+  // Show Contact Writer for any non-owner viewing a non-anonymous submission.
+  // When !unlocked, it renders as an upsell (greyed out + "Upgrade to contact").
   const showContactWriter =
-    unlocked && !isOwner && !isAnonymousSubmission && !!submission.user_id
+    !isOwner && !isAnonymousSubmission && !!submission.user_id
 
   return (
     <>
@@ -233,12 +246,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Contact writer — only when fully unlocked and viewer isn't owner */}
+        {/* Contact writer — live when unlocked, upsell when locked */}
         {showContactWriter && (
           <ContactWriter
             evaluationId={id}
             writerName={writerName}
             isLoggedIn={!!user}
+            locked={!unlocked}
           />
         )}
 
