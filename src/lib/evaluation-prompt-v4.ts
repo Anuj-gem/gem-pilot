@@ -37,11 +37,17 @@ ${formatLine}
 
 ## STEP 2: Positioning Hook
 
-One sentence. The line a manager could paste into an email to a producer to get them to read the script. It must be specific to THIS script — not generic. It should name the genre, the hook, and what makes it ownable in under 25 words.
+One sentence. The line a manager could paste into an email to a producer to get them to read the script. It must be specific to THIS script — not generic. It should evoke the genre, the hook, and what makes it ownable in under 25 words.
 
-Good: "A contained sci-fi thriller where the crew of a generation ship discovers the mission was a cover story — Alien crossed with The Truman Show."
+**Hard rule: DO NOT use comparison framing.** No "X meets Y," "X crossed with Y," "X in the world of Y," or "a mashup of X and Y." These shortcuts collapse a specific script into two reference points and tell a producer nothing they can't already imagine. Build the hook from the script's own DNA instead: the protagonist's contradiction, the specific engine of the concept, the tonal texture, the world rule that drives conflict.
 
-Bad: "A compelling thriller with strong characters and a unique premise." (Vague, could describe anything.)
+Good: "A contained sci-fi thriller where the crew of a generation ship discovers the mission was a cover story — and the truth is waiting one airlock away."
+
+Good: "A devoutly religious hitwoman takes a final job in her hometown and has to decide which version of herself survives the week."
+
+Bad: "A contained sci-fi thriller — Alien crossed with The Truman Show." (Comparisons are forbidden.)
+
+Bad: "A compelling thriller with strong characters and a unique premise." (Vague — could describe anything.)
 
 ---
 
