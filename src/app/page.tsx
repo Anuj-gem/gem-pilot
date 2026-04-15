@@ -8,12 +8,28 @@ import { MobileNav } from '@/components/mobile-nav'
 import { SubscribeCTA } from '@/components/subscribe-cta'
 import { createClient } from '@/lib/supabase-server'
 
+function relativeTime(iso: string | null | undefined): string {
+  if (!iso) return ''
+  const then = new Date(iso).getTime()
+  const diffMs = Date.now() - then
+  const mins = Math.floor(diffMs / 60000)
+  if (mins < 1) return 'just now'
+  if (mins < 60) return `${mins}m ago`
+  const hrs = Math.floor(mins / 60)
+  if (hrs < 24) return `${hrs}h ago`
+  const days = Math.floor(hrs / 24)
+  if (days < 7) return `${days}d ago`
+  const weeks = Math.floor(days / 7)
+  if (weeks < 5) return `${weeks}w ago`
+  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
 export default async function Home() {
   const supabase = await createClient()
   const { data: topScripts } = await supabase
     .from('leaderboard')
     .select('*')
-    .order('weighted_score', { ascending: false })
+    .order('created_at', { ascending: false })
     .limit(8)
 
   // Featured sample reports — produced screenplays scored by GEM
@@ -294,6 +310,12 @@ export default async function Home() {
                           </h3>
                           <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
                             by {script.author_name || script.author || 'Anonymous'}
+                            {script.created_at && (
+                              <>
+                                <span className="mx-1.5 text-[var(--gem-gray-500)]">·</span>
+                                <span className="text-[var(--gem-gray-500)]">{relativeTime(script.created_at)}</span>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
