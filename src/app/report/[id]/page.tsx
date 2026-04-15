@@ -121,7 +121,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
   }
 
-  const unlocked = viewerIsSubscribed
+  // Content blur gate = WRITER's subscription status (not viewer's).
+  // Pro writer → report is unblurred for everyone. Free writer → blurred for everyone,
+  // including the owner (the owner blur is the upsell pressure).
+  const unlocked = ownerIsSubscribed
   const showBlurred = !unlocked
   // Login is required to reach this page, so any locked viewer is a free member.
   const lockVariant: 'signup' | 'pro' | null = showBlurred ? 'pro' : null
@@ -265,6 +268,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         <ReportTabs
+          showDetails={isOwner}
           detailsLocked={!unlocked}
           pitch={
             <>
