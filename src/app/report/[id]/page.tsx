@@ -153,10 +153,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
 
-  // Show Contact Writer for any non-owner viewing a non-anonymous submission.
-  // When !unlocked, it renders as an upsell (greyed out + "Upgrade to contact").
-  const showContactWriter =
-    !isOwner && !isAnonymousSubmission && !!submission.user_id
+  // Contact Writer state matrix — gated ONLY by the WRITER's subscription.
+  // Anyone (free or paid) can contact a Pro writer. Free writers are not reachable.
+  //   - owner on free tier  → owner_upsell  (upgrade to become reachable)
+  //   - owner on Pro        → hide (can't message self)
+  //   - non-owner, writer Pro  → live (viewer tier doesn't matter)
+  //   - non-owner, writer free → writer_not_pro
+  let contactState: 'live' | 'owner_upsell' | 'writer_not_pro' | null = null
+  if (!isAnonymousSubmission && !!submission.user_id) {
+    if (isOwner) {
+      contactState = ownerIsSubscribed ? null : 'owner_upsell'
+    } else {
+      contactState = ownerIsSubscribed ? 'live' : 'writer_not_pro'
+    }
+  }
 
   return (
     <>
@@ -245,13 +255,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Contact writer — live when unlocked, upsell when locked */}
-        {showContactWriter && (
+        {/* Contact writer — live / upsell / writer-not-pro depending on state */}
+        {contactState && (
           <ContactWriter
             evaluationId={id}
             writerName={writerName}
-            isLoggedIn={!!user}
-            locked={!unlocked}
+            state={contactState}
           />
         )}
 

@@ -1,48 +1,37 @@
 'use client'
-// Contact Writer button — placeholder wiring (Task 4 will plug in the full flow).
-// Visible only on reports where the writer is subscribed (i.e., the report is fully unlocked).
-// Click behavior:
-//   - Not signed in  → scrolls to / opens signup
-//   - Signed in      → opens modal to compose email (routed through Postmark)
+// Contact Writer CTA — gated only by the WRITER's subscription.
+// States:
+//   - live             : non-owner viewing a Pro writer → opens modal (any viewer tier)
+//   - owner_upsell     : owner on free tier viewing own report → "Upgrade to become reachable"
+//   - writer_not_pro   : non-owner, writer is NOT Pro → "Writer isn't on GEM Pro"
 import { useState } from 'react'
 import { Mail, Lock } from 'lucide-react'
+
+export type ContactWriterState = 'live' | 'owner_upsell' | 'writer_not_pro'
 
 interface Props {
   evaluationId: string
   writerName: string
-  isLoggedIn: boolean
-  locked?: boolean
+  state: ContactWriterState
 }
 
-export function ContactWriter({ evaluationId, writerName, isLoggedIn, locked }: Props) {
+export function ContactWriter({ evaluationId, writerName, state }: Props) {
   const [open, setOpen] = useState(false)
 
   const handleClick = () => {
-    if (locked) {
-      if (!isLoggedIn) {
-        const el = document.getElementById('inline-signup')
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          return
-        }
-        window.location.href = `/signup?next=/report/${evaluationId}`
-        return
-      }
-      // Logged-in viewer but writer not subscribed → send to subscribe
+    if (state === 'live') {
+      setOpen(true)
+      return
+    }
+    if (state === 'owner_upsell') {
       window.location.href = `/subscribe?next=/report/${evaluationId}`
       return
     }
-    if (!isLoggedIn) {
-      const el = document.getElementById('inline-signup')
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        return
-      }
-      window.location.href = `/signup?next=/report/${evaluationId}`
-      return
-    }
-    setOpen(true)
+    // writer_not_pro — nothing to do
   }
+
+  const copy = getCopy(state, writerName)
+  const locked = state !== 'live'
 
   return (
     <>
@@ -57,17 +46,16 @@ export function ContactWriter({ evaluationId, writerName, isLoggedIn, locked }: 
       >
         <div className="min-w-0">
           <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
-            {locked ? 'Reach the writer directly' : 'Interested in this script?'}
+            {copy.title}
           </p>
           <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
-            {locked
-              ? 'Upgrade to message writers and unlock industry connections.'
-              : `Reach out to ${writerName} directly. ${isLoggedIn ? '' : 'Free account required.'}`}
+            {copy.subtitle}
           </p>
         </div>
         <button
           onClick={handleClick}
-          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+          disabled={state === 'writer_not_pro'}
+          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors disabled:cursor-not-allowed"
           style={
             locked
               ? {
@@ -79,7 +67,7 @@ export function ContactWriter({ evaluationId, writerName, isLoggedIn, locked }: 
           }
         >
           {locked ? <Lock size={14} /> : <Mail size={14} />}
-          {locked ? 'Upgrade to contact' : 'Contact writer'}
+          {copy.cta}
         </button>
       </div>
 
@@ -92,6 +80,29 @@ export function ContactWriter({ evaluationId, writerName, isLoggedIn, locked }: 
       )}
     </>
   )
+}
+
+function getCopy(state: ContactWriterState, writerName: string) {
+  switch (state) {
+    case 'live':
+      return {
+        title: 'Interested in this script?',
+        subtitle: `Reach out to ${writerName} directly.`,
+        cta: 'Contact writer',
+      }
+    case 'owner_upsell':
+      return {
+        title: 'Get discovered by industry',
+        subtitle: 'Upgrade to GEM Pro so producers and reps can reach you here.',
+        cta: 'Upgrade — $20/mo',
+      }
+    case 'writer_not_pro':
+      return {
+        title: 'Writer isn’t on GEM Pro yet',
+        subtitle: `${writerName} hasn’t upgraded — contact through GEM isn’t available until they do.`,
+        cta: 'Not reachable',
+      }
+  }
 }
 
 function ContactModal({
