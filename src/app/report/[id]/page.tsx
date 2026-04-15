@@ -86,6 +86,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   if (error || !evaluation) notFound()
 
+  // Preview-only override: if USE_PENDING_EVALS=1 is set on this deployment
+  // (positioning-rebuild preview), swap the evaluation payload (score, tier,
+  // report JSON) with the rescored v4 row from script_evaluations_pending
+  // matched by submission_id. Falls through silently if no pending row exists.
+  if (process.env.USE_PENDING_EVALS === '1') {
+    const subId = (evaluation as any).submission_id
+    if (subId) {
+      const { data: pending } = await serviceClient
+        .from('script_evaluations_pending')
+        .select('weighted_score, tier, evaluation')
+        .eq('submission_id', subId)
+        .maybeSingle()
+      if (pending) {
+        ;(evaluation as any).weighted_score = pending.weighted_score
+        ;(evaluation as any).tier = pending.tier
+        ;(evaluation as any).evaluation = pending.evaluation
+      }
+    }
+  }
+
   const eval_ = evaluation as ScriptEvaluation & {
     script_submissions: ScriptSubmission & {
       profiles: { full_name: string; avatar_url: string | null } | null
@@ -239,6 +259,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <>
                 <span className="text-[var(--gem-gray-500)]">·</span>
                 <span className="italic text-[var(--gem-gray-500)]">{classification.tone}</span>
+              </>
+            )}
+            {submission.created_at && (
+              <>
+                <span className="text-[var(--gem-gray-500)]">·</span>
+                <span className="text-[var(--gem-gray-500)]">
+                  Posted {new Date(submission.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </span>
               </>
             )}
           </div>
