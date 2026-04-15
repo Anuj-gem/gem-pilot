@@ -497,12 +497,12 @@ function SubmitPageInner() {
 
         <h1 className="text-2xl font-bold mb-1">Submit a script</h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-          Upload your screenplay and see how it scores against the rubric applied to produced film and television.
+          Upload your screenplay and see how it gets positioned — the pitch line, what's working, and the case a producer would make for it.
         </p>
 
-        {/* Status badge — evals are unlimited for everyone. Subscribers see the full
-            score + critique immediately; free viewers get tier + strengths, and unlock
-            the rest for $20/mo. */}
+        {/* Status badge — evals are unlimited for everyone. Subscribers publish fully
+            unlocked reports and receive inbound messages from producers; free writers
+            get a teaser positioning, and unlock the rest for $20/mo. */}
         {authChecked && (
           <div className="flex items-center gap-3 mb-8">
             {isSubscribed ? (
@@ -511,7 +511,7 @@ function SubmitPageInner() {
               </span>
             ) : (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
-                Unlimited free evaluations · Top-scored scripts get surfaced
+                Unlimited free evaluations · Published scripts get surfaced to producers
               </span>
             )}
           </div>
@@ -524,7 +524,7 @@ function SubmitPageInner() {
               Unlock unlimited evaluations
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto">
-              $20/month — every draft, every script, the full score and development read. Cancel anytime.
+              $20/month — every draft, every script, fully-unlocked positioning reports you can circulate to the industry. Cancel anytime.
             </p>
             <button
               onClick={handleUpgrade}
@@ -651,7 +651,7 @@ function SubmitPageInner() {
             <Compass size={18} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
             <div>
               <p className="text-sm text-[var(--gem-gray-300)]">
-                Don&apos;t have a script handy? Browse the leaderboard to see how other writers&apos; screenplays scored.
+                Don&apos;t have a script handy? Browse the Discovery Board to see how other writers are positioning their screenplays.
               </p>
               <Link
                 href="/discover"

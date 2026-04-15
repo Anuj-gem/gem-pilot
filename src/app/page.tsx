@@ -8,24 +8,6 @@ import { MobileNav } from '@/components/mobile-nav'
 import { SubscribeCTA } from '@/components/subscribe-cta'
 import { createClient } from '@/lib/supabase-server'
 
-function tierColor(tier: string) {
-  if (tier === 'Greenlight Material') return 'var(--tier-greenlight)'
-  if (tier === 'Optionable') return 'var(--tier-optionable)'
-  return 'var(--tier-needs-dev)'
-}
-
-function tierBg(tier: string) {
-  if (tier === 'Greenlight Material') return 'bg-emerald-50 text-emerald-700 border-emerald-200'
-  if (tier === 'Optionable') return 'bg-blue-50 text-blue-700 border-blue-200'
-  return 'bg-gray-100 text-gray-500 border-gray-200'
-}
-
-function tierLabel(tier: string) {
-  if (tier === 'Greenlight Material') return 'Greenlight'
-  if (tier === 'Optionable') return 'Option Ready'
-  return 'Shows Promise'
-}
-
 export default async function Home() {
   const supabase = await createClient()
   const { data: topScripts } = await supabase
@@ -126,7 +108,7 @@ export default async function Home() {
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Run your script free. See your tier and what&rsquo;s working in 60 seconds. Unlock the full critique — and the top scorers get surfaced to our network of producers and managers.
+            Upload your script free. In 60 seconds you get a pitch-ready positioning line and the case for why your script deserves attention — the same packaging a manager inside an agency would build for you. Post it to the Discovery Board and producers can reach out directly.
           </p>
 
           {/* Primary + secondary CTA */}
@@ -210,7 +192,7 @@ export default async function Home() {
             </span>
             <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gold)] font-medium">Live from the leaderboard</p>
           </div>
-          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how your screenplay ranks.</h2>
+          <h2 className="text-xl sm:text-3xl font-bold mb-5 sm:mb-8 font-[family-name:var(--font-display)]">See how writers are positioning their scripts.</h2>
 
           {topScripts && topScripts.length > 0 ? (
             <div className="space-y-3">
@@ -220,19 +202,8 @@ export default async function Home() {
                   href={`/report/${script.evaluation_id ?? script.id}`}
                   className="group block rounded-xl card-glass overflow-hidden"
                 >
-                  <div className="flex" style={{ borderLeft: `4px solid ${tierColor(script.tier ?? '')}` }}>
-                    {/* Rank + Score — left column */}
-                    <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-                      <span className={`text-base sm:text-lg font-bold tabular-nums ${
-                        idx < 3 ? 'text-[var(--gem-gold)]' : 'text-[var(--gem-gray-400)]'
-                      }`}>#{idx + 1}</span>
-                      <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(script.tier ?? '') }}>
-                        {typeof script.weighted_score === 'number' ? Math.round(script.weighted_score) : '—'}
-                      </span>
-                      <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
-                    </div>
-
-                    {/* Content — center */}
+                  <div className="flex" style={{ borderLeft: `4px solid var(--gem-gold)` }}>
+                    {/* Content */}
                     <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0">
@@ -243,13 +214,12 @@ export default async function Home() {
                             by {script.author_name || script.author || 'Anonymous'}
                           </div>
                         </div>
-                        {/* Verdict badge */}
-                        {script.tier && (
-                          <span className={`text-[10px] px-2.5 py-1 rounded-full border font-semibold shrink-0 ${tierBg(script.tier)}`}>
-                            {tierLabel(script.tier)}
-                          </span>
-                        )}
                       </div>
+                      {script.positioning_hook && (
+                        <p className="text-xs sm:text-sm text-[var(--gem-gray-300)] mt-2 leading-snug line-clamp-2">
+                          {script.positioning_hook}
+                        </p>
+                      )}
 
                       {/* Tags */}
                       <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
@@ -292,7 +262,7 @@ export default async function Home() {
               properties={{ location: 'leaderboard_snapshot', label: 'Submit yours' }}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
-              Submit yours to see where it ranks
+              Get your script positioned
               <ArrowRight size={14} />
             </TrackedCTA>
             <TrackedCTA
@@ -375,10 +345,10 @@ export default async function Home() {
               <p className="text-xs sm:text-sm uppercase tracking-widest text-violet-400 font-medium">GEM Sample Library</p>
             </div>
             <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 font-[family-name:var(--font-display)]">
-              See how GEM scores produced screenplays.
+              See how GEM positions produced screenplays.
             </h2>
             <p className="text-sm text-[var(--gem-gray-400)] mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-              Breaking Bad. Inception. The Sopranos. Game of Thrones. Every sample report is generated by the same engine that will score your script — free to read, no signup.
+              Breaking Bad. Inception. The Sopranos. Game of Thrones. Every sample report is generated by the same engine that will package your script — free to read, no signup.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -387,23 +357,15 @@ export default async function Home() {
                   key={s.slug}
                   href={`/sample/${s.slug}`}
                   className="group block rounded-xl card-glass overflow-hidden p-4"
-                  style={{ borderLeft: `4px solid ${tierColor(s.tier)}` }}
+                  style={{ borderLeft: `4px solid var(--gem-gold)` }}
                 >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="min-w-0">
-                      <h3 className="text-sm font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                        {s.title}
-                      </h3>
-                      <p className="text-[11px] text-[var(--gem-gray-400)] mt-0.5 truncate">
-                        {s.author}{s.year ? ` · ${s.year}` : ''}
-                      </p>
-                    </div>
-                    <div className="shrink-0 text-right">
-                      <div className="text-xl font-bold tabular-nums" style={{ color: tierColor(s.tier) }}>
-                        {Math.round(s.weighted_score)}
-                      </div>
-                      <div className="text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)]">GEM Score</div>
-                    </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
+                      {s.title}
+                    </h3>
+                    <p className="text-[11px] text-[var(--gem-gray-400)] mt-0.5 truncate">
+                      {s.author}{s.year ? ` · ${s.year}` : ''}
+                    </p>
                   </div>
                   <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
                     <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-medium">
@@ -445,7 +407,7 @@ export default async function Home() {
               Producer Eval&nbsp;+&nbsp;Industry Exposure&nbsp;=&nbsp;Your Break
             </h2>
             <p className="mt-3 text-sm sm:text-base uppercase tracking-[0.2em] text-[var(--gem-gold)]/90 font-semibold">
-              Scored. Ranked. Circulated.
+              Positioned. Packaged. Circulated.
             </p>
           </div>
 
@@ -458,8 +420,8 @@ export default async function Home() {
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step One</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Producer Eval</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Upload your screenplay and get a producer-grade read in under a minute — score, verdict, development notes,
-                and a full production analysis built on the same rubric used for produced film and television.
+                Upload your screenplay and get a producer-grade read in under a minute — the positioning hook, what makes it
+                special, a lead-character breakdown, and a full production analysis built on the same rubric used for produced film and television.
               </p>
             </div>
 
@@ -471,7 +433,7 @@ export default async function Home() {
               <div className="text-[11px] uppercase tracking-wider text-[var(--gem-gray-500)] mb-1">Step Two</div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 font-[family-name:var(--font-display)]">Industry Exposure</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Publish to the Discovery Board and put your best work in front of the industry. Top-ranked scripts get
+                Publish to the Discovery Board and put your best work in front of the industry. Scripts get
                 circulated weekly to our network of producers, managers, and production partners.
               </p>
               <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-[var(--gem-gold)]/80">
@@ -535,10 +497,10 @@ export default async function Home() {
               <TrackedCTA
                 href="/submit"
                 event="cta_clicked"
-                properties={{ location: 'pricing', label: 'Get your free score' }}
+                properties={{ location: 'pricing', label: 'Get your free positioning' }}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
               >
-                Get your free score
+                Get your free positioning
                 <ArrowRight size={14} />
               </TrackedCTA>
             </div>
@@ -581,23 +543,16 @@ export default async function Home() {
       <TrackSection name="bottom_cta">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-display)]">
-            This script is #1 on GEM right now.
+            Featured on the Discovery Board.
           </h2>
 
-          {/* #1 leaderboard preview card */}
+          {/* Newest leaderboard preview card */}
           {topScripts && topScripts.length > 0 && (
             <Link
               href={`/report/${topScripts[0].evaluation_id ?? topScripts[0].id}`}
               className="group block max-w-md mx-auto rounded-xl card-glass overflow-hidden mb-6 sm:mb-8 text-left"
             >
-              <div className="flex" style={{ borderLeft: `4px solid ${tierColor(topScripts[0].tier ?? '')}` }}>
-                <div className="shrink-0 w-16 sm:w-20 flex flex-col items-center justify-center py-4 sm:py-5 bg-[var(--gem-gray-800)]/30">
-                  <span className="text-base sm:text-lg font-bold tabular-nums text-[var(--gem-gold)]">#1</span>
-                  <span className="text-xl sm:text-2xl font-bold tabular-nums mt-0.5" style={{ color: tierColor(topScripts[0].tier ?? '') }}>
-                    {typeof topScripts[0].weighted_score === 'number' ? Math.round(topScripts[0].weighted_score) : '—'}
-                  </span>
-                  <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-[var(--gem-gray-500)] mt-0.5">GEM Score</span>
-                </div>
+              <div className="flex" style={{ borderLeft: `4px solid var(--gem-gold)` }}>
                 <div className="flex-1 min-w-0 py-4 sm:py-5 px-4 sm:px-5">
                   <h3 className="text-sm sm:text-base font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
                     {topScripts[0].title || 'Untitled'}
@@ -605,10 +560,10 @@ export default async function Home() {
                   <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
                     by {topScripts[0].author_name || topScripts[0].author || 'Anonymous'}
                   </div>
-                  {topScripts[0].tier && (
-                    <span className={`inline-block mt-2 text-[10px] px-2.5 py-1 rounded-full border font-semibold ${tierBg(topScripts[0].tier)}`}>
-                      {tierLabel(topScripts[0].tier)}
-                    </span>
+                  {topScripts[0].positioning_hook && (
+                    <p className="text-xs sm:text-sm text-[var(--gem-gray-300)] mt-2 leading-snug line-clamp-3">
+                      {topScripts[0].positioning_hook}
+                    </p>
                   )}
                 </div>
               </div>
@@ -616,7 +571,7 @@ export default async function Home() {
           )}
 
           <p className="text-xl sm:text-2xl font-bold text-[var(--gem-gray-100)] max-w-lg mx-auto leading-relaxed mb-8 sm:mb-10 animate-[fadeInUp_1s_ease-out]">
-            Where does yours rank?
+            Put yours in front of the industry.
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <TrackedCTA

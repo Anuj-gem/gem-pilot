@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import { buildGemEvaluationPromptV3, type DeclaredFormat } from "@/lib/evaluation-prompt-v3";
+import { buildGemEvaluationPromptV4, type DeclaredFormat } from "@/lib/evaluation-prompt-v4";
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
 import type { GEMEvaluation } from "@/types";
 
@@ -76,7 +76,7 @@ async function extractPdfText(buffer: Buffer): Promise<string> {
   return text;
 }
 
-// Call GPT-5.4 Mini for evaluation (v3 prompt — returns raw scores, no weighted_score/tier)
+// Call GPT-5.4 Mini for evaluation (v4 advocate prompt — positioning-first output)
 async function evaluateScript(scriptText: string, declaredFormat: DeclaredFormat): Promise<{
   evaluation: GEMEvaluation;
   weightedScore: number;
@@ -94,7 +94,7 @@ async function evaluateScript(scriptText: string, declaredFormat: DeclaredFormat
     body: JSON.stringify({
       model: "gpt-5.4-mini",
       messages: [
-        { role: "system", content: buildGemEvaluationPromptV3(declaredFormat) },
+        { role: "system", content: buildGemEvaluationPromptV4(declaredFormat) },
         {
           role: "user",
           content: `The writer has declared this script as a ${declaredFormat}. Please evaluate the following screenplay submission accordingly:\n\n---\n\n${scriptText}`,

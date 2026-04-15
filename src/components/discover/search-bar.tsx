@@ -110,15 +110,14 @@ export function SearchBar({
       {/* Sort pills */}
       <div className="flex gap-2">
         {[
-          { value: 'score', label: 'Top Score' },
-          { value: 'likes', label: 'Most Liked' },
           { value: 'recent', label: 'Recent' },
+          { value: 'liked', label: 'Most Liked' },
         ].map(opt => (
           <button
             key={opt.value}
-            onClick={() => updateParams({ sort: opt.value === 'score' ? '' : opt.value })}
+            onClick={() => updateParams({ sort: opt.value === 'recent' ? '' : opt.value })}
             className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors ${
-              initialSort === opt.value || (!initialSort && opt.value === 'score')
+              initialSort === opt.value || (!initialSort && opt.value === 'recent')
                 ? 'bg-[var(--gem-accent)] text-white'
                 : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
             }`}

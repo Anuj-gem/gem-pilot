@@ -368,6 +368,7 @@ export interface LeaderboardEntry {
   tone: string | null;
   genre_tags: string[] | null;
   logline: string | null;
+  positioning_hook: string | null;
   overall_take: string | null;
   like_count: number;
   created_at: string;
