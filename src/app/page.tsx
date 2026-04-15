@@ -212,7 +212,7 @@ export default async function Home() {
               See what a report looks like.
             </h2>
             <p className="text-sm sm:text-base text-[var(--gem-gray-400)] mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-              We ran GEM on Breaking Bad, Inception, The Sopranos, and 22 more produced scripts. Free to read. No signup.
+              We ran GEM on Breaking Bad, Inception, Succession, and 7 more produced scripts. Free to read. No signup.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
