@@ -286,7 +286,7 @@ function ContactModal({
               </button>
               <button
                 onClick={send}
-                disabled={sending || message.trim().length < 10}
+                disabled={sending || message.trim().length < 1}
                 className="px-4 py-2 rounded-lg text-white text-sm font-semibold disabled:opacity-40"
                 style={{ background: 'var(--gem-accent)' }}
               >
