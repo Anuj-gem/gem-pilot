@@ -75,7 +75,7 @@ function ScriptRow({
   return (
     <Link
       href={`/report/${script.evaluation_id}`}
-      className="group block rounded-xl border border-[var(--gem-gray-200)] bg-white hover:border-[var(--gem-accent)]/40 transition-colors overflow-hidden"
+      className="group block rounded-xl border border-[var(--gem-gray-700)] bg-white hover:border-[var(--gem-accent)]/40 transition-colors overflow-hidden"
     >
       <div className="flex">
         {/* Gold rail */}
@@ -90,7 +90,7 @@ function ScriptRow({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="text-base sm:text-lg font-semibold text-[var(--gem-gray-900)] truncate group-hover:text-[var(--gem-accent)] transition-colors m-0">
+                <h3 className="text-base sm:text-lg font-semibold text-[var(--gem-white)] truncate group-hover:text-[var(--gem-accent)] transition-colors m-0">
                   {script.title}
                 </h3>
                 {isNew && (
@@ -107,7 +107,7 @@ function ScriptRow({
 
           {/* Positioning hook — the pitch line */}
           {pitchLine && (
-            <p className="text-sm sm:text-[15px] text-[var(--gem-gray-800)] mt-3 leading-snug line-clamp-3">
+            <p className="text-sm sm:text-[15px] text-[var(--gem-gray-200)] mt-3 leading-snug line-clamp-3">
               {pitchLine}
             </p>
           )}

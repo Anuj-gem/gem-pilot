@@ -12,7 +12,7 @@ export function ReportTabs({ pitch, details, detailsLocked }: Props) {
   const [tab, setTab] = useState<'pitch' | 'details'>('pitch')
   return (
     <>
-      <div className="flex border-b border-[var(--gem-gray-200)] mb-8 -mx-1">
+      <div className="flex border-b border-[var(--gem-gray-700)] mb-8 -mx-1">
         <TabBtn active={tab === 'pitch'} onClick={() => setTab('pitch')}>
           The Pitch
         </TabBtn>
@@ -40,7 +40,7 @@ function TabBtn({
       onClick={onClick}
       className="flex items-center gap-2 px-5 py-3.5 text-sm font-medium -mb-px transition-colors"
       style={{
-        color: active ? 'var(--gem-gray-900)' : 'var(--gem-gray-500)',
+        color: active ? 'var(--gem-white)' : 'var(--gem-gray-500)',
         borderBottom: `2px solid ${active ? 'var(--gem-accent)' : 'transparent'}`,
       }}
     >

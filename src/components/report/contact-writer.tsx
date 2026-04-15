@@ -40,7 +40,7 @@ export function ContactWriter({ evaluationId, writerName, isLoggedIn }: Props) {
         }}
       >
         <div className="min-w-0">
-          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-gray-900)] m-0">
+          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
             Interested in this script?
           </p>
           <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-500)] m-0 mt-0.5">
@@ -114,8 +114,8 @@ function ContactModal({
       >
         {sent ? (
           <>
-            <h3 className="text-lg font-semibold text-[var(--gem-gray-900)] mb-2">Sent</h3>
-            <p className="text-sm text-[var(--gem-gray-600)] mb-5">
+            <h3 className="text-lg font-semibold text-[var(--gem-white)] mb-2">Sent</h3>
+            <p className="text-sm text-[var(--gem-gray-400)] mb-5">
               {writerName} will receive your message by email. If they reply, it will come
               straight to your inbox.
             </p>
@@ -129,7 +129,7 @@ function ContactModal({
           </>
         ) : (
           <>
-            <h3 className="text-lg font-semibold text-[var(--gem-gray-900)] mb-1">
+            <h3 className="text-lg font-semibold text-[var(--gem-white)] mb-1">
               Message {writerName}
             </h3>
             <p className="text-sm text-[var(--gem-gray-500)] mb-4">
@@ -140,7 +140,7 @@ function ContactModal({
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Introduce yourself and tell them why you're reaching out…"
               rows={6}
-              className="w-full p-3 rounded-lg border border-[var(--gem-gray-300)] text-sm text-[var(--gem-gray-900)] focus:outline-none focus:border-[var(--gem-accent)]"
+              className="w-full p-3 rounded-lg border border-[var(--gem-gray-700)] text-sm text-[var(--gem-white)] focus:outline-none focus:border-[var(--gem-accent)]"
             />
             {error && (
               <p className="text-xs text-red-600 mt-2">{error}</p>
@@ -148,7 +148,7 @@ function ContactModal({
             <div className="flex justify-end gap-2 mt-4">
               <button
                 onClick={onClose}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-[var(--gem-gray-600)]"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-[var(--gem-gray-400)]"
               >
                 Cancel
               </button>

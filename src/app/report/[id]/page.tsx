@@ -185,28 +185,28 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Title + meta */}
         <div>
-          <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--gem-gray-900)] tracking-tight leading-tight mb-3">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--gem-white)] tracking-tight leading-tight mb-3">
             {submission.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--gem-gray-600)]">
+          <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--gem-gray-400)]">
             {classification.format && <span>{classification.format}</span>}
             {classification.genre_primary && (
               <>
-                <span className="text-[var(--gem-gray-400)]">·</span>
+                <span className="text-[var(--gem-gray-500)]">·</span>
                 <span>{classification.genre_primary}</span>
               </>
             )}
             {classification.genre_tags?.map((t, i) => (
               <span
                 key={i}
-                className="px-2.5 py-0.5 rounded-full text-xs text-[var(--gem-gray-600)] border border-[var(--gem-gray-300)]"
+                className="px-2.5 py-0.5 rounded-full text-xs text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
               >
                 {t}
               </span>
             ))}
             {classification.tone && (
               <>
-                <span className="text-[var(--gem-gray-400)]">·</span>
+                <span className="text-[var(--gem-gray-500)]">·</span>
                 <span className="italic text-[var(--gem-gray-500)]">{classification.tone}</span>
               </>
             )}
@@ -216,7 +216,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Positioning hook — always visible */}
         {positioningHook && (
           <div
-            className="relative border border-[var(--gem-gray-200)] rounded-2xl p-7 sm:p-8"
+            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8"
             style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
           >
             <div
@@ -227,7 +227,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
               The Pitch
             </div>
-            <p className="text-xl sm:text-[22px] text-[var(--gem-gray-900)] leading-snug font-medium">
+            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
               {positioningHook}
             </p>
           </div>
@@ -250,7 +250,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <section className="mb-12">
                 <SectionHeader label="What Makes This Special" />
                 {whatsSpecial.headline && (
-                  <p className="text-base sm:text-lg text-[var(--gem-gray-800)] leading-relaxed mb-6">
+                  <p className="text-base sm:text-lg text-[var(--gem-gray-200)] leading-relaxed mb-6">
                     {whatsSpecial.headline}
                   </p>
                 )}
@@ -258,12 +258,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   {visibleStrengths.map((s, i) => (
                     <div
                       key={i}
-                      className="border border-[var(--gem-gray-200)] rounded-xl p-5 bg-white"
+                      className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
                     >
-                      <p className="text-[15px] font-semibold text-[var(--gem-gray-900)] mb-2">
+                      <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
                         {s.dimension_or_area}
                       </p>
-                      <p className="text-sm text-[var(--gem-gray-700)] leading-relaxed mb-2">
+                      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
                         {s.what_it_means}
                       </p>
                       {s.evidence && (
@@ -275,11 +275,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   ))}
                   {lockedStrengthCount > 0 && (
                     <div className="relative">
-                      <div className="border border-[var(--gem-gray-200)] rounded-xl p-5 bg-white blur-md select-none pointer-events-none space-y-3">
-                        <p className="text-[15px] font-semibold text-[var(--gem-gray-900)]">
+                      <div className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white blur-md select-none pointer-events-none space-y-3">
+                        <p className="text-[15px] font-semibold text-[var(--gem-white)]">
                           +{lockedStrengthCount} more {lockedStrengthCount === 1 ? 'strength' : 'strengths'} this script has going for it
                         </p>
-                        <p className="text-sm text-[var(--gem-gray-700)] leading-relaxed">
+                        <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Specific script strength
                           description with script evidence and commercial framing that real producers care about.
                         </p>
@@ -319,12 +319,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       {[0, 1].map((i) => (
                         <div
                           key={i}
-                          className="border border-[var(--gem-gray-200)] rounded-xl p-6 bg-white"
+                          className="border border-[var(--gem-gray-700)] rounded-xl p-6 bg-white"
                         >
-                          <p className="text-xl font-semibold text-[var(--gem-gray-900)] mb-2">
+                          <p className="text-xl font-semibold text-[var(--gem-white)] mb-2">
                             Character Name
                           </p>
-                          <p className="text-sm text-[var(--gem-gray-700)] leading-relaxed mb-4">
+                          <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-4">
                             A dense paragraph describing who this character is — their contradictions,
                             voice, and emotional engine that makes them specific and castable.
                           </p>
@@ -341,7 +341,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                             >
                               Why an actor would want this part
                             </p>
-                            <p className="text-[13px] text-[var(--gem-gray-800)] leading-relaxed m-0">
+                            <p className="text-[13px] text-[var(--gem-gray-200)] leading-relaxed m-0">
                               The showcase inside this role — what it lets an actor do and the comp
                               performances that anchor the kind of part it is.
                             </p>
@@ -416,8 +416,8 @@ function DetailsView({
         >
           🔒
         </div>
-        <p className="text-[13px] text-[var(--gem-gray-800)] leading-relaxed m-0">
-          <strong className="text-[var(--gem-gray-900)] font-semibold">Private to you.</strong>{' '}
+        <p className="text-[13px] text-[var(--gem-gray-200)] leading-relaxed m-0">
+          <strong className="text-[var(--gem-white)] font-semibold">Private to you.</strong>{' '}
           This section isn&apos;t shared when your report is circulated — it&apos;s yours for
           reference. Use it to sharpen your pitch, navigate budget conversations, and understand
           where the script lives in the market.
@@ -478,7 +478,7 @@ function DetailsView({
             </FactCard>
           </div>
           {production.rights_flags?.length ? (
-            <div className="border border-[var(--gem-gray-200)] rounded-lg p-3 mt-3 text-xs text-[var(--gem-gray-600)] bg-white">
+            <div className="border border-[var(--gem-gray-700)] rounded-lg p-3 mt-3 text-xs text-[var(--gem-gray-400)] bg-white">
               <span className="uppercase tracking-[0.15em] text-[10px] text-[var(--gem-gray-500)] font-semibold mr-2">
                 Rights & Clearance
               </span>
@@ -506,12 +506,12 @@ function DetailsView({
             {considerations.map((c, i) => (
               <div
                 key={i}
-                className="border border-[var(--gem-gray-200)] rounded-lg p-4 bg-white"
+                className="border border-[var(--gem-gray-700)] rounded-lg p-4 bg-white"
               >
-                <p className="text-[13px] font-semibold text-[var(--gem-gray-900)] mb-1">
+                <p className="text-[13px] font-semibold text-[var(--gem-white)] mb-1">
                   {c.area}
                 </p>
-                <p className="text-sm text-[var(--gem-gray-700)] leading-relaxed m-0">
+                <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed m-0">
                   {c.detail}
                 </p>
               </div>
@@ -534,9 +534,9 @@ function DetailsView({
             return (
               <details
                 key={dimId}
-                className="border border-[var(--gem-gray-200)] rounded-lg bg-white group"
+                className="border border-[var(--gem-gray-700)] rounded-lg bg-white group"
               >
-                <summary className="p-4 cursor-pointer text-sm font-medium text-[var(--gem-gray-900)] list-none flex justify-between items-center gap-3">
+                <summary className="p-4 cursor-pointer text-sm font-medium text-[var(--gem-white)] list-none flex justify-between items-center gap-3">
                   <span>{meta.label}</span>
                   <span className="flex items-center gap-3">
                     <span className="text-xs font-semibold text-[var(--gem-accent)] tabular-nums">
@@ -547,7 +547,7 @@ function DetailsView({
                     </span>
                   </span>
                 </summary>
-                <div className="px-4 pb-4 text-sm text-[var(--gem-gray-600)] leading-relaxed">
+                <div className="px-4 pb-4 text-sm text-[var(--gem-gray-400)] leading-relaxed">
                   {s.reasoning}
                 </div>
               </details>
@@ -565,16 +565,16 @@ function LeadCharacterCard({
   c: { name: string; role_type: string; demographics: string; hook: string; why_actor_wants_this: string }
 }) {
   return (
-    <div className="border border-[var(--gem-gray-200)] rounded-xl p-6 bg-white">
+    <div className="border border-[var(--gem-gray-700)] rounded-xl p-6 bg-white">
       <div className="flex items-baseline justify-between gap-3 flex-wrap mb-2">
-        <p className="text-xl font-semibold text-[var(--gem-gray-900)] tracking-tight m-0">
+        <p className="text-xl font-semibold text-[var(--gem-white)] tracking-tight m-0">
           {c.name}
         </p>
         <span className="text-[11px] uppercase tracking-[0.1em] text-[var(--gem-gray-500)]">
           {c.role_type} · {c.demographics}
         </span>
       </div>
-      <p className="text-sm text-[var(--gem-gray-700)] leading-relaxed mb-4">{c.hook}</p>
+      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-4">{c.hook}</p>
       <div
         className="rounded-lg p-4"
         style={{ background: 'rgba(5, 150, 105, 0.06)', border: '1px solid rgba(5, 150, 105, 0.18)' }}
@@ -585,7 +585,7 @@ function LeadCharacterCard({
         >
           Why an actor would want this part
         </p>
-        <p className="text-[13px] text-[var(--gem-gray-800)] leading-relaxed m-0">
+        <p className="text-[13px] text-[var(--gem-gray-200)] leading-relaxed m-0">
           {c.why_actor_wants_this}
         </p>
       </div>
@@ -596,7 +596,7 @@ function LeadCharacterCard({
 function SectionHeader({ label }: { label: string }) {
   return (
     <>
-      <h2 className="text-xs uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-900)] mb-1.5">
+      <h2 className="text-xs uppercase tracking-[0.18em] font-bold text-[var(--gem-white)] mb-1.5">
         {label}
       </h2>
       <div className="w-10 h-0.5 mb-5 rounded" style={{ background: 'var(--gem-gold)' }} />
@@ -606,7 +606,7 @@ function SectionHeader({ label }: { label: string }) {
 
 function FactCard({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="border border-[var(--gem-gray-200)] rounded-xl p-4 bg-white">
+    <div className="border border-[var(--gem-gray-700)] rounded-xl p-4 bg-white">
       <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-[var(--gem-gray-500)] mb-2.5 m-0">
         {label}
       </p>
@@ -620,7 +620,7 @@ function Fact({ k, v }: { k: string; v: string | number | null | undefined }) {
   return (
     <div className="flex justify-between gap-3 text-[13px] py-0.5">
       <span className="text-[var(--gem-gray-500)]">{k}</span>
-      <span className="text-[var(--gem-gray-900)] text-right font-medium">{String(v)}</span>
+      <span className="text-[var(--gem-white)] text-right font-medium">{String(v)}</span>
     </div>
   )
 }
