@@ -311,25 +311,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   ))}
                   {lockedStrengthCount > 0 && (
                     <>
+                      {/* Fully blur the entire locked strength — dimension label
+                          included. The first 2 visible strengths carry the value
+                          proof; leaking more detail weakens the upgrade pressure. */}
                       {allStrengths.slice(2).map((s, i) => (
                         <div
                           key={i}
-                          className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
+                          className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white select-none"
+                          style={{ filter: 'blur(5px)' }}
                         >
                           <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
                             {s.dimension_or_area}
                           </p>
-                          <p
-                            className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2 select-none"
-                            style={{ filter: 'blur(5px)' }}
-                          >
+                          <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
                             {s.what_it_means}
                           </p>
                           {s.evidence && (
-                            <p
-                              className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed select-none"
-                              style={{ filter: 'blur(5px)' }}
-                            >
+                            <p className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed">
                               {s.evidence}
                             </p>
                           )}
@@ -420,11 +418,13 @@ function DetailsView({
   const blurStyle: React.CSSProperties = locked
     ? { filter: 'blur(5px)', userSelect: 'none' as const }
     : {}
-  const scoreValueStyle: React.CSSProperties = locked
+  // The score VALUE blurs when locked, but when we render "?/100" the question
+  // mark already does the work — no need to blur the placeholder.
+  const hasScore = showScores && overallScore !== null
+  const scoreValueStyle: React.CSSProperties = locked && hasScore
     ? { filter: 'blur(6px)', userSelect: 'none' as const }
     : {}
-  const overallDisplay =
-    showScores && overallScore !== null ? `${Math.round(overallScore)}/100` : '?/100'
+  const overallDisplay = hasScore ? `${Math.round(overallScore!)}/100` : '?/100'
   return (
     <>
       {/* Privacy note — slim inline treatment, comes first so writers know this
@@ -447,10 +447,10 @@ function DetailsView({
       >
         <div className="min-w-0">
           <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-1">
-            Overall Score
+            Commercial Potential
           </p>
           <p className="text-sm text-[var(--gem-gray-400)] m-0 leading-snug">
-            How this script rates across all ten dimensions, weighted.
+            GEM&apos;s read on this script&apos;s upside in the market — craft, concept, and opportunity.
           </p>
         </div>
         <div
@@ -466,7 +466,7 @@ function DetailsView({
         <div className="mb-8">
           <InlineUpgradeCTA
             evaluationId={evaluationId}
-            label="Unlock your Overall Score and full Details"
+            label="Unlock your Commercial Potential score and full Details"
             subtext="Production reality, dimension scores, and development notes."
           />
         </div>
