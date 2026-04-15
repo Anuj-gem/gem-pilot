@@ -13,13 +13,21 @@ interface Props {
   evaluationId: string
   writerName: string
   state: ContactWriterState
+  // Anonymous viewers clicking "Contact writer" get an auth gate prompting them
+  // to create a free account first, then return to the report.
+  isLoggedIn: boolean
 }
 
-export function ContactWriter({ evaluationId, writerName, state }: Props) {
+export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: Props) {
   const [open, setOpen] = useState(false)
+  const [authGate, setAuthGate] = useState(false)
 
   const handleClick = () => {
     if (state === 'live') {
+      if (!isLoggedIn) {
+        setAuthGate(true)
+        return
+      }
       setOpen(true)
       return
     }
@@ -62,6 +70,13 @@ export function ContactWriter({ evaluationId, writerName, state }: Props) {
             evaluationId={evaluationId}
             writerName={writerName}
             onClose={() => setOpen(false)}
+          />
+        )}
+        {authGate && (
+          <AuthGateModal
+            evaluationId={evaluationId}
+            writerName={writerName}
+            onClose={() => setAuthGate(false)}
           />
         )}
       </>
@@ -130,6 +145,57 @@ export function ContactWriter({ evaluationId, writerName, state }: Props) {
           <Lock size={10} style={{ color: 'var(--gem-gray-300)' }} />
         </span>
       </button>
+    </div>
+  )
+}
+
+function AuthGateModal({
+  evaluationId,
+  writerName,
+  onClose,
+}: {
+  evaluationId: string
+  writerName: string
+  onClose: () => void
+}) {
+  const redirect = encodeURIComponent(`/report/${evaluationId}`)
+  return (
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl"
+      >
+        <h3 className="text-lg font-semibold text-[var(--gem-white)] mb-2">
+          Create a free account to message {writerName}
+        </h3>
+        <p className="text-sm text-[var(--gem-gray-500)] mb-5">
+          A free GEM account is all you need to contact writers. You&apos;ll come right back to this report.
+        </p>
+        <div className="flex flex-col gap-2">
+          <a
+            href={`/signup?redirect=${redirect}`}
+            className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-white text-sm font-semibold"
+            style={{ background: 'var(--gem-accent)' }}
+          >
+            Create free account
+          </a>
+          <a
+            href={`/login?redirect=${redirect}`}
+            className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
+          >
+            Log in
+          </a>
+          <button
+            onClick={onClose}
+            className="mt-1 text-xs text-[var(--gem-gray-500)] hover:text-[var(--gem-gray-300)]"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

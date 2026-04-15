@@ -264,6 +264,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             evaluationId={id}
             writerName={writerName}
             state={contactState}
+            isLoggedIn={!!user}
           />
         )}
 
@@ -374,6 +375,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 scores={scores}
                 production={production}
                 considerations={considerations}
+                overallScore={eval_?.weighted_score ?? null}
                 showScores
                 locked={false}
               />
@@ -390,6 +392,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   scores={scores}
                   production={production}
                   considerations={considerations}
+                  overallScore={eval_?.weighted_score ?? null}
                   showScores={false}
                   locked={true}
                 />
@@ -408,20 +411,51 @@ function DetailsView({
   scores,
   production,
   considerations,
+  overallScore,
   showScores,
   locked,
 }: {
   scores: Record<string, { score: number; reasoning: string }>
   production: GEMEvaluation['production_reality']
   considerations: { area: string; detail: string; source?: string }[]
+  overallScore: number | null
   showScores: boolean
   locked: boolean
 }) {
   const blurStyle: React.CSSProperties = locked
     ? { filter: 'blur(5px)', userSelect: 'none' as const }
     : {}
+  const scoreValueStyle: React.CSSProperties = locked
+    ? { filter: 'blur(6px)', userSelect: 'none' as const }
+    : {}
+  const overallDisplay =
+    showScores && overallScore !== null ? `${Math.round(overallScore)}/100` : '?/100'
   return (
     <>
+      {/* Overall Score — owner-only, blurred on free tier to drive upgrade */}
+      <div
+        className="rounded-2xl p-6 mb-6 flex items-center justify-between gap-4"
+        style={{
+          background: 'linear-gradient(135deg, rgba(124,58,237,0.10), rgba(124,58,237,0.02) 70%)',
+          border: '1px solid rgba(124,58,237,0.28)',
+        }}
+      >
+        <div className="min-w-0">
+          <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-1">
+            Overall Score
+          </p>
+          <p className="text-sm text-[var(--gem-gray-400)] m-0 leading-snug">
+            How this script rates across all ten dimensions, weighted.
+          </p>
+        </div>
+        <div
+          className="text-3xl sm:text-4xl font-bold text-[var(--gem-white)] tabular-nums shrink-0"
+          style={scoreValueStyle}
+        >
+          {overallDisplay}
+        </div>
+      </div>
+
       {/* Privacy banner */}
       <div
         className="flex items-start gap-3 p-4 rounded-xl mb-8"
