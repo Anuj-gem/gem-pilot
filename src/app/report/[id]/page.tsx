@@ -20,7 +20,7 @@ import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
-import { SectionLock } from '@/components/report/section-lock'
+import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ReportTabs } from '@/components/report/report-tabs'
@@ -268,6 +268,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           detailsLocked={!unlocked}
           pitch={
             <>
+              {!unlocked && lockVariant && (
+                <InlineUpgradeCTA
+                  evaluationId={id}
+                  label="You're seeing a preview of this report"
+                  subtext="Upgrade to read every writer's full pitch and message them directly."
+                />
+              )}
+
               {/* What Makes This Special */}
               <section className="mb-12">
                 <SectionHeader label="What Makes This Special" />
@@ -296,23 +304,33 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     </div>
                   ))}
                   {lockedStrengthCount > 0 && (
-                    <div className="relative">
-                      <div className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white blur-md select-none pointer-events-none space-y-3">
-                        <p className="text-[15px] font-semibold text-[var(--gem-white)]">
-                          +{lockedStrengthCount} more {lockedStrengthCount === 1 ? 'strength' : 'strengths'} this script has going for it
-                        </p>
-                        <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Specific script strength
-                          description with script evidence and commercial framing that real producers care about.
-                        </p>
-                        <p className="text-[13px] text-[var(--gem-gray-500)] italic">
-                          Evidence from the script supporting this strength.
-                        </p>
-                      </div>
-                      {lockVariant && (
-                        <SectionLock variant={lockVariant} evaluationId={id} position="center" />
-                      )}
-                    </div>
+                    <>
+                      {allStrengths.slice(2).map((s, i) => (
+                        <div
+                          key={i}
+                          className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
+                        >
+                          <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
+                            {s.dimension_or_area}
+                          </p>
+                          <p
+                            className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2 select-none"
+                            style={{ filter: 'blur(5px)' }}
+                          >
+                            {s.what_it_means}
+                          </p>
+                          {s.evidence && (
+                            <p
+                              className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed select-none"
+                              style={{ filter: 'blur(5px)' }}
+                            >
+                              {s.evidence}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                      {lockVariant && <InlineUpgradeCTA evaluationId={id} />}
+                    </>
                   )}
                 </div>
               </section>
@@ -323,58 +341,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
                   The parts inside this script and why an actor would chase them.
                 </p>
-                {unlocked ? (
-                  leadCharacters.length > 0 ? (
+                {leadCharacters.length === 0 ? (
+                  <p className="text-sm text-[var(--gem-gray-500)] italic">
+                    No lead character breakdown available for this report.
+                  </p>
+                ) : unlocked ? (
+                  <div className="space-y-3">
+                    {leadCharacters.map((c, i) => (
+                      <LeadCharacterCard key={i} c={c} />
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    {lockVariant && <InlineUpgradeCTA evaluationId={id} />}
                     <div className="space-y-3">
                       {leadCharacters.map((c, i) => (
-                        <LeadCharacterCard key={i} c={c} />
+                        <LockedLeadCharacterCard key={i} c={c} />
                       ))}
                     </div>
-                  ) : (
-                    <p className="text-sm text-[var(--gem-gray-500)] italic">
-                      No lead character breakdown available for this report.
-                    </p>
-                  )
-                ) : (
-                  <div className="relative">
-                    <div className="space-y-3 blur-md select-none pointer-events-none">
-                      {[0, 1].map((i) => (
-                        <div
-                          key={i}
-                          className="border border-[var(--gem-gray-700)] rounded-xl p-6 bg-white"
-                        >
-                          <p className="text-xl font-semibold text-[var(--gem-white)] mb-2">
-                            Character Name
-                          </p>
-                          <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-4">
-                            A dense paragraph describing who this character is — their contradictions,
-                            voice, and emotional engine that makes them specific and castable.
-                          </p>
-                          <div
-                            className="rounded-lg p-4"
-                            style={{
-                              background: 'rgba(5,150,105,0.06)',
-                              border: '1px solid rgba(5,150,105,0.18)',
-                            }}
-                          >
-                            <p
-                              className="text-[10px] uppercase tracking-[0.15em] font-bold mb-1.5"
-                              style={{ color: '#059669' }}
-                            >
-                              Why an actor would want this part
-                            </p>
-                            <p className="text-[13px] text-[var(--gem-gray-200)] leading-relaxed m-0">
-                              The showcase inside this role — what it lets an actor do and the comp
-                              performances that anchor the kind of part it is.
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    {lockVariant && (
-                      <SectionLock variant={lockVariant} evaluationId={id} position="center" />
-                    )}
-                  </div>
+                  </>
                 )}
               </section>
             </>
@@ -386,21 +371,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 production={production}
                 considerations={considerations}
                 showScores
+                locked={false}
               />
             ) : (
-              <div className="relative">
-                <div className="blur-md select-none pointer-events-none">
-                  <DetailsView
-                    scores={scores}
-                    production={production}
-                    considerations={considerations}
-                    showScores={false}
-                  />
-                </div>
+              <>
                 {lockVariant && (
-                  <SectionLock variant={lockVariant} evaluationId={id} position="center" />
+                  <InlineUpgradeCTA
+                    evaluationId={id}
+                    label="The Details tab is a Pro feature"
+                    subtext="See production reality, dimension scores, and development notes in full."
+                  />
                 )}
-              </div>
+                <DetailsView
+                  scores={scores}
+                  production={production}
+                  considerations={considerations}
+                  showScores={false}
+                  locked={true}
+                />
+              </>
             )
           }
         />
@@ -416,12 +405,17 @@ function DetailsView({
   production,
   considerations,
   showScores,
+  locked,
 }: {
   scores: Record<string, { score: number; reasoning: string }>
   production: GEMEvaluation['production_reality']
   considerations: { area: string; detail: string; source?: string }[]
   showScores: boolean
+  locked: boolean
 }) {
+  const blurStyle: React.CSSProperties = locked
+    ? { filter: 'blur(5px)', userSelect: 'none' as const }
+    : {}
   return (
     <>
       {/* Privacy banner */}
@@ -455,25 +449,26 @@ function DetailsView({
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             <FactCard label="Cast">
-              <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
-              <Fact k="Leads" v={production.cast?.leads} />
+              <Fact k="Speaking roles" v={production.cast?.speaking_roles} blur={locked} />
+              <Fact k="Leads" v={production.cast?.leads} blur={locked} />
               {(production.cast?.series_regulars ?? 0) > 0 && (
-                <Fact k="Series regulars" v={production.cast?.series_regulars} />
+                <Fact k="Series regulars" v={production.cast?.series_regulars} blur={locked} />
               )}
-              {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
+              {production.cast?.child_actors && <Fact k="Child actors" v="Yes" blur={locked} />}
               {production.cast?.casting_challenges?.length ? (
-                <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
+                <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} blur={locked} />
               ) : null}
             </FactCard>
             <FactCard label="Locations & Scale">
-              <Fact k="Distinct" v={production.locations?.distinct_count} />
+              <Fact k="Distinct" v={production.locations?.distinct_count} blur={locked} />
               <Fact
                 k="Int/Ext"
                 v={production.locations?.interior_exterior_ratio ?? production.locations?.interior_exterior_mix}
+                blur={locked}
               />
-              <Fact k="Era" v={production.locations?.period_or_contemporary} />
+              <Fact k="Era" v={production.locations?.period_or_contemporary} blur={locked} />
               {production.locations?.expensive_flags?.length ? (
-                <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
+                <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} blur={locked} />
               ) : null}
             </FactCard>
             <FactCard label="Technical">
@@ -483,19 +478,20 @@ function DetailsView({
                   (production.technical?.vfx_level ?? '') +
                   (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
                 }
+                blur={locked}
               />
-              <Fact k="Stunts" v={production.technical?.stunts_level ?? production.technical?.stunts} />
-              {production.technical?.sfx_needs && <Fact k="SFX" v={production.technical.sfx_needs} />}
+              <Fact k="Stunts" v={production.technical?.stunts_level ?? production.technical?.stunts} blur={locked} />
+              {production.technical?.sfx_needs && <Fact k="SFX" v={production.technical.sfx_needs} blur={locked} />}
               {production.technical?.night_shoots && (
-                <Fact k="Night shoots" v={production.technical.night_shoots} />
+                <Fact k="Night shoots" v={production.technical.night_shoots} blur={locked} />
               )}
-              {production.technical?.animals && <Fact k="Animals" v="Yes" />}
+              {production.technical?.animals && <Fact k="Animals" v="Yes" blur={locked} />}
             </FactCard>
             <FactCard label="Platform & Content">
-              <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
-              <Fact k="Content" v={production.platform_fit?.content_level} />
+              <Fact k="Lane" v={production.platform_fit?.recommended_lane} blur={locked} />
+              <Fact k="Content" v={production.platform_fit?.content_level} blur={locked} />
               {production.platform_fit?.series_engine_or_release_model && (
-                <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
+                <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} blur={locked} />
               )}
             </FactCard>
           </div>
@@ -533,7 +529,10 @@ function DetailsView({
                 <p className="text-[13px] font-semibold text-[var(--gem-white)] mb-1">
                   {c.area}
                 </p>
-                <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed m-0">
+                <p
+                  className="text-sm text-[var(--gem-gray-300)] leading-relaxed m-0"
+                  style={blurStyle}
+                >
                   {c.detail}
                 </p>
               </div>
@@ -569,7 +568,10 @@ function DetailsView({
                     </span>
                   </span>
                 </summary>
-                <div className="px-4 pb-4 text-sm text-[var(--gem-gray-400)] leading-relaxed">
+                <div
+                  className="px-4 pb-4 text-sm text-[var(--gem-gray-400)] leading-relaxed"
+                  style={blurStyle}
+                >
                   {s.reasoning}
                 </div>
               </details>
@@ -637,12 +639,68 @@ function FactCard({ label, children }: { label: string; children: React.ReactNod
   )
 }
 
-function Fact({ k, v }: { k: string; v: string | number | null | undefined }) {
+function Fact({
+  k,
+  v,
+  blur,
+}: {
+  k: string
+  v: string | number | null | undefined
+  blur?: boolean
+}) {
   if (v === null || v === undefined || v === '') return null
   return (
     <div className="flex justify-between gap-3 text-[13px] py-0.5">
       <span className="text-[var(--gem-gray-500)]">{k}</span>
-      <span className="text-[var(--gem-white)] text-right font-medium">{String(v)}</span>
+      <span
+        className="text-[var(--gem-white)] text-right font-medium"
+        style={blur ? { filter: 'blur(5px)', userSelect: 'none' } : undefined}
+      >
+        {String(v)}
+      </span>
+    </div>
+  )
+}
+
+function LockedLeadCharacterCard({
+  c,
+}: {
+  c: { name: string; role_type: string; demographics: string; hook: string; why_actor_wants_this: string }
+}) {
+  const blurStyle: React.CSSProperties = { filter: 'blur(5px)', userSelect: 'none' as const }
+  return (
+    <div className="border border-[var(--gem-gray-700)] rounded-xl p-6 bg-white">
+      <div className="flex items-baseline justify-between gap-3 flex-wrap mb-2">
+        <p
+          className="text-xl font-semibold text-[var(--gem-white)] tracking-tight m-0"
+          style={blurStyle}
+        >
+          {c.name}
+        </p>
+        <span className="text-[11px] uppercase tracking-[0.1em] text-[var(--gem-gray-500)]">
+          {c.role_type} · {c.demographics}
+        </span>
+      </div>
+      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-4" style={blurStyle}>
+        {c.hook}
+      </p>
+      <div
+        className="rounded-lg p-4"
+        style={{ background: 'rgba(5, 150, 105, 0.06)', border: '1px solid rgba(5, 150, 105, 0.18)' }}
+      >
+        <p
+          className="text-[10px] uppercase tracking-[0.15em] font-bold mb-1.5"
+          style={{ color: '#059669' }}
+        >
+          Why an actor would want this part
+        </p>
+        <p
+          className="text-[13px] text-[var(--gem-gray-200)] leading-relaxed m-0"
+          style={blurStyle}
+        >
+          {c.why_actor_wants_this}
+        </p>
+      </div>
     </div>
   )
 }
