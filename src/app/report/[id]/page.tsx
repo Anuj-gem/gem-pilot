@@ -96,12 +96,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const { classification, whatsSpecial } = normalizeEvaluation(report)
 
-  // Gate logic (viewer-centric):
-  //   - Owner always sees their own report fully.
-  //   - Everyone else must be a subscriber to see the full report.
-  // Login is required to create a report, so there is no anonymous-submission unlock.
-  // Owner subscription and public-post status still affect discoverability / submission
-  // lifecycle elsewhere, but do NOT unlock the report for a free viewer.
+  // Gate logic (subscription-only):
+  //   Only paying subscribers see full reports. This applies to EVERYONE,
+  //   including the writer who uploaded the script — the owner is the highest-
+  //   intent conversion target, so we don't give them a free full view of their
+  //   own work. Free tier universally = hook + headline + 2 strengths, rest blurred.
   let ownerIsSubscribed = false
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
@@ -122,7 +121,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
   }
 
-  const unlocked = isOwner || viewerIsSubscribed
+  const unlocked = viewerIsSubscribed
   const showBlurred = !unlocked
   // Login is required to reach this page, so any locked viewer is a free member.
   const lockVariant: 'signup' | 'pro' | null = showBlurred ? 'pro' : null
