@@ -169,19 +169,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
 
-  // Contact Writer state matrix — gated ONLY by the WRITER's subscription.
-  // Anyone (free or paid) can contact a Pro writer. Free writers are not reachable.
-  //   - owner on free tier  → owner_upsell  (upgrade to become reachable)
-  //   - owner on Pro        → hide (can't message self)
-  //   - non-owner, writer Pro  → live (viewer tier doesn't matter)
-  //   - non-owner, writer free → writer_not_pro
+  // Contact Writer — v5: no subscription gate. Anyone can be contacted.
+  //   - owner viewing own report → hide (can't message self)
+  //   - non-owner viewing a claimed report → live
+  //   - anonymous submission → no contact (no writer to reach)
   let contactState: 'live' | 'owner_upsell' | 'writer_not_pro' | null = null
   if (!isAnonymousSubmission && !!submission.user_id) {
-    if (isOwner) {
-      contactState = ownerIsSubscribed ? null : 'owner_upsell'
-    } else {
-      contactState = ownerIsSubscribed ? 'live' : 'writer_not_pro'
-    }
+    contactState = isOwner ? null : 'live'
   }
 
   return (

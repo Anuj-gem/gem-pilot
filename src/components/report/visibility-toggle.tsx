@@ -31,13 +31,7 @@ export function VisibilityToggle({
   }
 
   const toggle = async () => {
-    if (!isSubscribed) {
-      // Non-subscribers clicking the toggle re-open the familiar upgrade modal
-      // instead of being punted to Stripe.
-      openUpgradeModal()
-      return
-    }
-
+    // v5: all users can publish to Discover — no subscription gate.
     setLoading(true)
     try {
       const res = await fetch(`/api/scripts/${submissionId}/visibility`, {
