@@ -146,8 +146,8 @@ export async function POST(request: NextRequest) {
       data: { user },
     } = await authClient.auth.getUser();
 
-    // 2. Subscription + paywall check.
-    //    First eval is free for everyone. After that, only subscribers can submit.
+    // 2. Subscription check — informational only. All evals run freely.
+    //    Paywall lives on the report page: 2nd+ reports are locked until the user upgrades.
     let isSubscribed = false;
     if (user) {
       const { data: profile } = await serviceClient
@@ -156,22 +156,6 @@ export async function POST(request: NextRequest) {
         .eq("id", user.id)
         .single();
       isSubscribed = profile?.subscription_status === "active";
-
-      // Count completed evaluations for this user
-      if (!isSubscribed) {
-        const { count } = await serviceClient
-          .from("script_submissions")
-          .select("*", { count: "exact", head: true })
-          .eq("user_id", user.id)
-          .eq("status", "completed");
-
-        if ((count ?? 0) >= 1) {
-          return NextResponse.json(
-            { error: "paywall" },
-            { status: 402 }
-          );
-        }
-      }
     }
 
     // 3. Parse form data

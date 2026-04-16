@@ -7,7 +7,7 @@
 import { useState } from 'react'
 import { Mail, Lock } from 'lucide-react'
 
-export type ContactWriterState = 'live' | 'owner_upsell' | 'writer_not_pro'
+export type ContactWriterState = 'live' | 'owner_live' | 'owner_upsell' | 'writer_not_pro'
 
 interface Props {
   evaluationId: string
@@ -83,70 +83,37 @@ export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: P
     )
   }
 
-  // Locked variants — prominent-looking disabled button + small upgrade link underneath.
-  const headline =
-    state === 'owner_upsell'
-      ? 'Producers and reps want to reach you here'
-      : `${writerName} isn’t reachable on GEM yet`
-  const detail =
-    state === 'owner_upsell'
-      ? 'Only GEM Pro writers can receive inbound from the industry. Upgrade to turn this on.'
-      : `${writerName} isn’t on GEM Pro — contact is locked until they upgrade.`
-
-  return (
-    <div
-      className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
-      style={{
-        background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
-        borderColor: 'rgba(124,58,237,0.28)',
-      }}
-    >
-      <div className="min-w-0">
-        <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
-          {headline}
-        </p>
-        <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
-          {detail}
-        </p>
-        {state === 'owner_upsell' && (
-          <button
-            onClick={handleClick}
-            className="mt-2 inline-flex items-center gap-1 text-[12px] font-semibold cursor-pointer"
-            style={{ color: 'var(--gem-accent)', background: 'transparent', padding: 0 }}
-          >
-            Upgrade to GEM Pro — $20/mo →
-          </button>
-        )}
-      </div>
-      <button
-        disabled
-        aria-disabled="true"
-        title={
-          state === 'owner_upsell'
-            ? 'Upgrade to GEM Pro to receive messages'
-            : 'Writer is not on GEM Pro'
-        }
-        className="relative flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold cursor-not-allowed"
+  // Owner confirmation — show that readers can contact them
+  if (state === ‘owner_live’) {
+    return (
+      <div
+        className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
         style={{
-          background: 'var(--gem-accent)',
-          color: '#fff',
-          opacity: 0.5,
+          background: ‘linear-gradient(135deg, rgba(5,150,105,0.06), transparent 60%)’,
+          borderColor: ‘rgba(5,150,105,0.25)’,
         }}
       >
-        <Mail size={14} />
-        Contact writer
-        <span
-          className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full grid place-items-center"
-          style={{
-            background: 'var(--gem-white)',
-            border: '1px solid var(--gem-gray-700)',
-          }}
+        <div className="min-w-0">
+          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
+            You&apos;re reachable
+          </p>
+          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+            Anyone reading this report can message you directly.
+          </p>
+        </div>
+        <div
+          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold"
+          style={{ background: ‘rgba(5,150,105,0.12)’, color: ‘#059669’ }}
         >
-          <Lock size={10} style={{ color: 'var(--gem-gray-300)' }} />
-        </span>
-      </button>
-    </div>
-  )
+          <Mail size={14} />
+          Contact open
+        </div>
+      </div>
+    )
+  }
+
+  // Fallback — should not reach here in v5 but kept for safety
+  return null
 }
 
 function AuthGateModal({

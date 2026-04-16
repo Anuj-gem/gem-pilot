@@ -20,6 +20,7 @@ import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ReportTabs } from '@/components/report/report-tabs'
 import { ContactWriter } from '@/components/report/contact-writer'
+import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import {
   DetailsView,
   SectionHeader,
@@ -143,6 +144,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const unlocked = true
   const showUpgradeCTA = !viewerIsSubscribed && !!user
 
+  // Paywall gate: owner's 2nd+ report is locked until they subscribe.
+  // We check if this submission is NOT the owner's first completed eval.
+  let reportLocked = false
+  if (isOwner && !ownerIsSubscribed && submission.user_id) {
+    // Find the user's earliest completed submission
+    const { data: firstSub } = await serviceClient
+      .from('script_submissions')
+      .select('id')
+      .eq('user_id', submission.user_id)
+      .eq('status', 'completed')
+      .order('created_at', { ascending: true })
+      .limit(1)
+      .single()
+
+    if (firstSub && firstSub.id !== submission.id) {
+      reportLocked = true
+    }
+  }
+
   const { count: likeCount } = await supabase
     .from('script_likes')
     .select('*', { count: 'exact', head: true })
@@ -169,13 +189,53 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
 
-  // Contact Writer — v5: no subscription gate. Anyone can be contacted.
-  //   - owner viewing own report → hide (can't message self)
-  //   - non-owner viewing a claimed report → live
+  // Contact Writer — v5: no subscription gate. Everyone is reachable.
+  //   - owner viewing own report → owner_live (shows "you're reachable" confirmation)
+  //   - non-owner viewing a claimed report → live (can message)
   //   - anonymous submission → no contact (no writer to reach)
-  let contactState: 'live' | 'owner_upsell' | 'writer_not_pro' | null = null
+  let contactState: 'live' | 'owner_upsell' | 'owner_live' | 'writer_not_pro' | null = null
   if (!isAnonymousSubmission && !!submission.user_id) {
-    contactState = isOwner ? null : 'live'
+    contactState = isOwner ? 'owner_live' : 'live'
+  }
+
+  // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
+  if (reportLocked) {
+    return (
+      <>
+        <Nav />
+        <div className="max-w-lg mx-auto px-4 py-16 text-center">
+          <div
+            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-8"
+            style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
+          >
+            <div
+              aria-hidden
+              className="absolute left-0 top-5 bottom-5 rounded-r"
+              style={{ width: 3, background: 'var(--gem-gold)' }}
+            />
+            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
+              The Pitch
+            </div>
+            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
+              {report.positioning_hook || submission.title}
+            </p>
+          </div>
+
+          <h2 className="text-2xl font-bold text-[var(--gem-white)] mb-3">
+            Your report on <em>{submission.title}</em> is ready
+          </h2>
+          <p className="text-sm text-[var(--gem-gray-400)] mb-8 max-w-md mx-auto leading-relaxed">
+            Your first evaluation was on us. Go Pro to read this report and evaluate unlimited scripts going forward.
+          </p>
+
+          <LockedReportUpgrade evaluationId={id} />
+
+          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">
+            Cancel anytime · Secure checkout via Stripe
+          </p>
+        </div>
+      </>
+    )
   }
 
   return (

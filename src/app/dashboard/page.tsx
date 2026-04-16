@@ -100,12 +100,21 @@ export default async function DashboardPage() {
           <>
             {/* Script cards */}
             <div className="space-y-3 mb-10">
-              {submissions.map((sub: any) => {
+              {(() => {
+                // Find the oldest completed submission — that one is free.
+                // All others are locked for non-subscribers.
+                const completedSubs = (submissions as any[])
+                  .filter((s: any) => s.status === 'completed')
+                  .sort((a: any, b: any) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+                const firstFreeId = completedSubs[0]?.id ?? null
+
+                return (submissions as any[]).map((sub: any) => {
                 const rawEval = sub.script_evaluations
                 const eval_ = Array.isArray(rawEval) ? rawEval[0] : rawEval
                 const hasReport = !!eval_
                 const positioningHook: string | null =
                   eval_?.evaluation?.positioning_hook ?? null
+                const isLockedReport = !isSubscribed && hasReport && sub.status === 'completed' && sub.id !== firstFreeId
 
                 const dateStr = new Date(sub.created_at).toLocaleDateString('en-US', {
                   month: 'short',
@@ -118,8 +127,12 @@ export default async function DashboardPage() {
                 return (
                   <div
                     key={sub.id}
-                    className={`group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)] transition-colors p-5 ${
-                      !hasReport ? 'opacity-60' : ''
+                    className={`group rounded-xl border transition-colors p-5 ${
+                      isLockedReport
+                        ? 'border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5'
+                        : !hasReport
+                          ? 'border-[var(--gem-gray-700)] opacity-60'
+                          : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-4 flex-wrap">
@@ -129,7 +142,12 @@ export default async function DashboardPage() {
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
                             {sub.title}
                           </h3>
-                          {sub.is_public ? (
+                          {isLockedReport ? (
+                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
+                              <Lock size={10} />
+                              Upgrade to view
+                            </span>
+                          ) : sub.is_public ? (
                             <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium">
                               <Eye size={10} />
                               On Discover
@@ -153,7 +171,11 @@ export default async function DashboardPage() {
                         </div>
 
                         {/* Positioning hook or placeholder */}
-                        {positioningHook ? (
+                        {isLockedReport ? (
+                          <p className="text-sm text-[var(--gem-gray-400)] mb-2">
+                            Your report is ready — upgrade to Pro to read it.
+                          </p>
+                        ) : positioningHook ? (
                           <p className="text-sm text-[var(--gem-gray-300)] leading-snug line-clamp-2 mb-2">
                             {positioningHook}
                           </p>
@@ -169,26 +191,38 @@ export default async function DashboardPage() {
                       {/* Actions */}
                       {hasReport && (
                         <div className="flex items-center gap-2 shrink-0">
-                          <Link
-                            href={reviseHref}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
-                          >
-                            <RefreshCw size={12} />
-                            Revise
-                          </Link>
-                          <Link
-                            href={`/report/${eval_.id}`}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-                          >
-                            View report
-                            <ArrowRight size={12} />
-                          </Link>
+                          {isLockedReport ? (
+                            <UnlockTrigger
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all"
+                              ariaLabel="Upgrade to view report"
+                            >
+                              Upgrade — $20/mo
+                            </UnlockTrigger>
+                          ) : (
+                            <>
+                              <Link
+                                href={reviseHref}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
+                              >
+                                <RefreshCw size={12} />
+                                Revise
+                              </Link>
+                              <Link
+                                href={`/report/${eval_.id}`}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                              >
+                                View report
+                                <ArrowRight size={12} />
+                              </Link>
+                            </>
+                          )}
                         </div>
                       )}
                     </div>
                   </div>
                 )
-              })}
+              })
+              })()}
             </div>
 
             {/* What's next rail */}
