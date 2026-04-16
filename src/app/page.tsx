@@ -120,7 +120,7 @@ export default async function Home() {
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Get a detailed pitch document that helps sell the potential of your script to producers &amp; reps. Then post to our Discover board for potential collaborators to contact you.
+            Get a detailed pitch document that helps sell the potential of your script to producers &amp; reps. Then post to our Discover board for potential collaborators to contact you. First one&apos;s free &mdash; unlimited for $20/mo.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
