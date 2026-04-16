@@ -83,6 +83,8 @@ function SubmitPageInner() {
     if (justSubscribed) {
       trackSubscriptionActivated()
       gtagSubscribeCompleted()
+      // Send post_upgrade email in case webhook didn't fire
+      fetch('/api/send-upgrade-email', { method: 'POST' }).catch(() => {})
     }
 
     async function checkAuth() {

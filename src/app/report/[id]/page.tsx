@@ -20,6 +20,7 @@ import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ReportTabs } from '@/components/report/report-tabs'
 import { ContactWriter } from '@/components/report/contact-writer'
+import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import {
   DetailsView,
@@ -31,7 +32,7 @@ import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
 
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams: Promise<{ for?: string }>
+  searchParams: Promise<{ for?: string; subscribed?: string }>
 }
 
 // v4-specific fields that aren't in the shared GEMEvaluation type yet.
@@ -62,7 +63,7 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed } = await searchParams
   const supabase = await createClient()
   const serviceClient = createServiceClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -241,6 +242,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   return (
     <>
       <Nav />
+      {justSubscribed === 'true' && <PostUpgradeEmail />}
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
