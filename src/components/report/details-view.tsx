@@ -166,28 +166,7 @@ export function DetailsView({
         </div>
       )}
 
-      <div
-        className="rounded-2xl p-6 mb-3 flex items-center justify-between gap-4"
-        style={{
-          background: 'linear-gradient(135deg, rgba(124,58,237,0.10), rgba(124,58,237,0.02) 70%)',
-          border: '1px solid rgba(124,58,237,0.28)',
-        }}
-      >
-        <div className="min-w-0">
-          <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-1">
-            Commercial Potential
-          </p>
-          <p className="text-sm text-[var(--gem-gray-400)] m-0 leading-snug">
-            GEM&apos;s read on this script&apos;s upside in the market — craft, concept, and opportunity.
-          </p>
-        </div>
-        <div
-          className="text-3xl sm:text-4xl font-bold text-[var(--gem-white)] tabular-nums shrink-0"
-          style={scoreValueStyle}
-        >
-          {overallDisplay}
-        </div>
-      </div>
+      {/* Commercial Potential score removed — dimension reasoning still shown below */}
 
       {locked && evaluationId && (
         <div className="mb-8">
@@ -315,13 +294,8 @@ export function DetailsView({
               >
                 <summary className="p-4 cursor-pointer text-sm font-medium text-[var(--gem-white)] list-none flex justify-between items-center gap-3">
                   <span>{meta.label}</span>
-                  <span className="flex items-center gap-3">
-                    <span className="text-xs font-semibold text-[var(--gem-accent)] tabular-nums">
-                      {showScores ? `${s.score}/10` : '?/10'}
-                    </span>
-                    <span className="text-xs text-[var(--gem-gray-500)] group-open:rotate-180 transition-transform">
-                      ▾
-                    </span>
+                  <span className="text-xs text-[var(--gem-gray-500)] group-open:rotate-180 transition-transform">
+                    ▾
                   </span>
                 </summary>
                 <div
