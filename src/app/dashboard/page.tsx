@@ -46,6 +46,9 @@ export default async function DashboardPage() {
   const totalSubmissions = submissions?.length ?? 0
   const publicCount =
     submissions?.filter((s: any) => s.is_public).length ?? 0
+  const completedCount =
+    submissions?.filter((s: any) => s.status === 'completed').length ?? 0
+  const usedFreeEval = completedCount >= 1
 
   const firstName =
     profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
@@ -54,21 +57,34 @@ export default async function DashboardPage() {
     <>
       <Nav />
       <div className="max-w-4xl mx-auto px-4 py-8 sm:py-10">
-        {/* Upgrade banner — subscribers only see nothing here */}
-        {!isSubscribed && totalSubmissions > 0 && (
-          <div className="mb-8 flex items-center justify-between gap-3 p-3.5 rounded-xl border border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5 flex-wrap">
-            <div className="flex items-center gap-2.5">
-              <Sparkles size={14} className="text-[var(--gem-gold)] shrink-0" />
-              <p className="text-sm text-[var(--gem-gray-200)] leading-snug">
-                <span className="font-semibold text-[var(--gem-white)]">Upgrade to GEM Pro</span>{' '}
-                <span className="text-[var(--gem-gray-400)]">— get featured on Discover so producers can find you.</span>
-              </p>
+        {/* Upgrade banner — only for non-subscribers who've used their free eval */}
+        {!isSubscribed && usedFreeEval && (
+          <div className="mb-8 rounded-xl border border-[var(--gem-gray-700)] p-5 sm:p-6">
+            <p className="text-sm font-semibold text-[var(--gem-white)] mb-1">
+              You&apos;ve used your free submission.
+            </p>
+            <p className="text-sm text-[var(--gem-gray-400)] mb-4">
+              Go Pro to keep evaluating scripts and get in front of the industry.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4 text-xs text-[var(--gem-gray-300)]">
+              <div className="flex items-center gap-2">
+                <Sparkles size={12} className="text-[var(--gem-accent)] shrink-0" />
+                Unlimited evaluations
+              </div>
+              <div className="flex items-center gap-2">
+                <Compass size={12} className="text-[var(--gem-accent)] shrink-0" />
+                Feature scripts on Discover
+              </div>
+              <div className="flex items-center gap-2">
+                <Users size={12} className="text-[var(--gem-accent)] shrink-0" />
+                Producers contact you directly
+              </div>
             </div>
             <UnlockTrigger
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all shrink-0"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all"
               ariaLabel="Upgrade to Pro"
             >
-              Upgrade — $20/mo
+              Go Pro — $20/mo
             </UnlockTrigger>
           </div>
         )}
@@ -230,7 +246,7 @@ export default async function DashboardPage() {
               <h2 className="text-xs uppercase tracking-[0.14em] text-[var(--gem-gray-500)] font-semibold mb-4">
                 What&apos;s next
               </h2>
-              <div className="grid sm:grid-cols-3 gap-3">
+              <div className="grid sm:grid-cols-2 gap-3">
                 <Link
                   href="/submit"
                   className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
@@ -242,35 +258,11 @@ export default async function DashboardPage() {
                   </div>
                 </Link>
 
-                {!isSubscribed ? (
-                  <UnlockTrigger
-                    className="group rounded-xl border border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5 hover:border-[var(--gem-gold)] p-4 transition-colors text-left w-full"
-                    ariaLabel="Post to Discover"
-                  >
-                    <Lock size={16} className="text-[var(--gem-gold)] mb-2" />
-                    <div className="text-sm font-semibold mb-1">Post to Discover</div>
-                    <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
-                      Unlock with Pro — get your script in front of producers and reps.
-                    </div>
-                  </UnlockTrigger>
-                ) : (
-                  <Link
-                    href="/discover"
-                    className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
-                  >
-                    <Compass size={16} className="text-[var(--gem-accent)] mb-2" />
-                    <div className="text-sm font-semibold mb-1">Manage Discover posts</div>
-                    <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
-                      Publish more drafts and check who&apos;s reading.
-                    </div>
-                  </Link>
-                )}
-
                 <Link
                   href="/discover"
                   className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
                 >
-                  <Users size={16} className="text-[var(--gem-accent)] mb-2" />
+                  <Compass size={16} className="text-[var(--gem-accent)] mb-2" />
                   <div className="text-sm font-semibold mb-1">Browse Discover</div>
                   <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
                     See what other writers are putting in front of the industry.
