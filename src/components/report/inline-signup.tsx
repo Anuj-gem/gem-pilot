@@ -65,6 +65,9 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
       // Non-blocking — the report is still saved via the session
     }
 
+    // 3. Fire welcome email (non-blocking)
+    fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
+
     setSuccess(true)
     setLoading(false)
 

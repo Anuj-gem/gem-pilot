@@ -84,7 +84,7 @@ export default async function DashboardPage() {
                 ? 'Submit your first script to get a full evaluation and positioning report.'
                 : isSubscribed
                   ? `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} in your portfolio · ${publicCount} on Discover`
-                  : `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} evaluated. Post to Discover to get in front of our industry network.`}
+                  : `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} evaluated. Go Pro for unlimited evaluations and to feature on Discover.`}
             </p>
           </div>
           <Link

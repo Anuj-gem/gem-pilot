@@ -64,6 +64,9 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
     trackSignupComplete()
     gtagSignupCompleted()
 
+    // Fire welcome email (non-blocking)
+    fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
+
     router.push(redirect || '/submit')
     router.refresh()
   }
@@ -135,13 +138,13 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
 
         {/* Value props */}
         <div className="mb-8">
-          <h2 className="text-sm font-semibold mb-3 text-[var(--gem-gray-200)]">What you get — free forever</h2>
+          <h2 className="text-sm font-semibold mb-3 text-[var(--gem-gray-200)]">What you get free</h2>
           <div className="space-y-2.5">
             {[
-              'Unlimited script evaluations',
-              'GEM score, verdict, and report preview',
+              'One full script evaluation — no limits on the report',
+              'Positioning pitch, character breakdowns, production details',
               'Powered by Selznick — our research-backed scoring system',
-              'Save and revisit all your reports',
+              'Save your report and revisit anytime',
             ].map(item => (
               <div key={item} className="flex items-start gap-2">
                 <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />

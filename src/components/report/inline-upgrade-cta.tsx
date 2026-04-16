@@ -1,7 +1,7 @@
 'use client'
 // Inline upgrade CTA — thin banner placed at the top of any locked report section
 // so the upgrade path is visible without scrolling or overlays covering the tease.
-import { Lock, ArrowRight } from 'lucide-react'
+import { Sparkles, ArrowRight } from 'lucide-react'
 import { trackSubscribeClick, trackSubscribeFromReport } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
 
@@ -14,9 +14,9 @@ interface Props {
 
 export function InlineUpgradeCTA({
   evaluationId,
-  label = 'Upgrade to see the full breakdown',
-  subtext = 'Unlimited reports + direct industry contact.',
-  cta = 'Upgrade — $20/mo',
+  label = 'Want to evaluate more scripts?',
+  subtext = 'Go Pro for unlimited evaluations and feature on Discover.',
+  cta = 'Go Pro — $20/mo',
 }: Props) {
   const handleClick = () => {
     trackSubscribeClick('inline_upgrade_cta')
@@ -38,7 +38,7 @@ export function InlineUpgradeCTA({
           className="flex-shrink-0 w-8 h-8 rounded-full grid place-items-center"
           style={{ background: 'rgba(124,58,237,0.12)' }}
         >
-          <Lock size={14} style={{ color: 'var(--gem-accent)' }} />
+          <Sparkles size={14} style={{ color: 'var(--gem-accent)' }} />
         </div>
         <div className="min-w-0">
           <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">

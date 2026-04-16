@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { buildGemEvaluationPromptV4, type DeclaredFormat } from "@/lib/evaluation-prompt-v4";
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
 import type { GEMEvaluation } from "@/types";
+import { sendEmail } from "@/lib/email";
 
 // Allow up to 60 seconds for script evaluation
 export const maxDuration = 60;
@@ -145,9 +146,8 @@ export async function POST(request: NextRequest) {
       data: { user },
     } = await authClient.auth.getUser();
 
-    // 2. Subscription check — informational only. Evals are unlimited for everyone.
-    //    Free viewers see tier + what's working. Score, critique, and production
-    //    breakdown are blurred on the report and unlock with a $20/mo subscription.
+    // 2. Subscription + paywall check.
+    //    First eval is free for everyone. After that, only subscribers can submit.
     let isSubscribed = false;
     if (user) {
       const { data: profile } = await serviceClient
@@ -156,6 +156,22 @@ export async function POST(request: NextRequest) {
         .eq("id", user.id)
         .single();
       isSubscribed = profile?.subscription_status === "active";
+
+      // Count completed evaluations for this user
+      if (!isSubscribed) {
+        const { count } = await serviceClient
+          .from("script_submissions")
+          .select("*", { count: "exact", head: true })
+          .eq("user_id", user.id)
+          .eq("status", "completed");
+
+        if ((count ?? 0) >= 1) {
+          return NextResponse.json(
+            { error: "paywall" },
+            { status: 402 }
+          );
+        }
+      }
     }
 
     // 3. Parse form data
@@ -285,6 +301,36 @@ export async function POST(request: NextRequest) {
         .from("script_submissions")
         .update({ status: "completed" })
         .eq("id", submission.id);
+
+      // 10. Send post-submission email (fire-and-forget, won't block response)
+      if (user) {
+        const { data: profile } = await serviceClient
+          .from("profiles")
+          .select("email, full_name")
+          .eq("id", user.id)
+          .single();
+
+        if (profile?.email) {
+          const firstName = profile.full_name?.split(" ")[0] || "there";
+          const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`;
+          const templateAlias = isSubscribed ? "post_submission_pro" : "post_submission_free";
+
+          sendEmail(
+            {
+              templateAlias,
+              to: profile.email,
+              variables: {
+                first_name: firstName,
+                title: title || "Untitled",
+                report_url: reportUrl,
+              },
+              dedupeKey: evalRecord.id,
+              tag: templateAlias,
+            },
+            serviceClient
+          );
+        }
+      }
 
       return NextResponse.json({
         submission_id: submission.id,

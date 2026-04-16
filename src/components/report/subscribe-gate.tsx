@@ -75,19 +75,19 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         </div>
 
         <h3 className="text-base font-bold text-[var(--gem-white)] mb-1 leading-snug">
-          Get your scripts in front of producers and reps — $20/mo
+          Submit unlimited scripts and get in front of producers — $20/mo
         </h3>
         <p className="text-[13px] text-[var(--gem-gray-400)] mb-4 leading-snug">
-          Pro writers get featured on Discover, where our industry network searches for promising scripts.
+          Your first evaluation is on us. Go Pro to evaluate every draft and feature your scripts on Discover.
         </p>
 
         <ul className="space-y-1.5 mb-5">
           {[
-            'Feature unlimited scripts on Discover',
+            'Unlimited script evaluations',
+            'Feature every script on Discover',
             'Producers + reps can contact you directly',
-            'Your Commercial Potential score, unblurred',
-            'Full Details tab: production, dimensions, notes',
-            'Unlimited evaluations on every draft',
+            'Full reports with production analysis',
+            'Evaluate every rewrite and new draft',
           ].map(item => (
             <li key={item} className="flex items-start gap-2 text-[13px] text-[var(--gem-gray-300)]">
               <CheckCircle size={13} className="text-emerald-500 shrink-0 mt-0.5" />

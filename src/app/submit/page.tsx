@@ -99,7 +99,8 @@ function SubmitPageInner() {
         const subscribed = profile?.subscription_status === 'active'
         setIsSubscribed(subscribed)
 
-        // Unlimited free evals now — no client-side paywall gate.
+        // Paywall check happens server-side in /api/evaluate.
+        // If user has 1+ completed evals and isn't subscribed, API returns 402.
       }
     }
     checkAuth()
@@ -500,18 +501,16 @@ function SubmitPageInner() {
           Upload your screenplay and see how it gets positioned — the pitch line, what's working, and the case a producer would make for it.
         </p>
 
-        {/* Status badge — evals are unlimited for everyone. Subscribers publish fully
-            unlocked reports and receive inbound messages from producers; free writers
-            get a teaser positioning, and unlock the rest for $20/mo. */}
+        {/* Status badge */}
         {authChecked && (
           <div className="flex items-center gap-3 mb-8">
             {isSubscribed ? (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-600 text-white">
-                <CheckCircle size={12} /> Full reports unlocked
+                <CheckCircle size={12} /> Pro — unlimited evaluations
               </span>
             ) : (
               <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
-                Unlimited free evaluations · Published scripts get surfaced to producers
+                First evaluation free · Full report included
               </span>
             )}
           </div>
@@ -521,17 +520,17 @@ function SubmitPageInner() {
         {paywalled && (
           <div className="rounded-xl border-2 border-[var(--gem-gold)]/40 bg-white p-6 mb-6 text-center">
             <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-              Unlock unlimited evaluations
+              You used your free evaluation
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto">
-              $20/month — every draft, every script, fully-unlocked positioning reports you can circulate to the industry. Cancel anytime.
+              Go Pro to evaluate unlimited scripts — every draft, every rewrite — and feature them on Discover where producers can find you. $20/month, cancel anytime.
             </p>
             <button
               onClick={handleUpgrade}
               disabled={upgradeLoading}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[var(--gem-gold)] text-white text-sm font-semibold hover:brightness-110 disabled:opacity-50 transition-all cursor-pointer"
             >
-              {upgradeLoading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
+              {upgradeLoading ? 'Redirecting to checkout…' : 'Go Pro — $20/mo'}
               {!upgradeLoading && <ArrowRight size={14} />}
             </button>
             <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">

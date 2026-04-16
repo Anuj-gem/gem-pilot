@@ -1,16 +1,10 @@
-// v4 report — positioning-first. No scores or tiers in the Pitch view.
+// v5 report — positioning-first. No scores or tiers in the Pitch view.
 // Pitch tab (public): hook, what makes this special, lead characters.
-// Details tab (private to the writer, paid unlock for viewers):
-//   production reality, considerations for development, dimension analysis (with X/10).
+// Details tab (private to the writer): production reality, considerations, dimension analysis.
 //
-// Gate model — unchanged from v3: blur is driven by the SUBMISSION OWNER's subscription.
-//   ownerIsSubscribed  → report is fully unlocked for everyone
-//   !ownerIsSubscribed → free tease: pitch hook + headline + 2 strengths; everything else
-//                        is blurred behind SectionLock CTAs (pro for logged-in, signup for
-//                        anonymous). Owner always sees their own report fully.
-//
-// Dimension scores are shown as "X/10" in Details. For free viewers they blur to "?/10"
-// which is the tease the writer said entices upgrade.
+// Gate model (v5): NO BLUR. Every report is fully visible to everyone.
+// First eval is free; the paywall lives on /submit (blocks 2nd+ submission).
+// Report shows a soft upgrade CTA for non-subscribers focused on submitting more scripts.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
@@ -20,6 +14,7 @@ import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
+// InlineUpgradeCTA repurposed for "submit more scripts" messaging
 import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
@@ -29,7 +24,6 @@ import {
   DetailsView,
   SectionHeader,
   LeadCharacterCard,
-  LockedLeadCharacterCard,
 } from '@/components/report/details-view'
 import { normalizeEvaluation } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
@@ -122,11 +116,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const { classification, whatsSpecial } = normalizeEvaluation(report)
 
-  // Gate logic (subscription-only):
-  //   Only paying subscribers see full reports. This applies to EVERYONE,
-  //   including the writer who uploaded the script — the owner is the highest-
-  //   intent conversion target, so we don't give them a free full view of their
-  //   own work. Free tier universally = hook + headline + 2 strengths, rest blurred.
+  // Gate logic (v5): NO BLUR. Every report is fully visible.
+  // Paywall lives on /submit (blocks 2nd+ submission for free users).
+  // We still check subscription status for upgrade CTA display and contact gating.
   let ownerIsSubscribed = false
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
@@ -147,13 +139,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
   }
 
-  // Content blur gate = WRITER's subscription status (not viewer's).
-  // Pro writer → report is unblurred for everyone. Free writer → blurred for everyone,
-  // including the owner (the owner blur is the upsell pressure).
-  const unlocked = ownerIsSubscribed
-  const showBlurred = !unlocked
-  // Login is required to reach this page, so any locked viewer is a free member.
-  const lockVariant: 'signup' | 'pro' | null = showBlurred ? 'pro' : null
+  // v5: all reports fully unlocked — no blur
+  const unlocked = true
+  const showUpgradeCTA = !viewerIsSubscribed && !!user
 
   const { count: likeCount } = await supabase
     .from('script_likes')
@@ -171,10 +159,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     userLiked = !!existingLike
   }
 
-  // Free tease: first 2 strengths fully visible, remainder locked.
+  // v5: all strengths visible — no locked tease
   const allStrengths = whatsSpecial.strengths ?? []
-  const visibleStrengths = unlocked ? allStrengths : allStrengths.slice(0, 2)
-  const lockedStrengthCount = unlocked ? 0 : Math.max(0, allStrengths.length - 2)
+  const visibleStrengths = allStrengths
 
   const positioningHook = report.positioning_hook ?? ''
   const leadCharacters = report.lead_characters ?? []
@@ -203,7 +190,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
-      <ReportAnalytics evaluationId={id} isBlurred={showBlurred} />
+      <ReportAnalytics evaluationId={id} isBlurred={false} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24 space-y-8">
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
@@ -304,17 +291,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         <ReportTabs
           showDetails={isOwner}
-          detailsLocked={!unlocked}
+          detailsLocked={false}
           pitch={
             <>
-              {!unlocked && lockVariant && (
-                <InlineUpgradeCTA
-                  evaluationId={id}
-                  label="You're seeing a preview of this report"
-                  subtext="Upgrade to read every writer's full pitch and message them directly."
-                />
-              )}
-
               {/* What Makes This Special */}
               <section className="mb-12">
                 <SectionHeader label="What Makes This Special" />
@@ -342,33 +321,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       )}
                     </div>
                   ))}
-                  {lockedStrengthCount > 0 && (
-                    <>
-                      {/* Fully blur the entire locked strength — dimension label
-                          included. The first 2 visible strengths carry the value
-                          proof; leaking more detail weakens the upgrade pressure. */}
-                      {allStrengths.slice(2).map((s, i) => (
-                        <div
-                          key={i}
-                          className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white select-none"
-                          style={{ filter: 'blur(5px)' }}
-                        >
-                          <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
-                            {s.dimension_or_area}
-                          </p>
-                          <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
-                            {s.what_it_means}
-                          </p>
-                          {s.evidence && (
-                            <p className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed">
-                              {s.evidence}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-                      {lockVariant && <InlineUpgradeCTA evaluationId={id} />}
-                    </>
-                  )}
                 </div>
               </section>
 
@@ -382,51 +334,43 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <p className="text-sm text-[var(--gem-gray-500)] italic">
                     No lead character breakdown available for this report.
                   </p>
-                ) : unlocked ? (
+                ) : (
                   <div className="space-y-3">
                     {leadCharacters.map((c, i) => (
                       <LeadCharacterCard key={i} c={c} />
                     ))}
                   </div>
-                ) : (
-                  <>
-                    {lockVariant && <InlineUpgradeCTA evaluationId={id} />}
-                    <div className="space-y-3">
-                      {leadCharacters.map((c, i) => (
-                        <LockedLeadCharacterCard key={i} c={c} />
-                      ))}
-                    </div>
-                  </>
                 )}
               </section>
+
+              {/* Soft upgrade CTA for non-subscribers */}
+              {showUpgradeCTA && (
+                <InlineUpgradeCTA
+                  evaluationId={id}
+                  label="Want to evaluate more scripts?"
+                  subtext="Pro members get unlimited evaluations and feature on Discover."
+                  cta="Go Pro — $20/mo"
+                />
+              )}
             </>
           }
           details={
-            unlocked ? (
-              <DetailsView
-                scores={scores}
-                production={production}
-                considerations={considerations}
-                overallScore={eval_?.weighted_score ?? null}
-                showScores
-                locked={false}
-              />
-            ) : (
-              <DetailsView
-                scores={scores}
-                production={production}
-                considerations={considerations}
-                overallScore={eval_?.weighted_score ?? null}
-                showScores={false}
-                locked={true}
-                evaluationId={id}
-              />
-            )
+            <DetailsView
+              scores={scores}
+              production={production}
+              considerations={considerations}
+              overallScore={eval_?.weighted_score ?? null}
+              showScores
+              locked={false}
+            />
           }
         />
       </div>
 
-      {showBlurred && user && <SubscribeGate evaluationId={id} isLoggedIn={true} />}
+      {/* SubscribeGate still available if triggered by upgrade CTA click */}
+      {!viewerIsSubscribed && user && (
+        <SubscribeGate evaluationId={id} isLoggedIn={true} />
+      )}
     </>
   )
 }

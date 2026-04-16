@@ -120,7 +120,7 @@ export default async function Home() {
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Upload your screenplay free. You&apos;ll get a one-sentence pitch, what makes it stand out, characters written for casting, and production details. Post it on Discover and producers can reach out.
+            Your first evaluation is free — full report included. You&apos;ll get a one-sentence pitch, what makes it stand out, characters written for casting, and production details. Go Pro to evaluate unlimited scripts and feature on Discover.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -402,7 +402,7 @@ export default async function Home() {
                 <div className="text-2xl font-bold text-emerald-600">$0</div>
               </div>
               <ul className="space-y-2.5 mb-5 flex-1">
-                {['Upload and get a full report', 'Read sample reports'].map(item => (
+                {['One free evaluation with full report', 'Read sample reports'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
                     {item}
@@ -432,7 +432,7 @@ export default async function Home() {
                 </div>
               </div>
               <ul className="space-y-2.5 mb-5 flex-1">
-                {['Post scripts to Discover', 'Producers can contact you', 'Commercial potential score', 'Unlimited uploads'].map(item => (
+                {['Unlimited script evaluations', 'Feature scripts on Discover', 'Producers can contact you', 'Full reports with production analysis'].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--gem-gray-300)]">
                     <CheckCircle size={14} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
                     {item}
@@ -465,7 +465,7 @@ export default async function Home() {
             Submit your script — free
             <ArrowRight size={18} />
           </TrackedCTA>
-          <p className="text-sm text-[var(--gem-gray-400)] mt-4">First report free. No credit card.</p>
+          <p className="text-sm text-[var(--gem-gray-400)] mt-4">First evaluation free — full report, no credit card.</p>
         </section>
       </TrackSection>
 

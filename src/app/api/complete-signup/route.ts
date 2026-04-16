@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { stripe } from '@/lib/stripe'
 import { createClient } from '@supabase/supabase-js'
+import { sendEmail } from '@/lib/email'
 
 /**
  * POST /api/complete-signup
@@ -127,6 +128,29 @@ export async function POST(request: NextRequest) {
       metadata: { supabase_user_id: userId },
     })
   }
+
+  // 5b. Send welcome + upgrade emails (fire-and-forget)
+  const firstName = (full_name || email.split('@')[0]).split(' ')[0]
+  sendEmail(
+    {
+      templateAlias: 'post_signup',
+      to: email,
+      variables: { first_name: firstName },
+      dedupeKey: userId,
+      tag: 'post_signup',
+    },
+    adminSupabase
+  )
+  sendEmail(
+    {
+      templateAlias: 'post_upgrade',
+      to: email,
+      variables: { first_name: firstName },
+      dedupeKey: `${userId}_${stripeCustomerId}`,
+      tag: 'post_upgrade',
+    },
+    adminSupabase
+  )
 
   // 6. Sign the user in via the regular Supabase client (sets auth cookies)
   const cookieStore = await cookies()

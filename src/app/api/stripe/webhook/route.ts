@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { stripe } from '@/lib/stripe'
 import { createServerClient } from '@supabase/ssr'
 import Stripe from 'stripe'
+import { sendEmail } from '@/lib/email'
 
 // Disable body parsing — Stripe needs the raw body for signature verification
 export const runtime = 'nodejs'
@@ -51,6 +52,28 @@ export async function POST(request: NextRequest) {
             subscription_status: 'active',
           })
           .eq('id', userId)
+
+        // Send post_upgrade email
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('email, full_name')
+          .eq('id', userId)
+          .single()
+
+        if (profile?.email) {
+          sendEmail(
+            {
+              templateAlias: 'post_upgrade',
+              to: profile.email,
+              variables: {
+                first_name: profile.full_name?.split(' ')[0] || 'there',
+              },
+              dedupeKey: `${userId}_${subscriptionId}`,
+              tag: 'post_upgrade',
+            },
+            supabase
+          )
+        }
       }
       break
     }

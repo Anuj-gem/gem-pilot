@@ -48,15 +48,13 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
 
         <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
           <Clock size={12} />
-          {trialExpired ? 'Your free trial has ended' : 'Free evaluation used'}
+          Free evaluation used
         </p>
         <h2 className="text-xl font-bold text-[var(--gem-white)] mb-2">
-          Keep evaluating. Keep getting surfaced.
+          You liked what you saw. Keep going.
         </h2>
         <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
-          {trialExpired
-            ? 'Your 48-hour trial is over — but your scripts are just getting started. Subscribe for unlimited evaluations and feature every script on Discover.'
-            : 'You\'ve seen what a GEM evaluation looks like. Subscribe to evaluate unlimited scripts and feature every one on Discover.'}
+          Your first evaluation was on us. Go Pro to evaluate every script and rewrite, and feature them on Discover where producers can find you.
         </p>
 
         <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">
@@ -67,9 +65,9 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           <ul className="space-y-2 mt-3">
             {[
               'Unlimited script evaluations',
-              'Unlimited scripts featured on Discover',
-              'Full scored report every time',
-              'Development notes + production analysis',
+              'Feature scripts on Discover',
+              'Producers and reps can contact you',
+              'Full reports with production analysis',
               'All formats — features, pilots, shorts',
             ].map(item => (
               <li
