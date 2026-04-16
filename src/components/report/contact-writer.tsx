@@ -84,13 +84,13 @@ export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: P
   }
 
   // Owner confirmation — show that readers can contact them
-  if (state === ‘owner_live’) {
+  if (state === 'owner_live') {
     return (
       <div
         className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
         style={{
-          background: ‘linear-gradient(135deg, rgba(5,150,105,0.06), transparent 60%)’,
-          borderColor: ‘rgba(5,150,105,0.25)’,
+          background: 'linear-gradient(135deg, rgba(5,150,105,0.06), transparent 60%)',
+          borderColor: 'rgba(5,150,105,0.25)',
         }}
       >
         <div className="min-w-0">
@@ -103,7 +103,7 @@ export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: P
         </div>
         <div
           className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold"
-          style={{ background: ‘rgba(5,150,105,0.12)’, color: ‘#059669’ }}
+          style={{ background: 'rgba(5,150,105,0.12)', color: '#059669' }}
         >
           <Mail size={14} />
           Contact open
