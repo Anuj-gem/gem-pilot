@@ -39,6 +39,7 @@ function SubmitPageInner() {
 
   // Subscription state + free-eval count
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [freeRemaining, setFreeRemaining] = useState<number | null>(null)
   const [paywalled, setPaywalled] = useState(false)
   const [upgradeLoading, setUpgradeLoading] = useState(false)
 
@@ -99,8 +100,14 @@ function SubmitPageInner() {
         const subscribed = profile?.subscription_status === 'active'
         setIsSubscribed(subscribed)
 
-        // Paywall check happens server-side in /api/evaluate.
-        // If user has 1+ completed evals and isn't subscribed, API returns 402.
+        if (!subscribed) {
+          const { count } = await supabase
+            .from('script_submissions')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', user.id)
+            .eq('status', 'completed')
+          setFreeRemaining(count === 0 ? 1 : 0)
+        }
       }
     }
     checkAuth()
@@ -497,9 +504,14 @@ function SubmitPageInner() {
         )}
 
         <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-[family-name:var(--font-display)]">Get the pitch that sells your script.</h1>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-8">
+        <p className="text-sm text-[var(--gem-gray-400)] mb-4">
           Full report in 60 seconds &rarr; Then post it to Discover and get in front of producers.{!isSubscribed && ' First one\u2019s free.'}
         </p>
+        {authChecked && !isSubscribed && freeRemaining !== null && (
+          <p className="text-xs text-[var(--gem-gray-500)] mb-8">
+            Free submissions remaining: {freeRemaining}
+          </p>
+        )}
 
         {/* Paywall — user has used their free evaluation */}
         {paywalled && (
