@@ -32,7 +32,7 @@ export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: P
       return
     }
     if (state === 'owner_upsell') {
-      window.location.href = `/subscribe?next=/report/${evaluationId}`
+      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
       return
     }
     // writer_not_pro — nothing to do
@@ -112,31 +112,37 @@ export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: P
     )
   }
 
-  // Owner upsell — free writer sees "upgrade to become reachable"
+  // Owner upsell — free writer sees a locked "Contact writer" button
+  // that makes it obvious producers would reach them here if they upgrade
   if (state === 'owner_upsell') {
     return (
-      <div
-        className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
-        style={{
-          background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
-          borderColor: 'rgba(124,58,237,0.28)',
-        }}
-      >
-        <div className="min-w-0">
-          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
-            Let producers find you
-          </p>
-          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
-            Go Pro to publish on Discover and let producers and reps contact you directly.
-          </p>
+      <div className="space-y-2">
+        <div
+          className="relative flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)] opacity-60"
+        >
+          <div className="min-w-0">
+            <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-gray-400)] m-0">
+              Interested in this script?
+            </p>
+            <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-500)] m-0 mt-0.5">
+              Reach out to the writer directly.
+            </p>
+          </div>
+          <div
+            className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-[var(--gem-gray-500)]"
+            style={{ background: 'rgba(255,255,255,0.06)' }}
+          >
+            <Lock size={14} />
+            Contact writer
+          </div>
         </div>
         <button
           onClick={handleClick}
-          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-colors"
           style={{ background: 'var(--gem-accent)', color: '#fff' }}
         >
-          <Lock size={14} />
-          Go Pro
+          <Lock size={13} />
+          Go Pro to let producers contact you — $20/mo
         </button>
       </div>
     )
