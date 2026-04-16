@@ -496,9 +496,9 @@ function SubmitPageInner() {
           </div>
         )}
 
-        <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-[family-name:var(--font-display)]">Your script, through a producer&apos;s eyes.</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-[family-name:var(--font-display)]">Get the pitch that sells your script.</h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-8">
-          Upload your PDF. Full report in 60 seconds.{!isSubscribed && ' First one\u2019s free.'}
+          Full report in 60 seconds &rarr; Then post it to Discover and get in front of producers.{!isSubscribed && ' First one\u2019s free.'}
         </p>
 
         {/* Paywall — user has used their free evaluation */}
