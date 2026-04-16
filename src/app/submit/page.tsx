@@ -289,6 +289,9 @@ function SubmitPageInner() {
     gtagSignupCompleted()
     setUser(data.user)
 
+    // Fire welcome email (fire-and-forget)
+    fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
+
     // Wait for eval to finish (up to 120s). Read from refs, NOT closure-captured
     // state, so we see live values as the background eval completes.
     const deadline = Date.now() + 120_000

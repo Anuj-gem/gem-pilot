@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { sendEmail } from "@/lib/email";
 
 // Service client for writes
 function createServiceClient() {
@@ -76,6 +77,44 @@ export async function POST(request: NextRequest) {
         expires_at: null,
       })
       .eq("id", submission_id);
+
+    // Send post_submission_free email (fire-and-forget)
+    // The eval was created anonymously so the evaluate route skipped the email.
+    const { data: profile } = await serviceClient
+      .from("profiles")
+      .select("email, full_name")
+      .eq("id", user.id)
+      .single();
+
+    const { data: evalRecord } = await serviceClient
+      .from("script_evaluations")
+      .select("id")
+      .eq("submission_id", submission_id)
+      .single();
+
+    const { data: sub } = await serviceClient
+      .from("script_submissions")
+      .select("title")
+      .eq("id", submission_id)
+      .single();
+
+    if (profile?.email && evalRecord) {
+      const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`;
+      sendEmail(
+        {
+          templateAlias: "post_submission_free",
+          to: profile.email,
+          variables: {
+            first_name: profile.full_name?.split(" ")[0] || "there",
+            title: sub?.title || "Untitled",
+            report_url: reportUrl,
+          },
+          dedupeKey: evalRecord.id,
+          tag: "post_submission_free",
+        },
+        serviceClient
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
