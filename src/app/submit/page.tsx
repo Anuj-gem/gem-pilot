@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { getPendingFile } from '@/lib/pending-file'
 import Nav from '@/components/nav'
-import { Upload, FileText, Loader2, AlertCircle, CheckCircle, ArrowRight, Compass } from 'lucide-react'
+import { Upload, FileText, Loader2, AlertCircle, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { trackSignupStart, trackSignupComplete, trackEvalStart, trackEvalComplete, trackBlurredReportViewed, trackSubscriptionActivated, trackSubscribeClick, identifyUser } from '@/lib/posthog'
 import { gtagEvalStarted, gtagSignupCompleted, gtagSubscribeCompleted, gtagSubscribeClicked } from '@/lib/gtag'
@@ -496,25 +496,10 @@ function SubmitPageInner() {
           </div>
         )}
 
-        <h1 className="text-2xl font-bold mb-1">Submit a script</h1>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-          Upload your screenplay and see how it gets positioned — the pitch line, what's working, and the case a producer would make for it.
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-[family-name:var(--font-display)]">Your script, through a producer&apos;s eyes.</h1>
+        <p className="text-sm text-[var(--gem-gray-400)] mb-8">
+          Upload your PDF. Full report in 60 seconds.{!isSubscribed && ' First one\u2019s free.'}
         </p>
-
-        {/* Status badge */}
-        {authChecked && (
-          <div className="flex items-center gap-3 mb-8">
-            {isSubscribed ? (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-600 text-white">
-                <CheckCircle size={12} /> Pro — unlimited evaluations
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-blue-600 text-white">
-                First evaluation free · Full report included
-              </span>
-            )}
-          </div>
-        )}
 
         {/* Paywall — user has used their free evaluation */}
         {paywalled && (
@@ -541,9 +526,50 @@ function SubmitPageInner() {
 
         {!paywalled && (
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Upload zone — dominant element */}
+          <div
+            onDragOver={e => e.preventDefault()}
+            onDrop={handleDrop}
+            onClick={() => fileInputRef.current?.click()}
+            className={`
+              relative flex flex-col items-center justify-center py-14 sm:py-20 px-6
+              border-2 border-dashed rounded-2xl cursor-pointer transition-all
+              ${file
+                ? 'border-[var(--gem-accent)] bg-[var(--gem-accent)]/5'
+                : 'border-[var(--gem-gray-600)] hover:border-[var(--gem-accent)]/50 hover:bg-[var(--gem-accent)]/[0.02]'
+              }
+            `}
+          >
+            {file ? (
+              <>
+                <FileText size={40} className="text-[var(--gem-accent)] mb-3" />
+                <span className="text-base font-semibold text-[var(--gem-white)]">{file.name}</span>
+                <span className="text-xs text-[var(--gem-gray-400)] mt-1">
+                  {(file.size / 1024).toFixed(0)} KB — click to change
+                </span>
+              </>
+            ) : (
+              <>
+                <Upload size={40} className="text-[var(--gem-gray-400)] mb-3" />
+                <span className="text-base font-medium text-[var(--gem-gray-200)]">
+                  Drop your screenplay PDF here
+                </span>
+                <span className="text-xs text-[var(--gem-gray-500)] mt-1">or click to browse · Max 10MB</span>
+              </>
+            )}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".pdf,application/pdf"
+              onChange={handleFileChange}
+              className="hidden"
+            />
+          </div>
+
+          {/* Title */}
           <div>
             <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">
-              Script title
+              Title
             </label>
             <input
               type="text"
@@ -554,9 +580,10 @@ function SubmitPageInner() {
             />
           </div>
 
+          {/* Format */}
           <div>
             <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">
-              Format <span className="text-[var(--gem-gray-500)]">(required)</span>
+              Format
             </label>
             <div className="grid grid-cols-2 gap-2">
               {(['Feature film', 'Series'] as const).map(opt => (
@@ -574,53 +601,6 @@ function SubmitPageInner() {
                 </button>
               ))}
             </div>
-            <p className="text-xs text-[var(--gem-gray-500)] mt-1.5">
-              Pick one — your evaluation is tailored to the format you select.
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-[var(--gem-gray-300)] mb-1">
-              Script file (PDF)
-            </label>
-            <div
-              onDragOver={e => e.preventDefault()}
-              onDrop={handleDrop}
-              onClick={() => fileInputRef.current?.click()}
-              className={`
-                relative flex flex-col items-center justify-center py-10 px-4
-                border-2 border-dashed rounded-xl cursor-pointer transition-colors
-                ${file
-                  ? 'border-[var(--gem-accent)] bg-[var(--gem-accent)]/5'
-                  : 'border-[var(--gem-gray-600)] hover:border-[var(--gem-gray-400)]'
-                }
-              `}
-            >
-              {file ? (
-                <>
-                  <FileText size={32} className="text-[var(--gem-accent)] mb-2" />
-                  <span className="text-sm font-medium">{file.name}</span>
-                  <span className="text-xs text-[var(--gem-gray-400)] mt-1">
-                    {(file.size / 1024).toFixed(0)} KB — click to change
-                  </span>
-                </>
-              ) : (
-                <>
-                  <Upload size={32} className="text-[var(--gem-gray-400)] mb-2" />
-                  <span className="text-sm text-[var(--gem-gray-300)]">
-                    Drop your PDF here or click to browse
-                  </span>
-                  <span className="text-xs text-[var(--gem-gray-500)] mt-1">Max 10MB</span>
-                </>
-              )}
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".pdf,application/pdf"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-            </div>
           </div>
 
           {error && (
@@ -633,35 +613,16 @@ function SubmitPageInner() {
           <button
             type="submit"
             disabled={!file || !title || !declaredFormat}
-            className="w-full py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full py-3.5 rounded-xl bg-[var(--gem-accent)] text-white text-base font-semibold hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             Evaluate my script
           </button>
 
           <p className="text-xs text-center text-[var(--gem-gray-500)]">
-            Your script is evaluated using the same rubric applied to produced film and television.
+            After your report, you can share it on Discover where producers browse.
           </p>
         </form>
         )}
-
-        {/* Discover nudge */}
-        <div className="mt-8 p-4 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]">
-          <div className="flex items-start gap-3">
-            <Compass size={18} className="text-[var(--gem-accent)] mt-0.5 shrink-0" />
-            <div>
-              <p className="text-sm text-[var(--gem-gray-300)]">
-                Don&apos;t have a script handy? Browse Discover to see how other writers are positioning their screenplays.
-              </p>
-              <Link
-                href="/discover"
-                className="inline-flex items-center gap-1.5 mt-2 text-sm text-[var(--gem-accent)] hover:underline"
-              >
-                Browse Discover
-                <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   )
