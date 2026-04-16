@@ -180,7 +180,7 @@ export function DetailsView({
 
       {production && (
         <section className="mb-12">
-          <SectionHeader label="Production Reality" />
+          <SectionHeader label="Production Planning Details" />
           <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
             Everything the script tells us about how it would actually get made.
           </p>
@@ -278,7 +278,7 @@ export function DetailsView({
       )}
 
       <section className="mb-8">
-        <SectionHeader label="Dimension Analysis" />
+        <SectionHeader label="Narrative Analysis Details" />
         <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
           Ten lenses on what the script is doing. Tap to expand.
         </p>
