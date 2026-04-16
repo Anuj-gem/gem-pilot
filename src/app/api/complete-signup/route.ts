@@ -146,7 +146,7 @@ export async function POST(request: NextRequest) {
       templateAlias: 'post_upgrade',
       to: email,
       variables: { first_name: firstName },
-      dedupeKey: `${userId}_${stripeCustomerId}`,
+      dedupeKey: `${userId}_post_upgrade`,
       tag: 'post_upgrade',
     },
     adminSupabase

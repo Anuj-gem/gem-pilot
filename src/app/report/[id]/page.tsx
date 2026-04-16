@@ -2,9 +2,9 @@
 // Pitch tab (public): hook, what makes this special, lead characters.
 // Details tab (private to the writer): production reality, considerations, dimension analysis.
 //
-// Gate model (v5): NO BLUR. Every report is fully visible to everyone.
-// First eval is free; the paywall lives on /submit (blocks 2nd+ submission).
-// Report shows a soft upgrade CTA for non-subscribers focused on submitting more scripts.
+// Gate model (v6): NO BLUR. Every report is fully visible to everyone.
+// Paywall on: 2nd+ submission, Discover publishing, and contact/reachability.
+// Free users see the full report to get wowed, then hit upgrade when they try to publish or get contacted.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
@@ -190,13 +190,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
 
-  // Contact Writer — v5: no subscription gate. Everyone is reachable.
-  //   - owner viewing own report → owner_live (shows "you're reachable" confirmation)
-  //   - non-owner viewing a claimed report → live (can message)
-  //   - anonymous submission → no contact (no writer to reach)
+  // Contact Writer — gated by writer's Pro subscription.
+  //   - owner + subscribed → owner_live (shows "you're reachable")
+  //   - owner + free → owner_upsell (shows "upgrade to become reachable")
+  //   - non-owner + writer subscribed → live (can message)
+  //   - non-owner + writer NOT subscribed → writer_not_pro
+  //   - anonymous submission → no contact
   let contactState: 'live' | 'owner_upsell' | 'owner_live' | 'writer_not_pro' | null = null
   if (!isAnonymousSubmission && !!submission.user_id) {
-    contactState = isOwner ? 'owner_live' : 'live'
+    if (isOwner) {
+      contactState = ownerIsSubscribed ? 'owner_live' : 'owner_upsell'
+    } else {
+      contactState = ownerIsSubscribed ? 'live' : 'writer_not_pro'
+    }
   }
 
   // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
@@ -403,8 +409,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               {showUpgradeCTA && (
                 <InlineUpgradeCTA
                   evaluationId={id}
-                  label="Want to evaluate more scripts?"
-                  subtext="Pro members get unlimited evaluations and feature on Discover."
+                  label="Ready to get in front of producers?"
+                  subtext="Go Pro to publish on Discover, let reps contact you, and evaluate unlimited scripts."
                   cta="Go Pro — $20/mo"
                 />
               )}

@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
               variables: {
                 first_name: profile.full_name?.split(' ')[0] || 'there',
               },
-              dedupeKey: `${userId}_${subscriptionId}`,
+              dedupeKey: `${userId}_post_upgrade`,
               tag: 'post_upgrade',
             },
             supabase

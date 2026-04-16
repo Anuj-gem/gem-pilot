@@ -112,7 +112,61 @@ export function ContactWriter({ evaluationId, writerName, state, isLoggedIn }: P
     )
   }
 
-  // Fallback — should not reach here in v5 but kept for safety
+  // Owner upsell — free writer sees "upgrade to become reachable"
+  if (state === 'owner_upsell') {
+    return (
+      <div
+        className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border"
+        style={{
+          background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)',
+          borderColor: 'rgba(124,58,237,0.28)',
+        }}
+      >
+        <div className="min-w-0">
+          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
+            Let producers find you
+          </p>
+          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+            Go Pro to publish on Discover and let producers and reps contact you directly.
+          </p>
+        </div>
+        <button
+          onClick={handleClick}
+          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+          style={{ background: 'var(--gem-accent)', color: '#fff' }}
+        >
+          <Lock size={14} />
+          Go Pro
+        </button>
+      </div>
+    )
+  }
+
+  // Writer not on Pro — visitor sees that contact isn't available
+  if (state === 'writer_not_pro') {
+    return (
+      <div
+        className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border border-[var(--gem-gray-700)]"
+      >
+        <div className="min-w-0">
+          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-gray-400)] m-0">
+            Contact not available
+          </p>
+          <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-500)] m-0 mt-0.5">
+            This writer hasn&apos;t enabled inbound contact yet.
+          </p>
+        </div>
+        <div
+          className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-[var(--gem-gray-500)]"
+          style={{ background: 'rgba(255,255,255,0.04)' }}
+        >
+          <Lock size={14} />
+          Unavailable
+        </div>
+      </div>
+    )
+  }
+
   return null
 }
 

@@ -31,7 +31,11 @@ export function VisibilityToggle({
   }
 
   const toggle = async () => {
-    // v5: all users can publish to Discover — no subscription gate.
+    // Gate: only Pro subscribers can publish to Discover.
+    if (!isPublic && !isSubscribed) {
+      openUpgradeModal()
+      return
+    }
     setLoading(true)
     try {
       const res = await fetch(`/api/scripts/${submissionId}/visibility`, {
@@ -67,7 +71,7 @@ export function VisibilityToggle({
       }`}
     >
       {isPublic ? <Eye size={14} /> : <EyeOff size={14} />}
-      {isPublic ? 'Public on Discover' : 'Hidden from Discover'}
+      {isPublic ? 'Public on Discover' : !isSubscribed ? 'Publish to Discover — Pro' : 'Hidden from Discover'}
     </button>
   )
 }

@@ -51,10 +51,10 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           Free evaluation used
         </p>
         <h2 className="text-xl font-bold text-[var(--gem-white)] mb-2">
-          You liked what you saw. Keep going.
+          Your report is ready. Now get it seen.
         </h2>
         <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
-          Your first evaluation was on us. Go Pro to evaluate every script and rewrite, and feature them on Discover where producers can find you.
+          Go Pro to publish on Discover, let producers and reps contact you directly, and evaluate unlimited scripts.
         </p>
 
         <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">

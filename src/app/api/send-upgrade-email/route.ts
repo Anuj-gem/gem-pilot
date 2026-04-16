@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
         templateAlias: "post_upgrade",
         to: profile.email,
         variables: { first_name: firstName },
-        dedupeKey: `${user.id}_${profile.stripe_subscription_id || "upgrade"}`,
+        dedupeKey: `${user.id}_post_upgrade`,
         tag: "post_upgrade",
       },
       serviceClient

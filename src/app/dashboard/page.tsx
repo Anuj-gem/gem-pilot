@@ -61,10 +61,10 @@ export default async function DashboardPage() {
         {!isSubscribed && usedFreeEval && (
           <div className="mb-8 rounded-xl border border-[var(--gem-gray-700)] p-5 sm:p-6">
             <p className="text-sm font-semibold text-[var(--gem-white)] mb-1">
-              You&apos;ve used your free submission.
+              Your report is ready. Now get it seen.
             </p>
             <p className="text-sm text-[var(--gem-gray-400)] mb-4">
-              Go Pro to keep evaluating scripts and get in front of the industry.
+              Go Pro to publish on Discover, let producers contact you, and evaluate unlimited scripts.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4 text-xs text-[var(--gem-gray-300)]">
               <div className="flex items-center gap-2">
@@ -100,7 +100,7 @@ export default async function DashboardPage() {
                 ? 'Submit your first script to get a full evaluation and positioning report.'
                 : isSubscribed
                   ? `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} in your portfolio · ${publicCount} on Discover`
-                  : `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} evaluated. Go Pro for unlimited evaluations and to feature on Discover.`}
+                  : `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} evaluated. Go Pro to publish on Discover and let producers reach you.`}
             </p>
           </div>
           <Link

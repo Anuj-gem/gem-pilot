@@ -75,10 +75,10 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         </div>
 
         <h3 className="text-base font-bold text-[var(--gem-white)] mb-1 leading-snug">
-          Submit unlimited scripts and get in front of producers — $20/mo
+          Publish on Discover and let producers find you — $20/mo
         </h3>
         <p className="text-[13px] text-[var(--gem-gray-400)] mb-4 leading-snug">
-          Your first evaluation is on us. Go Pro to evaluate every draft and feature your scripts on Discover.
+          Go Pro to feature your scripts where producers and reps browse, enable direct contact, and evaluate unlimited drafts.
         </p>
 
         <ul className="space-y-1.5 mb-5">
