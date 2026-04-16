@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Upload, FileText, Megaphone } from 'lucide-react'
+import { ArrowRight, CheckCircle, Upload, FileText, Megaphone, Sparkles, NotebookPen, Search } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackSection } from '@/components/track-section'
 import { TrackedCTA } from '@/components/tracked-cta'
@@ -114,13 +114,13 @@ export default async function Home() {
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Get a producer-ready report on your script in 60 seconds.
+            Free pitch document + industry exposure for your script.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Your first evaluation is free — full report included. You&apos;ll get a one-sentence pitch, what makes it stand out, characters written for casting, and production details. Go Pro to evaluate unlimited scripts and feature on Discover.
+            Get a detailed pitch document that helps sell the potential of your script to producers &amp; reps. Then post to our Discover board for potential collaborators to contact you.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -175,42 +175,42 @@ export default async function Home() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
-      {/* Section 1 — How it works */}
-      <TrackSection name="how_it_works">
+      {/* Section 1 — What you get */}
+      <TrackSection name="value_props">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-          <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">How it works</p>
+          <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">What you get</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 font-[family-name:var(--font-display)]">
-            Three steps from draft to industry eyes.
+            A new way to get your script in front of the industry.
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-10 h-10 rounded-lg bg-violet-500/15 border border-violet-500/30 flex items-center justify-center mb-4">
-                <span className="text-[var(--gem-accent)] font-bold">1</span>
+                <Sparkles size={20} className="text-[var(--gem-accent)]" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Upload your screenplay PDF</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">The Pitch</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Takes 10 seconds. Feature or pilot.
+                A one-line positioning hook, what makes your script special, and lead characters written for casting &mdash; the case a producer would make for it. Public, shareable, built to get attention.
               </p>
             </div>
 
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center mb-4">
-                <span className="text-amber-400 font-bold">2</span>
+                <NotebookPen size={20} className="text-amber-400" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Get your report in 60 seconds</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Private Notes</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Pitch sentence, strongest qualities, characters written for casting, and production details.
+                Dimension-by-dimension analysis, production reality, and considerations &mdash; your private playbook for rewrites and meetings. Only you see this.
               </p>
             </div>
 
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-10 h-10 rounded-lg bg-[var(--gem-gold)]/15 border border-[var(--gem-gold)]/40 flex items-center justify-center mb-4">
-                <span className="text-[var(--gem-gold)] font-bold">3</span>
+                <Search size={20} className="text-[var(--gem-gold)]" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Post it to Discover</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Discover</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Producers and reps browse Discover. They can contact you directly. $20/month.
+                Post your pitch to a public board that producers and reps browse by genre. They read your report, they contact you directly. No middleman.
               </p>
             </div>
           </div>
