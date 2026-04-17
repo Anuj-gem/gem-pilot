@@ -38,7 +38,7 @@ export default async function DashboardPage() {
     .from('script_submissions')
     .select(`
       id, title, status, is_public, created_at,
-      script_evaluations ( id, evaluation, created_at )
+      script_evaluations ( id, evaluation, created_at, weighted_score )
     `)
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
@@ -49,6 +49,28 @@ export default async function DashboardPage() {
   const completedCount =
     submissions?.filter((s: any) => s.status === 'completed').length ?? 0
   const usedFreeEval = completedCount >= 1
+
+  // Portfolio rank map: { submission_id -> rank } sorted by weighted_score desc.
+  // Older submission wins ties. Only completed submissions with evals get ranked.
+  const rankablePool = (submissions ?? [])
+    .filter((s: any) => s.status === 'completed')
+    .map((s: any) => {
+      const e = Array.isArray(s.script_evaluations)
+        ? s.script_evaluations[0]
+        : s.script_evaluations
+      return { id: s.id, score: e?.weighted_score ?? null, created_at: s.created_at }
+    })
+    .filter((s: any) => typeof s.score === 'number')
+    .sort((a: any, b: any) => {
+      const ds = b.score - a.score
+      if (ds !== 0) return ds
+      return new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+    })
+  const rankMap: Record<string, number> = {}
+  rankablePool.forEach((s: any, i: number) => {
+    rankMap[s.id] = i + 1
+  })
+  const rankTotal = rankablePool.length
 
   const firstName =
     profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
@@ -140,6 +162,8 @@ export default async function DashboardPage() {
 
                 const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
 
+                const rank = rankMap[sub.id]
+
                 return (
                   <div
                     key={sub.id}
@@ -151,7 +175,20 @@ export default async function DashboardPage() {
                           : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-4 flex-wrap">
+                    <div className="flex items-start gap-4">
+                      {rank ? (
+                        <div className="shrink-0 w-10 sm:w-12 text-center pt-1">
+                          <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gold)] leading-none">
+                            #{rank}
+                          </div>
+                          {rankTotal > 1 && (
+                            <div className="text-[10px] text-[var(--gem-gray-500)] mt-1 uppercase tracking-wider">
+                              of {rankTotal}
+                            </div>
+                          )}
+                        </div>
+                      ) : null}
+                      <div className="flex-1 min-w-0 flex items-start justify-between gap-4 flex-wrap">
                       <div className="flex-1 min-w-0">
                         {/* Title + state pills */}
                         <div className="flex items-center gap-2 flex-wrap mb-1.5">
@@ -234,6 +271,7 @@ export default async function DashboardPage() {
                           )}
                         </div>
                       )}
+                      </div>
                     </div>
                   </div>
                 )

@@ -228,7 +228,11 @@ export async function POST(request: NextRequest) {
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
 
-      const storagePath = `${user?.id ?? "anonymous"}/${submission.id}/${file.name}`;
+      // Use submission.id as the storage key (not file.name) — Supabase storage
+      // rejects keys with non-ASCII or special characters (smart quotes, em-dashes,
+      // accented chars), which was silently dropping ~37 uploads. Keep the original
+      // filename in the `filename` column for display.
+      const storagePath = `${user?.id ?? "anonymous"}/${submission.id}/script.pdf`;
       const { error: uploadError } = await serviceClient.storage
         .from("scripts")
         .upload(storagePath, buffer, {
@@ -238,12 +242,26 @@ export async function POST(request: NextRequest) {
 
       if (uploadError) {
         console.error("Storage upload error:", uploadError);
-      } else {
         await serviceClient
           .from("script_submissions")
-          .update({ file_url: storagePath })
+          .update({
+            status: "failed",
+            error_message: `Storage upload failed: ${uploadError.message}`,
+          })
           .eq("id", submission.id);
+        return NextResponse.json(
+          {
+            error:
+              "We couldn't store your script. Please try again, or contact support if the issue persists.",
+          },
+          { status: 500 }
+        );
       }
+
+      await serviceClient
+        .from("script_submissions")
+        .update({ file_url: storagePath })
+        .eq("id", submission.id);
 
       // 6. Extract text from PDF
       const scriptText = await extractPdfText(buffer);
