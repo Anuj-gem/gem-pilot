@@ -111,13 +111,13 @@ export default async function Home() {
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Free pitch document + industry exposure for your script.
+            Develop your script + Pitch it to the industry.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Get a detailed pitch document that helps sell the potential of your script to producers &amp; reps. Then post to our Discover board for potential collaborators to contact you. First one&apos;s free &mdash; unlimited for $20/mo.
+            Deep notes to develop your script. A polished pitch document to share anywhere. A public board where the right collaborators find you. First one&apos;s free &mdash; unlimited for $20/mo.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
