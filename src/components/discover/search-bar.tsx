@@ -8,7 +8,6 @@ interface SearchBarProps {
   initialQuery: string
   initialGenre: string
   initialFormat: string
-  initialSort: string
   genres: string[]
   formats: string[]
 }
@@ -17,7 +16,6 @@ export function SearchBar({
   initialQuery,
   initialGenre,
   initialFormat,
-  initialSort,
   genres,
   formats,
 }: SearchBarProps) {
@@ -43,13 +41,14 @@ export function SearchBar({
     <div className="mb-6 space-y-4">
       {/* Search bar */}
       <form onSubmit={handleSearch} className="relative">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--gem-gray-500)] pointer-events-none" />
+        <Search size={16} strokeWidth={2} className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#6b7280' }} />
         <input
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by title or author..."
-          className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-900)] placeholder:text-[var(--gem-gray-500)] focus:outline-none focus:border-[var(--gem-accent)]"
+          className="w-full pl-12 pr-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm focus:outline-none focus:border-[var(--gem-accent)]"
+          style={{ color: '#111827' }}
         />
       </form>
 
@@ -107,25 +106,6 @@ export function SearchBar({
         ))}
       </div>
 
-      {/* Sort pills */}
-      <div className="flex gap-2">
-        {[
-          { value: 'recent', label: 'Recent' },
-          { value: 'liked', label: 'Most Liked' },
-        ].map(opt => (
-          <button
-            key={opt.value}
-            onClick={() => updateParams({ sort: opt.value === 'recent' ? '' : opt.value })}
-            className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors ${
-              initialSort === opt.value || (!initialSort && opt.value === 'recent')
-                ? 'bg-[var(--gem-accent)] text-white'
-                : 'bg-white text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-700)]'
-            }`}
-          >
-            {opt.label}
-          </button>
-        ))}
-      </div>
     </div>
   )
 }

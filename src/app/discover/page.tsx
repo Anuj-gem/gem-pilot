@@ -1,15 +1,16 @@
-// Discover — v4 positioning-first feed. Cards lead with the positioning_hook,
-// not a score or tier. Default sort is recency; "Most liked" is optional.
+// Discover — positioning-first feed, sorted by recency with infinite scroll.
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
-import { ScriptGrid } from '@/components/discover/script-grid'
+import { InfiniteScriptGrid } from '@/components/discover/infinite-script-grid'
 import { SearchBar } from '@/components/discover/search-bar'
 import type { LeaderboardEntry } from '@/types'
 
 export const dynamic = 'force-dynamic'
 
+const PAGE_SIZE = 20
+
 interface PageProps {
-  searchParams: Promise<{ q?: string; genre?: string; format?: string; sort?: string }>
+  searchParams: Promise<{ q?: string; genre?: string; format?: string }>
 }
 
 export default async function DiscoverPage({ searchParams }: PageProps) {
@@ -17,37 +18,39 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  let query = supabase.from('leaderboard').select('*')
+  // Fetch filter option universe (all genres/formats across the board) so the
+  // pills don't shrink with the first PAGE_SIZE results.
+  const { data: allForFilters } = await supabase
+    .from('leaderboard')
+    .select('genre, format')
+    .limit(1000)
 
+  // Initial page — first PAGE_SIZE rows, recency-ordered.
+  let query = supabase.from('leaderboard').select('*')
   if (params.q) {
     query = query.or(`title.ilike.%${params.q}%,author_name.ilike.%${params.q}%`)
   }
   if (params.genre) query = query.ilike('genre', `%${params.genre}%`)
   if (params.format) query = query.ilike('format', `%${params.format}%`)
-
-  // Default: most recent. "liked" = most liked. Score-sort removed.
-  if (params.sort === 'liked') {
-    query = query.order('like_count', { ascending: false })
-  } else {
-    query = query.order('created_at', { ascending: false })
-  }
-
-  query = query.limit(50)
+  query = query.order('created_at', { ascending: false }).range(0, PAGE_SIZE - 1)
 
   const { data: entries } = await query
   const scripts = (entries ?? []) as LeaderboardEntry[]
 
-  let userLikes = new Set<string>()
-  if (user) {
+  let initialLikes: string[] = []
+  if (user && scripts.length > 0) {
+    const ids = scripts.map((s) => s.evaluation_id)
     const { data: likes } = await supabase
       .from('script_likes')
       .select('evaluation_id')
       .eq('user_id', user.id)
-    if (likes) userLikes = new Set(likes.map((l) => l.evaluation_id))
+      .in('evaluation_id', ids)
+    initialLikes = (likes ?? []).map((l) => l.evaluation_id)
   }
 
-  const genres = [...new Set(scripts.map((s) => s.genre).filter(Boolean))]
-  const formats = [...new Set(scripts.map((s) => s.format).filter(Boolean))]
+  const filterPool = (allForFilters ?? []) as { genre: string | null; format: string | null }[]
+  const genres = [...new Set(filterPool.map((s) => s.genre).filter(Boolean) as string[])]
+  const formats = [...new Set(filterPool.map((s) => s.format).filter(Boolean) as string[])]
 
   return (
     <>
@@ -66,16 +69,21 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
           initialQuery={params.q ?? ''}
           initialGenre={params.genre ?? ''}
           initialFormat={params.format ?? ''}
-          initialSort={params.sort ?? 'recent'}
           genres={genres}
           formats={formats}
         />
 
         {scripts.length > 0 ? (
-          <ScriptGrid
-            scripts={scripts}
-            userLikes={Array.from(userLikes)}
+          <InfiniteScriptGrid
+            initialScripts={scripts}
+            initialLikes={initialLikes}
             loggedIn={!!user}
+            filters={{
+              q: params.q ?? '',
+              genre: params.genre ?? '',
+              format: params.format ?? '',
+            }}
+            hasMoreInitial={scripts.length === PAGE_SIZE}
           />
         ) : (
           <div className="text-center py-20">
