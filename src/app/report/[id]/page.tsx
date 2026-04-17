@@ -390,7 +390,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <>
               {/* What's Working — numbered collapsibles with evidence sidebar */}
               {allStrengths.length > 0 && (
-                <Section label="What's Working" subtitle={whatsSpecial.headline}>
+                <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
                   <div className="space-y-3">
                     {allStrengths.map((s, i) => (
                       <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
