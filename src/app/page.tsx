@@ -117,7 +117,7 @@ export default async function Home() {
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Deep notes to develop your script. A polished pitch document to share anywhere. A public board where the right collaborators find you. First one&apos;s free &mdash; unlimited for $20/mo.
+            GEM gives you detailed notes to develop your script, a polished pitch document you can share anywhere, and a public board where the right collaborators come find you. First one&apos;s free &mdash; unlimited for $20/mo.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
