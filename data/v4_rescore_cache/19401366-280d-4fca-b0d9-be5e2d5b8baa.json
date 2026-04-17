@@ -1,0 +1,265 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Southern gothic drama",
+      "genre_tags": [
+        "family saga",
+        "legal/political thriller"
+      ],
+      "tone": "heightened, operatic, barbed, melodramatic, socially charged"
+    },
+    "positioning_hook": "A Black woman with receipts on a bourbon dynasty returns to the Mississippi Delta and forces the family that buried her father to reckon with its bloodline.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a very legible commercial promise: a prestige Southern family saga built around bourbon, inheritance, scandal, and revenge. Leona’s return to the Cartwright world, the engagement-brunch humiliation, the ladies-luncheon showdown, and the corporate takeover angle all give the story clear audience-facing hooks with strong trailer moments."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The central engine is easy to grasp early: a Delta bourbon dynasty is threatened by a woman from its past who has evidence of a deadly cover-up. The script keeps returning to the same clean pressure points — Leona’s evidence, Beau’s awakening, Eleanor’s control, Silas’s sabotage — which makes the premise easy to explain in a room."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Leona is the standout: a former stripper, engineer-minded truth-teller, and moral disruptor who can move from pole to boardroom without losing force. Eleanor has formidable matriarch energy, Charlotte has social-climber menace, and Beau’s guilt gives the story a usable emotional center. The roles are actor-friendly because each one carries status, contradiction, and public/private performance."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific Southern soap-opera register with racial power politics, bourbon-industry detail, and class warfare baked into every scene. The ladies luncheon, the rickhouse fire, the reveal of hidden bloodlines, and the public reinvention of Leona all show a writer reaching for big, operatic turns rather than generic prestige-drama beats."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps generating confrontations, reversals, and public humiliations, especially in the brunch, luncheon, and storm sequences. The momentum comes from escalating social warfare more than from a tightly locked feature spine, but the page-to-page energy is strong enough to keep the conflict moving."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script’s most memorable idea is its collision of Delta aristocracy, Black labor history, and a woman who turns her past as a stripper into leverage against a legacy family. The bourbon business, the rickhouse cover-up, and the bloodline revelations feel commercially legible while still carrying a distinct regional and cultural identity."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Mississippi Delta setting is richly rendered through the mansion, rickhouse, diner, club, luncheon circuit, and county gossip ecosystem. Bourbon production, old-money rituals, churchyard memory, and social hierarchy all function as story engines, not just backdrop, giving the world a lived-in, class-specific texture."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very identifiable tone: Southern gothic grandeur with soap-opera heat, political bite, and a constant sense of old sins sweating through polished surfaces. The language, the social rituals, and the public/private reversals create a tone that feels singular and easy to recognize from a scene or two."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the immediate scandal, the script keeps opening doors into inheritance, labor exploitation, racial passing, hidden parentage, and women using social power as currency. The later reveals about Leona’s parentage, Charlotte’s hidden identity, and Earline Mae’s claim on the Cartwright bloodline suggest a larger mythic engine under the surface."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The script is built on combustible pairings: Leona/Beau, Leona/Eleanor, Eleanor/Charlotte, Elijah/Silas, and the women’s social circle as a pressure system. The luncheon and dinner-table scenes show that nearly every relationship can generate conflict, alliance, or betrayal, which is a strong ensemble signal."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 5,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Black female lead in her 30s",
+          "White male heir in his 30s",
+          "White female matriarch in her 50s-60s",
+          "White female socialite in her 30s",
+          "White male patriarch in his 60s-70s",
+          "Supporting roles include sheriff, banker, attorney, and social-circle ensemble"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Large plantation-style mansion",
+          "Bourbon distillery / rickhouse / warehouse spaces",
+          "Strip club or gentleman’s club interior",
+          "Diner",
+          "Ladies luncheon venue / country club",
+          "Churchyard and cemetery",
+          "County courthouse",
+          "Small-town law office",
+          "Apartment interiors",
+          "Truck and roadside exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily atmospheric storm work, rain enhancement, and a few stylized visual transitions; no major creature or spectacle requirements.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical rain, glass breakage, bourbon production details, and fire-history references; no major action choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Harry Winston"
+        },
+        {
+          "type": "brand",
+          "detail": "Whataburger"
+        },
+        {
+          "type": "brand",
+          "detail": "OSHA"
+        },
+        {
+          "type": "brand",
+          "detail": "Yelp"
+        },
+        {
+          "type": "brand",
+          "detail": "Restoration Hardware"
+        },
+        {
+          "type": "brand",
+          "detail": "Virginia Slims"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "To Kill a Mockingbird reference"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Wolf of Wall Street reference"
+        },
+        {
+          "type": "real_person",
+          "detail": "No real people are explicitly named"
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical music is named"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform, prestige streamer, or limited theatrical with strong regional and awards-facing positioning"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Southern gothic worldbuilding",
+          "what_it_means": "The Delta setting is not decorative; it is the engine of the story. The mansion, rickhouse, diner, club, churchyard, and country-club spaces create a full social ecosystem that can support prestige marketing and strong visual identity.",
+          "evidence": "Cartwright Landing, the bourbon distillery, the Velvet Mule, Earl’s Diner, the ladies luncheon, and the churchyard all recur as power arenas.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Leona as a breakout lead",
+          "what_it_means": "Leona is the kind of role that can attract a star or launch one: she is wounded, strategic, sexually self-possessed, politically aware, and impossible to patronize. That combination gives the film a clear center of gravity.",
+          "evidence": "She moves from dancer to investigator to boardroom presence, and she repeatedly turns public shame into leverage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Prestige soap energy",
+          "what_it_means": "The script understands how to make status conflict cinematic. Engagement brunches, luncheon warfare, family dinners, and public arrivals all become set pieces that are easy to market and easy to remember.",
+          "evidence": "The engagement brunch interruption, the ladies luncheon confrontation, and the dinner-table reveal of Earline Mae all play like event scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Race, labor, and inheritance are fused into the premise",
+          "what_it_means": "The story’s commercial appeal is sharpened by a real social engine: the bourbon empire is built on Black labor, hidden compensation, and land theft. That gives the drama moral urgency and contemporary relevance.",
+          "evidence": "The rickhouse explosion, OSHA cover-up, quiet-title land history, and the family’s dependence on Black workers are central to the conflict.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Strong matriarch and rival-female dynamics",
+          "what_it_means": "Eleanor, Charlotte, Darryl, and Leona create a female power web with multiple playable alliances and betrayals. That gives the project actor appeal and a built-in audience for social combat.",
+          "evidence": "Eleanor recruits Charlotte, Darryl offers Leona a network, and the luncheon scenes turn social etiquette into warfare.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "A clear visual and tonal brand",
+          "what_it_means": "The script has a marketable aesthetic: bourbon amber, magnolia heat, linen, pearls, rain, and old money rot. That makes it easy to package as elevated Southern melodrama with awards-friendly production design.",
+          "evidence": "The repeated imagery of bourbon, magnolias, cypress trees, rickhouses, and storm-soaked exteriors gives the script a coherent signature.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Actor showcase roles across generations",
+          "what_it_means": "The project offers multiple prestige parts, not just one lead. That broadens casting appeal and gives producers several entry points for packaging.",
+          "evidence": "Eleanor’s steel, Beau’s guilt, Charlotte’s ambition, Elijah’s remorse, and Leona’s force all read as playable, high-status roles.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, juicy Southern gothic family saga with a sharp contemporary spine: a Black woman returns to a Mississippi bourbon dynasty armed with receipts, moral clarity, and enough social intelligence to take the whole house apart. The script offers a vivid world, actor-rich roles, and a premium, trailer-ready blend of scandal, inheritance, and revenge."
+    },
+    "lead_characters": [
+      {
+        "name": "Leona Calhoun",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · Black",
+        "hook": "Leona is a woman who has learned how to survive being underestimated and has turned that survival into strategy. She carries the physical confidence of someone who has performed for a living, the intelligence of someone who understands systems, and the moral force of someone who refuses to let a buried crime stay buried. She can walk into a strip club, a country luncheon, or a distillery floor and read the room instantly. What makes her special is that she never asks for permission to matter; she simply arrives with the truth and dares the room to absorb it.",
+        "why_actor_wants_this": "This is a star-making lead because it gives an actor range, authority, and iconography. Leona gets to play humiliation, seduction, rage, intelligence, and public reinvention without ever losing control of the frame. It has the same kind of showcase energy that made roles like Viola Davis in Fences or Taraji P. Henson in Empire-era power plays so magnetic: a woman whose emotional life and public posture are always in collision."
+      },
+      {
+        "name": "Eleanor Cartwright",
+        "role_type": "Lead",
+        "demographics": "Female · 50s-60s · White",
+        "hook": "Eleanor is old Southern money with a blade hidden in the smile. She speaks in manners, but she thinks in leverage; she can host a brunch, run a family empire, and threaten someone in the same breath. What gives her force is that she genuinely believes she is preserving order, even as she weaponizes class, race, and family loyalty to do it. She is not just a villain or a matriarch — she is the architecture of the house itself, and she knows exactly how much blood is in the foundation.",
+        "why_actor_wants_this": "This is a prestige antagonist role with enormous scene-stealing potential. It offers the kind of controlled, high-status performance that actors chase in the vein of Glenn Close in Dangerous Liaisons or Meryl Streep in Big Little Lies: elegant, dangerous, and emotionally legible even when morally ruthless."
+      },
+      {
+        "name": "Beau Cartwright Jr.",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · White",
+        "hook": "Beau is the heir who was raised to inherit a kingdom and then discovered the kingdom was built on a lie. He has the polish, entitlement, and social fluency of someone born into privilege, but he’s not hardened enough to enjoy the machinery of power the way his family does. That makes him vulnerable, romantic, and useful to the story: he can still be shocked, still be ashamed, and still choose differently. He’s the emotional bridge between the dynasty and the truth it has spent generations avoiding.",
+        "why_actor_wants_this": "This is a strong leading-man part because it lets an actor play collapse from the inside. The role has the conflicted, self-undoing quality of performances like Michael Shannon in Revolutionary Road or Paul Dano in There Will Be Blood: a man whose conscience arrives too late, but arrives hard."
+      },
+      {
+        "name": "Charlotte Dubois",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · White",
+        "hook": "Charlotte is social ambition in a perfect dress. She is polished, strategic, and always performing the version of herself that will be most useful in the room. What makes her compelling is that she is not simply a schemer; she is a woman who has learned that access is power, and she is willing to change names, loyalties, and alliances to keep climbing. She can play the gracious fiancée, the corporate operator, and the quiet assassin of reputations with equal ease.",
+        "why_actor_wants_this": "This is a deliciously playable role for an actor who likes subtext and social warfare. It has the kind of icy, controlled energy that can sit in the same lane as Rosamund Pike in Gone Girl or Sarah Snook in Succession: a woman whose stillness is often the most dangerous thing in the room."
+      },
+      {
+        "name": "Elijah Cartwright",
+        "role_type": "Lead",
+        "demographics": "Male · 60s-70s · White",
+        "hook": "Elijah is the patriarch who has finally started to understand the cost of his own legacy. He still carries the authority of the founder, but the script gives him a late-life moral awakening that makes him more than a symbol of old power. He’s weary, self-aware, and increasingly willing to betray his own bloodline in the name of truth. That makes him a fascinating hinge character: part king, part witness, part penitent.",
+        "why_actor_wants_this": "This is a rich elder-statesman role with gravitas and remorse built in. It offers the kind of late-career showcase seen in performances like Anthony Hopkins in The Father or Brian Cox in Succession: a man whose authority is still intact, even as his conscience becomes the loudest thing in the room."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget and scale",
+        "detail": "This plays in a contained prestige-drama lane rather than a large-scale production lane: mansion interiors, distillery spaces, social set pieces, and a limited number of key locations keep the footprint focused.",
+        "source": "production"
+      },
+      {
+        "area": "Casting package",
+        "detail": "The project is especially packageable around one strong Black female lead, one formidable matriarch, and one or two high-status supporting roles that can attract recognizable names.",
+        "source": "production"
+      },
+      {
+        "area": "Audience positioning",
+        "detail": "The material has a clear lane for adult audiences who respond to family power dramas, Southern settings, and socially charged revenge stories with strong female roles.",
+        "source": "script"
+      },
+      {
+        "area": "Visual identity",
+        "detail": "The script offers a strong production-design and costume identity: bourbon amber, pearls, linen, magnolia heat, rain-soaked Delta exteriors, and old-money interiors.",
+        "source": "script"
+      },
+      {
+        "area": "Content level",
+        "detail": "The story leans into mature themes including racial exploitation, sexualized public shaming, family betrayal, and murder cover-up material.",
+        "source": "script"
+      },
+      {
+        "area": "Adaptation of tone",
+        "detail": "The script’s heightened, chaptered storytelling style gives it a literary-soap flavor that would benefit from a director or producer comfortable with operatic Southern melodrama.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 73.3,
+  "tier": "Optionable",
+  "inputTokens": 19441,
+  "outputTokens": 3989,
+  "cost": 0.03253125
+}

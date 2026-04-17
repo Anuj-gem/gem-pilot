@@ -1,0 +1,310 @@
+{
+  "eval_id": "7ffbbc6c-61af-4cea-9d96-3b396c124026",
+  "title": "CHOP",
+  "declared_format": "Series",
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Crime drama",
+      "genre_tags": [
+        "period thriller",
+        "serial killer thriller"
+      ],
+      "tone": "grounded, gritty, darkly funny, propulsive"
+    },
+    "positioning_hook": "A hyperactive Chicago mechanic in 1977 gets pulled into a missing-friends mystery that exposes John Wayne Gacy hiding in plain sight.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script has a clean, easy-to-sell engine: working-class Chicago kids, car culture, and a serial killer reveal that escalates the stakes into true-crime territory. The emotional access point is strong because the shop, the friendships, and the family dynamics make the danger feel personal before the horror fully lands."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise is legible early: Luke Dobis is trying to keep a garage alive while a missing-person pattern and a shady contractor close in. The pilot keeps the engine moving through a clear chain of jobs, debts, and races, then lands the John Gacy reveal as a sharp final turn."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Dobis is a durable lead because his ADHD-like chaos, mechanical gift, and emotional loyalty create a built-in contradiction that can sustain a series. Tessa, Ruiz, Arv, and Ernie give the show a real ensemble spine, and the pilot already seeds relationships that can keep generating story."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script\u2019s boldest move is making a Chicago auto-shop ensemble the lens for a serial-killer story, with car-race set pieces and neighborhood texture doing as much work as the mystery. The voice is confident, specific, and willing to be funny inside danger without softening it."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The pilot is built on forward motion: races, repairs, debts, a missing friend, a deadline, and a final reveal that recontextualizes the whole episode. Each sequence adds pressure, and the ending opens a larger season engine rather than closing the case."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The show feels like a fresh crime series because the mechanic-shop world is not decorative \u2014 it drives the plot, the relationships, and the problem-solving. The Gacy reveal gives the premise immediate cultural recognition, but the pilot earns it through the specific Chicago ecosystem around him."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "1977 Chicago is rendered with lived-in specificity: muscle cars, junkyards, church, body-building culture, neighborhood garages, and the social codes around them. The world feels economically and culturally interconnected, which gives the series a strong institutional and street-level texture."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinctive because it braids working-class comedy, immigrant-family warmth, car-culture swagger, and creeping dread. The banter is profane and playful, but the final movement proves the show can pivot into menace without losing its voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the surface, the pilot is about grief, identity, control, addiction, and the fear of being left behind. The Scotty mystery, Tessa\u2019s attachment to the bus, Ruiz\u2019s body-image pressure, and Dobis\u2019s mental spirals all suggest a series with more emotional layers than the plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Dobis-Tessa-Ruiz-Arv quartet has real combinatorial energy, and Ernie, Bonnie, McGee, Furmanski, Betty, and John each add pressure from different angles. The show can generate story from any two characters in a room, which is exactly what a long-running series needs."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Period-specific Chicago ethnic casting",
+          "Lithuanian lead and supporting family members",
+          "Puerto Rican lead",
+          "Afro-Cuban lead and supporting family members",
+          "John Wayne Gacy role requires a performer with strong duality and physical specificity",
+          "Teen and child extras for school, party, and neighborhood scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "period (1977)",
+        "notable_requirements": [
+          "Chicago neighborhood streets and cul-de-sacs",
+          "Auto garage and junkyard environments",
+          "Bodybuilding gym and convention center",
+          "Suburban home basement for the final reveal",
+          "Period cars and period dressing throughout"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical driving and period atmosphere; limited enhancement for racing, smoke, and the final reveal imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Car crashes, tow-rig action, smoke/explosion beats, practical vehicle damage, and a few chase sequences.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "John Wayne Gacy"
+        },
+        {
+          "type": "real_person",
+          "detail": "Steve McQueen"
+        },
+        {
+          "type": "real_person",
+          "detail": "Burt Reynolds"
+        },
+        {
+          "type": "real_person",
+          "detail": "Arnold Schwarzenegger"
+        },
+        {
+          "type": "real_person",
+          "detail": "Led Zeppelin"
+        },
+        {
+          "type": "named_music",
+          "detail": "Going to California"
+        },
+        {
+          "type": "named_music",
+          "detail": "Celebration Day"
+        },
+        {
+          "type": "named_music",
+          "detail": "Sympathy for the Devil"
+        },
+        {
+          "type": "brand",
+          "detail": "Old Milwaukee"
+        },
+        {
+          "type": "brand",
+          "detail": "White Hen Pantry"
+        },
+        {
+          "type": "brand",
+          "detail": "Gold's Gym"
+        },
+        {
+          "type": "brand",
+          "detail": "Wrigley Field"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable or streaming serialized drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized crime drama driven by the garage crew\u2019s attempts to keep the shop alive while uncovering a widening pattern of disappearances and criminal activity."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period Chicago, multiple period cars, race sequences, and a few stunt-heavy set pieces place it above a contained drama but well below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the show depends on specific ethnic, age, and charisma-driven casting, plus a high-impact John Wayne Gacy role."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through garages, streets, junkyards, gyms, homes, and a convention center, but the footprint stays rooted in one city and one era."
+        },
+        "content": {
+          "level": "high",
+          "note": "Serial-killer material, implied abduction/murder, drug use, profanity, and body-image/steroid content push this firmly into mature territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The pilot directly references John Wayne Gacy, Led Zeppelin songs, and multiple named public figures and brands."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The garage world is the engine.",
+          "what_it_means": "This is not a generic crime show with cars in it; the auto-body shop is where the relationships, money pressure, problem-solving, and identity all collide. That gives the series a repeatable, producible core with a built-in weekly story machine.",
+          "evidence": "Nearly every major turn runs through Hayes Garage, from the Firebird race to the Mustang repair deadline to the final chase.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dobis is a strong series lead.",
+          "what_it_means": "Luke\u2019s hyperactive, anxious, mechanically gifted, emotionally loyal personality is the kind of contradiction that can carry a long-running show. He\u2019s funny under pressure, dangerous when he overcommits, and deeply watchable because his mind is always moving faster than the room.",
+          "evidence": "His pacing, nail-picking, rapid-fire dialogue, and repeated \u201cdeal\u201d decisions define the pilot\u2019s momentum.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has real chemistry.",
+          "what_it_means": "Dobis, Tessa, Ruiz, and Arv feel like a found family with distinct comic rhythms and different forms of competence. That creates the kind of relationship web that can generate stories for seasons, not just one pilot.",
+          "evidence": "The banter around races, the piss-cloud gag, the shop arguments, and the group hug all land because the characters already feel lived-in together.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "1977 Chicago feels specific and usable.",
+          "what_it_means": "The script gives producers a vivid period lane without requiring a sprawling historical canvas. The neighborhoods, cars, music, gyms, junkyards, and ethnic family textures all make the world feel expensive in detail, not in scale.",
+          "evidence": "Muscle-car culture, Wrigley references, bodybuilder culture, church, and the Chicago winter atmosphere are woven throughout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can laugh and tighten the screws.",
+          "what_it_means": "The script has a confident ability to move from profane comedy into dread without feeling like a different show. That tonal control is valuable in the market because it broadens the audience while preserving tension.",
+          "evidence": "The pee-cloud sequence sits in the same pilot as the final John Wayne Gacy basement reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot ends with a true series door.",
+          "what_it_means": "The final reveal doesn\u2019t just shock; it reframes the season as a collision between a neighborhood crew and a predator hiding in plain sight. That gives buyers a clear engine for ongoing escalation.",
+          "evidence": "John is revealed as Gacy, with Carl restrained in the basement and Scotty/Kevin photos pinned nearby.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The show has built-in emotional stakes.",
+          "what_it_means": "Beyond the crime plot, the series is about grief, loyalty, control, and the fear of being left behind. That emotional layer makes the show more durable than a pure procedural and gives actors meaningful material.",
+          "evidence": "Scotty\u2019s absence, Tessa\u2019s attachment to the bus, Ruiz\u2019s body-image pressure, and Ernie\u2019s grief over Sherry all deepen the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period car action is practical and cinematic.",
+          "what_it_means": "The racing and chase material gives the series a visual identity that can be executed with real vehicles and strong production design rather than heavy VFX. That\u2019s attractive for a premium drama lane because it feels tactile and marketable.",
+          "evidence": "The Firebird race, the tow-rig maneuver, and the final Mustang chase are all grounded in practical vehicle action.",
+          "source": "script"
+        }
+      ],
+      "headline": "CHOP has the kind of specific, sellable DNA producers look for: a vivid 1977 Chicago garage world, a charismatic working-class ensemble, and a lead whose chaos becomes the show\u2019s engine. It plays as a propulsive period crime drama with real emotional texture, then lands a final reveal that turns the whole series into a hunt hiding in plain sight."
+    },
+    "lead_characters": [
+      {
+        "name": "Luke Dobis",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 late teens/early 20s \u00b7 Lithuanian-American",
+        "hook": "Luke is a gifted mechanic with a mind that never sits still, a mouth that runs faster than his judgment, and a body that seems to move before he\u2019s finished thinking. He\u2019s the kind of working-class kid who can diagnose a carburetor in seconds and then make three disastrous promises before lunch. Under the chaos is a real emotional center: he loves his people, hates letting anyone down, and keeps trying to organize a life that keeps slipping through his fingers.",
+        "why_actor_wants_this": "This is a showcase role for an actor who can play speed, humor, and vulnerability in the same breath. The part has the same kind of lived-in contradiction that makes performances like Rami Malek in Mr. Robot or Jeremy Allen White in The Bear so magnetic: a brain that\u2019s always in motion, but with real hurt underneath. It gives an actor a lead engine, a comic rhythm, and a dramatic arc all at once."
+      },
+      {
+        "name": "Tessa Hayes",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 20s \u00b7 Afro-Cuban",
+        "hook": "Tessa is the sharpest person in the room and usually the first to say what everyone else is thinking. She\u2019s tough, funny, sexually frank, and emotionally guarded, but the guard is there because she cares so much about the people and places she\u2019s trying to protect. She has the authority of someone who can run a shop, read a room, and call out nonsense instantly, while still carrying a private tenderness that shows up in the way she handles the bus and her father.",
+        "why_actor_wants_this": "This is a juicy, star-making role for an actor who can deliver bite, command, and buried feeling. The part lives in the same performance space as Jurnee Smollett in Lovecraft Country or Aunjanue Ellis in King Richard: a woman who can dominate a scene with intelligence and then reveal the cost of holding everything together."
+      },
+      {
+        "name": "Adrian Ruiz",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 late teens/early 20s \u00b7 Puerto Rican",
+        "hook": "Ruiz is the show\u2019s swagger and ache in one body: funny, stylish, disciplined, and quietly obsessed with how he looks and what it takes to stay desirable. He can clown with the crew, bench press with confidence, and still carry a private insecurity that makes him vulnerable to bad choices. He\u2019s the kind of character who seems effortless until you realize how much effort it takes to keep that image alive.",
+        "why_actor_wants_this": "This role gives an actor a lot of range: comedy, vanity, physicality, and the emotional pressure of living inside a body that\u2019s always being judged. It has the same kind of layered appeal as performances like Oscar Isaac in A Most Violent Year or Michael Pe\u00f1a in End of Watch, where charm and fragility keep trading places."
+      },
+      {
+        "name": "Arvydas \u201cArv\u201d Dobis",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 late teens \u00b7 Lithuanian immigrant",
+        "hook": "Arv is the giant newcomer with a dry, literal mind and a surprising sweetness. He\u2019s physically imposing, socially blunt, and often the funniest person in the room because he takes everything at face value, but he\u2019s also deeply useful, observant, and loyal. He brings an outsider\u2019s perspective to the shop while slowly becoming part of its emotional architecture.",
+        "why_actor_wants_this": "This is a memorable supporting role for an actor who can play deadpan comedy and physical presence without turning the character into a punchline. The part has the same kind of scene-stealing utility as a young Richard Kind-type energy in a grounded ensemble, or the gentle outsider quality of a performance like Paul Walter Hauser in I, Tonya."
+      },
+      {
+        "name": "Ernie Hayes",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 50s \u00b7 Afro-Cuban",
+        "hook": "Ernie is the stern father, shop owner, and moral center who can cut through nonsense with one look. He\u2019s practical, tired, and not sentimental on the surface, but the pilot makes clear that his authority comes from love, grief, and the burden of keeping a family business alive. He\u2019s the kind of man whose silence matters as much as his speeches.",
+        "why_actor_wants_this": "This is a rich authority role for an actor who can play weathered command and emotional restraint. It lives in the same lane as Bryan Cranston in Your Honor or Benicio del Toro in Traffic: a father figure whose power comes from history, not volume."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who loves tactile period crime with character-first momentum.",
+        "detail": "This material rewards someone who can make Chicago feel lived-in, make cars feel dangerous and soulful, and let comedy sharpen rather than dilute tension. It also gives a director a rare opportunity to stage practical action, ensemble banter, and a slow-burn reveal inside one coherent tonal world."
+      },
+      "buyer_appeal": {
+        "tier": "premium cable or streaming limited/serialized drama",
+        "lane": "prestige crime drama with strong period texture",
+        "detail": "The show fits a lane that values voice, atmosphere, and character-driven suspense over giant scale. It has enough genre propulsion to hook a broad audience, but the contained city setting, practical vehicle action, and ensemble structure keep it in a producible premium-drama range."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The series can lean even harder into the season engine.",
+        "detail": "The pilot already has a strong reveal and a compelling neighborhood world; a future pass could foreground the ongoing investigative or cat-and-mouse structure a touch earlier so the buyer immediately sees how each episode will keep generating pressure.",
+        "source": "script"
+      },
+      {
+        "area": "Luke\u2019s internal system is the show\u2019s signature.",
+        "detail": "The pacing, pacing, and hyperfocus are already vivid; one direction would be to keep clarifying how his mind works in action so the audience experiences his gift as the engine, not just the symptom.",
+        "source": "script"
+      },
+      {
+        "area": "The supporting women can keep expanding the series.",
+        "detail": "Tessa is already strong, and the world suggests more room for Bonnie, Junkyard Betty, and other women in the neighborhood to become recurring pressure points and allies, which would deepen the ensemble and widen the show\u2019s emotional range.",
+        "source": "script"
+      },
+      {
+        "area": "The rights package is doing real work.",
+        "detail": "John Wayne Gacy, Led Zeppelin, and the named public figures give the pilot immediate texture and recognition, but they also mean the production plan should account for clearance strategy early.",
+        "source": "production"
+      },
+      {
+        "area": "The period car work is a selling point.",
+        "detail": "The racing, chase, and repair material is highly cinematic and very producible if the show keeps favoring practical vehicles and contained street geography; that\u2019s a strong lane for a premium drama budget.",
+        "source": "both"
+      },
+      {
+        "area": "Ruiz\u2019s body-image thread can keep paying off.",
+        "detail": "The bodybuilding material and steroid pressure give him a distinct personal engine; continuing to foreground that contradiction would make him even more than the crew\u2019s comic relief and deepen the emotional stakes around his choices.",
+        "source": "script"
+      },
+      {
+        "area": "The final reveal opens a bigger danger map.",
+        "detail": "The basement sequence is a strong end-of-pilot turn; the next pass of the series bible should make sure the audience understands how the Gacy thread will intersect with the garage crew\u2019s day-to-day world over time.",
+        "source": "script"
+      }
+    ]
+  }
+}

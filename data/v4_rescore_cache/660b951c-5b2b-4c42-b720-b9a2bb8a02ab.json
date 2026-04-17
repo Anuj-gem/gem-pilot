@@ -1,0 +1,240 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Heist",
+      "genre_tags": [
+        "Romantic Comedy",
+        "Crime"
+      ],
+      "tone": "Playful, fast-talking, glossy, and high-energy with a sentimental undercurrent"
+    },
+    "positioning_hook": "A charming art thief and the detective who keeps arresting him team up for one impossible museum heist that could expose a buried family history.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "This has a clean, easy-to-sell promise: a glamorous museum heist, a romantic cat-and-mouse dynamic, and a crowd-pleasing ensemble of specialists. The Getty setting, Van Gogh target, and repeated reversals give it a strong trailer engine and a broad commercial lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and stays legible: Brax is a brilliant thief, Roz is the law, and the Getty is the fortress they keep trying to outthink. The script quickly establishes the central engine through the museum security tour, the first theft, the prison consultation, and the final gala setup."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Brax and Roz are built as star parts: he’s a polished, self-mythologizing criminal with genuine tenderness, and she’s a hard-edged investigator with a romantic blind spot she can’t fully control. The supporting crew also has clear personality signatures—Vic’s tech bravado, Charles’ lip-reading precision, Lang’s bruiser swagger, Serena’s athletic confidence—which gives the film a real ensemble pulse."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script keeps finding fresh comic mechanics inside a familiar heist frame: chroma-key body suits, a fake Getty room built from prison paintings, the pipe-and-roof infiltration, the altered mugshots, and the final alibi twist. The art-history banter and the emotional reveal around Irises’ provenance give the material a more specific identity than a standard caper."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story is built on escalation and reversals, and it keeps paying off with new complications: the first theft, the prison break, the gala infiltration, the pipe sequence, Lang’s betrayal, the fake room reveal, and the final escape. The structure is propulsive and the set pieces are arranged to keep the audience leaning forward."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea is immediately understandable and commercially familiar, but the execution gives it a distinct signature through art-world specificity, romantic friction, and the family-history reveal tied to the painting. The ending reframes the heist as something more personal than theft, which helps the premise land with a memorable aftertaste."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Getty is not just a backdrop here; it functions like a machine with rules, cameras, guards, donor politics, and architectural choke points that generate story. The script also adds texture through prison life, FBI procedure, museum patronage, and the provenance trail of the painting, making the world feel layered and usable."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is highly specific: slick, jokey, and self-aware, but with real romantic longing underneath. The script’s voice lives in the banter—art jokes, thievery etiquette, workplace sniping, and deadpan reversals—while still making room for sincere emotion in the Brax/Roz relationship."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "What starts as a glossy caper opens into something more resonant through the Irises provenance, the family connection, and Brax’s desire to atone. The script suggests a deeper emotional engine beneath the heist mechanics, especially in the way art, memory, and restitution become intertwined."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The script has a strong web of relationships that keep generating material: Brax/Roz, Brax/Vic, Vic/Ashley, Charles/Serena, Jimmy Lee/Serena, Brax/Lang, Roz/Davis. The crew feels like a functioning ecosystem, and the banter between combinations of characters is a major part of the movie’s appeal."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One hearing-impaired supporting role (Charles)",
+          "One older female role with significant emotional presence (Grandma/Old Woman)",
+          "One child role in the playground sequence",
+          "One same-sex spouse role (Ashley)",
+          "Athletic casting for Serena",
+          "Physically imposing casting for Lang"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Approximately 60/40 interior-heavy with major exterior set pieces",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Museum interiors and roof access",
+          "Prison interiors and yard",
+          "Hotel rooftop and parking garage",
+          "Freeway and canyon-adjacent exterior work",
+          "Italian/Florence establishing material",
+          "Pipe/tunnel practical set or build"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Drone-assisted lift, camera-feed manipulation, digital invisibility-style concealment via chroma-key suits, smoke/explosion beats, and some compositing for the Getty infiltration and zipline sequence.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, pepper spray bursts, fire alarms, collapsing wooden structure, zipline action, motorcycle movement, fight beats, and practical heist rigging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Getty Center, Getty Museum, IKEA, Apple Watch, iPad, Uber, Postmates, Peloton, Lloyd's of London, El Torito, Taco Tuesday, 7-Eleven, Chucks, Nickelback"
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named songs; music references are conversational rather than story-driving"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Vincent van Gogh's Irises, Monet, Chardin, Géricault, Picasso, Rivera, Pollock, Klee, and other named artworks"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical",
+        "content_level": "PG-13 equivalent with some mature language and crime violence",
+        "series_engine_or_release_model": "Feature release model best suited to a broad commercial streamer or theatrical crowd-pleaser"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Brax/Roz dynamic",
+          "what_it_means": "The central relationship is the movie’s engine: a thief and a law officer who are emotionally entangled, professionally opposed, and constantly trying to outmaneuver each other. That gives the film both romance and tension, which broadens the audience beyond pure heist fans.",
+          "evidence": "Their first meeting at the Getty, the prison interview, the repeated arrests, and the final reconciliation all build a clear push-pull dynamic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Museum-heist specificity",
+          "what_it_means": "The Getty is used as a story machine, not a generic location. The security systems, donor politics, camera network, roof sensors, and architectural layout create a premium-feeling world that can support big set pieces and smart audience pleasure.",
+          "evidence": "The script repeatedly exploits the museum’s cameras, roof, vents, guard rotations, and gala logistics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ensemble chemistry",
+          "what_it_means": "The crew feels castable and playable, with each member bringing a distinct skill and comic rhythm. That makes the movie feel bigger than a two-hander and gives it the kind of group energy that audiences remember.",
+          "evidence": "Vic’s tech work, Charles’ lip-reading and ASL, Lang’s muscle, Serena’s athleticism, and Jimmy Lee’s sniper precision all matter to the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Set-piece design",
+          "what_it_means": "The script is built around visual, trailer-friendly sequences that are easy to pitch and fun to watch: the chroma-key suits, prison breakout, roof climb, pipe infiltration, fake room reveal, zipline escape, and SUV getaway all feel cinematic.",
+          "evidence": "Multiple sequences hinge on practical ingenuity and visual reversals rather than dialogue alone.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Art-world angle",
+          "what_it_means": "The script gives the heist genre a more elevated, cultured surface without losing accessibility. The art references are woven into character and theme, which helps the movie feel smarter and more ownable.",
+          "evidence": "Brax’s art lectures, Roz’s skepticism, and the repeated discussion of Irises’ value and provenance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Emotional payoff through provenance",
+          "what_it_means": "The final reveal that the painting connects to Roz’s family history gives the caper a human and moral dimension. That kind of reveal can elevate a genre movie from clever to memorable.",
+          "evidence": "The Klimasz Incorporated thread, Grandma’s history, and the return of Irises to the family wall.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Commercial tone balance",
+          "what_it_means": "The script keeps the mood light and fast while still landing sincere emotional beats. That balance is attractive for actors, producers, and audiences because it can play as both date-night and popcorn entertainment.",
+          "evidence": "The banter-heavy heist scenes are paired with real romantic stakes and a restitution arc.",
+          "source": "script"
+        }
+      ],
+      "headline": "CLEVER is a glossy, crowd-pleasing heist romance with a premium museum setting, a star-ready thief/detective pairing, and an ensemble that turns every infiltration into a comic set piece. Beneath the caper mechanics, it has a stronger emotional engine than most genre scripts: the theft is also about art, memory, and whether two people can forgive each other without losing who they are."
+    },
+    "lead_characters": [
+      {
+        "name": "Braxton “Brax” Montgomery",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Brax is a polished, hyper-competent criminal with the manners of a donor and the instincts of a master thief. He’s charming without being soft, arrogant without being empty, and he treats crime like an art form—complete with rules, aesthetics, and a code he half-believes in. What makes him pop is the contradiction: he can lecture on Van Gogh and execute an impossible heist in the same breath, but underneath the swagger is a man trying to buy back his own soul.",
+        "why_actor_wants_this": "This is a showcase role for an actor who can play intelligence, seduction, comic timing, and wounded pride in the same frame. The part has the suave criminal energy of George Clooney in Ocean’s Eleven, but with more romantic ache and moral self-justification; it also has the emotional transparency of a performance like Colin Farrell in The Banshees of Inisherin when the mask slips."
+      },
+      {
+        "name": "Roz Reno",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Roz is a sharp, unsentimental investigator who sees through everyone except the one man she can’t quite stop chasing. She’s physically capable, verbally lethal, and emotionally guarded, but the script keeps revealing that her toughness is built around a real capacity for feeling—especially when art, family, and Brax collide. She’s not just the law; she’s the person in the room most likely to tell the truth, even when it costs her.",
+        "why_actor_wants_this": "This is a strong lead for an actor who wants to play authority, wit, and romantic resistance without losing edge. The role has the crisp, no-nonsense force of Emily Blunt in Sicario with the romantic volatility and emotional restraint of a performance like Jodie Comer in Killing Eve."
+      },
+      {
+        "name": "Victor “Vic”",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Vic is the crew’s tech brain and comic pressure valve, a man who can build a museum-hacking system while complaining about quiche and his marriage in the same sentence. He’s needy, brilliant, defensive, and deeply loyal, which makes him feel like a real person rather than a utility player. His domestic life with Ashley gives him a second emotional lane that keeps him from being just the gadget guy.",
+        "why_actor_wants_this": "This is a juicy supporting role for an actor who can do exasperation, speed, and vulnerability in one gear shift. It has the kind of scene-stealing specificity that made roles like Ben Schwartz in The Afterparty or Paul Walter Hauser in Richard Jewell memorable."
+      },
+      {
+        "name": "Charles",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · hearing-impaired",
+        "hook": "Charles is the crew’s quiet precision instrument: observant, dry, and often the smartest person in the room. His hearing impairment isn’t treated as a gimmick; it’s part of how he reads the world, and the script uses his lip-reading and signing as both plot function and character texture. He’s the understated center of several comic and emotional beats, which makes him unusually memorable for a supporting role.",
+        "why_actor_wants_this": "This is a prestige-supporting part with real specificity and physical intelligence. It offers the kind of contained, expressive work that can land like a breakout turn, in the lane of performances such as Troy Kotsur in CODA or Marlee Matlin in Children of a Lesser God."
+      },
+      {
+        "name": "Lang",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Lang is the crew’s bruiser with a mouth, a neck tattoo, and a surprisingly strong sense of professional pride. He’s threatening, funny, and easily irritated, but the script keeps making him more than muscle by giving him his own code, his own resentment, and his own appetite for the score. He’s the kind of guy who can be both the joke and the danger in the same scene.",
+        "why_actor_wants_this": "This is a great role for an actor who can play menace with comic timing. It has the swagger and volatility of a performance like Walton Goggins in Justified or Michael Mando in Better Call Saul, with enough room for scene-stealing attitude."
+      },
+      {
+        "name": "Serena",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · athletic",
+        "hook": "Serena is the team’s physical ace: confident, sexy, and capable of handling herself in a fight or underwater. She’s not written as decoration; she’s the person who can distract guards, survive the pipe sequence, and hold her own in the crew’s banter. The script gives her a cool, self-possessed energy that makes her feel like a genuine operator.",
+        "why_actor_wants_this": "This is a strong action-support role for an actor who wants to combine glamour with athletic competence. It has the kind of crisp, efficient cool that can recall performances like Ana de Armas in No Time to Die or Jurnee Smollett in Birds of Prey."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget lane",
+        "detail": "This plays as a mid-budget studio or streamer feature, with multiple large-scale set pieces but a largely contained contemporary footprint centered on the Getty, prison, and a handful of supporting locations.",
+        "source": "production"
+      },
+      {
+        "area": "Casting appeal",
+        "detail": "The script is built to attract actors who like banter-heavy, competence-driven roles with romantic tension, especially in the Brax/Roz/Vic/Charles/Lang cluster.",
+        "source": "script"
+      },
+      {
+        "area": "Location footprint",
+        "detail": "The Getty is the signature location and would likely be recreated or heavily controlled for production, with additional prison, hotel, and freeway work to support the heist structure.",
+        "source": "production"
+      },
+      {
+        "area": "Clearance and permissions",
+        "detail": "The script references a large number of real brands, institutions, and artworks by name, which would need to be tracked carefully in production planning.",
+        "source": "production"
+      },
+      {
+        "area": "Tone positioning",
+        "detail": "The material sits in a PG-13-friendly lane with adult language and crime violence, making it suitable for a broad theatrical audience or a premium streaming launch.",
+        "source": "production"
+      },
+      {
+        "area": "Audience promise",
+        "detail": "The movie’s strongest commercial promise is the combination of romance, heist mechanics, and art-world glamour, which gives it multiple entry points for different audience segments.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 79.3,
+  "tier": "Optionable",
+  "inputTokens": 46000,
+  "outputTokens": 3960,
+  "cost": 0.052320000000000005
+}

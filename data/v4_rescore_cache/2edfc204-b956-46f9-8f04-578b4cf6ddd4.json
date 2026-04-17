@@ -1,0 +1,241 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Tech startup drama",
+      "genre_tags": [
+        "satirical drama",
+        "political thriller"
+      ],
+      "tone": "intellectual, restless, cynical, and quietly paranoid"
+    },
+    "positioning_hook": "A brilliant, disaffected battery engineer at a startup watches his cofounder turn military tech into investor catnip while he spirals toward a moral and professional reckoning.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a timely, highly legible entry point: startup culture, military tech, investor theater, and the pressure to turn invention into narrative. The emotional promise is clear for viewers who like prestige workplace drama with political teeth, and the world of founders, funding, and perception games gives it a built-in audience lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The pilot establishes Samir’s lab, his battery work, and the tension around Othello’s investor-facing role early, so the engine is understandable. The opening’s essayistic structure and montage-forward approach make the premise feel more atmospheric than declarative, which gives it a distinctive texture while delaying the cleanest articulation of the series engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Samir is the kind of lead who can carry a series: intellectually overqualified, socially under-optimized, and morally split between invention and consequence. Othello and Rahul give the startup triangle a useful internal hierarchy, and Elseid adds an outside perspective that can keep the show from becoming sealed inside the lab."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a dense, essayistic voice that treats startup culture, imperial history, and violence as part of the same continuum. The gunpowder-to-modern weapons framing, the philosophical voiceover, and the refusal to simplify Samir’s worldview give the pilot a confident, unusual identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The pilot moves through a clear day-in-the-life progression and ends on a useful story door with Pollock and the social fallout around Othello’s rise. The engagement comes less from conventional escalation and more from accumulation of mood, ideas, and status tension, which suits a more literary drama model."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea feels fresh because it fuses startup ambition with anti-imperial critique and a protagonist who is both building and condemning the system around him. The result is immediately ownable: a founder-world series where the moral argument is embedded in the product itself."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Aquatius Laboratories feels specific and story-generating: the lab, the investor calls, the Techstars context, the Y Combinator ecosystem, the drone and battery prototypes, and the social orbit around the company all suggest a larger off-screen world. The startup environment is not just backdrop; it is the pressure chamber that shapes every interaction."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably intellectual, disillusioned, and politically charged, with a mix of deadpan startup realism and philosophical overreach. The voiceover, the montage language, and the casual references to global violence create a tone that feels authored rather than generic."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the immediate startup conflict, the pilot suggests a larger series about complicity, identity, inheritance, and the ethics of invention. Samir’s reading, his family history in the lab, and the recurring historical imagery all imply a deeper thematic architecture that can reward long-form storytelling."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Samir/Othello/Rahul triangle already creates a useful internal power structure, and Elseid introduces an external relationship that can widen the social field. The show is currently anchored by Samir’s perspective, but the surrounding dynamics are strong enough to generate recurring conflict and status shifts."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 7,
+        "leads": 3,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in his mid-20s with strong intellectual presence",
+          "Male supporting roles in their mid-20s with distinct social and class contrast",
+          "Mother role off-screen in the excerpt, likely recurring voice or scene presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "Mostly interior with a small amount of exterior coverage",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Startup laboratory / office environment",
+          "Parking lot exterior",
+          "Apartment interior",
+          "Zoom / screen-based investor call setup"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Montage imagery includes historical and cosmic visuals, newsreel overlays, and stylized cutaways; the core story itself is grounded and contained.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical tech props: drones, batteries, 3D printer, prototype hardware, and screen inserts.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Elon Musk"
+        },
+        {
+          "type": "real_person",
+          "detail": "Elizabeth Holmes"
+        },
+        {
+          "type": "real_person",
+          "detail": "Y Combinator"
+        },
+        {
+          "type": "real_person",
+          "detail": "Techstars"
+        },
+        {
+          "type": "brand",
+          "detail": "White Castle"
+        },
+        {
+          "type": "brand",
+          "detail": "Hinge"
+        },
+        {
+          "type": "brand",
+          "detail": "DoorDash"
+        },
+        {
+          "type": "brand",
+          "detail": "DOGE"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized workplace/political drama driven by startup funding, product development, internal power shifts, and the ethical consequences of military-adjacent innovation."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Protagonist",
+          "what_it_means": "Samir is built as a prestige-series lead: brilliant, self-mythologizing, politically aware, and personally compromised. That contradiction gives the show a central engine actors can inhabit and audiences can track over multiple seasons.",
+          "evidence": "He is the engineer actually doing the work while also theorizing perception, branding, and the moral ambiguity of the product.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Core concept",
+          "what_it_means": "The startup world is used as a pressure system for bigger questions about power, ethics, and narrative control, which makes the series feel timely rather than merely topical. That gives buyers a hook that can travel beyond tech audiences.",
+          "evidence": "Investor calls, Techstars/Y Combinator culture, and the split between product substance and investor-facing style are central to the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Thematic ambition",
+          "what_it_means": "The script has the kind of intellectual ambition that can attract premium buyers looking for a show with ideas, not just plot. The historical montage and voiceover suggest a series that can sustain commentary on violence, empire, and invention.",
+          "evidence": "The opening moves from gunpowder history to religious imagery to modern geopolitical violence, then folds that thinking into the startup story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World specificity",
+          "what_it_means": "Aquatius Laboratories feels like a real ecosystem with its own status games, jargon, and social hierarchy. That specificity is valuable because it gives the series a repeatable arena for conflict and a recognizable audience fantasy of insider access.",
+          "evidence": "The lab, prototype hardware, investor Zooms, and founder dynamics all feel embedded in a lived-in startup environment.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tone and voice",
+          "what_it_means": "The writing has a strong authored voice that signals confidence and distinction. A show with this kind of verbal and conceptual density can stand out in a crowded prestige-drama marketplace.",
+          "evidence": "The voiceover is philosophical, self-correcting, and associative, while the dialogue stays grounded in founder-world pragmatism.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ensemble dynamics",
+          "what_it_means": "The Samir/Othello/Rahul triangle creates a durable internal engine around labor, status, and credit. That kind of triangle is useful for episodic conflict because it can generate shifting alliances and resentments without needing a huge cast.",
+          "evidence": "Samir does the engineering, Othello fronts the company, and Rahul occupies the coding side while the investor-facing narrative tilts away from Samir.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint",
+          "what_it_means": "The pilot is fundamentally contained, which makes it attractive for a premium drama or streamer slate without requiring large-scale set pieces. The story can live in labs, apartments, and offices while still feeling expansive through dialogue and montage.",
+          "evidence": "Most scenes take place in the laboratory, with a parking lot, apartment, and Zoom call rounding out the footprint.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a sharp, adult startup drama with a real point of view: a brilliant engineer trapped inside a company where the story is becoming more valuable than the invention. The pilot’s combination of moral tension, intellectual voice, and contained production footprint makes it feel both distinctive and buildable."
+    },
+    "lead_characters": [
+      {
+        "name": "Samir",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · South Asian",
+        "hook": "Samir is the series’ intellectual center: a gifted battery engineer with a restless, essayistic mind and a deep suspicion of the systems he’s helping build. He reads like someone who can quote history, theory, and geopolitics in the same breath that he’s vaping in the lab, which makes him feel both hyper-competent and emotionally unmoored. He is not a clean hero; he is a builder who understands that invention and violence often share the same supply chain, and that awareness is what makes him compelling.",
+        "why_actor_wants_this": "This is a showcase role for an actor who can carry dense language, internal conflict, and moral ambiguity without losing watchability. The part lives in the same prestige space as performances like Oscar Isaac in 'Scenes from a Marriage' or Riz Ahmed in 'Sound of Metal'—smart, contained, volatile, and deeply human."
+      },
+      {
+        "name": "Othello",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Othello is the polished business face of the company: socially fluent, investor-friendly, and positioned to translate Samir’s work into capital and momentum. He has the energy of someone who understands the room better than the product, which makes him a natural power broker inside the startup and a source of tension by design.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charm as strategy and ambition as performance. It sits in the lane of a Jeremy Strong-style status operator or a Paul Dano-type character part where intelligence and self-interest are always in the same frame."
+      },
+      {
+        "name": "Rahul",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Rahul is the technical peer in the company’s internal ecosystem, part coder, part witness, part pressure valve. He gives the startup a second operational lane and helps define the company as a place where competence is distributed unevenly and everyone knows it.",
+        "why_actor_wants_this": "This is a strong supporting role for an actor who can play dry intelligence and social friction with economy. The part has the kind of lived-in specificity that can recall a Matthew Macfadyen or Arian Moayed type of performance space—observant, sharp, and quietly combustible."
+      },
+      {
+        "name": "Elseid",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Elseid is the returning friend from outside the startup machine, a filmmaker whose presence opens the world beyond the lab and gives Samir a mirror that isn’t investor language. He brings a looser, more artistic register into the room, which makes him useful as both confidant and contrast.",
+        "why_actor_wants_this": "This is a role for an actor who can bring warmth, irony, and a little weariness into a scene without taking over it. It has the kind of conversational, scene-partner energy that often lands well in prestige ensemble work like 'Girls' or 'Industry.'"
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Series engine",
+        "detail": "The pilot sets up a serialized workplace drama built around funding rounds, product development, and shifting internal power. That structure supports ongoing episodes where the company’s external success and internal ethics keep colliding.",
+        "source": "script"
+      },
+      {
+        "area": "Audience lane",
+        "detail": "The material sits closest to viewers who respond to prestige workplace drama with political and philosophical dimension, rather than broad procedural or high-action genre storytelling.",
+        "source": "script"
+      },
+      {
+        "area": "Budget profile",
+        "detail": "The story is largely contained to labs, offices, apartments, and screen-based interactions, which keeps the production footprint in a contained-to-moderate drama range.",
+        "source": "production"
+      },
+      {
+        "area": "Clearance",
+        "detail": "The script names several real-world companies, platforms, and public figures, including Y Combinator, Techstars, Hinge, DoorDash, Elon Musk, and Elizabeth Holmes.",
+        "source": "script"
+      },
+      {
+        "area": "Tone management",
+        "detail": "The pilot’s voice leans essayistic and montage-driven, which gives it a distinctive literary identity and positions it well for a streamer or premium buyer looking for authored drama.",
+        "source": "script"
+      },
+      {
+        "area": "Casting profile",
+        "detail": "The central roles favor actors who can handle fast, idea-rich dialogue and still communicate subtext through stillness, which can be attractive to stage-trained or prestige-TV performers.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 64.3,
+  "tier": "Optionable",
+  "inputTokens": 6649,
+  "outputTokens": 3370,
+  "cost": 0.020151750000000003
+}

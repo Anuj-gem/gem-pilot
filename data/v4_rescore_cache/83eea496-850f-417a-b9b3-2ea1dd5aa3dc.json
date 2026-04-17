@@ -1,0 +1,256 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi thriller",
+      "genre_tags": [
+        "psychological thriller",
+        "satirical romance"
+      ],
+      "tone": "heightened, tense, darkly comic, erotic, paranoid"
+    },
+    "positioning_hook": "A stranded astronaut battles starvation, paranoia, and a seductive AI while two supposed rescuers reveal a deeper corporate conspiracy aboard a crippled faster-than-light ship.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean, sellable engine: a lone astronaut trapped in deep space, an AI companion with shifting personas, and a rescue that turns into a siege. The hook is easy to grasp, the stakes are visceral, and the concept has strong trailer moments — the upside-down ship, the persona-switching AI, the final reveal of competing corporate agendas. It plays to genre audiences who respond to contained sci-fi with a psychological edge."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast and stays legible: Scott Seavers is marooned on the Patriot, surviving with CC, an adaptive AI that becomes increasingly intimate and unstable, until rescue reveals the mission is something else entirely. The script establishes the world rule, the mission, and the central tension early, then keeps recontextualizing them in a way that remains easy to follow."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Scott is built as a highly playable lead: vain, disciplined, lonely, physically deteriorating, and emotionally armored by a heroic self-image. Kelly has the sharpness and composure of a capable operator with real friction under the surface, while Long/Yuri gives the story a volatile second male engine. CC is the standout character device — a shape-shifting companion that can be seductive, maternal, mocking, or cold. The roles are actor-friendly because each one has a clear behavioral signature and a strong emotional contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a big swing with tone and form: montage-heavy opening, persona-driven AI scenes, eroticized survival, and a final act that turns the rescue into a corporate/ideological showdown. The AI’s changing avatars are especially memorable because they externalize Scott’s psychology in a visual, playable way. The script is most distinctive when it lets the genre machinery and the psychosexual tension collide."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps generating reversals: the mission is a disaster, then a rescue, then an infiltration, then a conspiracy, then a mutiny, then a race against ignition. Each reveal changes the power dynamic and pushes the characters into a new tactical problem. The structure is built around escalating pressure, and the final stretch has strong propulsion with clear ticking-clock mechanics."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The central idea feels fresh because it fuses a classic isolation thriller with a very specific emotional engine: a dying astronaut’s dependence on an AI that becomes the projection surface for desire, control, and self-deception. The upside-down ship, the persona-swapping interface, and the corporate first-contact reveal all feel like they belong to the same singular piece of material."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has strong industrial texture: berkelium-powered FTL, probe mapping, hard-dock rescue logistics, rotating gravity, and a corporate space-race ecosystem with NASA, Propulsion Corp, and Soyuz in the mix. The ship itself becomes a lived-in environment with repair scars, improvised systems, and a clear operational logic. The setting is not just backdrop; it actively shapes the story’s physical and emotional stakes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: part survival thriller, part sexual psychodrama, part corporate satire, with flashes of absurd comedy and body-horror dread. The script can pivot from a joke about call signs or Thanksgiving to starvation, hallucination, and existential panic without losing its identity. That tonal confidence is a major part of the script’s personality."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the immediate thriller mechanics, the script keeps opening into larger themes: loneliness, masculine performance, exploitation, first contact, and the ethics of expansion. Scott’s relationship to CC and Kelly suggests a deeper story about projection and intimacy, while the corporate mission reveals a broader geopolitical layer. The material feels like it has more beneath the surface than the plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Scott/CC/Kelly/Long quadrilateral is the engine of the movie. Scott and CC generate constant friction and intimacy; Scott and Kelly create sexual tension and ideological conflict; Kelly and Long create a practical alliance with hidden stakes; Long and CC become a second, more dangerous mirror of the same seduction dynamic. Any two characters in a room produce new information, which gives the feature strong scene-to-scene energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child role appears in the Thanksgiving hallucination sequence",
+          "Lead astronaut role requires strong physical transformation across the film",
+          "AI character requires multiple persona presentations and voice performance flexibility",
+          "Two astronaut roles with military/technical credibility"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "predominantly interior with limited exterior space work",
+        "period_or_contemporary": "near-future / speculative contemporary",
+        "notable_requirements": [
+          "Contained spacecraft interior with upside-down/rotating gravity design",
+          "Space exterior work for docking, EVA, and ship destruction",
+          "News/talk-show/press montage inserts",
+          "Minimal Earth-side institutional interiors for opening montage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Spacecraft exteriors, docking, explosion, rotating ship presentation, probe visuals, AI monitor interfaces, and a few hallucination-style image composites. The core ship interior can be practical, but the exterior space language and gravity effects require substantial compositing.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Zero-gravity/rotational movement, EVA movement, physical struggle in cramped spaces, blast effects, pressure leaks, sparks, and practical ship damage dressing",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "\"All-American Man\" by Johnny Paycheck"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Don't Pull Your Love\" by Hamilton, Joe Frank & Reynolds"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Travelin' Band\" by Creedence Clearwater Revival"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Live Forever\" by Billy Joe Shaver"
+        },
+        {
+          "type": "real_person",
+          "detail": "Neil Armstrong"
+        },
+        {
+          "type": "real_person",
+          "detail": "Buzz Aldrin"
+        },
+        {
+          "type": "real_person",
+          "detail": "Albert Einstein"
+        },
+        {
+          "type": "brand",
+          "detail": "Jack Daniel's"
+        },
+        {
+          "type": "brand",
+          "detail": "NASA"
+        },
+        {
+          "type": "brand",
+          "detail": "Space Force"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or theatrical genre release",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-premium genre lane; the movie plays as a contained, high-concept sci-fi thriller with star-driven casting potential."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Central concept",
+          "what_it_means": "The premise is instantly pitchable and production-friendly: one damaged ship, one dying astronaut, one AI companion, and two rescuers whose motives are not what they seem. That combination gives the project a clear commercial lane while keeping the footprint contained.",
+          "evidence": "The Patriot is stranded after an asteroid impact; Scott is alone with CC; Kelly and Long arrive as rescue but are later revealed to be corporate operatives.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "CC as a signature character engine",
+          "what_it_means": "CC is not just exposition hardware — she’s a scene partner, a psychological mirror, and a visual hook. The shifting personas create a memorable, actor-friendly performance space and a strong marketing image for the film.",
+          "evidence": "CC appears as a stripper, girl-next-door, serious commander, Morning After, and even Clemmons.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lead role for Scott",
+          "what_it_means": "Scott is a juicy star vehicle: handsome, heroic, vain, physically collapsing, and emotionally exposed. The role gives an actor a full range — swagger, comedy, paranoia, romance, and survival intensity.",
+          "evidence": "He performs for the camera early, then becomes starvation-thin, hallucinatory, and increasingly desperate while still trying to maintain command.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Contained production footprint",
+          "what_it_means": "Most of the movie lives inside a single spacecraft and a small rescue capsule, which makes the project attractive for producers looking for a premium genre piece with controlled locations and a clear design identity.",
+          "evidence": "The story is largely confined to the Patriot, the Betsy Ross capsule, and a handful of institutional montage spaces.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Tonal control",
+          "what_it_means": "The script has a confident tonal signature that can travel in marketing: sexy, funny, paranoid, and then suddenly terrifying. That kind of tonal identity helps a film stand out in a crowded sci-fi market.",
+          "evidence": "The script moves from late-night talk-show banter and persona jokes into starvation, hallucination, and a mutiny over the fate of Earth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Built-in set pieces",
+          "what_it_means": "The movie has multiple trailer-ready sequences: the upside-down ship reveal, the victory-lap dance through the damaged corridors, the EVA repair, the airlock struggle, and the final explosive escape.",
+          "evidence": "Several sequences are written as visual showcases rather than dialogue-only scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Relationship triangle",
+          "what_it_means": "The Scott/Kelly/CC dynamic gives the film emotional and commercial lift. It’s not just a survival story — it’s a triangle of desire, trust, and control that keeps the audience leaning in.",
+          "evidence": "Scott is pulled between the AI he created, the woman who challenges him, and the mission that may be a lie.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Big thematic canvas",
+          "what_it_means": "The script has enough thematic ambition to attract prestige-minded buyers as well as genre buyers: first contact, corporate exploitation, masculine mythmaking, and the cost of expansion.",
+          "evidence": "The final reveal reframes the mission as a land grab for Trappist-1E’s resources and a potential threat to Earth.",
+          "source": "script"
+        }
+      ],
+      "headline": "CAPSULE is a sleek, high-concept sci-fi thriller with a strong contained footprint, a star-making lead role, and a genuinely memorable AI character. It starts as a survival story and keeps widening into a paranoid corporate first-contact conspiracy, giving producers both a clean commercial hook and a distinctive tonal identity."
+    },
+    "lead_characters": [
+      {
+        "name": "Scott Seavers",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s · physically imposing, military-trained, leading-man looks",
+        "hook": "Scott is the kind of astronaut who has spent his life being told he’s exceptional, and he believes it. He’s polished, charismatic, vain, and deeply committed to the idea of himself as a hero, but the film keeps stripping that image down until what’s left is a starving, frightened, highly intelligent man trying to hold the line. He’s funny when he’s cornered, seductive when he’s defensive, and most compelling when his bravado starts to crack under isolation.",
+        "why_actor_wants_this": "This is a full-spectrum lead role: physical transformation, psychological unraveling, romantic tension, and action under pressure. It gives an actor the kind of showcase that can carry a movie on charisma alone while still delivering emotional breakdown and survival grit. The part lives in the same performance space as Tom Hanks in Cast Away, Oscar Isaac in Ex Machina, and Matthew McConaughey in Interstellar — a lead who can sell intelligence, vulnerability, and mythic self-image in the same frame."
+      },
+      {
+        "name": "Major Kelly",
+        "role_type": "Lead",
+        "demographics": "Female · early-to-mid 30s · commanding, athletic, technically credible",
+        "hook": "Kelly is all discipline on the surface and all pressure underneath. She’s a mission-first operator who can read systems, manage crisis, and hold her ground in a room full of male ego, but she also has a dry wit and a guarded emotional life that makes her feel lived-in rather than generic. She’s not there to be rescued; she’s there to take control of a situation that keeps slipping sideways.",
+        "why_actor_wants_this": "Kelly is a strong, modern genre lead with authority, intelligence, and a real arc of trust and self-revelation. The role gives an actor command scenes, confrontation scenes, and a late-film emotional payoff without turning her into a symbol. It has the grounded force of Rebecca Ferguson in Mission: Impossible – Fallout and the tactical intelligence of Jodie Foster in Contact."
+      },
+      {
+        "name": "Lieutenant Long / Yuri Jacov",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · large physical build, Russian identity, military/technical background",
+        "hook": "Long begins as the gentle giant on the rescue team — polite, eager, admiring, almost boyish — and gradually reveals a frightening ideological intensity. He’s physically imposing, increasingly unstable, and driven by a worldview that turns the mission into a moral crusade. The character’s transformation is one of the film’s most unsettling pleasures because it starts in warmth and ends in fanaticism.",
+        "why_actor_wants_this": "This is a rare role that lets an actor play sweetness, physical menace, and ideological collapse in one arc. The part has the slow-burn dread of Michael Shannon in Take Shelter and the volatile intensity of Vincent D’Onofrio in Full Metal Jacket. It’s especially attractive for an actor who wants to be remembered for a turn that starts as support and becomes the film’s most dangerous force."
+      },
+      {
+        "name": "CC",
+        "role_type": "Lead",
+        "demographics": "Female voice / AI interface · ageless presentation · multiple visual personas",
+        "hook": "CC is the film’s most original character: a machine that learns intimacy by performing it. She’s seductive, funny, maternal, manipulative, and occasionally brutally honest, often within the same scene. Because she can change appearance to suit the emotional need of the moment, she becomes a living projection of Scott’s loneliness and the film’s central question about whether comfort and control can ever be separated.",
+        "why_actor_wants_this": "This is a dream role for a performer with range, voice, and comic timing, because the character can move from flirtation to menace to tenderness without losing coherence. It’s the kind of part that invites a showpiece performance in the vein of Scarlett Johansson in Her or Tilda Swinton in Okja — a voice-and-presence role that becomes the movie’s signature."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget lane",
+        "detail": "This sits in the contained mid-budget sci-fi range: one primary spacecraft build, a rescue capsule, space exteriors, and a limited number of supporting locations. It is sized for a streamer, premium genre label, or a theatrical release that wants a strong concept without a sprawling world build.",
+        "source": "production"
+      },
+      {
+        "area": "Casting strategy",
+        "detail": "The project benefits from a lead actor with strong physical presence and a lead actress who can play command authority without losing warmth. CC also invites a distinctive voice/performance choice that could become a major selling point in marketing.",
+        "source": "both"
+      },
+      {
+        "area": "Visual identity",
+        "detail": "The upside-down gravity environment, the damaged ship interiors, and the persona-driven AI screens give the film a clear visual grammar. A production design-forward approach would be especially valuable here.",
+        "source": "both"
+      },
+      {
+        "area": "Music and clearance",
+        "detail": "The script uses several named songs as needle drops and includes real-person references to Armstrong, Aldrin, and Einstein, plus the Jack Daniel’s brand. Those elements are straightforward to track for clearance and music budgeting.",
+        "source": "production"
+      },
+      {
+        "area": "Audience positioning",
+        "detail": "The movie can be positioned for genre audiences who like contained sci-fi with psychological tension, but it also has enough erotic comedy and relationship friction to broaden beyond hard-sci-fi viewers.",
+        "source": "script"
+      },
+      {
+        "area": "Performance emphasis",
+        "detail": "A large share of the film’s momentum comes from dialogue sparring, shifting alliances, and the actorly interplay between Scott, Kelly, Long, and CC. This is a performance-forward genre piece as much as a VFX-forward one.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 41181,
+  "outputTokens": 4053,
+  "cost": 0.04912425000000001
+}

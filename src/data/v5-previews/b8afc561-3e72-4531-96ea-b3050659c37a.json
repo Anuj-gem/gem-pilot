@@ -1,0 +1,264 @@
+{
+  "eval_id": "b8afc561-3e72-4531-96ea-b3050659c37a",
+  "title": "My Provenance",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical fantasy drama",
+      "genre_tags": [
+        "romance",
+        "mythic adventure"
+      ],
+      "tone": "Lush, earnest, folkloric, and emotionally sweeping with playful comic texture"
+    },
+    "positioning_hook": "A pregnant Hungarian immigrant and her sister hear a mythic love story about a Navajo orphan, a goddess, and a bracelet that carries souls across centuries.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script offers a clear emotional promise: epic romance, reincarnation, and a spiritually charged artifact with a strong female-frame device in the 1927 reading room. The period sweep and mythic stakes give it event potential, though the language and structure make it feel more specialty than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early through the reading-room frame and the bracelet\u2019s identity-proving power, then expands into a centuries-spanning love story with a clean mythic engine. The repeated return to the emporium keeps the concept legible even as the timeline jumps."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Judy, Juan/Daniel/Earnest, and Nova/Chimalman all carry strong contradiction engines: faith and doubt, desire and duty, love and refusal. The roles are actor-friendly because they ask for transformation across lives, accents, and moral pressure."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a highly specific mythic structure, braided identities, and a frame-story that turns a book reading into a spiritual event. The choice to make provenance both literal artifact history and existential identity is unusually bold."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps generating forward motion through revelations, reincarnations, and escalating tests, with each era feeding the next. The long-form, chaptered structure is ambitious and absorbing, though it plays more as an immersive tale than a lean engine."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The bracelet as proof of lineage, faith, and selfhood gives the script a memorable central metaphor that feels both strange and inevitable. The repeated soul-transfers and the final reveal of the reading-room author create a distinctive emotional architecture."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a richly specific world across 1927 Greenwich Village, 16th-century conquest, and the American Southwest, with material culture, religious tension, and social hierarchy all doing story work. The emporium, the missions, the wagon trail, and the schoolhouse all feel inhabited."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably earnest, literary, and folkloric, but it also has comic friction in the accents, social rituals, and Judy\u2019s blunt reactions. That blend of high romance, spiritual allegory, and lightly satirical period texture is hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the adventure and romance, the script is really about ownership, conversion, inheritance, and who gets to name a life as true. The layered identities and repeated returns to choice, grace, and memory suggest substantial thematic depth."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The central relationships are strong and interdependent: Judy/Clara, Juan/Nova, Earnest/Arnold, and the priestly power triangle all generate meaningful friction. The ensemble is not sprawling, but the pairings are rich enough to keep producing story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Hungarian-accented sisters in the frame story",
+          "Multiple age versions of the same soul/character across centuries",
+          "Native American lead roles with specific tribal identity references",
+          "Mixed-race female deity/embodiment casting",
+          "Child and infant casting required"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Primarily period (1517-1889, framed by 1927)",
+        "notable_requirements": [
+          "Greenwich Village emporium set",
+          "Spanish galleon interiors",
+          "jungle and village locations",
+          "Tenochtitlan palace and square",
+          "Arizona/Utah desert travel",
+          "Tombstone bar and church/school interiors",
+          "Navajo hogan and Valley of the Gods landscape"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Supernatural breezes, glow effects, vision transitions, age-shifted appearances, and a few stylized spiritual moments.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, fire robe sequence, gunshots, horse falls, and birth sequence effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Hernan Cortez, Moctezuma, and Columbus-era historical figures are referenced and dramatized."
+        },
+        {
+          "type": "brand",
+          "detail": "Sir W\u2019s emporium is fictional; no major modern brands are prominent."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical and cultural references to Chimalman, Quetzalcoatl, Estanatlehi, and Navajo/Apache spiritual traditions may invite cultural consultation and clearance sensitivity."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming or specialty theatrical",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as festival-to-platform or specialty theatrical with awards-facing packaging"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script spans multiple eras and locations, but the cast is contained and the supernatural effects are mostly modest."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The story depends on specific identity casting, multiple age versions of the leads, and child/infant roles."
+        },
+        "location": {
+          "level": "high",
+          "note": "It moves from a 1927 New York bookstore to 16th-century Mexico and then across desert, jungle, ship, palace, and reservation settings."
+        },
+        "content": {
+          "level": "medium",
+          "note": "There is childbirth, death, colonial violence, religious conflict, and some implied sexual material, but it stays largely non-explicit."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Historical figures and culturally specific spiritual material are central, which calls for careful clearance and consultation."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The frame story gives the movie a living audience.",
+          "what_it_means": "The 1927 reading-room setup is more than a device; it creates an immediate emotional bridge between the epic tale and the women hearing it. That makes the script feel theatrical, intimate, and highly performable while still opening into a large historical canvas.",
+          "evidence": "Judy and Clara\u2019s reactions continually punctuate the author\u2019s story, and the final reveal folds the reading room back into the romance and the reunion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The bracelet is a loaded story engine.",
+          "what_it_means": "It functions as artifact, proof of identity, spiritual inheritance, and romantic tether all at once. That kind of object-centered mythology is exactly what gives a feature a memorable poster image and a clean emotional thesis.",
+          "evidence": "The band appears in 1517, is recognized across centuries, and is repeatedly described as leading the characters to their destinies.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lead role is built on transformation.",
+          "what_it_means": "Juan/Earnest/Daniel is not one character with a single arc; he is a soul moving through identities, cultures, and moral awakenings. That gives an actor a rare showcase: innocence, devotion, confusion, longing, and hard-earned selfhood in one package.",
+          "evidence": "The story tracks Juan in the conquest era, Earnest in the West, and Daniel in the later life, with the same soul and different names.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance is spiritual, not decorative.",
+          "what_it_means": "The central love story is powered by belief, choice, and sacrifice rather than simple chemistry. That makes it feel larger than a period romance and gives it the kind of mythic emotional weight that can travel with audiences.",
+          "evidence": "Nova repeatedly insists she will not love him, yet the story keeps returning to their bond across lives and tests.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script turns colonial history into character drama.",
+          "what_it_means": "Instead of treating conquest as backdrop, the story makes faith, commerce, translation, and possession the actual battlegrounds of the plot. That gives the material thematic seriousness and a built-in conversation with history-minded buyers.",
+          "evidence": "Father Miguel\u2019s plan to monetize crosses, the Moctezuma sequence, and the mission-school thread all tie power to belief and ownership.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The women\u2019s reactions create tonal lift.",
+          "what_it_means": "Judy\u2019s bluntness, Clara\u2019s protective energy, and the society women\u2019s shifting responses keep the film from becoming static exposition. They give the script a human, slightly comic surface that makes the mythic material more accessible.",
+          "evidence": "Judy repeatedly interrupts, misreads, and then emotionally tracks the story while Clara translates and grounds her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending pays off the whole architecture.",
+          "what_it_means": "The final convergence of mother, son, book, and audience gives the script a satisfying circularity that feels designed for a feature climax. It also leaves the viewer with a strong emotional aftertaste: love, recognition, and inheritance.",
+          "evidence": "William appears as the grown Billy, the mother arrives, and the author and Nova reunite in the emporium.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a lush, spiritually charged feature with a real signature: a frame-story romance that turns a rare book reading into a centuries-spanning reckoning with identity, faith, and love. The bracelet, the reincarnating leads, and the 1927 audience frame give it a memorable commercial shape, while the emotional payoff lands with genuine sweep."
+    },
+    "lead_characters": [
+      {
+        "name": "Judy / Judka",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 late teens \u00b7 pregnant \u00b7 Hungarian immigrant",
+        "hook": "Judy is the audience surrogate with teeth: young, pregnant, stubborn, funny, and emotionally porous in ways she doesn\u2019t always control. She arrives skeptical and restless, but the story slowly opens her into a witness who can feel the myth before she can fully understand it. Her accent, bluntness, and physical condition are all load-bearing; she is the human doorway into the epic.",
+        "why_actor_wants_this": "This is a showcase for an actor who can play comic impatience, physical vulnerability, and deepening wonder without losing specificity. It has the same kind of audience-facing intimacy that makes roles like Frances McDormand in Nomadland or Sally Hawkins in The Shape of Water so compelling: the performance is the emotional lens for the whole film."
+      },
+      {
+        "name": "Juan / Daniel Many Songs / Earnest",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 teens to early 20s across incarnations \u00b7 Indigenous/Mixed heritage depending on life",
+        "hook": "This is a soul-role built for an actor with range. Juan is curious and open, Daniel is intelligent and spiritually awake, and Earnest is devout, conflicted, and increasingly dangerous in his certainty. Across lives, the character carries innocence, longing, and the ache of being used by institutions that claim to save him.",
+        "why_actor_wants_this": "It\u2019s a rare feature part that asks for multiple tonal registers and multiple life stages while staying emotionally coherent. The role offers the kind of transformation and inward pressure that actors chase in performances like Joaquin Phoenix in The Master or Timoth\u00e9e Chalamet in The King, but with a more mythic, romantic spine."
+      },
+      {
+        "name": "Chimalman / Nova",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 late teens to early 20s in human form \u00b7 Indigenous/Mixed race",
+        "hook": "Nova is a goddess trying to become human without surrendering her power, her logic, or her sense of self. She is cool, exacting, and emotionally withholding, but the script keeps revealing the cost of that posture. She is the rare female lead who is both mythic force and intimate romantic object, with a mind as active as her presence is still.",
+        "why_actor_wants_this": "This is a prestige role for an actor who can hold the screen with stillness and then release feeling in precise, devastating increments. It sits in the same expressive territory as Tilda Swinton in Orlando or Rooney Mara in A Ghost Story: enigmatic, elegant, and emotionally resonant."
+      },
+      {
+        "name": "Father Miguel / Archbishop Miguel",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 20s to 70s across the story",
+        "hook": "Father Miguel is a devout opportunist whose faith, ambition, and envy are always in the same room. He is physically frail but intellectually predatory, and the script lets him evolve from bureaucratic churchman to haunted witness to something larger than his doctrine. He\u2019s one of those roles where vanity and sincerity keep trading places.",
+        "why_actor_wants_this": "The part gives an actor a full moral descent and a lot of verbal texture, with room for irony, self-importance, and eventual spiritual destabilization. It has the kind of layered authority and private rot that actors enjoy in performances like Ralph Fiennes in The Grand Budapest Hotel or Mark Rylance in Bridge of Spies."
+      },
+      {
+        "name": "Arnold Sunday",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 50s \u00b7 Irish",
+        "hook": "Arnold is a drunk, gambler, and accidental philosopher who keeps revealing more humanity than the people around him expect. He\u2019s comic, profane, and deeply wounded, but he also becomes the story\u2019s most surprising moral weather vane. He is the kind of supporting role that can steal a movie because he keeps turning cynicism into tenderness.",
+        "why_actor_wants_this": "This is a delicious character part with humor, pathos, and a late-life redemption charge. It offers the same kind of scene-stealing opportunity as Albert Finney in Erin Brockovich or Brendan Gleeson in In Bruges: rough edges, emotional surprise, and a big final turn."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage myth with intimacy and make faith feel cinematic.",
+        "detail": "The material rewards a filmmaker who can balance period spectacle, romantic yearning, and spiritual allegory without flattening any of them. It asks for visual confidence, tonal control, and a love of performance-driven storytelling, especially in scenes where belief is argued through gesture, silence, and ritual."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget prestige feature",
+        "lane": "Streaming prestige / specialty theatrical / awards-adjacent historical fantasy",
+        "detail": "This fits a lane that values distinctive voice, cultural specificity, and actor-forward material over franchise scale. The footprint is ambitious but not tentpole-sized, and the emotional hook is clear enough to support festival positioning, prestige marketing, and international curiosity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The runtime wants to feel like an epic.",
+        "detail": "The script is structurally expansive, with multiple eras and a large emotional canvas. A future pass could consider where to tighten transitions so the feature momentum stays as propulsive as the mythology.",
+        "source": "script"
+      },
+      {
+        "area": "The accents and dialects are part of the brand.",
+        "detail": "The Hungarian, French, Western, Irish, and Indigenous speech patterns give the piece a vivid sonic identity. That specificity is a strength, and it will benefit from careful performance calibration so the language remains musical rather than distracting.",
+        "source": "script"
+      },
+      {
+        "area": "The cultural mythology asks for consultation.",
+        "detail": "The script draws on Navajo, Apache, Aztec, and Catholic spiritual material in a highly interwoven way. That makes the world rich, and it also suggests a thoughtful cultural process to protect the authenticity and reception of the finished film.",
+        "source": "both"
+      },
+      {
+        "area": "The frame story is the emotional anchor.",
+        "detail": "The 1927 emporium scenes are the clearest access point for the audience, and they do a lot of heavy lifting for tone and clarity. Protecting that frame in development will help the feature stay accessible as the historical material expands.",
+        "source": "script"
+      },
+      {
+        "area": "The female lead\u2019s stillness is the point.",
+        "detail": "Nova/Chimalman is written with a deliberately restrained emotional surface, which gives the role its power. One direction would be to keep foregrounding the contrast between her composure and the scale of what she is choosing, so the audience feels the cost of that restraint.",
+        "source": "script"
+      },
+      {
+        "area": "The final convergence is the payoff engine.",
+        "detail": "The reunion of mother, son, and the reading-room audience is the movie\u2019s emotional release valve. Preserving the clarity of that convergence will help the ending land with maximum catharsis.",
+        "source": "script"
+      }
+    ]
+  }
+}

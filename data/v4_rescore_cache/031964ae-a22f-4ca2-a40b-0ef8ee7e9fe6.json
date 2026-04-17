@@ -1,0 +1,279 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Biographical drama",
+      "genre_tags": [
+        "War drama",
+        "Romantic drama"
+      ],
+      "tone": "Grounded, elegiac, nostalgic, emotionally earnest"
+    },
+    "positioning_hook": "A haunted war hero on the eve of It’s a Wonderful Life must decide whether Hollywood still has a place for him—or whether the war already took it away.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear emotional promise: a beloved American icon wrestling with war trauma, love, and identity in the glow of classic Hollywood. The Jimmy Stewart/Frank Capra/Margaret Sullavan triangle gives it recognizable entry points for adult audiences, awards-minded viewers, and classic-film fans."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early and cleanly: Stewart’s experience making and promoting It’s a Wonderful Life is intercut with the combat and emotional aftermath that shaped him. The script’s central engine is easy to explain in a sentence, and the title itself signals a character-driven period story with a built-in cultural anchor."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jimmy Stewart is written as a compelling contradiction: a public symbol of decency who privately carries grief, guilt, and dislocation. Capra and Barrymore function as strong counterweights—mentor figures with warmth and authority—while Margaret Sullavan brings volatility, wit, and romantic charge that keeps the emotional field alive."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script takes a familiar biopic frame and gives it a strong structural conceit by braiding the making of a classic film with the wartime experiences that haunt its star. The choice to use It’s a Wonderful Life as both backdrop and emotional mirror gives the material a distinctive, self-aware shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The combat sequences are vivid and propulsive, and the emotional scenes with Capra, Barrymore, and Sullavan keep the story moving between action and introspection. The script’s momentum is strongest when it toggles between external danger and internal reckoning, especially around the bombing mission and the New York reunion."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of telling Stewart’s postwar emotional crisis through the making of one of cinema’s most enduringly hopeful films is immediately legible and surprisingly rich. The dog-tag/flak-number revelation and the final emotional reframing of Maggie as an angelic force give the story a memorable symbolic spine."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script is steeped in studio-era Hollywood, wartime airfields, and postwar transatlantic travel, with enough period detail to make the world feel inhabited. RKO, the Plaza, Romanoff’s, Beverly Hills, and the bomber crews all carry distinct social textures that support the story’s emotional stakes."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently earnest, nostalgic, and reverent, with flashes of bawdy camaraderie in the bomber and Hollywood scenes. The script’s identity is strongest as a heartfelt prestige biopic with classic-Hollywood sheen and wartime gravity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface story of a famous actor in crisis, the script is really about survivor’s guilt, masculinity, performance, and the cost of becoming a public symbol. The recurring idea of “number being up” gives the material a thematic throughline that could sustain deeper emotional resonance."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The script is anchored by Stewart, but the surrounding relationships are strong enough to generate scenes with real dramatic value: Stewart/Capra, Stewart/Barrymore, Stewart/Sullavan, Stewart/father, and Stewart/the bomber crew. The ensemble is not sprawling, but the key pairings are distinct and playable."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Multiple recognizable historical figures",
+          "Large male ensemble of bomber crew in 18-25 range",
+          "One wheelchair-bound older male role",
+          "One supporting Black butler role",
+          "One child voice in Margaret Sullavan’s home scene"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Approximately 60/40 interior-heavy",
+        "period_or_contemporary": "Period (1925, 1935, 1940-47)",
+        "notable_requirements": [
+          "1940s Hollywood studio interiors",
+          "B-24 bomber cockpit and fuselage builds",
+          "English airfield and runway environment",
+          "New York hotel and bar interiors",
+          "Pennsylvania small-town home and airport",
+          "Period street and vehicle dressing"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Air combat sequences with bomber formations, fighter planes, explosions, flak bursts, aircraft destruction, and sky compositing; some period city and airfield enhancement likely required.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical explosion and fire effects for aircraft damage, blood effects, cockpit debris, smoke, and period aviation rigging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "James Stewart"
+        },
+        {
+          "type": "real_person",
+          "detail": "Frank Capra"
+        },
+        {
+          "type": "real_person",
+          "detail": "Donna Reed"
+        },
+        {
+          "type": "real_person",
+          "detail": "Lionel Barrymore"
+        },
+        {
+          "type": "real_person",
+          "detail": "Thomas Mitchell"
+        },
+        {
+          "type": "real_person",
+          "detail": "Henry Travers"
+        },
+        {
+          "type": "real_person",
+          "detail": "Margaret Sullavan"
+        },
+        {
+          "type": "named_music",
+          "detail": "Auld Lang Syne"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "It’s a Wonderful Life"
+        },
+        {
+          "type": "brand",
+          "detail": "RKO Radio Pictures"
+        },
+        {
+          "type": "brand",
+          "detail": "The Plaza Hotel"
+        },
+        {
+          "type": "brand",
+          "detail": "St. Regis Hotel"
+        },
+        {
+          "type": "brand",
+          "detail": "Romanoff’s"
+        },
+        {
+          "type": "brand",
+          "detail": "Old Fitzgerald bourbon"
+        },
+        {
+          "type": "brand",
+          "detail": "Louis XIV Cognac"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical or premium streaming feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or awards-season theatrical release; best positioned as an actor-driven historical drama with classic-Hollywood appeal."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Built-in cultural hook",
+          "what_it_means": "Using the making of It’s a Wonderful Life as the emotional frame gives the script instant recognition and a strong marketing handle. It invites classic-film audiences while still functioning as a character study for broader prestige buyers.",
+          "evidence": "The story opens in the RKO screening room during the film’s first showing and uses the movie as a mirror for Stewart’s inner life.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lead role for a major actor",
+          "what_it_means": "Jimmy Stewart is written as a deeply playable prestige lead: iconic, wounded, funny, romantic, and morally conflicted. That is exactly the kind of part that attracts top-tier actors looking for awards-caliber transformation.",
+          "evidence": "He moves from genial studio star to combat captain to emotionally frayed veteran to uncertain artist.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Emotional engine",
+          "what_it_means": "The script is not just a biopic; it is a story about survivor’s guilt and the cost of carrying other men’s deaths. That gives the material seriousness and emotional weight beyond standard Hollywood nostalgia.",
+          "evidence": "Stewart’s breakdowns with Capra, Barrymore, and his father all orbit the same question: why did he come home when others did not?",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Romantic countercurrent",
+          "what_it_means": "The Stewart/Margaret Sullavan relationship adds heat, longing, and adult complexity. It gives the film a second emotional lane that can broaden audience engagement and deepen the lead’s interior life.",
+          "evidence": "Their scenes move from playful flying and sexual chemistry to regret, distance, and a final reconnection in New York.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Prestige supporting roles",
+          "what_it_means": "Frank Capra and Lionel Barrymore are strong supporting parts with authority, warmth, and wit. These are the kinds of roles that attract respected character actors and help a package feel event-level.",
+          "evidence": "Capra functions as mentor and pressure point; Barrymore becomes the blunt, affectionate truth-teller.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Aviation spectacle with emotional purpose",
+          "what_it_means": "The bomber sequences are not decorative; they dramatize the trauma that drives the story. That makes the action commercially legible while keeping it tied to character.",
+          "evidence": "The first mission, the fighter attack, Obie’s death, Tex’s destruction, and the damaged return flight all directly shape Stewart’s crisis.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Period texture",
+          "what_it_means": "The script is rich in studio-era detail, from RKO and Romanoff’s to the Plaza, the St. Regis, and the Pennsylvania homecoming. That texture supports both production value and audience immersion.",
+          "evidence": "The screenplay repeatedly moves between Hollywood glamour, wartime England, and small-town America with confidence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Symbolic spine",
+          "what_it_means": "The flak fragment matching Stewart’s dog tag number gives the story a memorable, cinematic metaphor for fate, survival, and providence. It’s the kind of image that lingers and helps the film feel authored.",
+          "evidence": "The “210” reveal in the bedroom scene is the script’s most explicit thematic crystallization.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige biographical feature with a built-in classic-Hollywood hook, a major actor’s role at its center, and a deeply emotional war-trauma engine underneath. By threading Stewart’s combat experience through the making of It’s a Wonderful Life, the script turns a familiar icon into a fresh, awards-ready character study with romance, spectacle, and real cultural memory."
+    },
+    "lead_characters": [
+      {
+        "name": "James ‘Jimmy’ Stewart",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to early 40s · white American",
+        "hook": "A beloved movie star and decorated war hero who carries himself with Midwestern decency but is privately unraveling under the weight of combat memory, guilt, and the strange unreality of fame. He is funny without trying, humble without false modesty, and emotionally porous in a way that makes every conversation feel lived-in. The script gives him a rare contradiction: the man the country trusts most is the one least able to trust his own place in the world.",
+        "why_actor_wants_this": "This is a showcase role built for an actor who can play authority, vulnerability, and iconic American warmth in the same frame. It offers big emotional turns, wartime command scenes, romantic longing, and intimate breakdowns with Capra, Barrymore, his father, and Sullavan. The part lives in the same prestige lane as transformative historical performances like Daniel Day-Lewis in Lincoln or Gary Oldman in Darkest Hour, where the pleasure is not imitation alone but inhabiting a public legend from the inside."
+      },
+      {
+        "name": "Frank Capra",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Italian-American",
+        "hook": "A passionate, fast-talking director who understands both the machinery of Hollywood and the emotional fragility of the men who make it. He’s affectionate, practical, and deeply invested in Stewart’s return, but he also carries the pressure of needing the movie to work. He reads as a studio-era operator with real heart, the kind of mentor who can push and protect in the same breath.",
+        "why_actor_wants_this": "This is a rich supporting role for an actor who likes authority with humanity. Capra gets sharp dialogue, emotional confrontation, and the chance to embody old-Hollywood confidence without becoming a caricature. It sits comfortably in the space of a Paul Giamatti or Mark Rylance type performance: intelligent, specific, and quietly pivotal."
+      },
+      {
+        "name": "Lionel Barrymore",
+        "role_type": "Supporting",
+        "demographics": "Male · late 60s to 70s · white American · wheelchair user",
+        "hook": "A legendary character actor with wit, bite, and a grandfatherly bluntness that lets him say the unsayable. He is worldly, mischievous, and emotionally direct, but the script also gives him tenderness and moral authority. He becomes the one person who can talk to Stewart like a friend, a peer, and a truth-teller all at once.",
+        "why_actor_wants_this": "This is a delicious supporting part for an actor who can command a room with voice and presence. Barrymore gets humor, wisdom, and a late-scene emotional monologue that lands like a gift to performers who love language. The role has the kind of gravitas and texture that recalls great elder-statesman turns like Anthony Hopkins in The Father or Christopher Plummer in Beginners."
+      },
+      {
+        "name": "Margaret Sullavan",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s to 30s · white American",
+        "hook": "A luminous, sharp-edged actress whose intelligence and sensuality make her impossible to forget. She is playful, emotionally fearless, and more self-aware than the men around her give her credit for, which makes her both a romantic ideal and a force of nature. The script frames her as Stewart’s emotional equal: lover, confidante, provocateur, and the person who can cut through his self-pity with one line.",
+        "why_actor_wants_this": "This is a juicy star part because it lets an actress play glamour, wit, sexual confidence, and emotional intelligence without losing vulnerability. The role has the kind of crackling adult chemistry and lived-in romance that actors chase in prestige period pieces, with echoes of performances like Cate Blanchett in Carol or Michelle Williams in My Week with Marilyn."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Rights and clearances",
+        "detail": "The script prominently uses real historical figures, the title and material from It’s a Wonderful Life, and named songs/brands/venues. A producer would want to map the rights and clearance path early, especially around the film-within-the-film and any depiction of recognizable people.",
+        "source": "production"
+      },
+      {
+        "area": "Budget lane",
+        "detail": "The story lives in a mid-to-upper period-drama lane because it combines studio-era interiors, multiple period locations, bomber sequences, and aircraft destruction. It is most naturally positioned as a prestige feature rather than a low-budget indie.",
+        "source": "production"
+      },
+      {
+        "area": "Casting strategy",
+        "detail": "The project benefits from strong name casting in the Stewart, Capra, Barrymore, and Sullavan roles, with the bomber crew castable as a cohesive ensemble of younger actors. The historical recognition of the leads is a major part of the package value.",
+        "source": "both"
+      },
+      {
+        "area": "Audience positioning",
+        "detail": "The clearest audience lane is adult prestige viewers, classic-Hollywood fans, awards audiences, and viewers drawn to war-era psychological drama. The emotional hook is strongest when sold as a character study about the cost of survival and the making of an American icon.",
+        "source": "script"
+      },
+      {
+        "area": "Tone management",
+        "detail": "The screenplay balances wartime brutality, romantic longing, and old-Hollywood warmth. That blend gives the film a distinctive emotional range and suggests a release strategy that can support both intimacy and spectacle.",
+        "source": "script"
+      },
+      {
+        "area": "Production design emphasis",
+        "detail": "The period environments are a major selling point: RKO interiors, wartime airfields, Beverly Hills homes, the Plaza, the St. Regis, and small-town Pennsylvania all require strong design and wardrobe to deliver the film’s full appeal.",
+        "source": "production"
+      }
+    ]
+  },
+  "weightedScore": 64.3,
+  "tier": "Optionable",
+  "inputTokens": 35259,
+  "outputTokens": 3919,
+  "cost": 0.04407975
+}

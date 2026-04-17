@@ -1,0 +1,260 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical drama",
+      "genre_tags": [
+        "Sports drama",
+        "Political thriller"
+      ],
+      "tone": "Grounded, urgent, elegiac, and defiant"
+    },
+    "positioning_hook": "An Austrian football legend is pressured to legitimize the Nazi regime, and answers with the one act that can still humiliate them: winning on their own field.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean, emotionally legible promise: a beloved athlete, a fascist takeover, and a public showdown with national stakes. The football framework gives it broad entry, while the historical specificity and resistance angle give it awards-friendly prestige appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands immediately in the opening World Cup sequence and stays focused: Matthias Sindelar is the star who refuses to be absorbed by the Nazi machine. The Anschluss Match gives the story a clear engine, a deadline, and a cinematic payoff."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Matthias is built as a charismatic contradiction: playful on the pitch, shy off it, and increasingly morally awake as the world closes in. Camilla, Leopold, Heinrich, and Walter each add distinct pressure points around him, giving the lead a strong emotional field to play against."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is treating football as political theater, not just backdrop, and making the match itself the climax of a resistance story. The repeated use of sport language to frame propaganda, loyalty, and identity gives the material a confident, ownable angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story is built around escalating historical events that naturally tighten the vise: the World Cup, the Anschluss, the pressure to play, the raid, and the final match. The structure keeps returning to a single question—what will Matthias do when history demands a public answer?—which sustains momentum."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a story that should already exist, which is the best kind of originality. The idea of a football genius using the pitch as a moral stage, with the Nazi regime trying to co-opt his image, creates a fresh and immediately graspable dramatic engine."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Vienna in 1934-38 is rendered with strong institutional texture: cafés, newsrooms, stadium offices, Gestapo headquarters, polling places, and salons all feel like parts of one tightening social ecosystem. The world isn’t decorative; it actively generates pressure, surveillance, and choices."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct because it blends sports-page momentum with political dread and old-world romanticism. The coffeehouse banter, locker-room camaraderie, and public brutality create a recognizable emotional signature that feels period-specific and cinematic."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the public heroism, the script keeps opening into questions of identity, complicity, memory, and what it means to be remembered by history. The final funeral framing and the legacy coda suggest a story designed to linger beyond the match itself."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The material has a strong central web: Matthias/Camilla, Matthias/Heinrich, Matthias/Hans, Matthias/Leopold, and the newsroom/stadium crosscutting all create recurring friction. The ensemble is anchored by one magnetic lead, but the surrounding relationships are active enough to keep scenes generating new pressure."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 24,
+        "leads": 5,
+        "series_regulars": 10,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in 30s with athletic football ability and period physicality",
+          "Female lead in 20s with fashion-model presence and multilingual dialogue",
+          "Multiple supporting roles require German and Italian language ability",
+          "Several historical figures and recognizable public-facing authority roles",
+          "Football ensemble requires coordinated athletic casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Approximately 55/45",
+        "period_or_contemporary": "Period (1934-1938)",
+        "notable_requirements": [
+          "1930s Vienna streets and storefronts",
+          "San Siro stadium period recreation",
+          "Praterstadion and locker room builds",
+          "Gestapo headquarters interiors",
+          "Coffeehouse and newsroom period sets",
+          "Funeral procession and cemetery sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Crowd extension, period city dressing, stadium scale enhancement, historical banners/salutes, smoke and atmosphere, and a few stylized end-sequence visual transitions",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical crowd control, football action, smashed glass, broken records, raid damage, smoke, and fire aftermath elements",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Matthias Sindelar"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Benito Mussolini"
+        },
+        {
+          "type": "real_person",
+          "detail": "Sepp Herberger"
+        },
+        {
+          "type": "real_person",
+          "detail": "Archbishop Theodor Innitzer"
+        },
+        {
+          "type": "real_person",
+          "detail": "Fritz Szepan"
+        },
+        {
+          "type": "real_person",
+          "detail": "Paul Meissner"
+        },
+        {
+          "type": "named_music",
+          "detail": "Mozart's Requiem, Don Giovanni, Danube Waltz, Deutschland Über Alles, Wessel-Lied"
+        },
+        {
+          "type": "brand",
+          "detail": "Völkischer Beobachter, Mein Kampf, Ring Cafe, St. Stephen's Cathedral, San Siro Stadium, Praterstadion"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical football match depiction and use of real-world archival/public figures may require clearances depending on production approach"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical, festival-to-platform, or premium streaming feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with awards-friendly positioning, historical prestige, and international appeal"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "High-concept historical spine",
+          "what_it_means": "The script turns a real historical footballer into a cinematic resistance figure, giving producers a true-story hook with built-in prestige and audience curiosity.",
+          "evidence": "Matthias Sindelar is pressured to play under the Nazi regime, with the Anschluss Match functioning as the story’s public moral climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sports-as-politics engine",
+          "what_it_means": "The match is not just spectacle; it is the story’s argument. That makes the film feel larger than sports and more commercially legible as a political drama with a crowd-pleasing payoff.",
+          "evidence": "The script repeatedly frames football as propaganda, control, and public identity, culminating in the final match where the crowd chants Austria as an act of defiance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "A star-making lead role",
+          "what_it_means": "Matthias is written as a charismatic, physically expressive lead with emotional range, giving the project a clear actor magnet and awards-performance lane.",
+          "evidence": "He is playful and elegant on the pitch, shy with Camilla, morally shaken by Nazi brutality, and finally defiant in the stadium.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Strong period atmosphere",
+          "what_it_means": "Vienna feels lived-in and specific, which helps the film travel internationally and gives production designers, costume, and cinematography a rich canvas.",
+          "evidence": "Coffeehouses, newsrooms, stadium offices, polling places, Gestapo interiors, and public squares all carry distinct social texture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Built-in emotional contrast",
+          "what_it_means": "The script balances public history with intimate romance and friendship, which broadens the audience beyond sports fans and keeps the film emotionally accessible.",
+          "evidence": "Matthias’s relationship with Camilla, his bond with Leopold, and his tension with teammates all run alongside the political plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Cinematic climax",
+          "what_it_means": "The final match is inherently filmable and crowd-pleasing: a public arena, a visible antagonist, and a decisive act of defiance that lands as both sports victory and political statement.",
+          "evidence": "Matthias scores, dances the waltz in front of Hitler, and the crowd chants Austria as the regime watches in silence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Awards-friendly historical resonance",
+          "what_it_means": "The ending frames the protagonist as a remembered symbol of resistance, which gives the film a legacy dimension that can support festival, prestige, and international marketing.",
+          "evidence": "The funeral coda and the epigraphs about his legacy position the story as a mythic historical portrait, not just a biopic beat sheet.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige historical sports drama with a real cinematic engine: a football genius forced to choose between career survival and public defiance as Nazi power closes in. The script has a clear star role, a propulsive political deadline, and a finale built for goosebumps — a stadium-sized act of resistance that turns a match into a national memory."
+    },
+    "lead_characters": [
+      {
+        "name": "Matthias Sindelar",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · Austrian · elite athlete",
+        "hook": "Matthias is a graceful, self-possessed football artist with a dancer’s body and a moral center that becomes impossible to ignore. He’s charming without being slick, shy in private, and devastatingly precise in public, the kind of man who can make a stadium feel like a stage. What makes him compelling is the contradiction: he wants to stay above politics, but his talent has made him political whether he likes it or not. He carries himself like a performer, yet the story keeps revealing the cost of being seen by history.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play physical mastery, quiet charisma, romantic vulnerability, and public defiance in one package. It has the prestige of a historical icon and the emotional arc of a man forced into moral clarity. The closest performance space is the controlled magnetism of Daniel Day-Lewis in There Will Be Blood paired with the physical eloquence of a great sports biopic lead."
+      },
+      {
+        "name": "Camilla Castagnola",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Italian · fashion model / socialite",
+        "hook": "Camilla is elegant, worldly, and emotionally intelligent, but she’s not ornamental; she’s one of the few people who can actually speak truth to Matthias. She moves through Vienna’s fashion and café world with poise, yet carries the trauma of political violence from Italy and understands the danger around her faster than he does. She gives the film its romantic pulse, but she also functions as a witness to history, a survivor, and a woman with her own exit plan.",
+        "why_actor_wants_this": "This is a lush, emotionally active role with glamour, intelligence, and real dramatic weight. It gives an actor the chance to play seduction, tenderness, fear, and moral clarity without being reduced to a love interest. The performance lane sits near the emotional authority of Marion Cotillard in Allied or the poised interiority of Alicia Vikander in period drama."
+      },
+      {
+        "name": "Walter Nausch",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Austrian · footballer",
+        "hook": "Walter is Matthias’s closest teammate and the story’s most visible bridge between locker-room camaraderie and political fracture. He’s warm, funny, and athletic, but his marriage to Margot and the pressure around him make him a man living on a fault line. He gives the film a human-scale view of what the regime is doing to ordinary lives inside the team.",
+        "why_actor_wants_this": "This is a strong supporting role for an actor who can play loyalty, panic, and decency under pressure. The part has the easy chemistry of a great ensemble teammate and the emotional weight of a man trying to protect his family while the world narrows around him. It sits in the lane of a standout supporting turn like Michael Shannon in a prestige ensemble."
+      },
+      {
+        "name": "Leopold Drill",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Jewish café owner",
+        "hook": "Leopold is the film’s moral conscience in civilian clothes: warm, observant, and increasingly devastated by what the regime is doing to his family and community. He has the lived-in dignity of a man who understands history before everyone else does, and his scenes with Matthias give the story its emotional ballast. He’s not a speechmaker; he’s a witness whose grief deepens the film’s stakes.",
+        "why_actor_wants_this": "This is a rich character part with sorrow, wit, and quiet authority. It gives an actor the chance to play heartbreak without sentimentality and to anchor the film’s human cost. The role has the same kind of gravitas and tenderness that makes actors lean into parts like Mark Rylance in Bridge of Spies."
+      },
+      {
+        "name": "Philip Dibbon",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · journalist",
+        "hook": "Philip is the newsroom’s conscience, a sports reporter who can see the political truth inside the football story even when his editor wants him to stay in his lane. He’s thoughtful, slightly anxious, and professionally trapped, which makes him a useful audience surrogate inside the machinery of propaganda. His presence broadens the film beyond the pitch and into the way history gets written.",
+        "why_actor_wants_this": "This is a smart supporting role for an actor who can play intelligence under pressure and quiet frustration inside a compromised institution. It offers dialogue scenes, moral tension, and a strong period texture. The part lives in the same space as a newsroom performance that values restraint and conscience over volume."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget and scale",
+        "detail": "This plays as a mid-to-upper budget period feature, with the largest spend concentrated in stadium recreation, crowd scenes, period dressing, and historical city work.",
+        "source": "production"
+      },
+      {
+        "area": "Casting and language",
+        "detail": "The project benefits from actors who can handle German-accented English and, in several scenes, multilingual dialogue with naturalism.",
+        "source": "production"
+      },
+      {
+        "area": "Historical clearances",
+        "detail": "Because the script uses multiple real historical figures, named institutions, and specific events, producers will want to map the clearance strategy early.",
+        "source": "production"
+      },
+      {
+        "area": "Audience positioning",
+        "detail": "The film has a clear prestige lane with crossover potential for sports audiences, history audiences, and international buyers interested in WWII-era resistance stories.",
+        "source": "both"
+      },
+      {
+        "area": "Content intensity",
+        "detail": "The material includes antisemitic abuse, Gestapo intimidation, sexual violence, and political oppression, placing it firmly in mature-feature territory.",
+        "source": "script"
+      },
+      {
+        "area": "Visual storytelling",
+        "detail": "The final match, the café sequences, and the funeral coda give the film several strong set pieces that can be marketed around image and emotion as much as plot.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 41396,
+  "outputTokens": 3741,
+  "cost": 0.0478815
+}

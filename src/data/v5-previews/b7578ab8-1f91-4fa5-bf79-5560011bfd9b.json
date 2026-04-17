@@ -1,0 +1,251 @@
+{
+  "eval_id": "b7578ab8-1f91-4fa5-bf79-5560011bfd9b",
+  "title": "1 v 1000",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "crime",
+        "family drama"
+      ],
+      "tone": "heightened, propulsive, operatic, gritty"
+    },
+    "positioning_hook": "A retired UFC fighter and AI engineer must protect her kids and outfight a Yakuza power play after a Bali business trip turns into a blood feud.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The promise is immediate: a mother with elite fighting skills, trapped in a foreign setting, protecting her children from organized crime. The action-forward engine, family stakes, and clear villain ecosystem give it broad genre appeal with a strong commercial spine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the airport-to-ambush opening and keeps sharpening: Alice is a former UFC killer, now an AI consultant, whose Bali work trip collides with Yakuza honor politics. The story engine is easy to explain and escalates cleanly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Alice is built as a compelling contradiction \u2014 violent by training, restrained by promise, maternal under pressure \u2014 and Jon, Mitsuko, and Katoro all have strong screen presence. The family dynamics and honor code give the characters durable dramatic fuel."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a specific collision of UFC combat, AI infrastructure, Balinese ritual, and Yakuza etiquette, and it does so with confidence. The tea ceremony, seiza/pinky ritual, and temple/parade imagery give the action a distinct cultural and visual identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "It moves with real force: airport threat, temple confrontation, corporate siege, street chase, and family rescue all keep the pressure climbing. The alternating pursuit threads and countdown energy make it hard to stop reading."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The central idea feels both fresh and inevitable: a woman whose violence was disciplined into sport now has to weaponize that same discipline against a criminal honor system. The AI layer and Bali Nyepi setting make the premise feel ownable rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Bali is not just backdrop here \u2014 Nyepi, ogoh-ogoh, temple customs, airport logistics, factory hierarchy, and Yakuza protocol all generate story. The corporate/factory compound and the local holiday restrictions create a world with visible rules and pressure points."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: brutal action, family friction, cultural ritual, and deadpan humor all coexist in the same frame. The script can pivot from a step stool gag to a severed pinky without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the action is a story about inherited violence, shame, motherhood, and the cost of being trained into a weapon. Alice, Jon, and Mitsuko all suggest deeper emotional histories that could support a richer franchise or follow-up."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Alice/Jon, Alice/Julia, Alice/Jack, and the Kato/Yashida/Yakuza triangle all generate usable tension, and the supporting players have clear loyalties. The ensemble is strongest when it turns the corporate and criminal factions into a social chessboard."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 10,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Female lead in 30s with elite physicality",
+          "Older male father/coach role with martial credibility",
+          "Japanese-speaking Yakuza principals",
+          "Two child roles, ages roughly 9 and 16",
+          "Balinese and Indonesian supporting roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Bali airport",
+          "temple/water shrine",
+          "corporate HQ and factory compound",
+          "hotel/resort",
+          "streets, alleys, and rural roads",
+          "night exterior parade and crowd scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action with some crowd augmentation, monitor inserts, security-camera views, and possible helicopter/vehicle enhancement.",
+        "stunts_level": "heavy",
+        "sfx_needs": "Gunfire, explosions, broken glass, blood effects, fire, and extensive hand-to-hand fight choreography.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "UFC, Westworld, Twitch, AirPods, Google Maps, Uber, Alexa, Meta, VR goggles, and SyssTech/Nexus-style tech references."
+        },
+        {
+          "type": "real_person",
+          "detail": "No obvious real-person references beyond historical Yakuza/clan references and martial arts/corporate world analogues."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Westworld and UFC are specifically named and may require clearance if retained as written."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming action-thriller / premium cable feature lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is festival-to-platform or streamer original feature; the contained action and international setting also support a premium genre label."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is largely contained to a few major hubs, but the heavy stunt load, crowd scenes, vehicles, fire, and night work push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead is highly specific and physically demanding, and the Yakuza ensemble plus two child roles require careful casting, but the overall cast size remains manageable."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script uses a concentrated set of Bali locations, but airport, temple, factory HQ, roads, parade, and compound sequences create meaningful logistical spread."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic violence, gunplay, blood, killings, and intense family peril define the experience and narrow the lane to mature buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and pop-culture references appear on the page, with UFC and Westworld standing out as the clearest clearance items."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Alice is a star-making action lead.",
+          "what_it_means": "She\u2019s not just a fighter; she\u2019s a mother, consultant, widow, and former killer whose restraint is as interesting as her violence. That gives the role the kind of layered, physically demanding showcase that can attract a serious actor and a genre audience at once.",
+          "evidence": "The airport ambush, the temple fight with Jon, and the final one-woman gauntlet through the HQ all define her as both tactical and emotionally volatile.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Bali setting is story-generating.",
+          "what_it_means": "Nyepi, ogoh-ogoh, temple etiquette, airport chaos, and the no-driving holiday rule all become active pressure points, not postcard dressing. That makes the world feel expensive on the page without needing a giant footprint.",
+          "evidence": "The taxi shortage, parade imagery, curfew restrictions, and temple sequences all directly shape the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action has a distinct martial identity.",
+          "what_it_means": "This isn\u2019t generic gunplay; it\u2019s a choreography-forward piece where styles, weapons, and body language matter. The script gives performers and stunt teams a chance to build set pieces that feel authored rather than assembled.",
+          "evidence": "Alice\u2019s fights with Jon, Junichi, Katoro, Mitsuko, and Masahiro each use different rhythms and weapons.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Yakuza honor code gives the thriller a spine.",
+          "what_it_means": "The conflict isn\u2019t just criminal pursuit; it\u2019s debt, shame, ritual, and public consequence. That elevates the stakes beyond survival and gives the antagonists a memorable operating system.",
+          "evidence": "The pinky ritual, tea ceremony, seiza posture, bounty announcement, and clan hierarchy all drive decisions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family triangle keeps the engine emotional.",
+          "what_it_means": "Alice, Jon, Julia, and Jack are not just hostages or bystanders; they\u2019re a combustible family unit with history, resentment, and inherited violence. That gives the action a human center and a built-in audience anchor.",
+          "evidence": "Jon\u2019s training history, Julia\u2019s livestreaming, Jack\u2019s curiosity, and Alice\u2019s attempts to shield them all recur throughout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The corporate-AI layer adds a modern hook.",
+          "what_it_means": "The Nexus system and the server-room siege give the movie a contemporary techno-thriller edge that broadens the appeal beyond pure martial arts action. It also creates a clean leverage object \u2014 the key, the upload, the data \u2014 that keeps the plot moving.",
+          "evidence": "Alice\u2019s AI work, the server upload, the encryption key, and the building-wide systems takeover all matter to the climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The antagonists are vivid and playable.",
+          "what_it_means": "Mitsuko, Katoro, Daisuke, Kiyoshi, and the crew each have a distinct silhouette, code, and function in the machine. That gives the project strong casting appeal and makes the villain ecosystem feel like a real world rather than a faceless gang.",
+          "evidence": "The hanten jackets, katana briefcase, black dragon tattoos, and clan dialogue all differentiate them immediately.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a muscular, international action feature with a genuinely ownable lead: a former UFC killer turned AI engineer who has to protect her kids while navigating Yakuza honor politics in Bali. The script combines elite fight choreography, a vivid cultural setting, and a clean survival engine into a package that feels built for a star turn and a premium genre buyer."
+    },
+    "lead_characters": [
+      {
+        "name": "Alice Knight",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 30s \u00b7 athletic build",
+        "hook": "Alice is a woman who has spent her life trying to contain what she is. A former UFC fighter turned AI engineer, she\u2019s sharp, sarcastic, and deeply controlled until pressure cracks the shell and the old predator underneath comes roaring out. She carries grief, maternal protectiveness, and a buried appetite for violence in the same body, which makes every choice feel dangerous and earned.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do physical authority, emotional suppression, and explosive release in one package. It has the showcase quality of Charlize Theron in Mad Max: Fury Road or Jodie Comer in The Last Duel \u2014 a part where the body, face, and voice all tell the story."
+      },
+      {
+        "name": "Jonathan 'Jon' Davenport",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 60s \u00b7 physically imposing",
+        "hook": "Jon is a hard, old-school father and coach who speaks in the language of combat and consequence. He\u2019s brutal, funny, and emotionally withholding, but the script keeps revealing that his cruelty is braided with love, regret, and a warped sense of duty. He reads like a man who built a weapon and then had to live with it.",
+        "why_actor_wants_this": "It\u2019s a rich late-career role for an actor who can carry authority, menace, and wounded paternal pride. The part lives in the same performance space as Bryan Cranston in The Judge or JK Simmons in Whiplash \u2014 forceful, specific, and emotionally loaded."
+      },
+      {
+        "name": "Mitsuko Kato",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 30s \u00b7 Japanese",
+        "hook": "Mitsuko is elegance with a blade behind it. She\u2019s icy, disciplined, and deeply bound to clan honor, but the script lets her pivot from ceremonial poise to ferocious vengeance without ever losing composure. She\u2019s a villain, a wife, and a wounded aristocrat of violence all at once.",
+        "why_actor_wants_this": "This is a prestige antagonist role with real texture \u2014 the kind of part that lets an actor command the frame through stillness, ritual, and sudden brutality. It has the same kind of magnetic control as Rosamund Pike in Gone Girl or Tilda Swinton in Michael Clayton."
+      },
+      {
+        "name": "Katoro Kato",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 30s \u00b7 Japanese",
+        "hook": "Katoro is the clan\u2019s young boss: stoic, proud, and terrifyingly efficient. He carries himself like a man who believes honor is a weapon, and the script makes him physically formidable and emotionally severe, especially in the way he treats Alice as both threat and mirror.",
+        "why_actor_wants_this": "This is a strong villain-lead slot for an actor who can project control, danger, and wounded pride without overplaying. It sits in the territory of Michael Shannon in Take Shelter or Mads Mikkelsen in The Hunt \u2014 contained intensity with real menace."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage elegant violence inside a culturally specific pressure cooker.",
+        "detail": "The material rewards someone who can choreograph action with geography, ritual, and emotional clarity. It offers a chance to build set pieces that feel international and premium while still staying legible, character-driven, and producible."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "premium streaming action-thriller lane",
+        "detail": "This fits a buyer looking for a female-forward, globally set genre feature with a clear hook, contained locations, and a star-making lead. It has enough scale for event value, but the footprint stays disciplined enough to package without tentpole economics."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening leans into exposition before the engine fully locks.",
+        "detail": "The script already has the ingredients for a very fast hook; one direction would be to keep foregrounding Alice\u2019s contradiction and the Bali pressure-cooker as early as possible so the premise detonates even sooner.",
+        "source": "script"
+      },
+      {
+        "area": "The supporting ensemble is strongest when it collides with Alice.",
+        "detail": "Jon, Mitsuko, Katoro, and Kiyoshi all have strong individual flavor; a future pass could continue sharpening the specific relationship turns that make each encounter feel like a new kind of test for Alice.",
+        "source": "script"
+      },
+      {
+        "area": "The brand references are very current.",
+        "detail": "UFC, Westworld, Twitch, Uber, Alexa, Meta, and Google Maps all help locate the story in a recognizable present-day lane, and a producer may want to decide which of those are essential versus replaceable for clearance simplicity.",
+        "source": "script"
+      },
+      {
+        "area": "The action footprint is ambitious but focused.",
+        "detail": "The script is built around fights, chases, fire, and crowd movement rather than large-scale destruction, which keeps it in a disciplined mid-budget lane while still feeling big on screen.",
+        "source": "production"
+      },
+      {
+        "area": "The family stakes carry the emotional afterburn.",
+        "detail": "Alice\u2019s relationship with Julia and Jack gives the movie its heart; keeping those beats foregrounded will protect the story from becoming only a siege thriller and preserve the emotional payoff of the finale.",
+        "source": "script"
+      }
+    ]
+  }
+}

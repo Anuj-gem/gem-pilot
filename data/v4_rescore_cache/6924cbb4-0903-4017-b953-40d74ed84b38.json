@@ -1,0 +1,255 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi action thriller",
+      "genre_tags": [
+        "dystopian",
+        "road movie"
+      ],
+      "tone": "heightened, gritty, pulpy, earnest"
+    },
+    "positioning_hook": "A cloned ex-soldier discovers his identity was fabricated and races through a clone underground to expose the truth before the state erases him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean, high-concept commercial engine: a man learns he may be a clone, is hunted by a relentless lawman, and must cross a divided society to find the truth. The bank ambush, the road chase, and the final reveal all give the audience a clear promise of pursuit, mystery, and action."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and hard in the bank sequence when Zack is identified as a clone-classified donor body parts source. From there the story keeps the question alive — who is Zack, who made him, and what does the state know — while steadily widening the world through Audrey, Zed, and the bureau of records."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Zack is built as a solid action lead with a strong emotional spine: wounded, self-reliant, and forced into identity crisis. Mia gives the story a volatile, sexy, morally slippery counterweight, while Trent is a memorable pursuit engine. The characters are functional and distinct, with the strongest appeal coming from their contradictions rather than deep interiority."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a full-blooded retro-futurist dystopia with clone-classification, counterfeit identities, and a north/south social split that feels like a pulp political fable. The amusement-park cloning compound, the organ-donor billboard, and the second-generation family reveal give it a distinctive, unabashedly weird identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with real propulsion: bank explosion, warehouse rescue, highway pursuit, gas-station theft, park siege, records-bureau reveal, and final confrontation. It keeps resetting the objective just enough to maintain forward drive, with Trent’s pursuit providing a strong throughline."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea — a man discovering he is literally his own father’s clone in a society where cloning is normalized and politicized — has that immediate 'of course this exists' quality. The emotional twist of Audrey as a clone-fixer and the final second-generation Audrey reveal deepen the concept beyond a simple identity-thriller premise."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has a lot of story-generating texture: clone undergrounds, civil police, body-part donor commerce, counterfeit birth records, a seceded north country, and a corporate medical takeover. The amusement park turned clone commune is especially vivid and gives the setting a memorable social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably pulpy and earnest, with hard-edged action, deadpan dialogue, and a slightly comic-book sense of moral absolutism. The script’s voice lives in the contrast between outrageous genre events and the characters’ matter-of-fact reactions, especially Mia’s bluntness and Trent’s cold authority."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the chase structure is a larger identity story about legitimacy, inheritance, and what makes a person real. Audrey’s role as protector, Zed’s ideology, and Mia’s claim that she knows who she is all suggest a deeper thematic layer that could support a richer dramatic version of the material."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The strongest engine is the Zack/Mia pairing, which carries flirtation, mistrust, and mutual utility all at once. Zed, Audrey, Darrick, and Trent each add a different pressure point, and the family-reveal structure gives the ensemble a built-in web of hidden connections."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple clone variants of the same family line",
+          "Female lead in early 30s with physical confidence and action capability",
+          "Male lead in middle age with military/action credibility",
+          "One child role required for the interrogation leverage scene",
+          "Trent requires heavy prosthetic/makeup or VFX-assisted facial damage in later scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "near-future contemporary",
+        "notable_requirements": [
+          "Bank interior with vault and executive office",
+          "Warehouse hideout with vehicles and weapons cache",
+          "Amusement park repurposed as a clone settlement",
+          "Bureau of Records civic building",
+          "Corporate medical headquarters under construction",
+          "Highway/desert chase corridor",
+          "Irrigation field with tarp-covered chasm",
+          "Police headquarters and interrogation room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Clone-classification screens, futuristic weapons effects, explosive vehicle destruction, crane sequence, mist/fog finale, and some enhanced near-future production design elements.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, vehicle crashes, explosions, fire effects, smashed glass, practical damage to cars and buildings, and a disfigured-prosthetic character reveal.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Elton John - 'Someone Saved My Life Tonight'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin - 'Stairway to Heaven'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin - 'Kashmir'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin - 'Physical Graffiti'"
+        },
+        {
+          "type": "brand",
+          "detail": "Nissan"
+        },
+        {
+          "type": "brand",
+          "detail": "Toyota Corolla"
+        },
+        {
+          "type": "brand",
+          "detail": "Trans Am"
+        },
+        {
+          "type": "brand",
+          "detail": "Pepsi"
+        },
+        {
+          "type": "brand",
+          "detail": "Harley Davidson"
+        },
+        {
+          "type": "brand",
+          "detail": "Global Care"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or theatrical genre lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform, streamer action-thriller, or modest theatrical genre play"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "High-concept identity premise",
+          "what_it_means": "The script gives buyers a fast, pitchable engine with built-in mystery: a man discovers he is a clone of his own father and must decide what his life means. That is a clean commercial premise with emotional stakes, not just a gimmick.",
+          "evidence": "The bank reveal, the birth-record discovery, and Gilcrest’s explanation that Zack was cloned from Zachery Taylor Freeling.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Memorable antagonist",
+          "what_it_means": "Trent is the kind of relentless, visually distinctive villain that posters and trailers can sell. His motorcycle, visor, rifle, and later damaged body create a strong iconography for the movie.",
+          "evidence": "The motorcycle pursuit, the peace rifle, the helmet/face fusion, and the final return from the ravine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Strong female co-lead energy",
+          "what_it_means": "Mia is not a sidekick; she is a volatile co-driver, thief, liar, lover, and survivor. That gives the movie a sexier, less predictable dynamic and a role an actor can really seize.",
+          "evidence": "She rescues Zack from the bank, steals the Trans Am, carries a gun, challenges Zack’s assumptions, and ultimately flips the power dynamic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Distinctive worldbuilding",
+          "what_it_means": "The clone economy, counterfeit identity system, body-part donor commerce, and north/south political split create a world that feels engineered for story. It is specific enough to stand out and broad enough to support franchise thinking if desired.",
+          "evidence": "The donor organ billboard, clone-classification screen, Bureau of Records, and the seceded north country where cloning is legal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Set-piece momentum",
+          "what_it_means": "The script is built around a sequence of cinematic turns that keep escalating the scale: bank ambush, warehouse siege, highway chase, gas-station theft, park massacre, records-bureau reveal, crane escape. That is trailer-friendly material.",
+          "evidence": "The repeated action reversals and vehicle-based pursuit structure across the second half.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production-friendly core footprint",
+          "what_it_means": "Despite the big action energy, the story is largely contained to a manageable set of recurring locations and a small principal cast. That makes it easier to imagine as a mid-budget genre package rather than a giant effects movie.",
+          "evidence": "Warehouse, road, gas station, amusement park, records bureau, corporate office, and a handful of recurring leads.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Theme with commercial clarity",
+          "what_it_means": "The script is not just about cloning; it is about legitimacy, self-definition, and who gets to count as human. That gives the action a human question underneath it, which helps with audience connection and actor interest.",
+          "evidence": "Zack’s repeated insistence that he is human, Mia’s claim that she knows who she is, and the final second-generation Audrey reveal.",
+          "source": "script"
+        }
+      ],
+      "headline": "TRUE BEING is a muscular, pulpy sci-fi thriller with a clean identity hook and a strong commercial spine: a man discovers he’s a clone of his own father and gets dragged through a hidden clone underworld while a relentless lawman closes in. The script pairs a memorable lead duo with a vivid antagonist, a distinctive near-future social order, and a string of trailer-ready set pieces that make the package feel both producible and marketable."
+    },
+    "lead_characters": [
+      {
+        "name": "Zack Freeling",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · physically capable, military bearing",
+        "hook": "Zack is a wounded, self-contained man who thinks he has already lived his life and is trying to rebuild it with dignity. He carries the discipline of a special forces veteran, the embarrassment of a man who has been financially and emotionally stripped, and the quiet shock of someone whose entire identity is about to be rewritten. He is stoic without being blank, capable without being invulnerable, and his emotional center is the need to know whether his life has been his own.",
+        "why_actor_wants_this": "This is a classic lead role for an actor who wants to play restraint under pressure and then let the character crack open in stages. The part offers physical action, emotional revelation, and a late-film identity turn that changes the meaning of everything before it. It lives in the same performance space as a Harrison Ford-style grounded action lead or a Michael Keaton in a genre role with wounded intelligence."
+      },
+      {
+        "name": "Mia",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s-30s · blonde, tough, sexually confident",
+        "hook": "Mia is a survivor with a grin on her face and a weapon in her hand. She is sharp-tongued, opportunistic, funny, and emotionally unreadable until she chooses not to be. She can play helper, seductress, thief, and betrayer in the same breath, which makes her feel dangerous in the best way. Her core contradiction is that she wants freedom, but she is always calculating the price of it.",
+        "why_actor_wants_this": "This is a juicy, scene-stealing role with attitude, wit, and a real power shift built into the arc. An actor gets to play flirtation, menace, vulnerability, and hard-edged pragmatism, with a final turn that recontextualizes the relationship. It has the kind of volatility seen in performances like Jennifer Jason Leigh in The Hudsucker Proxy or Rosamund Pike in a sharp-edged thriller mode."
+      },
+      {
+        "name": "Officer Trent",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · imposing, physically transformed, heavily scarred/prosthetic",
+        "hook": "Trent is the face of state power turned feral. He is cold, procedural, and sadistic in the early scenes, then becomes increasingly monstrous as the story goes on, until he reads like a damaged machine that still believes in authority. The family connection to Audrey and Zack gives him a personal dimension, but his defining trait is that he treats violence as administration.",
+        "why_actor_wants_this": "This is a villain role with strong visual identity and a big transformation arc. It gives an actor the chance to play authority, menace, and physical degradation, then return in a near-mythic final form. The part has the kind of imposing presence and body-horror edge that can attract actors who like iconic antagonists, in the vein of a Terminator-style performance with more family drama underneath."
+      },
+      {
+        "name": "Zed",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · shaggy, charismatic, countercultural",
+        "hook": "Zed is a rogue patriarch and ideological showman who has built a hidden society out of a defunct amusement park. He speaks in aphorisms, runs a cloning operation, and presents himself as a philosopher of freedom even while controlling a whole ecosystem. He feels like a rebel scientist, cult leader, and father figure all at once.",
+        "why_actor_wants_this": "This is a flavorful supporting role with authority, eccentricity, and a lot of verbal personality. It gives an actor room to play charm, conviction, and moral ambiguity without needing to carry the whole movie. The role has the kind of textured charisma that can appeal to a seasoned character actor looking for a memorable genre part."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget lane",
+        "detail": "This plays as a mid-budget genre feature: enough action, vehicles, fire, and destruction to feel cinematic, but not so many characters or locations that it requires blockbuster scale.",
+        "source": "production"
+      },
+      {
+        "area": "Casting package",
+        "detail": "The project benefits from a strong two-hander at the center, with a memorable antagonist and one or two seasoned supporting actors around them. The lead roles are especially actor-forward.",
+        "source": "production"
+      },
+      {
+        "area": "Music licensing",
+        "detail": "Several named songs are written into the action and atmosphere, including Elton John and multiple Led Zeppelin tracks, which would require clearance if retained.",
+        "source": "production"
+      },
+      {
+        "area": "Visual effects and prosthetics",
+        "detail": "The story uses moderate VFX and practical effects for clone-tech displays, vehicle destruction, fire, and Trent’s later damaged appearance.",
+        "source": "production"
+      },
+      {
+        "area": "Audience lane",
+        "detail": "The material sits comfortably in the adult sci-fi/action space, with enough concept and chase energy for genre fans and enough identity drama to broaden the appeal.",
+        "source": "script"
+      },
+      {
+        "area": "World expansion potential",
+        "detail": "The north/south political split, clone underground, and corporate medical infrastructure create a setting with enough depth to support future stories or a larger franchise conversation if a buyer wanted it.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 68.3,
+  "tier": "Optionable",
+  "inputTokens": 31623,
+  "outputTokens": 3744,
+  "cost": 0.04056525
+}

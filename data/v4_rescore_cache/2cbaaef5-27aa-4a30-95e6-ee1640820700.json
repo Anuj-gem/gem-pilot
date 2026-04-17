@@ -1,0 +1,216 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Mystery",
+        "Conspiracy thriller"
+      ],
+      "tone": "Grounded, urgent, gritty, procedural, with a pulpy small-town noir edge"
+    },
+    "positioning_hook": "A local podcaster and a school custodian uncover a buried trafficking network beneath a Pennsylvania town’s church and police hierarchy.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate commercial readability: a missing-girl investigation, a small-town conspiracy, and a podcast-driven truth hunt all sit in a proven thriller lane. The Friday-night football opener, the church-school-police triangle, and the buried-tunnels reveal give it a clean audience promise that is easy to sell."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and stays legible: Savannah and Ralph receive a tip about a missing girl, follow the trail through the school and church, and uncover a coordinated operation beneath the town. The story engine is clear, escalating, and easy to summarize in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Savannah has the strongest pull as the relentless investigator with a public voice, while Ralph brings a blue-collar, insider perspective that gives the story its local credibility. Their partnership has a sturdy engine, and Rick Tingling adds a memorable antagonist presence, though the script is most character-forward when the duo is driving the action."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script’s most distinctive move is its specific civic ecosystem: high school, church, police department, and podcast studio all feeding the same hidden machine. The choice to root the thriller in the Skook’s local identity gives it personality, even as the investigative framework remains familiar and accessible."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with strong forward pressure: tip, discovery, retaliation, task force, tunnel reveal, confrontation. Each act ends on a clean escalation, and the buried-world reveal in Act Three gives the feature a satisfying descent into the engine of the conspiracy."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The combination of a podcast investigation, a Pennsylvania town’s institutional secrecy, and a hidden tunnel network creates a fresh-feeling package that is immediately understandable. The idea feels ownable because the setting is doing real work, even though the underlying thriller mechanics are familiar in a good, audience-friendly way."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific local world with its own social gravity: Friday-night football, school hallways after hours, church records, police archives, and a town where everyone knows the names on the board. The institutional layering gives the setting story-generating texture rather than just backdrop."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistent and identifiable: earnest, tense, and rooted in working-class Pennsylvania atmosphere, with just enough pulp to keep the conspiracy engine moving. The podcast framing and the town-specific language give it a distinct flavor that separates it from generic missing-person thrillers."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the immediate thriller surface, the script suggests a larger civic rot: institutional cover-up, generational power, and a system that survives by rotating faces. The final tag that the truth is still moving leaves a sense of deeper machinery beyond the current case."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Savannah and Ralph carry the emotional and investigative center, with Daniels, Holmes, Gilbert, Minadi, and Tingling adding functional pressure around them. The ensemble is strongest as a task-force web, where trust and suspicion can keep generating scenes, even though the core engine remains the central duo."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead is a female podcast host/investigator in her 30s",
+          "One lead is a male school custodian in his late 40s",
+          "Antagonist role for an older male actor in his 70s",
+          "Supporting law-enforcement ensemble with multiple adult roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "Predominantly interiors with some exterior night work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "High school football field and interior hallways",
+          "Podcast studio",
+          "Police department office, archives, interrogation room",
+          "Church sanctuary, office, basement, and tunnel access",
+          "Hospital room",
+          "Underground tunnel and chamber spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No apparent VFX dependence beyond basic compositing or cleanup if desired.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fight beats, car impact, flashlight-driven suspense, police raid action, and tunnel atmosphere.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Off The Record podcast branding appears as a named in-world title."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable theatrical-thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-thriller positioning"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Local specificity",
+          "what_it_means": "The Skook setting gives the script a lived-in identity that can be marketed as regionally specific but universally legible. That kind of place-based authenticity helps a thriller stand out in a crowded field.",
+          "evidence": "Friday-night football, the school/church/police triangle, and the repeated use of local identity language all root the story in one town’s social fabric.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Clean commercial hook",
+          "what_it_means": "The missing-girl investigation is instantly understandable, and the podcast angle gives the premise a modern access point. That makes the concept easy to pitch to buyers who want a thriller with a current media hook.",
+          "evidence": "Savannah and Ralph receive an anonymous tip on their podcast and turn it into a live investigation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Contained, producible footprint",
+          "what_it_means": "The story lives in a manageable set of recurring locations, which supports a controlled production plan while still feeling cinematic. That is attractive for financiers looking for a thriller with scope without a giant footprint.",
+          "evidence": "School, church, police department, podcast studio, hospital, and tunnels carry most of the action.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Dual-protagonist engine",
+          "what_it_means": "Savannah’s public-facing persistence and Ralph’s insider access create a strong two-hander dynamic. That pairing gives the film a built-in rhythm of investigation, conflict, and trust that can anchor casting conversations.",
+          "evidence": "Savannah drives the case through reporting and pressure; Ralph keeps finding the physical clues inside the school and church.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Institutional conspiracy structure",
+          "what_it_means": "The story’s power comes from the way multiple institutions appear connected: school, church, police, archives, and underground spaces. That creates a thriller world with clear hierarchy and escalating reveals.",
+          "evidence": "Altered records, hidden compartments, tunnel systems, and the rotating “Director” position all point to a larger machine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Antagonist presence",
+          "what_it_means": "Rick Tingling is a memorable late-stage reveal: elderly, composed, and chillingly managerial. That kind of antagonist can attract a seasoned actor and gives the climax a strong face.",
+          "evidence": "Tingling is revealed as the Director and frames the operation as a system he “perfected.”",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Built-in franchise potential",
+          "what_it_means": "The ending leaves the sense that the conspiracy extends beyond one man and one town, which can support sequel thinking or a broader IP conversation. Even as a feature, it closes one case while implying a larger network.",
+          "evidence": "The final tag shows an unknown figure continuing the operation after Tingling’s arrest.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable thriller with a strong regional identity: a podcast-driven missing-girl investigation that opens into a buried institutional conspiracy beneath a Pennsylvania town. The script’s best asset is its combination of accessible hook, contained production footprint, and a two-hander lead dynamic that gives the material both urgency and cast appeal."
+    },
+    "lead_characters": [
+      {
+        "name": "SAVANNAH McMULLEN",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Savannah is the engine of the story: sharp, persistent, and publicly fearless, with the instincts of a reporter and the nerve of someone who won’t let a town bury its own secrets. She has a warm, conversational rapport with Ralph, but her real power is her refusal to be intimidated by authority, whether that’s a police chief, a church, or a room full of men trying to shut her down. She feels like a modern truth-seeker with a local voice and a strong moral center.",
+        "why_actor_wants_this": "This is a showcase for an actor who can play intelligence, urgency, and emotional control under pressure. The role offers investigative momentum, confrontation scenes, and the kind of grounded authority that can carry a thriller. It sits in the lane of performances like Jodie Foster in The Silence of the Lambs or Amy Adams in Sharp Objects, where the character’s composure is part of the tension."
+      },
+      {
+        "name": "RALPH CIPPLONE",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s",
+        "hook": "Ralph is the town insider with the working-man’s eye: a school custodian who sees what others overlook and moves through the building like someone who knows every locked door and dead corner. He’s quiet, observant, and physically capable, with a dry edge and a protective streak that makes him feel both grounded and dangerous when pushed. He gives the story its local credibility and its blue-collar soul.",
+        "why_actor_wants_this": "This is a strong character part for an actor who thrives on restraint and physical presence. The role offers a mix of procedural discovery, suspense, and action, with enough interiority to play the burden of knowing too much. It has the same kind of lived-in authority as Bryan Cranston in Breaking Bad’s early episodes or Michael Keaton in Spotlight-style ensemble work."
+      },
+      {
+        "name": "CHIEF DANIELS",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Daniels is the authority figure who carries the weight of old compromises. He presents as controlled and procedural, but the script gives him a layered position inside the town’s machinery, which makes every line feel like it could be either protection or confession. He’s the kind of role that can pivot from institutional face to morally complicated insider.",
+        "why_actor_wants_this": "This is a great supporting role for an actor who can play command, ambiguity, and buried history in the same frame. The part offers scenes of pressure, revelation, and final-positioning in the conspiracy, with the kind of gravitas seen in performances like Jeffrey Wright in a procedural-thriller register or Brendan Gleeson in a corruption drama."
+      },
+      {
+        "name": "RICK TINGLING",
+        "role_type": "Supporting",
+        "demographics": "Male · late 70s",
+        "hook": "Tingling is the elegant face of the machine: calm, refined, and terrifyingly matter-of-fact about power. He doesn’t posture; he explains. That makes him more unsettling, because he speaks about control as if it were civic maintenance. He’s a late-reveal antagonist with real presence and a memorable philosophical edge.",
+        "why_actor_wants_this": "This is the kind of role veteran actors love because it lets them weaponize stillness, intelligence, and authority. The part has the chilling composure of a John Lithgow-style antagonist or a Ben Kingsley in a controlled, institutional villain mode, with a final-act reveal that lands as a true event."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget lane",
+        "detail": "The material sits in a contained thriller range, with most of the story driven by interiors, night exteriors, and a limited number of recurring sets. That places it comfortably in a mid-budget or streamer-thriller lane rather than a large-scale action lane.",
+        "source": "production"
+      },
+      {
+        "area": "Casting strategy",
+        "detail": "The project benefits from a strong two-lead package: a recognizable female lead for the investigative center and a grounded male supporting lead with physical presence. The antagonist role also offers a high-value veteran casting opportunity.",
+        "source": "both"
+      },
+      {
+        "area": "Audience positioning",
+        "detail": "The film is easiest to position for viewers who respond to missing-person thrillers, institutional conspiracy stories, and true-crime-adjacent storytelling. The podcast frame gives it a contemporary entry point without requiring a heavy genre sell.",
+        "source": "script"
+      },
+      {
+        "area": "Production design",
+        "detail": "The church basement, hidden tunnel system, archive rooms, and police spaces create a strong design package that can carry a lot of suspense on screen. These environments give the film a tactile, claustrophobic visual identity.",
+        "source": "both"
+      },
+      {
+        "area": "Release model",
+        "detail": "This plays well as a festival-to-platform thriller or a streamer original with a strong hook and clear opening-night trailer moments. The ending’s larger-network tag also supports conversation around franchise or sequel potential.",
+        "source": "script"
+      },
+      {
+        "area": "Rights and clearance",
+        "detail": "The script uses an in-world podcast title, Off The Record, as a recurring branded element. No other prominent real-person, music, or external IP references are apparent in the submitted pages.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 67.7,
+  "tier": "Optionable",
+  "inputTokens": 9104,
+  "outputTokens": 3345,
+  "cost": 0.021880499999999997
+}

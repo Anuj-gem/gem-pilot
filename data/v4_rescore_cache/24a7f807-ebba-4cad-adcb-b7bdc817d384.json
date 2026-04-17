@@ -1,0 +1,278 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_tags": [
+        "Corporate drama",
+        "Crime"
+      ],
+      "tone": "Sharp, propulsive, glossy, venomous, and psychologically charged"
+    },
+    "positioning_hook": "A ruthless private-equity queen fights a murder scandal, a hostile takeover, and her own buried past to keep control of a $23 billion deal.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "This has a clean commercial promise: power, money, murder, and public humiliation in a Manhattan elite setting. The opening explosion, the gala murder, the boardroom brinkmanship, and the social-media fallout all create a high-concept adult thriller with strong trailer moments and clear audience-facing stakes."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast and stays legible: Evelyn is trying to close a massive merger while a murder investigation and a narrative war threaten to destroy her. The script keeps the engine visible through the gala, the red-flag report, the detective pressure, and the final takeover chess match."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Evelyn is built as a formidable lead: brilliant, wounded, image-conscious, and capable of turning menace into strategy. Nicole and Magnus give the story a strong triangle of ambition and betrayal, while Teddy and Crowder add texture and pressure around her."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific lane: finance-world operatics told with the language of a crime thriller and the self-awareness of a media-age takedown. The opening monologue, the app-driven public narrative, and the use of corporate optics as battlefield tactics give it a confident identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "It moves with real urgency. The story keeps stacking deadlines, reversals, and pressure points: the gala, the report, the tape hunt, the board vote, the Akros bid, the rooftop confrontation, and the final public collapse. Each sequence feels like it’s tightening the vise."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script finds a fresh dramatic engine in the collision of private equity, murder optics, and algorithmic reputation warfare. The idea that a CEO’s survival depends on controlling both a board vote and a viral narrative feels immediately current and story-generating."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Manhattan finance ecosystem is richly rendered: penthouses, heliports, clubs, law firms, activist traders, dark-pool operators, boardrooms, and media studios all feel like parts of one pressure system. The world isn’t just backdrop; it actively shapes leverage, access, and survival."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is sharply defined: elite, acidic, and high-gloss, with a hard edge of noir and a constant hum of humiliation and control. The dialogue has a polished bite, and the script knows how to pivot from boardroom wit to genuine threat without losing its voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the thriller mechanics, there’s a strong emotional engine around Evelyn’s family history, her mother’s memory, and the cost of becoming the person she had to be. The final music-box reveal and the Semele framing suggest a deeper psychological and mythic layer that rewards attention."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The script generates material through multiple charged pairings: Evelyn/Charles, Evelyn/Nicole, Evelyn/Magnus, Evelyn/Teddy, and Crowder/Evelyn all carry distinct power dynamics. Even secondary rooms feel combustible because everyone is negotiating leverage, loyalty, and self-preservation."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Late-30s female lead with commanding executive presence",
+          "40s-50s male finance and law roles",
+          "One child role (Cora, approx. 7)",
+          "One wheelchair-bound older father role with sign-language performance"
+        ]
+      },
+      "locations": {
+        "distinct_count": 30,
+        "interior_exterior_ratio": "Approximately 70/30 interior-heavy",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Manhattan penthouse",
+          "Helicopter and heliport access",
+          "Luxury clubs, restaurants, and hotel interiors",
+          "Jersey City industrial/security office",
+          "Police precinct and private homes",
+          "Boardroom and office tower environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Explosion sequences, helicopter inserts, cityscape transitions, stock-price and app-screen integrations, crowd/phone-footage composites, and some crash/impact enhancement",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical explosion, vehicle chase/crash, gunfire, blood effects, and controlled fire/smoke beats",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "MSNBC"
+        },
+        {
+          "type": "brand",
+          "detail": "Wall Street Journal"
+        },
+        {
+          "type": "brand",
+          "detail": "BlackRock"
+        },
+        {
+          "type": "brand",
+          "detail": "Skadden"
+        },
+        {
+          "type": "brand",
+          "detail": "Gucci"
+        },
+        {
+          "type": "brand",
+          "detail": "Christian Dior"
+        },
+        {
+          "type": "brand",
+          "detail": "Cartier"
+        },
+        {
+          "type": "brand",
+          "detail": "Patek Philippe"
+        },
+        {
+          "type": "brand",
+          "detail": "Marlboro Golds"
+        },
+        {
+          "type": "brand",
+          "detail": "Le Bernardin"
+        },
+        {
+          "type": "brand",
+          "detail": "Core Club"
+        },
+        {
+          "type": "brand",
+          "detail": "Avery Club"
+        },
+        {
+          "type": "brand",
+          "detail": "One Vanderbilt"
+        },
+        {
+          "type": "brand",
+          "detail": "MSNBC's A.M. Edition"
+        },
+        {
+          "type": "real_person",
+          "detail": "Congressman Meyers is a fictional character; no real people are explicitly named in the excerpt"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical prestige-thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or prestige-streaming appeal; the hook is built for a high-visibility launch and conversation-driven marketing"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Evelyn Carter as a lead role",
+          "what_it_means": "This is a premium actor magnet: a woman who can weaponize composure, flirt with menace, and still reveal private fracture. The role has the kind of authority and volatility that can anchor a star-driven prestige thriller.",
+          "evidence": "She dominates interviews, boardrooms, rooftop confrontations, and private breakdowns while carrying the story’s emotional and strategic center.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The finance-world thriller engine",
+          "what_it_means": "The merger vote, the red-flag report, the Akros bid, and the stock-price warfare create a clean, adult commercial engine with high stakes and clear escalation. It’s a business story that plays like a crime movie.",
+          "evidence": "The boardroom pressure, investor calls, activist trading, and public narrative manipulation all directly affect the outcome.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The murder scandal as a public-relations weapon",
+          "what_it_means": "The script turns scandal into plot propulsion. The murder isn’t just a mystery; it becomes leverage, branding, and market manipulation, which gives the story a modern, media-savvy edge.",
+          "evidence": "The gala death, the viral footage, the red-flag report, and the fake/real video reveal all feed the same engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Nicole as a stealth power player",
+          "what_it_means": "Nicole is a strong supporting role with real crossover appeal: polished, strategic, and quietly dangerous. She gives the story a second axis of ambition and makes the eventual power shift feel earned.",
+          "evidence": "She moves from legal support to strategic operator to final successor, with her own agenda and command of the room.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Magnus as a charismatic antagonist",
+          "what_it_means": "Magnus is not a generic villain; he’s a slick, tech-native opportunist who understands optics, data, and humiliation as tools. That makes him playable, contemporary, and highly castable.",
+          "evidence": "He weaponizes the app, the narrative, and the boardroom while maintaining a polished, self-amused surface.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Manhattan power ecosystem",
+          "what_it_means": "The script’s world is rich enough to feel expensive and specific without becoming abstract. Heliports, clubs, law firms, hedge funds, activist traders, and media studios all create a premium, aspirational setting with built-in audience fascination.",
+          "evidence": "Nearly every scene is rooted in a recognizable elite New York institution or status space.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dialogue and voice",
+          "what_it_means": "The writing has a sharp, quotable, executive-room cadence that can sell both character and tone in marketing materials. It gives the project a confident voice that feels tailored for actors and trailers.",
+          "evidence": "The script is packed with barbed one-liners, controlled threats, and public-facing doublespeak.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mythic undercurrent",
+          "what_it_means": "The Semele framing and the mother/music-box material give the thriller a deeper emotional and symbolic layer. That adds prestige texture and gives the ending a memorable emotional landing.",
+          "evidence": "Nicole’s Greek mythology narration and the final music-box reveal connect Evelyn’s public war to a private origin story.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sleek, vicious Manhattan power thriller with a star-making female lead at its center. It combines boardroom warfare, murder fallout, and media manipulation into a propulsive prestige package that feels built for actors, producers, and conversation."
+    },
+    "lead_characters": [
+      {
+        "name": "Evelyn Carter",
+        "role_type": "Lead",
+        "demographics": "Female · late 30s",
+        "hook": "Evelyn is a private-equity queen with the posture of a monarch and the pulse of someone always one bad headline away from collapse. She’s razor-smart, image-obsessed, and emotionally armored, but the script keeps letting us glimpse the woman underneath: the daughter, the dancer, the survivor, the person who learned to turn pain into leverage. She speaks like someone who has spent her life in rooms where every word is a weapon, and she carries herself like she’s already decided she will outlast everyone else in the room.",
+        "why_actor_wants_this": "This is the kind of lead that gives an actor authority, volatility, and prestige all at once. There are boardroom speeches, private breakdowns, public defiance, and a final emotional release that lands like a payoff for the whole movie. It sits in the same performance space as a Glenn Close or Cate Blanchett-style command role, with the psychological pressure and public mask work of something like Jodie Comer in The Last Duel or Rosamund Pike in Gone Girl."
+      },
+      {
+        "name": "Nicole Evans",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Nicole is the quiet blade in the room: polished, efficient, and always a half-step behind the spotlight until she isn’t. She reads as the perfect corporate soldier, but the script keeps revealing a colder intelligence and a deeper appetite for power. Her relationship to Evelyn is the most interesting kind of professional intimacy — admiration, calculation, and eventual succession all living in the same glance.",
+        "why_actor_wants_this": "This is a delicious ascent role: the kind of part that starts as support and ends as a power move. It gives an actor the chance to play restraint, subtext, and a late-story reveal of real force. The final turn into CEO territory has the kind of cool, controlled payoff that actors chase in prestige dramas, with echoes of Sarah Snook in Succession or Rebecca Ferguson in a high-control corporate register."
+      },
+      {
+        "name": "Magnus Voss",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Magnus is a tech-world predator with charm, vanity, and a real instinct for the kill. He’s slick enough to pass as a visionary and ruthless enough to exploit every weakness in the room, but he’s also funny, vain, and deeply invested in being seen as the smartest person present. He’s the kind of antagonist who can smile while moving the knife, which makes him both dangerous and fun.",
+        "why_actor_wants_this": "This is a high-status, high-ego role with real scene-stealing potential. The part offers swagger, menace, humiliation, and collapse — a full arc from kingmaker to public casualty. It’s the kind of role that lets an actor play intelligence and self-destruction in the same breath, with the slippery charisma of a Jeremy Strong or a Tom Hiddleston-style corporate operator."
+      },
+      {
+        "name": "Teddy Wells",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Teddy is Evelyn’s personal attorney and fixer, a velvet-hammer operator who knows where the bodies are buried and how to keep them there. He’s worldly, dry, and practical, but he also carries the weariness of a man who has spent too long cleaning up other people’s messes. He gives the movie its back-channel intelligence and its sense of old-money, old-sin infrastructure.",
+        "why_actor_wants_this": "This is a premium supporting role for an actor who can play authority without volume. Teddy gets the best kind of scenes: private calls, quiet negotiations, and the sense that he’s always three moves ahead. It’s a role with the contained menace and lived-in professionalism of a Mark Rylance or Richard Jenkins type of performance."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget and scale",
+        "detail": "This plays in a polished mid-to-upper-mid budget lane, with luxury interiors, helicopters, vehicles, crowd scenes, and a few effects-heavy beats. The footprint is still controlled enough to feel producible for a prestige streamer or studio-thriller package.",
+        "source": "production"
+      },
+      {
+        "area": "Casting profile",
+        "detail": "The script is built around a strong female lead and a set of high-functioning supporting roles for recognizable actors. The boardroom, legal, and finance roles are all playable and can attract a deep bench of character talent.",
+        "source": "both"
+      },
+      {
+        "area": "Brand and clearance footprint",
+        "detail": "The script uses several real-world brands and institutions by name, including media, finance, fashion, and hospitality references. A production pass would likely want to review those names for clearance strategy and substitution options.",
+        "source": "production"
+      },
+      {
+        "area": "Content lane",
+        "detail": "The material sits firmly in mature adult-thriller territory, with murder, coercion, corruption, and strong language. That positions it naturally for premium streaming or a prestige theatrical release rather than broad four-quadrant play.",
+        "source": "both"
+      },
+      {
+        "area": "Visual language",
+        "detail": "The script is designed for a glossy, kinetic visual approach: Manhattan skyline imagery, boardroom geometry, phone-footage inserts, and sharp contrasts between elite spaces and criminal pressure points. It rewards a director who can make corporate spaces feel suspenseful.",
+        "source": "script"
+      },
+      {
+        "area": "Performance emphasis",
+        "detail": "A large part of the movie’s appeal comes from dialogue duels, controlled reversals, and public-private mask shifts. The material is especially attractive for actors who like verbal sparring and layered status play.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 79.7,
+  "tier": "Optionable",
+  "inputTokens": 39408,
+  "outputTokens": 3824,
+  "cost": 0.046764
+}

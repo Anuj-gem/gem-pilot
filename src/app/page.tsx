@@ -141,7 +141,7 @@ export default async function Home() {
                   <Upload size={32} className="text-[var(--gem-accent)] hidden sm:block" />
                 </div>
                 <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Step 1</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Upload PDF</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Develop your Script</div>
               </div>
 
               <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">→</div>
@@ -152,7 +152,7 @@ export default async function Home() {
                   <FileText size={32} className="text-amber-400 hidden sm:block" />
                 </div>
                 <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Step 2</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Get report</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Craft the perfect Pitch</div>
               </div>
 
               <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">→</div>
@@ -163,7 +163,7 @@ export default async function Home() {
                   <Megaphone size={32} className="text-[var(--gem-gold)] hidden sm:block" />
                 </div>
                 <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Step 3</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Post on Discover</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Get Exposure</div>
               </div>
             </div>
           </div>
@@ -183,31 +183,31 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-10 h-10 rounded-lg bg-violet-500/15 border border-violet-500/30 flex items-center justify-center mb-4">
-                <Sparkles size={20} className="text-[var(--gem-accent)]" />
+                <NotebookPen size={20} className="text-[var(--gem-accent)]" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">The Pitch</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Develop your Script</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                A one-line positioning hook, what makes your script special, and lead characters written for casting &mdash; the case a producer would make for it. Public, shareable, built to get attention.
+                Dimension-by-dimension notes on characters, hook, momentum, and originality. Production reality on cost, casting, locations, content, and rights. Private to you.
               </p>
             </div>
 
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center mb-4">
-                <NotebookPen size={20} className="text-amber-400" />
+                <Sparkles size={20} className="text-amber-400" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Private Notes</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Craft the perfect Pitch</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Dimension-by-dimension analysis, production reality, and considerations &mdash; your private playbook for rewrites and meetings. Only you see this.
+                A positioning hook, logline, lead-character breakdowns, and package angles &mdash; what directors and buyers would respond to. Shareable as a public pitch page.
               </p>
             </div>
 
             <div className="p-6 sm:p-7 rounded-2xl card-glass">
               <div className="w-10 h-10 rounded-lg bg-[var(--gem-gold)]/15 border border-[var(--gem-gold)]/40 flex items-center justify-center mb-4">
-                <Search size={20} className="text-[var(--gem-gold)]" />
+                <Megaphone size={20} className="text-[var(--gem-gold)]" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Discover</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Get Exposure</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Post your pitch to a public board that producers and reps browse by genre. They read your report, they contact you directly. No middleman.
+                Publish your pitch to the Discover board. Producers, reps, and collaborators browse by genre and format and reach out directly.
               </p>
             </div>
           </div>

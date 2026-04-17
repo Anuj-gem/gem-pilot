@@ -1,0 +1,260 @@
+{
+  "eval_id": "5704b060-d64c-436e-89e6-43d0d50ba75d",
+  "title": "Nothing Days",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic comedy",
+      "genre_tags": [
+        "satire",
+        "drama"
+      ],
+      "tone": "raunchy, talky, self-aware, emotionally earnest"
+    },
+    "positioning_hook": "A struggling screenwriter at a Hollywood script conference falls for a psychologist studying him, turning his bruised ego into the subject of her experiment.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: a wounded writer, a sharp woman, and a Hollywood setting with built-in aspiration. The script\u2019s adult, sexually frank, industry-insider flavor narrows the lane, but it gives the piece a defined audience."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early in the hotel/conference setup and the mistaken-identity collision between screenwriters and psychologists gives the story a clean engine. The central experiment-romance dynamic is easy to explain and keeps the concept legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Dave Overby is built as a combustible mix of insecurity, bravado, and real talent, while Helen Bell has intelligence, desire, and a hidden wound that deepens her choices. Berger and Coyle add a lively counterpoint that makes the world feel socially alive."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific comic voice: horny, defensive, self-mythologizing, and oddly sincere about the pain of making art. The psychologist/screenwriter collision and the meta-Hollywood speechifying give it a distinct angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through encounters, reversals, and relationship turns, and the final public reconciliation gives it a satisfying release. The middle is more conversational than propulsive, but the emotional stakes stay active through the romantic triangle and the career pressure."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a screenwriter being psychologically studied while trying to sell himself in Hollywood feels immediately ownable. The script\u2019s best turns make the premise feel inevitable rather than gimmicky, especially once the romance and professional validation collide."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The hotel conference, agent meetings, apartment life, and industry reception create a recognizable Hollywood ecosystem with enough texture to support the story. It\u2019s a contained world, but the social rituals of agents, writers, and aspiring talent are specific and playable."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably bawdy and confessional, with broad sexual comedy sitting beside sincere monologues about craft and self-worth. That blend gives the script a voice that would be easy to identify from a scene or two."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the comic surface is a story about shame, trust, and the need to be seen as an artist rather than a punchline. The backstory around Dave\u2019s marriage and Helen\u2019s family history suggests more emotional material than the opening pages initially advertise."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Dave/Helen, Dave/Berger, Berger/Coyle, and Helen/Hamilton all generate distinct energy, and the supporting relationships are not just functional\u2014they create pressure, comedy, and contrast. The ensemble has enough combinatorial life to keep scenes fresh."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 4,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Lead male in his 30s playing a writer with comic timing and romantic volatility",
+          "Lead female in her 30s playing a psychologist with intelligence, sensuality, and emotional fracture",
+          "Supporting male in his 30s-40s, overweight, comic, sexually awkward",
+          "Supporting female in her 20s-30s, overweight/bulimic, sexually frank",
+          "One supporting role written as an Arabian man",
+          "One supporting role written as an Asian television star"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Beachside hotel/conference spaces",
+          "Apartment interiors",
+          "Restaurant/breakfast areas",
+          "Office and reception spaces",
+          "Police station and jail",
+          "Ballroom/dinner party"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical breakup and damage beats, including a shattered lamp and a broken doorknob.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "WD-40 is referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "Mercedes Benz is named."
+        },
+        {
+          "type": "brand",
+          "detail": "Queensryche is named."
+        },
+        {
+          "type": "brand",
+          "detail": "Arthur Murray is named."
+        },
+        {
+          "type": "brand",
+          "detail": "Thunderbird wine is named."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "independent theatrical or prestige streamer comedy-drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with modest budget and dialogue-forward marketing; best suited to festival-to-platform or specialty theatrical play."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, largely interior, and built around hotel rooms, apartments, offices, and restaurants rather than large-scale set pieces."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script depends on four strong lead/ensemble parts and a few identity-specific supporting roles, but it does not require star-driven spectacle."
+        },
+        "location": {
+          "level": "low",
+          "note": "The story stays in a compact Los Angeles hotel-and-apartment ecosystem with no period build or remote travel."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent sexual dialogue, explicit lovemaking, profanity, and a child sexual-abuse backstory push it into mature territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses a few named brands and music references, but there is no major IP or life-rights dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "A screenwriter at a Hollywood conference being studied by a psychologist gives the movie a clean, marketable engine with a built-in irony that audiences grasp immediately. It\u2019s a romance, but it\u2019s also a satire of how artists perform themselves in public.",
+          "evidence": "The hotel convention setup, Bell\u2019s decision to study screenwriters, and Overby\u2019s repeated confusion about who is there for what.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dave Overby is a star-making lead role.",
+          "what_it_means": "He\u2019s funny, defensive, horny, wounded, and self-mythologizing, which gives an actor a full comic and emotional range. The part has the kind of contradiction that can carry a movie: a man who talks like a blowhard but feels like a survivor.",
+          "evidence": "His opening monologue on talent, persistence, and luck; his heavy-metal writing ritual; his public speech at the reception.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Helen Bell has a hidden emotional engine.",
+          "what_it_means": "She begins as the cool professional and gradually reveals vulnerability, desire, and damage, which makes her more than a romantic foil. The role gives an actress intelligence, erotic charge, and a late-arriving emotional reckoning.",
+          "evidence": "Her clinical study of Overby, the reveal of her father backstory, and her final public declaration of love.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a sharp Hollywood-insider satirical lane.",
+          "what_it_means": "Agents, rewrites, conferences, student receptions, and status games all feel observed from inside the ecosystem. That gives the film a specific industry flavor without becoming inaccessible to non-industry viewers.",
+          "evidence": "Kinari\u2019s pitch session, Sarah Roth\u2019s negotiation, the institute reception, and the recurring talk about selling and rewriting scripts.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble generates real comic pressure.",
+          "what_it_means": "Berger and Coyle are not just sidekicks; they create a parallel romantic lane that mirrors and comments on the lead story. Their scenes add warmth, sexual frankness, and a second emotional rhythm that broadens the movie\u2019s appeal.",
+          "evidence": "Berger\u2019s courtship of Coyle, their apartment scenes, and their role in helping Bell understand Dave.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script is built for actors who like dialogue.",
+          "what_it_means": "This is a performance-forward piece where personality, timing, and verbal sparring do the heavy lifting. That makes it attractive to talent looking for a showcase rather than a purely plot-driven assignment.",
+          "evidence": "The breakfast-table banter, the hotel-room debates about writing, and the final reception speech.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending pays off the emotional contract.",
+          "what_it_means": "The final public reunion gives the story a crowd-pleasing release and turns the movie into a declaration about art, love, and being seen. It\u2019s the kind of ending that can land in a room and leave people smiling.",
+          "evidence": "Bell\u2019s arrival at the student reception, her kiss in front of the audience, and Overby\u2019s \u201cI stand corrected.\u201d",
+          "source": "script"
+        }
+      ],
+      "headline": "Nothing Days is a raunchy, dialogue-driven Hollywood romance with a clear commercial engine: a struggling screenwriter gets psychologically studied by the woman he falls for. It\u2019s smartly contained, actor-friendly, and built around a lead role and a female counterpart that both feel castable and memorable."
+    },
+    "lead_characters": [
+      {
+        "name": "Dave Overby",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 30s \u00b7 white",
+        "hook": "Dave is a scrappy, self-dramatizing screenwriter who talks like a man constantly auditioning for his own life. He\u2019s vulgar, funny, defensive, and deeply hungry to be recognized, but the script keeps revealing that the bluster is armor over real hurt. He wants success, yes, but more than that he wants to be taken seriously as an artist and as a man. That contradiction gives him a live-wire presence: he can sell a joke, a rant, a romantic beat, or a wounded silence in the same scene.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play comedy and ache without changing lanes. It has the verbal snap of a classic hustler part, but the emotional spine of a man who has been humiliated and keeps getting back up. The closest performance space is the wounded swagger of a John C. Reilly or a Philip Seymour Hoffman in a comic-drama register, with room for a big final speech and a public emotional payoff."
+      },
+      {
+        "name": "Helen Bell",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 30s \u00b7 white",
+        "hook": "Helen is a psychologist with a cool exterior, a sharp mind, and a private life that is far less controlled than she presents. She begins as the observer, the analyst, the woman with the plan, but the script gradually lets her become the one most in need of honesty. Her intelligence is never in question; what makes her compelling is that she\u2019s trying to manage desire, professional curiosity, and old damage at the same time. She\u2019s elegant, erotic, and emotionally exposed in a way that gives the role real voltage.",
+        "why_actor_wants_this": "This is a showcase for an actress who can play authority without losing vulnerability. The part has the cool precision of a Sigourney Weaver-type professional role, then opens into a deeply personal reckoning that gives the performer a late emotional surge. It\u2019s the kind of role that can carry both wit and confession, and then land a big romantic turn in the final act."
+      },
+      {
+        "name": "Louis Berger",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 30s-40s \u00b7 overweight",
+        "hook": "Berger is Dave\u2019s roommate and emotional ballast: funny, overeager, self-aware, and more perceptive than he first appears. He\u2019s the kind of guy who uses humor to keep the room light, but he\u2019s also capable of surprising tenderness and practical wisdom. His body, appetite, and romantic insecurity are all part of the character\u2019s comic identity, yet the script never reduces him to a punchline.",
+        "why_actor_wants_this": "This is a rich supporting role for an actor who can do warmth and comedy in equal measure. It has the kind of scene-stealing humanity that makes supporting parts memorable, with a performance lane similar to a John Goodman or Oliver Platt comic confidant role. The Berger/Coyle material gives the actor a real romantic subplot and a chance to play sincerity without sentimentality."
+      },
+      {
+        "name": "Louise Coyle",
+        "role_type": "Supporting",
+        "demographics": "Female \u00b7 20s-30s \u00b7 overweight",
+        "hook": "Coyle is Bell\u2019s roommate and a woman who speaks with disarming candor about sex, food, and self-image. She\u2019s funny, blunt, and emotionally open in a way that makes her scenes feel alive immediately. Under the comic frankness is a woman who has built defenses around shame and desire, which gives her more dimension than the usual best-friend role.",
+        "why_actor_wants_this": "This is a juicy supporting part for an actress who can make bold material feel human. It offers comic freedom, sexual frankness, and a genuine romantic arc, with the kind of specificity that can make a supporting performance pop in the way Kathy Bates or Rosie Perez can in ensemble comedy-drama. It\u2019s a role with personality and heart."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who loves dialogue, sexual tension, and emotionally bruised comedy.",
+        "detail": "The material rewards a filmmaker who can stage conversation as conflict and keep the movie alive in rooms, not just in plot turns. It also gives a director a chance to balance raunch with sincerity, and to make a small-world Hollywood story feel both specific and emotionally generous."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "independent theatrical / prestige streamer comedy-drama",
+        "detail": "This is sized for a modest-budget feature that can lean on performances, dialogue, and a clear hook rather than spectacle. The contained locations, contemporary setting, and actor-forward roles make it attractive for a buyer looking for a smart adult comedy with a distinct voice."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The script plays in a mature adult-comedy lane.",
+        "detail": "The sexual dialogue, explicit lovemaking, and profanity are part of the movie\u2019s identity, so the positioning should embrace that adult audience rather than soften it. That clarity helps the project find the right buyer and the right cast.",
+        "source": "script"
+      },
+      {
+        "area": "The backstory around Helen\u2019s father is the darkest material in the piece.",
+        "detail": "That material gives Helen real depth, and a future pass could continue to foreground the emotional consequence of that history so the reveal lands with maximum force. The script already has the ingredients; the lever is how much of that wound is carried forward in the present-tense relationship.",
+        "source": "script"
+      },
+      {
+        "area": "The middle section leans on conversation and repetition of the central dynamic.",
+        "detail": "The relationship engine is strong, and a tightening pass could sharpen the escalation between the romantic scenes, the professional scenes, and the jealousy beats so each turn feels newly charged. The core material is there; the opportunity is in making each step feel more inevitable.",
+        "source": "script"
+      },
+      {
+        "area": "The Hollywood-insider material is a selling point.",
+        "detail": "The conference, agent, rewrite, and reception material gives the film a recognizable industry texture that can be foregrounded in packaging. That specificity helps the script stand out in the adult-comedy lane and gives marketing a clear angle.",
+        "source": "script"
+      },
+      {
+        "area": "The supporting couple could be a bigger emotional counterweight.",
+        "detail": "Berger and Coyle already add warmth and comic relief; one direction would be to continue protecting their romantic thread as a parallel engine so the movie feels even more ensemble-driven. Their scenes help widen the film\u2019s emotional footprint.",
+        "source": "script"
+      }
+    ]
+  }
+}

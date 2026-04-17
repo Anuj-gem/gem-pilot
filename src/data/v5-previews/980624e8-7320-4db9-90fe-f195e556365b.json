@@ -1,0 +1,262 @@
+{
+  "eval_id": "980624e8-7320-4db9-90fe-f195e556365b",
+  "title": "Misery Index",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Sci-fi",
+        "Political thriller"
+      ],
+      "tone": "Gritty, satirical, apocalyptic"
+    },
+    "positioning_hook": "In a starving American town, a backwoods hunter uncovers a government meat program that turns the food line into a flesh-eating outbreak.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean, high-concept commercial engine: food scarcity, government secrecy, and a zombie outbreak that detonates at a public picnic. The hook is easy to grasp and the escalation from civic rumor to mass contagion gives it broad genre appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script establishes its premise early through the breadline imagery, the whispered free-meat rumor, and the F.T.A. trucks rolling into town. By the time the town meeting lands, the audience understands exactly what the story is tracking and why it matters."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Tyler Conroy has a strong, actor-friendly contradiction: a rugged hunter who distrusts institutions but sees the world clearly. Tom Haster, Sheriff Hatter, and Pastor Fussel each carry distinct social positions that keep the town dynamic alive around the central crisis."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script\u2019s boldest move is making the apocalypse feel bureaucratic and civic before it becomes monstrous. The meat-line satire, the political language, and the reveal that the supply chain itself is the weapon give the material a sharp, nasty edge."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps tightening the noose: rumor, investigation, arrival, feast, infection, collapse. The town-meeting-to-picnic sequence is especially effective because it turns public anticipation into catastrophe in a single, escalating stretch."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script lands on a memorable and immediately legible idea: a food shortage becomes a weaponized public-health disaster. The F.T.A. reveal reframes the whole town as a test site, which gives the concept a nasty inevitability."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Madigan Grove feels like a lived-in, economically stressed community with food lines, unemployment, church life, school gossip, and local politics all feeding the same pressure cooker. The world is specific enough to make the outbreak feel socially grounded rather than abstract."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: rural Americana, political cynicism, and grotesque horror all share the same frame. The script can move from deadpan town chatter to graphic body horror without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the monster mechanics, the script is carrying themes of scarcity, state control, class resentment, and moral compromise. The material suggests a larger allegory about who gets sacrificed when systems fail."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The town relationships are functional and often vivid: Conroy/Monroe, Tom/Debbie, Jerry/Michelle, Hatter/Granger, Fussel/Michelle. The ensemble gives the outbreak multiple emotional entry points, even though the story ultimately drives through a few key figures."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple child roles",
+          "Several rural Midwestern/working-class adult roles",
+          "One teenage pregnant female role",
+          "One physically imposing abusive father role",
+          "One rugged hunter lead"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "Contemporary with an alternate-history/political-fiction feel",
+        "notable_requirements": [
+          "Small-town streets and civic buildings",
+          "Forest and brush-heavy exterior work",
+          "Food line / park / picnic grounds with crowd staging",
+          "Police station, church, school cafeteria, convenience store, homes",
+          "Multiple vehicle scenes including trucks, jeep, patrol car, and convoy"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Primarily practical creature/infection makeup and crowd augmentation; some blood, gore, and outbreak-scale crowd effects.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, vehicle collisions, trap injury, gore, bite effects, collapsing house extension, crowd panic.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "President Moore and Soviet Chancellor Brakvitch are fictional political figures."
+        },
+        {
+          "type": "brand",
+          "detail": "Trix is named in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Boca burger is named in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Swifty Mart is a store name used on screen."
+        },
+        {
+          "type": "brand",
+          "detail": "Honda and Toyota are visible vehicle brands."
+        },
+        {
+          "type": "brand",
+          "detail": "U.S.D.A. and F.T.A. are central fictionalized government acronyms."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical genre feature or streaming horror-thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform, limited theatrical, or genre streamer launch"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Small-town settings keep it contained, but the outbreak crowd scenes, gore, vehicles, and creature makeup push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script benefits from a strong ensemble of recognizable town types plus several child roles and a few demanding adult parts."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable, but it spans homes, civic spaces, forest exteriors, roads, and a large park sequence."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic cannibalism, shootings, body horror, abuse, pregnancy trauma, and child endangerment place it firmly in mature territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script is largely original and uses only a few generic brands and fictionalized government entities."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise weaponizes scarcity.",
+          "what_it_means": "This is not just a zombie movie; it\u2019s a social panic story built on hunger, rationing, and public desperation. That gives the horror a real-world sting and makes the outbreak feel culturally legible, not abstract.",
+          "evidence": "The opening breadline news segment, the repeated talk of free meat, and the town\u2019s obsession with the food drop.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The reveal is built into the civic machinery.",
+          "what_it_means": "The F.T.A. trucks, the mayor\u2019s enthusiasm, and the town meeting create a clean escalation path that feels both procedural and ominous. The story has a strong public-event engine, which is exactly what makes the outbreak sequence pop.",
+          "evidence": "The town hall announcement, the refrigerated convoy arriving, and the picnic setup at Covington Park.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tyler Conroy is a strong genre lead.",
+          "what_it_means": "He\u2019s a self-reliant hunter with a distrustful streak and a survivalist worldview, which gives the movie a rugged center of gravity. He reads as the kind of protagonist actors can play with menace, humor, and competence.",
+          "evidence": "His deer hunt, his contempt for processed food, his booby-trapped property, and his calm response to the collapse.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The town feels socially specific.",
+          "what_it_means": "This has the texture of a real working-class community under pressure: unemployment lines, church, school gossip, domestic strain, and local politics all feeding the same pressure cooker. That specificity helps the horror land harder because the audience understands what\u2019s being lost.",
+          "evidence": "The unemployment office, the church scenes, the hair salon chatter, and the Haster/Monroe family dynamics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can pivot from satire to splatter.",
+          "what_it_means": "The script has a sharp comic-political voice without losing the ability to go fully feral when the infection hits. That tonal range broadens the audience beyond pure gore fans and gives a director room to make something memorable.",
+          "evidence": "The town\u2019s deadpan conversations about meat, the mayor\u2019s self-promotion, and the sudden cannibal chaos at the picnic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The outbreak set piece is a crowd nightmare.",
+          "what_it_means": "The picnic sequence is built for visceral audience reaction: anticipation, communal eating, then mass transformation. It\u2019s the kind of sequence that can sell the movie in a trailer and stick in memory after the credits.",
+          "evidence": "The grills, the first bites, the sickness, and the rapid spread of the ghouls through the park.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending leaves a bleak aftertaste.",
+          "what_it_means": "The final image of Conroy alone in the cave with the squirrel is a strong, unsettling button that suggests survival has become its own kind of exile. That gives the film a memorable final note instead of a generic victory lap.",
+          "evidence": "Conroy\u2019s solitary cave tableau after the collapse of Madigan Grove.",
+          "source": "script"
+        }
+      ],
+      "headline": "MISERY INDEX is a nasty, smart, small-town apocalypse story with a clean commercial engine: hunger, government secrecy, and a public picnic that turns into a cannibal outbreak. It has a rugged, actor-friendly lead, a vivid working-class world, and a satirical edge that makes the horror feel pointed rather than routine."
+    },
+    "lead_characters": [
+      {
+        "name": "Tyler Conroy",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 30s \u00b7 rural white working-class hunter",
+        "hook": "Tyler is a feral, self-sufficient hunter who trusts his instincts more than institutions and wears his contempt for modern food systems like a badge. He\u2019s rough-edged, funny in a dry way, and quietly apocalyptic long before the town catches up to him. He feels like a man who has already made peace with the end of the world, which gives him a dangerous calm when everyone else starts panicking.",
+        "why_actor_wants_this": "This is a showcase role for an actor who can play physical authority, regional specificity, and a hard exterior with a flicker of dark humor. The part has the same kind of rugged, lived-in magnetism that makes characters like Llewelyn Moss in No Country for Old Men or the survivalist center of The Road compelling."
+      },
+      {
+        "name": "Clem Monroe",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 30s-40s \u00b7 unemployed auto worker",
+        "hook": "Clem is the town\u2019s hopeful everyman: broke, practical, and trying to keep his family afloat while clinging to the idea that the government still has something to give. He\u2019s funny, decent, and a little too willing to believe the next promise, which makes him both relatable and tragically vulnerable. He gives the movie its human-scale emotional anchor.",
+        "why_actor_wants_this": "This is a rich working-class lead with warmth, frustration, and a real arc through denial into horror. It\u2019s the kind of part that lets an actor play ordinary dignity under pressure, in the vein of performances like Peter Sarsgaard in Shattered Glass or Michael Shannon in Take Shelter when the world starts to tilt."
+      },
+      {
+        "name": "Sheriff Hatter",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 40s-50s \u00b7 small-town sheriff",
+        "hook": "Hatter is a weary local authority figure trying to keep order in a town that has already started slipping out of his hands. He\u2019s pragmatic, skeptical, and often outmaneuvered by events, which gives him a grounded, human center rather than a superhero cop posture. He reads as a man who knows the rules only work until the crowd stops believing in them.",
+        "why_actor_wants_this": "The role offers a steady, authoritative presence with escalating helplessness and eventual survival instinct. It sits in the same dramatic lane as Tommy Lee Jones in No Country for Old Men or Frances McDormand\u2019s authority-with-friction energy in Fargo."
+      },
+      {
+        "name": "Michelle Reed",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 late teens/early 20s \u00b7 pregnant small-town girl",
+        "hook": "Michelle is the story\u2019s most tragic pressure point: a young woman carrying trauma, secrecy, and the town\u2019s moral rot in one body. She begins as a vulnerable romantic figure and becomes one of the film\u2019s most disturbing embodiments of the outbreak, which gives the role a haunting before-and-after shape. She\u2019s the emotional and physical proof that the town\u2019s sickness is already inside the community before the meat arrives.",
+        "why_actor_wants_this": "This is a demanding, high-contrast role that asks for innocence, fear, shame, and full-body horror. It has the kind of transformation arc that can become a breakout performance, with echoes of Jena Malone in Donnie Darko or Toni Collette in Hereditary in terms of emotional exposure and escalation."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make social horror with a mean streak and a strong sense of place.",
+        "detail": "The material rewards a filmmaker who can balance satire, dread, and practical gore without flattening the town into a cartoon. It offers a clear set-piece spine, a memorable final image, and enough civic texture to make the apocalypse feel authored rather than generic."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Elevated genre / rural horror / satirical thriller lane",
+        "detail": "This fits a contained genre feature strategy with strong trailer moments, a clear hook, and manageable locations. It\u2019s the kind of project that can travel on premise, practical effects, and tone rather than needing a giant cast or expensive IP."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on atmosphere before the engine locks in.",
+        "detail": "The breadline imagery and town texture are doing important world-building work; a future pass could consider how quickly the free-meat rumor arrives so the premise detonates as early as possible while preserving that social texture.",
+        "source": "script"
+      },
+      {
+        "area": "The ensemble is strongest when it stays tied to the town\u2019s pressure points.",
+        "detail": "The family, church, and civic relationships are the movie\u2019s richest connective tissue; foregrounding those dynamics in the middle stretch would keep the outbreak emotionally anchored as the body count rises.",
+        "source": "script"
+      },
+      {
+        "area": "The final reveal reframes the whole conspiracy.",
+        "detail": "The foreign toxic agent explanation gives the movie a sharp political sting; one direction would be to protect that reveal as a major late-turn payoff so the audience feels the full betrayal of the town\u2019s trust.",
+        "source": "script"
+      },
+      {
+        "area": "The outbreak set piece is the movie\u2019s signature sequence.",
+        "detail": "The picnic collapse is the most marketable stretch on the page; a future pass could continue to sharpen the geography and escalation around that event so the chaos reads cleanly even at speed.",
+        "source": "script"
+      },
+      {
+        "area": "This plays in the mature genre lane.",
+        "detail": "The cannibalism, child violence, abuse, and graphic infection imagery place the film squarely in adult horror territory, which is useful for positioning but narrows the audience to genre buyers and mature-platform lanes.",
+        "source": "production"
+      }
+    ]
+  }
+}

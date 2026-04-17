@@ -1,0 +1,272 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Satirical comedy",
+      "genre_tags": [
+        "religious farce",
+        "alternate-history fantasy"
+      ],
+      "tone": "irreverent, outrageous, broad, pop-culture-satirical"
+    },
+    "positioning_hook": "A 1970s Christian cult clones Jesus, then loses control when the grown Messiah becomes a rock-star savior in modern Los Angeles.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has an instantly legible comic engine: a religious movement, a cloned Jesus, a time-machine rescue, and a rock-concert climax. The script is built for a broad, curiosity-driven audience that responds to high-concept satire and taboo-busting comedy, with clear trailer moments in the cloning reveal, Ted Nugent rescue, and concert chaos."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and keeps compounding: Wayne Bigsley’s end-times ministry, Micron Labs’ Jesus DNA, Genevieve as the Mary figure, and the adult Jose/Jesus identity crisis all establish the engine quickly. The story is easy to summarize in two sentences and keeps escalating through the time-travel and crucifixion-prevention turns."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Wayne Bigsley, Wendy Shapiro, Ross Able, and Jose each have a strong comic function and clear behavioral signatures, especially Wayne’s apocalyptic zeal and Jose’s reluctant, modern-kid resistance to messiahhood. The characters play as archetypes with vivid surfaces, which gives actors room for broad performance and gives the feature a sturdy comic quartet."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits hard to a wildly specific comic premise and keeps finding new angles: cloning theology, sponsor satire, Ted Nugent as a time-travel bounty hunter, and Jesus fronting a rock band. The boldness is in the collision of sacred iconography, 1970s evangelical culture, and pop spectacle, all played with a straight-faced absurdity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script moves with a constant stream of set pieces and reversals: the cloning pitch, the birth, the club test, the Jerusalem chase, the concert rescue, and the crucifixion scramble. The momentum comes from escalation rather than suspense, and the feature stays lively by repeatedly re-framing the same central problem in bigger, stranger arenas."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea feels both outrageous and oddly inevitable: if a zealot cult had Jesus DNA, of course they’d try to manufacture the Second Coming, and of course the result would be a confused young man navigating modern sin. The script’s most memorable invention is its comic theology of performance—Jesus as a public-facing celebrity, preacher, and rock frontman."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The world is packed with specific institutions and textures: 1970s religious fundraising, lab science, TV news, LA club culture, biblical Jerusalem, and a secret government time-machine program. The setting functions as a collision chamber for satire, with enough social detail to keep generating new comic situations."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: profane, earnest, and aggressively theatrical, with biblical dialogue colliding against modern slang, rock-concert excess, and evangelical hysteria. The script has a very identifiable voice that treats absurdity as normal and treats normality as the joke."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "Under the farce, there’s a durable idea about how institutions manufacture belief, how charisma gets packaged, and how a messiah figure gets turned into a brand. The script mostly plays its surface comic premise, but the Wayne/Jose dynamic and the cult’s need for spectacle suggest a deeper satire of faith, media, and American appetite."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Wayne/Shapiro/Ross form a workable comic triangle, and Jose’s friction with Wayne gives the feature its strongest recurring dynamic. The ensemble is built around contrasting belief systems—zeal, science, cynicism, and reluctant divinity—which keeps the interactions playable and gives the movie multiple comic pairings."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead playing Jesus/Jose, 20s",
+          "Female lead playing a striking scientist, 30s-40s",
+          "Male lead playing an evangelical preacher, 40s-60s",
+          "Male supporting role for Ted Nugent likeness/performance",
+          "Child Jesus as infant and young child",
+          "Multiple biblical-era roles and crowd scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "mixed contemporary and biblical period",
+        "notable_requirements": [
+          "1970s disco/club interiors",
+          "Los Angeles streets, theater, and headquarters spaces",
+          "Biblical Jerusalem exteriors and interiors",
+          "Secret lab and time-machine facility",
+          "Concert venue with large crowd and stage build"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "time-travel transitions, wall-phasing escape, walking on water, rainbow/weather moments, crowd and concert enhancement, stylized biblical spectacle",
+        "stunts_level": "minor",
+        "sfx_needs": "birth sequence staging, tranquilizer darts, practical crowd chaos, concert pyrotechnics, lab machinery effects",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Ted Nugent"
+        },
+        {
+          "type": "real_person",
+          "detail": "Charles Manson"
+        },
+        {
+          "type": "real_person",
+          "detail": "Phillip Morris"
+        },
+        {
+          "type": "real_person",
+          "detail": "Exxon"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Brick House\""
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Give Peace a Chance\""
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Cat Scratch Fever\""
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Silent Night, Holy Night\""
+        },
+        {
+          "type": "brand",
+          "detail": "Johnson and Johnson"
+        },
+        {
+          "type": "brand",
+          "detail": "Micron Labs / Micron Industries"
+        },
+        {
+          "type": "brand",
+          "detail": "NRA"
+        },
+        {
+          "type": "brand",
+          "detail": "W.W.J.D."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Biblical figures and events portrayed in a satirical narrative"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical or premium streaming comedy",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release with cult-comedy and midnight-movie potential; best positioned as a bold, conversation-starting event title"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "High-concept satirical premise",
+          "what_it_means": "The script has a one-sentence sell that is immediately legible and highly discussable, which is exactly what gives a comedy a shot at cult traction and strong word-of-mouth.",
+          "evidence": "A 1970s evangelical cult uses Jesus DNA, a lab, and a time machine to manufacture the Second Coming.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Distinctive comic voice",
+          "what_it_means": "The writing commits to a fearless, deadpan absurdism that can be marketed as a signature voice piece rather than generic parody.",
+          "evidence": "Biblical dialogue, modern slang, and evangelical rhetoric collide in the same scene, often in the same line.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Actor-friendly central roles",
+          "what_it_means": "Wayne, Wendy, Ross, and Jose are all playable, highly performative parts that give recognizable actors a chance to go big without disappearing into effects.",
+          "evidence": "Wayne’s apocalyptic fervor, Jose’s reluctant messiah energy, Wendy’s cool scientific authority, and Ross’s wide-eyed comic innocence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Built-in set pieces",
+          "what_it_means": "The script is structured around memorable, trailer-ready sequences that help a buyer picture the movie’s marketing campaign immediately.",
+          "evidence": "The cloning pitch, the birth scene, the club test, the Ted Nugent time-travel hunt, the rock concert, and the crucifixion scramble.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Pop-culture collision",
+          "what_it_means": "The movie has a strong commercial identity because it fuses religion, rock culture, TV news, and tabloid spectacle into one comic universe.",
+          "evidence": "Jesus fronting a rock band, Ted Nugent as a bounty hunter, and news coverage turning the Messiah into a media event.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production footprint with spectacle",
+          "what_it_means": "The story can be staged with a mix of contained interiors and a few larger showcase sequences, making it legible as a producible comedy with event moments.",
+          "evidence": "Most of the story lives in headquarters, labs, clubs, and biblical street scenes, with the concert and time-machine sequences providing scale.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Cult-comedy positioning",
+          "what_it_means": "The irreverent subject matter and outrageous escalation give this a clear lane for midnight audiences, genre-comedy fans, and viewers who like taboo-breaking satire.",
+          "evidence": "The script repeatedly pushes sacred material into broad farce without losing its straight-faced commitment.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a fearless, high-concept religious farce with a very clear commercial engine: a zealot cult clones Jesus, loses control of him, and ends up chasing the Second Coming through rock concerts, time travel, and biblical chaos. The script’s biggest asset is its voice — outrageous, specific, and instantly pitchable — with a handful of actor-friendly roles and set pieces that could sell the movie in a single trailer."
+    },
+    "lead_characters": [
+      {
+        "name": "WAYNE BIGSLEY",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-60s",
+        "hook": "Wayne is a fervent, self-serious apocalyptic preacher who believes he is helping usher in salvation, but his certainty is always one breath away from panic. He’s a zealot with showman instincts: part televangelist, part cult commander, part desperate father figure to a messiah he can’t control. The comedy comes from how completely he means every word, even when the world around him has become absurdly unstable.",
+        "why_actor_wants_this": "This is a big, scene-stealing comic role with real range: righteous monologues, frantic physical business, and the humiliation of watching his grand plan unravel in public. It’s the kind of part that lets an actor play conviction as comedy, with the same delicious self-importance that makes performances like Steve Carell in 'The Big Short' or Bryan Cranston in 'Breaking Bad' so watchable."
+      },
+      {
+        "name": "WENDY SHAPIRO",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s",
+        "hook": "Wendy is the cool, brilliant scientific counterweight to Wayne’s religious hysteria, but she’s not a straight skeptic — she’s fully complicit in the madness and enjoys the ride. She has the poise of a top-tier lab mind, the confidence of someone who can explain the impossible without blinking, and the comic authority to keep the whole enterprise from floating away.",
+        "why_actor_wants_this": "This is a sharp, elevated supporting-lead part for an actor who can play intelligence, irony, and deadpan control. The role has the kind of crisp authority that gives an actress room to land every line, in the lane of performances like Frances McDormand in 'Fargo' or Allison Janney in 'The West Wing' when the character is the smartest person in the room."
+      },
+      {
+        "name": "JOSE",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s",
+        "hook": "Jose is the cloned Jesus grown into a modern young man who wants none of the burden, branding, or holiness forced onto him. He’s funny because he’s human first: impatient, confused, horny, resistant, and constantly trying to negotiate between his own instincts and the myth everyone else projects onto him. The contradiction is the engine — he looks like the Messiah, but he behaves like a kid who just wants a haircut and a normal life.",
+        "why_actor_wants_this": "This is the kind of role that lets a young actor play iconography and rebellion at the same time. He gets comedy, physicality, reluctant charisma, and the chance to turn a familiar figure into a fresh, contemporary lead — the same kind of showcase that made performances like Joaquin Phoenix in 'Walk the Line' or Michael J. Fox in 'Back to the Future' so magnetic."
+      },
+      {
+        "name": "ROSS ABLE",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Ross is Wayne’s eager, wide-eyed right hand — a former drifter type who seems permanently one step behind the action, yet remains loyal and oddly essential. He’s the human camera, the accidental witness, and the comic ballast who keeps the movie grounded in a very specific kind of lovable incompetence.",
+        "why_actor_wants_this": "This is a great utility-comic role with a lot of physical business and reaction shots, the kind of part that can become a fan favorite if played with precision. It sits in the sweet spot of a character actor showcase, with the same off-center charm as Steve Buscemi in 'Fargo' or Paul Giamatti in 'Sideways' when the comedy comes from personality rather than punchlines."
+      },
+      {
+        "name": "TED NUGENT",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Ted Nugent is deployed as a gloriously unhinged action-comic outsider: a rock-and-roll hunter who treats the mission like a wilderness pursuit. He’s swagger, noise, and physical confidence in human form, and the script uses him as a pure engine of escalation whenever the story needs a jolt.",
+        "why_actor_wants_this": "This is a flamboyant cameo-plus role with instant recognition value and huge comic mileage. It gives an actor permission to go full-throttle, in the spirit of a scene-stealing turn like Christopher Walken in 'Pulp Fiction' or John Goodman in 'The Big Lebowski' when the character arrives with his own weather system."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget lane",
+        "detail": "This plays as a mid-budget comedy with a few larger showcase sequences — the concert, the time-machine material, and the biblical crowd scenes — balanced by many contained interiors.",
+        "source": "production"
+      },
+      {
+        "area": "Casting and performance style",
+        "detail": "The movie benefits from actors who can play straight-faced conviction inside outrageous material, since much of the humor comes from sincerity rather than wink-wink parody.",
+        "source": "script"
+      },
+      {
+        "area": "Rights and clearances",
+        "detail": "The script references several real people, brands, and songs by name, including Ted Nugent, Charles Manson, Phillip Morris, Exxon, Johnson and Johnson, and multiple named tracks.",
+        "source": "script"
+      },
+      {
+        "area": "Audience positioning",
+        "detail": "The material naturally targets adult audiences who respond to taboo comedy, religious satire, and cult-friendly genre pieces rather than family or broad four-quadrant fare.",
+        "source": "script"
+      },
+      {
+        "area": "Visual effects and staging",
+        "detail": "The story includes time travel, walking on water, a wall-phasing escape, and stylized miracle imagery, all of which can be handled with practical staging plus selective VFX support.",
+        "source": "script"
+      },
+      {
+        "area": "Tone management",
+        "detail": "The script sustains a very specific comic register: profane, reverent, and absurd all at once, which makes the tonal identity highly distinctive for the right director and cast.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 65,
+  "tier": "Optionable",
+  "inputTokens": 34821,
+  "outputTokens": 3884,
+  "cost": 0.04359375
+}

@@ -1,0 +1,265 @@
+{
+  "eval_id": "6b0c4567-b0c1-41cf-9c98-28bc289aa890",
+  "title": "WWEIM jan 25",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Biographical drama",
+      "genre_tags": [
+        "historical mystery",
+        "family drama"
+      ],
+      "tone": "Grounded, propulsive, wry, and increasingly tragic"
+    },
+    "positioning_hook": "A cocky Dagenham salesman drags his teenage son across Europe to authenticate a Hitler photo album and save his family\u2019s future.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is instantly legible and commercially legible: a true-story historical mystery with a father-son engine, a notorious cultural figure, and a built-in media scandal. The train-to-Europe pursuit, the auction-house pressure, and the public fallout give it clear trailer moments and strong older-skewing appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and cleanly: a Dagenham father discovers a potentially world-shifting Hitler artifact in a shed and pursues authentication across Europe. The script keeps the central question alive through the Zurich, Mannheim, and Stern sequences, so the engine stays easy to track."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "John is a vivid, actor-friendly contradiction: charming, reckless, persuasive, vain, loving, and impossible to manage. Tom gives the story its emotional ballast and point of view, while Hazel and Williams create a strong pressure system around him."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific British social world and lets the absurdity play straight, which gives it a distinctive comic-drama flavor. The choice to frame a notorious historical claim through a brash Essex family and a cricket-club ecosystem is unusually ownable."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through escalating destinations, from England to Switzerland to Germany to Denmark, and each stop adds a new obstacle or revelation. The momentum is strongest when John and Tom are on the run and weakest only in the research-heavy stretches, which still serve the larger chase."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This is one of those true-story premises that feels stranger than fiction but still emotionally grounded by family stakes. A working-class salesman chasing a world-history bombshell through sheer force of personality has the kind of inevitability that makes the concept stick."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world is rich with period detail: cricket clubs, Rotary dinners, estate agents, train travel, hotel hustles, and the social codes of late-80s England. The story also opens into European institutions, from Swiss banks to German archives to tabloid offices, giving the narrative a broad but specific texture."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is very particular: cheeky, masculine, class-conscious, and increasingly ominous without losing its comic swagger. The script can pivot from a laugh in a cricket club to a heart attack on a train to public humiliation at school, and that tonal braid feels distinctive."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the adventure and con-man energy, the script keeps revealing a damaged father, a son hungry for approval, and a family history shadowed by identity and abandonment. The later material around John\u2019s mental health and paternity adds a deeper emotional reservoir."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "John and Tom are the core engine, but the surrounding web \u2014 Hazel, Grace, Williams, Martin, Bob, the cricket club, the experts \u2014 keeps generating fresh friction. The relationships are active enough that scenes can pivot from comedy to conflict to loyalty without feeling mechanical."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 28,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in 40s with strong comic authority",
+          "Teen boy lead with emotional range and cricket competence",
+          "Female supporting roles in 20s-60s with strong regional specificity",
+          "German-speaking roles and police/official roles across Europe",
+          "Cricket-playing extras and period-appropriate crowd scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 30,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Period, primarily 1974-1992",
+        "notable_requirements": [
+          "Multiple UK period homes, cricket grounds, stations, hotels, police stations, and offices",
+          "European travel sequence across Switzerland, Germany, Denmark, France, and Austria",
+          "Train interiors and station platforms are recurring set pieces",
+          "Period vehicles and street dressing throughout"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly invisible period enhancement, occasional crowd extension, and simple title-card/flashback support.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical heart-attack beat, car damage, police handling, and period travel logistics.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler, John Major, Chris Tarrant, Ian Botham, Kevin Keegan, Henry Cooper, Steve McQueen, and other named public figures"
+        },
+        {
+          "type": "named_music",
+          "detail": "Capital Radio and broadcast references are plot-adjacent but not music-critical as written"
+        },
+        {
+          "type": "brand",
+          "detail": "Brut Faberg\u00e9, The Sun, Sotheby\u2019s, Deutsche Bahn, West Ham United, Essex County Cricket Club, and other named institutions/brands"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Use of newspaper headlines, archive imagery, and branded broadcast references may require clearance depending on production approach"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Mid-budget theatrical or prestige streamer feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or limited theatrical potential; the engine is the escalating true-story investigation and family fallout."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is manageable, but the period scope, European travel, and multiple period recreations push it above a small indie."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on a strong lead pair and several recognizable supporting roles, with some identity-specific and German-speaking casting needs."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story spans multiple countries, period train travel, stations, hotels, archives, and cricket grounds across several eras."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes domestic conflict, public humiliation, police involvement, and references to Hitler and wartime history, but it is not extreme in violence or sexuality."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script prominently references real people, brands, newspapers, broadcasters, and historical material that will need careful clearance strategy."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly saleable.",
+          "what_it_means": "A working-class father chasing a Hitler-linked artifact gives the film a headline-ready engine that is easy to pitch, easy to market, and easy for audiences to grasp in one breath.",
+          "evidence": "The shed discovery, the graphology investigation, and the repeated claim that the album could rewrite history.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "John is a star-making lead role.",
+          "what_it_means": "He\u2019s a swaggering, funny, infuriating, deeply charismatic man who can sell a lie, charm a room, and still break your heart. That\u2019s the kind of part actors chase because it lets them play comedy, menace, vulnerability, and vanity in one frame.",
+          "evidence": "The train ticket bluff, the estate-agent cash buy, the cricket-club speeches, and the Zurich hustle.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-son bond carries the movie.",
+          "what_it_means": "This is not just a historical caper; it\u2019s a story about a boy being pulled into his father\u2019s obsession and, in the process, discovering who his father really is. That emotional spine gives the film heart and keeps the spectacle human.",
+          "evidence": "Tom\u2019s loyalty through the Europe trip, the cricket-club pride, and the final reconciliations.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The British social world feels lived-in.",
+          "what_it_means": "Cricket clubs, Rotary dinners, estate agents, train compartments, school gates, and council-house kitchens create a very specific class-and-region texture. That specificity helps the film stand apart from generic true-story dramas.",
+          "evidence": "The Brentwood Cricket Club sequences, the house purchase scene, and the school humiliation after the newspaper story breaks.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The story has a strong travel-and-chase engine.",
+          "what_it_means": "The investigation keeps physically moving, which gives the film momentum and a built-in escalation pattern. Each new city or institution adds a fresh obstacle, making the story feel bigger than a single-room procedural.",
+          "evidence": "England to Zurich to Mannheim to Hamburg to Denmark, with trains, ferries, banks, and hotels along the way.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone balances wit and gravity.",
+          "what_it_means": "The script can be funny without trivializing the stakes, which broadens its appeal and keeps the material from feeling academic. That tonal confidence is a major asset for directors and actors alike.",
+          "evidence": "The reverse-driving car sequence, the cricket banter, and the later police and press fallout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The true-story angle adds built-in curiosity.",
+          "what_it_means": "Audiences are naturally drawn to stories that feel too outrageous to invent, especially when they\u2019re anchored in a recognizable British milieu. The film has the kind of \u201cyou won\u2019t believe this happened\u201d energy that travels well in publicity.",
+          "evidence": "The repeated framing that this is a true story and the revelation of the Hitler diaries context.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "There\u2019s a strong supporting pressure system.",
+          "what_it_means": "Hazel, Grace, Williams, Martin, and the club world all push and pull on John in different ways, which keeps the film from becoming a solo showcase. That gives producers a fuller ensemble package and gives the story multiple emotional entry points.",
+          "evidence": "Hazel\u2019s confrontations, Grace\u2019s maternal grounding, Williams\u2019 dry patience, and Martin\u2019s loyal financing.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, strange, highly playable true-story feature with a killer lead role at its center: a Dagenham salesman who turns a shed discovery into an international obsession. The script has the kind of specific British texture, father-son emotion, and headline-ready premise that can attract both talent and buyers.",
+      "headline_alt": ""
+    },
+    "lead_characters": [
+      {
+        "name": "John Davey",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 40s \u00b7 English \u00b7 working-class Essex/Dagenham",
+        "hook": "John is a dazzlingly self-assured salesman with the instincts of a hustler and the appetite of a believer. He\u2019s funny, vain, affectionate, manipulative, and impossible to stop once he decides the world should bend to his certainty. Under the bravado is a man desperate to matter, desperate to be admired, and desperate to turn one outrageous discovery into proof that his life has been bigger than it looked from the outside.",
+        "why_actor_wants_this": "This is a full-course meal for a lead actor: comic timing, salesmanship, emotional volatility, public humiliation, and eventual pathos. It lives in the same performance space as Brendan Gleeson in 'Calvary' for force of personality, or Steve Coogan in 'Philomena' for wit threaded through pain, but with a more overtly combustible, working-class showman energy."
+      },
+      {
+        "name": "Tom Davey",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 14-16 \u00b7 English",
+        "hook": "Tom is the observant, dry, increasingly burdened son who inherits his father\u2019s intelligence and some of his swagger, but not his appetite for self-destruction. He\u2019s loyal to a fault, often the only adult in the room, and his emotional life is built around wanting his father\u2019s approval without losing his own dignity. The role carries the story\u2019s conscience and its heartbreak.",
+        "why_actor_wants_this": "For a young actor, this is a rare teen role with real dramatic authority: he gets wit, frustration, loyalty, embarrassment, and the ache of being pulled into adult chaos. It has the emotional specificity of a performance like Lucas Hedges in 'Manchester by the Sea' or Asa Butterfield in 'Hugo' \u2014 smart, wounded, and quietly central."
+      },
+      {
+        "name": "Hazel Davey",
+        "role_type": "Supporting",
+        "demographics": "Female \u00b7 20s-30s \u00b7 English",
+        "hook": "Hazel is glamorous, sharp, and long-suffering, with the kind of presence that can cut through John\u2019s bluster in a single line. She\u2019s not written as a passive wife; she\u2019s a woman who sees exactly what she\u2019s married to, knows how to wound him back, and still carries the emotional cost of living inside his orbit.",
+        "why_actor_wants_this": "This is a strong supporting role for an actor who likes playing steel under glamour. It offers the kind of domestic authority and bite that made performances like Olivia Colman in 'Tyrannosaur' or Rosamund Pike in 'Gone Girl' so memorable, even in a smaller footprint."
+      },
+      {
+        "name": "Brian Williams",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 30s-40s \u00b7 Afro-Caribbean",
+        "hook": "Williams is the grounded police presence who keeps getting dragged into John\u2019s orbit and slowly realizes he\u2019s dealing with a man too absurd to dismiss and too slippery to underestimate. He\u2019s patient, dry, and observant, with a steady intelligence that makes him the audience\u2019s anchor inside the chaos.",
+        "why_actor_wants_this": "This is a terrific straight-man role with real comic control and procedural authority. It has the easy authority of a performance like David Harewood in 'Homeland' or Lennie James in 'Save Me' \u2014 calm, skeptical, and increasingly invested."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who can make a true story feel both raucous and intimate.",
+        "detail": "The material rewards a filmmaker with confidence in period detail, social comedy, and emotional escalation. It asks for someone who can stage big public set pieces, keep the tone buoyant without losing the ache underneath, and make a very British world feel cinematic rather than merely illustrative."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget feature",
+        "lane": "Prestige crowd-pleaser / British true-story drama lane",
+        "detail": "This fits a lane that likes character-forward, exportable, true-story features with a distinctive regional voice and a strong marketing hook. It can travel on premise, period texture, and performance, with the father-son relationship giving it broader emotional reach than a pure historical curiosity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The period and travel scope are the main spend drivers.",
+        "detail": "This is best positioned as a mid-budget feature rather than a lean indie, because the story asks for multiple countries, period trains, hotels, stations, and institutional spaces. A future pass could continue to foreground the most cinematic locations and protect the footprint where possible.",
+        "source": "production"
+      },
+      {
+        "area": "John\u2019s role is the packaging centerpiece.",
+        "detail": "The film will likely rise or fall on the actor playing John, so packaging should prioritize a performer with comic authority, regional authenticity, and the ability to turn on a dime from bluster to hurt. That\u2019s a gift role, and the project should lean into that in the pitch.",
+        "source": "both"
+      },
+      {
+        "area": "Tom\u2019s emotional journey deserves to stay front and center.",
+        "detail": "The father-son relationship is the story\u2019s strongest emotional engine, so any development pass should continue to protect Tom\u2019s point of view as the audience\u2019s moral and emotional guide. The more the film lets us feel the cost of John\u2019s obsession through Tom, the more the ending will land.",
+        "source": "script"
+      },
+      {
+        "area": "The historical claim needs careful framing.",
+        "detail": "Because the premise sits on a sensational real-world allegation, the script benefits from a clear, disciplined framing device that keeps the audience inside John\u2019s conviction while preserving the story\u2019s credibility. That balance will help the film play as compelling drama rather than pure novelty.",
+        "source": "script"
+      },
+      {
+        "area": "The supporting world can be used as a packaging asset.",
+        "detail": "Hazel, Grace, Williams, and Martin all give the project recognizable acting opportunities, so casting can be built as a strong ensemble around the lead rather than a single-star proposition. That makes the film attractive to actors who want substantial scenes without carrying the entire picture.",
+        "source": "script"
+      },
+      {
+        "area": "The tabloid and institutional material broadens the audience.",
+        "detail": "The newspaper, police, auction-house, and broadcast sequences give the film a public-facing dimension that can help it play beyond the core history audience. A future draft could continue to foreground those pressure points, because they make the story feel bigger and more contemporary in spirit.",
+        "source": "script"
+      }
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Character-driven",
+        "Slice of life"
+      ],
+      "tone": "Deadpan, observational, absurdly grounded"
+    },
+    "positioning_hook": "A sleep-deprived woman’s laundromat errand turns into a deadpan standoff with a cryptic regular, a bizarre security guard, and one mysteriously wet hoodie.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clean, instantly playable premise built around a universally recognizable errand and a sharply specific comic voice. The appeal is strongest for audiences who like character comedy, urban observational humor, and dialogue-forward indie features with a strong personality."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands immediately in the opening pages: a 24-hour laundromat becomes a pressure cooker for two strangers and one impossible dryer problem. The story engine is easy to grasp in a sentence, and the escalating oddity of the hoodie, Malik’s commentary, and the guard’s entrance keeps the premise legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Zuri is a strong anchor: exhausted, defensive, funny, and emotionally readable without over-explaining herself. Malik is the kind of offbeat scene-stealer who gives the piece its flavor, and the security guard adds a third comic color. The characters are memorable in the moment and suggest a larger comic world around them."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific comic register: long silences, static framing, and absurdly philosophical dialogue about laundry, heat, and emotional baggage. The boldness comes from how seriously it treats a trivial situation, which gives the piece a distinct authorial stamp."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The scene progression is clear and the comic beats arrive with confidence, but the piece is more about mood, rhythm, and interaction than a forward-driving plot engine. As a feature, the material reads as a strong comic premise or opening movement that would need a larger narrative escalation to sustain full-length momentum."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The central idea is familiar in the best way — a mundane task becomes a revealing social arena — but the execution gives it a fresh, slightly surreal Atlanta-specific texture. The orange-peeling philosopher, the hardwired VPN/Shazaam joke, and the rib-eating guard create a world that feels lived-in and singular."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The laundromat is rendered as a complete micro-world with its own rules, rhythms, and social codes: the signal-hunting regular, the security guard using the dryers as a food stash, the late-night isolation, the fluorescent stillness. It’s a contained setting, but it has enough texture to feel story-generating."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is highly identifiable: deadpan, patient, and quietly absurd, with the comedy coming from stillness, repetition, and the gap between what people say and what they mean. The script has a very clear comic temperature, and the final image of Zuri watching the dryer spin is a strong tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the comedy, there’s a real sense of fatigue, loneliness, and emotional stasis — especially in Zuri’s body language and the way she gradually gives in to the room. The piece hints at a larger emotional life without over-explaining it, which gives it room to deepen in a feature context."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The Zuri-Malik dynamic is the core engine, and the security guard adds a useful third point of comic friction. The relationships are vivid enough to generate scenes, but the piece is designed around a lead-plus-strangers structure rather than a broad ensemble web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 3,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Female lead in her 20s",
+          "Male supporting lead in his 20s",
+          "Male supporting role in his 30s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 1,
+        "interior_exterior_ratio": "Predominantly interior with a brief exterior exit shot",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "24-hour coin laundromat interior",
+          "Exterior of laundromat for final image"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements in the submitted material.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical laundry machines, phone audio, door chimes, and dryer sound design are central to the scene texture.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Shazaam is referenced by name as a specific download target."
+        },
+        {
+          "type": "real_person",
+          "detail": "Sinbad is referenced in connection with the Shazaam joke."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or festival-to-platform theatrical indie lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "As a feature, this plays best as a contained character comedy with a modest footprint and a strong voice-driven marketing angle."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Contained concept",
+          "what_it_means": "The entire piece is built around one late-night location and one escalating social awkwardness, which makes it highly producible and easy to package as a voice-driven indie feature.",
+          "evidence": "Nearly the whole script unfolds inside a single laundromat, with the final beat outside the same building.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Comic voice",
+          "what_it_means": "The dialogue has a distinct deadpan rhythm that actors can play hard without forcing jokes, which is exactly the kind of material that attracts performers looking for a showcase.",
+          "evidence": "Malik’s pseudo-philosophical laundry theories, Zuri’s exhausted bluntness, and the security guard’s abrupt flirtation all land in a very specific comic register.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lead character presence",
+          "what_it_means": "Zuri is immediately playable: she’s tired, guarded, funny, and emotionally transparent in her body language, giving the film a strong center that can carry a full feature.",
+          "evidence": "Her physical collapse onto the table, her deadpan reactions, and the gradual shift from annoyance to reluctant engagement make her instantly legible.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Scene-stealing supporting role",
+          "what_it_means": "Malik is the kind of eccentric supporting part that can become a calling card for a charismatic actor — a memorable, quotable presence with a very specific worldview.",
+          "evidence": "He sits in a camping chair peeling an orange, speaks in cryptic aphorisms, then casually reveals he’s there for the signal and a Sinbad download.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Micro-world texture",
+          "what_it_means": "The laundromat functions as a social ecosystem, not just a backdrop, which gives the script a repeatable setting with its own behavioral rules and comic possibilities.",
+          "evidence": "The signal-hunting regular, the security guard using the dryer as a food stash, and the constant machine noise all make the location feel inhabited.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonal control",
+          "what_it_means": "The piece knows exactly what kind of comedy it is: patient, observational, and slightly surreal, with the humor emerging from stillness and repetition rather than punchline mechanics.",
+          "evidence": "The repeated static shots, long silences, and final image of Zuri watching the dryer spin create a very specific tonal signature.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a compact, voice-forward character comedy with a very clear point of view: one exhausted woman, one cryptic stranger, and one laundromat that becomes a pressure cooker for late-night absurdity. It’s producible, actor-friendly, and distinctive enough to stand out in the indie comedy lane because the humor comes from character, rhythm, and a world that feels lived-in from the first page."
+    },
+    "lead_characters": [
+      {
+        "name": "ZURI",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Zuri is all depletion and restraint on the surface, but the performance opportunity is in how much life is still moving underneath. She’s the kind of young woman who has learned to conserve energy, answer the phone while doing everything else, and keep her face flat until the world forces a reaction. Her comedy comes from deadpan survival mode; her emotional appeal comes from the fact that she is visibly carrying more than she says out loud.",
+        "why_actor_wants_this": "This is a showcase for an actor who can do stillness, timing, and subtext in the same breath. The role lives in reaction, physical behavior, and tiny shifts from annoyance to surrender to reluctant curiosity, which gives it the kind of precision that can read as star-making in an indie setting. It sits in the lane of performances like Greta Gerwig in Frances Ha or Ayo Edebiri’s quieter comic turns, where the character’s inner life is as entertaining as the dialogue."
+      },
+      {
+        "name": "MALIK",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Malik is a late-night philosopher with the posture of a man who has opted out of ordinary life and turned that decision into a personality. He’s still, observant, and weirdly serene, with a voice that can pivot from nonsense to insight without changing volume. He feels like someone who has built a private system of meaning and is only half-interested in whether anyone else can follow it.",
+        "why_actor_wants_this": "This is a deliciously specific supporting role for an actor with charisma and timing, the kind of part that can steal a movie with a few perfectly calibrated entrances. The orange-peeling, camping-chair, VPN-and-Shazaam routine gives the performer a full comic identity to inhabit, similar in spirit to the scene-stealing precision of Lakeith Stanfield in Sorry to Bother You or John Michael Higgins in Best in Show, where the voice is the joke and the character is unforgettable."
+      },
+      {
+        "name": "SECURITY GUARD",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "The guard is a blunt-force comic interruption: a man on a mission who treats the laundromat like his own private break room and then pivots into opportunistic flirtation without missing a beat. He’s practical, shameless, and fast-moving, which makes him a perfect late-scene destabilizer.",
+        "why_actor_wants_this": "This is the kind of compact supporting role that gives an actor a clean, memorable entrance and a strong comic button. The rib reveal and the immediate flirtation create a sharply playable beat that could land with the same kind of lived-in specificity seen in small but memorable turns in Coen-style ensemble comedies or a scene like the convenience-store energy in The Last Black Man in San Francisco."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Feature expansion",
+        "detail": "The submitted material plays as a tightly controlled, single-location comic chamber piece, which gives it a clear footprint and a strong voice-driven identity for a feature-length indie or streamer comedy.",
+        "source": "script"
+      },
+      {
+        "area": "Audience lane",
+        "detail": "The humor is built for viewers who respond to deadpan dialogue, observational comedy, and character-first storytelling rather than broad set-piece comedy.",
+        "source": "script"
+      },
+      {
+        "area": "Casting strategy",
+        "detail": "The material is especially actor-friendly for performers who can carry silence, micro-reaction, and offbeat rhythm; the lead and the Malik role both offer distinct showcase opportunities.",
+        "source": "script"
+      },
+      {
+        "area": "Budget footprint",
+        "detail": "The story footprint is compact: one primary interior, a brief exterior, contemporary wardrobe, and no visible VFX or stunt requirements in the submitted pages.",
+        "source": "production"
+      },
+      {
+        "area": "Clearance",
+        "detail": "The Sinbad/Shazaam reference is a notable clearance item if retained in production materials, and the joke’s specificity is part of the script’s comic texture.",
+        "source": "production"
+      },
+      {
+        "area": "Tone positioning",
+        "detail": "The piece sits in a very specific tonal lane — quiet, absurd, and intimate — which makes it easy to position as a voice piece for the right festival, streamer, or specialty distributor.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 62.7,
+  "tier": "Optionable",
+  "inputTokens": 6891,
+  "outputTokens": 3044,
+  "cost": 0.018866249999999998
+}

@@ -1,0 +1,275 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi thriller",
+      "genre_tags": [
+        "action-adventure",
+        "mystery"
+      ],
+      "tone": "grounded-to-heightened, tense, propulsive, ominous, occasionally wry"
+    },
+    "positioning_hook": "A UN translator on a Congo river mission uncovers a buried alien craft, forcing her to choose between truth, survival, and a military cover-up.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean commercial engine: a river expedition, a covert military objective, and a buried extraterrestrial mystery that escalates into a survival thriller. Reese’s outsider POV gives the audience an accessible entry point, while the Congo setting and the ticking-clock strike finale give it clear trailer moments and a strong genre promise."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and stays legible: a translator is recruited for a river mission to recover a lost craft, and the mission reveals a hidden world of anomalies, militias, and an alien presence. The script keeps the objective clear even as the scope widens from pipeline conflict to the temple and the craft."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Reese is a compelling lead because she’s both highly capable and emotionally guarded, with the Minnie Mouse watch and the daughter backstory giving her a private wound under the professional exterior. Broyles and Benny add strong counterweights: Broyles as the hard-edged operator with a moral fog, Benny as the enigmatic, almost mythic presence whose restraint and final reveal give the story a memorable center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a big tonal and conceptual swing: Congo river realism, geopolitical tension, and full sci-fi revelation all coexist in one forward-moving package. The repeated time-stutter around the craft, the alien body reveal, and the final absorption sequence are bold choices that give the material a distinctive identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story is built as a sequence of escalating discoveries and reversals, with each stop upriver revealing a larger, stranger layer of the mission. The boat journey, the refinery siege, the tribal detour, and the temple assault all keep the pressure rising, and the final countdown to the strike gives the third act real urgency."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "What feels especially ownable is the collision of worlds: a UN translator, a black-ops recovery team, Congolese river politics, and an alien artifact that behaves like a living machine. The script’s strongest originality comes from making the river itself feel like a corridor into a hidden history rather than just a travel route."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Congo is rendered as a living system of refinery outposts, overloaded barges, militia checkpoints, tribal communities, and river commerce. Details like La Nuit, the oil flares, the floating passenger barge, the refinery fence swallowed by vines, and the Mbuti village give the world a strong sense of place and social friction."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone has a strong identity: muscular military banter, moral unease, and eerie sci-fi awe all share the same frame. The script can pivot from jokes about lunch meat and Coke to skinless bodies, time distortion, and a silent alien craft without losing its voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the mission mechanics, the script is carrying themes of displacement, complicity, colonial extraction, and the cost of trying to impose order on a place that resists it. Reese’s grief, Broyles’ evasions, and Benny’s outsider status all suggest a larger emotional and philosophical layer that could support deeper interpretation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The ensemble has strong functional chemistry: Reese/Broyles is the central friction line, Reese/Benny becomes the emotional and metaphysical axis, and the Delta team adds texture, humor, and tactical pressure. The boat setting naturally forces repeated interactions, so even small exchanges carry story weight."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "African and Congolese supporting roles",
+          "Military/paramilitary ensemble",
+          "Late-20s female lead",
+          "Male 40s-50s operator types",
+          "Teenage villagers and militants"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Congo river expedition route",
+          "Refinery complex",
+          "Remote dock and stern-wheeler boat",
+          "Jungle village and tribal settlement",
+          "Large temple/cavern set",
+          "Night jungle exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Alien craft reveal, time-stutter effects, drone/UAV work, missile strike sequence, atmospheric blasts, environmental destruction, and some large-scale jungle fire imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, gunfire, boat flip aftermath, body impacts, burning oil field, practical blood and wound effects, environmental smoke/fire.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Minnie Mouse watch"
+        },
+        {
+          "type": "brand",
+          "detail": "Coke"
+        },
+        {
+          "type": "brand",
+          "detail": "McDonalds receipt"
+        },
+        {
+          "type": "brand",
+          "detail": "Boar's Head Bold Cajun smoked turkey"
+        },
+        {
+          "type": "brand",
+          "detail": "Harry Potter"
+        },
+        {
+          "type": "brand",
+          "detail": "Call of Duty"
+        },
+        {
+          "type": "brand",
+          "detail": "Copenhagen"
+        },
+        {
+          "type": "brand",
+          "detail": "Monster"
+        },
+        {
+          "type": "brand",
+          "detail": "Named firearm manufacturer referenced"
+        },
+        {
+          "type": "brand",
+          "detail": "Remington"
+        },
+        {
+          "type": "brand",
+          "detail": "Teledyne FLIR Black Hornet Nano"
+        },
+        {
+          "type": "brand",
+          "detail": "DARPA"
+        },
+        {
+          "type": "brand",
+          "detail": "Centcom"
+        },
+        {
+          "type": "brand",
+          "detail": "Wright-Patterson"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical or premium cable feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-event potential; the hook is the expedition, the reveal, and the survival escalation."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "High-concept genre engine",
+          "what_it_means": "This is built around a clean, pitchable engine: a translator on a covert river mission discovers the objective is not just military hardware but a buried extraterrestrial event. That gives producers a marketable hook, a clear trailer spine, and a concept that can travel internationally.",
+          "evidence": "The mission starts as a translator assignment and evolves into a DARPA recovery op for a lost craft, ending in a countdown to a tactical strike.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Distinctive protagonist",
+          "what_it_means": "Reese is the kind of lead actors want: smart, emotionally armored, culturally fluent, and morally awake. Her language expertise, her refusal to look away from civilian suffering, and her private grief make her more than a functional action lead; she’s the audience’s conscience inside a dangerous machine.",
+          "evidence": "She negotiates in multiple languages, challenges Broyles, helps the sick children, and carries the emotional weight of her daughter’s death and the watch she keeps checking.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Memorable duo dynamic",
+          "what_it_means": "The Reese/Benny relationship gives the movie a second engine beyond the mission. Their exchanges are quiet, strange, and emotionally resonant, which creates a human center that can anchor the larger spectacle and give the film a lasting aftertaste.",
+          "evidence": "Benny’s calm, otherworldly presence, his house-arrest ankle monitor, his Coke habit, and his final reveal all build a character relationship that feels intimate and mythic at once.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Broyles as a volatile operator",
+          "what_it_means": "Broyles is a strong commercial supporting role because he’s charismatic, funny, and dangerous in equal measure. He can carry exposition without feeling like a briefing machine, and his moral ambiguity gives the film a real adult edge.",
+          "evidence": "He moves from banter and tactical competence to torture, cover-up language, and a last-act willingness to call in a strike on the entire site.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "World texture and geopolitical specificity",
+          "what_it_means": "The Congo setting is not decorative; it’s the engine of the movie’s texture. The river commerce, refinery infrastructure, militia presence, tribal politics, and foreign extraction economy give the film a lived-in scale that makes the sci-fi reveal feel grounded and expensive in the right way.",
+          "evidence": "The overloaded passenger barge, refinery dock, Mbuti village, oil fires, and river logistics all create a specific operational world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Big-screen spectacle with contained geography",
+          "what_it_means": "The story feels large without requiring constant city-scale destruction. A river boat, a jungle corridor, a refinery, and a temple can deliver cinematic scope while still feeling producible as a focused event film.",
+          "evidence": "Most of the story is contained to La Nuit, the river, the refinery, the village, and the temple complex, with the biggest set pieces concentrated in the final act.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Strong tonal blend",
+          "what_it_means": "The script has a hard-to-copy mix of military realism, dry humor, moral tension, and cosmic mystery. That tonal confidence helps it stand out in a crowded genre field because it can play to both thriller audiences and sci-fi audiences.",
+          "evidence": "The script moves from tactical banter and river banter to skinless bodies, time distortion, and an alien craft that behaves like a living organism.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Set-piece escalation",
+          "what_it_means": "Each major sequence opens the aperture: pipeline confrontation, convoy attack, river ambush, refinery siege, tribal detour, temple discovery, and temporal rupture. That escalation is exactly what buyers want in a feature thriller because it promises momentum and a satisfying third-act payoff.",
+          "evidence": "The mission keeps revealing deeper layers until the craft and the strike countdown collide.",
+          "source": "script"
+        }
+      ],
+      "headline": "BLUEFLY is a muscular, high-concept Congo expedition thriller with a sharp emotional anchor in Reese and a memorable wildcard in Benny. It delivers a rare combination of geopolitical texture, military tension, and genuine sci-fi awe, all built around a clean feature engine that feels both commercially legible and distinctively cinematic."
+    },
+    "lead_characters": [
+      {
+        "name": "Myla Reese",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s · African-born, multilingual",
+        "hook": "Reese is a translator with the instincts of a field operative and the conscience of a witness. She’s outwardly controlled, inwardly bruised, and constantly measuring the moral temperature of the room; the Minnie Mouse watch, the daughter loss, and her refusal to let civilians become collateral all give her a deeply human contradiction. She can move between languages and cultures with ease, but emotionally she’s still trying to find a home she can stand in.",
+        "why_actor_wants_this": "This is a showcase role for an actor who can play intelligence, restraint, and emotional fracture without announcing any of it. Reese gets to do procedural competence, moral confrontation, physical survival, and quiet grief in one package. It has the kind of layered lead space that rewards the same kind of internal precision seen in performances like Jodie Comer in The Last Duel or Rebecca Ferguson in Dune."
+      },
+      {
+        "name": "John Broyles",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to early 50s",
+        "hook": "Broyles is the kind of man who can make a room feel safe while steering it toward disaster. He’s charming, tactical, and casually profane, but every joke is sitting on top of a deeper operational ruthlessness. He reads like a career intelligence operator who has spent so long inside the machine that he no longer distinguishes between mission logic and moral logic.",
+        "why_actor_wants_this": "This is a premium supporting-lead role for an actor who likes authority with teeth. Broyles gets the best of both worlds: sharp dialogue, tactical command, and a late-film moral collapse that gives the performance real range. The role lives in the same performance space as Josh Brolin in Sicario or Mark Rylance in Bridge of Spies, where calm becomes its own form of menace."
+      },
+      {
+        "name": "Benny",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to 50s playing ageless · physically specific, otherworldly presence",
+        "hook": "Benny is the movie’s enigma: a quiet, self-contained pilot with an ankle monitor, a Coke habit, and a way of speaking that feels both intimate and ancient. He’s observant without being showy, emotionally spare without being cold, and his final reveal reframes everything about his stillness as something far more profound than secrecy. He feels like a man who has learned how to pass among humans without ever fully belonging to them.",
+        "why_actor_wants_this": "This is a prestige-cool role for an actor who can communicate depth through stillness and timing. Benny gets to play mystery, dry humor, physical vulnerability, and a final metaphysical transformation that is both emotional and visual. It’s the kind of part that can land with the quiet authority of Michael Shannon in Take Shelter or Mahershala Ali in Moonlight."
+      },
+      {
+        "name": "Captain Boro",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · African",
+        "hook": "Boro is the river’s seasoned pilot and its philosophical witness. He’s practical, world-weary, and quietly poetic, with the authority of someone who understands the river as both livelihood and graveyard. He gives the movie local intelligence and a grounded moral perspective without ever becoming a speechifying guide.",
+        "why_actor_wants_this": "This is a rich character part for an actor who can carry wisdom, irony, and lived-in authority in a few lines. Boro has the kind of presence that makes a supporting role memorable, especially in scenes where he frames the river’s scale and danger. It’s the sort of part that can resonate like Djimon Hounsou in Blood Diamond or Delroy Lindo in Da 5 Bloods."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget positioning",
+        "detail": "This plays as a mid-to-upper-mid budget genre feature: one major boat set, jungle exteriors, a refinery environment, a temple build, and a contained but effects-driven finale. The scale is concentrated rather than sprawling, which makes it easier to target as a premium streamer or theatrical event piece.",
+        "source": "production"
+      },
+      {
+        "area": "Casting footprint",
+        "detail": "The script supports a strong international ensemble with African, Congolese, and American roles, plus a military/contractor team that can be cast for texture and chemistry. The lead roles are distinct enough to attract recognizable talent while still leaving room for discovery in the supporting cast.",
+        "source": "production"
+      },
+      {
+        "area": "Effects and spectacle",
+        "detail": "The alien craft, time distortion, and final strike sequence give the film a clear VFX identity without requiring constant heavy effects throughout. That makes the visual spend feel concentrated around the reveal and climax.",
+        "source": "production"
+      },
+      {
+        "area": "Audience lane",
+        "detail": "The material sits at the intersection of military thriller, survival adventure, and speculative sci-fi, which gives it a broad genre audience while still feeling adult and elevated. The emotional entry point through Reese helps widen the appeal beyond hard sci-fi buyers.",
+        "source": "script"
+      },
+      {
+        "area": "Content profile",
+        "detail": "The script is mature in language, violence, and thematic material, with torture, gunfire, civilian casualties, and body-horror imagery. That places it naturally in the premium/streaming theatrical lane rather than family or broad four-quadrant territory.",
+        "source": "script"
+      },
+      {
+        "area": "Clearance and branding",
+        "detail": "The script includes several named brands and references that would need clearance decisions in production, including Coke, Minnie Mouse, McDonalds, Boar’s Head, Harry Potter, Call of Duty, Copenhagen, Monster, and specific firearm/manufacturer references.",
+        "source": "script"
+      }
+    ]
+  },
+  "weightedScore": 75.7,
+  "tier": "Optionable",
+  "inputTokens": 37938,
+  "outputTokens": 4042,
+  "cost": 0.046642499999999996
+}

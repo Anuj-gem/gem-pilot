@@ -1,0 +1,256 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical thriller",
+      "genre_tags": [
+        "crime",
+        "psychological drama"
+      ],
+      "tone": "Gritty, noir-leaning, morally corrosive, and increasingly obsessive"
+    },
+    "positioning_hook": "Eliot Ness hunts Cleveland’s torso killer while his marriage, reputation, and moral center collapse under the city’s political machinery.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear, sellable engine: a famous lawman, a notorious unsolved serial-killer case, and a high-stakes public pursuit that escalates into a personal and political nightmare. The opening at the Clifton Club, the Kingsbury Run discovery, and the later public pressure around Dolezal give the story a strong true-crime pull with prestige-drama appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands immediately in the opening pages: Eliot Ness relocates to Cleveland and is pulled into the Torso Murders, a case that becomes both a manhunt and a referendum on his identity. The script keeps the central question clean throughout — who is the butcher, and what will Ness sacrifice to be seen as the man who catches him?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ness is built as a contradiction machine: celebrated and insecure, principled and vain, public hero and private fraud. Edna, Marlow, Evaline, and Francis each press on a different side of him, giving the feature a strong relational spine. The character design is especially actor-friendly because every major scene asks someone to reveal a hidden self."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is turning a historical crime story into a psychological and political descent, with the serial-killer hunt becoming a mirror for Ness’s own self-mythology. The tonal choice to make the city’s elite, the police, and the mob all part of the same ecosystem gives the material a sharper edge than a standard procedural biopic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story moves with real forward pressure: discovery, investigation, false suspect, political interference, escalation, and final exposure. The Dolezal sequence, the Kingsbury Run roundup, and the final house-on-the-hill confrontation all provide strong set-piece momentum, while the emotional engine keeps the pages turning."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script feels like a familiar historical crime canvas made newly combustible by its central idea: the man famous for catching Capone is undone by a case that can’t be solved cleanly, and may require him to become something uglier than a lawman. The revelation that the killer is Francis Sweeney gives the story a sharp, inevitable sting."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Cleveland in the 1930s feels lived-in and stratified: the Clifton Club, City Hall, the police station, Kingsbury Run, the morgue, the asylum, and the mob spaces all carry distinct social rules. The script understands class pressure, political theater, and the city’s hidden geography, making the setting feel like an engine rather than a backdrop."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: period noir with true-crime dread, political cynicism, and intimate marital fracture. Scenes like the club confrontation, the creek discovery, the bird motif, and the burn of Kingsbury Run create a consistent atmosphere of rot beneath polish."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the murder story is a deeper study of performance, masculinity, public myth, and the cost of being admired for the wrong reasons. Ness, Edna, Marlow, and Evaline all suggest lives larger than the plot, and the script keeps opening new emotional chambers as the case advances."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The script has a strong web of tensions: Ness/Edna, Ness/Marlow, Ness/Burton, Ness/Sweeney, Edna/Francis, and Marlow’s professional and personal entanglements. The relationships don’t just support the plot; they actively generate it, especially as loyalty, desire, and status keep colliding."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 5,
+        "series_regulars": 10,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in his 30s for Eliot Ness",
+          "Female lead in her 30s for Edna Ness",
+          "Male supporting roles in 30s-50s for Marlow, Burton, Sweeney, Davis, Big Paulie, Fritchey",
+          "One child role in the Kingsbury Run tent city sequence",
+          "One or more roles require period-specific physicality and 1930s styling"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Approximately 60/40 interior-heavy with multiple exterior city and industrial sequences",
+        "period_or_contemporary": "Period (1930s)",
+        "notable_requirements": [
+          "Period Cleveland civic interiors",
+          "Club ballroom and veranda builds",
+          "Kingsbury Run shantytown/tent city",
+          "Ravine/creek and industrial district exteriors",
+          "Hospital, morgue, police station, asylum, and train station settings"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily period environment enhancement, fire extension, and possible cleanup/continuity work for city and shantytown vistas",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical fire sequence, car chase, body makeup/prosthetics for mutilation scenes, blood effects, hanging body, and corpse arrangement work",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Eliot Ness, Edna Ness, Harold Burton, Martin Sweeney, Clayton Fritchey, Leonard Keeler, and other historical figures"
+        },
+        {
+          "type": "real_person",
+          "detail": "Al Capone referenced by name"
+        },
+        {
+          "type": "real_person",
+          "detail": "Frank Dolezal, Francis Sweeney, and the Cleveland Torso Murders case elements"
+        },
+        {
+          "type": "named_music",
+          "detail": "Jazz band performance and period music cues are present, but no specific copyrighted songs are named"
+        },
+        {
+          "type": "brand",
+          "detail": "Plain-Dealer newspaper is named"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical case material and any archival likenesses or sourced depictions may require clearance depending on production approach"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical, prestige streamer, or festival-to-platform feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong awards-friendly and true-crime audience positioning; best suited to a prestige launch rather than family or broad four-quadrant play"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Historical true-crime premise",
+          "what_it_means": "The script taps a real unsolved American case with built-in public fascination, which gives it instant legitimacy and a ready-made audience lane for prestige crime storytelling.",
+          "evidence": "The Cleveland Torso Murders, Eliot Ness’s Cleveland tenure, and the Mad Butcher investigation are all woven directly into the premise and plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lead character contradiction",
+          "what_it_means": "Ness is written as a star part: a man whose public legend is constantly at war with his private insecurity, vanity, and need for recognition. That contradiction is actor bait and gives the film its emotional voltage.",
+          "evidence": "He is celebrated as a hero, resents the spotlight, chases the killer obsessively, and is repeatedly exposed as someone who wants the myth as much as the mission.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Political-crime ecosystem",
+          "what_it_means": "The story isn’t just a whodunit; it’s a civic power drama where police, politicians, mobsters, and the press all shape the outcome. That widens the commercial lane beyond serial-killer material into prestige institutional drama.",
+          "evidence": "Burton, Sweeney, Davis, Fritchey, Big Paulie, and the police hierarchy all actively interfere with or redirect the investigation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Strong female spine",
+          "what_it_means": "Edna is not decorative; she is the emotional counterweight to Ness and the script’s clearest moral voice. That gives the film a richer domestic dimension and a more sophisticated adult audience appeal.",
+          "evidence": "Her scenes with Ness, Francis, and the bird motif track loneliness, self-possession, and the cost of living beside a public myth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Marlow as emotional and procedural partner",
+          "what_it_means": "Marlow gives the film a second engine: a grounded detective who can carry investigation, conscience, and loyalty. He makes the story feel playable and gives the lead a dynamic counterpart.",
+          "evidence": "He shadows Ness through the case, questions the roundup, and ultimately becomes the person who can still tell Ness the truth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Memorable villain reveal",
+          "what_it_means": "Francis Sweeney’s reveal as the butcher is commercially potent because it recontextualizes the social world around Ness and turns a polished insider into the hidden monster. That kind of reveal plays strongly in a feature audience setting.",
+          "evidence": "He is introduced as charming, politically connected, and intimate with Edna before the basement lab reveal confirms him as the killer.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Set-piece design",
+          "what_it_means": "The script is built around cinematic sequences — the creek discovery, the car chase, the Kingsbury Run roundup, the house-on-the-hill confrontation, and the asylum handoff — which gives producers a clear sense of movie moments.",
+          "evidence": "Several sequences are staged as visual and emotional tentpoles rather than dialogue-only exposition.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Period texture and production value",
+          "what_it_means": "The 1930s civic and industrial world is specific enough to feel premium, but contained enough to be producible with smart design. That makes it attractive for a prestige feature slate.",
+          "evidence": "Clifton Club, City Hall, the shantytown, the morgue, the train station, and the asylum all create a strong period canvas.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a prestige historical crime feature with a sharp commercial spine: a famous lawman, a notorious unsolved murder case, and a city where politics, class, and ego are as dangerous as the killer. The script gives producers a big actor role in Eliot Ness, a rich supporting web around Edna and Marlow, and a finale that turns public myth into private ruin."
+    },
+    "lead_characters": [
+      {
+        "name": "Eliot Ness",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "A clean-cut civic celebrity who carries himself like America’s ideal lawman while privately running on vanity, insecurity, and a desperate need to matter. Ness is all surface discipline and buried appetite: he wants to be honorable, but he also wants the world to witness his greatness. That contradiction gives him heat in every room, whether he’s charming a crowd, bullying a suspect, or unraveling in private. He’s a man built out of image, and the script keeps asking what’s left when the image cracks.",
+        "why_actor_wants_this": "This is the kind of role actors chase because it offers authority, fragility, and moral collapse in one package. He gets speeches, confrontation scenes, physical pursuit, and a full emotional arc from celebrated public figure to haunted, compromised man. The part lives in the same dramatic space as Daniel Day-Lewis in There Will Be Blood or Bryan Cranston in the final stretch of Breaking Bad: a character whose self-mythology becomes the drama."
+      },
+      {
+        "name": "Edna Ness",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Edna is intelligent, observant, and emotionally armored — the one person in the story who can see through Ness without being seduced by his legend. She carries herself with restraint, but the script gives her a sharp wit, a private loneliness, and a quiet refusal to disappear into her husband’s public life. Her scenes with Francis, the bird, and the domestic rituals at home make her feel like a fully inhabited adult, not a spouse accessory.",
+        "why_actor_wants_this": "This is a prestige supporting-lead role with real scene-stealing potential. It offers emotional intelligence, subtext, and a slow-burn interior life that can play beautifully in close-up. The part has the kind of contained, devastating power that recalls performances like Julianne Moore in Far from Heaven or Olivia Colman in The Lost Daughter."
+      },
+      {
+        "name": "Peter Marlow",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Marlow is the story’s conscience and witness: a capable detective who understands the city’s underbelly and gradually realizes the man he serves is becoming as dangerous as the case he’s chasing. He’s quiet, observant, and emotionally disciplined, but the script lets him carry shame, loyalty, and moral clarity without turning him into a sermon. He’s the person in the room who can still see the truth when everyone else is performing.",
+        "why_actor_wants_this": "This is a strong, grounded role for an actor who wants to play intelligence and restraint with real emotional consequence. He gets to be the audience’s proxy, the procedural engine, and the one man who can finally tell Ness the truth. The role sits in the lane of Michael Shannon in Take Shelter or Mark Ruffalo in Spotlight: contained, humane, and quietly devastating."
+      },
+      {
+        "name": "Francis Sweeney",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Francis is polished, politically connected, and socially fluent — the kind of man who can sit at a club table, charm a wife, and hide a slaughterhouse beneath the manners. He’s written with a chilling duality: urbane enough to disarm, predatory enough to terrify, and intimate enough to make the betrayal land hard. The script uses him as both a social threat and a physical one, which makes him unusually potent as a villain.",
+        "why_actor_wants_this": "This is a deliciously dangerous role because it starts as charm and ends as revelation. An actor gets to play wit, menace, seduction, and brutality, with a final-act turn that redefines the whole movie. It has the kind of elegant rot that actors lean into in performances like Ralph Fiennes in Schindler’s List or Michael Fassbender in Shame."
+      },
+      {
+        "name": "Paul Marlow",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "A haunted cop with a private life and a public job, Marlow is the rare supporting character who feels like he has his own weather. He’s cautious, decent, and increasingly trapped between institutional loyalty and moral disgust, which gives him a lived-in sadness that deepens the film’s world.",
+        "why_actor_wants_this": "This is a rich supporting role for an actor who excels at contained conflict and emotional understatement. He gets to be the investigator, the confidant, and eventually the man who walks away from the myth. The part has the moral gravity of a John C. Reilly or Shea Whigham type role in a prestige crime drama."
+      },
+      {
+        "name": "Edna Ness",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "A poised, intelligent woman who understands the performance of marriage better than her husband does. She’s practical on the surface, but the script gives her a sharp emotional intelligence and a quiet hunger for honesty that makes every scene with her feel charged.",
+        "why_actor_wants_this": "This is a strong prestige supporting role with real subtext and a lot of playable silence. It gives an actor the chance to play dignity, hurt, wit, and self-possession in a period setting that rewards precision. The role has the emotional complexity of a Rachel Weisz or Rebecca Hall part in a character-driven drama."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget lane",
+        "detail": "This plays as a mid-budget prestige feature: period interiors, a few major exteriors, one large fire sequence, a car chase, and practical body-horror elements, but no heavy VFX dependence.",
+        "source": "production"
+      },
+      {
+        "area": "Casting strategy",
+        "detail": "The project benefits from recognizable adult actors in the Ness/Edna/Sweeney/Marlow cluster, with the lead role especially suited to a star who can carry public charisma and private fracture.",
+        "source": "both"
+      },
+      {
+        "area": "Awards and prestige positioning",
+        "detail": "The combination of historical crime, civic corruption, and a psychologically compromised hero gives the film a strong awards-season and prestige-streamer profile.",
+        "source": "both"
+      },
+      {
+        "area": "Content level",
+        "detail": "The material is mature, with graphic murder imagery, coercion, political violence, and emotional infidelity, which places it firmly outside broad four-quadrant family viewing.",
+        "source": "script"
+      },
+      {
+        "area": "Period authenticity",
+        "detail": "The script depends on convincing 1930s Cleveland texture — wardrobe, vehicles, civic spaces, press culture, and class distinctions — so production design will be a major value driver.",
+        "source": "production"
+      },
+      {
+        "area": "Historical/IP handling",
+        "detail": "Because the story uses real figures and a famous unsolved case, producers will want a clear clearance and fact-pattern strategy for names, likenesses, and any archival or sourced references.",
+        "source": "production"
+      }
+    ]
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 39159,
+  "outputTokens": 4232,
+  "cost": 0.04841325
+}

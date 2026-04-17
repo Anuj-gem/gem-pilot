@@ -1,0 +1,251 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Comedy-Drama",
+      "genre_tags": [
+        "Showbiz",
+        "Meta",
+        "Ensemble"
+      ],
+      "tone": "Warm, profane, self-aware, and emotionally sincere with satirical industry humor"
+    },
+    "positioning_hook": "A North Carolina collectibles-store crew turns a beloved sci-fi franchise into a fan-made production, where ego, fandom, and family collide into a real movie.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate fan-culture appeal, a clear underdog engine, and built-in wish-fulfillment around making movies from the margins. The convention episodes, the Kickstarter hustle, and the behind-the-scenes chaos give it a very legible hook for viewers who love showbiz stories and fandom worlds."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot lands the concept quickly: a comic shop owner, a washed-up director, a superfan, and a young writer try to mount an unauthorized Space Fleet fan film. The legal/deposition framing, the pitch reel, and the North Dakota production thread make the series engine easy to grasp and easy to keep following."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Kevin’s hustler energy, Jon’s wounded craftsmanship, Manny’s earnest fanaticism, and Tam’s intelligence and hunger create a durable four-way engine. The series repeatedly gives each of them a distinct point of view, from Kevin’s salesmanship to Tam’s voice as a writer to Jon’s quiet competence."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "This is an unusually specific showbiz story with a fan-fiction premise that becomes a genuine emotional workplace ensemble. The script’s willingness to move from legal comedy to fandom satire to family drama to production chaos gives it a confident, unusual identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "Each episode has a clean forward push: find the actor, get the script, secure the set, manage the cast, survive the shoot, and keep the project alive. The escalation from store-level scheming to convention maneuvering to North Dakota production gives the series a strong sense of movement and payoff."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels both novel and inevitable: a fan film as the arena where middle-aged longing, cultural identity, and creative ambition all get tested. The show keeps finding fresh angles on the same engine, especially through the contrast between the fake universe and the very real emotional stakes."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The collectibles store, convention circuit, fan-film set, assisted-living visits, and North Carolina family life all feel lived-in and story-generating. The world has its own hierarchies, rituals, and commerce, from autograph lines to Kickstarter culture to prop authenticity."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is highly identifiable: profane workplace comedy, sincere creative yearning, and fandom absurdism all in the same breath. Scenes like Kevin’s hustles, Manny’s emotional overinvestment, and Tam’s blunt intelligence give the show a distinct voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the comedy, the pilot keeps revealing deeper material about identity, family pressure, aging, validation, and what art means to people who never got their shot. The series has room to keep opening up through Tam’s voice, Jon’s marriage, Kevin’s loneliness, and Manny’s emotional life."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 9,
+        "reasoning": "This is the script’s biggest asset: almost every pairing generates material. Kevin/Jon, Kevin/Manny, Jon/Tam, Tam/Sarah, Kevin/Brian, Manny/Armando, and Tam/Jack all create different kinds of friction, mentorship, temptation, and loyalty."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Ensemble spans 20s to 70s",
+          "Several roles are specific to Vietnamese-American identity",
+          "One major lead is African-American",
+          "Multiple roles are built around older genre-actor casting",
+          "Some fan-film roles require photogenic, convention-ready performers"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with frequent convention, parking lot, and road exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Comic shop/warehouse hybrid",
+          "Convention center and dealer hall",
+          "North Carolina suburban homes",
+          "Big box store converted into a fan-film set",
+          "Assisted living facility",
+          "Rural Virginia church and small-town locations",
+          "Airplane and hotel interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily stylized sci-fi inserts, spaceship viewscreens, laser effects, and occasional composited fan-film imagery",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical props, costumes, makeup scars, fake weapons, and a few action beats; some burning/prop destruction moments",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Catherine Bach, Armando Garcia, and other named actor references"
+        },
+        {
+          "type": "named_music",
+          "detail": "Rick Astley's 'Never Gonna Give You Up'"
+        },
+        {
+          "type": "brand",
+          "detail": "Kickstarter, Vimeo, YouTube, Starbucks, Big 5, Uber, Applebee's, Fox News, Chick-fil-A, United, Wegmans, Seagate, PayPal, OK Cupid, iPhone, iMac, Subaru, BMW, Infiniti, Target, Walmart, Costco, Netflix, UNC, HBCU references"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Space Fleet franchise, episode titles, character names, and all in-world franchise material"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized workplace/creative ensemble driven by the making of a fan film, with each episode advancing production, relationships, and the emotional stakes around fandom and family"
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Ownable series engine",
+          "what_it_means": "The show has a clean, repeatable engine: every episode can track the next obstacle in making the fan film while deepening the personal lives of the people building it. That gives producers both a strong hook and a built-in season structure.",
+          "evidence": "The pilot moves from pitch reel to deposition framing to convention recruiting to North Dakota production, then keeps escalating the project through casting, rewrites, and set conflict.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ensemble chemistry",
+          "what_it_means": "This is a true four-hander, not a single-lead show. Kevin’s hustle, Jon’s craft, Manny’s fandom, and Tam’s voice create a combinatorial relationship engine that can sustain many episodes.",
+          "evidence": "Kevin and Jon argue like old collaborators, Manny and Tam spar over canon and taste, and Tam’s dynamic with Sarah and later Jack adds a separate emotional lane.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Actor-friendly roles",
+          "what_it_means": "The central parts are built for performers who like contradiction: Kevin is funny and manipulative, Jon is grounded but yearning, Manny is comic but deeply sincere, and Tam is smart, funny, and emotionally combustible.",
+          "evidence": "Kevin’s salesmanship, Jon’s quiet heartbreak, Manny’s devotion to Wingood, and Tam’s transition from student to writer to creative force all give the cast playable turns.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Fandom world texture",
+          "what_it_means": "The script understands fan culture as a real economy and a real identity, not just a joke. That makes the world feel specific and commercially legible to genre audiences.",
+          "evidence": "Kickstarter campaigns, autograph lines, prop authenticity, convention booths, fan films, and collector culture all function as story material rather than background dressing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Showbiz satire with heart",
+          "what_it_means": "The series can play as a comedy about low-budget production chaos while still landing emotional stakes about aging, validation, and the need to be seen. That broadens the audience beyond pure genre fans.",
+          "evidence": "The script keeps pairing absurd industry behavior with sincere scenes about family, regret, and the desire to make something meaningful.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Cultural specificity",
+          "what_it_means": "Tam’s Vietnamese-American perspective gives the series a fresh point of view and a meaningful emotional center. It also opens the show beyond the usual fanboy frame.",
+          "evidence": "Her family pressure, her identity as the only Asian girl in school, and her eventual decision to write from her own experience all become part of the series’ emotional architecture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Production-friendly core concept",
+          "what_it_means": "The show is built around a contained, repeatable production footprint: store, warehouse, homes, convention spaces, and a single fan-film set. That makes it scalable and slate-friendly.",
+          "evidence": "Most of the action lives in practical interiors and a few recurring locations, with sci-fi spectacle largely implied through props, costumes, and modest VFX.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Built-in season escalation",
+          "what_it_means": "The pilot and subsequent episode material show a natural ladder of escalation: find the script, secure the cast, fight over the story, shoot the movie, and then confront what the movie means to each character.",
+          "evidence": "The later episodes move from recruiting actors to rewriting the script to battling over casting to actually mounting production, which gives the series a clear long-form trajectory.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, highly producible ensemble series with a real engine: a fan film becomes the pressure cooker where ambition, identity, and fandom collide. The writing gives producers a clear hook, actors juicy contradictions, and a world rich enough to keep generating story well past the first season."
+    },
+    "lead_characters": [
+      {
+        "name": "Kevin Marshall",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Kevin is a fast-talking entrepreneur with the soul of a hustler and the insecurity of a lifelong outsider. He’s funny, shameless, and always selling, but underneath the pitchman energy is a man desperate to matter, to build something, and to prove he’s not the family joke. He’s the engine of the show’s chaos and the guy who can turn fandom into commerce in a single breath.",
+        "why_actor_wants_this": "This is a juicy comic lead with real dramatic range: big laughs, salesmanship, humiliation, charm, and flashes of loneliness. It’s the kind of part that lets an actor play both the guy in the room who’s driving the action and the guy who’s secretly the most wounded. The role lives in the same performance space as a high-wire comic operator with emotional depth, the kind of part that can showcase timing and vulnerability in equal measure."
+      },
+      {
+        "name": "Jon Cooper",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to 40s",
+        "hook": "Jon is a grounded, quietly gifted former filmmaker who has buried his ambition inside family life and a day job. He’s the show’s conscience and craftsperson: the one who actually understands story, blocking, and emotional truth, but who keeps getting pulled back into the dream he thought he left behind. He’s tender, self-effacing, and deeply alive when he’s making something.",
+        "why_actor_wants_this": "This is a prestige-drama lead disguised as a working-man role. The part offers restraint, intelligence, and a slow-burn emotional life, with scenes that let an actor turn mentorship, marriage, and creative frustration into something deeply playable. It has the same appeal as a quietly devastating, observant lead who can carry both domestic scenes and creative-process scenes with authority."
+      },
+      {
+        "name": "Tam Nguyen",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s · Vietnamese-American",
+        "hook": "Tam is the breakout voice of the series: sharp, funny, self-possessed, and carrying a private pressure cooker of family expectation and personal ambition. She starts as the smart young employee in the room and becomes the writer whose perspective changes the whole project. She’s intellectually fearless, emotionally guarded, and increasingly unwilling to let other people define her future.",
+        "why_actor_wants_this": "This is the kind of role that can launch an actor. Tam gets wit, authority, vulnerability, cultural specificity, and a genuine coming-into-power arc. The part has the showcase quality of a smart, modern young woman who can carry scenes with bite and then land emotional truth without sentimentality."
+      },
+      {
+        "name": "Manny Bell",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to 50s · African-American",
+        "hook": "Manny is the purest fan in the room, but he’s not a joke; he’s the emotional heart of the enterprise. He’s earnest, overtalkative, deeply sincere, and often hilariously out of his depth, yet his love for Space Fleet is rooted in identity, belonging, and a childhood vision of a better world. He’s the one who makes the fandom feel human.",
+        "why_actor_wants_this": "This is a rich comic-supporting lead with soul. The role lets an actor play enthusiasm, innocence, dignity, and emotional release, often in the same scene. It has the kind of warmth and specificity that can become a signature part for a performer who wants to do comedy without sacrificing humanity."
+      },
+      {
+        "name": "Brian Schmidt",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s",
+        "hook": "Brian is the charismatic, controlling fan-producer who believes he is the Captain in every room he enters. He’s a bully, a visionary, a salesman, and a man who can turn sincerity into leverage in a heartbeat. He’s also absurdly funny because he takes his own mythology completely seriously.",
+        "why_actor_wants_this": "This is a deliciously unlikable, high-energy role with real comic authority. An actor gets to play dominance, vanity, insecurity, and performative masculinity, while still making the character magnetic enough that everyone has to deal with him. It’s a scene-stealing part with strong recurring potential."
+      },
+      {
+        "name": "Armando Garcia",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Armando is the aging genre icon who knows exactly how the game works and still carries himself like a professional. He’s gracious, weary, funny, and capable of sudden authority. He understands fandom, performance, and mortality all at once, which gives him an almost mythic presence in the series.",
+        "why_actor_wants_this": "This is a prestige guest role for an older actor who can bring gravitas, wit, and lived-in authority. The part offers elegant scenes, emotional resonance, and the pleasure of playing a man whose public persona and private exhaustion are always in tension."
+      }
+    ],
+    "considerations": [
+      {
+        "area": "Budget and footprint",
+        "detail": "The series lives in a modest-to-mid budget TV lane, with most scenes in practical interiors and a recurring sci-fi set that can be reused across episodes.",
+        "source": "production"
+      },
+      {
+        "area": "Casting strategy",
+        "detail": "The show benefits from a mix of recognizable genre veterans, strong character actors, and younger performers who can play convention culture and fan-film performance with specificity.",
+        "source": "both"
+      },
+      {
+        "area": "Audience lane",
+        "detail": "This is especially well-positioned for viewers who like workplace ensembles, fandom satire, and behind-the-scenes creative stories, with enough emotional grounding to reach beyond niche genre audiences.",
+        "source": "script"
+      },
+      {
+        "area": "Serialized engine",
+        "detail": "The episode structure is built around the ongoing production of the fan film, so each installment can advance both the movie itself and the personal lives of the core ensemble.",
+        "source": "script"
+      },
+      {
+        "area": "Content level",
+        "detail": "The material is mature in language and subject matter, with sexuality, harassment, family conflict, and industry cynicism all part of the texture.",
+        "source": "script"
+      },
+      {
+        "area": "Rights and clearances",
+        "detail": "The script is heavily populated with named brands, real people, and franchise references, so a production would want a clear clearance pass and a defined approach to the Space Fleet IP frame.",
+        "source": "production"
+      }
+    ]
+  },
+  "weightedScore": 80,
+  "tier": "Optionable",
+  "inputTokens": 109700,
+  "outputTokens": 3948,
+  "cost": 0.100041
+}

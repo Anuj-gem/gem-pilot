@@ -1,0 +1,247 @@
+{
+  "eval_id": "5738f029-0d39-4a97-8e4b-b64b2c7685e3",
+  "title": "PROTOCOL CarlANorman.pdf",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction thriller",
+      "genre_tags": [
+        "horror",
+        "corporate satire"
+      ],
+      "tone": "Grounded, eerie, escalating, and bleakly darkly comic"
+    },
+    "positioning_hook": "A Black orbital depot supervisor discovers his crew are corporate assets in a collapsing station where reality itself is being processed, and he has to outrun the system before it files them away.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean, high-stakes engine: a corporate space station, a hidden insurance scheme, and a survival countdown that turns abstract bureaucracy into immediate danger. The hook is legible to genre audiences and has strong trailer moments, especially once the crew learns they are line items and the station begins physically collapsing."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script establishes its premise early through the broken Sim-Gate, the insurance valuation matrix, and the revelation that the crew are treated as assets. The story engine is easy to summarize in two sentences, and the escalation from workplace unease to orbital catastrophe is clear and cumulative."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Miller, Sarah, Vance, and Dr. Aris each have distinct voices and useful contradictions: Miller\u2019s stoic vigilance, Sarah\u2019s blunt emotional intelligence, Vance\u2019s nervous brilliance, and Aris\u2019s dry authority. The ensemble feels playable and actor-friendly, with relationships that keep generating pressure as the station turns on them."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script\u2019s boldest move is making corporate language, insurance logic, and systems engineering the language of horror. The repeated idea that the station is not just failing but learning, classifying, and reassigning people gives the material a fresh conceptual edge."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The escalation is strong and persistent: anomaly, revelation, quarantine, orbital decay, decompression, crash, escape, final reveal. The back half especially keeps tightening the vise, with each systems failure converting into a new survival problem."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a familiar survival-thriller shape made strange in a memorable way: the threat is not just a monster or malfunction, but a corporate system that has already decided what the crew are worth. The ending reveal reframes the whole story as a processed asset transfer, which lands with a clean, unsettling inevitability."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The depot feels lived-in and operational, with maintenance trusses, Sim-Gate infrastructure, PPE protocols, legacy systems, and a very specific workplace hierarchy. The world is not decorative; it generates plot through technical dependencies, corporate procedure, and physical constraints."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: deadpan workplace banter, corporate absurdity, and creeping cosmic dread all coexist in the same frame. The script can pivot from a coffee joke to a body-horror system readout without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the immediate survival plot is a larger idea about labor, identity, classification, and what it means to be processed by a system that speaks in neutral language. The final Technician reveal suggests a wider machinery behind the depot, giving the story a deeper mythic and institutional aftertaste."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Miller/Sarah/Vance/Dixon/Riggs/Aris web creates recurring friction, alliance shifts, and class tension that keep scenes alive. The group dynamic is strong enough that different pairings produce different energy, especially once trust starts collapsing."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Miller is written as a Black man in his 40s",
+          "Dr. Aris is written as a dry, very British woman in her 50s",
+          "Hendrix is written as a very tall man (7'2\")",
+          "Ensemble includes multiple age ranges and distinct voice-driven roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with a small number of exterior EVA/lifepod sequences",
+        "period_or_contemporary": "Near-future / futuristic",
+        "notable_requirements": [
+          "Orbital depot interior",
+          "Sim-Gate environment printer space",
+          "Maintenance truss exterior EVA work",
+          "Lifepod platform and lifepod interior",
+          "Monochromatic preservation/archive room for final reveal"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Space exterior, orbital station environment, holographic interfaces, simulation distortions, environmental printing effects, decompression visuals, station collapse, and final preservation-room reveal all require digital support.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical set dressing, lighting shifts, pressure/decompression effects, smoke/heat, and a few body-compression and environmental hazard moments.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "The script references 'Andy Williams territory' and a 56K modem sound cue in the ending atmosphere."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or genre-theatrical potential; the concept is self-contained but franchise-adjacent in its world-building."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained cast and mostly interior station sets keep it manageable, but the space setting, simulation effects, and collapse sequence push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is compact, but it includes specific identity and physical casting requirements, including a very tall supporting role and a Black lead."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story is largely contained to one orbital depot, with a handful of exterior EVA and lifepod sequences that add technical complexity without broadening the footprint too far."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes body horror, decompression death, corporate cruelty, and strong language, but it stays within a genre-thriller lane rather than explicit territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "There are no major real-person, brand, or IP dependencies beyond a few generic music and sound references."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns labor into horror.",
+          "what_it_means": "This is a clean, commercial engine with thematic bite: a crew learns they are literally being valued, processed, and managed as assets. That gives the movie a sharp identity beyond survival mechanics and makes the stakes feel both visceral and contemporary.",
+          "evidence": "The insurance valuation matrix labels the crew as 'ASSET' and assigns Miller a $4.2 million value.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The corporate world is the monster.",
+          "what_it_means": "The antagonistic force isn\u2019t a random alien or rogue machine; it\u2019s a system of procedure, classification, and compliance that keeps reasserting itself. That\u2019s a strong buyer-facing angle because it gives the film a recognizable emotional target and a modern satirical edge.",
+          "evidence": "Riggs repeatedly frames death and danger as contract language, reimbursement, and protocol.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The station feels operational and specific.",
+          "what_it_means": "The depot has enough technical texture to feel real without becoming inaccessible. Sim-Gates, telemetry, PPE, relay nodes, and orbital decay all create a lived-in environment that can support both suspense and world-building.",
+          "evidence": "The script moves through commons, control rooms, maintenance trusses, quarantine spaces, and lifepod systems with clear functional detail.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Miller is a strong anchor role.",
+          "what_it_means": "He\u2019s observant, restrained, and morally awake in a world that rewards numbness. That combination gives the film a lead with authority and interiority, the kind of part actors can build around without needing speeches to carry the movie.",
+          "evidence": "Miller notices the pencil break, the timing of the claim, the station\u2019s drift, and the crew\u2019s subtle shift away from him before anyone else does.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sarah brings emotional voltage.",
+          "what_it_means": "She cuts through the procedural language with blunt truth and social intelligence, which gives the movie a human counterweight to Miller\u2019s stoicism. She\u2019s the kind of role that can pop in a crowded ensemble and keep scenes alive.",
+          "evidence": "Sarah calls out the crew\u2019s status as inventory, clocks Miller\u2019s avoidance, and snaps Vance back into focus with a hard slap and a sharper read.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has distinct playable voices.",
+          "what_it_means": "Each major character has a clear rhythm and function, which is valuable for casting and for keeping the movie from becoming a one-note survival piece. The banter feels character-specific rather than generic exposition delivery.",
+          "evidence": "Dixon\u2019s profanity, Vance\u2019s nervous precision, Aris\u2019s dry British edge, and Riggs\u2019 managerial coldness all read distinctly on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The escalation is elegantly mechanical.",
+          "what_it_means": "The movie keeps converting abstract system failures into physical danger: shrinking air clearance, decompression, suit compression, station collapse, and final asset transfer. That makes the thriller feel inevitable rather than episodic.",
+          "evidence": "The six-millimeter drift becomes orbital decay, then decompression, then the depot\u2019s collapse, then the final preservation-room reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending reframes the whole story.",
+          "what_it_means": "The final Technician reveal gives the script a memorable aftertaste and expands the world beyond the depot without needing sequel bait. It suggests a larger machine of collection and preservation, which is exactly the kind of final-image twist that can stick with buyers.",
+          "evidence": "The monochromatic preservation room, the asset drawer labels, and the Technician\u2019s calm inventory language.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, producible sci-fi thriller with a sharp corporate-horror identity and a lead role built for an actor who can play restraint under pressure. The script\u2019s best asset is its concept: a crew on an orbital depot discovers they\u2019re not employees, they\u2019re inventory, and the station itself is already processing them."
+    },
+    "lead_characters": [
+      {
+        "name": "Miller McCord",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 40s \u00b7 Black",
+        "hook": "Miller is the kind of lead who carries a room by not needing to. He\u2019s tired, observant, and deeply controlled, with a quiet intelligence that keeps registering the wrongness in the system before anyone else does. He doesn\u2019t perform heroism; he endures, calculates, and finally acts when the math becomes undeniable. The role has gravity because his restraint is the point \u2014 he\u2019s a man who has learned to survive by reading the room, and the room is now reading him back.",
+        "why_actor_wants_this": "This is a showcase for contained intensity, precision, and slow-burn authority. An actor gets to play suspicion, moral clarity, and physical survival without ever losing the internal engine. It lives in the same performance space as John Boyega in 'Detroit' or Mahershala Ali in 'Moonlight' when the character\u2019s stillness becomes the dramatic event."
+      },
+      {
+        "name": "Sarah Beaumont",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 40s",
+        "hook": "Sarah is the crew\u2019s truth-teller: sharp, unsentimental, funny when she needs to be, and emotionally braver than the men around her. She reads people instantly and refuses to let corporate language sanitize what\u2019s happening in front of her. There\u2019s warmth under the steel, which makes her feel like the person you\u2019d want beside you when the system starts lying. She\u2019s grounded, charismatic, and built on the kind of lived-in confidence that makes every scene better.",
+        "why_actor_wants_this": "This is a juicy, adult role with bite, humor, and authority \u2014 the kind of part that lets an actor dominate scenes without overplaying them. It has the same kind of lived-in force as Viola Davis in 'Widows' or Regina King in 'If Beale Street Could Talk' when intelligence and feeling are both fully present."
+      },
+      {
+        "name": "Vance Matheson",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 40s",
+        "hook": "Vance is the brilliant nervous system of the movie: fast-thinking, fussy, and always one step away from panic, but never actually useless. He\u2019s the guy who can see the architecture of the problem, which makes him indispensable once the station starts failing at scale. His energy is restless and comic until it becomes essential, and then he turns into the person everyone needs in the room.",
+        "why_actor_wants_this": "This is a high-functioning, high-strung role with real range \u2014 comedy, anxiety, technical competence, and eventual command. It gives an actor a chance to play the pressure-cooker version of a smart operator, in the lane of Paul Dano in 'The Batman' or Jesse Plemons in 'Game Night' when intelligence and unease are doing the work."
+      },
+      {
+        "name": "Dr. Patricia Aris",
+        "role_type": "Lead",
+        "demographics": "Female \u00b7 50s \u00b7 British",
+        "hook": "Dr. Aris is dry, exacting, and quietly fearless, with the kind of authority that doesn\u2019t need to announce itself. She\u2019s the one who can look at a catastrophe and immediately identify the exit, but she\u2019s also sharp enough to see the human cost behind the system. Her wit is clipped, her patience is limited, and her competence makes her magnetic.",
+        "why_actor_wants_this": "This is a premium supporting-lead role for an actor who can play intelligence as presence. It offers the same kind of crisp authority and dry control as Olivia Colman in 'The Father' or Emily Watson in 'Chernobyl' \u2014 a role where one look can change the temperature of a scene."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who loves contained sci-fi with escalating dread and social satire.",
+        "detail": "This material rewards precision: spatial storytelling, pressure-cooker blocking, and a confident visual language for systems breaking down in real time. It also gives a director a chance to make corporate procedure feel terrifying, which is a strong lane for someone who likes genre with thematic teeth."
+      },
+      "buyer_appeal": {
+        "tier": "$8-20M feature",
+        "lane": "Premium genre thriller / elevated sci-fi horror lane",
+        "detail": "This is sized for a contained, effects-aware feature that can travel on concept, cast, and tone rather than spectacle. The setting is limited enough to keep the footprint disciplined, while the hook is strong enough for genre buyers, streamers, and festival-to-platform positioning."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The final reveal opens a bigger mythology.",
+        "detail": "The Technician/preservation-room ending is a strong button, and a future pass could consider how much of that larger system you want to foreground versus preserve as a final sting. Keeping the reveal clean protects the mystery and lets the audience feel the scale without over-explaining it.",
+        "source": "script"
+      },
+      {
+        "area": "The ensemble is strongest when it stays character-specific.",
+        "detail": "The banter and workplace friction are a real asset, and the script benefits when each voice stays sharply differentiated. Continuing to foreground Sarah\u2019s blunt clarity, Vance\u2019s technical panic, Dixon\u2019s swagger, and Aris\u2019s dry precision will keep the group dynamic vivid.",
+        "source": "script"
+      },
+      {
+        "area": "The corporate language is the movie\u2019s signature.",
+        "detail": "The contract, insurance, and asset vocabulary is one of the most ownable parts of the script, so it\u2019s worth protecting that language as the story escalates. The more the horror is expressed through procedure and classification, the more specific and memorable the film becomes.",
+        "source": "script"
+      },
+      {
+        "area": "The physical scale stays disciplined.",
+        "detail": "This plays cleanly in a contained feature lane, with one primary environment and a handful of exterior and escape sequences. That makes it attractive for producers looking for a genre piece with a controlled footprint and clear production design priorities.",
+        "source": "production"
+      },
+      {
+        "area": "Miller\u2019s restraint is the lead\u2019s engine.",
+        "detail": "The role works because he withholds, observes, and then commits; that internal pressure is the movie\u2019s spine. A future pass could continue to foreground the personal cost of that restraint so the final act lands with even more emotional force.",
+        "source": "script"
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "eval_id": "41532709-22b1-45ed-897c-47887f5ff5c4",
+  "title": "Captain Jimmy's Number",
+  "declared_format": "Feature film",
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Biographical drama",
+      "genre_tags": [
+        "War drama",
+        "Romantic drama"
+      ],
+      "tone": "Earnest, nostalgic, emotionally heightened, reverent"
+    },
+    "positioning_hook": "A haunted Jimmy Stewart returns from WWII and confronts his trauma, his legacy, and the love that keeps him in Hollywood.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: a beloved American icon wrestling with war trauma, fame, and romance. The appeal is strongest for adult audiences, classic-film fans, and prestige-biopic viewers rather than a broad four-quadrant crowd."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands immediately: the man watching 'It\u2019s a Wonderful Life' is Jimmy Stewart, and the film uses that frame to reveal the war experience that changed him. The number-on-the-dog-tag reveal gives the story a clean, memorable engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Stewart is a strong lead role because he\u2019s built on contradiction: charming star, decorated war hero, and emotionally frayed survivor. Capra, Barrymore, and Sullavan each add a distinct pressure point around him, giving the central arc real acting value."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar biopic lane and gives it a strong formal device: the emotional aftermath of war is braided directly into the making and reception of a classic film. The intercutting between screening room, combat, homecoming, and romance creates a distinctive prestige-biopic shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The combat sequence is propulsive and the emotional turns are clear, but the screenplay is more episodic than engine-driven, moving through set-piece memories and conversations rather than a single escalating external objective. The final emotional resolution is satisfying and coherent."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of using 'It\u2019s a Wonderful Life' as a mirror for Stewart\u2019s postwar psyche feels both surprising and inevitable. The dog-tag number match and the emotional logic of George Bailey/Stewart create a strong sense of destiny rather than invention for its own sake."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Postwar Hollywood, wartime airfields, Beverly Hills homes, and small-town Pennsylvania are all rendered with specific period texture. The world is rich enough to feel lived-in and historically anchored, with the studio system and military hierarchy both clearly present."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is a very particular blend of reverence, melancholy, wartime intensity, and old-Hollywood warmth. It knows exactly what emotional register it wants, and the script stays committed to that classic, sentimental prestige-drama lane."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "On the surface this is a straightforward portrait of a star at a crossroads, but underneath it\u2019s really about survivor\u2019s guilt, identity, and the cost of being the face of hope. The Stewart/Capra/Sullavan triangle suggests deeper emotional and thematic layers."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Stewart-Capra-Barrymore-Sullavan relationships are the engine, and each pairing has a distinct flavor. It\u2019s not a sprawling ensemble piece, but the key relationships are strong enough to generate recurring dramatic energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Requires a strong Jimmy Stewart likeness/embodiment across multiple ages",
+          "Requires recognizable portrayals of Frank Capra, Donna Reed, Lionel Barrymore, Margaret Sullavan, and other historical figures",
+          "Large number of young male military roles in the bomber crew",
+          "Some period-specific age and physical casting for older Barrymore and Stewart's parents"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Period (1925, 1935, 1942, 1944, 1946-47)",
+        "notable_requirements": [
+          "1940s Hollywood studio screening room and office",
+          "Large-scale WWII bomber airfield and aerial combat environments",
+          "Period Beverly Hills home interiors",
+          "Pennsylvania family home and small-town streets",
+          "New York hotel and bar interiors",
+          "Multiple period aircraft and cockpit builds"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Aerial combat, bomber formations, explosions, aircraft damage, and period sky replacements would require substantial visual effects support, though the story is still grounded in practical period environments.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical aircraft interiors, gunfire, flak hits, fire effects, explosion effects, and crash/impact simulation.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "James Stewart, Frank Capra, Donna Reed, Lionel Barrymore, Margaret Sullavan, and other historical figures are central to the story."
+        },
+        {
+          "type": "real_person",
+          "detail": "The screenplay is explicitly inspired by true events and uses biographical depictions of real people and their relationships."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "It\u2019s A Wonderful Life is referenced extensively by title, characters, scenes, and trailer material."
+        },
+        {
+          "type": "named_music",
+          "detail": "Auld Lang Syne is sung on the page."
+        },
+        {
+          "type": "brand",
+          "detail": "RKO Radio Pictures, The Plaza, St. Regis, Romanoff\u2019s, and other named institutions/venues are prominently referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical feature / awards-oriented streamer film",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best suited to a festival-to-platform or limited theatrical release model built on star casting, awards positioning, and classic-Hollywood audience interest."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "The WWII aerial combat, bomber interiors, period aircraft, and multiple historical settings push this into a sizable period-drama budget lane."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script depends on recognizable portrayals of major historical figures and a convincing lead performance as Jimmy Stewart across trauma, charm, and romance."
+        },
+        "location": {
+          "level": "high",
+          "note": "It spans Hollywood, England, Germany, Pennsylvania, New York, and multiple period interiors, plus large-scale airfield and flight sequences."
+        },
+        "content": {
+          "level": "medium",
+          "note": "War violence, death, grief, drinking, and sexual content are all present, but the material remains within prestige-drama boundaries."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The story is built around real people and heavily references 'It\u2019s a Wonderful Life,' requiring careful rights and life-rights navigation."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly legible.",
+          "what_it_means": "A producer can understand the movie in one breath: this is the emotional story behind Jimmy Stewart\u2019s postwar fracture, told through the shadow of a beloved classic. That clarity is a real asset in a crowded prestige-biopic market.",
+          "evidence": "The opening screening-room frame, followed by the flashback to Stewart\u2019s first combat mission and the later dog-tag reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dog-tag reveal is a clean emotional engine.",
+          "what_it_means": "The matching number on Stewart\u2019s tag and the flak fragment gives the story a memorable, cinematic symbol for fate, survival, and survivor\u2019s guilt. It\u2019s the kind of detail that gives a biopic a signature image.",
+          "evidence": "Stewart shows his father the flak fragment and the dog tag, both ending in 210.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jimmy Stewart is a premium lead role.",
+          "what_it_means": "The part offers an actor charm, restraint, humor, vulnerability, and moral gravity in one package. That\u2019s exactly the kind of role prestige actors chase when they want to play a public icon without flattening him.",
+          "evidence": "Stewart\u2019s banter with Barrymore, his combat leadership, and his breakdowns with Capra and his father.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The war material has real scale.",
+          "what_it_means": "The bomber mission is not just background; it\u2019s a major cinematic set piece with clear geography, tension, and emotional consequence. That gives the film an event-quality centerpiece that can support marketing and awards conversation.",
+          "evidence": "The full mission sequence over the North Sea and Germany, including fighter attacks, flak, Obie\u2019s death, and Tex\u2019s plane exploding.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Stewart-Capra relationship gives the film its spine.",
+          "what_it_means": "Their conversations turn the movie into more than a war-memory piece; it becomes a story about an artist trying to return to himself. That mentor dynamic gives the script emotional authority and a strong adult audience appeal.",
+          "evidence": "Capra confronting Stewart about his drinking and despair after the screening.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Margaret Sullavan adds romance with bite.",
+          "what_it_means": "This isn\u2019t a soft nostalgia romance; it\u2019s passionate, witty, adult, and emotionally complicated. That kind of relationship gives the film heat, texture, and a second emotional lane beyond war trauma.",
+          "evidence": "Their flirtation, sexual chemistry, and the final New York hotel confrontation where she tells him he won\u2019t quit acting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period world is rich and exportable.",
+          "what_it_means": "Postwar Hollywood, wartime England, and small-town Pennsylvania all have distinct visual and cultural identities. That gives the film a strong production design canvas and a classic, high-end period feel.",
+          "evidence": "RKO screening room, Beverly Hills homes, bomber airfields, the Stewart family Christmas, and the Plaza/St. Regis material.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional thesis is universal.",
+          "what_it_means": "At its core, the script is about surviving when others didn\u2019t, and finding a reason to keep going. That theme travels well and gives the project a meaningful audience promise beyond celebrity biography.",
+          "evidence": "Stewart\u2019s repeated anguish over the dead crewmen and his father\u2019s insistence that he still has a calling.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige biopic with a strong commercial spine: the emotional story behind Jimmy Stewart\u2019s postwar unraveling, anchored by a memorable fate-driven reveal and a major wartime set piece. The script gives actors, directors, and buyers a classic-Hollywood package with real awards potential, built around a beloved icon, a passionate romance, and the shadow of 'It\u2019s a Wonderful Life.'"
+    },
+    "lead_characters": [
+      {
+        "name": "JAMES \u2018JIMMY\u2019 STEWART",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 late 30s to early 40s \u00b7 white",
+        "hook": "A beloved movie star and decorated war hero who looks like the picture of American decency, but is privately fraying under the weight of combat memory, survivor\u2019s guilt, and the fear that acting has become meaningless. He\u2019s funny, self-effacing, romantic, and deeply wounded, which makes him feel human rather than iconic. The role lives in the tension between public warmth and private collapse.",
+        "why_actor_wants_this": "This is a showcase part for an actor who wants to play an American legend without turning him into a statue. It offers comedy, emotional breakdown, romantic longing, and moral authority, with the kind of interiority that wins awards attention. The closest performance territory is the wounded dignity of Daniel Day-Lewis in 'Lincoln' or the haunted public grace of Gary Cooper in 'High Noon.'"
+      },
+      {
+        "name": "FRANK CAPRA",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 50s \u00b7 Italian-American",
+        "hook": "A passionate, fast-talking director who loves Jimmy like family and sees both the artist and the man underneath the unraveling. He\u2019s warm, blunt, and emotionally intelligent, with the confidence of a filmmaker who knows exactly what his movie is trying to do. He functions as both mentor and conscience.",
+        "why_actor_wants_this": "This is a rich supporting role for an actor who can play authority with affection and a little bite. Capra gets to be funny, exasperated, paternal, and persuasive, which gives the part real scene-stealing potential. The role sits in the same performance space as Tom Wilkinson in 'Michael Clayton' or Paul Giamatti in 'Cinderella Man'\u2014a strong character actor with emotional command."
+      },
+      {
+        "name": "MARGARET SULLAVAN",
+        "role_type": "Supporting",
+        "demographics": "Female \u00b7 30s \u00b7 white",
+        "hook": "A luminous, sharp-tongued, sexually confident actress who knows exactly how much power she has in a room and isn\u2019t afraid to use it. She\u2019s glamorous without being decorative, emotionally direct without losing mystery, and she understands Jimmy in a way no one else does. She\u2019s the film\u2019s romantic voltage and its most alive counterpoint to his restraint.",
+        "why_actor_wants_this": "This is a delicious role for an actress who wants intelligence, sensuality, and emotional authority in the same part. She gets to be playful, provocative, tender, and devastatingly honest, with a final scene that lands like a declaration. The performance lane is close to Cate Blanchett in 'Blue Jasmine' or Michelle Williams in 'My Week with Marilyn'\u2014a woman whose charisma is inseparable from vulnerability."
+      },
+      {
+        "name": "LIONEL BARRYMORE",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 late 60s to 70s \u00b7 white \u00b7 wheelchair user",
+        "hook": "A legendary old-school actor with a wicked sense of humor, physical fragility, and the authority of someone who has seen the business from every angle. He\u2019s mischievous, blunt, and unexpectedly tender, serving as both comic relief and moral witness. His scenes with Stewart carry the warmth of an older generation passing along hard-earned wisdom.",
+        "why_actor_wants_this": "This is a prestige supporting role with wit, gravitas, and a lot of texture. It gives an actor the chance to play wit and wisdom without losing edge, and the wheelchair/illness dimension adds vulnerability without reducing the character. The role has the kind of presence that recalls Christopher Plummer in 'Beginners' or Ian McKellen in 'The Good Liar.'"
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a lush, emotionally exact period drama with real wartime scale and intimate star-making scenes.",
+        "detail": "The material rewards a filmmaker who can balance classic-Hollywood elegance with combat intensity and private emotional collapse. It offers a chance to stage both a large-scale aerial war sequence and deeply actor-driven conversations, which is catnip for a director who likes prestige craftsmanship with awards-facing emotion."
+      },
+      "buyer_appeal": {
+        "tier": "$20-40M prestige feature",
+        "lane": "Awards-oriented streamer film / limited theatrical prestige drama",
+        "detail": "This fits a lane that values recognizable IP-adjacent history, star casting, and emotional uplift with adult texture. The period scope and aerial combat push it above micro-budget territory, but the contained emotional core and famous subject make it attractive for a prestige buyer looking for a classy, marketable awards play."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The rights path needs early attention.",
+        "detail": "Because the script is built around real people and heavily references 'It\u2019s a Wonderful Life,' the packaging conversation should start with clear rights and life-rights strategy. That\u2019s a foundational piece of the business case, not a late-stage detail.",
+        "source": "production"
+      },
+      {
+        "area": "The aerial combat sequence defines the budget lane.",
+        "detail": "The bomber mission is the movie\u2019s biggest production swing, so the project naturally lives in a higher-end period-drama budget range. A future pass could continue to protect the emotional impact while keeping the number of aircraft-heavy beats as efficient as possible.",
+        "source": "both"
+      },
+      {
+        "area": "The script is strongest when it stays inside Stewart\u2019s interior life.",
+        "detail": "The screening-room frame, the Capra and Barrymore conversations, and the father/son material all give the film its emotional identity. One direction would be to keep foregrounding those intimate scenes so the combat material continues to feel like the wound, not just the spectacle.",
+        "source": "script"
+      },
+      {
+        "area": "The romance is a major commercial asset.",
+        "detail": "The Stewart-Sullavan relationship gives the film heat, wit, and adult longing, which broadens the audience beyond war-history viewers. Protecting that chemistry and keeping their scenes vivid will help the movie play as both biography and love story.",
+        "source": "script"
+      },
+      {
+        "area": "The biographical frame is clear and marketable.",
+        "detail": "This plays best as a prestige feature for adult audiences, classic-film fans, and awards-season buyers rather than a broad commercial release. The subject matter and period scope support a festival-to-platform or limited theatrical strategy.",
+        "source": "production"
+      },
+      {
+        "area": "The final emotional turn lands on legacy.",
+        "detail": "The ending is built around Stewart choosing to remain an actor and reclaiming the meaning of his gift. That\u2019s a strong thematic landing; a future pass could continue to sharpen the final emotional progression so the choice feels even more inevitable.",
+        "source": "script"
+      }
+    ]
+  }
+}
