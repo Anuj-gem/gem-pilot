@@ -25,6 +25,11 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     .select('genre, format')
     .limit(1000)
 
+  // Total count of scripts on the board — shown as a prominent stat.
+  const { count: totalCount } = await supabase
+    .from('leaderboard')
+    .select('*', { count: 'exact', head: true })
+
   // Initial page — first PAGE_SIZE rows, recency-ordered.
   let query = supabase.from('leaderboard').select('*')
   if (params.q) {
@@ -57,9 +62,27 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
       <Nav />
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-1 font-[family-name:var(--font-display)]">
-            The Discovery Board
-          </h1>
+          <div className="flex items-center gap-3 flex-wrap mb-1">
+            <h1 className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)] m-0">
+              The Discovery Board
+            </h1>
+            {typeof totalCount === 'number' && totalCount > 0 && (
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border"
+                style={{
+                  background: 'rgba(245, 158, 11, 0.12)',
+                  borderColor: 'rgba(245, 158, 11, 0.4)',
+                  color: 'var(--gem-gold)',
+                }}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                {totalCount.toLocaleString()} scripts live
+              </span>
+            )}
+          </div>
           <p className="text-sm text-[var(--gem-gray-500)]">
             Scripts writers are putting in front of producers right now.
           </p>

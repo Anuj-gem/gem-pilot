@@ -2,7 +2,6 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-import { Search } from 'lucide-react'
 
 interface SearchBarProps {
   initialQuery: string
@@ -41,13 +40,12 @@ export function SearchBar({
     <div className="mb-6 space-y-4">
       {/* Search bar */}
       <form onSubmit={handleSearch} className="relative">
-        <Search size={16} strokeWidth={2} className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#6b7280' }} />
         <input
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by title or author..."
-          className="w-full pl-12 pr-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm focus:outline-none focus:border-[var(--gem-accent)]"
+          className="w-full px-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm focus:outline-none focus:border-[var(--gem-accent)]"
           style={{ color: '#111827' }}
         />
       </form>
