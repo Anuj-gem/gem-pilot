@@ -21,11 +21,10 @@ export function GemRankHeader() {
       </button>
       {showInfo && (
         <div
-          className="absolute left-0 top-full mt-2 z-10 max-w-sm p-3 rounded-lg border border-[var(--gem-gray-700)] text-[12px] text-[var(--gem-gray-300)] leading-relaxed shadow-lg"
-          style={{ background: 'rgba(10,10,10,0.96)' }}
+          className="absolute left-0 top-full mt-2 z-50 w-[min(22rem,calc(100vw-2rem))] p-3 rounded-lg border border-[var(--gem-gray-300)] bg-white text-[12px] text-[var(--gem-gray-700)] leading-relaxed shadow-xl"
         >
           This ranks your scripts against{' '}
-          <span className="text-[var(--gem-white)] font-medium">your own portfolio only</span>{' '}
+          <span className="text-[var(--gem-gray-900)] font-semibold">your own portfolio only</span>{' '}
           — not all scripts on the platform. Submit more scripts to build it up.
         </div>
       )}
