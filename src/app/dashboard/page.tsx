@@ -15,6 +15,7 @@ import {
   Lock,
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
+import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
 
 export const dynamic = 'force-dynamic'
 
@@ -137,6 +138,7 @@ export default async function DashboardPage() {
         {submissions && submissions.length > 0 ? (
           <>
             {/* Script cards */}
+            <GemRankHeader />
             <div className="space-y-3 mb-10">
               {(() => {
                 // Find the oldest completed submission — that one is free.
@@ -165,19 +167,11 @@ export default async function DashboardPage() {
                 const rank = rankMap[sub.id]
 
                 return (
-                  <div
-                    key={sub.id}
-                    className={`group rounded-xl border transition-colors p-5 ${
-                      isLockedReport
-                        ? 'border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5'
-                        : !hasReport
-                          ? 'border-[var(--gem-gray-700)] opacity-60'
-                          : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
-                    }`}
-                  >
-                    <div className="flex items-start gap-4">
+                  <div key={sub.id} className="flex items-start gap-3">
+                    {/* Rank column (outside the card) */}
+                    <div className="shrink-0 w-10 sm:w-12 text-center pt-5">
                       {rank ? (
-                        <div className="shrink-0 w-10 sm:w-12 text-center pt-1">
+                        <>
                           <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gold)] leading-none">
                             #{rank}
                           </div>
@@ -186,9 +180,21 @@ export default async function DashboardPage() {
                               of {rankTotal}
                             </div>
                           )}
-                        </div>
-                      ) : null}
-                      <div className="flex-1 min-w-0 flex items-start justify-between gap-4 flex-wrap">
+                        </>
+                      ) : (
+                        <div className="text-[var(--gem-gray-700)] text-xl leading-none">—</div>
+                      )}
+                    </div>
+                    <div
+                      className={`flex-1 min-w-0 group rounded-xl border transition-colors p-5 ${
+                        isLockedReport
+                          ? 'border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5'
+                          : !hasReport
+                            ? 'border-[var(--gem-gray-700)] opacity-60'
+                            : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-4 flex-wrap">
                       <div className="flex-1 min-w-0">
                         {/* Title + state pills */}
                         <div className="flex items-center gap-2 flex-wrap mb-1.5">

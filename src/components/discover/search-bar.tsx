@@ -43,13 +43,13 @@ export function SearchBar({
     <div className="mb-6 space-y-4">
       {/* Search bar */}
       <form onSubmit={handleSearch} className="relative">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--gem-gray-500)]" />
+        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--gem-gray-500)] pointer-events-none" />
         <input
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by title or author..."
-          className="w-full pl-9 pr-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm text-[var(--gem-white)] placeholder:text-[var(--gem-gray-500)] focus:outline-none focus:border-[var(--gem-accent)]"
+          className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-[var(--gem-gray-700)] text-sm text-[var(--gem-gray-900)] placeholder:text-[var(--gem-gray-500)] focus:outline-none focus:border-[var(--gem-accent)]"
         />
       </form>
 
