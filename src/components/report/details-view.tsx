@@ -1,5 +1,6 @@
 // Shared Details view used by /report/[id] (writer-private tab) and
 // /sample/[slug] (shown openly as part of the sample report, with a disclosure).
+import Link from 'next/link'
 import { Lock } from 'lucide-react'
 import { DIMENSION_META, type DimensionId, type GEMEvaluation } from '@/types'
 import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
@@ -136,6 +137,8 @@ export function DetailsView({
   locked,
   evaluationId,
   showPrivacyNote = true,
+  portfolioRank,
+  portfolioTotal,
 }: {
   scores: Record<string, { score: number; reasoning: string }>
   production: GEMEvaluation['production_reality']
@@ -145,6 +148,8 @@ export function DetailsView({
   locked: boolean
   evaluationId?: string
   showPrivacyNote?: boolean
+  portfolioRank?: number | null
+  portfolioTotal?: number
 }) {
   const blurStyle: React.CSSProperties = locked
     ? { filter: 'blur(5px)', userSelect: 'none' as const }
@@ -163,6 +168,46 @@ export function DetailsView({
             <strong className="text-[var(--gem-white)] font-semibold">Private to you.</strong>{' '}
             This tab isn&apos;t shared when your report is circulated.
           </span>
+        </div>
+      )}
+
+      {/* Portfolio Rank — at the top of Details, where the score used to live */}
+      {portfolioRank !== null && portfolioRank !== undefined && (portfolioTotal ?? 0) > 0 && (
+        <div
+          className="relative border border-[var(--gem-gray-700)] rounded-2xl p-6 sm:p-7 mb-8"
+          style={{ background: 'linear-gradient(135deg, rgba(212,175,55,0.06), transparent 60%)' }}
+        >
+          <div
+            aria-hidden
+            className="absolute left-0 top-5 bottom-5 rounded-r"
+            style={{ width: 3, background: 'var(--gem-gold)' }}
+          />
+          <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
+            Portfolio Rank
+          </div>
+          {(portfolioTotal ?? 0) === 1 ? (
+            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
+              GEM ranks this the <span className="text-[var(--gem-gold)]">#1</span> script in your portfolio.
+            </p>
+          ) : (
+            <div className="flex items-baseline gap-3 flex-wrap">
+              <span className="text-5xl sm:text-6xl font-bold text-[var(--gem-white)] leading-none">
+                #{portfolioRank}
+              </span>
+              <span className="text-sm text-[var(--gem-gray-400)]">
+                of {portfolioTotal} in your portfolio
+              </span>
+            </div>
+          )}
+          <p className="text-xs text-[var(--gem-gray-500)] mt-3 leading-relaxed">
+            <Link
+              href="/submit"
+              className="text-[var(--gem-gray-300)] underline underline-offset-2 decoration-[var(--gem-gray-600)] hover:decoration-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
+            >
+              Submit another script
+            </Link>{' '}
+            to see how it compares.
+          </p>
         </div>
       )}
 

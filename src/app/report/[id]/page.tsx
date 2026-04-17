@@ -8,7 +8,6 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import Nav from '@/components/nav'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
@@ -245,37 +244,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <>
         <Nav />
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
-          {/* Portfolio Rank — the conversion hook for 2nd+ locked report */}
-          {portfolioRank !== null && portfolioTotal > 0 && (
-            <div
-              className="relative border border-[var(--gem-gray-700)] rounded-2xl p-6 sm:p-7 mb-6 text-left"
-              style={{ background: 'linear-gradient(135deg, rgba(212,175,55,0.08), transparent 60%)' }}
-            >
-              <div
-                aria-hidden
-                className="absolute left-0 top-5 bottom-5 rounded-r"
-                style={{ width: 3, background: 'var(--gem-gold)' }}
-              />
-              <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
-                Portfolio Rank
-              </div>
-              {portfolioTotal === 1 ? (
-                <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
-                  GEM ranks this the <span className="text-[var(--gem-gold)]">#1</span> script in your portfolio.
-                </p>
-              ) : (
-                <div className="flex items-baseline gap-3 flex-wrap">
-                  <span className="text-5xl sm:text-6xl font-bold text-[var(--gem-white)] leading-none">
-                    #{portfolioRank}
-                  </span>
-                  <span className="text-sm text-[var(--gem-gray-400)]">
-                    of {portfolioTotal} in your portfolio
-                  </span>
-                </div>
-              )}
-            </div>
-          )}
-
           <div
             className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-8"
             style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
@@ -345,46 +313,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               initialCount={likeCount ?? 0}
               loggedIn={!!user}
             />
-          </div>
-        )}
-
-        {/* Portfolio Rank — owner-only, personal positioning signal */}
-        {portfolioRank !== null && portfolioTotal > 0 && (
-          <div
-            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-6 sm:p-7"
-            style={{ background: 'linear-gradient(135deg, rgba(212,175,55,0.06), transparent 60%)' }}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-5 bottom-5 rounded-r"
-              style={{ width: 3, background: 'var(--gem-gold)' }}
-            />
-            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
-              Portfolio Rank
-            </div>
-            {portfolioTotal === 1 ? (
-              <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
-                GEM ranks this the <span className="text-[var(--gem-gold)]">#1</span> script in your portfolio.
-              </p>
-            ) : (
-              <div className="flex items-baseline gap-3 flex-wrap">
-                <span className="text-5xl sm:text-6xl font-bold text-[var(--gem-white)] leading-none">
-                  #{portfolioRank}
-                </span>
-                <span className="text-sm text-[var(--gem-gray-400)]">
-                  of {portfolioTotal} in your portfolio
-                </span>
-              </div>
-            )}
-            <p className="text-xs text-[var(--gem-gray-500)] mt-3 leading-relaxed">
-              <Link
-                href="/submit"
-                className="text-[var(--gem-gray-300)] underline underline-offset-2 decoration-[var(--gem-gray-600)] hover:decoration-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
-              >
-                Submit another script
-              </Link>{' '}
-              to see how it compares.
-            </p>
           </div>
         )}
 
@@ -529,6 +457,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               overallScore={eval_?.weighted_score ?? null}
               showScores
               locked={false}
+              portfolioRank={portfolioRank}
+              portfolioTotal={portfolioTotal}
             />
           }
         />
