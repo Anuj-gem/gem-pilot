@@ -258,6 +258,22 @@ export interface PlatformFit {
   series_engine_or_release_model: string;
 }
 
+// ─── Risk Rubric (v5 — producer-facing L/M/H synthesis) ───────────
+export type RiskLevel = "low" | "medium" | "high";
+
+export interface RiskAxis {
+  level: RiskLevel;
+  note: string;
+}
+
+export interface RiskRubric {
+  cost: RiskAxis;
+  cast: RiskAxis;
+  location: RiskAxis;
+  content: RiskAxis;
+  rights: RiskAxis;
+}
+
 export interface ProductionReality {
   cast: CastReality;
   locations: LocationReality;
@@ -265,6 +281,41 @@ export interface ProductionReality {
   period_or_contemporary?: string;
   rights_flags: (string | RightsFlag)[];
   platform_fit: PlatformFit;
+  /** v5 — optional; absent on legacy evaluations */
+  risk_rubric?: RiskRubric;
+}
+
+// ─── Package Angles (v5 — director + buyer attachment bait) ───────
+export interface DirectorAppeal {
+  hook: string;
+  detail: string;
+}
+
+export interface BuyerAppeal {
+  tier: string;
+  lane: string;
+  detail: string;
+}
+
+export interface PackageAngles {
+  director_appeal: DirectorAppeal;
+  buyer_appeal: BuyerAppeal;
+}
+
+// ─── Lead Characters (v4+ — attachment bait per character) ────────
+export interface LeadCharacter {
+  name: string;
+  role_type: "Lead" | "Supporting";
+  demographics: string;
+  hook: string;
+  why_actor_wants_this: string;
+}
+
+// ─── Considerations (v4+ — development notes) ─────────────────────
+export interface Consideration {
+  area: string;
+  detail: string;
+  source?: "script" | "production" | "both";
 }
 
 // ─── Unified Evaluation Type (handles v2 and v3) ───────────────────
@@ -284,6 +335,14 @@ export interface GEMEvaluation {
   // shared
   scores: Record<string, DimensionScore>;
   production_reality: ProductionReality;
+
+  // v4+ fields (present on v4 and v5; absent on v2 legacy)
+  positioning_hook?: string;
+  lead_characters?: LeadCharacter[];
+  considerations?: Consideration[];
+
+  // v5 fields — optional, absent on legacy evaluations
+  package_angles?: PackageAngles;
 }
 
 // ─── Helper: normalize v2/v3 evaluation for rendering ──────────────

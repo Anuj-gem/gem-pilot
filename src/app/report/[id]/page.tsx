@@ -1,10 +1,9 @@
 // v5 report — positioning-first. No scores or tiers in the Pitch view.
-// Pitch tab (public): hook, what makes this special, lead characters.
-// Details tab (private to the writer): production reality, considerations, dimension analysis.
-//
-// Gate model (v6): NO BLUR. Every report is fully visible to everyone.
-// Paywall on: 2nd+ submission, Discover publishing, and contact/reachability.
-// Free users see the full report to get wowed, then hit upgrade when they try to publish or get contacted.
+// Pitch tab (public): hook, what makes this special (collapsibles), lead
+// characters (collapsibles), package angles (director + buyer).
+// Details tab (private to the writer): GEM Rank, At a Glance risk pills,
+// development priorities, production planning details, narrative analysis
+// details. All cards are collapsibles.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
@@ -14,7 +13,6 @@ import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
-// InlineUpgradeCTA repurposed for "submit more scripts" messaging
 import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
@@ -22,11 +20,8 @@ import { ReportTabs } from '@/components/report/report-tabs'
 import { ContactWriter } from '@/components/report/contact-writer'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
-import {
-  DetailsView,
-  SectionHeader,
-  LeadCharacterCard,
-} from '@/components/report/details-view'
+import { DetailsView } from '@/components/report/details-view'
+import { Section, Collapsible } from '@/components/report/v5-components'
 import { normalizeEvaluation } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
 
@@ -35,8 +30,8 @@ interface PageProps {
   searchParams: Promise<{ for?: string; subscribed?: string }>
 }
 
-// v4-specific fields that aren't in the shared GEMEvaluation type yet.
-interface V4Extras {
+// v4/v5-specific fields not yet in the shared GEMEvaluation type.
+interface V5Extras {
   positioning_hook?: string
   lead_characters?: {
     name: string
@@ -46,6 +41,10 @@ interface V4Extras {
     why_actor_wants_this: string
   }[]
   considerations?: { area: string; detail: string; source?: string }[]
+  package_angles?: {
+    director_appeal: { hook: string; detail: string }
+    buyer_appeal: { tier: string; lane: string; detail: string }
+  }
 }
 
 function createServiceClient() {
@@ -82,10 +81,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   if (error || !evaluation) notFound()
 
-  // Preview-only override: if USE_PENDING_EVALS=1 is set on this deployment
-  // (positioning-rebuild preview), swap the evaluation payload (score, tier,
-  // report JSON) with the rescored v4 row from script_evaluations_pending
-  // matched by submission_id. Falls through silently if no pending row exists.
+  // Preview-only override: if USE_PENDING_EVALS=1 is set, swap payload with the
+  // rescored row from script_evaluations_pending matched by submission_id.
   if (process.env.USE_PENDING_EVALS === '1') {
     const subId = (evaluation as any).submission_id
     if (subId) {
@@ -108,7 +105,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     }
   }
 
-  const report = eval_.evaluation as GEMEvaluation & V4Extras
+  const report = eval_.evaluation as GEMEvaluation & V5Extras
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAnonymousSubmission = !submission.user_id
@@ -118,9 +115,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const { classification, whatsSpecial } = normalizeEvaluation(report)
 
-  // Gate logic (v5): NO BLUR. Every report is fully visible.
-  // Paywall lives on /submit (blocks 2nd+ submission for free users).
-  // We still check subscription status for upgrade CTA display and contact gating.
   let ownerIsSubscribed = false
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
@@ -141,15 +135,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
   }
 
-  // v5: all reports fully unlocked — no blur
-  const unlocked = true
   const showUpgradeCTA = !viewerIsSubscribed && !!user
 
   // Paywall gate: owner's 2nd+ report is locked until they subscribe.
-  // We check if this submission is NOT the owner's first completed eval.
   let reportLocked = false
   if (isOwner && !ownerIsSubscribed && submission.user_id) {
-    // Find the user's earliest completed submission
     const { data: firstSub } = await serviceClient
       .from('script_submissions')
       .select('id')
@@ -213,24 +203,22 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     userLiked = !!existingLike
   }
 
-  // v5: all strengths visible — no locked tease
   const allStrengths = whatsSpecial.strengths ?? []
-  const visibleStrengths = allStrengths
 
   const positioningHook = report.positioning_hook ?? ''
   const leadCharacters = report.lead_characters ?? []
   const considerations = report.considerations ?? []
+  const packageAngles = report.package_angles
   const production = report.production_reality
   const scores = report.scores ?? {}
 
-  // Contact Writer — gated by writer's Pro subscription.
-  //   - owner + subscribed → owner_live (shows "you're reachable")
-  //   - owner + free → owner_upsell (shows "upgrade to become reachable")
-  //   - non-owner + writer subscribed → live (can message)
-  //   - non-owner + writer NOT subscribed → writer_not_pro
+  // Contact Writer gating:
+  //   - hidden entirely when the script is NOT public on Discover
+  //   - when public + writer Pro: live (non-owner) / owner_live (owner)
+  //   - when public + writer free: writer_not_pro (non-owner) / owner_upsell (owner)
   //   - anonymous submission → no contact
   let contactState: 'live' | 'owner_upsell' | 'owner_live' | 'writer_not_pro' | null = null
-  if (!isAnonymousSubmission && !!submission.user_id) {
+  if (!isAnonymousSubmission && !!submission.user_id && submission.is_public) {
     if (isOwner) {
       contactState = ownerIsSubscribed ? 'owner_live' : 'owner_upsell'
     } else {
@@ -287,17 +275,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       )}
       <ReportAnalytics evaluationId={id} isBlurred={false} />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24 space-y-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24">
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
         {isAnonymousSubmission && (
-          <div id="inline-signup" className="rounded-xl transition-shadow duration-500">
+          <div id="inline-signup" className="rounded-xl transition-shadow duration-500 mb-8">
             <InlineSignup submissionId={submission.id} evaluationId={id} />
           </div>
         )}
 
         {!isAnonymousSubmission && (
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-3 flex-wrap mb-8">
             {isOwner && (
               <VisibilityToggle
                 submissionId={submission.id}
@@ -316,72 +304,83 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Title + meta */}
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--gem-white)] tracking-tight leading-tight mb-3">
-            {submission.title}
-          </h1>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--gem-gray-400)]">
-            {classification.format && <span>{classification.format}</span>}
-            {classification.genre_primary && (
-              <>
-                <span className="text-[var(--gem-gray-500)]">·</span>
-                <span>{classification.genre_primary}</span>
-              </>
-            )}
-            {classification.genre_tags?.map((t, i) => (
-              <span
-                key={i}
-                className="px-2.5 py-0.5 rounded-full text-xs text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
-              >
-                {t}
+        {/* Title + classification */}
+        <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4">
+          {submission.title}
+        </h1>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[var(--gem-gray-300)] mb-10">
+          {classification.format && <span>{classification.format}</span>}
+          {classification.genre_primary && (
+            <>
+              <span className="text-[var(--gem-gray-500)]">·</span>
+              <span>{classification.genre_primary}</span>
+            </>
+          )}
+          {classification.genre_tags?.map((t, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)]"
+            >
+              {t}
+            </span>
+          ))}
+          {classification.tone && (
+            <>
+              <span className="text-[var(--gem-gray-500)]">·</span>
+              <span className="italic text-[var(--gem-gray-400)]">{classification.tone}</span>
+            </>
+          )}
+          {submission.created_at && (
+            <>
+              <span className="text-[var(--gem-gray-500)]">·</span>
+              <span className="text-[var(--gem-gray-500)]">
+                Posted{' '}
+                {new Date(submission.created_at).toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}
               </span>
-            ))}
-            {classification.tone && (
-              <>
-                <span className="text-[var(--gem-gray-500)]">·</span>
-                <span className="italic text-[var(--gem-gray-500)]">{classification.tone}</span>
-              </>
-            )}
-            {submission.created_at && (
-              <>
-                <span className="text-[var(--gem-gray-500)]">·</span>
-                <span className="text-[var(--gem-gray-500)]">
-                  Posted {new Date(submission.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                </span>
-              </>
-            )}
-          </div>
+            </>
+          )}
         </div>
 
-        {/* Positioning hook — always visible */}
+        {/* Logline hero — always visible */}
         {positioningHook && (
           <div
-            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8"
-            style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
+            className="relative rounded-2xl p-8 sm:p-10 mb-12"
+            style={{
+              background: 'linear-gradient(135deg, rgba(200,164,92,0.10), transparent 70%)',
+              border: '1px solid rgba(200,164,92,0.25)',
+            }}
           >
             <div
               aria-hidden
-              className="absolute left-0 top-5 bottom-5 rounded-r"
-              style={{ width: 3, background: 'var(--gem-gold)' }}
+              className="absolute left-0 top-7 bottom-7 rounded-r"
+              style={{ width: 5, background: 'var(--gem-gold)' }}
             />
-            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
-              The Pitch
+            <div
+              className="text-[14px] uppercase tracking-[0.22em] font-bold mb-4"
+              style={{ color: 'var(--gem-gold)' }}
+            >
+              Logline
             </div>
-            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
+            <p className="text-[26px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-medium m-0">
               {positioningHook}
             </p>
           </div>
         )}
 
-        {/* Contact writer — live / upsell / writer-not-pro depending on state */}
+        {/* Contact writer — only when script is public on Discover */}
         {contactState && (
-          <ContactWriter
-            evaluationId={id}
-            writerName={writerName}
-            state={contactState}
-            isLoggedIn={!!user}
-          />
+          <div className="mb-10">
+            <ContactWriter
+              evaluationId={id}
+              writerName={writerName}
+              state={contactState}
+              isLoggedIn={!!user}
+            />
+          </div>
         )}
 
         <ReportTabs
@@ -389,54 +388,109 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           detailsLocked={false}
           pitch={
             <>
-              {/* What Makes This Special */}
-              <section className="mb-12">
-                <SectionHeader label="What Makes This Special" />
-                {whatsSpecial.headline && (
-                  <p className="text-base sm:text-lg text-[var(--gem-gray-200)] leading-relaxed mb-6">
-                    {whatsSpecial.headline}
-                  </p>
-                )}
-                <div className="space-y-3">
-                  {visibleStrengths.map((s, i) => (
-                    <div
-                      key={i}
-                      className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
-                    >
-                      <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
-                        {s.dimension_or_area}
-                      </p>
-                      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
-                        {s.what_it_means}
-                      </p>
-                      {s.evidence && (
-                        <p className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed">
-                          {s.evidence}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Lead Characters */}
-              <section className="mb-12">
-                <SectionHeader label="Lead Characters" />
-                <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
-                  The parts inside this script and why an actor would chase them.
-                </p>
-                {leadCharacters.length === 0 ? (
-                  <p className="text-sm text-[var(--gem-gray-500)] italic">
-                    No lead character breakdown available for this report.
-                  </p>
-                ) : (
+              {/* What's Working — numbered collapsibles with evidence sidebar */}
+              {allStrengths.length > 0 && (
+                <Section label="What's Working" subtitle={whatsSpecial.headline}>
                   <div className="space-y-3">
-                    {leadCharacters.map((c, i) => (
-                      <LeadCharacterCard key={i} c={c} />
+                    {allStrengths.map((s, i) => (
+                      <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
+                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
+                          {s.what_it_means}
+                        </p>
+                        {s.evidence && (
+                          <div
+                            className="rounded-lg p-5"
+                            style={{
+                              background: 'rgba(200,164,92,0.07)',
+                              borderLeft: '3px solid var(--gem-gold)',
+                            }}
+                          >
+                            <p
+                              className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                              style={{ color: 'var(--gem-gold)' }}
+                            >
+                              Evidence from the script
+                            </p>
+                            <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                              {s.evidence}
+                            </p>
+                          </div>
+                        )}
+                      </Collapsible>
                     ))}
                   </div>
-                )}
-              </section>
+                </Section>
+              )}
+
+              {/* Lead Characters */}
+              {leadCharacters.length > 0 && (
+                <Section
+                  label="Lead Characters"
+                  subtitle="The parts inside this script and why an actor would chase them."
+                >
+                  <div className="space-y-3">
+                    {leadCharacters.map((c, i) => (
+                      <Collapsible
+                        key={i}
+                        title={c.name}
+                        meta={`${c.role_type} · ${c.demographics}`}
+                      >
+                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
+                          {c.hook}
+                        </p>
+                        <div
+                          className="rounded-lg p-5"
+                          style={{
+                            background: 'rgba(5,150,105,0.07)',
+                            border: '1px solid rgba(5,150,105,0.20)',
+                          }}
+                        >
+                          <p
+                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                            style={{ color: '#059669' }}
+                          >
+                            Why an actor would want this part
+                          </p>
+                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                            {c.why_actor_wants_this}
+                          </p>
+                        </div>
+                      </Collapsible>
+                    ))}
+                  </div>
+                </Section>
+              )}
+
+              {/* Package Angles — who would direct this, and who would buy it */}
+              {packageAngles && (
+                <Section
+                  label="Package Angles"
+                  subtitle="Who would direct this, and who would buy it."
+                >
+                  <div className="space-y-3">
+                    <Collapsible title="Why a director wants this" accent="#059669">
+                      <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
+                        {packageAngles.director_appeal.hook}
+                      </p>
+                      <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                        {packageAngles.director_appeal.detail}
+                      </p>
+                    </Collapsible>
+                    <Collapsible
+                      title="Why a buyer wants this"
+                      meta={packageAngles.buyer_appeal.tier}
+                      accent="#059669"
+                    >
+                      <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
+                        {packageAngles.buyer_appeal.lane}
+                      </p>
+                      <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                        {packageAngles.buyer_appeal.detail}
+                      </p>
+                    </Collapsible>
+                  </div>
+                </Section>
+              )}
 
               {/* Soft upgrade CTA for non-subscribers */}
               {showUpgradeCTA && (
@@ -454,8 +508,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scores={scores}
               production={production}
               considerations={considerations}
-              overallScore={eval_?.weighted_score ?? null}
-              showScores
               locked={false}
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}
