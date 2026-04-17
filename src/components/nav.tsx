@@ -26,7 +26,6 @@ export default function Nav() {
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/discover', label: 'Discover', icon: Compass },
-    { href: '/sample', label: 'Samples', icon: Sparkles },
   ] : []
 
   return (
@@ -125,12 +124,6 @@ export default function Nav() {
               className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
             >
               Discover
-            </Link>
-            <Link
-              href="/sample"
-              className="hidden sm:inline text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
-            >
-              Samples
             </Link>
             <Link
               href="/login"

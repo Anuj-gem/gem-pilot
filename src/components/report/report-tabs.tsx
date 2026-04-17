@@ -17,12 +17,12 @@ export function ReportTabs({ pitch, details, detailsLocked, showDetails = true }
     <>
       <div className="flex border-b border-[var(--gem-gray-700)] mb-8 -mx-1">
         <TabBtn active={activeTab === 'pitch'} onClick={() => setTab('pitch')}>
-          The Pitch
+          Pitch
         </TabBtn>
         {showDetails && (
           <TabBtn active={activeTab === 'details'} onClick={() => setTab('details')}>
             {detailsLocked && <Lock size={12} />}
-            <span>Details</span>
+            <span>Development</span>
           </TabBtn>
         )}
       </div>

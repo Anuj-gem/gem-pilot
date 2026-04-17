@@ -242,7 +242,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               style={{ width: 3, background: 'var(--gem-gold)' }}
             />
             <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
-              The Pitch
+              Pitch
             </div>
             <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
               {report.positioning_hook || submission.title}

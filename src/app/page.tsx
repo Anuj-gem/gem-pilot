@@ -79,9 +79,6 @@ export default async function Home() {
             <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
           </Link>
           <div className="hidden sm:flex items-center gap-4">
-            <Link href="/sample" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
-              Samples
-            </Link>
             <Link href="/discover" className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors">
               Discover
             </Link>
@@ -219,66 +216,7 @@ export default async function Home() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
 
-      {/* Section 2 — See real examples */}
-      {featuredSamples.length > 0 && (
-        <TrackSection name="featured_samples">
-          <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">Samples</p>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 font-[family-name:var(--font-display)]">
-              See what a report looks like.
-            </h2>
-            <p className="text-sm sm:text-base text-[var(--gem-gray-400)] mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-              We ran GEM on Breaking Bad, Inception, Succession, and 7 more produced scripts. Free to read. No signup.
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {featuredSamples.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/sample/${s.slug}`}
-                  className="group block rounded-xl card-glass overflow-hidden p-4"
-                  style={{ borderLeft: `4px solid var(--gem-gold)` }}
-                >
-                  <div className="min-w-0">
-                    <h3 className="text-sm font-bold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                      {s.title}
-                    </h3>
-                    <p className="text-[11px] text-[var(--gem-gray-400)] mt-0.5 truncate">
-                      {s.author}{s.year ? ` · ${s.year}` : ''}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
-                    <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-violet-50 text-violet-600 border border-violet-100 font-medium">
-                      {s.type}
-                    </span>
-                    {s.genre && (
-                      <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 font-medium truncate max-w-[140px]">
-                        {s.genre}
-                      </span>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-6 sm:mt-8">
-              <TrackedCTA
-                href="/sample"
-                event="cta_clicked"
-                properties={{ location: 'featured_samples', label: 'Browse all samples' }}
-                className="inline-flex items-center gap-2 text-sm text-[var(--gem-accent)] hover:underline font-medium"
-              >
-                Browse all sample reports
-                <ArrowRight size={14} />
-              </TrackedCTA>
-            </div>
-          </section>
-        </TrackSection>
-      )}
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6"><div className="border-t border-[var(--gem-gray-700)]" /></div>
-
-      {/* Section 3 — Live on Discover */}
+      {/* Section 2 — Live on Discover */}
       <TrackSection name="discover_snapshot">
         <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <div className="flex items-center gap-2 mb-2 sm:mb-3">

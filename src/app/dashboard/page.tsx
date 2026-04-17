@@ -175,11 +175,9 @@ export default async function DashboardPage() {
                           <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gold)] leading-none">
                             #{rank}
                           </div>
-                          {rankTotal > 1 && (
-                            <div className="text-[10px] text-[var(--gem-gray-500)] mt-1 uppercase tracking-wider">
-                              of {rankTotal}
-                            </div>
-                          )}
+                          <div className="text-[10px] text-[var(--gem-gray-500)] mt-1 uppercase tracking-wider">
+                            of {rankTotal}
+                          </div>
                         </>
                       ) : (
                         <div className="text-[var(--gem-gray-700)] text-xl leading-none">—</div>
