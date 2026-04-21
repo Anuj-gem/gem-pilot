@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
+import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 
 export const dynamic = 'force-dynamic'
 
@@ -155,13 +156,21 @@ export default async function DashboardPage() {
                 const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
 
                 const score = scoreMap[sub.id]
+                const designation = scoreDesignation(score)
+                const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
 
                 return (
                   <div key={sub.id} className="flex items-start gap-3">
-                    {/* Score column (outside the card) */}
+                    {/* Score column (outside the card) — colored by designation
+                        so the tier is readable at a glance. */}
                     <div className="shrink-0 w-14 sm:w-16 text-center pt-5">
                       {typeof score === 'number' ? (
-                        <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gold)] leading-none tabular-nums">
+                        <div
+                          className="text-2xl sm:text-3xl font-bold leading-none tabular-nums"
+                          style={{
+                            color: designationStyle?.text ?? 'var(--gem-gold)',
+                          }}
+                        >
                           {score.toFixed(1)}
                         </div>
                       ) : (
@@ -184,6 +193,27 @@ export default async function DashboardPage() {
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
                             {sub.title}
                           </h3>
+                          {/* Designation pill — shown whenever there's a score,
+                              regardless of lock state. Lets non-paid users see
+                              the tier their locked script earned (nudge to upgrade)
+                              and paid users see the framing at a glance. */}
+                          {designationStyle && (
+                            <span
+                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold"
+                              style={{
+                                background: designationStyle.pillBg,
+                                border: `1px solid ${designationStyle.pillBorder}`,
+                                color: designationStyle.text,
+                              }}
+                            >
+                              <span
+                                aria-hidden
+                                className="inline-block w-1 h-1 rounded-full"
+                                style={{ background: designationStyle.dot }}
+                              />
+                              {designationStyle.label}
+                            </span>
+                          )}
                           {isLockedReport ? (
                             <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
                               <Lock size={10} />

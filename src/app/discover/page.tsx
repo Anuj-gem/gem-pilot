@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { InfiniteScriptGrid } from '@/components/discover/infinite-script-grid'
 import { SearchBar } from '@/components/discover/search-bar'
+import { GEM_SELECT_MIN } from '@/lib/designation'
 import type { LeaderboardEntry } from '@/types'
 
 export const dynamic = 'force-dynamic'
@@ -16,12 +17,6 @@ const PUBLIC_COLS =
   'evaluation_id, submission_id, title, user_id, author_name, avatar_url, format, genre, tone, genre_tags, logline, positioning_hook, overall_take, like_count, created_at'
 
 type TabKey = '' | 'gem-select'
-
-// GEM Select threshold. "Promising" (50–74) is only surfaced privately on the
-// writer's own report — it's never a public tab, so the bucket lives here too.
-const GEM_SELECT_MIN = 75
-export const PROMISING_MIN = 50
-export const PROMISING_MAX = GEM_SELECT_MIN // exclusive upper bound
 
 interface PageProps {
   searchParams: Promise<{

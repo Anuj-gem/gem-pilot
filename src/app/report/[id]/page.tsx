@@ -26,6 +26,7 @@ import { DetailsView } from '@/components/report/details-view'
 import { Section, Collapsible } from '@/components/report/v5-components'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
+import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -228,11 +229,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   } catch {
     commercialScore = null
   }
-  // Designation: GEM Select at 75+, Promising at 50–74 (private to the writer
-   // — Promising is never a public surface, only shown on their own report).
-  const isGemSelect = commercialScore !== null && commercialScore >= 75
-  const isPromising =
-    commercialScore !== null && commercialScore >= 50 && commercialScore < 75
+  // Three-tier designation: GEM Select (≥75), Very Promising (50–74), Shows
+  // Potential (<50). Only GEM Select is ever surfaced publicly on Discover;
+  // Very Promising and Shows Potential are private to the writer and exist to
+  // keep the framing encouraging + give every score a reason to upgrade.
+  const designation = scoreDesignation(commercialScore)
 
   // Contact Writer gating:
   //   - hidden entirely when the script is NOT public on Discover
@@ -250,22 +251,35 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
   if (reportLocked) {
-    // Upsell framing cascades: GEM Select > Promising > rank-aware default.
-    // Keeps the strongest commercial signal front-and-center without
-    // feeling spammy for writers who scored lower.
+    // Upsell framing cascades by designation. Each tier gets a positive
+    // headline + a subtext that names both actions the score earns them:
+    // publish on Discover AND use the full report to reposition the draft.
     const bestRank = portfolioRank === 1 && (portfolioTotal ?? 0) > 1
-    const upsellHeadline = isGemSelect
-      ? 'This one belongs on Discover.'
-      : isPromising
-        ? 'Close to GEM Select territory.'
-        : bestRank
-          ? 'Your top-scoring script yet.'
-          : `Your report on ${submission.title} is ready.`
-    const upsellSubtext = isGemSelect
-      ? 'It scored in the GEM Select band — the top tier we surface on the public Discover board. Go Pro to read the full report, publish it, and let producers contact you.'
-      : isPromising
-        ? 'A sharp next pass can push it into GEM Select. Go Pro to read the full report and evaluate unlimited scripts.'
-        : 'Go Pro to read this report, evaluate unlimited scripts, and publish the strong ones to Discover.'
+    const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
+
+    let upsellHeadline: string
+    let upsellSubtext: string
+    if (designation === 'gem-select') {
+      upsellHeadline = 'This one belongs on Discover.'
+      upsellSubtext =
+        'It scored in the GEM Select band — the top tier we surface publicly. Go Pro to read the full report, publish it on Discover, and let reps and producers reach out.'
+    } else if (designation === 'very-promising') {
+      upsellHeadline = "It's close. Really close."
+      upsellSubtext =
+        'Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Go Pro to read the full report, pull from the Development Priorities, and publish it on Discover when you want eyes on it.'
+    } else if (designation === 'shows-potential') {
+      upsellHeadline = "There's a real spark here."
+      upsellSubtext =
+        'Shows Potential means the bones are there — the next pass is about repositioning what the script is selling. Go Pro to read the full report, use the Development Priorities to sharpen it, and publish it on Discover when you feel ready.'
+    } else if (bestRank) {
+      upsellHeadline = 'Your top-scoring script yet.'
+      upsellSubtext =
+        'Go Pro to read the full report, sharpen the draft, and publish the strong ones on Discover.'
+    } else {
+      upsellHeadline = `Your report on ${submission.title} is ready.`
+      upsellSubtext =
+        'Go Pro to read this report, evaluate unlimited scripts, and publish the strong ones on Discover.'
+    }
 
     return (
       <>
@@ -289,50 +303,29 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </p>
           </div>
 
-          {/* Score + rank card — visible even while locked, since the score and
-              portfolio rank are earned signals, not the paywalled report content. */}
-          {commercialScore !== null && (
+          {/* Score + rank + designation card — visible even while locked.
+              The score, rank, and tier label are signals the writer already
+              earned; the report itself is what's paywalled. */}
+          {commercialScore !== null && designationStyle && (
             <div
               className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
               style={{
-                border: `1px solid ${
-                  isGemSelect
-                    ? 'rgba(200,164,92,0.4)'
-                    : isPromising
-                      ? 'rgba(5,150,105,0.35)'
-                      : 'var(--gem-gray-700)'
-                }`,
-                background: isGemSelect
-                  ? 'linear-gradient(135deg, rgba(200,164,92,0.12), rgba(200,164,92,0.02) 70%)'
-                  : isPromising
-                    ? 'linear-gradient(135deg, rgba(5,150,105,0.10), rgba(5,150,105,0.02) 70%)'
-                    : 'transparent',
+                border: `1px solid ${designationStyle.border}`,
+                background: designationStyle.bg,
               }}
             >
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div>
                   <p
                     className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
-                    style={{
-                      color: isGemSelect
-                        ? 'var(--gem-gold)'
-                        : isPromising
-                          ? '#059669'
-                          : 'var(--gem-gray-400)',
-                    }}
+                    style={{ color: designationStyle.text }}
                   >
                     Commercial Potential
                   </p>
                   <div className="flex items-baseline gap-1.5">
                     <span
                       className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
-                      style={{
-                        color: isGemSelect
-                          ? 'var(--gem-gold)'
-                          : isPromising
-                            ? '#059669'
-                            : 'var(--gem-white)',
-                      }}
+                      style={{ color: designationStyle.text }}
                     >
                       {commercialScore.toFixed(1)}
                     </span>
@@ -341,31 +334,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     </span>
                   </div>
                 </div>
-                {(isGemSelect || isPromising) && (
-                  <div
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
-                    style={{
-                      background: isGemSelect
-                        ? 'rgba(200,164,92,0.12)'
-                        : 'rgba(5,150,105,0.12)',
-                      border: `1px solid ${
-                        isGemSelect ? 'rgba(200,164,92,0.5)' : 'rgba(5,150,105,0.5)'
-                      }`,
-                    }}
+                <div
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
+                  style={{
+                    background: designationStyle.pillBg,
+                    border: `1px solid ${designationStyle.pillBorder}`,
+                  }}
+                >
+                  <span
+                    aria-hidden
+                    className="inline-block w-1.5 h-1.5 rounded-full"
+                    style={{ background: designationStyle.dot }}
+                  />
+                  <span
+                    className="text-[11px] uppercase tracking-[0.18em] font-bold"
+                    style={{ color: designationStyle.text }}
                   >
-                    <span
-                      aria-hidden
-                      className="inline-block w-1.5 h-1.5 rounded-full"
-                      style={{ background: isGemSelect ? 'var(--gem-gold)' : '#059669' }}
-                    />
-                    <span
-                      className="text-[11px] uppercase tracking-[0.18em] font-bold"
-                      style={{ color: isGemSelect ? 'var(--gem-gold)' : '#059669' }}
-                    >
-                      {isGemSelect ? 'GEM Select' : 'Promising'}
-                    </span>
-                  </div>
-                )}
+                    {designationStyle.label}
+                  </span>
+                </div>
               </div>
 
               {portfolioRank !== null && portfolioTotal > 1 && (
@@ -682,8 +669,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}
               commercialScore={commercialScore}
-              isGemSelect={isGemSelect}
-              isPromising={isPromising}
               craftNote={craftNote}
             />
           }
