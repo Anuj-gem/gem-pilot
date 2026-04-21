@@ -147,6 +147,7 @@ export function DetailsView({
   portfolioTotal,
   commercialScore,
   isGemSelect,
+  isPromising,
   craftNote,
 }: {
   scores: Record<string, { score: number; reasoning: string }>
@@ -161,6 +162,7 @@ export function DetailsView({
   portfolioTotal?: number
   commercialScore?: number | null
   isGemSelect?: boolean
+  isPromising?: boolean
   craftNote?: string | null
 }) {
   const blurStyle: React.CSSProperties = locked
@@ -180,10 +182,16 @@ export function DetailsView({
   return (
     <>
       {/* Commercial Potential Score — the hero of Details when present (v5.2+).
-          Weighted composite (0-100); "GEM Select" at 80+; short variance disclaimer.
+          Weighted composite (0-100); "GEM Select" at 75+, "Promising" at 50-74;
+          short variance disclaimer. "Promising" is private to the writer — it
+          never appears as a public Discover tab.
           We never show the underlying dimension weights — just the composite. */}
       {hasCommercialScore && (
-        <CommercialScoreCard score={commercialScore!} gemSelect={!!isGemSelect} />
+        <CommercialScoreCard
+          score={commercialScore!}
+          gemSelect={!!isGemSelect}
+          promising={!!isPromising}
+        />
       )}
 
       {showPrivacyNote && (
@@ -447,8 +455,16 @@ export function DetailsView({
 }
 
 // ─── Commercial Score card (v5.2) ──────────────────────────────────
-function CommercialScoreCard({ score, gemSelect }: { score: number; gemSelect: boolean }) {
-  // ≥80 gold (GEM Select), 60-79 green, 40-59 amber, <40 red.
+function CommercialScoreCard({
+  score,
+  gemSelect,
+  promising,
+}: {
+  score: number
+  gemSelect: boolean
+  promising: boolean
+}) {
+  // ≥75 gold (GEM Select), 50–74 green (Promising), 35–49 amber, <35 red.
   const palette = gemSelect
     ? {
         text: 'var(--gem-gold)',
@@ -456,9 +472,14 @@ function CommercialScoreCard({ score, gemSelect }: { score: number; gemSelect: b
         bg: 'linear-gradient(135deg, rgba(200,164,92,0.12), rgba(200,164,92,0.03) 70%)',
         bar: 'var(--gem-gold)',
       }
-    : score >= 60
-      ? { text: '#059669', border: 'rgba(5,150,105,0.30)', bg: 'rgba(5,150,105,0.06)', bar: '#059669' }
-      : score >= 40
+    : promising
+      ? {
+          text: '#059669',
+          border: 'rgba(5,150,105,0.35)',
+          bg: 'linear-gradient(135deg, rgba(5,150,105,0.10), rgba(5,150,105,0.02) 70%)',
+          bar: '#059669',
+        }
+      : score >= 35
         ? { text: '#d97706', border: 'rgba(217,119,6,0.30)', bg: 'rgba(217,119,6,0.06)', bar: '#d97706' }
         : { text: '#dc2626', border: 'rgba(220,38,38,0.30)', bg: 'rgba(220,38,38,0.06)', bar: '#dc2626' }
   const pct = Math.max(0, Math.min(100, score))
@@ -479,7 +500,7 @@ function CommercialScoreCard({ score, gemSelect }: { score: number; gemSelect: b
             How we evaluate audience appeal and investment potential relative to the cost of development.
           </p>
         </div>
-        {gemSelect && (
+        {gemSelect ? (
           <div
             className="flex items-center gap-2 px-3 py-1.5 rounded-full"
             style={{
@@ -499,7 +520,27 @@ function CommercialScoreCard({ score, gemSelect }: { score: number; gemSelect: b
               GEM Select
             </span>
           </div>
-        )}
+        ) : promising ? (
+          <div
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+            style={{
+              background: 'rgba(5,150,105,0.12)',
+              border: '1px solid rgba(5,150,105,0.5)',
+            }}
+          >
+            <span
+              aria-hidden
+              className="inline-block w-1.5 h-1.5 rounded-full"
+              style={{ background: '#059669' }}
+            />
+            <span
+              className="text-[12px] uppercase tracking-[0.18em] font-bold"
+              style={{ color: '#059669' }}
+            >
+              Promising
+            </span>
+          </div>
+        ) : null}
       </div>
       <div className="flex items-baseline gap-2 mt-5 mb-3">
         <span
@@ -513,11 +554,15 @@ function CommercialScoreCard({ score, gemSelect }: { score: number; gemSelect: b
       <div className="h-2 rounded-full mb-5 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
         <div className="h-full rounded-full" style={{ width: `${pct}%`, background: palette.bar }} />
       </div>
-      {gemSelect && (
+      {gemSelect ? (
         <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4">
           This script lands in the top GEM Select band — the scripts we think are particularly promising.
         </p>
-      )}
+      ) : promising ? (
+        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4">
+          Sitting in the Promising band — close enough that a sharp next draft can push it into GEM Select. This label is private to you.
+        </p>
+      ) : null}
       <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0">
         A script&apos;s score can shift 5-10 points across different runs — evaluation is probabilistic. The Development Priorities below are the levers you can pull on the next draft to raise it.
       </p>

@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
 
-type TabKey = '' | 'gem-select' | 'promising'
+type TabKey = '' | 'gem-select'
 
 interface SearchBarProps {
   initialQuery: string
@@ -13,13 +13,12 @@ interface SearchBarProps {
   initialTab: TabKey
   genres: string[]
   formats: string[]
-  counts: { recent: number; gemSelect: number; promising: number }
+  counts: { recent: number; gemSelect: number }
 }
 
 const TABS: { key: TabKey; label: string; countKey: keyof SearchBarProps['counts'] }[] = [
   { key: '', label: 'Recent', countKey: 'recent' },
   { key: 'gem-select', label: 'GEM Select', countKey: 'gemSelect' },
-  { key: 'promising', label: 'Promising', countKey: 'promising' },
 ]
 
 export function SearchBar({

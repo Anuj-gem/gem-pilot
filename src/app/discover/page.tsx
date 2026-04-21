@@ -15,14 +15,13 @@ const PAGE_SIZE = 20
 const PUBLIC_COLS =
   'evaluation_id, submission_id, title, user_id, author_name, avatar_url, format, genre, tone, genre_tags, logline, positioning_hook, overall_take, like_count, created_at'
 
-type TabKey = '' | 'gem-select' | 'promising'
+type TabKey = '' | 'gem-select'
 
-// The score buckets. Kept in one place so the server-side counts and the
-// client-side labels can't drift.
-const BUCKETS = {
-  gemSelect: { gte: 80 },
-  promising: { gte: 50, lt: 80 },
-} as const
+// GEM Select threshold. "Promising" (50–74) is only surfaced privately on the
+// writer's own report — it's never a public tab, so the bucket lives here too.
+const GEM_SELECT_MIN = 75
+export const PROMISING_MIN = 50
+export const PROMISING_MAX = GEM_SELECT_MIN // exclusive upper bound
 
 interface PageProps {
   searchParams: Promise<{
@@ -35,8 +34,7 @@ interface PageProps {
 
 export default async function DiscoverPage({ searchParams }: PageProps) {
   const params = await searchParams
-  const tab: TabKey =
-    params.tab === 'gem-select' || params.tab === 'promising' ? params.tab : ''
+  const tab: TabKey = params.tab === 'gem-select' ? params.tab : ''
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -67,26 +65,17 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     supabase
       .from('leaderboard')
       .select('*', { count: 'exact', head: true })
-      .gte('weighted_score', BUCKETS.gemSelect.gte)
-  )
-  const promisingCountQ = applyTextFilters(
-    supabase
-      .from('leaderboard')
-      .select('*', { count: 'exact', head: true })
-      .gte('weighted_score', BUCKETS.promising.gte)
-      .lt('weighted_score', BUCKETS.promising.lt)
+      .gte('weighted_score', GEM_SELECT_MIN)
   )
 
-  const [recentRes, gemSelectRes, promisingRes] = await Promise.all([
+  const [recentRes, gemSelectRes] = await Promise.all([
     recentCountQ,
     gemSelectCountQ,
-    promisingCountQ,
   ])
 
   const counts = {
     recent: recentRes.count ?? 0,
     gemSelect: gemSelectRes.count ?? 0,
-    promising: promisingRes.count ?? 0,
   }
 
   // Initial page — apply the tab's bucket filter, but NEVER include
@@ -94,11 +83,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   // server-side via .gte()/.lt() — those are filters, not projections.
   let query = applyTextFilters(supabase.from('leaderboard').select(PUBLIC_COLS))
   if (tab === 'gem-select') {
-    query = query.gte('weighted_score', BUCKETS.gemSelect.gte)
-  } else if (tab === 'promising') {
-    query = query
-      .gte('weighted_score', BUCKETS.promising.gte)
-      .lt('weighted_score', BUCKETS.promising.lt)
+    query = query.gte('weighted_score', GEM_SELECT_MIN)
   }
   query = query.order('created_at', { ascending: false }).range(0, PAGE_SIZE - 1)
 
@@ -125,9 +110,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     ? 'No scripts match your search.'
     : tab === 'gem-select'
       ? 'No GEM Select scripts yet. Keep an eye on this tab — scoring rolls out as new scripts post.'
-      : tab === 'promising'
-        ? 'No scripts in the Promising band yet.'
-        : 'Nothing posted yet. Submit a script and publish it to get listed.'
+      : 'Nothing posted yet. Submit a script and publish it to get listed.'
 
   return (
     <>
@@ -172,6 +155,11 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
 
         {scripts.length > 0 ? (
           <InfiniteScriptGrid
+            // Re-mount when filters change so useState re-initializes with the
+            // new server-fetched page. Without this key, switching tabs updates
+            // the URL + server data but the client keeps showing the old list
+            // until a hard refresh.
+            key={`${tab}|${params.q ?? ''}|${params.genre ?? ''}|${params.format ?? ''}`}
             initialScripts={scripts}
             initialLikes={initialLikes}
             loggedIn={!!user}

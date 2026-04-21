@@ -8,7 +8,7 @@ interface Props {
   initialScripts: LeaderboardEntry[]
   initialLikes: string[]
   loggedIn: boolean
-  filters: { q: string; genre: string; format: string; tab: '' | 'gem-select' | 'promising' }
+  filters: { q: string; genre: string; format: string; tab: '' | 'gem-select' }
   hasMoreInitial: boolean
 }
 

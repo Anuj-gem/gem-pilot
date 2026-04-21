@@ -99,7 +99,7 @@ export default async function PreviewV51Page({ params }: PageProps) {
   } catch {
     commercialScore = null
   }
-  const isGemSelect = commercialScore !== null && commercialScore >= 80
+  const isGemSelect = commercialScore !== null && commercialScore >= 75
 
   return (
     <>
@@ -301,7 +301,7 @@ export default async function PreviewV51Page({ params }: PageProps) {
           details={
             <>
               {/* Commercial Potential Score — the hero of the Details tab.
-                  Weighted composite (0-100), "GEM Select" designation at 80+, variance disclaimer. */}
+                  Weighted composite (0-100), "GEM Select" designation at 75+, variance disclaimer. */}
               {commercialScore !== null && (
                 <CommercialScoreCard score={commercialScore} gemSelect={isGemSelect} />
               )}

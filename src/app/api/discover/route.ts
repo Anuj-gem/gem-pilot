@@ -18,8 +18,7 @@ export async function GET(req: Request) {
   const genre = url.searchParams.get('genre') ?? ''
   const format = url.searchParams.get('format') ?? ''
   const tabRaw = url.searchParams.get('tab') ?? ''
-  const tab: '' | 'gem-select' | 'promising' =
-    tabRaw === 'gem-select' || tabRaw === 'promising' ? tabRaw : ''
+  const tab: '' | 'gem-select' = tabRaw === 'gem-select' ? tabRaw : ''
   const offset = Math.max(0, Number(url.searchParams.get('offset') ?? '0'))
 
   const supabase = await createClient()
@@ -31,9 +30,7 @@ export async function GET(req: Request) {
   if (genre) query = query.ilike('genre', `%${genre}%`)
   if (format) query = query.ilike('format', `%${format}%`)
   if (tab === 'gem-select') {
-    query = query.gte('weighted_score', 80)
-  } else if (tab === 'promising') {
-    query = query.gte('weighted_score', 50).lt('weighted_score', 80)
+    query = query.gte('weighted_score', 75)
   }
 
   query = query

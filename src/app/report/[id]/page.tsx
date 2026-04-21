@@ -226,7 +226,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   } catch {
     commercialScore = null
   }
-  const isGemSelect = commercialScore !== null && commercialScore >= 80
+  // Designation: GEM Select at 75+, Promising at 50–74 (private to the writer
+   // — Promising is never a public surface, only shown on their own report).
+  const isGemSelect = commercialScore !== null && commercialScore >= 75
+  const isPromising =
+    commercialScore !== null && commercialScore >= 50 && commercialScore < 75
 
   // Contact Writer gating:
   //   - hidden entirely when the script is NOT public on Discover
@@ -548,6 +552,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               portfolioTotal={portfolioTotal}
               commercialScore={commercialScore}
               isGemSelect={isGemSelect}
+              isPromising={isPromising}
               craftNote={craftNote}
             />
           }
