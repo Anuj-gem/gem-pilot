@@ -1,0 +1,270 @@
+{
+  "eval_id": "0528be01-7503-4edc-9f0d-f172d62cae27",
+  "title": "Breaking Bad",
+  "declared_format": "Series",
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Crime Drama",
+      "genre_tags": [
+        "Character Drama",
+        "Thriller"
+      ],
+      "tone": "Grounded, tense, darkly funny, escalating"
+    },
+    "positioning_hook": "A 50-year-old Albuquerque chemistry teacher, dying of lung cancer, partners with a former student to cook meth before time runs out.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 10,
+        "reasoning": "The emotional promise is immediate: a middle-class family man turns to crime under a terminal diagnosis, and every scene sharpens the pressure. The hook is broad, legible, and built for word-of-mouth because it fuses domestic collapse, criminal escalation, and a protagonist viewers can track from the first minute."
+      },
+      "conceptual_hook_clarity": {
+        "score": 10,
+        "reasoning": "The pilot announces the engine in its opening frame with Walter's recorded goodbye, then quickly reveals the cancer diagnosis and the ride-along that leads him back to Jesse. The premise is easy to explain in one breath and the stakes are clear: money, mortality, and a choice that cannot be taken back."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 10,
+        "reasoning": "Walter is built as a contradiction machine: brilliant, humiliated, meticulous, and increasingly dangerous, with domestic scenes that keep his private life in play. Jesse arrives as a combustible counterweight, and the Walter/Jesse dynamic is instantly durable enough to carry seasons of escalation, betrayal, and uneasy loyalty."
+      },
+      "creative_originality_and_boldness": {
+        "score": 10,
+        "reasoning": "The central move is audaciously specific: a high-school chemistry teacher uses actual chemistry to enter the meth trade, and the pilot treats that premise with total confidence. The writing leans into lived-in Albuquerque detail, procedural drug-world texture, and a protagonist whose intelligence becomes the engine of his moral collapse."
+      },
+      "narrative_momentum_engagement": {
+        "score": 10,
+        "reasoning": "The pilot keeps converting humiliation into action: the birthday, the diagnosis, the ride-along, the Jesse confrontation, the RV plan, and the first cook all escalate cleanly. By the end, Walter has crossed into a new life and the story has a clear forward charge for the series."
+      },
+      "resonant_originality": {
+        "score": 10,
+        "reasoning": "It feels inevitable in hindsight and startling on first contact: the chemistry teacher is not just a disguise, he is the reason the criminal enterprise can exist. That fusion of suburban despair, scientific precision, and criminal apprenticeship gives the show a signature that is both fresh and instantly understandable."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "Albuquerque is rendered as a working ecosystem of schools, car washes, DEA offices, suburban homes, and desert cook sites, with each space carrying its own social rules. The meth trade feels operational rather than abstract, and the pilot already suggests a larger criminal hierarchy beyond the immediate duo."
+      },
+      "tonal_specificity": {
+        "score": 10,
+        "reasoning": "The tone is unmistakable: deadpan family comedy, humiliating domestic realism, and sudden criminal menace all live in the same scene. The pilot can move from veggie bacon and birthday banter to a body in a bathtub and still feel tonally coherent."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 10,
+        "reasoning": "The surface story is a man cooking meth to pay bills, but the pilot is already about identity, masculinity, pride, and the seduction of competence. Walter's opening farewell, his classroom monologue on change, and his private rage all point to a long-burn transformation with real thematic depth."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 9,
+        "reasoning": "Walter/Skyler, Walter/Hank, Walter/Jesse, Walter/Marie, and Walter/Junior each produce a different dramatic register, so the show is never dependent on one interaction alone. The family and criminal spheres are already interlocked, which gives the series a strong combinatorial engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 2,
+        "series_regulars": 5,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in his 50s",
+          "Female lead in her 40s",
+          "Teen/young adult son",
+          "Recurring DEA and family ensemble",
+          "Latino supporting roles in the criminal world"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with some exterior desert and street work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Albuquerque suburban homes",
+          "High school classroom",
+          "Car wash",
+          "DEA office",
+          "Desert RV cook location"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical storytelling; occasional chemical smoke, fire, and contained destruction effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Chemical reaction effects, smoke, fire, and a bathtub/body practical gag.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "MasterCard"
+        },
+        {
+          "type": "brand",
+          "detail": "Echinacea"
+        },
+        {
+          "type": "brand",
+          "detail": "Lalique"
+        },
+        {
+          "type": "brand",
+          "detail": "Mars Rover"
+        },
+        {
+          "type": "brand",
+          "detail": "Glock 22"
+        },
+        {
+          "type": "brand",
+          "detail": "Winnebago"
+        },
+        {
+          "type": "brand",
+          "detail": "Miami Vice"
+        },
+        {
+          "type": "brand",
+          "detail": "Pottery Barn"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable / prestige streaming serialized crime drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized transformation drama driven by Walter's double life, with each episode escalating the family-crime collision and the meth business."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, largely contained to homes, school, car wash, office, and desert locations, with limited effects."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The series depends on a strong 50s male lead, a substantial family ensemble, and recurring criminal and DEA roles."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable, but the show needs multiple recurring Albuquerque interiors plus periodic desert RV work."
+        },
+        "content": {
+          "level": "high",
+          "note": "Drug manufacturing, criminal violence, profanity, and a terminal cancer storyline place it firmly in mature-drama territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and pop-culture references appear on the page, including MasterCard, Glock 22, Winnebago, Pottery Barn, and Miami Vice."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Walter is a prestige antihero engine.",
+          "what_it_means": "The role gives a buyer a lead who can carry family drama, dark comedy, and criminal escalation without ever feeling generic, which is exactly the kind of part that can define a series. Mid-career dramatic actors looking for a signature transformation role will chase this, and prestige buyers know how rare a male lead this specific is.",
+          "evidence": "Walter's classroom monologue on change, the cancer diagnosis, and the decision to partner with Jesse after the ride-along.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot fuses domestic life with crime.",
+          "what_it_means": "That collision creates a series engine where every family scene can be charged by the criminal plot, and every criminal scene can threaten the home. Buyers looking for serialized drama with built-in emotional stakes will see immediate runway here, especially on premium cable and prestige streaming.",
+          "evidence": "Birthday breakfast, Skyler's pregnancy, the car wash job, and the later meth-cook decision all sit in the same episode.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The chemistry premise is story-generating.",
+          "what_it_means": "The show turns science into character and plot, which gives the series a built-in differentiator beyond standard crime mechanics. Viewers who like procedural detail and smart-crime storytelling will respond to the way Walter's expertise becomes the tool of his reinvention.",
+          "evidence": "Walter's chemistry lecture, his correction of Jesse's lab setup, and the insistence on pure product and proper equipment.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jesse is a combustible co-lead.",
+          "what_it_means": "The former-student dynamic gives the series a volatile partnership that can sustain betrayal, mentorship, and uneasy loyalty over multiple seasons. Actors who specialize in fast-talking, wounded, unpredictable energy will want this role, and buyers get a second lead who can keep scenes alive opposite Walter.",
+          "evidence": "The classroom reunion, the blackmail-style partnership offer, and the RV negotiation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Albuquerque feels operational, not decorative.",
+          "what_it_means": "The city is not just backdrop; it supplies schools, suburbs, car washes, DEA offices, and desert margins that all feed the story engine. That specificity helps the show stand apart in a crowded crime field and gives producers a world that can keep generating episodes.",
+          "evidence": "The pilot moves through the high school, the car wash, the DEA ride-along, the suburban home, and the desert cook site.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can pivot without breaking.",
+          "what_it_means": "The script can play a birthday joke, a humiliating family beat, and a life-or-death criminal turn in the same stretch, which is a major asset for long-form television. That tonal range attracts directors and buyers who want a show with both audience accessibility and prestige edge.",
+          "evidence": "Veggie bacon banter, Hank's macho teasing, the cancer reveal, and the first cook all coexist in the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble is built from friction.",
+          "what_it_means": "Walter's relationships with Skyler, Hank, Marie, Junior, and Jesse each create a different pressure point, so the series can generate story from family, law enforcement, and criminal worlds at once. That makes the show attractive to buyers who want a durable ensemble without losing the clarity of a central lead.",
+          "evidence": "The birthday dinner, the DEA ride-along, the car-buying scene, and the Jesse partnership all create distinct relational lanes.",
+          "source": "script"
+        }
+      ],
+      "headline": "This pilot is a near-perfect series launch because it gives the market a rare thing: a middle-aged male antihero whose intelligence is the engine of his downfall. It pairs a clean, high-concept premise with a world that feels lived-in, producible, and endlessly expandable."
+    },
+    "lead_characters": [
+      {
+        "name": "Walter White",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 50s \u00b7 White \u00b7 high school chemistry teacher",
+        "hook": "Walter is a brilliant, humiliated, hyper-controlled family man whose life has been reduced to unpaid bills, a second job at a car wash, and a body that is betraying him. He speaks like a man who has spent years swallowing himself, and the pilot makes clear that the intelligence everyone dismisses is exactly what will become dangerous once he stops asking permission.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad season 1 \u2014 the slow-burn transformation role where the audience watches a familiar man become terrifying without ever losing the human being underneath. Actors who want a career-redefining antihero part will chase this because it offers comedy, pathos, menace, and moral collapse in one long-form performance."
+      },
+      {
+        "name": "Jesse Pinkman",
+        "role_type": "Lead",
+        "demographics": "Male \u00b7 20s \u00b7 White \u00b7 former student / small-time meth cook",
+        "hook": "Jesse is a scrappy, profane, improvisational hustler who survives on attitude, nerve, and just enough chemistry knowledge to be dangerous. He is both a punchline and a pressure valve, which makes him the perfect counterweight to Walter's control-freak precision and gives the series a live-wire second lead.",
+        "why_actor_wants_this": "This is the showcase space of Aaron Paul in Breaking Bad season 1 \u2014 the volatile, wounded co-lead whose panic, loyalty, and comic timing keep the show emotionally alive. Young male actors who want a role that can swing from comedy to desperation to betrayal will chase this part."
+      },
+      {
+        "name": "Skyler White",
+        "role_type": "Supporting",
+        "demographics": "Female \u00b7 40s \u00b7 White \u00b7 pregnant wife",
+        "hook": "Skyler is practical, sharp, and already carrying the emotional labor of the household before Walter's secret life begins to widen the fault lines. She reads as someone who notices everything, even when the people around her assume she is only managing the surface.",
+        "why_actor_wants_this": "This is the kind of grounded domestic-drama role that gave Julianna Margulies in The Good Wife its authority \u2014 a woman whose intelligence and composure make every private scene feel consequential. Actors who excel at controlled intensity and moral clarity will want the part because it anchors the family side of the series."
+      },
+      {
+        "name": "Hank Schrader",
+        "role_type": "Supporting",
+        "demographics": "Male \u00b7 40s-50s \u00b7 DEA agent",
+        "hook": "Hank is loud, swaggering, crude, and professionally competent, the kind of guy who fills a room before he enters it. He brings the law-enforcement side of the series into sharp relief while also giving the family scenes their most volatile comic energy.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Chiklis in The Shield \u2014 the swaggering lawman who can be funny, intimidating, and morally elastic in the same breath. Character actors who can play macho comedy with real authority will chase this role."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a suburban moral collapse with precision and bite.",
+        "detail": "The material rewards directors who can balance intimate domestic scenes with procedural crime escalation, and who know how to make ordinary spaces feel charged once a secret life enters them. It also gives a filmmaker room to build tension through performance and blocking rather than scale, which is catnip for directors with a strong actor's eye."
+      },
+      "buyer_appeal": {
+        "tier": "Prestige serialized drama",
+        "lane": "Premium cable / streamer crime-drama lane",
+        "detail": "The show can be packaged around one transformative male lead and a strong supporting ensemble, so a buyer can greenlight it on performance and pilot execution rather than heavy spectacle. The contemporary, mostly contained footprint and evergreen crime premise make it exportable and durable across multiple seasons."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot is already a full engine.",
+        "detail": "As a positioning matter, this reads as a launch-ready series rather than a draft that needs a premise rethink. The next pass is less about invention and more about preserving the clean escalation while keeping the family and criminal spheres equally active in later episodes.",
+        "is_primary_lever": true,
+        "source": "production"
+      },
+      {
+        "area": "The opening voiceover is a strong thesis.",
+        "detail": "Walter's recorded goodbye is a memorable frame, and a future pass could consider how often the series wants to return to that intimate confession mode. The version of the show where that voiceover energy is echoed sparingly would keep the device feeling special.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The pilot leans hard on exposition through dialogue.",
+        "detail": "The chemistry lecture, the lab-safety explanation, and the Jesse product discussion all carry important information, and the material is strongest when that intelligence is dramatized through action. One lever would be to let a few of those beats arrive through behavior or consequence so the science feels even more embodied.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The family scenes carry the emotional spine.",
+        "detail": "The breakfast, the birthday dinner, and the bedroom-painting thread all do important work in showing Walter's home life before the break. A next pass could foreground the emotional reversals in those scenes even more, so the domestic world keeps tightening around the criminal one.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  }
+}
