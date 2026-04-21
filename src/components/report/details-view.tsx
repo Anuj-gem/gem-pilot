@@ -185,21 +185,13 @@ export function DetailsView({
 
   return (
     <>
-      {/* Commercial Potential Score — the hero of Details when present (v5.2+).
-          Weighted composite (0-100); three-tier designation:
-            • ≥75 "GEM Select" (also the public Discover filter)
-            • 50–74 "Very Promising"
-            • <50 "Shows Potential"
-          "Very Promising" and "Shows Potential" are private to the writer — only
-          GEM Select is ever surfaced on public Discover.
-          We never show the underlying dimension weights — just the composite. */}
-      {hasCommercialScore && designation && (
-        <CommercialScoreCard score={commercialScore!} designation={designation} />
-      )}
-
+      {/* Privacy note sits ABOVE the score so the writer immediately reads the
+          number as a private-to-them signal — avoids the "is this score public?"
+          beat that kills confidence when a Very Promising / Shows Potential pill
+          is visible. */}
       {showPrivacyNote && (
         <div
-          className="flex items-start gap-3 p-5 rounded-xl mb-10"
+          className="flex items-start gap-3 p-5 rounded-xl mb-6"
           style={{
             background: 'rgba(124,58,237,0.08)',
             border: '1px solid rgba(124,58,237,0.25)',
@@ -216,6 +208,18 @@ export function DetailsView({
             This section isn&apos;t shared when your report is circulated — it&apos;s yours for reference.
           </p>
         </div>
+      )}
+
+      {/* Commercial Potential Score — the hero of Details when present (v5.2+).
+          Weighted composite (0-100); three-tier designation:
+            • ≥75 "GEM Select" (also the public Discover filter)
+            • 50–74 "Very Promising"
+            • <50 "Shows Potential"
+          "Very Promising" and "Shows Potential" are private to the writer — only
+          GEM Select is ever surfaced on public Discover.
+          We never show the underlying dimension weights — just the composite. */}
+      {hasCommercialScore && designation && (
+        <CommercialScoreCard score={commercialScore!} designation={designation} />
       )}
 
       {/* GEM Rank — only shown on legacy (pre-v5.2) evals where there's no Commercial Score card.
