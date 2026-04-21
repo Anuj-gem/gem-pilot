@@ -7,6 +7,8 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 import Nav from '@/components/nav'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
@@ -248,12 +250,30 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
   if (reportLocked) {
+    // Upsell framing cascades: GEM Select > Promising > rank-aware default.
+    // Keeps the strongest commercial signal front-and-center without
+    // feeling spammy for writers who scored lower.
+    const bestRank = portfolioRank === 1 && (portfolioTotal ?? 0) > 1
+    const upsellHeadline = isGemSelect
+      ? 'This one belongs on Discover.'
+      : isPromising
+        ? 'Close to GEM Select territory.'
+        : bestRank
+          ? 'Your top-scoring script yet.'
+          : `Your report on ${submission.title} is ready.`
+    const upsellSubtext = isGemSelect
+      ? 'It scored in the GEM Select band — the top tier we surface on the public Discover board. Go Pro to read the full report, publish it, and let producers contact you.'
+      : isPromising
+        ? 'A sharp next pass can push it into GEM Select. Go Pro to read the full report and evaluate unlimited scripts.'
+        : 'Go Pro to read this report, evaluate unlimited scripts, and publish the strong ones to Discover.'
+
     return (
       <>
         <Nav />
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
+          {/* Pitch card — unchanged */}
           <div
-            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-8"
+            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-6"
             style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
           >
             <div
@@ -269,18 +289,129 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </p>
           </div>
 
+          {/* Score + rank card — visible even while locked, since the score and
+              portfolio rank are earned signals, not the paywalled report content. */}
+          {commercialScore !== null && (
+            <div
+              className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
+              style={{
+                border: `1px solid ${
+                  isGemSelect
+                    ? 'rgba(200,164,92,0.4)'
+                    : isPromising
+                      ? 'rgba(5,150,105,0.35)'
+                      : 'var(--gem-gray-700)'
+                }`,
+                background: isGemSelect
+                  ? 'linear-gradient(135deg, rgba(200,164,92,0.12), rgba(200,164,92,0.02) 70%)'
+                  : isPromising
+                    ? 'linear-gradient(135deg, rgba(5,150,105,0.10), rgba(5,150,105,0.02) 70%)'
+                    : 'transparent',
+              }}
+            >
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div>
+                  <p
+                    className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
+                    style={{
+                      color: isGemSelect
+                        ? 'var(--gem-gold)'
+                        : isPromising
+                          ? '#059669'
+                          : 'var(--gem-gray-400)',
+                    }}
+                  >
+                    Commercial Potential
+                  </p>
+                  <div className="flex items-baseline gap-1.5">
+                    <span
+                      className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
+                      style={{
+                        color: isGemSelect
+                          ? 'var(--gem-gold)'
+                          : isPromising
+                            ? '#059669'
+                            : 'var(--gem-white)',
+                      }}
+                    >
+                      {commercialScore.toFixed(1)}
+                    </span>
+                    <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
+                      / 100
+                    </span>
+                  </div>
+                </div>
+                {(isGemSelect || isPromising) && (
+                  <div
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
+                    style={{
+                      background: isGemSelect
+                        ? 'rgba(200,164,92,0.12)'
+                        : 'rgba(5,150,105,0.12)',
+                      border: `1px solid ${
+                        isGemSelect ? 'rgba(200,164,92,0.5)' : 'rgba(5,150,105,0.5)'
+                      }`,
+                    }}
+                  >
+                    <span
+                      aria-hidden
+                      className="inline-block w-1.5 h-1.5 rounded-full"
+                      style={{ background: isGemSelect ? 'var(--gem-gold)' : '#059669' }}
+                    />
+                    <span
+                      className="text-[11px] uppercase tracking-[0.18em] font-bold"
+                      style={{ color: isGemSelect ? 'var(--gem-gold)' : '#059669' }}
+                    >
+                      {isGemSelect ? 'GEM Select' : 'Promising'}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {portfolioRank !== null && portfolioTotal > 1 && (
+                <p className="text-[13px] text-[var(--gem-gray-400)] mt-4 m-0">
+                  {portfolioRank === 1 ? (
+                    <>
+                      <span className="text-[var(--gem-gold)] font-semibold">
+                        Your top-scoring script
+                      </span>{' '}
+                      — #1 of {portfolioTotal} in your portfolio.
+                    </>
+                  ) : (
+                    <>
+                      Ranked{' '}
+                      <span className="text-[var(--gem-white)] font-semibold">
+                        #{portfolioRank}
+                      </span>{' '}
+                      of {portfolioTotal} in your portfolio.
+                    </>
+                  )}
+                </p>
+              )}
+            </div>
+          )}
+
           <h2 className="text-2xl font-bold text-[var(--gem-white)] mb-3">
-            Your report on <em>{submission.title}</em> is ready
+            {upsellHeadline}
           </h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8 max-w-md mx-auto leading-relaxed">
-            Your first evaluation was on us. Go Pro to read this report and evaluate unlimited scripts going forward.
+            {upsellSubtext}
           </p>
 
           <LockedReportUpgrade evaluationId={id} />
 
-          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">
+          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3 mb-8">
             Cancel anytime · Secure checkout via Stripe
           </p>
+
+          {/* Always give writers a way back — don't let the paywall be a dead end. */}
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+          >
+            <ArrowLeft size={14} />
+            Back to dashboard
+          </Link>
         </div>
       </>
     )
