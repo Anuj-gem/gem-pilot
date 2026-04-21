@@ -1,5 +1,5 @@
 // Paginated discover feed — powers infinite scroll on /discover.
-// Returns a page of leaderboard entries filtered by q/genre/format.
+// Returns a page of leaderboard entries filtered by q/genre/format/tab.
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 
@@ -7,21 +7,34 @@ export const dynamic = 'force-dynamic'
 
 const PAGE_SIZE = 20
 
+// Public columns — never include weighted_score / tier. Bucket membership is
+// derived server-side; scores never leak onto public cards.
+const PUBLIC_COLS =
+  'evaluation_id, submission_id, title, user_id, author_name, avatar_url, format, genre, tone, genre_tags, logline, positioning_hook, overall_take, like_count, created_at'
+
 export async function GET(req: Request) {
   const url = new URL(req.url)
   const q = url.searchParams.get('q') ?? ''
   const genre = url.searchParams.get('genre') ?? ''
   const format = url.searchParams.get('format') ?? ''
+  const tabRaw = url.searchParams.get('tab') ?? ''
+  const tab: '' | 'gem-select' | 'promising' =
+    tabRaw === 'gem-select' || tabRaw === 'promising' ? tabRaw : ''
   const offset = Math.max(0, Number(url.searchParams.get('offset') ?? '0'))
 
   const supabase = await createClient()
-  let query = supabase.from('leaderboard').select('*')
+  let query = supabase.from('leaderboard').select(PUBLIC_COLS)
 
   if (q) {
     query = query.or(`title.ilike.%${q}%,author_name.ilike.%${q}%`)
   }
   if (genre) query = query.ilike('genre', `%${genre}%`)
   if (format) query = query.ilike('format', `%${format}%`)
+  if (tab === 'gem-select') {
+    query = query.gte('weighted_score', 80)
+  } else if (tab === 'promising') {
+    query = query.gte('weighted_score', 50).lt('weighted_score', 80)
+  }
 
   query = query
     .order('created_at', { ascending: false })

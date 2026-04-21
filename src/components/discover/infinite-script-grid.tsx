@@ -8,7 +8,7 @@ interface Props {
   initialScripts: LeaderboardEntry[]
   initialLikes: string[]
   loggedIn: boolean
-  filters: { q: string; genre: string; format: string }
+  filters: { q: string; genre: string; format: string; tab: '' | 'gem-select' | 'promising' }
   hasMoreInitial: boolean
 }
 
@@ -33,6 +33,7 @@ export function InfiniteScriptGrid({
       if (filters.q) params.set('q', filters.q)
       if (filters.genre) params.set('genre', filters.genre)
       if (filters.format) params.set('format', filters.format)
+      if (filters.tab) params.set('tab', filters.tab)
       params.set('offset', String(scripts.length))
       const res = await fetch(`/api/discover?${params.toString()}`, {
         cache: 'no-store',
@@ -60,7 +61,7 @@ export function InfiniteScriptGrid({
     } finally {
       setLoading(false)
     }
-  }, [filters.q, filters.genre, filters.format, scripts.length, loading, hasMore])
+  }, [filters.q, filters.genre, filters.format, filters.tab, scripts.length, loading, hasMore])
 
   useEffect(() => {
     if (!sentinelRef.current) return

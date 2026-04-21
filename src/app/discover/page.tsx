@@ -1,4 +1,5 @@
-// Discover — positioning-first feed, sorted by recency with infinite scroll.
+// Discover — tabbed feed (Recent · GEM Select · Promising).
+// All tabs sort by recency. Scores never leak onto public cards.
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { InfiniteScriptGrid } from '@/components/discover/infinite-script-grid'
@@ -9,34 +10,96 @@ export const dynamic = 'force-dynamic'
 
 const PAGE_SIZE = 20
 
+// Public columns — never include weighted_score or tier. Users must not know
+// each other's scores; bucket membership is the only signal.
+const PUBLIC_COLS =
+  'evaluation_id, submission_id, title, user_id, author_name, avatar_url, format, genre, tone, genre_tags, logline, positioning_hook, overall_take, like_count, created_at'
+
+type TabKey = '' | 'gem-select' | 'promising'
+
+// The score buckets. Kept in one place so the server-side counts and the
+// client-side labels can't drift.
+const BUCKETS = {
+  gemSelect: { gte: 80 },
+  promising: { gte: 50, lt: 80 },
+} as const
+
 interface PageProps {
-  searchParams: Promise<{ q?: string; genre?: string; format?: string }>
+  searchParams: Promise<{
+    q?: string
+    genre?: string
+    format?: string
+    tab?: string
+  }>
 }
 
 export default async function DiscoverPage({ searchParams }: PageProps) {
   const params = await searchParams
+  const tab: TabKey =
+    params.tab === 'gem-select' || params.tab === 'promising' ? params.tab : ''
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Fetch filter option universe (all genres/formats across the board) so the
-  // pills don't shrink with the first PAGE_SIZE results.
+  // Fetch filter option universe so the dropdowns don't shrink with the
+  // current tab/query.
   const { data: allForFilters } = await supabase
     .from('leaderboard')
     .select('genre, format')
     .limit(1000)
 
-  // Total count of scripts on the board — shown as a prominent stat.
-  const { count: totalCount } = await supabase
-    .from('leaderboard')
-    .select('*', { count: 'exact', head: true })
-
-  // Initial page — first PAGE_SIZE rows, recency-ordered.
-  let query = supabase.from('leaderboard').select('*')
-  if (params.q) {
-    query = query.or(`title.ilike.%${params.q}%,author_name.ilike.%${params.q}%`)
+  // Build the base filter closure so all four queries (3 counts + 1 page)
+  // apply q/genre/format consistently.
+  const applyTextFilters = <T,>(q: T): T => {
+    let out = q as any
+    if (params.q) {
+      out = out.or(`title.ilike.%${params.q}%,author_name.ilike.%${params.q}%`)
+    }
+    if (params.genre) out = out.ilike('genre', `%${params.genre}%`)
+    if (params.format) out = out.ilike('format', `%${params.format}%`)
+    return out as T
   }
-  if (params.genre) query = query.ilike('genre', `%${params.genre}%`)
-  if (params.format) query = query.ilike('format', `%${params.format}%`)
+
+  // Count queries (head:true — no rows returned, just counts).
+  const recentCountQ = applyTextFilters(
+    supabase.from('leaderboard').select('*', { count: 'exact', head: true })
+  )
+  const gemSelectCountQ = applyTextFilters(
+    supabase
+      .from('leaderboard')
+      .select('*', { count: 'exact', head: true })
+      .gte('weighted_score', BUCKETS.gemSelect.gte)
+  )
+  const promisingCountQ = applyTextFilters(
+    supabase
+      .from('leaderboard')
+      .select('*', { count: 'exact', head: true })
+      .gte('weighted_score', BUCKETS.promising.gte)
+      .lt('weighted_score', BUCKETS.promising.lt)
+  )
+
+  const [recentRes, gemSelectRes, promisingRes] = await Promise.all([
+    recentCountQ,
+    gemSelectCountQ,
+    promisingCountQ,
+  ])
+
+  const counts = {
+    recent: recentRes.count ?? 0,
+    gemSelect: gemSelectRes.count ?? 0,
+    promising: promisingRes.count ?? 0,
+  }
+
+  // Initial page — apply the tab's bucket filter, but NEVER include
+  // weighted_score / tier in the SELECT list. We still filter by them
+  // server-side via .gte()/.lt() — those are filters, not projections.
+  let query = applyTextFilters(supabase.from('leaderboard').select(PUBLIC_COLS))
+  if (tab === 'gem-select') {
+    query = query.gte('weighted_score', BUCKETS.gemSelect.gte)
+  } else if (tab === 'promising') {
+    query = query
+      .gte('weighted_score', BUCKETS.promising.gte)
+      .lt('weighted_score', BUCKETS.promising.lt)
+  }
   query = query.order('created_at', { ascending: false }).range(0, PAGE_SIZE - 1)
 
   const { data: entries } = await query
@@ -57,6 +120,15 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const genres = [...new Set(filterPool.map((s) => s.genre).filter(Boolean) as string[])]
   const formats = [...new Set(filterPool.map((s) => s.format).filter(Boolean) as string[])]
 
+  // Tab-scoped empty-state copy.
+  const emptyCopy = params.q
+    ? 'No scripts match your search.'
+    : tab === 'gem-select'
+      ? 'No GEM Select scripts yet. Keep an eye on this tab — scoring rolls out as new scripts post.'
+      : tab === 'promising'
+        ? 'No scripts in the Promising band yet.'
+        : 'Nothing posted yet. Submit a script and publish it to get listed.'
+
   return (
     <>
       <Nav />
@@ -66,7 +138,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
             <h1 className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)] m-0">
               The Discovery Board
             </h1>
-            {typeof totalCount === 'number' && totalCount > 0 && (
+            {counts.recent > 0 && (
               <span
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border"
                 style={{
@@ -79,7 +151,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
-                {totalCount.toLocaleString()} scripts live
+                {counts.recent.toLocaleString()} scripts live
               </span>
             )}
           </div>
@@ -92,8 +164,10 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
           initialQuery={params.q ?? ''}
           initialGenre={params.genre ?? ''}
           initialFormat={params.format ?? ''}
+          initialTab={tab}
           genres={genres}
           formats={formats}
+          counts={counts}
         />
 
         {scripts.length > 0 ? (
@@ -105,16 +179,13 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
               q: params.q ?? '',
               genre: params.genre ?? '',
               format: params.format ?? '',
+              tab,
             }}
             hasMoreInitial={scripts.length === PAGE_SIZE}
           />
         ) : (
           <div className="text-center py-20">
-            <p className="text-[var(--gem-gray-500)] text-sm">
-              {params.q
-                ? 'No scripts match your search.'
-                : 'Nothing posted yet. Submit a script and publish it to get listed.'}
-            </p>
+            <p className="text-[var(--gem-gray-500)] text-sm">{emptyCopy}</p>
           </div>
         )}
       </div>

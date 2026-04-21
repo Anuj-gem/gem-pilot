@@ -51,27 +51,17 @@ export default async function DashboardPage() {
     submissions?.filter((s: any) => s.status === 'completed').length ?? 0
   const usedFreeEval = completedCount >= 1
 
-  // Portfolio rank map: { submission_id -> rank } sorted by weighted_score desc.
-  // Older submission wins ties. Only completed submissions with evals get ranked.
-  const rankablePool = (submissions ?? [])
-    .filter((s: any) => s.status === 'completed')
-    .map((s: any) => {
-      const e = Array.isArray(s.script_evaluations)
-        ? s.script_evaluations[0]
-        : s.script_evaluations
-      return { id: s.id, score: e?.weighted_score ?? null, created_at: s.created_at }
-    })
-    .filter((s: any) => typeof s.score === 'number')
-    .sort((a: any, b: any) => {
-      const ds = b.score - a.score
-      if (ds !== 0) return ds
-      return new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
-    })
-  const rankMap: Record<string, number> = {}
-  rankablePool.forEach((s: any, i: number) => {
-    rankMap[s.id] = i + 1
-  })
-  const rankTotal = rankablePool.length
+  // Score map: { submission_id -> weighted_score } for completed evals.
+  const scoreMap: Record<string, number> = {}
+  for (const s of (submissions ?? []) as any[]) {
+    if (s.status !== 'completed') continue
+    const e = Array.isArray(s.script_evaluations)
+      ? s.script_evaluations[0]
+      : s.script_evaluations
+    if (typeof e?.weighted_score === 'number') {
+      scoreMap[s.id] = e.weighted_score
+    }
+  }
 
   const firstName =
     profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
@@ -164,21 +154,16 @@ export default async function DashboardPage() {
 
                 const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
 
-                const rank = rankMap[sub.id]
+                const score = scoreMap[sub.id]
 
                 return (
                   <div key={sub.id} className="flex items-start gap-3">
-                    {/* Rank column (outside the card) */}
-                    <div className="shrink-0 w-10 sm:w-12 text-center pt-5">
-                      {rank ? (
-                        <>
-                          <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gold)] leading-none">
-                            #{rank}
-                          </div>
-                          <div className="text-[10px] text-[var(--gem-gray-500)] mt-1 uppercase tracking-wider">
-                            of {rankTotal}
-                          </div>
-                        </>
+                    {/* Score column (outside the card) */}
+                    <div className="shrink-0 w-14 sm:w-16 text-center pt-5">
+                      {typeof score === 'number' ? (
+                        <div className="text-2xl sm:text-3xl font-bold text-[var(--gem-gold)] leading-none tabular-nums">
+                          {score.toFixed(1)}
+                        </div>
                       ) : (
                         <div className="text-[var(--gem-gray-700)] text-xl leading-none">—</div>
                       )}
