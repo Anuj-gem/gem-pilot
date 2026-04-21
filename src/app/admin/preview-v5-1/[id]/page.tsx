@@ -43,7 +43,7 @@ interface V51File {
     whats_special: { strengths: { dimension_or_area: string; what_it_means: string; evidence: string; source: string }[]; headline: string }
     lead_characters?: { name: string; role_type: string; demographics: string; hook: string; why_actor_wants_this: string }[]
     package_angles?: {
-      director_appeal: { hook: string; detail: string }
+      director_appeal: { hook: string; fit_profile?: string; detail: string }
       buyer_appeal: { tier: string; lane: string; detail: string }
     }
     considerations: { area: string; detail: string; source: string; is_primary_lever?: boolean }[]
@@ -248,6 +248,22 @@ export default async function PreviewV51Page({ params }: PageProps) {
                       <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
                         {package_angles.director_appeal.hook}
                       </p>
+                      {package_angles.director_appeal.fit_profile && (
+                        <div
+                          className="rounded-lg p-5 mb-4"
+                          style={{
+                            background: 'rgba(5,150,105,0.07)',
+                            border: '1px solid rgba(5,150,105,0.20)',
+                          }}
+                        >
+                          <p className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0" style={{ color: '#059669' }}>
+                            Director fit profile
+                          </p>
+                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                            {package_angles.director_appeal.fit_profile}
+                          </p>
+                        </div>
+                      )}
                       <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
                         {package_angles.director_appeal.detail}
                       </p>
@@ -337,6 +353,22 @@ export default async function PreviewV51Page({ params }: PageProps) {
                       >
                         <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">{c.detail}</p>
                       </Collapsible>
+                    ))}
+                  </div>
+                </Section>
+              )}
+
+              {/* Narrative Breakdown — 10-dim scores + calibrated reasoning.
+                  Intentionally no composite/weighted score. Each dimension's reasoning should
+                  match its score band (see STEP 3 in evaluation-prompt-v5-1.ts). */}
+              {e.scores && Object.keys(e.scores).length > 0 && (
+                <Section
+                  label="Narrative Breakdown"
+                  subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+                >
+                  <div className="space-y-3">
+                    {Object.entries(e.scores).map(([key, dim]) => (
+                      <DimensionRow key={key} label={formatDimLabel(key)} score={dim.score} reasoning={dim.reasoning} />
                     ))}
                   </div>
                 </Section>
@@ -530,6 +562,53 @@ function Fact({ k, v }: { k: string; v: string | number | null | undefined }) {
     <div className="flex justify-between gap-4 text-[16px] py-0.5">
       <span className="text-[var(--gem-gray-400)] flex-shrink-0">{k}</span>
       <span className="text-[var(--gem-gray-100)] text-right font-medium">{String(v)}</span>
+    </div>
+  )
+}
+
+function formatDimLabel(key: string): string {
+  return key
+    .replace(/_and_/g, ' & ')
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+}
+
+function scoreBandPalette(score: number) {
+  if (score >= 8) return { text: '#059669', bg: 'rgba(5,150,105,0.10)', border: 'rgba(5,150,105,0.35)', fill: '#059669' }
+  if (score >= 5) return { text: '#d97706', bg: 'rgba(217,119,6,0.10)', border: 'rgba(217,119,6,0.35)', fill: '#d97706' }
+  return { text: '#dc2626', bg: 'rgba(220,38,38,0.10)', border: 'rgba(220,38,38,0.35)', fill: '#dc2626' }
+}
+
+function DimensionRow({ label, score, reasoning }: { label: string; score: number; reasoning: string }) {
+  const p = scoreBandPalette(score)
+  const pct = Math.max(0, Math.min(100, score * 10))
+  return (
+    <div
+      className="rounded-xl p-5"
+      style={{ border: `1px solid var(--gem-gray-700)`, background: '#fff' }}
+    >
+      <div className="flex items-baseline justify-between gap-4 mb-3">
+        <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+          {label}
+        </p>
+        <div className="flex items-baseline gap-1 flex-shrink-0">
+          <span className="text-[26px] font-bold tabular-nums" style={{ color: p.text }}>
+            {score}
+          </span>
+          <span className="text-[13px] text-[var(--gem-gray-400)]">/ 10</span>
+        </div>
+      </div>
+      <div
+        className="h-1.5 rounded-full mb-4 overflow-hidden"
+        style={{ background: 'var(--gem-gray-800)' }}
+      >
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: p.fill }} />
+      </div>
+      {reasoning && (
+        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+          {reasoning}
+        </p>
+      )}
     </div>
   )
 }

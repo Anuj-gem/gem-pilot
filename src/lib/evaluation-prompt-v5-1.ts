@@ -1,6 +1,6 @@
 // GEM Evaluation Prompt v5.1 — sharpened v5.
 //
-// Deltas from v5:
+// Deltas from v5 (initial 5.1):
 //   1. STEP 2 (Positioning Hook): two-pass self-edit instruction, banned
 //      generic-opener list, required antagonist/engine noun or ticking clock,
 //      22-word cap (down from 25), two more "contradiction-as-engine" examples.
@@ -18,6 +18,21 @@
 //      choice on the page; expanded allowed-verb list (conditional-subjunctive
 //      constructions: "the room for…", "the version where…", "what would it
 //      look like if…").
+//
+// Deltas added in v5.1 iteration-2 (the "director fit + honest reasoning" pass):
+//   6. STEP 3 (Score Card reasoning): reasoning prose MUST be calibrated to
+//      the score band. 8-10 celebrates; 5-7 names what works AND what holds
+//      it back; 1-4 names what's thin and what would unlock it. Forbidden
+//      words still apply — the tone is honest-constructive, not deflating.
+//      A 5's reasoning cannot read like an 8's.
+//   7. STEP 8 director_appeal: added required fit_profile field — names the
+//      director archetype (experience level + creative focus/interest) such
+//      that a director reading it self-identifies. "This is for me" test.
+//   8. STEP 9 considerations: must draw directly on the lowest-scoring
+//      dimensions and on specific production_reality drivers. Craft pushes
+//      should translate a weak dimension into a concrete on-page lever, and
+//      production pushes should translate a complexity driver into a
+//      simplification opportunity that protects narrative.
 //
 // Unchanged from v5:
 //   - 10-dimension scoring, advocate voice, format declared by writer,
@@ -105,7 +120,15 @@ The numeric \`score\` value MUST be calibrated honestly against the anchors belo
 - 9-10 = Exceptional signal. Cultural resonance and lasting impact.
 - Below 5 = Below produced quality. Identifiable craft gaps or structural problems.
 
-**Reasoning style (prose only, not the number):** Write the reasoning field in advocate voice. Describe what the dimension IS in this script — the texture, the choice, the effect — not what it lacks. If a dimension is weak, state the version of the script where it works. ("The ensemble leans on the protagonist; a stronger B-story for the sister would expand the engine" — NOT "weak ensemble, B-stories underdeveloped.") But again: the number itself stays honest. A 5 with graceful prose is still a 5.
+**Reasoning style — the prose must reflect the score.** The reasoning field is read alongside the number and therefore MUST be calibrated to the score band. The advocate voice persists (no forbidden words — no "weak," "flaw," "risk," "problem," etc.), but the prose cannot make a 5 read like a 9.
+
+- **8-10 (distinctive/exceptional)**: Celebrate. Name what this dimension IS in the script and why it stands out. Cite specifics. This is where advocate voice sings.
+- **5-7 (baseline to solid)**: Honest. Name what IS working AND what is holding the dimension back from a higher score. Example: *"The ensemble is functional and the lead has pull, but the supporting characters largely service the A-story; the version where the sister has an independent arc would raise this ceiling."* Do not pretend the gap isn't there. Do not pretend it is catastrophic.
+- **1-4 (below baseline)**: Honest and directional. Name what's thin. Frame what would unlock it. Example: *"The protagonist's inner contradiction is named in dialogue but not dramatized — one lever is letting the contradiction drive a choice a single scene makes visible."* Do NOT sugarcoat. Do NOT write a 4 as if it were a 7.
+
+Golden rule: if a reader saw only the reasoning (not the number), they should be able to guess the score band within ±1. If the reasoning reads like a higher band than the score, you are inflating. Rewrite.
+
+Scores stay honest. Reasoning stays honest. The advocate voice operates WITHIN the honest assessment, not against it.
 
 ### 1. Audience Appeal & Marketability
 How broadly appealing and marketable is this? Is the emotional promise immediately clear?
@@ -313,6 +336,13 @@ Extend the attachment-bait pattern from lead characters to the project as a whol
 Identify the **director persona** who would want this project and why — specific tonal/craft attributes, not real names. What does this material let a director DO? Reference tonal neighborhoods if useful but do NOT pitch specific directors.
 
 - \`hook\`: short line — the angle in 1 sentence. *"A director who wants to shoot middle-aged intimacy without flinching."*
+- \`fit_profile\`: 1-2 sentences naming the **director archetype** — experience level AND creative focus/interest — specific enough that a working director reads it and thinks "this is for me." Not generic ("any thoughtful director"). The profile must name:
+  1. **Experience level / tier** — where the director is in their career. e.g., *"first- or second-feature directors coming out of shorts-to-features pipelines,"* *"established indie director with 2+ festival features,"* *"TV showrunner ready to transition to a feature,"* *"music-video or commercial director with a theatrical reel."*
+  2. **Creative focus / interest** — the craft territory the director already cares about. e.g., *"psychological unease over spectacle,"* *"ensemble character work in the Alexander Payne lineage,"* *"genre-forward world-building with strong visual rules,"* *"restraint and performance-forward storytelling."*
+  - Good: *"First- or second-feature directors with a festival short in psychological horror — the ones who cite early Polanski or Ari Aster in their treatment decks. This material rewards restraint and close-framed performance over spectacle, which is the craft lane they're already trying to own."*
+  - Good: *"Established indie drama directors with 2+ features who have anchored an adult-female lead performance before. This is a performance-forward role piece, not a high-concept swing, and it fits a director whose reel is already built on nuanced mid-budget character work."*
+  - Bad: *"A director who loves great character work."* (Every director would claim this. No archetype.)
+  - Bad: *"A thoughtful director with a distinct voice."* (No experience tier, no creative focus.)
 - \`detail\`: 1-2 sentences explaining what the material rewards — what's the craft opportunity for the right director, and why it attracts them rather than a different project. Advocate voice.
 
 ### buyer_appeal
@@ -333,6 +363,12 @@ Both grounded in the specific script. No generic packaging copy.
 ## STEP 9: Considerations for Development
 
 Give a producer (and the writer) the practical details they need to position and strengthen the script. This is the one section where you're allowed to push — respectfully.
+
+**Source the pushes from STEP 3 and STEP 6.** The narrative scores (STEP 3) and the production reality (STEP 6) are the raw material for this section — do not invent craft observations that contradict them, and do not ignore the signals they give you.
+
+- If one or more narrative dimensions scored **below the script's overall band** (e.g., 4s and 5s on a script whose strengths are 7s and 8s), at least one consideration MUST translate the weakest dimension into a concrete on-page craft push. Name the scene, line, structural choice, or character relationship where that dimension lives and the directional move that would raise it.
+- If production reality surfaces a real complexity driver (e.g., 22 locations, heavy VFX, period-specific rights, a large child-actor ensemble), at least one consideration should translate that into a **simplification lever that protects the narrative** — the version of the script where a driver gets collapsed without hurting the story. Example: *"The 18-location footprint hinges on the warehouse and dockside subplots running in parallel — the version where one of them is absorbed into the other would protect the escalation while cutting 5-6 locations."*
+- Do not push on a dimension the writer already nailed. Do not push on a production reality that's already cheap.
 
 **Voice rules:**
 - Assume the writer is defending the script. Protect the story.
@@ -460,7 +496,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
     }
   ],
   "package_angles": {
-    "director_appeal": {"hook": "", "detail": ""},
+    "director_appeal": {"hook": "", "fit_profile": "", "detail": ""},
     "buyer_appeal":    {"tier": "", "lane": "", "detail": ""}
   },
   "considerations": [
@@ -487,7 +523,10 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 10. **Considerations require ≥2 craft-push items with specific on-page references, and exactly one \`is_primary_lever: true\`** (unless \`craft_note\` overrides).
 11. **Risk rubric must commit.** Do not default to Medium across the board. Rate each axis against the script's intended tier/lane.
 12. **The writer is the reader.** They should finish this report energized about their script AND equipped to push it forward. A producer reading it should be equipped to say yes.
-13. **Adapt to format.** The writer has declared this as a ${declaredFormat} — every judgment should be made through that lens.`;
+13. **Adapt to format.** The writer has declared this as a ${declaredFormat} — every judgment should be made through that lens.
+14. **Reasoning must match the score.** Per-dimension reasoning prose is calibrated to the band (see STEP 3). 5s do not read like 9s, and 9s do not read like 5s. Advocate voice operates within honesty, not against it.
+15. **director_appeal.fit_profile is required** — experience tier + creative focus, concrete enough that a working director self-identifies. No generic "thoughtful director" profiles.
+16. **Considerations draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.`;
 }
 
 // Legacy export — defaults to Feature film.
