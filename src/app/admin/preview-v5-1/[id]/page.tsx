@@ -8,6 +8,7 @@ import path from 'path'
 import { ChevronDown } from 'lucide-react'
 import Nav from '@/components/nav'
 import { PreviewTabs } from './tabs'
+import { calculateWeightedScore, DimensionId } from '@/types'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -87,6 +88,18 @@ export default async function PreviewV51Page({ params }: PageProps) {
   const { classification, positioning_hook, production_reality, whats_special, lead_characters, package_angles, considerations, craft_note } = e
   const risk = production_reality.risk_rubric
   const wordCount = positioning_hook ? positioning_hook.trim().split(/\s+/).length : 0
+
+  // Commercial Potential Score — weighted composite 0-100. Weights themselves are NEVER shown.
+  // We tolerate malformed score objects gracefully so previews still render if a dim is missing.
+  let commercialScore: number | null = null
+  try {
+    if (e.scores && Object.keys(e.scores).length >= 10) {
+      commercialScore = calculateWeightedScore(e.scores as Record<DimensionId, { score: number }>)
+    }
+  } catch {
+    commercialScore = null
+  }
+  const isGemSelect = commercialScore !== null && commercialScore >= 80
 
   return (
     <>
@@ -287,6 +300,12 @@ export default async function PreviewV51Page({ params }: PageProps) {
           }
           details={
             <>
+              {/* Commercial Potential Score — the hero of the Details tab.
+                  Weighted composite (0-100), "GEM Select" designation at 80+, variance disclaimer. */}
+              {commercialScore !== null && (
+                <CommercialScoreCard score={commercialScore} gemSelect={isGemSelect} />
+              )}
+
               {/* Privacy banner */}
               <div
                 className="flex items-start gap-3 p-5 rounded-xl mb-10"
@@ -563,6 +582,73 @@ function Fact({ k, v }: { k: string; v: string | number | null | undefined }) {
       <span className="text-[var(--gem-gray-400)] flex-shrink-0">{k}</span>
       <span className="text-[var(--gem-gray-100)] text-right font-medium">{String(v)}</span>
     </div>
+  )
+}
+
+function CommercialScoreCard({ score, gemSelect }: { score: number; gemSelect: boolean }) {
+  // Display color bands: ≥80 prestige gold (matches GEM Select), 60-79 green, 40-59 amber, <40 red.
+  const palette = gemSelect
+    ? { text: 'var(--gem-gold)', border: 'rgba(200,164,92,0.4)', bg: 'linear-gradient(135deg, rgba(200,164,92,0.12), rgba(200,164,92,0.03) 70%)', bar: 'var(--gem-gold)' }
+    : score >= 60
+      ? { text: '#059669', border: 'rgba(5,150,105,0.30)', bg: 'rgba(5,150,105,0.06)', bar: '#059669' }
+      : score >= 40
+        ? { text: '#d97706', border: 'rgba(217,119,6,0.30)', bg: 'rgba(217,119,6,0.06)', bar: '#d97706' }
+        : { text: '#dc2626', border: 'rgba(220,38,38,0.30)', bg: 'rgba(220,38,38,0.06)', bar: '#dc2626' }
+  const pct = Math.max(0, Math.min(100, score))
+  return (
+    <section
+      className="relative rounded-2xl p-7 sm:p-8 mb-10 overflow-hidden"
+      style={{ border: `1px solid ${palette.border}`, background: palette.bg }}
+    >
+      <div className="flex items-start justify-between gap-5 flex-wrap">
+        <div>
+          <p className="text-[12px] uppercase tracking-[0.22em] font-bold m-0 mb-2" style={{ color: palette.text }}>
+            Commercial Potential Score
+          </p>
+          <p className="text-[15px] text-[var(--gem-gray-300)] leading-[1.5] m-0 max-w-[54ch]">
+            How we evaluate audience appeal and investment potential relative to the cost of development.
+          </p>
+        </div>
+        {gemSelect && (
+          <div
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+            style={{
+              background: 'rgba(200,164,92,0.12)',
+              border: '1px solid rgba(200,164,92,0.5)',
+            }}
+          >
+            <span
+              aria-hidden
+              className="inline-block w-1.5 h-1.5 rounded-full"
+              style={{ background: 'var(--gem-gold)' }}
+            />
+            <span className="text-[12px] uppercase tracking-[0.18em] font-bold" style={{ color: 'var(--gem-gold)' }}>
+              GEM Select
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="flex items-baseline gap-2 mt-5 mb-3">
+        <span className="text-[72px] sm:text-[88px] font-bold tabular-nums leading-none" style={{ color: palette.text }}>
+          {score.toFixed(1)}
+        </span>
+        <span className="text-[20px] text-[var(--gem-gray-400)] font-medium">/ 100</span>
+      </div>
+      <div
+        className="h-2 rounded-full mb-5 overflow-hidden"
+        style={{ background: 'var(--gem-gray-800)' }}
+      >
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: palette.bar }} />
+      </div>
+      {gemSelect && (
+        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4">
+          This script lands in the top GEM Select band — the scripts we think are particularly promising.
+        </p>
+      )}
+      <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0">
+        A script&apos;s score can shift 5-10 points across different runs — evaluation is probabilistic. The Development Priorities below are the levers you can pull on the next draft to raise it.
+      </p>
+    </section>
   )
 }
 
