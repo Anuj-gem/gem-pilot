@@ -33,6 +33,7 @@ export function Collapsible({
   meta,
   number,
   accent,
+  primary = false,
   defaultOpen = false,
   children,
 }: {
@@ -40,13 +41,18 @@ export function Collapsible({
   meta?: string
   number?: number
   accent?: string
+  primary?: boolean
   defaultOpen?: boolean
   children: React.ReactNode
 }) {
+  // Primary-lever variant: red accent + auto-open so the sharpest note isn't hidden behind a click.
+  const borderColor = primary ? 'rgba(220,38,38,0.5)' : 'var(--gem-gray-700)'
+  const bg = primary ? 'linear-gradient(135deg, rgba(220,38,38,0.04), #fff 60%)' : '#fff'
   return (
     <details
-      {...(defaultOpen ? { open: true } : {})}
-      className="group border border-[var(--gem-gray-700)] rounded-xl bg-white overflow-hidden transition-colors hover:border-[var(--gem-gray-600)] [&_summary::-webkit-details-marker]:hidden"
+      {...(defaultOpen || primary ? { open: true } : {})}
+      className="group rounded-xl overflow-hidden transition-colors hover:border-[var(--gem-gray-600)] [&_summary::-webkit-details-marker]:hidden"
+      style={{ border: `1px solid ${borderColor}`, background: bg }}
     >
       <summary className="flex items-start gap-4 cursor-pointer list-none px-6 py-5">
         {number !== undefined && (
@@ -58,6 +64,16 @@ export function Collapsible({
           </span>
         )}
         <div className="flex-1 min-w-0">
+          {primary && (
+            <div className="mb-1">
+              <span
+                className="text-[10px] uppercase tracking-[0.15em] font-bold px-2 py-0.5 rounded"
+                style={{ color: '#dc2626', background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.25)' }}
+              >
+                Primary lever
+              </span>
+            </div>
+          )}
           <p className="text-[19px] sm:text-[20px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0">
             {title}
           </p>

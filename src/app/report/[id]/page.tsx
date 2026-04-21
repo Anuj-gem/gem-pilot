@@ -22,15 +22,16 @@ import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { DetailsView } from '@/components/report/details-view'
 import { Section, Collapsible } from '@/components/report/v5-components'
-import { normalizeEvaluation } from '@/types'
-import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
+import { normalizeEvaluation, calculateWeightedScore } from '@/types'
+import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 
 interface PageProps {
   params: Promise<{ id: string }>
   searchParams: Promise<{ for?: string; subscribed?: string }>
 }
 
-// v4/v5-specific fields not yet in the shared GEMEvaluation type.
+// v4/v5/v5.2-specific fields not yet in the shared GEMEvaluation type.
+// v5.2 additions: director fit_profile, considerations is_primary_lever, top-level craft_note.
 interface V5Extras {
   positioning_hook?: string
   lead_characters?: {
@@ -40,11 +41,12 @@ interface V5Extras {
     hook: string
     why_actor_wants_this: string
   }[]
-  considerations?: { area: string; detail: string; source?: string }[]
+  considerations?: { area: string; detail: string; source?: string; is_primary_lever?: boolean }[]
   package_angles?: {
-    director_appeal: { hook: string; detail: string }
+    director_appeal: { hook: string; fit_profile?: string; detail: string }
     buyer_appeal: { tier: string; lane: string; detail: string }
   }
+  craft_note?: string
 }
 
 function createServiceClient() {
@@ -211,6 +213,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const packageAngles = report.package_angles
   const production = report.production_reality
   const scores = report.scores ?? {}
+  const craftNote = report.craft_note ?? null
+
+  // Commercial Potential Score — weighted composite (0-100) from the 10 dim scores.
+  // Dimension weights themselves are NEVER surfaced publicly; only the composite.
+  // Tolerate malformed score objects gracefully so legacy evals still render.
+  let commercialScore: number | null = null
+  try {
+    if (scores && Object.keys(scores).length >= 10) {
+      commercialScore = calculateWeightedScore(scores as Record<DimensionId, { score: number }>)
+    }
+  } catch {
+    commercialScore = null
+  }
+  const isGemSelect = commercialScore !== null && commercialScore >= 80
 
   // Contact Writer gating:
   //   - hidden entirely when the script is NOT public on Discover
@@ -472,6 +488,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
                         {packageAngles.director_appeal.hook}
                       </p>
+                      {packageAngles.director_appeal.fit_profile && (
+                        <div
+                          className="rounded-lg p-5 mb-4"
+                          style={{
+                            background: 'rgba(5,150,105,0.07)',
+                            border: '1px solid rgba(5,150,105,0.20)',
+                          }}
+                        >
+                          <p
+                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                            style={{ color: '#059669' }}
+                          >
+                            Director fit profile
+                          </p>
+                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                            {packageAngles.director_appeal.fit_profile}
+                          </p>
+                        </div>
+                      )}
                       <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
                         {packageAngles.director_appeal.detail}
                       </p>
@@ -511,6 +546,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               locked={false}
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}
+              commercialScore={commercialScore}
+              isGemSelect={isGemSelect}
+              craftNote={craftNote}
             />
           }
         />
