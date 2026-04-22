@@ -24,9 +24,11 @@ import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { DetailsView } from '@/components/report/details-view'
 import { Section, Collapsible } from '@/components/report/v5-components'
+import { EditableTopCard } from '@/components/report/editable-top-card'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
+import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -118,7 +120,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
   const writerName = submission.profiles?.full_name ?? 'the writer'
 
-  const { classification, whatsSpecial } = normalizeEvaluation(report)
+  const { whatsSpecial } = normalizeEvaluation(report)
+
+  // Writer-edited overrides for the top card (title / genre / tone / logline).
+  // `edited_fields` may be missing on legacy rows or before the migration has
+  // been applied; getDisplayTopCard() treats null/undefined as "no edits".
+  const editedFields = (eval_ as any).edited_fields ?? null
+  const topCard = getDisplayTopCard(report, editedFields, submission.title)
+  const topCardHasEdits = hasEdits(editedFields)
 
   let ownerIsSubscribed = false
   if (submission.user_id) {
@@ -210,7 +219,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const allStrengths = whatsSpecial.strengths ?? []
 
-  const positioningHook = report.positioning_hook ?? ''
   const leadCharacters = report.lead_characters ?? []
   const considerations = report.considerations ?? []
   const packageAngles = report.package_angles
@@ -442,72 +450,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Title + classification */}
-        <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4">
-          {submission.title}
-        </h1>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[var(--gem-gray-300)] mb-10">
-          {classification.format && <span>{classification.format}</span>}
-          {classification.genre_primary && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span>{classification.genre_primary}</span>
-            </>
-          )}
-          {classification.genre_tags?.map((t, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)]"
-            >
-              {t}
-            </span>
-          ))}
-          {classification.tone && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="italic text-[var(--gem-gray-400)]">{classification.tone}</span>
-            </>
-          )}
-          {submission.created_at && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="text-[var(--gem-gray-500)]">
-                Posted{' '}
-                {new Date(submission.created_at).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </span>
-            </>
-          )}
-        </div>
-
-        {/* Logline hero — always visible */}
-        {positioningHook && (
-          <div
-            className="relative rounded-2xl p-8 sm:p-10 mb-12"
-            style={{
-              background: 'linear-gradient(135deg, rgba(200,164,92,0.10), transparent 70%)',
-              border: '1px solid rgba(200,164,92,0.25)',
-            }}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-7 bottom-7 rounded-r"
-              style={{ width: 5, background: 'var(--gem-gold)' }}
-            />
-            <div
-              className="text-[14px] uppercase tracking-[0.22em] font-bold mb-4"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              Logline
-            </div>
-            <p className="text-[26px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-medium m-0">
-              {positioningHook}
-            </p>
-          </div>
-        )}
+        {/* Title + classification + logline — owner-editable in a single card */}
+        <EditableTopCard
+          evaluationId={id}
+          initial={topCard}
+          isOwner={isOwner}
+          hasEdits={topCardHasEdits}
+          postedAt={submission.created_at ?? null}
+        />
 
         {/* Contact writer — only when script is public on Discover */}
         {contactState && (

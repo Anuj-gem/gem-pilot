@@ -13,6 +13,7 @@ import {
   Sparkles,
   Users,
   Lock,
+  Pencil,
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
@@ -272,6 +273,14 @@ export default async function DashboardPage() {
                             </UnlockTrigger>
                           ) : (
                             <>
+                              <Link
+                                href={`/report/${eval_.id}?edit=1`}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
+                                title="Edit title, genre, tone, and logline"
+                              >
+                                <Pencil size={12} />
+                                Edit
+                              </Link>
                               <Link
                                 href={reviseHref}
                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
