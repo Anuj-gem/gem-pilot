@@ -514,6 +514,9 @@ function CommercialScoreCard({
           <p className="text-[15px] text-[var(--gem-gray-300)] leading-[1.5] m-0 max-w-[54ch]">
             How we evaluate audience appeal and investment potential relative to the cost of development.
           </p>
+          <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0 mt-2 max-w-[54ch]">
+            Scripts scoring 75+ earn GEM Select on Discover. Your score is always private — only the designation is public.
+          </p>
         </div>
         <div
           className="flex items-center gap-2 px-3 py-1.5 rounded-full"

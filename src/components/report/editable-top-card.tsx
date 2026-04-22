@@ -95,7 +95,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
   }
 
   async function revert() {
-    if (!confirm('Revert to the original generated title, genre, tone, and logline?')) return
+    if (!confirm('Revert to the original generated title, genre, tone, and headline?')) return
     setReverting(true)
     setError(null)
     try {
@@ -135,8 +135,8 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
               setError(null)
             }}
             className="absolute right-0 top-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors"
-            aria-label="Edit title, genre, tone, and logline"
-            title="Edit title, genre, tone, and logline"
+            aria-label="Edit title, genre, tone, and headline"
+            title="Edit title, genre, tone, and headline"
           >
             <Pencil size={13} />
             Edit
@@ -201,7 +201,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
               className="text-[14px] uppercase tracking-[0.22em] font-bold mb-4"
               style={{ color: 'var(--gem-gold)' }}
             >
-              Logline
+              Headline
             </div>
             <p className="text-[26px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-medium m-0">
               {initial.logline}
@@ -326,10 +326,10 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         </div>
       </div>
 
-      {/* Logline */}
+      {/* Headline (stored as edited_fields.logline / positioning_hook) */}
       <label className="block">
         <span className="flex items-baseline justify-between text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
-          <span>Logline</span>
+          <span>Headline</span>
           <span
             className={overCap ? 'text-red-400' : 'text-[var(--gem-gray-500)]'}
             style={{ textTransform: 'none', letterSpacing: 0 }}
@@ -346,7 +346,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         />
         {overCap && (
           <p className="text-[12px] text-red-400 mt-2">
-            Logline is longer than the {LOGLINE_WORD_CAP}-word cap. Trim it before saving.
+            Headline is longer than the {LOGLINE_WORD_CAP}-word cap. Trim it before saving.
           </p>
         )}
       </label>
