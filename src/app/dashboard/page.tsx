@@ -9,7 +9,6 @@ import {
   EyeOff,
   Compass,
   ArrowRight,
-  RefreshCw,
   Sparkles,
   Users,
   Lock,
@@ -17,6 +16,7 @@ import {
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
+import { RemoveButton } from '@/components/dashboard/remove-button'
 import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 
 export const dynamic = 'force-dynamic'
@@ -37,20 +37,27 @@ export default async function DashboardPage() {
 
   const isSubscribed = profile?.subscription_status === 'active'
 
-  const { data: submissions } = await supabase
+  // Pull ALL submissions (including soft-hidden) so the free-eval check
+  // counts them — a writer who hides their first script is still considered
+  // to have used their free evaluation.
+  const { data: allSubmissions } = await supabase
     .from('script_submissions')
     .select(`
-      id, title, status, is_public, created_at,
+      id, title, status, is_public, created_at, hidden_at,
       script_evaluations ( id, evaluation, created_at, weighted_score )
     `)
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
-  const totalSubmissions = submissions?.length ?? 0
-  const publicCount =
-    submissions?.filter((s: any) => s.is_public).length ?? 0
+  // Visible list for the dashboard render — hidden rows are filtered out.
+  const submissions = (allSubmissions ?? []).filter(
+    (s: any) => !s.hidden_at
+  )
+
+  const totalSubmissions = submissions.length
+  const publicCount = submissions.filter((s: any) => s.is_public).length
   const completedCount =
-    submissions?.filter((s: any) => s.status === 'completed').length ?? 0
+    (allSubmissions ?? []).filter((s: any) => s.status === 'completed').length
   const usedFreeEval = completedCount >= 1
 
   // Score map: { submission_id -> weighted_score } for completed evals.
@@ -134,8 +141,11 @@ export default async function DashboardPage() {
             <div className="space-y-3 mb-10">
               {(() => {
                 // Find the oldest completed submission — that one is free.
-                // All others are locked for non-subscribers.
-                const completedSubs = (submissions as any[])
+                // All others are locked for non-subscribers. Pull from the
+                // FULL list (not the visible one) so a hidden first script
+                // still consumes the free-eval slot; any visible row is then
+                // correctly shown as locked.
+                const completedSubs = ((allSubmissions ?? []) as any[])
                   .filter((s: any) => s.status === 'completed')
                   .sort((a: any, b: any) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
                 const firstFreeId = completedSubs[0]?.id ?? null
@@ -153,8 +163,6 @@ export default async function DashboardPage() {
                   day: 'numeric',
                   year: 'numeric',
                 })
-
-                const reviseHref = `/submit?title=${encodeURIComponent(sub.title)}`
 
                 const score = scoreMap[sub.id]
                 const designation = scoreDesignation(score)
@@ -273,6 +281,7 @@ export default async function DashboardPage() {
                             </UnlockTrigger>
                           ) : (
                             <>
+                              <RemoveButton submissionId={sub.id} title={sub.title} />
                               <Link
                                 href={`/report/${eval_.id}?edit=1`}
                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
@@ -280,13 +289,6 @@ export default async function DashboardPage() {
                               >
                                 <Pencil size={12} />
                                 Edit
-                              </Link>
-                              <Link
-                                href={reviseHref}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
-                              >
-                                <RefreshCw size={12} />
-                                Revise
                               </Link>
                               <Link
                                 href={`/report/${eval_.id}`}
