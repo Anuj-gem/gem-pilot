@@ -180,14 +180,22 @@ export default async function DashboardPage() {
                 return (
                   <div key={sub.id} className="flex items-start gap-3">
                     {/* Score column (outside the card) — colored by designation
-                        so the tier is readable at a glance. */}
+                        so the tier is readable at a glance. Locked rows (2nd+
+                        eval for unsubscribed writers) blur the number so the
+                        writer can't read a score off the dashboard without
+                        paying — plugs the "hammer to iterate" leak. */}
                     <div className="shrink-0 w-14 sm:w-16 text-center pt-5">
                       {typeof score === 'number' ? (
                         <div
                           className="text-2xl sm:text-3xl font-bold leading-none tabular-nums"
                           style={{
-                            color: designationStyle?.text ?? 'var(--gem-gold)',
+                            color: isLockedReport
+                              ? 'var(--gem-gray-500)'
+                              : designationStyle?.text ?? 'var(--gem-gold)',
+                            filter: isLockedReport ? 'blur(6px)' : undefined,
+                            userSelect: isLockedReport ? 'none' : undefined,
                           }}
+                          aria-hidden={isLockedReport ? true : undefined}
                         >
                           {score.toFixed(1)}
                         </div>
@@ -211,11 +219,12 @@ export default async function DashboardPage() {
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
                             {sub.title}
                           </h3>
-                          {/* Designation pill — shown whenever there's a score,
-                              regardless of lock state. Lets non-paid users see
-                              the tier their locked script earned (nudge to upgrade)
-                              and paid users see the framing at a glance. */}
-                          {designationStyle && (
+                          {/* Designation pill — shown only when the row is
+                              unlocked (owner's free eval, subscriber, or
+                              non-owner public read). Locked 2nd+ eval rows
+                              must not leak the tier since that's a score
+                              signal. */}
+                          {designationStyle && !isLockedReport && (
                             <span
                               className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold"
                               style={{

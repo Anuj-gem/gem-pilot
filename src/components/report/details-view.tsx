@@ -177,11 +177,16 @@ export function DetailsView({
   const hasPortfolioRank =
     portfolioRank !== null && portfolioRank !== undefined && (portfolioTotal ?? 0) > 0
 
-  // Commercial score renders only when we have a fully-formed v5.2 eval.
+  // Commercial score renders whenever we have a v5.2 eval — shown even when
+  // the report is locked, because the score is the writer's signal and the
+  // reason they'll pay. Rest of Details stays blurred below.
   const hasCommercialScore =
-    typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && !locked
+    typeof commercialScore === 'number' && !Number.isNaN(commercialScore)
+  // Narrative Breakdown also renders when locked — we render a ?/10 variant
+  // with blurred bars and reasoning, so the writer sees the structure of the
+  // section they'd be unlocking (enticement over concealment).
   const hasNarrativeBreakdown =
-    !!scores && Object.values(scores).some((s) => typeof s?.score === 'number') && !locked
+    !!scores && Object.values(scores).some((s) => typeof s?.score === 'number')
 
   return (
     <>
@@ -238,13 +243,19 @@ export function DetailsView({
         </div>
       )}
 
-      {/* At a Glance — three quick-read risk pills (cost / cast / content) */}
+      {/* At a Glance — three quick-read risk pills (cost / cast / content).
+          The header stays crisp on locked reports so the writer sees *what*
+          they're paying for; the pills themselves blur as a group. */}
       {risk && (
         <div className="mb-10">
           <h2 className="text-[16px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-50)] mb-4">
             At a Glance
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+            style={locked ? { ...blurStyle, pointerEvents: 'none' } : undefined}
+            aria-hidden={locked ? true : undefined}
+          >
             <RiskPill label="Production Cost" axis={risk.cost} />
             <RiskPill label="Cast Complexity" axis={risk.cast} />
             <RiskPill label="Content Maturity" axis={risk.content} />
@@ -254,8 +265,9 @@ export function DetailsView({
 
       {/* Craft note — v5.2 addition. Single highest-leverage craft observation,
           rendered as a callout above Development Priorities so it doesn't get
-          lost inside the collapsibles. */}
-      {craftNote && !locked && (
+          lost inside the collapsibles. Locked reports keep the label crisp and
+          blur the note itself — we want the writer to see this card exists. */}
+      {craftNote && (
         <div
           className="mb-8 rounded-xl p-5"
           style={{
@@ -269,7 +281,10 @@ export function DetailsView({
           >
             Craft note
           </p>
-          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+          <p
+            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+            style={blurStyle}
+          >
             {craftNote}
           </p>
         </div>
@@ -277,28 +292,40 @@ export function DetailsView({
 
       {/* Development Priorities — considerations as collapsible cards.
           v5.2: items with is_primary_lever get the red-accent primary treatment
-          and auto-expand so the sharpest note is visible on first load. */}
+          and auto-expand so the sharpest note is visible on first load.
+          Locked state: primary lever stays fully readable (title + body) so the
+          writer sees one sharp note in full. Non-primary cards blur the TITLE
+          (the anchor, e.g. "Kelly's job-search run") but leave the body crisp
+          — the body is analytical, the title is the cheat-code for a rewrite. */}
       {considerations.length > 0 && (
         <Section
           label="Development Priorities"
           subtitle="The sharpest places to push on the next pass — positioning notes and directions a producer or collaborator might lean on in conversation."
         >
           <div className="space-y-3">
-            {considerations.map((c, i) => (
-              <Collapsible key={i} title={c.area} primary={c.is_primary_lever === true}>
-                <p
-                  className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                  style={blurStyle}
+            {considerations.map((c, i) => {
+              const isPrimary = c.is_primary_lever === true
+              return (
+                <Collapsible
+                  key={i}
+                  title={c.area}
+                  primary={isPrimary}
+                  titleBlurred={locked && !isPrimary}
                 >
-                  {c.detail}
-                </p>
-              </Collapsible>
-            ))}
+                  <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                    {c.detail}
+                  </p>
+                </Collapsible>
+              )
+            })}
           </div>
         </Section>
       )}
 
-      {/* Production Planning Details — collapsible cards */}
+      {/* Production Planning Details — collapsible cards.
+          Locked state: collapsible titles + meta rows (e.g. "VFX none · Stunts
+          minor") stay crisp so the writer sees the shape of the section; the
+          actual fact bodies blur as a group. */}
       {production && (
         <Section
           label="Production Planning Details"
@@ -309,76 +336,84 @@ export function DetailsView({
               title="Cast"
               meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
             >
-              <FactList>
-                <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
-                <Fact k="Leads" v={production.cast?.leads} />
-                {(production.cast?.series_regulars ?? 0) > 0 && (
-                  <Fact k="Series regulars" v={production.cast?.series_regulars} />
-                )}
-                {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
-                {production.cast?.casting_challenges?.length ? (
-                  <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
-                ) : null}
-              </FactList>
+              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+                <FactList>
+                  <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
+                  <Fact k="Leads" v={production.cast?.leads} />
+                  {(production.cast?.series_regulars ?? 0) > 0 && (
+                    <Fact k="Series regulars" v={production.cast?.series_regulars} />
+                  )}
+                  {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
+                  {production.cast?.casting_challenges?.length ? (
+                    <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
+                  ) : null}
+                </FactList>
+              </div>
             </Collapsible>
 
             <Collapsible
               title="Locations & Scale"
               meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
             >
-              <FactList>
-                <Fact k="Distinct locations" v={production.locations?.distinct_count} />
-                <Fact
-                  k="Int / Ext"
-                  v={
-                    production.locations?.interior_exterior_ratio ??
-                    production.locations?.interior_exterior_mix
-                  }
-                />
-                <Fact k="Era" v={production.locations?.period_or_contemporary} />
-                {production.locations?.expensive_flags?.length ? (
-                  <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
-                ) : null}
-              </FactList>
+              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+                <FactList>
+                  <Fact k="Distinct locations" v={production.locations?.distinct_count} />
+                  <Fact
+                    k="Int / Ext"
+                    v={
+                      production.locations?.interior_exterior_ratio ??
+                      production.locations?.interior_exterior_mix
+                    }
+                  />
+                  <Fact k="Era" v={production.locations?.period_or_contemporary} />
+                  {production.locations?.expensive_flags?.length ? (
+                    <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
+                  ) : null}
+                </FactList>
+              </div>
             </Collapsible>
 
             <Collapsible
               title="Technical"
               meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
             >
-              <FactList>
-                <Fact
-                  k="VFX"
-                  v={
-                    (production.technical?.vfx_level ?? '') +
-                    (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
-                  }
-                />
-                <Fact
-                  k="Stunts"
-                  v={production.technical?.stunts_level ?? production.technical?.stunts}
-                />
-                {production.technical?.sfx_needs && (
-                  <Fact k="SFX" v={production.technical.sfx_needs} />
-                )}
-                {production.technical?.night_shoots && (
-                  <Fact k="Night shoots" v={production.technical.night_shoots} />
-                )}
-                {production.technical?.animals && <Fact k="Animals" v="Yes" />}
-              </FactList>
+              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+                <FactList>
+                  <Fact
+                    k="VFX"
+                    v={
+                      (production.technical?.vfx_level ?? '') +
+                      (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
+                    }
+                  />
+                  <Fact
+                    k="Stunts"
+                    v={production.technical?.stunts_level ?? production.technical?.stunts}
+                  />
+                  {production.technical?.sfx_needs && (
+                    <Fact k="SFX" v={production.technical.sfx_needs} />
+                  )}
+                  {production.technical?.night_shoots && (
+                    <Fact k="Night shoots" v={production.technical.night_shoots} />
+                  )}
+                  {production.technical?.animals && <Fact k="Animals" v="Yes" />}
+                </FactList>
+              </div>
             </Collapsible>
 
             <Collapsible
               title="Platform & Content"
               meta={production.platform_fit?.recommended_lane}
             >
-              <FactList>
-                <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
-                <Fact k="Content" v={production.platform_fit?.content_level} />
-                {production.platform_fit?.series_engine_or_release_model && (
-                  <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
-                )}
-              </FactList>
+              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+                <FactList>
+                  <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
+                  <Fact k="Content" v={production.platform_fit?.content_level} />
+                  {production.platform_fit?.series_engine_or_release_model && (
+                    <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
+                  )}
+                </FactList>
+              </div>
             </Collapsible>
 
             {production.rights_flags?.length ? (
@@ -386,7 +421,11 @@ export function DetailsView({
                 title="Rights & Clearance"
                 meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
               >
-                <ul className="space-y-3 list-none p-0 m-0">
+                <ul
+                  className="space-y-3 list-none p-0 m-0"
+                  style={locked ? blurStyle : undefined}
+                  aria-hidden={locked ? true : undefined}
+                >
                   {production.rights_flags.map((r, i) => {
                     const text =
                       typeof r === 'string'
@@ -428,6 +467,7 @@ export function DetailsView({
                   label={meta.label}
                   score={s.score}
                   reasoning={s.reasoning}
+                  locked={locked}
                 />
               )
             })}
@@ -580,13 +620,16 @@ function DimensionRow({
   label,
   score,
   reasoning,
+  locked = false,
 }: {
   label: string
   score: number
   reasoning: string
+  locked?: boolean
 }) {
   const p = scoreBandPalette(score)
   const pct = Math.max(0, Math.min(100, score * 10))
+  const blurStyle: React.CSSProperties = { filter: 'blur(5px)', userSelect: 'none' }
   return (
     <div className="rounded-xl p-5" style={{ border: `1px solid var(--gem-gray-700)`, background: '#fff' }}>
       <div className="flex items-baseline justify-between gap-4 mb-3">
@@ -594,17 +637,42 @@ function DimensionRow({
           {label}
         </p>
         <div className="flex items-baseline gap-1 flex-shrink-0">
-          <span className="text-[26px] font-bold tabular-nums" style={{ color: p.text }}>
-            {score}
-          </span>
+          {locked ? (
+            <span
+              className="text-[26px] font-bold tabular-nums text-[var(--gem-gray-500)]"
+              style={{ filter: 'blur(3px)', userSelect: 'none' }}
+              aria-hidden
+            >
+              ?
+            </span>
+          ) : (
+            <span className="text-[26px] font-bold tabular-nums" style={{ color: p.text }}>
+              {score}
+            </span>
+          )}
           <span className="text-[13px] text-[var(--gem-gray-400)]">/ 10</span>
         </div>
       </div>
-      <div className="h-1.5 rounded-full mb-4 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
-        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: p.fill }} />
+      <div
+        className="h-1.5 rounded-full mb-4 overflow-hidden"
+        style={{ background: 'var(--gem-gray-800)' }}
+      >
+        <div
+          className="h-full rounded-full"
+          style={{
+            width: `${pct}%`,
+            // Neutral gray fill when locked so the bar width doesn't leak the
+            // tier (red/amber/green bands would give away the score band).
+            background: locked ? 'var(--gem-gray-500)' : p.fill,
+            filter: locked ? 'blur(4px)' : undefined,
+          }}
+        />
       </div>
       {reasoning && (
-        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+        <p
+          className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
+          style={locked ? blurStyle : undefined}
+        >
           {reasoning}
         </p>
       )}

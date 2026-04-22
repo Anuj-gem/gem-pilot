@@ -6,9 +6,7 @@
 // details. All cards are collapsibles.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { notFound, redirect } from 'next/navigation'
 import Nav from '@/components/nav'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
@@ -28,8 +26,8 @@ import { Section, Collapsible } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
-import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
+import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -156,9 +154,22 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
 
-  // Paywall gate: owner's 2nd+ report is locked until they subscribe.
-  let reportLocked = false
-  if (isOwner && !ownerIsSubscribed && submission.user_id) {
+  // Owner-based blur gate (pre-Apr 15 behavior, restored April 2026).
+  //   • Writer hasn't subscribed → report content is blurred for anyone viewing
+  //     (writer, visitor on Discover, etc.). Top card stays visible so the
+  //     writer gets their headline signal.
+  //   • Writer is Pro → report is fully unlocked for everyone (including
+  //     non-subscribed visitors on Discover).
+  const locked = !ownerIsSubscribed
+
+  // First-eval gate (April 2026): an unsubscribed writer can view their FIRST
+  // completed report (in a partially-blurred state); any subsequent report is
+  // not accessible by URL — they're redirected to /dashboard. This plugs the
+  // "hammer submissions to iterate on score" leak where writers were re-running
+  // evals to read the score climb without ever paying.
+  //   • Owner + !subscribed + not-first-eval + not-admin → redirect /dashboard
+  //   • Non-owners on Discover keep the blurred-preview behavior (unchanged).
+  if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
     const { data: firstSub } = await serviceClient
       .from('script_submissions')
       .select('id')
@@ -167,9 +178,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .order('created_at', { ascending: true })
       .limit(1)
       .single()
-
-    if (firstSub && firstSub.id !== submission.id) {
-      reportLocked = true
+    if (firstSub?.id !== submission.id) {
+      redirect('/dashboard')
     }
   }
 
@@ -242,11 +252,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   } catch {
     commercialScore = null
   }
-  // Three-tier designation: GEM Select (≥75), Very Promising (50–74), Shows
-  // Potential (<50). Only GEM Select is ever surfaced publicly on Discover;
-  // Very Promising and Shows Potential are private to the writer and exist to
-  // keep the framing encouraging + give every score a reason to upgrade.
-  const designation = scoreDesignation(commercialScore)
+  // Three-tier designation (GEM Select ≥75, Very Promising 50–74, Shows
+  // Potential <50) is derived inside DetailsView from the score; the report
+  // page itself no longer reads it directly.
 
   // Contact Writer gating:
   //   - owner ALWAYS sees their own state (owner_live if Pro, owner_upsell
@@ -264,159 +272,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     }
   }
 
-  // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
-  if (reportLocked) {
-    // Upsell framing cascades by designation. Each tier gets a positive
-    // headline + a subtext that names both actions the score earns them:
-    // publish on Discover AND use the full report to reposition the draft.
-    const bestRank = portfolioRank === 1 && (portfolioTotal ?? 0) > 1
-    const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
-
-    let upsellHeadline: string
-    let upsellSubtext: string
-    if (designation === 'gem-select') {
-      upsellHeadline = 'This one belongs on Discover.'
-      upsellSubtext =
-        'It scored in the GEM Select band — the top tier we surface publicly. Go Pro to read the full report, publish it on Discover, and let reps and producers reach out.'
-    } else if (designation === 'very-promising') {
-      upsellHeadline = "It's close. Really close."
-      upsellSubtext =
-        'Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Go Pro to read the full report, pull from the Development Priorities, and publish it on Discover when you want eyes on it.'
-    } else if (designation === 'shows-potential') {
-      upsellHeadline = "There's a real spark here."
-      upsellSubtext =
-        'Shows Potential means the bones are there — the next pass is about repositioning what the script is selling. Go Pro to read the full report, use the Development Priorities to sharpen it, and publish it on Discover when you feel ready.'
-    } else if (bestRank) {
-      upsellHeadline = 'Your top-scoring script yet.'
-      upsellSubtext =
-        'Go Pro to read the full report, sharpen the draft, and publish the strong ones on Discover.'
-    } else {
-      upsellHeadline = `Your report on ${submission.title} is ready.`
-      upsellSubtext =
-        'Go Pro to read this report, evaluate unlimited scripts, and publish the strong ones on Discover.'
-    }
-
-    return (
-      <>
-        <Nav />
-        <div className="max-w-lg mx-auto px-4 py-16 text-center">
-          {/* Pitch card — unchanged */}
-          <div
-            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-6"
-            style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-5 bottom-5 rounded-r"
-              style={{ width: 3, background: 'var(--gem-gold)' }}
-            />
-            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
-              Pitch
-            </div>
-            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
-              {report.positioning_hook || submission.title}
-            </p>
-          </div>
-
-          {/* Score + rank + designation card — visible even while locked.
-              The score, rank, and tier label are signals the writer already
-              earned; the report itself is what's paywalled. */}
-          {commercialScore !== null && designationStyle && (
-            <div
-              className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
-              style={{
-                border: `1px solid ${designationStyle.border}`,
-                background: designationStyle.bg,
-              }}
-            >
-              <div className="flex items-start justify-between gap-4 flex-wrap">
-                <div>
-                  <p
-                    className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
-                    style={{ color: designationStyle.text }}
-                  >
-                    Commercial Potential
-                  </p>
-                  <div className="flex items-baseline gap-1.5">
-                    <span
-                      className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
-                      style={{ color: designationStyle.text }}
-                    >
-                      {commercialScore.toFixed(1)}
-                    </span>
-                    <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
-                      / 100
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
-                  style={{
-                    background: designationStyle.pillBg,
-                    border: `1px solid ${designationStyle.pillBorder}`,
-                  }}
-                >
-                  <span
-                    aria-hidden
-                    className="inline-block w-1.5 h-1.5 rounded-full"
-                    style={{ background: designationStyle.dot }}
-                  />
-                  <span
-                    className="text-[11px] uppercase tracking-[0.18em] font-bold"
-                    style={{ color: designationStyle.text }}
-                  >
-                    {designationStyle.label}
-                  </span>
-                </div>
-              </div>
-
-              {portfolioRank !== null && portfolioTotal > 1 && (
-                <p className="text-[13px] text-[var(--gem-gray-400)] mt-4 m-0">
-                  {portfolioRank === 1 ? (
-                    <>
-                      <span className="text-[var(--gem-gold)] font-semibold">
-                        Your top-scoring script
-                      </span>{' '}
-                      — #1 of {portfolioTotal} in your portfolio.
-                    </>
-                  ) : (
-                    <>
-                      Ranked{' '}
-                      <span className="text-[var(--gem-white)] font-semibold">
-                        #{portfolioRank}
-                      </span>{' '}
-                      of {portfolioTotal} in your portfolio.
-                    </>
-                  )}
-                </p>
-              )}
-            </div>
-          )}
-
-          <h2 className="text-2xl font-bold text-[var(--gem-white)] mb-3">
-            {upsellHeadline}
-          </h2>
-          <p className="text-sm text-[var(--gem-gray-400)] mb-8 max-w-md mx-auto leading-relaxed">
-            {upsellSubtext}
-          </p>
-
-          <LockedReportUpgrade evaluationId={id} />
-
-          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3 mb-8">
-            Cancel anytime · Secure checkout via Stripe
-          </p>
-
-          {/* Always give writers a way back — don't let the paywall be a dead end. */}
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-          >
-            <ArrowLeft size={14} />
-            Back to dashboard
-          </Link>
-        </div>
-      </>
-    )
+  // Selective blur for locked-report content — same CSS pattern as DetailsView.
+  // Headers, titles, and metadata stay crisp so the writer sees the structure
+  // of what they're paying for; the prose underneath is visually obscured.
+  const blurStyle: React.CSSProperties = {
+    filter: 'blur(5px)',
+    userSelect: 'none',
   }
 
   return (
@@ -470,37 +331,82 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 
-        {/* Contact writer — only when script is public on Discover */}
-        {contactState && (
-          <div className="mb-10">
-            <ContactWriter
-              evaluationId={id}
-              writerName={writerName}
-              state={contactState}
-              isLoggedIn={!!user}
-            />
-          </div>
-        )}
+        {/* Compact owner-only mini-score card. Surfaces the score + tier
+            privately to the writer (score is never public — non-owners won't
+            see this block at all), points to the Development tab for the
+            full breakdown, and stacks the upgrade CTA alongside. Replaces
+            the old large unlock box so blurred tab content enters the
+            viewport sooner on mobile. */}
+        {locked && isOwner && (() => {
+          const designation = scoreDesignation(commercialScore)
+          const tierStyle = designation ? DESIGNATION_STYLE[designation] : null
+          return (
+            <div className="rounded-xl border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/[0.06] px-4 py-4 sm:px-5 sm:py-4 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-1 min-w-0 w-full sm:w-auto text-center sm:text-left">
+                <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 mb-1.5">
+                  Your score · only visible to you
+                </p>
+                {typeof commercialScore === 'number' ? (
+                  <div className="flex items-baseline gap-2 justify-center sm:justify-start">
+                    <span className="text-[30px] sm:text-[34px] font-bold tabular-nums leading-none text-[var(--gem-white)]">
+                      {commercialScore}
+                    </span>
+                    {tierStyle && (
+                      <span
+                        className="text-[14px] sm:text-[15px] font-semibold"
+                        style={{ color: tierStyle.text }}
+                      >
+                        · {tierStyle.label}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-[18px] font-semibold text-[var(--gem-white)] m-0">
+                    Score unavailable
+                  </p>
+                )}
+                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-1.5 leading-snug">
+                  See the full breakdown in the Development tab.
+                </p>
+              </div>
+              <div className="shrink-0 w-full sm:w-auto flex justify-center">
+                <LockedReportUpgrade evaluationId={id} />
+              </div>
+            </div>
+          )
+        })()}
 
-        {/* Share section — owner always sees it (their own report, easy way
-            to grab the link once they publish). Non-owners only on public
-            reports. Lives directly under the Contact Writer card to form a
-            "what can I do with this?" block. */}
+        {/* Share section — placed above the tabs so writers can grab the
+            link right after the top card without scrolling past the full
+            report. Owner always sees it on their own report (handy after
+            publishing); non-owners only on public reports. */}
         {(submission.is_public || isOwner) && (
-          <ShareSection evaluationId={id} title={topCard.title} />
+          <div className="mb-8">
+            <ShareSection evaluationId={id} title={topCard.title} />
+          </div>
         )}
 
         <ReportTabs
           showDetails={isOwner || isAdmin}
-          detailsLocked={false}
+          detailsLocked={locked}
           pitch={
             <>
-              {/* What's Working — numbered collapsibles with evidence sidebar */}
+              {/* What's Working — numbered collapsibles with evidence sidebar.
+                  Locked free writers see the section summary + first item
+                  crisp as a tease; titles of items 2+ are blurred (same
+                  pattern as Development Priorities). Bodies stay crisp when
+                  expanded — the blur is a gate on *discoverability*, not a
+                  data wipe. */}
               {allStrengths.length > 0 && (
                 <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
                   <div className="space-y-3">
                     {allStrengths.map((s, i) => (
-                      <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
+                      <Collapsible
+                        key={i}
+                        number={i + 1}
+                        title={s.dimension_or_area}
+                        titleBlurred={locked && i > 0}
+                      >
                         <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
                           {s.what_it_means}
                         </p>
@@ -542,7 +448,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         title={c.name}
                         meta={`${c.role_type} · ${c.demographics}`}
                       >
-                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
+                        <p
+                          className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
+                          style={locked ? blurStyle : undefined}
+                        >
                           {c.hook}
                         </p>
                         <div
@@ -558,7 +467,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           >
                             Why an actor would want this part
                           </p>
-                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          <p
+                            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                            style={locked ? blurStyle : undefined}
+                          >
                             {c.why_actor_wants_this}
                           </p>
                         </div>
@@ -576,7 +488,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 >
                   <div className="space-y-3">
                     <Collapsible title="Why a director wants this" accent="#059669">
-                      <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
+                      <p
+                        className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0"
+                        style={locked ? blurStyle : undefined}
+                      >
                         {packageAngles.director_appeal.hook}
                       </p>
                       {packageAngles.director_appeal.fit_profile && (
@@ -593,12 +508,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           >
                             Director fit profile
                           </p>
-                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          <p
+                            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                            style={locked ? blurStyle : undefined}
+                          >
                             {packageAngles.director_appeal.fit_profile}
                           </p>
                         </div>
                       )}
-                      <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={locked ? blurStyle : undefined}
+                      >
                         {packageAngles.director_appeal.detail}
                       </p>
                     </Collapsible>
@@ -610,7 +531,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
                         {packageAngles.buyer_appeal.lane}
                       </p>
-                      <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={locked ? blurStyle : undefined}
+                      >
                         {packageAngles.buyer_appeal.detail}
                       </p>
                     </Collapsible>
@@ -634,7 +558,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scores={scores}
               production={production}
               considerations={considerations}
-              locked={false}
+              locked={locked}
+              evaluationId={id}
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}
               commercialScore={commercialScore}
@@ -642,6 +567,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             />
           }
         />
+
+        {/* Contact writer lives below the tabs — it's a secondary action
+            (rep-style inbound request) and not as time-sensitive as the
+            share link, which the writer typically reaches for immediately
+            after publishing. */}
+        {contactState && (
+          <div className="mt-10">
+            <ContactWriter
+              evaluationId={id}
+              writerName={writerName}
+              state={contactState}
+              isLoggedIn={!!user}
+            />
+          </div>
+        )}
       </div>
 
       {/* SubscribeGate still available if triggered by upgrade CTA click */}

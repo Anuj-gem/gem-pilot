@@ -35,6 +35,7 @@ export function Collapsible({
   accent,
   primary = false,
   defaultOpen = false,
+  titleBlurred = false,
   children,
 }: {
   title: string
@@ -43,6 +44,11 @@ export function Collapsible({
   accent?: string
   primary?: boolean
   defaultOpen?: boolean
+  /** Blur just the title text while leaving the card chrome + chevron crisp.
+   *  Used on locked reports to tease structure without revealing the anchor
+   *  (e.g. "Kelly's job-search run") the writer would otherwise use to
+   *  iterate a rewrite without paying. */
+  titleBlurred?: boolean
   children: React.ReactNode
 }) {
   // Primary-lever variant: red accent + auto-open so the sharpest note isn't hidden behind a click.
@@ -74,7 +80,10 @@ export function Collapsible({
               </span>
             </div>
           )}
-          <p className="text-[19px] sm:text-[20px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0">
+          <p
+            className="text-[19px] sm:text-[20px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0"
+            style={titleBlurred ? { filter: 'blur(5px)', userSelect: 'none' } : undefined}
+          >
             {title}
           </p>
           {meta && (
