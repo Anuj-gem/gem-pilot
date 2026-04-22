@@ -1,33 +1,35 @@
 /**
- * Re-score all existing completed submissions using the v5.2 prompt,
- * EXCLUDING any submission owned by an @gem.studio account.
+ * Re-score existing completed submissions using the current prompt
+ * (src/lib/evaluation-prompt.ts), EXCLUDING any submission owned by an
+ * @gem.studio account.
  *
- * This writes directly to `script_evaluations` (LIVE). That is intentional:
- * scores are not surfaced on main right now, so any score shifts will feel
- * like a fresh score when the v5-1-preview branch ships. We snapshot the
+ * This writes directly to `script_evaluations` (LIVE). We snapshot the
  * pre-run state to disk first so we can roll back if we have to.
  *
  * CRITICAL: no emails fire from this script. The email is sent from the
- * /api/evaluate route handler (line ~321 in src/app/api/evaluate/route.ts).
- * Writing to the DB via the service client bypasses that code path entirely.
+ * /api/evaluate route handler. Writing to the DB via the service client
+ * bypasses that code path entirely.
  *
  * Flow per submission:
  *   - Download the PDF from the `scripts` storage bucket
  *   - Extract text with pdf-parse
- *   - Build the v5.2 prompt (imported from src/lib/evaluation-prompt-v5-1.ts)
+ *   - Build the current prompt (extracted from src/lib/evaluation-prompt.ts)
  *   - Call gpt-5.4-mini with JSON mode
  *   - Compute weighted_score + tier using V3_RAW_WEIGHTS (sum = 15.0)
- *   - Cache result to data/v5-2-rescore-cache/<submission_id>.json (resumable)
+ *   - Cache result to data/rescore-cache/<submission_id>.json (resumable)
  *   - UPDATE script_evaluations by eval_id
  *
  * Usage:
- *   node scripts/rescore-all-v5-2.mjs --dry                    # scope + cost only
- *   node scripts/rescore-all-v5-2.mjs --dry --limit=5          # dry-run on first 5
- *   node scripts/rescore-all-v5-2.mjs --limit=5                # real run on first 5
- *   node scripts/rescore-all-v5-2.mjs                          # full serial run
- *   node scripts/rescore-all-v5-2.mjs --concurrency=5          # full parallel run (recommended)
- *   node scripts/rescore-all-v5-2.mjs --start-from=200         # resume from index
- *   node scripts/rescore-all-v5-2.mjs --no-cache               # force re-eval
+ *   node scripts/rescore-all.mjs --dry                         # scope + cost only
+ *   node scripts/rescore-all.mjs --dry --limit=5               # dry-run on first 5
+ *   node scripts/rescore-all.mjs --limit=5                     # real run on first 5
+ *   node scripts/rescore-all.mjs                               # full serial run
+ *   node scripts/rescore-all.mjs --concurrency=5               # full parallel run
+ *   node scripts/rescore-all.mjs --start-from=200              # resume from index
+ *   node scripts/rescore-all.mjs --no-cache                    # force re-eval
+ *   node scripts/rescore-all.mjs --user-id=<uuid>              # only this user
+ *   node scripts/rescore-all.mjs --since=<iso-date>            # evals >= date
+ *   node scripts/rescore-all.mjs --model-ne=gpt-5.4-mini-v5-2-rescore   # exclude model
  *
  * Env:
  *   NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, OPENAI_API_KEY
@@ -66,6 +68,20 @@ const CONCURRENCY = Math.max(
   1,
   CONCURRENCY_ARG ? parseInt(CONCURRENCY_ARG.split('=')[1]) : 1
 )
+const USER_ID_ARG = process.argv.find((a) => a.startsWith('--user-id='))
+const USER_ID = USER_ID_ARG ? USER_ID_ARG.split('=')[1] : null
+const SINCE_ARG = process.argv.find((a) => a.startsWith('--since='))
+const SINCE = SINCE_ARG ? SINCE_ARG.split('=')[1] : null
+const MODEL_NE_ARG = process.argv.find((a) => a.startsWith('--model-ne='))
+const MODEL_NE = MODEL_NE_ARG ? MODEL_NE_ARG.split('=')[1] : null
+// --needs-v52: select any eval that is NOT already healthy on v5.2.
+// "Healthy" = has director_appeal.fit_profile AND non-empty lead_characters.
+const NEEDS_V52 = process.argv.includes('--needs-v52')
+// --eval-ids=<comma-separated>: only rescore submissions whose current eval_id is in this list
+const EVAL_IDS_ARG = process.argv.find((a) => a.startsWith('--eval-ids='))
+const EVAL_IDS = EVAL_IDS_ARG
+  ? new Set(EVAL_IDS_ARG.split('=')[1].split(',').map((s) => s.trim()).filter(Boolean))
+  : null
 
 // ── Env ────────────────────────────────────────────────────────────
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -117,35 +133,31 @@ function calcTier(composite) {
   return 'Needs Development'
 }
 
-// ── Extract v5.2 prompt template from evaluation-prompt-v5-1.ts ────
-// The source is TS, so we can't import it. We extract the template
-// literal body and do ${formatLine} / ${declaredFormat} substitution.
-const promptPath = path.join(process.cwd(), 'src', 'lib', 'evaluation-prompt-v5-1.ts')
+// ── Extract prompt template from evaluation-prompt.ts ──────────────
+// The source is TS, so we can't import it directly. We extract the
+// template literal body and do ${formatLine} / ${declaredFormat} sub.
+const promptPath = path.join(process.cwd(), 'src', 'lib', 'evaluation-prompt.ts')
 const promptSrc = await fs.readFile(promptPath, 'utf-8')
 
 const START_MARK = 'return `'
 const END_MARK = '`;\n}'
 const startIdx = promptSrc.indexOf(START_MARK)
 if (startIdx < 0) {
-  console.error('Could not find prompt template start in evaluation-prompt-v5-1.ts')
+  console.error('Could not find prompt template start in evaluation-prompt.ts')
   process.exit(1)
 }
 const contentStart = startIdx + START_MARK.length
-// Use lastIndexOf: there's one function returning a template literal,
-// so the final `;\n} is the function close.
 const contentEnd = promptSrc.lastIndexOf(END_MARK)
 if (contentEnd <= contentStart) {
-  console.error('Could not find prompt template end in evaluation-prompt-v5-1.ts')
+  console.error('Could not find prompt template end in evaluation-prompt.ts')
   process.exit(1)
 }
 // Unescape template-literal escapes: backticks and dollar signs.
-// Order matters: handle backslash-escaped backticks and dollars BEFORE
-// collapsing any raw backslashes. The file in practice uses \` and \$ only.
 let PROMPT_TEMPLATE = promptSrc.slice(contentStart, contentEnd)
   .replace(/\\`/g, '`')
   .replace(/\\\$/g, '$')
 
-function buildV52Prompt(declaredFormat) {
+function buildPrompt(declaredFormat) {
   const formatLine =
     declaredFormat === 'Series'
       ? `The writer has declared this script as a **Series** (TV pilot). Treat format as fixed — evaluate it as a pilot for an ongoing series, not as a feature film. Genre and tone are still for you to classify.`
@@ -156,7 +168,7 @@ function buildV52Prompt(declaredFormat) {
 }
 
 // Sanity-check the extracted prompt
-const sanity = buildV52Prompt('Feature film')
+const sanity = buildPrompt('Feature film')
 if (sanity.length < 5000 || sanity.includes('${')) {
   console.error(
     `Prompt extraction failed sanity check (len=${sanity.length}, contains \${: ${sanity.includes('${')})`
@@ -165,8 +177,8 @@ if (sanity.length < 5000 || sanity.includes('${')) {
 }
 
 // ── Cache ──────────────────────────────────────────────────────────
-const CACHE_DIR = path.join(process.cwd(), 'data', 'v5-2-rescore-cache')
-const BACKUP_DIR = path.join(process.cwd(), 'data', 'v5-2-rescore-backup')
+const CACHE_DIR = path.join(process.cwd(), 'data', 'rescore-cache')
+const BACKUP_DIR = path.join(process.cwd(), 'data', 'rescore-backup')
 fsSync.mkdirSync(CACHE_DIR, { recursive: true })
 fsSync.mkdirSync(BACKUP_DIR, { recursive: true })
 
@@ -185,7 +197,7 @@ function saveCache(submissionId, data) {
 
 // ── OpenAI call ────────────────────────────────────────────────────
 async function evaluateScript(scriptText, declaredFormat) {
-  const systemPrompt = buildV52Prompt(declaredFormat)
+  const systemPrompt = buildPrompt(declaredFormat)
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -218,12 +230,15 @@ async function evaluateScript(scriptText, declaredFormat) {
 }
 
 // ── Main ───────────────────────────────────────────────────────────
-console.log(`\n=== GEM v5.2 Re-Score → LIVE ${DRY ? '(DRY RUN)' : ''} ===`)
+console.log(`\n=== GEM Re-Score → LIVE ${DRY ? '(DRY RUN)' : ''} ===`)
 console.log(`Target table: script_evaluations`)
 console.log(`Cache: ${USE_CACHE ? 'ON (--no-cache to force re-eval)' : 'OFF'}`)
 console.log(`Concurrency: ${CONCURRENCY}`)
 if (LIMIT) console.log(`Limit: ${LIMIT}`)
 if (START_FROM) console.log(`Start-from index: ${START_FROM}`)
+if (USER_ID) console.log(`User filter: ${USER_ID}`)
+if (SINCE) console.log(`Since: ${SINCE}`)
+if (MODEL_NE) console.log(`Exclude model: ${MODEL_NE}`)
 console.log('')
 
 // 1. Enumerate @gem.studio users so we can exclude them
@@ -239,31 +254,60 @@ const internalIds = new Set(
 )
 console.log(`Excluding ${internalIds.size} internal @gem.studio users`)
 
-// 2. Fetch every completed submission with a file + eval
-const { data: submissions, error: subErr } = await sb
+// 2. Fetch every completed submission with a file + eval (optionally filtered)
+let query = sb
   .from('script_submissions')
-  .select('id, title, file_url, declared_format, user_id, script_evaluations(id, evaluation)')
+  .select('id, title, file_url, declared_format, user_id, created_at, script_evaluations(id, evaluation, model, created_at)')
   .eq('status', 'completed')
   .not('file_url', 'is', null)
   .order('created_at', { ascending: true })
+
+if (USER_ID) query = query.eq('user_id', USER_ID)
+
+const { data: submissions, error: subErr } = await query
 if (subErr) {
   console.error('Failed to fetch submissions:', subErr)
   process.exit(1)
 }
 
 // Normalize script_evaluations (1:1 but comes back as array)
-const enriched = submissions
+let enriched = submissions
   .map((s) => {
     const se = Array.isArray(s.script_evaluations)
       ? s.script_evaluations[0]
       : s.script_evaluations
-    return { ...s, eval_id: se?.id ?? null, prev_evaluation: se?.evaluation ?? null }
+    return {
+      ...s,
+      eval_id: se?.id ?? null,
+      prev_evaluation: se?.evaluation ?? null,
+      eval_model: se?.model ?? null,
+      eval_created_at: se?.created_at ?? null,
+    }
   })
   .filter((s) => s.eval_id && !internalIds.has(s.user_id))
 
+if (SINCE) {
+  enriched = enriched.filter((s) => (s.eval_created_at ?? '') >= SINCE)
+}
+if (MODEL_NE) {
+  enriched = enriched.filter((s) => (s.eval_model ?? '') !== MODEL_NE)
+}
+if (NEEDS_V52) {
+  enriched = enriched.filter((s) => {
+    const ev = s.prev_evaluation ?? {}
+    const leads = Array.isArray(ev.lead_characters) ? ev.lead_characters : []
+    const fit = ev?.package_angles?.director_appeal?.fit_profile
+    const healthy = leads.length > 0 && typeof fit === 'string' && fit.trim().length > 0
+    return !healthy
+  })
+}
+if (EVAL_IDS) {
+  enriched = enriched.filter((s) => EVAL_IDS.has(s.eval_id))
+}
+
 console.log(
-  `Found ${enriched.length} external submissions with evaluations ` +
-    `(skipped ${submissions.length - enriched.length} internal/no-eval)`
+  `Found ${enriched.length} submissions to consider ` +
+    `(after internal + optional filters)`
 )
 
 // 3. Apply --start-from / --limit
@@ -286,14 +330,12 @@ if (affectedEvalIds.length > 0 && !DRY) {
     process.exit(1)
   }
   const stamp = new Date().toISOString().replace(/[:.]/g, '-')
-  const backupPath = path.join(BACKUP_DIR, `pre-v5-2-${stamp}.json`)
+  const backupPath = path.join(BACKUP_DIR, `pre-rescore-${stamp}.json`)
   await fs.writeFile(backupPath, JSON.stringify(before, null, 2))
   console.log(`Snapshot written to ${path.relative(process.cwd(), backupPath)}\n`)
 }
 
-// 5. Process — optionally in parallel. Each task buffers its own log lines
-// and flushes them as one block on completion, so output stays readable when
-// workers overlap.
+// 5. Process — optionally in parallel.
 let totalCost = 0
 let success = 0
 let failed = 0
@@ -376,6 +418,15 @@ async function processOne(sub, absoluteIdx) {
       const tier = calcTier(composite)
       totalCost += cost
 
+      // Guard: don't persist an eval with an empty lead_characters list.
+      const leads = evaluation?.lead_characters
+      if (!Array.isArray(leads) || leads.length === 0) {
+        log('  ⚠ Empty lead_characters — skipping to protect report UI')
+        failed++
+        console.log(logs.join('\n'))
+        return
+      }
+
       result = {
         evaluation,
         weightedScore: composite,
@@ -400,7 +451,7 @@ async function processOne(sub, absoluteIdx) {
         evaluation: result.evaluation,
         weighted_score: result.weightedScore,
         tier: result.tier,
-        model: 'gpt-5.4-mini-v5-2-rescore',
+        model: 'gpt-5.4-mini-rescore',
         input_tokens: result.inputTokens,
         output_tokens: result.outputTokens,
         cost_usd: result.cost,
@@ -423,7 +474,7 @@ async function processOne(sub, absoluteIdx) {
   }
 }
 
-// Simple worker pool — fan out up to CONCURRENCY tasks at a time.
+// Simple worker pool.
 let cursor = 0
 async function worker() {
   while (true) {
@@ -446,6 +497,6 @@ console.log(
 if (DRY) {
   console.log(`\nThis was a dry run — no DB writes, no OpenAI calls.`)
 } else {
-  console.log(`\nBackups: ${path.relative(process.cwd(), BACKUP_DIR)}/pre-v5-2-*.json`)
+  console.log(`\nBackups: ${path.relative(process.cwd(), BACKUP_DIR)}/pre-rescore-*.json`)
   console.log(`Cache:   ${path.relative(process.cwd(), CACHE_DIR)}/<submission_id>.json`)
 }

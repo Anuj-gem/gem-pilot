@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import { buildGemEvaluationPromptV5, type DeclaredFormat } from "@/lib/evaluation-prompt-v5";
+import { buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt";
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
 import type { GEMEvaluation } from "@/types";
 import { sendEmail } from "@/lib/email";
@@ -95,7 +95,7 @@ async function evaluateScript(scriptText: string, declaredFormat: DeclaredFormat
     body: JSON.stringify({
       model: "gpt-5.4-mini",
       messages: [
-        { role: "system", content: buildGemEvaluationPromptV5(declaredFormat) },
+        { role: "system", content: buildGemEvaluationPrompt(declaredFormat) },
         {
           role: "user",
           content: `The writer has declared this script as a ${declaredFormat}. Please evaluate the following screenplay submission accordingly:\n\n---\n\n${scriptText}`,
