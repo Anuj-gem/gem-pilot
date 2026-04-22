@@ -508,9 +508,9 @@ function SubmitPageInner() {
           </div>
         )}
 
-        <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-[family-name:var(--font-display)]">Get the pitch that sells your script.</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2 font-[family-name:var(--font-display)]">Get your script&apos;s score, notes, and pitch in 60 seconds.</h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-4">
-          Full report in 60 seconds &rarr; Then post it to Discover and get in front of producers.{!isSubscribed && ' First one\u2019s free.'}
+          Use the notes to rewrite. Resubmit to track your score over time. A score of 75+ earns GEM Select on Discover.{!isSubscribed && ' First one\u2019s free.'}
         </p>
         {authChecked && !isSubscribed && freeRemaining !== null && (
           <p className="text-xs text-[var(--gem-gray-500)] mb-8">
@@ -525,7 +525,7 @@ function SubmitPageInner() {
               You used your free evaluation
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto">
-              Go Pro to evaluate unlimited scripts — every draft, every rewrite — and feature them on Discover where producers can find you. $20/month, cancel anytime.
+              Go Pro to keep evaluating. Every draft gets a fresh score so you can see the delta and push past 75 for GEM Select on Discover. $20/month, cancel anytime.
             </p>
             <button
               onClick={handleUpgrade}

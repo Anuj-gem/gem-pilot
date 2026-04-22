@@ -111,13 +111,13 @@ export default async function Home() {
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Develop your script + Pitch it to the industry.
+            Score your script, improve it, and get it in front of the industry.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            GEM gives you detailed notes to develop your script, a polished pitch document you can share anywhere, and a public board where the right collaborators come find you. First one&apos;s free &mdash; unlimited for $20/mo.
+            Every submission gets a full report &mdash; score, notes, and a pitch. Rewrite and resubmit to raise your score. Scripts scoring 75+ earn GEM Select on Discover, where producers and reps browse. First one&apos;s free &mdash; unlimited for $20/mo.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -141,7 +141,7 @@ export default async function Home() {
                   <Upload size={32} className="text-[var(--gem-accent)] hidden sm:block" />
                 </div>
                 <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Step 1</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Develop your Script</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Get your report</div>
               </div>
 
               <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">→</div>
@@ -152,7 +152,7 @@ export default async function Home() {
                   <FileText size={32} className="text-amber-400 hidden sm:block" />
                 </div>
                 <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Step 2</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Craft the perfect Pitch</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Rewrite to raise your score</div>
               </div>
 
               <div className="text-xl sm:text-3xl font-light text-[var(--gem-gray-500)] shrink-0">→</div>
@@ -163,7 +163,7 @@ export default async function Home() {
                   <Megaphone size={32} className="text-[var(--gem-gold)] hidden sm:block" />
                 </div>
                 <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[var(--gem-gray-500)]">Step 3</div>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Get Exposure</div>
+                <div className="text-xs sm:text-sm font-semibold text-[var(--gem-white)]">Earn GEM Select</div>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default async function Home() {
         <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <p className="text-xs sm:text-sm uppercase tracking-widest text-[var(--gem-gray-500)] mb-3 sm:mb-4">What you get</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 font-[family-name:var(--font-display)]">
-            A new way to get your script in front of the industry.
+            Score. Improve. Get discovered.
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -185,9 +185,9 @@ export default async function Home() {
               <div className="w-10 h-10 rounded-lg bg-violet-500/15 border border-violet-500/30 flex items-center justify-center mb-4">
                 <NotebookPen size={20} className="text-[var(--gem-accent)]" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Develop your Script</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Get your report</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Dimension-by-dimension notes on characters, hook, momentum, and originality. Production reality on cost, casting, locations, content, and rights. Private to you.
+                A commercial viability score plus dimension-by-dimension notes on characters, hook, momentum, and originality &mdash; and a pitch with logline, lead-character breakdowns, and package angles. Private to you.
               </p>
             </div>
 
@@ -195,9 +195,9 @@ export default async function Home() {
               <div className="w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center mb-4">
                 <Sparkles size={20} className="text-amber-400" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Craft the perfect Pitch</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Rewrite to raise your score</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                A positioning hook, logline, lead-character breakdowns, and package angles &mdash; what directors and buyers would respond to. Shareable as a public pitch page.
+                Use the notes to sharpen the draft. Resubmit to get a fresh score and see the delta. Pro gets you unlimited evaluations so every draft moves the needle.
               </p>
             </div>
 
@@ -205,9 +205,9 @@ export default async function Home() {
               <div className="w-10 h-10 rounded-lg bg-[var(--gem-gold)]/15 border border-[var(--gem-gold)]/40 flex items-center justify-center mb-4">
                 <Megaphone size={20} className="text-[var(--gem-gold)]" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold mb-2">Get Exposure</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Earn GEM Select</h3>
               <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed">
-                Publish your pitch to the Discover board. Producers, reps, and collaborators browse by genre and format and reach out directly.
+                Scripts scoring 75+ earn GEM Select on Discover &mdash; the shelf producers and reps browse. Your score stays private; only the designation is public.
               </p>
             </div>
           </div>
