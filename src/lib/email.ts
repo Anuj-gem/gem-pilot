@@ -29,28 +29,53 @@ interface SendEmailOptions {
 }
 
 /**
- * Fire-and-forget email sender. Logs to email_outbox for deduplication.
- * Swallows errors so it never breaks the calling flow.
+ * Fire-and-forget email sender with race-proof dedupe.
+ *
+ * Flow: claim-then-send.
+ *   1. INSERT a `pending` row with (template_alias, dedupe_key). A partial unique
+ *      index on those columns guarantees only ONE caller wins the claim — any
+ *      concurrent callers hit 23505 and abort before sending.
+ *   2. Fire the email via Postmark.
+ *   3. UPDATE the row to `sent` / `failed`.
+ *
+ * Without a supabase client (or dedupeKey), falls back to plain send with no
+ * dedupe — used by non-idempotent contexts.
  */
 export async function sendEmail(
   opts: SendEmailOptions,
   supabase?: any
 ): Promise<boolean> {
+  const canDedupe = !!(supabase && opts.dedupeKey)
+  let claimedId: string | null = null
+
   try {
-    // 1. Dedupe check via email_outbox
-    if (opts.dedupeKey && supabase) {
-      const { data: existing } = await supabase
+    // 1. Claim the send via INSERT. Unique index on (template_alias, dedupe_key)
+    //    makes this race-proof — concurrent callers will hit 23505 and return.
+    if (canDedupe) {
+      const { data: claimed, error: claimErr } = await supabase
         .from('email_outbox')
+        .insert({
+          kind: opts.templateAlias,
+          payload: { to: opts.to, variables: opts.variables, tag: opts.tag ?? opts.templateAlias },
+          template_alias: opts.templateAlias,
+          dedupe_key: opts.dedupeKey,
+          to_email: opts.to,
+          status: 'pending',
+        })
         .select('id')
-        .eq('template_alias', opts.templateAlias)
-        .eq('dedupe_key', opts.dedupeKey)
-        .limit(1)
         .single()
 
-      if (existing) {
-        console.log(`[email] Skipping ${opts.templateAlias} for ${opts.to} — already sent (dedupe: ${opts.dedupeKey})`)
+      if (claimErr) {
+        // 23505 = unique_violation → someone else already claimed this send.
+        if (claimErr.code === '23505') {
+          console.log(`[email] Skipping ${opts.templateAlias} for ${opts.to} — already claimed (dedupe: ${opts.dedupeKey})`)
+          return false
+        }
+        // Any other DB error: log and abort — don't send without logging.
+        console.error(`[email] Claim insert failed for ${opts.templateAlias}:`, claimErr)
         return false
       }
+      claimedId = claimed?.id ?? null
     }
 
     // 2. Send via Postmark template API
@@ -75,43 +100,45 @@ export async function sendEmail(
     })
 
     const json = await res.json()
+    const ok = res.ok && json.MessageID
 
-    if (res.ok && json.MessageID) {
-      console.log(`[email] Sent ${opts.templateAlias} to ${opts.to} (MessageID: ${json.MessageID})`)
-
-      // 3. Log to email_outbox
-      if (supabase) {
-        await supabase.from('email_outbox').insert({
-          template_alias: opts.templateAlias,
-          dedupe_key: opts.dedupeKey ?? null,
-          to_email: opts.to,
-          message_id: json.MessageID,
-          status: 'sent',
-        }).then(() => {}).catch((err: any) => {
-          // Non-fatal — dedupe index will prevent true duplicates
-          console.error('[email] email_outbox insert failed:', err)
-        })
-      }
-
-      return true
-    } else {
-      console.error(`[email] Postmark error for ${opts.templateAlias}:`, json)
-
-      if (supabase) {
-        await supabase.from('email_outbox').insert({
-          template_alias: opts.templateAlias,
-          dedupe_key: opts.dedupeKey ?? null,
-          to_email: opts.to,
-          message_id: null,
-          status: 'failed',
-          error_message: JSON.stringify(json).slice(0, 500),
-        }).catch(() => {})
-      }
-
-      return false
+    // 3. Resolve the claim (sent/failed), OR log a standalone send when no claim exists.
+    if (claimedId && supabase) {
+      await supabase
+        .from('email_outbox')
+        .update(
+          ok
+            ? { status: 'sent', message_id: json.MessageID, sent_at: new Date().toISOString() }
+            : { status: 'failed', error_message: JSON.stringify(json).slice(0, 500) }
+        )
+        .eq('id', claimedId)
+        .then(() => {})
+        .catch((err: any) => console.error('[email] outbox update failed:', err))
+    } else if (supabase) {
+      // Non-deduped send — log a standalone row.
+      await supabase.from('email_outbox').insert({
+        kind: opts.templateAlias,
+        payload: { to: opts.to, variables: opts.variables, tag: opts.tag ?? opts.templateAlias },
+        template_alias: opts.templateAlias,
+        dedupe_key: null,
+        to_email: opts.to,
+        message_id: ok ? json.MessageID : null,
+        status: ok ? 'sent' : 'failed',
+        sent_at: ok ? new Date().toISOString() : null,
+        error_message: ok ? null : JSON.stringify(json).slice(0, 500),
+      }).then(() => {}).catch((err: any) => console.error('[email] outbox insert failed:', err))
     }
+
+    if (ok) {
+      console.log(`[email] Sent ${opts.templateAlias} to ${opts.to} (MessageID: ${json.MessageID})`)
+      return true
+    }
+    console.error(`[email] Postmark error for ${opts.templateAlias}:`, json)
+    return false
   } catch (err) {
     console.error(`[email] Exception sending ${opts.templateAlias}:`, err)
+    // If we claimed but threw before update, the row sits in 'pending' — that's
+    // the correct outcome: it blocks retries until someone investigates.
     return false
   }
 }
