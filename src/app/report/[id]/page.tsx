@@ -7,8 +7,6 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
 import Nav from '@/components/nav'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
@@ -156,22 +154,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
 
-  // Paywall gate: owner's 2nd+ report is locked until they subscribe.
-  let reportLocked = false
-  if (isOwner && !ownerIsSubscribed && submission.user_id) {
-    const { data: firstSub } = await serviceClient
-      .from('script_submissions')
-      .select('id')
-      .eq('user_id', submission.user_id)
-      .eq('status', 'completed')
-      .order('created_at', { ascending: true })
-      .limit(1)
-      .single()
-
-    if (firstSub && firstSub.id !== submission.id) {
-      reportLocked = true
-    }
-  }
+  // Owner-based blur gate (pre-Apr 15 behavior, restored April 2026).
+  //   • Writer hasn't subscribed → report content is blurred for anyone viewing
+  //     (writer, visitor on Discover, etc.). Top card + Commercial Score card
+  //     stay fully visible so the writer gets their headline signal.
+  //   • Writer is Pro → report is fully unlocked for everyone (including
+  //     non-subscribed visitors on Discover).
+  // No submission-count gate — free users can evaluate as many scripts as they
+  // want; every report is blurred until they go Pro.
+  const locked = !ownerIsSubscribed
 
   // Portfolio rank — position of this eval among the owner's completed submissions,
   // sorted by weighted_score desc (older first as tiebreaker). Owner-only signal.
@@ -264,159 +255,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     }
   }
 
-  // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
-  if (reportLocked) {
-    // Upsell framing cascades by designation. Each tier gets a positive
-    // headline + a subtext that names both actions the score earns them:
-    // publish on Discover AND use the full report to reposition the draft.
-    const bestRank = portfolioRank === 1 && (portfolioTotal ?? 0) > 1
-    const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
+  const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
 
-    let upsellHeadline: string
-    let upsellSubtext: string
-    if (designation === 'gem-select') {
-      upsellHeadline = 'This one belongs on Discover.'
-      upsellSubtext =
-        'It scored in the GEM Select band — the top tier we surface publicly. Go Pro to read the full report, publish it on Discover, and let reps and producers reach out.'
-    } else if (designation === 'very-promising') {
-      upsellHeadline = "It's close. Really close."
-      upsellSubtext =
-        'Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Go Pro to read the full report, pull from the Development Priorities, and publish it on Discover when you want eyes on it.'
-    } else if (designation === 'shows-potential') {
-      upsellHeadline = "There's a real spark here."
-      upsellSubtext =
-        'Shows Potential means the bones are there — the next pass is about repositioning what the script is selling. Go Pro to read the full report, use the Development Priorities to sharpen it, and publish it on Discover when you feel ready.'
-    } else if (bestRank) {
-      upsellHeadline = 'Your top-scoring script yet.'
-      upsellSubtext =
-        'Go Pro to read the full report, sharpen the draft, and publish the strong ones on Discover.'
-    } else {
-      upsellHeadline = `Your report on ${submission.title} is ready.`
-      upsellSubtext =
-        'Go Pro to read this report, evaluate unlimited scripts, and publish the strong ones on Discover.'
-    }
-
-    return (
-      <>
-        <Nav />
-        <div className="max-w-lg mx-auto px-4 py-16 text-center">
-          {/* Pitch card — unchanged */}
-          <div
-            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-6"
-            style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-5 bottom-5 rounded-r"
-              style={{ width: 3, background: 'var(--gem-gold)' }}
-            />
-            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gold)] mb-3">
-              Pitch
-            </div>
-            <p className="text-xl sm:text-[22px] text-[var(--gem-white)] leading-snug font-medium">
-              {report.positioning_hook || submission.title}
-            </p>
-          </div>
-
-          {/* Score + rank + designation card — visible even while locked.
-              The score, rank, and tier label are signals the writer already
-              earned; the report itself is what's paywalled. */}
-          {commercialScore !== null && designationStyle && (
-            <div
-              className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
-              style={{
-                border: `1px solid ${designationStyle.border}`,
-                background: designationStyle.bg,
-              }}
-            >
-              <div className="flex items-start justify-between gap-4 flex-wrap">
-                <div>
-                  <p
-                    className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
-                    style={{ color: designationStyle.text }}
-                  >
-                    Commercial Potential
-                  </p>
-                  <div className="flex items-baseline gap-1.5">
-                    <span
-                      className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
-                      style={{ color: designationStyle.text }}
-                    >
-                      {commercialScore.toFixed(1)}
-                    </span>
-                    <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
-                      / 100
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
-                  style={{
-                    background: designationStyle.pillBg,
-                    border: `1px solid ${designationStyle.pillBorder}`,
-                  }}
-                >
-                  <span
-                    aria-hidden
-                    className="inline-block w-1.5 h-1.5 rounded-full"
-                    style={{ background: designationStyle.dot }}
-                  />
-                  <span
-                    className="text-[11px] uppercase tracking-[0.18em] font-bold"
-                    style={{ color: designationStyle.text }}
-                  >
-                    {designationStyle.label}
-                  </span>
-                </div>
-              </div>
-
-              {portfolioRank !== null && portfolioTotal > 1 && (
-                <p className="text-[13px] text-[var(--gem-gray-400)] mt-4 m-0">
-                  {portfolioRank === 1 ? (
-                    <>
-                      <span className="text-[var(--gem-gold)] font-semibold">
-                        Your top-scoring script
-                      </span>{' '}
-                      — #1 of {portfolioTotal} in your portfolio.
-                    </>
-                  ) : (
-                    <>
-                      Ranked{' '}
-                      <span className="text-[var(--gem-white)] font-semibold">
-                        #{portfolioRank}
-                      </span>{' '}
-                      of {portfolioTotal} in your portfolio.
-                    </>
-                  )}
-                </p>
-              )}
-            </div>
-          )}
-
-          <h2 className="text-2xl font-bold text-[var(--gem-white)] mb-3">
-            {upsellHeadline}
-          </h2>
-          <p className="text-sm text-[var(--gem-gray-400)] mb-8 max-w-md mx-auto leading-relaxed">
-            {upsellSubtext}
-          </p>
-
-          <LockedReportUpgrade evaluationId={id} />
-
-          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3 mb-8">
-            Cancel anytime · Secure checkout via Stripe
-          </p>
-
-          {/* Always give writers a way back — don't let the paywall be a dead end. */}
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-          >
-            <ArrowLeft size={14} />
-            Back to dashboard
-          </Link>
-        </div>
-      </>
-    )
+  // Selective blur for locked-report content — same CSS pattern as DetailsView.
+  // Headers, titles, and metadata stay crisp so the writer sees the structure
+  // of what they're paying for; the prose underneath is visually obscured.
+  const blurStyle: React.CSSProperties = {
+    filter: 'blur(5px)',
+    userSelect: 'none',
   }
 
   return (
@@ -470,6 +316,99 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 
+        {/* Locked-report score card + upgrade CTA — owner sees when writer
+            hasn't gone Pro. The score is the signal the writer earned; the
+            rest of the report is paywalled until they upgrade. Non-owners
+            never see the score (private to the writer) so this only renders
+            for the owner (or admin). */}
+        {locked && (isOwner || isAdmin) && commercialScore !== null && designationStyle && (
+          <div
+            className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
+            style={{
+              border: `1px solid ${designationStyle.border}`,
+              background: designationStyle.bg,
+            }}
+          >
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <p
+                  className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
+                  style={{ color: designationStyle.text }}
+                >
+                  Commercial Potential
+                </p>
+                <div className="flex items-baseline gap-1.5">
+                  <span
+                    className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
+                    style={{ color: designationStyle.text }}
+                  >
+                    {commercialScore.toFixed(1)}
+                  </span>
+                  <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
+                    / 100
+                  </span>
+                </div>
+              </div>
+              <div
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
+                style={{
+                  background: designationStyle.pillBg,
+                  border: `1px solid ${designationStyle.pillBorder}`,
+                }}
+              >
+                <span
+                  aria-hidden
+                  className="inline-block w-1.5 h-1.5 rounded-full"
+                  style={{ background: designationStyle.dot }}
+                />
+                <span
+                  className="text-[11px] uppercase tracking-[0.18em] font-bold"
+                  style={{ color: designationStyle.text }}
+                >
+                  {designationStyle.label}
+                </span>
+              </div>
+            </div>
+            {portfolioRank !== null && portfolioTotal > 1 && (
+              <p className="text-[13px] text-[var(--gem-gray-400)] mt-4 m-0">
+                {portfolioRank === 1 ? (
+                  <>
+                    <span className="text-[var(--gem-gold)] font-semibold">
+                      Your top-scoring script
+                    </span>{' '}
+                    — #1 of {portfolioTotal} in your portfolio.
+                  </>
+                ) : (
+                  <>
+                    Ranked{' '}
+                    <span className="text-[var(--gem-white)] font-semibold">
+                      #{portfolioRank}
+                    </span>{' '}
+                    of {portfolioTotal} in your portfolio.
+                  </>
+                )}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Prominent upgrade CTA — shown when the writer hasn't gone Pro.
+            Replaces the old 2nd-eval paywall page with an always-on nudge. */}
+        {locked && isOwner && (
+          <div className="rounded-2xl border-2 border-[var(--gem-gold)]/30 bg-[var(--gem-gray-900)]/40 p-6 sm:p-7 mb-10 text-center">
+            <h2 className="text-lg sm:text-xl font-bold text-[var(--gem-white)] mb-2">
+              Unlock the full report
+            </h2>
+            <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto leading-relaxed">
+              Read the full breakdown — strengths, character angles, packaging notes, and your development priorities. Evaluate unlimited scripts and publish the strong ones on Discover.
+            </p>
+            <LockedReportUpgrade evaluationId={id} />
+            <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">
+              Cancel anytime · Secure checkout via Stripe
+            </p>
+          </div>
+        )}
+
         {/* Contact writer — only when script is public on Discover */}
         {contactState && (
           <div className="mb-10">
@@ -492,7 +431,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         <ReportTabs
           showDetails={isOwner || isAdmin}
-          detailsLocked={false}
+          detailsLocked={locked}
           pitch={
             <>
               {/* What's Working — numbered collapsibles with evidence sidebar */}
@@ -501,7 +440,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <div className="space-y-3">
                     {allStrengths.map((s, i) => (
                       <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
-                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
+                        <p
+                          className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4"
+                          style={locked ? blurStyle : undefined}
+                        >
                           {s.what_it_means}
                         </p>
                         {s.evidence && (
@@ -518,7 +460,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                             >
                               Evidence from the script
                             </p>
-                            <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                            <p
+                              className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                              style={locked ? blurStyle : undefined}
+                            >
                               {s.evidence}
                             </p>
                           </div>
@@ -542,7 +487,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         title={c.name}
                         meta={`${c.role_type} · ${c.demographics}`}
                       >
-                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
+                        <p
+                          className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
+                          style={locked ? blurStyle : undefined}
+                        >
                           {c.hook}
                         </p>
                         <div
@@ -558,7 +506,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           >
                             Why an actor would want this part
                           </p>
-                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          <p
+                            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                            style={locked ? blurStyle : undefined}
+                          >
                             {c.why_actor_wants_this}
                           </p>
                         </div>
@@ -576,7 +527,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 >
                   <div className="space-y-3">
                     <Collapsible title="Why a director wants this" accent="#059669">
-                      <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
+                      <p
+                        className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0"
+                        style={locked ? blurStyle : undefined}
+                      >
                         {packageAngles.director_appeal.hook}
                       </p>
                       {packageAngles.director_appeal.fit_profile && (
@@ -593,12 +547,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           >
                             Director fit profile
                           </p>
-                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          <p
+                            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                            style={locked ? blurStyle : undefined}
+                          >
                             {packageAngles.director_appeal.fit_profile}
                           </p>
                         </div>
                       )}
-                      <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={locked ? blurStyle : undefined}
+                      >
                         {packageAngles.director_appeal.detail}
                       </p>
                     </Collapsible>
@@ -610,7 +570,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
                         {packageAngles.buyer_appeal.lane}
                       </p>
-                      <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={locked ? blurStyle : undefined}
+                      >
                         {packageAngles.buyer_appeal.detail}
                       </p>
                     </Collapsible>
@@ -634,7 +597,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scores={scores}
               production={production}
               considerations={considerations}
-              locked={false}
+              locked={locked}
+              evaluationId={id}
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}
               commercialScore={commercialScore}
