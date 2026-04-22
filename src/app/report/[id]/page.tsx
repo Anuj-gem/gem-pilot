@@ -330,43 +330,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 
-        {/* Prominent upgrade CTA — shown when the writer hasn't gone Pro.
-            The Commercial Potential Score itself lives inside the Development
-            tab (visible even when locked) so locked viewers get one score
-            surface, not two. */}
+        {/* Compact upgrade nudge — replaces the old full-width box so blurred
+            tab content enters the viewport sooner. Full expanded CTA lives
+            below the tabs (see bottom of page). */}
         {locked && isOwner && (
-          <div className="rounded-2xl border-2 border-[var(--gem-gold)]/30 bg-[var(--gem-gray-900)]/40 p-6 sm:p-7 mb-10 text-center">
-            <h2 className="text-lg sm:text-xl font-bold text-[var(--gem-white)] mb-2">
-              Unlock the full report
-            </h2>
-            <p className="text-sm text-[var(--gem-gray-400)] mb-5 max-w-md mx-auto leading-relaxed">
-              Read the full breakdown — strengths, character angles, packaging notes, and your development priorities. Evaluate unlimited scripts and publish the strong ones on Discover.
-            </p>
-            <LockedReportUpgrade evaluationId={id} />
-            <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">
-              Cancel anytime · Secure checkout via Stripe
-            </p>
+          <div className="rounded-xl border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/[0.06] px-4 py-3 sm:px-5 sm:py-3.5 mb-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div className="flex-1 min-w-0 text-center sm:text-left">
+              <p className="text-[15px] sm:text-base font-semibold text-[var(--gem-white)] m-0 leading-snug">
+                Unlock the full report
+              </p>
+              <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+                Strengths, characters, packaging, priorities · Unlimited scripts
+              </p>
+            </div>
+            <div className="shrink-0 flex justify-center">
+              <LockedReportUpgrade evaluationId={id} />
+            </div>
           </div>
-        )}
-
-        {/* Contact writer — only when script is public on Discover */}
-        {contactState && (
-          <div className="mb-10">
-            <ContactWriter
-              evaluationId={id}
-              writerName={writerName}
-              state={contactState}
-              isLoggedIn={!!user}
-            />
-          </div>
-        )}
-
-        {/* Share section — owner always sees it (their own report, easy way
-            to grab the link once they publish). Non-owners only on public
-            reports. Lives directly under the Contact Writer card to form a
-            "what can I do with this?" block. */}
-        {(submission.is_public || isOwner) && (
-          <ShareSection evaluationId={id} title={topCard.title} />
         )}
 
         <ReportTabs
@@ -540,6 +520,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             />
           }
         />
+
+        {/* Secondary actions live BELOW the tabs so the blurred content lands
+            in the first viewport on the 1st-eval page. Both blocks follow
+            their own gating — contactState only when there's a reachable
+            writer, share only when public or owner. */}
+        {contactState && (
+          <div className="mt-10">
+            <ContactWriter
+              evaluationId={id}
+              writerName={writerName}
+              state={contactState}
+              isLoggedIn={!!user}
+            />
+          </div>
+        )}
+
+        {(submission.is_public || isOwner) && (
+          <div className="mt-6">
+            <ShareSection evaluationId={id} title={topCard.title} />
+          </div>
+        )}
       </div>
 
       {/* SubscribeGate still available if triggered by upgrade CTA click */}
