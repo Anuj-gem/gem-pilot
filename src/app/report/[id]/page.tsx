@@ -27,6 +27,7 @@ import { EditableTopCard } from '@/components/report/editable-top-card'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
+import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -330,36 +331,72 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 
-        {/* Compact upgrade nudge — replaces the old full-width box so blurred
-            tab content enters the viewport sooner. Full expanded CTA lives
-            below the tabs (see bottom of page). */}
-        {locked && isOwner && (
-          <div className="rounded-xl border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/[0.06] px-4 py-3 sm:px-5 sm:py-3.5 mb-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <div className="flex-1 min-w-0 text-center sm:text-left">
-              <p className="text-[15px] sm:text-base font-semibold text-[var(--gem-white)] m-0 leading-snug">
-                Unlock the full report
-              </p>
-              <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
-                Strengths, characters, packaging, priorities · Unlimited scripts
-              </p>
+        {/* Compact owner-only mini-score card. Surfaces the score + tier
+            privately to the writer (score is never public — non-owners won't
+            see this block at all), points to the Development tab for the
+            full breakdown, and stacks the upgrade CTA alongside. Replaces
+            the old large unlock box so blurred tab content enters the
+            viewport sooner on mobile. */}
+        {locked && isOwner && (() => {
+          const designation = scoreDesignation(commercialScore)
+          const tierStyle = designation ? DESIGNATION_STYLE[designation] : null
+          return (
+            <div className="rounded-xl border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/[0.06] px-4 py-4 sm:px-5 sm:py-4 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-1 min-w-0 w-full sm:w-auto text-center sm:text-left">
+                <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 mb-1.5">
+                  Your score · only visible to you
+                </p>
+                {typeof commercialScore === 'number' ? (
+                  <div className="flex items-baseline gap-2 justify-center sm:justify-start">
+                    <span className="text-[30px] sm:text-[34px] font-bold tabular-nums leading-none text-[var(--gem-white)]">
+                      {commercialScore}
+                    </span>
+                    {tierStyle && (
+                      <span
+                        className="text-[14px] sm:text-[15px] font-semibold"
+                        style={{ color: tierStyle.text }}
+                      >
+                        · {tierStyle.label}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-[18px] font-semibold text-[var(--gem-white)] m-0">
+                    Score unavailable
+                  </p>
+                )}
+                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-1.5 leading-snug">
+                  See the full breakdown in the Development tab.
+                </p>
+              </div>
+              <div className="shrink-0 w-full sm:w-auto flex justify-center">
+                <LockedReportUpgrade evaluationId={id} />
+              </div>
             </div>
-            <div className="shrink-0 flex justify-center">
-              <LockedReportUpgrade evaluationId={id} />
-            </div>
-          </div>
-        )}
+          )
+        })()}
 
         <ReportTabs
           showDetails={isOwner || isAdmin}
           detailsLocked={locked}
           pitch={
             <>
-              {/* What's Working — numbered collapsibles with evidence sidebar */}
+              {/* What's Working — numbered collapsibles with evidence sidebar.
+                  Locked free writers see the section summary + first item
+                  crisp as a tease; titles of items 2+ are blurred (same
+                  pattern as Development Priorities). Bodies stay crisp when
+                  expanded — the blur is a gate on *discoverability*, not a
+                  data wipe. */}
               {allStrengths.length > 0 && (
                 <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
                   <div className="space-y-3">
                     {allStrengths.map((s, i) => (
-                      <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
+                      <Collapsible
+                        key={i}
+                        number={i + 1}
+                        title={s.dimension_or_area}
+                        titleBlurred={locked && i > 0}
+                      >
                         <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
                           {s.what_it_means}
                         </p>
