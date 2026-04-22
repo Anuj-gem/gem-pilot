@@ -6,7 +6,7 @@
 // details. All cards are collapsibles.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Nav from '@/components/nav'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
@@ -26,7 +26,6 @@ import { Section, Collapsible } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
-import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
 
 interface PageProps {
@@ -156,13 +155,32 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   // Owner-based blur gate (pre-Apr 15 behavior, restored April 2026).
   //   • Writer hasn't subscribed → report content is blurred for anyone viewing
-  //     (writer, visitor on Discover, etc.). Top card + Commercial Score card
-  //     stay fully visible so the writer gets their headline signal.
+  //     (writer, visitor on Discover, etc.). Top card stays visible so the
+  //     writer gets their headline signal.
   //   • Writer is Pro → report is fully unlocked for everyone (including
   //     non-subscribed visitors on Discover).
-  // No submission-count gate — free users can evaluate as many scripts as they
-  // want; every report is blurred until they go Pro.
   const locked = !ownerIsSubscribed
+
+  // First-eval gate (April 2026): an unsubscribed writer can view their FIRST
+  // completed report (in a partially-blurred state); any subsequent report is
+  // not accessible by URL — they're redirected to /dashboard. This plugs the
+  // "hammer submissions to iterate on score" leak where writers were re-running
+  // evals to read the score climb without ever paying.
+  //   • Owner + !subscribed + not-first-eval + not-admin → redirect /dashboard
+  //   • Non-owners on Discover keep the blurred-preview behavior (unchanged).
+  if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
+    const { data: firstSub } = await serviceClient
+      .from('script_submissions')
+      .select('id')
+      .eq('user_id', submission.user_id)
+      .eq('status', 'completed')
+      .order('created_at', { ascending: true })
+      .limit(1)
+      .single()
+    if (firstSub?.id !== submission.id) {
+      redirect('/dashboard')
+    }
+  }
 
   // Portfolio rank — position of this eval among the owner's completed submissions,
   // sorted by weighted_score desc (older first as tiebreaker). Owner-only signal.
@@ -233,11 +251,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   } catch {
     commercialScore = null
   }
-  // Three-tier designation: GEM Select (≥75), Very Promising (50–74), Shows
-  // Potential (<50). Only GEM Select is ever surfaced publicly on Discover;
-  // Very Promising and Shows Potential are private to the writer and exist to
-  // keep the framing encouraging + give every score a reason to upgrade.
-  const designation = scoreDesignation(commercialScore)
+  // Three-tier designation (GEM Select ≥75, Very Promising 50–74, Shows
+  // Potential <50) is derived inside DetailsView from the score; the report
+  // page itself no longer reads it directly.
 
   // Contact Writer gating:
   //   - owner ALWAYS sees their own state (owner_live if Pro, owner_upsell
@@ -254,8 +270,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       contactState = ownerIsSubscribed ? 'live' : 'writer_not_pro'
     }
   }
-
-  const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
 
   // Selective blur for locked-report content — same CSS pattern as DetailsView.
   // Headers, titles, and metadata stay crisp so the writer sees the structure
@@ -316,84 +330,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 
-        {/* Locked-report score card + upgrade CTA — owner sees when writer
-            hasn't gone Pro. The score is the signal the writer earned; the
-            rest of the report is paywalled until they upgrade. Non-owners
-            never see the score (private to the writer) so this only renders
-            for the owner (or admin). */}
-        {locked && (isOwner || isAdmin) && commercialScore !== null && designationStyle && (
-          <div
-            className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
-            style={{
-              border: `1px solid ${designationStyle.border}`,
-              background: designationStyle.bg,
-            }}
-          >
-            <div className="flex items-start justify-between gap-4 flex-wrap">
-              <div>
-                <p
-                  className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
-                  style={{ color: designationStyle.text }}
-                >
-                  Commercial Potential
-                </p>
-                <div className="flex items-baseline gap-1.5">
-                  <span
-                    className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
-                    style={{ color: designationStyle.text }}
-                  >
-                    {commercialScore.toFixed(1)}
-                  </span>
-                  <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
-                    / 100
-                  </span>
-                </div>
-              </div>
-              <div
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
-                style={{
-                  background: designationStyle.pillBg,
-                  border: `1px solid ${designationStyle.pillBorder}`,
-                }}
-              >
-                <span
-                  aria-hidden
-                  className="inline-block w-1.5 h-1.5 rounded-full"
-                  style={{ background: designationStyle.dot }}
-                />
-                <span
-                  className="text-[11px] uppercase tracking-[0.18em] font-bold"
-                  style={{ color: designationStyle.text }}
-                >
-                  {designationStyle.label}
-                </span>
-              </div>
-            </div>
-            {portfolioRank !== null && portfolioTotal > 1 && (
-              <p className="text-[13px] text-[var(--gem-gray-400)] mt-4 m-0">
-                {portfolioRank === 1 ? (
-                  <>
-                    <span className="text-[var(--gem-gold)] font-semibold">
-                      Your top-scoring script
-                    </span>{' '}
-                    — #1 of {portfolioTotal} in your portfolio.
-                  </>
-                ) : (
-                  <>
-                    Ranked{' '}
-                    <span className="text-[var(--gem-white)] font-semibold">
-                      #{portfolioRank}
-                    </span>{' '}
-                    of {portfolioTotal} in your portfolio.
-                  </>
-                )}
-              </p>
-            )}
-          </div>
-        )}
-
         {/* Prominent upgrade CTA — shown when the writer hasn't gone Pro.
-            Replaces the old 2nd-eval paywall page with an always-on nudge. */}
+            The Commercial Potential Score itself lives inside the Development
+            tab (visible even when locked) so locked viewers get one score
+            surface, not two. */}
         {locked && isOwner && (
           <div className="rounded-2xl border-2 border-[var(--gem-gold)]/30 bg-[var(--gem-gray-900)]/40 p-6 sm:p-7 mb-10 text-center">
             <h2 className="text-lg sm:text-xl font-bold text-[var(--gem-white)] mb-2">
@@ -440,10 +380,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <div className="space-y-3">
                     {allStrengths.map((s, i) => (
                       <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
-                        <p
-                          className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4"
-                          style={locked ? blurStyle : undefined}
-                        >
+                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
                           {s.what_it_means}
                         </p>
                         {s.evidence && (
@@ -460,10 +397,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                             >
                               Evidence from the script
                             </p>
-                            <p
-                              className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                              style={locked ? blurStyle : undefined}
-                            >
+                            <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
                               {s.evidence}
                             </p>
                           </div>

@@ -177,9 +177,11 @@ export function DetailsView({
   const hasPortfolioRank =
     portfolioRank !== null && portfolioRank !== undefined && (portfolioTotal ?? 0) > 0
 
-  // Commercial score renders only when we have a fully-formed v5.2 eval.
+  // Commercial score renders whenever we have a v5.2 eval — shown even when
+  // the report is locked, because the score is the writer's signal and the
+  // reason they'll pay. Rest of Details stays blurred below.
   const hasCommercialScore =
-    typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && !locked
+    typeof commercialScore === 'number' && !Number.isNaN(commercialScore)
   const hasNarrativeBreakdown =
     !!scores && Object.values(scores).some((s) => typeof s?.score === 'number') && !locked
 
