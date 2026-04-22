@@ -69,36 +69,48 @@ export function SearchBar({
 
   return (
     <div className="mb-6 space-y-4">
-      {/* Segmented pill tabs — primary navigation. Recent = neutral (white)
-          active state; GEM Select = gold-gradient branded pill when active, so
-          the shelf reads as a distinct, premium destination, not just another
-          filter. Matches the pill treatment from the Selznick 3.6 email. */}
-      <div className="flex flex-col gap-2.5">
-        <div
-          className="inline-flex self-start p-1 rounded-full border border-[var(--gem-gray-700)]"
-          style={{ background: 'rgba(15,23,42,0.35)' }}
-        >
+      {/* Pill tabs — primary navigation. Recent = neutral outlined pill that
+          fills near-black when active; GEM Select = gold-gradient branded pill
+          when active (✦ star always visible). Matches the pill treatment from
+          the Selznick 3.6 email and reads cleanly on the light Discover bg. */}
+      <div className="flex flex-col gap-3">
+        <div className="inline-flex flex-wrap items-center gap-2">
           {TABS.map((t) => {
             const active = initialTab === t.key
             const count = counts[t.countKey]
             const isGemSelect = t.key === 'gem-select'
-            const activeClasses = isGemSelect
-              ? 'text-white shadow-[0_2px_10px_rgba(200,164,92,0.35)]'
-              : 'text-[var(--gem-gray-900)]'
-            const inactiveClasses = isGemSelect
-              ? 'text-[var(--gem-gold)] hover:text-[var(--gem-white)]'
-              : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
-            const activeBg = isGemSelect
-              ? 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)'
-              : 'var(--gem-white)'
+
+            // Style buckets — keep active/inactive visually distinct but both
+            // pills share the same geometry so they read as a pair.
+            let pillClass = 'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--gem-accent)]'
+            let style: React.CSSProperties = {}
+            let countClass = ''
+
+            if (isGemSelect && active) {
+              pillClass += ' text-white border-transparent'
+              style = {
+                background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
+                boxShadow: '0 2px 10px rgba(245,158,11,0.35)',
+              }
+              countClass = 'text-white/80'
+            } else if (isGemSelect && !active) {
+              pillClass += ' text-[var(--gem-gold)] border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/5 hover:bg-[var(--gem-gold)]/10 hover:border-[var(--gem-gold)]/70'
+              countClass = 'text-[var(--gem-gold)]/70'
+            } else if (!isGemSelect && active) {
+              pillClass += ' text-white border-[var(--gem-white)]'
+              style = { background: 'var(--gem-white)' }
+              countClass = 'text-white/70'
+            } else {
+              pillClass += ' text-[var(--gem-gray-500)] border-[var(--gem-gray-700)] bg-transparent hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)]'
+              countClass = 'text-[var(--gem-gray-500)]'
+            }
+
             return (
               <button
                 key={t.key || 'recent'}
                 onClick={() => updateParams({ tab: t.key })}
-                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                  active ? activeClasses : inactiveClasses
-                }`}
-                style={active ? { background: activeBg } : undefined}
+                className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border transition-all ${pillClass}`}
+                style={style}
               >
                 {isGemSelect && (
                   <span aria-hidden className="text-[13px] leading-none" style={{ transform: 'translateY(-0.5px)' }}>
@@ -106,15 +118,7 @@ export function SearchBar({
                   </span>
                 )}
                 <span>{t.label}</span>
-                <span
-                  className={`text-xs tabular-nums font-medium ${
-                    active
-                      ? isGemSelect
-                        ? 'text-white/75'
-                        : 'text-[var(--gem-gray-500)]'
-                      : 'text-[var(--gem-gray-600)]'
-                  }`}
-                >
+                <span className={`text-xs tabular-nums font-medium ${countClass}`}>
                   {count.toLocaleString()}
                 </span>
               </button>
@@ -126,11 +130,11 @@ export function SearchBar({
             75+ threshold and the private-score / public-designation split, and
             nudges writers who land on Discover to submit their own script. */}
         {initialTab === 'gem-select' && (
-          <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.6] m-0 max-w-[62ch]">
+          <p className="text-[13px] text-[var(--gem-gray-500)] leading-[1.6] m-0 max-w-[62ch]">
             Scripts scoring 75+ earn GEM Select — the shelf for screen-ready, commercially viable work. Your score stays private; only the designation is public.{' '}
             <Link
               href="/submit"
-              className="text-[var(--gem-gold)] hover:text-[var(--gem-white)] font-semibold underline decoration-dotted underline-offset-4 transition-colors"
+              className="text-[var(--gem-gold)] hover:opacity-80 font-semibold underline decoration-dotted underline-offset-4 transition-opacity"
             >
               Submit a script to see how it scores →
             </Link>
