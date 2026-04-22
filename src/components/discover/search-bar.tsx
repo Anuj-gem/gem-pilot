@@ -131,7 +131,7 @@ export function SearchBar({
             nudges writers who land on Discover to submit their own script. */}
         {initialTab === 'gem-select' && (
           <p className="text-[13px] text-[var(--gem-gray-500)] leading-[1.6] m-0 max-w-[62ch]">
-            Scripts scoring 75+ earn GEM Select — the shelf for screen-ready, commercially viable work. Your score stays private; only the designation is public.{' '}
+            Scripts that have a commercial viability score of 75+ earn GEM Select — the shelf for screen-ready, commercially viable work. Your score stays private; only the designation is public.{' '}
             <Link
               href="/submit"
               className="text-[var(--gem-gold)] hover:opacity-80 font-semibold underline decoration-dotted underline-offset-4 transition-opacity"

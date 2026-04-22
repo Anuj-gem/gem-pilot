@@ -20,6 +20,7 @@ import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ReportTabs } from '@/components/report/report-tabs'
 import { ContactWriter } from '@/components/report/contact-writer'
+import { ShareSection } from '@/components/report/share-section'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { DetailsView } from '@/components/report/details-view'
@@ -457,6 +458,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwner={isOwner}
           hasEdits={topCardHasEdits}
           postedAt={submission.created_at ?? null}
+          isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 
         {/* Contact writer — only when script is public on Discover */}
@@ -469,6 +471,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               isLoggedIn={!!user}
             />
           </div>
+        )}
+
+        {/* Share section — only on public reports (private URLs aren't useful
+            to share since non-owners can't view them). Lives directly under
+            the Contact Writer card to form a "what can I do with this?" block. */}
+        {submission.is_public && (
+          <ShareSection evaluationId={id} title={topCard.title} />
         )}
 
         <ReportTabs

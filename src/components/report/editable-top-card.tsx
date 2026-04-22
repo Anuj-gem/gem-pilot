@@ -14,6 +14,7 @@
 // pre-opened from dashboard via ?edit=1 which auto-scrolls + flips the card.
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Pencil, Check, X, RotateCcw, Loader2 } from 'lucide-react'
 import { LOGLINE_WORD_CAP, loglineWordCount, type TopCardDisplay } from '@/lib/edited-fields'
@@ -24,9 +25,14 @@ interface Props {
   isOwner: boolean
   hasEdits: boolean
   postedAt: string | null
+  /** Whether this eval's commercial score clears the GEM Select bar (≥75).
+   *  Drives the gold badge shown next to the title in display mode. The
+   *  designation itself is already public (it's the only tier surfaced on
+   *  Discover), so this badge is safe to render for any viewer. */
+  isGemSelect?: boolean
 }
 
-export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt }: Props) {
+export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt, isGemSelect }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -146,6 +152,29 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4 pr-24">
           {initial.title}
         </h1>
+
+        {/* GEM Select badge — only when the script cleared the 75 bar. Doubles
+            as a link to the GEM Select tab on Discover so clicking it is a
+            quiet status win + a routing nudge. Safe to render for non-owners
+            (the designation is already the public signal on Discover). */}
+        {isGemSelect && (
+          <Link
+            href="/discover?tab=gem-select"
+            title="Scripts that have a commercial viability score of 75+ earn GEM Select on Discover. Click to browse the shelf."
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-bold text-white mb-4 transition-opacity hover:opacity-90"
+            style={{
+              background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
+              boxShadow: '0 2px 10px rgba(245,158,11,0.35)',
+              letterSpacing: '0.02em',
+            }}
+          >
+            <span aria-hidden className="text-[12px] leading-none" style={{ transform: 'translateY(-0.5px)' }}>
+              ✦
+            </span>
+            <span>GEM Select</span>
+            <span className="text-white/75 font-semibold">· 75+</span>
+          </Link>
+        )}
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[var(--gem-gray-300)] mb-10">
           {initial.format && <span>{initial.format}</span>}
