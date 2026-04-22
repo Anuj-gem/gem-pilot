@@ -376,6 +376,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )
         })()}
 
+        {/* Share section — placed above the tabs so writers can grab the
+            link right after the top card without scrolling past the full
+            report. Owner always sees it on their own report (handy after
+            publishing); non-owners only on public reports. */}
+        {(submission.is_public || isOwner) && (
+          <div className="mb-8">
+            <ShareSection evaluationId={id} title={topCard.title} />
+          </div>
+        )}
+
         <ReportTabs
           showDetails={isOwner || isAdmin}
           detailsLocked={locked}
@@ -558,10 +568,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
         />
 
-        {/* Secondary actions live BELOW the tabs so the blurred content lands
-            in the first viewport on the 1st-eval page. Both blocks follow
-            their own gating — contactState only when there's a reachable
-            writer, share only when public or owner. */}
+        {/* Contact writer lives below the tabs — it's a secondary action
+            (rep-style inbound request) and not as time-sensitive as the
+            share link, which the writer typically reaches for immediately
+            after publishing. */}
         {contactState && (
           <div className="mt-10">
             <ContactWriter
@@ -570,12 +580,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               state={contactState}
               isLoggedIn={!!user}
             />
-          </div>
-        )}
-
-        {(submission.is_public || isOwner) && (
-          <div className="mt-6">
-            <ShareSection evaluationId={id} title={topCard.title} />
           </div>
         )}
       </div>
