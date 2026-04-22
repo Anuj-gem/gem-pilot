@@ -25,6 +25,11 @@ interface Props {
   isOwner: boolean
   hasEdits: boolean
   postedAt: string | null
+  /** Writer's full name (from profiles.full_name). Rendered as read-only
+   *  "By {name}" under the title. Null/empty when the submission is anonymous
+   *  or the profile has no name set, in which case the line is omitted.
+   *  Full profile editing comes later — for now this is display-only. */
+  authorName?: string | null
   /** Whether this eval's commercial score clears the GEM Select bar (≥75).
    *  Drives the gold badge shown next to the title in display mode. The
    *  designation itself is already public (it's the only tier surfaced on
@@ -32,7 +37,7 @@ interface Props {
   isGemSelect?: boolean
 }
 
-export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt, isGemSelect }: Props) {
+export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt, authorName, isGemSelect }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -152,6 +157,15 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4 pr-24">
           {initial.title}
         </h1>
+
+        {/* Author byline — read-only, shown whenever the profile has a name.
+            Full profile UI lands later; this is just to get the writer's name
+            on the report for producers and reps viewing the page. */}
+        {authorName && authorName.trim().length > 0 && (
+          <p className="text-[15px] text-[var(--gem-gray-400)] -mt-2 mb-5 m-0">
+            By <span className="text-[var(--gem-gray-200)]">{authorName}</span>
+          </p>
+        )}
 
         {/* GEM Select badge — only when the script cleared the 75 bar. Doubles
             as a link to the GEM Select tab on Discover so clicking it is a

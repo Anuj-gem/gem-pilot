@@ -464,6 +464,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwner={isOwner}
           hasEdits={topCardHasEdits}
           postedAt={submission.created_at ?? null}
+          authorName={
+            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+          }
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
 

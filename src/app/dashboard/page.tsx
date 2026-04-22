@@ -44,7 +44,7 @@ export default async function DashboardPage() {
     .from('script_submissions')
     .select(`
       id, title, status, is_public, created_at, hidden_at,
-      script_evaluations ( id, evaluation, created_at, weighted_score )
+      script_evaluations ( id, evaluation, edited_fields, created_at, weighted_score )
     `)
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
@@ -154,8 +154,17 @@ export default async function DashboardPage() {
                 const rawEval = sub.script_evaluations
                 const eval_ = Array.isArray(rawEval) ? rawEval[0] : rawEval
                 const hasReport = !!eval_
+                // Prefer the writer-edited headline (edited_fields.logline)
+                // over the generated positioning_hook so dashboard cards reflect
+                // edits immediately after save. See src/lib/edited-fields.ts
+                // for the same fallback logic used on the report page.
+                const editedLogline =
+                  typeof eval_?.edited_fields?.logline === 'string' &&
+                  eval_.edited_fields.logline.trim().length > 0
+                    ? eval_.edited_fields.logline
+                    : null
                 const positioningHook: string | null =
-                  eval_?.evaluation?.positioning_hook ?? null
+                  editedLogline ?? eval_?.evaluation?.positioning_hook ?? null
                 const isLockedReport = !isSubscribed && hasReport && sub.status === 'completed' && sub.id !== firstFreeId
 
                 const dateStr = new Date(sub.created_at).toLocaleDateString('en-US', {
