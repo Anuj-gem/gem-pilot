@@ -12,6 +12,11 @@ import {
   Fact,
   RiskPill,
 } from '@/components/report/v5-components'
+import {
+  scoreDesignation,
+  DESIGNATION_STYLE,
+  type Designation,
+} from '@/lib/designation'
 
 // ─── Back-compat exports (used by /sample/[slug]) ──────────────────
 export function SectionHeader({ label }: { label: string }) {
@@ -145,10 +150,12 @@ export function DetailsView({
   showPrivacyNote = true,
   portfolioRank,
   portfolioTotal,
+  commercialScore,
+  craftNote,
 }: {
   scores: Record<string, { score: number; reasoning: string }>
   production: GEMEvaluation['production_reality']
-  considerations: { area: string; detail: string; source?: string }[]
+  considerations: { area: string; detail: string; source?: string; is_primary_lever?: boolean }[]
   overallScore?: number | null
   showScores?: boolean
   locked: boolean
@@ -156,7 +163,12 @@ export function DetailsView({
   showPrivacyNote?: boolean
   portfolioRank?: number | null
   portfolioTotal?: number
+  commercialScore?: number | null
+  craftNote?: string | null
 }) {
+  // Derive the designation locally from the score so callers don't need to
+  // keep score + bucket flags in sync.
+  const designation: Designation | null = scoreDesignation(commercialScore)
   const blurStyle: React.CSSProperties = locked
     ? { filter: 'blur(5px)', userSelect: 'none' as const }
     : {}
@@ -165,11 +177,21 @@ export function DetailsView({
   const hasPortfolioRank =
     portfolioRank !== null && portfolioRank !== undefined && (portfolioTotal ?? 0) > 0
 
+  // Commercial score renders only when we have a fully-formed v5.2 eval.
+  const hasCommercialScore =
+    typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && !locked
+  const hasNarrativeBreakdown =
+    !!scores && Object.values(scores).some((s) => typeof s?.score === 'number') && !locked
+
   return (
     <>
+      {/* Privacy note sits ABOVE the score so the writer immediately reads the
+          number as a private-to-them signal — avoids the "is this score public?"
+          beat that kills confidence when a Very Promising / Shows Potential pill
+          is visible. */}
       {showPrivacyNote && (
         <div
-          className="flex items-start gap-3 p-5 rounded-xl mb-10"
+          className="flex items-start gap-3 p-5 rounded-xl mb-6"
           style={{
             background: 'rgba(124,58,237,0.08)',
             border: '1px solid rgba(124,58,237,0.25)',
@@ -188,8 +210,21 @@ export function DetailsView({
         </div>
       )}
 
-      {/* GEM Rank — at the top of Details, where the score used to live */}
-      {hasPortfolioRank && (
+      {/* Commercial Potential Score — the hero of Details when present (v5.2+).
+          Weighted composite (0-100); three-tier designation:
+            • ≥75 "GEM Select" (also the public Discover filter)
+            • 50–74 "Very Promising"
+            • <50 "Shows Potential"
+          "Very Promising" and "Shows Potential" are private to the writer — only
+          GEM Select is ever surfaced on public Discover.
+          We never show the underlying dimension weights — just the composite. */}
+      {hasCommercialScore && designation && (
+        <CommercialScoreCard score={commercialScore!} designation={designation} />
+      )}
+
+      {/* GEM Rank — only shown on legacy (pre-v5.2) evals where there's no Commercial Score card.
+          Once the score is back, portfolio rank is less meaningful and makes the header cluttered. */}
+      {hasPortfolioRank && !hasCommercialScore && (
         <GemRankCard rank={portfolioRank!} total={portfolioTotal!} />
       )}
 
@@ -217,7 +252,32 @@ export function DetailsView({
         </div>
       )}
 
-      {/* Development Priorities — considerations as collapsible cards */}
+      {/* Craft note — v5.2 addition. Single highest-leverage craft observation,
+          rendered as a callout above Development Priorities so it doesn't get
+          lost inside the collapsibles. */}
+      {craftNote && !locked && (
+        <div
+          className="mb-8 rounded-xl p-5"
+          style={{
+            background: 'rgba(5,150,105,0.07)',
+            border: '1px solid rgba(5,150,105,0.25)',
+          }}
+        >
+          <p
+            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+            style={{ color: '#059669' }}
+          >
+            Craft note
+          </p>
+          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+            {craftNote}
+          </p>
+        </div>
+      )}
+
+      {/* Development Priorities — considerations as collapsible cards.
+          v5.2: items with is_primary_lever get the red-accent primary treatment
+          and auto-expand so the sharpest note is visible on first load. */}
       {considerations.length > 0 && (
         <Section
           label="Development Priorities"
@@ -225,7 +285,7 @@ export function DetailsView({
         >
           <div className="space-y-3">
             {considerations.map((c, i) => (
-              <Collapsible key={i} title={c.area}>
+              <Collapsible key={i} title={c.area} primary={c.is_primary_lever === true}>
                 <p
                   className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
                   style={blurStyle}
@@ -349,29 +409,202 @@ export function DetailsView({
         </Section>
       )}
 
-      {/* Narrative Analysis Details — 10 dimension lenses, no scores shown */}
-      <Section
-        label="Narrative Analysis Details"
-        subtitle="Ten lenses on what the script is doing. Tap to expand."
-      >
-        <div className="space-y-3">
-          {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
-            const s = scores?.[dimId]
-            if (!s?.reasoning) return null
-            const meta = DIMENSION_META[dimId]
-            return (
-              <Collapsible key={dimId} title={meta.label}>
-                <p
-                  className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                  style={blurStyle}
-                >
-                  {s.reasoning}
-                </p>
-              </Collapsible>
-            )
-          })}
-        </div>
-      </Section>
+      {/* Narrative Breakdown (v5.2) — 10 dimension scores + calibrated reasoning.
+          Only renders when at least one dim has a numeric score. For legacy evals
+          with reasoning but no numeric scores we fall back to the no-score lenses. */}
+      {hasNarrativeBreakdown ? (
+        <Section
+          label="Narrative Breakdown"
+          subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+        >
+          <div className="space-y-3">
+            {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+              const s = scores?.[dimId]
+              if (typeof s?.score !== 'number') return null
+              const meta = DIMENSION_META[dimId]
+              return (
+                <DimensionRow
+                  key={dimId}
+                  label={meta.label}
+                  score={s.score}
+                  reasoning={s.reasoning}
+                />
+              )
+            })}
+          </div>
+        </Section>
+      ) : (
+        <Section
+          label="Narrative Analysis Details"
+          subtitle="Ten lenses on what the script is doing. Tap to expand."
+        >
+          <div className="space-y-3">
+            {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+              const s = scores?.[dimId]
+              if (!s?.reasoning) return null
+              const meta = DIMENSION_META[dimId]
+              return (
+                <Collapsible key={dimId} title={meta.label}>
+                  <p
+                    className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                    style={blurStyle}
+                  >
+                    {s.reasoning}
+                  </p>
+                </Collapsible>
+              )
+            })}
+          </div>
+        </Section>
+      )}
     </>
+  )
+}
+
+// ─── Commercial Score card (v5.2) ──────────────────────────────────
+// Encouragement copy per designation. Every tier nudges toward BOTH publishing
+// on Discover AND sharpening the next draft — the two actions that turn a
+// score into momentum for the writer.
+const DESIGNATION_COPY: Record<
+  Designation,
+  { headline: string; body: string; privacyNote?: string }
+> = {
+  'gem-select': {
+    headline: 'This one is ready to be seen.',
+    body:
+      'It lands in the top GEM Select band — the scripts we surface on Discover for producers and reps to find. Publish it now, and use the Development Priorities below to sharpen any beat that might still be costing you a yes.',
+  },
+  'very-promising': {
+    headline: "It's close. Really close.",
+    body:
+      "Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Publish it on Discover if you want reads now, and lean into the Development Priorities below to reposition the beats that are leaving points on the table.",
+    privacyNote: 'This designation is private to you.',
+  },
+  'shows-potential': {
+    headline: "There's a real spark here.",
+    body:
+      'Shows Potential means the bones of something commercial are on the page — the next pass is about tightening the hook and repositioning what the script is selling. Publish it when you feel ready, and use the Development Priorities below as your shortlist for the rewrite.',
+    privacyNote: 'This designation is private to you.',
+  },
+}
+
+function CommercialScoreCard({
+  score,
+  designation,
+}: {
+  score: number
+  designation: Designation
+}) {
+  const style = DESIGNATION_STYLE[designation]
+  const copy = DESIGNATION_COPY[designation]
+  const pct = Math.max(0, Math.min(100, score))
+  return (
+    <section
+      className="relative rounded-2xl p-7 sm:p-8 mb-10 overflow-hidden"
+      style={{ border: `1px solid ${style.border}`, background: style.bg }}
+    >
+      <div className="flex items-start justify-between gap-5 flex-wrap">
+        <div>
+          <p
+            className="text-[12px] uppercase tracking-[0.22em] font-bold m-0 mb-2"
+            style={{ color: style.text }}
+          >
+            Commercial Potential Score
+          </p>
+          <p className="text-[15px] text-[var(--gem-gray-300)] leading-[1.5] m-0 max-w-[54ch]">
+            How we evaluate audience appeal and investment potential relative to the cost of development.
+          </p>
+        </div>
+        <div
+          className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+          style={{ background: style.pillBg, border: `1px solid ${style.pillBorder}` }}
+        >
+          <span
+            aria-hidden
+            className="inline-block w-1.5 h-1.5 rounded-full"
+            style={{ background: style.dot }}
+          />
+          <span
+            className="text-[12px] uppercase tracking-[0.18em] font-bold"
+            style={{ color: style.text }}
+          >
+            {style.label}
+          </span>
+        </div>
+      </div>
+      <div className="flex items-baseline gap-2 mt-5 mb-3">
+        <span
+          className="text-[72px] sm:text-[88px] font-bold tabular-nums leading-none"
+          style={{ color: style.text }}
+        >
+          {score.toFixed(1)}
+        </span>
+        <span className="text-[20px] text-[var(--gem-gray-400)] font-medium">/ 100</span>
+      </div>
+      <div className="h-2 rounded-full mb-5 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: style.dot }} />
+      </div>
+      <p
+        className="text-[17px] font-semibold leading-[1.4] m-0 mb-2"
+        style={{ color: style.text }}
+      >
+        {copy.headline}
+      </p>
+      <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4">
+        {copy.body}
+        {copy.privacyNote && (
+          <>
+            {' '}
+            <span className="text-[var(--gem-gray-400)]">{copy.privacyNote}</span>
+          </>
+        )}
+      </p>
+      <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0">
+        A script&apos;s score can shift 5-10 points across different runs — evaluation is probabilistic. The Development Priorities below are the levers you can pull on the next draft to raise it.
+      </p>
+    </section>
+  )
+}
+
+// ─── Dimension row (v5.2) ──────────────────────────────────────────
+function scoreBandPalette(score: number) {
+  if (score >= 8) return { text: '#059669', fill: '#059669' }
+  if (score >= 5) return { text: '#d97706', fill: '#d97706' }
+  return { text: '#dc2626', fill: '#dc2626' }
+}
+
+function DimensionRow({
+  label,
+  score,
+  reasoning,
+}: {
+  label: string
+  score: number
+  reasoning: string
+}) {
+  const p = scoreBandPalette(score)
+  const pct = Math.max(0, Math.min(100, score * 10))
+  return (
+    <div className="rounded-xl p-5" style={{ border: `1px solid var(--gem-gray-700)`, background: '#fff' }}>
+      <div className="flex items-baseline justify-between gap-4 mb-3">
+        <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+          {label}
+        </p>
+        <div className="flex items-baseline gap-1 flex-shrink-0">
+          <span className="text-[26px] font-bold tabular-nums" style={{ color: p.text }}>
+            {score}
+          </span>
+          <span className="text-[13px] text-[var(--gem-gray-400)]">/ 10</span>
+        </div>
+      </div>
+      <div className="h-1.5 rounded-full mb-4 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: p.fill }} />
+      </div>
+      {reasoning && (
+        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+          {reasoning}
+        </p>
+      )}
+    </div>
   )
 }

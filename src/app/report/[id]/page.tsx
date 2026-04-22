@@ -7,6 +7,8 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 import Nav from '@/components/nav'
 import { VisibilityToggle } from '@/components/report/visibility-toggle'
 import { LikeButton } from '@/components/report/like-button'
@@ -22,15 +24,19 @@ import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { DetailsView } from '@/components/report/details-view'
 import { Section, Collapsible } from '@/components/report/v5-components'
-import { normalizeEvaluation } from '@/types'
-import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation } from '@/types'
+import { EditableTopCard } from '@/components/report/editable-top-card'
+import { normalizeEvaluation, calculateWeightedScore } from '@/types'
+import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
+import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
+import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
 
 interface PageProps {
   params: Promise<{ id: string }>
   searchParams: Promise<{ for?: string; subscribed?: string }>
 }
 
-// v4/v5-specific fields not yet in the shared GEMEvaluation type.
+// v4/v5/v5.2-specific fields not yet in the shared GEMEvaluation type.
+// v5.2 additions: director fit_profile, considerations is_primary_lever, top-level craft_note.
 interface V5Extras {
   positioning_hook?: string
   lead_characters?: {
@@ -40,11 +46,12 @@ interface V5Extras {
     hook: string
     why_actor_wants_this: string
   }[]
-  considerations?: { area: string; detail: string; source?: string }[]
+  considerations?: { area: string; detail: string; source?: string; is_primary_lever?: boolean }[]
   package_angles?: {
-    director_appeal: { hook: string; detail: string }
+    director_appeal: { hook: string; fit_profile?: string; detail: string }
     buyer_appeal: { tier: string; lane: string; detail: string }
   }
+  craft_note?: string
 }
 
 function createServiceClient() {
@@ -113,7 +120,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
   const writerName = submission.profiles?.full_name ?? 'the writer'
 
-  const { classification, whatsSpecial } = normalizeEvaluation(report)
+  const { whatsSpecial } = normalizeEvaluation(report)
+
+  // Writer-edited overrides for the top card (title / genre / tone / logline).
+  // `edited_fields` may be missing on legacy rows or before the migration has
+  // been applied; getDisplayTopCard() treats null/undefined as "no edits".
+  const editedFields = (eval_ as any).edited_fields ?? null
+  const topCard = getDisplayTopCard(report, editedFields, submission.title)
+  const topCardHasEdits = hasEdits(editedFields)
 
   let ownerIsSubscribed = false
   if (submission.user_id) {
@@ -205,12 +219,29 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const allStrengths = whatsSpecial.strengths ?? []
 
-  const positioningHook = report.positioning_hook ?? ''
   const leadCharacters = report.lead_characters ?? []
   const considerations = report.considerations ?? []
   const packageAngles = report.package_angles
   const production = report.production_reality
   const scores = report.scores ?? {}
+  const craftNote = report.craft_note ?? null
+
+  // Commercial Potential Score — weighted composite (0-100) from the 10 dim scores.
+  // Dimension weights themselves are NEVER surfaced publicly; only the composite.
+  // Tolerate malformed score objects gracefully so legacy evals still render.
+  let commercialScore: number | null = null
+  try {
+    if (scores && Object.keys(scores).length >= 10) {
+      commercialScore = calculateWeightedScore(scores as Record<DimensionId, { score: number }>)
+    }
+  } catch {
+    commercialScore = null
+  }
+  // Three-tier designation: GEM Select (≥75), Very Promising (50–74), Shows
+  // Potential (<50). Only GEM Select is ever surfaced publicly on Discover;
+  // Very Promising and Shows Potential are private to the writer and exist to
+  // keep the framing encouraging + give every score a reason to upgrade.
+  const designation = scoreDesignation(commercialScore)
 
   // Contact Writer gating:
   //   - hidden entirely when the script is NOT public on Discover
@@ -228,12 +259,43 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   // Locked report — owner's 2nd+ eval, not subscribed. Show paywall page.
   if (reportLocked) {
+    // Upsell framing cascades by designation. Each tier gets a positive
+    // headline + a subtext that names both actions the score earns them:
+    // publish on Discover AND use the full report to reposition the draft.
+    const bestRank = portfolioRank === 1 && (portfolioTotal ?? 0) > 1
+    const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
+
+    let upsellHeadline: string
+    let upsellSubtext: string
+    if (designation === 'gem-select') {
+      upsellHeadline = 'This one belongs on Discover.'
+      upsellSubtext =
+        'It scored in the GEM Select band — the top tier we surface publicly. Go Pro to read the full report, publish it on Discover, and let reps and producers reach out.'
+    } else if (designation === 'very-promising') {
+      upsellHeadline = "It's close. Really close."
+      upsellSubtext =
+        'Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Go Pro to read the full report, pull from the Development Priorities, and publish it on Discover when you want eyes on it.'
+    } else if (designation === 'shows-potential') {
+      upsellHeadline = "There's a real spark here."
+      upsellSubtext =
+        'Shows Potential means the bones are there — the next pass is about repositioning what the script is selling. Go Pro to read the full report, use the Development Priorities to sharpen it, and publish it on Discover when you feel ready.'
+    } else if (bestRank) {
+      upsellHeadline = 'Your top-scoring script yet.'
+      upsellSubtext =
+        'Go Pro to read the full report, sharpen the draft, and publish the strong ones on Discover.'
+    } else {
+      upsellHeadline = `Your report on ${submission.title} is ready.`
+      upsellSubtext =
+        'Go Pro to read this report, evaluate unlimited scripts, and publish the strong ones on Discover.'
+    }
+
     return (
       <>
         <Nav />
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
+          {/* Pitch card — unchanged */}
           <div
-            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-8"
+            className="relative border border-[var(--gem-gray-700)] rounded-2xl p-7 sm:p-8 mb-6"
             style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), transparent 60%)' }}
           >
             <div
@@ -249,18 +311,102 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </p>
           </div>
 
+          {/* Score + rank + designation card — visible even while locked.
+              The score, rank, and tier label are signals the writer already
+              earned; the report itself is what's paywalled. */}
+          {commercialScore !== null && designationStyle && (
+            <div
+              className="relative rounded-2xl p-6 sm:p-7 mb-6 text-left"
+              style={{
+                border: `1px solid ${designationStyle.border}`,
+                background: designationStyle.bg,
+              }}
+            >
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div>
+                  <p
+                    className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-1"
+                    style={{ color: designationStyle.text }}
+                  >
+                    Commercial Potential
+                  </p>
+                  <div className="flex items-baseline gap-1.5">
+                    <span
+                      className="text-[44px] sm:text-[52px] font-bold tabular-nums leading-none"
+                      style={{ color: designationStyle.text }}
+                    >
+                      {commercialScore.toFixed(1)}
+                    </span>
+                    <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
+                      / 100
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
+                  style={{
+                    background: designationStyle.pillBg,
+                    border: `1px solid ${designationStyle.pillBorder}`,
+                  }}
+                >
+                  <span
+                    aria-hidden
+                    className="inline-block w-1.5 h-1.5 rounded-full"
+                    style={{ background: designationStyle.dot }}
+                  />
+                  <span
+                    className="text-[11px] uppercase tracking-[0.18em] font-bold"
+                    style={{ color: designationStyle.text }}
+                  >
+                    {designationStyle.label}
+                  </span>
+                </div>
+              </div>
+
+              {portfolioRank !== null && portfolioTotal > 1 && (
+                <p className="text-[13px] text-[var(--gem-gray-400)] mt-4 m-0">
+                  {portfolioRank === 1 ? (
+                    <>
+                      <span className="text-[var(--gem-gold)] font-semibold">
+                        Your top-scoring script
+                      </span>{' '}
+                      — #1 of {portfolioTotal} in your portfolio.
+                    </>
+                  ) : (
+                    <>
+                      Ranked{' '}
+                      <span className="text-[var(--gem-white)] font-semibold">
+                        #{portfolioRank}
+                      </span>{' '}
+                      of {portfolioTotal} in your portfolio.
+                    </>
+                  )}
+                </p>
+              )}
+            </div>
+          )}
+
           <h2 className="text-2xl font-bold text-[var(--gem-white)] mb-3">
-            Your report on <em>{submission.title}</em> is ready
+            {upsellHeadline}
           </h2>
           <p className="text-sm text-[var(--gem-gray-400)] mb-8 max-w-md mx-auto leading-relaxed">
-            Your first evaluation was on us. Go Pro to read this report and evaluate unlimited scripts going forward.
+            {upsellSubtext}
           </p>
 
           <LockedReportUpgrade evaluationId={id} />
 
-          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3">
+          <p className="text-[11px] text-[var(--gem-gray-500)] mt-3 mb-8">
             Cancel anytime · Secure checkout via Stripe
           </p>
+
+          {/* Always give writers a way back — don't let the paywall be a dead end. */}
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+          >
+            <ArrowLeft size={14} />
+            Back to dashboard
+          </Link>
         </div>
       </>
     )
@@ -304,72 +450,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Title + classification */}
-        <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4">
-          {submission.title}
-        </h1>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[var(--gem-gray-300)] mb-10">
-          {classification.format && <span>{classification.format}</span>}
-          {classification.genre_primary && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span>{classification.genre_primary}</span>
-            </>
-          )}
-          {classification.genre_tags?.map((t, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)]"
-            >
-              {t}
-            </span>
-          ))}
-          {classification.tone && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="italic text-[var(--gem-gray-400)]">{classification.tone}</span>
-            </>
-          )}
-          {submission.created_at && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="text-[var(--gem-gray-500)]">
-                Posted{' '}
-                {new Date(submission.created_at).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </span>
-            </>
-          )}
-        </div>
-
-        {/* Logline hero — always visible */}
-        {positioningHook && (
-          <div
-            className="relative rounded-2xl p-8 sm:p-10 mb-12"
-            style={{
-              background: 'linear-gradient(135deg, rgba(200,164,92,0.10), transparent 70%)',
-              border: '1px solid rgba(200,164,92,0.25)',
-            }}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-7 bottom-7 rounded-r"
-              style={{ width: 5, background: 'var(--gem-gold)' }}
-            />
-            <div
-              className="text-[14px] uppercase tracking-[0.22em] font-bold mb-4"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              Logline
-            </div>
-            <p className="text-[26px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-medium m-0">
-              {positioningHook}
-            </p>
-          </div>
-        )}
+        {/* Title + classification + logline — owner-editable in a single card */}
+        <EditableTopCard
+          evaluationId={id}
+          initial={topCard}
+          isOwner={isOwner}
+          hasEdits={topCardHasEdits}
+          postedAt={submission.created_at ?? null}
+        />
 
         {/* Contact writer — only when script is public on Discover */}
         {contactState && (
@@ -472,6 +560,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
                         {packageAngles.director_appeal.hook}
                       </p>
+                      {packageAngles.director_appeal.fit_profile && (
+                        <div
+                          className="rounded-lg p-5 mb-4"
+                          style={{
+                            background: 'rgba(5,150,105,0.07)',
+                            border: '1px solid rgba(5,150,105,0.20)',
+                          }}
+                        >
+                          <p
+                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                            style={{ color: '#059669' }}
+                          >
+                            Director fit profile
+                          </p>
+                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                            {packageAngles.director_appeal.fit_profile}
+                          </p>
+                        </div>
+                      )}
                       <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
                         {packageAngles.director_appeal.detail}
                       </p>
@@ -511,6 +618,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               locked={false}
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}
+              commercialScore={commercialScore}
+              craftNote={craftNote}
             />
           }
         />
