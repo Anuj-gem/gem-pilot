@@ -116,6 +116,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const report = eval_.evaluation as GEMEvaluation & V5Extras
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
+  // Admin override — anuj@gem.studio can see the Development tab on any
+  // report, same as if they owned it. Kept as a hardcoded email for now
+  // (single admin) so we don't need a new role column / RLS policy.
+  const isAdmin = user?.email === 'anuj@gem.studio'
   const isAnonymousSubmission = !submission.user_id
   const hasExpiry = isAnonymousSubmission && !!submission.expires_at
   const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
@@ -245,15 +249,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const designation = scoreDesignation(commercialScore)
 
   // Contact Writer gating:
-  //   - hidden entirely when the script is NOT public on Discover
-  //   - when public + writer Pro: live (non-owner) / owner_live (owner)
-  //   - when public + writer free: writer_not_pro (non-owner) / owner_upsell (owner)
-  //   - anonymous submission → no contact
+  //   - owner ALWAYS sees their own state (owner_live if Pro, owner_upsell
+  //     if free) — the card is a status nudge about their own reachability,
+  //     not just a public contact affordance. Shows even on private reports.
+  //   - non-owners only see it on public reports (live if writer is Pro,
+  //     writer_not_pro if writer is free).
+  //   - anonymous submission → no contact (no writer to reach).
   let contactState: 'live' | 'owner_upsell' | 'owner_live' | 'writer_not_pro' | null = null
-  if (!isAnonymousSubmission && !!submission.user_id && submission.is_public) {
+  if (!isAnonymousSubmission && !!submission.user_id) {
     if (isOwner) {
       contactState = ownerIsSubscribed ? 'owner_live' : 'owner_upsell'
-    } else {
+    } else if (submission.is_public) {
       contactState = ownerIsSubscribed ? 'live' : 'writer_not_pro'
     }
   }
@@ -473,15 +479,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Share section — only on public reports (private URLs aren't useful
-            to share since non-owners can't view them). Lives directly under
-            the Contact Writer card to form a "what can I do with this?" block. */}
-        {submission.is_public && (
+        {/* Share section — owner always sees it (their own report, easy way
+            to grab the link once they publish). Non-owners only on public
+            reports. Lives directly under the Contact Writer card to form a
+            "what can I do with this?" block. */}
+        {(submission.is_public || isOwner) && (
           <ShareSection evaluationId={id} title={topCard.title} />
         )}
 
         <ReportTabs
-          showDetails={isOwner}
+          showDetails={isOwner || isAdmin}
           detailsLocked={false}
           pitch={
             <>
