@@ -1,21 +1,24 @@
 'use client'
-// Inline upgrade CTA — thin banner placed at the top of any locked report section
-// so the upgrade path is visible without scrolling or overlays covering the tease.
-import { Sparkles, ArrowRight } from 'lucide-react'
+// Inline upgrade CTA — slim single-line banner placed inside report sections
+// so the upgrade path is visible without scrolling. When `submissionCount` is
+// passed, the label automatically reframes around the writer's portfolio.
+import { ArrowRight } from 'lucide-react'
 import { trackSubscribeClick, trackSubscribeFromReport } from '@/lib/posthog'
 import { gtagSubscribeClicked } from '@/lib/gtag'
 
 interface Props {
   evaluationId: string
+  /** Override the default label entirely. */
   label?: string
-  subtext?: string
+  /** Number of completed scripts the owner has — drives the default headline. */
+  submissionCount?: number
   cta?: string
 }
 
 export function InlineUpgradeCTA({
   evaluationId,
-  label = 'Want to evaluate more scripts?',
-  subtext = 'Go Pro for unlimited evaluations and feature on Discover.',
+  label,
+  submissionCount,
   cta = 'Go Pro — $20/mo',
 }: Props) {
   const handleClick = () => {
@@ -25,37 +28,32 @@ export function InlineUpgradeCTA({
     window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
   }
 
+  // Portfolio-aware default — "You have X scripts which should be seen by
+  // the industry." Falls back to a generic line if we don't know the count.
+  const computedLabel =
+    label ??
+    (submissionCount && submissionCount > 0
+      ? `You have ${submissionCount} script${submissionCount === 1 ? '' : 's'} which should be seen by the industry`
+      : 'Get your scripts in front of the industry')
+
   return (
     <div
-      className="flex items-center justify-between gap-4 mb-4 px-4 py-3 rounded-xl border"
+      className="flex items-center justify-between gap-3 mb-4 px-3.5 py-2.5 rounded-lg border"
       style={{
-        background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(124,58,237,0.02) 70%)',
-        borderColor: 'rgba(124,58,237,0.28)',
+        background: 'rgba(124,58,237,0.04)',
+        borderColor: 'rgba(124,58,237,0.22)',
       }}
     >
-      <div className="flex items-center gap-3 min-w-0">
-        <div
-          className="flex-shrink-0 w-8 h-8 rounded-full grid place-items-center"
-          style={{ background: 'rgba(124,58,237,0.12)' }}
-        >
-          <Sparkles size={14} style={{ color: 'var(--gem-accent)' }} />
-        </div>
-        <div className="min-w-0">
-          <p className="text-[13px] sm:text-sm font-semibold text-[var(--gem-white)] m-0">
-            {label}
-          </p>
-          <p className="text-[11px] sm:text-[12px] text-[var(--gem-gray-400)] m-0 mt-0.5">
-            {subtext}
-          </p>
-        </div>
-      </div>
+      <p className="text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0">
+        {computedLabel}
+      </p>
       <button
         onClick={handleClick}
-        className="flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[12px] sm:text-sm font-semibold text-white transition-colors"
+        className="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-[12px] sm:text-[13px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.97]"
         style={{ background: 'var(--gem-accent)' }}
       >
         {cta}
-        <ArrowRight size={13} />
+        <ArrowRight size={12} />
       </button>
     </div>
   )

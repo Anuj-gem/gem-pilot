@@ -238,8 +238,7 @@ export function DetailsView({
         <div className="mb-8">
           <InlineUpgradeCTA
             evaluationId={evaluationId}
-            label="Unlock your full Details"
-            subtext="Production reality, dimension reasoning, and development notes."
+            label="Unlock your full Details — production reality, dimension reasoning, and development notes."
           />
         </div>
       )}

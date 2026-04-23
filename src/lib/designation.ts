@@ -47,7 +47,7 @@ export const DESIGNATION_COPY: Record<Designation, { message: string }> = {
   },
   'very-promising': {
     message:
-      'A score above 50 is hard to hit on GEM. With the right collaborators, this script has real commercial potential — and a sharper next draft could push past 75 to earn the GEM Select badge. Publish to Discover now to get the industry interested.',
+      'A score above 50 is hard to hit on GEM. With the right collaborators, this script has real commercial potential — publish to Discover now to get the industry interested.',
   },
   'shows-potential': {
     message:

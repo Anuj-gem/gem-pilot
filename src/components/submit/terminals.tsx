@@ -30,15 +30,18 @@ export function ScoringTerminal({ progressLabel }: { progressLabel?: string }) {
         {progressLabel ?? "We're scoring across ten craft dimensions. About 30 seconds."}
       </p>
       <div
-        className="h-1.5 rounded-full overflow-hidden mx-auto max-w-[300px] mb-4"
+        className="h-1.5 rounded-full overflow-hidden mx-auto max-w-[300px] mb-4 relative"
         style={{ background: 'var(--gem-gray-800)' }}
       >
+        {/* Forward-only fill — reaches 92% over ~35s and pauses there until
+            the eval actually returns. Avoids the bouncy back-and-forth that
+            implies the progress is going backwards. */}
         <div
           className="h-full rounded-full"
           style={{
             background: 'var(--gem-accent)',
-            width: '60%',
-            animation: 'scoring-progress 8s ease-in-out infinite',
+            width: '4%',
+            animation: 'scoring-progress 35s cubic-bezier(0.2, 0.8, 0.3, 1) forwards',
           }}
         />
       </div>
@@ -47,9 +50,8 @@ export function ScoringTerminal({ progressLabel }: { progressLabel?: string }) {
       </p>
       <style jsx>{`
         @keyframes scoring-progress {
-          0% { width: 18%; }
-          50% { width: 78%; }
-          100% { width: 18%; }
+          0% { width: 4%; }
+          100% { width: 92%; }
         }
       `}</style>
     </div>

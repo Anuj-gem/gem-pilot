@@ -21,6 +21,8 @@ import { ContactWriter } from '@/components/report/contact-writer'
 import { ShareSection } from '@/components/report/share-section'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
+import { SubmitRevisionButton } from '@/components/report/submit-revision-button'
+import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
 import { DetailsView } from '@/components/report/details-view'
 import { Section, Collapsible } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
@@ -78,7 +80,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     .select(`
       *,
       script_submissions (
-        id, user_id, title, filename, file_size, status, is_public, created_at, expires_at,
+        id, user_id, title, filename, file_size, status, is_public, created_at, expires_at, declared_format,
         profiles ( full_name, avatar_url )
       )
     `)
@@ -169,6 +171,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // evals to read the score climb without ever paying.
   //   • Owner + !subscribed + not-first-eval + not-admin → redirect /dashboard
   //   • Non-owners on Discover keep the blurred-preview behavior (unchanged).
+  // For an unsubscribed owner whose 2nd+ eval just finished, render the
+  // upgrade interstitial instead of redirecting to /dashboard. Same gate as
+  // before — the writer can still go to dashboard from the interstitial,
+  // but they get a clear upgrade path first instead of feeling dumped.
+  let lockedAfterFreeEval = false
   if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
     const { data: firstSub } = await serviceClient
       .from('script_submissions')
@@ -179,7 +186,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .limit(1)
       .single()
     if (firstSub?.id !== submission.id) {
-      redirect('/dashboard')
+      lockedAfterFreeEval = true
     }
   }
 
@@ -280,6 +287,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     userSelect: 'none',
   }
 
+  // Free writer just finished their 2nd+ eval — show the upgrade interstitial
+  // instead of dumping them on /dashboard. Their score + dev notes are live
+  // in the DB; Pro unlocks viewing them.
+  if (lockedAfterFreeEval) {
+    return (
+      <>
+        <Nav />
+        <ReportAnalytics evaluationId={id} isBlurred={true} />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 pb-24">
+          <LockedAfterEvalScreen evaluationId={id} title={submission.title} />
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <Nav />
@@ -315,6 +337,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               initialCount={likeCount ?? 0}
               loggedIn={!!user}
             />
+            {isOwner && (
+              <SubmitRevisionButton
+                isSubscribed={ownerIsSubscribed}
+                declaredFormat={submission.declared_format ?? null}
+              />
+            )}
           </div>
         )}
 
@@ -580,12 +608,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </Section>
               )}
 
-              {/* Soft upgrade CTA for non-subscribers */}
+              {/* Soft upgrade CTA for non-subscribers — portfolio-aware copy */}
               {showUpgradeCTA && (
                 <InlineUpgradeCTA
                   evaluationId={id}
-                  label="Ready to get in front of producers?"
-                  subtext="Go Pro to publish on Discover, let reps contact you, and evaluate unlimited scripts."
+                  submissionCount={portfolioTotal}
                   cta="Go Pro — $20/mo"
                 />
               )}
