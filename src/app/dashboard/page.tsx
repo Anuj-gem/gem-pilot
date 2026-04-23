@@ -301,7 +301,7 @@ export default async function DashboardPage() {
                         <div className="flex items-center gap-2 shrink-0">
                           <Link
                             href="/submit"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all duration-150 hover:brightness-110 active:scale-[0.97]"
                           >
                             Upload PDF
                           </Link>

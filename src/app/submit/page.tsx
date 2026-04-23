@@ -107,6 +107,7 @@ function SubmitPageInner() {
   const draftFailedRef = useRef<string | null>(null)
 
   const [signingUp, setSigningUp] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [paywalled, setPaywalled] = useState(false)
   const [upgradeLoading, setUpgradeLoading] = useState(false)
@@ -302,6 +303,11 @@ function SubmitPageInner() {
   }
 
   async function handleGoogle() {
+    // Re-entrant guard: if a click is already in flight, ignore subsequent
+    // clicks. The button-smash bug was happening because handleGoogle could
+    // run multiple times in parallel while waiting on the OAuth redirect.
+    if (googleLoading) return
+    setGoogleLoading(true)
     setError(null)
     // Wait up to 10s for the background submission_id (eval or draft) to land
     // before bouncing to Google. If the background API errored, surface that.
@@ -317,10 +323,12 @@ function SubmitPageInner() {
     }
     if (mode === 'upload' && evalFailedRef.current) {
       setError(evalFailedRef.current)
+      setGoogleLoading(false)
       return
     }
     if (mode === 'draft' && draftFailedRef.current) {
       setError(`We couldn't save your draft — ${draftFailedRef.current}. Try refreshing.`)
+      setGoogleLoading(false)
       return
     }
     const submissionId =
@@ -329,6 +337,7 @@ function SubmitPageInner() {
         : draftSubmissionIdRef.current
     if (!submissionId) {
       setError("Still getting your submission ready. Give it another moment, then click Continue with Google again.")
+      setGoogleLoading(false)
       return
     }
     writePendingClaim({
@@ -345,7 +354,10 @@ function SubmitPageInner() {
     if (oauthError) {
       clearPendingClaim()
       setError(oauthError.message)
+      setGoogleLoading(false)
     }
+    // On success, the browser is mid-redirect to Google — leave googleLoading
+    // true so the spinner stays visible until the page unloads.
   }
 
   async function handleEmailSignup(data: {
@@ -515,7 +527,7 @@ function SubmitPageInner() {
                     <button
                       type="button"
                       onClick={continueFromScriptStepWithFile}
-                      className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white"
+                      className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60"
                       style={{ background: 'var(--gem-accent)' }}
                     >
                       Continue with this script →
@@ -531,6 +543,7 @@ function SubmitPageInner() {
               <AccountStep
                 mode={mode}
                 signingUp={signingUp}
+                googleLoading={googleLoading}
                 error={error}
                 onGoogle={handleGoogle}
                 onEmailSignup={handleEmailSignup}
@@ -588,7 +601,7 @@ function PaywallCard({
         type="button"
         onClick={onUpgrade}
         disabled={loading}
-        className="w-full rounded-xl px-4 py-3 text-[14px] font-semibold text-white disabled:opacity-60"
+        className="w-full rounded-xl px-4 py-3 text-[14px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed"
         style={{ background: 'var(--gem-accent)' }}
       >
         {loading ? 'Opening checkout…' : 'Go Pro — $20/mo →'}

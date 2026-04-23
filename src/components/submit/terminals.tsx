@@ -85,7 +85,7 @@ export function DraftSavedTerminal({
       <button
         type="button"
         onClick={onUploadNow}
-        className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white mb-2.5 flex items-center justify-center gap-2"
+        className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white mb-2.5 flex items-center justify-center gap-2 transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
         style={{ background: 'var(--gem-accent)' }}
       >
         <Upload size={16} />
@@ -94,7 +94,7 @@ export function DraftSavedTerminal({
       <button
         type="button"
         onClick={onLater}
-        className="w-full rounded-xl px-4 py-3 text-[14px] font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
+        className="w-full rounded-xl px-4 py-3 text-[14px] font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] hover:bg-[var(--gem-gray-900)] transition-all duration-150 active:scale-[0.985]"
         style={{ background: 'transparent', border: '1px solid var(--gem-gray-700)' }}
       >
         I&apos;ll come back later

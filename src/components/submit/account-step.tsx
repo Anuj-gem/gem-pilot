@@ -20,12 +20,14 @@ export function AccountStep({
   onGoogle,
   onEmailSignup,
   signingUp,
+  googleLoading,
   error,
 }: {
   mode: AccountMode
   onGoogle: () => void
   onEmailSignup: (data: { full_name: string; email: string; password: string }) => void
   signingUp: boolean
+  googleLoading: boolean
   error?: string | null
 }) {
   const [fullName, setFullName] = useState('')
@@ -80,16 +82,25 @@ export function AccountStep({
       <button
         type="button"
         onClick={onGoogle}
-        disabled={signingUp}
-        className="w-full rounded-xl px-4 py-3 mb-3 flex items-center justify-center gap-2.5 text-[14px] font-semibold transition-colors disabled:opacity-50"
+        disabled={signingUp || googleLoading}
+        className="w-full rounded-xl px-4 py-3 mb-3 flex items-center justify-center gap-2.5 text-[14px] font-semibold transition-all duration-150 hover:bg-[var(--gem-gray-900)] active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed"
         style={{
           background: 'var(--gem-black)',
           border: '1px solid var(--gem-gray-600)',
           color: 'var(--gem-gray-50)',
         }}
       >
-        <GoogleMark />
-        Continue with Google
+        {googleLoading ? (
+          <>
+            <Loader2 size={16} className="animate-spin" />
+            Opening Google…
+          </>
+        ) : (
+          <>
+            <GoogleMark />
+            Continue with Google
+          </>
+        )}
       </button>
 
       <div className="text-center text-[12px] text-[var(--gem-gray-500)] my-3.5">
@@ -149,8 +160,8 @@ export function AccountStep({
         )}
         <button
           type="submit"
-          disabled={signingUp}
-          className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-opacity disabled:opacity-60 flex items-center justify-center gap-2"
+          disabled={signingUp || googleLoading}
+          className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           style={{ background: 'var(--gem-accent)' }}
         >
           {signingUp ? <Loader2 size={16} className="animate-spin" /> : null}

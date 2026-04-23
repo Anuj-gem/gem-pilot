@@ -59,7 +59,7 @@ export function ScriptStep({
           const dropped = e.dataTransfer.files?.[0]
           if (dropped) validateAndAccept(dropped)
         }}
-        className="block rounded-2xl px-6 py-10 sm:py-14 text-center cursor-pointer transition-colors"
+        className="block rounded-2xl px-6 py-10 sm:py-14 text-center cursor-pointer transition-all duration-150 hover:border-[var(--gem-accent)] hover:bg-[rgba(124,58,237,0.03)] active:scale-[0.995]"
         style={{
           border: dragOver
             ? '2px dashed var(--gem-accent)'
@@ -124,7 +124,7 @@ export function ScriptStep({
         <button
           type="button"
           onClick={onSkip}
-          className="text-[14px] text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] underline underline-offset-4 decoration-[var(--gem-gray-600)] hover:decoration-[var(--gem-gray-400)] transition-colors"
+          className="text-[14px] text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] underline underline-offset-4 decoration-[var(--gem-gray-600)] hover:decoration-[var(--gem-gray-400)] transition-all duration-150 active:scale-[0.985]"
         >
           I don&apos;t have it on me — save my draft
         </button>

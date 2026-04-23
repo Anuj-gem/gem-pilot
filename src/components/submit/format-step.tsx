@@ -66,7 +66,7 @@ export function FormatStep({
               type="button"
               onClick={() => setSelected(id)}
               aria-pressed={isSelected}
-              className="text-left rounded-2xl p-5 sm:p-5 transition-all relative"
+              className="text-left rounded-2xl p-5 sm:p-5 transition-all duration-150 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(124,58,237,0.08)] active:scale-[0.98] relative"
               style={{
                 border: isSelected
                   ? '2px solid var(--gem-accent)'
