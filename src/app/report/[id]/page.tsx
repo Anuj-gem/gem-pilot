@@ -27,7 +27,7 @@ import { EditableTopCard } from '@/components/report/editable-top-card'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
-import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
+import { scoreDesignation, DESIGNATION_STYLE, DESIGNATION_COPY } from '@/lib/designation'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -365,7 +365,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     Score unavailable
                   </p>
                 )}
-                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-1.5 leading-snug">
+                {designation && (
+                  <>
+                    <p
+                      className="text-[14px] sm:text-[15px] font-semibold m-0 mt-2 leading-tight"
+                      style={{ color: DESIGNATION_STYLE[designation].text }}
+                    >
+                      {DESIGNATION_COPY[designation].headline}
+                    </p>
+                    <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] m-0 mt-1.5 leading-[1.5] max-w-[52ch]">
+                      {DESIGNATION_COPY[designation].body}
+                    </p>
+                  </>
+                )}
+                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-2 leading-snug">
                   See the full breakdown in the Development tab.
                 </p>
               </div>

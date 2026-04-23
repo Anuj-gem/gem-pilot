@@ -35,6 +35,36 @@ export interface DesignationStyle {
   pillBorder: string
 }
 
+// Encouragement copy per designation. Every tier nudges toward BOTH publishing
+// on Discover AND sharpening the next draft — the two actions that turn a
+// score into momentum for the writer. Shared between the big Commercial Score
+// card on the Details tab and the mini-score card at the top of the report.
+export interface DesignationCopy {
+  headline: string
+  body: string
+  privacyNote?: string
+}
+
+export const DESIGNATION_COPY: Record<Designation, DesignationCopy> = {
+  'gem-select': {
+    headline: 'This one is ready to be seen.',
+    body:
+      'It lands in the top GEM Select band — the scripts we surface on Discover for producers and reps to find. Publish it now, and use the Development Priorities below to sharpen any beat that might still be costing you a yes.',
+  },
+  'very-promising': {
+    headline: "It's close. Really close.",
+    body:
+      "Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Publish it on Discover if you want reads now, and lean into the Development Priorities below to reposition the beats that are leaving points on the table.",
+    privacyNote: 'This designation is private to you.',
+  },
+  'shows-potential': {
+    headline: "There's a real spark here.",
+    body:
+      'Shows Potential means the bones of something commercial are on the page — the next pass is about tightening the hook and repositioning what the script is selling. Publish it when you feel ready, and use the Development Priorities below as your shortlist for the rewrite.',
+    privacyNote: 'This designation is private to you.',
+  },
+}
+
 export const DESIGNATION_STYLE: Record<Designation, DesignationStyle> = {
   'gem-select': {
     label: 'GEM Select',
