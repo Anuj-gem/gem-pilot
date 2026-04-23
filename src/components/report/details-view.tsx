@@ -521,21 +521,13 @@ function CommercialScoreCard({
       className="relative rounded-2xl p-7 sm:p-8 mb-10 overflow-hidden"
       style={{ border: `1px solid ${style.border}`, background: style.bg }}
     >
-      <div className="flex items-start justify-between gap-5 flex-wrap">
-        <div>
-          <p
-            className="text-[12px] uppercase tracking-[0.22em] font-bold m-0 mb-2"
-            style={{ color: style.text }}
-          >
-            Commercial Potential Score
-          </p>
-          <p className="text-[15px] text-[var(--gem-gray-300)] leading-[1.5] m-0 max-w-[54ch]">
-            How we evaluate audience appeal and investment potential relative to the cost of development.
-          </p>
-          <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0 mt-2 max-w-[54ch]">
-            Scripts that have a commercial viability score of 75+ earn GEM Select on Discover. Your score is always private — only the designation is public.
-          </p>
-        </div>
+      <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
+        <p
+          className="text-[12px] uppercase tracking-[0.22em] font-bold m-0"
+          style={{ color: style.text }}
+        >
+          Commercial Potential Score
+        </p>
         <div
           className="flex items-center gap-2 px-3 py-1.5 rounded-full"
           style={{ background: style.pillBg, border: `1px solid ${style.pillBorder}` }}
@@ -553,7 +545,7 @@ function CommercialScoreCard({
           </span>
         </div>
       </div>
-      <div className="flex items-baseline gap-2 mt-5 mb-3">
+      <div className="flex items-baseline gap-2 mb-3">
         <span
           className="text-[72px] sm:text-[88px] font-bold tabular-nums leading-none"
           style={{ color: style.text }}
@@ -565,23 +557,8 @@ function CommercialScoreCard({
       <div className="h-2 rounded-full mb-5 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
         <div className="h-full rounded-full" style={{ width: `${pct}%`, background: style.dot }} />
       </div>
-      <p
-        className="text-[17px] font-semibold leading-[1.4] m-0 mb-2"
-        style={{ color: style.text }}
-      >
-        {copy.headline}
-      </p>
-      <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4">
-        {copy.body}
-        {copy.privacyNote && (
-          <>
-            {' '}
-            <span className="text-[var(--gem-gray-400)]">{copy.privacyNote}</span>
-          </>
-        )}
-      </p>
-      <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0">
-        A script&apos;s score can shift 5-10 points across different runs — evaluation is probabilistic. The Development Priorities below are the levers you can pull on the next draft to raise it.
+      <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[60ch]">
+        {copy.message}
       </p>
     </section>
   )

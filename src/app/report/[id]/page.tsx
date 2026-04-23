@@ -340,8 +340,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {locked && isOwner && (() => {
           const designation = scoreDesignation(commercialScore)
           const tierStyle = designation ? DESIGNATION_STYLE[designation] : null
+          // Tier-driven background + border so the mini-card matches the
+          // big Commercial Score card on the Details tab (gold for GEM Select,
+          // green for Very Promising, amber for Shows Potential). Falls back
+          // to gold-tinted neutral when the score isn't computed yet.
+          const cardStyle = tierStyle
+            ? { border: `1px solid ${tierStyle.border}`, background: tierStyle.bg }
+            : undefined
           return (
-            <div className="rounded-xl border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/[0.06] px-4 py-4 sm:px-5 sm:py-4 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div
+              className="rounded-xl px-4 py-4 sm:px-5 sm:py-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+              style={
+                cardStyle ?? {
+                  border: '1px solid rgba(200,164,92,0.4)',
+                  background: 'rgba(200,164,92,0.06)',
+                }
+              }
+            >
               <div className="flex-1 min-w-0 w-full sm:w-auto text-center sm:text-left">
                 <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 mb-1.5">
                   Your score · only visible to you
@@ -366,17 +381,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </p>
                 )}
                 {designation && (
-                  <>
-                    <p
-                      className="text-[14px] sm:text-[15px] font-semibold m-0 mt-2 leading-tight"
-                      style={{ color: DESIGNATION_STYLE[designation].text }}
-                    >
-                      {DESIGNATION_COPY[designation].headline}
-                    </p>
-                    <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] m-0 mt-1.5 leading-[1.5] max-w-[52ch]">
-                      {DESIGNATION_COPY[designation].body}
-                    </p>
-                  </>
+                  <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-100)] m-0 mt-2.5 leading-[1.5] max-w-[56ch]">
+                    {DESIGNATION_COPY[designation].message}
+                  </p>
                 )}
                 <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-2 leading-snug">
                   See the full breakdown in the Development tab.
