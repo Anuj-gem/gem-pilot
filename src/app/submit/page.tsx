@@ -223,46 +223,72 @@ function SubmitPageInner() {
     evalFailedRef.current = null
     trackEvalStart({ title: args.file.name, source: 'guided_submit' })
     gtagEvalStarted()
+
+    const inferredTitle =
+      args.file.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ').trim() || 'Untitled'
+
+    // Phase 1: register the submission row + upload the PDF (~3–5s).
+    // We need submission_id quickly so OAuth (which redirects the page mid
+    // request) has something to claim. Score lookup happens in phase 2.
+    let submissionId: string
     try {
-      const formData = new FormData()
-      formData.append('file', args.file)
-      const inferredTitle =
-        args.file.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ').trim() || 'Untitled'
-      formData.append('title', inferredTitle)
-      formData.append('declared_format', args.declaredFormat)
-
-      const res = await fetch('/api/evaluate', { method: 'POST', body: formData })
-      let data: any
-      try { data = await res.json() } catch { throw new Error('eval_json_parse') }
-
-      if (res.status === 402 || data.error === 'paywall') {
+      const startForm = new FormData()
+      startForm.append('file', args.file)
+      startForm.append('title', inferredTitle)
+      startForm.append('declared_format', args.declaredFormat)
+      const startRes = await fetch('/api/start-submission', {
+        method: 'POST',
+        body: startForm,
+      })
+      const startData = await startRes.json().catch(() => null)
+      if (startRes.status === 402 || startData?.error === 'paywall') {
         setPaywalled(true)
         setStep('script')
         return
       }
-      if (data.error) {
-        const friendly = data.error === 'SCANNED_PDF'
-          ? "Looks like this is a scanned PDF. We need a digital export from Final Draft, WriterSolo, or Highland."
-          : 'Something went wrong scoring your script. Please try again.'
-        evalFailedRef.current = friendly
+      if (!startRes.ok || !startData?.submission_id) {
+        evalFailedRef.current =
+          startData?.error ?? `Couldn't register your submission (HTTP ${startRes.status}).`
         return
       }
-      if (!res.ok || data.status === 'failed') {
-        evalFailedRef.current = 'Something went wrong scoring your script. Please try again.'
+      submissionId = startData.submission_id as string
+      // Stash the id so the OAuth handler can claim it without waiting for
+      // the slow scoring to finish. evaluation_id is empty until phase 2.
+      evalResultRef.current = { submission_id: submissionId, evaluation_id: '' }
+    } catch (e: any) {
+      evalFailedRef.current = e?.message ?? 'Network error registering submission'
+      return
+    }
+
+    // Phase 2: run the scoring (~30–60s). Fire and let it run — Vercel
+    // continues the function even if the client disconnects (e.g. mid
+    // Google OAuth redirect), so the eval lands in the DB regardless.
+    try {
+      const scoreRes = await fetch('/api/score-submission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ submission_id: submissionId }),
+      })
+      const scoreData = await scoreRes.json().catch(() => null)
+      if (!scoreRes.ok || !scoreData?.evaluation_id) {
+        evalFailedRef.current =
+          scoreData?.error ?? `Scoring failed (HTTP ${scoreRes.status}).`
         return
       }
       evalResultRef.current = {
-        evaluation_id: data.evaluation_id,
-        submission_id: data.submission_id,
+        submission_id: submissionId,
+        evaluation_id: scoreData.evaluation_id,
       }
       trackEvalComplete({
-        score: data.weighted_score,
-        tier: data.tier,
-        title: data.title ?? inferredTitle,
-        evaluationId: data.evaluation_id,
+        score: scoreData.weighted_score,
+        tier: scoreData.tier,
+        title: inferredTitle,
+        evaluationId: scoreData.evaluation_id,
       })
     } catch {
-      evalFailedRef.current = 'Something went wrong scoring your script. Please try again.'
+      // Network drop is non-fatal here — the server keeps scoring. Email
+      // signup will time out and route to dashboard, where the eval shows
+      // up as it lands.
     }
   }
 
@@ -288,9 +314,11 @@ function SubmitPageInner() {
   }
 
   async function waitForEvalAndRouteAsLoggedInUser() {
+    // Wait for evaluation_id (phase 2) — that's the one we need to route
+    // them to /report. If scoring takes too long, dashboard fallback.
     const deadline = Date.now() + 120_000
     while (
-      !evalResultRef.current &&
+      !evalResultRef.current?.evaluation_id &&
       !evalFailedRef.current &&
       Date.now() < deadline
     ) {
@@ -302,8 +330,9 @@ function SubmitPageInner() {
       setStep('script')
       return
     }
-    if (evalResultRef.current) {
-      router.push(`/report/${evalResultRef.current.evaluation_id}`)
+    const evaluationId = evalResultRef.current?.evaluation_id
+    if (evaluationId) {
+      router.push(`/report/${evaluationId}`)
       return
     }
     router.push('/dashboard?just_submitted=1')
@@ -402,13 +431,14 @@ function SubmitPageInner() {
     fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
 
     if (mode === 'upload') {
-      const deadline = Date.now() + 120_000
+      // Wait for phase 1 (submission_id) — needed to claim the row.
+      const phase1Deadline = Date.now() + 15_000
       while (
-        !evalResultRef.current &&
+        !evalResultRef.current?.submission_id &&
         !evalFailedRef.current &&
-        Date.now() < deadline
+        Date.now() < phase1Deadline
       ) {
-        await new Promise((r) => setTimeout(r, 400))
+        await new Promise((r) => setTimeout(r, 200))
       }
       if (evalFailedRef.current) {
         setError(evalFailedRef.current)
@@ -417,21 +447,44 @@ function SubmitPageInner() {
         setStep('script')
         return
       }
-      const result = evalResultRef.current
-      if (!result) {
-        setError('Your evaluation is taking longer than expected. Refresh in a moment to see your report.')
+      const submissionId = evalResultRef.current?.submission_id
+      if (!submissionId) {
+        setError('Your submission is taking longer than expected. Refresh in a moment.')
         setSigningUp(false)
         return
       }
+      // Claim the anon submission row.
       await new Promise((r) => setTimeout(r, 400))
       try {
         await fetch('/api/assign-submission', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ submission_id: result.submission_id }),
+          body: JSON.stringify({ submission_id: submissionId }),
         })
       } catch {}
-      router.push(`/report/${result.evaluation_id}`)
+      // Wait for phase 2 (evaluation_id) so we can route straight to the
+      // finished report. If it doesn't land in 90s, send them to dashboard
+      // — the eval keeps running on the server and shows up there.
+      const phase2Deadline = Date.now() + 90_000
+      while (
+        !evalResultRef.current?.evaluation_id &&
+        !evalFailedRef.current &&
+        Date.now() < phase2Deadline
+      ) {
+        await new Promise((r) => setTimeout(r, 400))
+      }
+      if (evalFailedRef.current) {
+        setError(evalFailedRef.current)
+        setSigningUp(false)
+        evalFailedRef.current = null
+        return
+      }
+      const evaluationId = evalResultRef.current?.evaluation_id
+      if (evaluationId) {
+        router.push(`/report/${evaluationId}`)
+      } else {
+        router.push('/dashboard?just_signed_up=1')
+      }
     } else {
       const deadline = Date.now() + 6000
       while (!draftSubmissionIdRef.current && Date.now() < deadline) {

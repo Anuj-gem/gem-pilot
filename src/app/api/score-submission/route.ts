@@ -1,0 +1,273 @@
+// POST /api/score-submission
+//
+// Phase 2 of the upload flow. Given a submission_id (created by
+// /api/start-submission), downloads the PDF from storage, extracts text,
+// runs the OpenAI scoring, writes the script_evaluations row, and marks
+// the submission completed.
+//
+// Called fire-and-forget from the client right after start-submission. The
+// serverless function runs to completion on Vercel even if the client
+// disconnects (e.g. mid Google OAuth redirect), so the eval lands either way.
+
+import { NextRequest, NextResponse } from "next/server"
+import { createServerClient } from "@supabase/ssr"
+import { cookies } from "next/headers"
+import { buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt"
+import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types"
+import type { GEMEvaluation } from "@/types"
+import { sendEmail } from "@/lib/email"
+
+export const maxDuration = 60
+
+function createServiceClient() {
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { cookies: { getAll() { return [] }, setAll() {} } }
+  )
+}
+
+async function createAuthClient() {
+  const cookieStore = await cookies()
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() { return cookieStore.getAll() },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            )
+          } catch {}
+        },
+      },
+    }
+  )
+}
+
+async function extractPdfText(buffer: Buffer): Promise<string> {
+  const pdfParse = (await import("pdf-parse")).default
+  const data = await pdfParse(buffer)
+  const text = data.text?.trim() ?? ""
+  const words = text.replace(/\s+/g, " ").split(/\s+/).filter((w) => w.length >= 2)
+  const readableChars = text.replace(/[^a-zA-Z0-9 .,;:'"!?()\-\n]/g, "")
+  const ratio = text.length > 0 ? readableChars.length / text.length : 0
+  if (words.length < 500 || ratio < 0.75) {
+    throw new Error("SCANNED_PDF")
+  }
+  return text
+}
+
+async function evaluateScript(
+  scriptText: string,
+  declaredFormat: DeclaredFormat
+) {
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-5.4-mini",
+      messages: [
+        { role: "system", content: buildGemEvaluationPrompt(declaredFormat) },
+        {
+          role: "user",
+          content: `The writer has declared this script as a ${declaredFormat}. Please evaluate the following screenplay submission accordingly:\n\n---\n\n${scriptText}`,
+        },
+      ],
+      temperature: 0.3,
+      max_completion_tokens: 16384,
+      response_format: { type: "json_object" },
+    }),
+  })
+
+  if (!response.ok) {
+    const err = await response.text()
+    throw new Error(`OpenAI API error: ${response.status} - ${err}`)
+  }
+
+  const data = await response.json()
+  const evaluation = JSON.parse(data.choices[0].message.content) as GEMEvaluation
+
+  const scores = evaluation.scores as Record<string, { score: number }>
+  const safeScores: Record<string, { score: number }> = {}
+  for (const dim of DIMENSION_IDS) {
+    safeScores[dim] = scores[dim] ?? { score: 5 }
+  }
+  const weightedScore = calculateWeightedScore(safeScores as any)
+  const tier = calculateTier(weightedScore)
+
+  const inputTokens = data.usage?.prompt_tokens ?? 0
+  const outputTokens = data.usage?.completion_tokens ?? 0
+  const cost =
+    (inputTokens / 1_000_000) * 0.75 + (outputTokens / 1_000_000) * 4.5
+
+  return { evaluation, weightedScore, tier, inputTokens, outputTokens, cost }
+}
+
+export async function POST(request: NextRequest) {
+  let submissionId: string | null = null
+  const serviceClient = createServiceClient()
+
+  try {
+    const body = await request.json()
+    submissionId = (body?.submission_id as string) ?? null
+    if (!submissionId) {
+      return NextResponse.json({ error: "Missing submission_id" }, { status: 400 })
+    }
+
+    // Look up the submission. We allow this to run for anon-owned rows too
+    // (the writer hasn't signed up yet) — the row is the source of truth.
+    const { data: submission } = await serviceClient
+      .from("script_submissions")
+      .select("id, title, declared_format, file_url, status")
+      .eq("id", submissionId)
+      .single()
+
+    if (!submission) {
+      return NextResponse.json({ error: "Submission not found" }, { status: 404 })
+    }
+    if (submission.status === "completed") {
+      // Already scored — return the existing evaluation_id so the caller can
+      // navigate the writer to the report.
+      const { data: existingEval } = await serviceClient
+        .from("script_evaluations")
+        .select("id")
+        .eq("submission_id", submissionId)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single()
+      return NextResponse.json({
+        submission_id: submissionId,
+        evaluation_id: existingEval?.id ?? null,
+        status: "completed",
+      })
+    }
+    if (!submission.file_url) {
+      return NextResponse.json(
+        { error: "Submission has no PDF on file" },
+        { status: 400 }
+      )
+    }
+    if (
+      submission.declared_format !== "Feature film" &&
+      submission.declared_format !== "Series"
+    ) {
+      return NextResponse.json(
+        { error: "Submission missing valid format" },
+        { status: 400 }
+      )
+    }
+    const declaredFormat = submission.declared_format as DeclaredFormat
+
+    // Download the PDF from storage and extract text.
+    const { data: fileBlob, error: dlError } = await serviceClient.storage
+      .from("scripts")
+      .download(submission.file_url)
+
+    if (dlError || !fileBlob) {
+      throw new Error(`Storage download failed: ${dlError?.message ?? "no blob"}`)
+    }
+    const arrayBuffer = await fileBlob.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+    const scriptText = await extractPdfText(buffer)
+    if (!scriptText || scriptText.trim().length < 100) {
+      throw new Error(
+        "Could not extract enough text from the PDF. The file may be corrupted or contain no readable content."
+      )
+    }
+
+    // Run the scoring.
+    const { evaluation, weightedScore, tier, inputTokens, outputTokens, cost } =
+      await evaluateScript(scriptText, declaredFormat)
+
+    const { data: evalRecord, error: evalError } = await serviceClient
+      .from("script_evaluations")
+      .insert({
+        submission_id: submission.id,
+        weighted_score: weightedScore,
+        tier,
+        evaluation,
+        model: "gpt-5.4-mini",
+        input_tokens: inputTokens,
+        output_tokens: outputTokens,
+        cost_usd: cost,
+      })
+      .select("id")
+      .single()
+
+    if (evalError || !evalRecord) {
+      console.error("score-submission insert eval error:", evalError)
+      throw new Error("Failed to store evaluation")
+    }
+
+    await serviceClient
+      .from("script_submissions")
+      .update({ status: "completed" })
+      .eq("id", submission.id)
+
+    // Post-submission email — only when the row is already owned by a user.
+    // Anon rows email after the assign-submission step claims them.
+    const { data: ownedRow } = await serviceClient
+      .from("script_submissions")
+      .select("user_id")
+      .eq("id", submission.id)
+      .single()
+
+    if (ownedRow?.user_id) {
+      const { data: profile } = await serviceClient
+        .from("profiles")
+        .select("email, full_name, subscription_status")
+        .eq("id", ownedRow.user_id)
+        .single()
+
+      if (profile?.email) {
+        const firstName = profile.full_name?.split(" ")[0] || "there"
+        const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`
+        const isSub = profile.subscription_status === "active"
+        const templateAlias = isSub ? "post_submission_pro" : "post_submission_free"
+
+        sendEmail(
+          {
+            templateAlias,
+            to: profile.email,
+            variables: {
+              first_name: firstName,
+              title: submission.title || "Untitled",
+              report_url: reportUrl,
+            },
+            dedupeKey: evalRecord.id,
+            tag: templateAlias,
+          },
+          serviceClient
+        )
+      }
+    }
+
+    return NextResponse.json({
+      submission_id: submission.id,
+      evaluation_id: evalRecord.id,
+      status: "completed",
+      weighted_score: weightedScore,
+      tier,
+    })
+  } catch (e: any) {
+    const errorMessage = e?.message ?? "Unknown scoring error"
+    console.error("score-submission error:", errorMessage)
+    if (submissionId) {
+      await serviceClient
+        .from("script_submissions")
+        .update({ status: "failed", error_message: errorMessage })
+        .eq("id", submissionId)
+    }
+    const friendly =
+      errorMessage === "SCANNED_PDF"
+        ? "Looks like this is a scanned PDF. We need a digital export from Final Draft, WriterSolo, or Highland."
+        : errorMessage
+    return NextResponse.json({ error: friendly }, { status: 500 })
+  }
+}
