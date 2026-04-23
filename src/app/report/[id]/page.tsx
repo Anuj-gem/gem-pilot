@@ -49,7 +49,6 @@ import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { SubmitRevisionButton } from '@/components/report/submit-revision-button'
 import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
-import { PrivacyPanel } from '@/components/report/privacy-panel'
 import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { ContactWriter } from '@/components/report/contact-writer'
@@ -201,11 +200,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Privacy is a Pro feature. Free writers can't publish (Pro-gated) so
   // showing them a privacy panel or per-section toggles is noise — their job
   // is to upgrade first. Any Pro owner (including admin on their own
-  // reports) gets the full controls whether published yet or not.
+  // reports) gets the full controls via the modal.
   const canControlPrivacy = isOwner && ownerIsSubscribed
-  // Passed to SectionGate so only Pro writers see the Public/Private pill
-  // alongside each section; free writers see the section without a toggle.
-  const privacyControlId = canControlPrivacy ? submission.id : undefined
+  // Per-section pills removed 2026-04-23 — privacy is fully controlled via
+  // the modal triggered from the publish button. Leaving this as undefined
+  // means SectionGate renders content without the inline Public/Private pill.
+  const privacyControlId: string | undefined = undefined
+  // Suppress unused-var warning — canControlPrivacy still documents the
+  // distinction for future handlers that need it.
+  void canControlPrivacy
 
   let lockedAfterFreeEval = false
   if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
@@ -308,6 +311,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <VisibilityToggle
               submissionId={submission.id}
               initialPublic={submission.is_public ?? false}
+              initialPrivacy={privacy}
+              initialContactEnabled={contactEnabled}
               title={submission.title}
               score={eval_?.weighted_score ?? undefined}
               isSubscribed={ownerIsSubscribed}
@@ -387,20 +392,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Privacy panel — Pro-only. Free writers can't publish or toggle
-            anything yet, so the panel would be noise. Their job is the
-            upgrade CTA below. */}
-        {canControlPrivacy && (
-          <div className="mb-6">
-            <PrivacyPanel
-              submissionId={submission.id}
-              initialPrivacy={privacy}
-              initialContactEnabled={contactEnabled}
-              isPublic={submission.is_public ?? false}
-              isSubscribed={ownerIsSubscribed}
-            />
-          </div>
-        )}
+        {/* Privacy is now fully handled by the publish/privacy modal
+            triggered from the VisibilityToggle button above. The in-page
+            panel was removed on 2026-04-23 — too many conflicting controls
+            when the modal already owns preset selection, custom toggles,
+            contact settings, publish, and unpublish. */}
 
         {/* HEADLINE — always public for visitors by default, owner sees it too. */}
         <SectionGate

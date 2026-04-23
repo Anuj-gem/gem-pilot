@@ -1,14 +1,27 @@
 'use client'
+// Single-button entry point to the privacy modal for the writer's report.
+// Previously this was a direct publish/unpublish toggle; now it always
+// opens the modal, whether the report is published or not. The modal
+// handles preset picking, per-section toggles, contact toggle, publishing,
+// updating, and unpublishing — one surface, no scattered controls.
+//
+// Button label + style reflects current state:
+//   - Unpublished        → "Publish to Discover" (accent button)
+//   - Published          → "Privacy · {preset}" (green pill)
+//   - Free writer        → "Publish to Discover" — modal still opens, but
+//                          Publish inside the modal fires the upgrade gate.
 
 import { useState } from 'react'
-import { Eye, EyeOff } from 'lucide-react'
-import { trackScriptPublished, trackUpgradePromptShown } from '@/lib/posthog'
+import { Eye, EyeOff, Shield } from 'lucide-react'
+import { trackScriptPublished } from '@/lib/posthog'
 import { PublishPreviewModal } from '@/components/report/publish-preview-modal'
-import type { ReportPrivacy } from '@/lib/report-privacy'
+import { matchPreset, PRESETS, type ReportPrivacy } from '@/lib/report-privacy'
 
 interface VisibilityToggleProps {
   submissionId: string
   initialPublic: boolean
+  initialPrivacy: ReportPrivacy | null
+  initialContactEnabled: boolean
   title?: string
   score?: number
   isSubscribed?: boolean
@@ -17,77 +30,59 @@ interface VisibilityToggleProps {
 export function VisibilityToggle({
   submissionId,
   initialPublic,
+  initialPrivacy,
+  initialContactEnabled,
   title = '',
   score,
   isSubscribed = false,
 }: VisibilityToggleProps) {
   const [isPublic, setIsPublic] = useState(initialPublic)
-  const [loading, setLoading] = useState(false)
-  const [justPublished, setJustPublished] = useState(false)
-  // First-publish walkthrough — visitor preview + preset picker. Always shown
-  // when going private → public, so the writer explicitly owns the choice
-  // rather than default-publishing blind.
-  const [showPreview, setShowPreview] = useState(false)
+  const [privacy, setPrivacy] = useState<ReportPrivacy | null>(initialPrivacy)
+  const [justChanged, setJustChanged] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
-  const openUpgradeModal = () => {
-    trackUpgradePromptShown('visibility_toggle')
-    window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
-  }
+  const activePreset = matchPreset(privacy) ?? 'teaser'
+  const presetLabel = PRESETS[activePreset].label
 
-  const onToggleClick = async () => {
-    if (isPublic) {
-      // Unpublish — fast path, no modal.
-      setLoading(true)
-      try {
-        const res = await fetch(`/api/scripts/${submissionId}/visibility`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ is_public: false }),
-        })
-        if (res.ok) setIsPublic(false)
-      } finally {
-        setLoading(false)
-      }
-      return
+  const handleDone = (params: { isPublic: boolean; privacy: ReportPrivacy }) => {
+    setShowModal(false)
+    const goingPublic = params.isPublic && !isPublic
+    setIsPublic(params.isPublic)
+    setPrivacy(params.privacy)
+    if (goingPublic) {
+      trackScriptPublished({ title, score, submissionId })
     }
-    // Publishing — Pro gate first, then the preview modal owns the save.
-    if (!isSubscribed) {
-      openUpgradeModal()
-      return
-    }
-    setShowPreview(true)
-  }
-
-  const handlePublished = (_params: { publishedAs: ReportPrivacy }) => {
-    setShowPreview(false)
-    setIsPublic(true)
-    trackScriptPublished({ title, score, submissionId })
-    setJustPublished(true)
-    setTimeout(() => setJustPublished(false), 1500)
+    setJustChanged(true)
+    setTimeout(() => setJustChanged(false), 1500)
   }
 
   return (
     <>
       <button
-        onClick={onToggleClick}
-        disabled={loading}
+        onClick={() => setShowModal(true)}
         className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors border ${
           isPublic
             ? 'border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
-            : 'border-[var(--gem-gray-600)] bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] hover:bg-[var(--gem-gray-700)]'
-        } ${justPublished ? 'animate-pulse ring-2 ring-emerald-300' : ''} ${
-          loading ? 'opacity-50 cursor-not-allowed' : ''
-        }`}
+            : 'border-[var(--gem-accent)] bg-[rgba(124,58,237,0.08)] text-[var(--gem-accent)] hover:bg-[rgba(124,58,237,0.14)]'
+        } ${justChanged ? 'animate-pulse ring-2 ring-emerald-300' : ''}`}
       >
         {isPublic ? <Eye size={14} /> : <EyeOff size={14} />}
-        {isPublic ? 'On Discover' : !isSubscribed ? 'Publish to Discover — Pro' : 'Publish to Discover'}
+        {isPublic
+          ? `On Discover · ${presetLabel}`
+          : isSubscribed
+            ? 'Publish to Discover'
+            : 'Publish to Discover — Pro'}
       </button>
-      {showPreview && (
+      {showModal && (
         <PublishPreviewModal
           submissionId={submissionId}
           title={title}
-          onDone={handlePublished}
-          onCancel={() => setShowPreview(false)}
+          initialPrivacy={privacy}
+          initialContactEnabled={initialContactEnabled}
+          initialIsPublic={isPublic}
+          isSubscribed={isSubscribed}
+          onDone={handleDone}
+          onCancel={() => setShowModal(false)}
         />
       )}
     </>

@@ -122,16 +122,17 @@ export interface ReportPrivacy {
   migrated_at?: string
 }
 
-/** Default visibility for a NEW report that's never been adjusted. Anuj's
- *  call: score starts private — writers should feel in charge about when to
- *  reveal it, especially if it's not a knockout number. Headline + what's
- *  working + production signal start public so a visitor sees a real snapshot. */
+/** Default visibility for a NEW report that's never been adjusted.
+ *  Anuj's call (2026-04-23 iteration): Teaser is the floor for everyone —
+ *  only the headline is public by default. Writers pick a preset (or go
+ *  Custom) when they open the privacy modal, so the default is deliberately
+ *  conservative. Nothing leaks until the writer picks a broader preset. */
 const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
   headline:              'public',
   score:                 'private',
-  whats_working:         'public',
+  whats_working:         'private',
   sharpest_lever:        'private',
-  production_signal:     'public',
+  production_signal:     'private',
   deep_dive_characters:  'private',
   deep_dive_package:     'private',
   deep_dive_production:  'private',
