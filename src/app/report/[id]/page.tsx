@@ -109,7 +109,8 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter, subscribed: justSubscribed } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam } = await searchParams
+  const autoOpenPrivacy = openPrivacyParam === '1'
   const supabase = await createClient()
   const serviceClient = createServiceClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -332,6 +333,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             commercialScore={commercialScore}
             isSubscribed={ownerIsSubscribed}
             declaredFormat={submission.declared_format ?? null}
+            autoOpenModal={autoOpenPrivacy}
           />
         )}
 

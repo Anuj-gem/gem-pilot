@@ -18,7 +18,8 @@ import {
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
 import { RemoveButton } from '@/components/dashboard/remove-button'
-import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
+import { QUALIFICATION_THRESHOLD } from '@/components/report/qualification-banner'
+import { Check, Info } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -230,35 +231,15 @@ export default async function DashboardPage({
                 })
 
                 const score = scoreMap[sub.id]
-                const designation = scoreDesignation(score)
-                const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
+                // Anuj 2026-04-23: score + tier pill removed from dashboard cards.
+                // The only score-derived signal surfaced is "qualified for the
+                // Discover Portal" (score ≥ 50) — visible to the writer as a
+                // subtle badge so they know the bar is cleared.
+                const qualifies =
+                  typeof score === 'number' && score >= QUALIFICATION_THRESHOLD
 
                 return (
                   <div key={sub.id} className="flex items-start gap-3">
-                    {/* Score column (outside the card) — colored by designation
-                        so the tier is readable at a glance. Locked rows (2nd+
-                        eval for unsubscribed writers) blur the number so the
-                        writer can't read a score off the dashboard without
-                        paying — plugs the "hammer to iterate" leak. */}
-                    <div className="shrink-0 w-14 sm:w-16 text-center pt-5">
-                      {typeof score === 'number' ? (
-                        <div
-                          className="text-2xl sm:text-3xl font-bold leading-none tabular-nums"
-                          style={{
-                            color: isLockedReport
-                              ? 'var(--gem-gray-500)'
-                              : designationStyle?.text ?? 'var(--gem-gold)',
-                            filter: isLockedReport ? 'blur(6px)' : undefined,
-                            userSelect: isLockedReport ? 'none' : undefined,
-                          }}
-                          aria-hidden={isLockedReport ? true : undefined}
-                        >
-                          {score.toFixed(1)}
-                        </div>
-                      ) : (
-                        <div className="text-[var(--gem-gray-700)] text-xl leading-none">—</div>
-                      )}
-                    </div>
                     <div
                       className={`flex-1 min-w-0 group rounded-xl border transition-colors p-5 ${
                         isLockedReport
@@ -275,26 +256,18 @@ export default async function DashboardPage({
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
                             {sub.title}
                           </h3>
-                          {/* Designation pill — shown only when the row is
-                              unlocked (owner's free eval, subscriber, or
-                              non-owner public read). Locked 2nd+ eval rows
-                              must not leak the tier since that's a score
-                              signal. */}
-                          {designationStyle && !isLockedReport && (
+                          {/* Qualified-for-Discover badge — only shown when
+                              the writer's eval is unlocked and the report
+                              clears the qualification bar. We don't leak the
+                              number; the badge is binary (qualifies or not). */}
+                          {qualifies && !isLockedReport && !sub.is_public && hasReport && (
                             <span
-                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold"
-                              style={{
-                                background: designationStyle.pillBg,
-                                border: `1px solid ${designationStyle.pillBorder}`,
-                                color: designationStyle.text,
-                              }}
+                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium"
+                              title="This script qualifies for the Discover Portal. Publish to let industry partners find it."
                             >
-                              <span
-                                aria-hidden
-                                className="inline-block w-1 h-1 rounded-full"
-                                style={{ background: designationStyle.dot }}
-                              />
-                              {designationStyle.label}
+                              <Check size={10} />
+                              Qualified for Discover
+                              <Info size={10} className="opacity-70" />
                             </span>
                           )}
                           {isLockedReport ? (
@@ -303,15 +276,27 @@ export default async function DashboardPage({
                               Upgrade to view
                             </span>
                           ) : sub.is_public ? (
-                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium">
+                            /* On Discover — clicking opens the privacy modal
+                                on the report page. */
+                            <Link
+                              href={`/report/${eval_.id}?privacy=1`}
+                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium hover:bg-emerald-500/20 transition-colors"
+                            >
                               <Eye size={10} />
                               On Discover
-                            </span>
+                            </Link>
                           ) : hasReport ? (
-                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-500)] font-medium">
+                            /* Private — button that opens the publish modal
+                                on the report page so the writer can pick a
+                                preset + go live in one flow. */
+                            <Link
+                              href={`/report/${eval_.id}?privacy=1`}
+                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-500)] font-medium hover:text-[var(--gem-gray-300)] hover:border-[var(--gem-gray-500)] transition-colors"
+                              title="Click to publish to the Discover Portal"
+                            >
                               <EyeOff size={10} />
                               Private
-                            </span>
+                            </Link>
                           ) : null}
                           {sub.status === 'failed' && (
                             <span className="text-[10px] px-2 py-0.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 font-medium">

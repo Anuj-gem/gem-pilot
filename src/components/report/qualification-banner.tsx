@@ -36,6 +36,11 @@ interface Props {
   commercialScore: number | null
   isSubscribed: boolean
   declaredFormat?: 'Feature film' | 'Series' | null
+  /** When true, the publish/privacy modal opens automatically on mount.
+   *  Set by the server page when ?privacy=1 is in the URL — used when a
+   *  writer clicks the Private/On Discover pill from the dashboard to
+   *  jump straight into the modal. */
+  autoOpenModal?: boolean
 }
 
 export function QualificationBanner({
@@ -48,10 +53,11 @@ export function QualificationBanner({
   commercialScore,
   isSubscribed,
   declaredFormat,
+  autoOpenModal,
 }: Props) {
   const [isPublic, setIsPublic] = useState(initialPublic)
   const [privacy, setPrivacy] = useState<ReportPrivacy | null>(initialPrivacy)
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(!!autoOpenModal)
   const [justChanged, setJustChanged] = useState(false)
 
   // Section pills (elsewhere on the page) dispatch 'gem:open-publish-modal'
