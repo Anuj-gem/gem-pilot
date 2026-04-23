@@ -16,10 +16,9 @@ import {
   Upload,
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
-import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
 import { RemoveButton } from '@/components/dashboard/remove-button'
 import { QUALIFICATION_THRESHOLD } from '@/components/report/qualification-banner'
-import { Check, Info } from 'lucide-react'
+import { Check } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -194,7 +193,6 @@ export default async function DashboardPage({
         {submissions && submissions.length > 0 ? (
           <>
             {/* Script cards */}
-            <GemRankHeader />
             <div className="space-y-3 mb-10">
               {(() => {
                 // Find the oldest completed submission — that one is free.
@@ -256,34 +254,20 @@ export default async function DashboardPage({
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
                             {sub.title}
                           </h3>
-                          {/* Qualified-for-Discover badge — only shown when
-                              the writer's eval is unlocked and the report
-                              clears the qualification bar. We don't leak the
-                              number; the badge is binary (qualifies or not). */}
-                          {qualifies && !isLockedReport && !sub.is_public && hasReport && (
-                            <span
-                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium"
-                              title="This script qualifies for the Discover Portal. Publish to let industry partners find it."
-                            >
-                              <Check size={10} />
-                              Qualified for Discover
-                              <Info size={10} className="opacity-70" />
-                            </span>
-                          )}
                           {isLockedReport ? (
                             <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
                               <Lock size={10} />
                               Upgrade to view
                             </span>
                           ) : sub.is_public ? (
-                            /* On Discover — clicking opens the privacy modal
-                                on the report page. */
+                            /* Published — links to the privacy modal so the
+                                writer can adjust what's visible or unpublish. */
                             <Link
                               href={`/report/${eval_.id}?privacy=1`}
                               className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium hover:bg-emerald-500/20 transition-colors"
                             >
                               <Eye size={10} />
-                              On Discover
+                              Visible to industry partners
                             </Link>
                           ) : hasReport ? (
                             /* Private — button that opens the publish modal
@@ -335,6 +319,28 @@ export default async function DashboardPage({
                         ) : null}
 
                         <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
+
+                        {/* Qualified-for-Discover badge — prominent, shown on
+                            every unpublished report whose eval clears the bar
+                            (including locked 2nd+ reports, as a Pro nudge).
+                            Hides once the writer publishes, since "Visible
+                            to industry partners" takes over that role. */}
+                        {qualifies && !sub.is_public && hasReport && (
+                          <Link
+                            href={`/report/${eval_.id}?privacy=1`}
+                            className="mt-3 inline-flex items-start gap-2 px-3 py-2 rounded-lg border border-emerald-500/35 bg-emerald-500/[0.06] hover:bg-emerald-500/10 transition-colors"
+                          >
+                            <Check size={13} className="text-emerald-400 mt-0.5 shrink-0" />
+                            <div className="min-w-0">
+                              <p className="text-[12px] font-semibold text-emerald-400 m-0 leading-tight">
+                                Qualified for Discover
+                              </p>
+                              <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+                                Publish for industry visibility · view the report to see why we think it qualifies
+                              </p>
+                            </div>
+                          </Link>
+                        )}
                       </div>
 
                       {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links.

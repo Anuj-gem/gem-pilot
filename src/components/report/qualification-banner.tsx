@@ -128,10 +128,10 @@ export function QualificationBanner({
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-[13px] font-semibold text-[var(--gem-gray-50)] m-0">
-              Live on the Discover Portal · {presetLabel}
+              Visible to industry partners · {presetLabel}
             </p>
             <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-0.5">
-              Click to adjust what industry partners see, or unpublish.
+              Click to adjust what they see, or unpublish.
             </p>
           </div>
           <Eye size={14} className="flex-shrink-0 text-[var(--gem-gray-500)]" />
