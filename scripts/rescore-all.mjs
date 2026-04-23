@@ -57,6 +57,11 @@ try {
 
 // ── Flags ──────────────────────────────────────────────────────────
 const DRY = process.argv.includes('--dry') || process.argv.includes('--dry-run')
+// --preview: write results to script_evaluations_pending instead of the live
+// script_evaluations table. The /admin/preview-v5-1/[id] page (and the report
+// page with USE_PENDING_EVALS=1) reads from pending. Lets us stage a prompt
+// change on a handful of evals without touching any writer's live report.
+const PREVIEW = process.argv.includes('--preview')
 const USE_CACHE = !process.argv.includes('--no-cache')
 const START_FROM = parseInt(
   (process.argv.find((a) => a.startsWith('--start-from=')) || '=0').split('=')[1]
@@ -195,9 +200,28 @@ function saveCache(submissionId, data) {
   fsSync.writeFileSync(cachePath(submissionId), JSON.stringify(data, null, 2))
 }
 
+// ── Lead-character health helpers ──────────────────────────────────
+// The Apr 23 re-score uncovered a subtler failure than "empty leads":
+// the model sometimes returns lead_characters populated entirely with
+// role_type "Supporting" (no Lead/Protagonist). Writers see a report
+// with no main character and complain. Treat "all-supporting" as
+// unhealthy too, and retry once with a protagonist-forcing nudge.
+function leadsEmpty(leads) {
+  return !Array.isArray(leads) || leads.length === 0
+}
+function leadsOnlySupporting(leads) {
+  if (!Array.isArray(leads) || leads.length === 0) return false
+  return leads.every((c) => {
+    const role = String(c?.role_type ?? '').toLowerCase().trim()
+    return role === 'supporting' || role === ''
+  })
+}
+function leadsUnhealthy(leads) {
+  return leadsEmpty(leads) || leadsOnlySupporting(leads)
+}
+
 // ── OpenAI call ────────────────────────────────────────────────────
-async function evaluateScript(scriptText, declaredFormat) {
-  const systemPrompt = buildPrompt(declaredFormat)
+async function callOpenAI(systemPrompt, scriptText, declaredFormat) {
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -229,9 +253,17 @@ async function evaluateScript(scriptText, declaredFormat) {
   return { evaluation, inputTokens, outputTokens, cost }
 }
 
+async function evaluateScript(scriptText, declaredFormat) {
+  // Single call — exact same prompt production uses. No runtime overrides.
+  // Any reliability fixes live in src/lib/evaluation-prompt.ts so prod and
+  // rescore stay in lockstep.
+  return callOpenAI(buildPrompt(declaredFormat), scriptText, declaredFormat)
+}
+
 // ── Main ───────────────────────────────────────────────────────────
-console.log(`\n=== GEM Re-Score → LIVE ${DRY ? '(DRY RUN)' : ''} ===`)
-console.log(`Target table: script_evaluations`)
+const TARGET_TABLE = PREVIEW ? 'script_evaluations_pending' : 'script_evaluations'
+console.log(`\n=== GEM Re-Score → ${PREVIEW ? 'PREVIEW (pending table, no live writes)' : 'LIVE'} ${DRY ? '(DRY RUN)' : ''} ===`)
+console.log(`Target table: ${TARGET_TABLE}`)
 console.log(`Cache: ${USE_CACHE ? 'ON (--no-cache to force re-eval)' : 'OFF'}`)
 console.log(`Concurrency: ${CONCURRENCY}`)
 if (LIMIT) console.log(`Limit: ${LIMIT}`)
@@ -297,7 +329,14 @@ if (NEEDS_V52) {
     const ev = s.prev_evaluation ?? {}
     const leads = Array.isArray(ev.lead_characters) ? ev.lead_characters : []
     const fit = ev?.package_angles?.director_appeal?.fit_profile
-    const healthy = leads.length > 0 && typeof fit === 'string' && fit.trim().length > 0
+    const leadsOK =
+      leads.length > 0 &&
+      !leads.every((c) => {
+        const role = String(c?.role_type ?? '').toLowerCase().trim()
+        return role === 'supporting' || role === ''
+      })
+    const healthy =
+      leadsOK && typeof fit === 'string' && fit.trim().length > 0
     return !healthy
   })
 }
@@ -318,8 +357,9 @@ const slice = enriched
 console.log(`Will process ${slice.length} submissions\n`)
 
 // 4. Snapshot current live evaluations for everything we're about to touch
+// (preview runs don't modify live data, so skip the snapshot).
 const affectedEvalIds = slice.map((s) => s.eval_id)
-if (affectedEvalIds.length > 0 && !DRY) {
+if (affectedEvalIds.length > 0 && !DRY && !PREVIEW) {
   console.log(`Snapshotting ${affectedEvalIds.length} current evaluation rows...`)
   const { data: before, error: snapErr } = await sb
     .from('script_evaluations')
@@ -418,10 +458,19 @@ async function processOne(sub, absoluteIdx) {
       const tier = calcTier(composite)
       totalCost += cost
 
-      // Guard: don't persist an eval with an empty lead_characters list.
+      // Guard: don't persist an eval whose lead_characters is empty or
+      // entirely "Supporting" (retry-once already tried the protagonist nudge;
+      // if we're here the model refused twice — keep the old eval rather
+      // than overwrite with a broken one).
       const leads = evaluation?.lead_characters
-      if (!Array.isArray(leads) || leads.length === 0) {
-        log('  ⚠ Empty lead_characters — skipping to protect report UI')
+      if (leadsEmpty(leads)) {
+        log('  ⚠ Empty lead_characters after retry — skipping to protect report UI')
+        failed++
+        console.log(logs.join('\n'))
+        return
+      }
+      if (leadsOnlySupporting(leads)) {
+        log('  ⚠ Only-Supporting lead_characters after retry — skipping to protect report UI')
         failed++
         console.log(logs.join('\n'))
         return
@@ -441,6 +490,45 @@ async function processOne(sub, absoluteIdx) {
     }
 
     if (DRY) {
+      console.log(logs.join('\n'))
+      return
+    }
+
+    if (PREVIEW) {
+      // Write to script_evaluations_pending so /admin/preview-v5-1/<eval_id>
+      // shows the new output without touching the writer's live report.
+      // Clear any existing pending row for this submission first, then insert
+      // fresh — avoids needing a unique constraint on submission_id.
+      const { error: delErr } = await sb
+        .from('script_evaluations_pending')
+        .delete()
+        .eq('submission_id', sub.id)
+      if (delErr) {
+        log(`  ✗ Preview clear failed: ${delErr.message}`)
+        failed++
+        console.log(logs.join('\n'))
+        return
+      }
+      const { error: insErr } = await sb
+        .from('script_evaluations_pending')
+        .insert({
+          submission_id: sub.id,
+          evaluation: result.evaluation,
+          weighted_score: result.weightedScore,
+          tier: result.tier,
+          model: 'gpt-5.4-mini-v5-3-preview',
+          input_tokens: result.inputTokens,
+          output_tokens: result.outputTokens,
+          cost_usd: result.cost,
+        })
+      if (insErr) {
+        log(`  ✗ Preview insert failed: ${insErr.message}`)
+        failed++
+        console.log(logs.join('\n'))
+        return
+      }
+      log(`  ✓ Preview written → /admin/preview-v5-3/${sub.eval_id}`)
+      success++
       console.log(logs.join('\n'))
       return
     }
