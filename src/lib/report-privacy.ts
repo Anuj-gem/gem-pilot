@@ -13,6 +13,12 @@
 
 export type Visibility = 'public' | 'private'
 
+/** Commercial score floor that puts a report on the "qualifies for the
+ *  Discover Portal" side of the line. Lives in this server-safe file (not
+ *  the 'use client' qualification-banner) so server components on the
+ *  dashboard + report page can import it without build-time caveats. */
+export const QUALIFICATION_THRESHOLD = 50
+
 /** Section keys map 1:1 to bounded chunks of the report UI. Names mirror the
  *  actual section headings in the report page (keep these aligned so writers
  *  see the same labels in the privacy modal and in the report body).

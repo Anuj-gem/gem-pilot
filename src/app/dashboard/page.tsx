@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { RemoveButton } from '@/components/dashboard/remove-button'
-import { QUALIFICATION_THRESHOLD } from '@/components/report/qualification-banner'
+import { QUALIFICATION_THRESHOLD } from '@/lib/report-privacy'
 import { Check } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
@@ -73,22 +73,9 @@ export default async function DashboardPage({
     (allSubmissions ?? []).filter((s: any) => s.status === 'completed').length
   const usedFreeEval = completedCount >= 1
 
-  // Score map: { submission_id -> weighted_score } for completed evals.
-  // Postgres `numeric` columns come back as strings over the wire, so we
-  // coerce to Number here. Previously the `typeof === 'number'` check
-  // silently dropped every score → qualified badge never showed.
-  const scoreMap: Record<string, number> = {}
-  for (const s of (submissions ?? []) as any[]) {
-    if (s.status !== 'completed') continue
-    const e = Array.isArray(s.script_evaluations)
-      ? s.script_evaluations[0]
-      : s.script_evaluations
-    const raw = e?.weighted_score
-    const n = typeof raw === 'number' ? raw : typeof raw === 'string' ? Number(raw) : NaN
-    if (!Number.isNaN(n)) {
-      scoreMap[s.id] = n
-    }
-  }
+  // Score coercion happens inline in the per-card loop now — dropped the
+  // scoreMap to remove an indirection that was hiding the string-vs-number
+  // bug from view.
 
   const firstName =
     profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
@@ -233,13 +220,15 @@ export default async function DashboardPage({
                   year: 'numeric',
                 })
 
-                const score = scoreMap[sub.id]
-                // Anuj 2026-04-23: score + tier pill removed from dashboard cards.
-                // The only score-derived signal surfaced is "qualified for the
-                // Discover Portal" (score ≥ 50) — visible to the writer as a
-                // subtle badge so they know the bar is cleared.
+                // Compute qualification inline off the eval we already have
+                // in hand — removes the scoreMap indirection so there's one
+                // less place for the "string vs number" mismatch to hide.
+                const rawScore = eval_?.weighted_score
+                const scoreNum =
+                  typeof rawScore === 'number' ? rawScore :
+                  typeof rawScore === 'string' ? Number(rawScore) : NaN
                 const qualifies =
-                  typeof score === 'number' && score >= QUALIFICATION_THRESHOLD
+                  !Number.isNaN(scoreNum) && scoreNum >= QUALIFICATION_THRESHOLD
 
                 return (
                   <div key={sub.id} className="flex items-start gap-3">

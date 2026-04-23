@@ -22,7 +22,8 @@ import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { matchPreset, PRESETS, type ReportPrivacy } from '@/lib/report-privacy'
 import { trackScriptPublished } from '@/lib/posthog'
 
-export const QUALIFICATION_THRESHOLD = 50
+export { QUALIFICATION_THRESHOLD } from '@/lib/report-privacy'
+import { QUALIFICATION_THRESHOLD as _THRESHOLD } from '@/lib/report-privacy'
 
 interface Props {
   submissionId: string
@@ -90,7 +91,7 @@ export function QualificationBanner({
     return null
   }
 
-  const qualifies = commercialScore >= QUALIFICATION_THRESHOLD
+  const qualifies = commercialScore >= _THRESHOLD
 
   const handleDone = (params: { isPublic: boolean; privacy: ReportPrivacy }) => {
     setShowModal(false)
