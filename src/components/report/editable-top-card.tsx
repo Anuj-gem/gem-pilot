@@ -295,7 +295,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           <button
             type="button"
             onClick={save}
-            disabled={saving || reverting || overCap || title.trim().length === 0}
+            disabled={saving || reverting || title.trim().length === 0}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[13px] font-medium bg-[var(--gem-gold)] text-[var(--gem-black)] hover:opacity-90 disabled:opacity-50 transition-opacity"
           >
             {saving ? <Loader2 size={13} className="animate-spin" /> : <Check size={13} />}
@@ -374,10 +374,10 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         <span className="flex items-baseline justify-between text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
           <span>Headline</span>
           <span
-            className={overCap ? 'text-red-400' : 'text-[var(--gem-gray-500)]'}
+            className={overCap ? 'text-[var(--gem-warning)]' : 'text-[var(--gem-gray-500)]'}
             style={{ textTransform: 'none', letterSpacing: 0 }}
           >
-            {wordCount}/{LOGLINE_WORD_CAP} words
+            {wordCount} words · {LOGLINE_WORD_CAP} recommended
           </span>
         </span>
         <textarea
@@ -388,8 +388,8 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           placeholder="The one sentence a manager would paste into an email to a producer."
         />
         {overCap && (
-          <p className="text-[12px] text-red-400 mt-2">
-            Headline is longer than the {LOGLINE_WORD_CAP}-word cap. Trim it before saving.
+          <p className="text-[12px] text-[var(--gem-warning)] mt-2">
+            Over the {LOGLINE_WORD_CAP}-word guideline — shorter headlines tend to land harder, but you can save it as is.
           </p>
         )}
       </label>
