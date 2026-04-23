@@ -3,8 +3,10 @@
 import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { Loader2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase-browser'
 import { identifyUser } from '@/lib/posthog'
+import { GoogleMark } from '@/components/auth/google-mark'
 
 export default function LoginPage() {
   return (
@@ -23,6 +25,23 @@ function LoginContent() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
+
+  async function handleGoogle() {
+    if (googleLoading) return
+    setGoogleLoading(true)
+    setError('')
+    const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(redirect)}`
+    const { error: oauthError } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo },
+    })
+    if (oauthError) {
+      setError(oauthError.message)
+      setGoogleLoading(false)
+    }
+    // On success, the browser is mid-redirect to Google — keep the spinner up.
+  }
 
   // Already-signed-in writers should go straight to their dashboard rather
   // than see another login form.
@@ -62,7 +81,32 @@ function LoginContent() {
     <div className="min-h-[calc(100vh-56px)] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-1">Welcome back</h1>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-8">Log in to your GEM account</p>
+        <p className="text-sm text-[var(--gem-gray-400)] mb-6">Log in to your GEM account</p>
+
+        <button
+          type="button"
+          onClick={handleGoogle}
+          disabled={googleLoading || loading}
+          className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 mb-4 rounded-lg border border-[var(--gem-gray-600)] bg-[var(--gem-black)] text-sm font-semibold text-[var(--gem-gray-50)] transition-all duration-150 hover:bg-[var(--gem-gray-900)] active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {googleLoading ? (
+            <>
+              <Loader2 size={16} className="animate-spin" />
+              Opening Google…
+            </>
+          ) : (
+            <>
+              <GoogleMark />
+              Continue with Google
+            </>
+          )}
+        </button>
+
+        <div className="flex items-center gap-3 my-4 text-[12px] text-[var(--gem-gray-500)]">
+          <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+          or
+          <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+        </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>

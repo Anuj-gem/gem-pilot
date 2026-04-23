@@ -3,13 +3,17 @@
 import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { CheckCircle, ArrowRight, Star } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase-browser'
 import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
+import { GoogleMark } from '@/components/auth/google-mark'
 
+// topScripts kept in the signature for backwards compat with the server
+// page; the value-props + Discover tease blocks below were stripped to
+// reduce noise on the signup page.
 interface SignupPageClientProps {
-  topScripts: any[]
+  topScripts?: any[]
 }
 
 export function SignupPageClient({ topScripts }: SignupPageClientProps) {
@@ -20,7 +24,7 @@ export function SignupPageClient({ topScripts }: SignupPageClientProps) {
   )
 }
 
-function SignupPageInner({ topScripts }: SignupPageClientProps) {
+function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect')
@@ -30,6 +34,23 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
+
+  async function handleGoogle() {
+    if (googleLoading) return
+    setGoogleLoading(true)
+    setError('')
+    const next = redirect || '/submit'
+    const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`
+    const { error: oauthError } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo },
+    })
+    if (oauthError) {
+      setError(oauthError.message)
+      setGoogleLoading(false)
+    }
+  }
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -89,6 +110,31 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
             Free forever. No credit card required.
           </p>
 
+          <button
+            type="button"
+            onClick={handleGoogle}
+            disabled={googleLoading || loading}
+            className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 mb-3 rounded-lg border border-[var(--gem-gray-600)] bg-[var(--gem-black)] text-sm font-semibold text-[var(--gem-gray-50)] transition-all duration-150 hover:bg-[var(--gem-gray-900)] active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {googleLoading ? (
+              <>
+                <Loader2 size={16} className="animate-spin" />
+                Opening Google…
+              </>
+            ) : (
+              <>
+                <GoogleMark />
+                Continue with Google
+              </>
+            )}
+          </button>
+
+          <div className="flex items-center gap-3 my-3.5 text-[12px] text-[var(--gem-gray-500)]">
+            <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+            or
+            <div className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+          </div>
+
           <form onSubmit={handleSignup} className="space-y-3.5">
             <div>
               <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Full name</label>
@@ -128,74 +174,13 @@ function SignupPageInner({ topScripts }: SignupPageClientProps) {
 
             <button
               type="submit"
-              disabled={loading}
-              className="w-full py-2.5 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors glow-accent"
+              disabled={loading || googleLoading}
+              className="w-full py-2.5 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-all duration-150 active:scale-[0.985] glow-accent"
             >
               {loading ? 'Creating account...' : 'Create account'}
             </button>
           </form>
         </div>
-
-        {/* Value props */}
-        <div className="mb-8">
-          <h2 className="text-sm font-semibold mb-3 text-[var(--gem-gray-200)]">What you get free</h2>
-          <div className="space-y-2.5">
-            {[
-              'One full script evaluation — no limits on the report',
-              'Positioning pitch, character breakdowns, production details',
-              'Powered by Selznick — our research-backed scoring system',
-              'Save your report and revisit anytime',
-            ].map(item => (
-              <div key={item} className="flex items-start gap-2">
-                <CheckCircle size={14} className="text-emerald-600 mt-0.5 shrink-0" />
-                <span className="text-sm text-[var(--gem-gray-300)]">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Discover tease */}
-        {topScripts.length > 0 && (
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <p className="text-xs uppercase tracking-widest text-[var(--gem-gold)] font-medium">Recently on Discover</p>
-            </div>
-            <p className="text-xs text-[var(--gem-gray-400)] mb-3">
-              Real writers putting their scripts in front of the industry.
-            </p>
-            <div className="space-y-2">
-              {topScripts.map((script: any, idx: number) => (
-                <Link
-                  key={script.evaluation_id ?? idx}
-                  href={`/report/${script.evaluation_id}`}
-                  className="group block rounded-lg border border-[var(--gem-gray-700)] p-3 hover:border-[var(--gem-gray-500)] transition-colors"
-                  style={{ borderLeft: `3px solid var(--gem-gold)` }}
-                >
-                  <div className="text-sm font-semibold truncate group-hover:text-[var(--gem-accent)] transition-colors">
-                    {script.title || 'Untitled'}
-                  </div>
-                  <div className="text-xs text-[var(--gem-gray-400)] mt-0.5">
-                    by {script.author_name || 'Anonymous'}
-                  </div>
-                  {script.positioning_hook && (
-                    <p className="text-xs text-[var(--gem-gray-300)] mt-1.5 leading-snug line-clamp-2">
-                      {script.positioning_hook}
-                    </p>
-                  )}
-                </Link>
-              ))}
-            </div>
-            <div className="mt-3 text-center">
-              <Link href="/discover" className="inline-flex items-center gap-1.5 text-xs text-[var(--gem-accent)] font-medium hover:underline">
-                Browse Discover <ArrowRight size={12} />
-              </Link>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   )
