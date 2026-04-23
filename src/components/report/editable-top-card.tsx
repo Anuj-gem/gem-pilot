@@ -173,8 +173,8 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
             (the designation is already the public signal on Discover). */}
         {isGemSelect && (
           <Link
-            href="/discover?tab=gem-select"
-            title="Scripts that have a commercial viability score of 75+ earn GEM Select on Discover. Click to browse the shelf."
+            href="/discover"
+            title="Browse scripts qualified for industry visibility."
             className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-bold text-white mb-4 transition-opacity hover:opacity-90"
             style={{
               background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',

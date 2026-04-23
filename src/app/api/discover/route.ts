@@ -17,8 +17,10 @@ export async function GET(req: Request) {
   const q = url.searchParams.get('q') ?? ''
   const genre = url.searchParams.get('genre') ?? ''
   const format = url.searchParams.get('format') ?? ''
-  const tabRaw = url.searchParams.get('tab') ?? ''
-  const tab: '' | 'gem-select' = tabRaw === 'gem-select' ? tabRaw : ''
+  // The tab parameter is accepted but no longer scopes the query — the
+  // Recommended tab renders server-side as a gate (no data fetched), and
+  // the Recent tab shows all qualified public scripts (which is already
+  // the leaderboard view's default).
   const offset = Math.max(0, Number(url.searchParams.get('offset') ?? '0'))
 
   const supabase = await createClient()
@@ -29,9 +31,6 @@ export async function GET(req: Request) {
   }
   if (genre) query = query.ilike('genre', `%${genre}%`)
   if (format) query = query.ilike('format', `%${format}%`)
-  if (tab === 'gem-select') {
-    query = query.gte('weighted_score', 75)
-  }
 
   query = query
     .order('created_at', { ascending: false })
