@@ -198,6 +198,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Admin never blurs. Non-owners don't use this axis — privacy gate handles
   // their visibility.
   const applyPaywallBlur = locked && isOwner && !isAdmin
+  // Privacy is a Pro feature. Free writers can't publish (Pro-gated) so
+  // showing them a privacy panel or per-section toggles is noise — their job
+  // is to upgrade first. Pro writers get the full controls whether published
+  // yet or not. Admin gets no privacy UI on others' reports.
+  const canControlPrivacy = isOwner && ownerIsSubscribed && !isAdmin
+  // Passed to SectionGate so only Pro writers see the Public/Private pill
+  // alongside each section; free writers see the section without a toggle.
+  const privacyControlId = canControlPrivacy ? submission.id : undefined
 
   let lockedAfterFreeEval = false
   if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
@@ -355,8 +363,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         {/* Owner privacy review banner — shown once for writers whose reports
-            got migrated to the new default privacy settings. */}
-        {isOwner && needsPrivacyReview && (
+            got migrated to the new default privacy settings. Pro-only since
+            free writers can't do anything with privacy yet. */}
+        {canControlPrivacy && needsPrivacyReview && (
           <div
             className="flex items-start gap-3 p-4 rounded-xl mb-4"
             style={{
@@ -378,9 +387,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Owner privacy panel — always visible to the writer, regardless of
-            published state. Preview for free tier, interactive for Pro. */}
-        {isOwner && (
+        {/* Privacy panel — Pro-only. Free writers can't publish or toggle
+            anything yet, so the panel would be noise. Their job is the
+            upgrade CTA below. */}
+        {canControlPrivacy && (
           <div className="mb-6">
             <PrivacyPanel
               submissionId={submission.id}
@@ -397,7 +407,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="headline"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           <EditableTopCard
             evaluationId={id}
@@ -483,31 +493,38 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )
         })()}
 
-        {/* Share section — owner always, visitor on a published report. */}
-        {(submission.is_public || isOwner) && (
+        {/* Share section — only when the report is actually public, or owner
+            is Pro (Pro writers can pre-share via the private link before hitting
+            publish). Free writers see the upgrade CTA above instead. */}
+        {(submission.is_public || canControlPrivacy) && (
           <div className="mb-8">
             <ShareSection evaluationId={id} title={topCard.title} />
           </div>
         )}
 
-        {/* COMMERCIAL POTENTIAL SCORE */}
-        <SectionGate
-          section="score"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
-        >
-          {typeof commercialScore === 'number' && designation && (
-            <CommercialScoreCard score={commercialScore} designationLabel={DESIGNATION_STYLE[designation].label} tierStyle={DESIGNATION_STYLE[designation]} copyMessage={DESIGNATION_COPY[designation].message} />
-          )}
-        </SectionGate>
+        {/* COMMERCIAL POTENTIAL SCORE — the big hero card.
+            Suppressed for free-tier owners, since they already get the
+            mini-score + upgrade combo above; a second score card would just
+            be a duplicate. */}
+        {!(applyPaywallBlur) && (
+          <SectionGate
+            section="score"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+          >
+            {typeof commercialScore === 'number' && designation && (
+              <CommercialScoreCard score={commercialScore} designationLabel={DESIGNATION_STYLE[designation].label} tierStyle={DESIGNATION_STYLE[designation]} copyMessage={DESIGNATION_COPY[designation].message} />
+            )}
+          </SectionGate>
+        )}
 
         {/* WHAT'S WORKING */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {allStrengths.length > 0 && (
             <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
@@ -553,7 +570,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="sharpest_lever"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           <SharpestLever considerations={considerations} craftNote={craftNote} />
         </SectionGate>
@@ -563,7 +580,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="production_signal"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {production?.risk_rubric && (
             <Section label="Production signal" subtitle="A two-second read on how this would actually get made.">
@@ -591,7 +608,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="deep_dive_characters"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {leadCharacters.length > 0 && (
             <Section
@@ -643,7 +660,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="deep_dive_package"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {packageAngles && (
             <Section label="Package angles" subtitle="Who would direct it, and who would buy it.">
@@ -709,7 +726,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="deep_dive_production"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {production && (
             <Section
@@ -836,7 +853,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="deep_dive_development"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {considerations.filter((c) => c.is_primary_lever !== true).length > 0 && (
             <Section
@@ -870,7 +887,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           section="deep_dive_narrative"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={isOwner ? submission.id : undefined}
+          submissionId={privacyControlId}
         >
           {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
             <Section
@@ -906,13 +923,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           />
         )}
 
-        {/* Owner contact state card — "you're reachable" or upgrade nudge. */}
-        {!isAnonymousSubmission && isOwner && (
+        {/* Owner contact state card — Pro writers see "you're reachable".
+            Free writers already have the upgrade CTA in the mini-score card
+            above; adding another Go-Pro button here would just be clutter. */}
+        {!isAnonymousSubmission && isOwner && ownerIsSubscribed && (
           <div className="mt-10">
             <ContactWriter
               evaluationId={id}
               writerName={writerName}
-              state={ownerIsSubscribed ? 'owner_live' : 'owner_upsell'}
+              state="owner_live"
               isLoggedIn={true}
             />
           </div>
