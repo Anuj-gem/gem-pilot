@@ -21,13 +21,25 @@ import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
 
 export const dynamic = 'force-dynamic'
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ welcome_back?: string; draft_saved?: string; just_signed_up?: string }>
+}) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
     redirect('/login?redirect=/dashboard')
   }
+
+  // Surface a small banner when the writer just bounced back from the OAuth
+  // flow. `welcome_back=1` means they were a returning user (account already
+  // existed) so we frame it as recognition instead of a celebration.
+  const sp = await searchParams
+  const justDraftSaved = sp.draft_saved === '1'
+  const justSignedUp = sp.just_signed_up === '1'
+  const welcomeBack = sp.welcome_back === '1'
 
   const { data: profile } = await supabase
     .from('profiles')
@@ -108,6 +120,49 @@ export default async function DashboardPage() {
             >
               Go Pro — $20/mo
             </UnlockTrigger>
+          </div>
+        )}
+
+        {/* Post-flow banner — surfaced when the writer just came back from
+            the guided submit flow's OAuth round-trip. welcome_back=1 means
+            their account predated this session (they're a returning user
+            who just OAuth'd in again), draft_saved=1 / just_signed_up=1
+            means we just created their submission row. */}
+        {(welcomeBack || justDraftSaved || justSignedUp) && (
+          <div
+            className="mb-6 rounded-xl px-4 py-3 flex items-start gap-3"
+            style={{
+              background: welcomeBack
+                ? 'rgba(124,58,237,0.06)'
+                : 'rgba(212,160,23,0.07)',
+              border: welcomeBack
+                ? '1px solid rgba(124,58,237,0.25)'
+                : '1px solid rgba(212,160,23,0.30)',
+            }}
+          >
+            <span
+              className="text-[15px] leading-none mt-0.5"
+              style={{ color: welcomeBack ? 'var(--gem-accent)' : 'var(--gem-gold)' }}
+            >
+              ✦
+            </span>
+            <p className="text-[14px] text-[var(--gem-gray-100)] leading-snug m-0">
+              {welcomeBack && justDraftSaved && (
+                <>Welcome back, {firstName} — we&apos;ve added this draft to your existing account. Drop in your PDF anytime to score it.</>
+              )}
+              {welcomeBack && justSignedUp && (
+                <>Welcome back, {firstName} — your new script has been added to your account.</>
+              )}
+              {welcomeBack && !justDraftSaved && !justSignedUp && (
+                <>Welcome back, {firstName}.</>
+              )}
+              {!welcomeBack && justDraftSaved && (
+                <>Your draft is saved. Drop in your PDF anytime to unlock your full GEM read.</>
+              )}
+              {!welcomeBack && justSignedUp && (
+                <>You&apos;re signed up — your script is being scored.</>
+              )}
+            </p>
           </div>
         )}
 
@@ -267,6 +322,11 @@ export default async function DashboardPage() {
                               Processing
                             </span>
                           )}
+                          {sub.status === 'awaiting_pdf' && (
+                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
+                              Draft — needs PDF
+                            </span>
+                          )}
                         </div>
 
                         {/* Positioning hook or placeholder */}
@@ -282,12 +342,26 @@ export default async function DashboardPage() {
                           <p className="text-sm text-[var(--gem-gray-500)] italic mb-2">
                             Report ready — open to see the positioning.
                           </p>
+                        ) : sub.status === 'awaiting_pdf' ? (
+                          <p className="text-sm text-[var(--gem-gray-400)] mb-2">
+                            Drop in your PDF anytime to unlock your full GEM read.
+                          </p>
                         ) : null}
 
                         <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
                       </div>
 
-                      {/* Actions */}
+                      {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links. */}
+                      {sub.status === 'awaiting_pdf' && (
+                        <div className="flex items-center gap-2 shrink-0">
+                          <Link
+                            href="/submit"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all duration-150 hover:brightness-110 active:scale-[0.97]"
+                          >
+                            Upload PDF
+                          </Link>
+                        </div>
+                      )}
                       {hasReport && (
                         <div className="flex items-center gap-2 shrink-0">
                           {isLockedReport ? (

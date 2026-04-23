@@ -262,7 +262,7 @@ export default async function SampleReportPage({ params }: PageProps) {
             href="/submit"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
           >
-            Submit your script — free
+            Get Started — Free
           </Link>
           <div className="mt-3">
             <Link href="/sample" className="text-xs text-[var(--gem-accent)] hover:underline">
