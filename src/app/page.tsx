@@ -440,34 +440,49 @@ export default async function Home({
           </div>
           <div className="flex flex-col gap-2">
             {(recentScripts?.length ? recentScripts : SAMPLE_DISCOVER).map(
-              (s: any, i: number) => (
-                <div
-                  key={s.evaluation_id ?? `sample-${i}`}
-                  className="flex items-center gap-2.5 p-2.5 rounded-lg"
-                  style={{
-                    background: '#fff',
-                    border: '1px solid var(--gem-gray-700)',
-                  }}
-                >
-                  <div
-                    className="w-[30px] h-[30px] rounded-md grid place-items-center flex-shrink-0 text-[12px]"
+              (s: any, i: number) => {
+                const href = s.evaluation_id
+                  ? `/report/${s.evaluation_id}`
+                  : '/discover'
+                return (
+                  <Link
+                    key={s.evaluation_id ?? `sample-${i}`}
+                    href={href}
+                    className="group flex items-center gap-2.5 p-2.5 rounded-lg transition-all duration-150 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(124,58,237,0.10)]"
                     style={{
-                      background: 'var(--gem-gray-800)',
-                      color: 'var(--gem-gray-500)',
+                      background: '#fff',
+                      border: '1px solid var(--gem-gray-700)',
                     }}
                   >
-                    📄
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[13px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
-                      {s.title ?? 'Untitled'}
-                    </p>
-                    <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5">
-                      {s.author_name ?? 'Anonymous'} · {s.format ?? 'Feature'}
-                    </p>
-                  </div>
-                </div>
-              )
+                    <div
+                      className="w-[32px] h-[32px] rounded-md grid place-items-center flex-shrink-0 text-[13px] transition-colors group-hover:bg-[rgba(124,58,237,0.10)] group-hover:text-[var(--gem-accent)]"
+                      style={{
+                        background: 'var(--gem-gray-800)',
+                        color: 'var(--gem-gray-500)',
+                      }}
+                    >
+                      📄
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p
+                        className="text-[13px] font-semibold m-0 leading-tight truncate transition-colors group-hover:text-[var(--gem-accent)]"
+                        style={{ color: 'var(--gem-gray-50)' }}
+                      >
+                        {s.title ?? 'Untitled'}
+                      </p>
+                      <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5 truncate">
+                        {s.author_name ?? 'Anonymous'} · {s.format ?? 'Feature'}
+                      </p>
+                    </div>
+                    <span
+                      aria-hidden
+                      className="text-[14px] text-[var(--gem-gray-500)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-150"
+                    >
+                      →
+                    </span>
+                  </Link>
+                )
+              }
             )}
           </div>
         </div>
