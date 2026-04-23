@@ -327,10 +327,10 @@ export default async function DashboardPage({
                             <Check size={13} className="text-emerald-400 mt-0.5 shrink-0" />
                             <div className="min-w-0">
                               <p className="text-[12px] font-semibold text-emerald-400 m-0 leading-tight">
-                                Qualified for Discover
+                                This Qualifies for Industry Partner Visibility
                               </p>
                               <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
-                                Publish for industry visibility · view the report to see why we think it qualifies
+                                This script is very promising — it should be seen by GEM industry users on the Discover Page.
                               </p>
                             </div>
                           </Link>
