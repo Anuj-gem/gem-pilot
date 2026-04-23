@@ -264,7 +264,13 @@ export function DetailsView({
           GEM Select is ever surfaced on public Discover.
           We never show the underlying dimension weights — just the composite. */}
       {hasCommercialScore && designation && (
-        <CommercialScoreCard score={commercialScore!} designation={designation} />
+        publicViewer ? (
+          <div style={blurStyle} aria-hidden>
+            <CommercialScoreCard score={commercialScore!} designation={designation} />
+          </div>
+        ) : (
+          <CommercialScoreCard score={commercialScore!} designation={designation} />
+        )
       )}
 
       {/* GEM Rank — only shown on legacy (pre-v5.2) evals where there's no Commercial Score card.
@@ -351,7 +357,11 @@ export function DetailsView({
                   primary={isPrimary}
                   titleBlurred={effectivelyLocked && (publicViewer || !isPrimary)}
                 >
-                  <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                  <p
+                    className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                    style={publicViewer ? blurStyle : undefined}
+                    aria-hidden={publicViewer ? true : undefined}
+                  >
                     {c.detail}
                   </p>
                 </Collapsible>
@@ -374,6 +384,7 @@ export function DetailsView({
             <Collapsible
               title="Cast"
               meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
+              metaBlurred={publicViewer}
             >
               <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
@@ -393,6 +404,7 @@ export function DetailsView({
             <Collapsible
               title="Locations & Scale"
               meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
+              metaBlurred={publicViewer}
             >
               <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
@@ -415,6 +427,7 @@ export function DetailsView({
             <Collapsible
               title="Technical"
               meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
+              metaBlurred={publicViewer}
             >
               <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
@@ -443,6 +456,7 @@ export function DetailsView({
             <Collapsible
               title="Platform & Content"
               meta={production.platform_fit?.recommended_lane}
+              metaBlurred={publicViewer}
             >
               <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
@@ -459,6 +473,7 @@ export function DetailsView({
               <Collapsible
                 title="Rights & Clearance"
                 meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
+                metaBlurred={publicViewer}
               >
                 <ul
                   className="space-y-3 list-none p-0 m-0"

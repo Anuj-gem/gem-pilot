@@ -36,6 +36,7 @@ export function Collapsible({
   primary = false,
   defaultOpen = false,
   titleBlurred = false,
+  metaBlurred = false,
   children,
 }: {
   title: string
@@ -49,6 +50,10 @@ export function Collapsible({
    *  (e.g. "Kelly's job-search run") the writer would otherwise use to
    *  iterate a rewrite without paying. */
   titleBlurred?: boolean
+  /** Blur the meta summary line (e.g. "5 leads · 20 speaking roles") —
+   *  used for public viewers of production-planning rows so the facts
+   *  don't leak. */
+  metaBlurred?: boolean
   children: React.ReactNode
 }) {
   // Primary-lever variant: red accent + auto-open so the sharpest note isn't hidden behind a click.
@@ -87,7 +92,10 @@ export function Collapsible({
             {title}
           </p>
           {meta && (
-            <p className="text-[14px] text-[var(--gem-gray-400)] mt-1.5 m-0 leading-snug">
+            <p
+              className="text-[14px] text-[var(--gem-gray-400)] mt-1.5 m-0 leading-snug"
+              style={metaBlurred ? { filter: 'blur(5px)', userSelect: 'none' } : undefined}
+            >
               {meta}
             </p>
           )}
