@@ -67,7 +67,7 @@ import {
 
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string }>
+  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string }>
 }
 
 interface V5Extras {
@@ -109,7 +109,7 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam, pending: pendingParam } = await searchParams
   const autoOpenPrivacy = openPrivacyParam === '1'
   const supabase = await createClient()
   const serviceClient = createServiceClient()
@@ -131,7 +131,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   if (error || !evaluation) notFound()
 
-  if (process.env.USE_PENDING_EVALS === '1') {
+  // Pending-eval swap. Two ways to trigger:
+  //   - Global env flag (legacy USE_PENDING_EVALS=1) — affects all viewers.
+  //   - Admin-only ?pending=1 query param — for previewing rescored output
+  //     (e.g. v5.3) inside the real report UI without affecting visitors.
+  // The admin path is what /admin/preview-* used to do; doing it inline here
+  // means the preview renders identically to the production report.
+  const adminPreviewPending =
+    pendingParam === '1' && user?.email === 'anuj@gem.studio'
+  if (process.env.USE_PENDING_EVALS === '1' || adminPreviewPending) {
     const subId = (evaluation as any).submission_id
     if (subId) {
       const { data: pending } = await serviceClient

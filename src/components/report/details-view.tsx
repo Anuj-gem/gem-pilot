@@ -581,29 +581,16 @@ function CommercialScoreCard({
       className="relative rounded-2xl p-7 sm:p-8 mb-10 overflow-hidden"
       style={{ border: `1px solid ${style.border}`, background: style.bg }}
     >
-      <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
+      <div className="mb-4">
         <p
           className="text-[12px] uppercase tracking-[0.22em] font-bold m-0"
           style={{ color: style.text }}
         >
           Commercial Potential Score
         </p>
-        <div
-          className="flex items-center gap-2 px-3 py-1.5 rounded-full"
-          style={{ background: style.pillBg, border: `1px solid ${style.pillBorder}` }}
-        >
-          <span
-            aria-hidden
-            className="inline-block w-1.5 h-1.5 rounded-full"
-            style={{ background: style.dot }}
-          />
-          <span
-            className="text-[12px] uppercase tracking-[0.18em] font-bold"
-            style={{ color: style.text }}
-          >
-            {style.label}
-          </span>
-        </div>
+        {/* Tier label pill removed (2026-04-23) — the qualification banner
+            and the score itself are the signal. No "GEM Select / Very
+            Promising / Shows Potential" tag here. */}
       </div>
       <div className="flex items-baseline gap-2 mb-3">
         <span

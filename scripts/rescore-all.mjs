@@ -62,7 +62,12 @@ const DRY = process.argv.includes('--dry') || process.argv.includes('--dry-run')
 // page with USE_PENDING_EVALS=1) reads from pending. Lets us stage a prompt
 // change on a handful of evals without touching any writer's live report.
 const PREVIEW = process.argv.includes('--preview')
-const USE_CACHE = !process.argv.includes('--no-cache')
+// --preview implies --no-cache. Cache files are keyed on submission_id, so a
+// stale entry from a previous prompt version would silently get re-served and
+// written into pending tagged with the new model name — exactly the bug we
+// hit on 2026-04-23 where 5/6 v5.3 previews were actually v5.2 cache hits.
+// Live rescores can still opt into cache (it's the default).
+const USE_CACHE = PREVIEW ? false : !process.argv.includes('--no-cache')
 const START_FROM = parseInt(
   (process.argv.find((a) => a.startsWith('--start-from=')) || '=0').split('=')[1]
 ) || 0
@@ -179,6 +184,58 @@ if (sanity.length < 5000 || sanity.includes('${')) {
     `Prompt extraction failed sanity check (len=${sanity.length}, contains \${: ${sanity.includes('${')})`
   )
   process.exit(1)
+}
+
+// ── Run-receipt directory ──────────────────────────────────────────
+// Every eval call writes a receipt: prompt hash, v5.3 marker check,
+// full system prompt, full GPT response, lead_characters summary, and
+// timestamp. This is the auditable proof that an eval ran with the
+// expected prompt — no more "did the new prompt actually run?" guessing.
+import crypto from 'crypto'
+const RUN_TS = new Date().toISOString().replace(/[:.]/g, '-')
+const RUN_DIR = path.join(process.cwd(), 'data', 'rescore-runs', RUN_TS)
+fsSync.mkdirSync(RUN_DIR, { recursive: true })
+const PROMPT_HASH = crypto.createHash('sha256').update(sanity).digest('hex').slice(0, 12)
+const V53_MARKER_PRESENT =
+  sanity.includes('There is **no upper limit**') &&
+  sanity.includes('Same character across time / ages')
+console.log(`Prompt hash: ${PROMPT_HASH}`)
+console.log(`v5.3 markers: ${V53_MARKER_PRESENT ? 'PRESENT ✓' : 'MISSING ✗'}`)
+console.log(`Run receipts: data/rescore-runs/${RUN_TS}/`)
+if (!V53_MARKER_PRESENT) {
+  console.error('ERROR: prompt does not contain the v5.3 markers — refusing to run')
+  process.exit(1)
+}
+
+function writeReceipt(submissionId, evalId, title, declaredFormat, systemPrompt, evaluation, costInfo, status) {
+  const leads = evaluation?.lead_characters || []
+  const receipt = {
+    timestamp: new Date().toISOString(),
+    submission_id: submissionId,
+    eval_id: evalId,
+    title,
+    declared_format: declaredFormat,
+    prompt_hash: PROMPT_HASH,
+    prompt_v53_markers_present: V53_MARKER_PRESENT,
+    prompt_length_chars: systemPrompt.length,
+    prompt_first_200: systemPrompt.slice(0, 200),
+    prompt_last_200: systemPrompt.slice(-200),
+    lead_characters_count: leads.length,
+    lead_characters_summary: leads.map((c) => ({
+      name: c.name,
+      role_type: c.role_type,
+      demographics: c.demographics,
+    })),
+    positioning_hook: evaluation?.positioning_hook,
+    cost_usd: costInfo?.cost,
+    input_tokens: costInfo?.inputTokens,
+    output_tokens: costInfo?.outputTokens,
+    status,
+  }
+  fsSync.writeFileSync(
+    path.join(RUN_DIR, `${submissionId}.json`),
+    JSON.stringify(receipt, null, 2)
+  )
 }
 
 // ── Cache ──────────────────────────────────────────────────────────
@@ -444,6 +501,7 @@ async function processOne(sub, absoluteIdx) {
         return
       }
 
+      const systemPromptUsed = buildPrompt(declaredFormat)
       const { evaluation, inputTokens, outputTokens, cost } = await evaluateScript(
         scriptText,
         declaredFormat
@@ -451,6 +509,7 @@ async function processOne(sub, absoluteIdx) {
       const composite = calcWeighted(evaluation.scores)
       if (composite == null) {
         log('  ⚠ Composite calc failed (bad scores payload)')
+        writeReceipt(sub.id, sub.eval_id, title, declaredFormat, systemPromptUsed, evaluation, { inputTokens, outputTokens, cost }, 'failed:bad_scores')
         failed++
         console.log(logs.join('\n'))
         return
@@ -458,23 +517,20 @@ async function processOne(sub, absoluteIdx) {
       const tier = calcTier(composite)
       totalCost += cost
 
-      // Guard: don't persist an eval whose lead_characters is empty or
-      // entirely "Supporting" (retry-once already tried the protagonist nudge;
-      // if we're here the model refused twice — keep the old eval rather
-      // than overwrite with a broken one).
+      // Surface lead_characters health in the log but DO NOT skip the write.
+      // We want to see the actual model output in the preview UI — silently
+      // dropping a failure means we can't diagnose it.
       const leads = evaluation?.lead_characters
+      let leadStatus = 'ok'
       if (leadsEmpty(leads)) {
-        log('  ⚠ Empty lead_characters after retry — skipping to protect report UI')
-        failed++
-        console.log(logs.join('\n'))
-        return
+        log('  ⚠ lead_characters is empty (writing anyway for inspection)')
+        leadStatus = 'empty'
+      } else if (leadsOnlySupporting(leads)) {
+        log('  ⚠ lead_characters has no Lead role (writing anyway for inspection)')
+        leadStatus = 'only_supporting'
       }
-      if (leadsOnlySupporting(leads)) {
-        log('  ⚠ Only-Supporting lead_characters after retry — skipping to protect report UI')
-        failed++
-        console.log(logs.join('\n'))
-        return
-      }
+
+      writeReceipt(sub.id, sub.eval_id, title, declaredFormat, systemPromptUsed, evaluation, { inputTokens, outputTokens, cost }, `wrote:leads_${leadStatus}`)
 
       result = {
         evaluation,
@@ -487,6 +543,7 @@ async function processOne(sub, absoluteIdx) {
       }
       saveCache(sub.id, result)
       log(`  Score: ${composite} | Tier: ${tier} | Cost: $${cost.toFixed(4)}`)
+      log(`  Leads: ${leads?.length ?? 0} (${leadStatus}) | Receipt: data/rescore-runs/${RUN_TS}/${sub.id}.json`)
     }
 
     if (DRY) {
@@ -527,7 +584,7 @@ async function processOne(sub, absoluteIdx) {
         console.log(logs.join('\n'))
         return
       }
-      log(`  ✓ Preview written → /admin/preview-v5-3/${sub.eval_id}`)
+      log(`  ✓ Preview written → /report/${sub.eval_id}?pending=1 (admin-only)`)
       success++
       console.log(logs.join('\n'))
       return
