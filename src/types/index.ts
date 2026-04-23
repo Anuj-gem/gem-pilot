@@ -388,11 +388,12 @@ export interface ScriptSubmission {
   filename: string;
   file_url: string | null;
   file_size: number | null;
-  status: "pending" | "processing" | "completed" | "failed";
+  status: "pending" | "processing" | "completed" | "failed" | "awaiting_pdf";
   is_public: boolean;
   error_message: string | null;
   created_at: string;
   expires_at: string | null;
+  declared_format: "Feature film" | "Series" | null;
   // joined
   profiles?: { full_name: string; avatar_url: string | null };
   script_evaluations?: ScriptEvaluation[];
