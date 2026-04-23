@@ -389,8 +389,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   See the full breakdown in the Development tab.
                 </p>
               </div>
-              <div className="shrink-0 w-full sm:w-auto flex justify-center">
+              <div className="shrink-0 w-full sm:w-auto flex flex-col items-stretch sm:items-start gap-2.5">
                 <LockedReportUpgrade evaluationId={id} />
+                {/* Tight reasons-to-click anchored to the CTA so the writer
+                    knows what the $20 actually unlocks: the full report
+                    they're staring at, Discover publishing, and unlimited
+                    re-evals on future drafts. */}
+                <ul className="text-[12px] text-[var(--gem-gray-300)] m-0 p-0 list-none space-y-1 text-center sm:text-left">
+                  <li>
+                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
+                    Unlock your full report
+                  </li>
+                  <li>
+                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
+                    Publish to Discover
+                  </li>
+                  <li>
+                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
+                    Unlimited revisions
+                  </li>
+                </ul>
               </div>
             </div>
           )

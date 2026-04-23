@@ -154,7 +154,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           </button>
         )}
 
-        <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4 pr-24">
+        <h1 className="text-[28px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-2 sm:mb-4 pr-20 sm:pr-24">
           {initial.title}
         </h1>
 
@@ -162,7 +162,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
             Full profile UI lands later; this is just to get the writer's name
             on the report for producers and reps viewing the page. */}
         {authorName && authorName.trim().length > 0 && (
-          <p className="text-[15px] text-[var(--gem-gray-400)] -mt-2 mb-5 m-0">
+          <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-400)] -mt-1 mb-3 sm:-mt-2 sm:mb-5 m-0">
             By <span className="text-[var(--gem-gray-200)]">{authorName}</span>
           </p>
         )}
@@ -190,7 +190,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           </Link>
         )}
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[var(--gem-gray-300)] mb-10">
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-5 sm:mb-10">
           {initial.format && <span>{initial.format}</span>}
           {initial.genre_primary && (
             <>
@@ -229,7 +229,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
 
         {initial.logline && (
           <div
-            className="relative rounded-2xl p-8 sm:p-10 mb-12"
+            className="relative rounded-2xl p-5 sm:p-10 mb-6 sm:mb-12"
             style={{
               background: 'linear-gradient(135deg, rgba(200,164,92,0.10), transparent 70%)',
               border: '1px solid rgba(200,164,92,0.25)',
@@ -237,16 +237,16 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           >
             <div
               aria-hidden
-              className="absolute left-0 top-7 bottom-7 rounded-r"
-              style={{ width: 5, background: 'var(--gem-gold)' }}
+              className="absolute left-0 top-5 bottom-5 sm:top-7 sm:bottom-7 rounded-r"
+              style={{ width: 4, background: 'var(--gem-gold)' }}
             />
             <div
-              className="text-[14px] uppercase tracking-[0.22em] font-bold mb-4"
+              className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-bold mb-2.5 sm:mb-4"
               style={{ color: 'var(--gem-gold)' }}
             >
               Headline
             </div>
-            <p className="text-[26px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-medium m-0">
+            <p className="text-[19px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.35] font-medium m-0">
               {initial.logline}
             </p>
           </div>
