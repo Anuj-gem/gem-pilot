@@ -36,6 +36,9 @@ import {
 
 interface Props {
   submissionId: string
+  /** Evaluation id — used to route writers back to their report after a
+   *  successful Stripe subscribe (the Pro gate). */
+  evaluationId?: string
   title: string
   initialPrivacy: ReportPrivacy | null
   initialContactEnabled: boolean
@@ -47,6 +50,7 @@ interface Props {
 
 export function PublishPreviewModal({
   submissionId,
+  evaluationId,
   title,
   initialPrivacy,
   initialContactEnabled,
@@ -93,9 +97,32 @@ export function PublishPreviewModal({
     })
   }
 
-  const openUpgrade = () => {
+  // Direct-to-Stripe upgrade — skips the intermediate SubscribeGate modal.
+  // Per Anuj's call: hitting "Go Pro" should go straight to checkout,
+  // not pop another modal that the writer has to click through.
+  const openUpgrade = async () => {
     try { trackUpgradePromptShown('privacy_modal') } catch {}
-    window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        // Return them to this report after a successful subscribe.
+        body: JSON.stringify({ redirect_report: evaluationId ?? null }),
+      })
+      const j = await res.json()
+      if (j.url) {
+        window.location.href = j.url
+      } else {
+        // Fall back to the modal if something's off with checkout so we
+        // don't leave the writer with a dead button.
+        window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+        setSubmitting(false)
+      }
+    } catch {
+      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+      setSubmitting(false)
+    }
   }
 
   const commit = async () => {
@@ -160,18 +187,18 @@ export function PublishPreviewModal({
   }
 
   const ctaLabel = !isSubscribed
-    ? 'Go Pro to publish'
+    ? 'Go Pro — $20/mo'
     : isAlreadyPublished
       ? 'Save changes'
-      : 'Publish to Discover'
+      : 'Publish to Industry'
 
   const headerEyebrow = isAlreadyPublished
-    ? 'Privacy settings'
-    : 'Before you publish'
+    ? 'Industry visibility'
+    : 'Publish to Industry'
 
   const headerTitle = isAlreadyPublished
-    ? `Control what visitors see on ${title || 'your report'}`
-    : `Choose what visitors see on ${title || 'your report'}`
+    ? `Control what industry partners see on ${title || 'your report'}`
+    : `Choose what industry partners see on ${title || 'your report'}`
 
   return (
     <div
@@ -201,10 +228,20 @@ export function PublishPreviewModal({
         </div>
 
         <div className="px-6 py-5">
-          <p className="text-[14px] text-[var(--gem-gray-300)] leading-[1.6] m-0 mb-5 max-w-[60ch]">
-            {isAlreadyPublished
-              ? `Changes save live — visitors on Discover see the update immediately. Private sections stay completely hidden (not blurred).`
-              : `You're in the driver seat. Pick a starting point, then fine-tune if you want. Private sections stay completely hidden from visitors (not blurred).`}
+          <p className="text-[14px] text-[var(--gem-gray-300)] leading-[1.6] m-0 mb-5 max-w-[62ch]">
+            Industry partners who use GEM — producers, agents, dev execs — can
+            find your script on the{' '}
+            <a
+              href="/discover"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              style={{ color: 'var(--gem-accent)' }}
+            >
+              Discover page
+            </a>
+            . You decide what they see. Private sections are hidden completely — not blurred.
+            {isAlreadyPublished && ' Changes save live.'}
           </p>
 
           {/* Preset radio options */}
@@ -338,10 +375,10 @@ export function PublishPreviewModal({
             <Shield size={16} className="flex-shrink-0 text-[var(--gem-gray-500)]" />
             <div className="flex-1 min-w-0">
               <p className="text-[13px] font-semibold text-[var(--gem-gray-50)] m-0">
-                Let producers request to contact you
+                Let industry partners contact you directly
               </p>
               <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-0.5 leading-snug">
-                Routes through Anuj — you approve every connection before details are shared.
+                Messages land in your email inbox.
               </p>
             </div>
             <Switch
@@ -364,8 +401,7 @@ export function PublishPreviewModal({
             >
               <Lock size={14} className="flex-shrink-0 mt-0.5 text-[var(--gem-accent)]" />
               <p className="text-[12.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
-                <strong className="font-semibold">Publishing to Discover is a Pro feature.</strong>{' '}
-                Go Pro to publish this snapshot and let producers find your work.
+                Publishing to Industry is a Pro feature. Go Pro to let industry partners find this script.
               </p>
             </div>
           )}

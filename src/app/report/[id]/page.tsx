@@ -310,6 +310,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           <div className="flex items-center gap-3 flex-wrap mb-6">
             <VisibilityToggle
               submissionId={submission.id}
+              evaluationId={id}
               initialPublic={submission.is_public ?? false}
               initialPrivacy={privacy}
               initialContactEnabled={contactEnabled}

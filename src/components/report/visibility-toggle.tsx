@@ -19,6 +19,7 @@ import { matchPreset, PRESETS, type ReportPrivacy } from '@/lib/report-privacy'
 
 interface VisibilityToggleProps {
   submissionId: string
+  evaluationId?: string
   initialPublic: boolean
   initialPrivacy: ReportPrivacy | null
   initialContactEnabled: boolean
@@ -29,6 +30,7 @@ interface VisibilityToggleProps {
 
 export function VisibilityToggle({
   submissionId,
+  evaluationId,
   initialPublic,
   initialPrivacy,
   initialContactEnabled,
@@ -68,14 +70,15 @@ export function VisibilityToggle({
       >
         {isPublic ? <Eye size={14} /> : <EyeOff size={14} />}
         {isPublic
-          ? `On Discover · ${presetLabel}`
+          ? `Published · ${presetLabel}`
           : isSubscribed
-            ? 'Publish to Discover'
-            : 'Publish to Discover — Pro'}
+            ? 'Publish to Industry'
+            : 'Publish to Industry — Pro'}
       </button>
       {showModal && (
         <PublishPreviewModal
           submissionId={submissionId}
+          evaluationId={evaluationId}
           title={title}
           initialPrivacy={privacy}
           initialContactEnabled={initialContactEnabled}
