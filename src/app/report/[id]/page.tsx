@@ -1,13 +1,37 @@
-// v5.2 + granular privacy (2026-04-23).
+// Unified single-page report (2026-04-23). No tabs.
 //
-// Viewer paths:
-//   - Owner / admin: full report (tabs, PrivacyPanel, inline privacy pills).
-//     The writer is in the driver seat — they pick presets or per-section
-//     overrides and see what visitors will see via the publish-preview modal.
-//   - Non-owner (signed in or not): privacy-filtered single-page view. Only
-//     sections the writer marked public render. Private sections are HIDDEN
-//     (not blurred). A single "Contact writer" card at the bottom routes
-//     inbound requests through Anuj.
+// Every viewer — writer (free or Pro), visitor, admin — sees the same
+// layout in the same order:
+//
+//   1. Top card (title + headline)
+//   2. Commercial Potential Score
+//   3. What's Working
+//   4. Sharpest Lever
+//   5. Production Signal
+//   6. Lead Characters
+//   7. Package Angles
+//   8. Production Planning Details
+//   9. Development Priorities
+//  10. Narrative Breakdown
+//
+// Two gating layers on top:
+//
+//   A. Paywall (existing). Free-tier writers see their OWN report with
+//      deep-dive body content blurred. Admin and Pro writers see crisp.
+//   B. Privacy (new). Non-owners see only the sections the writer has
+//      marked public — private sections are hidden entirely (no blur).
+//      The owner's privacy panel controls this.
+//
+// Writer experience:
+//   - Free, unpublished: sees full new layout with paywall blur.
+//     Privacy panel visible — acts as a preview of what they'd get to
+//     control, with "Go Pro to publish" CTA.
+//   - Pro, unpublished: full layout crisp. Privacy panel lets them
+//     pre-tune their sharing posture + hit publish.
+//   - Pro, published: full layout crisp. Privacy panel fully interactive.
+//
+// Visitor experience: only public sections render, single "Reach out to
+// {writer}" card at the bottom. No blur anywhere — clean writer-curated snapshot.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
@@ -20,21 +44,18 @@ import { InlineSignup } from '@/components/report/inline-signup'
 import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
-import { ReportTabs } from '@/components/report/report-tabs'
 import { ShareSection } from '@/components/report/share-section'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { SubmitRevisionButton } from '@/components/report/submit-revision-button'
 import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
-import { DetailsView } from '@/components/report/details-view'
 import { PrivacyPanel } from '@/components/report/privacy-panel'
 import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { ContactWriter } from '@/components/report/contact-writer'
 import { Section, Collapsible, FactList, Fact } from '@/components/report/v5-components'
-import { DIMENSION_META } from '@/types'
 import { EditableTopCard } from '@/components/report/editable-top-card'
-import { normalizeEvaluation, calculateWeightedScore } from '@/types'
+import { normalizeEvaluation, calculateWeightedScore, DIMENSION_META } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
 import { scoreDesignation, DESIGNATION_STYLE, DESIGNATION_COPY } from '@/lib/designation'
@@ -141,12 +162,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
   const writerName = submission.profiles?.full_name ?? 'the writer'
 
-  // Privacy resolution — normalize whatever's on the row (legacy rows may be
-  // empty; the resolver falls through to DEFAULT_VISIBILITY).
   const privacy: ReportPrivacy = normalizePrivacy(submission.report_privacy)
-  const contactEnabled = submission.contact_enabled !== false // default true
+  const contactEnabled = submission.contact_enabled !== false
   const needsPrivacyReview = submission.privacy_review_needed === true
-  const reviewCount = needsPrivacyReview ? 1 : 0
 
   const { whatsSpecial } = normalizeEvaluation(report)
 
@@ -176,8 +194,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
   const locked = !ownerIsSubscribed
+  // Paywall blur: free-tier owner sees body content blurred on deep dives.
+  // Admin never blurs. Non-owners don't use this axis — privacy gate handles
+  // their visibility.
+  const applyPaywallBlur = locked && isOwner && !isAdmin
 
-  // First-eval gate (unchanged).
   let lockedAfterFreeEval = false
   if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
     const { data: firstSub } = await serviceClient
@@ -190,38 +211,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .single()
     if (firstSub?.id !== submission.id) {
       lockedAfterFreeEval = true
-    }
-  }
-
-  // Portfolio rank (owner only) — unchanged.
-  let portfolioRank: number | null = null
-  let portfolioTotal = 0
-  if (isOwner && submission.user_id) {
-    const { data: userSubs } = await serviceClient
-      .from('script_submissions')
-      .select('id')
-      .eq('user_id', submission.user_id)
-      .eq('status', 'completed')
-
-    if (userSubs && userSubs.length > 0) {
-      const subIds = userSubs.map((s: { id: string }) => s.id)
-      const { data: userEvals } = await serviceClient
-        .from('script_evaluations')
-        .select('id, weighted_score, created_at')
-        .in('submission_id', subIds)
-
-      if (userEvals && userEvals.length > 0) {
-        const sorted = [...userEvals].sort((a, b) => {
-          const ds = (b.weighted_score ?? 0) - (a.weighted_score ?? 0)
-          if (ds !== 0) return ds
-          return new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
-        })
-        const idx = sorted.findIndex((e) => e.id === id)
-        if (idx >= 0) {
-          portfolioRank = idx + 1
-          portfolioTotal = sorted.length
-        }
-      }
     }
   }
 
@@ -258,12 +247,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     commercialScore = null
   }
 
-  const blurStyle: React.CSSProperties = {
-    filter: 'blur(5px)',
-    userSelect: 'none',
-  }
+  const designation = scoreDesignation(commercialScore)
 
-  // Locked-after-free-eval screen (unchanged — fast early return).
+  // Early return for free-tier 2nd+ eval — dump them on the upgrade screen
+  // instead of letting them scroll a report they won't be able to unlock.
   if (lockedAfterFreeEval) {
     return (
       <>
@@ -276,412 +263,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     )
   }
 
-  // ───────────── NON-OWNER PATH ──────────────
-  // Privacy-filtered single-page render. Only public sections render.
-  // Private sections are hidden entirely; visitor is routed to the
-  // contact card at the bottom. This replaces the old tab split + blur
-  // approach, which Anuj deprecated because blur "pisses people off"
-  // and the writer can't project a clean public-facing snapshot.
-  if (!isOwnerOrAdmin) {
-    const hiddenCount = SECTION_KEYS.filter(
-      (k) => resolveVisibility(privacy, k) === 'private'
-    ).length
-    const publicCount = publicSectionCount(privacy)
-    const anyPublic = publicCount > 0
+  // Count hidden sections (for the visitor contact card copy).
+  const hiddenSectionCount = isOwnerOrAdmin
+    ? 0
+    : SECTION_KEYS.filter((k) => resolveVisibility(privacy, k) === 'private').length
+  const publicCount = publicSectionCount(privacy)
+  const anyPublic = publicCount > 0
 
-    return (
-      <>
-        <Nav />
-        <ReportAnalytics evaluationId={id} isBlurred={false} />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24">
-          {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
-          {isAnonymousSubmission && (
-            <div id="inline-signup" className="rounded-xl transition-shadow duration-500 mb-8">
-              <InlineSignup submissionId={submission.id} evaluationId={id} />
-            </div>
-          )}
-
-          {/* Lightweight "shared snapshot" banner so visitors understand
-              they're looking at a writer-curated view — not the full report. */}
-          {anyPublic && (
-            <div
-              className="flex items-start gap-3 p-4 rounded-xl mb-6"
-              style={{
-                background: 'rgba(124,58,237,0.06)',
-                border: '1px solid rgba(124,58,237,0.22)',
-              }}
-            >
-              <div
-                className="flex-shrink-0 w-8 h-8 rounded-full grid place-items-center text-white text-sm"
-                style={{ background: 'var(--gem-accent)' }}
-              >
-                <span className="text-[12px] font-bold">i</span>
-              </div>
-              <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
-                <strong className="text-[var(--gem-gray-50)] font-semibold">
-                  {writerName}&apos;s public snapshot.
-                </strong>{' '}
-                They choose what&apos;s visible here. The full report stays with them — reach out below if you want to go deeper.
-              </p>
-            </div>
-          )}
-
-          {/* HEADLINE */}
-          <SectionGate section="headline" privacy={privacy} isOwnerOrAdmin={false}>
-            <EditableTopCard
-              evaluationId={id}
-              initial={topCard}
-              isOwner={false}
-              hasEdits={topCardHasEdits}
-              postedAt={submission.created_at ?? null}
-              authorName={
-                isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-              }
-              isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
-            />
-          </SectionGate>
-
-          {/* SCORE */}
-          <SectionGate section="score" privacy={privacy} isOwnerOrAdmin={false}>
-            {typeof commercialScore === 'number' && (
-              <PublicScoreCard score={commercialScore} />
-            )}
-          </SectionGate>
-
-          {/* WHATS WORKING */}
-          <SectionGate section="whats_working" privacy={privacy} isOwnerOrAdmin={false}>
-            {allStrengths.length > 0 && (
-              <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
-                <div className="space-y-3">
-                  {allStrengths.map((s, i) => (
-                    <Collapsible key={i} number={i + 1} title={s.dimension_or_area}>
-                      <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
-                        {s.what_it_means}
-                      </p>
-                      {s.evidence && (
-                        <div
-                          className="rounded-lg p-5"
-                          style={{
-                            background: 'rgba(200,164,92,0.07)',
-                            borderLeft: '3px solid var(--gem-gold)',
-                          }}
-                        >
-                          <p
-                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                            style={{ color: 'var(--gem-gold)' }}
-                          >
-                            Evidence from the script
-                          </p>
-                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                            {s.evidence}
-                          </p>
-                        </div>
-                      )}
-                    </Collapsible>
-                  ))}
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* SHARPEST LEVER — primary_lever considerations + craft note */}
-          <SectionGate section="sharpest_lever" privacy={privacy} isOwnerOrAdmin={false}>
-            <PublicSharpestLever
-              considerations={considerations}
-              craftNote={craftNote}
-            />
-          </SectionGate>
-
-          {/* PRODUCTION SIGNAL — at-a-glance risk pills teaser */}
-          <SectionGate section="production_signal" privacy={privacy} isOwnerOrAdmin={false}>
-            {production?.risk_rubric && (
-              <Section label="Production signal" subtitle="A two-second read on how this would actually get made.">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {production.risk_rubric.cost && (
-                    <PublicRiskTile label="Production cost" axis={production.risk_rubric.cost} />
-                  )}
-                  {production.risk_rubric.cast && (
-                    <PublicRiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
-                  )}
-                  {production.risk_rubric.content && (
-                    <PublicRiskTile label="Content maturity" axis={production.risk_rubric.content} />
-                  )}
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* DEEP DIVE: CHARACTERS */}
-          <SectionGate section="deep_dive_characters" privacy={privacy} isOwnerOrAdmin={false}>
-            {leadCharacters.length > 0 && (
-              <Section
-                label="Lead characters"
-                subtitle="The parts inside this script and why an actor would chase them."
-              >
-                <div className="space-y-3">
-                  {leadCharacters.map((c, i) => (
-                    <Collapsible
-                      key={i}
-                      title={c.name}
-                      meta={`${c.role_type} · ${c.demographics}`}
-                    >
-                      <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
-                        {c.hook}
-                      </p>
-                      <div
-                        className="rounded-lg p-5"
-                        style={{
-                          background: 'rgba(5,150,105,0.07)',
-                          border: '1px solid rgba(5,150,105,0.20)',
-                        }}
-                      >
-                        <p
-                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                          style={{ color: '#059669' }}
-                        >
-                          Why an actor would want this part
-                        </p>
-                        <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                          {c.why_actor_wants_this}
-                        </p>
-                      </div>
-                    </Collapsible>
-                  ))}
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* DEEP DIVE: PACKAGE ANGLES */}
-          <SectionGate section="deep_dive_package" privacy={privacy} isOwnerOrAdmin={false}>
-            {packageAngles && (
-              <Section label="Package angles" subtitle="Who would direct it, and who would buy it.">
-                <div className="space-y-3">
-                  <Collapsible title="Why a director wants this" accent="#059669">
-                    <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
-                      {packageAngles.director_appeal.hook}
-                    </p>
-                    <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
-                      {packageAngles.director_appeal.detail}
-                    </p>
-                  </Collapsible>
-                  <Collapsible
-                    title="Why a buyer wants this"
-                    meta={packageAngles.buyer_appeal.tier}
-                    accent="#059669"
-                  >
-                    <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
-                      {packageAngles.buyer_appeal.lane}
-                    </p>
-                    <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
-                      {packageAngles.buyer_appeal.detail}
-                    </p>
-                  </Collapsible>
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* DEEP DIVE: PRODUCTION PLANNING DETAILS
-              Cast / Locations / Technical / Platform / Rights — same data
-              layout as owner's Details tab, just crisp (no blur, no upgrade
-              CTA, no privacy note). */}
-          <SectionGate section="deep_dive_production" privacy={privacy} isOwnerOrAdmin={false}>
-            {production && (
-              <Section
-                label="Production planning details"
-                subtitle="Everything the script tells us about how it would actually get made."
-              >
-                <div className="space-y-3">
-                  <Collapsible
-                    title="Cast"
-                    meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
-                  >
-                    <FactList>
-                      <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
-                      <Fact k="Leads" v={production.cast?.leads} />
-                      {(production.cast?.series_regulars ?? 0) > 0 && (
-                        <Fact k="Series regulars" v={production.cast?.series_regulars} />
-                      )}
-                      {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
-                      {production.cast?.casting_challenges?.length ? (
-                        <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
-                      ) : null}
-                    </FactList>
-                  </Collapsible>
-                  <Collapsible
-                    title="Locations & Scale"
-                    meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
-                  >
-                    <FactList>
-                      <Fact k="Distinct locations" v={production.locations?.distinct_count} />
-                      <Fact
-                        k="Int / Ext"
-                        v={
-                          production.locations?.interior_exterior_ratio ??
-                          production.locations?.interior_exterior_mix
-                        }
-                      />
-                      <Fact k="Era" v={production.locations?.period_or_contemporary} />
-                      {production.locations?.expensive_flags?.length ? (
-                        <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
-                      ) : null}
-                    </FactList>
-                  </Collapsible>
-                  <Collapsible
-                    title="Technical"
-                    meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
-                  >
-                    <FactList>
-                      <Fact
-                        k="VFX"
-                        v={
-                          (production.technical?.vfx_level ?? '') +
-                          (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
-                        }
-                      />
-                      <Fact
-                        k="Stunts"
-                        v={production.technical?.stunts_level ?? production.technical?.stunts}
-                      />
-                      {production.technical?.sfx_needs && (
-                        <Fact k="SFX" v={production.technical.sfx_needs} />
-                      )}
-                      {production.technical?.night_shoots && (
-                        <Fact k="Night shoots" v={production.technical.night_shoots} />
-                      )}
-                      {production.technical?.animals && <Fact k="Animals" v="Yes" />}
-                    </FactList>
-                  </Collapsible>
-                  <Collapsible
-                    title="Platform & Content"
-                    meta={production.platform_fit?.recommended_lane}
-                  >
-                    <FactList>
-                      <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
-                      <Fact k="Content" v={production.platform_fit?.content_level} />
-                      {production.platform_fit?.series_engine_or_release_model && (
-                        <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
-                      )}
-                    </FactList>
-                  </Collapsible>
-                  {production.rights_flags?.length ? (
-                    <Collapsible
-                      title="Rights & Clearance"
-                      meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
-                    >
-                      <ul className="space-y-3 list-none p-0 m-0">
-                        {production.rights_flags.map((r, i) => {
-                          const text =
-                            typeof r === 'string'
-                              ? r
-                              : `${r.type}: ${r.detail}`
-                          return (
-                            <li
-                              key={i}
-                              className="flex gap-3 text-[16px] text-[var(--gem-gray-100)] leading-[1.55]"
-                            >
-                              <span className="text-[var(--gem-gold)] flex-shrink-0">•</span>
-                              <span>{text}</span>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </Collapsible>
-                  ) : null}
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* DEEP DIVE: DEVELOPMENT PRIORITIES (secondary) — non-primary-lever
-              considerations. Primary lever is already surfaced in sharpest_lever
-              above, so we filter it out to avoid duplication. */}
-          <SectionGate section="deep_dive_development" privacy={privacy} isOwnerOrAdmin={false}>
-            {considerations.filter((c) => c.is_primary_lever !== true).length > 0 && (
-              <Section
-                label="Development priorities"
-                subtitle="Additional development notes — positioning, directions a collaborator might lean on in conversation."
-              >
-                <div className="space-y-3">
-                  {considerations
-                    .filter((c) => c.is_primary_lever !== true)
-                    .map((c, i) => (
-                      <Collapsible key={i} title={c.area}>
-                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
-                          {c.detail}
-                        </p>
-                      </Collapsible>
-                    ))}
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* DEEP DIVE: NARRATIVE BREAKDOWN — 10 dim scores + reasoning. */}
-          <SectionGate section="deep_dive_narrative" privacy={privacy} isOwnerOrAdmin={false}>
-            {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-              <Section
-                label="Narrative breakdown"
-                subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
-              >
-                <div className="space-y-3">
-                  {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
-                    const s = scores?.[dimId]
-                    if (typeof s?.score !== 'number') return null
-                    const meta = DIMENSION_META[dimId]
-                    return (
-                      <PublicDimensionRow
-                        key={dimId}
-                        label={meta.label}
-                        score={s.score}
-                        reasoning={s.reasoning}
-                      />
-                    )
-                  })}
-                </div>
-              </Section>
-            )}
-          </SectionGate>
-
-          {/* Single CTA at the bottom. */}
-          {!isAnonymousSubmission && (
-            <PublicContactCard
-              evaluationId={id}
-              writerName={writerName}
-              hiddenSectionCount={hiddenCount}
-              contactEnabled={contactEnabled}
-              isLoggedIn={!!user}
-            />
-          )}
-
-          {/* If every section is private, the page would render empty —
-              show a minimal "private report" card so the visitor knows it's
-              intentional, not broken. */}
-          {!anyPublic && (
-            <div
-              className="rounded-xl p-6 mt-6"
-              style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid var(--gem-gray-700)',
-              }}
-            >
-              <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-[1.6]">
-                {writerName} has kept this report private. Request a connection
-                below if you&apos;d like to be in touch about this script.
-              </p>
-            </div>
-          )}
-        </div>
-      </>
-    )
+  const blurStyle: React.CSSProperties = {
+    filter: 'blur(5px)',
+    userSelect: 'none',
   }
+  const bodyBlur = applyPaywallBlur ? blurStyle : undefined
 
-  // ─────────── OWNER / ADMIN PATH ────────────
-  // Existing tab structure (familiar to writers) with:
-  //   - PrivacyPanel above the content (collapsible drawer when is_public)
-  //   - DetailsView unchanged for admin/owner (sees everything crisp)
-  //   - Privacy review banner at top if migration flagged this report
   return (
     <>
       <Nav />
@@ -689,87 +283,139 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
-      <ReportAnalytics evaluationId={id} isBlurred={false} />
+      <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24">
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
-        {!isAnonymousSubmission && (
+        {isAnonymousSubmission && (
+          <div id="inline-signup" className="rounded-xl transition-shadow duration-500 mb-8">
+            <InlineSignup submissionId={submission.id} evaluationId={id} />
+          </div>
+        )}
+
+        {/* Owner action row — publish toggle, like, submit revision. */}
+        {!isAnonymousSubmission && isOwner && (
           <div className="flex items-center gap-3 flex-wrap mb-6">
-            {isOwner && (
-              <VisibilityToggle
-                submissionId={submission.id}
-                initialPublic={submission.is_public ?? false}
-                title={submission.title}
-                score={eval_?.weighted_score ?? undefined}
-                isSubscribed={ownerIsSubscribed}
-              />
-            )}
+            <VisibilityToggle
+              submissionId={submission.id}
+              initialPublic={submission.is_public ?? false}
+              title={submission.title}
+              score={eval_?.weighted_score ?? undefined}
+              isSubscribed={ownerIsSubscribed}
+            />
             <LikeButton
               evaluationId={id}
               initialLiked={userLiked}
               initialCount={likeCount ?? 0}
               loggedIn={!!user}
             />
-            {isOwner && (
-              <SubmitRevisionButton
-                isSubscribed={ownerIsSubscribed}
-                declaredFormat={submission.declared_format ?? null}
-              />
-            )}
+            <SubmitRevisionButton
+              isSubscribed={ownerIsSubscribed}
+              declaredFormat={submission.declared_format ?? null}
+            />
           </div>
         )}
 
-        {/* Writer's privacy controls — appear whenever the report is public
-            (or was flagged for review) so the owner always has access to
-            their driver-seat controls. */}
-        {isOwner && (submission.is_public || needsPrivacyReview) && (
+        {/* Non-owner: just the like button on its own row. */}
+        {!isAnonymousSubmission && !isOwner && !isAdmin && (
+          <div className="flex items-center gap-3 flex-wrap mb-6">
+            <LikeButton
+              evaluationId={id}
+              initialLiked={userLiked}
+              initialCount={likeCount ?? 0}
+              loggedIn={!!user}
+            />
+          </div>
+        )}
+
+        {/* Visitor-only snapshot banner — frames the page as a writer-curated
+            view so producers don't feel they're looking at a full dev report. */}
+        {!isOwnerOrAdmin && !isAnonymousSubmission && anyPublic && (
+          <div
+            className="flex items-start gap-3 p-4 rounded-xl mb-6"
+            style={{
+              background: 'rgba(124,58,237,0.06)',
+              border: '1px solid rgba(124,58,237,0.22)',
+            }}
+          >
+            <div
+              className="flex-shrink-0 w-8 h-8 rounded-full grid place-items-center text-white text-sm"
+              style={{ background: 'var(--gem-accent)' }}
+            >
+              <span className="text-[12px] font-bold">i</span>
+            </div>
+            <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
+              <strong className="text-[var(--gem-gray-50)] font-semibold">
+                {writerName}&apos;s public snapshot.
+              </strong>{' '}
+              They choose what&apos;s visible here. The full report stays with them — reach out below if you want to go deeper.
+            </p>
+          </div>
+        )}
+
+        {/* Owner privacy review banner — shown once for writers whose reports
+            got migrated to the new default privacy settings. */}
+        {isOwner && needsPrivacyReview && (
+          <div
+            className="flex items-start gap-3 p-4 rounded-xl mb-4"
+            style={{
+              background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(212,160,23,0.04))',
+              border: '1px solid rgba(124,58,237,0.28)',
+            }}
+          >
+            <div
+              className="flex-shrink-0 w-7 h-7 rounded-full grid place-items-center text-white text-[11px] font-bold mt-0.5"
+              style={{ background: 'var(--gem-accent)' }}
+            >
+              !
+            </div>
+            <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
+              We just shipped granular privacy. Your report was set to{' '}
+              <strong className="font-semibold">Balanced</strong>{' '}
+              defaults — review what visitors see below.
+            </p>
+          </div>
+        )}
+
+        {/* Owner privacy panel — always visible to the writer, regardless of
+            published state. Preview for free tier, interactive for Pro. */}
+        {isOwner && (
           <div className="mb-6">
-            {needsPrivacyReview && (
-              <div
-                className="flex items-start gap-3 p-4 rounded-xl mb-3"
-                style={{
-                  background:
-                    'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(212,160,23,0.04))',
-                  border: '1px solid rgba(124,58,237,0.28)',
-                }}
-              >
-                <div
-                  className="flex-shrink-0 w-7 h-7 rounded-full grid place-items-center text-white text-[11px] font-bold mt-0.5"
-                  style={{ background: 'var(--gem-accent)' }}
-                >
-                  !
-                </div>
-                <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
-                  We just shipped granular privacy. Your report was set to{' '}
-                  <strong className="font-semibold">Balanced</strong>{' '}
-                  defaults — review what visitors see below.
-                </p>
-              </div>
-            )}
             <PrivacyPanel
               submissionId={submission.id}
               initialPrivacy={privacy}
               initialContactEnabled={contactEnabled}
               isPublic={submission.is_public ?? false}
+              isSubscribed={ownerIsSubscribed}
             />
           </div>
         )}
 
-        <EditableTopCard
-          evaluationId={id}
-          initial={topCard}
-          isOwner={isOwner}
-          hasEdits={topCardHasEdits}
-          postedAt={submission.created_at ?? null}
-          authorName={
-            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-          }
-          isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
-        />
+        {/* HEADLINE — always public for visitors by default, owner sees it too. */}
+        <SectionGate
+          section="headline"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          <EditableTopCard
+            evaluationId={id}
+            initial={topCard}
+            isOwner={isOwner}
+            hasEdits={topCardHasEdits}
+            postedAt={submission.created_at ?? null}
+            authorName={
+              isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+            }
+            isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
+          />
+        </SectionGate>
 
+        {/* Owner-only mini score card — stays visible for free-tier writers
+            as their personal signal about the score, with upgrade CTA. Never
+            shown to visitors (the public score card above handles that). */}
         {locked && isOwner && (() => {
-          const designation = scoreDesignation(commercialScore)
           const tierStyle = designation ? DESIGNATION_STYLE[designation] : null
           const cardStyle = tierStyle
             ? { border: `1px solid ${tierStyle.border}`, background: tierStyle.bg }
@@ -813,7 +459,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </p>
                 )}
                 <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-2 leading-snug">
-                  See the full breakdown in the Development tab.
+                  Go Pro to unlock the full report below.
                 </p>
               </div>
               <div className="shrink-0 w-full sm:w-auto flex flex-col items-stretch sm:items-start gap-2.5">
@@ -837,189 +483,430 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )
         })()}
 
+        {/* Share section — owner always, visitor on a published report. */}
         {(submission.is_public || isOwner) && (
           <div className="mb-8">
             <ShareSection evaluationId={id} title={topCard.title} />
           </div>
         )}
 
-        <ReportTabs
-          showDetails={isOwner || isAdmin || submission.is_public}
-          detailsLocked={locked || (!isOwner && !isAdmin)}
-          pitch={
-            <>
-              {allStrengths.length > 0 && (
-                <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
-                  <div className="space-y-3">
-                    {allStrengths.map((s, i) => (
-                      <Collapsible
-                        key={i}
-                        number={i + 1}
-                        title={s.dimension_or_area}
-                        titleBlurred={locked && i > 0}
-                      >
-                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
-                          {s.what_it_means}
-                        </p>
-                        {s.evidence && (
-                          <div
-                            className="rounded-lg p-5"
-                            style={{
-                              background: 'rgba(200,164,92,0.07)',
-                              borderLeft: '3px solid var(--gem-gold)',
-                            }}
-                          >
-                            <p
-                              className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                              style={{ color: 'var(--gem-gold)' }}
-                            >
-                              Evidence from the script
-                            </p>
-                            <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                              {s.evidence}
-                            </p>
-                          </div>
-                        )}
-                      </Collapsible>
-                    ))}
-                  </div>
-                </Section>
-              )}
+        {/* COMMERCIAL POTENTIAL SCORE */}
+        <SectionGate
+          section="score"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {typeof commercialScore === 'number' && designation && (
+            <CommercialScoreCard score={commercialScore} designationLabel={DESIGNATION_STYLE[designation].label} tierStyle={DESIGNATION_STYLE[designation]} copyMessage={DESIGNATION_COPY[designation].message} />
+          )}
+        </SectionGate>
 
-              {leadCharacters.length > 0 && (
-                <Section
-                  label="Lead Characters"
-                  subtitle="The parts inside this script and why an actor would chase them."
-                >
-                  <div className="space-y-3">
-                    {leadCharacters.map((c, i) => (
-                      <Collapsible
-                        key={i}
-                        title={c.name}
-                        meta={`${c.role_type} · ${c.demographics}`}
+        {/* WHAT'S WORKING */}
+        <SectionGate
+          section="whats_working"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {allStrengths.length > 0 && (
+            <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
+              <div className="space-y-3">
+                {allStrengths.map((s, i) => (
+                  <Collapsible
+                    key={i}
+                    number={i + 1}
+                    title={s.dimension_or_area}
+                    titleBlurred={applyPaywallBlur && i > 0}
+                  >
+                    <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
+                      {s.what_it_means}
+                    </p>
+                    {s.evidence && (
+                      <div
+                        className="rounded-lg p-5"
+                        style={{
+                          background: 'rgba(200,164,92,0.07)',
+                          borderLeft: '3px solid var(--gem-gold)',
+                        }}
                       >
                         <p
-                          className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
-                          style={locked ? blurStyle : undefined}
+                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                          style={{ color: 'var(--gem-gold)' }}
                         >
-                          {c.hook}
+                          Evidence from the script
                         </p>
-                        <div
-                          className="rounded-lg p-5"
-                          style={{
-                            background: 'rgba(5,150,105,0.07)',
-                            border: '1px solid rgba(5,150,105,0.20)',
-                          }}
-                        >
-                          <p
-                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                            style={{ color: '#059669' }}
-                          >
-                            Why an actor would want this part
-                          </p>
-                          <p
-                            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                            style={locked ? blurStyle : undefined}
-                          >
-                            {c.why_actor_wants_this}
-                          </p>
-                        </div>
-                      </Collapsible>
-                    ))}
-                  </div>
-                </Section>
-              )}
+                        <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          {s.evidence}
+                        </p>
+                      </div>
+                    )}
+                  </Collapsible>
+                ))}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
 
-              {packageAngles && (
-                <Section
-                  label="Package Angles"
-                  subtitle="Who would direct this, and who would buy it."
-                >
-                  <div className="space-y-3">
-                    <Collapsible title="Why a director wants this" accent="#059669">
-                      <p
-                        className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0"
-                        style={locked ? blurStyle : undefined}
-                      >
-                        {packageAngles.director_appeal.hook}
-                      </p>
-                      {packageAngles.director_appeal.fit_profile && (
-                        <div
-                          className="rounded-lg p-5 mb-4"
-                          style={{
-                            background: 'rgba(5,150,105,0.07)',
-                            border: '1px solid rgba(5,150,105,0.20)',
-                          }}
-                        >
-                          <p
-                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                            style={{ color: '#059669' }}
-                          >
-                            Director fit profile
-                          </p>
-                          <p
-                            className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                            style={locked ? blurStyle : undefined}
-                          >
-                            {packageAngles.director_appeal.fit_profile}
-                          </p>
-                        </div>
-                      )}
-                      <p
-                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                        style={locked ? blurStyle : undefined}
-                      >
-                        {packageAngles.director_appeal.detail}
-                      </p>
-                    </Collapsible>
-                    <Collapsible
-                      title="Why a buyer wants this"
-                      meta={packageAngles.buyer_appeal.tier}
-                      accent="#059669"
+        {/* SHARPEST LEVER — primary lever + craft note */}
+        <SectionGate
+          section="sharpest_lever"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          <SharpestLever considerations={considerations} craftNote={craftNote} />
+        </SectionGate>
+
+        {/* PRODUCTION SIGNAL — at-a-glance risk pills */}
+        <SectionGate
+          section="production_signal"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {production?.risk_rubric && (
+            <Section label="Production signal" subtitle="A two-second read on how this would actually get made.">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                aria-hidden={applyPaywallBlur ? true : undefined}
+              >
+                {production.risk_rubric.cost && (
+                  <RiskTile label="Production cost" axis={production.risk_rubric.cost} />
+                )}
+                {production.risk_rubric.cast && (
+                  <RiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
+                )}
+                {production.risk_rubric.content && (
+                  <RiskTile label="Content maturity" axis={production.risk_rubric.content} />
+                )}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
+
+        {/* LEAD CHARACTERS */}
+        <SectionGate
+          section="deep_dive_characters"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {leadCharacters.length > 0 && (
+            <Section
+              label="Lead characters"
+              subtitle="The parts inside this script and why an actor would chase them."
+            >
+              <div className="space-y-3">
+                {leadCharacters.map((c, i) => (
+                  <Collapsible
+                    key={i}
+                    title={c.name}
+                    meta={`${c.role_type} · ${c.demographics}`}
+                  >
+                    <p
+                      className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
+                      style={bodyBlur}
                     >
-                      <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
-                        {packageAngles.buyer_appeal.lane}
+                      {c.hook}
+                    </p>
+                    <div
+                      className="rounded-lg p-5"
+                      style={{
+                        background: 'rgba(5,150,105,0.07)',
+                        border: '1px solid rgba(5,150,105,0.20)',
+                      }}
+                    >
+                      <p
+                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                        style={{ color: '#059669' }}
+                      >
+                        Why an actor would want this part
                       </p>
                       <p
-                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                        style={locked ? blurStyle : undefined}
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                        style={bodyBlur}
                       >
-                        {packageAngles.buyer_appeal.detail}
+                        {c.why_actor_wants_this}
+                      </p>
+                    </div>
+                  </Collapsible>
+                ))}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
+
+        {/* PACKAGE ANGLES */}
+        <SectionGate
+          section="deep_dive_package"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {packageAngles && (
+            <Section label="Package angles" subtitle="Who would direct it, and who would buy it.">
+              <div className="space-y-3">
+                <Collapsible title="Why a director wants this" accent="#059669">
+                  <p
+                    className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0"
+                    style={bodyBlur}
+                  >
+                    {packageAngles.director_appeal.hook}
+                  </p>
+                  {packageAngles.director_appeal.fit_profile && (
+                    <div
+                      className="rounded-lg p-5 mb-4"
+                      style={{
+                        background: 'rgba(5,150,105,0.07)',
+                        border: '1px solid rgba(5,150,105,0.20)',
+                      }}
+                    >
+                      <p
+                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                        style={{ color: '#059669' }}
+                      >
+                        Director fit profile
+                      </p>
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                        style={bodyBlur}
+                      >
+                        {packageAngles.director_appeal.fit_profile}
+                      </p>
+                    </div>
+                  )}
+                  <p
+                    className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                    style={bodyBlur}
+                  >
+                    {packageAngles.director_appeal.detail}
+                  </p>
+                </Collapsible>
+                <Collapsible
+                  title="Why a buyer wants this"
+                  meta={packageAngles.buyer_appeal.tier}
+                  accent="#059669"
+                >
+                  <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
+                    {packageAngles.buyer_appeal.lane}
+                  </p>
+                  <p
+                    className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                    style={bodyBlur}
+                  >
+                    {packageAngles.buyer_appeal.detail}
+                  </p>
+                </Collapsible>
+              </div>
+            </Section>
+          )}
+        </SectionGate>
+
+        {/* PRODUCTION PLANNING DETAILS */}
+        <SectionGate
+          section="deep_dive_production"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {production && (
+            <Section
+              label="Production planning details"
+              subtitle="Everything the script tells us about how it would actually get made."
+            >
+              <div className="space-y-3">
+                <Collapsible
+                  title="Cast"
+                  meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
+                >
+                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                    <FactList>
+                      <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
+                      <Fact k="Leads" v={production.cast?.leads} />
+                      {(production.cast?.series_regulars ?? 0) > 0 && (
+                        <Fact k="Series regulars" v={production.cast?.series_regulars} />
+                      )}
+                      {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
+                      {production.cast?.casting_challenges?.length ? (
+                        <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
+                      ) : null}
+                    </FactList>
+                  </div>
+                </Collapsible>
+                <Collapsible
+                  title="Locations & Scale"
+                  meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
+                >
+                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                    <FactList>
+                      <Fact k="Distinct locations" v={production.locations?.distinct_count} />
+                      <Fact
+                        k="Int / Ext"
+                        v={
+                          production.locations?.interior_exterior_ratio ??
+                          production.locations?.interior_exterior_mix
+                        }
+                      />
+                      <Fact k="Era" v={production.locations?.period_or_contemporary} />
+                      {production.locations?.expensive_flags?.length ? (
+                        <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
+                      ) : null}
+                    </FactList>
+                  </div>
+                </Collapsible>
+                <Collapsible
+                  title="Technical"
+                  meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
+                >
+                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                    <FactList>
+                      <Fact
+                        k="VFX"
+                        v={
+                          (production.technical?.vfx_level ?? '') +
+                          (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
+                        }
+                      />
+                      <Fact
+                        k="Stunts"
+                        v={production.technical?.stunts_level ?? production.technical?.stunts}
+                      />
+                      {production.technical?.sfx_needs && (
+                        <Fact k="SFX" v={production.technical.sfx_needs} />
+                      )}
+                      {production.technical?.night_shoots && (
+                        <Fact k="Night shoots" v={production.technical.night_shoots} />
+                      )}
+                      {production.technical?.animals && <Fact k="Animals" v="Yes" />}
+                    </FactList>
+                  </div>
+                </Collapsible>
+                <Collapsible
+                  title="Platform & Content"
+                  meta={production.platform_fit?.recommended_lane}
+                >
+                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                    <FactList>
+                      <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
+                      <Fact k="Content" v={production.platform_fit?.content_level} />
+                      {production.platform_fit?.series_engine_or_release_model && (
+                        <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
+                      )}
+                    </FactList>
+                  </div>
+                </Collapsible>
+                {production.rights_flags?.length ? (
+                  <Collapsible
+                    title="Rights & Clearance"
+                    meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
+                  >
+                    <ul
+                      className="space-y-3 list-none p-0 m-0"
+                      style={bodyBlur}
+                      aria-hidden={applyPaywallBlur ? true : undefined}
+                    >
+                      {production.rights_flags.map((r, i) => {
+                        const text =
+                          typeof r === 'string'
+                            ? r
+                            : `${r.type}: ${r.detail}`
+                        return (
+                          <li
+                            key={i}
+                            className="flex gap-3 text-[16px] text-[var(--gem-gray-100)] leading-[1.55]"
+                          >
+                            <span className="text-[var(--gem-gold)] flex-shrink-0">•</span>
+                            <span>{text}</span>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </Collapsible>
+                ) : null}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
+
+        {/* DEVELOPMENT PRIORITIES — secondary considerations (primary lever is
+            surfaced in the Sharpest Lever section above). */}
+        <SectionGate
+          section="deep_dive_development"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {considerations.filter((c) => c.is_primary_lever !== true).length > 0 && (
+            <Section
+              label="Development priorities"
+              subtitle="Additional development notes — positioning, directions a collaborator might lean on in conversation."
+            >
+              <div className="space-y-3">
+                {considerations
+                  .filter((c) => c.is_primary_lever !== true)
+                  .map((c, i) => (
+                    <Collapsible
+                      key={i}
+                      title={c.area}
+                      titleBlurred={applyPaywallBlur && i > 0}
+                    >
+                      <p
+                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={bodyBlur}
+                      >
+                        {c.detail}
                       </p>
                     </Collapsible>
-                  </div>
-                </Section>
-              )}
+                  ))}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
 
-              {showUpgradeCTA && (
-                <InlineUpgradeCTA
-                  evaluationId={id}
-                  submissionCount={portfolioTotal}
-                  cta="Go Pro — $20/mo"
-                />
-              )}
-            </>
-          }
-          details={
-            <DetailsView
-              scores={scores}
-              production={production}
-              considerations={considerations}
-              locked={locked}
-              publicViewer={false}
-              writerName={writerName}
-              evaluationId={id}
-              portfolioRank={portfolioRank}
-              portfolioTotal={portfolioTotal}
-              commercialScore={commercialScore}
-              craftNote={craftNote}
-            />
-          }
-        />
+        {/* NARRATIVE BREAKDOWN — 10 dim scores */}
+        <SectionGate
+          section="deep_dive_narrative"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={isOwner ? submission.id : undefined}
+        >
+          {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
+            <Section
+              label="Narrative breakdown"
+              subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+            >
+              <div className="space-y-3">
+                {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+                  const s = scores?.[dimId]
+                  if (typeof s?.score !== 'number') return null
+                  const meta = DIMENSION_META[dimId]
+                  return (
+                    <DimensionRow
+                      key={dimId}
+                      label={meta.label}
+                      score={s.score}
+                      reasoning={s.reasoning}
+                      locked={applyPaywallBlur}
+                    />
+                  )
+                })}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
 
-        {/* Owner-side contact card — informational "you're reachable" for Pro
-            writers, upgrade nudge for free writers. Retained from pre-privacy
-            UI so the writer still sees a clear signal about inbound contact. */}
+        {/* Free-tier soft upgrade CTA */}
+        {showUpgradeCTA && isOwner && (
+          <InlineUpgradeCTA
+            evaluationId={id}
+            submissionCount={0}
+            cta="Go Pro — $20/mo"
+          />
+        )}
+
+        {/* Owner contact state card — "you're reachable" or upgrade nudge. */}
         {!isAnonymousSubmission && isOwner && (
           <div className="mt-10">
             <ContactWriter
@@ -1028,6 +915,34 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               state={ownerIsSubscribed ? 'owner_live' : 'owner_upsell'}
               isLoggedIn={true}
             />
+          </div>
+        )}
+
+        {/* Non-owner: single contact card at the bottom. */}
+        {!isOwnerOrAdmin && !isAnonymousSubmission && (
+          <PublicContactCard
+            evaluationId={id}
+            writerName={writerName}
+            hiddenSectionCount={hiddenSectionCount}
+            contactEnabled={contactEnabled}
+            isLoggedIn={!!user}
+          />
+        )}
+
+        {/* Fallback if writer has everything private and the page would
+            render empty for visitors. */}
+        {!isOwnerOrAdmin && !anyPublic && (
+          <div
+            className="rounded-xl p-6 mt-6"
+            style={{
+              background: 'rgba(255,255,255,0.02)',
+              border: '1px solid var(--gem-gray-700)',
+            }}
+          >
+            <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-[1.6]">
+              {writerName} has kept this report private. Request a connection
+              below if you&apos;d like to be in touch about this script.
+            </p>
           </div>
         )}
       </div>
@@ -1039,66 +954,69 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   )
 }
 
-// ─── Helper components for the non-owner view ────────────────────────
+// ─── Helpers ─────────────────────────────────────────────────────────
 
-function PublicScoreCard({ score }: { score: number }) {
-  const designation = scoreDesignation(score)
-  const style = designation ? DESIGNATION_STYLE[designation] : null
+function CommercialScoreCard({
+  score,
+  designationLabel,
+  tierStyle,
+  copyMessage,
+}: {
+  score: number
+  designationLabel: string
+  tierStyle: { border: string; bg: string; text: string; dot: string; pillBg: string; pillBorder: string; label: string }
+  copyMessage: string
+}) {
   const pct = Math.max(0, Math.min(100, score))
   return (
     <section
       className="relative rounded-2xl p-7 sm:p-8 mb-10 overflow-hidden"
-      style={{
-        border: `1px solid ${style?.border ?? 'rgba(212,160,23,0.35)'}`,
-        background: style?.bg ?? 'rgba(212,160,23,0.05)',
-      }}
+      style={{ border: `1px solid ${tierStyle.border}`, background: tierStyle.bg }}
     >
       <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
         <p
           className="text-[12px] uppercase tracking-[0.22em] font-bold m-0"
-          style={{ color: style?.text ?? 'var(--gem-gold)' }}
+          style={{ color: tierStyle.text }}
         >
           Commercial Potential Score
         </p>
-        {style && (
-          <div
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full"
-            style={{ background: style.pillBg, border: `1px solid ${style.pillBorder}` }}
+        <div
+          className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+          style={{ background: tierStyle.pillBg, border: `1px solid ${tierStyle.pillBorder}` }}
+        >
+          <span
+            aria-hidden
+            className="inline-block w-1.5 h-1.5 rounded-full"
+            style={{ background: tierStyle.dot }}
+          />
+          <span
+            className="text-[12px] uppercase tracking-[0.18em] font-bold"
+            style={{ color: tierStyle.text }}
           >
-            <span
-              aria-hidden
-              className="inline-block w-1.5 h-1.5 rounded-full"
-              style={{ background: style.dot }}
-            />
-            <span
-              className="text-[12px] uppercase tracking-[0.18em] font-bold"
-              style={{ color: style.text }}
-            >
-              {style.label}
-            </span>
-          </div>
-        )}
+            {designationLabel}
+          </span>
+        </div>
       </div>
       <div className="flex items-baseline gap-2 mb-3">
         <span
           className="text-[72px] sm:text-[88px] font-bold tabular-nums leading-none"
-          style={{ color: style?.text ?? 'var(--gem-gold)' }}
+          style={{ color: tierStyle.text }}
         >
           {score.toFixed(1)}
         </span>
         <span className="text-[20px] text-[var(--gem-gray-400)] font-medium">/ 100</span>
       </div>
-      <div className="h-2 rounded-full overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
-        <div
-          className="h-full rounded-full"
-          style={{ width: `${pct}%`, background: style?.dot ?? 'var(--gem-gold)' }}
-        />
+      <div className="h-2 rounded-full mb-5 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: tierStyle.dot }} />
       </div>
+      <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[60ch]">
+        {copyMessage}
+      </p>
     </section>
   )
 }
 
-function PublicSharpestLever({
+function SharpestLever({
   considerations,
   craftNote,
 }: {
@@ -1154,7 +1072,7 @@ function PublicSharpestLever({
   )
 }
 
-function PublicRiskTile({
+function RiskTile({
   label,
   axis,
 }: {
@@ -1185,14 +1103,16 @@ function PublicRiskTile({
   )
 }
 
-function PublicDimensionRow({
+function DimensionRow({
   label,
   score,
   reasoning,
+  locked = false,
 }: {
   label: string
   score: number
   reasoning: string
+  locked?: boolean
 }) {
   const palette =
     score >= 8
@@ -1201,6 +1121,7 @@ function PublicDimensionRow({
         ? { text: '#d97706', fill: '#d97706' }
         : { text: '#dc2626', fill: '#dc2626' }
   const pct = Math.max(0, Math.min(100, score * 10))
+  const blurStyle: React.CSSProperties = { filter: 'blur(10px)', userSelect: 'none' }
   return (
     <div
       className="rounded-xl p-5"
@@ -1211,9 +1132,19 @@ function PublicDimensionRow({
           {label}
         </p>
         <div className="flex items-baseline gap-1 flex-shrink-0">
-          <span className="text-[26px] font-bold tabular-nums" style={{ color: palette.text }}>
-            {score}
-          </span>
+          {locked ? (
+            <span
+              className="text-[26px] font-bold tabular-nums text-[var(--gem-gray-500)]"
+              style={{ filter: 'blur(3px)', userSelect: 'none' }}
+              aria-hidden
+            >
+              ?
+            </span>
+          ) : (
+            <span className="text-[26px] font-bold tabular-nums" style={{ color: palette.text }}>
+              {score}
+            </span>
+          )}
           <span className="text-[13px] text-[var(--gem-gray-400)]">/ 10</span>
         </div>
       </div>
@@ -1223,11 +1154,18 @@ function PublicDimensionRow({
       >
         <div
           className="h-full rounded-full"
-          style={{ width: `${pct}%`, background: palette.fill }}
+          style={{
+            width: `${pct}%`,
+            background: locked ? 'var(--gem-gray-500)' : palette.fill,
+            filter: locked ? 'blur(4px)' : undefined,
+          }}
         />
       </div>
       {reasoning && (
-        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+        <p
+          className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
+          style={locked ? blurStyle : undefined}
+        >
           {reasoning}
         </p>
       )}

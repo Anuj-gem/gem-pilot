@@ -32,6 +32,10 @@ interface Props {
   /** Whether the writer's report is already on Discover. When false the
    *  panel displays but saves have no public-facing effect until they publish. */
   isPublic: boolean
+  /** Whether the writer is on Pro. Free writers can still tune their privacy
+   *  defaults (so they preview their sharing posture before paying) but the
+   *  panel shows a Go-Pro CTA because they can't actually publish yet. */
+  isSubscribed: boolean
   /** Called after a successful save so the parent can update any derived UI. */
   onSaved?: (privacy: ReportPrivacy, contactEnabled: boolean) => void
 }
@@ -41,6 +45,7 @@ export function PrivacyPanel({
   initialPrivacy,
   initialContactEnabled,
   isPublic,
+  isSubscribed,
   onSaved,
 }: Props) {
   const [privacy, setPrivacy] = useState<ReportPrivacy>(
@@ -131,7 +136,9 @@ export function PrivacyPanel({
         <p className="text-[12px] text-[var(--gem-gray-500)] m-0 leading-snug">
           {isPublic
             ? `${publicCount} of ${SECTION_KEYS.length} sections visible to visitors.`
-            : `Not on Discover yet — these settings kick in when you publish.`}
+            : isSubscribed
+              ? `Pick how you want to share this — it goes live when you publish.`
+              : `This is what a visitor would see. Go Pro to publish and let producers find you.`}
         </p>
       </div>
 
