@@ -161,8 +161,10 @@ export function LandingHero() {
           )}
         </div>
 
-        {/* RIGHT — sample report preview */}
-        <div className="relative min-h-[300px] hidden sm:block">
+        {/* RIGHT — sample report preview. On mobile this falls below the
+            upload block (grid stacks to one column) — still visible because
+            the card is strong visual proof of what comes back. */}
+        <div className="relative min-h-[240px] sm:min-h-[300px] mt-2 sm:mt-0">
           <FloatingReportCard />
         </div>
       </div>
