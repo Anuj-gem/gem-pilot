@@ -74,14 +74,19 @@ export default async function DashboardPage({
   const usedFreeEval = completedCount >= 1
 
   // Score map: { submission_id -> weighted_score } for completed evals.
+  // Postgres `numeric` columns come back as strings over the wire, so we
+  // coerce to Number here. Previously the `typeof === 'number'` check
+  // silently dropped every score → qualified badge never showed.
   const scoreMap: Record<string, number> = {}
   for (const s of (submissions ?? []) as any[]) {
     if (s.status !== 'completed') continue
     const e = Array.isArray(s.script_evaluations)
       ? s.script_evaluations[0]
       : s.script_evaluations
-    if (typeof e?.weighted_score === 'number') {
-      scoreMap[s.id] = e.weighted_score
+    const raw = e?.weighted_score
+    const n = typeof raw === 'number' ? raw : typeof raw === 'string' ? Number(raw) : NaN
+    if (!Number.isNaN(n)) {
+      scoreMap[s.id] = n
     }
   }
 
