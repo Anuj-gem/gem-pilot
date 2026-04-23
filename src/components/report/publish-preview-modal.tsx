@@ -203,13 +203,16 @@ export function PublishPreviewModal({
   return (
     <div
       onClick={onCancel}
-      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
     >
+      {/* Modal shell: height capped at the viewport, flex column so the
+          header + footer stay pinned and only the middle body scrolls.
+          Prevents the header from scrolling offscreen on tall dialogs. */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl my-8"
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[calc(100vh-2rem)] shadow-2xl flex flex-col"
       >
-        <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-[var(--gem-gray-700)]">
+        <div className="flex-shrink-0 flex items-start justify-between gap-4 px-6 py-5 border-b border-[var(--gem-gray-700)]">
           <div>
             <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-[var(--gem-accent)] m-0 mb-1">
               {headerEyebrow}
@@ -227,7 +230,7 @@ export function PublishPreviewModal({
           </button>
         </div>
 
-        <div className="px-6 py-5">
+        <div className="flex-1 min-h-0 overflow-y-auto px-6 py-5">
           <p className="text-[14px] text-[var(--gem-gray-300)] leading-[1.6] m-0 mb-5 max-w-[62ch]">
             Industry partners who use GEM — producers, agents, dev execs — can
             find your script on the{' '}
@@ -411,7 +414,7 @@ export function PublishPreviewModal({
           )}
         </div>
 
-        <div className="px-6 py-4 border-t border-[var(--gem-gray-700)] flex items-center justify-between gap-2 bg-[var(--gem-gray-900)] rounded-b-2xl">
+        <div className="flex-shrink-0 px-6 py-4 border-t border-[var(--gem-gray-700)] flex items-center justify-between gap-2 bg-[var(--gem-gray-900)] rounded-b-2xl">
           {/* Left side — Unpublish (only when published). */}
           <div>
             {isAlreadyPublished && isSubscribed && (
