@@ -471,28 +471,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     title={s.dimension_or_area}
                     titleBlurred={applyPaywallBlur && i > 0}
                   >
-                    <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4">
+                    {/* Evidence-from-the-script block removed (2026-04-23):
+                        writer feedback was that quoting fragments back at them
+                        felt off and mostly cited weak moments. Prompt still
+                        emits `evidence` so we can revisit the surface; just
+                        not rendered here for now. */}
+                    <p
+                      className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                      style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
+                    >
                       {s.what_it_means}
                     </p>
-                    {s.evidence && (
-                      <div
-                        className="rounded-lg p-5"
-                        style={{
-                          background: 'rgba(200,164,92,0.07)',
-                          borderLeft: '3px solid var(--gem-gold)',
-                        }}
-                      >
-                        <p
-                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                          style={{ color: 'var(--gem-gold)' }}
-                        >
-                          Evidence from the script
-                        </p>
-                        <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                          {s.evidence}
-                        </p>
-                      </div>
-                    )}
                   </Collapsible>
                 ))}
               </div>
@@ -519,6 +508,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     key={i}
                     title={c.name}
                     meta={`${c.role_type} · ${c.demographics}`}
+                    titleBlurred={applyPaywallBlur}
                   >
                     <p
                       className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
@@ -564,7 +554,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {packageAngles && (
             <Section label="Package angles" subtitle="Who would direct it, and who would buy it.">
               <div className="space-y-3">
-                <Collapsible title="Why a director wants this" accent="#059669">
+                <Collapsible
+                  title="Why a director wants this"
+                  accent="#059669"
+                  titleBlurred={applyPaywallBlur}
+                >
                   <p
                     className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0"
                     style={bodyBlur}
@@ -604,8 +598,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   title="Why a buyer wants this"
                   meta={packageAngles.buyer_appeal.tier}
                   accent="#059669"
+                  titleBlurred={applyPaywallBlur}
                 >
-                  <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
+                  <p
+                    className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0"
+                    style={bodyBlur}
+                  >
                     {packageAngles.buyer_appeal.lane}
                   </p>
                   <p
@@ -676,10 +674,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       primary
                       defaultOpen
                     >
-                      <p
-                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                        style={bodyBlur}
-                      >
+                      {/* Primary lever stays crisp for free owners — it's
+                          paired with bullet 01 of "Why this is a hit" as the
+                          two pieces a free writer is meant to walk away with. */}
+                      <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
                         {primary.detail}
                       </p>
                     </Collapsible>
@@ -710,7 +708,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     <Collapsible
                       key={i}
                       title={c.area}
-                      titleBlurred={applyPaywallBlur && i > 0}
+                      titleBlurred={applyPaywallBlur}
                     >
                       <p
                         className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
