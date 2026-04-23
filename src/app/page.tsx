@@ -111,23 +111,23 @@ export default async function Home() {
             className="relative text-[2.25rem] leading-[1.05] sm:text-5xl md:text-[4rem] font-bold tracking-tight sm:leading-[1.02] mb-4 sm:mb-6 max-w-3xl font-[family-name:var(--font-display)]"
             data-experiment="hero-headline"
           >
-            Score your script, improve it, and get it in front of the industry.
+            Score your script. Get it in front of the industry.
           </h1>
           <p
             className="relative text-[15px] sm:text-lg text-[var(--gem-gray-300)] max-w-2xl leading-relaxed mb-8 sm:mb-10"
             data-experiment="hero-subhead"
           >
-            Every submission gets a full report &mdash; score, notes, and a pitch. Rewrite and resubmit to raise your score. Scripts scoring 75+ earn GEM Select on Discover, where producers and reps browse. First one&apos;s free &mdash; unlimited for $20/mo.
+            Every submission gets a full report — score, notes, and the pitch a producer would write. Scripts scoring 75+ earn GEM Select on Discover. First one&apos;s free — unlimited for $20/mo.
           </p>
 
           <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <TrackedCTA
               href="/submit"
               event="cta_clicked"
-              properties={{ location: 'hero', label: 'Submit your script' }}
+              properties={{ location: 'hero', label: 'Get Started — Free' }}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm sm:text-base font-semibold hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
             >
-              Submit your script — free
+              Get Started — Free
               <ArrowRight size={16} />
             </TrackedCTA>
           </div>
@@ -350,10 +350,10 @@ export default async function Home() {
               <TrackedCTA
                 href="/submit"
                 event="cta_clicked"
-                properties={{ location: 'pricing', label: 'Start free' }}
+                properties={{ location: 'pricing', label: 'Get Started — Free' }}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-medium hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
               >
-                Submit your script — free
+                Get Started — Free
                 <ArrowRight size={14} />
               </TrackedCTA>
             </div>
@@ -397,10 +397,10 @@ export default async function Home() {
           <TrackedCTA
             href="/submit"
             event="cta_clicked"
-            properties={{ location: 'bottom_cta', label: 'Submit your script free' }}
+            properties={{ location: 'bottom_cta', label: 'Get Started — Free' }}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[var(--gem-accent)] text-white text-base sm:text-lg font-semibold hover:bg-[var(--gem-accent-hover)] transition-colors glow-accent"
           >
-            Submit your script — free
+            Get Started — Free
             <ArrowRight size={18} />
           </TrackedCTA>
           <p className="text-sm text-[var(--gem-gray-400)] mt-4">First evaluation free — full report, no credit card.</p>

@@ -267,6 +267,11 @@ export default async function DashboardPage() {
                               Processing
                             </span>
                           )}
+                          {sub.status === 'awaiting_pdf' && (
+                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
+                              Draft — needs PDF
+                            </span>
+                          )}
                         </div>
 
                         {/* Positioning hook or placeholder */}
@@ -282,12 +287,26 @@ export default async function DashboardPage() {
                           <p className="text-sm text-[var(--gem-gray-500)] italic mb-2">
                             Report ready — open to see the positioning.
                           </p>
+                        ) : sub.status === 'awaiting_pdf' ? (
+                          <p className="text-sm text-[var(--gem-gray-400)] mb-2">
+                            Drop in your PDF anytime to unlock your full GEM read.
+                          </p>
                         ) : null}
 
                         <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
                       </div>
 
-                      {/* Actions */}
+                      {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links. */}
+                      {sub.status === 'awaiting_pdf' && (
+                        <div className="flex items-center gap-2 shrink-0">
+                          <Link
+                            href="/submit"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                          >
+                            Upload PDF
+                          </Link>
+                        </div>
+                      )}
                       {hasReport && (
                         <div className="flex items-center gap-2 shrink-0">
                           {isLockedReport ? (
