@@ -27,7 +27,7 @@ import { EditableTopCard } from '@/components/report/editable-top-card'
 import { normalizeEvaluation, calculateWeightedScore } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
-import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
+import { scoreDesignation, DESIGNATION_STYLE, DESIGNATION_COPY } from '@/lib/designation'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -340,8 +340,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {locked && isOwner && (() => {
           const designation = scoreDesignation(commercialScore)
           const tierStyle = designation ? DESIGNATION_STYLE[designation] : null
+          // Tier-driven background + border so the mini-card matches the
+          // big Commercial Score card on the Details tab (gold for GEM Select,
+          // green for Very Promising, amber for Shows Potential). Falls back
+          // to gold-tinted neutral when the score isn't computed yet.
+          const cardStyle = tierStyle
+            ? { border: `1px solid ${tierStyle.border}`, background: tierStyle.bg }
+            : undefined
           return (
-            <div className="rounded-xl border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/[0.06] px-4 py-4 sm:px-5 sm:py-4 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div
+              className="rounded-xl px-4 py-4 sm:px-5 sm:py-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+              style={
+                cardStyle ?? {
+                  border: '1px solid rgba(200,164,92,0.4)',
+                  background: 'rgba(200,164,92,0.06)',
+                }
+              }
+            >
               <div className="flex-1 min-w-0 w-full sm:w-auto text-center sm:text-left">
                 <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 mb-1.5">
                   Your score · only visible to you
@@ -365,12 +380,35 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     Score unavailable
                   </p>
                 )}
-                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-1.5 leading-snug">
+                {designation && (
+                  <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-100)] m-0 mt-2.5 leading-[1.5] max-w-[56ch]">
+                    {DESIGNATION_COPY[designation].message}
+                  </p>
+                )}
+                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-2 leading-snug">
                   See the full breakdown in the Development tab.
                 </p>
               </div>
-              <div className="shrink-0 w-full sm:w-auto flex justify-center">
+              <div className="shrink-0 w-full sm:w-auto flex flex-col items-stretch sm:items-start gap-2.5">
                 <LockedReportUpgrade evaluationId={id} />
+                {/* Tight reasons-to-click anchored to the CTA so the writer
+                    knows what the $20 actually unlocks: the full report
+                    they're staring at, Discover publishing, and unlimited
+                    re-evals on future drafts. */}
+                <ul className="text-[12px] text-[var(--gem-gray-300)] m-0 p-0 list-none space-y-1 text-center sm:text-left">
+                  <li>
+                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
+                    Unlock your full report
+                  </li>
+                  <li>
+                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
+                    Publish to Discover
+                  </li>
+                  <li>
+                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
+                    Unlimited revisions
+                  </li>
+                </ul>
               </div>
             </div>
           )

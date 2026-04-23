@@ -35,6 +35,26 @@ export interface DesignationStyle {
   pillBorder: string
 }
 
+// Per-tier framing surfaced wherever the writer sees their score. One line
+// per tier, no preamble — every message validates the score, names what's
+// possible, and points to the same next action (publish to Discover).
+// Shared between the big Commercial Score card on Details and the mini-score
+// card at the top of the report.
+export const DESIGNATION_COPY: Record<Designation, { message: string }> = {
+  'gem-select': {
+    message:
+      'This is the top tier on GEM. Your script is ready — publish to Discover and put it in front of producers and reps.',
+  },
+  'very-promising': {
+    message:
+      'A score above 50 is hard to hit on GEM. With the right collaborators, this script has real commercial potential — and a sharper next draft could push past 75 to earn the GEM Select badge. Publish to Discover now to get the industry interested.',
+  },
+  'shows-potential': {
+    message:
+      "There's real potential in this script. Use the development priorities below to sharpen what commercial buyers look for — then publish to Discover when you're ready.",
+  },
+}
+
 export const DESIGNATION_STYLE: Record<Designation, DesignationStyle> = {
   'gem-select': {
     label: 'GEM Select',

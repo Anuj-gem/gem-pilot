@@ -154,7 +154,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           </button>
         )}
 
-        <h1 className="text-[36px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-4 pr-24">
+        <h1 className="text-[28px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-2 sm:mb-4 pr-20 sm:pr-24">
           {initial.title}
         </h1>
 
@@ -162,7 +162,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
             Full profile UI lands later; this is just to get the writer's name
             on the report for producers and reps viewing the page. */}
         {authorName && authorName.trim().length > 0 && (
-          <p className="text-[15px] text-[var(--gem-gray-400)] -mt-2 mb-5 m-0">
+          <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-400)] -mt-1 mb-3 sm:-mt-2 sm:mb-5 m-0">
             By <span className="text-[var(--gem-gray-200)]">{authorName}</span>
           </p>
         )}
@@ -190,7 +190,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           </Link>
         )}
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[var(--gem-gray-300)] mb-10">
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-5 sm:mb-10">
           {initial.format && <span>{initial.format}</span>}
           {initial.genre_primary && (
             <>
@@ -229,7 +229,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
 
         {initial.logline && (
           <div
-            className="relative rounded-2xl p-8 sm:p-10 mb-12"
+            className="relative rounded-2xl p-5 sm:p-10 mb-6 sm:mb-12"
             style={{
               background: 'linear-gradient(135deg, rgba(200,164,92,0.10), transparent 70%)',
               border: '1px solid rgba(200,164,92,0.25)',
@@ -237,16 +237,16 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           >
             <div
               aria-hidden
-              className="absolute left-0 top-7 bottom-7 rounded-r"
-              style={{ width: 5, background: 'var(--gem-gold)' }}
+              className="absolute left-0 top-5 bottom-5 sm:top-7 sm:bottom-7 rounded-r"
+              style={{ width: 4, background: 'var(--gem-gold)' }}
             />
             <div
-              className="text-[14px] uppercase tracking-[0.22em] font-bold mb-4"
+              className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-bold mb-2.5 sm:mb-4"
               style={{ color: 'var(--gem-gold)' }}
             >
               Headline
             </div>
-            <p className="text-[26px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-medium m-0">
+            <p className="text-[19px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.35] font-medium m-0">
               {initial.logline}
             </p>
           </div>
@@ -295,7 +295,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           <button
             type="button"
             onClick={save}
-            disabled={saving || reverting || overCap || title.trim().length === 0}
+            disabled={saving || reverting || title.trim().length === 0}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[13px] font-medium bg-[var(--gem-gold)] text-[var(--gem-black)] hover:opacity-90 disabled:opacity-50 transition-opacity"
           >
             {saving ? <Loader2 size={13} className="animate-spin" /> : <Check size={13} />}
@@ -374,10 +374,10 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         <span className="flex items-baseline justify-between text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
           <span>Headline</span>
           <span
-            className={overCap ? 'text-red-400' : 'text-[var(--gem-gray-500)]'}
+            className={overCap ? 'text-[var(--gem-warning)]' : 'text-[var(--gem-gray-500)]'}
             style={{ textTransform: 'none', letterSpacing: 0 }}
           >
-            {wordCount}/{LOGLINE_WORD_CAP} words
+            {wordCount} words · {LOGLINE_WORD_CAP} recommended
           </span>
         </span>
         <textarea
@@ -388,8 +388,8 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           placeholder="The one sentence a manager would paste into an email to a producer."
         />
         {overCap && (
-          <p className="text-[12px] text-red-400 mt-2">
-            Headline is longer than the {LOGLINE_WORD_CAP}-word cap. Trim it before saving.
+          <p className="text-[12px] text-[var(--gem-warning)] mt-2">
+            Over the {LOGLINE_WORD_CAP}-word guideline — shorter headlines tend to land harder, but you can save it as is.
           </p>
         )}
       </label>

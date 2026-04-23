@@ -15,6 +15,7 @@ import {
 import {
   scoreDesignation,
   DESIGNATION_STYLE,
+  DESIGNATION_COPY,
   type Designation,
 } from '@/lib/designation'
 
@@ -502,31 +503,8 @@ export function DetailsView({
 }
 
 // ─── Commercial Score card (v5.2) ──────────────────────────────────
-// Encouragement copy per designation. Every tier nudges toward BOTH publishing
-// on Discover AND sharpening the next draft — the two actions that turn a
-// score into momentum for the writer.
-const DESIGNATION_COPY: Record<
-  Designation,
-  { headline: string; body: string; privacyNote?: string }
-> = {
-  'gem-select': {
-    headline: 'This one is ready to be seen.',
-    body:
-      'It lands in the top GEM Select band — the scripts we surface on Discover for producers and reps to find. Publish it now, and use the Development Priorities below to sharpen any beat that might still be costing you a yes.',
-  },
-  'very-promising': {
-    headline: "It's close. Really close.",
-    body:
-      "Very Promising sits just under GEM Select — a sharp next draft can push it over the line. Publish it on Discover if you want reads now, and lean into the Development Priorities below to reposition the beats that are leaving points on the table.",
-    privacyNote: 'This designation is private to you.',
-  },
-  'shows-potential': {
-    headline: "There's a real spark here.",
-    body:
-      'Shows Potential means the bones of something commercial are on the page — the next pass is about tightening the hook and repositioning what the script is selling. Publish it when you feel ready, and use the Development Priorities below as your shortlist for the rewrite.',
-    privacyNote: 'This designation is private to you.',
-  },
-}
+// DESIGNATION_COPY now lives in @/lib/designation so the mini-score card on
+// the Pitch tab can share the same per-tier framing.
 
 function CommercialScoreCard({
   score,
@@ -543,21 +521,13 @@ function CommercialScoreCard({
       className="relative rounded-2xl p-7 sm:p-8 mb-10 overflow-hidden"
       style={{ border: `1px solid ${style.border}`, background: style.bg }}
     >
-      <div className="flex items-start justify-between gap-5 flex-wrap">
-        <div>
-          <p
-            className="text-[12px] uppercase tracking-[0.22em] font-bold m-0 mb-2"
-            style={{ color: style.text }}
-          >
-            Commercial Potential Score
-          </p>
-          <p className="text-[15px] text-[var(--gem-gray-300)] leading-[1.5] m-0 max-w-[54ch]">
-            How we evaluate audience appeal and investment potential relative to the cost of development.
-          </p>
-          <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0 mt-2 max-w-[54ch]">
-            Scripts that have a commercial viability score of 75+ earn GEM Select on Discover. Your score is always private — only the designation is public.
-          </p>
-        </div>
+      <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
+        <p
+          className="text-[12px] uppercase tracking-[0.22em] font-bold m-0"
+          style={{ color: style.text }}
+        >
+          Commercial Potential Score
+        </p>
         <div
           className="flex items-center gap-2 px-3 py-1.5 rounded-full"
           style={{ background: style.pillBg, border: `1px solid ${style.pillBorder}` }}
@@ -575,7 +545,7 @@ function CommercialScoreCard({
           </span>
         </div>
       </div>
-      <div className="flex items-baseline gap-2 mt-5 mb-3">
+      <div className="flex items-baseline gap-2 mb-3">
         <span
           className="text-[72px] sm:text-[88px] font-bold tabular-nums leading-none"
           style={{ color: style.text }}
@@ -587,23 +557,8 @@ function CommercialScoreCard({
       <div className="h-2 rounded-full mb-5 overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
         <div className="h-full rounded-full" style={{ width: `${pct}%`, background: style.dot }} />
       </div>
-      <p
-        className="text-[17px] font-semibold leading-[1.4] m-0 mb-2"
-        style={{ color: style.text }}
-      >
-        {copy.headline}
-      </p>
-      <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4">
-        {copy.body}
-        {copy.privacyNote && (
-          <>
-            {' '}
-            <span className="text-[var(--gem-gray-400)]">{copy.privacyNote}</span>
-          </>
-        )}
-      </p>
-      <p className="text-[13px] text-[var(--gem-gray-400)] leading-[1.55] m-0">
-        A script&apos;s score can shift 5-10 points across different runs — evaluation is probabilistic. The Development Priorities below are the levers you can pull on the next draft to raise it.
+      <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[60ch]">
+        {copy.message}
       </p>
     </section>
   )
