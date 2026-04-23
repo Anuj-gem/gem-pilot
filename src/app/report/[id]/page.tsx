@@ -200,9 +200,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const applyPaywallBlur = locked && isOwner && !isAdmin
   // Privacy is a Pro feature. Free writers can't publish (Pro-gated) so
   // showing them a privacy panel or per-section toggles is noise — their job
-  // is to upgrade first. Pro writers get the full controls whether published
-  // yet or not. Admin gets no privacy UI on others' reports.
-  const canControlPrivacy = isOwner && ownerIsSubscribed && !isAdmin
+  // is to upgrade first. Any Pro owner (including admin on their own
+  // reports) gets the full controls whether published yet or not.
+  const canControlPrivacy = isOwner && ownerIsSubscribed
   // Passed to SectionGate so only Pro writers see the Public/Private pill
   // alongside each section; free writers see the section without a toggle.
   const privacyControlId = canControlPrivacy ? submission.id : undefined
