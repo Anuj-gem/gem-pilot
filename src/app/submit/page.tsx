@@ -186,11 +186,31 @@ function SubmitPageInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // ─── Step 1 → 2: format selected, auto-advance ───
-  const handleFormatSelected = useCallback((f: DeclaredFormat) => {
-    setDeclaredFormat(f)
-    setStep('script')
-  }, [])
+  // ─── Step 1 → 2 (or 3): format selected, auto-advance ───
+  // If the writer already dropped a PDF on the landing hero, the file
+  // lives in state by the time we get here. Skip the script step entirely
+  // — fire the eval in the background and jump straight to account
+  // (or scoring if they're already logged in). This is the "landing upload
+  // collapses the 3-step flow to 2 steps" path.
+  const handleFormatSelected = useCallback(
+    (f: DeclaredFormat) => {
+      setDeclaredFormat(f)
+      if (file) {
+        setMode('upload')
+        fireEvalRequest({ file, declaredFormat: f })
+        if (user) {
+          setStep('scoring')
+          void waitForEvalAndRouteAsLoggedInUser()
+        } else {
+          setStep('account')
+        }
+        return
+      }
+      setStep('script')
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [file, user]
+  )
 
   // ─── Step 2: file picked ───
   const handleFileChosen = useCallback((f: File) => {
