@@ -189,9 +189,9 @@ export default async function Home({
                 Sharper every release
               </p>
               <p className="text-[12px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-                Selznick is retrained on every produced screenplay it sees.
-                The engine you read with today is smarter than the one we
-                shipped last month.
+                Selznick gets sharper with every release. It&apos;s
+                constantly improving — the read you get today is more
+                refined than the one from a month ago.
               </p>
             </div>
 
