@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { ArrowRight, CheckCircle, Upload, FileText, Megaphone, Sparkles, NotebookPen, Search } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackSection } from '@/components/track-section'
@@ -26,6 +27,16 @@ function relativeTime(iso: string | null | undefined): string {
 
 export default async function Home() {
   const supabase = await createClient()
+
+  // Logged-in writers shouldn't see the marketing page — they already
+  // converted. Send them straight to their dashboard so they can find their
+  // existing scripts or start a new one. Existing users were getting confused
+  // landing on gem.studio and seeing a Sign Up button.
+  const { data: { user } } = await supabase.auth.getUser()
+  if (user) {
+    redirect('/dashboard')
+  }
+
   const { data: topScripts } = await supabase
     .from('leaderboard')
     .select('*')

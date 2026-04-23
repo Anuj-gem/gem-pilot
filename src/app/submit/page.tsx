@@ -141,12 +141,19 @@ function SubmitPageInner() {
             // non-fatal — they'll see the row on /dashboard either way
           }
           clearPendingClaim()
+          // Returning user (account predates this session by >60s) gets a
+          // "welcome back" framing on the destination page instead of a
+          // newly-signed-up celebration.
+          const accountAgeMs =
+            Date.now() - new Date(authUser.created_at).getTime()
+          const returning = accountAgeMs > 60_000
+          const wb = returning ? '&welcome_back=1' : ''
           if (pending.mode === 'upload' && pending.evaluation_id) {
-            router.replace(`/report/${pending.evaluation_id}`)
+            router.replace(`/report/${pending.evaluation_id}?from=submit${wb}`)
           } else if (pending.mode === 'upload') {
-            router.replace('/dashboard?just_signed_up=1')
+            router.replace(`/dashboard?just_signed_up=1${wb}`)
           } else {
-            router.replace('/dashboard?draft_saved=1')
+            router.replace(`/dashboard?draft_saved=1${wb}`)
           }
           return
         }
