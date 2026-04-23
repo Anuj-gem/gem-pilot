@@ -70,10 +70,10 @@ export function VisibilityToggle({
       >
         {isPublic ? <Eye size={14} /> : <EyeOff size={14} />}
         {isPublic
-          ? `Published · ${presetLabel}`
+          ? `Live · ${presetLabel}`
           : isSubscribed
-            ? 'Publish to Industry'
-            : 'Publish to Industry — Pro'}
+            ? 'Publish for Industry Visibility'
+            : 'Publish for Industry Visibility — Pro'}
       </button>
       {showModal && (
         <PublishPreviewModal

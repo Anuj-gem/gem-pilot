@@ -13,27 +13,27 @@
 
 export type Visibility = 'public' | 'private'
 
-/** Section keys map 1:1 to bounded chunks of the report UI. Adding a section
- *  here is the ONLY place you need to update — the privacy panel renders
- *  from SECTION_META, and every gate in the render tree reads via
- *  isSectionPublic(). */
+/** Section keys map 1:1 to bounded chunks of the report UI. Names mirror the
+ *  actual section headings in the report page (keep these aligned so writers
+ *  see the same labels in the privacy modal and in the report body).
+ *
+ *  Internal key names stay as-is for DB compatibility with rows written before
+ *  the label rename (2026-04-23). Only the UI labels in SECTION_META changed. */
 export type SectionKey =
   | 'headline'              // top card: title + headline (logline)
   | 'score'                 // commercial potential score + tier
-  | 'whats_working'         // "why this can be a hit" strengths
-  | 'sharpest_lever'        // primary lever + craft note (the biggest dev note)
-  | 'production_signal'     // at-a-glance production reality teaser
-  | 'deep_dive_characters'  // lead characters + actor appeal
-  | 'deep_dive_package'     // package angles (director + buyer)
-  | 'deep_dive_production'  // full production planning details
-  | 'deep_dive_development' // full development priorities list
-  | 'deep_dive_narrative'   // 10-dimension narrative breakdown
+  | 'whats_working'         // "Why this is a hit" strengths
+  | 'production_signal'     // Production Planning Overview (at-a-glance cards)
+  | 'deep_dive_characters'  // Lead Characters + actor appeal
+  | 'deep_dive_package'     // Package Angles (director + buyer)
+  | 'deep_dive_production'  // Production Planning Details (full)
+  | 'deep_dive_development' // Development Priorities (incl. primary lever + craft note)
+  | 'deep_dive_narrative'   // Narrative Breakdown (10-dim)
 
 export const SECTION_KEYS: SectionKey[] = [
   'headline',
   'score',
   'whats_working',
-  'sharpest_lever',
   'production_signal',
   'deep_dive_characters',
   'deep_dive_package',
@@ -55,60 +55,54 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
   headline: {
     key: 'headline',
     label: 'Headline',
-    hint: 'Your title + one-line headline. Usually public.',
+    hint: 'Your title + one-line headline.',
     group: 'summary',
   },
   score: {
     key: 'score',
     label: 'Score',
-    hint: 'Commercial potential score. Private by default — you choose when to share it.',
+    hint: 'Commercial potential score + tier.',
     group: 'summary',
   },
   whats_working: {
     key: 'whats_working',
-    label: 'What\'s working',
+    label: 'Why this is a hit',
     hint: 'The strongest notes on why the script lands.',
-    group: 'summary',
-  },
-  sharpest_lever: {
-    key: 'sharpest_lever',
-    label: 'Sharpest lever',
-    hint: 'The biggest development note. Usually private — anchors a rewrite.',
     group: 'summary',
   },
   production_signal: {
     key: 'production_signal',
-    label: 'Production signal',
-    hint: 'Budget tier + scope signals a producer can skim in two seconds.',
+    label: 'Production Planning Overview',
+    hint: 'Cost, cast, and content complexity at a glance.',
     group: 'summary',
   },
   deep_dive_characters: {
     key: 'deep_dive_characters',
-    label: 'Lead characters',
+    label: 'Lead Characters',
     hint: 'Full character breakdown + actor appeal.',
     group: 'deep',
   },
   deep_dive_package: {
     key: 'deep_dive_package',
-    label: 'Package angles',
+    label: 'Package Angles',
     hint: 'Who would direct it, who would buy it.',
     group: 'deep',
   },
   deep_dive_production: {
     key: 'deep_dive_production',
-    label: 'Production details',
+    label: 'Production Planning Details',
     hint: 'Cast count, locations, VFX/stunts, rights flags.',
     group: 'deep',
   },
   deep_dive_development: {
     key: 'deep_dive_development',
-    label: 'Development priorities',
-    hint: 'Full list of development notes beyond the sharpest lever.',
+    label: 'Development Priorities',
+    hint: 'Sharpest lever, craft note, and all other development notes.',
     group: 'deep',
   },
   deep_dive_narrative: {
     key: 'deep_dive_narrative',
-    label: 'Narrative breakdown',
+    label: 'Narrative Breakdown',
     hint: '10 dimension scores + reasoning.',
     group: 'deep',
   },
@@ -131,7 +125,6 @@ const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
   headline:              'public',
   score:                 'private',
   whats_working:         'private',
-  sharpest_lever:        'private',
   production_signal:     'private',
   deep_dive_characters:  'private',
   deep_dive_package:     'private',
@@ -180,7 +173,6 @@ export const PRESETS: Record<PresetKey, Preset> = {
       headline: 'public',
       score: 'public',
       whats_working: 'public',
-      sharpest_lever: 'public',
       production_signal: 'public',
       deep_dive_characters: 'public',
       deep_dive_package: 'public',

@@ -190,11 +190,11 @@ export function PublishPreviewModal({
     ? 'Go Pro — $20/mo'
     : isAlreadyPublished
       ? 'Save changes'
-      : 'Publish to Industry'
+      : 'Publish for Industry Visibility'
 
   const headerEyebrow = isAlreadyPublished
     ? 'Industry visibility'
-    : 'Publish to Industry'
+    : 'Publish for Industry Visibility'
 
   const headerTitle = isAlreadyPublished
     ? `Control what industry partners see on ${title || 'your report'}`
@@ -232,8 +232,8 @@ export function PublishPreviewModal({
 
         <div className="flex-1 min-h-0 overflow-y-auto px-6 py-5">
           <p className="text-[14px] text-[var(--gem-gray-300)] leading-[1.6] m-0 mb-5 max-w-[62ch]">
-            Industry partners who use GEM — producers, agents, dev execs — can
-            find your script on the{' '}
+            You choose what industry partners see. They&apos;ll find your script on
+            the{' '}
             <a
               href="/discover"
               target="_blank"
@@ -241,9 +241,10 @@ export function PublishPreviewModal({
               className="underline"
               style={{ color: 'var(--gem-accent)' }}
             >
-              Discover page
+              Discover Portal
             </a>
-            . You decide what they see. Private sections are hidden completely — not blurred.
+            {' '}— where producers, agents, and dev execs browse for scripts to option.
+            Private sections are hidden completely, not blurred.
             {isAlreadyPublished && ' Changes save live.'}
           </p>
 
@@ -386,10 +387,7 @@ export function PublishPreviewModal({
             </div>
             <Switch
               on={contactEnabled}
-              onChange={(on) => {
-                if (!isSubscribed) { openUpgrade(); return }
-                setContactEnabled(on)
-              }}
+              onChange={(on) => setContactEnabled(on)}
               disabled={submitting}
             />
           </div>
@@ -404,7 +402,7 @@ export function PublishPreviewModal({
             >
               <Lock size={14} className="flex-shrink-0 mt-0.5 text-[var(--gem-accent)]" />
               <p className="text-[12.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
-                Publishing to Industry is a Pro feature. Go Pro to let industry partners find this script.
+                Industry visibility is a Pro feature. Go Pro to let industry partners find this script on the Discover Portal.
               </p>
             </div>
           )}

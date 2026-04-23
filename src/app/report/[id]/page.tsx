@@ -524,7 +524,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
         >
           {allStrengths.length > 0 && (
-            <Section label="Why this can be a hit" subtitle={whatsSpecial.headline}>
+            <Section label="Why this is a hit" subtitle={whatsSpecial.headline}>
               <div className="space-y-3">
                 {allStrengths.map((s, i) => (
                   <Collapsible
@@ -562,17 +562,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* SHARPEST LEVER — primary lever + craft note */}
-        <SectionGate
-          section="sharpest_lever"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-        >
-          <SharpestLever considerations={considerations} craftNote={craftNote} />
-        </SectionGate>
-
-        {/* PRODUCTION SIGNAL — at-a-glance risk pills */}
+        {/* PRODUCTION PLANNING OVERVIEW — at-a-glance risk pills */}
         <SectionGate
           section="production_signal"
           privacy={privacy}
@@ -580,7 +570,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
         >
           {production?.risk_rubric && (
-            <Section label="Production signal" subtitle="A two-second read on how this would actually get made.">
+            <Section label="Production Planning Overview" subtitle="Cost, cast, and content complexity at a glance.">
               <div
                 className="grid grid-cols-1 sm:grid-cols-3 gap-3"
                 style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
@@ -727,7 +717,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         >
           {production && (
             <Section
-              label="Production planning details"
+              label="Production Planning Details"
               subtitle="Everything the script tells us about how it would actually get made."
             >
               <div className="space-y-3">
@@ -844,23 +834,63 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* DEVELOPMENT PRIORITIES — secondary considerations (primary lever is
-            surfaced in the Sharpest Lever section above). */}
+        {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
+            craft note as an inline callout, then all other considerations.
+            Merges what was previously two sections ("Sharpest lever" + secondary
+            Development Priorities) into a single coherent section that mirrors
+            the structure of the actual report. */}
         <SectionGate
           section="deep_dive_development"
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
         >
-          {considerations.filter((c) => c.is_primary_lever !== true).length > 0 && (
-            <Section
-              label="Development priorities"
-              subtitle="Additional development notes — positioning, directions a collaborator might lean on in conversation."
-            >
-              <div className="space-y-3">
-                {considerations
-                  .filter((c) => c.is_primary_lever !== true)
-                  .map((c, i) => (
+          {(considerations.length > 0 || craftNote) && (() => {
+            const primary = considerations.find((c) => c.is_primary_lever === true)
+            const secondary = considerations.filter((c) => c.is_primary_lever !== true)
+            return (
+              <Section
+                label="Development Priorities"
+                subtitle="The sharpest places to push on the next pass — positioning notes and directions a producer or collaborator might lean on in conversation."
+              >
+                <div className="space-y-3">
+                  {primary && (
+                    <Collapsible
+                      title={primary.area}
+                      primary
+                      defaultOpen
+                    >
+                      <p
+                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={bodyBlur}
+                      >
+                        {primary.detail}
+                      </p>
+                    </Collapsible>
+                  )}
+                  {craftNote && (
+                    <div
+                      className="rounded-xl p-5"
+                      style={{
+                        background: 'rgba(5,150,105,0.07)',
+                        border: '1px solid rgba(5,150,105,0.25)',
+                      }}
+                    >
+                      <p
+                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                        style={{ color: '#059669' }}
+                      >
+                        Craft note
+                      </p>
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                        style={bodyBlur}
+                      >
+                        {craftNote}
+                      </p>
+                    </div>
+                  )}
+                  {secondary.map((c, i) => (
                     <Collapsible
                       key={i}
                       title={c.area}
@@ -874,9 +904,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       </p>
                     </Collapsible>
                   ))}
-              </div>
-            </Section>
-          )}
+                </div>
+              </Section>
+            )
+          })()}
         </SectionGate>
 
         {/* NARRATIVE BREAKDOWN — 10 dim scores */}
@@ -1029,62 +1060,6 @@ function CommercialScoreCard({
         {copyMessage}
       </p>
     </section>
-  )
-}
-
-function SharpestLever({
-  considerations,
-  craftNote,
-}: {
-  considerations: { area: string; detail: string; is_primary_lever?: boolean }[]
-  craftNote: string | null
-}) {
-  const primary = considerations.find((c) => c.is_primary_lever === true)
-  if (!primary && !craftNote) return null
-  return (
-    <Section label="Sharpest lever" subtitle="The single biggest place to push on the next pass.">
-      {primary && (
-        <div
-          className="rounded-xl p-5 mb-3"
-          style={{
-            border: '1px solid rgba(220,38,38,0.35)',
-            background: 'linear-gradient(135deg, rgba(220,38,38,0.04), #fff 60%)',
-          }}
-        >
-          <p
-            className="text-[10px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
-            style={{ color: '#dc2626' }}
-          >
-            Primary lever
-          </p>
-          <p className="text-[18px] sm:text-[19px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] m-0 mb-2">
-            {primary.area}
-          </p>
-          <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
-            {primary.detail}
-          </p>
-        </div>
-      )}
-      {craftNote && (
-        <div
-          className="rounded-xl p-5"
-          style={{
-            border: '1px solid rgba(5,150,105,0.25)',
-            background: 'rgba(5,150,105,0.07)',
-          }}
-        >
-          <p
-            className="text-[10px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
-            style={{ color: '#059669' }}
-          >
-            Craft note
-          </p>
-          <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
-            {craftNote}
-          </p>
-        </div>
-      )}
-    </Section>
   )
 }
 
