@@ -36,7 +36,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/nav'
-import { VisibilityToggle } from '@/components/report/visibility-toggle'
+import { QualificationBanner } from '@/components/report/qualification-banner'
 import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
@@ -46,7 +46,6 @@ import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ShareSection } from '@/components/report/share-section'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
-import { LockedReportUpgrade } from '@/components/report/locked-report-upgrade'
 import { SubmitRevisionButton } from '@/components/report/submit-revision-button'
 import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
 import { PublicContactCard } from '@/components/report/public-contact-card'
@@ -305,19 +304,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Owner action row — publish toggle, like, submit revision. */}
+        {/* Owner action row — like + submit revision. The publish action
+            is owned by the QualificationBanner below, so it doesn't appear
+            as a separate pill here anymore. */}
         {!isAnonymousSubmission && isOwner && (
           <div className="flex items-center gap-3 flex-wrap mb-6">
-            <VisibilityToggle
-              submissionId={submission.id}
-              evaluationId={id}
-              initialPublic={submission.is_public ?? false}
-              initialPrivacy={privacy}
-              initialContactEnabled={contactEnabled}
-              title={submission.title}
-              score={eval_?.weighted_score ?? undefined}
-              isSubscribed={ownerIsSubscribed}
-            />
             <LikeButton
               evaluationId={id}
               initialLiked={userLiked}
@@ -329,6 +320,24 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               declaredFormat={submission.declared_format ?? null}
             />
           </div>
+        )}
+
+        {/* Qualification banner — the writer's primary signal. Persistent
+            for unpublished reports (qualifies ≥ 50 → publish CTA; below
+            50 → "not ready yet" + submit revision). Disappears into a
+            small success pill once published. */}
+        {!isAnonymousSubmission && isOwner && (
+          <QualificationBanner
+            submissionId={submission.id}
+            evaluationId={id}
+            title={submission.title}
+            initialPublic={submission.is_public ?? false}
+            initialPrivacy={privacy}
+            initialContactEnabled={contactEnabled}
+            commercialScore={commercialScore}
+            isSubscribed={ownerIsSubscribed}
+            declaredFormat={submission.declared_format ?? null}
+          />
         )}
 
         {/* Non-owner: just the like button on its own row. */}
@@ -419,76 +428,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           />
         </SectionGate>
 
-        {/* Owner-only mini score card — stays visible for free-tier writers
-            as their personal signal about the score, with upgrade CTA. Never
-            shown to visitors (the public score card above handles that). */}
-        {locked && isOwner && (() => {
-          const tierStyle = designation ? DESIGNATION_STYLE[designation] : null
-          const cardStyle = tierStyle
-            ? { border: `1px solid ${tierStyle.border}`, background: tierStyle.bg }
-            : undefined
-          return (
-            <div
-              className="rounded-xl px-4 py-4 sm:px-5 sm:py-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4"
-              style={
-                cardStyle ?? {
-                  border: '1px solid rgba(200,164,92,0.4)',
-                  background: 'rgba(200,164,92,0.06)',
-                }
-              }
-            >
-              <div className="flex-1 min-w-0 w-full sm:w-auto text-center sm:text-left">
-                <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 mb-1.5">
-                  Your score · only visible to you
-                </p>
-                {typeof commercialScore === 'number' ? (
-                  <div className="flex items-baseline gap-2 justify-center sm:justify-start">
-                    <span className="text-[30px] sm:text-[34px] font-bold tabular-nums leading-none text-[var(--gem-white)]">
-                      {commercialScore}
-                    </span>
-                    {tierStyle && (
-                      <span
-                        className="text-[14px] sm:text-[15px] font-semibold"
-                        style={{ color: tierStyle.text }}
-                      >
-                        · {tierStyle.label}
-                      </span>
-                    )}
-                  </div>
-                ) : (
-                  <p className="text-[18px] font-semibold text-[var(--gem-white)] m-0">
-                    Score unavailable
-                  </p>
-                )}
-                {designation && (
-                  <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-100)] m-0 mt-2.5 leading-[1.5] max-w-[56ch]">
-                    {DESIGNATION_COPY[designation].message}
-                  </p>
-                )}
-                <p className="text-[12px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-2 leading-snug">
-                  Go Pro to unlock the full report below.
-                </p>
-              </div>
-              <div className="shrink-0 w-full sm:w-auto flex flex-col items-stretch sm:items-start gap-2.5">
-                <LockedReportUpgrade evaluationId={id} />
-                <ul className="text-[12px] text-[var(--gem-gray-300)] m-0 p-0 list-none space-y-1 text-center sm:text-left">
-                  <li>
-                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
-                    Unlock your full report
-                  </li>
-                  <li>
-                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
-                    Publish to Discover
-                  </li>
-                  <li>
-                    <span style={{ color: 'var(--gem-gold)' }}>✓</span>{' '}
-                    Unlimited revisions
-                  </li>
-                </ul>
-              </div>
-            </div>
-          )
-        })()}
+        {/* Mini score card removed 2026-04-23 — qualification banner above
+            now handles the owner's primary signal. Free-tier owners still
+            hit the upgrade modal through the banner's Publish CTA. */}
 
         {/* Share section — only when the report is actually public, or owner
             is Pro (Pro writers can pre-share via the private link before hitting
@@ -499,11 +441,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* COMMERCIAL POTENTIAL SCORE — the big hero card.
-            Suppressed for free-tier owners, since they already get the
-            mini-score + upgrade combo above; a second score card would just
-            be a duplicate. */}
-        {!(applyPaywallBlur) && (
+        {/* Big Commercial Viability Score card — removed from the owner
+            surface 2026-04-23 (qualification banner above replaces it).
+            Non-owners can still see the score card IF the writer marked
+            "score" public in privacy settings; that path is preserved by
+            SectionGate for the writer's flexibility. */}
+        {!isOwner && (
           <SectionGate
             section="score"
             privacy={privacy}
