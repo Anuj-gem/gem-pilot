@@ -1,20 +1,22 @@
-// Landing page — v11 rewrite.
+// Landing page — v12 (2026-04-23).
 //
 // Structure:
-//   1. Hero — copy + upload zone + sample report preview (client component)
-//   2. The Engine — Selznick tout, three proof cards
-//   3. What's in your report — product UI snippets
-//   4. The Path — 3 steps
-//   5. Discover — live preview, most recent scripts (no scores)
-//   6. Pricing — Free vs Pro, simple, no Charter lock
-//   7. Final CTA
+//   1. Hero (client) — "Built to help screenwriters succeed." + upload +
+//      pitch preview card
+//   2. What You Get — 3 value prop cards: Pitch material, Development notes,
+//      Industry matching
+//   3. Meet Selznick — the reader behind the tech
+//   4. For Industry Partners — apply-for-access wedge (mailto until Anuj
+//      provides a real form URL)
+//   5. Pricing — single Pro card, $20/mo for writers; industry is apply-only
+//   6. Final CTA
 //
-// Hero-upload handoff: LandingHero stashes the picked PDF via setPendingFile()
-// and routes to /submit?from=hero. /submit detects the pending file and
-// skips the script step — Format → Account direct, eval fires in background.
+// Writer-first, no marketing fluff, no scores, no leaderboard energy.
+// Hero-upload handoff unchanged: LandingHero stashes the picked PDF via
+// setPendingFile() and routes to /submit?from=hero.
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, FileText, Notebook, Users } from 'lucide-react'
 import Script from 'next/script'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackedCTA } from '@/components/tracked-cta'
@@ -22,34 +24,28 @@ import { MobileNav } from '@/components/mobile-nav'
 import { LandingHero } from '@/components/landing/landing-hero'
 import { createClient } from '@/lib/supabase-server'
 
+// TODO(2026-04-23): swap to the real application form URL once Anuj
+// provides it. Same mailto used on /discover's RecommendedGate so both
+// surfaces point to the same inbox until the form is live.
+const INDUSTRY_APPLY_URL =
+  'mailto:anuj@gem.studio?subject=GEM%20industry%20access%20request&body=Hi%20Anuj%20%E2%80%94%20I%27d%20like%20to%20apply%20for%20industry%20access%20on%20GEM.%0A%0AName%3A%0ACompany%2Frole%3A%0AWhat%20I%27m%20scouting%20for%20(genres%2C%20formats%2C%20mandates)%3A%0A'
+
 export default async function Home({
   searchParams,
 }: {
   searchParams: Promise<{ code?: string }>
 }) {
-  // OAuth safety net — forward dangling ?code= to /auth/callback so the
-  // session exchange completes (Supabase sometimes bounces here if the
-  // test-branch URL isn't in the allow list).
+  // OAuth safety net — forward dangling ?code= to /auth/callback.
   const sp = await searchParams
   if (sp.code) {
     redirect(`/auth/callback?code=${encodeURIComponent(sp.code)}&next=/submit`)
   }
 
   const supabase = await createClient()
-
-  // Logged-in writers skip the marketing page.
   const { data: { user } } = await supabase.auth.getUser()
   if (user) {
     redirect('/dashboard')
   }
-
-  // Recent scripts for the Discover preview. Title + author + format only —
-  // no scores on the public landing page.
-  const { data: recentScripts } = await supabase
-    .from('leaderboard')
-    .select('evaluation_id, title, author_name, format')
-    .order('created_at', { ascending: false })
-    .limit(3)
 
   return (
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
@@ -74,7 +70,7 @@ export default async function Home({
               href="/discover"
               className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
             >
-              Discover
+              Industry
             </Link>
             <Link
               href="/login"
@@ -100,7 +96,121 @@ export default async function Home({
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
 
-      {/* THE ENGINE — Selznick tout */}
+      {/* WHAT YOU GET — three distinct value props */}
+      <section
+        className="px-4 sm:px-6 py-14 sm:py-16"
+        style={{ background: 'var(--gem-gray-900)' }}
+      >
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-[640px] mx-auto mb-9">
+            <div
+              className="text-[11px] uppercase font-semibold mb-3"
+              style={{ letterSpacing: '0.32em', color: 'var(--gem-gold)' }}
+            >
+              What you get
+            </div>
+            <h2
+              className="text-[26px] sm:text-[32px] font-bold leading-[1.15] tracking-tight m-0 mb-3"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              Three things every writer needs.
+            </h2>
+            <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
+              A pitch you can send. Notes only you see. A match with the right industry partner.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {/* Pitch material */}
+            <div
+              className="rounded-xl p-6"
+              style={{
+                background: '#fff',
+                border: '1px solid rgba(212,160,23,0.30)',
+              }}
+            >
+              <div
+                className="w-9 h-9 rounded-lg grid place-items-center mb-4"
+                style={{
+                  background: 'rgba(212,160,23,0.12)',
+                  border: '1px solid rgba(212,160,23,0.32)',
+                }}
+              >
+                <FileText size={16} style={{ color: 'var(--gem-gold)' }} />
+              </div>
+              <p
+                className="text-[17px] font-semibold m-0 mb-2 leading-tight text-[var(--gem-gray-50)]"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                Pitch material
+              </p>
+              <p className="text-[13px] text-[var(--gem-gray-300)] leading-[1.6] m-0">
+                Ready-to-share positioning — a sharp headline, why the script is a hit, and how it reads for production. Use it the next time someone asks &ldquo;what have you got?&rdquo;
+              </p>
+            </div>
+
+            {/* Development notes */}
+            <div
+              className="rounded-xl p-6"
+              style={{
+                background: '#fff',
+                border: '1px solid rgba(124,58,237,0.25)',
+              }}
+            >
+              <div
+                className="w-9 h-9 rounded-lg grid place-items-center mb-4"
+                style={{
+                  background: 'rgba(124,58,237,0.10)',
+                  border: '1px solid rgba(124,58,237,0.30)',
+                }}
+              >
+                <Notebook size={16} style={{ color: 'var(--gem-accent)' }} />
+              </div>
+              <p
+                className="text-[17px] font-semibold m-0 mb-2 leading-tight text-[var(--gem-gray-50)]"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                Development notes
+              </p>
+              <p className="text-[13px] text-[var(--gem-gray-300)] leading-[1.6] m-0">
+                A private read on what&apos;s working and the sharpest places to push next. Use them at your own pace. They stay yours — you decide what, if anything, to share.
+              </p>
+            </div>
+
+            {/* Industry matching */}
+            <div
+              className="rounded-xl p-6"
+              style={{
+                background: '#fff',
+                border: '1px solid rgba(22,163,74,0.25)',
+              }}
+            >
+              <div
+                className="w-9 h-9 rounded-lg grid place-items-center mb-4"
+                style={{
+                  background: 'rgba(22,163,74,0.10)',
+                  border: '1px solid rgba(22,163,74,0.30)',
+                }}
+              >
+                <Users size={16} style={{ color: '#16a34a' }} />
+              </div>
+              <p
+                className="text-[17px] font-semibold m-0 mb-2 leading-tight text-[var(--gem-gray-50)]"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                Industry matching
+              </p>
+              <p className="text-[13px] text-[var(--gem-gray-300)] leading-[1.6] m-0">
+                We connect you with the producers, reps, and dev execs looking for work like yours — so you reach people actually scouting in your lane.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="h-px bg-[var(--gem-gray-700)]" />
+
+      {/* MEET SELZNICK — the reader behind the tech */}
       <section
         className="px-4 sm:px-6 py-14 sm:py-16"
         style={{
@@ -109,25 +219,26 @@ export default async function Home({
         }}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-[620px] mx-auto mb-8">
+          <div className="text-center max-w-[680px] mx-auto mb-8">
             <div
               className="text-[11px] uppercase font-semibold mb-3"
               style={{ letterSpacing: '0.32em', color: 'var(--gem-gold)' }}
             >
-              The Engine
+              The reader behind it
             </div>
             <h2
               className="text-[26px] sm:text-[32px] font-bold leading-[1.15] tracking-tight m-0 mb-3"
               style={{ fontFamily: 'Georgia, serif' }}
             >
               Meet{' '}
-              <span className="gem-shimmer-gold font-extrabold">Selznick</span>{' '}
-              — the most advanced screenplay analysis ever built.
+              <span className="gem-shimmer-gold font-extrabold">Selznick</span>
+              .
             </h2>
             <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-              Not a checklist. Not a coverage template. A reader calibrated
-              against the screenplays Hollywood actually makes — and getting
-              sharper with every script it sees.
+              Selznick is the reader that reads your script. Calibrated against
+              the screenplays Hollywood actually makes — and sharper with every
+              release. Not a checklist, not a coverage template. A reader that
+              knows what makes a script move.
             </p>
           </div>
 
@@ -157,7 +268,7 @@ export default async function Home({
               </p>
               <p className="text-[12px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
                 Every craft choice, every story beat, every production reality
-                — scored against what Hollywood actually makes.
+                — read against what Hollywood actually makes.
               </p>
             </div>
 
@@ -189,9 +300,8 @@ export default async function Home({
                 Sharper every release
               </p>
               <p className="text-[12px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-                Selznick gets sharper with every release. It&apos;s
-                constantly improving — the read you get today is more
-                refined than the one from a month ago.
+                Selznick gets sharper with every release. The read you get
+                today is more refined than a month ago.
               </p>
             </div>
 
@@ -220,9 +330,8 @@ export default async function Home({
                 Builds the match
               </p>
               <p className="text-[12px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-                Selznick profiles your script&apos;s lane, audience, and
-                packaging fit — the foundation for matching the right scripts
-                to the right industry partners.
+                Profiles your script&apos;s lane, audience, and packaging fit —
+                the basis for matching it with the right industry partners.
               </p>
             </div>
           </div>
@@ -240,320 +349,149 @@ export default async function Home({
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
 
-      {/* WHAT'S IN YOUR REPORT */}
+      {/* FOR INDUSTRY PARTNERS — the apply wedge */}
       <section
         className="px-4 sm:px-6 py-14 sm:py-16"
-        style={{ background: 'var(--gem-gray-900)' }}
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(124,58,237,0.05) 0%, var(--gem-black) 100%)',
+        }}
       >
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-7">
-            <h2
-              className="text-[26px] sm:text-[30px] font-bold leading-[1.15] tracking-tight m-0 mb-2"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              What&apos;s in your report.
-            </h2>
-            <p className="text-[14px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-              Score, headline, why it works, and the sharpest place a producer
-              would lean on next.
-            </p>
+        <div className="max-w-4xl mx-auto">
+          <div
+            className="inline-block text-[10px] font-bold uppercase rounded-full px-3 py-1 mb-4"
+            style={{
+              letterSpacing: '0.2em',
+              color: 'var(--gem-accent)',
+              background: 'rgba(124,58,237,0.10)',
+              border: '1px solid rgba(124,58,237,0.30)',
+            }}
+          >
+            Industry access · limited beta
+          </div>
+          <h2
+            className="text-[26px] sm:text-[32px] font-bold leading-[1.15] tracking-tight m-0 mb-4"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            For producers, reps, and dev execs.
+          </h2>
+          <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.65] m-0 mb-7 max-w-[62ch]">
+            We&apos;re opening GEM to a hand-picked cohort of industry partners —
+            producers actively optioning, literary reps building lists, dev
+            execs with active mandates, packagers scouting. Approved partners
+            get a private, curated shortlist matched to what they&apos;re looking
+            for.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-7 max-w-[720px]">
+            <IndustryProp
+              title="Matched to your mandate"
+              body="Genres, formats, budget range — we match by what you're actually building."
+            />
+            <IndustryProp
+              title="Real cross-section"
+              body="Every script is Selznick-read and writer-curated. No junk feed."
+            />
+            <IndustryProp
+              title="Direct to the writer"
+              body="Reach writers directly from their report. No gatekeepers, no reader queues."
+            />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {/* Why this can be a hit */}
-            <div
-              className="rounded-xl p-5"
+          <div className="flex items-center gap-4 flex-wrap">
+            <a
+              href={INDUSTRY_APPLY_URL}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[14px] font-semibold text-white transition-colors hover:brightness-110"
               style={{
-                background: '#fff',
-                border: '1px solid var(--gem-gray-700)',
+                background: 'var(--gem-accent)',
+                boxShadow: '0 4px 14px rgba(124,58,237,0.18)',
               }}
             >
-              <div
-                className="text-[10px] uppercase font-bold mb-2.5"
-                style={{ letterSpacing: '0.22em', color: 'var(--gem-accent)' }}
-              >
-                Why this can be a hit
-              </div>
-              <div className="flex flex-col gap-2">
-                {[
-                  'Mainstream emotional hook with built-in returnability',
-                  'Lead role that gives an A-list actor their dramatic re-entry',
-                  'Single-location structure — reads premium without expensive',
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-2.5">
-                    <span
-                      className="font-bold text-[13px]"
-                      style={{ color: 'var(--gem-gold)' }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <p className="text-[13px] font-semibold text-[var(--gem-gray-100)] leading-[1.4] m-0">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Primary lever — producer-mind, no story punch-downs */}
-            <div
-              className="rounded-xl p-5"
-              style={{
-                background:
-                  'linear-gradient(135deg, rgba(220,38,38,0.04), #fff 60%)',
-                border: '1px solid rgba(220,38,38,0.30)',
-              }}
-            >
-              <span
-                className="text-[9px] font-bold uppercase"
-                style={{
-                  letterSpacing: '0.18em',
-                  color: '#dc2626',
-                  background: 'rgba(220,38,38,0.07)',
-                  border: '1px solid rgba(220,38,38,0.25)',
-                  padding: '2px 7px',
-                  borderRadius: '4px',
-                }}
-              >
-                Primary lever
-              </span>
-              <p className="text-[13px] font-semibold text-[var(--gem-gray-100)] leading-[1.4] m-0 mt-2">
-                The expansive world is your strength — figure out how to
-                control costs to support it.
-              </p>
-              <p className="text-[12px] text-[var(--gem-gray-300)] leading-[1.55] m-0 mt-1.5">
-                Anchoring the back half in a single contained location keeps
-                packaging in indie range without losing the scope you&apos;ve
-                built.
-              </p>
-            </div>
+              Apply for industry access
+            </a>
+            <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
+              Hand-reviewed · most replies within 48 hours
+            </p>
           </div>
         </div>
       </section>
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
 
-      {/* THE PATH */}
+      {/* PRICING — single Pro card */}
       <section className="px-4 sm:px-6 py-14 sm:py-16">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h2
-              className="text-[26px] sm:text-[30px] font-bold leading-[1.15] tracking-tight m-0"
-              style={{ fontFamily: 'Georgia, serif' }}
+            <div
+              className="text-[11px] uppercase font-semibold mb-3"
+              style={{ letterSpacing: '0.32em', color: 'var(--gem-gold)' }}
             >
-              From your draft to a producer&apos;s desk.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[760px] mx-auto">
-            {[
-              {
-                n: 1,
-                title: 'Upload',
-                body: 'Drop your PDF. Selznick reads.',
-                color: 'var(--gem-gold)',
-                bg: 'rgba(212,160,23,0.10)',
-                border: 'rgba(212,160,23,0.4)',
-              },
-              {
-                n: 2,
-                title: 'Sharpen',
-                body: 'Use the development priorities. Resubmit. Watch it climb.',
-                color: 'var(--gem-accent)',
-                bg: 'rgba(124,58,237,0.10)',
-                border: 'rgba(124,58,237,0.4)',
-              },
-              {
-                n: 3,
-                title: 'Get discovered',
-                body: 'Your strongest work goes on Discover.',
-                color: '#16a34a',
-                bg: 'rgba(22,163,74,0.10)',
-                border: 'rgba(22,163,74,0.4)',
-              },
-            ].map(({ n, title, body, color, bg, border }) => (
-              <div key={n} className="text-center">
-                <div
-                  className="w-12 h-12 rounded-xl grid place-items-center mx-auto mb-3 font-bold text-[18px]"
-                  style={{
-                    background: bg,
-                    border: `1px solid ${border}`,
-                    color,
-                    fontFamily: 'Georgia, serif',
-                  }}
-                >
-                  {n}
-                </div>
-                <p
-                  className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 mb-1"
-                  style={{ fontFamily: 'Georgia, serif' }}
-                >
-                  {title}
-                </p>
-                <p className="text-[12px] text-[var(--gem-gray-300)] leading-[1.55] m-0 max-w-[200px] mx-auto">
-                  {body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="h-px bg-[var(--gem-gray-700)]" />
-
-      {/* DISCOVER */}
-      <section
-        className="px-4 sm:px-6 py-14 sm:py-16"
-        style={{ background: 'var(--gem-gray-900)' }}
-      >
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-[1.1fr_1fr] gap-6 sm:gap-8 items-center">
-          <div>
-            <div className="flex items-center gap-2 mb-2.5">
-              <span
-                className="w-2 h-2 rounded-full"
-                style={{ background: '#16a34a' }}
-              />
-              <span
-                className="text-[11px] font-bold uppercase"
-                style={{ letterSpacing: '0.22em', color: '#16a34a' }}
-              >
-                Live · Discover
-              </span>
+              Pricing
             </div>
             <h2
-              className="text-[22px] sm:text-[26px] font-bold leading-[1.2] tracking-tight m-0 mb-2.5"
+              className="text-[26px] sm:text-[30px] font-bold leading-[1.2] tracking-tight m-0 mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Producers are browsing right now.
+              $20/mo for writers.
             </h2>
-            <p className="text-[13px] text-[var(--gem-gray-300)] leading-[1.55] m-0 mb-3">
-              Discover is where buyers and reps come looking for what to read
-              next. Tonight, someone might be reading yours.
+            <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0">
+              First read is free. Industry partners:{' '}
+              <a
+                href={INDUSTRY_APPLY_URL}
+                className="underline"
+                style={{ color: 'var(--gem-accent)' }}
+              >
+                apply for access
+              </a>
+              .
             </p>
-            <Link
-              href="/discover"
-              className="text-[13px] font-semibold"
-              style={{ color: 'var(--gem-accent)' }}
-            >
-              Browse Discover →
-            </Link>
           </div>
-          <div className="flex flex-col gap-2">
-            {(recentScripts?.length ? recentScripts : SAMPLE_DISCOVER).map(
-              (s: any, i: number) => {
-                const href = s.evaluation_id
-                  ? `/report/${s.evaluation_id}`
-                  : '/discover'
-                return (
-                  <Link
-                    key={s.evaluation_id ?? `sample-${i}`}
-                    href={href}
-                    className="group flex items-center gap-2.5 p-2.5 rounded-lg transition-all duration-150 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(124,58,237,0.10)]"
-                    style={{
-                      background: '#fff',
-                      border: '1px solid var(--gem-gray-700)',
-                    }}
-                  >
-                    <div
-                      className="w-[32px] h-[32px] rounded-md grid place-items-center flex-shrink-0 text-[13px] transition-colors group-hover:bg-[rgba(124,58,237,0.10)] group-hover:text-[var(--gem-accent)]"
-                      style={{
-                        background: 'var(--gem-gray-800)',
-                        color: 'var(--gem-gray-500)',
-                      }}
-                    >
-                      📄
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p
-                        className="text-[13px] font-semibold m-0 leading-tight truncate transition-colors group-hover:text-[var(--gem-accent)]"
-                        style={{ color: 'var(--gem-gray-50)' }}
-                      >
-                        {s.title ?? 'Untitled'}
-                      </p>
-                      <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5 truncate">
-                        {s.author_name ?? 'Anonymous'} · {s.format ?? 'Feature'}
-                      </p>
-                    </div>
-                    <span
-                      aria-hidden
-                      className="text-[14px] text-[var(--gem-gray-500)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-150"
-                    >
-                      →
-                    </span>
-                  </Link>
-                )
-              }
-            )}
-          </div>
-        </div>
-      </section>
-
-      <div className="h-px bg-[var(--gem-gray-700)]" />
-
-      {/* PRICING */}
-      <section className="px-4 sm:px-6 py-14 sm:py-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-7">
-            <h2
-              className="text-[24px] sm:text-[28px] font-bold leading-[1.2] tracking-tight m-0 mb-2"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Try it free. Upgrade for the full read.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[560px] mx-auto">
+          <div className="max-w-[420px] mx-auto">
             <div
-              className="rounded-2xl p-5"
-              style={{
-                background: 'var(--gem-gray-900)',
-                border: '1px solid var(--gem-gray-700)',
-              }}
-            >
-              <p className="text-[13px] font-semibold text-[var(--gem-gray-300)] m-0 mb-1">
-                Free
-              </p>
-              <p
-                className="text-[30px] font-bold m-0 mb-3"
-                style={{ color: '#16a34a', fontFamily: 'Georgia, serif' }}
-              >
-                $0
-              </p>
-              <ul className="list-none p-0 m-0 text-[12px] text-[var(--gem-gray-100)] leading-[1.7]">
-                <li>✓ Your score</li>
-                <li>✓ Sample of the notes</li>
-                <li>✓ No credit card</li>
-              </ul>
-            </div>
-            <div
-              className="rounded-2xl p-5"
+              className="rounded-2xl p-6"
               style={{
                 background:
                   'linear-gradient(135deg, rgba(124,58,237,0.05), #fff 70%)',
                 border: '2px solid var(--gem-accent)',
-                boxShadow: '0 6px 20px rgba(124,58,237,0.10)',
+                boxShadow: '0 10px 30px rgba(124,58,237,0.10)',
               }}
             >
-              <p
-                className="text-[13px] font-semibold m-0 mb-1"
-                style={{ color: 'var(--gem-accent)' }}
-              >
-                Pro
-              </p>
-              <p
-                className="text-[30px] font-bold m-0 mb-3"
-                style={{ color: 'var(--gem-accent)', fontFamily: 'Georgia, serif' }}
-              >
-                $20
-                <span className="text-[13px] font-medium text-[var(--gem-gray-400)]">
-                  {' '}
-                  /mo
+              <div className="flex items-baseline justify-between gap-3 mb-4">
+                <div>
+                  <p
+                    className="text-[13px] font-semibold m-0 mb-1"
+                    style={{ color: 'var(--gem-accent)' }}
+                  >
+                    GEM Pro
+                  </p>
+                  <p
+                    className="text-[32px] font-bold m-0 leading-none text-[var(--gem-gray-50)]"
+                    style={{ fontFamily: 'Georgia, serif' }}
+                  >
+                    $20
+                    <span className="text-[13px] font-medium text-[var(--gem-gray-400)]">
+                      {' '}
+                      /mo
+                    </span>
+                  </p>
+                </div>
+                <span
+                  className="text-[10.5px] font-bold px-2.5 py-1 rounded-full"
+                  style={{
+                    letterSpacing: '0.08em',
+                    color: '#15803d',
+                    background: 'rgba(22,163,74,0.10)',
+                    border: '1px solid rgba(22,163,74,0.25)',
+                  }}
+                >
+                  FIRST READ FREE
                 </span>
-              </p>
-              <ul className="list-none p-0 m-0 text-[12px] text-[var(--gem-gray-100)] leading-[1.7]">
-                <li>✓ Full notes & development priorities</li>
+              </div>
+              <ul className="list-none p-0 m-0 text-[13px] text-[var(--gem-gray-100)] leading-[1.85]">
+                <li>✓ Full pitch material + development notes</li>
                 <li>✓ Unlimited revisions</li>
-                <li>✓ Publish to Discover</li>
-                <li>✓ Producers contact you directly</li>
+                <li>✓ Industry matching when you&apos;re ready</li>
+                <li>✓ Direct contact from industry partners</li>
                 <li>✓ Cancel anytime</li>
               </ul>
             </div>
@@ -568,32 +506,32 @@ export default async function Home({
         className="px-4 sm:px-6 py-16 sm:py-20 text-center"
         style={{
           background:
-            'radial-gradient(ellipse at 50% 50%, rgba(212,160,23,0.06) 0%, transparent 65%)',
+            'radial-gradient(ellipse at 50% 50%, rgba(212,160,23,0.08) 0%, transparent 65%)',
         }}
       >
         <h2
           className="text-[26px] sm:text-[30px] font-bold leading-[1.15] tracking-tight m-0 mb-2"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          Get your screenplay scored.
+          Submit your screenplay.
         </h2>
         <p
           className="text-[14px] text-[var(--gem-gray-300)] italic m-0 mb-5"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          First one is on us.
+          First read is on us.
         </p>
         <TrackedCTA
           href="/submit"
           event="cta_clicked"
-          properties={{ location: 'bottom_cta', label: 'Get Started — Free' }}
+          properties={{ location: 'bottom_cta', label: 'Submit your screenplay — Free' }}
           className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-[16px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
           style={{
             background: 'var(--gem-accent)',
             boxShadow: '0 6px 20px rgba(124,58,237,0.25)',
           }}
         >
-          Get Started — Free
+          Submit your screenplay — free
           <ArrowRight size={16} />
         </TrackedCTA>
       </section>
@@ -619,9 +557,15 @@ export default async function Home({
   )
 }
 
-// Fallback for when the leaderboard hasn't populated in a fresh env.
-const SAMPLE_DISCOVER = [
-  { title: 'The Summer Court', author_name: 'Maya Chen', format: 'Limited series' },
-  { title: 'Holding Pattern', author_name: 'Diego Vargas', format: 'Feature' },
-  { title: 'Last Train Out', author_name: 'Priya Singh', format: 'Pilot' },
-]
+function IndustryProp({ title, body }: { title: string; body: string }) {
+  return (
+    <div>
+      <p className="text-[13.5px] font-semibold m-0 mb-1 text-[var(--gem-gray-50)]">
+        {title}
+      </p>
+      <p className="text-[12px] text-[var(--gem-gray-400)] leading-[1.55] m-0">
+        {body}
+      </p>
+    </div>
+  )
+}
