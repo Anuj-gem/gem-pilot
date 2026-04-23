@@ -47,8 +47,12 @@ export interface SectionMeta {
   label: string
   /** Short description shown in the privacy panel. */
   hint: string
-  /** Grouping for the panel UI: summary = exec block, deep = deep-dive rows. */
-  group: 'summary' | 'deep'
+  /** Grouping for the modal UI:
+   *    'pitch'       — the 4 sections that make up the producer pitch
+   *                    (headline, why this is a hit, lead characters, package angles)
+   *    'development' — everything else: score, production overview/details,
+   *                    development priorities, narrative breakdown. */
+  group: 'pitch' | 'development'
 }
 
 export const SECTION_META: Record<SectionKey, SectionMeta> = {
@@ -56,55 +60,55 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
     key: 'headline',
     label: 'Headline',
     hint: 'Your title + one-line headline.',
-    group: 'summary',
-  },
-  score: {
-    key: 'score',
-    label: 'Score',
-    hint: 'Commercial potential score + tier.',
-    group: 'summary',
+    group: 'pitch',
   },
   whats_working: {
     key: 'whats_working',
     label: 'Why this is a hit',
     hint: 'The strongest notes on why the script lands.',
-    group: 'summary',
-  },
-  production_signal: {
-    key: 'production_signal',
-    label: 'Production Planning Overview',
-    hint: 'Cost, cast, and content complexity at a glance.',
-    group: 'summary',
+    group: 'pitch',
   },
   deep_dive_characters: {
     key: 'deep_dive_characters',
     label: 'Lead Characters',
     hint: 'Full character breakdown + actor appeal.',
-    group: 'deep',
+    group: 'pitch',
   },
   deep_dive_package: {
     key: 'deep_dive_package',
     label: 'Package Angles',
     hint: 'Who would direct it, who would buy it.',
-    group: 'deep',
+    group: 'pitch',
+  },
+  score: {
+    key: 'score',
+    label: 'Score',
+    hint: 'Commercial potential score + tier.',
+    group: 'development',
+  },
+  production_signal: {
+    key: 'production_signal',
+    label: 'Production Planning Overview',
+    hint: 'Cost, cast, and content complexity at a glance.',
+    group: 'development',
   },
   deep_dive_production: {
     key: 'deep_dive_production',
     label: 'Production Planning Details',
     hint: 'Cast count, locations, VFX/stunts, rights flags.',
-    group: 'deep',
+    group: 'development',
   },
   deep_dive_development: {
     key: 'deep_dive_development',
     label: 'Development Priorities',
     hint: 'Sharpest lever, craft note, and all other development notes.',
-    group: 'deep',
+    group: 'development',
   },
   deep_dive_narrative: {
     key: 'deep_dive_narrative',
     label: 'Narrative Breakdown',
     hint: '10 dimension scores + reasoning.',
-    group: 'deep',
+    group: 'development',
   },
 }
 
@@ -133,7 +137,7 @@ const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
   deep_dive_narrative:   'private',
 }
 
-export type PresetKey = 'teaser' | 'balanced' | 'open'
+export type PresetKey = 'pitch_only' | 'pitch_plus_dev'
 
 export interface Preset {
   key: PresetKey
@@ -142,21 +146,13 @@ export interface Preset {
   sections: Record<SectionKey, Visibility>
 }
 
+/** Named presets — the fast path. Custom is a separate mode (all-private,
+ *  writer toggles sections individually via the preview grid), not a preset. */
 export const PRESETS: Record<PresetKey, Preset> = {
-  teaser: {
-    key: 'teaser',
-    label: 'Teaser',
-    blurb: 'Headline and what\'s working. Everything else stays with you.',
-    sections: {
-      ...allPrivate(),
-      headline: 'public',
-      whats_working: 'public',
-    },
-  },
-  balanced: {
-    key: 'balanced',
-    label: 'Balanced',
-    blurb: 'The producer pitch — headline, what\'s working, lead characters, and package angles.',
+  pitch_only: {
+    key: 'pitch_only',
+    label: 'Pitch only',
+    blurb: 'Headline, why this is a hit, lead characters, and package angles.',
     sections: {
       ...allPrivate(),
       headline: 'public',
@@ -165,20 +161,17 @@ export const PRESETS: Record<PresetKey, Preset> = {
       deep_dive_package: 'public',
     },
   },
-  open: {
-    key: 'open',
-    label: 'Open book',
-    blurb: 'Everything. No sections private.',
+  pitch_plus_dev: {
+    key: 'pitch_plus_dev',
+    label: 'Pitch + development notes',
+    blurb: 'Everything in Pitch only, plus your development priorities.',
     sections: {
+      ...allPrivate(),
       headline: 'public',
-      score: 'public',
       whats_working: 'public',
-      production_signal: 'public',
       deep_dive_characters: 'public',
       deep_dive_package: 'public',
-      deep_dive_production: 'public',
       deep_dive_development: 'public',
-      deep_dive_narrative: 'public',
     },
   },
 }

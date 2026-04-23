@@ -43,8 +43,10 @@ export function VisibilityToggle({
   const [justChanged, setJustChanged] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
-  const activePreset = matchPreset(privacy) ?? 'teaser'
-  const presetLabel = PRESETS[activePreset].label
+  // matchPreset returns null when the writer has a custom configuration
+  // that doesn't match one of the named presets. Show "Custom" in that case.
+  const activePreset = matchPreset(privacy)
+  const presetLabel = activePreset ? PRESETS[activePreset].label : 'Custom'
 
   const handleDone = (params: { isPublic: boolean; privacy: ReportPrivacy }) => {
     setShowModal(false)

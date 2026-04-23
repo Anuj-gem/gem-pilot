@@ -337,39 +337,31 @@ export function PublishPreviewModal({
             </button>
           </div>
 
-          {/* Section grid — interactive. Click a chip to toggle that
-              section public/private. The mode radio above updates
-              automatically to reflect whichever preset matches (or Custom
-              if no preset matches). This is the primary fine-tune surface. */}
+          {/* Section grid — interactive. Grouped by Pitch and Development
+              Details (matches the app's mental model). Click a chip to
+              toggle that section public/private. The preset radio above
+              updates automatically to reflect whichever preset matches
+              (or Custom if no preset matches). */}
           <div className="mb-5">
             <p className="text-[11px] uppercase tracking-[0.15em] font-semibold text-[var(--gem-gray-500)] mb-2 m-0">
               What visitors see — tap to toggle
             </p>
-            <div className="rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                {SECTION_KEYS.map((k) => {
-                  const meta = SECTION_META[k]
-                  const isPublic = sectionIsPublic(selectedPrivacy, k)
-                  return (
-                    <button
-                      key={k}
-                      onClick={() => toggleSection(k)}
-                      className={`flex items-center gap-2 px-2.5 py-2 rounded-md text-[12px] transition-colors ${
-                        isPublic
-                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'
-                          : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
-                      }`}
-                    >
-                      {isPublic ? <Eye size={11} /> : <Lock size={11} />}
-                      <span className="font-medium flex-1 text-left">{meta.label}</span>
-                    </button>
-                  )
-                })}
-              </div>
+            <div className="rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-3 space-y-3">
+              <SectionGroup
+                label="Pitch"
+                keys={SECTION_KEYS.filter((k) => SECTION_META[k].group === 'pitch')}
+                privacy={selectedPrivacy}
+                onToggle={toggleSection}
+              />
+              <SectionGroup
+                label="Development details"
+                keys={SECTION_KEYS.filter((k) => SECTION_META[k].group === 'development')}
+                privacy={selectedPrivacy}
+                onToggle={toggleSection}
+              />
             </div>
             <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-2">
-              Visitors see only the public sections — private sections are hidden entirely.
-              They can request to contact you through Anuj.
+              Visitors see only the public sections — private ones are hidden entirely.
             </p>
           </div>
 
@@ -445,6 +437,46 @@ export function PublishPreviewModal({
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  )
+}
+
+function SectionGroup({
+  label,
+  keys,
+  privacy,
+  onToggle,
+}: {
+  label: string
+  keys: SectionKey[]
+  privacy: ReportPrivacy
+  onToggle: (key: SectionKey) => void
+}) {
+  return (
+    <div>
+      <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-[var(--gem-gray-500)] mb-1.5 m-0">
+        {label}
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+        {keys.map((k) => {
+          const meta = SECTION_META[k]
+          const isPublic = sectionIsPublic(privacy, k)
+          return (
+            <button
+              key={k}
+              onClick={() => onToggle(k)}
+              className={`flex items-center gap-2 px-2.5 py-2 rounded-md text-[12px] transition-colors ${
+                isPublic
+                  ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'
+                  : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
+              }`}
+            >
+              {isPublic ? <Eye size={11} /> : <Lock size={11} />}
+              <span className="font-medium flex-1 text-left">{meta.label}</span>
+            </button>
+          )
+        })}
       </div>
     </div>
   )
