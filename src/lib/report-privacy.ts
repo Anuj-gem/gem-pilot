@@ -153,43 +153,45 @@ export const PRESETS: Record<PresetKey, Preset> = {
   teaser: {
     key: 'teaser',
     label: 'Teaser',
-    blurb: 'Just your headline. Everything else stays with you.',
+    blurb: 'Headline and what\'s working. Everything else stays with you.',
     sections: {
       ...allPrivate(),
       headline: 'public',
+      whats_working: 'public',
     },
   },
   balanced: {
     key: 'balanced',
     label: 'Balanced',
-    blurb: 'Headline, what\'s working, and a production read. Score stays private.',
+    blurb: 'The producer pitch — headline, what\'s working, lead characters, and package angles.',
     sections: {
       ...allPrivate(),
       headline: 'public',
       whats_working: 'public',
-      production_signal: 'public',
+      deep_dive_characters: 'public',
+      deep_dive_package: 'public',
     },
   },
   open: {
     key: 'open',
     label: 'Open book',
-    blurb: 'Everything except your sharpest development notes.',
+    blurb: 'Everything. No sections private.',
     sections: {
       headline: 'public',
       score: 'public',
       whats_working: 'public',
-      sharpest_lever: 'private',
+      sharpest_lever: 'public',
       production_signal: 'public',
       deep_dive_characters: 'public',
       deep_dive_package: 'public',
       deep_dive_production: 'public',
-      deep_dive_development: 'private',
+      deep_dive_development: 'public',
       deep_dive_narrative: 'public',
     },
   },
 }
 
-function allPrivate(): Record<SectionKey, Visibility> {
+export function allPrivate(): Record<SectionKey, Visibility> {
   return SECTION_KEYS.reduce(
     (acc, k) => {
       acc[k] = 'private'

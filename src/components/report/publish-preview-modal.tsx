@@ -17,12 +17,13 @@
 // sharing posture, hit paywall on the final commit.
 
 import { useMemo, useState } from 'react'
-import { Check, ChevronDown, Eye, Lock, X, Shield } from 'lucide-react'
+import { Check, Eye, Lock, X, Shield } from 'lucide-react'
 import { trackUpgradePromptShown } from '@/lib/posthog'
 import {
   PRESETS,
   SECTION_KEYS,
   SECTION_META,
+  allPrivate,
   matchPreset,
   normalizePrivacy,
   resolveVisibility,
@@ -55,42 +56,41 @@ export function PublishPreviewModal({
   onCancel,
 }: Props) {
   const initial = normalizePrivacy(initialPrivacy)
-  const startingPreset = matchPreset(initial) ?? 'teaser'
-  const [mode, setMode] = useState<PresetKey | 'custom'>(startingPreset)
+  // Privacy is the single source of truth. `mode` is derived: if the
+  // current privacy exactly matches one of the three presets, that's the
+  // selected radio; otherwise 'custom' lights up.
   const [privacy, setPrivacy] = useState<ReportPrivacy>(initial)
   const [contactEnabled, setContactEnabled] = useState(initialContactEnabled)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [showCustom, setShowCustom] = useState(startingPreset === 'teaser' ? false : false)
 
-  // Derived selected privacy — presets resolve to the preset's sections,
-  // 'custom' uses the in-progress `privacy` state.
-  const selectedPrivacy = useMemo<ReportPrivacy>(() => {
-    if (mode === 'custom') return privacy
-    return { version: 1, sections: { ...PRESETS[mode].sections } }
-  }, [mode, privacy])
-
+  const mode: PresetKey | 'custom' = useMemo(() => matchPreset(privacy) ?? 'custom', [privacy])
+  const selectedPrivacy = privacy
   const publicCount = SECTION_KEYS.filter((k) => sectionIsPublic(selectedPrivacy, k)).length
   const isAlreadyPublished = initialIsPublic
 
   const pickPreset = (key: PresetKey) => {
-    setMode(key)
     setPrivacy({ version: 1, sections: { ...PRESETS[key].sections } })
   }
 
-  const enterCustom = () => {
-    setMode('custom')
-    setShowCustom(true)
+  const pickCustom = () => {
+    // Custom defaults to nothing public — writer opts in section-by-section
+    // via the visitor-preview grid chips below. No "all public" surprises.
+    setPrivacy({ version: 1, sections: { ...allPrivate() } })
   }
 
   const toggleSection = (key: SectionKey) => {
     const current = resolveVisibility(privacy, key)
     const next: Visibility = current === 'public' ? 'private' : 'public'
+    // Fill in the full section record so matchPreset can compare cleanly.
+    const base: Record<SectionKey, Visibility> = {
+      ...allPrivate(),
+      ...privacy.sections,
+    }
     setPrivacy({
       version: 1,
-      sections: { ...privacy.sections, [key]: next },
+      sections: { ...base, [key]: next },
     })
-    setMode('custom')
   }
 
   const openUpgrade = () => {
@@ -254,104 +254,55 @@ export function PublishPreviewModal({
               )
             })}
 
-            {/* Custom — expand for per-section toggles */}
-            <div
-              className={`rounded-xl border transition-colors ${
+            {/* Custom — simple radio. Starts with everything private; user
+                opts in section-by-section via the interactive preview grid
+                below. No pre-populated state carried over from other presets. */}
+            <button
+              onClick={pickCustom}
+              className={`w-full flex items-start gap-3 text-left px-4 py-3 rounded-xl border transition-colors ${
                 mode === 'custom'
                   ? 'border-[var(--gem-accent)] bg-[rgba(124,58,237,0.04)]'
-                  : 'border-[var(--gem-gray-700)]'
+                  : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
               }`}
             >
-              <button
-                onClick={() => {
-                  enterCustom()
-                  setShowCustom((s) => !s)
-                }}
-                className="w-full flex items-start gap-3 text-left px-4 py-3"
+              <div
+                className={`flex-shrink-0 mt-1 w-4 h-4 rounded-full border-2 ${
+                  mode === 'custom'
+                    ? 'border-[var(--gem-accent)] bg-[var(--gem-accent)]'
+                    : 'border-[var(--gem-gray-500)]'
+                }`}
               >
-                <div
-                  className={`flex-shrink-0 mt-1 w-4 h-4 rounded-full border-2 ${
-                    mode === 'custom'
-                      ? 'border-[var(--gem-accent)] bg-[var(--gem-accent)]'
-                      : 'border-[var(--gem-gray-500)]'
-                  }`}
-                >
+                {mode === 'custom' && (
+                  <div className="w-full h-full grid place-items-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                  </div>
+                )}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-baseline gap-2 mb-0.5">
+                  <p className="text-[15px] font-semibold text-[var(--gem-gray-50)] m-0">
+                    Custom
+                  </p>
                   {mode === 'custom' && (
-                    <div className="w-full h-full grid place-items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                    </div>
+                    <span className="text-[11px] text-[var(--gem-gray-500)]">
+                      {publicCount} of {SECTION_KEYS.length} sections public
+                    </span>
                   )}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline gap-2 mb-0.5">
-                    <p className="text-[15px] font-semibold text-[var(--gem-gray-50)] m-0">
-                      Custom
-                    </p>
-                    {mode === 'custom' && (
-                      <span className="text-[11px] text-[var(--gem-gray-500)]">
-                        {publicCount} of {SECTION_KEYS.length} sections public
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-[13px] text-[var(--gem-gray-400)] m-0 leading-snug">
-                    Pick section-by-section.
-                  </p>
-                </div>
-                <ChevronDown
-                  size={16}
-                  className={`mt-1 text-[var(--gem-gray-500)] transition-transform ${showCustom ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {showCustom && (
-                <div className="px-4 pb-4 border-t border-[var(--gem-gray-700)] pt-3">
-                  <div className="space-y-1">
-                    {SECTION_KEYS.map((k) => {
-                      const meta = SECTION_META[k]
-                      const isPublic = sectionIsPublic(selectedPrivacy, k)
-                      return (
-                        <button
-                          key={k}
-                          onClick={() => toggleSection(k)}
-                          className="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg hover:bg-[var(--gem-gray-800)] text-left transition-colors"
-                        >
-                          <div
-                            className={`flex-shrink-0 w-7 h-7 rounded-full grid place-items-center ${
-                              isPublic
-                                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                                : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]'
-                            }`}
-                          >
-                            {isPublic ? <Eye size={12} /> : <Lock size={12} />}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[12.5px] font-medium text-[var(--gem-gray-50)] m-0 leading-tight">
-                              {meta.label}
-                            </p>
-                            <p className="text-[10.5px] text-[var(--gem-gray-500)] m-0 leading-snug">
-                              {meta.hint}
-                            </p>
-                          </div>
-                          <span
-                            className={`flex-shrink-0 text-[10px] uppercase tracking-[0.1em] font-bold ${
-                              isPublic ? 'text-emerald-700' : 'text-[var(--gem-gray-500)]'
-                            }`}
-                          >
-                            {isPublic ? 'Public' : 'Private'}
-                          </span>
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              )}
-            </div>
+                <p className="text-[13px] text-[var(--gem-gray-400)] m-0 leading-snug">
+                  Nothing public by default — tap sections below to turn them on.
+                </p>
+              </div>
+            </button>
           </div>
 
-          {/* Visitor preview grid — always visible so writer sees impact
-              of whatever preset/custom state they've picked. */}
+          {/* Section grid — interactive. Click a chip to toggle that
+              section public/private. The mode radio above updates
+              automatically to reflect whichever preset matches (or Custom
+              if no preset matches). This is the primary fine-tune surface. */}
           <div className="mb-5">
             <p className="text-[11px] uppercase tracking-[0.15em] font-semibold text-[var(--gem-gray-500)] mb-2 m-0">
-              Visitor preview
+              What visitors see — tap to toggle
             </p>
             <div className="rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] p-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
@@ -359,17 +310,18 @@ export function PublishPreviewModal({
                   const meta = SECTION_META[k]
                   const isPublic = sectionIsPublic(selectedPrivacy, k)
                   return (
-                    <div
+                    <button
                       key={k}
-                      className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md text-[12px] ${
+                      onClick={() => toggleSection(k)}
+                      className={`flex items-center gap-2 px-2.5 py-2 rounded-md text-[12px] transition-colors ${
                         isPublic
-                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                          : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)] border border-[var(--gem-gray-700)]'
+                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'
+                          : 'bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
                       }`}
                     >
                       {isPublic ? <Eye size={11} /> : <Lock size={11} />}
-                      <span className="font-medium">{meta.label}</span>
-                    </div>
+                      <span className="font-medium flex-1 text-left">{meta.label}</span>
+                    </button>
                   )
                 })}
               </div>
