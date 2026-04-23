@@ -183,8 +183,15 @@ export function DetailsView({
   // Derive the designation locally from the score so callers don't need to
   // keep score + bucket flags in sync.
   const designation: Designation | null = scoreDesignation(commercialScore)
+  // Public viewers get a heavier blur (14px) — 5px was readable enough
+  // that a producer could clean-off the score "68.3" or a "Medium" risk
+  // pill just by squinting. Owner-locked state keeps the softer 5px so
+  // the writer can still see the shape of their own report.
   const blurStyle: React.CSSProperties = effectivelyLocked
-    ? { filter: 'blur(5px)', userSelect: 'none' as const }
+    ? {
+        filter: publicViewer ? 'blur(14px)' : 'blur(5px)',
+        userSelect: 'none' as const,
+      }
     : {}
 
   const risk = production?.risk_rubric
@@ -637,7 +644,7 @@ function DimensionRow({
 }) {
   const p = scoreBandPalette(score)
   const pct = Math.max(0, Math.min(100, score * 10))
-  const blurStyle: React.CSSProperties = { filter: 'blur(5px)', userSelect: 'none' }
+  const blurStyle: React.CSSProperties = { filter: 'blur(10px)', userSelect: 'none' }
   return (
     <div className="rounded-xl p-5" style={{ border: `1px solid var(--gem-gray-700)`, background: '#fff' }}>
       <div className="flex items-baseline justify-between gap-4 mb-3">

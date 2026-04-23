@@ -87,14 +87,14 @@ export function Collapsible({
           )}
           <p
             className="text-[19px] sm:text-[20px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0"
-            style={titleBlurred ? { filter: 'blur(5px)', userSelect: 'none' } : undefined}
+            style={titleBlurred ? { filter: 'blur(10px)', userSelect: 'none' } : undefined}
           >
             {title}
           </p>
           {meta && (
             <p
               className="text-[14px] text-[var(--gem-gray-400)] mt-1.5 m-0 leading-snug"
-              style={metaBlurred ? { filter: 'blur(5px)', userSelect: 'none' } : undefined}
+              style={metaBlurred ? { filter: 'blur(10px)', userSelect: 'none' } : undefined}
             >
               {meta}
             </p>
