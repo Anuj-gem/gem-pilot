@@ -173,13 +173,13 @@ export function QualificationBanner({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1" style={{ color: '#92710f' }}>
-            Qualifies for the Discover Portal
+            Qualifies for the Discover Portal · currently private
           </p>
           <p className="text-[16px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-[1.35]">
             Publish now to get your script in front of industry partners.
           </p>
           <p className="text-[13.5px] sm:text-[14px] text-[var(--gem-gray-300)] m-0 mb-4 leading-[1.55] max-w-[62ch]">
-            Producers, agents, and dev execs actively browse the Discover Portal for projects to option. You choose what they see.
+            Right now, nothing&apos;s visible to anyone but you. When you publish, producers, agents, and dev execs actively browsing the Discover Portal can find it — and you choose exactly which sections they see.
           </p>
           <button
             onClick={() => setShowModal(true)}

@@ -196,18 +196,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Admin never blurs. Non-owners don't use this axis — privacy gate handles
   // their visibility.
   const applyPaywallBlur = locked && isOwner && !isAdmin
-  // Privacy is a Pro feature. Free writers can't publish (Pro-gated) so
-  // showing them a privacy panel or per-section toggles is noise — their job
-  // is to upgrade first. Any Pro owner (including admin on their own
-  // reports) gets the full controls via the modal.
-  const canControlPrivacy = isOwner && ownerIsSubscribed
-  // Per-section pills removed 2026-04-23 — privacy is fully controlled via
-  // the modal triggered from the publish button. Leaving this as undefined
-  // means SectionGate renders content without the inline Public/Private pill.
-  const privacyControlId: string | undefined = undefined
-  // Suppress unused-var warning — canControlPrivacy still documents the
-  // distinction for future handlers that need it.
-  void canControlPrivacy
+  // Inline per-section privacy pills — shown for ANY owner (free or Pro).
+  // Anuj's 2026-04-23 call: writers want to see "this is private" labels as
+  // they scroll so they understand exactly what's exposed. Toggles save
+  // directly; the Pro paywall only gates the actual Publish action (enforced
+  // by the qualification banner's CTA). Free owners can plan their sharing
+  // posture before they upgrade — feature-discovery, not a paywall wall.
+  const privacyControlId: string | undefined = isOwner ? submission.id : undefined
 
   let lockedAfterFreeEval = false
   if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
@@ -380,7 +375,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Owner privacy review banner — shown once for writers whose reports
             got migrated to the new default privacy settings. Pro-only since
             free writers can't do anything with privacy yet. */}
-        {canControlPrivacy && needsPrivacyReview && (
+        {isOwner && ownerIsSubscribed && needsPrivacyReview && (
           <div
             className="flex items-start gap-3 p-4 rounded-xl mb-4"
             style={{
@@ -435,7 +430,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Share section — only when the report is actually public, or owner
             is Pro (Pro writers can pre-share via the private link before hitting
             publish). Free writers see the upgrade CTA above instead. */}
-        {(submission.is_public || canControlPrivacy) && (
+        {(submission.is_public || (isOwner && ownerIsSubscribed)) && (
           <div className="mb-8">
             <ShareSection evaluationId={id} title={topCard.title} />
           </div>
@@ -500,34 +495,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     )}
                   </Collapsible>
                 ))}
-              </div>
-            </Section>
-          )}
-        </SectionGate>
-
-        {/* PRODUCTION PLANNING OVERVIEW — at-a-glance risk pills */}
-        <SectionGate
-          section="production_signal"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-        >
-          {production?.risk_rubric && (
-            <Section label="Production Planning Overview" subtitle="Cost, cast, and content complexity at a glance.">
-              <div
-                className="grid grid-cols-1 sm:grid-cols-3 gap-3"
-                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                aria-hidden={applyPaywallBlur ? true : undefined}
-              >
-                {production.risk_rubric.cost && (
-                  <RiskTile label="Production cost" axis={production.risk_rubric.cost} />
-                )}
-                {production.risk_rubric.cast && (
-                  <RiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
-                )}
-                {production.risk_rubric.content && (
-                  <RiskTile label="Content maturity" axis={production.risk_rubric.content} />
-                )}
               </div>
             </Section>
           )}
@@ -646,6 +613,142 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {packageAngles.buyer_appeal.detail}
                   </p>
                 </Collapsible>
+              </div>
+            </Section>
+          )}
+        </SectionGate>
+
+        {/* PRODUCTION PLANNING OVERVIEW — at-a-glance risk pills */}
+        <SectionGate
+          section="production_signal"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={privacyControlId}
+        >
+          {production?.risk_rubric && (
+            <Section label="Production Planning Overview" subtitle="Cost, cast, and content complexity at a glance.">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                aria-hidden={applyPaywallBlur ? true : undefined}
+              >
+                {production.risk_rubric.cost && (
+                  <RiskTile label="Production cost" axis={production.risk_rubric.cost} />
+                )}
+                {production.risk_rubric.cast && (
+                  <RiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
+                )}
+                {production.risk_rubric.content && (
+                  <RiskTile label="Content maturity" axis={production.risk_rubric.content} />
+                )}
+              </div>
+            </Section>
+          )}
+        </SectionGate>
+
+        {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
+            craft note as an inline callout, then all other considerations.
+            Merges what was previously two sections ("Sharpest lever" + secondary
+            Development Priorities) into a single coherent section that mirrors
+            the structure of the actual report. */}
+        <SectionGate
+          section="deep_dive_development"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={privacyControlId}
+        >
+          {(considerations.length > 0 || craftNote) && (() => {
+            const primary = considerations.find((c) => c.is_primary_lever === true)
+            const secondary = considerations.filter((c) => c.is_primary_lever !== true)
+            return (
+              <Section
+                label="Development Priorities"
+                subtitle="The sharpest places to push on the next pass — positioning notes and directions a producer or collaborator might lean on in conversation."
+              >
+                <div className="space-y-3">
+                  {primary && (
+                    <Collapsible
+                      title={primary.area}
+                      primary
+                      defaultOpen
+                    >
+                      <p
+                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={bodyBlur}
+                      >
+                        {primary.detail}
+                      </p>
+                    </Collapsible>
+                  )}
+                  {craftNote && (
+                    <div
+                      className="rounded-xl p-5"
+                      style={{
+                        background: 'rgba(5,150,105,0.07)',
+                        border: '1px solid rgba(5,150,105,0.25)',
+                      }}
+                    >
+                      <p
+                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                        style={{ color: '#059669' }}
+                      >
+                        Craft note
+                      </p>
+                      <p
+                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                        style={bodyBlur}
+                      >
+                        {craftNote}
+                      </p>
+                    </div>
+                  )}
+                  {secondary.map((c, i) => (
+                    <Collapsible
+                      key={i}
+                      title={c.area}
+                      titleBlurred={applyPaywallBlur && i > 0}
+                    >
+                      <p
+                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                        style={bodyBlur}
+                      >
+                        {c.detail}
+                      </p>
+                    </Collapsible>
+                  ))}
+                </div>
+              </Section>
+            )
+          })()}
+        </SectionGate>
+
+        {/* NARRATIVE BREAKDOWN — 10 dim scores */}
+        <SectionGate
+          section="deep_dive_narrative"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={privacyControlId}
+        >
+          {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
+            <Section
+              label="Narrative breakdown"
+              subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+            >
+              <div className="space-y-3">
+                {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+                  const s = scores?.[dimId]
+                  if (typeof s?.score !== 'number') return null
+                  const meta = DIMENSION_META[dimId]
+                  return (
+                    <DimensionRow
+                      key={dimId}
+                      label={meta.label}
+                      score={s.score}
+                      reasoning={s.reasoning}
+                      locked={applyPaywallBlur}
+                    />
+                  )
+                })}
               </div>
             </Section>
           )}
@@ -772,114 +875,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     </ul>
                   </Collapsible>
                 ) : null}
-              </div>
-            </Section>
-          )}
-        </SectionGate>
-
-        {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
-            craft note as an inline callout, then all other considerations.
-            Merges what was previously two sections ("Sharpest lever" + secondary
-            Development Priorities) into a single coherent section that mirrors
-            the structure of the actual report. */}
-        <SectionGate
-          section="deep_dive_development"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-        >
-          {(considerations.length > 0 || craftNote) && (() => {
-            const primary = considerations.find((c) => c.is_primary_lever === true)
-            const secondary = considerations.filter((c) => c.is_primary_lever !== true)
-            return (
-              <Section
-                label="Development Priorities"
-                subtitle="The sharpest places to push on the next pass — positioning notes and directions a producer or collaborator might lean on in conversation."
-              >
-                <div className="space-y-3">
-                  {primary && (
-                    <Collapsible
-                      title={primary.area}
-                      primary
-                      defaultOpen
-                    >
-                      <p
-                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                        style={bodyBlur}
-                      >
-                        {primary.detail}
-                      </p>
-                    </Collapsible>
-                  )}
-                  {craftNote && (
-                    <div
-                      className="rounded-xl p-5"
-                      style={{
-                        background: 'rgba(5,150,105,0.07)',
-                        border: '1px solid rgba(5,150,105,0.25)',
-                      }}
-                    >
-                      <p
-                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                        style={{ color: '#059669' }}
-                      >
-                        Craft note
-                      </p>
-                      <p
-                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                        style={bodyBlur}
-                      >
-                        {craftNote}
-                      </p>
-                    </div>
-                  )}
-                  {secondary.map((c, i) => (
-                    <Collapsible
-                      key={i}
-                      title={c.area}
-                      titleBlurred={applyPaywallBlur && i > 0}
-                    >
-                      <p
-                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                        style={bodyBlur}
-                      >
-                        {c.detail}
-                      </p>
-                    </Collapsible>
-                  ))}
-                </div>
-              </Section>
-            )
-          })()}
-        </SectionGate>
-
-        {/* NARRATIVE BREAKDOWN — 10 dim scores */}
-        <SectionGate
-          section="deep_dive_narrative"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-        >
-          {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-            <Section
-              label="Narrative breakdown"
-              subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
-            >
-              <div className="space-y-3">
-                {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
-                  const s = scores?.[dimId]
-                  if (typeof s?.score !== 'number') return null
-                  const meta = DIMENSION_META[dimId]
-                  return (
-                    <DimensionRow
-                      key={dimId}
-                      label={meta.label}
-                      score={s.score}
-                      reasoning={s.reasoning}
-                      locked={applyPaywallBlur}
-                    />
-                  )
-                })}
               </div>
             </Section>
           )}
