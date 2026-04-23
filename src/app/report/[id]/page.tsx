@@ -409,6 +409,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
+          pillClassName="absolute right-5 bottom-5"
         >
           <EditableTopCard
             evaluationId={id}
@@ -436,23 +438,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Big Commercial Viability Score card — removed from the owner
-            surface 2026-04-23 (qualification banner above replaces it).
-            Non-owners can still see the score card IF the writer marked
-            "score" public in privacy settings; that path is preserved by
-            SectionGate for the writer's flexibility. */}
-        {!isOwner && (
-          <SectionGate
-            section="score"
-            privacy={privacy}
-            isOwnerOrAdmin={isOwnerOrAdmin}
-            submissionId={privacyControlId}
-          >
-            {typeof commercialScore === 'number' && designation && (
-              <CommercialScoreCard score={commercialScore} designationLabel={DESIGNATION_STYLE[designation].label} tierStyle={DESIGNATION_STYLE[designation]} copyMessage={DESIGNATION_COPY[designation].message} />
-            )}
-          </SectionGate>
-        )}
+        {/* Commercial Viability Score card removed entirely 2026-04-23.
+            Score is now an internal ranking signal only — not a section
+            visitors or writers can toggle. Qualification banner above
+            surfaces the only score-derived signal (≥50 qualifies). */}
 
         {/* WHAT'S WORKING */}
         <SectionGate
@@ -460,6 +449,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {allStrengths.length > 0 && (
             <Section label="Why this is a hit" subtitle={whatsSpecial.headline}>
@@ -506,6 +496,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {leadCharacters.length > 0 && (
             <Section
@@ -558,6 +549,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {packageAngles && (
             <Section label="Package angles" subtitle="Who would direct it, and who would buy it.">
@@ -624,6 +616,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {production?.risk_rubric && (
             <Section label="Production Planning Overview" subtitle="Cost, cast, and content complexity at a glance.">
@@ -656,6 +649,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {(considerations.length > 0 || craftNote) && (() => {
             const primary = considerations.find((c) => c.is_primary_lever === true)
@@ -728,6 +722,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
             <Section
@@ -760,6 +755,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           privacy={privacy}
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
         >
           {production && (
             <Section

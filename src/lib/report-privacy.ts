@@ -21,7 +21,6 @@ export type Visibility = 'public' | 'private'
  *  the label rename (2026-04-23). Only the UI labels in SECTION_META changed. */
 export type SectionKey =
   | 'headline'              // top card: title + headline (logline)
-  | 'score'                 // commercial potential score + tier
   | 'whats_working'         // "Why this is a hit" strengths
   | 'production_signal'     // Production Planning Overview (at-a-glance cards)
   | 'deep_dive_characters'  // Lead Characters + actor appeal
@@ -30,9 +29,12 @@ export type SectionKey =
   | 'deep_dive_development' // Development Priorities (incl. primary lever + craft note)
   | 'deep_dive_narrative'   // Narrative Breakdown (10-dim)
 
+/** Score is deliberately NOT a section. Anuj's 2026-04-23 call: the numeric
+ *  score is never shown to writers directly, and shouldn't be a toggle
+ *  visitors can opt into. Qualification (≥50) is the only score-derived
+ *  signal that surfaces publicly, via the qualification banner. */
 export const SECTION_KEYS: SectionKey[] = [
   'headline',
-  'score',
   'whats_working',
   'production_signal',
   'deep_dive_characters',
@@ -80,12 +82,6 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
     hint: 'Who would direct it, who would buy it.',
     group: 'pitch',
   },
-  score: {
-    key: 'score',
-    label: 'Score',
-    hint: 'Commercial potential score + tier.',
-    group: 'development',
-  },
   production_signal: {
     key: 'production_signal',
     label: 'Production Planning Overview',
@@ -125,9 +121,12 @@ export interface ReportPrivacy {
  *  only the headline is public by default. Writers pick a preset (or go
  *  Custom) when they open the privacy modal, so the default is deliberately
  *  conservative. Nothing leaks until the writer picks a broader preset. */
+/** Fresh reports default to ALL sections private — writer must actively opt
+ *  in before anything becomes visible. Matches Anuj's 2026-04-23 "nothing
+ *  should be public by default" call; the privacy modal nudges writers
+ *  toward presets from that starting point. */
 const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
-  headline:              'public',
-  score:                 'private',
+  headline:              'private',
   whats_working:         'private',
   production_signal:     'private',
   deep_dive_characters:  'private',
@@ -164,14 +163,18 @@ export const PRESETS: Record<PresetKey, Preset> = {
   pitch_plus_dev: {
     key: 'pitch_plus_dev',
     label: 'Pitch + development notes',
-    blurb: 'Everything in Pitch only, plus your development priorities.',
+    blurb: 'Everything — pitch sections plus all development details.',
     sections: {
-      ...allPrivate(),
-      headline: 'public',
-      whats_working: 'public',
-      deep_dive_characters: 'public',
-      deep_dive_package: 'public',
+      // Everything public. This is the "open book" option, renamed to
+      // match the two-tier mental model writers asked for.
+      headline:              'public',
+      whats_working:         'public',
+      production_signal:     'public',
+      deep_dive_characters:  'public',
+      deep_dive_package:     'public',
+      deep_dive_production:  'public',
       deep_dive_development: 'public',
+      deep_dive_narrative:   'public',
     },
   },
 }

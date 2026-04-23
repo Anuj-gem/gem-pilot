@@ -15,7 +15,7 @@
 // v5.2 rubric. Binary qualification removes the "I dropped 2 points and lost
 // GEM Select" emotional moment that was generating angry emails.
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Check, Eye, RefreshCw } from 'lucide-react'
 import { PublishPreviewModal } from '@/components/report/publish-preview-modal'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
@@ -53,6 +53,15 @@ export function QualificationBanner({
   const [privacy, setPrivacy] = useState<ReportPrivacy | null>(initialPrivacy)
   const [showModal, setShowModal] = useState(false)
   const [justChanged, setJustChanged] = useState(false)
+
+  // Section pills (elsewhere on the page) dispatch 'gem:open-publish-modal'
+  // when a writer tries to toggle anything before publishing — the modal is
+  // the single funnel for picking what's public + hitting the paywall.
+  useEffect(() => {
+    const handler = () => setShowModal(true)
+    window.addEventListener('gem:open-publish-modal', handler)
+    return () => window.removeEventListener('gem:open-publish-modal', handler)
+  }, [])
 
   // No score → don't gamble on a qualification verdict. Legacy evals or
   // incomplete scoring skip the banner.

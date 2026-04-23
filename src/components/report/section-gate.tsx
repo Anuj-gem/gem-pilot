@@ -4,15 +4,23 @@
 // the section is marked public. If not, SectionGate returns null — the
 // section is HIDDEN (not blurred).
 //
-// Owner additionally gets a small privacy pill rendered at the top of the
-// section (click to toggle public ⇄ private). Clicking fires a PATCH and
-// optimistically re-renders.
+// Owner additionally gets a small privacy pill at the top of each section.
+// Click behavior depends on the report's published state:
+//
+//   - NOT published yet → clicking ANY pill opens the publish modal (via
+//     the 'gem:open-publish-modal' event). The modal is the only way to
+//     flip sections public + publish, which also funnels free writers to
+//     the Pro upgrade via a single clear CTA.
+//   - Already published → toggling private→public shows a confirm prompt
+//     ("This will appear on the Discover Portal"). Toggling public→private
+//     saves immediately (safer direction, no confirm needed).
 
 import { useState, useTransition } from 'react'
 import { Eye, Lock } from 'lucide-react'
 import {
   isSectionVisible,
   resolveVisibility,
+  SECTION_META,
   type ReportPrivacy,
   type SectionKey,
 } from '@/lib/report-privacy'
@@ -22,13 +30,18 @@ interface Props {
   privacy: ReportPrivacy | null | undefined
   isOwnerOrAdmin: boolean
   submissionId?: string
-  /** Hide the inline privacy pill (owner still sees the content; used for
-   *  sections that already have their own privacy treatment, like the top
-   *  card which surfaces the pill alongside the edit button). */
+  /** Whether the report is currently published to Discover. Used to gate
+   *  the toggle behavior: unpublished → always open publish modal;
+   *  published → confirm before making a section public. */
+  isPublic?: boolean
+  /** Hide the inline privacy pill (owner still sees the content). */
   hideOwnerPill?: boolean
+  /** Override the pill position — defaults to absolute top-right, but the
+   *  headline section passes a different position to avoid colliding with
+   *  the EditableTopCard's edit button. */
+  pillClassName?: string
   children: React.ReactNode
-  /** Optional callback after the privacy state changes (lets a parent
-   *  refresh derived state — e.g. the PrivacyPanel's public count). */
+  /** Optional callback after the privacy state changes. */
   onPrivacyChange?: (next: ReportPrivacy) => void
 }
 
@@ -37,7 +50,9 @@ export function SectionGate({
   privacy,
   isOwnerOrAdmin,
   submissionId,
+  isPublic = false,
   hideOwnerPill,
+  pillClassName,
   children,
   onPrivacyChange,
 }: Props) {
@@ -54,15 +69,7 @@ export function SectionGate({
 
   const currentVis = resolveVisibility(localPrivacy, section)
 
-  const toggle = () => {
-    if (!submissionId) return
-    const next: ReportPrivacy = {
-      version: 1,
-      sections: {
-        ...(localPrivacy?.sections ?? {}),
-        [section]: currentVis === 'public' ? 'private' : 'public',
-      },
-    }
+  const savePrivacy = (next: ReportPrivacy) => {
     setLocalPrivacy(next)
     startTransition(async () => {
       try {
@@ -73,24 +80,60 @@ export function SectionGate({
         })
         onPrivacyChange?.(next)
       } catch {
-        // Revert on failure. Rare; UI will re-sync on next render.
         setLocalPrivacy(localPrivacy)
       }
     })
   }
 
+  const handlePillClick = () => {
+    if (!submissionId) return
+    const nextVis = currentVis === 'public' ? 'private' : 'public'
+
+    // Unpublished report — any toggle attempt routes through the publish
+    // modal. The modal is where the writer makes their bulk choice + hits
+    // the real Publish CTA (which also fires the paywall for free writers).
+    if (!isPublic) {
+      window.dispatchEvent(new CustomEvent('gem:open-publish-modal'))
+      return
+    }
+
+    // Published report — going private → public requires confirmation so
+    // writers don't accidentally expose a section on Discover.
+    if (nextVis === 'public') {
+      const label = SECTION_META[section]?.label || 'this section'
+      const confirmed = typeof window !== 'undefined' && window.confirm(
+        `Make "${label}" visible on the Discover Portal? Visitors will see it immediately.`
+      )
+      if (!confirmed) return
+    }
+
+    const next: ReportPrivacy = {
+      version: 1,
+      sections: {
+        ...(localPrivacy?.sections ?? {}),
+        [section]: nextVis,
+      },
+    }
+    savePrivacy(next)
+  }
+
+  const defaultPillPosition = 'absolute right-0 top-0'
+  const pillPositioning = pillClassName ?? defaultPillPosition
+
   return (
     <div className="relative">
       {isOwnerOrAdmin && !hideOwnerPill && submissionId && (
         <button
-          onClick={toggle}
+          onClick={handlePillClick}
           disabled={pending}
-          className={`absolute right-0 top-0 z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold transition-colors ${
+          className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold transition-colors ${
             currentVis === 'public'
               ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-              : 'text-[var(--gem-gray-500)] bg-[var(--gem-gray-800)] border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+              : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
           } ${pending ? 'opacity-60 cursor-wait' : ''}`}
-          title={`Click to make ${currentVis === 'public' ? 'private' : 'public'}`}
+          title={!isPublic
+            ? 'Publish to choose what visitors see'
+            : `Click to make ${currentVis === 'public' ? 'private' : 'public'}`}
         >
           {currentVis === 'public' ? <Eye size={10} /> : <Lock size={10} />}
           {currentVis === 'public' ? 'Public' : 'Private'}
