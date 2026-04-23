@@ -25,7 +25,21 @@ function relativeTime(iso: string | null | undefined): string {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ code?: string }>
+}) {
+  // OAuth safety net: if Supabase bounced the writer back here with a
+  // ?code= because the actual /auth/callback URL wasn't in the allow list,
+  // forward it to the callback handler so the session can be exchanged.
+  // Without this, the writer ends up stuck on the marketing page with a
+  // dangling code that does nothing.
+  const sp = await searchParams
+  if (sp.code) {
+    redirect(`/auth/callback?code=${encodeURIComponent(sp.code)}&next=/submit`)
+  }
+
   const supabase = await createClient()
 
   // Logged-in writers shouldn't see the marketing page — they already
