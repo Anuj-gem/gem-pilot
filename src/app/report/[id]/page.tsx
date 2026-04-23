@@ -453,8 +453,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         <ReportTabs
-          showDetails={isOwner || isAdmin}
-          detailsLocked={locked}
+          showDetails={isOwner || isAdmin || submission.is_public}
+          detailsLocked={locked || (!isOwner && !isAdmin)}
           pitch={
             <>
               {/* What's Working — numbered collapsibles with evidence sidebar.
@@ -624,6 +624,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               production={production}
               considerations={considerations}
               locked={locked}
+              publicViewer={!isOwner && !isAdmin}
+              writerName={writerName}
               evaluationId={id}
               portfolioRank={portfolioRank}
               portfolioTotal={portfolioTotal}

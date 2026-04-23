@@ -149,6 +149,8 @@ export function DetailsView({
   locked,
   evaluationId,
   showPrivacyNote = true,
+  publicViewer = false,
+  writerName,
   portfolioRank,
   portfolioTotal,
   commercialScore,
@@ -162,15 +164,26 @@ export function DetailsView({
   locked: boolean
   evaluationId?: string
   showPrivacyNote?: boolean
+  /** Non-owner viewing a public report. Tease the depth that exists, blur
+   *  ALL of it (including the primary lever the owner gets crisp), swap the
+   *  "private to you" banner for a "reach out to the writer" CTA, and skip
+   *  the upgrade CTA entirely (it doesn't apply to non-owners). */
+  publicViewer?: boolean
+  /** Used in the public-viewer banner copy when present. */
+  writerName?: string | null
   portfolioRank?: number | null
   portfolioTotal?: number
   commercialScore?: number | null
   craftNote?: string | null
 }) {
+  // Public viewers see everything blurred — force locked on regardless of
+  // the owner's subscription state (a Pro writer's report would otherwise
+  // render unlocked to producers, which leaks the entire dev tab).
+  const effectivelyLocked = locked || publicViewer
   // Derive the designation locally from the score so callers don't need to
   // keep score + bucket flags in sync.
   const designation: Designation | null = scoreDesignation(commercialScore)
-  const blurStyle: React.CSSProperties = locked
+  const blurStyle: React.CSSProperties = effectivelyLocked
     ? { filter: 'blur(5px)', userSelect: 'none' as const }
     : {}
 
@@ -191,11 +204,11 @@ export function DetailsView({
 
   return (
     <>
-      {/* Privacy note sits ABOVE the score so the writer immediately reads the
-          number as a private-to-them signal — avoids the "is this score public?"
-          beat that kills confidence when a Very Promising / Shows Potential pill
-          is visible. */}
-      {showPrivacyNote && (
+      {/* Top banner — swaps based on viewer:
+          - Public viewer (producer/rep on a shared link): tease that this
+            tab exists, blur it all, point them at the writer to unlock.
+          - Owner / admin: standard "private to you" privacy note. */}
+      {publicViewer ? (
         <div
           className="flex items-start gap-3 p-5 rounded-xl mb-6"
           style={{
@@ -210,10 +223,36 @@ export function DetailsView({
             <Lock size={16} />
           </div>
           <p className="text-[15px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-            <strong className="text-[var(--gem-gray-50)] font-semibold">Private to you.</strong>{' '}
-            This section isn&apos;t shared when your report is circulated — it&apos;s yours for reference.
+            <strong className="text-[var(--gem-gray-50)] font-semibold">
+              Private to the writer.
+            </strong>{' '}
+            The full development tab — score, production breakdown, dimension
+            scoring, and dev priorities — stays with{' '}
+            {writerName ? writerName : 'the writer'}. Reach out to them
+            directly for access.
           </p>
         </div>
+      ) : (
+        showPrivacyNote && (
+          <div
+            className="flex items-start gap-3 p-5 rounded-xl mb-6"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.25)',
+            }}
+          >
+            <div
+              className="flex-shrink-0 w-9 h-9 rounded-full grid place-items-center text-white text-sm"
+              style={{ background: 'var(--gem-accent)' }}
+            >
+              <Lock size={16} />
+            </div>
+            <p className="text-[15px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+              <strong className="text-[var(--gem-gray-50)] font-semibold">Private to you.</strong>{' '}
+              This section isn&apos;t shared when your report is circulated — it&apos;s yours for reference.
+            </p>
+          </div>
+        )
       )}
 
       {/* Commercial Potential Score — the hero of Details when present (v5.2+).
@@ -234,7 +273,7 @@ export function DetailsView({
         <GemRankCard rank={portfolioRank!} total={portfolioTotal!} />
       )}
 
-      {locked && evaluationId && (
+      {locked && !publicViewer && evaluationId && (
         <div className="mb-8">
           <InlineUpgradeCTA
             evaluationId={evaluationId}
@@ -253,8 +292,8 @@ export function DetailsView({
           </h2>
           <div
             className="grid grid-cols-1 sm:grid-cols-3 gap-3"
-            style={locked ? { ...blurStyle, pointerEvents: 'none' } : undefined}
-            aria-hidden={locked ? true : undefined}
+            style={effectivelyLocked ? { ...blurStyle, pointerEvents: 'none' } : undefined}
+            aria-hidden={effectivelyLocked ? true : undefined}
           >
             <RiskPill label="Production Cost" axis={risk.cost} />
             <RiskPill label="Cast Complexity" axis={risk.cast} />
@@ -310,7 +349,7 @@ export function DetailsView({
                   key={i}
                   title={c.area}
                   primary={isPrimary}
-                  titleBlurred={locked && !isPrimary}
+                  titleBlurred={effectivelyLocked && (publicViewer || !isPrimary)}
                 >
                   <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
                     {c.detail}
@@ -336,7 +375,7 @@ export function DetailsView({
               title="Cast"
               meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
             >
-              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+              <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
                   <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
                   <Fact k="Leads" v={production.cast?.leads} />
@@ -355,7 +394,7 @@ export function DetailsView({
               title="Locations & Scale"
               meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
             >
-              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+              <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
                   <Fact k="Distinct locations" v={production.locations?.distinct_count} />
                   <Fact
@@ -377,7 +416,7 @@ export function DetailsView({
               title="Technical"
               meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
             >
-              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+              <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
                   <Fact
                     k="VFX"
@@ -405,7 +444,7 @@ export function DetailsView({
               title="Platform & Content"
               meta={production.platform_fit?.recommended_lane}
             >
-              <div style={locked ? blurStyle : undefined} aria-hidden={locked ? true : undefined}>
+              <div style={effectivelyLocked ? blurStyle : undefined} aria-hidden={effectivelyLocked ? true : undefined}>
                 <FactList>
                   <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
                   <Fact k="Content" v={production.platform_fit?.content_level} />
@@ -423,8 +462,8 @@ export function DetailsView({
               >
                 <ul
                   className="space-y-3 list-none p-0 m-0"
-                  style={locked ? blurStyle : undefined}
-                  aria-hidden={locked ? true : undefined}
+                  style={effectivelyLocked ? blurStyle : undefined}
+                  aria-hidden={effectivelyLocked ? true : undefined}
                 >
                   {production.rights_flags.map((r, i) => {
                     const text =
@@ -467,7 +506,7 @@ export function DetailsView({
                   label={meta.label}
                   score={s.score}
                   reasoning={s.reasoning}
-                  locked={locked}
+                  locked={effectivelyLocked}
                 />
               )
             })}
