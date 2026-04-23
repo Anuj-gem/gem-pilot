@@ -64,6 +64,7 @@ export async function POST(request: NextRequest) {
     const file = formData.get("file") as File | null
     const title = formData.get("title") as string | null
     const declaredFormatRaw = formData.get("declared_format") as string | null
+    const resumeSubmissionId = (formData.get("resume_submission_id") as string | null) || null
 
     if (!file || !title) {
       return NextResponse.json(
@@ -92,45 +93,103 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Anon submissions expire in 10 min — claimed when the writer signs up.
-    const expiresAt = !user
-      ? new Date(Date.now() + 10 * 60 * 1000).toISOString()
-      : null
+    // Resume path: writer clicked "Upload PDF" on a saved draft from the
+    // dashboard. We update the existing awaiting_pdf row in place instead
+    // of creating a new submission, so the dashboard keeps a single row.
+    let submissionId: string
+    if (resumeSubmissionId) {
+      if (!user) {
+        return NextResponse.json(
+          { error: "You need to be logged in to resume a draft." },
+          { status: 401 }
+        )
+      }
+      const { data: draft } = await serviceClient
+        .from("script_submissions")
+        .select("id, user_id, status")
+        .eq("id", resumeSubmissionId)
+        .single()
+      if (!draft) {
+        return NextResponse.json(
+          { error: "We couldn't find that draft. Try starting a new submission." },
+          { status: 404 }
+        )
+      }
+      if (draft.user_id !== user.id) {
+        return NextResponse.json(
+          { error: "That draft doesn't belong to you." },
+          { status: 403 }
+        )
+      }
+      if (draft.status !== "awaiting_pdf") {
+        return NextResponse.json(
+          { error: "That draft already has a PDF — find it on your dashboard." },
+          { status: 409 }
+        )
+      }
+      const { error: updateError } = await serviceClient
+        .from("script_submissions")
+        .update({
+          title,
+          filename: file.name,
+          file_size: file.size,
+          status: "processing",
+          declared_format: declaredFormat,
+          submitted_by_ip: clientIp,
+        })
+        .eq("id", resumeSubmissionId)
 
-    const { data: submission, error: subError } = await serviceClient
-      .from("script_submissions")
-      .insert({
-        user_id: user?.id ?? null,
-        title,
-        filename: file.name,
-        file_size: file.size,
-        status: "processing",
-        submitted_by_ip: clientIp,
-        declared_format: declaredFormat,
-        ...(expiresAt ? { expires_at: expiresAt } : {}),
-      })
-      .select("id")
-      .single()
+      if (updateError) {
+        console.error("start-submission resume-update error:", updateError)
+        return NextResponse.json(
+          { error: "Failed to update draft" },
+          { status: 500 }
+        )
+      }
+      submissionId = resumeSubmissionId
+    } else {
+      // Fresh submission path. Anon rows expire in 10 min — claimed when
+      // the writer signs up.
+      const expiresAt = !user
+        ? new Date(Date.now() + 10 * 60 * 1000).toISOString()
+        : null
 
-    if (subError || !submission) {
-      console.error("start-submission insert error:", subError)
-      return NextResponse.json(
-        { error: "Failed to create submission" },
-        { status: 500 }
-      )
+      const { data: submission, error: subError } = await serviceClient
+        .from("script_submissions")
+        .insert({
+          user_id: user?.id ?? null,
+          title,
+          filename: file.name,
+          file_size: file.size,
+          status: "processing",
+          submitted_by_ip: clientIp,
+          declared_format: declaredFormat,
+          ...(expiresAt ? { expires_at: expiresAt } : {}),
+        })
+        .select("id")
+        .single()
+
+      if (subError || !submission) {
+        console.error("start-submission insert error:", subError)
+        return NextResponse.json(
+          { error: "Failed to create submission" },
+          { status: 500 }
+        )
+      }
+      submissionId = submission.id
     }
 
     // Upload the PDF to storage. ASCII-safe storage path; original filename
     // stays in the column for display.
     const arrayBuffer = await file.arrayBuffer()
     const buffer = Buffer.from(arrayBuffer)
-    const storagePath = `${user?.id ?? "anonymous"}/${submission.id}/script.pdf`
+    const storagePath = `${user?.id ?? "anonymous"}/${submissionId}/script.pdf`
 
     const { error: uploadError } = await serviceClient.storage
       .from("scripts")
       .upload(storagePath, buffer, {
         contentType: "application/pdf",
-        upsert: false,
+        upsert: !!resumeSubmissionId,
       })
 
     if (uploadError) {
@@ -141,7 +200,7 @@ export async function POST(request: NextRequest) {
           status: "failed",
           error_message: `Storage upload failed: ${uploadError.message}`,
         })
-        .eq("id", submission.id)
+        .eq("id", submissionId)
       return NextResponse.json(
         {
           error:
@@ -154,9 +213,9 @@ export async function POST(request: NextRequest) {
     await serviceClient
       .from("script_submissions")
       .update({ file_url: storagePath })
-      .eq("id", submission.id)
+      .eq("id", submissionId)
 
-    return NextResponse.json({ submission_id: submission.id })
+    return NextResponse.json({ submission_id: submissionId })
   } catch (e: any) {
     console.error("start-submission error:", e)
     return NextResponse.json(

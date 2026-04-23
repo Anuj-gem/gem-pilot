@@ -13,6 +13,7 @@ import {
   Users,
   Lock,
   Pencil,
+  Upload,
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
@@ -55,7 +56,7 @@ export default async function DashboardPage({
   const { data: allSubmissions } = await supabase
     .from('script_submissions')
     .select(`
-      id, title, status, is_public, created_at, hidden_at,
+      id, title, status, is_public, created_at, hidden_at, declared_format,
       script_evaluations ( id, evaluation, edited_fields, created_at, weighted_score )
     `)
     .eq('user_id', user.id)
@@ -351,13 +352,17 @@ export default async function DashboardPage({
                         <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
                       </div>
 
-                      {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links. */}
+                      {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links.
+                          Resume URL skips the format step (already declared on the draft) and routes
+                          straight to the script-upload step on /submit. */}
                       {sub.status === 'awaiting_pdf' && (
                         <div className="flex items-center gap-2 shrink-0">
                           <Link
-                            href="/submit"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all duration-150 hover:brightness-110 active:scale-[0.97]"
+                            href={`/submit?resume=${sub.id}${sub.declared_format ? `&format=${encodeURIComponent(sub.declared_format)}` : ''}`}
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white shadow-[0_2px_8px_rgba(124,58,237,0.25)] transition-all duration-150 hover:brightness-110 hover:shadow-[0_4px_12px_rgba(124,58,237,0.35)] active:scale-[0.97]"
+                            style={{ background: 'var(--gem-accent)' }}
                           >
+                            <Upload size={14} strokeWidth={2.5} />
                             Upload PDF
                           </Link>
                         </div>

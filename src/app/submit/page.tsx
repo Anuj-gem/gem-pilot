@@ -94,8 +94,23 @@ function SubmitPageInner() {
   const [user, setUser] = useState<{ id: string } | null>(null)
   const [authChecked, setAuthChecked] = useState(false)
 
-  const [step, setStep] = useState<FlowStep>('format')
-  const [declaredFormat, setDeclaredFormat] = useState<DeclaredFormat | null>(null)
+  // Resume-from-draft mode: when the writer clicks "Upload PDF" on a saved
+  // draft from their dashboard, we land here with ?resume=<id>&format=<fmt>.
+  // We skip the format step and route the upload to the existing draft row
+  // instead of creating a brand new submission.
+  const resumeSubmissionId = searchParams.get('resume')
+  const resumeFormatRaw = searchParams.get('format')
+  const resumeFormat: DeclaredFormat | null =
+    resumeFormatRaw === 'Feature film' || resumeFormatRaw === 'Series'
+      ? resumeFormatRaw
+      : null
+
+  const [step, setStep] = useState<FlowStep>(
+    resumeSubmissionId && resumeFormat ? 'script' : 'format'
+  )
+  const [declaredFormat, setDeclaredFormat] = useState<DeclaredFormat | null>(
+    resumeFormat
+  )
   const [file, setFile] = useState<File | null>(null)
   const [mode, setMode] = useState<AccountMode>('upload')
 
@@ -230,12 +245,19 @@ function SubmitPageInner() {
     // Phase 1: register the submission row + upload the PDF (~3–5s).
     // We need submission_id quickly so OAuth (which redirects the page mid
     // request) has something to claim. Score lookup happens in phase 2.
+    //
+    // If we're resuming a draft (writer clicked Upload PDF on the dashboard
+    // for an existing awaiting_pdf row), pass the draft id along so the
+    // server updates that row instead of creating a new one.
     let submissionId: string
     try {
       const startForm = new FormData()
       startForm.append('file', args.file)
       startForm.append('title', inferredTitle)
       startForm.append('declared_format', args.declaredFormat)
+      if (resumeSubmissionId) {
+        startForm.append('resume_submission_id', resumeSubmissionId)
+      }
       const startRes = await fetch('/api/start-submission', {
         method: 'POST',
         body: startForm,
