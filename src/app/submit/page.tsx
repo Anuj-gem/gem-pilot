@@ -104,6 +104,7 @@ function SubmitPageInner() {
   const evalResultRef = useRef<{ evaluation_id: string; submission_id: string } | null>(null)
   const evalFailedRef = useRef<string | null>(null)
   const draftSubmissionIdRef = useRef<string | null>(null)
+  const draftFailedRef = useRef<string | null>(null)
 
   const [signingUp, setSigningUp] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -192,14 +193,19 @@ function SubmitPageInner() {
     if (!declaredFormat) return
     setError(null)
     setMode('draft')
-    fireDraftRequest({ declaredFormat })
     if (user) {
-      // Logged-in writer hit "save draft" — claim isn't needed, the row was
-      // created with their user_id. Wait briefly for the row to land so the
-      // dashboard reflects it immediately.
-      await new Promise((r) => setTimeout(r, 500))
+      // Logged-in writer hit "save draft" — wait for the row to actually land
+      // before redirecting, otherwise the dashboard renders before the insert
+      // commits and shows "no scripts yet".
+      await fireDraftRequest({ declaredFormat })
+      if (draftFailedRef.current) {
+        setError(`We couldn't save your draft — ${draftFailedRef.current}. Try again.`)
+        return
+      }
       router.push('/dashboard?draft_saved=1')
     } else {
+      // Anon writer — fire-and-forget so the account step renders immediately.
+      fireDraftRequest({ declaredFormat })
       setStep('account')
     }
   }
@@ -254,19 +260,22 @@ function SubmitPageInner() {
 
   async function fireDraftRequest(args: { declaredFormat: DeclaredFormat }) {
     draftSubmissionIdRef.current = null
+    draftFailedRef.current = null
     try {
       const res = await fetch('/api/draft-submission', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ declared_format: args.declaredFormat }),
       })
-      const data = await res.json()
+      const data = await res.json().catch(() => null)
       if (res.ok && data?.submission_id) {
         draftSubmissionIdRef.current = data.submission_id
+      } else {
+        draftFailedRef.current =
+          data?.error ?? `Draft create failed (HTTP ${res.status})`
       }
-    } catch {
-      // Non-fatal — signup will still proceed; they can re-create the draft
-      // by coming back to /submit if needed.
+    } catch (e: any) {
+      draftFailedRef.current = e?.message ?? 'Network error creating draft'
     }
   }
 
@@ -294,21 +303,32 @@ function SubmitPageInner() {
 
   async function handleGoogle() {
     setError(null)
-    // Wait briefly for the background submission_id to land before bouncing.
-    const deadline = Date.now() + 6000
+    // Wait up to 10s for the background submission_id (eval or draft) to land
+    // before bouncing to Google. If the background API errored, surface that.
+    const deadline = Date.now() + 10_000
     while (
       !evalResultRef.current?.submission_id &&
       !draftSubmissionIdRef.current &&
+      !evalFailedRef.current &&
+      !draftFailedRef.current &&
       Date.now() < deadline
     ) {
       await new Promise((r) => setTimeout(r, 200))
+    }
+    if (mode === 'upload' && evalFailedRef.current) {
+      setError(evalFailedRef.current)
+      return
+    }
+    if (mode === 'draft' && draftFailedRef.current) {
+      setError(`We couldn't save your draft — ${draftFailedRef.current}. Try refreshing.`)
+      return
     }
     const submissionId =
       mode === 'upload'
         ? evalResultRef.current?.submission_id
         : draftSubmissionIdRef.current
     if (!submissionId) {
-      setError("Hmm — couldn't get your submission ready. Try email signup, or refresh and start over.")
+      setError("Still getting your submission ready. Give it another moment, then click Continue with Google again.")
       return
     }
     writePendingClaim({
@@ -458,8 +478,15 @@ function SubmitPageInner() {
             <ProgressHeader
               step={step === 'format' ? 1 : step === 'script' ? 2 : 3}
               onBack={() => {
-                if (step === 'script') setStep('format')
-                else if (step === 'account') setStep('script')
+                if (step === 'script') {
+                  // Clear the format so FormatStep doesn't auto-advance us
+                  // straight back forward — the writer should explicitly
+                  // re-confirm Feature/Series before continuing.
+                  setDeclaredFormat(null)
+                  setStep('format')
+                } else if (step === 'account') {
+                  setStep('script')
+                }
               }}
               badge={
                 step === 'account'

@@ -79,11 +79,15 @@ export async function POST(request: NextRequest) {
     ? new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
     : null
 
+  // `filename` is NOT NULL on the table, even though there's no PDF yet for
+  // a draft. Use a placeholder; the column gets overwritten when the writer
+  // comes back and uploads.
   const { data: submission, error } = await serviceClient
     .from('script_submissions')
     .insert({
       user_id: user?.id ?? null,
       title,
+      filename: '(awaiting upload)',
       status: 'awaiting_pdf',
       declared_format: declaredFormat,
       ...(expiresAt ? { expires_at: expiresAt } : {}),
