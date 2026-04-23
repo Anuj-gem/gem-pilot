@@ -63,6 +63,21 @@ export function QualificationBanner({
     return () => window.removeEventListener('gem:open-publish-modal', handler)
   }, [])
 
+  // Keep the banner in sync when ANY component on the page (modal, a pill,
+  // etc.) dispatches a privacy/visibility change. Stops the "I published
+  // and the banner still says I'm not on Discover" stale-state bug.
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const ce = e as CustomEvent<{ isPublic?: boolean; privacy?: ReportPrivacy }>
+      const detail = ce.detail
+      if (!detail) return
+      if (typeof detail.isPublic === 'boolean') setIsPublic(detail.isPublic)
+      if (detail.privacy) setPrivacy(detail.privacy)
+    }
+    window.addEventListener('gem:report-state-changed', handler)
+    return () => window.removeEventListener('gem:report-state-changed', handler)
+  }, [])
+
   // No score → don't gamble on a qualification verdict. Legacy evals or
   // incomplete scoring skip the banner.
   if (typeof commercialScore !== 'number' || Number.isNaN(commercialScore)) {

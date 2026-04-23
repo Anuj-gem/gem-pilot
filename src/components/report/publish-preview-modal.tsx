@@ -17,6 +17,7 @@
 // sharing posture, hit paywall on the final commit.
 
 import { useMemo, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Check, Eye, Lock, X, Shield } from 'lucide-react'
 import { trackUpgradePromptShown } from '@/lib/posthog'
 import {
@@ -59,6 +60,7 @@ export function PublishPreviewModal({
   onDone,
   onCancel,
 }: Props) {
+  const router = useRouter()
   const initial = normalizePrivacy(initialPrivacy)
   // Privacy is the single source of truth. `mode` is derived: if the
   // current privacy exactly matches one of the three presets, that's the
@@ -157,6 +159,13 @@ export function PublishPreviewModal({
           throw new Error(j.error || 'Could not publish.')
         }
       }
+      // Broadcast the new state so every SectionGate pill + banner on the
+      // page flips instantly. Then refresh the server-rendered data so the
+      // rest of the page (tied to props) catches up on the next render.
+      window.dispatchEvent(new CustomEvent('gem:report-state-changed', {
+        detail: { isPublic: true, privacy: selectedPrivacy },
+      }))
+      router.refresh()
       onDone({ isPublic: true, privacy: selectedPrivacy })
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not save.')
@@ -178,6 +187,12 @@ export function PublishPreviewModal({
         const j = await res.json().catch(() => ({}))
         throw new Error(j.error || 'Could not unpublish.')
       }
+      // Same broadcast pattern — pills + banner + anything else on the
+      // page sync without a navigation.
+      window.dispatchEvent(new CustomEvent('gem:report-state-changed', {
+        detail: { isPublic: false, privacy: selectedPrivacy },
+      }))
+      router.refresh()
       onDone({ isPublic: false, privacy: selectedPrivacy })
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not unpublish.')
