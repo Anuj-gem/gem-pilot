@@ -38,6 +38,8 @@ interface PdfDoc {
   lineTo(x: number, y: number): this
   save(): this
   restore(): this
+  translate(x: number, y: number): this
+  rotate(deg: number, opts?: any): this
   x: number
   y: number
   page: {
@@ -78,13 +80,89 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
     try {
       const doc = new PDFDocument({
         size: 'LETTER',
-        margins: { top: 56, bottom: 64, left: 56, right: 56 },
+        margins: { top: 64, bottom: 72, left: 60, right: 60 },
         info: {
           Title: `${input.title} — GEM Report`,
           Author: 'GEM',
           Producer: 'GEM (gem.studio)',
         },
+        bufferPages: true,
       })
+
+      // Footer + branded header mark on every page. Drawn via the pageAdded
+      // event so we never end up with extra blank pages from a post-hoc loop
+      // (which is what was producing the trailing blank pages).
+      const drawPageChrome = () => {
+        const m = doc.page.margins
+        const w = doc.page.width
+        const h = doc.page.height
+        const savedX = doc.x
+        const savedY = doc.y
+
+        // Top-right brand mark — small purple diamond + GEM wordmark.
+        // Only on page 1 to keep it subtle elsewhere; subsequent pages
+        // get the wordmark in the footer instead.
+        if (doc.bufferedPageRange().count === 1) {
+          const brandY = m.top - 24
+          // Diamond mark (rotated square)
+          doc
+            .save()
+            .translate(w - m.right - 32, brandY + 6)
+            .rotate(45)
+            .rect(-3.5, -3.5, 7, 7)
+            .fill('#7c3aed')
+            .restore()
+          doc
+            .font('Helvetica-Bold')
+            .fontSize(10)
+            .fillColor('#111827')
+            .text('GEM', w - m.right - 22, brandY, {
+              width: 30,
+              align: 'left',
+              lineBreak: false,
+            } as any)
+        }
+
+        // Footer — thin divider + "GEM · gem.studio · script title" left,
+        // page number right. Uses absolute positioning that does NOT advance
+        // the text cursor, so it can't push content onto a new page.
+        const footerY = h - 32
+        doc
+          .save()
+          .strokeColor(COLORS.divider)
+          .lineWidth(0.5)
+          .moveTo(m.left, footerY - 10)
+          .lineTo(w - m.right, footerY - 10)
+          .stroke()
+          .restore()
+        const titleSlice = input.title.length > 50 ? input.title.slice(0, 47) + '…' : input.title
+        doc
+          .font('Helvetica')
+          .fontSize(8)
+          .fillColor(COLORS.faint)
+          .text(`GEM  ·  gem.studio  ·  ${titleSlice}`, m.left, footerY, {
+            width: w - m.left - m.right - 60,
+            align: 'left',
+            lineBreak: false,
+          } as any)
+        doc
+          .font('Helvetica')
+          .fontSize(8)
+          .fillColor(COLORS.faint)
+          .text(`Page ${doc.bufferedPageRange().count}`, w - m.right - 60, footerY, {
+            width: 60,
+            align: 'right',
+            lineBreak: false,
+          } as any)
+
+        doc.x = savedX
+        doc.y = savedY
+      }
+
+      doc.on('pageAdded', drawPageChrome)
+      // First page is created automatically before the listener fires —
+      // call once manually so page 1 also gets chrome.
+      drawPageChrome()
 
       const chunks: Buffer[] = []
       doc.on('data', (c: Buffer) => chunks.push(c))
@@ -193,20 +271,18 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
       }
 
       // ── Cover / top card ──────────────────────────────────────────
+      // Title — big, leading the page
       doc
         .font('Helvetica-Bold')
-        .fontSize(9)
-        .fillColor(COLORS.gold)
-        .text('GEM', { characterSpacing: 2.5 })
-      doc.moveDown(0.4)
-
-      doc
-        .font('Helvetica-Bold')
-        .fontSize(26)
+        .fontSize(28)
         .fillColor(COLORS.text)
-        .text(input.title, { lineGap: 2 })
-      doc.moveDown(0.3)
+        .text(input.title, doc.page.margins.left, doc.y, {
+          width: contentWidth(doc) - 60, // leave room for the brand mark on the right
+          lineGap: 2,
+        })
+      doc.moveDown(0.5)
 
+      // Meta line — author / format / genre / date
       const metaParts: string[] = []
       if (input.authorName) metaParts.push(`By ${input.authorName}`)
       if (input.declaredFormat) metaParts.push(input.declaredFormat)
@@ -217,39 +293,56 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
         .font('Helvetica')
         .fontSize(10.5)
         .fillColor(COLORS.muted)
-        .text(metaParts.join('  ·  '))
-      doc.moveDown(0.4)
+        .text(metaParts.join('  ·  '), doc.page.margins.left, doc.y, {
+          width: contentWidth(doc),
+        })
+      doc.moveDown(1.2)
 
+      // Headline card — gold left rule + label + the line itself.
+      // Drawn as a self-contained block so the byline above can't bleed in.
       const headline =
         input.evaluation?.positioning_hook ||
         input.evaluation?.whats_special?.headline ||
         ''
       if (headline) {
-        doc.moveDown(0.4)
-        doc
-          .save()
-          .rect(doc.x, doc.y, 3, 36)
-          .fill(COLORS.gold)
-          .restore()
-        const hX = doc.page.margins.left + 12
+        const blockX = doc.page.margins.left
+        const blockY = doc.y
+        const labelHeight = 14
+        const textX = blockX + 12
+        const textWidth = contentWidth(doc) - 12
+
+        // Label
         doc
           .font('Helvetica-Bold')
           .fontSize(8.5)
           .fillColor(COLORS.goldDark)
-          .text('HEADLINE', hX, doc.y - 36, {
+          .text('HEADLINE', textX, blockY, {
             characterSpacing: 1.4,
+            width: textWidth,
           })
-        doc.moveDown(0.2)
+
+        // Body — italic, next-line under label
+        const bodyY = blockY + labelHeight + 2
         doc
           .font('Helvetica-Oblique')
-          .fontSize(13)
+          .fontSize(13.5)
           .fillColor(COLORS.text)
-          .text(headline, hX, doc.y, {
-            width: contentWidth(doc) - 12,
+          .text(headline, textX, bodyY, {
+            width: textWidth,
             lineGap: 3,
           })
+
+        // Gold left rule — drawn AFTER text so we know how tall the block is
+        const blockBottom = doc.y
+        const ruleHeight = blockBottom - blockY
+        doc
+          .save()
+          .rect(blockX, blockY, 3, ruleHeight)
+          .fill(COLORS.gold)
+          .restore()
+
         doc.x = doc.page.margins.left
-        doc.moveDown(0.8)
+        doc.moveDown(0.9)
       }
       divider()
 
@@ -437,32 +530,9 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
         })
       }
 
-      // ── FOOTER on every page ──────────────────────────────────────
-      const range = doc.bufferedPageRange()
-      for (let i = 0; i < range.count; i++) {
-        doc.switchToPage(range.start + i)
-        const bottom = doc.page.height - 36
-        doc
-          .font('Helvetica')
-          .fontSize(8)
-          .fillColor(COLORS.faint)
-          .text(
-            `GEM  ·  gem.studio  ·  ${input.title.slice(0, 60)}`,
-            doc.page.margins.left,
-            bottom,
-            { width: contentWidth(doc), align: 'left', lineBreak: false }
-          )
-        doc
-          .font('Helvetica')
-          .fontSize(8)
-          .fillColor(COLORS.faint)
-          .text(`${i + 1} / ${range.count}`, doc.page.margins.left, bottom, {
-            width: contentWidth(doc),
-            align: 'right',
-            lineBreak: false,
-          })
-      }
-
+      // Footer + brand mark are drawn via the pageAdded handler at the top
+      // of this function — no post-hoc loop needed (and no risk of writing
+      // text that overflows into a new blank page).
       doc.end()
     } catch (e) {
       reject(e)
