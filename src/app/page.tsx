@@ -429,10 +429,7 @@ export default async function Home({
               .
             </h2>
             <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-              Selznick is the reader that reads your script. Calibrated against
-              the screenplays Hollywood actually makes — and sharper with every
-              release. Not a checklist, not a coverage template. A reader that
-              knows what makes a script move.
+              Selznick is the most powerful creative development engine ever built. It reads your script, learns from every screenplay it sees, and figures out the right collaborators to put it in front of.
             </p>
           </div>
 
