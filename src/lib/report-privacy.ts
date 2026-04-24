@@ -25,8 +25,12 @@ export const QUALIFICATION_THRESHOLD = 50
  *
  *  Internal key names stay as-is for DB compatibility with rows written before
  *  the label rename (2026-04-23). Only the UI labels in SECTION_META changed. */
+// NOTE (2026-04-23): `headline` was removed from this enum. The top card
+// (title + author + format + tags + posted date + headline) is ALWAYS
+// visible whenever a report is published — it's the bare minimum context a
+// visitor needs for anything else to make sense. Old DB rows with
+// `headline: 'private'` are silently ignored by normalizePrivacy.
 export type SectionKey =
-  | 'headline'              // top card: title + headline (logline)
   | 'whats_working'         // "Why this is a hit" strengths
   | 'production_signal'     // Production Planning Overview (at-a-glance cards)
   | 'deep_dive_characters'  // Lead Characters + actor appeal
@@ -40,7 +44,6 @@ export type SectionKey =
  *  visitors can opt into. Qualification (≥50) is the only score-derived
  *  signal that surfaces publicly, via the qualification banner. */
 export const SECTION_KEYS: SectionKey[] = [
-  'headline',
   'whats_working',
   'production_signal',
   'deep_dive_characters',
@@ -64,12 +67,6 @@ export interface SectionMeta {
 }
 
 export const SECTION_META: Record<SectionKey, SectionMeta> = {
-  headline: {
-    key: 'headline',
-    label: 'Headline',
-    hint: 'Your title + one-line headline.',
-    group: 'pitch',
-  },
   whats_working: {
     key: 'whats_working',
     label: 'Why this is a hit',
@@ -132,11 +129,10 @@ export interface ReportPrivacy {
  *  should be public by default" call; the privacy modal nudges writers
  *  toward presets from that starting point. */
 const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
-  headline:              'private',
-  whats_working:         'private',
+  whats_working:         'public',
+  deep_dive_characters:  'public',
+  deep_dive_package:     'public',
   production_signal:     'private',
-  deep_dive_characters:  'private',
-  deep_dive_package:     'private',
   deep_dive_production:  'private',
   deep_dive_development: 'private',
   deep_dive_narrative:   'private',
@@ -157,10 +153,9 @@ export const PRESETS: Record<PresetKey, Preset> = {
   pitch_only: {
     key: 'pitch_only',
     label: 'Pitch only',
-    blurb: 'Headline, why this is a hit, lead characters, and package angles.',
+    blurb: 'Why this is a hit, lead characters, and package angles. (Top card always shown.)',
     sections: {
       ...allPrivate(),
-      headline: 'public',
       whats_working: 'public',
       deep_dive_characters: 'public',
       deep_dive_package: 'public',
@@ -173,7 +168,6 @@ export const PRESETS: Record<PresetKey, Preset> = {
     sections: {
       // Everything public. This is the "open book" option, renamed to
       // match the two-tier mental model writers asked for.
-      headline:              'public',
       whats_working:         'public',
       production_signal:     'public',
       deep_dive_characters:  'public',

@@ -417,27 +417,22 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             when the modal already owns preset selection, custom toggles,
             contact settings, publish, and unpublish. */}
 
-        {/* HEADLINE — always public for visitors by default, owner sees it too. */}
-        <SectionGate
-          section="headline"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-          pillClassName="absolute right-5 bottom-5"
-        >
-          <EditableTopCard
-            evaluationId={id}
-            initial={topCard}
-            isOwner={isOwner}
-            hasEdits={topCardHasEdits}
-            postedAt={submission.created_at ?? null}
-            authorName={
-              isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-            }
-            isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
-          />
-        </SectionGate>
+        {/* HEADLINE / TOP CARD — always rendered. The top card (title +
+            author + format + tags + posted date + headline) is the bare
+            minimum context any visitor needs; we no longer let writers
+            toggle it off. The privacy modal also no longer offers it as
+            an option. */}
+        <EditableTopCard
+          evaluationId={id}
+          initial={topCard}
+          isOwner={isOwner}
+          hasEdits={topCardHasEdits}
+          postedAt={submission.created_at ?? null}
+          authorName={
+            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+          }
+          isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
+        />
 
         {/* Mini score card removed 2026-04-23 — qualification banner above
             now handles the owner's primary signal. Free-tier owners still

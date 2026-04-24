@@ -62,10 +62,19 @@ export function PublishPreviewModal({
 }: Props) {
   const router = useRouter()
   const initial = normalizePrivacy(initialPrivacy)
+  // Default seed: if the writer hasn't picked anything yet AND the report is
+  // unpublished, pre-select Pitch Only. Most writers want to publish exactly
+  // the pitch sections; landing them on Custom (everything-private) was a
+  // dead-end that produced near-empty public reports (Anuj 2026-04-23).
+  // If they've already published or have explicit settings, we respect them.
+  const seeded: ReportPrivacy =
+    Object.keys(initial.sections).length === 0 && !initialIsPublic
+      ? { version: 1, sections: { ...PRESETS.pitch_only.sections } }
+      : initial
   // Privacy is the single source of truth. `mode` is derived: if the
   // current privacy exactly matches one of the three presets, that's the
   // selected radio; otherwise 'custom' lights up.
-  const [privacy, setPrivacy] = useState<ReportPrivacy>(initial)
+  const [privacy, setPrivacy] = useState<ReportPrivacy>(seeded)
   const [contactEnabled, setContactEnabled] = useState(initialContactEnabled)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
