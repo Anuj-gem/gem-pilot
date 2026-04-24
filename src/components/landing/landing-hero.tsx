@@ -184,16 +184,31 @@ function FloatingReportCard() {
       }}
     >
       <div
-        className="flex items-center justify-between mb-3 pb-3"
+        className="flex items-center justify-between gap-2 mb-3 pb-3"
         style={{ borderBottom: '1px solid var(--gem-gray-800)' }}
       >
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full" style={{ background: '#16a34a' }} />
+        {/* Qualification pill — instead of the generic "Your Pitch" label,
+            lead with the moment writers actually want: the green "you
+            qualified" verdict. Lands the hook before they read the rest. */}
+        <div
+          className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full"
+          style={{
+            background: 'rgba(5,150,105,0.10)',
+            border: '1px solid rgba(5,150,105,0.35)',
+          }}
+        >
           <span
-            className="text-[10px] font-bold uppercase"
-            style={{ letterSpacing: '0.18em', color: 'var(--gem-gray-500)' }}
+            aria-hidden
+            className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full text-white text-[8px] font-bold"
+            style={{ background: '#059669' }}
           >
-            Your Pitch
+            ✓
+          </span>
+          <span
+            className="text-[9.5px] font-bold uppercase whitespace-nowrap"
+            style={{ letterSpacing: '0.14em', color: '#047857' }}
+          >
+            Qualifies for industry matching
           </span>
         </div>
         <span className="text-[10px] italic" style={{ color: 'var(--gem-gray-500)' }}>

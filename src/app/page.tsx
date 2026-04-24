@@ -16,7 +16,7 @@
 // setPendingFile() and routes to /submit?from=hero.
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { ArrowRight, FileText, Notebook, Users } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Script from 'next/script'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackedCTA } from '@/components/tracked-cta'
@@ -121,22 +121,36 @@ export default async function Home({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {/* Pitch material */}
+            {/* Pitch material — mini-mockup mirrors the report's Headline +
+                Why this is a hit section. Specific rather than abstract:
+                writers can already picture what they'd get back. */}
             <div
-              className="rounded-xl p-6"
+              className="rounded-xl p-6 flex flex-col"
               style={{
                 background: '#fff',
                 border: '1px solid rgba(212,160,23,0.30)',
               }}
             >
               <div
-                className="w-9 h-9 rounded-lg grid place-items-center mb-4"
+                className="rounded-lg p-3 mb-4"
                 style={{
-                  background: 'rgba(212,160,23,0.12)',
-                  border: '1px solid rgba(212,160,23,0.32)',
+                  background:
+                    'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 80%)',
+                  border: '1px solid rgba(212,160,23,0.28)',
                 }}
               >
-                <FileText size={16} style={{ color: 'var(--gem-gold)' }} />
+                <p
+                  className="text-[8.5px] font-bold uppercase m-0 mb-1.5"
+                  style={{ letterSpacing: '0.18em', color: '#92710f' }}
+                >
+                  Headline
+                </p>
+                <p
+                  className="text-[11px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  A weather forecaster predicting his town&apos;s end races to convince the people he loves before the storm proves him right.
+                </p>
               </div>
               <p
                 className="text-[17px] font-semibold m-0 mb-2 leading-tight text-[var(--gem-gray-50)]"
@@ -149,22 +163,38 @@ export default async function Home({
               </p>
             </div>
 
-            {/* Development notes */}
+            {/* Development notes — mini-mockup mirrors the report's
+                Development Priorities section: primary lever badge + a
+                one-line sample. */}
             <div
-              className="rounded-xl p-6"
+              className="rounded-xl p-6 flex flex-col"
               style={{
                 background: '#fff',
                 border: '1px solid rgba(124,58,237,0.25)',
               }}
             >
               <div
-                className="w-9 h-9 rounded-lg grid place-items-center mb-4"
+                className="rounded-lg p-3 mb-4"
                 style={{
-                  background: 'rgba(124,58,237,0.10)',
-                  border: '1px solid rgba(124,58,237,0.30)',
+                  background:
+                    'linear-gradient(135deg, rgba(220,38,38,0.04), #fff 80%)',
+                  border: '1px solid rgba(220,38,38,0.20)',
                 }}
               >
-                <Notebook size={16} style={{ color: 'var(--gem-accent)' }} />
+                <span
+                  className="inline-block text-[8.5px] font-bold uppercase mb-1.5 px-1.5 py-0.5 rounded"
+                  style={{
+                    letterSpacing: '0.16em',
+                    color: '#dc2626',
+                    background: 'rgba(220,38,38,0.08)',
+                    border: '1px solid rgba(220,38,38,0.22)',
+                  }}
+                >
+                  Primary lever
+                </span>
+                <p className="text-[11px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]">
+                  Tighten the act-two midpoint so the storm reveal lands as the story&apos;s emotional turn, not just a plot beat.
+                </p>
               </div>
               <p
                 className="text-[17px] font-semibold m-0 mb-2 leading-tight text-[var(--gem-gray-50)]"
@@ -177,22 +207,42 @@ export default async function Home({
               </p>
             </div>
 
-            {/* Industry matching */}
+            {/* Industry matching — mini-mockup mirrors the green
+                qualification banner from the report page. Same visual
+                language across surfaces. */}
             <div
-              className="rounded-xl p-6"
+              className="rounded-xl p-6 flex flex-col"
               style={{
                 background: '#fff',
                 border: '1px solid rgba(22,163,74,0.25)',
               }}
             >
               <div
-                className="w-9 h-9 rounded-lg grid place-items-center mb-4"
+                className="rounded-lg p-3 mb-4 flex items-start gap-2"
                 style={{
-                  background: 'rgba(22,163,74,0.10)',
-                  border: '1px solid rgba(22,163,74,0.30)',
+                  background:
+                    'linear-gradient(135deg, rgba(5,150,105,0.10), #fff 80%)',
+                  border: '1px solid rgba(5,150,105,0.30)',
                 }}
               >
-                <Users size={16} style={{ color: '#16a34a' }} />
+                <span
+                  aria-hidden
+                  className="inline-flex items-center justify-center w-5 h-5 rounded-full text-white text-[10px] font-bold flex-shrink-0 mt-0.5"
+                  style={{ background: '#059669' }}
+                >
+                  ✓
+                </span>
+                <div className="min-w-0">
+                  <p
+                    className="text-[8.5px] font-bold uppercase m-0 mb-1"
+                    style={{ letterSpacing: '0.16em', color: '#047857' }}
+                  >
+                    Qualifies for industry matching
+                  </p>
+                  <p className="text-[11px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]">
+                    Producers, agents, and dev execs scouting your lane can find this script.
+                  </p>
+                </div>
               </div>
               <p
                 className="text-[17px] font-semibold m-0 mb-2 leading-tight text-[var(--gem-gray-50)]"
