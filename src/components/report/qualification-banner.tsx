@@ -16,7 +16,7 @@
 // GEM Select" emotional moment that was generating angry emails.
 
 import { useEffect, useState } from 'react'
-import { Check, Eye, RefreshCw } from 'lucide-react'
+import { Check, Eye, RefreshCw, ArrowRight } from 'lucide-react'
 import { PublishPreviewModal } from '@/components/report/publish-preview-modal'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { matchPreset, PRESETS, type ReportPrivacy } from '@/lib/report-privacy'
@@ -187,40 +187,24 @@ export function QualificationBanner({
   }
 
   // ─── Qualified + unpublished: primary publish CTA ──────────────────
+  // Two flavors via isSubscribed:
+  //   FREE  → emerald banner pushing Pro upgrade ($20/mo, unlimited submissions),
+  //           PLUS a sticky bottom bar that reappears once the top banner
+  //           scrolls out of view. Two upgrade surfaces, same destination.
+  //   PAID  → simpler emerald banner with just "Publish for Industry Visibility"
+  //           (no Pro mention, no sticky bar — they don't need to upgrade).
   return (
     <>
-      <div
-        className="rounded-xl p-5 sm:p-6 mb-6 flex items-start gap-4"
-        style={{
-          background: 'linear-gradient(135deg, rgba(212,160,23,0.08), rgba(212,160,23,0.02) 60%)',
-          border: '1px solid rgba(212,160,23,0.35)',
-        }}
-      >
-        <div
-          className="flex-shrink-0 w-10 h-10 rounded-full grid place-items-center text-white"
-          style={{ background: 'var(--gem-gold)' }}
-        >
-          <Check size={16} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1" style={{ color: '#92710f' }}>
-            Qualifies for the Discover Portal · currently private
-          </p>
-          <p className="text-[16px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-[1.35]">
-            Publish now to get your script in front of industry partners.
-          </p>
-          <p className="text-[13.5px] sm:text-[14px] text-[var(--gem-gray-300)] m-0 mb-4 leading-[1.55] max-w-[62ch]">
-            Right now, nothing&apos;s visible to anyone but you. When you publish, producers, agents, and dev execs actively browsing the Discover Portal can find it — and you choose exactly which sections they see.
-          </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[14px] font-semibold text-white transition-colors hover:brightness-110"
-            style={{ background: 'var(--gem-accent)' }}
-          >
-            {isSubscribed ? 'Publish for Industry Visibility' : 'Publish for Industry Visibility — Pro'}
-          </button>
-        </div>
-      </div>
+      <QualifiedBanner
+        isSubscribed={isSubscribed}
+        onPublishClick={() => setShowModal(true)}
+      />
+      {!isSubscribed && (
+        <StickyUpgradeBar
+          onClick={() => setShowModal(true)}
+          hidden={showModal}
+        />
+      )}
       {showModal && (
         <PublishPreviewModal
           submissionId={submissionId}
@@ -236,6 +220,132 @@ export function QualificationBanner({
       )}
       <SubscribeGateSink />
     </>
+  )
+}
+
+// ─── Qualified banner (the top hero card) ──────────────────────────
+// Emerald palette to match the published-state pill — "you're on the
+// right path" continuity. Free vs Pro copy differs only in the CTA + a
+// single value-prop line under it.
+function QualifiedBanner({
+  isSubscribed,
+  onPublishClick,
+}: {
+  isSubscribed: boolean
+  onPublishClick: () => void
+}) {
+  return (
+    <div
+      id="qualification-banner-anchor"
+      className="rounded-xl p-5 sm:p-6 mb-6 flex items-start gap-4"
+      style={{
+        background: 'linear-gradient(135deg, rgba(5,150,105,0.10), rgba(5,150,105,0.02) 70%)',
+        border: '1px solid rgba(5,150,105,0.35)',
+      }}
+    >
+      <div
+        className="flex-shrink-0 w-10 h-10 rounded-full grid place-items-center text-white"
+        style={{ background: '#059669' }}
+      >
+        <Check size={16} strokeWidth={3} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p
+          className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+          style={{ color: '#047857' }}
+        >
+          Qualifies for industry matching
+        </p>
+        <p className="text-[18px] sm:text-[20px] font-semibold text-[var(--gem-gray-50)] m-0 mb-2 leading-[1.3]">
+          {isSubscribed
+            ? 'Ready to put this in front of producers, agents, and dev execs.'
+            : 'Get this in front of producers, agents, and dev execs.'}
+        </p>
+        <p className="text-[13.5px] sm:text-[14px] text-[var(--gem-gray-300)] m-0 mb-4 leading-[1.55] max-w-[60ch]">
+          {isSubscribed
+            ? 'You choose exactly what industry partners see.'
+            : 'Pro unlocks publishing, the full report, and unlimited submissions.'}
+        </p>
+        <button
+          onClick={onPublishClick}
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[14px] font-semibold text-white transition-all hover:brightness-110 active:scale-[0.985]"
+          style={{
+            background: isSubscribed ? '#059669' : 'var(--gem-accent)',
+            boxShadow: isSubscribed
+              ? '0 6px 16px rgba(5,150,105,0.25)'
+              : '0 6px 16px rgba(124,58,237,0.25)',
+          }}
+        >
+          {isSubscribed ? 'Publish for Industry Visibility' : 'Go Pro · Publish · $20/mo'}
+          <ArrowRight size={14} />
+        </button>
+      </div>
+    </div>
+  )
+}
+
+// ─── Sticky bottom upgrade bar ─────────────────────────────────────
+// Shown only for free + qualified + unpublished writers, only AFTER they've
+// scrolled the top banner out of view. Auto-hides when the publish modal is
+// open or when the banner is back in viewport. Slim, dismissible-looking but
+// not actually dismissible — staying-power matters for conversion.
+function StickyUpgradeBar({ onClick, hidden }: { onClick: () => void; hidden: boolean }) {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const anchor = document.getElementById('qualification-banner-anchor')
+    if (!anchor) return
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          // Show sticky once the top banner has scrolled out of view.
+          setShow(!e.isIntersecting)
+        }
+      },
+      { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+    )
+    obs.observe(anchor)
+    return () => obs.disconnect()
+  }, [])
+  if (hidden || !show) return null
+  return (
+    <div
+      className="fixed left-0 right-0 bottom-0 z-40"
+      style={{
+        background: 'rgba(15, 17, 23, 0.96)',
+        borderTop: '1px solid rgba(5,150,105,0.4)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+      }}
+    >
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
+        <div
+          className="hidden sm:grid flex-shrink-0 w-9 h-9 rounded-full place-items-center text-white"
+          style={{ background: '#059669' }}
+        >
+          <Check size={15} strokeWidth={3} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-[13px] sm:text-[14px] font-semibold text-white m-0 leading-tight">
+            Publish to industry + unlock the full report
+          </p>
+          <p className="text-[11.5px] sm:text-[12px] text-white/60 m-0 mt-0.5 leading-tight">
+            $20/mo · unlimited submissions
+          </p>
+        </div>
+        <button
+          onClick={onClick}
+          className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-all hover:brightness-110 active:scale-[0.985]"
+          style={{
+            background: 'var(--gem-accent)',
+            boxShadow: '0 6px 16px rgba(124,58,237,0.35)',
+          }}
+        >
+          Go Pro
+          <ArrowRight size={13} />
+        </button>
+      </div>
+    </div>
   )
 }
 
