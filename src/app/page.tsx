@@ -102,8 +102,11 @@ export default async function Home({
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
       <LandingTracking />
 
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/92 backdrop-blur-sm">
+      {/* Nav — fixed (not sticky) because layout.tsx's overflow-x-hidden
+          wrapper breaks sticky containing-block. Spacer below reserves the
+          slot so the hero starts below the nav. */}
+      <div className="h-14 sm:h-16" aria-hidden />
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <span

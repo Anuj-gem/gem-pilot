@@ -42,17 +42,22 @@ export function MobileNav() {
 
   return (
     <div className="sm:hidden flex items-center gap-2">
-      {/* Submit pill — animated pop-in once hero CTAs leave viewport */}
+      {/* Submit pill — slides in from the right once hero CTAs leave the
+          viewport. Bigger travel + cubic-bezier ease so the motion reads
+          clearly instead of feeling like a flicker. */}
       <Link
         href="/submit"
         aria-label="Submit a script"
-        className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-all duration-300"
+        className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
         style={{
           background: 'var(--gem-accent)',
           opacity: submitVisible ? 1 : 0,
-          transform: submitVisible ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(0.92)',
+          transform: submitVisible ? 'translateX(0)' : 'translateX(36px)',
           pointerEvents: submitVisible ? 'auto' : 'none',
           boxShadow: submitVisible ? '0 4px 12px rgba(124,58,237,0.30)' : 'none',
+          transition:
+            'opacity 380ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 380ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+          willChange: 'transform, opacity',
         }}
       >
         <Plus size={13} />

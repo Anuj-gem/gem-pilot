@@ -29,7 +29,13 @@ export default function Nav() {
   ] : []
 
   return (
-    <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)] sticky top-0 z-50">
+    <>
+      {/* Spacer matching nav height — needed because the nav is `fixed`,
+          not `sticky` (sticky breaks under layout's overflow-x-hidden
+          wrapper). The spacer reserves the layout slot so page content
+          starts below the nav instead of underneath it. */}
+      <div className="h-14" aria-hidden />
+    <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href={user ? '/dashboard' : '/'} className="flex items-center gap-2">
           <span
@@ -218,6 +224,7 @@ export default function Nav() {
         </div>
       )}
     </nav>
+    </>
   )
 }
 
