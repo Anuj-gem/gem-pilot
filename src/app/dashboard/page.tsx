@@ -241,8 +241,8 @@ export default async function DashboardPage({
                             : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-4 flex-wrap">
-                      <div className="flex-1 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
+                      <div className="flex-1 min-w-0 w-full">
                         {/* Title + state pills */}
                         <div className="flex items-center gap-2 flex-wrap mb-1.5">
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
@@ -341,7 +341,7 @@ export default async function DashboardPage({
                           Resume URL skips the format step (already declared on the draft) and routes
                           straight to the script-upload step on /submit. */}
                       {sub.status === 'awaiting_pdf' && (
-                        <div className="flex items-center gap-2 shrink-0">
+                        <div className="flex flex-wrap items-center gap-2 sm:shrink-0 w-full sm:w-auto">
                           <Link
                             href={`/submit?resume=${sub.id}${sub.declared_format ? `&format=${encodeURIComponent(sub.declared_format)}` : ''}`}
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white shadow-[0_2px_8px_rgba(124,58,237,0.25)] transition-all duration-150 hover:brightness-110 hover:shadow-[0_4px_12px_rgba(124,58,237,0.35)] active:scale-[0.97]"
@@ -353,7 +353,7 @@ export default async function DashboardPage({
                         </div>
                       )}
                       {hasReport && (
-                        <div className="flex items-center gap-2 shrink-0">
+                        <div className="flex flex-wrap items-center gap-2 sm:shrink-0 w-full sm:w-auto">
                           {isLockedReport ? (
                             <UnlockTrigger
                               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all"
