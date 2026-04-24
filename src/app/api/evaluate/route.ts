@@ -77,15 +77,8 @@ async function extractPdfText(buffer: Buffer): Promise<string> {
   return text;
 }
 
-// Call GPT-5.4 Mini for evaluation (v4 advocate prompt — positioning-first output)
-async function evaluateScript(scriptText: string, declaredFormat: DeclaredFormat): Promise<{
-  evaluation: GEMEvaluation;
-  weightedScore: number;
-  tier: string;
-  inputTokens: number;
-  outputTokens: number;
-  cost: number;
-}> {
+// One raw OpenAI call. SAME prompt every time — no runtime overrides.
+async function callOpenAI(scriptText: string, declaredFormat: DeclaredFormat) {
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -116,24 +109,86 @@ async function evaluateScript(scriptText: string, declaredFormat: DeclaredFormat
   const evaluation = JSON.parse(
     data.choices[0].message.content
   ) as GEMEvaluation;
-
-  // Calculate weighted score and tier in code (not from LLM)
-  const scores = evaluation.scores as Record<string, { score: number }>;
-  // Ensure all 10 dimensions have scores — default missing to 5
-  const safeScores: Record<string, { score: number }> = {};
-  for (const dim of DIMENSION_IDS) {
-    safeScores[dim] = scores[dim] ?? { score: 5 };
-  }
-  const weightedScore = calculateWeightedScore(safeScores as any);
-  const tier = calculateTier(weightedScore);
-
   const inputTokens = data.usage?.prompt_tokens ?? 0;
   const outputTokens = data.usage?.completion_tokens ?? 0;
   // GPT-5.4 Mini: $0.75/M input, $4.50/M output
   const cost =
     (inputTokens / 1_000_000) * 0.75 + (outputTokens / 1_000_000) * 4.5;
+  return { evaluation, inputTokens, outputTokens, cost };
+}
 
-  return { evaluation, weightedScore, tier, inputTokens, outputTokens, cost };
+// True if lead_characters is missing, empty, or contains only Supporting roles.
+// These are the stochastic GPT failures (~7%) that produce broken reports.
+function leadsUnhealthy(evaluation: GEMEvaluation): boolean {
+  const leads = (evaluation as any)?.lead_characters;
+  if (!Array.isArray(leads) || leads.length === 0) return true;
+  return leads.every((c: any) => {
+    const role = String(c?.role_type ?? "").toLowerCase().trim();
+    return role === "supporting" || role === "";
+  });
+}
+
+// Honest 3x retry. SAME prompt every attempt — drops effective failure rate
+// on lead_characters from ~7% to ~0.03%. Mirrors scripts/rescore-all.mjs.
+// Returns the first attempt with healthy leads; falls back to the last
+// attempt if all 3 fail (so we still produce a report rather than erroring).
+async function evaluateScript(scriptText: string, declaredFormat: DeclaredFormat): Promise<{
+  evaluation: GEMEvaluation;
+  weightedScore: number;
+  tier: string;
+  inputTokens: number;
+  outputTokens: number;
+  cost: number;
+  attempts: number;
+}> {
+  const MAX_ATTEMPTS = 3;
+  let lastResp: Awaited<ReturnType<typeof callOpenAI>> | null = null;
+  let totalIn = 0;
+  let totalOut = 0;
+  let totalCost = 0;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const resp = await callOpenAI(scriptText, declaredFormat);
+    lastResp = resp;
+    totalIn += resp.inputTokens;
+    totalOut += resp.outputTokens;
+    totalCost += resp.cost;
+    if (!leadsUnhealthy(resp.evaluation)) {
+      const safeScores: Record<string, { score: number }> = {};
+      const scores = resp.evaluation.scores as Record<string, { score: number }>;
+      for (const dim of DIMENSION_IDS) safeScores[dim] = scores[dim] ?? { score: 5 };
+      const weightedScore = calculateWeightedScore(safeScores as any);
+      const tier = calculateTier(weightedScore);
+      return {
+        evaluation: resp.evaluation,
+        weightedScore,
+        tier,
+        inputTokens: totalIn,
+        outputTokens: totalOut,
+        cost: totalCost,
+        attempts: attempt,
+      };
+    }
+    console.warn(`[evaluate] attempt ${attempt} returned bad lead_characters, retrying`);
+  }
+  // All attempts produced bad leads — return the last response anyway so we
+  // don't 500 on the writer. Better to ship a slightly-broken report than
+  // nothing; the writer can retry by re-uploading. Counters in this rare
+  // case will surface in OpenAI logs.
+  console.error("[evaluate] all 3 attempts produced bad lead_characters");
+  const safeScores: Record<string, { score: number }> = {};
+  const scores = lastResp!.evaluation.scores as Record<string, { score: number }>;
+  for (const dim of DIMENSION_IDS) safeScores[dim] = scores[dim] ?? { score: 5 };
+  const weightedScore = calculateWeightedScore(safeScores as any);
+  const tier = calculateTier(weightedScore);
+  return {
+    evaluation: lastResp!.evaluation,
+    weightedScore,
+    tier,
+    inputTokens: totalIn,
+    outputTokens: totalOut,
+    cost: totalCost,
+    attempts: MAX_ATTEMPTS,
+  };
 }
 
 export async function POST(request: NextRequest) {
