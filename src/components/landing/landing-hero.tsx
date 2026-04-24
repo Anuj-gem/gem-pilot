@@ -215,7 +215,9 @@ function FloatingReportCard() {
           demo
         </span>
       </div>
-      {/* Headline — the pitch line writers can use when an industry contact asks "what have you got?" */}
+      {/* Real example — actual v5.3 eval of the Sopranos pilot. Concrete
+          beats hypothetical: writers see the exact format and quality of
+          what they'd get back from their own script. */}
       <div
         className="rounded-xl p-3.5 mb-2.5"
         style={{
@@ -234,8 +236,7 @@ function FloatingReportCard() {
           className="text-[12px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          A weather forecaster predicting his own town&apos;s end races to
-          convince the people he loves before the storm proves him right.
+          A New Jersey mob boss in therapy races to hide panic attacks before family, crew, and rivals expose him.
         </p>
       </div>
       <div>
@@ -256,7 +257,7 @@ function FloatingReportCard() {
             <p
               className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
             >
-              Contained-disaster setup that reads premium without scope
+              The premise is a built-in engine
             </p>
           </div>
           <div className="flex gap-1.5">
@@ -269,7 +270,7 @@ function FloatingReportCard() {
             <p
               className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
             >
-              Lead role built for late-career dramatic reinvention
+              Tony is a star-making contradiction
             </p>
           </div>
           <div className="flex gap-1.5">
@@ -282,7 +283,7 @@ function FloatingReportCard() {
             <p
               className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
             >
-              Premise that travels — climate-era relevance across demos
+              The family is as dramatic as the crime
             </p>
           </div>
         </div>

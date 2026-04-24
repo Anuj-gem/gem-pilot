@@ -47,6 +47,57 @@ export default async function Home({
     redirect('/dashboard')
   }
 
+  // Fetch the 3 most recent qualified + published reports for the live feed
+  // section under "Three things every writer needs". Dedupes by title so a
+  // single writer testing the same script multiple times doesn't dominate
+  // the feed. Failures are non-fatal — the section just renders empty.
+  type LiveCard = {
+    eval_id: string
+    title: string
+    headline: string
+    author: string | null
+    declared_format: string | null
+    posted_at: string
+  }
+  const liveQualified: LiveCard[] = []
+  try {
+    const { data: subs } = await supabase
+      .from('script_submissions')
+      .select(
+        'id, title, declared_format, created_at, profiles ( full_name ), script_evaluations ( id, weighted_score, evaluation, edited_fields )'
+      )
+      .eq('is_public', true)
+      .order('created_at', { ascending: false })
+      .limit(40)
+    const seenTitles = new Set<string>()
+    for (const s of (subs as any[]) ?? []) {
+      const ev = Array.isArray(s.script_evaluations) ? s.script_evaluations[0] : s.script_evaluations
+      if (!ev) continue
+      const score = Number(ev.weighted_score)
+      if (Number.isNaN(score) || score < 50) continue
+      const title = (s.title || '').trim()
+      const titleKey = title.toLowerCase()
+      if (seenTitles.has(titleKey)) continue
+      seenTitles.add(titleKey)
+      const headline =
+        ev.edited_fields?.logline ||
+        ev.evaluation?.positioning_hook ||
+        ev.evaluation?.whats_special?.headline ||
+        ''
+      liveQualified.push({
+        eval_id: ev.id,
+        title: title || 'Untitled',
+        headline: String(headline).trim(),
+        author: s.profiles?.full_name ?? null,
+        declared_format: s.declared_format ?? null,
+        posted_at: s.created_at,
+      })
+      if (liveQualified.length >= 3) break
+    }
+  } catch {
+    // Swallow — section just won't render
+  }
+
   return (
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
       <LandingTracking />
@@ -149,7 +200,7 @@ export default async function Home({
                   className="text-[11px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]"
                   style={{ fontFamily: 'Georgia, serif' }}
                 >
-                  A weather forecaster predicting his town&apos;s end races to convince the people he loves before the storm proves him right.
+                  A New Jersey mob boss in therapy races to hide panic attacks before family, crew, and rivals expose him.
                 </p>
               </div>
               <p
@@ -193,7 +244,7 @@ export default async function Home({
                   Primary lever
                 </span>
                 <p className="text-[11px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]">
-                  Tighten the act-two midpoint so the storm reveal lands as the story&apos;s emotional turn, not just a plot beat.
+                  Run each Melfi session as a distinct pressure — family, business, identity — so every return to the office does narrative work.
                 </p>
               </div>
               <p
@@ -259,6 +310,99 @@ export default async function Home({
       </section>
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
+
+      {/* LIVE QUALIFIED FEED — the most-recent qualified scripts on Industry.
+          Reinforces "Industry is for the most qualified" by making it
+          tangible. Server-fetched at request time so it always shows real
+          recent activity. Hidden if we can't pull at least one card. */}
+      {liveQualified.length > 0 && (
+        <>
+          <section
+            className="px-4 sm:px-6 py-12 sm:py-14"
+            style={{ background: 'var(--gem-black)' }}
+          >
+            <div className="max-w-5xl mx-auto">
+              <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span
+                      aria-hidden
+                      className="inline-block w-2 h-2 rounded-full"
+                      style={{ background: '#16a34a', boxShadow: '0 0 8px rgba(22,163,74,0.6)' }}
+                    />
+                    <div
+                      className="text-[11px] uppercase font-semibold"
+                      style={{ letterSpacing: '0.32em', color: '#16a34a' }}
+                    >
+                      Qualifying right now
+                    </div>
+                  </div>
+                  <h2
+                    className="text-[22px] sm:text-[26px] font-bold leading-[1.2] tracking-tight m-0"
+                    style={{ fontFamily: 'Georgia, serif' }}
+                  >
+                    Writers are qualifying for industry visibility every day.
+                  </h2>
+                </div>
+                <Link
+                  href="/discover"
+                  className="text-[13px] font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity"
+                  style={{ color: 'var(--gem-accent)' }}
+                >
+                  See all on Industry
+                  <ArrowRight size={13} />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {liveQualified.map((card) => (
+                  <Link
+                    key={card.eval_id}
+                    href={`/report/${card.eval_id}`}
+                    className="rounded-xl p-4 transition-colors hover:border-[var(--gem-gray-600)] block"
+                    style={{
+                      background: 'var(--gem-gray-900)',
+                      border: '1px solid var(--gem-gray-700)',
+                    }}
+                  >
+                    <div className="flex items-center gap-1.5 mb-2.5">
+                      <span
+                        aria-hidden
+                        className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full text-white text-[8px] font-bold"
+                        style={{ background: '#059669' }}
+                      >
+                        ✓
+                      </span>
+                      <span
+                        className="text-[9.5px] font-bold uppercase"
+                        style={{ letterSpacing: '0.14em', color: '#34d399' }}
+                      >
+                        Qualified · {card.declared_format === 'Series' ? 'Series' : 'Feature'}
+                      </span>
+                    </div>
+                    <p
+                      className="text-[15px] font-semibold m-0 mb-1.5 leading-tight text-[var(--gem-gray-50)] line-clamp-2"
+                      style={{ fontFamily: 'Georgia, serif' }}
+                    >
+                      {card.title}
+                    </p>
+                    {card.headline && (
+                      <p className="text-[12.5px] text-[var(--gem-gray-300)] leading-[1.5] m-0 mb-3 line-clamp-3">
+                        {card.headline}
+                      </p>
+                    )}
+                    {card.author && (
+                      <p className="text-[11px] text-[var(--gem-gray-500)] m-0 leading-tight">
+                        By {card.author}
+                      </p>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+          <div className="h-px bg-[var(--gem-gray-700)]" />
+        </>
+      )}
 
       {/* MEET SELZNICK — the reader behind the tech */}
       <section
