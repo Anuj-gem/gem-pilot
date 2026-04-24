@@ -38,11 +38,32 @@ export function LockedAfterEvalScreen({
     return () => clearTimeout(t)
   }, [])
 
-  function handleUpgrade() {
-    trackSubscribeClick('locked_after_eval')
-    trackSubscribeFromReport({ evaluationId })
-    gtagSubscribeClicked()
-    window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+  // Call Stripe directly — this screen renders standalone (no rest-of-report
+  // wrapper, no SubscribeGate listener), so dispatching gem:open-upgrade-modal
+  // would silently no-op. Same pattern as upgrade-card.tsx and the new
+  // qualification-banner upgrade nudge.
+  const [upgrading, setUpgrading] = useState(false)
+  async function handleUpgrade() {
+    if (upgrading) return
+    setUpgrading(true)
+    try {
+      trackSubscribeClick('locked_after_eval')
+      trackSubscribeFromReport({ evaluationId })
+      gtagSubscribeClicked()
+    } catch {}
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ redirect_report: evaluationId }),
+      })
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url
+        return
+      }
+    } catch {}
+    setUpgrading(false)
   }
 
   // Resolve which verdict variant to render.
@@ -158,11 +179,12 @@ export function LockedAfterEvalScreen({
         <button
           type="button"
           onClick={handleUpgrade}
-          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(124,58,237,0.30)] transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
+          disabled={upgrading}
+          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(124,58,237,0.30)] transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-70 disabled:cursor-wait"
           style={{ background: 'var(--gem-accent)' }}
         >
-          Upgrade to GEM Pro — $20/mo
-          <ArrowRight size={15} />
+          {upgrading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
+          {!upgrading && <ArrowRight size={15} />}
         </button>
         <Link
           href="/dashboard"
