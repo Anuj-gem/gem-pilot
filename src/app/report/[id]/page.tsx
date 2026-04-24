@@ -433,17 +433,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
           }
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
+          headerActionsLeft={
+            isOwnerOrAdmin ? (
+              <DownloadButton
+                evaluationId={id}
+                isSubscribed={ownerIsSubscribed}
+                title={topCard.title}
+              />
+            ) : undefined
+          }
         />
-
-        {/* Download — owner/admin only. Free writers see the menu too but
-            their PDFs only contain the unblurred sections (mirrors what they
-            already see on screen). Pro writers get the full Pitch / Full
-            Report PDFs. Visitors don't see this at all. */}
-        {isOwnerOrAdmin && (
-          <div className="flex justify-end -mt-2 mb-4">
-            <DownloadButton evaluationId={id} isSubscribed={ownerIsSubscribed} />
-          </div>
-        )}
 
         {/* Mini score card removed 2026-04-23 — qualification banner above
             now handles the owner's primary signal. Free-tier owners still

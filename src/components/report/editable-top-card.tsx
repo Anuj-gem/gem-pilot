@@ -25,6 +25,10 @@ interface Props {
   isOwner: boolean
   hasEdits: boolean
   postedAt: string | null
+  /** Extra action(s) to render to the LEFT of the Edit button, in the
+   *  card's top-right action row. Used by the report page to slot the
+   *  Download pill in next to Edit. */
+  headerActionsLeft?: React.ReactNode
   /** Writer's full name (from profiles.full_name). Rendered as read-only
    *  "By {name}" under the title. Null/empty when the submission is anonymous
    *  or the profile has no name set, in which case the line is omitted.
@@ -37,7 +41,7 @@ interface Props {
   isGemSelect?: boolean
 }
 
-export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt, authorName, isGemSelect }: Props) {
+export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt, authorName, isGemSelect, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -137,24 +141,35 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
   if (!editing) {
     return (
       <div ref={cardRef} className="relative">
-        {isOwner && (
-          <button
-            type="button"
-            onClick={() => {
-              resetLocalToInitial()
-              setEditing(true)
-              setError(null)
-            }}
-            className="absolute right-0 top-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors"
-            aria-label="Edit title, genre, tone, and headline"
-            title="Edit title, genre, tone, and headline"
-          >
-            <Pencil size={13} />
-            Edit
-          </button>
+        {/* Top-right action row: extra slotted actions (e.g. Download) on
+            the left, Edit on the right. Wrapped together in one absolute
+            container so they stay paired across viewports. */}
+        {(isOwner || headerActionsLeft) && (
+          <div className="absolute right-0 top-0 z-20 flex items-center gap-1.5 sm:gap-2">
+            {headerActionsLeft}
+            {isOwner && (
+              <button
+                type="button"
+                onClick={() => {
+                  resetLocalToInitial()
+                  setEditing(true)
+                  setError(null)
+                }}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] sm:text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors"
+                aria-label="Edit title, genre, tone, and headline"
+                title="Edit title, genre, tone, and headline"
+              >
+                <Pencil size={13} />
+                Edit
+              </button>
+            )}
+          </div>
         )}
 
-        <h1 className="text-[28px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-2 sm:mb-4 pr-20 sm:pr-24">
+        {/* Title gets extra right-padding on mobile so the Download + Edit
+            row above doesn't crash into it. Desktop has more room so a
+            tighter pad is fine. */}
+        <h1 className="text-[28px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-2 sm:mb-4 pt-12 sm:pt-0 sm:pr-44">
           {initial.title}
         </h1>
 

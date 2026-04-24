@@ -121,14 +121,20 @@ export async function GET(
     return NextResponse.json({ error: 'PDF generation failed' }, { status: 500 })
   }
 
-  const safeFilename = sanitizeFilename(titleToShow) +
-    (scope === 'free' ? '-teaser' : scope === 'full' ? '-full' : '-pitch') + '.pdf'
+  // Filename pattern: "GEM Report - <Title> (<Scope>).pdf"
+  // Quoted in Content-Disposition so spaces are preserved; sanitized to
+  // strip filesystem-unsafe characters (colons, slashes, etc.).
+  const scopeLabel = scope === 'free' ? 'Teaser' : scope === 'full' ? 'Full' : 'Pitch'
+  const cleanTitle = sanitizeFilenameSegment(titleToShow)
+  const safeFilename = `GEM Report - ${cleanTitle} (${scopeLabel}).pdf`
 
   return new NextResponse(new Uint8Array(pdfBuffer), {
     status: 200,
     headers: {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename="${safeFilename}"`,
+      // Both filename= (legacy) and filename*= (RFC 5987 UTF-8) — the latter
+      // covers titles with non-ASCII characters that the legacy form mangles.
+      'Content-Disposition': `attachment; filename="${safeFilename}"; filename*=UTF-8''${encodeURIComponent(safeFilename)}`,
       'Cache-Control': 'private, no-store',
     },
   })
@@ -147,11 +153,15 @@ function applyEdits(evaluation: any, edited: any | null) {
   return out
 }
 
-function sanitizeFilename(s: string): string {
-  return s
+// Used for the Title segment inside the filename. Allows spaces (so the
+// final filename reads naturally) but strips characters that break filesystems
+// — slashes, colons, asterisks, quotes, angle brackets, pipes, control chars.
+function sanitizeFilenameSegment(s: string): string {
+  const cleaned = s
     .normalize('NFKD')
-    .replace(/[^\w\s-]/g, '')
+    .replace(/[\\/:*?"<>|\u0000-\u001F]/g, '')
+    .replace(/\s+/g, ' ')
     .trim()
-    .replace(/\s+/g, '-')
-    .slice(0, 80) || 'gem-report'
+    .slice(0, 80)
+  return cleaned || 'Untitled'
 }

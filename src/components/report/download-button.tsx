@@ -13,9 +13,14 @@ import { Download, Sparkles, FileText, Files } from 'lucide-react'
 interface Props {
   evaluationId: string
   isSubscribed: boolean
+  /** Used as the client-side download filename hint. The server also sets
+   *  Content-Disposition with the same pattern; passing it here guarantees
+   *  the file lands as "GEM Report - <Title> (Scope).pdf" instead of
+   *  "download" when the browser ignores the header. */
+  title: string
 }
 
-export function DownloadButton({ evaluationId, isSubscribed }: Props) {
+export function DownloadButton({ evaluationId, isSubscribed, title }: Props) {
   const [open, setOpen] = useState(false)
   const [downloading, setDownloading] = useState<'pitch' | 'full' | null>(null)
   const wrapRef = useRef<HTMLDivElement | null>(null)
@@ -43,10 +48,22 @@ export function DownloadButton({ evaluationId, isSubscribed }: Props) {
     try {
       // Anchor-based download — lets the browser handle the file save dialog
       // properly (vs fetch+blob which can fail in some mobile browsers).
+      // Filename mirrors the server's Content-Disposition exactly so the
+      // file consistently lands as "GEM Report - <Title> (Scope).pdf"
+      // even on browsers that ignore the response header.
+      const scopeLabel = !isSubscribed ? 'Teaser' : type === 'full' ? 'Full' : 'Pitch'
+      const cleanTitle = title
+        .normalize('NFKD')
+        // eslint-disable-next-line no-control-regex
+        .replace(/[\\/:*?"<>|\u0000-\u001F]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 80) || 'Untitled'
+      const filename = `GEM Report - ${cleanTitle} (${scopeLabel}).pdf`
       const url = `/api/scripts/${evaluationId}/download?type=${type}`
       const a = document.createElement('a')
       a.href = url
-      a.download = ''
+      a.download = filename
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
