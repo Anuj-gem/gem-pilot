@@ -316,6 +316,11 @@ export interface Consideration {
   area: string;
   detail: string;
   source?: "script" | "production" | "both";
+  // v5.2 — exactly one consideration may be flagged as the primary lever
+  // (the sharpest single development note). Used for the "Sharpest lever"
+  // section on public reports and the red-accent primary treatment in
+  // Development Priorities. Legacy evals omit this field.
+  is_primary_lever?: boolean;
 }
 
 // ─── Unified Evaluation Type (handles v2 and v3) ───────────────────

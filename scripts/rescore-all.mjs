@@ -26,7 +26,7 @@
  *   node scripts/rescore-all.mjs                               # full serial run
  *   node scripts/rescore-all.mjs --concurrency=5               # full parallel run
  *   node scripts/rescore-all.mjs --start-from=200              # resume from index
- *   node scripts/rescore-all.mjs --no-cache                    # force re-eval
+ *   node scripts/rescore-all.mjs --use-cache                   # opt-in cache (crash recovery)
  *   node scripts/rescore-all.mjs --user-id=<uuid>              # only this user
  *   node scripts/rescore-all.mjs --since=<iso-date>            # evals >= date
  *   node scripts/rescore-all.mjs --model-ne=gpt-5.4-mini-v5-2-rescore   # exclude model
@@ -57,7 +57,18 @@ try {
 
 // ── Flags ──────────────────────────────────────────────────────────
 const DRY = process.argv.includes('--dry') || process.argv.includes('--dry-run')
-const USE_CACHE = !process.argv.includes('--no-cache')
+// --preview: write results to script_evaluations_pending instead of the live
+// script_evaluations table. The /admin/preview-v5-1/[id] page (and the report
+// page with USE_PENDING_EVALS=1) reads from pending. Lets us stage a prompt
+// change on a handful of evals without touching any writer's live report.
+const PREVIEW = process.argv.includes('--preview')
+// Cache is OFF by default. The whole point of a rescore is to get fresh
+// GPT output, so silently serving a cached result from a prior prompt version
+// is always wrong (we burned ourselves twice on 2026-04-23). Cache only ever
+// turns on when explicitly requested via --use-cache, useful for resuming a
+// long run after a crash. --no-cache is still accepted for backward compat
+// but is now a no-op since OFF is the default.
+const USE_CACHE = process.argv.includes('--use-cache') && !PREVIEW
 const START_FROM = parseInt(
   (process.argv.find((a) => a.startsWith('--start-from=')) || '=0').split('=')[1]
 ) || 0
@@ -176,6 +187,58 @@ if (sanity.length < 5000 || sanity.includes('${')) {
   process.exit(1)
 }
 
+// ── Run-receipt directory ──────────────────────────────────────────
+// Every eval call writes a receipt: prompt hash, v5.3 marker check,
+// full system prompt, full GPT response, lead_characters summary, and
+// timestamp. This is the auditable proof that an eval ran with the
+// expected prompt — no more "did the new prompt actually run?" guessing.
+import crypto from 'crypto'
+const RUN_TS = new Date().toISOString().replace(/[:.]/g, '-')
+const RUN_DIR = path.join(process.cwd(), 'data', 'rescore-runs', RUN_TS)
+fsSync.mkdirSync(RUN_DIR, { recursive: true })
+const PROMPT_HASH = crypto.createHash('sha256').update(sanity).digest('hex').slice(0, 12)
+const V53_MARKER_PRESENT =
+  sanity.includes('There is **no upper limit**') &&
+  sanity.includes('Same character across time / ages')
+console.log(`Prompt hash: ${PROMPT_HASH}`)
+console.log(`v5.3 markers: ${V53_MARKER_PRESENT ? 'PRESENT ✓' : 'MISSING ✗'}`)
+console.log(`Run receipts: data/rescore-runs/${RUN_TS}/`)
+if (!V53_MARKER_PRESENT) {
+  console.error('ERROR: prompt does not contain the v5.3 markers — refusing to run')
+  process.exit(1)
+}
+
+function writeReceipt(submissionId, evalId, title, declaredFormat, systemPrompt, evaluation, costInfo, status) {
+  const leads = evaluation?.lead_characters || []
+  const receipt = {
+    timestamp: new Date().toISOString(),
+    submission_id: submissionId,
+    eval_id: evalId,
+    title,
+    declared_format: declaredFormat,
+    prompt_hash: PROMPT_HASH,
+    prompt_v53_markers_present: V53_MARKER_PRESENT,
+    prompt_length_chars: systemPrompt.length,
+    prompt_first_200: systemPrompt.slice(0, 200),
+    prompt_last_200: systemPrompt.slice(-200),
+    lead_characters_count: leads.length,
+    lead_characters_summary: leads.map((c) => ({
+      name: c.name,
+      role_type: c.role_type,
+      demographics: c.demographics,
+    })),
+    positioning_hook: evaluation?.positioning_hook,
+    cost_usd: costInfo?.cost,
+    input_tokens: costInfo?.inputTokens,
+    output_tokens: costInfo?.outputTokens,
+    status,
+  }
+  fsSync.writeFileSync(
+    path.join(RUN_DIR, `${submissionId}.json`),
+    JSON.stringify(receipt, null, 2)
+  )
+}
+
 // ── Cache ──────────────────────────────────────────────────────────
 const CACHE_DIR = path.join(process.cwd(), 'data', 'rescore-cache')
 const BACKUP_DIR = path.join(process.cwd(), 'data', 'rescore-backup')
@@ -195,9 +258,28 @@ function saveCache(submissionId, data) {
   fsSync.writeFileSync(cachePath(submissionId), JSON.stringify(data, null, 2))
 }
 
+// ── Lead-character health helpers ──────────────────────────────────
+// The Apr 23 re-score uncovered a subtler failure than "empty leads":
+// the model sometimes returns lead_characters populated entirely with
+// role_type "Supporting" (no Lead/Protagonist). Writers see a report
+// with no main character and complain. Treat "all-supporting" as
+// unhealthy too, and retry once with a protagonist-forcing nudge.
+function leadsEmpty(leads) {
+  return !Array.isArray(leads) || leads.length === 0
+}
+function leadsOnlySupporting(leads) {
+  if (!Array.isArray(leads) || leads.length === 0) return false
+  return leads.every((c) => {
+    const role = String(c?.role_type ?? '').toLowerCase().trim()
+    return role === 'supporting' || role === ''
+  })
+}
+function leadsUnhealthy(leads) {
+  return leadsEmpty(leads) || leadsOnlySupporting(leads)
+}
+
 // ── OpenAI call ────────────────────────────────────────────────────
-async function evaluateScript(scriptText, declaredFormat) {
-  const systemPrompt = buildPrompt(declaredFormat)
+async function callOpenAI(systemPrompt, scriptText, declaredFormat) {
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -229,10 +311,52 @@ async function evaluateScript(scriptText, declaredFormat) {
   return { evaluation, inputTokens, outputTokens, cost }
 }
 
+async function evaluateScript(scriptText, declaredFormat) {
+  // Honest retry. SAME prompt every attempt — no runtime overrides, no
+  // "stronger nudge". GPT failure on lead_characters is stochastic (~7%
+  // empty/all-Supporting), so a same-prompt retry brings effective failure
+  // to ~0.03% at 3 attempts (0.07³). Returns the first attempt that produces
+  // a valid result, with attempt count stamped on the response.
+  const MAX_ATTEMPTS = 3
+  const systemPrompt = buildPrompt(declaredFormat)
+  let lastResp = null
+  let totalCost = 0
+  let totalIn = 0
+  let totalOut = 0
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const resp = await callOpenAI(systemPrompt, scriptText, declaredFormat)
+    totalCost += resp.cost
+    totalIn += resp.inputTokens
+    totalOut += resp.outputTokens
+    lastResp = resp
+    const leads = resp.evaluation?.lead_characters
+    if (!leadsUnhealthy(leads)) {
+      return {
+        ...resp,
+        cost: totalCost,
+        inputTokens: totalIn,
+        outputTokens: totalOut,
+        attempts: attempt,
+      }
+    }
+    // Bad leads — log and retry (caller logs at higher level)
+  }
+  // All attempts produced bad leads — return the last one so the caller can
+  // decide what to do (live writes will skip; preview will write for inspection).
+  return {
+    ...lastResp,
+    cost: totalCost,
+    inputTokens: totalIn,
+    outputTokens: totalOut,
+    attempts: MAX_ATTEMPTS,
+  }
+}
+
 // ── Main ───────────────────────────────────────────────────────────
-console.log(`\n=== GEM Re-Score → LIVE ${DRY ? '(DRY RUN)' : ''} ===`)
-console.log(`Target table: script_evaluations`)
-console.log(`Cache: ${USE_CACHE ? 'ON (--no-cache to force re-eval)' : 'OFF'}`)
+const TARGET_TABLE = PREVIEW ? 'script_evaluations_pending' : 'script_evaluations'
+console.log(`\n=== GEM Re-Score → ${PREVIEW ? 'PREVIEW (pending table, no live writes)' : 'LIVE'} ${DRY ? '(DRY RUN)' : ''} ===`)
+console.log(`Target table: ${TARGET_TABLE}`)
+console.log(`Cache: ${USE_CACHE ? 'ON (--use-cache passed; for crash recovery)' : 'OFF (default)'}`)
 console.log(`Concurrency: ${CONCURRENCY}`)
 if (LIMIT) console.log(`Limit: ${LIMIT}`)
 if (START_FROM) console.log(`Start-from index: ${START_FROM}`)
@@ -297,7 +421,14 @@ if (NEEDS_V52) {
     const ev = s.prev_evaluation ?? {}
     const leads = Array.isArray(ev.lead_characters) ? ev.lead_characters : []
     const fit = ev?.package_angles?.director_appeal?.fit_profile
-    const healthy = leads.length > 0 && typeof fit === 'string' && fit.trim().length > 0
+    const leadsOK =
+      leads.length > 0 &&
+      !leads.every((c) => {
+        const role = String(c?.role_type ?? '').toLowerCase().trim()
+        return role === 'supporting' || role === ''
+      })
+    const healthy =
+      leadsOK && typeof fit === 'string' && fit.trim().length > 0
     return !healthy
   })
 }
@@ -318,21 +449,31 @@ const slice = enriched
 console.log(`Will process ${slice.length} submissions\n`)
 
 // 4. Snapshot current live evaluations for everything we're about to touch
+// (preview runs don't modify live data, so skip the snapshot).
 const affectedEvalIds = slice.map((s) => s.eval_id)
-if (affectedEvalIds.length > 0 && !DRY) {
+if (affectedEvalIds.length > 0 && !DRY && !PREVIEW) {
   console.log(`Snapshotting ${affectedEvalIds.length} current evaluation rows...`)
-  const { data: before, error: snapErr } = await sb
-    .from('script_evaluations')
-    .select('id, submission_id, weighted_score, tier, evaluation, model, created_at')
-    .in('id', affectedEvalIds)
-  if (snapErr) {
-    console.error('Snapshot read failed:', snapErr)
-    process.exit(1)
+  // Chunk the .in() query — PostgREST request URL is capped well below what
+  // 467 UUIDs in a single filter produces (UND_ERR_HEADERS_OVERFLOW above 16KB).
+  // 100 IDs per chunk keeps each request comfortably under the limit.
+  const SNAP_CHUNK = 100
+  const before = []
+  for (let i = 0; i < affectedEvalIds.length; i += SNAP_CHUNK) {
+    const chunk = affectedEvalIds.slice(i, i + SNAP_CHUNK)
+    const { data, error: snapErr } = await sb
+      .from('script_evaluations')
+      .select('id, submission_id, weighted_score, tier, evaluation, model, created_at')
+      .in('id', chunk)
+    if (snapErr) {
+      console.error(`Snapshot read failed (chunk ${i / SNAP_CHUNK + 1}):`, snapErr)
+      process.exit(1)
+    }
+    before.push(...(data ?? []))
   }
   const stamp = new Date().toISOString().replace(/[:.]/g, '-')
   const backupPath = path.join(BACKUP_DIR, `pre-rescore-${stamp}.json`)
   await fs.writeFile(backupPath, JSON.stringify(before, null, 2))
-  console.log(`Snapshot written to ${path.relative(process.cwd(), backupPath)}\n`)
+  console.log(`Snapshot written to ${path.relative(process.cwd(), backupPath)} (${before.length} rows)\n`)
 }
 
 // 5. Process — optionally in parallel.
@@ -341,6 +482,10 @@ let success = 0
 let failed = 0
 let cached = 0
 let dryCounted = 0
+// Tracks live writes that were SKIPPED because the model returned bad
+// lead_characters. Reported at end so Anuj can target a follow-up rerun
+// at exactly these eval_ids without scanning logs.
+const skippedLeads = []
 
 async function processOne(sub, absoluteIdx) {
   const logs = []
@@ -404,13 +549,16 @@ async function processOne(sub, absoluteIdx) {
         return
       }
 
-      const { evaluation, inputTokens, outputTokens, cost } = await evaluateScript(
+      const systemPromptUsed = buildPrompt(declaredFormat)
+      const { evaluation, inputTokens, outputTokens, cost, attempts } = await evaluateScript(
         scriptText,
         declaredFormat
       )
+      if (attempts > 1) log(`  ↻ Took ${attempts} attempts (lead_characters retry)`)
       const composite = calcWeighted(evaluation.scores)
       if (composite == null) {
         log('  ⚠ Composite calc failed (bad scores payload)')
+        writeReceipt(sub.id, sub.eval_id, title, declaredFormat, systemPromptUsed, evaluation, { inputTokens, outputTokens, cost }, 'failed:bad_scores')
         failed++
         console.log(logs.join('\n'))
         return
@@ -418,14 +566,32 @@ async function processOne(sub, absoluteIdx) {
       const tier = calcTier(composite)
       totalCost += cost
 
-      // Guard: don't persist an eval with an empty lead_characters list.
+      // Lead-characters health gate.
+      //   PREVIEW: write whatever the model returned (we want failures visible
+      //            in the admin pending UI for diagnosis).
+      //   LIVE:    NEVER overwrite the live row with an empty/only-supporting
+      //            result. Stochastic GPT failures around 5-7% would otherwise
+      //            ship broken reports to writers. Skip the write, leave the
+      //            prior eval in place, and accumulate the eval_id so it's
+      //            reported at the end of the run for targeted re-run.
       const leads = evaluation?.lead_characters
-      if (!Array.isArray(leads) || leads.length === 0) {
-        log('  ⚠ Empty lead_characters — skipping to protect report UI')
+      let leadStatus = 'ok'
+      if (leadsEmpty(leads)) leadStatus = 'empty'
+      else if (leadsOnlySupporting(leads)) leadStatus = 'only_supporting'
+
+      if (leadStatus !== 'ok' && !PREVIEW) {
+        log(`  ⚠ lead_characters ${leadStatus} — skipping live write to protect prior eval`)
+        writeReceipt(sub.id, sub.eval_id, title, declaredFormat, systemPromptUsed, evaluation, { inputTokens, outputTokens, cost }, `skipped:leads_${leadStatus}`)
+        skippedLeads.push({ eval_id: sub.eval_id, title, kind: leadStatus })
         failed++
         console.log(logs.join('\n'))
         return
       }
+      if (leadStatus !== 'ok') {
+        log(`  ⚠ lead_characters ${leadStatus} (writing to PREVIEW for inspection)`)
+      }
+
+      writeReceipt(sub.id, sub.eval_id, title, declaredFormat, systemPromptUsed, evaluation, { inputTokens, outputTokens, cost }, `wrote:leads_${leadStatus}`)
 
       result = {
         evaluation,
@@ -438,9 +604,49 @@ async function processOne(sub, absoluteIdx) {
       }
       saveCache(sub.id, result)
       log(`  Score: ${composite} | Tier: ${tier} | Cost: $${cost.toFixed(4)}`)
+      log(`  Leads: ${leads?.length ?? 0} (${leadStatus}) | Receipt: data/rescore-runs/${RUN_TS}/${sub.id}.json`)
     }
 
     if (DRY) {
+      console.log(logs.join('\n'))
+      return
+    }
+
+    if (PREVIEW) {
+      // Write to script_evaluations_pending so /admin/preview-v5-1/<eval_id>
+      // shows the new output without touching the writer's live report.
+      // Clear any existing pending row for this submission first, then insert
+      // fresh — avoids needing a unique constraint on submission_id.
+      const { error: delErr } = await sb
+        .from('script_evaluations_pending')
+        .delete()
+        .eq('submission_id', sub.id)
+      if (delErr) {
+        log(`  ✗ Preview clear failed: ${delErr.message}`)
+        failed++
+        console.log(logs.join('\n'))
+        return
+      }
+      const { error: insErr } = await sb
+        .from('script_evaluations_pending')
+        .insert({
+          submission_id: sub.id,
+          evaluation: result.evaluation,
+          weighted_score: result.weightedScore,
+          tier: result.tier,
+          model: 'gpt-5.4-mini-v5-3-preview',
+          input_tokens: result.inputTokens,
+          output_tokens: result.outputTokens,
+          cost_usd: result.cost,
+        })
+      if (insErr) {
+        log(`  ✗ Preview insert failed: ${insErr.message}`)
+        failed++
+        console.log(logs.join('\n'))
+        return
+      }
+      log(`  ✓ Preview written → /report/${sub.eval_id}?pending=1 (admin-only)`)
+      success++
       console.log(logs.join('\n'))
       return
     }
@@ -494,6 +700,13 @@ console.log(
   `Success: ${success} | Failed: ${failed} | Cached: ${cached} | ` +
     `DryCounted: ${dryCounted} | Total cost: $${totalCost.toFixed(2)}`
 )
+if (skippedLeads.length > 0) {
+  console.log(`\n⚠ ${skippedLeads.length} live write(s) skipped due to bad lead_characters.`)
+  console.log('  Prior eval is preserved. To retry just these, run:')
+  console.log(`  node scripts/rescore-all.mjs --concurrency=8 --eval-ids=${skippedLeads.map((s) => s.eval_id).join(',')}`)
+  console.log('\n  Detail:')
+  for (const s of skippedLeads) console.log(`    [${s.kind}] ${s.title} · ${s.eval_id}`)
+}
 if (DRY) {
   console.log(`\nThis was a dry run — no DB writes, no OpenAI calls.`)
 } else {

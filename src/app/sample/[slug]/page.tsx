@@ -192,14 +192,10 @@ export default async function SampleReportPage({ params }: PageProps) {
                       <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
                         {s.dimension_or_area}
                       </p>
-                      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed mb-2">
+                      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
                         {s.what_it_means}
                       </p>
-                      {s.evidence && (
-                        <p className="text-[13px] text-[var(--gem-gray-500)] italic leading-relaxed">
-                          {s.evidence}
-                        </p>
-                      )}
+                      {/* Evidence-from-the-script removed 2026-04-23 — see /report/[id]/page.tsx for context. */}
                     </div>
                   ))}
                 </div>

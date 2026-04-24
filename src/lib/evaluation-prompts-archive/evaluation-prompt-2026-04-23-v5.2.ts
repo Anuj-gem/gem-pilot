@@ -1,21 +1,8 @@
 // GEM Evaluation Prompt — single source of truth.
 //
-// Current version: v5.3 — 2026-04-23
-//   - Main-cast rule for lead_characters (no upper cap, include everyone a
-//     Wikipedia cast list would include).
-//   - Ensemble clause: co-equals all get role_type "Lead".
-//   - Same-character-different-ages handling (one entry for time-jumps of
-//     the same person; separate entries for distinct characters unless
-//     the script explicitly specifies the same actor).
-//   - Softer logline framing — "the Netflix tile blurb that makes someone
-//     hit play" — longer length range (20–30 words typical, 50 max), less
-//     demographic padding, kept the banned constructions.
-//
-// Older prompt versions live under src/lib/evaluation-prompts-archive/.
-//
 // Sent to GPT-5.4 Mini via /api/evaluate (new submissions) and
 // scripts/rescore-all.mjs (re-scoring existing evals). Do NOT fork this file
-// into versioned variants — all changes go here. Old versions live in archive.
+// into versioned variants — all changes go here. Old versions live in git.
 //
 // Output shape (stable):
 //   classification, positioning_hook, scores (10 dims), production_reality
@@ -23,9 +10,8 @@
 //   (including director_appeal.fit_profile), considerations, craft_note.
 //
 // Invariants enforced below and worth keeping in mind when editing:
-//   - lead_characters MUST be non-empty and MUST include every main-cast
-//     character (every protagonist/POV lead + every character a Wikipedia
-//     "Main Cast" entry would list). No upper cap. Only omit bit parts.
+//   - lead_characters MUST be non-empty and MUST include every protagonist /
+//     POV character (the "omit if thin" escape applies only to minor roles).
 //   - director_appeal.fit_profile is required (experience tier + creative focus).
 //   - Considerations draw on STEP 3 (weakest dimension) and STEP 6 (real
 //     complexity drivers) — not invented from thin air.
@@ -57,19 +43,15 @@ ${formatLine}
 
 ## STEP 2: Positioning Hook
 
-This is the blurb that gets a producer — or a Netflix browser — to stop scrolling and hit play. Not a structural summary. Not a checklist. The line should make someone say *"whoa, cool"* and want to read it.
+One sentence. The line a manager could paste into an email to a producer to get them to read the script. It must be specific to THIS script — not generic. It should evoke the genre, the hook, and what makes it ownable in **22 words or fewer**.
 
-**Length:** aim for **20–30 words**. Up to 50 if the premise genuinely needs the room. No hard cap. Concise but complete — don't force compression that kills the heart of the story.
+### Required elements
 
-### What it should do
+The hook MUST include — directly or by strong implication — all three of:
 
-Evoke — in whatever order reads best — the **protagonist**, the **specific pressure or engine pushing against them**, and the **collision or contradiction that makes this script ownable**.
-
-- **Protagonist:** named specifically enough that a casting director can picture them. Not "a man," "a hero." Include a load-bearing identity element (race, faith, profession, class, disability, age) ONLY when it's structurally load-bearing to the story's DNA — a faith-based thriller, an immigration drama, a period piece where the identity IS the story. If the logline reads sharper without the demographic detail, leave it out. Don't stuff in identity to check a box.
-- **The pressure:** a ticking clock, an antagonist, an irreversible choice, a secret that will surface. The thing pushing against the protagonist. Without this the hook reads like a character sketch, not a story.
-- **The ownable thing:** the genre collision, the tonal juxtaposition, the setting rule, the protagonist contradiction. The thing that, if stripped out, would make this indistinguishable from the genre shelf.
-
-**Self-test:** read the logline and ask — *does this make me want to know what happens next?* If not, rewrite. A logline that technically covers all three elements but doesn't pull a reader in has failed.
+1. **The protagonist, named specifically enough that a casting director can picture them.** Not "a man," "an adventurer," "a hero." Include the load-bearing identity element when it's driving the sell (race, age, faith, profession, disability, class — anything the script foregrounds and a casting director would read as load-bearing). Omitting a load-bearing identity is a miss — it's often the single most specific thing about the script.
+2. **An antagonist, engine, or irreversible pressure.** A ticking clock, an opposing force, a choice that cannot be unmade, a secret that will surface. The thing pushing against the protagonist. Without this the hook describes a character sketch, not a story.
+3. **The specific collision or contradiction that makes this script ownable.** The genre collision, the tonal juxtaposition, the setting rule, the protagonist contradiction. The thing that, if stripped out, would make this indistinguishable from the genre shelf.
 
 ### Two-pass self-edit (mandatory)
 
@@ -253,18 +235,9 @@ This section is part of the pitch. Managers and agents reading it should finish 
 **Coverage invariant — this section is mandatory and must be complete:**
 
 - \`lead_characters\` MUST NOT be empty. Every script has at least one protagonist; every protagonist must appear.
-- **Include every main-cast character.** Think of it as the list a "Main Cast" section on Wikipedia would include for this script — every protagonist, every co-lead, every principal supporting player the story leans on. There is **no upper limit**. A tight drama might have 3. An ensemble series might have 9. A time-jumping epic might have 12. That's fine. The only exclusions are bit parts, one-scene roles, and characters who don't carry independent story weight.
-- **Every protagonist / POV character MUST be included** — even if the role reads as underwritten. If the protagonist is thin on the page, write an honest hook that describes who they are and frame \`why_actor_wants_this\` around the performance opportunity the role offers if filled out; do NOT omit them. The "if a role is thin, don't include it" escape applies ONLY to minor / bit-part characters, NEVER to a protagonist or POV lead.
-- If you cannot identify a clear protagonist, include the characters with the most scene presence and story weight.
-
-### Ensemble handling
-
-If multiple characters share protagonist weight — distinct arcs, independent scenes, their own story engines — **each gets \`role_type\` "Lead"**. Buddy movies, family dramas, multi-POV series, ensemble pieces: treat co-equals as co-Leads. Do NOT default to one Lead with the rest Supporting. A hero/sidekick is one Lead + one Supporting; two equals who both carry the story are two Leads. Three protagonists sharing a story engine is three Leads. Trust the script.
-
-### Same-character vs different-characters
-
-- **Same character across time / ages:** if a character appears as "Young YUSUF" and "YUSUF (present day)" — or any flashback / time-jump / aging scenario where it's the same person at different life stages — that's **one entry**. Modern production would cast a single actor with aging makeup / CGI / de-aging. Only list as separate entries if the script EXPLICITLY states different actors play each age.
-- **Different characters with different names:** different names = different entries by default. Even if one is a "version of" another thematically (parallel versions, soul jumps, alternate timelines), list each as its own entry unless the script explicitly calls for one actor to play both roles. Scripts with time jumps, parallel realities, or multi-character structures can have long cast lists — that's fine.
+- **Every protagonist / POV character in the script MUST be included** — even if the role reads as underwritten. If the protagonist is thin on the page, write an honest hook that describes who they are and frame \`why_actor_wants_this\` around the performance opportunity the role offers if filled out; do NOT omit them. The "if a role is thin, don't include it" escape applies ONLY to minor / bit-part characters, NEVER to a protagonist or POV lead.
+- If you cannot identify a clear protagonist, include the 2-3 characters with the most scene presence.
+- Include 2-5 characters total: every protagonist, plus any supporting roles distinctive enough to attract a known actor. Do not list every speaking role.
 
 For each character include:
 
@@ -529,7 +502,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 3. **Strict language rules.** In \`whats_special\`, \`lead_characters\`, \`positioning_hook\`, and \`package_angles\`: never use "weakness," "risk," "flaw," "problem," "lacks," "fails," "unfortunately," "underdeveloped." In \`considerations\`: same forbidden words, but directional verbs and conditional-subjunctive constructions are allowed — see STEP 9.
 4. **Specificity beats positivity.** "This has a strong voice" is weak. "The dialogue blends Sorkin-esque rhythm with Fargo's regional specificity" is strong.
 5. **Load-bearing identity elements must surface in the positioning hook.** If a script's distinctiveness lives in who the protagonist is, omitting that from the hook is a miss.
-6. **The logline must make someone want to read the script.** If it reads like a structural summary and not a pull, rewrite. 20–30 words typical, up to 50 if the story needs it, banned constructions (comparison framing, generic openers, soft-modifier stacking) still apply.
+6. **The logline must pass the two-pass self-edit.** Draft, strip generic words, keep only what identifies THIS script.
 7. **whats_special.what_it_means is exactly two sentences** — commercial unlock, then who chases it.
 8. **lead_characters is mandatory, non-empty, and covers every protagonist.** Supporting roles can be dropped if thin; protagonists never can. If a protagonist is underwritten, say so honestly in advocate voice — do not omit them.
 9. **Lead characters' why_actor_wants_this must name a performance + showcase dimension** — not a resemblance.

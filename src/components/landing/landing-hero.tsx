@@ -69,13 +69,13 @@ export function LandingHero() {
               fontSize: 'clamp(32px, 5vw, 44px)',
             }}
           >
-            Score your screenplay.<br />
-            Get notes.<br />
-            Get discovered.
+            Built to help<br />
+            screenwriters succeed.
           </h1>
           <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed mb-6 max-w-[540px]">
-            Upload your PDF. Get a full read of your script — plus a path to
-            producers actively browsing Discover.
+            Upload your screenplay. We give you the pitch you can use, notes
+            you can use to improve, and we match you with the industry
+            partners looking for work like yours.
           </p>
 
           <label
@@ -184,24 +184,42 @@ function FloatingReportCard() {
       }}
     >
       <div
-        className="flex items-center justify-between mb-3 pb-3"
+        className="flex items-center justify-between gap-2 mb-3 pb-3"
         style={{ borderBottom: '1px solid var(--gem-gray-800)' }}
       >
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full" style={{ background: '#16a34a' }} />
+        {/* Qualification pill — instead of the generic "Your Pitch" label,
+            lead with the moment writers actually want: the green "you
+            qualified" verdict. Lands the hook before they read the rest. */}
+        <div
+          className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full"
+          style={{
+            background: 'rgba(5,150,105,0.10)',
+            border: '1px solid rgba(5,150,105,0.35)',
+          }}
+        >
           <span
-            className="text-[10px] font-bold uppercase"
-            style={{ letterSpacing: '0.18em', color: 'var(--gem-gray-500)' }}
+            aria-hidden
+            className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full text-white text-[8px] font-bold"
+            style={{ background: '#059669' }}
           >
-            Sample Report
+            ✓
+          </span>
+          <span
+            className="text-[9.5px] font-bold uppercase whitespace-nowrap"
+            style={{ letterSpacing: '0.14em', color: '#047857' }}
+          >
+            Qualifies for industry matching
           </span>
         </div>
         <span className="text-[10px] italic" style={{ color: 'var(--gem-gray-500)' }}>
           demo
         </span>
       </div>
+      {/* Real example — actual v5.3 eval of the Sopranos pilot. Concrete
+          beats hypothetical: writers see the exact format and quality of
+          what they'd get back from their own script. */}
       <div
-        className="rounded-xl p-4 mb-2.5"
+        className="rounded-xl p-3.5 mb-2.5"
         style={{
           background:
             'linear-gradient(135deg, rgba(212,160,23,0.08), #fff 70%)',
@@ -209,41 +227,7 @@ function FloatingReportCard() {
         }}
       >
         <div
-          className="text-[9px] font-bold uppercase mb-1"
-          style={{ letterSpacing: '0.18em', color: '#92710f' }}
-        >
-          Commercial Potential
-        </div>
-        <div className="flex items-baseline gap-1 mb-1.5">
-          <span
-            className="text-[34px] font-bold leading-none"
-            style={{ color: 'var(--gem-gold)', fontFamily: 'Georgia, serif' }}
-          >
-            78.4
-          </span>
-          <span className="text-[11px]" style={{ color: 'var(--gem-gray-400)' }}>
-            /100
-          </span>
-        </div>
-        <div
-          className="h-1 rounded-full overflow-hidden"
-          style={{ background: 'var(--gem-gray-800)' }}
-        >
-          <div
-            className="h-full"
-            style={{
-              width: '78%',
-              background: 'linear-gradient(90deg, #22c55e, var(--gem-gold))',
-            }}
-          />
-        </div>
-      </div>
-      <div
-        className="pl-2.5 py-2 mb-2.5"
-        style={{ borderLeft: '2px solid var(--gem-gold)' }}
-      >
-        <div
-          className="text-[9px] font-bold uppercase mb-1"
+          className="text-[9px] font-bold uppercase mb-1.5"
           style={{ letterSpacing: '0.18em', color: '#92710f' }}
         >
           Headline
@@ -252,8 +236,7 @@ function FloatingReportCard() {
           className="text-[12px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          A weather forecaster predicting his own town&apos;s end races to
-          convince the people he loves before the storm proves him right.
+          A New Jersey mob boss in therapy races to hide panic attacks before family, crew, and rivals expose him.
         </p>
       </div>
       <div>
@@ -261,9 +244,9 @@ function FloatingReportCard() {
           className="text-[9px] font-bold uppercase mb-1.5"
           style={{ letterSpacing: '0.18em', color: 'var(--gem-accent)' }}
         >
-          Why this can be a hit
+          Why this is a hit
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1.5">
           <div className="flex gap-1.5">
             <span
               className="text-[10px] font-bold"
@@ -274,7 +257,7 @@ function FloatingReportCard() {
             <p
               className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
             >
-              A contained-disaster setup that reads premium without scope
+              The premise is a built-in engine
             </p>
           </div>
           <div className="flex gap-1.5">
@@ -287,7 +270,20 @@ function FloatingReportCard() {
             <p
               className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
             >
-              Lead role that gives a veteran actor late-career heat
+              Tony is a star-making contradiction
+            </p>
+          </div>
+          <div className="flex gap-1.5">
+            <span
+              className="text-[10px] font-bold"
+              style={{ color: 'var(--gem-gold)' }}
+            >
+              03
+            </span>
+            <p
+              className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
+            >
+              The family is as dramatic as the crime
             </p>
           </div>
         </div>

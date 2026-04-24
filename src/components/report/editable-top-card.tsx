@@ -167,30 +167,13 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           </p>
         )}
 
-        {/* GEM Select badge — only when the script cleared the 75 bar. Doubles
-            as a link to the GEM Select tab on Discover so clicking it is a
-            quiet status win + a routing nudge. Safe to render for non-owners
-            (the designation is already the public signal on Discover). */}
-        {isGemSelect && (
-          <Link
-            href="/discover?tab=gem-select"
-            title="Scripts that have a commercial viability score of 75+ earn GEM Select on Discover. Click to browse the shelf."
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-bold text-white mb-4 transition-opacity hover:opacity-90"
-            style={{
-              background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
-              boxShadow: '0 2px 10px rgba(245,158,11,0.35)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            <span aria-hidden className="text-[12px] leading-none" style={{ transform: 'translateY(-0.5px)' }}>
-              ✦
-            </span>
-            <span>GEM Select</span>
-            <span className="text-white/75 font-semibold">· 75+</span>
-          </Link>
-        )}
+        {/* Tier badge intentionally removed (2026-04-23). The qualification
+            banner above the report carries the primary status signal; on the
+            Industry/Discover page, presence on the page IS the signal — so
+            doubling up with a "GEM Select" pill here was redundant noise and
+            reintroduced score-anxiety framing. */}
 
-        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-5 sm:mb-10">
+<div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-5 sm:mb-10">
           {initial.format && <span>{initial.format}</span>}
           {initial.genre_primary && (
             <>

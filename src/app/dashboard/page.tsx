@@ -16,9 +16,9 @@ import {
   Upload,
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
-import { GemRankHeader } from '@/components/dashboard/gem-rank-header'
 import { RemoveButton } from '@/components/dashboard/remove-button'
-import { scoreDesignation, DESIGNATION_STYLE } from '@/lib/designation'
+import { QUALIFICATION_THRESHOLD } from '@/lib/report-privacy'
+import { Check } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -73,17 +73,9 @@ export default async function DashboardPage({
     (allSubmissions ?? []).filter((s: any) => s.status === 'completed').length
   const usedFreeEval = completedCount >= 1
 
-  // Score map: { submission_id -> weighted_score } for completed evals.
-  const scoreMap: Record<string, number> = {}
-  for (const s of (submissions ?? []) as any[]) {
-    if (s.status !== 'completed') continue
-    const e = Array.isArray(s.script_evaluations)
-      ? s.script_evaluations[0]
-      : s.script_evaluations
-    if (typeof e?.weighted_score === 'number') {
-      scoreMap[s.id] = e.weighted_score
-    }
-  }
+  // Score coercion happens inline in the per-card loop now — dropped the
+  // scoreMap to remove an indirection that was hiding the string-vs-number
+  // bug from view.
 
   const firstName =
     profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
@@ -193,7 +185,6 @@ export default async function DashboardPage({
         {submissions && submissions.length > 0 ? (
           <>
             {/* Script cards */}
-            <GemRankHeader />
             <div className="space-y-3 mb-10">
               {(() => {
                 // Find the oldest completed submission — that one is free.
@@ -229,36 +220,18 @@ export default async function DashboardPage({
                   year: 'numeric',
                 })
 
-                const score = scoreMap[sub.id]
-                const designation = scoreDesignation(score)
-                const designationStyle = designation ? DESIGNATION_STYLE[designation] : null
+                // Compute qualification inline off the eval we already have
+                // in hand — removes the scoreMap indirection so there's one
+                // less place for the "string vs number" mismatch to hide.
+                const rawScore = eval_?.weighted_score
+                const scoreNum =
+                  typeof rawScore === 'number' ? rawScore :
+                  typeof rawScore === 'string' ? Number(rawScore) : NaN
+                const qualifies =
+                  !Number.isNaN(scoreNum) && scoreNum >= QUALIFICATION_THRESHOLD
 
                 return (
                   <div key={sub.id} className="flex items-start gap-3">
-                    {/* Score column (outside the card) — colored by designation
-                        so the tier is readable at a glance. Locked rows (2nd+
-                        eval for unsubscribed writers) blur the number so the
-                        writer can't read a score off the dashboard without
-                        paying — plugs the "hammer to iterate" leak. */}
-                    <div className="shrink-0 w-14 sm:w-16 text-center pt-5">
-                      {typeof score === 'number' ? (
-                        <div
-                          className="text-2xl sm:text-3xl font-bold leading-none tabular-nums"
-                          style={{
-                            color: isLockedReport
-                              ? 'var(--gem-gray-500)'
-                              : designationStyle?.text ?? 'var(--gem-gold)',
-                            filter: isLockedReport ? 'blur(6px)' : undefined,
-                            userSelect: isLockedReport ? 'none' : undefined,
-                          }}
-                          aria-hidden={isLockedReport ? true : undefined}
-                        >
-                          {score.toFixed(1)}
-                        </div>
-                      ) : (
-                        <div className="text-[var(--gem-gray-700)] text-xl leading-none">—</div>
-                      )}
-                    </div>
                     <div
                       className={`flex-1 min-w-0 group rounded-xl border transition-colors p-5 ${
                         isLockedReport
@@ -275,43 +248,33 @@ export default async function DashboardPage({
                           <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
                             {sub.title}
                           </h3>
-                          {/* Designation pill — shown only when the row is
-                              unlocked (owner's free eval, subscriber, or
-                              non-owner public read). Locked 2nd+ eval rows
-                              must not leak the tier since that's a score
-                              signal. */}
-                          {designationStyle && !isLockedReport && (
-                            <span
-                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold"
-                              style={{
-                                background: designationStyle.pillBg,
-                                border: `1px solid ${designationStyle.pillBorder}`,
-                                color: designationStyle.text,
-                              }}
-                            >
-                              <span
-                                aria-hidden
-                                className="inline-block w-1 h-1 rounded-full"
-                                style={{ background: designationStyle.dot }}
-                              />
-                              {designationStyle.label}
-                            </span>
-                          )}
                           {isLockedReport ? (
                             <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
                               <Lock size={10} />
                               Upgrade to view
                             </span>
                           ) : sub.is_public ? (
-                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium">
+                            /* Published — links to the privacy modal so the
+                                writer can adjust what's visible or unpublish. */
+                            <Link
+                              href={`/report/${eval_.id}?privacy=1`}
+                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium hover:bg-emerald-500/20 transition-colors"
+                            >
                               <Eye size={10} />
-                              On Discover
-                            </span>
+                              Visible to industry partners
+                            </Link>
                           ) : hasReport ? (
-                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-500)] font-medium">
+                            /* Private — button that opens the publish modal
+                                on the report page so the writer can pick a
+                                preset + go live in one flow. */
+                            <Link
+                              href={`/report/${eval_.id}?privacy=1`}
+                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-500)] font-medium hover:text-[var(--gem-gray-300)] hover:border-[var(--gem-gray-500)] transition-colors"
+                              title="Click to publish to the Discover Portal"
+                            >
                               <EyeOff size={10} />
                               Private
-                            </span>
+                            </Link>
                           ) : null}
                           {sub.status === 'failed' && (
                             <span className="text-[10px] px-2 py-0.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 font-medium">
@@ -350,6 +313,28 @@ export default async function DashboardPage({
                         ) : null}
 
                         <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
+
+                        {/* Qualified-for-Discover badge — prominent, shown on
+                            every unpublished report whose eval clears the bar
+                            (including locked 2nd+ reports, as a Pro nudge).
+                            Hides once the writer publishes, since "Visible
+                            to industry partners" takes over that role. */}
+                        {qualifies && !sub.is_public && hasReport && (
+                          <Link
+                            href={`/report/${eval_.id}?privacy=1`}
+                            className="mt-3 inline-flex items-start gap-2 px-3 py-2 rounded-lg border border-emerald-500/35 bg-emerald-500/[0.06] hover:bg-emerald-500/10 transition-colors"
+                          >
+                            <Check size={13} className="text-emerald-400 mt-0.5 shrink-0" />
+                            <div className="min-w-0">
+                              <p className="text-[12px] font-semibold text-emerald-400 m-0 leading-tight">
+                                This Qualifies for Industry Partner Visibility
+                              </p>
+                              <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+                                This script is very promising — it should be seen by GEM industry users on the Discover Page.
+                              </p>
+                            </div>
+                          </Link>
+                        )}
                       </div>
 
                       {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links.

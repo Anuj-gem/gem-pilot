@@ -25,7 +25,7 @@ export default function Nav() {
 
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'Discover', icon: Compass },
+    { href: '/discover', label: 'Industry', icon: Compass },
   ] : []
 
   return (
@@ -97,7 +97,7 @@ export default function Nav() {
                   }`}
                 >
                   <Compass size={16} />
-                  Discover
+                  Industry
                 </Link>
               )}
               {!pathname.startsWith('/submit') && (
@@ -123,7 +123,7 @@ export default function Nav() {
               href="/discover"
               className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
             >
-              Discover
+              Industry
             </Link>
             <Link
               href="/login"
