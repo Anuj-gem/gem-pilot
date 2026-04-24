@@ -53,6 +53,7 @@ import { SectionGate } from '@/components/report/section-gate'
 import { ContactWriter } from '@/components/report/contact-writer'
 import { Section, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
+import { DownloadButton } from '@/components/report/download-button'
 import { normalizeEvaluation, calculateWeightedScore, DIMENSION_META } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
@@ -433,6 +434,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
           isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
         />
+
+        {/* Download — owner/admin only. Free writers see the menu too but
+            their PDFs only contain the unblurred sections (mirrors what they
+            already see on screen). Pro writers get the full Pitch / Full
+            Report PDFs. Visitors don't see this at all. */}
+        {isOwnerOrAdmin && (
+          <div className="flex justify-end -mt-2 mb-4">
+            <DownloadButton evaluationId={id} isSubscribed={ownerIsSubscribed} />
+          </div>
+        )}
 
         {/* Mini score card removed 2026-04-23 — qualification banner above
             now handles the owner's primary signal. Free-tier owners still
