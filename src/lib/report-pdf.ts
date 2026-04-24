@@ -13,8 +13,10 @@
 
 // @types/pdfkit isn't installed and we don't need full types — declare the
 // surface we use inline so TS is happy without pulling in another devDep.
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const PDFDocument = require('pdfkit') as new (opts?: any) => PdfDoc
+// PDFKit is required lazily inside generateReportPdf so a load-time error
+// (e.g. missing AFM font files in a serverless build) becomes a catchable
+// runtime error instead of a route-killing module-load crash.
+type PDFDocumentCtor = new (opts?: any) => PdfDoc
 
 interface PdfDoc {
   on(event: string, fn: (data: any) => void): this
@@ -69,6 +71,9 @@ const COLORS = {
 }
 
 export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
+  // Lazy require — see comment near PDFDocumentCtor type above.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const PDFDocument = require('pdfkit') as PDFDocumentCtor
   return new Promise((resolve, reject) => {
     try {
       const doc = new PDFDocument({
