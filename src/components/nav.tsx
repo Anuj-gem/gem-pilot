@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { LayoutDashboard, Compass, LogOut, Menu, X, FileText, Home, Plus, Sparkles } from 'lucide-react'
+import { LayoutDashboard, Compass, LogOut, Menu, X, FileText, Plus, Sparkles } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -78,103 +78,190 @@ export default function Nav() {
               </button>
             </div>
 
-            {/* Mobile nav — context-aware quick actions + hamburger */}
-            <div className="md:hidden flex items-center gap-1">
-              {pathname.startsWith('/discover') ? (
-                <Link
-                  href="/dashboard"
-                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs text-[var(--gem-gray-300)] transition-colors"
-                >
-                  <Home size={16} />
-                </Link>
-              ) : (
-                <Link
-                  href="/discover"
-                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs transition-colors ${
-                    pathname.startsWith('/discover')
-                      ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
-                      : 'text-[var(--gem-gray-400)]'
-                  }`}
-                >
-                  <Compass size={16} />
-                  Industry
-                </Link>
-              )}
+            {/* Mobile nav — Submit pill (always) + hamburger (always).
+                Submit is hidden ONLY on /submit itself (where it's redundant).
+                Everything else — Industry, Dashboard, Sign Out — lives in
+                the hamburger panel as designed pill rows. */}
+            <div className="md:hidden flex items-center gap-2">
               {!pathname.startsWith('/submit') && (
                 <Link
                   href="/submit"
-                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs bg-[var(--gem-accent)] text-white"
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
+                  style={{
+                    background: 'var(--gem-accent)',
+                    boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
+                  }}
                 >
-                  <Plus size={14} />
+                  <Plus size={13} />
                   Submit
                 </Link>
               )}
               <button
-                className="p-2 text-[var(--gem-gray-300)]"
+                className="p-1.5 text-[var(--gem-gray-300)]"
                 onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle menu"
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
           </>
         ) : (
-          <div className="flex items-center gap-3">
-            <Link
-              href="/discover"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
-            >
-              Industry
-            </Link>
-            <Link
-              href="/login"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
-            >
-              Log in
-            </Link>
-            <Link
-              href="/signup"
-              className="text-sm px-4 py-1.5 rounded-lg bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-            >
-              Join GEM
-            </Link>
-          </div>
+          <>
+            {/* Desktop logged-out — full nav listed, no hamburger */}
+            <div className="hidden md:flex items-center gap-3">
+              <Link
+                href="/discover"
+                className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
+              >
+                Industry
+              </Link>
+              <Link
+                href="/login"
+                className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/submit"
+                className="text-sm px-4 py-1.5 rounded-lg bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+              >
+                Submit
+              </Link>
+            </div>
+
+            {/* Mobile logged-out — same pattern as logged-in: persistent
+                Submit pill + hamburger. Industry / Log in / Sign up live in
+                the hamburger panel. */}
+            <div className="md:hidden flex items-center gap-2">
+              {!pathname.startsWith('/submit') && (
+                <Link
+                  href="/submit"
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
+                  style={{
+                    background: 'var(--gem-accent)',
+                    boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
+                  }}
+                >
+                  <Plus size={13} />
+                  Submit
+                </Link>
+              )}
+              <button
+                className="p-1.5 text-[var(--gem-gray-300)]"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
+          </>
         )}
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && user && (
-        <div className="md:hidden border-t border-[var(--gem-gray-700)] px-4 py-3 space-y-1">
-          {links.map(link => {
-            const Icon = link.icon
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:bg-[var(--gem-gray-800)]"
+      {/* Mobile menu — designed pill rows. Submit is intentionally NOT here
+          (it lives as its own persistent button in the top bar). */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-[var(--gem-gray-700)] px-4 py-3 space-y-2">
+          {user ? (
+            <>
+              {links.map(link => (
+                <NavMenuRow
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  icon={<link.icon size={15} />}
+                  label={link.label}
+                  active={pathname.startsWith(link.href)}
+                />
+              ))}
+              <button
+                onClick={() => { setMobileOpen(false); handleSignOut() }}
+                className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
+                style={{
+                  border: '1px solid var(--gem-gray-700)',
+                  background: 'var(--gem-gray-900)',
+                }}
               >
-                <Icon size={16} />
-                {link.label}
-              </Link>
-            )
-          })}
-          <Link
-            href="/submit"
-            onClick={() => setMobileOpen(false)}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white"
-          >
-            <Plus size={16} />
-            Submit
-          </Link>
-          <button
-            onClick={handleSignOut}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] w-full text-left"
-          >
-            <LogOut size={16} />
-            Sign Out
-          </button>
+                <span
+                  className="flex-shrink-0 w-7 h-7 rounded-md grid place-items-center text-[var(--gem-gray-300)]"
+                  style={{ background: 'var(--gem-gray-800)' }}
+                >
+                  <LogOut size={15} />
+                </span>
+                <span className="text-[14px] font-semibold text-[var(--gem-gray-50)]">Sign out</span>
+              </button>
+            </>
+          ) : (
+            <>
+              <NavMenuRow
+                href="/discover"
+                onClick={() => setMobileOpen(false)}
+                icon={<Compass size={15} />}
+                label="Industry"
+                hint="Discover qualified scripts"
+              />
+              <NavMenuRow
+                href="/signup"
+                onClick={() => setMobileOpen(false)}
+                icon={<Sparkles size={15} />}
+                label="Sign up"
+                hint="Free first read"
+              />
+              <NavMenuRow
+                href="/login"
+                onClick={() => setMobileOpen(false)}
+                icon={<FileText size={15} />}
+                label="Log in"
+              />
+            </>
+          )}
         </div>
       )}
     </nav>
+  )
+}
+
+function NavMenuRow({
+  href,
+  onClick,
+  icon,
+  label,
+  hint,
+  active = false,
+}: {
+  href: string
+  onClick: () => void
+  icon: React.ReactNode
+  label: string
+  hint?: string
+  active?: boolean
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
+      style={{
+        border: `1px solid ${active ? 'var(--gem-accent)' : 'var(--gem-gray-700)'}`,
+        background: active ? 'rgba(124,58,237,0.08)' : 'var(--gem-gray-900)',
+      }}
+    >
+      <span
+        className="flex-shrink-0 w-7 h-7 rounded-md grid place-items-center text-[var(--gem-gray-300)]"
+        style={{ background: active ? 'rgba(124,58,237,0.15)' : 'var(--gem-gray-800)' }}
+      >
+        {icon}
+      </span>
+      <span className="flex-1 min-w-0">
+        <span className="block text-[14px] font-semibold text-[var(--gem-gray-50)] leading-tight">
+          {label}
+        </span>
+        {hint && (
+          <span className="block text-[11.5px] text-[var(--gem-gray-500)] mt-0.5 leading-tight">
+            {hint}
+          </span>
+        )}
+      </span>
+    </Link>
   )
 }

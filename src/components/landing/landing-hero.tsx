@@ -133,6 +133,7 @@ export function LandingHero() {
           </label>
 
           <button
+            id="landing-hero-cta-anchor"
             type="button"
             onClick={handleStartClick}
             className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white flex items-center justify-center gap-2 mb-2.5 transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
