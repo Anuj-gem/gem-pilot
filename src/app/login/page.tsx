@@ -20,10 +20,15 @@ function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect') || '/dashboard'
+  const urlError = searchParams.get('error')
   const supabase = createClient()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [error, setError] = useState(
+    urlError === 'auth_callback_error'
+      ? "We couldn't sign you in with Google. Please try again — or sign in with email."
+      : ''
+  )
   const [loading, setLoading] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
 
@@ -45,8 +50,19 @@ function LoginContent() {
 
   // Already-signed-in writers should go straight to their dashboard rather
   // than see another login form.
+  //
+  // EXCEPTION: if we're here because OAuth just failed (?error=auth_callback_error),
+  // do NOT silently bounce into the existing session. The user just tried to
+  // sign in with a DIFFERENT account; bouncing them into the previous account
+  // looks exactly like a security bug ("did Google auth log me into someone
+  // else's account?"). Sign the existing session out so the user can clearly
+  // re-attempt OAuth or sign in with the right credentials.
   useEffect(() => {
     let cancelled = false
+    if (urlError === 'auth_callback_error') {
+      supabase.auth.signOut().catch(() => {})
+      return () => { cancelled = true }
+    }
     supabase.auth.getUser().then(({ data: { user } }) => {
       if (!cancelled && user) router.replace(redirect)
     })
