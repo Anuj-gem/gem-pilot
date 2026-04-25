@@ -17,9 +17,9 @@ export const viewport: Viewport = {
 
 const SITE_URL = "https://www.gem.studio"
 const SITE_NAME = "GEM"
-const DEFAULT_TITLE = "GEM — The read every screenwriter deserves"
-const DEFAULT_DESCRIPTION = "Upload your screenplay and get a producer-grade evaluation in under a minute. Scored dimensions, development notes, production analysis, and tier placement — built on the same rubric used for produced film and television."
-const SHORT_DESCRIPTION = "Get the read a producer would give your script. Upload, score, improve."
+const DEFAULT_TITLE = "GEM — Built to help screenwriters succeed"
+const DEFAULT_DESCRIPTION = "Upload your screenplay. Get a sharable pitch, private development notes, and an industry match in 60 seconds. First read free."
+const SHORT_DESCRIPTION = "A pitch, notes, and industry matching for your script. First read free."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: "GEM" }],
   keywords: [
-    "screenplay evaluation",
-    "script coverage",
-    "producer feedback",
+    "screenwriter",
+    "screenplay",
+    "industry matching",
+    "screenplay pitch",
     "script feedback",
+    "development notes",
+    "producers reps dev execs",
     "screenwriting tools",
-    "script reader",
-    "screenplay score",
-    "producer feedback",
   ],
   openGraph: {
     type: "website",

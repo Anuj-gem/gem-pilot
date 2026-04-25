@@ -2,28 +2,38 @@ import { ImageResponse } from 'next/og'
 import { createClient } from '@supabase/supabase-js'
 
 export const runtime = 'edge'
-export const alt = 'GEM Script Evaluation'
+export const alt = 'GEM Read'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
+
+const CREAM = '#FAF7F0'
+const PURPLE = '#7C3AED'
+const GOLD = '#C9A55A'
+const DARK = '#1A1A1A'
+const GREEN = '#10B981'
+
+// Same qualification floor as report-privacy.ts. Inlined here so this edge
+// runtime file doesn't import the (server-only) privacy lib.
+const QUALIFICATION_THRESHOLD = 50
 
 type ReportData = {
   title: string
   author: string | null
-  score: number | null
-  tier: string | null
+  headline: string | null
+  qualifies: boolean
   unlocked: boolean
 }
 
 // Service-role key bypasses RLS — safe here because this runs server-side
 // in the edge runtime and the key is never sent to the client.
 async function getReportData(id: string): Promise<ReportData> {
-  // Fallback defaults to LOCKED. Underleak is safer than overleak — score must
-  // never leak via OG image, that would defeat the paywall through link previews.
+  // Fallback: locked. Underleak is safer than overleak — never leak a
+  // private writer's title or headline through link previews.
   const fallback: ReportData = {
     title: 'Screenplay',
     author: null,
-    score: null,
-    tier: null,
+    headline: null,
+    qualifies: false,
     unlocked: false,
   }
   try {
@@ -35,7 +45,7 @@ async function getReportData(id: string): Promise<ReportData> {
 
     const { data: evalRow } = await supabase
       .from('script_evaluations')
-      .select('weighted_score, tier, submission_id')
+      .select('weighted_score, evaluation, edited_fields, submission_id')
       .eq('id', id)
       .single()
 
@@ -48,7 +58,16 @@ async function getReportData(id: string): Promise<ReportData> {
         : (evalRow as any).weighted_score !== null
         ? Number((evalRow as any).weighted_score)
         : null
-    const tier = ((evalRow as any).tier as string) ?? null
+    const qualifies = score !== null && score >= QUALIFICATION_THRESHOLD
+
+    // Headline: prefer edited override, fall back to evaluation positioning_hook.
+    const evaluation = (evalRow as any).evaluation as Record<string, unknown> | null
+    const edited = (evalRow as any).edited_fields as Record<string, unknown> | null
+    const editedHeadline = (edited?.logline as string | null) ?? null
+    const generatedHeadline = (evaluation?.positioning_hook as string | null) ?? null
+    const headline = (editedHeadline && editedHeadline.trim().length > 0
+      ? editedHeadline
+      : generatedHeadline) ?? null
 
     const { data: subRow } = await supabase
       .from('script_submissions')
@@ -60,8 +79,6 @@ async function getReportData(id: string): Promise<ReportData> {
     const userId = ((subRow as any)?.user_id as string | null) ?? null
     const isPublic = Boolean((subRow as any)?.is_public)
 
-    // Fetch author display name + subscription status from profiles
-    // (nullable — anonymous submissions are always locked)
     let author: string | null = null
     let ownerIsSubscribed = false
     if (userId) {
@@ -78,37 +95,13 @@ async function getReportData(id: string): Promise<ReportData> {
         ((profileRow as any)?.subscription_status as string | null) === 'active'
     }
 
-    // Gate rule mirrors the report page: unlocked if owner is an active
-    // subscriber OR the post is public (public toggle requires subscription).
+    // Same gate as the page: unlocked = owner subscribed OR post is public.
     const unlocked = ownerIsSubscribed || isPublic
 
-    return { title, author, score, tier, unlocked }
+    return { title, author, headline, qualifies, unlocked }
   } catch {
     return fallback
   }
-}
-
-// Display label overrides — DB values stay stable, UI copy evolves here.
-function tierLabel(tier: string | null): string {
-  if (tier === 'Optionable') return 'Option Ready'
-  if (tier === 'Needs Development') return 'Shows Promise'
-  if (tier === 'Greenlight Material') return 'Greenlight Material'
-  return tier ?? ''
-}
-
-// Tier gradient (c1 -> c2) and shadow rgb
-function tierGradient(tier: string | null): { c1: string; c2: string; rgb: string } {
-  if (tier === 'Greenlight Material') return { c1: '#16a34a', c2: '#15803d', rgb: '22, 163, 74' }
-  if (tier === 'Needs Development') return { c1: '#f59e0b', c2: '#d97706', rgb: '245, 158, 11' }
-  // Optionable / default
-  return { c1: '#3b82f6', c2: '#2563eb', rgb: '59, 130, 246' }
-}
-
-// Grab the first name for the CTA — falls back gracefully
-function firstName(full: string | null): string | null {
-  if (!full) return null
-  const first = full.trim().split(/\s+/)[0]
-  return first || null
 }
 
 export default async function ReportOpengraphImage({
@@ -118,27 +111,93 @@ export default async function ReportOpengraphImage({
 }) {
   const resolved = await Promise.resolve(params as any)
   const id = (resolved?.id as string) ?? ''
-  const { title, author, score, tier, unlocked } = await getReportData(id)
+  const { title, author, headline, qualifies, unlocked } = await getReportData(id)
 
-  // LOCKED path: never render score or tier. This is load-bearing — leaking
-  // the number in the social share image defeats the paywall.
-  const scoreDisplay = unlocked && score !== null ? Math.round(score).toString() : '—'
-  const tierText = unlocked ? tierLabel(tier) : ''
-  const grad = tierGradient(unlocked ? tier : null)
+  // LOCKED path: render the GENERIC GEM brand image — never leak title,
+  // author, or headline. The fallback is the same hero we use site-wide.
+  if (!unlocked) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0 60px',
+            gap: 40,
+            background: CREAM,
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            color: DARK,
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 14,
+                fontWeight: 700,
+                letterSpacing: 4,
+                color: PURPLE,
+                marginBottom: 20,
+              }}
+            >
+              GEM
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 13,
+                fontWeight: 600,
+                letterSpacing: 2.5,
+                color: GOLD,
+                textTransform: 'uppercase',
+                marginBottom: 14,
+              }}
+            >
+              For Screenwriters
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                fontFamily: 'Georgia, serif',
+                fontSize: 62,
+                fontWeight: 700,
+                lineHeight: 1,
+                letterSpacing: -1.5,
+                marginBottom: 20,
+              }}
+            >
+              Built to help{'\n'}writers succeed.
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 18,
+                lineHeight: 1.5,
+                color: '#444',
+              }}
+            >
+              A pitch you can send. Notes only you see.{'\n'}An industry match for your script.
+            </div>
+          </div>
+        </div>
+      ),
+      { ...size }
+    )
+  }
 
-  const authorFirst = firstName(author)
-  const possessive = authorFirst
-    ? `${authorFirst}${authorFirst.endsWith('s') ? "'" : "'s"}`
-    : null
-  const ctaText = possessive
-    ? `Read the review for ${possessive} screenplay`
-    : 'Read the full review'
-
-  // Adaptive title sizing + truncation (satori does not support -webkit-box line clamp)
-  const MAX_TITLE_LEN = 80
+  // Adaptive title sizing — long titles get smaller font.
+  const MAX_TITLE_LEN = 70
   const displayTitle = title.length > MAX_TITLE_LEN ? title.slice(0, MAX_TITLE_LEN - 1) + '…' : title
   const titleLen = displayTitle.length
-  const titleFontSize = titleLen > 60 ? 52 : titleLen > 40 ? 62 : titleLen > 24 ? 72 : 80
+  const titleFontSize = titleLen > 50 ? 48 : titleLen > 30 ? 56 : 64
+
+  // Truncate headline if it's huge (rare but possible).
+  const MAX_HEADLINE_LEN = 220
+  const displayHeadline = headline && headline.length > MAX_HEADLINE_LEN
+    ? headline.slice(0, MAX_HEADLINE_LEN - 1) + '…'
+    : headline
 
   return new ImageResponse(
     (
@@ -148,242 +207,137 @@ export default async function ReportOpengraphImage({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          padding: '64px 80px',
-          background:
-            'radial-gradient(ellipse at top right, rgba(124, 58, 237, 0.28) 0%, transparent 55%), radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.15) 0%, transparent 55%), linear-gradient(135deg, #0a0a0a 0%, #1a0b2e 100%)',
+          padding: 60,
+          background: CREAM,
           fontFamily: 'system-ui, -apple-system, sans-serif',
-          color: '#ffffff',
-          position: 'relative',
+          color: DARK,
         }}
       >
-        {/* Top bar — wordmark left, eyebrow right */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
+        {/* Top: brand + eyebrow */}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div
             style={{
               display: 'flex',
-              alignItems: 'center',
-              gap: 14,
-            }}
-          >
-            {/* Diamond mark */}
-            <div
-              style={{
-                width: 18,
-                height: 18,
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                transform: 'rotate(45deg)',
-                display: 'flex',
-              }}
-            />
-            <div
-              style={{
-                fontSize: 36,
-                fontWeight: 900,
-                letterSpacing: 6,
-                color: '#ffffff',
-                display: 'flex',
-              }}
-            >
-              GEM
-            </div>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              fontSize: 20,
+              fontSize: 13,
               fontWeight: 700,
               letterSpacing: 4,
-              textTransform: 'uppercase',
-              color: '#a78bfa',
-              padding: '10px 20px',
-              border: '1.5px solid rgba(167, 139, 250, 0.4)',
-              borderRadius: 999,
-              background: 'rgba(124, 58, 237, 0.12)',
+              color: PURPLE,
+              marginBottom: 24,
             }}
           >
-            Script Evaluation
+            GEM
           </div>
-        </div>
-
-        {/* Hero — title, byline, score + tier */}
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            padding: '0 20px',
-          }}
-        >
           <div
             style={{
+              display: 'flex',
+              fontSize: 12,
+              fontWeight: 600,
+              letterSpacing: 2.5,
+              color: GOLD,
+              textTransform: 'uppercase',
+              marginBottom: 12,
+            }}
+          >
+            A GEM Read
+          </div>
+          <div
+            style={{
+              display: 'flex',
               fontFamily: 'Georgia, serif',
               fontSize: titleFontSize,
               fontWeight: 700,
               lineHeight: 1.05,
               letterSpacing: -1.5,
-              color: '#ffffff',
-              marginBottom: 20,
-              display: 'flex',
-              textAlign: 'center',
-              maxWidth: 1000,
+              marginBottom: 8,
             }}
           >
-            &ldquo;{displayTitle}&rdquo;
+            {displayTitle}
           </div>
           {author && (
             <div
               style={{
-                fontSize: 28,
-                fontWeight: 400,
-                color: '#9ca3af',
-                fontStyle: 'italic',
-                marginBottom: 40,
                 display: 'flex',
+                fontSize: 18,
+                color: '#666',
+                fontStyle: 'italic',
+                marginBottom: 28,
               }}
             >
               by {author}
             </div>
           )}
-          {unlocked ? (
+          {displayHeadline && (
+            <div
+              style={{
+                display: 'flex',
+                background: '#fff',
+                border: `1px solid #F0E5C8`,
+                borderRadius: 12,
+                padding: 22,
+                fontFamily: 'Georgia, serif',
+                fontSize: 20,
+                lineHeight: 1.4,
+                fontWeight: 600,
+                color: DARK,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
+              }}
+            >
+              {displayHeadline}
+            </div>
+          )}
+        </div>
+
+        {/* Bottom: matching badge + wordmark */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16,
+            marginTop: 'auto',
+          }}
+        >
+          {qualifies && (
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 28,
-                marginTop: author ? 0 : 24,
+                gap: 8,
+                background: '#ECFDF5',
+                color: GREEN,
+                fontSize: 13,
+                fontWeight: 600,
+                letterSpacing: 1.5,
+                padding: '9px 16px',
+                borderRadius: 999,
               }}
             >
               <div
                 style={{
                   display: 'flex',
-                  alignItems: 'baseline',
-                  padding: '14px 28px',
-                  borderRadius: 16,
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '2px solid rgba(255,255,255,0.14)',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: 18,
+                  height: 18,
+                  borderRadius: 999,
+                  background: GREEN,
+                  color: '#fff',
+                  fontSize: 11,
                 }}
               >
-                <div
-                  style={{
-                    fontSize: 72,
-                    fontWeight: 900,
-                    color: '#ffffff',
-                    lineHeight: 1,
-                    letterSpacing: -2,
-                    display: 'flex',
-                  }}
-                >
-                  {scoreDisplay}
-                </div>
-                <div
-                  style={{
-                    fontSize: 28,
-                    fontWeight: 600,
-                    color: '#9ca3af',
-                    marginLeft: 4,
-                    display: 'flex',
-                  }}
-                >
-                  /100
-                </div>
+                ✓
               </div>
-              {tierText && (
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '18px 30px',
-                    borderRadius: 999,
-                    fontSize: 22,
-                    fontWeight: 800,
-                    textTransform: 'uppercase',
-                    letterSpacing: 2.5,
-                    background: `linear-gradient(135deg, ${grad.c1} 0%, ${grad.c2} 100%)`,
-                    color: '#ffffff',
-                    boxShadow: `0 8px 32px rgba(${grad.rgb}, 0.35)`,
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 10,
-                      height: 10,
-                      borderRadius: '50%',
-                      background: '#ffffff',
-                      marginRight: 10,
-                      display: 'flex',
-                    }}
-                  />
-                  {tierText}
-                </div>
-              )}
-            </div>
-          ) : (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                padding: '18px 34px',
-                borderRadius: 999,
-                fontSize: 24,
-                fontWeight: 700,
-                letterSpacing: 1.5,
-                textTransform: 'uppercase',
-                background: 'rgba(255,255,255,0.06)',
-                border: '2px solid rgba(255,255,255,0.14)',
-                color: '#e5e7eb',
-                marginTop: author ? 0 : 24,
-              }}
-            >
-              Screenplay Evaluation
+              QUALIFIES FOR INDUSTRY MATCHING
             </div>
           )}
-        </div>
-
-        {/* Footer — CTA */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingTop: 28,
-            borderTop: '1px solid rgba(255,255,255,0.12)',
-          }}
-        >
-          <div
-            style={{
-              fontSize: 24,
-              fontWeight: 600,
-              color: '#e5e7eb',
-              display: 'flex',
-            }}
-          >
-            {ctaText}
-          </div>
           <div
             style={{
               display: 'flex',
-              alignItems: 'center',
-              padding: '12px 22px',
-              borderRadius: 999,
-              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-              color: '#ffffff',
-              fontSize: 18,
-              fontWeight: 800,
-              letterSpacing: 0.5,
-              boxShadow: '0 8px 24px rgba(124, 58, 237, 0.5)',
+              fontSize: 14,
+              color: '#666',
+              fontStyle: 'italic',
             }}
           >
-            gem.studio →
+            gem.studio
           </div>
         </div>
       </div>
