@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server'
+import { createServerClient } from '@supabase/ssr'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase-server'
+import { sendEmail } from '@/lib/email'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -20,8 +23,48 @@ export async function GET(request: Request) {
 
   if (code) {
     const supabase = await createClient()
-    const { error } = await supabase.auth.exchangeCodeForSession(code)
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code)
     if (!error) {
+      // Fire post_signup welcome email — server-side, idempotent via dedupeKey.
+      // Runs every time a user authenticates; sendEmail's dedupe (unique on
+      // template_alias + dedupe_key) guarantees only the first sign-in actually
+      // sends. This covers OAuth signups end-to-end without depending on the
+      // client to fire a fetch (which races with navigation + cookie sync).
+      const user = data?.user
+      if (user) {
+        try {
+          const adminClient = createSupabaseClient(
+            process.env.NEXT_PUBLIC_SUPABASE_URL!,
+            process.env.SUPABASE_SERVICE_ROLE_KEY!,
+            { auth: { persistSession: false } }
+          )
+          const { data: profile } = await adminClient
+            .from('profiles')
+            .select('email, full_name')
+            .eq('id', user.id)
+            .single()
+          const email = (profile as any)?.email || user.email
+          if (email) {
+            const fullName: string | null = (profile as any)?.full_name ?? null
+            const firstName = (fullName?.split(' ')[0] || email.split('@')[0]).trim() || 'there'
+            await sendEmail(
+              {
+                templateAlias: 'post_signup',
+                to: email,
+                variables: { first_name: firstName },
+                dedupeKey: user.id,
+                tag: 'post_signup',
+              },
+              adminClient
+            )
+          }
+        } catch (e) {
+          // Never let an email failure block sign-in. The failure-alert system
+          // in lib/email.ts will surface this if Postmark itself errored.
+          console.error('[auth/callback] post_signup send failed:', e)
+        }
+      }
+
       return NextResponse.redirect(`${origin}${next}`)
     }
     // Log the exact error so we can diagnose. Most common causes are PKCE
@@ -41,3 +84,7 @@ export async function GET(request: Request) {
   console.error('[auth/callback] no code in URL — likely user opened the page directly')
   return NextResponse.redirect(`${origin}/login?error=auth_callback_error&reason=no_code`)
 }
+
+// Suppress unused import lint — `createServerClient` is intentionally kept so
+// future cookie-based extensions don't have to rewire imports.
+void createServerClient

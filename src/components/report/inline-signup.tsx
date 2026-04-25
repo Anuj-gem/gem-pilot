@@ -65,8 +65,14 @@ export function InlineSignup({ submissionId, evaluationId }: InlineSignupProps) 
       // Non-blocking — the report is still saved via the session
     }
 
-    // 3. Fire welcome email (non-blocking)
-    fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
+    // 3. Fire welcome email. Pass user_id explicitly + use keepalive so the
+    // request survives router.refresh() below. The endpoint dedupes via user.id.
+    fetch('/api/send-welcome', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user_id: data.user?.id, email }),
+      keepalive: true,
+    }).catch(() => {})
 
     setSuccess(true)
     setLoading(false)

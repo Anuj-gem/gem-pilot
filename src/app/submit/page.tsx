@@ -470,7 +470,13 @@ function SubmitPageInner() {
     gtagSignupCompleted()
     setUser(signupData.user ? { id: signupData.user.id } : null)
 
-    fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
+    // See signup-client.tsx for why we pass user_id + use keepalive.
+    fetch('/api/send-welcome', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user_id: signupData.user?.id, email: data.email }),
+      keepalive: true,
+    }).catch(() => {})
 
     if (mode === 'upload') {
       // Wait for phase 1 (submission_id) — needed to claim the row.

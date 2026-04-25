@@ -85,8 +85,18 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
     trackSignupComplete()
     gtagSignupCompleted()
 
-    // Fire welcome email (non-blocking)
-    fetch('/api/send-welcome', { method: 'POST' }).catch(() => {})
+    // Fire welcome email. Pass user_id explicitly so the endpoint doesn't
+    // depend on auth cookies being synced (which races with router.push
+    // below — page unloads before cookies make it into the outgoing request).
+    // keepalive: true tells the browser to finish the request even after
+    // navigation. The endpoint dedupes via user.id so it's safe to call once
+    // here AND have the OAuth callback fire it server-side.
+    fetch('/api/send-welcome', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user_id: data.user?.id, email }),
+      keepalive: true,
+    }).catch(() => {})
 
     router.push(redirect || '/submit')
     router.refresh()
