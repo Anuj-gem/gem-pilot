@@ -219,32 +219,39 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (ownedRow?.user_id) {
-      const { data: profile } = await serviceClient
-        .from("profiles")
-        .select("email, full_name, subscription_status")
-        .eq("id", ownedRow.user_id)
-        .single()
+      try {
+        const { data: profile } = await serviceClient
+          .from("profiles")
+          .select("email, full_name, subscription_status")
+          .eq("id", ownedRow.user_id)
+          .single()
 
-      if (profile?.email) {
-        const firstName = profile.full_name?.split(" ")[0] || "there"
-        const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`
-        const isSub = profile.subscription_status === "active"
-        const templateAlias = isSub ? "post_submission_pro" : "post_submission_free"
+        if (profile?.email) {
+          const firstName = profile.full_name?.split(" ")[0] || "there"
+          const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`
+          const isSub = profile.subscription_status === "active"
+          const templateAlias = isSub ? "post_submission_pro" : "post_submission_free"
 
-        sendEmail(
-          {
-            templateAlias,
-            to: profile.email,
-            variables: {
-              first_name: firstName,
-              title: submission.title || "Untitled",
-              report_url: reportUrl,
+          // MUST await — see /api/evaluate for the full explanation. Without
+          // await, Vercel kills the Lambda before the Postmark fetch completes
+          // and the email_outbox row stays at "pending" forever.
+          await sendEmail(
+            {
+              templateAlias,
+              to: profile.email,
+              variables: {
+                first_name: firstName,
+                title: submission.title || "Untitled",
+                report_url: reportUrl,
+              },
+              dedupeKey: evalRecord.id,
+              tag: templateAlias,
             },
-            dedupeKey: evalRecord.id,
-            tag: templateAlias,
-          },
-          serviceClient
-        )
+            serviceClient
+          )
+        }
+      } catch (err) {
+        console.error("[score-submission] post-submission email failed:", err)
       }
     }
 

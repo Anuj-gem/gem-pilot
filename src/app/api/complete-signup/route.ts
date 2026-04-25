@@ -129,28 +129,40 @@ export async function POST(request: NextRequest) {
     })
   }
 
-  // 5b. Send welcome + upgrade emails (fire-and-forget)
+  // 5b. Send welcome + upgrade emails. MUST await — see /api/evaluate.
+  // Without await, Vercel terminates the Lambda before the Postmark fetch
+  // completes and email_outbox rows stay at "pending" forever. Today's
+  // tests showed these completing because Stripe-webhook handlers happen
+  // to run longer, but that's incidental — don't rely on it.
   const firstName = (full_name || email.split('@')[0]).split(' ')[0]
-  sendEmail(
-    {
-      templateAlias: 'post_signup',
-      to: email,
-      variables: { first_name: firstName },
-      dedupeKey: userId,
-      tag: 'post_signup',
-    },
-    adminSupabase
-  )
-  sendEmail(
-    {
-      templateAlias: 'post_upgrade',
-      to: email,
-      variables: { first_name: firstName },
-      dedupeKey: `${userId}_post_upgrade`,
-      tag: 'post_upgrade',
-    },
-    adminSupabase
-  )
+  try {
+    await sendEmail(
+      {
+        templateAlias: 'post_signup',
+        to: email,
+        variables: { first_name: firstName },
+        dedupeKey: userId,
+        tag: 'post_signup',
+      },
+      adminSupabase
+    )
+  } catch (err) {
+    console.error('[complete-signup] post_signup email failed:', err)
+  }
+  try {
+    await sendEmail(
+      {
+        templateAlias: 'post_upgrade',
+        to: email,
+        variables: { first_name: firstName },
+        dedupeKey: `${userId}_post_upgrade`,
+        tag: 'post_upgrade',
+      },
+      adminSupabase
+    )
+  } catch (err) {
+    console.error('[complete-signup] post_upgrade email failed:', err)
+  }
 
   // 6. Sign the user in via the regular Supabase client (sets auth cookies)
   const cookieStore = await cookies()

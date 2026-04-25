@@ -360,33 +360,44 @@ export async function POST(request: NextRequest) {
         .update({ status: "completed" })
         .eq("id", submission.id);
 
-      // 10. Send post-submission email (fire-and-forget, won't block response)
+      // 10. Send post-submission email. MUST be awaited — without await,
+      // Vercel kills the Lambda when this handler returns and the in-flight
+      // Postmark fetch dies, leaving the email_outbox row stuck at "pending"
+      // and the user never gets the email. Adds ~500ms latency in exchange
+      // for guaranteed delivery — worth it for transactional mail.
       if (user) {
-        const { data: profile } = await serviceClient
-          .from("profiles")
-          .select("email, full_name")
-          .eq("id", user.id)
-          .single();
+        try {
+          const { data: profile } = await serviceClient
+            .from("profiles")
+            .select("email, full_name")
+            .eq("id", user.id)
+            .single();
 
-        if (profile?.email) {
-          const firstName = profile.full_name?.split(" ")[0] || "there";
-          const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`;
-          const templateAlias = isSubscribed ? "post_submission_pro" : "post_submission_free";
+          if (profile?.email) {
+            const firstName = profile.full_name?.split(" ")[0] || "there";
+            const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`;
+            const templateAlias = isSubscribed ? "post_submission_pro" : "post_submission_free";
 
-          sendEmail(
-            {
-              templateAlias,
-              to: profile.email,
-              variables: {
-                first_name: firstName,
-                title: title || "Untitled",
-                report_url: reportUrl,
+            await sendEmail(
+              {
+                templateAlias,
+                to: profile.email,
+                variables: {
+                  first_name: firstName,
+                  title: title || "Untitled",
+                  report_url: reportUrl,
+                },
+                dedupeKey: evalRecord.id,
+                tag: templateAlias,
               },
-              dedupeKey: evalRecord.id,
-              tag: templateAlias,
-            },
-            serviceClient
-          );
+              serviceClient
+            );
+          }
+        } catch (err) {
+          // Never let an email failure poison the eval response — the user
+          // already got their report. fireFailureAlert in lib/email.ts surfaces
+          // any Postmark errors out-of-band.
+          console.error("[evaluate] post-submission email failed:", err);
         }
       }
 

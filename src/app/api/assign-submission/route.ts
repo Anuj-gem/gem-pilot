@@ -100,20 +100,26 @@ export async function POST(request: NextRequest) {
 
     if (profile?.email && evalRecord) {
       const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`;
-      sendEmail(
-        {
-          templateAlias: "post_submission_free",
-          to: profile.email,
-          variables: {
-            first_name: profile.full_name?.split(" ")[0] || "there",
-            title: sub?.title || "Untitled",
-            report_url: reportUrl,
+      // MUST await — see /api/evaluate. Without await Vercel kills the
+      // Lambda before Postmark responds and the row stays pending forever.
+      try {
+        await sendEmail(
+          {
+            templateAlias: "post_submission_free",
+            to: profile.email,
+            variables: {
+              first_name: profile.full_name?.split(" ")[0] || "there",
+              title: sub?.title || "Untitled",
+              report_url: reportUrl,
+            },
+            dedupeKey: evalRecord.id,
+            tag: "post_submission_free",
           },
-          dedupeKey: evalRecord.id,
-          tag: "post_submission_free",
-        },
-        serviceClient
-      );
+          serviceClient
+        );
+      } catch (err) {
+        console.error("[assign-submission] post-submission email failed:", err);
+      }
     }
 
     return NextResponse.json({ success: true });
