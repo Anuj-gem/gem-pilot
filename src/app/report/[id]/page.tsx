@@ -54,6 +54,9 @@ import { ContactWriter } from '@/components/report/contact-writer'
 import { Section, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { DownloadButton } from '@/components/report/download-button'
+import { RiskDetailsSection } from '@/components/report/risk-details-card'
+import { PackagingSection } from '@/components/report/packaging-block'
+import { IssuesSection } from '@/components/report/issues-block'
 import { normalizeEvaluation, calculateWeightedScore, DIMENSION_META } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
@@ -252,6 +255,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
   const craftNote = report.craft_note ?? null
+  // v5.4 (Selznick interim) fields — undefined on legacy evals.
+  const riskDetails = report.risk_details
+  const packaging = report.packaging
+  const issues = report.issues
 
   let commercialScore: number | null = null
   try {
@@ -656,6 +663,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
+        {/* v5.4 — PROJECT RISKS (producer-facing budget/casting/development cards).
+            Test-only surface gated behind data presence; no privacy gate yet. */}
+        {riskDetails && (
+          <div
+            style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+            aria-hidden={applyPaywallBlur ? true : undefined}
+          >
+            <RiskDetailsSection data={riskDetails} />
+          </div>
+        )}
+
+        {/* v5.4 — PACKAGING (comps, audience, budget tier, lane fit, IP). */}
+        {packaging && (
+          <div
+            style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+            aria-hidden={applyPaywallBlur ? true : undefined}
+          >
+            <PackagingSection data={packaging} />
+          </div>
+        )}
+
         {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
             craft note as an inline callout, then all other considerations.
             Merges what was previously two sections ("Sharpest lever" + secondary
@@ -732,6 +760,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )
           })()}
         </SectionGate>
+
+        {/* v5.4 — ISSUES (reframed considerations with producer-direct framing).
+            Renders alongside the legacy Development Priorities above so we can
+            compare the two voices side-by-side during prompt evaluation. */}
+        {issues && (issues.items?.length > 0 || issues.headline) && (
+          <div
+            style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+            aria-hidden={applyPaywallBlur ? true : undefined}
+          >
+            <IssuesSection data={issues} />
+          </div>
+        )}
 
         {/* NARRATIVE BREAKDOWN — 10 dim scores */}
         <SectionGate

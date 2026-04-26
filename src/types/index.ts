@@ -323,6 +323,69 @@ export interface Consideration {
   is_primary_lever?: boolean;
 }
 
+// ─── v5.4 (Selznick interim) — Risk Details + Packaging + Issues ───
+// New top-level fields produced by the v5.4 prompt. Legacy evals omit them.
+
+export interface RiskDetailCard {
+  level: RiskLevel;
+  note: string;
+}
+
+export interface RiskDetails {
+  budget: RiskDetailCard;
+  casting: RiskDetailCard;
+  development: RiskDetailCard;
+}
+
+export interface CompEntry {
+  title: string;
+  year?: number;
+  why_it_comps: string;
+}
+
+export interface AudienceTarget {
+  primary_audience: string;
+  demographics: string;
+  quadrants: string[]; // e.g. ["F18-34", "F35+"]
+}
+
+export interface BudgetTier {
+  tier: "micro" | "indie" | "mid" | "studio";
+  range: string;
+  note: string;
+}
+
+export interface LaneFit {
+  lane: string;
+  types_of_buyers: string[];
+  detail: string;
+}
+
+export interface IpPotential {
+  has_potential: boolean;
+  detail: string;
+}
+
+export interface Packaging {
+  comp_set: CompEntry[];
+  audience_target: AudienceTarget;
+  budget_tier: BudgetTier;
+  lane_fit: LaneFit;
+  ip_potential: IpPotential;
+}
+
+export interface IssueItem {
+  area: string;
+  detail: string;
+  is_primary_lever?: boolean;
+  source?: "script" | "production" | "both";
+}
+
+export interface Issues {
+  items: IssueItem[];
+  headline: string;
+}
+
 // ─── Unified Evaluation Type (handles v2 and v3) ───────────────────
 
 export interface GEMEvaluation {
@@ -348,6 +411,11 @@ export interface GEMEvaluation {
 
   // v5 fields — optional, absent on legacy evaluations
   package_angles?: PackageAngles;
+
+  // v5.4 (Selznick interim) — new producer-decision fields
+  risk_details?: RiskDetails;
+  packaging?: Packaging;
+  issues?: Issues;
 }
 
 // ─── Helper: normalize v2/v3 evaluation for rendering ──────────────

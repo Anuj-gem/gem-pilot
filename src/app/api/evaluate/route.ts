@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import { buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt";
+// SELZNICK-4 TEST BRANCH — using v5.4 prompt (producer decision packet)
+import { buildGemEvaluationPromptV54 as buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt-v5-4";
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types";
 import type { GEMEvaluation } from "@/types";
 import { sendEmail } from "@/lib/email";
