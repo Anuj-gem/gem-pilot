@@ -335,6 +335,8 @@ Good headline (synthesis): *"A character-actor showcase wrapped in a contained, 
 
 ## STEP 9: Issues (SYNTHESIS — runs after everything above; renamed from "Considerations")
 
+**REQUIRED — every eval MUST include the \`issues\` field. Do not omit it. Do not produce \`considerations\` instead. Do not leave it empty unless craft_note is set.** This is the section a producer reads to weigh greenlight obstacles against the hit case.
+
 The case AGAINST. What a producer would flag. What's broken about this script that would need to be addressed before greenlight.
 
 **This is producer-facing, not coaching.** The tone is honest and direct — "what would I worry about as a buyer" — not "here are notes to make this better."
@@ -347,9 +349,11 @@ The case AGAINST. What a producer would flag. What's broken about this script th
 - Each issue must point to a specific element on the page — a scene, a structural choice, a casting requirement, a content flag — not generic gripes.
 
 **Coverage requirements:**
+- **Minimum 3 items in \`issues.items\`** unless \`craft_note\` is set instead. No skipping. Even a strong script has friction worth surfacing.
 - If a scoring dimension landed below the script's overall band (e.g., 4s and 5s on a 7-band script), at least one issue must call out that gap and name what's driving it.
 - If risk_details flagged a HIGH on any axis, at least one issue must surface that risk in the context of greenlight.
 - If a strength in STEP 8 is conditional on something (needs a name to open, requires period costume budget), the conditionality belongs in issues.
+- A 9+ scoring script may have only 2 items, but \`issues.items\` is still NEVER empty unless \`craft_note\` explicitly explains why.
 
 **Each issue:**
 - **area**: SPECIFIC, CONCISE SENTENCE naming the issue. Under ~10 words. Producer voice.
@@ -487,6 +491,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 5. **Packaging is the producer's positioning view.** Comp set entries must name a specific dimension, not just "they're both X." Lane fit must name buyer types, not company names. Audience target quadrants must be honest.
 6. **Hit thesis is commercial synthesis.** The headline must weave at least TWO of {narrative virtue, production economics, packaging fit}. Pure narrative observation is no longer enough.
 7. **Issues section uses producer language.** Allowed: risk, gap, weakness, friction, obstacle. The voice is "what would I worry about as a buyer," not "here are coaching notes." Each issue must point to a specific driver. Exactly one issue gets \`is_primary_lever: true\` (or none if \`craft_note\` is set).
+   **CRITICAL:** The top-level \`issues\` field is REQUIRED on every eval. \`issues.items\` MUST have at least 3 entries unless \`craft_note\` is set. Do not produce a \`considerations\` field — use \`issues\` only. \`issues.headline\` must be a non-empty 1-2 sentence synthesis.
 8. **Lead characters is mandatory, non-empty, covers every protagonist.** Performance comp + showcase dimension required.
 9. **Scoring stays honest.** Reasoning prose is calibrated to the band. Advocate voice operates within honest scoring.
 10. **Format-aware.** The writer has declared this as a ${declaredFormat} — every judgment is made through that lens.`;
