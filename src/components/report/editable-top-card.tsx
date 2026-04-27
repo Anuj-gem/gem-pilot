@@ -41,9 +41,12 @@ interface Props {
   headerActionsLeft?: React.ReactNode
   /** Writer's full name (from profiles.full_name). Rendered as read-only
    *  "By {name}" under the title. Null/empty when the submission is anonymous
-   *  or the profile has no name set, in which case the line is omitted.
-   *  Full profile editing comes later — for now this is display-only. */
+   *  or the profile has no name set, in which case the line is omitted. */
   authorName?: string | null
+  /** Commercial score (0-100). Surfaced as a small color-coded badge inline
+   *  with the title (Selznick-4 v4 design pass — Anuj wants the score visible
+   *  in the cover). Null/undefined hides the badge entirely. */
+  commercialScore?: number | null
 }
 
 // Tag editor constants — mirror src/components/dashboard/script-tags-editor.tsx
@@ -76,7 +79,7 @@ function dedupeTags(tags: string[]): string[] {
   return out
 }
 
-export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, headerActionsLeft }: Props) {
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, commercialScore, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -280,11 +283,18 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
   if (!editing) {
     return (
       <div ref={cardRef} className="relative">
-        {/* Top-right action row: extra slotted actions (e.g. Download) on
-            the left, Edit on the right. Wrapped together in one absolute
-            container so they stay paired across viewports. */}
+        {/* Selznick-4 v4 (mobile-first):
+            Reading order: optional small action row → TITLE + score badge →
+            byline → tiny metadata line (format only) → HEADLINE as clean
+            editorial prose (no left rule, no box, no label) → "Show tags"
+            collapsed expander. Everything sized for narrow screens first;
+            desktop just has more breathing room. */}
+
+        {/* Top action row — Download (admin/owner) + Edit (owner). Sits
+            inline in normal flow so it never overlaps the title on mobile.
+            Hidden entirely if there's nothing to render. */}
         {(isOwner || headerActionsLeft) && (
-          <div className="absolute right-0 top-0 z-20 flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2 mb-3 sm:mb-4 flex-wrap">
             {headerActionsLeft}
             {isOwner && (
               <button
@@ -305,110 +315,52 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           </div>
         )}
 
-        {/* Editorial top card (Selznick-4 v4 design pass).
-            Reading order: TITLE → byline → small metadata line → HEADLINE
-            as an editorial pull-quote (left gold rule, no box, no label) →
-            small tags footer. The page should land like the cover of a
-            magazine profile, not a control panel. */}
-
-        {/* Title — the file name. Bigger right-padding on mobile so the
-            Download + Edit action row above doesn't crash into it. */}
-        <h1 className="text-[30px] sm:text-[46px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.05] mb-2 sm:mb-3 pt-12 sm:pt-0 sm:pr-44">
-          {initial.title}
-        </h1>
-
-        {/* Author byline — read-only, shown whenever the profile has a name.
-            Full profile UI lands later; this is just to get the writer's name
-            on the report for producers and reps viewing the page. */}
-        {authorName && authorName.trim().length > 0 && (
-          <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-400)] m-0 mb-3 sm:mb-4">
-            By <span className="text-[var(--gem-gray-200)]">{authorName}</span>
-          </p>
-        )}
-
-        {/* Compact metadata line — format · genre · tone · posted. No pills,
-            no boxes; reads as a magazine deck under the byline. Secondary
-            genres live here as tiny outlined pills so they don't fight the
-            other tokens for attention. */}
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] mb-6 sm:mb-8">
-          {initial.format && <span>{initial.format}</span>}
-          {initial.genre_primary && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span>{initial.genre_primary}</span>
-            </>
-          )}
-          {initial.genre_secondary?.map((t, i) => (
-            <span
-              key={i}
-              className="px-2 py-0.5 rounded-full text-[11.5px] sm:text-[12px] text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
-            >
-              {t}
-            </span>
-          ))}
-          {initial.tone && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="italic text-[var(--gem-gray-500)]">{initial.tone}</span>
-            </>
-          )}
-          {postedAt && (
-            <>
-              <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="text-[var(--gem-gray-500)]">
-                Posted{' '}
-                {new Date(postedAt).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </span>
-            </>
+        {/* Title row — title + inline score badge. On mobile the badge sits
+            right of the title and shrinks to a compact pill. Title is sized
+            mobile-first so it doesn't overflow narrow screens. */}
+        <div className="flex items-start justify-between gap-3 sm:gap-4 mb-1.5 sm:mb-2">
+          <h1 className="text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0">
+            {initial.title}
+          </h1>
+          {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
+            <ScoreBadge score={commercialScore} />
           )}
         </div>
 
-        {/* HEADLINE as editorial pull-quote — no box, no label, no gradient.
-            A thin gold left-rule does the work the box used to do, and the
-            quote sits in the column at a generous size. This is the
-            screenshot-able moment: GEM's read of the script, set like a
-            magazine pull-quote. */}
+        {/* Author byline + format on one line for compactness on mobile.
+            Format is the only metadata in the primary view; genre/tone/posted
+            move into the (collapsed) Tags expander to keep the cover quiet. */}
+        <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] m-0 mb-5 sm:mb-7">
+          {authorName && authorName.trim().length > 0 && (
+            <>By <span className="text-[var(--gem-gray-200)]">{authorName}</span></>
+          )}
+          {authorName && authorName.trim().length > 0 && initial.format && (
+            <span className="text-[var(--gem-gray-600)] mx-1.5">·</span>
+          )}
+          {initial.format}
+        </p>
+
+        {/* HEADLINE as clean editorial prose — no rule, no box, no label.
+            Just a generously-sized paragraph in the column. This is the
+            screenshot-able moment. */}
         {initial.logline && (
-          <div className="relative pl-5 sm:pl-6 mb-7 sm:mb-10">
-            <div
-              aria-hidden
-              className="absolute left-0 top-1 bottom-1 rounded-sm"
-              style={{ width: 3, background: 'var(--gem-gold)' }}
-            />
-            <p className="text-[22px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-semibold tracking-[-0.005em] m-0">
-              {initial.logline}
-            </p>
-          </div>
+          <p className="text-[20px] sm:text-[28px] text-[var(--gem-gray-50)] leading-[1.35] font-semibold tracking-[-0.005em] m-0 mb-6 sm:mb-8">
+            {initial.logline}
+          </p>
         )}
 
-        {/* Tag footer — demoted under the headline. Producer-side filters
-            still index on these via script_submissions.tags; on the page
-            they're just a quiet trail of descriptors so the writer / reader
-            knows what GEM thinks the script is about. Editing happens inside
-            the edit form (Tags field) — same flow as before. */}
-        {initialTagsList.length > 0 ? (
-          <div className="flex flex-wrap items-center gap-1.5 mb-8 sm:mb-12">
-            {initialTagsList.map((tag, i) => (
-              <span
-                key={`${tag}-${i}`}
-                className="px-2 py-0.5 rounded-full text-[11.5px] font-medium"
-                style={{
-                  color: 'var(--gem-gray-500)',
-                  background: 'transparent',
-                  border: '1px solid var(--gem-gray-700)',
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        ) : (
-          <div className="mb-8 sm:mb-12" />
-        )}
+        {/* Tags + secondary metadata — collapsed by default. Tap "Show
+            details" to reveal genre, tone, posted date, and tags. Producer-
+            side filters still index on tags from `script_submissions.tags`;
+            on the page they live behind this expander to keep the cover
+            calm. */}
+        <DetailsExpander
+          tags={initialTagsList}
+          genrePrimary={initial.genre_primary}
+          genreSecondary={initial.genre_secondary}
+          tone={initial.tone}
+          postedAt={postedAt}
+        />
       </div>
     )
   }
@@ -673,6 +625,161 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
         <p className="text-[13px] text-red-400 mt-5">
           {error}
         </p>
+      )}
+    </div>
+  )
+}
+
+// ─── Helpers (Selznick-4 v4) ───────────────────────────────────────
+
+/** Compact color-coded score badge used inline with the title. Three tiers:
+ *  green ≥75, amber 50-74, gray <50. Renders as one numeric pill on mobile
+ *  and adds a small "Score" eyebrow on desktop. */
+function ScoreBadge({ score }: { score: number }) {
+  const palette =
+    score >= 75
+      ? {
+          bg: 'rgba(5,150,105,0.10)',
+          fg: '#059669',
+          border: 'rgba(5,150,105,0.30)',
+        }
+      : score >= 50
+        ? {
+            bg: 'rgba(217,119,6,0.10)',
+            fg: 'var(--gem-warning)',
+            border: 'rgba(217,119,6,0.30)',
+          }
+        : {
+            bg: 'var(--gem-gray-900)',
+            fg: 'var(--gem-gray-400)',
+            border: 'var(--gem-gray-700)',
+          }
+  const display = score.toFixed(0)
+  return (
+    <div
+      className="shrink-0 flex flex-col items-center justify-center rounded-lg tabular-nums"
+      style={{
+        background: palette.bg,
+        border: `1px solid ${palette.border}`,
+        minWidth: 56,
+        padding: '6px 10px',
+      }}
+      aria-label={`GEM score ${display}`}
+    >
+      <span
+        className="hidden sm:block text-[9.5px] uppercase tracking-[0.16em] font-bold leading-none mb-1"
+        style={{ color: palette.fg, opacity: 0.85 }}
+      >
+        Score
+      </span>
+      <span
+        className="font-bold leading-none"
+        style={{ color: palette.fg, fontSize: 22 }}
+      >
+        {display}
+      </span>
+    </div>
+  )
+}
+
+/** Tags + secondary metadata, collapsed by default. Click the toggle to
+ *  reveal a small block with genre, tone, posted date, and the writer-
+ *  editable tag chips. Keeps the cover quiet without losing access to the
+ *  detail. */
+function DetailsExpander({
+  tags,
+  genrePrimary,
+  genreSecondary,
+  tone,
+  postedAt,
+}: {
+  tags: string[]
+  genrePrimary: string | null | undefined
+  genreSecondary: string[] | null | undefined
+  tone: string | null | undefined
+  postedAt: string | null
+}) {
+  const [open, setOpen] = useState(false)
+  const hasGenre =
+    (genrePrimary && genrePrimary.trim().length > 0) ||
+    (Array.isArray(genreSecondary) && genreSecondary.length > 0)
+  const hasTone = !!(tone && tone.trim().length > 0)
+  const hasDate = !!postedAt
+  const hasTags = tags.length > 0
+  const anyDetail = hasGenre || hasTone || hasDate || hasTags
+
+  if (!anyDetail) return <div className="mb-6 sm:mb-8" />
+
+  return (
+    <div className="mb-6 sm:mb-8">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="text-[12.5px] text-[var(--gem-gray-400)] hover:text-[var(--gem-gold)] transition-colors inline-flex items-center gap-1.5"
+        aria-expanded={open}
+      >
+        {open ? 'Hide details' : 'Show details'}
+        <span
+          aria-hidden
+          className="transition-transform duration-150"
+          style={{ display: 'inline-block', transform: open ? 'rotate(180deg)' : undefined }}
+        >
+          ▾
+        </span>
+      </button>
+      {open && (
+        <div className="mt-3 space-y-2.5">
+          {(hasGenre || hasTone || hasDate) && (
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-[var(--gem-gray-400)]">
+              {genrePrimary && <span>{genrePrimary}</span>}
+              {Array.isArray(genreSecondary) &&
+                genreSecondary.map((g, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 rounded-full text-[11px] text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
+                  >
+                    {g}
+                  </span>
+                ))}
+              {hasTone && (
+                <>
+                  <span className="text-[var(--gem-gray-600)]">·</span>
+                  <span className="italic text-[var(--gem-gray-500)]">{tone}</span>
+                </>
+              )}
+              {hasDate && (
+                <>
+                  <span className="text-[var(--gem-gray-600)]">·</span>
+                  <span className="text-[var(--gem-gray-500)]">
+                    Posted{' '}
+                    {new Date(postedAt!).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </span>
+                </>
+              )}
+            </div>
+          )}
+          {hasTags && (
+            <div className="flex flex-wrap gap-1.5">
+              {tags.map((tag, i) => (
+                <span
+                  key={`${tag}-${i}`}
+                  className="px-2 py-0.5 rounded-full text-[11px] font-medium"
+                  style={{
+                    color: 'var(--gem-gray-500)',
+                    background: 'transparent',
+                    border: '1px solid var(--gem-gray-700)',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       )}
     </div>
   )

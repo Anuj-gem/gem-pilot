@@ -120,22 +120,23 @@ export interface ReportPrivacy {
 }
 
 /** Default visibility for a NEW report that's never been adjusted.
- *  Anuj's call (2026-04-23 iteration): Teaser is the floor for everyone —
- *  only the headline is public by default. Writers pick a preset (or go
- *  Custom) when they open the privacy modal, so the default is deliberately
- *  conservative. Nothing leaks until the writer picks a broader preset. */
-/** Fresh reports default to ALL sections private — writer must actively opt
- *  in before anything becomes visible. Matches Anuj's 2026-04-23 "nothing
- *  should be public by default" call; the privacy modal nudges writers
- *  toward presets from that starting point. */
+ *
+ *  2026-04-27: Flipped to ALL PUBLIC by default per Anuj. Posts default to
+ *  100% visible; writers narrow visibility from the privacy modal if they
+ *  want. This is a deliberate posture change — we'd rather a producer
+ *  reading a report sees the whole picture than a writer's guarded subset.
+ *
+ *  Note: existing rows with explicit per-section privacy in the DB are
+ *  unaffected by this change — `resolveVisibility` returns the explicit
+ *  override first, falls through to this default only when unset. */
 const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
   whats_working:         'public',
   deep_dive_characters:  'public',
   deep_dive_package:     'public',
-  production_signal:     'private',
-  deep_dive_production:  'private',
-  deep_dive_development: 'private',
-  deep_dive_narrative:   'private',
+  production_signal:     'public',
+  deep_dive_production:  'public',
+  deep_dive_development: 'public',
+  deep_dive_narrative:   'public',
 }
 
 export type PresetKey = 'pitch_only' | 'pitch_plus_dev'

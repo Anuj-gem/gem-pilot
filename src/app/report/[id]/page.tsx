@@ -394,6 +394,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           authorName={
             isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
           }
+          commercialScore={commercialScore}
           headerActionsLeft={
             isOwnerOrAdmin ? (
               <DownloadButton
@@ -431,49 +432,69 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
         >
-          {allStrengths.length > 0 && (
+          {(whatsSpecial.headline || allStrengths.length > 0) && (
             <EditorialSection label="Why this is a hit" accent="gold">
-              {/* Lede paragraph — `whatsSpecial.headline` is GEM's one-line
-                  read on what's working. Sets the rhythm before the numbered
-                  reasons. */}
+              {/* Lede paragraph — always visible. `whatsSpecial.headline` is
+                  GEM's one-line read on what's working. The full numbered
+                  list lives behind a "See all N reasons" disclosure so a
+                  reader gets the read at a glance and chooses whether to
+                  drill in. */}
               {whatsSpecial.headline && (
-                <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-7 max-w-[62ch] font-medium">
+                <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-6 max-w-[62ch] font-medium">
                   {whatsSpecial.headline}
                 </p>
               )}
-              <ol className="list-none m-0 p-0 space-y-6 sm:space-y-7">
-                {allStrengths.map((s, i) => (
-                  <li
-                    key={i}
-                    className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4"
+              {allStrengths.length > 0 && (
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary
+                    className="cursor-pointer list-none inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gold)] transition-colors mb-2"
                   >
-                    <span
-                      className="text-[18px] sm:text-[22px] font-bold tabular-nums leading-tight"
-                      style={{ color: 'var(--gem-gold)' }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
+                    <span>
+                      See all {allStrengths.length}{' '}
+                      {allStrengths.length === 1 ? 'reason' : 'reasons'}
                     </span>
-                    <div className="min-w-0">
-                      <p
-                        className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-tight"
-                        style={
-                          applyPaywallBlur && i > 0
-                            ? { filter: 'blur(8px)', userSelect: 'none' }
-                            : undefined
-                        }
+                    <span
+                      aria-hidden
+                      className="transition-transform duration-150 group-open:rotate-180"
+                    >
+                      ▾
+                    </span>
+                  </summary>
+                  <ol className="list-none m-0 p-0 mt-5 sm:mt-6 space-y-5 sm:space-y-7">
+                    {allStrengths.map((s, i) => (
+                      <li
+                        key={i}
+                        className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4"
                       >
-                        {s.dimension_or_area}
-                      </p>
-                      <p
-                        className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0"
-                        style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
-                      >
-                        {s.what_it_means}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+                        <span
+                          className="text-[18px] sm:text-[22px] font-bold tabular-nums leading-tight"
+                          style={{ color: 'var(--gem-gold)' }}
+                        >
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <div className="min-w-0">
+                          <p
+                            className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-tight"
+                            style={
+                              applyPaywallBlur && i > 0
+                                ? { filter: 'blur(8px)', userSelect: 'none' }
+                                : undefined
+                            }
+                          >
+                            {s.dimension_or_area}
+                          </p>
+                          <p
+                            className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0"
+                            style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
+                          >
+                            {s.what_it_means}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </details>
+              )}
             </EditorialSection>
           )}
         </SectionGate>
@@ -612,55 +633,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* PRODUCTION PLANNING OVERVIEW — at-a-glance risk pills */}
-        <SectionGate
-          section="production_signal"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-        >
-          {production?.risk_rubric && (
-            <Section
-              label="Production planning overview"
-              subtitle="Cost, cast, and content complexity at a glance."
-              summary={[
-                production.risk_rubric.cost ? `Cost ${production.risk_rubric.cost.level}` : null,
-                production.risk_rubric.cast ? `Cast ${production.risk_rubric.cast.level}` : null,
-                production.risk_rubric.content ? `Content ${production.risk_rubric.content.level}` : null,
-              ].filter(Boolean).join(' · ')}
-            >
-              <div
-                className="grid grid-cols-1 sm:grid-cols-3 gap-3"
-                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                aria-hidden={applyPaywallBlur ? true : undefined}
-              >
-                {production.risk_rubric.cost && (
-                  <RiskTile label="Production cost" axis={production.risk_rubric.cost} />
-                )}
-                {production.risk_rubric.cast && (
-                  <RiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
-                )}
-                {production.risk_rubric.content && (
-                  <RiskTile label="Content maturity" axis={production.risk_rubric.content} />
-                )}
-              </div>
-            </Section>
-          )}
-        </SectionGate>
-
-        {/* v5.4 — PROJECT RISKS (producer-facing budget/casting/development cards).
-            Test-only surface gated behind data presence; no privacy gate yet. */}
-        {riskDetails && (
-          <div
-            style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-            aria-hidden={applyPaywallBlur ? true : undefined}
-          >
-            <RiskDetailsSection data={riskDetails} />
-          </div>
-        )}
-
-        {/* v5.4 — PACKAGING (comps, audience, budget tier, lane fit, IP). */}
+        {/* PACKAGING (v5.4) — comps, audience, budget tier, lane fit, IP.
+            Sits right after Package Angles so the two pitch-side blocks are
+            adjacent. Both render when the data is present; older evals
+            without v5.4 fields just see Package Angles. */}
         {packaging && (
           <div
             style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
@@ -685,24 +661,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {(considerations.length > 0 || craftNote) && (() => {
             const primary = considerations.find((c) => c.is_primary_lever === true)
             const secondary = considerations.filter((c) => c.is_primary_lever !== true)
+            const moreCount =
+              secondary.length + (craftNote ? 1 : 0)
             return (
-              <EditorialSection
-                label="Development priorities"
-                accent="violet"
-              >
-                {/* Sharpest lever as a pull-quote — red rule, "Sharpest lever"
-                    eyebrow, the area name as the quote, the detail as the
-                    prose underneath. The single piece a writer is meant to
-                    walk away with. Stays crisp for free owners. */}
-                {primary && (
-                  <div className="relative pl-5 sm:pl-6 mb-7">
+              <EditorialSection label="Issues" accent="violet">
+                {/* Sharpest lever as the always-visible lede — primary lever
+                    becomes a pull-quote with red rule + "Sharpest lever"
+                    eyebrow. Stays crisp for free owners (paired with bullet 01
+                    of "Why this is a hit" as the two pieces a free writer
+                    walks away with).
+                    If there's no primary, fall back to the first secondary
+                    consideration so the section is never empty when expanded. */}
+                {primary ? (
+                  <div className="relative pl-5 sm:pl-6 mb-5 sm:mb-6">
                     <div
                       aria-hidden
                       className="absolute left-0 top-1 bottom-1 rounded-sm"
                       style={{ width: 3, background: '#dc2626' }}
                     />
                     <p
-                      className="text-[10.5px] uppercase tracking-[0.2em] font-bold m-0 mb-1.5"
+                      className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
                       style={{ color: '#dc2626' }}
                     >
                       Sharpest lever
@@ -714,75 +692,149 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       {primary.detail}
                     </p>
                   </div>
-                )}
-
-                {/* Craft note as an inline aside — emerald rule + label,
-                    no boxed treatment. */}
-                {craftNote && (
-                  <div className="relative pl-5 sm:pl-6 mb-7">
-                    <div
-                      aria-hidden
-                      className="absolute left-0 top-1 bottom-1 rounded-sm"
-                      style={{ width: 3, background: '#059669' }}
-                    />
-                    <p
-                      className="text-[10.5px] uppercase tracking-[0.2em] font-bold m-0 mb-1.5"
-                      style={{ color: '#059669' }}
-                    >
-                      Craft note
+                ) : secondary[0] ? (
+                  <div className="mb-5 sm:mb-6">
+                    <p className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-2 leading-tight">
+                      {secondary[0].area}
                     </p>
-                    <p
-                      className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                      style={bodyBlur}
-                    >
-                      {craftNote}
+                    <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]">
+                      {secondary[0].detail}
                     </p>
                   </div>
-                )}
+                ) : null}
 
-                {/* Secondary considerations — flat prose list. No collapsibles;
-                    each note reads as a short magazine bullet with its
-                    area as a subhead. */}
-                {secondary.length > 0 && (
-                  <ol className="list-none m-0 p-0 space-y-5 sm:space-y-6">
-                    {secondary.map((c, i) => (
-                      <li key={i}>
-                        <p
-                          className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1 leading-tight"
-                          style={
-                            applyPaywallBlur
-                              ? { filter: 'blur(8px)', userSelect: 'none' }
-                              : undefined
-                          }
-                        >
-                          {c.area}
-                        </p>
-                        <p
-                          className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
-                          style={bodyBlur}
-                        >
-                          {c.detail}
-                        </p>
-                      </li>
-                    ))}
-                  </ol>
+                {/* See-more disclosure: collapses craft note + the rest of
+                    the secondary considerations behind a single tap. The
+                    page stays calm by default; readers who want to drill in
+                    expand to read the full development write-up. */}
+                {moreCount > 0 && (
+                  <details className="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary
+                      className="cursor-pointer list-none inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-accent)] transition-colors"
+                    >
+                      <span>
+                        See {moreCount} more{' '}
+                        {moreCount === 1 ? 'note' : 'notes'}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="transition-transform duration-150 group-open:rotate-180"
+                      >
+                        ▾
+                      </span>
+                    </summary>
+                    <div className="mt-5 sm:mt-6 space-y-5 sm:space-y-6">
+                      {craftNote && (
+                        <div className="relative pl-5 sm:pl-6">
+                          <div
+                            aria-hidden
+                            className="absolute left-0 top-1 bottom-1 rounded-sm"
+                            style={{ width: 3, background: '#059669' }}
+                          />
+                          <p
+                            className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+                            style={{ color: '#059669' }}
+                          >
+                            Craft note
+                          </p>
+                          <p
+                            className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                            style={bodyBlur}
+                          >
+                            {craftNote}
+                          </p>
+                        </div>
+                      )}
+                      {/* If we used secondary[0] as the lede above, skip it
+                          here so it's not duplicated. Otherwise render every
+                          secondary note. */}
+                      {secondary
+                        .slice(primary ? 0 : 1)
+                        .map((c, i) => (
+                          <div key={i}>
+                            <p
+                              className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1 leading-tight"
+                              style={
+                                applyPaywallBlur
+                                  ? { filter: 'blur(8px)', userSelect: 'none' }
+                                  : undefined
+                              }
+                            >
+                              {c.area}
+                            </p>
+                            <p
+                              className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
+                              style={bodyBlur}
+                            >
+                              {c.detail}
+                            </p>
+                          </div>
+                        ))}
+                    </div>
+                  </details>
                 )}
               </EditorialSection>
             )
           })()}
         </SectionGate>
 
-        {/* v5.4 — ISSUES (reframed considerations with producer-direct framing).
-            Renders alongside the legacy Development Priorities above so we can
-            compare the two voices side-by-side during prompt evaluation. */}
-        {issues && (issues.items?.length > 0 || issues.headline) && (
+        {/* PROJECT RISKS — moved here (after Issues, before Narrative
+            breakdown) per Anuj's 2026-04-27 reorder. Prefer the v5.4
+            `risk_details` payload when present; fall back to the legacy
+            `production.risk_rubric` (production_signal section) when only
+            the older eval shape is available, so we never double-render
+            the same axes. */}
+        {riskDetails ? (
           <div
             style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
             aria-hidden={applyPaywallBlur ? true : undefined}
           >
-            <IssuesSection data={issues} />
+            <RiskDetailsSection data={riskDetails} />
           </div>
+        ) : (
+          <SectionGate
+            section="production_signal"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+            isPublic={submission.is_public ?? false}
+          >
+            {production?.risk_rubric && (
+              <Section
+                label="Project risks"
+                subtitle="Cost, cast, and content complexity at a glance."
+                summary={[
+                  production.risk_rubric.cost ? `Cost ${production.risk_rubric.cost.level}` : null,
+                  production.risk_rubric.cast ? `Cast ${production.risk_rubric.cast.level}` : null,
+                  production.risk_rubric.content ? `Content ${production.risk_rubric.content.level}` : null,
+                ].filter(Boolean).join(' · ')}
+              >
+                <div
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+                  style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                  aria-hidden={applyPaywallBlur ? true : undefined}
+                >
+                  {production.risk_rubric.cost && (
+                    <RiskTile label="Production cost" axis={production.risk_rubric.cost} />
+                  )}
+                  {production.risk_rubric.cast && (
+                    <RiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
+                  )}
+                  {production.risk_rubric.content && (
+                    <RiskTile label="Content maturity" axis={production.risk_rubric.content} />
+                  )}
+                </div>
+              </Section>
+            )}
+          </SectionGate>
         )}
+
+        {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
+            the Development Priorities EditorialSection above, which now
+            carries the writer-facing "Issues" label and a lede + see-more
+            disclosure. The `issues` data on the eval is still emitted by
+            the prompt; we can re-mount this surface later if we want a
+            producer-direct framing somewhere. */}
 
         {/* NARRATIVE BREAKDOWN — 10 dim scores */}
         <SectionGate
