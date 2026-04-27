@@ -105,38 +105,34 @@ export function QualificationBanner({
     setTimeout(() => setJustChanged(false), 1500)
   }
 
-  // ─── Published state: compact success pill ──────────────────────────
+  // ─── Published state: slim success pill (Selznick-4 v4) ────────────
+  // Inline pill instead of a full-width card. Click to open the privacy
+  // modal (adjust what's shared, or unpublish).
   if (isPublic) {
     const activePreset = matchPreset(privacy)
     const presetLabel = activePreset ? PRESETS[activePreset].label : 'Custom'
     return (
       <>
-        <button
-          onClick={() => setShowModal(true)}
-          className={`w-full flex items-center gap-3 text-left rounded-xl p-4 mb-6 transition-colors ${
-            justChanged ? 'ring-2 ring-emerald-300' : ''
-          }`}
-          style={{
-            background: 'rgba(5,150,105,0.06)',
-            border: '1px solid rgba(5,150,105,0.28)',
-          }}
-        >
-          <div
-            className="flex-shrink-0 w-9 h-9 rounded-full grid place-items-center text-white"
-            style={{ background: '#059669' }}
+        <div className="flex items-center gap-3 mb-6 flex-wrap">
+          <button
+            onClick={() => setShowModal(true)}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12.5px] font-semibold transition-colors ${
+              justChanged ? 'ring-2 ring-emerald-300' : ''
+            }`}
+            style={{
+              background: 'rgba(5,150,105,0.10)',
+              border: '1px solid rgba(5,150,105,0.35)',
+              color: '#059669',
+            }}
           >
-            <Check size={16} />
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-[13px] font-semibold text-[var(--gem-gray-50)] m-0">
-              Visible to industry partners · {presetLabel}
-            </p>
-            <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-0.5">
-              Click to adjust what they see, or unpublish.
-            </p>
-          </div>
-          <Eye size={14} className="flex-shrink-0 text-[var(--gem-gray-500)]" />
-        </button>
+            <Check size={12} strokeWidth={3} />
+            Public · {presetLabel}
+            <Eye size={12} className="opacity-60 ml-0.5" />
+          </button>
+          <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
+            Click to adjust what industry sees.
+          </p>
+        </div>
         {showModal && (
           <PublishPreviewModal
             submissionId={submissionId}
@@ -311,45 +307,29 @@ function UpgradeNudge({ evaluationId }: { evaluationId: string }) {
   )
 }
 
-// ─── Publish banner (consistent for free + paid) ────────────────────
-// Same control for both audiences: "your script qualifies, here's the
-// privacy toggle". Free users see this BELOW the upgrade nudge — the modal
-// will gate them at commit time anyway. Paid users see this on its own.
+// ─── Publish action — slim inline pill (Selznick-4 v4) ─────────────
+// Replaces the prior giant green banner. Reads as one calm "Publish to
+// industry" button paired with a small status line. The privacy modal still
+// owns what gets shared — clicking opens it. Keeps the original
+// `qualification-banner-anchor` id on the wrapper so the StickyUpgradeBar's
+// IntersectionObserver still fires when this scrolls out of view.
 function PublishBanner({ onPublishClick }: { onPublishClick: () => void }) {
   return (
     <div
       id="qualification-banner-anchor"
-      className="rounded-xl p-4 sm:p-5 mb-6 flex items-center gap-4"
-      style={{
-        background: 'linear-gradient(135deg, rgba(5,150,105,0.08), rgba(5,150,105,0.02) 70%)',
-        border: '1px solid rgba(5,150,105,0.30)',
-      }}
+      className="flex items-center gap-3 mb-6 flex-wrap"
     >
-      <div
-        className="flex-shrink-0 w-9 h-9 rounded-full grid place-items-center text-white"
-        style={{ background: '#059669' }}
-      >
-        <Check size={15} strokeWidth={3} />
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-[14px] sm:text-[15px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
-          Qualifies for industry matching
-        </p>
-        <p className="text-[12.5px] sm:text-[13px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-tight">
-          Choose what industry partners see when you publish.
-        </p>
-      </div>
       <button
         onClick={onPublishClick}
-        className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] sm:text-[14px] font-semibold text-white transition-all hover:brightness-110 active:scale-[0.985]"
-        style={{
-          background: '#059669',
-          boxShadow: '0 4px 12px rgba(5,150,105,0.25)',
-        }}
+        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13.5px] font-semibold text-white transition-all hover:brightness-110 active:scale-[0.985]"
+        style={{ background: '#059669' }}
       >
-        Publish
+        Publish to industry
         <ArrowRight size={13} />
       </button>
+      <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0">
+        You choose what industry partners see.
+      </p>
     </div>
   )
 }

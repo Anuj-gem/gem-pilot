@@ -46,12 +46,11 @@ import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { ShareSection } from '@/components/report/share-section'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
-import { SubmitRevisionButton } from '@/components/report/submit-revision-button'
 import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
 import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { ContactWriter } from '@/components/report/contact-writer'
-import { Section, Collapsible, FactList, Fact } from '@/components/report/v5-components'
+import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { DownloadButton } from '@/components/report/download-button'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
@@ -321,9 +320,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Owner action row — like + submit revision. The publish action
-            is owned by the QualificationBanner below, so it doesn't appear
-            as a separate pill here anymore. */}
+        {/* Owner action row — just the like button now. The Submit Revision
+            button (Selznick-4 v4) was removed from the qualified path because
+            it duplicated the action that already lives inline inside the
+            QualificationBanner's not-qualified amber state. Writers who DO
+            need to revise still see the button in that banner. */}
         {!isAnonymousSubmission && isOwner && (
           <div className="flex items-center gap-3 flex-wrap mb-6">
             <LikeButton
@@ -331,10 +332,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               initialLiked={userLiked}
               initialCount={likeCount ?? 0}
               loggedIn={!!user}
-            />
-            <SubmitRevisionButton
-              isSubscribed={ownerIsSubscribed}
-              declaredFormat={submission.declared_format ?? null}
             />
           </div>
         )}
@@ -435,34 +432,49 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
         >
           {allStrengths.length > 0 && (
-            <Section
-              label="Why this is a hit"
-              subtitle={whatsSpecial.headline}
-              summary={`${allStrengths.length} ${allStrengths.length === 1 ? 'reason' : 'reasons'}`}
-            >
-              <div className="space-y-3">
+            <EditorialSection label="Why this is a hit" accent="gold">
+              {/* Lede paragraph — `whatsSpecial.headline` is GEM's one-line
+                  read on what's working. Sets the rhythm before the numbered
+                  reasons. */}
+              {whatsSpecial.headline && (
+                <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-7 max-w-[62ch] font-medium">
+                  {whatsSpecial.headline}
+                </p>
+              )}
+              <ol className="list-none m-0 p-0 space-y-6 sm:space-y-7">
                 {allStrengths.map((s, i) => (
-                  <Collapsible
+                  <li
                     key={i}
-                    number={i + 1}
-                    title={s.dimension_or_area}
-                    titleBlurred={applyPaywallBlur && i > 0}
+                    className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4"
                   >
-                    {/* Evidence-from-the-script block removed (2026-04-23):
-                        writer feedback was that quoting fragments back at them
-                        felt off and mostly cited weak moments. Prompt still
-                        emits `evidence` so we can revisit the surface; just
-                        not rendered here for now. */}
-                    <p
-                      className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                      style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
+                    <span
+                      className="text-[18px] sm:text-[22px] font-bold tabular-nums leading-tight"
+                      style={{ color: 'var(--gem-gold)' }}
                     >
-                      {s.what_it_means}
-                    </p>
-                  </Collapsible>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="min-w-0">
+                      <p
+                        className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-tight"
+                        style={
+                          applyPaywallBlur && i > 0
+                            ? { filter: 'blur(8px)', userSelect: 'none' }
+                            : undefined
+                        }
+                      >
+                        {s.dimension_or_area}
+                      </p>
+                      <p
+                        className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0"
+                        style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
+                      >
+                        {s.what_it_means}
+                      </p>
+                    </div>
+                  </li>
                 ))}
-              </div>
-            </Section>
+              </ol>
+            </EditorialSection>
           )}
         </SectionGate>
 
@@ -674,67 +686,88 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const primary = considerations.find((c) => c.is_primary_lever === true)
             const secondary = considerations.filter((c) => c.is_primary_lever !== true)
             return (
-              <Section
+              <EditorialSection
                 label="Development priorities"
-                subtitle="The sharpest places to push on the next pass — positioning notes and directions a producer or collaborator might lean on in conversation."
-                summary={[
-                  primary ? '1 sharpest lever' : null,
-                  secondary.length > 0 ? `${secondary.length} ${secondary.length === 1 ? 'note' : 'notes'}` : null,
-                ].filter(Boolean).join(' · ') || 'Notes for the next pass'}
+                accent="violet"
               >
-                <div className="space-y-3">
-                  {primary && (
-                    <Collapsible
-                      title={primary.area}
-                      primary
-                      defaultOpen
-                    >
-                      {/* Primary lever stays crisp for free owners — it's
-                          paired with bullet 01 of "Why this is a hit" as the
-                          two pieces a free writer is meant to walk away with. */}
-                      <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
-                        {primary.detail}
-                      </p>
-                    </Collapsible>
-                  )}
-                  {craftNote && (
+                {/* Sharpest lever as a pull-quote — red rule, "Sharpest lever"
+                    eyebrow, the area name as the quote, the detail as the
+                    prose underneath. The single piece a writer is meant to
+                    walk away with. Stays crisp for free owners. */}
+                {primary && (
+                  <div className="relative pl-5 sm:pl-6 mb-7">
                     <div
-                      className="rounded-xl p-5"
-                      style={{
-                        background: 'rgba(5,150,105,0.07)',
-                        border: '1px solid rgba(5,150,105,0.25)',
-                      }}
+                      aria-hidden
+                      className="absolute left-0 top-1 bottom-1 rounded-sm"
+                      style={{ width: 3, background: '#dc2626' }}
+                    />
+                    <p
+                      className="text-[10.5px] uppercase tracking-[0.2em] font-bold m-0 mb-1.5"
+                      style={{ color: '#dc2626' }}
                     >
-                      <p
-                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                        style={{ color: '#059669' }}
-                      >
-                        Craft note
-                      </p>
-                      <p
-                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                        style={bodyBlur}
-                      >
-                        {craftNote}
-                      </p>
-                    </div>
-                  )}
-                  {secondary.map((c, i) => (
-                    <Collapsible
-                      key={i}
-                      title={c.area}
-                      titleBlurred={applyPaywallBlur}
+                      Sharpest lever
+                    </p>
+                    <p className="text-[18px] sm:text-[22px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0 mb-2.5">
+                      {primary.area}
+                    </p>
+                    <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0">
+                      {primary.detail}
+                    </p>
+                  </div>
+                )}
+
+                {/* Craft note as an inline aside — emerald rule + label,
+                    no boxed treatment. */}
+                {craftNote && (
+                  <div className="relative pl-5 sm:pl-6 mb-7">
+                    <div
+                      aria-hidden
+                      className="absolute left-0 top-1 bottom-1 rounded-sm"
+                      style={{ width: 3, background: '#059669' }}
+                    />
+                    <p
+                      className="text-[10.5px] uppercase tracking-[0.2em] font-bold m-0 mb-1.5"
+                      style={{ color: '#059669' }}
                     >
-                      <p
-                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                        style={bodyBlur}
-                      >
-                        {c.detail}
-                      </p>
-                    </Collapsible>
-                  ))}
-                </div>
-              </Section>
+                      Craft note
+                    </p>
+                    <p
+                      className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
+                      style={bodyBlur}
+                    >
+                      {craftNote}
+                    </p>
+                  </div>
+                )}
+
+                {/* Secondary considerations — flat prose list. No collapsibles;
+                    each note reads as a short magazine bullet with its
+                    area as a subhead. */}
+                {secondary.length > 0 && (
+                  <ol className="list-none m-0 p-0 space-y-5 sm:space-y-6">
+                    {secondary.map((c, i) => (
+                      <li key={i}>
+                        <p
+                          className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1 leading-tight"
+                          style={
+                            applyPaywallBlur
+                              ? { filter: 'blur(8px)', userSelect: 'none' }
+                              : undefined
+                          }
+                        >
+                          {c.area}
+                        </p>
+                        <p
+                          className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
+                          style={bodyBlur}
+                        >
+                          {c.detail}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </EditorialSection>
             )
           })()}
         </SectionGate>

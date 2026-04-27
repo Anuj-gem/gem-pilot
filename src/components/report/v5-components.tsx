@@ -149,6 +149,43 @@ export function Collapsible({
   )
 }
 
+// EditorialSection — an exposed-by-default section for the load-bearing
+// reads on the report page (currently "Why this is a hit" + "Development
+// priorities" / "Issues"). No card chrome, no chevron, no collapse — just
+// a colored rule, an editorial heading, and prose flowing beneath. Used
+// alongside the collapsed `<Section>` boxes to create a two-tier visual
+// hierarchy: prose first for the things the reader came for, tap-to-open
+// rows for the deeper material.
+//
+// `accent` controls the rule color: 'gold' = craft / strengths, 'violet' =
+// industry / development. Pick whichever maps better to the section's role
+// on the page.
+export function EditorialSection({
+  label,
+  accent = 'gold',
+  children,
+}: {
+  label: string
+  accent?: 'gold' | 'violet'
+  children: React.ReactNode
+}) {
+  const ruleColor =
+    accent === 'violet' ? 'var(--gem-accent)' : 'var(--gem-gold)'
+  return (
+    <section className="mb-12 sm:mb-14">
+      <div
+        aria-hidden
+        className="w-12 h-0.5 mb-3 rounded-sm"
+        style={{ background: ruleColor }}
+      />
+      <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-tight m-0 mb-5">
+        {label}
+      </h2>
+      <div>{children}</div>
+    </section>
+  )
+}
+
 export function FactList({ children }: { children: React.ReactNode }) {
   return <div className="space-y-2.5">{children}</div>
 }

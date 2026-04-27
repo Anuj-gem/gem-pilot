@@ -305,10 +305,15 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           </div>
         )}
 
-        {/* Title gets extra right-padding on mobile so the Download + Edit
-            row above doesn't crash into it. Desktop has more room so a
-            tighter pad is fine. */}
-        <h1 className="text-[28px] sm:text-[44px] font-semibold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] mb-2 sm:mb-4 pt-12 sm:pt-0 sm:pr-44">
+        {/* Editorial top card (Selznick-4 v4 design pass).
+            Reading order: TITLE → byline → small metadata line → HEADLINE
+            as an editorial pull-quote (left gold rule, no box, no label) →
+            small tags footer. The page should land like the cover of a
+            magazine profile, not a control panel. */}
+
+        {/* Title — the file name. Bigger right-padding on mobile so the
+            Download + Edit action row above doesn't crash into it. */}
+        <h1 className="text-[30px] sm:text-[46px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.05] mb-2 sm:mb-3 pt-12 sm:pt-0 sm:pr-44">
           {initial.title}
         </h1>
 
@@ -316,18 +321,16 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             Full profile UI lands later; this is just to get the writer's name
             on the report for producers and reps viewing the page. */}
         {authorName && authorName.trim().length > 0 && (
-          <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-400)] -mt-1 mb-3 sm:-mt-2 sm:mb-5 m-0">
+          <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-400)] m-0 mb-3 sm:mb-4">
             By <span className="text-[var(--gem-gray-200)]">{authorName}</span>
           </p>
         )}
 
-        {/* Tier badge intentionally removed (2026-04-23). The qualification
-            banner above the report carries the primary status signal; on the
-            Industry/Discover page, presence on the page IS the signal — so
-            doubling up with a "GEM Select" pill here was redundant noise and
-            reintroduced score-anxiety framing. */}
-
-<div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-3 sm:mb-4">
+        {/* Compact metadata line — format · genre · tone · posted. No pills,
+            no boxes; reads as a magazine deck under the byline. Secondary
+            genres live here as tiny outlined pills so they don't fight the
+            other tokens for attention. */}
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] mb-6 sm:mb-8">
           {initial.format && <span>{initial.format}</span>}
           {initial.genre_primary && (
             <>
@@ -338,7 +341,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           {initial.genre_secondary?.map((t, i) => (
             <span
               key={i}
-              className="px-3 py-1 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)]"
+              className="px-2 py-0.5 rounded-full text-[11.5px] sm:text-[12px] text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
             >
               {t}
             </span>
@@ -346,7 +349,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           {initial.tone && (
             <>
               <span className="text-[var(--gem-gray-500)]">·</span>
-              <span className="italic text-[var(--gem-gray-400)]">{initial.tone}</span>
+              <span className="italic text-[var(--gem-gray-500)]">{initial.tone}</span>
             </>
           )}
           {postedAt && (
@@ -364,22 +367,39 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           )}
         </div>
 
-        {/* Freeform tags row — read-only chips in display mode. Editing
-            happens inside the edit form (Tags field) so it lives next to
-            title/genre/tone/headline rather than as a separate sub-panel.
-            Distinct visual treatment from genre pills (filled, lowercase,
-            smaller) so a producer scanning the card can tell at a glance
-            what's a controlled-vocab classifier vs a writer-supplied tag. */}
+        {/* HEADLINE as editorial pull-quote — no box, no label, no gradient.
+            A thin gold left-rule does the work the box used to do, and the
+            quote sits in the column at a generous size. This is the
+            screenshot-able moment: GEM's read of the script, set like a
+            magazine pull-quote. */}
+        {initial.logline && (
+          <div className="relative pl-5 sm:pl-6 mb-7 sm:mb-10">
+            <div
+              aria-hidden
+              className="absolute left-0 top-1 bottom-1 rounded-sm"
+              style={{ width: 3, background: 'var(--gem-gold)' }}
+            />
+            <p className="text-[22px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.3] font-semibold tracking-[-0.005em] m-0">
+              {initial.logline}
+            </p>
+          </div>
+        )}
+
+        {/* Tag footer — demoted under the headline. Producer-side filters
+            still index on these via script_submissions.tags; on the page
+            they're just a quiet trail of descriptors so the writer / reader
+            knows what GEM thinks the script is about. Editing happens inside
+            the edit form (Tags field) — same flow as before. */}
         {initialTagsList.length > 0 ? (
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-5 sm:mb-10">
+          <div className="flex flex-wrap items-center gap-1.5 mb-8 sm:mb-12">
             {initialTagsList.map((tag, i) => (
               <span
                 key={`${tag}-${i}`}
-                className="px-2.5 py-1 rounded-full text-[12px] sm:text-[12.5px] font-medium"
+                className="px-2 py-0.5 rounded-full text-[11.5px] font-medium"
                 style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid var(--gem-gray-800)',
-                  color: 'var(--gem-gray-300)',
+                  color: 'var(--gem-gray-500)',
+                  background: 'transparent',
+                  border: '1px solid var(--gem-gray-700)',
                 }}
               >
                 {tag}
@@ -387,32 +407,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             ))}
           </div>
         ) : (
-          <div className="mb-5 sm:mb-10" />
-        )}
-
-        {initial.logline && (
-          <div
-            className="relative rounded-2xl p-5 sm:p-10 mb-6 sm:mb-12"
-            style={{
-              background: 'linear-gradient(135deg, rgba(200,164,92,0.10), transparent 70%)',
-              border: '1px solid rgba(200,164,92,0.25)',
-            }}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-5 bottom-5 sm:top-7 sm:bottom-7 rounded-r"
-              style={{ width: 4, background: 'var(--gem-gold)' }}
-            />
-            <div
-              className="text-[12px] sm:text-[14px] uppercase tracking-[0.22em] font-bold mb-2.5 sm:mb-4"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              Headline
-            </div>
-            <p className="text-[19px] sm:text-[30px] text-[var(--gem-gray-50)] leading-[1.35] font-medium m-0">
-              {initial.logline}
-            </p>
-          </div>
+          <div className="mb-8 sm:mb-12" />
         )}
       </div>
     )
