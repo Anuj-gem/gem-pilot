@@ -1,0 +1,334 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Coming-of-age drama",
+      "genre_tags": [
+        "Ensemble drama",
+        "Comedy-drama"
+      ],
+      "tone": "Warm, scrappy, sunlit, and emotionally candid with a loose, hangout-movie rhythm"
+    },
+    "positioning_hook": "Five Kansas grads blow off college, fly to Hawaii on an inheritance, and try to open a restaurant before their friendship, money, and nerve run out.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to grasp and the emotional promise is broad: young people choosing their own future, friendship under pressure, and a sun-drenched escape fantasy. The restaurant engine and the Hawaii setting give it a clean commercial lane, though the appeal is more crowd-pleasing indie than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the graduation-to-Hawaii pivot, and the script keeps the central engine visible: five friends, one inheritance, one restaurant, one deadline. The opening lake conversation, the drunken flight, and the first-day opening all make the premise legible fast."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Lila has leadership energy and Joey has the biggest volatility-to-heart ratio, while Elliot, Rhea, and Hunter each bring a distinct function to the group. The ensemble is appealing, though several arcs are expressed more through group dynamics than through sharply individualized inner turns."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldest move is making a youthful leap-of-faith story into a restaurant-startup ensemble on a Hawaiian beach, which gives the material a fresh commercial wrapper. The voice is confident and playful, especially in the banter and the operational details of the restaurant."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through clear phases: graduation, the impulsive flight, the scramble for a space, the opening, the first rush, and the emotional fallout. The momentum is strongest when the restaurant pressure and friendship pressure collide, especially around the health inspection, Joey’s disappearance, and Hunter’s confession."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of five recent grads building a life in Hawaii with inherited money and zero adult infrastructure feels fresh and immediately playable. It has the satisfying inevitability of a premise that sounds wild, then makes emotional sense as soon as the characters commit."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific world of beachside hustling, permit anxiety, thrifted furniture, local surfer culture, and restaurant labor. The operational texture around licenses, inspections, menu cuts, and staffing gives the setting real story-generating detail."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: sunlit, profane, affectionate, and lightly chaotic, with comedy coming from group chemistry and workplace pressure rather than punchline construction. The script knows how to move from joking banter to raw confession without losing its easygoing hangout feel."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the surface, the script is about inheritance, identity, class anxiety, parental expectation, and the fear of choosing a life that cannot be easily explained. The final stretch with Joey’s family history and Hunter’s uncertainty suggests more emotional depth than the breezy surface first implies."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The group is built for combinatorial scenes: Lila/Elliot, Lila/Joey, Rhea/Hunter, Joey/Hunter, and the full-team work rhythm all generate material. The restaurant gives every pairing a functional reason to collide, which keeps the ensemble lively and usable."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Five young adult leads with strong ensemble chemistry requirements",
+          "One supporting health inspector role and a few brief supporting locals/tourists",
+          "Lila is written as Australian; Joey is a short, fast-talking line-cook type; Hunter is mechanically inclined; Rhea is design-minded; Elliot is numbers/operations-minded"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Approximately 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Kansas high school/graduation locations",
+          "Hawaii beach, airport, surf hostel, restaurant, and nearby street exteriors",
+          "Contained restaurant interior with kitchen, patio, back alley, and nearby beach access"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond simple background enhancement if desired.",
+        "stunts_level": "minor",
+        "sfx_needs": "Small practical fire moments in the kitchen, food prep, smoke, and crowd/service chaos.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "McDonald's golden arches are referenced visually at the Kansas high school."
+        },
+        {
+          "type": "brand",
+          "detail": "Taco Bell is named in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Butler Community College is named in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "White Lotus is referenced in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "The Bear is referenced in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Anthony Bourdain is referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "Al-Qaeda is referenced in dialogue as a comparison."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Festival-to-platform indie feature / streamer dramedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival launch potential and a clean streamer afterlife; the engine is the startup of the restaurant and the friendship pressure around it."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, largely contained to a few beach, hostel, and restaurant spaces with no VFX-heavy set pieces."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project lives on five lead performances and ensemble chemistry, with a few supporting locals and authority figures."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves between Kansas and Hawaii and uses multiple beachside, hostel, airport, and restaurant spaces."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Frequent profanity, underage drinking, smoking, family conflict, and some kitchen fire chaos shape the content lane."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and pop-culture references appear in dialogue and visual description."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A producer gets a clean, easy-to-sell engine: five recent grads, one inheritance, one impulsive move, one restaurant, and a built-in deadline. That makes it attractive to indie financiers and streamer buyers looking for a youthful ensemble with a strong hook and a clear poster image.",
+          "evidence": "The graduation-night inheritance call, the drunken flight to Oahu, and the decision to open La Kai.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has real chemistry fuel.",
+          "what_it_means": "Each lead has a job inside the group, so the story naturally generates scenes where personalities collide around work, money, and loyalty. That is exactly the kind of ensemble architecture that keeps a feature feeling alive and gives casting directors multiple roles actors can sink into.",
+          "evidence": "Lila as GM, Elliot on numbers, Joey in the kitchen, Rhea on design, Hunter on build-out and repairs.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The restaurant is a story engine, not a backdrop.",
+          "what_it_means": "The permit checks, menu cuts, health inspection, staffing scramble, and daily service pressure create a built-in commercial spine that can carry the movie from setup to payoff. Buyers respond to a contained workplace engine because it gives the film momentum, stakes, and a repeatable visual rhythm.",
+          "evidence": "The food handler certs, inspection fines, menu revisions, and opening-day rush.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lila is a strong lead role.",
+          "what_it_means": "She is the kind of proactive, slightly reckless, emotionally open lead that can anchor a festival-friendly crowd-pleaser and give an actor a full-spectrum showcase. Female-led indie buyers and performers looking for a role with leadership, vulnerability, and comic authority will notice her immediately.",
+          "evidence": "She inherits the money, drives the move, assigns everyone roles, and keeps pushing the business forward even when the group wobbles.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joey brings volatility with heart.",
+          "what_it_means": "He gives the movie its most volatile comic energy while also carrying the deepest emotional fracture, which is a valuable combination for a breakout supporting or co-lead performance. Actors who can play speed, swagger, and sudden pain will be drawn to him, and audiences remember that kind of character.",
+          "evidence": "His kitchen tirades, cigarette habit, disappearance, and the beach confession about his family.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Hawaii setting is commercially legible.",
+          "what_it_means": "The beach, surf, hostel, and local-business texture give the film a clear visual promise that travels well in marketing and still feels grounded enough for a modest budget. Buyers looking for aspirational location value without tentpole scale will see a clean fit.",
+          "evidence": "Oahu airport, beachfront storefronts, surf hostel backyard, and repeated beach-service scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script balances comedy and feeling well.",
+          "what_it_means": "The banter is loose and funny, but the movie keeps landing emotional turns about parents, identity, and the fear of becoming the life others chose for you. That balance broadens the audience beyond pure youth comedy and makes the material more attractive to prestige-leaning indie buyers.",
+          "evidence": "The lake toast, the parents’ calls, Joey’s breakdown, and Lila’s final voicemail to her mother.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable ensemble feature with a strong youth-facing hook: five friends, one inheritance, and a reckless move to Hawaii that turns into a restaurant startup. The script has the kind of sunny, profane, emotionally open energy that can play as both crowd-pleaser and festival title, with a built-in workplace engine and a castable group dynamic at its center."
+    },
+    "lead_characters": [
+      {
+        "name": "LILA RIVIERA",
+        "role_type": "Lead",
+        "demographics": "Female · 18-22 · Australian-American",
+        "hook": "Lila is the engine of the group: impulsive, affectionate, managerial, and just self-aware enough to know she is making a huge leap before she makes it anyway. She carries the movie’s forward motion, but she also has the most emotional clarity about what the move means, which makes her feel like both the instigator and the conscience.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Lady Bird or Florence Pugh in Midsommar’s early emotional register — a young woman whose confidence is inseparable from her panic, and whose choices drive the whole movie. Actors who want a lead that can play comedy, leadership, and a final emotional release in one arc will chase this."
+      },
+      {
+        "name": "ELLIOT",
+        "role_type": "Lead",
+        "demographics": "Male · 18-22",
+        "hook": "Elliot is the numbers brain with a dry streak, the guy who can puncture the fantasy without killing it. He reads as the most quietly observant member of the group, which gives him a useful tension: he is practical enough to see the math, but loyal enough to go along anyway.",
+        "why_actor_wants_this": "This is the kind of role Jesse Eisenberg had in The Social Network — fast, precise, funny, and emotionally guarded, with the performance built on subtext and timing. Actors who specialize in smart, slightly withheld characters will see a lot of playable detail here."
+      },
+      {
+        "name": "JOEY MORANO",
+        "role_type": "Lead",
+        "demographics": "Male · 18-22 · short stature implied by dialogue",
+        "hook": "Joey is a live wire: loud, profane, funny, physically restless, and carrying a lot more pain than he lets on. He’s the kind of character who can dominate a room with jokes and then suddenly reveal the loneliness underneath, which makes him feel dangerous and lovable at once.",
+        "why_actor_wants_this": "This is the showcase space of Jeremy Allen White in The Bear or Jonah Hill in mid-2000s ensemble comedy — a hyperactive, funny, wounded character whose speed is part of the emotional design. Actors who want a role that can pivot from comic engine to raw confession will chase it."
+      },
+      {
+        "name": "RHEA",
+        "role_type": "Lead",
+        "demographics": "Female · 18-22",
+        "hook": "Rhea is the design-minded peacemaker who starts out nervous and becomes more decisive as the group commits. She has the most visible emotional pressure from family expectation, which gives her a strong internal arc from hesitant participant to someone who chooses the life she wants.",
+        "why_actor_wants_this": "This is the kind of grounded ensemble role Greta Gerwig gave herself in Frances Ha — a character whose charm comes from uncertainty, observation, and the slow arrival of self-possession. Actors who can play vulnerability with wit will be drawn to her."
+      },
+      {
+        "name": "HUNTER",
+        "role_type": "Lead",
+        "demographics": "Male · 18-22",
+        "hook": "Hunter is the builder and fixer, the one who wants everything to be structurally sound even when the rest of the group is improvising. He has the most internal hesitation about the leap, which gives him a quiet counterweight role and a late-emerging emotional truth.",
+        "why_actor_wants_this": "This is the kind of understated, conflicted part Paul Mescal had in Aftersun — a character whose restraint makes the eventual confession land harder. Actors who play thoughtful, physically capable, emotionally contained roles will find a lot to work with."
+      },
+      {
+        "name": "PAUL LAFONTANE",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "Paul is the estate attorney who functions as the adult-world messenger, delivering the inheritance that makes the whole adventure possible. He is pragmatic, polite, and mostly there to set the plot in motion.",
+        "why_actor_wants_this": "This is the kind of efficient supporting role character actors like Richard Jenkins or Bob Balaban can make memorable in a few scenes — a calm authority figure who moves the story with one phone call. It gives an actor a clean, professional presence without needing a large footprint."
+      },
+      {
+        "name": "PROPERTY MANAGER",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "The property manager is the blunt force of reality, the guy who shows up to evict the fantasy and restore the bill-paying world. He is a comic authority figure with just enough menace to make the group scramble.",
+        "why_actor_wants_this": "This is the kind of scene-stealing utility role that lets a veteran character actor play exasperation, authority, and comic timing in one burst. Think the kind of part that gives a recognizable face a memorable entrance and exit."
+      },
+      {
+        "name": "INSPECTOR",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "The inspector is cheerful, invasive, and mildly absurd, a smiling bureaucrat who turns compliance into a social performance. He’s written with a light comic touch that makes him feel like a local obstacle rather than a generic villain.",
+        "why_actor_wants_this": "This is the sort of role that lets a character actor play charm and irritation at once, similar to the officious comic authority in a workplace dramedy. It’s a compact part with a clear rhythm and a memorable entrance."
+      },
+      {
+        "name": "KADE",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Kade is the local surfer who briefly opens the world beyond the group’s bubble. He’s relaxed, socially fluent, and functions as a small but important reminder that Hawaii is a lived-in place, not just a fantasy backdrop.",
+        "why_actor_wants_this": "This is the kind of easy, charismatic supporting role that gives an actor a few clean scenes of charm and chemistry. It’s the sort of part that can make a local-cool impression without carrying plot weight."
+      },
+      {
+        "name": "SAM",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Sam is one of the surf instructors who helps Lila and Elliot step into the place instead of just talking about it. He is functional, warm, and part of the film’s aspirational beach texture.",
+        "why_actor_wants_this": "This is a breezy supporting role in the tradition of the helpful local who gets to embody the setting’s ease and competence. It gives an actor a clean, likable presence in a sunlit sequence."
+      },
+      {
+        "name": "COLE",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Cole is Sam’s surf partner and part of the same open-air, low-friction world. He exists to make the surf sequence feel social, lived-in, and welcoming.",
+        "why_actor_wants_this": "This is a compact supporting role with a relaxed, naturalistic vibe. It’s the kind of part that fits actors who can make a few lines feel effortless and real."
+      },
+      {
+        "name": "MOM",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s",
+        "hook": "Lila’s mother is the voice of the life left behind: practical, disappointed, and emotionally loaded with the weight of responsibility. She never becomes abstract; she feels like a real parent trying to hold the line while her daughter runs toward a dream.",
+        "why_actor_wants_this": "This is the kind of emotionally charged parental role that gives an actor a single, memorable pressure point in the story. It has the same concentrated force as the parent roles in coming-of-age dramas where one phone call can shift the whole movie."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sunlit ensemble film with real emotional bite.",
+        "fit_profile": "Mid-career indie directors with one or two features, or TV directors moving into features, who already know how to stage group chemistry and keep a story moving through dialogue and behavior. The material rewards directors who like performance-first storytelling, natural banter, and location-driven atmosphere more than heavy plot machinery.",
+        "detail": "The craft opportunity is in balancing hangout energy with workplace pressure so the movie feels easy while still building to emotional release. Directors who can make a beachside restaurant feel tactile, funny, and lived-in will see a clean chance to deliver something crowd-pleasing without needing spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Festival-friendly indie dramedy / streamer coming-of-age lane",
+        "detail": "It can be packaged around five strong young leads and a contained production footprint, so a buyer does not need VFX or franchise logic to make the math work. The Hawaii setting, youth ensemble, and restaurant-startup hook give it a clear marketing image and an exportable feel for streamers and specialty distributors."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The final act could lean harder on the restaurant’s future.",
+        "detail": "The opening-day and one-year-later material gives the movie a satisfying emotional landing, and a next pass could consider letting one or two concrete business milestones carry more of that payoff. That would keep the ending feeling earned through the startup itself, not only through the characters’ declarations.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Joey’s disappearance can be seeded earlier.",
+        "detail": "The beach breakdown lands because Joey has been the loudest presence in the movie, and the version of the script where his interior strain is hinted at a little earlier would make that turn hit even harder. A small amount of earlier pressure around his family history or exhaustion would protect the emotional reveal.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Hunter’s school decision arrives late.",
+        "detail": "His online-course reveal is a strong pressure point, and the script already gives him enough hesitation to make it feel plausible. One direction would be to thread a few more visual or behavioral clues through the middle stretch so the confession feels like the release of something already in motion.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand references are plentiful.",
+        "detail": "The script uses several named brands and pop-culture references for texture, which helps the contemporary voice but also creates clearance work. A simplification pass could swap a few of the most prominent names for generic equivalents without changing the scene energy.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The Hawaii footprint can stay contained.",
+        "detail": "The story already lives in a manageable cluster of airport, beach, hostel, and restaurant spaces, so the production can protect the narrative by keeping those zones tight and repeatable. That would preserve the travel fantasy while avoiding unnecessary location sprawl.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ensemble thrives on clear roles.",
+        "detail": "The script is strongest when each friend has a job and a point of view, and the restaurant scenes already prove that structure works. A next pass could keep foregrounding those role distinctions in the group scenes so the ensemble engine stays sharp all the way through.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.3,
+  "tier": "Optionable",
+  "inputTokens": 38003,
+  "outputTokens": 5237,
+  "cost": 0.05206875,
+  "declaredFormat": "Feature film"
+}

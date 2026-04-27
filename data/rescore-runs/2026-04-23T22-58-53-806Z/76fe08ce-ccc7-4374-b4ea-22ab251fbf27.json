@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:26:10.484Z",
+  "submission_id": "76fe08ce-ccc7-4374-b4ea-22ab251fbf27",
+  "eval_id": "7ce53da9-0b77-4bd7-8636-d11e4ead61de",
+  "title": "Tilly @16",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "TILLY / MATILDA WILKINSON",
+      "role_type": "Lead",
+      "demographics": "Female · 16"
+    },
+    {
+      "name": "EMMA",
+      "role_type": "Lead",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "AARON",
+      "role_type": "Lead",
+      "demographics": "Male · 15"
+    },
+    {
+      "name": "ANDREA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s"
+    },
+    {
+      "name": "MICHAEL",
+      "role_type": "Supporting",
+      "demographics": "Male · 50"
+    },
+    {
+      "name": "SARAH",
+      "role_type": "Supporting",
+      "demographics": "Female · 16"
+    },
+    {
+      "name": "BERNIE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "JUSTINE",
+      "role_type": "Supporting",
+      "demographics": "Female · 18"
+    },
+    {
+      "name": "RYAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 20"
+    },
+    {
+      "name": "JANNY",
+      "role_type": "Supporting",
+      "demographics": "Female · 18 · severely physically and mentally disabled, non-verbal"
+    }
+  ],
+  "positioning_hook": "A restless 16-year-old hides in her grandmother’s trunk to escape a summer of family upheaval, only to find first love, hard truths, and a new way to belong.",
+  "cost_usd": 0.046851000000000004,
+  "input_tokens": 32240,
+  "output_tokens": 5038,
+  "status": "wrote:leads_ok"
+}

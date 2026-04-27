@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-24T00:12:22.120Z",
+  "submission_id": "e5fa40a8-6c21-45f9-8ea7-93d276408013",
+  "eval_id": "f5e7d6ab-0def-4703-88b7-03ae0848af2d",
+  "title": "Stealing The Spotlight   12 22 2025",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Tosin Morohunfola",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Black"
+    },
+    {
+      "name": "Eddie Jones",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Black"
+    },
+    {
+      "name": "Kelly",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Robert Pupkin",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · White"
+    },
+    {
+      "name": "Masha Bernhard",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · White"
+    },
+    {
+      "name": "Credenza",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "Julian",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Black"
+    },
+    {
+      "name": "Namir",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Black"
+    },
+    {
+      "name": "Karen",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "McClaren",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "Rishab",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · POC"
+    },
+    {
+      "name": "Jessalyn",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · White"
+    },
+    {
+      "name": "Ibrahim Saltzman",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Lauren Rolaché",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "The VIP Man",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    }
+  ],
+  "positioning_hook": "A fame-hungry actor is kidnapped by his own driver, and his overlooked best friend must navigate celebrity chaos, red-carpet absurdity, and a ransom plot to save him.",
+  "cost_usd": 0.06015,
+  "input_tokens": 42352,
+  "output_tokens": 6308,
+  "status": "wrote:leads_ok"
+}

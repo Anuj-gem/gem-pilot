@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:12:13.848Z",
+  "submission_id": "e850b253-0307-4821-a81f-d1be8e9acbfa",
+  "eval_id": "3c75ee24-b43d-4b7a-8c4a-7d185c476199",
+  "title": "Pelts",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Trent Harty",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Brandon Duncan",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Jennifer Martin",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to 20s"
+    },
+    {
+      "name": "Greg Turner",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Desmond Harty",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s"
+    },
+    {
+      "name": "Paul",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Megan",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "The Old Indian",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s+ · Native American"
+    },
+    {
+      "name": "Patamon",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless creature role"
+    },
+    {
+      "name": "Detective Grant",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Detective Edwards",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "PERSON",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    }
+  ],
+  "positioning_hook": "A cocky snowboard crew takes a secret mountain lodge for a weekend getaway, then learns the old legend is a skin-hungry hunter who turns the mountain into a slaughterhouse.",
+  "cost_usd": 0.05130375,
+  "input_tokens": 39335,
+  "output_tokens": 4845,
+  "status": "wrote:leads_ok"
+}

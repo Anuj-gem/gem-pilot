@@ -1,0 +1,337 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sexual comedy",
+      "genre_tags": [
+        "Romantic comedy",
+        "Ensemble comedy"
+      ],
+      "tone": "Raunchy, irreverent, fast-talking, and broadly comic with a surprisingly sincere romantic spine"
+    },
+    "positioning_hook": "A North Hollywood gym bro’s little brother gets stuck as the group’s designated “grenade jumper” until he falls for the one woman who refuses to play the game.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for a broad comedy audience that likes blunt, high-energy dating humor. The hook is clear from the opening apartment-to-club sequence, though the language and sexual specificity naturally narrow the lane to adult comedy buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script states its engine early and keeps returning to it: Zach is the designated grenade jumper, then the story flips when he starts treating Sarah as more than a throwaway date. The title concept, the on-screen definition, and the repeated social rule make the premise easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Zach has a clean arc from passive tagalong to guy with a spine, and Sarah gives the story a smart, skeptical counterpoint with her design-school ambition and Ohio outsider energy. Billy, Len, and Deuce are vivid comic engines, though they function more as pressure and commentary than as deeply separate emotional journeys."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits hard to a very specific comic vocabulary: telestrator-style pickup strategy, fake product ads, on-screen meters, and a whole social taxonomy around grenades. It’s familiar romantic-comedy territory, but the execution is loud, specific, and willing to push the joke structure into a distinctive lane."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps generating set pieces, reversals, and escalating social humiliation, especially once Zach and Sarah start orbiting each other. The middle does lean on repeated club and dating variations, but the momentum stays alive because each sequence adds a new social rule or relationship consequence."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The grenade metaphor is a clean, instantly graspable social engine that feels both crude and oddly inevitable once you hear it. The script turns that one idea into a full romantic-comedy ecosystem, which gives it a fresh identity inside a very familiar genre."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "West Hollywood nightlife, gym-bro culture, food-court hunting grounds, design-school energy, and the boys’ own slang create a world with rules and status markers. The setting is not just backdrop; it actively shapes how people talk, flirt, and rank each other."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very identifiable voice: raunchy bro-comedy colliding with self-aware romantic sincerity and visual gag machinery. The on-screen meters, fake commercials, and recurring social rituals give it a tonal fingerprint that would be recognizable from a single scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the jokes, the script is really about shame, self-worth, and whether a guy can separate his identity from his pack. That emotional layer is present and pays off, though the movie mostly keeps its depth in service of the comedy rather than letting it fully bloom."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Zach/Billy brother dynamic, the boys’ group code, and the Sarah/Mary/Eva/Katie cousin cluster all generate repeatable story energy. Any two characters in the room can produce conflict, advice, or sabotage, which gives the script a strong ensemble engine beyond the central romance."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male ensemble in 20s-30s",
+          "Female lead in 20s",
+          "Several supporting women in 20s-40s",
+          "One 60s supporting role",
+          "No child casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Mostly interior with frequent nightlife exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Los Angeles nightlife locations",
+          "Gym interior",
+          "Mall food court",
+          "Design school classroom",
+          "Ohio house exteriors",
+          "Airport exterior",
+          "Fashion show auditorium",
+          "Massage parlor"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily on-screen graphics, text overlays, meters, and stylized inserts rather than effects-heavy work.",
+        "stunts_level": "minor",
+        "sfx_needs": "A few fight beats, a pool fall, club chaos, and a fashion-show walk-on gag.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "IKEA, Casamigos, Diet Rockstar, PBR, PS5, Invictus, Patron, Preparation H, Monster, Uber, Tinder, Southwest, GQ, Christian Mingle, Cinnabon, Hot Dog on a Stick, Orange Julius, Quizno’s, Sbarro, McDonald’s, Wetzel’s Pretzels, Vogue, The Economist, Abercrombie, and other named consumer brands/services are used throughout."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical songs are named, but the script uses music cues and a Tori Amos-style tonal reference in scene direction."
+        },
+        {
+          "type": "real_person",
+          "detail": "Joe Rogan, Johnny Cash, Jeff Bridges, Kim Kardashian, Elon Musk, Kanye, Marlee Matlin, Clark Gable, Pee Diddy, and others are referenced by name."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Return of the Jedi, Charlie Brown cartoons, Euphoria, Squid Game, and Madden are referenced directly."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable adult comedy lane",
+        "content_level": "Explicit",
+        "series_engine_or_release_model": "Feature release model, best suited to festival-to-platform or direct streaming comedy distribution"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "The movie is contemporary, mostly contained to apartments, clubs, a gym, a mall, and a few exterior pickups, with no effects-heavy set pieces."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable but the script benefits from strong comic casting across the lead trio and the women around them, plus several age-specific supporting roles."
+        },
+        "location": {
+          "level": "medium",
+          "note": "There are multiple nightlife, home, school, and retail locations, plus a brief Ohio stretch, but none require major build-outs or international travel."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script is built on explicit sexual dialogue, crude body humor, harassment-adjacent behavior, and repeated adult-language material."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The page is packed with named brands, services, IP references, and celebrity mentions that would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The title concept is instantly ownable.",
+          "what_it_means": "The grenade metaphor gives the movie a clean, repeatable hook that can be sold in one sentence and marketed in trailers, posters, and social clips. Adult-comedy buyers and actors looking for a high-concept ensemble vehicle will immediately understand the game.",
+          "evidence": "The opening definition of “grenade” and the repeated social rule that Zach must jump on the least desirable girl in the group.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Zach has a clear comic-to-romantic arc.",
+          "what_it_means": "The story gives a lead actor a progression from passive bro-sidekick to self-possessed romantic lead, which is exactly the kind of transformation that can carry a studio or streamer comedy. That makes the role attractive to younger comedic leads who want a part with both humiliation and payoff.",
+          "evidence": "Zach starts as the designated grenade jumper, then eventually tells Billy he wants Sarah and finally flies to Ohio to win her back.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Billy is a scene-stealing comic engine.",
+          "what_it_means": "Billy’s swagger, cruelty, and occasional buried sincerity create a supporting role that can pop hard in casting and generate quotable moments. Comedic actors who can play alpha energy without losing timing will see a showcase part with real trailer value.",
+          "evidence": "Billy’s gym, club, and balcony scenes; his fake supplement gag; and his eventual admission that Zach is all he has.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has strong banter chemistry.",
+          "what_it_means": "The boys and the women all have distinct comic voices, which gives the movie multiple packaging lanes and makes it easy to imagine a cast that plays off each other. That kind of relationship web is useful for buyers because it supports repeat viewing and strong clip-friendly dialogue.",
+          "evidence": "The food court strategy scenes, the club banter, the cousin group’s commentary, and the repeated group hangouts.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sarah is more than the love interest.",
+          "what_it_means": "Her design-school ambition, Ohio outsider status, and refusal to be treated like a disposable date give the movie a female lead with agency and a point of view. That opens the door for an actress who wants a smart, funny romantic lead rather than a passive object of pursuit.",
+          "evidence": "Sarah sketches clothes on napkins, talks about her final runway show, and repeatedly challenges the L.A. dating culture around her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a strong social code.",
+          "what_it_means": "The movie builds a recognizable dating ecosystem with its own slang, rituals, and status ladder, which helps the comedy feel specific instead of generic. That specificity is useful for producers because it makes the material feel like a branded world rather than a standard hookup movie.",
+          "evidence": "Terms like grenade, tailgunner, run point, and the food-court and club rules around who gets approached and who gets blocked.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script is built for big comic set pieces.",
+          "what_it_means": "There are multiple sequences that can be staged for maximum audience reaction: the club runs, the food court tactics, the fashion-show payoff, and the final airport-to-Ohio chase. That gives the project a trailerable shape and a clear path to crowd-pleasing moments.",
+          "evidence": "The telestrator pickup sequence, the fake commercial, the runway show, and the Ohio finale.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a raunchy, highly marketable bro-comedy with a clean hook, a strong romantic spine, and a lead role that can turn a comic actor into a real movie star. The script’s best asset is how confidently it turns one ugly social term into a full comic universe — then uses that universe to land an actual love story."
+    },
+    "lead_characters": [
+      {
+        "name": "ZACH BROOKING",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Zach is the smaller, softer brother in a world built for louder men, and he starts the movie as the guy who goes along to get along. He’s funny, observant, and more emotionally literate than his friends, but he’s also been trained to hide that side of himself until Sarah forces him to choose between being accepted and being real.",
+        "why_actor_wants_this": "This is the kind of arc Jason Segel had in *Forgetting Sarah Marshall* — a comic lead who starts as the butt of the joke and ends up owning the room through sincerity. It gives an actor the chance to play humiliation, romantic vulnerability, and a late-blooming spine in one role, which is catnip for rising comedic leads trying to graduate into movie-star territory."
+      },
+      {
+        "name": "SARAH",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Sarah is sharp, guarded, and visibly smarter than the room, but she’s carrying her own insecurity about how she reads in Los Angeles versus back home. She wants a real future in design, not another disposable night out, and the movie keeps letting her be funny, defensive, romantic, and wounded in equal measure.",
+        "why_actor_wants_this": "This has the grounded, self-protective romantic-lead energy of Rachel McAdams in *The Notebook* and *About Time* — a woman whose resistance is part of the chemistry. It gives an actress a chance to play wit, skepticism, and emotional surrender without becoming a passive prize, which is exactly the kind of role that can anchor a studio rom-com or streamer comedy."
+      },
+      {
+        "name": "BILLY BROOKING",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s",
+        "hook": "Billy is the alpha brother who runs on swagger, sexual confidence, and constant performance, but the script keeps revealing the loneliness under the act. He’s crude, funny, and controlling, yet he’s also the emotional center of the male pack, which makes him both a comic weapon and a real pressure point.",
+        "why_actor_wants_this": "This is the showcase territory of Jonah Hill in *Superbad* crossed with the alpha-bro bravado of a classic Will Ferrell supporting turn — a role that lets an actor dominate scenes through rhythm and attitude. Mid-career comedy actors who want a loud, quotable part with a hidden heart will chase this immediately."
+      },
+      {
+        "name": "LEN BURMAN",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s",
+        "hook": "Len is the smooth-talking actor friend who treats every interaction like a performance, and he’s always one step away from turning a joke into a bit. He’s vain, charming, and self-aware enough to know he’s ridiculous, which makes him a great comic commentator on the group’s absurd dating code.",
+        "why_actor_wants_this": "This is the kind of part that gave Seth Rogen in *Knocked Up* or Adam Brody in *The O.C.* their early comic identity — a fast-talking, self-mythologizing guy who can land punchlines and still feel human. It’s a strong fit for actors who want a scene-stealing supporting lead with quotable dialogue and a clear comic persona."
+      },
+      {
+        "name": "DEUCE DALTON",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Deuce is the physically dominant, surprisingly articulate friend whose size and athletic status make him the group’s blunt-force instrument. He’s not just muscle; he’s the guy who can swing from crude locker-room logic to unexpected sweetness, which keeps him from being a one-note jock.",
+        "why_actor_wants_this": "This has the breakout-friend energy of Terry Crews in *Brooklyn Nine-Nine* or a young Michael B. Jordan in a comic ensemble — a role that lets an actor play charisma, physicality, and unexpected sensitivity. Athletic performers or charismatic rising stars will see a part that can turn a supporting role into a calling card."
+      },
+      {
+        "name": "MARY",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Mary is the cousin who understands the rules of the city better than anyone and weaponizes that knowledge with a smile. She’s protective, cynical, and often the sharpest voice in the room, which makes her the gatekeeper between Sarah and the L.A. boys.",
+        "why_actor_wants_this": "This is the kind of sharp, fast-talking female-supporting role that made Allison Janney and Kathryn Hahn such reliable scene-stealers in ensemble comedy. It gives an actress a chance to be the sarcastic truth-teller who can also steer the emotional stakes of the movie."
+      },
+      {
+        "name": "EVA",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Eva is the flirtier, more socially fluent cousin who can translate the room instantly and keep the banter moving. She’s less guarded than Sarah and more willing to play the game, which gives the ensemble a useful comic accelerator.",
+        "why_actor_wants_this": "This is the kind of role that lets an actress do what Vanessa Bayer or Ilana Glazer can do in ensemble comedy — keep the energy loose while still landing character-specific jokes. It’s a good fit for performers who can make exposition feel like social play."
+      },
+      {
+        "name": "KATIE",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Katie is the hyper-educated cousin who keeps trying to sound casual while clearly being the smartest person in the group. Her P.H.D. joke, her economic commentary, and her deadpan delivery make her the intellectual comic foil in the cousin trio.",
+        "why_actor_wants_this": "This is the kind of deadpan, brainy supporting role that gave Aubrey Plaza and Janelle James their comic traction — a character whose intelligence is part of the joke and part of the charm. Actors who specialize in dry, precise line readings will have fun with her."
+      },
+      {
+        "name": "DALE",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Dale is the creepy older club regular who exists as a warning label for what the boys might become if they never grow up. He’s pathetic, predatory, and weirdly persistent, which makes him a recurring comic nuisance and a visual punchline.",
+        "why_actor_wants_this": "This is a deliciously specific character part in the tradition of the weird older men in *The 40-Year-Old Virgin* or *Wedding Crashers* — a role that can steal scenes with one look and one line. Character actors who enjoy playing socially toxic oddballs will jump at it."
+      },
+      {
+        "name": "LEN'S COMMERCIAL GUY / GREG",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Greg is the straight-man target inside Len’s absurd hemorrhoid commercial, there to make the joke land with total sincerity. He’s not a full character arc, but he functions as a clean comic foil in one of the script’s most memorable bits.",
+        "why_actor_wants_this": "This is the kind of commercial-parody role that gives an actor a crisp, self-contained showcase in the style of the straight men in *Anchorman* or *Popstar*. It’s a small but highly playable part for someone who can sell absurdity without blinking."
+      },
+      {
+        "name": "SINDY",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Sindy is the naked, no-nonsense woman who briefly becomes the movie’s most practical dating strategist. She’s blunt, sexually confident, and funny because she treats the boys’ panic like a solved problem.",
+        "why_actor_wants_this": "This is the kind of scene-stealing cameo that lets an actress walk in, flip the power dynamic, and leave with the laugh. It’s a strong fit for performers who specialize in sharp, confident comic entrances."
+      },
+      {
+        "name": "BERTHA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · physically imposing",
+        "hook": "Bertha is the intimidating sparring partner who turns the gym into a comic battlefield. She’s not there to be cute or accommodating; she’s there to hit hard, which makes her a great physical-comedy disruptor.",
+        "why_actor_wants_this": "This is a fun physical-comedy role in the vein of the intimidating women in *Bridesmaids* or *GLOW* — a part that lets an actor use size, presence, and timing as the joke. Stunt-capable performers or athletic character actors will have a blast with it."
+      },
+      {
+        "name": "SIMONE",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Simone is the confident rebound girl who makes Zach feel like he’s finally crossed into the adult league. She’s playful, sexually direct, and less emotionally entangled than Sarah, which makes her a useful mirror rather than a replacement.",
+        "why_actor_wants_this": "This is the kind of breezy, high-confidence supporting role that gives an actress a clean comic entrance and a memorable exit. It’s attractive to performers who like playing the woman who knows exactly what game she’s in."
+      },
+      {
+        "name": "BULLRIDING EMCEE",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "The emcee is a swaggering, crowd-pleasing host who turns Sarah’s rebound night into a public spectacle. He’s not deep, but he’s a strong comic device and a clean embodiment of the L.A. nightlife machine.",
+        "why_actor_wants_this": "This is the kind of loud, performative bit part that lets a comic actor own a room in one scene, like the emcees and hosts in *The Hangover* or *Magic Mike*. It’s a good fit for someone with a big personality and a strong live-performance background."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a raunchy comedy with a real romantic spine and a highly stylized comic language.",
+        "fit_profile": "Second-feature or established indie-comedy directors, plus TV comedy directors looking to step into features, who already know how to stage fast banter, ensemble blocking, and heightened realism. The material rewards directors who like performance-forward comedy, visual gags, and a world that can feel specific without needing expensive spectacle.",
+        "detail": "The movie gives a director room to build a repeatable comic grammar — on-screen meters, fake ads, telestrator overlays, and group-blocking set pieces — while still landing an emotional payoff. It’s especially attractive to filmmakers who can keep crude material feeling nimble, character-driven, and commercially legible."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming-first adult comedy / premium cable comedy lane",
+        "detail": "It can be cast with a strong ensemble rather than one giant star, which helps buyers package it off chemistry and comic timing instead of a single expensive lead. The contemporary, location-light footprint and built-in trailer moments make it a clean fit for streamers and comedy buyers looking for an adult title with a clear hook."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle repeats the club-game engine a few times.",
+        "detail": "The script has a strong comic premise, and the repeated club runs keep the energy high, but a next pass could consider varying the pressure more aggressively between those sequences so each one feels like a new escalation rather than a new version of the same social test. The version where one of the later encounters changes the rules of the game — not just the girl — would make the back half hit even harder.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The brand and IP load is very dense.",
+        "detail": "The page is packed with named products, services, celebrities, and pop-culture references, which gives the script a very current texture but also creates a lot of clearance work. A production pass could protect the comedy by swapping some of the most specific names for generic equivalents while keeping the joke shape intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The finale has room to breathe around Sarah’s choice.",
+        "detail": "The emotional landing is there, and the Ohio finale gives the movie a satisfying destination, but the last stretch moves quickly from breakup to airport to reunion to fashion-show payoff. One direction would be to let Sarah’s decision and Zach’s change register in one more quiet beat before the runway resolution, so the ending feels even more earned.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble is strong enough to support a cleaner cast map.",
+        "detail": "There are a lot of named supporting players, which is part of the movie’s charm, but the production version could simplify a few of the one-off club and food-court characters without changing the engine. That would keep the focus on the core five while preserving the social ecosystem that makes the comedy work.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The explicit language defines the lane.",
+        "detail": "The script’s sexual frankness is a major part of its identity, and it will play best with buyers who want an adult comedy that does not soften its edges. That also means the marketing and platform conversation should be aimed at viewers who already buy into raunchy ensemble comedy.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.3,
+  "tier": "Optionable",
+  "inputTokens": 47715,
+  "outputTokens": 5788,
+  "cost": 0.06183225,
+  "declaredFormat": "Feature film"
+}

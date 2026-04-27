@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:15:39.333Z",
+  "submission_id": "ed2bc684-6561-4181-a5ef-c3912eaee924",
+  "eval_id": "b86ffc46-6eff-43ae-b701-0ad845e9f204",
+  "title": "Murder Burger",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Cheyenne Wilson",
+      "role_type": "Lead",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "Darla Wilson",
+      "role_type": "Lead",
+      "demographics": "Female · late 40s"
+    },
+    {
+      "name": "Nicholas",
+      "role_type": "Lead",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "Eric Shaw",
+      "role_type": "Lead",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "Destiny",
+      "role_type": "Lead",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "Dirk",
+      "role_type": "Supporting",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "Josh",
+      "role_type": "Supporting",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "Merle",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Charlie",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Officer Lee",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Mrs. Munster",
+      "role_type": "Supporting",
+      "demographics": "Female · elderly"
+    },
+    {
+      "name": "Sheila",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    }
+  ],
+  "positioning_hook": "A bullied Monster Burger clerk traps a killer in the parking lot, then discovers the real monster may be the coworker she trusted most.",
+  "cost_usd": 0.04682925,
+  "input_tokens": 31131,
+  "output_tokens": 5218,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,278 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical drama",
+      "genre_tags": [
+        "political thriller",
+        "romantic drama"
+      ],
+      "tone": "mythic, earnest, heightened, ceremonial"
+    },
+    "positioning_hook": "A princess defies a royal council to marry a woodcarver, while a power-hungry commander weaponizes tradition, rumor, and war to seize the kingdom.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The core promise is clear and emotionally legible: forbidden love collides with court politics, and the stakes widen into coups, kidnappings, and war. Its audience is real, especially for viewers drawn to historical African epics and prestige romance, though the dense ceremonial dialogue narrows the immediate mainstream snap."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise lands early through the princess-woodcarver romance and Ne-Nsaku's opposition, and the script keeps restating the central conflict in court scenes. The engine is understandable, but the repeated council proceedings and flashbacks make the story feel more declarative than instantly streamlined."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Princess Ne-Makaya has strong will and moral clarity, Mavadidi is a clean romantic lead, and Ne-Nsaku gives the piece a forceful antagonist presence. The supporting ensemble functions as a court ecosystem, though most roles serve the central dispute rather than opening separate character lanes."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a specific African kingdom, traditional authority structures, and a public debate over bloodline, justice, and legitimacy. That cultural frame gives the material a distinct identity, even as the dialogue often plays in a classical, speech-forward register."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The story keeps moving through meetings, accusations, votes, arrests, and attacks, so there is always a new procedural turn. At the same time, the repeated council rhythm and long exchanges slow the forward drive, making the escalation feel more incremental than propulsive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A royal succession-and-marriage dispute that becomes a referendum on class, gender, and legitimacy has a fresh cultural signature here. The line about blood being red, and the idea that a woodcarver can stand at the center of dynastic politics, gives the premise an immediately ownable hook."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The kingdom has institutions, ranks, rituals, sacred objects, councils, funerals, and neighboring powers, which creates a visible social order. The Nkisi imagery, tam-tam announcements, sacred water, and court protocol give the world texture beyond a generic palace setting."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistent in its solemn, ceremonial mode, with speeches that aim for moral grandeur and public consequence. It is distinctive in setting and subject, though the emotional register stays largely in one elevated lane rather than shifting into sharper contrast."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the surface, the script is about legitimacy, inherited power, gendered authority, and the fragility of justice when institutions are captured. Those themes are present throughout the council scenes and the queen mother's counsel, though the script states much of its philosophy directly rather than letting it accumulate through subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The king, princess, queen mother, prince, shaman, and Ne-Nsaku create a workable web of court relationships with recurring friction. The strongest dynamic is the triangle of king, daughter, and antagonist, while the rest of the ensemble mostly orbits that central conflict."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 5,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble of adult roles",
+          "period-appropriate African casting",
+          "multiple royal and tribal authority figures"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "period",
+        "notable_requirements": [
+          "1320 African kingdom setting",
+          "forest battle sequences",
+          "royal court and palace interiors",
+          "neighboring kingdom delegation scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "No major effects language; scale comes from crowd scenes, battle coverage, and fire/burning village imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Burning houses, battle violence, executions, throat-slitting, arrows, and crowd-control practicals.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Based on the play 'Red is the Royal Blood' by Tshiama Nambombe."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "festival-to-platform historical drama / prestige streamer feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with festival positioning and platform acquisition potential; the engine is a court intrigue story that escalates into rebellion and war."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period setting, multiple court spaces, village burnings, and battle scenes push this above contained indie, but it stays below large-scale spectacle."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script uses a sizable adult ensemble with several named nobles, wives, guards, messengers, and witnesses, but no child-star dependency or star-only role."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across palace interiors, forest exteriors, a prison, a neighboring kingdom, and multiple village spaces, with period dressing throughout."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes rape references, executions, throat-slitting, kidnapping, war violence, and coercive sexual threat, which narrows platform and rating lanes."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The only clear clearance item is the underlying play credit; the script does not rely on named music, brands, or real people."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is culturally specific and legible.",
+          "what_it_means": "This gives buyers a prestige historical lane with a clear identity: a royal court drama rooted in African tradition, not a generic medieval palace story. It will attract festival-minded producers, streamer buyers looking for global stories, and actors who want material with cultural weight.",
+          "evidence": "The Nsundiland kingdom setting, the council rituals, the tam-tam announcements, and the repeated invocation of Nzambi a Mpungu and ancestral authority.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The central romance has real commercial lift.",
+          "what_it_means": "A princess choosing a woodcarver over court orthodoxy gives the film a clean emotional spine that can travel beyond the politics. That is the kind of forbidden-love engine that draws romantic leads, prestige indie buyers, and audiences who want a love story with consequences.",
+          "evidence": "Princess Ne-Makaya openly claims Mavadidi, defends her choice in council, and refuses to let class erase the relationship.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ne-Nsaku is a vivid antagonist.",
+          "what_it_means": "He is not just a political opponent; he is a force of appetite, manipulation, and public menace, which gives the movie a strong engine for escalation. Actors who specialize in charismatic authority and prestige antagonists will see a showcase role here, and buyers know how to market a story with a memorable villain.",
+          "evidence": "He weaponizes witnesses, extorts farmers, threatens the princess, engineers the council outcome, and ultimately leads the rebellion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The court debates are built around a strong thematic argument.",
+          "what_it_means": "The script keeps returning to justice, bloodline, and whether tradition should outrank human feeling, which gives the project a clear thesis buyers can articulate. That makes it attractive to prestige distributors and directors who want dialogue scenes that carry political and moral stakes.",
+          "evidence": "The repeated council arguments over death penalty, royal blood, and the line that all blood is red.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has ceremonial texture.",
+          "what_it_means": "The production can sell a lived-in kingdom through ritual, costume, sacred objects, and public processions, which helps the film feel larger than its footprint. Costume-forward directors, production designers, and buyers looking for exportable period texture will respond to that specificity.",
+          "evidence": "Royal canes, sacred water, Nkisi Nkondi figures, ivory trumpet imagery, funerals, tam-tam calls, and council protocol.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The story scales from romance to state crisis.",
+          "what_it_means": "It starts as a marriage dispute and expands into imprisonment, assassination attempts, kidnapping, and border war, which gives the feature a built-in escalation curve. That breadth makes it easier to position as a prestige epic rather than a single-note court romance.",
+          "evidence": "Mavadidi's proposal, the false accusation, the prison attack, the queen mother's kidnapping, and the final military response.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige historical feature with a clean, marketable spine: a princess chooses love over bloodline, and the kingdom's most dangerous man turns tradition into a weapon to stop her. The script has a distinct African royal-world identity, a memorable antagonist, and a romance that escalates into political upheaval and war."
+    },
+    "lead_characters": [
+      {
+        "name": "PRINCESS NE-MAKAYA",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · royal African princess",
+        "hook": "Ne-Makaya is the rare royal heroine who speaks like someone already done being managed. She is proud, emotionally direct, and increasingly politically awake, with a romantic core that never cancels out her authority; she wants love, but she also wants the right to choose it in public.",
+        "why_actor_wants_this": "This is the showcase territory of Lupita Nyong'o in 'Us' or Viola Davis in 'The Woman King' — a role that asks an actor to carry dignity, desire, and command in the same frame. Leading actresses looking for a prestige centerpiece will chase the chance to play a woman whose love story becomes a political declaration."
+      },
+      {
+        "name": "MAVADIDI",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · woodcarver",
+        "hook": "Mavadidi is a working artist with the soul of a romantic idealist. He is humble without being passive, and the script frames him as a man whose craft, tenderness, and moral steadiness make him worthy of the princess and dangerous to the old order.",
+        "why_actor_wants_this": "This is the showcase lane of Dev Patel in 'The Green Knight' or Daniel Kaluuya in 'Judas and the Black Messiah' — a role where stillness, conviction, and emotional intelligence do the heavy lifting. Actors who want a romantic lead with dignity and political consequence will see a lot to play here."
+      },
+      {
+        "name": "NE-NSAKU",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · commander-in-chief / nobleman",
+        "hook": "Ne-Nsaku is the script's engine of menace: vain, strategic, publicly contemptuous, and always one step from turning grievance into violence. He is the kind of antagonist who believes he is the only adult in the room, which makes his arrogance feel both theatrical and dangerous.",
+        "why_actor_wants_this": "This is the showcase space of Michael Shannon in 'Take Shelter' or Javier Bardem in 'No Country for Old Men' — a role built on controlled volatility and the pleasure of watching a man weaponize every room he enters. Prestige character actors and scene-stealing antagonists will chase it."
+      },
+      {
+        "name": "KING NE-NSUNDI",
+        "role_type": "Lead",
+        "demographics": "Male · late 50s-60s · king",
+        "hook": "Ne-Nsundi is a ruler trapped between conscience and custom. He wants justice, but he keeps outsourcing certainty to councils, elders, and ritual, which gives him the tragic shape of a good man whose caution keeps becoming political damage.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in 'The Tragedy of Macbeth' or Anthony Hopkins in 'The Father' — a sovereign presence whose authority is constantly being tested by doubt. Veteran leads who can play command, fatigue, and moral hesitation in one performance will be drawn to it."
+      },
+      {
+        "name": "QUEEN MOTHER NDIKUA",
+        "role_type": "Lead",
+        "demographics": "Female · 70s · royal elder",
+        "hook": "Ndikua is the family conscience and the sharpest adult in the room. She speaks with maternal authority, but she is not sentimental; she understands power, memory, and the cost of letting fear govern a household or a kingdom.",
+        "why_actor_wants_this": "This is the kind of role that gave Frances McDormand in 'Nomadland' or Angela Bassett in 'Black Panther: Wakanda Forever' a chance to command the frame through wisdom and force of presence. A major veteran actress would see a prestige anchor with emotional authority and cultural stature."
+      },
+      {
+        "name": "NE-MPUNGI",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · notable / justice chief",
+        "hook": "Ne-Mpungi is the procedural mind inside the court, the one who keeps insisting on evidence, sequence, and due process. He is not flashy, but he gives the kingdom a stabilizing intelligence and becomes one of the clearest voices against Ne-Nsaku's manipulation.",
+        "why_actor_wants_this": "This is the kind of supporting authority role that gave Jeffrey Wright in 'The Batman' or Sterling K. Brown in 'Waves' a chance to project intelligence and moral steadiness in limited time. Character actors who specialize in command-through-restraint will want it."
+      },
+      {
+        "name": "NOTABLE BESADI",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · court notable",
+        "hook": "Besadi is the court's blunt instrument and social referee, always trying to keep the room in order while everyone else spirals into accusation. He gives the ensemble friction and rhythm, and his skepticism helps define the political temperature of the kingdom.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the dry, scene-stealing authority work seen in performances like John Turturro in 'The Night Of' or Richard Jenkins in 'The Visitor'. It rewards actors who can make institutional pressure feel human and funny at the same time."
+      },
+      {
+        "name": "NDUNGIDI",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · shaman",
+        "hook": "Ndungidi is the kingdom's spiritual counterweight and one of the story's most theatrical presences. He is part oracle, part political operator, and part moral witness, which makes him feel like a man who understands both the sacred and the strategic uses of belief.",
+        "why_actor_wants_this": "This is the showcase lane of Forest Whitaker in 'The Last King of Scotland' or Delroy Lindo in 'Da 5 Bloods' — a role where spiritual authority and political intelligence share the same body. Actors who can play gravitas with a little danger will chase it."
+      },
+      {
+        "name": "PRINCE NE-BONDO",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · prince / royal brother",
+        "hook": "Ne-Bondo is the king's brother and a steadying court presence who often functions as the voice of practical caution. He is less central than the leads, but he helps anchor the family structure and the kingdom's diplomatic response.",
+        "why_actor_wants_this": "This is the kind of supporting royal role that gives an actor the measured authority seen in performances like David Oyelowo in 'Selma' or Chiwetel Ejiofor in '12 Years a Slave'. It offers dignity, counsel, and a clear place in the power map."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage politics as ritual and romance as statecraft.",
+        "fit_profile": "Established indie or prestige-feature directors with at least one or two historical or performance-forward films behind them, especially those who care about cultural specificity, court dynamics, and dialogue scenes that carry real consequence. This material rewards a filmmaker who can balance pageantry, intimacy, and moral argument without flattening the world into generic period decor.",
+        "detail": "The film gives a director a chance to build a kingdom through ceremony, costume, and controlled blocking, then pivot into intimate emotional confrontation. It will appeal to directors who like prestige historical material with a strong visual grammar and actors who can hold long dialogue scenes."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M prestige feature",
+        "lane": "festival-to-platform historical drama lane",
+        "detail": "The project can be packaged around strong ensemble performances rather than heavy VFX or star-driven spectacle, which makes it viable for a director-led greenlight. Its African royal setting, forbidden-love spine, and war escalation give it export value and a clean festival-to-streaming path."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The council scenes carry the whole engine.",
+        "detail": "A next pass could look at where the same argument is being restated across multiple meetings and decide which council exchanges are doing the most work. If one or two of those scenes were allowed to turn the story instead of re-explaining it, the feature would feel more propulsive without losing its ceremonial shape.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The antagonist's rise is already the clearest escalation path.",
+        "detail": "The script gives Ne-Nsaku a strong public arc, but the version where his first private move against the kingdom is seeded a little earlier would make the later coup and kidnapping run even harder. That would protect the political momentum and make his eventual collapse feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The feature sits in a prestige historical lane.",
+        "detail": "This is sized for a modest-to-mid budget period production rather than a large-scale spectacle, with its value coming from performance, costume, and court texture. Buyers in the festival-to-platform lane will understand it fastest.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast footprint is ensemble-heavy but manageable.",
+        "detail": "There are multiple nobles, guards, witnesses, wives, messengers, and villagers, so casting will benefit from a strong local ensemble strategy. The good news is that the story does not depend on child performers or star-only attachments to function.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The violence and coercion narrow the release lane.",
+        "detail": "Rape references, throat-slitting, kidnappings, executions, and battlefield violence place the film in a mature content band. That is a clean fit for prestige streamers and festival buyers, but it should be positioned accordingly from the start.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 62.3,
+  "tier": "Optionable",
+  "inputTokens": 42262,
+  "outputTokens": 4562,
+  "cost": 0.0522255,
+  "declaredFormat": "Feature film"
+}

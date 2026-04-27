@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:26:22.778Z",
+  "submission_id": "9538ee95-eb03-4796-b249-bbf9204d9182",
+  "eval_id": "d39cd7c2-0d4d-4242-a98e-c6263fb0716f",
+  "title": "Playmaker",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tony",
+      "role_type": "Lead",
+      "demographics": "Male · 17-18"
+    },
+    {
+      "name": "Clyde",
+      "role_type": "Lead",
+      "demographics": "Male · 18-21"
+    },
+    {
+      "name": "Coach Collins",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Erica",
+      "role_type": "Lead",
+      "demographics": "Female · 17-18"
+    },
+    {
+      "name": "Paul",
+      "role_type": "Supporting",
+      "demographics": "Male · 17-20"
+    },
+    {
+      "name": "Leroy",
+      "role_type": "Supporting",
+      "demographics": "Male · 17-18"
+    },
+    {
+      "name": "Tony's Dad",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Tony's Mom",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Mark Brady",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Kevin",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s"
+    }
+  ],
+  "positioning_hook": "A teenage soccer obsessive fights his father, his coach, and his own body to prove he belongs on the pitch — then discovers the game is really about how he sees space, time, and himself.",
+  "cost_usd": 0.0585975,
+  "input_tokens": 48142,
+  "output_tokens": 4998,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,370 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Drama",
+        "Romantic drama"
+      ],
+      "tone": "Stylized, propulsive, sensual, and emotionally earnest"
+    },
+    "positioning_hook": "A New York drug runner fleeing his own crew hides in a Milwaukee circus, where a masked cannon act, a forbidden attraction, and a family secret turn survival into reinvention.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean commercial spine: a hustler on the run, a hidden identity, a criminal pressure-cooker, and a circus spectacle that gives the movie a memorable visual engine. The audience promise is broad enough for genre buyers and adult drama viewers, though the tonal blend is more specific than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early in the warehouse sequence and then sharpens again when Marcus disappears into the circus under a fake name. The story engine is easy to explain in two sentences, and the masked cannon act gives the feature a strong, immediate hook."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Marcus is built as a charming operator with real contradiction: street-smart, vain, funny, evasive, and capable of tenderness with Kelly, Mei Lin, and the kids at the hospital. Kelly, Mei Lin, Jenny, and even Tamara/Professor each add a different emotional charge, though Marcus remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The circus setting is not decorative; it becomes the movie’s identity, from the trapeze training to the cannon act to the live-show climax. The gender-fluid Professor/Tamara reveal, the masked performance persona, and the way the story folds romance, crime, and spectacle together all show real confidence."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps Marcus moving from New York to Milwaukee and from one identity to another, with escalating pressure from the Professor’s crew and the circus deadline. The middle section is more atmospheric and relational than plot-heavy, but the momentum returns strongly once the cannon act and the surveillance thread converge."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A drug runner becoming a circus cannonball performer is the kind of premise that feels strange at first and then inevitable once the script commits to it. The emotional logic of hiding in plain sight, performing a new self, and finding family inside a traveling show gives the concept staying power."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Both worlds are vivid: the New York drug economy has its own codes, and the Milwaukee circus has a full social ecosystem with roles, hierarchy, rituals, and backstage intimacy. The script keeps finding specific textures — the hotel, the midway, the dressing rooms, the training routines — that make the setting feel lived-in."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually legible: streetwise crime energy, flirtatious banter, romantic longing, and big-top wonder all coexist without losing the movie’s identity. The script can pivot from menace to comedy to sincerity in a way that feels authored rather than generic."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the surface, the script is about chosen family, shame, masculinity, performance, and the cost of living behind masks. The Marcus/Kelly bond, the Professor/Tamara split, and the circus family all suggest more emotional territory than the plot alone initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The script generates strong pairings across the board: Marcus/Kelly, Marcus/Mei Lin, Marcus/Richie, Marcus/Jenny, Marcus/Parisa, and the Professor/Hugo dynamic all have distinct energy. The circus ensemble in particular feels like a real working community where multiple relationships can drive scenes independently."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead role for a charismatic male in his 30s",
+          "Lead role for a female in her 20s with athletic movement ability",
+          "Lead role for a female in her 20s/30s with strong emotional range",
+          "Supporting roles include an Australian-accented enforcer, a masked gender-fluid performer, circus performers, and a child patient"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Approximately 60/40 interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New York City streets, warehouse, apartment, club, airport, and hotel locations",
+          "Milwaukee circus grounds, arena, backstage, dressing rooms, and hotel",
+          "Children’s hospital and rehab room",
+          "Travel sequence including airport, plane, taxi, and hotel rooms"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "A few visual transitions and crowd-enhancement moments; the cannon launches are primarily practical staging rather than effects-heavy spectacle.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Cannon launch sequences, fight choreography, falls, wire work, and practical crowd-control moments in the arena.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Lady Marmalade, Suspicious Minds, Hit Me With Your Best Shot, and Nat King Cole are specifically referenced or used as performance cues."
+        },
+        {
+          "type": "brand",
+          "detail": "FanDuel, Tinder, TikTok, Uber, CitiBank, Walgreens, Amvets, Old Milwaukee, Yankee, Mets, and Sarah Jessica Parker are referenced."
+        },
+        {
+          "type": "real_person",
+          "detail": "Sarah Jessica Parker is referenced by name and appears in a photo context."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or prestige theatrical indie with genre appeal",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical-to-streaming potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The circus arena, cannon act, animal elements, and multiple city/company locations keep this above microbudget, but it remains far from effects-heavy tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project leans on a charismatic lead and a sizable supporting ensemble, with child casting and specific performance needs for the circus roles."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves across New York, Milwaukee, airport travel, hotels, a warehouse, a circus compound, and a children’s hospital."
+        },
+        "content": {
+          "level": "high",
+          "note": "Drug dealing, violence, sexual tension, profanity, stalking, and a gender/identity reveal around the Professor/Tamara character place this firmly in mature territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names multiple brands, plot-critical songs, and a real public figure reference, all of which require clearance attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The circus is a true story engine.",
+          "what_it_means": "This is not just a colorful backdrop; it gives the movie a built-in visual identity, a performance climax, and a community that can absorb a fugitive protagonist. Buyers looking for a feature with a memorable world and a trailer-friendly third act will see immediate value here, especially in the prestige-genre lane.",
+          "evidence": "Marcus goes from janitor to ringmaster to cannon performer, with the arena, backstage, training, and live show all driving the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Marcus is a showcase lead role.",
+          "what_it_means": "The part lets an actor play charm, danger, vanity, grief, and physical bravado in one package, which is exactly the kind of role that can elevate a project’s profile. Mid-career leading men who want a star-making turn, and directors who like performance-first material, will recognize the opportunity immediately.",
+          "evidence": "He lies, flirts, improvises, protects Kelly, performs for the crowd, and gradually reveals a softer center.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Professor/Tamara reveal is a bold centerpiece.",
+          "what_it_means": "The gender-fluid double-life element gives the film a memorable antagonist and a conversation-starting twist that separates it from standard crime material. Actors who want a role with theatricality, secrecy, and volatility will be drawn to it, and buyers will see a built-in hook for marketing and press.",
+          "evidence": "Marcus discovers Tamara is the Professor, and the character moves between masculine and feminine presentation with real narrative consequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The sibling relationship has real emotional weight.",
+          "what_it_means": "Kelly gives the movie a heartline that broadens the audience beyond crime and spectacle, making the story feel personal rather than purely procedural. This is the kind of sibling dynamic that can attract actors who want emotional material inside a genre frame and buyers who want a human anchor for the pitch.",
+          "evidence": "Their apartment confrontation, the inheritance argument, the basketball history, and the final dance all deepen the bond.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are highly trailerable.",
+          "what_it_means": "The warehouse execution, the circus reveal, the wire-and-cannon climax, and the masked confrontation all give the movie clear promotional moments. That makes the script easier to sell to a buyer who wants a distinctive hook that can be communicated in a single image or sequence.",
+          "evidence": "Morales is dropped down the elevator shaft, Marcus is exposed in Tamara’s dressing room, and the final showdown plays out in the arena before a live crowd.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has strong social texture.",
+          "what_it_means": "The script understands how people move through clubs, hotels, warehouses, dressing rooms, and backstage spaces, which makes the movie feel inhabited rather than assembled. That kind of texture is attractive to indie buyers and directors who want a lived-in urban canvas with enough specificity to feel expensive on screen.",
+          "evidence": "Gina’s bar, Cattails, the Silver Mirage, the Four Winds, the circus midway, and the warehouse all have distinct behavior and tone.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on earned transformation.",
+          "what_it_means": "Marcus’s final choice to drop the mask and fly as himself gives the feature a clean emotional release and a strong closing image. That kind of payoff helps both festival audiences and streamers because it leaves the viewer with a clear sense of completion and identity resolution.",
+          "evidence": "He removes the mask before the final cannon launch and goes into the air unhidden.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a real commercial identity: a crime-driven feature with a circus world that feels cinematic, specific, and easy to market. The lead role is built for an actor who wants swagger and vulnerability in the same frame, while the sibling story and the Professor/Tamara reveal give the movie emotional and cultural conversation points beyond the genre spine."
+    },
+    "lead_characters": [
+      {
+        "name": "MARCUS",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · fit, handsome, New York streetwise",
+        "hook": "Marcus is a hustler who can talk his way through almost anything, but the script keeps revealing the cost of that talent. He is vain, funny, evasive, and deeply observant, with a performer’s instinct that makes him equally believable in a drug deal, a family fight, or a circus ring.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic man whose charm, intelligence, and self-mythology are the performance. It gives an actor the chance to play swagger, physicality, romantic tension, and buried remorse in one role that can reframe how audiences see him."
+      },
+      {
+        "name": "KELLY",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · athletic, basketball player",
+        "hook": "Kelly is all nerve and honesty, with the kind of emotional volatility that comes from being both wounded and impossible to ignore. She carries the story’s moral clarity without becoming saintly, and her anger, humor, and vulnerability make her feel immediate and modern.",
+        "why_actor_wants_this": "This is the showcase space of Brie Larson in Short Term 12 — a young woman whose pain and defiance are both visible and playable. It gives an actress a role with athletic presence, emotional fire, and a deeply personal sibling dynamic that can carry a feature."
+      },
+      {
+        "name": "TAMARA / PROFESSOR",
+        "role_type": "Lead",
+        "demographics": "Male-presenting and female-presenting identity · 30s · slim, elegant, commanding",
+        "hook": "The Professor is a polished criminal boss with a theatrical private life, and the Tamara persona turns that secrecy into something intimate and dangerous. The character is controlled, seductive, wounded, and volatile, with a split presentation that gives the role real dramatic voltage.",
+        "why_actor_wants_this": "This is the kind of role that gave Eddie Redmayne in The Danish Girl and Billy Porter in Pose the chance to make identity, concealment, and self-invention the center of the performance. It offers a performer a rare combination of menace, glamour, and emotional exposure."
+      },
+      {
+        "name": "MEI LIN",
+        "role_type": "Lead",
+        "demographics": "Female · 20s/30s · Chinese",
+        "hook": "Mei Lin is disciplined, sensual, and emotionally guarded, with a quiet authority that makes her feel like the center of the circus even when she is not speaking. She is both romantic object and active force, and the script gives her enough physical confidence and cultural specificity to feel singular.",
+        "why_actor_wants_this": "This is the showcase territory of Michelle Yeoh in Crouching Tiger, Hidden Dragon — a woman whose grace, restraint, and physical command carry emotional meaning. It gives an actress a role that blends movement, longing, and authority in a way that can anchor both romance and spectacle."
+      },
+      {
+        "name": "JUWUAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · slim, high-energy, Australian accent",
+        "hook": "Juwuan is a smiling predator, the kind of man who can sound friendly while tightening the noose. He has a slippery charisma that makes him useful in the room and dangerous outside it, which keeps him alive as a scene presence.",
+        "why_actor_wants_this": "This is the kind of role that gave Walton Goggins in Justified a chance to make menace entertaining. It offers an actor a sharp, quotable villain slot with enough personality to steal scenes whenever he appears."
+      },
+      {
+        "name": "HUGO",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · muscular, scared face, worked-out body",
+        "hook": "Hugo is the blunt instrument of the crew, but the script gives him enough insecurity and desire to make him more than muscle. He is threatening, reactive, and oddly needy, which makes him a useful pressure point in the criminal world.",
+        "why_actor_wants_this": "This is the showcase lane of Michael Shannon in a supporting enforcer role — a man whose physical threat is matched by emotional instability. It gives an actor a part that can turn on a dime from intimidation to humiliation to violence."
+      },
+      {
+        "name": "JENNY",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · plump, sassy, manager energy",
+        "hook": "Jenny is the circus’s practical center of gravity, a woman who can flirt, manage chaos, and read a room in one glance. She has warmth and authority in equal measure, which makes her feel like the adult in every scene she enters.",
+        "why_actor_wants_this": "This is the kind of role that gave Allison Janney in The West Wing or Frances McDormand in ensemble work the chance to command a room without needing the plot to stop for them. It offers a mature actress a sharp, funny, emotionally literate supporting part with real authority."
+      },
+      {
+        "name": "RICHIE",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Southern accent, easygoing",
+        "hook": "Richie is the kind of guy who makes a strange place feel like home, and his easy humor gives the circus world a lived-in rhythm. He is open, curious, and lightly wounded, which makes him an ideal companion character for Marcus.",
+        "why_actor_wants_this": "This is the showcase space of Sam Rockwell in a character-supporting role — a guy whose charm and oddball warmth make every scene feel alive. It gives an actor comic timing, friendship chemistry, and a little emotional surprise."
+      },
+      {
+        "name": "PARISA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · stylish, Persian",
+        "hook": "Parisa is elegant, self-possessed, and quietly dissatisfied, which gives her scenes a grown-up charge. She is not just a romantic detour; she brings a different class and emotional register into Marcus’s orbit.",
+        "why_actor_wants_this": "This is the kind of role that gave Shohreh Aghdashloo in prestige drama the chance to play intelligence, sensuality, and disappointment at once. It offers an actress a compact but memorable adult-romance part with real texture."
+      },
+      {
+        "name": "ANTOINE",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Marcus’s cousin",
+        "hook": "Antoine is a loyal family man who still lives close enough to the street to understand Marcus’s world. He is practical, wary, and slightly outmatched by the bigger forces around him, which makes him feel human and useful.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actor the family-and-pressure material of a John Turturro part in a crime drama. It offers a believable everyman inside a heightened story."
+      },
+      {
+        "name": "GINA",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · elegant bar manager",
+        "hook": "Gina is polished, observant, and emotionally literate, with the kind of barroom intelligence that makes her feel like she knows everyone’s secrets. She adds a mature, worldly texture to Marcus’s New York life.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the dry, adult authority of a Diane Wiest or Kathryn Hahn supporting turn. It offers a scene-stealing bar owner with warmth, wit, and history."
+      },
+      {
+        "name": "MEI LIN'S FATHER / HAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Chinese, stern, physical discipline",
+        "hook": "Han is the guardian of the circus’s traditions and the emotional gatekeeper around Mei Lin. He is stern, observant, and protective, but the script lets him carry real paternal pain beneath the discipline.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas of Ken Watanabe in a family-and-discipline part. It offers authority, restraint, and a late-story emotional payoff."
+      },
+      {
+        "name": "BEVERLY",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Black drag queen",
+        "hook": "Beverly is stylish, funny, and plugged into the social life of the club, giving the movie a quick burst of personality whenever she appears. She helps widen the world beyond the central plot and adds texture to the nightlife ecosystem.",
+        "why_actor_wants_this": "This is the kind of role that gives a performer the scene-color and attitude of a Pose or Paris Is Burning ensemble turn. It offers a vivid supporting slot with style and attitude."
+      },
+      {
+        "name": "TAMARA",
+        "role_type": "Supporting",
+        "demographics": "Female-presenting persona · 30s · masked performer",
+        "hook": "Tamara is the public face of the Professor’s hidden life, and the mask makes every entrance feel charged. She is glamorous, controlled, and unsettling, with a performance quality that turns secrecy into spectacle.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the masked, dual-identity electricity of a stage diva in a prestige thriller. It offers a memorable visual and emotional signature even in limited screen time."
+      },
+      {
+        "name": "BILLIE",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · influencer",
+        "hook": "Billie is a live-wire social media opportunist who treats every room like content. She is invasive, funny, and shameless, which makes her a modern pressure source in the story.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the sharp, disruptive energy of a social-media antagonist in a contemporary ensemble. It offers a fast, scene-stealing part with built-in relevance."
+      },
+      {
+        "name": "DEVLIN",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · circus manager",
+        "hook": "Devlin is the circus’s practical foreman, a man who runs on rules, labor, and blunt decency. He gives the circus its working-class backbone and makes the place feel operational rather than whimsical.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded authority of a blue-collar ensemble manager in a prestige drama. It offers a sturdy, no-nonsense supporting part with real presence."
+      },
+      {
+        "name": "BUTCH",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · muscular mechanic",
+        "hook": "Butch is the technical mind behind the cannon, and his calm competence makes the danger feel real. He is practical, funny, and slightly fatalistic, which gives the circus machinery a human face.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dry, craft-focused support part of a blue-collar specialist in a genre film. It offers humor, competence, and a little danger."
+      },
+      {
+        "name": "GANDINI",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s/50s · cannon performer",
+        "hook": "Gandini is the old-school daredevil whose body has paid the price for the act. He carries the mythology of the circus in his bones, and his injury becomes the story’s turning point.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the weathered-showman energy of a veteran performer in a prestige ensemble. It offers a memorable, physical supporting part with built-in pathos."
+      },
+      {
+        "name": "ARIAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 10 · child patient",
+        "hook": "Arian is a fragile but open child whose response to Marcus gives the movie one of its purest emotional beats. He is not there to decorate the plot; he gives Marcus a chance to be seen as more than a hustler.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the emotional clarity of a child performance in a prestige drama. It offers a simple but potent showcase for innocence and connection."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a crime movie with a real visual world and a performance-forward center.",
+        "fit_profile": "Established indie directors with at least one or two features, or TV auteurs moving into features, who already work comfortably with character, atmosphere, and controlled genre escalation. This material rewards someone who likes staging, movement, and emotional subtext as much as plot mechanics.",
+        "detail": "The circus gives the director a chance to build a signature visual language around performance, masks, and spectacle without needing a giant effects budget. It will attract filmmakers who like adult genre material that can still play on faces, bodies, and ensemble chemistry."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige genre / streamer original / festival-friendly commercial indie",
+        "detail": "The movie can be packaged around one charismatic lead and a strong supporting ensemble rather than a full-name cast, which helps it move on script and director attachment. The circus hook, crime spine, and masked-performance climax give it a clear marketing angle for streamers and limited theatrical buyers looking for something distinctive."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The New York-to-Milwaukee move is the biggest structural lever.",
+        "detail": "The story gains a lot once Marcus reaches the circus, but the opening stretch spends substantial time establishing the drug network before the central world fully takes over. One direction would be to tighten the New York material so the circus engine arrives sooner and the feature spends more of its runtime in the most ownable part of the movie.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The Professor/Tamara reveal can be foregrounded earlier.",
+        "detail": "The reveal is one of the script’s most memorable turns, and the later confrontation lands because of it. A next pass could seed a few more visual or behavioral hints in the Professor’s early scenes so the eventual disclosure feels even more charged on first watch.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Kelly’s storyline can carry even more independent force.",
+        "detail": "Her scholarship crisis, the coach scandal, and the inheritance anger already give her a strong lane, and the script is most alive when her scenes are allowed to push back on Marcus rather than simply react to him. The version of the script where her choices drive one additional turn would deepen the sibling engine and broaden the emotional center.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The circus finale is the right scale for the movie.",
+        "detail": "The arena climax, the live audience, and the wire/cannon choreography are the feature’s most cinematic material, so the production should protect that sequence as the payoff. If any simplification is needed elsewhere, it should preserve the final show and the crowd-facing reveal intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The song and brand references need a clearance pass.",
+        "detail": "The script uses multiple named songs, brands, and a real-person reference, so a producer will want an early legal sweep before packaging. That is manageable, but it should be treated as part of the development path rather than a late-stage cleanup.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast wants a lead with physical charisma.",
+        "detail": "Marcus has to sell dialogue, romance, deception, and the cannon act itself, so the role benefits from an actor who can move convincingly and play charm under pressure. That makes the package especially attractive if the lead attachment is someone with both dramatic credibility and a strong screen persona.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": "",
+    "production_reality_note": ""
+  },
+  "weightedScore": 77,
+  "tier": "Optionable",
+  "inputTokens": 43205,
+  "outputTokens": 6314,
+  "cost": 0.06081675,
+  "declaredFormat": "Feature film"
+}

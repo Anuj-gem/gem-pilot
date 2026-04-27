@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:16:48.268Z",
+  "submission_id": "b1a036f8-8fb8-452b-8ffd-4e569c44006f",
+  "eval_id": "41404783-6446-4f34-b092-711c4f1f1368",
+  "title": "Don Juan 2019",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Don Juan Tenorio",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · Spanish nobleman"
+    },
+    {
+      "name": "Dona Ines de Ulloa",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · Spanish noblewoman"
+    },
+    {
+      "name": "Don Luis Mejia",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Spanish nobleman"
+    },
+    {
+      "name": "Don Gonzalo de Ulloa",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Spanish military captain"
+    },
+    {
+      "name": "Ciutti",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · short, stocky servant"
+    },
+    {
+      "name": "Brigida",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · servant to Ines"
+    },
+    {
+      "name": "Dona Ana de Pantoja",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Spanish noblewoman"
+    },
+    {
+      "name": "Don Patricio",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Spanish husband and landowner"
+    },
+    {
+      "name": "Buttarelli",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Italian tavern owner"
+    },
+    {
+      "name": "Centelles",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · military man"
+    },
+    {
+      "name": "Rafael",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · nobleman"
+    },
+    {
+      "name": "Pablo",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · prison guard"
+    },
+    {
+      "name": "Peste",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · filthy prison inmate"
+    },
+    {
+      "name": "The Abbess",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-70s · convent leader"
+    },
+    {
+      "name": "Senor Pantoja",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Spanish father"
+    }
+  ],
+  "positioning_hook": "Seville’s legendary seducer is forced to choose between one last conquest and the first woman who can actually resist him, while the city’s honor code closes in around him.",
+  "cost_usd": 0.0595515,
+  "input_tokens": 44800,
+  "output_tokens": 5767,
+  "status": "wrote:leads_ok"
+}

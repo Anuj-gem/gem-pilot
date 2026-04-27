@@ -1,0 +1,235 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Psychological horror",
+      "genre_tags": [
+        "Contained thriller",
+        "Surreal nightmare"
+      ],
+      "tone": "Gritty, claustrophobic, uncanny, retro-stylized"
+    },
+    "positioning_hook": "A bestselling horror novelist with nyctophobia gets stranded on a rain-slick highway at dusk, and every mile toward safety turns his own fear into something alive in the dark.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and genre-clean: a man, a broken car, a hard sunset deadline, and a fear of darkness that becomes the engine. The audience promise is strongest for horror fans and thriller buyers who respond to contained, high-concept survival setups."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early through the dashboard clock, the sunset note, the Thorazine prescription, and the roadside breakdown. By the time the flat tire and the 4:35 deadline collide, the story engine is unmistakable."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Rex Stevens has a clean central contradiction — a successful horror writer who is terrified of the dark — and that gives the role a strong actor-facing premise. The character is defined more by his ordeal than by a broad inner life, but the performance space is still vivid and playable."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a highly specific formal idea: a near-silent, image-driven roadside nightmare that turns mundane car-repair details into horror grammar. The black-and-white Saul Bass / Herrmann framing and the escalation from lug nut to cosmic dread give it a confident, authored identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The countdown structure keeps the piece moving with real pressure, and each beat worsens Rex’s situation in a clean chain of cause and effect. The flat tire, the lost lug nut, the darkening road, and the final crash all escalate with strong forward pull."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It takes a simple survival premise and makes it feel inevitable and strange at the same time: a fear of darkness, a roadside repair, and a car that becomes a nightmare machine. The ordinary objects — clock, lighter, tire iron, radio, pills — become the movie’s signature language."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The 1950s roadside world is richly textured through the signage, radio patter, motel stops, billboards, and period objects in the car. It is a contained world rather than a sprawling one, but the period detail is doing real story work."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unusually precise: retro noir surfaces, horror escalation, and a near-experimental visual rhythm built from clocks, wipers, stripes, and reflections. The script would be recognizable from a single sequence because it has such a controlled, obsessive mood."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are hints of deeper psychological material in Rex’s medication, his fear of the dark, and the final hospital reveal that he is now blind. The script keeps the experience largely on the surface of the ordeal, but the ending suggests a larger interior wound beneath the nightmare."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 2,
+        "reasoning": "This is intentionally a solo-pressure feature, with Rex carrying almost the entire dramatic load. The doctor at the end functions as a reveal device rather than an ongoing relationship engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 2,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Single lead role",
+          "Male 30s-40s",
+          "Voice-only doctor at the end"
+        ]
+      },
+      "locations": {
+        "distinct_count": 5,
+        "interior_exterior_ratio": "Mostly exterior with a single primary car interior",
+        "period_or_contemporary": "Period (1950s)",
+        "notable_requirements": [
+          "Period car build (1957 Plymouth Fury)",
+          "Period roadside dressing",
+          "Night highway exteriors",
+          "Abandoned gas station set dressing"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily stylized optical/visual effects for darkness, lightning, reflections, and the final fire/explosion imagery.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical car damage, tire failure, smoke, fireball, windshield crack, rain, and engine-compartment effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Gargoyle Publishing, Thorazine, Zippo, Plymouth Fury, and multiple radio station identifiers are named on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "Bernard Herrmann is referenced in the title sequence description."
+        },
+        {
+          "type": "named_music",
+          "detail": "Specific songs are referenced in the radio patter and Christmas music cues, including 'Rockin’ Robbin,' 'Rockin’ Christmas,' 'Fuzzy Dice,' and 'Cruisin’ for a Bruisin'."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The screenplay’s title sequence and aesthetic explicitly invoke Saul Bass-style graphics and a Bernard Herrmann-style score."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or festival-to-platform horror lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as a contained genre title with a strong poster concept and a midnight-movie afterlife."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "One lead, one primary car interior, a handful of roadside setups, and practical weather/damage effects keep the budget footprint contained."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story is built around one central performer with only a brief voice-only doctor scene at the end."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is contained, but the period highway, abandoned gas station, rain, night exteriors, and specialized car work require careful coordination."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material is horror-forward with panic, bodily injury, and an explosion, but it stays away from graphic gore or explicit sexual content."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names real-world music references, a real drug, and leans on a clearly invoked classic title-sequence aesthetic."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is built for a poster.",
+          "what_it_means": "A single-image sell — stranded writer, dead car, sunset deadline, and darkness as the enemy — gives a producer a clean marketing hook that reads instantly in a thumbnail or trailer. Horror buyers and streamer genre teams will recognize the value of a concept that can be explained in one breath and remembered in one glance.",
+          "evidence": "Rex Stevens, a horror novelist with nyctophobia, is trapped on a two-lane highway as sunset approaches and his car breaks down at an abandoned gas station.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The film has a disciplined countdown engine.",
+          "what_it_means": "The clock, the to-do list, the sunset note, and the repeated time checks create a built-in escalation system that keeps the audience oriented while the nightmare tightens. That kind of clean temporal pressure is attractive to buyers because it promises momentum without requiring a large cast or sprawling plot.",
+          "evidence": "The dash is covered with times, the alarm is set for 4:35, and the story repeatedly returns to the clock as the day runs out.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The visual language is highly ownable.",
+          "what_it_means": "The script turns wipers, lane stripes, reflections, headlights, and darkness itself into recurring visual motifs, which gives the movie a signature grammar beyond standard roadside horror. Directors and genre financiers respond to material that already suggests a trailer cut and a distinct poster frame.",
+          "evidence": "The white lane stripe, the loose lug nuts, the wipers, the flashlight beam, and the moonlight all become part of the horror progression.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Rex is a strong actor-facing lead role.",
+          "what_it_means": "A lead who is both a successful horror author and a man unraveling under pressure gives an actor a showcase that can play intelligence, vanity, panic, and physical desperation in one contained performance. That is exactly the kind of role mid-career dramatic leads and prestige-hungry genre actors chase when they want a memorable centerpiece.",
+          "evidence": "Rex’s books, business cards, and signing flyer identify him as the author of the Milo 'Sleep' Walker novels, while his fear and medication become central to the breakdown.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period roadside world is vivid and saleable.",
+          "what_it_means": "The 1950s setting is not decorative here; it gives the movie a built-in visual identity through cars, radio patter, signage, and consumer objects that can be turned into a strong campaign. That makes it appealing to buyers who want genre material with a retro hook that still plays cleanly to modern audiences.",
+          "evidence": "The Plymouth Fury, the radio banter, the diner and pharmacy references, and the Saul Bass-style opening all anchor the piece in a specific era.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a clean, cruel reveal.",
+          "what_it_means": "The hospital coda reframes the entire ordeal as a catastrophic origin wound, which gives the feature a memorable final turn and a built-in conversation starter. That kind of ending is catnip for genre audiences and helps a title travel through word of mouth.",
+          "evidence": "After the explosion, the doctor reveals that the acid from the battery has permanently blinded Rex.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a lean, high-concept horror feature with a poster-ready premise, a disciplined countdown engine, and a lead role actors can sink their teeth into. The 1950s roadside setting and obsessive visual motifs give it a distinct identity that feels both producible and memorable — exactly the kind of contained genre package that can travel."
+    },
+    "lead_characters": [
+      {
+        "name": "Rex Stevens",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · white · period 1950s",
+        "hook": "Rex is a polished, self-contained professional on the surface — a horror novelist with a neat schedule, a signed book flyer, and a car full of props that announce success — but the whole piece is built around the panic underneath that polish. He is methodical, image-conscious, and increasingly brittle, with a body language that shifts from controlled routine to animal fear as the dark closes in.",
+        "why_actor_wants_this": "This is the showcase territory of Jake Gyllenhaal in Nightcrawler — a character whose composure slowly curdles into obsession and panic while the camera stays locked on every micro-shift. Actors who want a contained, performance-forward horror lead will chase the chance to carry a movie almost entirely through physicality, breath, and escalating dread."
+      },
+      {
+        "name": "Doctor Fields",
+        "role_type": "Supporting",
+        "demographics": "Male or female · 30s-60s · voice-only",
+        "hook": "Doctor Fields exists as a disembodied voice at the end of the nightmare, calm and procedural against Rex’s terror. The character functions like a cold, clinical punctuation mark that turns the whole ordeal into a medical aftermath.",
+        "why_actor_wants_this": "This is the kind of brief but memorable voice role that recalls the authority and eerie calm of the doctor in The Father’s hospital passages — a performance slot built on control, not volume. Character actors and recognizable voices who like leaving a sharp imprint with minimal screen time will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a single breakdown into a full-feature nightmare.",
+        "fit_profile": "First- or second-feature directors with a strong visual reel, especially those coming out of shorts, music videos, or contained genre work. This material rewards precision, atmosphere, and image-driven escalation more than broad coverage or large-scale set pieces.",
+        "detail": "The movie gives a director a chance to build dread from ordinary objects — clocks, headlights, wipers, lane stripes, and a lighter — and to make a small footprint feel cinematic. It will attract filmmakers who want to prove they can sustain tension with formal control and a distinctive visual language."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Premium streamer horror / festival genre lane",
+        "detail": "The cast can be anchored by one recognizable lead and a mostly practical production footprint, so the package can move on concept and execution rather than ensemble attachments. Contained horror with a retro hook remains a reliable streamer and festival buy, and the 1950s styling gives it a thumbnail-friendly identity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening is all atmosphere before threat.",
+        "detail": "The title sequence and highway imagery are stylish and memorable, but the script spends a long stretch establishing period mood before the central danger fully asserts itself. One lever would be to let the first sign of the supernatural or psychological rupture arrive a little earlier so the atmosphere and the engine start working together sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Rex’s interior life is mostly implied.",
+        "detail": "The medication, the fear of the dark, and the final blindness reveal all point toward a deeper psychological story, and a next pass could foreground one or two more choices that make his private stakes visible before the breakdown. That would give the ending even more emotional aftershock without changing the contained structure.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights surface is active.",
+        "detail": "The script names specific songs, brands, a real medication, and a Saul Bass / Bernard Herrmann aesthetic reference, so a production pass would want to separate what is essential from what can be generalized. The good news is that the movie’s core identity lives in the car, the clock, and the darkness, so the clearance load can be simplified without changing the premise.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The period car is the signature asset.",
+        "detail": "The 1957 Plymouth Fury is not just a prop; it is the movie’s central production object and visual icon. Protecting that build and the associated night-road photography will preserve the film’s selling image.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 18167,
+  "outputTokens": 3508,
+  "cost": 0.029411249999999996,
+  "declaredFormat": "Feature film"
+}

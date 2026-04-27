@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-23T23:18:02.853Z",
+  "submission_id": "b7d1ed08-ec05-4533-b0b2-b9f0796010e2",
+  "eval_id": "05f2d937-8636-4088-a292-420866f4a012",
+  "title": "Bayou",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Leo Landry",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to early 30s · Cajun/Louisiana French-speaking"
+    },
+    {
+      "name": "Vincent Landry",
+      "role_type": "Lead",
+      "demographics": "Male · 50s to 60s · Cajun patriarch"
+    },
+    {
+      "name": "Lola",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · Cajun woman, sexually explicit presentation"
+    },
+    {
+      "name": "Biere Landry",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 60s · French/Cajun sniper"
+    },
+    {
+      "name": "Lydia Marcello",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Italian-American"
+    },
+    {
+      "name": "Enzo Marcello",
+      "role_type": "Lead",
+      "demographics": "Male · 50s to 60s · Italian-American New Orleans power broker"
+    },
+    {
+      "name": "TJ",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · Cajun crew member"
+    },
+    {
+      "name": "Roy",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · Cajun crew member"
+    },
+    {
+      "name": "T-Boy",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · Cajun crew member"
+    },
+    {
+      "name": "Bebo",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · Cajun crew member"
+    },
+    {
+      "name": "Ola",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 60s · Cajun matriarch"
+    },
+    {
+      "name": "Joe Klukowski",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · labor-union fixer"
+    },
+    {
+      "name": "JFK",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · real historical figure"
+    },
+    {
+      "name": "Hoffa",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · real historical figure"
+    },
+    {
+      "name": "Bello",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 60s · Mexican smuggler"
+    },
+    {
+      "name": "Lui",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · Louisiana police contact"
+    }
+  ],
+  "positioning_hook": "A Cajun smuggling clan turns Gulf Coast gunrunning into a blood-soaked family business, then gets pulled into the JFK assassination conspiracy.",
+  "cost_usd": 0.05772975,
+  "input_tokens": 41039,
+  "output_tokens": 5989,
+  "status": "wrote:leads_ok"
+}

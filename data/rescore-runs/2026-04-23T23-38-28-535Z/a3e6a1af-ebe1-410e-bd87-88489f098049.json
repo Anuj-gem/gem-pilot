@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:42:16.157Z",
+  "submission_id": "a3e6a1af-ebe1-410e-bd87-88489f098049",
+  "eval_id": "99bc9154-860f-4de9-bdca-dc04009948a8",
+  "title": "Risaldi",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Smith",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · white · Catholic father"
+    },
+    {
+      "name": "Jodie Smith",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to early 40s · police officer"
+    },
+    {
+      "name": "Ethan Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · black hair · younger brother / family insider"
+    },
+    {
+      "name": "Victor Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s · imposing, composed, black hair"
+    },
+    {
+      "name": "Martin Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · cruel, volatile, performer"
+    },
+    {
+      "name": "Frankie Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to early 30s · tall, maniacal, conflicted"
+    },
+    {
+      "name": "Edward Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · mountain of muscle"
+    },
+    {
+      "name": "Alicia Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 50s · former stripper, mother"
+    },
+    {
+      "name": "Marcus Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · 11 · quiet, pure, child"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · priest"
+    },
+    {
+      "name": "Dr. Owens",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 30s · therapist"
+    }
+  ],
+  "positioning_hook": "After his family is slaughtered by a criminal clan, a grief-stricken Catholic father teams with his cop sister and the clan’s disillusioned son to bring down the man who made them all monsters.",
+  "cost_usd": 0.05837775,
+  "input_tokens": 47069,
+  "output_tokens": 5128,
+  "status": "wrote:leads_ok"
+}

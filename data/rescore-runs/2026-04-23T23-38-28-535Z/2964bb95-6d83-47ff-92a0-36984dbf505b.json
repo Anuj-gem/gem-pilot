@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-23T23:39:17.668Z",
+  "submission_id": "2964bb95-6d83-47ff-92a0-36984dbf505b",
+  "eval_id": "9903cdee-4844-498c-ac3b-3de1eb9a1935",
+  "title": "The Shadow Player",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "LEN CLAW",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s · Half Navajo / Half White"
+    },
+    {
+      "name": "RICK HAVOC",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Rock star / performer"
+    },
+    {
+      "name": "MING",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · Mixed Asian heritage"
+    },
+    {
+      "name": "ARJA NILSSON",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s · Nordic / European blend"
+    },
+    {
+      "name": "THE WARLORD",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · Chinese"
+    },
+    {
+      "name": "NIYOL",
+      "role_type": "Supporting",
+      "demographics": "Male · late 70s · Navajo"
+    },
+    {
+      "name": "YICHAN",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-20s · Chinese"
+    },
+    {
+      "name": "ZHANG",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Chinese"
+    },
+    {
+      "name": "JIANYU",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Chinese"
+    },
+    {
+      "name": "PAWA",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Paiwan"
+    },
+    {
+      "name": "WAIKIN",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Amis"
+    },
+    {
+      "name": "CHENG",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Truku"
+    },
+    {
+      "name": "GUANG",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Thao"
+    },
+    {
+      "name": "SHUANG",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Chinese"
+    },
+    {
+      "name": "ARNO",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · European"
+    },
+    {
+      "name": "RIC HARD",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-20s · Native Taiwanese / Native-coded rock persona"
+    },
+    {
+      "name": "MEI",
+      "role_type": "Supporting",
+      "demographics": "Female · 8 years old · Amis"
+    },
+    {
+      "name": "CHUN",
+      "role_type": "Supporting",
+      "demographics": "Female · 8 years old · Amis"
+    }
+  ],
+  "positioning_hook": "A washed-up rock star and a Navajo spirit guide chase a stolen mythic pipa across Taiwan, where an ancient legend keeps colliding with a very modern ego.",
+  "cost_usd": 0.06303750000000001,
+  "input_tokens": 49334,
+  "output_tokens": 5786,
+  "status": "wrote:leads_ok"
+}

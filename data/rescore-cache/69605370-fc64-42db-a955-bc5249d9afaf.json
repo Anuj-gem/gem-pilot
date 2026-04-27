@@ -1,0 +1,274 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Psychological thriller",
+        "Religious thriller"
+      ],
+      "tone": "Grounded, grim, escalating, and brutally suspenseful"
+    },
+    "positioning_hook": "A newly married couple rents a remote country house from a devout young landlord, only to discover he’s a scarred zealot who turns their home into a punishment chamber.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built around a clean survival engine: a couple trapped in a house with a dangerous host. The religious extremism, remote setting, and home-invasion pressure give it a clear genre audience and a strong trailerable promise."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and stays readable: Brian and Leanne think they’re leasing a peaceful rural home, then realize Luke is controlling the property and the people inside it. The house rules, the hidden basement, and the escalating punishments make the story engine easy to grasp in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Luke is the standout, with a disturbing innocence-to-ferocity shift and a body that tells its own story, while Brian and Leanne function well as a stressed, intimate pair. The couple’s dynamic carries the movie, though their inner lives are mostly expressed through survival behavior rather than deeper personal contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a specific blend of domestic realism, religious mania, and body-horror imagery, especially in the freezer reveal and the dog sequence. The boldness comes from making the landlord a damaged, scripture-quoting predator whose idea of family is both childlike and monstrous."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The escalation is steady and clear: arrival, suspicion, confinement, punishment, escape attempt, and final confrontation. The story keeps introducing new pressure points — electrified exits, surveillance, starvation, and the hidden cellar — that keep the momentum moving."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea feels fresh because it fuses a rural rental setup with cult trauma and a deeply personal need for family. Luke’s fixation on purity, love, and replacement gives the premise an unsettling inevitability that feels specific rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The house and surrounding woods are vivid and story-generating, with the hidden basement, the electrified perimeter, and the scripture-marked interiors all doing narrative work. Beyond that immediate zone, the world is mostly functional, with the town and legal/cult history serving the plot rather than expanding it."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is sharply defined: rural dread, religious delusion, and sudden bursts of grotesque violence, all played with a straight face. The script knows exactly when to let tenderness breathe — especially between Brian and Leanne — so the horror lands harder."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are deeper currents here around abandonment, addiction, surrogate family, and the way abuse gets repackaged as care. The script hints at those layers through Luke’s scars, Brian’s relapse, and Leanne’s maternal pull, though the movie stays primarily in survival-thriller mode."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Brian and Leanne have a workable marriage engine, and Luke creates a strong triangle of need, suspicion, and control. The supporting world is lean, so the movie lives mostly on the central trio and the shifting power between them."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Luke is written as 12 in the opening flashback and 21 in the present-day story",
+          "Brian requires a visible physical impairment and a limp",
+          "Luke requires a physically imposing, athletic presence with extensive scar makeup",
+          "Pastor Caius is a strong supporting male role in his 50s",
+          "Sheriff and Deputy are small but functional supporting roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior forest/driveway beats",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Remote rural house with basement/trapdoor",
+          "Forest and roadside exteriors",
+          "Contained house interiors that can be redressed across the story",
+          "A practical vehicle sequence with a Corvette"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical gore and makeup: blood effects, mutilated bodies, corpse reveal, and a few electrics/phone blackout beats.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Electrified door gag, body impacts, knife and hammer violence, dog mutilation reveal, practical blood and corpse effects",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror / premium cable genre lane",
+        "content_level": "Mature, explicit",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or genre-streaming path"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained house-and-woods production with practical gore and a few stunt beats keeps it below large-scale horror, but the effects-heavy climax and multiple night exteriors add spend."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story is carried by three leads and a small supporting roster, with no name-talent dependency built into the material."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is concentrated, but the script uses multiple interior states of the same house plus forest, driveway, and road exteriors, with significant night work."
+        },
+        "content": {
+          "level": "high",
+          "note": "Child abuse, religious violence, mutilation, corpse imagery, and explicit gore push the material firmly into mature territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No real people, brands, named music, or external IP are central to the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The house is a trap with rules.",
+          "what_it_means": "That gives the movie a clean, producible engine: one location can keep changing its meaning as the couple learns how the place is controlled. Genre buyers love a contained setup that can still escalate through design, not just scale, and this one does that with the electrified exits, hidden cellar, and surveillance devices.",
+          "evidence": "The electrified door, the hidden trapdoor/cellar, the listening lamp device, and the house shifting from pristine to lived-in to prison-like.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Luke is a showcase villain role.",
+          "what_it_means": "The part gives an actor innocence, menace, physicality, and religious fervor in one package, which is exactly the kind of role that can break out in the genre market. Young male actors with range, especially those looking for a signature turn, will see the opportunity immediately.",
+          "evidence": "Luke’s childlike politeness, scripture quoting, scarred body, sudden violence, and final return after being presumed dead.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Brian and Leanne feel like a real marriage.",
+          "what_it_means": "Their banter, touch, shared history, and mutual panic give the film an emotional spine that broadens the audience beyond pure horror fans. Mid-career dramatic actors and recognizable TV faces would be drawn to a relationship that can play tenderness, irritation, and survival under pressure.",
+          "evidence": "Their playful intimacy, the relapse confession, the fostering conversation, and the way they coordinate under threat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script understands domestic horror.",
+          "what_it_means": "The terror comes from ordinary rituals turning predatory — breakfast, cleaning, showering, dinner, and family language all become instruments of control. That makes the movie feel marketable to horror audiences who want dread rooted in behavior, not just jump scares.",
+          "evidence": "The breakfast scene, the cleaning ritual, the lasagne dinner, and Luke’s obsession with being called family.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The body horror is practical and memorable.",
+          "what_it_means": "The gore is specific enough to sell in trailers and still grounded enough to keep the budget in a reachable lane. Horror buyers and festival programmers alike respond to effects that feel tactile, especially when they’re tied to character and not just spectacle.",
+          "evidence": "The dog in the washing machine, the freezer full of human remains, the scars on Luke’s body, and the knife/hammer violence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The religious angle gives the violence a code.",
+          "what_it_means": "Luke’s scripture, punishment logic, and purity obsession create a villain worldview that is easy to market and easy to remember. Faith-adjacent horror audiences, as well as buyers looking for a moral-psychological hook, will recognize the lane immediately.",
+          "evidence": "The Bible quotations, the “decently and in order” message, the scourging imagery, and Pastor Caius’s cult history.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax keeps turning the knife.",
+          "what_it_means": "The movie doesn’t just end on escape; it keeps reasserting Luke’s control, which gives the finale a nasty aftertaste and a stronger genre finish. That kind of escalation is what helps a horror feature land with audiences who want the last act to feel relentless.",
+          "evidence": "The apparent kill, the sheriff reveal, Luke’s return, and the final hammer attack.",
+          "source": "script"
+        }
+      ],
+      "headline": "HAVEN has a clean, commercial horror engine: a couple rents a remote house from a devout young landlord and slowly realizes the property is a punishment chamber built around his warped idea of family. The contained setting, practical gore, and strong central triangle make it easy to package for the genre lane, while Luke’s scarred, scripture-quoting role is the kind of part actors and buyers notice fast."
+    },
+    "lead_characters": [
+      {
+        "name": "Luke",
+        "role_type": "Lead",
+        "demographics": "Male · 21 · physically imposing, heavily scarred",
+        "hook": "Luke is a beautiful, damaged zealot who can switch from boyish sweetness to terrifying authority in a breath. He reads as emotionally arrested and spiritually overcharged, a young man who wants family, purity, and control so badly that he turns all three into violence.",
+        "why_actor_wants_this": "This is the showcase territory of Jack Gleeson in Game of Thrones or Barry Keoghan in The Killing of a Sacred Deer — a role where innocence curdles into menace and every smile carries threat. Actors chasing a breakout villain part will want the chance to play tenderness, physical dominance, religious mania, and final unmasking in one performance."
+      },
+      {
+        "name": "Brian Jackson",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s",
+        "hook": "Brian is a city-bred husband trying to rebuild his life after injury, addiction, and professional humiliation. He’s tender, anxious, and a little self-protective, which makes him believable as a man who wants peace badly enough to miss the danger in front of him.",
+        "why_actor_wants_this": "This is the showcase space of Matthew McConaughey in True Detective or Ben Mendelsohn in Animal Kingdom — a wounded adult male role where charm, fatigue, and fear all live in the same body. Character actors and prestige leads looking for a survival role with emotional bruising will respond to the relapse thread and the physical limitation built into the part."
+      },
+      {
+        "name": "Leanne Jackson",
+        "role_type": "Lead",
+        "demographics": "Female · 50s",
+        "hook": "Leanne is sharper than her husband, more socially agile, and increasingly the one who reads the room first. She’s affectionate, practical, and quietly ferocious, with a maternal instinct that becomes both her vulnerability and her weapon.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary or Frances McDormand in Fargo — a woman who can pivot from warmth to survival intelligence without losing emotional truth. Mid-career dramatic actresses looking for a role that lets them command the frame, drive the plan, and play terror with wit will chase this hard."
+      },
+      {
+        "name": "Pastor Caius",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Pastor Caius is a polished predator wrapped in religious authority, the kind of man who can bless you while sizing up how to own you. He carries himself like a patriarch and speaks like a prophet, which makes his corruption feel institutional rather than merely personal.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled menace of Ralph Fiennes in The Menu or Michael Shannon in Take Shelter — authority that feels dangerous before it ever turns overt. Character actors who specialize in intelligence, restraint, and moral rot will see a compact but memorable villain slot."
+      },
+      {
+        "name": "Leanne Jackson",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Leanne is Brian’s wife and the first person in the story who can translate the house into a social situation rather than just a threat. She’s practical, observant, and emotionally open, which lets her become the movie’s most active reader of Luke’s behavior.",
+        "why_actor_wants_this": "This role gives an actress the grounded marital texture of Laura Linney in Ozark or Patricia Clarkson in Sharp Objects — a partner who can carry exposition through behavior and still feel alive. Supporting-player specialists who excel at intelligence, warmth, and mounting dread will be drawn to it."
+      },
+      {
+        "name": "Miss Bennet",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s",
+        "hook": "Miss Bennet is the institutional face of the orphanage, a woman who speaks in the language of care while helping hand Luke over to a new system of control. She’s small in screen time but important as the story’s first signal that the adults around Luke are compromised.",
+        "why_actor_wants_this": "This is the kind of compact authority role that recalls Kathy Bates in Misery or Ann Dowd in Hereditary — a few scenes with a lot of moral pressure behind them. Strong character actresses who can make one entrance feel loaded will understand the value immediately."
+      },
+      {
+        "name": "Sheriff",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "The Sheriff is the late-arriving local authority who confirms the town’s history of violence and institutional failure. He’s pragmatic, blunt, and almost too calm, which makes the final reveal land with extra force.",
+        "why_actor_wants_this": "This is a classic grounded authority beat in the vein of J.K. Simmons in Whiplash or Jeffrey Wright in No Time to Die — a role that can reset the audience’s sense of safety in one scene. Working character actors who can deliver authority without overplaying it will fit cleanly."
+      },
+      {
+        "name": "Deputy",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-40s",
+        "hook": "The Deputy is the local witness who recognizes Luke and gives the story a grim civic memory. He functions as the human proof that this horror has a history, not just a present tense.",
+        "why_actor_wants_this": "This is the kind of supporting role that benefits from the understated credibility of a John Carroll Lynch-type performance slot — a few lines that make the world feel lived in. Actors who specialize in plainspoken authority and regional texture will fit the part."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a single house into a pressure cooker.",
+        "fit_profile": "First- or second-feature directors with a strong horror or thriller short behind them, especially those who favor performance-forward suspense over effects-heavy spectacle. This material rewards directors who understand blocking, escalation, and how to make a contained space feel like it’s closing in on the characters.",
+        "detail": "The script gives a director a clean visual grammar: pristine house, hidden basement, surveillance, electrified exits, then forest pursuit. It’s the kind of project that lets a filmmaker show control of tone and tension without needing a giant canvas."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming horror / premium genre buyer lane",
+        "detail": "It can be packaged around one breakout villain role and two strong adult leads, so it doesn’t require a star-heavy ensemble to function. The contained footprint and practical-effects-forward horror lane are exportable and fit the current buyer appetite for elevated, mid-budget genre."
+      }
+    },
+    "considerations": [
+      {
+        "area": "Luke’s backstory arrives in pieces.",
+        "detail": "The scars, the cult history, the parents, and Pastor Caius all land as the story advances, which keeps the mystery alive. A next pass could decide which single image or line most efficiently plants Luke’s wound earlier so the later revelations hit with even more inevitability.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The couple’s interior lives are mostly externalized.",
+        "detail": "Brian’s relapse and Leanne’s maternal pull are strong ingredients, and the movie already uses them well in the foster-child conversation and the final seduction play. One direction would be to give each of them one more private choice before the siege tightens, so their survival decisions feel even more personal.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final act is effects-forward.",
+        "detail": "The freezer reveal, the dog mutilation, the knife attack, and the hammer finish all ask for practical gore and careful execution. The version of the movie where one or two of those beats are simplified would keep the same brutality while protecting the budget and shoot schedule.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The house can carry the whole movie.",
+        "detail": "This is already a contained production, and the script smartly returns to the same rooms in new states. A producer can protect the narrative and the budget by leaning into redressable interiors and minimizing any expansion beyond the house, driveway, and woods.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cult history could be sharpened visually.",
+        "detail": "The newspaper clippings and Pastor Caius references do the job, but the story would gain even more texture if one recurring visual from the cult era became a signature. That would give the world a stronger memory mark without adding locations or cast.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 68,
+  "tier": "Optionable",
+  "inputTokens": 28684,
+  "outputTokens": 4460,
+  "cost": 0.041583,
+  "declaredFormat": "Feature film"
+}

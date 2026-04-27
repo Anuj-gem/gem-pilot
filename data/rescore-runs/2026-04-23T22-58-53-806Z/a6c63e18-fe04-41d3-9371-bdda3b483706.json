@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:26:31.564Z",
+  "submission_id": "a6c63e18-fe04-41d3-9371-bdda3b483706",
+  "eval_id": "8b472738-b804-4d47-b092-5f9cf8a099d6",
+  "title": "FULL HE LIVES Screenplay Script",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "GUEST 1337",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · battle-hardened former anomaly operative / father"
+    },
+    {
+      "name": "JEZ",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s playing ageless / physically imposing masked antagonist"
+    },
+    {
+      "name": "DAISY",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · wife / mother"
+    },
+    {
+      "name": "CAMERON",
+      "role_type": "Lead",
+      "demographics": "Male · 19 · teen/young adult"
+    },
+    {
+      "name": "DANIELA",
+      "role_type": "Supporting",
+      "demographics": "Female · 19 · teen/young adult"
+    },
+    {
+      "name": "PAUL RENNICK",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · police officer / investigator"
+    },
+    {
+      "name": "COMMANDER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · military / federal authority"
+    },
+    {
+      "name": "A.S.T. COMMANDER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · battle-hardened federal operative"
+    },
+    {
+      "name": "SCIENTIST",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · anxious lab/science specialist"
+    },
+    {
+      "name": "DRA. REEVES",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · lead scientist"
+    },
+    {
+      "name": "AGENT LIAN CHO",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · federal agent"
+    },
+    {
+      "name": "ROOK",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · bar owner"
+    },
+    {
+      "name": "HENRY",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · grandfather"
+    }
+  ],
+  "positioning_hook": "A former black-ops anomaly hunter must protect his family when a glitching, mask-wearing killer from a sealed Area 51 program comes home to harvest the town’s signal and everyone in it.",
+  "cost_usd": 0.04127925,
+  "input_tokens": 24055,
+  "output_tokens": 5164,
+  "status": "wrote:leads_ok"
+}

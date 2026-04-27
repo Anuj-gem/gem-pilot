@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Anthology drama",
+      "genre_tags": [
+        "crime",
+        "melodrama"
+      ],
+      "tone": "Didactic, heightened, soap-operatic, and episodic"
+    },
+    "positioning_hook": "A sprawling anthology of Nigerian crime, political ambition, and self-reinvention follows gang members, lovers, students, and hustlers as each chases redemption, power, or escape.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The material has pockets of built-in audience interest — gang crime, courtroom reversal, political scandal, marriage drama, and an inspirational publishing arc — but they arrive as separate lanes rather than one clear commercial promise. A buyer can see the appetite for sensational human behavior, yet the overall package is harder to sell as a single feature event."
+      },
+      "conceptual_hook_clarity": {
+        "score": 2,
+        "reasoning": "The script reads as a sequence of distinct stories and moral lectures rather than one feature engine. Individual sections have premises — Bode’s gang confession, Shade’s betrayal, the election showdown, Park’s hypnosis empire — but the throughline is not established as one clean, explainable movie."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 4,
+        "reasoning": "Bode, Shade, Gloria Garcia, and Park each have a strong headline identity, but they are introduced in isolated blocks and rarely interact as a living ensemble. The roles are more functional than layered, though several of them could become actor magnets if developed into a single centered story."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The script is unmistakably idiosyncratic in scale and subject matter, moving from armed robbery to Brazilian politics to Korean hypnosis to literary self-help. That boldness is real, but it plays more as accumulation than as a controlled artistic strategy."
+      },
+      "narrative_momentum_engagement": {
+        "score": 3,
+        "reasoning": "Each section has forward motion inside its own mini-arc, but the feature as a whole keeps restarting instead of escalating. The courtroom confession, election victory, and publishing seminar all feel like separate endings, so the momentum resets rather than compounds."
+      },
+      "resonant_originality": {
+        "score": 4,
+        "reasoning": "There are unusual ingredients here — a parapsychologist agent, a gang informant turned lawyer case, a female Brazilian president, a hypnotic global cult, and a publishing success story — but they do not yet fuse into a single inevitable concept. The freshness is in the parts more than in the whole."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The script moves through clubs, courts, airports, stadiums, hospitals, churches, and offices across multiple countries, which gives it surface breadth. The world-building is broad rather than specific, so the settings feel like containers for speeches and events more than systems with their own rules."
+      },
+      "tonal_specificity": {
+        "score": 4,
+        "reasoning": "The tone is consistently heightened and earnest, with moral declarations, public speeches, and melodramatic reversals. That consistency helps, but the script does not yet settle into a singular tonal identity beyond broad soap-opera intensity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "Several sections hint at deeper material — corruption, gender politics, religious manipulation, education, publishing gatekeeping — and the script clearly wants to speak to social systems. Those themes are present, but they are stated more than dramatized, so the deeper layer is visible without fully opening."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 3,
+        "reasoning": "The script contains many relationships, but they are mostly one-off pairings that serve a single episode of the anthology. There is not yet a web where secondary characters generate independent story energy off one another."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 8,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple age spans for David",
+          "Mixed-nationality and ethnicity-specific casting across several segments",
+          "Large supporting cast in the robbery and political rally sections",
+          "Female lead roles across crime, politics, and publishing segments"
+        ]
+      },
+      "locations": {
+        "distinct_count": 25,
+        "interior_exterior_ratio": "roughly balanced",
+        "period_or_contemporary": "contemporary with one period-coded segment (circa 1995) and one historical/WWI-era segment",
+        "notable_requirements": [
+          "Nigeria, Brazil, South Korea, Europe, Saudi Arabia, New Zealand, and airport/stadium/courtroom environments",
+          "Period styling for the 1995 Nigerian section and the early-20th-century hypnosis section",
+          "Large public rally and auditorium setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily title cards, travel transitions, crowd extensions, and possible screen inserts; no major effects engine is written.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, gunshot deaths, a home invasion, and a brief fight sequence.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "KLM, British Petroleum, Muritala Mohammed International Airport, Madison Square Garden, and Channel 456 are named."
+        },
+        {
+          "type": "brand",
+          "detail": "Skyline Publishers and American Literature Online are named as media/publishing entities."
+        },
+        {
+          "type": "real_person",
+          "detail": "No clear real people are explicitly named as historical figures; the political and religious characters appear fictional."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Low-budget international anthology drama or faith/social-message feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or niche theatrical with strong regional marketing; the material is structured as multiple self-contained feature-length stories rather than one unified commercial engine."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script is not effects-heavy, but the multi-country settings, crowd scenes, period sections, and large cast push it above a simple contained drama."
+        },
+        "cast": {
+          "level": "high",
+          "note": "It spans multiple lead clusters, child and adult versions of David, and several identity-specific roles across different countries and social classes."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through Nigeria, Brazil, South Korea, Saudi Arabia, New Zealand, and multiple public venues, including stadiums, airports, courts, and churches."
+        },
+        "content": {
+          "level": "high",
+          "note": "The robbery material includes murder, rape, molestation, gun violence, infidelity, and suicide, which narrows platform and rating lanes."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several brand and institution names are used directly, and the airport, airline, and media references would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The script has anthology-scale ambition.",
+          "what_it_means": "There is a clear opportunity to package this as a multi-story social drama with several entry points for audiences who like big, morally charged narratives. That kind of breadth can attract producers looking for a regional showcase or a prestige anthology feature with exportable themes.",
+          "evidence": "The screenplay moves from The Notorious Circle to Brazilian politics to Korean hypnosis to a marriage cautionary tale and a publishing success story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Bode’s confession is a built-in centerpiece.",
+          "what_it_means": "The prison interview gives the project a strong actor-facing spine and a natural promotional anchor for a performance-driven campaign. Character actors and prestige buyers will recognize the value of a role that can carry remorse, criminal history, and spiritual turnaround in one stretch.",
+          "evidence": "The long visitor-room monologue where Bode explains the gang, the initiation, the robberies, and his desire for vindication.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The material is unapologetically melodramatic.",
+          "what_it_means": "That heightened register gives the project a clear lane with audiences who respond to big reversals, public declarations, betrayals, and moral testimony. It also makes the script easy to market in territories where emotional directness and sermon-like storytelling travel well.",
+          "evidence": "Shade discovering John Philips with Dare, the election speeches, the public betrayal in the stadium, and the final publishing triumph.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The political sections have crowd-pleasing scale.",
+          "what_it_means": "The rally scenes and televised election beats create a visible public arena that can support a larger-than-life campaign movie or political melodrama. Buyers who want a socially legible, audience-readable political story will see immediate trailer material in the speeches and vote-count reveal.",
+          "evidence": "The stadium rallies for Rodriguez Mata and Gloria Garcia, followed by the live election result and televised interviews.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The publishing arc gives the script an inspirational finish.",
+          "what_it_means": "The final section opens a clean lane for uplift, self-improvement, and literary-industry aspiration, which broadens the audience beyond crime and politics. That makes the project attractive to faith-adjacent and motivational buyers who want a closing movement that feels affirming.",
+          "evidence": "Alice’s rejection letters, her seminar speech, the publication acceptance, and the award/interview sequence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script is not trying to be small, and that is part of its appeal: it reaches for crime saga, political spectacle, spiritual cautionary tale, and inspirational redemption all in one package. For the right producer, the opportunity is a bold, regionally rooted anthology feature with multiple audience hooks and several actor-facing centerpiece roles."
+    },
+    "lead_characters": [
+      {
+        "name": "BODE",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s · Nigerian",
+        "hook": "Bode is the wounded insider: the youngest member of a violent crew, spared from death, branded by initiation, and forced to live with the moral residue of crimes he says he could not fully commit. He carries the emotional weight of a man who has seen too much, done too little to stop it, and now wants the world to believe there is still a clean version of him underneath the damage.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in *Traffic* or Tom Hardy in *Bronson* — a role where damaged interiority and criminal history become the performance. Actors who want a prison-confession centerpiece with remorse, menace, and spiritual turnaround will chase it."
+      },
+      {
+        "name": "BARRISTER SHADE JOHNSON",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s-30s · Nigerian",
+        "hook": "Shade is a young freelance lawyer with social mobility, family influence, and a public-facing confidence that lets her move between prison, court, home, and office. She is written as a woman who can advocate for the defenseless, but whose private life is pulled into betrayal, family expectation, and the pressure to perform certainty.",
+        "why_actor_wants_this": "This is the showcase space of Viola Davis in *How to Get Away with Murder* or Kerry Washington in *Scandal* — a polished, high-functioning woman whose authority is constantly tested by private collapse. Actors looking for a role that can play intelligence, romantic disappointment, and moral urgency in the same frame will want it."
+      },
+      {
+        "name": "ALICE GEORGE",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s · Nigerian",
+        "hook": "Alice is the connector and the survivor: first an informant in the robbery world, later a public voice in the publishing world, and always someone who understands systems and how to work them. She has a hustler’s instinct, a lecturer’s certainty, and a self-mythologizing streak that makes her feel like both participant and narrator of her own rise.",
+        "why_actor_wants_this": "This is the kind of transformation role that gave Taraji P. Henson in *Empire* or Octavia Spencer in *The Help* a platform to command attention through voice and presence. Actors who want a role that can pivot from criminal complicity to public authority will see a lot to play."
+      },
+      {
+        "name": "RODRIGUEZ MATA",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-60s · Brazilian",
+        "hook": "Rodriguez Mata is a polished populist with the cadence of a statesman and the appetite of a survivor. He speaks like a reformer, campaigns like a tactician, and reveals a ruthless willingness to weaponize scandal when the race turns against him.",
+        "why_actor_wants_this": "This is the performance lane of Bryan Cranston in *All the Way* or Michael Stuhlbarg in a political drama — a public man whose charm and calculation are both visible at once. Actors who want a speech-heavy role with authority, vanity, and strategic cruelty will be drawn to it."
+      },
+      {
+        "name": "GLORIA GARCIA",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-60s · Brazilian",
+        "hook": "Gloria is the first-female-president figure who speaks in the language of liberation, reform, and national pride, then reveals the fragility of power when the campaign turns personal. She is both symbol and person: a woman carrying the burden of representation while trying to keep control of her own image.",
+        "why_actor_wants_this": "This is the showcase territory of Meryl Streep in *The Iron Lady* or Viola Davis in *The Woman King* — a commanding public figure whose authority is inseparable from the cost of being watched. Actors who want a role built around speeches, image management, and political vulnerability will chase it."
+      },
+      {
+        "name": "PARK / SUNG LEE",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-50s across the arc · Korean",
+        "hook": "Park is the charismatic manipulator who turns mysticism, hypnosis, and global religious ambition into a personal empire. The later identity shift to Sung Lee gives him a second mask, making him feel like a man who understands that reinvention is part of the con.",
+        "why_actor_wants_this": "This is the kind of shape-shifting role that gave Rami Malek in *Mr. Robot* or Jared Leto in *House of Gucci* a chance to play persona as strategy. Actors who want a performance that moves from guru to fraud to fugitive will see a lot of range here."
+      },
+      {
+        "name": "KEN",
+        "role_type": "Lead",
+        "demographics": "Male · late teens-20s",
+        "hook": "Ken begins as the classroom underachiever who gets publicly shamed, then remakes himself into a polished international businessman. He is the classic self-inventor, but the script gives him a bitter edge: success is not just aspiration for him, it is revenge against humiliation.",
+        "why_actor_wants_this": "This is the rise-and-fall territory of a young Leonardo DiCaprio in *The Wolf of Wall Street* or John Boyega in a coming-of-age drama — a role where ambition becomes identity. Actors who want a transformation arc from dismissed student to global operator will be interested."
+      },
+      {
+        "name": "DAVID",
+        "role_type": "Lead",
+        "demographics": "Male · 5, 15, 25, 30, 35, 36, 38 · African-American / mixed-heritage family context",
+        "hook": "David is the relationship fatalist: a boy raised to believe in lifelong love who keeps colliding with betrayal, rumor, and his own inability to settle. Across the time jumps he becomes a man defined by longing, disappointment, and the humiliating gap between the marriage he imagined and the life he actually lives.",
+        "why_actor_wants_this": "This is the emotional-spanning territory of *Boyhood* or *Moonlight* in miniature — a role that lets an actor chart identity across years and let the audience feel the accumulation of choices. Actors who want a life-arc part with romantic ache and public embarrassment will chase it."
+      },
+      {
+        "name": "ALICE",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · Caucasian",
+        "hook": "Alice is the self-styled learning authoress who turns rejection into doctrine and doctrine into a public brand. She is part motivational speaker, part literary evangelist, and part survivor of the publishing gatekeepers she keeps naming in her own voice.",
+        "why_actor_wants_this": "This is the kind of monologue-driven showcase that gave Frances McDormand in *Nomadland* or Toni Collette in *Hereditary* the chance to hold a room through voice and conviction. Actors who want a role built around public speaking, self-definition, and eventual vindication will be drawn to it."
+      },
+      {
+        "name": "MR. SMITH",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-60s",
+        "hook": "Mr. Smith functions as the off-screen bridge between Bode’s past and the possibility of legal or moral rescue. He is less a fully dramatized person than a trusted node in the story’s network, the kind of figure who can carry authority through absence.",
+        "why_actor_wants_this": "This is the compact, scene-stealing territory of a character actor in *The Shawshank Redemption* or *A Few Good Men* — a role that can land with very little screen time if played with gravity. Character actors who specialize in credibility and quiet authority will be interested."
+      },
+      {
+        "name": "MR. PETER JOHNSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s",
+        "hook": "Mr. Peter Johnson is the father figure who moves from institutional authority to conditional forgiveness. He carries the social power of money, family, and business, and the script uses him as the gatekeeper to Bode’s second chance.",
+        "why_actor_wants_this": "This is the kind of elder-statesman role that gave James Earl Jones in *Field of Dreams* or Morgan Freeman in *Driving Miss Daisy* a chance to embody moral weight. Veteran actors who can make generosity feel earned will be drawn to it."
+      },
+      {
+        "name": "JOHN PHILIPS",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-40s",
+        "hook": "John Philips is the betrayed fiancé whose private life detonates the public promise around him. He is written as a man whose identity is partly defined by rumor, exposure, and the emotional shock of being seen in a way he did not control.",
+        "why_actor_wants_this": "This is the kind of emotionally volatile supporting role that gave Billy Crudup in *Almost Famous* or Armie Hammer in relationship drama territory a chance to flip from charm to humiliation. Actors who want a betrayal scene with immediate audience sympathy will see the appeal."
+      },
+      {
+        "name": "SARAH",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Sarah is the friend who knows how to deliver the truth with a smile and a warning. She functions as the social antenna in Shade’s world, the person who can turn gossip into plot movement.",
+        "why_actor_wants_this": "This is the sharp supporting-friend lane of a role like the confidante in *Sex and the City* or *Insecure* — a part that gets to be funny, observant, and catalytic. Actors who like playing the smartest person in the room for a scene at a time will want it."
+      },
+      {
+        "name": "SCOTT",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-40s",
+        "hook": "Scott is Spencer’s practical friend and sounding board, the one who delivers bad news and financial lifelines with equal ease. He exists as a stabilizing presence in a story about collapse and reinvention.",
+        "why_actor_wants_this": "This is the grounded best-friend role that often lands well in films like *Good Will Hunting* or *The Pursuit of Happyness* — a part that gives an actor warmth, timing, and loyalty without needing the whole movie. Supporting players who specialize in easy chemistry will be interested."
+      },
+      {
+        "name": "SPENCER HILL",
+        "role_type": "Lead",
+        "demographics": "Male · late teens-20s",
+        "hook": "Spencer is the gifted student whose early promise curdles into vanity, financial collapse, and self-destruction. He is written as a cautionary figure whose intelligence is real, but whose ego and appetite outgrow the life he built.",
+        "why_actor_wants_this": "This is the rise-and-crash territory of *Whiplash* or *The Social Network* — a role where ambition, humiliation, and self-sabotage all live in the same body. Actors who want a sharp, modern cautionary arc will chase it."
+      },
+      {
+        "name": "MARK FISHER",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-60s",
+        "hook": "Mark Fisher is the teacher who measures students publicly and speaks in blunt verdicts. He is less a private character than a force of judgment, the kind of authority figure who can define a young person’s self-image in one classroom exchange.",
+        "why_actor_wants_this": "This is the hard-edged educator role that gives an actor the kind of authority seen in *Dead Poets Society* or *Stand and Deliver* — a part built on memorable line delivery and institutional presence. Character actors who can make a classroom feel like a battleground will want it."
+      },
+      {
+        "name": "CANDICE / CANDY",
+        "role_type": "Supporting",
+        "demographics": "Female · 15-30s · Arabic/Jamaican ancestry across the arc",
+        "hook": "Candice is the romantic object who becomes the measure of David’s hopes and disappointments. She is defined less by interiority than by the way the script uses her to expose David’s idealism, jealousy, and eventual disillusionment.",
+        "why_actor_wants_this": "This is the kind of romantic pivot role that can land with the emotional force of a key relationship in *Atonement* or *Blue Valentine*. Actors who want to play the person whose choices reshape a man’s life will see the opportunity."
+      },
+      {
+        "name": "EUNICE",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Eunice is the final marriage choice that turns into legal and emotional fallout. She functions as the last chapter in David’s long pattern of romantic misreading, giving the story a concrete endpoint for his self-judgment.",
+        "why_actor_wants_this": "This is the late-stage relationship role that gives an actor the kind of domestic confrontation seen in *Marriage Story* or *Kramer vs. Kramer*. Performers who can make a breakup feel like a verdict will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage big moral speeches and public reversals without losing emotional heat.",
+        "fit_profile": "Mid-career indie directors or TV-to-feature directors who have already handled ensemble drama, social commentary, or prestige melodrama. This material rewards filmmakers who care about performance, public spectacle, and cross-cutting between private pain and public consequence.",
+        "detail": "The project gives a director room to orchestrate speeches, rallies, prison scenes, and intimate betrayals in a single package. It will appeal to directors who can make heightened material feel emotionally legible and who are comfortable working across multiple countries, tones, and lead clusters."
+      },
+      "buyer_appeal": {
+        "tier": "Low-budget to modest mid-budget feature",
+        "lane": "International social drama / faith-adjacent melodrama / anthology prestige lane",
+        "detail": "The advantage is that the script can be cast around strong regional performers and does not require heavy VFX or action spectacle to function. The export lever is the mix of crime, politics, romance, and inspirational testimony, which gives it multiple audience hooks in African, diaspora, and faith-oriented markets."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The feature reads as several movies.",
+        "detail": "The biggest value move is to decide whether Bode, Shade, Gloria, Park, David, or Alice is the true center and then let the other material orbit that spine. Right now the script’s anthology shape creates breadth, but a single protagonist thread would sharpen the emotional payoff and make the package easier to sell.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The speeches carry the plot more than action does.",
+        "detail": "A next pass could let one or two key reversals arrive through behavior instead of explanation — especially Bode’s prison confession, the political rally speeches, and Alice’s publishing seminar monologue. The material already has strong declarative writing; the version where one major turn is dramatized in action would give the feature more propulsion.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is wide.",
+        "detail": "Nigeria, Brazil, South Korea, Saudi Arabia, New Zealand, and multiple public venues create a travel-heavy production plan. The simplifying version would be to collapse some of the international movement into fewer anchor locations while preserving the sense of global reach through dialogue, media, and inserts.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast spans several distinct lead clusters.",
+        "detail": "The script asks for multiple age ranges, ethnicities, and national identities, plus child casting in David’s opening section. That breadth can be a strength, but the packaging version that narrows the number of lead clusters would make financing and scheduling cleaner without changing the core themes.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The content sits in a mature lane.",
+        "detail": "The robbery material includes murder, rape, molestation, suicide, and betrayal, so the release strategy should assume adult audiences and platform sensitivity. That positioning is workable, but it should be embraced early so the marketing promise matches the material on the page.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 38.3,
+  "tier": "Needs Development",
+  "inputTokens": 22997,
+  "outputTokens": 6055,
+  "cost": 0.04449525,
+  "declaredFormat": "Feature film"
+}

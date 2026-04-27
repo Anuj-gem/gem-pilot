@@ -42,20 +42,30 @@ export interface TopCardDisplay {
   tone: string
   /** Format is NOT editable — it drives scoring and is declared at submission. */
   format: string
+  /** Writer-editable tags. Source of truth is `script_submissions.tags`,
+   *  not the eval JSON. Edited via the dedicated tag chips editor (see
+   *  ScriptTagsEditor / /api/scripts/[id]/tags). Empty array if none. */
+  tags: string[]
 }
 
 /**
- * Given the stored evaluation payload plus any writer edits and the submission
- * title, produce the values the top card should render.
+ * Given the stored evaluation payload plus any writer edits, the submission
+ * title, and the submission's tag list, produce the values the top card
+ * should render.
  *
  * Edited values win over the original evaluation content. A missing / empty
  * edited value falls through to the generated value. Handles legacy evaluations
  * where classification may live under `format_detection` instead.
+ *
+ * `submissionTags` is the source of truth for tags — they live on
+ * `script_submissions.tags`, not on the eval JSON, because the writer can edit
+ * them post-eval via the dedicated tags editor. Pass [] when no tags exist.
  */
 export function getDisplayTopCard(
   evaluation: GEMEvaluation | null | undefined,
   editedFields: EditedFields | null | undefined,
-  submissionTitle: string
+  submissionTitle: string,
+  submissionTags: string[] | null | undefined = []
 ): TopCardDisplay {
   const ef = editedFields ?? {}
   const cls: any =
@@ -82,6 +92,9 @@ export function getDisplayTopCard(
     genre_secondary: editedSecondary ?? generatedSecondary,
     tone: nonEmpty(ef.tone) ?? cls.tone ?? '',
     format: cls.format ?? '',
+    tags: Array.isArray(submissionTags)
+      ? submissionTags.filter((t): t is string => typeof t === 'string' && t.trim().length > 0)
+      : [],
   }
 }
 

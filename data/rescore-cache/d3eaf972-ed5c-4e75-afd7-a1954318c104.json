@@ -1,0 +1,314 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime comedy",
+      "genre_tags": [
+        "Heist",
+        "Romantic farce"
+      ],
+      "tone": "Broad, irreverent, sexually charged, fast-talking, and cartoonishly heightened with a Vegas-noir edge"
+    },
+    "positioning_hook": "A Vegas accountant-turned-swindler juggles three ex-lovers, a mob-linked casino scheme, and a million-dollar chip caper before the Strip turns the chase back on him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has an easy-to-sell engine — Vegas, gambling, ex-lovers, and a caper — and the opening chase immediately signals commercial energy. The audience is more specific than four-quadrant, though, because the script’s broad sexual comedy and old-school farce play best for viewers who like bawdy crime comedy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early: Max’s past with Cindy, Tawna, and Natasha, plus the chip-laundering plan, are all established before the midpoint. The story engine is clear, even if the script keeps stacking subplots and side-businesses around the central con."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Max has a strong comic survival instinct, George has the best defined voice in the piece, and the three women each arrive with a distinct behavioral lane. The characters are built more for immediate comic collision than deep interiority, but the roles are playable and actor-friendly."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits hard to a Vegas-specific, sexed-up, scam-heavy comic universe and keeps finding new transactional absurdities, from lemon squares to Alpha Hold ’Em to the chip switch. The boldness is in the volume and specificity of the comic invention, not in a radically unfamiliar dramatic shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through reversals, cross-calls, casino set pieces, and escalating pressure from Stovich and Sinaloa. The final chase and the casino run deliver the kind of kinetic payoff that keeps the pages turning."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A Vegas caper driven by a man trying to manage three former lovers while laundering chips through a casino floor has a fresh, ownable comic premise. The idea feels specific enough to remember, especially with the gambling mechanics and the romantic chaos fused together."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script lives inside a very legible Vegas ecosystem: casinos, police, strip clubs, buffets, real estate condos, and the Mob Museum all feel like part of one social machine. The repeated references to gaming operations, chip handling, and casino culture give the world a usable texture beyond backdrop."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably bawdy, fast, and shamelessly comic, with a constant undercurrent of criminal pressure. The script knows exactly how outrageous it wants to be, and the repeated sexual banter, ethnic comedy, and Vegas swagger create a consistent voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are hints of a deeper family-and-loyalty story under the farce, especially in George’s devotion to Anna and Max’s need for approval. The script mostly stays on the surface of the comic machinery, though, so the emotional aftertaste is lighter than the premise suggests."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Max/George dynamic is strong, and the three women create a triangle of competing pressures that keeps generating scenes. Andre, Stovich, Sinaloa, Anna, and Rose all add usable friction, giving the script a real ensemble web rather than a solo vehicle."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Latino lead",
+          "Black female lead",
+          "Polynesian male supporting role",
+          "Multiple 30s-60s adult roles",
+          "Ensemble of 16 immigrant day-player roles in one sequence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior Vegas street and casino frontage scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Las Vegas Strip and downtown exteriors",
+          "Casino interiors, cage, vault, count room, incinerator room",
+          "Mob Museum exterior",
+          "Airport/road chase coverage",
+          "Strip chase with helicopter coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Helicopter coverage, chase augmentation, and some crowd/street coordination; no heavy effects world.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire ricochets, car chase impacts, crash sequence, practical casino destruction beats, hand-to-hand scuffles",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Andromeda, Kirsten and Sons, and named casino properties are fictional brands within the script."
+        },
+        {
+          "type": "brand",
+          "detail": "Aston Martin DB9 Volante Convertible is prominently named."
+        },
+        {
+          "type": "brand",
+          "detail": "Rolls Royce dealership and vehicle are prominently named."
+        },
+        {
+          "type": "brand",
+          "detail": "UNLV is referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "Mandalay Bay, Stratosphere, Fremont Street, Harry Reid Airport, and the Mob Museum are named locations."
+        },
+        {
+          "type": "real_person",
+          "detail": "Frank Sinatra is referenced by name in a framed autograph."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or mid-budget theatrical comedy",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or limited theatrical with strong streaming afterlife"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary Vegas locations, multiple casino interiors, a car chase, helicopter coverage, and a large ensemble push this above contained indie but below tentpole."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script leans on five major adult roles, a sizable supporting web, and a 16-person immigrant ensemble sequence that benefits from strong comic casting."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through casinos, homes, offices, a mob museum, a dealership, a warehouse, and multiple Vegas street exteriors, including a chase corridor."
+        },
+        "content": {
+          "level": "high",
+          "note": "Sexual comedy, nudity-adjacent situations, profanity, gunplay, drug references, and a chase through public streets keep this firmly in mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses several named real-world Vegas landmarks and a named celebrity reference, but no obvious third-party IP spine drives the plot."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Vegas is the engine, not the wallpaper.",
+          "what_it_means": "The script turns the city into a transactional playground where casinos, buffets, strip clubs, and street chases all feed the same comic machine. That gives buyers a built-in setting hook and a marketing image that reads instantly in a trailer or thumbnail, especially for streamer audiences who respond to place-specific crime comedy.",
+          "evidence": "The opening Strip chase, the casino floor laundering scheme, the Mob Museum meeting, and the final Strip pursuit all keep the city active in the story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "George is a strong comic anchor.",
+          "what_it_means": "The accountant’s precision, outrage, and reluctant criminal competence create a role that can carry both the procedural mechanics and the laughs. Character actors who can play exasperation, intelligence, and moral compromise in one frame will see real showcase value here, and buyers get a dependable scene-steering presence.",
+          "evidence": "George’s lemon-square gag, his Alpha Hold ’Em pitch, and his increasingly frantic chip-switching sequence all give him a distinct comic rhythm.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The women each have a clear comic lane.",
+          "what_it_means": "Tawna, Natasha, and Cindy are not interchangeable love interests; each has a different appetite, voice, and behavioral engine, which makes the romantic chaos legible and castable. That gives the project a strong ensemble hook for actresses who want bold, high-contrast roles with attitude, sexuality, and comic aggression.",
+          "evidence": "Tawna’s blunt dominance, Natasha’s glamorous opportunism, and Cindy’s sweet-to-steely pivot all play differently across their scenes with Max.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The chip con is a clean commercial device.",
+          "what_it_means": "The laundering plan is easy to explain, easy to visualize, and gives the movie a built-in escalation path from setup to casino-floor execution. That kind of mechanism is attractive to producers because it promises a playable third act and a trailer-friendly payoff for audiences who like heists with rules.",
+          "evidence": "The fake chip switch, the count-room verification, the incinerator dump, and the casino cash-out sequence all dramatize the con step by step.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a real ensemble web.",
+          "what_it_means": "Max, George, Cindy, Tawna, Natasha, Andre, Stovich, Sinaloa, Anna, and Rose all create cross-pressure that can generate scenes beyond the central plot. That makes the material more packageable than a solo star vehicle because multiple supporting players have enough texture to attract recognizable character actors.",
+          "evidence": "The phone-call triangulation, the house full of immigrants, the police pressure, and the family-money negotiations all keep relationships in motion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It knows how to stage a comic set piece.",
+          "what_it_means": "The script repeatedly turns exposition into action, which is exactly what keeps a broad comedy from feeling static. Directors and buyers alike can see the movie in moments like the casino counting room, the split-screen gambling run, and the final Strip chase.",
+          "evidence": "The intercut casino montage, the split-screen gambling sequence, and the opening/closing pursuit are all built as visual set pieces.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a loud, playable Vegas crime comedy with a real engine: a fast-talking accountant, three volatile exes, and a chip-laundering scheme that turns the casino floor into a pressure cooker. The script’s biggest asset is that it knows exactly what kind of movie it is — broad, bawdy, and built for actors who can weaponize comic timing."
+    },
+    "lead_characters": [
+      {
+        "name": "MAX DUARTE",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · Latino",
+        "hook": "Max is a hustler with a salesman’s mouth and a survivor’s reflexes, forever trying to look like he has a plan even when he’s improvising at gunpoint. He’s charming, slippery, and emotionally overextended, which makes him a natural engine for romantic chaos and criminal escalation at the same time.",
+        "why_actor_wants_this": "This is the showcase territory of George Clooney in *Out of Sight* — a smooth operator whose charm is always one bad decision away from collapse. Actors who can play seduction, panic, and comic self-preservation in the same beat will chase it, especially leading men looking for a role that lets them be funny, dangerous, and perpetually cornered."
+      },
+      {
+        "name": "GEORGE DUARTE",
+        "role_type": "Lead",
+        "demographics": "Male · 60s · Latino",
+        "hook": "George is a buttoned-up accountant with a moral code, a short fuse, and a buried appetite for the life he pretends to despise. He’s the script’s straight man and secret wild card, which gives him the best blend of authority, irritation, and comic release in the piece.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* or Ed Harris in *The Truman Show* — a controlled, intelligent man whose composure becomes the joke and the tension. Veteran character leads and prestige supporting players will want it because the role lets them play precision, outrage, and reluctant criminal genius in one package."
+      },
+      {
+        "name": "CINDY SHERMAN",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Cindy starts as the girl-next-door and ends up the most quietly formidable person in the room, which is exactly why Max can’t manage her. She has warmth, judgment, and a latent steeliness that lets her pivot from romantic innocence to the one person who can actually call the movie’s bluff.",
+        "why_actor_wants_this": "This is the showcase territory of Jennifer Jason Leigh in *The Hudsucker Proxy* or Amy Adams in *Sharp Objects* — a seemingly gentle woman who reveals sharper intelligence and stronger will than anyone expects. Actresses who want a role that can play sweetness, hurt, and final authority will see real value here."
+      },
+      {
+        "name": "TAWNA WILLIAMS",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · Black",
+        "hook": "Tawna is blunt, sexual, funny, and physically fearless, the kind of woman who enters a scene already in control of the temperature. She’s written as a force of appetite and threat, which makes her a vivid comic antagonist and a magnetic romantic complication.",
+        "why_actor_wants_this": "This is the showcase territory of Regina Hall in *Support the Girls* or Janelle Monáe in *Glass Onion* — a woman who can weaponize wit, sexuality, and command in the same performance. Actors who want a bold, scene-stealing role with attitude and physicality will chase it."
+      },
+      {
+        "name": "NATASHA POLCHENYOSKI",
+        "role_type": "Lead",
+        "demographics": "Female · 40s · Blonde, statuesque",
+        "hook": "Natasha is glamorous, calculating, and never far from a self-serving angle, but the script also lets her be funny about her own appetites. She reads like a woman who knows exactly how to turn desirability into leverage, which makes her both a comic pleasure and a genuine threat.",
+        "why_actor_wants_this": "This is the showcase territory of Sharon Stone in *Casino* — a woman whose allure is inseparable from manipulation and danger. Mid-career actresses who want a sexy, sharp, high-status role with bite will be drawn to it."
+      },
+      {
+        "name": "ANDRE",
+        "role_type": "Supporting",
+        "demographics": "Male · late 60s",
+        "hook": "Andre is the lovable chaos merchant of the family, a man whose house is always one step from collapse and somehow still full of life. He’s comic relief with a hustler’s instinct, and his easy rapport with Max gives the movie a warmer, looser texture.",
+        "why_actor_wants_this": "This is the kind of role John Turturro or Danny Trejo has made memorable in ensemble crime comedy — a character who can steal scenes with attitude, warmth, and lived-in eccentricity. Character actors who enjoy playing a lovable operator with a few secrets will lean in."
+      },
+      {
+        "name": "LIEUTENANT JERRY STOVICH",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s",
+        "hook": "Stovich is a cop who knows exactly how crooked the town is and has learned to survive by laughing at it before it laughs at him. He’s sardonic, streetwise, and oddly pragmatic, which makes him a great pressure valve in the story.",
+        "why_actor_wants_this": "This is the showcase territory of Dennis Farina in *Get Shorty* — a lawman who feels like he’s been around the block enough times to enjoy the joke. Veteran character actors who can play menace and amusement at once will want this part."
+      },
+      {
+        "name": "PAUL SINALOA",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Polynesian",
+        "hook": "Sinaloa is old Vegas muscle with a buffet-sized appetite and a hair-trigger temper, but the script plays him with enough comic specificity to keep him from becoming generic heaviness. He’s dangerous, funny, and weirdly patient, which makes him a memorable pressure source.",
+        "why_actor_wants_this": "This is the showcase territory of Ving Rhames in *Pulp Fiction* — a heavy who can dominate a room with presence and comic timing. Actors with physical authority and a taste for deadpan menace will chase it."
+      },
+      {
+        "name": "ANNA DUARTE",
+        "role_type": "Supporting",
+        "demographics": "Female · early 30s",
+        "hook": "Anna is the practical center of the Duarte household, the one person who keeps the family from floating completely into absurdity. She’s grounded, patient, and quietly burdened, which gives the movie a needed human anchor.",
+        "why_actor_wants_this": "This is the kind of grounded family role that gave Laura Linney in *The Savages* its emotional authority — a woman whose calm is doing a lot of hidden work. Actresses who can play steadiness with emotional weight will respond to it."
+      },
+      {
+        "name": "ROSE",
+        "role_type": "Supporting",
+        "demographics": "Female · child/young teen",
+        "hook": "Rose is the sharpest quiet observer in the house, the kid who sees more than the adults realize and says it with unnerving clarity. She gives the script a smart, dry counterpoint to the adult chaos.",
+        "why_actor_wants_this": "This is the kind of precocious, scene-cutting role that made Abigail Breslin in *Little Miss Sunshine* memorable — a child whose intelligence changes the temperature of every room. Young performers with strong comic timing and a dry delivery will stand out here."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a bawdy crime farce with real visual momentum.",
+        "fit_profile": "Mid-career feature directors with at least one or two genre-comedy or crime-comedy credits, plus first-time feature directors coming out of commercials, music videos, or shorts who already show confidence with ensemble blocking and fast dialogue. The material rewards directors who like kinetic cross-cutting, performance-forward comedy, and a city-as-character approach rather than polished prestige minimalism.",
+        "detail": "The movie gives a director a chance to choreograph overlapping comic pressure across casinos, homes, and streets without needing heavy VFX or a giant effects build. It will attract filmmakers who enjoy turning dialogue scenes into set pieces and who can keep a broad, sexual, high-energy tone coherent from page one to the final chase."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming comedy-crime lane with a Vegas hook",
+        "detail": "It can be packaged around a strong ensemble rather than a single expensive star, because the roles are distinct and playable for character actors. The Vegas setting, gambling premise, and chase finale give it an exportable hook that reads quickly in a thumbnail, trailer, or festival pitch."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening voiceover can arrive faster.",
+        "detail": "The Strip montage and Max’s narration establish the world, but the script spends a little time before the central pressure fully locks in. One lever would be to let the chase and the ex-lovers’ threat hit even earlier so the audience feels the engine before the explanation.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section carries a lot of moving parts.",
+        "detail": "The chip scheme, Anna’s surgery, Stovich’s pressure, Sinaloa’s threat, and the three women’s separate money tracks all compete for attention. A next pass could clarify which pressure is the spine of the act so the audience tracks the escalation without having to reorient.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The sexual-comedy register is very specific.",
+        "detail": "The script commits hard to bawdy jokes, explicit innuendo, and broad bedroom farce, which is part of its identity. That makes the lane clear, but it also means the packaging conversation should target buyers and directors who already live comfortably in that comic neighborhood.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The Vegas footprint is lively but manageable.",
+        "detail": "The story uses a lot of distinct spaces — casinos, homes, offices, a dealership, a museum, a warehouse, and street exteriors — but most are contemporary and familiar. A simplification lever would be to see whether one or two of the office/home stops could absorb another beat without losing the rhythm, which would protect the pace while trimming company moves.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The immigrant ensemble is a production swing.",
+        "detail": "The sixteen-person van sequence is funny and visually memorable, but it asks for a lot of coordinated extras and costume work in one burst. If needed, the version of the scene where a smaller number of distinct faces carries the same joke would preserve the comic idea while easing logistics.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ending lands on a strong comic button.",
+        "detail": "The final necklace reveal is a clean payoff that re-frames Cindy as the smartest player in the room. That’s a strong finish for audience satisfaction, and it gives the script a memorable last image that can help with word of mouth.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67,
+  "tier": "Optionable",
+  "inputTokens": 42455,
+  "outputTokens": 5083,
+  "cost": 0.05471475,
+  "declaredFormat": "Feature film"
+}

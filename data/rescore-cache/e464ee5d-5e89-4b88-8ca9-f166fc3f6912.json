@@ -1,0 +1,324 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical drama",
+      "genre_tags": [
+        "Romance",
+        "Biographical epic"
+      ],
+      "tone": "Sweeping, earnest, melodramatic, period-authentic"
+    },
+    "positioning_hook": "Elizabeth Bacon Custer falls for George Armstrong Custer as the Civil War and Indian Wars reshape her life, then spends decades fighting to define his legacy after Little Bighorn.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear built-in audience in history-minded viewers, Civil War / Western enthusiasts, and prestige-drama buyers who respond to famous American figures. Its emotional promise is legible through Libbie’s devotion, widowhood, and public defense of Custer, though the appeal is more specialized than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early: a Monroe schoolgirl meets Custer, marries into his military life, and becomes the keeper of his reputation after his death. The time-spanning structure is easy to track, and the script keeps returning to one clean engine — love, war, and legacy."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Libbie is a durable center: witty, romantic, anxious, stubborn, and later publicly combative on behalf of her husband. Autie is charismatic and larger-than-life, but the supporting players mostly orbit the central couple rather than generating equally independent character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script’s boldest move is making Libbie the true protagonist of a Custer story, with the second half shifting into widow, author, and public advocate territory. The approach is distinctive in emphasis, though the execution stays within a classic historical-biopic frame."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story moves steadily through courtship, marriage, campaigns, Little Bighorn, and Libbie’s postwar campaign to shape the record. The forward drive is clear, but the long chronological sweep naturally creates a more episodic rhythm than a tightly escalating feature thriller."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A Custer story told through the wife who becomes his archivist, defender, and public voice has a fresh center of gravity. The idea feels inevitable once seen, especially because the script turns the widowhood into a second act of authorship and historical combat."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script is rich in period detail: seminary life in Monroe, wartime camps, Washington boarding houses, frontier forts, court-martial procedure, and postwar lecture circuits. The world has visible institutional edges and social codes that keep the story grounded in a specific American century."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistent and recognizable: reverent, romantic, and occasionally comic in the domestic banter between Libbie and Autie. It has a clear old-fashioned historical-drama identity, though it doesn’t push into a sharply singular tonal blend."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "On the surface this is a love story and military chronicle, but underneath it becomes a study of memory, mythmaking, widowhood, and how history gets written. Libbie’s late-life interviews and lectures reveal a deeper second life for the character that rewards continued attention."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Libbie and Autie are the engine, with strong secondary chemistry from Daniel, Rhoda, Tom, Maggie, Eliza, and the Monroe circle. The relationships are functional and often charming, but the story remains most alive when the central couple is in the room."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 30,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Multiple age spans for Libbie and Autie across decades",
+          "Large supporting ensemble of officers, townspeople, wives, and military figures",
+          "Several historical figures require period-specific physical presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly balanced",
+        "period_or_contemporary": "Period (1861-1926)",
+        "notable_requirements": [
+          "Civil War-era homes, churches, seminary, boarding houses, forts, camps, and battlefield exteriors",
+          "Large crowd scenes for weddings, graduations, parades, memorials, and public lectures",
+          "Western prairie and military encampment settings"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily crowd extension, battlefield scale enhancement, smoke, fire, and period environment cleanup; no heavy creature or fantasy work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, cavalry movement, train wreck, flooding creek sequence, battle smoke, fire, and practical period transport.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "George Armstrong Custer, Elizabeth Bacon Custer, Daniel Bacon, Rhoda Bacon, Phil Sheridan, Edwin Stanton, Winfield Scott Hancock, George Crook, J. E. B. Stuart, Black Kettle, Sitting Bull, William Howard Taft, and other historical figures"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Home Sweet Home,\" \"Garry Owen,\" \"The Girl I Left Behind Me,\" and \"Annie Laurie\" are specifically named or performed"
+        },
+        {
+          "type": "brand",
+          "detail": "Harper's Monthly, New York Herald, Albany Times, Chicago Dial, The Spectator, and other period publications are referenced"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The story is built on historical events and published Custer legacy material, with book titles and memorial/statue depictions tied to real-world history"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature / theatrical historical drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or prestige limited theatrical release; the hook is the famous marriage and the post-Little Bighorn legacy battle."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script spans multiple decades, multiple period settings, cavalry action, crowd scenes, and battlefield sequences, but the scale stays in historical-drama territory rather than tentpole territory."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The story depends on recognizable historical figures, a wide supporting ensemble, and age progression across Libbie and Autie’s lives."
+        },
+        "location": {
+          "level": "high",
+          "note": "It moves through Monroe homes, seminaries, boarding houses, Washington, West Point, Kansas forts, Virginia camps, Dakota territory, battlefields, and New York lecture spaces."
+        },
+        "content": {
+          "level": "medium",
+          "note": "War violence, scalping imagery, battlefield deaths, and racialized period dialogue place it in mature historical-drama territory without pushing into explicit content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script uses many named historical figures, named songs, period publications, and real events that invite careful historical and clearance handling."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Libbie is the true engine of the story.",
+          "what_it_means": "That gives the project a clear awards-friendly center: a woman’s emotional life, public voice, and historical authorship carry the movie beyond standard cavalry biography. Prestige buyers and actresses looking for a role that spans romance, grief, intellect, and public advocacy will immediately understand the slot.",
+          "evidence": "The script follows Libbie from Monroe courtship through widowhood, authorship, lectures, and the 1910 statue unveiling and 1926 interviews.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The love story is inseparable from history.",
+          "what_it_means": "The romance is not decorative; it is the emotional spine that makes the military material land with feeling. That creates a commercial bridge for buyers who want both a sweeping period relationship and recognizable American history.",
+          "evidence": "Libbie and Autie’s courtship, marriage, separations, letters, and reunion scenes recur across the Civil War and frontier years.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The postwar legacy battle gives the film a second act.",
+          "what_it_means": "Once Little Bighorn happens, the movie doesn’t end — it opens into authorship, public defense, controversy, and memorial culture. That gives producers a built-in emotional afterlife and a cleaner prestige ending than a purely battlefield-driven biopic.",
+          "evidence": "Libbie writes books, answers criticism, fights the statue depiction, and lectures publicly about Custer’s reputation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period world is richly staged.",
+          "what_it_means": "Seminary halls, boarding houses, frontier forts, Washington interiors, and public ceremonies create a textured production canvas that feels lived-in rather than generic. That kind of specificity helps a buyer see the movie as a real place-based historical piece, not just a costume drama.",
+          "evidence": "The script moves from Monroe parlors to Fort Hays, Fort Riley, Fort Lincoln, West Point, Richmond, and New York lecture halls.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Autie is written as a charismatic force.",
+          "what_it_means": "He has the swagger, vanity, tenderness, and battlefield confidence that make historical male leads attractive to actors and audiences alike. The role offers a performer the chance to play charm and legend at the same time.",
+          "evidence": "He flirts, jokes, writes affectionate letters, leads charges, and repeatedly frames himself as destiny-driven.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has strong public-history set pieces.",
+          "what_it_means": "Graduations, weddings, parades, court-martials, memorial services, and statue unveilings all read as cinematic event moments that can anchor marketing materials and trailers. That gives the film a sequence of built-in showcase scenes rather than one continuous conversation piece.",
+          "evidence": "The valedictorian speech, the church wedding, the court-martial verdict, the Little Bighorn aftermath, and the 1910 statue unveiling all function as public rituals.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sweeping, actor-forward historical drama with a clean emotional engine: Libbie Custer’s love for Autie, her life inside his military orbit, and her decades-long fight to control how history remembers him. It has the scale of a prestige period epic, but the point of view is intimate and commercially legible — a woman’s life story wrapped around one of America’s most famous military legends."
+    },
+    "lead_characters": [
+      {
+        "name": "Elizabeth \"Libbie\" Bacon Custer",
+        "role_type": "Lead",
+        "demographics": "Female · 18 to 84 · white American",
+        "hook": "Libbie is bright, romantic, verbally nimble, and emotionally intense, with a mind that moves between teasing wit and deep anxiety. She begins as a Monroe valedictorian who fears becoming an old maid, becomes a devoted officer’s wife on the frontier, and ends as a public historian determined to defend her husband’s name.",
+        "why_actor_wants_this": "This is the showcase territory of Cate Blanchett in *Elizabeth* and Frances McDormand in *Nomadland* — a woman whose intelligence and inner weather carry the movie across decades. It gives an actress the rare chance to play courtship, marital devotion, widowhood, public combat, and late-life authority in one role."
+      },
+      {
+        "name": "George Armstrong \"Autie\" Custer",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to mid-30s · white American",
+        "hook": "Autie is vain, magnetic, impulsive, affectionate, and theatrically self-aware, with a soldier’s appetite for action and a showman’s instinct for performance. He is at once a romantic husband, a battlefield celebrity, and a man who treats destiny like a personal brand.",
+        "why_actor_wants_this": "This is the showcase territory of Daniel Day-Lewis in *There Will Be Blood* and Brad Pitt in *Fury* — a larger-than-life man whose charisma and self-mythology are the performance. It gives an actor the chance to play command, vanity, tenderness, and fatal confidence in the same frame."
+      },
+      {
+        "name": "Daniel Bacon",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s · white American",
+        "hook": "Daniel is a stern, principled father who distrusts military life but gradually comes to respect Autie’s character. He functions as the moral gatekeeper of Libbie’s early life, and his approval gives the romance its domestic stakes.",
+        "why_actor_wants_this": "This is the kind of father role that carries the gravitas of Tom Wilkinson in *In the Bedroom* — a man whose authority is expressed through restraint and judgment. Character actors who specialize in paternal force and moral texture will find a clean, playable lane here."
+      },
+      {
+        "name": "Rhoda Bacon",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 50s · white American",
+        "hook": "Rhoda is warm, intelligent, and quietly stabilizing, the stepmother who gives Libbie emotional shelter without stealing focus. She is the domestic counterweight to Daniel’s severity and helps make the Bacon home feel like a real emotional base.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the grounded authority of Laura Linney in *The Savages* — supportive, observant, and emotionally precise without needing speeches to matter. It suits performers who can make a few scenes feel like the family’s center of gravity."
+      },
+      {
+        "name": "Conway Noble",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · white American",
+        "hook": "Conway is the social connector and light comic pressure valve, the young man who keeps introducing people and moving the courtship machinery along. He is less a deep arc than a useful, charming presence in Monroe’s social ecosystem.",
+        "why_actor_wants_this": "This is the kind of breezy supporting part that has the social ease of Paul Dano in *Little Miss Sunshine* before the emotional turn — a role built on timing, charm, and ensemble chemistry. Young character actors who can play polished wit will fit it well."
+      },
+      {
+        "name": "Laura Noble",
+        "role_type": "Supporting",
+        "demographics": "Female · 18 · white American",
+        "hook": "Laura is Libbie’s friend and social mirror, a bright hostess who helps establish the marriage market and the town’s feminine competition. She gives the opening Monroe world a sense of youthful social pressure.",
+        "why_actor_wants_this": "This is the kind of period supporting role that lets an actress play social intelligence the way Saoirse Ronan does in *Little Women* — quick, observant, and alive in group scenes. It’s a clean fit for young actresses who can make ensemble dialogue feel effortless."
+      },
+      {
+        "name": "Fan Fifield",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · white American",
+        "hook": "Fan is the glamorous rival, the woman Libbie reads as a flirt, a predator, and a social threat. She is less a villain than a pressure point, giving the romance a visible competing feminine energy.",
+        "why_actor_wants_this": "This is the kind of role that plays like the social rival energy of Rachel McAdams in *Mean Girls* — a character whose presence changes the temperature of every room. Actresses who can weaponize charm will see the fun immediately."
+      },
+      {
+        "name": "Nettie Humphrey",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · white American",
+        "hook": "Nettie is the steady friend who hears Libbie’s fears, validates her, and helps move the story through its emotional transitions. She is practical, kind, and socially fluent, a useful confidante rather than a decorative side character.",
+        "why_actor_wants_this": "This is the kind of supportive best-friend role that has the warmth and clarity of Emily Blunt in *The Devil Wears Prada* before the sharper edges — a role built on listening, timing, and emotional support. It suits actresses who can make exposition feel like companionship."
+      },
+      {
+        "name": "John Rauch",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · white American",
+        "hook": "John is a polite suitor and later a practical attorney, a man who moves from courtship orbit to legal and financial support. He helps bridge the romance era and the widowhood era with a calm, dependable presence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the understated dignity of Matthew Macfadyen in *Succession* — controlled, courteous, and quietly useful. It’s a strong fit for actors who can make professionalism feel like character."
+      },
+      {
+        "name": "Eliza Brown",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-30s · Black American",
+        "hook": "Eliza is Autie’s cook and one of the story’s most grounded frontier voices, practical, observant, and emotionally direct. She brings a lived-in perspective to the camp and gives Libbie a human connection outside the officer class.",
+        "why_actor_wants_this": "This is the kind of role that has the lived-in authority of Viola Davis in *The Help* — a character whose presence enlarges the world and whose emotional truth lands immediately. Strong character actresses will be drawn to the clarity and dignity of the part."
+      },
+      {
+        "name": "Tom Custer",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens to 30 · white American",
+        "hook": "Tom is Autie’s younger brother, a formal soldier who flips into roughhouse intimacy the moment he’s alone with family. He adds humor, brotherly texture, and a sense of the Custer clan as a real unit.",
+        "why_actor_wants_this": "This is the kind of brother role that has the easy chemistry of Casey Affleck in *Good Will Hunting* — a part that can pivot from military formality to family looseness. It gives an actor a chance to play loyalty and comic timing in the same breath."
+      },
+      {
+        "name": "Maggie Calhoun",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · white American",
+        "hook": "Maggie is Autie’s sister and Libbie’s companion in the later years, a woman whose own losses echo the Custer family’s larger grief. She helps carry the widowhood and memorial sections with emotional weight.",
+        "why_actor_wants_this": "This is the kind of grief-bearing supporting role that has the emotional directness of Amy Ryan in *Gone Baby Gone* — a part where sorrow is active, not passive. Actresses who excel at family drama will recognize the material immediately."
+      },
+      {
+        "name": "Emanuel Custer",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · white American",
+        "hook": "Emanuel is the aging father whose pride in his sons is inseparable from his sorrow. He gives the aftermath sections a generational ache and a sense of family legacy extending beyond Libbie and Autie.",
+        "why_actor_wants_this": "This is the kind of elder-family role that has the ache of Hal Holbrook in *Into the Wild* — a man whose few scenes carry a lifetime. Veteran character actors will be drawn to the emotional economy of it."
+      },
+      {
+        "name": "Maria Custer",
+        "role_type": "Supporting",
+        "demographics": "Female · late 60s · white American",
+        "hook": "Maria is the quiet maternal presence in the Custer family, part of the mourning frame around Autie’s death and burial. She helps make the family grief feel communal rather than isolated.",
+        "why_actor_wants_this": "This is the kind of elder-matriarch role that has the stillness of Frances Sternhagen in *Misery* — not flashy, but emotionally anchoring. It’s a natural fit for actresses who can communicate history in a glance."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a prestige historical romance with battlefield scale and a female point of view.",
+        "fit_profile": "Established indie or prestige-feature directors with at least one period piece or character-driven ensemble under their belt. The ideal fit is someone drawn to emotional continuity across decades, public ritual, and the tension between private love and national myth.",
+        "detail": "The material rewards a director who can stage intimate scenes with the same confidence as cavalry movement, memorial ceremonies, and public speeches. It attracts filmmakers who like performance-first historical storytelling and know how to make a long timeline feel emotionally unified."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M prestige feature",
+        "lane": "Prestige streamer / awards-adjacent historical drama",
+        "detail": "The project can be anchored by one major female lead and one charismatic male lead, so it does not require a giant ensemble of name talent to function. The Custer brand, Little Bighorn recognition, and period-war setting give it built-in awareness for a streamer or specialty theatrical buyer looking for recognizable American history."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The chronology is expansive.",
+        "detail": "The script covers 1861 through 1926, which gives it real sweep but also asks the feature to carry a lot of historical ground. One lever would be to protect the emotional spine by identifying the few time jumps that do the most work and letting the rest compress around them.",
+        "is_primary_lever": true,
+        "source": "production"
+      },
+      {
+        "area": "Libbie’s postwar section is a second movie inside the movie.",
+        "detail": "The widowhood, authorship, lecture circuit, statue fight, and 1926 interview material are compelling and commercially useful, but they also shift the movie into a new mode after Little Bighorn. A next pass could clarify which of those late chapters are essential to the feature’s emotional landing so the final act feels cumulative rather than extended.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The battle material is vivid but selective.",
+        "detail": "The script uses montages, set-piece charges, and aftermath images rather than a full tactical battlefield procedural, which keeps the film producible and focused on character. If the goal is a tighter feature runtime, the version where a few repeated battle beats are folded into cleaner transitions would preserve momentum.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "Libbie’s interior life is strongest when it drives action.",
+        "detail": "Her fear, jealousy, devotion, and later public defiance are all present on the page; the most compelling version of the role is the one where those feelings force a choice, not just a speech. The scenes with Daniel, Eliza, the statue unveiling, and the 1892 lecture already point in that direction.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting cast is broad but manageable.",
+        "detail": "There are many named historical and social figures, but most are introduced in service of the central couple and the historical milestones. A producer can read this as an ensemble historical feature rather than a sprawling crowd drama.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63.7,
+  "tier": "Optionable",
+  "inputTokens": 42116,
+  "outputTokens": 5484,
+  "cost": 0.05626500000000001,
+  "declaredFormat": "Feature film"
+}

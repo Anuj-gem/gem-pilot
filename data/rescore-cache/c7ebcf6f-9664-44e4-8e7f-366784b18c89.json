@@ -1,0 +1,296 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Psychological thriller",
+      "genre_tags": [
+        "slasher",
+        "revenge thriller"
+      ],
+      "tone": "gritty, lurid, pulpy, exploitative"
+    },
+    "positioning_hook": "A campus peeping-tom terrorizes a circle of women tied to a buried high-school humiliation, until the case turns on the one authority figure they trusted.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clean genre promise: voyeurism, stalking, and a revenge reveal built around a group of college women and a detective investigation. It speaks most directly to thriller and horror audiences rather than a broad four-quadrant crowd, but the hook is easy to grasp and the Halloween finale gives it a clear commercial lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The central engine is legible early: a masked peeper escalates from window watching to abductions, while the police and the women try to connect the attacks to an old group photo. The script keeps the mystery active and the reveal structure is easy to track, even as the flashback material arrives later than the opening attacks."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Ashley, Megan, and Rosales each have some attitude and screen presence, and Janice’s turn into the final reveal gives the script a strong actor-facing centerpiece. The ensemble mostly functions as a pressure system around the plot, though, with several women defined more by banter and victimization than by distinct inner engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script leans into a provocative, sexually charged slasher vocabulary and makes the old yearbook photo the emotional key to the attacks. The material is confident in its exploitation-era energy, but the underlying revenge structure and stalker mechanics are familiar enough that the freshness comes more from presentation than from premise."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through a steady chain of attacks, police interviews, false suspicion, and escalating reveals, with the Halloween night sequence giving the back half real propulsion. The repeated attack pattern is effective at generating urgency, and the final confrontation pays off the setup with a clean, readable climax."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a peeping tom whose violence is tied to a buried teenage humiliation has a strong, immediately understandable emotional logic. What keeps it from landing higher is that the script’s core mechanism is still a recognizable stalk-and-slash framework, even though the yearbook-photo trigger and the final identity reveal give it a memorable spine."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The college setting, party houses, campus offices, police station, and local bars create a usable social map with enough texture to support the story. The world is functional and specific, but it mostly serves as a container for the attacks and investigation rather than as a deeply layered ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a very particular sleazy, confrontational tone: bawdy campus banter, sexual threat, police sarcasm, and blunt revenge imagery all live in the same register. That voice is consistent and recognizable, especially in the girls’ dialogue and the detective banter, even if it sits firmly in a familiar grindhouse lane."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The buried trauma around Samantha, the old group photo, and the women’s adult lives all hint at a deeper story about shame, complicity, and memory. The script does surface that material in the back half, but the emotional reservoir is more implied than fully dramatized across the feature."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The women’s friendship group has enough friction, teasing, and shared history to keep scenes alive, and the older trio’s lunch scenes add a second relationship layer. Still, most of the ensemble energy is routed through the central mystery rather than through multiple independently combustible character pairings."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 7,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple female leads in their early 20s",
+          "Several supporting women in their 40s",
+          "One principal male antagonist with a concealed identity",
+          "One detective ensemble",
+          "Child roles in flashback and Halloween scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary with 1985 flashbacks",
+        "notable_requirements": [
+          "College campus interiors and exteriors",
+          "Multiple suburban homes and bedrooms",
+          "Police station/interrogation room",
+          "Bar and parking lot",
+          "Country club / patio restaurant",
+          "Hospital room",
+          "Flashback school lawn and creek location",
+          "Halloween street and party house coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX; practical coverage only.",
+        "stunts_level": "minor",
+        "sfx_needs": "Blood, bruising, hair-cutting effects, broken glass, gunshot impact, practical restraint and assault choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Tom Cruise mask likeness is explicitly used."
+        },
+        {
+          "type": "brand",
+          "detail": "Armani is referenced in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "AC/DC is referenced on a T-shirt."
+        },
+        {
+          "type": "brand",
+          "detail": "Spock, Superman, Spider-Man, Dorothy, Jason, Dracula, George Bush, Bill Clinton, and Bin Laden are referenced in Halloween/costume dialogue and imagery."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "low-to-mid budget theatrical genre, streamer horror-thriller, or late-night cable exploitation lane",
+        "content_level": "mature, explicit",
+        "series_engine_or_release_model": "Feature release model with strongest fit as a festival-to-platform or genre-theatrical title"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary settings, modest set pieces, and practical effects keep the budget footprint in a contained genre range."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a sizable young ensemble, several adult supporting roles, child players in flashback and Halloween scenes, and a concealed-identity antagonist."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through homes, campus spaces, bars, a hospital, police interiors, and flashback exteriors, with multiple night scenes."
+        },
+        "content": {
+          "level": "high",
+          "note": "Sexual threat, assault, kidnapping, stalking, and explicit language narrow the lane to mature audiences."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The Tom Cruise mask likeness and several named brands/cultural references create clearance considerations."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly legible.",
+          "what_it_means": "A buyer can hear the premise in one sentence and know exactly what kind of audience it serves: voyeuristic suspense, female-targeted danger, and a mystery that keeps turning the screw. That makes it easy to position for genre labels, trailer language, and a streamer thumbnail that sells in a glance.",
+          "evidence": "The opening window-peeping attack, the repeated stalking of college women, and the police trying to connect the attacks to the old photo.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Janice Evans is a built-in reveal role.",
+          "what_it_means": "The final identity turn gives the project a performance centerpiece that can attract a recognizable actress who wants to play authority, menace, and buried damage in one package. That kind of late reveal is catnip for genre buyers and gives the marketing team a clean “you won’t believe who it is” button.",
+          "evidence": "Professor Janice Evans is first introduced as a classroom authority and later unmasked as the peeper in the final confrontation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The women’s group has a usable chemistry engine.",
+          "what_it_means": "The banter between Ashley, Megan, Lauren, Heather, Brittany, and Sarah gives the movie a social texture that can carry scenes between attacks and make the victims feel like a real friend group. That helps the script play to younger ensemble casts and gives a producer room to cast a mix of rising faces with one standout lead.",
+          "evidence": "The party scenes, the poolside scenes, and the repeated group conversations about men, fear, and Sarah’s disappearance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The old photo is a strong story object.",
+          "what_it_means": "The yearbook picture functions as a visual mystery box that ties the present-day attacks to a past humiliation, which is exactly the kind of object-driven engine that helps a thriller feel inevitable. It also gives the poster, trailer, and key art a single image to build around.",
+          "evidence": "The picture is broken, hidden, revisited, and eventually used to identify the women and the old incident.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Halloween finale is a smart pressure cooker.",
+          "what_it_means": "By putting the town in costume and normalizing the peeping-tom image, the script creates a public-facing climax with built-in irony and crowd energy. That gives the ending a strong event-movie feel without requiring a large-scale action budget.",
+          "evidence": "The Halloween news report, the store selling peeping-tom costumes, and the final night attack on Ashley.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has a blunt, exploitable voice.",
+          "what_it_means": "The script knows how to speak in a hard-R register that feels designed for late-night genre audiences and cult repeat viewing. Buyers in the horror/exploitation lane will recognize a tone that can be sold on attitude as much as plot.",
+          "evidence": "The girls’ insults, the detectives’ banter, and the repeated sexualized one-liners throughout the campus and bar scenes.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable stalker-thriller with a strong reveal engine: a campus peeping tom, a buried teenage humiliation, and a final identity turn that recontextualizes the whole movie. The script’s real selling power is the combination of a simple genre premise, a vivid female ensemble, and a Halloween-night climax that feels built for trailer cutdowns and genre buyers."
+    },
+    "lead_characters": [
+      {
+        "name": "Ashley Sloan",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Ashley is the sharpest mouth in the friend group, a rebellious college girl who uses sarcasm, sexual bravado, and provocation as armor. She reads like the one who can laugh at danger until it lands in her own living room, which gives her a built-in arc from comic instigator to final survivor energy.",
+        "why_actor_wants_this": "This is the showcase territory of Jamie Lee Curtis in Halloween or Neve Campbell in Scream — the smart, funny survivor whose attitude is part of the weaponry and whose fear has to arrive in real time. Young actresses who want a role that can play banter, panic, and physical fight choreography in the same package will chase this."
+      },
+      {
+        "name": "Megan McKnight",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Megan is the more grounded friend, the one who keeps trying to make sense of the danger and hold the group together. She carries the emotional conscience of the ensemble, especially in the scenes where she worries about Sarah and keeps asking why the attacks are happening to them.",
+        "why_actor_wants_this": "This is the kind of grounded lead space Elisabeth Shue had in The Saint or Jessica Chastain had in Take Shelter — the emotionally legible center who makes the audience feel the threat before the movie says it out loud. Actors who want a sincere, watchable anchor inside a genre ensemble will see the value immediately."
+      },
+      {
+        "name": "Sarah Puckett",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Sarah is the wild-card friend: drunk, funny, self-destructive, and more vulnerable than she lets on. Her disappearance and captivity give the movie a missing-person pulse, and her scenes carry the sense of a girl who jokes through pain until the pain wins.",
+        "why_actor_wants_this": "This is the showcase lane of Winona Ryder in Girl, Interrupted or Jena Malone in Donnie Darko — a character whose volatility is the point and whose fragility keeps the audience leaning in. Actresses who want to play charm, mess, and terror in one role will want this part."
+      },
+      {
+        "name": "Lauren Adams",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Lauren is the polished, protected friend whose vulnerability is exposed when the attacks turn intimate and humiliating. She gives the ensemble a more conventional “good girl” contrast, which makes her attack scenes land as a violation of image as much as body.",
+        "why_actor_wants_this": "This is the kind of role that gave Jennifer Love Hewitt in I Know What You Did Last Summer a clean genre showcase — the pretty, frightened center whose distress becomes part of the movie’s engine. Rising actresses with a strong commercial look and a taste for suspense material will chase it."
+      },
+      {
+        "name": "Heather Pennington",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Heather is the quieter, more emotionally bruised member of the group, and the script gives her a sharper interior life through the hospital confrontation with her mother. She feels like the one carrying family damage under the surface, which makes her attack and aftermath especially personal.",
+        "why_actor_wants_this": "This is the kind of emotionally loaded genre role that gave Katie Holmes in Disturbing Behavior or Brittany Murphy in Cherry Falls a chance to play hurt, intelligence, and fear without losing screen presence. Actors who want a vulnerable, wounded center in a thriller ensemble will respond to it."
+      },
+      {
+        "name": "Brittany Sheppard",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Brittany is the friend who keeps the group’s social rhythm going, but the attack strips her down into raw fear and humiliation. Her hair-cutting sequence and aftermath make her one of the clearest embodiments of the movie’s central violation motif.",
+        "why_actor_wants_this": "This is the kind of physical-horror showcase that gave Rose McGowan in Scream or Marley Shelton in Grindhouse a memorable genre stamp — a role where the body is part of the storytelling. Actresses looking for a visceral, high-impact horror part will see the appeal."
+      },
+      {
+        "name": "Detective Rose Rosales",
+        "role_type": "Lead",
+        "demographics": "Female · 40s · Latina",
+        "hook": "Rosales is the practical, no-nonsense detective who sees the pattern before the rest of the department does, and she brings a clean procedural spine to the movie. She has authority, impatience, and a dry edge, which makes her feel like the adult in the room without flattening her personality.",
+        "why_actor_wants_this": "This is the kind of law-enforcement role that gave Regina King in Seven Seconds or Mariska Hargitay in Law & Order: SVU a commanding, no-BS center — the investigator whose competence is the pleasure. Strong dramatic actresses who want a grounded genre anchor will chase this."
+      },
+      {
+        "name": "Wesley Jarvis",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Wesley is the harmless-looking janitor who becomes a major red herring and a mirror for the movie’s obsession with male surveillance. He’s socially awkward, sexually resentful, and easy to underestimate, which makes him useful as a suspect and as a pressure point in the investigation.",
+        "why_actor_wants_this": "This is the kind of suspect role that gave John Carroll Lynch in Zodiac or Michael Shannon in Take Shelter a chance to weaponize stillness and ambiguity. Character actors who can make a room feel off-center without saying much will want it."
+      },
+      {
+        "name": "Professor Janice Evans / Samantha",
+        "role_type": "Lead",
+        "demographics": "Female · 40s playing younger self in flashback",
+        "hook": "Janice is the movie’s most loaded character: a respected professor in the present, and the damaged survivor of the old humiliation in the past. The role asks for a split identity — authority on the surface, buried rage underneath — and the flashback material gives the character a tragic, revenge-driven origin.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary or Patricia Clarkson in Sharp Objects — a role where the audience slowly realizes the person they trusted has been carrying the whole movie inside her. Prestige actresses who want a late-reveal, psychologically rich genre part will circle it fast."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn sleazy genre material into a controlled, character-driven pressure cooker.",
+        "fit_profile": "First- or second-feature directors with a strong horror or thriller short behind them, or an established indie filmmaker looking to step into genre without losing performance focus. This material rewards someone who can stage tension in bedrooms, hallways, and party spaces while keeping the emotional reveal clean and legible.",
+        "detail": "The movie gives a director a chance to build dread through blocking, concealment, and repeated visual motifs rather than spectacle. It will appeal to filmmakers who like hard-R genre material, ensemble banter, and a final-act identity reveal that replays the whole story in a new light."
+      },
+      "buyer_appeal": {
+        "tier": "$2-8M feature",
+        "lane": "streamer horror-thriller / late-night genre theatrical / exploitation revival lane",
+        "detail": "The contained contemporary footprint and practical effects profile mean a buyer can package this around one strong female lead and a capable supporting ensemble rather than name-heavy star casting. The peeping-tom premise, Halloween setting, and clear trailer moments give it exportable genre value and a clean hook for streamers that buy elevated or lurid horror."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening runs long before the mystery fully locks.",
+        "detail": "The script has a strong first attack, but the repeated party banter and campus scenes before the investigation really tightens could be streamlined so the central engine arrives even faster. One primary lever would be to compress the early social setup and let the photo/pattern clue surface sooner, which would give the feature a sharper forward pull.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The flashback material could be concentrated.",
+        "detail": "The Samantha/Margo/Liz/Ann history is the emotional core of the reveal, and the script already has the right ingredients; the next pass could consider folding some of the repeated flashback beats into fewer, more decisive scenes. That would protect the momentum of the present-day stalking while making the origin story hit with more force.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast footprint is ensemble-sized.",
+        "detail": "There are multiple named young women, several adult supporting roles, detectives, teachers, parents, and flashback players, so packaging will be easier if the script keeps the ensemble clean and the roles sharply differentiated. A streamlined version that preserves the friend-group dynamic while trimming a few peripheral speaking parts would make the project easier to mount.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The Tom Cruise mask needs clearance attention.",
+        "detail": "The explicit use of a Tom Cruise likeness in the mask and the many named brands/cultural references mean clearance should be checked early. A version that swaps the celebrity face for a generic smiling mask would preserve the visual joke and simplify the rights path.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The content lane is firmly mature.",
+        "detail": "The movie lives in sexual threat, assault, stalking, and explicit language, so it is best positioned for adult genre buyers rather than broad theatrical family-facing lanes. That clarity helps the marketing side, but it also means the pitch should stay aligned with horror-thriller audiences from the start.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 62.3,
+  "tier": "Optionable",
+  "inputTokens": 40141,
+  "outputTokens": 4829,
+  "cost": 0.05183625,
+  "declaredFormat": "Feature film"
+}

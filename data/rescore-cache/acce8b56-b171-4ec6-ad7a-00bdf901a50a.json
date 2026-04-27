@@ -1,0 +1,312 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Supernatural",
+        "Psychological"
+      ],
+      "tone": "Gritty, intimate, and eerie with a teen-drama emotional core"
+    },
+    "positioning_hook": "A teen girl trying to stay sober and keep her friends together is hunted by a darkness that feeds on her house, her memories, and the people she loves.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear — a teen-centered supernatural horror built around sobriety, friendship, and family pressure — which gives it a definable audience. It is more targeted than four-quadrant, but the hook is legible enough to sell to horror buyers and younger genre viewers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The script establishes its engine through the bathroom relapse imagery, the black figure in the house, and the later orb ritual, so the premise is understandable. The mythology stays impressionistic rather than fully articulated, which keeps the hook intriguing but not yet razor-clean."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Sophia has a strong central contradiction: she is trying to hold herself together while the script keeps placing her in rooms where control slips away. Jade, Emma, and the rest of the friend group give the story emotional texture, though most supporting players function more as pressure points around Sophia than as fully separate engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The sobriety imagery is woven directly into the horror language, especially in the sink, pills, mirror, and foaming-mouth sequences, which gives the material a personal stamp. The script also takes a swing with the recurring darkness and the orb ritual, creating a distinct emotional-horror blend rather than a standard haunted-house setup."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The opening sequence has immediate dread and the later friend-group scenes keep the energy moving, but the story reads more like a series of escalating images than a tightly locked feature engine. The momentum is strongest when Sophia is actively confronting the darkness; it softens when the script lingers in mood and relationship beats without a clear next-turn pressure."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A horror story that uses relapse, family control, and teen social dynamics as the emotional machinery feels fresh and immediately playable. The recurring mirror/calendar imagery and the idea of a darkness that seems tied to Sophia’s life cycle give the premise an 'of course this exists' quality."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world is specific in its domestic and school textures — bathroom, bedroom, hallway, diner, school, house, forest — but it is still primarily a container for the horror events. The social ecosystem around Sophia is present, though the larger rules of the world and the entity’s logic remain mostly atmospheric."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a clear tonal identity: teen intimacy colliding with invasive supernatural dread, with moments of awkward humor and affection inside the fear. The pillow-fight warmth, the relationship banter, and the sudden body-horror turns create a recognizable blend."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are deeper reserves suggested by the sobriety imagery, the family custody tension, and the repeated visual language of mirrors, calendars, and loops. The script hints at a larger emotional and mythic architecture, even though much of that depth is still implied rather than fully dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The friend group has enough chemistry to generate scenes, especially in the bedroom, diner, and ritual sequences, and Sophia/Jade carries real emotional charge. Still, the ensemble mostly orbits Sophia, so the relationship web is functional and engaging rather than fully combinatorial."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 2,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen/young adult ensemble",
+          "One central female lead with a strong emotional and physical breakdown arc",
+          "Parents in 40s-50s",
+          "Golden retriever dog role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with some exterior day/night scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "House interior with bedroom, bathroom, hallway, dining room",
+          "School hallway",
+          "Diner",
+          "Amusement park",
+          "Pool",
+          "Forest/night ritual location"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Dark figure appearances, shadow movement, mirror anomaly, floating/force effects, and a few supernatural transitions can be handled with light compositing and practical staging.",
+        "stunts_level": "minor",
+        "sfx_needs": "Foaming mouth, electrocution beat, blood splatter, practical darkness/shadow effects, and a few possession-style physical beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror / premium cable genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or direct streaming genre acquisition"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, mostly contained to homes, school, diner, and a forest ritual scene, with limited effects work."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Teen ensemble plus parents and several named friends requires a broader casting net, but no star-dependent roles or specialty casting."
+        },
+        "location": {
+          "level": "medium",
+          "note": "A modest number of distinct locations, including night exteriors, a pool, an amusement park, and a forest sequence."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Self-harm imagery, foaming-mouth possession, electrocution, blood, and intense family conflict push it into mature genre territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named music, brands, or real-person references appear to drive clearance needs."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Sobriety is built into the horror language.",
+          "what_it_means": "That gives the movie a personal, emotionally legible engine that can travel beyond genre fans because the fear is tied to a lived struggle, not just a monster. Actors and buyers looking for elevated horror with a human spine will respond to a lead role that can play addiction, shame, and survival in the same frame.",
+          "evidence": "The sink/pills opening, the mirror cabinet marked “SPARE,” and Sophia dropping the pills into the toilet all turn recovery into the movie’s visual grammar.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The friend group has real emotional charge.",
+          "what_it_means": "The ensemble gives the project a built-in audience hook: this is horror with a social circle, not a lone-victim survival piece. Young ensemble casts, breakout TV faces, and producers chasing group chemistry will see a playable package here.",
+          "evidence": "The pillow-fight bedroom sequence, the diner scene where everyone checks their phones for Nate, and the ritual in the forest all lean on group dynamics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family conflict is immediate and cinematic.",
+          "what_it_means": "The parents are not just backstory; they create a domestic pressure cooker that can anchor the movie between set pieces and give the lead a performance runway. Prestige-leaning genre buyers and actors who want a volatile mother-daughter / father-daughter dynamic will notice the material.",
+          "evidence": "The bedroom confrontation with the lamp, the custody paperwork on the counter, and the parents’ return to find Sophia shaking in the hallway all sharpen the home as battleground.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The visual motif system is memorable.",
+          "what_it_means": "Mirrors, calendars, windows, darkness, and the recurring black figure create a repeatable language that can make the film feel authored and marketable in trailers. Directors with a strong visual eye and buyers looking for a clean horror identity will gravitate toward that kind of signature imagery.",
+          "evidence": "The school hallway mirror/calendar beat, the window opening by itself, and the shadow force that separates Sophia from the others all reinforce one visual rule-set.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax setup suggests ritual horror, not just jump scares.",
+          "what_it_means": "The chalk, herbs, match, and orb give the movie a mythic lane that can widen the audience beyond pure teen slasher expectations. Genre buyers who like occult texture and directors who can stage practical ritual imagery will see a strong trailer sequence in that material.",
+          "evidence": "The friends circling the rusty orb in the forest and throwing chalk powder and herbs at it before Sophia strikes the match.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a clear commercial lane: teen supernatural horror with a sobriety-and-family spine, built around a lead role that can carry fear, shame, and survival at once. The friend-group chemistry, recurring visual motifs, and contained contemporary setting give it enough identity to attract genre buyers looking for something emotionally specific and producible."
+    },
+    "lead_characters": [
+      {
+        "name": "SOPHIA",
+        "role_type": "Lead",
+        "demographics": "Female · late teens",
+        "hook": "Sophia is a young woman trying to keep herself upright while every room around her seems designed to undo her. She carries shame, defiance, tenderness, and exhaustion at once, and the script keeps placing her in situations where control is the first thing to disappear.",
+        "why_actor_wants_this": "This is the showcase territory of Florence Pugh in Midsommar — a character whose emotional collapse is also the engine of the movie, with fear, grief, and bodily vulnerability all playing at full volume. Young dramatic leads looking for a horror role with real awards-adjacent intensity will chase this because it asks for raw interiority and physical transformation in the same part."
+      },
+      {
+        "name": "JADE",
+        "role_type": "Lead",
+        "demographics": "Female · late teens",
+        "hook": "Jade reads as the friend who can laugh through the dread until the moment she can’t. She has warmth, flirtation, and a protective instinct that makes her feel like the emotional bridge between the group’s normal life and the story’s darker turn.",
+        "why_actor_wants_this": "This is the showcase space of Rachel True in The Craft — the grounded friend who brings wit, loyalty, and a private emotional life into a supernatural ensemble. Actors who want a role with chemistry, romantic tension, and a late-breaking emotional reveal will see Jade as a strong breakout part."
+      },
+      {
+        "name": "EMMA",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Emma is one of the group’s most openly reactive presences, the kind of friend whose humor and fear sit close together. She gives the ensemble a live wire, especially in the scenes where the house starts turning on them and her panic becomes part of the group’s rhythm.",
+        "why_actor_wants_this": "This is the kind of supporting showcase seen in The Descent for the friend who becomes the audience’s panic valve — a role that gets to play fear, loyalty, and physical escalation in a contained ensemble. Rising young actors who want a memorable genre credit and a few big emotional beats will be drawn to it."
+      },
+      {
+        "name": "SAM",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Sam is quieter and more observant, with a presence that reads as protective and slightly guarded. She helps give the group a steadier center, and her reactions make the supernatural beats feel socially grounded rather than abstract.",
+        "why_actor_wants_this": "This is the kind of role that works in the ensemble-support lane of It Follows, where a quieter character still gets to register dread and loyalty in close-up. Actors who specialize in subtle, reactive work will like the chance to make a small amount of screen time feel essential."
+      },
+      {
+        "name": "MADDY",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Maddy has the feel of someone who notices more than she says, which makes her useful in a story where the unseen is always pressing in. She carries a watchful, slightly haunted energy that helps the group scenes feel less decorative and more lived-in.",
+        "why_actor_wants_this": "This is the sort of atmospheric supporting part that gave supporting players texture in The Ring — a character who can register unease before the audience fully understands why. Character actors and emerging indie performers will like the chance to create a memorable presence with limited dialogue."
+      },
+      {
+        "name": "NANCY",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Nancy is the one who pushes toward action when the house starts behaving badly, which gives her a practical, alert energy. She helps externalize the group’s fear and keeps the story from floating too far into mood.",
+        "why_actor_wants_this": "This is the kind of urgent ensemble part that works for a performer in the Scream supporting-player lane — someone who can deliver panic, momentum, and a clear beat in a group horror scene. Actors looking for a genre role with a few sharp turns and a strong survival instinct will respond to it."
+      },
+      {
+        "name": "KYLE",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Kyle is part boyfriend, part social pressure, part distraction, which makes him useful as both comfort and complication. He gives Sophia a relationship that feels lived-in enough to matter while still sitting inside the story’s larger unease.",
+        "why_actor_wants_this": "This is the kind of teen-boy supporting role that can play the grounded romantic counterweight in a horror ensemble, similar to the boyfriend energy in The Faculty. Young actors who want a likable presence with a little edge and a few intimate scenes will see the value."
+      },
+      {
+        "name": "BRYAN",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Bryan has a teasing, slightly cocky social energy that makes him feel like part of the group’s everyday ecosystem. He helps the movie keep a sense of normal teen behavior even as the supernatural pressure escalates.",
+        "why_actor_wants_this": "This is the kind of ensemble role that lets an actor play charm, flirtation, and sudden alarm in the same movie, a lane that often breaks out in group horror pieces like Final Destination. It’s a useful part for a young actor who wants a visible genre credit without carrying the whole film."
+      },
+      {
+        "name": "TINA",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Tina has a sharp, no-nonsense snap to her, which helps the friend group feel like a real social circle rather than a generic horror lineup. She reads as someone who can puncture tension with one line and then immediately feel the danger underneath it.",
+        "why_actor_wants_this": "This is the kind of sharp supporting role that gives an actor a memorable voice in the vein of the more cutting friends in Jennifer’s Body. Performers who like fast, pointed ensemble work will be attracted to the part’s attitude and utility."
+      },
+      {
+        "name": "PHOEBE",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Phoebe feels like one of the group’s connective tissues, the person who can move the others through a scene without drawing attention to herself. That makes her valuable in a story where group motion and shared fear matter as much as individual breakdown.",
+        "why_actor_wants_this": "This is the kind of ensemble support role that lets an actor build presence through behavior rather than speeches, similar to the quieter friends in The Craft. It suits performers who want to be part of a strong group dynamic and still leave a mark."
+      },
+      {
+        "name": "NATE",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Nate functions as a social absence with a name attached, which gives him a strange kind of power in the group’s emotional ecosystem. He is less a full personality than a pressure point around which the others organize worry and attention.",
+        "why_actor_wants_this": "This is a compact supporting role in the tradition of the missing-boyfriend energy in teen horror, where a character’s absence drives tension as much as their presence would. A young actor with a strong face and limited screen time can still make the role memorable."
+      },
+      {
+        "name": "TORI",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Tori is a mother who can pivot from tenderness to grief in a single beat, which makes her feel emotionally available and quietly burdened. She gives Jade a home-life counterpoint that broadens the film beyond the teen circle.",
+        "why_actor_wants_this": "This is the kind of mother role that gives an actor the emotional authority seen in Hereditary’s family scenes — a parent whose love is inseparable from dread. Strong character actresses looking for a grounded genre part with real feeling will be interested."
+      },
+      {
+        "name": "MOM",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s",
+        "hook": "Sophia’s mother is controlling, wounded, and volatile, with a domestic authority that can turn threatening in an instant. She is one of the story’s clearest human sources of pressure, which makes the supernatural material feel even more personal.",
+        "why_actor_wants_this": "This is the kind of volatile parental role that gave Toni Collette in Hereditary such a devastating showcase — a part where domestic conflict becomes horror. Experienced dramatic actors who want a fierce, scene-stealing mother role will chase it."
+      },
+      {
+        "name": "DAD",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Sophia’s father is quieter than the mother but still part of the same suffocating domestic system. He reads as exhausted, complicit, and emotionally outmatched, which makes his presence feel like a pressure rather than a refuge.",
+        "why_actor_wants_this": "This is the kind of father role that works in prestige horror as the emotionally depleted counterweight to the more explosive parent, similar to the family dynamic in The Babadook. Character actors who can play resignation and moral fatigue will find a clean lane here."
+      },
+      {
+        "name": "RUTH",
+        "role_type": "Supporting",
+        "demographics": "Female dog · golden retriever",
+        "hook": "Ruth is the emotional soft spot in the house, a living symbol of comfort and continuity. Her presence gives Sophia a small, immediate source of warmth in a story otherwise built on dread.",
+        "why_actor_wants_this": "This is not an acting role in the usual sense, but it is the kind of animal presence that can become a marketing image and a tonal anchor. For production, a well-trained dog adds an accessible, audience-friendly texture to the home-life material."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make horror feel intimate, bodily, and emotionally specific.",
+        "fit_profile": "First- or second-feature directors with a strong short-film reel in psychological horror, elevated genre, or performance-forward drama. This material rewards filmmakers who care about visual motifs, close-up tension, and turning domestic spaces into engines of dread.",
+        "detail": "The movie gives a director a clean visual system to own — sink, mirror, window, darkness, orb — while still leaving room for performance to carry the emotional weight. It will appeal to directors who can stage fear with restraint and make a small number of locations feel like a sealed emotional trap."
+      },
+      "buyer_appeal": {
+        "tier": "$2-8M feature",
+        "lane": "Streaming horror / premium genre acquisition lane",
+        "detail": "The cast can be built around one breakout lead and a young ensemble, so it does not require star-level attachments to make sense on paper. The contemporary, contained footprint and teen-horror audience make it a natural fit for streamer genre buyers and festival-to-platform acquisition."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The mythology stays atmospheric.",
+        "detail": "The darkness, orb, and looping imagery create a strong mood, and a next pass could clarify the rules just enough to sharpen the feature engine without flattening the mystery. The version of the script where one or two cause-and-effect links are made explicit would give the climax more forward charge.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle plays as a sequence of impressions.",
+        "detail": "The school, amusement park, pool, and diner passages each add texture, but they currently read more like connected mood beats than one escalating chain of decisions. One lever would be to let Sophia make a more active choice in each of those scenes so the momentum feels cumulative rather than episodic.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble can be streamlined around the strongest relationships.",
+        "detail": "The friend group is appealing, but the story’s emotional center is clearly Sophia and Jade, with the parents as the other major pressure point. The version of the script where a couple of the secondary friends are folded together would protect the social energy while keeping the cast footprint lean.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The night work is doing a lot of the heavy lifting.",
+        "detail": "Most of the horror set pieces live in dark interiors and exterior night scenes, so the production plan should be built around efficient company moves and a disciplined night schedule. That concentration is a feature for a genre buyer, but it rewards a shoot design that keeps locations tightly grouped.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The lead role is the package anchor.",
+        "detail": "Sophia is the part that will drive the whole sale, so the project benefits from a casting strategy that prioritizes a young actor with emotional range and physical commitment. The role has enough breakdown, defiance, and vulnerability to justify a strong attachment conversation early.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 60,
+  "tier": "Optionable",
+  "inputTokens": 14355,
+  "outputTokens": 5192,
+  "cost": 0.03413025,
+  "declaredFormat": "Feature film"
+}

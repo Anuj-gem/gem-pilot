@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-23T23:18:35.754Z",
+  "submission_id": "8a3455b3-5afa-4eb4-b725-e0260348d884",
+  "eval_id": "ffc07692-b498-42b0-8c04-48e5a03a0803",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens · African American"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Lead",
+      "demographics": "Male · 12-14 at introduction, aging into late teens/early 20s · Caucasian · autistic"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s · Hispanic/Latino"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens · Asian Pacific Islander"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Lead",
+      "demographics": "Male · late teens · African American"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    },
+    {
+      "name": "Rachel Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to early 30s · African American"
+    },
+    {
+      "name": "Ben Stone",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s to 40s · Caucasian"
+    },
+    {
+      "name": "Jeffery Parker",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "Doris Parker",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · African American"
+    },
+    {
+      "name": "Grandma McTyler",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Caucasian"
+    },
+    {
+      "name": "Grace Oliver",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-to-late teens at introduction, aging into 20s · Caucasian"
+    },
+    {
+      "name": "Trevor McTyler",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Caucasian"
+    },
+    {
+      "name": "Buddy Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Caucasian"
+    },
+    {
+      "name": "Sammy Smooth",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · African American"
+    },
+    {
+      "name": "Phil Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s to 50s · African American"
+    },
+    {
+      "name": "Jake Beach",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s · British"
+    }
+  ],
+  "positioning_hook": "A Brooklyn teen boy band built from church kids, hustlers, and outsiders rockets from Bed-Stuy talent shows to global stardom — then has to survive fame, betrayal, and each other.",
+  "cost_usd": 0.07035074999999999,
+  "input_tokens": 54483,
+  "output_tokens": 6553,
+  "status": "wrote:leads_ok"
+}

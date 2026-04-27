@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-23T23:01:58.387Z",
+  "submission_id": "cb1f7271-b456-4d77-ad27-626d346d9268",
+  "eval_id": "27fe624c-ad98-48e2-9623-acd08a10ed4b",
+  "title": "Fan Film Season One Eps 1 10 Lukas Kendall",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Kevin Marshall",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · white"
+    },
+    {
+      "name": "Jon Cooper",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · white"
+    },
+    {
+      "name": "Tam Nguyen",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · Vietnamese-American"
+    },
+    {
+      "name": "Manny Bell",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Black"
+    },
+    {
+      "name": "Armando Garcia",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Latino"
+    },
+    {
+      "name": "Brian Schmidt",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · white"
+    },
+    {
+      "name": "Sienna Bailey",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens/early 20s · white"
+    },
+    {
+      "name": "Christine Schmidt",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · white"
+    },
+    {
+      "name": "JoJo",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · white"
+    },
+    {
+      "name": "Gerry Shapiro",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · white"
+    },
+    {
+      "name": "Penelope Stein",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · white"
+    },
+    {
+      "name": "Jack Garcia",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Latino"
+    },
+    {
+      "name": "Tyrell",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Gordon",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · white"
+    },
+    {
+      "name": "Marlon Stein",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · white"
+    },
+    {
+      "name": "Miriam Shapiro",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s · white"
+    }
+  ],
+  "positioning_hook": "A broke comic-shop hustler, a burned-out director, and a Vietnamese pre-med writer try to mount a forbidden fan film using washed-up sci-fi legends, and accidentally expose everyone’s real-life damage.",
+  "cost_usd": 0.11390025,
+  "input_tokens": 115033,
+  "output_tokens": 6139,
+  "status": "wrote:leads_ok"
+}

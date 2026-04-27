@@ -1,0 +1,318 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi horror",
+      "genre_tags": [
+        "Action thriller",
+        "Supernatural horror"
+      ],
+      "tone": "Heightened, grim, kinetic, and grotesque"
+    },
+    "positioning_hook": "A former black-ops anomaly hunter must protect his family when a glitching, mask-wearing killer from a sealed Area 51 program comes home to harvest the town’s signal and everyone in it.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean genre promise: a home-invasion survival story that escalates into a town-scale siege, with a masked killer, a military backstory, and a family under siege. The appeal is strongest for horror-thriller audiences and action-horror buyers who want a visceral hook and a franchise-ready antagonist."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands quickly: a contained family setup is interrupted by a specific anomaly threat tied to Area 51, Z-4, and the re-emergence of Jez. The opening images, the school chatter, and the later home invasion all point to the same engine, so the story is easy to explain in a sentence or two."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Guest 1337 has a strong protective presence and Jez is a vivid antagonist, while Daisy and Cameron give the family unit some warmth and pressure. The roles function well in the action-horror frame, though the emotional interior of the leads is still carried more by situation than by deeply individualized turns."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a highly stylized digital-glitch horror language, military-anomaly mythology, and a masked killer whose movement and presence feel engineered rather than generic. The boldness is in the executional texture and the mash of domestic safety with corrupted-tech dread."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps pressure on with repeated incursions, escalating home defense, police-station carnage, and a final family abduction. The momentum is strong in set-piece terms, though the middle section leans heavily on repeated threat beats rather than a single tightening objective."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea of a signal-harvesting anomaly stalking a suburban family through digital interference and military containment gives the material a fresh identity. It feels like a familiar horror chassis with a specific modern-tech contamination and a mythic killer at its center."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific ecosystem around Z-4, Class-V anomalies, AST response teams, dead zones, and a town where signal loss is a physical threat. The world has enough institutional and technological detail to support a larger mythology, even though much of it is delivered in bursts rather than through lived-in routine."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: glitch horror, military dread, domestic banter, and brutal slasher violence all coexist in the same register. The script knows exactly how it wants to feel, from the corrupted logos to the family handshake to the final blackout invasion."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper mythology in the Z-4 legacy, the father-son mirror, and the idea that Jez is tied to a larger historical program. The surface experience is immediate and aggressive, while the slower-burn emotional or thematic layers are present but not yet fully dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Guest/Daisy/Cameron triangle gives the story a workable family engine, and Jez’s connection to Guest and Paul adds a mirrored adversarial layer. The relationships are functional and playable, though the script still lives most strongly on the central family unit rather than a broad ensemble web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen leads and supporting teens",
+          "Middle-aged parental leads",
+          "One physically imposing masked antagonist",
+          "Military / law-enforcement ensemble",
+          "A child grandchild role in the Henry sequence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior school, suburb, desert, and police locations",
+        "period_or_contemporary": "Contemporary with flashback period material",
+        "notable_requirements": [
+          "Area 51 / containment facility sets",
+          "School interiors and exteriors",
+          "Suburban house with safe room, attic, garage, crawl space",
+          "Police station interiors",
+          "Desert highway and bunker exteriors",
+          "1944 German barn and Ardennes trench flashbacks"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Digital glitching, pixelation, reality warping, signal corruption, silhouette distortion, and some creature-like anomaly effects.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Blood effects, breakaway glass, practical stabbing effects, fire, collapsing facility beats, and body-impact gags.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Paramount Pictures, Blumhouse, New Line Cinema, and Spyglass Media Group are named in the opening logo sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Chromebook, Luger, Louisville Slugger, and other recognizable consumer or weapon brands are referenced."
+        },
+        {
+          "type": "real_person",
+          "detail": "No clear real people are named, but the opening studio-logo references are explicit."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable genre feature lane",
+        "content_level": "Mature / explicit",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or direct-streaming genre play"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained to houses, school, police station, and a few facility spaces, but the glitch VFX, night work, fire, and action set pieces push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The core cast is manageable, but the script needs a convincing masked antagonist, teen leads, parental leads, and a military/law-enforcement ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is spread across school, suburb, police station, desert, bunker, and flashback war locations, with several recurring interiors and exteriors."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic violence, repeated killings, body mutilation, and home-invasion peril narrow the content lane to mature genre buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The opening sequence names multiple studios and the script uses several recognizable brands and weapons by name."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening announces a corrupted-media horror language.",
+          "what_it_means": "The glitching studio logos and static-tearing intro give the movie an immediate signature that can be marketed in trailers, key art, and social clips. Horror buyers and genre audiences who respond to stylized, high-concept presentation will clock the voice fast.",
+          "evidence": "The Paramount/Blumhouse/New Line/Spyglass logos distort, loop, and tear apart before the story even begins.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jez is a franchise-grade antagonist.",
+          "what_it_means": "The killer has a visual identity, a movement language, and a mythic backstory that can carry a whole campaign and potentially more than one installment. Mask-forward horror buyers and performers who like physically expressive villain roles will see immediate value.",
+          "evidence": "He frame-skips, walks through gunfire, uses the Reaper Pattern, and is tied to Z-4 and the Harvesting Phase language.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family unit gives the chaos an emotional anchor.",
+          "what_it_means": "Guest, Daisy, and Cameron create a playable domestic core that keeps the movie from becoming pure effects-and-body-count material. That makes the project more attractive to buyers looking for a horror title with a human center and to actors who want genre material with relationship scenes.",
+          "evidence": "The handshake ritual, the affectionate banter, and the protective household dynamic all recur before the invasion escalates.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a clear institutional mythology.",
+          "what_it_means": "Z-4, Class-V anomalies, AST response teams, dead zones, and containment language create a larger universe that feels organized rather than improvised. That gives producers a scalable mythology and gives buyers a clean hook for audience-facing worldbuilding.",
+          "evidence": "The Area 51 containment chamber, AST briefing, and repeated references to signal saturation and re-entry all build the same system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are built for trailer moments.",
+          "what_it_means": "The police station assault, the safe-room siege, the bar attack, and the final house invasion each deliver a distinct escalation beat that can be cut into a strong promo reel. Action-horror audiences and streamers looking for high-velocity genre content will respond to that kind of modular spectacle.",
+          "evidence": "Jez enters the police station, tears through the bar, and later abducts Daisy and Daniela from the house in a blackout assault.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone lives in a specific hybrid lane.",
+          "what_it_means": "The script mixes family comedy, military jargon, digital dread, and slasher brutality in a way that feels designed rather than accidental. That tonal confidence is attractive to directors who want a strong lane and to buyers who want a genre title with a distinct flavor.",
+          "evidence": "The playful family handshake sits right next to the Area 51 containment breach and the brutal home-invasion violence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, marketable horror-thriller package with a memorable villain, a protective family core, and a visual language that knows how to sell itself. The script’s biggest asset is that it doesn’t just have scares — it has a branded mythology, a trailer-ready antagonist, and a contained production footprint that still feels big on screen."
+    },
+    "lead_characters": [
+      {
+        "name": "GUEST 1337",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · battle-hardened former anomaly operative / father",
+        "hook": "A hyper-controlled family man whose calm, tactical exterior is built to contain old violence. He reads like someone who has spent years turning trauma into procedure, and the script keeps testing whether that discipline is protection or denial.",
+        "why_actor_wants_this": "This is the showcase territory of Josh Brolin in No Country for Old Men or Michael Shannon in Take Shelter — a man whose stillness carries threat, grief, and authority at once. Actors who want a physically grounded, emotionally armored lead with room for command, fear, and final-moment rupture will chase this."
+      },
+      {
+        "name": "JEZ",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s playing ageless / physically imposing masked antagonist",
+        "hook": "A glitching, militarized predator who feels part soldier, part curse, part signal event. He is terrifying because he is not just violent; he is methodical, adaptive, and weirdly intimate in the way he hunts.",
+        "why_actor_wants_this": "This is the showcase territory of Javier Bardem in No Country for Old Men or Doug Jones in a creature-forward role — a performance where presence, movement, and silence do the heavy lifting. Performers with strong physical control, stunt comfort, and a taste for iconic villain work will want this immediately."
+      },
+      {
+        "name": "DAISY",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · wife / mother",
+        "hook": "Warm, funny, and emotionally steady until the danger turns her into the household’s clearest survival instinct. She gives the movie its heart and its nerve, moving from affectionate partner to active defender without losing her humanity.",
+        "why_actor_wants_this": "This is the showcase space of Toni Collette in Hereditary or Vera Farmiga in The Conjuring — a maternal role that can pivot from tenderness to steel in the same scene. Actors who want a genre lead with emotional range, authority, and audience sympathy will be drawn to her."
+      },
+      {
+        "name": "CAMERON",
+        "role_type": "Lead",
+        "demographics": "Male · 19 · teen/young adult",
+        "hook": "A tense, observant son who moves like someone already trained to anticipate danger. He carries the story’s younger-point-of-view energy, with enough vulnerability and bravado to make him feel like the next generation of this family’s war.",
+        "why_actor_wants_this": "This is the showcase territory of Jaeden Martell in It or Noah Jupe in A Quiet Place — a young lead who gets fear, loyalty, and survival instinct all at once. Rising actors looking for a breakout genre role with emotional stakes and physical peril will chase it."
+      },
+      {
+        "name": "DANIELA",
+        "role_type": "Supporting",
+        "demographics": "Female · 19 · teen/young adult",
+        "hook": "A frightened but resilient teen whose connection to the threat gives the story a vulnerable human entry point. She is the kind of character who can carry panic, secrecy, and emotional disclosure in a genre frame.",
+        "why_actor_wants_this": "This is the kind of role that gave Sophia Lillis in It or Milly Shapiro in Hereditary a memorable genre footprint — a young performer gets to play fear, secrecy, and emotional fracture in a high-stakes environment. Emerging actresses looking for a horror calling card will see the opportunity."
+      },
+      {
+        "name": "PAUL RENNICK",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · police officer / investigator",
+        "hook": "A disciplined lawman who mirrors Guest so closely he feels like a shadow version of the same code. He brings procedural authority and a quiet brotherhood tension that makes the investigation feel personal, not just bureaucratic.",
+        "why_actor_wants_this": "This is the showcase territory of Shea Whigham in a crime-thriller role — a grounded, weathered authority figure who can carry menace, loyalty, and procedural detail at once. Character actors who specialize in lived-in law-enforcement parts will want this."
+      },
+      {
+        "name": "COMMANDER",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · military / federal authority",
+        "hook": "A hard-edged institutional voice who treats catastrophe like a logistics problem. He exists to project command and escalation, giving the film a larger-state response beyond the family’s immediate fight.",
+        "why_actor_wants_this": "This is the kind of role that gives actors the crisp authority space of J.K. Simmons in Whiplash or Stephen Lang in military genre material — concise, forceful, and instantly legible. Strong character actors who can dominate a room in a few scenes will be interested."
+      },
+      {
+        "name": "A.S.T. COMMANDER",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · battle-hardened federal operative",
+        "hook": "A field commander who helps define the containment world through procedure, urgency, and dry humor. He’s a utility role with enough texture to make the federal response feel like a real machine.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Cudlitz or David Harbour in a procedural-action lane — a commander role that lets an actor sell competence under pressure. Working character actors who can bring authority without overplaying it will fit here."
+      },
+      {
+        "name": "SCIENTIST",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · anxious lab/science specialist",
+        "hook": "A nervous technical mind standing too close to something he doesn’t fully understand. He gives the containment material a human face and helps translate the anomaly into readable stakes.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play panic, intelligence, and exposition with the grounded specificity of a supporting part in Contagion or Chernobyl. Character actors who can make science feel urgent will be drawn to it."
+      },
+      {
+        "name": "DRA. REEVES",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · lead scientist",
+        "hook": "A composed expert who reads the carnage with clinical precision. She helps widen the mythology while staying emotionally contained, which gives the film an institutional counterpoint to the family panic.",
+        "why_actor_wants_this": "This is the showcase territory of Rebecca Ferguson in a grounded sci-fi thriller — intelligence, authority, and controlled alarm in one role. Actors who like playing competence under pressure will be interested."
+      },
+      {
+        "name": "AGENT LIAN CHO",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · federal agent",
+        "hook": "A sharp federal presence who arrives with credentials and immediate skepticism. She helps the movie widen from local terror to national containment without losing momentum.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the clipped authority of a procedural lead in a supporting slot. Performers who can project command, intelligence, and speed will see the utility."
+      },
+      {
+        "name": "ROOK",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · bar owner",
+        "hook": "A local civilian with just enough swagger to think he can handle the impossible. He functions as a grounded town voice and a disposable but memorable pressure point in the escalation.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that gives an actor a fast, memorable death scene and a chance to play bravado under threat. Character actors who like one-scene impact parts will chase it."
+      },
+      {
+        "name": "HENRY",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · grandfather",
+        "hook": "An older man carrying guilt so visibly that the confrontation becomes confession before violence. He gives the movie a moral ledger moment, where the past finally catches up in a very physical way.",
+        "why_actor_wants_this": "This is the showcase territory of a veteran character actor in a late-career pressure-cooker role — a man forced to plead, confess, and collapse in one sequence. Actors who can turn remorse into performance will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a family-survival horror film with a strong visual system and a killer who feels engineered, not generic.",
+        "fit_profile": "First- or second-feature directors with a strong genre short or a festival feature under their belt, especially those drawn to contained horror, practical violence, and stylized visual grammar. This material rewards directors who can balance domestic performance scenes with aggressive set-piece escalation and who like building a mythos through image and rhythm.",
+        "detail": "The movie gives a director a clear tonal signature to own: corrupted media, signal dread, and home-invasion escalation all in one package. It also offers a contained-enough footprint to stage confidently while still delivering the kind of antagonist and final-act invasion that can make a calling-card feature."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streamer / genre-label horror-thriller lane",
+        "detail": "The script can be packaged around one strong villain performance and a compact family ensemble, so it does not require a giant cast or star-heavy world to function. The signal-corruption hook and masked-killer imagery fit the current streamer appetite for high-concept horror that travels cleanly in trailers and thumbnails."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening can do even more story work.",
+        "detail": "The logo-glitch sequence is a strong signature, and a next pass could let it plant one concrete story image or rule that pays off later in the house siege. That would make the opening feel even more like a promise rather than only a mood statement.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle repeats the threat pattern a few times.",
+        "detail": "Several beats in the school, bar, police station, and house all escalate through the same Jez-arrives / lights-flicker / people-run rhythm. One direction would be to let one of those sequences pivot into a different kind of pressure — a trap, a reveal, or a forced choice — so the escalation keeps changing shape.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Guest’s interior life is strongest when it meets the family.",
+        "detail": "The domestic scenes with Daisy and Cameron are where the lead becomes most specific, especially in the handshake ritual and the protective check-ins. A future pass could foreground one private choice that shows what Guest is afraid of losing, so the action beats land on an even sharper emotional spine.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broader than the core story needs.",
+        "detail": "The script moves through school, house, police station, bar, Area 51, bunker, desert highway, and flashback war spaces. The version of the movie where one or two of those spaces are absorbed into recurring hubs would protect the pace and make the production plan cleaner without changing the central siege shape.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The opening brand references need a clearance pass.",
+        "detail": "The title sequence names Paramount, Blumhouse, New Line Cinema, and Spyglass Media Group directly, and the script also uses several recognizable consumer and weapon brands. A producer would want to either clear or reframe those references early so the package stays clean for buyers.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70,
+  "tier": "Optionable",
+  "inputTokens": 24055,
+  "outputTokens": 5164,
+  "cost": 0.04127925,
+  "declaredFormat": "Feature film"
+}

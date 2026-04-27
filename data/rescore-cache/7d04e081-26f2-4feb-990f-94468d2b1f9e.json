@@ -1,0 +1,351 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Supernatural",
+        "Thriller"
+      ],
+      "tone": "Gritty, ominous, and escalating into full-blown folk-horror dread"
+    },
+    "positioning_hook": "A pregnant designer returns to her estranged family ranch for her father’s funeral and discovers the town’s prosperity depends on a covenant that demands her newborn son.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible as a high-stakes horror thriller with a clean emotional spine: a mother protecting her baby against a community that wants him. The funeral-homecoming setup, the cult reveal, and the rural isolation give it a clear genre audience with strong trailer moments."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and keeps sharpening: funeral return, strange town behavior, missing husband, then the covenant reveal and baby sacrifice demand. The script is easy to explain in one breath, and the story engine is clear once Jessica reaches the ranch."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Jessica has a strong central predicament and Bethany gives the story a second charged female lead, while Matt, Kai, and the town elders provide usable pressure points. The characters are functional and playable, though the script is most energized by their roles in the ritual rather than by deeply individualized interiority."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a rural religious-sacrifice mythology with a fertility-and-land covenant that feels specific to its setting. The pregnancy, inheritance, and firstborn-offering angle gives the horror a distinct moral engine rather than relying on generic cult mechanics."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once Jessica arrives at the ranch, the story keeps tightening through discovery, confinement, escalation, and the final confrontation. The repeated reversals around what is real, who is lying, and where Matt is create steady forward pull, even as the middle section leans on repeated suspicion beats."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a town restoring its land through a firstborn-male covenant is memorable and immediately ownable. It feels like a horror premise that could only happen in this exact family, on this exact ranch, with this exact religious logic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Harvest Grove and the Myers ranch have a strong social ecosystem: church hierarchy, ranch economy, town elders, gendered expectations, and a shared belief system that governs behavior. The world is story-generating because every relationship is tied to the covenant and the land."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends rural decay, religious menace, and domestic unease with a steady escalation into body-horror violence. The script has a recognizable flavor: Southern-fried hospitality curdling into ritual terror."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are deeper layers around family trauma, inherited belief, gender, and the cost of communal survival, and the ending hints at a larger cycle continuing. The draft mostly surfaces those ideas through plot revelation rather than letting them accumulate in quieter character turns."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jessica/Bethany, Jessica/Matt, Jessica/Kai, and Jessica/the town all generate distinct pressure, and the cult members are arranged in a way that makes every room feel politically charged. The ensemble is strongest when it functions as a closed social system with competing loyalties."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 3,
+        "series_regulars": 10,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Pregnant lead role",
+          "Native American sheriff and ranch hand",
+          "Lesbian married couple",
+          "Ensemble of adult town members with specific age ranges"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with substantial ranch exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Ranch house",
+          "Barn with hidden basement",
+          "Church",
+          "Graveyard",
+          "Rural highway",
+          "Town storefronts",
+          "Pasture and fields",
+          "Police cruiser interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily fire, smoke, and environmental transformation of the ranch from barren to fertile in the epilogue.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical fire effects, blood makeup, injury effects, broken bone and amputation makeup, body restraint and struggle choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "No real people referenced by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical music referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "No prominent brands featured."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Biblical quotations and chapter references are used as source text, but no external adaptation IP is invoked."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable horror feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or genre-streaming launch, with strong home-viewing appeal for horror audiences."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained ranch-and-town footprint keeps the budget in a manageable genre range, while fire, injury effects, and night exteriors push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a playable pregnant lead, a strong sister role, and a sizable adult ensemble with clear age and identity specificity."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story uses a limited set of recurring locations, but the ranch, church, graveyard, highway, and town exteriors all need distinct texture."
+        },
+        "content": {
+          "level": "high",
+          "note": "Ritual sacrifice, child endangerment, torture, blood, and religious horror place it firmly in mature territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script relies on original characters and biblical text rather than licensed IP, brands, or named music."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The covenant gives the horror a moral engine.",
+          "what_it_means": "This is more than a scare setup: the town’s belief system creates a built-in debate about survival, sacrifice, and obedience, which gives the movie thematic heft and a clean trailer promise. Horror buyers and actors alike will respond to a premise where the monster is a community with a theology, not just a masked killer.",
+          "evidence": "Brian’s explanation of the Burnt Offering, the Exodus verses, and the reveal that the land only returns when a firstborn male is offered.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jessica is a strong genre anchor.",
+          "what_it_means": "The pregnant protagonist gives the film an immediate emotional stake and a performance lane that can carry fear, resolve, and maternal ferocity in one role. That is exactly the kind of lead part that attracts actresses looking for a horror showcase with real dramatic weight.",
+          "evidence": "Jessica’s return home pregnant, her discovery that the cult wants Hudson, and her final refusal to surrender him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ranch is a story engine, not scenery.",
+          "what_it_means": "The barren-to-blooming land gives the film a visible external barometer for the ritual’s power, so the setting itself tracks the stakes. Producers get a contained, producible world with a built-in visual payoff at the end, and genre audiences get a place that feels cursed and specific.",
+          "evidence": "The opening drought imagery, the dead pasture, the later green regrowth, and the final thriving ranch.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Bethany expands the emotional and commercial reach.",
+          "what_it_means": "The sister dynamic adds a second lead-level female engine, which broadens the movie beyond a single-survivor chase and gives the climax a rescue dimension. That makes the project attractive to actors who want a fierce sibling role and to buyers who like horror with an emotional alliance at its center.",
+          "evidence": "Bethany’s warning calls, her arrival to rescue Jessica, and the final reunion after the barn confrontation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The cult is socially textured.",
+          "what_it_means": "The town elders, church women, sheriff, ranch hand, and business owners create a believable closed ecosystem where everyone has a role in the covenant. That kind of ensemble world gives the film more than one face of menace and makes the setting feel lived-in enough to support strong casting.",
+          "evidence": "Brian and Vivienne’s church leadership, Nina’s authority, Kai’s loyalty, and the town-wide funeral and feast scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending promises a full-circle payoff.",
+          "what_it_means": "The final image of the ranch restored, the baby born, and the cycle continuing gives the movie a haunting aftertaste that can stick with audiences after the credits. That kind of ending is attractive to genre buyers because it leaves viewers with both closure and dread.",
+          "evidence": "The epilogue showing the revived ranch, Matt in a wheelchair, Bethany pregnant, and the newborn crying from the barn.",
+          "source": "script"
+        }
+      ],
+      "headline": "THE OFFERING is a contained rural horror feature with a sharp, saleable engine: a pregnant woman returns to her family ranch and discovers the town’s survival depends on sacrificing her newborn son. The script pairs a strong lead role with a vivid cult ecosystem, a cursed-land mythology, and a finale that leaves the audience with a chilling, memorable image."
+    },
+    "lead_characters": [
+      {
+        "name": "Jessica Myers",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s · Caucasian · eight and a half months pregnant",
+        "hook": "Jessica is a modern, self-possessed woman who has built a life far from her childhood trauma, only to be dragged back into it at the most vulnerable moment of her life. She’s emotionally guarded, wry under pressure, and increasingly feral as the truth about her family and her body comes into focus; the role lives in the collision between polished adult competence and primal maternal terror.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary — a performance that starts in controlled disbelief and ends in total emotional combustion. An actress gets to play denial, grief, physical vulnerability, and protective rage in one escalating arc, which is exactly the kind of horror lead that can become a calling-card role."
+      },
+      {
+        "name": "Bethany Myers",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s · Caucasian · married to Tamiko",
+        "hook": "Bethany is the sister who stayed alert, suspicious, and emotionally armored, the one who has carried the family’s buried truth longer than anyone else. She reads as controlled and pragmatic on the surface, but the script gives her a fierce protective instinct and a hard-earned readiness to fight, making her feel like the family’s survival instinct made human.",
+        "why_actor_wants_this": "This is the kind of role Jodie Comer had in Killing Eve — a woman whose intelligence and volatility keep shifting the audience’s read on her. It gives an actor the chance to play urgency, competence, and sisterly devotion while still landing action and confrontation beats."
+      },
+      {
+        "name": "Matt Stranton",
+        "role_type": "Lead",
+        "demographics": "Male · early 30s · Caucasian",
+        "hook": "Matt is the outsider husband whose liberal, urban self-regard keeps colliding with a place that does not care how enlightened he thinks he is. He’s funny, vain, supportive, and increasingly outmatched, which makes him useful as both comic friction and a pressure valve for the horror until the story turns him into a victim of the covenant.",
+        "why_actor_wants_this": "This is the showcase space of Jesse Plemons in Game Night or The Power of the Dog — a man whose confidence curdles into helplessness under pressure. The role gives an actor room to play comedy, irritation, and then sustained physical jeopardy, which makes the eventual suffering land harder."
+      },
+      {
+        "name": "Brian Stone",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s · African American",
+        "hook": "Brian is the polished spiritual authority who speaks in scripture and certainty while quietly steering a murderous system. He’s calm, paternal, and terrifyingly composed, the kind of leader who can bless you with one hand and sentence you with the other.",
+        "why_actor_wants_this": "This is the kind of role that lives in the authority and menace of Michael Shannon in Take Shelter or Jeffrey Wright in Westworld — a man whose stillness is the performance. Character actors who can weaponize restraint will see a chance to make every line feel like doctrine."
+      },
+      {
+        "name": "Vivienne Stone",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 50s · African American",
+        "hook": "Vivienne is the church-first hostess who turns ritual violence into social grace. She’s warm on the surface, socially fluent, and deeply committed to the covenant, which makes her one of the story’s most unsettling presences because she can smile through anything.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the polished menace of Patricia Clarkson in Sharp Objects — elegance masking moral certainty. It’s a great part for a performer who can play hospitality as a weapon and make every welcome feel loaded."
+      },
+      {
+        "name": "Alva",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 60s · Caucasian",
+        "hook": "Alva is the family friend who carries guilt in every gesture and seems to know exactly how much damage has been done. She’s tender, evasive, and visibly torn between affection for Jessica and loyalty to the town’s secret, which makes her the story’s most human intermediary.",
+        "why_actor_wants_this": "This is the kind of role Frances McDormand had in Three Billboards or Laurie Metcalf in Lady Bird — a woman whose contradictions are the performance. An actor gets to play regret, tenderness, and complicity without ever turning the character into a simple villain."
+      },
+      {
+        "name": "Nina Holt",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 50s · Native American",
+        "hook": "Nina is the sheriff who looks like the law and speaks like the town’s enforcer. She’s blunt, physically imposing, and fully aligned with the covenant, which makes her a particularly chilling authority figure because she never pretends to be anything else.",
+        "why_actor_wants_this": "This is the kind of authority role that gave Regina King in Watchmen or Carrie Coon in The Leftovers their force — a woman whose control is the source of the tension. It’s a strong part for an actor who can play command, menace, and local power without overplaying it."
+      },
+      {
+        "name": "Kai",
+        "role_type": "Supporting",
+        "demographics": "Male · early 60s · Native American",
+        "hook": "Kai is the ranch hand who seems like a loyal caretaker until the script reveals how deeply he belongs to the town’s belief system. He’s weathered, intimate with the land, and quietly ideological, which makes him feel like the ranch’s memory and its enforcer at once.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas of Graham Greene in Wind River — a man whose calm carries history. It’s ideal for a performer who can make exposition feel ancestral and turn a few scenes into a moral pivot."
+      },
+      {
+        "name": "Tamiko Takahashi",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 30s · Asian American",
+        "hook": "Tamiko is Bethany’s partner and the outside voice of reason, the one person who keeps insisting the story is not what the town says it is. She’s sharp, skeptical, and emotionally direct, which gives the film a grounded counterpoint to the cult’s language of faith.",
+        "why_actor_wants_this": "This is the kind of role that works like the best scenes for Stephanie Hsu in Everything Everywhere All at Once — fast, emotionally legible, and able to cut through chaos with clarity. It gives an actor a strong relational part with real urgency and a clean audience identification point."
+      },
+      {
+        "name": "Roberta Evans",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 50s · African American",
+        "hook": "Roberta is the doctor who brings clinical calm to something profoundly unholy. She’s practical, efficient, and fully integrated into the ritual machinery, which makes her one of the story’s most unnerving figures because she can sound like a professional while enabling atrocity.",
+        "why_actor_wants_this": "This is the kind of role that has the cool precision of Tilda Swinton in Suspiria — a professional exterior hiding total allegiance to the dark system. It’s a juicy part for an actor who can make competence feel sinister."
+      },
+      {
+        "name": "Wesley Atkins",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s · Caucasian",
+        "hook": "Wesley is the cocky deputy who starts as a smug local and becomes one of the covenant’s blunt instruments. He’s physically imposing, immature, and eager to prove himself, which makes him useful as a face of small-town entitlement turned violence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the swagger-to-threat turn of Jack Huston in Boardwalk Empire. It’s a strong supporting part for someone who can play charm, arrogance, and brutality in the same body."
+      },
+      {
+        "name": "Christina Atkins",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 20s · Caucasian",
+        "hook": "Christina is the young wife who looks like she belongs to the town’s domestic ideal while quietly participating in its cruelty. She’s modest, observant, and socially embedded, which makes her feel like the next generation of the covenant rather than a bystander.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the unsettling normalcy of the women in Midsommar — a character whose sweetness is part of the menace. It’s a useful supporting part for someone who can play conformity with a hint of dread underneath."
+      },
+      {
+        "name": "Cyrus",
+        "role_type": "Supporting",
+        "demographics": "Male · early 60s · Caucasian",
+        "hook": "Cyrus is the old-money businessman who treats the covenant like civic maintenance. He’s polished, dry, and socially powerful, which makes him feel like the town’s financial backbone and one of its most comfortable believers.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the institutional menace of a Succession elder or a prestige-town patriarch. It’s a compact but flavorful part for someone who can make privilege feel ritualized."
+      },
+      {
+        "name": "Enrique Sanchez",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s · Hispanic",
+        "hook": "Enrique is the rancher-businessman who gives the town a more modern, pragmatic face while still buying into the same brutal logic. He’s affable, grounded, and materially invested in the land’s recovery, which makes him feel like the covenant’s economic wing.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded authority of a character in a Taylor Sheridan ensemble. It’s a strong supporting slot for someone who can play practicality as complicity."
+      },
+      {
+        "name": "Rosa Sanchez",
+        "role_type": "Supporting",
+        "demographics": "Female · late 40s · Hispanic",
+        "hook": "Rosa is the socially warm, kitchen-table face of the covenant, the one who can talk about food, family, and duty while helping prepare a sacrifice. She’s maternal, observant, and fully normalized inside the town’s belief structure.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the domestic menace of a prestige horror matriarch. It’s a good part for someone who can make hospitality feel like indoctrination."
+      },
+      {
+        "name": "Hannah",
+        "role_type": "Supporting",
+        "demographics": "Female · early 60s · Caucasian",
+        "hook": "Hannah is the old-money matriarch who polices the covenant with a sharp tongue and a pistol. She’s judgmental, socially dominant, and completely at ease with coercion, which makes her one of the story’s clearest embodiments of inherited power.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the icy authority of Jessica Lange in American Horror Story at her most imperious. It’s a delicious supporting part for someone who can weaponize class and certainty."
+      },
+      {
+        "name": "Pia Garcia",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 30s · Hispanic",
+        "hook": "Pia is the outside law enforcement presence who briefly offers Jessica a path back to reality. She’s practical, skeptical, and sympathetic, which makes her the story’s clearest bridge between the audience and the town’s lie.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the straight-arrow credibility of a grounded procedural lead dropped into horror. It’s a clean, efficient part for someone who can play competence and empathy without overexplaining."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a contained rural setting into a moral nightmare.",
+        "fit_profile": "Second-feature or established indie genre directors with one to three festival features, especially those who like folk horror, religious dread, and performance-forward suspense. This material rewards directors who can stage escalating unease in a limited footprint and make the land itself feel like an active participant in the story.",
+        "detail": "The movie gives a director a clean escalation ladder: funeral, homecoming, discovery, siege, ritual, and aftermath. It also offers a strong visual contrast between barren and restored land, which is exactly the kind of motif-driven storytelling directors with a controlled visual style like to own."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming horror / premium genre lane",
+        "detail": "The script is contained enough to package around a strong director and one or two recognizable leads rather than a giant ensemble of names. The rural cult-horror lane has durable streamer demand, and the biblical-fertility hook gives it a sharper hook than a standard home-invasion title."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle section repeats the same suspicion beat.",
+        "detail": "Once Jessica arrives at the ranch, several scenes cycle through the same emotional motion: she senses something is wrong, someone explains it away, and she pushes harder. A next pass could protect the tension by letting one or two of those exchanges turn on a new piece of information or a sharper choice, so each beat changes the story rather than restating it.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Matt’s role is strongest as pressure, not mystery.",
+        "detail": "The husband functions well as comic friction and then as a hostage, but the script spends a fair amount of time on his reactions before the story fully locks into Jessica’s survival engine. One direction would be to streamline a few of his early beats so the movie reaches the ranch’s central horror faster while preserving his later payoff.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cult explanation arrives in a single long reveal.",
+        "detail": "The covenant mythology is memorable, and the biblical framing is a strong signature, but the explanation lands in one concentrated stretch with Kai and Brian. The version of the script where a few of those rules are seeded earlier in behavior, ritual, or town etiquette would make the reveal feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble and stunt load sit in the medium lane.",
+        "detail": "The script asks for a sizable adult cast, multiple night exteriors, fire, blood, restraint, and injury effects, but it stays within a contained ranch-and-town footprint. That makes it a good candidate for disciplined scheduling and practical effects planning rather than a large-scale effects build.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final epilogue is a strong franchise-style image.",
+        "detail": "The closing image of the restored ranch, the newborn, and the next pregnancy gives the movie a haunting circularity that could be a marketing asset. If the goal is a cleaner standalone feature, the ending already has the material to land as a final sting without needing extra explanation.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70.3,
+  "tier": "Optionable",
+  "inputTokens": 36748,
+  "outputTokens": 5829,
+  "cost": 0.053791500000000006,
+  "declaredFormat": "Feature film"
+}

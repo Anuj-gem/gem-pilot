@@ -1,0 +1,361 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Supernatural thriller",
+      "genre_tags": [
+        "Mystery",
+        "Family drama"
+      ],
+      "tone": "Grounded, culturally specific, eerie, escalating into surreal horror"
+    },
+    "positioning_hook": "A Guatemalan-American family on Buford Highway races to find a missing trans boyfriend before grief, police indifference, and a folkloric stalker bury their daughter alive.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clear emotional engine and a strong genre wrapper: a family crisis, a missing lover, and a supernatural threat tied to a specific Atlanta corridor. The audience is real and potentially passionate, though the cultural specificity and horror elements make this a more targeted play than a broad four-quadrant title."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early with Shelly’s collapse, the soil-filled bathtub, and the later reveal that the boyfriend’s disappearance and death are tied to a larger mystery. The script keeps the central question legible: is this grief, murder, or something folkloric moving through the family’s world?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Shelly, María, Mike, and Kim all have distinct energy, and María in particular carries memorable spiritual authority. The family dynamic is strong, though the story is still most electrified by the central mystery rather than by deeply layered individual arcs."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script fuses Atlanta procedural realism with Guatemalan spiritual imagery, queer/trans identity, and a distinctly Latinx family texture. The surreal horror passage in Shelly’s bedroom and the folk-horror vocabulary around El Sombrerón give the material a confident, ownable swing."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The investigation keeps opening new doors: the boyfriend, the stalker truck, the police cover-up, the trans identity reveal, and the soil connection all escalate cleanly. The structure has a strong forward pull because each scene adds a new layer to the same central mystery."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a familiar investigative engine made newly specific by the Buford Highway setting, the family’s bilingual life, and the way folklore is treated as lived inheritance rather than decorative lore. The trans/Latino identity reveal around Manuel gives the mystery a sharp emotional and social charge."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Buford Highway, the landscaping business, the café, the GBI room, and the family altar all feel like parts of a lived ecosystem. The script understands the social codes of the neighborhood, the immigrant family structure, and the institutional friction between community knowledge and police procedure."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: domestic warmth, procedural skepticism, queer grief, and folkloric dread all coexist without flattening each other. The shift into stylized horror near the end is bold and clearly intentional, giving the script a signature flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "There are deeper currents here around inheritance, faith, identity, and what families refuse to see. The script hints at a larger thematic architecture beneath the mystery, though the current draft is still most immediately driven by the case itself."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Cano household generates strong friction and affection, and the GBI team has a workable procedural rhythm. The family ensemble is the real engine, with María, Mike, Ana, Alex, and Shelly creating multiple playable combinations."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Bilingual and code-switching performances are central",
+          "Latinx/Guatemalan family specificity is load-bearing",
+          "Trans male role for Manuel",
+          "Nonbinary barista role",
+          "Ensemble includes law enforcement and family principal roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with several key exterior Atlanta street and parking-lot scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Atlanta/Buford Highway-specific locations",
+          "Café interior with ensemble blocking",
+          "Family home with basement apartment, garage, altar, and office",
+          "Police conference room",
+          "Night exterior parking lot and roadside investigation areas"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Stylized supernatural bedroom sequence, red-glow transformations, apparition imagery, and surreal visual transitions in the horror passage.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical soil-filled bathtub, body burial imagery, police evidence visuals, and atmospheric effects for the supernatural sequence.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "\"Estilo Bélico\" by Lil Jhay"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Marcha Número Cuatro\" by The San Lucas Band"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Amor Dificil\" by Los Flamas"
+        },
+        {
+          "type": "brand",
+          "detail": "Canon EOS Rebel"
+        },
+        {
+          "type": "brand",
+          "detail": "GrayKey"
+        },
+        {
+          "type": "brand",
+          "detail": "Happy Cake"
+        },
+        {
+          "type": "brand",
+          "detail": "Cheerios"
+        },
+        {
+          "type": "brand",
+          "detail": "Converse"
+        },
+        {
+          "type": "brand",
+          "detail": "Ford Explorer"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming thriller / premium cable feature lane with elevated genre and cultural specificity",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or streamer original feature release; the mystery and folklore elements support a prestige-genre launch."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary locations and a contained family/procedural footprint keep it manageable, while the stylized horror sequence and night exteriors add some production lift."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script depends on a bilingual ensemble with specific identity casting, including a trans male role and a nonbinary supporting character."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through homes, cafés, police spaces, and Buford Highway exteriors, with several distinct Atlanta-specific settings."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Death imagery, grief, police conflict, queer identity themes, and supernatural horror keep this in mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named songs and visible brands appear on the page, and the story’s cultural references are specific enough to warrant careful clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Buford Highway is an engine, not a backdrop.",
+          "what_it_means": "The setting gives the project a real commercial identity: a specific Atlanta corridor with immigrant businesses, police pressure, and neighborhood texture that feels lived-in rather than generic. Buyers looking for elevated genre with a strong sense of place will see a world that can travel because it is so particular.",
+          "evidence": "Street-sign opener, Cheshire Bridge investigation, Buford Highway references, landscaping business, Café Luna Via, and the family home all anchor the story in one ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family ensemble generates immediate heat.",
+          "what_it_means": "This is the kind of household dynamic that gives a producer multiple playable relationships inside one contained story, which is valuable for both casting and audience attachment. Character-driven buyers and actors who like ensemble drama will respond to the mix of tenderness, teasing, grief, and conflict across María, Mike, Ana, Alex, and Shelly.",
+          "evidence": "The breakfast scene, the priest intervention, the family table confrontation, and the final altar scene all show different combinations of the same core family.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "María is a standout spiritual anchor.",
+          "what_it_means": "María gives the script a memorable elder role with authority, humor, faith, and fear all in the same frame, which is exactly the kind of part prestige character actors chase. This is the sort of role that can attract a veteran actress looking for a culturally specific showcase with emotional weight.",
+          "evidence": "Her pronunciation jokes with Alex, her altar ritual, her insistence that something deeper is happening, and her final gratitude to Gaines all define her as more than exposition.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mystery keeps widening without losing focus.",
+          "what_it_means": "The script has a clean commercial spine: missing boyfriend, suspicious death, police misread, stalker truck, and a supernatural explanation that keeps the audience leaning forward. That kind of escalation is attractive to buyers because it promises a feature-length reveal engine with a clear emotional payoff.",
+          "evidence": "Shelly’s collapse, the soil in the bathtub, the police conference, the café testimony, and the Manuel reveal all deepen the same central question.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The folklore is embedded in family life.",
+          "what_it_means": "El Sombrerón and the Guatemalan spiritual imagery are not decorative world-building; they are woven into the family’s grief language, which gives the material a deeper cultural signature. That makes the project appealing to genre buyers who want horror with identity and to audiences hungry for folklore that feels inherited rather than imported.",
+          "evidence": "The altar, Tzizimite reference, Padre Esteban’s prayer sequence, and the final surreal vision all connect the supernatural to the family’s belief system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The procedural scenes have clean friction.",
+          "what_it_means": "The GBI material gives the script a credible investigative spine that can satisfy viewers who like process and evidence, while still serving the emotional story. Crime-thriller buyers and actors who enjoy sharp institutional dialogue will notice the tension between Kim’s precision and the local cops’ defensiveness.",
+          "evidence": "The conference room interrogation, the phone data discussion, and the soil analysis all move the case forward with clear stakes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The horror turn is visually memorable.",
+          "what_it_means": "The stylized bedroom sequence gives the project a trailer-worthy signature moment and signals that the movie is willing to go somewhere stranger than a standard missing-person thriller. Genre buyers and directors with a visual point of view will see room for a distinctive set piece rather than a purely talky mystery.",
+          "evidence": "The red-lit bedroom, the braiding hands, the coffin procession, and the grave burial imagery create a full surreal-horror passage.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a real lane: elevated genre with a specific place, a specific family, and a specific cultural mythology. The combination of Buford Highway realism, bilingual household dynamics, and surreal folk-horror imagery gives producers something marketable that still feels personal and hard to copy."
+    },
+    "lead_characters": [
+      {
+        "name": "Ixchel “Shelly” Cano",
+        "role_type": "Lead",
+        "demographics": "Female · 19 · Mexican American",
+        "hook": "Shelly is a raw, sleepless, emotionally exposed young woman whose body starts telling the story before anyone else can. She’s prickly, funny, panicked, and increasingly haunted, with a lived-in teen/young-adult volatility that makes her feel both vulnerable and dangerous to herself.",
+        "why_actor_wants_this": "This is the showcase territory of Florence Pugh in Midsommar — a character whose emotional unraveling becomes the engine of the movie, not just its symptom. Young actresses looking for a fearless, physically expressive lead role with horror, grief, and romantic obsession all in one part will chase this."
+      },
+      {
+        "name": "Miguel “Mike” Cano",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Mexican American",
+        "hook": "Mike is the exhausted family patriarch who keeps the business moving while trying to hold his daughter together. He reads as warm, practical, and deeply loving, but the script lets him carry the strain of a man who knows how much can be lost when a family stops understanding itself.",
+        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in Breaking Bad’s early family scenes — a grounded father role where every reassurance carries fatigue, authority, and fear underneath it. Mid-career dramatic leads who want a humane, emotionally legible anchor role will see the appeal immediately."
+      },
+      {
+        "name": "Ana Cano",
+        "role_type": "Lead",
+        "demographics": "Female · 50s · Latina",
+        "hook": "Ana is the family’s emotional translator: a pediatric nurse, a mother, and the one who keeps trying to convert panic into care. She has warmth and discipline, but the script gives her real ache in the scenes where she realizes love alone cannot pull Shelly back.",
+        "why_actor_wants_this": "This is the kind of role that gave Patricia Clarkson so much to play in Pieces of April — a mother whose competence is constantly tested by private heartbreak. Experienced dramatic actresses who want a role with authority, tenderness, and visible emotional pressure will respond to it."
+      },
+      {
+        "name": "María Ixcol de Garcia",
+        "role_type": "Lead",
+        "demographics": "Female · 70s · K'iche' Guatemalan refugee",
+        "hook": "María is the spiritual center of the household, equal parts comic elder, survivor, and believer. She carries history in her language, her altar, and her instincts, and the script lets her be both funny and terrifyingly perceptive.",
+        "why_actor_wants_this": "This is the showcase territory of Olympia Dukakis in Moonstruck — an elder family role that can pivot from wit to wisdom to grief without losing authority. Veteran actresses who want a culturally specific matriarch with scene-stealing presence will be drawn to it."
+      },
+      {
+        "name": "Alejandro “Alex” Cano",
+        "role_type": "Lead",
+        "demographics": "Male · 16 · Mexican American",
+        "hook": "Alex is the family’s pressure valve: smart, teasing, socially agile, and still young enough to think humor can fix almost anything. The script gives him the painful job of watching a sibling disappear emotionally while he’s still trying to be the funny kid at the table.",
+        "why_actor_wants_this": "This is the kind of role that gave Lucas Hedges in Manchester by the Sea its emotional sting — a younger family member whose jokes are a defense mechanism and whose breakdown lands hard. Young actors who can play charm and hurt in the same breath will want this."
+      },
+      {
+        "name": "Sue Kim",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · Korean American",
+        "hook": "Kim is the cool, surgical investigator who refuses to let the room control the terms of the conversation. She’s deadpan, strategic, and quietly amused by her own edge, which makes her a strong procedural presence without turning her into a stock cop.",
+        "why_actor_wants_this": "This is the showcase lane of Jodie Comer in The Last Duel’s sharper scenes — a character who wins rooms through precision, restraint, and controlled intelligence. Actors who want a smart, unsentimental procedural lead with bite will see a lot to play."
+      },
+      {
+        "name": "Omar Gaines",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · Black",
+        "hook": "Gaines is the more openly human half of the investigative duo, the one who listens, absorbs, and keeps trying to read the emotional temperature in the room. He has a softer, more intuitive presence than Kim, which makes him the audience’s entry point into the case’s human cost.",
+        "why_actor_wants_this": "This is the kind of partner role that gave Mahershala Ali so much texture in True Detective season 3 — a detective whose empathy is as important as his competence. Actors who want a grounded, watchable procedural lead with emotional intelligence will chase it."
+      },
+      {
+        "name": "Valentina Rojas",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · Latina",
+        "hook": "Valentina is the café owner with the social confidence to run the room and the protective instinct to defend her people. She’s warm, fast, and immediately readable, with enough authority to make the café feel like a community hub rather than a stop on the plot.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Regina King in If Beale Street Could Talk a vivid, scene-owning authority in limited time. Character actresses who like to arrive with force and leave a mark will be interested."
+      },
+      {
+        "name": "Padre Esteban Morales Ramirez",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Latino",
+        "hook": "Padre Esteban is gentle, observant, and spiritually grounded, but he also carries the uneasy charge of someone who knows prayer can’t solve everything. He functions as both comfort and omen, which gives him a quiet but memorable presence.",
+        "why_actor_wants_this": "This is the kind of role that gave Alfred Molina in many prestige dramas its gravitas — a supporting figure who can shift a scene simply by entering it. Veteran character actors who specialize in calm authority will be drawn to the part."
+      },
+      {
+        "name": "Gloria Martinez",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s · Guatemalan/Latina",
+        "hook": "Gloria is Manuel’s sister, carrying grief with a practical, exhausted dignity. She’s the bridge between the family’s private pain and the larger truth of what Manuel was hiding, and she gives the story a clean emotional witness.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave America Ferrera in Real Women Have Curves its emotional directness — a young woman who has to deliver truth while holding back tears. Actors who can play contained grief with clarity will want it."
+      },
+      {
+        "name": "Manuel / Manuela Martinez",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · trans male · Garifuna/Black Guatemalan",
+        "hook": "Manuel is the absent center of the mystery: tender, frightened, and trying to disappear from the people who should have protected him. Even in limited screen time, the role carries romantic charge, danger, and the ache of a life being misread by everyone around him.",
+        "why_actor_wants_this": "This is the kind of role that gave Elliot Page in The Umbrella Academy and Boys Don’t Cry-era material its emotional and cultural significance — a trans performance that is not symbolic but story-defining. Trans actors looking for a role with romance, fear, and narrative consequence will see real value here."
+      },
+      {
+        "name": "River Gutierrez",
+        "role_type": "Supporting",
+        "demographics": "Nonbinary · 20s · Mexican American",
+        "hook": "River is the calm, socially fluent barista who can read a room and step in before it tips. They give the café sequence a grounded, contemporary voice and help make the workplace feel like a real community with its own codes.",
+        "why_actor_wants_this": "This is the kind of role that gave Hari Nef in Transparent a specific, modern presence — a character whose identity is part of the texture, not the speechifying. Nonbinary actors looking for a smart, naturalistic supporting role will be interested."
+      },
+      {
+        "name": "Malik Thompson",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · Black",
+        "hook": "Malik is the sharp-tongued barista with dramatic flair and a low tolerance for police nonsense. He brings attitude, humor, and a little heat to the café scenes, which helps the world feel alive and opinionated.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting part that gave Lakeith Stanfield early momentum in ensemble work — a character who can pop in a few lines and change the temperature. Young actors with comic timing and edge will want it."
+      },
+      {
+        "name": "Alice Tran",
+        "role_type": "Supporting",
+        "demographics": "Female · 18 · Vietnamese American",
+        "hook": "Alice is the eager, slightly off-center newcomer who wants to be kind and fit in, even when the room is tense. She adds a lighter, more awkward social texture to the café ensemble and helps define the workplace as a real mix of personalities.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Jenny Slate in early ensemble work its awkward charm — a character whose sweetness and social misreadings create instant texture. Younger actors who can play innocence without flattening it will be drawn to her."
+      },
+      {
+        "name": "Camila Lopez",
+        "role_type": "Supporting",
+        "demographics": "Female · 20 · Honduran American · lesbian",
+        "hook": "Camila is guarded, observant, and protective, with a bluntness that reads as armor. She’s the café employee most clearly carrying the memory of Shelly, which gives her a sharper emotional edge than the other baristas.",
+        "why_actor_wants_this": "This is the kind of role that gave Aubrey Plaza in supporting ensemble work its dry, watchful charge — a character whose stillness makes every line land harder. Actors who like playing contained intensity will chase it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a folk-horror thriller with real neighborhood specificity and emotional truth.",
+        "fit_profile": "Established indie directors with at least one or two festival features, or TV directors moving into features who already know how to stage performance-forward tension. The material rewards directors who care about cultural texture, controlled dread, and making a supernatural reveal feel earned inside a grounded family drama.",
+        "detail": "The script gives a director a rare combination: intimate domestic scenes, procedural interrogation, and a stylized horror passage that can become a signature sequence. It will attract filmmakers who like to build atmosphere from behavior and place rather than from constant spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige-genre streaming feature / elevated horror-thriller lane",
+        "detail": "The movie can be anchored by one strong lead ensemble rather than heavy star packaging, which helps buyers who greenlight off concept and execution. The Buford Highway setting, bilingual dialogue, and folklore angle give it a distinct marketing hook and an exportable genre identity that sits well on streamer shelves."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The police-room reveal carries the case engine.",
+        "detail": "The conference-room sequence is doing a lot of explanatory work at once, especially around the phone data, the stalker truck, and the soil mismatch. One lever would be to let one of those discoveries land earlier in the scene so the room turns on a sharper emotional beat instead of stacking all the information in one pass.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The surreal horror passage can be streamlined.",
+        "detail": "The red-lit bedroom sequence is striking and memorable, and it also runs as a long, layered vision with multiple transformations. A next pass could consider compressing the number of symbolic beats so the sequence keeps its force while moving a little faster toward the grave image.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast is specific enough to shape the package.",
+        "detail": "The script’s bilingual, identity-specific ensemble is one of its commercial signatures, so packaging should prioritize actors who can handle code-switching and culturally rooted dialogue naturally. That specificity is a selling point for the right buyers, especially in the elevated-genre lane.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The music cues will need a clearance plan.",
+        "detail": "Three named songs are embedded in the page, including Lil Jhay, The San Lucas Band, and Los Flamas. A producer pass should decide whether those tracks are essential to the final cut or whether alternate music can preserve the same tonal lift with less clearance friction.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The story plays best in a contained Atlanta footprint.",
+        "detail": "The current version already benefits from a limited set of homes, cafés, offices, and street locations, which protects the story’s intimacy. Keeping the investigation centered on Buford Highway and the Cano household will preserve the neighborhood identity while keeping the production footprint efficient.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.7,
+  "tier": "Optionable",
+  "inputTokens": 26246,
+  "outputTokens": 5774,
+  "cost": 0.0456675,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-24T00:10:22.737Z",
+  "submission_id": "a98e4a92-4803-47f6-b603-8a487d1d31eb",
+  "eval_id": "c4968bec-339a-461f-add0-d8796c61cf8b",
+  "title": "The Unicorn Jay Basu Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tom Chase",
+      "role_type": "Lead",
+      "demographics": "Male · mid-30s · white · handsome, approachable, Silicon Valley professional"
+    },
+    {
+      "name": "Liz Chase",
+      "role_type": "Lead",
+      "demographics": "Female · mid-30s · white · lawyer, elegant, intelligent, mother"
+    },
+    {
+      "name": "Aria Greene",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · ethnically ambiguous / dark-eyed beauty · artist / social predator / vulnerable survivor"
+    },
+    {
+      "name": "Mike Kreski",
+      "role_type": "Supporting",
+      "demographics": "Male · early 40s · slick operator / wealth manager type"
+    },
+    {
+      "name": "Charles Stone",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · billionaire investor type"
+    },
+    {
+      "name": "Benny",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · streetwise, handsome, drug-using, from foster care"
+    },
+    {
+      "name": "Justin Chase",
+      "role_type": "Supporting",
+      "demographics": "Male · 15 · athletic, handsome teen"
+    },
+    {
+      "name": "Leo Vitulo",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · rugged private investigator"
+    },
+    {
+      "name": "Liz's Assistant Jeanie",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · professional assistant"
+    },
+    {
+      "name": "Edith von Strick",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · old-money, severe, socially polished"
+    }
+  ],
+  "positioning_hook": "A Silicon Valley couple’s post-gala threesome with a magnetic artist spirals into blackmail, murder, and a marriage-defining reckoning.",
+  "cost_usd": 0.053688,
+  "input_tokens": 41998,
+  "output_tokens": 4931,
+  "status": "wrote:leads_ok"
+}

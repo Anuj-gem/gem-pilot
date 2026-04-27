@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:06:57.641Z",
+  "submission_id": "4b140762-0454-4cb8-8acd-7a8d51b25732",
+  "eval_id": "4b1ad4a8-1030-4116-8296-b6d149ffa155",
+  "title": "Toy Figures Adventure",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Captain Everett Moran",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · weathered sailor type"
+    },
+    {
+      "name": "Norman",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · adult-coded comic foil"
+    },
+    {
+      "name": "Professor Brickfigure",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · scholarly, middle-aged-coded"
+    },
+    {
+      "name": "Jacob Wilfred",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · adult-coded, sharp-edged"
+    },
+    {
+      "name": "Mia",
+      "role_type": "Lead",
+      "demographics": "Female · 14 years old · Spanish teen"
+    },
+    {
+      "name": "Isabella",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · Spanish mother"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Spanish father"
+    },
+    {
+      "name": "Miguel Hernandez",
+      "role_type": "Supporting",
+      "demographics": "Male · teen · Spanish"
+    },
+    {
+      "name": "Sergeant Iguana",
+      "role_type": "Supporting",
+      "demographics": "Male-coded reptilian toy figure · adult-coded"
+    },
+    {
+      "name": "General Action Figure",
+      "role_type": "Supporting",
+      "demographics": "Male-coded toy figure · adult-coded"
+    },
+    {
+      "name": "Fixed Action Figure",
+      "role_type": "Supporting",
+      "demographics": "Male-coded toy figure · adult-coded"
+    },
+    {
+      "name": "General Apex",
+      "role_type": "Supporting",
+      "demographics": "Male-coded toy figure · adult-coded"
+    },
+    {
+      "name": "Council Speaker",
+      "role_type": "Supporting",
+      "demographics": "Gender-neutral or masked/ambiguous toy figure · adult-coded"
+    },
+    {
+      "name": "German Commander",
+      "role_type": "Supporting",
+      "demographics": "Male-coded toy figure · adult-coded"
+    },
+    {
+      "name": "El Possessor",
+      "role_type": "Supporting",
+      "demographics": "Male-coded villain figure · ageless"
+    },
+    {
+      "name": "Battered Toy / Fixed Action Figure",
+      "role_type": "Supporting",
+      "demographics": "Male-coded toy figure · adult-coded"
+    },
+    {
+      "name": "Train Manager",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    }
+  ],
+  "positioning_hook": "A band of forgotten toy figures launches a globe-spanning quest for the Truth, while a defiant teen’s family crisis unfolds in parallel inside the same haunted house.",
+  "cost_usd": 0.06253575,
+  "input_tokens": 48059,
+  "output_tokens": 5887,
+  "status": "wrote:leads_ok"
+}

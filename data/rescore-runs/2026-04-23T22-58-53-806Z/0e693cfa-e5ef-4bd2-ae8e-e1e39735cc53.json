@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-23T23:01:55.758Z",
+  "submission_id": "0e693cfa-e5ef-4bd2-ae8e-e1e39735cc53",
+  "eval_id": "36c02dfe-65e3-4a41-bfd8-b52569f7c026",
+  "title": "Challengers 2024 screenplay",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 3,
+  "lead_characters_summary": [
+    {
+      "name": "Tashi Donaldson",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "Art Donaldson",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · White"
+    },
+    {
+      "name": "Patrick Zweig",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · White"
+    }
+  ],
+  "positioning_hook": "A tennis coach-wife pushes her fading champion husband into a challenger tournament, where his old rival and her former lover turn one match into a three-way reckoning.",
+  "cost_usd": 0.05371125,
+  "input_tokens": 48221,
+  "output_tokens": 3899,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,316 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Action",
+        "Social satire"
+      ],
+      "tone": "Broad, anarchic, irreverent, and satirical with a working-class underdog spirit"
+    },
+    "positioning_hook": "A well-meaning ex-Marine becomes apartment manager of a drug-ridden housing complex and accidentally rallies its tenants into a full-scale neighborhood revolt.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built around a crowd-pleasing underdog who turns chaos into community. The broad comedy, action escalation, and tenant-versus-dealer setup give it a clear commercial lane, even if the humor is very specific in its register."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: Omar Epps is discharged, lands a job at Shangri-Lodge, and discovers he is managing a building run by Moco’s drug economy and Graft’s corruption. The story engine is easy to explain in one breath and keeps tightening as Epps tries to impose order."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Epps is a strong comic lead because his confidence outruns his competence, and Dex, Doty, Chui, and Marta each add a distinct flavor to the building. The characters are vivid and playable, though the script is most energized by Epps’ momentum rather than deep interior turns."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific comic universe: a housing project as a miniature battlefield, with welfare politics, tenant politics, and absurd physical comedy all colliding. The boldness is in the scale of the jokes and the social setting, even when the underlying structure is familiar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps escalating through clear set pieces: the job, the first confrontation with Moco, Doty’s arrest, the tenant meeting, the bullhorn uprising, and the final street takeover. Each beat adds pressure and the climax pays off the building-wide conflict in a satisfying public showdown."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "An ex-Marine apartment manager weaponizing tenant solidarity against a drug crew and a crooked cop has a fresh, instantly marketable shape. The idea feels specific to this building and this character, even though the broad arc of the outsider taking on a corrupt local order is familiar."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Shangri-Lodge feels like a lived-in ecosystem with its own rules, factions, and hierarchies: time-locked doors, night dealers, welfare dependence, the landlord, the groundskeeper, and the residents all have a place in the machine. The building is not just a backdrop; it is the engine of the story."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably rowdy and satirical, with cartoonish violence, verbal bravado, and social commentary all sharing the same frame. The script knows exactly how far to push the absurdity, from the rice/maggot bit to the final tenant uprising."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the comedy, the script points toward class resentment, institutional neglect, and the way communities police themselves when the system fails them. That depth is present in the dialogue and setting, though the feature plays primarily as a comic action engine rather than a layered psychological study."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Epps/Dex, Epps/Chui, Epps/Marta, Epps/Doty, and Epps/Moco all generate different kinds of scenes, which gives the movie a strong relational web. The ensemble is functional and often lively, though the story still belongs most decisively to Epps."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead role written for Omar Epps as the protagonist",
+          "Child role for Marta, age 6",
+          "Wheelchair user role for Theodore Doty",
+          "Large ensemble of tenants, dealers, and police",
+          "Several roles are written with specific ethnic or physical identifiers"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior courtyard, street, and lobby scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Large apartment-hotel complex with lobby, hallways, courtyard, pool, laundry room, apartments, and carport",
+          "Street-level drug-deal exterior",
+          "Police and crowd-control exterior scenes",
+          "Jail and hearing-room inserts"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirement beyond basic editorial effects and practical action staging.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical falls, window breakage, gunfire, explosions of chaos, and fight choreography throughout the apartment complex.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Frank Zappa's 'Frankenstein,' the Sex Pistols' 'God Save the Queen,' Twisted Sister's 'We're Not Gonna Take It,' and Mozart are specifically referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "Dairy Queen, Burger Boy, Pop-Tarts, and other consumer brands are named in dialogue and action."
+        },
+        {
+          "type": "real_person",
+          "detail": "Omar Epps is named as the lead character in the script text."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical comedy-action or streaming feature with a broad urban ensemble lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best suited to a festival-to-platform or modest theatrical release model built on star casting and broad audience comedy-action appeal."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained to one apartment complex, but the crowd scenes, fight choreography, window breaks, and night exteriors push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script wants a recognizable lead and a sizable supporting ensemble, including a child, a wheelchair user, and several highly specific character types."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is centered on one primary complex, but the script uses many distinct spaces inside it plus police, jail, and street exteriors."
+        },
+        "content": {
+          "level": "high",
+          "note": "Drug dealing, corruption, violence, sexual humor, profanity, and repeated physical humiliation define the script’s content profile."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Multiple named songs and consumer brands are embedded in the text and would need clearance if retained."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The apartment complex is a pressure cooker.",
+          "what_it_means": "The setting gives the movie a built-in engine: every hallway, room, and tenant becomes part of the conflict, which makes the story feel bigger than its footprint. Producers looking for a contained but energetic ensemble piece will see a clear production lane, and buyers who like neighborhood-scale stories with a strong sense of place will respond fast.",
+          "evidence": "Shangri-Lodge has time locks, dealers, a crooked cop, a landlord, and tenants who all operate under different rules.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Epps is a comic action lead with momentum.",
+          "what_it_means": "Omar Epps is written as a swaggering, self-deluding underdog who can carry both physical comedy and crowd-pleasing heroics, which is exactly the kind of role that can launch a star vehicle. Mid-career actors who can play charm, bravado, and vulnerability in one register will chase this, and audiences who like a loud, likable protagonist will stay with him.",
+          "evidence": "He turns every setback into a speech, a scheme, or a fight, from the trench gag to the bullhorn revolt.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The social satire has a clear target.",
+          "what_it_means": "The script turns welfare politics, landlord power, police corruption, and neighborhood self-policing into playable comedy, which gives the movie a sharper identity than a standard slobs-versus-thugs setup. Buyers who want a socially aware crowd-pleaser and directors who like satire with teeth will recognize the lane immediately.",
+          "evidence": "Dex’s welfare explanation, Graft’s percentage-taking, and the final 'Just say no' tenant chorus all point at the same system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating scenes.",
+          "what_it_means": "Dex, Doty, Chui, Marta, Moco, Schitz, and Graft each create a different comic or dramatic pressure on Epps, which makes the movie feel expandable and castable. Character actors and recognizable supporting players will have room to shine, and the script gives a producer multiple hooks for packaging around the lead.",
+          "evidence": "Doty’s dry fatalism, Marta’s bluntness, Chui’s warmth, and Moco’s theatrical menace all play distinct notes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax pays off the whole building.",
+          "what_it_means": "The final tenant uprising turns the entire complex into a single communal event, which gives the movie a satisfying public payoff rather than a private fistfight. That kind of ending is attractive to buyers because it delivers a clean audience release and gives the film a memorable final image.",
+          "evidence": "The bullhorns, the police raid, and the crowd cheering Epps create a full-building victory lap.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The comedy is physical and visual.",
+          "what_it_means": "The script is built around slapstick, reversals, and escalating bodily humiliation, which makes it easy to imagine on screen and easy to market from clips. That gives the project a trailer-friendly identity for theatrical or streaming buyers who want something loud and immediate.",
+          "evidence": "The trench fall, the dish avalanche, the window toss, the pool rescue, and the final hallway brawl all land as set-piece comedy.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, character-driven comedy-action feature with a real crowd-pleaser engine: one overconfident ex-Marine, one corrupt housing complex, and a building full of tenants who become a neighborhood army. The script gives a producer a playable lead, a vivid ensemble, and a finale that turns social chaos into a public victory lap."
+    },
+    "lead_characters": [
+      {
+        "name": "Omar Epps",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s · Black",
+        "hook": "A swaggering ex-Marine with a big mouth, a bigger imagination, and just enough heart to accidentally become the moral center of a broken building. He is funny because he is always overcommitted to the moment, whether he is bluffing, rescuing, flirting, or declaring war on people who are clearly more dangerous than he is.",
+        "why_actor_wants_this": "This is the showcase territory of Eddie Murphy in *48 Hrs.* or Martin Lawrence in *Blue Streak* — a fast-talking lead whose comic confidence is the engine of the movie and whose physical panic is part of the fun. Actors who can sell charm, rhythm, and underdog authority in the same scene will want this because it gives them a full-star turn, not just a punchline role."
+      },
+      {
+        "name": "Dex",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Black",
+        "hook": "The building’s weary conscience: dry, observant, and permanently one step ahead of Epps’ optimism. He is the guy who sees the system clearly, speaks in blunt truths, and still keeps showing up because somebody has to.",
+        "why_actor_wants_this": "This is the grounded sidekick territory of Morgan Freeman in *Driving Miss Daisy* or Delroy Lindo in *Get Shorty* — a role built on authority, timing, and the pleasure of watching a smart man react to chaos. Character actors who can play deadpan intelligence and moral fatigue will chase it because every scene gives them a clean, memorable button."
+      },
+      {
+        "name": "Chui Perez",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s · Hispanic",
+        "hook": "A warm, self-possessed single mother whose sweetness never reads as passivity. She sees through Epps faster than he sees himself, and her mix of tenderness, wit, and practical survival makes her the emotional anchor of the film.",
+        "why_actor_wants_this": "This is the kind of romantic-comic anchor Julia Roberts had in *Pretty Woman* or America Ferrera had in *Real Women Have Curves* — a role where warmth, intelligence, and romantic chemistry all matter at once. Actresses looking for a part that can play love interest, mother, and moral center without losing personality will chase it."
+      },
+      {
+        "name": "Marta",
+        "role_type": "Lead",
+        "demographics": "Female · 6-8 · child",
+        "hook": "Chui’s daughter is a tiny truth-teller with the instincts of a seasoned adult and the bluntness only a child can get away with. She punctures Epps’ fantasies, but she also becomes the movie’s clearest barometer for whether he is actually becoming a father figure.",
+        "why_actor_wants_this": "This is the sharp, scene-stealing child role territory of Anna Paquin in *The Piano* or Abigail Breslin in *Little Miss Sunshine* — a kid part that is funny because it is emotionally precise. Young performers and the teams that represent them will see a rare opportunity to play intelligence, mischief, and heart in the same role."
+      },
+      {
+        "name": "Theodore Doty",
+        "role_type": "Lead",
+        "demographics": "Male · 50s-60s · wheelchair user · British",
+        "hook": "A dryly comic groundskeeper with a battered sense of dignity and a taste for fatalism. He is the building’s most world-weary resident, but his wit and stubbornness make him more than a victim; he is one of the movie’s best truth-tellers.",
+        "why_actor_wants_this": "This is the kind of supporting-to-breakout showcase that John Goodman had in *The Big Lebowski* or Peter Dinklage had in *The Station Agent* — a role where stillness, wit, and lived-in frustration do the heavy lifting. Actors who want a memorable, offbeat character part with real personality will chase it."
+      },
+      {
+        "name": "Moco",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · Chinese",
+        "hook": "A theatrical neighborhood boss who treats menace like performance art. He is funny, creepy, and unpredictable, with a self-mythologizing style that makes him feel like the building’s resident trickster-tyrant.",
+        "why_actor_wants_this": "This is the villainous-showcase lane of Joe Pesci in *Goodfellas* or Benicio del Toro in *Sicario* — a role where charisma and threat are inseparable. Actors who like playing intelligence with volatility will want it because the part lets them dominate scenes without ever becoming generic bad-guy wallpaper."
+      },
+      {
+        "name": "Officer Peter Graft",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · white/Nordic-presenting",
+        "hook": "A polished, handsome cop who uses charm as a cover for corruption. He is the kind of authority figure who can smile while squeezing the room dry, which makes him a perfect institutional antagonist.",
+        "why_actor_wants_this": "This is the corrupt-cop showcase territory of James Remar in *48 Hrs.* or Michael Keaton in *The Paper* — a role where surface likability and moral rot sit side by side. Actors who enjoy playing polished menace will see a clean, scene-eating part."
+      },
+      {
+        "name": "Art Berro",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · unspecified",
+        "hook": "The landlord as cigar-chomping pragmatist, more interested in keeping the machine running than in anyone’s dignity. He is a classic pressure-from-above character who makes the building feel economically trapped.",
+        "why_actor_wants_this": "This is the kind of compact authority role that actors like Danny DeVito or Richard Jenkins can turn into a memorable presence with very little screen time. It gives a performer the chance to play institutional power with a comic edge."
+      },
+      {
+        "name": "Schitz",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · white · mercenary",
+        "hook": "A feral Marine buddy who arrives like a human weapon and talks like a drill sergeant with a hangover. He is pure kinetic energy, the kind of friend who makes every scene louder and more dangerous.",
+        "why_actor_wants_this": "This is the hard-edged comic bruiser lane of Bill Paxton in *Aliens* or Michael Biehn in *The Terminator* — a role that lets an actor play macho absurdity with real physical presence. Action-comedy performers will want the chance to be both ally and chaos agent."
+      },
+      {
+        "name": "Sheila Estevez",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · large build",
+        "hook": "A ferocious, sexually aggressive tenant whose force of personality is as overwhelming as her physical presence. She is comic, dangerous, and impossible to ignore, which makes her one of the building’s most volatile residents.",
+        "why_actor_wants_this": "This is the kind of outrageous supporting turn that Kathy Bates in *Misery* or Melissa McCarthy in *Bridesmaids* showed can steal a movie by sheer force of presence. Character actresses who like playing big, unapologetic, scene-commanding roles will be drawn to it."
+      },
+      {
+        "name": "Mr. Lueng",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · Chinese",
+        "hook": "The restaurant owner who sees everything, says little, and carries the exhausted patience of a man who has survived too many disasters. He functions as a comic straight man and a quiet witness to the building’s chaos.",
+        "why_actor_wants_this": "This is the dry, exasperated authority lane of Randall Park or James Hong in a scene-stealing mode — a part that rewards timing, restraint, and reaction. Actors who can make a single look land will get mileage here."
+      },
+      {
+        "name": "Marta's Father",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Hispanic",
+        "hook": "An offscreen absence who still shapes Chui’s life and the emotional stakes around family responsibility. He is less a character than a wound the script keeps referencing.",
+        "why_actor_wants_this": "This is the brief but meaningful absent-father slot that can still matter if cast with the right face and presence. It gives an actor a chance to define a whole emotional history in very little screen time."
+      },
+      {
+        "name": "Mrs. Greer",
+        "role_type": "Supporting",
+        "demographics": "Female · 70s-80s · elderly",
+        "hook": "A frail resident with a surprising amount of backbone, she becomes one of the film’s clearest examples of how the building has taught everyone to defend themselves. Her age and vulnerability make her defiance land harder.",
+        "why_actor_wants_this": "This is the kind of sharp elderly role that Frances Sternhagen or Olympia Dukakis could make unforgettable — a small part with a strong comic and moral button. Veteran character actresses will recognize the pleasure of playing against expectation."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a single building into a comic battleground.",
+        "fit_profile": "Second-feature or established indie directors with a taste for ensemble comedy, social satire, and physical escalation. This material rewards filmmakers who can stage crowd energy, keep tonal control across broad comedy and real stakes, and make a contained location feel like a living city block.",
+        "detail": "The movie gives a director a chance to choreograph escalating set pieces inside one recurring environment, which is a strong craft showcase without requiring a giant canvas. It will appeal to directors who like performance-forward material with clear visual business and a finale that can land like a public event."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Broad comedy-action with social satire and urban ensemble energy",
+        "detail": "The script is contained enough to be mounted on a modest budget, but it does want a recognizable lead and a strong supporting cast to sell the comic rhythm. The neighborhood-comedy lane has export value because the central conflict is easy to grasp, the set pieces are visual, and the building itself functions like a repeatable brand."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The script is built on a very broad comic register.",
+        "detail": "The physical comedy, sexual humor, and heightened dialogue are the movie’s signature, so the next pass could simply sharpen the balance of joke density versus character beat in a few long exchanges. The version where a couple of the longer comic riffs land a beat earlier would keep the momentum as strong as the concept.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The building engine is already strong.",
+        "detail": "The Shangri-Lodge footprint is a major advantage because it keeps the story producible while still feeling expansive. A producer can think in terms of one primary complex plus a handful of supporting exteriors, which protects the story and keeps the budget in a practical lane.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting cast is colorful but crowded.",
+        "detail": "There are a lot of distinct tenant and antagonist types, and the movie already has enough texture to work; a next pass could consider whether any two minor residents can be combined without changing the social ecosystem. That would preserve the ensemble flavor while making the cast list easier to package.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The named music and brands invite clearance work.",
+        "detail": "The script uses specific songs and consumer brands as part of its texture, which helps the period feel and the comic rhythm. If the goal is a cleaner production path, those references can be swapped for equivalents without changing the story engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Epps’ emotional turn arrives through action.",
+        "detail": "The final act is strongest when his leadership is shown through concrete choices — the bullhorn, the tenant meeting, the confrontation with Graft — and a next pass could keep leaning on that rather than explanatory dialogue. The version of the script where his change is dramatized in fewer speeches and more decisive moves would make the payoff hit even harder.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.7,
+  "tier": "Optionable",
+  "inputTokens": 42543,
+  "outputTokens": 5408,
+  "cost": 0.056243249999999995,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:08:48.000Z",
+  "submission_id": "403f7c20-0341-4c90-b578-e583d4b6e9f2",
+  "eval_id": "a538d13c-1733-45d4-b1a1-5bde699e4d6b",
+  "title": "Script - The Last Call",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Italian-American"
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Italian-American"
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "Marty",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Susan Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Helen Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Dr. Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Dr. Wyatt",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Dr. Karen Levy",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s"
+    }
+  ],
+  "positioning_hook": "A grief-stricken lawyer sues the hospital that discharged his suicidal brother, only to discover the case is really about the call he never answered.",
+  "cost_usd": 0.04549125,
+  "input_tokens": 31297,
+  "output_tokens": 4893,
+  "status": "wrote:leads_ok"
+}

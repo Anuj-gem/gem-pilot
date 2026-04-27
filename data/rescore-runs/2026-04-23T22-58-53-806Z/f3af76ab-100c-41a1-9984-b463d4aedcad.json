@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:22:52.245Z",
+  "submission_id": "f3af76ab-100c-41a1-9984-b463d4aedcad",
+  "eval_id": "784e7327-a6a9-4b27-bc5e-9cf50b1f19c7",
+  "title": "Life In Space 5 1",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Kyle Russell",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s in the main timeline, 118 in the epilogue"
+    },
+    {
+      "name": "Michael Olsson",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s in the main timeline, 117 in the epilogue"
+    },
+    {
+      "name": "Stanley Simmons",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s in the main timeline, 118 in the epilogue"
+    },
+    {
+      "name": "Catherine Sand-Backer",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s in the main timeline, 37 in the later timeline"
+    },
+    {
+      "name": "Dr. Lake Gore",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Dr. Charles L. Grant",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "Mrs. Maria Olsson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "Mrs. Jane Russell",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "Mrs. Simmons",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    }
+  ],
+  "positioning_hook": "Three childhood friends launch a nine-year mission to explore the solar system, only to discover each planet is ruled by a god guarding a hidden truth about Earth.",
+  "cost_usd": 0.0577545,
+  "input_tokens": 49874,
+  "output_tokens": 4522,
+  "status": "wrote:leads_ok"
+}

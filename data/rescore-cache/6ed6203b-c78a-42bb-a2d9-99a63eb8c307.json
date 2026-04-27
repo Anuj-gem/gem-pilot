@@ -1,0 +1,352 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic comedy",
+      "genre_tags": [
+        "sports",
+        "drama"
+      ],
+      "tone": "Broad, heightened, comic, sentimental, and self-aware"
+    },
+    "positioning_hook": "A fallen baseball phenom with a heart condition builds a dating app to measure chemistry, then has to survive love, humiliation, and a viral breakdown before his second act can begin.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The core promise is easy to grasp: a once-famous athlete, a love obsession, and a comeback story with comic energy. The material leans broad and accessible, though the tonal sprawl and very specific slang narrow the lane a bit."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early through Jase's collapse, the broken-heart diagnosis, and the idea of turning chemistry into an app. The hook is clear enough to track, even as the script keeps adding new engines like the gala, the interview, and the viral video."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Jase has a strong comic vanity and a built-in vulnerability, especially once the heart condition and eviction pressure hit. Ron, Lance, and Camilla each add a different flavor, but the supporting players mostly orbit Jase's emotional weather."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The blend of sports fame, erectile dysfunction, social media, and pseudo-science gives the script a distinct comic identity. The execution stays in familiar rom-com/comeback territory, but the premise itself is unusually specific."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps moving with reversals, public embarrassment, and escalating social pressure, so it rarely sits still. At the same time, the story often advances by repeated argument scenes and set-piece conversations rather than a single clean drive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A heartbroken athlete literally trying to engineer chemistry into software is a fresh, instantly legible engine. The idea feels like it could only belong to this character, even when the surrounding beats are more familiar."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The world has a lively mix of sports celebrity, grocery-store survival, coding class, nightlife, and social-media hustle. It is specific and playable, though it functions more as a series of comic arenas than a deeply layered ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The voice is loud, playful, and intentionally exaggerated, with a strong comic rhythm in the dialogue. The script knows its lane, but it shifts between raunchy comedy, sincerity, and inspirational uplift in a way that keeps the tonal identity broad rather than singular."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the jokes, there is a real story about identity after loss, masculinity, and the need to be seen for more than performance. The script gestures toward that depth repeatedly, especially in the hospital, the church, and the final talk-show reveal."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Jase/Ron is the engine, and Jase/Lance adds a smart counterweight, while Camilla supplies the romantic pressure. The relationships are active and comic, though the story still lives most strongly on the central trio rather than a fully webbed ensemble."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Black male lead in his late teens/20s",
+          "Black female romantic lead in her 20s",
+          "Black male best friend in his 20s",
+          "Black male tech/science foil in his 20s",
+          "One toddler role",
+          "Several 20s-50s supporting roles across sports, media, retail, and family settings"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Roughly 2:1 interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Baseball field and stadium environments",
+          "Sports bar",
+          "Apartment interiors",
+          "Grocery store",
+          "Coding classroom",
+          "Gym",
+          "Pawn shop / tech repair space",
+          "News studio",
+          "Town gala event space",
+          "Church",
+          "Airport"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily montage-style inserts, phone-screen graphics, social-media overlays, and stylized visualizations of chemistry/heart-rate concepts.",
+        "stunts_level": "minor",
+        "sfx_needs": "Medical monitors, crowd reactions, party/gala resets, and a few physical comedy beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Google is referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "MLB, MLB commissioner, and baseball team/league references are used."
+        },
+        {
+          "type": "brand",
+          "detail": "Social platforms and app behavior are referenced generically but not as named brands beyond phone/social media usage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming romantic comedy with sports-comedy appeal",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or streamer-original launch."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary locations, crowd scenes, sports settings, and a gala sequence keep it above microbudget, but it remains far from effects-heavy."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script wants a charismatic lead quartet and several supporting roles, plus a toddler and a few age-specific authority figures."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through apartments, sports venues, retail, nightlife, a church, a studio, and an airport, which creates a moderate company move footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Sexual dialogue, erectile dysfunction material, public humiliation, and mature relationship comedy push it into adult-content territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named references to MLB and Google, plus the use of a real-world sports/media frame, create some clearance attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns heartbreak into a product.",
+          "what_it_means": "That gives the movie a clean commercial engine: a romantic comedy with a built-in high-concept device that can be pitched in one sentence and marketed visually. Buyers who want a date-night hook with a tech twist will immediately understand the lane, and actors get a role that plays vanity, humiliation, and reinvention in one package.",
+          "evidence": "Jase's broken-heart diagnosis leads directly to the idea of building the LIPS/Lume Connect app around chemistry and heart-rate monitoring.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jase is a showcase lead.",
+          "what_it_means": "The role gives an actor swagger, physical comedy, romantic desperation, and a late-story emotional reset, which is exactly the kind of arc that can reframe a performer’s image. Mid-career comedic leads and athletic screen presences will see a part that lets them be funny, vulnerable, and larger than life without leaving the same movie.",
+          "evidence": "He goes from draft-day swagger to grocery-store humiliation to a live-TV confession about his body and identity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ron gives the movie a second engine.",
+          "what_it_means": "The best buddy-comedy material here is not decorative; Ron’s loud, performative energy creates a parallel lane for jokes, conflict, and loyalty that can carry scenes on its own. That makes the project more packageable for a comic supporting actor and gives the film a built-in audience for bromance chemistry.",
+          "evidence": "Ron hustles the crowd at the sports bar, bankrolls the app, DJs the gala, and repeatedly pushes Jase toward action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a strong social-media comedy lane.",
+          "what_it_means": "The story understands how public image, followers, DMs, and viral embarrassment can drive modern romantic stakes, which makes it feel current without needing a trendy setting gimmick. Streamers and younger adult audiences will recognize the behavior instantly, and the material gives directors a lot of room for phone-screen storytelling and crowd reaction comedy.",
+          "evidence": "Camilla’s follower language, the friend requests, the app downloads, and the viral video all become plot pressure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world moves through recognizable status zones.",
+          "what_it_means": "Sports fame, grocery work, coding class, nightlife, and news media create a ladder of social spaces that can be played for contrast and aspiration. That kind of world texture helps the movie feel bigger than a single romance and gives producers multiple audience entry points: sports fans, rom-com viewers, and tech-comedy audiences.",
+          "evidence": "The script jumps from the ballpark and sports bar to the grocery store, coding classroom, gala, and TV studio.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Camilla is more than a love interest.",
+          "what_it_means": "She has a public-facing career, her own ambition, and a clear transactional understanding of access, which makes her commercially useful as a romantic lead rather than a passive prize. That opens the door for an actress who can play charm, calculation, and warmth in the same role, and it helps the movie appeal to buyers looking for a female lead with agency.",
+          "evidence": "Camilla is a weather/news personality who uses Jase for content, leverage, and eventually a public reconciliation beat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending is built for uplift.",
+          "what_it_means": "The final talk-show reveal and public app launch give the movie a crowd-pleasing finish that feels designed for applause, which is valuable in a marketplace that still rewards emotional payoff. That makes the script attractive to buyers looking for a feel-good streamer title or a modest theatrical play with a strong trailer button.",
+          "evidence": "Jase confesses on live TV, the audience turns, and the app is rebranded and embraced in front of a cheering crowd.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a commercial, actor-friendly rom-com with a sports-comeback spine and a modern social-media engine. The hook is clean, the lead role is built for charisma and humiliation in equal measure, and the buddy dynamic gives the package a second comic lane that can travel.",
+      "headline_alt": ""
+    },
+    "lead_characters": [
+      {
+        "name": "JASE JEWELS",
+        "role_type": "Lead",
+        "demographics": "Male · 18-20s · Black",
+        "hook": "A former baseball prodigy with a giant ego, a wounded body, and a romantic fixation he keeps trying to turn into a business model. Jase is funniest when he is most convinced of himself, but the script keeps peeling back the swagger to reveal a kid who is terrified of being ordinary, broke, and unloved.",
+        "why_actor_wants_this": "This is the showcase territory of Michael B. Jordan in a sports-drama-comedy mode or Donald Glover in a self-mythologizing lead — a role where charisma is the mask and the breakdown is the payoff. An actor gets to play physical confidence, wounded vanity, romantic desperation, and a live-public confession that resets how the audience sees him."
+      },
+      {
+        "name": "RON DUPREE",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · Black",
+        "hook": "Jase’s loudest friend and most dangerous enabler, a DJ/performer who treats every room like a stage and every problem like content. Ron is a hustler with real loyalty under the noise, and the script uses him as both comic pressure valve and emotional mirror.",
+        "why_actor_wants_this": "This is the kind of scene-stealing best-friend slot that made Lakeith Stanfield in Sorry to Bother You or Lil Rel Howery in Get Out pop — a role where rhythm, interruption, and comic timing are the craft. Character comics and charismatic supporting leads will chase it because the part gets big laughs while still carrying real friendship stakes."
+      },
+      {
+        "name": "CAMILLA",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Black",
+        "hook": "A polished media personality who knows exactly how much attention she can command and how to use it. Camilla is seductive, strategic, and not remotely passive; she keeps the romantic tension alive because she can weaponize charm while still reading as emotionally legible.",
+        "why_actor_wants_this": "This is the kind of glossy, layered romantic lead that gave Tessa Thompson in Sorry to Bother You or Regina Hall in Support the Girls room to play wit, control, and vulnerability at once. Actresses looking for a role that can be sexy, funny, and commercially visible will see a part with real screen presence and public-facing sparkle."
+      },
+      {
+        "name": "LANCE KOWALSKI",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · White",
+        "hook": "A hyper-competent, socially awkward tech brain who wants status almost as badly as Jase wants love. Lance is the straight man with a secret hunger, and his arc from dismissive skeptic to invested collaborator gives the movie its smartest undercurrent.",
+        "why_actor_wants_this": "This is the Jesse Eisenberg in The Social Network lane — fast, precise, defensive intelligence with a buried need to matter. Actors who can play verbal speed, insecurity, and reluctant loyalty will want it because the role lets them be both comic foil and emotional co-creator."
+      },
+      {
+        "name": "GABE",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Black",
+        "hook": "A grounded, attractive, no-nonsense woman who keeps reappearing as both temptation and reality check. Gabe has enough mystery to keep Jase off balance, and the script uses her to puncture his fantasies while still leaving room for a genuine connection.",
+        "why_actor_wants_this": "This is the kind of cool, self-possessed supporting role that gave Teyonah Parris in Chi-Raq or Issa Rae in supporting-romantic mode a chance to own a scene with very little screen time. Actors who specialize in sharp, modern romantic energy will want it because the part can steal scenes without overexplaining itself."
+      },
+      {
+        "name": "LESTER CLINE",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "A polished media operator who understands ratings, image, and leverage better than anyone else in the room. Lester is the gatekeeper who can elevate Jase or expose him, and his calm authority gives the story a professional-world counterweight.",
+        "why_actor_wants_this": "This is the smooth authority slot of a Jeffrey Wright or Sterling K. Brown-style media presence — a role that plays intelligence, control, and quiet persuasion. Veteran character actors will chase it because the part can anchor scenes with minimal movement and maximum authority."
+      },
+      {
+        "name": "KENDRA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · Black",
+        "hook": "Jase’s older sister and one of the few people who can still talk to him like a human being. She carries the family memory, the practical pressure, and the emotional truth of the story, especially when the script shifts from jokes to grief and self-examination.",
+        "why_actor_wants_this": "This is the kind of grounded family role that gave Octavia Spencer in The Help or Tichina Arnold in a more dramatic register room to be funny, maternal, and cutting in the same breath. Actors who can play lived-in authority will want it because the part can land emotional truth without needing a huge amount of page count."
+      },
+      {
+        "name": "DOCTOR BROOKS",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "A calm, intelligent medical professional who becomes the story’s blunt instrument for reality. He explains the condition, punctures Jase’s denial, and gives the movie its clearest bridge between comedy and consequence.",
+        "why_actor_wants_this": "This is the kind of dry, authoritative supporting role that lets an actor play straight-man precision the way Walton Goggins or Jeffrey Wright often can in ensemble comedy-drama. It’s attractive to actors who like landing exposition as character rather than information."
+      },
+      {
+        "name": "SHILO",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "A rich, smug rival who represents the polished, moneyed version of the world Jase wants to beat. He is less a full emotional counterpoint than a pressure device, but he gives the story a clean external antagonist in the romance and app plot.",
+        "why_actor_wants_this": "This is the glossy antagonist lane of a Patrick Bateman-lite social rival or a corporate-romcom heel — a role built for controlled arrogance and public humiliation. Actors who enjoy playing status and contempt will want it because the part gets to be the guy everyone wants to see taken down."
+      },
+      {
+        "name": "IZZY",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "A bright, approachable woman who gives Lance a real-world romantic opening and helps pull the tech plot into human territory. She is warm, lightly comic, and useful in the best way: she makes the app story feel like it can touch actual people.",
+        "why_actor_wants_this": "This is the sweet, grounded romantic-support slot that lets an actress play charm without needing to dominate the frame. It’s the kind of part that appeals to performers who like making a small role feel like the emotional proof of concept."
+      },
+      {
+        "name": "DAVE/PRODUCER",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "A nervous media professional who is always one step behind Camilla’s ambition. He helps define the show-business ecosystem around her and gives the news-studio scenes a believable hierarchy.",
+        "why_actor_wants_this": "This is the awkward-network-executive lane that lets an actor play pressure, compliance, and comic discomfort in a few sharp beats. It’s attractive to character actors who can make institutional fear funny."
+      },
+      {
+        "name": "BRIAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Jase’s grocery manager, a working-class authority figure who needles him but also keeps the workplace alive. He gives the movie a blue-collar comic texture and a place where Jase’s celebrity means almost nothing.",
+        "why_actor_wants_this": "This is the kind of dry, regional manager role that lets an actor play workplace authority with bite. It suits character actors who can make a few lines feel like a whole world."
+      },
+      {
+        "name": "MS. WATERBAKER",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s-70s",
+        "hook": "A sweet, nosy neighbor who functions as the story’s emotional neighborly conscience. She is comic, maternal, and quietly connective, always nudging Jase toward community and away from isolation.",
+        "why_actor_wants_this": "This is the warm elder-support role that gives an actress a chance to be funny, affectionate, and memorable in very little time. It’s the kind of part that character veterans love because it can become the movie’s heart in a single scene."
+      },
+      {
+        "name": "MR. HOPPER",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "A landlord presence who keeps the eviction pressure real. He is not a villain in a big sense, but he is one of the story’s practical reminders that Jase’s life is collapsing around him.",
+        "why_actor_wants_this": "This is a clean, no-nonsense authority role that lets an actor play pressure without melodrama. It’s useful for a performer who can make a small scene feel like a real-world threat."
+      },
+      {
+        "name": "LESTER CLINE THE SPORTS ANCHOR",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "A polished sports-media voice who frames Jase’s public fall and comeback. He helps turn the story into a public narrative, which is essential to the movie’s celebrity-comeback structure.",
+        "why_actor_wants_this": "This is the broadcast-authority slot that gives an actor the chance to sound like the voice of the culture. It suits performers who can deliver polished, ironic exposition with confidence."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a big-hearted, performance-forward comedy about public humiliation and private reinvention.",
+        "fit_profile": "Second- or third-feature directors with a strong festival-comedy or character-drama background, especially those who like heightened dialogue and ensemble rhythm. The material rewards directors who can keep a broad comic tone emotionally honest while staging sports, nightlife, and media spaces with clean visual momentum.",
+        "detail": "The movie gives a director a chance to choreograph crowd comedy, intimate breakup scenes, and a live-TV payoff without needing heavy spectacle. It will attract filmmakers who know how to keep actors loose, pace reversals cleanly, and make a big emotional finish land without losing the joke."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming rom-com / sports-comedy lane",
+        "detail": "It can be packaged around one charismatic lead and a strong buddy dynamic rather than a large-name ensemble, which keeps the financing conversation manageable. The sports-celebrity hook plus modern dating-app angle gives it a clear trailer concept and an easy streamer-facing audience promise."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The app engine could be simplified sooner.",
+        "detail": "The script spends a lot of time explaining the chemistry band, the geolocation logic, the coding class, and the server-space issue before the emotional payoff fully takes over. One lever would be to let the app feel more intuitive earlier so the movie can spend more pages on the romantic and public-pressure turns that are already the strongest part of the material.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section repeats the same argument shape.",
+        "detail": "Several scenes cycle through Jase/Ron banter, Jase/Camilla tension, and Jase/Lance skepticism in slightly different rooms. A next pass could tighten a few of those exchanges so each one either advances the app, deepens the relationship, or changes Jase’s self-image in a visible way.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The tonal swing is broad by design.",
+        "detail": "The script moves from raunchy comedy to family grief to inspirational uplift, which gives it range but also asks the audience to track a lot of emotional registers. The version of the movie where the final act leans a little harder into one dominant lane would make the trailer promise even cleaner.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is wider than the core story needs.",
+        "detail": "The script uses a sports bar, apartment, grocery store, coding classroom, gym, pawn shop, gala, church, airport, studio, and stadium. A production-minded pass could consider whether a few of those spaces can be doubled or absorbed into one another without losing the social ladder that makes Jase’s fall-and-rise feel big.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The adult-comedy material sets the platform lane.",
+        "detail": "The erectile dysfunction jokes, sexual banter, and public confession push this away from family or broad broadcast territory and into mature streaming or premium-comedy space. That is a useful positioning fact for buyers, because it clarifies the audience and the marketing posture immediately.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The lead role wants a performer with real comic vanity.",
+        "detail": "Jase works best if the actor can sell swagger as a defense mechanism, not just as a pose. Packaging should prioritize someone who can handle physical comedy, romantic embarrassment, and a live-confessional turn in the same performance.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": "",
+    "production_reality_note": ""
+  },
+  "weightedScore": 61.3,
+  "tier": "Optionable",
+  "inputTokens": 38892,
+  "outputTokens": 5731,
+  "cost": 0.0549585,
+  "declaredFormat": "Feature film"
+}

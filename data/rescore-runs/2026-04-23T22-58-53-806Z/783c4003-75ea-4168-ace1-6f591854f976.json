@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:29:45.146Z",
+  "submission_id": "783c4003-75ea-4168-ace1-6f591854f976",
+  "eval_id": "bd585470-1462-4a87-9fe0-a86b2d9a8015",
+  "title": "The Union (2)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "LEWIS",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "EMMA",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "CHANCE HUNTER",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "DANA",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "DARREN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "BOB",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s"
+    },
+    {
+      "name": "CLARE",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s"
+    },
+    {
+      "name": "TIM R",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "MATT",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "LILA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "INTERVIEWER",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    }
+  ],
+  "positioning_hook": "A young apprentice in a marriage-optimization regime falls for a woman outside his approved zone, then gets pulled into the Union’s propaganda machine to prove their love is real.",
+  "cost_usd": 0.045723,
+  "input_tokens": 31408,
+  "output_tokens": 4926,
+  "status": "wrote:leads_ok"
+}

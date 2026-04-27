@@ -1,0 +1,365 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Fantasy",
+      "genre_tags": [
+        "Adventure",
+        "Dark Fairy Tale"
+      ],
+      "tone": "Heightened, gothic, romantic, surreal"
+    },
+    "positioning_hook": "Cinderella wakes in a colorless kingdom where her own fairy tale has been rewritten, and the only way to reclaim her life is to survive the people who want her erased.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The fairy-tale brand is instantly legible, and the script keeps turning that familiarity into fresh spectacle with the black-and-white Glooming, the hidden color world, and the royal identity reveal. Its appeal is strongest with fantasy viewers and prestige genre buyers who want a recognizable entry point with a stranger, more adult engine underneath."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot announces its central engine early: a cursed, color-drained kingdom, a Cinderella who is not where she thinks she is, and a hidden world that opens through portals and doors. By the time the labyrinth and the duplicate queen arrive, the series promise is clear and escalating."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Cinderella is built as a tender, dangerous, emotionally open lead whose innocence can pivot into violence, and that contradiction gives the series a durable center. The supporting cast offers strong archetypal energy, though several players function more as vivid forces around her than as fully independent engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar fairy tale and retools it into a mythic, blood-stained identity mystery with caste politics, color magic, and a multiverse-like fairy-tale labyrinth. The boldness is not just in the premise but in the willingness to let the story swing from domestic cruelty to operatic fantasy without apology."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The pilot keeps escalating through reversals: the murder attempt, the horse escape, the town-square riot, the portal reveal, and the final confrontation with the doppelganger and fairy godmother. It ends by opening a much larger story rather than closing the chapter, which is exactly what a series pilot should do."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script feels like a fairy tale that has discovered its own buried machinery: the Glooming, the color world, the duplicate Cinderella, and the labyrinth of doors all feel surprising yet inevitable once introduced. The concept lands as something audiences can grasp quickly while still feeling unlike standard fantasy fare."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world has social hierarchy, caste language, royal politics, magical rules, and a visual system built around color versus black-and-white that generates story at every turn. The town, castle, cave, labyrinth, and fairy-tale identities all suggest a larger ecosystem beyond the pilot."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably its own: gothic fairy tale, romantic dread, grotesque comedy, and sudden bursts of wonder all coexist in the same frame. The script can move from a choking attempt in a stable to a Christmas feast to a portal into Oz without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the surface fairy-tale plot is a deeper identity puzzle about memory, blessing, class, and what was stolen from Cinderella and the kingdom alike. The duplicate selves, the hidden fairy, and the color restoration all suggest a long runway of mythic revelation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The pilot gives Cinderella strong relational pressure from Evelyn, Hubert, Toby, Lyle, Titus, Josephine, and the doppelganger Queen Ella, and those pairings are story-generating. The ensemble is vivid, though the series still clearly orbits Cinderella as the gravitational center."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 5,
+        "series_regulars": 10,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple age-specific roles",
+          "Doppelganger casting for Cinderella/Ella",
+          "Animal-performance coordination",
+          "Several roles require strong physicality and period/fantasy presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "fantasy period",
+        "notable_requirements": [
+          "Castle/chateau interiors",
+          "Forest and shoreline exteriors",
+          "Dungeon and cave sets",
+          "Labyrinth/portal environments",
+          "Large crowd and court scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Color-drain and restoration effects, magical portals, glowing eyes, transformation-like visual language, and fantasy environment enhancement.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Horse work, fight choreography, choking/knife violence, trample/stampede beats, blood effects, and practical magical reveals.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Over the Rainbow is sung and quoted in a key death scene."
+        },
+        {
+          "type": "named_music",
+          "detail": "Have Yourself a Merry Little Christmas is sung as a recurring emotional motif."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script explicitly uses Cinderella, the Fairy Godmother, the Yellow Brick Road, Oz, ruby slippers, and the Big Bad Wolf."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming fantasy drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mythic fantasy with episode-to-episode mystery, identity reveals, and a larger fairy-tale universe unfolding through portals, rival courts, and hidden realms."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Fantasy period settings, crowd scenes, horses, and portal/labyrinth sequences push this above contained drama, but it remains far below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The pilot needs a sizable ensemble, child roles, and a convincing Cinderella/Ella duality, but it does not depend on an oversized star roster."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through chateau, town square, forest, cave, shoreline, dungeon, throne room, and a magical labyrinth, with multiple night exteriors and animal movement."
+        },
+        "content": {
+          "level": "medium",
+          "note": "There is choking, stabbing, blood, attempted murder, and violent fantasy combat, but the material stays within a prestige-fantasy mature lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script directly invokes Cinderella mythology alongside Oz elements and named songs, which creates clear licensing and adaptation questions."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The fairy tale is rebuilt as a mystery.",
+          "what_it_means": "The script gives buyers a familiar title with a fresh engine: instead of retelling a known story beat-for-beat, it turns Cinderella into an identity puzzle with hidden worlds, doubles, and a larger mythology. That is the kind of hook that can attract prestige fantasy buyers and actors who want a role with both iconography and surprise.",
+          "evidence": "The pilot moves from the Glooming and the black-and-white chateau to the color labyrinth, then reveals Queen Ella and the fairy godmother in the final scene.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The color system is a built-in visual engine.",
+          "what_it_means": "The black-and-white world versus the color world gives the series a clean visual rule that can carry marketing, production design, and episode-to-episode escalation. Directors and streamers looking for a fantasy show with a strong signature image would immediately understand the appeal.",
+          "evidence": "The world drains to monochrome, then bursts into color in the cave, the cottage, and the final throne-room reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Cinderella is written as tender and feral.",
+          "what_it_means": "That contradiction creates a lead role with range: innocence, grief, seduction, danger, and moral collapse all live in the same part. Mid-career actresses looking for a signature fantasy role and buyers looking for a performance anchor will both see value here.",
+          "evidence": "She comforts the dying man with a lullaby, then later binds Ella, lies to Dinah, and finally says, 'I want your life!'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has strong fairy-tale archetype energy.",
+          "what_it_means": "The stepmother, stepsisters, prince, guard captain, outsider, and queen all arrive with instantly readable silhouettes, which helps the show generate conflict fast and sustain a larger court ecosystem. This is the kind of ensemble that can support recurring guest stars and give casting directors multiple juicy lanes to fill.",
+          "evidence": "Evelyn, Bridgette, Charlotte, Hubert, Toby, Vincent, Lyle, Josephine, Titus, and Ella all arrive with distinct social and emotional functions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot ends on a series-sized reveal.",
+          "what_it_means": "The final image does not close the story; it opens a larger mythology involving the fairy godmother, Oz, and a hidden magical architecture. That ending is exactly the sort of door-opener buyers want from a pilot because it promises a season, not just a chapter.",
+          "evidence": "The throne room reveal of the Old Woman, the portal, the Big Bad Wolf, the Green Cinderella, and the yellow door to OZ.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels like it can keep expanding.",
+          "what_it_means": "Once the script introduces the labyrinth of doors, the hidden cottage, the color realm, and the fairy-tale crossovers, the series can keep revealing new zones without losing its core identity. That gives producers a franchise-like runway without needing to start from scratch each episode.",
+          "evidence": "The cave portal leads to a color cottage and then to a broader fairy-tale network, with new figures and rules layered in late.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is Cinderella as a prestige fantasy mystery: a color-drained kingdom, a heroine with a dangerous heart, and a hidden fairy-tale universe waiting behind the next door. The pilot has a real franchise pulse — iconic enough to sell, strange enough to stand apart, and built to keep opening outward."
+    },
+    "lead_characters": [
+      {
+        "name": "Cinderella",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s",
+        "hook": "Cinderella is written as a luminous contradiction: gentle enough to sing to the dying, stubborn enough to defy her house, and volatile enough to become terrifying when her identity cracks. She carries the emotional center of the series with a mix of innocence, grief, longing, and a buried hunger for power that makes every scene feel unstable in the best way.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Anya Taylor-Joy in The Queen's Gambit — a role that lets an actor play fragility, intelligence, and menace in the same breath. Performers who want a signature fantasy lead with emotional range and a transformation arc will chase this immediately."
+      },
+      {
+        "name": "Evelyn",
+        "role_type": "Lead",
+        "demographics": "Female · 50s",
+        "hook": "Evelyn is a weaponized matriarch: vain, cutting, socially fluent, and capable of tenderness that arrives only after the damage is done. She reads like someone who understands the rules of power better than anyone in the room, which makes her both a domestic tyrant and a tragic figure with real dramatic voltage.",
+        "why_actor_wants_this": "This is the showcase space of Olivia Colman in The Favourite or Patricia Clarkson in Sharp Objects — a role that lets an actor pivot between cruelty, wit, and buried vulnerability without losing command. Prestige actresses who want a deliciously playable antagonist with emotional depth will want this part."
+      },
+      {
+        "name": "Hubert Davenport",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Hubert is aristocratic menace in a tailored coat: polished, transactional, and capable of turning family, marriage, and murder into the same conversation. He gives the series a cold political engine, because every smile from him feels like a contract with a blade hidden inside it.",
+        "why_actor_wants_this": "This is the territory of Ralph Fiennes in The Grand Budapest Hotel or Matthew Macfadyen in Succession — a role where refinement and threat live in the same posture. Actors who excel at controlled authority and elegant cruelty will see immediate prestige value here."
+      },
+      {
+        "name": "Toby Davenport",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to early 20s",
+        "hook": "Toby is the kind of handsome predator fairy tales usually hide in the margins and this script puts him front and center. He is seductive, cruel, impulsive, and physically dangerous, which makes him a vivid engine for the pilot's most alarming turn.",
+        "why_actor_wants_this": "This is the showcase lane of Jack Gleeson in Game of Thrones or Barry Keoghan in The Banshees of Inisherin — a part that lets an actor weaponize charm and then flip it into menace. Young actors looking for a breakout villain role with real scene-stealing potential will chase it."
+      },
+      {
+        "name": "Vincent 'Sadiki the Scourge'",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Black",
+        "hook": "Vincent is a guard captain with gladiator energy and a code that feels older than the kingdom around him. He is physically imposing, morally legible, and just ambiguous enough to keep the audience guessing whether he is protector, enforcer, or something in between.",
+        "why_actor_wants_this": "This is the showcase space of Idris Elba in Luther or Mahershala Ali in True Detective season 3 — a role that combines command presence, physical authority, and quiet interiority. Actors who can carry action and gravitas in the same frame will be drawn to it."
+      },
+      {
+        "name": "Lyle",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s · nonhuman/outsider-coded",
+        "hook": "Lyle is feral, funny, and unexpectedly tender, a creature who moves like an animal but speaks like someone who has learned loneliness as a language. He gives the series its outsider perspective and a strange, romantic counterpoint to Cinderella's own dislocation.",
+        "why_actor_wants_this": "This is the showcase territory of Doug Jones-style performance work or Andy Serkis in a character-driven fantasy role — a part that rewards physical invention, voice, and emotional specificity. Actors who want to build a memorable nonstandard lead with movement, humor, and pathos will be interested."
+      },
+      {
+        "name": "Charlotte",
+        "role_type": "Supporting",
+        "demographics": "Female · early 30s",
+        "hook": "Charlotte is vain, socially sharp, and more self-aware than her mother gives her credit for, which makes her a useful pressure point inside the family. She is comic, cruel, and opportunistic in a way that keeps her from becoming a simple step-sister type.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the comic-mean-girl precision of Kristen Wiig in Bridesmaids with the social bite of a prestige ensemble player. Supporting actresses who want memorable scenes and a clear tonal lane will be attracted to it."
+      },
+      {
+        "name": "Bridgette",
+        "role_type": "Supporting",
+        "demographics": "Female · early 30s",
+        "hook": "Bridgette is the prettier, sharper sibling who knows exactly how to weaponize social performance. She is less central than Charlotte but still gives the house a second flavor of cruelty, which helps the family feel lived-in rather than schematic.",
+        "why_actor_wants_this": "This is the kind of supporting part that lets an actor play polished social venom the way Sarah Snook or Alison Brie can in ensemble work. It offers sharp reaction beats, status play, and enough edge to stand out in a crowded cast."
+      },
+      {
+        "name": "Simon Davenport",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Simon is the quieter brother, all nerves, calculation, and latent violence, which makes him more unnerving than the louder men around him. He feels like the one who watches first and strikes later, a useful shadow in the family machine.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled menace of Tom Glynn-Carney in House of the Dragon or a young Michael Shannon type of stillness. Supporting actors who can play intelligence under pressure will find a lot to do here."
+      },
+      {
+        "name": "Daniel Davenport",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s",
+        "hook": "Daniel is the brute-force brother, scarred and hungry, with a warrior's body and a predator's attention. He brings physical danger and a more openly martial energy to the Davenport side of the story.",
+        "why_actor_wants_this": "This is the showcase lane of a young action-leaning actor who wants the physical authority of a fantasy bruiser with enough emotional volatility to keep him interesting. It gives a performer fight work, status, and a clear visual silhouette."
+      },
+      {
+        "name": "Archibald",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Archibald is the father figure of the opening, warm and protective but already carrying the dread of what the world will do to his daughter. He functions as the emotional memory of the house and the first sign that love in this story is always under siege.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the intimate, heartbreaking authority of a parent in a prestige fantasy pilot. It offers a brief but emotionally loaded showcase for warmth, fear, and loss."
+      },
+      {
+        "name": "Queen Ella",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s",
+        "hook": "Queen Ella is Cinderella's royal double, but she is not just a mirror — she is the life Cinderella was denied, with status, children, and the confidence of someone who believes the world has always belonged to her. Her presence turns the series into a duel over identity, memory, and rightful ownership of a life.",
+        "why_actor_wants_this": "This is the showcase territory of Tatiana Maslany in Orphan Black — a role built around doubling, identity fracture, and the pleasure of playing the same soul from a different social angle. Actors who love transformation and precision will see this as a feast."
+      },
+      {
+        "name": "King Titus",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s",
+        "hook": "Titus is the story-book king grown into a warm, handsome, almost disarmingly domestic ruler. He softens the court without losing status, which makes him a useful emotional counterweight to the darker men in the series.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the romantic, grounded authority of a prince in a prestige fairy tale with real emotional warmth. It is a strong fit for performers who can play charm without flattening into blandness."
+      },
+      {
+        "name": "Josephine",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-30s · Black",
+        "hook": "Josephine is bright, affectionate, and socially agile, a queen who seems to move through the world with speed and warmth even when the road has worn her down. She brings color, humor, and emotional ease into a court that otherwise leans toward dread.",
+        "why_actor_wants_this": "This is the showcase space of a performer like Uzo Aduba or Gugu Mbatha-Raw in a regal ensemble role — someone who can carry warmth, wit, and emotional intelligence in the same scene. Actors who want a luminous supporting queen with real presence will be drawn to it."
+      },
+      {
+        "name": "Guinevere",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-teens",
+        "hook": "Guinevere is the daughter Cinderella never had, and the script uses her as a living emotional echo of the life Cinderella lost. She is affectionate, innocent, and visually tied to Cinderella in a way that makes the family fantasy feel painfully real.",
+        "why_actor_wants_this": "This is the kind of role that lets a young actress play pure emotional recognition and filial longing in a fairy-tale setting. It offers a clear, heartfelt showcase in a prestige fantasy ensemble."
+      },
+      {
+        "name": "Dinah",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Dinah is timid, observant, and trapped in the machinery of the castle, which gives her a quiet but potent point of view. She is the sort of character whose fear and small acts of choice can ripple outward in a story like this.",
+        "why_actor_wants_this": "This is the showcase territory of a young actress in the mold of a quiet prestige breakout — the kind of role that lets subtle reaction work carry real emotional weight. It gives a performer vulnerability, secrecy, and a strong moral angle."
+      },
+      {
+        "name": "Bobo the Jailer",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Bobo is a giant with a gentle heart, a jailer who feels more like a fairy-tale creature than an enforcer. He adds tonal texture by making the dungeon feel strange, human, and slightly comic rather than purely grim.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor the warmth-and-size contrast of a gentle giant part in a fantasy ensemble. Performers who can play physical presence with sweetness will have fun here."
+      },
+      {
+        "name": "Dagger",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Dagger is a vicious hunter with a crude mouth and a predatory instinct, the sort of man who turns every encounter into a transaction or a threat. He gives the forest sequence a hard, ugly edge before the story opens into something stranger.",
+        "why_actor_wants_this": "This is the showcase lane of a character actor who can make menace entertaining, the way Walton Goggins or Stephen Root can in a genre role. It offers a sharp, memorable scene and a clear tonal snap."
+      },
+      {
+        "name": "Cindy",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s",
+        "hook": "Cindy is the shopkeeper version of Cinderella's world: practical, impatient, and completely uninterested in fairy-tale sentiment until status changes the room. She gives the series a comic social mirror and a reminder that identity is partly how the world chooses to see you.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets an actor play brisk comic authority with a social edge, similar to the best shopkeeper or gatekeeper scenes in prestige fantasy. It is a clean, scene-stealing part for a strong character actress."
+      },
+      {
+        "name": "Old Woman",
+        "role_type": "Supporting",
+        "demographics": "Female · 90s",
+        "hook": "The Old Woman is the fairy godmother in her most cryptic, mythic form: ancient, uncanny, and seemingly half inside the world and half outside it. She arrives like a living key to the series' hidden rules.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran performer the eerie authority of a mythic oracle, the way Judi Dench or Harriet Walter can dominate a scene with very little movement. It is a prestige cameo with real iconography."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make fairy tale imagery feel dangerous, sensual, and emotionally adult.",
+        "fit_profile": "Established indie or prestige-genre directors with at least one visually ambitious feature or limited series, especially those who care about production design, performance-forward fantasy, and mythic symbolism. This material rewards someone who can stage intimacy and violence with the same confidence and who wants a world that can shift from domestic realism to full-on magical revelation without losing coherence.",
+        "detail": "The script gives a director a rare chance to build a signature visual grammar around color, shadow, and transformation while still anchoring everything in character emotion. It will attract filmmakers who like elevated genre, strong art direction, and scenes that can play as both fairy tale and psychological drama."
+      },
+      "buyer_appeal": {
+        "tier": "premium streaming limited series / ongoing fantasy drama",
+        "lane": "prestige fantasy with fairy-tale IP recognition",
+        "detail": "The Cinderella brand gives the project immediate recognition, while the pilot's doubling, portals, and court politics make it feel like a series rather than a one-off retelling. The contained castle/forest/cave footprint can be built into a repeatable production base, and the fairy-tale IP plus recognizable song cues give it export and marketing leverage."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot is carrying two stories at once.",
+        "detail": "The opening half is a dark, intimate Cinderella tragedy, while the back half opens into a broader fantasy quest with portals, doubles, and Oz mythology. A next pass could consider how to foreground the season engine a little earlier so the transition feels even more inevitable, not just surprising.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The final reveal is doing a lot of heavy lifting.",
+        "detail": "The Old Woman, the Big Bad Wolf, Green Cinderella, and the OZ door all arrive in a single burst, which is exciting but dense. One direction would be to seed one or two of those mythic elements earlier so the ending lands with even more inevitability and less information load.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is expansive.",
+        "detail": "The chateau, town square, forest, cave, shoreline, dungeon, throne room, and labyrinth all ask for distinct builds or substantial dressing. The version of the pilot that collapses a couple of those spaces into reusable fantasy zones would protect the scale while keeping the story's sweep intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights conversation is central.",
+        "detail": "The script explicitly uses Cinderella mythology, Oz iconography, and named songs, so packaging will need a clear path on adaptation and music clearance. That also means the project benefits from a buyer comfortable with recognizable IP and cross-audience fantasy branding.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ensemble can be sharpened for repeatability.",
+        "detail": "Several supporting players arrive with vivid function but mostly orbit Cinderella's immediate crisis. A future pass could explore which relationships deserve recurring episode engines so the series has more combinatorial story fuel beyond the central heroine.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76,
+  "tier": "Optionable",
+  "inputTokens": 32437,
+  "outputTokens": 6284,
+  "cost": 0.05260575,
+  "declaredFormat": "Series"
+}

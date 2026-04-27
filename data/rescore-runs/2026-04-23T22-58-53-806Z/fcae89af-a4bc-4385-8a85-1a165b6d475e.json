@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:17:49.420Z",
+  "submission_id": "fcae89af-a4bc-4385-8a85-1a165b6d475e",
+  "eval_id": "da0eb446-70df-4672-b913-50961316dda1",
+  "title": "Passion storms Interview with the Rizqians",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "ANYA",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · regal, physically capable, emotionally weathered"
+    },
+    {
+      "name": "JOB",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · physically imposing, warrior-coded"
+    },
+    {
+      "name": "STERLING",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · sharp, weathered, authoritative"
+    },
+    {
+      "name": "CORY",
+      "role_type": "Supporting",
+      "demographics": "Male · child to young adult across the script"
+    },
+    {
+      "name": "KACI",
+      "role_type": "Supporting",
+      "demographics": "Female · child to young adult across the script"
+    },
+    {
+      "name": "LEO",
+      "role_type": "Supporting",
+      "demographics": "Male · 8-10"
+    },
+    {
+      "name": "LUNA",
+      "role_type": "Supporting",
+      "demographics": "Female · 6-8"
+    },
+    {
+      "name": "ARIS THORNE",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s"
+    },
+    {
+      "name": "JAX",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s"
+    },
+    {
+      "name": "OFFICER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s"
+    },
+    {
+      "name": "K'THAR",
+      "role_type": "Supporting",
+      "demographics": "Male or female voice/performance capture · alien"
+    },
+    {
+      "name": "XYLOS",
+      "role_type": "Supporting",
+      "demographics": "Male or female voice/performance capture · alien"
+    },
+    {
+      "name": "COMMANDER KROK",
+      "role_type": "Supporting",
+      "demographics": "Male or female voice/performance capture · alien"
+    },
+    {
+      "name": "COMMANDER VALERIUS",
+      "role_type": "Supporting",
+      "demographics": "Male or female voice/performance capture · alien"
+    },
+    {
+      "name": "JIAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s"
+    }
+  ],
+  "positioning_hook": "A grieving Rizqian queen steals a forbidden ship to reach Earth, only to uncover a cosmic sanctuary, a child-abduction mystery, and a war that could remake humanity.",
+  "cost_usd": 0.0604965,
+  "input_tokens": 49000,
+  "output_tokens": 5277,
+  "status": "wrote:leads_ok"
+}

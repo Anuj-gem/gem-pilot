@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-23T23:06:20.067Z",
+  "submission_id": "ccf1ccff-1947-4bed-9011-34dda0de7ee1",
+  "eval_id": "81edb627-46cf-45e0-9877-32efeb25da5c",
+  "title": "Celtx   Script SINON",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Francis Booker",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · human anomaly"
+    },
+    {
+      "name": "Doreen",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-50s · office authority figure"
+    },
+    {
+      "name": "Hal",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · physically imposing"
+    },
+    {
+      "name": "Clara",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · Italian-American-coded, chemically unfiltered"
+    },
+    {
+      "name": "Ploy",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · Thai"
+    },
+    {
+      "name": "Toast",
+      "role_type": "Lead",
+      "demographics": "Male · ageless robot"
+    }
+  ],
+  "positioning_hook": "A timid death-tally clerk at a retro-futurist agency is forced into a monster-hunting squad when his hidden anomaly can erase anything — if he can figure out what triggers it before the team gets killed.",
+  "cost_usd": 0.03177,
+  "input_tokens": 16392,
+  "output_tokens": 4328,
+  "status": "wrote:leads_ok"
+}

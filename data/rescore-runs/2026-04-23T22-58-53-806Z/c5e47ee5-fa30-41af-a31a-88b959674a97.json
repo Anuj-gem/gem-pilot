@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:09:00.181Z",
+  "submission_id": "c5e47ee5-fa30-41af-a31a-88b959674a97",
+  "eval_id": "1cd3c6c1-ba51-4c90-93e4-694caa11f9cc",
+  "title": "All I need is one dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to late 20s · elite basketball player"
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Lead",
+      "demographics": "Male · early 40s · working-class church/school custodian and father"
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Lead",
+      "demographics": "Female · 8 to 14 across the story · child / early teen"
+    },
+    {
+      "name": "Beth Rose",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "Frank Rose",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Coach Dan Wensil",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Lisa Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 20s"
+    },
+    {
+      "name": "Sharon Maid",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Father Rodger Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    }
+  ],
+  "positioning_hook": "A championship basketball star returns home to bury her grandparents, then finds love, purpose, and a second act in the church and school gym that raised her.",
+  "cost_usd": 0.045939,
+  "input_tokens": 29986,
+  "output_tokens": 5211,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:20:03.639Z",
+  "submission_id": "cc18fecd-4236-42fa-a5b2-d01d777f1590",
+  "eval_id": "67577225-880d-4393-966d-13fca896a132",
+  "title": "MNG DEC24",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Tim Bliss",
+      "role_type": "Lead",
+      "demographics": "Male · mid-40s · sporty, working-class East Londoner"
+    },
+    {
+      "name": "Juliet",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · elegant, emotionally guarded widow"
+    },
+    {
+      "name": "Andy",
+      "role_type": "Lead",
+      "demographics": "Male · mid-40s · stylish, sharp-tongued business partner"
+    },
+    {
+      "name": "Lauren",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · salon manager, socially fluent, no-nonsense"
+    },
+    {
+      "name": "Katie Bliss",
+      "role_type": "Supporting",
+      "demographics": "Female · 17 · smart, practical eldest daughter"
+    },
+    {
+      "name": "Bethany Bliss",
+      "role_type": "Supporting",
+      "demographics": "Female · 15 · sharp, wounded middle daughter"
+    },
+    {
+      "name": "Tilly Bliss",
+      "role_type": "Supporting",
+      "demographics": "Female · 11 · youngest daughter, precocious and mischievous"
+    },
+    {
+      "name": "Hilary",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · swim partner, brisk and teasing"
+    },
+    {
+      "name": "Sylvie",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · swim partner, dry, competitive, affectionate"
+    },
+    {
+      "name": "Lauren's daughter Chloe",
+      "role_type": "Supporting",
+      "demographics": "Female · child/young teen · sick child"
+    },
+    {
+      "name": "Janet",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · salon customer, nosy and funny"
+    },
+    {
+      "name": "DANIEL",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-teens · schoolboy"
+    },
+    {
+      "name": "Doctor Joshi",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · consultant neonatologist"
+    }
+  ],
+  "positioning_hook": "A middle-aged Walthamstow salon owner and obsessive triathlete advertises for a Monday-night companion, then falls for the widow who turns his tidy routine into a messy second chance.",
+  "cost_usd": 0.05196525,
+  "input_tokens": 37949,
+  "output_tokens": 5223,
+  "status": "wrote:leads_ok"
+}

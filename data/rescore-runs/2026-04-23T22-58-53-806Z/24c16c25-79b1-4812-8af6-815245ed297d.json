@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:06:38.067Z",
+  "submission_id": "24c16c25-79b1-4812-8af6-815245ed297d",
+  "eval_id": "59ce445a-ac2a-4297-8de2-86c2f35344a6",
+  "title": "Kingstown",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Buddy Parker / Eugene Parker",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s · rugged, working-class detective"
+    },
+    {
+      "name": "Lieutenant Frances Kelly",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s · police lieutenant"
+    },
+    {
+      "name": "Special Agent James Dunn",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late 40s · FBI agent"
+    },
+    {
+      "name": "Salvatore Vannetti",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · well-dressed mob figure"
+    },
+    {
+      "name": "Gerda Ziegler-Parker",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s · elderly German-accented mother"
+    },
+    {
+      "name": "Edward Casey",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · veteran detective"
+    },
+    {
+      "name": "Ronnell McDonald",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Black mayor"
+    },
+    {
+      "name": "Benny Kowalski",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s · extremely tall bookie"
+    },
+    {
+      "name": "Carmen Garcia",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · red-haired, tattooed, pierced, homeless"
+    },
+    {
+      "name": "Chief Jack Foster",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · police chief nearing retirement"
+    },
+    {
+      "name": "Amy Russillo",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · senior living administrator"
+    },
+    {
+      "name": "Tino Alvarez",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · concierge"
+    },
+    {
+      "name": "Princess",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · prostitute"
+    },
+    {
+      "name": "Fat Sam Tedesco",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · gambler / victim"
+    },
+    {
+      "name": "Glen Parker",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · abusive father in flashback"
+    }
+  ],
+  "positioning_hook": "A corrupt-but-charismatic homicide detective in a city where cops and criminals grew up together is forced onto an FBI task force — just as his own murder secret starts surfacing.",
+  "cost_usd": 0.0431205,
+  "input_tokens": 24038,
+  "output_tokens": 5576,
+  "status": "wrote:leads_ok"
+}

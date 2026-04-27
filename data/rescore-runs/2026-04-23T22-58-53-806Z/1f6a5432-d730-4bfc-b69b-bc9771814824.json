@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:06:59.326Z",
+  "submission_id": "1f6a5432-d730-4bfc-b69b-bc9771814824",
+  "eval_id": "bbb2d320-ceef-4b5c-bdc7-2ee9b9a8a1e3",
+  "title": "All I need is one dance….. the wedding g dance",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · bald, glasses, black goatee · working-class church custodian"
+    },
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · former pro athlete / coach"
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · 16-17 · high school basketball player"
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · assistant coach / former player"
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · assistant coach / former player"
+    },
+    {
+      "name": "Coach Winsil",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · high school coach"
+    },
+    {
+      "name": "Tim Moss",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · athletic director / school administrator"
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · priest"
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · church organizer"
+    }
+  ],
+  "positioning_hook": "A small-town custodian and a former pro coach build a family around a high school basketball team, then race a championship season against a wedding, a WNBA call-up, and a stroke.",
+  "cost_usd": 0.075048,
+  "input_tokens": 67916,
+  "output_tokens": 5358,
+  "status": "wrote:leads_ok"
+}

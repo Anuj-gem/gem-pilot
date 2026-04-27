@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "src/app/report/[id]/page.tsx",
+    "src/app/dashboard/page.tsx",
+    "src/lib/edited-fields.ts",
+    "src/components/report/editable-top-card.tsx",
+    "src/app/api/evaluations/[id]/edit/route.ts",
+    "src/types/**/*.ts",
+    "src/lib/**/*.ts",
+    "src/components/**/*.tsx"
+  ],
+  "exclude": ["src/**/* 2.ts", "src/**/* 2.tsx", "node_modules"]
+}

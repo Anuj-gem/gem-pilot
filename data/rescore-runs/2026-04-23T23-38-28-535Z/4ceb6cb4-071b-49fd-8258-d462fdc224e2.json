@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:41:47.228Z",
+  "submission_id": "4ceb6cb4-071b-49fd-8258-d462fdc224e2",
+  "eval_id": "e42e5abc-b4d3-4ec8-ae9c-e9ef9d9a5df3",
+  "title": "Santa In Two Worlds",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Santa",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · African"
+    },
+    {
+      "name": "Maria",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-60s · African"
+    },
+    {
+      "name": "Mario",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Vasquez",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · obese"
+    },
+    {
+      "name": "Roberto",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · short"
+    },
+    {
+      "name": "The Warden",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Lille",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Don",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · obese"
+    },
+    {
+      "name": "Valeria",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · obese"
+    },
+    {
+      "name": "Marion",
+      "role_type": "Supporting",
+      "demographics": "Male · teenager"
+    }
+  ],
+  "positioning_hook": "A prison-hardened thief in Santiago is forced to confront his criminal bloodline, then stumbles into a cosmic portal that reveals his life as one loop in a much larger war over free will.",
+  "cost_usd": 0.047043,
+  "input_tokens": 34530,
+  "output_tokens": 4699,
+  "status": "wrote:leads_ok"
+}

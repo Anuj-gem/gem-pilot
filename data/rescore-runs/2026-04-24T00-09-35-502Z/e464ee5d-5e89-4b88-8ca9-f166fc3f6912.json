@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-24T00:11:43.394Z",
+  "submission_id": "e464ee5d-5e89-4b88-8ca9-f166fc3f6912",
+  "eval_id": "270436fe-8e00-4427-9d77-d82fb0543105",
+  "title": "Libbie and Autie",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Elizabeth \"Libbie\" Bacon Custer",
+      "role_type": "Lead",
+      "demographics": "Female · 18 to 84 · white American"
+    },
+    {
+      "name": "George Armstrong \"Autie\" Custer",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to mid-30s · white American"
+    },
+    {
+      "name": "Daniel Bacon",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · white American"
+    },
+    {
+      "name": "Rhoda Bacon",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · white American"
+    },
+    {
+      "name": "Conway Noble",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · white American"
+    },
+    {
+      "name": "Laura Noble",
+      "role_type": "Supporting",
+      "demographics": "Female · 18 · white American"
+    },
+    {
+      "name": "Fan Fifield",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · white American"
+    },
+    {
+      "name": "Nettie Humphrey",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · white American"
+    },
+    {
+      "name": "John Rauch",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · white American"
+    },
+    {
+      "name": "Eliza Brown",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s · Black American"
+    },
+    {
+      "name": "Tom Custer",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to 30 · white American"
+    },
+    {
+      "name": "Maggie Calhoun",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · white American"
+    },
+    {
+      "name": "Emanuel Custer",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · white American"
+    },
+    {
+      "name": "Maria Custer",
+      "role_type": "Supporting",
+      "demographics": "Female · late 60s · white American"
+    }
+  ],
+  "positioning_hook": "Elizabeth Bacon Custer falls for George Armstrong Custer as the Civil War and Indian Wars reshape her life, then spends decades fighting to define his legacy after Little Bighorn.",
+  "cost_usd": 0.05626500000000001,
+  "input_tokens": 42116,
+  "output_tokens": 5484,
+  "status": "wrote:leads_ok"
+}

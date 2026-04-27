@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:39:12.891Z",
+  "submission_id": "0eca06dd-34b7-4465-8930-71bf2555acfe",
+  "eval_id": "2b7c2437-f30d-43b2-8475-f91c179098df",
+  "title": "Nova's Hope",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "SIR W",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · mixed-race · ageless presentation"
+    },
+    {
+      "name": "NOVA / ESTANATLEHI / CHIMALMAN",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-60s across presentation · mixed-race / Native-coded mythic figure · ageless"
+    },
+    {
+      "name": "ABRAHAM LINCOLN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "AMETHYST",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · ageless presentation"
+    },
+    {
+      "name": "EMMA GOLDMAN",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "SPIRIT TALKER",
+      "role_type": "Supporting",
+      "demographics": "Male · 80s appearing younger in spirit form · Native American"
+    },
+    {
+      "name": "KIT CARSON",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "SAMUEL CLEMENS",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    }
+  ],
+  "positioning_hook": "A shape-shifting con man-chaplain helps Lincoln fight counterfeiters, then bargains with a Navajo goddess mother to save tribes on the Long Walk.",
+  "cost_usd": 0.048050249999999996,
+  "input_tokens": 36695,
+  "output_tokens": 4562,
+  "status": "wrote:leads_ok"
+}

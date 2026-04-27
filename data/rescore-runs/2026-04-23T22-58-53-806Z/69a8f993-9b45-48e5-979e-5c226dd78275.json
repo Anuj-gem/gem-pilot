@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:18:38.761Z",
+  "submission_id": "69a8f993-9b45-48e5-979e-5c226dd78275",
+  "eval_id": "21de11c2-7d19-4ca1-bb00-69b7759e9b1f",
+  "title": "30 ROCK Will You Go To Lunch!",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Jack Donaghy",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 50s · polished corporate executive"
+    },
+    {
+      "name": "Liz Lemon",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · contemporary working professional"
+    },
+    {
+      "name": "Tracy Jordan",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · Black celebrity performer"
+    },
+    {
+      "name": "Jenna Maroney",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · performer/celebrity"
+    },
+    {
+      "name": "Kenneth Parcell",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s · Southern-coded pageant of innocence"
+    },
+    {
+      "name": "Doctor Leo Spaceman",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · eccentric doctor"
+    },
+    {
+      "name": "Tracy's Wife Angie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · Black woman"
+    },
+    {
+      "name": "Dot Com",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · Black man"
+    },
+    {
+      "name": "Jenna's Flashback Male Friend",
+      "role_type": "Supporting",
+      "demographics": "Male · teen to 20s"
+    },
+    {
+      "name": "Cool Guy",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    }
+  ],
+  "positioning_hook": "Jack Donaghy spirals into Mamet obsession while Liz, Tracy, Jenna, and the 30 Rock crew scramble to keep the show alive, turning a network sitcom into a backstage comedy of ego and collapse.",
+  "cost_usd": 0.035678999999999995,
+  "input_tokens": 19738,
+  "output_tokens": 4639,
+  "status": "wrote:leads_ok"
+}

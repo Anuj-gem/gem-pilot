@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:18:49.907Z",
+  "submission_id": "409f4bdf-33ab-4764-849a-1a1b60d646f7",
+  "eval_id": "631d3b4c-0919-4ac6-85a9-2c3aefe09d76",
+  "title": "The Green Hornet",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Britt Reid / The Green Hornet",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · white · affluent newspaper heir"
+    },
+    {
+      "name": "Kato",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Asian · athletic, martial-arts trained"
+    },
+    {
+      "name": "Casey Case",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s · red-haired office professional"
+    },
+    {
+      "name": "Dan Reid",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · white · frail, elder statesman"
+    },
+    {
+      "name": "Frank Scanlon",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Black · district attorney"
+    },
+    {
+      "name": "Rex Damon",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · white · polished executive"
+    },
+    {
+      "name": "Tommy Chew",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s · Asian · greasy-haired, intimidating"
+    },
+    {
+      "name": "Yau Xchan",
+      "role_type": "Supporting",
+      "demographics": "Male · mid 30s · Asian · muscular, tattooed, dockworker/smuggler"
+    },
+    {
+      "name": "CC Fuller",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · shapely, stylish marketing executive"
+    },
+    {
+      "name": "Mike Axford",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · veteran reporter"
+    },
+    {
+      "name": "Bill",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · European-born camera man"
+    },
+    {
+      "name": "Lisa",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · dark-haired"
+    },
+    {
+      "name": "Maj",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · office assistant"
+    },
+    {
+      "name": "Helen",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · temp replacement"
+    },
+    {
+      "name": "Jerry",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · waiter with accent"
+    },
+    {
+      "name": "Kingpin",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Black · criminal associate"
+    },
+    {
+      "name": "Captain",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · white · ship captain"
+    }
+  ],
+  "positioning_hook": "A newspaper heir and his lethal driver moonlight as the Green Hornet and Kato, racing to expose a heroin-smuggling conspiracy inside their own media empire before the killers erase the paper’s next generation.",
+  "cost_usd": 0.061335,
+  "input_tokens": 46794,
+  "output_tokens": 5831,
+  "status": "wrote:leads_ok"
+}

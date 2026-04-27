@@ -1,0 +1,365 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Police procedural",
+        "Action"
+      ],
+      "tone": "Grounded, propulsive, gritty, and pulpy with a straight-faced buddy-cop edge"
+    },
+    "positioning_hook": "A gun-shy NYPD cadet is paired with a brutal veteran detective to crack a blue-pill drug ring, only to uncover a mayoral candidate, a precinct captain, and a Russian syndicate in the same conspiracy.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is easy to sell: rookie cop, veteran partner, escalating drug conspiracy, and a political cover-up that widens into a city-scale takedown. The appeal is strongest for crime-thriller audiences and buyers who like procedural momentum with a clean genre engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early in the academy-to-field transition and stays legible: Smith and Warner investigate blue vomit deaths, trace Frostbite through the city, and uncover the people funding it. The script keeps the case architecture clear even as the conspiracy expands."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Smith has a clear inner engine in her aversion to guns, and Warner has a hard-edged code that gives the partnership friction and momentum. The supporting players mostly serve the investigation, though Andrea and Warner each bring enough force to keep the character field interesting."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The blue-vomit drug, the cadet-in-the-field setup, and the academy-to-street progression give the material a distinctive commercial wrapper. The execution stays within familiar crime-thriller lanes, but it does so with confidence and a few memorable images, like the corpse-training warehouse and the Alaska-to-Manhattan pipeline."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The investigation keeps generating new turns: coroner, club, pool hall, lawyer, estate, docks, then the basement reveal and final dock confrontation. The script knows how to keep the case moving and escalates cleanly into a set-piece finish."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The Frostbite concept feels fresh enough to stand out on a shelf, especially with the Alaska origin and the blue foam symptom. The deeper structure still plays like a recognizable corruption thriller, but the drug’s visual signature gives it a memorable identity."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The precinct, academy, coroner, deli, club, estate, and docks all feel like parts of one working city ecosystem, and the script uses institutional spaces well. The Manhattan crime world has enough texture to support the conspiracy and make the investigation feel lived-in."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistently hardboiled, with deadpan banter between Smith and Warner sitting beside violence, corruption, and procedural detail. The script has a clear straight-faced crime-movie identity rather than a generic cop-drama feel."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Smith’s gun aversion and Warner’s family history hint at deeper emotional material beneath the case, and Andrea’s political ambition adds a second layer of motive. The script keeps that depth mostly in service of the plot, but the ingredients for a richer character drama are present."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Smith and Warner carry the movie, and their contrast gives the story its main relational engine. Lewis, Andrea, Yuri, Dmitri, and the coroner add useful pressure, but the script is still primarily powered by the central duo."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 17,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One young female lead in her 20s",
+          "One older male lead in his 50s/60s",
+          "Russian-speaking antagonist/supporting roles",
+          "Several law-enforcement and criminal authority figures"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with several exterior action beats",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Police academy",
+          "Precinct offices and garage",
+          "Coroner/morgue",
+          "Nightclub and basement",
+          "Private law office",
+          "Secluded estate with gate and woods",
+          "Docks with shipping crates and yacht",
+          "Warehouse with hanging bodies",
+          "Alaska opening sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical crime-thriller work; limited enhancement likely for explosions, gunfire, and the opening Alaska escape imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, body impacts, fight choreography, corpse rigging/hanging bodies, practical blood and vomit effects",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Ed Gein"
+        },
+        {
+          "type": "real_person",
+          "detail": "Ted Bundy"
+        },
+        {
+          "type": "real_person",
+          "detail": "Henry Lee Lucas"
+        },
+        {
+          "type": "brand",
+          "detail": "NYPD Academy"
+        },
+        {
+          "type": "brand",
+          "detail": "Raymond Chandler-style detective novel reference"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Princess Bride quote/reference ('As you wish')"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or mid-budget theatrical crime thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or modest theatrical play driven by genre audience"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary crime-thriller scale with multiple police, club, estate, docks, and action set-pieces keeps it above micro-budget but below tentpole territory."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Two strong leads plus a handful of authority and antagonist roles, with Russian-language scenes and a 20s female lead anchoring the package."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through precincts, apartments, bars, a mansion estate, warehouse, docks, and an Alaska opening, which creates a real but manageable footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent gun violence, beatings, corpse imagery, drug use, and a murder-by-gunpoint scene push this firmly into mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Real-person references, named public figures, and a few recognizable cultural references create some clearance work, but the core story is original."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening gives the movie a cold, violent signature.",
+          "what_it_means": "The Alaska warehouse escape and the blue-pill aftermath create an immediate visual identity that separates this from standard precinct procedurals. Genre buyers and trailer-minded marketers will respond to a movie that starts with blood in the snow and a mystery drug with a memorable symptom.",
+          "evidence": "Isaac bleeding out in Kodiak, rowing into the Bering Sea, then later the blue foam deaths tied to Frostbite.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Smith is built as a clean audience entry point.",
+          "what_it_means": "A cadet who is smart, eager, physically capable, and afraid to use guns gives the film a built-in emotional spine and a clear transformation arc. Casting directors and actors looking for a breakout lead role will see a part that can carry both vulnerability and action.",
+          "evidence": "Her academy scores, her physical progress, and the hunting-rifle memory that explains her gun aversion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Warner gives the movie its hard-edged engine.",
+          "what_it_means": "The veteran detective’s blunt methods and moral flexibility create immediate friction with Smith and keep the investigation moving with attitude. That kind of role attracts actors who want a weathered, quotable, scene-driving part with authority and menace.",
+          "evidence": "He slaps Lester for information, talks about doing what’s necessary, and pushes Smith toward pulling the trigger.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The conspiracy widens in a satisfying, commercial way.",
+          "what_it_means": "The story starts as a drug death and expands into a mayoral campaign, a corrupt precinct, a Russian network, and a citywide distribution plan, which gives the movie escalation and scope. Buyers like a thriller that can keep revealing bigger institutional layers without losing the central case.",
+          "evidence": "Andrea Russell, Yuri Bukhanov, Lewis, Dmitri Govsky, and the docks raid all connect into one chain.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The precinct world has usable texture.",
+          "what_it_means": "Academy, coroner, archives, garage, interrogation room, and SWAT prep all make the police side feel operational rather than generic. That kind of lived-in institutional detail helps the film feel more expensive and more specific than its footprint suggests.",
+          "evidence": "The academy training sequence, the coroner’s room, the archives search, and the SWAT truck raid prep.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Andrea is a strong antagonist with public-facing heat.",
+          "what_it_means": "A Senate candidate who uses anti-drug rhetoric as cover for the operation gives the movie a political hook and a villain with public legitimacy. That is catnip for actors who like playing polished, dangerous authority figures and for buyers who want a villain with a campaign trail and a gun.",
+          "evidence": "Her press conference, her funding pitch to the academy, and the reveal that she is tied to the drug pipeline.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final act is built for a crowd-pleasing payoff.",
+          "what_it_means": "The docks raid, the basement reveal, and the yacht fight give the movie a clear escalation path into action and confrontation. That structure supports a satisfying genre finish and gives the film a trailer-friendly third act.",
+          "evidence": "The SWAT raid, the basement interrogation, the chase to the yacht, and Smith’s final arrest of Andrea.",
+          "source": "script"
+        }
+      ],
+      "headline": "FROSTBITE has the kind of commercial spine buyers can immediately understand: a rookie cop with a gun aversion, a brutal veteran partner, and a blue-pill drug conspiracy that climbs from street deaths to city hall. It plays as a gritty, propulsive crime thriller with a memorable visual hook, a strong female lead launchpad, and a clean escalation into action."
+    },
+    "lead_characters": [
+      {
+        "name": "Amanda Smith",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · NYPD cadet / rookie cop",
+        "hook": "Amanda is the classic breakout lead with a built-in contradiction: she is bright, disciplined, physically capable, and hungry to prove herself, but she cannot bring herself to use a gun. That tension gives her every scene a pulse, because she wants to belong in the badge world while carrying a private wound that keeps colliding with the job.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Carey Mulligan in Promising Young Woman — a smart, controlled lead whose inner steel is tested by escalating danger. It gives an actor the rare combination of emotional vulnerability, procedural competence, and a final-act action payoff that can redefine how the industry sees her."
+      },
+      {
+        "name": "Mark Warner",
+        "role_type": "Lead",
+        "demographics": "Male · 50s/60s · veteran detective",
+        "hook": "Warner is a hard, unsentimental detective who treats the job like a war zone and speaks in blunt truths. Beneath the stone face is a man who has already paid for the life he chose, which makes his mentorship of Smith feel earned rather than sentimental.",
+        "why_actor_wants_this": "This is the showcase lane of Tommy Lee Jones in The Fugitive or Matthew McConaughey in True Detective season 1 — a weathered authority figure whose silence, menace, and code are the performance. Actors who want a commanding, quotable role with moral ambiguity and physical presence will chase it."
+      },
+      {
+        "name": "Captain Samuel Lewis",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · precinct captain",
+        "hook": "Lewis presents as the polished institutional father figure: calm, encouraging, and politically fluent. The script later reveals the more dangerous version of that same man, which gives him a clean double-image of civic authority and self-serving corruption.",
+        "why_actor_wants_this": "This is the kind of role that plays like Bryan Cranston in Breaking Bad or Michael Keaton in Spotlight — a trusted authority whose authority itself becomes the dramatic engine. Character actors who want to pivot from reassuring to calculating will be drawn to the turn."
+      },
+      {
+        "name": "Andrea Russell",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · political candidate / public figure",
+        "hook": "Andrea is polished, ambitious, and socially fluent, with the kind of public charisma that can fill a room and a campaign stage. The script lets her weaponize civic language while hiding a criminal operation underneath it, which makes her feel like a real power broker rather than a stock villain.",
+        "why_actor_wants_this": "This is the prestige-antagonist space of Robin Wright in House of Cards or Glenn Close in Damages — a public woman whose composure is the mask for ruthless control. Actors who like playing intelligence, charm, and menace in the same breath will want this part."
+      },
+      {
+        "name": "Yuri Bukhanov",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Russian-speaking club owner / criminal organizer",
+        "hook": "Yuri is the quiet center of the criminal machine: outwardly a businessman, inwardly a logistics-minded operator with a private army and a taste for control. He is less flashy than Andrea, which makes him feel more dangerous, because he looks like infrastructure rather than a headline.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the Anton Chigurh or Mads Mikkelsen-in-Hannibal slot — controlled, elegant menace with very little wasted motion. Internationally minded buyers and actors with strong authority presence will see a durable antagonist role."
+      },
+      {
+        "name": "Dmitri Govsky",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · lawyer",
+        "hook": "Dmitri is the sleek legal fixer who keeps the machine insulated from consequences. He reads as small, sharp, and transactional, which makes him a useful pressure point in the conspiracy and a nice contrast to the more physical criminals around him.",
+        "why_actor_wants_this": "This is the sharp-suited, fast-talking support role that plays like Tom Hollander in The Night Manager or Matthew Macfadyen in Succession — a man whose intelligence is his armor. Actors who like playing verbal precision and nervous authority will gravitate to it."
+      },
+      {
+        "name": "The Bodyguard",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · large, physically imposing",
+        "hook": "The Bodyguard is a near-silent physical threat, defined by size, violence, and loyalty rather than dialogue. He functions as the movie’s purest action obstacle, but the script gives him enough presence to feel like a real enforcer instead of a faceless henchman.",
+        "why_actor_wants_this": "This is the showcase lane of Dave Bautista in Blade Runner 2049 or Hafþór Júlíus Björnsson-style physical intimidation — a role where body language does the work. Performers with imposing physicality and action credibility will see an efficient, memorable screen presence."
+      },
+      {
+        "name": "Natalya Fedulov",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · clubgoer / witness",
+        "hook": "Natalya is the emotional entry point to the drug’s effects: frightened, grieving, and visibly destabilized by what she has seen. She gives the investigation a human face early on and helps make the drug feel immediate rather than abstract.",
+        "why_actor_wants_this": "This is the kind of brief but vivid role that plays like the witness parts in Zodiac or Prisoners — a scene or two that lands because the emotional state is so clear. Young actors looking for a memorable dramatic turn will want it."
+      },
+      {
+        "name": "Lester",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · street dealer / informant",
+        "hook": "Lester is a street-level survivor who knows enough to be useful and enough to be terrified. He gives the movie a rough, lived-in criminal voice and becomes one of the clearest examples of Warner’s methods and the world’s brutality.",
+        "why_actor_wants_this": "This is the kind of role that plays like Michael K. Williams in The Wire or Benicio del Toro in Traffic — a streetwise character with fear, humor, and danger in the same scene. Character actors who can make a few pages feel lived-in will chase it."
+      },
+      {
+        "name": "Jane",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · forensic examiner",
+        "hook": "Jane is the competent lab-side professional who helps translate the mystery into evidence. She is not flashy, but she gives the procedural spine credibility and keeps the investigation grounded in method.",
+        "why_actor_wants_this": "This is the reliable, scene-efficient forensic role that plays like the lab specialists in CSI or Mindhunter — smart, concise, and essential. Actors who like authority without melodrama will fit it well."
+      },
+      {
+        "name": "Ben / Coroner",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · coroner",
+        "hook": "Ben brings macabre humor and deadpan professionalism to the morgue scenes, making the body-count world feel oddly human. He is the kind of supporting role that can steal scenes by being calm in the middle of grotesque evidence.",
+        "why_actor_wants_this": "This is the character-actor sweet spot of a role like John Carroll Lynch in Zodiac — dry, observant, and memorable in a few scenes. Veteran supporting players who can balance humor with morbidity will enjoy it."
+      },
+      {
+        "name": "Main Instructor",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · police academy instructor",
+        "hook": "The Main Instructor is the drill-sergeant face of the academy, all command and institutional pressure. He helps establish the world’s discipline and gives Smith’s early training a clear authority figure.",
+        "why_actor_wants_this": "This is the kind of authority role that gives an actor a strong opening impression, similar to the training officers in Full Metal Jacket or Top Gun. Character actors with command presence will know exactly how to play it."
+      },
+      {
+        "name": "Forensic Instructor",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · academy instructor",
+        "hook": "She is the no-nonsense classroom authority who introduces the cadets to the darker side of police work. Her deadpan delivery of serial-killer material helps set the film’s hard-edged tone early.",
+        "why_actor_wants_this": "This is a compact authority role with a strong tonal function, like a memorable professor or trainer in a procedural. Actors who can land exposition with bite will make it pop."
+      },
+      {
+        "name": "Driving Instructor",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · academy instructor",
+        "hook": "The Driving Instructor is a practical gatekeeper who measures Smith’s progress in a way that matters to the story. She is part of the film’s credibility machine, showing that Smith has to earn every step of the badge.",
+        "why_actor_wants_this": "This is a clean, functional authority role that gives an actor a few sharp beats and a clear relationship to the lead. It suits performers who can make institutional pressure feel real in a small space."
+      },
+      {
+        "name": "Psychiatrist",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · psychiatrist",
+        "hook": "The Psychiatrist is the one person who names Smith’s internal conflict out loud, giving the film a direct line into her fear of guns. She functions as the story’s emotional translator without overexplaining it.",
+        "why_actor_wants_this": "This is the kind of role that plays like a sharp therapist scene in a prestige drama — concise but revealing. Actors who can bring calm authority and empathy to dialogue-heavy scenes will be drawn to it."
+      },
+      {
+        "name": "Petr Ochevyenko",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · victim",
+        "hook": "Petr is the first body in the chain, and his death gives the mystery its human cost. He is less a character arc than a catalytic presence, but the script uses him effectively to launch the case.",
+        "why_actor_wants_this": "This is a brief, high-impact victim role in the tradition of the opening casualty in a procedural thriller. It is not a showcase part, but it serves the story cleanly."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a hardboiled crime thriller with a clean emotional spine and a final-act action payoff.",
+        "fit_profile": "Established indie genre directors or TV-to-feature directors with one or two polished crime or thriller credits, especially those who like procedural momentum, moral ambiguity, and contained action. This material rewards a filmmaker who can keep the investigation legible while making the academy, precinct, and docks feel like one escalating pressure cooker.",
+        "detail": "The movie gives a director a strong two-hander dynamic, a political-corruption reveal, and a set-piece third act without requiring superhero-scale spectacle. It will appeal to filmmakers who like performance-forward genre work and can stage violence with clarity rather than excess."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming crime thriller / modest theatrical genre lane",
+        "detail": "The script can be packaged around two strong lead roles and a contained contemporary footprint, so it does not require tentpole-level attachments to make sense. The blue-drug hook, political corruption angle, and action-driven finale fit the current buyer appetite for elevated genre titles that can travel internationally."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening could seed the central conspiracy sooner.",
+        "detail": "The Alaska warehouse escape is a strong cold open, and the movie then spends a long stretch in academy/procedural mode before the Frostbite pipeline fully locks in. One lever would be to let a trace of Yuri, Andrea, or the blue-pill supply chain surface a little earlier so the opening mystery and the main case feel fused from the start.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Smith’s gun aversion can drive one more decisive beat.",
+        "detail": "The hunting-rifle memory and the psychiatrist scene establish the fear clearly, and the final dock confrontation pays it off, but there is room for one more on-page choice where that fear changes the investigation. A next pass could let her aversion force a specific tactical decision before the climax so the emotional arc feels even more active.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Warner’s family thread could surface a touch earlier.",
+        "detail": "The late reveal about Michelle and Chloe gives his retirement pressure real weight, and the material already has the pieces for a strong emotional undercurrent. The version of the script where that private life is hinted at before the warehouse confession would give his bond with Smith a little more resonance on first viewing.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The conspiracy map is doing a lot of work.",
+        "detail": "The X-marked Manhattan locations, the Old Russia note, and the Alaska connection all pay off cleanly, but the audience is asked to track several names and locations across a wide footprint. One simplification lever would be to collapse one of the intermediary locations or suspects without changing the endgame, which would protect clarity while keeping the scope intact.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The action footprint is manageable but not tiny.",
+        "detail": "The warehouse, estate, docks, nightclub, precinct, coroner, and law-office scenes all suggest a mid-budget production with multiple night exteriors and a few fight-heavy sequences. Packaging should lean into the contained contemporary setting and avoid overpromising spectacle beyond what the script already delivers.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Several named references will need clearance attention.",
+        "detail": "The script references Ed Gein, Ted Bundy, Henry Lee Lucas, NYPD Academy, and a Princess Bride quote, all of which should be checked in development. None of them define the premise, so they can be handled cleanly without changing the story engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67.7,
+  "tier": "Optionable",
+  "inputTokens": 38949,
+  "outputTokens": 5835,
+  "cost": 0.05546925,
+  "declaredFormat": "Feature film"
+}

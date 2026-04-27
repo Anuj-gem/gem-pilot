@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-24T00:12:11.258Z",
+  "submission_id": "43359336-1b59-49be-9805-f55b1b701974",
+  "eval_id": "6123802a-651a-42e8-a0a0-ff884873e39f",
+  "title": "Naruto  Shadow of the Nine Tails Act 1",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Naruto Uzumaki",
+      "role_type": "Lead",
+      "demographics": "Male · teen"
+    },
+    {
+      "name": "Sasuke Uchiha",
+      "role_type": "Lead",
+      "demographics": "Male · teen"
+    },
+    {
+      "name": "Sakura",
+      "role_type": "Lead",
+      "demographics": "Female · teen"
+    },
+    {
+      "name": "Kakashi",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    }
+  ],
+  "positioning_hook": "Naruto Uzumaki, the village outcast, embraces the fox spirit inside him and turns his shinobi training into a covert bid to destroy the Leaf Village from within.",
+  "cost_usd": 0.024525750000000002,
+  "input_tokens": 11329,
+  "output_tokens": 3562,
+  "status": "wrote:leads_ok"
+}

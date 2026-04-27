@@ -1,0 +1,323 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi thriller",
+      "genre_tags": [
+        "horror",
+        "coming-of-age"
+      ],
+      "tone": "Gritty, heightened, and darkly melodramatic"
+    },
+    "positioning_hook": "Three orphaned teens flee a secretive lab-run orphanage, only to discover the woman sheltering them is tied to the same experiment that gave one of them a deadly condition.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The core promise is easy to grasp — kids escaping a sinister orphanage and colliding with a dangerous experiment — and that gives it a clear genre audience. The appeal is narrower than a broad four-quadrant feature because the material leans hard into orphanage abuse, body horror, and a young ensemble."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The orphanage-lab setup lands quickly in the opening pages, and Mother Logan’s serum test gives the story a visible engine. The feature shape is less clean because the draft reads like a pilot-to-series outline in places, with Act III ideas and alternate directions still visible on the page."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Harper, Marissa, and Ethan each have a readable survival impulse, and Nina adds a protective adult counterweight with her own grief. The characters are functional and castable, but the draft mostly defines them through situation and dialogue rather than through sharply individualized choices."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The orphanage-as-experiment-farm premise has a built-in hook, and the serum mutation/body-horror turn gives the material a distinct lane. The execution still sits close to familiar escape-and-hide genre beats, with the most memorable turns arriving through premise rather than through a singular storytelling voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The opening lab sequence creates immediate danger, and the escape into the outside world gives the story forward motion. The momentum softens in the middle because the draft pauses for extended dialogue and then jumps into summarized future beats instead of fully dramatizing the escalation."
+      },
+      "resonant_originality": {
+        "score": 5,
+        "reasoning": "The idea of children being used in a secret medical program is instantly legible, and Mother Logan’s decision to test the serum on herself adds a memorable twist. What’s on the page still feels more like a strong genre setup than a fully singular premise with an unmistakable signature."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The orphanage, the lab, the guards, the serum, and the hidden chain of command suggest a world with institutions and secrets beneath the surface. The texture is strongest inside the orphanage/lab ecosystem; once the kids get outside, the world becomes more open-ended and less specifically engineered."
+      },
+      "tonal_specificity": {
+        "score": 5,
+        "reasoning": "The script commits to menace, pain, and survival, and it also folds in domestic refuge and teen banter. The tone is consistent enough to track, but it still reads as a familiar dark genre register rather than a sharply ownable tonal blend."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of bigger material in Mother Logan’s guilt, Ethan’s illness, Marissa’s hidden age, and Nina’s grief around infertility. Those elements suggest more emotional and mythic depth beneath the surface, even though the current draft only partially cashes that depth in dramatized scenes."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Harper and Marissa have a workable sisterly dynamic, Ethan creates friction inside the group, and Nina gives the ensemble a temporary home base. The relationships are serviceable, but most of the supporting players function around the central escape plot rather than generating independent story energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen and tween ensemble",
+          "Adult female authority figure with a physical transformation sequence",
+          "Several unnamed guards/suits",
+          "Potentially specific age play for Marissa, who believes she is a minor but is stated to be 18"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "Mostly interior with some exterior escape and neighborhood scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Orphanage/laboratory complex",
+          "Residential house with garage and kitchen",
+          "Abandoned lab for the later act",
+          "Night/rain exterior coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Body-horror mutation effects on Mother Logan, blood effects, and possible powers/experiment visuals in the later act.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, bone-dislocation makeup, syringe/machine effects, and injury prosthetics.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming genre feature or premium-cable horror-thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained locations keep the footprint manageable, but the body-horror effects and ensemble coverage push it above a microbudget lane."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The story depends on a teen ensemble, a central adult antagonist, and multiple child performers, with Marissa’s age-play and Ethan’s condition adding specificity."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves through an orphanage, office, house, garage, street exteriors, and an abandoned lab, with rain and night coverage adding scheduling complexity."
+        },
+        "content": {
+          "level": "high",
+          "note": "Child endangerment, medical experimentation, blood, body transformation, and violent confrontation define the material."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named real people, brands, music, or external IP are referenced."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The orphanage is a secret experiment farm.",
+          "what_it_means": "That premise gives the project a built-in commercial engine: kids, confinement, medical conspiracy, and escape all live in one clean genre package. Buyers who want contained horror-thriller material with a young ensemble and a strong hook will immediately understand the lane.",
+          "evidence": "Mother Logan, Owen, and Trevor testing Ethan’s serum in the laboratory while planning to use the children as test subjects.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mother Logan has a built-in antagonist turn.",
+          "what_it_means": "Her shift from caretaker authority to desperate participant creates a role with moral contradiction and physical escalation, which is exactly the kind of part that attracts prestige genre casting. Character-driven horror buyers and actresses looking for a transformation role would see immediate value in that arc.",
+          "evidence": "She orders the serum tested on herself, then ends up convulsing and begging for help after the side effects hit.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The body-horror payoff is vivid.",
+          "what_it_means": "The mutation sequence gives the film a memorable visual signature and a clear trailer moment, which helps the project stand out in a crowded thriller field. Genre directors and effects-minded producers will respond to the practical, visceral nature of the transformation beat.",
+          "evidence": "Mother Logan’s arm spasms, bone protrudes through her calf, and her body begins dislocating as the serum takes hold.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The teen ensemble has a survival-first dynamic.",
+          "what_it_means": "Harper, Marissa, Ethan, and the younger kids create a ready-made group dynamic that can carry a feature through escape, refuge, and betrayal beats. That ensemble structure is attractive to buyers looking for youth-skewing genre material with multiple playable roles.",
+          "evidence": "Harper pushes the group to flee, Marissa tries to hold them together, Ethan resists attachment, and the younger kids follow the older ones out.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Nina gives the story a refuge engine.",
+          "what_it_means": "Her house functions as a temporary safe zone, which creates a strong mid-film reset point and a natural place for emotional bonding before the next threat arrives. Actors and buyers alike can see the appeal of a warm domestic setting that can turn dangerous fast.",
+          "evidence": "Nina takes the kids in, feeds them butter chicken, and starts asking them about their lives before Mother Logan arrives at the door.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a clear contained-production footprint.",
+          "what_it_means": "Most of the story lives in a small number of interiors and nearby exteriors, which makes it easier to mount than a sprawling effects feature. That containment is attractive to indie genre financiers and streamer buyers who want a high-concept setup without a giant location bill.",
+          "evidence": "The action centers on the laboratory, Mother Logan’s office, Harper and Marissa’s room, Nina’s house, the garage, and an abandoned lab.",
+          "source": "production"
+        }
+      ],
+      "headline": "This script has a clean, sellable genre engine: orphaned kids escape a medical nightmare, find temporary shelter, and then discover the adults around them are all connected to the same conspiracy. The strongest commercial angle is the combination of contained locations, a young ensemble, and a body-horror antagonist turn that gives the project a real trailer image."
+    },
+    "lead_characters": [
+      {
+        "name": "Harper",
+        "role_type": "Lead",
+        "demographics": "Female · 16",
+        "hook": "Harper is the youngest of the core escape group, but she carries herself like the one most willing to move first. She’s protective, observant, and more emotionally direct than the older kids around her, which gives her a natural point-of-entry energy inside the ensemble.",
+        "why_actor_wants_this": "This is the kind of breakout youth lead that gave Saoirse Ronan in *The Lovely Bones* the burden of innocence under pressure — a role where fear, resolve, and moral clarity all have to live in the same face. Young actresses looking for a prestige genre showcase will want the chance to anchor the group and drive the escape."
+      },
+      {
+        "name": "Marissa",
+        "role_type": "Lead",
+        "demographics": "Female · 17-18",
+        "hook": "Marissa reads as the oldest of the kids, but her defining trait is restraint: she avoids conflict until the moment she decides she can’t anymore. She has the energy of someone who has spent years surviving by staying agreeable, then suddenly realizes she wants a different life.",
+        "why_actor_wants_this": "This is the showcase territory of Kaitlyn Dever in *Short Term 12* — a young woman whose quiet control slowly reveals buried urgency and pain. Actresses who want a grounded, emotionally layered lead will respond to the chance to play the group’s stabilizer while carrying a hidden edge."
+      },
+      {
+        "name": "Ethan",
+        "role_type": "Lead",
+        "demographics": "Male · 17",
+        "hook": "Ethan is the volatile center of the group: sick, guarded, impatient, and determined to stay emotionally out of reach. His body is failing him, but his real defense mechanism is attitude, which makes him both the most difficult and the most intriguing kid in the story.",
+        "why_actor_wants_this": "This is the showcase space of Timothée Chalamet in *Beautiful Boy* — a young male lead whose physical fragility and emotional volatility are both part of the performance engine. Actors who want a role that can pivot from irritation to vulnerability to menace will see a lot to play here."
+      },
+      {
+        "name": "Mother Logan",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-50s",
+        "hook": "Mother Logan is the authority figure who believes she can manage the moral collapse she helped create. She starts as controlled and procedural, then becomes a body-horror victim of her own system, which gives her a tragic, volatile, and highly playable contradiction.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in *Hereditary* — a role where maternal authority, panic, guilt, and physical transformation all collide. Mid-career dramatic actresses and prestige genre buyers will see a part that can carry the film’s emotional and visual escalation."
+      },
+      {
+        "name": "Nina",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Nina is a lonely adult who opens her home to the kids with genuine warmth, but she’s carrying her own private grief and disappointment. She feels like someone who wants to become a caretaker because she never got to be one in the way she hoped.",
+        "why_actor_wants_this": "This is the kind of emotionally grounded adult role that gave Elisabeth Moss in *The Invisible Man* a mix of domestic vulnerability and survival instinct. Actresses who can play warmth, guardedness, and sudden authority will be drawn to the chance to become the story’s temporary sanctuary."
+      },
+      {
+        "name": "Owen",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Owen is one of the lab workers who understands the mechanics of the serum and the hierarchy around it. He reads as compliant on the surface, but the scene work gives him enough nervousness to suggest he knows exactly how dangerous the system is.",
+        "why_actor_wants_this": "This is the kind of compact genre-support role that gave Walton Goggins in *The Hateful Eight* a chance to make a memorable impression with limited screen time and loaded subtext. Character actors who specialize in tension and ambiguity will have fun making him feel dangerous without needing a long arc."
+      },
+      {
+        "name": "Trevor",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Trevor is the more visibly uneasy half of the lab duo, the one who hesitates before the machine starts and seems to understand the ethical line he’s crossing. He functions as the conscience in a room where conscience is already compromised.",
+        "why_actor_wants_this": "This is the kind of pressure-cooker supporting part that gave Jesse Plemons in *Breaking Bad* the chance to play fear, obedience, and moral drift in the same scene language. Actors who like playing the person who knows too much will be drawn to it."
+      },
+      {
+        "name": "Unknown Man",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "The Unknown Man is the offscreen power center: calm, mocking, and clearly above the lab workers in the chain of command. Because his face is withheld, he functions as a voice of control and threat rather than a fully exposed person.",
+        "why_actor_wants_this": "This is the kind of masked-authority role that gives an actor the same command-space as Giancarlo Esposito in *Breaking Bad* — controlled menace with every line carrying subtext. Buyers who like a strong voice-over threat or a late-reveal antagonist will see immediate utility here."
+      },
+      {
+        "name": "Candace",
+        "role_type": "Supporting",
+        "demographics": "Female · tween",
+        "hook": "Candace is one of the younger kids, and her fear is immediate and unfiltered. She helps the ensemble register the stakes emotionally because she reacts like a child who has never had a safe baseline.",
+        "why_actor_wants_this": "This is the kind of vulnerable child role that gives a young performer the same emotional function as the kids in *Room* — the audience feels the danger through their reactions. Casting directors looking for authentic child ensemble texture will value her presence."
+      },
+      {
+        "name": "Blake",
+        "role_type": "Supporting",
+        "demographics": "Male · tween",
+        "hook": "Blake is blunt, skeptical, and already carrying a worldview shaped by deprivation. He gives the group a sharper edge and helps the script avoid making every child sound the same.",
+        "why_actor_wants_this": "This is a useful ensemble child role in the *Stranger Things* kid-group tradition — a kid whose attitude makes the group feel lived-in rather than interchangeable. Young actors with natural deadpan or edge would stand out here."
+      },
+      {
+        "name": "Justin",
+        "role_type": "Supporting",
+        "demographics": "Male · tween",
+        "hook": "Justin is quieter and more observant, with a simple desire for stability and normalcy. He plays as one of the kids most ready to accept a new home if it feels safe enough.",
+        "why_actor_wants_this": "This is the kind of understated child role that gives a young actor room to play listening and trust, not just reaction. It’s the sort of part casting teams use to round out an ensemble with emotional contrast."
+      },
+      {
+        "name": "Tom",
+        "role_type": "Supporting",
+        "demographics": "Male · tween",
+        "hook": "Tom is Justin’s quieter counterpart, and the script uses him as a soft-spoken presence who helps the younger group feel like a real cluster of personalities. He’s one of the least verbal kids, which makes his reactions carry extra weight.",
+        "why_actor_wants_this": "This is the kind of small but memorable child role that can land the same way as the quieter kids in *The Florida Project* — minimal dialogue, strong presence, and a lot of behavior to play. It’s attractive to casting directors looking for texture inside the ensemble."
+      },
+      {
+        "name": "Will",
+        "role_type": "Supporting",
+        "demographics": "Male · tween",
+        "hook": "Will is hopeful in a way that feels almost fragile, always looking for the next promise of safety or reward. He gives the group a childlike optimism that contrasts with the more guarded older kids.",
+        "why_actor_wants_this": "This is the kind of innocence-forward child role that gives a young performer the emotional function of the kids in *E.T.* or *Room* — the audience’s heartline. Families and casting teams looking for a sincere, accessible child presence will respond to him."
+      },
+      {
+        "name": "George",
+        "role_type": "Supporting",
+        "demographics": "Male · tween",
+        "hook": "George is the kid with the most visible artistic impulse, and his detail-oriented nature gives him a slightly different rhythm from the rest of the group. He feels like the one most likely to notice what others miss.",
+        "why_actor_wants_this": "This is the kind of character-actor-in-training child role that gives a young performer a specific behavioral hook, similar to the observant kids in *Stand by Me*. It helps the ensemble feel individualized and gives the casting breakdown one more distinct flavor."
+      },
+      {
+        "name": "Trisha",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Trisha is one half of the adult pair that appears to be wavering on the orphanage’s operation. She reads as conflicted and vulnerable, which makes her a useful pressure point in the adult conspiracy.",
+        "why_actor_wants_this": "This is the kind of brief but emotionally loaded supporting role that gives an actor a single-scene turn with moral tension, similar to the compromised adults in *The Handmaid’s Tale*. Character actors who like playing fear under pressure will respond to it."
+      },
+      {
+        "name": "John",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "John is Trisha’s partner and the more reactive half of the pair, the one who tries to get her out before the guards close in. He functions as a human casualty of the system and helps underline how dangerous the orphanage really is.",
+        "why_actor_wants_this": "This is a compact supporting role with immediate stakes, the kind of part that gives an actor a fast, memorable burst of panic and loyalty. It fits performers who specialize in high-intensity scene work."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage intimate horror around kids, guilt, and bodily transformation.",
+        "fit_profile": "First- or second-feature directors with a festival-horror or elevated-thriller background, especially those who already work in performance-forward genre and controlled locations. This material rewards close framing, escalating dread, and practical body-horror beats more than spectacle, which makes it ideal for a filmmaker trying to prove command of tone and actors.",
+        "detail": "The script gives a director a contained pressure-cooker with a strong central image — the serum turning on Mother Logan — and enough room to build dread through behavior before the effects hit. Directors who like making a small number of locations feel like a trap will see a clear canvas here."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming horror-thriller / premium genre feature lane",
+        "detail": "The project can be packaged around one adult lead and a teen ensemble, so it does not require a giant star stack to make sense on the page. The contained orphanage/house/lab footprint and the body-horror hook give it a clean streamer-friendly genre pitch with trailer-ready imagery and manageable production scope."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The feature shape is still visible as a roadmap.",
+        "detail": "The draft currently includes Act III ideas, alternate directions, and summary-style future beats after the main escape sequence. A next pass could choose one clean feature trajectory and dramatize the chosen escalation fully, so the middle and ending feel like scenes rather than development notes.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle leans on explanation.",
+        "detail": "Several exchanges in the lab, the house, and the dinner scene spend a lot of time telling us who these people are and what they want. One lever would be to let a few of those identity beats arrive through action or conflict so the emotional information lands with more force.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Ethan’s condition can drive more of the engine.",
+        "detail": "His illness is one of the most distinctive elements in the draft, especially in the lab escape and the moments where he collapses or lashes out. The version of the script where that condition directly shapes a decisive choice in the feature would give the lead a stronger internal throughline.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The child ensemble can be streamlined by function.",
+        "detail": "The younger kids are vivid as a group, but several of them currently play similar emotional notes in the house and escape sequences. A simplification pass that assigns each child a sharper job in the group dynamic would protect the ensemble energy while making the feature easier to track.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The body-horror effects are the main production lift.",
+        "detail": "Mother Logan’s transformation sequence and the blood-heavy violence are the clearest technical drivers. If the goal is to keep the footprint lean, the version of the script that concentrates the most elaborate effects into one or two signature moments would preserve impact and simplify execution.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 53.3,
+  "tier": "Needs Development",
+  "inputTokens": 16415,
+  "outputTokens": 5407,
+  "cost": 0.03664275,
+  "declaredFormat": "Feature film"
+}

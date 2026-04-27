@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-23T23:16:09.790Z",
+  "submission_id": "1da541fe-eb01-458d-aa13-5e65234bec94",
+  "eval_id": "9f0e7b18-9777-425f-9265-983cbe8665b3",
+  "title": "Juno",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Juno MacGuff",
+      "role_type": "Lead",
+      "demographics": "Female · mid-to-late teens"
+    },
+    {
+      "name": "Mac MacGuff",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Vanessa",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Paulie Bleeker",
+      "role_type": "Supporting",
+      "demographics": "Male · teens"
+    },
+    {
+      "name": "Mark Loring",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s"
+    },
+    {
+      "name": "Bren",
+      "role_type": "Supporting",
+      "demographics": "Female · teens"
+    }
+  ],
+  "positioning_hook": "A sharp-tongued Minnesota teen gets pregnant after a one-night stand and decides the baby deserves a better life than her own, forcing her to grow up faster than she can joke.",
+  "cost_usd": 0.024963000000000003,
+  "input_tokens": 11024,
+  "output_tokens": 3710,
+  "status": "wrote:leads_ok"
+}

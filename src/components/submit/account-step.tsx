@@ -10,8 +10,8 @@
 // /auth/callback → /submit can pick it back up and finish assignment.
 'use client'
 
-import { useState } from 'react'
-import { Loader2, AlertCircle, FileCheck2, FileClock } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Loader2, AlertCircle, Check, FileClock } from 'lucide-react'
 
 export type AccountMode = 'upload' | 'draft'
 
@@ -54,30 +54,25 @@ export function AccountStep({
         {subhead}
       </p>
 
-      {/* Status pill — green for upload-in-flight, gold for draft */}
-      <div
-        className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 mb-5 text-[13px]"
-        style={
-          mode === 'upload'
-            ? {
-                background: 'rgba(5,150,105,0.06)',
-                border: '1px solid rgba(5,150,105,0.25)',
-                color: '#057647',
-              }
-            : {
-                background: 'rgba(212,160,23,0.07)',
-                border: '1px solid rgba(212,160,23,0.30)',
-                color: '#92710f',
-              }
-        }
-      >
-        {mode === 'upload' ? <FileCheck2 size={15} /> : <FileClock size={15} />}
-        <span>
-          {mode === 'upload'
-            ? 'PDF received — eval is running in the background'
-            : 'Draft saved — no PDF yet'}
-        </span>
-      </div>
+      {/* Status block. Upload mode = animated progress bar (eval is running
+          server-side, take 60s); draft mode = static gold pill. The progress
+          bar is the user's reassurance that something is happening — the
+          spinner inside the signup button alone read as "hung". */}
+      {mode === 'upload' ? (
+        <EvalProgress />
+      ) : (
+        <div
+          className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 mb-5 text-[13px]"
+          style={{
+            background: 'rgba(212,160,23,0.07)',
+            border: '1px solid rgba(212,160,23,0.30)',
+            color: '#92710f',
+          }}
+        >
+          <FileClock size={15} />
+          <span>Draft saved — no PDF yet</span>
+        </div>
+      )}
 
       <button
         type="button"
@@ -172,6 +167,69 @@ export function AccountStep({
       <p className="text-center text-[12px] text-[var(--gem-gray-500)] mt-3.5 m-0">
         {trustLine}
       </p>
+    </div>
+  )
+}
+
+// Eval-in-flight progress bar. We can't actually observe scoring progress
+// from the client (the eval runs server-side), so this is a paced 60-second
+// animation — the realistic upper bound for a v5.3 eval. Two phases:
+//   - 0..58s: bar fills 0% → 95% via CSS animation
+//   - 58s+:   flips to "ready" state — fully filled bar, checkmark, "Your
+//             report is ready" copy. We leave it there until the user
+//             finishes signup (the parent doesn't auto-advance).
+// The reassurance value is in *seeing motion*, not in measuring real
+// progress. Worst case (eval is slower) the bar sits at 100% a few extra
+// seconds before they finish typing their email. That's fine.
+function EvalProgress() {
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), 58000)
+    return () => clearTimeout(t)
+  }, [])
+
+  const trackBg = 'rgba(5,150,105,0.10)'
+  const fillBg = '#059669'
+  const labelColor = '#057647'
+
+  return (
+    <div className="mb-5">
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2 text-[13px] font-medium" style={{ color: labelColor }}>
+          {ready ? (
+            <>
+              <Check size={15} strokeWidth={3} />
+              <span>Your report is ready — create your account to view it.</span>
+            </>
+          ) : (
+            <span>Scoring your script…</span>
+          )}
+        </div>
+      </div>
+      <div
+        className="h-2 rounded-full overflow-hidden relative"
+        style={{ background: trackBg }}
+      >
+        <div
+          className="absolute inset-y-0 left-0 rounded-full"
+          style={{
+            background: fillBg,
+            width: ready ? '100%' : undefined,
+            animation: ready ? undefined : 'gemEvalFill 58s cubic-bezier(0.22, 0.61, 0.36, 1) forwards',
+            transition: ready ? 'width 600ms ease-out' : undefined,
+          }}
+        />
+      </div>
+      <style jsx>{`
+        @keyframes gemEvalFill {
+          0% {
+            width: 0%;
+          }
+          100% {
+            width: 95%;
+          }
+        }
+      `}</style>
     </div>
   )
 }

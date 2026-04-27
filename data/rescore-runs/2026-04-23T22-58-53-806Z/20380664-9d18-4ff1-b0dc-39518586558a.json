@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:00:52.577Z",
+  "submission_id": "20380664-9d18-4ff1-b0dc-39518586558a",
+  "eval_id": "2a16e903-ae19-48dc-a136-143c187160a4",
+  "title": "Fixation Erika Vazquez Siena Butterfield Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Dr. Paulina Cuevas Ström",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · therapist · Spanish/European-coded, Manhattan professional"
+    },
+    {
+      "name": "Mare / Meredith Adler",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to 40s · lawyer / high-powered professional"
+    },
+    {
+      "name": "Oliver Ramos",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · finance/private equity type"
+    },
+    {
+      "name": "Anders Ström",
+      "role_type": "Lead",
+      "demographics": "Male · 40s/50s · writer · Swedish"
+    },
+    {
+      "name": "Sylvie Porter",
+      "role_type": "Supporting",
+      "demographics": "Female · late 40s · wealthy Manhattan hostess"
+    },
+    {
+      "name": "Bill Porter",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · wealthy husband"
+    },
+    {
+      "name": "Jackson",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s · coworker / therapist colleague"
+    },
+    {
+      "name": "Sam",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · assistant"
+    },
+    {
+      "name": "Fidan",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s · gallery-owner type"
+    },
+    {
+      "name": "Kunter",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s · artist type"
+    }
+  ],
+  "positioning_hook": "A couples therapist falls into an affair with a client’s husband, then discovers the marriage is a trap engineered to expose her — and destroy her life.",
+  "cost_usd": 0.05178825,
+  "input_tokens": 39429,
+  "output_tokens": 4937,
+  "status": "wrote:leads_ok"
+}

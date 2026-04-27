@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-23T23:41:57.461Z",
+  "submission_id": "e5a4c0ab-8207-4b56-a1c0-b02e55655a20",
+  "eval_id": "8853cb39-dc0f-413c-b810-784c353b9938",
+  "title": "DECEPTION",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Joey Vincelli",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late 30s · bodybuilder build"
+    },
+    {
+      "name": "Nikki Ryan",
+      "role_type": "Lead",
+      "demographics": "Female · mid-30s · attractive, sharply dressed, police dispatcher/detective"
+    },
+    {
+      "name": "Hector Domingo",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Mexican/Latino · biker/crime-boss type"
+    },
+    {
+      "name": "Detective Bill Adler / Blake Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · well-built, ponytail, undercover cop/drug-dealer double identity"
+    },
+    {
+      "name": "Tony Castello / Diego Chules",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Latino · bar owner / drug dealer / undercover cop cover identity"
+    },
+    {
+      "name": "Lester",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · beefy, short-haired, bully type"
+    },
+    {
+      "name": "Captain Rizzo",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · suit-wearing police captain"
+    },
+    {
+      "name": "Roberto",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s-50s · slight build, limp"
+    },
+    {
+      "name": "Tex",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · biker/criminal associate"
+    },
+    {
+      "name": "Luis",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · biker/criminal associate"
+    },
+    {
+      "name": "Jorge",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · biker/criminal associate"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · biker/criminal associate"
+    },
+    {
+      "name": "Mike",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · locksmith shop owner"
+    },
+    {
+      "name": "Nikki’s Ex / Lester’s counterpart energy",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · abusive stalker type"
+    },
+    {
+      "name": "Julio",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Mexican · motel handyman/manager"
+    },
+    {
+      "name": "Uncle Al",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Latino · fruit stand owner"
+    }
+  ],
+  "positioning_hook": "A San Francisco locksmith-thief gets squeezed between rival drug crews and an undercover cop girlfriend, then has to out-con both sides to survive.",
+  "cost_usd": 0.054705000000000004,
+  "input_tokens": 39010,
+  "output_tokens": 5655,
+  "status": "wrote:leads_ok"
+}

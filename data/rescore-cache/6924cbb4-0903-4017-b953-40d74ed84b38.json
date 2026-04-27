@@ -1,0 +1,319 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "Action",
+        "Thriller"
+      ],
+      "tone": "Heightened, pulpy, dystopian, and earnest"
+    },
+    "positioning_hook": "A clone fugitive on the run from a cybernetic cop discovers his mother helped build a hidden clone underground — and the truth about his identity could ignite a civil war.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has clean genre appeal: a hunted man, a rogue cop, a hidden clone society, and a road-movie chase that keeps the engine obvious. It plays best for sci-fi/action audiences and buyers who like high-concept pulp with a strong central chase."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the bank sequence when Zack is labeled a clone and forced into flight, then expands cleanly into the clone underground, the trip to Zed, and the records reveal. The story engine is easy to explain in two sentences, with stakes that keep sharpening."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Zack has a solid outsider arc, Mia has attitude and volatility, and Trent is a vivid antagonist, but the supporting cast mostly serves the chase. The strongest character energy comes from the Zack/Mia friction and the mother-son mystery rather than a broad ensemble of distinct inner lives."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific retro-future world: clone classification, counterfeit identities, a Ferris-wheel commune, and a motorcycle cop with a melted, mechanized face. The voice is confident in its pulp register and keeps leaning into odd, memorable details."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The opening detonates quickly, the bank escape launches a sustained pursuit, and the midpoint-to-third-act stretch keeps adding destinations, reversals, and reveals. The road structure gives the feature a strong forward pull, with each stop producing a new pressure point."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea of a man discovering he is a clone is familiar, but the script gives it a fresh social architecture through clone rights, counterfeit identity work, and a family network built around survival. The final reveal that Audrey is also a clone sharpens the concept into something more personal and mythic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a layered society with south-country repression, north-country clone rights, a bureau of records, a cloning corporation, and a scavenger underground. The world feels like it has institutions, black markets, and political edges rather than just a backdrop for pursuit."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably pulpy and earnest, with comic banter, brutal violence, and a slightly mythic sense of destiny all living in the same frame. The Elton John cue, the gas-station robbery, and Trent’s grotesque transformation give it a hard-to-mistake flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the chase is a real identity question: what makes someone real, what gets inherited, and whether family is biological or chosen. The Audrey/Trent relationship and the clone-rights politics suggest a larger mythology that the feature only begins to open."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Zack and Mia carry the movie, and the clone community adds texture, but most relationships are functional to the plot rather than independently generative. The Audrey/Trent sibling split is the richest secondary dynamic, though it arrives late."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child role appears in the interrogation sequence",
+          "Trent requires heavy prosthetic or makeup transformation",
+          "Audrey and second-generation Audrey require strong resemblance or dual casting logic",
+          "Clone society benefits from a cast that can play multiple versions of similar social types"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Near-future / retro-futurist contemporary",
+        "notable_requirements": [
+          "Bank interior",
+          "Warehouse hideout",
+          "Highway/desert road stretches",
+          "Gas station",
+          "Amusement park compound with Ferris wheel",
+          "Bureau of records",
+          "Corporate headquarters / genetics lab",
+          "Irrigation field with chasm and tarp cover",
+          "Police headquarters / interrogation room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Clone classification screens, futuristic weapons, the travel pod, the melted Trent transformation, explosions, and the irrigation-field chasm all require effects support.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, vehicle crashes, explosions, fire effects, and practical destruction of cars/buildings.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Elton John’s 'Someone Saved My Life Tonight' and Led Zeppelin’s 'Kashmir,' 'Houses of the Holy,' and 'Trampled Under Foot' are specifically named and used in scene action."
+        },
+        {
+          "type": "brand",
+          "detail": "Pepsi is prominently named in the gas-station sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Toyota Corolla, Nissan hatchback, Trans Am, Harley-Davidson, and Global Care are all specifically referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical genre lane for mid-budget sci-fi action",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong trailer moments, cult-genre positioning, and exportable high-concept action"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is built around vehicles, explosions, prosthetic transformation, and a handful of signature set pieces, but it stays within a contained road-chase scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story can be carried by a few strong leads, though Trent’s transformation, Audrey’s dual identity, and the child hostage beat add specific casting needs."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves through banks, warehouses, highways, a gas station, a park compound, records offices, and a corporate lab, creating a manageable but varied footprint."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Gun violence, hostage-taking, explosions, and a child-in-danger beat keep the material firmly in mature genre territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Multiple named songs and several prominent brands are written directly into the action and would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise has a clean identity engine.",
+          "what_it_means": "A buyer gets an instantly legible sci-fi chase built around a man learning he may be a manufactured person, which is the kind of hook that travels fast in a pitch room. Genre fans, streamer buyers, and actors who want a high-concept lead role will all understand the appeal immediately.",
+          "evidence": "Zack is exposed as a clone in the bank, then spends the rest of the script chasing the truth of his origin through records, labs, and clone communities.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Trent is a memorable antagonist.",
+          "what_it_means": "The melted motorcycle-cop image gives the movie a villain with instant poster value and a physical transformation that can sell the trailer before the plot even lands. Genre buyers and character actors looking for a signature heavy would both see the upside.",
+          "evidence": "Trent rides a motorcycle, wears ultraviolet gear, survives extreme damage, and later appears with a fused helmet-and-flesh face.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mia gives the movie attitude and volatility.",
+          "what_it_means": "She is the kind of sharp-edged co-lead who can keep a chase movie from becoming purely mechanical, because every scene with her can pivot from flirtation to betrayal to survival instinct. That makes the role attractive to a young actor who wants a dangerous, funny, sexually charged showcase.",
+          "evidence": "She steals cars, holds people at gunpoint, jokes through danger, seduces Zack, and ultimately flips him for profit.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The clone world has social texture.",
+          "what_it_means": "The script is not just about one fugitive; it imagines a whole economy of counterfeit identities, clone rights, and underground survival, which gives the project more than a single chase lane. Buyers looking for franchiseable world-building and directors who like institutional detail will see room to expand the universe.",
+          "evidence": "Audrey’s identity work, the bureau of records, the clone commune at Kashmir, and the north-country legal distinction all point to a larger system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The road-movie structure keeps it propulsive.",
+          "what_it_means": "The feature has a built-in forward motion that naturally supports trailers, poster art, and a clear act-to-act escalation without needing a complicated exposition dump. Action buyers and streamers can see the commercial shape right away: escape, pursuit, reveal, confrontation.",
+          "evidence": "Bank escape, warehouse refuge, gas-station theft, desert pursuit, records search, and final showdown all move Zack toward the truth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a cult-friendly retro-future flavor.",
+          "what_it_means": "The mix of old cars, cloning tech, biker cops, and rock-myth soundtrack cues gives the movie a distinct shelf identity that can stand out in genre marketing. Midnight audiences and genre labels that like pulp with personality would respond to that tone.",
+          "evidence": "Trans Am, Harley-Davidson motorcycle, Ferris wheel commune, peace rifles, and Led Zeppelin cues all sit side by side.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a very marketable genre package: a high-concept clone fugitive story with a vivid villain, a volatile co-lead, and a world that feels bigger than the chase. It has the kind of clean premise, trailer-ready set pieces, and cult-genre personality that can attract both talent and buyers looking for something that plays like a movie, not a concept memo."
+    },
+    "lead_characters": [
+      {
+        "name": "ZACK FREELING",
+        "role_type": "Lead",
+        "demographics": "Male · middle-aged",
+        "hook": "Zack is a wounded, self-contained man who starts the story trying to be ordinary and ends it forced to confront that his entire life may be built on a lie. He has the right mix of competence, confusion, pride, and decency to carry a chase movie, and the script keeps testing whether his identity is inherited, chosen, or manufactured.",
+        "why_actor_wants_this": "This is the showcase territory of Keanu Reeves in The Matrix or Harrison Ford in Blade Runner — a stoic lead whose emotional restraint becomes the point of the performance. Actors who can play quiet authority under existential pressure will want the role because it gives them action, mystery, and a late-breaking identity reveal in one package."
+      },
+      {
+        "name": "MIA",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s",
+        "hook": "Mia is a fast-talking survivor with a sexual charge, a criminal instinct, and a constantly shifting allegiance that makes her impossible to read for long. She is funny, dangerous, wounded, and opportunistic all at once, which gives the movie its most volatile energy.",
+        "why_actor_wants_this": "This is the kind of role Rosamund Pike had in Gone Girl or Jennifer Jason Leigh had in The Hateful Eight — a character who weaponizes charm, ambiguity, and control. Actresses who want to play seduction, menace, and emotional whiplash in the same performance will chase it hard."
+      },
+      {
+        "name": "TRENT",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Trent is the story’s cold-blooded enforcer, but the script keeps making him more than a standard pursuer by turning him into a damaged, almost post-human instrument of the state. He is authoritarian, clipped, and terrifyingly committed, with a body and voice that become increasingly monstrous as the movie goes on.",
+        "why_actor_wants_this": "This is the showcase space of Javier Bardem in No Country for Old Men or Doug Jones-style transformation roles — a villain whose physical presence and stillness do as much work as dialogue. Character actors who want a signature antagonist with prosthetic and performance heft will see a juicy part."
+      },
+      {
+        "name": "AUDREY FREELING",
+        "role_type": "Lead",
+        "demographics": "Female · 60s",
+        "hook": "Audrey reads at first like a protective mother, then opens into something much larger: a hidden architect of clone survival with her own history of deception and sacrifice. She carries warmth, authority, and secrecy in equal measure, which makes her feel like the emotional and moral spine of the backstory.",
+        "why_actor_wants_this": "This is the kind of late-reveal matriarch role that gave Frances McDormand in Three Billboards or Meryl Streep in Doubt so much authority — a woman whose calm surface hides enormous force. Veteran actresses looking for a part that can hold both tenderness and clandestine power will be drawn to it."
+      },
+      {
+        "name": "DARRICK",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Darrick is the swaggering clone leader with a street-level charisma that makes the warehouse community feel lived-in rather than schematic. He is funny, skeptical, and loyal on his own terms, and he gives the underground its face and attitude.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Michael K. Williams did in The Wire or Walton Goggins in Justified — command a room with rhythm, danger, and wit. Strong supporting players who like scene-stealing authority will gravitate to it."
+      },
+      {
+        "name": "CLIVE",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "Clive is the intellectual voice of the clone community, the one who can translate ideology into language without losing the human stakes. He is patient, articulate, and quietly radical, which makes him the script’s clearest mouthpiece for the larger political argument.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the measured intelligence of Paul Dano in There Will Be Blood or Michael Stuhlbarg in A Serious Man — a thinker whose calm delivery carries weight. Character actors who excel at precision and moral complexity will want it."
+      },
+      {
+        "name": "ZED",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Zed is a shaggy, quasi-mystic patriarch who runs the clone enclave like a cross between a guru and an outlaw engineer. He has enough eccentricity to feel mythic, but the script also gives him practical authority and emotional history with Mia.",
+        "why_actor_wants_this": "This is the kind of part that lets an actor play the wise, off-center mentor territory of Jeff Bridges in The Big Lebowski or John Goodman in Barton Fink. Performers who like eccentric authority with a spiritual edge will be interested."
+      },
+      {
+        "name": "GILCREST",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Gilcrest is the corporate-science intermediary who starts as a bureaucratic gatekeeper and becomes a key witness to the truth. He is nervous, self-protective, and just credible enough to make the reveal land cleanly.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the clipped, information-heavy tension of a Michael C. Hall supporting turn or a David Strathairn-style witness part — someone who has to carry exposition without flattening it. Actors who like intelligence under pressure will respond to it."
+      },
+      {
+        "name": "OFFICER BRYANT",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Bryant is the younger cop who still has enough conscience to notice the system’s seams before the machine swallows him. He functions as the audience’s early glimpse that the state’s certainty is built on concealment.",
+        "why_actor_wants_this": "This is the kind of role that gives a younger actor the earnest, doomed-cop energy of a young Michael B. Jordan in Fruitvale Station or a rookie in a prestige crime drama. It offers a clean moral center before the story turns on him."
+      },
+      {
+        "name": "MR. EDWARDS",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Edwards is the polished corporate face of the system, the man who can smile while pulling a gun on a job applicant. He is all procedure until the mask drops, which makes him a sharp early emblem of the world’s cruelty.",
+        "why_actor_wants_this": "This is the kind of compact authority role that lets an actor do what J.K. Simmons or Bryan Cranston can do in a few scenes — make institutional menace feel personal. Strong character actors who can turn civility into threat will want it."
+      },
+      {
+        "name": "RECEPTIONIST",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "The receptionist is a sharp, overworked office gatekeeper who briefly becomes a comic casualty of the larger conspiracy. She has just enough personality to make the corporate world feel inhabited rather than generic.",
+        "why_actor_wants_this": "This is the kind of small but vivid role that lets an actor play exasperated realism in the middle of genre chaos, similar to the grounded office workers in Coen or Fincher worlds. It is a quick, memorable scene-stealer part."
+      },
+      {
+        "name": "AUDREY / SECOND GENERATION AUDREY",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-60s depending on interpretation",
+        "hook": "The second-generation Audrey reveal reframes the mother figure as part of a larger clone lineage and gives the ending a mythic, uncanny charge. She is calm, luminous, and emotionally legible in a way that makes the final handoff feel both eerie and tender.",
+        "why_actor_wants_this": "This is the kind of reveal role that gives an actor the late-story charge of a prestige twist performance, like the emotional pivot in The Sixth Sense or Arrival. It offers a final-scene identity turn that can become the movie’s afterimage."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a propulsive genre movie with a mythic identity question at its center.",
+        "fit_profile": "Mid-career genre directors with one or two features, or TV directors moving into features, who already know how to stage action cleanly and keep character readable under pressure. This material rewards someone who likes retro-future production design, road-movie momentum, and performance-forward sci-fi rather than effects for their own sake.",
+        "detail": "The movie gives a director a chance to build a world through practical locations, vehicle movement, and a few signature set pieces instead of endless exposition. It will appeal to filmmakers who want to turn a pulpy premise into something emotionally legible and visually distinctive."
+      },
+      "buyer_appeal": {
+        "tier": "$8-20M feature",
+        "lane": "Streaming genre lane / cult theatrical sci-fi action",
+        "detail": "The package can be driven by one strong lead and a memorable antagonist rather than a giant ensemble or star-heavy cast, which keeps the financing conversation focused. The clone premise, road-chase structure, and retro-future visuals give it a clear trailer hook and an exportable genre identity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The music cues are doing a lot of work.",
+        "detail": "The Elton John and Led Zeppelin references give the movie personality, but they also create a clearance path that should be planned early. A next pass could consider whether the emotional beats can survive with needle-drop placeholders or original music so the script stays easy to package.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The world-building is strongest when it stays concrete.",
+        "detail": "The clone-rights politics, the bureau of records, and the counterfeit identity work all feel vivid because they are tied to specific institutions and procedures. One direction would be to keep foregrounding those tangible systems whenever the story turns abstract, so the audience always feels the rules of the world in action.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Mia’s turn could land even harder with one more emotional hinge.",
+        "detail": "Her betrayal at the irrigation field is effective because it is consistent with her survival instinct, and the final reveal of her bargaining-chip logic is sharp. A next pass could deepen the emotional hinge between her intimacy with Zack and her decision to cash him in, so the reversal feels even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Trent’s transformation is a signature set piece.",
+        "detail": "The melted face, the motorcycle pursuit, and the final return from the ravine are all strong genre images, and they will want careful effects planning. The version of the movie where those beats are designed around one repeatable prosthetic language would protect both the character and the budget.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The feature plays best as a contained chase.",
+        "detail": "The script already has a natural road-movie spine, so the cleanest packaging path is to keep the footprint focused on the bank, warehouse, highway, records office, lab, and final confrontation. That concentration helps the movie stay in a mid-budget lane while preserving the scale of the world.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Zack’s identity reveal is the engine of the ending.",
+        "detail": "The birth-record sequence and the Gilcrest confrontation are the movie’s clearest emotional turn, because they convert the chase into a personal reckoning. A next pass could make sure the earlier scenes keep feeding that reveal with small behavioral clues, so the ending feels earned from the first act onward.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70.7,
+  "tier": "Optionable",
+  "inputTokens": 36957,
+  "outputTokens": 5303,
+  "cost": 0.05158125,
+  "declaredFormat": "Feature film"
+}

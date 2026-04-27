@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:02:25.356Z",
+  "submission_id": "a3f954d7-4f5f-42b6-87de-e7fce1ccee2a",
+  "eval_id": "88d3da86-1875-4a5f-b755-ca2705ba09ec",
+  "title": "HEREDITARY Script",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Annie Graham",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · artist / mother"
+    },
+    {
+      "name": "Steve Graham",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · psychiatrist"
+    },
+    {
+      "name": "Peter Graham",
+      "role_type": "Lead",
+      "demographics": "Male · 17 · teen"
+    },
+    {
+      "name": "Charlie Graham",
+      "role_type": "Lead",
+      "demographics": "Female · 13 · androgynous presentation"
+    },
+    {
+      "name": "Joan",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "Dr. Mason",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · psychiatrist"
+    },
+    {
+      "name": "Bridget",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "Brendan",
+      "role_type": "Supporting",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "Mr. Davies",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Teacher",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    }
+  ],
+  "positioning_hook": "A grieving miniature artist discovers her family’s dead daughter may be channeling something ancient and malevolent — and the truth turns the house into a trap.",
+  "cost_usd": 0.06175725,
+  "input_tokens": 54311,
+  "output_tokens": 4672,
+  "status": "wrote:leads_ok"
+}

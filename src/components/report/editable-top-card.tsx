@@ -13,10 +13,10 @@
 // Non-owners see the same layout without the pencil; edit mode can also be
 // pre-opened from dashboard via ?edit=1 which auto-scrolls + flips the card.
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, useTransition } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Pencil, Check, X, RotateCcw, Loader2 } from 'lucide-react'
+import { Pencil, Check, X, RotateCcw, Loader2, Plus } from 'lucide-react'
 import {
   LOGLINE_WORD_CAP,
   LOCKED_GENRE_VOCAB,
@@ -27,6 +27,10 @@ import {
 
 interface Props {
   evaluationId: string
+  /** script_submissions.id — needed for the inline tag editor, which posts
+   *  to /api/scripts/[id]/tags (a different endpoint from the eval-fields
+   *  edit endpoint). */
+  submissionId: string
   initial: TopCardDisplay
   isOwner: boolean
   hasEdits: boolean
@@ -47,7 +51,37 @@ interface Props {
   isGemSelect?: boolean
 }
 
-export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, postedAt, authorName, isGemSelect, headerActionsLeft }: Props) {
+// Tag editor constants — mirror src/components/dashboard/script-tags-editor.tsx
+// and the server-side normalizer at /api/scripts/[id]/tags so the optimistic
+// chip preview matches what the server will actually persist.
+const MAX_TAGS = 25
+const MAX_TAG_LEN = 30
+
+function normalizeTag(raw: string): string {
+  return raw
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_/]+/g, '-')
+    .replace(/[^a-z0-9-]+/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, MAX_TAG_LEN)
+}
+
+function dedupeTags(tags: string[]): string[] {
+  const seen = new Set<string>()
+  const out: string[] = []
+  for (const t of tags ?? []) {
+    if (typeof t !== 'string') continue
+    const v = t.trim().toLowerCase()
+    if (!v || seen.has(v)) continue
+    seen.add(v)
+    out.push(v)
+  }
+  return out
+}
+
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, isGemSelect, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -56,6 +90,107 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
   const [saving, setSaving] = useState(false)
   const [reverting, setReverting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Tags state — independent of the bundled "Save" flow because tags persist
+  // to a different endpoint (/api/scripts/[id]/tags) and writers expect chip
+  // edits to feel immediate. Add/remove are optimistic with rollback on
+  // failure. Source of truth is `script_submissions.tags`, refetched on
+  // router.refresh() after each successful change.
+  const [tags, setTags] = useState<string[]>(() => dedupeTags(initial.tags ?? []))
+  const [tagDraft, setTagDraft] = useState('')
+  const [tagAdding, setTagAdding] = useState(false)
+  const [tagError, setTagError] = useState<string | null>(null)
+  const [tagPending, startTagTransition] = useTransition()
+  const tagInputRef = useRef<HTMLInputElement | null>(null)
+
+  // Re-seed local tags whenever the server-rendered initial.tags shifts
+  // (e.g. another tab edited them, or router.refresh just landed). Without
+  // this the optimistic state can drift from the persisted value.
+  useEffect(() => {
+    setTags(dedupeTags(initial.tags ?? []))
+  }, [initial.tags])
+
+  async function persistTags(next: string[], rollback: string[]) {
+    setTagError(null)
+    try {
+      const res = await fetch(
+        `/api/scripts/${encodeURIComponent(submissionId)}/tags`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tags: next }),
+        }
+      )
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setTags(rollback)
+        setTagError(json?.error || 'Could not save tags.')
+        return
+      }
+      const serverTags: string[] = Array.isArray(json?.tags) ? json.tags : next
+      setTags(serverTags)
+      // Refresh server data so dashboards / discover pick up the new tags.
+      startTagTransition(() => router.refresh())
+    } catch (err) {
+      setTags(rollback)
+      setTagError(err instanceof Error ? err.message : 'Could not save tags.')
+    }
+  }
+
+  function handleRemoveTag(tag: string) {
+    if (!isOwner) return
+    const rollback = tags
+    const next = tags.filter((t) => t !== tag)
+    setTags(next)
+    persistTags(next, rollback)
+  }
+
+  function handleAddTag() {
+    if (!isOwner) return
+    const norm = normalizeTag(tagDraft)
+    if (!norm) {
+      setTagError('Tag must be letters, numbers, or hyphens.')
+      return
+    }
+    if (tags.includes(norm)) {
+      setTagError('That tag is already on this script.')
+      return
+    }
+    if (tags.length >= MAX_TAGS) {
+      setTagError(`Max ${MAX_TAGS} tags per script.`)
+      return
+    }
+    const rollback = tags
+    const next = [...tags, norm]
+    setTags(next)
+    setTagDraft('')
+    persistTags(next, rollback)
+  }
+
+  function openTagAdd() {
+    setTagAdding(true)
+    setTagError(null)
+    // Defer focus to the next paint so the input has mounted.
+    requestAnimationFrame(() => tagInputRef.current?.focus())
+  }
+
+  function closeTagAdd() {
+    setTagAdding(false)
+    setTagDraft('')
+    setTagError(null)
+  }
+
+  function handleTagKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      handleAddTag()
+    } else if (e.key === 'Escape') {
+      e.preventDefault()
+      closeTagAdd()
+    }
+  }
+
+  const tagsAtCap = tags.length >= MAX_TAGS
 
   // Editable state — seeded from what's currently being rendered.
   // Genre primary + secondary are normalized into the locked vocab so the
@@ -226,7 +361,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
             doubling up with a "GEM Select" pill here was redundant noise and
             reintroduced score-anxiety framing. */}
 
-<div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-5 sm:mb-10">
+<div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:gap-x-3 sm:gap-y-2 text-[13px] sm:text-[15px] text-[var(--gem-gray-300)] mb-3 sm:mb-4">
           {initial.format && <span>{initial.format}</span>}
           {initial.genre_primary && (
             <>
@@ -262,6 +397,124 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
             </>
           )}
         </div>
+
+        {/* Freeform tags row — `script_submissions.tags`. Distinct visual
+            treatment from genre pills (filled, lowercase, smaller) so a
+            producer scanning the card can tell at a glance what's a
+            controlled-vocab classifier vs a writer-supplied descriptor.
+            Owners get inline edit affordances (X to remove, "+ Add tag"
+            pill at the end); non-owners see plain read-only chips. */}
+        {(tags.length > 0 || isOwner) && (
+          <div className="mb-5 sm:mb-10">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              {tags.map((tag, i) => (
+                <span
+                  key={`${tag}-${i}`}
+                  className="inline-flex items-center gap-1 rounded-full pl-2.5 py-1 text-[12px] sm:text-[12.5px] font-medium"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid var(--gem-gray-800)',
+                    color: 'var(--gem-gray-300)',
+                    paddingRight: isOwner ? 4 : 10,
+                  }}
+                >
+                  {tag}
+                  {isOwner && (
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveTag(tag)}
+                      aria-label={`Remove tag ${tag}`}
+                      className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full transition-colors hover:bg-[var(--gem-gray-800)] hover:text-[var(--gem-gray-50)]"
+                      style={{ color: 'var(--gem-gray-500)' }}
+                    >
+                      <X size={11} strokeWidth={2.5} />
+                    </button>
+                  )}
+                </span>
+              ))}
+
+              {isOwner && !tagAdding && !tagsAtCap && (
+                <button
+                  type="button"
+                  onClick={openTagAdd}
+                  className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[12px] sm:text-[12.5px] font-medium transition-colors hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]"
+                  style={{
+                    background: 'transparent',
+                    border: '1px dashed var(--gem-gray-700)',
+                    color: 'var(--gem-gray-400)',
+                  }}
+                  aria-label="Add a tag"
+                >
+                  <Plus size={12} strokeWidth={2.5} />
+                  Add tag
+                </button>
+              )}
+
+              {isOwner && tagAdding && (
+                <span
+                  className="inline-flex items-center gap-1 rounded-full pl-2.5 pr-1 py-0.5"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px dashed var(--gem-gray-600)',
+                  }}
+                >
+                  <Plus size={12} className="text-[var(--gem-gray-400)] shrink-0" />
+                  <input
+                    ref={tagInputRef}
+                    type="text"
+                    value={tagDraft}
+                    onChange={(e) => {
+                      setTagDraft(e.target.value)
+                      if (tagError) setTagError(null)
+                    }}
+                    onKeyDown={handleTagKeyDown}
+                    onBlur={() => {
+                      // Close the add-pill if the writer clicked away without
+                      // entering anything; preserves the "Add tag" affordance.
+                      if (!tagDraft.trim()) closeTagAdd()
+                    }}
+                    placeholder="add tag"
+                    maxLength={MAX_TAG_LEN}
+                    className="bg-transparent outline-none text-[12px] sm:text-[12.5px] text-[var(--gem-gray-100)] placeholder:text-[var(--gem-gray-500)] py-1 px-0 w-[100px] sm:w-[120px]"
+                    aria-label="New tag"
+                  />
+                  <button
+                    type="button"
+                    onMouseDown={(e) => e.preventDefault() /* keep input focus during click */}
+                    onClick={handleAddTag}
+                    disabled={!tagDraft.trim()}
+                    className="text-[11px] font-semibold rounded-full px-2 py-0.5 transition-all disabled:opacity-40"
+                    style={{
+                      background: 'var(--gem-gold)',
+                      color: 'var(--gem-black)',
+                    }}
+                  >
+                    Add
+                  </button>
+                </span>
+              )}
+
+              {isOwner && tagPending && (
+                <Loader2
+                  size={12}
+                  className="animate-spin text-[var(--gem-gray-500)]"
+                />
+              )}
+            </div>
+
+            {isOwner && tagError && (
+              <p className="text-[12px] text-red-400 mt-1.5 m-0">{tagError}</p>
+            )}
+            {isOwner && tagsAtCap && (
+              <p className="text-[12px] text-[var(--gem-gray-500)] italic mt-1.5 m-0">
+                You&apos;ve reached the {MAX_TAGS}-tag limit. Remove one to add another.
+              </p>
+            )}
+          </div>
+        )}
+        {tags.length === 0 && !isOwner && (
+          <div className="mb-5 sm:mb-10" />
+        )}
 
         {initial.logline && (
           <div

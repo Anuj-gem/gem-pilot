@@ -1,0 +1,313 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Family adventure",
+      "genre_tags": [
+        "Fantasy",
+        "Comedy"
+      ],
+      "tone": "Warm, whimsical, high-concept, crowd-pleasing"
+    },
+    "positioning_hook": "A lonely nine-year-old’s fishing-game avatar becomes a real companion, forcing his workaholic parents to choose between a corporate deal and the family they’ve been neglecting.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to sell to families and four-quadrant audiences: a kid, a magical game character, and parents under pressure from work and home. The emotional promise is clear and the ending broadens into a feel-good family brand play, though the fishing-game specificity keeps it from feeling fully universal at first glance."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early with Frank appearing in Ethan’s bathroom and then in the park, so the audience understands the engine quickly. The script keeps the rules legible through the tablet, the blue code, and the AI reveal, which gives the premise a clean commercial spine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ethan has a strong kid-hero center: anxious, funny, romantic, and genuinely lonely, which gives the role shape beyond the premise. John and Sarah also have a playable contradiction as ambitious parents who love their son but keep missing him, while Frank is a memorable companion with a distinct voice."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a very specific game property and turns it into a family adventure about connection, work, and imagination rather than a generic IP adaptation. The move from fishing-game mascot to embodied companion, then to AI-generated matter and a corporate tech threat, gives the material a confident, unusual escalation."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps generating new turns: school play, Frank’s appearances, the AI reveal, Vexley’s agenda, the impound-lot heist, and the lake showdown. It moves with real momentum, though the middle spends a fair amount of time explaining the mechanics before the final chase fully takes over."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A fishing video game becoming a live emotional support figure is a fresh, immediately graspable idea, and the script keeps finding new ways to make that premise feel inevitable. The blend of kid fantasy, corporate satire, and domestic drama gives it a distinctive identity that doesn’t feel borrowed from a standard family template."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific world around prep-school privilege, finance pressure, coding culture, and the internal logic of Fishing Planet. The game world itself becomes a story engine, and Vexley’s lab adds scale, though the real-world geography stays mostly in a few familiar New York containers."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually consistent in its mix of earnest family comedy, fish-out-of-water absurdity, and lightly satirical tech-world stakes. Frank’s sea-shanty cadence, the school-play awkwardness, and the corporate Zoom comedy all feel of a piece rather than competing modes."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the fantasy setup is a clean emotional engine about parental absence, a child’s need for attention, and the way technology can become a surrogate relationship. The script keeps revealing that the magic is really about connection, which gives the story more aftertaste than a simple novelty premise."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Bradley family triangle is strong, and the Ethan/Jen/Livvy/Trevor school web adds useful comic and emotional texture. Frank also creates a second relationship engine that changes how every scene plays, though the story still clearly orbits Ethan first."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Child lead",
+          "Multiple child supporting roles",
+          "One VFX/CG-integrated fantasy character",
+          "Two adult leads with strong comedic timing"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior lake/park/street work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Prep school interiors",
+          "Corporate office and conference rooms",
+          "VFX-heavy lab hangar",
+          "Lake/boat work",
+          "Impound lot",
+          "Hotel lobby",
+          "Residential home"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Frank’s appearances/disappearances, blue-code effects, digital matter creation, Vexley’s avatar/body transfer, lab simulation environment, and the final lake-scale reality-bending sequence all require substantial compositing and digital character work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical water work, boat movement, prop fish, electrical flashes, and destruction effects in the lab finale.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Based on the video game Fishing Planet and its characters, world, and branded game elements."
+        },
+        {
+          "type": "brand",
+          "detail": "CNBC-style morning business news, Zoom, LinkedIn, Target, Lyft, Rolex, Ozempic, and other named or clearly branded references appear in dialogue or action."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming family adventure / theatrical family fantasy",
+        "content_level": "PG / PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release with broad family appeal; strongest as a platform-friendly event family title or modest theatrical release with strong streaming afterlife."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is contemporary and mostly contained, but Frank’s digital character work, Vexley’s lab simulation, and the lake finale push it above a simple low-budget family comedy."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The movie needs a strong child lead, two adult leads, a fantasy character performance, and several child supporting roles with clear chemistry."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It moves through homes, school, offices, streets, an impound lot, a hotel, and a lake, with the lab hangar requiring a sizable built environment."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material stays family-friendly, with mild peril, comic chaos, and no explicit language or adult content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is built on the Fishing Planet game IP and includes multiple named brands and recognizable corporate references."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly legible.",
+          "what_it_means": "A buyer can pitch this in one breath: a kid’s fishing-game companion becomes real, and the family chaos around that invention drives the movie. That kind of clean, high-concept family premise is exactly what streamers and family distributors can market off a thumbnail and a sentence.",
+          "evidence": "Frank appears in Ethan’s bathroom, later in the park and school, and the tablet becomes the clear portal for the premise.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Frank is a breakout companion role.",
+          "what_it_means": "The character has the kind of voice, physicality, and emotional utility that can become the movie’s signature asset. Family buyers and a performer with comic warmth will see a role that can sell toys, trailers, and repeat viewings.",
+          "evidence": "Frank’s sea-shanty cadence, fish metaphors, and protective bond with Ethan give him a distinct screen identity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family conflict is commercial, not ornamental.",
+          "what_it_means": "The workaholic-father / overextended-mother / lonely-kid triangle gives the fantasy a real emotional engine, which broadens the audience beyond game fans. Parents, family brands, and actors looking for a heartfelt crowd-pleaser will all recognize the lane immediately.",
+          "evidence": "John misses the audition, Sarah covers the emotional load, and Ethan’s wish that Frank were his dad lands as the story’s deepest wound.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The school-play thread gives the movie a kid-movie spine.",
+          "what_it_means": "The Romeo and Juliet storyline provides a clean, relatable coming-of-age track that keeps the movie grounded even when the fantasy escalates. That gives the project a second marketable lane: family comedy with a first-crush, first-performance payoff.",
+          "evidence": "Ethan’s audition, his Tybalt role, Livvy, Trevor, and Jen all create a school-world engine that pays off in the final performance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tech satire gives the fantasy a modern edge.",
+          "what_it_means": "Vexley and the AI/code reveal move the movie beyond a simple magical-companion story into a contemporary conversation about artificial intimacy and digital dependency. That makes the material feel current enough for streamer buyers who want family fare with a sharper hook.",
+          "evidence": "Sarah’s code, Jen’s coding analysis, the self-rewriting blue code, and Vexley’s plan to build a real-world simulation all escalate the premise.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a playable scale.",
+          "what_it_means": "The script moves from home to school to office to lab to lake, which gives production and marketing multiple visual registers without losing the core family story. That breadth helps the movie feel bigger than a single-location kids’ fantasy and gives trailers multiple set-piece options.",
+          "evidence": "The impound lot heist, the lab hangar reveal, the lake chase, and the final fishing-trip resolution all expand the canvas.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a brandable emotional payoff.",
+          "what_it_means": "The final image of the family fishing together, plus the app-based epilogue, turns the movie into a feel-good product with sequel and franchise-friendly afterlife. Family buyers love endings that can live as a holiday title, a streaming staple, and a repeatable IP world.",
+          "evidence": "John chooses family over the job, the app launches, and the final tag shows another lonely child finding Frank in the game.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable family fantasy with a real emotional center: a lonely kid, a work-obsessed dad, and a fishing-game avatar who becomes the bridge between them. The script’s best asset is that it turns a very specific game property into a broad, crowd-pleasing story about connection, imagination, and choosing your family before the moment passes.\n\nIt also has a strong packaging profile: a memorable fantasy companion role, a kid lead with a clear arc, and a contemporary tech angle that makes the material feel current rather than nostalgic. For the right producer, this is the kind of IP adaptation that can play as a family event movie without needing to apologize for its premise."
+    },
+    "lead_characters": [
+      {
+        "name": "ETHAN BRADLEY",
+        "role_type": "Lead",
+        "demographics": "Male · 9",
+        "hook": "Ethan is a bright, anxious, deeply observant kid who lives half in the real world and half in the one his tablet gives him. He’s funny without trying to be, romantic in a painfully sincere way, and emotionally old enough to notice exactly how often his parents are absent even when they’re in the room.",
+        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room — a child performance built on vulnerability, intelligence, and the ability to make adult emotional stakes feel immediate. Young actors who can carry comedy, fear, and wonder in the same scene will chase this because Ethan gets to be the audience’s entry point and emotional engine."
+      },
+      {
+        "name": "JOHN BRADLEY",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "John is a high-functioning, overcommitted father who genuinely loves his family but keeps proving that love through work and logistics instead of presence. He’s fast, funny, and sales-brained, which makes him charming even when he’s failing the people closest to him.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad’s early family scenes — a man whose competence is also the thing that keeps him emotionally out of reach. Mid-career leading men who want to play charm, panic, guilt, and eventual tenderness in one role will see a lot to do here."
+      },
+      {
+        "name": "SARAH BRADLEY",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Sarah is the smartest person in the room and the one quietly holding the family together while everyone else thinks they’re the center of the story. She’s warm, dry, technically brilliant, and just sharp enough to be dangerous when she decides the family needs a fix.",
+        "why_actor_wants_this": "This is the showcase territory of Julia Louis-Dreyfus in Veep crossed with the grounded maternal authority of Toni Collette in Hereditary’s early domestic scenes — a woman who can pivot from comic exasperation to fierce intelligence. Actors who want a role that plays competence, wit, and emotional command will be drawn to her."
+      },
+      {
+        "name": "FRANK THE FISHERMAN",
+        "role_type": "Lead",
+        "demographics": "Male · ageless fantasy figure with human body",
+        "hook": "Frank is a fish-out-of-water in the most literal sense: a game character with a folksy voice, a moral center, and a strange, almost childlike devotion to Ethan. He’s funny, sincere, and increasingly moving as he becomes less mascot and more guardian.",
+        "why_actor_wants_this": "This is the showcase territory of Robin Williams in Aladdin — a character whose personality is the special effect and whose warmth has to carry the movie’s heart. A performer with strong comic timing and physical invention will want this because Frank can be played as both scene-stealer and emotional anchor."
+      },
+      {
+        "name": "JEN",
+        "role_type": "Supporting",
+        "demographics": "Female · 9-10",
+        "hook": "Jen is Ethan’s hyperverbal best friend, a tiny brainiac with zero patience for nonsense and a huge capacity for loyalty. She’s the kind of kid who can explain the impossible, then immediately get embarrassed that she’s the one explaining it.",
+        "why_actor_wants_this": "This is the showcase territory of the best friend in Eighth Grade — fast, specific, and funny in a way that feels lived-in rather than written. Young actors who can do rapid-fire dialogue and emotional sincerity will love that Jen gets to be both comic relief and the smartest person in the room."
+      },
+      {
+        "name": "TREVOR",
+        "role_type": "Supporting",
+        "demographics": "Male · 10",
+        "hook": "Trevor is the absurdly perfect kid who could have been a bully but chooses decency instead, which makes him even more disarming. He’s physically gifted, socially effortless, and so genuinely nice that he becomes a comic force all by himself.",
+        "why_actor_wants_this": "This is the showcase territory of the golden-boy supporting part in a family comedy — the role that gets laughs by being impossibly composed while everyone else spirals. A young actor with charisma and physical confidence will have a field day with him."
+      },
+      {
+        "name": "LIVVY",
+        "role_type": "Supporting",
+        "demographics": "Female · 10",
+        "hook": "Livvy is the object of Ethan’s crush, but the script gives her enough presence to feel like a real kid rather than a prize. She’s poised, kind, and just self-aware enough to make Ethan’s panic feel adorable instead of generic.",
+        "why_actor_wants_this": "This is the showcase territory of the crush role in a coming-of-age comedy — the part that has to be charming without becoming a cliché. Young actors who can play warmth, confidence, and a little mystery will want it."
+      },
+      {
+        "name": "WILSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 10",
+        "hook": "Wilson is the school bully with enough cartoon energy to keep the movie light rather than mean. He exists to sharpen Ethan’s insecurity and make Trevor’s decency pop.",
+        "why_actor_wants_this": "This is the classic comic-bully slot from a family studio movie — a role that lets a young actor go big without needing emotional heaviness. It’s a fun, scene-readable part for a kid with strong physical comedy instincts."
+      },
+      {
+        "name": "PRINCIPAL JENKINS",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Principal Jenkins is the no-nonsense adult authority who sees through the chaos and names it plainly. He’s a clean comic pressure valve and a useful reality check for the school-world scenes.",
+        "why_actor_wants_this": "This is the dependable authority-role lane of a family comedy — the kind of part character actors enjoy because it gets laughs from precision, not volume. It’s a nice fit for actors who can play dry exasperation."
+      },
+      {
+        "name": "SAITO",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Saito is the cool, controlled financier whose calm makes the business pressure feel real. He’s not a villain so much as a gatekeeper, which gives the corporate storyline credibility.",
+        "why_actor_wants_this": "This is the polished executive role that lets an actor play authority with minimal fuss and maximum control. Character actors who can make a Zoom call feel like a power scene will be interested."
+      },
+      {
+        "name": "MILTON VEXLEY",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Vexley is a tech-bro visionary with messianic energy, a grin that never quite reaches the right place, and the kind of confidence that curdles into control. He’s funny, creepy, and increasingly grandiose as he turns a product demo into a worldview.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network with a bigger, more overtly comic villain turn — a fast-talking genius who can pivot into menace. Actors who like playing intelligence, vanity, and ideological certainty will chase it."
+      },
+      {
+        "name": "CRAIG",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Craig is John’s lead analyst and the face of the stressed-out team trying to keep the company alive. He’s practical, anxious, and useful as the audience’s window into the business pressure.",
+        "why_actor_wants_this": "This is the solid young-professional supporting role that gives an actor clean dialogue and a few good reaction beats. It’s the kind of part that benefits from naturalism and timing."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a family movie with real emotional stakes and a playful visual imagination.",
+        "fit_profile": "Mid-career or second-feature directors who have already proved they can balance performance, comedy, and accessible genre storytelling. The sweet spot is someone drawn to heartfelt crowd-pleasers with a slightly offbeat fantasy engine, where character beats matter as much as set pieces.",
+        "detail": "The material rewards a director who can keep the fantasy legible while letting the family dynamics stay front and center, especially in the school, home, and lake sequences. It’s attractive to filmmakers who want a commercial title with room for visual invention, comic timing, and a clean emotional landing."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M family feature",
+        "lane": "Streaming family adventure / theatrical family fantasy",
+        "detail": "It can be packaged around a strong child lead, a charismatic fantasy companion, and two adult leads rather than heavy name-talent dependency, which helps it travel as a performance-driven family title. The IP basis and game-world hook give it an exportable concept with built-in awareness, while the contemporary tech angle keeps it current for streamers and family buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans hard on explanation.",
+        "detail": "The blue-code mechanics, Sarah’s AI reveal, and Vexley’s lab logic are all clear, but there’s room to let one or two of those explanations arrive through action rather than dialogue. A next pass could let the audience discover the rules as Ethan does, which would keep the fantasy moving with a little more snap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The business plot can stay a little lighter.",
+        "detail": "John’s financing storyline gives the movie adult stakes, but several Zoom and boardroom exchanges repeat the same pressure in slightly different language. The version of the script where one of those meetings is folded into another would protect momentum without losing the corporate clock.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The school ensemble is a real asset.",
+        "detail": "Jen, Livvy, and Trevor all have enough personality to carry scenes, and the script already uses them well. One direction would be to keep giving each of them one more distinct move in the back half so the final team-up feels even more earned.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The lab finale asks for a sizable build.",
+        "detail": "The hangar, simulation room, body scanner, and multiple server setups create a strong climax but also a fairly ambitious production footprint. A simplification lever would be to collapse some of the lab geography so the same escalation plays in fewer connected spaces.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The IP and brand layer needs a clear clearance pass.",
+        "detail": "The script is built on the Fishing Planet game and also uses a number of named brands and real-world references in dialogue and action. That makes rights strategy a real early conversation for any buyer, especially if the goal is a broad family release.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.3,
+  "tier": "Optionable",
+  "inputTokens": 55233,
+  "outputTokens": 5197,
+  "cost": 0.06481125,
+  "declaredFormat": "Feature film"
+}

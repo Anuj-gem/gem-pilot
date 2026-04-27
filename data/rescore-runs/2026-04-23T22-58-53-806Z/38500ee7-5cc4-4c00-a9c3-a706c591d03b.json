@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:15:33.337Z",
+  "submission_id": "38500ee7-5cc4-4c00-a9c3-a706c591d03b",
+  "eval_id": "5e90f7a0-9088-4532-b7ab-0c0c7d6589e6",
+  "title": "TTYL",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Darwin Hobbes",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Albert",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Marie",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Future",
+      "role_type": "Lead",
+      "demographics": "Male · 30s/40s · same actor as Darwin"
+    },
+    {
+      "name": "Future Marie",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · same actor as Marie"
+    },
+    {
+      "name": "Detective Hubble",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Dr. Hamid Massabi",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Dr. Ori",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Dr. Faraday",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    }
+  ],
+  "positioning_hook": "A hyper-planning physicist gets texts from his future self, then spends one chaotic day trying to stop the invention that will make him rich, famous, and wanted for treason.",
+  "cost_usd": 0.060795749999999996,
+  "input_tokens": 49705,
+  "output_tokens": 5226,
+  "status": "wrote:leads_ok"
+}

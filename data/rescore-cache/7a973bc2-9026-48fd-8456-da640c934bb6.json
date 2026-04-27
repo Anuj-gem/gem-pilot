@@ -1,0 +1,306 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical horror",
+      "genre_tags": [
+        "mystery",
+        "supernatural thriller"
+      ],
+      "tone": "Mythic, gothic, pulpy, and ominous with philosophical dialogue"
+    },
+    "positioning_hook": "A feared exorcist and a skeptical young librarian hunt a plague of lies, possession, and murder through Roman Hispania, where every “demon” may be a human crime in disguise.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is clear and genre-friendly, with exorcism, plague fear, Roman authority, and a mystery engine that can sell to horror and thriller audiences. It is more specialized than broad four-quadrant fare, but the central promise is legible and commercially usable."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early: an Exorcist is hunted by Rome, and a family case in the forest turns into a layered investigation. The script keeps the engine understandable even as it moves between Rome, the forest, the bar, and the cemetery."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Evano has a strong silhouette — cool, cryptic, scientific, and morally severe — and Aragon gives the story a human entry point. The supporting figures mostly serve the case structure, so the lead pair carries most of the character weight."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The blend of Roman-era exorcism, detective logic, and anti-imperial tension gives the script a distinct angle. The repeated use of observation, crows, rain, and traces as investigative tools gives the material a confident identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps introducing new reveals and reversals, especially around Donna/Francesca, the false possession, and Fresno’s deception. The momentum is sustained by mystery more than escalation, which keeps it moving but not relentlessly propulsive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of an exorcist who solves cases through deduction rather than spectacle is fresh and immediately understandable. The reveal that the “possession” is a cover for murder and trauma gives the premise a satisfying, inevitable twist."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Rome, Hispania, Terragonia, and Cartaeia all feel like places with social rules, military pressure, and public fear. The Roman occupation, public punishments, and plague superstition create a world that actively shapes the story."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusual: grave historical dread mixed with detective banter, theological rhetoric, and almost folkloric menace. Scenes like Evano’s scientific method speech and the crows-as-signals motif give it a recognizable voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the possession plot there are themes of fear, authority, guilt, and identity, especially in Donna/Francesca and Evano’s final destination in Rome. The script hints at a larger moral universe, though most of that depth is carried through dialogue rather than layered subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The Evano-Aragon pairing has real chemistry, and the father-daughter and father-son dynamics in the Cartaeia material add texture. Still, the story is largely driven by the lead duo and case-of-the-week style encounters rather than a web of equally active relationships."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One lead male in his 30s-50s with commanding, enigmatic presence",
+          "One lead male in his late teens to 20s as the audience surrogate",
+          "Two child roles: Juliana and Donna/Francesca (11-15 range)",
+          "Roman soldiers, townspeople, and one older female singer role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 4:4",
+        "period_or_contemporary": "Period",
+        "notable_requirements": [
+          "Roman street and city-square exteriors",
+          "Book-filled hidden interior/library space",
+          "Forest locations with night and dawn coverage",
+          "Small hut interior with cramped upstairs room",
+          "Bar interior",
+          "Cemetery and tomb location",
+          "City gate / military exterior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily atmospheric and visual-motif work: crows, smoke/black dust imagery, and possible crowd extension in Roman exteriors.",
+        "stunts_level": "minor",
+        "sfx_needs": "Blood, corpse/illness makeup, candle/fire practicals, knife violence, and a few physical confrontations.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Caesar is referenced as a historical figure and symbol."
+        },
+        {
+          "type": "brand",
+          "detail": "No prominent modern brands are featured."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable historical horror / genre thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest fit is festival-to-platform or genre-streaming launch."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period Roman settings, multiple exteriors, and night forest work keep this above a contained indie, but the cast and effects remain modest."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Two lead roles plus several named supporting parts, including child casting and a few authority figures, but no star-heavy ensemble requirement."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across Rome, Hispania, Terragonia, Cartaeia, a forest, a bar, a cemetery, and a hut, with period dressing throughout."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Knife violence, blood, corpse imagery, plague fear, and child endangerment keep the material in mature territory without pushing into extreme content."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses historical and symbolic references rather than contemporary IP, named music, or life-rights-dependent characters."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The exorcist is a detective, not a mystic.",
+          "what_it_means": "That gives the movie a clean commercial engine: the audience gets supernatural dread, but the pleasure is also in watching a brilliant investigator read traces, lies, and human behavior. Actors who like playing intelligence with menace will be drawn to Evano, and buyers looking for a genre hook with a fresh procedural spine will see the value immediately.",
+          "evidence": "Evano explains his “Scientific Method” through observation, experimentation, and proofs, then uses rain, crows, mud, grapes, and the black trunk as clues.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Roman oppression gives the horror a political edge.",
+          "what_it_means": "The Roman occupation, public punishment, and fear of authority turn the exorcism story into something bigger than a haunted-house exercise. That widens the appeal to prestige-leaning genre buyers and directors who want horror with historical and ideological texture.",
+          "evidence": "General Spurius hunts the Exorcist as a public enemy, soldiers patrol the city, and civilians fear being seen with him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The false possession reveal is built for payoff.",
+          "what_it_means": "The script turns a familiar exorcism setup into a murder mystery with a clean reveal, which is exactly the kind of twist that can travel in marketing and audience conversation. Genre buyers like a premise that can be sold in one sentence and then deepened by a second-layer explanation.",
+          "evidence": "Juliana’s “possession” is traced to fever and Fresno’s deception, while Donna/Francesca’s split identity carries the trauma.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Evano is a strong marquee role.",
+          "what_it_means": "He has authority, wit, secrecy, and a moral code, which makes him the kind of lead actors want because the role can play intelligence, danger, and charisma in the same frame. This is the sort of part that attracts prestige genre actors and can anchor a poster even before the mythology is fully explained.",
+          "evidence": "He arrives in the hat and gloves, interrogates everyone with surgical precision, and ends scenes with controlled menace.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a folktale texture.",
+          "what_it_means": "Crows, drought, black trunks, burned trees, and whispered curses create a world that feels old, specific, and cinematic rather than generic. That kind of texture is attractive to directors with a visual eye and to buyers who want a period genre piece that feels authored.",
+          "evidence": "The repeated crows, the burnt tree, the empty trunk, and the forest hut all recur as story-signaling images.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Evano-Aragon pairing gives the movie a human entry point.",
+          "what_it_means": "Aragon lets the audience learn the rules while Evano supplies the mythic authority, which is a reliable feature structure for keeping exposition watchable. That dynamic is attractive to casting teams because it creates a star role plus a grounded counterweight role.",
+          "evidence": "Aragon questions Evano’s methods, follows him through the investigation, and becomes the one who physically restrains Fresno at the end.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending preserves a larger world.",
+          "what_it_means": "By sending Evano toward Rome and leaving the final forest exorcism as one chapter in a bigger war, the script suggests franchise or sequel potential without feeling like a setup reel. Buyers who like expandable mythology will notice that the story closes its case while keeping the character engine alive.",
+          "evidence": "Evano says he is heading to Rome and that not all the book can be told in one chapter.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a historical horror feature with a real selling engine: an exorcist who solves cases like a detective, a Roman occupation backdrop that gives the genre political weight, and a central mystery that pays off as human deception rather than routine possession. The script has a distinct voice, a memorable lead, and enough world texture to attract genre buyers who want something smarter and stranger than standard exorcism fare."
+    },
+    "lead_characters": [
+      {
+        "name": "EVANO D'ASMODEO",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-50s · Italian",
+        "hook": "A scarred, gloved, black-hatted exorcist who moves like a scholar and speaks like a judge. He is cool, severe, and theatrical, but the real engine is his methodical mind: he reads people the way others read scripture, and he treats evil as something to be diagnosed, not merely fought.",
+        "why_actor_wants_this": "This is the showcase territory of Viggo Mortensen in The Road or Ralph Fiennes in The Grand Budapest Hotel — a controlled, magnetic presence whose stillness carries authority and whose every line feels loaded with history. Actors who want a role that can play intelligence, menace, and mythic gravitas in one performance will chase this, and prestige genre buyers will see a lead who can carry a poster and a monologue."
+      },
+      {
+        "name": "ARAGON",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to 20s · Hispanic",
+        "hook": "A young librarian with a skeptical streak, a hungry mind, and just enough courage to keep following the impossible. He starts as the audience’s point of entry, but he becomes more than a sidekick: he is the moral witness who learns how to see the world through Evano’s brutal clarity.",
+        "why_actor_wants_this": "This is the coming-of-age witness role of Elijah Wood in The Lord of the Rings or Timothée Chalamet in Beautiful Boy — the part where innocence, intelligence, and fear all stay visible at once. Younger dramatic leads will want it because it gives them a reactive-to-active arc inside a genre movie, and it lets them play wonder, doubt, and resolve without disappearing beside the larger-than-life lead."
+      },
+      {
+        "name": "FRESNO",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "A father whose panic curdles into manipulation, then into exposed guilt. He presents as a worried parent, but the script steadily reveals a man who has built a whole false theology around hiding what he did to his family.",
+        "why_actor_wants_this": "This is the kind of late-reveal villain territory that actors like Michael Shannon in Take Shelter or Ben Mendelsohn in Animal Kingdom have turned into scene-stealing dread — a role where the audience keeps reinterpreting every line. Character actors who like playing shame, self-justification, and collapse will be drawn to it."
+      },
+      {
+        "name": "DONNA / FRANCESCA",
+        "role_type": "Supporting",
+        "demographics": "Female · 11-15 · Hispanic",
+        "hook": "A child split between trauma and survival, with one identity carrying the memory of violence and the other trying to stay alive inside the same body. She is eerie without being abstract, because the script roots her strangeness in grief, fever, and the need to keep functioning.",
+        "why_actor_wants_this": "This is the showcase space of Saoirse Ronan in The Lovely Bones or Jodie Comer in The End We Start From — a role where innocence, fracture, and emotional shock all have to live in the same face. A young actor with serious dramatic range would chase this because it offers a rare horror part that is performance-led rather than effects-led."
+      },
+      {
+        "name": "GENERAL SPURIUS",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "A Roman authority figure who speaks in the language of empire, punishment, and obedience. He is not a monster in the supernatural sense; he is the human machinery that makes fear feel official.",
+        "why_actor_wants_this": "This is the kind of imperial-command role that Ralph Fiennes in Schindler’s List or Jason Isaacs in The Patriot has made memorable — a part defined by cold command and ideological certainty. Actors who specialize in authority, menace, and clipped power will see a clean, scene-owning antagonist slot."
+      },
+      {
+        "name": "ARAGON'S MENTOR / SIERRO",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "A streetwise beggar-philosopher who talks in slogans, survival logic, and half-jokes. He gives the town its rough moral weather and helps frame Aragon’s early worldview before the story moves on.",
+        "why_actor_wants_this": "This is the kind of lived-in supporting role that actors like Brendan Gleeson in In Bruges or John Turturro in Barton Fink can make unforgettable with voice and attitude alone. Character actors who enjoy turning a few scenes into a worldview will be attracted to it."
+      },
+      {
+        "name": "SALAMANDRA / ERIKA DE SALAMANDRA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s",
+        "hook": "A singer with glamour, fatigue, and a haunted social intelligence. She reads like someone who has survived by performing, and the script lets her carry both seduction and sorrow in the same breath.",
+        "why_actor_wants_this": "This is the smoky, wounded-cabaret territory of Jessica Lange in American Horror Story or Penélope Cruz in Volver — a role that lets an actor sing, flirt, and break the room open emotionally. Mid-career actresses who want a memorable genre turn with texture will chase it."
+      },
+      {
+        "name": "DRIUGO",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s",
+        "hook": "An undertaker whose caution has hardened into complicity. He knows more than he says, and the script uses his fear to show how a whole town can become an accomplice to its own lie.",
+        "why_actor_wants_this": "This is the moral-collapse supporting role of Brian Cox in Succession or Richard Jenkins in The Visitor — a part where shame, self-protection, and late recognition all have to register in the face. Veteran character actors will respond to the chance to play a man who is both witness and enabler."
+      },
+      {
+        "name": "AJAX",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens to 20s",
+        "hook": "A young man shaped by military obedience and filial love, then forced into betrayal. He has the look of someone destined for greatness, which makes his final choice land as tragedy rather than surprise.",
+        "why_actor_wants_this": "This is the tragic-young-soldier lane of Barry Keoghan in Dunkirk or Tom Glynn-Carney in The King — a role where innocence gets weaponized by authority. Emerging actors who want a sharp, emotionally brutal supporting turn will be drawn to it."
+      },
+      {
+        "name": "CANO",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "A Roman soldier with a conscience that still answers to the empire. He is one of the few figures in the script who can acknowledge debt, duty, and moral compromise in the same breath.",
+        "why_actor_wants_this": "This is the conflicted-duty role of Mark Rylance in Bridge of Spies or Michael Kelly in House of Cards — a part where restraint and divided loyalty do the work. Actors who specialize in quiet authority will find a lot to play in a few scenes."
+      },
+      {
+        "name": "CITIZEN / BARMAN / LEGIONARY / WEALTHY MAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-60s",
+        "hook": "A cluster of functional town figures that give the world its social pressure and public rhythm. They are less about individual psychology than about showing how rumor, fear, and hierarchy move through a crowd.",
+        "why_actor_wants_this": "These are the kind of small but vivid ensemble parts that let a performer create instant texture the way actors in The Wire or Game of Thrones do in brief appearances. Working character actors and local-cast ensemble players would have room to make the world feel inhabited."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make horror feel intelligent, historical, and morally charged.",
+        "fit_profile": "Second- or third-feature directors, or established indie filmmakers, who already work in performance-forward genre and care about atmosphere, period texture, and moral ambiguity. This material rewards directors who can stage dread through composition, dialogue, and revelation rather than relying on spectacle.",
+        "detail": "The script gives a director a strong visual grammar — crows, candles, trunks, forests, and Roman authority — while keeping the emotional center in interrogation scenes and reveals. It will attract filmmakers who like genre pieces that can play at festivals and still deliver a clean commercial premise."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige genre / historical horror / streamer thriller lane",
+        "detail": "The movie can be packaged around one commanding lead and one younger audience-surrogate, so it does not require a large-name ensemble to function. The period setting and exorcism hook fit the current streamer appetite for elevated genre, while the contained locations and modest effects keep it in a producible range."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The Rome-to-forest structure can be tightened.",
+        "detail": "The script has strong set pieces in Rome, Terragonia, Cartaeia, the bar, the cemetery, and the hut, but the version where one of the town detours is folded into another would keep the mystery engine moving with less travel. That would protect the momentum of Evano’s investigation while preserving the world texture that makes the piece feel expansive.",
+        "is_primary_lever": true,
+        "source": "production"
+      },
+      {
+        "area": "Aragon’s turn can be foregrounded earlier.",
+        "detail": "His skepticism and curiosity are clear, and the final stretch gives him more active participation, especially when he helps restrain Fresno. A next pass could let one earlier scene give him a sharper choice that shows why he is the right counterweight to Evano, which would deepen the lead pairing without changing the plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The exorcism logic is strongest when it stays visual.",
+        "detail": "The rain, crows, grapes, burnt tree, and black trunk are the most cinematic clues in the script, and they already do a lot of the heavy lifting. One direction would be to keep the explanatory dialogue lean whenever those objects are on screen, so the audience experiences the deduction before it hears the deduction.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting townspeople can be consolidated.",
+        "detail": "The bar, cemetery, and city-gate scenes introduce several named figures who each do one job in the investigation. If the goal is a leaner production footprint, a few of those functions could be combined into fewer faces without changing the story’s revelations.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final reveal lands on a strong emotional choice.",
+        "detail": "Donna receiving the knife and being asked to choose between vengeance and pardon is the kind of ending beat that gives the movie a moral aftertaste. A future pass could make that choice even more central to the final image, because it is the cleanest expression of the script’s larger theme.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63.7,
+  "tier": "Optionable",
+  "inputTokens": 26544,
+  "outputTokens": 5131,
+  "cost": 0.0429975,
+  "declaredFormat": "Feature film"
+}

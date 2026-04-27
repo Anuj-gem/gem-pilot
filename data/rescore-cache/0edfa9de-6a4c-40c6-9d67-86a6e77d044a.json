@@ -1,0 +1,303 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Political thriller",
+      "genre_tags": [
+        "crime",
+        "action"
+      ],
+      "tone": "Gritty, satirical, propulsive, and politically charged"
+    },
+    "positioning_hook": "A Mexican federal agent and a DOJ investigator chase a cross-border assassin through bailout-era America, only to uncover a revenge plot buried inside the financial elite.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has clear commercial legs: assassinations, political corruption, cross-border pursuit, and a conspiracy tied to bailout-era resentment. It speaks to thriller audiences who like current-affairs tension and to viewers drawn to institutional cat-and-mouse stories with a strong procedural spine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast with the yacht assassination, then sharpens into a federal investigation that widens from one killer to a larger political-financial conspiracy. The script keeps the engine legible through repeated target set-pieces, and the Garza/Soliz relationship gives the premise a clean, explainable drive."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Soliz and Knox are both playable: he’s wry, street-smart, and personally entangled; she’s disciplined, blunt, and increasingly forceful. Garza adds a strong adversarial presence, and the family reveal gives the lead triangle emotional weight beyond the case."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar political-thriller frame and gives it a sharper identity through Mexican-American cross-border dynamics, bailout-era rage, and a killer who is both ideological and transactional. The tonal swing between procedural banter, public spectacle, and family tragedy gives it a more distinctive edge than a standard conspiracy piece."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps moving through a chain of public assassinations, interrogations, stakeouts, and reversals, with each new target widening the stakes. The Garza reveal, the Reyes/Hansen/Holzmann turns, and the final Mexico run all keep the momentum alive and the endgame active."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The bailout-assassination premise feels timely and specific, and the script’s core idea — a hitman framed as a patriot while the real machinery sits inside finance and politics — has a memorable hook. It’s not a wholly new engine, but the ideological twist and border-crossing family angle make it feel earned and ownable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a dense ecosystem of DOJ, Secret Service, Treasury, Congress, finance, media, and Mexican law enforcement, all with visible institutional friction. The offices, restaurants, golf courses, gyms, and airports all function as story spaces rather than generic backdrops, which gives the world a strong lived-in feel."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: hard-edged procedural banter, political satire, and bursts of action sit alongside pointed class and border commentary. Scenes like the fajita dinner, the grape-eating politicians, and the White House-style room full of bickering officials give the script a recognizable voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the thriller mechanics, the script keeps revealing deeper layers around family grievance, ideological radicalization, and the way public systems manufacture private violence. The Soliz/Garza brother reveal and Juanita’s presence add emotional reserves that could support a richer dramatic reading."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Soliz-Knox pairing carries the movie well, and the supporting web of Hughes, Tunnellee, Reyes, Mathers, Wireman, Vasquez, and Juanita creates multiple friction points. The ensemble is strongest when it’s in rooms where politics, class, and nationality collide, which gives the script recurring scene energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Latino/Mexican lead required for Neron Soliz",
+          "Latino/Mexican antagonist required for Quirce Garza",
+          "Black male supporting role for Kenneth Hughes",
+          "Child actor required for the boy on the bicycle",
+          "Teen actor required for Holzmann’s son",
+          "Large supporting political/corporate ensemble"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Washington D.C. government interiors",
+          "Mexico City / Mexican street and airport material",
+          "Yacht, hotel, casino, golf course, gym, restaurant, mansion, airport, park, alley, and office environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Gunfire impacts, crowd chaos, vehicle movement, and some aerial/airport staging; no heavy creature or fantasy work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Multiple shootouts, a high-speed car chase, a plane taxi/jump sequence, and practical gunfire effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Ronald Reagan, Alan Greenspan, Donald Rumsfeld, George Bush Sr., George W. Bush, Clinton, Thomas Jefferson, Cuauhtémoc Cárdenas, Carlos Salinas, Obama, and John Wayne are referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "NAFTA, CNN, D.O.J., F.B.I., Secret Service, Treasury, and H.J. Waterman are prominently referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "Patrón tequila, Gold Bullion U.S.A., and other named consumer/business references appear in dialogue and scene texture."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical or premium-streaming political thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best positioned as a festival-to-platform or limited theatrical thriller with streamer upside; the case-driven structure and topical hook support a feature release model."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is grounded in offices, restaurants, streets, and a few set-piece action scenes, keeping it below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Two strong lead roles plus a sizable political and law-enforcement ensemble, with specific Latino casting needs and a child role in the opening chase."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Multiple distinct interiors and exteriors across Washington, Mexico, airports, and public venues create a broad but manageable footprint."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Frequent gun violence, political assassination, and some profanity keep it in mature-thriller territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names numerous real public figures, institutions, and brands, which creates a meaningful clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns bailout rage into a thriller engine.",
+          "what_it_means": "The script has a clean commercial spine: public resentment, financial power, and political assassination all collide in a way that feels immediately legible to a broad adult audience. Buyers looking for topical thrillers with a built-in conversation starter will see a timely hook that can travel beyond one news cycle.",
+          "evidence": "Manzine, Miller, and Argyle are all tied to bailout money before they’re killed, and the investigation keeps circling finance, Congress, and Treasury.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Soliz and Knox give the movie a strong two-hander engine.",
+          "what_it_means": "The lead pairing creates a packageable center: she is procedural steel, he is wry cross-border muscle, and their banter keeps the exposition moving without flattening the tension. That kind of dynamic is attractive to actors and gives the film a repeatable scene rhythm that can carry a feature cleanly.",
+          "evidence": "Their fajita dinner introduction, the repeated sparring over jurisdiction, and the final joint pursuit all build the partnership as the movie’s backbone.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The border-crossing family reveal adds emotional weight.",
+          "what_it_means": "The Garza/Soliz relationship gives the thriller a personal wound underneath the politics, which is exactly the kind of hidden layer that helps a genre piece linger after the credits. That depth is especially attractive to prestige-minded actors and directors who want the action to sit on top of real family damage.",
+          "evidence": "The reveal that Garza and Soliz are half brothers reframes the entire pursuit and makes Juanita’s role central to the ending.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has visible institutional friction.",
+          "what_it_means": "DOJ, Secret Service, Treasury, Congress, Mexican police, and the financial sector all have their own agendas, which gives the script a built-in ecosystem rather than a single-case container. That density supports both a feature release and a buyer who wants a thriller with enough institutional texture to feel bigger than its budget.",
+          "evidence": "The script repeatedly stages confrontations in agency offices, congressional rooms, and corporate spaces where each institution pushes back against the others.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a sharp satirical bite.",
+          "what_it_means": "The script can play as serious thriller and political satire at the same time, which broadens its appeal to audiences who like their genre with attitude. That tonal blend is attractive to filmmakers who specialize in dialogue-forward tension and to buyers who want something smarter than a standard chase movie.",
+          "evidence": "The fajita scene, the grape-eating politicians, the White House room bickering, and the repeated barbed exchanges all show a comic-political register running through the action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are public and cinematic.",
+          "what_it_means": "The assassinations happen in places with built-in visual scale — yachts, casinos, golf courses, rallies, airports, and government buildings — so the movie feels larger than a simple procedural. That gives the project trailer moments and makes it easier to sell as a crowd-pleasing adult thriller.",
+          "evidence": "The opening yacht hit, the casino murder, the golf-course shooting, the rally attack, and the airport finale all deliver distinct public spectacle.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a politically charged thriller with a real packageable center: a sharp DOJ/Mexican-federale duo, a killer with a personal history, and a conspiracy rooted in bailout-era resentment. It has the kind of topical premise, institutional texture, and set-piece momentum that can attract both talent and buyers looking for an adult feature with urgency."
+    },
+    "lead_characters": [
+      {
+        "name": "Abigail Knox",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · DOJ Special Agent",
+        "hook": "Knox is all precision on the surface: tall, athletic, controlled, and relentlessly businesslike, but the script keeps letting her dry wit and impatience leak through the seams. She’s the kind of federal investigator who can walk into a room, take command, and still feel human enough to spar, improvise, and get rattled when the case stops fitting the profile.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs — a disciplined professional whose intelligence is always active, even when the room is trying to outmaneuver her. It gives an actress the chance to play authority, skepticism, physical urgency, and comic timing in one role, which is exactly the kind of part that can anchor a prestige thriller."
+      },
+      {
+        "name": "Neron Soliz",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Mexican Federal Police agent",
+        "hook": "Soliz is a street-smart, fast-talking, deeply observant investigator with a bruised sense of humor and a personal history that keeps surfacing under pressure. He reads as a man who can joke through a gunfight, navigate power with ease, and still carry the emotional weight of a family story he has spent years outrunning.",
+        "why_actor_wants_this": "This is the showcase lane of Denzel Washington in Training Day or Oscar Isaac in A Most Violent Year — a charismatic man whose charm and moral complexity are doing constant work. It gives an actor the chance to play swagger, intelligence, bilingual authority, and buried grief while driving a high-stakes thriller."
+      },
+      {
+        "name": "Quirce Garza",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s · Latino/Mexican",
+        "hook": "Garza is a killer with ideology, humor, and a personal code that keeps him from feeling like a standard hired gun. He’s slippery, theatrical, and dangerous, but the script also gives him grief, family loyalty, and a political grievance that makes him feel like a man who has turned revenge into doctrine.",
+        "why_actor_wants_this": "This is the kind of role Javier Bardem had in No Country for Old Men — a predator whose calm is more unsettling than rage, and whose presence can dominate every scene he enters. It gives an actor a rare chance to play menace, wit, and wounded conviction in the same performance."
+      },
+      {
+        "name": "Marilyn Reyes",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · Latino",
+        "hook": "Reyes is a polished, high-functioning financial executive who radiates control and resentment in equal measure. She’s not written as a passive corporate figure; she has ideology, vanity, and a sharp sense of her own power, which makes her feel like someone who could be ally, suspect, or architect depending on the scene.",
+        "why_actor_wants_this": "This is the kind of sharp-edged executive role that gave Sarah Snook so much traction in Succession — a woman whose intelligence is inseparable from her ambition and self-protection. It offers an actress a chance to play status, concealment, and moral ambiguity in a compact but memorable part."
+      },
+      {
+        "name": "Murray Goodman",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · FBI agent",
+        "hook": "Goodman is the kind of seasoned federal operator who knows how to read a room and keep the temperature low while everyone else is posturing. He’s lightly comic, politically aware, and competent enough to feel like a real institutional player rather than a stock bureaucrat.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Philip Seymour Hoffman did in Charlie Wilson’s War — make institutional intelligence feel alive, dry, and dangerous without needing the movie to stop for him. It’s a strong supporting slot for a character actor who can steal scenes with understatement."
+      },
+      {
+        "name": "Kenneth Hughes",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Black · Secret Service Deputy Director",
+        "hook": "Hughes is a polished power broker who can joke, threaten, and translate political chaos into operational reality without losing his cool. He carries authority with ease, but the script also lets him show fatigue and pragmatism, which makes him feel like a man who has spent years managing impossible rooms.",
+        "why_actor_wants_this": "This is the kind of role that gave Jeffrey Wright in The Ides of March or Sterling K. Brown in smaller authority roles such a strong showcase — a man whose intelligence is expressed through command, restraint, and strategic humor. It’s ideal for an actor who can make institutional power feel personal."
+      },
+      {
+        "name": "Phillip Tunnellee",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s · government supervisor",
+        "hook": "Tunnellee is blunt, politically loaded, and openly impatient with the whole operation, which makes him a useful pressure valve in the bureaucracy. He’s the kind of official who says the quiet part out loud and gives the movie a sharper edge whenever he enters a room.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the hard-edged institutional bluster of Bryan Cranston in smaller political scenes — a man whose authority comes from volume, timing, and a willingness to say what others won’t. It’s a juicy supporting part for a character actor who can make a room tilt."
+      },
+      {
+        "name": "Tyrone Mathers",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Congressman",
+        "hook": "Mathers is a self-mythologizing politician who genuinely believes his own rhetoric, which makes him both comic and dangerous. He wants to be seen as brave, principled, and presidential, and the script lets him strut, posture, and accidentally reveal how much of his public identity is performance.",
+        "why_actor_wants_this": "This is the kind of role that gave Josh Brolin in W. or Kevin Spacey in political drama the chance to play charisma as a weapon. It gives an actor a showcase for public speaking, vanity, and the uneasy line between conviction and self-promotion."
+      },
+      {
+        "name": "Leonard Hansen",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · former Treasury official",
+        "hook": "Hansen is a polished ideologue who hides radical conviction behind bureaucratic calm until the mask drops. He’s one of the script’s best late-stage reveals because he feels like a man who has turned policy grievance into a private theology.",
+        "why_actor_wants_this": "This is the kind of late-reveal role that gives an actor the Al Pacino in Michael Clayton or John Lithgow in political drama space — a respectable figure whose intellect becomes terrifying once the agenda is exposed. It’s a strong part for an actor who likes to pivot from civility to menace in one scene."
+      },
+      {
+        "name": "Marilyn Reyes",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · Latino",
+        "hook": "Reyes is a polished, high-functioning financial executive who radiates control and resentment in equal measure. She’s not written as a passive corporate figure; she has ideology, vanity, and a sharp sense of her own power, which makes her feel like someone who could be ally, suspect, or architect depending on the scene.",
+        "why_actor_wants_this": "This is the kind of sharp-edged executive role that gave Sarah Snook so much traction in Succession — a woman whose intelligence is inseparable from her ambition and self-protection. It offers an actress a chance to play status, concealment, and moral ambiguity in a compact but memorable part."
+      },
+      {
+        "name": "Juanita Garza",
+        "role_type": "Supporting",
+        "demographics": "Female · 70s · Mexican",
+        "hook": "Juanita is the emotional center of the Garza material: weathered, proud, devout, and impossible to bully. She carries the family history in her body and face, and the script gives her enough moral force that she never feels like a plot device.",
+        "why_actor_wants_this": "This is the kind of role that gave Adriana Barraza in Babel or Rita Moreno in family drama the chance to command a scene with lived-in authority. It gives a veteran actress a late-film emotional anchor and the kind of maternal gravity that can stop a thriller cold."
+      },
+      {
+        "name": "Ted Wireman",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · DOJ/Federal agent",
+        "hook": "Wireman is the younger institutional face in the room, eager, observant, and still learning how the game is played. He gives the movie a clean straight-man energy and helps the audience feel the machinery of the investigation from the inside.",
+        "why_actor_wants_this": "This is the kind of role that lets a younger actor do the earnest-federal-agent lane that helped Adam Driver and others early in their careers stand out — a part built on alertness, reaction, and the chance to play opposite stronger personalities. It’s a useful breakout-supporting slot for someone who can hold the frame without overplaying it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a political thriller with teeth, humor, and real institutional texture.",
+        "fit_profile": "Established indie or prestige-leaning genre directors with at least one or two features, especially those who like dialogue-driven tension, public-space set pieces, and morally complicated protagonists. This material rewards filmmakers who can balance procedural clarity with satirical bite and who know how to make offices, hearings, and street chases feel like the same pressure system.",
+        "detail": "The movie gives a director a chance to stage action inside recognizable civic spaces while keeping the emotional engine character-forward. It’s especially attractive to directors who can make ensemble friction, bilingual dialogue, and political subtext feel cinematic rather than explanatory."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Premium-streamer or theatrical political thriller lane",
+        "detail": "The script can be packaged around two strong lead roles and a supporting ensemble, so it doesn’t require a giant cast of stars to function. Its bailout-era premise, cross-border angle, and public-assassination set pieces give it a clear trailer hook and a topical lane that streamers and adult-thriller buyers still know how to sell."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening is built as a long procedural runway.",
+        "detail": "The yacht hit and the hotel-room investigation do the job, but the first stretch spends a lot of time establishing the mechanics before the central partnership fully ignites. A next pass could let Knox and Soliz collide a little earlier so the audience gets the case engine and the character engine in the same breath.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The political exposition carries a lot of load.",
+        "detail": "The bailout history, agency jurisdiction, and financial-network explanation are all important, and the script is already doing a lot of that work in dialogue-heavy rooms. One lever would be to let a few of those facts arrive through behavior or visual evidence so the momentum stays as sharp as the premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting cast is broad enough to invite trimming.",
+        "detail": "The story already has a strong spine in Knox, Soliz, Garza, Reyes, Mathers, and Hansen, so the version of the script where a couple of the institutional stopovers are combined could protect pace without changing the core investigation. That would also make the feature feel even more focused for a buyer reading the budget and cast list.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The rights pass will need careful attention.",
+        "detail": "The script references a long list of real presidents, public officials, institutions, and brands, which is manageable but deserves a deliberate clearance review before packaging. A producer will want to know early whether those names stay as texture or get softened for the final production draft.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75,
+  "tier": "Optionable",
+  "inputTokens": 45535,
+  "outputTokens": 5400,
+  "cost": 0.05845125,
+  "declaredFormat": "Feature film"
+}

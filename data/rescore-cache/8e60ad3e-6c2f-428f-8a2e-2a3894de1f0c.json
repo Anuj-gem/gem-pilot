@@ -1,0 +1,346 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Slasher",
+        "Psychological thriller"
+      ],
+      "tone": "Gory, heightened, self-aware, coastal gothic"
+    },
+    "positioning_hook": "A theater troupe staging Peter Pan on the Outer Banks is hunted by a pirate-obsessed killer who turns every rehearsal, prop, and cue into a live execution.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible to horror audiences and has a clean hook: a coastal slasher built around a cursed Peter Pan production. The blood-soaked theatrical conceit gives it a clear trailer lane and strong genre-fan appeal, though the extremity narrows the mainstream quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening pier attack, the theater setting, and the later reveal that the killer is using the production as a kill-board make the engine easy to grasp. The script keeps translating its concept into fresh set pieces, so the premise lands early and stays readable."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Rhea, Zulimar, Lena, and Toby each have a distinct function in the ensemble, and the final stretch gives Rhea and Zulimar especially strong survival energy. The cast is more archetypal than deeply individualized, but the performance opportunities are vivid enough to carry a feature."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to its theatrical-horror identity, with kills and dialogue that constantly reframe the story as a production gone feral. The pirate/Peter Pan/Outer Banks collision is unusually specific and the writing leans into it with confidence."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is built as a relentless escalation machine, moving from the pier to the theater to the dunes to the ship with very little slack. Each location shift raises the scale and the body count, and the final maritime showdown feels earned by the chase."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A slasher that weaponizes stagecraft, rehearsal language, and pirate mythology around an Outer Banks production feels fresh and immediately usable. The idea is novel, but it also clicks fast because every kill is tied to a recognizable theatrical or nautical object."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Outer Banks setting is not just backdrop; it becomes a map of piers, dunes, historic sites, restaurants, and maritime lore that all feed the chase. The production-world details — rigging, cues, props, archives, and local landmarks — give the script a strong sense of place and system."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably a blood-drenched coastal nightmare with a black-comic, self-aware theatrical voice. The Hook’s taunting, performance-obsessed monologues and the script’s obsession with “good form,” “blocking,” and “final acts” create a very ownable flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the carnage, there’s a strong idea about performance, identity, and the hunger to be seen, especially in the Timothy/Skylar reveal and Rhea’s final turn. The script hints at deeper mythology through the 1937 production and the Hook archive, though the surface drive remains the dominant pleasure."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The ensemble generates real friction: Rhea and Timothy, Lena and the camera, Zulimar and the others, Skylar and the group’s status anxiety, Toby as the stage-manager nerve center. The relationships are functional and often combustible, and the later betrayals give the group dynamic a strong payoff."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 8,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Large young-adult ensemble",
+          "Several roles benefit from strong physicality and intense scream/cry work",
+          "One central masked antagonist with heavy stunt and prosthetic demands"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Outer Banks coastal locations",
+          "Pier build or controlled pier access",
+          "Boat/ship set for the Jolly Roger finale",
+          "Historic-looking theater and maritime museum spaces",
+          "Dunes, marsh, and wooded coastal terrain"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Mostly practical gore and stunt-driven action, with some enhancement likely for storm conditions, impacts, and the ship finale.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy practical gore, prosthetics, blood rigs, breakaway props, trap mechanisms, smoke, fire, and mechanical kill devices.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Sonic Drive-In"
+        },
+        {
+          "type": "brand",
+          "detail": "Ford F-150"
+        },
+        {
+          "type": "brand",
+          "detail": "Nike"
+        },
+        {
+          "type": "brand",
+          "detail": "Captain Hook / Peter Pan references are literary-IP adjacent but appear as public-domain character usage in this context"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror / premium genre feature / theatrical genre specialty",
+        "content_level": "Explicit mature horror",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or genre-theatrical with strong trailer and poster appeal."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained to practical locations, but the ship finale, heavy gore, and multiple elaborate set-piece kills push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is sizable and the lead roles need actors who can sell fear, rage, and dark humor, but there is no hard name-talent dependency."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves through many distinct coastal spaces, including a pier, theater, police station, restaurant, dunes, museum, and a full ship finale."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic gore, dismemberment, torture-style kills, and sustained intensity place this firmly in explicit horror territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses mostly original characters and settings, with only a few brand mentions and public-domain story references."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is built for genre marketing.",
+          "what_it_means": "This has a clean, high-concept trailer promise: a pirate-obsessed killer stalking a Peter Pan production on the Outer Banks. That gives distributors a poster, a title, and a one-sentence sell that lands immediately with horror buyers and streaming audiences.",
+          "evidence": "The opening pier attack, the repeated Hook monologues, and the final reveal that the cast is being “re-cast” as victims inside the production.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The setting is an engine, not a backdrop.",
+          "what_it_means": "The Outer Banks geography gives the movie a built-in chase map and a local flavor that makes the violence feel rooted in place. Buyers get a horror film that can travel because the locations are vivid, but it still feels specific enough to stand apart on a shelf.",
+          "evidence": "Duck pier, Whalehead Club, Jockey’s Ridge, the maritime museum, the Black Pelican, and the offshore Jolly Roger finale all function as story stations.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The killer’s voice is a selling point.",
+          "what_it_means": "The Hook is not just a masked slasher; he’s a taunting showman who turns every murder into a performance note. That kind of villain gives the movie a quotable identity and creates the kind of antagonist actors and horror fans remember.",
+          "evidence": "His “good form” speeches, the “final act” language, and the way he frames each kill as blocking, editing, or casting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has clear performance lanes.",
+          "what_it_means": "The cast is large enough to create a real group dynamic, but each major player has a distinct function — stage manager, camera operator, pyrotechnician, mechanic, influencer, protector. That makes the movie castable and gives the marketing team multiple faces to sell in the campaign.",
+          "evidence": "Toby, Lena, Sloane, Dusty, Skylar, Zulimar, Rhea, and Timothy each enter with a defined role in the theater ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The kills are designed as set pieces.",
+          "what_it_means": "The movie doesn’t just have gore; it has signature, object-driven kills that are easy to remember and easy to cut into a trailer. That’s valuable for horror buyers because the movie can advertise its own spectacle without needing star power.",
+          "evidence": "The mangle, flensing knife, anchor, winch, flintlock, vacuum-sealer, and shipboard machinery all become murder devices.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The theatrical meta-layer gives it a moat.",
+          "what_it_means": "This is a slasher about performance, rehearsal, and audience manipulation, which gives the movie a second layer beyond body count. That makes it attractive to buyers looking for elevated genre material and to actors who want a role with a built-in thesis.",
+          "evidence": "The repeated references to blocking, cues, intermission, opening night, final act, and the reveal that the killers are “Producers.”",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharply packaged coastal horror feature with a real identity: a pirate-obsessed slasher weaponizing a Peter Pan production, the Outer Banks, and the language of theater into one relentless bloodbath. It has a marketable villain, a vivid setting, and a finale that escalates into a full maritime nightmare — exactly the kind of genre piece that can cut through on premise alone."
+    },
+    "lead_characters": [
+      {
+        "name": "RHEA",
+        "role_type": "Lead",
+        "demographics": "Female · 19-20 · young adult",
+        "hook": "Rhea is the emotional center of the ensemble: sharp, theatrical, and increasingly feral as the night strips away every layer of performance. She starts as someone trying to survive a production and ends as someone who understands that survival itself is a role she has to seize with her own hands.",
+        "why_actor_wants_this": "This is the showcase territory of Mia Goth in *Pearl* — a character whose self-image, rage, and vulnerability keep colliding until the performance becomes the movie. Young dramatic leads who can pivot from wounded fragility to volcanic retaliation will chase this, and horror buyers will see a final-girl role with real star-making volatility."
+      },
+      {
+        "name": "ZULIMAR MICHACA",
+        "role_type": "Lead",
+        "demographics": "Male · 19-21 · strong physical build",
+        "hook": "Zulimar is the ensemble’s blunt-force survivalist: funny, profane, physically imposing, and far more emotionally exposed than he wants anyone to see. He reads like the guy who can take a hit, but the script keeps revealing that his real power is how hard he refuses to break.",
+        "why_actor_wants_this": "This is the showcase lane of Michael B. Jordan in *Creed* — a physically commanding role that still needs tenderness, pride, and exhaustion under pressure. Actors who can sell both action credibility and wounded loyalty will want it, and genre buyers will see a breakout male lead with real audience heat."
+      },
+      {
+        "name": "LENA",
+        "role_type": "Lead",
+        "demographics": "Female · 19-22 · camera operator / documentary-minded",
+        "hook": "Lena is the observer who becomes the survivor: sharp-eyed, sarcastic, and always framing the room even when the room is trying to kill her. Her camera gives her a point of view and a moral burden, and by the end she’s the one who understands how to turn chaos into testimony.",
+        "why_actor_wants_this": "This is the kind of role that gave Toni Collette in *Hereditary* and Florence Pugh in *Midsommar* the chance to carry dread, intelligence, and emotional collapse in one package. Actors who want a smart, reactive horror lead with a strong visual identity will chase it, and buyers will see a built-in audience for a sharp female POV."
+      },
+      {
+        "name": "TOBY LIN",
+        "role_type": "Lead",
+        "demographics": "Male · 19-21 · stage manager / technical theater",
+        "hook": "Toby is the control room brain of the group, a stage manager who thinks in cues, load counts, and systems until the systems start eating him alive. He’s flat, practical, and increasingly terrified, which makes him a great pressure-cooker character for an actor who can play panic without losing precision.",
+        "why_actor_wants_this": "This is the showcase space of Jesse Plemons in *Game Night* or *Breaking Bad* — a tightly wound, detail-oriented character whose competence becomes part of the tension. Character actors who can make anxiety feel intelligent will want it, and the role gives the ensemble a nervous center that keeps the plot moving."
+      },
+      {
+        "name": "TIMOTHY THORNE",
+        "role_type": "Lead",
+        "demographics": "Male · 20-22 · athletic / protective boyfriend type",
+        "hook": "Timothy is the story’s most dangerous reveal: the protective boyfriend who turns out to be a true believer in the spectacle. He has the clean-cut charm of a rescuer and the cold appetite of a producer, which makes him a nasty, memorable late-game antagonist.",
+        "why_actor_wants_this": "This is the kind of turn that gave Jack Quaid in *Scream* or Patrick Bateman-style reveal territory the chance to weaponize likability. Actors who can play handsome, grounded, and then terrifyingly performative will chase it, and the role offers a villain reveal with real crowd-pleasing shock value."
+      },
+      {
+        "name": "SKYLAR VANE",
+        "role_type": "Lead",
+        "demographics": "Female · 19-22 · influencer / performer",
+        "hook": "Skylar is vanity, ambition, and survival instinct wrapped into one glossy package. She’s the kind of character who understands image as currency, which makes her both a useful ally and a deeply unnerving late-stage reveal.",
+        "why_actor_wants_this": "This is the showcase territory of Maika Monroe in *It Follows* or Sydney Sweeney in *Immaculate* — a role that lets an actor weaponize beauty, status, and menace in the same frame. Performers who can play charm as strategy will want it, and the part gives the movie a sleek, dangerous face."
+      },
+      {
+        "name": "NOAH PRICE",
+        "role_type": "Lead",
+        "demographics": "Male · 19-20 · young actor / Peter Pan lead",
+        "hook": "Noah is the fragile center of the production: the boy in the harness who starts as a performer and becomes a target for everyone else’s projections. He’s anxious, self-conscious, and increasingly trapped between the role he’s playing and the role the killer is assigning him.",
+        "why_actor_wants_this": "This is the kind of role that gave Timothée Chalamet in *Beautiful Boy* or Andrew Garfield in *Tick, Tick... Boom!* the chance to play vulnerability under pressure. Young actors who want a lead that can carry fear, guilt, and identity collapse will chase it, and the part offers a strong emotional anchor for the ensemble."
+      },
+      {
+        "name": "MILES DAVENPORT",
+        "role_type": "Supporting",
+        "demographics": "Male · 20-22 · privileged / actor",
+        "hook": "Miles is the entitled performer who thinks status will protect him until the movie proves otherwise. He’s useful as a pressure valve for the ensemble’s resentment, and his presence keeps the social hierarchy of the cast legible.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets an actor play arrogance, panic, and humiliation in quick succession, similar to the social-climber energy of *The Menu* or *Bodies Bodies Bodies*. Scene-stealing young actors will want it because it gives them a sharp, memorable arc without carrying the whole film."
+      },
+      {
+        "name": "RHEA COLLINS",
+        "role_type": "Supporting",
+        "demographics": "Female · 19-22 · performer / costume design adjacent",
+        "hook": "Rhea is the most emotionally legible of the supporting players: observant, wounded, and increasingly furious at being turned into someone else’s spectacle. She functions as a secondary emotional lens on the production’s cruelty and gives the ensemble a human center outside the lead trio.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Auli’i Cravalho in *The Little Mermaid* or Melissa Barrera in *Scream* the chance to carry fear and resolve in equal measure. Actors who can play empathy under siege will want it, and the role has enough emotional weight to stand out in a crowded cast."
+      },
+      {
+        "name": "DUSTY",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · mechanic / construction",
+        "hook": "Dusty is the practical builder who understands the physical world better than the emotional one. He’s a grounded, blue-collar presence in a cast full of performers, which makes his eventual fate hit harder.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor the grounded, physical credibility of *Green Room* or *The Texas Chain Saw Massacre* ensemble work. Actors who specialize in believable working-class texture will want it, and the part adds real-world grit to the movie’s theatrical madness."
+      },
+      {
+        "name": "SKYLAR VANE",
+        "role_type": "Lead",
+        "demographics": "Female · 19-22 · influencer / performer",
+        "hook": "Skylar is vanity, ambition, and survival instinct wrapped into one glossy package. She’s the kind of character who understands image as currency, which makes her both a useful ally and a deeply unnerving late-stage reveal.",
+        "why_actor_wants_this": "This is the showcase territory of Maika Monroe in *It Follows* or Sydney Sweeney in *Immaculate* — a role that lets an actor weaponize beauty, status, and menace in the same frame. Performers who can play charm as strategy will want it, and the part gives the movie a sleek, dangerous face."
+      },
+      {
+        "name": "SLOANE WHITAKER",
+        "role_type": "Supporting",
+        "demographics": "Female · 20-22 · pyrotechnician",
+        "hook": "Sloane is the practical effects brain with a punk edge, the person who knows how to make things flash, burn, and misfire. She brings technical competence and a volatile energy that fits the movie’s obsession with spectacle.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the cool, utility-driven energy of *Mad Max: Fury Road* crew characters or *The Bear*’s kitchen specialists. Performers who like smart, hands-on roles with a sharp visual identity will chase it."
+      },
+      {
+        "name": "TIMOTHY THORNE",
+        "role_type": "Lead",
+        "demographics": "Male · 20-22 · athletic / protective boyfriend type",
+        "hook": "Timothy is the story’s most dangerous reveal: the protective boyfriend who turns out to be a true believer in the spectacle. He has the clean-cut charm of a rescuer and the cold appetite of a producer, which makes him a nasty, memorable late-game antagonist.",
+        "why_actor_wants_this": "This is the kind of turn that gave Jack Quaid in *Scream* or Patrick Bateman-style reveal territory the chance to weaponize likability. Actors who can play handsome, grounded, and then terrifyingly performative will chase it, and the role offers a villain reveal with real crowd-pleasing shock value."
+      },
+      {
+        "name": "OCEANIA GABLE",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s · waitress",
+        "hook": "Oceania is a late-arriving civilian witness who gives the story a brief, grounded outside perspective. She functions as a human reminder that the violence is spilling into the town beyond the cast.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets an actor make a strong impression in a short amount of screen time, similar to the civilian shock-beat roles in *Scream* or *Barbarian*. It’s a compact, memorable part for an actor who can sell panic and shock fast."
+      },
+      {
+        "name": "HALLOWAY",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · police officer",
+        "hook": "Halloway is the exhausted local authority figure trying to impose order on a situation that keeps slipping into nightmare logic. He gives the movie a procedural counterweight and a human face for the town’s response.",
+        "why_actor_wants_this": "This is the kind of role that gives a seasoned character actor the weary authority of *True Detective* or *Fargo* law-enforcement work. Actors who can play competence under pressure will want it, and the part helps ground the movie’s escalation."
+      },
+      {
+        "name": "ARIS",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · professor / director",
+        "hook": "Aris is the intellectual zealot behind the production, a man who has turned scholarship and obsession into a kind of cult authority. He’s the movie’s institutional face of artistic corruption, even when the story later complicates who is really in control.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grandiose, self-justifying energy of *Whiplash*’s Fletcher or *The Menu*’s chef-adjacent authority figures. Character actors who can play charisma as menace will want it, and the part gives the film a strong adult antagonist presence."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a horror movie like a live production that keeps collapsing into blood.",
+        "fit_profile": "Second- or third-feature genre directors, or established indie filmmakers with a taste for stylized violence and ensemble control. This material rewards someone who already likes performance-forward horror, precise blocking, and a strong visual grammar for spaces that can be turned into traps.",
+        "detail": "The movie gives a director a chance to choreograph escalating set pieces across a highly legible geography while keeping the villain’s voice and the ensemble dynamics in constant play. It’s especially attractive to filmmakers who like practical effects, theatrical imagery, and a movie that can feel both trashy and formally controlled."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming horror / specialty theatrical genre lane",
+        "detail": "It can be packaged around a strong ensemble and a masked antagonist without requiring a marquee star, which helps buyers greenlight off concept and execution. The coastal setting, pirate mythology, and practical-gore spectacle give it a clean festival-to-platform or genre-theatrical path with strong trailer value."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The ensemble can be trimmed into a tighter spine.",
+        "detail": "The script has enough distinct faces to play as a true ensemble, but the core engine is strongest when it stays locked on Rhea, Zulimar, Lena, Toby, Noah, Timothy, and Skylar. A next pass could consider folding one or two of the later arrivals into existing functions so the back half keeps its velocity without asking the audience to track as many new names.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ship finale is the biggest production lift.",
+        "detail": "The Jolly Roger sequence is the movie’s signature event, but it also concentrates the most mechanical, stunt, and effects demands into one stretch. One lever would be to preserve the shipboard showdown while simplifying a few of the more elaborate trap mechanisms so the finale stays ferocious without overcomplicating the build.",
+        "is_primary_lever": true,
+        "source": "production"
+      },
+      {
+        "area": "The Hook’s mythology can be sharpened earlier.",
+        "detail": "The 1937 archive, the pirate lore, and the production-office obsession all pay off well, and there’s room for a slightly earlier breadcrumb trail that makes the final reveal feel even more inevitable. What would it look like if one or two of the Hook’s historical tells were seeded before the midpoint so the audience starts decoding him sooner?",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Timothy/Skylar turn deserves a cleaner breadcrumb trail.",
+        "detail": "The reveal that they are the real producers lands as a big late-game reversal, and the script already has the ingredients to support it. A next pass could foreground a few more moments where their behavior feels slightly too controlled or too informed, so the reveal reads as a snap into focus rather than a hard left turn.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The middle run is strongest when each location has a distinct rule.",
+        "detail": "The pier, theater, police station, restaurant, dunes, and ship all have their own texture, which is a major asset. The version of the script where each stop has one unmistakable tactical rule — a sound rule, a visibility rule, a movement rule — would make the chase even more propulsive and help the audience feel the geography in their bones.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Hook’s dialogue is already a signature; the next pass can vary its rhythm.",
+        "detail": "His voice is one of the movie’s biggest assets, especially when he turns theater jargon into threats. A next pass could vary the length and cadence of a few speeches so the monologues keep landing with the same bite instead of arriving at the same temperature every time.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.7,
+  "tier": "Optionable",
+  "inputTokens": 54542,
+  "outputTokens": 6099,
+  "cost": 0.068352,
+  "declaredFormat": "Feature film"
+}

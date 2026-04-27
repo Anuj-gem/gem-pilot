@@ -1,0 +1,298 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Historical crime drama",
+      "genre_tags": [
+        "investigative thriller",
+        "political conspiracy"
+      ],
+      "tone": "grounded, tense, procedural, morally urgent"
+    },
+    "positioning_hook": "After a Phoenix reporter is car-bombed, his newsroom and a determined Black newspaper editor chase the conspiracy behind the hit — and discover the city’s power structure may be the real target.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is immediate and legible: a journalist is bombed, the newsroom mobilizes, and the case widens into corruption at the top. The period setting narrows the audience a bit, but the true-story engine and newsroom-investigation frame give it real buyer-facing momentum."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot establishes its engine early with Don Bolles’ bombing, then quickly turns into a pursuit of Adamson, Emprise, and the larger political web. The opening, the attack, and the newsroom scramble make the premise easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Don, Winters, Myrta, and Garcia each bring a distinct angle on the story, and the pilot gives them clear emotional stakes around truth, fear, and professional duty. The series potential is strongest in Winters and Garcia as ongoing investigators, while Myrta adds a compelling parallel newsroom track."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script leans into a less-familiar corner of American history and makes the journalism world feel active rather than decorative. The choice to split the story between Phoenix and Indianapolis, and to center a Black woman editor in a white male press culture, gives it a sharper identity than a standard true-crime procedural."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The pilot keeps turning the screw: bombing, source trail, Adamson’s surrender, the arrest, the release, the deeper suspicion, and then the final threat to Winters. Each reveal opens a new door rather than closing the case, which is exactly what a series pilot needs."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A murdered reporter story is familiar territory, but this one lands with a specific historical charge: local corruption, organized crime, newsroom politics, and the birth of a national investigative community. The result feels both recognizable and freshly situated in a very particular American moment."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Phoenix in 1976 feels lived-in through the Statehouse, the Ivanhoe, the country club, the hotel corridors, and the newsroom ecosystem. The script also builds a wider civic world — police, politicians, publishers, reporters, and old-money networks — that can keep generating story."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is serious and investigative, but it has a strong human pulse: newsroom banter, Don’s domestic warmth, Adamson’s banal sleaze, and the moral outrage of the press-club scenes. It reads as a prestige historical thriller with a newsroom conscience."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot is built on a murder investigation, but it keeps hinting at deeper systems: political protection, institutional cowardice, and the cost of telling the truth in public. The final beat with Winters’ car on fire suggests the conspiracy is not just historical background but an expanding threat."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Winters/Don, Winters/Early, Garcia/Dryden, Myrta/Nina, and the press-club network all create usable recurring dynamics. The show still orbits a few central figures, but the supporting relationships are active enough to sustain a multi-threaded series."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Period-specific 1970s adult ensemble",
+          "One deaf child role requiring sign language performance",
+          "Multiple real historical figures and recognizable public figures",
+          "Male lead roles in 30s-50s and one female lead in her 20s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "period (1976)",
+        "notable_requirements": [
+          "Phoenix and Indianapolis period streetscapes",
+          "Newsroom, hotel, hospital, police station, statehouse, country club, bar, apartment, and press club environments",
+          "Car bombing sequence and aftermath",
+          "Period vehicles, wardrobe, signage, and newsroom hardware"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily the car bombing blast, smoke, shattered glass, and aftermath cleanup; otherwise grounded practical storytelling.",
+        "stunts_level": "minor",
+        "sfx_needs": "Explosion effects, burned vehicle, hospital trauma makeup, and practical evidence-room / crime-scene dressing.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Don Bolles, Myrta Pulliam, John Adamson, Barry Goldwater, Bruce Babbitt, Gerald Ford, and other historical/public figures are named."
+        },
+        {
+          "type": "brand",
+          "detail": "Arizona Republic, Indianapolis Daily Star, Arizona Statehouse, IRE, Datsun, Schlitz, Ocean Spray, Beemans, Lucky's, Meow Mix, and other period brands are featured."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical music is named in the pages provided."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Based on a true story; adaptation and life-rights/estate clearance considerations may apply depending on source materials and portrayal scope."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable or prestige streaming limited series",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized investigative drama: each episode can widen the conspiracy around the Bolles bombing, the newsroom response, and the political network behind the attack."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period newsroom, police, hotel, hospital, and street work keep this above contained-drama scale, but the story is still mostly grounded in dialogue and practical locations."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The series wants a strong ensemble across reporters, police, publishers, and political figures, plus several real-person roles that benefit from recognizable adult leads."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint spans Phoenix and Indianapolis with multiple period interiors and exteriors, but it remains urban and controllable rather than remote or effects-heavy."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The pilot includes a bombing, severe injury, death, corruption, and some strong language, but it stays within prestige-drama boundaries."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names numerous real people, public institutions, and period brands, and it is explicitly based on a true story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The pilot has a built-in historical engine.",
+          "what_it_means": "This is the kind of true-story foundation that gives a buyer both urgency and legitimacy: a murder, a newsroom, and a conspiracy that can expand across a limited series. Prestige buyers and awards-minded streamers are the natural home because the material already carries cultural weight and episode-to-episode propulsion.",
+          "evidence": "Don Bolles’ bombing, the newsroom scramble, and the widening trail through Adamson, Emprise, and Arizona power brokers.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Winters gives the series a durable POV.",
+          "what_it_means": "John Winters is the audience’s entry point into the case, and his mix of intellect, insecurity, and moral stubbornness can carry multiple episodes without flattening out. Actors who specialize in smart, watchful, slightly haunted leads will see a role with long-run prestige value.",
+          "evidence": "His newsroom argument with Early, his desk-digging through Don’s files, and his decision to keep pushing after the arrest.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Myrta Pulliam broadens the show’s reach.",
+          "what_it_means": "Her Indianapolis track turns the story from a local murder into a national press movement, which gives the series scale beyond one city and one investigation. That opens the door to a broader audience of viewers who respond to newsroom ensemble drama and to actors looking for a commanding, high-status editorial role.",
+          "evidence": "Her call for the IRE conference to go to Phoenix and her speech about speaking for Don.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Phoenix world feels socially specific.",
+          "what_it_means": "The script isn’t just using 1976 as wallpaper; it builds a civic ecosystem of old families, country clubs, bars, statehouse corridors, and newsroom hierarchies that can keep generating story. That kind of textured world is attractive to premium buyers because it supports both case-of-the-week movement and long-form institutional drama.",
+          "evidence": "The Goldwater/Rosenzweig history, the Ivanhoe, the country club, the statehouse, and the newsroom bullpen.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Garcia adds a second investigative lane.",
+          "what_it_means": "The police side of the story gives the series a parallel engine that can run alongside the journalism track, which is valuable for pacing and episode structure. A grounded, procedural-minded actor will be drawn to the role because it plays competence, suspicion, and institutional pressure in the same frame.",
+          "evidence": "Garcia’s interrogation of Adamson, his suspicion of Chief Lozier, and his private meeting with Babbitt.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot understands emotional stakes inside procedure.",
+          "what_it_means": "The script keeps the investigation human by tying it to Don’s family, Rosalie’s grief, and the newsroom’s fear, which makes the procedural material land harder. That balance is attractive to buyers because it widens the audience beyond pure true-crime fans into character-driven prestige drama viewers.",
+          "evidence": "Rosalie at the hospital, the children arriving, and the newsroom reacting to Don’s death.",
+          "source": "script"
+        }
+      ],
+      "headline": "THE ARIZONA PROJECT has the bones of a prestige limited series with real staying power: a true-crime newsroom thriller anchored by a memorable investigative lead, a socially rich 1970s Southwest setting, and a conspiracy that keeps widening after the bomb goes off. It’s the kind of material that can attract strong actors because every major role plays a different facet of truth-telling under pressure."
+    },
+    "lead_characters": [
+      {
+        "name": "John Winters",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · white",
+        "hook": "A sharp, bookish Arizona Republic reporter who wants to be taken seriously and keeps finding himself in the room when history turns ugly. He’s intellectually restless, professionally hungry, and just self-aware enough to know he’s being pulled into something bigger than his own ambition.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew Rhys in The Americans — a cerebral, watchful lead whose intelligence is inseparable from anxiety and moral pressure. It gives an actor the chance to play investigative rigor, grief, and escalating paranoia while carrying the audience through a conspiracy that keeps widening."
+      },
+      {
+        "name": "Myrta Pulliam",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s · Black",
+        "hook": "A polished, formidable Indianapolis editor who moves easily in elite rooms but never loses her edge or her sense of what journalism is for. She carries authority without performing it, and the script makes her both socially fluent and emotionally exacting.",
+        "why_actor_wants_this": "This is the showcase territory of Kerry Washington in Scandal — a woman who can command a room, weaponize composure, and let private feeling leak through the armor at just the right moment. It gives an actor a prestige editorial role with public force, private ache, and a national-scale moral mission."
+      },
+      {
+        "name": "Francisco (Frank) Garcia",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s · Mexican American",
+        "hook": "A Phoenix detective with deep local roots, a working cop’s instincts, and a growing sense that the official story is too neat to be true. He’s disciplined, skeptical, and quietly troubled by the possibility that the people around him are protecting more than the public.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Peña in End of Watch — a grounded lawman role that mixes procedural competence with personal pressure and moral alertness. It gives an actor a steady, watchable center while still letting suspicion and conscience do the dramatic work."
+      },
+      {
+        "name": "Don Bolles",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s · white",
+        "hook": "A warm, funny, relentless investigative reporter whose charm makes him disarming and whose curiosity makes him dangerous to the people he writes about. He’s a family man with a reporter’s appetite for trouble, and the script frames him as both beloved colleague and living warning sign.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Trumbo — a charismatic, complicated public figure whose wit and humanity make the danger around him feel even sharper. It gives an actor a role with warmth, authority, and tragic inevitability, the kind of part that can anchor a prestige campaign even in limited screen time."
+      },
+      {
+        "name": "Rosalie Bolles",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · white",
+        "hook": "Don’s wife and the emotional ballast of the Bolles home, she reads as practical, loving, and already used to living beside a man whose work keeps pulling him away. Her hospital scenes give the story its domestic truth and its most devastating human scale.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Linney in The Savages — a woman whose love is expressed through restraint, competence, and the ability to absorb pain without turning it into speech. It gives an actor a deeply felt family role that can break the audience open in a handful of scenes."
+      },
+      {
+        "name": "Bob Early",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · white",
+        "hook": "The Arizona Republic’s editor-in-chief, carrying the authority of a newsroom boss who knows when to push and when to shut a conversation down. He’s pragmatic, protective, and increasingly aware that the paper is standing on dangerous ground.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in Spotlight — a newsroom authority figure who can turn a single line into institutional pressure. It gives an actor the chance to play command, grief, and editorial judgment without ever leaving the room."
+      },
+      {
+        "name": "Bernie Wynn",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · white",
+        "hook": "A statehouse editor with a dry wit and a reporter’s instinct for how power actually works. He functions as one of the newsroom’s practical brains, but the script gives him enough texture to feel like a real working journalist rather than a utility player.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in The Visitor — a quiet, observant professional role where intelligence and weariness live in the same frame. It gives an actor a strong supporting part built on authority, skepticism, and lived-in newsroom rhythm."
+      },
+      {
+        "name": "Dan Dryden",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · white",
+        "hook": "Garcia’s partner, a hard-edged detective who brings blunt force and streetwise confidence to the investigation. He’s the kind of cop who can crack a joke, read a room, and still make the case feel dangerous.",
+        "why_actor_wants_this": "This is the showcase territory of Shea Whigham in Boardwalk Empire — a rough, vivid supporting cop role that can steal scenes through attitude and timing. It gives an actor a meaty law-enforcement part with texture, humor, and menace."
+      },
+      {
+        "name": "John Harvey Adamson",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · white",
+        "hook": "A bulky, smug, low-rent operator who moves through the world with the confidence of a man who has learned that stupidity can be a shield. He’s not glamorous evil; he’s banal, opportunistic, and infuriatingly comfortable in his own skin.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Walter Hauser in Black Bird — a grotesque, oddly magnetic criminal role where the performance lives in behavior, not speeches. It gives an actor the chance to make a contemptible man unforgettable through physicality, timing, and dead-eyed self-regard."
+      },
+      {
+        "name": "Nina Pulliam",
+        "role_type": "Supporting",
+        "demographics": "Female · late 60s · white",
+        "hook": "The publisher and family matriarch who carries institutional power with polished restraint. She’s elegant, controlled, and quietly aware of the distance between family loyalty and editorial responsibility.",
+        "why_actor_wants_this": "This is the showcase territory of Meryl Streep in The Post — a woman whose authority is expressed through stillness, precision, and the weight of a legacy institution. It gives an actor a high-status supporting role that can define the room with very little movement."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make institutional paranoia feel intimate and alive.",
+        "fit_profile": "Established indie or prestige-TV directors with at least one character-forward feature or limited-series episode under their belt, especially those drawn to newsroom drama, political corruption, and procedural tension. This material rewards directors who can stage conversation like suspense and make period detail feel like pressure rather than decoration.",
+        "detail": "The script gives a director a chance to balance ensemble movement, historical specificity, and a steadily tightening conspiracy without needing giant set pieces. It will appeal to directors who like performance-first storytelling, controlled period texture, and scenes where the camera can stay close while the stakes keep widening."
+      },
+      "buyer_appeal": {
+        "tier": "Prestige limited series / premium streamer drama",
+        "lane": "adult historical true-crime and newsroom conspiracy",
+        "detail": "The project can be packaged around one or two strong lead actors rather than a heavy effects or action spend, which makes it viable for a prestige buyer looking for awards-caliber material. The true-story hook, recognizable historical figures, and newsroom-investigation engine give it both marketing clarity and a built-in audience for serious drama."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot carries a lot of historical names.",
+        "detail": "The script is rich in real people, public institutions, and named brands, which is great for specificity but means the clearance path should be mapped early. A next pass could also decide which historical references are essential to the pilot’s immediate propulsion and which can stay in the series bible, protecting the same texture with fewer on-page dependencies.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The opening hour covers a lot of ground.",
+        "detail": "The pilot moves from Don’s home life to the newsroom, the bombing, the police investigation, the Indianapolis press world, and multiple flashbacks. One lever would be to keep the emotional spine even tighter around Winters and Myrta so the audience always knows which thread is carrying them through the historical sprawl.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The investigation can sharpen around one central question.",
+        "detail": "The script already asks the right questions about Adamson, Emprise, and who benefits from the hit, and the final car-fire beat proves the conspiracy is still alive. A next pass could foreground one dominant mystery per act so each turn lands with even more force before the larger web opens up.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The period footprint is manageable but specific.",
+        "detail": "This is a grounded 1976 series with newsroom, hotel, police, hospital, statehouse, bar, and apartment work rather than large-scale spectacle. The version of the show that keeps Phoenix streets, newsroom interiors, and a few signature locations recurring would protect the period feel while keeping the production footprint disciplined.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The child and family material adds emotional weight.",
+        "detail": "Don’s seven kids and Diane’s sign-language scenes give the story a strong domestic counterpoint, and that family presence helps the tragedy land. If the series wants to stay lean, the family can remain emotionally vivid while the day-to-day logistics stay concentrated in a smaller number of recurring home scenes.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74,
+  "tier": "Optionable",
+  "inputTokens": 31018,
+  "outputTokens": 4925,
+  "cost": 0.045425999999999994,
+  "declaredFormat": "Series"
+}

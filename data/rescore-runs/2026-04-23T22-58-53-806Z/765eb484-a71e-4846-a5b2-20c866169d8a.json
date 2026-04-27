@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:24:12.724Z",
+  "submission_id": "765eb484-a71e-4846-a5b2-20c866169d8a",
+  "eval_id": "9a0365b3-296b-46b8-8089-6d68ee4eaf21",
+  "title": "HELLBOUND",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Jack Buck",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · white · physically sturdy, working-class, recovering drinker"
+    },
+    {
+      "name": "Jenn Buck",
+      "role_type": "Lead",
+      "demographics": "Female · late teens/early 20s · white · physically slight, later visibly ravaged by drug use"
+    },
+    {
+      "name": "Dixie Buck",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · white · elegant, grounded, emotionally worn"
+    },
+    {
+      "name": "Parker Simmons",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white · prison inmate, calm, articulate, spiritually intense"
+    },
+    {
+      "name": "Jamesy",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · white · bartender, plainspoken, observant, faith-forward"
+    },
+    {
+      "name": "Dylan",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens · white · preppy, entitled, physically average"
+    },
+    {
+      "name": "Dixie Gilley",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · white · Jack’s ex-wife, attractive, emotionally guarded"
+    },
+    {
+      "name": "Ellie Wolfe",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · white · Jack’s sister, heavyset, thrift-store practical"
+    },
+    {
+      "name": "Beth Gilmore",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · white · therapist, professional, composed"
+    },
+    {
+      "name": "Chase Miller",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white · governor’s office contact, off-screen presence"
+    },
+    {
+      "name": "Warden Barrington",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · authority figure"
+    },
+    {
+      "name": "Dr. White",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white · hospital doctor"
+    },
+    {
+      "name": "Doctor Marty",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white · hospital doctor"
+    },
+    {
+      "name": "Nurse Willis",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · hospital nurse"
+    },
+    {
+      "name": "Rance McDonald",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · white · defense attorney"
+    }
+  ],
+  "positioning_hook": "A grieving pastor and his estranged daughter are dragged through visions of Hell, addiction, and redemption when a drunk-driving tragedy turns their family into a spiritual battleground.",
+  "cost_usd": 0.06178425,
+  "input_tokens": 48521,
+  "output_tokens": 5643,
+  "status": "wrote:leads_ok"
+}

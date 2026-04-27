@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:03:10.360Z",
+  "submission_id": "512df742-b24d-4ef6-8382-e7356ec88819",
+  "eval_id": "d3182d4c-ea44-487e-9838-e1965d369637",
+  "title": "I H8 XMAS MASTER",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tommy",
+      "role_type": "Lead",
+      "demographics": "Male · mid-30s · gay"
+    },
+    {
+      "name": "Joan",
+      "role_type": "Lead",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "Danny",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Marty",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "Beth",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Gregory",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Darlene",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Beverly",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Gary Henderson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Mrs. Trevino / Barbara Trevino",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s"
+    }
+  ],
+  "positioning_hook": "A burned-out New York performer races home for his estranged father’s burial, only to drag his foul-mouthed family through a Christmas-night corpse run that forces old wounds, bad habits, and buried love into the open.",
+  "cost_usd": 0.05215275,
+  "input_tokens": 38289,
+  "output_tokens": 5208,
+  "status": "wrote:leads_ok"
+}

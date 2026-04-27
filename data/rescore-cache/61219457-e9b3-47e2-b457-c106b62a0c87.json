@@ -1,0 +1,248 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Psychological thriller",
+      "genre_tags": [
+        "Survival horror",
+        "Family drama"
+      ],
+      "tone": "Heightened, visceral, oppressive, and operatic"
+    },
+    "positioning_hook": "Two adopted teens are hunted across the Mojave by their polished, murderous parents, forcing them to outthink a family that treats love like a survival test.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible as a survival-thriller with a strong emotional spine: two teens versus the parents who raised them. The desert setting, the adoption twist, and the escalating cat-and-mouse violence give it a clear genre lane, though the intensity and stylization narrow the audience to thriller and horror buyers rather than broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening pages: a perfect family picnic in the salt flats turns into a lethal test with drones, jammers, and a hidden agenda. The story engine is easy to explain in two sentences, and the adoption/parental betrayal angle gives the premise a clean, ownable spine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Hugo and Juana are built as contrasting survival minds — his analytical, tactical edge and her sharper emotional instinct — and the script gives them a strong shared arc from compliance to refusal. Matt and Lilly are vivid antagonists with performance-forward menace, though the supporting cast is essentially concentrated into the central quartet."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a highly specific visual and sensory language: salt crust, mineralization, mirrors, skin-cured bodies, and a desert-as-laboratory nightmare. The repeated use of technical-sounding family jargon and ritualized cruelty gives the material a confident, singular identity rather than a generic chase structure."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "Once the test begins, the script keeps escalating through distinct set pieces — drone hunt, sub-bass trap, mirror field, salt-skin grove, kiln, highway — each one changing the rules of pursuit. The forward drive is strong because every sequence adds a new physical and psychological pressure rather than repeating the same confrontation."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The central idea feels fresh in a way that clicks fast: adoptive parents who are not just abusive but ideologically devoted to turning children into permanent artifacts. The combination of family betrayal, survival horror, and body-transformation imagery creates a premise that is unusual yet immediately understandable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Mojave is not just a backdrop here; it becomes a system of traps, acoustics, mineral behavior, and visual concealment that drives the action. The Watts estate, the salt flats, the mirror field, the kiln, and the nursery all feel like extensions of the same obsessive worldview."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "This has a very distinct tonal signature: luxury-cult elegance colliding with feral survival horror and almost liturgical cruelty. The script’s voice is unmistakable in the way it pairs high-end domestic polish with body horror, ritual language, and sensory overload."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the immediate thriller engine, the script is carrying themes of identity, inheritance, parenthood, and what it means to be made versus chosen. The post-credits museum tag and the repeated language of permanence suggest a larger thematic afterlife, even though the feature is primarily built to hit as a contained descent."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The central four-way dynamic is strong and the parent-child pairings are sharply defined, but the story is fundamentally powered by two dueling relationships rather than a broad ensemble web. The Hugo/Juana bond adds real emotional traction, yet most scenes still orbit the same predator-prey configuration."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Two teenage leads",
+          "Two adult antagonists in their 40s",
+          "Requires strong physical performers for extended injury and endurance work"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly exterior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Desert salt flats / Mojave location",
+          "Luxury estate interior and grounds",
+          "Mirror/glass field build",
+          "Kiln or fire pit set piece",
+          "Subterranean cave or practical cave build"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical-driven with some enhancement for drones, fire, white-out atmospherics, and post-credit crystal hand imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Extensive practical blood, burns, mineralization makeup, glass/shard effects, fire effects, and injury continuity.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Sancerre is named as the wine served at the picnic."
+        },
+        {
+          "type": "named_music",
+          "detail": "Bach’s Cello Suite in G Major is specifically referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or elevated theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as festival-to-platform or genre-theatrical with a strong trailer hook."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is contained to a small cast and a handful of major environments, but the desert night work, fire, blood, and specialty practical effects push it above micro-budget."
+        },
+        "cast": {
+          "level": "low",
+          "note": "Four principal roles carry the film, with two teenage leads and two adult antagonists, making the casting footprint focused rather than sprawling."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story depends on multiple distinct desert set pieces, including salt flats, ridge, cave, kiln, and highway, with significant night exterior coverage."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes sustained violence, injury detail, blood, body horror, and child endangerment, which narrows platform and rating flexibility."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script references a small number of named items, with no major real-person or IP dependency driving the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is built on parental betrayal.",
+          "what_it_means": "That gives the movie a clean emotional engine that sells beyond the genre mechanics: the audience isn’t just watching teens escape, they’re watching children reject the people who manufactured them. Thriller buyers and actors looking for prestige-leaning genre material will respond to that built-in emotional hook.",
+          "evidence": "Matt and Lilly’s “adoption” reveal, the GPS tracker, the decommissioning test, and the final inheritance choice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The desert is an active story machine.",
+          "what_it_means": "The setting is doing more than providing atmosphere; it creates concealment, sound distortion, heat danger, and visual traps that generate set pieces. That makes the film feel expensive on screen without requiring a sprawling cast or global scale.",
+          "evidence": "The salt flats, mirror field, sub-bass irrigation trap, kiln, and black-asphalt threshold all change how the characters can move and fight.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Matt and Lilly are showcase antagonists.",
+          "what_it_means": "They’re not generic pursuers; they’re ritualized, articulate, and terrifyingly intimate, which gives the film two villain roles that actors can really sink into. That kind of dual-antagonist package is attractive to buyers because it can support recognizable faces and generate strong trailer moments.",
+          "evidence": "Matt’s “Signal” language, Lilly’s maternal poise, the dinner-table torture, and the final inheritance demand.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The visual language is highly marketable.",
+          "what_it_means": "Salt, glass, blood, white linen, black asphalt, and mineralization create a trailer-ready palette that is easy to communicate in one image. Horror and elevated-thriller audiences tend to respond to films with a strong visual thesis, and this one has that in abundance.",
+          "evidence": "The mirror field, the salt-skin grove, the kiln fire, and the crystallized body imagery.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lead duo has a strong survival chemistry.",
+          "what_it_means": "Hugo and Juana are written as complementary minds rather than interchangeable victims, which gives the movie a durable emotional center and a clear audience anchor. That kind of two-hander dynamic is attractive to young actors and to buyers who want a genre film with a real relationship spine.",
+          "evidence": "Hugo’s tactical reading of the terrain and Juana’s emotional ferocity repeatedly combine to outmaneuver the parents.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The concept has a built-in thematic aftertaste.",
+          "what_it_means": "The film is not only about escape; it’s about what permanence costs, what family means, and whether identity is chosen or imposed. That gives the project a little more shelf life than a standard survival chase and helps it travel to prestige-minded programmers and genre festivals.",
+          "evidence": "The repeated Signal/Noise language, the obsession with permanence, and the museum epilogue.",
+          "source": "script"
+        }
+      ],
+      "headline": "SALT SKIN is a ferocious, trailer-ready survival thriller with a premium hook: two adopted teens discover their perfect parents are running a desert ritual to turn children into permanent artifacts. The script’s biggest asset is how completely it commits — to the setting, the sensory language, and the emotional betrayal — so the movie feels both commercially legible and unmistakably its own."
+    },
+    "lead_characters": [
+      {
+        "name": "HUGO",
+        "role_type": "Lead",
+        "demographics": "Male · 16 · teen",
+        "hook": "Hugo is the cerebral survivor of the pair: observant, tactical, and increasingly feral as the night strips away every layer of civility. He reads terrain like a weapon, speaks in precise survival logic, and carries the emotional burden of realizing the family that “saved” him was engineering him for disposal.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in *The King* or Lucas Hedges in *Manchester by the Sea* — a young performer carrying intelligence, vulnerability, and hardening resolve in the same frame. It gives an actor the chance to play a boy becoming a predator without losing the ache underneath, which is exactly the kind of transformation casting directors remember."
+      },
+      {
+        "name": "JUANA",
+        "role_type": "Lead",
+        "demographics": "Female · 16 · teen",
+        "hook": "Juana is the emotional blade of the story: sharper than she first appears, deeply perceptive, and capable of turning fear into action in a single beat. She starts as the “masterpiece” and becomes the one who sees through the performance, making her the film’s most volatile mix of hurt, intelligence, and defiance.",
+        "why_actor_wants_this": "This is the showcase space of Florence Pugh in *Midsommar* or Jodie Comer in *Killing Eve* — a role that lets an actor pivot from controlled stillness to explosive ferocity without losing the character’s interior life. Young actresses looking for a star-making genre part will chase this because it offers both emotional collapse and feral command."
+      },
+      {
+        "name": "MATT",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Matt is polished, paternal, and terrifyingly self-possessed until the mask starts to crack and reveal a man who has turned control into religion. He speaks like a mentor, moves like a tactician, and carries the vanity of someone who believes he is creating legacy when he is really curating cruelty.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* or Michael Shannon in *Take Shelter* — a role where charisma and menace are fused, and the performance lives in the slow collapse of self-image. Mid-career actors who want a villain with intelligence, eloquence, and physical authority will chase it hard."
+      },
+      {
+        "name": "LILLY",
+        "role_type": "Lead",
+        "demographics": "Female · 40s",
+        "hook": "Lilly is maternal performance weaponized: soft voice, perfect poise, and a devotion to “beauty” that curdles into surgical violence. She is the kind of antagonist who can soothe, wound, and reframe the wound as love in the same breath, which makes her both seductive and horrifying.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in *Hereditary* or Rosamund Pike in *Gone Girl* — a role that lets an actress weaponize warmth, precision, and emotional control until the audience feels the trap closing. Prestige genre buyers and actresses seeking a fearless, scene-dominating antagonist part will see immediate value here."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a contained desert nightmare into a sensory assault.",
+        "fit_profile": "First- or second-feature directors with a strong visual reel, or established indie genre directors who already work in psychological horror and elevated thriller space. This material rewards filmmakers who care about atmosphere, blocking, and tactile set pieces more than exposition-heavy plotting.",
+        "detail": "The script gives a director a chance to build tension through geography, sound, and image design — salt glare, mirror distortion, fire, and mineral body horror all do narrative work. It’s especially attractive to directors who like performance-forward genre material where the frame can stay intimate even as the set pieces escalate."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streaming genre lane / elevated theatrical horror-thriller",
+        "detail": "The cast is compact and the story is built around four roles, so a buyer can package it around two young leads and two strong adult names without needing a large ensemble. The desert-set survival hook and high-concept visual identity make it trailer-friendly for streamers and festival-to-platform buyers looking for a distinctive genre title."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening test could arrive a beat sooner.",
+        "detail": "The luxury-kitchen and desert-drive material does useful character work, but the script’s engine really ignites once the GPS jammer comes out and the “run” order lands. A next pass could consider compressing the pre-test setup slightly so the audience reaches the betrayal faster while keeping the same polished-family contrast.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The parent mythology is strongest when it stays concrete.",
+        "detail": "The Signal/Noise, Inheritance, and Permanence language gives the film a memorable cult vocabulary, and the most compelling version of the script keeps that language tied to visible actions. One direction would be to continue foregrounding the physical rituals — tracker, jammer, nail gun, kiln, skins — so the ideology always lands through behavior, not explanation.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The set-piece footprint is ambitious but controllable.",
+        "detail": "The movie lives in a handful of major environments — estate, salt flats, mirror field, ridge, kiln, highway — which is a clean production shape for the right budget tier. If needed, the mirror field, nursery, and kiln material could be designed as adjacent zones of one larger desert complex to protect scale while simplifying logistics.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The named music and brand references are small but real.",
+        "detail": "Bach’s Cello Suite in G Major and the Sancerre label are specifically named, so clearance should account for those references early in packaging. They are not central rights obstacles, but they are the kind of details a producer will want to decide whether to keep, swap, or generalize.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The violence is part of the selling proposition.",
+        "detail": "The script’s body-horror detail, child endangerment, and injury specificity are integral to the experience and will define the rating and platform lane. That clarity is useful for buyers, but it also means the marketing plan should lean into elevated horror-thriller positioning rather than trying to soften the material for a broader lane.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.7,
+  "tier": "Optionable",
+  "inputTokens": 32816,
+  "outputTokens": 3980,
+  "cost": 0.042522,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-23T23:14:54.724Z",
+  "submission_id": "81e11f04-7e49-4e49-9430-0301040a8d03",
+  "eval_id": "9d345718-3203-47d7-99d4-966233017b0a",
+  "title": "The Lost Child",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Billy",
+      "role_type": "Lead",
+      "demographics": "Male · 20s/30s · autistic-coded, working-class American"
+    },
+    {
+      "name": "Donnatella Rigg",
+      "role_type": "Lead",
+      "demographics": "Female · 60s/70s · English aristocratic matriarch"
+    },
+    {
+      "name": "May",
+      "role_type": "Lead",
+      "demographics": "Female · 30s/40s · English, working-class by marriage"
+    },
+    {
+      "name": "Timothy Rigg",
+      "role_type": "Lead",
+      "demographics": "Male · 30s/40s · English executive, upper-class"
+    },
+    {
+      "name": "Ariel",
+      "role_type": "Lead",
+      "demographics": "Female · 9-12 · English child"
+    },
+    {
+      "name": "Boyle Taylor / Tug Taylor",
+      "role_type": "Lead",
+      "demographics": "Male · 50s/60s and Male · late 20s/30s · English father and son"
+    },
+    {
+      "name": "Davees",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s/50s · English butler"
+    },
+    {
+      "name": "Carson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s/60s · English groundskeeper"
+    },
+    {
+      "name": "Florence Rigg",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s/40s · English aristocratic daughter"
+    },
+    {
+      "name": "Janet Rigg",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s/40s · English"
+    },
+    {
+      "name": "Sue Chi",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s/50s · Asian-American"
+    },
+    {
+      "name": "Li Chi",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s/50s · Asian-American"
+    },
+    {
+      "name": "Father Del Perry",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s/60s · English priest"
+    },
+    {
+      "name": "Cora Perry",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s/60s · English"
+    },
+    {
+      "name": "Agnes Hodges",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s/60s · English shopkeeper"
+    },
+    {
+      "name": "Dr. Welsh",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s/60s · English physician"
+    }
+  ],
+  "positioning_hook": "A gentle autistic janitor’s son inherits a British aristocratic dynasty, falls for a widow, and must survive a vindictive matriarch, a tabloid expose, and a house fire to claim his place.",
+  "cost_usd": 0.07483350000000001,
+  "input_tokens": 63880,
+  "output_tokens": 5983,
+  "status": "wrote:leads_ok"
+}

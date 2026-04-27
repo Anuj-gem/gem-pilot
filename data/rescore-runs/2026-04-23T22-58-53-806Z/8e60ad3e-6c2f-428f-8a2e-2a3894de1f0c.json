@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-23T23:27:35.479Z",
+  "submission_id": "8e60ad3e-6c2f-428f-8a2e-2a3894de1f0c",
+  "eval_id": "7690b75b-ac18-466b-b705-bef2e0524739",
+  "title": "OBX",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "RHEA",
+      "role_type": "Lead",
+      "demographics": "Female · 19-20 · young adult"
+    },
+    {
+      "name": "ZULIMAR MICHACA",
+      "role_type": "Lead",
+      "demographics": "Male · 19-21 · strong physical build"
+    },
+    {
+      "name": "LENA",
+      "role_type": "Lead",
+      "demographics": "Female · 19-22 · camera operator / documentary-minded"
+    },
+    {
+      "name": "TOBY LIN",
+      "role_type": "Lead",
+      "demographics": "Male · 19-21 · stage manager / technical theater"
+    },
+    {
+      "name": "TIMOTHY THORNE",
+      "role_type": "Lead",
+      "demographics": "Male · 20-22 · athletic / protective boyfriend type"
+    },
+    {
+      "name": "SKYLAR VANE",
+      "role_type": "Lead",
+      "demographics": "Female · 19-22 · influencer / performer"
+    },
+    {
+      "name": "NOAH PRICE",
+      "role_type": "Lead",
+      "demographics": "Male · 19-20 · young actor / Peter Pan lead"
+    },
+    {
+      "name": "MILES DAVENPORT",
+      "role_type": "Supporting",
+      "demographics": "Male · 20-22 · privileged / actor"
+    },
+    {
+      "name": "RHEA COLLINS",
+      "role_type": "Supporting",
+      "demographics": "Female · 19-22 · performer / costume design adjacent"
+    },
+    {
+      "name": "DUSTY",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · mechanic / construction"
+    },
+    {
+      "name": "SKYLAR VANE",
+      "role_type": "Lead",
+      "demographics": "Female · 19-22 · influencer / performer"
+    },
+    {
+      "name": "SLOANE WHITAKER",
+      "role_type": "Supporting",
+      "demographics": "Female · 20-22 · pyrotechnician"
+    },
+    {
+      "name": "TIMOTHY THORNE",
+      "role_type": "Lead",
+      "demographics": "Male · 20-22 · athletic / protective boyfriend type"
+    },
+    {
+      "name": "OCEANIA GABLE",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s · waitress"
+    },
+    {
+      "name": "HALLOWAY",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · police officer"
+    },
+    {
+      "name": "ARIS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · professor / director"
+    }
+  ],
+  "positioning_hook": "A theater troupe staging Peter Pan on the Outer Banks is hunted by a pirate-obsessed killer who turns every rehearsal, prop, and cue into a live execution.",
+  "cost_usd": 0.068352,
+  "input_tokens": 54542,
+  "output_tokens": 6099,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:27:38.547Z",
+  "submission_id": "9b30c35a-db87-4a28-b608-cfbff6913344",
+  "eval_id": "4dcb49a6-a8d4-4b97-9609-3ee5955c5691",
+  "title": "A LIST (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "SANTI",
+      "role_type": "Lead",
+      "demographics": "Male · 19 · Latino / queer-presenting, athletic, model-beautiful"
+    },
+    {
+      "name": "PAZ",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Latina / stylized Hollywood insider"
+    },
+    {
+      "name": "JADEN",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · contemporary LA actress type"
+    },
+    {
+      "name": "GUS",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · rugged, working-actor energy"
+    },
+    {
+      "name": "REAGAN GARDNER",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · polished, controlled, physically capable"
+    },
+    {
+      "name": "BEATRICE SMITH",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · exhausted industry professional with sharp intelligence"
+    },
+    {
+      "name": "HOLLYWOOD",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting masked killer · 20s-40s physical range"
+    },
+    {
+      "name": "OSCAR ST. CLAIR",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · privileged, image-conscious"
+    },
+    {
+      "name": "STEW NORTON",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · washed-up actor type"
+    },
+    {
+      "name": "MARA VANE",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · rising star / tabloid object"
+    },
+    {
+      "name": "KAI JUMP",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · stunt coordinator / physical performer"
+    },
+    {
+      "name": "PRUDENCE BUCKINGHAM",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · period-drama star image"
+    },
+    {
+      "name": "OTIS GREY",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · veteran actor, caustic, world-weary"
+    },
+    {
+      "name": "GUS KELSTON",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · physically capable, protective, grounded"
+    }
+  ],
+  "positioning_hook": "A hungry young actor and a pack of Hollywood strivers are hunted through premieres, penthouses, and hospital wings by a masked killer who turns fame into a body count.",
+  "cost_usd": 0.05797425,
+  "input_tokens": 43471,
+  "output_tokens": 5638,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-04-23T23:21:44.291Z",
+  "submission_id": "a913e95a-1dd2-487b-9f74-38f237fc3591",
+  "eval_id": "14de8106-a782-4c7d-807b-986c78356ea5",
+  "title": "screenplay what my experiences have taught me 777",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 22,
+  "lead_characters_summary": [
+    {
+      "name": "BEN",
+      "role_type": "Lead",
+      "demographics": "Male · 3 months to 30s · Nigerian · facial deformity / visible medical condition"
+    },
+    {
+      "name": "MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 50s · Nigerian"
+    },
+    {
+      "name": "FATHER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 60s · Nigerian"
+    },
+    {
+      "name": "MIRIAM",
+      "role_type": "Supporting",
+      "demographics": "Female · 16 to 20s · ebony-looking, plus-sized"
+    },
+    {
+      "name": "QUADRI",
+      "role_type": "Supporting",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "EMEKA",
+      "role_type": "Supporting",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "SHADE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s · Nigerian"
+    },
+    {
+      "name": "TIM",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to 20s · Nigerian"
+    },
+    {
+      "name": "PRINCE",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to 20s · Nigerian"
+    },
+    {
+      "name": "AMAKA",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s · Nigerian"
+    },
+    {
+      "name": "JOKE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s · ebony, petite"
+    },
+    {
+      "name": "PRINCESS",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s · Nigerian"
+    },
+    {
+      "name": "TITI",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s · ebony, petite"
+    },
+    {
+      "name": "GRACE",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Nigerian"
+    },
+    {
+      "name": "ANTONIA",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Nigerian"
+    },
+    {
+      "name": "FOREIGNER",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · adult · non-Nigerian"
+    },
+    {
+      "name": "AUTHOR",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · adult"
+    },
+    {
+      "name": "PASTOR THOMAS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · Nigerian"
+    },
+    {
+      "name": "PASTOR’S WIFE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 50s · Nigerian"
+    },
+    {
+      "name": "DIVINER",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 60s · Nigerian"
+    },
+    {
+      "name": "TALKMATE",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · adult · Nigerian"
+    },
+    {
+      "name": "MOTORIST",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · adult"
+    }
+  ],
+  "positioning_hook": "A Nigerian writer with a facial deformity survives childhood ridicule, family fracture, and romantic rejection to turn pain into authorship and self-definition.",
+  "cost_usd": 0.053147999999999994,
+  "input_tokens": 32254,
+  "output_tokens": 6435,
+  "status": "wrote:leads_ok"
+}

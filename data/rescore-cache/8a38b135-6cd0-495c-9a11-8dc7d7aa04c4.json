@@ -1,0 +1,317 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime",
+      "genre_tags": [
+        "Supernatural",
+        "Family drama"
+      ],
+      "tone": "Gritty, ironic, pulpy, and darkly comic"
+    },
+    "positioning_hook": "A murdered Tampa mob boss is reborn as his own 13-year-old son, forcing him to rebuild his empire, protect his family, and settle an old hit before his past catches up.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built around a clean commercial engine: mob revenge, reincarnation, and family loyalty all collide in one story. The hook is broad enough for genre buyers, though the tonal blend and the period-to-contemporary sweep make it more of a targeted crowd-pleaser than a four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script announces its engine early with Vinny's murder, Connor's childhood memories, and the birthmarks that match the gunshot wounds. By the time Connor proves himself in the garage and later confronts the deli crew, the premise is unmistakable and easy to pitch in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Connor/Vinny is a vivid lead because the role lets one performer play mob authority, childlike confusion, and old-school swagger at once. Sara and Danny also become unexpectedly playable once they start mirroring Vinny's instincts, though the supporting crew mostly exists to orbit the central reincarnation engine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a wild premise and keeps finding fresh comic-crime variations on it, from the garage money reveal to the parents becoming natural robbers. The boldness comes from treating reincarnation as a gangster inheritance story rather than a mystical drama, which gives the material a distinct lane."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story moves with clear escalation: proof of identity, reunion with the old crew, discovery of the daughter, turf conflict, kidnapping, and the final showdown. The middle section has enough business and repetition to feel episodic at times, but the core revenge-and-legacy drive keeps the read moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This is one of those premises that feels strange on first pass and obvious on second: a mob boss coming back as his own kid is a clean, memorable engine. The emotional twist of the daughter, the parents, and the old crew all reacting to the same impossible fact gives the concept a sticky aftertaste."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Tampa/Ybor City mob ecosystem has real texture through the deli, the back room, the lunch trucks, the old restaurant culture, and the coded language of the crew. The world is specific enough to feel lived-in, even if the script keeps the focus on a few repeatable locations rather than widening into a larger institutional map."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The voice is unmistakably pulpy and self-aware, with cigar-chomping mob banter, family sitcom friction, and supernatural absurdity all living in the same scene. The script knows exactly how far to push the joke before snapping back to threat, which gives it a hard-to-copy flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the comic-crime surface, there are real themes about legacy, fatherhood, identity, and whether people can change when given a second life. The script gestures toward that depth most clearly in the final hospital reset and the last lunch-truck image, though the emotional underlayer is more implied than fully mined."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Vinny/Mo/Carlo/Jimmy triangle, plus Sara and Danny's evolving partnership, gives the script a workable ensemble web rather than a solo lead vehicle. The relationships generate banter, loyalty tests, and betrayal pressure, though the story still lives primarily on Connor's shoulders."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One lead role requires a 13-year-old playing a former adult mob boss",
+          "One 12-year-old daughter role",
+          "Several supporting roles are age-specific men in their 30s-60s",
+          "Tampa/Italian-American mob texture is central to the ensemble"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior inserts",
+        "period_or_contemporary": "Both period and contemporary",
+        "notable_requirements": [
+          "1967 period opening and 2002-2017 contemporary sections",
+          "Ybor City/Tampa-specific exteriors and restaurant/deli interiors",
+          "Hospital, garage, apartment building, convenience store, bank parking lot, underpass, mall, and street lunch truck setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily age continuity, bullet-scar continuity, and a few simple transition effects; no major spectacle requirements.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunshots, blood hits, practical intimidation beats, and a few controlled fight/weapon moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Frank Sinatra's 'Fly Me to the Moon' and the 'Sinatra at the Sands' record are specifically used."
+        },
+        {
+          "type": "brand",
+          "detail": "Multiple brand and product references appear, including Coke, Pepsi, Goodfellas, Godfather, and specific restaurant names such as Columbia, Malio's, Angelini's, and Frankie's."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or festival-to-platform crime comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong VOD/streaming afterlife; the hook is built for a genre audience and a cast-driven marketing campaign."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contained to interiors, streets, and a handful of repeat locations, but the period opening and dual-time structure add some cost."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project depends on a very specific young lead performance plus several age-specific supporting roles and child casting."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story uses a manageable number of locations, but it spans period and contemporary settings and leans on Tampa/Ybor City specificity."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Gun violence, threats, kidnapping, robbery, and sexual dialogue keep it firmly in mature territory without pushing into extreme content."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names Sinatra, major film titles, and multiple real-world brands and venue names that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A producer gets a clean, high-concept crime hook that can be explained in one breath and marketed off the sentence alone. That makes it attractive to genre buyers, streamer execs, and actors who want a role with a built-in conversation starter.",
+          "evidence": "Vinny is murdered, reborn as Connor, and returns to reclaim his life, his crew, and his unfinished business with John.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Connor is a showcase lead.",
+          "what_it_means": "The role gives an actor authority, comedy, menace, and vulnerability in the same part, which is exactly the kind of performance package that can anchor a movie. Mid-career leads who want something showy and off-center will see a chance to play both a kid and an old-school boss without leaving the same scene.",
+          "evidence": "Connor lights cigars, quotes mob logic, proves himself to Mo's crew, and still has to navigate being thirteen.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family angle widens the hook.",
+          "what_it_means": "This is not just a mob story; it becomes a father-mother-son-daughter story with emotional stakes that can travel beyond crime fans. That gives the project a broader lane for buyers who want genre with heart and for actors who want the family scenes to matter as much as the threats.",
+          "evidence": "Sara and Danny become co-conspirators, Amber becomes the daughter Connor never knew, and Sophie turns the past into a living obligation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Tampa/Ybor world has flavor.",
+          "what_it_means": "The deli, the back room, the old-school restaurant culture, and the city-specific mob history create a setting that feels proprietary rather than generic. Buyers looking for a crime world with regional identity will see a place that can carry its own marketing image.",
+          "evidence": "Frankie's Deli, Ybor City, the lunch trucks, and the old mob hangouts are all woven into the story's operating system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can play broad without losing stakes.",
+          "what_it_means": "The script has room for laugh-out-loud banter, family friction, and sudden violence, which is a strong commercial mix for audiences that like their crime stories with personality. That tonal elasticity is attractive to directors and buyers who want something that can sit between indie character piece and crowd-pleasing genre movie.",
+          "evidence": "The cigar jokes, the 'It's good to be the king' refrain, the parents' robbery enthusiasm, and the kidnapping showdown all live in the same register.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending leaves a sequel-sized sting.",
+          "what_it_means": "The final lunch-truck success followed by Big Frank and Sal deciding to clip their wings gives the movie a clean button and a fresh threat. That kind of last-image pressure is useful for buyers because it suggests franchise potential without requiring the movie to feel incomplete.",
+          "evidence": "The family is running Frankie's from a lunch truck when Big Frank and Sal watch from the sidewalk and decide it's time to act.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a real commercial engine: a mob boss reborn as his own son, a family that starts to inherit his instincts, and a Tampa crime world with enough texture to feel owned. It plays like a genre movie with a personality problem in the best way — funny, dangerous, and emotionally sticky enough to give actors and buyers something to grab onto."
+    },
+    "lead_characters": [
+      {
+        "name": "Connor / Vinny Lazarra",
+        "role_type": "Lead",
+        "demographics": "Male · 13 playing 45-60 · Italian-American mob boss reborn in a child's body",
+        "hook": "Connor is a 13-year-old body with a 45-year-old mob brain, and the contradiction is the whole engine: he talks like a kingpin, smokes like a veteran, and still has to answer to his parents. He is cocky, funny, territorial, and weirdly tender, especially when the past starts bleeding into his present through Sophie, Amber, and the old crew.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in Big crossed with the swagger of James Gandolfini in The Sopranos, except the performance challenge is even stranger because the actor has to sell authority through a child's face. Young breakout performers and adult actors doing transformative motion-capture-style character work would both be drawn to the chance to play innocence, menace, and emotional memory in one role."
+      },
+      {
+        "name": "Sara Donahue",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · suburban wife with a criminal past",
+        "hook": "Sara starts as the grounded spouse and ends up revealing she can step into the mob rhythm almost as naturally as Connor can. She is funny, sexually frank, protective, and increasingly dangerous, with a domestic exterior that keeps peeling back to show a woman who may have been waiting for permission to become herself.",
+        "why_actor_wants_this": "This is the showcase space of Frances McDormand in Fargo or Toni Collette in Hereditary — a woman who can pivot from dry domestic realism to startling ferocity without changing the temperature of the scene. Mid-career actresses who want a part that lets them be maternal, funny, and lethal in the same movie will chase this hard."
+      },
+      {
+        "name": "Danny Donahue",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · suburban husband with a latent criminal instinct",
+        "hook": "Danny is the reluctant partner who keeps discovering he is more comfortable in the mob's language than he wants to admit. He plays as the straight man, but the script keeps letting him reveal nerves, loyalty, and a buried appetite for action that makes him more than comic relief.",
+        "why_actor_wants_this": "This is the kind of role that gave Steve Carell in Little Miss Sunshine or Bryan Cranston in Breaking Bad the chance to reveal a second gear beneath the everyman surface. Character actors and comic leads looking to pivot into darker, more layered territory would see a part that lets them play fear, loyalty, and surprise competence."
+      },
+      {
+        "name": "Sophie Tucci",
+        "role_type": "Lead",
+        "demographics": "Female · 40s · working-class mother",
+        "hook": "Sophie is the emotional bridge between the old life and the new one: the woman Vinny loved, the mother of his daughter, and the person who can still make Connor/Vinny feel like a man with unfinished business. She is practical, wounded, and more dangerous than she first appears, especially once she starts recognizing the old instincts in herself.",
+        "why_actor_wants_this": "This is the showcase territory of Michelle Pfeiffer in Married to the Mob or Julianne Moore in Magnolia — a woman whose emotional history is the scene, not the backstory. Actresses who want a role with romance, regret, and a late-blooming criminal edge will see real meat here."
+      },
+      {
+        "name": "Mo",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · mob associate / accountant type",
+        "hook": "Mo is the crew's skeptical brain, the guy who can smell a con but still wants the old order back. He has the best blend of caution and loyalty in the supporting cast, and his dry reactions help sell the absurdity of Connor's return.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Michael Stuhlbarg in Boardwalk Empire or Paul Giamatti in Sideways its scene-stealing authority — a smart, verbal operator who can turn exposition into personality. Character actors who like to steal scenes with timing and disbelief will want it."
+      },
+      {
+        "name": "Carlo",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · enforcer",
+        "hook": "Carlo is the loudest muscle in the room, all swagger, jokes, and threat display. He gives the crew its volatility and helps the movie keep a comic edge even when the stakes turn violent.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the Joe Pesci lane in Goodfellas — fast talk, sudden menace, and comic aggression. Actors who thrive on rhythm and explosive scene energy will see a fun, memorable part."
+      },
+      {
+        "name": "Jimmy",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · bulky enforcer / weasel energy",
+        "hook": "Jimmy is the crew member most likely to wobble, betray, or panic, which makes him useful and dangerous at the same time. He brings a nervous, twitchy texture that keeps the ensemble from feeling too cleanly loyal.",
+        "why_actor_wants_this": "This is the kind of supporting turn that gives an actor the comic-sad menace of Steve Buscemi in Fargo or Boardwalk Empire — a guy whose unease is the performance. Character actors who can play slippery loyalty and panic will chase it."
+      },
+      {
+        "name": "John Vincelli",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · mob boss / usurper",
+        "hook": "John is the modern operator who took over the old machine and now has to face a ghost he can't process. He is slick, dismissive, and increasingly rattled as Connor proves he knows too much to be a prank.",
+        "why_actor_wants_this": "This is the antagonist lane of Michael Shannon in Boardwalk Empire or Vincent D'Onofrio in Men in Black — a man whose authority is challenged by something he can't control. Actors who like playing controlled menace with a slow-burn unraveling will want it."
+      },
+      {
+        "name": "Big Frank Vincelli",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · large, powerful mob figure",
+        "hook": "Big Frank is the old power behind the new pressure, the man who can move the board without entering the room. He reads as a classic mob patriarch: calm, heavy, and always one step from making the next move.",
+        "why_actor_wants_this": "This is the Brando-style authority slot — the kind of role that lets an actor dominate with stillness and weight rather than volume. Veteran character actors and recognizable heavyweights would be drawn to the gravitas and the final-button menace."
+      },
+      {
+        "name": "Amber",
+        "role_type": "Supporting",
+        "demographics": "Female · 12 · Connor's daughter",
+        "hook": "Amber is smart, skeptical, and already carrying the attitude of someone who has grown up around adults with secrets. She gives the story a younger emotional stake and a future-facing version of the family legacy.",
+        "why_actor_wants_this": "This is a strong young supporting role in the Stranger Things / Room lane of a child who has to react to adult-scale truths without losing her own voice. Young performers who can play intelligence, attitude, and emotional surprise will be drawn to it."
+      },
+      {
+        "name": "Ricky",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-teens · street teen",
+        "hook": "Ricky is a local kid with enough swagger to test strangers and enough instinct to recognize power when he sees it. He functions as a street-level mirror for Connor's own rise.",
+        "why_actor_wants_this": "This is a sharp teen supporting role that gives a young actor a chance to play streetwise bravado and quick recalibration. Emerging performers who want a memorable scene with a clear attitude will like it."
+      },
+      {
+        "name": "Nick",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-teens · street teen",
+        "hook": "Nick is Ricky's partner in curiosity and opportunism, a kid who can pivot from threat to alliance in a beat. He helps open the projects world and gives Connor a new kind of street audience.",
+        "why_actor_wants_this": "This is the kind of teen role that lets an actor play comic bravado and instant allegiance, similar to the neighborhood-kid energy in City of God or Dope. Young actors with timing and attitude will see an easy scene-stealer."
+      },
+      {
+        "name": "Sal",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · bodyguard / enforcer",
+        "hook": "Sal is the blunt instrument in John's orbit, a physical threat who keeps the pressure on whenever diplomacy fails. He is simple, dangerous, and useful as a constant reminder that the conflict can turn violent at any time.",
+        "why_actor_wants_this": "This is the classic heavy role that gives an actor the physical intimidation lane of a Michael Rooker type part — minimal exposition, maximum presence. Character actors who can project menace with a look and a stance will want it."
+      },
+      {
+        "name": "Tony",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · deli counter man",
+        "hook": "Tony is the gatekeeper of Frankie's, the guy who knows the room but doesn't yet know the ghost walking back into it. He gives the deli its everyday texture and helps ground the more surreal turns.",
+        "why_actor_wants_this": "This is a useful supporting role for an actor who can play dry skepticism and local authority in a few scenes, the kind of part that gives a movie texture. Working character actors who like grounded ensemble work will fit it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a crime movie with a supernatural premise and a comic family pulse.",
+        "fit_profile": "Second- or third-feature directors with festival or indie-comedy credentials, especially those who have already handled tonal shifts between humor and danger. This material rewards directors who like performance-forward storytelling, period-to-contemporary transitions, and scenes where banter can turn into threat without a hard reset.",
+        "detail": "The movie gives a director a rare chance to stage mob-world behavior through a child's body without losing the emotional logic, which is a strong craft flex. It will attract filmmakers who like character-first genre pieces and can make a contained world feel bigger than its footprint."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming crime-comedy lane with indie crossover appeal",
+        "detail": "The project can be packaged around one breakout lead and a strong supporting ensemble, so it does not require a giant cast or effects spend to make the premise land. The contained locations, mature genre hook, and clear hook for trailers make it a natural fit for streamers and festival-to-platform buyers looking for a distinctive crime title."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated proof beats.",
+        "detail": "The garage reveal, the deli confrontation, and the later John showdown all serve the same core function: Connor proves he is Vinny. A next pass could compress one of those confirmations so the movie gets to the daughter, the turf war, or the final collision a little faster while preserving the fun of the reveal.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The family-crime engine could be foregrounded sooner.",
+        "detail": "The Sara and Danny robbery turn is one of the script's most distinctive turns, because it turns the parents into active inheritors of Vinny's instincts. One direction would be to let that shift arrive a little earlier or with a sharper trigger so the movie's second half feels even more like a family crime machine, not just Connor's mission.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The period opening and contemporary body can be streamlined.",
+        "detail": "The 1967 opening sets the mythic tone, but the story's main engine lives in 2002 and beyond. A simplification lever would be to keep the opening lean and visually economical so the production can preserve the period flavor without expanding the footprint beyond what the story needs.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights pass will need a careful sweep.",
+        "detail": "Sinatra, Goodfellas, The Godfather, and several named restaurants and brands are all part of the script's texture. A producer would want to clear or replace the most visible references early so the movie keeps its flavor without creating avoidable clearance work.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Connor's emotional turn can be sharpened at the end.",
+        "detail": "The hospital reset is a bold move, and the final one-year-later lunch-truck button is commercially clean. A next pass could clarify a little more of what Connor remembers versus what he loses so the ending lands as a deliberate transformation rather than only a supernatural reset.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73,
+  "tier": "Optionable",
+  "inputTokens": 37577,
+  "outputTokens": 5538,
+  "cost": 0.053103750000000005,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,368 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime",
+      "genre_tags": [
+        "Action",
+        "Historical"
+      ],
+      "tone": "Gritty, heightened, pulp-operatic"
+    },
+    "positioning_hook": "A Cajun smuggling clan turns Gulf Coast gunrunning into a blood-soaked family business, then gets pulled into the JFK assassination conspiracy.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear commercial lane for crime-action audiences who like outlaw family sagas, big-set-piece violence, and historical conspiracy material. Its appeal is narrower than a mainstream four-quadrant feature because the storytelling voice is highly idiosyncratic and the material leans hard into regional specificity and excess."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early: a Cajun criminal family runs explosives, survives rival ambushes, and ultimately becomes part of the JFK hit machinery. The throughline is easy to state, though the script keeps adding new factions, locations, and side missions that make the engine feel more sprawling than streamlined."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Leo, Vincent, Biere, Lola, and Lydia all have strong presence and distinct social functions, especially as a family unit under pressure. The characters are vivid in behavior and attitude, but most are defined more by outlaw role than by layered interior contradiction, so the emotional aftertaste stays more pulp than deeply personal."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a wildly specific Cajun underworld, with French, Spanish, Italian, and Gulf Coast textures colliding in a way that feels singular on the page. The boldness is real in the scale of the criminal mythology and the willingness to fold in JFK, but the execution often plays in broad, declarative strokes rather than a more controlled stylistic design."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps moving with raids, ambushes, betrayals, and a final historical assassination, so there is always another event on deck. At the same time, the momentum is episodic and repetitive in structure, with several action beats functioning as variations on the same retaliation pattern."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A Cajun mafia pipeline feeding into the JFK conspiracy is the kind of premise that immediately sticks in the mind. The combination feels fresh and inevitable as a pulp-history fantasy, even if the script’s presentation is more blunt-force than elegantly surprising."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The bayou, New Orleans, Gulf waters, Southern France, and Detroit union corridors create a broad criminal ecosystem with visible cross-border reach. The world is story-generating because it has family codes, regional loyalties, smuggling routes, and political corruption baked into it, even if the geography sometimes reads as a sequence of stops rather than a fully integrated machine."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is unmistakably pulp, with folk-music cues, macho banter, family ritual, and extreme violence all living in the same space. It is specific, but the script’s tonal register is so broad and repetitive that it lands more as a constant volume than a finely controlled signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are seeds of a larger saga in the Landry family, the France-to-Louisiana lineage, and the union-politics thread around Enzo and Hoffa. The draft mostly surfaces those ideas as plot fuel rather than letting them accumulate into hidden emotional or thematic depth."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The family and crew dynamics generate real energy: Leo/Vincent, Leo/Lydia, Vincent/Enzo, Leo/Biere, and Lola’s social orbit all create usable combinations. The ensemble is active enough that multiple pairings can drive scenes, though the script still centers heavily on the patriarchal command structure."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Multiple French/Cajun-speaking roles",
+          "Spanish-speaking roles",
+          "Italian-American family roles",
+          "One pregnant female role",
+          "Several physically specific outlaw/sniper roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Period (1963)",
+        "notable_requirements": [
+          "Gulf waters and working boats",
+          "Bayou marsh locations",
+          "New Orleans bar/interior exteriors",
+          "Dallas Dealey Plaza area",
+          "Southern France/Audenge material",
+          "Union office interiors",
+          "Plantation/farmhouse exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Explosions, boat damage/sinking, gunfire impacts, fireballs, and crowd/period street recreation around JFK assassination coverage.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical gunfire, explosions, blood effects, boat action, and fire-based destruction.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "JFK"
+        },
+        {
+          "type": "real_person",
+          "detail": "Jimmy Hoffa"
+        },
+        {
+          "type": "real_person",
+          "detail": "Joe Klukowski"
+        },
+        {
+          "type": "named_music",
+          "detail": "Joel Sonier"
+        },
+        {
+          "type": "named_music",
+          "detail": "Cajun French songs and Italian songs referenced generically but not always specifically titled"
+        },
+        {
+          "type": "brand",
+          "detail": "Mauser"
+        },
+        {
+          "type": "brand",
+          "detail": "Beretta"
+        },
+        {
+          "type": "brand",
+          "detail": "AK47"
+        },
+        {
+          "type": "brand",
+          "detail": "Cuban cigar references"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical assassination depiction and named public figures may require legal review depending on final portrayal and marketing use."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or specialty theatrical crime drama lane",
+        "content_level": "Mature, explicit",
+        "series_engine_or_release_model": "Feature release model best suited to festival-to-platform, limited theatrical, or genre-specialty distribution."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period setting, multiple locations, boats, explosions, and a large action finale push this above microbudget while still below true tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project needs a strong ensemble with Cajun, French, Spanish, and Italian flavor, plus credible age and regional specificity across several principal roles."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves across the Gulf, Louisiana bayou country, New Orleans, Dallas, and Southern France, with boats, marshes, bars, farms, and period street environments."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic violence, sexual content, profanity, and historical assassination material narrow the platform lane and raise standards-and-practices sensitivity."
+        },
+        "rights": {
+          "level": "high",
+          "note": "JFK, Hoffa, and other real-world references create clearance and portrayal considerations, alongside named music and weapon brands."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The bayou crime world feels singular.",
+          "what_it_means": "The Cajun smuggling ecosystem gives the project a regional identity that can separate it from generic gangster material and make the setting itself part of the hook. Buyers looking for a distinctive American underworld story, and actors who want to inhabit a world with its own codes and language, have something immediately legible here.",
+          "evidence": "Gulf boat deals, bayou ambushes, Cajun/French dialogue, family-run security, and the Louisiana-to-Southern-France lineage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise escalates into history.",
+          "what_it_means": "Moving from Gulf Coast gunrunning to the JFK assassination gives the script a built-in escalation that expands the commercial conversation beyond a local crime story. That kind of historical collision is attractive to producers who want a genre engine with a recognizable cultural endpoint and to buyers who can market on the conspiracy angle.",
+          "evidence": "Enzo and Joe Klukowski discuss the JFK contract, then Leo and Biere execute the Dallas shooting sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has family-business energy.",
+          "what_it_means": "The Landry crew functions like a criminal household, which creates a ready-made engine for loyalty, succession, romance, and retaliation. That gives the project a packaging advantage with actors who want a role inside a larger clan dynamic and with buyers who like ensemble crime pieces that can generate multiple story combinations.",
+          "evidence": "Vincent, Leo, Lola, Biere, TJ, Roy, T-Boy, Bebo, Ola, and Enzo all operate inside overlapping family and business circles.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action is built around practical set pieces.",
+          "what_it_means": "Boats, bridges, bars, warehouses, and roadside ambushes create clear cinematic moments that can be staged with a strong visual payoff. That makes the script easier to pitch as an action-crime feature with tangible production value rather than a dialogue-only period piece.",
+          "evidence": "The explosives sale on the Gulf, the Canal Street bar shootout, the Lake Charles warehouse blast, and the Galveston/Port Arthur boat attacks.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lydia gives the story a romantic countercurrent.",
+          "what_it_means": "Lydia is not just a love interest; she is a second-family-world bridge between the New Orleans and Bayou spheres, which adds emotional texture to the violence. That creates a role an actress can play with heat and agency, and it gives the project a relationship hook that broadens the audience beyond pure crime fans.",
+          "evidence": "Her first meeting with Leo, her insistence on seeing him, her pregnancy, and her repeated returns to the relationship as the violence escalates.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The France connection widens the canvas.",
+          "what_it_means": "The Southern France material gives the story an old-world criminal lineage and a transatlantic texture that can make the world feel larger than Louisiana alone. That opens the door for international flavor in casting and marketing, especially for buyers who respond to crime stories with heritage and diaspora roots.",
+          "evidence": "Vincent’s cousins Biere and Lucia in Audenge, the French sniper backstory, and the repeated references to family roots in southern France.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, unruly crime feature with a real selling point: a Cajun underworld so specific it feels mythic, then a conspiracy engine that pulls the story into JFK territory. The script is built for actors who want outsized roles inside a clan, and for buyers who can see a period gangster-action package with a historical hook and a loud, memorable regional identity."
+    },
+    "lead_characters": [
+      {
+        "name": "Leo Landry",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to early 30s · Cajun/Louisiana French-speaking",
+        "hook": "Leo is the heir-apparent son of the Landry operation: cocky, territorial, romantic, and already fluent in violence as a family language. He carries himself like a young boss before he fully is one, which gives him swagger, vulnerability, and the pressure of living inside his father’s shadow while trying to build a life with Lydia.",
+        "why_actor_wants_this": "This is the kind of role James Gandolfini had in The Sopranos pilot or Michael B. Jordan in Fruitvale Station — a young man whose charisma and danger are inseparable, and whose face can hold both tenderness and threat in the same scene. Actors who want a breakout lead with heat, romance, and gunpowder in the same frame will chase it."
+      },
+      {
+        "name": "Vincent Landry",
+        "role_type": "Lead",
+        "demographics": "Male · 50s to 60s · Cajun patriarch",
+        "hook": "Vincent is the family’s command center: old-world, strategic, proud, and deeply invested in lineage, loyalty, and control. He speaks like a man who has already survived wars, smuggling, and politics, and the script treats him as the patriarch whose approval and orders shape the whole ecosystem.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad or Al Pacino in The Godfather Part II — a patriarch whose authority is the engine of the story and whose every conversation carries history, threat, and affection at once. Veteran dramatic leads who want a commanding, quotable role with mythic family weight will be drawn to it."
+      },
+      {
+        "name": "Lola",
+        "role_type": "Lead",
+        "demographics": "Female · 30s to 40s · Cajun woman, sexually explicit presentation",
+        "hook": "Lola is the crew’s wild-card force: bawdy, physically confident, socially fearless, and fully at home in the masculine outlaw world around her. She cooks, flirts, fights, and survives with the same unapologetic energy, making her one of the script’s most memorable presence roles.",
+        "why_actor_wants_this": "This has the showcase volatility of Jennifer Coolidge in The White Lotus or Frances McDormand in Fargo — a woman who can swing from comic provocation to survival instinct without losing command of the room. Character actresses who want a role with outrageous personality and scene-stealing behavior will see immediate value."
+      },
+      {
+        "name": "Biere Landry",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to 60s · French/Cajun sniper",
+        "hook": "Biere is the imported cousin from southern France, a veteran sniper with old-war instincts and a dry, swaggering confidence that fits the Landry world instantly. He brings transatlantic lineage to the family mythology and becomes a key execution arm in the final conspiracy stretch.",
+        "why_actor_wants_this": "This is the kind of role Christoph Waltz had in Inglourious Basterds or Tom Hardy in Peaky Blinders — a lethal specialist with charm, menace, and a distinct verbal rhythm. Actors who like playing elegant violence with a regional accent and a strong mythic backstory will want it."
+      },
+      {
+        "name": "Lydia Marcello",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Italian-American",
+        "hook": "Lydia is the New Orleans counterpart to Leo’s bayou world: proud, direct, emotionally intense, and unwilling to be treated like a decorative daughter. She pushes against her father’s control, claims her desire openly, and gives the story a romantic center that feels active rather than passive.",
+        "why_actor_wants_this": "This is the showcase space of Winona Ryder in The Age of Innocence or Zendaya in Euphoria — a young woman whose longing, defiance, and emotional transparency drive the scene. Actresses looking for a romantic lead with agency, heat, and family pressure will chase it."
+      },
+      {
+        "name": "Enzo Marcello",
+        "role_type": "Lead",
+        "demographics": "Male · 50s to 60s · Italian-American New Orleans power broker",
+        "hook": "Enzo is the connector between labor politics, organized crime, and the Landry network, with a smooth, transactional confidence that makes him feel like a broker of outcomes. He is both family man and fixer, which gives him a polished menace that contrasts with the rougher bayou crew.",
+        "why_actor_wants_this": "This is the kind of role John Turturro had in Miller’s Crossing or Michael Stuhlbarg in Boardwalk Empire — a talker whose intelligence and access are the source of his power. Character actors who want a smart, slippery, high-status criminal role with political texture will be interested."
+      },
+      {
+        "name": "TJ",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s · Cajun crew member",
+        "hook": "TJ is one of Vincent’s trusted operators, a practical gunman who helps translate orders into action. He is less about inner life than function, but he gives the crew a steady, competent presence in the action machinery.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the utility-player energy of Michael K. Williams in a crime ensemble — a man whose authority comes from competence and stillness. Actors who want a memorable crime-world lieutenant with action credibility will see the lane."
+      },
+      {
+        "name": "Roy",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s · Cajun crew member",
+        "hook": "Roy is the explosives-and-diving specialist, the crew member who handles the most technical, dangerous work. He reads as a loose, stoner-adjacent operator with a practical streak, which gives him a rough-edged utility inside the team.",
+        "why_actor_wants_this": "This is the showcase territory of a supporting specialist role like the crew members in Heat or The Town — the guy who makes the operation feel real because he knows the mechanics. Actors who like playing the hands-on expert in an action ensemble will gravitate to it."
+      },
+      {
+        "name": "T-Boy",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s · Cajun crew member",
+        "hook": "T-Boy is the loud, aggressive, gun-ready member of the crew, built for momentum and intimidation. He helps give the action scenes their rowdy, street-level energy and functions as one of the more volatile voices in the group.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the same kind of charge as a hard-charging supporting player in a Scorsese ensemble — a guy who can dominate a scene with attitude and physicality. Actors who want a rough, quotable, action-forward supporting part will chase it."
+      },
+      {
+        "name": "Bebo",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s · Cajun crew member",
+        "hook": "Bebo is a quieter crew presence who still gets meaningful action beats, especially in the boat and raid sequences. He feels like one of the family’s dependable working parts rather than a showboat, which gives the ensemble a lived-in texture.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the grounded ensemble work seen in crime crews like The Departed or Goodfellas — not the loudest guy, but the one who makes the unit believable. Supporting actors who want action credibility and a clear place in the machine will like it."
+      },
+      {
+        "name": "Ola",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 60s · Cajun matriarch",
+        "hook": "Ola is the domestic center of the Landry household, the woman who keeps the family fed, tended, and emotionally anchored. She is less overtly violent than the men, but she gives the home world its warmth and continuity.",
+        "why_actor_wants_this": "This is the kind of maternal anchor role that gives an actress the grounded authority of a family matriarch in a prestige crime saga. Performers who want a warm, stabilizing presence with emotional weight will recognize the value."
+      },
+      {
+        "name": "Joe Klukowski",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s · labor-union fixer",
+        "hook": "Joe is the Detroit-side political operator, loud, impatient, and transactional, with a hard-edged union-world confidence. He helps move the story from regional crime into national conspiracy, and his voice gives the labor angle a rough, streetwise texture.",
+        "why_actor_wants_this": "This is the kind of role that sits in the John C. Reilly / Stephen Root lane of a political-crime ensemble — a talkative operator whose personality is part of the machinery. Character actors who like playing a pressure-cooker intermediary will be attracted."
+      },
+      {
+        "name": "JFK",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · real historical figure",
+        "hook": "JFK functions as the historical target whose presence turns the story from local crime into national event. He is not a character study here so much as the symbolic center of the final conspiracy engine.",
+        "why_actor_wants_this": "This is the kind of historical role that, even in limited screen time, carries the gravity of a major cultural event. An actor with the right resemblance and authority would see the prestige and visibility of playing a figure everyone recognizes."
+      },
+      {
+        "name": "Hoffa",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · real historical figure",
+        "hook": "Hoffa appears as the labor-world power center behind the assassination plot, giving the Detroit thread a recognizable political-criminal anchor. He is written as forceful, blunt, and fully inside the union power structure.",
+        "why_actor_wants_this": "This is the kind of historical power role that gives an actor the same kind of command seen in The Irishman or Hoffa — a larger-than-life figure whose authority is the point. Veteran character leads who want a famous name role with institutional heft will be interested."
+      },
+      {
+        "name": "Bello",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 60s · Mexican smuggler",
+        "hook": "Bello is the Mexico-side ally who helps move the Landry crew into the final escape phase. He broadens the criminal geography and gives the ending a cross-border exfiltration feel.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the utility and authority of a border-world fixer in a crime thriller. Performers who like playing the trusted outside operator will see the appeal."
+      },
+      {
+        "name": "Lui",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s · Louisiana police contact",
+        "hook": "Lui is the local law-enforcement contact who leaks information and helps the crew navigate pressure. He adds a corrupt-cop layer to the world and keeps the story’s institutional edges visible.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the same sly authority as a crooked cop in a crime ensemble — a man who knows too much and talks just enough. Character actors who specialize in compromised authority figures will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a regional crime epic with historical collision and big, practical set pieces.",
+        "fit_profile": "Established indie or genre directors with at least one or two features, plus TV directors moving into features, who already work comfortably with ensemble crime, period detail, and violence as spectacle. This material rewards filmmakers who like world-building through behavior, can handle a large cast without losing the family spine, and want to make a loud, muscular period feature with a distinctive American subculture.",
+        "detail": "The material gives a director boat chases, bar shootouts, warehouse blasts, and a JFK climax, all anchored in a very specific Gulf Coast identity. It will attract directors who want to prove they can handle scale and texture at the same time, especially those with a reel that already shows control of period atmosphere and action blocking."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming crime drama / specialty theatrical / festival-to-platform",
+        "detail": "The project can be packaged around one or two strong lead names in Leo and Vincent, with the ensemble filled by regional and character actors rather than a star-heavy cast. The historical-crime hook and Gulf Coast action lane give it export value for buyers who want a period gangster piece with a recognizable American event at the center."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The JFK material is the biggest packaging lever.",
+        "detail": "The final act turns the script from regional crime into a historical conspiracy feature, which is the clearest commercial hook on the page. A next pass could foreground that escalation earlier so the audience feels the destination building before Dallas arrives.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble can be streamlined around fewer centers of gravity.",
+        "detail": "The script has enough crew members, cousins, and allies to support a large cast, but several supporting players currently function in the same action lane. The version where each lieutenant has a sharper, more distinct job would make the ensemble easier to track and easier to cast.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The tonal register stays at full volume.",
+        "detail": "The script lives in a constant mode of banter, sex, and gunfire, which gives it energy but also keeps emotional contrast from landing as hard as it could. One direction would be to let a few quieter family or aftermath beats breathe so the violence has more shape around it.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The period footprint is broad.",
+        "detail": "Louisiana, New Orleans, Dallas, Southern France, Gulf waters, and multiple bar/warehouse/farm locations all appear in the story. A simplification lever would be to consolidate any nonessential travel beats so the production can preserve the scale of the action without multiplying company moves.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The historical references need careful clearance planning.",
+        "detail": "JFK, Hoffa, named weapons, and named music all appear in the script, so the legal and clearance path should be mapped early. That is manageable, but it is the kind of package detail that should be addressed before attachments are locked.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 64.3,
+  "tier": "Optionable",
+  "inputTokens": 41039,
+  "outputTokens": 5989,
+  "cost": 0.05772975,
+  "declaredFormat": "Feature film"
+}

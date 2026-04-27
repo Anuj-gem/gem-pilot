@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-23T23:00:39.783Z",
+  "submission_id": "7841dddc-8699-4212-922a-fcea2ed56e41",
+  "eval_id": "71bab240-d6d9-40dd-9853-72fef17db15f",
+  "title": "Best Seller Matisse Haddad Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "ANYA ANDERSON",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "CHRIS DINIZ",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s"
+    },
+    {
+      "name": "NORA LOWE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "MARCUS CADMAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "LORELEI PALACIO",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "RON",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "IZZY",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s"
+    },
+    {
+      "name": "KALEY KOVALAVA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "TEENY",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "NICHOLAS",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "NORA'S FRIEND 1",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "NORA'S FRIEND 2",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "NORA'S FRIEND 3",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "EDITOR",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "MAX",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "THERAPIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "DOCTOR",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "RECEPTIONIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    }
+  ],
+  "positioning_hook": "A self-publishing Brooklyn writer turns her marriage into a viral essay, then watches the attention mutate into career-making fame, public humiliation, and a war over who owns the story.",
+  "cost_usd": 0.05854575,
+  "input_tokens": 41881,
+  "output_tokens": 6030,
+  "status": "wrote:leads_ok"
+}

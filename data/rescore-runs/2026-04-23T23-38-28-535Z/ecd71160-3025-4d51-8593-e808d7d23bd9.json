@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:43:58.391Z",
+  "submission_id": "ecd71160-3025-4d51-8593-e808d7d23bd9",
+  "eval_id": "7ca1df05-568b-446b-92e7-5f25591ec334",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens at start, early 20s by end · African American"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Lead",
+      "demographics": "Male · late teens at start, 20s by end · Hispanic/Latino"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Lead",
+      "demographics": "Male · 12-14 at introduction, aging into late teens/early 20s · Caucasian · autistic"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens at start, early 20s by end · Asian Pacific Islander"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens at start, early 20s by end · African American"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s to 50s · African American"
+    },
+    {
+      "name": "Eddie \"Mr. Showtime\" Curly",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    },
+    {
+      "name": "Doris Parker",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · African American"
+    },
+    {
+      "name": "Jeffery Parker",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "John McTyler's Grandma",
+      "role_type": "Supporting",
+      "demographics": "Female · early 50s · Caucasian"
+    },
+    {
+      "name": "Grace Oliver",
+      "role_type": "Supporting",
+      "demographics": "Female · teen at introduction, 20s by end · Caucasian"
+    },
+    {
+      "name": "Phil Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · African American"
+    },
+    {
+      "name": "Ben Stone",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s to 40s · Caucasian"
+    },
+    {
+      "name": "Rachel Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · African American"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    },
+    {
+      "name": "Trevor McTyler",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Caucasian"
+    },
+    {
+      "name": "Grandma McTyler",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Caucasian"
+    }
+  ],
+  "positioning_hook": "Five Brooklyn kids build a multiracial boy band, conquer the Apollo, and ride a wave of teen hysteria — until fame, addiction, and betrayal threaten to break their brotherhood.",
+  "cost_usd": 0.0714465,
+  "input_tokens": 55566,
+  "output_tokens": 6616,
+  "status": "wrote:leads_ok"
+}

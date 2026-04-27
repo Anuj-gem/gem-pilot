@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:43:36.013Z",
+  "submission_id": "ff9c593f-fae7-4817-8585-672fc1b66442",
+  "eval_id": "6fd19cab-c7b8-42e3-bced-59c97bfc85a0",
+  "title": "KAELUM  (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Kyle Kaelum",
+      "role_type": "Lead",
+      "demographics": "Male · 27 · Black · Trinidadian-Californian"
+    },
+    {
+      "name": "Lanora",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Madison",
+      "role_type": "Lead",
+      "demographics": "Female · late 40s to 50s · Trinidadian"
+    },
+    {
+      "name": "Drominose the Conqueror",
+      "role_type": "Lead",
+      "demographics": "Male · ageless/ancient · non-human or heavily stylized performance"
+    },
+    {
+      "name": "Rio",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Commander Frade",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Petra",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Cross",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "The Five Protectors",
+      "role_type": "Supporting",
+      "demographics": "Five ancient beings · mixed presentation · ageless"
+    }
+  ],
+  "positioning_hook": "A Trinidadian black-ops operator discovers he’s the living seventh principle, then has to stop a universe-conquering warlord who built his empire inside the void itself.",
+  "cost_usd": 0.0532575,
+  "input_tokens": 41298,
+  "output_tokens": 4952,
+  "status": "wrote:leads_ok"
+}

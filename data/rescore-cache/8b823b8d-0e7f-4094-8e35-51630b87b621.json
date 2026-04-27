@@ -1,0 +1,325 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Slasher",
+        "Action",
+        "Mystery"
+      ],
+      "tone": "heightened, grotesque, propulsive, meta-aware"
+    },
+    "positioning_hook": "Tara Carpenter and Sam Loomis are hunted across Egypt by a Ghostface who has turned the Woodsboro legacy into an ancient mummification ritual, forcing the survivors into a brutal race to stop a killer who can’t stay dead.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script sits on a very legible commercial engine: a recognizable horror brand, returning legacy characters, and a clear survival chase with escalating set pieces from the museum to the desert. The audience promise is immediate and broad for horror fans, especially viewers who want franchise mythology, big kills, and a final-act escalation that keeps changing shape."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the opening museum sequence and stays easy to track: Ghostface has evolved into a mummy-like, techno-occult predator, and the survivors are racing to decode and stop him. The script keeps the central question clean even as it layers in Egyptology, AI, and legacy trauma."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Tara, Sam, and Unai all have strong screen presence, with Tara as the hardened fighter, Sam as the legacy-burdened center, and Unai as the sharp-tongued intellectual who becomes a combat player. The supporting ensemble is functional and gives the leads different textures to play against, though the story is still most energized by the central trio."
+      },
+      "creative_originality_and_boldness": {
+        "score": 9,
+        "reasoning": "This is a wildly confident swing: Ghostface as an Egyptian-preservation horror engine, the museum-as-tomb concept, and the fusion of slasher iconography with mummification, AI, and ritualized body horror. The script commits to a maximalist, franchise-expanding vision instead of playing in familiar sequel territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is built like a gauntlet, with each major location introducing a new attack pattern, new information, and a new survival pressure. The momentum is strong because the set pieces keep escalating and the survivors are constantly forced into motion, culminating in a desert-scale final confrontation."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels fresh in a way that still clicks instantly: the slasher legacy is being preserved, archived, and weaponized through ancient burial logic and modern systems. The combination of museum horror, ritual body transformation, and franchise meta-commentary gives the script a memorable identity."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Woodsboro Legacy Collection, the Egyptian excavation spaces, the hotel, the salt mines, and the Oracle chamber all feel like parts of a larger machine with rules, systems, and hierarchies. The world is not just a backdrop; it generates the action through preservation tech, ritual language, and institutional infrastructure."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unmistakable: operatic slasher violence, self-aware horror banter, techno-occult mythology, and relentless body horror all pushed to the edge. The script knows exactly what kind of nightmare it wants to be, and it sustains that identity through the entire feature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the spectacle, the script is clearly interested in legacy trauma, identity inheritance, and the idea of trauma becoming a system that outlives the people inside it. The final reveal around Sam and the Archive suggests a larger mythology, though the draft is primarily driven by forward motion and escalation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Sam/Tara dynamic carries real emotional weight, and the Mindy/Chad pair gives the ensemble a recognizable sibling engine that pays off hard in the final stretch. The supporting players are mostly mission-driven, but the core relationships do generate enough friction and loyalty to keep the group scenes alive."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Franchise-recognition casting for legacy roles",
+          "Multiple action-capable adult leads",
+          "Ensemble with several distinct age ranges and ethnicities",
+          "No child performers required"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary with stylized ancient-Egypt overlays",
+        "notable_requirements": [
+          "Egyptian museum/legacy collection build",
+          "Desert exteriors",
+          "Hotel interiors",
+          "Library interiors",
+          "Salt-mine/tunnel environments",
+          "Airport/tarmac sequence",
+          "Contained large-scale practical set pieces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Ghostface phasing, beetle/scorpion swarms, hallucination overlays, digital AI projections, environmental transformations, and large-scale desert/museum distortions.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Extensive prosthetics, creature effects, blood rigs, body-transformation effects, practical debris, and large-scale destruction beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Billy Loomis, Stu Macher, Nancy Loomis, Roman Bridger, Casey Becker, Tatum Riley, Randy Meeks, Howard Carter, Agatha Christie, Tom Hiddleston"
+        },
+        {
+          "type": "brand",
+          "detail": "Woodsboro Legacy Collection, Sofitel Winter Palace, Meeks-Martin Design Studio, British Library, Mesa Verde, London office references"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Scream franchise mythology, Ghostface iconography, and legacy-character continuity"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical horror franchise event film",
+        "content_level": "explicit mature horror",
+        "series_engine_or_release_model": "Feature release model with franchise-event positioning; best suited to theatrical or premium streaming event release"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Heavy creature/VFX work, multiple large-scale action set pieces, and several bespoke environments push this into a premium horror budget tier."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script leans on a recognizable franchise ensemble with multiple lead roles and legacy continuity demands."
+        },
+        "location": {
+          "level": "high",
+          "note": "Egypt, Australia, Mexico City, London, Madrid, and desert/salt-mine environments create a broad and technically demanding footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Extreme gore, body horror, mutilation, and intense violence define the content level throughout."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script directly references franchise legacy characters, real people, and named institutions, all of which require careful clearance and continuity handling."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The franchise premise has a fresh engine.",
+          "what_it_means": "This gives buyers a clean way to sell the movie as a new chapter with a distinct hook rather than a routine sequel. Horror audiences and franchise fans will respond to a version of Ghostface that feels mythic, visual, and event-sized.",
+          "evidence": "The opening museum attack, the mummification ritual, and the final reveal of multiple Ghostface forms all reframe the icon into a new threat model.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are built for trailers.",
+          "what_it_means": "The script is packed with image-forward moments that can be cut into a high-impact campaign and sold on spectacle alone. Trailer audiences, genre marketers, and exhibitors looking for a loud opening weekend title will all have obvious material to work with.",
+          "evidence": "The museum hall of infamy, the desert chase, the salt-mine descent, and the final dune battle all deliver distinct visual peaks.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tara is a real action lead.",
+          "what_it_means": "The role gives an actor a physical, emotionally legible heroine who can carry both survival horror and hard-edged action. That is exactly the kind of part that attracts performers who want a franchise-defining turn with bruised vulnerability and command.",
+          "evidence": "Her climbing intro, her tactical competence, and her repeated hand-to-hand fights with Ghostface establish her as more than a scream-and-run survivor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Unai becomes the breakout wildcard.",
+          "what_it_means": "He starts as the translator and ends as a combat-smart, profanity-laced co-lead, which gives the movie a scene-stealing male role with humor and nerve. Younger actors with genre heat will chase this because it offers wit, physicality, and a late-film hero turn.",
+          "evidence": "His paleography expertise, his banter on the plane and in the mines, and his final stand against the King Ghostface make him a genuine engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a premium production design hook.",
+          "what_it_means": "The museum/tomb hybrid, the salt mines, and the hotel-to-crypt transformation create a visual identity that can separate the film from standard slasher entries. Production designers and buyers who want a franchise movie with a strong art-direction signature will see immediate value.",
+          "evidence": "The Woodsboro Legacy Collection, the vacuum-sealed tomb logic, and the final Oracle chamber all feel like designed spaces with story function.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The body horror is engineered, not random.",
+          "what_it_means": "The kills are tied to ritual logic, which makes the violence feel purposeful and memorable rather than just noisy. That helps the movie land with hardcore horror fans who want invention in the gore and a mythology behind the mayhem.",
+          "evidence": "The Canopic Cut, the mummification while alive, the resin hardening, and the organ-extraction imagery all follow a consistent preservation motif.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The finale escalates into franchise mythology.",
+          "what_it_means": "The ending opens the door to a larger horror universe without losing the immediate survival stakes, which is valuable for a studio thinking in franchise terms. Fans of long-running horror properties will respond to the sense that the legacy is mutating rather than ending.",
+          "evidence": "The AI-Oracle reveal, the King Ghostface, and Sam’s transformation into the new host all widen the mythology at the finish.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a franchise horror swing with a real point of view: Ghostface reimagined as an ancient, techno-occult preservation machine, with Tara, Sam, and Unai fighting through a museum, a desert, and a salt mine to stop a legacy from becoming immortal. It has the kind of trailer-ready set pieces, star roles, and mythology expansion that can make a producer sit up and think event movie."
+    },
+    "lead_characters": [
+      {
+        "name": "SAM",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Sam is the franchise’s haunted center of gravity: sharp, exhausted, and increasingly split between survivor instinct and inherited darkness. She carries the burden of legacy like a physical condition, and the script keeps testing whether she is the final girl, the vessel, or the thing the horror has been waiting to wear.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Elisabeth Moss in The Invisible Man — a role where internal fracture becomes the engine of the movie. Actors who want a prestige-horror lead with psychological volatility, physical endurance, and a final transformation will chase this hard."
+      },
+      {
+        "name": "TARA CARPENTER",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Tara is the movie’s most kinetic survivor: disciplined, feral, and always one step away from turning fear into violence. She has the body language of someone who has already outlived the version of herself that used to freeze, and that makes her feel like a true action-horror heroine.",
+        "why_actor_wants_this": "This is the showcase space of Sigourney Weaver in Aliens or Florence Pugh in Midsommar — a physically commanding lead whose toughness is inseparable from damage. Action-capable actresses looking for a franchise-defining role with grit, speed, and emotional bite will see the appeal immediately."
+      },
+      {
+        "name": "UNAI GOYAGOA",
+        "role_type": "Lead",
+        "demographics": "Male · late teens/early 20s · Latino",
+        "hook": "Unai is the brainy outsider who turns into the movie’s sharpest blade: a paleographer with a translator’s mind and a fighter’s mouth. He brings humor, intelligence, and escalating courage, which lets him evolve from observer to co-equal survivor without losing his personality.",
+        "why_actor_wants_this": "This is the breakout-support-to-lead energy of Ke Huy Quan in Everything Everywhere All at Once or Jesse Plemons in Game Night — a role that lets an actor be funny, smart, and unexpectedly lethal. Younger actors with genre ambition will want the chance to own a role that starts as exposition and ends as a crowd-pleasing combat engine."
+      },
+      {
+        "name": "MINDY MEEKS-MARTIN",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Mindy is the meta-voice with a pulse: self-aware, funny, and constantly trying to narrate the nightmare before it swallows her. Under the commentary is real terror and real loyalty, which gives her the kind of sharp-edged vulnerability that can land hard when the movie finally takes her out of the joke.",
+        "why_actor_wants_this": "This is the showcase lane of Ayo Edebiri in The Bear or Jenna Ortega in Wednesday — a role that mixes wit, panic, and emotional collapse without losing control of the frame. Actors who can play fast dialogue and then pivot into raw fear will see this as a scene-stealing franchise part."
+      },
+      {
+        "name": "CHAD MEEKS-MARTIN",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Chad is the bruised, loyal physical counterpart to Mindy: a guy who jokes through pain until the pain becomes the whole story. He reads as the kind of survivor who can take punishment, keep moving, and still land a line that makes the room laugh through the blood.",
+        "why_actor_wants_this": "This is the action-comedy survival slot of Dave Bautista in Glass Onion or Alan Ritchson in Reacher — a role that lets an actor be imposing, funny, and emotionally exposed in the same breath. The part will attract performers who want a franchise bruiser with a heart."
+      },
+      {
+        "name": "NOAH KARLSSON",
+        "role_type": "Lead",
+        "demographics": "Male · 20s/30s",
+        "hook": "Noah is the cold, clinical intelligence in the room, the one who can translate horror into systems language while quietly becoming the most dangerous person in the story. He begins as a stabilizer and ends as the architect of the nightmare, which gives the role a clean, chilling descent.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Emerson in Person of Interest or Rami Malek in Mr. Robot — a controlled, cerebral role that turns into a reveal-driven villain turn. Actors who like playing intelligence with a hidden agenda will be drawn to the slow-burn corruption of the part."
+      },
+      {
+        "name": "WILLIAM EVANS",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "William is the polished professional who thinks he can out-reason the horror until the horror gets under his skin. He has the calm of a man used to dead bodies and the panic of someone realizing this case is alive.",
+        "why_actor_wants_this": "This is the kind of role that gives a performer the contained authority of Ralph Fiennes in The Menu before the floor drops out from under him. Character actors who can play elegance, competence, and physical deterioration will be interested."
+      },
+      {
+        "name": "ZAINAB SIDIG",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Zainab is command presence in a suit: practical, unsentimental, and fully capable of turning a crisis into an operation. She brings institutional authority to the chaos, which makes her feel like the person you want in the room until the room starts killing everyone.",
+        "why_actor_wants_this": "This is the authority-and-collapse lane of Viola Davis in Widows or Regina King in Watchmen — a role that lets an actor project control and then pay for it physically. Strong dramatic leads who can also handle action will be attracted to the part."
+      },
+      {
+        "name": "SADIQ",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Sadiq is the guide who knows the terrain and pays for that knowledge with his body. He has the grounded competence of someone who understands the desert better than the people hiring him, which makes his eventual fate land with real force.",
+        "why_actor_wants_this": "This is the grounded-support role of Mahershala Ali in Green Book before the story turns him into a pressure point — a part that lets an actor play dignity, utility, and dread. It will appeal to performers who can make a supporting role feel lived-in and essential."
+      },
+      {
+        "name": "MINDY'S STUDIO / CHAD'S PARTNER FIGURE",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Chad’s partner energy is casual, modern, and lightly comic, the kind of presence that helps the world feel lived-in without taking over the frame. He functions as a social anchor around the design-studio material and the broader ensemble texture.",
+        "why_actor_wants_this": "This is the easy-lift ensemble slot that gives an actor a few memorable beats in a franchise movie, similar to the utility roles in Knives Out or Scream ensemble entries. It’s the kind of part working actors take for visibility and tone."
+      },
+      {
+        "name": "CATALINA WESTBROOKS",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Catalina is the sharp, abrasive outsider who reads every room as a threat and says the thing everyone else is thinking. She adds edge and volatility to the ensemble, which makes her feel like a useful pressure valve before the movie takes her out.",
+        "why_actor_wants_this": "This is the scene-stealing supporting lane of Jessica Henwick in Glass Onion or Stephanie Hsu in Everything Everywhere All at Once — a role with attitude, speed, and a memorable exit. Actors who like making a mark fast will be interested."
+      },
+      {
+        "name": "INDIGO BAKER",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Indigo is the eerie, half-transformed survivor whose body becomes part of the horror language. She carries a haunted, almost spectral quality that makes her feel like a living artifact before she turns fully feral.",
+        "why_actor_wants_this": "This is the transformation role territory of Anya Taylor-Joy in Split or Rebecca Hall in Resurrection — a part where the body itself becomes the performance instrument. Actors who want a physically expressive horror role will chase it."
+      },
+      {
+        "name": "ALEX",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Alex is one of the ensemble bodies the story uses to show how the curse spreads through loyalty and proximity. He becomes a frighteningly physical extension of the horror, which gives the role a sharp, tragic utility.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets an actor go from grounded ally to possessed threat, similar to the infected ensemble turns in 28 Days Later. Genre actors who like a visible transformation will respond to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn franchise horror into a full-scale mythic assault.",
+        "fit_profile": "Established genre directors with at least one or two theatrical features, or prestige-horror filmmakers looking to step into a larger IP machine without losing their visual identity. This material rewards directors who like bold production design, aggressive set-piece choreography, and a tonal blend of self-aware wit with extreme body horror.",
+        "detail": "The movie gives a director a chance to build a signature visual world out of tomb architecture, museum spaces, and desert exteriors while still delivering the franchise grammar audiences expect. It will attract filmmakers who can stage action cleanly, manage ensemble chaos, and make practical gore feel operatic rather than disposable."
+      },
+      "buyer_appeal": {
+        "tier": "studio or premium-streamer event horror feature",
+        "lane": "franchise horror / elevated slasher / event-body-horror lane",
+        "detail": "The package can be sold on franchise recognition and the Tara/Sam ensemble without needing a giant star to explain the premise, though a marquee Ghostface-era lead would still help open the movie. The horror-event lane remains one of the clearest theatrical and streamer buy-zones, and the Egypt/desert spectacle gives marketing a visual hook beyond standard slasher branding."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The mythology stack is doing a lot of work.",
+        "detail": "The script has a huge amount of lore in play — mummification rules, AI architecture, legacy trauma, Ghostface variants, and ritual language. A next pass could clarify which ideas are the core engine and which are supporting texture so the audience can track the emotional spine even faster.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble arrives in waves.",
+        "detail": "The story keeps adding players across Egypt, the hotel, the mines, and the Oracle chamber, which helps scale but also spreads attention across a lot of names. One lever would be to concentrate a few of the supporting roles into fewer, more durable functions so the emotional payoffs land even harder.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The finale is built for maximum escalation.",
+        "detail": "The last stretch goes from one Ghostface to two, then to a swarm, then to the AI reveal and Sam’s transformation. That escalation is exciting, and the version of the ending where each reveal is given one clean visual rule would make the climax even easier to follow in the theater.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "This is a heavy-effects feature.",
+        "detail": "The script calls for heavy VFX, creature work, environmental transformations, and multiple large-scale action beats across desert, museum, and subterranean spaces. The cleanest production version is one that protects a few signature set pieces and lets the rest of the horror lean on practical makeup, lighting, and sound.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights and continuity lane is crowded.",
+        "detail": "The draft references franchise legacy characters, real people, and named institutions, so clearance and continuity will need to be handled carefully. That is manageable for a franchise buyer, but it does mean the package wants a producer who knows how to navigate IP-heavy material.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 79.3,
+  "tier": "Optionable",
+  "inputTokens": 44330,
+  "outputTokens": 5513,
+  "cost": 0.058055999999999996,
+  "declaredFormat": "Feature film"
+}

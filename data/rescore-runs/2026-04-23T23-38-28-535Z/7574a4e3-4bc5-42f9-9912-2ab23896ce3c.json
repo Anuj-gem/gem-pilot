@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:39:12.895Z",
+  "submission_id": "7574a4e3-4bc5-42f9-9912-2ab23896ce3c",
+  "eval_id": "83b6752a-9cd7-4feb-994b-234aa9719806",
+  "title": "A Rose of Jericho",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W",
+      "role_type": "Lead",
+      "demographics": "Male · 40s playing ageless · African and Hispanic descent"
+    },
+    {
+      "name": "Ying",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · Chinese"
+    },
+    {
+      "name": "Mr. Dakota",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Upper Midwest American"
+    },
+    {
+      "name": "Mr. Ohio",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Ohio/Midwest American"
+    },
+    {
+      "name": "Mr. Carolina",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · North Carolina / Southern American"
+    },
+    {
+      "name": "Mahmoud",
+      "role_type": "Supporting",
+      "demographics": "Male · 80s-90s · Egyptian"
+    },
+    {
+      "name": "Amun",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Egyptian"
+    },
+    {
+      "name": "The Great Mahmoud’s Worker",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Egyptian"
+    },
+    {
+      "name": "Eleanor Roosevelt",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · White American"
+    }
+  ],
+  "positioning_hook": "A globe-trotting antiquities broker with impossible senses races through wartime black markets to stop Pearl Harbor — while hiding the one artifact that could change history.",
+  "cost_usd": 0.052206749999999996,
+  "input_tokens": 38757,
+  "output_tokens": 5142,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:04:52.784Z",
+  "submission_id": "f1051ffe-7b93-419b-9aff-71bc7fc42020",
+  "eval_id": "90f2486d-912b-48cb-8e7b-1156965c81f0",
+  "title": "Wrong House",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Kenzie",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · college-age"
+    },
+    {
+      "name": "Bryan",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s · college-age"
+    },
+    {
+      "name": "Zoe",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · college-age"
+    },
+    {
+      "name": "Vanny",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · college-age"
+    },
+    {
+      "name": "Drew",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s · college-age"
+    },
+    {
+      "name": "Sunny",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Sally",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Sissy",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Sam",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Jack",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Susan",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Tiff",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · college-age"
+    },
+    {
+      "name": "Salem",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    }
+  ],
+  "positioning_hook": "A stranded college friend group takes shelter in a snowbound house where a welcoming family is secretly breeding vampires, and the only escape may be becoming one of them.",
+  "cost_usd": 0.051743250000000005,
+  "input_tokens": 37251,
+  "output_tokens": 5290,
+  "status": "wrote:leads_ok"
+}

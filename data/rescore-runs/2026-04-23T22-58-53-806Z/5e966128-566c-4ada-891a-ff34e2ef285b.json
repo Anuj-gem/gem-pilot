@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:16:35.888Z",
+  "submission_id": "5e966128-566c-4ada-891a-ff34e2ef285b",
+  "eval_id": "c9b1f9ad-bd08-4fc9-9d6a-0ac20fb21b1a",
+  "title": "Stranger Things",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Mike Wheeler",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Will Byers",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Dustin Henderson",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Lucas Sinclair",
+      "role_type": "Lead",
+      "demographics": "Male · early teens · Black"
+    },
+    {
+      "name": "Eleven",
+      "role_type": "Lead",
+      "demographics": "Female · preteen"
+    },
+    {
+      "name": "Joyce Byers",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Jim Hopper",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Nancy Wheeler",
+      "role_type": "Supporting",
+      "demographics": "Female · teens"
+    },
+    {
+      "name": "Jonathan Byers",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens"
+    },
+    {
+      "name": "Steve Harrington",
+      "role_type": "Supporting",
+      "demographics": "Male · teens"
+    },
+    {
+      "name": "Benny Hammond",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Chief Jim Hopper",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Dr. Brenner",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    }
+  ],
+  "positioning_hook": "A small-town boy vanishes after a Dungeons & Dragons night, and his friends, family, and a burned-out sheriff uncover a government secret and a hungry force in the woods.",
+  "cost_usd": 0.03420525,
+  "input_tokens": 15607,
+  "output_tokens": 5000,
+  "status": "wrote:leads_ok"
+}

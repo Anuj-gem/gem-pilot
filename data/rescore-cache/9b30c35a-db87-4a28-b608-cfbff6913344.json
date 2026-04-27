@@ -1,0 +1,326 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Thriller",
+        "Satire"
+      ],
+      "tone": "Heightened, vicious, glossy, and self-aware with splashes of black comedy"
+    },
+    "positioning_hook": "A hungry young actor and a pack of Hollywood strivers are hunted through premieres, penthouses, and hospital wings by a masked killer who turns fame into a body count.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate genre appeal: a Hollywood-set slasher with a fame-and-image engine, a masked killer, and a clear survival hook. The final turn into the survivors weaponizing the industry and owning the rights gives it a built-in crowd-pleaser finish."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast in the opening theater murder and stays legible: a killer is selecting and editing a group of rising Hollywood figures one by one. The repeated call-sheet, star, and “final edit” language gives the story a clean engine and a strong thematic spine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Santi is a vivid lead with swagger, vanity, and survival instinct, and Paz, Jaden, Gus, and Reagan each bring a distinct survival mode into the mix. The ensemble is strongest when the script lets those personalities clash under pressure, especially in the penthouse and hospital sequences."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a stylized Hollywood-as-horror conceit, with kills built around film tools, awards imagery, and industry language. The title sequence, the red-star call sheet motif, and the meta ending all show a writer reaching for a specific, aggressive voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The piece moves with real propulsion through set-piece after set-piece, and each location shift escalates the danger while widening the conspiracy. The middle section does spend time on repeated survival beats, but the forward drive stays intact because the killer’s pattern keeps evolving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a fresh genre package because the killer’s logic is rooted in casting, editing, and celebrity hierarchy rather than generic slasher mechanics. The idea that the survivors end up producing the story that tried to kill them gives the premise an inevitable, nasty snap."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Hollywood ecosystem is rendered as a living machine: studios, premieres, trailers, backlots, hospitals, coffee shops, and the Boulevard all feel like parts of one predatory system. The script uses industry rituals, status language, and physical spaces to make the world itself part of the threat."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: glossy, feral, satirical, and blood-soaked, with characters speaking in a heightened register that keeps the movie in a dangerous comic lane. The script knows exactly how far to push camp before snapping back into menace."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the carnage is a clear obsession with exploitation, authorship, and who gets to control the image, which gives the movie more aftertaste than a standard slasher. The Beatrice/Kai reveal and the final power reversal suggest a deeper system underneath the kills."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The best scenes come from friction: Santi versus Oscar, Santi versus Paz, the group’s shifting suspicion, and the eventual reveal of who is aligned with whom. The ensemble is large enough to generate multiple pairings, though the movie still leans most heavily on Santi as the gravitational center."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Ensemble of young adult performers with a few 30s/50s supporting roles",
+          "Two killer identities require physically distinct performers or doubled casting",
+          "Strong physical-performance requirements for lead and stunt-heavy roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with substantial exterior street and estate sequences",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Hollywood Boulevard / Chinese Theatre area",
+          "Luxury penthouse and high-end apartment interiors",
+          "Hospital wing and surgical prep rooms",
+          "Studio backlot, soundstage, tram/train, archive room",
+          "Bel Air estate and Hollywood Hills finale locations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Title sequence effects, masked-figure reveals, explosion beats, and some stylized lighting/monitor imagery; most violence is practical but highly choreographed.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy prosthetic gore, blood rigs, breakaway glass, practical burns, and elaborate kill effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Netflix, IMDb, Rolex, Tesla, LAPD, and multiple named venues/brands are referenced on the page."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Hotel California\" is specifically named in the Hollywood Boulevard sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Academy Award / Oscar imagery is central to the story world and repeated in dialogue and action."
+        },
+        {
+          "type": "brand",
+          "detail": "Universal Studios, Amoeba Music, Cedars-Sinai, Hollywood Chinese Theatre, El Capitan Theatre, and the Hollywood sign are all used as named settings."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming theatrical-feature lane / premium genre label",
+        "content_level": "Mature, explicit violence and language",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or genre-theatrical potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is contemporary and mostly contained to practical locations, but the kill design, stunt work, and multiple night exteriors push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is sizable and the lead roles demand actors who can handle heightened dialogue, physicality, and tonal control."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through many distinct Hollywood-area locations, including estates, hospitals, backlots, streets, and a cemetery."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic gore, torture-style kills, and extreme language place it firmly in mature territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script leans on named brands, real venues, and Oscar/Academy imagery that would need careful clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Hollywood is the killer’s operating system.",
+          "what_it_means": "The movie has a clean commercial engine because the horror is built out of fame, casting, and image management rather than generic stalking. That makes it especially attractive to genre buyers, producers chasing a high-concept hook, and actors who want a role that can play vanity, fear, and survival in one package.",
+          "evidence": "The red-star call sheet, the “A-List” title reveal, the awards/statue imagery, and the repeated industry language around leads, callbacks, and final cuts.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Santi is a star-making lead role.",
+          "what_it_means": "Santi gives the project a magnetic center: cocky, funny, volatile, and physically active, with a clear arc from hungry hopeful to ruthless survivor. That is the kind of role that can pull in a breakout young actor and give a buyer a face they can market hard.",
+          "evidence": "His confrontations in the penthouse, his taunting of the killer on the studio lot, and the final turn where he becomes the face of the survivors’ production company.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The kills are conceptually branded.",
+          "what_it_means": "Each death is tied to a specific Hollywood object or ritual, which gives the movie a trailer-friendly identity and a strong memory footprint. Horror fans, practical-effects buyers, and distributors looking for set-piece marketing beats will all understand the appeal immediately.",
+          "evidence": "Film shears, a statuette, a projector, a staple gun, a film splicer, a bone saw, and gold-leaf imagery all become signature murder tools.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has built-in status warfare.",
+          "what_it_means": "The script turns every room into a hierarchy fight, which creates repeatable tension and gives the movie a social engine beyond the slasher mechanics. That kind of ensemble friction is catnip for directors who like performance duels and for buyers who want a cast that can generate clips and quotes.",
+          "evidence": "The penthouse argument about nepo-babies, the suspicion circle on Hollywood Boulevard, and the shifting alliances among Santi, Paz, Gus, Jaden, Reagan, and Beatrice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels like a live wire.",
+          "what_it_means": "Hollywood is not just a backdrop here; it is a system of cameras, crowds, gates, trailers, and public image that keeps generating story pressure. That density makes the script feel bigger than its footprint and gives a producer a world that can support a strong marketing campaign.",
+          "evidence": "The Chinese Theatre premiere, Thorne Studios penthouse, Bel Air estate, Cedars-Sinai, Amoeba, Sunset Strip, and the backlot all function as distinct pressure chambers.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending flips victimhood into authorship.",
+          "what_it_means": "The final movement where the survivors become the producers of their own story gives the movie a nasty, satisfying aftertaste and a franchise-ready button. Buyers like endings that feel both complete and expandable, and this one leaves the door open without feeling soft.",
+          "evidence": "The one-year-later premiere of “The Final Edit” and the final tease of Beatrice’s sequel script.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a vicious, highly marketable Hollywood horror package with a killer premise, a breakout lead role, and a world that turns fame into a weapon. It has the kind of bold, trailer-ready imagery that can cut through a crowded genre field while still feeling specific enough to own."
+    },
+    "lead_characters": [
+      {
+        "name": "SANTI",
+        "role_type": "Lead",
+        "demographics": "Male · 19 · Latino / queer-presenting, athletic, model-beautiful",
+        "hook": "Santi is a vanity-powered striver with real survival instincts, the kind of kid who knows exactly how he looks in a frame and uses it as armor. He’s cocky, sexually charged, funny under pressure, and increasingly feral as the movie strips away the performance and reveals the predator underneath.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in *Bones and All* or Austin Butler in *Elvis*—a role where beauty, hunger, and danger are all part of the same instrument. Young actors looking for a career-making lead will chase this because it asks for charisma, physicality, comic timing, and a final-act transformation into something terrifying."
+      },
+      {
+        "name": "PAZ",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Latina / stylized Hollywood insider",
+        "hook": "Paz is the cool, brittle survivor who reads the room faster than anyone and keeps her fear under designer sunglasses until it cracks. She has the energy of someone who has already learned how to survive the machine, which makes her both guarded and unexpectedly dangerous.",
+        "why_actor_wants_this": "This is the kind of sharp, wounded supporting-to-co-lead territory that Rachel Sennott had in *Bottoms* or Ayo Edebiri in *The Bear*—fast, funny, and emotionally armored until the pressure forces the truth out. Actors who want a role with attitude, bite, and a late-breaking emotional spine will want this immediately."
+      },
+      {
+        "name": "JADEN",
+        "role_type": "Lead",
+        "demographics": "Female · mid-20s · contemporary LA actress type",
+        "hook": "Jaden is the anxious, hyper-aware survivor whose panic always feels one beat away from becoming strategy. She’s the kind of character who seems fragile until the movie asks her to become resourceful, and then she turns into a blade.",
+        "why_actor_wants_this": "This is the showcase lane of Maika Monroe in *It Follows* or Jenna Ortega in *Scream*—a role that lets an actor move from fear to resolve without losing the audience’s sympathy. It gives a performer a clean horror arc, a few big physical turns, and a chance to play intelligence under duress."
+      },
+      {
+        "name": "GUS",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · rugged, working-actor energy",
+        "hook": "Gus is the grounded adult in the room, the one who tries to impose order on chaos while everyone else spirals into ego and panic. He carries the weary competence of a man who has seen enough industry nonsense to know when the room is lying.",
+        "why_actor_wants_this": "This is the kind of grounded, morally alert role that Walton Goggins or Shea Whigham often gets to own—an actor’s part that plays authority, irritation, and survival intelligence at once. Character actors looking for a sharp ensemble anchor will see a lot of playable texture here."
+      },
+      {
+        "name": "REAGAN GARDNER",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · polished, controlled, physically capable",
+        "hook": "Reagan is the quietest person in the room until she isn’t, and the script uses that stillness to make her feel like a loaded gun. She reads as polished and compliant on the surface, but the later reveal gives her a chilling competence that changes how the audience sees every earlier beat.",
+        "why_actor_wants_this": "This is the kind of late-reveal performance territory that Elisabeth Moss in *The Invisible Man* or Rebecca Hall in *Resurrection* gets to own—an actor role where restraint becomes the weapon. It’s especially appealing to performers who like playing a character whose true alignment reframes the whole movie."
+      },
+      {
+        "name": "BEATRICE SMITH",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · exhausted industry professional with sharp intelligence",
+        "hook": "Beatrice is the most dangerous kind of Hollywood insider: overworked, invisible, and convinced she deserves the throne. She starts as the harried fixer and ends as the movie’s most chilling authorial force, which makes her both victim and architect.",
+        "why_actor_wants_this": "This is the showcase space of Toni Collette in *Hereditary* or Rosamund Pike in *Gone Girl*—a role that lets an actor pivot from controlled professionalism into full operatic control. Mid-career actresses who want a part with intelligence, menace, and a final-act power grab will chase this hard."
+      },
+      {
+        "name": "HOLLYWOOD",
+        "role_type": "Supporting",
+        "demographics": "Male-presenting masked killer · 20s-40s physical range",
+        "hook": "Hollywood is less a person than a system wearing a mask: elegant, brutal, theatrical, and always performing the logic of the industry back at its victims. The role is built as a physical and vocal instrument, with the mask, posture, and voice doing most of the character work.",
+        "why_actor_wants_this": "This is the kind of masked, movement-driven showcase that Doug Jones-style performers or stunt actors with strong character instincts can turn into a calling card. It offers a rare chance to create a memorable villain through physical precision, voice modulation, and iconography rather than dialogue alone."
+      },
+      {
+        "name": "OSCAR ST. CLAIR",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s · privileged, image-conscious",
+        "hook": "Oscar is the self-mythologizing nepo-baby who mistakes entitlement for stature and keeps trying to talk his way into legitimacy. He’s funny because he’s so convinced the room should already know his name, and tragic because the movie keeps proving he’s replaceable.",
+        "why_actor_wants_this": "This is the kind of brittle, status-obsessed role that Barry Keoghan in *Saltburn* or Nicholas Hoult in *The Menu* has made very playable—comic vanity with a nasty edge. Actors who like playing entitled charm curdling into panic will have a field day."
+      },
+      {
+        "name": "STEW NORTON",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · washed-up actor type",
+        "hook": "Stew is the insecure, defensive performer who can’t stop auditioning for relevance even when the room has already moved on. He’s the kind of guy who thinks self-awareness is the same thing as talent, which makes him a perfect target for the movie’s cruelty.",
+        "why_actor_wants_this": "This is the sort of humiliating, high-wire supporting part that actors like Paul Dano or Jesse Plemons can make unforgettable by leaning into embarrassment and self-delusion. It gives a performer a big comic-monologue lane before the movie turns him into a cautionary tale."
+      },
+      {
+        "name": "MARA VANE",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s · rising star / tabloid object",
+        "hook": "Mara is the movie’s opening image of manufactured desire: polished, adored, and already being consumed by the machine. She functions as the perfect emblem of the script’s central idea that celebrity is a form of public sacrifice.",
+        "why_actor_wants_this": "This is a compact but memorable opening showcase in the vein of Drew Barrymore in *Scream*—a role that instantly defines the movie’s rules and gives an actor a splashy, unforgettable entrance. It’s ideal for a recognizable young face who wants a prestige-horror calling card."
+      },
+      {
+        "name": "KAI JUMP",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · stunt coordinator / physical performer",
+        "hook": "Kai is the adrenaline junkie who believes labor and danger should earn him authorship, and that resentment curdles into fanaticism. He’s a body-first character whose identity is tied to the work he does in the shadows.",
+        "why_actor_wants_this": "This is the kind of physically expressive, morally warped role that lets a performer do more than just be the villain’s accomplice—it gives them a worldview. Stunt performers or athletic actors looking for a breakout character part would be drawn to it."
+      },
+      {
+        "name": "PRUDENCE BUCKINGHAM",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · period-drama star image",
+        "hook": "Prudence is all surface polish and professional panic, trapped in a costume and a system that has already decided how to frame her. She’s a perfect Hollywood victim because she understands image so completely that the movie can weaponize it against her.",
+        "why_actor_wants_this": "This is the kind of showpiece supporting role that lets an actress play vanity, terror, and physical transformation in one sequence, similar to the kind of prestige-horror material that sticks with audiences. It would appeal to performers who like a big, memorable set-piece with strong visual identity."
+      },
+      {
+        "name": "OTIS GREY",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · veteran actor, caustic, world-weary",
+        "hook": "Otis is the old guard version of Hollywood bitterness, a man who has survived long enough to turn contempt into a personality. He’s funny because he says the quiet part out loud, and dangerous because he knows exactly how the machine degrades people.",
+        "why_actor_wants_this": "This is the kind of acidic veteran role that Jeffrey Wright or Bryan Cranston can make sing—sharp, wounded, and full of lived-in resentment. Character actors who enjoy verbal sparring and status warfare will be drawn to it."
+      },
+      {
+        "name": "GUS KELSTON",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · physically capable, protective, grounded",
+        "hook": "Gus is the practical one, the guy who keeps trying to turn panic into procedure. He’s not flashy, but the script gives him the kind of steady presence that makes him feel like the only adult in a room full of narcissists.",
+        "why_actor_wants_this": "This is the dependable, scene-stealing support role that actors like Shea Whigham or David Harbour often elevate by making competence feel emotional. It gives a performer a chance to play authority under siege and still land humor."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn Hollywood itself into a slasher set-piece machine.",
+        "fit_profile": "Second- or third-feature genre directors, or established indie filmmakers with a taste for heightened satire and practical gore. This material rewards someone who likes strong visual motifs, ensemble tension, and a world where every prop can become a weapon.",
+        "detail": "The script gives a director a rare chance to stage set-pieces that are both conceptually legible and visually outrageous, with the industry setting doing half the storytelling for them. It will especially attract filmmakers who like performance-forward horror, glossy production design, and a tone that can swing from camp to menace without losing control."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium genre / streamer horror-thriller lane",
+        "detail": "It can be packaged around one breakout lead and a strong ensemble rather than a heavy name-talent dependency, which makes it viable for a director-driven greenlight. The Hollywood setting, killer concept, and franchise-capable ending give it both domestic marketing hooks and exportable genre appeal."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle can tighten around the list.",
+        "detail": "The hospital, coffee shop, parking-garage, and apartment beats all serve the same core function: separating the survivors and advancing the call-sheet logic. A next pass could consider compressing one or two of those movement beats so the escalation feels even more relentless without losing the ensemble suspicion engine.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The killer reveal can arrive with one cleaner breadcrumb trail.",
+        "detail": "The Beatrice/Kai/Twin/Understudy architecture is ambitious and gives the finale a big conspiracy shape, but the script is doing a lot of identity work in the back half. One lever would be to seed a few more visual or behavioral tells earlier so the final reveal feels inevitable rather than simply surprising.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is intentionally expansive.",
+        "detail": "The story moves through premieres, penthouses, garages, hospitals, estates, backlots, and the Hollywood sign, which gives it scale but also a broad shoot plan. A producer could protect the narrative by looking for any two locations that can be doubled or combined without losing the Hollywood-tour momentum.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The clearance pass will need attention.",
+        "detail": "Named brands, real venues, Oscar imagery, and a specific song all appear on the page, so a legal review will be part of the packaging conversation. The upside is that the script’s references are doing thematic work, so a clearance-minded pass can preserve the joke and the world while smoothing the paperwork.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The violence is a selling point and a platform filter.",
+        "detail": "The movie is built around explicit, highly stylized gore, which is part of the hook and also narrows the lane to mature genre buyers. That clarity is useful: it tells the packaging team exactly which audience this is for and keeps the pitch honest.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 43471,
+  "outputTokens": 5638,
+  "cost": 0.05797425,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-24T00:11:03.694Z",
+  "submission_id": "da052e51-71e9-47e9-9561-12184b460ec2",
+  "eval_id": "3e5cc50b-ea26-4301-b547-31c58858b4c9",
+  "title": "All I need is one dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s · elite athlete"
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Lead",
+      "demographics": "Male · early-to-mid 40s · working-class, widowed father"
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Lead",
+      "demographics": "Female · 5 to 14 across the script · child/teen"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Beth Rose",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "Frank Rose",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "Coach Dan Wensil",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Sharon Maid",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Father Rodger Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    }
+  ],
+  "positioning_hook": "A WNBA star returns to her Missouri roots to bury her grandparents, then finds herself pulled into a small-town gym, a guarded widower, and a second chance at building a life.",
+  "cost_usd": 0.04553325,
+  "input_tokens": 30183,
+  "output_tokens": 5088,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-24T00:11:39.263Z",
+  "submission_id": "c21dbbee-e030-4793-9d0b-9cfc4cac7e82",
+  "eval_id": "4a0bab84-f600-4c02-920d-619e8f3b424d",
+  "title": "Societys Ills",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Terrance Connoly",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · white · Southern working-class"
+    },
+    {
+      "name": "Sheriff Terry Lee Fields",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · white · Southern lawman"
+    },
+    {
+      "name": "Dr. Francis Lane Fletcher",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · white"
+    },
+    {
+      "name": "Weilland Rogers",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · white · former plastic surgeon"
+    },
+    {
+      "name": "Katy Rogers",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · white · wheelchair user"
+    },
+    {
+      "name": "Dr. Rutner",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · white"
+    },
+    {
+      "name": "James",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Black · physically imposing"
+    },
+    {
+      "name": "Agent Norris West",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white"
+    },
+    {
+      "name": "Bill Fields",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · white"
+    },
+    {
+      "name": "Grady",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · white"
+    },
+    {
+      "name": "Les",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · white"
+    },
+    {
+      "name": "Johnny Fields",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens-20s · white"
+    },
+    {
+      "name": "Paige Webber",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens-20s · white"
+    },
+    {
+      "name": "Abe Jackson",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · white"
+    }
+  ],
+  "positioning_hook": "A cop-killer with a blood-borne AIDS cure holes up with a dying Beverly Hills couple while a sheriff and federal doctors race to decide whether he’s a monster, a miracle, or both.",
+  "cost_usd": 0.05377125,
+  "input_tokens": 36415,
+  "output_tokens": 5880,
+  "status": "wrote:leads_ok"
+}

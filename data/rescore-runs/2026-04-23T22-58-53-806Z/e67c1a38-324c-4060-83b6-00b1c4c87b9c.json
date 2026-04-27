@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:01:18.803Z",
+  "submission_id": "e67c1a38-324c-4060-83b6-00b1c4c87b9c",
+  "eval_id": "3b98f56b-caa2-45ea-8764-29bb7030734b",
+  "title": "Incidents William Gillies Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Val Petersen",
+      "role_type": "Lead",
+      "demographics": "Female · mid-30s"
+    },
+    {
+      "name": "Officer Lota Delgado",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Elliot Luthe",
+      "role_type": "Lead",
+      "demographics": "Male · mid-30s"
+    },
+    {
+      "name": "Willa Petersen",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "Jack Nyback",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Pete Monette",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Agent Patrick Landry",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Harry",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Flora",
+      "role_type": "Supporting",
+      "demographics": "Female · 18"
+    },
+    {
+      "name": "Pruitt Getch",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Ivan Bowman",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "David Kane",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Willa's Mother / Nurse / Bartender / Other supporting roles",
+      "role_type": "Supporting",
+      "demographics": "Mixed ages and genders as scripted"
+    }
+  ],
+  "positioning_hook": "A traumatized teacher keeps getting abducted, released, and doubted until she turns detective on the man she’s sure is stalking her—and the truth is more disturbing than revenge.",
+  "cost_usd": 0.06261,
+  "input_tokens": 51146,
+  "output_tokens": 5389,
+  "status": "wrote:leads_ok"
+}

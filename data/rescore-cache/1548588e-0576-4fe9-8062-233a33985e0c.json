@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi horror",
+      "genre_tags": [
+        "Action thriller",
+        "Creature feature"
+      ],
+      "tone": "Gritty, muscular, suspenseful, and pulpy"
+    },
+    "positioning_hook": "A Calgary detective and a Canadian special-ops veteran uncover a trophy-hunting alien stalking mobsters, soldiers, and civilians — then it comes for her son.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise is instantly legible and built for genre buyers: a police procedural gets overtaken by a creature hunt, then escalates into a home-invasion and survival finale. The hook has broad male-skewing action appeal, but the cop-world specificity and hard R violence keep it a little more lane-defined than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The script announces its engine early with the zoo kill, the Bartolo murder, and the repeated use of the same alien weapon across seemingly unrelated victims. By the time Boyd and Hatcher connect the dots, the audience understands exactly what the movie is: a hunt for a hidden predator with a trophy logic."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Boyd has a strong, playable edge — blunt, funny, competitive, and ferociously protective of Jake — and Hatcher carries the wounded-warrior mystique that gives the story emotional ballast. The supporting players mostly serve the investigation and action engine, so the character appeal is solid rather than sprawling."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script leans into a clean genre collision: mob war, police procedural, war trauma, and creature-feature mythology all feeding one another. The choice to make the alien’s logic about competition and trophies gives the familiar Predator framework a fresh, story-specific angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "Each sequence adds a new piece of evidence or a new attack, and the story keeps widening from city crime to military history to a final rural showdown. The midpoint revelation about Afghanistan and the late brickyard assault keep the movie moving with real escalation."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a predator that targets winners — the ballplayer, the street racer, the brawler, the polar bear — is immediately graspable and gives the killings a primal logic. That pattern makes the movie feel both familiar and newly organized around a memorable rule."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script has a strong local-crime texture: police procedure, mob pressure, tactical units, a Canadian military rehab facility, and a rural Alberta farm all feel specific. The world is story-generating, though the movie’s momentum is driven more by the hunt than by a deeply layered social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a confident mix of hardboiled banter, procedural grit, and outrageous creature violence. Boyd’s sharp humor, the tactical bravado, and the brutal Predator set-pieces create a recognizable flavor that stays consistent."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the monster-movie surface there’s a clean emotional spine: Boyd’s fatherless household, Hatcher’s buried combat trauma, and the idea that both are hunters in different ways. The script hints at more interior life than it fully explores, which gives the material room to deepen without changing its commercial shape."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Boyd/Hatcher is the core dynamic and Boyd/Chris adds a useful family friction layer, but most other relationships are functional rather than generative. The ensemble supports the plot well, though the movie lives primarily on the lead pair and the predator threat."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child role with sustained danger exposure",
+          "Two physically capable leads",
+          "Several law-enforcement and military supporting roles",
+          "Creature performance requiring suit/performer plus voice/physicality"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Police station",
+          "City zoo",
+          "Baseball field",
+          "Industrial street-racing location",
+          "Canadian Forces rehabilitation facility",
+          "Rural farm and mine",
+          "Brickyard factory/staging area",
+          "Alien ship interior and trophy room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Invisible creature work, cloaking effects, thermal/POV overlays, laser targeting, pulse-cannon impacts, ship destruction, and multiple creature reveals require substantial VFX integration.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical gore, severed limbs, body mutilation, blood hits, explosions, vehicle impact, and creature prosthetics/animatronic elements.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Future Shop, Dairy Queen, Toyota, Jaguar, M-4, AK-47, Mossberg, and other named consumer/firearm references appear on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "No real people are named as characters, but the script references Afghanistan, Canadian Armed Forces, Navy SEALs, British SAS, and Australian SAS as factual institutions."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical genre release or premium-streaming action-horror lane",
+        "content_level": "Mature / hard R equivalent",
+        "series_engine_or_release_model": "Feature release model with strong trailer moments, creature reveals, and set-piece escalation"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Creature effects, invisible-action choreography, multiple large-scale night set-pieces, and a spaceship finale push this into a higher-budget genre lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on two strong leads plus a child in jeopardy, with a supporting law-enforcement and military ensemble around them."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across a zoo, city streets, a baseball field, a rehab facility, a farm, a mine, and a brickyard, but all remain within a contemporary North American footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic creature violence, dismemberment, bloodshed, and a child-targeted attack place it firmly in hard-R territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses several recognizable brands and real military institutions, but it does not hinge on a single life-rights or music clearance."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly playable.",
+          "what_it_means": "A buyer can pitch this in one breath: a homicide detective and a combat veteran are tracking a hidden hunter whose victims keep turning up with trophies missing. That kind of clean, trailer-ready engine is exactly what genre distributors and streamer buyers want when they need a high-concept action-horror package.",
+          "evidence": "The zoo kill, the Bartolo murder, and the repeated missing hands/paws/skulls all point to one predator with a trophy logic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Boyd is a strong franchise lead.",
+          "what_it_means": "She has attitude, authority, humor, and maternal stakes in the same role, which gives an actress a full commercial range inside one character. Female-led action buyers and casting directors looking for a cop who can spar verbally and physically will immediately see the value.",
+          "evidence": "Her banter with Chris, her confrontation with Bartolo, and the home-defense sequence with Jake all define her quickly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Hatcher brings wounded-hero gravity.",
+          "what_it_means": "The veteran angle gives the movie a second lead with emotional weight, not just a tactical helper, and that broadens the appeal beyond pure monster mechanics. Actors who want the showcase of a silent, competent survivor carrying buried trauma will respond to this part.",
+          "evidence": "His Afghanistan story, his reaction to the mutilated bodies, and his final return to the hunt all build that profile.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Predator logic feels fresh and legible.",
+          "what_it_means": "Making the creature hunt winners, champions, and apex animals gives the violence a rule set that audiences can track and anticipate. That clarity helps marketing, because the audience understands the game before the final act even starts.",
+          "evidence": "The ballplayer, street racer, bouncer, polar bear, and battlefield survivors all fit the same pattern.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set-pieces are built for trailer moments.",
+          "what_it_means": "The baseball-field kill, the home invasion, the brickyard firefight, and the mine finale each offer a distinct visual beat that can sell the movie in clips and spots. That gives the project a real promotional spine, which matters for theatrical and premium-streaming buyers alike.",
+          "evidence": "Jason’s death in front of the crowd, Boyd and Jake under fire at home, and the ship explosion all read as big-screen moments.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Canadian setting gives it a clean lane.",
+          "what_it_means": "The Alberta locations, Canadian military references, and local police texture make this feel specific without becoming export-hostile. That kind of recognizable but not overbranded setting can travel well while still giving the production a distinct identity.",
+          "evidence": "Calgary-area streets, Edmonton rehab, rural Alberta farm, and Canadian Armed Forces details are woven through the story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The finale pays off the premise with escalation.",
+          "what_it_means": "The movie doesn’t just reveal the monster; it turns the hunt into a survival showdown that uses the farm, mine, and ship as a single escalating arena. That gives the third act the kind of payoff buyers want from a creature feature: bigger reveal, bigger stakes, bigger finish.",
+          "evidence": "The mine battle, the second Predator reveal, and the ship destruction close the loop on the hunt.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, commercial creature feature with a procedural spine and a hard-R payoff. The script gives buyers a strong female cop lead, a battle-scarred military co-lead, and a predator mythology organized around trophies, competition, and escalating set-pieces."
+    },
+    "lead_characters": [
+      {
+        "name": "Alice Boyd",
+        "role_type": "Lead",
+        "demographics": "Female · mid-late 30s · athletic police detective",
+        "hook": "Boyd is a hard-charging detective with a sharp mouth, a competitive streak, and a very visible maternal core. She reads as the kind of cop who can run down a suspect, needle a mobster in his own deli, and then turn feral when her son is threatened.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs — a smart, physically capable investigator whose authority is tested in public and private at the same time. Mid-career dramatic leads who want a role that can play toughness, wit, and maternal terror in one package will chase this."
+      },
+      {
+        "name": "Shane Hatcher",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to early 40s · Canadian Armed Forces veteran / special operations background",
+        "hook": "Hatcher is quiet, self-contained, and carrying the kind of damage that only shows up when the room gets too still. He has the calm of a professional killer, the decency of a man trying to stay human, and the haunted body language of someone who has already survived the impossible once.",
+        "why_actor_wants_this": "This is the showcase space of Michael B. Jordan in Creed or Tom Hardy in Warrior — a physically disciplined role where restraint, competence, and buried pain do the acting. Actors who want a stoic action lead with emotional undertow will see a lot to play here."
+      },
+      {
+        "name": "Chris Lang",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to early 40s · police tactical officer",
+        "hook": "Chris is Boyd’s younger brother and a tactical cop who lives in the banter zone between sibling rivalry and professional respect. He is cocky, funny, and useful under fire, which makes him feel like a real family member rather than a plot device.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded camaraderie space of Don Cheadle in Traffic — a character who can carry humor, competence, and loyalty without needing the movie to stop for him. Working character actors and recognizable TV faces will like the chance to play the brother who can spar, joke, and fight beside the lead."
+      },
+      {
+        "name": "Tony Lozono",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · detective",
+        "hook": "Tony is the procedural counterweight to Boyd: competent, skeptical, and increasingly annoyed that she keeps outrunning the chain of command. He gives the movie a useful straight-man energy and a little internal friction inside the task force.",
+        "why_actor_wants_this": "This is the kind of supporting detective part that plays like Michael Kelly in House of Cards — dry, watchful, and able to register tension with a look. Character actors who specialize in authority-with-irritation roles will know exactly how to land this."
+      },
+      {
+        "name": "Captain West",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · police captain",
+        "hook": "West is the weary institutional voice trying to keep the department from exploding under legal and political pressure. He’s not flashy, but he gives the movie a believable chain-of-command presence and a human face for the bureaucracy closing in.",
+        "why_actor_wants_this": "This is the kind of authority role that gives an actor the grounded command space of J.K. Simmons in Whiplash — a man whose scenes are about pressure, not speeches. Veteran character actors who can make institutional frustration feel lived-in will be drawn to it."
+      },
+      {
+        "name": "Dr. Leonard",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · coroner",
+        "hook": "Dr. Leonard is prickly, skeptical, and just self-important enough to be funny while still serving the investigation. He adds a nice procedural texture and a bit of comic abrasion to the forensic side of the story.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dry, scene-stealing utility of Richard Jenkins in The Visitor — a professional who can land exposition without sounding like exposition. Character actors with comic timing and authority will enjoy the friction."
+      },
+      {
+        "name": "Gareth Oakes",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · medical examiner",
+        "hook": "Oakes is the younger, more curious forensic mind who helps Boyd connect the dots when the evidence gets impossible. He’s smart, slightly awkward, and a useful audience surrogate for the science side of the mystery.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the analytical, quietly intense space of David Dastmalchian in Prisoners — a brainy investigator who can carry dread through detail. Actors who play smart, slightly off-center professionals will respond to it."
+      },
+      {
+        "name": "Johnny Trang",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · street racer",
+        "hook": "Johnny is swagger, vanity, and speed in one package, which makes him a perfect early victim and a memorable one. He’s all attitude until the Predator strips that attitude away in seconds.",
+        "why_actor_wants_this": "This is the kind of flashy, doomed part that gives an actor the kinetic energy of the opening victims in Scream — a role that gets a big entrance and a brutal exit. Younger actors looking for a scene-stealing genre credit will want it."
+      },
+      {
+        "name": "Jimmy Bartolo",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · mob boss",
+        "hook": "Jimmy is old-school criminal power: loud, possessive, and emotionally volatile when family is involved. He gives the movie a human antagonist layer before the alien threat takes over the board.",
+        "why_actor_wants_this": "This is the kind of mob-boss role that plays like James Gandolfini in The Sopranos — a man whose authority is inseparable from grief and rage. Actors with gravitas and menace will see a lot of playable texture here."
+      },
+      {
+        "name": "Dimitri Trushencko",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s to 60s · Eastern European crime boss",
+        "hook": "Trushencko is colder and more militarized than Bartolo, with a blunt, transactional way of speaking that makes him feel dangerous even before the gunfight. He’s the kind of villain who can stand still and still dominate a room.",
+        "why_actor_wants_this": "This is the showcase territory of Mads Mikkelsen in Hannibal — controlled, intimidating, and elegant in a way that makes violence feel inevitable. Actors with a strong physical presence and a taste for menace will chase it."
+      },
+      {
+        "name": "Shane Hatcher's Father Tom Hatcher",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · rural Alberta elder",
+        "hook": "Tom is the warm, teasing older presence who gives Hatcher a home base and a little emotional oxygen. He’s practical, funny, and quietly supportive, which makes the farm feel lived-in rather than decorative.",
+        "why_actor_wants_this": "This is the kind of elder-support role that gives an actor the easy humanity of Nick Nolte in Warrior — a small part that can still carry real warmth and texture. Veteran character actors will like the chance to anchor the home-life material."
+      },
+      {
+        "name": "Jake",
+        "role_type": "Supporting",
+        "demographics": "Male · 7-8 years old · child actor",
+        "hook": "Jake is Boyd’s son and the emotional pressure point that turns the movie from a hunt into a rescue. He’s bright, observant, and vulnerable in a way that makes every threat feel immediate.",
+        "why_actor_wants_this": "This is the child role that gives the story the emotional stakes of the kid in Signs — a vulnerable center that makes the danger personal. Young performers with strong naturalism and parents/agents looking for a high-visibility genre part will be interested."
+      },
+      {
+        "name": "Bird",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · low-level crook",
+        "hook": "Bird is a slippery, comic street-level criminal who helps open the movie’s police-world texture. He’s not a major engine, but he gives the early investigation a lived-in, slightly grubby feel.",
+        "why_actor_wants_this": "This is the kind of small but juicy part that gives an actor the streetwise snap of a supporting player in Training Day. Character actors who can make a few scenes pop will like the opportunity."
+      },
+      {
+        "name": "Officer Cook",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · tactical officer",
+        "hook": "Cook is the swaggering younger cop whose mouth outruns his judgment. He adds friction, competition, and a little comic testosterone to the tactical scenes.",
+        "why_actor_wants_this": "This is the kind of hotshot supporting role that gives an actor the cocky energy of a young cop in End of Watch. Performers who can play arrogance that later pays off in action will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a creature feature with procedural credibility and real tactical muscle.",
+        "fit_profile": "Mid-career genre directors with one or two features, or seasoned TV action directors moving into features, who already understand how to balance character banter, night exteriors, and clean action geography. The material rewards someone who likes practical tension, hard-R violence, and making a monster feel like a hunting intelligence rather than a random effects engine.",
+        "detail": "The movie gives a director a chance to build from police work into military backstory and then into a contained survival finale, so the craft job is escalation, not just spectacle. Directors who can make action legible and still keep the human banter alive will see this as a strong calling card."
+      },
+      "buyer_appeal": {
+        "tier": "$20-35M feature",
+        "lane": "Premium-streaming or theatrical genre lane with action-horror and creature-feature DNA",
+        "detail": "It can be packaged around two strong lead performances without needing a giant ensemble, but the Predator creature work and final ship destruction mean the buyer is really greenlighting the effects execution as much as the script. The alien-hunter lane has durable international export value, and the police/military/crime framing gives it enough familiarity to travel cleanly."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening could seed the predator rule faster.",
+        "detail": "The script already lands the deer-and-wolves prologue, but the first act spends several pages in crime-world setup before the audience gets the full pattern. One lever would be to let the “winner/trophy” logic surface a beat earlier so the zoo, the ballfield, and the street race all feel like part of one accelerating design.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The Bartolo/Trushencko war can stay leaner.",
+        "detail": "The mob feud gives the movie a useful human engine, but the alien story ultimately takes over the frame. A next pass could consider compressing some of the legal and territorial back-and-forth so the investigation spends more time on the creature pattern and less on the criminal chessboard.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Boyd and Hatcher could get one more emotional exchange.",
+        "detail": "Their partnership works because of competence and shared danger, and the final act proves the chemistry. One direction would be to add a single earlier beat that clarifies what each sees in the other beyond tactical usefulness, which would deepen the payoff when they become the movie’s survival team.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The creature geography asks for a sizable effects plan.",
+        "detail": "The invisible predator, thermal vision, pulse cannon, sky-cycle, ship interior, and multiple full-body reveals all point to a substantial VFX and creature-effects package. The cleanest simplification lever would be to protect the ship and final duel while consolidating any redundant mid-movie reveal beats that do not change the hunt.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The hard-R violence is part of the sell.",
+        "detail": "The script is unapologetic about dismemberment, blood, and body horror, which is exactly what gives the creature material its punch. That content profile is a feature, not a detour, but it does place the project squarely in mature genre lanes rather than broad commercial territory.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": "",
+    "production_reality_summary": ""
+  },
+  "weightedScore": 74.7,
+  "tier": "Optionable",
+  "inputTokens": 46551,
+  "outputTokens": 5475,
+  "cost": 0.05955075,
+  "declaredFormat": "Feature film"
+}

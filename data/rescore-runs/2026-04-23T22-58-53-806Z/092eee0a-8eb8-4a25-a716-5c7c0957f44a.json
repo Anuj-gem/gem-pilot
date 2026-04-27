@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:15:34.781Z",
+  "submission_id": "092eee0a-8eb8-4a25-a716-5c7c0957f44a",
+  "eval_id": "cbdb17da-2443-4439-9610-ea09df9e0846",
+  "title": "Black Ops Girlfriend",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "JASMINE BOONE",
+      "role_type": "Lead",
+      "demographics": "Female · 20s/30s · physically agile, action-capable"
+    },
+    {
+      "name": "CHRISSY WHITE",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · nurse, slight build, glasses, nontraditional action lead"
+    },
+    {
+      "name": "HASTINGS",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · grizzled CIA boss"
+    },
+    {
+      "name": "AINSLEY MARKS",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · British, polished, athletic"
+    },
+    {
+      "name": "ANDREWS",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · CIA authority figure"
+    },
+    {
+      "name": "ED WHITE",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · pediatrician, father"
+    },
+    {
+      "name": "ESTHER WHITE",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · retired teacher, mother"
+    },
+    {
+      "name": "CHARLENE",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · soccer mom, shelter staff"
+    },
+    {
+      "name": "PICASSO",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Slavic accent, criminal mastermind"
+    },
+    {
+      "name": "GREGORIO",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s/30s · criminal muscle"
+    },
+    {
+      "name": "SAMIR",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · nurse"
+    },
+    {
+      "name": "DANIEL",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · nurse"
+    }
+  ],
+  "positioning_hook": "A CIA assassin hiding out with a gentle male nurse falls for him, then has to choose between love and a nuclear conspiracy when her handlers turn on her.",
+  "cost_usd": 0.06321974999999999,
+  "input_tokens": 52619,
+  "output_tokens": 5279,
+  "status": "wrote:leads_ok"
+}

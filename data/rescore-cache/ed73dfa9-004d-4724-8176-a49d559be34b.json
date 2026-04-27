@@ -1,0 +1,269 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic sci-fi drama",
+      "genre_tags": [
+        "psychological thriller",
+        "family drama"
+      ],
+      "tone": "Grounded, wistful, emotionally heightened, and quietly uncanny"
+    },
+    "positioning_hook": "A brain-tumor diagnosis forces a young man to choose between saving his life and preserving the woman only he can see — while his undocumented little sister and grieving mother depend on him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional promise is immediate: love, mortality, and family responsibility all collide in a clean, high-concept frame. The hook has broad streamer appeal, though the romance is more intimate than four-quadrant and the science-fiction element is used as an emotional amplifier rather than a spectacle engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and cleanly: Gavin meets Allie, then learns she may be tied to his tumor and his perception itself. The script keeps the central question legible throughout — is she memory, hallucination, or something else — while layering in the sister/adoption pressure that gives the story a second engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Gavin has a strong built-in contradiction: emotionally guarded, funny, and suddenly responsible for a child and a mother while falling for a woman who may not exist. Allie is vivid and actor-friendly, and Ruby gives the story real heart, though the supporting ensemble mostly serves Gavin's journey rather than branching into fully independent arcs."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a romantic premise and threads it through brain science, immigration, caregiving, and grief in a way that feels specific rather than generic. The repeated use of perception — the blank book, the wrong phone number, the missing tattoo, the couch test, the final memory reveal — gives the piece a confident formal identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps turning on meaningful reversals: the hospital diagnosis, the licensing offer, the adoption complications, the surgery deadline, and the final memory reveal. The middle section is more reflective than propulsive, but the emotional stakes stay active because every scene is tied to time, money, or the possibility of losing Allie."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script has the 'of course this exists' quality: a love story where the beloved may be a hallucination, and the cure for that loneliness is a technology that can recreate memory. The adoption storyline and the mother's emotional exile deepen the premise so it feels like more than a single clever twist."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Toluca Lake, Santa Monica, the Grove, UCLA, and the Synapulse lab all feel like lived-in Southern California spaces with social texture. The world is not sprawling, but it has enough institutional and neighborhood specificity to support the story's emotional and commercial lanes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually legible: tender romantic comedy rhythms sit beside medical dread, bureaucratic pressure, and a faintly surreal perception puzzle. The script can be funny in the bench scenes and devastating in the hospital scenes without losing its emotional center."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "What begins as a strange romance opens into questions about memory, identity, parenthood, immigration, and what counts as a real relationship. The final reveal that Allie is memory rather than imagination gives the story a second emotional layer that rewards a rewatch and suggests a deeper thematic design."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Gavin-Allie-Ruby triangle carries the movie, and Thanh plus Dr. Fisher add meaningful pressure, but the story is still fundamentally lead-driven. Elaine is a strong supporting presence, yet the ensemble functions more as a set of emotional mirrors than a fully combinatorial engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Mixed-race male lead in his 20s",
+          "Female romantic lead in her 20s",
+          "Young child performer around age 3",
+          "Vietnamese mother in her 60s",
+          "Female doctor in her 50s",
+          "Female elder in her 70s",
+          "Tech/startup supporting roles in 30s-50s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Los Angeles neighborhood locations including Toluca Lake, Santa Monica, the Grove, UCLA, and a Bay Area tech office",
+          "Hospital interiors and a contained MRI/fMRI setup",
+          "Apartment interiors for Gavin, Thanh, and Elaine",
+          "A lake-view residential property"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily perception-based effects, visual absence/presence shifts, and a few memory/flashforward transitions; no large-scale spectacle.",
+        "stunts_level": "none",
+        "sfx_needs": "Medical equipment, hospital practicals, and controlled machine-room setups.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Barnes & Noble, UCLA, The Grove, Catalina Express, and New York Times are named."
+        },
+        {
+          "type": "brand",
+          "detail": "Synapulse is a fictional company name used as a plot-critical tech brand."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming feature or festival-to-platform romantic drama with sci-fi elements",
+        "content_level": "PG-13 equivalent, emotionally mature",
+        "series_engine_or_release_model": "Feature release model; strongest path is festival launch followed by streamer acquisition or direct premium-streaming debut."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary Los Angeles locations, a small cast, and only minor perception effects keep the budget in an accessible feature range."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The Gavin/Allie/Ruby triangle needs strong chemistry and the child role is central, with additional identity-specific casting for Gavin and Thanh."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through multiple recognizable LA settings plus a Bay Area tech office, but the footprint remains manageable and mostly urban."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Medical diagnosis, terminal-leaning stakes, immigration anxiety, and emotional breakdowns keep the material in an adult lane without pushing into explicit territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script references a handful of real-world brands and institutions, but no major life-rights or music licensing dependencies are built into the premise."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [],
+      "headline": "Toluca Lake is a tender, high-concept romantic drama with a clean commercial engine: a man falling in love with a woman only he can see, while a brain tumor, a child sister, and a grieving mother force him to choose what kind of life he can afford to keep. It’s intimate enough for actors to chase and concept-forward enough for buyers to understand instantly, with a final reveal that gives the whole movie a second emotional life."
+    },
+    "lead_characters": [
+      {
+        "name": "GAVIN",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s · mixed race, one-half Asian",
+        "hook": "Gavin is a dry, observant, emotionally contained young man who uses humor as a pressure valve and attention to detail as a survival skill. He is suddenly carrying three impossible burdens at once — a brain tumor, a little sister he may have to raise, and a mother who is retreating from the world — which makes his romance with Allie feel both intoxicating and dangerous.",
+        "why_actor_wants_this": "This is the showcase territory of Jake Gyllenhaal in Nightcrawler crossed with the emotional openness of Andrew Garfield in The Eyes of Tammy Faye — a lead who can be funny, fragile, and increasingly unmoored without losing audience sympathy. Actors looking for a prestige romantic lead with psychological edge will chase it because the part asks for charm, denial, grief, and a final surrender to love all in one arc."
+      },
+      {
+        "name": "ALLIE",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Allie is bright, self-possessed, and wry, with the kind of intelligence that makes every conversation feel like a flirtation and every silence feel loaded. She carries her own loneliness, her own ambition, and a growing awareness that she may be tied to Gavin’s mind in ways even she cannot fully control.",
+        "why_actor_wants_this": "This is the showcase space of Michelle Williams in Take This Waltz or Natalie Portman in Garden State — a romantic lead who can be playful, wounded, and philosophically alert without becoming abstract. Actors who want a part that plays chemistry, mystery, and emotional devastation in equal measure will see this as a calling-card role."
+      },
+      {
+        "name": "RUBY",
+        "role_type": "Lead",
+        "demographics": "Female · 3 years old · Cambodian",
+        "hook": "Ruby is a tiny, mostly nonverbal emotional anchor whose innocence gives the movie its clearest pulse. She is observant, shy, and unexpectedly funny in the way children are, and her presence turns Gavin’s crisis into a real family story rather than a private romantic one.",
+        "why_actor_wants_this": "This is the kind of child role that, in a performance sense, recalls the emotional center of The Florida Project — a small character whose reactions shape the audience’s entire feeling of the movie. For a young performer, it’s a vivid, scene-stealing part built around presence, curiosity, and pure emotional readability."
+      },
+      {
+        "name": "THANH",
+        "role_type": "Lead",
+        "demographics": "Female · 60s · Vietnamese",
+        "hook": "Thanh is a grieving, inward woman whose shame, fatigue, and dislocation have hardened into withdrawal. Underneath that shell is a mother who has lived through migration, loss, and reinvention, and whose eventual honesty gives the film one of its most affecting emotional turns.",
+        "why_actor_wants_this": "This is the kind of role that gave Yuh-Jung Youn in Minari and Hong Chau in Downsizing their most memorable material — a mother figure whose quietness contains history, humor, and ache. Veteran dramatic actresses will respond to the chance to play a woman whose interior life finally breaks open in the second half."
+      },
+      {
+        "name": "DR. FISHER",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s",
+        "hook": "Dr. Fisher is a polished, intellectually hungry psychologist whose empathy is always in tension with his ambition. He reads as the kind of man who can sound compassionate while quietly steering the room toward his own agenda, which makes him both useful and unsettling.",
+        "why_actor_wants_this": "This is the kind of morally elastic supporting role that actors like Paul Dano in The Batman or Michael Stuhlbarg in Call Me by Your Name can make unforgettable — a smart, controlled presence with hidden motive energy. Character actors who like to play intelligence, restraint, and a little menace will be drawn to it."
+      },
+      {
+        "name": "DR. NAKAMURA",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Dr. Nakamura is direct, competent, and emotionally contained, the kind of doctor who can deliver devastating news without theatrics. She functions as the story’s reality anchor, but she also has enough bedside humanity to keep the film from tipping into coldness.",
+        "why_actor_wants_this": "This is the sort of grounded authority role that actors like Cherry Jones in Succession or Patricia Clarkson in The Station Agent can elevate with very little screen time. It offers a clean, high-trust performance slot for a seasoned actress who can make exposition feel lived-in."
+      },
+      {
+        "name": "ELAINE",
+        "role_type": "Supporting",
+        "demographics": "Female · 70s",
+        "hook": "Elaine is a sharp, unsentimental older neighbor with a dry sense of humor and a surprising emotional generosity. She has the lived-in authority of someone who has survived enough to stop pretending, which makes her a welcome counterweight to the younger characters’ panic.",
+        "why_actor_wants_this": "This is the kind of scene-stealing elder role that gave June Squibb in Nebraska or Frances Sternhagen in Misery their bite — a compact part with wit, history, and unexpected warmth. Character actresses who enjoy stealing scenes with plainspoken authority will gravitate to it."
+      },
+      {
+        "name": "GREGORY",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Gregory is a practical lawyer who speaks in the language of consequences, paperwork, and money. He is not there to comfort anyone; he is there to translate the emotional mess into a solvable legal problem, which gives him a crisp, functional edge.",
+        "why_actor_wants_this": "This is the kind of grounded professional role that actors like Richard Jenkins or Denis O’Hare can make memorable by turning procedure into character. It gives a performer a clean, authoritative lane with just enough dry humor to keep it human."
+      },
+      {
+        "name": "SAMUEL",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Samuel is the polished startup operator who understands the commercial value of Gavin’s condition before anyone else does. He’s smooth, efficient, and slightly opportunistic, which makes him the story’s cleanest face of monetized wonder.",
+        "why_actor_wants_this": "This is a strong supporting slot for an actor who can play polished tech-world confidence with a hint of predation, the kind of energy seen in roles like the startup executives in The Social Network. It gives a performer a modern, recognizable power posture without requiring a huge amount of screen time."
+      },
+      {
+        "name": "CHERYL",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Cheryl is a no-nonsense nurse who keeps the hospital world moving with calm efficiency. She’s a small but necessary human presence in the medical machinery, and her steadiness helps ground the story’s more surreal turns.",
+        "why_actor_wants_this": "This is the kind of efficient, scene-clean role that working actors know how to make pop, similar to the grounded hospital staff parts that often stand out in prestige dramas. It offers a crisp, professional beat without overcomplication."
+      },
+      {
+        "name": "TARA",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-20s",
+        "hook": "Tara is the warm, socially fluent preschool teacher who instantly exposes the awkwardness in Gavin and Allie’s family setup. She’s friendly, perceptive, and lightly comic, which makes her a useful pressure point in the story’s domestic material.",
+        "why_actor_wants_this": "This is a compact but memorable supporting role in the vein of the charming outsider in a Noah Baumbach or Nicole Holofcener scene — someone who can make a room feel real in a few lines. It’s a nice fit for an actor who wants a bright, naturalistic part with comic timing."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a love story where perception itself becomes the third lead.",
+        "fit_profile": "First- or second-feature directors with a strong festival short or a prior character-driven indie who are drawn to emotional realism with a controlled surreal edge. This material rewards directors who care about performance, visual restraint, and tonal balance more than spectacle, and who can make a medical/romantic premise feel intimate rather than procedural.",
+        "detail": "The craft opportunity is in keeping the audience inside Gavin’s emotional certainty even as the film keeps reclassifying what he sees, which is a very specific directorial skill. Directors who like contained worlds, actor-forward scenes, and a final-act recontextualization will see a clean lane here."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Premium streamer / festival-to-platform elevated romance lane",
+        "detail": "The movie can be packaged around two strong lead performances and a small supporting ensemble, so it does not require a giant name stack to make sense on paper. The blend of romance, medical mystery, and family stakes fits the current streamer appetite for elevated genre with emotional payoff, and the contained footprint keeps it viable for a modest theatrical-to-platform rollout."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated relationship beats.",
+        "detail": "The Gavin-Allie scenes are consistently engaging, and the movie knows how to play their banter, but a next pass could look for one or two additional turns that change the shape of the relationship rather than only deepening it. The strongest version of this story is the one where each major reunion or argument reveals a new layer of the central contradiction, not just a new shade of the same feeling.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The adoption thread can be foregrounded earlier.",
+        "detail": "Ruby’s legal status becomes a major pressure point later, and the emotional stakes are already strong enough to support that earlier. One lever would be to seed the adoption uncertainty and the Cambodia backstory a little sooner so the family clock feels present from the first act.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The tech-company lane is a clean packaging advantage.",
+        "detail": "The Synapulse material keeps the sci-fi element contained to a few offices, a lab, and one machine room, which protects the budget and makes the project easier to mount. That also gives buyers a clear premium-streamer lane: elevated concept, modest footprint, and a hook that can be sold in one sentence.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand references are manageable but worth tracking.",
+        "detail": "Barnes & Noble, UCLA, The Grove, Catalina Express, and the New York Times all appear by name, so a production pass should confirm which references stay and which can be generalized if needed. The good news is that none of these are central to the premise, so the story can keep its texture even if a few names are softened.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Ruby’s age makes casting and scheduling central.",
+        "detail": "The three-year-old role is emotionally essential and will shape how scenes are staged, how long they can be shot, and how much coverage is practical. The version of the film that protects Ruby’s performance by keeping her scenes simple and behavior-driven will be the most producible and the most affecting.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final memory reveal is the biggest payoff.",
+        "detail": "The Barnes & Noble ending lands because it reopens the question of what Gavin actually experienced, and that’s the movie’s signature move. A future pass could consider how much earlier the script wants to plant the memory-versus-imagination logic so the ending feels inevitable as well as surprising.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 72,
+  "tier": "Optionable",
+  "inputTokens": 36141,
+  "outputTokens": 5391,
+  "cost": 0.05136525,
+  "declaredFormat": "Feature film"
+}

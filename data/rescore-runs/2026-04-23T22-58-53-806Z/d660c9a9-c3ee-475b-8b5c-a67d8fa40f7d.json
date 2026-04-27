@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-04-23T23:24:50.890Z",
+  "submission_id": "d660c9a9-c3ee-475b-8b5c-a67d8fa40f7d",
+  "eval_id": "b3f6aa93-f359-477a-a259-0bb334d1be05",
+  "title": "chritmas time script final",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 19,
+  "lead_characters_summary": [
+    {
+      "name": "Frances",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · contemporary African diaspora mother and wife"
+    },
+    {
+      "name": "Ron",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · businessman / dealmaker"
+    },
+    {
+      "name": "Tania",
+      "role_type": "Supporting",
+      "demographics": "Female · 7-10 · child"
+    },
+    {
+      "name": "Juliana",
+      "role_type": "Supporting",
+      "demographics": "Female · 7-10 · child"
+    },
+    {
+      "name": "Sandra",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · contemporary"
+    },
+    {
+      "name": "Grace",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · contemporary"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · disabled / paraplegic"
+    },
+    {
+      "name": "Grant",
+      "role_type": "Lead",
+      "demographics": "Male · 5 · child"
+    },
+    {
+      "name": "Mr. Ted",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · father"
+    },
+    {
+      "name": "Mrs. Maria",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · mother"
+    },
+    {
+      "name": "Yates",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · host / community organizer"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · offscreen spouse/partner"
+    },
+    {
+      "name": "Jasmine",
+      "role_type": "Supporting",
+      "demographics": "Female · 12 · child"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · contemporary"
+    },
+    {
+      "name": "Franca",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · contemporary"
+    },
+    {
+      "name": "Harriet",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · contemporary"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · contemporary"
+    },
+    {
+      "name": "Jake",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · speech impediment"
+    },
+    {
+      "name": "Rebecca",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · petite, soft voice"
+    }
+  ],
+  "positioning_hook": "A Christmas anthology of families, friends, and strangers whose holiday plans collapse into lessons about love, sacrifice, and belief — each story ending in a small miracle.",
+  "cost_usd": 0.044958,
+  "input_tokens": 24082,
+  "output_tokens": 5977,
+  "status": "wrote:leads_ok"
+}

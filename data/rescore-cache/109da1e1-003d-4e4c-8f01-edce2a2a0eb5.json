@@ -1,0 +1,412 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime drama",
+      "genre_tags": [
+        "Psychological drama",
+        "Family drama"
+      ],
+      "tone": "Grounded, darkly comic, intimate, and simmering"
+    },
+    "positioning_hook": "A North Jersey mob boss starts therapy after a panic attack, and the first thing he has to untangle is whether he’s losing his mind or his family.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 9,
+        "reasoning": "The premise is instantly legible and unusually broad: a mob boss in therapy, a marriage under strain, a mother who can still wound him, and a criminal world under pressure from RICO. The script gives buyers a clear engine with prestige appeal and mainstream curiosity baked in."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands in the opening pages with the Melfi session, the panic attack, and the duck motif that becomes the emotional spine. By the time the garbage-contract beating and the family dinner arrive, the story engine is unmistakable."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 9,
+        "reasoning": "Tony is built on contradiction: tender with the ducks, brutal in the parking lot, defensive in therapy, and vulnerable with Carmela and Meadow. Around him, Carmela, Melfi, Junior, Christopher, Livia, Artie, and Silvio each carry distinct social and emotional functions that keep the material alive beyond the central plot."
+      },
+      "creative_originality_and_boldness": {
+        "score": 10,
+        "reasoning": "The script’s boldness is in the collision of mob violence and domestic psychology, played with total confidence and no wink. The duck sequence, the therapy scenes, and the final family-table image turn a familiar crime world into something unusually personal and culturally durable."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps tightening through escalating pressures: the panic attack, the uncle’s hit order, the garbage contract, the family fractures, and the therapy revelations. It’s more character-driven than plot-twisty, but the scenes keep paying off into stronger emotional and criminal stakes."
+      },
+      "resonant_originality": {
+        "score": 10,
+        "reasoning": "This is one of those rare premises that feels obvious only after you’ve seen it: a mob king whose real enemy is dread, aging, and family entropy. The ducks, the psychiatrist, the suburban fortress, and the criminal bureaucracy all lock together into a fresh identity."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "North Jersey is rendered as a living ecosystem of sanitation contracts, pork stores, restaurants, union fronts, family homes, and social clubs. Every location has status, function, and pressure, which makes the world feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 10,
+        "reasoning": "The tone is unmistakable: deadpan mob banter, domestic irritation, sudden violence, and psychological exposure all coexist in the same scene. The script can move from a duck family to a beating to a therapy confession without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 10,
+        "reasoning": "The surface story is a mobster with stress, but the material keeps opening into identity, masculinity, inheritance, marriage, depression, and the fear of losing one’s family. The therapy frame and the duck metaphor promise a much larger emotional architecture underneath the crime plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 9,
+        "reasoning": "Tony/Carmela, Tony/Christopher, Tony/Junior, Tony/Livia, Tony/Melfi, and Tony/Artie all generate distinct scenes and different kinds of tension. The supporting cast is not ornamental; it creates a web of loyalties, resentments, and leverage that can keep producing story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 7,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Italian-American family and mob ensemble",
+          "One child/teen cast cluster",
+          "Therapist role with strong scene authority",
+          "Several supporting roles with specific age and ethnic texture"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New Jersey suburban homes",
+          "Italian restaurant interiors",
+          "psychiatrist office",
+          "retirement community",
+          "parking lot violence",
+          "marina/cabin cruiser",
+          "church/cathedral",
+          "construction site"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical storytelling with one stylized duck-flight fantasy image and a restaurant explosion.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Car impact, beating choreography, explosion, fire, practical blood and body handling",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "John Gotti"
+        },
+        {
+          "type": "real_person",
+          "detail": "Rudy Giuliani"
+        },
+        {
+          "type": "real_person",
+          "detail": "Gary Cooper"
+        },
+        {
+          "type": "real_person",
+          "detail": "Sinatra"
+        },
+        {
+          "type": "brand",
+          "detail": "Prozac"
+        },
+        {
+          "type": "brand",
+          "detail": "Zoloft"
+        },
+        {
+          "type": "brand",
+          "detail": "Lexus"
+        },
+        {
+          "type": "brand",
+          "detail": "Bose"
+        },
+        {
+          "type": "brand",
+          "detail": "HMO"
+        },
+        {
+          "type": "brand",
+          "detail": "Audubon Society"
+        },
+        {
+          "type": "brand",
+          "detail": "Stella D'Oro"
+        },
+        {
+          "type": "brand",
+          "detail": "Connie Francis"
+        },
+        {
+          "type": "brand",
+          "detail": "Bon Jovi"
+        },
+        {
+          "type": "brand",
+          "detail": "Howard Stern"
+        },
+        {
+          "type": "brand",
+          "detail": "Field of Dreams"
+        },
+        {
+          "type": "brand",
+          "detail": "Godfather 2"
+        },
+        {
+          "type": "brand",
+          "detail": "Goodfellas"
+        },
+        {
+          "type": "brand",
+          "detail": "Julia Child"
+        },
+        {
+          "type": "brand",
+          "detail": "Aspen"
+        },
+        {
+          "type": "brand",
+          "detail": "Plaza Hotel"
+        },
+        {
+          "type": "brand",
+          "detail": "S.S. Sagafjord"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or prestige streaming feature lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or prestige TV-origin feature release model; character-first crime drama with strong adult audience appeal"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary and mostly contained, but the ensemble, multiple locations, night work, car violence, and explosion push it above micro-budget."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The project depends on a strong lead, a formidable therapist, a volatile family ensemble, and several specific supporting roles with age and ethnic texture."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable, but it spans homes, restaurants, offices, a retirement community, a marina, a church, and exterior crime locations."
+        },
+        "content": {
+          "level": "high",
+          "note": "Violence, mob murder, sexual content, profanity, and psychological material all sit prominently on the page."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script references multiple real people, brands, songs, films, and institutions by name."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The mob premise is emotionally re-engineered.",
+          "what_it_means": "This turns a familiar crime lane into a prestige character piece with mainstream reach, giving buyers a hook that is both commercial and awards-adjacent. Actors who want a signature role with cultural footprint will chase the central part, and buyers looking for adult drama with genre heat will see immediate value.",
+          "evidence": "Tony’s panic attack, the therapy sessions, and the duck metaphor all frame the criminal world through interior collapse rather than procedural mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tony is a showcase role built on contradiction.",
+          "what_it_means": "The lead can play menace, comedy, shame, tenderness, and authority in the same scene, which is exactly the kind of part that can define an actor’s career. Mid-career dramatic leads and prestige-seeking stars will see a role with range, scale, and unforgettable specificity.",
+          "evidence": "He beats Mahaffey in a parking lot, feeds ducks in his pool, confesses in therapy, and then returns to family dinner like nothing happened.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The therapy frame gives the story a clean engine.",
+          "what_it_means": "The psychiatrist scenes create a repeatable dramatic structure that can carry the feature and, in another format, sustain an ongoing franchise of emotional revelation. Buyers who want dialogue-driven prestige material will recognize the value of a recurring two-hander with built-in tension.",
+          "evidence": "Melfi’s office becomes the place where the mob story is translated into fear, depression, masculinity, and family dread.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "North Jersey feels like a complete ecosystem.",
+          "what_it_means": "The script has enough institutional texture to support multiple storylines, not just one central plot, which is a major asset for any producer thinking beyond a single movie. Crime-drama buyers and directors who like lived-in social worlds will respond to the sanitation contracts, pork store, restaurants, and suburban homes as a coherent map.",
+          "evidence": "The garbage business, the Pork Store, Vesuvio, the retirement community, the cathedral, and the Soprano house all function as distinct pressure zones.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family material is as strong as the crime material.",
+          "what_it_means": "That balance widens the audience beyond genre fans and gives the project emotional longevity, because the domestic scenes carry their own stakes. Prestige buyers and actors who want layered family dynamics will see a role set where marriage, parenting, and aging parents are not side business but the core engine.",
+          "evidence": "Carmela, Meadow, Livia, and Junior each create a different kind of pressure on Tony, and the dinner/household scenes land with real force.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is instantly ownable.",
+          "what_it_means": "The script can move from comedy to menace to heartbreak without feeling generic, which is a major commercial advantage in a crowded crime field. Buyers who program premium adult drama and directors who can balance irony with sincerity will immediately understand the lane.",
+          "evidence": "A duck family, a mob beating, a therapy confession, and a family barbecue all sit in the same narrative register.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script doesn’t just have a great premise; it has a durable cultural engine. A mob boss in therapy is the kind of role package that can launch a star, anchor a prestige brand, and generate endless conversation because the crime story and the family story are inseparable.\n\nThe world is specific, the ensemble is playable, and the tone is unmistakable. For the right producer, this is the rare feature that feels both immediately marketable and deep enough to keep paying off."
+    },
+    "lead_characters": [
+      {
+        "name": "Thomas Soprano",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Italian-American",
+        "hook": "A North Jersey mob boss who can command a room, bully a debtor, feed ducks in his pool, and then sit in therapy trying to explain why he can’t breathe. He is all appetite and self-justification on the surface, but the script keeps exposing a man who is frightened by aging, family loss, and the collapse of the code he grew up believing in.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad or James Gandolfini’s own kind of antihero gravity — a role where menace and vulnerability are inseparable. It gives an actor the rare chance to play authority, comedy, shame, and emotional collapse without ever leaving the same character."
+      },
+      {
+        "name": "Carmela Soprano",
+        "role_type": "Lead",
+        "demographics": "Female · 30s to early 40s · Italian-American",
+        "hook": "Carmela is the domestic power center of the house: stylish, observant, devout in her own way, and fully aware of the bargains that keep the family intact. She can be nurturing one minute and cutting the next, and the script gives her real force as the woman who sees more than she says.",
+        "why_actor_wants_this": "This is the showcase space of Edie Falco in Nurse Jackie or Laura Linney in Ozark — a wife/mother role that is emotionally intelligent, morally compromised, and never passive. It gives an actress the kind of layered domestic authority that can carry scenes opposite both the lead and the family ensemble."
+      },
+      {
+        "name": "Dr. Jennifer Melfi",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · professional woman",
+        "hook": "Melfi is the calm center of the storm, but the script makes her more than a listener: she is the one person who can hold Tony still long enough for the truth to surface. Her intelligence, restraint, and discomfort with what she’s hearing give the role a quiet charge.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in United States of Tara or Laura Dern in Enlightened — a controlled, intelligent character whose reactions become the drama. It gives an actress a role built on precision, listening, and the slow accumulation of power in a room."
+      },
+      {
+        "name": "Carmine \"Junior\" Soprano",
+        "role_type": "Lead",
+        "demographics": "Male · 60s to 70s · Italian-American",
+        "hook": "Junior is old-school resentment in a cardigan: sharp, wounded, funny, and dangerous enough to matter. He carries the history of the family and the business, and his bitterness toward Tony gives the story a generational fracture that feels lived-in and volatile.",
+        "why_actor_wants_this": "This is the showcase territory of Christopher Plummer in Beginners or John Turturro in a prestige crime role — a veteran part where pride, humiliation, and menace all live in the same beat. Older character actors with authority and comic timing will see a role that can steal scenes without ever becoming ornamental."
+      },
+      {
+        "name": "Christopher Moltisanti",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to early 30s · Italian-American",
+        "hook": "Christopher is the hungry younger generation: flashy, impulsive, eager to prove himself, and already half-caught between loyalty and self-destruction. He wants status, respect, and a future, but the script keeps showing how quickly he can turn from comic sidekick to genuine threat.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Imperioli in a breakout crime role or a young Ray Liotta-type volatility — a part that lets an actor play swagger, addiction, resentment, and hurt in one package. It’s ideal for a younger dramatic actor who wants a role with edge and long-tail franchise value."
+      },
+      {
+        "name": "Livia Soprano",
+        "role_type": "Supporting",
+        "demographics": "Female · late 60s to 70s · Italian-American",
+        "hook": "Livia is the family’s emotional weather system: withholding, manipulative, brittle, and devastatingly funny in the way she turns concern into control. She doesn’t need much screen time to dominate a scene, because every exchange with her feels like a childhood wound reopening.",
+        "why_actor_wants_this": "This is the showcase territory of Frances Sternhagen in Misery or Jessica Tandy in Driving Miss Daisy — an older matriarch role where every line can land as affection, threat, or both. Veteran actresses with command and bite will see a part that can steal the movie in a handful of scenes."
+      },
+      {
+        "name": "Arthur Bucco",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · Italian-American",
+        "hook": "Artie is the civilian mirror to Tony’s world: proud, anxious, overworked, and always one bad decision away from humiliation. He gives the story a human-scale counterpoint, because his restaurant and marriage are what the mob’s shadow actually costs ordinary people.",
+        "why_actor_wants_this": "This is the showcase territory of Stanley Tucci in Big Night or Paul Giamatti in a pressure-cooker domestic role — a man whose dignity is constantly under siege. Character actors who can play warmth, panic, and comic self-delusion will be drawn to him immediately."
+      },
+      {
+        "name": "Charmaine Bucco",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · Italian-American",
+        "hook": "Charmaine is the one person in the restaurant orbit who sees the danger clearly and says it out loud. She is practical, sharp, and unimpressed by mob glamour, which makes her a necessary corrective in the world around Artie.",
+        "why_actor_wants_this": "This is the showcase territory of Marisa Tomei in a sharp domestic role or Patricia Clarkson in a scene-stealing supporting part — a woman who can puncture fantasy with one look. Actors who specialize in intelligent, unsentimental authority will want this because every scene has a point of view."
+      },
+      {
+        "name": "Silvio Dante",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · Italian-American",
+        "hook": "Silvio is the cool operator: calm, funny, and always a half-step removed from the emotional mess, even when he’s deep inside it. He functions as both consigliere and comic pressure valve, which gives him a distinctive rhythm in the ensemble.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Stuhlbarg in a controlled crime role or Steve Buscemi in a deadpan ensemble piece — a character who can be hilarious, menacing, and efficient without raising his voice. Actors who like precision and subtext will see a part that plays beautifully in support."
+      },
+      {
+        "name": "Paulie Walnuts",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s · Italian-American",
+        "hook": "Paulie is pure street-level texture: loyal, superstitious, funny, and always ready with a reaction that tells you exactly how the room works. He adds comic snap and criminal credibility in equal measure.",
+        "why_actor_wants_this": "This is the showcase territory of Joe Pesci in Goodfellas or a classic character-comic crime role — a part that lives on timing, attitude, and instant readability. Actors with sharp comic instincts and a taste for scene-stealing supporting work will chase it."
+      },
+      {
+        "name": "Big Pussy Bonpensiero",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · Italian-American",
+        "hook": "Big Pussy is the loyal soldier with a name that guarantees the room will never let him forget himself. He’s part enforcer, part hangdog friend, which makes him useful, funny, and emotionally legible in a way the world around him rarely is.",
+        "why_actor_wants_this": "This is the showcase territory of a James Gandolfini-adjacent supporting crime role or a Michael Rispoli-type part — a character actor slot that can play loyalty, fatigue, and menace in the same breath. It’s the kind of role that gives a performer instant ensemble value."
+      },
+      {
+        "name": "Herman \"Hesh\" Rabkin",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s to 70s · Jewish",
+        "hook": "Hesh is the old-money-adjacent strategist who understands the business side of the underworld and speaks with the confidence of someone who has seen every version of the hustle. He brings wit, skepticism, and a different cultural register into the mob circle.",
+        "why_actor_wants_this": "This is the showcase territory of a veteran like Ben Kingsley in a sharp supporting role or Richard Kind in a prestige ensemble — a part that rewards verbal precision and worldly authority. Character actors with intelligence and comic timing will see a role that can quietly own scenes."
+      },
+      {
+        "name": "Irina",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · Eastern European",
+        "hook": "Irina is the younger outside relationship that exposes Tony’s appetite and compartmentalization. She’s playful, observant, and not remotely fooled by the emotional arrangement she’s in.",
+        "why_actor_wants_this": "This is the showcase territory of a scene-stealing supporting role like the women in The White Lotus or a sharp adult-drama lover role — a part that can play seduction, irony, and emotional clarity. It gives an actress a memorable lane in a high-profile ensemble."
+      },
+      {
+        "name": "Meadow Soprano",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-teens",
+        "hook": "Meadow is smart, skeptical, and already fluent in the family’s contradictions. She pushes against her mother, her father, and the whole inherited value system, which gives the script a younger generational pressure point.",
+        "why_actor_wants_this": "This is the showcase territory of a young actress in a prestige family drama like Kaitlyn Dever in early breakout mode — a role that lets her play intelligence, rebellion, and emotional disappointment. It’s a strong part for a teen performer who can hold her own in adult scenes."
+      },
+      {
+        "name": "Anthony \"A.J.\" Soprano Jr.",
+        "role_type": "Supporting",
+        "demographics": "Male · early teens",
+        "hook": "A.J. is the son who mostly absorbs the family’s atmosphere, but his presence matters because he shows what the next generation inherits without understanding it. He gives the household scenes a lived-in, ordinary texture.",
+        "why_actor_wants_this": "This is the kind of part that gives a young actor a foothold in a prestige ensemble, similar to the grounded family-kid work seen in The Royal Tenenbaums or This Is Us. It’s a useful role for a child actor who can play naturalism rather than broad comedy."
+      },
+      {
+        "name": "Father Phil",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Catholic priest",
+        "hook": "Father Phil is the spiritual interloper who makes the Soprano home feel even more morally crowded. He’s genial, slightly self-satisfied, and useful as a pressure point in Carmela’s world.",
+        "why_actor_wants_this": "This is the showcase territory of a character actor in a prestige domestic drama — a role that can play charm, discomfort, and social opportunism in a few scenes. It’s a good fit for actors who like playing ambiguous authority figures."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a crime film about interior life, not just criminal events.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, plus TV auteurs looking to transition into prestige features. The sweet spot is someone who cares about performance, subtext, and tonal control more than set-piece spectacle.",
+        "detail": "The material rewards a director who can stage long dialogue scenes, hold tension in domestic spaces, and let comedy and menace share the same frame. It will attract filmmakers who want to build a signature adult drama with a strong ensemble and a clear visual world."
+      },
+      "buyer_appeal": {
+        "tier": "Prestige feature in the $10-20M range",
+        "lane": "Premium cable / prestige streaming crime-drama lane",
+        "detail": "The project can be greenlit around one major lead and a strong supporting ensemble, so it does not require a tentpole cast to function. The crime-plus-family lane has durable international export value, and the contemporary setting keeps the production footprint and period burden contained."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The therapy scenes carry the engine.",
+        "detail": "The Melfi material is already the script’s clearest differentiator, and a next pass could keep foregrounding how each session turns a criminal situation into an emotional revelation. The more the therapy scenes do double duty — plot pressure and inner life — the more the feature feels singular rather than episodic.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The family triangle can carry more independent weight.",
+        "detail": "Tony, Carmela, and Meadow already generate strong scenes, especially around the Aspen trip, the curfew fight, and the cathedral conversation. One direction would be to let those exchanges create a more self-contained emotional arc so the domestic story feels as consequential as the mob story.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad for a contained drama.",
+        "detail": "The script moves through homes, restaurants, offices, a retirement community, a marina, a cathedral, a construction site, and multiple exteriors. A producer could protect the narrative by collapsing a few of the business and social locations into shared spaces without losing the story’s texture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights references are plentiful.",
+        "detail": "The draft names real people, brands, songs, films, and institutions throughout, from Gotti and Giuliani to Prozac, Lexus, Audubon, and Godfather 2. A clearance pass would be straightforward to plan early so the script can keep its specificity without slowing packaging later.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ensemble is a major asset.",
+        "detail": "The script already has a deep bench of playable roles, which is a strong packaging advantage for a producer assembling a prestige cast. The version of the project that leans into that ensemble energy will be especially attractive to buyers who like actor-forward crime drama.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 92.3,
+  "tier": "Greenlight Material",
+  "inputTokens": 75064,
+  "outputTokens": 12101,
+  "cost": 0.1107525,
+  "declaredFormat": "Feature film"
+}

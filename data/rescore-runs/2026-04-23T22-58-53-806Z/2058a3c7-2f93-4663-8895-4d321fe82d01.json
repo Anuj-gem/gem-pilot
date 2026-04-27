@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:07:18.755Z",
+  "submission_id": "2058a3c7-2f93-4663-8895-4d321fe82d01",
+  "eval_id": "13245fd0-e471-45f5-80ff-def560023b31",
+  "title": "All I need is one dance….. the wedding g dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s · elite athlete build"
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Lead",
+      "demographics": "Male · early 40s · working-class, physically grounded"
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Lead",
+      "demographics": "Female · 13-14 · child/young teen"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Beth Rose",
+      "role_type": "Supporting",
+      "demographics": "Female · late 60s to 70s"
+    },
+    {
+      "name": "Frank Rose",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "Coach Dan Wensil",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Sharon Maid",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Father Rodger Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    }
+  ],
+  "positioning_hook": "A former WNBA star returns to small-town Pennsylvania to bury her grandparents’ ashes, and finds a second chance at love, purpose, and home in the church gym where her life quietly resets.",
+  "cost_usd": 0.04453425,
+  "input_tokens": 28611,
+  "output_tokens": 5128,
+  "status": "wrote:leads_ok"
+}

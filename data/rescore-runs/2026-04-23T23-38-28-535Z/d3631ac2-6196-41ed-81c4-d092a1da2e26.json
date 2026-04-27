@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:42:31.706Z",
+  "submission_id": "d3631ac2-6196-41ed-81c4-d092a1da2e26",
+  "eval_id": "feefc0c3-f696-48cb-975e-b112dbac4685",
+  "title": "Emerging",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Benjamin Stevens",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s"
+    },
+    {
+      "name": "Levi Stevens",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s"
+    },
+    {
+      "name": "Todd Mahler",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s"
+    },
+    {
+      "name": "Kathleen",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "Chelsea Andersen",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "Sebastian Mueller",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s"
+    },
+    {
+      "name": "Molly",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s"
+    },
+    {
+      "name": "Chelsea Andersen",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s"
+    }
+  ],
+  "positioning_hook": "A disgraced acting teacher runs a cutthroat studio program while his students, rivals, and powerful backers turn every class into a test of talent, loyalty, and survival.",
+  "cost_usd": 0.0308295,
+  "input_tokens": 15426,
+  "output_tokens": 4280,
+  "status": "wrote:leads_ok"
+}

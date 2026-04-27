@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:26:57.168Z",
+  "submission_id": "3de6bbad-0042-48be-8559-b721085cc47c",
+  "eval_id": "33a7cb19-26fc-406a-9bf5-668f71654a4f",
+  "title": "Starwatch pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Roberto Sabala",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Latino"
+    },
+    {
+      "name": "Barbara Marcoux",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · white / unspecified European-presenting"
+    },
+    {
+      "name": "Lt. Kenny Cisneros",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Latino"
+    },
+    {
+      "name": "Lt. Commander Roberto Sabala",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Latino"
+    },
+    {
+      "name": "Lt. Commander Barbara Marcoux",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · white / unspecified European-presenting"
+    },
+    {
+      "name": "Captain Jerry \"Jetts\" McDermott",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s · unspecified"
+    },
+    {
+      "name": "Commandant Abril De La Cruz",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Latina"
+    },
+    {
+      "name": "Ambassador Jorge Orisa",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Latino"
+    },
+    {
+      "name": "Ambassador Patrick Cannon",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · military-presenting / gender as scripted"
+    },
+    {
+      "name": "Ensign Jennifer Maren",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · Black"
+    },
+    {
+      "name": "Henry Paloma",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · unspecified"
+    },
+    {
+      "name": "Akiva Stuart",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · unspecified"
+    },
+    {
+      "name": "Tracy Sabala",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · unspecified"
+    }
+  ],
+  "positioning_hook": "A disgraced space-war commander and his ideological opposite are forced to run a frontier asteroid station after humanity’s civil war ends — and the next conflict is already inside the walls.",
+  "cost_usd": 0.04314,
+  "input_tokens": 25882,
+  "output_tokens": 5273,
+  "status": "wrote:leads_ok"
+}

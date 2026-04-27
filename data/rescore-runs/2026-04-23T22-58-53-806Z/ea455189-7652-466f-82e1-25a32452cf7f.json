@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:13:38.324Z",
+  "submission_id": "ea455189-7652-466f-82e1-25a32452cf7f",
+  "eval_id": "e4df0bd6-81a3-4533-b47c-7cf9aa1cd0d2",
+  "title": "Shadow Wolves",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "JOHN SCOUT",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · border patrol officer"
+    },
+    {
+      "name": "FERNANDO REY SR.",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 50s · Mexican drug lord"
+    },
+    {
+      "name": "EMILLO CORTZ",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s · Latino hacker"
+    },
+    {
+      "name": "MALCOM KINNEY",
+      "role_type": "Lead",
+      "demographics": "Male · 50s to 60s · FBI Director"
+    },
+    {
+      "name": "BEAU DAMA",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · African-American President of the United States"
+    },
+    {
+      "name": "FARUK PINK",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Muslim presidential aide / cyber operator"
+    },
+    {
+      "name": "IMANI CHAQUERI",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · Middle Eastern woman"
+    },
+    {
+      "name": "BROCK LINDBERGH",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · Vice President, military background"
+    },
+    {
+      "name": "ELLIE KING",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · Secretary of State"
+    },
+    {
+      "name": "JONAS SALT",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · White House Chief of Staff"
+    },
+    {
+      "name": "GEORGE RAMONE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · CIA Director"
+    },
+    {
+      "name": "GENERAL HARDING",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · military officer"
+    },
+    {
+      "name": "COLONEL LOPEZ",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · Air Force officer"
+    },
+    {
+      "name": "ADMIRAL COLLINS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · naval officer"
+    },
+    {
+      "name": "DEAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · nuclear plant guard"
+    },
+    {
+      "name": "BRAVE EAGLE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Native American border officer"
+    },
+    {
+      "name": "WISE EAGLE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Native American driver"
+    }
+  ],
+  "positioning_hook": "A border patrol officer and a Mexican drug lord uncover a presidential terror plot, then race to stop the Commander-in-Chief from detonating a nuclear plant.",
+  "cost_usd": 0.052221000000000004,
+  "input_tokens": 35560,
+  "output_tokens": 5678,
+  "status": "wrote:leads_ok"
+}

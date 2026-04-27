@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-23T23:12:23.477Z",
+  "submission_id": "ac38501f-1ead-448b-affa-74c2d4222c4c",
+  "eval_id": "2b83f150-970b-4ee1-b0d0-5d77eb38955d",
+  "title": "Happenstance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Markie Coltrane",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · journalist"
+    },
+    {
+      "name": "Christina Marquand",
+      "role_type": "Lead",
+      "demographics": "Female · ageless-presenting adult · vampire fashion executive"
+    },
+    {
+      "name": "Austin Hindley",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · mousy tech designer"
+    },
+    {
+      "name": "Bianca Truio",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · designer"
+    },
+    {
+      "name": "Pierre DuBois",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · fashion mogul"
+    },
+    {
+      "name": "Donald Hackwell",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · critic / media personality"
+    },
+    {
+      "name": "Evelyn Prood",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s · activist / spokesperson"
+    }
+  ],
+  "positioning_hook": "A hungry fashion reporter stumbles into a vampire-run design empire where beauty is a blood ritual, and the only way to survive is to expose the trend before it wears her.",
+  "cost_usd": 0.0448755,
+  "input_tokens": 33368,
+  "output_tokens": 4411,
+  "status": "wrote:leads_ok"
+}

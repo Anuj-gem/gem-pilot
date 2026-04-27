@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-23T23:42:04.988Z",
+  "submission_id": "a3576585-3419-4239-80bc-6041e80ba55a",
+  "eval_id": "0ab3f06d-d099-4bff-b28d-2e3759a62d3e",
+  "title": "Harrow Alley",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Harry Poyntz",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · London alderman / tailor"
+    },
+    {
+      "name": "Gamaliel Ratsey",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · rough-edged, physically imposing, working-class rogue"
+    },
+    {
+      "name": "Jem Poyntz",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · pregnant wife"
+    },
+    {
+      "name": "Dr. Nathaniel Hodges",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s to 70s · corpulent physician"
+    },
+    {
+      "name": "John Lawrence",
+      "role_type": "Lead",
+      "demographics": "Male · 50s to 60s · Lord Mayor of London"
+    }
+  ],
+  "positioning_hook": "A London alderman and a condemned highwayman are trapped in the Great Plague, where duty, survival, and corruption collide as the city empties around them.",
+  "cost_usd": 0.0642645,
+  "input_tokens": 58974,
+  "output_tokens": 4452,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,328 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Crime drama",
+      "genre_tags": [
+        "Mob thriller",
+        "Coming-of-age"
+      ],
+      "tone": "Gritty, tense, darkly funny, emotionally bruised"
+    },
+    "positioning_hook": "A McGill squash player is forced to infiltrate a Montreal mob family, then discovers the job is really about choosing between loyalty, love, and survival.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The mob-family premise is instantly legible, and the pilot gives it a fresh college-age entry point through Jimmy at McGill. The audience promise is clear, though the show’s appeal is more adult-drama than broad four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: Jimmy is pulled into a criminal assignment involving Charlie Byron, and the pilot keeps tightening the screws until the final reveal of the relationship between Jimmy and Charlie. The white roses, the restaurant confrontation, and the dead-body aftermath all reinforce a clean story engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jimmy has a strong central contradiction: he’s trying to build a legitimate future at McGill while being dragged back into mob gravity, and that gives the series durable tension. Dom, Nicky, Zoey, and Maria all add usable pressure points, though the pilot still centers most of the long-term engine on Jimmy’s choices."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The Montreal setting, bilingual texture, and college/mob collision give the script a specific lane that feels lived-in rather than generic. The white-rose threat, the squash-court world, and the family-business criminality create a distinct angle without abandoning familiar crime-drama grammar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The pilot moves with real propulsion: teaser violence, then the assignment, then the pressure on Jimmy’s home life, then the body count escalation, then the final Charlie reveal. Each act ends by widening the trap, and the closing beat with Jimmy and Charlie creates a strong reason to continue."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The show’s most memorable idea is not just mob crime, but mob crime filtered through a smart, bilingual, aspirational Montreal student who is trying to live in two worlds at once. That combination feels fresh and immediately playable, even as the underlying crime structure remains familiar."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Montreal feels specific in the dialogue, the French/English switching, the McGill setting, and the restaurant/barbershop ecosystem around the Faraldi crew. The world has social layers and visible institutions, which gives the series room to keep generating story beyond the pilot."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script balances menace with deadpan humor, especially in Dom’s family-business politeness and Murphy’s hot-headed chatter. The tone is consistent and playable, with enough local flavor and emotional bruising to distinguish it from standard mob fare."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the crime plot, the pilot is already about class performance, family obligation, sexuality, and the cost of trying to become someone else. The Frank Byron material, Maria’s fragility, and Jimmy’s relationship web all suggest the show can deepen well past the initial assignment."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Jimmy/Nicky, Jimmy/Zoey, Jimmy/Maria, Dom/Luca, and Dom/Rocco all generate distinct energy, and several of those pairings can carry scenes on their own. The ensemble is not just functional support around Jimmy; it has enough friction and loyalty to sustain recurring story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Bilingual French/English dialogue",
+          "20s-50s ensemble",
+          "Montreal/Italian-Canadian texture"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "Mostly interiors with recurring exterior street, campus, and woods scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "McGill campus access or a convincing stand-in",
+          "Restaurant interiors",
+          "Barbershop interior",
+          "Woods burial location",
+          "Parking garage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunshot, blood makeup, corpse handling, practical violence",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "McGill"
+        },
+        {
+          "type": "brand",
+          "detail": "Ritz"
+        },
+        {
+          "type": "brand",
+          "detail": "Twitter"
+        },
+        {
+          "type": "brand",
+          "detail": "Messenger"
+        },
+        {
+          "type": "brand",
+          "detail": "Friday Night Lights"
+        },
+        {
+          "type": "brand",
+          "detail": "Girl Scout Cookies"
+        },
+        {
+          "type": "brand",
+          "detail": "Israeli Princess"
+        },
+        {
+          "type": "brand",
+          "detail": "Coca-Cola-like product references are not present, but multiple named consumer references appear in dialogue and scene business"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming serialized crime drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized crime drama driven by Jimmy’s double life, the mob’s pressure on his family, and the evolving relationship with Charlie Byron."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary urban production with multiple interiors, night work, and a few violence setups keeps this above micro-budget but well below event-scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the lead roles depend on strong chemistry across Jimmy, Zoey, Nicky, Dom, Maria, and Charlie."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through homes, restaurants, campus spaces, a barbershop, a parking garage, and woods, with several recurring practical locations."
+        },
+        "content": {
+          "level": "high",
+          "note": "Threats, murder, corpse disposal, gun violence, profanity, and sexual material place it firmly in mature-series territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses several named brands and institutions, including McGill, Twitter, Messenger, and specific pop-culture references."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Montreal setting has real texture.",
+          "what_it_means": "The bilingual, class-stratified Montreal world gives the series a specific identity buyers can market as more than generic mob television. It will appeal to premium buyers and actors who want a crime drama with cultural specificity and a place that feels lived in.",
+          "evidence": "Jimmy and Frank switch between English and French; McGill, Montreal streets, and local businesses are woven into the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jimmy is built on a strong contradiction.",
+          "what_it_means": "He can carry a series because he is both aspirational and compromised: a McGill student trying to build a future while being pulled into organized crime. That is the kind of lead role that attracts young dramatic actors looking for a prestige breakout.",
+          "evidence": "Jimmy studies management at McGill, plays squash, has a serious relationship with Zoey, and is then forced into Dom’s orbit.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot opens a clean serialized engine.",
+          "what_it_means": "The Charlie assignment gives the show a repeatable pressure system: Jimmy is inside the mob, but his real job is to navigate a relationship that can destroy him from either side. Streamers and premium cable buyers like engines that can keep generating moral compromise episode after episode.",
+          "evidence": "Dom orders Jimmy to become friends with Charlie Byron, and the final scene confirms Jimmy and Charlie are already connected.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has usable friction.",
+          "what_it_means": "Dom, Nicky, Luca, Rocco, Zoey, Maria, and Mark each create a different kind of pressure on Jimmy, which gives the show multiple scene pairings and story lanes. That kind of relationship web is attractive to buyers because it supports both serialized plotting and character-forward episodes.",
+          "evidence": "Dom’s paternal menace, Nicky’s uneasy loyalty, Zoey’s ambition, Maria’s fragility, and Mark’s friendship all play distinct functions in the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can pivot between menace and comedy.",
+          "what_it_means": "The script gets mileage out of mobsters who talk like family men and family men who behave like mobsters, which gives the show a tonal lane with personality. That blend is catnip for buyers looking for crime drama that can breathe, joke, and still land hard.",
+          "evidence": "Dom’s polite threats, Murphy’s chatter, and the restaurant banter sit alongside beatings, intimidation, and a body disposal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot ends on a strong door-opener.",
+          "what_it_means": "The final Jimmy/Charlie introduction gives the series a clean next-step question and a built-in relationship engine for future episodes. That is exactly the kind of ending that makes a pilot feel like the start of a season rather than a closed hour.",
+          "evidence": "After the body count and the cover-up, Jimmy and Charlie finally meet in the locker room and exchange names.",
+          "source": "script"
+        }
+      ],
+      "headline": "This pilot has a real buyer-facing identity: a Montreal crime drama with bilingual texture, a college-age lead, and a serialized engine built around one impossible assignment. The script’s best asset is that it doesn’t just promise mob tension — it promises a whole social world where class, family, and criminal loyalty keep colliding in fresh combinations."
+    },
+    "lead_characters": [
+      {
+        "name": "James “Jimmy” Basso",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · Italian-Canadian",
+        "hook": "Jimmy is a smart, restless McGill student with a working-class edge and a hair-trigger temper, trying to build a legitimate life while carrying the gravitational pull of his dead father’s world. He’s tender with his mother, committed to Zoey, and visibly out of his depth the moment the mob starts treating him like an asset.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Imperioli in The Sopranos or Rami Malek in Mr. Robot — a lead whose intelligence, anxiety, and buried rage are all part of the same performance. Actors who want a role that can play vulnerability, menace, and romantic fracture in one season-long arc will chase this hard."
+      },
+      {
+        "name": "Domenico “Dom” Faraldi",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Italian-Canadian",
+        "hook": "Dom is the kind of mob boss who can threaten you with a smile and then talk about family values like he’s hosting Sunday dinner. He’s controlled, paternal, and terrifyingly practical, which makes him feel less like a cartoon kingpin and more like the man who actually runs the room.",
+        "why_actor_wants_this": "This is the showcase lane of James Gandolfini in The Sopranos or Bryan Cranston in Breaking Bad — a man whose warmth and violence live in the same breath. Veteran dramatic leads looking for a role that lets them weaponize charm while carrying authority will see immediate value here."
+      },
+      {
+        "name": "Nicky Faraldi",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · overweight · Italian-Canadian",
+        "hook": "Nicky is Dom’s overeager son, a swaggering young operator whose insecurity leaks out through jokes, vaping, and a need to prove he belongs in the family business. He reads as comic until the pilot starts showing how quickly he can become dangerous, which gives the role a volatile edge.",
+        "why_actor_wants_this": "This is the kind of breakout-supporting-to-lead territory that gave Jeremy Strong in Succession or Michael Cera in The End of the Tour room to play awkwardness as threat and need. Younger actors who can toggle between insecurity, entitlement, and sudden menace will want this part."
+      },
+      {
+        "name": "Zoey Magliani",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Zoey is Jimmy’s ambitious girlfriend, a hustling creative who can sell a pitch, build a makeshift studio, and still make the room feel like it’s moving around her. She’s emotionally open, professionally hungry, and increasingly forced to realize that love is not the same thing as access.",
+        "why_actor_wants_this": "This is the showcase space of Rachel Brosnahan in The Marvelous Mrs. Maisel or Ayo Edebiri in The Bear — fast, funny, emotionally legible, and capable of turning ambition into character. Actors who want a role with charm, speed, and a real emotional turn will be drawn to her."
+      },
+      {
+        "name": "Maria Basso",
+        "role_type": "Lead",
+        "demographics": "Female · 50s",
+        "hook": "Maria is Jimmy’s fragile, guarded mother, living in the aftershock of a life shaped by loss and dependence. Her scenes are quiet but loaded, and the pilot gives her a heartbreaking mix of pride, denial, and the need to be cared for without admitting it.",
+        "why_actor_wants_this": "This is the kind of emotionally loaded maternal role that Frances McDormand in Olive Kitteridge or Patricia Clarkson in Sharp Objects made unforgettable — a woman whose silence carries the scene. Prestige character actresses will see a chance to do devastating work in very little screen time."
+      },
+      {
+        "name": "Charlie Byron",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Charlie is the polished son of a powerful public figure, outwardly composed and socially fluent, but with enough distance and curiosity to make him feel like more than a political accessory. He’s the clean surface Jimmy is supposed to approach, which makes him the series’ most dangerous social doorway.",
+        "why_actor_wants_this": "This is the kind of role that gave Nicholas Hoult in The Great or Paul Dano in Escape at Dannemora a chance to play intelligence as a mask. Actors who can make restraint feel loaded will want the chance to turn a seemingly polished young man into a long-game mystery."
+      },
+      {
+        "name": "Luca Biello",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Luca is Dom’s underboss, the quieter operator in the room who watches, calculates, and rarely wastes a word. He gives the mob side a colder, more procedural intelligence that balances Dom’s paternal heat.",
+        "why_actor_wants_this": "This is the kind of supporting authority role that gave Michael Kelly in House of Cards or Shea Whigham in Boardwalk Empire so much mileage — a man who can say little and still dominate the room. Character actors who specialize in controlled menace will be interested."
+      },
+      {
+        "name": "Rocco",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Rocco is the crew’s physical enforcement arm, massive, blunt, and almost casually brutal. He’s not a talker, which makes every move he makes feel like a threat even before he touches anybody.",
+        "why_actor_wants_this": "This is the kind of heavy that gave Vincent D’Onofrio in Daredevil or Michael Mando in Better Call Saul a chance to make violence feel personal, not generic. Actors with imposing physical presence and a taste for minimal dialogue will chase it."
+      },
+      {
+        "name": "Corrado",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Corrado is the anxious weak link in the crew, a man whose nerves are visible before he even speaks. He’s useful because he’s scared, which makes him both sympathetic and terrifying in the way frightened people can be in criminal worlds.",
+        "why_actor_wants_this": "This is the kind of role that gave Paul Sparks in Boardwalk Empire or Matthew Rhys in The Americans room to play panic as a live wire. Actors who can make fear active, not passive, will see a lot to do here."
+      },
+      {
+        "name": "Mark",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Mark is Jimmy’s friend and campus foil, the guy who can joke, worry, and accidentally walk into the wrong room at the wrong time. He gives the series a civilian point of view and a real emotional cost when Jimmy’s two worlds collide.",
+        "why_actor_wants_this": "This is the kind of best-friend role that gave Jesse Plemons in Friday Night Lights or Ben Schwartz in The Afterparty room to be funny, grounded, and then suddenly heartbreaking. Actors who can play loyalty and panic in the same breath will want it."
+      },
+      {
+        "name": "Frank Byron",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Frank is the polished public face of power, a man who can turn a press interview into a personal brand exercise without breaking a sweat. He’s less a father than an institution, which makes him useful as both a political and emotional pressure source.",
+        "why_actor_wants_this": "This is the kind of prestige-adjacent authority role that gave Kieran Culkin in Succession or Matthew Macfadyen in Succession room to make image management feel like performance art. Actors who enjoy playing charisma as strategy will be drawn to it."
+      },
+      {
+        "name": "Cleo",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Cleo is Frank’s publicist, sharp, image-conscious, and always a step ahead of the room. She’s the kind of operator who understands that politics is theater, and she treats every detail like it matters because it does.",
+        "why_actor_wants_this": "This is the fast-talking, high-functioning support role that gives an actor the same kind of snap Sarah Snook had in Succession before the series widened her arc. Actors who can play intelligence, pressure, and control in one clean package will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage crime drama as family drama with a pulse.",
+        "fit_profile": "Established indie or prestige-TV directors with at least one character-forward feature or limited series, especially those who care about performance, social texture, and controlled tension over spectacle. This material rewards directors who can make restaurants, campus hallways, and living rooms feel like pressure chambers.",
+        "detail": "The pilot gives a director a clean tonal lane: grounded menace, bilingual specificity, and scenes that turn on behavior rather than set pieces. It will attract filmmakers who like ensemble blocking, intimate confrontation, and the chance to make a city feel like an active participant in the drama."
+      },
+      "buyer_appeal": {
+        "tier": "Premium cable / streaming serialized drama",
+        "lane": "Adult crime drama with cultural specificity",
+        "detail": "The project can be packaged around one strong lead and a supporting ensemble, with the Jimmy role doing the heavy lifting for attachments. The Montreal setting, McGill backdrop, and bilingual texture give buyers an exportable identity that stands out in a crowded mob-drama field."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot carries a lot of named institutions.",
+        "detail": "McGill, Twitter, Messenger, Friday Night Lights, and several branded references are all doing work on the page. A next pass could decide which of those are essential to the texture and which can be generalized to simplify clearance without changing the story.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Jimmy’s double life can be sharpened earlier.",
+        "detail": "The final Charlie reveal lands cleanly, but the pilot already has Jimmy moving between school, Zoey, Maria, and the Faraldi world. One lever would be to foreground a slightly clearer emotional contrast in the early Jimmy scenes so the assignment feels even more inevitable when Dom names it.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Zoey’s professional world is a strong engine.",
+        "detail": "Her pitch call and makeshift studio already suggest a second story lane that can run beside the mob plot. The version of the series where her work life gets a little more independent would widen the show’s audience and give the relationship more pressure from outside the crime engine.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The restaurant and campus worlds can do more lifting.",
+        "detail": "The pilot already uses Del Fiacco’s and McGill as recurring hubs, which is a good production and story advantage. A future pass could keep returning to those spaces so the series feels even more anchored and the location footprint stays efficient.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The violence is concentrated and readable.",
+        "detail": "The script uses beatings, a gunshot, and corpse disposal to make the stakes unmistakable without leaning on large-scale action. That keeps the show in a producible mature-drama lane and makes the tension more about consequence than spectacle.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75,
+  "tier": "Optionable",
+  "inputTokens": 26590,
+  "outputTokens": 5000,
+  "cost": 0.042442499999999994,
+  "declaredFormat": "Series"
+}

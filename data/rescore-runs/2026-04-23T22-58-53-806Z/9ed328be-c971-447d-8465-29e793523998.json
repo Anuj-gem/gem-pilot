@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:26:21.542Z",
+  "submission_id": "9ed328be-c971-447d-8465-29e793523998",
+  "eval_id": "15162f27-d38e-4286-9e6e-d05d7a1a22bd",
+  "title": "The Vigil Series Pilot   The Decision",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Lucas",
+      "role_type": "Lead",
+      "demographics": "Male · mid-40s · alien-presenting human cover identity"
+    },
+    {
+      "name": "Mike",
+      "role_type": "Lead",
+      "demographics": "Male · mid-30s to early 40s · alien field evaluator"
+    },
+    {
+      "name": "Dan",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · alien field evaluator"
+    },
+    {
+      "name": "Camila",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s · Nicaraguan-American ER nurse"
+    },
+    {
+      "name": "Zar",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · alien council leader"
+    },
+    {
+      "name": "The Cold Council Member",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · alien council member"
+    },
+    {
+      "name": "Carl",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · white Midwestern teacher"
+    },
+    {
+      "name": "Linda",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s · white suburban mother"
+    },
+    {
+      "name": "Camila's Son",
+      "role_type": "Supporting",
+      "demographics": "Male · 8-9 · child actor"
+    }
+  ],
+  "positioning_hook": "An alien evaluator assigned to judge Earth’s survival falls for a Minneapolis ER nurse, then asks to stay behind as his own people prepare to replace him.",
+  "cost_usd": 0.04525875,
+  "input_tokens": 30855,
+  "output_tokens": 4915,
+  "status": "wrote:leads_ok"
+}

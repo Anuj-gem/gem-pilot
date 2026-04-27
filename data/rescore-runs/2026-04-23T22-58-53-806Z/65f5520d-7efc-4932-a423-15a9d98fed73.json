@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-23T23:17:44.342Z",
+  "submission_id": "65f5520d-7efc-4932-a423-15a9d98fed73",
+  "eval_id": "d0120b9e-edc2-47c4-a667-8f8502dddccf",
+  "title": "Risaldi",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Smith",
+      "role_type": "Lead",
+      "demographics": "Male · mid 40s · Catholic father"
+    },
+    {
+      "name": "Jodie Jefferson",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to early 40s · police officer"
+    },
+    {
+      "name": "Ethan Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · criminal family member"
+    },
+    {
+      "name": "Victor Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s · patriarch"
+    },
+    {
+      "name": "Martin Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · criminal enforcer"
+    },
+    {
+      "name": "Edward Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · mountain of muscle"
+    },
+    {
+      "name": "Frankie Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to early 30s · loyal enforcer"
+    },
+    {
+      "name": "Alicia",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 50s · wife and mother"
+    },
+    {
+      "name": "Marcus",
+      "role_type": "Supporting",
+      "demographics": "Male · 8 years old"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · priest"
+    },
+    {
+      "name": "Dr. Owens",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 30s · therapist"
+    },
+    {
+      "name": "Captain Ricks",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · police captain"
+    },
+    {
+      "name": "Chief Pitts",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · police chief"
+    },
+    {
+      "name": "Mayor Adams",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · charismatic politician"
+    },
+    {
+      "name": "Officer Daniels",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · grizzled officer"
+    },
+    {
+      "name": "Lucy Winters",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s · survivor"
+    },
+    {
+      "name": "Xavier Winters",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to early 30s · husband"
+    },
+    {
+      "name": "Grant",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · impound lot clerk"
+    }
+  ],
+  "positioning_hook": "A grief-stricken Catholic father hunts the crime family that slaughtered his wife and children, only to discover the killer is his own brother-in-law and the only path forward runs through vengeance, confession, and grace.",
+  "cost_usd": 0.0643455,
+  "input_tokens": 50370,
+  "output_tokens": 5904,
+  "status": "wrote:leads_ok"
+}

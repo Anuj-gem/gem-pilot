@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:24:34.428Z",
+  "submission_id": "ac25284c-0fbd-445c-b400-ef4c3a970d07",
+  "eval_id": "94682be2-bb39-44b5-ac57-58a6a87f4785",
+  "title": "the journey to love screenplay 12 final",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "TYLER",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s · wheelchair-bound"
+    },
+    {
+      "name": "THOMAS",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s"
+    },
+    {
+      "name": "PAUL SIMMONS",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s · light-skinned, athletic build"
+    },
+    {
+      "name": "TANYA",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "HENRY GREEN",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "GRACE",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s"
+    },
+    {
+      "name": "JADE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "TAMA",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "SAMANTHA",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "ANDREW",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    },
+    {
+      "name": "ULM",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting or ageless entity · ageless"
+    },
+    {
+      "name": "BRIDGET",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "MARIAN",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s"
+    },
+    {
+      "name": "MICHAEL SIMMONS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s"
+    }
+  ],
+  "positioning_hook": "A wheelchair-bound student keeps getting rejected until a spiritual awakening reframes his love life, his self-worth, and the future he thinks he deserves.",
+  "cost_usd": 0.042075749999999995,
+  "input_tokens": 24313,
+  "output_tokens": 5298,
+  "status": "wrote:leads_ok"
+}

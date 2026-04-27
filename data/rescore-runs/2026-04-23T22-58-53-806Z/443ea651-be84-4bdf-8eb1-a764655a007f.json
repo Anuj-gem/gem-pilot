@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:24:44.287Z",
+  "submission_id": "443ea651-be84-4bdf-8eb1-a764655a007f",
+  "eval_id": "e915a438-3d24-4796-a2a9-ca08d13f2bcf",
+  "title": "gods love towards his people.docx",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "KEN WILLIAMS",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s · Black"
+    },
+    {
+      "name": "KAREN",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s · Black"
+    },
+    {
+      "name": "LEE",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · South Asian / Indian-origin"
+    },
+    {
+      "name": "REV. TOM YOUNG",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · Black"
+    },
+    {
+      "name": "DR. NEWTON",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s"
+    },
+    {
+      "name": "DR. FRANK",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s"
+    },
+    {
+      "name": "NURSE KATHY",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s"
+    },
+    {
+      "name": "MISS MARILYN",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 50s"
+    },
+    {
+      "name": "KAREN'S VOICE",
+      "role_type": "Supporting",
+      "demographics": "Female voice · adult"
+    },
+    {
+      "name": "ABERRATION",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting apparition · ageless"
+    },
+    {
+      "name": "TYLER",
+      "role_type": "Lead",
+      "demographics": "Male · high school age to late teens · wheelchair user"
+    },
+    {
+      "name": "THOMAS",
+      "role_type": "Lead",
+      "demographics": "Male · high school age to late teens"
+    },
+    {
+      "name": "JADE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    },
+    {
+      "name": "BRIDGET",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    }
+  ],
+  "positioning_hook": "A grief-stricken executive spirals through Hinduism, nightlife, and a near-death vision before his praying wife and a relentless pastor pull him back to faith.",
+  "cost_usd": 0.045600749999999995,
+  "input_tokens": 29649,
+  "output_tokens": 5192,
+  "status": "wrote:leads_ok"
+}

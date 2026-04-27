@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:17:27.308Z",
+  "submission_id": "6ed6203b-c78a-42bb-a2d9-99a63eb8c307",
+  "eval_id": "506a32d4-bed7-4357-92a3-68b8521ffb42",
+  "title": "The Love App",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "JASE JEWELS",
+      "role_type": "Lead",
+      "demographics": "Male · 18-20s · Black"
+    },
+    {
+      "name": "RON DUPREE",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "CAMILLA",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Black"
+    },
+    {
+      "name": "LANCE KOWALSKI",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · White"
+    },
+    {
+      "name": "GABE",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Black"
+    },
+    {
+      "name": "LESTER CLINE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "KENDRA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "DOCTOR BROOKS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "SHILO",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "IZZY",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "DAVE/PRODUCER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "BRIAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "MS. WATERBAKER",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s"
+    },
+    {
+      "name": "MR. HOPPER",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "LESTER CLINE THE SPORTS ANCHOR",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    }
+  ],
+  "positioning_hook": "A fallen baseball phenom with a heart condition builds a dating app to measure chemistry, then has to survive love, humiliation, and a viral breakdown before his second act can begin.",
+  "cost_usd": 0.0549585,
+  "input_tokens": 38892,
+  "output_tokens": 5731,
+  "status": "wrote:leads_ok"
+}

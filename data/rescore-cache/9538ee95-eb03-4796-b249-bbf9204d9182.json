@@ -1,0 +1,300 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sports drama",
+      "genre_tags": [
+        "Coming-of-age",
+        "Romantic drama"
+      ],
+      "tone": "Grounded, earnest, inspirational, and lightly comedic"
+    },
+    "positioning_hook": "A teenage soccer obsessive fights his father, his coach, and his own body to prove he belongs on the pitch — then discovers the game is really about how he sees space, time, and himself.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: a young player chasing legitimacy, family approval, and first love. The appeal is strongest for sports-drama audiences and viewers who respond to underdog coming-of-age stories, while the soccer-specific language and tactical focus keep it a bit more targeted than a broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early in the opening match, where Tony's role as the bench player with the notebook and the later betting-shop angle give the story a clear engine. The script also keeps returning to the same clean question — can a kid who thinks like a coach become a player who can be trusted on the field?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Tony is a strong center: disciplined, analytical, physically outmatched, and emotionally hungry for respect. Clyde, Mark, Erica, and Tony's parents each add a different pressure or mirror, giving the lead a playable web of relationships rather than a single-note support system."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The tactical obsession — zones, notebooks, combinations, and the idea of soccer as a logic problem — gives the script a more specific angle than a standard sports drama. The execution stays mostly in familiar inspirational territory, but the analytical lens and the betting-shop thread add a distinct flavor."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through injuries, training, family conflict, romance, and the coach's evolving system, so there is always a next step. At the same time, the script is built from a series of repeated training and match beats, which gives it a steady rhythm more than a sharply escalating feature spine."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "Tony as a deep-lying playmaker who thinks in zones and probabilities is a fresh enough hook to feel ownable, especially when paired with the father's failed-athlete history and Mark's modern coaching philosophy. The idea that intelligence, not just athleticism, can be the protagonist's superpower gives the script a clean identity."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The soccer club, training ground, betting shop, home life, and college track create a believable ecosystem around Tony. The world is specific in its rituals and vocabulary, though it remains centered on a few recurring spaces rather than a fully layered institutional landscape."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone blends earnest sports uplift, teen romance, and occasional comic banter, especially in the locker-room and park scenes. It is consistent and readable, though it sits closer to familiar inspirational sports-drama territory than to a sharply singular tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface story about making the team, the script is really about identity, inherited fear, and whether talent is physical, mental, or emotional. The father's own abandoned career and Mark's emphasis on systems suggest a deeper thematic engine that could support a richer version of the material."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Tony/Clyde, Tony/Erica, Tony/parents, and Tony/Mark all generate usable story energy, and the team has enough internal hierarchy to feel alive. Still, the script is fundamentally lead-driven, with the ensemble mostly orbiting Tony's arc rather than generating fully independent storylines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen and young-adult soccer players with believable athletic movement",
+          "One coach in his 50s",
+          "One family unit in their 40s",
+          "A few named opponents and betting-shop guards"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Soccer stadium with locker room, sideline, and field access",
+          "Betting shop interior and exterior",
+          "Tony's apartment bedroom/living room/bathroom",
+          "Park and street exteriors",
+          "Hospital room",
+          "College office"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirement beyond standard sports coverage and scoreboard inserts.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical sports injury makeup, blood on scrapes, cast and crutches, rain/night atmosphere in a few scenes.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Joshua Kimmich is referenced by name and appears in a video message."
+        },
+        {
+          "type": "real_person",
+          "detail": "Frenkie de Jong and Kevin De Bruyne are referenced on Tony's locker-room posters."
+        },
+        {
+          "type": "brand",
+          "detail": "Goose & Gun restaurant is named."
+        },
+        {
+          "type": "brand",
+          "detail": "Specific betting-shop and sports-betting references may require clearance depending on production design and signage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or festival-to-platform sports drama",
+        "content_level": "PG-13 equivalent to mature, with strong language and sports injury content",
+        "series_engine_or_release_model": "Feature release model; best suited to a modest theatrical or streamer launch built around a young lead and sports audience."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "The story is built around a soccer field, a few interiors, and practical injury work rather than effects or large-scale set pieces."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead requires a credible teen soccer player, and the supporting cast includes a full team plus a few named adults and opponents."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most scenes are contained, but the script uses multiple recurring spaces including stadium, home, park, betting shop, hospital, and college."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Frequent profanity, physical tackles, injury beats, and betting-shop material keep it above family level but still broadly accessible."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names real soccer figures and includes a branded-style restaurant title plus betting-world references."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Tony is a thinking-player protagonist.",
+          "what_it_means": "That gives the project a clean commercial identity: this is not just a kid who wants to score, but a kid whose mind is the thing the audience tracks. Actors and buyers alike get a sports lead with a built-in point of view, which is especially attractive to prestige-leaning indie buyers and young dramatic leads looking for a role with intelligence on the page.",
+          "evidence": "Tony's notebook of zones, his constant analysis of matches, and the later Mark-led training sessions built around time, space, and combinations.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The coach is a system-builder, not a cliché mentor.",
+          "what_it_means": "Mark turns the movie into a modern sports story about methodology, not just motivation, which gives the film a fresher lane than a standard locker-room pep-talk drama. Directors who like process, structure, and performance inside ensemble systems will see a lot to work with, and sports buyers will recognize a hook that feels current.",
+          "evidence": "Mark's lectures on time, space, tactics, mathematics, and individual training plans.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-son conflict has real emotional fuel.",
+          "what_it_means": "Tony's choice to pursue soccer against his father's caution creates a clean, exportable emotional spine that can carry the movie even for viewers who are not soccer-first. Mid-budget drama buyers and actors who excel at restrained family tension will respond to the generational argument at the center of the story.",
+          "evidence": "The repeated arguments about college versus soccer, plus the reveal that Tony's father once had his own playing career cut short.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance gives the film a softer counterweight.",
+          "what_it_means": "Erica keeps the movie from becoming only a sports grind; she gives Tony a human-scale emotional anchor and a way to externalize his self-doubt. That makes the project more playable for younger audiences and gives casting a recognizable teen-romance lane alongside the athletic one.",
+          "evidence": "The park and restaurant scenes, the hand-holding, the gift exchange, and Erica's role as the person who keeps pulling Tony back toward himself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The betting-shop thread adds a second engine.",
+          "what_it_means": "Tony's match-analysis and betting instinct widen the movie beyond the pitch and create a side-world with its own tension, which can help marketing and give the script a slightly sharper edge. Buyers who like sports stories with a behavioral or gambling-adjacent angle will see an extra hook here.",
+          "evidence": "Tony's notebook, the accumulator sequence, and his repeated attempts to use predictions and calculations to shape outcomes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The team dynamics are easy to cast and play.",
+          "what_it_means": "Clyde, Paul, Leroy, and Mark each occupy a distinct lane — star, comic relief, wounded talent, and strategist — which gives the movie a usable ensemble without requiring a giant cast. That is attractive to producers because it creates multiple actor-facing roles while keeping the production footprint manageable.",
+          "evidence": "The locker-room banter, the training sequences, the injury fallout, and the final season-end handoff.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sports drama with a sharper brain than most of the field: a teen player who reads the game like a coach, then has to learn how to trust his own instincts. The script combines underdog momentum, family pressure, first love, and a modern tactical lens into a package that feels playable for both actors and buyers."
+    },
+    "lead_characters": [
+      {
+        "name": "Tony",
+        "role_type": "Lead",
+        "demographics": "Male · 17-18",
+        "hook": "Tony is a slight, obsessive, highly analytical young player who lives in notebooks, diagrams, and match logic as much as in the game itself. He is physically outmatched by the stars around him, but emotionally he is the most stubborn person in the room — a kid who wants to be seen as more than the substitute nobody notices.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in *The King* or Paul Mescal in *Aftersun* — a young lead carrying interior pressure, self-consciousness, and the ache of wanting to be taken seriously. It gives an actor the chance to play intelligence, frustration, physical vulnerability, and a late-blooming confidence arc in one role."
+      },
+      {
+        "name": "Clyde",
+        "role_type": "Lead",
+        "demographics": "Male · 18-21",
+        "hook": "Clyde is the team's physical alpha: charismatic, muscular, casually cruel when he wants to be, but also loyal enough to keep pulling Tony back into the fight. He reads like the kind of player who can dominate a room without trying, which makes his friendship with Tony feel both aspirational and dangerous.",
+        "why_actor_wants_this": "This is the showcase space of Michael B. Jordan in *Creed* or Barry Keoghan in *The Banshees of Inisherin* when the role needs charm with edge — a character whose confidence is the performance. It gives an actor a chance to play swagger, comic timing, and the slow reveal that the loudest guy on the field is also the most vulnerable to being left behind."
+      },
+      {
+        "name": "Coach Collins",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Coach Collins is a veteran manager with a practical streak, a believer in discipline, and a man who understands both the cost and the seduction of winning. He is not a cartoon motivator; he is the adult in the room who knows exactly how fragile these boys are, and how much he is asking of them.",
+        "why_actor_wants_this": "This is the kind of role J.K. Simmons had in *Whiplash* or Bryan Cranston had in *The Upside* — authority, wit, and emotional weight all living in the same frame. Character actors who can turn instruction into drama will chase this because the coach is both engine and conscience."
+      },
+      {
+        "name": "Erica",
+        "role_type": "Lead",
+        "demographics": "Female · 17-18",
+        "hook": "Erica is Tony's emotional witness: affectionate, playful, and increasingly frustrated by how much of himself he withholds from the people who care about him. She is not just a girlfriend; she is the person who keeps asking whether ambition is costing Tony his ability to be present.",
+        "why_actor_wants_this": "This is the kind of grounded romantic lead that Rachel Zegler in *West Side Story* or Auli'i Cravalho in *The Little Mermaid* can make feel alive — warmth with an edge of emotional intelligence. It gives an actress a role that is supportive on the surface but still has real scene-shaping power through humor, tenderness, and disappointment."
+      },
+      {
+        "name": "Paul",
+        "role_type": "Supporting",
+        "demographics": "Male · 17-20",
+        "hook": "Paul is the bench-side comic with a sharper competitive instinct than he first appears to have. He jokes, needles, and improvises his way through the team, but he also becomes a useful mirror for Tony because he understands how to survive in a system that doesn't always reward purity of effort.",
+        "why_actor_wants_this": "This is the kind of role that gave actors like Rafe Spall in *The Big Short* or Nick Frost in *Shaun of the Dead* a chance to steal scenes through rhythm and personality. It offers a performer a clear comic lane with enough athletic and emotional texture to feel like more than relief."
+      },
+      {
+        "name": "Leroy",
+        "role_type": "Supporting",
+        "demographics": "Male · 17-18",
+        "hook": "Leroy is the gifted attacker whose body becomes the story's warning sign: flashy, fearless, and then suddenly forced to reckon with injury and identity loss. He embodies the cost of the game in a way Tony can see up close, which makes him both a rival ideal and a cautionary mirror.",
+        "why_actor_wants_this": "This is the kind of part that gives an actor the emotional turn of Jesse Plemons in *Friday Night Lights* or a young athlete role in a prestige sports drama — the moment where talent meets fragility. It lets a performer play swagger, pain, and the quiet collapse of certainty."
+      },
+      {
+        "name": "Tony's Dad",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Tony's father is a former player who has converted his own disappointment into caution, discipline, and pressure. He is stern, practical, and emotionally guarded, but the script keeps revealing that his resistance to Tony's dream is rooted in lived experience rather than simple control.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Ben Mendelsohn did in *Animal Kingdom* or Michael Stuhlbarg does in family drama: authority with buried regret. It gives a performer a chance to play the father as both obstacle and wounded witness, which is catnip for actors who like layered domestic conflict."
+      },
+      {
+        "name": "Tony's Mom",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Tony's mother is the emotional translator in the house, the one who softens the father's pressure without denying its reality. She is warm, funny, and quietly strategic, and she becomes the person who helps Tony understand that his father's fear is tied to his own past.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the grounded warmth of Patricia Clarkson in family drama or Sissy Spacek in *The Straight Story* — support that still shapes the emotional architecture of the film. It offers a performer a humane, scene-steadying part with real payoff in the reveal about Tony's father."
+      },
+      {
+        "name": "Mark Brady",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Mark is the new manager who sees the game as a system of time, space, and decision-making rather than pure force. He is calm, slightly mysterious, and intellectually confident, which makes him feel like the first adult in the story who speaks Tony's language.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled authority of Paul Giamatti in *Billions* or Jason Clarke in a sports or institutional drama — a smart operator who changes the room by entering it. It is especially attractive to actors who like playing intelligence as charisma."
+      },
+      {
+        "name": "Kevin",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s",
+        "hook": "Kevin is the park bully with enough verbal confidence to make the scene feel dangerous before anyone throws a punch. He is less important as a plot function than as a pressure test for Tony's self-control and his ability to stay centered under social threat.",
+        "why_actor_wants_this": "This is the kind of scene-stealing antagonist role that lets an actor do what Jack O'Connell or Harris Dickinson can do in a confrontation scene — menace, wit, and control. It gives a performer a compact but memorable showcase in a single charged encounter."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make sports feel like thought, not just motion.",
+        "fit_profile": "First- or second-feature directors, or experienced indie filmmakers, who already work in performance-forward realism and like systems-based storytelling. This material rewards directors who care about blocking, rhythm, and the emotional meaning of tactics — the kind of filmmaker who can make a locker room, a sideline, and a training drill feel like dramatic set pieces.",
+        "detail": "The movie gives a director a clean visual grammar: field geometry, bench politics, and close-up emotional reactions all carry story. It will appeal to directors who like contained ensemble work with a strong central performance and who can make procedural sports detail feel cinematic without needing spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming sports drama / festival-to-platform character piece",
+        "detail": "The project can be packaged around a strong young lead and a credible coach without needing star-level VFX or a large-scale production footprint. The soccer setting, teen angle, and tactical hook give it exportable genre appeal for streamers and specialty buyers looking for a grounded, performance-led sports title."
+      }
+    },
+    "considerations": [
+      {
+        "area": "Tony's inner turn arrives in repeated beats.",
+        "detail": "The script returns several times to Tony being told to play simple, trust the team, or accept the coach's system. A next pass could sharpen the feature spine by making one or two of those turns carry more irreversible consequence, so the emotional shift lands with even more force.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The betting-shop thread can be streamlined.",
+        "detail": "Tony's accumulator sequence and repeated attempts to get into the shop add texture, but the core story already has a strong soccer-and-family engine. The version of the script where that thread is condensed would protect momentum and keep the focus on Tony's relationship to the game.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The match-training pattern is the movie's main rhythm.",
+        "detail": "The draft uses several training montages and match sequences that repeat the same emotional beat: Tony is underestimated, then corrected, then reinserted. One direction would be to vary the dramatic function of those scenes more distinctly so each one advances a different part of Tony's identity.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The real-person references need a clearance pass.",
+        "detail": "Joshua Kimmich, Frenkie de Jong, and Kevin De Bruyne are named directly, and Kimmich appears in a video message. A producer would want to decide early whether those references stay as written or are replaced with fictional equivalents to simplify rights handling.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The stadium footprint is the production anchor.",
+        "detail": "Most of the movie lives in one soccer complex, plus a handful of domestic and public spaces. That keeps the project in a contained feature lane, and the version that leans even harder on the stadium as the primary arena would protect budget while preserving the story's identity.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 62.3,
+  "tier": "Optionable",
+  "inputTokens": 48142,
+  "outputTokens": 4998,
+  "cost": 0.0585975,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:01:51.453Z",
+  "submission_id": "59964812-188f-49a5-93c0-f4816f4ee7c1",
+  "eval_id": "35eda4be-25a4-4cc3-8787-5001e0710af6",
+  "title": "Landscape with Woman current Elise H. Greven",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Ross Tom",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Brooklyn-based painter"
+    },
+    {
+      "name": "Brett Banneker",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · trans woman · wealthy New York art-world insider"
+    },
+    {
+      "name": "Amara Chaudhry",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · South Asian"
+    },
+    {
+      "name": "The Billionaire",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "The Owner",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "Stephen Forster, Esq.",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s · lawyer"
+    },
+    {
+      "name": "Mullet Queer",
+      "role_type": "Supporting",
+      "demographics": "Nonbinary or queer-presenting · 30s"
+    },
+    {
+      "name": "Brock Colyar",
+      "role_type": "Supporting",
+      "demographics": "Gender-queer-presenting · 20s-30s · media figure"
+    },
+    {
+      "name": "Ross’s Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s"
+    },
+    {
+      "name": "Ross’s Father",
+      "role_type": "Supporting",
+      "demographics": "Male · deceased in present day; seen in flashback"
+    },
+    {
+      "name": "The Good Witch Mom",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Doorman Raph",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    }
+  ],
+  "positioning_hook": "A broke Brooklyn painter gets pulled into a billionaire art-world scheme to forge a lost masterpiece, only to discover the real con is about who gets to be seen.",
+  "cost_usd": 0.060102749999999996,
+  "input_tokens": 45949,
+  "output_tokens": 5698,
+  "status": "wrote:leads_ok"
+}

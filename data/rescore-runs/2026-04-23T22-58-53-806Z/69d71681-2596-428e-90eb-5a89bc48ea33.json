@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:26:26.974Z",
+  "submission_id": "69d71681-2596-428e-90eb-5a89bc48ea33",
+  "eval_id": "1a75012e-ec58-45c1-93a9-f7652e254f8f",
+  "title": "Darkness Falls",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Sam Barber",
+      "role_type": "Lead",
+      "demographics": "Male · 13-16"
+    },
+    {
+      "name": "Lily Barber",
+      "role_type": "Lead",
+      "demographics": "Female · 15-18"
+    },
+    {
+      "name": "Butch Barber",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Apple Barber",
+      "role_type": "Lead",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Warren Ranger",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Dana Ranger",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Tommy Ranger",
+      "role_type": "Supporting",
+      "demographics": "Male · 14"
+    },
+    {
+      "name": "Dana Jr. Ranger",
+      "role_type": "Supporting",
+      "demographics": "Female · 11"
+    },
+    {
+      "name": "Cooks",
+      "role_type": "Supporting",
+      "demographics": "Male dog · 9"
+    },
+    {
+      "name": "Mewy",
+      "role_type": "Supporting",
+      "demographics": "Female cat · 14"
+    },
+    {
+      "name": "General Briggs",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Jeff Sanders",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "General Howie",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Dashers",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    }
+  ],
+  "positioning_hook": "Two rival farm families in rural California are trapped by daylight-hating vampires, then forced into a blood-soaked alliance as the military moves to erase the outbreak — and everyone they love.",
+  "cost_usd": 0.0441555,
+  "input_tokens": 26246,
+  "output_tokens": 5438,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Satire",
+        "Ensemble",
+        "Farce"
+      ],
+      "tone": "Broad, absurd, relentlessly pun-driven, and anarchic with a live-sketch energy"
+    },
+    "positioning_hook": "A stranded airport lounge turns into a runaway satire as one family and a flight crew spiral through COVID, politics, sex, and disaster jokes while waiting for a plane that may never leave.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The audience is clear for viewers who like aggressive joke density and absurdist satire, but the appeal is specialized rather than broad. The material leans hard into a very specific comic register, which will strongly attract some comedy buyers and leave others cold."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The core setup is easy to state: passengers trapped in an airport and then on a plane while the situation keeps escalating. The hook lands early, though the script’s true engine is less a single premise than a barrage of topical comic riffs."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "The family quartet and the captain/stewardess give the piece a workable comic ensemble, and Horsie has the clearest oddball voice. The characters are more vehicles for jokes than deeply individualized arcs, but the comic pairings are functional and castable."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a maximalist, joke-machine structure that keeps pushing into new topical territory instead of settling into one lane. The boldness is in the volume and the refusal to behave like a conventional plot-driven comedy."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The piece keeps moving through new comic beats and eventually escalates into a hijack/emergency landing sequence, so it never sits still for long. At the same time, the forward drive is episodic rather than tightly causal, with the momentum coming from accumulation more than story turns."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A stranded-flight comedy is familiar, but the script’s specific execution — a newspaper-reading family and a crew turning every headline into a joke volley — gives it a distinct comic identity. It feels like a recognizable container filled with a very particular comic voice."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The airport, cockpit, cabin, and control tower give the story a contained travel-world with enough operational detail to support the jokes. The setting is more a comic stage than a layered social ecosystem, but the airline and airport mechanics are used consistently."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: deadpan, rude, topical, and deliberately overstuffed with taboo-adjacent punchlines and absurd escalations. You can identify the voice from the page almost immediately because it never stops talking and never apologizes for the joke count."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "The script is built to deliver immediate comic impact rather than hidden emotional layers, and it largely stays on the surface of satire and banter. There are hints of family friction and post-COVID exhaustion, but the draft is primarily interested in comic barrage over subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The husband-wife-son triangle plus the stewardess/captain pairing creates a steady stream of comic friction, and the group dynamic is the main engine. The relationships are lively enough to sustain scenes, though the piece still lives more on group banter than on deeply differentiated relational arcs."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child/teen role (Horsie)",
+          "Ensemble of adult comic roles",
+          "Pilot and flight attendant roles require strong comic timing"
+        ]
+      },
+      "locations": {
+        "distinct_count": 3,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Airport lounge",
+          "Airplane cabin/cockpit",
+          "Control tower",
+          "Brief flashback inserts"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "A few flight/emergency landing moments, exterior plane movement, and crash/altitude illusion beats.",
+        "stunts_level": "minor",
+        "sfx_needs": "Cabin panic, gunshots, emergency exit tear, violent turbulence/landing effects.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Tom Holland"
+        },
+        {
+          "type": "real_person",
+          "detail": "Woody Allen"
+        },
+        {
+          "type": "real_person",
+          "detail": "John Lennon"
+        },
+        {
+          "type": "real_person",
+          "detail": "Vincent van Gogh"
+        },
+        {
+          "type": "real_person",
+          "detail": "Abraham Lincoln"
+        },
+        {
+          "type": "real_person",
+          "detail": "Marcus Porcius Cato"
+        },
+        {
+          "type": "brand",
+          "detail": "IKEA"
+        },
+        {
+          "type": "brand",
+          "detail": "Apple"
+        },
+        {
+          "type": "brand",
+          "detail": "Shell"
+        },
+        {
+          "type": "brand",
+          "detail": "Pfizer"
+        },
+        {
+          "type": "brand",
+          "detail": "AstraZeneca"
+        },
+        {
+          "type": "brand",
+          "detail": "Johnson & Johnson"
+        },
+        {
+          "type": "brand",
+          "detail": "Sputnik"
+        },
+        {
+          "type": "brand",
+          "detail": "Sinopharm"
+        },
+        {
+          "type": "brand",
+          "detail": "ChatGPT"
+        },
+        {
+          "type": "brand",
+          "detail": "Guggenheim Museum"
+        },
+        {
+          "type": "brand",
+          "detail": "White House"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Romeo and Juliet"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Richard III"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Carmina Burana"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Hamlet"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Globe Theater"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming comedy feature / festival-to-platform satire lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong streaming afterlife; the contained setting and joke-forward structure suit a platform comedy audience."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "The story is largely contained to an airport lounge, airplane cabin, cockpit, and control tower, with only light flight-effect staging."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the piece depends on six strong comic roles and a child performer who can handle rapid-fire dialogue."
+        },
+        "location": {
+          "level": "low",
+          "note": "Three core locations and a mostly interior footprint keep the production compact and controllable."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes sexual jokes, profanity, COVID material, gunfire, death jokes, and repeated taboo comic turns that narrow the lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The dialogue references many named public figures, brands, songs, plays, and institutions that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The comic voice is instantly identifiable.",
+          "what_it_means": "This gives the project a clear brand in a crowded comedy market: a buyer knows exactly what kind of laugh engine they are getting within the first few pages. That kind of voice-forward material is attractive to streaming comedy buyers, festival programmers, and performers who want to be associated with something unapologetically specific.",
+          "evidence": "The airport lounge dialogue keeps stacking topical jokes, puns, and deadpan reversals without ever softening its rhythm.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The setting is contained and producible.",
+          "what_it_means": "The airport-to-plane-to-control-tower footprint keeps the production footprint tight while still allowing the story to feel busy and eventful. That makes it easier to package as a director-driven comedy that can be made without a giant budget or a sprawling location schedule.",
+          "evidence": "Most of the action stays in the airport lounge, airplane cabin, cockpit, and tower, with only brief flashback inserts.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "The ensemble has built-in comic friction.",
+          "what_it_means": "The husband, wife, son, blonde, stewardess, and captain all have distinct comic functions, which creates a steady stream of playable interactions for actors and editors alike. Ensemble comedies with this many repeatable pairings are attractive to buyers because they can be cast with recognizable comic talent and still feel nimble.",
+          "evidence": "The family banter, the stewardess’s dry authority, and the captain’s chaos all keep colliding in the cabin and cockpit.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a strong satirical appetite.",
+          "what_it_means": "It can be positioned as a topical comedy that turns current anxieties into a joke machine, which gives it a clear audience promise and a lot of trailerable moments. That makes it appealing to buyers looking for material that can travel on premise and attitude rather than plot alone.",
+          "evidence": "The dialogue repeatedly mines COVID, inflation, climate change, politics, and travel frustration for comic escalation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lead comic voice is actor-friendly.",
+          "what_it_means": "The father role offers a performer a fast-talking, irreverent, socially incorrect showcase that can play as both engine and punchline delivery system. Mid-career comic leads and character actors who like to dominate a room would see a lot of playable material here.",
+          "evidence": "The father keeps steering the conversation into jokes about marriage, alcohol, money, and disaster while never losing the floor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The flight sequence gives the movie escalation.",
+          "what_it_means": "The story does not stay trapped in one note; it builds from waiting-room banter into airborne chaos, which gives the feature a clear second-half lift. That escalation helps the script feel like a movie rather than a sketch collection.",
+          "evidence": "The captain recovery, takeoff, hijack scare, emergency descent, and violent landing all widen the comic canvas.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a joke-dense, contained ensemble comedy with a very clear comic identity: a family and flight crew trapped in a travel nightmare that keeps mutating into satire, farce, and disaster comedy. The contained locations make it producible, the ensemble is castable, and the voice is bold enough to stand out in a crowded comedy lane."
+    },
+    "lead_characters": [
+      {
+        "name": "MAN",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · contemporary father/husband",
+        "hook": "A fast-talking, irreverent family man who treats every crisis like a setup and every conversation like a stage. He is horny, defensive, funny, and constantly trying to stay one joke ahead of embarrassment, which makes him both the engine of the banter and the source of half the trouble.",
+        "why_actor_wants_this": "This is the showcase territory of Steve Carell in The 40-Year-Old Virgin or Bill Murray in Lost in Translation — a comic lead whose timing, discomfort, and self-exposure are the performance. Actors who can weaponize deadpan, improv energy, and shamelessness will want the room this role gives them."
+      },
+      {
+        "name": "WOMAN",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-50s · contemporary wife/mother/teacher",
+        "hook": "A sharp, exasperated wife with a dry wit and a long memory, she keeps the family conversation moving while quietly judging everyone in the row. She is the script’s moral center only in the sense that she is the one most likely to call out nonsense, which gives her a grounded counterweight to the chaos around her.",
+        "why_actor_wants_this": "This is the showcase space of Julia Louis-Dreyfus in Veep or Toni Collette in Hereditary — a woman whose intelligence and irritation are both part of the performance. Actresses who can play authority, comic recoil, and emotional exasperation in the same breath will see a lot to do here."
+      },
+      {
+        "name": "HORSIE",
+        "role_type": "Lead",
+        "demographics": "Male · teen/young adult · son",
+        "hook": "The family’s oddball son is the wild card: half innocent, half provocateur, and often the one who lands the strangest line in the room. He has the comic freedom of someone who doesn’t fully understand the stakes, which makes him unexpectedly dangerous in a scene and memorable in every exchange.",
+        "why_actor_wants_this": "This is the kind of offbeat breakout part that gave Jonah Hill in Superbad or Michael Cera in Juno their early signature energy — a role built on awkward specificity and surprise. Young actors with strong comic timing and a taste for eccentricity will chase it because it lets them be weird and scene-stealing."
+      },
+      {
+        "name": "BLONDE",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-40s · flight attendant / traveler",
+        "hook": "A bright, mischievous presence who can pivot from deadpan service voice to absurdist punchline without changing temperature. She reads as the most adaptable person in the room, which makes her a great comic foil and a useful wildcard whenever the script needs a fresh angle.",
+        "why_actor_wants_this": "This is the kind of sly, scene-stealing role that gave Melissa McCarthy in Bridesmaids or Kathryn Hahn in Bad Moms room to turn supporting chaos into a calling card. Actors who can play intelligence, flirtation, and comic sabotage in one package will want it."
+      },
+      {
+        "name": "CAPTAIN",
+        "role_type": "Lead",
+        "demographics": "Male · 50s-60s · airline captain",
+        "hook": "A swaggering, half-competent authority figure who treats aviation like a bar story and responsibility like an optional accessory. He is funniest when he sounds sure of himself, because the script keeps revealing that confidence as a performance he’s improvising on the fly.",
+        "why_actor_wants_this": "This is the showcase lane of Leslie Nielsen in Airplane! or Peter Sellers in Dr. Strangelove — a straight-faced authority figure whose certainty is the joke. Comic actors with a gift for deadpan command and self-important absurdity will gravitate to it."
+      },
+      {
+        "name": "STEWARDESS",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-50s · flight attendant",
+        "hook": "She is the professional voice in the room, but the script lets her be sly, cutting, and occasionally gleeful about the chaos she manages. She has the best kind of comic authority: the person who knows the rules and also knows exactly how ridiculous the situation has become.",
+        "why_actor_wants_this": "This is the kind of crisp authority role that gave Jennifer Coolidge in Best in Show or Wanda Sykes in a sharp ensemble room to own the scene without overplaying it. Actors who can do dry control, timing, and a little mischief will see this as a gift."
+      },
+      {
+        "name": "POLICEMAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · uniformed officer",
+        "hook": "A swaggering, absurdly self-contradictory authority figure who turns a security check into a comic monologue. He is less a plot function than a burst of institutional nonsense, which makes him memorable even in a short run.",
+        "why_actor_wants_this": "This is the kind of scene-stealing comic authority part that gave John Cleese in A Fish Called Wanda or Kevin Pollak in The Usual Suspects room to dominate a sequence. Character actors who like to arrive, detonate, and leave a mark will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a pressure-cooker comedy with disciplined chaos and a very loud comic voice.",
+        "fit_profile": "First- or second-feature directors, or experienced TV comedy directors moving into features, who already work comfortably with ensemble timing, contained spaces, and performance-first staging. The material rewards directors who like verbal rhythm, precise blocking, and letting actors drive the laugh rather than relying on spectacle.",
+        "detail": "The script gives a director a contained canvas with escalating set pieces, so the craft challenge is orchestration rather than scale. It will attract filmmakers who enjoy turning a single location into a machine for rhythm, interruption, and comic escalation."
+      },
+      "buyer_appeal": {
+        "tier": "$1-5M contained feature",
+        "lane": "Streaming comedy / festival satire / broad adult ensemble lane",
+        "detail": "It can be packaged around a strong comic ensemble and a director with a sharp reel, because the locations are limited and the movie does not require heavy VFX or star-driven spectacle. The topical satire and airport setting give it an exportable hook for streamers that buy joke-forward adult comedies with a clear premise."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The joke barrage could be shaped into cleaner movement.",
+        "detail": "The script is at its most distinctive when the banter escalates the situation, and a next pass could keep asking which exchanges advance the flight crisis versus simply adding another comic beat. The version of the movie where each major section has a clearer comic turn would make the feature feel even more propulsive without changing its voice.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The topical references invite a clearance pass.",
+        "detail": "The draft is full of named people, brands, institutions, songs, and plays, so a producer would want a clean rights review before packaging. A simplification pass that swaps a few of the most specific references for invented equivalents would protect the joke density while reducing clearance load.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The emotional spine stays mostly comic.",
+        "detail": "The family dynamic is lively, and there is room for the wife-husband-son triangle to carry a little more emotional consequence between the jokes. One direction would be to let one or two quieter beats land before the next volley, so the audience feels the family as people, not only as punchline engines.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The airport-to-plane structure is already efficient.",
+        "detail": "The contained footprint is a major advantage, and the current location list is already doing the right work for a modest-budget comedy. There is no need to expand the geography; the cleaner version is the one that keeps the story inside the airport system and lets the pressure come from escalation, not travel.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 58.7,
+  "tier": "Needs Development",
+  "inputTokens": 32999,
+  "outputTokens": 4432,
+  "cost": 0.044693250000000004,
+  "declaredFormat": "Feature film"
+}

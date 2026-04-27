@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:21:23.660Z",
+  "submission_id": "09ad9ba8-5823-4a9a-b55f-c572b540e431",
+  "eval_id": "0596f6db-801c-4a8f-a4f4-72e8296c2321",
+  "title": "Clout   4.15   II",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Walker Jones",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · athletic MMA fighter"
+    },
+    {
+      "name": "Randall Worthington",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · former political strategist"
+    },
+    {
+      "name": "James Anthony",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · social-media-savvy friend / manager"
+    },
+    {
+      "name": "Logan Jackson",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · movie star"
+    },
+    {
+      "name": "Amanda Baker",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · assistant / gatekeeper"
+    },
+    {
+      "name": "Coach Riggs",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · MMA coach"
+    },
+    {
+      "name": "Malakai Callister",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · talent agent"
+    },
+    {
+      "name": "Ash Yanker",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · internet troll / streamer"
+    },
+    {
+      "name": "4CHANNER #1",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Asian"
+    },
+    {
+      "name": "4CHANNER #2",
+      "role_type": "Supporting",
+      "demographics": "Male · 18 · college student"
+    },
+    {
+      "name": "4CHANNER #3",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · English teacher in South Korea"
+    },
+    {
+      "name": "MALAKAI",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · effeminate voice, plastic surgery, talent agent"
+    },
+    {
+      "name": "AMANDA BAKER",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · assistant / gatekeeper"
+    }
+  ],
+  "positioning_hook": "A middleweight MMA grinder and his internet-savvy crew turn a celebrity’s performative art stunt into a cross-country flag heist, chasing clout, cash, and a real shot at the UFC.",
+  "cost_usd": 0.050016750000000006,
+  "input_tokens": 32495,
+  "output_tokens": 5699,
+  "status": "wrote:leads_ok"
+}

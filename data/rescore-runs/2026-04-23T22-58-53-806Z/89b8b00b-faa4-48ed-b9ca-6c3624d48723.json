@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:03:10.096Z",
+  "submission_id": "89b8b00b-faa4-48ed-b9ca-6c3624d48723",
+  "eval_id": "d14c0d91-2277-4360-acb3-6103b441e784",
+  "title": "The Last Call",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Italian-American"
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 30s across flashbacks"
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Lead",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Marty",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Dr. Susan Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Helen Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s"
+    },
+    {
+      "name": "Dr. Karen Levy",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Dr. Wyatt",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    }
+  ],
+  "positioning_hook": "A grief-stricken attorney sues the hospital that discharged his suicidal brother, only to discover the case is really about the call he never answered.",
+  "cost_usd": 0.04511025,
+  "input_tokens": 29313,
+  "output_tokens": 5139,
+  "status": "wrote:leads_ok"
+}

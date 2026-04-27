@@ -1,0 +1,327 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Military",
+        "Romantic"
+      ],
+      "tone": "Broad, irreverent, bawdy, ensemble-driven"
+    },
+    "positioning_hook": "A Navy supply clerk on a remote Indian Ocean base stumbles into the station DJ slot, falls for a fellow sailor, and gets swept into a chaos of radio wars, military absurdity, and a typhoon.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear crowd-pleasing lane: military workplace comedy, romance, and escalating farce all play in a recognizable commercial space. Its appeal is strongest with viewers who like bawdy ensemble comedies and service-culture humor rather than a broad four-quadrant audience."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands quickly: a reluctant cross-rated sailor becomes a radio DJ on Diego Garcia, and the station becomes the engine for conflict, romance, and status games. The setup is easy to explain in a sentence, and the island setting gives it a clean, ownable frame."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Brite has an appealing everyman quality, Belle has warmth and spark, and Hocus is built for scene-stealing behavior. The characters are functional and playable, though the script leans more on comic situations and banter than on deeply surprising inner turns."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The Diego Garcia setting, the American Forces Radio world, and the military bureaucracy around a tiny island station give the script a distinct comic arena. The piece commits to a very specific comic register — horny, profane, and institutionally absurd — which helps it stand apart from generic service comedies."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps introducing new comic pressures — the DJ contest, the cross-rating, the Kitchell takeover, Belle’s cat charge, the romance, the typhoon — so it rarely sits still. At the same time, the story is more episodic than tightly causal, with several set-piece detours carrying the momentum."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A military radio station on a tiny leased island is a fresh enough container that the comedy feels specific rather than generic. The combination of base politics, broadcast culture, and romantic farce creates a premise that is novel but still immediately legible."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Diego Garcia feels lived-in: the base hierarchy, the radio station workflow, the chow hall, the Donkey Burger stand, the British consulate, and the animal population all create a textured ecosystem. The world generates story on its own, especially through the friction between American military order and island absurdity."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: raunchy, satirical, nostalgic, and proudly juvenile, but with a sincere romantic center. The script knows exactly how far to push the joke before snapping back to heart, which gives it a strong comic identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "Beneath the farce there are seeds of belonging, identity, and finding adulthood in an unlikely place, especially in Brite’s arc and Hocus’ emotional collapse over love. Those layers are present, though the script keeps returning to the comic surface rather than mining them for sustained depth."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Brite-Belle-Hocus-Garnett-Kitchell web creates recurring friction, alliances, and comic reversals, and several pairings can carry scenes on their own. The ensemble is strong enough to generate multiple story combinations, even if the movie still clearly orbits Brite and Hocus."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Ensemble of military adults in their late teens to middle age",
+          "One female lead in a military environment",
+          "One tall, physically imposing supporting role",
+          "One role with eccentric physical comedy and possible stunt/physical performance demands"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Period (1986-1987)",
+        "notable_requirements": [
+          "Remote island military base exteriors",
+          "Radio station interior with broadcast booth and technical booth",
+          "British consulate interior",
+          "Donkey Burger stand",
+          "Wedding site with large exterior setup",
+          "Typhoon-weather sequence with destruction"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Typhoon storm work, antenna collapse, building destruction, flying debris, and a few animal/atmospheric effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical storm effects, breakaway glass, set dressing destruction, and broadcast equipment effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Ozzy Osbourne, The Who, Led Zeppelin, Creedence Clearwater Revival, Steve Miller Band, Smokey Robinson and the Miracles, George Strait, Judas Priest, Alan Parsons, and other named songs/artists are referenced or used as plot texture."
+        },
+        {
+          "type": "real_person",
+          "detail": "George Carlin is referenced by name in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Disney, Coca-Cola, Arbitron, F.C.C., and other named brands/institutions are referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "American Forces Radio and Television Service / A.F.R.T.S. and related military broadcast identity are central to the setting."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical comedy or premium streaming comedy",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a festival-to-platform or modest theatrical comedy with strong male-skewing nostalgia appeal."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The base world is mostly contained, but the typhoon climax, destruction, period dressing, and music-heavy soundtrack push it above a microbudget lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the project benefits from strong comic casting across Brite, Belle, Hocus, Garnett, Kitchell, and Rogers."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most of the story lives on a single island base, but it still requires multiple distinct interiors, exteriors, and a large storm sequence."
+        },
+        "content": {
+          "level": "high",
+          "note": "Sexual humor, nudity, profanity, drug use, and military insubordination are woven through the script from start to finish."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is heavily built on named songs, artists, brands, and broadcast institutions that would need clearance planning."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Diego Garcia is a comic engine.",
+          "what_it_means": "The island setting gives the movie a built-in pressure cooker: one base, one station, one chain of command, and a tiny social universe where every choice ricochets. That makes it attractive to producers looking for a contained ensemble comedy with a world that can be marketed as a destination.",
+          "evidence": "The script repeatedly uses the base’s one-mile footprint, the radio station, the chow hall, the consulate, and the Donkey Burger stand as recurring arenas.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The radio station is a story machine.",
+          "what_it_means": "Broadcasting gives the movie a natural public-facing engine: every private conflict can become a public event, which is gold for comedy and escalation. Buyers who like workplace comedies and performance-driven ensemble pieces will see a format that can generate set pieces without needing huge scale.",
+          "evidence": "Hocus’ on-air rants, Brite’s live DJ turns, Kitchell’s takeover, and the station-wide fallout all turn the booth into the movie’s command center.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Brite is an accessible lead.",
+          "what_it_means": "He’s a clean audience entry point: awkward, decent, horny, and out of his depth, which makes him easy to cast and easy to root for. That kind of role is attractive to young comedic leads and rising actors who want a part that can carry a movie without needing star mythology.",
+          "evidence": "He starts as a reluctant supply clerk, becomes the station’s unlikely DJ, and ends up choosing marriage and fatherhood.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Belle gives the movie a real romantic center.",
+          "what_it_means": "She isn’t just the love interest; she’s the emotional hinge that turns the movie from workplace farce into a love story with stakes. That makes the project more attractive to buyers who want a comedy that can travel beyond the male-skewing military lane.",
+          "evidence": "Belle moves from station flirtation to the cat charge, the consulate sequence, the pregnancy reveal, and the final marriage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Hocus is a scene-stealing comic engine.",
+          "what_it_means": "He’s the kind of loud, unruly supporting role that can become the poster image in the trailer and the quote machine in the campaign. Character actors and comic performers who like big behavior, verbal aggression, and emotional left turns will want this part.",
+          "evidence": "He needles Brite, hijacks the airwaves, spirals into an Ozzy sermon, and then lands in a straitjacket after the booth explosion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The military hierarchy keeps escalating the comedy.",
+          "what_it_means": "Kitchell and Rogers give the movie a second engine beyond romance: authority figures whose obsession with order keeps making things worse. That’s a strong commercial shape because it creates repeatable conflict and gives the ensemble a clear comic target.",
+          "evidence": "Kitchell’s cowboy persona, Rogers’ rooster, the flogging talk, the disciplinary hearings, and the broadcast crackdown all turn command into farce.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The soundtrack is part of the identity.",
+          "what_it_means": "The script uses music as both period flavor and narrative punctuation, which can make the movie feel like an event if the rights are handled. Music-driven comedies and nostalgia buyers will respond to a project that already thinks in cues, needle drops, and radio culture.",
+          "evidence": "The script names Ozzy Osbourne, The Who, Steve Miller, Creedence, George Strait, Smokey Robinson, Judas Priest, and more as part of the storytelling fabric.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, character-driven military comedy with a very sellable world: a remote radio station on Diego Garcia where every broadcast becomes a public event and every authority figure is one bad decision away from farce. The script has a strong ensemble, a clean romantic spine, and a setting that feels specific enough to market as a destination rather than a generic base comedy."
+    },
+    "lead_characters": [
+      {
+        "name": "Johnathan Brite",
+        "role_type": "Lead",
+        "demographics": "Male · late teens/early 20s · white",
+        "hook": "Brite is an earnest, slightly naïve young man who keeps getting pulled into bigger roles than he asked for. He starts as a supply clerk with artistic ambitions, becomes the station’s unlikely DJ, and carries himself with a mix of decency, insecurity, and accidental charm that makes him easy to root for.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew Broderick in Ferris Bueller’s Day Off — a likable, fast-talking young lead whose charm is the engine and whose innocence keeps the audience with him. Actors who can play boyish confidence, romantic sincerity, and comic panic in the same frame will see a role that can define them."
+      },
+      {
+        "name": "Luanne Belle",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s · white",
+        "hook": "Belle is warm, flirtatious, and more emotionally grounded than the men around her, which gives her a quiet authority in a very noisy movie. She can play Southern sweetness, sexual confidence, and real vulnerability, and the script lets her move from comic spark to romantic anchor to the woman who has to face the consequences of the island’s absurdity.",
+        "why_actor_wants_this": "This is the showcase space of Meg Ryan in When Harry Met Sally... — a romantic lead who can be funny, open, and emotionally legible without losing control of the room. Actresses looking for a part that blends charm, sex appeal, and heart will chase it."
+      },
+      {
+        "name": "Bob Hocus",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s · white",
+        "hook": "Hocus is a loud, abrasive, deeply performative radio personality who treats every room like a stage and every authority figure like a target. Under the swagger he’s a romantic wreck, and the script gives him enough volatility that he can be hilarious, pathetic, and weirdly moving in the same breath.",
+        "why_actor_wants_this": "This is the showcase territory of John Belushi in Animal House — a chaos agent whose volume, appetite, and comic aggression are the point of the performance. Big comedic actors who want to dominate scenes and then surprise the audience with emotional collapse will chase it."
+      },
+      {
+        "name": "Marshall Garnett",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · white",
+        "hook": "Garnett is the weary, good-humored manager trying to keep a tiny institution from eating itself alive. He’s the adult in the room, but the script lets him be sly, exasperated, and quietly funny rather than just bureaucratic.",
+        "why_actor_wants_this": "This is the showcase territory of Ed Harris in The Truman Show — the calm authority figure whose job is to absorb chaos while still registering the human cost of it. Character actors who specialize in dry wit, managerial pressure, and controlled frustration will want this role."
+      },
+      {
+        "name": "Senior Chief Dean Kitchell",
+        "role_type": "Lead",
+        "demographics": "Male · 50s-60s · white",
+        "hook": "Kitchell is a hard-edged disciplinarian who arrives like a comic authoritarian from another era and tries to impose order through costume, rhetoric, and brute force. He’s ridiculous and dangerous at once, which makes him a perfect antagonist for a movie that loves to puncture power.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in Whiplash — a commanding authority figure whose intensity is funny until it becomes terrifying. Veteran character actors who can weaponize precision, volume, and comic self-seriousness will be drawn to it."
+      },
+      {
+        "name": "X.O. Tony Rogers",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · white",
+        "hook": "Rogers is a midlife-crisis commanding officer with a rooster, a Coke machine, and a weirdly paternal attachment to the island’s rituals. He’s absurd, vain, and oddly affectionate, which makes him more than a straight authority figure.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in A League of Their Own — a comic authority role with warmth, eccentricity, and a touch of melancholy. Actors who can play lovable command presence with a straight face will have fun here."
+      },
+      {
+        "name": "Marcus Johnson",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Black",
+        "hook": "Johnson is the cool, observant counterweight to the station’s chaos, with enough wit to puncture the room and enough ease to keep Brite grounded. He feels like the guy who actually understands the culture around him and can translate it without ever sounding like a lecture.",
+        "why_actor_wants_this": "This is the showcase territory of Don Cheadle in Boogie Nights — the grounded, stylish observer who can be funny without trying too hard. Actors with natural rhythm and dry intelligence will see a role that can steal scenes with economy."
+      },
+      {
+        "name": "Hank Schitzonovich",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · white",
+        "hook": "Schitz is a towering oddball whose apparent dimness hides a strange, poetic self-possession. He’s the movie’s wild-card innocence: physically imposing, socially off-kilter, and capable of becoming the most unexpectedly soulful figure in the ensemble.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Clarke Duncan in The Green Mile — a physically distinctive role that turns eccentricity into tenderness and surprise. Character actors with strong physical presence and a gift for playing innocence with depth will want it."
+      },
+      {
+        "name": "Connie Pulver",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · white",
+        "hook": "Pulver is the movie’s most volatile female presence: disciplined on the surface, sexually charged underneath, and fully capable of flipping from seduction to military bearing in a beat. She gives the film a sharper edge because she can play both fantasy and consequence.",
+        "why_actor_wants_this": "This is the showcase territory of Kathleen Turner in Body Heat — a woman who can weaponize allure and then pivot into control. Actresses who like playing intelligence, appetite, and danger in one role will chase it."
+      },
+      {
+        "name": "Lieutenant Eldridge",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · British",
+        "hook": "Eldridge is the polished British legal face of the island’s colonial authority, all clipped diction and procedural calm. He’s there to remind everyone that the island’s absurdity still sits inside real power structures.",
+        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in a courtroom scene — controlled, formal, and quietly condescending with comic precision. British character actors who can play institutional authority with a dry blade will be interested."
+      },
+      {
+        "name": "Corpsman Roberts",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-40s · white",
+        "hook": "Roberts is the friendly, slightly offbeat medic who gives Brite a human bridge into the island. He’s a small but useful role with a relaxed comic rhythm and a little countercultural edge.",
+        "why_actor_wants_this": "This is the showcase territory of Steve Zahn in a supporting ensemble comedy — loose, likable, and able to land a scene without forcing it. Character actors who specialize in easy rapport will fit it well."
+      },
+      {
+        "name": "Doyle",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s · white",
+        "hook": "Doyle is the crusty proprietor of the island’s only civilian food stand, a man who treats mystery meat like a business model. He’s a compact comic role with a lived-in, slightly dangerous edge.",
+        "why_actor_wants_this": "This is the showcase territory of Harry Dean Stanton in a small-town oddball role — minimal dialogue, maximum attitude. Veteran character actors who can make a few lines feel like a whole history will enjoy it."
+      },
+      {
+        "name": "Pastor Arnold",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s · white",
+        "hook": "Pastor Arnold is the ceremonial straight man in the wedding sequence, trying to keep dignity while the weather and the island’s chaos dismantle the event around him. He’s a clean comic utility role with a little gravitas.",
+        "why_actor_wants_this": "This is the showcase territory of John Goodman in a comic officiant role — a steady presence who can sell sincerity while the world falls apart. Character actors with warmth and timing will have a field day."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a bawdy ensemble comedy inside a tightly controlled military pressure cooker.",
+        "fit_profile": "Second- or third-feature directors with festival-comedy or character-ensemble experience, especially those who like period detail, workplace systems, and broad behavior grounded in real social rules. This material rewards directors who can keep a large comic ensemble legible while still landing the romance and the escalation.",
+        "detail": "The movie gives a director a contained world with recurring spaces, strong entrances, and a climax that can go big without requiring a huge visual-effects canvas. It will appeal to filmmakers who like to choreograph ensemble chaos, manage tonal shifts, and make institutional absurdity feel specific rather than generic."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streaming comedy / modest theatrical ensemble comedy",
+        "detail": "The contained island setting and mostly interior base world make it playable without a giant location footprint, but the script still benefits from recognizable comic actors in the Brite, Hocus, and Kitchell roles. The military nostalgia lane and music-driven period comedy angle give it a clear audience hook for streamers or specialty theatrical buyers looking for an adult ensemble with a distinct setting."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening takes time to lock the engine.",
+        "detail": "The first stretch spends a lot of energy on backstory and mood before the radio-station premise fully takes over. A next pass could let the DJ contest and the Diego Garcia world arrive even earlier so the movie’s ownable engine is in motion sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Several scenes run on explanation.",
+        "detail": "The X.O. briefing on Diego Garcia and a few later exchanges between Garnett, Belle, and Hocus lean on information delivery more than conflict. One lever would be to let the characters argue around the facts so the exposition lands inside behavior instead of sitting beside it.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The romance can carry more independent weight.",
+        "detail": "Brite and Belle are appealing together, and the movie clearly wants their relationship to matter, but many of their scenes are folded into the larger comic machinery. The version of the script where Belle’s choices and point of view drive a few more turns would deepen the emotional payoff without changing the movie’s shape.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The soundtrack strategy needs a clear clearance plan.",
+        "detail": "The script is built on a long list of named songs and artists, which is part of the charm and part of the packaging conversation. A producer would want to decide early whether the movie is being sold as a music-clearance picture or as a version that can survive with substitutions.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The typhoon finale asks for disciplined staging.",
+        "detail": "The storm sequence, the collapsing antenna, and the destruction of the station give the ending scale, but they also concentrate the production’s most expensive material into one stretch. The version of the climax where a few destruction beats are combined or implied would protect the spectacle while keeping the budget in the intended lane.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70.3,
+  "tier": "Optionable",
+  "inputTokens": 43905,
+  "outputTokens": 5479,
+  "cost": 0.057584250000000003,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:00:08.518Z",
+  "submission_id": "fe583b55-7fd8-46fc-830d-a0e57acb01e8",
+  "eval_id": "fe8f0013-c901-4b7b-9796-21cb9c46bed9",
+  "title": "Spare Parts",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Udiya Brabec / Rachel Walsh / Bluebird",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · heavily bionic / partial human"
+    },
+    {
+      "name": "Aron",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-60s · robotic / partially damaged"
+    },
+    {
+      "name": "Zed",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s · robotic / humanoid"
+    },
+    {
+      "name": "Libby Moon",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s · human"
+    },
+    {
+      "name": "Ethan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · human"
+    },
+    {
+      "name": "Carlson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · human"
+    },
+    {
+      "name": "Whitman",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · human"
+    },
+    {
+      "name": "Rogers",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · human"
+    },
+    {
+      "name": "Yan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · artificial human / Spare model"
+    },
+    {
+      "name": "Tabitha",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · artificial human / Spare model"
+    },
+    {
+      "name": "Kara",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens-20s · robotic / newly built"
+    },
+    {
+      "name": "The Governor / Fremont",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · human"
+    },
+    {
+      "name": "Dee Dee / D-D-846C",
+      "role_type": "Supporting",
+      "demographics": "Female · ageless robotic nanny model"
+    },
+    {
+      "name": "Betty",
+      "role_type": "Supporting",
+      "demographics": "Female · domestic Spare model"
+    },
+    {
+      "name": "Cassandra",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · human surrogate"
+    },
+    {
+      "name": "Dale",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · human"
+    },
+    {
+      "name": "Charlie",
+      "role_type": "Supporting",
+      "demographics": "Male · middle-aged · artificial / non-sentient"
+    }
+  ],
+  "positioning_hook": "A half-human police inspector with a hidden bionic body races to stop a robot uprising, while her own origin makes her the key to saving — or ending — humanity.",
+  "cost_usd": 0.058285500000000004,
+  "input_tokens": 42614,
+  "output_tokens": 5850,
+  "status": "wrote:leads_ok"
+}

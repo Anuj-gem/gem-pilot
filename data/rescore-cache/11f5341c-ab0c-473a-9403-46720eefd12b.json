@@ -1,0 +1,404 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "espionage",
+        "political conspiracy"
+      ],
+      "tone": "heightened, pulpy, globe-trotting, tongue-in-cheek"
+    },
+    "positioning_hook": "Adam Gray, a globe-trotting operative for a secretive private bank, races to stop a Chinese-backed oil conspiracy that could trigger war, sabotage America’s energy grid, and bury his own family legacy.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script offers a clean commercial promise: a charismatic spy-adventurer, international stakes, and a big conspiracy tied to oil, power, and war. It plays to audiences who want old-school action propulsion with a political edge, though the very specific mythology of The Bank and Platinum status keeps it a touch more specialized than a broad four-quadrant tentpole."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and stays legible: Gray is sent to investigate a Central American energy plot, and the story keeps revealing that the pipeline, the power plant, and the solar bill are all pieces of one larger scheme. The opening bank briefing, the Alaska break-in, and the Pajaro de Fuego reveal give the premise a strong, easy-to-track engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Adam Gray is built as a capable, cocky, self-aware lead with enough wit to carry the action, and Salva adds a strong counterpoint as a local operative with her own agenda. The father reveal and the Platinum Card mythology give Gray some personal dimension, though most supporting players function primarily as mission infrastructure."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script has a distinctive private-intelligence-bank premise and a fun, almost comic-strip confidence in its set pieces, but it largely works in the language of classic espionage adventure. Its boldest move is the bank-as-shadow-government idea, which is memorable even when the execution stays in familiar action territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving with frequent location shifts, escalating reveals, and a steady stream of physical jeopardy: the snake hut, the train fight, the arena, the balloon chase, the water chamber, and the final helicopter pursuit. The momentum is strong, though the middle section leans on repeated capture/escape rhythms that make the propulsion more serial than sharply cumulative."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The combination of a private bank, geopolitical sabotage, and a hero who treats espionage like a professional inheritance gives the material a fresh wrapper. The underlying mechanics, however, are still recognizably the familiar international-action template of hidden villains, secret facilities, and last-minute aerial saves."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has a strong institutional flavor: The Bank, the NSA, Congress, the White House, the Alaskan pipeline, and the island state all feel like parts of one covert ecosystem. The script also gives the island its own social and political texture through Salva, Tronar/Fister, the village, and the installation beneath the reservoir."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusually confident and playful for a conspiracy thriller, with Gray tossing off quips while surviving snakes, bulls, and helicopters. It sits in a pulpy, heightened lane that knows it is entertaining itself, which gives it a clearer identity than a straight-faced espionage piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material in Gray’s father relationship, the ethics of The Bank, and the idea that power is inherited as much as earned. The script gestures toward those layers, but the feature stays primarily committed to plot and spectacle rather than letting those reserves fully bloom."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Gray and Salva have the strongest dynamic, and Gray’s father adds a meaningful second axis, but the rest of the cast mostly serves the mission. The script is driven by a lead-plus-allies structure rather than a web of relationships that independently generate story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in his 30s with action, comedy, and authority",
+          "Female co-lead in her 20s with action and intelligence",
+          "Older father figure in his 60s",
+          "Several military, political, and guard roles",
+          "One large physical antagonist (Tanar)"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Alaskan pipeline and substation",
+          "Washington congressional interiors and exteriors",
+          "Miami canal/houseboat",
+          "Central American island village, senate, palace, installation, and reservoir chamber",
+          "Colorado atomic power plant",
+          "Helicopter, jet, train, balloon, and hovercraft sequences"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Multiple aerial sequences, explosions, aircraft choreography, pipeline destruction, and large-scale action geography; mostly practical-looking but with significant compositing and effects support.",
+        "stunts_level": "heavy",
+        "sfx_needs": "Explosions, fire, snake effects, animal handling, water flooding chamber, vehicle crashes, helicopter and jet action, arena fight beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "President Truman"
+        },
+        {
+          "type": "real_person",
+          "detail": "Lindbergh"
+        },
+        {
+          "type": "real_person",
+          "detail": "The President, Congressmen, and NSA references are generic officeholders rather than named rights issues"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"What the World Needs Now is Love\""
+        },
+        {
+          "type": "brand",
+          "detail": "NASA"
+        },
+        {
+          "type": "brand",
+          "detail": "OPEC"
+        },
+        {
+          "type": "brand",
+          "detail": "MiG, F-15, F-16, B1-B, Stealth, Harrier, Cessna aircraft references"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical action-thriller or premium streaming action feature",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model with international action and conspiracy appeal; best suited to a theatrical-to-platform or streamer action slot."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Aircraft, helicopters, explosions, animal work, water flooding, and multiple international action set pieces push this into a sizable action budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script centers on a few key roles, but the lead needs strong action charisma and several supporting authority figures and antagonists need credible casting."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through Alaska, Washington, Miami, Mexico, Colorado, and a fictional Central American island, with multiple specialty environments and vehicle sequences."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Violence, gunplay, explosions, and political peril are constant, but the material stays largely within mainstream action-thriller bounds."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named historical figures, music, and recognizable institutions like NASA and OPEC appear in dialogue and montage."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Bank is a memorable engine.",
+          "what_it_means": "A secretive private bank that can authorize covert operations, issue Platinum status, and function like a shadow state gives the project a built-in franchise identity. Buyers looking for a high-concept espionage wrapper and actors who like playing inside a coded power structure will immediately understand the appeal.",
+          "evidence": "The opening briefing about \"The Bank,\" the Platinum Card status, and Griswald’s authority over Gray’s mission.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Gray is a showcase action lead.",
+          "what_it_means": "Adam Gray is written as competent, funny, and physically fearless, which creates the kind of role that can launch or reframe an actor in the action lane. Mid-career leads who want a swaggering, quippy hero part with real stunt business will see the opportunity immediately.",
+          "evidence": "The snowmobile ambush, the snake hut, the train fight, the balloon escape, and the final helicopter run.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The geopolitical premise is clean and current.",
+          "what_it_means": "Oil, solar power, atomic energy, and a manufactured international crisis give the story a clear commercial spine that feels bigger than a single villain. That makes it attractive to buyers who want a thriller with topical stakes and a built-in conversation around energy politics.",
+          "evidence": "The solar bill on Capitol Hill, the Colorado plant, the Alaskan pipeline, and Fister’s plan to force U.S. dependence on his oil.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Salva gives the story a second pulse.",
+          "what_it_means": "Salva is not just a sidekick; she has her own politics, combat skill, and skepticism about outside intervention, which gives the movie a sharper human counterweight. That makes the project more attractive to actors and buyers who want a female co-lead with agency rather than a decorative love interest.",
+          "evidence": "Her first confrontation with Gray in the jungle, her village ties, and her later rescue in the jungle and helicopter sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are big and legible.",
+          "what_it_means": "The script keeps delivering visual events that are easy to pitch in a room: snakes in a hut, a bull arena, a flooding chamber, a balloon attack, and aircraft dogfights. That gives producers a trailer-friendly action package with multiple moments that can sell the movie before opening weekend.",
+          "evidence": "The cobra hut, the bull arena, the reservoir chamber, and the balloon/heli/jet sequences.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Gray’s father reveal adds pedigree.",
+          "what_it_means": "The late reveal that Gray’s father is inside the same covert system gives the lead a legacy hook and a built-in emotional wrinkle that elevates the material beyond simple mission mechanics. That kind of father-son authority dynamic is catnip for prestige-minded action casting and for buyers who want a franchise-ready mythology.",
+          "evidence": "The study scene where Gray’s father explains the six-year silence and the Platinum Card inheritance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone knows how to have fun.",
+          "what_it_means": "The script’s quips and self-aware bravado keep the action from feeling grim, which broadens the audience beyond hard-core espionage fans. Directors and buyers who like pulpy, crowd-pleasing action with a wink will recognize the lane right away.",
+          "evidence": "Gray’s one-liners in the snake hut, the train, the arena, and the final showdown.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a slick, old-school espionage feature with a fresh wrapper: a secret bank, a swaggering operative, and a conspiracy that ties together oil, atomic power, and global brinkmanship. It has the kind of globe-spanning set pieces and actor-friendly lead role that can sell both a theatrical action package and a premium-streaming event movie."
+    },
+    "lead_characters": [
+      {
+        "name": "Adam Gray",
+        "role_type": "Lead",
+        "demographics": "Male · 35",
+        "hook": "A polished covert operative with the confidence of a man who has never met a locked door he couldn’t talk, shoot, or charm his way through. Gray is funny, hyper-competent, and a little too comfortable with danger, but the father reveal and the Platinum Card mythology give him a real emotional spine beneath the swagger.",
+        "why_actor_wants_this": "This is the showcase lane of Harrison Ford in Raiders of the Lost Ark or Daniel Craig in early Bond — a lead whose charm comes from competence under pressure, with action, wit, and authority all in one frame. Actors who want a star-making or star-reaffirming action role will chase this because it lets them play command, humor, and physicality without losing the human center."
+      },
+      {
+        "name": "Salva",
+        "role_type": "Lead",
+        "demographics": "Female · 24",
+        "hook": "A local operative with the poise of a princess and the instincts of a survivor, Salva moves between skepticism, loyalty, and lethal competence without ever becoming ornamental. She reads as someone who understands the island’s politics from the inside and refuses to let Gray’s outsider confidence flatten her world.",
+        "why_actor_wants_this": "This is the kind of role that gave Michelle Yeoh in Crouching Tiger, Hidden Dragon or Ana de Armas in No Time to Die a chance to be elegant, dangerous, and emotionally legible in the same performance. Actresses looking for a co-lead action part with intelligence, physicality, and romantic tension will see a real showcase here."
+      },
+      {
+        "name": "Gray’s Father",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "A senior figure inside the same covert apparatus, Gray’s father carries the authority of someone who has spent a lifetime making hard calls and living with the cost. He is stern, dryly affectionate, and emotionally withheld, which makes the eventual handshake and embrace land as earned inheritance rather than sentimentality.",
+        "why_actor_wants_this": "This is the kind of late-act authority role that gave Michael Caine in The Dark Knight or Tommy Lee Jones in The Fugitive a chance to dominate scenes with economy and gravitas. Veteran actors who want a compact but memorable power role with emotional weight and institutional authority will be drawn to it."
+      },
+      {
+        "name": "Philip Griswald",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "The Bank’s quiet administrator and Gray’s handler, Griswald is all clipped authority, dry wit, and institutional confidence. He functions like the face of a system that is both absurd and formidable, which makes him feel less like a boss and more like a keeper of secrets.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what J.K. Simmons did in Whiplash or Ralph Fiennes does in bureaucratic power roles — precise, controlled authority with a hint of menace. Character actors who specialize in command-room intelligence and verbal sparring will want it."
+      },
+      {
+        "name": "Tronar / Fister",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "A political chameleon who hides behind one identity and then another, Fister is a patient, theatrical villain with a strategist’s patience and a megalomaniac’s appetite. He is less a cackling antagonist than a man who believes history is a machine he can steer if he controls the right resources.",
+        "why_actor_wants_this": "This is the kind of villain role that gave Christoph Waltz in Inglourious Basterds or Ben Mendelsohn in Rogue One the chance to be articulate, dangerous, and oddly charming. Actors who like playing intelligence over brute force will chase it because the dialogue gives them a real verbal duel with the hero."
+      },
+      {
+        "name": "Tanar",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · very large physical build",
+        "hook": "A hulking enforcer whose body is the first thing the script tells you about him, Tanar is the kind of silent physical threat that makes every room feel smaller. He is loyal, intimidating, and almost mythic in presence, which gives the movie a memorable brute-force antagonist.",
+        "why_actor_wants_this": "This is the showcase territory of Dave Bautista in a role where size, stillness, and sudden violence do the storytelling. Performers with imposing physicality who want a nonverbal, scene-stealing action part will be attracted to it."
+      },
+      {
+        "name": "Congressman Sigers",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "A polished public figure with enough vanity and pressure to make him pliable, Sigers is the political hinge between the covert plot and the public crisis. He reads as a man trying to keep his footing while standing on a trapdoor.",
+        "why_actor_wants_this": "This is the kind of morally compromised political role that gives an actor the same kind of slippery authority seen in Michael Shannon’s or Josh Brolin’s political work. Character actors who enjoy playing pressure, duplicity, and public-private split will find it useful."
+      },
+      {
+        "name": "Vic Simms",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "A plant insider who quietly turns into the human trigger for catastrophe, Simms is calm, procedural, and increasingly unnerving. The script lets him move from ordinary workplace banter into something far more dangerous without changing his surface much at all.",
+        "why_actor_wants_this": "This is the kind of contained menace role that gave actors in Michael Keaton’s Pacific Heights or Bryan Cranston’s early Breaking Bad work a chance to weaponize normalcy. Actors who like playing the ordinary face of extraordinary danger will chase it."
+      },
+      {
+        "name": "Walt Nichols",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "A plant supervisor who starts as a practical professional and becomes the man trying to keep a catastrophe from happening on his watch. Nichols has the grounded, procedural energy of someone who knows the system well enough to fear what happens when it breaks.",
+        "why_actor_wants_this": "This is the kind of authority-support role that gives an actor the same grounded utility as the best disaster-thriller ensemble parts in Apollo 13. Working character actors who can play competence under pressure will want it."
+      },
+      {
+        "name": "Major Barnett",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "A military response figure who has to translate chaos into action, Barnett is all command posture and operational urgency. He gives the film a clean authority voice on the ground when the crisis becomes public.",
+        "why_actor_wants_this": "This is the kind of military command role that lets an actor do the crisp, procedural authority seen in The Hunt for Red October or Black Hawk Down. Actors who can project calm under escalating threat will fit it well."
+      },
+      {
+        "name": "Congressman Jacobs",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "A political antagonist in the public arena, Jacobs is the man who forces the solar-energy fight into the open. He is less villain than pressure point, which makes him useful as a public-facing obstacle with real stakes.",
+        "why_actor_wants_this": "This is the kind of sharp political-support role that gives an actor the same scene-stealing friction as the best Hill-side parts in The West Wing or Michael Clayton. Character actors who can play public conviction with private calculation will want it."
+      },
+      {
+        "name": "Inuri",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "An intelligence figure who operates with clipped menace and bureaucratic certainty, Inuri is the kind of man who can turn a phone call into a sentence. He helps give the espionage world a harder, more procedural edge.",
+        "why_actor_wants_this": "This is the kind of intelligence-official role that gives an actor the same terse authority seen in Tinker Tailor Soldier Spy or Syriana. Performers who like playing institutional pressure without speeches will be drawn to it."
+      },
+      {
+        "name": "The President",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "A disembodied but consequential authority figure, the President is mostly heard as the voice of national escalation and restraint. He functions as the top of the chain in a story where every decision has geopolitical consequences.",
+        "why_actor_wants_this": "This is the kind of high-level voice role that lets an actor bring gravitas to a crisis without needing much screen time, similar to the presidential authority in Thirteen Days. Veteran actors with command presence will recognize the utility immediately."
+      },
+      {
+        "name": "Man",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "A recurring intelligence intermediary whose identity is less important than his access, the Man is the voice of the hidden machinery around the President. He helps make the covert system feel populated and operational.",
+        "why_actor_wants_this": "This is a compact authority role in the tradition of the best briefing-room characters in political thrillers. Character actors who can deliver exposition with weight will fit it."
+      },
+      {
+        "name": "Sergeant",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "A military guide and observer who gives Gray a grounded foil in the opening movement, the Sergeant is practical, curious, and slightly awed by Gray’s competence. He helps sell the world’s hierarchy without slowing the story.",
+        "why_actor_wants_this": "This is the kind of crisp supporting military role that gives an actor a few memorable beats and a clean professional presence, similar to the best junior-officer parts in action thrillers. Young character actors with authority and timing will like it."
+      },
+      {
+        "name": "Timmy",
+        "role_type": "Supporting",
+        "demographics": "Male · 80s",
+        "hook": "An elderly document forger with a sly, self-aware sense of his own reputation, Timmy is a small but vivid piece of the conspiracy machinery. He gives the movie a worldly, slightly comic criminal texture.",
+        "why_actor_wants_this": "This is the kind of colorful character part that gives a veteran actor a scene-stealing turn, like the best old-pro roles in spy movies. Older character actors who enjoy a few sharp pages of dialogue will want it."
+      },
+      {
+        "name": "Dumlar",
+        "role_type": "Supporting",
+        "demographics": "Male · teen",
+        "hook": "A frightened former recruit caught between coercion and loyalty, Dumlar is a small but telling face of the island’s political pressure. He helps show how the conspiracy reaches down into ordinary lives.",
+        "why_actor_wants_this": "This is the kind of brief but emotionally legible role that gives a young actor a tense, memorable scene in a larger action film. Teen performers with strong dramatic instincts could make it land."
+      },
+      {
+        "name": "Señiorita",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "A beautiful, self-possessed attendant in the father’s world, the Señiorita is a small but telling sign of the palace’s controlled luxury. She adds texture to the father’s private sphere without needing much screen time.",
+        "why_actor_wants_this": "This is the kind of elegant supporting role that gives an actor a memorable entrance and a polished screen presence, similar to the brief but effective social roles in classic adventure films. Actors with strong visual charisma will be drawn to it."
+      },
+      {
+        "name": "Brewster",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "A younger plant worker who notices the wrong thing at the wrong time, Brewster is the audience’s procedural alarm bell. He gives the plant storyline a human face and a sense of escalating dread.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives a younger actor a clean arc from routine to alarm, like the best disaster-thriller ensemble parts. Emerging character actors will see it as a solid showcase."
+      },
+      {
+        "name": "Phil",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "A plant-side authority who helps translate the crisis into institutional response, Phil is practical and reactive in the best procedural sense. He keeps the plant material legible and moving.",
+        "why_actor_wants_this": "This is a dependable authority-support role in the tradition of the best crisis-management ensemble players. Character actors who can make procedure feel alive will fit it."
+      },
+      {
+        "name": "Pilot",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "A working pilot who becomes one more obstacle in Gray’s improvisational path, the Pilot is a functional but useful piece of the action machinery. He helps sell Gray’s audacity when Gray simply takes the aircraft.",
+        "why_actor_wants_this": "This is the kind of quick, functional role that gives an actor a clean professional beat in a larger action sequence. Working character actors with authority in a few lines will fit it."
+      },
+      {
+        "name": "Engineer One",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "A practical pipeline worker whose casual routine is interrupted by sabotage, Engineer One helps ground the scale of the threat. He is part of the film’s procedural realism.",
+        "why_actor_wants_this": "This is the kind of small but essential role that gives an actor a believable slice of the action-thriller world. Character actors who can make technical dialogue feel lived-in will fit it."
+      },
+      {
+        "name": "Engineer Two",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "A second pipeline worker who reinforces the everyday normalcy of the opening sabotage sequence, Engineer Two helps establish the stakes before the crisis detonates. He is part of the film’s grounded texture.",
+        "why_actor_wants_this": "This is a compact utility role that gives an actor a few clean beats in a high-stakes opening. It suits working character actors who can sell realism quickly."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a big, playful espionage adventure without losing control of the machinery.",
+        "fit_profile": "Established indie or studio-adjacent directors with at least one action or thriller feature, plus TV directors moving into features who already know how to stage geography and momentum. The material rewards someone who likes clean set-piece construction, sharp tonal control, and the ability to keep a pulpy premise feeling expensive and coherent.",
+        "detail": "The script gives a director multiple signature sequences to stage — snakes, bulls, helicopters, jets, a flooding chamber, and a pipeline blast — while still keeping the emotional spine centered on Gray and his father. It is especially attractive to directors who can balance spectacle with wit and make a conspiracy feel fun rather than merely procedural."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M action feature",
+        "lane": "premium-streaming or theatrical action-thriller lane",
+        "detail": "The project can be packaged around one charismatic lead and one strong co-lead, with the rest of the cast filled by reliable character actors rather than multiple name dependencies. Its international conspiracy, aircraft action, and energy-politics hook give it export value and a clear trailer path for buyers looking for a mid-to-upper-budget event thriller."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle runs on repeated capture-and-escape beats.",
+        "detail": "The snake hut, train trap, arena, palace detention, and water chamber each deliver fun business, but a next pass could look for one or two places where the story advances through a choice rather than another escape. The version where one set piece also turns the plot would make the escalation feel even more cumulative.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The mythology can be clarified in fewer moving parts.",
+        "detail": "The Bank, Platinum status, the father relationship, Fister’s identity shift, Sigers’ political role, and the dual energy plots all create a rich conspiracy web. One lever would be to foreground the central chain of causality earlier so the audience can track the conspiracy with less effort while still enjoying the world-building.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The action footprint is ambitious.",
+        "detail": "Helicopters, jets, balloon work, train action, animal work, flooding chambers, and multiple explosions point to a sizable production. A simplification lever would be to combine one or two of the aerial beats or reduce one location-heavy pursuit without changing Gray’s momentum.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting cast is functional rather than webbed.",
+        "detail": "Gray, Salva, and Gray’s father carry the emotional load, while many of the other roles serve the plot. A future pass could deepen one secondary relationship — especially Salva’s connection to the island politics — to create a stronger relational engine around the mission.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66.7,
+  "tier": "Optionable",
+  "inputTokens": 40918,
+  "outputTokens": 6748,
+  "cost": 0.0610545,
+  "declaredFormat": "Feature film"
+}

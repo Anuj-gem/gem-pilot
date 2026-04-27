@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T22:59:27.943Z",
+  "submission_id": "330ea354-c4de-4be0-9db8-d9119f0cbaa9",
+  "eval_id": "a2119bb9-ae2b-4d78-8126-238580d712c4",
+  "title": "In the Maze of Existence (13)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Amir",
+      "role_type": "Lead",
+      "demographics": "Male · 26 · South Asian/Middle Eastern-coded"
+    },
+    {
+      "name": "Alexey",
+      "role_type": "Lead",
+      "demographics": "Male · 26 · Eastern European / Slavic-coded"
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Lead",
+      "demographics": "Female · 26 · South Asian / Muslim-coded"
+    },
+    {
+      "name": "Alana",
+      "role_type": "Lead",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Virgil",
+      "role_type": "Supporting",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Mass",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Noor",
+      "role_type": "Supporting",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Catherine",
+      "role_type": "Supporting",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Paolla",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    }
+  ],
+  "positioning_hook": "A young defense-tech founder and his drifting circle of artists, lovers, and roommates spiral through work, sex, and ambition as his drone startup edges toward real military use.",
+  "cost_usd": 0.033978,
+  "input_tokens": 16258,
+  "output_tokens": 4841,
+  "status": "wrote:leads_ok"
+}

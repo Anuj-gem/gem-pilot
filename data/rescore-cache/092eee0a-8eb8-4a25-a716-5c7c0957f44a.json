@@ -1,0 +1,313 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action-comedy",
+      "genre_tags": [
+        "Romantic comedy",
+        "Spy thriller"
+      ],
+      "tone": "Fast, irreverent, heightened, and emotionally sincere"
+    },
+    "positioning_hook": "A CIA assassin hiding out with a gentle male nurse falls for him, then has to choose between love and a nuclear conspiracy when her handlers turn on her.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to sell: a lethal spy, a soft-hearted nurse, a nuclear threat, and a romance that keeps colliding with action set pieces. The hook is broad enough for mainstream genre buyers, though the tone is specific enough that it will likely travel best as a star-driven action-comedy rather than a four-quadrant tentpole."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening limo sequence and stays legible: Jasmine is a covert operator, Chrissy is the civilian heart, and Picasso’s Wi-Fi nuke keeps the plot moving. The story engine is clear, with the romance and the conspiracy constantly forcing each other into the same frame."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Jasmine has a strong contradiction built into her from page one, and Chrissy is a memorable inversion of the usual action-romance male lead: tender, anxious, and unexpectedly brave. Ainsley, Hastings, Andrews, and the parents all add distinct flavors that keep the character field lively around the central couple."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific comic engine: hyper-competent violence colliding with domestic softness, dog training, nursing, and relationship insecurity. The choice to make the male lead the emotionally gentle one, and to let the action keep interrupting intimacy, gives the piece a confident angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps escalating through reversals, betrayals, and location shifts without losing the central relationship. The hotel, cabin, mansion, condo, and final apartment siege all feel like forward motion rather than detours, and the climax pays off the setup with a full ensemble collision."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels fresh in a way that is instantly playable: a deadly field agent and a conflict-avoidant nurse trying to build a real relationship while everyone around them wants a bomb. The dog-pack mechanics, the code-word romance, and the male nurse as the emotional center make the premise feel both novel and obvious once seen."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The CIA, MI-6, assisted living facility, dog shelter, and New York nightlife all have clear texture and social behavior. The world is not sprawling for its own sake, but it does generate story through institutions, routines, and the contrast between covert ops and caretaking spaces."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a recognizable tonal signature: violent spy farce with sincere romantic comedy and a lot of behavioral comedy around Chrissy’s gentleness. The repeated contrast between brutal action and absurdly domestic detail gives it a distinct identity scene to scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the jokes, the script is really about trust, self-protection, and whether someone trained to manipulate can choose honesty. Jasmine’s foster-care history, Chrissy’s fear of conflict, and the parents’ warmth all suggest a deeper emotional lane that could support more than one viewing."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Chrissy/Jasmine is the engine, but the script also gives Ainsley, Hastings, Ed, Esther, and the dogs enough personality to create multiple playable combinations. The family-and-work web around Chrissy means scenes can generate energy even when the central couple is offscreen."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Action-capable female lead",
+          "Male lead in a gentle, nontraditional romantic-comedy slot",
+          "Supporting British male foil",
+          "Older parental duo with strong comic timing",
+          "Multiple dogs with distinct behaviors"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Approximately 60/40 interior to exterior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Manhattan nightclub",
+          "Assisted living facility",
+          "Animal shelter",
+          "Smart-car and SUV action beats",
+          "Hotel floors, lobby, hallway, and room siege",
+          "Cabin safe house",
+          "Long Island house",
+          "CIA facility and mobile command center"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action with some support for explosions, vehicle impacts, and the bridge/water sequence.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood hits, explosions, vehicle crashes, breakaway walls/doors, and practical fight choreography.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Tesla, Lyft, Amazon, Uber, Audible, Harry Potter, Gordon Ramsay, Nike-style consumer references, and Barbra Streisand/Beyoncé name-checks."
+        },
+        {
+          "type": "real_person",
+          "detail": "Picasso is a fictional nickname, but the script references real public figures and brands throughout dialogue and action."
+        },
+        {
+          "type": "named_music",
+          "detail": "Queen B / Barbra Streisand references are spoken, not plot-critical, but still clearance-adjacent in a finished production pass."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming action-comedy or theatrical mid-budget genre comedy",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a star-driven, high-concept genre comedy with action set pieces and romance."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script is contemporary and mostly urban-contained, but it still includes multiple vehicle crashes, gunfights, explosions, and a hotel siege."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead pair is manageable, but the project benefits from strong chemistry casting, a memorable British supporting role, and trained animal work."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It moves through Manhattan, Long Island, Niagara, a cabin, a hotel, a shelter, and CIA spaces, with several action-friendly interiors."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent gun violence, stabbing, blood, and repeated deaths push this firmly into mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses many recognizable brands and public references, though none appear to drive the core plot."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The lead couple is a fresh romantic engine.",
+          "what_it_means": "The script gives buyers a romance that is also a genre device: every emotional beat is under pressure from espionage, violence, and secrecy. That makes the project attractive to streamer buyers and theatrical genre labels looking for a date-night action-comedy with actual relationship stakes.",
+          "evidence": "Chrissy’s code-word scene, the Niagara getaway, the first fight in the hotel, and the final choice to keep them together all turn the relationship into the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Chrissy is a standout male lead slot.",
+          "what_it_means": "A gentle, conflict-averse male nurse who becomes the emotional center of an action movie is a casting magnet because it lets an actor play vulnerability, comic timing, and late-blooming courage in one role. Mid-career comedic leads and actors looking to pivot into romantic comedy with action credibility will see the appeal immediately.",
+          "evidence": "His assisted-living scenes, his dog routines, his terror in the hotel and mansion, and his final frying-pan attack all build a very specific arc.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jasmine has a built-in star contradiction.",
+          "what_it_means": "She is lethal, funny, and emotionally guarded, but the script keeps revealing the cost of that armor, which gives an actress a showcase that can play action, comedy, and wounded intimacy. Buyers looking for a female-led genre vehicle with a performance centerpiece will see a clean package opportunity.",
+          "evidence": "The opening limo takedown, the code-word relationship, the foster-care reveal, and the final decision to leave the CIA all define her as more than a standard action lead.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dog pack is a commercial differentiator.",
+          "what_it_means": "The dogs are not decoration; they are part of the action grammar and the emotional payoff, which gives the movie a memorable family-friendly surface inside a mature genre frame. That kind of hook is useful for marketing, trailer moments, and audience recall.",
+          "evidence": "Karla’s yellow trigger, Grover’s turtle, Lacey’s scent work, Ginger’s fear, and Wink’s refusal to follow all pay off in the climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating new combinations.",
+          "what_it_means": "Chrissy, Jasmine, Ainsley, Hastings, Ed, Esther, and Charlene all have distinct comic and dramatic functions, which means the script can keep producing fresh scenes without feeling repetitive. That kind of relationship web is attractive to buyers because it supports repeat viewing and strong supporting casting.",
+          "evidence": "The parents’ home sequence, the cabin, the hotel, and the final condo siege all use different combinations of the same players.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action is built for readable set pieces.",
+          "what_it_means": "The fights are staged with clear objects, clear geography, and clear comic logic, which makes the material easier to shoot and easier to cut into a trailer. Producers can see the movie in the page turns because each sequence has a distinct visual gimmick.",
+          "evidence": "The limo fight, the hotel hallway, the bridge plunge, the condo siege, and the dog-assisted parking-garage battle all have specific physical rules.",
+          "source": "script"
+        }
+      ],
+      "headline": "BLACK OPS GIRLFRIEND is a high-concept action-rom-com with a very clean commercial promise: a lethal CIA operative and a tender male nurse fall in love while a nuclear conspiracy keeps crashing their dates. The script’s best asset is its identity — it’s funny, violent, and unexpectedly sweet, with a lead pair and supporting ensemble that make the whole thing feel castable, trailer-ready, and easy to remember."
+    },
+    "lead_characters": [
+      {
+        "name": "JASMINE BOONE",
+        "role_type": "Lead",
+        "demographics": "Female · 20s/30s · physically agile, action-capable",
+        "hook": "A covert CIA black-ops agent who can dismantle a room full of armed men, then immediately reveal the loneliness underneath the armor. She is hyper-competent, funny, guarded, and emotionally starved for something real, which makes her both dangerous and deeply playable.",
+        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Atomic Blonde and Sandra Bullock in The Heat — a role that lets an actress toggle between lethal physicality, deadpan comedy, and emotional exposure without losing control of the frame. Action leads and prestige-comedy actresses looking for a franchise-capable star turn will chase this because it gives them fight scenes, romance, and a real inner life."
+      },
+      {
+        "name": "CHRISSY WHITE",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · nurse, slight build, glasses, nontraditional action lead",
+        "hook": "A gentle, anxious nurse with a meticulous streak, a soft heart, and a buried competitive streak that only surfaces when someone he loves is threatened. He is the movie’s emotional conscience, but the script keeps letting him surprise us with courage, wit, and a late-breaking capacity for violence.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Rudd in The Shrink Next Door or Steve Carell in The 40-Year-Old Virgin — a sweet, self-effacing lead whose comedy comes from sincerity and whose payoff comes from finally stepping into his own power. Comedy leads, romantic-comedy actors, and performers looking to subvert the usual alpha-male action slot will want this because it gives them vulnerability, escalation, and a big cathartic turn."
+      },
+      {
+        "name": "HASTINGS",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · grizzled CIA boss",
+        "hook": "A seasoned handler who presents as loyal and paternal until the script reveals he is playing a much larger game. He has authority, menace, and a slippery moral center, which makes him a strong late-story engine rather than a standard mentor.",
+        "why_actor_wants_this": "This is the territory of J.K. Simmons in Whiplash or Bryan Cranston in a prestige thriller — a commanding authority figure whose warmth can flip into threat in a single scene. Veteran character actors will chase it because it gives them institutional power, betrayal, and a big reveal that recontextualizes everything."
+      },
+      {
+        "name": "AINSLEY MARKS",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · British, polished, athletic",
+        "hook": "A hyper-competent MI-6 boyfriend who seems almost absurdly perfect until the script turns him into a comic mirror for Chrissy’s insecurity. He is handsome, capable, and emotionally earnest, which makes him both a joke and a genuine threat to the central romance.",
+        "why_actor_wants_this": "This is the showcase territory of Hugh Grant in a self-aware romantic-comedy mode — a polished, charming rival whose confidence is funny because it is so complete. A charismatic supporting actor with leading-man energy will want it because it lets him play elegance, sincerity, and comic superiority in one package."
+      },
+      {
+        "name": "ANDREWS",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · CIA authority figure",
+        "hook": "A hard-edged agency superior who reads as the final institutional wall until the story reveals she is the only person in the room who actually saw the board clearly. She is severe, controlled, and strategically ruthless, which gives the climax a satisfying authority shift.",
+        "why_actor_wants_this": "This is the kind of role Meryl Streep or Viola Davis gets in a prestige thriller — a compact authority part with one or two scenes that can dominate the room. Veteran actresses who like playing power with precision will be drawn to it because it gives them command, surprise, and a late pivot into ally."
+      },
+      {
+        "name": "ED WHITE",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · pediatrician, father",
+        "hook": "Chrissy’s warm, over-accommodating father, whose comic softness hides a surprising willingness to step into chaos when family is on the line. He is the kind of dad who sounds harmless until the action asks him to become useful.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in a family dramedy — a father role that can be funny, affectionate, and quietly heroic without becoming sentimental. Character actors with warmth and timing will want it because it gives them a late-story action payoff inside a comic domestic frame."
+      },
+      {
+        "name": "ESTHER WHITE",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s · retired teacher, mother",
+        "hook": "Chrissy’s smothering, idealistic mother, who treats everyone like they are redeemable and then proves she can be surprisingly fierce when the moment arrives. She is comic, maternal, and unexpectedly dangerous, which makes her a scene-stealing supporting part.",
+        "why_actor_wants_this": "This is the kind of role Frances McDormand or Allison Janney can make unforgettable — a maternal figure with comic authority and a hidden blade. Experienced actresses will want it because it lets them play warmth, ideology, and physical comedy in the same role."
+      },
+      {
+        "name": "CHARLENE",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · soccer mom, shelter staff",
+        "hook": "A breezy, manipulative shelter regular who weaponizes Chrissy’s kindness for convenience and then gets called out by Jasmine. She functions as a comic social predator, which gives the shelter world a sharper edge.",
+        "why_actor_wants_this": "This is the kind of sharp supporting part that lets a character actress do fast, recognizable behavior comedy in the vein of Kathryn Hahn’s scene-stealing work. Supporting players who like playing social camouflage and comic entitlement will chase it."
+      },
+      {
+        "name": "PICASSO",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Slavic accent, criminal mastermind",
+        "hook": "A bomb broker with theatrical menace and a smug sense of control, built to be a recurring obstacle rather than a one-note villain. He is funny, dangerous, and just self-aware enough to keep the movie’s tone buoyant even when he’s threatening mass casualty.",
+        "why_actor_wants_this": "This is the territory of Javier Bardem in a villain role — a charismatic antagonist who can be funny, elegant, and terrifying in the same breath. Actors who like playing stylish menace will want it because the part gives them a memorable face, a signature device, and a lot of scene-stealing dialogue."
+      },
+      {
+        "name": "GREGORIO",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s/30s · criminal muscle",
+        "hook": "A reluctant henchman who turns out to be more human than the job he took, which lets the script briefly complicate the villain ecosystem. He is a comic pressure valve and a useful reminder that the movie’s world is full of people making bad choices for ordinary reasons.",
+        "why_actor_wants_this": "This is the kind of role that works for a rising character actor in the Walton Goggins lane — a small but memorable part with a comic turn and a sudden shift in power. Supporting actors who like playing slippery, talkative criminals will gravitate to it."
+      },
+      {
+        "name": "SAMIR",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · nurse",
+        "hook": "Chrissy’s coworker, defined by casual laziness and a complete lack of Chrissy’s moral center. He helps establish the workplace as a place where Chrissy is both undervalued and indispensable.",
+        "why_actor_wants_this": "This is a clean supporting comic role in the vein of a workplace ensemble player from The Office or Scrubs. Character actors who can land a few dry lines and make a workplace feel lived-in will fit it well."
+      },
+      {
+        "name": "DANIEL",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · nurse",
+        "hook": "A younger nurse who functions as the straight man to the assisted-living chaos and helps underline Chrissy’s competence. He is a light but useful part of the workplace texture.",
+        "why_actor_wants_this": "This is a small but functional ensemble role for a young actor who can play reaction, timing, and workplace realism. It’s the kind of part that helps a performer get noticed in a scene-stealing environment."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make action feel intimate, funny, and emotionally legible.",
+        "fit_profile": "Second-feature or established indie directors with a strong command of performance and rhythm, especially those who like genre material that plays as character comedy first and action second. This material rewards directors who can stage clean fights, keep tonal control through reversals, and let emotional beats land inside the chaos.",
+        "detail": "The movie gives a director a chance to choreograph violence around domestic behavior — dogs, nursing, cooking, code words, family dinners — which is a very specific craft lane. It will attract filmmakers who want a commercial genre piece that still feels actor-forward and scene-driven."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Streaming action-comedy / theatrical genre-rom-com",
+        "detail": "It can be packaged around two strong lead performances and a supporting ensemble without requiring a giant VFX footprint, which makes it viable for a director-led greenlight. The spy-romance lane is exportable, and the dog-driven comic identity gives marketing a clean hook beyond the action."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle section leans on repeated pursuit beats.",
+        "detail": "The hotel, cabin, mansion, and condo sequences all work, but a next pass could look for one or two places where a character choice lands before the chase resumes. That would let the romance breathe a little more between set pieces and make the emotional turns hit even harder.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The villain conspiracy is very dialogue-forward.",
+        "detail": "Picasso and Hastings explain a lot of the larger geopolitical scheme in speeches, especially once the nuke sale and the anti-Russia plan are revealed. One direction would be to let a visual or procedural clue carry part of that load so the final act can move even faster.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand references are plentiful.",
+        "detail": "Tesla, Lyft, Amazon, Uber, Audible, Harry Potter, and Gordon Ramsay all appear in ways that are funny on the page but would need a clearance pass in production. A cleaner version could swap some of those references for generic equivalents without changing the joke engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The dog work is a real production feature.",
+        "detail": "Karla, Grover, Lacey, Ginger, and Wink all have distinct behaviors and action beats, which is part of the movie’s identity. The version of the shoot that protects the schedule would likely consolidate some of the animal blocking so the climax still feels packed without overextending the animal unit.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The action footprint stays manageable but active.",
+        "detail": "The script is contemporary and mostly urban, but it still asks for vehicle crashes, gunfire, a bridge plunge, a hotel siege, and a condo blowout. That keeps the movie in a mid-budget action lane where choreography and practical execution matter more than large-scale spectacle.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76,
+  "tier": "Optionable",
+  "inputTokens": 52619,
+  "outputTokens": 5279,
+  "cost": 0.06321974999999999,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:22:37.279Z",
+  "submission_id": "c21ca558-ec53-4245-a208-5b6e7ef16665",
+  "eval_id": "e1d4b01f-d1f8-4705-8ab0-934f4721a86f",
+  "title": "modern woman tells tales screenplay (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Keisha",
+      "role_type": "Lead",
+      "demographics": "Female · 18-20s · Black"
+    },
+    {
+      "name": "Lin",
+      "role_type": "Lead",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "Betty",
+      "role_type": "Lead",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "Anthony",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Sam",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Lead",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Betty's Dad / Jeff",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s"
+    },
+    {
+      "name": "Candice",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s"
+    },
+    {
+      "name": "Betty's Daughter / Lin",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "Monique",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged"
+    },
+    {
+      "name": "Theresa",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged"
+    },
+    {
+      "name": "Son",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Mark",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Tye",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Beatrice",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    }
+  ],
+  "positioning_hook": "A slum-raised college freshman chases fast money through a campus sex ring, then watches the choices she sells become the life she has to survive.",
+  "cost_usd": 0.050736,
+  "input_tokens": 36118,
+  "output_tokens": 5255,
+  "status": "wrote:leads_ok"
+}

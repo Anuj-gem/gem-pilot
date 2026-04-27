@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:09:49.362Z",
+  "submission_id": "19cb923d-9699-451a-981d-aa15b4c66812",
+  "eval_id": "aa652d68-a8a1-4dad-9324-02ee4e130dac",
+  "title": "WICKED WYOMING",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "ABRAHAM ARBUCKLE",
+      "role_type": "Lead",
+      "demographics": "Male · early 40s · frontier settler"
+    },
+    {
+      "name": "JACOB ARBUCKLE",
+      "role_type": "Lead",
+      "demographics": "Male · early 40s · frontier settler"
+    },
+    {
+      "name": "JANE FLINT ARBUCKLE",
+      "role_type": "Lead",
+      "demographics": "Female · mid-30s · frontier wife"
+    },
+    {
+      "name": "BUDDY DAVENPORT",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · wealthy frontier industrialist"
+    },
+    {
+      "name": "THE GUNSLINGER / ZOMA / BURT MULHOLLEN",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s playing ageless · shape-shifting bounty hunter"
+    },
+    {
+      "name": "GUS DAVENPORT",
+      "role_type": "Lead",
+      "demographics": "Male · 10 years old"
+    },
+    {
+      "name": "ERNEST DAVENPORT",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "WELLINGS",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s"
+    },
+    {
+      "name": "MISS CYNTHIA",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s"
+    },
+    {
+      "name": "THE SHERIFF",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "ARCHIE KETTLE",
+      "role_type": "Lead",
+      "demographics": "Male · 40s playing mentally regressed adult"
+    },
+    {
+      "name": "BENNIE MIDDLETON",
+      "role_type": "Supporting",
+      "demographics": "Male · 8 years old"
+    },
+    {
+      "name": "BILLY BLOOD",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "ROSIE MIDDLETON",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s"
+    },
+    {
+      "name": "JESSE MIDDLETON",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "BUDDY DAVENPORT'S TRIPLETS",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · identical triplets"
+    },
+    {
+      "name": "THE BUTLER",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    }
+  ],
+  "positioning_hook": "A frontier family and a gold mine town are swallowed by an ancient evil, forcing a devout brother, his scarred twin, and a desperate widow into a blood-soaked fight for survival and power.",
+  "cost_usd": 0.0530055,
+  "input_tokens": 35046,
+  "output_tokens": 5938,
+  "status": "wrote:leads_ok"
+}

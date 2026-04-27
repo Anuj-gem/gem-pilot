@@ -1,0 +1,342 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "Adventure",
+        "Romantic comedy"
+      ],
+      "tone": "Fast, irreverent, sexy, and broadly comic with hard-edged action set pieces"
+    },
+    "positioning_hook": "A sarcastic Ohio traveler in the Cayman Islands grabs the wrong bag and gets hunted by diamond thieves, forcing her into a runaway island chase with an Interpol agent and her dead father’s last clue.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to sell: mistaken luggage, diamond thieves, tropical pursuit, and a sharp romantic sparring partner. It has broad genre accessibility, though the very specific comic voice and old-school adventure flavor make it feel more like a crowd-pleasing niche play than a four-quadrant event."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the airport switch and stays legible all the way through the Cayman chase. The wrong-bag engine, the diamond hunt, and the Interpol partnership are all clear and cleanly escalated."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jenn is a vivid lead: sharp-tongued, physically capable, romantic, and emotionally tethered to her father’s memory. Callahan gives the story a steady counterweight, while Rafaelia and Schaar add useful pressure, though the supporting players mostly serve the central chase."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script leans into a breezy, throwback adventure-comedy mode with a female lead who is funny without being ornamental. The bar-code-on-toiletries reveal, the Cayman banking angle, and the escalating absurdity of the island pursuit give it a distinct commercial personality."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps stacking reversals: wrong bag, hotel attack, boat chase, plane chase, bank showdown. Each sequence hands off to the next with a clear propulsion, and the climax on the plane and in the vault keeps the engine moving."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A vacationing woman accidentally carrying the wrong bag into a diamond conspiracy is instantly playable and easy to remember. The combination of romantic screwball energy, action-comedy escalation, and father-memory emotional spine gives the premise a fresh commercial shape."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The Cayman setting has useful texture: hotel culture, banking secrecy, party boats, local speech, and island logistics all matter to the plot. Still, the world functions primarily as a vivid chase container rather than a deeply layered ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The voice is unmistakably cheeky, profane, and flirtatious, with action played for comic panic rather than grim realism. Jenn’s one-liners, the island locals, and the constant collision between danger and wisecrack create a clear tonal fingerprint."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the chase, there’s a real emotional thread about Jenn’s father, abandonment, and the way travel became a way of staying connected to him. That depth is present and usable, though the script keeps returning to propulsion more than lingering in the emotional aftertaste."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Jenn and Callahan have the strongest recurring dynamic, and Jenn’s comic interactions with Fish, Loogie, and Rafaelia add flavor. The ensemble is functional and lively, but the story remains centered on one lead pair rather than a web of equally generative relationships."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Female lead in her 20s/early 30s with strong comedic and physical-action ability",
+          "Male lead in his 30s/40s with dry charm and action competence",
+          "Multiple supporting roles with Caribbean accents and regional specificity",
+          "One principal antagonist role with physical menace and a polished con-man quality"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly balanced, with a slight exterior tilt",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Airport, hotel, beach, harbor, boat, warehouse, bank vault, jungle trail, and aircraft interiors",
+          "Multiple water-based and tarmac-based action setups",
+          "Caribbean island exteriors with recognizable resort and town texture"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical action with a few enhancement moments for explosions, plane movement, and water danger.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, fire, gunfire, vehicle impacts, and practical crash beats",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "House of Pain's 'Jump Around' is specifically named in the party boat sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "KFC, Red Stripe, Nicoderm, Poland Springs, M&M's, and several hotel/consumer references appear on the page."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "\"The Old Man and the Sea\" and Hemingway references are plot-relevant and repeated."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or theatrical-to-platform adventure-comedy lane",
+        "content_level": "Mature PG-13 / R-leaning language and violence",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-original commercial potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained to practical locations, but boats, aircraft, stunts, fire, and a warehouse explosion push it above a simple indie budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script centers on a few strong roles, but the lead needs a performer who can carry comedy, action, and romance at once."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The action moves across airport, hotel, harbor, jungle, bank, and aircraft settings, with several water and travel setups."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Frequent profanity, physical violence, threats, and some sexual banter keep it in adult genre territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands, a named song, and Hemingway material appear prominently enough to warrant clearance attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Jenn is a showcase lead.",
+          "what_it_means": "The role gives a performer comedy, action, flirtation, and emotional access in one package, which is exactly the kind of part that can turn a smart genre movie into a star-making vehicle. Mid-career actresses who can play sharp, sexy, and physically fearless will see immediate value here, and buyers looking for a female-forward commercial lead will too.",
+          "evidence": "Jenn’s airport sarcasm, her fight with McKee, the jet ski escape, the plane landing, and the final beach kiss all belong to her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise is instantly legible.",
+          "what_it_means": "The wrong-bag engine is easy to pitch, easy to follow, and naturally escalates into a chase structure that audiences understand in seconds. That clarity is a real asset for streamers and producers who want a high-concept hook that doesn’t require explanation.",
+          "evidence": "The identical red plaid bags, the switch on the plane, and the discovery of the key code in the toiletries drive the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a clear commercial fingerprint.",
+          "what_it_means": "The script knows exactly how to mix danger and joke, which makes it feel playable for a broad audience without sanding off the personality. That tonal confidence is attractive to buyers who want something that can travel as both a thriller and a date-night comedy.",
+          "evidence": "Jenn’s one-liners during the hotel attack, the party boat banter, and the plane-crash dialogue all keep the action buoyant.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Cayman setting is story-active.",
+          "what_it_means": "This is not just a postcard backdrop; the island’s banking secrecy, resort culture, party boats, and transport limitations all feed the plot engine. That gives the project a built-in sense of place that can help marketing, production design, and audience memory.",
+          "evidence": "The bank secrecy explanation, the party cruise, the tiny boat, and the airport/tarmac sequences all depend on Cayman-specific logistics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father thread adds emotional lift.",
+          "what_it_means": "The story has a sentimental spine that can broaden it beyond pure chase mechanics and give the ending a satisfying emotional landing. That makes the movie more attractive to buyers who want genre with heart, not just noise.",
+          "evidence": "Jenn’s coin, the taped letter, and the repeated voiceover from her father frame the adventure as a search for connection as much as treasure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Callahan gives the movie a clean romantic counterweight.",
+          "what_it_means": "The lead pairing creates banter, tension, and a payoffable chemistry arc, which is valuable in a genre piece that needs more than one engine. That makes the project appealing to actors and to buyers who like a built-in relationship hook alongside the action.",
+          "evidence": "Their KFC dinner, the boat banter, the motor-fixing scene, and the final beach kiss establish a steady romantic rhythm.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are easy to picture.",
+          "what_it_means": "The script repeatedly turns simple geography into cinematic movement — hotel room, harbor, jet ski, plane, vault — which is exactly the kind of sequence design that helps a producer sell a trailer. Action buyers and directors who like practical, readable spectacle will respond to that.",
+          "evidence": "The jet ski chase, the warehouse explosion, the Vespa run, and the Cessna landing all read cleanly on the page.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, commercial adventure-comedy with a strong female lead, a tropical chase engine, and a romantic spark that keeps the action from feeling disposable. The script’s biggest asset is how confidently it turns a simple wrong-bag premise into a globe-trotting-feeling island caper with real star-part energy."
+    },
+    "lead_characters": [
+      {
+        "name": "Jennifer Taylor (Jenn)",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Jenn is a smart-mouthed, emotionally guarded traveler with a bruised romantic history and a stubborn streak that keeps turning panic into momentum. She reads like someone who uses sarcasm as armor, but the script keeps revealing a softer center tied to her father, her coin necklace, and the idea that travel is how she stays connected to him.",
+        "why_actor_wants_this": "This is the kind of showcase Sandra Bullock had in *The Proposal* and *Miss Congeniality* — a fast-talking lead who can pivot from comic irritation to physical competence to real vulnerability without losing the audience. Actresses who want a star vehicle with action, romance, and quotable dialogue will chase this because the role is built to carry the movie."
+      },
+      {
+        "name": "Callahan / Wendell",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 40s",
+        "hook": "Callahan is an Interpol investigator with dry wit, controlled charm, and a slightly exhausted professionalism that makes him feel like the only adult in the room until Jenn starts pulling him into the chaos. He’s competent without being stiff, romantic without being syrupy, and the late reveal of his first name gives him a nice comic humanizing beat.",
+        "why_actor_wants_this": "This is the showcase territory of Pierce Brosnan in *The Thomas Crown Affair* or Colin Firth in *Kingsman* — a polished man who can play suave, funny, and capable while still letting the audience see the cracks. Actors who want a cool, romantic action role with wit and restraint will see this as a clean fit."
+      },
+      {
+        "name": "Rafaelia",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Rafaelia is glamorous, wary, and quietly dangerous, with enough vanity and self-protection to make her feel like more than a standard femme fatale. She’s emotionally entangled with Schaar, but the script gives her enough pride and volatility to make her a real player rather than a plot device.",
+        "why_actor_wants_this": "This is the kind of seductive, morally mixed role that Sharon Stone had in *Basic Instinct* or Catherine Zeta-Jones had in *Entrapment* — a woman who can weaponize glamour while keeping the audience guessing. Actresses looking for a stylish genre part with attitude and a late-turn betrayal energy will be drawn to it."
+      },
+      {
+        "name": "Blum",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s",
+        "hook": "Blum is the cold, managerial face of the criminal crew, the one who keeps the operation moving and treats violence like logistics. He has a clipped, resentful energy that makes him feel dangerous even when he’s not the loudest man in the room.",
+        "why_actor_wants_this": "This is the kind of controlled menace Michael Shannon brought to *Take Shelter* and *Boardwalk Empire* — a role where stillness and pressure do the work. Character actors who like playing intelligence under threat will respond to the precision of the part."
+      },
+      {
+        "name": "Sherard",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Sherard is the crew’s smirking predator, vain and leering, with a nasty sense of entitlement that makes him instantly readable. He’s the kind of villain who enjoys the chase as much as the payoff, which gives him a nasty comic edge.",
+        "why_actor_wants_this": "This is the sort of sleazy, charismatic antagonist role that Ben Mendelsohn has turned into a specialty — a man who can be funny, creepy, and threatening in the same breath. Actors who like scene-stealing villain work will see a lot of playable behavior here."
+      },
+      {
+        "name": "McKee",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · large, physically imposing",
+        "hook": "McKee is the brute-force enforcer, built like a wall and used as the crew’s intimidation engine. He’s not subtle, but the script gives him a memorable physical presence and a clear function in the action escalation.",
+        "why_actor_wants_this": "This is the kind of heavy-lift physical role that Dave Bautista or Liev Schreiber has made work in genre pieces — a part where size, menace, and movement are the performance. Actors with a strong physical profile will see a clean, high-impact utility role."
+      },
+      {
+        "name": "Schaar / Fisherman",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s",
+        "hook": "Schaar is the elegant con man hiding behind a benign exterior, able to pass as a soulful old fisherman one moment and a ruthless mastermind the next. That dual identity gives him a nice layer of theatrical deception and makes him the story’s true spider at the center of the web.",
+        "why_actor_wants_this": "This is the kind of double-faced villain role that Ralph Fiennes or Christoph Waltz has made magnetic — cultured, amused, and lethal when the mask drops. Actors who like playing intelligence, disguise, and late-reveal authority will be attracted to it."
+      },
+      {
+        "name": "Fish",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Fish is a goofy, eager college kid whose confidence is bigger than his actual sophistication, which makes him funny and harmless in a useful way. He gives Jenn a brief pocket of comic relief and social friction without ever taking over the movie.",
+        "why_actor_wants_this": "This is the kind of broad, likable sidekick energy that Jonah Hill built early career momentum on — fast, awkward, and easy to root for. Younger comedic actors will like the chance to play charm without needing to carry the plot."
+      },
+      {
+        "name": "Loogie",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Loogie is the more laid-back half of the frat-boy duo, dim but sweet enough to keep from becoming a pure punchline. He works as a comic witness to Jenn’s chaos and gives the movie a little extra social texture.",
+        "why_actor_wants_this": "This is the kind of deadpan, socially clueless comic role that Christopher Mintz-Plasse made memorable in *Superbad* — a part built on timing and reaction. Young comedic actors will see an easy, scene-friendly lane here."
+      },
+      {
+        "name": "Maid",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 40s",
+        "hook": "The maid is a sharp-eyed local presence who grounds the hotel chaos in ordinary reality and helps turn Jenn’s panic into public consequence. She’s not a comic ornament; she’s the person who makes the hotel feel lived-in and socially specific.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actor a memorable reaction beat and a clean point of view, similar to the hotel staff energy in *The Best Exotic Marigold Hotel*. Character actors who know how to make a small role register will like the specificity."
+      },
+      {
+        "name": "Flight Attendant",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 40s",
+        "hook": "The flight attendant is efficient, lightly amused, and just stern enough to make Jenn’s behavior funnier by contrast. She helps establish the movie’s comic social order before the action kicks in.",
+        "why_actor_wants_this": "This is the kind of crisp, authority-with-a-smile role that can land like the airline staff in *Bridesmaids* — a small part with strong comic timing. Actors who specialize in sharp supporting beats will know exactly how to play it."
+      },
+      {
+        "name": "Geoffrey",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s",
+        "hook": "Geoffrey is the chipper bellman who keeps the hotel world moving with easy charm and a little local flavor. He’s a useful tonal bridge between the resort fantasy and the chaos that follows.",
+        "why_actor_wants_this": "This is the kind of warm, efficient supporting part that gives an actor a memorable hospitality-performance slot, like the hotel staff in *Four Weddings and a Funeral*. It’s a clean role for someone who can make charm feel effortless."
+      },
+      {
+        "name": "Bank Manager",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s · Hispanic",
+        "hook": "The bank manager is polished, discreet, and professionally opaque, exactly the kind of person who can make a secretive financial institution feel credible. He functions as the calm face of a system built to hide things.",
+        "why_actor_wants_this": "This is the sort of elegant authority role that actors like Giancarlo Esposito often elevate — calm, controlled, and quietly loaded. Character actors who can suggest institutional power in a few lines will be drawn to it."
+      },
+      {
+        "name": "Mike",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s",
+        "hook": "Mike is the practical air-traffic controller who turns the final flight sequence into a playable, procedural-feeling rescue. He’s calm, technical, and essential to the movie’s last-act tension.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that gives an actor the same utility as the control-room players in *Apollo 13* — competence under pressure. Supporting actors who like clean, high-functioning professionalism will respond to it."
+      },
+      {
+        "name": "Hooker",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 40s",
+        "hook": "The hooker is street-smart, welcoming, and instantly alive, giving Jenn a temporary ally and a burst of local color. She helps the movie widen out from chase mechanics into a more textured island social world.",
+        "why_actor_wants_this": "This is the kind of vivid, scene-stealing supporting role that can play like the best parts in *Hustlers* — a woman with attitude, warmth, and a lived-in point of view. Actors who like making a small entrance feel memorable will chase it."
+      },
+      {
+        "name": "Policeman",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s",
+        "hook": "The policeman is the local law-enforcement face who keeps the story moving through arrest, extradition, and the final bank intervention. He’s functional but useful, giving the world a sense of jurisdiction and process.",
+        "why_actor_wants_this": "This is a solid procedural-support role in the tradition of the cops and officials in *Midnight Run* — not flashy, but part of the machine. Character actors who like crisp authority beats will fit it well."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a glossy, propulsive action-comedy with real chemistry and a strong female lead.",
+        "fit_profile": "Second- or third-feature directors, or established TV directors moving into features, who already have a feel for pace, banter, and clean action geography. The right fit is someone drawn to performance-forward genre storytelling, where the joke lands inside the chase and the romance has to survive the set pieces.",
+        "detail": "The material rewards directors who can stage readable action without overcomplicating the geography and who know how to keep a lead character funny under pressure. It’s especially attractive to filmmakers who want a commercially legible feature that still has personality, because the script gives them boats, planes, beaches, and a star-making lead without requiring a giant VFX canvas."
+      },
+      "buyer_appeal": {
+        "tier": "$8-20M feature",
+        "lane": "Streaming adventure-comedy / romantic action lane",
+        "detail": "It can be packaged around one strong female lead and one charismatic male counterweight, with the supporting cast serving the chase rather than requiring a large ensemble buy-in. The wrong-bag hook, Caribbean setting, and action-comedy tone make it easy to market as a trailer-first title for streamers or a modest theatrical play."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The supporting crew mostly serves the chase.",
+        "detail": "The script has a strong central engine, and the side characters do their job well, but the version of the movie where one or two of the supporting players carry a more independent comic or emotional beat could widen the rewatch value. That would be especially useful for the hotel, boat, and frat-party sections, where the world is already lively enough to support a little more character play.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The emotional spine could arrive a beat earlier.",
+        "detail": "Jenn’s father material is effective and gives the ending real lift, especially once the letter and coin become active again. One direction would be to let that longing surface a little sooner in the middle stretch so the action and the emotional throughline keep echoing each other instead of running in parallel.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The action footprint is practical but busy.",
+        "detail": "The airport, hotel, harbor, warehouse, jungle, bank, and plane sequences all play clearly, but they do ask for a fairly active production plan. A simplification lever would be to look for any place where two travel beats could be folded into one location without losing the chase momentum.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Several named brands and songs need clearance attention.",
+        "detail": "KFC, Red Stripe, Nicoderm, Poland Springs, M&M's, Hemingway, and 'Jump Around' are all specifically on the page. That’s manageable, but it means the production package should account for rights and substitutions early.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Jenn’s voice is the movie’s biggest asset.",
+        "detail": "The script is at its most magnetic when Jenn is improvising, insulting, or turning fear into attitude. A next pass could keep protecting that voice by making sure every major beat gives her a fresh choice, not just a new obstacle.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": "",
+    "production_reality_summary": null
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 36249,
+  "outputTokens": 5821,
+  "cost": 0.053381250000000005,
+  "declaredFormat": "Feature film"
+}

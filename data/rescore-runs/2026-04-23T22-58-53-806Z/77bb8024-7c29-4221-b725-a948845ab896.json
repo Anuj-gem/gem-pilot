@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:18:07.858Z",
+  "submission_id": "77bb8024-7c29-4221-b725-a948845ab896",
+  "eval_id": "8ec2884b-69d0-4489-aabb-8eaf01b6bbfc",
+  "title": "Life In Space 5 1",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "KYLE RUSSELL",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s through 118 · African-Caucasian-Jewish background"
+    },
+    {
+      "name": "MICHAEL OLSSON",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s through 117"
+    },
+    {
+      "name": "STANLEY SIMMONS",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s through 118"
+    },
+    {
+      "name": "CATHERINE SAND",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s through 37"
+    },
+    {
+      "name": "HELEN",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s through middle age"
+    },
+    {
+      "name": "TRACY",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s through middle age"
+    },
+    {
+      "name": "DR. LAKE GORE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "DR. CHARLES L. GRANT",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "MR. NEIL COLEMAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "MRS. MARIA OLSSON",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "MRS. JANE RUSSELL",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "MR. CHARLES RUSSELL",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "MRS. JANE OLSSON",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "MRS. SIMMONS",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "MRS. MARIA OLSSON",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "MRS. JANE RUSSELL",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "MRS. SIMMONS",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    }
+  ],
+  "positioning_hook": "Three childhood friends launch a privately financed mission to visit every planet, only to discover the voyage is a cosmic initiation that will rewrite their bodies, their faith, and their place in history.",
+  "cost_usd": 0.063942,
+  "input_tokens": 49874,
+  "output_tokens": 5897,
+  "status": "wrote:leads_ok"
+}

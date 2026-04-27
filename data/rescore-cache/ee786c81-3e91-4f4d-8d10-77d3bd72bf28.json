@@ -1,0 +1,377 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "crime",
+        "romance"
+      ],
+      "tone": "Grounded, broad, earnest, and comic-leaning"
+    },
+    "positioning_hook": "A Stanford computer-science dropout training in a forgotten California police outpost cracks a terrorist code, then has to save the town — and the woman he loves — before the tunnels open.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear commercial spine: a young tech-bright rookie, a small-town police setting, a terrorist threat, and a romance that gives the action a human center. It plays to thriller audiences and older viewers who like procedural teamwork, though the broad, talky style and heavy reliance on dialogue keep it from feeling like a clean four-quadrant package."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early: Jay is sent from LAPD to Firebaugh as a test, and the town quickly reveals a hidden terror plot tied to tunnels under the bar across from the station. The story engine is easy to explain in one breath, and the script keeps re-stating the central pressure so the premise stays legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Jay has a clean outsider-to-hero arc, with his coding brain, rookie idealism, and Olivia fixation giving him a readable emotional engine. Rich, George, Doris, and Daniel add texture, but most of the supporting cast functions around Jay rather than opening fully independent dramatic lanes."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The central idea of a computer-science dropout becoming the key to a police-terror case is a smart twist, and the Firebaugh setting gives the material a specific off-the-map flavor. The execution leans heavily on familiar procedural and action-thriller beats, with the dialogue and escalation often playing in recognizable genre lanes."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps introducing new turns — the money in the car, the shoe device, the tunnels, the hostage exchange, the warehouse siege, the final chase — so the plot rarely sits still. At the same time, several stretches are built on repeated briefing scenes and explanatory dialogue, which softens the propulsion between set pieces."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The most memorable idea is the collision of low-level municipal policing with a major terror operation hiding under a dead-end town. That contrast is immediately understandable and gives the script a fresh surface, even if the underlying mechanics eventually move into more familiar hostage-and-assault territory."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Firebaugh is drawn as a lived-in, economically exhausted place with roadkill, abandoned buildings, a bleak bar, old equipment, and a police department that feels underfunded and isolated. The town’s tunnels, the bar, the station, and the surrounding roads all function as story infrastructure rather than mere backdrop."
+      },
+      "tonal_specificity": {
+        "score": 5,
+        "reasoning": "The script has a consistent voice, but it lives in a broad register that mixes earnest procedural talk, deadpan small-town jokes, and heightened action without fully locking into one signature flavor. The humor around profanity and the repeated “hellhole” banter gives it personality, though the tone remains closer to familiar commercial thriller than something unmistakably singular."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the action, the script keeps circling themes of being stuck in a place, inherited hardship, burnout, and the choice between leaving and staying. Jay’s return to Stanford and Olivia’s decision to leave Firebaugh hint at a larger emotional afterlife beyond the plot, even though the feature ultimately resolves those threads fairly directly."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Jay-Rich mentor dynamic, the Jay-Olivia romance, and the George-Daniel institutional friction all generate usable energy, and the Firebaugh station has enough personalities to feel like a working unit. Still, the script is fundamentally driven by Jay’s journey, with the ensemble mostly orbiting his discoveries and choices."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in early 20s with strong tech credibility",
+          "Female romantic lead in early 20s",
+          "Multiple male authority roles in 50s-70s",
+          "Several supporting roles require older character actors",
+          "One Arabic male antagonist role in 50s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Run-down small-town police station",
+          "Dated bar with basement and tunnel access",
+          "Courtroom",
+          "Abandoned warehouse",
+          "Highway and dirt-road pursuit areas",
+          "Hospital room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Satellite/X-ray monitoring, drone imagery, helicopter crash, building collapse, and some digital enhancement for tactical surveillance and explosions.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, explosions, building collapse, vehicle pursuit, hostage-action choreography, practical debris and smoke effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "James Doolittle is referenced by name and tied to the tunnel history."
+        },
+        {
+          "type": "named_music",
+          "detail": "Olivia Newton-John is referenced by name in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Stanford, LAPD, FBI, Google Maps, Python, Interpol, Bud Light, Budweiser, and Uber are named."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Rookie is referenced repeatedly as a plot and character touchstone."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming action-thriller or modest theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with a festival-to-platform or limited theatrical path; the premise is self-contained and resolves in one escalation cycle."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained interiors and a modest town footprint keep the base budget manageable, but the helicopter, explosions, tactical assault, and building-collapse finale push it above a micro or ultra-low-cost lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a credible young lead, a romantic lead, several older authority figures, and a few specific antagonist roles, but it does not depend on a giant ensemble or child casting."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most of the story lives in a small set of repeatable locations, though the warehouse, tunnels, highway pursuit, hospital, and multiple police interiors add some spread."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Frequent profanity, hostage peril, gun violence, and a torture threat keep this firmly in mature territory without pushing into extreme explicitness."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names several real-world brands and institutions, plus James Doolittle and The Rookie, which creates clearance and licensing attention but not an unmanageable rights maze."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise gives Jay a built-in showcase.",
+          "what_it_means": "A young actor gets to play intelligence, vulnerability, romantic longing, and tactical heroism in one role, which is exactly the kind of part that can launch a career. Rising male leads who can carry both charm and problem-solving, plus buyers looking for a fresh face with franchise-adjacent utility, will see the value immediately.",
+          "evidence": "Jay goes from Stanford coder to Firebaugh rookie, fixes the Interpol cookie issue, decrypts the shoe device, and saves the operation with the bomb text.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Firebaugh feels like a story engine.",
+          "what_it_means": "The town is not just a backdrop; its poverty, isolation, and dead-end infrastructure create a pressure cooker that naturally feeds crime, corruption, and siege dynamics. Producers looking for a contained, producible setting with a strong identity will recognize how much mileage the station, bar, tunnels, and roads can generate.",
+          "evidence": "The station, Hub Station bar, Cypress Court house, dirt roads, roadkill, and abandoned warehouse all recur as active story spaces.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mentor dynamic has real commercial warmth.",
+          "what_it_means": "Rich gives the script a grounded older-male anchor who can play comic authority, street wisdom, and emotional mentorship without turning sentimental. Character actors and ensemble buyers will respond to a role that can support the lead while still landing memorable scenes of its own.",
+          "evidence": "Rich trains Jay, jokes through arrests, warns him about Olivia, and later opens up about Mary and heartbreak.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance is woven into the action.",
+          "what_it_means": "Jay and Olivia are not a detachable subplot; their connection becomes part of the hostage stakes, which gives the climax emotional lift beyond the procedural mechanics. That kind of built-in love story broadens the audience beyond pure action buyers and gives casting a second hook for younger talent.",
+          "evidence": "Their bar conversations, the warning about her family, the kidnapping, the ambulance scene, and the hospital ending all track the relationship through the thriller plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a clear contained-thriller footprint.",
+          "what_it_means": "Most of the action lives in repeatable interiors and a handful of exterior set pieces, which makes this easier to schedule and budget than a globe-trotting thriller. That footprint is attractive to buyers who want genre tension without tentpole spend.",
+          "evidence": "The story repeatedly returns to the police station, bar, conference room, courtroom, and warehouse, with only a few pursuit sequences.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "The procedural detail gives it a working-world feel.",
+          "what_it_means": "The script knows how to stage police routine, from radar stops to fingerprinting to Interpol lookups, which helps the action feel operational rather than abstract. Streamers and cable buyers who like law-enforcement texture will see a familiar lane with enough specificity to stand apart.",
+          "evidence": "10-codes, shop terminology, impound procedures, surveillance logs, and FBI coordination are threaded through the plot.",
+          "source": "script"
+        }
+      ],
+      "headline": "FIREBAUGH ROOKIE is a contained action-thriller with a clean commercial engine: a Stanford coder turned rookie cop gets exiled to a forgotten California town, then becomes the only guy who can decode the terror plot hiding under it. The script pairs a breakout-ready young lead with a lived-in small-town police ensemble, giving buyers a producible genre package with romance, humor, and siege-level stakes."
+    },
+    "lead_characters": [
+      {
+        "name": "Jay Fergus",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · white",
+        "hook": "Jay is a bright, restless Stanford computer-science dropout who thinks he wants excitement and discovers he actually has the temperament for pressure, pattern recognition, and loyalty. He is awkward in the room, sharp at the keyboard, emotionally open with Olivia, and increasingly confident when the situation turns tactical.",
+        "why_actor_wants_this": "This is the showcase territory of Taron Egerton in Rocketman or Tom Holland in The Devil All the Time — a young lead who can carry innocence, intelligence, and escalating resolve in the same frame. Actors who want a role that lets them play romantic sincerity, procedural competence, and action-hero urgency will chase this hard."
+      },
+      {
+        "name": "Rich Wyckoff",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Rich is the veteran cop with a dry mouth, a sharp tongue, and a real instinct for teaching without preaching. He is funny, tired, observant, and unexpectedly tender, especially when Jay’s feelings for Olivia start to mirror his own old heartbreak.",
+        "why_actor_wants_this": "This is the grounded mentor space of Woody Harrelson in True Detective or Jeff Daniels in The Newsroom — a seasoned operator whose humor and emotional history are both part of the performance. Character actors who can toggle between comic authority and bruised sincerity will see a rich supporting-lead opportunity here."
+      },
+      {
+        "name": "George Warren",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "George is the station’s steady center: practical, skeptical, and quietly amused by the absurdity of his own jurisdiction. He carries authority without bluster and gives the Firebaugh world a sense of institutional memory and command.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actor the calm-command territory of J.K. Simmons in Whiplash or Ed Harris in Appaloosa — a man whose authority is felt in every room he enters. Older character actors who can make competence feel entertaining will gravitate to it."
+      },
+      {
+        "name": "Olivia Doolittle",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Olivia is smart, guarded, and trapped in a life she did not choose, with a bar job, a sick mother, and a town that has taught her to expect disappointment. She has bite, humor, and a buried softness that only comes out when Jay treats her like a person instead of a local cautionary tale.",
+        "why_actor_wants_this": "This is the emotional territory of Juno Temple in Killer Joe or Carey Mulligan in Never Let Me Go — a young woman whose toughness is a survival strategy, not a personality trait. Actresses looking for a part that can play wounded intelligence, romantic resistance, and eventual release will want this."
+      },
+      {
+        "name": "Captain Daniel Groves",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "Daniel is the local captain who has spent decades in Firebaugh and knows exactly how small-town policing works until the day it stops being small. He is authoritative, skeptical, and increasingly forced to think like a battlefield commander as the case escalates.",
+        "why_actor_wants_this": "This is the leadership lane of Bryan Cranston in Trumbo or John Goodman in 10 Cloverfield Lane — a command role that can carry pressure, frustration, and moral clarity. Actors who like playing institutional authority under siege will find a lot to do here."
+      },
+      {
+        "name": "Captain Doris McKenna",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s",
+        "hook": "Doris is the LAPD captain who sees through Jay’s enthusiasm and sends him into the deep end with a mix of skepticism, wit, and hard-earned realism. She is tough, funny, and more invested in his future than she lets on.",
+        "why_actor_wants_this": "This is the sharp-edged authority space of Margo Martindale in The Americans or Frances McDormand in Olive Kitteridge — a role that can land in a few scenes and still define the temperature of the story. Veteran actresses who can make command feel personal will be drawn to it."
+      },
+      {
+        "name": "Marion Davidson",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s",
+        "hook": "Marion is the station’s front-line gatekeeper, all dry humor and local contempt for the town’s own decay. She gives the Firebaugh station its lived-in texture and a comic edge that never feels decorative.",
+        "why_actor_wants_this": "This is the kind of scene-stealing character part that recalls Kathy Bates in Fried Green Tomatoes or Margo Martindale in Justified — compact, memorable, and full of attitude. Character actresses who can make a few lines feel like a whole worldview will enjoy it."
+      },
+      {
+        "name": "Mary Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Mary is the working cop who shows up, does the job, and never wastes a word. She brings a clean, professional energy into the male-heavy station world and helps make the police ecosystem feel real.",
+        "why_actor_wants_this": "This is the efficient, no-nonsense law-enforcement space of Regina King in Southland or Emily Swallow in The Mentalist — a role built on competence and presence. Actors who want to project authority without speeches will be interested."
+      },
+      {
+        "name": "Armon Bilal",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Arabic",
+        "hook": "Armon is a volatile, dangerous criminal with a hair-trigger temper and a deep reservoir of menace. He is the kind of antagonist who can sit still in a cell and still make the room feel unsafe.",
+        "why_actor_wants_this": "This is the villain territory of Javier Bardem in No Country for Old Men or Benicio del Toro in Sicario — a controlled threat that can turn explosive without warning. Actors who want a memorable antagonist with real screen authority will chase it."
+      },
+      {
+        "name": "Stan Andrews",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Stan is the rumpled defense lawyer who looks like he has been arguing for decades and still enjoys every second of it. He is comic, combative, and just slippery enough to keep the police on their toes.",
+        "why_actor_wants_this": "This is the fast-talking legal side of Richard Jenkins in The Visitor or Bob Balaban in A Mighty Wind — a character part that can steal scenes through rhythm and attitude. Veteran character actors who love verbal sparring will be drawn to it."
+      },
+      {
+        "name": "William Wilson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "William is the FBI professional who arrives with procedure, confidence, and a growing sense that the local cops may be more useful than expected. He is a straight-arrow operator who still has room for friction and respect.",
+        "why_actor_wants_this": "This is the procedural authority lane of Michael Keaton in Spotlight or Shea Whigham in Boardwalk Empire — a role that plays competence under pressure. Actors who can make institutional command feel human will want it."
+      },
+      {
+        "name": "Jim Carson",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Jim is the tech-and-surveillance FBI guy, the one who translates data into action and keeps the operation moving. He is practical, alert, and part of the story’s modern intelligence layer.",
+        "why_actor_wants_this": "This is the grounded technical-support role of Paul Dano in Prisoners or Adam Scott in Severance — a smart operator whose value is in precision and timing. Actors who like playing intelligence without flash will see the appeal."
+      },
+      {
+        "name": "Erwin Sayers",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Erwin is the senior FBI voice who arrives with national-security gravity and a willingness to take control of the room. He gives the story a federal scale without losing the small-town friction underneath it.",
+        "why_actor_wants_this": "This is the command-and-pressure space of Tommy Lee Jones in No Country for Old Men or Laurence Fishburne in CSI — a role that projects authority instantly. Veteran actors who can make a few scenes feel like a takeover will want it."
+      },
+      {
+        "name": "John Dickerson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "John is the FBI contact who knows the district, knows the local cops, and understands how bad things can get when a case goes sideways. He is a useful bridge between the small-town station and the larger federal machine.",
+        "why_actor_wants_this": "This is the efficient federal-professional slot of David Strathairn in Good Night, and Good Luck or Clark Gregg in The Avengers — a role that communicates expertise fast. Actors who specialize in calm, credible authority will fit it well."
+      },
+      {
+        "name": "Steven Marbury",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Steven is the software-side FBI specialist, the one who turns the case into a digital problem as well as a tactical one. He expands the story’s modern surveillance layer and gives Jay a professional counterpart.",
+        "why_actor_wants_this": "This is the intelligence-analyst lane of Zachary Quinto in Snowden or Matthew Rhys in The Americans — a role that lives in systems, not speeches. Actors who can make technical dialogue feel urgent will like it."
+      },
+      {
+        "name": "Jack Sullivan",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Jack is the FBI agent who turns out to be compromised, which makes him one of the story’s sharpest betrayals. He starts as institutional help and becomes a hidden threat inside the rescue machinery.",
+        "why_actor_wants_this": "This is the double-agent pressure of Michael Shannon in Boardwalk Empire or Jon Hamm in The Town — a role that lets an actor pivot from trust to menace. Actors who like playing hidden agendas will be drawn to it."
+      },
+      {
+        "name": "Davis Carr",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Davis is the weary observation-room worker who lives inside the station’s surveillance machinery. He adds texture to the procedural world and helps sell the grind of watching, waiting, and logging details.",
+        "why_actor_wants_this": "This is the lived-in utility role of Stephen Root in anything he touches — a small part with enough specificity to feel real. Character actors who can make routine feel memorable will enjoy it."
+      },
+      {
+        "name": "Doug Harden",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Doug is the grease-covered garage mechanic who helps turn the car search into a major discovery. He is a working-class procedural character with immediate utility and texture.",
+        "why_actor_wants_this": "This is the blue-collar support role of Michael Rooker in a crime thriller — practical, blunt, and useful in a way that reads instantly. Actors who can make labor feel cinematic will fit it."
+      },
+      {
+        "name": "Steve",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Steve is the unseen technical voice on the money trace, a small but functional part of the investigative chain. He helps widen the world beyond the room without requiring a large footprint.",
+        "why_actor_wants_this": "This is the off-screen utility slot that often goes to a dependable character actor with a strong voice. It is the kind of part that can be cast quickly and still feel authentic."
+      },
+      {
+        "name": "Scott Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Scott is the station officer who handles the aftermath logistics and keeps the operation moving. He is a practical local cop in a story that needs a believable bench of working officers.",
+        "why_actor_wants_this": "This is the dependable ensemble-cop role of a show like Southland or The Wire — small, functional, and grounded. Working actors who specialize in realism will fit it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a forgotten town into a pressure-cooker thriller.",
+        "fit_profile": "Second-feature or established indie directors with one to three features, especially those who like contained genre pieces with strong geography and ensemble blocking. This material rewards directors who care about procedural clarity, tactical escalation, and making ordinary spaces — a bar, a station, a tunnel, a warehouse — feel like set pieces.",
+        "detail": "The craft opportunity is to stage a siege story that keeps feeling intimate even as the stakes widen from local policing to federal counterterrorism. Directors who can balance humor, tension, and spatial geography will see a clean lane here because the script already gives them repeatable locations and a strong visual map."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming action-thriller / modest theatrical genre lane",
+        "detail": "The package can be built around one breakout-capable young lead plus a handful of older character actors, rather than requiring a star-heavy ensemble to function. The contained town footprint, repeatable interiors, and self-contained rescue arc make it exportable and easy to market as a high-concept genre title with a clear trailer promise."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on premise explanation.",
+        "detail": "The LAPD captain conversation does useful work, but it runs long before the story fully ignites. A next pass could let Jay’s transfer to Firebaugh arrive a little faster so the audience reaches the town pressure-cooker sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Several briefing scenes repeat the same information.",
+        "detail": "The station conference-room exchanges, FBI calls, and update scenes often restate the same threat status in slightly different language. One lever would be to fold some of those updates into action beats so the momentum keeps climbing while the audience learns the same facts.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The romance could carry more independent motion.",
+        "detail": "Jay and Olivia are compelling together, and the relationship already matters to the climax. The version of the script where Olivia has one or two more choices that change the plot would deepen her agency and make the love story feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The town footprint is already efficient.",
+        "detail": "The story is mostly contained to the station, bar, courthouse, a few homes, and the warehouse, which is a strong production advantage. Protect that footprint on the next pass, because the current geography already gives the film a clear, shootable identity.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The finale depends on heavy tactical escalation.",
+        "detail": "The helicopter, explosions, building collapse, and warehouse assault are the biggest cost drivers in the script. One simplification lever would be to preserve the siege energy while reducing one large-scale element, so the climax stays intense without asking the budget to do too much at once.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The dialogue leans hard on repeated profanity beats.",
+        "detail": "The profanity gives the world attitude, but the script often uses it as a rhythmic substitute for escalation. A next pass could vary the verbal texture in a few key confrontations so the biggest turns land with more contrast.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 61,
+  "tier": "Optionable",
+  "inputTokens": 44994,
+  "outputTokens": 6276,
+  "cost": 0.0619875,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,240 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Road movie",
+        "Coming-of-age"
+      ],
+      "tone": "Grounded, tender, wry, and emotionally bruised"
+    },
+    "positioning_hook": "A suicidal loner stranded in the woods with a runaway camp kid has to get him to Philadelphia’s Rocky steps before the boy’s fear — and his own grief — catches up.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: two damaged people, one odd mission, and a recognizable pop-culture destination. It plays more intimate than broad, but the Rocky hook and the father-son surrogate dynamic give it a clean audience lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands quickly in the woods, and the script keeps the objective legible: get the kid out, then get him to Rocky’s steps in Philadelphia. The hook is simple and easy to explain, with the suicide note and the camp escape adding a second pressure line."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Guy has a strong deadpan voice and a wounded edge, especially in the diner, the suicide-note beat, and the self-defense sequence. Camper is vivid in his stubborn innocence, though the script is still mostly built around the Guy/Camper exchange rather than a wider character web."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The pairing of a suicidal adult and a Rocky-obsessed child gives the script a fresh emotional engine, and the dialogue has a loose, offbeat rhythm. The execution stays close to a naturalistic two-hander, which keeps it grounded more than formally daring."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The opening has immediate motion, but the middle settles into repeated walking-and-talking beats before the car, diner, and training sequence re-energize things. The final cry in the woods suggests a strong emotional turn, but the feature shape is still more vignette-driven than fully escalated."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A camp runaway who wants to see Rocky’s steps is a memorable engine, and the script makes that desire feel oddly sincere rather than gimmicky. The deeper emotional pattern — a child teaching an adult how to keep going — is familiar in theme but fresh in this specific pairing."
+      },
+      "world_density_and_texture": {
+        "score": 4,
+        "reasoning": "The woods, the convenience store, the diner, and the car create a contained travel lane, but the world is mostly a backdrop for the two leads’ exchanges. The camp exists as an off-screen pressure point more than a textured system with its own rules."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a distinct blend of melancholy, deadpan comedy, and childlike sincerity, especially in the Rocky debate, the fox-screaming bit, and the diner flirtation. It knows how to pivot from joke to ache without losing its voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The suicide note, Guy’s evasions, and the boy’s fear of camp all hint at a larger emotional backstory that could deepen the feature. The page currently reveals that depth in fragments, which creates intrigue without yet fully opening the reservoir."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 4,
+        "reasoning": "The script is intentionally a two-hander, and the Guy/Camper dynamic carries the whole piece. The waitress and camp counselors add texture, but they do not yet generate independent story energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child lead, approximately 12 years old",
+          "One adult male lead with dry comic timing and emotional restraint",
+          "A small supporting cast with minimal dialogue"
+        ]
+      },
+      "locations": {
+        "distinct_count": 5,
+        "interior_exterior_ratio": "Mostly exterior with a few interior stops",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Wooded exterior locations",
+          "Bridge or underpass area",
+          "Convenience store interior",
+          "Diner interior",
+          "Car interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No apparent VFX requirements.",
+        "stunts_level": "minor",
+        "sfx_needs": "Minimal practical needs; dehydration, physical scuffling, and a few simple action beats.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "The Rocky theme song is referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Rocky and Rocky-related references, including the Philadelphia steps and the film itself, invoke existing IP."
+        },
+        {
+          "type": "brand",
+          "detail": "Gatorade is named."
+        },
+        {
+          "type": "brand",
+          "detail": "LeBron James and Dan Marino are referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "Blair Witch Project is referenced by name."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Festival-to-platform indie feature / premium streamer drama",
+        "content_level": "PG-13 equivalent with some mature language and suicidal ideation",
+        "series_engine_or_release_model": "Feature release model: festival launch, limited theatrical potential, then streaming platform acquisition"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, small-cast, mostly natural locations, and no VFX-heavy set pieces keep the budget footprint modest."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project depends on a strong adult lead and a credible child performer, with a small supporting cast that still needs precise comic timing."
+        },
+        "location": {
+          "level": "low",
+          "note": "The story moves through a handful of accessible contemporary locations, mostly woods, car, diner, and convenience store."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Suicidal ideation, child distress, profanity, and physical roughhousing shape the content lane without pushing into explicit territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Rocky, the Rocky theme, and several named brands and public figures create clearance considerations."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The central pairing is instantly playable.",
+          "what_it_means": "A suicidal drifter and a stubborn kid create a clean two-hander that can sell on chemistry, performance, and emotional contrast. That makes the script attractive to indie buyers and to actors who want a showcase built on banter, restraint, and late-breaking tenderness.",
+          "evidence": "Guy and Camper’s first exchange in the woods, then their long walk and car conversations, carry the whole piece.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Rocky obsession gives the movie a memorable engine.",
+          "what_it_means": "The boy’s fixation on the Rocky steps is a simple, visual objective that gives the story a destination and a marketing image. Buyers can immediately picture the poster, and audiences know exactly what emotional payoff the journey is aiming toward.",
+          "evidence": "Camper repeatedly insists on seeing Rocky and specifically wants to run up the steps in Philadelphia.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Guy has a dry, wounded comic voice.",
+          "what_it_means": "The lead role offers an actor a chance to play sarcasm, self-loathing, and reluctant caretaking in the same frame, which is the kind of part that can anchor a festival-friendly feature. Mid-career dramatic actors with comic timing will see a lot of playable behavior here.",
+          "evidence": "His jokes about foxes screaming, hitchhiking, and the diner exchange all reveal a man who hides pain inside deflection.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script balances humor with ache.",
+          "what_it_means": "That tonal blend broadens the audience beyond pure drama and gives the material a human, rewatchable quality. It is especially attractive to buyers looking for something that can play in the emotional lane without feeling heavy-handed.",
+          "evidence": "The Blair Witch riff, the “butt fudge Pennsylvania” joke, and the later suicide-note beat sit side by side without breaking the voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The child perspective keeps the story disarming.",
+          "what_it_means": "Camper’s literalism and sincerity make the movie accessible and protect it from becoming too self-serious, which is valuable for both audience connection and actor appeal. Young-performer-driven indie dramas and prestige buyers looking for a breakout child role will notice him.",
+          "evidence": "His insistence on Rocky, his fear of camp, and his blunt questions about winning and losing define the emotional lens.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The contained footprint is producer-friendly.",
+          "what_it_means": "A small number of contemporary locations and a mostly two-person cast make this feasible for a modest budget and a fast shoot. That opens the door to indie financiers, microbudget producers, and streamer acquisition plays that favor contained emotional features.",
+          "evidence": "The script lives in woods, car interiors, a diner, and a convenience store.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a contained, actor-forward feature with a clean emotional engine: a suicidal loner and a runaway kid on a strange pilgrimage to Rocky’s steps. The material is commercially legible because it pairs a memorable destination with a two-hander that can live or die on performance, chemistry, and tone — all of which are already on the page."
+    },
+    "lead_characters": [
+      {
+        "name": "GUY",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s",
+        "hook": "Guy is a dry, self-protective drifter with a bruised sense of humor and a hair-trigger impatience that keeps slipping into care. He talks like a man who has already decided not to be impressed by anything, which makes every moment of tenderness feel earned.",
+        "why_actor_wants_this": "This is the showcase territory of Casey Affleck in Manchester by the Sea — a man whose stillness, sarcasm, and buried grief do as much acting as the dialogue. Actors who excel at underplaying pain while letting the audience feel the fracture underneath will chase this, especially if they want a role that can carry a feature on presence alone."
+      },
+      {
+        "name": "CAMPER",
+        "role_type": "Lead",
+        "demographics": "Male · 12",
+        "hook": "Camper is a literal, stubborn, emotionally open kid whose innocence never reads as passive; he knows exactly what he wants and keeps asking for it until the world has to answer. He’s funny without trying to be, and his fear gives the story its pulse.",
+        "why_actor_wants_this": "This is the showcase space of Jacob Tremblay in Room — a child role built on sincerity, resilience, and the ability to make adult scenes feel newly alive. Young actors with real emotional precision will want it because the part gives them both comic timing and the kind of heart-forward material that can define an early career."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a two-hander that lives or dies on performance, rhythm, and emotional restraint.",
+        "fit_profile": "First- or second-feature directors coming out of shorts, festival indies, or TV episodes who already work comfortably in naturalism and character-first storytelling. This material rewards directors who can hold a road-movie frame, let silence play, and shape a tonal blend of deadpan humor and bruised sincerity without over-stylizing it.",
+        "detail": "The material gives a director a contained canvas with a clear emotional destination, which is ideal for someone building a feature reel around actor work rather than spectacle. It will appeal to filmmakers who want a festival-friendly calling card that can be shot lean and still feel cinematic."
+      },
+      "buyer_appeal": {
+        "tier": "$1-5M indie feature",
+        "lane": "Festival indie / prestige streamer drama",
+        "detail": "The project can be packaged around two strong performances and does not require star-driven spectacle to function, which lowers the attachment burden. The contained footprint and recognizable Rocky reference give it a clean festival-to-platform path that buyers in the indie drama lane understand immediately."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The feature shape is still mostly episodic.",
+        "detail": "The woods-to-car-to-diner progression plays cleanly, but the next pass could sharpen the escalation between stops so each sequence changes the relationship in a more irreversible way. One primary lever would be to make the suicide-note reveal and the Rocky destination feel like they are colliding sooner, so the middle section carries a stronger forward pull.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The camp pressure stays mostly off-screen.",
+        "detail": "The counselors and the camp itself function as a threat, but the script currently keeps that world in the distance. A next pass could foreground one concrete image, rule, or authority figure from camp so Camper’s refusal has an even sharper shape without adding much footprint.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Rocky references invite clearance attention.",
+        "detail": "Rocky, the theme song, and the Philadelphia steps are central to the movie’s identity, so the version that leans hardest into those references should be planned with rights in mind. That said, the recognizable IP also gives the project an immediate audience handle and a marketing image buyers can understand quickly.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The child lead needs exact casting.",
+        "detail": "Camper works because the performance has to balance literalness, humor, and fear in the same breath. The right child actor will make the whole movie sing, so casting should prioritize emotional precision over polish.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 55,
+  "tier": "Needs Development",
+  "inputTokens": 13162,
+  "outputTokens": 3336,
+  "cost": 0.0248835,
+  "declaredFormat": "Feature film"
+}

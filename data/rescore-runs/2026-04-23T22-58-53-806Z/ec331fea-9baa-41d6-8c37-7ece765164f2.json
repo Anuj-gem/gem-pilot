@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:26:52.677Z",
+  "submission_id": "ec331fea-9baa-41d6-8c37-7ece765164f2",
+  "eval_id": "cb4bd963-01ca-4894-b3f9-bbcdff97f391",
+  "title": "Evolve screenplay",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Genevieve Pascal",
+      "role_type": "Lead",
+      "demographics": "Female · late 40s"
+    },
+    {
+      "name": "Alicia Lasky \"Dash\"",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Jack Haskell",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "Dr. Heinrich Hauser",
+      "role_type": "Lead",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Dr. Taru Inaro",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Colonel Evan Drummond",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Gary Cochrane",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Tanquery Williams \"Tank\"",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    }
+  ],
+  "positioning_hook": "A military research director must contain a newborn space organism that learns through death, while her own body starts changing after exposure to its atomized blood.",
+  "cost_usd": 0.047531250000000004,
+  "input_tokens": 37851,
+  "output_tokens": 4254,
+  "status": "wrote:leads_ok"
+}

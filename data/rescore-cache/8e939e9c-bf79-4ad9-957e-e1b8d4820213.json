@@ -1,0 +1,304 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Biographical drama",
+      "genre_tags": [
+        "Tech industry drama",
+        "Ensemble rivalry"
+      ],
+      "tone": "Energetic, propulsive, reverent, and increasingly tragic"
+    },
+    "positioning_hook": "John Carmack and John Romero build id Software from basement hackers into gaming legends, then collide when ambition, ego, and the next engine split the company apart.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean, sellable engine: two charismatic founders, a rise-and-fall arc, and a built-in audience of gamers and tech-history viewers. The appeal is strongest for adults who like prestige business stories with personality, though the subject matter is still more specialized than a broad four-quadrant crowd-pleaser."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the Hyatt tournament opening and stays legible: this is the story of the two Johns, their breakthrough games, and the rupture that follows success. The repeated title cards and milestone structure make the trajectory easy to track from Softdisk to Doom to Quake to Ion Storm."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Carmack and Romero are sharply contrasted and highly playable: one is icy, technical, and exacting; the other is magnetic, impulsive, and hungry for spectacle. Their dynamic gives the feature its emotional spine, and supporting players like Tom, Sandy, Jay, and American add enough texture to keep the world active around them."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "A founder-story about game development is familiar terrain, but the script’s split-screen opening, game-world visualizations, and direct use of the era’s tech culture give it a distinct presentation. The boldness comes less from the premise itself than from the way it dramatizes code, design, and rivalry as cinematic action."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with strong forward drive through a series of escalating milestones, and each success creates the next pressure point. The later stretch around Quake and Daikatana sustains tension through deadlines, engine changes, and personnel fractures, though the long chronology naturally makes the feature feel more episodic than a single-pressure thriller."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels fresh because it turns game-engine breakthroughs into dramatic set pieces and makes creative philosophy the engine of conflict. The Carmack/Romero split is instantly understandable and emotionally specific, which gives the material that rare 'of course this is a movie' quality."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script is rich with the texture of early game culture: BBSs, shareware, LAN-era obsession, office crunch, conventions, magazine hype, and the physicality of the hardware itself. Softdisk, id, and Ion Storm each feel like distinct ecosystems with their own rules, status hierarchies, and pressures."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone has a clear identity: part swaggering rise story, part workplace war, part tragic bromance, with flashes of dark comedy and mythic self-awareness. The script knows when to be funny about gamer culture and when to let the rivalry land as something bigger than business."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the surface success story, the script keeps revealing deeper material about identity, authorship, control, and what happens when a creative partnership stops being mutual. The final reunion at the Hyatt and the epilogue framing give the piece a reflective aftertaste that extends beyond the immediate plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Carmack/Romero axis is the main engine, but the supporting web around them is active enough to generate scenes rather than just exposition. Jay, Tom, Sandy, Adrian, Kevin, and American each create a different pressure on the central partnership, even if the story ultimately belongs to the two Johns."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 2,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Two central male leads with strong age-span casting from teens/20s through middle age",
+          "Supporting ensemble of programmers, artists, executives, and spouses",
+          "One child version of Romero appears in flashback material",
+          "Real-person portrayals require recognizable period-specific physical and behavioral casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with periodic exterior inserts",
+        "period_or_contemporary": "Period (1980s through 2000)",
+        "notable_requirements": [
+          "Multiple recreated office environments: Softdisk, id Software, Ion Storm",
+          "Convention/expo spaces including Hyatt tournament, Applefest, E3, and developer conference settings",
+          "Residential interiors including lake house, apartments, and family homes",
+          "Car interiors and parking-lot exteriors for key transitions"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Stylized game-world visualizations, split-screen transitions, animated fantasy inserts, title-card montages, and some digital interface work for chatrooms and gameplay imagery.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical office destruction, computer hardware handling, smoke/lighting effects, and a few explosive or chaotic montage beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "John Carmack, John Romero, Stevie Case, Jay Wilbur, Tom Hall, Sandy Petersen, American McGee, Scott Miller, David Datta, Trent Reznor, and other named industry figures"
+        },
+        {
+          "type": "named_music",
+          "detail": "Prince is specifically named in the New Year’s Eve sequence"
+        },
+        {
+          "type": "brand",
+          "detail": "Hyatt, Ferrari, Nintendo, Apple, Softdisk, Microsoft, LucasArts, Eidos, Atari, Quake, Doom, Wolfenstein, Commander Keen, Daikatana, and other named companies/games"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Use of game titles, logos, magazine headlines, and game footage references will require clearance strategy"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or theatrical festival-to-platform drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival positioning and streamer acquisition potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly office- and conference-driven, but period recreation across multiple eras, expo spaces, and game-world inserts pushes it above a lean indie footprint."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The project depends on two highly specific lead portrayals plus a sizable supporting ensemble of real people across multiple decades."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable but spans many distinct period locations, including offices, homes, conventions, and recreated industry spaces."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Language is strong, the workplace conflict is intense, and the material includes violence, crunch, and some sexualized or drug-adjacent period texture."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is built on named real people, companies, games, magazines, and a plot-critical music reference."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The two Johns are a built-in movie star engine.",
+          "what_it_means": "This gives the project a clean, actor-forward package: one role is all precision and control, the other is charisma under pressure, and the friction between them is the whole engine. Prestige buyers and talent reps will immediately see a two-hander with awards-friendly transformation on both sides.",
+          "evidence": "The Hyatt split-screen entrance, the Softdisk first meeting, the Quake firing scene, and the final parking-lot reunion all frame their relationship as the movie’s central event.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tech history is dramatized as action.",
+          "what_it_means": "The script turns coding breakthroughs, engine changes, and network tests into cinematic set pieces, which makes a specialized subject feel playable and visual. That’s a strong lane for buyers who want smart material that still delivers momentum and spectacle without needing a giant effects budget.",
+          "evidence": "Adaptive Tile Refresh, the first scrolling demo, the Doom networking breakthrough, and the Quake engine reveal all play like story turns, not just exposition.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has authentic industry texture.",
+          "what_it_means": "The piece feels lived-in because it understands the culture around early game development: shareware, BBSs, LAN parties, magazine hype, crunch, and the mythology of the era. That texture gives the film a credible period identity and helps it stand apart from generic startup stories.",
+          "evidence": "Softdisk’s cramped office, the lake-house coding weekend, the E3 booths, the IRC upload frenzy, and the magazine headline montage all build a specific ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Romero is a showman with a tragic arc.",
+          "what_it_means": "He’s the kind of role that lets an actor play swagger, insecurity, ambition, and self-mythologizing in one performance, which is exactly the sort of part that can anchor a prestige drama. Talent who want a larger-than-life lead with a fall-and-reckoning shape will respond immediately.",
+          "evidence": "His rockstar entrances, the 'design is law' speeches, the Daikatana pitch, and the later Eidos/Quake II humiliation all chart a full rise and collapse.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Carmack is an unusually playable genius role.",
+          "what_it_means": "This is a rare lead that can be built on stillness, intellect, and emotional compression rather than constant external action. Actors who like playing the cost of obsession — and buyers who want a cerebral counterweight to a louder co-lead — will see the value immediately.",
+          "evidence": "His deadpan one-liners, the scrolling breakthrough, the report cards, and the final refusal to bend all define him through behavior rather than speeches.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates pressure from every side.",
+          "what_it_means": "Jay, Tom, Sandy, Adrian, Kevin, and American each represent a different version of creative labor, which gives the film multiple relationship lanes instead of a single binary conflict. That makes the project more castable and gives producers room to build a recognizable supporting ensemble around the leads.",
+          "evidence": "Jay as manager, Tom as designer, Sandy as the grounded outsider, Adrian as the visual counterpoint, Kevin as the mediator, and American as the next-generation operator all have distinct functions in the story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on emotional reconciliation.",
+          "what_it_means": "The final jumper-cable reunion gives the movie a clean audience release after all the professional warfare, which is valuable for a story that spends so much time in conflict and ambition. That last beat broadens the film’s appeal beyond tech fans by paying off the friendship as much as the legacy.",
+          "evidence": "The broken Ferrari in the Hyatt lot, Romero’s offer to help, and Carmack’s smile close the story on mutual recognition rather than pure defeat.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a rare prestige feature with a built-in hook: the origin and fracture of two gaming legends, told as a rivalry story with real cinematic propulsion. The script has a strong actor package at its center, a richly specific period world around it, and a final emotional note that makes the whole thing feel bigger than tech history."
+    },
+    "lead_characters": [
+      {
+        "name": "John Carmack",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to 30s · white · tech programmer",
+        "hook": "Carmack is the quiet engine of the story: brilliant, emotionally sealed, and almost unnervingly committed to the purity of the work. He speaks in short bursts, treats people like variables, and carries the strange charisma of someone who can change an industry without ever seeming to want the spotlight.",
+        "why_actor_wants_this": "This is the showcase territory of Benedict Cumberbatch in The Imitation Game — a genius role where precision, restraint, and social distance become the performance. Actors who want to play intelligence as tension, not ornament, will chase this because the character’s stillness is the drama."
+      },
+      {
+        "name": "John Romero",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to 30s · white · game designer / promoter",
+        "hook": "Romero is pure velocity: charismatic, combative, funny, self-mythologizing, and always one beat away from either inspiration or disaster. He wants the room, the applause, and the impossible idea, but the script keeps revealing the loneliness underneath the performance.",
+        "why_actor_wants_this": "This is the showcase territory of Al Pacino in Glengarry Glen Ross — a volcanic, verbal, status-charged role where charisma and self-destruction are inseparable. Actors who want a big, quotable, scene-stealing part with a real fall will line up for it."
+      },
+      {
+        "name": "Tom Hall",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · white · designer / writer",
+        "hook": "Tom is the creative idealist in the room, the one who wants story, structure, and a sense that the work means something beyond the engine. He’s funny, earnest, and increasingly stranded between Carmack’s discipline and Romero’s appetite.",
+        "why_actor_wants_this": "This is the showcase territory of Philip Seymour Hoffman in Almost Famous — the thoughtful creative who can be warm, wounded, and quietly essential in the same scene. Character actors who like playing the conscience of an ensemble will want it."
+      },
+      {
+        "name": "Jay Wilbur",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · white · producer / organizer",
+        "hook": "Jay is the stabilizer: social, practical, and just grounded enough to keep the chaos from becoming pure collapse. He’s the guy who can laugh with Romero, manage Carmack, and still see the numbers when everyone else is chasing the myth.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Giamatti in Sideways — the grounded operator who gives the story its human scale and comic friction. Actors who specialize in smart, watchful support roles will see a lot to play here."
+      },
+      {
+        "name": "Sandy Petersen",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · white · designer",
+        "hook": "Sandy enters as the calm adult in a room full of adrenaline, and that makes him instantly useful and memorable. He’s soft-spoken, technically sharp, and the rare person who can stand up to Carmack without turning the scene into a shouting match.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Stuhlbarg in The Post — the understated expert whose intelligence changes the room without needing volume. Actors who can play dry wit and quiet authority will be drawn to it."
+      },
+      {
+        "name": "Adrian Carmack",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · white · artist",
+        "hook": "Adrian is the visual counterweight to Carmack’s code: sardonic, observant, and happiest when the work gets darker, stranger, and more graphic. He’s the one who can translate Romero’s excess into imagery and still keep a straight face while doing it.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Kind in a sharper, darker register — the dry creative who can puncture ego while still belonging to the team. Character actors who like playing the artist in the room will respond to it."
+      },
+      {
+        "name": "Kevin",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · white · developer / intermediary",
+        "hook": "Kevin functions as the bridge between personalities, the guy who keeps trying to translate one side of the room to the other. He’s not the loudest voice, but he’s often the one carrying the practical reality of the moment.",
+        "why_actor_wants_this": "This is the showcase territory of David Harbour in a supporting ensemble role — the working-man intermediary who can absorb tension and still feel human. Actors who like playing the person stuck between giants will find a lot of playable behavior here."
+      },
+      {
+        "name": "American McGee",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · white · developer",
+        "hook": "American arrives as the younger, punkier successor figure, eager, competent, and slightly intimidated by the mythology around him. He becomes a useful audience surrogate inside the later id era, watching the machine from the inside and learning how it really works.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in a breakout-supporting mode — the younger operator who can register awe, confusion, and competence at once. Emerging actors looking for a role that places them inside a legendary room will want it."
+      },
+      {
+        "name": "Scott Miller",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · white · publisher",
+        "hook": "Scott is the offscreen catalyst who turns the shareware world into a real business opportunity. He’s not in the movie much, but he matters because he represents the first outside validation of what these guys are building.",
+        "why_actor_wants_this": "This is the kind of compact, scene-efficient role that plays like the best supporting turns in The Social Network — the outsider who changes the trajectory of the story with a few well-placed scenes. A recognizable character actor could make it pop fast."
+      },
+      {
+        "name": "Stevie Case",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · white · gamer / partner",
+        "hook": "Stevie is part confidante, part status symbol, part witness to Romero’s self-mythology. She adds a social and romantic dimension to his public persona without ever feeling like a decorative add-on.",
+        "why_actor_wants_this": "This is the showcase territory of Elizabeth Debicki in a prestige ensemble — the woman whose presence changes the temperature of a room and reveals the lead’s vanity by proximity. Actors who can play intelligence and cool detachment will be interested."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a tech origin story into a rivalry drama with real emotional voltage.",
+        "fit_profile": "Established indie or prestige-drama directors with at least one or two features, especially those who like performance-first material, period detail, and institutional ambition. This is for filmmakers who can make offices, conventions, and code feel like battlegrounds and who know how to stage a two-hander so every scene feels like a verdict.",
+        "detail": "The material rewards a director who can balance procedural momentum with character combustion, because the movie lives or dies on whether the audience feels the creative partnership as a romance, a war, and a business story all at once. It’s especially attractive to directors who have already handled ensemble pressure and can make period texture feel immediate rather than nostalgic."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget prestige feature",
+        "lane": "Festival-to-streamer drama lane with awards-adjacent casting potential",
+        "detail": "It can be packaged around two strong lead performances and a supporting ensemble without needing star-driven spectacle, which makes it viable for buyers who like actor-forward prestige pieces. The gaming-history angle gives it a built-in audience and exportable hook, while the period office/convention footprint keeps it in a controllable production lane."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The chronology covers a lot of ground.",
+        "detail": "The script has real momentum, but the feature spans from the early 1980s through 2000, which creates room to consider whether a few milestones could be combined without losing the rise-and-fall shape. A tighter version of the timeline would keep the emotional throughline on the Carmack/Romero relationship and make the final rupture hit even harder.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The supporting ensemble is doing a lot of work.",
+        "detail": "Jay, Tom, Sandy, Adrian, Kevin, and American all matter, but the movie is still fundamentally a two-hander. One direction would be to foreground the few relationships that most directly pressure the central split, so the supporting players feel like distinct forces rather than a rotating chorus around the Johns.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights footprint is broad.",
+        "detail": "The script references many real people, companies, games, magazines, and one named song, so a production path would want a clear clearance strategy early. The upside is that the specificity is part of the appeal; the version that preserves that specificity while planning the legal path is the one that protects the movie’s identity.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The period world can be streamlined in production.",
+        "detail": "The story already lives in offices, homes, and convention spaces, so there is room to consolidate a few environments into repeatable production hubs without changing the narrative shape. That would protect the period feel while keeping the build efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The game-world inserts are a signature device.",
+        "detail": "The split-screen entrances, animated fantasy D&D sequence, and stylized gameplay visualizations give the script its personality, and they should stay because they make the material feel cinematic rather than purely biographical. A next pass could clarify which of those inserts are essential story beats versus flavor, so the visual language stays bold without becoming overextended.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76,
+  "tier": "Optionable",
+  "inputTokens": 49059,
+  "outputTokens": 5181,
+  "cost": 0.06010875,
+  "declaredFormat": "Feature film"
+}

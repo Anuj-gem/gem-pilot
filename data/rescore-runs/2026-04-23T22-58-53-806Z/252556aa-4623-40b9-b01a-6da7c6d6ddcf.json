@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-23T23:08:27.540Z",
+  "submission_id": "252556aa-4623-40b9-b01a-6da7c6d6ddcf",
+  "eval_id": "da3cdeb0-e370-4815-bec9-497516abd436",
+  "title": "They Let Him Go",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "ADAM LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · attorney"
+    },
+    {
+      "name": "MARC LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s/30s · brother of Adam"
+    },
+    {
+      "name": "MARY LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Female · 60s · mother"
+    },
+    {
+      "name": "MARTY",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · lawyer/friend"
+    },
+    {
+      "name": "SHANNON COLLINS",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · family friend / witness"
+    },
+    {
+      "name": "DAVID GALLOWAY",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · defense attorney"
+    },
+    {
+      "name": "ELENA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · former patient"
+    },
+    {
+      "name": "DR. SUSAN MYERS",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · physician"
+    },
+    {
+      "name": "DR. HELEN ANDREWS",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · physician"
+    }
+  ],
+  "positioning_hook": "A grief-stricken lawyer sues the hospital that discharged his brother after a suicide attempt, forcing his family’s private guilt into a public courtroom fight.",
+  "cost_usd": 0.041265750000000004,
+  "input_tokens": 23989,
+  "output_tokens": 5172,
+  "status": "wrote:leads_ok"
+}

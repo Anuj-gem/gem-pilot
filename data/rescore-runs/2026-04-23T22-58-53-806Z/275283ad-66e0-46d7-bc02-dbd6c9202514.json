@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-04-23T23:19:43.140Z",
+  "submission_id": "275283ad-66e0-46d7-bc02-dbd6c9202514",
+  "eval_id": "f9d20366-9fcc-4b35-9e33-e423a61f175c",
+  "title": "Darkness Falls",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 2,
+  "lead_characters_summary": [
+    {
+      "name": "Rex Stevens",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · white · period 1950s author"
+    },
+    {
+      "name": "Doctor Fields",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s · voice only"
+    }
+  ],
+  "positioning_hook": "Rex Stevens, a 1950s pulp novelist with nyctophobia, gets stranded on a dark highway at sunset and must repair his wrecked car before his own fear turns the night into a hallucination.",
+  "cost_usd": 0.02948325,
+  "input_tokens": 18167,
+  "output_tokens": 3524,
+  "status": "wrote:leads_ok"
+}

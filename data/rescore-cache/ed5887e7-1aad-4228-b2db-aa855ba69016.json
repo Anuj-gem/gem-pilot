@@ -1,0 +1,340 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Ensemble",
+        "Romantic Comedy",
+        "Family Drama"
+      ],
+      "tone": "Whimsical, broad, affectionate, and lightly satirical"
+    },
+    "positioning_hook": "A quirky harbor family fights to save its Victorian inn when a sleazy developer corners them, while their town’s tourists, techies, and pirate-obsessed uncle turn one chaotic day into a business boom.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The family-run inn, romantic crosscurrents, and tourist-town chaos give this a clear audience lane, especially for viewers who like warm ensemble comedy. The appeal is real, though the premise is more comfort-watch than breakout high-concept."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The pilot establishes its engine quickly: a harbor family, a threatened B&B, and a day of escalating social chaos around the website and the guests. The hook is easy to explain, though it plays more as a rich ensemble situation than a single sharp premise."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Bob and Nancy have sturdy married-partner energy, Linda and Doug carry sibling friction and flirtation, and Debbi arrives with enough edge to keep the family dynamic moving. Uncle Jake, Sally, Bill, and Maria add color, though several supporting players function more as texture than independent engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The pirate uncle, goat yoga, Japanese tourists, and tech-party collision give the script a playful, specific flavor. The execution leans into broad comic behavior and familiar family-comedy rhythms rather than a more surprising formal or tonal swing."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The pilot keeps adding complications: the developer pressure, the party photos, the parents’ anniversary, the website scramble, and the eventual booking payoff. It moves with good comic escalation and ends by opening the series engine cleanly."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A family inn in a tourist harbor is familiar territory, but the pirate-charter uncle, goat-yoga neighbor, and techie/Japanese-tourist collision give it a fresh local identity. The show feels specific, though not yet in that instantly iconic lane where the premise alone feels inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Big Harbor feels like a working ecosystem: the B&B, water taxi, pirate charter, seaplane service, sushi house, pub, and local oddballs all feed one another. The town has visible social rules and recurring commerce, which gives the series a usable map for future episodes."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script commits to a sunny, eccentric, sex-positive, small-town comedy tone with broad character voices and a constant undercurrent of family affection. It is distinct enough to recognize, even if it sometimes plays in a familiar network-comedy register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the comic surface, there are hints of generational pressure, reinvention, and the town’s dependence on image and commerce. The pilot suggests more emotional mileage ahead, though it mostly keeps that depth in the background rather than dramatizing it in a sharper way."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The family web is active: Bob/Nancy, Linda/Doug, Linda/Bill, Debbi/David, Debbi/Maria, Jake/Linda, and the guest interactions all generate story. The ensemble has enough combinatorial energy to sustain episodes, even though the Wilson family remains the center of gravity."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 6,
+        "series_regulars": 10,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Ensemble adult cast",
+          "Several roles are written with specific ethnic or identity markers",
+          "One dog performer with recurring costume use"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 1:1",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Waterfront harbor town",
+          "Victorian B&B interior",
+          "Pirate boat set dressing",
+          "Beach yoga setup",
+          "Mayor's boat",
+          "Hospital room",
+          "Tech-party guest rooms"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly title-card style inserts, website/photo overlays, and a few stylized visual transitions; no major effects burden.",
+        "stunts_level": "minor",
+        "sfx_needs": "Rain, lightning, thunder, and practical party/photo montage inserts.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Starbucks is referenced by name in the opening montage."
+        },
+        {
+          "type": "brand",
+          "detail": "Seahawk jerseys are prominently referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "Greyhound Bus is named."
+        },
+        {
+          "type": "brand",
+          "detail": "French Foreign Legion, Zorro, and Christopher Lloyd are referenced in dialogue or description."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Yo-ho, yo-ho, a pirate's life for me\" and \"Ride of the Valkyries\" are specifically used."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Broadcast network or family-friendly streaming comedy",
+        "content_level": "TV-PG to PG-13 equivalent with sexual innuendo and adult relationship material",
+        "series_engine_or_release_model": "Serialized ensemble comedy built around the Wilson family business, the harbor’s rotating guests, and recurring town eccentricities."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary and mostly contained, but the waterfront locations, night exteriors, party scenes, and recurring boat work keep it above a bare-bones sitcom footprint."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The pilot carries a sizable adult ensemble with several identity-specific roles and a recurring dog character, but no child-actor burden or star-dependent VFX roles."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through the B&B, wharf, pirate boat, beach, pub, cafe, mayor's boat, hospital, and multiple guest rooms, with water-adjacent exteriors throughout."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes sexual innuendo, swingers-party material, and brothel talk, but it stays in a comedic rather than explicit register."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands, songs, and pop-culture references appear on the page and would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Big Harbor feels like a business ecosystem.",
+          "what_it_means": "The pilot gives a producer a repeatable town engine where the inn, water taxi, pirate charter, seaplane service, and local restaurants all feed story and commerce. That kind of interlocking small-business world is catnip for buyers who want an ensemble series with built-in episode generators and a clear local audience identity.",
+          "evidence": "The opening montage names Laura's Japanese Sushi and Steak, Wilson's Water Taxi Service, Jake's Pirate Charters, Sally's Seaplane Transport, and Madame Levine's shop, then keeps returning to how they cross-pollinate guests and business.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Wilson family is built for ensemble play.",
+          "what_it_means": "Bob, Nancy, Linda, Doug, Debbi, and Jake each have a distinct comic lane, which gives the show multiple entry points for story and lets episodes braid romance, business, and family pressure. That makes the project attractive to buyers looking for a family ensemble that can sustain A/B/C stories without collapsing onto one lead.",
+          "evidence": "Linda and Doug spar over bets and dating, Bob and Nancy manage the inn together, Debbi returns with a new worldview, and Jake operates as the town's pirate-uncle wildcard.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has a clean series engine.",
+          "what_it_means": "The threatened B&B plus the family fun-page business model gives the series a simple weekly premise: keep the inn alive while the town’s guests, romances, and online chaos keep rewriting the rules. That is the kind of engine a network or streamer can understand fast, which helps packaging and makes the show easy to market in one sentence.",
+          "evidence": "The bank pressure, Don Diego's offer, the photo-posting crisis, and the final reveal that the website has booked the inn solid all point to an ongoing business-and-family engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is sunny but mischievous.",
+          "what_it_means": "The script can play broad without losing warmth, which is useful for a buyer looking for a comfort-comedy that still has adult edge and romantic friction. That tonal lane is especially attractive to actors who want to do heightened comedy without abandoning emotional sincerity.",
+          "evidence": "The pirate dog, goat yoga, swingers-party guests, and Bob/Nancy's affectionate marriage all coexist in the same episode.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Debbi arrives with a real point of view.",
+          "what_it_means": "Her return from college gives the series a younger, more self-aware lens on the town, which can widen the audience beyond pure nostalgia and create a generational counterpoint inside the family. That makes the role appealing to a young actress who wants a smart, slightly off-center lead in an ensemble rather than a standard daughter part.",
+          "evidence": "Debbi's Brook scene, her lay-line speech, and her coding save in the electronics closet all show a character who sees Big Harbor differently than everyone else.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The guest traffic is story-generating.",
+          "what_it_means": "The techies, Japanese tourists, lawyers, and local regulars create a rotating guest engine that can keep episodes fresh without leaving the core set. Buyers like this because it supports a contained production model while still giving the show a sense of scale and variety.",
+          "evidence": "The 18-person tech group, the Japanese fishing tourists, the lawyers on Sally's plane, and the recurring local residents all collide at the inn and wharf.",
+          "source": "script"
+        }
+      ],
+      "headline": "BIG HARBOR is a warm, eccentric ensemble comedy with a real town engine: a family-run inn, a waterfront business district, and a rotating cast of guests who keep turning local chaos into opportunity. The pilot understands how to make a small setting feel expandable, which is exactly what buyers want when they’re looking for a series that can live for years, not just one night."
+    },
+    "lead_characters": [
+      {
+        "name": "Bob Wilson",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "Bob is the calm center of the Wilson machine: a husband, father, and innkeeper who can shift from dry wit to old-world charm to quiet authority in a breath. He presents as the family’s steady hand, but the pilot keeps revealing a man who is more playful, more strategic, and more emotionally invested than his Zen exterior first suggests.",
+        "why_actor_wants_this": "This is the warm, layered husband-lead territory of Ted Danson in The Good Place — a role that lets an actor play charm, concealment, and late-life romantic intelligence at once. Character actors in their 50s and 60s who want a prestige-comedy anchor with heart will see a lot to do here, especially in the scenes where Bob toggles between business pragmatism and marital tenderness."
+      },
+      {
+        "name": "Nancy Wilson",
+        "role_type": "Lead",
+        "demographics": "Female · 60s",
+        "hook": "Nancy is the social engine of the inn: affectionate, observant, and always one step ahead of the room, even when she’s pretending not to be. She has the easy authority of someone who knows everybody’s business and the emotional intelligence to keep the family from tipping into chaos.",
+        "why_actor_wants_this": "This is the showcase space of Patricia Heaton in The Middle or Jean Smart in Hacks — a woman who can land jokes, carry maternal authority, and reveal steel under the warmth. Mid-career and veteran actresses who want a lead that can play comedy, marriage, and command in the same scene will chase this hard."
+      },
+      {
+        "name": "Linda Wilson",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Linda is the competent one who still feels like she’s auditioning for her own life: sharp, attractive, overextended, and quietly hungry for a future that isn’t just inherited duty. She runs the water taxi counter with speed and grace, but the pilot keeps letting us see the loneliness and romantic caution underneath the polish.",
+        "why_actor_wants_this": "This is the romantic-comic lead territory of Zooey Deschanel in New Girl with the grounded family pressure of Mae Whitman in Good Girls — a role that lets an actress play wit, longing, and exasperation in equal measure. Young adult and early-career film actresses looking for a series anchor with both sparkle and emotional traction will want this part."
+      },
+      {
+        "name": "Doug Wilson",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Doug is the family’s charmingly unformed son: cocky, funny, physically confident, and still trying on identities that fit the town and his own appetite. He wants to look like the guy who has it handled, but the Susan storyline shows how quickly his swagger gives way to confusion, desire, and real feeling.",
+        "why_actor_wants_this": "This is the comic-romantic lead lane of Chris Pratt in Parks and Recreation before the movie-star turn — a guy who can be goofy, desirable, and emotionally readable in the same beat. Actors who can sell both broad comedy and sincere romantic frustration will see a lot of runway here."
+      },
+      {
+        "name": "Debbi Wilson",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Debbi returns home as the family’s wild card: college-dropout, intuitive, a little mystical, and smarter than the room gives her credit for. She’s the one character who can see the town as a system rather than a backdrop, which makes her both the most surprising and the most future-facing member of the family.",
+        "why_actor_wants_this": "This is the offbeat, self-reinventing daughter role of Alison Brie in Community or Mae Whitman in The Perks of Being a Wallflower — a part that lets an actress play intelligence, vulnerability, and comic eccentricity without losing emotional truth. Younger actresses who want a role with both indie credibility and series longevity will be drawn to her."
+      },
+      {
+        "name": "Uncle Jake",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "Jake is the town’s lovable pirate mystic: half performance artist, half drifter, fully committed to his own mythology. He’s absurd on the surface, but the dog storyline gives him a genuine tenderness that keeps him from being just a gag machine.",
+        "why_actor_wants_this": "This is the showcase territory of Christopher Lloyd in Taxi or John Lithgow in 3rd Rock from the Sun — a role where eccentricity is the instrument and surprise tenderness is the payoff. Character actors who can play broad, physical comedy while landing emotional sincerity will chase this immediately."
+      },
+      {
+        "name": "Bill Jones",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Bill is the reliable harbor hand with a dry, observant streak and a low-key romantic life that keeps peeking through the workaday surface. He’s the kind of guy who can handle the practical crisis while still feeling like he has his own private weather.",
+        "why_actor_wants_this": "This is the grounded best-friend territory of Jim Halpert in The Office or Ron Livingston in Office Space — a role that lets an actor play deadpan competence with a quiet emotional undercurrent. Actors who specialize in understated comedy and likability will see easy value here."
+      },
+      {
+        "name": "Laura Lee",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · Asian",
+        "hook": "Laura is a polished local entrepreneur who can move from wellness guru to business owner to flirtatious social connector without breaking stride. She gives the town a modern, aspirational edge while still feeling like part of the harbor’s social fabric.",
+        "why_actor_wants_this": "This is the smart, stylish business-owner lane of Awkwafina in Nora from Queens or Constance Wu in Fresh Off the Boat — a role that can play authority, humor, and romantic possibility. Asian actresses looking for a recurring part with visibility and tonal range will be interested."
+      },
+      {
+        "name": "Maria Garcia",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Maria is the overworked, flirtatious, observant employee who sees more than she says and keeps the inn moving under pressure. She has a lively, sensual presence, but the pilot also gives her a practical intelligence that makes her more than just atmosphere.",
+        "why_actor_wants_this": "This is the fast-talking, scene-stealing support role of America Ferrera in Ugly Betty — a part that lets an actor play comic timing, exasperation, and charm in a compact package. Latina actresses looking for a recurring ensemble role with personality will gravitate to it."
+      },
+      {
+        "name": "Sally Kowalski",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Sally is the town’s high-energy pilot with a hard-partying streak and a no-sleep, no-apologies attitude. She’s a comic engine in her own right, the kind of local who can turn a routine errand into a social event.",
+        "why_actor_wants_this": "This is the broad, kinetic supporting lane of Rebel Wilson in Pitch Perfect — a role that lets an actor weaponize volume, confidence, and physical comedy. Performers who can dominate a scene with pure personality will want this recurring flavor part."
+      },
+      {
+        "name": "Andre",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · Spanish accent",
+        "hook": "Andre is the theatrical chef whose pride and intensity make the kitchen feel like a stage. He’s a comic authority figure with enough ego to be funny and enough skill to make the inn’s food culture feel real.",
+        "why_actor_wants_this": "This is the scene-chewing chef territory of B.D. Wong in Awkwafina Is Nora from Queens or the kitchen authority roles that let an actor play precision and vanity together. Character actors with strong voice work and comic timing will enjoy the part."
+      },
+      {
+        "name": "Don Diego Dela Vega",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Don Diego is the polished outsider with a predator’s patience and a salesman’s smile. He brings real external pressure to the town, but he also has enough theatrical flair to feel like a comic villain rather than a purely grim one.",
+        "why_actor_wants_this": "This is the suave antagonist lane of Giancarlo Esposito in Better Call Saul — a role where menace lives inside impeccable manners. Actors who can play charm as a weapon will be drawn to it."
+      },
+      {
+        "name": "Susan",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Susan is the glamorous return from Doug’s past: magnetic, self-mythologizing, and impossible to ignore. She arrives with the kind of romantic history that can derail a room and make a man forget his own plan.",
+        "why_actor_wants_this": "This is the seductive ex territory of Jennifer Coolidge in The White Lotus — a role that lets an actress turn every anecdote into a performance and every entrance into a disruption. Comedic actresses with strong charisma and a taste for scene-stealing will want it."
+      },
+      {
+        "name": "Tom",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Tom is Linda’s former flame, now trying to re-enter her life with a mix of regret, charm, and bureaucratic awkwardness. He’s a useful romantic complication because he feels like a real adult who made real mistakes, not just a placeholder ex.",
+        "why_actor_wants_this": "This is the apologetic ex-boyfriend lane of Paul Rudd in Friends or Adam Brody in The O.C. — a role that lets an actor play charm under embarrassment. TV actors who can do likable, slightly wounded romantic comedy will see the appeal."
+      },
+      {
+        "name": "Mrs. O'Toole",
+        "role_type": "Supporting",
+        "demographics": "Female · 70s-80s",
+        "hook": "Mrs. O’Toole is the town elder whose love for her dog gives the pilot its most direct emotional payoff. She’s small in footprint but big in warmth, and she anchors Jake’s tenderness in a way that makes the pirate bit land as character, not costume.",
+        "why_actor_wants_this": "This is the late-scene emotional button territory of Frances Sternhagen in Cheers — a compact role that lets an actor deliver instant pathos and gratitude. Veteran character actresses will recognize the gift of a scene that lands cleanly and memorably."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sunny ensemble comedy with real town texture and a playful visual identity.",
+        "fit_profile": "Mid-career TV directors or first-time feature directors with strong comedy-drama instincts, especially those coming out of half-hour or dramedy work. The material rewards directors who like blocking ensembles in busy spaces, finding humor in social behavior, and keeping a large cast emotionally legible without flattening the eccentricity.",
+        "detail": "The pilot gives a director a contained but lively world to choreograph: one harbor town, one family business, and a steady stream of guest arrivals. It will appeal to directors who can make a roomful of people feel specific and who enjoy turning production design, costume, and performance into part of the joke."
+      },
+      "buyer_appeal": {
+        "tier": "Half-hour or hourlong comedy series in the low-to-mid budget range",
+        "lane": "Broadcast-friendly ensemble comedy / streamer comfort-comedy lane",
+        "detail": "The show can be packaged around a strong ensemble rather than a single expensive star, because the Wilson family and the town regulars already carry the engine. Its waterfront setting, recurring guest traffic, and family-business premise make it easy to market as an ongoing destination series with modest production needs and repeatable episode structure."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot carries a lot of moving parts.",
+        "detail": "The family, the guest ensemble, the town regulars, the developer pressure, the website crisis, and the romantic subplots all arrive in one episode. A next pass could decide which two or three relationships are the true launchpad so the pilot can breathe a little more around them.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The emotional turn for Debbi can be foregrounded.",
+        "detail": "Her Brook scene and her later coding save already suggest a sharper point of view than the rest of the family, and the version of the pilot where that shift lands a little earlier would give the series a stronger generational spine. That would also make her return feel less like a subplot and more like a true engine for the show.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The website-photo crisis is the clearest engine.",
+        "detail": "The family-fun-page scramble is the most legible series device on the page, because it turns the town’s social life into a repeatable plot generator. One direction would be to keep leaning into that mechanism so future episodes can spin from the same business/social pressure without needing a new external event every week.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand and music references need a clean pass.",
+        "detail": "Starbucks, Greyhound, Seahawk jerseys, Zorro, Christopher Lloyd, and the named songs all point to a clearance conversation. A production pass could swap or generalize a few of those references without changing the comic intent, which would keep the script easier to move.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The night-party material is the widest content lane.",
+        "detail": "The swingers-party energy, the brothel talk, and the sexualized guest-room scenes place the show in a more adult comedy register than the opening montage suggests. If the goal is a broader broadcast-friendly lane, one lever would be to calibrate how explicit the off-hours material gets while preserving the mischievous tone.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 23740,
+  "outputTokens": 5802,
+  "cost": 0.043914,
+  "declaredFormat": "Series"
+}

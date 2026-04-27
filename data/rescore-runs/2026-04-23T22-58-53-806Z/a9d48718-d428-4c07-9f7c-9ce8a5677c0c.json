@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:09:48.798Z",
+  "submission_id": "a9d48718-d428-4c07-9f7c-9ce8a5677c0c",
+  "eval_id": "b7578ab8-1f91-4fa5-bf79-5560011bfd9b",
+  "title": "1 v 1000",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Alice Knight",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · athletic build"
+    },
+    {
+      "name": "Jonathan 'Jon' Davenport",
+      "role_type": "Lead",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Julia Knight",
+      "role_type": "Lead",
+      "demographics": "Female · 16"
+    },
+    {
+      "name": "Jack Knight",
+      "role_type": "Lead",
+      "demographics": "Male · 9"
+    },
+    {
+      "name": "Kiyoshi Sato",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s to 40s · Japanese"
+    },
+    {
+      "name": "Mitsuko Kato",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s · Japanese"
+    },
+    {
+      "name": "Katoro Kato",
+      "role_type": "Supporting",
+      "demographics": "Male · mid 30s · Japanese"
+    },
+    {
+      "name": "Raijin Nakamura",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Yashinda Yashida",
+      "role_type": "Supporting",
+      "demographics": "Female · late 50s"
+    },
+    {
+      "name": "Kai",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Akira",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    }
+  ],
+  "positioning_hook": "A former UFC killer on a Bali work trip must protect her kids and a stolen AI key from a Yakuza clan that turns the island into a hunting ground.",
+  "cost_usd": 0.0654465,
+  "input_tokens": 56404,
+  "output_tokens": 5143,
+  "status": "wrote:leads_ok"
+}

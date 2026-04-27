@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:04:15.336Z",
+  "submission_id": "2fdd9121-5c27-485a-b48b-f3a024633adf",
+  "eval_id": "13b711d2-67dd-4756-addd-cba165a2c868",
+  "title": "Script    The Last Call (Revised)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "ADAM LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s · Italian-American / New Jersey lawyer"
+    },
+    {
+      "name": "MARC LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Male · late teens in flashbacks / 30s in present-day material"
+    },
+    {
+      "name": "MARY LAMPARELLO",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s to 60s · mother"
+    },
+    {
+      "name": "MARTY",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · lawyer / friend"
+    },
+    {
+      "name": "AMY",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · artist / partner"
+    },
+    {
+      "name": "ELENA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · former partner / hospital connection"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · former girlfriend / old friend"
+    },
+    {
+      "name": "DR. SUSAN MYERS",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · psychiatrist"
+    },
+    {
+      "name": "DR. HELEN ANDREWS",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · psychiatrist / clinician"
+    },
+    {
+      "name": "DR. KAREN LEVY",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s to 60s · expert witness"
+    }
+  ],
+  "positioning_hook": "After his brother’s suicide, a grief-stricken New Jersey lawyer sues the hospital that discharged him — and discovers the real battle is surviving what he missed.",
+  "cost_usd": 0.04789575,
+  "input_tokens": 30279,
+  "output_tokens": 5597,
+  "status": "wrote:leads_ok"
+}

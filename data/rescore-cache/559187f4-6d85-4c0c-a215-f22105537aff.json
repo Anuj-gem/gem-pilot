@@ -1,0 +1,273 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_tags": [
+        "Psychological",
+        "Home Invasion"
+      ],
+      "tone": "Grounded, escalating, claustrophobic, and darkly satirical"
+    },
+    "positioning_hook": "A homeless young housekeeper trapped in a wealthy client’s house discovers his rescue routine is a cage, and his fertility obsession is far more dangerous than his smile.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is immediately legible and built for tension-driven viewing: a vulnerable young woman, a wealthy house, a locked-door nightmare, and a cat-and-mouse escalation that keeps tightening. The audience lane is clear for thriller buyers and genre fans, though the subject matter and contained setup make it more targeted than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the opening pages: Jessica is a car-dwelling housekeeper who enters Steve’s house and slowly realizes the home is a trap. The script keeps the engine clean and readable as the locked rooms, surveillance, and fertility agenda reveal themselves in sequence."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jessica is a strong survival lead because she carries class tension, queer identity, artistic instinct, and raw resourcefulness in one role, especially once she shifts from observer to fighter. Steve is a vivid antagonist with a chillingly polite surface, and Mai adds a second survivor perspective that deepens the emotional field."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is making domestic care work the entry point into captivity, then turning the house itself into a surveillance-and-control machine. The fertility ideology, hand-sanitizer ritual, and classed domestic space give the material a sharper identity than a standard captivity thriller."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps escalating through discoveries, reversals, and containment shifts: the missing car, the locked doors, the hidden closet, Mai’s reveal, and the final roof escape. Each turn adds pressure and narrows Jessica’s options, which gives the feature a strong forward pull."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels fresh because the horror is rooted in a very specific social arrangement: a poor queer Latina housekeeper inside a wealthy man’s curated domestic prison. The fertility cult logic and the use of cleaning rituals as control mechanisms make the premise feel both surprising and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The house is more than a setting; it has rules, hidden spaces, cameras, locks, and a private logic that generates story. The outside world is sketched through parking tickets, shelters, towing, and the neighborhood, but the real density lives inside Steve’s controlled domestic ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone blends dread, social realism, and a nasty streak of dark humor, especially in Steve’s performative politeness and Jessica’s increasingly blunt resistance. The script knows when to let the unease breathe and when to snap into survival-thriller mode."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the immediate thriller engine, there are deeper layers around homelessness, queer estrangement, reproductive coercion, and the way women are managed inside private domestic spaces. The father flashback and Mai’s backstory hint at a larger emotional and political frame without slowing the main drive."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jessica/Steve is the central engine, but the script gains real lift from Mai as a second trapped woman with a different survival logic, plus Sheila as a late-arriving reversal. The relationships are not sprawling, but the key pairings generate enough friction and alliance to keep the feature alive."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Jessica is a Latina woman in her 20s",
+          "Steve is a white male in his 50s",
+          "Mai is an Asian woman in her early 20s",
+          "Sheila is an adult woman with a strong late-film reveal",
+          "One off-screen father voice/flashback presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "Mostly interior, roughly 80/20",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Large wealthy house with multiple bedrooms, office, dining room, hallway, balcony, crawlspace, and closet",
+          "Parking lot and street exteriors",
+          "Roof/chimney sequence",
+          "Crawlspace and hidden compartment build"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical filmmaking with surveillance monitor inserts, smoke/fire enhancement, and possible cleanup for the roof/chimney climax.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Blood, smoke, fire, syringe effects, crash aftermath, and practical restraint/cuff effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Clomid is named on-screen as a prescription fertility medication."
+        },
+        {
+          "type": "brand",
+          "detail": "Thai Cafe is specifically named as a restaurant."
+        },
+        {
+          "type": "brand",
+          "detail": "311 is referenced as a city service number."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming thriller / premium cable genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or direct-streaming thriller potential."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained to one primary house and a small number of exterior beats, but the roof, crawlspace, fire, restraint, and crash climax add practical set-piece demands."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The cast is small, but the lead roles require specific age, gender, and identity casting, with Jessica, Steve, Mai, and Sheila all carrying meaningful screen weight."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is concentrated, but the house needs multiple distinct playable spaces plus a crawlspace, roof access, and exterior street coverage."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes captivity, coercion, implied sexual violence, pregnancy control, blood, choking, and sustained psychological abuse."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses a few named brands and a prescription medication reference, but no major IP or life-rights dependency is apparent."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening image tells the whole movie.",
+          "what_it_means": "Jessica’s car-life, the cat, the parking tickets, and the cleaning supplies immediately establish class pressure, loneliness, and survival mode in one visual package. That kind of instant character-world clarity is exactly what helps a thriller stand out in a crowded marketplace and gives a director a strong opening reel to sell the tone.",
+          "evidence": "Jessica waking in the back seat of her car with her cat, belongings, and parking tickets before driving to work.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jessica is a showcase lead.",
+          "what_it_means": "She moves from guarded worker to trapped survivor to active fighter, with humor, shame, rage, and tenderness all on display. That gives a performer the kind of escalation that can anchor a festival breakout or a prestige genre turn for an actress looking to own a movie.",
+          "evidence": "Her reactions to the locked house, the cat loss, the discovery of Mai, and the final rooftop escape.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The antagonist has a clean, chilling engine.",
+          "what_it_means": "Steve’s polite domesticity curdles into surveillance, coercion, and reproductive control, which makes the threat legible and memorable without needing mythology. Buyers respond to villains with a simple, marketable obsession, and this one is built to haunt the trailer.",
+          "evidence": "Hand sanitizer rituals, locked doors, cameras, fertility pills, and the “vision for the world” speeches.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The house is a story machine.",
+          "what_it_means": "The rooms, locks, hidden closet, crawlspace, office monitors, and roof route all create a contained geography that keeps generating new turns. That kind of built-in spatial logic is a producer’s friend because it supports tension without requiring a sprawling budget or a large company of locations.",
+          "evidence": "The office monitors, the closet cage, the crawlspace escape, and the chimney finale.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mai widens the emotional and commercial lane.",
+          "what_it_means": "Her presence turns the movie from a single-victim thriller into a two-woman survival story with cross-cultural stakes and a second emotional engine. That expands the audience conversation and gives casting another role that can attract serious attention from actors who want a fierce, physical, emotionally loaded part.",
+          "evidence": "Mai’s reveal in the closet, her backstory, and the uneasy alliance that forms between her and Jessica.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a sharp social undercurrent.",
+          "what_it_means": "Homelessness, domestic labor, queer estrangement, and reproductive coercion are all embedded in the thriller mechanics rather than tacked on. That gives the project a conversation-worthy edge for buyers who want genre material with a point of view and for audiences who like their suspense to mean something.",
+          "evidence": "Jessica living in her car, Steve’s comments about family and women, and the fertility plotline.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax is built for visceral payoff.",
+          "what_it_means": "The crawlspace, chimney, roof, and car crash sequence give the movie a clear escalation path into a physically cinematic finish. That makes the script attractive to producers who want a contained thriller that still ends with a big, trailer-friendly release of pressure.",
+          "evidence": "Jessica escaping through the crawlspace, the fire in the flue, the rooftop struggle, and the final crash.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a contained, high-tension thriller with a real hook: a car-dwelling housekeeper walks into a wealthy client’s home and discovers the domestic routine is a trap built around surveillance, control, and fertility obsession. The script gives producers a clean genre engine, actors two standout roles in Jessica and Steve, and a third-survivor wildcard in Mai that deepens the emotional and commercial appeal."
+    },
+    "lead_characters": [
+      {
+        "name": "Jessica Gutierrez",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Latina",
+        "hook": "Jessica is a scrappy, observant young woman living out of her car, carrying herself with a mix of guarded pride and barely contained vulnerability. She’s an artist, a queer woman, and a worker who knows how to read a room fast; what makes her compelling is that she keeps trying to stay polite even as the world around her turns predatory, until survival finally forces her to stop shrinking.",
+        "why_actor_wants_this": "This is the showcase territory of Brie Larson in Room or Jodie Comer in Killing Eve’s most volatile stretches — a role that lets an actor move from contained interiority to feral survival without losing emotional truth. Performers looking for a breakout lead with physical escalation, emotional range, and a clear transformation will chase this hard."
+      },
+      {
+        "name": "Steve Sullivan",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · White",
+        "hook": "Steve presents as warm, helpful, and slightly awkward, but every gesture carries a second meaning: control disguised as care. He’s the kind of antagonist who weaponizes domesticity, using food, cleanliness, sympathy, and pseudo-therapy to make captivity feel like benevolence, which makes him deeply unsettling.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter or David Tennant in Jessica Jones — a man whose charm and menace live in the same breath, and whose politeness becomes the horror. Character actors who want a villain with intelligence, restraint, and a slow-burn descent will be drawn to it."
+      },
+      {
+        "name": "Mai",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s · Asian/Cambodian",
+        "hook": "Mai is small, battered, and ferociously alive, with a survival instinct that has been shaped by exploitation and confinement. She initially reads as frightened and withdrawn, then reveals a hard, funny, defiant streak that makes her feel like a second protagonist rather than a sidekick.",
+        "why_actor_wants_this": "This is the showcase space of Yalitza Aparicio in Roma or Stephanie Hsu in Everything Everywhere All at Once — a role that can hold pain, humor, and sudden steel in the same frame. Young actors looking for a physically demanding, emotionally specific breakout part will see real value here."
+      },
+      {
+        "name": "Sheila Sullivan",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s · White",
+        "hook": "Sheila arrives late but lands like a trapdoor opening under the story. What first reads as rescue becomes a final, icy reveal that she is part of the same worldview as Steve, which gives the ending a nasty, memorable sting.",
+        "why_actor_wants_this": "This is the kind of late-turn reveal role that Toni Collette in Hereditary or Rebecca Ferguson in a final-act reversal can make unforgettable — a brief appearance that reframes everything. Character actresses who like a sharp, scene-stealing final move will be interested."
+      },
+      {
+        "name": "Agnes",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s+ · White",
+        "hook": "Agnes is the nosy neighbor with a civic-minded veneer and a sharp instinct for other people’s business. She functions as the outside world’s pressure point, the kind of small but useful character who can turn suspicion into consequence.",
+        "why_actor_wants_this": "This is the sort of role Frances Sternhagen or Margo Martindale has made a specialty of — a compact part with authority, comic edge, and plot leverage. Veteran character actors who can make one scene feel like a lived-in world will enjoy it."
+      },
+      {
+        "name": "Mami / Jessica's Mother",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s voice · Latina",
+        "hook": "Jessica’s mother exists mostly as a voice and a pressure point, but she carries the emotional history of the family wound that still shapes Jessica’s choices. Her presence gives the story a private, intimate counterweight to the external horror.",
+        "why_actor_wants_this": "This is the kind of off-screen emotional role that gives an actor a single, resonant scene in the same lane as the mother voices in The Florida Project or Minari. It’s a small part, but it carries the weight of memory and can matter a lot in the final emotional texture."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a single house into a pressure cooker.",
+        "fit_profile": "First- or second-feature directors with a strong festival short background in psychological thriller, elevated horror, or social-issue genre work. This material rewards directors who care about blocking, spatial tension, and performance-first dread more than spectacle.",
+        "detail": "The movie gives a director a contained canvas with escalating visual control: doors, cameras, crawlspaces, and a roofline climax all become part of the storytelling language. It will attract filmmakers who want to prove they can make a small footprint feel relentless and cinematic."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming thriller / premium genre indie",
+        "detail": "The contained house setting and small principal cast make this playable off a strong script and a director with a genre reel, without needing a giant ensemble or heavy VFX package. The reproductive-coercion hook, queer lead, and home-invasion engine give it a clean trailer concept and a clear streaming audience lane."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening could sharpen Jessica’s immediate want.",
+        "detail": "The car-living setup is vivid, and the first pages already do a lot of work; a next pass could make her immediate objective on the drive to Steve’s house even more explicit so the audience feels the pressure before the trap closes. That would give the opening stretch even more forward charge without changing the premise.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Steve’s ideology lands strongest when it turns specific.",
+        "detail": "The fertility speeches and family rhetoric are memorable, and the version of the script where one or two of those ideas are seeded earlier in smaller, more ordinary exchanges could make the later reveal feel even more inevitable. The material is already pointed; this is about sharpening the drip-feed of his worldview.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Mai’s backstory can carry even more weight.",
+        "detail": "Her reveal in the closet is effective, and there is room for one additional beat or image that lets her inner life register before the alliance fully forms. That would deepen the emotional payoff of the final act and make the partnership feel even more earned.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The house footprint is already efficient.",
+        "detail": "The script is naturally contained, which is a major advantage for production planning. The main simplification lever is to preserve the house as the central arena and protect the crawlspace/roof sequence as the only major expansion points.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The climax asks for careful practical execution.",
+        "detail": "Fire in the chimney, a rooftop struggle, a crash, and restraint effects all stack into the final stretch. That’s a manageable package for the right lane, but it benefits from disciplined prepro so the finale stays visceral rather than expensive.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 35139,
+  "outputTokens": 4298,
+  "cost": 0.04569524999999999,
+  "declaredFormat": "Feature film"
+}

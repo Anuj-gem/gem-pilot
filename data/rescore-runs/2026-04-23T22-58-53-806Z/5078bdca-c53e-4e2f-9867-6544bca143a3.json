@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:18:20.862Z",
+  "submission_id": "5078bdca-c53e-4e2f-9867-6544bca143a3",
+  "eval_id": "f3c6335f-ded3-43ea-bad2-f33dba903f80",
+  "title": "Life In Space 5 1",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Kyle Russell",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s at launch, 40s to 50s in later sections · African-Caucasian-Jewish background"
+    },
+    {
+      "name": "Stanley Simmons",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s at launch, 40s to 50s in later sections · German-English-Australian-American Gaucho background"
+    },
+    {
+      "name": "Michael Olsson",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s at launch, 40s to 50s in later sections · African-Arabian-Asian-Irish background"
+    },
+    {
+      "name": "Catherine Sand",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s at launch, 30s to 40s in later sections · executive banker"
+    },
+    {
+      "name": "Dr. Lake Gore",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s"
+    },
+    {
+      "name": "Dr. Charles L. Grant",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s"
+    },
+    {
+      "name": "Mrs. Jane Russell",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s to 60s"
+    },
+    {
+      "name": "Mrs. Maria Olsson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s"
+    },
+    {
+      "name": "Mr. Charles Russell",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s"
+    },
+    {
+      "name": "Helen",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s at launch, 30s to 40s later"
+    },
+    {
+      "name": "Tracy",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s at launch, 30s to 40s later"
+    },
+    {
+      "name": "Mr. Neil Coleman",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s"
+    }
+  ],
+  "positioning_hook": "Three childhood friends launch a $420 billion mission to visit every planet, only to discover the voyage is a cosmic initiation that rewrites their bodies, their faith, and Earth’s history.",
+  "cost_usd": 0.0617505,
+  "input_tokens": 49874,
+  "output_tokens": 5410,
+  "status": "wrote:leads_ok"
+}

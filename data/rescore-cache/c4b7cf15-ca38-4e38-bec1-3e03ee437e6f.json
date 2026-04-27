@@ -1,0 +1,290 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_tags": [
+        "Psychological",
+        "Survival"
+      ],
+      "tone": "Grounded, tense, intimate, and darkly human"
+    },
+    "positioning_hook": "A homeless young woman hiding in the woods breaks into an empty cabin for food and shelter, then discovers the homeowner is a killer who thinks he can erase her.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is immediately legible and built around a clean survival-thriller engine: a vulnerable outsider, a hostile intruder, and one cabin that becomes a trap. The audience promise is strong, though the material is more adult and contained than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast: Mira’s woods-survival routine, the cabin break-in, and Abe’s arrival establish the story engine early and cleanly. The camera’s internal memory and the evidence-photo reveal give the premise a sharp, easy-to-grasp twist."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Mira is built from vivid contradiction — feral, resourceful, ashamed, and deeply hungry for comfort — and that makes her instantly playable. Abe is equally memorable as a polished predator whose civility curdles into control, giving the film a strong two-hander spine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script turns survival detail into character language: black walnuts, maitake, Orajel, tampons, AirPods, and the Hasselblad all become story tools rather than decoration. The camera-as-evidence device and the woods-to-cabin contrast give the piece a confident, specific identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The first half builds with tactile accumulation, then the Abe reveal detonates the movie into a sustained cat-and-mouse escalation. The final forest pursuit keeps tightening the vise, and the evidence-photo turn gives the climax a clean second wind."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels fresh because the central conflict is not just survival but class, belonging, and authorship of self-image, all embedded in a very concrete thriller setup. The camera, the cabin, and the woods all feel inevitable once seen, which is the right kind of originality."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The woods, the seasonal cabin culture, the invasive-tree lore, and Mira’s improvised subsistence create a specific ecosystem with real story texture. It is still a contained world, but the details are vivid enough to make the setting feel lived-in rather than merely scenic."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually precise: tactile survival realism, quiet humor, bodily discomfort, and sudden violence all coexist without breaking the spell. The script can move from mushroom frying and tooth pain to home-invasion terror without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the thriller surface, the script keeps opening into grief, displacement, shame, and the hunger to be seen as a person with a place. The Abe/Mira conversations and the final photo reveal suggest more emotional and thematic depth than the immediate plot needs."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The film is intentionally built as a two-hander with Mira and Abe carrying nearly all the dramatic weight. The supporting world is useful and textured, but the engine lives primarily in the central confrontation rather than a broader ensemble web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Female lead late 20s/30s, any ethnicity",
+          "Male supporting lead late 50s/60s, white",
+          "One young woman in the photographed murder sequence",
+          "Two hikers and one hunter in brief roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "Mostly exterior early, then predominantly interior once the cabin is entered",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Forest/woods location",
+          "Lake shoreline",
+          "Remote cabin interior and exterior",
+          "Night storm exteriors",
+          "Practical barricade and break-in setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical filmmaking with minor cleanup and compositing for the photo reveal, muzzle flashes, blood effects, and the final image insert.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood hits, broken glass, axe impacts, bruising, wound makeup, barricade destruction, and practical fight choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Hasselblad X2D II is specifically named in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "AirPods are specifically named in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "Orajel is specifically named in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "Spam is specifically named in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "Bobby Jealousy is specifically named as music playing on Mira's phone."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming thriller or festival-to-platform feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival launch potential and a clean streaming acquisition path"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "The movie is largely contained to a forest, a lake, and one cabin, with practical action and limited cast."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story is anchored by two major roles and a handful of brief supporting parts, with no child casting or star-dependent ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is contained, but the script relies on multiple exterior forest setups, storm night work, and a cabin that must support a long siege."
+        },
+        "content": {
+          "level": "high",
+          "note": "The film includes home-invasion violence, gunfire, blood, a dead child revelation, and extended physical assault."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named consumer brands and one named music reference appear on the page and would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Mira is a showcase survival lead.",
+          "what_it_means": "The role gives a producer a rare female-driven thriller engine that can sell on performance, physicality, and emotional transformation instead of spectacle. Actors who want a bruised, resourceful, emotionally legible lead — the kind of part that can anchor a festival run or prestige genre launch — will see the appeal immediately.",
+          "evidence": "Mira’s opening survival routine, her toothache improvisations, the cabin intrusion, and the final forest escape all keep the role active and playable.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The cabin becomes a pressure cooker.",
+          "what_it_means": "The contained setting keeps the budget in a producible lane while concentrating tension into a single, escalating arena. Buyers who like contained thrillers with a clean hook and a manageable footprint will recognize how efficiently this can be mounted.",
+          "evidence": "Most of the second half lives inside the cabin as Mira and Abe turn the house into a siege zone with barricades, windows, doors, and improvised traps.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "The camera is a story engine.",
+          "what_it_means": "The Hasselblad is not just a prop; it creates the film’s evidence mechanic, its visual obsession, and its final reversal. That gives the project a memorable hook for buyers and a clean marketing image for audiences: the thing that makes Mira feel seen is also what exposes the truth.",
+          "evidence": "Mira uses the camera to self-portrait, discovers the murder through the zoomed image, and learns the internal SSD preserves the evidence after the card is taken.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has tactile, cinematic specificity.",
+          "what_it_means": "The black walnuts, maitake mushrooms, saltwater rinse, tampons, AirPods, and homemade barricades make the movie feel lived-in and filmable at the same time. That specificity helps the project stand out in a crowded thriller market because the details are not generic set dressing; they are the movie’s identity.",
+          "evidence": "Mira’s food-gathering and improvised comfort rituals recur throughout the opening and middle sections, and each object later becomes part of her survival toolkit.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Abe is a polished antagonist with teeth.",
+          "what_it_means": "The role offers an actor a controlled descent from affable intellectual to predatory manipulator, which is exactly the kind of transformation that attracts serious character actors. Prestige-thriller buyers and directors who like verbal menace over cartoon villainy will respond to how much of the threat is carried in conversation before the violence lands.",
+          "evidence": "Abe’s first visit, his professorly banter, the long confession about Helena, and the final siege all reveal a man who weaponizes civility.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final act pays off the setup cleanly.",
+          "what_it_means": "The evidence-photo reveal, the internal SSD twist, and the forest pursuit all feel earned from earlier behavior rather than bolted on. That kind of payoff is valuable to buyers because it signals a script that understands how to plant, escalate, and cash out its own premise.",
+          "evidence": "The camera’s internal memory, the hidden compartment, and the final photo of Abe create a complete thriller loop.",
+          "source": "script"
+        }
+      ],
+      "headline": "Ailanthus is a lean, character-driven survival thriller with a vivid lead role, a memorable evidence device, and a contained setting that keeps the tension brutally focused. It has the kind of tactile specificity and two-hander escalation that can attract strong actors, a sharp director, and buyers looking for a premium, producible genre piece."
+    },
+    "lead_characters": [
+      {
+        "name": "Mira",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s/30s · any ethnicity",
+        "hook": "Mira is a feral, self-made survivor whose body carries the story before her words do. She is resourceful to the point of ritual, ashamed of how she lives, hungry for comfort, and quietly desperate to be seen as someone with taste, intelligence, and a future.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs — a contained, hyper-alert lead whose intelligence and vulnerability are in constant negotiation. It gives an actor the chance to play physical survival, interior shame, dark humor, and a hard-earned moral spine in one role."
+      },
+      {
+        "name": "Abe Hathaway",
+        "role_type": "Lead",
+        "demographics": "Male · late 50s/60s · white",
+        "hook": "Abe presents as a gentle academic and neighborly caretaker, but the performance is all varnish. Underneath is a man who needs control, rewrites morality to suit himself, and can turn grief into a weapon the second it serves him.",
+        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in The Grand Budapest Hotel or Michael Shannon in Take Shelter — a man whose surface composure is part of the danger and whose unraveling becomes the performance. Character actors who like playing intelligence, vanity, and menace in the same frame will chase it."
+      },
+      {
+        "name": "Eunice",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s/70s",
+        "hook": "Eunice exists mostly as a presence and a cover story, but she carries the weight of Mira’s invented belonging. She is the off-screen family anchor that lets Mira step into the cabin and, later, the emotional ghost that makes the lie collapse.",
+        "why_actor_wants_this": "This is the kind of off-screen presence that recalls the mother figure in Room or the absent family force in Leave No Trace — a role whose power comes from what it means to the lead rather than page count. A recognizable older dramatic actress could make the few moments around her name feel loaded with history."
+      },
+      {
+        "name": "Jim",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s/70s",
+        "hook": "Jim is part of the family structure Mira borrows to justify her presence, a quiet off-screen authority whose existence helps make the cabin feel inhabited and real. He functions as part of the social architecture of the lie.",
+        "why_actor_wants_this": "This is a compact supporting slot in the tradition of the unseen family elders in Winter’s Bone or Nomadland — a role defined by the world it implies. It would appeal to a seasoned character actor comfortable making a few lines carry a whole household."
+      },
+      {
+        "name": "Helena",
+        "role_type": "Supporting",
+        "demographics": "Female · child/young child",
+        "hook": "Helena is mostly an absence, but she is the emotional center of Abe’s self-mythology and the moral horror of the film. Her existence is what turns his grief into something monstrous and gives the climax its deepest sting.",
+        "why_actor_wants_this": "This is the kind of off-screen child presence that functions like the unseen child in Manchester by the Sea — the role is less about screen time than about the emotional architecture it creates. It matters because it gives the adult performances a devastating center of gravity."
+      },
+      {
+        "name": "Hiker 1",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "A brief visitor to Mira’s woods who becomes part of her survival routine and comic-terror rhythm. He helps establish how strange and threatening Mira’s presence has become in the forest.",
+        "why_actor_wants_this": "This is a quick, high-impact utility role in the tradition of the startled outsider in a survival thriller — a few beats of fear, reaction, and escalation. It suits a young actor who wants a memorable genre credit."
+      },
+      {
+        "name": "Hiker 2",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "The second half of the hiker pair, serving as a witness to Mira’s haunted laughter and the woods’ uncanny atmosphere. The role helps externalize the film’s eerie tone.",
+        "why_actor_wants_this": "This is a compact reaction role with a clean genre function, the kind of part that benefits from naturalistic panic and timing. It would appeal to a younger actor looking for a sharp, scene-specific thriller beat."
+      },
+      {
+        "name": "Hunter",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s/50s",
+        "hook": "A brief but dangerous intruder who turns Mira’s performative scare tactic into real violence. He helps escalate the film from eerie survival to active threat.",
+        "why_actor_wants_this": "This is the kind of small but memorable genre role that lets an actor play alarm, aggression, and retreat in one sequence. It suits a character actor who can make a few pages feel like a full encounter."
+      },
+      {
+        "name": "Young Woman in Photo",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "She exists inside the camera’s murder image, a silent witness whose face becomes the proof Mira cannot unsee. Her presence is brief but structurally essential to the reveal.",
+        "why_actor_wants_this": "This is a pure image-driven role, closer to a flash of emotional architecture than a conventional scene part. It would appeal to an actor who wants to be part of a key reveal and can convey presence in a single visual beat."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a survival thriller feel intimate, tactile, and morally charged.",
+        "fit_profile": "First- or second-feature directors with a strong festival short background, especially those drawn to contained suspense, performance-forward staging, and naturalistic dread. This material rewards directors who care about physical detail, precise blocking, and letting tension accumulate through behavior rather than coverage.",
+        "detail": "The film gives a director a clean arena to control tone: woods, cabin, storm, and one escalating confrontation. It is especially attractive to filmmakers who want to prove they can stage suspense economically while still delivering a memorable central performance and a final-act payoff."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Premium streamer thriller / festival genre lane",
+        "detail": "It is contained enough to greenlight off a strong script and a compelling lead without requiring heavy VFX or a large ensemble. The survival-thriller lane remains a reliable streamer buy-zone, and the female-led, contained-home-invasion angle gives it a clean thumbnail and trailer hook."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening is beautifully tactile.",
+        "detail": "The walnut-and-mushroom routine does a lot of atmospheric work and establishes Mira’s survival logic with confidence. One next-pass lever would be to let the cabin incursion arrive as soon as the audience understands her baseline, so the first act keeps the same texture but reaches the engine a little sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Abe’s reveal is strong, but the turn can be sharpened.",
+        "detail": "The long conversational stretch with Abe builds dread well, and the eventual murder-photo discovery lands hard. A future pass could consider trimming a beat or two from the middle of the cabin dialogue so the audience gets to the photo evidence with slightly more forward charge.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand-specific props are doing real work.",
+        "detail": "Hasselblad, AirPods, Orajel, Spam, and the named music cue all help the movie feel specific, but they also create clearance touchpoints. A production pass could preserve the same lived-in texture while swapping any brand that becomes difficult to clear.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The forest siege is the movie’s biggest physical set piece.",
+        "detail": "The final chase, axe work, window escape, and woods pursuit are all producible, but they ask for careful stunt and night-shoot planning. The version of the script where the forest geography is even more clearly mapped on the page would make the action easier to stage without changing the story.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 71,
+  "tier": "Optionable",
+  "inputTokens": 32436,
+  "outputTokens": 4415,
+  "cost": 0.0441945,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,311 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sports comedy",
+      "genre_tags": [
+        "Underdog",
+        "Ensemble comedy"
+      ],
+      "tone": "Broad, profane, irreverent, and crowd-pleasing"
+    },
+    "positioning_hook": "A fantasy-football savant gets handed a real NFL front office, then has to survive owners, reporters, and a locker room that thinks he’s a joke.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for a broad sports-comedy audience: a nobody fantasy player becomes an actual GM, with press conferences, draft-day chaos, and locker-room blowups supplying easy entry points. The appeal is strongest for viewers who like underdog workplace comedy and football culture, though the very specific football obsession narrows it a bit from four-quadrant reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: Dennis recruits Hank because he wins fantasy leagues, and the script keeps returning to that absurd engine through the draft, the combine, and the season. The story premise is easy to explain in one breath, and the escalation from joke to real authority is clear throughout."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Hank has a strong comic engine as a loudmouth fan forced into responsibility, and Dennis gives the story a useful straight-man counterweight. The supporting players are vivid in the moment, but many of them function primarily as comic satellites around Hank rather than carrying fully independent emotional arcs."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The fantasy-football-to-front-office premise is a fresh, commercially readable angle, and the script commits to the joke with confidence. The voice is aggressive and specific, though the execution leans on familiar sports-comedy beats and broad banter more than formal surprise."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving through a strong chain of set pieces: the recruitment, the press conference, the draft trade, the Washington conflict, the Jenks pivot, and the final playoff push. There is some sprawl in the middle, but the stakes stay easy to track and the season-long escalation gives the feature a clear forward drive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea feels like something audiences would instantly understand and repeat: a fantasy-football obsessive gets real power and has to learn the difference between winning a pool and running a franchise. That premise has a clean comic inevitability, even if the surrounding execution stays closer to familiar sports-movie rhythms."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The football world is specific enough to feel lived-in, with owners, reporters, agents, combine culture, and fantasy-league banter all feeding the same ecosystem. Still, the setting mostly serves the comedy engine rather than revealing a deeply layered institutional world."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a clear, brash tone: crude, fast-talking, self-aware, and built around humiliation comedy inside sports culture. The voice is recognizable scene to scene, even when it pushes hard into broadness and repetition."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There is a modest emotional spine underneath the jokes in Hank’s shift from selfish fan to accountable leader, and Dennis’s father-son pressure adds a second layer. The script mostly plays its hand openly, though, so the deeper reserves are present more as potential than as a strongly withheld subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Hank/Dennis is a solid central pairing, and Jeff, Kate, Stan, and the fantasy-league crew all add comic friction. The ensemble generates good scene energy, but the story still lives primarily on Hank’s shoulders rather than on a fully interlocking web of relationships."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in late 30s to early 40s with strong comic timing",
+          "Older male owner in a wheelchair",
+          "Female sports reporter in late 20s to early 30s",
+          "Large ensemble of football players and executives",
+          "One role written as a physically imposing, volatile star quarterback",
+          "One role written as a broad comic sidekick with physical business"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Mostly interior with recurring stadium, office, bar, and hotel interiors plus some exterior stadium and city work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Football stadium and locker room",
+          "Executive box and boardroom",
+          "Sports press room",
+          "Bar interiors",
+          "Hotel/resort conference spaces",
+          "Training facility and practice field",
+          "Mansion/pool-side location",
+          "Draft floor and combine setting"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily scoreboard graphics, broadcast-style sports coverage, and crowd/stadium enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Crowd reactions, game-day atmospherics, and a few physical comedy beats; no major effects package.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "ESPN, Playboy, Cops, and multiple named media outlets are referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "Named football teams, league-style entities, and broadcast properties are used throughout."
+        },
+        {
+          "type": "real_person",
+          "detail": "Isiah Washington is named as a character, but the script also references public figures such as Clay Aiken, Monica, Clinton, Hoffa, and others."
+        },
+        {
+          "type": "named_music",
+          "detail": "Specific songs and music cues are referenced in scene action, including 'five o'clock somewhere' and jukebox-era material."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical comedy or streaming sports-comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with broad comedy marketing; best suited to a modest-to-mid-budget theatrical or streamer comedy rollout."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The football setting, stadium work, crowd scenes, and multiple sports locations keep this above a contained comedy, but it stays well below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a strong comic lead, a credible straight-man counterpart, a volatile quarterback, and a sizable supporting ensemble of players, executives, and media figures."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It moves across stadiums, offices, bars, hotels, a resort, a mansion, a combine, and a draft floor, though most are familiar contemporary interiors."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script is built on profanity, sexual humor, crude banter, and some racially charged and sexually explicit jokes that narrow platform and rating options."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses multiple named brands, media outlets, and public-figure references that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A buyer gets a clean, high-concept comedy engine that can be explained in one sentence and marketed off the absurdity alone. That kind of premise is especially attractive to comedy producers, sports buyers, and star vehicles looking for a simple hook with built-in trailer moments.",
+          "evidence": "Dennis recruits Hank because he wins fantasy football leagues, then hands him the GM job after the janitor tip leads to his name.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Hank is a playable comic lead.",
+          "what_it_means": "The role gives an actor a full comic arc: arrogant fan, accidental insider, then reluctant adult who has to earn authority in public. Mid-career comedic leads and actors looking to pivot into broader studio comedy would see a showcase part with room for swagger, panic, and redemption.",
+          "evidence": "Hank talks trash in bars, freezes at the press conference, then eventually stands up to Washington and the league pressure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The football world has a usable ecosystem.",
+          "what_it_means": "Owners, reporters, coaches, players, fantasy leagues, and front-office politics create a world that can generate scene after scene without needing to leave the sports lane. That makes the script attractive to producers who want a comedy with repeatable institutional friction rather than a one-joke premise.",
+          "evidence": "The script moves from owner’s box to boardroom to press room to combine to draft floor to locker room, each with its own social rules.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jeff is a scene-stealing sidecar.",
+          "what_it_means": "Jeff gives the project a broad comic wildcard who can puncture tension, create physical comedy, and keep the ensemble from becoming too procedural. Supporting-comedy actors and directors who like a disruptive sidekick will see a role that can become a fan favorite.",
+          "evidence": "Jeff crawls, growls, tackles, serves drinks, auditions mascots, and even gets the locker-room speech at the end.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script knows how to stage public humiliation.",
+          "what_it_means": "Press conferences, boardroom confrontations, and media scrums give the movie a steady supply of trailer-friendly embarrassment beats. That is useful commercial material because it creates clips, reactions, and quotable moments that sell the comedy before opening weekend.",
+          "evidence": "Hank is grilled by Kate, mocked by executives, and forced to admit on camera that he comes from fantasy football.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The season arc gives the feature a spine.",
+          "what_it_means": "The story is not just a sketch premise; it has a clear progression from chaos to competence to a final meaningful game. That makes it easier for a producer to see a full feature shape and for a buyer to imagine a satisfying audience payoff.",
+          "evidence": "The Cougars move from disaster to a winning record and end in a playoff-deciding finale against Dallas.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, commercial sports-comedy premise with a real movie engine: a fantasy-football obsessive gets handed an NFL front office and has to learn the difference between talking like a fan and leading like a GM. The script has a strong comic lead role, a vivid sidekick, and a football ecosystem full of press-room, draft-day, and locker-room set pieces that are easy to market and easy to imagine on screen."
+    },
+    "lead_characters": [
+      {
+        "name": "HANK BRISCOE",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to early 40s · working-class sportswriter/fantasy-football obsessive",
+        "hook": "Hank is a loud, self-regarding football junkie who talks like he owns the room long before he earns it. He’s crude, funny, impulsive, and weirdly intuitive about the game, but the movie keeps forcing him to discover that knowing football and leading people are not the same thing.",
+        "why_actor_wants_this": "This is the showcase territory of Will Ferrell in Anchorman or McConaughey in True Detective season 1 — a swaggering comic personality whose confidence is the performance engine and whose public unraveling becomes the joke. Actors who can play arrogance, panic, and eventual authority in the same role will chase this because it gives them a full-featured star turn with room for quotable comedy and a real arc."
+      },
+      {
+        "name": "DENNIS MICHAELS",
+        "role_type": "Lead",
+        "demographics": "Male · early 40s · polished executive heir",
+        "hook": "Dennis is the polished son trying to drag a broken franchise into adulthood while managing a volatile father and a room full of skeptics. He’s the straight man with backbone, the guy who can sell the absurdity because he’s the only one in the room acting like the job matters.",
+        "why_actor_wants_this": "This is the grounded counterweight territory of Bradley Cooper in Silver Linings Playbook or Jason Bateman in a sharp workplace comedy — the calm, controlled presence who has to keep the chaos from swallowing the movie. Actors who play intelligence under pressure will want it because Dennis gets to be the audience surrogate and the authority figure at once."
+      },
+      {
+        "name": "JEFF",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to early 40s · slovenly comic sidekick",
+        "hook": "Jeff is Hank’s feral best friend, a human loose cannon who can’t stop making trouble and somehow keeps landing on his feet. He’s gross, loyal, physically funny, and unexpectedly useful, which makes him the kind of sidekick who can steal scenes without ever becoming the center of the story.",
+        "why_actor_wants_this": "This is the comic sidekick territory of John C. Reilly in Talladega Nights or Jonah Hill in a broad studio comedy — a role built on physicality, shamelessness, and perfect timing. Character comics who want to be the movie’s wild card will chase it because the part is a machine for laughs and memorable entrances."
+      },
+      {
+        "name": "KATE DALY",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s to early 30s · sports reporter",
+        "hook": "Kate is the sharp, skeptical reporter who starts as Hank’s public adversary and becomes the movie’s reality check. She’s ambitious, composed, and smart enough to see through the nonsense, which gives her a clean comic authority in a male-dominated sports world.",
+        "why_actor_wants_this": "This is the newsroom-smart, sparring-foil territory of Tina Fey in a workplace comedy or Allison Janney in a sharp ensemble — the role that gets to puncture ego while staying cooler than everyone else. Actors who like verbal sparring and controlled comic authority will want it because Kate gets the best of both the press-room and the relationship beats."
+      },
+      {
+        "name": "STAN MICHAELS",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · wheelchair-bound team owner",
+        "hook": "Stan is the furious old owner whose body has slowed down but whose temper hasn’t. He’s a comic tyrant with real franchise history behind him, and every scene with him carries the sense that this team has been dysfunctional for years.",
+        "why_actor_wants_this": "This is the irascible patriarch territory of Jack Nicholson in a late-career comedy or Brian Cox in a power-family piece — a role where every line can land as threat, insult, or punchline. Veteran actors who like authority, volatility, and scene-stealing entrances will chase it."
+      },
+      {
+        "name": "BRANDY",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s to early 30s · Hank’s girlfriend",
+        "hook": "Brandy is the woman who finally names Hank’s immaturity out loud and walks away from it. She’s not there to be decorative; she’s there to expose the cost of his obsession and give the movie a real emotional consequence.",
+        "why_actor_wants_this": "This is the sharp breakup-role territory of Leslie Mann in a relationship comedy — the part that gets to be funny, fed up, and emotionally legible in the same scene. Actors who want a scene that cuts through the broadness will see a clean, memorable exit role."
+      },
+      {
+        "name": "ISIAH WASHINGTON",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · star quarterback",
+        "hook": "Isiah is the franchise player who knows he’s the center of gravity and behaves accordingly. He’s cocky, volatile, and funny in a dangerous way, which makes him the perfect obstacle for a new GM trying to impose order.",
+        "why_actor_wants_this": "This is the swaggering star-athlete territory of a performance like Michael B. Jordan in a sports drama or Jamie Foxx in a charismatic ego role — the part that gets to dominate every room and still be entertaining. Actors who can play charisma with menace will want it because the role has instant authority and conflict."
+      },
+      {
+        "name": "COACH ROGER PULLMAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · head coach",
+        "hook": "Pullman is the competent football mind who has to translate Hank’s chaos into something the team can actually use. He’s dry, patient, and quietly funny, which makes him the movie’s most stable professional presence.",
+        "why_actor_wants_this": "This is the deadpan coach territory of a role like Craig T. Nelson in a sports comedy — the steady professional who can play exasperation without losing authority. Character actors who like dry humor and understated command will be drawn to it."
+      },
+      {
+        "name": "NATE TRUMBOLD",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · assistant/bridge figure from the football world",
+        "hook": "Nate is the useful intermediary who helps Hank move from fantasy talk to actual football operations. He’s practical, observant, and a little underestimated, which makes him a good pressure-release valve in the ensemble.",
+        "why_actor_wants_this": "This is the dependable-supporting-player territory of a role like Paul Rudd in a workplace ensemble — the part that gets to be smart, likable, and quietly essential. Actors who want a clean, scene-efficient role with room for dry humor will see the value."
+      },
+      {
+        "name": "CHRISTIAN JENKS",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · rookie quarterback",
+        "hook": "Christian is the earnest young quarterback who looks like the future before he’s ready to own it. He brings innocence and vulnerability into a room full of ego, which gives the second half of the movie a cleaner emotional center.",
+        "why_actor_wants_this": "This is the earnest rookie territory of a role like a young athlete in a coming-of-age sports film — the part that gets to play nerves, growth, and sudden responsibility. Younger actors with a clean, likable screen presence will want it because the role can become the audience’s hope."
+      },
+      {
+        "name": "JOHN STANSFIELD",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · veteran rival GM",
+        "hook": "John is the polished rival who understands the game, the politics, and the psychology better than almost anyone else in the movie. He’s a gentleman shark, which makes him both a mentor figure and a threat.",
+        "why_actor_wants_this": "This is the seasoned-rival territory of a role like Tommy Lee Jones in a prestige sports or political drama — the cool professional who can outclass the room without raising his voice. Veteran actors who like intelligence and quiet dominance will chase it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a loud, male, sports-world comedy with real rhythm and crowd-pleasing set pieces.",
+        "fit_profile": "Second-feature or established indie-comedy directors, plus TV directors moving into features, who already know how to handle ensemble banter, public humiliation, and performance-driven comedy. The sweet spot is someone who likes workplace systems, locker-room energy, and broad comic escalation more than visual spectacle.",
+        "detail": "The material rewards clean comic blocking, sharp timing, and the ability to keep a big ensemble legible while the jokes keep flying. It also gives a director a built-in sequence engine — press conference, draft, combine, training camp, playoff game — that can be staged economically but still feel big."
+      },
+      "buyer_appeal": {
+        "tier": "$8-20M feature",
+        "lane": "Broad studio-comedy / streamer sports-comedy lane",
+        "detail": "It can be sold off one lead comic performance and a strong supporting sidekick, so it does not require a huge name ensemble to function. The football setting, fantasy-sports angle, and seasonal structure give it a clear trailer hook and an easy audience lane for sports fans and comedy viewers alike."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated banter.",
+        "detail": "A lot of the fun lives in Hank, Jeff, and the barroom/office exchanges, which gives the movie energy but also makes the center section feel like it is circling the same comic note. One lever would be to let one or two of those scenes turn on a fresh consequence — a trade, a public embarrassment, or a relationship beat — so the comedy keeps advancing the story while it lands the joke.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The emotional spine stays light.",
+        "detail": "Hank’s shift from selfish fan to accountable leader is present, especially in the Brandy breakup and the final game, but the movie mostly plays that change through plot rather than through a few sharper personal reversals. A next pass could foreground one or two choices where Hank has to sacrifice something he wants in order to protect the team, which would make the ending feel even more earned.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The football world can be streamlined.",
+        "detail": "The script moves through stadiums, offices, bars, hotels, a resort, a mansion, the combine, and the draft floor, which gives it scale but also a fairly wide footprint. The version of the movie where the Arizona trip, the combine, and one of the bar sequences are folded into fewer recurring locations would protect the momentum while making the production easier to mount.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The language is doing a lot of the work.",
+        "detail": "The script’s voice is built on profanity, sexual jokes, and insult comedy, which is part of its identity and part of its market lane. A producer would want to keep that edge, while a future pass could consider where a cleaner punchline or a more character-specific joke might widen the audience without softening the movie’s personality.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting cast invites smart compression.",
+        "detail": "There are a lot of distinct comic voices in the ensemble, but several of them function as variations on the same fan/exec/media reaction. A tighter version could combine a couple of those reaction roles so the movie keeps its crowd texture while giving the strongest characters more room to breathe.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 40852,
+  "outputTokens": 5301,
+  "cost": 0.0544935,
+  "declaredFormat": "Feature film"
+}

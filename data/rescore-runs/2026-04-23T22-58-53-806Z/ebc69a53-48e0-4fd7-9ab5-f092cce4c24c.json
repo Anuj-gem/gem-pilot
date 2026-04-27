@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:22:46.606Z",
+  "submission_id": "ebc69a53-48e0-4fd7-9ab5-f092cce4c24c",
+  "eval_id": "1e64bb18-e78c-4987-90e7-1bb68d095b45",
+  "title": "the blueprint screenplay1",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "THE SOURCE",
+      "role_type": "Lead",
+      "demographics": "Male-presenting divine entity · ageless"
+    },
+    {
+      "name": "ILLUMINATION / THE DIVIDER / THE DECEIVER",
+      "role_type": "Lead",
+      "demographics": "Male-presenting divine rebel · ageless"
+    },
+    {
+      "name": "MOC-MAN",
+      "role_type": "Lead",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "WOMOC-WOMAN",
+      "role_type": "Lead",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "WIND",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting elemental entity · ageless"
+    },
+    {
+      "name": "WATER",
+      "role_type": "Supporting",
+      "demographics": "Female-presenting elemental entity · ageless"
+    },
+    {
+      "name": "FIRE",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting elemental entity · ageless"
+    },
+    {
+      "name": "MULTITUDE / SPOKESENTITY / CHORUS",
+      "role_type": "Supporting",
+      "demographics": "Ensemble voices · mixed"
+    }
+  ],
+  "positioning_hook": "The Source creates Earth as a physical extension of divine order, but when his first creation rebels, the war for the universe becomes a battle over humanity’s origin, purpose, and fall.",
+  "cost_usd": 0.044520750000000005,
+  "input_tokens": 34209,
+  "output_tokens": 4192,
+  "status": "wrote:leads_ok"
+}

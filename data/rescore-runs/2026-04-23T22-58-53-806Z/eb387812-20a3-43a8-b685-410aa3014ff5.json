@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:09:24.271Z",
+  "submission_id": "eb387812-20a3-43a8-b685-410aa3014ff5",
+  "eval_id": "9afbcc5d-8b5c-483a-b900-efc749c18a15",
+  "title": "The Last Call",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s in present day, 11/15/17 in flashbacks"
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Lead",
+      "demographics": "Female · 50s-60s"
+    },
+    {
+      "name": "Marty",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Susan Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s-40s"
+    },
+    {
+      "name": "Dr. Helen Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Dr. Karen Levy",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    }
+  ],
+  "positioning_hook": "A grief-stricken lawyer sues the hospital that discharged his suicidal brother, then discovers the case is really about the call he didn’t answer.",
+  "cost_usd": 0.045677999999999996,
+  "input_tokens": 31666,
+  "output_tokens": 4873,
+  "status": "wrote:leads_ok"
+}

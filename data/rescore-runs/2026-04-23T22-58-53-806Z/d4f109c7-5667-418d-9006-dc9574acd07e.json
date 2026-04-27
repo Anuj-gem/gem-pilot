@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:10:21.138Z",
+  "submission_id": "d4f109c7-5667-418d-9006-dc9574acd07e",
+  "eval_id": "6cd50c92-a64b-42da-8f12-f21c7729e7ed",
+  "title": "Who Lukas Kendall 4 8 26",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "AVA / MADISON",
+      "role_type": "Lead",
+      "demographics": "Female · 16 / 9 · white-presenting teen body with shapeshifting into multiple ages, genders, and identities"
+    },
+    {
+      "name": "JUNE",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · blue-collar mother"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · 16 · full-figured teen"
+    },
+    {
+      "name": "PRISCILLA",
+      "role_type": "Supporting",
+      "demographics": "Female · late 40s · corporate security lead"
+    },
+    {
+      "name": "WOLCOTT",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · bald, clinical, severe"
+    },
+    {
+      "name": "DAVID",
+      "role_type": "Supporting",
+      "demographics": "Male · 90s / body-shifting through multiple identities"
+    },
+    {
+      "name": "JAMIESON",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · security enforcer"
+    },
+    {
+      "name": "MILLS",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · ex-military / father"
+    },
+    {
+      "name": "WILMA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s · nurse / company staff"
+    },
+    {
+      "name": "ERIC HUNTINGTON",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · billionaire tech mogul"
+    },
+    {
+      "name": "CHRISTY",
+      "role_type": "Supporting",
+      "demographics": "Female · 17 · tall, blonde, athletic"
+    },
+    {
+      "name": "MURRAY",
+      "role_type": "Supporting",
+      "demographics": "Male · springer spaniel"
+    }
+  ],
+  "positioning_hook": "A self-doubting teen girl in a small-town manhunt discovers she’s a shape-shifting lab escapee, forcing her to survive a corporate cover-up by becoming everyone but herself.",
+  "cost_usd": 0.054242250000000006,
+  "input_tokens": 41597,
+  "output_tokens": 5121,
+  "status": "wrote:leads_ok"
+}

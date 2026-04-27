@@ -1,0 +1,287 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy drama",
+      "genre_tags": [
+        "coming-of-age",
+        "supernatural"
+      ],
+      "tone": "earnest, whimsical, emotionally heightened, literary"
+    },
+    "positioning_hook": "A neurotic Jewish teen in 1977 Los Angeles is pulled into an ancient Egyptian death-test, where saving a poisoned prince may be the only way to save himself.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean emotional promise — a bullied, anxious teen gets a mythic second chance — and the final classroom turn gives it a memorable crowd-pleaser finish. Its appeal is strongest for audiences who like character-led fantasy with heart and a literary edge, rather than broad four-quadrant spectacle."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: Daniel’s oral report, his nightmare, and the Egyptian scale/feather mythology establish the engine quickly. The script keeps the rules legible through the tomb sequence, the second-life bargain, and the final classroom payoff."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Daniel is a vivid lead with a specific voice, physical anxiety, and a strong emotional contradiction between self-protection and moral courage. Mary, Tommy, and Aria each add a distinct pressure point, though the story remains most powerfully organized around Daniel’s interior journey."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a very unusual route: adolescent humiliation, Egyptian afterlife logic, and a classroom report all become one mythic mechanism. The choice to make the emotional climax a spoken poem in front of the class gives the material a confident, personal stamp."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story has a strong forward engine once the tomb opens, and the alternating dream/classroom structure keeps the momentum alive. The middle spends real time on the rules of the test, but the Aria/Daniel interaction and the escalating choice architecture keep it moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a premise that could only exist in this exact form: a socially anxious teen’s oral report becomes a metaphysical trial of fairness, memory, and courage. The ending lands the rare feeling of something strange that also feels inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The 1977 San Fernando Valley classroom, the Halloween costumes, the Jewish/Greek/Egyptian references, and the ancient tomb all carry distinct texture. The ancient world is especially vivid in the royal home, Senet game, and satrap hierarchy, though the script is still primarily character-driven rather than institution-driven."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The voice is unmistakable: anxious, comic, self-interrupting narration collides with mythic stakes and sincere emotion. The tonal blend of awkward teen comedy, spiritual fantasy, and emotional earnestness is highly specific and easy to identify."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "On the surface this is a fantasy coming-of-age story, but underneath it is a meditation on identity, disability, fairness, and the moral cost of leaving people behind. The final reveal that Daniel’s second chance is also a second chance to choose who he is gives the material real afterglow."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Daniel/Mary/Tommy/Bob create a workable social web, and Aria adds a strong second dynamic in the tomb. Still, the script is fundamentally powered by Daniel’s perspective, with the supporting players serving his arc more than generating independent story engines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen leads and supporting roles",
+          "Jewish-coded protagonist",
+          "Egyptian/Persian historical roles",
+          "Strong voice/performance demands for Daniel's narration"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "period (1977) with ancient Egypt/Persia fantasy sequences",
+        "notable_requirements": [
+          "1970s classroom and diner interiors",
+          "Ancient Egyptian tomb set",
+          "Royal ancient interior with pool/banquet area",
+          "Movie theater interior",
+          "Bedroom and home interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Time-slowing effects, glowing lamp/light transitions, eye-vision POV overlays, Osiris transformation, and a few stylized dream-state transitions.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical lighting cues, lamp effects, blood/poison makeup, and simple transformation effects.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Charles Bronson is referenced by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin's 'Stairway to Heaven' is specifically performed."
+        },
+        {
+          "type": "brand",
+          "detail": "Bic pen is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Iroc T-top convertible is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "GI Joe is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Star Wars, Happy Days, Smokey and the Bandit, Rocky, Wonder Woman, Charlie's Angels, and Roots are referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "festival-to-platform feature, prestige indie, specialty streamer",
+        "content_level": "PG-13 equivalent with mature themes",
+        "series_engine_or_release_model": "Feature release model: festival launch, specialty theatrical, then streaming/TVOD; the hook is the emotional coming-of-age fantasy and the final classroom payoff."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Mostly contained interiors, a small cast, and modest fantasy effects keep this in an indie-friendly feature range."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script depends on a strong teen lead and age-specific supporting roles, with historical characters and child/teen casting across two worlds."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves between 1977 Valley locations and two distinct ancient-Egypt settings, but the footprint remains manageable."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Bullying, suicide-adjacent sleeping pill imagery, blood, and death-by-poison keep the material in a mature but not extreme lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Named music, real-person reference, and multiple branded/pop-culture references create a meaningful clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise fuses teen anxiety with mythic stakes.",
+          "what_it_means": "That combination gives the project a clean commercial identity: a coming-of-age fantasy where emotional embarrassment becomes literal life-or-death destiny. It will attract buyers looking for elevated genre material and actors who want a role that can play vulnerability, comedy, and heroism in one arc.",
+          "evidence": "Daniel’s oral report on Osiris becomes the gateway into the tomb, the second-life bargain, and the final classroom confrontation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Daniel is a showcase lead.",
+          "what_it_means": "The role gives an actor a full-spectrum turn: nervous comic timing, internalized pain, physical panic, and a final authority shift that lands like a transformation. Young performers and reps looking for a breakout vehicle will see a part with real scene-stealing range.",
+          "evidence": "Daniel’s narration, his panic attacks, his awkward attempts to speak to Mary, and the final 'We are Daniel Green' declaration.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The voice is highly specific.",
+          "what_it_means": "The script has a built-in signature in Daniel’s narration — halting, funny, self-correcting, and emotionally naked — which makes the material feel authored rather than generic. That kind of voice is attractive to specialty buyers and directors who want a film with a point of view.",
+          "evidence": "Daniel’s V.O. repeatedly interrupts itself with 'ya know,' 'Doc,' and comic self-qualification while still carrying the emotional spine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending is a genuine payoff.",
+          "what_it_means": "The final classroom speech and identity reveal give the movie a satisfying release valve and a trailer-friendly emotional button. Buyers like endings that reframe the whole story, and this one does exactly that while staying character-based.",
+          "evidence": "Daniel delivers the poem, gives Mary the feather, and then claims his identity in front of the class and camera.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ancient-world material has texture.",
+          "what_it_means": "The Senet game, royal tomb, satrap hierarchy, and poison-misdirection sequence create a world that feels researched and playable rather than decorative. That gives the film a premium surface without requiring tentpole scale.",
+          "evidence": "The Senet matches, the royal pool and banquet, and Pherendates II’s poison scheme.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional theme is legible and durable.",
+          "what_it_means": "Fairness, belonging, and the courage to stay present are universal hooks that travel well across audiences and territories. That makes the script easier to position as both genre entertainment and a heartfelt audience piece.",
+          "evidence": "Daniel’s repeated fixation on fairness, his refusal to leave Aria, and the final lesson about small acts.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, highly castable fantasy coming-of-age feature with a singular voice and a real emotional engine. It turns a bullied teen’s oral report into a mythic test of courage, fairness, and identity — and lands on a finale that feels both surprising and earned."
+    },
+    "lead_characters": [
+      {
+        "name": "Daniel Green",
+        "role_type": "Lead",
+        "demographics": "Male · 16",
+        "hook": "Daniel is a hyper-verbal, anxious Jewish teen whose body betrays him before his mind can catch up. He narrates like he’s apologizing for existing, but underneath the comic deflection is a kid with a fierce moral instinct and a buried hunger to matter.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — rapid-fire self-consciousness masking real intelligence and pain, with a late-arriving authority that changes how everyone sees him. Young actors who can do comedy, vulnerability, and a final emotional pivot will chase this because it gives them a full-featured transformation role."
+      },
+      {
+        "name": "Mary Lindgren",
+        "role_type": "Lead",
+        "demographics": "Female · 16",
+        "hook": "Mary is Daniel’s best friend and the story’s emotional mirror: warm, observant, socially fluent, and just out of reach. She carries the glow of first love without becoming a cliché, and the script lets her feel both grounded and mythic.",
+        "why_actor_wants_this": "This has the quiet magnetism of Laura Dern in Wild — a character whose stillness and attention carry emotional weight without needing speeches. Young actresses who can play intelligence, restraint, and a subtle shift from friend to romantic possibility will be drawn to it."
+      },
+      {
+        "name": "Aria",
+        "role_type": "Lead",
+        "demographics": "Male · 16",
+        "hook": "Aria begins as a poisoned royal boy with all the arrogance of inherited power, then reveals a frightened, loyal, deeply human kid underneath. He is prickly, proud, and emotionally exacting, which makes his softening feel earned rather than sentimental.",
+        "why_actor_wants_this": "This is the showcase space of Timothée Chalamet in Beautiful Boy — a beautiful, difficult, emotionally volatile young man whose fragility is the engine of the performance. Actors who want to play status, fear, and eventual surrender in one role will see real meat here."
+      },
+      {
+        "name": "Egyptian Mary / Mary",
+        "role_type": "Lead",
+        "demographics": "Female · ageless deity appearing as a teen girl",
+        "hook": "Mary is both Daniel’s crush and the divine intermediary who controls the terms of his second chance. She has a teasing, almost bureaucratic authority that keeps the fantasy from floating away into abstraction.",
+        "why_actor_wants_this": "This is the kind of role Tilda Swinton made memorable in Michael Clayton — an otherworldly presence who can be playful, severe, and emotionally unreadable in the same frame. An actress with strong command and a taste for elevated genre will want the chance to embody a god who still feels like a girl from school."
+      },
+      {
+        "name": "Mrs. Marder",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Mrs. Marder is the well-meaning teacher caught between classroom order and Daniel’s private crisis. She’s practical, slightly frazzled, and human enough to make the school world feel lived-in.",
+        "why_actor_wants_this": "This is the kind of grounded supporting part Frances McDormand made memorable in smaller ensemble dramas — a teacher whose authority comes from lived-in specificity rather than speeches. Character actors who like to anchor a story’s real-world texture will be interested."
+      },
+      {
+        "name": "Bob James",
+        "role_type": "Supporting",
+        "demographics": "Male · 16",
+        "hook": "Bob is the smug jock antagonist with a cruel instinct for public humiliation. He’s not complicated in the abstract, but he is sharply functional as the social pressure that keeps Daniel cornered.",
+        "why_actor_wants_this": "This is the kind of role that lets a young actor do the preening menace of a classic high-school bully with precision, like the antagonistic energy in The Breakfast Club. Casting directors looking for a believable teen alpha with comic cruelty will have a clear lane here."
+      },
+      {
+        "name": "Tommy",
+        "role_type": "Supporting",
+        "demographics": "Male · 15",
+        "hook": "Tommy is the awkward, hyper-intelligent friend whose loyalty is louder than his social ease. He’s funny, earnest, and emotionally transparent, which makes him a necessary counterweight to Daniel’s self-protective silence.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the warmth and specificity of Michael Cera in Juno — a smart, oddball friend whose sincerity becomes the point. It’s a strong part for performers who can make awkwardness feel affectionate rather than merely comic."
+      },
+      {
+        "name": "Pherendates II",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Pherendates II is polished, calculating, and paternal in the most dangerous sense: the man who can poison you while looking like he’s teaching you. He gives the ancient world its adult menace and its political intelligence.",
+        "why_actor_wants_this": "This is the kind of role that plays like Ralph Fiennes in The Grand Budapest Hotel or Schindler’s List — elegant authority with a blade under it. A seasoned actor who enjoys controlled menace and verbal precision will see a rich supporting turn."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a performance-driven fantasy with emotional sincerity and visual restraint.",
+        "fit_profile": "First- or second-feature directors, or established indie filmmakers, who already work in character-first storytelling and have a taste for magical realism, memory, and subjective POV. The material rewards directors who can stage inner life as spectacle without overbuilding the world.",
+        "detail": "The craft opportunity is in making the classroom, tomb, and dream logic feel like one emotional system, not separate genres. It will attract directors who like precise tone control, actor-forward scenes, and a final movement that lands as catharsis rather than explanation."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "prestige indie / specialty streamer / festival-friendly fantasy drama",
+        "detail": "The movie can be packaged around one standout teen lead and a contained supporting ensemble, so it does not require a heavy-name cast to function. The period-plus-fantasy lane is exportable and streamer-friendly, and the contained footprint keeps it in a budget range that specialty buyers can actually greenlight."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans hard on rule-setting.",
+        "detail": "The tomb sequence spends a meaningful stretch explaining Second Life, the Gods, and the test mechanics. One lever would be to let one or two of those rules arrive through action sooner, so the emotional pressure keeps outrunning the exposition.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Daniel’s final speech could be even more distilled.",
+        "detail": "The closing classroom poem is the movie’s payoff, and it already lands. A next pass could consider trimming a few of the repeated identity phrases so the emotional turn hits with even more force and the final declaration feels sharper.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights pass will need attention.",
+        "detail": "The script names Charles Bronson, Led Zeppelin, Bic, GI Joe, Star Wars, Happy Days, Smokey and the Bandit, Rocky, Wonder Woman, Charlie’s Angels, and Roots. A packaging pass should decide which references are essential to the period texture and which can be swapped for clearance ease.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The fantasy footprint stays producible if kept contained.",
+        "detail": "The story already lives mostly in classrooms, homes, a diner, a theater, and one tomb, which is a strong budget shape. Protecting that contained structure will preserve the emotional scale while keeping the production in the indie lane.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 72,
+  "tier": "Optionable",
+  "inputTokens": 40982,
+  "outputTokens": 4249,
+  "cost": 0.049857,
+  "declaredFormat": "Feature film"
+}

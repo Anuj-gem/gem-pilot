@@ -1,0 +1,315 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Political thriller",
+      "genre_tags": [
+        "Conspiracy thriller",
+        "Action thriller"
+      ],
+      "tone": "Gritty, propulsive, morally charged, and procedural with heightened espionage energy"
+    },
+    "positioning_hook": "A New York governor and a senator uncover a secret government kill program run by a polished power broker — then discover the White House is protecting him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate commercial traction: covert killings, a presidential cover-up, and a public trial give the audience a clear promise of danger and accountability. It plays to thriller buyers who want topical stakes and recognizable institutions, though the political machinery and large cast narrow it a bit from four-quadrant reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: Phoenix is a secret extrajudicial program, Rasmussen is its architect, and Sharma and Corbin are the people trying to expose it. The opening assassination, the Serpent insignia, and the later courtroom frame make the engine easy to track."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Sharma and Corbin have a solid oppositional partnership, and Rasmussen is a strong public/private contradiction with real screen presence. The supporting players mostly orbit the central conspiracy, so the character appeal is driven more by function and authority than by deeply individualized interior lives."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldest move is making the antagonist’s operation feel like a shadow state with legal language, family ties, and public legitimacy. The repeated use of hearings, pardons, and institutional pressure gives the material a confident political-thriller identity rather than a generic manhunt."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps escalating through raids, leaks, courtroom reversals, and a final pardon that reopens the story instead of closing it. It sustains forward motion well, though the repeated office-to-office dialogue scenes sometimes slow the propulsion between the bigger turns."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a covert domestic security program being defended as public order feels timely and legible, and the Serpent branding gives it a memorable identity. It’s not a wholly new engine, but the combination of state power, family entanglement, and public trial gives it a fresh political-thriller flavor."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has real institutional texture: consulates, the Oval Office, state offices, federal court, safe houses, and cartel infrastructure all feel like parts of one ecosystem. The script understands how money, law, media, and enforcement intersect, which gives the conspiracy a believable operating field."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistent and recognizable: serious, procedural, and morally combative, with occasional dry one-liners to keep the pressure human. The courtroom material and the assassination sequences share the same hard-edged register, which gives the piece a stable identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material in the family ties, the public appetite for order, and the way grief motivates Barbara and Rasmussen. The draft keeps most of that depth in the background, so the surface engine is strong while the emotional underlayers remain more implied than dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Sharma/Corbin is a useful core pairing, and Rasmussen/Barbara/Langston create a credible power triangle. Beyond those clusters, the ensemble is mostly functional support for the conspiracy, so the relationship web is solid rather than especially generative."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Multiple 40s-60s authority roles",
+          "Several polished, high-status political and legal characters",
+          "One central female lead with action and courtroom authority",
+          "One central male lead with executive/power-broker presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interiors with a meaningful exterior night component",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Washington, D.C. government interiors",
+          "New York political and financial interiors",
+          "Courthouse and courtroom builds",
+          "Safe houses, warehouses, apartments, and street exteriors",
+          "One consulate sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily digital surveillance interfaces, city overlays, and a few controlled visual enhancements for monitors, maps, and cyber-event imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, suppressed kills, blood effects, breakaway glass, practical chaos in raids and alley confrontations.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Verizon"
+        },
+        {
+          "type": "brand",
+          "detail": "Stranger Things"
+        },
+        {
+          "type": "brand",
+          "detail": "Bad Bunny"
+        },
+        {
+          "type": "brand",
+          "detail": "Princeton"
+        },
+        {
+          "type": "brand",
+          "detail": "Yale University"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical political-thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as festival-to-platform or prestige theatrical thriller with streamer upside"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary political thriller with multiple interiors, night exteriors, raids, and a courtroom run; contained enough for mid-budget, but not cheap."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script leans on several authority roles and benefits from strong name-level casting in the Sharma, Corbin, Rasmussen, and Barbara lanes."
+        },
+        "location": {
+          "level": "medium",
+          "note": "A broad but manageable contemporary footprint across New York, Washington, a consulate, safe houses, warehouses, and courtrooms."
+        },
+        "content": {
+          "level": "high",
+          "note": "Multiple assassinations, bloodletting, raids, and political coercion push it firmly into mature-thriller territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses a few recognizable brands and institutions, but no major life-rights or IP dependency drives the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [],
+      "headline": "This is a smart, saleable political thriller with a clean central engine: a governor and senator uncover a secret kill program, then find the White House protecting the man behind it. The script’s biggest asset is that it turns institutional corruption into a personal, cinematic fight, with a strong female lead, a formidable antagonist, and a courtroom climax that gives the whole thing public stakes."
+    },
+    "lead_characters": [
+      {
+        "name": "Parvati Sharma",
+        "role_type": "Lead",
+        "demographics": "Female · 40s · Governor",
+        "hook": "Sharma is a disciplined, high-functioning political operator who reads as all control until the moral center of the story forces her to choose between career survival and constitutional principle. She has the poise of someone used to rooms where power is negotiated, but the script keeps letting her reveal steel, wit, and a private capacity for risk.",
+        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Widows or Jodie Foster in The Mauritanian — a woman whose authority is the performance, and whose intelligence has to stay visible under pressure. Prestige leads who want a role that can play command, moral clarity, and tactical vulnerability in the same frame will chase this."
+      },
+      {
+        "name": "Miles Corbin",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to 50s · Senator",
+        "hook": "Corbin is the pragmatic counterweight to Sharma: sharp, dry, politically fluent, and just cynical enough to survive the machinery he’s trying to expose. He gives the movie its pressure-release valve without ever losing credibility, and his loyalty to the investigation feels earned rather than idealized.",
+        "why_actor_wants_this": "This is the showcase lane of Mark Ruffalo in Spotlight or Jeff Daniels in The Newsroom — a man who can carry exposition without sounding like exposition and still land the emotional beat. Actors who excel at intelligence, restraint, and dry authority will see a role with real dialogue muscle."
+      },
+      {
+        "name": "Elliot Rasmussen",
+        "role_type": "Lead",
+        "demographics": "Male · 50s to 60s · Power broker / operative",
+        "hook": "Rasmussen is polished, strategic, and terrifying because he believes his own logic: he is not hiding evil so much as defending necessity. He moves like a man who has spent decades turning access into immunity, and the script gives him enough charm and composure to make the threat feel institutional rather than personal.",
+        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in Trumbo or Michael Keaton in Spotlight’s institutional antagonists — a role where the actor gets to play intelligence, self-justification, and controlled menace without ever raising his voice. Mid-career prestige actors who want a villain with policy language and emotional restraint will want this."
+      },
+      {
+        "name": "Barbara Rasmussen",
+        "role_type": "Lead",
+        "demographics": "Female · 40s to 50s · Socially polished operative",
+        "hook": "Barbara is the script’s most elegant contradiction: grief-stricken mother, political spouse, and lethal enforcer, all in the same breath. She carries herself like someone who has learned to weaponize composure, which makes every scene with her feel both intimate and dangerous.",
+        "why_actor_wants_this": "This is the showcase territory of Glenn Close in The Wife or Rosamund Pike in Gone Girl — a role where poise becomes the weapon and every line can turn on a dime. Actors looking for a high-status, scene-stealing supporting lead with emotional and physical authority will chase it."
+      },
+      {
+        "name": "Bradley Langston",
+        "role_type": "Lead",
+        "demographics": "Male · 50s to 60s · President of the United States",
+        "hook": "Langston is the story’s highest-level power figure, and the script plays him as a man who can justify almost anything if it preserves order. He’s not a mustache-twirler; he’s a political realist whose calm makes the compromise feel more dangerous.",
+        "why_actor_wants_this": "This is the showcase lane of Kevin Spacey in House of Cards or Michael Sheen in The Queen — a leader whose stillness is the performance and whose private calculations are the drama. Actors who specialize in command, ambiguity, and institutional authority will be drawn to it."
+      },
+      {
+        "name": "Gabrielle Parker",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · Operative",
+        "hook": "Gabrielle is a cool, efficient field operator who reads as all business until the script lets her show loyalty and precision under pressure. She’s a clean, functional presence in the action lanes, with enough edge to feel like she has a life beyond the mission.",
+        "why_actor_wants_this": "This is the kind of role that plays like Emily Blunt in Sicario’s tactical support lane — controlled, capable, and always one step from violence. Actors who want a sharp, physical, no-nonsense operator part will respond to it."
+      },
+      {
+        "name": "Marcus Cole",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Operative",
+        "hook": "Marcus is a steady field presence who helps give the Phoenix team a professional, military feel. He functions as part of the operational spine, with enough dry confidence to keep scenes moving.",
+        "why_actor_wants_this": "This is the kind of tactical-support role that benefits from the presence and timing of actors like Walton Goggins in ensemble crime pieces — a part that lives in competence, reaction, and momentum. Character actors who like crisp, functional authority will fit it well."
+      },
+      {
+        "name": "Felix Reyes",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Operative",
+        "hook": "Reyes brings a rougher, more streetwise texture to the Phoenix crew, giving the team a little friction and personality. He’s the kind of operative who makes the unit feel lived-in rather than generic.",
+        "why_actor_wants_this": "This is the sort of role that gives an actor the compact swagger of Michael Peña in an ensemble thriller — quick, specific, and memorable in limited space. Supporting players who can make a small part feel textured will want it."
+      },
+      {
+        "name": "Anna Salazar",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s",
+        "hook": "Anna is a grief-marked civilian presence who gives the conspiracy a human cost. She’s not built as a plot engine so much as an emotional reminder of what the system has already taken.",
+        "why_actor_wants_this": "This is the kind of role that echoes the emotional witness parts in Spotlight or Erin Brockovich — brief but loaded with consequence. Actors who specialize in grounded, affecting dramatic turns will see value in it."
+      },
+      {
+        "name": "Doug Miller",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · Reporter / fixer",
+        "hook": "Miller has the weathered, skeptical energy of someone who has seen enough to know where the bodies are buried. He functions as a connective tissue character between the investigation and the public record.",
+        "why_actor_wants_this": "This is the kind of seasoned-journalist role that recalls Tom Hanks in The Post’s newsroom ecosystem — calm, credible, and essential to the machinery. Veteran character actors who can carry trust and fatigue at once will respond to it."
+      },
+      {
+        "name": "Echo",
+        "role_type": "Supporting",
+        "demographics": "Male or Female · 20s to 40s · Hacker / source",
+        "hook": "Echo is a nervous, high-value source whose fear makes the conspiracy feel immediate and dangerous. The character is built around urgency, secrecy, and the sense that one conversation can change the whole case.",
+        "why_actor_wants_this": "This is the kind of pressure-cooker source role that gives an actor the jittery intensity of a newsroom whistleblower in a political thriller. Supporting players who can make panic feel specific will gravitate to it."
+      },
+      {
+        "name": "Gia Moretti",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · Operative",
+        "hook": "Gia arrives like a professional ghost: efficient, cool, and dangerous, with just enough history to feel like she belongs in the conspiracy’s inner orbit. She’s a late-entry force multiplier who helps turn the endgame into a physical takedown.",
+        "why_actor_wants_this": "This is the kind of late-breaking action role that plays like Rebecca Ferguson in Mission: Impossible’s tactical lanes — competence first, personality second, impact always. Actors who want a sleek, high-functioning operator part will chase it."
+      },
+      {
+        "name": "Pamela Knox",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 50s · U.S. Attorney",
+        "hook": "Knox is polished, exacting, and built to command a courtroom without theatrics. She gives the prosecution real institutional weight and keeps the trial from feeling like a placeholder.",
+        "why_actor_wants_this": "This is the kind of courtroom authority role that lets an actor play the precision of Marcia Clark in American Crime Story without the tabloid baggage. Actors who like legal power and verbal control will want it."
+      },
+      {
+        "name": "Paul Hubbard",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Defense attorney",
+        "hook": "Hubbard is a polished, ruthless courtroom tactician who can make the defense case sound principled even when it’s morally slippery. He’s the kind of lawyer who wins by controlling the frame, not by raising his voice.",
+        "why_actor_wants_this": "This is the showcase lane of John Lithgow in courtroom mode — elegant, dangerous, and verbally agile. Veteran actors who love argument as performance will be drawn to it."
+      },
+      {
+        "name": "Judge Sylvia Garfield",
+        "role_type": "Supporting",
+        "demographics": "Female · late 50s to 60s · Federal judge",
+        "hook": "Garfield is measured, unflappable, and quietly authoritative, the kind of judge who can hold a room with a single line. She gives the courtroom sequences a credible center of gravity.",
+        "why_actor_wants_this": "This is the kind of judicial role that lets an actor play the cool authority of Kathy Bates in a legal drama without needing big speeches. Seasoned character actors with command and restraint will fit it well."
+      },
+      {
+        "name": "Betty Langston",
+        "role_type": "Supporting",
+        "demographics": "Female · 80s",
+        "hook": "Betty looks like family history and political memory in one body: sharp, funny, and more dangerous than she first appears. The final reveal turns her into a quiet keeper of the story’s deepest secrets.",
+        "why_actor_wants_this": "This is the kind of late-reveal elder role that gives an actor the sly authority of Jane Alexander in a prestige drama. Veteran actresses who can play warmth and hidden agenda at once will love it."
+      },
+      {
+        "name": "Rafael Ramos",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Former special ops",
+        "hook": "Ramos is a disciplined witness whose military background makes him credible inside Phoenix and uneasy outside it. He’s a useful bridge between the operational and moral sides of the story.",
+        "why_actor_wants_this": "This is the kind of testimony role that recalls the grounded military credibility of actors in Zero Dark Thirty-style ensembles. Performers who can project competence and conflicted loyalty will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a prestige political thriller with action teeth and courtroom payoff.",
+        "fit_profile": "Established indie or mid-budget thriller directors with at least one or two features, or TV directors/showrunners moving into features, who are comfortable balancing dialogue-heavy institutional scenes with controlled violence. The sweet spot is a filmmaker who cares about power systems, procedural tension, and performance-forward suspense rather than spectacle for its own sake.",
+        "detail": "The material rewards clean cross-cutting between offices, safe houses, and courtrooms, plus a steady hand on ensemble blocking and escalation. It’s especially attractive to directors who can make legal and political language feel like action."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M feature",
+        "lane": "Prestige political thriller / adult conspiracy lane",
+        "detail": "The movie can be packaged around one strong female lead, one strong male counterweight, and a marquee antagonist, so it does not require a giant ensemble to function. The contemporary Washington/New York conspiracy lane has durable streamer and festival-to-platform value, and the courtroom frame gives it a clean marketing hook."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle act leans on repeated briefing scenes.",
+        "detail": "Several sequences restate the same Phoenix facts in offices, apartments, and conference rooms. A next pass could protect the momentum by letting one or two of those exchanges turn on a new revelation or a sharper personal choice, so the information arrives through conflict rather than repetition.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The conspiracy could use one more emotional anchor.",
+        "detail": "The plot engine is strong, but the grief and personal cost mostly sit behind the investigation rather than driving it in the foreground. One lever would be to let a single relationship — Sharma and her family, Barbara and Brian, or Corbin and his home life — carry a more visible emotional turn that deepens the stakes without changing the plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad but manageable.",
+        "detail": "The script moves through New York, Washington, a consulate, courtrooms, safe houses, warehouses, apartments, and street exteriors. The version of the movie where a few of the office interiors are consolidated would protect the scale while trimming company moves and simplifying the shoot.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The courtroom stretch is a major selling point.",
+        "detail": "The trial gives the movie a public climax and a clear trailerable frame, but it also asks the audience to track a lot of testimony and legal positioning. A next pass could sharpen the sequence by making each witness reveal one distinct piece of the moral argument, so the courtroom feels like escalation rather than recap.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final reveal opens a sequel-shaped door.",
+        "detail": "Betty’s closing phone call and the serpent bookmark suggest the conspiracy reaches deeper than the apparent takedown. If the goal is a self-contained feature, that ending can stay as a sting; if the goal is franchise potential, the next version could more clearly define the next layer without losing the current payoff.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 68.3,
+  "tier": "Optionable",
+  "inputTokens": 33556,
+  "outputTokens": 5742,
+  "cost": 0.051005999999999996,
+  "declaredFormat": "Feature film"
+}

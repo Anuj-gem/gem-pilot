@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:09:43.092Z",
+  "submission_id": "1fa7ff14-49b4-452a-97cc-3635cd320103",
+  "eval_id": "e4d490d9-ab8c-4fad-a841-d4a57c0aa8b3",
+  "title": "Who Lukas Kendall 4 8 26",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Ava / Madison",
+      "role_type": "Lead",
+      "demographics": "Female · 16-17 · teen girl body / later revealed as Madison, a child body"
+    },
+    {
+      "name": "June",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · blue-collar mother"
+    },
+    {
+      "name": "David",
+      "role_type": "Lead",
+      "demographics": "Male · 90s body / adult male consciousness"
+    },
+    {
+      "name": "Priscilla",
+      "role_type": "Supporting",
+      "demographics": "Female · late 40s"
+    },
+    {
+      "name": "Jamieson",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Mills",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Wilma",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Liam",
+      "role_type": "Supporting",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female · 16-17"
+    },
+    {
+      "name": "Christy",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "Wolcott",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Eric Huntington",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Murray",
+      "role_type": "Supporting",
+      "demographics": "Male dog"
+    }
+  ],
+  "positioning_hook": "A bullied Midwestern teen discovers she’s a shapeshifting lab experiment and must outrun a corporate manhunt before her stolen identity becomes the company’s next billionaire face.",
+  "cost_usd": 0.0551745,
+  "input_tokens": 41598,
+  "output_tokens": 5328,
+  "status": "wrote:leads_ok"
+}

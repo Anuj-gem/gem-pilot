@@ -1,0 +1,347 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic dramedy",
+      "genre_tags": [
+        "ensemble",
+        "coming-of-age",
+        "dark comedy"
+      ],
+      "tone": "Playful, horny, literate, and emotionally bruised; buoyant banter gives way to sharper romantic and identity stakes."
+    },
+    "positioning_hook": "In Houston’s bar-and-art scene, a drifting bartender and a frustrated audiobook narrator chase love, identity, and ambition until a jealous ex-friend turns their messy romance into a hostage nightmare.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear, sellable emotional promise: sexy young-adult romance, friendship chemistry, and a violent turn that spikes the stakes. The Houston setting, art-world texture, and pop-culture banter broaden the appeal beyond a standard relationship comedy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early through Carter, Taryn, Ali, and Joshua, and the story engine is easy to track once the escape-room-to-art-bet-to-abduction chain begins. The opening movement is more mosaic than clean setup, but the central collision becomes unmistakable."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Carter and Taryn are vivid, contradictory, and actor-friendly: he’s a charming slacker with real romantic instinct, she’s a self-doubting narrator whose voice is her livelihood. Ali and Joshua add a strong male-bonding axis, and the family ensemble gives the leads a social world that can carry the feature."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific comic language, mixing literary quotation, horny banter, art-world pretension, and sudden menace. The tonal swing from flirtation to kidnapping to romantic musical payoff is audacious and distinctive."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps generating fresh turns: the bar meet-cute, the escape room, the art bet, Joshua’s reveal, the family dinner, the party-store emergency, and the final airport/party chase. A few stretches lean on conversation and social texture more than forward drive, but the escalation keeps paying off."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A Houston-set romantic ensemble that moves from bar flirtation to art-world self-invention to a revenge kidnapping is not a common lane. The script feels like it found its own ecosystem rather than borrowing one."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Houston is rendered with real specificity: bars, Montrose, the Menil, real estate, the family restaurant, the convention center, and the city’s social mix all feel lived-in. The art and music worlds are not wallpaper; they actively shape how the characters talk, compete, and define themselves."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually identifiable: flirtatious, self-aware, culturally current, and then suddenly dangerous without losing its comic voice. The script can pivot from a dirty joke to a hostage scene to a romantic duet and still feel like the same movie."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the jokes, the script is about identity, inheritance, commitment, and the pressure to become someone legible to others. The family dynamics, the art-making, and the audiobook material all suggest a deeper emotional engine that the feature keeps revealing in layers."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Carter/Ali bromance, Carter/Taryn romance, Taryn/Riley friendship, Taryn/Evelyn sister dynamic, and the Reese family all generate distinct energy. Multiple pairings can carry scenes on their own, which gives the feature a strong ensemble feel rather than a single-track romance."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Young adult ensemble in the 20s",
+          "One older family ensemble in the 50s",
+          "Specific ethnic/cultural identity for Ali and the Reese family is materially present",
+          "Joshua requires a performer who can pivot from comic charm to menace"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with a moderate exterior component",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Houston-area locations including bars, homes, museum, restaurant, condo sales office, party store, blood truck, hotel, airport, and school exterior",
+          "Escape room set",
+          "Art studio and recording studio spaces",
+          "Restaurant and convention center event spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "A few stylized transitions, aspect-ratio shifts for social media and TV, and the car impact sequence at the school would benefit from controlled effects and editorial support.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Car crash into school wall, physical struggle/abduction beats, blood donation accident aftermath, and chase movement through streets and alleys.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Donald Glover, Tyla, Billie, Finneas, Frank Ocean, Conor McGregor, Bruce Lee, Drake, Lil Uzi Vert, Lil Yachty, Kodak Black, Iverson, and other named public figures are referenced in dialogue or scene action."
+        },
+        {
+          "type": "named_music",
+          "detail": "The script references and/or uses 'Always Yours,' the XXL Freshman Cypher, and multiple named songs/albums including 17, The Life of Pablo, Goodbye & Good Riddance, Luv is Rage 2, and Whole Lotta Red."
+        },
+        {
+          "type": "brand",
+          "detail": "BMW, Uber, PS5, G-Shock, Dior Sauvage, Supreme, Off-White, Solo cups, and other brands are featured prominently."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Point Counter Point, Incidents in the Life of a Slave Girl, Jane Eyre, William Blake, and the audiobook/recording context may require clearance depending on usage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium theatrical indie-comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release with strong festival-to-platform potential; the hook is character chemistry, tonal swing, and a music/art-world hook that can travel well."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary, but the school crash, chase material, multiple company moves, and event-night sequences push it above a microbudget footprint."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The four young leads plus the Reese family and several principal supporting roles require a lively ensemble, but there is no star-dependent premise."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through many distinct Houston locations, plus a school, airport, hotel, restaurant, museum, and event spaces."
+        },
+        "content": {
+          "level": "high",
+          "note": "Sexual dialogue, nudity, drug use, profanity, a kidnapping, and a car crash into a school all narrow the content lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is full of named public figures, brands, songs, albums, and literary works that would need careful clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Houston feels like a character.",
+          "what_it_means": "The script has a real regional identity, which gives buyers a fresh setting that is specific without being niche. That kind of place-based texture is attractive to indie financiers, streamers looking for voice, and directors who want a city they can actually stage around.",
+          "evidence": "Bars off Bremond and Bagby, Montrose, the Menil, Greenway Plaza, Westheimer, the Albion at Sunset, and the family restaurant all recur as lived-in anchors.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Carter/Taryn chemistry is immediate.",
+          "what_it_means": "The movie has a built-in romantic engine that can sell on banter, attraction, and emotional friction before it ever needs plot mechanics. That gives casting a real lane for charismatic young leads and makes the project attractive to buyers who want a relationship movie with heat.",
+          "evidence": "Their first exchange at the bar, the 'buttery nipples' bit, the later jealousy fight, and the final hood-of-the-car duet all track the same spark.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ali and Joshua give the film a dark spine.",
+          "what_it_means": "The abduction/revenge thread turns the movie from a flirt comedy into something with real jeopardy, which expands the audience beyond pure romance. That tonal turn gives the project a hook for buyers who want a comedy that can suddenly bite.",
+          "evidence": "Joshua’s reveal, the plastic-wrap captivity, the car ride to Derza High, and the school crash sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The art-world material is playable, not precious.",
+          "what_it_means": "The script makes art feel social, competitive, and funny instead of rarefied, which helps the movie stay accessible while still feeling cultured. That balance is useful for festival programmers, prestige-minded streamers, and actors who want a role with taste and edge.",
+          "evidence": "The escape-room symphony hunt, the art competition, Carter’s 'hangman' piece, and the convention-center gallery scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Taryn’s audiobook life gives the film a signature voice.",
+          "what_it_means": "The narration and literary quotations create a sonic identity that separates the script from standard indie romance. That makes the project especially attractive to buyers who respond to writerly voice and to performers who can handle language as a dramatic instrument.",
+          "evidence": "The opening and closing narration, the Point Counter Point booth scenes, and the Incidents in the Life of a Slave Girl nomination thread.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating new pairings.",
+          "what_it_means": "This is not a two-hander that lives or dies on one relationship; it has a social web that can sustain a feature and make the world feel bigger than the plot. That helps with casting, marketing, and the sense that every scene can produce another memorable combination.",
+          "evidence": "Carter/Ali, Carter/Taryn, Taryn/Riley, Taryn/Evelyn, Evelyn/Tender, and the Reese parents all create distinct scene chemistry.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tonal swing is bold and controlled.",
+          "what_it_means": "The script can pivot from raunchy comedy to menace to sincerity without losing its voice, which is exactly the kind of tonal confidence that gets attention in the marketplace. Buyers looking for something that feels authored rather than generic will notice that immediately.",
+          "evidence": "The bar flirtation, Joshua’s kidnapping, the family dinner, the blood-truck emergency, and the final musical confession all coexist in one movie.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a Houston-set romantic ensemble with a real point of view: sexy, literate, and funny enough to keep you leaning in, then dark enough to surprise you. The script gives producers a fresh city, a castable young quartet, and a tonal lane that can play both festival and streamer without feeling like a compromise."
+    },
+    "lead_characters": [
+      {
+        "name": "Carter Pusset",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s · handsome, working-class Houston bartender",
+        "hook": "Carter is a flirt with a salesman’s instinct and a slacker’s discipline: goofy, charming, and more emotionally perceptive than he first appears. He talks like he’s improvising his life, but the script keeps revealing a real romantic intelligence and a surprising seriousness about art, identity, and commitment.",
+        "why_actor_wants_this": "This is the showcase territory of Glen Powell in *Top Gun: Maverick* crossed with the emotional looseness of a Jesse Eisenberg-type romantic lead — a fast-talking guy whose charm is the performance and whose sincerity lands underneath it. Actors who want a role that lets them play comic seduction, male insecurity, and late-blooming self-definition in one package will chase this."
+      },
+      {
+        "name": "Taryn Reese",
+        "role_type": "Lead",
+        "demographics": "Female · mid-20s · audiobook narrator / aspiring artist-adjacent Houston social striver",
+        "hook": "Taryn is all voice, surface, and self-questioning until the script lets you hear the ache underneath. She’s funny, observant, sexually alive, and deeply unsure of her own value, which makes her feel like a real young woman trying to narrate herself into existence.",
+        "why_actor_wants_this": "This is the showcase space of Rachel Sennott in *Shiva Baby* or Jenny Slate in *Obvious Child* — a woman whose wit is inseparable from panic, desire, and self-judgment. It gives an actress a role that can play comedy, sensuality, vulnerability, and self-reinvention without ever flattening into a type."
+      },
+      {
+        "name": "Ali Khalid",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s · Arab-American artist / museum worker",
+        "hook": "Ali is the earnest center of the film’s art-world thread: disciplined, idealistic, and quietly wounded by the gap between his ambition and his life. He’s the one character who treats art like a calling, and that seriousness gives the movie a moral and emotional counterweight to Carter’s chaos.",
+        "why_actor_wants_this": "This is the showcase lane of Riz Ahmed in *Sound of Metal* or Himesh Patel in *Yesterday* — a thoughtful lead whose interior life is expressed through work, restraint, and sudden emotional exposure. It’s a strong part for an actor who can make intelligence feel lived-in and turn quiet hurt into momentum."
+      },
+      {
+        "name": "Joshua Cohen",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s · Jewish Houston bartender / drug dealer",
+        "hook": "Joshua starts as comic relief and then reveals himself as the film’s most volatile force: wounded, theatrical, and capable of turning intimacy into punishment. He’s funny, culturally specific, and frightening in a way that feels personal rather than generic, which makes him memorable long after the plot turns.",
+        "why_actor_wants_this": "This is the kind of role Adam Sandler had in *Uncut Gems* — a charismatic, manic presence whose charm and menace are inseparable. Actors who want to weaponize likability and then flip it into danger will see this as a juicy, scene-stealing part."
+      },
+      {
+        "name": "Riley Thomas",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-20s · real estate agent, Taryn’s best friend",
+        "hook": "Riley is the socially fluent one: confident, practical, and just insecure enough to keep her human. She gives the movie a grounded, modern female friendship energy and functions as the kind of friend who can sell a house, read a room, and still get emotionally rattled by a text.",
+        "why_actor_wants_this": "This is the best-friend territory of Beanie Feldstein in *Booksmart* or Zoey Deutch in *Set It Up* — a role that gets comic timing, loyalty, and a few sharp emotional turns. It’s attractive to actors who want a supporting part with real personality and scene ownership."
+      },
+      {
+        "name": "Evelyn Reese",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s · model / older sister",
+        "hook": "Evelyn is polished, observant, and quietly competitive, with the kind of ease that makes other people reveal themselves around her. She’s the sister who seems to have it together, which gives her a useful contrast to Taryn’s uncertainty and makes the family scenes feel socially alive.",
+        "why_actor_wants_this": "This is the polished-sister slot of a performance like Sarah Snook in *Predestination* or Molly Gordon in *The Bear* when she’s playing charm with an edge — a role that lets an actor project ease while keeping the audience guessing what she really wants. It’s a strong supporting showcase for someone who can make composure feel active."
+      },
+      {
+        "name": "Tender",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · famous musician",
+        "hook": "Tender is the glamorous outsider who still feels oddly domestic: a star with manners, taste, and a very specific emotional agenda. He’s less a celebrity cameo than a pressure point inside the Reese family, and that makes him useful as both fantasy and threat.",
+        "why_actor_wants_this": "This is the polished, magnetic guest-star energy of André 3000 in *High Life* or Donald Glover in a prestige dramedy moment — a role that lets an actor play charisma, control, and romantic authority in a few scenes. It’s ideal for a recognizable face who can elevate the family dinner and the album-party sequence instantly."
+      },
+      {
+        "name": "Olivia Reese",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · mother / bookbinder",
+        "hook": "Olivia is the family’s emotional ballast, but she’s not soft; she’s funny, nosy, and spiritually literate in a way that keeps the house from feeling generic. Her bookbinding and Blake quotations give the film a maternal intelligence that quietly frames Taryn’s self-doubt.",
+        "why_actor_wants_this": "This is the warm-but-sharp mother role of Patricia Clarkson in *Sharp Objects* or Catherine O’Hara in a family dramedy — a part that can be funny, intimate, and quietly authoritative. Character actresses who can make a house feel like a worldview will be drawn to it."
+      },
+      {
+        "name": "Simon Reese",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · chef / restaurateur",
+        "hook": "Simon is the kind of father who communicates through food, standards, and dry commentary rather than speeches. He gives the Reese household a professional, high-functioning texture and helps make the family world feel materially specific.",
+        "why_actor_wants_this": "This is the father role of a Brian Cox or Jeffrey Wright type in a family ensemble — a man whose authority comes from competence and presence more than sentiment. It’s a strong part for an actor who can make a few scenes feel like the spine of the house."
+      },
+      {
+        "name": "Ima Myer",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s/30s · painter",
+        "hook": "Ima is the seductive art-world outsider: calm, direct, and confident enough to make Taryn feel seen without overexplaining himself. He’s a useful counterpoint to Carter because he offers Taryn a different kind of attention — less banter, more gaze.",
+        "why_actor_wants_this": "This is the painter role of a soft-spoken indie lead in the Paul Mescal / Joe Alwyn lane — a part that lets an actor play sensuality, restraint, and artistic authority. It’s attractive to someone who wants to be the object of attention without becoming a stock seducer."
+      },
+      {
+        "name": "Dorothy",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · literary agent",
+        "hook": "Dorothy is brisk, worldly, and just indulgent enough to feel like she’s been in the business long enough to know how the game works. She gives Taryn a professional ally who can translate the literary world into something human.",
+        "why_actor_wants_this": "This is the agent role of a Laura Linney or Carrie Coon type — quick, dry, and capable of making industry talk feel like character. It’s a compact but flavorful part for an actor who can land authority in a few lines."
+      },
+      {
+        "name": "Willow Floss",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s/40s · museum director / art buyer",
+        "hook": "Willow is sharp, impatient, and socially fluent, the kind of woman who can move from domestic irritation to professional judgment without changing her posture. She helps define the art-world stakes and gives Carter a buyer-side audience to perform for.",
+        "why_actor_wants_this": "This is the crisp, high-status supporting role of a Rebecca Hall or Parker Posey type — a woman who can be funny, exacting, and slightly intimidating in the same breath. It’s a great part for an actor who enjoys playing taste as power."
+      },
+      {
+        "name": "Rob Floss",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s/50s · painter / public-facing artist",
+        "hook": "Rob is the performative artist who knows how to turn politics, taste, and self-mythology into a brand. He’s funny because he’s both ridiculous and legible, which makes him a useful mirror for Carter’s own art ambitions.",
+        "why_actor_wants_this": "This is the self-serious artist role of a Michael Stuhlbarg or John Early type — a part that lets an actor play vanity, conviction, and comic self-awareness. It’s a scene-friendly supporting role for someone who can make pretension entertaining."
+      },
+      {
+        "name": "Ms. Willow",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s/40s · museum director",
+        "hook": "Ms. Willow is the no-nonsense institutional gatekeeper who makes the competition feel real. She’s a small but useful pressure valve in the art-world scenes, giving the movie a professional authority figure with bite.",
+        "why_actor_wants_this": "This is the kind of compact authority role that character actors love — a few scenes, a strong voice, and a clear point of view. It gives an actor the chance to make institutional power feel specific rather than generic."
+      },
+      {
+        "name": "Elisheva Hammel",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · art advisor",
+        "hook": "Elisheva is polished, reactive, and socially charged, the kind of woman who can turn a gallery conversation into a moral confrontation in seconds. She’s a great example of how the script uses the art world to create friction, not just atmosphere.",
+        "why_actor_wants_this": "This is the sharp, socially loaded gallery role of a Jennifer Jason Leigh or Carrie Preston type — a part that lets an actor play status, offense, and wit in one exchange. It’s ideal for someone who likes dialogue scenes with teeth."
+      },
+      {
+        "name": "Audrey",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · party store manager / hospital patient",
+        "hook": "Audrey starts as a grumpy retail worker and becomes a comic-emotional pivot after the accident, which gives the movie a strange little grace note. She’s memorable because the script lets her mood change feel like a revelation rather than a gag.",
+        "why_actor_wants_this": "This is the kind of small but juicy role that can play like a miniature character study, similar to the best supporting turns in a Nicole Holofcener film. Actors who enjoy stealing a scene with one tonal turn will like it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sexy, literate ensemble movie with a sudden violent edge.",
+        "fit_profile": "First- or second-feature directors with a strong dialogue reel, or established indie directors who already work comfortably with performance-forward ensemble pieces. The material rewards tonal control, city-specific texture, and the ability to let comedy, romance, and menace coexist in the same frame.",
+        "detail": "The script gives a director room to stage banter, family dynamics, and a late-film chase without needing a giant effects canvas. It will appeal to filmmakers who like character chemistry as the engine and want a movie that can pivot from flirtation to dread without feeling stitched together."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming-friendly indie dramedy with festival upside",
+        "detail": "It can be packaged around four young leads and a strong ensemble without requiring franchise-scale star power, though a recognizable face in the Joshua or Carter role would help open the movie. The Houston setting, art-world hook, and romance-forward tone give it exportable flavor while the contained contemporary footprint keeps it in a buyer-friendly range."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening takes its time finding the engine.",
+        "detail": "The bar flirtation, escape-room bit, and roommate banter are fun, but the movie really locks in once Joshua’s history with Ali and the art bet start driving the plot. A next pass could consider foregrounding the Carter/Taryn/Ali/Joshua collision a little earlier so the audience feels the feature’s central pressure sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle loves conversation more than escalation.",
+        "detail": "Several stretches are built on strong social texture — the family dinner, the art expo, the real-estate scenes — and that texture is a strength. One lever would be to make sure each of those scenes also turns the story a notch, so the momentum keeps compounding while the characters talk.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights list is crowded.",
+        "detail": "The script references many named artists, musicians, brands, and literary works, which is manageable creatively but worth a clearance pass early. A simplification lever would be to preserve the cultural specificity while trimming any references that are doing only atmospheric work.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The school-crash sequence defines the production tier.",
+        "detail": "The BMW impact, crowd reaction, and aftermath push the movie beyond a simple dialogue-driven indie. If a producer wanted to protect budget without changing the story, this is the sequence to design carefully with a contained stunt plan and editorial support.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Taryn’s audiobook thread can carry more dramatic weight.",
+        "detail": "Her narration, studio work, and nomination storyline already give the film a signature voice. One direction would be to keep letting that professional identity collide with her romantic life, because that’s where the script feels most singular and emotionally legible.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76.7,
+  "tier": "Optionable",
+  "inputTokens": 49304,
+  "outputTokens": 6169,
+  "cost": 0.0647385,
+  "declaredFormat": "Feature film"
+}

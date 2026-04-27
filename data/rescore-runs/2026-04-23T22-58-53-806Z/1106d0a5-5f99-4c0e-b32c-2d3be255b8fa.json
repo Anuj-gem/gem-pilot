@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:17:21.367Z",
+  "submission_id": "1106d0a5-5f99-4c0e-b32c-2d3be255b8fa",
+  "eval_id": "ca812f42-4aed-42bd-b4bc-1ec08d3907e0",
+  "title": "Passion Bear The Aboriginal Bear",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Anya",
+      "role_type": "Lead",
+      "demographics": "Female · 12-20s across the script · royal lineage / rebel leader"
+    },
+    {
+      "name": "Elara",
+      "role_type": "Lead",
+      "demographics": "Female · 10s to adult across the script · descendant / scholar / heir"
+    },
+    {
+      "name": "Passion Bear",
+      "role_type": "Lead",
+      "demographics": "Magical teddy bear · ageless · performance/voice or creature-anchored role"
+    },
+    {
+      "name": "Marcus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · authoritarian antagonist"
+    },
+    {
+      "name": "Miriam",
+      "role_type": "Supporting",
+      "demographics": "Female · child · ancient Egyptian setting"
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · mother / farmer / resistance voice"
+    },
+    {
+      "name": "Elara (elder)",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s+ · elder / keeper of lore"
+    },
+    {
+      "name": "Rhys",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · rebel messenger / ally"
+    },
+    {
+      "name": "Elara (young scholar)",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · scholar / archivist"
+    },
+    {
+      "name": "Kael",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · Rizqian fighter"
+    },
+    {
+      "name": "Dr. Aria",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · scientist"
+    },
+    {
+      "name": "Commander Zyrus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · Palionian commander"
+    },
+    {
+      "name": "Vex",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · Terran commander"
+    }
+  ],
+  "positioning_hook": "A princess-turned-rebel on a dying world discovers her childhood teddy bear is an ancient cosmic guardian — and the beacon that will draw an empire to her doorstep.",
+  "cost_usd": 0.0455415,
+  "input_tokens": 29114,
+  "output_tokens": 5268,
+  "status": "wrote:leads_ok"
+}

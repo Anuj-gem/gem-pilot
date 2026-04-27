@@ -1,0 +1,277 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "Thriller",
+        "Body horror"
+      ],
+      "tone": "Heightened, grotesque, suspenseful, darkly playful"
+    },
+    "positioning_hook": "A memory-wiped scavenger on a crashed alien world must repair her ship, survive the planet’s predators, and decide whether the parasitic pregnancy inside her is a curse or a new species’ last chance.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean commercial engine: survival, mystery, body horror, and a pregnancy decision that instantly sharpens the stakes. It plays to genre audiences who want a bold hook and a contained, high-concept ride, though the extremity of the material naturally narrows the lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening pages: Meilin wakes in a crashed ship on an alien planet, with no memory and a body that becomes the story’s ticking clock. The script keeps the engine legible through the ship repairs, the AI dialogue, and the pregnancy reveal, so the premise stays easy to track even as it gets stranger."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Meilin is built around a strong contradiction: feral survival instinct on the outside, vulnerability and identity loss underneath. Sine and Mother give her real opposition and emotional pressure, and the clone reveal adds a second layer of self-confrontation that gives the lead role real actor appeal."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a singular visual and conceptual lane: alien ecology, cloned identity, a non-physical pregnancy, and a civilization-scale reproductive experiment. The repeated death/restart structure and the escalating reveal of the pyramid, Mother, and the clone facility show a writer willing to swing for something unusually specific."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps resetting with new revelations and new survival problems, which gives it a strong forward pull. Each major section adds a fresh objective or threat — ship repair, power restoration, the pregnancy, the pyramid, Mother, the clone wall, the final escape — so the script rarely sits still."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This is the kind of premise that feels strange at first and then locks into place: a cloned woman on an alien world discovers her body is the site of a civilization’s rebirth. The combination of body horror, AI companionship, and metaphysical world-building creates a memorable identity rather than a familiar genre package."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Delta Q-14C is not just backdrop; it behaves like a hostile ecosystem with its own scale, weather, and species hierarchy. The swamp, feather forest, salt flats, pyramid, and cloning facility all feel like distinct zones with story function, which gives the world a real sense of depth and discovery."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: grotesque, operatic sci-fi survival with flashes of absurdity and tenderness. The script can move from insect carnage to intimate AI banter to existential reproductive horror without losing its identity, which is a hard tonal lane to fake."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the survival plot sits a larger meditation on identity, purpose, inheritance, and what it means to choose life. The clone reveal, the Uum/Mu history, and the repeated question of whether Meilin can want the child give the story a deeper emotional afterlife than the monster-action surface suggests."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The core dynamic between Meilin and Sine carries the movie, and Mother adds a strong third point of pressure. The relationships are vivid and playable, but the script is still fundamentally driven by a central triangle rather than a broad ensemble web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Female lead with heavy physical performance demands",
+          "Voice performance for ship AI",
+          "Voice/performance capture for spherical AI antagonist",
+          "Multiple clones of the same adult female character"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "futuristic / far-future",
+        "notable_requirements": [
+          "Alien jungle, swamp, salt flats, mirrored tower, pyramid interior, cloning facility, and spacecraft interiors",
+          "Large-scale creature environments and stylized alien production design"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Multiple giant alien creatures, plasma storms, energy weapons, holographic interfaces, clone-wall imagery, hyperspace travel, and extensive environmental augmentation throughout.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Creature attacks, ship damage, explosions, blood/gore, practical injury makeup, and repeated death/revival beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Autodoc Corp is a named in-world brand."
+        },
+        {
+          "type": "brand",
+          "detail": "Davencorp Enterprises is a named in-world brand."
+        },
+        {
+          "type": "brand",
+          "detail": "Protostar Industries is a named in-world brand."
+        },
+        {
+          "type": "brand",
+          "detail": "Datadyne Space Dock is a named in-world brand."
+        },
+        {
+          "type": "named_music",
+          "detail": "The snow globe plays a specific haunting melody, but no named song is identified."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming theatrical-leaning sci-fi genre lane / premium genre feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or genre theatrical with strong streaming afterlife"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Heavy creature work, multiple alien environments, ship interiors, and extensive VFX-driven world-building push this into a premium genre budget lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The cast is small, but the lead requires intense physical performance and the story depends on distinct AI voices and multiple versions of Meilin."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves through a wide range of alien exterior zones plus multiple large interior set pieces, including the ship, pyramid, and cloning facility."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic creature violence, repeated death imagery, body horror, and explicit pregnancy/abortion material narrow the content lane."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script is largely original and does not depend on real people, licensed music, or external IP."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening drops us into a full alien ecosystem.",
+          "what_it_means": "The script announces its scale immediately, which is exactly what helps a genre buyer understand the movie’s promise in the first pages. Creature-feature fans, VFX-forward producers, and directors who want to build a world from the ground up will respond fast.",
+          "evidence": "Meilin hunting giant spiders in the swamp, the SUV-sized mosquito, the giant tortoises, and the plasma storm all arrive before the story even leaves the planet’s surface.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Meilin is a showcase lead built on contradiction.",
+          "what_it_means": "She can carry action, vulnerability, and identity mystery in the same role, which gives the project a real casting magnet. Mid-career actresses looking for a physically demanding genre lead and reps looking for a breakout vehicle will see the appeal immediately.",
+          "evidence": "She is feral and competent in the jungle, then disoriented in the ship, then forced to confront her own body and memory through the pregnancy reveal and clone discovery.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sine gives the movie a memorable second lead.",
+          "what_it_means": "The AI companion is not just exposition delivery; he is a personality engine, a comic pressure valve, and eventually an emotional antagonist. Voice talent, performance-capture actors, and buyers who like odd-couple genre chemistry will see a real hook here.",
+          "evidence": "Sine banters, lies, carries Meilin through the sky, argues about purpose, and ultimately becomes central to the moral and survival conflict.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pregnancy premise is the movie’s signature turn.",
+          "what_it_means": "The body-horror angle gives the script a sharp, marketable identity beyond standard survival sci-fi, and it creates a conversation-starting hook for festival and genre audiences alike. Buyers looking for elevated genre with a provocative central dilemma will know exactly what they’re getting.",
+          "evidence": "The Autodoc reveals a non-physical pregnancy, the embryo is tied to plasma and alien life, and the story turns on whether Meilin will abort or accept it.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a real mythic architecture.",
+          "what_it_means": "The pyramid, mirrored tower, Mother, the Mu/Uum history, and the clone facility give the film a sense of ancient design rather than random sci-fi decoration. That kind of layered mythology helps a producer see franchise potential, even if the story remains self-contained.",
+          "evidence": "The hidden pyramid interior, the translated inscriptions, the mirrored reflection world, and the reveal of the civilization’s cloning system all deepen the setting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script keeps escalating with new reveals.",
+          "what_it_means": "Each act turn opens a bigger story than the one before it, which is exactly what keeps a feature from feeling episodic. Genre buyers and audience-facing executives tend to respond to scripts that keep widening the frame without losing the central survival line.",
+          "evidence": "Crash survival becomes ship repair, then pregnancy horror, then ancient civilization discovery, then clone-facility conspiracy, then a final escape and confrontation with Mother.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending leaves a clean launch point.",
+          "what_it_means": "The final move into space gives the movie a satisfying escape valve while preserving the larger mythology, which is useful for both standalone release and future-world thinking. Streamers and genre labels that like high-concept endings with sequel energy will notice that immediately.",
+          "evidence": "Meilin reaches the station after the planet is left behind, with Jade restored and the story ending on forward motion rather than a closed-down epilogue.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a bold, highly visual sci-fi survival feature with a real signature: a memory-wiped woman, a sarcastic AI ally, and a parasitic pregnancy inside a cloned body on a hostile alien world. It has the kind of escalating, conversation-starting premise that can attract genre buyers, festival programmers, and actors looking for a showcase role with teeth.",
+      "headline_alt": ""
+    },
+    "lead_characters": [
+      {
+        "name": "MEILIN WU",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Asian",
+        "hook": "Meilin is a feral survivor with a technician’s hands and a blank spot where her history should be. She is physically fearless, emotionally guarded, and increasingly forced to confront the fact that her body may be carrying the future of an extinct civilization.",
+        "why_actor_wants_this": "This is the showcase territory of Natalie Portman in Black Swan or Jodie Comer in Killing Eve — a role that demands physical precision, psychological fracture, and a constant battle between control and panic. Actors who want a prestige genre lead with action, body horror, and identity collapse all in one part will chase this hard."
+      },
+      {
+        "name": "SINE",
+        "role_type": "Lead",
+        "demographics": "Male-presenting voice/performance · ageless AI · spherical robotic body",
+        "hook": "Sine is a fast-talking, emotionally volatile artificial intelligence with a salesman’s confidence and a survivor’s desperation. He is funny, manipulative, loyal, and wounded, with a growing need to define himself outside the mission he was built to serve.",
+        "why_actor_wants_this": "This is the showcase territory of Alan Tudyk in Rogue One or Paul Bettany in WandaVision — a performance where voice, timing, and emotional shading do the heavy lifting inside a highly designed character. Actors with strong vocal identity and motion-capture appeal will see a rare chance to create a memorable sci-fi companion role."
+      },
+      {
+        "name": "MOTHER",
+        "role_type": "Lead",
+        "demographics": "Female voice/performance · ageless AI · large spherical robotic body",
+        "hook": "Mother is the cold, maternal intelligence at the center of the pyramid, built to preserve a species and increasingly willing to override morality to do it. She speaks with calm authority, but underneath that composure is a fanatical certainty that makes her feel both sacred and terrifying.",
+        "why_actor_wants_this": "This is the showcase territory of Tilda Swinton in Suspiria or Rebecca Ferguson in Dune — a role that turns stillness, command, and ideological conviction into menace. A performer who wants to embody an iconic sci-fi antagonist with mythic scale will be drawn to it."
+      },
+      {
+        "name": "NEW MEILIN",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Asian",
+        "hook": "New Meilin is the younger, more naive clone who becomes the living proof of Mother’s plan. She is curious, frightened, and emotionally open in a way that throws Meilin’s hardened survival instinct into sharper relief.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in The Lovely Bones or Florence Pugh in Midsommar — a role that lets an actor play innocence, confusion, and dawning self-awareness under extreme pressure. It gives a performer the chance to make a clone feel like a fully separate soul, not just a duplicate."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a creature-heavy sci-fi feature with emotional intelligence and a strong visual mythology.",
+        "fit_profile": "First- or second-feature directors with festival shorts or an indie genre feature behind them, especially those who already think in terms of world rules, creature geography, and performance-forward suspense. This material rewards someone who can stage large-scale alien spectacle while keeping the camera locked on a human dilemma.",
+        "detail": "The movie gives a director a chance to build a signature world — swamp, salt flats, pyramid, clone chamber, plasma storm — without needing a sprawling ensemble. It also offers a rare balance of action, body horror, and emotional sci-fi, which is catnip for directors trying to prove they can handle both scale and intimacy."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M premium genre feature",
+        "lane": "Streaming-first sci-fi thriller with theatrical genre upside",
+        "detail": "The cast is small enough that the project can be anchored by one strong lead and two voice/performance-capture roles, which helps packaging stay focused. The alien-world setting, creature work, and body-horror hook give it exportable genre appeal and a clean pitch for streamers that buy elevated sci-fi with a strong visual identity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening is built as a pure survival gauntlet.",
+        "detail": "The spider/mosquito/tortoise sequence is a strong launch, and the movie’s identity is already clear there. A next pass could consider how much of that opening energy should be preserved before the ship mystery takes over, so the audience feels the same propulsion once the story shifts indoors.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The clone reveal is the story’s deepest engine.",
+        "detail": "The wall of Meilins, the repeated death loops, and the final confrontation with Mother all point to a bigger emotional engine than the survival plot alone. One direction would be to foreground a little more of that identity pressure earlier so the later reveals feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The middle leans hard on repeated reset beats.",
+        "detail": "The repeated death/revival structure is part of the concept’s identity, but a future pass could vary the emotional turn inside each loop so each reset reveals something new rather than simply re-staging the same crisis. That would keep the momentum feeling cumulative instead of cyclical.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The creature and environment footprint is ambitious.",
+        "detail": "The script asks for giant spiders, mosquitos, centipedes, worms, leeches, bats, serpents, and multiple major alien landscapes. A simplification lever would be to let a few signature creatures carry more of the threat language so the production can preserve scale without needing every species to be fully realized at the same level.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The AI dialogue carries a lot of the exposition load.",
+        "detail": "Jade, Sine, and Mother all do important world-building work through dialogue, which keeps the story legible but also makes those exchanges structurally important. A next pass could look for places where a visual discovery can arrive a beat before the explanation, so the dialogue lands as confirmation rather than delivery.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The lead role is physically punishing by design.",
+        "detail": "Meilin spends the movie running, climbing, bleeding, drowning, fighting, and repeatedly dying, which is part of the appeal but also a major performance and stunt commitment. That makes the project especially attractive to an actor who wants a full-body genre showcase and to a buyer comfortable building around a demanding central performance.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The final act has franchise-scale mythology.",
+        "detail": "The Mu/Uum history, the cloning facility, and the station ending all suggest a larger universe beyond the movie. A producer could lean into that without changing the script’s self-contained shape, but the current version already gives the world enough depth to support a strong standalone launch.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.3,
+  "tier": "Optionable",
+  "inputTokens": 47198,
+  "outputTokens": 4361,
+  "cost": 0.055023,
+  "declaredFormat": "Feature film"
+}

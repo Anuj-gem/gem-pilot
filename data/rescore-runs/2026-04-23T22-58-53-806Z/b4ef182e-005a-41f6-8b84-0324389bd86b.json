@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-23T23:10:58.175Z",
+  "submission_id": "b4ef182e-005a-41f6-8b84-0324389bd86b",
+  "eval_id": "2379acf9-f160-4c91-991a-cffb82e4d50a",
+  "title": "Nova's Grace",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W",
+      "role_type": "Lead",
+      "demographics": "Male · 40s appearance · ageless mixed-race Black man"
+    },
+    {
+      "name": "Amethyst",
+      "role_type": "Lead",
+      "demographics": "Female · 30s appearance · ageless mixed-race woman"
+    },
+    {
+      "name": "Nova / Estanatlehi",
+      "role_type": "Lead",
+      "demographics": "Female · 20s appearance · mixed Black and Hispanic woman"
+    },
+    {
+      "name": "Abraham Lincoln",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · historical figure"
+    },
+    {
+      "name": "Emma Goldman",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · historical figure"
+    },
+    {
+      "name": "Spirit Talker",
+      "role_type": "Supporting",
+      "demographics": "Male · 80s · Navajo elder"
+    }
+  ],
+  "positioning_hook": "A shape-shifting Black con man-turned-Union chaplain uses disguise, wit, and impossible nerve to sabotage Confederate counterfeiting, confront the Long Walk, and ask his goddess mother for one last favor.",
+  "cost_usd": 0.0366045,
+  "input_tokens": 22460,
+  "output_tokens": 4391,
+  "status": "wrote:leads_ok"
+}

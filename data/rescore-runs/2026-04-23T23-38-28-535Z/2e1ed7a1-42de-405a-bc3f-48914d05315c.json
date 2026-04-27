@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:41:27.089Z",
+  "submission_id": "2e1ed7a1-42de-405a-bc3f-48914d05315c",
+  "eval_id": "88f43f08-2f3b-4e1f-94f3-3d49e22a3273",
+  "title": "Dreams Come True",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Barry Minchkin",
+      "role_type": "Lead",
+      "demographics": "Male · middle-aged · Jewish"
+    },
+    {
+      "name": "Ariel",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · alien humanoid"
+    },
+    {
+      "name": "Milton Birk",
+      "role_type": "Lead",
+      "demographics": "Male · middle-aged"
+    },
+    {
+      "name": "Pony Tate",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Sammi Grant",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Adrian",
+      "role_type": "Supporting",
+      "demographics": "Female · 7 years old"
+    },
+    {
+      "name": "Drexler",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Madge Minchkin",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s"
+    },
+    {
+      "name": "Ike Minchkin",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s-70s"
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Admin Sahib",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Arabian American"
+    }
+  ],
+  "positioning_hook": "A blocked Jewish novelist gets a telepathic alien muse, a blank-slate dream woman, and a deadline to turn his life around before a tabloid host exposes her on live TV.",
+  "cost_usd": 0.04980825,
+  "input_tokens": 36741,
+  "output_tokens": 4945,
+  "status": "wrote:leads_ok"
+}

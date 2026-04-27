@@ -1,0 +1,348 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Mystery",
+        "Psychological"
+      ],
+      "tone": "Grounded, reflective, bittersweet, with light comedic fish-out-of-water beats"
+    },
+    "positioning_hook": "A 1999 suburban executive wakes up in 2009 with ten missing years, forcing him to confront the marriage, career, and moral choices he can’t remember making.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clean emotional promise: a man trying to recover a lost decade while his family and identity have moved on without him. It plays to adult drama audiences and prestige buyers, though the appeal is more intimate than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening pages when Tim sees the date, the flat-screen TV, and the changed world around him. The story engine is easy to explain in one sentence and keeps tightening as the missing years become personal."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Tim is built as a likable, self-satisfied man whose confusion slowly reveals regret, tenderness, and denial, which gives the role a strong arc. Nancy, Steve, Jean, and Josh each add a distinct relational pressure, though Tim remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script uses a familiar amnesia setup, but the decade-jump and the specific suburban-corporate texture give it a cleaner emotional lane than a standard mystery. The boldest choice is making the central question less about 'what happened' than 'who did I become.'"
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The opening discovery is strong and the office/bar/doctor sequence keeps the premise moving, but the middle leans on repeated confirmation beats as Tim asks the same question through different mouths. The final reveal of the parking-lot accident gives the story a meaningful payoff."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script turns a memory-loss premise into a moral reckoning about marriage, work, and a buried accident, which makes the concept feel more human than procedural. The 1999-to-2009 contrast also gives the story an immediate cultural before-and-after hook."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The suburban home, partner-level office culture, valet garage, bar, clinic, and library all feel like parts of one social ecosystem with status codes and habits. The details of old vs. new technology, workplace hierarchy, and family routines make the world feel lived-in."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends midlife comedy, domestic discomfort, and psychological unease in a way that stays recognizable throughout. Tim’s confusion over coffee makers, GPS, and internet culture gives the script a specific comic texture that sits alongside the emotional material."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The script keeps revealing that the memory loss is tied to guilt, emotional distance, and a buried accident, so the surface premise opens into something larger. The marriage scenes and the final flashback suggest a deeper emotional history than the initial setup advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Tim/Nancy is the core engine, and Steve, Jean, Josh, Jacob, Julie, and Ethan each add useful pressure around him. The ensemble is functional and story-generating, though most relationships still orbit Tim rather than generating fully independent storylines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One lead male in his late 30s/40s",
+          "One lead female in her 30s/40s",
+          "Teen daughter",
+          "Child son",
+          "Adult children and a baby/grandchild",
+          "Supporting roles include office colleagues, doctor, receptionist, valet, and bar patrons"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with some exterior driving, parking, and street scenes",
+        "period_or_contemporary": "Contemporary with 1999 and 2009 time-specific details",
+        "notable_requirements": [
+          "Suburban house",
+          "Office building and executive office",
+          "Bar",
+          "Medical clinic",
+          "Psychologist office",
+          "Public library",
+          "Parking garage",
+          "Freeway/driving inserts",
+          "Flashback parking lot and hospital maternity floor"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX beyond simple title/insert-style storytelling devices.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical driving beats, vehicle movement, and a bicycle impact flashback.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "L.A. Kings jersey, Land Rover, Porsche, XM radio, Google, Sham-Wow, Rogaine, Perrier, Evian, Def Leppard, Oldies 104.7"
+        },
+        {
+          "type": "real_person",
+          "detail": "Bradley Cooper is referenced by name in a TV segment."
+        },
+        {
+          "type": "real_person",
+          "detail": "Ken Griffey Jr. is referenced by name in dialogue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The song lyric/reference 'A Beautiful Day in the Neighborhood' is used in dialogue and may require clearance depending on usage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming drama or limited theatrical indie",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or limited theatrical with strong adult-drama positioning"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary interiors, a few driving scenes, and no VFX-heavy set pieces keep the budget footprint contained."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a credible lead in the Tim role plus a solid supporting adult ensemble and child/young-adult family casting."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through a house, office, bar, clinic, psychologist office, library, garage, and flashback locations, but all are manageable contemporary spaces."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material is emotionally mature but stays largely within dialogue-driven domestic and workplace scenes."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses several named brands and public figures, plus a recognizable song lyric reference in dialogue."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns memory into moral suspense.",
+          "what_it_means": "This gives buyers a clean emotional engine: a man is not just trying to remember his life, he is trying to find out who he became while he was gone. That combination of mystery and regret is attractive to prestige streamers and actors who want a role with both plot and interiority.",
+          "evidence": "Tim wakes in 2009 believing it is 1999, then learns he has lost a decade and may have had an affair and a damaged marriage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tim is a showcase role built on contradiction.",
+          "what_it_means": "The part lets an actor play smug, funny, frightened, romantic, and ashamed in the same frame, which is exactly the kind of arc that can anchor a festival-facing drama. Mid-career leads looking for a reinvention role will see the appeal immediately.",
+          "evidence": "He starts as a confident suburban partner, then fumbles through coffee makers, GPS, and office etiquette while slowly confronting his own emotional absence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The 1999-to-2009 contrast is instantly legible.",
+          "what_it_means": "The decade jump gives the script a built-in visual and cultural hook without needing a huge concept explanation. That makes the material easy to market in a trailer, a thumbnail, or a one-line buyer pitch.",
+          "evidence": "Tim confronts flat screens, Google, Sham-Wow, XM radio, hybrid cars, Bluetooth, and a changed workplace culture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family scenes carry real emotional commerce.",
+          "what_it_means": "The script is not only a mystery; it is a marriage-and-family drama with a clear audience for adult viewers who respond to domestic stakes. Nancy, Jacob, Julie, and Ethan create a home-life pressure cooker that gives the story heart, not just premise.",
+          "evidence": "Dinner-table banter, the spare-room argument, the grandchild visit, and the late-night confrontation all deepen the domestic stakes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The office world has status and behavior baked in.",
+          "what_it_means": "The partner-level corporate setting gives the script a social ladder, workplace rituals, and a built-in class dynamic that can sustain scenes beyond the central mystery. That makes it appealing to buyers who like adult workplace drama with recognizable hierarchy and bite.",
+          "evidence": "Valets, assistants, secretaries, partners, and the Smithson/Sullivan/Gray structure all define Tim’s world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending pays off the mystery with consequence.",
+          "what_it_means": "The final flashback ties the memory loss to a specific accident, which gives the story a satisfying reveal rather than a purely abstract condition. That kind of payoff helps the script land as a complete feature, not just a premise exercise.",
+          "evidence": "The closing reveal shows Tim backing up in the Land Rover and striking a child cyclist, connecting the missing years to a buried trauma.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, actor-forward feature with a built-in hook: a successful suburban husband wakes up ten years out of sync and discovers the life he built may be the reason he disappeared from himself. The script’s real selling point is that it turns a high-concept memory premise into a marriage drama, a workplace satire, and a moral mystery all at once."
+    },
+    "lead_characters": [
+      {
+        "name": "Tim Sullivan",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to early 40s",
+        "hook": "A polished suburban partner who thinks he has life under control until he wakes up in a world that has moved on without him. Tim is funny, vain, defensive, and ultimately vulnerable, with the kind of slow emotional thaw that lets an actor play denial, confusion, charm, and remorse in one role.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic man whose self-mythology slowly gives way to pain and self-recognition. Actors who want a role that starts with comic authority and ends in emotional reckoning will chase this."
+      },
+      {
+        "name": "Nancy Sullivan",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to early 40s",
+        "hook": "Nancy reads as the emotional adult in the room: sharp, affectionate, exhausted, and still capable of surprise. She has the patience of someone who has carried a marriage for years, but the script gives her enough wit and steel to feel like a fully lived-in partner rather than a function.",
+        "why_actor_wants_this": "This is the kind of grounded, layered spouse role that gave Laura Linney in The Savages or Patricia Clarkson in Pieces of April so much quiet force — a woman whose restraint carries the emotional weight of the film. Prestige dramatic actresses who like playing intelligence, hurt, and dry humor in the same scene will be drawn to her."
+      },
+      {
+        "name": "Steve Johnson",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Steve is the loud, lubricated best friend who knows exactly how the system works and enjoys it a little too much. He functions as comic relief, truth-teller, and social mirror, but he also has enough swagger and looseness to feel like the guy who has been getting away with everything for years.",
+        "why_actor_wants_this": "This is the kind of scene-stealing best-friend part that gave Philip Seymour Hoffman in Along Came Polly or John C. Reilly in a dramedy room to riff, charm, and puncture the lead’s self-image. Character actors who can turn a supporting role into a pressure valve will want it."
+      },
+      {
+        "name": "Jean Gordon",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s to 60s",
+        "hook": "Jean is the long-serving assistant who sees through everyone and says exactly enough to keep the office honest. She has the authority of institutional memory, and her dry, no-nonsense presence gives the corporate world a human center.",
+        "why_actor_wants_this": "This is the kind of crisp supporting role that gives an actress the same kind of pleasure Frances McDormand had in a sharp workplace part — a character who can land a line, control a room, and reveal history without speeches. Veteran character actresses will recognize the value immediately."
+      },
+      {
+        "name": "Keith Jerichs",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "Keith is the younger employee who treats Tim like a myth and a threat at the same time. He’s eager, nervous, and socially overclocked, which makes him a useful comic lens on the office hierarchy and Tim’s own status.",
+        "why_actor_wants_this": "This is the kind of anxious junior-role energy that gave Adam Scott in a workplace comedy-drama room a chance to play fear, flattery, and awkward ambition at once. Younger actors who can do fast, nervous, high-status comedy will see the appeal."
+      },
+      {
+        "name": "Dr. Jack Isaacs",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Jack is Tim’s old friend turned doctor, which lets him move between buddy banter and clinical authority without changing his rhythm. He’s casual, smart, and lightly mischievous, the kind of doctor who can deliver bad news and a joke in the same breath.",
+        "why_actor_wants_this": "This is the kind of role that gave Paul Rudd in a dramedy or Bradley Whitford in a smart ensemble scene room to be warm, dry, and slightly dangerous at once. Actors who like playing intelligence with a comic edge will be interested."
+      },
+      {
+        "name": "Josh Strasberg",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Josh is the psychologist who feels more like a patient whisperer than a clinical authority, which makes him approachable and slightly enigmatic. He’s patient, articulate, and quietly theatrical, with just enough eccentricity to keep the audience leaning in.",
+        "why_actor_wants_this": "This is the kind of therapist role that gave Robin Williams in Good Will Hunting or Alan Arkin in a character drama the chance to be warm, observant, and catalytic. Actors who like playing calm intelligence with a hidden emotional current will want it."
+      },
+      {
+        "name": "Stephanie Lorens",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s to early 30s",
+        "hook": "Stephanie is the glamorous temptation who knows exactly what she represents in Tim’s life and uses that power with ease. She is not just an affair figure; she is a living reminder of the version of himself Tim once chose over his marriage.",
+        "why_actor_wants_this": "This is the kind of seductive, emotionally loaded supporting role that gave Rebecca Hall in a relationship drama or Julianne Nicholson in a prestige feature room to be alluring without becoming one-note. Actors who can play intelligence, desire, and wounded pride will chase it."
+      },
+      {
+        "name": "Stan Gray",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Stan is the aggrieved partner whose resentment has curdled into public humiliation and office politics. He brings the story a sharper edge, because his anger suggests a history of betrayal that Tim can’t fully access.",
+        "why_actor_wants_this": "This is the kind of bruised-businessman role that gives an actor the same combustible energy as a prestige workplace antagonist — a man who can be pathetic, threatening, and funny in one scene. Strong character actors who like playing wounded status will want it."
+      },
+      {
+        "name": "Jacob Sullivan",
+        "role_type": "Supporting",
+        "demographics": "Male · 10 years old in 1999 / adult in 2009",
+        "hook": "Jacob is the son Tim remembers as a child and then meets again as a grown man, which gives the role a built-in emotional before-and-after. He’s smart, dry, and more self-possessed than his father, making him a useful emotional barometer for the whole story.",
+        "why_actor_wants_this": "This is the kind of son role that gives an actor the emotional transition space seen in family dramas where the child becomes the adult witness. If cast with a strong young performer and adult counterpart, it offers a clean showcase of generational contrast."
+      },
+      {
+        "name": "Julie Sullivan",
+        "role_type": "Supporting",
+        "demographics": "Female · 15 in 1999 / adult in 2009",
+        "hook": "Julie moves from teenage sarcasm to adult composure, and the script uses that shift to show how much Tim has missed. She’s observant, wry, and emotionally sharper than her father expects, which makes her scenes quietly revealing.",
+        "why_actor_wants_this": "This is the kind of daughter role that gave Saoirse Ronan in a family drama or Kaitlyn Dever in a generational story room to show intelligence and emotional maturity beyond age. Young adult actresses who can play wit and hurt without overplaying either will be drawn to it."
+      },
+      {
+        "name": "Ethan Jones",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "Ethan is the son-in-law who has settled into the family system and knows exactly where the pressure points are. He’s practical, lightly amused, and comfortable enough to needle Tim without fear.",
+        "why_actor_wants_this": "This is the kind of grounded family-support role that gives an actor the same utility as a sharp ensemble son-in-law in a prestige domestic drama — a man who can play ease, irritation, and belonging at once. It’s a clean fit for actors who do naturalistic family comedy well."
+      },
+      {
+        "name": "Randy",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s",
+        "hook": "Randy is the valet who knows the real Tim better than Tim knows himself in the moment. He’s casual, observant, and just cynical enough to puncture the boss’s self-image without losing his job.",
+        "why_actor_wants_this": "This is the kind of sharp, scene-stealing service-role part that gives an actor a compact showcase in the vein of a memorable supporting turn in a workplace comedy-drama. Character actors who can land attitude fast will enjoy it."
+      },
+      {
+        "name": "Sally",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to early 30s",
+        "hook": "Sally is the polished receptionist who makes the psychologist’s office feel expensive, controlled, and slightly seductive. She’s professional but flirtatious enough to register as part of the story’s adult-world texture.",
+        "why_actor_wants_this": "This is the kind of small but vivid role that gives an actress a clean, memorable entrance in the manner of a premium-cable office receptionist with personality. It’s a good fit for performers who can make a few lines feel like a whole world."
+      },
+      {
+        "name": "Betty",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 50s",
+        "hook": "Betty is the clinic nurse who cuts through Tim’s confusion with institutional competence and a little attitude. She gives the medical world a brisk, unsentimental energy that keeps the scenes moving.",
+        "why_actor_wants_this": "This is the kind of efficient, memorable medical-support role that gives an actress the same snap as a strong hospital-nurse part in a character drama. It rewards timing, authority, and dry delivery."
+      },
+      {
+        "name": "Pete",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s",
+        "hook": "Pete is the waiting-room stranger who turns fear into a joke and then into a human connection. He’s there briefly, but he gives the clinic sequence a lived-in, communal texture.",
+        "why_actor_wants_this": "This is the kind of one-scene character part that lets an actor make a quick, memorable impression in the tradition of a great waiting-room monologue or comic aside. It’s ideal for character actors who can make a small role feel specific."
+      },
+      {
+        "name": "Billy",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens to early 20s",
+        "hook": "Billy is the young man in the coma-recovery family whose presence reframes Tim’s own condition. He functions less as a plot mover than as a mirror, giving the story a quiet emotional echo.",
+        "why_actor_wants_this": "This is the kind of symbolic supporting role that gives a young actor a strong, quiet entrance in a prestige drama. It’s a concise part, but it lands with thematic weight."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a midlife identity drama with a clean high-concept spine.",
+        "fit_profile": "Established indie directors with at least one or two features, especially those who work in performance-forward drama and can balance comedy with emotional unease. This material rewards directors who like contained contemporary worlds, precise actor blocking, and scenes that turn on subtext rather than spectacle.",
+        "detail": "The script gives a director a strong tonal balancing act: suburban comedy, marital tension, and a mystery reveal that lands in the final flashback. It’s the kind of feature that lets a director show control over performance, pacing, and emotional reveal without needing a large-scale production canvas."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Prestige indie / streamer adult drama lane",
+        "detail": "The project can be sold off a strong lead performance and a contained contemporary footprint, so it does not need a giant cast or effects package to make sense. The memory-loss hook plus marriage-drama core fits the adult-drama lane that streamers and festival-to-platform buyers still use to fill out their slate."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle repeats the same question in different rooms.",
+        "detail": "A next pass could let each Tim/Josh, Tim/Steve, and Tim/Nancy exchange reveal a different layer of the same truth so the scenes feel cumulative rather than confirmatory. The emotional material is already there; the lever is variation in what each conversation unlocks.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The accident reveal can arrive with more shadow.",
+        "detail": "The final parking-lot flashback is effective, and one direction would be to seed the bicycle image or the quarter-panel ding earlier so the ending feels inevitable before it becomes explicit. That would protect the reveal while giving the audience a stronger subconscious pull through the second half.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand and public-figure references are plentiful.",
+        "detail": "The script uses a lot of named products, services, and public figures, so a production pass could simplify some of those references without changing the story engine. That would make the package easier to clear while keeping the period contrast intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting cast is efficient but Tim carries the load.",
+        "detail": "The version of the script where Jean, Steve, Nancy, and Josh each get one more independent beat of personal agenda would widen the ensemble’s pull. Even a small expansion there would give the feature more rewatch value and more attachment points for casting.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67,
+  "tier": "Optionable",
+  "inputTokens": 39068,
+  "outputTokens": 5660,
+  "cost": 0.054771,
+  "declaredFormat": "Feature film"
+}

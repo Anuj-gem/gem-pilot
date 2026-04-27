@@ -1,0 +1,284 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Gangster drama",
+        "Dark comedy"
+      ],
+      "tone": "Gritty, sardonic, muscular, and character-driven"
+    },
+    "positioning_hook": "A burned-out ex-soldier with a drinking problem talks his way into a Glasgow crime boss’s security crew, then starts spotting the betrayal that nearly got him killed years earlier.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is clear and commercially legible: an ex-soldier, a crime crew, a betrayal, and a recovery arc all sit in a familiar but sellable lane. The appeal is strongest for adult crime-thriller audiences and buyers who like bruised antiheroes, though the very specific regional voice narrows the lane a bit."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The opening assassination attempt, the five-years-later recovery beat, and Knox’s recruitment by Kincaid establish the engine quickly. The script makes its central question easy to track: is Knox being pulled into a job, or back into the same violence that nearly killed him?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Knox has a strong surface contradiction — competent close-protection man, visibly damaged addict, dry comic operator — and Kincaid arrives with real swagger. The supporting players mostly orbit the Knox/Kincaid axis, so the character engine is solid rather than expansive."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The Glasgow dialect, the AA meeting, and the priest-confessional banter give the script a distinct local flavor and a confident comic bite. The underlying crime setup is familiar, but the voice and social texture keep it from feeling generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script moves briskly through the attack, the recovery, the gym, the betting scheme, and the recruitment. It reads like the opening movement of a larger feature engine, with the final hiring beat setting up the next phase cleanly."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A sober ex-security man being folded into a gangster’s operation is a familiar crime premise, but the specific mix of recovery, Scottish banter, and underworld logistics gives it a fresh surface. The idea lands quickly, even if the core engine sits in a recognizable genre lane."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script has a lived-in Glasgow underworld: hotel protection work, a boxing gym, a nightclub office, a confessional, and the language of bookies, debt, and loyalty. Those spaces feel like parts of a functioning ecosystem rather than isolated set pieces."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is sharply defined by hard-edged violence colliding with deadpan, often profane comedy. The AA meeting, the confessional exchange, and Knox’s one-liners give the piece a voice that is easy to identify on the page."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Knox’s sobriety, PTSD history, and the flashback to his son suggest a deeper emotional story beneath the crime plot. The draft hints at that interior life without fully opening it yet, which gives the feature room to deepen as the story unfolds."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The Knox/Kincaid dynamic has real spark, and the gym crew gives the story a working social circle. Still, most relationships are functional to the main plot rather than independently generative, so the ensemble energy is contained."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Scottish accents and dialect are central",
+          "Male lead in 40s-50s with military/security credibility",
+          "Child role in flashback",
+          "Strong supporting roles for crime-world types"
+        ]
+      },
+      "locations": {
+        "distinct_count": 9,
+        "interior_exterior_ratio": "Mostly interior with some exterior night sequences",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Hotel bathroom, lift, and car park",
+          "AA meeting room",
+          "Boxing gym and office",
+          "Nightclub office",
+          "Church confessional",
+          "Street, alleyway, rooftop, and flashback home interior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Night-vision sniper scope and gunfire impacts are the main visual effects elements.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, bullet impacts, fight choreography, and practical blood effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Adult crime-thriller theatrical or premium-streaming lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best suited to a festival-to-platform or limited theatrical release model."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary locations and limited VFX keep it contained, while multiple night exteriors, gunfire, and a fight-heavy crime world push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on two strong male leads and a handful of supporting crime-world roles, with dialect authenticity and a child flashback role adding specificity."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through hotels, a gym, a nightclub, a church, streets, alleys, and a rooftop, with several night setups."
+        },
+        "content": {
+          "level": "high",
+          "note": "Violence, threats, drug and alcohol recovery material, and criminal language define the content level."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named real people, brands, music, or licensed IP are foregrounded in the pages provided."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Knox is built on contradiction.",
+          "what_it_means": "The lead role gives an actor a bruised, funny, physically capable ex-soldier who is also visibly managing addiction and shame, which is exactly the kind of part that can carry a prestige crime feature. Mid-career dramatic leads who want a role with grit, wit, and emotional damage in one package will respond to this immediately.",
+          "evidence": "The hotel-bathroom ritual with the flask, mouthwash, gum, and nebulizer; the AA meeting; the confessional; the final hiring scene where he negotiates terms with Kincaid.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Glasgow underworld feels lived-in.",
+          "what_it_means": "The script has a specific social ecosystem — gyms, bookies, clubs, confessions, and street-level protection work — that gives a producer a world with texture instead of a generic crime backdrop. Buyers who respond to regional authenticity and crime stories with local flavor will see a clear lane here.",
+          "evidence": "The boxing gym, the betting scheme, the nightclub office, and the priest exchange about laundering and “hope.”",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has a sharp comic snap.",
+          "what_it_means": "The banter gives the material a marketable voice that can travel as a crime thriller without feeling tonally flat, and it creates trailer-friendly lines throughout the opening stretch. Directors and actors who like profanity, rhythm, and character comedy inside violence will be drawn to it.",
+          "evidence": "Knox’s exchanges with Kincaid, the AA meeting joke about Maureen, and the confessional back-and-forth about the drug trade and the church.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The opening attack is immediate and cinematic.",
+          "what_it_means": "The hotel-to-car-park ambush gives the feature a clean cold-open engine and signals a movie that knows how to stage action without overexplaining itself. Action-capable directors and buyers looking for a crime hook that starts with blood on the floor will notice this fast.",
+          "evidence": "The lift, the floodlights, the dead bodyguard, Knox’s gun with the safety on, and the double-tap on the vest.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kincaid is a charismatic pressure source.",
+          "what_it_means": "Roddy Kincaid reads as a scene-stealing crime boss with wit, menace, and a code, which gives the project a second role that can attract serious talent. Actors who like swaggering, verbally agile antagonists — the kind that can dominate a room without raising their voice — will chase this.",
+          "evidence": "The confessional scene, the rooftop assassination setup, and the recruitment conversation where he tests Knox and hires him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The recovery angle adds emotional ballast.",
+          "what_it_means": "The sobriety material gives the crime story a human spine and opens the door to a feature that can play as more than just underworld mechanics. Prestige buyers and actors looking for a role with interior stakes will respond to the AA meeting, the priest scene, and the son flashback.",
+          "evidence": "The AA circle, the priest confession, and the black-and-white flashback with Ryan and the magic kit.",
+          "source": "script"
+        }
+      ],
+      "headline": "EXTORTION OPENING has the ingredients of a sharp adult crime feature: a damaged ex-soldier with a comic edge, a magnetic gangster boss, and a Glasgow underworld that feels specific enough to sell on voice alone. It opens with violence, then keeps widening the emotional and criminal pressure, which gives producers a clear lead role, a strong second lead, and a world that can carry a full feature."
+    },
+    "lead_characters": [
+      {
+        "name": "Jack Knox",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Scottish · ex-military / close protection background",
+        "hook": "Knox is a hard-edged, self-mocking survivor whose competence keeps colliding with his damage. He moves like a man who has learned how to read danger before it happens, but every scene also shows the cost: the flask, the sobriety language, the PTSD admission, the guarded way he talks about his past, and the buried grief around his son.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a damaged professional whose wit, physical presence, and private collapse all live in the same frame. Actors want this because it offers a full-spectrum lead: action credibility, verbal snap, and the chance to play a man whose control is always one breath away from slipping."
+      },
+      {
+        "name": "Roddy Kincaid",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Scottish · crime boss / nightclub operator",
+        "hook": "Kincaid is a polished street operator with a priest’s confessional and a gangster’s appetite for leverage. He can be funny, threatening, and oddly reflective in the same breath, which makes him feel like a man who understands both theater and violence as tools.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in a crime drama — a volatile authority figure who can turn a room with language before he ever reaches for force. Actors chase this because it gives them a role with command, unpredictability, and the chance to play intelligence inside menace."
+      },
+      {
+        "name": "Sloane Kincaid",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Scottish",
+        "hook": "Sloane is the sharp-eyed daughter who reads the room faster than the men in it. She is introduced doing accounts, clocking Knox immediately, and carrying herself with the kind of quiet intelligence that suggests she knows exactly how dangerous her family business is.",
+        "why_actor_wants_this": "This is the kind of contained but memorable role that has the cool precision of Jodie Comer in Killing Eve’s early episodes — a character whose intelligence is the point of the performance. Young actors looking for a scene-stealing supporting part with attitude and subtext will be drawn to it."
+      },
+      {
+        "name": "Rab",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · Scottish · gym owner",
+        "hook": "Rab is a worn-down local operator trying to keep a business alive while the money runs out around him. He carries the fatigue of someone who has already seen the bottom line and knows the bank is about to decide his future.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actor the moral center of a small crime world, similar to the weary authority of Brendan Gleeson in In Bruges. Character actors who specialize in lived-in, blue-collar authority will want this because it lets them make pressure feel personal."
+      },
+      {
+        "name": "Danny",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · Scottish",
+        "hook": "Danny is the dry, observant gym regular who functions as Knox’s comic and practical sounding board. He’s the kind of guy who can puncture a speech with one line and still feel like he belongs in the room.",
+        "why_actor_wants_this": "This is the sort of supporting role that plays like the best side characters in The Full Monty — a grounded comic realist who can keep scenes alive without stealing the movie. Actors who excel at rhythm, reaction, and ensemble chemistry will enjoy the part."
+      },
+      {
+        "name": "Terry",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Scottish · boxer",
+        "hook": "Terry is the physical asset in the gym, the man Knox is betting on because his body can do the talking. He’s mostly seen through the lens of his fighting ability, which makes him feel like a weapon the story is trying to point in the right direction.",
+        "why_actor_wants_this": "This is the kind of role that gives a performer a clean physical showcase, similar to the fighter roles in Snatch or Warrior where presence and movement do a lot of the work. Athletic actors or fighters crossing into screen work would be attracted to the visibility of the part."
+      },
+      {
+        "name": "Maureen",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-70s · Scottish",
+        "hook": "Maureen is the comic-tragic voice of the AA meeting, a woman whose life story keeps escalating into absurdity without losing its sadness. She’s vivid, specific, and instantly memorable, with a rhythm that makes the room feel real.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting turn that recalls the best group-meeting characters in The Commitments or Philomena — funny, wounded, and impossible to ignore. Veteran character actresses will chase it because it offers a full personality in a compact space."
+      },
+      {
+        "name": "Counsellor",
+        "role_type": "Supporting",
+        "demographics": "Any gender · 30s-60s",
+        "hook": "The counsellor is the steadying institutional voice in the AA room, trying to keep the meeting on track while the group veers into chaos. The part functions as a calm counterweight to the script’s more combustible personalities.",
+        "why_actor_wants_this": "This is the kind of functional but useful role that gives an actor the straight-man authority seen in support staff roles in The Wire or Spotlight. Character actors who can play calm competence under pressure will fit it well."
+      },
+      {
+        "name": "Barbara",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Barbara is the decoy with a job to do, introduced with enough allure to make the setup feel dangerous and transactional. She’s less a romantic figure than a moving part in Kincaid’s machinery, which gives her a cool, disposable edge.",
+        "why_actor_wants_this": "This is the kind of brief but memorable femme-fatale-adjacent role that can land like the hotel-room turns in classic noir or modern crime thrillers. Actors who like sharp entrances and a single scene that changes the temperature of the room will be interested."
+      },
+      {
+        "name": "Patrick - Priest",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-70s · Scottish · priest",
+        "hook": "Patrick is a priest who can spar verbally with a gangster without losing his footing, which makes him feel worldly rather than pious. He’s wry, unflappable, and smart enough to know that confession is only half the conversation.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dry authority and verbal sparring space of the priest in Calvary or the cleric figures in In Bruges. Character actors who enjoy playing intelligence, irony, and moral friction will want it."
+      },
+      {
+        "name": "Ryan",
+        "role_type": "Supporting",
+        "demographics": "Male · 7 years old",
+        "hook": "Ryan is the emotional ghost inside Knox’s backstory, the child whose presence gives the lead’s private life a human center. Even in a brief flashback, he makes the fatherhood thread feel concrete.",
+        "why_actor_wants_this": "This is a small but important child role that gives the film a memory-image anchor, similar to the child-presence beats in Manchester by the Sea. For a young performer, it’s a simple, emotionally legible part that matters to the lead’s interior life."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage crime with bruised humanity and sharp regional voice.",
+        "fit_profile": "Established indie crime or drama directors with at least one or two features, plus TV directors moving into features who already know how to handle performance-first material. The right fit is someone drawn to grounded violence, dark humor, and a lived-in local world rather than glossy genre spectacle.",
+        "detail": "The material rewards close-framed tension, actor-driven scenes, and a confident ear for dialect and rhythm. It will attract directors who like making underworld stories feel intimate, specific, and emotionally legible rather than broad or procedural."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Adult crime-thriller / prestige genre lane",
+        "detail": "The project can be packaged around two strong male leads and a contained contemporary footprint, so it does not need a large ensemble or heavy VFX to work. The Scottish crime voice and recovery angle give it exportable genre appeal with a distinct regional identity that can travel on streamer or festival-to-platform release paths."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening attack can carry even more story charge.",
+        "detail": "The hotel ambush is a strong cold open, and the version of the sequence where one small visual clue survives the chaos could make the later betrayal feel even more inevitable. That would let the audience carry a single image forward while keeping the action lean and immediate.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Knox’s interior life is already there.",
+        "detail": "The AA meeting, the priest scene, and the flashback to Ryan give the lead a private emotional track; a next pass could let one of those beats land a little earlier in the feature so the crime plot and recovery plot start interlocking sooner. That would protect the movie’s emotional spine without changing the premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting world is efficient and focused.",
+        "detail": "Most of the story lives in a compact set of spaces — hotel, gym, nightclub, church, street — which is a real advantage for a producer. If the feature expands, the cleanest version is one that keeps those locations doing double duty rather than adding new geography.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The dialogue is strongest when it stays in character.",
+        "detail": "The banter between Knox and Kincaid, and the AA/confessional exchanges, are the script’s clearest voice signatures; a next pass could keep that rhythm front and center in any added scenes so the feature stays as quotable as the opening pages. That preserves the script’s identity and helps the movie market itself through performance.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63,
+  "tier": "Optionable",
+  "inputTokens": 15582,
+  "outputTokens": 4753,
+  "cost": 0.033075,
+  "declaredFormat": "Feature film"
+}

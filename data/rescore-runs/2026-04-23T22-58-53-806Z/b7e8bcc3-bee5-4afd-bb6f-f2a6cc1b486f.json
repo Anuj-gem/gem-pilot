@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:19:31.216Z",
+  "submission_id": "b7e8bcc3-bee5-4afd-bb6f-f2a6cc1b486f",
+  "eval_id": "e13319d5-4d19-4a27-a3ca-e93bb302b6e0",
+  "title": "MNG DEC24",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "TIM BLISS",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · sporty, middle-class East London salon owner"
+    },
+    {
+      "name": "JULIET DAVIES",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · widowed, emotionally guarded, attractive, grounded"
+    },
+    {
+      "name": "ANDY",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · stylish business partner, best friend"
+    },
+    {
+      "name": "KATIE",
+      "role_type": "Lead",
+      "demographics": "Female · 17 · schoolgirl"
+    },
+    {
+      "name": "BETHANY",
+      "role_type": "Lead",
+      "demographics": "Female · 15 · schoolgirl"
+    },
+    {
+      "name": "TILLY",
+      "role_type": "Lead",
+      "demographics": "Female · 11 · schoolgirl"
+    },
+    {
+      "name": "LAUREN",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s · salon manager, Andy’s fiancée"
+    },
+    {
+      "name": "HILARY",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · swim partner"
+    },
+    {
+      "name": "SYLVIE",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · swim partner"
+    },
+    {
+      "name": "DANIEL",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-teens · schoolboy"
+    },
+    {
+      "name": "JANET",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · salon customer"
+    },
+    {
+      "name": "DOCTOR JOSHI",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · doctor"
+    },
+    {
+      "name": "NURSE JOYCE",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Afro Caribbean"
+    }
+  ],
+  "positioning_hook": "A middle-aged Walthamstow salon owner and obsessive triathlete advertises for a Monday-night girlfriend, then falls for the woman before his joke can stay a joke.",
+  "cost_usd": 0.052928249999999996,
+  "input_tokens": 37949,
+  "output_tokens": 5437,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Cyber thriller",
+        "Family drama"
+      ],
+      "tone": "Heightened, pulpy, melodramatic, and violent"
+    },
+    "positioning_hook": "A Nairobi hacker is forced into a bank heist to save his framed parents, then discovers the family that raised him is tied to the criminal empire hunting him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean commercial engine: a gifted young hacker, a corrupt bank, framed parents, and a hidden family conspiracy. The appeal is strongest for thriller audiences and viewers who like crime stories with a personal betrayal spine, though the very specific cyber jargon and melodramatic turns narrow the lane a bit."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands clearly once Mr. Berk recruits Mark to steal the Stylet Directory from Seraphic Bank, and the story keeps tightening the pressure with the 50-hour clock, the arrest, and the reveal that the family is inside the conspiracy. The hook is easy to explain in two sentences and the engine is visible early."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Mark has a strong contradiction on the page: socially abrasive, technically brilliant, and emotionally hungry underneath the ego. Tony, Sophie, Jackie, and Bernard each add a distinct flavor, and the family triangle gives the lead role real acting territory, though Mark remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script leans into a Kenyan cybercrime world and a family-run criminal network, which gives it a specific identity. At the same time, the broad beats — gifted loner, corrupt institution, hidden conspiracy, mentor betrayal, final showdown — are familiar thriller architecture."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps escalating through arrests, blackmail, the bank intrusion, Monica’s death, Tony’s apparent death, and the final confrontation with Jackie. The back half is especially propulsive, with clear reversals and a strong forward chase toward the reveal."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The most memorable element is the Kenyan setting fused with cybercrime and a family criminal dynasty. The core emotional and genre mechanics are recognizable, but the local texture and the Regency mythology give it enough distinctiveness to stand apart from a generic hacker thriller."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a usable ecosystem: the Masila household, the legal world through Tony and Sophie, the bank hierarchy, the Regency network, and the police/court apparatus. The world feels story-generating because every institution is compromised or connected to the central conspiracy."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone mixes soap-operatic family conflict, cyber-thriller mechanics, and bursts of brutal violence. That blend is memorable, but it also swings between earnest melodrama, comic banter, and graphic menace in a way that feels more energetic than fully locked."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The script keeps opening new chambers: the missing sister, the parents’ past, the Regency, Tony’s hidden loyalties, and the possibility that Mark’s identity is bigger than he knows. The final reveal that Jackie is the Grand Regent gives the story a strong aftertaste and suggests a larger mythology beneath the surface."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Mark/Tony, Mark/Sophie, Mark/parents, Mark/Jackie, and Bernard/Fred each generate distinct friction, and several of those relationships carry independent story energy. The script is still lead-driven, but the supporting web is active enough to keep the plot moving through character conflict rather than pure mechanics."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "African/Kenyan setting",
+          "20s lead with strong tech credibility",
+          "50s-60s authority figures",
+          "female judge and professional women in key roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with several exterior city and action sequences",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Nairobi urban locations",
+          "bank interior",
+          "abandoned warehouse/building",
+          "courtroom",
+          "prison visiting area",
+          "cafe",
+          "restaurant",
+          "cemetery",
+          "car chase/exterior action"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily computer-screen graphics, security feeds, and a few explosion/fireball moments; no heavy creature or fantasy work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood effects, car impact, explosion, smashed monitor, practical violence, and a revolver sequence.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Zoom Drive, Seraphic Bank, and other fictional brands are used prominently."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script references Suits and James Bond as dialogue/cultural references."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming thriller or low-to-mid budget theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-premiere potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is contemporary and mostly contained, but it includes multiple action beats, gunfights, a prison sequence, and an explosion."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a credible young lead, several strong adult antagonists, and a sizable supporting ensemble across family, legal, and criminal circles."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It moves through homes, a bank, a cafe, a restaurant, a police station, a warehouse, a cemetery, and a courtroom, with several night exteriors."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes torture, gun violence, murder, blood, threats, and a graphic execution scene."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script is built on original characters and fictional institutions, with only light pop-culture references."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Kenyan cyber-thriller lane feels specific.",
+          "what_it_means": "The setting gives the project a fresh commercial identity beyond a generic hacker story, with Nairobi institutions, local legal culture, and a distinctly African power structure driving the plot. Buyers looking for exportable genre material with regional specificity will see a built-in differentiator, especially streamers and genre labels that want global stories with local texture.",
+          "evidence": "Nairobi streets, Seraphic Bank, the Masila residence, the court sequence, and the Computer Misuse and Cybercrimes Act are all woven into the story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mark is built as a playable contradiction.",
+          "what_it_means": "The lead role gives an actor a sharp mix of arrogance, vulnerability, technical brilliance, and social awkwardness, which is exactly the kind of part that can carry a movie on charisma alone. Mid-career young leads and breakout actors looking for a signature role will chase this because it lets them play intelligence, ego, and hurt in the same frame.",
+          "evidence": "Mark’s clashes with his parents, Sophie, and Tony, plus his private hacking scenes and emotional reactions to Jackie and the family reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family conspiracy is a strong engine.",
+          "what_it_means": "The reveal that Mark’s parents founded The Regency turns the story from a simple corruption thriller into a betrayal drama with franchise-like mythology. Producers get a hook that can sell on both plot and relationship stakes, and audiences who like hidden-family-secret thrillers will lean in hard.",
+          "evidence": "The courtroom reveal, Bernard’s explanation of The Regency, and the final Jackie confrontation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tony gives the movie a real emotional counterweight.",
+          "what_it_means": "Tony is more than a sidekick; he is the bridge between Mark’s isolation and the adult world of law, loyalty, and compromise, which gives the film a second emotional lane. That kind of best-friend role is attractive to actors who want warmth, wit, and eventual heartbreak in a supporting showcase.",
+          "evidence": "Tony sets up the date, helps with the case, hides his own agenda, and is later revealed to be alive and aligned with Jackie.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Bernard is a vivid villain with presence.",
+          "what_it_means": "The cane, the limp, the rage, and the roulette monologue give the antagonist a memorable screen identity that can anchor marketing and trailers. Character actors who like theatrical menace, and buyers who want a villain with quotable scenes, will respond to this immediately.",
+          "evidence": "Bernard’s office destruction, Fred beating, and the Double Roulette speech with Monica.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The bank hack sequence is a clean set piece.",
+          "what_it_means": "The Juicebox-to-bank intrusion gives the movie a procedural thriller stretch that can play visually and keep the audience tracking a concrete objective. That kind of contained, clock-driven sequence is useful for producers because it creates trailer moments without requiring a giant effects budget.",
+          "evidence": "Mark and Gordy hacking in parallel with the Seraphic Bank IT department, the rootkit fail-safe, and the download of The Stylet Directory.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending re-frames the whole story.",
+          "what_it_means": "Jackie’s reveal as The Grand Regent gives the film a final turn that expands the mythology and leaves the audience with a bigger enemy than the one they thought they were watching. That kind of ending is attractive to buyers because it creates sequel potential while still landing as a feature-sized payoff.",
+          "evidence": "The cemetery scene, Jackie’s confrontation, and the final prison meeting with Bernard and Gordy.",
+          "source": "script"
+        }
+      ],
+      "headline": "DOUBLE ROULETTE is a propulsive Nairobi-set cybercrime thriller with a family-secret spine and a lead role built for a breakout performance. It has the kind of clear commercial engine buyers understand fast — a hacker, a corrupt bank, a hidden criminal dynasty, and a clock — while still feeling specific enough to stand out in a crowded genre field."
+    },
+    "lead_characters": [
+      {
+        "name": "Mark Masila",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s · Kenyan",
+        "hook": "Mark is a brilliant, defensive, socially awkward hacker who uses contempt as armor and code as a language he trusts more than people. He wants control, but every major relationship in his life — his parents, Tony, Sophie, and eventually Jackie — forces him to confront the fact that intelligence without trust turns into isolation.",
+        "why_actor_wants_this": "This is the showcase territory of Rami Malek in Mr. Robot — a hyper-intelligent outsider whose stillness, precision, and emotional fracture are the performance. Actors who want a role that can play arrogance, woundedness, and technical virtuosity in one package will chase this hard."
+      },
+      {
+        "name": "Mrs. Masila Rose",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Rose is the family’s quiet power center: warm, sly, and far more technically formidable than she first appears. She can switch from maternal teasing to moral judgment in a beat, which makes her feel like the one person in the house who truly understands everyone’s secrets.",
+        "why_actor_wants_this": "This is the kind of maternal authority role that gave Viola Davis in Fences or Regina King in If Beale Street Could Talk the chance to carry love, intelligence, and authority in the same frame. Strong dramatic actresses will respond to a part that can be both nurturing and strategically dangerous."
+      },
+      {
+        "name": "Mr. Masila John",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "John is the stern patriarch whose discipline masks fear, guilt, and a lifetime of compromise. He speaks like a man who believes order is the last thing standing between his family and collapse, which gives him gravity even when he’s wrong-footed by the truth.",
+        "why_actor_wants_this": "This is the kind of authority role that gave Bryan Cranston in Breaking Bad or Jeffrey Wright in Westworld the chance to play intelligence under pressure and moral contradiction. Veteran actors who like playing command, shame, and buried history will see the value immediately."
+      },
+      {
+        "name": "Tony Baraka",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s",
+        "hook": "Tony is the polished, socially fluent counterpoint to Mark: a lawyer with charm, patience, and a hidden agenda that keeps the audience guessing. He reads as the friend who can translate the world for Mark, but he’s also the one person whose loyalty is always carrying a second meaning.",
+        "why_actor_wants_this": "This is the kind of best-friend-with-secrets role that gave Mahershala Ali in Moonlight or LaKeith Stanfield in Sorry to Bother You the chance to be magnetic while withholding key information. Actors who want charm, ambiguity, and a late-story reveal will be drawn to it."
+      },
+      {
+        "name": "Sophie",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Sophie is sharp, self-possessed, and socially fearless, with the kind of intelligence that makes her instantly see through Mark’s performance. She’s not just a love interest; she’s the person who calls out his ego and forces him to hear himself think.",
+        "why_actor_wants_this": "This is the kind of quick, intelligent romantic role that gave Zoey Deutch in Set It Up or Kaitlyn Dever in Booksmart the chance to be funny, perceptive, and emotionally exact. Young actresses who want a role with wit and moral clarity will want this immediately."
+      },
+      {
+        "name": "Mr. Berk / Jackson Owiro",
+        "role_type": "Lead",
+        "demographics": "Male · 50s-60s",
+        "hook": "Owiro is the story’s hidden architect: polished, paternal, and terrifyingly patient, with the calm of a man who has already decided how the board will move. His public face as a respected professional and his private identity as Mr. Berk make him a classic double-life operator with real menace.",
+        "why_actor_wants_this": "This is the kind of controlled villain role that gave Michael Shannon in Boardwalk Empire or Giancarlo Esposito in Breaking Bad the chance to weaponize stillness and intelligence. Actors who like playing power that never needs to shout will chase this."
+      },
+      {
+        "name": "Javan Mutiso",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Javan is the fixer with the clean suit and the unreadable face, the kind of man who can deliver a threat as if he’s handing over paperwork. He functions as the human interface between the hidden power structure and the people it uses.",
+        "why_actor_wants_this": "This is the kind of sleek intermediary role that gives actors the same cool, controlled energy seen in Michael Kelly’s work in House of Cards. Character actors who specialize in pressure without volume will be attracted to it."
+      },
+      {
+        "name": "Monica",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Monica is a wounded office insider who carries trauma in her body language and fear in every pause. She’s brief on the page but emotionally legible, and her scene gives the story a human cost that lands hard.",
+        "why_actor_wants_this": "This is the kind of single-scene emotional showcase that gave actresses in Spotlight or The Assistant a chance to make a lasting impression with one charged confession. Supporting players who want a devastating, memorable turn will respond to it."
+      },
+      {
+        "name": "Gordy",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Gordy is the eager junior hacker whose enthusiasm outpaces his judgment, making him both useful and dangerous. He gives the hacking world a younger, more improvisational energy and lets Mark look like the seasoned operator in the room.",
+        "why_actor_wants_this": "This is the kind of eager tech-sidekick role that gives a young actor the comic pressure and nervous energy seen in Justice Smith’s work in The Get Down or The American Society of Magical Negroes. It’s a good fit for performers who can play excitement, incompetence, and loyalty at once."
+      },
+      {
+        "name": "Bernard Masawe",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Bernard is a limping, cane-wielding predator who treats violence like a business tool and humiliation like foreplay. He’s theatrical, cruel, and weirdly charismatic, which makes him feel like a man who has survived by turning himself into a spectacle.",
+        "why_actor_wants_this": "This is the kind of villain showcase that gave Javier Bardem in No Country for Old Men or Walton Goggins in Justified the chance to be unforgettable through menace and wit. Actors who want a scene-stealing antagonist with monologue power and physical presence will want this role."
+      },
+      {
+        "name": "Fred Bahati",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Fred is the hot-headed corporate enforcer whose insecurity leaks out as cruelty. He’s the kind of subordinate who mistakes aggression for competence, which makes him volatile and useful to the larger machine until he isn’t.",
+        "why_actor_wants_this": "This is the kind of combustible supporting role that gives an actor the same snarling authority seen in Shea Whigham’s work across crime dramas. Character actors who like playing a man one bad decision away from collapse will gravitate to it."
+      },
+      {
+        "name": "Daniel",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Daniel is the exhausted, underappreciated IT worker who knows enough to be useful and too much to be safe. He gives the bank world a human face and a comic, weary counterpoint to Fred’s bluster.",
+        "why_actor_wants_this": "This is the kind of dry, grounded supporting part that gave actors in The Office or Silicon Valley the chance to steal scenes through deadpan frustration. It’s a strong fit for character actors who can make competence feel funny and sad at the same time."
+      },
+      {
+        "name": "Beth",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s",
+        "hook": "Beth is the younger tech worker who knows the dark-web mythology and isn’t afraid to speak up in a room full of men. She adds a sharp, modern edge to the bank’s IT world and gives the scene a pulse of generational confidence.",
+        "why_actor_wants_this": "This is the kind of sharp supporting role that gives a young actress the same fast, smart energy seen in the ensemble players of The Bear or Industry. Performers who want a brief but memorable authority beat will like it."
+      },
+      {
+        "name": "The Judge",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s",
+        "hook": "The Judge is brisk, unsentimental, and almost amused by the moral theater in front of her. She functions as the voice of institutional finality, which gives the courtroom sequence a clean, authoritative finish.",
+        "why_actor_wants_this": "This is the kind of courtroom authority role that gives an actor the same crisp, memorable command seen in judges across prestige legal dramas. Veteran actresses who can deliver judgment with wit and gravity will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a family conspiracy into a propulsive genre machine.",
+        "fit_profile": "Second-feature or established indie directors with at least one crime, thriller, or character-driven genre credit, especially those who like performance-forward suspense over spectacle. This material rewards directors who can balance local specificity, clean action geography, and emotional reversals without losing the audience in exposition.",
+        "detail": "The movie gives a director a bank-heist spine, a family-secret reveal, and a villain with real screen presence, all of which can be staged with tension rather than scale. It will attract filmmakers who like grounded genre work with strong dialogue scenes, controlled violence, and a final-act mythology turn."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming thriller / prestige genre lane",
+        "detail": "The project can be packaged around one breakout lead and a strong villain, with the rest of the cast filled by capable local and regional talent rather than expensive name attachments. The Nairobi setting, cybercrime angle, and family-conspiracy hook give it export value for streamers looking for globally legible genre titles with a specific regional identity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on process.",
+        "detail": "The early hacking exchange with the phone caller is vivid and establishes Mark’s skill, but the version of the opening where the orphanage theft or the family pressure lands a little sooner would get to the movie’s emotional engine faster. That would preserve the tech flavor while giving the audience a more immediate story question to chase.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle can keep tightening the sister thread.",
+        "detail": "Jackie is the story’s biggest mythology reveal, and the script already seeds her absence well; a next pass could foreground her shadow a touch earlier so the final cemetery reveal feels even more inevitable. That would deepen the suspense around every mention of her without changing the plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The tonal blend is bold and could be more unified.",
+        "detail": "The script moves between comic banter, family melodrama, and brutal crime violence, which gives it personality, but the transitions sometimes arrive as hard pivots. One direction would be to decide which emotional register leads each sequence so the movie feels even more signature from scene to scene.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The action footprint is manageable but not tiny.",
+        "detail": "The bank breach, warehouse showdown, police raid, and car ambushes give the film a real action spine, so the cleanest production version is one that protects those set pieces and keeps the rest of the story contained. A simplification lever would be to let a couple of the exterior transitions collapse into fewer locations without losing the escalation.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting web is strong enough to carry more contrast.",
+        "detail": "Tony, Sophie, Monica, and Gordy each bring a different social lane into Mark’s world, which is a real asset; a next pass could make sure each one has at least one scene that feels independent of the main plot. That would expand the ensemble’s value without changing the central engine.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 68.7,
+  "tier": "Optionable",
+  "inputTokens": 43201,
+  "outputTokens": 5443,
+  "cost": 0.05689425000000001,
+  "declaredFormat": "Feature film"
+}

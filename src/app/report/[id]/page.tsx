@@ -96,6 +96,7 @@ type SubmissionWithPrivacy = ScriptSubmission & {
   report_privacy?: ReportPrivacy | null
   contact_enabled?: boolean | null
   privacy_review_needed?: boolean | null
+  tags?: string[] | null
 }
 
 function createServiceClient() {
@@ -126,7 +127,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       script_submissions (
         id, user_id, title, filename, file_size, status, is_public, created_at,
         expires_at, declared_format, report_privacy, contact_enabled,
-        privacy_review_needed,
+        privacy_review_needed, tags,
         profiles ( full_name, avatar_url )
       )
     `)
@@ -180,7 +181,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const { whatsSpecial } = normalizeEvaluation(report)
 
   const editedFields = (eval_ as any).edited_fields ?? null
-  const topCard = getDisplayTopCard(report, editedFields, submission.title)
+  const topCard = getDisplayTopCard(report, editedFields, submission.title, submission.tags ?? [])
   const topCardHasEdits = hasEdits(editedFields)
 
   let ownerIsSubscribed = false
@@ -432,6 +433,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             an option. */}
         <EditableTopCard
           evaluationId={id}
+          submissionId={submission.id}
           initial={topCard}
           isOwner={isOwner}
           hasEdits={topCardHasEdits}

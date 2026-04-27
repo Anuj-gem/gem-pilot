@@ -1,0 +1,254 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Historical drama",
+      "genre_tags": [
+        "mystery",
+        "fantasy"
+      ],
+      "tone": "elegant, theatrical, slyly mischievous, high-concept"
+    },
+    "positioning_hook": "Sir W, a globe-trotting fixer with a taste for impossible bargains, hosts Chaplin, Roosevelt, and Einstein on Christmas Eve and wagers favors on two stories that may be miracles or traps.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate prestige appeal: Chaplin, Roosevelt, and Einstein in a Christmas Eve parlor game with a mysterious host is the kind of setup that signals event television. The audience is narrower than a broad procedural or genre engine, but the hook is clear and the curiosity factor is real."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot establishes its engine early: a secretive host, a contained dinner-table wager, and a game built around truth, favors, and two competing tales. The rules are easy to grasp, and the final turn into the formal wager gives the episode a clean launch point."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sir W is built as a magnetic center, and Amethyst adds a vivid counterpoint with her poise, wit, and watchful authority. Chaplin, Roosevelt, and Einstein are instantly recognizable presences, though the pilot is still more interested in their dynamic as icons than in opening fully independent long-term arcs for each."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific register: ornate dialogue, historical celebrity, spiritual artifact lore, and a game of favors that feels both ceremonial and dangerous. The choice to frame the pilot as a verbal duel around a singing bowl and a miracle tree gives it a confident, uncommon identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The opening Bethlehem sequence is vivid and the dinner-room scene keeps introducing fresh reversals, from the private museum reveal to the bowl demonstration to the final wager. The episode is more seduction than sprint, but it keeps adding intrigue and ends with a clear invitation to continue."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A fixer who trades in favors, miracles, and historical mythmaking is a fresh organizing idea, and the script makes that feel inevitable rather than arbitrary. The blend of sacred relic energy, celebrity history, and con-man elegance gives the show a memorable center of gravity."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world feels layered: Bethlehem, Greenwich Village, the emporium, the private museum, and the implied network of clients, relics, and silent arrangements all suggest a larger ecosystem. The objects in the room and the references to prior exploits make the setting feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: part fable, part drawing-room intrigue, part occult confidence game, all delivered in heightened period language. The script would be hard to confuse with a standard historical drama because it leans so fully into ceremonial wit and controlled theatricality."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The pilot hints at a much larger mythology around Sir W’s lineage, his adversaries, Amethyst’s role, and the moral logic behind his favors. What’s on the page is already entertaining, and it also suggests there are deeper histories and debts waiting to be unpacked over a season."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Sir W / Amethyst / guest trio dynamic is lively, and the dinner table generates good friction, but the pilot still lives primarily on Sir W’s charisma and control of the room. The ensemble has promise, though the supporting relationships are more functional than fully engine-driven at this stage."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 5,
+        "series_regulars": 2,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Sir W is written as a 40-year-old man of African and Hispanic ancestry",
+          "Amethyst is written as an ageless, undefinably mixed woman with a distinctive accent",
+          "Chaplin, Roosevelt, and Einstein are all real historical figures requiring precise period casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "period (1930)",
+        "notable_requirements": [
+          "Bethlehem street exterior",
+          "Church of the Nativity interior and courtyard",
+          "Greenwich Village emporium interior",
+          "private museum room within the emporium"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily period dressing and possible enhancement of the Bethlehem and church exteriors; no major creature or spectacle effects are indicated.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fire, smoke, and controlled burning wardrobe for the opening self-immolation beat; bowl sound effect emphasis.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Charlie Chaplin, Franklin D. Roosevelt, Albert Einstein, Pope Pius XI, and Moctezuma are all referenced by name."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script references the Church of the Nativity and the Christmas tree tradition in a historically specific way that may invite clearance review depending on production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or prestige cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized anthology-adjacent mystery engine built around Sir W taking on clients, relics, and wagers that open into new historical or mythic stories."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contained to a few interiors, but the period setting, historical casting, and opening Bethlehem sequence keep it above low-budget territory."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script depends on recognizable historical figures and on very specific lead casting for Sir W and Amethyst, which raises the packaging bar."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story is concentrated in a small number of locations, but they include a period Bethlehem exterior, a church interior, and a bespoke museum space."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material is not explicit, but it includes self-immolation imagery, implied death, and occult-adjacent menace that would shape platform standards."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Multiple named historical figures and a historically specific religious setting create a meaningful clearance and portrayal review burden."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Sir W is a premium antihero host.",
+          "what_it_means": "The lead role gives a buyer a singular center: a polished fixer whose charm, menace, and intelligence can carry an entire series of contained, dialogue-driven episodes. That is the kind of part prestige actors and producers both chase because it can be played as mystery, seduction, and authority at once.",
+          "evidence": "Sir W calmly orchestrates the dinner-table wager, reveals the rules of the game, and shifts from gracious host to cold menace in the same exchange.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The historical guest list is instantly legible.",
+          "what_it_means": "Putting Chaplin, Roosevelt, and Einstein at one table gives the series immediate cultural cachet and a built-in marketing image that is easy to sell in a single sentence. Buyers looking for prestige event material and actors who want to spar with iconic roles will both understand the appeal immediately.",
+          "evidence": "The private museum dinner scene brings Chaplin, Roosevelt, and Einstein into the same room on Christmas Eve.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The show has a repeatable favor engine.",
+          "what_it_means": "The wager of favors creates a clean episodic mechanism: every installment can revolve around a request, a debt, or a bargain with consequences. That gives producers a durable series spine that can generate new stories without needing a reset-heavy procedural structure.",
+          "evidence": "Sir W formalizes the game by wagering one favor with each guest and defining the rules around what can and cannot be asked.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels like a cabinet of wonders.",
+          "what_it_means": "The emporium, private museum, and artifact cases create a rich visual and narrative environment that can support multiple seasons of collectible, story-bearing objects. That kind of world-building is attractive to buyers because it gives the show a signature look and a built-in source of new episodes.",
+          "evidence": "The room is lined with books, masks, headdresses, and global spiritual artifacts, and the private museum contains ninety distinct objects.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Amethyst is a scene-stealing co-lead presence.",
+          "what_it_means": "She gives the series a second magnetic center: elegant, watchful, and socially fluent, with enough mystery to invite audience obsession. That is valuable to casting and to buyers because it creates a role that can attract a strong actress and broaden the show beyond a single male lead.",
+          "evidence": "Amethyst introduces the evening, manages the room, and lands the most pointed social beats with Chaplin, Roosevelt, and Einstein.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The opening Bethlehem sequence announces scale and myth.",
+          "what_it_means": "Starting with the Church of the Nativity and the holly oak tree gives the series a mythic prologue that expands the show beyond a single-room conversation piece. That helps the project feel larger than its footprint and gives marketing a striking opening image.",
+          "evidence": "Sir W’s voiceover recounts the rescue of the holly oak tree from a standoff inside the Church of the Nativity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has ceremonial wit.",
+          "what_it_means": "The language is stylized enough to distinguish the show from standard period drama and to give actors something performative and quotable to sink into. That makes the material attractive to directors and performers who want verbal precision and a heightened rhythm.",
+          "evidence": "The dinner scene is built on formal bows, layered politeness, and escalating verbal games around reputation, gambling, and trust.",
+          "source": "script"
+        }
+      ],
+      "headline": "This pilot has a real buyer-facing identity: a charismatic fixer, a room full of icons, and a favor-based engine that can spin into a series of elegant, dangerous bargains. It feels premium, contained, and unusually specific — the kind of show that can sell on premise, cast, and atmosphere before the mythology even opens up."
+    },
+    "lead_characters": [
+      {
+        "name": "Sir W",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · African and Hispanic ancestry",
+        "hook": "Sir W is a globe-trotting, impeccably mannered fixer who speaks like a gentleman and moves like a strategist. He is part mystic, part connoisseur, part executioner, and the script keeps turning him into the most interesting person in every room by letting his courtesy and menace share the same breath.",
+        "why_actor_wants_this": "This is the showcase territory of Benedict Cumberbatch in Sherlock or Mahershala Ali in True Detective season 3 — a role where intelligence, restraint, and controlled danger are the performance. Actors who want a prestige signature part will chase this because it lets them play charm, authority, and moral ambiguity without ever leaving the center of the frame."
+      },
+      {
+        "name": "Amethyst",
+        "role_type": "Lead",
+        "demographics": "Female · ageless · undefinably mixed beauty",
+        "hook": "Amethyst is the poised, watchful force who makes the emporium feel curated rather than merely owned. She is socially effortless, quietly amused, and just opaque enough to suggest she knows more about Sir W’s world than anyone else in the room.",
+        "why_actor_wants_this": "This is the showcase space of Janelle Monáe in Homecoming or Lupita Nyong’o in Us — a role that combines elegance, mystery, and command of tone. Actors looking for a part that can play hostess, confidante, and secret keeper in one performance will see immediate value here."
+      },
+      {
+        "name": "Charlie Chaplin",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · silent-film icon",
+        "hook": "Chaplin arrives as a legendary artist with a playful surface and a sharper, more self-aware intelligence underneath. He is the room’s most elastic presence: flirtatious, observant, and capable of turning from comic charm to wary suspicion in a beat.",
+        "why_actor_wants_this": "This is the showcase territory of Gary Oldman in Mank or Joaquin Phoenix in The Master — a famous figure role that asks an actor to inhabit iconography while finding private insecurity and wit. Performers who want to play a public legend with interior life will be drawn to it."
+      },
+      {
+        "name": "Franklin Roosevelt",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s · wheelchair user",
+        "hook": "Roosevelt is written as buoyant, politically agile, and socially disarming, with a quick appetite for the room and a politician’s instinct for leverage. His charm is real, but the script also lets him register calculation, impatience, and a sly appetite for advantage.",
+        "why_actor_wants_this": "This is the showcase space of Gary Oldman in Darkest Hour or Paul Giamatti in John Adams — a historical power role where wit, authority, and private calculation all have to coexist. Actors who want to play command without flattening the humanity will be interested."
+      },
+      {
+        "name": "Albert Einstein",
+        "role_type": "Lead",
+        "demographics": "Male · early 50s · scientist",
+        "hook": "Einstein is the driest and most skeptical of the trio, but also the one most willing to keep pushing until the room reveals itself. He reads as intellectually fearless, faintly mischievous, and unexpectedly game once he decides the puzzle is worth entering.",
+        "why_actor_wants_this": "This is the showcase territory of Adrien Brody in The Pianist or David Strathairn in Good Night, and Good Luck — a role built on intelligence, precision, and the pleasure of watching a mind work in real time. Actors who want to make thought itself dramatic will chase this."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage prestige dialogue as a magic trick.",
+        "fit_profile": "Established indie or premium-TV directors with at least one character-forward feature or limited series under their belt, especially those who care about controlled blocking, period texture, and performance-first suspense. This material rewards directors who can make a room feel like a battlefield and who enjoy balancing theatrical language with cinematic intimacy.",
+        "detail": "The material gives a director a chance to choreograph power shifts through gesture, timing, and framing rather than spectacle. It will attract filmmakers who like contained ensembles, historical atmosphere, and scenes that can live or die on the precision of a glance across a table."
+      },
+      "buyer_appeal": {
+        "tier": "premium streaming limited series or prestige cable series",
+        "lane": "FX / HBO / A24-adjacent prestige mystery-drama lane",
+        "detail": "The project is anchored by a single commanding lead role and a contained primary setting, so it can be packaged around a director and one or two high-value cast attachments rather than a giant ensemble buy. The historical-icon hook and anthology-friendly favor engine give it both awards-facing prestige appeal and a repeatable series format that travels well internationally."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot is built around one long dinner-room movement.",
+        "detail": "The contained structure is a strength, and the next pass could protect that while giving the episode a slightly more modular shape for series use. One lever would be to make the favor-game reveal arrive a touch earlier, so the opening Bethlehem prologue and the dinner-room tension feel like two distinct engines rather than one extended setup.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The historical figures drive the packaging bar.",
+        "detail": "Chaplin, Roosevelt, Einstein, Pope Pius XI, and Moctezuma all signal prestige, but they also mean the project will want careful casting and clear historical handling. A producer package that pairs one strong director with one marquee Sir W attachment would help the rest of the ensemble fall into place.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The opening Bethlehem sequence carries the biggest production lift.",
+        "detail": "The church exterior, courtyard standoff, fire imagery, and period night driving are the most elaborate pieces on the page. If a future pass ever needed to simplify, the version where that story is told with fewer moving parts would preserve the mythic function while easing the shoot.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Amethyst can carry more independent story weight.",
+        "detail": "She already functions as more than an assistant, and the script gives her enough presence to support a deeper recurring arc. A next pass could foreground one additional choice that belongs only to her, which would widen the ensemble engine without changing the show’s core premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 20742,
+  "outputTokens": 4104,
+  "cost": 0.0340245,
+  "declaredFormat": "Series"
+}

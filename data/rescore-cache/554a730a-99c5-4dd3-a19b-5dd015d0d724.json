@@ -1,0 +1,318 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Psychological sci-fi drama",
+      "genre_tags": [
+        "time-travel",
+        "coming-of-age",
+        "family melodrama"
+      ],
+      "tone": "Intimate, surreal, emotionally raw, and intellectually playful"
+    },
+    "positioning_hook": "A hyper-driven college freshman starts time-traveling through her mother’s trauma, then must choose between saving her family and accepting the life that made her.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional engine is immediate: a daughter trying to understand her mother’s death while navigating campus life, sex, and identity. The premise has clear genre pull, though the intellectual framing and dense emotional vocabulary make it more of a prestige-leaning audience play than a broad four-quadrant one."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: Jessica is chased by a black void, then discovers campus time-slips tied to trauma, Henry, and her mother. By the end of the pilot and especially by the later episodes, the rules are still elastic, but the central engine is easy to grasp."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Jessica is built as a high-achieving overthinker with a buried wound, and that contradiction gives the role real traction. Henry, Maddox, Susan, and Kerri each bring a distinct pressure on her, and the script keeps finding new emotional combinations rather than repeating the same dynamic."
+      },
+      "creative_originality_and_boldness": {
+        "score": 9,
+        "reasoning": "This is unusually ambitious in how it fuses campus thriller, psychoanalytic theory, time travel, and maternal grief into one emotional system. The script keeps making bold formal choices — the black monster, the recursive writing, the overlapping timelines, the final ambiguity — that feel authored rather than assembled."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps escalating through discovery, confrontation, and reversal, with each episode ending on a meaningful turn. The hospital, the frat house, the park, the island, and the final bookstore sequence all push Jessica into a new version of the same central conflict, which keeps the momentum alive."
+      },
+      "resonant_originality": {
+        "score": 9,
+        "reasoning": "The script’s core idea feels both strange and inevitable: trauma becomes a literal time engine, and the daughter becomes the author of her own origin story. The recurring notion that memory, fiction, and fate are all versions of the same act gives the piece a rare afterimage."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Morgan College is not just a backdrop; it has class markers, social hierarchies, dorm rituals, steam tunnels, yearbooks, faculty politics, and a specific New England mood. The later movement to Nantucket, Seattle, and Los Angeles widens the canvas without losing the story’s institutional texture."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is highly specific: emotionally sincere but laced with irony, academic wit, sexual awkwardness, and sudden horror. A scene like Jessica yelling at the hedge, or Maddox calmly turning trauma into pedagogy, tells you exactly what kind of piece this is."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 9,
+        "reasoning": "What begins as a campus ghost story opens into a layered meditation on grief, authorship, inherited illness, and the stories families tell to survive. The final reveal that Jessica is her own babysitter is the kind of structural turn that rewards a second viewing and deepens everything before it."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Jessica’s relationships with Kerri, Henry, Maddox, Susan, and Gary all generate distinct story energy, and several of them can collide in the same scene without feeling redundant. The script has a strong web of family, romance, mentorship, and friendship dynamics that keeps the emotional engine active."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple age versions of Jessica, Susan, Henry, and Maddox appear",
+          "Child performers required for preteen Jessica, child Susan, child Henry, and younger family scenes",
+          "Lead roles require strong dramatic range and rapid tonal shifts"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Approximately 60/40 interior-heavy",
+        "period_or_contemporary": "Contemporary with extensive 1999, 2002, 2004, and 2009 period scenes",
+        "notable_requirements": [
+          "College campus with dorms, tunnels, offices, and wooded paths",
+          "New Hampshire town exteriors",
+          "Nantucket ferry, cottage, and waterfront locations",
+          "Los Angeles house and park sequences",
+          "Hospital interiors and maternity ward"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Time-slip transitions, overlapping realities, invisible/ghost behavior, black monster manifestations, body-merging effects, and a few location-replacement moments",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, gunshot aftermath, hospital chaos, fire effects for the frat-house blaze, and makeup for injury/disorientation",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Martin Eden, Penderecki’s 'Threnody to the Victims of Hiroshima,' Shirley Bassey’s 'Light My Fire,' and 'You Only Live Twice' are specifically named or used as plot/tonal cues"
+        },
+        {
+          "type": "brand",
+          "detail": "Twilight, Prius, iPhone, Discord, YouTube, AOL, CVS, and The New York Times are referenced prominently"
+        },
+        {
+          "type": "real_person",
+          "detail": "Joan Didion, Krzysztof Penderecki, John Lennon, Freud, Lacan, Oedipus, and Schrödinger are referenced by name"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Matrix, Star Trek, Back to the Future, X-Men, Disney, and other named cultural properties are referenced in dialogue"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or festival-to-platform release",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival positioning and streamer appeal for elevated genre/drama audiences"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contained to campus, homes, and a few city/period excursions, but the time-slip visuals, multiple eras, and fire/hospital sequences push it above micro-budget."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The story depends on five major roles, multiple age versions, and several child performers, with Jessica, Susan, Henry, and Maddox all needing strong dramatic specificity."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves across New Hampshire, Nantucket, Seattle, Los Angeles, a ferry, a hospital, and multiple period versions of the same spaces."
+        },
+        "content": {
+          "level": "high",
+          "note": "Suicide, psychosis, sexual coercion, profanity, assault, and a gun-driven climax narrow the content lane and require careful standards handling."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses many named songs, brands, and cultural references, but they function as clearances rather than story dependencies."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Trauma becomes a literal story engine.",
+          "what_it_means": "That gives the script a clean commercial identity: the supernatural mechanics are inseparable from the emotional wound, so the concept feels meaningful rather than decorative. Buyers who want elevated genre with a real emotional thesis will see a feature that can play both as a mind-bender and as a family drama.",
+          "evidence": "The black monster, the time slips, and the recurring idea that Jessica is processing her mother’s death all collapse into one system across the campus, hospital, and family-home sequences.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jessica is a showcase lead.",
+          "what_it_means": "The role asks for intelligence, comic timing, erotic confusion, panic, grief, and authority, which is exactly the kind of range that can launch or reframe an actor. Festival buyers and prestige streamers will see a part that lets a performer carry a movie on interior volatility and sharp verbal control.",
+          "evidence": "Jessica moves from drunken campus banter to terror in the steam tunnels, to academic sparring with Maddox, to the final emotional reckoning with Susan.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a rare tonal signature.",
+          "what_it_means": "It lives in a lane where psychoanalytic dialogue, campus comedy, sexual awkwardness, and horror imagery all belong to the same movie. That kind of tonal fingerprint is attractive to buyers looking for something that can be marketed as smart genre rather than generic thriller.",
+          "evidence": "Jessica yelling at the hedge, Maddox’s deadpan therapy language, and the black monster’s appearances all coexist without breaking the script’s voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mother-daughter relationship is the emotional moat.",
+          "what_it_means": "The script isn’t just about time travel; it’s about a daughter trying to meet her mother as a person before she becomes a memory, which gives the movie a strong emotional differentiator. That makes it especially magnetic for actors, female-driven prestige buyers, and audiences who respond to family stories inside genre frames.",
+          "evidence": "The park sequence, the 2004 maternity ward, and the final goodbye between Jessica and Susan all reframe the story around love, inheritance, and acceptance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Maddox is a complicated authority figure.",
+          "what_it_means": "He’s not a standard mentor or villain; he’s a wounded intellectual whose self-justifying language makes him fascinating in every scene. That gives the project a strong male supporting role for a prestige actor who wants moral ambiguity, wit, and emotional exposure in one package.",
+          "evidence": "His office scenes, the Nantucket material, and the final grace conversation all show him as teacher, father, manipulator, and mourner.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is specific enough to feel lived-in.",
+          "what_it_means": "Morgan College has enough institutional texture — dorms, yearbooks, steam tunnels, faculty politics, student gossip — to make the supernatural premise feel grounded and producible. That specificity helps the script stand out in the elevated-genre lane because the setting itself generates plot.",
+          "evidence": "The yearbook clues, Discord chatter, steam tunnels, and campus social ecosystem all matter to the story mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on authorship, not explanation.",
+          "what_it_means": "The script closes by turning the story into a creative act, which gives the movie a memorable final note and a clean thematic thesis. That kind of ending is attractive to festival programmers and buyers who want a film that feels complete but still invites conversation.",
+          "evidence": "Jessica writes 'Future Woman,' then the final bookstore scene leaves the reality of Maddox’s visit elegantly ambiguous.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, emotionally loaded feature with a real commercial identity: a campus-set time-slip drama where grief, desire, and authorship all become part of the same supernatural mechanism. The script gives a lead actress a major showcase, a prestige actor a thorny mentor/father role, and buyers a contained but expansive genre piece with festival heat and streamer-friendly ambition."
+    },
+    "lead_characters": [
+      {
+        "name": "Jessica Wolfe",
+        "role_type": "Lead",
+        "demographics": "Female · 19-20 · White",
+        "hook": "Jessica is a hyper-competent, overachieving freshman whose intelligence has become both armor and prison. She’s funny, analytical, sexually awkward, and emotionally armored until the story forces her to confront the fact that her mind has been building a mythology around her mother’s death; the contradiction is that the person best equipped to decode the mystery is also the person least willing to feel it.",
+        "why_actor_wants_this": "This is the showcase territory of Natalie Portman in Black Swan or Carey Mulligan in Promising Young Woman — a role where precision, volatility, and buried grief all have to live in the same frame. Actors who want a prestige lead with range will chase it because the part asks for comedy, panic, erotic charge, and emotional collapse without ever losing intelligence."
+      },
+      {
+        "name": "William Maddox",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-60s · White",
+        "hook": "Maddox is a brilliant, self-mythologizing professor who speaks in theory because theory lets him avoid plain feeling. He’s seductive, paternal, manipulative, wounded, and genuinely grieving, which makes him feel like a man who can diagnose everyone else while remaining the most unreadable person in the room.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Paul Giamatti in Sideways — a role where intellect, vanity, sorrow, and self-justification are all part of the performance. Mid-career prestige actors will chase it because it offers authority, menace, humor, and late-life emotional reckoning in one part."
+      },
+      {
+        "name": "Susan Wolfe",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s across timelines · White",
+        "hook": "Susan is Jessica’s mother as a young woman: impulsive, funny, sensual, restless, and far more alive than the family story initially allows. She’s not a sainted memory; she’s a person with appetite and contradiction, which makes her both magnetic and heartbreaking whenever she appears.",
+        "why_actor_wants_this": "This is the showcase territory of Julianne Moore in Still Alice or Michelle Williams in Blue Valentine — a role where the audience has to feel the full human being before the tragedy lands. Actors who want a part that can carry both romantic spark and maternal devastation will be drawn to it immediately."
+      },
+      {
+        "name": "Henry Maddox",
+        "role_type": "Lead",
+        "demographics": "Male · 19-20 · White",
+        "hook": "Henry is brilliant, needy, sexually charged, and increasingly dangerous, a young man whose charisma curdles into obsession as he mistakes access for love. He’s the script’s most volatile contradiction: a boy who wants transcendence and ends up weaponizing intimacy.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network or Robert Pattinson in Good Time — a role where intelligence and instability are inseparable. Younger actors looking for a dangerous, psychologically loaded lead will chase it because Henry gets to be seductive, pathetic, funny, and terrifying."
+      },
+      {
+        "name": "Kerri",
+        "role_type": "Supporting",
+        "demographics": "Female · 19-20 · White",
+        "hook": "Kerri is Jessica’s best friend and the story’s grounding force: sharp, funny, socially fluent, and unafraid to call Jessica out when she’s disappearing into her own head. She’s not just comic relief; she’s the person who keeps the movie connected to ordinary college life and real friendship.",
+        "why_actor_wants_this": "This is the kind of best-friend role that recalls Beanie Feldstein in Lady Bird — a part that gets laughs, loyalty, and emotional truth without needing the whole movie to orbit her. Actors who want a scene-stealing supporting role with real warmth will want it."
+      },
+      {
+        "name": "Gary Wolfe",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · White",
+        "hook": "Gary is Jessica’s father, a doctor who loves his daughter deeply but can’t fully enter the world she’s describing. He’s practical, exhausted, and quietly devastated, which makes him the story’s adult anchor and the emotional counterweight to Maddox’s theory-heavy seduction.",
+        "why_actor_wants_this": "This is the showcase territory of Jeffrey Wright in a family drama or Richard Jenkins in The Visitor — a role built on restraint, concern, and the pain of not being able to fix what you love. Character actors with gravitas will respond to the quiet authority and the late-story emotional payoff."
+      },
+      {
+        "name": "Nancy",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Black",
+        "hook": "Nancy begins as Jessica’s imagined confidante and becomes one of the story’s most elegant emotional devices: a figure of unconditional care, wit, and maternal permission. She’s cool without being ornamental, and the reveal of her real-world connection gives the script one of its most satisfying emotional reversals.",
+        "why_actor_wants_this": "This is the kind of role that recalls Regina Hall in Support the Girls — a part that can be warm, sly, and emotionally clarifying without overexplaining itself. Actors who want a memorable supporting turn with symbolic weight and real humanity will chase it."
+      },
+      {
+        "name": "Donovan de Vries",
+        "role_type": "Supporting",
+        "demographics": "Male · 19-20 · White",
+        "hook": "Donovan is the awkward campus obsessive whose intellectual posturing masks loneliness and longing. He’s comic, needy, and unexpectedly useful, and the script keeps him from becoming a one-note creep by letting him be wounded, sincere, and socially inept at once.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in a dark comedy or Michael Cera in a prestige ensemble — a role where embarrassment is the engine of the performance. Actors who can play awkward sincerity with edge will see a lot to do here."
+      },
+      {
+        "name": "Chloe Maddox",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s · White",
+        "hook": "Chloe is Henry’s mother and Maddox’s wife, a woman whose warmth and fragility make the family dynamic feel lived-in rather than schematic. She’s maternal, a little chaotic, and emotionally legible in a way that sharpens the damage around her.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional texture of Laura Linney in a family drama — present, specific, and quietly heartbreaking. Supporting actresses who like domestic realism with a little volatility will be drawn to it."
+      },
+      {
+        "name": "Erica",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · White",
+        "hook": "Erica is Susan’s old friend and a bridge to the past, carrying memory, guilt, and hard-earned sobriety. She’s the kind of supporting character who can deliver exposition while still feeling like a person who has lived through the same emotional weather as the family.",
+        "why_actor_wants_this": "This is the showcase territory of a grounded supporting turn in a prestige family drama — the kind of role that lets an actor play history, regret, and compassion in a few scenes. Character actresses who can make a conversation feel like a life will want it."
+      },
+      {
+        "name": "Rob",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · White",
+        "hook": "Rob is the rare campus guy who feels genuinely easy to be around: funny, physically confident, and emotionally unthreatening. He functions as a tonal release valve and as a reminder of what uncomplicated intimacy might look like for Jessica.",
+        "why_actor_wants_this": "This is the kind of role that plays like the sweet-spot supporting work in a college ensemble comedy-drama — easy charm with just enough specificity to stand out. Young actors with natural charisma will like the chance to be likable without being bland."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a prestige genre film about grief, sex, and identity without flattening any of them.",
+        "fit_profile": "First- or second-feature directors coming out of festival shorts, or established indie filmmakers with a taste for elevated genre and performance-forward storytelling. This material rewards directors who can hold tonal tension — campus realism, psychological horror, and emotional intimacy — while keeping the visual language clean enough that the audience always knows whose interior world they’re in.",
+        "detail": "The movie gives a director a chance to stage subjective reality, recurring motifs, and emotional reversals without needing to hide behind spectacle. It’s especially attractive to filmmakers who like character-first genre, precise blocking, and scenes where dialogue, performance, and image all carry equal weight."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M prestige feature",
+        "lane": "Festival-to-platform elevated genre lane",
+        "detail": "The script can be packaged around one breakout female lead and one strong prestige male supporting role, with the rest of the cast filled from the indie/TV talent pool. Its campus setting, contained interiors, and emotional genre hook fit the current streamer appetite for smart, conversation-driving features that can travel beyond the horror aisle."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The timeline logic is intentionally elastic.",
+        "detail": "The script’s dreamlike structure is part of the appeal, but a next pass could keep the audience oriented by making each temporal shift land with one unmistakable visual or emotional rule. That would protect the mystery while making the feature easier to track on first watch.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The cast asks for several age layers.",
+        "detail": "Jessica, Susan, Henry, and Maddox all appear across multiple ages, and the child versions matter to the emotional payoff. If the production wants to simplify without losing the story, the cleanest lever is to consolidate any nonessential age-specific appearances into fewer, more legible set pieces.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The campus world carries a lot of story weight.",
+        "detail": "Morgan College, the steam tunnels, the dorms, the yearbooks, and the faculty offices all do real narrative work. A next pass could consider whether a couple of the campus interiors can be folded together so the geography stays vivid while the footprint stays efficient.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The emotional climax is strongest when it stays personal.",
+        "detail": "The final act already earns its power through Jessica, Susan, Henry, and Maddox; the version of the ending that keeps the confrontation intimate will preserve the movie’s most distinctive quality. That also protects the feature from needing larger-scale visual escalation to feel complete.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The script leans on many named songs and brands.",
+        "detail": "The music cues and pop-culture references are doing tonal and period work, so a producer should expect some clearance attention in prep. If needed, the cleanest simplification lever is to preserve the emotional function of those cues while being flexible on exact substitutions.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Jessica’s voice is already a major asset.",
+        "detail": "The writing gives her a very specific intelligence and comic rhythm, especially in the Maddox scenes and the Kerri exchanges. A next pass could keep protecting that voice by making sure every major turn still sounds like Jessica thinking in real time, not just the plot explaining itself.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 81,
+  "tier": "Optionable",
+  "inputTokens": 112119,
+  "outputTokens": 5464,
+  "cost": 0.10867725,
+  "declaredFormat": "Feature film"
+}

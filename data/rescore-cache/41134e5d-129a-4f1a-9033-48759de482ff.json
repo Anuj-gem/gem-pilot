@@ -1,0 +1,327 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Crime Drama",
+      "genre_tags": [
+        "Mob saga",
+        "Psychological drama"
+      ],
+      "tone": "Gritty, darkly comic, heightened, and dreamlike"
+    },
+    "positioning_hook": "A Brooklyn mob enforcer haunted by the boy he was must choose between family loyalty and a new life in Tampa, while the dead keep collecting on an old stolen envelope.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial lane: mob-world power plays, family loyalty, and a lead who can be both funny and dangerous. The hook is immediate, though the dream-logic and time jumps make it more of a prestige crime play than a broad four-quadrant crowd-pleaser."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early through the childhood theft, the recurring Hat visions, and the adult mob business that keeps tightening around Vinny. The series engine is understandable, though the pilot spends a lot of time in episodic mob business before the Tampa invitation gives the story its clearest forward pull."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Vinny has a durable contradiction: a violent enforcer who also loves cooking, family ritual, and the fantasy of a cleaner life. Rocco, Carmine, Dominic, and Carla give him a workable relational field, though Vinny remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The recurring dead-man dream figure and the courtroom-on-the-beach nightmare give the pilot a distinct imaginative register inside a familiar mob framework. The boldness is strongest when the script lets guilt become a recurring character rather than just a theme."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The pilot moves through a lot of business, intimidation, and ritualized mob scenes with steady energy, and the Joey No No thread gives it a clean escalation. The final Tampa offer is the strongest engine turn, but the middle section spends substantial time repeating Vinny's competence before the larger series question fully opens."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A mob enforcer haunted by a childhood theft is a fresh emotional angle, and the script keeps returning to that wound in a memorable way. The surrounding crime mechanics are familiar, so the resonance comes more from the guilt engine than from the external plot architecture."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Brooklyn Italian-American mob ecosystem feels lived-in through restaurants, delis, family meals, street-level shakedowns, and the code around territory. The Tampa extension widens the world in a way that suggests a larger criminal geography beyond the pilot."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a recognizable tonal blend: profane mob banter, domestic warmth, and surreal dream punishment. The repeated pasta-table scenes and the dead-man dream court give it a flavor that is more specific than standard gangster drama."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the crime plot sits a strong long-burn question about guilt, identity, fatherhood, and whether Vinny can become someone else before the past claims him. The Hat, the daughter reveal, and the Tampa invitation all point to a series that can keep revealing new layers."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Vinny and Rocco have a strong lifelong bond, and Carmine/Dominic create a workable family power structure around them. The ensemble functions, but most scenes still orbit Vinny, so the show is more lead-driven than truly combinatorial."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Child versions of Vinny and Rocco",
+          "Italian-American mob ensemble",
+          "Age-spanning lead casting for Vinny and Rocco",
+          "One Black teen in the dream sequence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with substantial street and alley work",
+        "period_or_contemporary": "Period and contemporary across multiple time jumps (1990, 2014, 2018)",
+        "notable_requirements": [
+          "Brooklyn period streets",
+          "Tampa/Florida beach and waterfront material",
+          "Restaurant interiors",
+          "Motel room and parking lot setups",
+          "Dream-sequence beach courtroom environment"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily dream-sequence enhancement and any period cleanup; no large-scale effects language on the page.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, car impact, blood effects, and practical violence beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Santo Trafficante Jr. is named in dialogue."
+        },
+        {
+          "type": "real_person",
+          "detail": "John Coltrane is referenced by name."
+        },
+        {
+          "type": "real_person",
+          "detail": "Dean Martin is referenced in the driving montage."
+        },
+        {
+          "type": "brand",
+          "detail": "Gambino, Gotti, and Coltrane references are woven into dialogue and decor; 'Frankie's' and 'Romero's' are fictional businesses."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming serialized crime drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized mob drama driven by family power shifts, guilt-haunted visions, and territory conflicts that can expand from Brooklyn into Florida."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary-to-period street scenes, restaurant interiors, a motel, and a Florida beach coda keep it below tentpole scale but above a bare-bones contained drama."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story wants a strong lead and a sizable Italian-American ensemble, plus age-spanning casting for the childhood and adult timelines."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Brooklyn, multiple restaurants, alleys, a motel, and Tampa/Florida material create a moderate footprint across several distinct environments."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent profanity, shootings, strangulation, intimidation, and mob violence place it firmly in mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names real figures like Santo Trafficante Jr., Dean Martin, and John Coltrane, which introduces clearance considerations."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Vinny is built on contradiction.",
+          "what_it_means": "The lead gives an actor a mobster who can threaten a man in one scene and obsess over garlic and pasta in the next, which is exactly the kind of dual-use role that can anchor a prestige series. Character actors and star names looking for a part with menace, humor, and emotional fracture will see immediate value here.",
+          "evidence": "Vinny runs shakedowns and killings, then later critiques sauce, cooks for the family, and talks about opening a restaurant with Rocco.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dead become an ongoing scene partner.",
+          "what_it_means": "The Hat turns guilt into a recurring engine, which gives the series a built-in psychological pressure system instead of a one-off flashback device. Buyers looking for a crime drama with a supernatural-adjacent interior life will recognize the long-run potential immediately.",
+          "evidence": "The Hat appears in multiple dreams, argues with Vinny, and returns in the courtroom beach sequence as a judge-like presence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mob world has restaurant-level texture.",
+          "what_it_means": "The script keeps the criminal business grounded in delis, pizza places, pasta tables, and kitchen prep, which makes the world feel playable, repeatable, and easy to return to every episode. That kind of recurring location language is attractive to buyers because it supports both production efficiency and a strong brand identity.",
+          "evidence": "Tony's pizza, Romero's deli, Frankie's restaurant, and the repeated family meals all function as story hubs.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot opens a Florida expansion lane.",
+          "what_it_means": "The Tampa invitation gives the series a second geography and a new power structure, which is the kind of move that can widen a crime show from local turf drama into a bigger criminal chessboard. Streamers and premium buyers like pilots that end by opening a new territory rather than closing the case.",
+          "evidence": "Vincent LoScalzo asks Vinny to come to Florida for two weeks and consider bringing power back to the family there.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family table is a real engine.",
+          "what_it_means": "The repeated meals are not decorative; they are where business, loyalty, and betrayal all get negotiated, which gives the show a dependable recurring arena for conflict. Ensemble buyers and actors alike respond to a series where the dinner table can carry as much tension as the alley.",
+          "evidence": "Multiple scenes place Vinny, Rocco, Carmine, Dominic, and Carla around pasta, wine, and business talk.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The series has a strong fatherhood wound.",
+          "what_it_means": "Carla's pregnancy and disappearance, plus the dream daughter verdict, give the show a second emotional spine beyond mob survival: whether Vinny can become a father without becoming a different kind of man. That opens the door to a broader adult audience that wants crime drama with domestic stakes.",
+          "evidence": "Carla tells Vinny she is pregnant, later leaves, and the dream sequence reveals a daughter figure sentencing him in court.",
+          "source": "script"
+        }
+      ],
+      "headline": "This pilot has a real series engine: a Brooklyn mob enforcer whose guilt literally walks into the room, forcing him to choose between the family that made him and the life he might still build. The restaurants, the rituals, and the Tampa expansion give it a playable world with room to grow, while Vinny's contradiction makes it actor bait from page one."
+    },
+    "lead_characters": [
+      {
+        "name": "Vinny LaGuardia",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to early 50s across the timeline · Italian-American",
+        "hook": "Vinny is a Brooklyn mob soldier with the soul of a cook and the reflexes of a predator. He is funny, vain, territorial, and deeply superstitious in ways he would never admit, which makes him feel both dangerous and strangely human; the script keeps testing whether he is a man who can leave the life or just a man who can decorate it with better sauce.",
+        "why_actor_wants_this": "This is the showcase territory of James Gandolfini in *The Sopranos* — a violent man whose private rituals, humor, and shame are as playable as the threats he makes. Actors who want a role that can carry prestige television through menace, comedy, and emotional collapse will chase this because Vinny is written as a full-body performance, not just a crime-function."
+      },
+      {
+        "name": "Rocco",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to early 50s across the timeline · Italian-American",
+        "hook": "Rocco is Vinny's lifelong counterweight: sharper, more restrained, and more future-facing, but still fully inside the same world. He is the guy who can joke about law school and criminality in the same breath, which makes him feel like the one person who can actually tell Vinny the truth and survive the conversation.",
+        "why_actor_wants_this": "This is the kind of best-friend/ethical-counterpoint role that gave Michael Imperioli in *The Sopranos* so much room to play intelligence, loyalty, and moral fatigue in the same frame. Actors who want a role with wit, history, and the ability to pivot from comic banter to existential dread will see Rocco as a durable series anchor."
+      },
+      {
+        "name": "Carmine",
+        "role_type": "Lead",
+        "demographics": "Male · 50s to 60s · Italian-American mob boss",
+        "hook": "Carmine is the old-school power center: warm in the room, lethal in the structure, and always speaking like the family is both business and religion. He has the calm of a man who has already survived every version of this life, which makes him feel like the kind of boss who can bless you and bury you in the same conversation.",
+        "why_actor_wants_this": "This is the kind of patriarch role that gave John Turturro in *The Night Of* and Tony Sirico-style mob authority so much gravity — a man whose stillness is the performance. Veteran actors who want to play command, history, and menace without raising their voice will be drawn to him."
+      },
+      {
+        "name": "Dominic",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 40s · Italian-American",
+        "hook": "Dominic is the next-generation operator who talks like a family man but thinks like a strategist. He is ambitious, polished, and willing to use the language of loyalty to justify hard decisions, which makes him the kind of character who can become either the future or the fracture point of the family.",
+        "why_actor_wants_this": "This is the performance lane of Michael C. Hall in *Dexter* or Matthew Rhys in *The Americans* — a controlled, intelligent man whose interior calculation is always visible under the surface. Actors who want a role with ambition, restraint, and the ability to turn threatening without changing volume will chase it."
+      },
+      {
+        "name": "Carla",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · Italian-American",
+        "hook": "Carla is the domestic conscience of the show, the woman who sees the cost of Vinny's life before he does. She is warm, practical, and emotionally direct, and her pregnancy gives her a moral authority that cuts through the mob theater around her.",
+        "why_actor_wants_this": "This is the kind of grounded, emotionally exact role that gave Edie Falco in *The Sopranos* so much power — a woman whose clarity becomes the scene's center of gravity. Actresses who want a part that can hold the room without needing the biggest speech will be interested."
+      },
+      {
+        "name": "The Hat",
+        "role_type": "Supporting",
+        "demographics": "Male · ageless in dreams / 40s-50s appearance in memory",
+        "hook": "The Hat is Vinny's guilt given a face, a voice, and a memory that refuses to stay buried. He is funny, accusatory, and oddly patient, which makes him feel less like a ghost than a creditor who has learned how to haunt with timing.",
+        "why_actor_wants_this": "This is the showcase territory of Javier Bardem in *No Country for Old Men* or the spectral authority of a great stage villain — a figure who can be terrifying by being calm. Character actors with a taste for eerie stillness and scene-stealing minimalism will want this part."
+      },
+      {
+        "name": "Vincent LoScalzo",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · Italian-American",
+        "hook": "Vincent is the Florida power broker with enough confidence to recruit across state lines and enough menace to make the offer feel like a trap. He reads as a man who understands expansion, succession, and leverage, which makes him a credible new-world force in the series.",
+        "why_actor_wants_this": "This is the kind of late-arrival authority role that gives an actor the Al Pacino-in-*The Godfather Part III* or Bryan Cranston-in-*Your Honor* lane of controlled power and hidden threat. Established actors who want a scene-eating entrance with franchise potential will respond to him."
+      },
+      {
+        "name": "Benny",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Italian-American",
+        "hook": "Benny is one of the street-level enforcers who makes the world feel physical and immediate. He is cocky, crude, and disposable in the way mob foot soldiers often are, but he still gets enough attitude to register as a real obstacle.",
+        "why_actor_wants_this": "This is the kind of hard-edged supporting role that gave actors in *The Sopranos* and *Boardwalk Empire* a chance to make a memorable impression in a few scenes. Character actors who specialize in volatility and intimidation will see a clean, playable lane."
+      },
+      {
+        "name": "Dutch",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Italian-American",
+        "hook": "Dutch is Benny's partner in pressure, a blunt instrument who helps create the sense that Vinny's territory is always under siege. He is less a philosopher than a physical threat, which is exactly what the show needs in the street-level scenes.",
+        "why_actor_wants_this": "This is the kind of compact, aggressive role that lets an actor make a strong impression through posture, rhythm, and violence. Supporting players who want a memorable mob enforcer slot will be interested."
+      },
+      {
+        "name": "Tony",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · Italian-American",
+        "hook": "Tony is the local business owner caught between protection and extortion, which gives the world a civilian face. He is weary, practical, and just tough enough to make Vinny's protection racket feel like a living ecosystem rather than a cartoon.",
+        "why_actor_wants_this": "This is the kind of grounded neighborhood role that gives an actor the James Gandolfini-adjacent civilian pressure of *The Sopranos*' best shopkeeper scenes. Character actors who can play fear, irritation, and dignity in one exchange will want it."
+      },
+      {
+        "name": "Lenny",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · thin, glasses, accountant-like",
+        "hook": "Lenny is the cautionary tale of the world: a gambler, borrower, and liar whose panic makes Vinny's violence feel both absurd and inevitable. He is pathetic in a way that still invites pity, which gives the scenes with him a nasty comic edge.",
+        "why_actor_wants_this": "This is the kind of humiliating, high-stakes supporting role that gives an actor a full mini-arc in a few scenes, similar to the doomed debtors in *Goodfellas* or *The Sopranos*. Actors who can play fear, pleading, and dark comedy will have a field day."
+      },
+      {
+        "name": "Bria",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s to 60s · Italian-American",
+        "hook": "Bria is the family matriarch who sees more than she says and says more than the men want to hear. She brings domestic authority, Catholic ritual, and a sharp eye for the truth, which makes her a quiet power in the room.",
+        "why_actor_wants_this": "This is the kind of matriarch role that gives an actress the moral center and comic timing of *The Sopranos*' best family scenes. Veteran character actresses will be drawn to the authority and texture of the part."
+      },
+      {
+        "name": "Sal",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · Italian-American",
+        "hook": "Sal is the father who knows exactly what his son is becoming and keeps speaking around it. He is practical, suspicious, and quietly disappointed, which gives him the weight of a man who has spent years normalizing the abnormal.",
+        "why_actor_wants_this": "This is the kind of father role that lets an actor play subtext, disappointment, and coded warning in the same scene, similar to the family patriarch energy in *The Sopranos* and *Boardwalk Empire*. Strong character actors will recognize the value of a part that can turn a dinner table into a pressure cooker."
+      },
+      {
+        "name": "Lilly",
+        "role_type": "Supporting",
+        "demographics": "Female · early 40s in dream sequence",
+        "hook": "Lilly is the dream-judge embodiment of judgment, memory, and the life Vinny never had. She is authoritative, surreal, and emotionally loaded, which makes her feel like the final form of the guilt engine the pilot keeps building.",
+        "why_actor_wants_this": "This is the kind of surreal authority role that gives an actress the theatrical force of a dream-logic courtroom scene, similar to the symbolic figures in *Twin Peaks* or *The Leftovers*. Performers who like stylized, scene-defining material will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a mob drama where guilt is as cinematic as gunfire.",
+        "fit_profile": "Established indie or prestige-TV directors with at least one character-forward crime or family drama under their belt, especially those who like performance-first scenes over procedural plotting. The material rewards directors who can stage restaurant conversations, dream sequences, and street violence with the same confidence and make the tonal shifts feel intentional.",
+        "detail": "The script gives a director a chance to build a recurring visual language around food, memory, and punishment, then pay it off in a Florida expansion that changes the show's geography. It will attract directors who like actors in close-up, controlled violence, and a world where the surreal is treated as part of the criminal code."
+      },
+      "buyer_appeal": {
+        "tier": "Premium cable or streaming series",
+        "lane": "Adult crime drama with prestige character DNA",
+        "detail": "It is lead-performance driven, so a buyer can package around one marquee actor in Vinny and build the rest of the ensemble from strong character players. The mob genre remains exportable and durable internationally, and the restaurant/family-table setting gives the show a repeatable production footprint that can sustain multiple episodes."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The childhood theft can arrive faster.",
+        "detail": "The opening envelope grab is a strong inciting image, and the pilot already knows the emotional engine it wants. One lever would be to get to the adult consequences a little sooner so the audience feels the series question earlier: what does that stolen money still cost Vinny now?",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle leans on repeated mob-business beats.",
+        "detail": "The deli, pizza shop, and shakedown scenes all establish Vinny's competence, but they also cover similar ground in terms of intimidation and territory maintenance. A next pass could consider folding one of those exchanges into another so the episode keeps the same world texture while moving more quickly toward the Tampa offer and the Rocco fracture.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The dream language could be more selective.",
+        "detail": "The Hat appears in several dream sequences, and each one adds to the psychological engine. The version of the pilot where one dream image becomes the signature recurring motif would make the haunting feel even more iconic and easier to track across episodes.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Florida turn is a strong expansion lever.",
+        "detail": "The Tampa invitation is the cleanest series-opening move in the pilot, because it widens the geography and the power structure at the same time. A producer could position the show as Brooklyn-to-Florida crime drama, which helps with both season architecture and buyer pitch.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The real-name references need a clearance pass.",
+        "detail": "Santo Trafficante Jr., Dean Martin, and John Coltrane are all named on the page, so a production pass would want to confirm what stays, what is replaced, and what is merely atmospheric. That is a manageable development step, but it should be tracked early if the script moves toward packaging.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 68,
+  "tier": "Optionable",
+  "inputTokens": 27011,
+  "outputTokens": 5580,
+  "cost": 0.04536825,
+  "declaredFormat": "Series"
+}

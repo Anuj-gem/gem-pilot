@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:17:43.380Z",
+  "submission_id": "953d928d-7b40-41de-ba19-d38f4d74bb94",
+  "eval_id": "710d75fc-79b5-428f-8f45-bf64dba2e11b",
+  "title": "Imprisoned",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Ashley Stim",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Rachel Olan",
+      "role_type": "Lead",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Jimmy Olan",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Charlie Olan / Charlie Plen",
+      "role_type": "Lead",
+      "demographics": "Male · 40s playing older than his apparent age; physically diminished by captivity and history"
+    },
+    {
+      "name": "Becky Olan",
+      "role_type": "Lead",
+      "demographics": "Female · 6"
+    },
+    {
+      "name": "Susan Lavern",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "George Dan",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Rupert",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Nicole Cromwell",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Alfie Keller",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    }
+  ],
+  "positioning_hook": "A schoolteacher’s warning cracks open a family home where a mother and son have turned captivity into routine — until the prisoner fights back and the whole house implodes.",
+  "cost_usd": 0.037437,
+  "input_tokens": 23660,
+  "output_tokens": 4376,
+  "status": "wrote:leads_ok"
+}

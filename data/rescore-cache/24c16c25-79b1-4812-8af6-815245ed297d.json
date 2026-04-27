@@ -1,0 +1,340 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Crime Drama",
+      "genre_tags": [
+        "Police Procedural",
+        "Corruption Thriller"
+      ],
+      "tone": "Gritty, profane, darkly funny, morally compromised"
+    },
+    "positioning_hook": "A corrupt-but-charismatic homicide detective in a city where cops and criminals grew up together is forced onto an FBI task force — just as his own murder secret starts surfacing.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise has immediate commercial pull: a cop-city corruption story with a lead who can play funny, dangerous, and wounded in the same scene. The Buddy/Kelly/Dunn triangle and the mob pressure around Vannetti give the series a clear audience promise for crime-drama buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the teaser with Buddy killing Fat Sam, then the FBI task force and Vannetti connection lock the engine in place. By the end of Act Three, Carmen’s account of Chucky Acosta being killed by a cop gives the pilot a second, sharper story question."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Buddy is a strong ongoing lead because he is both the city’s insider and its compromised conscience, and Kelly has authority with real bite. The supporting players are vivid in scene, though several function primarily as pressure points around Buddy rather than carrying fully separate engines yet."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldness comes from its specific civic ecosystem: a small-city police department where the mayor, chief, FBI, mob, and old high-school ties all overlap. The voice is confident and profane, and the mother-caregiving thread gives the material a more personal spine than a standard corruption procedural."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The pilot keeps turning the screw: murder, task force pressure, mob leverage, the mother’s care home, and then the Chucky revelation. The ending opens a strong series door because Buddy’s hidden past is no longer just implied; it is now being witnessed by someone who can name it."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a familiar genre engine made specific enough to matter: a homicide cop who is also a mob asset, a mayor who openly frames corruption as civic reality, and a mother whose memory loss becomes part of the emotional and criminal pressure. The final reveal about Chucky gives the show a deeper moral mystery that feels built into the premise rather than added on."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Kingstown is rendered as a lived-in civic machine, with the police department, city hall, senior living facility, bars, and neighborhood streets all feeding the same ecosystem. The dialogue about the Heights, the Atrium, the task force, and the local bookie culture makes the setting feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: hard-boiled profanity, deadpan comedy, and family pain all sit in the same scene without feeling random. The script can move from a body on the floor to a joke about ‘ball-deep’ in the same breath, which gives it a recognizable, hard-to-copy voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the procedural surface, the pilot is planting a larger story about inherited violence, loyalty, memory, and the cost of survival in a corrupt town. Buddy’s mother, the father flashback, and Carmen’s testimony all suggest a series that can keep paying off beyond the immediate case."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Buddy and Kelly have a durable partnership dynamic, Buddy and Casey generate friction-comedy, and Dunn adds a clean institutional counterforce. The ensemble is already functional and playable, though the pilot still centers most of its energy on Buddy’s orbit."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 4,
+        "series_regulars": 7,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead role for a rugged male 40s detective with comic timing",
+          "One lead role for a female 40s lieutenant with authority and dry wit",
+          "One major FBI role for a male 40s professional antagonist/ally",
+          "One major mayor role for a Black female 30s-40s politician",
+          "Supporting roles include a very tall male bookie and an elderly female mother role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "Mostly interior with some street and exterior coverage",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Police station/interrogation rooms",
+          "Senior living facility",
+          "Diner/bar interiors",
+          "Apartment building and neighborhood street exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX requirements beyond standard editorial and possible minor cleanup.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood effects, corpse handling, and a few violent struggle beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Red Bull"
+        },
+        {
+          "type": "brand",
+          "detail": "UPS-type uniform"
+        },
+        {
+          "type": "brand",
+          "detail": "Law & Order"
+        },
+        {
+          "type": "brand",
+          "detail": "The Sopranos"
+        },
+        {
+          "type": "brand",
+          "detail": "Keurig"
+        },
+        {
+          "type": "brand",
+          "detail": "Ferrero Rocher"
+        },
+        {
+          "type": "brand",
+          "detail": "Giants"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming crime drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized corruption-and-investigation engine with case-of-the-week pressure points and ongoing character entanglements."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, mostly contained to interiors and neighborhood exteriors, with no VFX-heavy sequences."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The show benefits from strong lead chemistry and a few highly specific supporting roles, including a very tall bookie and a Black female mayor."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The pilot moves through about a dozen practical locations, but they are all grounded contemporary spaces rather than large builds or travel."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent profanity, murder, torture, and sexualized dialogue place it firmly in mature-drama territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and pop-culture references appear on the page, including Red Bull, Law & Order, The Sopranos, Keurig, and Ferrero Rocher."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Buddy is built on contradiction.",
+          "what_it_means": "The lead role gives an actor a rare blend of swagger, guilt, humor, and menace, which is exactly the kind of part that can anchor a long-running crime series. Mid-career dramatic leads who can also land jokes will chase this, and buyers looking for a franchiseable antihero will see immediate value.",
+          "evidence": "Buddy jokes through a murder scene, then pivots into tenderness with his mother and fury with Dunn.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kingstown feels like a closed civic ecosystem.",
+          "what_it_means": "The town is not just a backdrop; it is a pressure chamber where police, politicians, mob figures, and residents all know each other, which creates durable story fuel for multiple seasons. Buyers who want a contained but expandable crime world — the kind that can generate cases, alliances, and betrayals without leaving town — will respond to that structure.",
+          "evidence": "The mayor, chief, FBI, bookie, mobster, and street-level witnesses all intersect through the same few neighborhoods and institutions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mother story gives the series a human spine.",
+          "what_it_means": "Gerda’s dementia and Buddy’s caretaking create an emotional engine that can keep the show from becoming just another corruption procedural. That combination is attractive to prestige buyers and actors because it gives the series a private cost behind the public violence.",
+          "evidence": "Buddy takes his mother to church, manages her care-home bills, and the flashback reveals the family violence that shaped him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot opens with a clean moral trap.",
+          "what_it_means": "Buddy’s secret killing and the FBI task force create a series engine where every new alliance can become evidence against him. That is the kind of built-in jeopardy that keeps a buyer thinking beyond episode one, because the protagonist’s survival depends on the same relationships that can destroy him.",
+          "evidence": "Buddy kills Fat Sam in the teaser, then gets pulled onto the FBI investigation into Vannetti and later hears Carmen describe a cop killing Chucky Acosta.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has a sharp, playable rhythm.",
+          "what_it_means": "The script gives actors a lot of friction, banter, and status play, which is useful for casting and for keeping scenes alive in a TV room. That kind of voice tends to attract actors who like to spar on camera and directors who know how to stage verbal combat.",
+          "evidence": "Buddy and Casey trade insults constantly, Kelly cuts through the room with authority, and Dunn’s politeness turns into pressure in the same conversation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final reveal expands the series engine.",
+          "what_it_means": "Carmen’s account of Chucky Acosta being killed by a cop turns the pilot from a single corruption story into a deeper institutional mystery. Buyers like that because it promises a season-long question that can keep paying off while the weekly cases continue.",
+          "evidence": "In the interrogation room, Carmen identifies a badge-wearing killer and describes the rope murder in detail.",
+          "source": "script"
+        }
+      ],
+      "headline": "This pilot has the kind of crime-series engine buyers look for: a charismatic, compromised detective, a city where every institution is entangled, and a secret that can’t stay buried. It also has a real emotional anchor in Buddy’s mother and a voice that can move from brutal to funny without losing control, which makes it feel built for a long run."
+    },
+    "lead_characters": [
+      {
+        "name": "Buddy Parker / Eugene Parker",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s · rugged, working-class detective",
+        "hook": "Buddy is the kind of detective who can crack a joke over a corpse, then turn around and become the most emotionally exposed person in the room when his mother calls. He is funny, profane, territorial, and clearly carrying old violence inside him, which makes him feel like both the town’s insider and its most dangerous secret.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a lead whose charisma, philosophical damage, and volatility are the engine of the show. Actors who want a role that lets them play swagger, comedy, menace, and buried trauma in one part will line up for this."
+      },
+      {
+        "name": "Lieutenant Frances Kelly",
+        "role_type": "Lead",
+        "demographics": "Female · early 40s · police lieutenant",
+        "hook": "Kelly is the authority figure who can keep a room in line without ever sounding like she’s trying too hard. She has dry humor, real command, and the kind of personal history with Buddy that suggests she knows exactly how broken the department is and still chooses to run it.",
+        "why_actor_wants_this": "This is the showcase space of Regina King in Watchmen — a commanding law-enforcement lead whose intelligence and emotional restraint carry the room. Strong dramatic actresses who want a role with authority, wit, and long-term series weight will be drawn to her."
+      },
+      {
+        "name": "Special Agent James Dunn",
+        "role_type": "Lead",
+        "demographics": "Male · mid-to-late 40s · FBI agent",
+        "hook": "Dunn is polished, controlled, and immediately out of place in a department that runs on old loyalties and open contempt. He reads as the Bureau’s clean hand, but the script keeps letting him show that he understands the dirt better than he wants to admit.",
+        "why_actor_wants_this": "This is the territory of Michael Shannon in Boardwalk Empire — a controlled federal presence whose stillness makes every room feel more dangerous. Actors who specialize in contained intensity and slow-burn authority will want this part."
+      },
+      {
+        "name": "Salvatore Vannetti",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · well-dressed mob figure",
+        "hook": "Sal is smooth, socially fluent, and always one sentence away from turning charm into coercion. He has the look of a man who can buy a room, but the scene work makes clear that his real power comes from how casually he can remind Buddy that friendship and leverage are the same thing here.",
+        "why_actor_wants_this": "This is the showcase lane of Vincent D’Onofrio in Full Metal Jacket / Godfather-adjacent crime work — a role that lets an actor weaponize charm, menace, and intelligence in the same beat. Actors who like playing elegant predators will chase it."
+      },
+      {
+        "name": "Gerda Ziegler-Parker",
+        "role_type": "Supporting",
+        "demographics": "Female · 80s · elderly German-accented mother",
+        "hook": "Gerda is sweet, musical, and intermittently lost in time, which makes her both fragile and unexpectedly powerful in Buddy’s life. The script gives her a warmth that can flip into devastating clarity, so she never feels like a passive caretaker object; she feels like the emotional center Buddy keeps orbiting.",
+        "why_actor_wants_this": "This is the kind of role that gave Frances McDormand in Nomadland and Olivia Colman in The Father room to make stillness feel seismic. Veteran actresses who can turn memory, affection, and confusion into a scene-stealing presence will want it."
+      },
+      {
+        "name": "Edward Casey",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · veteran detective",
+        "hook": "Casey is the department’s loud, crude, battle-tested comic irritant, but he’s also clearly competent enough to survive in this world. He gives the series a working-class pressure valve and a second cop voice that can needle Buddy while still feeling like part of the same ecosystem.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the Dennis Farina / Edie Falco-adjacent streetwise cop thing — fast talk, comic timing, and lived-in authority. Character actors who can make every line feel like it was earned in a squad room will want it."
+      },
+      {
+        "name": "Ronnell McDonald",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · Black mayor",
+        "hook": "McDonald is a polished politician who speaks bluntly enough to make the room flinch, which instantly makes her memorable. She understands the city’s corruption as a management problem, not a moral surprise, and that makes her feel like a real power player rather than a ceremonial one.",
+        "why_actor_wants_this": "This is the kind of role that gave Kerry Washington in Scandal and Aunjanue Ellis in King Richard the chance to play intelligence, control, and public performance at once. Actresses who want a political power role with sharp dialogue and real authority will chase it."
+      },
+      {
+        "name": "Benny Kowalski",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s · extremely tall bookie",
+        "hook": "Benny is a physical punchline who still feels dangerous the second he sits down. The script uses his size for comedy, but he also carries the quiet menace of a local operator who knows exactly how much leverage he has.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting part that gave Michael Chiklis in The Shield and Richard Kind in darker ensemble work room to dominate with one presence. A distinctive character actor with physical specificity will have a field day."
+      },
+      {
+        "name": "Carmen Garcia",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s · red-haired, tattooed, pierced, homeless",
+        "hook": "Carmen is vulnerable without being ornamental, and the script gives her enough specificity to make her feel like a real person before she becomes a witness. Her mix of street survival, emotional openness, and outsider status makes her a strong recurring face in the town’s underclass.",
+        "why_actor_wants_this": "This is the kind of role that gave Jena Malone in Saved! and Riley Keough in The Girlfriend Experience room to play fragility with edge. Younger actresses looking for a gritty, emotionally legible part with a memorable reveal will want it."
+      },
+      {
+        "name": "Chief Jack Foster",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · police chief nearing retirement",
+        "hook": "Foster is the old-guard chief who knows exactly how the machine works and has no interest in pretending otherwise. He gives the series institutional weight and a sense that the department’s culture is older than any one case.",
+        "why_actor_wants_this": "This is the kind of authority role that lets a veteran character actor do the James Gandolfini / J.K. Simmons thing — bluster, fatigue, and command in one package. Older actors who can make bureaucracy feel personal will want it."
+      },
+      {
+        "name": "Amy Russillo",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · senior living administrator",
+        "hook": "Russillo is polished, transactional, and unexpectedly funny, which makes her memorable in a short amount of time. She represents the practical, money-driven side of Buddy’s private life and gives the care-home world its own sharp edge.",
+        "why_actor_wants_this": "This is the kind of compact, scene-stealing role that lets an actress do the Allison Janney in The West Wing thing — authority, wit, and a little menace in a small footprint. Character actresses who can land a line and hold a room will want it."
+      },
+      {
+        "name": "Tino Alvarez",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · concierge",
+        "hook": "Tino is the observant gatekeeper who sees more than he says and gives the senior facility a lived-in social texture. He’s the kind of supporting character who can quietly become useful whenever the story needs a witness or a human point of contact.",
+        "why_actor_wants_this": "This is the sort of grounded supporting role that gives an actor the Michael Kelly in House of Cards lane — understated, watchful, and useful in every scene. Working character actors who specialize in realism will be interested."
+      },
+      {
+        "name": "Princess",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · prostitute",
+        "hook": "Princess is funny, defensive, and instantly legible as someone who has survived by talking back. She adds color to Benny’s world and helps the bar scene feel populated by people with their own histories, not just plot functions.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the Pam Grier / Lorraine Toussaint space to make a small part feel lived-in and memorable. Character actresses who like sharp, streetwise dialogue will chase it."
+      },
+      {
+        "name": "Fat Sam Tedesco",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · gambler / victim",
+        "hook": "Fat Sam is introduced as a local deadbeat with debts and a reputation, but his death is what kicks the whole series into motion. He functions as a pressure point in the town’s criminal economy and a reminder that everybody in Kingstown is connected.",
+        "why_actor_wants_this": "This is the kind of brief but memorable role that lets an actor do the John Cazale thing — make a small amount of screen time feel consequential. Character actors who can leave a mark fast will want it."
+      },
+      {
+        "name": "Glen Parker",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · abusive father in flashback",
+        "hook": "Glen is the source of Buddy’s deepest wound and the flashback makes him the origin point of the show’s moral damage. He is not a present-day player, but he is structurally important because the series keeps circling the violence he left behind.",
+        "why_actor_wants_this": "This is the kind of flashback role that gives an actor the chance to create a lasting shadow in very little time, like the father figures in The Sopranos or Rectify. Strong character actors who can make menace feel intimate will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a crime world where every conversation is a power struggle and every family scene carries criminal fallout.",
+        "fit_profile": "Established indie or prestige-TV directors with at least one or two character-driven features or pilot episodes under their belt, especially those drawn to ensemble tension, moral ambiguity, and grounded urban realism. This material rewards directors who can keep scenes alive through performance, blocking, and rhythm rather than spectacle.",
+        "detail": "The pilot gives a director a lot of playable friction: squad-room banter, interrogation pressure, domestic scenes with real emotional charge, and a final reveal that recontextualizes the whole episode. It will attract directors who like to build tension out of behavior and subtext, not just plot mechanics."
+      },
+      "buyer_appeal": {
+        "tier": "Premium cable / streamer drama",
+        "lane": "Adult crime drama with prestige character weight",
+        "detail": "The show can be packaged around one strong lead performance and a few high-utility supporting roles, so it does not require a giant ensemble or effects spend to get off the ground. The contained contemporary setting and serialized corruption engine fit the current buyer appetite for dark, character-led crime worlds that can run for multiple seasons."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot is built around a strong lead orbit.",
+        "detail": "Buddy is the clear center of gravity, which gives the series a clean engine, but a next pass could deepen one or two supporting relationships so the show can generate more story away from his immediate orbit. The Kelly and Casey dynamics already help; the room for expansion is in giving one additional regular a more independent pressure line.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The Chucky reveal is the pilot’s biggest turn.",
+        "detail": "The Carmen interrogation lands hard because it changes the moral shape of the series, and the version of the scene where that revelation is seeded a beat earlier could make the turn feel even more inevitable. The emotional beat is already there; the lever is in how early the audience starts to sense that Buddy’s past is about to speak.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand and pop-culture references are plentiful.",
+        "detail": "Red Bull, Law & Order, The Sopranos, Keurig, Ferrero Rocher, and the Giants all appear on the page, so a production pass would want to decide which references are essential and which can be generalized without changing the scene energy. That keeps the script easier to clear while preserving the lived-in voice.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The night exterior opening does the heavy lifting.",
+        "detail": "The teaser’s street-and-apartment-building sequence is a strong launch, and it also sets the show’s visual lane immediately. A future pass could keep the same tension while considering whether any of the later exterior beats can be folded into fewer practical setups.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 77.3,
+  "tier": "Optionable",
+  "inputTokens": 24038,
+  "outputTokens": 5576,
+  "cost": 0.0431205,
+  "declaredFormat": "Series"
+}

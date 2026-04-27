@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:23:56.674Z",
+  "submission_id": "e06536fa-3f5e-4ef0-88dd-f3f80b8be6de",
+  "eval_id": "44767de8-cd52-4bb4-beff-67ce77ec14e6",
+  "title": "MAKE UP YOUR MIND",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Kevin Murphy",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s"
+    },
+    {
+      "name": "Nikki Murphy",
+      "role_type": "Lead",
+      "demographics": "Female · mid-40s"
+    },
+    {
+      "name": "Eric Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · early-to-mid 50s"
+    },
+    {
+      "name": "Alison",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to 40s"
+    },
+    {
+      "name": "Amber",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to 40s"
+    },
+    {
+      "name": "Margo",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "Jesse",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Matt",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-50s"
+    },
+    {
+      "name": "Dave",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-50s"
+    },
+    {
+      "name": "Leah",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    }
+  ],
+  "positioning_hook": "A recently divorced salesman keeps colliding with the women he dates, works with, and once married, until one chaotic golf-and-bar circuit forces him to choose who he actually wants.",
+  "cost_usd": 0.050688,
+  "input_tokens": 37578,
+  "output_tokens": 5001,
+  "status": "wrote:leads_ok"
+}

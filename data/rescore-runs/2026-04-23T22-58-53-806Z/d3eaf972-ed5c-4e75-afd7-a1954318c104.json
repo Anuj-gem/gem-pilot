@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:27:02.620Z",
+  "submission_id": "d3eaf972-ed5c-4e75-afd7-a1954318c104",
+  "eval_id": "71e50ba0-fdde-4787-9fc5-c8f7ee5dbdc2",
+  "title": "CHIPS AND DIPS 2025",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "MAX DUARTE",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Latino"
+    },
+    {
+      "name": "GEORGE DUARTE",
+      "role_type": "Lead",
+      "demographics": "Male · 60s · Latino"
+    },
+    {
+      "name": "CINDY SHERMAN",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "TAWNA WILLIAMS",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · Black"
+    },
+    {
+      "name": "NATASHA POLCHENYOSKI",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · Blonde, statuesque"
+    },
+    {
+      "name": "ANDRE",
+      "role_type": "Supporting",
+      "demographics": "Male · late 60s"
+    },
+    {
+      "name": "LIEUTENANT JERRY STOVICH",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "PAUL SINALOA",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Polynesian"
+    },
+    {
+      "name": "ANNA DUARTE",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s"
+    },
+    {
+      "name": "ROSE",
+      "role_type": "Supporting",
+      "demographics": "Female · child/young teen"
+    }
+  ],
+  "positioning_hook": "A Vegas accountant-turned-swindler juggles three ex-lovers, a mob-linked casino scheme, and a million-dollar chip caper before the Strip turns the chase back on him.",
+  "cost_usd": 0.05471475,
+  "input_tokens": 42455,
+  "output_tokens": 5083,
+  "status": "wrote:leads_ok"
+}

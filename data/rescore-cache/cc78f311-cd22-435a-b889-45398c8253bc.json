@@ -1,0 +1,350 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Creature Feature",
+        "Slasher",
+        "Werewolf"
+      ],
+      "tone": "gritty, campy, lurid, exploitative"
+    },
+    "positioning_hook": "A college swim team’s spring-break bike trip cuts through a rural town where a family bargain, a vanished-girls legend, and a werewolf bloodline turn the woods into a slaughterhouse.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clean genre promise: attractive college athletes, an isolated road trip, and a monster reveal that escalates into survival horror. The audience lane is clear for horror fans, though the appeal is more cult-forward than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early with the swim team on a remote bike trip and the ominous Vanish Woods legend, then pays off with the werewolf reveal and the town’s pact. The story engine is easy to explain in two sentences and the danger is legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Angie, Lauren, Kendall, Devina, and May each have a distinct social flavor, and Angie’s pregnancy gives the lead role a built-in pressure point. The ensemble is more functional than deeply layered, with most of the supporting dynamics serving the horror progression."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script commits to an aggressively pulpy mix of collegiate banter, rural grotesquerie, and body-horror escalation, which gives it a distinct exploitation-energy. The material is confident in its excess, but the underlying setup still sits in familiar backwoods-horror territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps the girls moving from campus to road to cabins to woods, and each stop adds a new pressure or reveal. The middle section spends a long stretch on atmosphere and social friction before the monster engine fully takes over."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The pregnancy reveal, the werewolf family pact, and the final wolf-birth button give the story a memorably nasty identity. Even so, the core setup of stranded young women in rural monster territory is familiar enough that the script’s individuality comes from execution more than premise alone."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The rural ecosystem is specific: the general store, cabins, general-store hospitality, local superstition, the abandoned town, and the hidden bargain all create a usable horror geography. The Vanish Woods myth and the town’s silence suggest a larger off-screen history that supports the story well."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a very particular grindhouse tone: bawdy college banter, Southern-fried hospitality, grotesque body horror, and a knowingly outrageous final image. The voice is consistent and easy to identify from scene to scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are deeper currents around female friendship, betrayal, fertility, and inherited violence, especially in Angie’s pregnancy and Kendall’s childhood loss. Those themes are present, but the script mostly uses them as fuel for the horror turn rather than as fully developed emotional layers."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The five-woman team gives the feature a workable social engine, and the Angie/Lauren/Michael triangle adds a useful betrayal axis. The relationships are lively in dialogue, but the story ultimately narrows to survival rather than generating many independent relationship tracks."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "ensemble of five college-age women",
+          "one child role",
+          "one teen male role",
+          "older rural couple",
+          "physically demanding creature performer",
+          "pregnant lead in final act"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "rural woods",
+          "general store/cabins compound",
+          "abandoned town street",
+          "lake",
+          "auto shop",
+          "college campus epilogue"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "werewolf transformations, creature attacks, blood/gore augmentation, and the final wolf-birth effect",
+        "stunts_level": "moderate",
+        "sfx_needs": "heavy practical gore, prosthetic wounds, trap effects, severed-head and mauling effects",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "T.G.I. Fridays"
+        },
+        {
+          "type": "brand",
+          "detail": "Andy Griffith"
+        },
+        {
+          "type": "brand",
+          "detail": "Nick at Night"
+        },
+        {
+          "type": "brand",
+          "detail": "Benetton"
+        },
+        {
+          "type": "brand",
+          "detail": "Scrunchies"
+        },
+        {
+          "type": "brand",
+          "detail": "LSAT"
+        },
+        {
+          "type": "brand",
+          "detail": "Myrtle Beach"
+        },
+        {
+          "type": "brand",
+          "detail": "California"
+        },
+        {
+          "type": "brand",
+          "detail": "Scarsdale"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming horror or genre theatrical with cult appeal",
+        "content_level": "explicit",
+        "series_engine_or_release_model": "feature release model; best suited to festival-to-platform, genre-label theatrical, or direct-to-streaming horror programming"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained rural settings keep the footprint manageable, but the creature work, gore effects, and final transformation push it above microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The five-woman ensemble plus child and creature roles are straightforward, but the lead pregnancy arc and werewolf performer add specificity."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story uses a modest number of recurring rural locations, though woods, lake, town, cabin compound, and campus epilogue all need coverage."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic mauling, dismemberment, sexual banter, profanity, and body-horror imagery narrow the lane to mature horror buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and pop-culture references appear on the page, but there is no major real-person or IP dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening gives the monster a human family.",
+          "what_it_means": "That immediately elevates the threat beyond a random creature in the woods and gives the film a built-in mythology buyers can market around. Horror audiences and genre labels looking for a creature feature with a story behind the teeth will respond to that setup.",
+          "evidence": "Jeremiah teaching Lucan to butcher deer, the cellar full of cages and chains, and the later reveal that the family has been making sacrifices to a hidden power.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The female ensemble has instant chemistry.",
+          "what_it_means": "The swim-team banter creates a ready-made group dynamic that can carry the first half of the movie and make the eventual body count land harder. Casting directors and young-ensemble buyers will see five distinct slots with clear energy: alpha, flirt, skeptic, comic relief, and emotional center.",
+          "evidence": "The locker-room scene, the team chant, the party banter, and the road-trip teasing all establish distinct voices quickly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Angie’s pregnancy gives the lead role a second engine.",
+          "what_it_means": "The story is not only about survival; it’s about a young woman carrying a secret that turns the ending into a horror button with franchise-style sting. Actors and buyers alike will notice that the role has emotional stakes, physical jeopardy, and a final-image hook.",
+          "evidence": "The positive pregnancy test, the confession to Lauren, and the final delivery-room reveal that Angie gives birth to wolf-like pups.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The rural hospitality turns sinister in layers.",
+          "what_it_means": "The general store, Aunt Dee’s cooking, the cabins, and the family’s warmth create a false safety net that makes the eventual violence feel earned rather than random. That kind of tonal bait-and-switch is attractive to horror buyers because it gives the movie a memorable middle stretch, not just a finale.",
+          "evidence": "Eggs and blood sausages, the pie with red juices, the honey jar full of body parts, and the family’s cheerful welcome.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Vanish Woods legend is a clean horror brand.",
+          "what_it_means": "The name itself is marketable and easy to remember, and the missing-children rhyme gives the film a folklore identity that can be sold in a trailer or poster. Buyers looking for a title with built-in mythology will see a hook that feels like a place people should fear.",
+          "evidence": "Kendall’s story about vanished children, the rhyme about staying out of the woods, and the repeated warning to stay on the road.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The gore set pieces are unapologetically showy.",
+          "what_it_means": "This script knows how to deliver the kind of practical-horror moments that genre fans remember and share. That makes it attractive to producers who want a visceral crowd-pleaser and to directors with a taste for effects-driven horror.",
+          "evidence": "The rats erupting from Angie’s leg, Lauren’s decapitation by wire, May’s impalement, and the final mauling sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a nasty final image.",
+          "what_it_means": "The wolf-birth reveal gives the movie a button that lingers after the credits and suggests the curse is not fully contained. That is exactly the kind of final beat horror buyers like because it supports word-of-mouth and sequel talk.",
+          "evidence": "Eight months later, Angie’s labor scene reveals her lower body morphing into a wolf as she delivers wolf-like pups.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a lean, vicious rural horror feature with a strong exploitation pulse: a college swim team, a cursed woods, and a family of werewolves hiding behind Southern hospitality. The script’s best commercial asset is that it gives buyers both a clean creature premise and a memorable ensemble, with Angie’s pregnancy and the final wolf-birth image adding a nasty extra hook."
+    },
+    "lead_characters": [
+      {
+        "name": "ANGIE",
+        "role_type": "Lead",
+        "demographics": "Female · 21 · college swimmer",
+        "hook": "Angie is the emotional center of the group: observant, increasingly burdened, and carrying a secret that makes every mile of the trip feel heavier than the last. She reads as the responsible one in the room, but the script keeps revealing how much she is already under pressure before the woods ever close in.",
+        "why_actor_wants_this": "This is the showcase territory of Neve Campbell in Scream or Toni Collette in Hereditary — the performance space where a grounded lead has to hold fear, guilt, and physical survival in the same frame. Actors who want a role that starts as ensemble glue and ends as the emotional and bodily center of the movie will chase this."
+      },
+      {
+        "name": "LAUREN",
+        "role_type": "Lead",
+        "demographics": "Female · 21 · college swimmer captain",
+        "hook": "Lauren is the alpha of the group: rich, sharp-tongued, image-conscious, and used to getting her way until the trip strips away her control. She’s the kind of character who can be funny, cutting, and cruel in the same breath, which makes her instantly playable.",
+        "why_actor_wants_this": "This is the showcase lane of Rachel McAdams in Mean Girls or Allison Janney in The Help — a role built on verbal snap, social dominance, and the pleasure of watching a polished exterior crack. Actors who can command a room and weaponize dialogue will want this because it gives them authority before it gives them vulnerability."
+      },
+      {
+        "name": "KENDALL",
+        "role_type": "Lead",
+        "demographics": "Female · 19 · college swimmer",
+        "hook": "Kendall is the local bridge between the girls and the woods: sweet, proud of her roots, and carrying the childhood trauma that explains why the legend still lives in her body. She has the most direct connection to the town’s mythology, which makes her both guide and tragic witness.",
+        "why_actor_wants_this": "This is the showcase space of Jena Malone in Donnie Darko or Brittany Murphy in Girl, Interrupted — a role that mixes innocence, local specificity, and a buried wound that changes how we read her. Young actors who want a part with warmth, vulnerability, and a late-story gut punch will chase it."
+      },
+      {
+        "name": "DEVINA",
+        "role_type": "Lead",
+        "demographics": "Female · 21 · college swimmer",
+        "hook": "Devina is the loud, flirtatious, fast-talking comic engine who keeps the group from sinking into dread too early. She’s also the one who can pivot from joke to loyalty in a beat, which gives her real value in the ensemble.",
+        "why_actor_wants_this": "This is the kind of role Regina Hall turns into a scene-stealer in ensemble comedy-horror — a part that lets an actor play rhythm, attitude, and panic without losing likability. Performers who thrive on comic timing and sudden terror will see a lot of playable range here."
+      },
+      {
+        "name": "MAY",
+        "role_type": "Lead",
+        "demographics": "Female · 20 · college swimmer",
+        "hook": "May is the sweet, hungry, slightly spacey one whose blood-sugar jokes give the group a comic pulse while also making her physically vulnerable. She’s affectionate and open, which makes her horror beats especially painful when the violence starts closing in.",
+        "why_actor_wants_this": "This is the showcase territory of Anna Faris in Scary Movie or Jenny Slate in a horror-comedy ensemble — a role that lets an actor play innocence, physical comedy, and escalating terror. It’s a strong fit for performers who can make vulnerability feel charming before it becomes tragic."
+      },
+      {
+        "name": "JEREMIAH KENT",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Jeremiah is a feral patriarch: brutal, survivalist, and completely at home in the language of meat, blood, and discipline. He has the presence of a man who has made a religion out of predation, which gives the film its most primal authority.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in a menace role or Stephen Lang in a hard-edged genre turn — a part where stillness, authority, and sudden violence do the work. Character actors who like playing a father figure with monstrous conviction will chase it."
+      },
+      {
+        "name": "LUCAN",
+        "role_type": "Supporting",
+        "demographics": "Male · teen to early 20s",
+        "hook": "Lucan is the body-horror centerpiece: raised in isolation, half-feral, and moving from boy to predator with unnerving ease. He’s both victim and weapon, which makes him more than a standard monster and gives the film its most unsettling physical presence.",
+        "why_actor_wants_this": "This is the showcase space of a young performer in a creature-heavy role like the emotional/physical territory of The Monster or Let the Right One In — a part that asks for stillness, menace, and transformation. Actors with strong physical control and a taste for genre mythology will want the challenge."
+      },
+      {
+        "name": "UNCLE RED",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Uncle Red is the genial front door to the nightmare: folksy, welcoming, and quietly complicit in the town’s darkest bargain. He plays like a man who has spent years smiling through a curse, which makes him a great genre face.",
+        "why_actor_wants_this": "This is the kind of role that gives an older character actor the Donald Sutherland-in-Invasion of the Body Snatchers slot — warmth on the surface, dread underneath. Performers who can turn hospitality into unease will have a field day."
+      },
+      {
+        "name": "AUNT DEE",
+        "role_type": "Supporting",
+        "demographics": "Female · 70s",
+        "hook": "Aunt Dee is the sweet, apron-wearing counterpart to Uncle Red, all smiles and home cooking until the horror logic underneath the family becomes clear. She’s the kind of character whose kindness becomes more chilling the longer she stays on screen.",
+        "why_actor_wants_this": "This is the showcase lane of Kathy Bates in Misery or Frances Sternhagen in a folk-horror turn — a role that lets an actor weaponize warmth. Older actresses who want to play maternal comfort with a hidden edge will be drawn to it."
+      },
+      {
+        "name": "NATHAN",
+        "role_type": "Supporting",
+        "demographics": "Male · teen",
+        "hook": "Nathan is the awkward, comic, horror-obsessed cousin who seems harmless until he becomes the key to the film’s survival turn. He’s shy, eager to please, and just odd enough to feel like he belongs to the woods.",
+        "why_actor_wants_this": "This is the kind of part that gives a young actor the Daniel Radcliffe-in-Horns or Noah Jupe-in-a-genre-turn slot — awkward charm that flips into courage. It’s a strong showcase for a performer who can play innocence and sudden heroism."
+      },
+      {
+        "name": "MICHAEL",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · college athlete",
+        "hook": "Michael is the offscreen emotional detonator who gives the Angie/Lauren conflict its sting. He’s less a full character than a pressure point, but he matters because the script uses him to expose the group’s loyalties and betrayals.",
+        "why_actor_wants_this": "This is the kind of role that functions like the romantic pivot in a teen thriller — brief but consequential, with enough charm to make the betrayal matter. A young actor with leading-man looks and easy charisma could use it as a calling card."
+      },
+      {
+        "name": "ZEKE",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Zeke is one half of the road menace duo: crude, drunk, predatory, and built to make the girls’ journey feel unsafe before the supernatural threat arrives. He’s a pure genre antagonist with no wasted motion.",
+        "why_actor_wants_this": "This is the kind of role that lets a character actor play ugly, funny menace in the vein of a Coen-brothers local creep or a Rob Zombie henchman. Actors who enjoy scene-chewing villainy will know exactly what to do with it."
+      },
+      {
+        "name": "DEKE",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Deke is Zeke’s partner in roadside harassment, all leer and beer and bad intent. He helps establish the film’s hostile rural perimeter and gives the opening stretch a human threat before the monster takes over.",
+        "why_actor_wants_this": "This is a compact, playable bad-guy role in the tradition of a memorable horror redneck sidekick — the kind of part actors use to make an impression fast. It’s ideal for someone who can turn a few scenes into a lasting audience memory."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a nasty, character-forward creature feature with a strong practical-effects spine.",
+        "fit_profile": "First- or second-feature directors with horror shorts, festival genre credits, or a background in contained thrillers will self-identify here. The material rewards filmmakers who care about atmosphere, ensemble banter, and practical gore as storytelling rather than decoration.",
+        "detail": "The script gives a director a clear escalation ladder: social comedy, rural unease, then full creature carnage. It’s especially attractive to directors who can stage tension in tight spaces and make a low-to-mid budget feel bigger through mood, blocking, and effects."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M genre feature",
+        "lane": "streaming horror, indie genre label, or late-night cult theatrical",
+        "detail": "The cast can be built around emerging talent rather than name dependency, with the main lift sitting in the lead ensemble and creature performer. The rural containment, practical-gore appeal, and final-image hook fit the current horror buy-zone for streamers and genre labels that want high-concept packaging without a large footprint."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle stretch leans on atmosphere.",
+        "detail": "The general-store hospitality, cabin settling-in, and Vanish Woods folklore all work as setup, and the next pass could consider tightening the run between the first warning signs and the first major attack so the horror engine ignites a little earlier. The material already has the mood; the lever is compression, not invention.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble banter carries a lot of page time.",
+        "detail": "The locker-room and cabin exchanges are doing useful character work, and a future pass could decide which lines are essential to the group dynamic and which can be folded together so the personalities stay vivid without repeating the same social beat. That would protect the chemistry while giving the feature a slightly leaner forward drive.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The creature mythology is clear but could be seeded sooner.",
+        "detail": "The Jeremiah/Lucan material and the town’s bargain pay off well once the reveal arrives, and one direction would be to let a few more visual hints of the family’s true nature surface earlier in the road-trip section. That would make the later turn feel even more inevitable while preserving the surprise of the full reveal.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand references are easy to swap.",
+        "detail": "T.G.I. Fridays, Andy Griffith, Nick at Night, Benetton, Scrunchies, LSAT, Myrtle Beach, California, and Scarsdale all read as flavor rather than story-critical dependencies, so a production pass could streamline them if clearance simplicity becomes a priority. The movie’s identity lives in the characters and the woods, not in any one named reference.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final act asks for creature and gore coordination.",
+        "detail": "The werewolf transformations, maulings, trap effects, and Angie’s final birth sequence all point to a practical-effects-forward approach, so the cleanest version of the film is the one that plans those beats as a single effects strategy rather than isolated set pieces. That protects both budget and consistency across the monster reveal.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63.7,
+  "tier": "Optionable",
+  "inputTokens": 39046,
+  "outputTokens": 5393,
+  "cost": 0.053553,
+  "declaredFormat": "Feature film"
+}

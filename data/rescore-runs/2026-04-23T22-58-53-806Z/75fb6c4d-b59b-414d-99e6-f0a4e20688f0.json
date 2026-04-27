@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:22:54.385Z",
+  "submission_id": "75fb6c4d-b59b-414d-99e6-f0a4e20688f0",
+  "eval_id": "b7f3c140-7b18-4e45-93d5-3d0a5ab4bcf0",
+  "title": "wake up dream boy 7 screenplay",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Tom",
+      "role_type": "Lead",
+      "demographics": "Male · late teens / high-school age"
+    },
+    {
+      "name": "Dan Dunne / Gary Don",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Ms. Frances",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "Alisha",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    },
+    {
+      "name": "Miriam",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    },
+    {
+      "name": "Vivian",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens"
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens / early 20s"
+    },
+    {
+      "name": "Tasha",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Truth",
+      "role_type": "Supporting",
+      "demographics": "Voice / presence · ageless"
+    }
+  ],
+  "positioning_hook": "A lonely schoolboy, rejected by five girls, opens a forbidden book and falls into a surreal moral labyrinth where desire, identity, and temptation become literal escape routes.",
+  "cost_usd": 0.033280500000000005,
+  "input_tokens": 16912,
+  "output_tokens": 4577,
+  "status": "wrote:leads_ok"
+}

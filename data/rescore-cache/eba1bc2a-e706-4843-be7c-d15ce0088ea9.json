@@ -1,0 +1,348 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Dramedy",
+      "genre_tags": [
+        "Sci-fi",
+        "Romance"
+      ],
+      "tone": "Wry, heartfelt, satirical, bittersweet"
+    },
+    "positioning_hook": "A grief-struck VR death designer in flood-threatened New Orleans starts staging perfect endings for the terminally ill, then has to face his own unfinished life.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean emotional promise and a strong hook: a future-facing end-of-life company, a romantic thread, and a city under literal and emotional flood pressure. It feels accessible to adult audiences who like high-concept dramedy with heart, though the subject matter naturally narrows the lane from broad four-quadrant fare."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script states its engine early and cleanly through the Ascensions commercial, Peter’s pitch session, and the first departure. The audience immediately understands the job, the rules, and the contradiction at the center of the story: a man who helps others leave beautifully cannot leave his own life behind."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Peter, Gale, Merrily, and even Arden each arrive with distinct voices and emotional functions, and the script gives them memorable behavioral signatures rather than generic exposition. Peter’s guarded tenderness, Gale’s feral wit, and Merrily’s moral clarity create a strong character triangle that keeps paying off through the back half."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by turning assisted dying into a personalized VR spectacle, then using that premise for comedy, romance, and existential drama. The Broadway musical departure, the convenience-store action fantasy, and the treasure-map ending all show a writer willing to push the concept into vivid, playable territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through a steady sequence of departures, workplace pressure, protest escalation, and the Peter/Merrily/Gale triangle. The back half is especially propulsive once Peter starts unraveling and the Susan Ross pressure campaign enters, though the middle leans more on atmosphere and repeated departure set-pieces than on a single hard-driving external clock."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a fresh commercial idea that also makes immediate emotional sense: a company that sells customized death experiences in a near-future America that has given up on fixing things. The concept lands because it is both strange and legible, and the script keeps finding new angles on the same core idea without losing the emotional center."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Ascensions has rules, jargon, competitors, protesters, legal exposure, and a whole consumer ecosystem around death-as-service, while New Orleans adds flood anxiety, local color, and a lived-in civic texture. The world feels story-generating rather than decorative, especially in the contrast between the corporate calm inside Ascensions and the angry, decaying world outside it."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct tonal fingerprint: deadpan workplace comedy, sincere grief, satirical futurism, and bursts of heightened fantasy all coexist without collapsing the whole. Gale’s profanity, Arden’s theatrical corporate poetry, and the musicalized departures give the piece a voice that would be recognizable from a single scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the premise, the script is really about avoidance, regret, and the human cost of making a life out of controlled endings. Peter’s childhood trauma, Gale’s lost love, Merrily’s environmental idealism, and the company’s moral ambiguity all suggest a deeper emotional and thematic reservoir than the surface concept alone."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Peter/Kai/Ethan/Arden workplace web and the Peter/Gale/Merrily triangle both generate recurring energy, and several pairings have their own comic rhythm. The script is still primarily driven by Peter, but the supporting relationships are active enough to create a real ensemble feel around him."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Older lead roles with strong comic timing",
+          "One child performer for Young Peter",
+          "One elderly ensemble presence for several departure clients",
+          "Specific age ranges matter for Peter, Gale, Merrily, Arden, Dr. Rao, and Leonard"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior inserts",
+        "period_or_contemporary": "Near-future contemporary",
+        "notable_requirements": [
+          "New Orleans streets and neighborhoods",
+          "Flooded house exterior and interior",
+          "Hospital and hospice-style rooms",
+          "VR studio/control room build",
+          "Cemetery and outdoor screening setup",
+          "Beach memorial and parade exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Multiple VR departure worlds, simulation transitions, stylized fantasy environments, and a few composited spectacle moments such as the zeppelin, superhero, mermaid, and outer-space beats.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical flood water, simulated death-drug effects, protest crowd moments, and a few action-movement beats inside departures.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Fleetwood Mac - 'Go Your Own Way'"
+        },
+        {
+          "type": "named_music",
+          "detail": "The Beach Boys - 'Don't Worry, Baby'"
+        },
+        {
+          "type": "named_music",
+          "detail": "The Clash - 'Should I Stay or Should I Go'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Kermit The Frog quote in opening page"
+        },
+        {
+          "type": "brand",
+          "detail": "Ascensions"
+        },
+        {
+          "type": "brand",
+          "detail": "CarPal"
+        },
+        {
+          "type": "brand",
+          "detail": "Sustain"
+        },
+        {
+          "type": "brand",
+          "detail": "Live and Let Live"
+        },
+        {
+          "type": "brand",
+          "detail": "Yelp reference"
+        },
+        {
+          "type": "brand",
+          "detail": "The Pelicans, Lakers, Broadway title Bye Bye Birdie"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolph Hitler, Franklin D. Roosevelt"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streamer or prestige theatrical dramedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical runway; the concept is built around one central arc with episodic-feeling departure set-pieces."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The core story is contained to offices, homes, and a handful of practical locations, but the departure worlds and flood imagery add moderate production ambition."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script depends on a few sharply defined adult roles, one child performer, and several older supporting players with strong voice and presence."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most of the story is manageable, but the New Orleans footprint, flood exteriors, cemetery, beach, and multiple departure environments create a varied location plan."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material centers on assisted dying, terminal illness, grief, protest, and some profanity, which places it in a mature content lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script uses named songs, real figures like Hitler and Roosevelt, and multiple branded entities that would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "A buyer gets a clean high-concept engine with emotional stakes built in: personalized VR departures for the terminally ill, told through the man who designs them. That combination gives the project a strong pitch for prestige streamers, adult genre buyers, and actors looking for a role with both concept and feeling.",
+          "evidence": "The Ascensions commercial, Peter’s pitch to the elderly crowd, and the first customized departures establish the business and the emotional promise immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Peter is a showcase lead.",
+          "what_it_means": "The role gives an actor a rare blend of deadpan comedy, romantic awkwardness, buried trauma, and moral collapse, all inside a single commercial frame. Mid-career dramatic leads and actors trying to pivot into prestige genre material will see a part with range and awards-friendly emotional architecture.",
+          "evidence": "Peter’s controlled sales pitch, his private unraveling at home, the panic attack during Leonard’s departure, and the final choice to leave Ascensions all build a full arc.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Gale is the kind of supporting role actors chase.",
+          "what_it_means": "She is a scene-stealing older woman with bite, wit, and a late-life emotional reveal, which creates a memorable part that can anchor publicity and audience affection. Veteran actresses who want a role with humor, edge, and a devastating romantic backstory will gravitate to her immediately.",
+          "evidence": "Her first session with Peter, the pepper-spray beat, the cemetery movie night, and the Cora reveal all show how much character is packed into her scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a strong satirical target.",
+          "what_it_means": "The script turns end-of-life care into a corporate service with jargon, competitors, protestors, and legal exposure, which gives the project a sharp cultural angle beyond the romance and grief. That makes it attractive to buyers looking for elevated genre material with a topical hook and a clear conversation starter.",
+          "evidence": "The CURTAINS slide, Susan Ross’s campaign, the protest lines outside Ascensions, and the consent-form legal jeopardy all deepen the satire.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The departures are a signature set-piece engine.",
+          "what_it_means": "Each client’s simulation can play in a different genre register, which gives the film a built-in trailer-friendly sequence structure and a lot of visual variety without changing the core premise. Directors and buyers who want a contained movie with moments that feel bigger than the footprint will respond to that flexibility.",
+          "evidence": "Harold’s WWII dogfight, Leonard’s Broadway number, Ernesto’s action fantasy, the mermaid, the superhero, and the basketball shot all show the range.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "New Orleans is more than backdrop.",
+          "what_it_means": "The flood anxiety, local music, street life, and neighborhood texture give the film a specific place identity that helps it stand apart from generic near-future material. That kind of rooted setting is attractive to producers who want the world to feel lived-in and exportable at the same time.",
+          "evidence": "The CarPal rides, the cemetery, the brass band parade, the beach memorial, and the flooded house all make the city part of the story’s emotional grammar.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance is earned through structure.",
+          "what_it_means": "Peter and Merrily’s connection grows out of shared grief, shared skepticism, and a believable collision of values, which gives the film a second emotional engine beyond the workplace plot. That makes the project more appealing to buyers who want genre material that can also play as an adult relationship movie.",
+          "evidence": "Their beach cleanup, the New Orleans walk, the parade kiss, and the breakup scene all build a relationship that feels specific and consequential.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, emotionally legible high-concept feature with a real commercial identity: a near-future death-design company, a wounded lead, and a world that can generate both spectacle and tears. The script’s best asset is that it gives actors, directors, and buyers something rare — a prestige-friendly premise that can play satirical, romantic, and deeply human without losing its hook."
+    },
+    "lead_characters": [
+      {
+        "name": "PETER GRIMSBY",
+        "role_type": "Lead",
+        "demographics": "Male · mid-30s",
+        "hook": "Peter is a tightly wound, emotionally overqualified transition specialist who can sell comfort to strangers but cannot extend that same grace to himself. He’s funny in a dry, almost defensive way, deeply competent at work, and quietly haunted by childhood loss, which makes him feel like a man who built a career out of controlled endings because he never got one of his own.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Andrew Garfield in Tick, Tick... Boom! — a lead who can play intelligence, fragility, and self-mythology while the emotional mask slowly cracks. Actors who want a role that can carry a film, deliver comedy, and land a cathartic breakdown will chase this immediately."
+      },
+      {
+        "name": "GALE DORIAN",
+        "role_type": "Lead",
+        "demographics": "Female · 70s",
+        "hook": "Gale is a ferociously alive older woman who treats mortality like an insult and every room like a place to test the furniture. She’s profane, funny, self-possessed, and unexpectedly tender under the armor, with a lifetime of travel, work, and romantic regret that gives her the force of a whole movie inside one person.",
+        "why_actor_wants_this": "This is the showcase space of Frances McDormand in Nomadland or Judi Dench in Philomena — a late-life role that lets an actor carry wit, weathered authority, and emotional revelation in the same frame. Veteran actresses looking for a part that can become a calling card for a whole new chapter will want this."
+      },
+      {
+        "name": "MERRILY WELLS",
+        "role_type": "Lead",
+        "demographics": "Female · mid-30s",
+        "hook": "Merrily is grounded, sharp, and morally awake, with the kind of practical intelligence that comes from having already rebuilt her life once and not wanting to waste time on nonsense. She’s the script’s conscience without being saintly, and her mix of grief, skepticism, and warmth gives her a real adult-romance presence.",
+        "why_actor_wants_this": "This is the emotional lane of Greta Gerwig in Frances Ha or Elisabeth Moss in The Invisible Man — a woman whose intelligence and vulnerability are both active parts of the performance. Actors who want a role that can play romantic chemistry, moral clarity, and emotional steel will be drawn to her."
+      },
+      {
+        "name": "KAI",
+        "role_type": "Supporting",
+        "demographics": "Female · early 30s",
+        "hook": "Kai is the sharp-tongued, stylish, emotionally unavailable engine of the Ascensions floor, the person who can puncture a solemn moment with one line and still feel like the smartest person in the room. She reads as someone who has learned to survive grief by turning it into speed, sarcasm, and competence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the fast-talking, scene-stealing energy of Aubrey Plaza in Ingrid Goes West or Janelle Monáe in Glass Onion — a character whose attitude is the performance and whose timing does the heavy lifting. Younger actresses with comic bite and cool-factor appeal will want it."
+      },
+      {
+        "name": "ETHAN",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-20s",
+        "hook": "Ethan is the awkward, eager junior on the team, all nerves and good intentions, with a sweetness that makes him easy to underestimate. He functions as the audience’s pressure valve inside the office, but the script also lets him register as a real person trying to grow into a morally complicated job.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the anxious, endearing support-slot energy of Paul Dano in Little Miss Sunshine or Jesse Eisenberg in The Social Network — a part built on timing, discomfort, and quiet vulnerability. Emerging actors who want a memorable ensemble foothold will chase it."
+      },
+      {
+        "name": "ARDEN CHASE",
+        "role_type": "Supporting",
+        "demographics": "Male · early 60s",
+        "hook": "Arden is the theatrical corporate patriarch, equal parts mentor, salesman, and showman, with a voice that sounds like he’s always halfway through a keynote or a sermon. He gives the company its mythic language, but he also feels like a man who believes in the product just enough to be dangerous.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the polished authority and sly menace of Bryan Cranston in Your Honor or John Lithgow in The Crown — a leader who can charm, instruct, and unsettle in the same scene. Character actors with gravitas and comic precision will be interested."
+      },
+      {
+        "name": "DR. RAO",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s",
+        "hook": "Dr. Rao is the calm, dryly funny medical counterweight to the company’s emotional theater, the guy who can puncture Peter’s panic with one line and still feel like he’s carrying the real-world consequences. He’s understated, practical, and quietly essential.",
+        "why_actor_wants_this": "This is the kind of compact, scene-efficient role that gives an actor the grounded authority of Mahershala Ali in Green Book’s quieter passages or Aasif Mandvi in The Last Airbender’s more functional support slots. Actors who like precision over volume will see the value immediately."
+      },
+      {
+        "name": "LEONARD WELLS",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Leonard is gentle, reflective, and a little wistful, the kind of man whose life has been full enough that even his goodbye feels like a performance he wants to get right. He carries the story’s emotional thesis in miniature: love, memory, and the dignity of choosing your own exit.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in The Visitor or Tom Courtenay in 45 Years — a late-life role where stillness, gratitude, and sadness do the acting. Veteran character actors looking for a graceful, emotional centerpiece in a supporting slot will want it."
+      },
+      {
+        "name": "MERRILY'S MOTHER / KATE",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s in memory",
+        "hook": "Kate exists mostly through memory and family texture, but she gives Merrily’s emotional world its shape and helps define the Wells family’s tenderness. She’s the kind of presence that makes the home feel lived-in even when she’s not on screen.",
+        "why_actor_wants_this": "This is the kind of memory-role that gives an actor the warm, luminous presence of Laura Linney in The Savages’ family flashback material or Patricia Clarkson in Pieces of April. It’s a brief but emotionally load-bearing part for an actor who can make a few moments resonate."
+      },
+      {
+        "name": "SUSAN ROSS",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-40s",
+        "hook": "Susan is polished, smiling, and relentlessly strategic, the kind of advocate who can weaponize sympathy without ever raising her voice. She’s a clean antagonist because she believes she’s the moral center of the story, which makes her more dangerous and more playable.",
+        "why_actor_wants_this": "This is the showcase lane of Robin Wright in House of Cards or Carrie Coon in The Leftovers when she’s all controlled force — a role built on composure, persuasion, and the chill of certainty. Actors who excel at elegant menace will want it."
+      },
+      {
+        "name": "MERRILY'S FATHER / EDWARD WYATT",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s-70s",
+        "hook": "Ed is a terminal patient whose fear and dignity become the story’s moral test case, especially when the system starts to fail him. He’s less a plot device than a human mirror for what the company claims to offer and what it actually costs.",
+        "why_actor_wants_this": "This is the emotional territory of Bryan Cranston in The Upside or John Lithgow in Terms of Endearment — a role where the actor gets to play vulnerability, fear, and grace in a compressed space. Older dramatic actors will see a chance to make a small amount of screen time land hard."
+      },
+      {
+        "name": "YOUNG PETER",
+        "role_type": "Supporting",
+        "demographics": "Male · 9 years old",
+        "hook": "Young Peter is the child version of the film’s central wound, a boy trapped in the aftermath of a crash he cannot understand. He’s mostly silent, but the role carries the emotional origin point of Peter’s entire adult avoidance pattern.",
+        "why_actor_wants_this": "This is the kind of child role that gives a young performer the emotional clarity of Jacob Tremblay in Room’s early material — a part where stillness and reaction do the work. Casting directors will want a child who can hold attention without overplaying."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a funny, humane, visually inventive movie about death without turning it into a lecture.",
+        "fit_profile": "Mid-career indie directors with one or two festival features, or TV directors moving into features, who already work comfortably with performance-forward material and tonal balance. This material rewards someone who can stage intimate dialogue, then pivot into stylized fantasy departures and keep the emotional throughline intact.",
+        "detail": "The script gives a director a contained dramatic spine with room for signature set-pieces, from the Broadway departure to the flood-soaked ending. It will attract filmmakers who like world-building through behavior and production design rather than spectacle for its own sake."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige streamer dramedy / elevated sci-fi lane",
+        "detail": "The project can be packaged around one strong lead and a handful of vivid supporting roles, so it does not require a giant ensemble or tentpole-level cast to work. The contained footprint and high-concept premise fit the current buyer appetite for adult genre material that can travel on concept, performance, and trailer moments."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The departure set-pieces can be streamlined.",
+        "detail": "The script has a lot of imaginative departure worlds, which is part of its charm, but the next pass could consider consolidating a few of the fantasy vignettes so the strongest ones land with even more force. The version where each departure either advances Peter’s arc or deepens Gale/Merrily would protect the emotional momentum while keeping the visual promise intact.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Peter’s inner wound can surface earlier.",
+        "detail": "The childhood crash reveal is powerful, and the late placement gives it impact, but the script is already rich enough that a small earlier echo of that fear of loss could make his avoidance pattern feel even more inevitable. One direction would be to seed the jar, the house, or his fear of leaving New Orleans with a sharper trace of that origin before the final reveal.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Susan Ross pressure campaign can be tightened.",
+        "detail": "The legal and activist threat is clear, and the material around the consent form and press conference does its job, but the story is strongest when it stays close to Peter’s emotional crisis. A next pass could compress a beat or two of the external campaign so the conflict feels even more like a blade at Peter’s back than a parallel track.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights stack is worth simplifying.",
+        "detail": "The script uses several named songs, real figures, and branded entities, and that creates a meaningful clearance load for production. The cleanest version for buyers would preserve the same emotional beats while swapping in original or generic equivalents where possible, especially in the departures and commercial parody material.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The flood imagery is a strong production signature.",
+        "detail": "The flooded house, storm water, and drifting coffins are memorable and thematically on-point, but they also define the visual effects and weather plan. A producer-friendly version would keep those moments concentrated so the design team can make them count without spreading the water work across too many scenes.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76.3,
+  "tier": "Optionable",
+  "inputTokens": 42642,
+  "outputTokens": 5762,
+  "cost": 0.0579105,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,320 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "Crime",
+        "Revenge"
+      ],
+      "tone": "Gritty, heightened, pulpy, and knowingly comic"
+    },
+    "positioning_hook": "Preston Rigid, a British ex–special forces drifter, returns to his oyster-town family and uncovers a mayor’s drug pipeline hidden inside the local packing plant — then starts breaking the town open with his fists.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean, easy-to-sell engine: a hard-edged outsider returns to a corrupt coastal town and escalates into a revenge-and-conspiracy showdown. The Queen needle drops, the oyster-factory cover operation, and the final siege give it a clear genre promise, though the very specific tone and violence keep it more lane-specific than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands quickly and stays legible: Rigid arrives, gets pulled into a family power structure, spots the oyster-cluster smuggling operation, and is forced into open war with Titus McCallister. The story engine is easy to explain in one breath, and the plant, the mayor, and the family feud all connect cleanly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Rigid is a strong physical lead with a clear code, and Titus has a vivid authoritarian presence, but most of the supporting players function in relation to the central conflict rather than opening separate character engines. Becca, Maggie, and Sheriff Right each add texture, yet the script is most magnetic when it is locked onto Rigid versus Titus."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The oyster-packing drug front, the Queen obsession, and the hyper-specific coastal civic ecosystem give the script its own flavor. The writing commits to a pulpy, almost operatic masculinity that feels deliberate, even when it leans into excess."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the town dynamics and the plant operation are in play, the script keeps building toward confrontation with real forward drive. The midsection spends time on atmosphere and relationship setup, but the hit-and-run, the boat fire, and the final plant-to-estate escalation keep the momentum alive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The oyster-cluster concealment scheme is the kind of odd, specific premise detail that makes the movie memorable immediately. It feels fresh because the criminal infrastructure is rooted in a working coastal economy rather than a generic warehouse or dockside setup."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Oyster Bay feels like a functioning small-town ecosystem with a mayor, sheriff, plant workers, marina traffic, civic events, and family businesses all tied together. The oyster plant, the trailer home, the marina, and the jewelry show create a world with visible social hierarchy and local pressure points."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very identifiable tone: macho, comic-book violence played with straight faces, then punctuated by absurdly specific details like Queen fandom, Roman décor, and the sheriff’s bodybuilder persona. It knows exactly how heightened it wants to be, and that confidence gives it a distinct identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are hints of deeper material in Rigid’s failed marriage, his estrangement from the family, and the town’s dependence on Titus, but the script keeps those elements mostly in service of the action line. The surface pleasures are strong; the deeper emotional reservoir is present but not yet fully dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The family triangle of Rigid, Flag, and Maggie has real shape, and Titus with his sons gives the story a strong opposing unit. Still, the script is driven primarily by one central collision, with most relationships orbiting that conflict rather than generating fully independent story energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "British lead in a coastal American setting",
+          "Highly physical sheriff role with bodybuilder physique",
+          "Mixed-heritage McCallister brothers",
+          "Pre-teen boy in a meaningful supporting role",
+          "Older patriarch role with strong physical presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Coastal marina and dock infrastructure",
+          "Oyster packing plant with conveyor line and concealed back area",
+          "Large mansion estate with security presence",
+          "Trailer home interior and exterior",
+          "Hospital, sheriff office, civic hall/jewelry show, diner, roadside, and highway locations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical action coverage, fire/smoke enhancement, and possible cleanup for explosions and impact beats.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fire effects, boat destruction, gunfire, vehicle collision, hand-to-hand combat, and practical injury makeup.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Queen songs are repeatedly named and used as story texture, including 'A Crazy Little Thing Called Love,' 'Spread Your Wings,' 'You’re My Best Friend,' and 'Tie Your Mother Down.'"
+        },
+        {
+          "type": "brand",
+          "detail": "Queen is treated as a central cultural reference point and the script also names Datsun, Ford, Glock, and Tops of the Pops."
+        },
+        {
+          "type": "real_person",
+          "detail": "Freddie Mercury is referenced by name."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Queen recordings and specific song uses would require music licensing if retained as written."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming action-thriller or mid-budget theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strongest fit as festival-to-platform or genre theatrical with streamer afterlife."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contained to a coastal town, but the action climax adds boat destruction, fire, gunplay, and a large estate assault."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on a few strong roles, but it benefits from a physically specific lead, a bodybuilder sheriff, and a mixed-heritage family unit."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through a marina, trailer park, plant, mansion, hospital, diner, civic hall, highway, and wooded areas."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes graphic violence, gunfire, a body burned in fire, and repeated brutal fight sequences."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Queen songs and Freddie Mercury references are woven into the script as recurring story elements."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The oyster plant is a killer criminal front.",
+          "what_it_means": "The smuggling scheme is built from a real working-class industry, which gives the movie a fresh commercial hook and a visual identity buyers can remember instantly. Genre audiences and producers who want a crime story with a specific local economy — not a generic warehouse operation — will lean in.",
+          "evidence": "Rigid discovers the hidden tarp area inside the oyster packing plant where clusters are being used to conceal bags of white powder.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Rigid is a physical lead with a code.",
+          "what_it_means": "The role gives an actor a bruising, stoic showcase that can play action, dry humor, and wounded masculinity in one package. Mid-career action leads and prestige actors looking for a hard-edged genre turn would see immediate value in it.",
+          "evidence": "He kicks Larry in the groin, refuses to fight women, and later says, 'It’s about what’s just.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Titus McCallister is a memorable villain.",
+          "what_it_means": "The script gives the antagonist real theatrical scale: mayor, patriarch, criminal boss, and self-styled king all in one body. That kind of role attracts actors who want a scene-chewing authority figure with menace, wit, and ritualized power.",
+          "evidence": "Titus lectures his sons in boxing gear, keeps armed guards on his estate, and literally burns his enemies in the furnace.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Queen obsession gives the movie identity.",
+          "what_it_means": "The music thread turns the script into a character piece with a built-in emotional signature, not just a fight movie. Buyers and audiences who respond to needle-drop-driven storytelling and pop-culture specificity will see a clear brandable angle.",
+          "evidence": "Rigid and Billy bond over Queen, the songs recur throughout, and the demo tape becomes a meaningful gift.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The sheriff role is visually unforgettable.",
+          "what_it_means": "Sheriff Right is the kind of supporting role that can become a calling card because the character is defined by image, attitude, and physicality. Casting directors and actors who like larger-than-life genre parts will respond to the bodybuilder-lawman contradiction.",
+          "evidence": "Right is introduced lifting weights in a state of near-bodybuilder musculature, then flexes and declares, 'I am the law.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family dynamic gives the story a human anchor.",
+          "what_it_means": "The father-sister-nephew triangle keeps the movie from becoming pure action mechanics and gives the lead a home base to fight for. That makes the project more attractive to buyers who want genre with emotional access and to actors who want a role with family stakes.",
+          "evidence": "Rigid reconnects with Flag, Maggie, and Billy over dinner, music, and the question of whether he belongs in Oyster Bay.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax escalates with clean genre logic.",
+          "what_it_means": "The final movement moves from surveillance to ambush to plant showdown to estate siege, which gives the film a satisfying upward gear shift. Action buyers and genre producers will appreciate that the ending is built to deliver a full-scale payoff rather than a small-room resolution.",
+          "evidence": "The yacht drug deal, the plant fight, the sheriff confrontation, and the furnace kill all stack into one continuous endgame.",
+          "source": "script"
+        }
+      ],
+      "headline": "RIGID is a pulpy coastal crime thriller with a distinct visual and tonal identity: oyster-cluster smuggling, a bodybuilder sheriff, a Queen-obsessed drifter, and a mayor who rules like a warlord. It has the kind of specific world and memorable villainy that can help a producer package a lean, actor-friendly genre feature with real marketing hooks."
+    },
+    "lead_characters": [
+      {
+        "name": "Preston Rigid",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · British · physically imposing ex-military type",
+        "hook": "Rigid is a drifter with a soldier’s discipline and a bruiser’s instinct, but the script keeps revealing the softer fault lines under the armor: he’s estranged from his family, haunted by a failed marriage, and quietly hungry for belonging. He speaks in clipped, dry lines, carries himself like a man who has seen too much, and becomes most interesting when his code collides with the town’s corruption.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in *Bronson* or McConaughey in *True Detective* season 1 — a physically commanding man whose stillness, menace, and wounded interior all have to coexist in the same frame. Actors who want a role that lets them do action, deadpan humor, and emotional restraint without losing alpha presence will chase it."
+      },
+      {
+        "name": "Titus McCallister",
+        "role_type": "Lead",
+        "demographics": "Male · 60s · white · commanding patriarch",
+        "hook": "Titus is the town’s smiling tyrant: polished, theatrical, and absolutely convinced that power is a family inheritance. He can play gracious host one moment and brutal disciplinarian the next, which makes him feel less like a standard crime boss and more like a civic monarch with a private religion of force.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* or Michael Shannon in *Boardwalk Empire* — a man whose authority is as much performance as it is threat. Veteran actors who want a role with speeches, ritual, menace, and a final descent into operatic villainy will be drawn to it."
+      },
+      {
+        "name": "Sheriff Pamela Right",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-50s · extremely muscular, bodybuilder physique",
+        "hook": "Right is a lawman built like a prizefighter and written like a provocation: she flexes, taunts, and carries herself with the swagger of someone who knows she can back it up. The character is all authority and appetite, but the script also gives her a sharp intelligence and a competitive edge that makes her more than a visual gag.",
+        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in *Atomic Blonde* or Jodie Comer in *Killing Eve* when the role asks for physical dominance and sexualized confidence at the same time. Actors who want a part that turns physique into character and lets them own action scenes with personality will want this."
+      },
+      {
+        "name": "Maggie Rigid",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · working-class coastal mother",
+        "hook": "Maggie is the emotional center of the family: practical, affectionate, and carrying the burden of keeping the household stitched together while the men posture around her. She has warmth and steel in equal measure, and the script uses her as the one person who can still speak the language of home to Rigid.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in *Nomadland* or Patricia Clarkson in *Sharp Objects* — a grounded woman whose emotional intelligence gives the movie its pulse. Actors who want a role that can play maternal authority, hurt, and quiet resilience will respond to it."
+      },
+      {
+        "name": "Becca Andrews",
+        "role_type": "Lead",
+        "demographics": "Female · 40s · attractive in a home-spun way",
+        "hook": "Becca is shy, observant, and emotionally open in a way that makes her feel like the town’s quiet conscience. She’s not written as a plot device so much as a human bridge between Rigid and the civic machinery around him, and her gentleness gives the movie a needed counterweight.",
+        "why_actor_wants_this": "This is the showcase territory of Amy Adams in *Arrival* or Elisabeth Moss in *The Invisible Man* when the role is built around intelligence, vulnerability, and emotional transparency. Actors who want a part that can carry romantic tension while also becoming the audience’s access point into the conspiracy will chase it."
+      },
+      {
+        "name": "Flag Rigid",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s-70s · white · aging, cane-assisted patriarch",
+        "hook": "Flag is the old-school father whose worldview is equal parts pride, fatalism, and local loyalty. He’s funny, stubborn, and deeply rooted in the town’s habits, which makes him both a source of comic relief and a living reminder of the world Rigid left behind.",
+        "why_actor_wants_this": "This is the showcase territory of Albert Brooks in *Drive* or Nick Nolte in *Warrior* — an older father figure who can be funny, abrasive, and unexpectedly tender in the same scene. Character actors who like authority with wear and tear will want it."
+      },
+      {
+        "name": "Billy Rigid",
+        "role_type": "Supporting",
+        "demographics": "Male · pre-teen/early teen · skateboarder",
+        "hook": "Billy is the kid who still believes in heroes, music, and motion, and the script uses him as the emotional future of the family. He’s observant without being cynical, which lets him mirror Rigid’s values before Rigid fully admits them himself.",
+        "why_actor_wants_this": "This is the showcase territory of the kid in *The Florida Project* or *E.T.* — a child role that gives an actor wonder, vulnerability, and a real emotional bond with the lead. Young performers and family audiences alike will connect to the music-fan innocence of the part."
+      },
+      {
+        "name": "Larry McCallister",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · muscular, entitled, privileged",
+        "hook": "Larry is the spoiled heir who mistakes swagger for authority and keeps getting punished for it. He’s comic, petulant, and dangerous in the way insecure men often are, which makes him a useful engine for the story’s early confrontations.",
+        "why_actor_wants_this": "This is the showcase territory of a young villain role like the one in *The Talented Mr. Ripley* or *Saltburn* — a character whose vanity, humiliation, and aggression all play in public. Actors who want to be hated and funny at the same time will go after it."
+      },
+      {
+        "name": "Beau McCallister",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · athletic, mixed heritage",
+        "hook": "Beau is the more controlled brother, the one who tries to sound rational while still serving the family machine. He gives the McCallister unit a colder, more strategic edge and helps make the brothers feel like a real hierarchy rather than interchangeable thugs.",
+        "why_actor_wants_this": "This is the showcase territory of a disciplined supporting antagonist in the mold of the brothers in *The Raid* or *Gangs of London* — a role that plays physical competence and family loyalty. Actors with action training will like the chance to be part of a dangerous trio with distinct internal ranks."
+      },
+      {
+        "name": "Carl McCallister",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · athletic, mixed heritage",
+        "hook": "Carl is the analytical brother, the one who turns family violence into doctrine and ritual. He gives the McCallisters their ideological spine, which makes him feel like the brother most committed to Titus’s worldview.",
+        "why_actor_wants_this": "This is the showcase territory of a polished henchman role like the enforcers in *John Wick* or *Narcos* — a part that lets an actor play calm menace and tactical intelligence. Supporting players who want to stand out inside an ensemble of fighters will be drawn to it."
+      },
+      {
+        "name": "Paige",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · office worker / informant",
+        "hook": "Paige is the bureaucratic leak in Titus’s machine, a person who lives inside the system and quietly feeds it back to him. She’s sharp, cynical, and useful, which gives the story a clean conduit for exposition without flattening the world.",
+        "why_actor_wants_this": "This is the showcase territory of a sharp intelligence role like the office insiders in *The Americans* or *The Departed* — a character who gets to weaponize information. Actors who like contained scenes with tension and subtext will respond to it."
+      },
+      {
+        "name": "Dr. Pinkly",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · small-town doctor",
+        "hook": "Dr. Pinkly is the town professional who sees enough to know things are off, but not enough to stop the machine. He functions as a sober civic witness, giving the hospital scenes a grounded, procedural texture.",
+        "why_actor_wants_this": "This is the showcase territory of the local authority figures in *Mare of Easttown* or *Fargo* — a role that lets an actor play calm competence under pressure. Character actors who can make a few scenes feel lived-in will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a small coastal town into a pressure cooker.",
+        "fit_profile": "Second-feature or established indie directors with a strong genre sensibility, especially those who have already handled violence, dark humor, and regional specificity. This material rewards directors who like performance-forward action, stylized production design, and a world that feels both local and mythic.",
+        "detail": "The movie gives a director a clean escalation path from family drama to plant siege to estate showdown, with enough visual motifs — oysters, Queen, Roman décor, bodybuilder law enforcement — to build a signature look. It’s especially attractive to filmmakers who can make contained geography feel bigger than the budget and who know how to stage action with personality instead of scale alone."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Mid-budget genre thriller / streamer action lane",
+        "detail": "It can be packaged around one strong lead and a vivid villain, with the sheriff and family roles filling out the ensemble without requiring a huge star stack. The contained coastal setting and built-in music identity give it both a producible footprint and a marketing hook that can travel well on streaming and in genre-friendly international sales."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The emotional spine can be foregrounded sooner.",
+        "detail": "The family material is already doing important work, especially the dinner scene, the Queen bonding with Billy, and Maggie’s pressure to stay. A next pass could let Rigid’s return-home wound surface a little earlier in the opening stretch so the action engine and the emotional engine start in the same lane.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The conspiracy reveal arrives in pieces.",
+        "detail": "The oyster-cluster concealment, the heroin message on the answering machine, and the yacht transaction all build the case effectively, but they are spread across several scenes. One direction would be to tighten the chain of discovery so each clue lands with a sharper cause-and-effect push toward the plant showdown.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Queen rights strategy should be mapped early.",
+        "detail": "Because the songs are woven through the script as character texture and emotional punctuation, the music plan is not just decorative here. The version of the package that solves licensing early will protect the movie’s identity and make the pitch easier to sell.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The action footprint is concentrated but demanding.",
+        "detail": "The boat fire, the highway ambush, the plant fight, the estate assault, and the furnace finale all want strong stunt and effects coordination. The story is already built around a few major set pieces, so the cleanest production path is to preserve those and avoid adding extra action beats that don’t change the escalation.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The sheriff and McCallister worlds can stay distinct.",
+        "detail": "Right, Titus, and the brothers each have a strong visual identity, which is a major asset. A future pass could keep their spaces and routines even more differentiated so the audience feels the town’s power structure every time the story cuts between them.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 69.7,
+  "tier": "Optionable",
+  "inputTokens": 33547,
+  "outputTokens": 5515,
+  "cost": 0.04997775,
+  "declaredFormat": "Feature film"
+}

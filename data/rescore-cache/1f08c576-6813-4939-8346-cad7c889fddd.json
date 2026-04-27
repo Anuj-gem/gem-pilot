@@ -1,0 +1,304 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy drama",
+      "genre_tags": [
+        "Coming-of-age",
+        "Sports drama"
+      ],
+      "tone": "Mythic, earnest, spiritually heightened, and emotionally sentimental with bursts of humor"
+    },
+    "positioning_hook": "A concussion-rattled Lakota quarterback starts slipping into the life of a 19th-century boy, and the visions lead him toward a buried medicine bundle, a lost love, and his first real home.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional promise is clear: identity, belonging, family, and a sports-driven coming-of-age engine. The blend of football, Native history, and spiritual visitation gives it a clean audience lane, though the mythic structure and cultural specificity make it more targeted than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and stays legible: Dakota’s blackouts connect him to Ko’la, BB, and the missing bundle, while the football stakes keep the present-day engine moving. The alternating time structure is ambitious, but the core question is easy to track."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Dakota has a strong central contradiction — swaggering quarterback on the outside, abandoned kid on the inside — and BB is vivid enough to carry the emotional center of the historical thread. The supporting players are functional and memorable in moments, with Coach Thomas and Sage adding texture, but the script is most magnetic when it stays close to Dakota."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a spiritual time-slip structure, Lakota language, and a mythic reincarnation logic that feels authored rather than generic. The choice to braid a reservation football story with a 19th-century love-and-survival tale gives it a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps resetting with new revelations, physical jeopardy, and a clear destination in Bear Butte and the monastery. The momentum is strongest when the present-day and historical threads are cross-cutting toward the same emotional payoff, and slightly looser in the middle stretches of repeated waking/dreaming."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A Native quarterback discovering his inheritance through a medicine bundle and a reincarnated love story is fresh, and it feels inevitable once the pieces click. The football, ceremony, and historical romance elements are unusual together, but they lock into one another cleanly."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The reservation school, museum, pow wow economy, monastery, and 1870s Lakota world all carry specific social texture and story-generating detail. The script clearly understands the institutions around Dakota, not just the mythic center."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is distinct: reverent but playful, spiritual but grounded in teenage banter and sports-movie energy. The script knows when to lean into wonder, when to joke, and when to let grief land, even if the tonal blend is broad rather than razor-sharp."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "On the surface this is a quest story, but underneath it is really about inheritance, identity, colonial memory, and what family means when it has to be recovered across time. The BB/Ko’la reveal and the final homecoming give the material a deeper emotional reservoir than the premise first advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Dakota, Wach, Sage, Samuel, Coach Thomas, BB, and the Warrior create a lively web of loyalties and competing agendas. The ensemble is strongest when those relationships collide around the bundle and Dakota’s identity, though the script still clearly belongs to Dakota’s point of view."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Native American lead required for Dakota/Ko’la/Chatan lineage",
+          "Lakota language performance required for several roles",
+          "Multiple age ranges across the same soul/identity thread",
+          "One prominent German shepherd role",
+          "Historical casting for 1870s Lakota and Irish characters"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Both contemporary and period (1870s)",
+        "notable_requirements": [
+          "Reservation school, museum, trailer park, stadium, monastery, limo interiors, private jet interior",
+          "1870s prairie, village, canyon, camp, wagon, and Bear Butte-style sacred landscape",
+          "Period-costume and period-prop needs for the historical thread"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Spirit visions, smoke morphs, hawk imagery, dream transitions, meteor shower, and some animal/vision composites.",
+        "stunts_level": "minor",
+        "sfx_needs": "Fire pit ignition, arrows, smoke, concussion effects, wolf attack beats, and practical weather/fire atmosphere.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Lynyrd Skynyrd’s 'Free Bird' is repeatedly referenced and sung."
+        },
+        {
+          "type": "brand",
+          "detail": "Cell phone, tablet, Air Force photo, and Pow Wow Hotel and Casino branding are explicitly used."
+        },
+        {
+          "type": "real_person",
+          "detail": "Sitting Bull, Crazy Horse, Red Cloud, and Little Big Horn historical references are central."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical figures and culturally specific ceremonial material may require sensitivity review and clearances depending on production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or festival-to-platform drama",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model with strong festival positioning and a secondary streaming audience for faith, sports, and identity-driven drama"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is manageable, but the dual timeline, period work, animals, and vision effects move it beyond a lean indie."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead is highly specific and culturally anchored, with several key supporting roles and a child version of the protagonist thread."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Contemporary reservation locations are practical, but the 1870s prairie material adds period and travel complexity."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Concussion imagery, wolf attacks, historical violence, and spiritual material keep it in mature-family territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses named songs, historical figures, and culturally specific references that invite clearance and consultation attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise fuses sports and spirit.",
+          "what_it_means": "That combination gives the project a clean commercial lane: a coming-of-age sports drama with a mythic identity engine, which is easier to market than a purely abstract spiritual piece. It will attract buyers who want an emotional crowd-pleaser with cultural specificity and a built-in hook for trailers and festival conversation.",
+          "evidence": "Dakota’s football life, the concussion blackouts, and the Bear Butte ceremony all drive the same identity arc.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dakota is a castable lead role.",
+          "what_it_means": "He plays as swagger, vulnerability, denial, and awakening all at once, which is exactly the kind of part that can launch or reframe a young actor. Casting directors, managers, and actors looking for a prestige breakout role will see a showcase that asks for charisma, physicality, and emotional surrender.",
+          "evidence": "His 'Captain Native America' persona, his trailer-park home, and his eventual acceptance of his inheritance all sit on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "BB gives the film its heart.",
+          "what_it_means": "Betty Burkhart is the kind of romantic and comic counterweight that can make the historical thread feel alive rather than museum-bound. That creates a strong attachment point for actors and buyers who respond to a love story with wit, tenderness, and cultural collision.",
+          "evidence": "Her Irish-accented banter, nursing, book-learning, and eventual bond with Ko’la build a memorable emotional spine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has real institutional texture.",
+          "what_it_means": "The reservation school, museum, pow wow economy, monastery, and football program make the setting feel lived-in and story-generating rather than decorative. That kind of specificity helps a producer sell the project as grounded and authentic, not generic inspirational fare.",
+          "evidence": "The museum’s Winter Counts, the school banners, the Pow Wow Hotel, and the monastery archive all matter to the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The historical thread is emotionally legible.",
+          "what_it_means": "The 1870s material is not just backstory; it is a parallel love-and-survival narrative that pays off the present-day identity question. That gives the script a deeper emotional engine and a cleaner festival appeal than a simple mystery would have.",
+          "evidence": "Ko’la, the Warrior, Thunderhead, and BB all feed into the bundle’s journey and Dakota’s eventual recognition.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a strong visual motif system.",
+          "what_it_means": "Circles, smoke, hawks, fire, blankets, and drawings create a repeatable visual language that can unify the two timelines and give the film a memorable signature. Directors and cinematographers will respond to material that already thinks in images.",
+          "evidence": "The opening hawk POV, the fire pit circles, the Winter Count drawings, and the recurring smoke morphs all reinforce the same symbolic vocabulary.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on belonging.",
+          "what_it_means": "The final emotional turn is not just plot resolution; it is a homecoming, which broadens the film’s audience appeal beyond genre viewers. That makes it attractive to buyers looking for uplift with cultural weight and a clean closing note.",
+          "evidence": "Dakota returns to the museum, the bundle is restored, and he is welcomed into the team and the community.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a spiritually charged coming-of-age feature with a real commercial spine: a Native quarterback, a lost medicine bundle, and a 19th-century love story that keeps rewriting his identity. The script has a vivid lead, a memorable romantic counterweight in BB, and a world rich enough to feel both marketable and personal."
+    },
+    "lead_characters": [
+      {
+        "name": "Dakota / Ko’la",
+        "role_type": "Lead",
+        "demographics": "Male · 18 playing 18 / 5 / 14 / 29 in the historical thread · Full-blooded Lakota",
+        "hook": "Dakota is a swaggering high-school quarterback who performs confidence like armor, but underneath he is a foster kid with no stable origin story and a fierce hunger to belong. As Ko’la, he becomes the same soul in the 1870s: a gifted, intuitive boy marked by medicine, memory, and a destiny he does not yet understand. The role lives in the tension between performance and inheritance, between the kid who wants a scholarship and the young man who is being asked to become a keeper of history.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in *The King* or Tom Holland in *The Impossible* — a young lead carrying physicality, vulnerability, and spiritual awakening in the same frame. It gives an actor the chance to play charisma, denial, confusion, and earned self-recognition across two timelines, which is exactly the kind of range that can define a breakout performance."
+      },
+      {
+        "name": "BB / Betty Burkhart",
+        "role_type": "Lead",
+        "demographics": "Female · 17 in the historical thread",
+        "hook": "BB is a sharp, funny, devoutly practical Irish girl with a monk’s robe, a nurse’s instinct, and a streak of mischief that keeps her from ever feeling ornamental. She is lonely, observant, and emotionally fearless, and the script lets her become both caretaker and romantic equal to Ko’la. She is the rare period heroine who feels like a person first and a symbol second.",
+        "why_actor_wants_this": "This is the showcase space Saoirse Ronan had in *Brooklyn* — a young woman whose intelligence, longing, and humor are the engine of the role. It gives an actress a period part with wit, tenderness, and emotional authority, the kind of material that can anchor awards conversation and audience affection at once."
+      },
+      {
+        "name": "Wach",
+        "role_type": "Lead",
+        "demographics": "Female · 24 · Full-blooded Lakota",
+        "hook": "Wach is the bridge between the sacred and the practical: warm, organized, skeptical when she needs to be, and deeply loyal to the people she loves. She carries the burden of explaining the spiritual world to Dakota without ever losing her own groundedness, which makes her feel like a real contemporary woman rather than a guidepost. She is the kind of character who can hold a scene with patience and quiet authority.",
+        "why_actor_wants_this": "This is the grounded-supporting-to-co-lead territory of Lily Gladstone in *Certain Women* — a role built on restraint, presence, and emotional intelligence. It gives an actress the chance to play the person who knows more than she says, while still landing humor, compassion, and authority."
+      },
+      {
+        "name": "Sage",
+        "role_type": "Lead",
+        "demographics": "Male · 38 · Full-blooded Lakota",
+        "hook": "Sage is the script’s sly skeptic and comic pressure valve, but he is never just the funny one; he is a man who has learned how to survive by staying one step outside the sacred story. He needles Dakota, tests Wach, and keeps the room honest, yet his loyalty is real and his grief is always close to the surface. He feels like someone who has seen too much to be sentimental, which makes his warmth land harder when it arrives.",
+        "why_actor_wants_this": "This is the showcase lane of Walton Goggins in *Justified* — a fast-talking, emotionally layered presence who can turn a line into character. It gives an actor room for humor, abrasion, and unexpected tenderness, especially in scenes where skepticism masks devotion."
+      },
+      {
+        "name": "Samuel Morning Star",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s · Full-blooded Lakota",
+        "hook": "Samuel is polished, strategic, and spiritually fluent, the kind of man who can move between ceremony, business, and persuasion without ever seeming out of place. He is not a villain; he is a believer in legacy who understands leverage, and that makes him compellingly complicated. He carries the pressure of wanting to honor the past while also controlling its value in the present.",
+        "why_actor_wants_this": "This is the prestige-operator territory of Jeffrey Wright in *Westworld* or *The Goldfinch* — a role that combines intelligence, authority, and moral ambiguity without turning into a speech machine. It gives an actor a chance to play a man whose calm is itself a form of power."
+      },
+      {
+        "name": "Coach Thomas",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · Lakota",
+        "hook": "Coach Thomas is the rare adult authority figure who feels both funny and genuinely invested in the kid in front of him. He talks like a coach, thinks like a believer, and treats the reservation football program as both a competitive machine and a community ritual. He is the bridge between institutional structure and spiritual intuition.",
+        "why_actor_wants_this": "This is the coach-role energy of *Friday Night Lights* — a man who can be funny, paternal, and quietly inspirational without becoming a speech-only function. It gives an actor a warm, playable authority part with real audience affection."
+      },
+      {
+        "name": "The Great Warrior / Warrior",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s in the historical thread · Lakota",
+        "hook": "The Warrior is stoic, physically capable, and emotionally sealed until duty forces him into intimacy. He is the historical thread’s protector and witness, a man whose restraint makes every small gesture feel earned. His bond with Ko’la is paternal, wary, and deeply moving because he never overstates it.",
+        "why_actor_wants_this": "This is the showcase territory of Wes Studi in *The Last of the Mohicans* — a warrior role defined by stillness, authority, and emotional gravity. It gives an actor a physically commanding part that communicates love and sacrifice with very little dialogue."
+      },
+      {
+        "name": "Thunderhead",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to late 30s · Pawnee",
+        "hook": "Thunderhead is pride embodied: scarred, ceremonial, and dangerous, but also capable of recognition and surrender. He is not written as a simple antagonist; he is a force of will whose relationship to the tomahawk gives him mythic specificity. Every time he appears, the story gets sharper because he carries both threat and history.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the physical authority of Michael Wincott in *The Crow* or Graham Greene in *Dances with Wolves* — a memorable adversarial presence with iconic silhouette and ritual weight. It offers a performer a chance to make menace feel ceremonial rather than generic."
+      },
+      {
+        "name": "Chatan Running Sky",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · Full-blooded Lakota",
+        "hook": "Chatan is the story’s spiritual anchor: a father, pilot, and memory-keeper whose voice guides the entire film. He exists as presence, absence, and revelation, which makes him feel larger than a standard supporting role. The part is less about screen time than about authority, warmth, and the emotional afterimage he leaves behind.",
+        "why_actor_wants_this": "This is the kind of role that functions like the father in *The Father* or the mentor in *Coco* — a character whose absence shapes the entire emotional architecture. It gives an actor the chance to embody wisdom and legacy in a way that reverberates through the whole film."
+      },
+      {
+        "name": "Curly",
+        "role_type": "Supporting",
+        "demographics": "Male dog · German shepherd",
+        "hook": "Curly is more than a pet; he is Dakota’s companion, conscience, and spiritual translator, with a comic edge that keeps the film from floating away. The dog becomes a recurring emotional anchor across the present-day thread, and the script treats him like a true character rather than a prop. His presence gives the movie a disarming, audience-friendly heartbeat.",
+        "why_actor_wants_this": "This is the animal-companion slot that audiences respond to in *A Dog’s Purpose* or *Where the Red Fern Grows* — a role that can generate instant affection and emotional payoff. For a production, it is the kind of memorable animal part that helps trailers, posters, and audience memory."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a spiritually charged coming-of-age film with a strong visual grammar and a real emotional payoff.",
+        "fit_profile": "First- or second-feature directors with a festival short or indie feature background, especially those drawn to performance-forward storytelling, cultural specificity, and lyrical cross-cutting. This material rewards a filmmaker who can balance grounded contemporary scenes with mythic historical imagery without losing clarity.",
+        "detail": "The script gives a director a chance to stage two worlds that rhyme visually — football field, sweat lodge, prairie, museum, monastery — while keeping the emotional line clean. It is especially attractive to filmmakers who like to build atmosphere from image, ritual, and character rather than from action set pieces."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige streaming / festival drama with crossover inspirational appeal",
+        "detail": "The lead role is specific enough to attract a young Native actor with momentum, but the movie does not require star casting to communicate its hook. The sports, identity, and spiritual-drama lanes are all proven audience paths, and the contemporary-plus-period structure gives it festival distinction with streaming-friendly emotional reach."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The dream-wake structure repeats often.",
+        "detail": "The alternating blackouts and awakenings create a strong trance-like rhythm, and a next pass could consider varying the transitions so each return feels newly charged. The version of the script where one or two of those passages are collapsed or combined would keep the mystery intact while sharpening forward motion.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The historical thread carries the emotional load.",
+        "detail": "The 1870s material is the film’s deepest reservoir, and the script already knows that; one direction would be to keep foregrounding the BB/Ko’la relationship whenever the present-day thread pauses. That would protect the emotional continuity and make the mythic payoff feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The production footprint is broader than a contained indie.",
+        "detail": "The dual timeline, period costumes, animal work, smoke/fire effects, and multiple reservation and monastery locations place this above a microbudget lane. A simplification lever would be to consolidate any nonessential contemporary stops so the film can preserve its scale where it matters most: the prairie, the museum, and Bear Butte.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights and clearance lane needs attention.",
+        "detail": "The script uses 'Free Bird,' named historical figures, and culturally specific ceremonial material, so a producer would want to map those elements early. That is manageable, but it is worth planning the clearance path alongside the cultural consultation path so the package stays clean.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Dakota’s present-day arc is strongest when it is personal.",
+        "detail": "The trailer-park material, the foster-care references, and the scholarship pressure give him a concrete emotional engine, and the script benefits when those details stay close to the surface. A next pass could keep his desire for belonging and his fear of being 'not a real Indian' in the foreground whenever the plot turns toward mythology.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74,
+  "tier": "Optionable",
+  "inputTokens": 47542,
+  "outputTokens": 5330,
+  "cost": 0.0596415,
+  "declaredFormat": "Feature film"
+}

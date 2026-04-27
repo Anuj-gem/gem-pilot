@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:07:33.645Z",
+  "submission_id": "63063363-d5fd-4733-bef9-a07c09ecb66c",
+  "eval_id": "7557cbb6-3280-4a0a-864d-20e944eed4eb",
+  "title": "One last dance. ( 2nd outcome)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "Skylar Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · professional athlete"
+    },
+    {
+      "name": "Lisa Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Catholic priest"
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Debbie Runner",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s-70s"
+    },
+    {
+      "name": "Renee Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s"
+    },
+    {
+      "name": "Antonio Bennett",
+      "role_type": "Supporting",
+      "demographics": "Male · 9"
+    },
+    {
+      "name": "Angelo Bennett",
+      "role_type": "Supporting",
+      "demographics": "Male · 9"
+    },
+    {
+      "name": "Olivia Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 7"
+    },
+    {
+      "name": "Hannah Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 7"
+    }
+  ],
+  "positioning_hook": "A devoted Pennsylvania school administrator is crushed by a farm accident, forcing his family to rebuild around his paralysis, a buried first love, and one last move toward a new life.",
+  "cost_usd": 0.043838249999999995,
+  "input_tokens": 26081,
+  "output_tokens": 5395,
+  "status": "wrote:leads_ok"
+}

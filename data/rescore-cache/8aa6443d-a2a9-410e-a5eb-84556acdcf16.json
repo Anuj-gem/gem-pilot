@@ -1,0 +1,318 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Psychological thriller",
+      "genre_tags": [
+        "Supernatural horror",
+        "Satirical drama"
+      ],
+      "tone": "Grounded, surreal, darkly comic, escalating into feverish nightmare"
+    },
+    "positioning_hook": "A burned-out Flagstaff accountant trades his family life for movie-star fame, then discovers the man who took his place may be the same force that’s been haunting his dreams.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean commercial engine: a middle-aged man, a family, a wish, and a supernatural bargain that turns domestic regret into horror. The movie-star fantasy, the home-invasion nightmare imagery, and the identity-swap hook give it a clear genre lane with strong trailer moments."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early with the opening nightmare, the promotion disappointment, and the Hollywood Blvd encounter with Gene. By the time Champ wakes in blood and the script reveals the bargain, the central question is unmistakable: what did he trade away, and can he get it back?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Champ is built around a vivid contradiction: a man who wants to be seen, but is terrified of the consequences of being known. Cheyenne and Gene give the story a strong triangle, though the supporting family members mostly serve the central conflict rather than opening separate character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar midlife-regret premise and pushes it into a surreal, self-aware showbiz nightmare with a cursed performance bargain at the center. The late reveal that the movie set is itself part of the trap gives the piece a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps escalating through the dream logic, the LA fantasy, the family swap, and the premiere confrontation. The back half is especially propulsive because every new revelation changes Champ’s understanding of what he has done and what Gene is."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a man literally becoming the star of his own life while another man takes over his domestic existence is instantly legible and strange in a memorable way. The green-eyed curse, the movie-within-the-movie structure, and the December 20th motif make the concept feel singular rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Flagstaff is used with real specificity: snow, the diner, the arthouse theater, the accounting office, the house, and the local production footprint all feel story-generating. The Hollywood material broadens the canvas without losing the small-town pressure that gives the story its bite."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinctive tonal blend of domestic frustration, eerie supernatural dread, and satirical celebrity fantasy. The humming motif, the green-hued imagery, and the increasingly unstable reality give the piece a recognizable signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the thriller mechanics is a durable emotional engine about regret, identity, marriage, and the fantasy of a second chance. The script keeps revealing that the real horror is not just the curse, but the desire that invited it in."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Champ/Cheyenne/Gene is a strong central triangle, and Gerry/Becky add family pressure that matters to the plot. The ensemble is effective, but the story’s energy still lives primarily in the lead conflict rather than in a web of equally active relationships."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in his late 40s to early 50s",
+          "Female lead in her 40s",
+          "Male antagonist in his 40s",
+          "Two child roles (Gerry, Becky)",
+          "One teen/young adult supporting role (Tina)",
+          "Actor playing Gene/Champ requires strong duality and physical transformation across versions"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior snow scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Snowy small-town Arizona exteriors",
+          "Arthouse movie theater",
+          "Accounting office",
+          "Diner",
+          "Mansion/house interior and exterior",
+          "Hollywood Boulevard and alleyway material",
+          "Movie set / production environment"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily stylized eye effects, shadow movement, dream transitions, blood imagery, and a few reality-bending visual moments.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, knife work, broken glass, bike fall, and a few fight beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Sunset Boulevard is referenced as a film title and screening marquee; It’s a Wonderful Life is shown on TV; a specific 80s pop song is used in Gene’s performance sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "In-N-Out is named."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Sunset Boulevard and It’s a Wonderful Life are plot-visible screen references that may require clearance depending on usage."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or premium-cable-adjacent theatrical indie",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform upside; the hook is high-concept enough for a genre-forward streamer, while the contained footprint supports an indie production path."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained contemporary production with a few stylized set pieces, but the LA fantasy, mansion material, premiere sequence, and snow exteriors push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Three lead adults plus two child roles and a duality-heavy antagonist role create meaningful casting demands without requiring a huge ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves between Flagstaff homes, office, diner, theater, Hollywood Boulevard, mansion, and a movie set, with recurring snow and night work."
+        },
+        "content": {
+          "level": "high",
+          "note": "Knife violence, blood-soaked nightmare imagery, implied murder, and psychological breakdown material place it firmly in mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named films, a named brand, and a plot-visible song cue create some clearance work, though the script is not built on heavy IP dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Champ is built on a killer contradiction.",
+          "what_it_means": "The role gives an actor a rare blend of midlife frustration, vanity, shame, and escalating terror, which is exactly the kind of part that can reframe how the industry sees a performer. Character-driven buyers and actors looking for a prestige genre lead will respond to a man who is both pathetic and magnetic in the same breath.",
+          "evidence": "Champ’s promotion disappointment, his confession to Gene in the bar, and his repeated self-slaps and breakdowns after the nightmare sequences.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise turns regret into a supernatural engine.",
+          "what_it_means": "That gives the film a clean, trailer-friendly hook while still leaving room for emotional depth, because the horror is born from a wish the audience understands immediately. Streamers and genre buyers looking for a high-concept feature with an adult emotional spine will see the value fast.",
+          "evidence": "Champ’s confession that he wants a do-over, the bargain with Gene, and the later reveal that he has literally traded lives.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Flagstaff is more than a backdrop.",
+          "what_it_means": "The snow, the diner, the arthouse theater, the office, and the modest house create a contained world with a strong visual identity and a clear production footprint. Buyers who like elevated genre with a modest location load will see a setting that can be shot efficiently while still feeling specific.",
+          "evidence": "The recurring snowbound streets, the local theater showing Sunset Boulevard, the accounting office, and the Granger house.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The movie-set reveal is a smart escalation.",
+          "what_it_means": "It reframes the entire story as both psychological horror and showbiz satire, which broadens the audience beyond straight genre fans. That kind of late structural turn is attractive to directors and buyers who want a feature that can play as a conversation piece.",
+          "evidence": "The moment the nightmare house is revealed as a film set with Director Mikey, Trish, crew, and fake blood.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Gene is a strong antagonist mirror.",
+          "what_it_means": "He is not just a villain; he is the version of Champ who made the same selfish wish and got the life Champ wanted, which gives the conflict thematic weight and actor-facing juice. Prestige genre actors and directors who like dual-protagonist tension will be drawn to that mirrored structure.",
+          "evidence": "Gene’s journal, his confession about taking the life, and the repeated line that they made the same choice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family dynamic keeps the stakes human.",
+          "what_it_means": "Cheyenne, Gerry, and Becky keep the story from floating away into pure concept by making every choice land on marriage, parenthood, and belonging. That gives the film emotional accessibility for adult audiences who want genre with recognizable domestic stakes.",
+          "evidence": "The breakfast scenes, the Lego castle, the anniversary tension, and the final confrontation at the house.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The visual language is memorable.",
+          "what_it_means": "Green eyes, humming, blood, snow, and the recurring 12/20 motif create a strong brandable identity that can carry marketing art and trailer imagery. Horror and elevated-thriller buyers will appreciate a script that already thinks in poster frames.",
+          "evidence": "The green-eyed intruder, Cheyenne’s humming, the circled calendar date, and the blood-on-snow finale.",
+          "source": "script"
+        }
+      ],
+      "headline": "CHAMP is a sharp, marketable psychological thriller with a built-in hook: a frustrated family man makes a wish for a better life and wakes up to find someone else living it. The script’s real advantage is that it turns that premise into both a nightmare and a satire of fame, giving producers a contained, actor-driven feature with a memorable visual identity and a clean genre promise."
+    },
+    "lead_characters": [
+      {
+        "name": "Champney Granger / Champ",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s to early 50s",
+        "hook": "Champ is a man who has spent years shrinking inside his own life and now resents everyone for noticing. He is funny, needy, vain, wounded, and increasingly unmoored; the script keeps him just sympathetic enough that his worst impulses feel tragic before they feel monstrous.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter or Joaquin Phoenix in Joker — a man whose internal collapse becomes the whole performance. Actors who want a role that can swing from wounded domestic realism to full psychological breakdown will chase this because it offers rage, shame, vulnerability, and physical transformation in one part."
+      },
+      {
+        "name": "Cheyenne Granger",
+        "role_type": "Lead",
+        "demographics": "Female · 40s",
+        "hook": "Cheyenne is the emotional center Champ keeps failing to see clearly: practical, affectionate, guarded, and more resilient than he understands. She carries the marriage’s history in her body language, and the script lets her register as both the life Champ abandoned and the person who may still love him anyway.",
+        "why_actor_wants_this": "This is the kind of grounded, heartbreaking wife role that Toni Collette had in Hereditary or Elisabeth Moss in The Invisible Man — a woman whose emotional intelligence is the scene’s gravity. Strong dramatic leads will want it because it gives them tenderness, suspicion, hurt, and the final moral authority of the story."
+      },
+      {
+        "name": "Gene Alterno",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Gene is a charismatic intruder who can read as charming, wounded, predatory, or paternal depending on the moment. He has the stillness of a man who believes he earned his place, and the script keeps him deliciously unstable because he may be a supernatural force, a con man, or both.",
+        "why_actor_wants_this": "This is the showcase space of Ralph Fiennes in The Menu or Patrick Wilson in Insidious — a polished presence with menace under the surface and a late-breaking emotional reveal. Actors who like playing controlled charisma with a hidden abyss will chase it because the role lets them pivot from warmth to threat without losing the room."
+      },
+      {
+        "name": "Gerry Granger",
+        "role_type": "Supporting",
+        "demographics": "Male · 12",
+        "hook": "Gerry is a sharp, skeptical kid who sees more than the adults want him to and says less than he feels. He gives the story its most painful innocence, because his loyalty is real even when the world around him keeps changing shape.",
+        "why_actor_wants_this": "This is the kind of emotionally precise child role that made Jacob Tremblay in Room or Noah Jupe in A Quiet Place so memorable — a kid who has to play fear, confusion, and love without ever becoming a plot device. Young actors with strong naturalism will want it because the part asks for quiet truth rather than big speeches."
+      },
+      {
+        "name": "Becky Granger",
+        "role_type": "Supporting",
+        "demographics": "Female · 17",
+        "hook": "Becky is the oldest child and the quickest to clock the family’s tension, which makes her feel both independent and quietly vulnerable. She has the kind of teenage confidence that can turn into alarm in a beat, and the script uses her to show how much Champ has already lost access to his own home.",
+        "why_actor_wants_this": "This is the sharp, observational teen role that lets an actor do the dry intelligence of Kaitlyn Dever in Short Term 12 or Maya Hawke in Stranger Things. Young actors who want a part with attitude, subtext, and a real emotional pivot will see the appeal immediately."
+      },
+      {
+        "name": "Trish",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Trish is the professional handler who keeps the machine moving while Champ spirals, but she’s not just a functionary; she has a dry, practical intelligence and a real stake in the production’s success. She becomes the audience’s tether to the movie-set reality, which gives her a cool, watchful presence throughout the back half.",
+        "why_actor_wants_this": "This is the kind of sharp support role that Alison Brie had in Horse Girl or Kathryn Hahn in smaller prestige ensemble work — a grounded, fast-talking presence who can play competence with a hint of exasperation. Character actors who like being the sane person in a collapsing world will want it."
+      },
+      {
+        "name": "Director Mikey",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s",
+        "hook": "Mikey is the smiling auteur inside the machine, the person who treats chaos like process and process like art. He reads as supportive, but his calm confidence also makes him unsettling, because he seems to understand Champ better than Champ understands himself.",
+        "why_actor_wants_this": "This is the kind of meta-showbiz role that lets an actor do the controlled authority of Justin Theroux in The Leftovers or Paul Dano in The Fabelmans-adjacent territory — a creative professional who is both collaborator and enabler. Directors and actors who like playing the person behind the curtain will be drawn to it."
+      },
+      {
+        "name": "Todd",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Todd is the office boss who barely notices the emotional earthquake happening in front of him. He represents the ordinary indifference that makes Champ’s crisis feel even more humiliating, and that small cruelty gives the early act its sting.",
+        "why_actor_wants_this": "This is the kind of compact authority role that actors like J.K. Simmons or Richard Jenkins can make unforgettable in a few scenes — a man whose casual dismissal lands like a verdict. Veteran character actors will like the precision and economy of it."
+      },
+      {
+        "name": "Dan Huntington",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Dan is the office rival who looks like he belongs in the room more than Champ does. He’s smug, socially fluent, and just successful enough to make Champ’s resentment feel personal, which gives the office scenes a clean, relatable pressure point.",
+        "why_actor_wants_this": "This is the kind of polished supporting part that lets an actor play effortless status the way Paul Rudd or Jon Hamm can in ensemble drama — the guy who wins without trying too hard. It’s a good fit for actors who can make privilege feel casual and infuriating."
+      },
+      {
+        "name": "Tina",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Tina is the receptionist who sees Champ as a dreamer before she sees him as a problem. She gives the office a little warmth and flirtation, but she also functions as a mirror for how badly Champ wants to be admired.",
+        "why_actor_wants_this": "This is the sort of light-but-specific supporting role that lets an actor do charm, curiosity, and comic timing in a few scenes, similar to the office-world texture roles in The Office or Mad Men. It’s attractive to actors who like leaving a strong impression without carrying the whole plot."
+      },
+      {
+        "name": "Sandy",
+        "role_type": "Supporting",
+        "demographics": "Ambiguous · 17 or 70",
+        "hook": "Sandy is a deliberately uncanny gatekeeper at the arthouse theater, a figure who feels half-human and half-oracular. The character adds a little dream-logic friction to the story and helps make the theater feel like a threshold rather than a location.",
+        "why_actor_wants_this": "This is the kind of odd, memorable bit that actors enjoy in elevated genre pieces — the sort of role that recalls the strange supporting turns in Twin Peaks or Under the Silver Lake. Performers with a taste for eccentricity and tonal precision would have fun with it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a psychological thriller that keeps mutating into showbiz nightmare.",
+        "fit_profile": "First- or second-feature directors with a strong festival short or a contained genre debut behind them, especially those who care about performance-forward horror, surreal domestic dread, and controlled visual motifs. This material rewards a filmmaker who can hold emotional realism in the foreground while letting the world slowly tilt into nightmare without losing clarity.",
+        "detail": "The movie-set reveal, the recurring green-eye imagery, and the dream-to-reality transitions give a director a chance to build a signature language without needing giant spectacle. It will especially attract filmmakers who like actor-driven tension, precise blocking, and the kind of tonal control that turns a modest footprint into a memorable calling card."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "Elevated genre / streamer thriller / indie horror lane",
+        "detail": "The story is anchored by one lead performance and a contained recurring world, so it can be packaged off a strong director and a credible cast without requiring tentpole-level attachments. The adult-regret-plus-supernatural-bargain lane has steady streamer demand, and the snowbound small-town setting gives it a distinct marketing image that travels well."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The movie-set reveal can be sharpened as a hinge.",
+        "detail": "The turn from nightmare to production reality is one of the script’s most distinctive moves, and the version where the audience gets one cleaner breadcrumb before the reveal could make the pivot hit even harder. A next pass could protect the surprise while letting the emotional logic arrive a beat earlier so the audience feels the floor drop instead of just the explanation.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Champ’s inner turn is strongest when it stays embodied.",
+        "detail": "The bar confession, the self-slapping wake-ups, and the final porch confrontation all play because his shame is physical, not just verbal. One direction would be to keep leaning on choices, gestures, and interruptions in those scenes so the audience experiences his collapse rather than hearing him explain it.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The family triangle could carry a little more independent charge.",
+        "detail": "Champ, Cheyenne, and Gene already make a strong central engine, and the kids are effective pressure points. There is room for the version of the script where Cheyenne’s painting thread and Gerry’s loyalty each create a slightly more distinct emotional beat, which would deepen the domestic stakes without changing the premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is already producible, but it is spread.",
+        "detail": "Flagstaff, Hollywood Boulevard, the mansion, the office, the diner, the theater, and the movie-set material all serve the story, but they do ask for a fairly active shoot. One simplification lever would be to let one of the LA fantasy spaces absorb another so the production keeps the same escalation with fewer company moves.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights and references are manageable with a cleanup pass.",
+        "detail": "The script uses Sunset Boulevard, It’s a Wonderful Life, In-N-Out, and a named pop song as texture, which is useful on the page but will need a clearance pass in production. A buyer will still understand the lane if those references are swapped for equivalents that preserve the same cultural shorthand.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The content lane is firmly mature.",
+        "detail": "The knife violence, blood imagery, psychological unraveling, and implied murder place this squarely in adult genre territory. That is a good fit for the material, but it also means the cleanest path is a platform or distributor comfortable with elevated horror-thriller content.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 72,
+  "tier": "Optionable",
+  "inputTokens": 40353,
+  "outputTokens": 5307,
+  "cost": 0.05414625,
+  "declaredFormat": "Feature film"
+}

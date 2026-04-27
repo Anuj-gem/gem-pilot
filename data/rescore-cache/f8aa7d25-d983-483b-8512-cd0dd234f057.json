@@ -1,0 +1,365 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Biographical drama",
+      "genre_tags": [
+        "coming-of-age",
+        "faith-adjacent"
+      ],
+      "tone": "earnest, didactic, reflective, melodramatic"
+    },
+    "positioning_hook": "Ben, a Nigerian boy born with a facial deformity, fights through family neglect, public humiliation, and romantic rejection to become a published writer and define his own name.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The emotional promise is clear: a survival-and-self-definition story built around stigma, family fracture, and persistence. Its audience is more specific than broad, though the underdog arc and publishing payoff give it a recognizable inspirational lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The script makes its central premise plain early: a boy with a facial deformity grows into a man determined to outlast rejection and claim authorship over his life. The hook is understandable, but the long autobiographical sweep and repeated thematic statements diffuse the engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Ben is a durable central figure because his life is defined by visible contradiction: wounded, ambitious, lonely, stubborn, and intellectually driven. The supporting figures mostly function as witnesses, so the character field is strongest as a solo showcase rather than a deep ensemble."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The material is personal and specific in subject matter, especially in the facial deformity, the publishing struggle, and the Nigerian social context. The execution leans heavily on direct moralizing, quoted maxims, and explanatory dialogue, which keeps the voice closer to testimonial than boldly cinematic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "The script moves through many life episodes, but the progression often reads as a sequence of stated lessons rather than a tightening dramatic chain. The publishing arc and the repeated social humiliations provide motion, yet the momentum is more accumulative than propulsive."
+      },
+      "resonant_originality": {
+        "score": 5,
+        "reasoning": "A life story centered on deformity, shame, faith, and authorship has real emotional distinctiveness, and the Nigerian setting gives it a specific cultural frame. The deeper pattern is familiar inspirational autobiography, so the freshness comes from subject matter more than from form."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The script has a textured Nigerian social world: schools, churches, family compounds, food-vendor work, university strikes, seers, and publishing hustle all appear on the page. Those details create a lived-in environment, even though the world is used more as testimony than as an engine of conflict."
+      },
+      "tonal_specificity": {
+        "score": 4,
+        "reasoning": "The tone is consistent in its seriousness, but it stays in one register for long stretches: reflective, sermon-like, and explanatory. The repeated supertitles and aphorisms create a recognizable voice, though not yet a sharply cinematic tonal identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the surface autobiography, there are deeper currents around shame, family inheritance, masculinity, faith, and self-authorship. The script keeps returning to the same emotional wound from different angles, which suggests more depth than a simple life recap."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 4,
+        "reasoning": "Ben carries nearly all the dramatic weight, and the surrounding figures mostly arrive to confirm a lesson or deliver a viewpoint. There are several usable relationship threads, but they do not yet form a web with independent story energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "multiple age ranges of the same protagonist",
+          "facial deformity/prosthetic or makeup requirement",
+          "numerous supporting roles across childhood, teen, and adult phases"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly even",
+        "period_or_contemporary": "period-spanning contemporary biographical story",
+        "notable_requirements": [
+          "hospital settings",
+          "school and university campuses",
+          "church interiors",
+          "village/rural locations",
+          "internet cafe/computer classroom environments",
+          "period childhood and teen recreations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical makeup/prosthetics and age-appropriate casting; no major visual effects engine is indicated.",
+        "stunts_level": "minor",
+        "sfx_needs": "Medical and injury makeup, crowd reaction scenes, vehicle impact beats, and prosthetic facial continuity.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Winston Churchill is referenced by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "Bob Marley is referenced by name in a supertitle."
+        },
+        {
+          "type": "brand",
+          "detail": "Amazon.com is shown on screen as a specific author page."
+        },
+        {
+          "type": "brand",
+          "detail": "ezinearticles.com is shown on screen."
+        },
+        {
+          "type": "brand",
+          "detail": "AOTS, ASUU, and named institutions appear as real organizations."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "festival-to-platform inspirational drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with strongest fit as a prestige-leaning, faith-adjacent, socially conscious drama for festival launch or targeted streaming acquisition."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script spans hospitals, schools, churches, rural areas, and multiple life stages, but it remains largely grounded and practical rather than effects-driven."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "One central lead plus a sizable supporting roster, with child casting and age progression across the protagonist’s life."
+        },
+        "location": {
+          "level": "medium",
+          "note": "About twenty distinct locations across homes, campuses, streets, and institutions, with some period recreation across decades."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Bullying, deformity stigma, domestic violence, rejection, and illness keep the material in mature dramatic territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named public references and on-screen brands appear, including Winston Churchill, Bob Marley, Amazon, and ezinearticles.com."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "A deeply personal underdog lead.",
+          "what_it_means": "Ben is the kind of role that can anchor a prestige indie or inspirational streamer drama because the audience tracks every humiliation and every small victory as part of one life-defining arc. Actors who want a transformation role with emotional range, physical specificity, and a built-in audience sympathy engine will see the value immediately.",
+          "evidence": "The script follows Ben from birth through adulthood, repeatedly returning to his facial deformity, social rejection, and eventual emergence as a writer.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Nigerian social world feels lived-in.",
+          "what_it_means": "The story has enough local texture to travel as something specific rather than generic, which helps it stand out in the inspirational-drama lane. Buyers looking for authentic African coming-of-age material and festival programmers looking for regional specificity would respond to the setting detail.",
+          "evidence": "Hospitals, native doctors, churches, food-vendor work, university strikes, internet cafes, and village life all appear across the script.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "A clear authorship-and-self-making engine.",
+          "what_it_means": "The publishing arc gives the film a second commercial lane beyond trauma survival: it becomes a story about turning pain into voice, which broadens the appeal to literary, educational, and aspirational audiences. That makes it attractive to buyers who like true-life uplift with a creative-industry payoff.",
+          "evidence": "Ben repeatedly writes, submits manuscripts, receives rejection letters, and eventually celebrates publication and awards.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family wound is central, not decorative.",
+          "what_it_means": "The script has a built-in emotional spine around inheritance, parental absence, and the desire to rename oneself, which gives the material thematic weight beyond a standard success story. That kind of family fracture is catnip for actors who want emotionally loaded dialogue scenes and for buyers who want a drama with conversation value.",
+          "evidence": "Ben’s long exchanges about his parents, his wish to dissociate from the family surname, and the recurring theme of being raised without real emotional shelter.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Faith and hypocrisy create a strong moral frame.",
+          "what_it_means": "The church material gives the film a recognizable audience lane while also creating a built-in tension between preached values and lived behavior. Faith-based and faith-adjacent buyers often respond to stories that interrogate belief without abandoning it, and that tension is present here.",
+          "evidence": "The forgiveness sermon is followed by Pastor Thomas beating his wife, prompting Ben to question the ministry.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script offers a long-form life portrait.",
+          "what_it_means": "This is structured as an expansive biography rather than a single-event drama, which gives producers a chance to position it as an inspirational life story with chaptered emotional beats. That shape can appeal to audiences who like true-life testimony, memoir adaptations, and faith-forward success narratives.",
+          "evidence": "The screenplay moves from birth and childhood through school, university, romance, publishing, and adult reflection.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a real championing angle as a Nigerian life story about surviving visible stigma, family fracture, and romantic rejection by turning pain into authorship. The material is most compelling when it leans into Ben’s voice, his social world, and the hard-won sense that self-definition is his final act of rebellion."
+    },
+    "lead_characters": [
+      {
+        "name": "BEN",
+        "role_type": "Lead",
+        "demographics": "Male · 0s to 30s · Nigerian · facial deformity/prosthetic continuity across ages",
+        "hook": "Ben is a bright, wounded, stubbornly self-inventing outsider whose life is shaped by a visible facial deformity, a fractured family, and a refusal to let other people define his future. He is at once tender, defensive, intellectual, romantic, and combative, with a voice that turns pain into argument and argument into identity.",
+        "why_actor_wants_this": "This is the showcase territory of Eddie Redmayne in The Theory of Everything and Riz Ahmed in Sound of Metal — a performance built on physical specificity, inner resilience, and the audience watching a man fight to remain legible to the world. Actors looking for a transformation role with emotional range, narration, and a clear life arc will chase this because it offers both awards-facing vulnerability and a strong central spine."
+      },
+      {
+        "name": "MOTHER",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-50s · Nigerian",
+        "hook": "Ben’s mother is practical, overburdened, and emotionally blunt, carrying the household while also becoming one of the sources of Ben’s sense of neglect. She is not written as a saint; she is a survival-minded parent whose love often arrives in the form of labor, pressure, and dismissal.",
+        "why_actor_wants_this": "This is the kind of maternal role that recalls Viola Davis in Fences or Octavia Spencer in The Help — a woman whose authority comes from endurance, not sentimentality. Character actresses who want a role with moral complexity, domestic authority, and scenes that can land like a verdict will be drawn to it."
+      },
+      {
+        "name": "FATHER",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-60s · Nigerian",
+        "hook": "Ben’s father is a damaged, intermittently present man marked by war, drinking, smoking, and emotional distance. He carries the outline of a provider but not the substance of a father, which makes him feel like both a family member and a missing piece.",
+        "why_actor_wants_this": "This is the kind of role that lives in the territory of Bryan Cranston in The Judge or Sterling K. Brown in Waves — a man whose authority is undermined by private collapse. Actors who like playing regret, absence, and the long shadow of bad choices will find a lot to work with."
+      },
+      {
+        "name": "MIRIAM",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-to-late teens · ebony-looking, plus-sized",
+        "hook": "Miriam is one of Ben’s early romantic possibilities, but she is also a gatekeeper to the social world he wants and cannot quite enter. She has warmth in the school setting and then a hard stop in the private encounter, which gives her a sharp, memorable edge.",
+        "why_actor_wants_this": "This is the kind of role that has the emotional directness of a supporting turn in Moonlight or The Spectacular Now — a brief but defining romantic encounter that changes the lead’s self-image. Young actors looking for a scene-stealing part with one pivotal rejection beat will respond to it."
+      },
+      {
+        "name": "QUADRI",
+        "role_type": "Supporting",
+        "demographics": "Male · early teens · Nigerian",
+        "hook": "Quadri is a schoolmate who briefly becomes a peer companion and then exits under economic pressure, embodying the instability of Ben’s world. He is less a plot machine than a human reminder that friendship itself is fragile in this environment.",
+        "why_actor_wants_this": "This has the grounded, lived-in quality of a supporting teen role in Boyhood or The Florida Project — a small part that still carries real social texture. Young actors and emerging talent looking for a naturalistic, emotionally legible role would be interested."
+      },
+      {
+        "name": "EMEKA",
+        "role_type": "Supporting",
+        "demographics": "Male · early teens · Nigerian",
+        "hook": "Emeka is another school connection who enters as a friendly presence and leaves because family finances force the issue. He helps define the world’s instability by showing how quickly companionship can be interrupted.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor a clean, emotionally readable beat in a coming-of-age ensemble, similar to the friend roles in Stand by Me or The Pursuit of Happyness. It’s attractive to newcomers who want a sincere, non-flashy part with a clear emotional function."
+      },
+      {
+        "name": "SHADE",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens to early 20s · Nigerian",
+        "hook": "Shade is sharp, guarded, and philosophically combative, especially in the way she talks about family and forgiveness. She feels like someone who has already decided that sentiment is a luxury, which makes her scenes with Ben feel charged and adult.",
+        "why_actor_wants_this": "This is the kind of role that recalls Jurnee Smollett in Lovecraft Country or Teyonah Parris in If Beale Street Could Talk — a young woman with intelligence, edge, and emotional history in the room. Actors who want a scene partner role with bite and attitude will be drawn to her."
+      },
+      {
+        "name": "TIM",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens to early 20s · Nigerian",
+        "hook": "Tim is the friend whose bitterness about his father gives the script one of its clearest counterarguments to Ben’s forgiveness philosophy. He is articulate, wounded, and skeptical, which makes him feel like a mirror version of Ben’s emotional life.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the argumentative, emotionally loaded space of a good indie drama confidant, like the friend roles in The Last Black Man in San Francisco or Manchester by the Sea. It’s a strong part for an actor who can make a few scenes feel like a worldview."
+      },
+      {
+        "name": "PRINCE",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens to early 20s · Nigerian",
+        "hook": "Prince is the social commentator and peer who punctures Ben’s romantic and academic seriousness with blunt realism. He functions as a street-level chorus, but he also gives the film a voice for the practical logic of youth culture.",
+        "why_actor_wants_this": "This is the kind of role that can play like a sharp supporting turn in a campus drama, similar to the friend energy in Dope or The Wood. Actors who like fast, conversational, observational parts will see the appeal."
+      },
+      {
+        "name": "AMAKA",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens to early 20s · Nigerian",
+        "hook": "Amaka is presented as beautiful, distant, and socially protected, with a family structure that makes access to her feel impossible. She is less a conventional love interest than a symbol of class distance and social exclusion.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the cool, elusive energy of a prestige coming-of-age object of desire, like the romantic figures in Call Me by Your Name or The Graduate from the other side of the equation. It’s attractive to actors who want a part that can carry mystery with very little screen time."
+      },
+      {
+        "name": "JOKE",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens to early 20s · ebony, petite, Nigerian",
+        "hook": "Joke is one of the more direct romantic possibilities in the script, but she ultimately becomes another site of rejection and social embarrassment. She has enough personality to feel real, yet the story uses her to sharpen Ben’s sense of being judged on appearance and status.",
+        "why_actor_wants_this": "This is the kind of role that sits in the emotional lane of a key romantic rejection scene in a coming-of-age drama, similar to the girlfriend turns in Lady Bird or The Edge of Seventeen. Young actresses looking for a part with one memorable confrontation and a clear emotional function will notice it."
+      },
+      {
+        "name": "GRACE",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s · Nigerian",
+        "hook": "Grace is reserved, religious, and controlled, with enough authority to make Ben work for her attention and enough discipline to end the relationship through institutional channels. She is one of the script’s clearest examples of a woman who is not simply a love interest but a gatekeeper to social legitimacy.",
+        "why_actor_wants_this": "This is the kind of role that recalls the moral authority of a supporting part in a faith drama like The Chosen or a campus romance with institutional stakes. Actors who want a restrained, principled role with a decisive turn will be interested."
+      },
+      {
+        "name": "ANTONIA",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens to early 20s · Nigerian",
+        "hook": "Antonia is blunt to the point of cruelty, but she also functions as the friend who says out loud what everyone else is thinking. She gives the script one of its most direct confrontations with appearance-based judgment.",
+        "why_actor_wants_this": "This is the kind of role that lets an actress play the hard truth-teller in a social drama, similar to the sharp-edged friend roles in Precious or The Half of It. It’s a compact but memorable part for someone who can make bluntness feel alive rather than generic."
+      },
+      {
+        "name": "PASTOR THOMAS",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · Nigerian",
+        "hook": "Pastor Thomas is a public moral voice whose private violence exposes the gap between sermon and behavior. He is not just a hypocrite; he is the embodiment of the script’s skepticism about easy forgiveness.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dangerous authority of a faith-leader part in a drama like The Righteous Gemstones or Doubt, but in a more grounded register. Character actors who like playing charisma with rot underneath will chase it."
+      },
+      {
+        "name": "PASTOR'S WIFE",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s · Nigerian",
+        "hook": "The pastor’s wife is the victim of the ministry’s public contradiction, and her presence gives the church material its most painful human cost. She is a quiet but crucial figure in the script’s moral argument.",
+        "why_actor_wants_this": "This is the kind of role that can land with the emotional force of a domestic-abuse survivor in a prestige drama, where a few scenes carry enormous weight. Actors looking for a part that can communicate pain and dignity quickly will respond."
+      },
+      {
+        "name": "FRIEND",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Nigerian",
+        "hook": "Ben’s adult friend is a listener, prompt, and sounding board who helps the protagonist articulate his life philosophy. He functions as a conversational frame for the memoir-like sections of the script.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded, reactive space of a trusted confidant in a literary drama, similar to the friend roles in The Pursuit of Happyness or The Secret Life of Walter Mitty. It’s a useful part for a strong character actor who can make exposition feel personal."
+      },
+      {
+        "name": "FOREIGNER",
+        "role_type": "Supporting",
+        "demographics": "Male or Female · 30s-60s · non-Nigerian",
+        "hook": "The foreigner is a conversational device who lets Ben explain his worldview to an outside listener. The role is less about personality than about creating a clean audience surrogate for the script’s thesis statements.",
+        "why_actor_wants_this": "This is the kind of role that functions like the interviewer or listener in a testimonial drama, giving an actor a light but useful frame role. It suits performers comfortable with reactive, dialogue-driven scenes."
+      },
+      {
+        "name": "AUTHOR",
+        "role_type": "Supporting",
+        "demographics": "Male or Female · 30s-60s",
+        "hook": "The author is a peer voice who validates Ben’s persistence and gives the writing journey a professional echo. The role is brief, but it helps turn Ben’s ambition into a community rather than a private obsession.",
+        "why_actor_wants_this": "This is the kind of cameo-plus role that can play like a mentor or peer in a literary success story, similar to the supportive professional figures in Julie & Julia or The Devil Wears Prada. It’s attractive to actors who like concise, functional scenes with a clear point of view."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a life story feel intimate, culturally specific, and emotionally earned without relying on spectacle.",
+        "fit_profile": "First- or second-feature directors with a background in grounded drama, festival shorts, or socially conscious independent work. This material rewards performance-first storytelling, period texture, and a patient approach to a protagonist who narrates his own life.",
+        "detail": "The craft opportunity is in turning a testimonial structure into a cinematic emotional arc, especially across childhood, adolescence, and adulthood. Directors who like intimate biographical material, faith-adjacent themes, and strong regional specificity will see a clear lane here."
+      },
+      "buyer_appeal": {
+        "tier": "$1-5M feature",
+        "lane": "festival-to-platform inspirational drama",
+        "detail": "The project can be anchored by one lead performance and a largely practical production footprint, which makes it viable for a director-led package without major VFX or star dependency. The faith-adjacent, underdog, African coming-of-age lane has clear festival and streaming appeal, especially for buyers looking for authentic regional stories with uplift."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The life-story structure is the main lever.",
+        "detail": "The script currently plays as a broad autobiographical survey, which gives it scope but also spreads the dramatic charge across many episodes. One direction would be to choose a smaller number of defining turns — the deformity, the first major rejection, the publishing breakthrough, and the family rupture — and let those scenes carry more weight so the feature feels shaped rather than accumulated.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The dialogue often states the theme outright.",
+        "detail": "Many scenes land on Ben explaining what forgiveness, family, discouragement, or success means in abstract terms. A next pass could let those ideas emerge through conflict and choice inside a few key scenes, which would keep the same message but make the film feel more dramatic and less declarative.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The repeated supertitles can be streamlined.",
+        "detail": "The many quoted maxims and chapter cards give the piece a sermon-like identity, but they also slow the forward motion of the feature. The version of the script where a few of those statements are folded into action or dialogue would protect the voice while making the film more cinematic.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast and locations are manageable but broad.",
+        "detail": "The story spans hospitals, schools, churches, homes, streets, a village, and university spaces across multiple life stages. A producer-friendly pass would look for places where two locations can serve one dramatic function, especially in the childhood and university sections, to keep the footprint efficient without losing the sense of a full life.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The deformity needs a clear visual strategy.",
+        "detail": "Because the facial condition is central to the story from birth through adulthood, the production will need a consistent prosthetic or makeup approach across age ranges. That is a solvable design challenge, but it should be planned early so the lead performance stays the focus.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights and references need a cleanup pass.",
+        "detail": "The script names Winston Churchill, Bob Marley, Amazon, ezinearticles.com, and several real institutions and organizations. A production-ready draft would confirm what stays as reference, what gets cleared, and what can be generalized without changing the story’s meaning.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 49.3,
+  "tier": "Needs Development",
+  "inputTokens": 32254,
+  "outputTokens": 6056,
+  "cost": 0.051442499999999995,
+  "declaredFormat": "Feature film"
+}

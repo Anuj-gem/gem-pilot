@@ -1,0 +1,262 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime",
+      "genre_tags": [
+        "Heist",
+        "Comedy"
+      ],
+      "tone": "Broad, scrappy, self-aware, and low-fi"
+    },
+    "positioning_hook": "A washed-up wrestler, a crooked cop, and a Dollar Tree clerk reunite for one last heist, while a stay-at-home dad’s family life and a rival crew keep the job from staying simple.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The core promise is easy to grasp — ex-criminals pulling a final job — and the comic ensemble angle gives it a clear audience lane. The material currently reads more like a small-scale indie crime-comedy than a broad four-quadrant play, so the market is real but specific."
+      },
+      "conceptual_hook_clarity": {
+        "score": 4,
+        "reasoning": "The title and cast list point to a heist story, but the actual script pages provided stop at the Act 1 heading, so the engine, stakes, and turn of the story are not yet on the page. What is visible is a premise sketch rather than a fully launched feature hook."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 4,
+        "reasoning": "The cast list gives the bones of a playable ensemble — wrestler-leader Ben, cop wildcard Billy, planner Alejandro, comic-relief Jerry — and that mix can support strong character interplay. At this stage, the characters are defined mostly by function and job title, so the deeper contradictions that make actors lean in are only lightly sketched."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The low-budget criminal crew setup is familiar, but the specific mix of a wrestler, a cop, a Dollar Tree worker, and a stay-at-home dad gives it a scrappy, blue-collar flavor. The page currently signals a homemade, local-energy crime comedy more than a sharply singular formal or tonal swing."
+      },
+      "narrative_momentum_engagement": {
+        "score": 2,
+        "reasoning": "There is no visible scene progression beyond the title page, cast list, and Act 1 marker, so momentum cannot yet be felt in the material provided. The script as submitted does not yet demonstrate escalation, reversals, or a forward-driving sequence of events."
+      },
+      "resonant_originality": {
+        "score": 3,
+        "reasoning": "The combination of ex-criminals and everyday jobs gives the premise a grounded, lived-in angle that could become memorable. On the page provided, though, it still reads as a familiar crime-comedy setup with a few specific occupations rather than a fully inevitable new take."
+      },
+      "world_density_and_texture": {
+        "score": 3,
+        "reasoning": "The world is hinted through working-class roles, a 7-Eleven ensemble, and a wrestling angle, which suggests a local ecosystem with some texture. Because the actual scenes are not included, the world currently functions more as a list of ingredients than a fully dramatized social environment."
+      },
+      "tonal_specificity": {
+        "score": 4,
+        "reasoning": "The title and cast list suggest broad, rough-edged comedy inside a crime framework, with Jerry positioned as comic relief and the group dynamics likely meant to carry the humor. The exact tonal blend is not yet fully legible from the submitted pages, so the identity feels promising but still in outline."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "There are seeds for more beneath the surface — family life through Jerry, criminal history across the crew, and the tension between ordinary jobs and outlaw identity. The submission does not yet reveal the deeper emotional or thematic layer that would make the story feel larger than its premise."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The cast list suggests a usable ensemble web: Ben, Billy, Alejandro, Maddie, Jerry, Abigail, and the rival Skeleton Star all have built-in friction points. The relationships are promising on paper, but the submitted material does not yet show the interplay that would confirm a truly engine-driven ensemble."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 4,
+        "series_regulars": 3,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Wrestler/physical performer for Ben",
+          "Cop type with comic volatility for Billy",
+          "Blue-collar planner for Alejandro",
+          "Family-man comic role for Jerry",
+          "Three child roles including a baby",
+          "Rival wrestling persona for Skeleton Star"
+        ]
+      },
+      "locations": {
+        "distinct_count": 3,
+        "interior_exterior_ratio": "Mostly interior with some exterior set pieces",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Wrestling-related spaces",
+          "7-Eleven convenience store environment",
+          "Residential family-home setting"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No VFX requirements are indicated in the submitted material.",
+        "stunts_level": "minor",
+        "sfx_needs": "Potential practical fight choreography and wrestling action",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Opening quote attributed to Disney's Meet the Robinsons."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming crime-comedy or low-budget theatrical indie",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with modest-budget packaging; the ensemble and heist premise fit a contained crime-comedy rollout."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary setting, limited locations, no VFX, and only minor stunt needs keep the budget ambition in a modest feature range."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the script calls for a wrestler lead, a cop, a family unit with three children, and a rival persona, which adds some casting specificity."
+        },
+        "location": {
+          "level": "low",
+          "note": "The submitted material points to a small number of contemporary locations, including a home, a wrestling space, and a convenience store."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Crime, ex-criminal characters, and likely fight material place it in a mature lane without indicating extreme content."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The only explicit clearance item in the submission is the quoted Disney line from Meet the Robinsons."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The ensemble has blue-collar specificity.",
+          "what_it_means": "The wrestler, cop, Dollar Tree worker, and stay-at-home dad combo gives the project a grounded commercial identity that feels lived-in rather than generic. That kind of working-class crime-comedy packaging can attract indie buyers and actors who want recognizable people instead of stock genre types.",
+          "evidence": "Cast list defines Ben as a wrestler/ex-criminal, Billy as a cop/ex-criminal, Alejandro as a Dollar Tree worker/ex-criminal, and Jerry as a stay-at-home dad.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jerry gives the movie a comic-family lane.",
+          "what_it_means": "A stay-at-home dad inside a heist crew opens the door to a broader audience entry point and a performance that can play domestic comedy alongside criminal chaos. That is the kind of role character actors and comic leads can use to anchor a project with warmth, timing, and surprise.",
+          "evidence": "Jerry is identified as the comic relief, a stay-home Dad, with a wife and three kids listed in the cast.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The wrestling angle adds a visual hook.",
+          "what_it_means": "A wrestler protagonist and a rival named Skeleton Star give the project a built-in physical identity that can separate it from standard small-time crime stories. Directors and buyers looking for a contained action-comedy with a distinct local flavor will notice that immediately.",
+          "evidence": "Ben is described as a wrestler, and Skeleton Star is listed as Ben’s wrestling rival.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The footprint looks producible.",
+          "what_it_means": "The contemporary setting, limited location list, and lack of visible VFX point to a feature that can be made without a giant spend. That makes it attractive to micro-budget producers, regional financiers, and streamers looking for contained genre inventory.",
+          "evidence": "The submission points to a home, wrestling-related spaces, and a 7-Eleven ensemble, with no VFX indicated.",
+          "source": "production"
+        }
+      ],
+      "headline": "This has the bones of a scrappy, character-first crime-comedy with a clear working-class identity. The wrestler/cop/Dollar Tree/stay-at-home-dad mix is the kind of ensemble that can sell on personality alone if the heist engine and rival dynamics are fully unleashed."
+    },
+    "lead_characters": [
+      {
+        "name": "Pat rick (ben)",
+        "role_type": "Lead",
+        "demographics": "Male · adult · wrestler build / physical performer",
+        "hook": "Ben is the crew’s physical center: a wrestler, an ex-criminal, and the one most likely to turn a plan into a collision. He reads like the kind of guy who leads with muscle but needs the room to reveal whether he is actually the smartest person in it.",
+        "why_actor_wants_this": "This is the showcase territory of Mark Wahlberg in The Fighter — a physical, blue-collar lead who can carry swagger, damage, and charisma in the same frame. Actors who want a role that lets them play force of nature and underdog at once will chase this."
+      },
+      {
+        "name": "Billy (billy)",
+        "role_type": "Lead",
+        "demographics": "Male · adult · cop / ex-criminal",
+        "hook": "Billy is the wildcard: a cop with a criminal past, which makes him useful, dangerous, and impossible to fully trust. He has built-in contradiction, and that contradiction is the engine that can make him the most volatile presence in the crew.",
+        "why_actor_wants_this": "This is the kind of morally split role that gave Denzel Washington in Training Day its voltage — a character whose authority and menace live in the same body. Actors who like playing charm with a blade underneath will be drawn to it."
+      },
+      {
+        "name": "Alejandro (ally)",
+        "role_type": "Lead",
+        "demographics": "Male · adult · blue-collar worker",
+        "hook": "Alejandro is the planner, the brain, and the one whose everyday job as a Dollar Tree worker gives the crew an unexpectedly grounded center. He has the appeal of the quiet strategist who may be underestimated until the room realizes he is the one holding the map.",
+        "why_actor_wants_this": "This is the kind of role that gave Steve Buscemi in Reservoir Dogs its appeal — the cerebral operator whose intelligence becomes the performance. Character actors who thrive on precision, dry humor, and controlled tension will want this part."
+      },
+      {
+        "name": "Michal (maddie)",
+        "role_type": "Lead",
+        "demographics": "Male · adult · criminal",
+        "hook": "Maddie is the pure plotting energy in the group, the one labeled as the bad boy and still actively criminal. He sounds like the crew member who keeps the story unstable, which is exactly what makes him useful on a page and dangerous in a room.",
+        "why_actor_wants_this": "This is the kind of volatile supporting-lead energy that made Joe Pesci in Goodfellas so magnetic — a character who can turn a scene with a look, a joke, or a sudden shift in temperature. Actors who specialize in unpredictability and pressure-cooker energy will chase it."
+      },
+      {
+        "name": "Jerry (Jerry)",
+        "role_type": "Lead",
+        "demographics": "Male · adult · stay-at-home dad",
+        "hook": "Jerry is the comic release, but the stay-at-home dad detail gives him more than punchlines: he is the guy trying to hold family life together while standing near criminal chaos. That makes him the emotional and comic bridge between domestic stakes and the heist world.",
+        "why_actor_wants_this": "This is the kind of role that gave Jason Bateman in Arrested Development and The Gift its appeal — dry comic control with the ability to reveal hurt underneath. Comic actors with dramatic timing will see a part that can play warmth, panic, and exasperation in one package."
+      },
+      {
+        "name": "Abigail (?)",
+        "role_type": "Supporting",
+        "demographics": "Female · adult · real estate agent",
+        "hook": "Abigail is Jerry’s wife and the one person in the cast who appears to know about the bad-boy world without being fully inside it. As a real estate agent and family anchor, she can function as the grounded counterweight to the crew’s chaos.",
+        "why_actor_wants_this": "This is the kind of grounded spouse role that gave Laura Linney in Ozark its quiet authority — a character who can hold the room with calm intelligence and emotional precision. Actors who like playing the person who sees through everybody will gravitate here."
+      },
+      {
+        "name": "Paul (?)",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · boss / mission giver",
+        "hook": "Paul is the mission-giver, which means he is the one who can set the plot in motion and keep pressure on the crew from the outside. He reads as a clean utility role with authority and the potential to become the face of the job’s larger stakes.",
+        "why_actor_wants_this": "This is the kind of crisp authority role that gives actors the same utility as Michael Shannon in small but decisive crime parts — a character who can enter, shift the temperature, and leave the audience wanting more. Character actors who specialize in command and menace will see the value immediately."
+      },
+      {
+        "name": "Manger (?)",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · wrestling manager",
+        "hook": "The wrestling manager is a connective tissue character who can help define Ben’s world and the social rules around it. He suggests a local, semi-professional ecosystem that can add texture and comic friction.",
+        "why_actor_wants_this": "This is the kind of colorful supporting role that gives a performer the same lane as the managers and handlers in The Wrestler — a small part with real scene flavor. Actors who enjoy sharp, specific local color will take notice."
+      },
+      {
+        "name": "Skeleton Star (?)",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · wrestling rival",
+        "hook": "Skeleton Star is Ben’s rival, which gives the story a built-in external pressure point with a memorable name and a physical-world edge. He feels like the kind of antagonist who can be funny, theatrical, and threatening all at once.",
+        "why_actor_wants_this": "This is the sort of rival role that gave Chris Jericho-style wrestling antagonists their appeal on screen — a larger-than-life foil with instant visual identity. Performers who like playing swaggering opposition with a comic streak will want it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a character-driven crime comedy with a regional, working-class pulse.",
+        "fit_profile": "First- or second-feature directors, or indie veterans between festival titles, who already lean toward ensemble behavior, naturalistic banter, and contained genre storytelling. This material rewards directors who can make ordinary spaces feel charged and who like building momentum from personality rather than spectacle.",
+        "detail": "The project gives a director room to shape a crew dynamic, stage a few physical set pieces, and keep the tone nimble without needing a giant canvas. It will appeal to filmmakers who want a producible feature that still feels actor-forward and specific enough to stand out in a crowded crime-comedy lane."
+      },
+      "buyer_appeal": {
+        "tier": "$1-5M feature",
+        "lane": "Streaming crime-comedy / micro-budget indie genre lane",
+        "detail": "The contained contemporary footprint and limited effects mean it can be packaged around a director and a few strong character actors rather than a heavy name-talent stack. The working-class heist angle and wrestling texture give it exportable genre shape for streamers and regional theatrical buyers looking for affordable inventory."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The submitted pages stop before the story starts.",
+        "detail": "The material provided ends at the Act 1 heading, so the next pass should foreground the inciting job, the first major reversal, and the heist engine itself. Once those beats are on the page, the pitch can move from promising premise to a fully legible feature engine.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble definitions are mostly functional.",
+        "detail": "Ben, Billy, Alejandro, Maddie, and Jerry all have clear job labels, and the next pass could deepen each one with a choice that only that character would make under pressure. The version of the script where one or two of them get a signature contradiction or private agenda would raise the actor appeal fast.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The opening quote creates a clearance note.",
+        "detail": "The Meet the Robinsons quote is a recognizable Disney line, so the cleanest path is either to clear it or replace it with an original epigraph. That keeps the package simple for buyers who prefer no outside permissions attached to a low-budget feature.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The child roles shape the casting plan.",
+        "detail": "Jerry’s three kids, including a baby, make the family thread feel real but also add scheduling and performance coordination to the package. If the story can preserve the family stakes with fewer on-camera child beats, the production becomes easier to mount without changing the premise.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 40.3,
+  "tier": "Needs Development",
+  "inputTokens": 9801,
+  "outputTokens": 4122,
+  "cost": 0.02589975,
+  "declaredFormat": "Feature film"
+}

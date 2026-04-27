@@ -1,0 +1,366 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "action",
+        "revenge"
+      ],
+      "tone": "Heightened, gritty, pulpy, operatic"
+    },
+    "positioning_hook": "A parolee hunting a mythic coin through LA’s criminal underworld discovers the real prize is a betrayal that reaches from car lots to cartel estates.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is easy to grasp — a criminal treasure hunt with money, faith, and revenge in the mix — and the script keeps the promise of escalating collisions. The audience lane is clear, though the dense mythology and sprawling cast make it more of a cult-action play than a broad four-quadrant title."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The core engine lands early: Joe is sent to recover coins tied to heaven, then learns the job is a trap and a revenge scheme. The opening heist, the prison recruitment, and the later reveal about the fake coin give the premise a clean spine even as the script expands into multiple power centers."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Joe has a strong wounded-center setup through Klara’s death and his faith crisis, and Bamboo brings a sharp, dangerous counterweight. Mr LA and Scorpio are vivid operators, but several supporting players function more as pieces in the chessboard than as fully separate engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a highly specific mash of criminal folklore, religious iconography, and stylized violence, and it keeps doubling down with the Black Swan matchbox, the coin mythology, and the desert crucifix imagery. The ambition is unmistakable, and the material is most alive when it leans into that operatic, mythic register."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through set pieces, reveals, and betrayals, and the coin hunt gives it a usable forward engine. The middle section opens into several parallel threads — Bamboo, Scorpio, the Russians, the Japanese clan material — which broadens the canvas but also stretches the propulsion."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a criminal underworld chasing a coin that promises heaven is a fresh, immediately legible conceit, and the script keeps finding new angles on it. The strongest version of the premise feels both strange and inevitable, especially once the fake coin scheme and the faith-vs.-damnation tension lock together."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has real texture: LA car lots, pawn shops, bars, prisons, cartel houses, tea houses, and clan politics all feel like parts of one larger ecosystem. The script also gives the world rules — coins, lists, favors, codes, and rituals — that make the setting feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably heightened: hard-boiled banter, religious fatalism, stylized violence, and pop-culture swagger all coexist in the same frame. The voice is most distinctive when it lets humor and menace sit side by side, as in the Big Tony exchanges and the coin mythology scenes."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the crime plot, the script is reaching for grief, redemption, faith, identity, and inherited violence, and those themes are present in Joe, Bamboo, and Hatsuko. The material suggests a deeper mythic layer, though the emotional throughline is strongest when it stays close to Joe’s loss and Bamboo’s self-reckoning."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Joe/Big Tony, Joe/Bamboo, and Hatsuko/Kitano/Anika give the script several playable relationship lanes, and those dynamics generate scene energy. The ensemble is functional and sometimes lively, though the story still leans most heavily on the lead’s momentum rather than a fully interlocking web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Multiple ethnic and nationality-specific roles",
+          "Action-capable leads",
+          "Japanese-language roles and Spanish-language roles",
+          "One female assassin role with strong physicality",
+          "Several crime-boss roles that benefit from distinctive presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Los Angeles streets, dealership, pawn shop, bar, prison yard, mansion, hospital, desert, Mexico border town, London Chinatown, tea house, cemetery, airport, penthouse, bridge",
+          "Some scenes imply international travel and multiple city doubles"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action with occasional stylized transitions, smoke wipes, and montage inserts; no major creature or digital spectacle requirements.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood effects, stabbing wounds, car impact, desert crucifix sequence, and multiple fight beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Multiple named songs and artists are referenced, including Santana feat. Everlast, Jimi Hendrix, James Brown, Phantom Planet, Curtis Mayfield, Rihanna feat. SZA, Wu-Tang Clan, Fleetwood Mac, and J Balvin."
+        },
+        {
+          "type": "brand",
+          "detail": "Black Swan matches, Oro Tequila, Onitsuka Mexico 66, Heckler & Koch MP5, Dodge Challenger, and other branded items are named on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "George Romero, Tom Cruise, Moses, St. Peter, Elvis, and Yasuke are referenced in dialogue and mythology."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Midnight Tales and other film/TV references are named in dialogue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable crime-action lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or direct streaming potential; the hook is built for a genre audience and the ensemble could support franchise thinking if expanded."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary crime action with multiple locations, night work, car impacts, and fight scenes keeps this above micro-budget but below tentpole scale."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script spans multiple lead-level roles across LA, Mexico, Japan, and London, with ethnicity-, language-, and action-specific casting needs."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through many distinct settings, including LA, Mexico, London, desert exteriors, a tea house, a penthouse, and a bridge."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic violence, torture, gunplay, bloodshed, and sexual content narrow the platform lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is heavily populated with named songs, brands, and real-world references that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The coin myth gives the movie a clean engine.",
+          "what_it_means": "A criminal treasure hunt with a heaven-or-hell payoff is instantly pitchable, and it gives the buyer a high-concept spine that can carry action, betrayal, and moral irony in one package. Genre buyers, streamer execs, and actors who like larger-than-life material will all understand the hook immediately.",
+          "evidence": "Mr LA explains the sacred coins to Joe in prison and frames them as a way into heaven; the entire plot then turns on recovering and recirculating them.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joe is built around grief and redemption.",
+          "what_it_means": "The wife-loss backstory gives the lead a playable emotional engine that turns a crime plot into a personal reckoning, which is exactly what helps a genre feature travel beyond the action crowd. Mid-career dramatic leads and actors looking for a bruised, morally compromised protagonist would see a showcase role here.",
+          "evidence": "Joe’s flashback to Klara’s death, his prison conversation about wanting the coin to see her again, and his final desert ordeal all tie the plot to loss.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Big Tony is a scene-stealing partner.",
+          "what_it_means": "He gives the movie a built-in pressure valve: comic rhythm, streetwise charm, and a buddy dynamic that makes the violence go down easier while keeping the story moving. Character actors and charismatic supporting leads would jump at a role that can steal scenes without carrying the whole movie.",
+          "evidence": "His long joke, his banter about his name, and his easy chemistry with Joe give the script a lively second engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Bamboo is a premium assassin role.",
+          "what_it_means": "She has the kind of cool, lethal, emotionally guarded presence that can anchor posters, trailers, and international interest, especially because the script gives her both action and interiority. Action-forward actresses and buyers looking for a female killer with mythic weight will notice her immediately.",
+          "evidence": "Her hotel-room intro, the Yakuza backstory, the bar seduction, and the later tea-house and compound kills all build her as a major force.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has multiple criminal power centers.",
+          "what_it_means": "LA dealers, Russians, Mexican bosses, and Japanese clans create a layered underworld that feels bigger than the page count, which is valuable for both franchise thinking and international appeal. Producers who like ensemble crime worlds and buyers who want exportable genre texture will see room here.",
+          "evidence": "Mr LA, Scorpio, Vlad, Brian, the Black Dragons, the Shimazu, and the Yakuza all operate as distinct factions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a bold visual identity.",
+          "what_it_means": "The matchbox, the desert crucifixion, the blood-soaked bar beats, and the tea-house ritual give the movie a trailer-friendly image set that can separate it from generic crime fare. Directors with a strong visual sense and buyers looking for something that cuts through on thumbnails and marketing art will respond to that iconography.",
+          "evidence": "Black Swan matches recur throughout, Joe is nailed to a cross in the desert, and the tea-house and bridge showdowns are staged with strong ritual detail.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has swagger and attitude.",
+          "what_it_means": "The script knows how to sell character through voice, which helps castability and gives the movie a quotable, clip-friendly quality. Actors who like to perform rhythm, banter, and menace in the same breath will have fun with this material.",
+          "evidence": "Joe, Big Tony, Mr LA, and Brian all get extended exchanges that mix profanity, humor, and threat.",
+          "source": "script"
+        }
+      ],
+      "headline": "THE COIN is a swaggering crime-thriller with a mythic hook: a parolee is sent to recover sacred coins that promise heaven, only to uncover a revenge scheme that reaches from LA showrooms to cartel estates and samurai bloodlines. It has a clear commercial engine, a standout female assassin, and a visual identity built for trailers, posters, and genre buyers who want something pulpy but memorable."
+    },
+    "lead_characters": [
+      {
+        "name": "Joe",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · rugged, physically capable",
+        "hook": "Joe is a hard-edged, wounded ex-con with a quiet spiritual ache under the swagger. He can move through violence like a professional, but the script keeps revealing the softer fault line underneath: a man who still believes a miracle might buy him back the life he lost.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a damaged man whose cool surface hides a private theology and a grief he can’t outrun. It gives an actor the chance to play menace, restraint, dry humor, and spiritual collapse in one lead role."
+      },
+      {
+        "name": "Big Tony",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · large, imposing, charismatic",
+        "hook": "Big Tony is the movie’s loudest heartbeat: swaggering, funny, sexually confident, and always one joke away from danger. He reads like a guy who can talk his way into any room and still make the room feel like it belongs to him.",
+        "why_actor_wants_this": "This is the kind of scene-stealing partner role that made Don Cheadle in Out of Sight so magnetic — a character whose charm is the engine and whose timing keeps the movie airborne. It gives a charismatic actor a chance to own every entrance, every joke, and every turn from comic relief to credible threat."
+      },
+      {
+        "name": "Mr LA",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Black / Dominican / African American",
+        "hook": "Mr LA is a polished criminal impresario with preacher energy, family rhetoric, and a cold business brain. He speaks like a mentor and moves like a kingpin, which makes him feel both seductive and dangerous in the same scene.",
+        "why_actor_wants_this": "This is the kind of authority role that gave Giancarlo Esposito in Breaking Bad and Better Call Saul such command — a man whose calm is more intimidating than shouting. It’s a showcase for an actor who can play elegance, menace, and strategic intelligence without ever raising his voice."
+      },
+      {
+        "name": "Bamboo",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s · Japanese / Black Japanese heritage",
+        "hook": "Bamboo is a lethal, self-possessed assassin with a private wound and a mythic backstory that keeps expanding every time she appears. She can seduce, interrogate, kill, and vanish, but the script also gives her a buried longing for release and reinvention.",
+        "why_actor_wants_this": "This is the showcase lane of Charlize Theron in Atomic Blonde — a physically commanding killer role with style, intelligence, and emotional residue. It gives an actress action, glamour, and a hidden interior life, which is exactly the kind of part that can become a calling card."
+      },
+      {
+        "name": "Hatsuko",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · Japanese",
+        "hook": "Hatsuko is a power-hungry heir with rage, entitlement, and a deep need to prove himself to a family that never fully soothed him. He is the kind of antagonist who believes he is the rightful center of the story, which makes him dangerous and oddly tragic.",
+        "why_actor_wants_this": "This is the prestige-villain territory of Kieran Culkin in Succession when the character is allowed to weaponize insecurity and charm at once. It gives an actor a chance to play family trauma, ambition, and volatility in a role that can dominate scenes without becoming one-note."
+      },
+      {
+        "name": "Scorpio",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Mexican",
+        "hook": "Scorpio is the colder, more mythic end of the criminal spectrum: a cartel-adjacent strategist with a forensic mind and a taste for control. His backstory with Rosa and his rise through violence give him a personal code that feels almost religious in its own way.",
+        "why_actor_wants_this": "This is the kind of late-entry power role that Javier Bardem in No Country for Old Men made unforgettable — a man whose stillness and certainty are more frightening than chaos. It gives an actor a chance to play intelligence, authority, and moral emptiness with real screen gravity."
+      },
+      {
+        "name": "Kitano",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Japanese",
+        "hook": "Kitano is the softer brother in a family built on hierarchy and violence, and that makes him feel like the emotional center Hatsuko can’t tolerate. His romance with Anika gives the story a human pulse before the machinery of betrayal crushes it.",
+        "why_actor_wants_this": "This is the kind of doomed romantic role that gives an actor the emotional lift of a tragic love story before the plot turns violent, similar to the tenderness in Andrew Garfield’s work in The Social Network or Silence. It’s a strong fit for a younger dramatic lead who can play warmth, vulnerability, and inevitability."
+      },
+      {
+        "name": "Anika",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Japanese",
+        "hook": "Anika is the forbidden-love figure who becomes more than a romantic complication once the pregnancy and clan politics surface. She carries tenderness, secrecy, and danger in the same frame, which gives her real emotional charge.",
+        "why_actor_wants_this": "This is the kind of tragic-romance role that lets an actress play intimacy under pressure, like the emotional center of a prestige crime melodrama. It gives a performer the chance to make the audience feel the cost of the war before the bullets start flying."
+      },
+      {
+        "name": "John Dolan",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "John Dolan is a recognizable public figure inside the story’s underworld economy, a filmmaker whose name carries enough cultural weight to matter as a target. He functions as one of the script’s more playful proof points that the coin hunt reaches into celebrity and commerce.",
+        "why_actor_wants_this": "This is the kind of cameo-plus role that gives a well-known character actor a memorable scene without requiring a full arc, similar to the compact authority of a prestige guest spot. It’s attractive to actors who want a sharp, quotable turn in a genre movie."
+      },
+      {
+        "name": "Brian",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Brian is a flashy, insecure operator who talks big, dresses big, and keeps getting dragged into bigger consequences than he can manage. He’s funny until he isn’t, which makes him a useful pressure source in the middle of the plot.",
+        "why_actor_wants_this": "This is the kind of slippery crime-role energy that Steve Buscemi has made a career out of — a man whose nervousness becomes part of the joke and part of the threat. It gives an actor room to play panic, vanity, and opportunism in the same performance."
+      },
+      {
+        "name": "Dimitri",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · Russian",
+        "hook": "Dimitri is the silent enforcer type: physically dangerous, emotionally sealed, and always one step from violence. He doesn’t need much dialogue because the script uses him as pure pressure.",
+        "why_actor_wants_this": "This is the kind of cold-blooded heavy role that gives an actor the Anton Chigurh-style showcase of menace through stillness and precision. It’s ideal for a performer who can make minimal dialogue feel loaded."
+      },
+      {
+        "name": "Vlad",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · Russian",
+        "hook": "Vlad is the old-world boss who understands fear as a management tool and uses ritualized punishment to keep everyone in line. He feels like a man who has survived long enough to become a system.",
+        "why_actor_wants_this": "This is the kind of authority role that lets an actor play command, cruelty, and old-money criminal gravity, similar to the power of a strong mob patriarch in a prestige crime film. It’s a magnet for actors who like playing the room with stillness and menace."
+      },
+      {
+        "name": "Jill",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Jill is one of the script’s brief humanizing detours, a daughter trying to hold a family together while the plot quietly steals from her. She gives the hospital sequence a lived-in emotional texture that contrasts with the surrounding criminal machinery.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actress a truthful scene in a genre film, similar to the family realism in a Coen or Soderbergh crime piece. It’s attractive to performers who want one or two scenes that land emotionally without being ornamental."
+      },
+      {
+        "name": "The Snatcher",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · Black",
+        "hook": "The Snatcher is a stylish gang leader with a cool surface and a predatory edge, introduced as someone who can command a room without raising his voice. He broadens the world into London gang politics and gives the story another power center.",
+        "why_actor_wants_this": "This is the kind of cool-headed crime-boss role that gives an actor the same kind of controlled charisma Idris Elba brought to Stringer Bell — a man whose authority is built on intelligence and presence. It’s a strong fit for a performer who can make leadership feel dangerous."
+      },
+      {
+        "name": "Akari",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Japanese",
+        "hook": "Akari is a disciplined killer with a scarred body, a private code, and a relationship to Hatsuko that suggests both loyalty and exhaustion. She feels like someone who has spent years surviving other people’s ambitions and is starting to imagine a different path.",
+        "why_actor_wants_this": "This is the kind of lethal-but-human role that gives an actress the same duality as Michelle Yeoh in Crouching Tiger, Hidden Dragon — physical mastery paired with emotional restraint. It’s a showcase for a performer who can make action feel elegant and wounded at once."
+      },
+      {
+        "name": "The Boss / Father",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s · Japanese",
+        "hook": "The father is the clan’s moral and strategic center, a man trying to hold order together while his sons and rivals pull the family apart. He carries authority, disappointment, and buried history in a way that makes his scenes feel consequential.",
+        "why_actor_wants_this": "This is the kind of patriarch role that gives an actor the gravitas of a family head in a prestige crime drama, where every line feels like it could shift the balance of power. It’s ideal for a seasoned performer who can play dignity under pressure."
+      },
+      {
+        "name": "Mother",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-70s · Japanese",
+        "hook": "The mother is the emotional keeper of the family’s hidden history, and the script gives her the quiet authority to reveal what the men have buried. She becomes a crucial bridge between grief, truth, and the next generation.",
+        "why_actor_wants_this": "This is the kind of late-blooming dramatic role that gives an actress the emotional authority of a family matriarch in a prestige ensemble, similar to the quiet force of a strong supporting turn in a crime epic. It’s a role for a performer who can turn stillness into revelation."
+      },
+      {
+        "name": "Old Man / Marvin Vincent",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s-80s",
+        "hook": "Marvin Vincent is one of the story’s key human targets, a terminally ill man whose body becomes part of the coin trail. He gives the plot a moment where the myth collides with mortality in a very direct way.",
+        "why_actor_wants_this": "This is the kind of compact but memorable role that lets an older actor make a single scene land with weight, similar to the emotional utility of a prestige crime film’s pivotal elder. It’s attractive to character actors who can make a brief appearance feel loaded."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a mythic crime saga with ritual, swagger, and blood.",
+        "fit_profile": "Established indie or genre directors with at least one or two features, or a TV crime stylist ready to move into features, who already like heightened violence, strong visual motifs, and ensemble underworld storytelling. This material rewards directors who can balance operatic set pieces with intimate character beats and make the world feel larger than the budget.",
+        "detail": "The movie gives a director a chance to build a signature visual language around the coin, the matchbox, the desert crucifixion, and the tea-house ritual. It’s especially attractive to filmmakers who like crime stories with iconography, cross-cultural texture, and a clear trailer shape."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming crime-action / premium cable genre lane",
+        "detail": "The project can be packaged around one or two recognizable leads plus a strong supporting ensemble, rather than requiring a tentpole-sized cast or VFX load. The coin mythology, international underworld texture, and action-forward set pieces give it export value and a clean genre hook for streamers and genre-focused buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle opens into several parallel crime worlds.",
+        "detail": "Joe’s coin hunt, Bamboo’s separate mission, the Russians, and the Japanese clan material all create momentum, but the version of the script where one of those lanes is folded into another would sharpen the central drive. A next pass could keep the same scale while making the audience track one primary engine more cleanly.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The mythology could be introduced with less repetition.",
+        "detail": "The coin’s heaven story, the Moses explanation, and the later recirculation reveal all work, but they arrive in multiple passes. One direction would be to let the most important version of the myth land once, then let the plot prove it through action.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast footprint is broad for a feature.",
+        "detail": "There are multiple lead-level players across LA, Mexico, London, and Japan, which gives the movie scale but also asks for a fairly large ensemble. A simplification lever would be to combine a few of the functionally similar supporting operators so the package stays leaner without losing the underworld feel.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The named music is doing a lot of work.",
+        "detail": "The script leans on a long list of specific songs and artists to set tone and era, which is useful creatively but clearance-heavy in production. A next pass could preserve the musical identity while reducing the number of plot-critical needle drops.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final act is built for spectacle.",
+        "detail": "The desert crucifixion, the compound assault, and the bridge duel all deliver strong images, and the version of the script that keeps those beats but trims some of the connective tissue would protect the momentum. That would also make the action feel even more inevitable when it arrives.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Bamboo’s backstory is rich enough to foreground selectively.",
+        "detail": "Her Japan flashback, Yakuza history, and later London material all add dimension, but the script has enough story that a future pass could choose the most essential version of her origin and let the rest live in implication. That would keep her mystique while making her entrances hit even harder.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": "",
+    "production_reality_note": ""
+  },
+  "weightedScore": 65.3,
+  "tier": "Optionable",
+  "inputTokens": 60503,
+  "outputTokens": 6478,
+  "cost": 0.07452825,
+  "declaredFormat": "Feature film"
+}

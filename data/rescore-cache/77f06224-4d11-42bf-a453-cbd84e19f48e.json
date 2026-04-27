@@ -1,0 +1,241 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Western",
+      "genre_tags": [
+        "Drama",
+        "Adventure",
+        "Revenge Thriller"
+      ],
+      "tone": "Heightened, operatic, violent, darkly comic"
+    },
+    "positioning_hook": "A freed slave teams with a German bounty hunter to rescue his wife from a brutal plantation owner, then turns the American South into a blood-soaked reckoning.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 9,
+        "reasoning": "The revenge engine is instantly legible, the stakes are emotional and external, and the promise of a cathartic showdown is clear from the opening premise. The material has broad genre appeal with prestige heat, especially because it wraps a crowd-pleasing rescue mission inside a historically charged setting."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The central engine is easy to explain in one breath: Django is trying to buy his way into Candieland to get Broomhilda back. The script keeps the objective visible and escalates cleanly through the bounty-hunting partnership, the plantation infiltration, and the final confrontation."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Django, Schultz, and Candie each have strong screen identity, with Django’s transformation from enslaved man to self-possessed avenger carrying the most lift. The supporting players are vivid enough to create memorable scenes, though the script is most durable when it stays close to the central trio."
+      },
+      "creative_originality_and_boldness": {
+        "score": 9,
+        "reasoning": "The script’s boldness comes from fusing a classical western revenge structure with the American slavery era and letting the genre machinery collide with that history head-on. The dialogue, set pieces, and tonal swings are confident enough to feel authored rather than assembled."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps moving through clear objective shifts: the training partnership, the bounty-hunting run, the Candie negotiation, and the final rescue attempt. The middle stretches with the bounty work and dinner-table maneuvering, but the script repeatedly resets the engine before momentum can drain."
+      },
+      "resonant_originality": {
+        "score": 9,
+        "reasoning": "It feels like a familiar revenge tale that somehow only exists in this exact form: a slave narrative powered by western iconography, outlaw banter, and a final eruption of payback. The premise lands immediately and carries cultural charge beyond the genre shelf."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world has strong social hierarchy and visible rules, from the bounty-hunting economy to the plantation’s internal power structure and the codes of performance Django must learn. The settings are not just backdrops; they generate the story’s tactics, disguises, and betrayals."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The script has a very specific tonal signature: brutal violence, formalized dialogue, absurd humor, and sudden bursts of operatic emotion. It can pivot from comic banter to moral horror to explosive catharsis in a way that is immediately recognizable."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the revenge plot is a story about performance, language, and the construction of freedom, especially in the Schultz-Django mentorship and the Candie dinner sequence. The surface is propulsive, but the script keeps revealing deeper layers about power, spectacle, and self-invention."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Django-Schultz pairing is the engine, and the Candie household adds a strong pressure-cooker dynamic with Stephen and Calvin. The ensemble is memorable, but the story is still fundamentally driven by a few central relationships rather than a wide web of equally generative pairings."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Period-specific racial casting",
+          "Strong age range spread",
+          "One German-speaking principal role",
+          "Large ensemble of adult supporting players"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Period",
+        "notable_requirements": [
+          "19th-century American South and frontier locations",
+          "Plantation estate build or dressed location",
+          "Western town exteriors",
+          "Carriage, horseback, and rural road settings"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily invisible period enhancement, blood effects, muzzle flashes, and occasional environment cleanup.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, squibs, blood hits, practical explosions, horse work, and fight choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Theatrical prestige genre feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-theatrical release model with awards-season positioning and strong home-entertainment afterlife"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period western settings, ensemble cast, horses, and action sequences place it above lean indie scale but below effects-heavy tentpole territory."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script benefits from recognizable adult leads and a sizable supporting ensemble, with one major German-speaking role and period-specific casting needs."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Multiple period exteriors, plantation interiors, and western road locations create a moderate footprint without requiring international travel or large-scale builds."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic violence, slavery-era brutality, racial language, and torture imagery narrow the platform lane and shape the release strategy."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No prominent real-person, music, brand, or external IP dependencies are evident in the script material provided."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly legible.",
+          "what_it_means": "A buyer can pitch the movie in one sentence and know exactly what emotional promise it delivers: rescue, revenge, and release. That clarity is gold for theatrical marketing and for stars who want a role with a clean, high-impact objective.",
+          "evidence": "Django’s mission to free Broomhilda drives the entire Candieland infiltration and final showdown.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Django is a transformation role.",
+          "what_it_means": "The part gives an actor a visible arc from silenced captive to strategic avenger, which is the kind of progression that creates awards traction and audience identification at the same time. Prestige leads and breakout younger stars alike would see a career-defining centerpiece here.",
+          "evidence": "Django learns the bounty trade, adopts the “D” persona, and eventually takes control of the final rescue plan.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Schultz gives the movie its engine.",
+          "what_it_means": "The mentor-partner dynamic creates a second selling point beyond the revenge plot: a charismatic, talkative, morally slippery co-lead who can carry scenes and elevate the whole package. That kind of role attracts actor-director pairings looking for dialogue-rich prestige material.",
+          "evidence": "Schultz recruits Django, trains him, and becomes the social and tactical key to entering Candie’s world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Candie dinner sequence is a showcase set piece.",
+          "what_it_means": "This is the kind of extended tension sequence that gives a producer a trailer moment and gives a director a calling card scene. It also signals to buyers that the script can deliver conversation as suspense, not just action as payoff.",
+          "evidence": "The dinner at Candieland forces Django, Schultz, Stephen, and Candie into a high-stakes performance of civility.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is unmistakably authored.",
+          "what_it_means": "The script’s mix of formal dialogue, sudden brutality, and comic digression gives it a signature voice that stands out in a crowded genre marketplace. That distinctiveness is exactly what festival programmers, cinephile audiences, and auteur-minded buyers respond to.",
+          "evidence": "The script moves from bounty-hunting banter to the Mandingo-fighting world to explosive violence without losing its voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has built-in hierarchy and pressure.",
+          "what_it_means": "The plantation economy, bounty system, and racial power structure create a world that generates scenes on contact, which is a major asset for both production design and storytelling. Buyers looking for period material with a strong sense of place will recognize the value immediately.",
+          "evidence": "Candieland operates as a social machine with rules, surveillance, and status rituals that Django must navigate.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige revenge western with a clean commercial engine and a signature voice. It offers a star-making lead, a scene-stealing co-lead, and a set-piece-driven structure that can sell on premise, performance, and payoff all at once."
+    },
+    "lead_characters": [
+      {
+        "name": "Django",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · Black",
+        "hook": "Django begins as a man stripped of language, status, and agency, then steadily becomes the sharpest player in the room. He is quiet when he needs to be, lethal when he chooses to be, and emotionally anchored by a single mission that gives every scene forward pull.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in *Training Day* crossed with the moral ascent of Jamie Foxx in *Ray* — a role that lets an actor move from restraint to command without losing interior pain. Leading men looking for a prestige action centerpiece will chase it because the part offers transformation, physicality, and emotional ownership in one package."
+      },
+      {
+        "name": "Dr. King Schultz",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to 50s · German",
+        "hook": "Schultz is a civilized killer with a salesman’s tongue and a gambler’s appetite for risk. He is funny, articulate, and self-mythologizing, but the script keeps revealing the cost of his intelligence and his chosen moral line.",
+        "why_actor_wants_this": "This is the showcase space of Christoph Waltz in *Inglourious Basterds* — a role where dialogue is action and charm is a weapon. Character actors who can play wit, menace, and intelligence in the same breath will want this because it gives them long, scene-dominating stretches of verbal control."
+      },
+      {
+        "name": "Calvin Candie",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 40s · White",
+        "hook": "Candie is a plantation owner who performs refinement while radiating entitlement and sadism. He is theatrical, volatile, and deeply invested in the rituals of power, which makes him dangerous long before the violence turns overt.",
+        "why_actor_wants_this": "This is the showcase territory of Leonardo DiCaprio in *The Wolf of Wall Street* — a charismatic monster whose charm and volatility keep the audience watching even as the behavior curdles. Actors who want a flamboyant antagonist with long monologue space and explosive turns will line up for it."
+      },
+      {
+        "name": "Broomhilda von Shaft",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · Black",
+        "hook": "Broomhilda is the emotional destination of the story, a woman whose presence is felt as much through memory and longing as through direct action. She carries the romantic and moral center of the film, giving Django’s mission its human shape.",
+        "why_actor_wants_this": "This is the kind of role that functions like the emotional anchor in *The Piano* — a character whose stillness and suffering give the entire story its pulse. Actresses looking for a prestige-supporting part with symbolic weight and audience sympathy will be drawn to it."
+      },
+      {
+        "name": "Stephen",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 70s · Black",
+        "hook": "Stephen is the house slave who understands the plantation’s real operating system better than anyone else in it. He is sharp, suspicious, and socially lethal, with a voice that can shift from deference to contempt in an instant.",
+        "why_actor_wants_this": "This is the showcase territory of Samuel L. Jackson in *A Time to Kill* or *Pulp Fiction* — a scene-dominating supporting role with verbal snap, menace, and moral complexity. Veteran actors who want a role that can steal the movie in limited screen time will chase it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage moral horror with operatic style.",
+        "fit_profile": "Established indie or prestige-genre directors with at least one or two features, especially those who already work comfortably with dialogue-forward tension and stylized violence. This material rewards a filmmaker who can choreograph long scenes, manage tonal pivots, and make period detail feel alive rather than decorative.",
+        "detail": "The dinner sequence, the bounty-hunting travel, and the final eruption all give a director room to build suspense through blocking, rhythm, and performance. It attracts filmmakers who want a signature genre piece that can travel from festival conversation to mainstream visibility."
+      },
+      "buyer_appeal": {
+        "tier": "Prestige theatrical feature in the $50-100M range",
+        "lane": "Awards-capable genre cinema with mainstream commercial upside",
+        "detail": "The package benefits from at least one major star in Django or Candie, because the material’s scale and period setting want recognizable faces to open theatrically. The revenge-western lane has durable audience recognition, and the slavery-era setting gives the film a cultural conversation hook that extends beyond opening weekend."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle run is built on travel and talk.",
+        "detail": "The bounty-hunting stretch does important character work, and a next pass could keep tightening the sequence-to-sequence escalation so each stop feels like a fresh tactical move rather than a new chapter of the same mission. The version of the script where every encounter changes Django’s leverage would make the back half feel even more inevitable.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The Candieland infiltration carries the movie’s longest pressure line.",
+        "detail": "That section already has strong tension, and one lever would be to foreground the specific objective in each beat so the audience always knows what is being won or lost in the room. The clearer the tactical stakes inside the dinner and negotiation scenes, the harder the eventual rupture lands.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast footprint is ensemble-sized.",
+        "detail": "The script’s adult supporting roster is part of its pleasure, but the version of the production that concentrates the Candie household and bounty-hunter world into a few more repeatable spaces would protect schedule and budget without changing the story’s shape. That kind of consolidation is especially useful for a period feature with horses, night work, and action beats.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The content lane is intentionally adult.",
+        "detail": "The violence and racial language are central to the film’s impact, so the positioning should embrace a mature theatrical audience rather than soften for broader platform compatibility. That clarity helps the project find the right buyers and keeps the marketing promise aligned with the material.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 83.3,
+  "tier": "Optionable",
+  "inputTokens": 15326,
+  "outputTokens": 3693,
+  "cost": 0.028113,
+  "declaredFormat": "Feature film"
+}

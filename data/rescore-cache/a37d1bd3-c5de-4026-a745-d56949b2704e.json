@@ -1,0 +1,284 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Supernatural horror",
+      "genre_tags": [
+        "Teen thriller",
+        "Mystery"
+      ],
+      "tone": "Grounded teen drama with eerie, escalating supernatural dread"
+    },
+    "positioning_hook": "After a shape-shifting attack in her house, Jeremiah Bennett is trapped between his terrified parents, a suspicious friend group, and a town where the lake seems to know his name.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The teen ensemble, school dynamics, and supernatural threat give this a clear audience lane, especially for horror fans who like character drama with a mystery engine. The appeal is real, but the script is still finding the cleanest commercial center between the domestic terror and the broader teen social world."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The core hook lands early: a boy is attacked by something that looks exactly like him, and the family has to decide what is real before the town’s secrets surface. The opening bathroom assault and the later Reddit thread make the premise legible fast, though the larger mythology is still being introduced in pieces."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Jer, Aria, Kylie, Noah, and Tyler each have distinct social energy, and the friend-group banter gives the cast a playable rhythm. The characters are engaging in scene, but the script is still leaning more on group dynamics and genre events than on deeply individualized inner engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The doppelganger attack, the lake-adjacent menace, and the Reddit breadcrumb give the material a fresh teen-horror wrapper. The execution still sits close to familiar supernatural-thriller language, so the boldness comes more from the setup than from a fully singular voice yet."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The opening attack, the walk home, the school suspicion, and the pool-party confrontation create a steady escalation toward the final underwater reveal. The momentum is there, though the middle spends a fair amount of time in social banter before the horror engine fully takes over."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A teen boy being replaced by something that can wear his face, then having to prove he is himself, is an immediately graspable genre engine. The Reddit post and the town’s wet, wooded atmosphere add a memorable layer that makes the premise feel like it could only live in this script’s world."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "Metapeak has a usable small-town texture: dark roads, isolated houses, school hallways, and a lake-shadowed edge of town. The world is specific enough to support the story, but the social and institutional layers are still mostly serving the immediate plot rather than generating a larger ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script mixes teen banter, jealousy, and supernatural dread in a way that gives it a recognizable YA-horror flavor. The tone is consistent, but it is still balancing between playful school-life scenes and ominous horror beats rather than locking into a sharply singular tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The doppelganger idea, the town’s secrecy, and the Reddit clue all suggest a larger mythology under the surface. The draft hints at more than it explains, which creates room for depth, though the emotional and mythic layers are still mostly implied rather than fully dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The friend group has active chemistry: Aria/Kylie, Tyler/Aria, Noah/Jer, and the Kylie/Gianna history all generate friction and banter. That web gives the script multiple playable relationship lanes, and the pool-party confrontation shows how quickly the ensemble can turn into story."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 5,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen ensemble",
+          "Age-specific high school casting",
+          "One or more creature/doppelganger performances"
+        ]
+      },
+      "locations": {
+        "distinct_count": 9,
+        "interior_exterior_ratio": "Mostly interior with several exterior night sequences",
+        "period_or_contemporary": "Contemporary with a 2009 setting",
+        "notable_requirements": [
+          "Small-town streets",
+          "Family home interiors",
+          "School hallways/classrooms",
+          "Backyard pool party",
+          "Wooded edge-of-town atmosphere"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Doppelganger/reflection effects, creature reveal in the woods, underwater shape reveal, and water interaction shots.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical water effects, bathroom attack choreography, creature sound design, mirror/reflection manipulation",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "\"Party in the USA\" and Beyoncé are specifically named and used in scene."
+        },
+        {
+          "type": "brand",
+          "detail": "Reddit is specifically referenced as a plot device and on-screen interface."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror / YA thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with franchise potential if the mythology expands"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary teen horror with several night exteriors, water work, and creature/doppelganger effects sits above microbudget but below large-scale genre spend."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script depends on a teen ensemble with several distinct roles and at least one performer carrying a doppelganger/creature presence."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through homes, school spaces, streets, woods, and a pool party, with multiple night setups and water-adjacent scenes."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes assault, choking, threat, profanity, and creature horror, which places it in a mature teen-thriller lane."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named songs and a Reddit-specific on-screen reference create some clearance considerations."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening attack is instantly legible.",
+          "what_it_means": "The script gives a producer a clean horror engine in the first pages: a familiar face becomes the threat, and the audience immediately understands the central question of identity. That kind of fast, visual premise is attractive to streaming buyers and genre audiences who want the hook before the title card finishes fading.",
+          "evidence": "Jer’s mother is attacked by a figure that looks like him, then the creature bolts into the woods.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The teen ensemble has real social charge.",
+          "what_it_means": "The friend group is built for casting and for audience attachment, with banter, jealousy, loyalty, and old history all active in the same scenes. That gives the project a youth-facing commercial lane and creates multiple actor-friendly roles that can be packaged around a strong young ensemble.",
+          "evidence": "The Noah/Aria/Kylie/Jer/Tyler scenes keep turning from jokes into tension, especially around Tyler’s feelings for Aria and Kylie’s history with Gianna.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The town feels like it hides something wet and old.",
+          "what_it_means": "Metapeak already has a usable horror identity: dark roads, woods at the edge of town, dead streetlights, and lake imagery that can become a brandable visual signature. Buyers respond to settings that can carry a franchise mood, and this one has the bones of a repeatable supernatural geography.",
+          "evidence": "The opening forest imagery, the flickering streetlight with water inside it, and the final underwater hand all point to the lake as a living presence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Reddit clue broadens the mythology.",
+          "what_it_means": "Dropping a forum post into the story gives the script a modern investigative lane and suggests a larger pattern beyond one family, which is useful for audience curiosity and sequelability. That kind of breadcrumb is catnip for viewers who like to decode lore and for buyers looking for a concept with expansion room.",
+          "evidence": "Jer finds a Reddit post titled “Who was it?” describing the same kind of doppelganger attack.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pool-party confrontation is built for trailer moments.",
+          "what_it_means": "The social humiliation, the public standoff, and the underwater creature reveal create a sequence that can sell the movie in a cut-down. This is the kind of set piece that gives marketing a clean escalation from teen drama to full horror.",
+          "evidence": "Kylie and Gianna’s confrontation ends with Kylie shoved into the pool and a blue-green hand appearing beneath her.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a clean, marketable horror engine: a small-town teen is attacked by something wearing his face, and the people closest to him start becoming the next line of suspicion. The friend-group dynamics, lake-soaked atmosphere, and final pool-party reveal give it the kind of visual and emotional hooks that can travel in the streaming horror lane."
+    },
+    "lead_characters": [
+      {
+        "name": "Jeremiah Bennett",
+        "role_type": "Lead",
+        "demographics": "Male · Teen · high school age",
+        "hook": "Jer is the center of the mystery and the emotional pressure point of the story: a nervous, funny, socially embedded teen who suddenly has to prove he is himself. He reads as the kind of kid who uses humor, awkwardness, and loyalty to keep the room light until the room turns on him, and then he is forced into fear, confusion, and self-doubt.",
+        "why_actor_wants_this": "This is the showcase territory of Jaeden Martell in *It* or Noah Jupe in *A Quiet Place* — a young lead whose vulnerability becomes the engine of the suspense. It gives a teen actor the chance to play panic, confusion, and quiet resolve in a role where identity itself is the performance challenge."
+      },
+      {
+        "name": "Aria Cooper",
+        "role_type": "Lead",
+        "demographics": "Female · Teen · high school age",
+        "hook": "Aria is sharp, socially aware, and emotionally direct, with the kind of confidence that makes her feel like the first person to say what everyone else is thinking. She has a playful edge with her friends, but she also carries jealousy and loyalty in the same breath, which makes her feel alive rather than decorative.",
+        "why_actor_wants_this": "This is the showcase space of Rachel Zegler in *West Side Story* or Auli'i Cravalho in *The Little Mermaid* — a young performer gets to carry charisma, romantic tension, and emotional authority in the same role. It will attract rising teen leads who want a part that can play funny, cutting, and protective without losing warmth."
+      },
+      {
+        "name": "Kylie Sterling",
+        "role_type": "Lead",
+        "demographics": "Female · Teen · high school age",
+        "hook": "Kylie has the most combustible social energy in the group: she is funny, blunt, image-aware, and not afraid to go straight at someone when she feels crossed. The script gives her a history with Gianna that turns her into more than a side friend; she is carrying old hurt, pride, and a need to be seen on her own terms.",
+        "why_actor_wants_this": "This is the showcase territory of Sophie Nélisse in *Yellowjackets* — a role that lets an actor play social dominance, buried hurt, and sudden volatility in the same scene. Young actresses who want a sharp, scene-stealing part with attitude and emotional bite will chase this."
+      },
+      {
+        "name": "Noah Sterling",
+        "role_type": "Lead",
+        "demographics": "Male · Teen · high school age",
+        "hook": "Noah is the easygoing social glue of the group, the one who keeps the banter moving and makes the friend circle feel lived-in. He is playful and protective, but he also functions as a witness to the group’s shifting loyalties, which gives him a useful, grounded presence.",
+        "why_actor_wants_this": "This is the kind of ensemble-supporting lead territory seen in *The Perks of Being a Wallflower* — a role that lets an actor be the audience’s social entry point while still landing jokes and emotional beats. Young actors who can play charm without pushing will see this as a strong breakout lane."
+      },
+      {
+        "name": "Tyler Ford",
+        "role_type": "Lead",
+        "demographics": "Male · Teen · high school age",
+        "hook": "Tyler is dry, defensive, and secretly romantic, which makes him the group’s best source of friction and comic tension. He has enough attitude to feel like a skeptic, but the script also lets him be vulnerable in the social games around Aria and Gianna, so he never reads as one-note.",
+        "why_actor_wants_this": "This is the showcase space of Finn Wolfhard in *Stranger Things* — a sarcastic teen role that can pivot into sincerity and awkward longing without losing its edge. It will appeal to young actors who want a part with comic timing, romantic tension, and room to reveal softness under the snark."
+      },
+      {
+        "name": "Nicole Bennett",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · mother",
+        "hook": "Nicole is the mother whose fear is instantly readable, and the attack in the bathroom gives her a visceral, protective presence. She is not just reacting; she is the adult who already understands that something impossible has entered the house and that silence may be part of the family’s survival strategy.",
+        "why_actor_wants_this": "This is the kind of contained, high-intensity mother role that gave Toni Collette in *Hereditary* so much traction — a performance built on terror, disbelief, and the need to hold a family together while reality breaks. Character actresses who can do panic and restraint in the same beat will be drawn to it."
+      },
+      {
+        "name": "John Bennett",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · father",
+        "hook": "John is the father trying to keep the house from collapsing under something he cannot name. He reads as controlled, practical, and immediately protective, which makes him the adult counterpart to Jer’s panic and Nicole’s shock.",
+        "why_actor_wants_this": "This is the grounded parental authority lane of *A Quiet Place* or *Signs* — a role that lets an actor play containment under pressure rather than speeches. Working character actors who specialize in steady, credible family drama will see the value here."
+      },
+      {
+        "name": "Gianna",
+        "role_type": "Supporting",
+        "demographics": "Female · Teen · high school age",
+        "hook": "Gianna is the social antagonist in the teen world: polished, cutting, and fully aware of the power she has in a room. She carries history with Kylie and knows how to weaponize maturity, sweetness, and public performance at the same time.",
+        "why_actor_wants_this": "This is the showcase territory of Madeline Cline in *Outer Banks* or Camila Mendes in *Riverdale* — a role that lets an actor play glamour, menace, and social control in one package. Young actresses who want a deliciously sharp antagonist with scene-stealing presence will chase it."
+      },
+      {
+        "name": "Mr. Larsen",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · teacher",
+        "hook": "Mr. Larsen is the authority figure who keeps the school world moving with a dry, no-nonsense edge. He is functional but useful, giving the school scenes a credible adult presence and a little friction when the girls are late.",
+        "why_actor_wants_this": "This is the kind of compact authority role that works for actors who can make a classroom feel real in one scene, similar to the teacher-adult texture in *Eighth Grade*. Character actors with strong timing will appreciate the clean, playable utility of the part."
+      },
+      {
+        "name": "Emily Sterling",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · mother",
+        "hook": "Emily is the off-screen adult presence who becomes important the moment the family needs corroboration. She functions as a connective tissue character between households, which gives the town a more believable parent network.",
+        "why_actor_wants_this": "This is a small but functional supporting role in the family-thriller lane, the kind that gives an actor a clean scene with stakes and no clutter. It suits performers who specialize in grounded, efficient realism."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage teen intimacy and supernatural dread in the same frame.",
+        "fit_profile": "First- or second-feature directors coming out of shorts, music videos, or indie genre labs, especially those who already lean toward contained horror, YA tension, and performance-forward suspense. This material rewards a filmmaker who can make a bathroom, a hallway, and a pool party feel like escalating pressure chambers rather than just locations.",
+        "detail": "The script gives a director a clean escalation path from domestic terror to school social drama to a final creature reveal, which is ideal for someone building a feature reel around mood and control. Directors who like practical tension, water imagery, and ensemble blocking will see a lot to do here without needing a giant canvas."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming horror / YA genre lane",
+        "detail": "The project can be packaged around a young ensemble and one breakout lead rather than a heavy-name cast, which keeps it accessible for a director-driven greenlight. The teen-horror and doppelganger lanes remain durable on streamers, and the lake-mythology angle gives it franchise-adjacent export value."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The mythology is still arriving in fragments.",
+        "detail": "The opening attack, the Reddit post, and the final underwater hand all point in the right direction, and a next pass could decide which one image or rule is the central promise of the movie. If the script foregrounds the lake’s logic a little earlier, the audience will track the mystery with even more confidence.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle leans hard on social banter.",
+        "detail": "The school and lunch sequences do useful character work, and the version of the script where one of those exchanges turns the supernatural pressure up a notch would keep the horror engine humming between set pieces. A small adjustment in scene ordering or revelation timing could preserve the teen chemistry while tightening the forward pull.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The teen ensemble can be streamlined for budget.",
+        "detail": "The current cast list is playable, but the version of the script where one or two school-side roles are folded into existing friends would protect the ensemble energy and simplify production. That would keep the social web intact while reducing the number of teen principals to track across locations.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The named music creates clearance work.",
+        "detail": "\"Party in the USA\" and Beyoncé are doing scene-color work, and a next pass could either keep them as intentional anchors or swap to original needle drops if the budget wants a cleaner clearance path. That choice is especially relevant if the project is aiming at a streamer-first release model.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The night-water imagery wants a contained effects plan.",
+        "detail": "The bathroom attack, reflection beat, and underwater hand are all strong visual ideas, and the version of the script where those moments share a consistent effects language would protect the scare value while keeping the production footprint efficient. That gives the team a clearer roadmap for practical water work and selective VFX.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63,
+  "tier": "Optionable",
+  "inputTokens": 17188,
+  "outputTokens": 4697,
+  "cost": 0.0340275,
+  "declaredFormat": "Feature film"
+}

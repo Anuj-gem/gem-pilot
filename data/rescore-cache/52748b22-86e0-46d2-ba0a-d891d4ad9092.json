@@ -1,0 +1,227 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Mystery",
+        "Conspiracy thriller"
+      ],
+      "tone": "Grounded, gritty, propulsive"
+    },
+    "positioning_hook": "A small-town podcast host and a school custodian unravel a missing-girls conspiracy running through a church, a police department, and tunnels beneath their own high school.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is easy to grasp and commercially legible: missing girls, local corruption, and a buried conspiracy with a podcast frame. It has clear genre appeal and a strong regional flavor, though the audience is more thriller-minded than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early in Act One with Emily Harper, the anonymous tip, and the school/church connection, then keeps tightening through the task force and tunnel reveal. The story engine is easy to explain in two sentences and escalates cleanly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Savannah and Ralph are functional leads with a solid partnership dynamic, and Daniels/Tingling give the story faces of authority and control. The characters are more engine-driven than psychologically surprising, so the roles play cleanly without yet feeling especially singular."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The podcast-investigation frame and the church-school tunnel network give the script a distinct local conspiracy flavor. The execution stays in familiar thriller territory, but the specific civic ecosystem keeps it from feeling generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Each act ends on a clean escalation: the first clue, the community-center raid, then the tunnel confrontation and public arrest. The momentum is strong and the reveals are stacked in a way that keeps the reader moving."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The buried-system idea feels immediately usable, especially with the school/church/police triangle and the idea of a rotating 'Director.' It is fresher than a standard missing-person thriller, though it still sits within recognizable conspiracy-thriller architecture."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific civic world with the high school, church, police department, podcast studio, community center, and underground tunnel system all feeding the same machine. The local institutions feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends blue-collar regional texture, procedural investigation, and pulpy conspiracy escalation with a steady, serious hand. The Friday-night football opening and the podcast banter give it a recognizable local voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The script hints at a larger institutional history through Daniels, the past chiefs, and the idea that the Director is a position rather than a person. There is room for deeper thematic payoff, but the current draft keeps most of that depth in the mechanics of the conspiracy."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Savannah and Ralph carry the story well, and Daniels/Tingling add pressure, but most supporting characters function in service of the central investigation. The ensemble is efficient rather than especially combinatorial."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 9,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One older antagonist role (Rick Tingling, 70s)",
+          "One authority figure role built for a strong character actor (Chief Daniels)",
+          "Two 30s leads with distinct chemistry requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly interior with some exterior night work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "High school",
+          "church",
+          "police department",
+          "podcast studio",
+          "community center",
+          "hospital",
+          "tunnel system",
+          "courthouse"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical coverage; limited enhancement for tunnel geography, police lights, and any concealment/transition beats.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fight choreography, car impact beat, practical flashlight/tunnel atmosphere, police raid coverage.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming crime thriller / premium cable procedural-drama lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or streamer original; the investigation-and-conspiracy engine is built for a contained thriller rollout."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary and contained, but the night exteriors, raid coverage, tunnel work, and action beats push it above micro-budget."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story is anchored by two leads and a small supporting ensemble, with no child-actor or star-ensemble dependency."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Eight distinct locations plus tunnel interiors and multiple night setups create moderate logistical coordination."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Missing girls, abduction implications, assaults, and armed confrontations keep it in mature-thriller territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named music, brands, or real-person references appear in the pages provided."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [],
+      "headline": "This is a clean, commercial thriller package: a missing-girls conspiracy with a local podcast frame, a strong two-hander at the center, and a buried institutional world that gives the movie a real sense of place. It feels built for buyers who want a contained, mature, propulsive feature with castable roles and a trailer-friendly final act."
+    },
+    "lead_characters": [
+      {
+        "name": "SAVANNAH McMULLEN",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Savannah is the kind of local truth-teller who can move between microphone confidence and street-level urgency without losing her center. She has the energy of someone who knows how to ask the right question, but she also has the spine to walk into danger when the story stops being theoretical.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in The Last Duel or Elizabeth Olsen in Wind River — a woman whose intelligence, composure, and moral force carry the movie while the danger keeps tightening around her. Actors who want a role that can play investigative drive, emotional control, and action-forward resolve will chase this, and buyers will see a lead who can anchor a prestige thriller with audience reach."
+      },
+      {
+        "name": "RALPH CIPPLONE",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s",
+        "hook": "Ralph is a working-class custodian with the instincts of a watcher, the patience of a lifer, and the kind of town knowledge that makes him dangerous in the best way. He feels like a man who has spent years being underestimated, which gives every move he makes a quiet charge.",
+        "why_actor_wants_this": "This is the showcase space of Matthew McConaughey in True Detective or Ben Foster in Hell or High Water — a grounded, weathered man whose stillness and local intelligence become the engine of the story. Character actors and leading men looking for a role that lets them play restraint, grit, and sudden physicality will want this part."
+      },
+      {
+        "name": "CHIEF DANIELS",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Daniels reads like a man who has spent too long balancing public authority and private compromise. He is calm, controlled, and increasingly legible as someone who understands the system from the inside, even when he claims he is trying to end it.",
+        "why_actor_wants_this": "This is the kind of role that gives Bryan Cranston in Breaking Bad or Michael Keaton in Spotlight the pleasure of playing authority with a hidden interior life. Veteran character actors will chase it because every scene can pivot on whether he is ally, gatekeeper, or survivor."
+      },
+      {
+        "name": "RICK TINGLING",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Tingling is polished, patient, and chillingly comfortable at the top of a hidden hierarchy. He does not need to raise his voice because the script gives him the kind of institutional power that makes every line feel like a verdict.",
+        "why_actor_wants_this": "This is the showcase lane of Richard Jenkins in The Visitor or John Lithgow in Dexter — an older man whose calm surface makes the menace land harder. Prestige character actors and name veterans will be drawn to a role that lets them play elegance, control, and quiet threat in the same frame."
+      },
+      {
+        "name": "HOLMES",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Holmes is the tech-and-paperwork operator who keeps the investigation moving, the kind of person who can turn a laptop screen into a weapon. She is efficient, observant, and useful in a way that makes her feel like part of the machine rather than outside it.",
+        "why_actor_wants_this": "This is the compact, scene-efficient support slot that actors in Mare of Easttown or The Wire often use to make a memorable impression with precision and authority. It gives a performer the chance to play competence under pressure and to land key exposition without feeling like a delivery system."
+      },
+      {
+        "name": "GILBERT",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Gilbert is one of the task-force bodies in the room, but the script positions him as part of the operational muscle rather than background texture. He reads as a working cop with enough presence to matter in the raid and aftermath.",
+        "why_actor_wants_this": "This is the kind of grounded law-enforcement role that gives actors in Sicario or The Shield a chance to play competence, tension, and team dynamics without carrying the whole movie. It is a useful slot for a recognizable character actor who can make procedural beats feel lived-in."
+      },
+      {
+        "name": "MINADI",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Minadi is another member of the task force with enough specificity to register as a real working presence, especially in the raid and the movement of suspects. He helps give the operation a sense of team scale rather than leaving the leads isolated.",
+        "why_actor_wants_this": "This is the kind of ensemble support role that actors in Narcos or Bosch use to build credibility through action and reaction. It offers clean utility, tactical presence, and a chance to be part of the movie’s momentum without overexplaining the character."
+      },
+      {
+        "name": "KAYLA MORRIS",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens",
+        "hook": "Kayla is one of the rescued girls, and the script uses her as a living witness to the machinery beneath the town. Her fear and clarity give the investigation emotional stakes beyond the procedural trail.",
+        "why_actor_wants_this": "This is the kind of emotionally charged survivor role that gives a young actor the same kind of impact seen in Room or Sharp Objects — a character whose testimony matters as much as her vulnerability. Emerging performers looking for a breakout dramatic scene will see the value immediately."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a regional conspiracy into a tense, cinematic descent.",
+        "fit_profile": "Mid-career indie thriller directors or first-time feature directors coming out of strong shorts, especially those who favor grounded suspense, procedural clarity, and atmosphere over spectacle. This material rewards directors who can stage night exteriors, interiors, and underground spaces with clean geography and who like performance-forward tension inside a contained world.",
+        "detail": "The movie gives a director a chance to build dread through place — school hallways, church basements, police rooms, and tunnels all become part of the same pressure cooker. It will attract filmmakers who want a contained thriller with a strong final-act visual payoff and enough character movement to feel bigger than its footprint."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming thriller / premium cable crime lane",
+        "detail": "The cast is compact and the story can be mounted without name-talent dependency, which makes it viable off a strong script and director attachment. The missing-person conspiracy lane remains a reliable streamer buy-zone, and the contained contemporary footprint supports a clean festival-to-platform path."
+      }
+    },
+    "considerations": [
+      {
+        "area": "Savannah and Ralph carry most of the engine.",
+        "detail": "The two-hander is a selling point, but the supporting players mostly orbit the investigation. One direction would be to give Holmes, Gilbert, or Minadi a more independent pressure point so the task-force room has more combinatorial energy without changing the core plot.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The conspiracy reveal arrives in clean steps.",
+        "detail": "The act structure is easy to follow, which is a commercial plus, and the next pass could look at where the emotional turn lands relative to the information turn. In a few scenes — especially the task-force board, the Daniels interrogation, and the Tingling reveal — letting the character realization arrive a beat earlier could deepen the punch.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The tunnel geography can stay lean.",
+        "detail": "The underground world is a strong climax engine, but it does not need to expand into multiple distinct subterranean spaces to work. A simplified tunnel layout would protect the tension, keep the production footprint controlled, and preserve the visual payoff of the hidden chamber.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The night coverage is doing real work.",
+        "detail": "The school, church, community center, and street confrontations all lean into night exteriors and low-light interiors. A next pass could consider whether any investigative beats can be folded into daytime or interior daylight scenes without losing the noir pressure, which would help scheduling while keeping the tone intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 14438,
+  "outputTokens": 4048,
+  "cost": 0.0290445,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:13:00.048Z",
+  "submission_id": "6924cbb4-0903-4017-b953-40d74ed84b38",
+  "eval_id": "fa2d6a8c-4d5b-4ea4-8e64-c5963d57a921",
+  "title": "True Being",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "ZACK FREELING",
+      "role_type": "Lead",
+      "demographics": "Male · middle-aged"
+    },
+    {
+      "name": "MIA",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s"
+    },
+    {
+      "name": "TRENT",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "AUDREY FREELING",
+      "role_type": "Lead",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "DARRICK",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "CLIVE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "ZED",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "GILCREST",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "OFFICER BRYANT",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "MR. EDWARDS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "RECEPTIONIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "AUDREY / SECOND GENERATION AUDREY",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-60s depending on interpretation"
+    }
+  ],
+  "positioning_hook": "A clone fugitive on the run from a cybernetic cop discovers his mother helped build a hidden clone underground — and the truth about his identity could ignite a civil war.",
+  "cost_usd": 0.05158125,
+  "input_tokens": 36957,
+  "output_tokens": 5303,
+  "status": "wrote:leads_ok"
+}

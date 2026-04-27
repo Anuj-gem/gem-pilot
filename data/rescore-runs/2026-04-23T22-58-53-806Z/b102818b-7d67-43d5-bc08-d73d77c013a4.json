@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:00:45.457Z",
+  "submission_id": "b102818b-7d67-43d5-bc08-d73d77c013a4",
+  "eval_id": "1d53f8bf-cf87-453c-ad25-a771ff7b4828",
+  "title": "Untouchable Julian Silver Reiss Clauson Wolf Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Eliot Ness",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Edna Ness",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Peter Marlow",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Francis Sweeney",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Harold Burton",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Martin Sweeney",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Clayton Fritchey",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Paul Marlow",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Evaline Michelow",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Commissioner Davis / Sheriff Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Big Paulie Polizzi",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Dominic Kasden",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Alfred",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Luther",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    }
+  ],
+  "positioning_hook": "Eliot Ness hunts Cleveland’s Torso Murderer while his public image, marriage, and moral center collapse under the pressure of a city that wants a scapegoat more than the truth.",
+  "cost_usd": 0.05905575,
+  "input_tokens": 44493,
+  "output_tokens": 5708,
+  "status": "wrote:leads_ok"
+}

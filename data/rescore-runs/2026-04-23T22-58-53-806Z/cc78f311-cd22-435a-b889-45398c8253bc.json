@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:13:34.335Z",
+  "submission_id": "cc78f311-cd22-435a-b889-45398c8253bc",
+  "eval_id": "4db6283f-4bb0-441e-9e61-2ed7a31e404f",
+  "title": "The Vanish Woods",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "ANGIE",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · college swimmer"
+    },
+    {
+      "name": "LAUREN",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · college swimmer captain"
+    },
+    {
+      "name": "KENDALL",
+      "role_type": "Lead",
+      "demographics": "Female · 19 · college swimmer"
+    },
+    {
+      "name": "DEVINA",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · college swimmer"
+    },
+    {
+      "name": "MAY",
+      "role_type": "Lead",
+      "demographics": "Female · 20 · college swimmer"
+    },
+    {
+      "name": "JEREMIAH KENT",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "LUCAN",
+      "role_type": "Supporting",
+      "demographics": "Male · teen to early 20s"
+    },
+    {
+      "name": "UNCLE RED",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "AUNT DEE",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "NATHAN",
+      "role_type": "Supporting",
+      "demographics": "Male · teen"
+    },
+    {
+      "name": "MICHAEL",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · college athlete"
+    },
+    {
+      "name": "ZEKE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "DEKE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    }
+  ],
+  "positioning_hook": "A college swim team’s spring-break bike trip cuts through a rural town where a family bargain, a vanished-girls legend, and a werewolf bloodline turn the woods into a slaughterhouse.",
+  "cost_usd": 0.053553,
+  "input_tokens": 39046,
+  "output_tokens": 5393,
+  "status": "wrote:leads_ok"
+}

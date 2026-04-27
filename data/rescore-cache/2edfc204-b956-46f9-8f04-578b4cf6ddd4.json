@@ -1,0 +1,273 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Tech satire",
+        "Political thriller"
+      ],
+      "tone": "Grounded, essayistic, cynical, and intellectually charged"
+    },
+    "positioning_hook": "A burned-out battery engineer at a startup watches his cofounder turn their military drone tech into a breakout success, forcing him to choose between ambition, complicity, and disappearing entirely.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear contemporary hook through startups, investor culture, and military tech, which gives it a recognizable audience lane. Its appeal is sharper for prestige-minded viewers and industry audiences than for a broad four-quadrant crowd."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The central engine is legible: Samir is building battery tech while the company around him pivots toward drone warfare and perception management. The script’s opening is more associative and essay-driven than immediate, so the hook lands with some delay."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Samir has a distinct intellectual voice and a built-in contradiction between idealism and cynicism, especially in the lab conversation with Elseid. The supporting players are functional around him, but the material is still most alive when it stays inside Samir’s head and social friction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a highly literary, collage-like mode that folds startup culture, colonial history, and weaponized innovation into the same frame. That formal confidence gives it a voice that feels authored rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "There is forward motion in the lab, investor, and cofounder material, but the opening sequence spends substantial time in abstraction and montage before the dramatic engine fully locks in. Once Othello’s success and Samir’s exclusion surface, the story gains traction."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A startup drama about battery tech, drone warfare, and the ethics of perception has a fresh, immediately contemporary shape. The combination of personal betrayal and geopolitical implication gives the premise an inevitable quality once it clicks."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Aquatius lab, investor calls, Techstars references, and startup jargon create a specific ecosystem with real institutional texture. The world feels like a lived-in corner of founder culture rather than a generic office setting."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably essayistic, ironic, and politically haunted, with cutaway montages that turn the startup story into a meditation on violence and history. That blend of intellectual density and contemporary satire is hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the startup surface, the script is already reaching for questions about inheritance, complicity, memory, and who gets remembered as a maker versus a beneficiary. The father’s office, the mother’s calls, and the historical montage all suggest a deeper emotional and political architecture."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Samir and Elseid have a workable friction, and Othello creates a useful offscreen pressure point, but the current material is still centered on one dominant consciousness. The ensemble could become more combinatorial as the company dynamics sharpen."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 5,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in his 20s",
+          "Two additional men in their 20s",
+          "Mother voice role",
+          "Potential investor voice roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Startup lab/office",
+          "Apartment interior",
+          "Parking lot exterior",
+          "Zoom/investor-call setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Montage imagery and a few stylized inserts; no evidence of heavy effects work in the pages provided.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical props and screen inserts for phones, Zoom, and product prototypes.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Hinge"
+        },
+        {
+          "type": "brand",
+          "detail": "White Castle"
+        },
+        {
+          "type": "brand",
+          "detail": "Techstars"
+        },
+        {
+          "type": "brand",
+          "detail": "Elon Musk"
+        },
+        {
+          "type": "real_person",
+          "detail": "Elizabeth Holmes"
+        },
+        {
+          "type": "real_person",
+          "detail": "DOGE"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Science and Civilisation in China, Vol. 5, Part 7: Military Technology: The Gunpowder Epic"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Collected essays of AM Hocart"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or festival-to-platform release",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival launch followed by streaming or limited theatrical play."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary interiors, a small cast, and no major stunt or VFX burden keep the budget footprint contained."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story is anchored by one lead and a small circle of 20-something supporting players, with voice roles for investors and family."
+        },
+        "location": {
+          "level": "low",
+          "note": "The action stays largely inside a lab, an apartment, and a few adjacent exterior beats."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Drug use, political violence, and military applications of technology push the material into mature territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Named brands, real public figures, and specific books are referenced directly and would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The startup world is used as a moral pressure cooker.",
+          "what_it_means": "That gives the project a contemporary commercial engine with built-in stakes beyond the lab, because the company’s pitch culture, investor theater, and military applications all collide in one arena. Founders, tech-industry audiences, and prestige buyers looking for a Silicon Valley-adjacent story with political bite will recognize the lane immediately.",
+          "evidence": "Investor Zoom calls, Techstars references, Othello as the business face, and Samir’s line about shifting the levers of perception.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Samir is a vivid, actor-friendly contradiction.",
+          "what_it_means": "The role offers a performer a smart, self-mythologizing engineer who is also stoned, alienated, and quietly furious about who gets credit. Actors who like playing intelligence under stress — especially in prestige dramas where interiority is the engine — will see a showcase part here.",
+          "evidence": "Samir reading dense history texts, vaping through meetings, and explaining why style, substance, and branding all matter at once.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a distinct essay-film voice.",
+          "what_it_means": "That formal identity can separate the project from standard startup dramas and make it attractive to festival programmers and buyers who want something more authored than plot-forward. Directors and distributors drawn to hybrid, intellectually ambitious material will see a clear brandable angle.",
+          "evidence": "The opening montage of gunpowder history, biblical imagery, genocide imagery, and cosmic abstraction before the lab story settles in.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels specific without needing scale.",
+          "what_it_means": "A contained lab-and-apartment footprint keeps the project producible while still feeling plugged into a larger ecosystem of investors, founders, and military-adjacent tech. That combination is attractive to indie financiers and streamers who want scope in subject matter without a giant physical footprint.",
+          "evidence": "Aquatius Laboratories, the parking lot smoke break, the Zoom investor call, and the apartment table scene.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The political subtext is baked into the premise.",
+          "what_it_means": "The story can travel as more than a workplace drama because it links startup ambition to drone warfare, colonial history, and the ethics of invention. Buyers looking for a feature that can spark conversation and still play as a character piece will respond to that dual use.",
+          "evidence": "The Ukrainian Navy boat reference, the drone-bomb discussion, and the montage of historical violence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, sharply authored feature about a founder-adjacent engineer watching his own invention get absorbed into a more ruthless version of the future. It has the kind of contemporary specificity, political charge, and actor-facing lead role that can make a festival audience lean in and a buyer see a prestige lane."
+    },
+    "lead_characters": [
+      {
+        "name": "Samir",
+        "role_type": "Lead",
+        "demographics": "Male · 26",
+        "hook": "Samir is a brilliant, self-conscious engineer with a poet’s brain and a founder’s resentment, forever toggling between theory and self-sabotage. He’s the kind of character who can quote history, diagnose startup theater, and still look stranded inside his own ambition, which makes him feel both intellectually formidable and emotionally exposed.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — a hyper-verbal, high-IQ lead whose intelligence is inseparable from insecurity and social combat. It gives an actor the chance to play rapid-fire wit, internal fracture, and moral drift in the same role, which is exactly the kind of part prestige actors use to redefine their lane."
+      },
+      {
+        "name": "Elseid",
+        "role_type": "Supporting",
+        "demographics": "Male · 26",
+        "hook": "Elseid is the old friend who returns with enough distance to see the room clearly, but not enough detachment to stay neutral. As a filmmaker with his own stalled ambitions, he functions as both confidant and mirror, carrying the easy intimacy of someone who knows where the bodies are buried and still wants the conversation to stay playful.",
+        "why_actor_wants_this": "This is the kind of role that has the relaxed, wounded charm of Adam Driver in Frances Ha or Michael Cera in a more adult register — a friend character who can pivot from comic drift to emotional recognition without announcing the turn. Actors who want a supporting part with real personality and scene-shaping presence will be drawn to it."
+      },
+      {
+        "name": "Othello",
+        "role_type": "Supporting",
+        "demographics": "Male · 26",
+        "hook": "Othello is the polished company face who understands that charisma can be a form of labor and that labor can be outsourced. He comes from money, knows how to move in investor rooms, and reads as the kind of cofounder who can turn absence into authority, which makes him both useful and infuriating.",
+        "why_actor_wants_this": "This has the sleek social power of Armie Hammer in The Social Network — a privileged operator whose ease in elite spaces becomes its own dramatic weapon. It’s a strong part for an actor who wants to play status, entitlement, and strategic charm rather than overt villainy."
+      },
+      {
+        "name": "Rahul",
+        "role_type": "Supporting",
+        "demographics": "Male · 26",
+        "hook": "Rahul is the coder in the room, the one doing the actual technical labor while the company’s public story gets written elsewhere. He reads as the quieter counterweight to Othello’s polish and Samir’s volatility, a useful pressure point in the company’s internal hierarchy.",
+        "why_actor_wants_this": "This is the kind of grounded ensemble role that recalls the practical, deadpan energy of supporting players in Silicon Valley or The Big Short. It gives an actor the chance to make competence feel specific and to land dry humor without needing the loudest arc in the room."
+      },
+      {
+        "name": "Samir's Mother",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s · voice role in the pages provided",
+        "hook": "Samir’s mother is the domestic tether in a story otherwise obsessed with abstraction, deadlines, and public performance. Even through the phone, she carries the ordinary pressure of family expectation, which gives the script a human counterweight to the lab’s ideological noise.",
+        "why_actor_wants_this": "This is the kind of intimate parental role that has the grounded authority of the mother figures in Lady Bird or The Farewell — a part that can shape the emotional temperature of the lead without needing many pages. Character actors who know how to make a single call feel lived-in will respond to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn startup culture into a moral thriller with essay-film intelligence.",
+        "fit_profile": "First- or second-feature directors with a strong festival short background, especially those already working in dialogue-driven drama, political satire, or formally adventurous realism. This material rewards directors who like intellectual density, controlled visual collage, and performance-first scenes that can carry thematic weight without expensive spectacle.",
+        "detail": "The script gives a director room to shape a very specific tonal identity: part workplace drama, part political meditation, part character study. It will appeal to filmmakers who want to prove they can make ideas feel cinematic and who are looking for a project that can stand out in a festival submission stack."
+      },
+      "buyer_appeal": {
+        "tier": "$2-8M feature",
+        "lane": "Prestige indie / festival-to-streaming lane",
+        "detail": "It can be mounted around one magnetic lead and a small supporting ensemble, so a buyer can evaluate it on script, director, and one strong casting attachment rather than a full-name package. The contemporary tech setting and political subtext give it export value in the prestige space, where conversation-starting features with contained production footprints still travel well."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening leans hard into abstraction.",
+        "detail": "The gunpowder-to-cosmos montage announces ambition, and the next pass could decide even more precisely how much of that material needs to arrive before the lab story fully takes over. One lever would be to let Samir’s concrete conflict with the company surface a little earlier so the audience has a handhold before the essayistic register expands.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Samir’s company conflict can sharpen sooner.",
+        "detail": "The pages already give you the ingredients — Othello handling investor meetings, Rahul doing the coding, Samir resenting the deadlines — and a future pass could foreground that triangle earlier in the sequence. That would make the startup hierarchy feel more immediate and give the betrayal engine a cleaner runway.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The historical montage is doing a lot of work.",
+        "detail": "The sequence of genocides, religious imagery, and cosmic abstraction establishes the script’s thesis, and the next pass could consider where one or two of those ideas can be dramatized through character rather than only through montage. That would preserve the intellectual reach while making the emotional entry point even more immediate.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights list needs a clean pass.",
+        "detail": "Named brands, public figures, and specific books are embedded throughout the pages, so a production draft will want a clearance strategy or substitution plan. That is a straightforward packaging step rather than a creative one, but it matters for any buyer evaluating the script as a feature.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The footprint is already producer-friendly.",
+        "detail": "The story lives mostly in a lab, an apartment, and a few adjacent exterior beats, which keeps the physical scale contained. That makes the project easier to mount as a festival feature or streamer acquisition without needing a large location budget.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 65,
+  "tier": "Optionable",
+  "inputTokens": 11982,
+  "outputTokens": 3814,
+  "cost": 0.0261495,
+  "declaredFormat": "Feature film"
+}

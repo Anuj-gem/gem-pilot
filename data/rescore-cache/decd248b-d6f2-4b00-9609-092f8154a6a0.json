@@ -1,0 +1,319 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Conspiracy thriller",
+      "genre_tags": [
+        "Corporate espionage",
+        "Political thriller"
+      ],
+      "tone": "Gritty, globe-trotting, procedural, and lightly comic"
+    },
+    "positioning_hook": "Two Australian intelligence agents uncover a sabotage campaign around asteroid-mining tech, corporate power brokers, and a manifesto-driven environmental cell before the next test turns deadly.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean commercial spine: intelligence agents, corporate sabotage, and a space-resources angle that feels timely and easy to sell. The audience promise is clear by the midpoint, though the pilot leans more procedural than instantly broad-hooked."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening explosions in Australia and Kenya, the Jäger Mining investigation, and the direct fusion drive reveal give the episode a readable engine early. By the time Ignition Systems and Stuartson Capital enter, the season question is clear: who is attacking the asteroid-mining pipeline and why?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Okello and Squire have a workable odd-couple rhythm, especially in the plane banter and the 'who leads here' exchange, and Stuartson has strong boardroom presence. The pilot still plays more on function than deep personal contradiction, so the long-run pull is present but not yet fully ignited."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "Asteroid mining as the commercial battleground is a fresh, contemporary frame, and the story keeps moving through mining, intelligence, finance, and propulsion rather than staying in one lane. The voice is confident, though the execution still sits close to familiar procedural-thriller grammar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The pilot keeps handing off from one reveal to the next: Jäger, Stuartson, Ignition, the test, the manifesto, the attack, and the aftermath. The final destruction of Ignition Systems and the arrival of Alonso do a good job of opening the next episode rather than closing the case."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a covert investigation orbiting asteroid-mining infrastructure has that 'of course this exists' quality once it lands. The manifesto video and the direct fusion drive give the premise a modern, plausible edge that separates it from standard corporate-thriller material."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a genuinely international ecosystem: Australia, Kenya, Cambodia, Germany, London, Miami, Nevada, and Washington all feel connected by money, logistics, and intelligence cover. Mining offices, hotel rooms, private jets, desert test sites, and elite boardrooms create a world with visible institutional edges."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone mixes straight-faced espionage with dry banter, class comedy, and corporate absurdity, especially in the Okello/Squire exchanges and the tea-and-biscuit manor sequence. It is specific enough to feel authored, though the show is still balancing its serious conspiracy engine with its lighter character-play."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the surface, the script is about resource extraction, who gets to own the future, and how institutions sanitize violence in the name of progress. The manifesto video and the boardroom maneuvering suggest a larger ideological fight that can deepen over the limited series."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Okello and Squire have a durable partnership engine, and the women in power — Lee, Kincaid, Stuartson, Mahoney, Moore — add recurring friction points rather than simple support. The ensemble is still lead-forward, but the corporate and intelligence relationships already generate multiple playable combinations."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 2,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "International ensemble",
+          "Multiple roles require specific age and nationality texture",
+          "One central white male lead, one central Black male lead, and several strong female executive roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with significant exterior establishing work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Australia, Kenya, Cambodia, Germany, London, Miami, Nevada, Washington D.C.",
+          "Mining sites, corporate offices, hotel rooms, private jet interiors, desert test facility, countryside manor"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Explosion work, drone attack coverage, jet dive/crash sequence, screen composites, and large-scale destruction at the Ignition facility.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical explosions, gunfire, vehicle movement, helicopter action, and destruction effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Jäger Mining, Ignition Systems, Stuartson Capital, Regus, Marriott, Heineken, Walther PP9, NASA, JPL, Wharton, and other named entities appear in dialogue or scene action."
+        },
+        {
+          "type": "real_person",
+          "detail": "No real people are directly named as characters, but government and agency references include ASIS, ASIO, NASA, and JPL."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The manifesto-style video and the direct fusion drive explanation are original in-script material, but any use of real-world technical claims may invite factual vetting."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or premium cable serialized drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized investigation engine: each episode advances the sabotage conspiracy through corporate, intelligence, and activist fronts while the limited-series arc tracks the asteroid-mining deal and its opponents."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script is mostly office, hotel, and conference-room driven, but the explosion sequences, jet crash, helicopter pursuit, and international travel push it above a contained drama."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The core is two leads, but the story depends on a sizable international ensemble of executives, agents, and officials across multiple countries."
+        },
+        "location": {
+          "level": "high",
+          "note": "The pilot spans Australia, Kenya, Cambodia, Germany, London, Miami, Nevada, Washington D.C., and the English countryside."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The episode includes bombings, gunfire, a fatal attack, and corporate coercion, but it stays away from explicit sexual content or extreme gore."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses many named brands, institutions, and real-world entities, which will require clearance review and factual consistency checks."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Asteroid mining gives the conspiracy a fresh engine.",
+          "what_it_means": "The story is not just another corporate sabotage thriller; it is built around who controls the next resource frontier, which gives buyers a contemporary hook with built-in scale. That makes it attractive to premium streamers and genre buyers who want a thriller that feels current, global, and conversation-ready.",
+          "evidence": "Jäger Mining’s R&D page, the direct fusion drive test, and the repeated discussion of asteroid mining as the commercial prize.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Okello and Squire have an easy franchise rhythm.",
+          "what_it_means": "Their banter, status friction, and different methods create a repeatable two-hander engine that can carry both casework and character comedy over multiple episodes. That is exactly the kind of pairing casting directors and network buyers like because it gives the show a face, a rhythm, and a reason to keep tuning in.",
+          "evidence": "The plane scene, the 'who leads here' exchange, the malapropism bit, and their constant push-pull over method.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The international footprint feels story-generating.",
+          "what_it_means": "Australia, Kenya, Cambodia, Germany, London, Miami, Nevada, and Washington are not just travel postcards; they map the money, the intelligence cover, and the industrial chain. That gives the series a premium, globe-spanning feel without needing to leave the procedural engine behind.",
+          "evidence": "The pilot moves through multiple countries and ties each location to a different part of the investigation or business network.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The corporate women are forceful and playable.",
+          "what_it_means": "Lee, Kincaid, Stuartson, Mahoney, and Moore all have authority, agenda, and voice, which broadens the show beyond a male-led procedural and gives the ensemble real casting appeal. Mid-career actresses who want sharp, high-status roles with teeth will see immediate value here, and buyers get a bench of recurring power players.",
+          "evidence": "Lee assigning the case, Kincaid running Ignition, Stuartson controlling capital, Mahoney negotiating leverage, and Moore finally snapping back.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The manifesto video widens the thematic frame.",
+          "what_it_means": "The environmental argument is not just a villain speech; it turns the series into a debate about extraction, ownership, and who benefits from space commerce. That gives the project slow-burn depth and a built-in thematic engine that can sustain a limited series beyond the immediate bombings.",
+          "evidence": "The broadcast about space resources being controlled by the wealthy and the need to make humanity 'wake up.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot ends on a major escalation.",
+          "what_it_means": "The Ignition Systems destruction is a clean episode-ending jolt that proves the threat is real and expands the conspiracy instead of resolving it. That kind of ending is valuable to buyers because it promises momentum, scale, and a reason to come back immediately.",
+          "evidence": "The drone attack, the jet crash into the facility, and the final stunned reaction from Kincaid and the team.",
+          "source": "script"
+        }
+      ],
+      "headline": "This pilot has a strong commercial spine: a globe-spanning intelligence investigation wrapped around asteroid mining, corporate sabotage, and a resource-war argument that feels timely. The Okello/Squire partnership gives the series a durable two-hander engine, while the executive players and international settings create a premium, repeatable world with room to grow."
+    },
+    "lead_characters": [
+      {
+        "name": "Thomas Squire",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s · white · Australian intelligence agent",
+        "hook": "Squire is the younger field agent with the polished face and the restless ego, the kind of guy who wants to lead before he has fully earned the room. He is quick with a joke, quick to posture, and just self-aware enough to know he is still learning how to operate in a world where brains beat bravado.",
+        "why_actor_wants_this": "This is the showcase territory of Ryan Gosling in The Nice Guys — a charming, slightly overmatched operator whose comedy comes from confidence colliding with reality. Actors who can play vanity, speed, and vulnerability in the same beat will want this because it gives them banter, action, and a long runway for growth."
+      },
+      {
+        "name": "Natori Okello",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Black Kenyan man · ASIS agent / undercover detective",
+        "hook": "Okello is the calm center of the show: older, sharper, and more disciplined than the people around him, with a dry wit that lands because he never needs to force it. He reads as a man who has already survived the version of this job that breaks other people, and now he is teaching a younger partner how to think before he shoots.",
+        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in True Detective season 3 — contained authority, intelligence, and emotional depth without ever begging for attention. Seasoned dramatic leads looking for a role that plays command, humor, and moral weight in equal measure will chase this immediately."
+      },
+      {
+        "name": "Jasmine Lee",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · ASIS supervisor",
+        "hook": "Lee is the kind of supervisor who can cut through a room with one sentence and still feel like she has more going on than the people she is managing. She is polished, physically self-possessed, and clearly used to being the smartest person in the chain of command.",
+        "why_actor_wants_this": "This is the authority-and-control space of Carrie Coon in The Leftovers — a character who can command a room while carrying private pressure underneath. Actors who like playing institutional power with a human pulse will see this as a prestige-supporting role with recurring weight."
+      },
+      {
+        "name": "Antone Parisi",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s · U.S. senator",
+        "hook": "Parisi is polished political appetite in a tailored suit, a man who speaks in policy but thinks in leverage. He has the smoothness of a public servant and the instincts of someone who knows exactly how to turn a bill into a bargaining chip.",
+        "why_actor_wants_this": "This is the prestige-politician lane of Michael Stuhlbarg in The Looming Tower — a role where intelligence, vanity, and calculation all live in the same room. Character actors who can make power feel conversational will be drawn to it."
+      },
+      {
+        "name": "Grace Mahoney",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-40s · U.S. congresswoman",
+        "hook": "Mahoney is a political operator who knows how to smile while keeping her own leverage hidden. She is sharp enough to see through Parisi’s pitch and confident enough to ask for more before she gives anything away.",
+        "why_actor_wants_this": "This has the sharp-edged political sparring energy of Robin Wright in House of Cards, where every line is a move and every pause is a negotiation. It is a strong fit for actresses who want a role built on intelligence, restraint, and quiet dominance."
+      },
+      {
+        "name": "Gustav Jäger",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · German mining CEO",
+        "hook": "Jäger is old-world industrial wealth with a defensive streak, a man whose heritage, office, and posture all say he believes he has earned the right to control the future. He is proud, evasive, and visibly rattled when the investigation gets too close to the real business behind the business.",
+        "why_actor_wants_this": "This is the boardroom-pressure territory of Brian Cox in Succession — a patriarchal power figure whose authority is strongest when it is being challenged. Actors who can play status, irritation, and buried fear will have a field day."
+      },
+      {
+        "name": "Nancy Kincaid",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · British business executive",
+        "hook": "Kincaid is young, polished, and fully in command of a company that is bigger than her age would suggest, which makes her instantly watchable. She performs charm as a business tool, but the pilot lets us see the steel underneath when the room is no longer safe.",
+        "why_actor_wants_this": "This is the high-status executive role territory of Sarah Snook in Succession — a character who can glide, charm, and then pivot into control in a single scene. It is ideal for actresses who want a role with elegance on the surface and pressure underneath."
+      },
+      {
+        "name": "Niquelle Stuartson",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-40s · hedge fund CEO",
+        "hook": "Stuartson is the most overtly formidable player in the pilot, a financier who treats the room like a board she already owns. She is ruthless, funny in a dangerous way, and completely comfortable making other people sweat while she decides what matters.",
+        "why_actor_wants_this": "This is the power-performance lane of Jodie Comer in The White Lotus or Sarah Paulson in any role where control is the seduction — a woman who can dominate a room and still reveal cracks through behavior. Actors who want a sharp, quotable, high-status antagonist-adjacent role will line up for it."
+      },
+      {
+        "name": "Susan Moore",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · Stuartson Capital executive",
+        "hook": "Moore starts as the polished subordinate who knows how to keep her head down, then reveals the pressure building underneath when Stuartson pushes too far. She is the kind of character whose restraint makes the eventual snap feel earned.",
+        "why_actor_wants_this": "This is the breakthrough-supporting territory of Elisabeth Moss in Mad Men or The Handmaid’s Tale — a role where contained frustration becomes the scene. Actors looking for a pressure-cooker part with a late-pilot release valve will respond to it."
+      },
+      {
+        "name": "Leslie Merman",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · Ignition Systems security chief",
+        "hook": "Merman is the security professional who sounds like she has already seen too much and still has to keep the machine moving. She is efficient, guarded, and clearly one of the people who understands the stakes before everyone else does.",
+        "why_actor_wants_this": "This is the grounded authority space of Vera Farmiga in a procedural or corporate thriller — a role that plays competence, stress, and command without needing speeches. It will appeal to actors who like playing the person holding the perimeter together."
+      },
+      {
+        "name": "Artie McIntyre",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Ignition Systems chief counsel",
+        "hook": "McIntyre is the polished corporate fixer who can translate catastrophe into language the board can live with. He is all calm surfaces and legal triage, the kind of man who knows exactly how to keep a disaster from becoming a headline.",
+        "why_actor_wants_this": "This is the corporate-operator lane of John Slattery in Mad Men — a role built on charm, control, and the ability to make damage sound manageable. Character actors who thrive on verbal precision and institutional power will want it."
+      },
+      {
+        "name": "Margaret Harrigan",
+        "role_type": "Supporting",
+        "demographics": "Female · early 30s · public relations director",
+        "hook": "Harrigan is the person in the room who can feel the lie before she can sell it, which makes her useful and uneasy at the same time. She is polished enough to function inside the machine, but the pilot gives her just enough pressure to suggest she may not stay comfortable there.",
+        "why_actor_wants_this": "This is the sharp-supporting territory of Carrie Coon or Sarah Goldberg in a corporate drama — a role where professional polish and private disgust can coexist. It gives an actor a clean, playable arc inside the machinery of damage control."
+      },
+      {
+        "name": "Matthew Däumler",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · German realtor / saboteur",
+        "hook": "Däumler is the quiet face of the attack, a man who looks like middle management and speaks like someone delivering a message rather than a confession. His stillness makes him eerie, and his calm certainty gives the episode its ideological sting.",
+        "why_actor_wants_this": "This is the unsettling, contained-villain territory of Michael Shannon in a smaller register — a role where stillness and conviction do the work. Actors who like playing menace without theatrics will be drawn to it."
+      },
+      {
+        "name": "Raul Alonso",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · ASIS deputy director",
+        "hook": "Alonso is the senior intelligence presence who enters a room like he already owns the outcome, even when he is being polite. He has the easy authority of someone who can be grandfatherly and intimidating in the same breath.",
+        "why_actor_wants_this": "This is the veteran-command space of Giancarlo Esposito in a prestige thriller — a role where quiet authority is more dangerous than shouting. Experienced character actors will want the chance to play institutional power with a sly edge."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a globe-spanning conspiracy thriller without losing the human banter.",
+        "fit_profile": "Established TV directors or second-feature filmmakers with a strong thriller reel and a taste for procedural momentum, corporate interiors, and ensemble blocking. The material rewards directors who can keep dialogue scenes taut while making the international scale feel expensive and coherent.",
+        "detail": "The best version of this material gives a director a chance to stage intelligence-room chess, boardroom pressure, and a few large-scale action beats without needing constant spectacle. It will attract directors who like grounded genre storytelling, clean geography, and actors carrying the tension."
+      },
+      "buyer_appeal": {
+        "tier": "Premium limited series",
+        "lane": "Prestige thriller / corporate conspiracy lane",
+        "detail": "The core package can be built around two strong lead roles and a dense supporting ensemble, so it does not require a giant star stack to function. The asteroid-mining angle and international sabotage frame give it export value and a timely hook for streamers looking for high-concept adult drama."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot is very location-rich.",
+        "detail": "The story moves across a lot of countries and cities, which gives it scale but also asks for a disciplined production plan. One lever would be to see whether a few of the international beats could be folded into fewer primary hubs without losing the global feel.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Okello and Squire can carry more personal contrast.",
+        "detail": "Their partnership already works as a banter engine, and the 'who leads here' exchange is a good sign of that. A next pass could deepen the personal code underneath the professional friction so the duo feels even more indispensable over eight parts.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The manifesto threat can be sharpened earlier.",
+        "detail": "The video arrives as a strong reveal, and it gives the series a point of view about extraction and ownership. One direction would be to seed a smaller version of that ideological argument earlier in the pilot so the final broadcast lands with even more inevitability.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The corporate boardroom scenes do a lot of engine work.",
+        "detail": "The Jäger, Kincaid, and Stuartson scenes are where the money, motive, and pressure all become legible. The version of the pilot where one of those conversations turns on a more personal reveal would give the investigation an even stronger emotional hook.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The action set pieces are producible but not tiny.",
+        "detail": "The bombings, drone attack, helicopter pursuit, and jet crash all ask for careful coordination and effects support. The story is already smart about using offices, hotels, and conference rooms for most of its runtime, which helps protect the narrative while keeping the big beats selective.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 72.3,
+  "tier": "Optionable",
+  "inputTokens": 27353,
+  "outputTokens": 5438,
+  "cost": 0.04498575,
+  "declaredFormat": "Series"
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:19:13.287Z",
+  "submission_id": "5179397a-c0db-477c-8598-dbf69d98a32d",
+  "eval_id": "73de7f51-8189-4563-a607-0f4448c076a9",
+  "title": "Boundaries",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Jessica Wolfe",
+      "role_type": "Lead",
+      "demographics": "Female · 19 · college student"
+    },
+    {
+      "name": "Kerri",
+      "role_type": "Lead",
+      "demographics": "Female · 19 · college student"
+    },
+    {
+      "name": "William Maddox",
+      "role_type": "Lead",
+      "demographics": "Male · 60s · professor"
+    },
+    {
+      "name": "Henry Maddox",
+      "role_type": "Lead",
+      "demographics": "Male · 19 · college student"
+    },
+    {
+      "name": "Donovan",
+      "role_type": "Supporting",
+      "demographics": "Male · 20 · college student"
+    },
+    {
+      "name": "Nicole",
+      "role_type": "Supporting",
+      "demographics": "Female · 19 · Korean-American · college student"
+    },
+    {
+      "name": "Jessica's Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s in flashbacks / 30s in memory imagery"
+    },
+    {
+      "name": "Gary Wolfe",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · father"
+    }
+  ],
+  "positioning_hook": "A hyper-competent college sophomore at an elite New Hampshire campus is pulled into a time-slip mystery tied to her dead mother, a vanished student, and a professor who may be grooming her for something darker.",
+  "cost_usd": 0.04000125,
+  "input_tokens": 25975,
+  "output_tokens": 4560,
+  "status": "wrote:leads_ok"
+}

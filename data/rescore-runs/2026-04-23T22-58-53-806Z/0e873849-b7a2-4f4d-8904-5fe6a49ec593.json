@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-23T23:11:24.127Z",
+  "submission_id": "0e873849-b7a2-4f4d-8904-5fe6a49ec593",
+  "eval_id": "6cc8113f-c170-4294-a99e-0531815bcd8c",
+  "title": "Boundaries limited series",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Jessica Wolfe",
+      "role_type": "Lead",
+      "demographics": "Female · 19-20 · college student"
+    },
+    {
+      "name": "William Maddox",
+      "role_type": "Lead",
+      "demographics": "Male · 60s · college professor"
+    },
+    {
+      "name": "Henry Maddox",
+      "role_type": "Lead",
+      "demographics": "Male · 19-20 · college student"
+    },
+    {
+      "name": "Kerri",
+      "role_type": "Lead",
+      "demographics": "Female · 19-20 · college student"
+    },
+    {
+      "name": "Susan Wolfe",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s across time periods · mother"
+    },
+    {
+      "name": "Donovan de Vries",
+      "role_type": "Supporting",
+      "demographics": "Male · 20 · college student"
+    },
+    {
+      "name": "Gary Wolfe",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · doctor, father"
+    },
+    {
+      "name": "Nancy",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s in one version; 30s-40s in another · Black woman"
+    },
+    {
+      "name": "Chloe Maddox",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · mother, wife"
+    },
+    {
+      "name": "Erica",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · longtime friend"
+    },
+    {
+      "name": "Rob",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · college athlete"
+    },
+    {
+      "name": "Will",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · college student"
+    },
+    {
+      "name": "Pete",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · college student"
+    },
+    {
+      "name": "Professor Maria Botella",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · retired professor"
+    },
+    {
+      "name": "Grandma Diane",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s-80s · grandmother"
+    },
+    {
+      "name": "Trish",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · waitress"
+    }
+  ],
+  "positioning_hook": "A hyper-ambitious college freshman starts time-traveling through her mother’s trauma, and the only way home is to face the professor who helped create it.",
+  "cost_usd": 0.11206725,
+  "input_tokens": 111881,
+  "output_tokens": 6257,
+  "status": "wrote:leads_ok"
+}

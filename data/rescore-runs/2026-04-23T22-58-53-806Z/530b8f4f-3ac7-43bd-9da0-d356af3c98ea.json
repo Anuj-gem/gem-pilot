@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:12:33.722Z",
+  "submission_id": "530b8f4f-3ac7-43bd-9da0-d356af3c98ea",
+  "eval_id": "fc132f23-9d85-4927-aafa-f2f7d8b5ec57",
+  "title": "Warhorses",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "RAY SALLINGER / WARHORSE",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Nordic-featured · physically imposing but aging"
+    },
+    {
+      "name": "TRAC MAN",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · physically specific superhero body with steel appendages"
+    },
+    {
+      "name": "CONNIE",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · working-class wife"
+    },
+    {
+      "name": "H20",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-60s · aquatic superhero with water-based physiology"
+    },
+    {
+      "name": "WATTA GAL",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · superhero with electrical powers"
+    },
+    {
+      "name": "EXTREME",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s · super-strong, spandexed, hyper-macho superhero"
+    },
+    {
+      "name": "AXIOM",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · masked superhero with time/space powers"
+    },
+    {
+      "name": "DEVIANT",
+      "role_type": "Lead",
+      "demographics": "Non-human alien creature · small-bodied practical/VFX character"
+    },
+    {
+      "name": "RON DAVIS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · burly father-in-law"
+    },
+    {
+      "name": "DON",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Watta Gal’s husband"
+    },
+    {
+      "name": "BARTENDER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · working-class local"
+    }
+  ],
+  "positioning_hook": "A washed-up Midwestern superhero and his steel-limbed partner must stop a shape-shifting alien that turns every hero’s private hang-up into citywide chaos.",
+  "cost_usd": 0.051406499999999994,
+  "input_tokens": 36994,
+  "output_tokens": 5258,
+  "status": "wrote:leads_ok"
+}

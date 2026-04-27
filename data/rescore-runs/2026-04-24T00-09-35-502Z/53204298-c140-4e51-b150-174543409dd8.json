@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-24T00:11:42.692Z",
+  "submission_id": "53204298-c140-4e51-b150-174543409dd8",
+  "eval_id": "6910152e-8352-4e24-80b7-f76e9902acc6",
+  "title": "Collateral",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Max",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Black"
+    },
+    {
+      "name": "Vincent",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · any ethnicity with a hard-edged, elegant presence"
+    },
+    {
+      "name": "Annie Farrell",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · professional, polished, authoritative"
+    },
+    {
+      "name": "Ray Fanning",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · LAPD detective"
+    },
+    {
+      "name": "Richard Weidner",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · LAPD lieutenant"
+    },
+    {
+      "name": "Felix Reyes-Torrena",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · Latino, elegant, dangerous"
+    },
+    {
+      "name": "Ida Rilke",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s · Max’s mother"
+    },
+    {
+      "name": "Lenny",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · dispatcher"
+    }
+  ],
+  "positioning_hook": "A Los Angeles cabbie is forced to drive a contract killer through a night of assassinations, then has to stop him before the final target is the woman he just met.",
+  "cost_usd": 0.06640950000000001,
+  "input_tokens": 59050,
+  "output_tokens": 4916,
+  "status": "wrote:leads_ok"
+}

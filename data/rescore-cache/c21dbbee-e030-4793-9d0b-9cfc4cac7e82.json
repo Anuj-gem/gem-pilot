@@ -1,0 +1,337 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Medical thriller",
+        "Southern gothic"
+      ],
+      "tone": "Gritty, pulpy, darkly comic, and morally charged"
+    },
+    "positioning_hook": "A cop-killer with a blood-borne AIDS cure holes up with a dying Beverly Hills couple while a sheriff and federal doctors race to decide whether he’s a monster, a miracle, or both.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a sharp, easy-to-grasp commercial engine: a fugitive, a medical mystery, and a lawman’s pursuit all collide in one contained town. The AIDS-cure angle gives it immediate conversation value, though the material’s hard-edged violence and period-specific subject matter point to a more selective audience than a broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and keeps tightening: Connoly’s escape, the blood transfusion, and the discovery that his blood may carry an AIDS cure all arrive with clear escalation. The story engine is legible in two sentences, and the script keeps returning to that central contradiction with discipline."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Connoly is vivid and actor-friendly, with swagger, menace, and a warped messiah complex, while Fields and Fletcher give the story a strong moral counterweight. The supporting players function well in the plot, but most of them serve the central triangle rather than opening fully independent character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a wildly specific premise and doesn’t soften it: a violent fugitive becomes a possible medical breakthrough, and the town’s institutions are forced to orbit him. The blend of outlaw energy, disease panic, and Southern small-town texture gives it a confident, off-center identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with real propulsion, especially once the hospital, the federal team, and the Rogers household become interlocked around Connoly. The final chase through the marsh and the showdown with Fields deliver a clean escalation path that pays off the premise’s tension."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This is one of those premises that feels strange at first and then inevitable: a killer’s blood becomes the center of a public-health, law-enforcement, and faith crisis. The idea of a fugitive as both contagion and cure is immediately memorable and gives the script a strong afterimage."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Quartermain feels like a lived-in Southern town with its own social codes, from the sheriff’s family table to the hospital’s improvised federal command post to the honky-tonk nightlife. The disease-control apparatus, local law enforcement, and celebrity-tinged Beverly Hills backstory create a layered social field around the central chase."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably its own: violent, satirical, and melodramatic, but grounded by the medical and emotional stakes of the AIDS storyline. The script can pivot from grotesque humor to sincere pathos without losing its voice, which gives it a distinct pulp-serious flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the chase plot, the script is interested in stigma, faith, class, and who gets to be called human when medicine and morality collide. Those themes are present and meaningful, though the screenplay keeps them mostly in service of the immediate thriller drive rather than letting them open into a deeper second layer."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The strongest relationship web is Connoly/Rogers/Katy and Fields/Fletcher/West, which gives the film two active social systems. Outside those clusters, the supporting cast is functional rather than especially combinatorial, so the ensemble energy is solid but not sprawling."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead with strong Southern dialect and volatile charisma",
+          "Female lead in her 30s-40s with medical authority and romantic chemistry",
+          "Sheriff role built for a grounded, weathered presence",
+          "Supporting roles include a physically imposing Black orderly and a disabled wife role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Roughly balanced, with a slight interior lean",
+        "period_or_contemporary": "Contemporary to the script’s era",
+        "notable_requirements": [
+          "Small-town hospital with operating room, recovery ward, lobby, and administrative office",
+          "Rural home with upstairs access and wheelchair lift",
+          "Marsh/wetlands for the climax",
+          "Nightclub/honky-tonk exterior and interior",
+          "Police station, bar, roadside, and federal command setup"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical blood effects, gunshot impacts, a car crash, and a few stylized injury beats; no major digital spectacle is indicated.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, vehicle pursuit, crash, blood squibs, and a final marsh struggle with falling and sliding terrain.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "\"Reckless\" by Alabama is used in the opening."
+        },
+        {
+          "type": "named_music",
+          "detail": "Enya is specifically named as source music."
+        },
+        {
+          "type": "named_music",
+          "detail": "The script references Yanni, Kitaro, Basia, Clannad, Garth Brooks, Alan Jackson, Clint Black, Billy Ray Cyrus, and Cher."
+        },
+        {
+          "type": "brand",
+          "detail": "Beavis and Butt-Head is referenced in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Quartermain’s Hospital, Disease Control Center, and other institutional names are fictional."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable feature lane with genre-forward adult content",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best suited to a festival-to-platform or specialty theatrical release model, with the AIDS-cure premise and crime-thriller hook as the marketing spine."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained town, hospital, home, and road locations keep the footprint manageable, but the chase sequences, night work, and blood-heavy climax push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The film can be carried by a few strong leads, but it benefits from distinctive casting in Connoly, Fields, Fletcher, and Rogers, plus several supporting roles with specific texture."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through a hospital, private home, bar, roadblocks, marshland, and a nightclub, with the marsh finale and road action adding logistical complexity."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic gun violence, blood, AIDS stigma, sexual material, and explicit language narrow the lane to mature audiences and adult platforms."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named songs and pop-culture references appear on the page and would need clearance or substitution depending on production approach."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly marketable.",
+          "what_it_means": "A producer gets a clean, high-concept engine: a fugitive cop-killer may be the key to an AIDS cure, which gives the film a built-in hook for trailers, posters, and conversation. Buyers who want adult genre material with a topical spine — especially streamer and premium-cable buyers — will understand the lane immediately.",
+          "evidence": "Connoly’s blood is revealed as the source of the AIDS-resistant antibody, and the town, feds, and doctors all pivot around that discovery.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Connoly is a showcase lead.",
+          "what_it_means": "The role gives an actor swagger, menace, humor, and a messianic breakdown in one package, which is exactly the kind of part that can define a career turn. Character actors and leading men looking for a feral, scene-eating centerpiece will see the appeal right away.",
+          "evidence": "Connoly taunts cops, charms the Rogers household, seduces a nightclub crowd, and finally declares himself a chosen miracle before Fields shoots him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Fields has a strong moral spine.",
+          "what_it_means": "The sheriff is not just a pursuer; he becomes the audience’s emotional anchor as the story forces him to choose between law, family, and the town’s safety. That gives the film a grounded lead for an actor who can play authority, grief, and righteous fury in the same frame.",
+          "evidence": "Fields’ son is killed, he clashes with West, and he ultimately abandons the arrest order to take Connoly down himself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The medical world has real texture.",
+          "what_it_means": "The hospital, the mobile research lab, the disease-control team, and the federal intervention create a procedural layer that makes the story feel larger than a simple manhunt. That opens the door for buyers who like genre material with institutional stakes and a credible public-health angle.",
+          "evidence": "The D.C.C. trailer arrives, Fletcher leads the research effort, and the hospital becomes a command center for the case.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Rogers household adds emotional contrast.",
+          "what_it_means": "The Beverly Hills couple gives the movie a human, tragic counterpoint to the violence, and Katy’s condition turns the cure question into something intimate and heartbreaking. That kind of emotional ballast helps the script reach beyond pure pulp and gives prestige-minded actors a reason to engage.",
+          "evidence": "Rogers explains their move from Beverly Hills, Katy’s AIDS diagnosis, and Connoly’s growing sympathy for her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can swing from pulp to pathos.",
+          "what_it_means": "The script has enough bite for genre fans and enough emotional seriousness to keep the material from feeling disposable, which broadens its buyer conversation. Directors who like to balance dark humor, violence, and sincerity will recognize a strong tonal playground here.",
+          "evidence": "The script moves from gunfire and insults to the Rogers’ AIDS backstory, then to the final marsh confrontation and miracle imagery.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax has a clean visual payoff.",
+          "what_it_means": "The marsh finale gives the film a contained but cinematic endgame that can be staged efficiently while still feeling mythic and final. That’s attractive to producers who want a climax with scale without needing a giant effects budget.",
+          "evidence": "Fields tracks Connoly through the wetlands, the two face off in the bog, and the final shot lands in the marsh water.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a bold, adult thriller with a hook that sells itself: a cop-killer’s blood may cure AIDS, and every authority in town is forced to decide whether he’s a criminal or a miracle. The script’s real value is the collision of pulpy crime energy, medical urgency, and Southern gothic texture — a package that gives actors, directors, and buyers a very clear lane."
+    },
+    "lead_characters": [
+      {
+        "name": "Terrance Connoly",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · white · Southern working-class",
+        "hook": "Connoly is a swaggering, profane fugitive who treats violence like instinct and charm like camouflage. He’s funny, feral, and self-mythologizing, but the script keeps revealing a deeper hunger underneath: he wants to matter, to survive, and eventually to be seen as chosen.",
+        "why_actor_wants_this": "This is the kind of role that lives in the territory of Tom Hardy in *Bronson* — a performance built on volatility, charisma, and a body that can turn from joke to threat in a beat. It gives an actor the chance to play menace, dark comedy, and delusional grandeur in one showcase part, which is exactly the kind of material that gets noticed."
+      },
+      {
+        "name": "Sheriff Terry Lee Fields",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · white · Southern lawman",
+        "hook": "Fields is a plainspoken sheriff with a father’s authority, a working man’s patience, and a temper that only shows when the line has already been crossed. He carries the town, the family, and the moral argument of the film, and the script lets him move from dry wit to grief to decisive violence without losing his center.",
+        "why_actor_wants_this": "This is the showcase space of Matthew McConaughey in *True Detective* season 1 — a weathered authority figure whose stillness and verbal economy become the performance. It gives an actor the chance to play command, sorrow, and righteous rupture in a role that can anchor the whole film."
+      },
+      {
+        "name": "Dr. Francis Lane Fletcher",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · white",
+        "hook": "Fletcher is the smartest person in the room and knows it, but the script also lets her be warm, flirtatious, and morally elastic in a way that keeps her alive. She’s a scientist with conviction, a woman who can argue policy in one scene and lean into romantic tension in the next, which makes her feel like a real adult presence rather than a plot function.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the layered authority of Jodie Foster in *The Silence of the Lambs* — intelligence, composure, and emotional pressure all working at once. It offers a strong dramatic lead with romance, intellect, and ethical conflict, which is catnip for prestige-minded performers."
+      },
+      {
+        "name": "Weilland Rogers",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · white · former plastic surgeon",
+        "hook": "Rogers is polished, wounded, and quietly proud, a man whose old status has been stripped away by illness and exile. He’s the film’s emotional bridge between the world of privilege and the world of survival, and his dignity under pressure gives the story a human center.",
+        "why_actor_wants_this": "This is the kind of role that lives in the emotional register of Ben Mendelsohn in *Animal Kingdom* — a man whose intelligence and vulnerability are always in tension. It gives an actor the chance to play humiliation, tenderness, and desperate love without ever becoming passive."
+      },
+      {
+        "name": "Katy Rogers",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · white · wheelchair user",
+        "hook": "Katy is frail on the surface but emotionally alive, and the script uses her to embody the cost of stigma and disease without reducing her to a symbol. Her presence changes the temperature of every room she’s in, especially once Connoly begins to see her as more than collateral.",
+        "why_actor_wants_this": "This is the kind of part that gives an actress the aching stillness of Julianne Moore in *Still Alice* — a role where presence, fragility, and dignity do the heavy lifting. It’s a meaningful supporting turn for a performer who wants to make a small number of scenes land with real emotional force."
+      },
+      {
+        "name": "Dr. Rutner",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · white",
+        "hook": "Rutner is the old-school local doctor: nervous, practical, and constantly trying to keep the room from tipping into chaos. He’s a useful pressure valve in the hospital scenes, but he also carries the uneasy conscience of a man who knows more than he wants to admit.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the dry, human texture of John C. Reilly in *Magnolia* — a character who can be comic, anxious, and deeply sympathetic in the same breath. It’s a strong utility part for a recognizable character actor who can make exposition feel lived-in."
+      },
+      {
+        "name": "James",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Black · physically imposing",
+        "hook": "James is the hospital orderly with brute strength and a childlike vulnerability, which makes him both memorable and tragic. He’s one of the few people in the script whose body is described as part of the storytelling, and that gives the role a striking physical identity.",
+        "why_actor_wants_this": "This is the kind of part that gives an actor the physical presence of Michael Clarke Duncan in *The Green Mile* — a role where size, gentleness, and danger coexist. It’s a showcase for a performer who can communicate a lot with very little dialogue."
+      },
+      {
+        "name": "Agent Norris West",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · white",
+        "hook": "West is the federal hardliner who treats the town like a jurisdictional nuisance and the case like a command problem. He’s arrogant, bureaucratic, and openly contemptuous, which makes him a clean antagonist inside the institutional side of the story.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the icy authority of Tommy Lee Jones in *No Country for Old Men* — a man whose control is the performance. It’s a sharp, scene-stealing part for a character actor who can weaponize precision and disdain."
+      },
+      {
+        "name": "Bill Fields",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · white",
+        "hook": "Bill is the eldest son, the dutiful one, the guy who tries to hold the family line together while the town starts coming apart. He’s not flashy, but he gives the sheriff’s world a believable domestic structure and a sense of generational continuity.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded family texture of Casey Affleck in *The Assassination of Jesse James by the Coward Robert Ford* — restrained, observant, and emotionally legible. It’s a solid supporting part for someone who can play loyalty without overstatement."
+      },
+      {
+        "name": "Grady",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · white",
+        "hook": "Grady is the comic, overeager deputy whose appetite and chatter make him feel like the town’s pressure release valve. He’s a useful part of the sheriff’s ecosystem and gives the film a little local color without ever leaving the lawman lane.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the comic-support texture of Stephen Root in *Office Space* — a character who can make a small amount of screen time memorable. It’s a good fit for a performer who can land humor without breaking the world."
+      },
+      {
+        "name": "Les",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · white",
+        "hook": "Les is the younger deputy, eager and impressionable, which makes him the one most likely to get swept up in the sheriff’s emotional weather. He’s a clean, functional part of the law-enforcement ensemble and becomes more vivid in the chase material.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the earnest momentum of Paul Dano in *There Will Be Blood* — a younger man whose reactions help define the world around him. It’s a useful supporting part for a performer who can play fear, loyalty, and momentum."
+      },
+      {
+        "name": "Johnny Fields",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens-20s · white",
+        "hook": "Johnny is the sheriff’s youngest son, romantic, impulsive, and easy to sway, which makes him the family’s emotional wildcard. His relationship with Paige gives the film a youthful, dangerous tenderness that stands apart from the hospital and manhunt material.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the doomed-romantic charge of James Dean in *Rebel Without a Cause* — a young man whose longing is part of the tragedy. It’s a memorable supporting turn for a younger actor who can play innocence and recklessness together."
+      },
+      {
+        "name": "Paige Webber",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens-20s · white",
+        "hook": "Paige is magnetic, sexually fearless, and philosophically strange in a way that makes her feel like she arrived from another frequency. She’s the film’s most overtly dangerous flirtation, and the script uses her to turn Johnny’s desire into a trap with real emotional consequence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the electric volatility of Jennifer Jason Leigh in *Single White Female* — seductive, unpredictable, and impossible to ignore. It’s a scene-stealing part for a performer who can make sexuality feel like narrative force."
+      },
+      {
+        "name": "Abe Jackson",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · white",
+        "hook": "Abe is the local store owner who gives the town a little everyday normalcy and helps ground the fugitive material in routine commerce. He’s a small but useful presence that makes the world feel inhabited rather than purely plot-driven.",
+        "why_actor_wants_this": "This is the kind of part that gives an actor the lived-in plainness of M. Emmet Walsh in *Blood Simple* — a small role with instant local authority. It’s a good fit for a recognizable character player who can make one scene feel authentic."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a pulpy adult thriller with moral weight and a strong regional voice.",
+        "fit_profile": "Established indie or genre directors with at least one or two features, especially those who like character-forward crime stories, Southern settings, and tonal blends that move between menace, humor, and pathos. This material rewards directors who can stage violence cleanly, keep institutions legible, and let actors carry the emotional voltage.",
+        "detail": "The script gives a director a contained world, a clear central contradiction, and a climax that can feel mythic without requiring spectacle. It will attract filmmakers who like to build tension through performance and atmosphere rather than scale alone."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streamer / specialty theatrical / genre-label adult drama",
+        "detail": "The movie can be sold on a small number of strong roles and a single high-concept premise, so it does not require a giant ensemble or effects package to make sense in the room. The AIDS-cure hook, crime-thriller engine, and Southern setting give it a clear marketing angle for buyers who want adult genre material with a topical conversation piece."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening runs long on pursuit before the premise fully locks.",
+        "detail": "The car chase and hospital takeover are energetic, but the version of the opening where the blood-cure idea is seeded a little earlier would let the audience understand the movie’s central contradiction sooner. That would make the first act feel even more propulsive without changing the story’s shape.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The supporting ensemble mostly serves the main triangle.",
+        "detail": "Fields, Fletcher, and Connoly are the engine, while several deputies and hospital staff function as effective satellites. A next pass could give one or two of the supporting players a more independent pressure point so the town feels even more alive around the central conflict.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The named music and pop references need a clearance pass.",
+        "detail": "The opening uses \"Reckless\" by Alabama, later scenes use Enya, and the dialogue references a long list of artists and Beavis and Butt-Head. A production pass would want to decide which references are essential and which can be swapped for clean alternatives.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The marsh finale asks for careful physical staging.",
+        "detail": "The last act depends on a slippery embankment, a fall into wetlands, and a final gunshot in muddy terrain. The story already earns the location, so the production lever is to simplify the geography where possible while preserving the chase and the final confrontation.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Katy’s recovery is the emotional hinge.",
+        "detail": "Her transformation is the moment that turns the cure question from abstract to personal, so the script benefits from keeping that beat visually and emotionally clear. The more the audience feels the before-and-after contrast in her presence, the more the ending lands.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 68.7,
+  "tier": "Optionable",
+  "inputTokens": 36415,
+  "outputTokens": 5880,
+  "cost": 0.05377125,
+  "declaredFormat": "Feature film"
+}

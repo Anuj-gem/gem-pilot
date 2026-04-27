@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:13:40.892Z",
+  "submission_id": "b49fa9cc-1e09-4e7e-9eef-c04907abf712",
+  "eval_id": "a340da5c-801f-4596-a4bb-7b52076385b2",
+  "title": "Dead Battery",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Luke Helm",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Thomas Foster",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Alicia Reynolds",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Commissioner Beacon",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Paddy McCallum",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Commissioner Barb",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "Captain Parnell",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Cara",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Thelma Louise",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Mr. Louise",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "The Young Woman",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Alicia Reynolds' Husband",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Warden Simpson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Loretta Groombridge",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Phelps",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    }
+  ],
+  "positioning_hook": "A hardline undead cop and his rookie partner uncover a police-state conspiracy in a city where zombies, vampires, and werewolves are already part of the force.",
+  "cost_usd": 0.0537165,
+  "input_tokens": 39504,
+  "output_tokens": 5353,
+  "status": "wrote:leads_ok"
+}

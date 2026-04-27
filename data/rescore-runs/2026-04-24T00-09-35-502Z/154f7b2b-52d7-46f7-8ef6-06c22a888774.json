@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-24T00:10:18.324Z",
+  "submission_id": "154f7b2b-52d7-46f7-8ef6-06c22a888774",
+  "eval_id": "89466df9-1156-41c8-8664-bff62da5dafb",
+  "title": "PROTOCOL CarlANorman.pdf",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "SARAH BEAUMONT",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "VANCE MATHESON",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "DIXON",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "DR. PATRICIA ARIS",
+      "role_type": "Lead",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "RIGGS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "HENDRIX",
+      "role_type": "Supporting",
+      "demographics": "Male · 7'2\""
+    },
+    {
+      "name": "ROBERT",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "ENGINEER #2 / JAMES FORREST",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    }
+  ],
+  "positioning_hook": "A depot crew on a deep-space station discovers their employer has insured them as assets — then the station itself starts identifying one of them as the contamination.",
+  "cost_usd": 0.03786,
+  "input_tokens": 24386,
+  "output_tokens": 4349,
+  "status": "wrote:leads_ok"
+}

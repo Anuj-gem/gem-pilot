@@ -1,0 +1,293 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Heist thriller",
+      "genre_tags": [
+        "Ensemble crime",
+        "Conspiracy thriller"
+      ],
+      "tone": "Grounded, witty, propulsive, and morally serious"
+    },
+    "positioning_hook": "A British fixer reunites with his vanished friend for a Monaco vault job, only to uncover a revenge operation built to expose a corporate conspiracy and burn his old life down.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean commercial engine: a globe-trotting heist, a charismatic crew, and a conspiracy payoff that broadens the appeal beyond the mechanics of the job. The audience promise is clear from the New York bar setup through Monaco and Hollywood Hills, though the material plays smartest for adult thriller buyers rather than four-quadrant spectacle."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early and stays legible: Liam is recruited by Damian, the crew assembles, the Monaco job is revealed, and the true purpose of the operation becomes clear in the third act. The script keeps the audience oriented even as it moves across cities and layers the heist over the Meridian story."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Damian, Liam, Eleanor, Rico, Felix, and Milo each have distinct voices and functions, and the Liam/Damian history gives the story emotional ballast. Damian’s controlled intensity and Liam’s dry skepticism are especially playable, while the ensemble is strongest when the crew dynamics are in motion together."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldest move is turning a polished international heist into a truth-recovery operation with a political endgame, which gives the genre a sharper moral spine. The dialogue style and the crew banter are lively, though the underlying heist architecture remains familiar enough that the distinction comes from execution and reveal rather than from a wholly new form."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps adding forward motion: contact, recruitment, travel, team assembly, prep, the Monaco theft, the Zurich retrieval, and the Hollywood Hills exposure. Each act turns the screw with a new objective, and the late reveal that the FBI has been circling Liam adds a strong pressure shift into the finale."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script feels fresh because the heist is not the destination; it is the delivery system for a public reckoning. That combination of precision-crime mechanics, ensemble banter, and institutional exposure gives the material an immediately understandable but still distinctive identity."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is specific and story-generating: New York, Los Angeles, Rome, Sardinia, Monaco, Zurich, and Hollywood Hills each carry a different social temperature and operational logic. The script also gives the crew a lived-in professional ecosystem — docks, tech centers, banking facilities, private estates, and safe houses — that feels usable beyond a single plot."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually coherent: dry, intelligent banter sits beside real stakes, and the script keeps its wit grounded in character rather than punchline behavior. The result is a sleek, adult crime tone with a humane undercurrent, especially in the Liam/Damian/Eleanor triangle and the crew’s working rhythm."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The surface story is a heist, but the deeper engine is grief, legacy, and the cost of trying to force truth into public view when institutions have already failed. Damian’s father, Eleanor’s proof, and Liam’s choice to stay inside the operation all suggest a larger emotional and thematic reservoir beneath the plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "This is an ensemble that actually generates material: Damian and Liam, Damian and Eleanor, Rico and Felix, Rico and Milo, Andrea and everyone, and the crew as a whole all produce distinct friction and warmth. The group scenes at the bar, on the plane, in Sardinia, and in the safe house show a system where multiple pairings can carry scenes on their own."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 9,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "British lead",
+          "Ensemble of adult roles with distinct ages and ethnicities",
+          "One female co-lead with strong technical/accounting authority",
+          "No child casting required"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with multiple exterior travel and city sequences",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New York bar and street exteriors",
+          "Los Angeles airport, docks, diner, parking garage, safe house, and Hollywood Hills mansion",
+          "Rome café",
+          "Sardinia island mansion and marina",
+          "Monaco Grand Prix streets and estate",
+          "Zurich private banking facility",
+          "Commercial flight interiors",
+          "Multiple vehicle and waterfront setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily compositing and background enhancement for Monaco race-day scale, city exteriors, and helicopter/traffic atmosphere; no heavy creature or fantasy work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical break-ins, controlled door charges, fight choreography in the bar, bathroom, and safe-house sequences, plus practical vehicle movement and dock loading.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Ferrari 250 GTO, Audi, Chubb door, Crédit Riviera bank, Formula One/Grand Prix references, Aperol, and other named consumer or institutional references appear on the page."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Monaco Grand Prix and Formula One environment may require event and branding clearances depending on how directly the production depicts the race setting."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical adult thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or limited theatrical upside"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is contemporary and mostly practical, but the multi-country travel, Monaco race-day material, and several premium locations push it above a contained indie budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the project benefits from six strong adult roles with clear chemistry and at least one recognizable face in the Liam or Damian slot."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script spans New York, Los Angeles, Rome, Sardinia, Monaco, Zurich, and a Hollywood Hills finale, with airports, docks, estates, banks, and race-day streets."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Violence is present in fights, break-ins, and a final SWAT arrest, but the material stays below extreme levels and remains broadly playable for mature thriller buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands, institutions, and the Monaco/Formula One environment appear directly enough that clearance planning would need to be part of packaging."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The heist is a delivery system for a larger reckoning.",
+          "what_it_means": "That gives the movie a clean commercial hook and a stronger emotional aftertaste than a standard robbery picture, because the audience gets both the pleasure of the job and the satisfaction of exposure. Buyers who want adult genre with a conscience — and actors who want a crime role with moral weight — will respond to that combination.",
+          "evidence": "The Monaco vault and Ferrari job are revealed as cover for the Meridian documentation and the Hollywood Hills recording drop.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The crew feels like a real working system.",
+          "what_it_means": "Each member has a distinct function, voice, and pressure point, which makes the ensemble easy to cast and gives the movie multiple playable pairings. That is exactly the kind of setup that attracts ensemble-friendly directors and actors who like scenes that spark off each other instead of just servicing plot.",
+          "evidence": "Rico handles explosives, Felix handles systems, Milo handles logistics, Eleanor handles finance and schematics, Damian carries the plan, and Liam becomes the outside eye.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Liam and Damian carry a strong emotional spine.",
+          "what_it_means": "The twelve-year gap, the old trust, and the FBI pressure create a central relationship that can hold the movie even when the plot gets intricate. That is valuable to buyers because it gives the thriller a human anchor and to actors because it creates two roles with history, tension, and payoff.",
+          "evidence": "Their reunion in New York, the midnight call from Damian, and Liam’s decision not to inform on him all turn on that bond.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has a saleable, character-first rhythm.",
+          "what_it_means": "The banter is not decorative; it reveals competence, history, and personality, which makes the script feel castable and rewatchable. Directors and actors who like smart, dry ensemble interplay will see a lot of playable surface here.",
+          "evidence": "The bar exchanges, the plane banter, the left/right jokes, and the repeated teasing around planning and precision all define the crew.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world travels with purpose.",
+          "what_it_means": "The locations are not random postcard stops; each one advances the operation and changes the texture of the movie, which helps the script feel bigger than its practical footprint. That makes it attractive to buyers looking for an international-feeling thriller that still lives in recognizable, producible spaces.",
+          "evidence": "New York recruitment, Los Angeles assembly, Rome logistics, Sardinia prep, Monaco execution, Zurich retrieval, and Hollywood Hills exposure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Damian is built as a morally complicated lead.",
+          "what_it_means": "He is not a generic mastermind; he is a man using criminal precision to force public accountability, which gives the role prestige texture and a clear actor showcase. Mid-career dramatic leads who want intelligence, restraint, and a final speech with real thematic weight will chase this.",
+          "evidence": "His final jail-cell monologue about his father, Meridian, and why he chose exposure over revenge defines the character’s engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The finale turns procedure into consequence.",
+          "what_it_means": "The Hollywood Hills sequence gives the movie a public-facing climax instead of a purely private getaway, which broadens the payoff and makes the ending feel culturally legible. That is the kind of finish that appeals to buyers who want a thriller with a news-cycle ending and audience conversation value.",
+          "evidence": "Felix transmits the recording, SWAT moves in, and the Meridian story breaks across every platform in the final montage.",
+          "source": "script"
+        }
+      ],
+      "headline": "PROJECT CROSS is a sleek adult heist thriller with a real engine: a reunion between two men with history, a crew with chemistry, and a job that turns out to be a public takedown of corporate fraud. It has the kind of international movement, ensemble banter, and moral payoff that can attract both prestige-minded actors and buyers looking for a smart, commercial crime package."
+    },
+    "lead_characters": [
+      {
+        "name": "LIAM CARTER",
+        "role_type": "Lead",
+        "demographics": "Male · early 30s · British",
+        "hook": "Liam is the calm, observant outsider who reads rooms faster than he admits and keeps his own history tucked behind dry humor and controlled posture. He looks like the guy who can stay cool under pressure, but the script keeps revealing that his composure is a practiced survival skill, not a lack of feeling.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Madden in Bodyguard — a controlled, watchful lead whose restraint is the performance, with the added pleasure of letting the audience slowly realize how much he can actually do. Actors who play intelligence, tension, and physical competence without showboating will want this because it gives them a cool surface and a real moral decision underneath."
+      },
+      {
+        "name": "DAMIAN CROSS",
+        "role_type": "Lead",
+        "demographics": "Male · early 30s",
+        "hook": "Damian is a precision-obsessed planner with the emotional weight of a man who has spent years turning grief into architecture. He is charismatic without needing to perform charisma, and the script makes him feel like someone who has already decided what matters and is willing to pay for it.",
+        "why_actor_wants_this": "This is the showcase territory of Oscar Isaac in A Most Violent Year — a composed, intelligent man whose stillness carries pressure, history, and private conviction. Actors who want a role that can move from command to confession to final moral argument will chase this part hard."
+      },
+      {
+        "name": "ELEANOR CROSS",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s",
+        "hook": "Eleanor is the forensic accountant who sees the operation more clearly than most of the men around her and is never seduced by the romance of the plan. She is practical, sharp, emotionally direct, and quietly the person who keeps Damian honest when his mind starts outrunning his body.",
+        "why_actor_wants_this": "This is the showcase territory of Rosamund Pike in I Care a Lot or Rebecca Ferguson in Mission: Impossible — a woman whose intelligence is active, not decorative, and whose authority comes from precision. Actors who want a role that can play competence, intimacy, and moral clarity in the same frame will be drawn to her."
+      },
+      {
+        "name": "RICO SANTORO",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s",
+        "hook": "Rico is the explosives specialist with the loudest personality in the room and the most exacting standards in the operation. He talks like a man who has learned to turn anxiety into jokes, but the script keeps showing that he is also the crew’s bluntest truth-teller and one of its most reliable adults.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in Sicario — a low-key, dangerous professional whose humor and menace live in the same body. Character actors who can make competence feel funny, specific, and slightly intimidating will want this immediately."
+      },
+      {
+        "name": "FELIX NOVAK",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s",
+        "hook": "Felix is the hyperactive systems brain who lives in screens, coffee, and half-finished sentences, but the script never reduces him to comic relief. He is anxious, brilliant, and weirdly endearing, with the kind of technical confidence that makes him indispensable and slightly exhausting in equal measure.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — fast, brittle intelligence with comic timing and real stakes behind the speed. Younger actors who can play verbal velocity, insecurity, and technical mastery will see a lot to do here."
+      },
+      {
+        "name": "MILO REYES",
+        "role_type": "Lead",
+        "demographics": "Male · mid 30s · Latino",
+        "hook": "Milo is the logistics and driving specialist who says the least and notices the most, with a mechanic’s relationship to systems and a professional’s allergy to chaos. He has a dry, grounded presence that makes him feel like the crew member who can keep the whole thing from tipping over.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Peña in End of Watch — grounded, funny, and physically capable, with the kind of understated authority that sneaks up on you. Actors who can make competence feel human and unforced will be drawn to him."
+      },
+      {
+        "name": "ANDREA CALCALE",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Andrea is the elegant fixer with money, access, and a taste for controlled chaos, the kind of man who can be charming while quietly deciding the terms of the room. He feels like a social predator with manners, and every scene with him carries the sense that he knows more than he is saying.",
+        "why_actor_wants_this": "This is the showcase territory of Stanley Tucci in The Devil Wears Prada or John Turturro in The Night Of — a polished, dangerous conversationalist who can dominate a scene with wit and subtext. Character actors who specialize in charm with teeth will want this role."
+      },
+      {
+        "name": "AGENT THEADORE COLLINS",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Collins is the composed federal agent who understands the shape of the case but not the soul of it. He is controlled, professional, and slightly haunted by the fact that the file is bigger than the explanation.",
+        "why_actor_wants_this": "This is the showcase territory of Jeffrey Wright in a procedural-thriller mode — intelligence, restraint, and the ability to make institutional pressure feel personal. Actors who can play authority without flattening into bureaucracy will be interested."
+      },
+      {
+        "name": "AGENT GABRIEL MORALES",
+        "role_type": "Supporting",
+        "demographics": "Male · mid 30s",
+        "hook": "Morales is the more instinctive half of the FBI duo, the one who keeps noticing the human cost while still doing the job. He is observant, skeptical, and open enough to register the emotional truth of what Liam and Damian are doing.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Peña or Pedro Pascal in a grounded law-enforcement register — a man who can carry suspicion, empathy, and procedural pressure at once. Actors who like playing the conscience inside an enforcement machine will respond to him."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sleek crime movie with emotional consequence, not just mechanics.",
+        "fit_profile": "Established indie or prestige-leaning genre directors with at least one feature under their belt, especially those who like ensemble blocking, international movement, and dialogue that carries subtext. This material rewards directors who can stage procedure cleanly while keeping the Liam/Damian relationship and the crew chemistry emotionally alive.",
+        "detail": "The movie gives a director a chance to balance travel, tension, and character interplay without needing a giant effects canvas. It will attract filmmakers who like adult crime stories with a moral argument and know how to make a roomful of professionals feel like a team."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Premium streaming / festival-to-platform adult thriller lane",
+        "detail": "It can be packaged around one or two recognizable adult leads plus a strong ensemble, rather than requiring tentpole-level star power. The international heist structure, public-corruption payoff, and news-cycle ending give it export value and a clear platform hook for buyers looking for smart genre with prestige texture."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on mood before the engine lands.",
+        "detail": "The New York bar sequence is stylish and character-rich, and the Liam voice arrives well; a next pass could consider getting the Damian/Cross pressure into the room a little sooner so the hook bites even faster. The atmosphere is doing useful work, so the lever is sequencing rather than cutting the flavor.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The travel footprint is ambitious.",
+        "detail": "The script moves through New York, Los Angeles, Rome, Sardinia, Monaco, Zurich, and Hollywood Hills, which gives it scale but also asks a lot of the production plan. One simplification lever would be to see whether one of the European stops can absorb another function without losing the story’s international feel.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final explanation arrives in a long speech.",
+        "detail": "Damian’s jail-cell monologue does important thematic work, and the father/Meridian backstory is strong; a next pass could explore whether one or two of those ideas can be dramatized earlier so the ending lands with even more inevitability. The material is already clear, so the opportunity is to let the audience feel the truth before it is fully explained.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The FBI pressure could be seeded a touch earlier.",
+        "detail": "Liam’s reveal in the safe house is effective because it changes the room, and the card in his wallet is a nice detail; one direction would be to let a small trace of that pressure shadow an earlier beat so the third-act disclosure feels even more charged. That would preserve the surprise while giving the audience a faint sense that Liam has been carrying a second clock.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Monaco and Zurich set pieces are the most expensive-looking pages.",
+        "detail": "The race-day streets, estate access, vault work, and helicopter/canyon pressure are all playable, but they define the project’s upper budget edge. The good news is that the story is still fundamentally practical, so the production can protect the movie by leaning into contained interiors, controlled exteriors, and selective scale rather than overbuilding every city beat.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 77,
+  "tier": "Optionable",
+  "inputTokens": 29336,
+  "outputTokens": 5028,
+  "cost": 0.044628,
+  "declaredFormat": "Feature film"
+}

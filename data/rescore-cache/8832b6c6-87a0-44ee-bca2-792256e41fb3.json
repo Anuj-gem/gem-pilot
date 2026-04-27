@@ -1,0 +1,328 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "Thriller",
+        "Neo-noir"
+      ],
+      "tone": "Gritty, elegiac, atmospheric"
+    },
+    "positioning_hook": "A blade runner uncovers a buried Replicant birth while hunting a dead farmer’s secret, then becomes the one man powerful enough to erase — or ignite — the future.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The movie has a built-in audience through the Blade Runner brand, and the emotional promise is clear: a lonely hunter, a forbidden birth, and a city-scale chase toward identity and survival. The final movement from investigation to pursuit gives it strong commercial lift, especially for viewers who want prestige sci-fi with mythic stakes."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands immediately in the opening farm sequence: K retires Sapper Morton, finds the buried bones, and the case opens into a hidden Replicant child. The story engine is easy to explain in one breath, and the escalation from evidence to existential revelation is exceptionally clean."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "K is built as a quiet, watchful lead whose restraint, loneliness, and hunger for meaning all play in performance, especially once the horse memory and Joi relationship start to crack him open. Joshi, Joi, Luv, Deckard, Wallace, and Ana each bring a distinct pressure point, giving the film more than a single-hero spine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 9,
+        "reasoning": "The script takes a familiar noir-investigation frame and turns it into a meditation on manufactured memory, parenthood, and personhood, with striking set pieces like the memory lab, the Vegas ruins, and the sea-wall finale. The Joi relationship and the reveal architecture give the material a confidence and specificity that feel authored rather than assembled."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The investigation keeps generating new doors: Sapper’s farm, the bones, Wallace, Ana, the orphanage, Vegas, Deckard, and the final sea-wall confrontation. The film keeps tightening the vise by turning every answer into a larger question, which makes the back half especially propulsive."
+      },
+      "resonant_originality": {
+        "score": 9,
+        "reasoning": "The central idea — a Replicant discovering evidence of a Replicant child and then learning the child is not him — is both surprising and inevitable once the pieces lock together. The script repeatedly turns objects into emotional evidence, from the horse to the sock to the skull, which gives the premise a rare sense of destiny."
+      },
+      "world_density_and_texture": {
+        "score": 10,
+        "reasoning": "This is a world with its own weather, class structure, labor systems, religious language, and material culture, from the protein farm and orphanage to Wallace’s temple-like tower and the trash mesas. Every location feels like a social ecosystem, not a backdrop, and the film keeps finding fresh corners of the same civilization."
+      },
+      "tonal_specificity": {
+        "score": 10,
+        "reasoning": "The tone is unmistakable: mournful, tactile, sensual, and intellectually haunted, with bursts of violence and wonder that never break the spell. The script can move from a garlic soup taste to a brutal retirement to a holographic love scene without losing its emotional register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 9,
+        "reasoning": "On the surface it is a detective story, but underneath it is about inheritance, memory authorship, and the ache to be chosen by history. The Ana and Deckard material, plus the final reversal about the child, suggests a much larger emotional and philosophical architecture than the plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "K/Joi, K/Joshi, K/Luv, K/Deckard, K/Ana, and K/Freysa all generate distinct dramatic energy, and several of those pairings can carry entire sequences on their own. The film is still lead-driven, but the supporting relationships are strong enough to make the world feel inhabited and combustible."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead requires a physically controlled, emotionally restrained performer",
+          "Several principal roles are age-specific and iconic in franchise context",
+          "One child role is central to the mystery",
+          "Replicant casting requires a mix of human and heightened physicality"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "near-future",
+        "notable_requirements": [
+          "Large dystopian city exteriors",
+          "Contained corporate interiors with stylized production design",
+          "Deserted Las Vegas ruins",
+          "Trash mesa / landfill environment",
+          "Sea wall waterfront climax",
+          "Memory lab with immersive digital environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Holographic Joi, flying vehicles, cityscape extensions, digital memory environments, drone strikes, and large-scale atmospheric effects throughout.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical gunfire, vehicle impacts, explosions, environmental destruction, and water interaction in the sea-wall climax.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Elvis Presley, Liberace, Marilyn Monroe, Redd Foxx, and Picasso are referenced or depicted through holographic/visual material."
+        },
+        {
+          "type": "named_music",
+          "detail": "Sinatra's 'Summer Wind' and Elvis's 'Can't Help Falling in Love' are specifically used."
+        },
+        {
+          "type": "brand",
+          "detail": "Wallace Corp, LAPD, Tyrell, and other in-world brands are prominent; real-world brand references are minimal."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The screenplay is an existing Blade Runner property and includes legacy characters and iconography tied to that IP."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical sci-fi / premium streamer event feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or wide prestige rollout depending on attachment and budget"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Heavy VFX, large-scale city and desert environments, and multiple signature set pieces push this into a premium feature budget."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The project benefits from strong name-level casting in K, Joi, Deckard, Wallace, Luv, and Joshi, plus a child role at the center of the mystery."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through many distinct environments, including city exteriors, Wallace interiors, Vegas ruins, landfill terrain, and a sea-wall climax."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Violence, sexualized imagery, and mature thematic material are present, but the film stays within a prestige sci-fi envelope."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script uses legacy Blade Runner IP plus named cultural figures and songs that would require clearance or estate permissions."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "K is a performance role built on restraint.",
+          "what_it_means": "The lead gives an actor a rare combination of stoicism, melancholy, and buried longing, which is exactly the kind of part that can define a career in prestige genre. Actors who can carry interiority without dialogue-heavy exposition will see this as a showcase with real awards-adjacent gravity.",
+          "evidence": "K’s baseline test, his quiet retirement of Sapper, the apartment scenes with Joi, and the moment he realizes the child is not him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is a story engine, not decoration.",
+          "what_it_means": "The production design and social ecology create a premium sci-fi lane where every location carries class, labor, and ideology, which is exactly what buyers want when they’re paying for scale. Directors and studios looking for a world that can sell a frame before a line is spoken will respond immediately.",
+          "evidence": "The protein farm, Wallace’s temple-like tower, the trash mesas, the orphanage, and the Vegas ruins all function as distinct social systems.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joi is a breakout supporting concept.",
+          "what_it_means": "The holographic companion is both a love story and a visual-effects showcase, giving the film a commercial hook that is intimate instead of merely technical. An actress with charisma and precision, plus a VFX team that can make performance feel tactile, will make this role magnetic to buyers and audiences alike.",
+          "evidence": "Joi’s domestic scenes, the rooftop sequence, the Mariette overlay, and the final destruction of the emanator.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mystery pays off in emotional reversal.",
+          "what_it_means": "The script doesn’t just reveal a secret; it reassigns the meaning of the entire investigation, which is the kind of turn that creates word-of-mouth and repeat viewing. Prestige buyers love a third-act reveal that changes the emotional ownership of the story rather than just the plot mechanics.",
+          "evidence": "The horse memory, the orphanage discovery, Freysa’s testimony, and the final realization that the child is a daughter, not the boy K believed himself to be.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Wallace and Luv give the film a striking villain axis.",
+          "what_it_means": "The script offers two very different antagonistic energies: Wallace as mythic corporate god and Luv as lethal, intimate enforcer. That combination gives casting and marketing a lot to work with, especially for actors who want iconic genre antagonists with style and menace.",
+          "evidence": "Wallace’s creche, his speeches about angels and procreation, and Luv’s precision violence from the morgue to the sea wall.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The film has premium set pieces with emotional purpose.",
+          "what_it_means": "The big moments are not empty spectacle; each one advances the mystery or deepens the character wound, which is what separates a franchise event from a generic effects movie. That makes the project attractive to buyers who want scale with narrative discipline.",
+          "evidence": "The trash-mesa crash, the Vegas hologram fight, the sea-wall climax, and the memory-lab sequence all move story as they dazzle.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is prestige sci-fi with a real commercial spine: a lonely blade runner, a buried Replicant birth, and a city built to hide the truth. The script pairs iconic world-building with a deeply playable lead role, a memorable antagonist stack, and a mystery that keeps recontextualizing itself until the final frame."
+    },
+    "lead_characters": [
+      {
+        "name": "K",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · Replicant",
+        "hook": "K is a controlled, observant blade runner whose calm surface hides a deep hunger to belong to something real. He moves through the world like a professional instrument, but the film keeps revealing the human ache underneath: tenderness toward Joi, fascination with the tree and the horse, and a growing need to know whether his own memories mean anything.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Casey Affleck in Manchester by the Sea — a contained, inward performance where restraint becomes the drama. Actors who can play silence, precision, and emotional fracture will chase this because the role lets them carry a blockbuster-scale film while doing deeply intimate work."
+      },
+      {
+        "name": "Joi",
+        "role_type": "Lead",
+        "demographics": "Female-presenting · ageless digital construct",
+        "hook": "Joi is designed as companionship, but the script lets her feel like a personality with wit, sensuality, and an increasingly unsettling emotional life. She is playful, adaptive, and deeply attentive to K, yet the film keeps asking whether her devotion is programmed, emergent, or both, which makes her feel like the movie’s most fragile miracle.",
+        "why_actor_wants_this": "This is the performance space of Scarlett Johansson in Her — a voice-and-presence role that has to seduce, comfort, and destabilize in equal measure. Actors with strong vocal control and screen charisma will want it because it offers a rare chance to make a non-corporeal character feel romantic, funny, and heartbreaking."
+      },
+      {
+        "name": "Lt. Joshi",
+        "role_type": "Lead",
+        "demographics": "Female · 50s",
+        "hook": "Joshi is the weary, sharp-edged police superior who understands the city’s machinery better than almost anyone and keeps her humanity under lock and key. She’s pragmatic, impatient, and often funny in a dry way, but the script gives her enough private pain — especially around her child and her drinking — to make her feel lived-in rather than functional.",
+        "why_actor_wants_this": "This is the kind of role Frances McDormand had in Fargo or Regina King had in If Beale Street Could Talk — authority with a private wound and a voice that can cut through a room. Mid-career actresses who want a role with command, wit, and emotional residue will see this as a prestige anchor."
+      },
+      {
+        "name": "Luv",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Luv is Wallace’s immaculate enforcer, all poise on the surface and ferocity underneath. She is terrifying because she believes in order, beauty, and obedience with religious intensity, and the script lets her move from corporate elegance to brutal physical dominance without ever losing her composure.",
+        "why_actor_wants_this": "This is the kind of villain role Charlize Theron had in Mad Max: Fury Road or Rosamund Pike had in Gone Girl — elegant, lethal, and unforgettable. Actors who want a high-style antagonist with physicality, intelligence, and a real point of view will chase it hard."
+      },
+      {
+        "name": "Niander Wallace",
+        "role_type": "Lead",
+        "demographics": "Male · 50s-60s · blind",
+        "hook": "Wallace is a blind corporate messiah who speaks like a prophet and behaves like an inventor-king. He is grand, sensual, and monstrous, with a theology of labor and reproduction that makes him feel less like a CEO than a civilization-builder who has mistaken domination for destiny.",
+        "why_actor_wants_this": "This is the showcase lane of Javier Bardem in No Country for Old Men or Ralph Fiennes in The Grand Budapest Hotel — a larger-than-life figure whose speech, stillness, and menace do the heavy lifting. Actors who want a signature villain with mythic scale and verbal authority will be drawn to it."
+      },
+      {
+        "name": "Rick Deckard",
+        "role_type": "Lead",
+        "demographics": "Male · 60s-70s",
+        "hook": "Deckard is a weathered exile living in self-imposed ruin, carrying the weight of love, loss, and concealment in every line. He reads as a man who has spent decades trying not to be found, and the film turns that guardedness into a final emotional reckoning with fatherhood and memory.",
+        "why_actor_wants_this": "This is the late-career gravitas space of Harrison Ford in The Fugitive or Jeff Bridges in Crazy Heart — a legendary figure asked to play weariness, regret, and buried tenderness. Veteran actors will want it because the role lets them return to an iconic character while giving the performance a new emotional center."
+      },
+      {
+        "name": "Doctor Ana Stelline",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Ana is a brilliant memory artist living behind glass, physically isolated but creatively expansive. She is warm, curious, and quietly lonely, and the script gives her a beautiful contradiction: she manufactures intimacy for others while being denied ordinary contact herself.",
+        "why_actor_wants_this": "This is the kind of contained, emotionally precise role that Tilda Swinton in Michael Clayton or Emily Watson in Breaking the Waves made unforgettable — intelligence, fragility, and mystery in one frame. Actors who excel at subtle emotional shifts will chase it because the scene with K is a pure acting showcase."
+      },
+      {
+        "name": "Freysa",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s",
+        "hook": "Freysa is a one-eyed revolutionary elder who speaks with the authority of someone who has seen the movement before it had a name. She carries memory, grief, and conviction in equal measure, and when she reveals the hidden network of Replicants, the film suddenly widens into a political future.",
+        "why_actor_wants_this": "This is the kind of late-film revelation role that Viola Davis or Angela Bassett can turn into a thunderclap — a character who arrives with history already inside her. Actors who want a compact but scene-defining part with mythic weight will be interested."
+      },
+      {
+        "name": "Mariette",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Mariette is a streetwise doxie with a sharp eye and a practical understanding of how bodies and power work in this world. She starts as flirtation and transaction, then becomes a surprising emotional bridge in the Joi sequence, which gives her more texture than a standard supporting role.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do attitude, sensuality, and a sudden emotional pivot in the same movie — the territory of Jennifer Jason Leigh in The Hateful Eight or Jena Malone in Donnie Darko. Young actresses with edge and presence will see it as a memorable supporting turn."
+      },
+      {
+        "name": "Sapper Morton",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Sapper is a hulking farmer with the soul of a survivor and the manners of a man who has made peace with violence. He feels like a relic of an older war, but the garlic, the flowers, and the Chopin sheet music give him a tenderness that makes his retirement scene land with real weight.",
+        "why_actor_wants_this": "This is the kind of brief but indelible role that Bryan Cranston in Drive or John Goodman in Barton Fink made memorable — a character who can dominate a sequence and leave a residue. Character actors who like to make a single scene feel like a whole life will want it."
+      },
+      {
+        "name": "Gaff",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Gaff is an old institutional survivor who speaks in riddles and carries the weight of the old world in his posture. He functions as a quiet bridge to the past, and his scenes have the feeling of a man who knows more than he says and says more than he should.",
+        "why_actor_wants_this": "This is the kind of legacy-supporting role that Ben Kingsley or Ian McKellen can make feel like a secret history lesson — small in page count, large in implication. Veteran character actors will chase it because it lets them add gravity without overexposure."
+      },
+      {
+        "name": "Mister Cotton",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Cotton is a grotesque labor broker who has turned orphan management into a business model. He is oily, theatrical, and self-justifying, which makes him a vivid emblem of the world’s moral rot without needing much screen time.",
+        "why_actor_wants_this": "This is the kind of vividly corrupt supporting role that Paul Dano or Walton Goggins can turn into a scene-stealing grotesque. Actors who enjoy playing charm weaponized against cruelty will be drawn to it."
+      },
+      {
+        "name": "Nandez",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Nandez is a coarse, bigoted morgue cop who helps color the institutional ugliness around K. He’s less a deep arc than a sharp texture piece, but he gives the police world a lived-in, ugly specificity.",
+        "why_actor_wants_this": "This is a compact character role in the vein of Stephen Root in Boardwalk Empire — a chance to make a small amount of screen time feel fully inhabited. Character actors who specialize in comic menace or institutional sleaze will recognize the slot immediately."
+      },
+      {
+        "name": "Coco",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Coco is the awkward, well-meaning morgue technician who gives the police world a little human friction. He’s nervous, funny, and sympathetic, which makes his scenes useful as tonal relief and makes his death land harder than a generic functionary’s would.",
+        "why_actor_wants_this": "This is the kind of supporting role that Paul Walter Hauser or Michael Cera can make memorable — awkwardness, sincerity, and a touch of comic vulnerability. Actors who like to steal scenes without dominating them will be interested."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a monumental sci-fi noir that still feels intimate at the level of touch, breath, and memory.",
+        "fit_profile": "Established feature directors with at least one visually ambitious genre or prestige-drama credit, especially those who care about atmosphere, architecture, and performance-forward storytelling. This material rewards filmmakers who can balance large-scale world-building with close emotional control, and who like their spectacle to carry philosophical weight.",
+        "detail": "The film gives a director a chance to stage iconic environments — the farm, Wallace’s tower, Vegas, the sea wall — while keeping the emotional center locked on a single haunted lead. It will attract directors who can make design feel narrative and who want a project where every frame can carry both myth and melancholy."
+      },
+      "buyer_appeal": {
+        "tier": "Premium theatrical feature, roughly $80M+ depending on VFX scope and attachments",
+        "lane": "Prestige sci-fi event film / awards-capable genre lane",
+        "detail": "The project benefits from recognizable franchise IP and can be sold on a small number of marquee roles, but it still wants top-tier visual effects and production design to land at the right scale. The sci-fi-noir lane remains one of the few exportable prestige categories that can play theatrically, travel internationally, and still support awards positioning."
+      }
+    },
+    "considerations": [
+      {
+        "area": "K’s emotional turn could be foregrounded earlier.",
+        "detail": "The horse memory, the Joi relationship, and the baseline tests all point toward K’s hunger to be real; one next-pass lever would be to let that inner need surface a little sooner in the investigation so the final reversal lands with even more ache. The material is already there, and the version where the audience feels his longing before the reveal would deepen the payoff without changing the plot.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section carries a lot of investigative movement.",
+        "detail": "The farm-to-Wallace-to-Ana stretch is rich, but it is also the portion where the story is doing the most information transfer; a future pass could consider compressing one explanatory beat so the emotional discoveries arrive with even more forward charge. The goal would be to protect the momentum of the mystery while keeping the audience inside K’s point of view.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The production footprint is premium-scale.",
+        "detail": "This is naturally sized for a major studio or top-tier streamer event, not a modest indie lane, because the script leans on city extensions, holographic performance, large atmospheric environments, and multiple signature set pieces. Packaging should assume a visual-effects-forward plan from the start so the design language stays coherent across the farm, Vegas, the sea wall, and Wallace’s interiors.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The legacy IP and named references need a clear clearance path.",
+        "detail": "The screenplay uses Blade Runner mythology, real-world songs, and historical figures in holographic form, so a producer will want the rights and estate strategy mapped early. The upside is that these references are doing real atmospheric work, so the version that preserves them while clearing them cleanly is the one to protect.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The child-centered mystery is the story’s most delicate engine.",
+        "detail": "Because the child is the emotional and philosophical center of the plot, the casting and performance around that role will matter disproportionately to the film’s impact. A careful approach to the child’s presence — especially in the memory and reveal material — will protect the emotional credibility of the ending.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 89.3,
+  "tier": "Greenlight Material",
+  "inputTokens": 50513,
+  "outputTokens": 5780,
+  "cost": 0.06389475,
+  "declaredFormat": "Feature film"
+}

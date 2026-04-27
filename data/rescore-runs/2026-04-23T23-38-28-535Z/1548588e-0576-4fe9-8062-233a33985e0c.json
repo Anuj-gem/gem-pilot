@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:42:00.724Z",
+  "submission_id": "1548588e-0576-4fe9-8062-233a33985e0c",
+  "eval_id": "b0de4531-575a-43f0-a712-ef199a625e06",
+  "title": "PREDATORS; HUNTERS MOON (2)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Alice Boyd",
+      "role_type": "Lead",
+      "demographics": "Female · mid-late 30s · athletic police detective"
+    },
+    {
+      "name": "Shane Hatcher",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · Canadian Armed Forces veteran / special operations background"
+    },
+    {
+      "name": "Chris Lang",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to early 40s · police tactical officer"
+    },
+    {
+      "name": "Tony Lozono",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · detective"
+    },
+    {
+      "name": "Captain West",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · police captain"
+    },
+    {
+      "name": "Dr. Leonard",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · coroner"
+    },
+    {
+      "name": "Gareth Oakes",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · medical examiner"
+    },
+    {
+      "name": "Johnny Trang",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · street racer"
+    },
+    {
+      "name": "Jimmy Bartolo",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · mob boss"
+    },
+    {
+      "name": "Dimitri Trushencko",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s to 60s · Eastern European crime boss"
+    },
+    {
+      "name": "Shane Hatcher's Father Tom Hatcher",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · rural Alberta elder"
+    },
+    {
+      "name": "Jake",
+      "role_type": "Supporting",
+      "demographics": "Male · 7-8 years old · child actor"
+    },
+    {
+      "name": "Bird",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · low-level crook"
+    },
+    {
+      "name": "Officer Cook",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · tactical officer"
+    }
+  ],
+  "positioning_hook": "A Calgary detective and a Canadian special-ops veteran uncover a trophy-hunting alien stalking mobsters, soldiers, and civilians — then it comes for her son.",
+  "cost_usd": 0.05955075,
+  "input_tokens": 46551,
+  "output_tokens": 5475,
+  "status": "wrote:leads_ok"
+}

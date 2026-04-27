@@ -1,0 +1,340 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Slasher thriller",
+      "genre_tags": [
+        "teen ensemble",
+        "psychological thriller"
+      ],
+      "tone": "Gritty, heightened, melodramatic, and aggressively confrontational"
+    },
+    "positioning_hook": "A high school friend group’s grief party turns into a masked-killer purge, as one survivor’s recovery story collides with a murderer targeting everyone’s hidden sins.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The teen-slasher lane is instantly legible, and the friend-group setup gives the movie a clear audience promise. The marketable engine is strongest once the party turns into a hunt, though the dense cast and extreme content narrow the lane to horror buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise lands clearly once the killer’s letter and the party setup arrive: a group of teens is being targeted for their sins. The opening spends a long stretch on social dynamics before the central horror engine fully locks in, so the hook is clear but not immediate."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Sophia has the strongest built-in role because her sobriety, family pain, and social status all collide in one lead part. The ensemble is colorful and playable, but many characters function more as types in the group chat than as fully distinct dramatic engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The script commits to a very specific teen voice, with text-message banter, social-media energy, and blunt sexual chatter shaping the world. The underlying slasher structure and revenge logic are familiar, and the boldness comes more from volume and attitude than from a fresh formal approach."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The movie has a strong forward push once the murders begin, especially through the party sequence and the escalating body count. The first act is long and conversational, and the back half becomes more episodic as the killer starts removing characters one by one."
+      },
+      "resonant_originality": {
+        "score": 4,
+        "reasoning": "The script has one distinctive wrinkle in the sins-and-punishment concept, but the overall shape is a familiar teen slasher with a masked killer, a party, and a final reveal. The emotional material around addiction, abuse, and guilt gives it texture, yet the core engine still reads as genre-standard."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The school, group chat, family homes, diner, amusement park, and party all create a lived-in teen ecosystem with social hierarchy and status games. The world is specific enough to support the story, though it is primarily a container for the characters rather than a fully self-generating system."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is unmistakably teen, vulgar, and emotionally overcharged, with comedy and horror sharing the same space. The script knows its voice, especially in the banter, but the tonal shifts between grief, satire, and gore are so extreme that the identity is more loud than controlled."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are real seeds of depth in Sophia’s addiction history, Bonnie’s trauma, Nate’s grief, and Maddy’s guilt. Those layers suggest more beneath the surface, but the script tends to state the backstory directly rather than letting it accumulate through subtext and choice."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The friend group has a lot of relational fuel: Sophia/Kyle, Sophia/Evelyn, Sam/Parker, Emma/Bryan/Jade, Maddy/Nate, and the broader group-chat ecosystem. The ensemble generates plenty of interaction, though the story still leans heavily on Sophia as the center of gravity."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 8,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen ensemble",
+          "Multiple named female roles",
+          "One masked killer reveal",
+          "Age-specific high school casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly interior with some exterior day/night scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "School",
+          "Sophia’s house",
+          "Maddy’s house",
+          "Nancy’s house",
+          "Diner",
+          "Amusement park",
+          "Car interiors",
+          "Bathroom/bedroom kill spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical horror with some hidden-camera TV imagery and simple kill coverage; no large-scale VFX worldbuilding.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy practical gore, stabbing, slashing, blood effects, body aftermath, and decapitation-style kill coverage.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Adidas, Lululemon, Topshop, Ralph Lauren, True Religion, Vans, Crocs, Ugg, Air Force 1, and other named fashion brands are featured in character descriptions."
+        },
+        {
+          "type": "named_music",
+          "detail": "Pulp Fiction is referenced as a viewing choice; American Psycho is referenced as a repeated watch."
+        },
+        {
+          "type": "real_person",
+          "detail": "Reporter Ashley Jean Grey is named as a fictional on-air personality; no clear real-person life-rights subject is central."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical horror lane",
+        "content_level": "Mature / explicit",
+        "series_engine_or_release_model": "Feature release model; best positioned as a festival-to-platform or genre-platform title with a strong trailer hook."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary teen settings keep the footprint manageable, but the ensemble cast, multiple homes, diner, amusement park, and practical gore push above micro-budget."
+        },
+        "cast": {
+          "level": "high",
+          "note": "A large teen ensemble with many named roles, plus age-specific high school casting and a masked-killer reveal, makes casting the central packaging task."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through several homes, a school, a diner, an amusement park, and a party house, but all are contemporary and accessible."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes explicit language, sexual dialogue, teen drug use, and graphic gore with multiple murders."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script prominently uses consumer brands and a few named media references, but it is not built on external IP or real-person rights."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Sophia is a showcase lead.",
+          "what_it_means": "The role gives a young actress recovery, sarcasm, vulnerability, and survival instinct in one package, which is exactly the kind of part that can launch a breakout performance. Teen-horror buyers and casting directors looking for a new face with emotional range will see immediate value in her.",
+          "evidence": "Sophia’s opening pill-bottle scene, her rehab confession at the diner, and her final confrontation with Kyle all sit on the same emotional spine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has built-in chemistry.",
+          "what_it_means": "The group-chat structure and constant cross-talk create a ready-made social engine, which is useful for trailers, poster copy, and audience attachment to multiple characters. Ensemble-cast buyers and directors who like performance-driven group dynamics will respond to how many playable pairings the script offers.",
+          "evidence": "The “Ride and Dies” chat, the amusement-park banter, and the party conversation all generate overlapping dynamics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The killer’s motive is emotionally legible.",
+          "what_it_means": "The sins-and-punishment framework gives the horror a moral engine, which helps the movie feel more than random carnage and gives marketing a clean hook. Genre buyers and audiences who want a slasher with a judgment theme will understand the premise fast.",
+          "evidence": "The letter naming the next targets and the final reveal that Kyle and Parker are punishing people for past harm.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The teen voice is blunt and current.",
+          "what_it_means": "The dialogue has a social-media immediacy that can make the movie feel contemporary and trailer-friendly, especially for younger viewers who recognize the rhythm of group chats and oversharing. Streamers and genre labels chasing youth-skewing horror will like how quickly the script signals its demographic.",
+          "evidence": "The texting sequences, the group names, and the casual sexual and insult-heavy banter throughout the party scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family trauma gives the horror emotional ballast.",
+          "what_it_means": "Sophia’s abuse history, Bonnie’s confession, and Nate’s grief add a human layer that can widen the movie beyond pure body-count mechanics. Buyers looking for horror with a wounded emotional center will see a path to audience empathy and actor interest.",
+          "evidence": "Bonnie’s confession about Sophia’s conception, Sophia’s rehab and overdose backstory, and Nate’s reaction to his parents’ deaths.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The practical horror is producible.",
+          "what_it_means": "This is a gore-forward movie that can be built with practical effects, contained interiors, and a limited number of set-piece spaces, which is attractive for genre financiers. Horror directors and indie producers who know how to stretch practical blood and suspense will see a clear execution lane.",
+          "evidence": "The kills are staged in bathrooms, a shed, a house, and a party setting rather than in large-scale action environments.",
+          "source": "production"
+        }
+      ],
+      "headline": "SPARE has a clean commercial engine: a teen friend group, a grief-fueled party, and a masked killer who turns private guilt into public punishment. The script’s biggest asset is Sophia — a wounded, sarcastic, recovery-minded lead with enough contradiction to anchor both a slasher and a breakout performance."
+    },
+    "lead_characters": [
+      {
+        "name": "Sophia French",
+        "role_type": "Lead",
+        "demographics": "Female · 17",
+        "hook": "Sophia is the movie’s emotional center: sharp-tongued, impulsive, funny when she’s scared, and visibly trying to hold herself together after rehab and an overdose scare. She performs confidence for the room, but the script keeps revealing how much of that confidence is armor, especially around her mother, her sobriety, and the need to be the one everyone else leans on.",
+        "why_actor_wants_this": "This is the showcase territory of Kaitlyn Dever in Unbelievable or Maika Monroe in The Guest — a young lead who can play fragility, defiance, and survival intelligence without losing likability. An actress gets the chance to carry a genre movie and a recovery drama at the same time, which is exactly the kind of role that can change how the industry sees her."
+      },
+      {
+        "name": "Evelyn",
+        "role_type": "Supporting",
+        "demographics": "Female · 16",
+        "hook": "Evelyn is Sophia’s steadier, softer counterweight: observant, supportive, and quietly funny, with enough edge to keep her from becoming a pure innocent. She gives the script a sibling bond that feels lived-in, and her presence lets Sophia’s protectiveness read as character rather than exposition.",
+        "why_actor_wants_this": "This is the kind of sister role that gave Jurnee Smollett in Eve’s Bayou or Auliʻi Cravalho in The Little Mermaid a chance to be emotionally direct while still carrying personality. Young actors who want a role that can play warmth, wit, and fear in the same frame will be drawn to it."
+      },
+      {
+        "name": "Bonnie",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Bonnie is a mother carrying shame, guilt, and a late-arriving need to tell the truth, which makes her more than a standard parental obstacle. Her confession reframes the home life and gives the film a second emotional wound beneath the slasher plot.",
+        "why_actor_wants_this": "This is the kind of confession-heavy maternal role that Toni Collette had in Hereditary or Patricia Clarkson had in Pieces of April — a scene where the actor gets to turn a family dynamic inside out in one speech. Prestige-minded character actors and dramatic veterans will see a compact but potent showcase."
+      },
+      {
+        "name": "Ryan",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Ryan is the calmer parent presence, the one who keeps the household functioning while the emotional center of the family is clearly elsewhere. He’s less about speeches than about stabilizing the room, which gives the home scenes a grounded counterweight.",
+        "why_actor_wants_this": "This is the sort of steady father role that actors like Kyle Chandler or Ben Mendelsohn often make memorable by underplaying the pressure around them. It gives a performer a chance to play decency under strain without needing to dominate the frame."
+      },
+      {
+        "name": "Kyle",
+        "role_type": "Lead",
+        "demographics": "Male · 16",
+        "hook": "Kyle starts as the sweet boyfriend and ends as one of the movie’s central engines of betrayal, which gives him a built-in double life. He is emotionally needy, possessive, and ultimately radicalized by grievance, making him a dangerous final-act reveal rather than a simple love interest.",
+        "why_actor_wants_this": "This is the kind of turn that made Jack Quaid in Scream or Nicholas Hoult in The Menu so watchable — a charming presence that curdles into menace. A young actor gets both romantic-boyfriend access and villain reveal material, which is a strong calling card role."
+      },
+      {
+        "name": "Maddy",
+        "role_type": "Lead",
+        "demographics": "Female · 18",
+        "hook": "Maddy is the older, slightly more world-weary leader of the friend group, with ambition, guilt, and a carefully managed image. Her Hollywood backstory and the hit-and-run confession give her a hidden fracture that makes her feel like someone trying to outrun her own past.",
+        "why_actor_wants_this": "This is the kind of layered ensemble lead that gave Zoey Deutch in Not Okay or Auliʻi Cravalho in Crush a chance to play confidence with damage underneath. An actor gets a role that can carry authority in group scenes and then pivot into confession and remorse."
+      },
+      {
+        "name": "Nancy",
+        "role_type": "Lead",
+        "demographics": "Female · 17",
+        "hook": "Nancy is the organizer and emotional glue, the one who keeps trying to make the group feel safe, connected, and seen. Her loyalty is the character’s defining trait, which makes her party leadership and eventual attack feel like the collapse of the group’s center of gravity.",
+        "why_actor_wants_this": "This is the kind of best-friend anchor role that gave Jessica Rothe in Happy Death Day a chance to be funny, social, and vulnerable while steering the ensemble. It’s a strong part for an actor who can play warmth and urgency without losing control of the room."
+      },
+      {
+        "name": "Sam Rain",
+        "role_type": "Lead",
+        "demographics": "Female · 16",
+        "hook": "Sam is introverted, observant, and morally serious, which makes her stand out in a group that often treats everything like a joke. Her history obsession and her blunt ethical reactions give her a distinct voice, and her relationship with Parker adds a softer layer to her otherwise guarded energy.",
+        "why_actor_wants_this": "This is the kind of smart, off-center teen role that gave Jenna Ortega in Scream or Maya Hawke in Stranger Things a lane to play intelligence, anxiety, and dry humor at once. An actor gets a part with strong voice, clear values, and room for fear to show through the sarcasm."
+      },
+      {
+        "name": "Emma Rain",
+        "role_type": "Lead",
+        "demographics": "Female · 16",
+        "hook": "Emma is bright, blunt, and emotionally volatile, with a self-image that can flip from innocent to cutting in a sentence. Her jealousy, romantic hunger, and willingness to say the ugly thing out loud make her one of the script’s most combustible personalities.",
+        "why_actor_wants_this": "This is the kind of messy, high-voltage teen role that gave Sydney Sweeney in The White Lotus or Angourie Rice in Honor Society a chance to play charm and chaos together. It’s a juicy part for an actor who wants to be funny, sharp, and emotionally unfiltered."
+      },
+      {
+        "name": "Bryan Fawn",
+        "role_type": "Lead",
+        "demographics": "Male · 16",
+        "hook": "Bryan is polished, romantic, and quietly manipulative, using style and confidence as a mask for jealousy and divided loyalty. He reads like the kind of boy who wants to be seen as classy while making choices that poison the whole group.",
+        "why_actor_wants_this": "This is the sort of seductive, morally slippery teen role that gave Jacob Elordi in Euphoria or Austin Abrams in Chemical Hearts a chance to weaponize charm. A young actor gets a part that can play boyfriend energy, betrayal, and eventual menace."
+      },
+      {
+        "name": "Phoebe Talls",
+        "role_type": "Supporting",
+        "demographics": "Female · 17",
+        "hook": "Phoebe is the friend who often functions as the group’s straight-line observer, but she still gets moments of sincerity and bite. She helps the ensemble feel like a real social ecosystem rather than a single lead orbiting satellites.",
+        "why_actor_wants_this": "This is the kind of supporting teen role that gives an actor clean scene-stealing opportunities in a group movie, similar to the utility roles that often pop in Booksmart or Bottoms. It’s a good fit for a performer who can land reaction, timing, and quick emotional shifts."
+      },
+      {
+        "name": "Jake Williams",
+        "role_type": "Supporting",
+        "demographics": "Male · 17",
+        "hook": "Jake is anxious, thoughtful, and emotionally available, with a softness that makes him one of the group’s more sympathetic boys. He also carries a quiet romantic tension and a grief-adjacent sensitivity that keeps him from feeling like background texture.",
+        "why_actor_wants_this": "This is the kind of sensitive teen role that gave Justice Smith in The Get Down or Noah Centineo in To All the Boys a chance to play vulnerability without losing charisma. Actors who want a heartfelt supporting part with real friend-group presence will chase it."
+      },
+      {
+        "name": "Tina Louis",
+        "role_type": "Supporting",
+        "demographics": "Female · 17",
+        "hook": "Tina is the sharpest tongue in the room, a classic-girl exterior with a mean, funny, socially reckless streak. She keeps the ensemble from becoming too polite, and her bluntness gives the movie some of its most aggressive comic energy.",
+        "why_actor_wants_this": "This is the kind of scene-stealing teen role that gave Barbie Ferreira in Euphoria or Rachel Sennott in Bottoms a chance to dominate with attitude. An actor who can weaponize timing and social cruelty will have a field day."
+      },
+      {
+        "name": "Nate Washington-Anderson",
+        "role_type": "Lead",
+        "demographics": "Male · 17",
+        "hook": "Nate is the quiet, grieving outsider whose silence reads as mystery until the script reveals how much pain he’s carrying. He’s emotionally sealed, physically present, and one of the few characters whose interior life feels like it could keep unfolding after the movie ends.",
+        "why_actor_wants_this": "This is the kind of restrained, wounded teen role that gave Kelvin Harrison Jr. in Waves or Justice Smith in I Saw the TV Glow a chance to play grief as behavior rather than speech. It’s a strong part for an actor who can hold the frame with stillness and make silence feel charged."
+      },
+      {
+        "name": "Luna",
+        "role_type": "Supporting",
+        "demographics": "Female · 16",
+        "hook": "Luna is the breezy, feisty sibling energy in the group, with enough confidence to spar and enough warmth to stay likable. She adds texture to the friend web and helps the ensemble feel less like a single clique and more like a lived social circle.",
+        "why_actor_wants_this": "This is the kind of lively supporting role that gives a young actor a chance to pop in a crowded ensemble, similar to the memorable friend roles in teen comedies and slashers. It’s a good fit for someone who can deliver attitude without losing charm."
+      },
+      {
+        "name": "Zoey Cornwall",
+        "role_type": "Supporting",
+        "demographics": "Female · 16-17",
+        "hook": "Zoey is the anxious outsider whose panic and vulnerability briefly widen the movie’s emotional field beyond the core friend group. Her pregnancy reveal and fear of abandonment give her a distinct, tragic note in a very loud movie.",
+        "why_actor_wants_this": "This is the kind of brief but memorable role that can land like a gut punch, similar to the vulnerable supporting turns in Fear Street or Scream-adjacent ensemble horror. An actor gets a concentrated emotional beat with immediate stakes."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a teen ensemble as a pressure cooker, then let the horror expose every private lie.",
+        "fit_profile": "First- or second-feature directors with a strong short-film or indie-horror background, especially those who care about performance-forward genre and can keep a large cast legible. This material rewards someone who likes social dynamics, sharp blocking, and practical gore more than elaborate mythology.",
+        "detail": "The movie gives a director a chance to build tension through group behavior, then pay it off with contained set-piece kills and a final betrayal reveal. It’s especially attractive to filmmakers who can make dialogue scenes feel like suspense scenes and who know how to turn a party, a bathroom, and a house into escalating horror spaces."
+      },
+      "buyer_appeal": {
+        "tier": "$2-5M feature",
+        "lane": "Streaming horror / indie slasher lane",
+        "detail": "The cast is large, but the movie is still anchored by a few clear lead roles and can be packaged around a breakout young actress rather than multiple name stars. The teen-slasher market remains a reliable streamer and genre-platform buy-zone, and the practical-gore approach keeps the movie exportable and trailer-friendly."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends a long time in social setup.",
+        "detail": "The group-chat introductions and school banter establish the friend web, but the killer engine doesn’t fully take over until later. One lever would be to let the first ominous pressure arrive a little earlier so the audience feels the horror premise sooner while still keeping the ensemble flavor.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Several characters read as types before they read as people.",
+        "detail": "The script gives many teens a strong label — goth, influencer, classic girl, jock, virgin, history nerd — and that helps the ensemble pop quickly. A next pass could deepen one or two of the supporting players with a choice or contradiction that only they would make, which would raise the emotional payoff when the body count starts.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The killer reveal arrives with a lot of explanation.",
+        "detail": "The final Parker/Kyle explanation is clear about motive, but it lands as a long speech after the movie has already done a lot of work. One direction would be to seed a few more visual or behavioral clues earlier so the reveal feels inevitable rather than newly assembled in the moment.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The practical gore footprint is manageable.",
+        "detail": "The violence is intense, but it lives in houses, bathrooms, a shed, and a party setting rather than in large-scale action environments. That keeps the movie in a producible horror lane and makes the blood effects a selling point rather than a budget breaker.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand-heavy wardrobe can be simplified.",
+        "detail": "The script names a lot of fashion labels in character descriptions, which helps define the teen aesthetic on the page. A cleaner production version could preserve the same social texture with fewer specific brands, which would make clearance easier without changing the movie’s look.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 57.7,
+  "tier": "Needs Development",
+  "inputTokens": 37313,
+  "outputTokens": 5705,
+  "cost": 0.053657250000000004,
+  "declaredFormat": "Feature film"
+}

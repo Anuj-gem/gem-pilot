@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:43:58.603Z",
+  "submission_id": "f1c248d0-1154-4d2d-a564-9e3a1ef0783f",
+  "eval_id": "688d71c3-4ff0-4004-a8f5-92b9fb28360d",
+  "title": "Timmy Adventurous & The Treehouse Gang - Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Timmy Adventurous",
+      "role_type": "Lead",
+      "demographics": "Male · 10-12 · Caucasian"
+    },
+    {
+      "name": "Chris Jackson",
+      "role_type": "Lead",
+      "demographics": "Male · 10-12 · African American"
+    },
+    {
+      "name": "Charles \"Chubbles\" Thompson",
+      "role_type": "Lead",
+      "demographics": "Male · 10-12 · Asian Pacific Islander"
+    },
+    {
+      "name": "Mike Peterson",
+      "role_type": "Lead",
+      "demographics": "Male · 9-11 · Caucasian"
+    },
+    {
+      "name": "Isabela Evans",
+      "role_type": "Lead",
+      "demographics": "Female · 10-12 · Caucasian"
+    },
+    {
+      "name": "Jessie Daniels",
+      "role_type": "Lead",
+      "demographics": "Female · 12-14 · Asian Pacific Islander"
+    },
+    {
+      "name": "Ally Stevens",
+      "role_type": "Lead",
+      "demographics": "Female · 8-10 · Hispanic"
+    },
+    {
+      "name": "Mama Wanda",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · African American"
+    }
+  ],
+  "positioning_hook": "A magic-powered boy pilot lands in a treehouse full of kid misfits, then turns their ordinary weekends into globe-trotting musical adventures while shadowy ninjas hunt him.",
+  "cost_usd": 0.03557325,
+  "input_tokens": 19879,
+  "output_tokens": 4592,
+  "status": "wrote:leads_ok"
+}

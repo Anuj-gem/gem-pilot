@@ -1,0 +1,301 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy Adventure",
+      "genre_tags": [
+        "Sci-Fi",
+        "Family"
+      ],
+      "tone": "Mythic, earnest, uplifting, and highly sentimental"
+    },
+    "positioning_hook": "A princess-turned-rebel protects a sentient teddy bear that can save her world from alien harvesters — until its fading glow reveals a countdown to goodbye.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The emotional promise is clear and family-friendly, with a toy-as-guardian concept that can travel across age groups. The appeal is narrower than a broad commercial fantasy because the script leans heavily into earnest mythmaking and repeated symbolic speeches rather than a sharply defined mainstream engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The core idea lands early: a magical teddy bear, a threatened world, and a heroine who grows into leadership. The script keeps adding layers — time jumps, lineage reveals, alien invaders, prophecy, and cosmic destiny — which gives it scale but also makes the central engine feel more diffuse than it needs to be."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Anya and Elara both have clear emotional attachment to Passion Bear, and the maternal/legacy chain gives the story a warm center. The characters are more emblematic than sharply individualized, with much of their dialogue serving the theme of courage and hope rather than revealing surprising personal contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The image of a cosmic teddy bear as a generational protector is memorable, and the script commits to that image with unusual sincerity. The execution stays in a familiar prophecy-and-rebellion lane, so the boldness comes more from the object and tone than from the dramatic architecture."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The script keeps moving through set pieces, reveals, and battles, so it rarely sits still. At the same time, the repeated cycles of discovery, rallying speeches, and new threat escalations create a feeling of forward motion without a single clean dramatic spine carrying the whole feature."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A teddy bear that becomes a mythic artifact, a war banner, and finally a star-bound guardian has a fresh emotional silhouette. The underlying structure still resembles a familiar chosen-one fantasy, so the originality is strongest in the iconography and weakest in the story architecture."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "Rizq, the Lumina Tree, the Palionians, the Star-Weaver legacy, and the later Earth framing give the script a broad cosmology. The world is rich in names and symbols, though many locations function as ceremonial stages for declarations rather than as places with distinct social systems and lived-in rules."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is unmistakably earnest, devotional, and childlike in its wonder, which gives it a clear identity. It stays in that register almost continuously, so the script has consistency more than tonal range or surprise."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "The lineage of the bear, the passing of memory across generations, and the final archival framing suggest a larger mythology beneath the surface. The script states most of its meaning directly, so the depth is present in concept but not often dramatized through subtext or withheld revelation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Anya, Elara, Miriam, Rhys, Marcus, and the elders create a usable network of alliances and betrayals. The relationships mostly orbit the central mission and the bear, so the ensemble supports the lead rather than generating many independent story engines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple child roles across different life stages",
+          "Female lead roles spanning child, young adult, and elder versions of the same lineage",
+          "Fantasy antagonist and alien-race casting",
+          "Creature performance for a sentient teddy bear"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Mythic fantasy with ancient and cosmic settings",
+        "notable_requirements": [
+          "Ancient Egypt-style marketplace",
+          "Alien planet and space-battle environments",
+          "Village, temple, grotto, ruins, observatory, and flagship interiors",
+          "Portal and cosmic realm imagery"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Teleportation, glowing artifacts, cosmic portals, alien fleets, energy shields, shadow creatures, starfield transitions, and a sentient glowing bear all require substantial VFX.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical fire, battle damage, glowing props, containment-field effects, and environmental destruction.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "The script centers on a teddy bear as a named mythic object, but no external brand is explicitly referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Family fantasy / streaming event feature",
+        "content_level": "PG to PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with strongest fit as a streaming family event or limited theatrical family fantasy"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Heavy VFX, multiple fantasy worlds, space-battle imagery, and creature work push this well above a modest indie feature."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The cast is not enormous, but child actors, age-spanning versions of the same lineage, and fantasy antagonists require careful casting."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through many distinct environments, including ancient, village, ruin, cosmic, and spacecraft settings."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material is emotionally intense but largely avoids explicit language, sexuality, or graphic violence."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named songs, brands, or real people are central to the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The teddy bear is a true mythic object.",
+          "what_it_means": "That gives the project a clean, merchandisable centerpiece with emotional value for kids and symbolic value for adults. Family buyers and animation-adjacent producers will immediately understand the hook: a comfort object that becomes a legend.",
+          "evidence": "Passion Bear moves from toy to guardian to beacon to star, with repeated scenes of glow, warmth, and final ascension.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The story is built on generational inheritance.",
+          "what_it_means": "The passing of the bear through Miriam, Sarah, Anya, and Elara creates a built-in legacy structure that can support franchise thinking or anthology-style branding. Prestige family buyers and producers looking for intergenerational emotional material will see a clear lane here.",
+          "evidence": "The bear is handed down across eras, and later archives and elders explicitly frame it as a lineage artifact.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The heroine role has ceremonial scale.",
+          "what_it_means": "Anya and Elara are written as leaders, believers, and protectors, which gives the lead part a broad emotional canvas and a strong center for casting. Actors who want a noble, symbolic lead in a family fantasy will be drawn to the role.",
+          "evidence": "Anya rallies villagers, plans strategy, and later addresses the community; Elara becomes the cosmic defender and public storyteller of the legend.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a clear visual identity.",
+          "what_it_means": "Lumina trees, star charts, glowing portals, ruined temples, and cosmic plains create a packageable fantasy look that can be pitched from stills alone. Directors and buyers who respond to storybook spectacle with emotional stakes will see the appeal quickly.",
+          "evidence": "Repeated set pieces feature shimmering bark, stardust vortices, crystal plains, and luminous bear imagery.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on legacy, not just victory.",
+          "what_it_means": "The final archival and children’s-story framing gives the feature a built-in afterglow that can play well with families and educators. Distributors looking for uplifting, repeat-viewable content will like the sense that the story becomes a legend inside the story.",
+          "evidence": "The bear becomes a constellation, an order is founded to preserve the tale, and children later hear the story as myth.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a family fantasy with a real commercial centerpiece: a sentient teddy bear that becomes a generational guardian, a rebellion banner, and finally a star. The script’s strongest asset is its sincerity — it treats comfort, courage, and inheritance as epic material, which gives the project a clear emotional brand and a memorable visual identity."
+    },
+    "lead_characters": [
+      {
+        "name": "Anya",
+        "role_type": "Lead",
+        "demographics": "Female · 12 into young adult · princess/rebel leader",
+        "hook": "Anya is the story’s emotional and strategic center: a child of captivity who grows into a commander with a believer’s heart and a tactician’s instinct. She carries grief, defiance, and tenderness at once, and her bond with Passion Bear gives her leadership a deeply personal source.",
+        "why_actor_wants_this": "This is the showcase territory of Daisy Ridley in The Last Jedi — a young woman whose resolve is tested in public, then earned through action, not speech. It gives an actor the chance to play innocence hardening into command, with emotional intimacy, battlefield authority, and mythic scale in one role."
+      },
+      {
+        "name": "Elara",
+        "role_type": "Lead",
+        "demographics": "Female · 10 into adult · heir, scholar, and cosmic defender",
+        "hook": "Elara is the inheritor of the legend, the one who turns family memory into planetary mission. She begins as a child holding a story and becomes the person who can translate that story into strategy, sacrifice, and public meaning.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Brooklyn or Atonement — a performance that moves from wonder to authority while keeping the inner life legible. It gives an actor the chance to play discovery, devotion, and leadership across a wide emotional arc, which is exactly the kind of role that can anchor prestige family fantasy."
+      },
+      {
+        "name": "Passion Bear",
+        "role_type": "Lead",
+        "demographics": "Sentient teddy bear · ageless creature/guardian",
+        "hook": "Passion Bear is not a prop but a character with presence: silent, warm, ancient, and emotionally legible through gesture, glow, and response. It functions as comfort object, oracle, shield, and farewell, which makes it the story’s most distinctive emotional engine.",
+        "why_actor_wants_this": "This is the showcase territory of the creature work in Paddington — a character whose personality is conveyed through behavior, timing, and audience affection rather than dialogue. It gives a performance team the chance to create an icon that can sell the movie, the trailer, and the memory of the film all at once."
+      },
+      {
+        "name": "Marcus",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · authoritarian antagonist",
+        "hook": "Marcus is the face of pressure: cold, proud, and relentless, with a commander’s certainty that makes him feel dangerous even when he is not speaking. He is less a nuanced mystery than a force of domination, which gives the story a clean external threat.",
+        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in Harry Potter or Jason Isaacs in villain mode — a polished antagonist who can command a room with stillness and menace. Actors who enjoy playing elegant authority with a hard edge will see a satisfying, scene-stealing part."
+      },
+      {
+        "name": "Miriam",
+        "role_type": "Supporting",
+        "demographics": "Female · child · ancient Egyptian girl",
+        "hook": "Miriam is the first human witness to the bear’s arrival, and she gives the opening its innocence and wonder. She is written as a child who senses the sacred before she can explain it, which makes her a useful emotional origin point.",
+        "why_actor_wants_this": "This is the kind of part that recalls the child perspective in The Secret Garden — a role built on wonder, stillness, and first contact with magic. Young performers and family audiences respond to characters who can carry awe without needing speeches to do it."
+      },
+      {
+        "name": "Sarah",
+        "role_type": "Supporting",
+        "demographics": "Female · adult · mother and rebel voice",
+        "hook": "Sarah is the bridge between memory and action, a working mother who turns inherited legend into practical resistance. She gives the story a grounded adult perspective and helps the bear feel like a living family heirloom rather than a one-time miracle.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Linney in family drama — a role that lets an actor play quiet authority, generational memory, and protective resolve. It will appeal to performers who like emotionally literate supporting parts that still carry moral weight."
+      },
+      {
+        "name": "Elara (elder)",
+        "role_type": "Supporting",
+        "demographics": "Female · elderly · wise keeper of lore",
+        "hook": "The elder Elara is the keeper of the archive, the one who can name the bear’s meaning and connect the myth to the present. She gives the script its oral-history texture and helps the world feel inherited rather than invented on the spot.",
+        "why_actor_wants_this": "This is the showcase territory of Judi Dench in mythic mentor mode — a role built on authority, warmth, and the power of a single explanation to reframe the story. Veteran actors who enjoy elegant, scene-defining support parts will be drawn to it."
+      },
+      {
+        "name": "Rhys",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · rebel messenger",
+        "hook": "Rhys is the urgent messenger who keeps the resistance in motion and introduces betrayal into the emotional system. He functions as a pressure valve for exposition and a human reminder that trust is expensive in this world.",
+        "why_actor_wants_this": "This is the showcase territory of a sharp supporting turn in a war drama — the kind of role that gives an actor speed, urgency, and one crucial reveal. Character actors who specialize in efficient intensity will recognize the value immediately."
+      },
+      {
+        "name": "Silas",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · enforcer",
+        "hook": "Silas is the shadow-side muscle of the antagonist machine, a controlled presence who makes the threat feel organized and real. He is built to project consequence without needing much explanation.",
+        "why_actor_wants_this": "This is the showcase territory of a henchman role in a prestige fantasy — the kind of part that lets an actor play menace with economy. Actors who like physical authority and minimal dialogue will see a clean utility role."
+      },
+      {
+        "name": "Dr. Aria",
+        "role_type": "Supporting",
+        "demographics": "Female · adult · scientist",
+        "hook": "Dr. Aria is the rational translator of the cosmic mythology, the character who turns prophecy into mechanism. She gives the script a science-fantasy bridge and helps the finale feel engineered rather than purely mystical.",
+        "why_actor_wants_this": "This is the showcase territory of a smart-support role in a genre adventure — the kind of part that lets an actor deliver clarity, urgency, and competence. Performers who like playing intelligence under pressure will be attracted to it."
+      },
+      {
+        "name": "Kael",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · fighter",
+        "hook": "Kael is the practical resistance ally who voices the stakes and helps ground the mission in human cost. He is a functional but useful presence, giving the ensemble a face for doubt and loyalty.",
+        "why_actor_wants_this": "This is the showcase territory of a dependable ensemble fighter in a fantasy war film — a role that gives an actor action, camaraderie, and a few key reactions. It suits performers who want to be part of the engine without carrying the whole machine."
+      },
+      {
+        "name": "Vex",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · command officer",
+        "hook": "Vex is a command-side observer who registers the scale of the battle and the shock of the turnaround. He functions as a witness to the climax rather than a major dramatic driver.",
+        "why_actor_wants_this": "This is the showcase territory of a military-support role in a space battle sequence — a part that gives an actor authority, reaction, and command-room texture. It will appeal to performers who like clean genre utility with a little prestige gloss."
+      },
+      {
+        "name": "Commander Zyrus",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · alien commander",
+        "hook": "Zyrus is the face of the Palionian machine at the endgame, a disciplined antagonist who gives the final battle a named adversary. He is more emblematic than layered, but he sharpens the conflict.",
+        "why_actor_wants_this": "This is the showcase territory of a late-stage sci-fi commander role — the kind of part that lets an actor deliver controlled menace and defeat with style. Genre actors who enjoy playing polished authority will find it useful."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sincere, visually rich family fantasy without irony.",
+        "fit_profile": "Second-feature or established indie directors with a strong eye for production design, performance-forward storytelling, and emotional clarity. This material rewards filmmakers who can stage wonder, keep the mythology legible, and make a symbolic object feel emotionally alive.",
+        "detail": "The craft opportunity is to turn a very literal fantasy premise into something that feels intimate, tactile, and memorable across generations. Directors who like storybook scale, clean emotional framing, and a strong visual motif will see a chance to build a signature family title."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M feature",
+        "lane": "Streaming family fantasy / event adventure",
+        "detail": "The project can be packaged around one strong lead and a distinctive creature concept, which reduces dependence on a giant ensemble of stars. The family-fantasy lane remains attractive for streamers and holiday-window buyers because it offers repeat viewing, cross-generational appeal, and clear artwork/trailer imagery."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends a long runway on setup.",
+        "detail": "The script opens with multiple eras and repeated introductions to the bear before the central conflict fully locks in. A next pass could compress the early lineage material so the audience reaches the Anya engine faster while preserving the mythic sweep.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The emotional speeches carry a lot of the load.",
+        "detail": "Several scenes resolve through declarations about hope, courage, and memory, especially in the village, grotto, and council sequences. One direction would be to let a few of those ideas land through choice or consequence first, then use the dialogue to echo what the audience has already felt.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The feature spans many distinct settings.",
+        "detail": "The story moves from ancient markets to huts, forests, ruins, observatories, spacecraft, and cosmic realms. If the goal is to protect budget and clarity, the version of the script where a few of those spaces are combined or reused would keep the scale while simplifying the shoot.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast asks for multiple age tracks.",
+        "detail": "Miriam, Sarah, Anya, and Elara create a lineage structure that is emotionally appealing but casting-intensive. A producer would likely want to decide early whether the same performer can bridge any of those ages or whether the film leans into distinct casting for each era.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The finale is built on heavy effects.",
+        "detail": "The space-battle climax, glowing artifact work, portals, and the bear’s transformation all point to a substantial VFX finish. That is a strong event-movie image, but it also means the script wants a buyer comfortable with effects-driven family spectacle.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 55.3,
+  "tier": "Needs Development",
+  "inputTokens": 29114,
+  "outputTokens": 4822,
+  "cost": 0.043534500000000004,
+  "declaredFormat": "Feature film"
+}

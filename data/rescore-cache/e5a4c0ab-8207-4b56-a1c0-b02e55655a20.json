@@ -1,0 +1,340 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Undercover cop drama",
+        "Romantic crime"
+      ],
+      "tone": "Grounded, swaggering, pulpy, and romantic with a gritty street-level edge"
+    },
+    "positioning_hook": "A San Francisco locksmith-thief gets squeezed between rival drug crews and an undercover cop girlfriend, then has to out-con both sides to survive.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to grasp and the romantic-crime angle gives it a clear audience promise: danger, double-crosses, and a love story under pressure. The hook is strongest when Joey’s locksmith skill becomes the criminal engine, and the San Francisco/Tenderloin-to-Mexico sweep broadens the appeal beyond a standard street thriller."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script establishes its engine early: Joey uses locksmith access to move between homes, crews, and identities, while Blake/Adler and Nikki tighten the net around him. The undercover structure, the dual drug crews, and the romance all land in plain terms, so the story is easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Joey has a strong playable contradiction — thief, romantic, and improviser — and Nikki gives the story a second emotional center. Hector and Blake add texture, but much of the supporting cast functions in service of the main triangle, so the character field is solid rather than especially deep."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The locksmith-as-access-point idea is a smart criminal premise, and the role-play/identity material gives the romance a playful edge. The execution leans into familiar undercover-crime beats, though the specific tradecraft of keys, safe combinations, and disguised access keeps it from feeling generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving through a steady chain of jobs, meetings, reveals, and reversals, and the final pier operation gives it a clear escalation into set-piece territory. The Joey/Nikki/Lester pressure cooker also keeps the emotional stakes active between the crime beats."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A locksmith who can open doors for a living and for crime is a clean, memorable premise that immediately explains why this story exists. The later reveal that the cop, the dealer, and the thief are all playing overlapping games gives the concept a satisfying inevitability."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "San Francisco is used as a working criminal ecosystem rather than a postcard, with North Beach, the Tenderloin, the Mission, Coit Tower, Pier 50, and the Mexican border run all feeling like part of one map. The fruit stand front, the gay bar, the locksmith shop, and the undercover police operation create a world with visible social layers."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone mixes macho crime banter, romantic comedy, and undercover tension, and the dialogue has a distinct streetwise rhythm. At times the script settles into familiar crime-thriller cadence, but the locksmith detail and the role-play romance give it a recognizable flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the plot mechanics, the script is really about identity, performance, and whether people can change once they’ve learned how to survive by lying. That thematic layer is present throughout Joey and Nikki’s relationship and Hector’s dream of legitimacy, even if the surface engine stays dominant."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Joey/Nikki, Joey/Hector, and Hector/Blake all generate usable tension, and the script knows how to make two-person scenes carry story. The ensemble is functional and active, though the movie still lives primarily on Joey’s choices and the triangle around him."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in 30s with bodybuilder build",
+          "Female lead in 30s as police dispatcher/detective",
+          "Latino/Mexican principal roles",
+          "Older male supporting roles",
+          "One infant/baby in a car-lockout scene"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with frequent street exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "San Francisco street texture",
+          "Pier 50 waterfront set-piece",
+          "Mexican beach/motel sequence",
+          "Airport and limo travel scenes",
+          "Police station and undercover operation spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical; some crowd, waterfront, and night atmosphere enhancement, with no major creature or effects requirement.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, break-in work, fight beats, car movement, and a large pier shootout with multiple armed units.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Levi’s, Mondavi, A’s, Giants, Coit Tower, S.F.P.D., DEA, and named San Francisco locations are referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script uses real-world public institutions and recognizable place names as part of the story world."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical or premium-streaming crime thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with a commercial crime-thriller runway and modest-to-mid budget positioning."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is mostly contained, but the pier shootout, waterfront staging, Mexico travel, and multiple night exteriors push it above a micro-budget lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on four meaningful leads and a supporting criminal ensemble, with one child in the opening lockout scene."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through many distinct San Francisco interiors/exteriors, a pier action sequence, and a Mexico beach/motel stretch."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes armed crime, shootings, threats, stalking, profanity, and sexual content, which narrows the content lane."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Real institutions, brands, and named locations are used throughout, but the story is not dependent on a single outside IP."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The locksmith premise is the engine.",
+          "what_it_means": "This gives the movie a clean commercial identity: a criminal who can enter any space because his day job already teaches him how doors, keys, and access really work. Buyers can sell that instantly to crime-thriller audiences, and actors get a role built around competence, improvisation, and moral drift.",
+          "evidence": "Joey’s work at Berny Locksmith, the hidden key bag in the van, the repeated rekeying jobs, and the way he uses access to move between homes and crews.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joey is built on contradiction.",
+          "what_it_means": "He plays as a thief, a romantic lead, and a guy who can talk his way through danger, which creates a part with both swagger and vulnerability. Mid-career actors who want a charismatic antihero with room for comedy, menace, and tenderness will see the appeal immediately.",
+          "evidence": "His opening monologue about stealing since childhood, the disguise work, the Nikki courtship, and the final choice to leave with the money and diamonds.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance has a playable hook.",
+          "what_it_means": "The Nikki relationship is not just a subplot; it gives the movie a second engine and a built-in emotional payoff that broadens the audience beyond pure crime fans. This is the kind of female lead role that attracts an actress looking for chemistry, wit, and a character who can hold her own in a genre frame.",
+          "evidence": "The role-play dinner, the undercover reveal, the ex-boyfriend pressure, and the Mexico reunion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The San Francisco world feels lived-in.",
+          "what_it_means": "The city is not generic backdrop; it’s a working map of neighborhoods, subcultures, and criminal lanes that gives the movie texture and exportable specificity. That kind of location identity helps a producer market the film as a place-driven crime story rather than a standard urban thriller.",
+          "evidence": "North Beach, the Tenderloin, the Mission, Polk Street, Coit Tower, Pier 50, and the beach/motel stretch in Mexico.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Hector gives the story a second power center.",
+          "what_it_means": "He’s not just a villain; he’s a businessman with a dream, which makes the criminal world feel organized and human rather than cartoonish. Character actors and buyers looking for a charismatic crime boss role will respond to that blend of warmth, menace, and ambition.",
+          "evidence": "The fruit stand front, the family loyalty, the motel dream in Bucerías, and his repeated “sales” language.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The undercover structure keeps the plot moving.",
+          "what_it_means": "The story has a built-in engine of double identities, shifting loyalties, and escalating reveals, which is exactly what keeps a crime thriller commercially legible. That structure gives the movie a clear trailer shape and a strong third-act payoff.",
+          "evidence": "Blake/Adler’s dual identity, Nikki’s undercover assignment, Castello/Chules, and the pier operation reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pier climax is a real set-piece.",
+          "what_it_means": "The final operation has multiple moving parts, cross-cutting, and a clear visual geography, which gives the film a satisfying action finish without needing superhero-scale spectacle. Action-minded directors and buyers looking for a contained but cinematic climax will notice that immediately.",
+          "evidence": "The simultaneous Pier 50 raid, boat approach, hidden officers, gunfire, and arrest of Diego.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, sellable crime-thriller package with a memorable access-point hook: a locksmith-thief whose day job becomes the perfect criminal skill set. The movie also has a second commercial lane through the Joey/Nikki romance, giving the script both genre propulsion and a human payoff that can widen the audience."
+    },
+    "lead_characters": [
+      {
+        "name": "Joey Vincelli",
+        "role_type": "Lead",
+        "demographics": "Male · mid-to-late 30s · bodybuilder build",
+        "hook": "Joey is a thief who talks like a philosopher, moves like a pro, and keeps trying to convince himself he’s only surviving. He’s physically imposing but emotionally evasive, which makes him a great screen contradiction: a guy who can break into anything except his own life.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in *Birdman* or Matthew McConaughey in *True Detective* season 1 — a charismatic man whose self-mythology is part of the performance. Actors will chase the chance to play charm, menace, romantic longing, and criminal competence in one lead role."
+      },
+      {
+        "name": "Nikki Ryan",
+        "role_type": "Lead",
+        "demographics": "Female · mid-30s · attractive, sharply dressed, police dispatcher/detective",
+        "hook": "Nikki is smart, flirtatious, and professionally guarded, with just enough vulnerability to make her feel human inside the badge. She’s the kind of woman who can play the room, the job, and the relationship at the same time, which gives her real screen authority.",
+        "why_actor_wants_this": "This is the showcase space of Emily Blunt in *Sicario* or Jodie Comer in *Killing Eve* — a woman who can weaponize intelligence, chemistry, and ambiguity. Actresses looking for a role that lets them pivot between romantic spark and institutional pressure will want this part."
+      },
+      {
+        "name": "Hector Domingo",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Mexican/Latino · biker/crime-boss type",
+        "hook": "Hector is a streetwise operator with a salesman’s mouth and a businessman’s dream, which makes him feel bigger than a standard drug dealer. He’s loyal, funny, and dangerous, but what makes him memorable is that he actually wants out and believes he can build something legitimate.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in *Traffic* or Bryan Cranston in *Breaking Bad* when the character’s self-justification becomes the drama. Character actors who can play warmth, authority, and menace in the same breath will be drawn to him."
+      },
+      {
+        "name": "Detective Bill Adler / Blake Johnson",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · well-built, ponytail, undercover cop/drug-dealer double identity",
+        "hook": "Blake is a cop who performs like a criminal and enjoys the performance a little too much. He’s the movie’s most slippery presence, a man whose confidence comes from living inside a lie so long that the lie starts to look like personality.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* or Jon Hamm in *Mad Men* — a man whose double life is the role. Actors who like playing control, concealment, and sudden threat will see a lot to do here."
+      },
+      {
+        "name": "Tony Castello / Diego Chules",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Latino · bar owner / drug dealer / undercover cop cover identity",
+        "hook": "Castello is polished, patient, and always one move ahead, which makes him feel like the most professional liar in the room. He’s not just a villain; he’s a strategist who understands how to use institutions, appearances, and fear as tools.",
+        "why_actor_wants_this": "This is the kind of role Javier Bardem had in *No Country for Old Men* — controlled, intelligent, and terrifying because he never seems rushed. Actors who want a cool, calculating antagonist with authority will chase it."
+      },
+      {
+        "name": "Lester",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · beefy, short-haired, bully type",
+        "hook": "Lester is the ex who won’t let go, a brute whose entitlement makes him instantly legible and instantly dangerous. He functions as the story’s personal threat vector, turning the romance into something that can explode in public.",
+        "why_actor_wants_this": "This is the kind of volatile supporting role that gives an actor the same ugly charge as the abusive ex in *Blue Valentine* or the stalker energy in *Fatal Attraction*. Character actors who can play menace without needing a lot of screen time will jump on it."
+      },
+      {
+        "name": "Captain Rizzo",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · suit-wearing police captain",
+        "hook": "Rizzo is the institutional face of the story, calm on the surface and always managing the room. He gives the police side a credible chain of command and a man who can smile while tightening the screws.",
+        "why_actor_wants_this": "This is the kind of authority role that works for actors who excel at controlled pressure, like the command presence in *The Wire* or *Heat*. It’s a clean, playable part for a seasoned character actor who can make bureaucracy feel dangerous."
+      },
+      {
+        "name": "Roberto",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s-50s · slight build, limp",
+        "hook": "Roberto is the street broker with a philosopher’s patter and a hustler’s instincts. He adds humor, texture, and a sense that the Tenderloin has its own economy and etiquette.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that recalls the texture players in *Traffic* or *The Wire* — a man who can make a few pages feel like a whole world. Character actors who love rhythm and attitude will be attracted to him."
+      },
+      {
+        "name": "Tex",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · biker/criminal associate",
+        "hook": "Tex is one of Hector’s quiet enforcers, the kind of guy who says little and still feels present. He helps sell the credibility of Hector’s crew as a functioning machine.",
+        "why_actor_wants_this": "This is a solid utility role for an actor who wants the grounded toughness of a crime ensemble piece like *Sons of Anarchy* or *The Wire*. It’s the kind of part that benefits from physical presence and restraint."
+      },
+      {
+        "name": "Luis",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · biker/criminal associate",
+        "hook": "Luis is another of Hector’s loyal operators, part of the crew texture that makes the organization feel real. He’s less about individual arc and more about reinforcing the social structure around Hector.",
+        "why_actor_wants_this": "This is a functional ensemble role for actors who want to live inside a crime world rather than carry the movie. It fits the kind of grounded supporting work seen in ensemble crime dramas."
+      },
+      {
+        "name": "Jorge",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · biker/criminal associate",
+        "hook": "Jorge is one of the crew’s background pillars, helping the group feel like a real operation with habits and hierarchy. He contributes to the sense that Hector’s world has depth beyond the main plot.",
+        "why_actor_wants_this": "This is a useful supporting slot for a character actor who wants to be part of a crime ensemble with authentic group dynamics. It’s the kind of role that benefits from presence more than speeches."
+      },
+      {
+        "name": "Carlos",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · biker/criminal associate",
+        "hook": "Carlos rounds out Hector’s crew and helps the movie feel populated by people with shared history. He’s part of the operational texture that makes the criminal world feel lived-in.",
+        "why_actor_wants_this": "This is a straightforward ensemble role for an actor who wants to support a larger crime narrative without carrying the emotional center. It suits grounded, physical performers."
+      },
+      {
+        "name": "Mike",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · locksmith shop owner",
+        "hook": "Mike is the ordinary working-world anchor who makes Joey’s day job feel real. He’s the kind of small-business boss who keeps the story grounded in routine before the criminal machinery takes over.",
+        "why_actor_wants_this": "This is a classic character-actor role in the vein of the shop owners and bosses in *Fargo* or *The Wire*. It gives an older performer a believable slice of working-class texture."
+      },
+      {
+        "name": "Nikki’s Ex / Lester’s counterpart energy",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · abusive stalker type",
+        "hook": "The ex is a pure pressure character, there to externalize the danger around Nikki and force Joey into action. He’s simple, but he’s effective because he turns the romance into a threat.",
+        "why_actor_wants_this": "This is the kind of compact, high-impact antagonist role that actors use to make a scene land hard, similar to the abusive pressure figures in relationship thrillers. It’s a short runway with a strong behavioral signature."
+      },
+      {
+        "name": "Julio",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Mexican · motel handyman/manager",
+        "hook": "Julio is the warm, practical face of the Mexico section, a local who makes the beach world feel inhabited rather than staged. He’s a bridge character between the dream of escape and the logistics of making it real.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actor a lived-in presence in the final act, similar to the local operators in travel-set crime stories. It’s a good fit for a performer who can carry warmth and authority quickly."
+      },
+      {
+        "name": "Uncle Al",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Latino · fruit stand owner",
+        "hook": "Uncle Al is part of Hector’s family network and helps show how the criminal economy is braided into everyday immigrant labor and loyalty. He gives the story a human, domestic counterpoint to the violence.",
+        "why_actor_wants_this": "This is a small but meaningful character role for a veteran actor who can make a few scenes feel rooted and real. It’s the kind of part that adds emotional credibility to the world."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a crime thriller where access, identity, and performance are the real action.",
+        "fit_profile": "Established indie or mid-budget genre directors with at least one feature under their belt, especially those who like character-forward crime stories, undercover tension, and urban texture. The material rewards directors who can stage dialogue scenes with pressure and then pay them off with a clean, legible action climax.",
+        "detail": "The movie gives a director a strong visual grammar: keys, doors, disguises, surveillance, and cross-cutting between competing operations. It’s especially attractive to filmmakers who can make San Francisco feel specific and who know how to keep a pulpy crime story emotionally legible."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium-streaming or theatrical crime-thriller lane",
+        "detail": "It can be packaged around one charismatic male lead and one strong female lead, with the rest of the cast filled by character actors rather than expensive name talent. The locksmith hook, San Francisco setting, and undercover-romance angle give it a clean trailer pitch and an exportable genre frame."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated sit-downs.",
+        "detail": "The Joey/Hector/Blake/Castello conversations do important story work, and the movie benefits from their banter. A next pass could consider compressing a couple of the repeated negotiation scenes so the reversals arrive with even more snap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The undercover reveal can land sooner.",
+        "detail": "The script already plants enough information around Blake, Castello, and Nikki that the audience is tracking double lives early. One lever would be to foreground the pressure of those hidden identities a little earlier so the second half feels even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The opening theft is a strong promise.",
+        "detail": "The first burglary is vivid and immediately tells us what Joey can do, which is a great launch point. The version of the script where that skillset is echoed a little more directly in the middle would keep the title concept front and center.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad.",
+        "detail": "San Francisco, the pier, the police spaces, the beach motel, the airport, and the fruit stand all add color and scale. If the production wanted to simplify, the version that folds a couple of the smaller interiors into existing hubs would protect the story while trimming company moves.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The pier finale is the biggest production lift.",
+        "detail": "The simultaneous raid, boats, multiple armed groups, and night waterfront staging are the most ambitious stretch of the movie. That sequence is also the payoff, so the cleanest simplification lever would be to preserve the geography while reducing the number of moving vehicles and secondary gun positions.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66.3,
+  "tier": "Optionable",
+  "inputTokens": 39010,
+  "outputTokens": 5655,
+  "cost": 0.054705000000000004,
+  "declaredFormat": "Feature film"
+}

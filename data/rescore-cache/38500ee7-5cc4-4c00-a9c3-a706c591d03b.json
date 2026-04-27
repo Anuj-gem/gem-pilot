@@ -1,0 +1,360 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi action comedy",
+      "genre_tags": [
+        "time travel",
+        "romantic comedy"
+      ],
+      "tone": "Fast, irreverent, heightened, and character-driven with broad comedic energy and escalating action"
+    },
+    "positioning_hook": "A hyper-planning physicist gets texts from his future self, then spends one chaotic day trying to stop the invention that will make him rich, famous, and wanted for treason.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to sell in one breath and has a clean commercial engine: a nerdy scientist, future texts, and a race against a specific deadline. The broad comedy, action set pieces, and romantic tension give it multiple audience entry points, though the tone is more niche than four-quadrant mainstream."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening interrogation-room frame and then sharpens with the first text from 'ME.' The 11:37 deadline, the future-self reveal, and the Tachyon chase give the story a clear engine that stays legible even as the plot gets bigger."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Darwin has a strong comic contradiction: brilliant, anxious, controlling, and emotionally avoidant, which gives the role shape. Albert is a lively pressure valve and Marie has a real arc from awkward lab crush to future power player, though the supporting cast mostly serves the central triangle."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific comic voice, from the Chewbacca panic attacks to the future-self banter and the absurdly practical science jokes. The future-vs-present identity collision, plus the way the story turns a magnet experiment into a time-tech origin, gives it a confident, ownable swing."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps escalating through reversals, reveals, and action turns: the lab explosion, the future-self reveal, the spy suspicion, the warehouse capture, the Marie betrayal, and the final lab showdown. Each sequence hands off to the next with a new pressure, so the script keeps pulling forward."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a future version of the protagonist trying to stop his own breakthrough is instantly graspable and gives the movie a built-in irony engine. The script keeps finding fresh angles on that core idea, especially when Darwin’s own planning obsession becomes the thing he has to outgrow."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The lab world has enough specificity to feel lived-in: grant committees, collider specs, haz-mat crews, military tech, and the social hierarchy of scientists and assistants. The future-tech ecosystem also adds texture through Tachyon Gliders, tracer bullets, iShades, and biometric hooks."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably a mash of nerd-comedy, action mayhem, and emotional self-owning, with a very particular rhythm of joke, escalation, and reversal. The script’s voice is so aggressive and playful that a single scene of Darwin panicking, improvising, and getting physically punished would identify the piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the jokes, the script is really about control, self-worth, and the cost of chasing validation through achievement. The future-self structure gives the story a built-in emotional aftertaste, especially once Darwin sees what success does to him and chooses a different version of himself."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Darwin, Albert, and Marie generate the strongest recurring energy, and the future/present versions of Darwin and Marie add a second layer of relationship friction. The ensemble is not sprawling, but the central dynamics are active enough that multiple pairings can carry scenes."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One actor plays Darwin and Future Darwin",
+          "One actor plays Marie and Future Marie",
+          "Action-capable supporting roles for Albert, Hubble, Hamid, Ori, and Faraday",
+          "Male lead in his 20s with strong comedic timing and physical comedy range",
+          "Female lead in her 20s with a shift from awkward warmth to hard-edged authority"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with several exterior action sequences",
+        "period_or_contemporary": "Contemporary with near-future tech elements",
+        "notable_requirements": [
+          "Physics lab complex with multiple rooms",
+          "Police interrogation room",
+          "House interiors",
+          "Bar",
+          "Sewer tunnels",
+          "Warehouse",
+          "Road and cul-de-sac action",
+          "Thai restaurant",
+          "Police station"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Tachyon Glider appearances/disappearances, future-tech projections from iShades, energy blasts, bullet-tracking effects, and the final explosion/fade-out sequence.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical explosions, gunfire, electrical shocks, breakaways, and multiple fight beats with prop-driven gags.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Apple"
+        },
+        {
+          "type": "brand",
+          "detail": "Facebook"
+        },
+        {
+          "type": "brand",
+          "detail": "MySpace"
+        },
+        {
+          "type": "brand",
+          "detail": "Walgreens"
+        },
+        {
+          "type": "brand",
+          "detail": "Netflix"
+        },
+        {
+          "type": "brand",
+          "detail": "The Bachelor"
+        },
+        {
+          "type": "brand",
+          "detail": "Triple A"
+        },
+        {
+          "type": "brand",
+          "detail": "Dogecoin"
+        },
+        {
+          "type": "brand",
+          "detail": "Coca-Cola"
+        },
+        {
+          "type": "brand",
+          "detail": "Dashboard Jesus"
+        },
+        {
+          "type": "brand",
+          "detail": "Dashboard Buddha"
+        },
+        {
+          "type": "real_person",
+          "detail": "Einstein"
+        },
+        {
+          "type": "real_person",
+          "detail": "Stephen Hawking"
+        },
+        {
+          "type": "real_person",
+          "detail": "Steve Jobs"
+        },
+        {
+          "type": "real_person",
+          "detail": "Ben Franklin"
+        },
+        {
+          "type": "real_person",
+          "detail": "Chuck Norris"
+        },
+        {
+          "type": "real_person",
+          "detail": "The Rock"
+        },
+        {
+          "type": "real_person",
+          "detail": "Viagra"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or theatrical genre-comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best positioned as a festival-to-platform or streamer original feature; the hook is high-concept enough for a broad launch, with action-comedy packaging supporting a trailer-driven release."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained interiors keep the base budget manageable, but the lab destruction, future-tech effects, gunfights, and multiple action set pieces push it above a low-cost indie."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The dual casting of Darwin/Future and Marie/Future plus several named supporting players creates some packaging complexity, though the movie still lives primarily on a few key roles."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through a lab, homes, streets, sewer tunnels, a warehouse, a bar, and a police station, with several night exteriors and action transitions."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Gun violence, torture beats, explosions, and repeated bodily-comedy shocks keep this in mature territory without pushing into extreme content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script references many real people, brands, and media properties by name, including Apple, Facebook, MySpace, The Bachelor, Netflix, Coca-Cola, and several public figures."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The future-self premise is instantly sellable.",
+          "what_it_means": "This gives a producer a clean, trailer-ready engine: a scientist gets warnings from his own future and must decide whether to trust the version of himself he becomes. It’s the kind of high-concept hook that can attract both comedy-forward buyers and star-driven genre packages.",
+          "evidence": "The opening interrogation-room frame, the first 'TTYL' texts, and the reveal of Future Darwin in the lab hallway.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Darwin is built for an actor.",
+          "what_it_means": "The role gives a performer comedy, panic, intellect, romance, and a real transformation from control freak to improviser. That’s the kind of lead part that can anchor a mid-budget feature and give a buyer a clear face for the campaign.",
+          "evidence": "Chewbacca panic attacks, the grant presentation meltdown, the interrogation framing, and the final choice to reject his future self.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Albert is a strong comic engine.",
+          "what_it_means": "He functions as a pressure valve, a truth-teller, and a scene-stealing sidekick, which gives the movie a reliable laugh source and a second audience favorite. That kind of role is catnip for a sharp comedic actor and helps the film play beyond the lead.",
+          "evidence": "The nipple-twist panic reset, the 'Alexa of evil' line, the Bachelor obsession, and his constant commentary on Darwin’s planning.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The science jokes are story-specific.",
+          "what_it_means": "The script turns technical material into playable comedy instead of generic exposition, which makes the world feel authored and gives the movie a distinct voice. Buyers looking for smart genre comedy will respond to a script that can make collider specs, magnets, and tachyons feel like punchlines and plot.",
+          "evidence": "The magnet explanation, the vacuum tube logic, the iodine cleanup joke, and the Tachyon reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action is built from invention, not just gunfire.",
+          "what_it_means": "The set pieces are driven by improvised science, future tech, and physical problem-solving, which gives the movie a fresher action identity than a standard chase picture. That makes it attractive to buyers who want genre energy with a comic-brain twist.",
+          "evidence": "The CO2 chair cannon, the Tachyon Glider jumps, the magnetized lab finale, and the tracer-bullet logic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Marie has a real arc and a sharp turn.",
+          "what_it_means": "She starts as the awkward assistant and ends as a future power player, which gives the film a female lead trajectory that can broaden the audience and create a strong second marquee role. That kind of transformation is attractive to actresses looking for a part that evolves from grounded charm to genre authority.",
+          "evidence": "Her early lab banter, the future reveal, the warehouse takeover, and the final memory-projection sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional spine is about identity, not just gadgets.",
+          "what_it_means": "Under the time-travel spectacle, the movie is really about whether Darwin can stop measuring his worth by future success and start living in the present. That gives the project a more durable audience payoff than a pure gimmick comedy and helps it land with buyers who want heart under the high concept.",
+          "evidence": "Darwin’s obsession with respect, his humiliation after the failed grant, and the final choice to walk away from the future he thought he wanted.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept feature with a strong commercial spine: a brilliant but anxious scientist gets texts from his future self and spends one day trying to stop the invention that will make him famous, rich, and dangerous. The script has a clear star role, a scene-stealing sidekick, and a future-tech action-comedy engine that keeps escalating while staying easy to pitch.",
+      "strengths_count": 7
+    },
+    "lead_characters": [
+      {
+        "name": "Darwin Hobbes",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Darwin is a hyper-controlled physics prodigy whose brain is always ten steps ahead and whose body is usually one panic attack behind. He’s funny because he’s so committed to precision that the world keeps humiliating him, and compelling because the script keeps forcing him to choose between the fantasy of being admired and the reality of being decent.",
+        "why_actor_wants_this": "This is the kind of showcase territory Joseph Gordon-Levitt had in 50/50 and Looper — a smart, fast-talking lead whose comedy comes from anxiety and whose arc is visible in every choice. Actors who can play intelligence, fragility, and physical comedy in the same frame will want this because it gives them a full-feature transformation role."
+      },
+      {
+        "name": "Albert",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Albert is Darwin’s janitor roommate and emotional counterweight: lazy on the surface, sharper than he looks, and completely unafraid to puncture Darwin’s self-mythology. He’s the guy who can turn a panic spiral into a joke, but he also keeps landing on the side of loyalty, which makes him more than just comic relief.",
+        "why_actor_wants_this": "This is the comic-buddy showcase space of Jonah Hill in Superbad — a loud, profane, deeply human sidekick whose timing is the engine of the role. Character-comedy actors who want to steal scenes without losing heart will chase this part."
+      },
+      {
+        "name": "Marie",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Marie begins as the smart, warm lab assistant who sees Darwin clearly before he sees himself, then evolves into a future version of ambition that has learned to weaponize charm. She’s attractive as a role because she can play sincerity, intelligence, romantic tension, and ruthless authority without ever feeling like a different character.",
+        "why_actor_wants_this": "This is the kind of arc Emily Blunt had in Edge of Tomorrow — a role that starts grounded and then expands into command, action, and emotional complexity. Actresses who want a part that can move from romantic lead to genre antagonist will be drawn to it."
+      },
+      {
+        "name": "Future",
+        "role_type": "Lead",
+        "demographics": "Male · 30s/40s · same actor as Darwin",
+        "hook": "Future is Darwin after seven years of success, violence, and regret have sanded him into a harder, more dangerous version of the same man. He’s cocky, exhausted, funny, and haunted, which makes him feel like both a warning and a victory lap that went sideways.",
+        "why_actor_wants_this": "This is the dual-performance showcase territory of Michael J. Fox in Back to the Future Part II — the same character, but with a completely different physical and emotional vocabulary. Actors love this kind of role because it lets them play contrast, transformation, and self-confrontation in the same movie."
+      },
+      {
+        "name": "Future Marie",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · same actor as Marie",
+        "hook": "Future Marie is what happens when intelligence, resentment, and opportunity harden into control. She’s not a cartoon villain; she’s the version of Marie who decided power was safer than vulnerability, and that makes her feel personal to the story rather than external to it.",
+        "why_actor_wants_this": "This is the kind of turn Charlize Theron had in Mad Max: Fury Road — a character whose authority, physicality, and emotional history all live in the same frame. It gives an actress the chance to play a future self who is both seductive and terrifying."
+      },
+      {
+        "name": "Detective Hubble",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Hubble is the hard-edged cop framing the story, a blunt instrument with a comic streak and a low tolerance for nonsense. He’s there to give the opening and closing interrogation scenes authority and to keep the movie anchored in a real-world consequence lane.",
+        "why_actor_wants_this": "This is the kind of compact authority role that Bryan Cranston or J.K. Simmons has turned into scene-eating gold — a lawman with bite, rhythm, and a few great entrances. Character actors who can dominate a scene in under a page will want it."
+      },
+      {
+        "name": "Dr. Hamid Massabi",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Hamid is the warm, steady senior scientist who believes in Darwin before Darwin believes in himself. He gives the lab a humane center and later becomes one of the story’s most useful emotional and plot pivots.",
+        "why_actor_wants_this": "This is the grounded mentor space of Mahershala Ali in a prestige ensemble — calm, intelligent, and quietly moving even when the movie is in overdrive. Actors who specialize in dignity and warmth will respond to the role’s sincerity."
+      },
+      {
+        "name": "Dr. Ori",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Ori is the smug senior scientist who treats cruelty like office culture. He’s a useful antagonist because he gives the lab world its petty hierarchy and lets the script externalize Darwin’s humiliation in a comic way.",
+        "why_actor_wants_this": "This is the nasty-professor lane of a Richard Jenkins or John Lithgow type role — a character who can be funny, condescending, and memorable in a handful of scenes. Actors who enjoy playing polished contempt will have fun with it."
+      },
+      {
+        "name": "Dr. Faraday",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Faraday is the other lab veteran, marked by the birthmark gag and by a willingness to follow the room’s worst instincts. He functions as a second pressure point in the lab hierarchy and later becomes part of the future-tech threat structure.",
+        "why_actor_wants_this": "This is the kind of character role that lets an actor play straight-faced absurdity, like the supporting scientists in a Coen brothers ensemble. It’s a compact part with a memorable visual hook and a few good comic reversals."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a big, funny, emotionally legible genre movie without losing the human core.",
+        "fit_profile": "Second- or third-feature directors, or established indie filmmakers moving into commercial genre, who already know how to stage dialogue, action, and emotional reversals in the same sequence. This material rewards directors who care about performance-first comedy, clean escalation, and making high-concept ideas feel playable rather than abstract.",
+        "detail": "The movie gives a director a chance to choreograph set pieces around character logic — panic, improvisation, and self-correction — instead of pure spectacle. It’s especially attractive to filmmakers who can balance broad comedy with sincere emotional turns and who want a project that can live in both trailer language and actor-driven scenes."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Streaming genre-comedy / theatrical mid-budget sci-fi lane",
+        "detail": "The script can be packaged around one strong male lead and one strong female lead, with the future-self dual roles creating a built-in performance hook rather than a heavy ensemble dependency. The time-travel premise, lab-world setting, and action-comedy tone fit the kind of mid-budget genre slot buyers use for trailer-driven streaming launches and selective theatrical plays."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on the house-gadget routine.",
+        "detail": "The smart-house sequence does a lot of work establishing Darwin’s control-freak personality, and it also delays the central time-travel engine a bit. A next pass could consider compressing a few of those beats so the first text from 'ME' arrives even sooner and the hook hits with more snap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The brand and pop-culture references are everywhere.",
+        "detail": "Apple, Facebook, MySpace, The Bachelor, Netflix, Coca-Cola, Walgreens, and several named public figures all appear on the page, which gives the script a very current comic texture but also creates a meaningful clearance pass. One simplification lever would be to swap a few of the most prominent references for fictional equivalents so the movie keeps its voice while easing rights work.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Marie’s future turn could land even harder.",
+        "detail": "The script gives us the broad shape of her transformation, and the memory-projection sequence makes the turn legible. A next pass could deepen the emotional bridge between present-day Marie and the future version by foregrounding one or two earlier choices that make her eventual hardening feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final lab battle is dense with moving parts.",
+        "detail": "The magnet finale, the collider, the thugs, the bomb, the blood logic, and the future fade-out all pay off the premise, but they also ask the audience to track a lot at once. One direction would be to protect the emotional clarity of the climax by simplifying one layer of the action geography, especially in the secondary room and main-lab crosscut.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting lab rivals mostly serve the A-story.",
+        "detail": "Ori and Faraday are vivid comic antagonists, but their scenes are largely in service of Darwin’s humiliation and the future-tech plot. If the writer wanted even more ensemble lift, one lever would be to give one of them a sharper independent agenda before the third act.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 49705,
+  "outputTokens": 5226,
+  "cost": 0.060795749999999996,
+  "declaredFormat": "Feature film"
+}

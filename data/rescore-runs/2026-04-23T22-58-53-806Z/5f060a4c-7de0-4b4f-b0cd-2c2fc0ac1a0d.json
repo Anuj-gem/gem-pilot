@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:16:46.525Z",
+  "submission_id": "5f060a4c-7de0-4b4f-b0cd-2c2fc0ac1a0d",
+  "eval_id": "9cbb89d9-9537-4011-91b7-d5cf5827d1f9",
+  "title": "Foxcatcher",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Mark Schultz",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · Olympic wrestler · physically imposing, cauliflower ears"
+    },
+    {
+      "name": "Dave Schultz",
+      "role_type": "Lead",
+      "demographics": "Male · early 30s · wrestler/coach · compact, bearded, calm, physically strong"
+    },
+    {
+      "name": "John du Pont",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · wealthy heir / amateur coach · thin, beak-nosed, physically awkward"
+    },
+    {
+      "name": "Nancy Schultz",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · wife and mother"
+    },
+    {
+      "name": "Stan Beck",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · du Pont’s manager / fixer"
+    },
+    {
+      "name": "Jean du Pont",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s-80s · wheelchair user · oxygen tubes"
+    },
+    {
+      "name": "Brandon",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · polished estate aide"
+    },
+    {
+      "name": "Dan Bane",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · wrestler · strong, low-key, intelligent"
+    },
+    {
+      "name": "Roberto Garcia",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · Latino wrestler · 105 lbs."
+    },
+    {
+      "name": "Jim Zerega",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · blond Midwesterner wrestler"
+    },
+    {
+      "name": "Matt Popper",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · East Coast working-class wrestler"
+    },
+    {
+      "name": "Bruce Springer",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · half-Asian wrestler"
+    },
+    {
+      "name": "Fred Cole",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · USA Wrestling official"
+    },
+    {
+      "name": "Larry",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · pilot"
+    },
+    {
+      "name": "The Documentary Director",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · documentary filmmaker"
+    }
+  ],
+  "positioning_hook": "Olympic wrestler Mark Schultz accepts a billionaire patron’s dream training camp, only to find the real match is for his brother, his identity, and his sanity.",
+  "cost_usd": 0.06062175,
+  "input_tokens": 47121,
+  "output_tokens": 5618,
+  "status": "wrote:leads_ok"
+}

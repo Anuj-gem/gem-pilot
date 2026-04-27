@@ -1,0 +1,305 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy-Drama",
+      "genre_tags": [
+        "Family",
+        "Road Movie"
+      ],
+      "tone": "Darkly comic, profane, emotionally raw, and ultimately tender"
+    },
+    "positioning_hook": "A burned-out New York performer races home for his estranged father’s burial, only to drag his foul-mouthed family through a Christmas-night corpse run that forces old wounds, bad habits, and buried love into the open.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean emotional promise: a Christmas family crisis, a dead father, and a son who has to face the people he fled. The profanity, queer relationship texture, and funeral-home logistics narrow the lane a bit, but the hook is still easy to sell to adult comedy-drama buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script establishes its engine quickly: Tommy gets the call, arrives too late, and the family has to move the body before Christmas. The body-transport premise, the mistaken identity with the dead dog, and the wrong-plot burial give the story a very clear, escalating spine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Tommy is a strong lead because he’s vain, wounded, funny, and deeply needy all at once, and the family around him has distinct comic and emotional functions. Joan, Danny, Marty, Beth, Gregory, and Darlene each add a different pressure point, which gives the feature a durable ensemble feel."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar family-reunion setup and gives it a corpse-transport, Christmas, and queer domestic-drama frame that feels specific rather than generic. The deadpan cruelty of Joan, the hospice-nurse chaos, and the funeral-home bureaucracy all give the material a confident, offbeat identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps adding pressure: the missed death call, the body at home, the transport plan, the snowstorm, the trooper stop, the wrong burial plot, and the final emotional reckonings. Each sequence turns the screw while still leaving room for jokes and character reversals, so the read stays propulsive."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script has the rare feeling of something outrageous that still lands emotionally: a family smuggling a corpse through a blizzard while arguing about who was loved most. The Christmas setting and the funeral logistics are not just decoration; they create a premise that feels both absurd and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world is specific in the details of hospice, funeral-home paperwork, burial plots, and the Baltimore-to-Pennsylvania geography. It’s not a sprawling world, but the social texture of this family and the institutions around death give the setting real story value."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very identifiable blend of profane family comedy, grief, and holiday discomfort, with jokes that sit right next to genuine pain. Scenes like the caroling interruption, Darlene’s entrance, and Joan’s blunt emotional turns give it a tone that would be hard to mistake for another script."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "What starts as a corpse-run comedy keeps revealing deeper material about parental favoritism, addiction, queer shame, grief, and the way family roles calcify. Joan’s cemetery confession and Tommy’s final phone call suggest a lot of emotional life beneath the surface engine."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The family dynamics are the real engine here: Tommy vs. Joan, Tommy vs. Marty, Tommy and Danny as a volatile pair, Beth as the stabilizer, and Gregory as the domestic mirror. Multiple scenes work because any two characters in the room can generate conflict, confession, or comedy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Ensemble adult cast with strong age spread from 20s to 70s",
+          "One child role in the opening and one little caroler role",
+          "Queer lead relationship and a same-sex divorce storyline",
+          "Specific regional flavor in Baltimore and Pennsylvania accents"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interiors with several key exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New York apartment and studio-TV set",
+          "Baltimore-area suburban home",
+          "Snowy highway exteriors",
+          "Funeral home prep room and back entrance",
+          "Church and cemetery in rural Pennsylvania",
+          "Contained car interiors for extended dialogue scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical scene transitions and a few stylized flashback/dream transitions; no major effects dependency.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical corpse handling, broken ornament, car fire smoke, flat tire, snow and blizzard conditions, window break, and a brief car spin.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Wake Up! America, Breakfast with Beverly, Design Within Reach, Pottery Barn, Honda Element, Uber, Playboy, Funyuns, Tums, and regional TV references are named on the page."
+        },
+        {
+          "type": "named_music",
+          "detail": "Christmas music, Erykah’s song 'Santa Was a Dirty Boy,' and the use of holiday carols are specifically referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming feature or festival-to-platform comedy-drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong holiday-window appeal and adult-comedy positioning"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is largely contained to homes, cars, a TV studio, a funeral home, a church, and a cemetery, but the snowbound highway material and multiple company moves push it above microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script wants a strong ensemble across five principal family roles, plus Gregory, Darlene, Gary, Beverly, and several supporting day players."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through New York, Baltimore, rural Maryland, and Pennsylvania, with multiple interiors and several night exteriors in snow."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes profanity, corpse handling, grief, addiction references, queer relationship material, and a brief body-in-transit police stop."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses named brands, a named TV show framework, and plot-critical music references that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The corpse-run premise is instantly ownable.",
+          "what_it_means": "The movie has a clean commercial engine: a family comedy-drama with a literal deadline, a body to move, and Christmas pressure on every scene. That makes it easy to pitch to adult audiences who want something funny, messy, and emotionally earned rather than a generic holiday title.",
+          "evidence": "The family has to transport Ben’s body to Pennsylvania before Christmas, and the plot keeps escalating through the wrong plot, the trooper stop, and the funeral-home paperwork.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tommy is a showcase lead role.",
+          "what_it_means": "Tommy gives an actor a full-spectrum part: vanity, panic, grief, addiction history, romantic collapse, and comic timing all in one role. That is the kind of lead that attracts performers looking for a prestige-comedy vehicle with emotional range.",
+          "evidence": "He’s a performer in crisis, a newly served husband, a sober man with a panic disorder, and the emotional center of the funeral and eulogy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joan is a scene-stealing matriarch.",
+          "what_it_means": "Joan is the kind of older female role buyers notice because she can carry bite, humor, and buried pain without ever becoming soft-focus. That makes the script attractive to actors who want a late-career signature part and to producers who know a memorable matriarch can become the movie’s marketing image.",
+          "evidence": "She smokes through the crisis, weaponizes deadpan cruelty, then cracks open in the cemetery and at the grave of her daughter.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family dynamic has real comic voltage.",
+          "what_it_means": "The script doesn’t rely on one lead carrying the whole movie; it gives the brothers, Beth, Joan, and Gregory a web of friction that can generate scenes on contact. That ensemble energy is valuable for casting and gives the film repeatable joke-and-feeling combinations across the whole runtime.",
+          "evidence": "Tommy sparring with Marty and Danny in the car, Beth and Joan in the smoking car, and Gregory’s domestic confrontation all play as distinct pairings.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The holiday setting is baked into the engine.",
+          "what_it_means": "Christmas is not wallpaper here; it’s the pressure cooker that makes the family’s dysfunction visible and funny. That gives the project a built-in seasonal marketing lane and a strong annual rewatch angle if the movie lands.",
+          "evidence": "The story runs from Christmas Eve through Christmas night, with carolers, decorations, church service, and holiday music all colliding with the corpse transport.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The funeral logistics feel specific and cinematic.",
+          "what_it_means": "The paperwork, burial plot, hospice, and funeral-home details make the movie feel grounded in a real process, which helps the absurdity play harder. Buyers tend to respond when a high-concept comic premise is anchored in procedures that feel observed rather than invented.",
+          "evidence": "The death certificate, burial-transit permit, Henderson’s Funeral Home, and the wrong cemetery plot all drive the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on reconciliation, not sentimentality.",
+          "what_it_means": "The script earns a cathartic finish without sanding off the family’s edges, which broadens its audience beyond pure comedy. That balance makes it attractive to buyers looking for something that can play as funny in the room and moving on screen.",
+          "evidence": "Tommy signs the divorce papers, reconnects with Danny, and ends in a final group hang that points toward a new family structure.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, adult holiday feature with a killer premise and a castable ensemble: a queer New York performer is forced to drag his dysfunctional family through a Christmas-night corpse run that becomes a reckoning. It plays as profane comedy on the surface, but the real hook is the emotional payoff — a family that can barely stand each other discovering they still know how to show up.",
+      "headline_alt": ""
+    },
+    "lead_characters": [
+      {
+        "name": "Tommy",
+        "role_type": "Lead",
+        "demographics": "Male · mid-30s · gay",
+        "hook": "Tommy is a theatrical, hyper-verbal New Yorker who uses sarcasm, vanity, and control as armor, then falls apart the second the family pressure gets real. He’s sober, emotionally volatile, and still carrying the grief of Kevin’s death and the collapse of his marriage, which makes him both the funniest and most exposed person in the room.",
+        "why_actor_wants_this": "This is the showcase territory of Ben Whishaw in *A Very English Scandal* or Jesse Eisenberg in *The Squid and the Whale* — fast, brittle, funny, and emotionally overclocked. It gives an actor the chance to play panic, grief, shame, and comic self-importance in the same role, with a big eulogy and a full breakdown as payoff."
+      },
+      {
+        "name": "Joan",
+        "role_type": "Lead",
+        "demographics": "Female · 70s",
+        "hook": "Joan is a hard-edged, chain-smoking matriarch who treats tenderness like a foreign language and uses cruelty as a family operating system. Under the deadpan and the cigarettes, though, she’s carrying a lifetime of grief, guilt, and emotional starvation that finally surfaces in the cemetery and at the grave.",
+        "why_actor_wants_this": "This is the kind of late-life showcase that Frances McDormand had in *Three Billboards Outside Ebbing, Missouri* — a woman whose bluntness is the mask for a much deeper wound. It gives a veteran actress a role with bite, volatility, and a late-breaking emotional reveal that can dominate the movie."
+      },
+      {
+        "name": "Danny",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Danny is the family’s chaotic middle brother: defensive, funny, emotionally porous, and always one bad decision away from disaster. He drinks, he deflects, he’s in therapy, and he’s the one who can turn a panic spiral into a joke before turning it back into a confession.",
+        "why_actor_wants_this": "This is the kind of bruised comic-support lead that Philip Seymour Hoffman used to own in films like *The Savages* — a man whose messiness is the performance. It gives an actor a chance to play self-loathing, loyalty, and comic timing without ever becoming a straight sidekick."
+      },
+      {
+        "name": "Marty",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s",
+        "hook": "Marty is the responsible eldest son who has spent his life being useful, overlooked, and quietly resentful about it. He’s the family’s organizer and pressure valve, but the script keeps revealing how much anger and hurt sit under his polished exterior.",
+        "why_actor_wants_this": "This is the sort of contained, emotionally precise role that Paul Giamatti or Richard Jenkins has turned into awards-season gold — a man whose restraint is the performance. It gives an actor the chance to play buried resentment, dry humor, and a late-blooming need for recognition."
+      },
+      {
+        "name": "Beth",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s",
+        "hook": "Beth is the stabilizing force in a family that keeps trying to spin off the road, but she’s not a saint; she’s sharp, funny, and fully capable of matching Joan’s energy when needed. As Marty’s wife and the emotional adult in the car, she becomes the bridge between chaos and care.",
+        "why_actor_wants_this": "This is the grounded, scene-stealing partner role that Rose Byrne has often made sing in ensemble comedies — the person who can play straight, then land the line that changes the temperature. It gives an actress a strong supporting-lead showcase with warmth, intelligence, and comic authority."
+      },
+      {
+        "name": "Gregory",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Gregory is Tommy’s soon-to-be ex-husband, the calm, emotionally literate counterweight to Tommy’s chaos. He’s not just a breakup device; he’s the person who knows how to breathe Tommy through a panic attack and still has enough self-respect to leave.",
+        "why_actor_wants_this": "This is the kind of quietly devastating relationship role that Andrew Scott has made memorable in projects like *Fleabag* — elegant, wounded, and emotionally legible in very few scenes. It gives an actor the chance to play the one person who can both soothe the lead and force the lead to grow up."
+      },
+      {
+        "name": "Darlene",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s",
+        "hook": "Darlene is the hospice nurse as force of nature: loud, profane, compassionate, and impossible to ignore. She brings levity into death without trivializing it, which makes her feel like the one person in the movie who can walk into the room and change the weather.",
+        "why_actor_wants_this": "This is the kind of high-velocity supporting role that Melissa McCarthy or Da’Vine Joy Randolph can turn into a scene-stealing event — big personality with real emotional function. It gives an actor a comic entrance, a monologue, and a humane purpose all in one package."
+      },
+      {
+        "name": "Beverly",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s",
+        "hook": "Beverly is Tommy’s boss, a brisk, self-important TV producer who treats other people’s crises as scheduling inconveniences. She’s a clean comic antagonist because she’s not evil, just professionally oblivious and personally entitled.",
+        "why_actor_wants_this": "This is the kind of sharp, clipped authority role that Jane Lynch or Christine Baranski can make pop in a handful of scenes — a person who weaponizes professionalism. It gives an actor a chance to play comic contempt and status without needing much screen time."
+      },
+      {
+        "name": "Gary Henderson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Gary is the funeral-home gatekeeper: tired, practical, and trapped between the law and the family’s chaos. He’s the bureaucratic obstacle who still has enough humanity to bend when Joan corners him.",
+        "why_actor_wants_this": "This is the kind of dry, deadpan authority part that character actors love because it lets them play straight while everyone else unravels around them. It gives an actor a compact scene-stealing role with procedural tension and comic release."
+      },
+      {
+        "name": "Mrs. Trevino / Barbara Trevino",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s",
+        "hook": "Mrs. Trevino is the judgmental neighbor who lives to notice everything and report it when necessary. She functions as the suburban witness whose presence turns the family’s private disaster into a public one.",
+        "why_actor_wants_this": "This is the kind of sharp, watchful neighbor role that can become instantly memorable in the hands of a strong character actress. It gives an actor a clean comic button and a great payoff in the caroling sequence and the 911 call."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make grief funny without making it small.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, especially those who already work comfortably with ensemble blocking, sharp dialogue, and tonal pivots between comedy and pain. This material rewards directors who care about performance first, can stage contained interiors with precision, and know how to make a holiday setting feel emotionally combustible rather than decorative.",
+        "detail": "The movie gives a director a contained, actor-forward canvas with a strong visual spine: apartments, cars, a funeral home, a church, and a snowbound highway. It’s the kind of project that lets a filmmaker show control over tone and ensemble rhythm without needing spectacle to prove the point."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "Premium streaming comedy-drama / festival-to-platform holiday lane",
+        "detail": "The script is castable off a strong ensemble rather than a single star-driven effects package, which gives buyers flexibility in packaging the family roles. The Christmas setting, queer domestic angle, and corpse-run premise give it a clear seasonal hook and a differentiated adult-comedy lane for streamers and specialty theatrical buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening flashback can be even cleaner.",
+        "detail": "The script already lands the emotional premise fast, but the first stretch is doing a lot of work between the TV set, the apartment flashback, and the call chain. One lever would be to streamline the opening handoff so Tommy’s crisis arrives with even more immediate force before the family machine starts spinning.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The family web is the movie’s biggest asset.",
+        "detail": "The strongest version of this feature leans even harder into the sibling triangle and the Joan-Tommy-Beth dynamic, because those pairings generate the most distinct scenes. A next pass could keep protecting those combinations whenever a beat is being assigned, since they are the engine that makes the road movie feel alive.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The TV-studio material is a useful but expandable frame.",
+        "detail": "The Wake Up! America material gives the movie a sharp opening contrast, but the story’s real momentum begins once Tommy is on the road and then at the house. If the goal is to keep the feature leaner, the version where the studio sequence is slightly compressed would protect pace without losing the showbiz contrast.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The snowbound road section carries the production lift.",
+        "detail": "The highway stretch, police stop, and separated-car sequence are the most weather-dependent part of the movie and the place where scheduling will matter most. A simplification lever would be to consolidate any redundant driving beats so the blizzard material stays tense and manageable rather than sprawling.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand and music references need a clearance pass.",
+        "detail": "Wake Up! America, Breakfast with Beverly, Honda Element, Funyuns, Tums, Playboy, and the named Christmas song all create a specific texture, but they also mean the legal team will want a careful review. The good news is that the story does not depend on any one brand; the references can be preserved where they matter most and generalized where they don’t.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Joan’s backstory has room to breathe.",
+        "detail": "Her cemetery confession is one of the script’s richest emotional turns, and it suggests a fuller interior life than the family has allowed her to show. A next pass could consider giving that emotional reveal one earlier seed so the final cemetery material lands with even more inevitability.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76.3,
+  "tier": "Optionable",
+  "inputTokens": 38289,
+  "outputTokens": 5208,
+  "cost": 0.05215275,
+  "declaredFormat": "Feature film"
+}

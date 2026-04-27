@@ -1,0 +1,339 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical thriller",
+      "genre_tags": [
+        "Adventure",
+        "Mystery"
+      ],
+      "tone": "Stylized, witty, propulsive, and mythic with period texture"
+    },
+    "positioning_hook": "A globe-trotting antiquities broker with impossible senses races through wartime black markets to stop Pearl Harbor — while hiding the one artifact that could change history.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate commercial lift: a charismatic, larger-than-life lead, a World War II engine, and a historical event everyone recognizes. The appeal is strongest for audiences who like smart adventure with a high-concept historical frame, though the period specificity and dialogue-forward structure keep it a touch more specialized than a four-quadrant crowd-pleaser."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: Sir W is being interrogated in December 1941 while recounting how he moved through Berlin, Cairo, and black-market networks to recover an artifact and warn about Pearl Harbor. The interrogation frame gives the script a strong spine, and the final reveal snaps the whole story into place with real clarity."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Sir W is built as a singular lead: elegant, slippery, funny, morally elastic, and deeply competent, with a private code that keeps him interesting scene after scene. Ying adds a compelling counterweight, and Mahmoud gives the story an emotional anchor, but the script’s real magnet is the lead’s contradiction between charm, secrecy, and conscience."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a bold swing by turning a wartime historical thriller into a mythic artifact chase told through a highly mannered interrogation frame. The sensory superpowers, the coded business of collectors, and the final Pearl Harbor reveal give it a confident identity that feels authored rather than assembled."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through a chain of reveals, travel, and reversals, and the interrogation structure gives each new anecdote a built-in question. The momentum is strongest when the artifact trail is active; the long explanatory stretches are still engaging because of voice and specificity, but they do slow the forward rush at times."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels fresh in the way the best high-concept historical stories do: a secretive, ageless broker with extraordinary perception moving through real wartime history and hidden markets. The Pearl Harbor reveal is especially effective because it feels both surprising and inevitable once the map is introduced."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script is rich with period texture: Washington offices, reservation life, Cairo black markets, Berlin embassies, and artifact trade rituals all feel specific and lived-in. The world is not just backdrop; it generates the story’s rules, disguises, and leverage points."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually distinct: polished, verbose, playful, and conspiratorial, with a literary cadence that sits on top of adventure-thriller mechanics. The script’s voice is recognizable in the way Sir W speaks, the way others react, and the way history is filtered through wit and ritual."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the adventure surface, there are deeper currents around time, memory, identity, colonial possession, and the ethics of keeping or returning artifacts. The script hints at a larger emotional mythology around Sir W and his relationships, though this draft still keeps most of that depth in implication rather than fully dramatized interiority."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The interrogation trio gives the feature a functional comic engine, and Ying and Mahmoud add meaningful relational texture. Still, the story is primarily powered by Sir W’s presence and perspective, with the supporting characters serving the central reveal more than generating independent story momentum."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Lead requires a striking, ageless male performer of African and Hispanic descent",
+          "Ying requires a performer who can play male-presenting disguise and reveal female identity",
+          "Several roles are defined by regional American accents",
+          "Historical figures and authority roles require period-appropriate age casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Period (1941) with flashback material extending into earlier decades",
+        "notable_requirements": [
+          "Washington D.C. government interiors",
+          "New York artifact shop and Greenwich Village exterior",
+          "Standing Rock reservation village and dwelling",
+          "Cairo black-market district and secret shop interiors",
+          "Berlin airport, embassy, restaurant, and bunker interiors",
+          "White House bedroom set"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily visualizations, point-of-view subjectivity, aircraft travel, and a few stylized transitions; no large-scale effects set pieces are required.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical shackles, aircraft interiors, period vehicles, and simple concealment/reveal effects for the Rose and map.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Franklin D. Roosevelt"
+        },
+        {
+          "type": "real_person",
+          "detail": "Eleanor Roosevelt"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Heinrich Himmler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Martin Bormann"
+        },
+        {
+          "type": "real_person",
+          "detail": "General Hiroshi Ōshima"
+        },
+        {
+          "type": "named_music",
+          "detail": "“Chattanooga Choo Choo”"
+        },
+        {
+          "type": "named_music",
+          "detail": "Mozart’s The Marriage of Figaro"
+        },
+        {
+          "type": "named_music",
+          "detail": "Mozart’s Die Zauberflöte / “Der König der Nacht”"
+        },
+        {
+          "type": "brand",
+          "detail": "Camel cigarettes"
+        },
+        {
+          "type": "brand",
+          "detail": "Old Spice"
+        },
+        {
+          "type": "brand",
+          "detail": "Wildroot"
+        },
+        {
+          "type": "brand",
+          "detail": "Caron Pour un Homme"
+        },
+        {
+          "type": "brand",
+          "detail": "Lockheed Hudson aircraft"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or theatrical festival-to-platform release",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival positioning, then platform or specialty theatrical rollout"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is period-specific and travel-heavy, but the story is mostly dialogue-driven with contained interiors, practical vehicles, and limited effects."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead is highly specific and the script uses several historical figures plus a few accent-defined supporting roles, but the cast size remains manageable."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through Washington, New York, North Dakota, Cairo, Berlin, and the White House, with multiple period interiors and exteriors."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes Nazi material, wartime politics, racial language, and some sexual content, but it stays below explicit violence or graphic territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The screenplay names multiple real historical figures, uses recognizable songs, and references consumer brands and a specific aircraft model."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Sir W is a showcase lead.",
+          "what_it_means": "The role gives a performer wit, mystery, physical confidence, and moral ambiguity in one package, which is exactly the kind of part that can define a campaign. Prestige actors who want a charismatic center with intelligence and edge will see the appeal immediately, and buyers get a lead who can carry both dialogue and intrigue.",
+          "evidence": "His interrogation-room monologue, his sensory deductions from tobacco and cologne, and his calm control in Berlin and Cairo all build the same singular presence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The interrogation frame is a clean engine.",
+          "what_it_means": "The entire feature is organized around a built-in reveal structure, which makes the story easy to market and easy to follow even as it moves across continents. Buyers looking for a high-concept historical thriller can sell the premise in one sentence, and audiences get a strong forward pull from the question of what Sir W is hiding.",
+          "evidence": "The opening interrogation, the repeated pressure from the three officials, and the final Pearl Harbor reveal all work off the same frame.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has real period texture.",
+          "what_it_means": "The script’s settings are not generic wartime wallpaper; they create a living network of black markets, embassies, reservations, and private collectors that feels story-generating. That kind of specificity helps the project feel premium and gives production design a clear lane to build a memorable world.",
+          "evidence": "Washington offices, Standing Rock, Cairo’s Berka, Berlin’s embassy corridor, and the White House bedroom all carry distinct social rules and visual identity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The artifact chase has a mythic charge.",
+          "what_it_means": "The Rose of Jericho gives the story a tangible object with legend, utility, and emotional weight, which is a strong commercial anchor for an adventure-thriller. Genre buyers and audience segments that respond to historical mystery, occult-adjacent lore, and treasure logic will recognize the hook quickly.",
+          "evidence": "The Rose is described as a healing object with resurrection lore, and its recovery becomes the hidden spine of the mission.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ying adds a sharp countercurrent.",
+          "what_it_means": "Ying brings gender disguise, professional rivalry, and romantic history into the same relationship, which gives the script a memorable secondary engine. Actors and buyers alike will respond to a character who can play seduction, betrayal, and competence without leaving the genre lane.",
+          "evidence": "The Cairo room scene, the reveal that Ying is a woman, and the Tomahawk exchange all define the dynamic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a real historical jolt.",
+          "what_it_means": "The Pearl Harbor reveal gives the feature a built-in payoff that recontextualizes everything before it, which is exactly the kind of ending that can drive word of mouth. Historical thriller buyers get a climax that is both event-based and emotionally legible, with a final image that feels like a button.",
+          "evidence": "The map of Hawaii marked with December Seventh and the cut to Roosevelt’s “date which will live in infamy” speech.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a confident voice.",
+          "what_it_means": "The dialogue style is distinctive enough to separate the project from standard historical fare, giving it a literary, performance-forward identity. Directors and actors who want material with cadence, wit, and a little theatricality will be drawn to that voice.",
+          "evidence": "Sir W’s long-form politeness, the interrogators’ regional rhythms, and the repeated verbal sparring create a recognizable register.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a premium historical thriller with a singular lead role at its center: an ageless, globe-trotting antiquities broker whose charm, secrecy, and sensory gifts turn wartime history into a high-stakes game of leverage. The script’s interrogation frame, rich period world, and Pearl Harbor payoff give it a clean commercial spine, while the voice and character work make it feel authored and actor-driven."
+    },
+    "lead_characters": [
+      {
+        "name": "Sir W",
+        "role_type": "Lead",
+        "demographics": "Male · 40s playing ageless · African and Hispanic descent",
+        "hook": "Sir W is a polished, impossible-to-pin-down antiquities broker with a refined British voice, extraordinary senses, and a code of conduct that is both principled and slippery. He moves through the world like a man who has seen too much history to be impressed by it, yet he still carries a private tenderness for artifacts, memory, and the people tied to them.",
+        "why_actor_wants_this": "This is the showcase territory of Daniel Day-Lewis in There Will Be Blood crossed with the verbal precision of Ralph Fiennes in The Grand Budapest Hotel — a role where style is the instrument and contradiction is the engine. Mid-career prestige leads and actors looking for a signature, awards-friendly part will chase the chance to play intelligence, secrecy, and charm at this level."
+      },
+      {
+        "name": "Ying",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s · Chinese",
+        "hook": "Ying is a rival collector and operator who can pass as male in the field, then reveal a sharper, more intimate power once the disguise drops. She is controlled, strategic, and emotionally legible only in flashes, which makes every scene with her feel like a negotiation with history, desire, and debt.",
+        "why_actor_wants_this": "This is the showcase territory of Tilda Swinton in Michael Clayton or Cate Blanchett in Carol — a role that lets an actor play disguise, authority, and erotic tension without losing intelligence. Actors who want a part with transformation, secrecy, and a memorable reveal will see immediate value here."
+      },
+      {
+        "name": "Mr. Dakota",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · Upper Midwest American",
+        "hook": "Mr. Dakota is the blunt, suspicious interrogator whose regional cadence and impatience make him the room’s pressure valve. He is the most openly combative of the trio, but his reactions also give the audience a way into the script’s escalating absurdity.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the comic authority of John Goodman in Barton Fink — a voice-forward part where attitude and timing do the heavy lifting. Character actors who can turn skepticism into rhythm will have fun with it."
+      },
+      {
+        "name": "Mr. Ohio",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Ohio/Midwest American",
+        "hook": "Mr. Ohio is the most politically alert of the interrogators, the one who keeps trying to translate Sir W’s story into leverage. He has enough polish to sound official and enough vanity to keep getting pulled into Sir W’s orbit.",
+        "why_actor_wants_this": "This is the kind of supporting role that plays like the bureaucratic intelligence of Paul Giamatti in Sideways — a part built on reaction, calculation, and verbal control. Actors who specialize in smart, watchful authority figures will recognize the opportunity."
+      },
+      {
+        "name": "Mr. Carolina",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · North Carolina / Southern American",
+        "hook": "Mr. Carolina is the smoothest of the three interrogators, the one most willing to entertain Sir W’s logic if it gets him closer to the truth. He has the most social finesse in the room, which makes him the most dangerous listener.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the measured, insinuating energy of Bryan Cranston in a pressure-cooker scene — a part where intelligence and politeness become tools of control. It’s ideal for a performer who can make exposition feel like strategy."
+      },
+      {
+        "name": "Mahmoud",
+        "role_type": "Supporting",
+        "demographics": "Male · 80s-90s · Egyptian",
+        "hook": "Mahmoud is the aging shopkeeper whose history with Sir W gives the Cairo material its emotional center. Frail but still proud, he carries the dignity of a man who has lived long enough to understand both commerce and loyalty.",
+        "why_actor_wants_this": "This is the kind of role that recalls Ian McKellen in The Dresser — a late-life part where memory, authority, and vulnerability all sit in the same frame. Veteran actors looking for a scene-rich elder role with warmth and gravitas will respond to it."
+      },
+      {
+        "name": "Amun",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Egyptian",
+        "hook": "Amun is the grandson caught between inheritance, debt, and the burden of running a family shop he did not fully understand. He begins as a gatekeeper and ends as a young man forced to absorb a history larger than his own authority.",
+        "why_actor_wants_this": "This is the kind of role that gives a younger actor the grounded, wounded energy of Dev Patel in The Green Knight — a part where respect, confusion, and inherited responsibility all play at once. It offers a strong emotional bridge between the old world and the new."
+      },
+      {
+        "name": "The Great Mahmoud’s Worker",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Egyptian",
+        "hook": "The Worker is the professional face of the shop, the man who knows how to keep the front of the operation moving even when the deeper history is unstable. He is observant, practical, and quietly amused by the absurdities around him.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor the dry, watchful utility of Richard Jenkins in a supporting scene — small in page count, but rich in behavior. It’s a clean opportunity for someone who can make silence feel like commentary."
+      },
+      {
+        "name": "Eleanor Roosevelt",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · White American",
+        "hook": "Eleanor Roosevelt appears as the final gatekeeper to the story’s emotional and political payoff, carrying exhaustion, discipline, and quiet authority. She is not written as ornamental history; she is the person who can absorb the impossible and still keep the room steady.",
+        "why_actor_wants_this": "This is the kind of late-scene historical role that gives an actor the contained force of Olivia Colman in The Crown — a brief but consequential part where restraint carries the weight. Prestige actresses who can command a room with minimal dialogue will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a smart, actor-forward historical thriller with style, wit, and a strong visual grammar.",
+        "fit_profile": "Established indie directors with at least one or two features, or prestige-leaning genre directors who care about performance, period detail, and tonal control. This material rewards filmmakers who like dialogue as propulsion, visual subjectivity as storytelling, and historical settings that feel lived-in rather than museum-clean.",
+        "detail": "The script gives a director a chance to stage a globe-spanning story without needing giant action set pieces, while still delivering a premium sense of scale through design, language, and reveal structure. It will attract directors who like to build tension from character behavior and who can make a highly verbal feature feel cinematic."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget prestige feature",
+        "lane": "Streaming prestige / specialty theatrical historical thriller lane",
+        "detail": "It can be packaged around one extraordinary lead performance, which lowers the need for a giant ensemble of name talent while still giving buyers a clear star-facing hook. The wartime historical frame, recognizable Pearl Harbor endpoint, and artifact-driven mystery give it export value and a clean marketing angle for prestige streamers and festival-to-platform buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "Sir W’s interior is mostly externalized.",
+        "detail": "The voice is vivid and the character is magnetic, but the draft keeps his emotional life largely in the realm of wit, memory, and explanation. A next pass could deepen one or two private beats — especially in the Mahmoud and Ying material — so the audience feels the cost of his choices as strongly as the intelligence behind them.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The interrogation scenes carry a lot of exposition.",
+        "detail": "The frame is effective, but several stretches in the room function as history delivery rather than pressure escalation. One direction would be to let the interrogators force more immediate choices out of Sir W, so the same information arrives through conflict instead of explanation.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The feature travels through many cities.",
+        "detail": "Washington, New York, North Dakota, Cairo, Berlin, and the White House all serve the story, which gives the film scope but also asks a lot of the schedule and design team. One simplification lever would be to see whether any of the travel beats can be folded into fewer signature locations without losing the sense of a world-spanning chase.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights stack is substantial.",
+        "detail": "The script names multiple real historical figures, uses recognizable songs, and references consumer brands and a specific aircraft model. A producer would want to clear the historical and music references early so the package can move cleanly.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting ensemble is functional but compact.",
+        "detail": "The story is fundamentally a Sir W vehicle, with the interrogators and the Cairo figures serving the central reveal. If the goal is to broaden the ensemble engine, one lever would be to give one supporting relationship a more independent objective that continues to matter after the interrogation frame ends.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.3,
+  "tier": "Optionable",
+  "inputTokens": 38757,
+  "outputTokens": 5142,
+  "cost": 0.052206749999999996,
+  "declaredFormat": "Feature film"
+}

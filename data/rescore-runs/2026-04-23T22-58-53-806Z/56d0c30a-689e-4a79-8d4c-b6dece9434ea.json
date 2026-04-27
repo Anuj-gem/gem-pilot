@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:10:29.344Z",
+  "submission_id": "56d0c30a-689e-4a79-8d4c-b6dece9434ea",
+  "eval_id": "7ffbbc6c-61af-4cea-9d96-3b396c124026",
+  "title": "CHOP",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Luke Dobis",
+      "role_type": "Lead",
+      "demographics": "Male · 19 · Lithuanian-American"
+    },
+    {
+      "name": "Tessa Hayes",
+      "role_type": "Lead",
+      "demographics": "Female · 20 · Afro-Cuban"
+    },
+    {
+      "name": "Adrian Ruiz",
+      "role_type": "Lead",
+      "demographics": "Male · 19 · Puerto Rican"
+    },
+    {
+      "name": "Arvydas “Arv” Dobis",
+      "role_type": "Lead",
+      "demographics": "Male · 18 · Lithuanian immigrant"
+    },
+    {
+      "name": "Ernie Hayes",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Afro-Cuban"
+    },
+    {
+      "name": "Bonnie Dobis",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · Lithuanian-American"
+    },
+    {
+      "name": "Scotty",
+      "role_type": "Supporting",
+      "demographics": "Male · 18 · white"
+    },
+    {
+      "name": "Furmanski",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · white"
+    },
+    {
+      "name": "McGee",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · heavyset"
+    },
+    {
+      "name": "Junkyard Betty",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · working-class"
+    },
+    {
+      "name": "John",
+      "role_type": "Supporting",
+      "demographics": "Male · 35 · pudgy, caterpillar mustache"
+    },
+    {
+      "name": "Kevin",
+      "role_type": "Supporting",
+      "demographics": "Male · 16 · white"
+    }
+  ],
+  "positioning_hook": "A Chicago garage crew races to save a stolen Mustang and their shop, while a charming contractor with a white van is quietly hunting boys across the neighborhood.",
+  "cost_usd": 0.04534875000000001,
+  "input_tokens": 27393,
+  "output_tokens": 5512,
+  "status": "wrote:leads_ok"
+}

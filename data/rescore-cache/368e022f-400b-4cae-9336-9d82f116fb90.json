@@ -1,0 +1,324 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Social issue",
+        "Inspirational"
+      ],
+      "tone": "Didactic, earnest, melodramatic, sermon-like"
+    },
+    "positioning_hook": "A series of morality tales follows parents, students, and aspiring writers as they collide with rebellion, discipline, and ambition across homes, classrooms, and creative industries.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The material speaks to faith-forward and values-driven viewers, but the audience lane is narrow and the emotional promise is more instructional than dramatic. The repeated lecture-style scenes make the commercial ask specific rather than broad."
+      },
+      "conceptual_hook_clarity": {
+        "score": 3,
+        "reasoning": "The script presents multiple self-contained stories rather than one clear ongoing engine, so the series premise is hard to summarize cleanly. Each segment has a message, but the pilot-level hook does not yet cohere into a single repeatable dramatic premise."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 3,
+        "reasoning": "Daniela, Jack, Carlos Alberto, Micah, and Martins each have a point of view, but they function more as vehicles for ideas than as durable, contradictory series leads. The strongest recurring energy comes from the parent-child and mentor-student exchanges, which are functional but not yet deeply layered."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The anthology-like structure and the sheer range of topics give the script a distinct educational ambition, but the execution leans heavily on direct address and exposition. The voice is unmistakable, yet it stays close to sermon and lecture forms rather than finding a more dramatic series grammar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 3,
+        "reasoning": "Scenes often resolve through speeches that explain the lesson rather than through escalating action or reversals. The pilot keeps moving from one vignette to the next, but the forward pull is limited because each section lands as a conclusion instead of opening a new dramatic door."
+      },
+      "resonant_originality": {
+        "score": 4,
+        "reasoning": "The script has a singular identity in how it blends domestic conflict, school discipline, politics, and writing culture into one moral universe. What it offers is more unusual than conventional, though the ideas are presented in a familiar instructional mode."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "There is a lot of social terrain here: family homes, a primary school, a college classroom, a student union, a radio-listening apartment, and the publishing world. The world is broad and varied, but it reads as a sequence of message spaces rather than a tightly interlocked ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 4,
+        "reasoning": "The tone is consistent in its earnestness and moral certainty, and that consistency is clear on every page. At the same time, the script’s emotional register stays in one lane, so the show’s tonal identity is more uniform than sharply distinctive."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "The pilot gestures toward larger questions about authority, freedom, media influence, and creative ambition, which gives it thematic breadth. Those ideas are stated directly rather than dramatized through hidden layers, so the deeper reserves are present more as subject matter than as subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 4,
+        "reasoning": "The strongest relationships are parent-child and teacher-student, but most scenes are built as one-on-one exchanges that close the loop quickly. There is ensemble variety across the script, yet the characters rarely generate independent story energy off one another."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 6,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple child and teen roles",
+          "Several adult authority figures",
+          "One role requires a 7-year-old boy",
+          "Ensemble spans family, school, and university settings"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with some exterior campus, school, park, terminal, and jail scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Homes, classrooms, school office, auditorium, apartment, jail, airline terminal, park, recording studio"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical needs; a slap and basic crowd/event staging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Osama Bin Laden, Barack Obama, John Grisham, J.K. Rowling, John Wesley, Mandela, Lady Gaga, Naomi Campbell, and other named public figures are referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "National Television Network, CBC, Channel O, Playstation, Google, Twitter, Wall Street, and multiple named publishers/websites are referenced."
+        },
+        {
+          "type": "named_music",
+          "detail": "No specific song titles are central, but multiple music and media references are embedded in dialogue and narration."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script references published works, magazines, newspapers, and a poem performed at a school event."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Faith-adjacent or values-driven streaming/TV anthology lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized anthology of morality-driven vignettes centered on family, school, media, and ambition, with each episode or segment built around a social lesson."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary interiors dominate, with modest school, home, apartment, and auditorium setups."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script spans multiple leads, child actors, and a broad supporting ensemble across separate story blocks."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is spread across many distinct contemporary locations, though none require specialty builds."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes corporal punishment, drug use references, sex work references, political confrontation, and mature social commentary."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The text names numerous public figures, brands, media outlets, and published works that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "It has a clear values-driven lane.",
+          "what_it_means": "The script is built for audiences who want stories that argue for discipline, faith, persistence, and moral self-correction, which gives it a defined home in the inspirational TV space. That makes it attractive to buyers looking for message-forward programming and to viewers who respond to family-centered, uplift-oriented storytelling.",
+          "evidence": "Daniela’s rebellion, Jack’s discipline story, and the publishing-world speeches all circle back to the same moral framework.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The anthology structure creates range.",
+          "what_it_means": "By moving from family drama to school discipline to politics to writing culture, the script can support multiple episode types without changing its core worldview. That gives a producer flexibility to build a series around standalone moral case studies while keeping a recognizable brand identity.",
+          "evidence": "The pilot cycles through Daniela, Jack, Carlos Alberto, Micah, and Martins as separate story blocks.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The school and family worlds are easy to produce.",
+          "what_it_means": "Most of the action lives in homes, classrooms, offices, and apartments, which keeps the production footprint manageable for a TV order. That is useful for buyers who want a contained contemporary series that can be mounted without heavy technical spend.",
+          "evidence": "Living rooms, a principal’s office, a classroom, a dorm, an apartment, and an auditorium carry most of the scenes.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "The script is built around authority clashes.",
+          "what_it_means": "Parents, teachers, principals, professors, and mentors all function as pressure points, which gives the series a repeatable conflict engine. That kind of institutional friction is useful for episodic storytelling because it naturally produces arguments, reversals, and public reckonings.",
+          "evidence": "Frances and Daniela, Miss Dean and Mr. Phelps, Professor Taylor Bent and Carlos Alberto, and Floyd and Micah all operate as opposing pairs.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It offers a broad ensemble of playable roles.",
+          "what_it_means": "There are multiple speaking parts across ages and social stations, which opens the door to a cast that feels community-based rather than star-dependent. That is attractive to producers who want a series that can showcase a mix of emerging talent and seasoned character actors.",
+          "evidence": "The script includes children, teens, parents, teachers, a professor, a principal, a radio announcer, and publishing-industry figures.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a message-driven series with a clear audience lane: family, faith, and social uplift. Its real commercial value is the breadth of playable worlds — home, school, campus, media, and publishing — all tied together by a repeatable authority-versus-youth engine.\n\nFor the right buyer, that means a contained contemporary series with room for an ensemble and a steady stream of episode-sized moral conflicts."
+    },
+    "lead_characters": [
+      {
+        "name": "Daniela",
+        "role_type": "Lead",
+        "demographics": "Female · 14",
+        "hook": "A defiant teenager who wants freedom, status, and control over her own life, Daniela is written as the pressure point in a household built on rules. She is emotionally volatile, outspoken, and still young enough that her rebellion reads as both identity formation and a cry for autonomy.",
+        "why_actor_wants_this": "This is the showcase territory of a young lead in a coming-of-age drama where the performance lives in argument, hurt, and public defiance. A teen actor looking for a role that can carry emotional escalation and family confrontation would chase this, especially if they want a part that lets them play anger and vulnerability in the same scene."
+      },
+      {
+        "name": "Frances",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s",
+        "hook": "Frances is a controlling mother whose love comes out as surveillance, discipline, and fear of the world changing her daughter. She is stern, emotionally intense, and written with the kind of moral certainty that makes her both formidable and deeply human.",
+        "why_actor_wants_this": "This is the kind of mother role that gives an actress the force-field intensity of Laura Linney in The Savages or Toni Collette in Hereditary, where love and control are inseparable. Character actresses who want a role built on confrontation, authority, and emotional contradiction will see immediate value here."
+      },
+      {
+        "name": "Richard",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s",
+        "hook": "Richard is the conciliatory father who tries to soften conflict with patience, storytelling, and moral instruction. He reads as the household mediator, but the script also gives him a history that carries guilt, desire, and a need to redeem himself through fatherhood.",
+        "why_actor_wants_this": "This is the showcase space of a grounded paternal lead like Bryan Cranston in The Upside or Jeffrey Wright in a family drama, where authority is expressed through restraint rather than volume. Actors who can play warmth, regret, and moral persuasion in the same frame will be drawn to it."
+      },
+      {
+        "name": "Jack",
+        "role_type": "Lead",
+        "demographics": "Male · 7",
+        "hook": "Jack is a young boy whose bullying behavior is being redirected through ritual, story, and paternal attention. He is less a fully shaded child psychology portrait than a vivid dramatic center for a father-son morality thread.",
+        "why_actor_wants_this": "This is the kind of child role that gives a young performer a memorable emotional lane in a family series, similar to the child-center energy in Room or The Florida Project, where innocence and behavior are both on display. Casting teams looking for a child actor who can hold attention in scenes with adults will notice the part immediately."
+      },
+      {
+        "name": "Mr. Phelps",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s",
+        "hook": "Mr. Phelps is a working father who uses storytelling, discipline, and quiet sacrifice to shape his son’s behavior. He is earnest, dutiful, and slightly theatrical in the way he turns parenting into a moral performance.",
+        "why_actor_wants_this": "This is the kind of father role that gives an actor the emotional authority of Sterling K. Brown in This Is Us, where the performance lives in tenderness, routine, and the weight of being the example. Mid-career actors who want a family-drama anchor with warmth and gravitas will respond to it."
+      },
+      {
+        "name": "Carlos Alberto",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Carlos Alberto is the campus dissident: articulate, combative, and convinced that the system is rigged against the people. He is written as a public intellectual with a rebel’s posture, someone who can command a room and provoke it at the same time.",
+        "why_actor_wants_this": "This is the showcase territory of a performance like Lakeith Stanfield in Sorry to Bother You or John David Washington in Malcolm & Marie, where verbal force and ideological conviction become the engine of the role. Actors who want a fast-talking, scene-commanding part with political heat will be drawn to it."
+      },
+      {
+        "name": "Micah",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Micah is a restless young man caught between complaint and self-invention, always listening for a better way to live. He is reflective, aspirational, and written as someone who wants meaning without surrendering ambition.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the introspective, searching space of a prestige coming-of-age lead like Donald Glover in Atlanta’s quieter passages or Kelvin Harrison Jr. in Waves. Performers who can play internal conflict, aspiration, and self-mythology will see a lot to work with."
+      },
+      {
+        "name": "Floyd",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Floyd is the upbeat counterweight to Micah’s anxiety, a friend who pushes optimism, self-belief, and forward motion. He functions as a motivator and sounding board, but he also has enough personality to feel like a recurring life-force in the apartment world.",
+        "why_actor_wants_this": "This is the kind of supportive best-friend role that can pop the way Donald Faison did in Scrubs or Lakeith Stanfield’s early scene-stealing work, where charm and rhythm make the character memorable fast. Actors who want a lively, quotable role with room to become a fan favorite will notice it."
+      },
+      {
+        "name": "Martins",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s",
+        "hook": "Martins is the aspiring writer who turns research, persistence, and self-education into a personal mission. He is hungry, studious, and quietly entrepreneurial, with the kind of ambition that can carry a series about creative survival.",
+        "why_actor_wants_this": "This is the showcase territory of a literary striver role like Paul Dano in Ruby Sparks or Dev Patel in The Personal History of David Copperfield, where the performance is built on aspiration, obsession, and self-authorship. Actors who want a role that can play intellect, hope, and hustle will chase it."
+      },
+      {
+        "name": "Charles",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Charles is Martins’ skeptical foil, the friend who would rather quit than keep chasing a difficult dream. He gives the writing-world material a grounded counterpoint and helps externalize the cost of persistence.",
+        "why_actor_wants_this": "This is the kind of skeptical side-part that can play beautifully in the orbit of a lead, similar to the grounded friend energy in The Bear or High Fidelity. Character actors who like sharp, reactive dialogue and a clear point of view will find it appealing."
+      },
+      {
+        "name": "Miss Dean",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s",
+        "hook": "Miss Dean is the school authority figure who can scold, praise, and orchestrate a public event with equal ease. She is practical, ceremonial, and positioned as the institutional adult who keeps the school world moving.",
+        "why_actor_wants_this": "This is the kind of administrator role that gives an actress the crisp authority of Viola Davis in a school setting or Octavia Spencer in a community drama, where command and warmth coexist. Performers who can project order, wit, and institutional power will be drawn to it."
+      },
+      {
+        "name": "Professor Taylor Bent",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "Professor Taylor Bent is a forceful lecturer who sees himself as a political authority and moral gatekeeper. He is verbose, combative, and built to dominate a classroom before being challenged by a student who refuses to stay quiet.",
+        "why_actor_wants_this": "This is the kind of professorial role that gives an actor the rhetorical swagger of J.K. Simmons in Whiplash or Giancarlo Esposito in a lecture-heavy drama, where authority is the performance. Actors who enjoy playing intelligence, ego, and institutional power will gravitate toward it."
+      },
+      {
+        "name": "Miss Natasha",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-40s",
+        "hook": "Miss Natasha is the teacher who becomes the public voice of the Father’s Day celebration. She is functional in the story, but she also carries the ceremonial energy of the school’s public face.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress a clean, polished public-speaking moment, similar to the event-host energy in Abbott Elementary or a school-pageant drama. Performers who like crisp, presentational work with a touch of warmth will see the appeal."
+      },
+      {
+        "name": "Tara",
+        "role_type": "Supporting",
+        "demographics": "Female · 14-15",
+        "hook": "Tara is Daniela’s freer, more permissive friend, the one who represents the lifestyle Daniela thinks she wants. She is less developed than Daniela, but she functions as a social mirror and a symbol of the outside world.",
+        "why_actor_wants_this": "This is the kind of teen-support role that can become a breakout if the chemistry lands, much like the friend roles in Euphoria or Never Have I Ever that define the lead’s social world. Young actors who want a stylish, scene-sharing part with room to expand will be interested."
+      },
+      {
+        "name": "Tara’s Father",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Tara’s father is the cautious adult who tries to restore order when Daniela arrives at his home. He is a practical gatekeeper, a voice of consent, and a reminder that adult households have their own rules.",
+        "why_actor_wants_this": "This is the kind of contained supporting role that gives an actor a clear authority beat in a family drama, similar to the concerned-parent energy in This Is Us or Queen Sugar. Character actors who can play concern without losing warmth will fit it well."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage moral conflict in intimate rooms.",
+        "fit_profile": "Mid-career TV directors or first-feature filmmakers with a background in dialogue-driven drama, family stories, or faith-adjacent material. The right fit is someone who cares about performance-first scenes, clean emotional geography, and ensemble blocking more than spectacle.",
+        "detail": "The material rewards a director who can make speeches feel like confrontations and keep a classroom, living room, or apartment scene alive through performance. It is especially attractive to directors who already work in contained contemporary drama and want a series that gives them multiple tonal registers without requiring heavy technical choreography."
+      },
+      "buyer_appeal": {
+        "tier": "Low-budget contemporary series",
+        "lane": "Faith-adjacent, values-driven anthology drama",
+        "detail": "The package can be built around a modest ensemble and contemporary locations, so it does not need VFX or specialty production to get on its feet. The values-forward lane gives it a defined audience on streamers, niche cable, or a digital platform looking for inspirational programming with repeatable episode themes."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot reads as several pilots.",
+        "detail": "The Daniela, Jack, Carlos Alberto, Micah, and Martins sections each have their own thesis and emotional center. One direction would be to choose the strongest recurring engine and let the other material become future episodes or a rotating anthology frame, so the series identity lands faster on page one.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The dialogue often carries the whole scene.",
+        "detail": "Many exchanges resolve through explanation, especially in the Daniela/Frances, Jack/Mr. Phelps, and Carlos Alberto/Professor Taylor Bent scenes. A next pass could let one emotional turn arrive before the lesson, so the audience feels the conflict rather than only hearing it described.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The writing-world material is highly expository.",
+        "detail": "The Martins sections include long passages about publishing, agents, query letters, and industry philosophy. That material has a clear audience, and it may play even better if the series version of it is dramatized through a specific rejection, a live pitch, or a concrete professional setback.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights review will be substantial.",
+        "detail": "The script names many public figures, brands, media outlets, publishers, and websites, so a production pass would need a careful clearance sweep. A simplification lever would be to keep the same argument structure while reducing named references, which protects the story and makes the package easier to move.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast footprint is broad for a contained drama.",
+        "detail": "The script spans children, teens, parents, teachers, professors, students, and publishing professionals across separate story blocks. If the series is intended as a lean production, one lever would be to consolidate some authority figures and recurring peers so the ensemble feels more reusable from episode to episode.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 40,
+  "tier": "Needs Development",
+  "inputTokens": 31178,
+  "outputTokens": 5314,
+  "cost": 0.047296500000000005,
+  "declaredFormat": "Series"
+}

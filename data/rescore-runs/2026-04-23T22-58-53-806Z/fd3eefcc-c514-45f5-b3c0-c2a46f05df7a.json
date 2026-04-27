@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:13:43.524Z",
+  "submission_id": "fd3eefcc-c514-45f5-b3c0-c2a46f05df7a",
+  "eval_id": "cd860012-124b-4baa-972a-8f7bcb951ff0",
+  "title": "AFDG",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Johnathan Brite",
+      "role_type": "Lead",
+      "demographics": "Male · late teens/early 20s · white"
+    },
+    {
+      "name": "Luanne Belle",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · white"
+    },
+    {
+      "name": "Bob Hocus",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · white"
+    },
+    {
+      "name": "Marshall Garnett",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · white"
+    },
+    {
+      "name": "Senior Chief Dean Kitchell",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-60s · white"
+    },
+    {
+      "name": "X.O. Tony Rogers",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white"
+    },
+    {
+      "name": "Marcus Johnson",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Black"
+    },
+    {
+      "name": "Hank Schitzonovich",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · white"
+    },
+    {
+      "name": "Connie Pulver",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · white"
+    },
+    {
+      "name": "Lieutenant Eldridge",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · British"
+    },
+    {
+      "name": "Corpsman Roberts",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · white"
+    },
+    {
+      "name": "Doyle",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · white"
+    },
+    {
+      "name": "Pastor Arnold",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · white"
+    }
+  ],
+  "positioning_hook": "A Navy supply clerk on a remote Indian Ocean base stumbles into the station DJ slot, falls for a fellow sailor, and gets swept into a chaos of radio wars, military absurdity, and a typhoon.",
+  "cost_usd": 0.057584250000000003,
+  "input_tokens": 43905,
+  "output_tokens": 5479,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-24T00:12:25.140Z",
+  "submission_id": "cf58ffba-1228-4f83-9d0f-980d6bf9930a",
+  "eval_id": "75a77c42-2665-4e25-aaf5-03246770064d",
+  "title": "KILL THE HERO",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Vic Yu",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Asian-American"
+    },
+    {
+      "name": "James Carter",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s · Black"
+    },
+    {
+      "name": "Lisbon",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · blonde, stylish, physically capable"
+    },
+    {
+      "name": "Frank Pavement",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · action-star type, physically imposing"
+    },
+    {
+      "name": "Evan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · very large, physically imposing"
+    },
+    {
+      "name": "Spencer",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · tech-leaning, nerdy, intense"
+    },
+    {
+      "name": "Sonya",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Russian, femme-fatale energy"
+    },
+    {
+      "name": "Wyatt",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Black and British, twin"
+    },
+    {
+      "name": "Walter",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Black and British, twin"
+    },
+    {
+      "name": "Grace",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · office executive"
+    },
+    {
+      "name": "Amir",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · corporate executive"
+    },
+    {
+      "name": "Calvin",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · social-media hustler"
+    },
+    {
+      "name": "Harry",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Japanese-American or Japanese-coded, tattoo-parlor owner"
+    },
+    {
+      "name": "Harvin",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · older security guard"
+    },
+    {
+      "name": "Robin",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · built like a shot put Olympian"
+    },
+    {
+      "name": "Tina",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Jay-Jay",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-teens"
+    }
+  ],
+  "positioning_hook": "A broke handyman and his overthinking friend join a fake corporate heist on Fourth of July, then get trapped between rival crooks, cops, and a real vigilante in one collapsing office tower.",
+  "cost_usd": 0.056444999999999995,
+  "input_tokens": 38066,
+  "output_tokens": 6199,
+  "status": "wrote:leads_ok"
+}

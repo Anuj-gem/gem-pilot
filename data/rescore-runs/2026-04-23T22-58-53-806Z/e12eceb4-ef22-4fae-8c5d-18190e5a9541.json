@@ -1,0 +1,265 @@
+{
+  "timestamp": "2026-04-23T23:25:06.221Z",
+  "submission_id": "e12eceb4-ef22-4fae-8c5d-18190e5a9541",
+  "eval_id": "d58a36ef-5811-4f0c-9b88-8308524f0a32",
+  "title": "significance of life 2",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 49,
+  "lead_characters_summary": [
+    {
+      "name": "Kenya",
+      "role_type": "Lead",
+      "demographics": "Female · adult · married woman"
+    },
+    {
+      "name": "The Listener",
+      "role_type": "Lead",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Mike",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · Kenya’s younger brother"
+    },
+    {
+      "name": "John",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · Kenya’s younger brother"
+    },
+    {
+      "name": "Oscar",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · Kenya’s younger brother"
+    },
+    {
+      "name": "Lizzy",
+      "role_type": "Lead",
+      "demographics": "Female · adult · Kenya’s friend"
+    },
+    {
+      "name": "Simon",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Kate",
+      "role_type": "Lead",
+      "demographics": "Female · 18-20s"
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · 18-20s"
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens"
+    },
+    {
+      "name": "Priscilla",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · Kate’s mother"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · Kate’s father"
+    },
+    {
+      "name": "Nathan",
+      "role_type": "Lead",
+      "demographics": "Male · 200-level student · aeronautic engineering student"
+    },
+    {
+      "name": "Andre",
+      "role_type": "Lead",
+      "demographics": "Male · adult · husband"
+    },
+    {
+      "name": "Mr. Gary Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · adult · teacher"
+    },
+    {
+      "name": "Mark Anthony",
+      "role_type": "Lead",
+      "demographics": "Male · child to adult · schoolboy turned businessman"
+    },
+    {
+      "name": "Ken",
+      "role_type": "Lead",
+      "demographics": "Male · 18"
+    },
+    {
+      "name": "Nadia",
+      "role_type": "Lead",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "Justin",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Layfield",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · business figure"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens to adult"
+    },
+    {
+      "name": "Maureen",
+      "role_type": "Lead",
+      "demographics": "Female · mid-teens to adult"
+    },
+    {
+      "name": "Melvin",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to adult"
+    },
+    {
+      "name": "Jacques",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s to middle-age"
+    },
+    {
+      "name": "Rose",
+      "role_type": "Lead",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "Liza",
+      "role_type": "Supporting",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "El-Hajji Mohammed Yusuf",
+      "role_type": "Lead",
+      "demographics": "Male · adult · wealthy man"
+    },
+    {
+      "name": "Michael Gaulle",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Ruth",
+      "role_type": "Lead",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "Daniel Benoit",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Monalisa",
+      "role_type": "Lead",
+      "demographics": "Female · adult · wealthy wife and mother"
+    },
+    {
+      "name": "Antonia",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · friend"
+    },
+    {
+      "name": "Matilda",
+      "role_type": "Lead",
+      "demographics": "Female · 18"
+    },
+    {
+      "name": "Vincent",
+      "role_type": "Lead",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Lead",
+      "demographics": "Female · adult · mother"
+    },
+    {
+      "name": "Vince",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · husband and father"
+    },
+    {
+      "name": "Cindy",
+      "role_type": "Lead",
+      "demographics": "Female · adult · bank worker"
+    },
+    {
+      "name": "Wayne Backings",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · ex-boyfriend / husband"
+    },
+    {
+      "name": "Mario",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · ex-boyfriend"
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Lead",
+      "demographics": "Male · adult · barrister"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "Stacy",
+      "role_type": "Lead",
+      "demographics": "Female · adult · mother"
+    },
+    {
+      "name": "John McFaul",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · husband"
+    },
+    {
+      "name": "Natasha",
+      "role_type": "Lead",
+      "demographics": "Female · adult · mother and office worker"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · husband"
+    },
+    {
+      "name": "Adelaide",
+      "role_type": "Lead",
+      "demographics": "Male · adult · infertile husband"
+    },
+    {
+      "name": "Lucy",
+      "role_type": "Lead",
+      "demographics": "Female · adult · mother"
+    },
+    {
+      "name": "Maya",
+      "role_type": "Supporting",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    }
+  ],
+  "positioning_hook": "An anthology of cautionary relationship stories follows women and men whose marriages, affairs, and revenge schemes turn desire into public humiliation, divorce, and hard-earned regret.",
+  "cost_usd": 0.06489225,
+  "input_tokens": 27021,
+  "output_tokens": 9917,
+  "status": "wrote:leads_ok"
+}

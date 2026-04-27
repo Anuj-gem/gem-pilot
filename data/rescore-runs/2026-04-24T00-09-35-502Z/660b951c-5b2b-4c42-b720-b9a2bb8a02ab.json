@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-24T00:11:40.069Z",
+  "submission_id": "660b951c-5b2b-4c42-b720-b9a2bb8a02ab",
+  "eval_id": "58f6ec9d-2115-412c-8772-b1445dc38cc6",
+  "title": "Clever",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Braxton “Brax” Montgomery",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Roz Reno",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Vic",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Charles",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Hearing-impaired"
+    },
+    {
+      "name": "Lang",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Serena",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Jimmy Lee",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Dale Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Emily Holdsworth",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Erickson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Ashley",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Grandma",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s"
+    }
+  ],
+  "positioning_hook": "A charming art thief breaks out of prison to steal a $100 million Van Gogh from the Getty, while the FBI agent who once loved him races to stop the heist.",
+  "cost_usd": 0.063372,
+  "input_tokens": 51334,
+  "output_tokens": 5527,
+  "status": "wrote:leads_ok"
+}

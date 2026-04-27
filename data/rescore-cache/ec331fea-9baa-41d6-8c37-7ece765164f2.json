@@ -1,0 +1,277 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi thriller",
+      "genre_tags": [
+        "Creature feature",
+        "Contained horror"
+      ],
+      "tone": "Grounded, tense, procedural, and increasingly grotesque"
+    },
+    "positioning_hook": "A military research director must contain a newborn space organism that learns through death, while her own body starts changing after exposure to its atomized blood.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean genre promise: a contained creature thriller with escalating body-horror set pieces, a clear central question, and a final reveal that re-frames the danger around Pascal herself. The audience lane is specific rather than massive, but the hook is easy to sell to sci-fi and horror buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script establishes its engine early: a meteorite fragment, a disputed gene-splicing experiment, and a creature that kills through sound, cold, heat, and pressure. The rules of the threat and the containment mission are legible, and the ending lands on a strong sequel-ready turn with Pascal’s exposure."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Pascal, Dash, Haskell, and Cochrane each have a clear attitude and function, and the Pascal/Dash dynamic gives the script a sturdy human center. The characters are more defined by position and behavior than by deep private contradiction, so the role appeal is solid rather than especially rich."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The Earth-born, space-evolved organism is a smart twist on the alien-creature template, and the script commits to a science-vs-ethics argument instead of just chase mechanics. The boldest move is the way the creature’s development is tied to sensory learning and the body-horror of human exposure."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps escalating through discovery, death, containment failure, and military intervention, with each new sequence changing the tactical problem. The middle does spend time on explanation and debate, but the set-piece progression keeps the read moving."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script feels like a familiar genre container with a fresh biological premise underneath it: a creature that is both ancient Earth life and space-adapted returnee. The ethical framing around birth, viability, and responsibility gives the concept a memorable thematic spine."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "R.A.C.E. has a usable institutional texture, with security protocols, oxygen filters, quarantine procedures, and a military chain of command that all matter to the plot. The world is functional and specific, though it mostly serves the contained story rather than opening into a larger social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a distinct tonal blend of procedural science talk, dry banter, military tension, and graphic creature horror. The repeated ethical arguments and the creature’s sensory learning give it a recognizable identity beyond standard monster-movie beats."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the immediate survival plot, the script is carrying ideas about creation, custody, responsibility, and what counts as life when biology is hybridized. The final Pascal reveal suggests a larger personal and thematic continuation rather than a closed-off creature story."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Pascal/Haskell, Pascal/Dash, and Pascal/Cochrane dynamics all generate usable friction, and Tank adds a strong tactical counterweight. The ensemble is effective, but the story still lives primarily through Pascal’s decisions rather than a fully interlocking web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Military and scientific roles",
+          "One creature performance",
+          "Age-specific authority figures in 20s to 60s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Contained research installation",
+          "Exterior snowstorm sequence",
+          "Helicopter arrival",
+          "Security/control rooms, labs, autopsy room, holding area, command tent"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Creature visibility, frost effects, blood atomization, shattered glass, freezing/crystallization death, and the final transport/attack sequence require creature and environmental effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, frost, breakaway glass, smoke, gas, and creature prosthetic or suit work.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Peanut M&M's"
+        },
+        {
+          "type": "brand",
+          "detail": "Scarpa Maestrale ski boots"
+        },
+        {
+          "type": "brand",
+          "detail": "Area 51 reference"
+        },
+        {
+          "type": "brand",
+          "detail": "M.I.B. reference"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable sci-fi horror feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or genre-platform release model"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "A contained facility setting keeps the footprint manageable, while the creature work, snowstorm exterior, helicopter, and multiple practical death effects push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script centers on a compact adult ensemble, but it does require a credible military/science cast and a strong creature performance to land the premise."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most of the story lives inside one installation, but the script still needs multiple specialized rooms, exterior snow coverage, and a helicopter arrival sequence."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic deaths, body horror, blood atomization, and a creature attack on a principal character place this firmly in mature genre territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses a few brand and pop-culture references, but there is no major real-person or IP dependency driving the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The creature premise has a clean scientific twist.",
+          "what_it_means": "The Earth-born, space-evolved organism gives the movie a fresh hook that feels explainable, not arbitrary, which helps buyers sell it as smart genre rather than generic monster fare. That kind of concept attracts sci-fi horror audiences, practical-effects directors, and actors who want a prestige-leaning creature feature.",
+          "evidence": "Hauser’s panspermia explanation, the human DNA infusion, and the reveal that the organism is both Earth-derived and space-adapted.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Pascal is built for a lead performance.",
+          "what_it_means": "She is a command-center protagonist who has to balance ethics, authority, and fear while the room keeps collapsing around her, which gives the role real showcase value. Mid-career dramatic leads and genre-savvy actresses looking for a contained, actor-forward centerpiece would chase this.",
+          "evidence": "Her repeated calls on containment, her final authority over the team, and the closing reveal that her own bloodwork has changed.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script turns science into suspense.",
+          "what_it_means": "The lab debate over DNA, viability, and sensory development is not filler; it is the engine that keeps the threat legible and the stakes intellectually charged. Buyers looking for elevated genre material will see a movie that can play as both creature thriller and ethical parable.",
+          "evidence": "The repeated discussions of gene splicing, full term, sensory learning, and vacuum survival.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The containment setting is story-generating.",
+          "what_it_means": "R.A.C.E. gives the film a closed-world pressure cooker with clear rules, security protocols, and escalating lockdown mechanics, which is exactly the kind of footprint producers like to package. This is attractive to streamer buyers and indie genre financiers who want a controlled location count with high-concept payoff.",
+          "evidence": "The receiving area, security room, autopsy room, holding cell area, oxygen filters, quarantine alert, and restricted access procedures.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dash gives the movie a second emotional anchor.",
+          "what_it_means": "She is not just tactical support; she becomes the script’s humane counterpoint, especially in the lullaby sequence and her willingness to approach the creature. That makes the project more castable for an actor who can play toughness, tenderness, and sacrifice in one role.",
+          "evidence": "Her baby analogy, the Brahms lullaby, and her death after trying to calm the creature.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending opens a bigger franchise lane.",
+          "what_it_means": "Pascal’s exposure to the atomized blood gives the film a final sting and a built-in continuation engine without needing a sequel setup scene. Buyers can see a standalone feature with franchise DNA, which is a useful combination in the current genre market.",
+          "evidence": "The final lab results and Pascal’s shocked reaction after inhaling the creature’s atomized blood.",
+          "source": "script"
+        }
+      ],
+      "headline": "EVOLVE is a contained sci-fi horror feature with a smart biological premise, a strong command-center heroine, and a creature that learns through the deaths it causes. It has the kind of clean genre engine producers can package, while still carrying ethical and thematic weight that lifts it above a standard monster movie."
+    },
+    "lead_characters": [
+      {
+        "name": "Genevieve Pascal",
+        "role_type": "Lead",
+        "demographics": "Female · late 40s",
+        "hook": "Pascal is a disciplined facility director who has spent years surviving inside bureaucracy, and the movie keeps asking her to turn that survival skill into moral leadership. She is measured, skeptical, and increasingly cornered, but the script gives her the authority, intelligence, and emotional containment of someone who cannot afford to break until the very end.",
+        "why_actor_wants_this": "This is the Jodie Foster in Contact / Sigourney Weaver in Alien territory — a controlled, intelligent lead whose authority is tested by something larger than her training. It gives an actor the chance to play command, doubt, and final moral decision-making in a contained genre showcase that can carry the whole film."
+      },
+      {
+        "name": "Alicia Lasky \"Dash\"",
+        "role_type": "Lead",
+        "demographics": "Female · mid-20s",
+        "hook": "Dash is the installation’s sharpest physical presence, but the script keeps revealing a gentler interior under the tactical exterior. She has the dry edge of someone who can handle herself in a crisis, yet her instinct is often toward care, empathy, and emotional truth rather than pure force.",
+        "why_actor_wants_this": "This is the showcase space of Emily Blunt in Edge of Tomorrow or Rebecca Ferguson in a grounded action-thriller — competence with vulnerability and a real emotional turn. It gives a younger lead actress a role that can play action, wit, and tenderness, then pay off in sacrifice."
+      },
+      {
+        "name": "Jack Haskell",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s",
+        "hook": "Haskell is the facility’s blunt instrument: funny, suspicious, practical, and allergic to institutional nonsense. He starts as comic pressure relief and becomes the audience’s panic valve, which makes him the kind of guy who says what everyone else is thinking until the situation turns fatal.",
+        "why_actor_wants_this": "This is the Fred Ward in Tremors / John Goodman in a contained genre ensemble lane — a character who can carry humor, fear, and working-class skepticism without losing credibility. Character actors who can pivot from banter to alarm will see a juicy, scene-stealing part."
+      },
+      {
+        "name": "Dr. Heinrich Hauser",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "Hauser is the old-world scientist with a moral center, the one person in the room who still speaks in the language of caution and stewardship. He is elegant, precise, and intellectually persuasive, which makes his death feel like the removal of the story’s conscience.",
+        "why_actor_wants_this": "This is the Ian Holm in Alien / Richard Jenkins in a prestige sci-fi support role kind of part — a scientist whose authority and humanity make every line feel consequential. Older character actors who specialize in intelligence and gravitas will chase it."
+      },
+      {
+        "name": "Dr. Taru Inaro",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Inaro is the script’s zealot-scientist, brilliant enough to force the experiment forward and arrogant enough to ignore the human cost. She is sharp, confrontational, and ideologically committed, which makes her less a helper than a catalyst.",
+        "why_actor_wants_this": "This is the kind of high-intensity scientist role that gives an actor the same combustible energy as Tilda Swinton in Michael Clayton or a young prestige-thriller antagonist. It offers a fast, memorable burst of authority, intellect, and self-destruction."
+      },
+      {
+        "name": "Colonel Evan Drummond",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Drummond is polished military authority with a hidden agenda, the kind of man who can smile while the room is being reassigned underneath everyone’s feet. He reads as controlled, institutional, and quietly predatory, which makes him a strong late-story pressure source.",
+        "why_actor_wants_this": "This is the Donald Sutherland in a conspiracy thriller lane — a calm, elegant authority figure whose menace comes from restraint. Actors who like playing power with a smile will be drawn to it."
+      },
+      {
+        "name": "Gary Cochrane",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Cochrane is the off-book operative who moves like a man with two loyalties and no patience for explanation. He is sardonic, physically capable, and morally slippery in a way that keeps every scene around him unstable.",
+        "why_actor_wants_this": "This is the Michael Shannon in a conspiracy-thriller support role space — a controlled, dangerous presence who can flip from ally to threat in a beat. Actors who specialize in ambiguity and pressure-cooker scenes will want it."
+      },
+      {
+        "name": "Tanquery Williams \"Tank\"",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s",
+        "hook": "Tank is the hard-edged security man who believes in force, procedure, and survival in that order. He is physically imposing and emotionally direct, which makes him the story’s clearest tactical counterweight to Pascal’s caution.",
+        "why_actor_wants_this": "This is the Michael Biehn in Aliens / a modern military-thriller enforcer slot — a role built on command presence and escalating confrontation. Action actors and strong supporting players who can sell authority under stress will chase it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a creature feature that plays like a moral pressure cooker.",
+        "fit_profile": "First- or second-feature directors with a strong genre short, or established indie filmmakers looking to step into contained sci-fi horror. The sweet spot is someone who cares about performance under stress, practical tension, and making science feel dramatic rather than explanatory.",
+        "detail": "The material rewards tight blocking, controlled escalation, and a confident hand with creature reveals, so the right director can make a modest footprint feel bigger than it is. It will appeal to filmmakers who like contained spaces, ensemble friction, and body-horror that lands through behavior as much as effects."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming sci-fi horror / premium genre lane",
+        "detail": "It can be packaged around one strong female lead and a compact adult ensemble, so it does not require a giant cast or star-heavy VFX package to make sense. The contained facility setting, practical creature opportunities, and clean high-concept hook fit the current streamer appetite for elevated genre features with a clear thumbnail pitch."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The ethics debate carries the middle.",
+        "detail": "The Pascal/Haskell/Cochrane arguments about abortion, viability, and responsibility are thematically rich, and the version of the script where one of those exchanges is dramatized through a sharper choice rather than repeated explanation would keep the momentum even tighter. One lever would be to let the emotional turn arrive first, then let the science language land as consequence.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The creature rules can be stated even faster.",
+        "detail": "The script already has a strong rule-set around sound, cold, heat, scent, oxygen, and minerals; a next pass could consolidate a few of the explanatory exchanges so the audience learns the same information with fewer repetitions. That would protect the propulsion without changing the premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final act is built for a clean effects plan.",
+        "detail": "The snowstorm exterior, helicopter arrival, creature transport, and multiple death transformations all want to be designed together so the production can reuse weather, lighting, and creature assets efficiently. The version of the schedule where those beats are clustered would protect both budget and continuity.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting cast is compact and usable.",
+        "detail": "The script’s main ensemble is small enough to keep casting focused, but the roles of Tank, Dash, Haskell, Cochrane, Hauser, and Drummond each need a distinct voice to keep the pressure-cooker dynamic alive. That makes packaging straightforward for a buyer who wants recognizable character types without a sprawling roster.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66.7,
+  "tier": "Optionable",
+  "inputTokens": 37851,
+  "outputTokens": 4254,
+  "cost": 0.047531250000000004,
+  "declaredFormat": "Feature film"
+}

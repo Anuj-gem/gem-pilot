@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:12:15.381Z",
+  "submission_id": "2cc09d59-550e-4f02-be6d-aacfddcb33d1",
+  "eval_id": "59ef9b3c-f348-43e3-8306-7e94a08f576d",
+  "title": "A Good Bet",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Jim Foster",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Vegas gambler"
+    },
+    {
+      "name": "Mary Waters",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s · single foster mother"
+    },
+    {
+      "name": "Lily",
+      "role_type": "Lead",
+      "demographics": "Female · 10 years old · child performer"
+    },
+    {
+      "name": "Jack",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Cassandra",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Paul Trivialli",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Italian mobster"
+    },
+    {
+      "name": "Paulie Jr.",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Bill Williams",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · corporate gambler"
+    },
+    {
+      "name": "Manny Costello",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · large, imposing"
+    },
+    {
+      "name": "Eddie Tucci",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Ben",
+      "role_type": "Supporting",
+      "demographics": "Male · child · Black"
+    },
+    {
+      "name": "Billy",
+      "role_type": "Supporting",
+      "demographics": "Male · 10 years old"
+    }
+  ],
+  "positioning_hook": "A Vegas gambler on a losing streak is guided by a ghostly little girl into a secret mission that turns his luck, his love life, and his life on the line.",
+  "cost_usd": 0.05240775,
+  "input_tokens": 38905,
+  "output_tokens": 5162,
+  "status": "wrote:leads_ok"
+}

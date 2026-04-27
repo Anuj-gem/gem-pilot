@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Satire",
+      "genre_tags": [
+        "Comedy",
+        "Showbiz"
+      ],
+      "tone": "Heightened, absurd, irreverent, tabloid-fueled"
+    },
+    "positioning_hook": "A fading movie star retreats to small-town Iowa for reinvention, then a manufactured gay scandal, a fan-club romance, and a cult church turn his comeback into public chaos.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear commercial lane: celebrity scandal, tabloid culture, and a romance engine that can play broadly. The audience promise is easy to grasp, though the satire is specific enough that it will likely travel best with viewers who like showbiz comedy and heightened farce."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early: Bart Connors is a star who has fallen off the list, goes to Iowa, falls for Linda, and gets swallowed by a publicity machine. The script keeps the engine legible through the fan club, Selfology, and the staged scandal, even as it keeps escalating the absurdity."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Bart has a playable contradiction — vain, needy, charming, and oddly sincere — and Linda gives the story a grounded counterweight. The supporting players are vivid in bursts, but most of them function around Bart rather than opening fully independent character lanes."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific comic universe: celebrity self-mythology, fan worship, church branding, and media manipulation all colliding in one story. The choice to push the scandal into a fake-out sexuality narrative and then into a literal Bart shrine gives it a distinct comic signature."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through set pieces — the fan club, the engagement, the talk-show blowups, the scandal reveal, the breakup, the reset — and each turn creates a new public consequence. The momentum is strongest when Bart is reacting to the machine around him; the middle stretches more on repetition of outrage and explanation than on fresh escalation."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A washed-up star being managed by his mother, seduced by a fan club president, and destroyed by a publicity lie feels both specific and immediately legible. The Bart room, the Selfology church, and the tabloid machinery give the premise a memorable shape that feels invented rather than borrowed."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The entertainment-world ecosystem has texture: agents, publicists, talk shows, paparazzi, fan clubs, and a pseudo-spiritual organization all have a place in the machine. The world is vivid in its surfaces, though it is built more as a satirical container for Bart’s crisis than as a deeply layered social system."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a clear comic voice: deadpan celebrity absurdism with bursts of vulgarity and public humiliation. The tone is consistent in its appetite for escalation, and the repeated media cutaways give it a recognizable tabloid-satire rhythm."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "Under the farce, there is a story about identity, performance, and the difference between public image and private desire. The script gestures toward that depth through Bart’s need to be seen as himself, but the surface comedy remains the dominant mode."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Bart/Linda, Bart/Abragail, Bart/Tony, and Bart/Lee all generate usable friction, and the ensemble has enough moving parts to keep scenes alive. Still, the story is fundamentally Bart-centered, with most relationships serving his public unraveling rather than creating equal story weight."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead male star role in his 30s-40s",
+          "Female romantic lead in her 20s-30s",
+          "Older female agent/mother role",
+          "Ensemble of middle-aged fan-club women",
+          "One child/baby required in the final act",
+          "Supporting roles with specific comic types and a few identity-coded parts"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Los Angeles/Hollywood office and studio spaces",
+          "Iowa farm property and small-town interiors",
+          "Seattle Space Needle exterior and observation deck",
+          "Philadelphia loft and indie-film spaces",
+          "Talk-show set, premiere carpet, hotel lobby, police station, hospital"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly editorial and broadcast-style inserts, with no major effects beyond crowd/media montage handling and a few stylized transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "Motorcycle riding, a mechanical bull sequence, a falling ring gag, a thrown cell phone gag, and a red-carpet water-cannon beat.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Triumph motorcycle"
+        },
+        {
+          "type": "brand",
+          "detail": "Prius"
+        },
+        {
+          "type": "brand",
+          "detail": "Bently/Bentley"
+        },
+        {
+          "type": "brand",
+          "detail": "This Day show, Ophelia show, and other in-world TV/media brands"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Mid-budget theatrical comedy or premium-streaming satire",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical potential; the engine is a celebrity-image collapse that escalates through public appearances, media blowback, and relationship fallout."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary locations keep the budget in check, but the script spans Hollywood offices, Iowa, Seattle, Philadelphia, and multiple public-event setups."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project needs a recognizable lead for Bart and a strong supporting ensemble, plus a baby and a large fan-club group in several scenes."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through about twenty distinct locations across multiple cities, including a Space Needle sequence and several media/public-event environments."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes explicit sexual material, homophobic language used in-story, profanity, and tabloid scandal content that narrows platform options."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several real-world brand names appear on the page, and the media-show ecosystem may invite clearance attention if kept as-is."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Bart is a showcase vanity role.",
+          "what_it_means": "The lead gives a star actor a full comic engine: vanity, insecurity, charm, public humiliation, and a late-blooming moral center all live in the same part. That is exactly the kind of role mid-career comedic leads and prestige-comedy actors chase when they want to remind buyers they can carry a movie.",
+          "evidence": "Bart’s mirror mantra, his “it list” panic, the Ophelia couch disaster, the This Day blowup, and the final turn toward Linda and fatherhood.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The satire has a clean target.",
+          "what_it_means": "This is built for buyers who want a celebrity-culture comedy with a sharp point of view about image management, tabloid storytelling, and manufactured identity. It fits the lane for producers looking to package a star-driven satire that can play to adult audiences without needing effects or franchise machinery.",
+          "evidence": "The repeated talk-show segments, Hyatt’s commentary, the publicist damage control, and the staged scandal around Bart’s sexuality.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Bart room is a memorable comic invention.",
+          "what_it_means": "The shrine-like room plastered with Bart’s face is the kind of visual gag that sells a movie in one image and gives marketing a poster-ready absurdity. It also signals to actors and directors that the script understands how to turn celebrity worship into a physical, playable joke.",
+          "evidence": "Linda opens the room and finds thousands of Bart photos covering every wall.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The fan-club world gives the story a built-in audience engine.",
+          "what_it_means": "The Iowa fan club, the women who defend Bart at the funeral, and the public adoration around his appearances create a ready-made social ecosystem around the lead. That gives the project a repeatable source of scenes, reactions, and escalating public pressure that buyers can understand instantly.",
+          "evidence": "The airport reception party, the fan-club auditorium event, and the women shielding Bart from Welles.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Abragail is a strong comic support role.",
+          "what_it_means": "The mother-agent hybrid gives the project a second performance slot with real juice: maternal affection, industry savvy, and self-destructive enabling all in one character. That kind of part attracts veteran comedic actresses who can play warmth and control in the same breath.",
+          "evidence": "Abragail touching Bart’s face with velvet gloves, managing his career fallout, and drinking through the crisis.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The media machine is story-generating.",
+          "what_it_means": "The cutaway TV hosts, gossip segments, and public-relations fallout create a flexible satirical framework that can be expanded or compressed depending on budget and cast. Buyers like this because it gives the film a modern, recognizable pressure system without requiring a huge physical world.",
+          "evidence": "Garrison Hyatt’s recurring segments, Pat Mauer’s interview ambush, and the news coverage of the scandal and red-carpet incidents.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a star vehicle with a real comic identity: a fading celebrity, a fan-club romance, and a fake scandal spiral into a satire about image, desire, and the machinery that sells both. The script gives producers a lead role actors will want, a visual gag that sticks, and a world of public humiliation that can be packaged cleanly for adult comedy buyers."
+    },
+    "lead_characters": [
+      {
+        "name": "Bart Connors",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · movie-star physique / charismatic leading-man type",
+        "hook": "Bart is a self-mythologizing movie star who has built his identity on being adored, then discovers that adoration is conditional. He’s vain without being empty, ridiculous without being disposable, and the script keeps finding ways to expose the gap between his public swagger and his private need to be loved for real.",
+        "why_actor_wants_this": "This is the showcase territory of Jim Carrey in The Truman Show — a performance that can pivot from broad comic self-awareness to genuine emotional vulnerability without losing the audience. Actors who want a role that lets them play celebrity, humiliation, romance, and a late-act moral reset will chase this hard."
+      },
+      {
+        "name": "Linda Reynolds",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s to early 30s · Midwestern, wholesome, emotionally open",
+        "hook": "Linda is the story’s grounding force: sincere, practical, and emotionally available, but not naive in a simple way. She starts as a fan and becomes the person who can actually see through Bart’s performance, which gives her a quiet authority that keeps the movie from floating away into pure farce.",
+        "why_actor_wants_this": "This is the kind of role Julia Roberts had in Erin Brockovich in terms of audience access — a woman whose warmth is the engine, but whose clarity gives her authority. Actresses looking for a grounded romantic lead with moral intelligence and a strong final-act pivot will see real value here."
+      },
+      {
+        "name": "Abragail Connors",
+        "role_type": "Lead",
+        "demographics": "Female · 50s-60s · flamboyant, polished, industry-savvy",
+        "hook": "Abragail is Bart’s mother, agent, and emotional enabler, which makes her both protector and accomplice. She lives in the overlap between maternal devotion and career management, and that contradiction gives her a deliciously playable mix of vanity, panic, and loyalty.",
+        "why_actor_wants_this": "This is the showcase space of Frances McDormand in Almost Famous — a woman who can be funny, wounded, and strategically sharp in the same scene. Veteran actresses who want a role with authority, comic timing, and emotional ambivalence will be drawn to her."
+      },
+      {
+        "name": "Don Johnson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · polished, corporate, publicist/manager type",
+        "hook": "Don is the business voice in the room, the guy who can translate panic into strategy and still sound like he’s selling a product. He’s not just comic relief; he’s the embodiment of the industry’s instinct to manage, spin, and contain whatever Bart is becoming.",
+        "why_actor_wants_this": "This is the kind of role John Turturro had in Quiz Show — a smart, fast-talking operator whose authority comes from knowing how the machine works. Character actors who like playing pressure with wit will have fun here."
+      },
+      {
+        "name": "Tim Glassen",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · publicist, neat, controlled, slightly frazzled",
+        "hook": "Tim is the polished intermediary who keeps trying to make chaos look manageable. He’s the face of damage control, and the comedy comes from watching a man built for image management get dragged into Bart’s increasingly unmanageable reality.",
+        "why_actor_wants_this": "This is the kind of role David Paymer often owns — a professional fixer whose competence is constantly being tested by the absurdity around him. Actors who excel at dry panic and exasperated intelligence will see a clean lane."
+      },
+      {
+        "name": "Elder Lee",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · serene, unsettling, spiritual authority figure",
+        "hook": "Lee is calm, polished, and quietly predatory, which makes him one of the script’s sharpest satirical figures. He speaks in the language of enlightenment while clearly understanding leverage, image, and control, giving the movie a spiritual antagonist with real comic bite.",
+        "why_actor_wants_this": "This is the kind of role Paul Giamatti had in Sideways when he could weaponize intelligence and restraint — a character whose stillness is doing the work. Actors who enjoy playing authority with a hidden agenda will be attracted to it."
+      },
+      {
+        "name": "Tony Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s-30s · rural, protective, physically confident",
+        "hook": "Tony is Linda’s brother and the story’s local truth-teller, suspicious of Bart from the start. He gives the film a grounded masculine counterpoint to Bart’s celebrity performance, and his bluntness keeps the small-town world from becoming decorative.",
+        "why_actor_wants_this": "This is the kind of role Michael Shannon has made memorable in smaller-scale dramas — a man whose intensity comes from conviction, not volume. Actors who can play protective anger with real emotional stakes will gravitate to it."
+      },
+      {
+        "name": "Zaphnie",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · pale, ethereal, cult-adjacent",
+        "hook": "Zaphnie is the eerie, soft-spoken emissary of Selfology, and she gives the movie a surreal edge whenever she enters. She’s both comic and unnerving, a believer who can sound nurturing while steering people deeper into the church’s orbit.",
+        "why_actor_wants_this": "This is the kind of role Tilda Swinton often turns into a scene magnet — a character whose stillness and strangeness create instant screen gravity. Actors with a taste for off-center, high-concept supporting parts will want a crack at her."
+      },
+      {
+        "name": "Jimmy Wood",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · indie filmmaker, eccentric, scrappy",
+        "hook": "Jimmy is the scrappy indie operator who treats Bart like both a cash cow and a creative trophy. He’s funny because he’s sincere about art and shameless about hustle, which makes him a perfect satirical mirror to the Hollywood machine Bart is trying to escape.",
+        "why_actor_wants_this": "This is the kind of role Steve Buscemi has turned into a calling card — a hustler with enough sincerity to make the absurdity land. Character actors who can play enthusiasm, desperation, and opportunism at once will chase it."
+      },
+      {
+        "name": "Joe Trueblood",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Native American",
+        "hook": "Joe is the producer-partner in Jimmy’s indie world, observant and practical, with a dry presence that keeps the loft scenes from becoming pure chaos. He’s one of the few people around Bart who feels like he’s actually working for a living.",
+        "why_actor_wants_this": "This is the kind of grounded supporting part that gives an actor the texture of a real working-world presence, like Graham Greene in a smaller ensemble comedy. Actors who can play understatement and authority without speeches will be interested."
+      },
+      {
+        "name": "Eleanor Park",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · blonde, indie-screenwriter type",
+        "hook": "Ellie is the sharp, watchful half of the indie crew, taking in Bart’s celebrity weirdness with a mix of curiosity and skepticism. She gives the Philadelphia section a lived-in creative texture and helps make the indie world feel like a real ecosystem.",
+        "why_actor_wants_this": "This is the kind of role Greta Gerwig made feel effortless in early indie work — smart, observant, and lightly amused by the absurdity around her. Actresses who can play intelligence without over-explaining will like it."
+      },
+      {
+        "name": "Pat Mauer",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · morning-show host, former sportscaster",
+        "hook": "Pat is the smiling ambush artist, the kind of interviewer who weaponizes friendliness. He’s a useful satirical tool because he represents the media’s ability to turn Bart’s private life into public content without ever seeming overtly cruel.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do polished passive aggression, like a lighter version of what William H. Macy can do in ensemble satire. Performers who enjoy playing charm as a blade will be drawn to it."
+      },
+      {
+        "name": "Garrison Hyatt",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · gossip reporter, slick, performative",
+        "hook": "Hyatt is the movie’s recurring public narrator, the guy who turns every Bart misstep into a punchline and a headline. He’s not just a commentator; he’s part of the machinery that manufactures the scandal and keeps it alive.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a recurring comic persona, like a tabloid-era version of a late-night satirist. Actors who can sell smugness with rhythm and precision will have a field day."
+      },
+      {
+        "name": "Jenny Agutter",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s-30s · working mother, capable, fast-moving",
+        "hook": "Jenny is the practical family operator who steps into the business vacuum when the adults implode. She’s efficient, modern, and lightly amused by the chaos, which makes her a useful stabilizer in the final stretch.",
+        "why_actor_wants_this": "This is the kind of role that rewards crisp, no-nonsense energy in the vein of Allison Janney’s best supporting work — a woman who can handle a room while holding a baby. Actors who like competence with comic timing will respond to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn celebrity humiliation into a clean, playable satire.",
+        "fit_profile": "Mid-career indie directors with 2-4 features, or TV comedy directors moving into features, who already know how to stage performance-driven scenes and let awkwardness breathe. This material rewards someone who likes media satire, public-image collapse, and actors playing against their own star persona.",
+        "detail": "The movie gives a director a chance to choreograph public embarrassment, tabloid cutaways, and intimate character beats without needing heavy spectacle. It will appeal to directors who like tonal control, ensemble blocking, and a satirical frame that can be shot economically."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Adult comedy / prestige satire / streamer-friendly celebrity farce",
+        "detail": "The project is built around one star-driven lead and a contained contemporary production design, so it can be packaged off a recognizable comic actor rather than a large ensemble of names. The celebrity-satire lane has clear streamer and limited-theatrical value because the premise is instantly legible and the tabloid angle travels well."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated outrage beats.",
+        "detail": "The talk-show ambushes, public blowups, and media reaction scenes all work as a satirical engine, and a next pass could look for one or two places where Bart’s private choice changes the scene before the public fallout arrives. That would keep the escalation feeling more inevitable and protect the momentum between the Ophelia appearance, the This Day interview, and the red-carpet scandal.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The scandal reveal is the story’s biggest swing.",
+        "detail": "The fake gay-photo plot is the central engine of the back half, so the version of the script where the setup is seeded a little earlier would make the turn hit even harder. A small amount of earlier shadowing around the photo, Hyatt, or Lee’s agenda would give the reveal more charge without changing the premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is wide for the lane.",
+        "detail": "The story jumps from Hollywood to Iowa to Seattle to Philadelphia, plus multiple offices, sets, and public venues. If the production target wants to stay in a tighter budget band, one lever would be to collapse a couple of the public-facing spaces into fewer repeatable locations while preserving the celebrity-versus-private-life contrast.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The media-show material is a clear clearance pass.",
+        "detail": "The script uses named show formats, brand names, and a lot of broadcast-style inserts, which gives it texture but also means the final package should be checked carefully for rights and naming choices. A buyer-friendly version could keep the satire while simplifying some of the on-air labels and product references.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Bart’s final turn lands cleanly.",
+        "detail": "The ending where he rejects the old image game, chooses Linda, and steps toward fatherhood gives the movie a satisfying emotional landing. That resolution is already working; the next pass should protect it by keeping the final stretch focused on choice rather than adding new complications after the reveal.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63,
+  "tier": "Optionable",
+  "inputTokens": 41778,
+  "outputTokens": 5557,
+  "cost": 0.05634,
+  "declaredFormat": "Feature film"
+}

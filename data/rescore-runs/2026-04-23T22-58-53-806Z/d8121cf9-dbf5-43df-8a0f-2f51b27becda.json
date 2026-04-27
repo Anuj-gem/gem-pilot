@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:21:16.576Z",
+  "submission_id": "d8121cf9-dbf5-43df-8a0f-2f51b27becda",
+  "eval_id": "2c3ddfa0-16e9-47f1-904f-e623d6fef788",
+  "title": "Meet Cute, Meet Deadly   Draft, 10.21",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Jericho Hardcastle",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s · handsome actor type"
+    },
+    {
+      "name": "Ben Sanchez",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s · Latino"
+    },
+    {
+      "name": "Detective Alan James",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s"
+    },
+    {
+      "name": "Detective Denise Slater",
+      "role_type": "Lead",
+      "demographics": "Female · mid-30s"
+    },
+    {
+      "name": "Nikki Patel",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Greta \"Cinnamon\" Tippet",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s · redhead"
+    },
+    {
+      "name": "Erika Smith",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Courtney Willis",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · African-American"
+    },
+    {
+      "name": "Logan Smith",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s"
+    },
+    {
+      "name": "Valerie Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Zoe Walsh",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Taylor Werner",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Yancy Rogers",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s"
+    }
+  ],
+  "positioning_hook": "A handsome struggling actor becomes the prime suspect when every woman he dates turns up murdered, forcing him and his writer roommate to hunt the killer before Hollywood does.",
+  "cost_usd": 0.048840749999999995,
+  "input_tokens": 31839,
+  "output_tokens": 5547,
+  "status": "wrote:leads_ok"
+}

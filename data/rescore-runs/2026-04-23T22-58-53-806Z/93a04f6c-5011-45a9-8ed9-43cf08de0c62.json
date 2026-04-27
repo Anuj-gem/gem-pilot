@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:25:45.517Z",
+  "submission_id": "93a04f6c-5011-45a9-8ed9-43cf08de0c62",
+  "eval_id": "90718e19-890b-4bac-ae51-11fe7a14d089",
+  "title": "PEPPERMINT TWIST CHRONICLES",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Joey Dee",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 80s · white · musician/club owner"
+    },
+    {
+      "name": "Joanie Dee",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 70s · white · wife, mother, later ex-wife"
+    },
+    {
+      "name": "Jolly Joyce",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white · agent/manager"
+    },
+    {
+      "name": "Don Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · white · club owner/manager"
+    },
+    {
+      "name": "Morris Levy",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white · record executive with mob ties"
+    },
+    {
+      "name": "Henry Glover",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Black · producer/songwriter"
+    },
+    {
+      "name": "Willie Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black · drummer"
+    },
+    {
+      "name": "Carl",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black · keyboard player"
+    },
+    {
+      "name": "Maurice James / Jimi Hendrix",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black · guitarist"
+    },
+    {
+      "name": "Joan Wuthrick / Joanie",
+      "role_type": "Supporting",
+      "demographics": "Female · teens to 20s in flashback · white · Joey’s early love interest / wife"
+    }
+  ],
+  "positioning_hook": "Joey Dee rides the Peppermint Lounge from local club to national phenomenon, but the twist-fueled rise pulls him through mob pressure, racial politics, and a marriage he keeps trying to save.",
+  "cost_usd": 0.05885625,
+  "input_tokens": 46837,
+  "output_tokens": 5273,
+  "status": "wrote:leads_ok"
+}

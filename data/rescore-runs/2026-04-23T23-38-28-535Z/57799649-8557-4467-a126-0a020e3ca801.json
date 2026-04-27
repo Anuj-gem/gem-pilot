@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-23T23:41:11.258Z",
+  "submission_id": "57799649-8557-4467-a126-0a020e3ca801",
+  "eval_id": "1968b769-d12a-4bee-9dc9-3935d96693d2",
+  "title": "Of God's and Dolls",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W / Eztli",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · mixed-race Black · ageless demi-god"
+    },
+    {
+      "name": "Ying",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Chinese"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Sephardic-appearing · ageless"
+    },
+    {
+      "name": "Pope Pius XII",
+      "role_type": "Lead",
+      "demographics": "Male · 60s-70s · European"
+    },
+    {
+      "name": "Inti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless deity · Incan Sun God"
+    },
+    {
+      "name": "Pachacuti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless deity / ruler · Incan Sapa Inca"
+    }
+  ],
+  "positioning_hook": "A globe-trotting Black demi-god smuggler is pulled from wartime Spain to the Vatican and sent to Bolivia to recover stolen Christ dolls before Christmas collapses.",
+  "cost_usd": 0.033895499999999995,
+  "input_tokens": 18938,
+  "output_tokens": 4376,
+  "status": "wrote:leads_ok"
+}

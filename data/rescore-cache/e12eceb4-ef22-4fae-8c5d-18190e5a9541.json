@@ -1,0 +1,562 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Anthology drama",
+      "genre_tags": [
+        "relationship drama",
+        "moral cautionary tale"
+      ],
+      "tone": "didactic, melodramatic, soap-operatic"
+    },
+    "positioning_hook": "An anthology of cautionary relationship stories follows women and men whose marriages, affairs, and revenge schemes turn desire into public humiliation, divorce, and hard-earned regret.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The emotional promise is easy to grasp — romance, betrayal, marriage, revenge — but the anthology structure and sermon-like framing narrow the audience to viewers who already want moral melodrama. The material has clear soap appeal, yet it does not yet present a broad, contemporary hook that would pull in a wide streaming audience on premise alone."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise is immediately legible: each segment is a relationship cautionary tale built around money, sex, trust, and infidelity. The clarity comes from the repeated supertitles and direct confessional scenes, though the overall series engine is more a sequence of morality vignettes than a single, sharply escalating pilot hook."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 4,
+        "reasoning": "The script is packed with named characters, but most function as carriers of a lesson rather than people with durable inner contradiction. Kenya, Kate, Ruth, Lucia, and the others each have a clear situation, yet the series would need deeper personal specificity and recurring relational tension to create long-run attachment."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The anthology-of-infidelity format is familiar, and the writing leans into direct moralizing rather than a fresh formal device. The cross-cultural settings and repeated sermon structure give it a distinct flavor, but the execution stays close to cautionary melodrama conventions."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "Individual segments move quickly through setup, betrayal, and consequence, but the momentum is episodic rather than cumulative. Because each story resolves in a self-contained way, the pilot does not yet build a strong serialized engine that compels the next episode."
+      },
+      "resonant_originality": {
+        "score": 3,
+        "reasoning": "The script has a recognizable niche voice, but the underlying pattern — temptation, infidelity, punishment, regret — is highly familiar. The repeated sermon-and-confession structure gives it a signature, yet the emotional turns are mostly expected rather than surprising and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "There is some texture in the international settings — Munich, London, Paris, Cameroon, Seoul, Pretoria — and in the church, school, office, and domestic spaces. Still, the world mostly serves as a backdrop for moral examples rather than a layered ecosystem with its own rules and pressures."
+      },
+      "tonal_specificity": {
+        "score": 5,
+        "reasoning": "The tone is consistent in its heightened, preachy melodrama, and that consistency is a recognizable identity. At the same time, the script does not yet vary that tone in a way that creates a sharper signature beyond earnest cautionary soap."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "The surface is very much what you get: a series of lessons about sex, money, and fidelity. There are hints of deeper social material — gender pressure, class anxiety, religious judgment, diaspora identity — but those layers are not yet dramatized in a way that suggests hidden reserves."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 4,
+        "reasoning": "There are many relationships on the page, but they are mostly isolated pairings rather than an interlocking ensemble system. The Listener, friends, spouses, parents, and lovers create scene-to-scene variety, yet the series does not yet generate much combinatorial energy across the cast."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 40,
+        "leads": 14,
+        "series_regulars": 26,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Large ensemble with many one-scene and short-arc roles",
+          "Multiple age-specific characters, including children and teens",
+          "International casting texture across African and European settings",
+          "Several roles are defined by relationship status, attractiveness, or social class"
+        ]
+      },
+      "locations": {
+        "distinct_count": 30,
+        "interior_exterior_ratio": "roughly 2:1 interior to exterior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Multiple international settings including Germany, London, Paris, Cameroon, Seoul, Pretoria, and Phoenix",
+          "Churches, schools, homes, offices, restaurants, clubs, courts, airports, and streets",
+          "No major built period sets indicated, but broad travel footprint"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No VFX requirements are indicated on the page.",
+        "stunts_level": "minor",
+        "sfx_needs": "No practical effects beyond standard production dressing and crowd scenes.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Julius Berger, Nokia, John Holt Limited, Stanford Pharmaceutical Center, Cameroon Airlines, and Carlton University are named in dialogue or scene description."
+        },
+        {
+          "type": "brand",
+          "detail": "Munich Nite club, A and B Restaurant, Exquisite London Restaurant, and other named venues appear as specific business identifiers."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming anthology drama or faith-adjacent serialized melodrama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Episode engine is a rotating set of cautionary relationship stories built around confession, betrayal, and consequence."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The show is not VFX-heavy, but the large cast and multi-country settings push it above a contained domestic drama."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The pilot introduces a large number of named roles, including children, teens, and multiple lead couples across separate storylines."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script spans many distinct locations and several international settings, including Germany, London, Paris, Cameroon, Seoul, Pretoria, and Phoenix."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Sexual content, infidelity, prostitution, cocaine use, attempted suicide, and marital conflict shape the material."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several real-world brands, institutions, and named businesses are referenced directly, which would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The anthology engine is instantly legible.",
+          "what_it_means": "A producer gets a repeatable series format built around self-contained relationship cautionary tales, which makes the show easy to market and easy to program in modular episodes. Faith-adjacent buyers, soap audiences, and streamers looking for low-concept, high-recognition drama would all understand the lane immediately.",
+          "evidence": "The script repeatedly opens with supertitles like “Blindfolding Effect of Money,” “What a deception!,” and “Do Wealthy Women Trust Men?” before moving into a new relationship story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The material has built-in sermon energy.",
+          "what_it_means": "The church-preaching frame gives the series a clear moral voice and a ready-made audience promise: each episode is both drama and cautionary lesson. That makes it attractive to faith-oriented buyers, African diaspora audiences, and platforms seeking socially conservative relationship drama with a recognizable point of view.",
+          "evidence": "Reverend Thomas Townsend’s sermon on the “blindfolding effect of money” directly introduces the Lizzy/Simon story, and several scenes end with explicit moral commentary.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The international footprint broadens the canvas.",
+          "what_it_means": "The story world moves through Germany, London, Paris, Cameroon, Seoul, Pretoria, and Phoenix, which gives the series exportable texture and a sense of scale beyond a single domestic setting. That kind of geographic spread can help a buyer position the show as globally flavored melodrama rather than a local soap.",
+          "evidence": "Kenya’s story moves from Munich to London; Rose’s story moves through Paris and Cameroon; Matilda’s story is set in Seoul; Monalisa’s story is set in Pretoria.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The show is built for recurring moral reversals.",
+          "what_it_means": "Each vignette turns on a recognizable human pressure — lust, money, status, revenge, insecurity — which gives the series a dependable episode-to-episode engine. That structure is attractive to buyers who want a format that can keep generating new stories without needing a single mythology-heavy premise.",
+          "evidence": "Kenya, Lizzy, Kate, Ruth, Lucia, Cindy, and others each enter a relationship, hit a betrayal or temptation, and end in regret or consequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The cast offers many playable showcase roles.",
+          "what_it_means": "The script creates a large bench of lead-sized parts for actors who want emotionally heightened material, especially in scenes of confession, confrontation, and public humiliation. That gives the project packaging flexibility because multiple roles can be cast with strong regional or diaspora talent rather than relying on one star.",
+          "evidence": "Kenya’s bedroom confession, Lizzy’s office disclosure, Kate’s revenge vow, Ruth’s church-to-street arc, and Lucia’s marital blowup all function as actor-forward scenes.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script’s commercial value is its format: a repeatable anthology of relationship cautionary tales with a clear moral voice, broad diaspora texture, and a built-in audience for melodrama. The international settings, sermon frame, and parade of playable lead roles give a producer multiple ways to package it — as faith-adjacent drama, soap, or streaming anthology."
+    },
+    "lead_characters": [
+      {
+        "name": "Kenya",
+        "role_type": "Lead",
+        "demographics": "Female · adult · married woman",
+        "hook": "Kenya is a woman trapped between shame, appetite, and retaliation, speaking in long confessional bursts that make her feel both wounded and dangerous. She carries the energy of someone who wants absolution but keeps choosing the next temptation, which gives the role a volatile, emotionally exposed center.",
+        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences — a character whose pain, pride, and self-justification all live in the same breath. An actress who wants a monologue-driven role with confession, rage, and moral collapse would chase this, especially in a prestige melodrama lane."
+      },
+      {
+        "name": "The Listener",
+        "role_type": "Lead",
+        "demographics": "Male · adult",
+        "hook": "The Listener is a framing device with a human face: calm, reactive, and positioned as the person Kenya can confess to without being interrupted. He functions like a moral witness, but the script also gives him a slightly comic, exasperated presence that keeps the scenes from becoming purely static.",
+        "why_actor_wants_this": "This is the kind of scene-part that recalls the straight-man energy of Jeffrey Wright in dialogue-heavy drama, where listening becomes performance and reaction carries the scene. Character actors who can play restraint, judgment, and dry humor would see a clean showcase here."
+      },
+      {
+        "name": "Mike",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · Kenya’s younger brother",
+        "hook": "Mike is a blunt family voice who cuts through Kenya’s confession with a crude, comic line that instantly defines the household dynamic. He reads as the kind of supporting character who can keep recurring as a pressure valve and a witness to the family’s moral chaos.",
+        "why_actor_wants_this": "This is the sort of supporting role that gives an actor the sharp, scene-stealing utility of a sitcom brother or neighborhood commentator. Actors who specialize in comic interruption and grounded reaction would have fun with the part."
+      },
+      {
+        "name": "John",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · Kenya’s younger brother",
+        "hook": "John is another family observer, functioning as part of the chorus around Kenya’s confession and helping create the sense of a household with its own social rules. He is less defined than Mike, but he still contributes to the lived-in family texture around the central confession.",
+        "why_actor_wants_this": "This is the kind of supporting role that benefits from the ensemble texture of shows like The Wire, where even a small family member can become memorable through rhythm and reaction. A younger actor looking for a recurring foothold in an ensemble would see utility here."
+      },
+      {
+        "name": "Oscar",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · Kenya’s younger brother",
+        "hook": "Oscar is present as part of the family cluster but is not yet individualized beyond the household frame. He helps establish that Kenya’s story sits inside a larger family unit rather than a solitary confessional space.",
+        "why_actor_wants_this": "This is a functional ensemble slot in the tradition of family-drama siblings who can be expanded over time. An actor looking for a recurring family-world role would understand the opportunity if the series continues."
+      },
+      {
+        "name": "Lizzy",
+        "role_type": "Lead",
+        "demographics": "Female · adult · Kenya’s friend",
+        "hook": "Lizzy is a worldly, sexually frank friend whose own history with money, freedom, and bad choices makes her both confidante and cautionary mirror. She has the kind of social confidence that can carry scenes, but the script also lets her reveal regret, which gives her a useful double edge.",
+        "why_actor_wants_this": "This is the showcase space of Jurnee Smollett in Underground — a woman who can project control while the audience feels the damage underneath. Actors who want a role that can play seduction, confession, and social judgment in one package will chase this."
+      },
+      {
+        "name": "Simon",
+        "role_type": "Supporting",
+        "demographics": "Male · adult",
+        "hook": "Simon is the listener-witness in Lizzy’s story, a practical man who receives the confession and keeps the scene moving. He functions as a grounded counterweight to Lizzy’s emotional spill, giving the episode a conversational anchor.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that recalls the steady, observant energy of a character in In Treatment. Character actors who excel at calm reaction and moral pressure would fit the slot."
+      },
+      {
+        "name": "Kate",
+        "role_type": "Lead",
+        "demographics": "Female · 18-20s",
+        "hook": "Kate is ambitious, transactional, and openly strategic about using beauty and marriage as a ladder out of poverty. The script gives her a hard-edged confidence that later flips into opportunism, making her a sharp portrait of aspiration curdling into calculation.",
+        "why_actor_wants_this": "This is the kind of role that gave Zendaya in Euphoria a chance to play charm, self-protection, and self-destruction in the same frame. A young actress looking for a morally complicated lead with strong scene turns would be drawn to it."
+      },
+      {
+        "name": "Sarah",
+        "role_type": "Supporting",
+        "demographics": "Female · 18-20s",
+        "hook": "Sarah is the friend who voices the ethical counterargument, giving Kate’s worldview a direct challenge. She is less elaborate than Kate, but she helps define the moral temperature of the opening by refusing to normalize opportunism.",
+        "why_actor_wants_this": "This is a clean supporting role in the tradition of the best friend who gets the audience’s conscience into the room. Young actors who want a sharp, readable scene partner would find it useful."
+      },
+      {
+        "name": "Kyle",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Kyle is the eager young suitor who tries to charm Kate and gets dismissed with contempt. He functions as a quick social contrast to Kate’s calculation and helps establish the campus as a place where desire is already in circulation.",
+        "why_actor_wants_this": "This is the kind of youthful romantic-support role that can play as earnest, comic, or slightly pathetic depending on casting. Emerging actors often chase these parts because they get a clear entrance and a memorable exchange."
+      },
+      {
+        "name": "Priscilla",
+        "role_type": "Supporting",
+        "demographics": "Female · adult · Kate’s mother",
+        "hook": "Priscilla is the practical mother who moves between domestic support and quiet approval of Kate’s money-minded instincts. She gives the family scenes a grounded, slightly ironic texture, especially in the exchange about gifts from suitors.",
+        "why_actor_wants_this": "This is the sort of maternal role that can carry the dry wit and lived-in authority of a character in a Tyler Perry family drama. Experienced actresses who can play warmth with a side of side-eye would fit well."
+      },
+      {
+        "name": "Daniel",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · Kate’s father",
+        "hook": "Daniel is the emotional father figure at the airport, the one who grounds Kate’s departure in family feeling before the story shifts back to ambition and betrayal. He is not complex on the page, but he gives the family unit a recognizable center of gravity.",
+        "why_actor_wants_this": "This is a classic father role in the emotional register of a family melodrama, where a single goodbye scene can carry the weight. Character actors who specialize in paternal authority and tenderness would understand the slot."
+      },
+      {
+        "name": "Nathan",
+        "role_type": "Lead",
+        "demographics": "Male · 200-level student · aeronautic engineering student",
+        "hook": "Nathan begins as the polished, romantic campus catch and ends as the betrayed husband in a marriage built on status and performance. He has the clean arc of a man who believes in sincerity until the relationship reveals its transactional core.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the romantic lead turn and the wounded husband turn in one package, similar to the emotional swing of a performance in Normal People. Young leading men who want to play idealism collapsing into humiliation would chase it."
+      },
+      {
+        "name": "Andre",
+        "role_type": "Lead",
+        "demographics": "Male · adult · husband",
+        "hook": "Andre is the well-meaning husband whose inadequacy in the marriage becomes the central private crisis of Kenya’s later life. He reads as sincere, affectionate, and ultimately exposed, which gives the role a vulnerable, quietly tragic shape.",
+        "why_actor_wants_this": "This is the kind of part that lets an actor do the emotional vulnerability of a role like Paul Mescal in Aftersun, but in adult-marriage terrain. Actors who can play tenderness, embarrassment, and marital disappointment would be interested."
+      },
+      {
+        "name": "Mr. Gary Johnson",
+        "role_type": "Lead",
+        "demographics": "Male · adult · teacher",
+        "hook": "Mr. Gary Johnson is a teacher whose classroom becomes a moral intervention when a child’s reading habits reveal a pornographic fixation. He is part educator, part disciplinarian, and part social reformer, which gives him a strong institutional presence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the authority and moral pressure of a teacher in Abbott Elementary crossed with a social-drama sermon. Character actors who like playing institutional figures with a conscience would be drawn to it."
+      },
+      {
+        "name": "Mark Anthony",
+        "role_type": "Lead",
+        "demographics": "Male · child to adult · schoolboy turned businessman",
+        "hook": "Mark Anthony is introduced as a child whose reading life has been overtaken by pornography and later reappears as a rehabilitated adult. The role carries a transformation arc from behavioral concern to social redemption, which makes him one of the few characters with a visible before-and-after shape.",
+        "why_actor_wants_this": "This is the kind of transformation role that gives a young actor or adult performer a clear behavioral arc, similar to the redemption shape in a coming-of-age drama. The showcase is the contrast between the troubled child and the successful adult outcome."
+      },
+      {
+        "name": "Ken",
+        "role_type": "Lead",
+        "demographics": "Male · 18",
+        "hook": "Ken is a high-achieving young man whose scholarship, sobriety, and self-worth collapse under betrayal and addiction. He has the emotional volatility of someone who wants to be disciplined but keeps getting pulled into self-destruction and humiliation.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in Beautiful Boy — a young man whose collapse is both intimate and public. Actors looking for a role that can play addiction, heartbreak, and recovery would see real meat here."
+      },
+      {
+        "name": "Nadia",
+        "role_type": "Lead",
+        "demographics": "Female · adult",
+        "hook": "Nadia is a romantic opportunist whose loyalties shift with money, status, and access, but the script also gives her enough remorse to keep her from becoming a flat villain. She is one of the more overtly transactional figures in the script, which makes her useful as both seductress and cautionary figure.",
+        "why_actor_wants_this": "This is the kind of role that lets an actress play the dangerous charisma and self-justification of a performance like Jodie Comer in Killing Eve. Actors who want a seductive, morally slippery part with strong reversals would pursue it."
+      },
+      {
+        "name": "Justin",
+        "role_type": "Supporting",
+        "demographics": "Male · adult",
+        "hook": "Justin is the friend who interrupts Ken’s suicide attempt and becomes the voice of survival and discipline. He is a straightforward moral anchor, but he also gives the story a needed human rescue beat.",
+        "why_actor_wants_this": "This is the supportive best-friend role that often becomes the audience’s entry point in a recovery story. Actors who can play sincerity without sentimentality would be interested."
+      },
+      {
+        "name": "Layfield",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · business figure",
+        "hook": "Layfield is the polished, affluent rival who represents the moneyed alternative to Ken and the object of Nadia’s opportunism. He functions as a status symbol with a body, which makes him useful as a pressure point in the betrayal plot.",
+        "why_actor_wants_this": "This is the kind of sleek antagonist-adjacent role that gives an actor the cool, dangerous confidence of a corporate seducer in a prestige soap. Actors who can play charm with menace would fit."
+      },
+      {
+        "name": "James",
+        "role_type": "Lead",
+        "demographics": "Male · mid-teens to adult",
+        "hook": "James is first the idealistic teenage lover and later the betrayed husband whose marriage is destabilized by infidelity and class pressure. The role spans innocence, romantic devotion, and adult disillusionment, which gives it a broad emotional range.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor move from youthful sincerity to adult heartbreak, similar to the emotional arc in Blue Valentine. Performers who want a long-view romantic tragedy would be drawn to it."
+      },
+      {
+        "name": "Maureen",
+        "role_type": "Lead",
+        "demographics": "Female · mid-teens to adult",
+        "hook": "Maureen is a young woman whose fidelity is tested by temptation and whose choices move from promise to betrayal. She is written as both romantic ideal and cautionary figure, which gives the role a strong soap-opera engine.",
+        "why_actor_wants_this": "This is the kind of part that gives an actress the emotional swing of a teen-to-adult betrayal arc, similar to the volatility of a role in Skins. Young performers who want a morally charged romantic lead would be interested."
+      },
+      {
+        "name": "Melvin",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens to adult",
+        "hook": "Melvin is the attractive outsider who pulls Maureen away from her first love and becomes the embodiment of temptation. He is less developed than the central pair, but he serves the story as the catalyst for betrayal.",
+        "why_actor_wants_this": "This is a classic temptation role, the kind that gives an actor the swagger of a romantic disruptor in a youth melodrama. It is a useful part for someone who can play charm with a hint of danger."
+      },
+      {
+        "name": "Jacques",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s to middle-age",
+        "hook": "Jacques is a betrayed husband whose bitterness opens into investigation, regret, and a need to understand the woman he married. He has the reflective, wounded quality of a man trying to make sense of a life that has already slipped out of his control.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the introspective, wounded territory of a performance like Oscar Isaac in Scenes from a Marriage. Mid-career dramatic leads who want marital collapse with emotional intelligence would chase it."
+      },
+      {
+        "name": "Rose",
+        "role_type": "Lead",
+        "demographics": "Female · adult",
+        "hook": "Rose is one of the script’s most volatile figures: a woman whose past in sex work, manipulation, and survival keeps colliding with the possibility of reinvention. She is seductive, damaged, and strategically self-protective, which makes her one of the strongest dramatic engines in the script.",
+        "why_actor_wants_this": "This is the showcase territory of Michaela Coel in I May Destroy You — a woman whose charisma and self-invention are inseparable from her damage. An actress looking for a role that can play survival, seduction, and moral ambiguity would chase this hard."
+      },
+      {
+        "name": "Liza",
+        "role_type": "Supporting",
+        "demographics": "Female · adult",
+        "hook": "Liza is Rose’s confessional counterpart, a woman who explains the mechanics of prostitution with blunt clarity and a sense of lived consequence. She gives the Paris material its street-level texture and its sense of history.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actress the hard-earned authority of a survivor in a crime drama. Character actors who can deliver lived-in testimony would be drawn to it."
+      },
+      {
+        "name": "El-Hajji Mohammed Yusuf",
+        "role_type": "Lead",
+        "demographics": "Male · adult · wealthy man",
+        "hook": "El-Hajji is a wealthy, status-conscious man whose desire and vanity make him vulnerable to manipulation. He is both powerful and easily steered, which gives the role a useful contradiction: authority on the outside, gullibility underneath.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play power, vanity, and humiliation in the same arc, similar to the social exposure of a character in Succession. Mature actors who want a prestige-satire flavor inside melodrama would be interested."
+      },
+      {
+        "name": "Michael Gaulle",
+        "role_type": "Supporting",
+        "demographics": "Male · adult",
+        "hook": "Michael Gaulle is the aggrieved rival whose presence turns the Rose story into a public takedown. He functions as the force of consequence, bringing institutional power into the romantic betrayal plot.",
+        "why_actor_wants_this": "This is a strong authority role for an actor who can play controlled anger and public humiliation. It has the energy of a man who can dominate a scene with stillness and command."
+      },
+      {
+        "name": "Ruth",
+        "role_type": "Lead",
+        "demographics": "Female · adult",
+        "hook": "Ruth is a woman whose life has been marked by rejection, shame, and reinvention, moving from family exile to street survival to church-based hope. She is one of the script’s clearest examples of a character who can pivot from degradation to spiritual aspiration.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the emotional breadth of a redemption arc like Taraji P. Henson in Empire, but in a more overtly moral register. Performers who want to play collapse, survival, and reinvention would be drawn to it."
+      },
+      {
+        "name": "Daniel Benoit",
+        "role_type": "Supporting",
+        "demographics": "Male · adult",
+        "hook": "Daniel Benoit is the off-screen intelligence figure who helps reveal the truth behind Rose’s life. He is more procedural than emotional, but he gives the story a surveillance-and-exposure dimension that broadens the world.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the cool authority of an intelligence operative in a thriller-adjacent drama. It is a clean slot for someone who can play information as power."
+      },
+      {
+        "name": "Monalisa",
+        "role_type": "Lead",
+        "demographics": "Female · adult · wealthy wife and mother",
+        "hook": "Monalisa is a wealthy woman whose suspicion of men has hardened into a permanent lens, even inside a marriage that appears stable on the surface. She is emotionally guarded, socially polished, and quietly consumed by distrust.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the controlled interiority of a performance like Nicole Kidman in Big Little Lies. Mid-career leads who want to play suspicion, privilege, and marital unease would be interested."
+      },
+      {
+        "name": "Antonia",
+        "role_type": "Supporting",
+        "demographics": "Female · adult · friend",
+        "hook": "Antonia is the friend on the other end of the phone, serving as Monalisa’s sounding board and reality check. She is less individualized than Monalisa, but she helps create the social pressure around the marriage.",
+        "why_actor_wants_this": "This is a useful supporting role for an actress who can play conversational authority and skeptical friendship. It has the kind of rhythm that works well in dialogue-driven domestic drama."
+      },
+      {
+        "name": "Matilda",
+        "role_type": "Lead",
+        "demographics": "Female · 18",
+        "hook": "Matilda is a young Christian woman trying to hold onto innocence while the men around her test the boundaries of faith and fidelity. She is timid, observant, and emotionally vulnerable, which makes her a strong audience surrogate in the church material.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actress the restrained, wounded innocence of a performance like Amandla Stenberg in The Hate U Give. Actors who want a faith-adjacent coming-of-age part with emotional stakes would be drawn to it."
+      },
+      {
+        "name": "Vincent",
+        "role_type": "Lead",
+        "demographics": "Male · adult",
+        "hook": "Vincent is the charming church man whose public image and private behavior diverge sharply. He carries the easy charisma of a romantic lead while the story keeps hinting at the instability underneath.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charm, temptation, and moral drift in the same frame, similar to the seductive instability of a role in The Affair. Leading men who want to complicate a clean-cut image would chase it."
+      },
+      {
+        "name": "Lucia",
+        "role_type": "Lead",
+        "demographics": "Female · adult · mother",
+        "hook": "Lucia is a breadwinning wife who turns from devotion to resentment when her husband stops carrying his share of the marriage. She is practical, proud, and capable of abrupt reinvention, which gives the role a strong domestic power dynamic.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the marital authority and emotional fracture of a performance like Kerry Washington in Little Fires Everywhere. Women who want to play a wife, mother, and self-advocate all at once would be interested."
+      },
+      {
+        "name": "Vince",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · husband and father",
+        "hook": "Vince is the husband whose unemployment and passivity turn him into the object of Lucia’s contempt. He is less psychologically layered than Lucia, but he functions as the domestic pressure point that drives the breakup.",
+        "why_actor_wants_this": "This is a useful supporting husband role for an actor who can play wounded pride and domestic inertia. It has the kind of everyday realism that can still land strongly in a family drama."
+      },
+      {
+        "name": "Cindy",
+        "role_type": "Lead",
+        "demographics": "Female · adult · bank worker",
+        "hook": "Cindy is a woman whose marriage has become a contest of control, money, and desire, and who responds by seeking escape outside the relationship. She is sharp, dissatisfied, and emotionally alert, which makes her a strong modern domestic-drama lead.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the frustrated, self-assertive energy of a performance like Ruth Wilson in The Affair. Mid-career women who want a marriage-on-the-brink role would be interested."
+      },
+      {
+        "name": "Wayne Backings",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · ex-boyfriend / husband",
+        "hook": "Wayne is the ex-boyfriend-turned-husband figure who re-enters Cindy’s life and becomes part of her dissatisfaction. He is more of a relational function than a fully individualized character, but he gives the story its domestic friction.",
+        "why_actor_wants_this": "This is a straightforward husband role with enough friction to play confrontation and disappointment. Actors who can make ordinary domestic conflict feel specific would fit."
+      },
+      {
+        "name": "Mario",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · ex-boyfriend",
+        "hook": "Mario is the former lover who still has a pull on Cindy’s attention and serves as the outside option in her marriage story. He is a classic return-of-the-ex figure, useful for tension and unresolved desire.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the seductive, unresolved energy of a returning ex in a relationship drama. It is a clean, playable slot for a charismatic supporting performer."
+      },
+      {
+        "name": "Andrew",
+        "role_type": "Lead",
+        "demographics": "Male · adult · barrister",
+        "hook": "Andrew is a faithful, professional husband whose life is upended when his spouse’s choices force him into humiliation, prison, and emotional exile. He is written as the good man caught in a moral trap, which gives the role a strong suffering-center.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dignity-and-collapse arc of a performance like Sterling K. Brown in This Is Us. Leading men who want to play decency under pressure would be drawn to it."
+      },
+      {
+        "name": "James",
+        "role_type": "Lead",
+        "demographics": "Male · adult",
+        "hook": "James is the designer-clothes counterpart to Andrew, a man whose choices and lifestyle make him the other side of the fidelity question. He is less emotionally centered than Andrew, but he functions as the temptation and contrast that drives the conflict.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play swagger, temptation, and social contrast in a domestic drama. It suits performers who can make charm feel dangerous."
+      },
+      {
+        "name": "Stacy",
+        "role_type": "Lead",
+        "demographics": "Female · adult · mother",
+        "hook": "Stacy is the wife whose body, labor, and domestic role become the site of her husband’s dissatisfaction. She is a mother under pressure, and the script positions her as the emotional center of a marriage that has become transactional.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the domestic exhaustion and emotional dignity of a performance like Rose Byrne in physical-family drama. Women who want to play marriage, motherhood, and self-worth in conflict would be interested."
+      },
+      {
+        "name": "John McFaul",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · husband",
+        "hook": "John McFaul is the husband whose dissatisfaction with marriage drives him toward an affair. He is a recognizable domestic-drama figure: outwardly committed, inwardly restless, and increasingly selfish.",
+        "why_actor_wants_this": "This is a classic cheating-husband role with enough social friction to play hypocrisy and desire. Actors who can make entitlement feel human would fit."
+      },
+      {
+        "name": "Natasha",
+        "role_type": "Lead",
+        "demographics": "Female · adult · mother and office worker",
+        "hook": "Natasha is a wife and mother who watches her husband’s infidelity from inside a polished domestic life and then faces the temptation to answer it in kind. She is stoic on the surface, but the script gives her a simmering interior life built around resentment and choice.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the contained fury of a performance like Regina King in If Beale Street Could Talk. Mid-career dramatic leads who want a quiet, emotionally loaded marriage story would be drawn to it."
+      },
+      {
+        "name": "Daniel",
+        "role_type": "Supporting",
+        "demographics": "Male · adult · husband",
+        "hook": "Daniel is the husband whose hotel-lobby infidelity becomes the visible trigger for Natasha’s emotional shift. He is less a full character than a pressure source, but he gives the story its marital rupture.",
+        "why_actor_wants_this": "This is a useful supporting role for an actor who can play charm turning into betrayal. It sits squarely in the domestic-drama lane."
+      },
+      {
+        "name": "Adelaide",
+        "role_type": "Lead",
+        "demographics": "Male · adult · infertile husband",
+        "hook": "Adelaide is a physically imposing husband whose infertility creates a private crisis inside the marriage. The role is built on masculine vulnerability, acceptance, and the emotional strain of not being able to fulfill the family expectation.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the intimate, identity-shifting challenge of a performance like Ben Whishaw in a relationship drama. Men who want to play vulnerability without losing authority would be interested."
+      },
+      {
+        "name": "Lucy",
+        "role_type": "Lead",
+        "demographics": "Female · adult · mother",
+        "hook": "Lucy is a wife and mother navigating infertility, marriage, and the possibility of emotional drift toward another man. She is written as a woman under domestic and biological pressure, which gives the role a strong emotional hinge.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the layered domestic ache of a performance like Elisabeth Moss in a marriage drama. Actors who want to play longing, duty, and temptation would chase it."
+      },
+      {
+        "name": "Maya",
+        "role_type": "Supporting",
+        "demographics": "Female · adult",
+        "hook": "Maya is the cousin who opens the door to the possibility of a new connection for Lucy. She is a small but functional social connector, giving the final vignette a believable domestic entry point.",
+        "why_actor_wants_this": "This is a practical supporting role for an actress who can make a brief scene feel lived-in and socially specific. It is the kind of part that can recur if the series expands."
+      },
+      {
+        "name": "Michael",
+        "role_type": "Supporting",
+        "demographics": "Male · adult",
+        "hook": "Michael is the attractive outsider who becomes the object of Lucy’s attention. He is a clean temptation figure, useful for signaling the next turn in the final story beat.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the polished, desirable energy of a romantic disruptor. It is a straightforward but playable temptation part."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who can stage confession, humiliation, and moral judgment without losing the human pulse.",
+        "fit_profile": "Established indie or TV directors with at least one or two character-driven features or prestige episodes, especially those who work comfortably in dialogue-heavy domestic drama, faith-adjacent material, or ensemble soap. The right director will care about performance rhythm, social texture, and making sermon-like scenes feel alive rather than static.",
+        "detail": "The material rewards a director who can keep long confession scenes visually active and emotionally legible across many settings. It also gives a director room to shape a recognizable tonal lane — part church drama, part relationship soap, part social cautionary tale — which is attractive to filmmakers who like clear audience-facing form."
+      },
+      "buyer_appeal": {
+        "tier": "Low-to-mid budget streaming series",
+        "lane": "faith-adjacent anthology drama / melodramatic relationship series",
+        "detail": "The project does not require VFX or large-scale action, but it does require a sizable ensemble and a broad location plan, so packaging can lean on strong regional casting rather than one expensive star. The anthology structure and moral-lesson format make it exportable across diaspora and faith-oriented audiences, which gives a buyer multiple audience entry points."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The pilot reads as a sequence of vignettes.",
+        "detail": "Right now the episode engine is strongest as a collection of cautionary stories, but the series would benefit from one clearer recurring spine that ties the stories together beyond theme. One direction would be to make the Listener, the church, or the sermon frame the connective tissue so each new story feels like part of a larger ongoing world.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The confessional scenes carry the load.",
+        "detail": "Several key passages are built almost entirely on exposition and backstory, especially Kenya’s bedroom confession and Lizzy’s restaurant explanation. A next pass could let one emotional turn arrive before the full explanation, so the audience feels the consequence in the room before hearing the history.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast footprint is wide.",
+        "detail": "The script introduces a large number of named roles across many separate stories, which is great for ensemble breadth but heavy for scheduling and casting. One simplification lever would be to fold a few of the one-scene witnesses and friends into fewer recurring functions without losing the anthology feel.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The location map spans several countries.",
+        "detail": "Germany, London, Paris, Cameroon, Seoul, Pretoria, and Phoenix all appear across the material, which gives the series scale but also expands the production footprint. The version of the show where some of those settings are consolidated into fewer recurring cities would protect the international flavor while making the shoot more efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Brand and institution names need review.",
+        "detail": "Named entities like Julius Berger, Nokia, John Holt Limited, Carlton University, Cameroon Airlines, and Stanford Pharmaceutical Center are used directly on the page. A production pass should decide which of those names are essential to the story world and which can be generalized without changing the dramatic beat.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The tone is intentionally sermon-forward.",
+        "detail": "The script’s moral voice is part of its identity, but the repeated explanatory passages can be sharpened by varying how the lesson lands from scene to scene. One direction would be to let some episodes end on behavior or consequence rather than explicit commentary, which would keep the sermon flavor while giving the audience more to feel.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 45.3,
+  "tier": "Needs Development",
+  "inputTokens": 27021,
+  "outputTokens": 9917,
+  "cost": 0.06489225,
+  "declaredFormat": "Series"
+}

@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-23T23:24:13.329Z",
+  "submission_id": "368e022f-400b-4cae-9336-9d82f116fb90",
+  "eval_id": "71e0dccc-350a-42ae-81ee-34a5c7f69e7d",
+  "title": "the world we live in2",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Daniela",
+      "role_type": "Lead",
+      "demographics": "Female · 14"
+    },
+    {
+      "name": "Frances",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Richard",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Jack",
+      "role_type": "Lead",
+      "demographics": "Male · 7"
+    },
+    {
+      "name": "Mr. Phelps",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Carlos Alberto",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Micah",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Floyd",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Martins",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Charles",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Miss Dean",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Professor Taylor Bent",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Miss Natasha",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "Tara",
+      "role_type": "Supporting",
+      "demographics": "Female · 14-15"
+    },
+    {
+      "name": "Tara’s Father",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    }
+  ],
+  "positioning_hook": "A series of morality tales follows parents, students, and aspiring writers as they collide with rebellion, discipline, and ambition across homes, classrooms, and creative industries.",
+  "cost_usd": 0.047296500000000005,
+  "input_tokens": 31178,
+  "output_tokens": 5314,
+  "status": "wrote:leads_ok"
+}

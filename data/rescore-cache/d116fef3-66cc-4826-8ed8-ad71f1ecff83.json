@@ -1,0 +1,286 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Drama",
+        "Meta-industry"
+      ],
+      "tone": "Wry, affectionate, self-aware, and lightly satirical"
+    },
+    "positioning_hook": "A comic ensemble of fanboys, a washed-up director, and a sharp young woman fight to mount an unauthorized sci-fi movie using the original star, before the whole scheme lands in court.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate appeal for movie lovers, fandom audiences, and anyone who enjoys showbiz chaos, especially because the script turns a niche subculture into a very human hustle. The audience is clear, though the concept plays most strongly to viewers who already enjoy meta-industry comedy and fan-culture satire."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: a fan-driven production tries to make a real Space Fleet film with the franchise’s original actor, while legal and personal complications close in. The deposition frame gives the story a crisp engine and makes the central contradiction easy to grasp in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Kevin, Jon, Manny, Tam, and Armando each have a distinct comic or emotional lane, and the script gives them recognizable desires that collide in useful ways. Kevin’s hustle, Jon’s stalled artistry, Manny’s devotion, Tam’s intelligence, and Armando’s weary grace create a playable ensemble, even if the feature is still most energized by the central trio."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a very specific real-world phenomenon — unauthorized fan filmmaking — and turns it into a character comedy with legal stakes and genuine affection for the material. The deposition structure, the pitch-reel framing, and the self-aware use of fandom culture give it a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps introducing fresh pressure points: the legal frame, the Armando encounter, the shift from tribute to scheme, and the growing tension between Kevin’s ambition and Jon’s caution. It moves well through the warehouse, bar, and signing-event sequences, with the momentum coming from escalating social collisions more than from a conventional external chase."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a premise that could only come from this exact corner of fandom and film culture, yet it still reads instantly as a movie about longing, identity, and creative obsession. The idea of a bootleg franchise revival built around the original star and a community of believers has a fresh, inevitable quality."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The collectibles warehouse, the convention-adjacent fan economy, the Kickstarter logic, the prop culture, and the deposition/legal aftermath all give the world visible rules and social texture. The script understands the economics and rituals of fandom well enough that the setting feels story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: affectionate but mocking, earnest but self-aware, with the comedy coming from people taking their obsessions very seriously. The script can pivot from absurdity to sincerity in the same scene, especially in the Armando and Manny material, which gives it a recognizable voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the comedy, the script keeps revealing a story about aging, missed chances, immigrant ambition, fatherhood, and the need to belong to something larger than yourself. The emotional reserves are visible in Jon’s family life, Tam’s speech about wanting the universe, and Armando’s quiet dignity, which suggests more depth than the surface prank premise first advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Kevin-Jon-Manny triangle is strong, and the script keeps finding new combinations that generate material: Kevin with Armando, Jon with Tam, Jon with Sarah, Manny with the fans, Kevin with his mother. The ensemble has enough friction and affection that multiple pairings can carry scenes without the story collapsing onto one lead alone."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One older male franchise star role",
+          "One older female mother role",
+          "One middle-aged male lead with comic timing",
+          "One middle-aged male director role",
+          "One young adult female role with sharp intelligence",
+          "One child role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interiors with some exterior parking lot, street, and car scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Comic-book/collectibles warehouse",
+          "Law office deposition room",
+          "Big box retail interior",
+          "Fancy bar/restaurant",
+          "Suburban home interiors",
+          "Car interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Opening space imagery, pitch-reel style sci-fi inserts, and a few stylized Space Fleet visuals; mostly achievable with practical design and light compositing.",
+        "stunts_level": "none",
+        "sfx_needs": "Props, costumes, model ships, laser pistols, and a few practical sci-fi set dressing elements.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "The script centers on Space Fleet as a franchise-like property and repeatedly references unauthorized use of its characters, imagery, and branding."
+        },
+        {
+          "type": "brand",
+          "detail": "Marshall Comics, Kickstarter, Vimeo, iMac, Subaru Outback, Big 5 Sporting Goods, Starbucks, and Costco are named or prominently referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or festival-to-platform comedy-drama lane",
+        "content_level": "PG-13 equivalent with some profanity",
+        "series_engine_or_release_model": "Feature release model with strong festival appeal and a clear streaming afterlife for fandom and industry audiences."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary interiors, a small principal cast, and limited effects keep this in a modest feature budget lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project benefits from strong comic actors and a recognizable older star for Armando, plus one child role and several distinct supporting parts."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through multiple practical locations, but they are all accessible contemporary spaces rather than large builds or remote setups."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material is mostly dialogue-driven with mild profanity and no heavy violence, sex, or drug content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The entire premise is built around an unauthorized franchise analogue, repeated IP references, and branded platform mentions."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is built for fandom and industry audiences.",
+          "what_it_means": "This has a clean commercial lane because it turns the behind-the-scenes fantasy of fan filmmaking into a story with legal stakes, emotional stakes, and built-in audience recognition. Buyers who like smart, self-aware comedy and actors who enjoy playing people chasing relevance will immediately understand the appeal.",
+          "evidence": "The deposition frame, the Kickstarter pitch, and the repeated debate over whether they can legally make a Space Fleet film.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kevin is a vivid comic engine.",
+          "what_it_means": "Kevin’s mix of hustle, delusion, sincerity, and salesman energy gives the movie a lead role that can carry both comedy and pathos. Character actors who can play fast-talking ambition with a bruised center will want this, and producers get a protagonist who can drive scenes in almost any room.",
+          "evidence": "His pitch-reel enthusiasm, his sales calls, his bar-room grandstanding, and his constant pivoting between confidence and panic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jon gives the story a grounded emotional center.",
+          "what_it_means": "Jon’s stalled-director arc makes the movie more than a joke about nerd culture; it becomes a story about a man deciding whether to re-enter the creative life he walked away from. Mid-career dramatic leads with comic timing will see a role that lets them play competence, regret, and rediscovered purpose in one package.",
+          "evidence": "His Big 5 job, his garage model-building, his conversation with Sarah about Hollywood, and his return to editing and directing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tam is the sharpest new-voice character.",
+          "what_it_means": "Tam brings intelligence, irony, and generational contrast, which broadens the movie beyond male nostalgia and gives it a contemporary point of view. Young actresses who can play dry wit and hidden ambition will be drawn to a role that can pop in scenes and still feel like the future of the story.",
+          "evidence": "Her deadpan comments about the collectibles market, her film-class insight about Space Fleet, and her outburst about wanting the universe.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Armando adds prestige and emotional weight.",
+          "what_it_means": "The original star’s presence gives the project a built-in marquee element and a chance for a veteran actor to play fame, fatigue, and grace all at once. Older character actors with fan recognition will see a role that can land laughs while also carrying the dignity of someone who understands what his work meant to people.",
+          "evidence": "The restaurant encounter, the signing event, his arthritic hand, and his line about being lucky to be remembered at all.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The fan-culture world is highly specific.",
+          "what_it_means": "The collectibles warehouse, props, conventions, Kickstarter logic, and online fandom give the script a textured ecosystem that feels lived-in and exportable. Producers looking for a contained, niche-world comedy with strong authenticity will see a setting that can support marketing and audience conversation.",
+          "evidence": "Marshall Comics, the prop inventory, the fan-film Vimeo clip, the Kickstarter page, and the autograph-signing sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates multiple playable pairings.",
+          "what_it_means": "The script is not just a one-lead vehicle; it has enough friction and affection between characters to generate scenes from different combinations, which is valuable for casting and for audience attachment. Buyers and directors who like ensemble comedies with overlapping emotional lanes will respond to the Kevin-Jon-Manny-Tam web.",
+          "evidence": "Kevin and Jon at the bar, Jon and Tam in the car, Manny and Armando at the signing table, and Kevin with his mother.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, affectionate comedy about fandom as labor, identity, and delusion — with a premise that is instantly legible to anyone who has ever loved a franchise too much. It has a real movie-star role in Kevin, a grounded counterweight in Jon, and a breakout voice in Tam, all inside a world that feels specific enough to market and contained enough to make."
+    },
+    "lead_characters": [
+      {
+        "name": "KEVIN MARSHALL",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Kevin is a relentless, overeager entrepreneur who lives on momentum, self-mythology, and the belief that enthusiasm can substitute for permission. He is funny because he is always half a step from humiliation, but he never stops selling the dream, even when the dream is clearly outrunning reality.",
+        "why_actor_wants_this": "This is the showcase territory of Steve Carell in The 40-Year-Old Virgin or The Big Short — a comic lead whose delusion is also his vulnerability, and whose salesmanship becomes the performance. Actors who can play high-wire comedy with a bruised, human underside will chase it because Kevin gets to be ridiculous, persuasive, and oddly moving in the same scene."
+      },
+      {
+        "name": "JON COOPER",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Jon is a competent, underused craftsman who has buried his filmmaking ambition inside a practical life, a family, and a job that keeps him close to the thing he loves without letting him fully touch it. He reads as the guy who knows how to do the work, hates the compromises, and is quietly terrified that the best version of himself already passed him by.",
+        "why_actor_wants_this": "This is the showcase space of Paul Giamatti in Sideways or Adam Driver in Marriage Story — a man whose restraint, competence, and buried frustration create the emotional voltage. Mid-career dramatic actors with comic timing will want it because Jon gets to play domestic warmth, creative regret, and a late-blooming return to purpose."
+      },
+      {
+        "name": "MANNY",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Manny is the heart-on-sleeve true believer, a guy whose love of Space Fleet is tied to identity, belonging, and the version of himself he got to be inside that universe. He is funny, earnest, and emotionally direct, with the kind of sincerity that can turn a joke into a moving speech in one beat.",
+        "why_actor_wants_this": "This is the showcase territory of John C. Reilly in Walk Hard or Richard Jenkins in The Visitor — a role where sincerity is the engine and the laughs come from total commitment. Character actors who can play warmth, fandom, and emotional release will want Manny because he gets a big, human speech and a lot of lovable comic business."
+      },
+      {
+        "name": "TAM",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Vietnamese-American",
+        "hook": "Tam is the smartest person in the room who keeps pretending she is only half paying attention. She has dry wit, cultural distance from the fanboys around her, and a buried creative hunger that finally breaks open in the car scene where she admits she wants art, power, and a real place in the culture.",
+        "why_actor_wants_this": "This is the showcase territory of Greta Gerwig in Frances Ha or Awkwafina in The Farewell — a role built on intelligence, comic timing, and the sudden revelation of a much larger inner life. Young actresses with writing-director energy will chase it because Tam gets to be the observer, the skeptic, and the one who names the movie’s deeper theme."
+      },
+      {
+        "name": "ARMANDO GARCIA",
+        "role_type": "Lead",
+        "demographics": "Male · 70s",
+        "hook": "Armando is a veteran actor who knows exactly what his image means to fans, and exactly how much of that image is performance, labor, and survival. He carries himself with elegance and fatigue, but he also has the comic instinct to puncture the room and the emotional intelligence to honor the people who still care.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Trumbo or Michael Keaton in Birdman — a role about legacy, self-awareness, and the strange afterlife of fame. Older actors with real audience recognition will want it because Armando gets to be funny, gracious, slightly dangerous, and deeply moving without ever begging for sympathy."
+      },
+      {
+        "name": "PEG",
+        "role_type": "Supporting",
+        "demographics": "Female · late 70s",
+        "hook": "Peg is Kevin’s elegant, sharp-edged mother, a woman whose affection is buried under class, irritation, and a lifetime of disappointment. She is the kind of parent who can wound with a sentence and still feel completely real because the love is there underneath the contempt.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the dry authority of Dianne Wiest in Hannah and Her Sisters — a compact part with comic precision and emotional sting. Veteran character actresses will want it because Peg can dominate a scene with a look, a line, and a perfectly timed dismissal."
+      },
+      {
+        "name": "SARAH",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Sarah is Jon’s practical, grounded wife, a working professional who sees through his nostalgia but still loves the man underneath it. She is not there to romanticize his dream; she is there to remind him what his life actually costs and what it has already built.",
+        "why_actor_wants_this": "This is the grounded-spouse territory of Patricia Clarkson in Pieces of April or Laura Linney in You Can Count on Me — a role that gives an actor authority without speeches. Experienced dramatic actresses will like it because Sarah gets to be the adult in the room while still landing warmth, wit, and emotional clarity."
+      },
+      {
+        "name": "DANI",
+        "role_type": "Supporting",
+        "demographics": "Female · 11",
+        "hook": "Dani is Jon’s observant daughter, old enough to clock the weirdness around her and young enough to ask the questions adults avoid. She functions as a truth-teller, but she also gives the story a child’s-eye access to the emotional stakes of art, family, and admiration.",
+        "why_actor_wants_this": "This is the kind of child role that has the natural honesty of Abigail Breslin in Little Miss Sunshine — a part where curiosity and emotional intelligence do the heavy lifting. Young performers with strong listening skills will want it because Dani gets to react, question, and quietly steer the adult world."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a comedy about obsession without mocking the people who are obsessed.",
+        "fit_profile": "Second- or third-feature directors, or TV comedy-drama directors moving into features, who already work comfortably with ensemble behavior and performance-first storytelling. This material rewards directors who can balance deadpan humor, emotional sincerity, and a lightly satirical eye for subculture without turning the movie into a sketch.",
+        "detail": "The film gives a director a contained world, a strong tonal lane, and scenes that live or die on timing, reaction, and ensemble chemistry rather than spectacle. It will attract filmmakers who like to stage character comedy in practical spaces and who understand how to make a niche world feel emotionally universal."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming-friendly indie comedy-drama with festival upside",
+        "detail": "The project can be packaged around one strong comic lead, one grounded dramatic lead, and a recognizable veteran for Armando, so it does not require a giant ensemble of name talent to function. The fandom angle and meta-industry premise give it a built-in conversation hook for festivals, streaming discovery, and audience word-of-mouth."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The deposition frame can do more work.",
+        "detail": "The opening and closing court-room material is a smart container, and a next pass could sharpen how each deposition beat escalates the central story rather than simply framing it. What would it look like if the legal pressure were threaded a little more actively through the middle, so the audience feels the case tightening as the scheme grows?",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Kevin’s scheme could be clarified sooner.",
+        "detail": "The script waits a while before the exact shape of the unauthorized film plan snaps into focus, which is part of the comic pleasure, but the version where the audience understands the endgame a beat earlier would give the middle even more charge. One lever would be to foreground the practical mechanics of the plan slightly sooner so Kevin’s momentum feels even more irresistible.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Tam’s storyline invites one more turn.",
+        "detail": "Tam is already the sharpest new-voice presence, and the material around her film-class intelligence and final outburst suggests room for one more scene that lets her creative ambition affect the plot, not just the theme. A next pass could give her one additional move that changes the group’s direction, which would deepen the ensemble without changing the budget.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The IP premise drives the clearance conversation.",
+        "detail": "Because the story is built around an unauthorized franchise analogue and repeated brand/platform references, packaging should assume rights counsel will want to look closely at the final naming and visual strategy. The cleanest version for buyers is one that preserves the fandom satire while protecting the production from avoidable clearance friction.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The footprint stays modest if the warehouse carries the movie.",
+        "detail": "The story already lives in a small set of contemporary spaces, and the version that keeps the warehouse as the central hub will protect the budget while preserving the collectible-world texture. That would let the movie keep its contained, producible shape without losing the sense of a lived-in fan economy.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 77,
+  "tier": "Optionable",
+  "inputTokens": 20142,
+  "outputTokens": 4885,
+  "cost": 0.037089,
+  "declaredFormat": "Feature film"
+}

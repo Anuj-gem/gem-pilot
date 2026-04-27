@@ -1,0 +1,307 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical drama",
+      "genre_tags": [
+        "Biographical",
+        "Conspiracy thriller"
+      ],
+      "tone": "Grounded, eccentric, tragic, and increasingly paranoid"
+    },
+    "positioning_hook": "A charismatic Essex salesman becomes obsessed with proving Hitler was a hidden British royal, dragging his son through Europe, police stations, and a collapse that turns family myth into tragedy.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a strong true-story curiosity factor and the father-son road element gives it an accessible emotional spine. Its audience is more specific than broad, though, because the core engine is a historical conspiracy and a very British social world."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: John Davey believes he has found a Hitler photo album and spends years trying to authenticate it, with Tom pulled into the chase. The script keeps the central question clear even as it widens into police, media, and family fallout."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "John is a vivid screen character: charming, reckless, funny, persuasive, and increasingly unmoored, with Hazel and Tom giving the story emotional counterweight. The father-son bond and the mother’s exasperated authority create durable dramatic tension, even when the story is driven more by obsession than by interior revelation."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to an unusually specific true-story obsession and lets it play across comedy, family drama, and institutional disbelief. Scenes like the train-heart-attack opener, the Zurich chase, and the courtroom speech give it a confident, offbeat identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through a series of escalating trips, meetings, and reversals, and the son’s involvement gives the chase a human stake. The middle section is episodic by design, but the album quest and John’s mounting desperation keep the engine alive."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a story you haven’t seen before, yet the emotional logic is instantly legible: a man whose charisma and conviction become indistinguishable from delusion. The combination of cricket-club warmth, European pursuit, and royal-Nazi conspiracy gives it a memorable, ownable shape."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script is rich in lived-in British detail: cricket clubs, factory floors, council houses, estate agents, police stations, hotels, and auction-house rooms all feel specific and socially distinct. That texture makes the world story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually identifiable: comic bravado, working-class swagger, and tragic delusion all sit in the same frame. The script can pivot from a laugh at John’s cheek to the ache of Tom’s collapse without losing its voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "On the surface this is a madcap historical chase, but underneath it is a story about class, masculinity, mental illness, inheritance, and the need to be believed. The later revelations about John’s diagnosis and Tom’s fate deepen the earlier comic material into something far more haunting."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "John and Tom are the core engine, with Hazel, Grace, Williams, Martin, and Bob each adding distinct pressure or loyalty. The relationships are strong enough to generate multiple scenes of conflict and affection, though the script still lives primarily on the John-Tom axis."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple age spans for John and Tom",
+          "German-speaking supporting roles",
+          "One major child/teen role across the story",
+          "Strong regional British casting flavor"
+        ]
+      },
+      "locations": {
+        "distinct_count": 25,
+        "interior_exterior_ratio": "roughly even",
+        "period_or_contemporary": "Period, spanning 1974 to 2008",
+        "notable_requirements": [
+          "UK period homes and streets",
+          "Train interiors and stations",
+          "Cricket grounds and club interiors",
+          "Zurich hotel/bank environments",
+          "German office/archive settings",
+          "Courtroom and police station interiors",
+          "Royal residence exteriors or stand-ins"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly period dressing, archival inserts, freeze-frame/photo treatment, and a few crowd/transport enhancements.",
+        "stunts_level": "minor",
+        "sfx_needs": "Heart attack beat, car damage, police restraint, and a few crowd-control moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler, Prince Edward VIII, Queen Mary, John Major, Diana, Dodi, MI5, FBI, Brinks Mat references"
+        },
+        {
+          "type": "named_music",
+          "detail": "Brut Fabergé advertising references and television/radio mentions including Chris Tarrant and Capital Radio"
+        },
+        {
+          "type": "brand",
+          "detail": "Brut Fabergé, Deutsche Bahn, Sotheby’s, British Airways, The Sun, Capital Radio, Porsche, Ferrari, West Ham United, Essex County Cricket Club"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Archival images, newspaper headlines, television clips, and historical photo materials would need clearance"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical or premium streaming feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or prestige limited theatrical release; strongest as a character-driven true-story feature"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly practical and period-based, but the 1970s-2000s span, multiple countries, and archival material push beyond microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story depends on a strong lead for John, a substantial Tom, and multiple age-specific supporting roles across several time periods."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves through homes, clubs, stations, hotels, banks, archives, courts, and multiple UK and European settings across decades."
+        },
+        "content": {
+          "level": "high",
+          "note": "Mental illness, abduction, police arrest, public threats, suicide aftermath, and Nazi/royal conspiracy material make this adult-facing."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The story leans on real people, historical figures, newspapers, broadcasters, brands, and archival images throughout."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "John is a showcase lead.",
+          "what_it_means": "The role gives an actor charm, comic timing, volatility, and tragic scale in one part, which is exactly the kind of performance package prestige buyers notice. Character actors and mid-career leads looking for a career-defining true-story turn would be drawn to it.",
+          "evidence": "John can be a salesman, father, hustler, and courtroom orator in the same script, then collapse into paranoia and institutionalization.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-son engine is emotionally sticky.",
+          "what_it_means": "This gives the film a human spine that keeps the conspiracy material from feeling abstract, which is what makes the story playable beyond a niche history audience. Actors and buyers who respond to family drama inside genre-adjacent material will see the value immediately.",
+          "evidence": "Tom is dragged from cricket pitches to Zurich and back, then becomes the witness to John’s unraveling and final decline.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The British social world is vivid.",
+          "what_it_means": "Cricket clubs, factory floors, council houses, and suburban offices create a specific class texture that gives the film a strong sense of place and exportable British identity. That kind of rootedness is attractive to UK financiers, prestige streamers, and festival programmers.",
+          "evidence": "The script moves from Brentwood Cricket Club to Dagenham, Zurich, Hamburg, and back through the same social circles.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise has built-in conversation value.",
+          "what_it_means": "A film about a man trying to prove Hitler was a hidden British royal is the kind of true-story hook that sells in a sentence and invites immediate debate. Buyers looking for high-recognition, low-explanation material will understand the angle fast.",
+          "evidence": "The album, the graphologists, the newspaper chase, and the eventual courtroom speech all revolve around the same outrageous claim.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can pivot without breaking.",
+          "what_it_means": "The script can play as comedy, family drama, and tragedy in the same scene, which gives a director room to shape a distinctive audience experience. That tonal elasticity is attractive to filmmakers who like material that can live between crowd-pleaser and cautionary tale.",
+          "evidence": "John’s cheeky scams, Hazel’s exasperation, Tom’s loyalty, and the later psychiatric material all coexist in the same narrative lane.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is production-friendly in spirit.",
+          "what_it_means": "Most of the story is built from practical locations, dialogue, and period detail rather than spectacle, which keeps the project in a manageable feature lane. Producers who like contained prestige dramas with travel and texture will see a clear path.",
+          "evidence": "The script relies on homes, clubs, trains, hotels, banks, police stations, and archives rather than large-scale set pieces.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a wildly specific true-story feature with a lead role actors can sink their teeth into and a father-son relationship that gives the conspiracy its emotional charge. The script’s real asset is its tonal confidence: it plays as a British character piece, a road-chase obsession story, and a tragic portrait of a man who cannot stop needing to be believed."
+    },
+    "lead_characters": [
+      {
+        "name": "John Davey",
+        "role_type": "Lead",
+        "demographics": "Male · 40s to 60s · white British",
+        "hook": "John is a swaggering Essex salesman with the manners of a host, the instincts of a hustler, and the conviction of a prophet. He is funny, vain, affectionate, manipulative, and increasingly consumed by a theory that gives his life meaning even as it destroys it.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the volatility of Steve Coogan in *Stan & Ollie* and the tragic authority of Joaquin Phoenix in *The Master* — a man whose charisma is inseparable from the delusion driving him. Actors who want a part that can play charm, comedy, menace, and breakdown in one arc will chase this immediately."
+      },
+      {
+        "name": "Tom Davey",
+        "role_type": "Lead",
+        "demographics": "Male · 14 to 30s across the story · white British",
+        "hook": "Tom is the bright, observant son who inherits his father’s wit but not his appetite for chaos. He starts as a loyal kid dazzled by John’s energy, then becomes the emotional witness to the cost of loving someone impossible to stop.",
+        "why_actor_wants_this": "This has the coming-of-age ache of *Boyhood* with the emotional witness function of the son in *The Pursuit of Happyness* — a role that lets an actor age through admiration, embarrassment, loyalty, and grief. Young actors and emerging adult leads will respond to the chance to anchor the story’s emotional truth opposite a larger-than-life father."
+      },
+      {
+        "name": "Hazel Davey",
+        "role_type": "Lead",
+        "demographics": "Female · 20s to 50s across the story · white British",
+        "hook": "Hazel is glamorous, sharp-tongued, and far more grounded than the men around her, which makes her the story’s moral barometer and domestic force. She loves John, resents him, protects the children, and sees the damage long before he does.",
+        "why_actor_wants_this": "This is the kind of role that carries the emotional authority of Frances McDormand in *Three Billboards Outside Ebbing, Missouri* — a woman whose anger is also love, and whose stillness can cut deeper than shouting. Strong dramatic actresses looking for a part with bite, dignity, and lived-in frustration will want this."
+      },
+      {
+        "name": "Grace Davey",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s to 70s · white British",
+        "hook": "Grace is the quietly devastating mother who sees through John’s bluster without ever losing affection for him. She brings domestic order, dry humor, and the kind of maternal clarity that makes the later collapse hit harder.",
+        "why_actor_wants_this": "This is the warm, steel-edged elder role that gives an actress the humane authority of Olivia Colman in *The Father* — someone who can ground the chaos with a look, a line, or a single practical gesture. Veteran character actresses will be drawn to the chance to play the family’s emotional center."
+      },
+      {
+        "name": "Brian Williams",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Black British",
+        "hook": "Williams is the patient police officer who becomes John’s reluctant straight man, sounding board, and occasional lifeline. He is dry, skeptical, humane, and one of the few people who can stand in the room with John without being swallowed by him.",
+        "why_actor_wants_this": "This has the understated authority of Stephen Graham in *Line of Duty* or *Boiling Point* — a grounded professional who can carry scenes through restraint rather than volume. Actors who specialize in intelligence, patience, and moral steadiness will see a strong supporting showcase here."
+      },
+      {
+        "name": "Martin Donaldson",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · white British",
+        "hook": "Martin is John’s loyal friend and enabler, the man who keeps saying yes long after common sense has left the building. He is practical, amused, and slowly dragged into the orbit of John’s obsession until it costs him more than he can afford.",
+        "why_actor_wants_this": "This is the kind of best-friend role that gives an actor the easy chemistry and slow-burn regret of Ben Mendelsohn in *Animal Kingdom* — a companion who starts as comic support and ends up carrying real emotional fallout. Character actors who can play loyalty with a hint of self-destruction will want it."
+      },
+      {
+        "name": "Bob Dennis",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · white British",
+        "hook": "Bob is the cautious believer who keeps funding John while trying to preserve his own life from the fallout. He is decent, practical, and increasingly trapped between friendship, money, and embarrassment.",
+        "why_actor_wants_this": "This is the kind of role that plays like the worried confidant in *The Big Short* — a man whose scenes are built on disbelief slowly giving way to reluctant commitment. Actors who can make ordinary decency feel tense will be attracted to it."
+      },
+      {
+        "name": "Paul",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · white British",
+        "hook": "Paul is Hazel’s new partner, a humorless presence who arrives as a domestic replacement and immediately becomes part of the pressure cooker. He is less a villain than a living reminder that John’s old life has moved on without him.",
+        "why_actor_wants_this": "This is the crisp, antagonistic-support role that gives an actor the clipped irritation of a domestic interloper in *Marriage Story*. Actors who can play passive aggression and wounded pride without overplaying it will find a clean scene-stealing lane."
+      },
+      {
+        "name": "Bernie",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · white British",
+        "hook": "Bernie is Tom’s later partner, practical and affectionate, who helps show the adult life Tom is trying to build outside his father’s shadow. She gives the story a late-life domestic counterpoint and a sense of what normal looks like after chaos.",
+        "why_actor_wants_this": "This is the kind of grounded partner role that gives an actress the lived-in realism of a supporting turn in *Normal People* or *After Love*. Actors who play warmth with intelligence will see a meaningful, human-sized part."
+      },
+      {
+        "name": "Daniel Cocklin",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s across the framing material · white British",
+        "hook": "Daniel is the narrator and witness, the boy who becomes the chronicler of John’s legend and collapse. He is admiring, conflicted, and emotionally implicated, which gives the film its reflective frame and its sense of testimony.",
+        "why_actor_wants_this": "This is the narrator-as-participant territory of *Atonement* or *The Irishman* — a role that lets an actor carry memory, guilt, and admiration at once. It will appeal to performers who can make observation feel personal rather than decorative."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a true-crime obsession into a character tragedy without losing the humor.",
+        "fit_profile": "Established indie feature directors, or TV directors making a first serious leap into features, who already work comfortably with performance-forward material and period texture. This material rewards directors who like tonal control, social specificity, and scenes where behavior tells the story more than plot mechanics.",
+        "detail": "The film gives a director a chance to stage a long emotional descent across decades while keeping the audience entertained by John’s wit and audacity. It especially suits filmmakers who can balance British social realism with a slightly heightened, almost folkloric sense of character."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget feature",
+        "lane": "Prestige streamer / festival-to-platform / UK theatrical lane",
+        "detail": "It can be packaged around one major lead performance and a strong supporting ensemble, without needing heavy VFX or action-star casting. The true-story hook, British setting, and Hitler/royal-family headline value give it export appeal and a clear marketing angle for adult audiences."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle is built from repeated travel and meetings.",
+        "detail": "The Zurich, Hamburg, archive, and newspaper sections all serve the same obsession engine, which is effective, but a next pass could look for one or two sequences where the emotional turn arrives before the procedural information. That would keep the momentum feeling more cumulative and protect the film’s forward charge.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The courtroom speech carries the thematic load.",
+        "detail": "John’s final address is a major payoff, and the version of the scene where one or two personal details land before the historical argument would make the emotional turn hit even harder. The material is already there; the lever is in how quickly the speech moves from self-justification to heartbreak.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The period span is expansive.",
+        "detail": "The story moves from 1974 through 2008, which gives it scale but also asks for careful production planning across wardrobe, vehicles, signage, and locations. A producer could protect the narrative by consolidating a few of the travel beats into fewer signature stops without changing the core chase.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights and clearance load is substantial.",
+        "detail": "Real people, newspapers, broadcasters, brands, archival photos, and historical references are woven through the script, so clearance strategy will need to be part of the package from the start. The upside is that the material’s recognizability is also part of its commercial pull.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Tom’s emotional arc could be foregrounded more in the chase sections.",
+        "detail": "Tom is the audience’s entry point into John’s world, and the scenes where he is simply following orders are already effective. One direction would be to let a few of those travel beats include a clearer private reaction from Tom, so the son’s point of view carries even more of the film’s ache.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting world is rich enough to trim.",
+        "detail": "There are enough friends, experts, officials, and intermediaries that the film can absorb some consolidation if needed. A streamlined version would keep the same social texture while reducing the number of one-off stops and making the package easier to mount.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74,
+  "tier": "Optionable",
+  "inputTokens": 55511,
+  "outputTokens": 4880,
+  "cost": 0.06359324999999999,
+  "declaredFormat": "Feature film"
+}

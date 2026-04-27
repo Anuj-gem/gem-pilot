@@ -1,0 +1,282 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "Adventure",
+        "Mythic fantasy"
+      ],
+      "tone": "Heightened, earnest, cosmic, and allegorical"
+    },
+    "positioning_hook": "Three childhood friends launch a nine-year mission to explore the solar system, only to discover each planet is ruled by a god guarding a hidden truth about Earth.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The core promise is big and easy to grasp — a historic space voyage with lifelong friendship and romance at its center — but the execution leans heavily into abstract cosmology and long explanatory passages. The audience is there, especially for high-concept sci-fi and faith-adjacent mythmaking, yet the commercial read is narrower than the premise alone suggests."
+      },
+      "conceptual_hook_clarity": {
+        "score": 5,
+        "reasoning": "The opening establishes the childhood dream, the graduation-to-mission pipeline, and the nine-year journey, so the basic engine is legible. The hook becomes more diffuse once the script shifts into planetary lectures and metaphysical systems, which makes the central story harder to hold in one clean sentence."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Kyle, Michael, Stanley, and Catherine give the script a clear emotional spine, and the childhood-friends-to-lovers structure has built-in attachment. The characters are more emblematic than sharply individualized on the page, though the devotion, sacrifice, and public-private split give actors something playable."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script commits to a singular cosmic-mythic framework where each planet is personified and each stop reveals a different metaphysical order. That ambition is unusual and memorable, even if the language often explains the invention rather than dramatizing it."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "The story has major milestones — graduation, approval, launch, planetary encounters, return, aftermath — but many of them are delivered through extended speeches and institutional ceremony. The forward drive is present, yet the middle stretches are more declarative than propulsive."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a trio traveling planet to planet and receiving layered knowledge from each world has a fresh, almost fable-like logic. It feels unlike standard space adventure, though the resonance is diluted by repetition and by the script’s tendency to restate its own mythology."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a large, rule-based universe with agencies, commissions, public ceremonies, media ecosystems, and distinct planetary cultures. The world is dense enough to feel generative, and the repeated references to institutions, funding, and public reception give it scale."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is unmistakably earnest, ceremonial, and spiritually charged, with a blend of civic pageantry and cosmic revelation. That consistency is a strength, though the script’s register stays close to the same elevated mode for most scenes."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the surface voyage is a story about faith, sacrifice, public mythmaking, and the cost of ambition on intimate relationships. The Catherine thread and the late reveal around Dr. Lake add some deeper emotional and moral layers that could reward a more distilled version."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The trio and their three partners create a workable relationship web, and the family/public scenes add some connective tissue. Still, most scenes orbit Kyle and the mission, with the supporting relationships serving the central premise more than generating independent story energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 25,
+        "leads": 4,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Large adult ensemble",
+          "Multiple named international officials",
+          "Child versions of the core trio",
+          "Ageing makeup or older casting for the epilogue"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Period-spanning contemporary-to-near-future with 1980s, 1998-2009, and 2089 settings",
+        "notable_requirements": [
+          "Spacecraft interiors",
+          "Multiple institutional interiors (classroom, auditorium, hospital, control center)",
+          "International city and airport exteriors",
+          "Large ceremonial crowd scenes",
+          "Space and planetary environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Full planetary travel, spacecraft launch and flight, holograms, celestial environments, dimensional beings, and large-scale cosmic battle imagery.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical launch effects, control-room interfaces, medical and crowd-beat staging, and spaceship model/prototype effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "NASA, UNESCO, IMF, Barclays Bank, CIA, KGB, FBI, and multiple named world leaders and institutions are referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "DSTV, Littleton High School, Tel-Aviv Hospital, and other named organizations/places are used prominently."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The title and repeated use of 'The Three Musketeers' invokes a well-known literary property title."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or specialty theatrical for elevated sci-fi/fantasy with a strong cult or diaspora audience",
+        "content_level": "PG-13 equivalent with mature thematic material",
+        "series_engine_or_release_model": "Feature release with festival-to-platform potential; the hook is the mythic voyage and the emotional aftermath"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Heavy VFX, multiple period settings, crowd scenes, spacecraft work, and planetary worlds push this well beyond a modest feature footprint."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script uses a large ensemble of named officials, family members, and planetary figures, plus child versions and aged epilogue casting."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story spans classrooms, campuses, homes, airports, hospitals, control rooms, space, and multiple planetary environments across several time periods."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material is mostly ceremonial and philosophical, with some sexual references, death, and cosmic conflict, but not extreme graphic content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names many real institutions, brands, and public entities, and it also uses a famous literary title in the central team name."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise has a built-in mythic engine.",
+          "what_it_means": "A producer gets a feature that can sell on scale: childhood ambition, global approval, a launch countdown, and a return that becomes legend. That combination is attractive to buyers looking for aspirational sci-fi with emotional stakes and a clear event-movie frame.",
+          "evidence": "The trio’s childhood vow, the 1998 graduation, the December 31, 1999 launch, and the later public holiday around Three Musketeers Day.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is large and institutionally specific.",
+          "what_it_means": "The script doesn’t just imagine space travel; it builds a bureaucracy, media machine, and international funding ecosystem around it, which gives the project a sense of scale. That kind of world texture helps a buyer see a franchiseable universe or at least a premium, high-concept feature with room to breathe.",
+          "evidence": "The NASA/World Space Agency/African Space Commission/European and Austra-Asian commission hearings, press conferences, and global fundraising discussions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The planetary encounters are a signature device.",
+          "what_it_means": "Each planet functions like a chapter with its own rules, which gives the material a modular, episodic-feeling feature structure without changing format. That makes the script stand out from standard space adventure and gives a director a chance to stage distinct visual and tonal worlds inside one film.",
+          "evidence": "Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, and Hercolubus each deliver a separate metaphysical address to the travelers.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance thread gives the epic a human anchor.",
+          "what_it_means": "Catherine’s waiting, the other women’s marriages, and the eventual heartbreak create a playable emotional spine that can widen the audience beyond pure sci-fi viewers. That gives the project a path to actors and buyers who want a love story inside a spectacle frame.",
+          "evidence": "Catherine refusing proposals, the nightclub confrontation, the letter she leaves behind, and Kyle’s collapse at her monument.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending has memorial-scale afterlife.",
+          "what_it_means": "The epilogue turns the mission into public legend through statues, scholarships, books, auctions, and annual celebration, which is exactly the kind of legacy material that helps a film linger. Buyers and festival programmers often respond to stories that feel bigger than the plot and end as cultural memory.",
+          "evidence": "The montage of the KSM Scholarship Award, the children’s book, the auction headline, and the Three Musketeers Day celebration.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, strange, earnest feature with a real event-movie spine: childhood friends, a global launch, and a nine-year voyage that turns into a cosmic myth. The script’s strongest commercial asset is its scale of imagination — a world of agencies, planets, and public ceremony wrapped around a human love story that gives the spectacle a pulse."
+    },
+    "lead_characters": [
+      {
+        "name": "Kyle Russell",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s in the main timeline, 118 in the epilogue",
+        "hook": "Kyle is the public face of the trio: ambitious, ceremonial, and emotionally tethered to both his childhood vow and Catherine. He reads like the natural leader of the group, the one who can stand at a podium, sell a dream, and still carry the ache of what the dream costs him.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in *Interstellar* — a man whose conviction has to carry the audience through impossible scale. The role gives an actor the chance to play leadership, romantic devotion, public mythmaking, and late-life regret in one long arc."
+      },
+      {
+        "name": "Michael Olsson",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s in the main timeline, 117 in the epilogue",
+        "hook": "Michael is the warmest of the trio, the one who speaks in gratitude, family loyalty, and emotional affirmation. He functions as the heart of the group, giving the mission a softer, more relational center.",
+        "why_actor_wants_this": "This is the kind of role that gave Mahershala Ali in *Moonlight* or Sterling K. Brown in *This Is Us* the chance to make tenderness feel authoritative. An actor gets a chance to play sincerity without irony, then let age and distance turn that sincerity into ache."
+      },
+      {
+        "name": "Stanley Simmons",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s in the main timeline, 118 in the epilogue",
+        "hook": "Stanley is the polished, socially fluent member of the trio, the one who can turn a graduation speech into a family event and a technical explanation into a public performance. He has the energy of a man who believes in the mission as both science and status.",
+        "why_actor_wants_this": "This is the prestige-ensemble lane of Donald Glover in *Atlanta* when charm and intelligence are doing double duty. The part gives an actor room to play charisma, intellect, and the pressure of being one-third of a historic brand."
+      },
+      {
+        "name": "Catherine Sand-Backer",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s in the main timeline, 37 in the later timeline",
+        "hook": "Catherine is the emotional counterweight to the mission: loyal, proud, career-minded, and eventually forced to choose between faith in love and the reality of time. She’s written as the woman who keeps the promise alive long after everyone else starts calling it fantasy.",
+        "why_actor_wants_this": "This is the emotional territory of Michelle Williams in *Blue Valentine* or Carey Mulligan in *Never Let Me Go* — a woman whose inner life is defined by waiting, dignity, and the moment belief becomes a choice. It gives an actress a long-burn romantic lead with a devastating final turn."
+      },
+      {
+        "name": "Dr. Lake Gore",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "Dr. Lake is the visionary scientist, public authority, and eventual tragic architect of the mission’s hidden mechanics. He carries the aura of a man who wants credit, then pays for that desire with his body and reputation.",
+        "why_actor_wants_this": "This is the prestige-science role territory of Jeff Goldblum in *The Fly* or Cillian Murphy in *Oppenheimer* — a brilliant mind whose authority is inseparable from obsession. The part gives an actor a chance to play intellectual charisma, public persuasion, and moral collapse."
+      },
+      {
+        "name": "Dr. Charles L. Grant",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s",
+        "hook": "Dr. Grant is the institutional father figure, the man who hosts ceremonies, fields calls, and carries the burden of public legitimacy. He feels like the face of the older generation trying to bless a future it cannot fully control.",
+        "why_actor_wants_this": "This is the kind of dignified authority role that gave Bryan Cranston in *Trumbo* or Tom Wilkinson in *Michael Clayton* so much texture. An actor gets to play gravitas, public speech, and private worry without needing action beats to hold the frame."
+      },
+      {
+        "name": "Mrs. Maria Olsson",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-60s",
+        "hook": "Maria is the mother who never stops feeling the mission in her body, even when the world turns it into ceremony. Her grief and devotion give the family scenes their emotional pressure.",
+        "why_actor_wants_this": "This is the maternal anguish lane of Frances McDormand in *Three Billboards* or Viola Davis in *Fences* — a parent whose love is active, not decorative. The role gives an actress a chance to turn waiting into force."
+      },
+      {
+        "name": "Mrs. Jane Russell",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-60s",
+        "hook": "Jane is the steady family matriarch who tries to keep hope and realism in the same room. She is the voice of endurance when the men around her are still speaking in mission language.",
+        "why_actor_wants_this": "This is the grounded family-drama space of Ann Dowd in *Mass* or Laura Linney in *The Savages*. The role gives an actress a chance to play the emotional administrator of a family under historic strain."
+      },
+      {
+        "name": "Mrs. Simmons",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-60s",
+        "hook": "Mrs. Simmons is part of the family chorus that keeps the emotional stakes visible in the domestic scenes. She helps turn the mission from a public event into a household crisis.",
+        "why_actor_wants_this": "This is the kind of supporting maternal role that gives an actress a strong scene or two of communal truth, like the family elders in *Moonlight* or *The Farewell*. It’s a part that can land powerfully with very little screen time if played with specificity."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage cosmic myth with sincerity, not irony.",
+        "fit_profile": "First- or second-feature directors with a strong visual imagination, or established indie filmmakers looking to move into larger-scale speculative material without losing performance focus. The sweet spot is someone who likes ceremonial storytelling, large symbolic worlds, and emotional earnestness over snark or genre self-awareness.",
+        "detail": "The material rewards a director who can make speeches feel like events and planetary encounters feel like distinct cinematic chapters. It also gives a filmmaker a rare chance to build a feature around pageantry, scale, and belief rather than chase-driven mechanics."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Streaming sci-fi / elevated fantasy / cult-event lane",
+        "detail": "It is packaging-friendly because the core can be anchored by four lead performances and a strong visual concept, rather than a giant star ensemble. The planetary structure and public-legend framing give it export value and a built-in marketing hook for streamers looking for original, conversation-starting genre titles."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on explanation.",
+        "detail": "A next pass could let one or two planetary encounters play through action or conflict before the mythology lands in dialogue. The Mercury and Venus sections, in particular, are rich with ideas; the version where the audience discovers some of that through behavior would keep the momentum moving while preserving the world-building.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The trio can be more individually distinct.",
+        "detail": "Kyle, Michael, and Stanley each carry the mission, but they often speak in the same elevated register and share the same emotional posture. One lever would be to sharpen how each man handles pressure differently — leader, heart, strategist — so the friendship dynamic becomes more than a shared belief system.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The planetary speeches could be trimmed into set pieces.",
+        "detail": "The long addresses from Mercuria, Venusia, Jove, Saturn, Uranusia, Neptunia, Plutonian, and Hercolubus create a huge mythology, but they also ask a lot of the audience in one stretch. The version of the script where each planet delivers one defining idea and one visual action would protect the scale while making the journey feel more cinematic.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights footprint is broad.",
+        "detail": "The script names many real institutions, agencies, banks, hospitals, and public bodies, so a production pass would want to decide which references are essential and which can be generalized. That simplification would make the project easier to clear without changing the core story of a globally backed mission.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The launch-and-return structure is ambitious.",
+        "detail": "The feature spans childhood, graduation, launch, a nine-year voyage, and a far-future epilogue, which gives it scope but also asks for careful compression. A cleaner version might fold some of the public ceremony material into fewer sequences so the emotional throughline between Kyle and Catherine stays front and center.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 54.7,
+  "tier": "Needs Development",
+  "inputTokens": 49874,
+  "outputTokens": 4522,
+  "cost": 0.0577545,
+  "declaredFormat": "Feature film"
+}

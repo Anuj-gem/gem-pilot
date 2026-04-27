@@ -1,0 +1,303 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Experimental drama",
+      "genre_tags": [
+        "Ensemble",
+        "Tech-world satire"
+      ],
+      "tone": "Fragmented, deadpan, profane, literary, and observational"
+    },
+    "positioning_hook": "A disaffected startup engineer juggles military drone tech, basement-level friendships, and a collapsing creative life as his generation drifts through sex, drugs, and ambition.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "There’s a clear lane for viewers who respond to millennial/Gen Z ensemble dramedy and tech-satire, but the appeal is more specialized than broad. The script’s pleasures are in voice, texture, and attitude rather than a single clean commercial engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 4,
+        "reasoning": "The world and characters are vivid, but the central dramatic engine stays diffuse across lab scenes, hangouts, and meta writing material. The military drone startup, basement living, and creative frustration are all present, yet the script doesn’t lock them into one sharply legible feature premise."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Amir, Alexey, and Lucia each have a distinct voice and social posture, and the ensemble has enough friction to keep scenes alive. The characters are more compelling as a lived-in circle than as fully crystallized feature arcs, which keeps the ceiling solid rather than high."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a collage form, mixing startup jargon, literary references, druggy banter, and geopolitical chatter in a way that feels authored. The boldness is in the texture and structure more than in a single clean narrative invention."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "Scenes often play as slices of life, conversations, or repeated social beats rather than a tightening chain of cause and effect. The material has momentum in the moment, but the feature drive is looser than a buyer would want for a conventional forward engine."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A defense-tech startup filtered through basement hangouts, literary self-consciousness, and sexual/social awkwardness is a fresh combination. The ingredients are familiar individually, but the specific collision of them gives the script its own identity."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Aquatius ecosystem, the military-adjacent funding talk, the lab basement, the club/bouncing side hustle world, and the creative circle all create a recognizable social map. The script keeps finding new corners of that ecosystem, which gives the setting story-generating texture."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusually specific: deadpan, profane, self-aware, and intellectually overdetermined, with abrupt jumps between comedy, alienation, and geopolitical seriousness. You can feel the script’s voice in the dialogue rhythms and the cut-based structure."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the banter there are real themes about ambition, class drift, masculinity, creative identity, and the moral fog around defense tech. The draft hints at that depth more than it fully organizes it, but the material clearly has reserves."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Amir/Alexey, Alexey/Lucia, Amir/Alana, and the wider friend group all generate distinct social energy, and the script repeatedly returns to those combinations. The ensemble feels like a real circle with overlapping loyalties, resentments, and dependencies."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Late-20s ensemble",
+          "Multiple South Asian, Eastern European, and Middle Eastern roles",
+          "Some roles benefit from strong improvisational rhythm and naturalistic banter"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior cutaways",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Tech lab/basement workspace",
+          "Apartment interiors",
+          "Club, parking lot, street, subway, hospital, warehouse, and office settings"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily insert shots and screen-based material: drones, batteries, newsreels, social media clips, and stylized cutaways.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical needs beyond smoking, phones, screens, and basic vehicle movement.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Taco Bell, Crunch Fitness, DoorDash, Lyft, Amazon, Hinge, White Castle, Y Combinator, Techstars, Lockheed Martin, UCSD, TikTok, Instagram, DraftKings, FanDuel, Zyn, and Blaze wallet lighter are all named on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "Elon Musk and Elizabeth Holmes are referenced in dialogue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Science and Civilisation in China, The Thirtieth Year, The Notebooks of Malte Laurids Brigge, Austerlitz, Checkout-19, and The Cheat are specifically named literary/film works."
+        },
+        {
+          "type": "named_music",
+          "detail": "No specific music tracks are named."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Festival-to-platform indie drama / elevated ensemble satire",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best positioned as a festival launch with platform pickup or a limited theatrical run driven by voice, cast, and critical conversation."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary interiors, small ensemble, and minimal effects keep the budget footprint contained."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble depends on several sharply voiced late-20s roles and benefits from actors who can handle dense, naturalistic banter."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through labs, apartments, clubs, streets, a hospital, a warehouse, and office spaces, though all are contemporary and accessible."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent drug use, explicit sexual references, profanity, and morally charged defense-tech material narrow the audience and platform lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names many brands, institutions, literary works, and public figures, creating a meaningful clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The voice is instantly legible.",
+          "what_it_means": "The script has a distinct authorial fingerprint that can separate it from generic startup or hangout material, which is a real asset for festival programmers and indie buyers looking for something with attitude. Writers, directors, and actors who want dialogue that sounds lived-in, literate, and a little feral will recognize the lane immediately.",
+          "evidence": "Amir’s startup monologues, Alexey and Lucia’s literary banter, and the repeated deadpan profanity around sex, work, and ambition.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble feels socially specific.",
+          "what_it_means": "The friend group has enough overlap, tension, and class/identity texture to support a feature built on relationships rather than plot mechanics alone. Casting directors and producers looking for a young-adult ensemble with real chemistry material will see multiple roles that can pop in the same frame.",
+          "evidence": "Amir, Alana, Alexey, Lucia, Virgil, Michelle, Mass, Noor, Catherine, Samir, and Ivan all carry distinct social energy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The defense-tech world gives it a commercial edge.",
+          "what_it_means": "The military-adjacent startup material gives the script a contemporary hook that can travel beyond pure character drama and into the current appetite for tech, power, and ethics stories. Buyers who respond to Silicon Valley-era ambition stories with a darker geopolitical angle will see a fresh lane here.",
+          "evidence": "Amir’s drone and battery pitch, the Army meetings, the Ukrainian naval drone references, and the Pollock social-media clip.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The collage structure creates a signature rhythm.",
+          "what_it_means": "The cut-driven form lets the script move between conversation, image, and social-media texture in a way that feels modern and editorially distinctive. That gives a director room to make a strong formal statement without needing a huge production footprint.",
+          "evidence": "Repeated jump cuts, insert shots, V.O. passages, TikTok/Instagram clips, and scene fragments.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The setting is producible without feeling generic.",
+          "what_it_means": "A contemporary lab/apartment/club ecosystem can be mounted at a contained budget while still feeling specific and lived-in, which is attractive to indie financiers and streamer buyers alike. The material suits directors and producers who know how to make modest spaces feel culturally dense.",
+          "evidence": "Aquatius Laboratories, Amir and Alana’s apartment, Alexey’s basement, the club, parking lots, and office interiors.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The script has a built-in actor showcase in Amir.",
+          "what_it_means": "Amir is written as a fast-talking, contradictory founder who can play intellect, arrogance, exhaustion, and social performance in the same role. That is exactly the kind of part that attracts rising leads and established character actors looking for a prestige-forward contemporary role.",
+          "evidence": "His monologue about failed startups, investor perception, and the military funding pipeline.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a voice-first ensemble feature with a real point of view: a defense-tech startup, a basement creative class, and a generation trying to turn drift into identity. The script’s commercial lane lives in its specificity — the dialogue, the social ecosystem, and the contemporary tech-military backdrop give it a buyer-facing hook that feels current rather than generic."
+    },
+    "lead_characters": [
+      {
+        "name": "Amir",
+        "role_type": "Lead",
+        "demographics": "Male · 26 · South Asian",
+        "hook": "A hyper-verbal startup founder with a hustler’s brain and a self-mythologizing streak, Amir lives at the intersection of engineering, ambition, and social performance. He is funny, exhausted, controlling, and always trying to convert chaos into leverage, whether he’s pitching battery tech, managing investors, or narrating his own failure as a credential.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Jesse Eisenberg in The Social Network — a rapid-fire intellect role where the performance is built on velocity, insecurity, and control. Actors who want a modern lead with monologue heat, comic timing, and the chance to make ambition feel dangerous will chase this."
+      },
+      {
+        "name": "Alexey",
+        "role_type": "Lead",
+        "demographics": "Male · 26 · Eastern European / Ukrainian",
+        "hook": "Alexey is a drifting, observant, sexually awkward creative who moves through the world half-employed, half-self-exiled, and fully aware of his own inertia. He has the posture of a guy who can read the room, quote the right book, and still end up in the basement, which makes him both funny and quietly tragic.",
+        "why_actor_wants_this": "This is the showcase space of Philip Seymour Hoffman in Synecdoche, New York or Jesse Plemons in The Power of the Dog — a role where interiority, embarrassment, and intelligence all live in the same face. Character actors who can make stillness feel loaded, and younger leads looking to prove range beyond charm, will be drawn to it."
+      },
+      {
+        "name": "Lucia",
+        "role_type": "Lead",
+        "demographics": "Female · 26 · Middle Eastern / South Asian-adjacent presentation",
+        "hook": "Lucia is a writer with a sharp tongue, guarded vulnerability, and a constant awareness of how she is being read by employers, editors, family, and men around her. She moves between flirtation, critique, and self-protection with real ease, giving the script one of its most alive and intellectually agile presences.",
+        "why_actor_wants_this": "This is the showcase territory of Greta Gerwig in Frances Ha or Ayo Edebiri in The Bear — a role that lets an actor play wit, self-consciousness, romantic tension, and creative frustration without flattening into a type. Actors who want a literate, contemporary female lead with comic bite and emotional precision will want this part."
+      },
+      {
+        "name": "Alana",
+        "role_type": "Lead",
+        "demographics": "Female · 26",
+        "hook": "Alana is the quieter center of the apartment world, a woman who reads as composed on the surface while carrying the social labor of keeping the room together. She is less performative than the others, which gives her a grounded, watchful energy that makes every small reaction count.",
+        "why_actor_wants_this": "This is the kind of understated showcase seen in Carrie Coon in The Leftovers or Elizabeth Olsen in Martha Marcy May Marlene — a role where restraint becomes the performance language. Actors who excel at interiority and want a part that can anchor scenes without dominating them will respond to her."
+      },
+      {
+        "name": "Mass",
+        "role_type": "Supporting",
+        "demographics": "Male · 26",
+        "hook": "Mass is a reckless, comic, self-destructive presence whose stories are as outrageous as his habits. He functions as both comic pressure valve and cautionary mirror, the guy who makes everyone else’s instability look almost organized.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting part that recalls Walton Goggins in Vice Principals or Ben Schwartz in The Afterparty — a role built on volatility, timing, and the ability to turn every entrance into a story. Character actors who like playing chaos with charm will go after it."
+      },
+      {
+        "name": "Virgil",
+        "role_type": "Supporting",
+        "demographics": "Male · 26",
+        "hook": "Virgil is the polished, useless company face: socially legible, investor-friendly, and strategically empty. He’s the kind of presence who can smile through dysfunction while quietly making everything harder for the people actually doing the work.",
+        "why_actor_wants_this": "This is the corporate-satire slot of Matthew Macfadyen in Succession — a role where passive aggression, entitlement, and polished incompetence become the joke. Actors who can play status without effort and make dead air feel loaded will want this."
+      },
+      {
+        "name": "Michelle",
+        "role_type": "Supporting",
+        "demographics": "Female · 26",
+        "hook": "Michelle is sharp, reactive, and unwilling to swallow nonsense, which makes her one of the few people in the room who can puncture the group’s self-seriousness. She brings heat into scenes fast and reads as someone who has already run out of patience with everyone’s act.",
+        "why_actor_wants_this": "This is the kind of combustible supporting role that gives an actor the energy of Janelle Monáe in Glass Onion or Ayo Edebiri in supporting mode — quick intelligence, social precision, and the ability to dominate a scene in a few lines. Actors who want a memorable, high-tension ensemble part will chase it."
+      },
+      {
+        "name": "Rahul",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Rahul is the offscreen technical partner whose presence is felt through Amir’s explanations and the startup’s functioning. He reads as a practical counterweight to Amir’s performative founder energy, even when the script keeps him mostly in the background.",
+        "why_actor_wants_this": "This is the kind of grounded tech-side role that can play like the straight-man engine in The Social Network — the person whose competence makes the louder personalities look more unstable. Actors who specialize in dry, efficient support roles will see utility here."
+      },
+      {
+        "name": "Brock",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Brock is the former cofounder who exits with a mix of resentment, passivity, and practical need. He feels like the guy who never fully bought into the myth, which makes his departure emotionally and economically legible.",
+        "why_actor_wants_this": "This is a clean supporting slot in the tradition of the disillusioned cofounder in The Social Network — a role that lets an actor play quiet betrayal and wounded pragmatism. It will appeal to actors who like compressed, scene-efficient parts with real subtext."
+      },
+      {
+        "name": "Noor",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Noor is blunt, funny, and socially unamused, with enough self-possession to call out the men around her without needing to perform for them. She gives the script a sharper female counterpoint and helps ground the more absurd social material.",
+        "why_actor_wants_this": "This is the kind of dry, scene-stealing role that recalls Zazie Beetz in Atlanta or Janelle Monáe in ensemble mode — a part that rewards timing, skepticism, and a strong comic read. Actors who want a compact but memorable presence will want it."
+      },
+      {
+        "name": "Catherine",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Catherine is socially fluent, lightly cutting, and capable of turning a group conversation into a diagnostic tool. She feels like someone who sees through the room quickly and chooses when to say it out loud.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the conversational precision of Molly Shannon in a dramedy ensemble — a part where the humor comes from timing and social intelligence. It will attract actors who like playing the smartest person in a room without announcing it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn contemporary drift into a formal statement.",
+        "fit_profile": "First- or second-feature directors with festival shorts or a single indie feature, especially those drawn to performance-forward material, collage editing, and deadpan social realism. This is for filmmakers who like to build mood from conversation, inserts, and rhythm rather than from plot machinery alone.",
+        "detail": "The material rewards a director who can make talk feel cinematic and can shape a fragmented structure into momentum. It will attract directors who want a calling-card feature that feels authored, contemporary, and modestly producible without looking small."
+      },
+      "buyer_appeal": {
+        "tier": "$1-5M feature",
+        "lane": "Festival indie / elevated ensemble satire / tech-world dramedy",
+        "detail": "The cast can be built around breakout-level actors rather than bankable stars, which makes it packageable off a strong script and director attachment. The contemporary setting, contained interiors, and current tech-military subject matter give it a festival-to-platform path with conversation value."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The feature engine is still diffuse.",
+        "detail": "The script has a lot of compelling material — startup ambition, creative drift, friendship, and defense-tech ethics — and a next pass could decide which of those is the spine so the feature plays with more forward charge. The strongest version of this story may be the one where one relationship or one professional deadline becomes the organizing pressure for the whole film.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Several scenes play as atmosphere first.",
+        "detail": "The cutaway-heavy passages and repeated hangout beats create texture, and a future pass could clarify which of those moments are doing story work versus mood work. If a few of the observational interludes were tied more tightly to a turning point, the momentum would feel even more intentional.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand and title references are numerous.",
+        "detail": "The script names a long list of companies, platforms, books, and public figures, so a production pass would benefit from a clearance sweep and a decision about which references are essential to the texture. The version of the film that preserves the social specificity while trimming a few named dependencies would be easier to finance and distribute.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ensemble could be streamlined by function.",
+        "detail": "There are enough named players that a producer may want to distinguish who is carrying independent story weight versus who is primarily texture. A leaner version that folds one or two peripheral roles into existing relationships would protect the social world while keeping the cast footprint efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The dialogue wants room to breathe.",
+        "detail": "The script’s best material comes from the specific rhythms of the conversations, especially when characters are circling status, sex, work, and identity. A next pass could consider where a shorter exchange or a cleaner exit would let the strongest line land with more force.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 61.3,
+  "tier": "Optionable",
+  "inputTokens": 19657,
+  "outputTokens": 4956,
+  "cost": 0.03704475,
+  "declaredFormat": "Feature film"
+}

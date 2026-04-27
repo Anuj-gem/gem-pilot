@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:02:55.655Z",
+  "submission_id": "c5d6b80d-f540-4925-a780-7b0d28821a30",
+  "eval_id": "3b2027fc-a8ef-4d0f-a695-f4aac93938a6",
+  "title": "Shotgun Wedding",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Mickey Dourke",
+      "role_type": "Lead",
+      "demographics": "Male · late teens/early 20s"
+    },
+    {
+      "name": "Travis Dourke",
+      "role_type": "Lead",
+      "demographics": "Male · late teens/early 20s"
+    },
+    {
+      "name": "Amber Snelling",
+      "role_type": "Lead",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "Brenda Lumpkins",
+      "role_type": "Lead",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "Buck Lumpkins",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s"
+    },
+    {
+      "name": "Angel",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-to-late teens"
+    },
+    {
+      "name": "Captain",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Rose",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "Maryanne",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "Sterling",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-teens"
+    },
+    {
+      "name": "Terrel Jefferson",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s"
+    }
+  ],
+  "positioning_hook": "A timid Ohio amusement-park worker races to stop his brother’s shotgun wedding, only to discover the girl he lost years ago is the bride’s secret, and the whole family is armed.",
+  "cost_usd": 0.05788725,
+  "input_tokens": 45527,
+  "output_tokens": 5276,
+  "status": "wrote:leads_ok"
+}

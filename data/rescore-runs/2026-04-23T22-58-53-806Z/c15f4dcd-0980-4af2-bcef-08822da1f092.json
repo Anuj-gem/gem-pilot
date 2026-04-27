@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:10:31.477Z",
+  "submission_id": "c15f4dcd-0980-4af2-bcef-08822da1f092",
+  "eval_id": "f1e399ff-7746-4333-ad15-10aae3706c23",
+  "title": "Priceless",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Miranda Ashton",
+      "role_type": "Lead",
+      "demographics": "Female · late 40s"
+    },
+    {
+      "name": "Doctor Sebastian Evans",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · British accent"
+    },
+    {
+      "name": "Amanda Ashton",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Emily McDowell",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s"
+    },
+    {
+      "name": "Doctor Taylor Carlyle",
+      "role_type": "Lead",
+      "demographics": "Male · early 30s"
+    },
+    {
+      "name": "Jenna",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Lori Donovan",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Joey Donovan",
+      "role_type": "Supporting",
+      "demographics": "Male · 8"
+    },
+    {
+      "name": "Dawn",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Sheila",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Aiden Henderson",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Beth Fonda",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s"
+    },
+    {
+      "name": "Chuck Harrison",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Linda Riley",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    }
+  ],
+  "positioning_hook": "A newly widowed hospital CEO fights to hold together a children’s hospital as a cocky surgeon, a scheming nurse, and her reckless niece turn every shift into a power struggle.",
+  "cost_usd": 0.036675,
+  "input_tokens": 18354,
+  "output_tokens": 5091,
+  "status": "wrote:leads_ok"
+}

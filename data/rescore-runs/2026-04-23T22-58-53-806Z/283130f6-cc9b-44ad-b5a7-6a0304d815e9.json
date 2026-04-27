@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-23T23:23:18.141Z",
+  "submission_id": "283130f6-cc9b-44ad-b5a7-6a0304d815e9",
+  "eval_id": "5fa02ff1-2f96-4b8c-9ab5-70a581a9a2ab",
+  "title": "NEVER TRUST A STRANGER",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Bobby Freeman",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · physically weathered, later cleans up into a polished, handsome look"
+    },
+    {
+      "name": "Joplin",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s to 30s · edgy, stylish, physically confident"
+    },
+    {
+      "name": "Alex Furino",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · stocky, controlled, outwardly ordinary"
+    },
+    {
+      "name": "Detective Jenkins",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 50s · fit, polished, law-enforcement presentation"
+    },
+    {
+      "name": "Rose",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · homeless, tough, emotionally open"
+    },
+    {
+      "name": "Dylan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · homeless, scrappy, lanky"
+    },
+    {
+      "name": "Tina",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · attractive, guarded, mother of a disabled son"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · disabled, childlike behavior"
+    },
+    {
+      "name": "Primo",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · heavyset mob boss"
+    },
+    {
+      "name": "Carlo",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · gangster-cop hybrid look"
+    },
+    {
+      "name": "Tony",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · stocky, dim, loyal muscle"
+    },
+    {
+      "name": "Stu",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · coffee-shop owner/counterman"
+    },
+    {
+      "name": "Walter",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · homeless, mentally unmoored"
+    },
+    {
+      "name": "Tina's Household / Homeless Camp Supporting Players",
+      "role_type": "Supporting",
+      "demographics": "Mixed · various ages and genders"
+    }
+  ],
+  "positioning_hook": "A homeless ex-con with a gun and a bullet in his pocket gets pulled into a crooked money grab, then discovers every ally around him is playing a deeper con.",
+  "cost_usd": 0.05728275,
+  "input_tokens": 43191,
+  "output_tokens": 5531,
+  "status": "wrote:leads_ok"
+}

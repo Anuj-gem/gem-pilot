@@ -1,0 +1,392 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "Romantic drama",
+        "Time-travel thriller"
+      ],
+      "tone": "Grounded, sentimental, nostalgic, and emotionally earnest with heightened time-travel mechanics"
+    },
+    "positioning_hook": "A lonely college student time-traveling through 2001 falls for a woman he can’t save from 9/11, forcing him to choose between love, history, and the life he returns to.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear: a lonely young man, a first love, and a 9/11-era heartbreak give the movie a built-in human pull. The audience is narrower than a four-quadrant genre play because the concept leans heavily on romance and tragedy rather than broad spectacle, but the hook is still easy to communicate."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The script establishes its engine early: Dean meets Aaron’s time machine, goes to 2001, and discovers the halo-guided mystery around altered reality. The 9/11 turn arrives later than the time-travel setup, but once Carmen’s job at the World Trade Center is revealed, the story’s central pressure becomes unmistakable."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Dean has a strong emotional center as a lonely, awkward guy who finally gets to feel chosen, and Aaron has a clear obsessive-scientist energy. The supporting players mostly serve Dean’s journey, though Carmen gives the story its most vivid romantic counterweight and the final reveal of Billy and Winston adds a memorable layer."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The time-travel setup is familiar, but the script’s use of the Mandela Effect, halo-guided checkpoints, and a romance threaded through 2001 pop culture gives it a distinct flavor. The material is most original in how it turns nostalgia into a grief engine, though the mechanics are explained more than dramatized in places."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The movie keeps moving through a steady chain of discoveries, parties, dates, and escalating time-pressure around Carmen’s job. The middle section has a looser, episodic feel because several scenes repeat the same emotional beat of Dean and Carmen growing closer, but the 9/11 countdown restores urgency in the back half."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A romance that begins as a time-travel experiment and ends with the protagonist unable to save the woman he loves from a historical catastrophe has a memorable inevitability. The halo concept and the final white-abyss reveal give the script a fresh mythic frame around a very recognizable emotional wound."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The 2001 setting is textured with specific consumer culture markers—GameStop, Funcoland, WrestleMania 17, Gran Turismo 3, Oasis, Limp Bizkit, and early-2000s New York. That detail makes the world feel lived-in and playable, even when the story is mostly moving through a few recurring locations."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone blends earnest romance, pop-nostalgia, and sci-fi mystery with a blunt, sometimes comic male voice. It has a recognizable emotional lane, though the script shifts between heartfelt, goofy, and explanatory modes rather than locking into one sharply singular register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "On the surface this is a love story inside a time-travel puzzle, but the ending suggests a larger meditation on memory, fate, and how people become who they are through loss. The white-abyss reveal and the final visit to Carmen’s parents imply a deeper emotional architecture than the plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Dean/Aaron/Peter gives the movie a workable core triangle, and Dean’s friendships with Billy, Winston, George, Ronda, and Hannah create a social web around him. Still, the story is fundamentally driven by Dean’s bond with Carmen, so the ensemble supports the engine more than it generates independent storylines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in early 20s",
+          "Female romantic lead in early-to-mid 20s",
+          "Older supporting couple in 60s+",
+          "Ensemble of early-20s friends and coworkers",
+          "One role requires a believable 2001-era college-age look"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Mostly interior with substantial exterior city coverage",
+        "period_or_contemporary": "Period (2001) with present-day framing",
+        "notable_requirements": [
+          "New York City streets and landmarks",
+          "Times Square",
+          "Central Park",
+          "Grand Central",
+          "World Trade Center interiors/exteriors",
+          "Hotel lobby and room builds",
+          "Arcade and bar interiors",
+          "Garage/time-machine set"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Time-machine door effects, halo visual effects, white-abyss finale, plane approach/impact coverage, and some period-recreation enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical time-machine door mechanics, shaking/light flicker effects, and controlled impact/transition moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Have You Ever Seen the Rain - Creedence Clearwater Revival"
+        },
+        {
+          "type": "named_music",
+          "detail": "Rollin' - Limp Bizkit"
+        },
+        {
+          "type": "named_music",
+          "detail": "Don't Go Away - Oasis"
+        },
+        {
+          "type": "named_music",
+          "detail": "Bittersweet Symphony - The Verve"
+        },
+        {
+          "type": "named_music",
+          "detail": "Hey Leonardo (She Likes Me for Me) - Blessed Union of Souls"
+        },
+        {
+          "type": "brand",
+          "detail": "Facebook"
+        },
+        {
+          "type": "brand",
+          "detail": "GameStop"
+        },
+        {
+          "type": "brand",
+          "detail": "McDonald's"
+        },
+        {
+          "type": "brand",
+          "detail": "Starbucks"
+        },
+        {
+          "type": "brand",
+          "detail": "WrestleMania"
+        },
+        {
+          "type": "brand",
+          "detail": "OKCupid"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "WWE event references and specific game titles"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Nelson Mandela"
+        },
+        {
+          "type": "real_person",
+          "detail": "Martin Luther King Jr."
+        },
+        {
+          "type": "real_person",
+          "detail": "Robert F. Kennedy"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or festival-to-platform drama with genre elements",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as a festival launch or streaming original where the romance/time-travel hook can be marketed directly."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The core is contained, but period New York, the World Trade Center material, and moderate VFX push it above a microbudget lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project lives on a few key roles, but the lead romance and the 2001 ensemble require age-specific chemistry and period credibility."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story spans multiple New York locations, period recreation, and World Trade Center coverage, which makes location planning central."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes strong language, sexual content, and 9/11 tragedy material, which narrows the cleanest platform lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Multiple named songs, brands, real people, and WWE/game references create a meaningful clearance load."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The romance is the engine.",
+          "what_it_means": "This gives the movie a clean emotional spine that can sell beyond the time-travel premise, because the audience is tracking whether Dean gets to be seen and loved before history takes it away. Actors and buyers alike respond to a love story with a built-in deadline, especially when the ending is tied to a globally recognized event.",
+          "evidence": "Dean’s first real connection with Carmen grows through the birthday party, karaoke, the first kiss, the hotel-room confession, and the final goodbye at the World Trade Center.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The 2001 texture is vivid.",
+          "what_it_means": "The script has a strong period-playback quality that makes the time travel feel experiential instead of abstract, which is valuable for marketing and audience memory. Buyers looking for nostalgia-driven genre material will see a built-in hook in the specific pop-culture markers and retail spaces of the era.",
+          "evidence": "GameStop/Funcoland, WrestleMania 17, Gran Turismo 3, Tekken 4, Oasis, Limp Bizkit, Facebook, and early-2000s New York all appear as story texture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dean is an actor role.",
+          "what_it_means": "The lead gives a performer a full emotional arc from defensive loner to someone who has been loved, lost, and changed by it, which is exactly the kind of material that can elevate a mid-budget feature. Casting directors will see a role that can be played funny, awkward, romantic, and devastated in one package.",
+          "evidence": "Dean starts as a skeptical, sarcastic college guy, then becomes openly vulnerable with Nina, Carmen, Aaron, and finally Carmen’s parents.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The halo concept gives the story a signature device.",
+          "what_it_means": "The halo functions as a visual and narrative guidepost that can be marketed as the movie’s own mythic rule-set, which helps the script stand apart from standard time-travel mechanics. Genre buyers and directors who like clean visual motifs will respond to a device that can be repeated, tracked, and paid off.",
+          "evidence": "The halo repeatedly appears over objects and people, redirects Dean’s choices, and is finally revealed to be Billy and Winston.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending reframes the whole movie.",
+          "what_it_means": "The white-abyss reveal and the final visit to Carmen’s parents turn the script from a simple romance into a story about identity, memory, and what a life is for, which adds aftertaste and discussion value. That kind of ending gives a producer a stronger festival or prestige-streaming conversation than a straightforward genre capper.",
+          "evidence": "Billy and Winston reveal themselves as borrowed vessels, then Dean returns to present day and visits the Bogota family with the photo of Carmen.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting trio has usable chemistry.",
+          "what_it_means": "Dean, Aaron, and Peter create a workable comic-science-fantasy triangle that can carry the exposition without flattening the movie, which is useful for pacing and audience access. This is the kind of relationship web that can attract actors who like playing off each other rather than carrying every scene alone.",
+          "evidence": "Peter recruits Dean, Aaron explains the machine, and the three of them repeatedly bounce off each other in the garage and hotel-room sequences.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a real commercial heart: a nostalgic time-travel romance with a built-in deadline, a vivid 2001 texture, and a lead role that can showcase a breakout performance. The halo mystery and the final white-abyss reveal give it a signature identity, while the 9/11 emotional frame gives the ending real weight and conversation value."
+    },
+    "lead_characters": [
+      {
+        "name": "Dean Corchinski",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s",
+        "hook": "Dean is a sarcastic, emotionally bottled-up college guy who wants to look unbothered but is quietly starving for connection. He has the kind of guarded, self-deprecating voice that makes him funny in groups and painfully exposed when he finally admits what he wants; the script lets him move from skeptic to romantic to devastated without losing his awkward charm.",
+        "why_actor_wants_this": "This is the showcase territory of Joseph Gordon-Levitt in 500 Days of Summer — the role where charm, embarrassment, longing, and heartbreak all live in the same body. Actors who want a lead that can play comedy, romance, and emotional collapse in one feature will chase this because Dean’s arc is built around visible transformation."
+      },
+      {
+        "name": "Aaron McMichael",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to 30s",
+        "hook": "Aaron is the obsessive inventor with a believer’s intensity and a scientist’s need to explain everything. He reads as the guy who has spent so long inside his own theory that he can’t always tell when he’s asking for help and when he’s recruiting a witness, which gives him authority, humor, and a little menace.",
+        "why_actor_wants_this": "This is the showcase territory of Michael C. Hall in Dexter — a hyper-intelligent, controlled character whose certainty is part of the performance. Actors who like playing precision, monologue, and moral ambiguity will want this because Aaron gets to drive the mythology while still feeling human."
+      },
+      {
+        "name": "Peter",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s",
+        "hook": "Peter is the easygoing connector who bridges Dean and Aaron and keeps the story socially alive. He has the energy of the friend who seems light on the surface but is actually the one making the whole operation possible, which gives him warmth and utility in equal measure.",
+        "why_actor_wants_this": "This is the kind of supporting-lead space that made Donald Glover in Community pop — the friend who can carry jokes, chemistry, and quiet loyalty without needing to dominate the frame. Actors who want a likable, scene-stealing ensemble role will see a lot of playable material here."
+      },
+      {
+        "name": "Carmen Bogota",
+        "role_type": "Lead",
+        "demographics": "Female · early-to-mid 20s",
+        "hook": "Carmen is bright, flirtatious, and emotionally direct, but she also has enough self-protection to keep the relationship from feeling easy. She’s written as the kind of woman who can be playful in one beat and devastatingly sincere in the next, which makes her feel like a real person rather than a plot function.",
+        "why_actor_wants_this": "This is the showcase territory of Rachel McAdams in The Notebook — a romantic lead whose chemistry and emotional clarity are the whole engine of the movie. Actresses looking for a role that can be charming, sensual, and tragic in the same arc will want this part immediately."
+      },
+      {
+        "name": "Billy",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s",
+        "hook": "Billy is the social glue and one of the story’s hidden operators, moving between comic friend, birthday host, and eventually something stranger. He has an approachable, loose energy that keeps the movie from becoming too solemn, and the late reveal gives him a memorable afterlife.",
+        "why_actor_wants_this": "This is the kind of role that has the easy ensemble snap of Seth Rogen in Knocked Up — a comic friend whose looseness makes the world feel lived-in. Actors who like playing likable, fast-talking support with a late-story twist will gravitate to it."
+      },
+      {
+        "name": "Winston",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s",
+        "hook": "Winston is Billy’s counterpart: friendly, observant, and always in the room where the social energy is happening. He helps sell the movie’s hangout texture, and the reveal that he is part of the halo mechanism gives the character a second layer of purpose.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded buddy energy of Paul Rudd in Wet Hot American Summer — a character who can be funny, relaxed, and quietly essential. It’s a clean fit for actors who want to be memorable without carrying the whole film."
+      },
+      {
+        "name": "George",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s",
+        "hook": "George is the friendly connector in the friend group who can pivot from casual banter to practical adult responsibility. He helps the movie widen beyond the central trio and gives the social world a believable adult texture.",
+        "why_actor_wants_this": "This is the kind of role that plays like a grounded ensemble utility part in a Judd Apatow-style comedy-drama — the friend who makes scenes feel social instead of scripted. Actors who want a clean, likable supporting slot with a few memorable beats will be interested."
+      },
+      {
+        "name": "Ronda",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Ronda is sharp, playful, and socially fluent, with enough edge to puncture the room when needed. She gives the friend group a female presence that feels active rather than decorative, and she helps the later present-day coda land emotionally.",
+        "why_actor_wants_this": "This is the kind of supporting role that has the breezy confidence of a Parks and Recreation ensemble player — a character who can land jokes and still feel like she has her own life. Actresses who like smart, quick social roles will see easy appeal here."
+      },
+      {
+        "name": "Hannah",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Hannah is the quieter friend who still has enough presence to make the group feel like a real circle rather than a set of functions. She helps round out the social world and gives the party and park scenes more texture.",
+        "why_actor_wants_this": "This is the kind of role that benefits from the ensemble intimacy of a coming-of-age dramedy — small but specific, with room to register in group scenes. It’s attractive to actors who want a clean supporting credit with a real social footprint."
+      },
+      {
+        "name": "Nina",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s",
+        "hook": "Nina is the emotional ghost in Dean’s present-day life, the person he can’t stop wanting even though she has already moved him into the friend zone. She functions as the wound that explains why Dean is so hungry for the time-travel romance to mean something.",
+        "why_actor_wants_this": "This is the kind of role that recalls the emotional sting of Zooey Deschanel in 500 Days of Summer — a character whose absence and ambiguity shape the lead’s inner life. Actresses who want a compact but important part that leaves a mark on the lead’s psychology will be drawn to it."
+      },
+      {
+        "name": "Helga Bogota",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s+",
+        "hook": "Helga is the mother who has lived with loss long enough to carry it quietly, then opens up when Dean arrives with proof of Carmen’s life. She gives the ending its domestic, human-scale release.",
+        "why_actor_wants_this": "This is the kind of late-film emotional role that has the warmth of Frances Sternhagen in The Mist or a similar grief-tinged family scene — brief, direct, and deeply felt. Veteran character actresses who can land a single scene with authority will respond to it."
+      },
+      {
+        "name": "Allan Bogota",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s+",
+        "hook": "Allan is the father who starts as a polite stranger and becomes part of Dean’s emotional reckoning. He gives the final homecoming scene a sense of family continuity and makes Carmen feel like a real person with a real history.",
+        "why_actor_wants_this": "This is the kind of role that gives an older actor the grounded dignity of John Mahoney-style family drama work — a father who can carry grief without speeches. It’s attractive to character actors who want one strong, memorable scene of recognition."
+      },
+      {
+        "name": "Howard",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s",
+        "hook": "Howard is the hotel desk presence who helps sell the period logistics and makes the 2001 stay feel administratively real. He’s a small but useful texture role that keeps the time-travel premise anchored in ordinary procedure.",
+        "why_actor_wants_this": "This is the kind of role that works like a classic working-man supporting part in a period dramedy — brief, functional, and scene-stabilizing. Character actors who enjoy clean, no-nonsense utility roles will fit it well."
+      },
+      {
+        "name": "Patrick Calto",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s",
+        "hook": "Patrick is the corporate gatekeeper who becomes the human face of Dean’s attempt to rewrite Carmen’s future. He’s practical, polite, and immovable, which makes him a useful obstacle with real-world credibility.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the crisp authority of a newsroom or office-drama manager — the person who says no with a smile. It’s a good fit for character actors who can make bureaucracy feel dramatic."
+      },
+      {
+        "name": "Blair",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 40s",
+        "hook": "Blair is the front-desk worker at the World Trade Center who grounds the final act in ordinary routine before history breaks it. She’s a small but potent reminder that the tragedy is made of individual people doing normal jobs.",
+        "why_actor_wants_this": "This is the kind of brief but meaningful role that can land like a prestige-supporting beat in a disaster drama — ordinary, specific, and emotionally loaded by context. Actors who want a single scene with resonance will notice it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a nostalgic, performance-forward time-travel romance with a tragic historical edge.",
+        "fit_profile": "First- or second-feature directors, or established indie directors with a strong character-drama reel, who are comfortable balancing genre mechanics with intimate emotional storytelling. This material rewards directors who care about period texture, chemistry, and clean emotional escalation more than spectacle for its own sake.",
+        "detail": "The movie gives a director a chance to stage 2001 as a lived-in emotional landscape, then pivot into a final-act grief sequence with real weight. It’s especially attractive to filmmakers who can make dialogue scenes feel cinematic and who like using a strong visual motif — here, the halo — to unify a character-driven genre piece."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming original / festival-to-platform genre drama",
+        "detail": "The script can be packaged around one breakout lead and a contained core of supporting players, so it does not require a giant ensemble or effects-heavy cast to function. The 2001 nostalgia lane, the romance hook, and the 9/11 emotional frame give it a clear marketing angle for streamers and festival buyers looking for elevated genre with a built-in conversation starter."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The halo mythology can be clarified earlier.",
+        "detail": "The script has a strong signature device, and one lever would be to seed the halo’s rules a little sooner in the garage and hotel sequences so the audience can track its logic as Dean tracks it. That would make the later reveal feel even more inevitable and would give the middle section a cleaner forward pull.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle repeats the same romantic beat.",
+        "detail": "Several scenes in the 2001 stretch move through similar Dean-and-Carmen discovery beats — party, date, karaoke, hotel-room intimacy, then another social outing — and a next pass could consider compressing one of those steps. The romance would stay intact, but the escalation would feel even sharper if one scene carried more of the emotional turn.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The 9/11 turn arrives as the story’s true engine.",
+        "detail": "The emotional stakes become fully legible once Carmen’s WTC job is revealed, so the script is already doing the right thing by saving that pressure for the back half. If you wanted to strengthen the first act’s propulsion, one direction would be to let Dean’s fear of losing people show up in a smaller, earlier choice so the final act lands on a deeper setup.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The clearance load is substantial.",
+        "detail": "Named songs, brands, WWE references, and real historical figures all create a meaningful rights pass for production. A simplification lever would be to preserve the period flavor while reducing the number of named needle-drops and brand callouts, which would protect the budget and streamline legal review.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The New York footprint is ambitious.",
+        "detail": "Times Square, Grand Central, Central Park, the World Trade Center, hotel interiors, bars, arcades, and the garage all want to be distinct on screen. The version of the script where a couple of these social locations are combined or doubled would keep the same story shape while making the shoot more efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ending wants a careful tonal landing.",
+        "detail": "The final white-abyss reveal, the present-day coda, and the visit to Carmen’s parents all ask the movie to shift from romance and tragedy into metaphysical reflection. A next pass could make sure the emotional language of the ending is planted a little earlier so the final movement feels like a culmination rather than a new register.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63.7,
+  "tier": "Optionable",
+  "inputTokens": 35135,
+  "outputTokens": 6149,
+  "cost": 0.05402175,
+  "declaredFormat": "Feature film"
+}

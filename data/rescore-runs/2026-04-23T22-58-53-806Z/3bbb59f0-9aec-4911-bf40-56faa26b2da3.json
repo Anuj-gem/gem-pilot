@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-23T23:14:22.200Z",
+  "submission_id": "3bbb59f0-9aec-4911-bf40-56faa26b2da3",
+  "eval_id": "7b7180e5-a2ed-41d2-9a59-84d660fff361",
+  "title": "The War Zone",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Omar Epps",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s · Black"
+    },
+    {
+      "name": "Dex",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Black"
+    },
+    {
+      "name": "Chui Perez",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · Hispanic"
+    },
+    {
+      "name": "Marta",
+      "role_type": "Lead",
+      "demographics": "Female · 6-8 · child"
+    },
+    {
+      "name": "Theodore Doty",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-60s · wheelchair user · British"
+    },
+    {
+      "name": "Moco",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Chinese"
+    },
+    {
+      "name": "Officer Peter Graft",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · white/Nordic-presenting"
+    },
+    {
+      "name": "Art Berro",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · unspecified"
+    },
+    {
+      "name": "Schitz",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · white · mercenary"
+    },
+    {
+      "name": "Sheila Estevez",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · large build"
+    },
+    {
+      "name": "Mr. Lueng",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · Chinese"
+    },
+    {
+      "name": "Marta's Father",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Hispanic"
+    },
+    {
+      "name": "Mrs. Greer",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s-80s · elderly"
+    }
+  ],
+  "positioning_hook": "A well-meaning ex-Marine becomes apartment manager of a drug-ridden housing complex and accidentally rallies its tenants into a full-scale neighborhood revolt.",
+  "cost_usd": 0.056243249999999995,
+  "input_tokens": 42543,
+  "output_tokens": 5408,
+  "status": "wrote:leads_ok"
+}

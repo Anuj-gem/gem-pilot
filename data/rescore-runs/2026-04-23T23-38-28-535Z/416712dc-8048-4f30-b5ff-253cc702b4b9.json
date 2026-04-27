@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-04-23T23:43:50.877Z",
+  "submission_id": "416712dc-8048-4f30-b5ff-253cc702b4b9",
+  "eval_id": "b7cfb953-b9d7-45c2-bb95-f34775ac5007",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 25,
+  "lead_characters_summary": [
+    {
+      "name": "NICK PARKER",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens · African American"
+    },
+    {
+      "name": "JOHN MCTYLER",
+      "role_type": "Lead",
+      "demographics": "Male · 12-14 at introduction, aging into late teens · Caucasian · autistic"
+    },
+    {
+      "name": "JOSE MARTINEZ",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s · Hispanic/Latino"
+    },
+    {
+      "name": "KENNY D. LEE",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens · Asian Pacific Islander"
+    },
+    {
+      "name": "CRAI-SEAN JONES",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens · African American"
+    },
+    {
+      "name": "DORIS PARKER",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · African American"
+    },
+    {
+      "name": "JEFFERY PARKER",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "ROC TURNER",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s to 50s · African American"
+    },
+    {
+      "name": "EDDIE \"MR. SHOWTIME\" CURLY",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    },
+    {
+      "name": "RACHEL MYERS",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to early 30s · African American"
+    },
+    {
+      "name": "BEN STONE",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s to 40s · Caucasian"
+    },
+    {
+      "name": "PHIL DAVIS",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · African American"
+    },
+    {
+      "name": "BUDDY THOMAS",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Caucasian"
+    },
+    {
+      "name": "SAMMY SMOOTH",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · African American"
+    },
+    {
+      "name": "GRACE OLIVER",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-teens to early 20s · Caucasian"
+    },
+    {
+      "name": "TREvor MCTYLER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Caucasian"
+    },
+    {
+      "name": "GRANDMA MCTYLER",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Caucasian"
+    },
+    {
+      "name": "HENRY JONES",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · African American"
+    },
+    {
+      "name": "GLORIA JONES",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · African American"
+    },
+    {
+      "name": "DORIS PARKER",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · African American"
+    },
+    {
+      "name": "JEFFERY PARKER",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "RACHEL MYERS",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to early 30s · African American"
+    },
+    {
+      "name": "BEN STONE",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s to 40s · Caucasian"
+    },
+    {
+      "name": "PHIL DAVIS",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · African American"
+    },
+    {
+      "name": "MR. SHOWTIME",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    }
+  ],
+  "positioning_hook": "A Bed-Stuy teen forms a multiracial boy band with his friends, then has to survive fame, faith, rivalry, and heartbreak on the road to Apollo glory.",
+  "cost_usd": 0.07568549999999999,
+  "input_tokens": 55566,
+  "output_tokens": 7558,
+  "status": "wrote:leads_ok"
+}

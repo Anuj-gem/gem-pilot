@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:39:50.339Z",
+  "submission_id": "01146053-3aa1-4190-909b-3137a976359a",
+  "eval_id": "7c5ff85d-e420-409d-a58e-e3a518a26b09",
+  "title": "CREATION CLUB",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Sage Smith",
+      "role_type": "Lead",
+      "demographics": "Male · 14"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Lead",
+      "demographics": "Male · ageless / appears 30s"
+    },
+    {
+      "name": "Janis Joplin",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Jim Morrison",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Jimi Hendrix",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Aisling",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s"
+    },
+    {
+      "name": "Wallace March",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Mother Superior",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Suzy",
+      "role_type": "Supporting",
+      "demographics": "Female · 15"
+    },
+    {
+      "name": "Ricky",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    }
+  ],
+  "positioning_hook": "A suicidal foster teen on Christmas Eve is sent by Jesus to spend one night with Janis Joplin, Jim Morrison, and Jimi Hendrix before deciding whether to live.",
+  "cost_usd": 0.054646499999999994,
+  "input_tokens": 42328,
+  "output_tokens": 5089,
+  "status": "wrote:leads_ok"
+}

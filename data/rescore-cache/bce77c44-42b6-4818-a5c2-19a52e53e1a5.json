@@ -1,0 +1,335 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy Adventure",
+      "genre_tags": [
+        "Mythological Drama",
+        "Family Thriller"
+      ],
+      "tone": "heightened, earnest, soap-operatic, whimsical"
+    },
+    "positioning_hook": "A Florida mermaid mother and her ex-pirate husband must protect their half-human son from an immortal sea prophet who believes the boy will rule both worlds.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear fantasy-commercial lane: mermaids, prophecy, a child in danger, and a coastal Florida setting give it an easy elevator pitch. The audience is more specific than broad four-quadrant, though, because the script leans hard into mythic lore and heightened dialogue rather than a mainstream adventure cadence."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The core engine lands early: a mermaid pregnancy, a prophesied boy child, and an immortal antagonist who wants the baby. The script keeps the stakes legible through repeated confrontations at the patio, beach, hospital, and island, though the mythology stack is dense enough that the hook takes a beat to fully settle."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Treena, Brandon, Jessa, and Thanos all have strong functional roles in the engine, and Brandon especially gets a playable arc from cocky protector to father making an impossible choice. The characters are vivid in behavior and speech, but most of the supporting players serve the central prophecy plot more than independent emotional lanes."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a full mythic-mermaid cosmology with sharks, dolphins, underwater transformations, and Greek-god reincarnation, which gives it a confident, unabashedly strange identity. The boldness is in the accumulation of mythic ideas and the willingness to play them straight, even when the tone becomes very heightened."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps introducing new escalations — pregnancy reveal, prophecy, attempted murder, island return, child abduction, final confrontation — so there is always another turn. The momentum is strongest in the second half, while the middle spends a lot of time restating the prophecy and rules in dialogue before the next action beat arrives."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A mermaid family hiding in modern Florida while an immortal shark-shifting prophet hunts their prophesied son is a fresh enough premise to feel ownable. The idea becomes especially memorable when the script folds in Greek mythology, domestic comedy, and underwater creature powers into one family saga."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has a lot of visible texture: Atargatis Island, the hidden mermaid community, the rules around human contact, the underwater mountain kingdom, and the human-world domestic spaces all feel distinct. The mythology is rich and story-generating, though it is delivered more through explanation than through layered institutional behavior."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a very specific tone: earnest fantasy played with sitcom-like banter, domestic Florida ease, and sudden mythic violence. The repeated jokes about beer, Nutella, Bloody Marys, and movie references sit beside prophecy and underworld imagery in a way that gives the piece a recognizable flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are deeper currents around identity, destiny, motherhood, and the cost of power, and the Belladine/Glaukos backstory adds a second emotional layer. The draft mostly keeps those themes in service of the plot, though, rather than letting them open into a more surprising emotional architecture."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Brandon/Treena/Jessa/Lou/Derek/Kyle group has real ensemble energy, and the island community adds more relational combinations once the story moves there. Any dinner-table or patio scene can generate banter and friction, which gives the script a usable social engine beyond the central couple."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Mermaid/merman transformations",
+          "Twin brother casting for Thanos/Thomas or a strong visual double",
+          "Child performer for Finley across toddler ages",
+          "Older mermaid and mythic creature roles",
+          "Florida-coastal contemporary ensemble"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior to exterior",
+        "period_or_contemporary": "contemporary with mythic/fantasy elements",
+        "notable_requirements": [
+          "Saltwater pool and waterfront home",
+          "Beach and open-water work",
+          "Underwater cavern / hidden island environments",
+          "Hospital and police station interiors",
+          "Underwater transformation sequences"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Mermaid and merman transformations, shark-to-human and human-to-shark changes, mist/evaporation effects, underwater creature action, magical freezes, underworld imagery, and a few creature-scale moments.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical blood, underwater action support, transformation makeup/FX, and controlled creature interaction beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Jurassic Park, Nutella, M&M's, Bloody Mary, Twizzlers, Doritos, Reese's Pieces, Little Debbies, Toyota Camry"
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named music is featured."
+        },
+        {
+          "type": "real_person",
+          "detail": "No real people are referenced by name."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Jurassic Park is specifically named in dialogue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming fantasy-adventure or family-skewing genre feature lane",
+        "content_level": "PG-13 equivalent, with some fantasy violence and peril",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or streaming original with genre audience appeal"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary Florida settings keep the footprint manageable, but underwater work, transformations, and creature effects push it above a simple indie budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is sizable and the story depends on specific mythic roles, plus a child performer and a twin-brother casting solution."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves between homes, beaches, hospital, police, underwater spaces, and the island, but most of it remains in a coastal Florida corridor."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material is peril-forward rather than explicit, with fantasy violence and some threat but little sexual or graphic content."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several prominent brands and one named film title appear in dialogue and would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "A mermaid family hiding in modern Florida gives the project a clean commercial fantasy hook that can be pitched in one sentence and understood immediately. That kind of high-concept identity is attractive to genre buyers, streamer executives, and producers looking for a world they can market from the thumbnail alone.",
+          "evidence": "Treena and Jessa live among humans, Brandon becomes part of the mermaid world, and Thanos hunts their son across Miami, the beach, and Atargatis Island.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family dynamic gives the fantasy stakes.",
+          "what_it_means": "The story is not just about prophecy; it is about a couple deciding whether to protect their child, their marriage, and their community at the same time. That makes the material more playable for actors and more accessible for audiences who want emotion inside the spectacle.",
+          "evidence": "Brandon and Treena repeatedly argue over Finley’s safety, and Brandon ultimately makes the devastating choice to kill and then revive his son.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a lot of visual invention.",
+          "what_it_means": "Shark-shifting, dolphin escorts, underwater mountain kingdoms, mist transformations, and underworld imagery give the film a strong effects-and-production-design identity. Buyers looking for a fantasy title with clear trailer moments will see multiple set pieces that can sell the concept fast.",
+          "evidence": "Thanos becomes a shark, Annabelle becomes a mermaid, Glaukos returns from the underworld, and Finley’s powers emerge in the lagoon and on the island.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Brandon is a strong crowd-pleaser lead.",
+          "what_it_means": "He has the swagger, humor, and emotional burden of a man who thinks he can handle anything until fatherhood forces the impossible choice. That is the kind of role that can attract a charismatic leading man who wants action, comedy, and pathos in one package.",
+          "evidence": "Brandon jokes through danger, talks big about being a superior physical specimen, then breaks when he has to kill Finley to save the world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates playable banter.",
+          "what_it_means": "The patio and dinner-table scenes give the project a social rhythm that can keep the movie entertaining between larger fantasy beats. That helps the script feel castable for actors who like ensemble chemistry and gives producers multiple recognizable roles to package around the lead.",
+          "evidence": "Lou, Derek, Kyle, Jessa, Arianna, Sean, Tina, Belladine, and Peter all contribute to the group scenes with jokes, suspicion, and shifting alliances.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mythology has sequel-friendly depth.",
+          "what_it_means": "The script opens a larger mythic universe with ancient gods, hidden islands, reincarnation, and a next-generation savior, which gives the property room to expand if a buyer wants more than a one-off feature. That kind of world-building is attractive to genre labels and streamers that like franchise-capable IP.",
+          "evidence": "Asclepius, Glaukos, Hades, Charon, Atargatis Island, and the prophecy around Kreios all point to a larger mythology beyond the central plot.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, unabashed fantasy feature with a clear commercial spine: a mermaid mother and her Florida family fighting to keep their son out of the hands of an immortal sea prophet. The script’s appeal is the collision of domestic comedy, mythic prophecy, and creature-driven spectacle — a package that gives actors playable roles and buyers a trailer-friendly world."
+    },
+    "lead_characters": [
+      {
+        "name": "Brandon",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 40s · human with mythic/Greek-god lineage",
+        "hook": "Brandon is the swaggering Florida husband who talks like a wisecracking alpha and slowly discovers he is carrying a mythic destiny in his blood. He is funny, cocky, protective, and emotionally readable, with the kind of masculine vanity that becomes touching once fatherhood forces him into sacrifice.",
+        "why_actor_wants_this": "This is the showcase territory of Chris Pratt in Guardians of the Galaxy or Matthew McConaughey in True Detective: a charismatic lead who can sell banter, action, and a late-breaking emotional reckoning. Actors who want a role that lets them be funny, physical, and then devastating in the final act will chase this immediately."
+      },
+      {
+        "name": "Treena",
+        "role_type": "Lead",
+        "demographics": "Female · 20s to 30s · mermaid",
+        "hook": "Treena is the emotional center of the piece: curious, romantic, protective, and increasingly torn between the human life she has built and the mythic destiny closing in on her child. She has innocence without passivity, and the script gives her a strong mix of wonder, fear, and maternal resolve.",
+        "why_actor_wants_this": "This is the showcase lane of Amy Adams in Arrival or Saoirse Ronan in Brooklyn — a woman whose emotional intelligence is the engine of the story and whose inner life has to carry the audience through the fantasy. Actresses looking for a lead that can play wonder, panic, devotion, and moral pressure in one arc will see real value here."
+      },
+      {
+        "name": "Jessa",
+        "role_type": "Lead",
+        "demographics": "Female · 20s to 30s · mermaid",
+        "hook": "Jessa is the sharp, knowing bridge between the mermaid world and the human one, equal parts translator, warning system, and comic straight woman. She has authority, skepticism, and a dry edge that keeps the mythology from floating away from the room.",
+        "why_actor_wants_this": "This is the kind of supporting-lead showcase Octavia Spencer had in Hidden Figures or Emily Blunt in A Quiet Place: the grounded, intelligent character who keeps the story moving and gives the audience someone to trust. Actors who like playing the smartest person in the room, with humor and authority, will respond to her."
+      },
+      {
+        "name": "Thanos",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · blond, physically imposing, shapeshifting sea creature",
+        "hook": "Thanos is a seductive, smug, spiritually corrupted prophet who can shift from charming to terrifying in a beat. He is not just a villain; he is a believer, a manipulator, and a creature of appetite whose confidence makes every scene with him feel dangerous.",
+        "why_actor_wants_this": "This is the showcase space of Javier Bardem in No Country for Old Men or Ralph Fiennes in Schindler’s List — a villain role with intelligence, menace, and a distinct physical presence. Actors who want a memorable antagonist with scene-stealing dialogue and transformation moments will chase this hard."
+      },
+      {
+        "name": "Finley / Kreios",
+        "role_type": "Lead",
+        "demographics": "Male · infant to 2 years old in the present-day story, with accelerated growth implied",
+        "hook": "Finley is the story’s living prophecy: adorable, strange, and increasingly powerful, with the emotional function of a child and the mythic weight of a future king. Even as a very young child, he gives the film a strong innocence-versus-destiny tension.",
+        "why_actor_wants_this": "For a child performer, this is the kind of role that becomes memorable because the character is the center of everyone else’s choices, like the child in The Babadook or the young lead in The Sixth Sense. The showcase is less dialogue than presence: a child whose innocence drives the entire movie."
+      },
+      {
+        "name": "Lou",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · human father figure",
+        "hook": "Lou is the grounded patriarch who keeps the human side of the story warm, practical, and lightly comic. He functions as the family anchor, the guy who can absorb the absurdity of mermaids and prophecy without losing his Florida-dad rhythm.",
+        "why_actor_wants_this": "This is the kind of warm authority role that John Goodman or Bryan Cranston has played in ensemble genre films — a father figure who can land jokes and still feel like the emotional floor of the movie. Character actors who like being the audience surrogate and the family anchor will enjoy this part."
+      },
+      {
+        "name": "Derek",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · human",
+        "hook": "Derek is the skeptical, funny son who reacts to the insanity with the most human disbelief in the room. He gives the script a contemporary, grounded voice and helps keep the ensemble from becoming too myth-only.",
+        "why_actor_wants_this": "This is the kind of sharp ensemble role that lets an actor play exasperation, loyalty, and comic timing in a genre setting, similar to the grounded friend roles in Jumanji or The Lost City. Younger character actors looking for a scene-stealing support part will see the appeal."
+      },
+      {
+        "name": "Kyle",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · human",
+        "hook": "Kyle is the loose, horny, comic-relief friend who keeps the group scenes from becoming too solemn. He is a useful pressure valve, but he also helps define the social texture of the human crew.",
+        "why_actor_wants_this": "This is a classic ensemble comic-support slot, the kind of role that gives an actor the chance to steal scenes with timing and attitude the way supporting players do in adventure comedies. It will appeal to actors who want a memorable side role in a genre feature without carrying the plot."
+      },
+      {
+        "name": "Annabelle / Belladine",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s to 60s in present day, younger in flashback · mermaid",
+        "hook": "Annabelle is the wise old mermaid with a hidden romantic past and a deep emotional wound. She carries the lore, the warning system, and the story’s most poignant sense of lost love and long memory.",
+        "why_actor_wants_this": "This is the kind of dual-timeline role that gives an actress the emotional scope of Meryl Streep in The Iron Lady or Michelle Yeoh in Everything Everywhere All at Once: wisdom, history, and a buried romantic life. Mature actresses who want a mythic elder role with a real backstory will be drawn to it."
+      },
+      {
+        "name": "Peter",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s · human fisherman / transformed mythic figure",
+        "hook": "Peter is the romantic casualty who becomes a living reminder of what the mermaid world has taken and what it can restore. He is gentle, bewildered, and emotionally useful as the story’s humanized version of mythic consequence.",
+        "why_actor_wants_this": "This is the kind of transformation role that lets an actor play ordinary humanity and then step into mythic revelation, similar to the emotional pivot roles in fantasy dramas like Stardust. Character actors who like playing tenderness with a late-story payoff will respond to it."
+      },
+      {
+        "name": "Glaukos",
+        "role_type": "Supporting",
+        "demographics": "Male · ageless mythic figure · giant merman",
+        "hook": "Glaukos is the ancient ruler whose authority feels older than the story itself, a mythic king with a tragic romantic history and a terrifying command of the underworld-adjacent world. He is regal, ominous, and emotionally legible in a way that makes the mythology feel lived-in.",
+        "why_actor_wants_this": "This is the kind of mythic authority role that gives an actor the gravitas of Ian McKellen in The Lord of the Rings or Anthony Hopkins in Thor — a larger-than-life figure whose presence changes the temperature of every scene. Veteran actors who want to embody a godlike ruler will be interested."
+      },
+      {
+        "name": "Arianna",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 60s · mermaid",
+        "hook": "Arianna is the practical elder who understands the rules, the danger, and the emotional cost of the prophecy. She has the calm, maternal authority of someone who has survived long enough to know when to speak and when to let others panic.",
+        "why_actor_wants_this": "This is the kind of grounded elder role that lets an actress play wisdom, grief, and command with minimal fuss, similar to the matriarch energy in The Farewell or Black Panther. Character actresses who like being the calm center of a mythic ensemble will chase it."
+      },
+      {
+        "name": "Tina",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 50s · mermaid",
+        "hook": "Tina is one of the island women who helps give the community texture and emotional continuity. She is observant, loyal, and part of the social fabric that makes the island feel like a real place rather than a backdrop.",
+        "why_actor_wants_this": "This is a useful ensemble role for an actress who wants to be part of a mythic world without carrying the whole prophecy engine, like the supporting community roles in ensemble fantasy films. It offers presence, reaction, and a place in the group dynamic."
+      },
+      {
+        "name": "Sean",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 40s · human / island resident",
+        "hook": "Sean is the comic, reluctant ally who shifts from island side character to useful team member once the stakes get real. He brings a scrappy, street-level energy into the fantasy machinery.",
+        "why_actor_wants_this": "This is the kind of late-blooming ensemble role that lets an actor play cowardice, loyalty, and surprise competence, similar to the comic sidekick turns in adventure franchises. Actors who like a character with room to pivot will be interested."
+      },
+      {
+        "name": "Thomas",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · exact twin of Thanos",
+        "hook": "Thomas is the clean, unsettling mirror image of Thanos, arriving as a new threat with the same face and a different agenda. He instantly extends the mythology and keeps the ending from feeling closed.",
+        "why_actor_wants_this": "This is the kind of twist-support role that gives an actor the fun of playing a reveal and then becoming the next engine, similar to the late-entry villain setup in genre sequels. It will appeal to actors who like a memorable entrance and franchise potential."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sincere fantasy adventure with creature work, family emotion, and a very specific coastal American flavor.",
+        "fit_profile": "Mid-career genre directors or first-time feature directors coming out of effects-heavy shorts, indie fantasy, or elevated family adventure work. This material rewards filmmakers who care about mythic world-building, clear emotional stakes, and keeping heightened material grounded in performance.",
+        "detail": "The movie gives a director underwater transformations, beachside set pieces, and a family drama spine, so the job is to make the mythology feel emotionally inevitable rather than merely decorative. It will attract directors who like building a world with rules and then staging intimate human choices inside it."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "streaming fantasy-adventure / family genre lane",
+        "detail": "It is castable around one strong male lead, one strong female lead, and a contained ensemble, which makes it packageable off a director reel or a recognizable genre face. The mermaid-and-myth hook plus Florida setting gives it a clean trailer concept and an exportable fantasy premise for streamers looking for original IP."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The prophecy dialogue repeats often.",
+        "detail": "A next pass could tighten some of the repeated explanation around Kreios, the male-child prophecy, and the rules of the mermaid world so each scene turns the story rather than restating it. The version where one or two key exposition scenes carry the mythology would keep the middle moving with more force.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The supporting ensemble can be streamlined.",
+        "detail": "The script has a lively group, but several supporting players function in similar reaction-and-banters slots, especially in the patio and island dinner scenes. One lever would be to combine a few of those functions so the ensemble stays vivid while the cast footprint and scheduling load stay leaner.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broader than the core story needs.",
+        "detail": "The movie moves through homes, hospital, police station, beach, dock, underwater spaces, the island, and the underworld. If the production wanted to protect budget without changing the story, the version that folds a few of the human-world scenes into Brandon’s home or the island would preserve the engine and simplify the shoot.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand references invite clearance review.",
+        "detail": "Jurassic Park, Nutella, M&M's, Twizzlers, Doritos, Reese's Pieces, Little Debbies, Bloody Marys, and Toyota Camry all appear in dialogue or action. A clean pass could swap some of those for generic equivalents if the goal is to reduce clearance work while keeping the comic texture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ending sets up a sequel lane.",
+        "detail": "The final Thomas reveal is a useful franchise door, but the feature also lands as a complete family victory once Finley is restored. If the goal is a cleaner standalone finish, the last beat could be shaped to emphasize the family’s new normal while still leaving Thomas as a future threat.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67,
+  "tier": "Optionable",
+  "inputTokens": 48264,
+  "outputTokens": 5832,
+  "cost": 0.062442000000000004,
+  "declaredFormat": "Feature film"
+}

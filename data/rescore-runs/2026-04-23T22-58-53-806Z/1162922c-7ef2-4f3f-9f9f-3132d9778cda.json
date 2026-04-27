@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-23T23:16:00.793Z",
+  "submission_id": "1162922c-7ef2-4f3f-9f9f-3132d9778cda",
+  "eval_id": "161ecca6-096d-4ff9-a574-c177da00b49a",
+  "title": "Hey",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "JACOB",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "MARIA",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "WAITER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "DR. WATSON",
+      "role_type": "Supporting",
+      "demographics": "Voice · adult"
+    },
+    {
+      "name": "NEIGHBOR",
+      "role_type": "Supporting",
+      "demographics": "Adult · any gender"
+    },
+    {
+      "name": "PHARMACIST",
+      "role_type": "Supporting",
+      "demographics": "Adult · any gender"
+    }
+  ],
+  "positioning_hook": "A socially isolated Uber driver spirals through a panic-fueled nightmare on the way to a first Tinder date, until one message becomes a fight to choose connection over fear.",
+  "cost_usd": 0.02679825,
+  "input_tokens": 13033,
+  "output_tokens": 3783,
+  "status": "wrote:leads_ok"
+}

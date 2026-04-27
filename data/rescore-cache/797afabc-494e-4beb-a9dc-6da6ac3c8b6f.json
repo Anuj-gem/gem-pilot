@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Supernatural adventure",
+      "genre_tags": [
+        "Teen comedy",
+        "Thriller"
+      ],
+      "tone": "Playful, heightened, comic-booky, and suspenseful"
+    },
+    "positioning_hook": "A bullied teen who absorbs other people’s skills through touch must stop a sabotage plot at his father’s new roller coaster before his borrowed gifts run out.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to grasp and has broad teen-and-family appeal: a bullied kid suddenly becomes gifted, then has to use those powers in a public disaster. The school comedy, first-crush energy, and amusement-park climax give it a clear commercial lane, though the specific audience is more four-quadrant family/YA than mass-event."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: lightning gives Harris temporary access to other people’s abilities, and the script keeps turning that idea into new situations at school, in the lab, and at the coaster. The final act pays off the engine with a contained rescue scenario that is easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Harris has a strong wish-fulfillment arc from awkward outsider to capable hero, and Terry gives him a useful comic and moral counterweight. The supporting players are vivid in function, but most of them operate as forces around Harris rather than as fully independent character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s central trick — borrowing other people’s knowledge and physical ability through touch — gives familiar teen-movie material a fresh engine. The roller-coaster sabotage finale and the school-ecosystem setup keep the execution lively rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps escalating from school humiliation to power discovery to a public threat, and the coaster sequence gives the feature a strong third-act sprint. The middle is built on repeated demonstrations of the same power, but the momentum stays readable and the climax earns its scale."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "It feels like a familiar underdog fantasy until the touch-based skill transfer and the industrial-espionage coaster plot snap together into something ownable. The idea is immediately legible, and the script keeps finding new uses for the same supernatural rule."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The high school, family home, hospital, and amusement park are all clearly drawn, and the coaster business gives the world a specific professional texture. Still, the world mainly serves the plot engine rather than generating a larger social ecosystem beyond the school hierarchy and the park operation."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends teen comedy, superhero wish fulfillment, and light thriller mechanics with a very specific comic rhythm. The script knows when to play the jokes, when to lean into the crushes and bullying, and when to pivot into danger."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "The script is primarily surface-forward and premise-driven, with the emotional spine centered on confidence, friendship, and responsibility. There are seeds of a bigger coming-of-age story in Harris’s power and Terry’s conscience, but the draft mostly keeps those ideas in service of the plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Harris and Terry have a workable buddy dynamic, and the family triangle with Tom, Beverly, Missy, and Stewart adds warmth and comic friction. The ensemble is functional and lively, though the story still lives most strongly on Harris’s shoulders."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen ensemble",
+          "One 40s father lead",
+          "One 40s mother supporting role",
+          "One 50s-60s corporate antagonist",
+          "One professional athlete cameo/role",
+          "One younger doctor role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 9,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "High school interiors/exteriors",
+          "Suburban family home with treehouse",
+          "Corporate boardroom and office",
+          "Hospital rooms and waiting areas",
+          "Amusement park roller coaster and control room",
+          "Crowded stunt/FX-heavy coaster platform"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Lightning strike effects, roller coaster motion/compositing, bomb/control-room visuals, and a few heightened power-transfer moments.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosion in the robot classroom, electrical spark effects, coaster ride movement, and a few fight beats in the control room.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Kobe Bryant appears as himself."
+        },
+        {
+          "type": "named_music",
+          "detail": "Aretha Franklin’s 'Respect' is specifically used."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Family-friendly theatrical or streamer adventure-comedy lane",
+        "content_level": "PG / PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with broad family and teen appeal; best suited to a modest theatrical run or streamer launch with recognizable cast attachment."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The school and home material is modest, but the roller coaster climax, crowd scenes, stunt work, and effects push it above a low-budget lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a teen ensemble, a credible father-son center, a strong antagonist, and a real-person cameo for the Kobe sequence."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It moves through several distinct spaces, with the amusement park, control room, and hospital adding logistical variety."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material stays in family-adventure territory with mild bullying, a classroom explosion, and a contained action climax."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Kobe Bryant and Aretha Franklin are explicitly named, and the script also uses a branded amusement-park world and a specific song cue."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The power rule is instantly playable.",
+          "what_it_means": "The touch-based skill transfer gives the movie a clean, repeatable engine that can power comedy, wish fulfillment, and action without needing a complicated mythology. That makes it attractive to family buyers and to actors who want a role that can move from awkwardness to competence in a single scene.",
+          "evidence": "Harris shakes hands with teachers and suddenly aces the algebra test, then touches Ryan and runs a 9.83, then touches Beltran and builds the HAR-TER 3000 with ease.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The school world is sharply legible.",
+          "what_it_means": "The script gives producers a ready-made teen ecosystem of geeks, jocks, cheerleaders, teachers, and family members that can be cast economically and understood immediately. That clarity is catnip for YA audiences and for buyers looking for a clean, accessible high-school lane.",
+          "evidence": "The homeroom, lunchroom, gym class, and hallway scenes all map the social hierarchy in a way that is easy to track on first read.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The coaster finale gives the feature a big finish.",
+          "what_it_means": "The amusement-park climax turns a teen comedy premise into a contained action set piece with crowd stakes, physical danger, and a clear ticking clock. That kind of finale helps the movie feel bigger than its footprint and gives marketing a visual centerpiece.",
+          "evidence": "The Magnetic Brain Drain is sabotaged, the cars rocket through the track, and Harris has to reach the control room while his family is on the ride.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Harris is built for a breakout performance.",
+          "what_it_means": "The role lets an actor play insecurity, comic timing, sudden competence, and heroism in one arc, which is exactly the kind of transformation that can launch a young lead. Teen stars and rising comedic actors would see a showcase that lets them be funny, vulnerable, and physically dynamic.",
+          "evidence": "Harris starts as the kid who freezes around Taylor and gets bullied by Josh, then becomes the smartest person in the room once the power kicks in.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family dynamic adds warmth and texture.",
+          "what_it_means": "Tom, Beverly, Missy, and Stewart give the movie a domestic engine that broadens it beyond schoolyard antics and makes the stakes feel personal. Family-comedy buyers and ensemble-minded directors will see a playable home base that can support sequels or spin-off-style storytelling.",
+          "evidence": "The opening minivan banter, the diary chase, the treehouse storm sequence, and the family’s reaction to Harris’s transformation all give the Hotchkiss home a comic rhythm.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The villain reveal is clean and theatrical.",
+          "what_it_means": "Lisa’s turn from popular girl to covert operator gives the climax a sharp betrayal and a face the audience already knows, which is a strong commercial move. Casting a charismatic young actress with edge would make this role pop for genre buyers and teen audiences alike.",
+          "evidence": "Lisa switches the robot battery poles, reveals she has been testing Harris, and then fights him in the control room while the coaster is still running.",
+          "source": "script"
+        }
+      ],
+      "headline": "BEING OTHERS has a clean, marketable engine: a bullied teen gains temporary access to other people’s abilities and turns that gift into a school-to-amusement-park hero story. It’s the kind of feature that gives a young lead a breakout role, a director a contained but cinematic climax, and a buyer a family-friendly hook with real crowd-pleasing upside."
+    },
+    "lead_characters": [
+      {
+        "name": "HARRIS HOTCHKISS",
+        "role_type": "Lead",
+        "demographics": "Male · 16",
+        "hook": "Harris is the classic outsider with a twist: awkward, underestimated, and hungry for status, but suddenly able to borrow the confidence, knowledge, and physical gifts of everyone he touches. He starts as a kid who can barely speak to Taylor and ends as the smartest, fastest, most capable person in the room, which gives the role a built-in transformation arc and a strong comic edge.",
+        "why_actor_wants_this": "This is the showcase territory of Michael J. Fox in Back to the Future — a likable underdog who gets to play panic, charm, and escalating competence as the world starts to bend around him. Young actors looking for a star-making lead will chase the chance to do comedy, romance, and action in one part."
+      },
+      {
+        "name": "TERRY MICHAELS",
+        "role_type": "Lead",
+        "demographics": "Male · 16",
+        "hook": "Terry is Harris’s best friend and conscience, the lanky geek who sees the ethical cost of the power long before Harris does. He’s funny, nervous, and loyal, but he also gives the story its moral center and its best buddy-movie friction.",
+        "why_actor_wants_this": "This is the kind of best-friend role that made Jonah Hill in Superbad memorable — a comic sidekick who gets real emotional authority and gets to push the lead toward growth. Character actors and sharp young comedic performers will want the part because it gives them banter, loyalty, and a clear moral point of view."
+      },
+      {
+        "name": "TOM HOTCHKISS",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Tom is the practical, proud father-engineer whose work literally powers the movie’s climax, and whose relationship with Harris gives the story its emotional backbone. He’s a straight man with warmth, a professional who believes in his design, and a dad who has to watch his son become more capable than he ever expected.",
+        "why_actor_wants_this": "This is the grounded-dad showcase space of Bryan Cranston in Little Miss Sunshine — a father role that can play exasperation, pride, and quiet heroism without ever leaving the family frame. Mid-career dramatic leads and actor-comedians with warmth will see a role that anchors the movie and gives them a memorable final-act payoff."
+      },
+      {
+        "name": "BEVERLY HOTCHKISS",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Beverly is the calm center of the Hotchkiss household, the mother who can cut through chaos with one look and one line. She’s not written as a plot engine, but she gives the family scenes their emotional balance and keeps the home life feeling lived-in.",
+        "why_actor_wants_this": "This is the kind of warm, sharp maternal role that Patricia Clarkson often turns into a scene-stealer in ensemble dramas — a part that plays authority, affection, and comic timing in the same breath. Experienced actresses who like family-comedy material will see a role that can land with audiences even in limited screen time."
+      },
+      {
+        "name": "MISSY HOTCHKISS",
+        "role_type": "Supporting",
+        "demographics": "Female · 17",
+        "hook": "Missy is the glamorous older sister who knows exactly how much power she has in a room and uses it with a grin. She’s funny, socially fluent, and unexpectedly useful to the plot, especially when she helps set the final roller-coaster date in motion.",
+        "why_actor_wants_this": "This is the teen-sister sparkle role of Emma Stone in Easy A — a confident, socially dominant young woman who can be funny, flirty, and instrumental to the story’s momentum. Young actresses who want a high-visibility supporting part with attitude and charm will be drawn to it."
+      },
+      {
+        "name": "STEWART HOTCHKISS",
+        "role_type": "Supporting",
+        "demographics": "Male · 11",
+        "hook": "Stewart is the little brother comic engine, all braces, speed, and chaos, with the kind of kid energy that keeps the family scenes from ever settling down. He’s a lovable nuisance who gives the Hotchkiss home its most playful texture.",
+        "why_actor_wants_this": "This is the mischievous-kid territory of a young actor like the child leads in Home Alone — a part built around physical comedy, timing, and audience affection. Child performers and family buyers both respond to roles that can steal scenes without carrying the whole movie."
+      },
+      {
+        "name": "TAYLOR MAJORS",
+        "role_type": "Supporting",
+        "demographics": "Female · 16",
+        "hook": "Taylor is the cool girl with a conscience, the one person in the popular orbit who sees Harris as more than a target. She carries the romantic line, but she also functions as the story’s emotional truth-teller, which gives her more weight than a standard crush role.",
+        "why_actor_wants_this": "This is the accessible, grounded-romance lane of Rachel Leigh Cook in She’s All That — a teen lead who can be both aspirational and emotionally sincere. Young actresses who can play warmth without losing edge will see a role that gives them romance, empathy, and a strong final payoff."
+      },
+      {
+        "name": "JOSH BOSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 17",
+        "hook": "Josh is the school bully with the body of a football star and the insecurity of a kid who knows his status is fragile. He’s a blunt-force antagonist at school, but the script also gives him a family shadow that makes him feel like more than a one-note jock.",
+        "why_actor_wants_this": "This is the teen-antagonist showcase of a young actor like Chris Owen in American Pie — a role that lets someone play swagger, humiliation, and comic menace in the same package. Actors who can weaponize charm while still landing the threat will be drawn to it."
+      },
+      {
+        "name": "LISA MINETTI",
+        "role_type": "Supporting",
+        "demographics": "Female · 17",
+        "hook": "Lisa is the most dangerous person in the movie because she understands the social game and the supernatural one. She starts as the queen-bee girlfriend and reveals herself as a cold, strategic operator who treats people like pieces on a board.",
+        "why_actor_wants_this": "This is the femme-fatale-in-a-teen-package territory of a role like Amy in Gone Girl, scaled to high school — a character who can pivot from social power to outright menace. Young actresses with sharp comic instincts and a taste for villainy will see a juicy, scene-stealing turn."
+      },
+      {
+        "name": "AVERY WESKER",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Avery is the polished amusement-park owner who smiles like a host and thinks like a businessman. He gives the movie a corporate face and helps sell the scale of the coaster world without ever becoming the true villain.",
+        "why_actor_wants_this": "This is the smooth-executive role that actors like John Lithgow have turned into memorable support in prestige and commercial projects alike — a part that plays authority, polish, and hidden calculation. Veteran character actors who can make a room feel expensive will be interested."
+      },
+      {
+        "name": "ANDREW BOSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Andrew Boson is the hard-edged father whose obsession with control and fear of failure make him a natural pressure point in the story. He’s not just a corporate obstacle; he’s a parent whose worldview mirrors the movie’s central conflict between trust and manipulation.",
+        "why_actor_wants_this": "This is the stern-father antagonist lane of a role like Ed Harris in The Truman Show — a character whose authority and menace come from calm certainty rather than shouting. Strong dramatic actors who can play institutional power will see a clean, playable part."
+      },
+      {
+        "name": "BARTHOLOMEW MEADE",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Meade is the real operator behind the sabotage, the elegant corporate spy who arrives late but changes the temperature of the climax instantly. He’s smooth, threatening, and just theatrical enough to make the final reveal land with force.",
+        "why_actor_wants_this": "This is the polished-villain territory of a performance like Alan Rickman in Die Hard — a controlled, articulate antagonist who makes menace feel intelligent. Character actors who enjoy playing elegant danger will want the role."
+      },
+      {
+        "name": "DR. KRAMER",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Dr. Kramer is the eccentric medical authority who helps translate Harris’s lightning strike into something almost mythic. He gives the movie a comic-scientific bridge between the accident and the power, and he does it with a lightly amused bedside manner.",
+        "why_actor_wants_this": "This is the quirky-doctor lane of a role like Jeff Goldblum in Jurassic Park — a part that gets to explain the impossible while keeping the tone playful. Character actors with a gift for dry wit will have fun with it."
+      },
+      {
+        "name": "MR. BELTRAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Beltran is the teacher who becomes an accidental beneficiary of Harris’s power, and his admiration helps sell the fantasy that Harris can become exceptional. He’s a functional but useful authority figure who gives the school scenes a little extra credibility.",
+        "why_actor_wants_this": "This is the supportive-teacher role that often lands with the same easy authority as a John C. Reilly type in a family comedy — a part that can be funny, encouraging, and memorable without overplaying it. Reliable character actors will see a clean, scene-efficient role."
+      },
+      {
+        "name": "COACH",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "The Coach is the loud, blunt institutional voice of the school, the guy who turns every physical challenge into a public test. He’s part drill sergeant, part comic commentator, and he helps the movie keep its teen-athletics energy moving.",
+        "why_actor_wants_this": "This is the coach role that actors like Patton Oswalt or Craig T. Nelson can make funny by leaning into authority and exasperation. Character actors with strong verbal rhythm will get a lot of mileage out of it."
+      },
+      {
+        "name": "NURSE WALKER",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Nurse Walker is the brief but useful hospital presence who helps reset the movie after the lightning strike. She’s efficient, reassuring, and there to keep the recovery sequence moving with a light touch.",
+        "why_actor_wants_this": "This is a quick, professional supporting role in the vein of the hospital staff parts that actors use to add polish and realism to a studio comedy. It’s a clean utility part for a young actress with good timing."
+      },
+      {
+        "name": "DOCTOR FINE",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s",
+        "hook": "Doctor Fine is the final button on the movie, a fresh face who lets Harris’s new identity land with one last comic flourish. She’s there to validate the ending’s playful promise that Harris is now operating on a different level.",
+        "why_actor_wants_this": "This is the kind of end-tag role that can become memorable with very little screen time, similar to the final-scene utility parts in broad studio comedies. Young actresses with crisp delivery will see an easy, high-visibility button."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a family adventure with a real genre engine and a clean, crowd-pleasing finish.",
+        "fit_profile": "First- or second-feature directors coming out of comedy, YA, or light-genre shorts, plus established TV directors who are comfortable balancing performance, pace, and a contained action climax. The material rewards someone who likes character-first storytelling but also understands how to stage a big third-act set piece without losing the emotional thread.",
+        "detail": "The movie gives a director a school-comedy opening, a supernatural middle, and a contained amusement-park finale, so the craft challenge is tonal control rather than scale for scale’s sake. That combination is attractive to filmmakers who want to prove they can handle both actors and spectacle in one package."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Family adventure / YA comedy lane",
+        "detail": "The script can be sold on a young lead, a strong father-son center, and a contained effects package rather than a giant ensemble or franchise mythology. The school setting and amusement-park climax give it a clear trailer shape and a broad, exportable premise that travels well across teen and family audiences."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle repeats the same power beat.",
+        "detail": "The draft has a strong engine, and the school montage shows that clearly, but several scenes in a row demonstrate Harris borrowing a new skill in a similar way. A next pass could tighten the sequence by letting one or two of those moments carry more emotional consequence, so each new ability feels like a fresh turn rather than another proof of concept.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Lisa’s turn could arrive with more shadow.",
+        "detail": "Her reveal in the control room is fun and clean, and the battery-switch flashback explains the mechanics well. One direction would be to seed a slightly earlier hint that she is tracking Harris more closely than the other students, so the betrayal lands with a little more inevitability.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The coaster climax carries the whole finale.",
+        "detail": "The amusement-park sequence is the movie’s biggest production driver, with crowd work, moving vehicles, electrical effects, and a control-room fight all converging at once. If the budget lane needs to stay leaner, the version of the finale where one of those spaces is absorbed into another would protect the suspense while simplifying the shoot.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Kobe and Aretha are clearance items.",
+        "detail": "Kobe Bryant appears as himself and Aretha Franklin’s 'Respect' is used as a specific music cue, so those elements will need to be addressed in packaging and rights planning. If those clearances are not the intended path, the script already has enough structural momentum that those references could be rethought without changing the core story.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Terry can carry more of the moral argument.",
+        "detail": "The friendship is already doing useful work, especially when Terry calls out Harris after the cheating and the robot accident. A next pass could give Terry one more scene where his conscience actively changes the direction of the story, which would deepen the buddy dynamic and make the final reconciliation land harder.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 38304,
+  "outputTokens": 5872,
+  "cost": 0.05515199999999999,
+  "declaredFormat": "Feature film"
+}

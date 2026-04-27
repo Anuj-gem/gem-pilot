@@ -1,0 +1,335 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "siege thriller",
+        "war drama",
+        "political thriller"
+      ],
+      "tone": "Gritty, propulsive, emotionally earnest, and explosive"
+    },
+    "positioning_hook": "A traumatized Afghanistan veteran and his teenage daughter are trapped on a bomb-rigged Cape Cod bridge, forcing him to wage a one-man war against a live-streaming terrorist cell.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise is instantly legible and built for broad genre audiences: a father, a daughter, a bridge, and a ticking-clock hostage siege. The emotional promise is clear from the opening domestic scenes through the final reunion, which gives the action a human center that can travel beyond pure genre fans."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands immediately with Eric’s return home, then detonates into a bridge siege with a hard clock and a contained battlefield. The script keeps the engine clean: protect the daughter, survive the bridge, stop the bombers, and get off before the whole structure goes."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Eric is built as a strong lead: wounded veteran, protective father, and capable operator whose restraint keeps getting tested. Madeleine, Ozzie, Bryan, and Roken all add distinct pressure points, though the story is still primarily powered by Eric’s choices and the daughter relationship."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a big, specific set-piece premise and sustains it with a clear visual grammar: the bridge as a trapped arena, the terrorists as a branded media event, and the father’s military skill set as the survival engine. The live-streamed hostage spectacle and the final public reckoning give it a sharper identity than a standard siege thriller."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "Once the bridge explodes, the story keeps escalating through hostage collection, counterattacks, bomb disarmament, and the final confrontation in the command center. The sequence design is strong and the reversals keep the momentum high, especially when Eric shifts from trapped passenger to active hunter."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A veteran father trapped on a bridge with his daughter is a clean, memorable engine, and the script adds a fresh layer by making the terrorists media-savvy, ideologically performative, and structurally organized. The Roken reveal and the moral argument about war, reporting, and public appetite for spectacle give the premise a second charge beyond survival."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The bridge becomes a fully usable battlefield with lanes, trusses, command center, hostages, choppers, and evacuation pressure, which gives the setting real story utility. The military and media worlds are also textured through Bryan’s broadcast presence, the veterans’ backstory, and the terrorists’ webcast strategy."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a muscular blend of siege-action, family drama, and patriotic reckoning, with moments of dark irony and pointed dialogue about media, war, and identity. The script knows when to be brutal, when to be intimate, and when to let the emotional release land."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the action, the script is carrying PTSD, veteran disillusionment, media manipulation, and the cost of public hero-making. The final homecoming and the bridge survivors’ gratitude suggest a broader emotional afterlife, even though the story’s surface is already very full."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Eric-Madeleine-Katherine triangle gives the film a solid emotional core, and Ozzie and Bryan add useful friction and contrast. Still, the script is fundamentally a lead-driven survival piece, with most supporting characters serving the central engine rather than generating independent story webs."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen daughter role",
+          "Multiple military-age male roles",
+          "One Middle-Eastern supporting role",
+          "One older male supporting role",
+          "One female police officer and several civilian extras"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Approximately 45/55",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Large bridge set or heavily controlled bridge location",
+          "Command center trailer build",
+          "Airport/news studio inserts",
+          "House interior and backyard",
+          "Vehicles as playable interior sets"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Bridge explosions, helicopter crash, structural collapse, live-broadcast inserts, and final bridge destruction require significant compositing and digital environment work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, gunfire, vehicle impacts, glass breakage, and practical destruction beats throughout the bridge sequence.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Red Sox, F-150, Omega, Gatorade, Harvard, Isenberg, Greyhound, FNC, and other named brands/organizations appear in dialogue or action."
+        },
+        {
+          "type": "real_person",
+          "detail": "Anderson Cooper is referenced by name in the opening broadcast comparison."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named music is referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "News-channel branding, webcast domain naming, and sports-team references may require clearance depending on production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical action thriller or premium streaming event movie",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong trailer moments, event-scale set pieces, and a clear post-theatrical streaming life."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The bridge destruction, helicopter crash, and repeated action set pieces push this above contained indie scale, but it still sits below full tentpole territory."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The film can be anchored by one strong lead and a handful of supporting players, though the daughter role and the terrorist ensemble need precise casting."
+        },
+        "location": {
+          "level": "high",
+          "note": "A major bridge environment, night exteriors, vehicle interiors, and a command-center build create a location-heavy production footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Mass shootings, hostage execution, child endangerment, and sustained gun violence narrow the content lane to mature audiences."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses several named brands, a real journalist reference, and recognizable institutions that may need clearance depending on production choices."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The bridge is a true pressure cooker.",
+          "what_it_means": "The Bourne Bridge is not just a backdrop; it becomes a playable battlefield with lanes, trusses, a suicide barrier, and a command center that keeps generating new tactical problems. That kind of contained but expansive arena is catnip for action buyers because it promises scale without requiring globe-trotting spend, and it gives directors a signature set piece they can sell in one image.",
+          "evidence": "The bridge is blown in sections, hostages are trapped across lanes, Eric climbs the trusses to disarm C4, and the final showdown happens under the structure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Eric is built as a movie lead.",
+          "what_it_means": "He has a clean external objective, a wounded interior, and a physical skill set that can carry an entire feature without needing constant explanation. Actors chase roles like this because they get to play competence, trauma, fatherhood, and moral conflict in the same frame, which is exactly the kind of showcase that can reframe a career.",
+          "evidence": "Eric returns from Afghanistan with a sling, freezes at the screen door slam, kills Tango with a Ka-Bar, and later gives the camera a full account of his failed call in Afghanistan.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-daughter engine is immediate.",
+          "what_it_means": "The script gives the action a human spine from page one, so every explosion and gunfight is tied to a relationship the audience understands before the siege begins. That makes the film easier to market to a broader audience and gives the climax emotional lift instead of just tactical payoff.",
+          "evidence": "Madeleine’s teasing, Katherine’s tickets, the Sox game, and Eric’s repeated promise to bring his daughter home all frame the bridge crisis.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The terrorists have a media identity.",
+          "what_it_means": "Roken’s crew is not anonymous firepower; they are branding themselves, livestreaming, and staging the attack as a public event, which gives the movie a contemporary edge. That makes the material feel current to buyers and gives the villain side a memorable signature that can drive trailers and conversation.",
+          "evidence": "The command center includes cameras, a satellite dish, a webcast, and Romeo’s on-camera monologue to America.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a built-in moral argument.",
+          "what_it_means": "This is more than a rescue thriller; it is also about veterans, public spectacle, and the way institutions turn people into symbols. That extra layer gives prestige-minded buyers and actors something to lean into while still delivering the genre engine that keeps the movie commercial.",
+          "evidence": "Bryan’s reporting, Eric’s on-camera statement, and Roken’s rant about America, war, and media all push the theme forward.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces escalate cleanly.",
+          "what_it_means": "Each major beat changes the tactical board: hostage collection, bridge collapse, counter-sniping, bomb disarmament, vehicle escape, and the final dead-man’s-switch confrontation. That kind of escalation is what keeps a thriller feeling expensive and urgent, and it gives editors and trailer-cutters a lot to work with.",
+          "evidence": "Eric moves from hiding in cars to killing patrols, to disarming bridge charges, to the final underwater struggle with Roken.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending earns catharsis.",
+          "what_it_means": "The film doesn’t just stop at survival; it pays off with public recognition, family reunion, and a community response that broadens the emotional finish. That makes the project more than a one-note siege movie and gives distributors a cleaner audience takeaway.",
+          "evidence": "The survivors come to Eric’s house with food and thanks, and the final image is the family gathered around him.",
+          "source": "script"
+        }
+      ],
+      "headline": "AFTERMATH is a muscular, high-concept siege thriller with a strong emotional spine: a wounded veteran, his teenage daughter, and a bomb-rigged bridge turned into a live-streamed war zone. It has the kind of contained-but-spectacular setup that producers can package, the kind of lead role actors chase, and the kind of final catharsis that can sell both trailers and audience word-of-mouth."
+    },
+    "lead_characters": [
+      {
+        "name": "Eric Daniels",
+        "role_type": "Lead",
+        "demographics": "Male · early 30s · white · former U.S. Army Staff Sergeant",
+        "hook": "Eric is a physically imposing combat veteran whose body and nerves are both carrying the war home with him. He reads as controlled until pressure hits, then the soldier underneath the father comes roaring out; what makes him specific is that his competence is inseparable from his damage, and the script keeps forcing him to choose between restraint and action.",
+        "why_actor_wants_this": "This is the showcase territory of Jeremy Renner in The Hurt Locker crossed with Denzel Washington in Man on Fire — a man whose stillness is as charged as his violence, and whose emotional life is revealed through tactical decisions. Mid-career leading men looking for a prestige-action role with awards-friendly interiority will want this because it lets them play command, grief, and paternal devotion in one sustained performance."
+      },
+      {
+        "name": "Madeleine Daniels",
+        "role_type": "Lead",
+        "demographics": "Female · 12-13 · white",
+        "hook": "Madeleine is sharp, funny, embarrassed by her parents, and far more observant than the adults around her give her credit for. She starts as a kid trying to survive a long car ride and becomes the emotional witness to the entire siege, which gives her a real arc from eye-rolling teenager to frightened but resilient daughter.",
+        "why_actor_wants_this": "This is the kind of breakout adolescent role that gave Abigail Breslin in Little Miss Sunshine or Brooklynn Prince in The Florida Project a full emotional spectrum inside a genre-adjacent story. Young actors and their teams will see a rare part that lets a child performer do humor, fear, loyalty, and quiet bravery without being decorative."
+      },
+      {
+        "name": "Katherine Daniels",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s · white",
+        "hook": "Katherine is the practical center of the family, the one who has been holding the house together while Eric was away and who understands both his damage and her daughter’s impatience. She has a grounded, no-nonsense voice and functions as the emotional bridge between the old family and the one that has to be rebuilt after the siege.",
+        "why_actor_wants_this": "This is the grounded, emotionally intelligent spouse role that gave Connie Britton in Friday Night Lights or Vera Farmiga in Up in the Air their lived-in authority — a part built on intelligence, patience, and the ability to land a line without overplaying it. Established dramatic actresses who can bring warmth and steel will see this as a strong supporting anchor in a commercial feature."
+      },
+      {
+        "name": "Bryan Saint",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · white",
+        "hook": "Bryan is polished, vain, and professionally fluent in the language of public empathy, which makes him both useful and suspect from the start. He begins as the face of the story and ends as a hostage forced to confront the human cost of his own career, giving him a nice arc from media confidence to moral exposure.",
+        "why_actor_wants_this": "This is the kind of slippery, self-aware media figure role that gave Jake Gyllenhaal in Nightcrawler or Bradley Cooper in A Star Is Born a chance to weaponize charisma and then let it curdle. Actors who like playing charm with a blade underneath will be drawn to the performance swing from polished broadcaster to terrified witness."
+      },
+      {
+        "name": "Romeo / Major Jimmy Roken",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · white · former military officer",
+        "hook": "Roken is the story’s ideological engine: a disciplined, furious, media-savvy killer who believes he is staging a national reckoning. The reveal that he is the disgraced Major Jimmy Roken gives him a personal grievance and a public mythology, making him more than a generic villain and turning him into a man trying to control the narrative of his own ruin.",
+        "why_actor_wants_this": "This is the kind of antagonist showcase that gave Javier Bardem in No Country for Old Men or Michael Shannon in Take Shelter their unnerving authority — a role where intelligence, menace, and conviction all have to coexist. Character actors with a taste for precision and volatility will chase this because the villain is not just dangerous, he is articulate."
+      },
+      {
+        "name": "Ozzie",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Middle-Eastern",
+        "hook": "Ozzie is a smart, contained family man who has learned to manage other people’s assumptions before they manage him. He brings the movie one of its most human and quietly devastating turns, because his decency sits right next to the casual racism Eric has to confront in real time.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that gave Mahershala Ali in Moonlight or Riz Ahmed in Sound of Metal a chance to play dignity under pressure and let a single exchange carry enormous weight. Actors looking for a part that can cut through a big action movie with specificity and moral clarity will want it."
+      },
+      {
+        "name": "Delta",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · military-trained",
+        "hook": "Delta is one of the few terrorists who seems to understand the operational cost of the mission, which makes him a useful internal counterweight to Roken’s theatricality. He reads as competent, impatient, and increasingly uneasy with the scale of what they’ve built.",
+        "why_actor_wants_this": "This is the kind of disciplined antagonist-support role that gives an actor the same tactical tension as the best henchman parts in Sicario or Heat — a man who can play procedure, loyalty, and doubt without speeches. Strong character actors who like playing pressure inside a machine will gravitate to it."
+      },
+      {
+        "name": "Echo",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · military-trained",
+        "hook": "Echo is the most openly sadistic of the crew, the one who wants the mission to become bloodier and less controlled. He gives the bridge siege its ugliest edge, and his volatility helps define the internal temperature of the cell.",
+        "why_actor_wants_this": "This is the kind of feral supporting villain role that gave Walton Goggins in Justified or Ben Mendelsohn in Animal Kingdom room to make menace feel specific rather than generic. Actors who can play charm, cruelty, and impatience in the same breath will have fun with it."
+      },
+      {
+        "name": "Foxtrot",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · military-trained",
+        "hook": "Foxtrot is the crew’s cold, efficient closer, the one who moves like a professional and kills like he’s executing a task. He becomes especially memorable in the late-film hand-to-hand fight with Eric, where his physicality and discipline make him a real obstacle.",
+        "why_actor_wants_this": "This is the kind of physical antagonist role that gives an actor the same clean, dangerous utility as the best action henchmen in John Wick or The Raid. Stunt-capable actors and martial performers will see a showcase for precision violence and screen presence."
+      },
+      {
+        "name": "India / Gunny Maurino",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · military-trained",
+        "hook": "India is a soldierly, hard-edged operator who becomes one of the film’s most pointed reminders that these men are not faceless. The dog tags and the later reveal of his name give him a human contour that the story uses to complicate Eric’s mission and the audience’s response.",
+        "why_actor_wants_this": "This is the kind of morally charged supporting role that lets an actor play threat first and humanity second, similar to the pressure-cooker utility of the best ensemble soldiers in Black Hawk Down. Actors who can make a few scenes feel lived-in will want the chance to be both dangerous and recognizable."
+      },
+      {
+        "name": "Kilo",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · tech-savvy military-trained",
+        "hook": "Kilo is the cell’s technician and media operator, the one who turns the attack into a broadcast event. He gives the film a modern, digital layer and a different kind of menace: not just violence, but production value.",
+        "why_actor_wants_this": "This is the kind of tech-antagonist role that gives an actor the same slick, unsettling utility as the best operator characters in Mr. Robot or The Dark Knight’s support crew. Performers who like playing intelligence with a smirk will have a lot to do here."
+      },
+      {
+        "name": "Zack",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens-20s",
+        "hook": "Zack is a small but useful civilian presence who helps Eric at a key moment and gives the bridge population a face beyond the hostages. He functions as one of the ordinary people whose choices become part of the escape chain.",
+        "why_actor_wants_this": "This is the kind of compact, memorable supporting role that gives a younger actor a clean moment of usefulness in a large-scale thriller, similar to the best civilian beats in disaster movies. Emerging actors looking for a sharp, efficient screen impression will chase it."
+      },
+      {
+        "name": "Hutch",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Hutch is the older civilian who refuses to stay passive once he understands what’s happening. He gives the movie a blue-collar, no-bullshit ally and helps widen the emotional field beyond Eric’s immediate family.",
+        "why_actor_wants_this": "This is the kind of late-career character role that gives an older actor the same lived-in authority as the best supporting turns in Gran Torino or The Mule — a man whose presence alone changes the temperature of a scene. Veteran character actors will like the chance to be useful, funny, and brave in a few strokes."
+      },
+      {
+        "name": "Thomas “Hutch” Hutchinson",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Hutch is a practical, plainspoken bridge civilian who immediately recognizes the stakes and chooses to help. He’s the kind of guy who makes the world feel populated by people with history, not just bodies in cars.",
+        "why_actor_wants_this": "This is the sort of grounded supporting part that gives an older actor a clean, memorable scene partner dynamic, like the best elder-citizen roles in survival thrillers. Character actors who specialize in authenticity will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a large-scale action movie with emotional intimacy and moral argument.",
+        "fit_profile": "Established indie-to-mid-budget directors with at least one feature under their belt, or action-capable TV directors looking to step into features. The sweet spot is someone who cares about performance under pressure, spatial clarity in action, and the ability to make a contained environment feel like a national event.",
+        "detail": "The material rewards directors who can keep geography legible while escalating chaos, especially in night exteriors and vehicle-based action. It also gives them a chance to balance spectacle with family drama and political subtext, which is a strong calling card for buyers looking for a filmmaker who can handle both scale and feeling."
+      },
+      "buyer_appeal": {
+        "tier": "$20-40M feature",
+        "lane": "Premium streaming event movie / theatrical action-thriller lane",
+        "detail": "It can be packaged around one strong lead and a few high-utility supporting roles, so it does not require a giant ensemble or franchise IP to make sense. The bridge siege, veteran angle, and live-broadcast terrorism premise give it a trailer-friendly hook and a clean streaming-to-word-of-mouth runway in the mature action lane."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The bridge geography is doing a lot of work.",
+        "detail": "The bridge is the movie’s biggest asset, and the script already uses it well; a next pass could keep tightening the spatial logic so every move across lanes, trusses, and vehicles reads instantly under pressure. The clearer the audience can track Eric’s position relative to the command center and the gaps, the more the set pieces will feel inevitable instead of merely large.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The opening domestic stretch runs a bit long before ignition.",
+        "detail": "The family material is doing important emotional setup, especially the kitchen scene, the Red Sox tickets, and the drive to the game. One lever would be to preserve the same relationship beats while compressing the pre-siege runway so the bridge attack arrives with even more snap.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The terrorist cell has room for sharper differentiation.",
+        "detail": "Roken, Delta, Echo, Foxtrot, India, and Kilo all have clear functions, and the script already gives them distinct energy. A next pass could sharpen one or two signature behaviors or verbal tics for the middle ranks so the audience tracks them even faster in the chaos.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand and media references are plentiful.",
+        "detail": "Red Sox, F-150, Omega, Gatorade, Harvard, Isenberg, Greyhound, FNC, and the Anderson Cooper reference all help the world feel specific. If the goal is a cleaner clearance path, one simplification lever would be to swap a few of the more prominent named references for generic equivalents without changing the story engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The night action asks for a strong visual plan.",
+        "detail": "The bridge siege, helicopter work, explosions, and live-broadcast inserts create a production footprint that will benefit from a very clear previsualization strategy. The upside is that the movie’s biggest moments are all highly marketable, so the visual plan is protecting the selling points rather than decorating them.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.7,
+  "tier": "Optionable",
+  "inputTokens": 39514,
+  "outputTokens": 5912,
+  "cost": 0.0562395,
+  "declaredFormat": "Feature film"
+}

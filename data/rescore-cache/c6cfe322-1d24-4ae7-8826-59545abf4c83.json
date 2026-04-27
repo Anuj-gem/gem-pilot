@@ -1,0 +1,290 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_tags": [
+        "Adventure",
+        "Comedy"
+      ],
+      "tone": "Playful, heightened, whimsical, and broadly comedic with fairy-tale stakes"
+    },
+    "positioning_hook": "A 500-year-old princess-turned-witch lands in a Tampa apartment with a burned-out hitman and his son, forcing a magical feud to play out in modern suburbia.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is easy to grasp and has family-friendly fantasy-comedy appeal, especially once Helena starts clashing with Pablo, Ricky, and the apartment world. The audience lane is clear, though the very specific fairy-tale-to-suburbia blend keeps it from feeling broad in the mainstream sense."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early: a witch escapes a bottle, takes over a modern apartment, and her old rival follows her into the present. The script keeps the central engine legible through the body-swap history, the bottle, and the 24-hour countdown."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Helena has a vivid voice, strong comic behavior, and a clear emotional wound around beauty and belonging, while Pablo gives the story a grounded counterweight. Several supporting players are colorful, but many function mainly as orbiting pieces around the Helena/Freya conflict."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific tonal mash of medieval witchcraft, modern apartment life, and broad body-swap comedy, and it keeps doubling down on that contrast. The Michael Jackson outfit gag, the talking-dog spell, and the gender-swap revenge beat all show a writer willing to push the premise into comic spectacle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through arrivals, reversals, and magical confrontations, and the 24-hour death clock gives the back half urgency. The middle spends a lot of time on repeated spell exchanges and social friction, which keeps the engine active but not always escalating."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A witch trapped in a bottle who resurfaces in a Tampa apartment is a fresh enough setup to feel ownable, and the body-swap history gives the conflict a built-in emotional twist. The idea of a medieval princess learning TV, peanut butter, and modern slang while her enemy weaponizes beauty is the kind of oddball premise that can stick."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The Tampa apartment complex, the restaurant, the airport, and the coven give the script a workable present-day texture, and the medieval prologue adds a fairy-tale layer. The world is more a lively container for the conflict than a fully systemized universe, but it has enough local flavor to feel producible and specific."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably broad, mischievous, and self-aware, with witchcraft played for comic surprise rather than dread. The script knows how to pivot from emotional sincerity to absurdity, especially in the apartment scenes where magic collides with everyday domestic behavior."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the comedy, the script is really about beauty, aging, identity, and the hunger to be seen, and Helena/Freya’s history gives the story a deeper emotional spine. The material hints at that depth more than it fully explores it, but the ingredients are there for a richer version."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Helena, Pablo, Ricky, Bree, Adofo/Adele, Mario, and Freya create a lively social web with plenty of comic friction and alliance-shifting. The ensemble is fun, though the story still clearly lives or dies on the central Helena/Freya/Pablo triangle."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Two principal female roles require strong physical contrast across witch/princess and body-swap states",
+          "One principal male role is a Latino actor in his 40s",
+          "One supporting role involves a gender-swap transformation",
+          "Several supporting roles are age-specific older women in the coven"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with a moderate exterior component",
+        "period_or_contemporary": "Contemporary with a medieval prologue and dream/fantasy inserts",
+        "notable_requirements": [
+          "A medieval castle bedroom and village street opening",
+          "A Tampa apartment complex as the primary present-day setting",
+          "A hotel suite, restaurant, airport parking lot, and therapist office",
+          "A fantasy castle/meadow sequence for the finale"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Body swaps, fog transformations, spell effects, object transformations, dream imagery, and a fantasy finale with animal/creature changes and magical combat.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fog, makeup/prosthetics for witch/troll transformations, prop bottle effects, and practical magical gags.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Michael Jackson is referenced by name and the finale uses 'Billie Jean.'"
+        },
+        {
+          "type": "brand",
+          "detail": "Scream, Gucci, Alexander McQueen, TampaBay magazine, Coke, Ding Dongs, Doritos, Twizzlers, and Chiefs are all named on the page."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming family-fantasy comedy or low-to-mid budget theatrical fantasy-comedy",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with strongest fit as a festival-to-platform or streamer original; the engine is a contained magical feud colliding with modern domestic life."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The core story is contained, but the body-swap effects, fantasy finale, and transformation beats push it above micro-budget territory."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a handful of distinctive roles and at least two strong leads with transformation range, but it is not dependent on a huge ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most of the story lives in a small cluster of modern locations, but the medieval opening and fantasy ending add period and effects requirements."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material is mostly comic and fantastical, with mild language and magical violence rather than explicit content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Michael Jackson, 'Billie Jean,' and multiple named brands and products create a meaningful clearance layer."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Helena is a showcase lead.",
+          "what_it_means": "The role gives an actress comedy, vulnerability, vanity, menace, and childlike wonder in one package, which is exactly the kind of part that can become a calling card. Mid-career performers who want a role with prosthetics, physical comedy, and emotional swing will chase this, and buyers looking for a star vehicle with fantasy flavor will see the appeal immediately.",
+          "evidence": "Helena goes from medieval princess to modern fish-out-of-water, then flips from wounded outsider to spellcasting force in the restaurant and apartment scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise has a clean, ownable engine.",
+          "what_it_means": "A witch in a bottle, a body-swap revenge history, and a modern apartment full of witnesses gives the movie a simple sales sentence and a steady comic engine. Streamers and indie genre buyers who want a high-concept hook that can be explained in one breath will respond to that clarity.",
+          "evidence": "The bottle opens, Helena appears in Ricky and Pablo's apartment, and Freya keeps hunting her through the present-day world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The comedy comes from collision, not just jokes.",
+          "what_it_means": "The script gets mileage out of medieval logic colliding with modern objects, slang, food, and media, which creates repeatable comic business rather than one-off punchlines. That kind of tonal engine is attractive to buyers who want a family-accessible fantasy with a clear trailer rhythm.",
+          "evidence": "Helena reacts to the refrigerator, television, peanut butter, Coke, Michael Jackson clothes, and the idea of a 'metal beast' that keeps food cold.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The body-swap feud adds a strong emotional hook.",
+          "what_it_means": "The Helena/Freya conflict is not just good-versus-evil; it is a grievance story about exclusion, beauty, and stolen identity, which gives the fantasy stakes a human core. That makes the material attractive to actors and directors who want genre with an emotional aftertaste.",
+          "evidence": "The flashback to the castle lawn shows little Freya being rejected by the princesses, and the adult Freya later steals Helena's body and life.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating comic friction.",
+          "what_it_means": "Pablo, Ricky, Bree, Mario, and Adofo/Adele all have distinct reactions to Helena, which gives the movie multiple playable relationship lanes and a lot of scene-level energy. Ensemble-friendly buyers and directors who like group dynamics will see room for a lively, character-driven package.",
+          "evidence": "Ricky becomes Helena's first ally, Mario reacts with fear and banter, Bree brings the coven, and Adofo's transformation into Adele becomes a running comic turn.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The finale commits to spectacle.",
+          "what_it_means": "The ending escalates into full fantasy combat, shape-shifting, and a mythic castle showdown, which gives the movie a bigger finish than the apartment setup suggests. That helps the project feel like a real feature event rather than a single-location comedy.",
+          "evidence": "The final sequence moves from the apartment to the castle, with two Helens, animal transformations, knights, dragons, and the voice of death.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a lively, highly castable fantasy-comedy with a very saleable hook: a medieval princess-witch lands in a Tampa apartment and turns modern life into a magical battleground. The script’s biggest asset is Helena herself — a role that can showcase a performer’s comic timing, physical transformation, and emotional range while the ensemble keeps the movie playful and producible."
+    },
+    "lead_characters": [
+      {
+        "name": "PABLO",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Mexican / Latino · working-class hitman",
+        "hook": "Pablo is a tired, defensive, street-smart man who talks tough because he has built his life around survival and self-deception. Under the sarcasm and profanity, he is a father trying to get out of a violent business, and the witch in his apartment forces him to confront the part of himself that still wants decency.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in 'Breaking Bad' or Michael Keaton in 'Birdman' — a man whose armor is all attitude until the story peels it back. Actors who can play menace, hangdog humor, and late-blooming conscience will see a lot to do here."
+      },
+      {
+        "name": "RICKY",
+        "role_type": "Lead",
+        "demographics": "Male · late teens",
+        "hook": "Ricky is the movie’s youthful bridge between worlds: sarcastic, curious, and open enough to accept the impossible faster than the adults around him. He gives the story warmth and momentum, and his easy rapport with Helena makes him the first person who treats her like a person instead of a problem.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the grounded charm of Noah Jupe in 'A Quiet Place' with the comic responsiveness of a teen in a family fantasy. It offers a clear emotional lane, a lot of reaction work, and a real relationship anchor with the lead."
+      },
+      {
+        "name": "FREYA",
+        "role_type": "Lead",
+        "demographics": "Female · 20s/30s in body, older in spirit · witch",
+        "hook": "Freya is the movie’s elegant predator: patient, wounded, vain, and absolutely committed to reclaiming the life she believes was denied to her. She can be charming, cruel, and theatrical in the same breath, which makes her a strong fantasy antagonist with real personality.",
+        "why_actor_wants_this": "This is the showcase territory of Cate Blanchett in 'Thor: Ragnarok' or Glenn Close in '101 Dalmatians' — a villain role that lets an actor enjoy style, wit, and cold command. Performers who like playing intelligence wrapped in menace will be drawn to it."
+      },
+      {
+        "name": "BREE",
+        "role_type": "Lead",
+        "demographics": "Female · 60s",
+        "hook": "Bree is the calm center of the coven, a practical older woman who understands the rules of the magical world and speaks to Helena with warmth instead of fear. She carries authority without bluster, and her presence gives the movie a lived-in, matriarchal texture.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the grounded authority of Frances McDormand in 'Nomadland' with a touch of magical-world gravitas. Veteran performers who want a wise, scene-steadying part with emotional dignity will be interested."
+      },
+      {
+        "name": "TESHI / MARVIN",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s/40s in troll form, handsome adult male in transformed form",
+        "hook": "Teshi is Freya’s loyal servant with a buried identity and a comic, tragic vulnerability that opens up once the spellwork starts shifting him around. As Marvin, he becomes a handsome, confused man discovering himself in real time, which gives the role a surprising emotional and comic turn.",
+        "why_actor_wants_this": "This is the kind of transformation role that gives an actor the dual-play territory of Eddie Murphy in 'The Nutty Professor' with a fantasy twist. It offers physical comedy, identity play, and a late reveal that can land as both joke and character beat."
+      },
+      {
+        "name": "MARIO",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s/40s · Black / Italian-accented",
+        "hook": "Mario is the friendly neighbor and comic observer who keeps the apartment world feeling social and alive. He is the kind of supporting character who can walk into a scene, register the absurdity, and make the whole movie feel more communal.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the scene-stealing utility of John Turturro in a broad ensemble comedy. It offers banter, reaction, and a steady comic presence without needing to carry the plot."
+      },
+      {
+        "name": "ADOFO / ADELE",
+        "role_type": "Supporting",
+        "demographics": "Male-to-female transformation role · late 30s/40s",
+        "hook": "Adofo starts as a hard-edged enforcer and becomes one of the movie’s funniest identity reversals once Helena changes him into Adele. The part is built for an actor who can play threat, humiliation, vanity, and liberation in one arc.",
+        "why_actor_wants_this": "This is the showcase territory of Eddie Murphy or Jamie Foxx in a body-swap comedy — a role that lets an actor play the joke, then find the humanity inside it. Performers who enjoy bold physical comedy and gender-performance play will be drawn to it."
+      },
+      {
+        "name": "STRYKER / DR. WILSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Stryker is the hidden operator behind Pablo’s assignments, wearing the mask of a mild therapist while controlling the machinery underneath. He gives the movie a modern criminal spine and a nice double-life reveal.",
+        "why_actor_wants_this": "This is the kind of dual-identity role that gives an actor the controlled menace of Bryan Cranston in 'Sneaky Pete' or a prestige crime thriller. It offers deception, authority, and a late reveal that recontextualizes the whole plot."
+      },
+      {
+        "name": "JESSA",
+        "role_type": "Supporting",
+        "demographics": "Female · around 10",
+        "hook": "Jessa functions like a spectral messenger, a child figure who appears with eerie calm and speaks in prophecy. She adds a fairy-tale chill to the story and gives the magical world a more mythic voice.",
+        "why_actor_wants_this": "This is a compact but memorable child role in the tradition of the eerie messenger kid in fantasy and horror-adjacent stories. It gives a young performer a striking, scene-defining moment rather than a generic kid part."
+      },
+      {
+        "name": "ALEXANDER",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s/30s in original body, later revealed as Marvin/Teshi",
+        "hook": "Alexander is the lost prince whose identity has been buried under spellwork and time, giving the ending its romantic restoration. He is less a day-to-day presence than a mythic payoff, but he matters because he completes Helena’s original life.",
+        "why_actor_wants_this": "This is the kind of reveal role that gives an actor the romantic payoff of a fairy-tale prince with the emotional turn of a memory-restoration story. It is a clean, satisfying transformation slot for a performer who can play nobility and bewilderment."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make fantasy feel playful, intimate, and actor-forward instead of expensive and distant.",
+        "fit_profile": "First- or second-feature directors, or established indie directors, who already work comfortably with performance-driven genre and a light visual-effects footprint. The material rewards someone who likes tonal contrast, comic timing, and making a contained world feel bigger through character behavior rather than spectacle.",
+        "detail": "The movie gives a director a clear visual lane: one foot in fairy tale, one foot in apartment comedy, with transformation beats that can be staged cleanly and memorably. It is especially attractive to filmmakers who want to prove they can handle genre, ensemble rhythm, and a finale that escalates without needing a giant canvas."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming fantasy-comedy / family-adjacent genre lane",
+        "detail": "The project can be packaged around one standout female lead and a contained ensemble, which makes it viable for buyers who like a strong concept without needing a tentpole cast. The Tampa apartment footprint keeps the production manageable, while the magical premise and broad comedy give it exportable trailer appeal for streamers and genre buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated spell reversals.",
+        "detail": "The apartment section has a lot of pleasure in Helena testing her powers, but several beats are variations on the same comic idea. One lever would be to let each spell scene turn the story in a new direction — information, alliance, or danger — so the escalation feels cumulative rather than circular.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The Freya/Helena history can be sharpened earlier.",
+        "detail": "The flashback explains the wound cleanly, and the later body-swap reveal pays it off, but the emotional engine would hit even harder if the audience felt the rivalry tightening sooner. A next pass could foreground a few more present-tense reminders of what Freya took from Helena before the late reveal lands.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The clearance list is not small.",
+        "detail": "Michael Jackson, 'Billie Jean,' Scream, Gucci, Alexander McQueen, Coke, Ding Dongs, Doritos, Twizzlers, TampaBay magazine, and the Chiefs all appear on the page. A simplification pass that swaps a few named references for generic equivalents would protect the story while reducing clearance load.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The fantasy finale asks for careful staging.",
+        "detail": "The castle battle, animal transformations, fog bodies, and dual-Helena confrontation are all playable, but they do move the movie into a more effects-dependent finish. The version of the script where a few of those beats are combined or staged through fewer setups would keep the climax strong while protecting budget.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Pablo’s emotional turn is the anchor for the back half.",
+        "detail": "His shift from self-protective hustler to Helena’s ally is one of the movie’s best human threads, and the script already gives him a clean arc through the therapy office, the apartment, and the final showdown. A next pass could keep foregrounding that turn in the scenes where he chooses Helena over his old life, because that is what makes the ending land.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63.3,
+  "tier": "Optionable",
+  "inputTokens": 43070,
+  "outputTokens": 5199,
+  "cost": 0.055698,
+  "declaredFormat": "Feature film"
+}

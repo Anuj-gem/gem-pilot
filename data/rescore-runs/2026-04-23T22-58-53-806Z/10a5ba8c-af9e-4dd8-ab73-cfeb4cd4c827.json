@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:04:15.133Z",
+  "submission_id": "10a5ba8c-af9e-4dd8-ab73-cfeb4cd4c827",
+  "eval_id": "c7a1c3fd-7cd4-49ce-b79a-5d69bc56ab6a",
+  "title": "Screenplay    The Last Call Revised",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "ADAM LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s · Italian-American · lawyer/professor"
+    },
+    {
+      "name": "MARY LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Female · 50s to 60s · mother"
+    },
+    {
+      "name": "MARC LAMPARELLO",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · younger in flashbacks and voiceover"
+    },
+    {
+      "name": "MARTY",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · lawyer/friend"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s · Adam’s former girlfriend"
+    },
+    {
+      "name": "ELENA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · former hospital connection"
+    },
+    {
+      "name": "DR. SUSAN MYERS",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s to 40s · physician"
+    },
+    {
+      "name": "DR. HELEN ANDREWS",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 40s · physician"
+    },
+    {
+      "name": "DR. KAREN LEVY",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · expert witness"
+    },
+    {
+      "name": "GALLOWAY",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · defense attorney"
+    },
+    {
+      "name": "MARTY'S OFFICE / VOICE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · voice role / off-screen presence"
+    }
+  ],
+  "positioning_hook": "A grieving New Jersey lawyer sues the hospital that discharged his suicidal brother, then discovers the case is really about the call he never answered.",
+  "cost_usd": 0.047572500000000004,
+  "input_tokens": 31210,
+  "output_tokens": 5370,
+  "status": "wrote:leads_ok"
+}

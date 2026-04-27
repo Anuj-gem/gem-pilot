@@ -1,0 +1,259 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action fantasy",
+      "genre_tags": [
+        "Supernatural comedy",
+        "Workplace ensemble"
+      ],
+      "tone": "Irreverent, heightened, chaotic, and character-comic with bursts of gore and heroism"
+    },
+    "positioning_hook": "A dead-end office clerk with erased-out powers is forced into a monster-killing squad, and the only way to survive is to figure out what his body does before it kills everyone.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to sell: an underqualified office worker gets drafted into a supernatural kill team, and the script keeps the promise of action, comedy, and creature mayhem front and center. The appeal is strongest for genre buyers and streamer audiences that like high-concept ensemble chaos with a clear hero under pressure."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands quickly in the opening pages: Francis is a logistics worker at COMIRUM, gets forced onto a field team, and is told his outbursts are being measured because he may be a SINON. The mission against the regenerating British zombie gives the story a clean engine and a simple immediate objective."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Francis has a strong comic-reluctant lead shape, and the team around him gives each member a distinct behavioral flavor: Hal’s bravado, Clara’s volatility, Toast’s deadpan machine logic, Ploy’s bass-driven swagger, and Doreen’s hard-edged command. The characters are vivid enough to carry a feature, though the emotional center still lives mostly in Francis’s discovery arc."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific comic register: retro-futuristic bureaucracy, monster-hunting office culture, and powers expressed through absurd bodily triggers like hot dogs, donuts, and nosebleeds. The combination of workplace drudgery and supernatural escalation gives the material a confident, offbeat identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story moves with real propulsion once Francis is pulled into the team and sent to London, and the fight against the British zombie escalates cleanly through setbacks, regrouping, and a final payoff. The feature engine is straightforward and readable, with the main momentum coming from Francis’s race to understand his power before the team gets wiped out."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a bureaucratic death-toll office staffed by anomalous beings and fielded against monsters feels fresh and immediately legible. The hot-dog trigger, the outburst meter, and the comic-sans death board give the premise a memorable hook that feels specific rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "COMIRUM has enough texture to feel like a functioning institution, with logistics divisions, briefing rooms, field suits, article-based authority, and a death-toll board that implies a larger system. The world reads as bigger than the scene, and the retro-futurist details help the setting feel story-generating."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a clear tonal signature: deadpan workplace banter colliding with grotesque supernatural violence and cartoonish character behavior. The dialogue rhythm, the comic insults, and the sudden gore all point to a very specific lane rather than a generic action-comedy blend."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are hints of a larger mythology in the SINON concept, the outburst meter, Doreen’s authority, and Francis’s opening vision, but this excerpt keeps the emphasis on immediate action and comic setup. The material suggests more beneath the surface, though the page is still prioritizing the surface-level mission and character banter."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The ensemble has usable friction: Francis and Ploy have an easy rapport, Clara needles everyone, Hal performs bravado, Toast undercuts the room, and Doreen functions as the pressure point holding them together. The group already generates banter and tactical interplay, which gives the feature a strong team dynamic."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 7,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Ensemble of stylized adult roles",
+          "Non-human or heavily prosthetic character: cyborg wolf-man Jerry",
+          "Non-human or performance-enhanced character: robot Toast",
+          "Specific creature makeup for the British zombie antagonist"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "Mostly interior with key exterior action sequences",
+        "period_or_contemporary": "Retro-futuristic contemporary",
+        "notable_requirements": [
+          "Office complex with cubicles, briefing room, cafeteria, hallway, and logistics floor",
+          "London street exterior at night",
+          "Alleyway and rooftop action spaces",
+          "Creature/monster makeup and practical combat staging"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Energy bursts, multicolor power effects, teleportation-style light transport, glitch effects on the zombie, and visualized power activation on Francis.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Creature makeup/prosthetics, blood effects, limb loss, weapon transformations, and practical destruction beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Microsoft Excel equivalent, Google equivalent, and comic sans are referenced as recognizable software/style touchpoints."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or genre-forward theatrical indie lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with franchise potential if the SINON mythology expands"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained office interiors keep the footprint manageable, while creature work, VFX powers, and night exterior action push it above microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable in size, but the stylized roles and non-human characters benefit from distinctive casting and performance design."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Most of the story lives in a few interiors, but the London night sequence, rooftop work, and alley fight add exterior complexity."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Monster violence, dismemberment, blood, profanity, and drug references keep it in mature territory without pushing into extreme content."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses genericized tech and style references rather than named IP, people, or music."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The office-world premise is instantly ownable.",
+          "what_it_means": "The COMIRUM logistics setting gives the movie a commercial hook that can be pitched in one sentence: supernatural fieldwork filtered through dead-end bureaucracy. That kind of premise is attractive to buyers looking for a genre lane with a built-in world and a clean poster image.",
+          "evidence": "The death-toll board, cubicles, briefing room, and Francis doing spreadsheets in a field of anomalous coworkers.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Francis is a strong reluctant-lead engine.",
+          "what_it_means": "A protagonist who is visibly out of his depth but still has a hidden function gives the film a clear audience surrogate and a satisfying transformation arc. Actors who like playing comic panic that turns into earned competence will see a showcase role here.",
+          "evidence": "Francis repeatedly insists he is not a field guy, then unlocks his SINON power in the final fight.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has distinct comic weapons.",
+          "what_it_means": "Each teammate arrives with a readable behavior pattern, which makes the group easy to market and gives the movie multiple scene-stealing roles. That helps both ensemble casting and audience retention, because the banter is not interchangeable.",
+          "evidence": "Hal’s war stories, Clara’s coke-fueled flirtation, Toast’s dry machine logic, Ploy’s bass-powered swagger, and Doreen’s command presence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is aggressively specific.",
+          "what_it_means": "The script has a voice that can separate it from generic monster-action material: absurd office comedy, retro-futurist design, and sudden gore all live in the same lane. That makes it attractive to buyers who want something that can play as cult genre entertainment with a strong trailer cut.",
+          "evidence": "Comic-sans death board, donut-triggered power logic, and the grotesque British zombie fight.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The power system has a memorable trigger.",
+          "what_it_means": "Francis’s outburst meter and bodily activation give the movie a simple visual rule that audiences can track immediately. That kind of mechanic is useful for marketing because it creates a repeatable hook and a clear escalation path.",
+          "evidence": "The wrist device measuring outbursts, the percentage climbing, and the hot dog unlocking Francis’s final blast.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The creature set-piece is built for audience payoff.",
+          "what_it_means": "The London zombie encounter gives the script a contained, effects-friendly action centerpiece that can sell the movie’s promise fast. Genre buyers like a script that delivers its monster early and then keeps escalating the tactics around it.",
+          "evidence": "The British zombie regenerates after being shot apart, forcing the team into a coordinated multi-angle attack.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a clean genre sell: a dead-end office clerk gets drafted into a retro-futurist monster unit, and the movie turns his hidden power into the engine of a team-based action-comedy. The world, the ensemble, and the tone all arrive with enough specificity to make the project feel packageable and trailer-ready."
+    },
+    "lead_characters": [
+      {
+        "name": "Francis Booker",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s · office worker with anomalous powers",
+        "hook": "Francis is a nervous, funny, deeply reluctant desk jockey who would rather hide in spreadsheets than become anyone’s chosen one. He reads as the guy who knows he is not built for heroics, which makes his eventual burst of power feel earned instead of generic; his comic timing, panic, and buried capability are all part of the same engine.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — fast, defensive, verbally reactive, and slowly revealing a core of competence under anxiety. It gives an actor the chance to play comic helplessness, then flip into a late-blooming power reveal that changes how the room sees him."
+      },
+      {
+        "name": "Doreen",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-50s · commanding supervisor",
+        "hook": "Doreen is the hard-edged authority figure who runs COMIRUM like a battlefield office, speaking in clipped orders and never wasting emotional motion. She carries the pressure of someone who has seen too much to indulge anyone’s panic, which makes her a great anchor for the team and a source of dry, controlled menace.",
+        "why_actor_wants_this": "This is the kind of command role Frances McDormand had in Fargo — a person whose stillness and bluntness create authority in every scene. Mid-career dramatic leads who want a role with steel, wit, and institutional power will chase it."
+      },
+      {
+        "name": "Hal",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · physically imposing",
+        "hook": "Hal is the loud, swaggering bruiser who treats danger like a stage and turns every conversation into a performance. He is funny because he believes his own myth, but the script also lets him function as the team’s kinetic muscle, so the role has both comic bluster and action utility.",
+        "why_actor_wants_this": "This is the showcase lane of John Cena in Trainwreck — a big physical presence who can sell bravado as comedy while still landing as a credible action body. Actors with strong physical charisma will want the chance to play a guy whose ego is part of the joke and part of the weapon."
+      },
+      {
+        "name": "Clara",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s · coked-up Italian woman",
+        "hook": "Clara is volatile, flirtatious, and permanently in motion, with the kind of reckless charm that makes every room feel one bad decision away from chaos. She is also a lethal operator, so the character gets to live in the overlap between comic excess and genuine combat competence.",
+        "why_actor_wants_this": "This is the kind of feral, scene-stealing territory Jennifer Lawrence had in Silver Linings Playbook — a character whose volatility is the performance engine, not just a trait. Actors who want to play sexy, dangerous, funny, and unpredictable in the same role will chase her."
+      },
+      {
+        "name": "Toast",
+        "role_type": "Lead",
+        "demographics": "Non-human robot · ageless",
+        "hook": "Toast is a dry, literal-minded robot with a contemptuous streak and a precision-engineered sense of superiority. The character’s humor comes from treating human chaos like a statistical nuisance, which makes every line feel like a deadpan blade.",
+        "why_actor_wants_this": "This is the performance space of Alan Tudyk in Rogue One — a non-human role where timing, voice, and attitude do the heavy lifting. Voice actors and physical performers who like playing intelligence with comic disdain will see a standout part here."
+      },
+      {
+        "name": "Ploy",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s · Thai",
+        "hook": "Ploy is a bass-blasting, swaggering combatant with a teasing mouth and a fearless social style. She is the kind of character who can needle Francis one second and throw herself into a fight the next, giving the film a high-energy, streetwise pulse.",
+        "why_actor_wants_this": "This is the kind of kinetic, attitude-forward role that made Aubrey Plaza’s work in Ingrid Goes West pop — a character whose edge and comic timing are the performance. Actors who want a cool, fast-talking, physically active part with personality to spare will chase it."
+      },
+      {
+        "name": "Jerry",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · cyborg wolf-man",
+        "hook": "Jerry is a hungry, friendly, slightly feral office presence whose body immediately tells you this world runs on strange rules. He is mostly a flavor character here, but the design alone makes him memorable and helps sell the larger ecosystem of COMIRUM.",
+        "why_actor_wants_this": "This is the kind of creature-comedy supporting part that Doug Jones has turned into a calling card — a role where physical design and behavior do the storytelling. Performers who specialize in prosthetic or motion-based character work would be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage monster action inside a workplace comedy machine.",
+        "fit_profile": "First- or second-feature directors with a strong genre short, or established indie directors looking to pivot into effects-forward comedy without losing character focus. The material rewards filmmakers who care about rhythm, ensemble blocking, and making visual rules feel funny before they feel expensive.",
+        "detail": "The script gives a director a chance to build a world through behavior, not exposition, and then pay it off with a contained action set-piece. It will attract directors who like tonal control, practical creature work, and the challenge of making a bizarre office feel like a functioning institution."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming genre comedy / cult-action lane",
+        "detail": "The cast can be built around one breakout lead and a handful of vivid supporting parts, so it does not require a giant name package to read on the page. The contained office world plus one major night exterior gives buyers a manageable footprint with a trailer-friendly monster hook that travels well internationally."
+      }
+    },
+    "considerations": [
+      {
+        "area": "Francis’s power reveal is the primary engine.",
+        "detail": "The final hot-dog trigger and multicolor beam payoff are the movie’s biggest release valve, so a next pass could seed that logic a little earlier in the office scenes. What would it look like if one small, unmistakable sign of his anomaly appeared before London, so the climax feels discovered rather than only activated?",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The team dynamic can carry more independent weight.",
+        "detail": "The cafeteria introductions give each teammate a strong entrance, and the version of the script where one or two of them get a sharper personal objective would deepen the ensemble without changing the premise. That would give the movie more cross-cut energy between Francis’s discovery arc and the rest of the squad’s reasons for being there.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The London fight is the main scale driver.",
+        "detail": "The rooftop, alleyway, and street sequence are the biggest production lift in the script, so one simplification lever would be to collapse those geography beats into a tighter chase path if the budget wants to stay in the lower lane. The story still works if the action geography is cleaner, as long as the team coordination and Francis’s final turn remain intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The world can support a clearer mythology pass.",
+        "detail": "The SINON concept, the outburst meter, and Doreen’s line about top brass wanting this all imply a larger system that the feature only begins to sketch. A next draft could foreground one or two more concrete rules of COMIRUM so the mythology feels even more exportable and franchise-ready.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 72.7,
+  "tier": "Optionable",
+  "inputTokens": 16392,
+  "outputTokens": 4250,
+  "cost": 0.031419,
+  "declaredFormat": "Feature film"
+}

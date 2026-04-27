@@ -1,0 +1,383 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi comedy",
+      "genre_tags": [
+        "time-travel adventure",
+        "religious satire"
+      ],
+      "tone": "Playful, irreverent, high-concept, broadly comedic"
+    },
+    "positioning_hook": "A washed-up future astronaut gets stranded in 33 A.D. Nazareth and teams with Jesus to stop a crucifixion that would erase his own future.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for a broad laugh: a future Vegas astronaut collides with the Jesus story everyone knows. The audience promise is clear, though the religious-satire angle naturally narrows the lane a bit compared with a straight four-quadrant comedy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast with the Titan simulator, the wormhole accident, and the immediate Nazareth reveal. The story engine is easy to explain in one breath, and the ticking clock of Friday gives the feature a clean drive."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sky has a strong comic vanity-to-humility arc, and Jesus is written as charming, surprising, and emotionally legible. The supporting players add color, though the script is most durable when it stays locked on the Sky/Jesus/Rachel triangle."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a fearless swing by turning the Jesus narrative into a time-travel comedy about authorship, fame, and mythmaking. The choice to make the apostles into a publishing operation and the crucifixion into a staged illusion gives the material a distinct comic identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once Sky lands in Nazareth, the script keeps generating set pieces, reversals, and escalating deadline pressure. The middle runs long enough to enjoy the comic world, but the Friday crucifixion clock keeps the feature moving toward a clear payoff."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels fresh in a way that clicks immediately: a modern man trapped inside the origin story of Christianity, trying to save the man history already canonized. The blend of pop-culture language, biblical iconography, and time-travel mechanics creates a premise that is novel and easy to pitch."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Nazareth is rendered with a comic social ecosystem: apostles as writers, Pilate as a political operator, Caiaphas as a theatrical villain, and the Feldmans as a horny domestic pressure-cooker. The world is specific and playable, though it is built more for comic invention than for deep institutional realism."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very identifiable tone: irreverent, pun-heavy, pop-culture fluent, and surprisingly earnest underneath the blasphemy. It can jump from dick jokes to spiritual sincerity without losing its comic voice, which is a real signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the comedy, the script is about legacy, belief, and the cost of being turned into a story by other people. The Sky/Jesus dynamic and the idea of myth becoming commerce give the material more emotional aftertaste than the surface joke machine first suggests."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Sky and Jesus generate the main engine, and Rachel, Julia, the Apostles, Pilate, and Caiaphas all create usable friction around them. It is not an infinite ensemble machine, but the relationships are active enough to keep the feature from feeling like a two-hander."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in his 30s",
+          "Female lead in her 20s",
+          "Jesus in his early 30s",
+          "Several principal supporting roles in 20s-70s",
+          "One child role for young Sky"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Hybrid future-contemporary opening with extensive ancient-period sections",
+        "notable_requirements": [
+          "Las Vegas Strip and condo",
+          "NASA simulator / spacecraft interior",
+          "Convention center / expo floor",
+          "Nazareth streets, homes, tavern, square, lake, field, barn, office, storage room, lair, and stage build",
+          "Period-costume crowd scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Wormhole travel, future city dressing, AI humanoids, and the MK-1 time machine effects require digital work, but the movie is not built around large-scale spectacle.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, stage illusion mechanics, crowd reactions, and a few physical gags and falls.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "NASA, Star Wars, Star Trek, Mortal Kombat, South Park, Superman, Cirque, Elvis/Las Vegas references, and the Super Bowl are all named in dialogue or scene action."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"O Come, All Ye Faithful\" is used in the opening."
+        },
+        {
+          "type": "real_person",
+          "detail": "Elon Musk is referenced by name."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script leans on recognizable pop-culture and religious iconography, plus the title 'The Adventures of Jesus' as an in-world publishing property."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming comedy feature / specialty theatrical comedy",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strongest fit as festival-to-platform or streamer original comedy."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is mostly contained to a handful of practical environments, but the period crowd work, future dressing, and time-travel effects push it above microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "It needs a charismatic Sky, a very specific Jesus, and a strong Rachel, plus a sizable supporting ensemble and child casting for the opening."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves between Las Vegas, a convention center, and multiple Nazareth interiors/exteriors, including a stage build and crowd scenes."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes sexual innuendo, profanity, religious satire, violence, and crucifixion imagery, which narrows some buyers while fitting others cleanly."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The dialogue is packed with named brands, pop-culture references, and real-world entities that would need clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "This is the kind of high-concept comedy that can be sold in a sentence and understood in a glance, which is gold for producers and buyers. It has a clean streamer-friendly hook for audiences who like irreverent genre play and for talent looking for something that feels both commercial and offbeat.",
+          "evidence": "Sky falls through the wormhole from the MK-1 into 33 A.D. Nazareth and realizes he has landed inside the Jesus story he knows from the future.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sky has a strong comic arc.",
+          "what_it_means": "The role gives an actor a vanity-to-humility transformation with real play in the dialogue, physical comedy, and emotional payoff. That is exactly the kind of part mid-career comedic leads and dramatic actors looking to flex lighter muscles will chase.",
+          "evidence": "He starts as a glory-hungry astronaut obsessed with his own legend, then ends up risking himself to save Jesus and protect the future.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jesus is written as a surprise engine.",
+          "what_it_means": "The script gives the central icon a human, funny, flirtatious, and self-aware personality, which opens the door to a performance that can be both disarming and iconic. That makes the role magnetic for actors who want to play against the museum version of the character and for buyers who want a headline-making turn.",
+          "evidence": "Jesus jokes about sex, says 'shit' like a kid discovering a new word, and still lands as wise and compassionate when the story needs him to.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The apostles have a commercialized twist.",
+          "what_it_means": "Turning the apostles into a publishing team gives the movie a satirical angle on mythmaking, branding, and the business of belief. That opens the project to comedy buyers who like smart pop satire and to ensemble actors who want distinct comic lanes rather than generic disciples.",
+          "evidence": "Matthew and Peter are literally producing 'The Adventures of Jesus' as a best-selling comic-book-style property.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending is built for a crowd-pleaser.",
+          "what_it_means": "The climax pays off the premise with a theatrical illusion that reinterprets the crucifixion and ascension as a stage trick, which is a memorable commercial button. That kind of finish gives the movie a trailer-friendly final movement and a clear audience-pleasing release beat.",
+          "evidence": "Joseph builds a stage, the curtain reveal fakes the crucifixion, and the MK-1 plus the Knight Light create the illusion of Jesus ascending into heaven.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a real signature.",
+          "what_it_means": "The script can swing from raunchy banter to sincere faith language without feeling generic, which is the sort of tonal confidence buyers notice. That makes it attractive to directors and performers who want a comedy with a point of view rather than a joke-only premise.",
+          "evidence": "The script moves from 'poop shoot' jokes and Vegas swagger to a sincere conversation about sacrifice, legacy, and forgiveness.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is built for comic friction.",
+          "what_it_means": "Nazareth is not just a backdrop; it is a social machine where every relationship creates a new joke, obstacle, or reveal. That gives producers a world that can support a lot of scene variety without requiring expensive spectacle.",
+          "evidence": "Pilate, Caiaphas, Judas, Julia, Rachel, the Feldmans, and the Apostles all have distinct agendas that collide around Jesus and Sky.",
+          "source": "script"
+        }
+      ],
+      "headline": "Apostle 13 is a bold, easily marketable comedy with a killer premise: a future astronaut gets stranded in 33 A.D. and teams with Jesus to outwit history. The script’s real selling point is that it doesn’t just spoof the Bible — it turns mythmaking, fame, and faith into a fast, actor-friendly crowd-pleaser with a very specific comic voice."
+    },
+    "lead_characters": [
+      {
+        "name": "Skyler \"Sky\" Walker",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Sky is a swaggering, wounded, self-mythologizing astronaut whose biggest flaw is also his engine: he wants to be remembered. He talks like a guy who has spent his whole life auditioning for legend, but underneath the jokes and ego is a kid still trying to earn the kind of awe he once felt for his parents and for space itself.",
+        "why_actor_wants_this": "This is the showcase territory of Ryan Reynolds in Deadpool or Matthew McConaughey in True Detective season 1 — a fast-talking lead whose charm is inseparable from the bruised self-regard underneath it. Actors who can sell comedy, vanity, panic, and a late-blooming moral turn will see a role that lets them carry a movie with personality."
+      },
+      {
+        "name": "Jesus Rosenberg",
+        "role_type": "Lead",
+        "demographics": "Male · early 30s",
+        "hook": "This Jesus is charismatic, romantic, funny, and unexpectedly earthy, but he is also deeply committed to compassion and peace. He feels like a man who knows he is being turned into a story while still trying to live like a person, which gives him both authority and vulnerability.",
+        "why_actor_wants_this": "This is the kind of role Joaquin Phoenix had in Joker or Jim Caviezel had in The Passion of the Christ, but with a comic, humanizing twist that lets the actor play iconography and intimacy at once. Prestige leads and bold comedic actors alike will chase the chance to redefine a globally recognizable figure without playing him as a statue."
+      },
+      {
+        "name": "Rachel",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Rachel is Jesus’ older sister and the script’s clearest counterpoint to the male hero worship around him. She is sharp, romantic, restless, and hungry for a life beyond Nazareth, which makes her feel like the one person in town who can see both the absurdity and the stakes at once.",
+        "why_actor_wants_this": "This is the showcase space of a sharp supporting lead like Allison Janney in a scene-stealing comedy or Rachel McAdams in a smart ensemble rom-com — a woman who can spar, flirt, and ground the movie emotionally. Actors who want a witty, modern-feeling period role with agency will be drawn to her."
+      },
+      {
+        "name": "Vivian Goodwell",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s",
+        "hook": "Vivian is the legendary NASA figure who has already lived the life Sky wants, and she carries the authority of someone who has seen ambition curdle into politics. She is brisk, unsentimental, and quietly disappointed in Sky, which makes her feel like both mentor and judge.",
+        "why_actor_wants_this": "This is the kind of authority role Frances McDormand or Meryl Streep can make unforgettable in a handful of scenes — a mentor figure whose disappointment lands harder than a speech. Veteran dramatic actresses who like playing institutional power with dry wit will be interested."
+      },
+      {
+        "name": "Benny",
+        "role_type": "Supporting",
+        "demographics": "Male-presenting humanoid AI · ageless",
+        "hook": "Benny is an AI humanoid with the manners of a perfect officer and the emotional transparency of a child trying to do the right thing. The character is built on the contradiction between machine logic and sincere loyalty, which makes him oddly touching.",
+        "why_actor_wants_this": "This is the showcase lane of Alan Tudyk-style voice-and-performance work or Paul Bettany in a performance-capture register — a nonhuman character who still has warmth and comic timing. Performers who like playing intelligence without cynicism will see a fun, distinctive slot."
+      },
+      {
+        "name": "Toby Knight",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Toby is the hustling convention-world salesman who can smell a mark and a headline in the same breath. He is all enthusiasm, sales patter, and opportunism, but he also gives Sky his first taste of being admired in the present day.",
+        "why_actor_wants_this": "This is the kind of fast-talking supporting role that Ben Schwartz or Paul Rudd can make pop — a comic operator who keeps the movie moving while selling the absurdity of the setup. Character actors who can play charm as commerce will have fun with him."
+      },
+      {
+        "name": "Melanie \"Mel\" Kaminsky",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s",
+        "hook": "Mel is a broke, stubborn inventor with enough delusion to keep going and enough intelligence to almost make the impossible real. She is scrappy, defensive, and funny in a way that makes her feel like a real outsider in a room full of polished frauds.",
+        "why_actor_wants_this": "This is the kind of underdog inventor role that Kristen Wiig or Aubrey Plaza can turn into a comic engine — a woman whose desperation and conviction are both playable. Actors who like playing ambition with bruised pride will respond to her."
+      },
+      {
+        "name": "Judas",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s",
+        "hook": "Judas is petty, jealous, and absurdly self-important, but the script gives him enough wounded vanity to make his betrayal feel personal rather than abstract. He is the kind of comic antagonist who believes he is the wronged party in every room.",
+        "why_actor_wants_this": "This is the showcase territory of a scene-chewing comic villain like Will Ferrell in a heightened supporting turn or Steve Coogan at his most self-lacerating. Actors who enjoy playing grievance, insecurity, and menace in one package will see a lot to bite into."
+      },
+      {
+        "name": "Pontius Pilate",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Pilate is a political operator with vanity, pragmatism, and a surprisingly domestic streak. He is not written as a distant historical figure so much as a frustrated father and governor trying to manage chaos without losing face.",
+        "why_actor_wants_this": "This is the kind of dry, imperious authority role that Bryan Cranston or Mark Rylance can make delicious — a man who can pivot from bureaucratic control to comic irritation in a beat. Character actors with command and timing will want it."
+      },
+      {
+        "name": "Caiaphas",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Caiaphas is a theatrical zealot who treats power like a stage entrance. He is funny because he is so shamelessly operatic, but he also functions as the story’s clearest embodiment of institutional threat.",
+        "why_actor_wants_this": "This is the kind of villain role that Ian McDiarmid or Christopher Guest can make gleefully memorable — a grandstanding antagonist who gets to dominate scenes with voice and posture. Actors who like playing authority as performance will chase it."
+      },
+      {
+        "name": "Julia",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Julia is Pilate’s daughter and Jesus’ secret romance, which gives her a charged position between family duty and private desire. She is less a passive love interest than a pressure point in the political and emotional machinery of the story.",
+        "why_actor_wants_this": "This is the kind of romantic-period role that lets an actress play longing, secrecy, and danger in one lane, similar to the emotional charge of Keira Knightley in a costume drama. Actors who want a love story with stakes beyond the kiss will be interested."
+      },
+      {
+        "name": "Mary",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Mary is warm, funny, and fully at home in the chaos of her extraordinary son’s life. She gives the story a maternal center of gravity and a lived-in domesticity that keeps the comedy from floating away.",
+        "why_actor_wants_this": "This is the kind of maternal anchor role that Melissa Leo or Laurie Metcalf can elevate instantly — a woman whose affection and exasperation both land. Veteran actresses who like playing family truth inside comedy will respond to her."
+      },
+      {
+        "name": "Joseph",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Joseph is a practical carpenter with a dry sense of humor and a surprising willingness to help stage a miracle. He feels like the kind of father who has spent a lifetime adapting to impossible family circumstances and has become better for it.",
+        "why_actor_wants_this": "This is the sort of grounded father role that Richard Jenkins or J.K. Simmons can make rich with understatement — a man whose competence becomes part of the comedy. Character actors who can play warmth without sentimentality will like it."
+      },
+      {
+        "name": "Lance Walker",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Lance is Sky’s magician father, a man whose identity is built on illusion and performance. Even in the opening, he feels like the source code for Sky’s obsession with spectacle and applause.",
+        "why_actor_wants_this": "This is a compact but flavorful role for a performer who can sell showmanship and parental warmth in a few scenes, in the vein of Michael Shannon or Paul Giamatti in a small but memorable turn. It gives an actor a clean emotional imprint early."
+      },
+      {
+        "name": "Kendra Walker",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Kendra is the affectionate, theatrical half of Sky’s childhood home, and she embodies the wonder that first made him believe in magic. She is brief but important because she anchors the emotional memory Sky keeps chasing.",
+        "why_actor_wants_this": "This is a sweet, vivid opening role that can land like a memory in the style of Toni Collette in a few-scene family part — warm, luminous, and instantly legible. Actors who like making a small entrance feel emotionally foundational will want it."
+      },
+      {
+        "name": "Bess",
+        "role_type": "Supporting",
+        "demographics": "Female voice · ageless",
+        "hook": "Bess is the condo AI with a dry, lonely personality that makes the future feel lived-in rather than sterile. She is a comic companion and a subtle reminder that Sky has been absent from his own life for too long.",
+        "why_actor_wants_this": "This is a fun voice role in the lane of a dry comic narrator or a smart home AI with personality, similar to what gives actors like Kristen Schaal or Jenny Slate room to play. Voice performers who like deadpan warmth will be drawn to it."
+      },
+      {
+        "name": "Garcia",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Garcia is the grounded crew member who sees through Sky’s act faster than most. She gives the opening NASA material a little bite and keeps the team from feeling like pure exposition delivery.",
+        "why_actor_wants_this": "This is a clean supporting role for an actress who can play competence and skepticism with ease, in the spirit of a strong ensemble player like Regina King in a procedural or workplace comedy. It offers sharp reactions and authority without overexposure."
+      },
+      {
+        "name": "Raj",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Raj is part of the NASA crew and functions as one of the script’s straight men, but he still gets to participate in the comic banter around Benny and Sky. He helps sell the professionalism of the opening world.",
+        "why_actor_wants_this": "This is the kind of ensemble utility role that can be elevated by a performer with crisp timing, similar to the grounded support players in a workplace comedy. It gives an actor a reliable comic lane inside a high-concept setup."
+      },
+      {
+        "name": "Culver",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Culver is the religious crew member whose earnestness makes the opening space sequence funnier. He is sincere enough to be a target for jokes, but not so broad that he stops feeling human.",
+        "why_actor_wants_this": "This is the sort of comic-faith role that actors can play with sincerity and timing, similar to the grounded believers in a Coen brothers ensemble. It gives a performer a chance to be both the joke and the heart."
+      },
+      {
+        "name": "Todd",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Todd is the gatekeeping convention boss who treats innovation like a velvet-rope club. He is a small but useful embodiment of the movie’s anti-visionary bureaucracy.",
+        "why_actor_wants_this": "This is a crisp comic antagonist slot for an actor who can play smug authority in a few lines, the kind of part that scene-stealers love. It gives a performer a clean target to bounce off of."
+      },
+      {
+        "name": "Gabrielle",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Gabrielle is the sympathetic convention worker who quietly helps Mel get a foothold. She is small but important because she gives the movie a human bridge between the gatekeepers and the outsiders.",
+        "why_actor_wants_this": "This is the kind of brief but memorable support role that can pop for a young actress who knows how to play kindness with intelligence, like a strong indie ensemble player. It offers a clean, likable presence."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a big, irreverent comedy with a real emotional spine.",
+        "fit_profile": "Second-feature or established indie-comedy directors who already know how to balance performance, pace, and tonal swing. This material rewards filmmakers who like dialogue-driven set pieces, ensemble blocking, and a visual style that can move from Vegas gloss to biblical texture without losing comic momentum.",
+        "detail": "The movie gives a director a chance to stage a wildly original premise with contained production design and a lot of actor-facing comedy. It is especially attractive to filmmakers who can make satire feel affectionate rather than sneering, because the script’s best moments come from playing the Jesus story straight enough for the jokes to land."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming comedy feature / specialty theatrical satire",
+        "detail": "It can be packaged around one strong lead and a sharp Jesus casting choice, with the rest of the ensemble built from character actors rather than expensive names. The religious-satire hook plus the time-travel premise gives it a clear trailer and thumbnail pitch for streamers looking for a conversation starter."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle can tighten around the Friday clock.",
+        "detail": "The Nazareth run has a lot of comic business that plays well, especially the Apostles, the Feldmans, and the Julia/Rachel material. A next pass could keep the same set pieces but make sure each one turns the screw on the Friday crucifixion deadline so the feature feels even more inevitable.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The brand references are doing a lot of work.",
+        "detail": "The script leans on NASA, Star Wars, Star Trek, Mortal Kombat, South Park, Superman, Cirque, the Super Bowl, and Elon Musk to create instant texture. A production-minded pass could preserve the joke density while swapping in a few original equivalents where needed so the clearance path stays cleaner.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The opening could arrive even faster at the premise.",
+        "detail": "The Vegas childhood material is charming and does useful emotional work, but the movie really ignites once Sky is in the simulator and the wormhole sends him to Nazareth. One lever would be to keep the opening wonder while trimming any extra runway before the time-travel engine fully takes over.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Rachel has room to carry more of the emotional bridge.",
+        "detail": "Her scenes already give the story a second romantic and ideological lane, especially once she joins Sky’s mission and pushes back on the apostles’ mythology machine. The version of the script where her choices more directly affect the final rescue would deepen the ensemble without changing the premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Nazareth build is the main production footprint.",
+        "detail": "The feature lives across multiple period locations — square, tavern, homes, field, barn, storage room, office, and a stage build — so the cleanest production path is to cluster those spaces into a few reusable sets. That would protect the story while keeping the ancient-world footprint efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.3,
+  "tier": "Optionable",
+  "inputTokens": 39986,
+  "outputTokens": 6542,
+  "cost": 0.0594285,
+  "declaredFormat": "Feature film"
+}

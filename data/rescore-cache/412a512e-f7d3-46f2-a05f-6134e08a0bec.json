@@ -1,0 +1,376 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Music drama",
+      "genre_tags": [
+        "Coming-of-age",
+        "Ensemble"
+      ],
+      "tone": "Uplifting, nostalgic, earnest, crowd-pleasing"
+    },
+    "positioning_hook": "Five Brooklyn teens build a multiracial boy band, conquer the Apollo, and rocket to pop stardom — until fame, addiction, and betrayal test whether brotherhood can survive the spotlight.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise has immediate four-quadrant pull: teen aspiration, music performance, romance, and a rise-to-fame engine that naturally delivers set pieces. The Apollo breakthrough, MTV exposure, tour mania, and Grammy payoff give it a clear commercial promise that can be sold in one breath."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: a Brooklyn kid forms a boy band with his friends, then the story escalates through talent shows, radio, MTV, and arena success. The engine is easy to track because every major turn is tied to a public performance milestone."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Nick, Jose, John, Crai-Sean, and Kenny D. each have a readable lane — leader, swagger, sensitivity, faith, and comic energy — and the group chemistry is the movie's emotional spine. The characters are strongest as a unit, with the most memorable material coming from their friction, loyalty, and shared identity rather than deep individual interiority."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar rise-of-a-band framework and grounds it in a specific 1990 Brooklyn, Black-and-brown neighborhood texture with faith, family, and pop-culture specificity. The multiracial boy-band angle and the long-form pop-history sweep give it a confident, ownable ambition."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps moving through clear external milestones: forming the group, training, Apollo, record deal, radio break, tour, breakup, comeback, and final triumph. The momentum is especially strong because each success creates a new public pressure, and the later emotional turns are anchored to concrete career events."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A Brooklyn boy band story sounds instantly legible, but the script makes it feel specific through race, class, faith, and the mechanics of early-90s pop stardom. The combination of neighborhood brotherhood and mass-market teen-idol spectacle gives it that 'of course this exists' quality."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is rich with period markers — Bed-Stuy streets, Club Spotlight, the Apollo, Z100, MTV, Starcity Records, tour buses, and fan culture — and each space generates story. The music-industry ecosystem feels lived in, from managers and producers to radio gatekeepers, label politics, and the machinery of teen fame."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone blends earnest faith, comic banter, pop spectacle, and melodramatic stakes in a way that feels intentionally old-school and crowd-pleasing. The script knows when to play big — screaming fans, stage reveals, montage triumphs — and when to lean into family and brotherhood."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the pop ascent is a durable emotional engine about belonging, identity, and what fame does to friendships, especially through John, Jose, and Crai-Sean. The script also seeds deeper material around exploitation, addiction, and family fracture, which gives the surface-level success story more weight."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "This is built as a true ensemble: the Nick/Jose friction, John/Grace history, Crai-Sean/father tension, Kenny D.'s comic bravado, and Roc's mentor role all create independent story energy. Multiple pairings can drive scenes, and the group dynamic is strong enough that the movie would still play if you isolated almost any two members."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Five teen/young adult male leads with distinct singing and dancing ability",
+          "One lead is written as autistic",
+          "Multiracial ensemble with specific racial/ethnic identities",
+          "Several child and teen supporting roles, including younger versions in flashbacks"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Period (1989-1999)",
+        "notable_requirements": [
+          "New York City/Brooklyn period streetscapes",
+          "Madison Square Garden",
+          "Apollo Theater",
+          "recording studio",
+          "tour bus and hotel interiors",
+          "church, rehab center, dance studio, nightclub, radio station, TV studio"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily crowd enhancement, concert scale augmentation, TV/radio graphics, and a few stylized montage transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "Concert lighting, smoke, crowd-control moments, and practical performance staging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Rachel Myers, Michael Jackson, Cindy Crawford, Downtown Julie Brown, Greg Knox, Princess Diana, Axl Rose, MC Hammer, Public Enemy, New Edition members, and numerous named music and TV figures are referenced."
+        },
+        {
+          "type": "named_music",
+          "detail": "Extensive use and mention of songs including 'My Girl,' 'Rock Steady,' 'If It Isn't Love,' 'I'll Be There,' 'Step by Step,' 'Tonight,' and many others."
+        },
+        {
+          "type": "brand",
+          "detail": "MTV, BET, VH1, Z100, Club MTV, Apollo, Starcity Records, McDonald's, Adidas, Jordans, Public Enemy, and multiple magazine brands are prominently referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script includes a fictionalized boy-band history framework and a proposed animated series within the story, plus heavy reliance on recognizable pop-culture IP and likenesses."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or theatrical-to-streaming music drama lane",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model with strong soundtrack and nostalgia marketing; best suited to a festival-to-platform or streamer-premiere path."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period New York, concert crowds, multiple music-video-style performance sequences, and a long list of locations push this above a contained indie but below a true tentpole."
+        },
+        "cast": {
+          "level": "high",
+          "note": "Five lead performers need singing, dancing, and chemistry, plus child/teen casting, identity-specific roles, and a number of recognizable cameo-style figures."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves across Brooklyn, Manhattan, Harlem, Long Island, Los Angeles, London, and multiple performance venues, with period-specific environments throughout."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Drug use, family violence, bullying, profanity, and a murder storyline are present, but the overall frame remains broadly accessible."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names many real people, brands, songs, TV shows, venues, and music-industry entities that would require clearance or substitution."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The boy-band engine is instantly legible.",
+          "what_it_means": "This gives the project a clean commercial spine: a rise-to-fame music movie with built-in performance set pieces, fan culture, and soundtrack value. It is the kind of premise that can attract both music buyers and nostalgia-driven audiences who want the full ascent-and-breakthrough fantasy.",
+          "evidence": "The group forms in Brooklyn, trains with Roc and Mr. Showtime, breaks at the Apollo, lands radio play, signs with Starcity, tours with Rachel Myers, and ends at Madison Square Garden and the Grammys.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has distinct, castable lanes.",
+          "what_it_means": "Each lead has a clear performance identity — Nick as the leader, Jose as swagger, John as vulnerability, Crai-Sean as faith, Kenny D. as comic motion — which makes the package attractive to young actors and their reps. That kind of ensemble gives casting directors multiple hooks and lets the movie sell chemistry as a feature, not a bonus.",
+          "evidence": "The script repeatedly differentiates the boys through wardrobe, voice, faith, dance, and family dynamics, especially in the early rehearsal and later conflict scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period music-world texture is rich.",
+          "what_it_means": "The script has enough radio, TV, label, and venue specificity to feel like a lived-in industry movie rather than a generic rise story. That opens the door for buyers who want a nostalgia title with a strong soundtrack and a clear cultural time capsule.",
+          "evidence": "Club Spotlight, the Apollo, Z100, MTV, Starcity Records, the Plaza Hotel, and multiple talk-show and tour-stop references build a dense 1990s entertainment ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The faith-and-family layer gives it warmth.",
+          "what_it_means": "The movie is not just about fame; it is about boys negotiating parents, church, grief, and identity while the spotlight gets brighter. That emotional grounding broadens the audience beyond pure music fans and gives the project a family-friendly heart inside a pop spectacle.",
+          "evidence": "Crai-Sean's pastor father, John’s grandmother, Jose’s mother, Nick’s parents, and the repeated prayer scenes all shape the group's choices.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The story knows how to stage a crowd moment.",
+          "what_it_means": "The script repeatedly delivers the kind of mass-audience spectacle that trailers and marketing teams can cut around: screaming fans, stage reveals, TV performances, and arena-scale payoff. That makes it easier to sell as an event movie even if the budget stays controlled.",
+          "evidence": "The Apollo debut, Club MTV appearance, Plaza Hotel fan swarm, and Madison Square Garden finale all play as big public set pieces.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional stakes are personal, not abstract.",
+          "what_it_means": "The movie has a real human center in John and Grace, Jose and his father, Kenny D. and his mother, and Roc as the mentor who becomes family. That gives the project a prestige-friendly emotional layer that can help it travel beyond pure genre buyers.",
+          "evidence": "John's reunion with Grace, Jose's rehab arc, Kenny D.'s mother's cancer, and Roc's death all land as character-driven turns.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, playable music movie with a clear audience promise: brotherhood, romance, and pop stardom set against the rise of a Brooklyn boy band. The script has the kind of ensemble chemistry, period texture, and performance-forward momentum that can attract talent, soundtrack partners, and buyers looking for an uplifting crowd-pleaser with nostalgia value."
+    },
+    "lead_characters": [
+      {
+        "name": "Nick Parker",
+        "role_type": "Lead",
+        "demographics": "Male · mid-to-late teens · African American",
+        "hook": "Nick is the natural frontman: confident, quick with a joke, and always thinking one move ahead for the group. He carries the movie's leadership energy, but what makes him specific is that his swagger is rooted in responsibility — he wants the boys to win, but he also wants to keep them together when the business starts pulling them apart.",
+        "why_actor_wants_this": "This is the showcase territory of a young lead in a coming-of-age ensemble like Taye Diggs in *How Stella Got Her Groove Back* or the central charisma slot in *The Jacksons: An American Dream* — a performer gets to be the face of the group while also carrying the emotional glue. Young actors with musical chops will chase it because it offers frontman energy, comic timing, and the chance to play the one who has to hold the whole machine together."
+      },
+      {
+        "name": "John McTyler",
+        "role_type": "Lead",
+        "demographics": "Male · early-to-mid teens · Caucasian · autistic",
+        "hook": "John is the shy, gifted kid whose voice becomes the group's secret weapon. He starts as the quiet outsider and grows into the emotional center of the movie, with a sweetness and vulnerability that make his rise feel earned rather than manufactured.",
+        "why_actor_wants_this": "This is the kind of role that gave Freddie Highmore in *The Good Doctor* or Haley Joel Osment in *A.I.* a chance to play innocence, intelligence, and emotional exposure in one frame. A young actor gets a rare blend of musical showcase, romantic payoff, and a transformation from bullied kid to adored performer."
+      },
+      {
+        "name": "Jose Martinez",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to early 20s · Hispanic/Latino",
+        "hook": "Jose is the swaggering one: street-smart, flirtatious, funny, and always half a step from trouble. Under the attitude, though, he is carrying grief, pride, and a deep need to prove he is more than the neighborhood expects of him.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Benicio del Toro did in *Traffic* or what a breakout supporting player gets in a music biopic: charm, danger, humor, and a late-story redemption arc. It gives a performer a full-spectrum turn — the guy who can light up a room, blow it up, and then win it back."
+      },
+      {
+        "name": "Crai-Sean Jones",
+        "role_type": "Lead",
+        "demographics": "Male · mid-to-late teens · African American",
+        "hook": "Crai-Sean is the spiritual compass of the group, the one who quotes scripture, checks the boys, and keeps the moral center visible. He is also quietly funny and emotionally open, which keeps him from becoming a sermon and makes him feel like the friend who can call you out and still pray for you.",
+        "why_actor_wants_this": "This is the kind of part that gave Mahershala Ali in *Moonlight* or Jharrel Jerome in *When They See Us* the chance to play interiority, conviction, and tenderness without losing presence. A performer with warmth and restraint gets a role that can land as both the conscience of the group and a fully human young man under pressure."
+      },
+      {
+        "name": "Kenny D. Lee",
+        "role_type": "Lead",
+        "demographics": "Male · mid-teens · Asian Pacific Islander",
+        "hook": "Kenny D. is the kinetic comic engine: the dancer, the hype man, the one who turns every room into a stage. He is funny and loud, but the script also gives him real heart through his devotion to his mother and the way he uses performance to keep the mood alive.",
+        "why_actor_wants_this": "This is the kind of breakout ensemble part that gave Ke Huy Quan in *Everything Everywhere All at Once* or a young dancer-actor in a musical comedy the chance to be unforgettable through physicality and timing. It offers a performer a showcase in movement, banter, and emotional loyalty, which is catnip for actors who can dance and sell joy."
+      },
+      {
+        "name": "Roc Turner",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s",
+        "hook": "Roc is the weathered manager with old-school discipline and a real paternal instinct. He is tough, funny, and deeply invested in the boys, which makes him feel like the adult who understands both the business and the cost of it.",
+        "why_actor_wants_this": "This is the kind of mentor role that gave Denzel Washington in *Fences* or Laurence Fishburne in *Boyz n the Hood* the chance to be authoritative, warm, and morally central without ever disappearing into the background. Character actors will chase it because it offers gravitas, humor, and a father-figure emotional anchor in a music movie."
+      },
+      {
+        "name": "Mr. Showtime",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Mr. Showtime is the flamboyant, exacting choreographer who turns raw talent into stagecraft. He has the authority of a drill sergeant and the flair of a showman, which makes him one of the movie's most entertaining adult presences.",
+        "why_actor_wants_this": "This is the kind of scene-stealing mentor slot that gave Billy Porter in *Pose* or Joe Morton in *Scandal* the chance to command a room with style and precision. A veteran actor with dance or musical theater chops will want the role because it lets them be both comic and formidable."
+      },
+      {
+        "name": "Doris Parker",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-40s · African American",
+        "hook": "Doris is the grounded mother who sees the dream and the danger at the same time. She is practical, loving, and skeptical in the way only a parent can be when a child's fantasy starts to become a business.",
+        "why_actor_wants_this": "This is the kind of maternal anchor that gave Viola Davis in *Fences* or Regina King in *If Beale Street Could Talk* the chance to play love with steel in it. Strong dramatic actresses will respond to a role that can hold the emotional truth of the home while the kids chase the spotlight."
+      },
+      {
+        "name": "Jeffery Parker",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s",
+        "hook": "Jeffery is the skeptical father whose hard edges come from experience, not cruelty. He is the guy who sees the business side before everyone else does, and his resistance gives the movie a useful adult counterweight.",
+        "why_actor_wants_this": "This is the kind of grounded father role that gives actors the space James Earl Jones had in *Field of Dreams* or Courtney B. Vance in family dramas: authority, skepticism, and eventual emotional payoff. It is attractive to veteran character actors who can play stern without flattening into a type."
+      },
+      {
+        "name": "Grace Oliver",
+        "role_type": "Supporting",
+        "demographics": "Female · teen to early 20s · Caucasian",
+        "hook": "Grace is John's lost first love and the movie's emotional memory of who he was before fame. She starts as the girl who drifted away and becomes the person who helps reveal that John's heart never stopped being vulnerable.",
+        "why_actor_wants_this": "This is the kind of romantic role that gave Rachel Leigh Cook in *She's All That* or Winona Ryder in *Reality Bites* the chance to embody memory, regret, and emotional recognition. A young actress gets a part that is sweet, wistful, and central to the film's emotional landing."
+      },
+      {
+        "name": "Rachel Myers",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Rachel is the superstar who recognizes the boys before the industry does. She is glamorous but not hollow, and her support gives the story a bridge between local talent and national pop legitimacy.",
+        "why_actor_wants_this": "This is the kind of star-support role that gave Jennifer Lopez in *Selena* or Beyoncé in *Dreamgirls* the chance to be both icon and catalyst. A recognizable performer will want it because it lets them play the established star who blesses the next generation."
+      },
+      {
+        "name": "Ben Stone",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-30s · Caucasian",
+        "hook": "Ben is the polished industry operator who smiles while moving pieces behind the curtain. He is the movie's clean-cut antagonist, the kind of man who speaks in business language while making personal damage look procedural.",
+        "why_actor_wants_this": "This is the kind of slick villain role that gave Tom Hanks in *That Thing You Do!* or Billy Zane in *Titanic* the chance to be charming, corporate, and quietly menacing. Actors who like playing polished pressure will see a lot of juice here."
+      },
+      {
+        "name": "Phil Davis",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-40s · African American",
+        "hook": "Phil is the label boss who understands the market and speaks in numbers. He is not a cartoon executive; he is the guy who can admire talent and still reduce it to a business decision.",
+        "why_actor_wants_this": "This is the kind of executive role that gives a performer the authority of a studio head in *Dreamgirls* or a label boss in *Empire* — controlled, polished, and always calculating. Character actors with command will want the chance to play the man who can make or break the dream with one sentence."
+      },
+      {
+        "name": "Buddy Thomas",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Caucasian",
+        "hook": "Buddy is one half of the producer duo that helps shape the group's sound. He is practical, studio-savvy, and part of the machinery that turns raw performance into a record.",
+        "why_actor_wants_this": "This is a useful music-industry supporting role in the lane of the studio heads and producers in *Almost Famous* or *Dreamgirls* — a part that gives an actor authority without needing a huge arc. It suits character actors who can make process feel alive."
+      },
+      {
+        "name": "Sammy Smooth",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · African American",
+        "hook": "Sammy is the other producer, a smooth operator with ears for what works. He helps translate the boys' energy into a commercial sound while keeping the studio scenes moving.",
+        "why_actor_wants_this": "This is the kind of producer role that lets an actor play taste, confidence, and industry fluency the way music-business supporting players do in *The Get Down* or *Dreamgirls*. It is appealing to actors who can sell credibility fast."
+      },
+      {
+        "name": "Jake Beach",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-30s · British",
+        "hook": "Jake is the later-era producer who helps reinvent the group for a new pop moment. He is worldly, slightly amused by the boys' chaos, and positioned as the bridge into the late-90s sound.",
+        "why_actor_wants_this": "This is the kind of international producer role that gives an actor the polished, cool authority of a pop-world fixer in the vein of the music-industry figures in *Bohemian Rhapsody* or *Rocketman*. It is a clean fit for a performer who can bring wit and sophistication to a supporting slot."
+      },
+      {
+        "name": "Trevor McTyler",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · Caucasian",
+        "hook": "Trevor is John's older cousin and a practical bridge to the McTyler family world. He is the person who helps move John from one home life to another and gives the story a little extra family texture.",
+        "why_actor_wants_this": "This is a functional but playable family-support role in the lane of the older sibling/cousin parts in coming-of-age dramas. It gives a young actor a chance to feel lived-in and credible around the lead."
+      },
+      {
+        "name": "Grandma McTyler",
+        "role_type": "Supporting",
+        "demographics": "Female · early 50s · Caucasian",
+        "hook": "Grandma McTyler is the protective guardian who sees John's talent and his pain at the same time. She is warm, practical, and emotionally direct, which makes her one of the story's clearest sources of unconditional support.",
+        "why_actor_wants_this": "This is the kind of grandmother role that gives an actress the emotional authority of the family matriarchs in *The Pursuit of Happyness* or *Coda*. It offers warmth, wisdom, and a few key scenes that can land with real audience affection."
+      },
+      {
+        "name": "Henry Jones",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · African American",
+        "hook": "Henry is Crai-Sean's pastor father, a man whose faith is sincere but whose rigidity creates conflict. He is a parent who loves his son and still struggles to accept the path that son is choosing.",
+        "why_actor_wants_this": "This is the kind of stern-but-human father role that gives an actor the moral weight of the church fathers in *The Color Purple* or *Fences*. It is attractive to performers who can play conviction without losing tenderness."
+      },
+      {
+        "name": "Gloria Jones",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-40s · African American",
+        "hook": "Gloria is the softer counterbalance to Henry, the parent who can see her son's heart more clearly than his father can. She brings compassion and emotional intelligence into the church-family dynamic.",
+        "why_actor_wants_this": "This is the kind of supportive maternal role that gives an actress the grace and steadiness of the family matriarchs in prestige dramas. It is a good fit for performers who can make one conversation feel like a safe harbor."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage pop spectacle without losing the family story underneath it.",
+        "fit_profile": "Established indie or mid-budget directors with at least one feature under their belt, especially those who have handled ensemble emotion, period detail, or music-driven storytelling. The material rewards directors who care about performance, movement, and the emotional mechanics of fame more than flashy visual invention.",
+        "detail": "The craft opportunity is to make the concert and TV moments feel euphoric while keeping the home scenes intimate and specific, so the movie plays like a true rise story instead of a montage reel. Directors who like actor-forward work, period texture, and crowd-pleasing emotional payoffs will see a clear lane here."
+      },
+      "buyer_appeal": {
+        "tier": "$10-20M feature",
+        "lane": "Streaming-friendly music drama / nostalgia crowd-pleaser",
+        "detail": "The five-lead ensemble and period performance sequences mean the package benefits from a cast with real singing and dancing ability, but it does not require a single giant star if the group chemistry lands. The boy-band nostalgia lane, soundtrack potential, and built-in 1990s pop-culture audience give it a strong platform hook for streamers and specialty theatrical buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The rights footprint is very large.",
+        "detail": "The script names many real artists, songs, TV shows, brands, and public figures, so a next pass could decide which references are essential and which can be fictionalized to protect the package. That simplification would make the project easier to finance and distribute without changing the core rise-of-a-band story.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast asks for a lot of musical precision.",
+        "detail": "Five leads need to sing, dance, and sell chemistry across multiple eras of performance, which means casting will likely need to prioritize triple-threat ability over pure name recognition. A package that finds the right ensemble early would do a lot of the heavy lifting for the movie.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The location count is wide open.",
+        "detail": "The story moves through Brooklyn, Harlem, Manhattan, Long Island, Los Angeles, London, hotels, studios, churches, clubs, and arenas, so one lever would be to see whether a few of the industry interiors can be combined or redressed. That would preserve the scale while keeping the production footprint more efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "John and Grace carry the emotional landing.",
+        "detail": "Their reunion and final confession are doing a lot of the film's heart work, so a next pass could consider giving their connection one earlier shared beat in the present tense to make the payoff feel even more inevitable. The relationship already works; this would simply let the audience feel the pull sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Jose's addiction turn arrives late.",
+        "detail": "The rehab material is potent, and the later relapse gives the story a serious adult turn, but the version of the script where one earlier scene quietly seeds the pressure on Jose would make that collapse feel even more earned. That would deepen the arc without changing the movie's upbeat commercial shape.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Roc's death drives the final act.",
+        "detail": "Because the murder becomes the hinge for the hiatus and comeback, the script could benefit from one more early beat that makes Ben's resentment feel present before the hotel shooting. That would sharpen the third-act turn while preserving the shock of the event.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 78.7,
+  "tier": "Optionable",
+  "inputTokens": 54483,
+  "outputTokens": 6758,
+  "cost": 0.07127325,
+  "declaredFormat": "Feature film"
+}

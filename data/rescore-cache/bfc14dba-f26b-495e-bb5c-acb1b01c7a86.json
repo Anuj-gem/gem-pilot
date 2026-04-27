@@ -1,0 +1,339 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Superhero adventure",
+      "genre_tags": [
+        "Sci-fi",
+        "Coming-of-age"
+      ],
+      "tone": "Heightened, earnest, melodramatic, action-forward"
+    },
+    "positioning_hook": "A lonely suburban teen discovers he’s the prophesied light-bearer, then has to stop an alien warlord from weaponizing his grief, his first love, and his powers.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is easy to grasp: a teenage hero, a cosmic villain, a first-love stake, and a city-scale showdown. The material clearly aims at broad four-quadrant superhero appetite, though the dense mythology and long-form earnestness narrow the immediate casual-browse snap a bit."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The prophecy, the BlackStar, and the Sauven are established early, and SkyBorne’s ordinary-life setup gives the story a readable launch point. The hook is clear, but the script spends a lot of page time on world explanation and repeated power-language before the central dramatic engine fully locks in."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "SkyBorne has a strong adolescent contradiction: cocky, awkward, romantic, and then forced into real responsibility. Jake, Lila, and Zane each bring a distinct energy, and the grief arc gives the lead a meaningful emotional finish, though several supporting roles mainly orbit the hero’s journey."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The retro-futurist 1980s setting, color-coded powers, and cosmic prophecy give the script a recognizable identity. At the same time, the larger shape is a familiar chosen-one superhero saga, and much of the execution leans into genre tradition rather than a sharper personal angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script has clear escalation, big set pieces, and a strong final confrontation, especially once the team forms and the prom attack detonates the story. The middle section stretches across school life, romance, training, and lore, which softens the forward drive before the endgame takes over."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a teen hero whose power is tied to light, grief, and emotional balance has a clean mythic logic. The emotional architecture is legible and sincere, but the underlying premise still reads as a classic superhero origin with a prophecy wrapper rather than a truly singular engine."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Vanderton City, the retro-futurist suburbs, the BlackStar, the observatory hideout, and the school ecosystem all create a specific playable universe. The setting has enough visual and social detail to feel story-generating, especially with the 1980s tech flavor and the public/private split between ordinary life and cosmic conflict."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script commits to an earnest, comic-book sincerity with playful teen banter, melodramatic prophecy, and big emotional declarations. That blend is consistent and identifiable, even if it sometimes sits closer to broad superhero earnestness than a more singular tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the action, the script is really about grief, identity, inherited purpose, and the fear of becoming what you fight. The Supreme Ruler’s backstory and SkyBorne’s final choice both suggest a larger thematic spine that could support a franchise or a more layered sequel path."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The SkyBorne/Jake bond, the SkyBorne/Keely romance, the SkyBorne/Lila trust arc, and the SkyBorne/Zane friction all generate distinct energy. The ensemble becomes materially stronger once the four heroes are together, and the relationships do more than service the plot."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen/young adult leads",
+          "One major villain with heavy prosthetic/makeup requirements",
+          "Ensemble of four heroes with distinct physical power styles",
+          "Supporting adult parents and school authority figures"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Approximately 55/45",
+        "period_or_contemporary": "Retro-futuristic 1980s setting",
+        "notable_requirements": [
+          "Spacecraft interiors and exteriors",
+          "BlackStar throne room, armory, chamber, hallway, and white void sequence",
+          "Abandoned observatory hero base",
+          "High school, gym, detention room, cafeteria, and prom setup",
+          "Retro-futuristic city streets, suburbs, diner, graveyard, museum, and rooftop action spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "Frequent energy powers, spaceship travel, alien armies, city destruction, void/illusion sequences, teleport-like movement, explosions, and large-scale combat effects.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, fire, collapsing structures, practical debris, blood effects, and creature/robot destruction.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Radar Love by Golden Earring"
+        },
+        {
+          "type": "named_music",
+          "detail": "Owner of a Lonely Heart by Yes"
+        },
+        {
+          "type": "named_music",
+          "detail": "It's Tricky by Run-DMC"
+        },
+        {
+          "type": "named_music",
+          "detail": "Nothing's Gonna Stop Us Now by Starship"
+        },
+        {
+          "type": "named_music",
+          "detail": "How Deep Is Your Love by the Bee Gees"
+        },
+        {
+          "type": "named_music",
+          "detail": "We Can Last Forever by Chicago"
+        },
+        {
+          "type": "named_music",
+          "detail": "Let's Go Crazy by Prince and The Revolution"
+        },
+        {
+          "type": "named_music",
+          "detail": "2 Fix Us by When In Rome"
+        },
+        {
+          "type": "brand",
+          "detail": "1981 Chevrolet Corvette"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical genre lane with effects support",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model with franchise potential; best suited to a platform or distributor comfortable with VFX-driven superhero spectacle and teen emotional stakes."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "high",
+          "note": "Heavy VFX, multiple large action sequences, spacecraft, city destruction, and a large villain/robot presence push this into a higher-budget effects lane."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The core cast is manageable, but the project depends on four charismatic young leads plus a distinctive villain performance and several supporting adults."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across school, home, observatory, diner, graveyard, city streets, museum, and multiple space interiors, though most are controllable sets or practical locations."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Violence, death, destruction, and emotional trauma are central, but the material stays within a PG-13 superhero frame."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Multiple named songs and a branded car appear on the page, creating clear music and clearance items."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The emotional engine is grief, not just powers.",
+          "what_it_means": "That gives the movie a human spine that can travel beyond the effects and make the finale feel earned rather than decorative. Actors and buyers looking for a superhero story with a sincere emotional payoff will respond to the way loss, love, and responsibility are braided together.",
+          "evidence": "Jake’s death, Lila’s grief speech in the graveyard, SkyBorne’s breakdown after prom, and the final choice to let go of Keely all center the story on emotional consequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The four-hero team has clean, readable chemistry.",
+          "what_it_means": "The SkyBorne/Jake/Lila/Zane dynamic gives the project a built-in ensemble identity and a clear poster image once the team forms. That makes the material attractive to buyers who want a youth-skewing franchise starter with multiple breakout roles instead of a single lead carrying everything.",
+          "evidence": "The observatory training montage, the repeated banter, the shared battle choreography, and the final stage appearance all establish a team with distinct functions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The retro-futurist world has a marketable visual lane.",
+          "what_it_means": "The 1980s texture, cassette players, neon city design, and sleek domestic tech give the movie a recognizable aesthetic hook that can help marketing, production design, and soundtrack identity. That kind of visual branding is especially attractive to genre buyers who want a world that can be sold in a single frame.",
+          "evidence": "The cassette player, retro songs, rounded city architecture, Space Departure Hub, and futuristic home appliances all reinforce the same design language.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The villain has operatic scale and a personal wound.",
+          "what_it_means": "The Supreme Ruler is not just a faceless invader; he has a mythic backstory, a philosophy, and a direct ideological clash with the hero. That gives the project a villain role with performance weight and a franchise-level antagonist who can anchor future installments.",
+          "evidence": "The backstory of his father’s death, the amulet, the long journal voiceover, and his repeated insistence on cleansing the universe all define him as a character with doctrine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance is woven into the action engine.",
+          "what_it_means": "Keely is not just a love interest; she becomes the emotional pressure point that the climax weaponizes, which gives the movie a built-in audience hook beyond spectacle. That makes the script attractive to teen and young-adult audiences who want romance inside the genre rather than beside it.",
+          "evidence": "The prom courtship, the diner date, the dance scene, and the final hostage choice all tie the romance directly to the climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The power system is visually legible.",
+          "what_it_means": "Color-coded abilities, energy constructs, and distinct combat styles make the action easy to follow and easy to market in trailers and key art. Buyers like superhero material where each character’s power reads instantly and can be differentiated in action design.",
+          "evidence": "Blue creation/light for SkyBorne, pink shields and psychic force for Lila, orange weaponization for Jake, and green speed-splitting for Zane are all clearly defined.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending leaves a franchise-ready public reveal.",
+          "what_it_means": "The final theatre sequence turns the heroes into public figures, which opens the door to sequels, spin-offs, or a larger universe without needing a reset. That is the kind of ending that helps a buyer see the project as a launchpad rather than a one-off.",
+          "evidence": "The city reconstruction, the Grand Universal Theatre event, and the public introduction of SkyBorne, Lila, and Zane as heroes create a new status quo.",
+          "source": "script"
+        }
+      ],
+      "headline": "SkyBorne is a sincere, effects-forward superhero feature with a strong emotional spine: a lonely teen, a propulsive first-love arc, and a four-person hero team that feels built for posters, trailers, and franchise expansion. The retro-futurist 1980s world gives it a distinct visual lane, while the grief-driven climax gives the spectacle a human cost that can land with both genre buyers and younger audiences."
+    },
+    "lead_characters": [
+      {
+        "name": "SkyBorne",
+        "role_type": "Lead",
+        "demographics": "Male · 18",
+        "hook": "SkyBorne is a cocky, awkward, emotionally open teen who wants adventure badly enough to joke his way through school, romance, and danger until the universe forces him to grow up. He starts as the kid who wants to be seen as cool and ends as the one who has to decide whether power is a gift, a burden, or a temptation to become something darker.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Holland in Spider-Man: Homecoming and No Way Home — a young lead who can play charm, panic, physicality, and heartbreak in the same frame. It gives a rising actor the full coming-of-age superhero arc: comedy, romance, action, and a final emotional turn where the performance has to carry the movie’s soul."
+      },
+      {
+        "name": "Lila",
+        "role_type": "Lead",
+        "demographics": "Female · 18",
+        "hook": "Lila is the calm center of the story: observant, spiritually grounded, and quietly intense, with the kind of emotional intelligence that makes her both a leader and a secret keeper. She carries grief and intuition with real weight, and her power set mirrors her personality — protective, precise, and deeply connected to the people around her.",
+        "why_actor_wants_this": "This is the showcase lane of Zendaya in Euphoria or The Greatest Showman’s more emotionally controlled material — a young woman who can hold stillness, intelligence, and vulnerability while the world around her gets louder. It gives an actress a role that can play as the team’s conscience, the romantic counterweight, and the one person who can see the truth before everyone else does."
+      },
+      {
+        "name": "Jake",
+        "role_type": "Lead",
+        "demographics": "Male · 18",
+        "hook": "Jake is the best-friend archetype with a real pulse: funny, loyal, a little smug, and carrying a private wound that gives his easy banter a shadow. He’s the guy who looks like comic relief until the script reveals he’s been living with guilt for years, which makes his presence feel both playful and tragic.",
+        "why_actor_wants_this": "This is the emotional-support-to-heartbreak slot of Finn Wolfhard in Stranger Things or Lucas Hedges in Manchester by the Sea — a role that starts as the funny friend and lands as the one carrying the deepest ache. It gives a young actor a chance to pivot from charm into sacrifice, with a death scene and legacy beat that can define the performance."
+      },
+      {
+        "name": "Zane",
+        "role_type": "Lead",
+        "demographics": "Male · 18",
+        "hook": "Zane is the polished outsider with a fast mouth, a competitive streak, and a surprising amount of decency under the swagger. He enters like the rich kid with the Corvette and becomes the guy who can turn speed into both comedy and heroism, while slowly earning trust inside the group.",
+        "why_actor_wants_this": "This is the kind of role that gave Joseph Quinn in Stranger Things or Glen Powell in Top Gun: Maverick a breakout lane — charismatic, funny, physically active, and just arrogant enough to be memorable. It offers an actor a chance to steal scenes with timing, then cash that charm into action credibility and team chemistry."
+      },
+      {
+        "name": "Keely",
+        "role_type": "Supporting",
+        "demographics": "Female · 18",
+        "hook": "Keely is the popular girl with a private interior life, an artist’s eye, and a softness that makes her more than the school crush. She’s the emotional anchor of SkyBorne’s human life, and the script gives her enough warmth and specificity that she feels like a real person rather than a trophy.",
+        "why_actor_wants_this": "This is the kind of part that gave Rachel Leigh Cook in She’s All That or Hailee Steinfeld in early teen-romance material a clean emotional lane — the girl who looks like the prize but has her own taste, history, and tenderness. It gives a young actress a romantic lead-adjacent role with sincerity, charm, and a tragic payoff that the audience will remember."
+      },
+      {
+        "name": "Admiral Verloren",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Admiral Verloren is the right hand of the Supreme Ruler, a disciplined enforcer with a theatrical streak, a bruised ego, and a hunger to prove himself. He’s the kind of villain lieutenant who can command a room, then reveal fear the moment his master turns on him.",
+        "why_actor_wants_this": "This is the showcase space of Michael Shannon in a villain role or Jason Isaacs in The Patriot — a secondary antagonist who gets to be elegant, cruel, and visibly terrified of the power above him. It gives an actor a chance to play command, humiliation, and menace in one part, which is catnip for prestige genre casting."
+      },
+      {
+        "name": "The Supreme Ruler",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s playing ageless alien",
+        "hook": "The Supreme Ruler is a mythic tyrant who speaks like a prophet and rules like a wound that never healed. He believes he is saving the universe through domination, which makes him both monstrous and disturbingly coherent.",
+        "why_actor_wants_this": "This is the kind of role that gave Ralph Fiennes in Schindler’s List or Cate Blanchett in Thor: Ragnarok the chance to make ideology feel dangerous and seductive at once. It offers a performer a grand, operatic villain canvas with voice, presence, and philosophical menace."
+      },
+      {
+        "name": "Jenny",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Jenny is the emotionally intelligent mother who sees her son’s potential and his immaturity at the same time. She’s warm, funny, and firm, and the script gives her the rare parent role that actually shapes the hero’s moral center instead of just reacting to it.",
+        "why_actor_wants_this": "This is the kind of grounded maternal role that gave Laurie Metcalf in Lady Bird or Frances McDormand in Almost Famous real scene-stealing authority — a parent who can be comic, loving, and emotionally exact. It gives an actress a meaningful family anchor role with a strong final-act payoff in the hero’s identity."
+      },
+      {
+        "name": "Jason",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Jason is the understated father whose emotional distance reads as indifference until the story lets him speak plainly. He’s dry, practical, and unexpectedly wise, which makes his late-story support land with real force.",
+        "why_actor_wants_this": "This is the kind of late-blooming father role that gave Bryan Cranston in Little Miss Sunshine or Jeff Bridges in The Last Picture Show a chance to turn minimalism into impact. It offers an actor a contained but meaningful emotional turn: the parent who finally says the thing the hero needed to hear."
+      },
+      {
+        "name": "Quirkney",
+        "role_type": "Supporting",
+        "demographics": "Male · 17",
+        "hook": "Quirkney is the hyperverbal school oddball who lives in his own head and says everything too fast. He’s comic relief on the surface, but the script uses him as a reminder that the school has a full social ecosystem beyond the leads.",
+        "why_actor_wants_this": "This is the kind of eccentric supporting part that gave Noah Galvin in Booksmart or Martin Starr in Freaks and Geeks a scene-stealing lane — a character built on rhythm, specificity, and awkward humor. It gives a young comic actor a chance to make a memorable impression in a few sharp scenes."
+      },
+      {
+        "name": "Mr. Helms",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Mr. Helms is the earnest teacher whose lecture on grief accidentally becomes thematic scaffolding for the movie. He’s not flashy, but he helps define the school as a place where the kids are still being shaped by adults and ideas.",
+        "why_actor_wants_this": "This is the kind of small but memorable educator role that gives an actor a clean, grounded scene in the vein of Paul Rudd’s more sincere teacher moments or Richard Jenkins in The Visitor. It offers a chance to play authority without menace and to land a thematic beat with clarity."
+      },
+      {
+        "name": "Principal Feldman",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Principal Feldman is the comic authoritarian who treats teenage misbehavior like a personal insult. He’s broad, reactive, and useful as a pressure valve for the school comedy, giving the early sections a recognizable authority figure to push against.",
+        "why_actor_wants_this": "This is the kind of broad school-administrator role that gives an actor the same comic authority as J.K. Simmons in Whiplash or Stephen Root in Office Space, but in a lighter register. It’s a scene-stealing authority part with clear behavior and easy audience recognition."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage sincere superhero emotion without irony.",
+        "fit_profile": "First- or second-feature directors with a strong visual sense and a taste for earnest genre storytelling, especially those coming out of festival shorts, music videos, or effects-aware indie work. This material rewards someone who can balance teen intimacy, comic-book spectacle, and clean emotional escalation without flattening the sincerity.",
+        "detail": "The movie gives a director room to build a distinct visual world — retro-futurist suburbia, cosmic voids, and color-coded powers — while still landing on character emotion. It’s especially attractive to filmmakers who want to prove they can handle action, romance, and mythology in one package."
+      },
+      "buyer_appeal": {
+        "tier": "$20-40M feature",
+        "lane": "Streaming superhero adventure / youth-skewing genre event",
+        "detail": "The project is built around four young leads and a heavy VFX load, so it benefits from a buyer willing to back a strong visual package rather than a star-driven vehicle. The teen-superhero lane remains exportable and franchise-friendly, and the retro-1980s styling plus soundtrack identity gives it a marketing hook beyond the standard origin story."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle section carries a lot of setup.",
+        "detail": "The school life, prom pursuit, training montage, and lore exposition all do useful work, but they also stack before the final conflict fully takes over. A next pass could look for one or two places where the emotional turn arrives before the explanation, especially in the scenes around the observatory and the first team-building stretch.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The villain mythology is doing double duty.",
+        "detail": "The Supreme Ruler’s backstory, prophecy, amulet history, and BlackStar politics all add scale, but the script is already strongest when it stays close to SkyBorne’s emotional journey. One direction would be to protect the hero’s arc by trimming or compressing a few of the longer explanatory passages so the mythology lands in sharper, more memorable bursts.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The music and brand list need a clearance pass.",
+        "detail": "The page is built around multiple named songs and a branded Corvette, which means the production package will need a rights strategy early. If the project moves forward, a practical next step would be to identify which songs are essential to the tone and which can be swapped without changing the movie’s identity.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The action footprint is ambitious.",
+        "detail": "The BlackStar, city destruction, robot armies, void sequences, and repeated power effects all point to a meaningful effects budget. The story is already structured around big set pieces, so the cleanest simplification lever would be to consolidate a few of the space interiors and battle locations without losing the escalation.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ensemble could support a cleaner handoff of focus.",
+        "detail": "The four-hero dynamic is one of the script’s best commercial assets, and the version of the movie where each hero gets one signature emotional beat before the final act would make the team feel even more distinct. That would also help buyers see the group as a repeatable franchise unit rather than just allies in the climax.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 58280,
+  "outputTokens": 5699,
+  "cost": 0.0693555,
+  "declaredFormat": "Feature film"
+}

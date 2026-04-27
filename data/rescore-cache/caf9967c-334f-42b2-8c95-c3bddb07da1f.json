@@ -1,0 +1,305 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Legal drama",
+      "genre_tags": [
+        "Biographical drama",
+        "Thriller"
+      ],
+      "tone": "Grounded, urgent, emotionally volatile, and occasionally heightened"
+    },
+    "positioning_hook": "A bipolar inventor fights a corporate knockoff, a rigged patent system, and his own unraveling as his breakthrough becomes a public war for dignity.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is easy to grasp: a small inventor gets crushed by a bigger machine and refuses to disappear. The emotional lane is broad enough for adult drama audiences, and the underdog-versus-corporate engine gives it clear commercial traction."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early through the HandyBar theft, the trade-show humiliation, and the first sight of the knockoff on TV. The legal battle and Brent's mental health spiral are both legible, though the script keeps widening into new arenas rather than staying tightly centered on one clean engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Brent is vivid because he is both charismatic and combustible, and Emily, Henry, Maximilian, and John each add a different pressure point around him. The roles are playable and actor-facing, though Brent remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The inventor-patent lane is familiar, but the script gives it a more volatile emotional register by tying the fight to bipolar disorder, addiction, and public breakdowns. The boldness comes more from intensity and scale than from a wholly new storytelling frame."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps introducing escalation points — trade show, arrest, legal hearings, family rupture, confrontation, institutionalization — so it rarely sits still. At the same time, the repeated legal and rhetorical set pieces create a stop-start rhythm rather than a single tightening vise."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A mentally unstable inventor turning a patent dispute into a personal crusade has a memorable, immediately pitchable contradiction. The combination of legal warfare, family collapse, and public advocacy gives the material a distinct identity even when some of the surrounding beats are familiar."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific ecosystem of trade shows, patent hearings, law offices, inventor advocacy, and corporate maneuvering. The world feels populated by institutions and procedures that generate story, especially once the PTAB, Markman, and en banc layers come into play."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently urgent and emotionally charged, with flashes of dark humor and manic energy in Brent's voice. It does shift between legal procedural, family drama, and near-thriller confrontation, which gives it range but also makes the tonal signature less singular."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the patent fight sits a story about identity, masculinity, shame, mental illness, marriage, and the cost of being seen as disposable. The script keeps revealing new layers through Emily, Henry, John, and Brent's breakdowns, which suggests more depth than the surface legal plot first implies."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Brent/Emily, Brent/Henry, and Brent/Maximilian all have usable friction, and the legal team adds functional support. The ensemble serves the lead well, but the story still lives primarily on Brent's shoulders rather than generating endless independent relationship combinations."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 25,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead role requires a male actor in his 50s with strong comic timing and volatile emotional range",
+          "Female lead requires a woman in her 30s-40s with grounded warmth and interior strength",
+          "Multiple legal and corporate roles require 30s-60s adults",
+          "Child roles include Lanna at 5 and 16, Jeremy as a child/teen, and a 4-year-old girl in the alley sequence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "Mostly interior with a meaningful exterior component",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Trade show floor and booth",
+          "Multiple law offices and courtrooms",
+          "Hotel rooms, bars, homes, parking lots, streets, and a psychiatric ward",
+          "Capitol Hill / government building material",
+          "One alley stunt sequence and one dark-room kidnapping setup"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical storytelling with a few montage transitions, crowd moments, and stylized flashbacks; no major creature or effects work indicated.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Physical altercations, taser restraint, a car-versus-child incident, a kidnapping, and a gunshot in a congressional hall all require coordinated practical effects and safety planning.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "John Anderson, Andy Iancu, and Judge Roberts appear as named real-world-adjacent figures or public-office references; the script also references J.P. Morgan and Edison."
+        },
+        {
+          "type": "named_music",
+          "detail": "Metallica is specifically named in Maximilian's office."
+        },
+        {
+          "type": "brand",
+          "detail": "HandyBar, Car Buddy, Bell & Steal, Timmy Donuts, and other branded or quasi-branded entities are featured prominently."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The story is built around patent disputes, named legal proceedings, and a real-world-inspired invention narrative that may invite clearance review."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable adult drama lane with awards-leaning biographical appeal",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release best suited to festival-to-platform or prestige streaming launch"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contemporary interiors and offices, but the script spans courts, Capitol Hill, a psychiatric ward, a trade show, and several crowd sequences."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The lead requires a very specific performance profile, the ensemble is sizable, and the script includes child actors plus multiple named legal and corporate roles."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves across more than a dozen distinct settings, including courtrooms, offices, homes, bars, a trade show, a psychiatric ward, and government spaces."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes mental health crises, addiction, profanity, physical violence, a gunshot, suicide ideation, and family breakdown."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script references real people, public institutions, named music, and branded products, which invites clearance review but not an IP-heavy adaptation structure."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Brent is a showcase lead role.",
+          "what_it_means": "The part gives an actor a rare combination of swagger, self-destruction, humor, and pathos, which is exactly the kind of role that can reframe how the industry sees a performer. Mid-career dramatic actors who want a bruised, volatile centerpiece and buyers looking for a festival-ready performance engine will respond to it.",
+          "evidence": "Brent's trade-show pitch, his manic bathroom reset, the police interrogation, the courtroom blowups, and the psychiatric ward material all ask for a wide emotional register.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The patent fight has real procedural texture.",
+          "what_it_means": "The legal machinery gives the story a credible spine and a built-in escalation ladder, which helps the project feel bigger than a simple grievance drama. Prestige buyers and producers who like courtroom strategy, institutional friction, and true-story-adjacent stakes will see a clear lane.",
+          "evidence": "PTAB, Markman, summary judgment, en banc review, continuance motions, and transfer hearings all appear as distinct story beats.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is populated by pressure systems.",
+          "what_it_means": "Trade shows, law firms, corporate offices, Capitol Hill, the psychiatric ward, and the family home each create a different kind of squeeze, which keeps the story from feeling static. That breadth gives the film a strong trailer language and makes it attractive to buyers who want a contained but expansive adult drama.",
+          "evidence": "The script moves from Düsseldorf trade-show chaos to Texas law offices, New York negotiations, courtrooms, and a congressional rally.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Brent and Emily give the story emotional ballast.",
+          "what_it_means": "Their marriage turns the patent dispute into a domestic stakes story, which broadens the audience beyond legal-drama fans and gives the film a human center. Actors who specialize in grounded adult relationships and buyers who respond to prestige domestic drama will see the value immediately.",
+          "evidence": "Emily's separation scene, her church visit, her writing voiceover, and the final book-reading frame the marriage as its own emotional arc.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The antagonist is charismatic, not generic.",
+          "what_it_means": "Maximilian is written as a polished predator with vanity, insecurity, and strategic intelligence, which makes the conflict feel playable rather than abstract. Character actors who like elegant villains and producers who want a memorable opposing force will find him useful in packaging.",
+          "evidence": "His office scenes, the negotiation over pennies per unit, the car-ride maneuvering, and the party confrontation all give him a distinct voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a built-in advocacy angle.",
+          "what_it_means": "The inventor-rights material gives the film a public-facing mission that can travel beyond the story itself, which is useful for press, festivals, and audience conversation. Buyers who like issue-driven prestige titles and audiences who respond to underdog justice narratives will see a clear hook.",
+          "evidence": "The Capitol Hill rally, the congressional speech, and the closing inventor-rights call-to-action all push the story into civic territory.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a performance-forward, adult prestige drama with a built-in public issue and a lead role that can carry a campaign. The script turns a patent dispute into a volatile story about marriage, mental health, and the cost of being erased by a bigger machine."
+    },
+    "lead_characters": [
+      {
+        "name": "Brent Woods",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Brent is a charismatic inventor with a hair-trigger temper, a wounded sense of dignity, and a mind that can swing from salesman charm to self-destruction in a breath. He is funny, defensive, needy, and deeply human, which makes him feel less like a symbol than a man trying to keep his life from splintering in public.",
+        "why_actor_wants_this": "This is the showcase territory of Joaquin Phoenix in Joker or Brendan Fraser in The Whale — a role where instability, shame, and vulnerability become the performance engine. Actors who want a full-body, awards-caliber turn with comedy, rage, and collapse all in one part will chase this."
+      },
+      {
+        "name": "Emily Woods",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s",
+        "hook": "Emily is the emotional counterweight to Brent: observant, exhausted, loving, and increasingly unwilling to disappear inside his crisis. Her writing, faith, and eventual separation give her a quiet authority that keeps the story from becoming only a male meltdown narrative.",
+        "why_actor_wants_this": "This is the kind of grounded, interior showcase that Michelle Williams had in Manchester by the Sea or Julianne Moore in Still Alice — a role built on restraint, hurt, and moral clarity. Actresses looking for a prestige domestic-drama anchor with real emotional ownership will want it."
+      },
+      {
+        "name": "Maximilian",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Maximilian is a polished corporate shark who treats invention like warfare and money like armor. He is vain, strategic, and occasionally vulnerable, which gives him enough humanity to feel dangerous rather than cartoonish.",
+        "why_actor_wants_this": "This is the kind of sleek, morally compromised showcase Brian Cox had in Succession or Michael Keaton had in The Founder — a role where charm and predation live in the same breath. Actors who want a high-status antagonist with wit, menace, and a crack in the armor will be drawn to it."
+      },
+      {
+        "name": "Henry",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "Henry is the steadier business partner who keeps trying to translate Brent's chaos into something survivable. He has the feel of a man who has seen too much, but still believes discipline and loyalty can save the day.",
+        "why_actor_wants_this": "This is the support-role showcase that Paul Dano had in There Will Be Blood or Jesse Plemons often gets in prestige drama — the calm, intelligent counterforce who makes the lead look even more combustible. Character actors who specialize in grounded intelligence and emotional containment will want it."
+      },
+      {
+        "name": "John Anderson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "John reads like a mythic mentor figure who has already paid the price Brent is only beginning to understand. He speaks in aphorisms and hard-earned strategy, giving the film a voice of experience that feels half-real, half-oracular.",
+        "why_actor_wants_this": "This is the kind of wise, weathered role that Morgan Freeman had in The Shawshank Redemption or Richard Jenkins often gets in prestige drama — a scene-stealing mentor with authority and soul. Veteran actors who can make exposition feel like wisdom will chase it."
+      },
+      {
+        "name": "Big Stan",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Big Stan is the Texas lawyer with swagger, bite, and a practical streak that cuts through Brent's emotional fog. He feels like the kind of attorney who can joke in one beat and go to war in the next.",
+        "why_actor_wants_this": "This is the kind of colorful legal side role that Sam Elliott had in A Star Is Born or William H. Macy often gets in ensemble drama — a compact but memorable authority figure with texture. Character actors who can bring regional specificity and dry humor will be interested."
+      },
+      {
+        "name": "Benjamin Sterling",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Benjamin is the sharp, fiery lawyer who becomes Brent's courtroom voice when the case turns procedural. He has the energy of someone who can turn legal language into a moral argument without losing momentum.",
+        "why_actor_wants_this": "This is the kind of courtroom advocate role that Al Pacino had in ...And Justice for All or Mark Ruffalo often gets in issue-driven drama — a passionate explainer who can carry the audience through the legal maze. Actors who like verbal intensity and righteous momentum will want it."
+      },
+      {
+        "name": "Lanna Woods",
+        "role_type": "Supporting",
+        "demographics": "Female · child to teen across the script",
+        "hook": "Lanna is the daughter who grows from a bright child into a sharp, disappointed teenager who has learned to call out her father without flinching. She gives the story its most painful mirror, because she sees exactly what Brent has cost the family.",
+        "why_actor_wants_this": "This is the kind of coming-of-age pressure role that Saoirse Ronan had in Lady Bird or Kaitlyn Dever often gets in family drama — a part where the child becomes the conscience of the movie. Young actors who can play hurt, intelligence, and bite will want it."
+      },
+      {
+        "name": "Jeremy Woods",
+        "role_type": "Supporting",
+        "demographics": "Male · child to teen across the script",
+        "hook": "Jeremy is the quieter son who still believes in his father enough to keep trying to steady him. He functions as the family's emotional bridge, carrying hope even when the adults around him are collapsing.",
+        "why_actor_wants_this": "This is the kind of sensitive son role that Lucas Hedges had in Manchester by the Sea or Noah Jupe often gets in prestige family drama — a part built on quiet observation and emotional intelligence. Young actors who can play empathy without sentimentality will be drawn to it."
+      },
+      {
+        "name": "Max Millionaire",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Max Millionaire is the glossy infomercial face of the knockoff machine, all salesmanship and synthetic warmth. He functions as the public mask of the theft, making the scam feel both absurd and infuriating.",
+        "why_actor_wants_this": "This is the kind of flashy, satirical villain slot that Matthew Broderick had in The Cable Guy or Jon Hamm often gets in dark comedy-drama — a polished public persona hiding something predatory. Actors who enjoy playing charm as weaponry will chase it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a bruising adult drama with legal machinery, public outrage, and a lead performance that can go feral.",
+        "fit_profile": "Established indie directors with at least one or two features, or prestige-TV directors moving into features, who already work comfortably with performance-first material. The material rewards directors who like procedural escalation, emotionally volatile close-ups, and the challenge of making institutional process feel cinematic.",
+        "detail": "The movie gives a director courtroom pressure, family fracture, and public confrontation in the same package, so the craft job is to keep the emotional line alive while the legal machinery turns. That combination is especially attractive to directors who have already proven they can stage dialogue-heavy material without losing tension."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M prestige feature",
+        "lane": "Streaming drama / festival-to-platform lane",
+        "detail": "The project can be packaged around one major lead performance and a strong supporting ensemble, which lowers the dependency on expensive spectacle. The inventor-rights angle, true-story inspiration, and adult emotional stakes give it a clean festival and awards-adjacent path that streamers and specialty buyers understand."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The legal escalation is the cleanest spine.",
+        "detail": "The script already has a strong procedural ladder, but the version that keeps the patent case as the main engine would protect momentum and make the emotional turns hit harder. Right now the story also branches into advocacy, psychiatric treatment, and a broader corruption thesis; a next pass could decide which of those becomes the primary pressure line and let the others support it.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The final act expands into several endings.",
+        "detail": "The congressional speech, the shooting, the ECT sequence, the witness-protection montage, the book-reading reunion, and the closing inventor montage all want to function as climax material. One lever would be to choose the emotional destination more decisively so the ending lands with more force and less accumulation.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Brent's inner life is strongest when dramatized through choice.",
+        "detail": "The therapy scenes, the trade-show humiliation, the police interrogation, and the family confrontation all work best when Brent's contradiction is visible in action rather than explained in dialogue. A next pass could keep leaning into moments where he chooses charm, denial, or defiance under pressure, because that is where the character becomes most cinematic.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast footprint is broad for a contained drama.",
+        "detail": "There are a lot of named speaking roles across legal, corporate, family, and institutional spaces, plus child casting and multiple authority figures. The version of the script that folds a few of the functionally similar legal and corporate voices together would protect clarity without changing the story's core.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The location map can be streamlined.",
+        "detail": "Trade show, multiple law offices, several courtrooms, the psychiatric ward, Capitol Hill, bars, homes, hotel rooms, and street sequences create a wide production footprint. A simplification pass that consolidates some of the legal and advocacy scenes into fewer recurring spaces would preserve the story while making the shoot more efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights and clearance pass deserves attention.",
+        "detail": "The script references real people, public institutions, named music, and branded products, so a producer would want a careful clearance review before packaging. The story can absolutely live in that space, but the names and references should be checked early so the project stays clean for buyers.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 48689,
+  "outputTokens": 4978,
+  "cost": 0.05891775,
+  "declaredFormat": "Feature film"
+}

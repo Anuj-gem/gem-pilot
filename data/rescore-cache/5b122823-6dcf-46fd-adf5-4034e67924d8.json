@@ -1,0 +1,330 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime drama",
+      "genre_tags": [
+        "Revenge thriller",
+        "Tragedy"
+      ],
+      "tone": "Gritty, emotionally charged, operatic, and street-level"
+    },
+    "positioning_hook": "After a foster brother is killed by police, a tight-knit crew of Black brothers and a cartel ally plot revenge that forces love, loyalty, and survival into the same gun barrel.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional promise is immediate: brotherhood, police violence, revenge, and a doomed love story all land fast. The material has clear audience lanes in crime-thriller and social-issue drama, with the kind of high-emotion hook that can travel if packaged cleanly."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The central engine is easy to grasp early: a foster family is shattered, a cop kills one of the brothers, and the surviving brothers move toward retaliation. The script keeps that engine visible through the cartel pipeline, the park tournament, and the final trap, so the premise stays legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Cam, KJ, Trey, Serena, and Edwards all have distinct emotional lanes, and the brother dynamic gives the story real pull. Cam’s protector identity, KJ’s volatility, Trey’s grief, and Edwards’ guilt create a strong acting canvas, even as the supporting world mostly serves the central collision."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The foster-brother bond, the cartel partnership, and the basketball-world texture give the script a specific lane rather than a generic revenge setup. The choice to braid intimate family grief with organized-crime logistics and a police-shooting aftermath gives it a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with urgency from the fire, to the drug operation, to the shooting, to the revenge plan, and then to the final reckoning. The escalation is clear and the set pieces keep the story in motion, especially once Scooter dies and the revenge clock starts ticking."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The foster-home origin, the brother code, and the way the basketball tournament becomes a pressure cooker give the story a fresh emotional signature. It feels like a familiar crime tragedy told through a very specific Black family and neighborhood ecosystem, which makes the premise land with more force than a standard revenge tale."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a lived-in world of foster-home brotherhood, neighborhood basketball culture, street-level drug logistics, church drop points, cops, and family rituals like Pa Brown’s eggs and the four-handshake code. Those details make the setting feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone blends grief, swagger, humor, romance, and brutality in a way that feels specific to these characters rather than generic crime-drama mood. The brothers’ banter, the romantic scenes with Serena, and the sudden violence at the park create a sharp tonal identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the revenge plot, the script is really about inherited trauma, brotherhood as survival, and the cost of being forced into adulthood too early. The fire dream, the recurring scar imagery, and Edwards’ unraveling all suggest a deeper psychological layer beneath the surface action."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Cam-KJ-Trey triangle is strong, and the script repeatedly finds material in how each brother handles grief differently. Serena, Arturo, Edwards, Collins, and G all create additional relationship pressure, so the story has more than one useful dynamic engine."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple Black male leads across teen and adult ranges",
+          "One Latina female lead/supporting role",
+          "Two white police officers with substantial dialogue",
+          "Cartel and street-supporting roles with Hispanic casting",
+          "Child performers required for opening foster-home sequence and flashback material",
+          "Twin casting or visual doubling implied for Cam and Cannon in childhood"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly balanced, with a slight interior lean",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Foster home exterior/interior",
+          "Police station",
+          "Warehouse",
+          "Church basement",
+          "Park and tournament setup",
+          "Hospital and morgue",
+          "Luxury homes",
+          "Serena's home",
+          "Edwards' home",
+          "Private jet hangar",
+          "Beach finale"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Fire sequence, smoke, dream imagery, and some blood/impact enhancement; no heavy digital world-building.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, practical blood hits, fire damage, car movement, body transport, and a choreographed fight sequence.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Faucet by Sirius Blaxk"
+        },
+        {
+          "type": "named_music",
+          "detail": "1 More Time by La'dalia"
+        },
+        {
+          "type": "named_music",
+          "detail": "Carry on My Wayward Son"
+        },
+        {
+          "type": "brand",
+          "detail": "Glock"
+        },
+        {
+          "type": "brand",
+          "detail": "Mercedes G43"
+        },
+        {
+          "type": "brand",
+          "detail": "Hennessy"
+        },
+        {
+          "type": "brand",
+          "detail": "Pop-Tart"
+        },
+        {
+          "type": "brand",
+          "detail": "Denny's"
+        },
+        {
+          "type": "brand",
+          "detail": "CW"
+        },
+        {
+          "type": "brand",
+          "detail": "Narcos"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming crime drama / premium cable feature lane",
+        "content_level": "Mature, explicit violence and language",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or streamer acquisition rather than wide four-quadrant theatrical play."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary crime drama with multiple locations, night work, gunfire, fire, hospital/morgue scenes, and a finale with stunt and blood effects."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story depends on a multi-lead brother ensemble plus Serena, Edwards, Collins, Arturo, and several supporting players across Black, Black Latina, white, and Hispanic casting lanes."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves through about a dozen-plus distinct spaces, including a church basement, warehouse, park tournament, hospital, morgue, luxury homes, and a beach epilogue."
+        },
+        "content": {
+          "level": "high",
+          "note": "Police shooting, child death, revenge killing, gun violence, blood, profanity, drug use, and explicit sexual content narrow the lane to mature buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named songs, brands, and real-world references appear on the page, including specific music cues and consumer products."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The brotherhood is the engine.",
+          "what_it_means": "The central relationship gives the movie its commercial heart: this is a revenge story that also plays as a family tragedy, which broadens the emotional buy-in beyond genre fans. Actors and buyers alike will respond to a lead trio that feels like a unit, not just a protagonist with sidekicks.",
+          "evidence": "Cam, KJ, and Trey repeatedly move, grieve, plan, and fight as one; the four-handshake code and the repeated “Safety” exchange make their bond feel ritualized and lived-in.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Scooter’s death gives the story a clean ignition point.",
+          "what_it_means": "The script has a clear, irreversible event that turns the movie from family drama into revenge thriller, which is exactly the kind of structural clarity producers want. The audience knows what the movie is about within the first act, and the emotional stakes are personal rather than abstract.",
+          "evidence": "Scooter is shot by Officer Edwards during the park chaos, and the brothers’ grief immediately hardens into a revenge path.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The foster-home backstory adds emotional weight.",
+          "what_it_means": "The opening fire and the brothers’ history as foster kids create a built-in trauma layer that makes the revenge feel earned instead of routine. That kind of backstory gives the project awards-adjacent emotional gravity while still living inside a commercial crime framework.",
+          "evidence": "The opening fire sequence, the repeated references to Ma and Pa Brown, and Cam’s dream of carrying Scooter through flames all deepen the family mythology.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Serena is a strong audience bridge.",
+          "what_it_means": "Serena gives the movie a civilian entry point and a moral counterweight, which helps the script play to viewers who want character and romance alongside the crime plot. She is the kind of role that can attract a recognizable actress and widen the film’s appeal beyond the core street-thriller lane.",
+          "evidence": "She meets Cam at the hospital, helps with the bullet extraction, challenges his secrecy, and becomes the emotional witness to his life.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels specific and cinematic.",
+          "what_it_means": "The basketball court, church basement, warehouse drops, foster-home farm, and memorial mural create a textured world that feels ownable in marketing and production design. Buyers like worlds that can be sold in a single image, and this script has several.",
+          "evidence": "The milk-crate hoop, the annual tournament, the church drop, and the mural desecration all stand out as visual anchors.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Cam is a showcase lead.",
+          "what_it_means": "Cam is written as a protector, strategist, romantic, and eventual avenger, which gives an actor multiple registers in one role. That combination is attractive to prestige-minded performers who want a part that can carry both emotional restraint and explosive action.",
+          "evidence": "He runs the crew, coaches Scooter, falls for Serena, and ultimately becomes the architect of the final revenge plan.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending commits to tragedy.",
+          "what_it_means": "The script doesn’t soften the consequences, which gives it the kind of fatalistic finish that can linger with audiences and critics. That seriousness can help position the film as more than a standard crime picture and give it a stronger festival or streamer conversation.",
+          "evidence": "The final confrontation kills Cam, KJ, and Edwards, and the epilogue leaves Trey alive but changed.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a real commercial spine because the revenge plot is powered by a brotherhood that feels emotionally specific, not generic. The foster-home origin, the basketball-world texture, and the Serena/Cam relationship give the movie a distinct identity that could attract both talent and buyers looking for a gritty, character-forward crime drama."
+    },
+    "lead_characters": [
+      {
+        "name": "Cam Matthews",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · Black",
+        "hook": "Cam is the emotional center and strategic spine of the story: a scarred older brother who learned to survive by becoming the one who keeps everybody else alive. He carries himself with calm authority, but underneath that control is grief, guilt, and a romantic softness that keeps trying to surface even in a violent world.",
+        "why_actor_wants_this": "This is the showcase territory of Michael B. Jordan in Fruitvale Station and Creed — a lead who can project stillness, authority, tenderness, and contained fury in the same frame. Actors looking for a role that can carry emotional prestige, action credibility, and romantic chemistry will see a lot of runway here."
+      },
+      {
+        "name": "KJ",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · Black",
+        "hook": "KJ is Cam’s loudest mirror: funny, volatile, loyal, and always one step from turning a joke into a threat. He brings swagger and heat to the brotherhood, but the script also lets him play real grief and protective instinct, which keeps him from reading as just comic relief.",
+        "why_actor_wants_this": "This is the kind of role Lakeith Stanfield had in Judas and the Black Messiah when a character can pivot between charm, menace, and pain without warning. Actors who want a scene-stealing supporting lead with volatility, rhythm, and emotional bite will chase this."
+      },
+      {
+        "name": "Trey",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to early 20s · Black",
+        "hook": "Trey is the youngest brother coming into his own under impossible pressure, and the script tracks his shift from grieving kid to active participant in the revenge machine. He is smart, observant, and emotionally raw, which makes him the one most visibly shaped by the violence around him.",
+        "why_actor_wants_this": "This is the coming-of-age pressure-cooker space of Jharrel Jerome in When They See Us — a young performer getting to play innocence, rage, guilt, and awakening in one arc. Emerging actors with dramatic range will be drawn to the emotional escalation and the final survivor perspective."
+      },
+      {
+        "name": "Scooter",
+        "role_type": "Lead",
+        "demographics": "Male · mid-to-late teens · Black",
+        "hook": "Scooter is the bright, athletic, romantic younger brother whose life gives the story its deepest wound. He’s playful, ambitious, and full of future energy, which makes his death feel like the theft of a whole life rather than a plot device.",
+        "why_actor_wants_this": "This is the kind of role that gave Kelvin Harrison Jr. in Waves its emotional charge — a young man whose charisma makes the loss hit harder. Even with limited screen time, the part offers a memorable, heartbreaking showcase that can launch a young actor’s profile."
+      },
+      {
+        "name": "Serena",
+        "role_type": "Lead",
+        "demographics": "Female · 20s to early 30s · Black",
+        "hook": "Serena is a nurse with intelligence, warmth, and a hard boundary line that keeps getting tested by Cam’s world. She’s not written as a passive love interest; she’s the one person outside the crew who can see the cost of what Cam is becoming, and she keeps forcing the story to feel human.",
+        "why_actor_wants_this": "This is the showcase lane of Tessa Thompson in Sylvie’s Love or Jurnee Smollett in Lovecraft Country — a role that balances romantic chemistry, moral clarity, and emotional intelligence. Actresses looking for a part that can play intimacy, conscience, and tension in equal measure will want this."
+      },
+      {
+        "name": "Kevin Edwards",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 40s · White",
+        "hook": "Edwards is the cop whose life unravels under the weight of one shooting, and the script lets him become both perpetrator and casualty. He’s a family man, a drinker, and a man trying to keep his own mind from splitting apart, which gives the role a tragic, combustible quality.",
+        "why_actor_wants_this": "This is the moral-collapse territory of Jake Gyllenhaal in Nightcrawler or Ben Foster in Hell or High Water — a character whose internal fracture is the performance. Actors who want a psychologically intense role with public consequence and private collapse will be drawn to it."
+      },
+      {
+        "name": "Officer Collins",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · White",
+        "hook": "Collins is the hard-edged partner who embodies the worst instincts of the system and never apologizes for it. He’s loud, racist, and self-righteous, which makes him a clean antagonist and a useful pressure source for Edwards’ unraveling.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the full authority-to-monster turn seen in Stephen Root’s work in No Country for Old Men or John C. McGinley’s sharper villain turns. Character actors who like to dominate scenes with menace and attitude will go after it."
+      },
+      {
+        "name": "Arturo Rivera",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 60s · Hispanic",
+        "hook": "Arturo is the cartel boss with charm, ritual, and a dangerous sense of mentorship, which makes him feel both generous and predatory. He speaks in the language of fatherhood and destiny, but he’s really the story’s most elegant power broker.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the authority and mystique of Wagner Moura in Narcos — a man who can be warm, terrifying, and strategic in the same scene. Seasoned actors who want a charismatic power role with international flavor will be interested."
+      },
+      {
+        "name": "Officer Knox",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · White",
+        "hook": "Knox is the older cop who sees the rot clearly enough to say it out loud, even if he can’t stop it. He functions as a conscience inside the police world, and his presence gives the film a more complicated moral texture.",
+        "why_actor_wants_this": "This is the kind of late-career character role that gives an actor the gravitas of Richard Jenkins in The Visitor — a man whose quiet authority can shift a scene without raising his voice. Veteran actors who specialize in moral weight and lived-in realism will respond to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a street-level tragedy with real emotional heat and clean genre propulsion.",
+        "fit_profile": "Second- or third-feature directors with festival or prestige-drama experience, especially those who have handled ensemble grief, urban realism, or crime material without losing intimacy. This material rewards directors who care about performance, neighborhood texture, and controlled escalation more than flashy action coverage.",
+        "detail": "The movie gives a director the chance to stage intimate brother scenes, a public park eruption, and a final revenge sequence that all feel of one piece. It will appeal to filmmakers who can make social tension, romance, and violence live in the same frame without flattening any of them."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streamer / festival crime-drama lane",
+        "detail": "The project can be built around a strong ensemble rather than a giant star package, with one breakout lead role in Cam and a second major role in Edwards. The police-violence/revenge lane has clear streamer appetite, and the contemporary setting plus contained locations keep it exportable and producible without tentpole spend."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening fire can move faster.",
+        "detail": "The foster-home sequence is emotionally potent and the brother bond lands, but the opening pages spend a long stretch establishing play before the central wound arrives. One lever would be to tighten the pre-fire warm-up so the inciting tragedy hits sooner and the revenge engine starts with more snap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The police-world scenes can be streamlined.",
+        "detail": "Edwards and Collins each get several scenes that repeat the same moral pressure in slightly different registers, especially once the shooting aftermath is established. A next pass could fold some of that material together so Edwards’ unraveling and Collins’ brutality each land with more force and fewer beats.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final revenge sequence is the biggest production lift.",
+        "detail": "The trunk sequence, the snow-covered house confrontation, the multiple gunshots, and the aftermath all ask for careful stunt, blood, and night coverage. The story stays intact if the geography is simplified a bit, but the emotional payoff depends on that final confrontation feeling clear and controlled.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting world is rich enough to prune selectively.",
+        "detail": "There are enough named crew members, officers, and street players that a producer could collapse a few functions without losing the core story. The version of the script where one or two supporting roles absorb multiple duties would protect pace and reduce cast complexity.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The Serena relationship can carry more narrative weight.",
+        "detail": "Serena already works as the emotional outside eye, the romance, and the conscience, which makes her one of the movie’s most valuable assets. A future pass could keep foregrounding the scenes where she actively challenges Cam’s choices, because that dynamic gives the film a broader human entry point.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76.3,
+  "tier": "Optionable",
+  "inputTokens": 51066,
+  "outputTokens": 4993,
+  "cost": 0.060768,
+  "declaredFormat": "Feature film"
+}

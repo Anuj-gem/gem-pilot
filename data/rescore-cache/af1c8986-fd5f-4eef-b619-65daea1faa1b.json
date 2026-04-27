@@ -1,0 +1,348 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Legal drama",
+      "genre_tags": [
+        "Family drama",
+        "Psychological drama"
+      ],
+      "tone": "Grounded, mournful, intimate, and emotionally restrained"
+    },
+    "positioning_hook": "A grieving New Jersey lawyer sues the hospital that discharged his suicidal brother, only to discover the case is really about the call he never answered.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional engine is immediate and legible: a brother’s death, a malpractice fight, and a family trying to survive the aftermath. It’s a narrower lane than a broad commercial thriller, but the courtroom spine and the universal grief premise give it clear buyer-facing appeal."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early with the bridge opening, the hospital discharge, and the lawsuit that follows. The script keeps the engine clean: one death, one legal battle, one man trying to make sense of what happened."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Adam is built as a compelling lead: controlled in court, unraveling in private, and forced to confront both professional duty and family guilt. Marc, Mary, Amy, Marty, Elena, and Shannon all add distinct emotional pressure points that keep the story from living on the lead alone."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar legal-drama frame and gives it a more personal, grief-driven center, especially through the bridge imagery and the repeated phone-call motif. The emotional directness is confident, though the overall storytelling language stays within recognizable prestige-drama territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The case escalates cleanly through depositions, courtroom reversals, and settlement pressure, and the emotional revelations keep recharging the legal plot. The middle section leans reflective at times, but the trial structure and the late-game procedural turns keep it moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The strongest original charge comes from making the unanswered phone call the emotional and structural center of the film. The bridge, the voicemail, and the legal case all converge into one idea that feels specific and inevitable rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script has strong New Jersey texture: the courthouse, boardwalk, diner, bridge, law office, and family home all feel lived-in and regionally specific. The medical and legal worlds are detailed enough to generate story, though the film remains primarily character-centered rather than institutionally expansive."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: elegiac courtroom drama with recurring memory flashes, quiet domestic scenes, and a persistent sense of wind, water, and distance. The script knows exactly how it wants to feel, and that consistency gives it a recognizable emotional signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the malpractice case sits a deeper story about guilt, masculinity, family roles, addiction, and the limits of care. The repeated objects and locations — the mug, the postcard, the bridge, the boat painting — suggest a film with more emotional afterlife than its plot summary alone would imply."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "This is still Adam’s movie, but the surrounding relationships are meaningfully active: Mary’s quiet grief, Marty’s blunt loyalty, Elena’s withheld history, Shannon’s parallel memory, and Amy’s departure all create distinct pressure. The ensemble is not sprawling, but it does generate multiple strong two-hand scenes."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in 30s with substantial courtroom and emotional range",
+          "Strong supporting female roles in 40s-50s",
+          "One child version of Marc in flashback",
+          "No twins or unusual physical requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior set pieces",
+        "period_or_contemporary": "Contemporary with flashbacks to 1991, 1993, and earlier years",
+        "notable_requirements": [
+          "George Washington Bridge",
+          "Verrazzano-Narrows Bridge",
+          "Jersey Shore boardwalk",
+          "Bergen County courthouse",
+          "hospital/psychiatric unit",
+          "law office",
+          "family home",
+          "diner",
+          "grocery store",
+          "liquor store",
+          "classroom",
+          "parking garage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Limited to bridge atmosphere, memory transitions, and courtroom screen inserts; no major digital spectacle.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical hospital, courtroom, and bridge ambience; no major effects package.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Tito's vodka"
+        },
+        {
+          "type": "brand",
+          "detail": "Iron Maiden"
+        },
+        {
+          "type": "brand",
+          "detail": "Chili's"
+        },
+        {
+          "type": "brand",
+          "detail": "Cinnamon Toast Crunch"
+        },
+        {
+          "type": "brand",
+          "detail": "Graceland"
+        },
+        {
+          "type": "brand",
+          "detail": "Tic Tock Diner"
+        },
+        {
+          "type": "brand",
+          "detail": "Donut Castle"
+        },
+        {
+          "type": "brand",
+          "detail": "Seaside Heights"
+        },
+        {
+          "type": "brand",
+          "detail": "Galloway & Associates"
+        },
+        {
+          "type": "real_person",
+          "detail": "Elvis Presley reference via Graceland"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Ship of Theseus and Heraclitus references are literary/philosophical rather than clearance-heavy, but any quoted text would need review if expanded."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming drama or limited theatrical release",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical-to-streaming path"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The film is mostly contained, but bridge exteriors, courthouse work, hospital scenes, and multiple night setups push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project depends on a strong lead and several emotionally specific supporting roles, plus a younger Marc in flashback."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It uses a manageable but varied footprint: home, courthouse, hospital, diner, boardwalk, bridge, office, and several memory locations."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Suicide, alcoholism, grief, and medical negligence keep this in mature-drama territory without pushing into explicit content."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several prominent brand and place references are embedded in the script, along with an Elvis/Graceland reference and named music."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The unanswered call is the engine.",
+          "what_it_means": "That central device gives the film a clean emotional spine and a memorable marketing handle: this is a grief story built around one missed moment that keeps echoing through the entire case. Actors and prestige buyers alike respond to material where a single human failure can carry a whole movie.",
+          "evidence": "The opening bridge sequence, the repeated voicemail motif, and the final call from Marc’s phone all orbit the same absence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Adam is a showcase lead.",
+          "what_it_means": "The role gives an actor courtroom authority, private collapse, addiction, and raw remorse in one part, which is exactly the kind of layered lead that can anchor a prestige feature. Mid-career dramatic actors looking for a career-defining turn, and buyers who want a performance-first package, will see the value immediately.",
+          "evidence": "Adam’s deposition work, the parking-garage breakdown, the hospital confrontation, and the final voicemail scene all ask for different registers from the same character.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The New Jersey texture is specific.",
+          "what_it_means": "The bridge, boardwalk, courthouse, diner, and shore-town geography create a place-based identity that helps the film feel lived-in rather than generic. That kind of regional specificity is attractive to indie financiers and streamers looking for adult drama with a strong sense of place.",
+          "evidence": "George Washington Bridge, Verrazzano-Narrows Bridge, Seaside Heights, Bergen County court, and the recurring Jersey Shore locations.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family scenes carry real weight.",
+          "what_it_means": "Mary, Amy, Marty, Elena, and Shannon all give the film emotional counterpressure, so the story isn’t just a legal procedural in grief clothing. That creates a richer buyer pitch because the movie can play as both a courtroom drama and a family reckoning.",
+          "evidence": "Mary’s kitchen scenes, Amy’s departure, Marty’s loyalty, Elena’s confession, and Shannon’s bridge revelation each open a different emotional register.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The bridge imagery is memorable.",
+          "what_it_means": "The recurring steel-and-water motif gives the film a visual identity that directors can build around and marketers can echo in key art and trailers. Buyers looking for a prestige drama with a strong visual metaphor will recognize the value of that repeated image language.",
+          "evidence": "The George Washington Bridge opening, the Verrazzano climax, and the repeated sound of wind through cables.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The legal stakes are legible.",
+          "what_it_means": "The malpractice case gives the film a concrete external engine, which helps the emotional material travel and keeps the narrative from becoming purely reflective. That combination is attractive to buyers who want a serious adult drama that still has a clear procedural spine.",
+          "evidence": "The deposition sequence, the expert testimony, the settlement negotiation, and the courtroom reversals.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a grief-driven legal feature with a clean, high-emotion hook and a lead role actors will want to fight over. The script pairs a specific New Jersey world with a courtroom engine and a devastating family story, giving producers a prestige drama that feels both intimate and commercially legible."
+    },
+    "lead_characters": [
+      {
+        "name": "ADAM LAMPARELLO",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · lawyer",
+        "hook": "Adam is a controlled, articulate attorney whose competence becomes the mask for a private collapse. He carries grief like a second job, and the script keeps revealing how much of his identity has been built around being the person who can hold everyone else together.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a man whose stillness, intelligence, and buried damage become the performance. It gives an actor the chance to play courtroom command, addiction, guilt, and emotional restraint that finally breaks open in the voicemail and bridge scenes."
+      },
+      {
+        "name": "MARC LAMPARELLO",
+        "role_type": "Lead",
+        "demographics": "Male · late teens in flashback / 30s in present-day scenes",
+        "hook": "Marc is the film’s emotional ghost and its most human absence: a sensitive, searching younger brother who seems to feel everything before he can name it. He’s drawn with enough specificity — philosophy, the boardwalk, the postcard, the hospital call — that he reads as a full person, not just a memory.",
+        "why_actor_wants_this": "This is the kind of role Ethan Hawke had in Boyhood or Casey Affleck had in Manchester by the Sea in terms of emotional residue — a character whose presence is felt long after he leaves the frame. It offers an actor the chance to make a few scenes carry the weight of the entire movie, especially in the classroom, hospital, and voicemail material."
+      },
+      {
+        "name": "MARY LAMPARELLO",
+        "role_type": "Lead",
+        "demographics": "Female · 50s",
+        "hook": "Mary is the quiet center of the family, a mother who lives in the space between practical care and unbearable knowledge. She’s not written as a speechmaker; her power comes from the way she handles the mug, the keys, the papers, and the silence around them.",
+        "why_actor_wants_this": "This is the emotional authority space of Frances McDormand in Three Billboards or Laura Linney in The Savages — a woman whose restraint is the performance. It gives a seasoned dramatic actress a role built on contained devastation, moral ambiguity, and the kind of maternal grief that can anchor awards-season conversation."
+      },
+      {
+        "name": "AMY",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Amy is Adam’s partner and the person most visibly paying the price for his inability to leave grief at the door. She’s practical, observant, and emotionally lucid, which makes her departure feel earned rather than decorative.",
+        "why_actor_wants_this": "This is the relationship-pressure territory of Michelle Williams in Manchester by the Sea or Rooney Mara in The Girl with the Dragon Tattoo — a role where quiet intelligence and emotional precision do the heavy lifting. It gives an actress a grounded, adult part with real scene-shaping power in the kitchen, breakup, and final phone-call material."
+      },
+      {
+        "name": "MARTY",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Marty is the blunt, loyal friend who keeps the film from floating away into pure sorrow. He’s funny without becoming comic relief, and his easy rapport with Adam gives the movie a lived-in male friendship that feels earned.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Ben Foster in Hell or High Water or Paul Dano in Prisoners so much traction — a sharp, specific presence who can steal scenes without hijacking the movie. Character actors who like fast dialogue, loyalty, and dry humor will want it."
+      },
+      {
+        "name": "ELENA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Elena is the quiet witness who knows more than she says and chooses her words carefully because they matter. She carries the film’s most painful outside perspective: someone who loved Marc, saw the bridge, and lived with the decision not to intervene.",
+        "why_actor_wants_this": "This is the kind of role that gave Patricia Clarkson in Pieces of April or Rebecca Hall in Christine its charge — a woman whose stillness contains a moral wound. It offers an actress a concentrated, emotionally intelligent part with one of the film’s most devastating confession scenes."
+      },
+      {
+        "name": "SHANNON",
+        "role_type": "Supporting",
+        "demographics": "Female · early 40s",
+        "hook": "Shannon is the old life that still knows Adam’s shape, which makes her both comforting and dangerous. She’s grounded, unsentimental, and emotionally brave enough to tell him the truth he doesn’t want to hear.",
+        "why_actor_wants_this": "This is the kind of late-film supporting role that gave Amy Ryan in Gone Baby Gone or Carrie Coon in The Leftovers so much traction — a woman who arrives with history and leaves with the scene. It gives an actress a sharp, adult part with a strong emotional reveal and a clean final goodbye."
+      },
+      {
+        "name": "DR. SUSAN MYERS",
+        "role_type": "Supporting",
+        "demographics": "Female · late 30s-40s",
+        "hook": "Dr. Myers is the exhausted clinician whose competence has been flattened by throughput and pressure. She isn’t written as a monster; she’s the face of a system that has trained itself to move faster than conscience.",
+        "why_actor_wants_this": "This is the kind of role that gave Sarah Paulson in 12 Years a Slave or J. Smith-Cameron in Succession its edge — a person who can hold the room while quietly revealing the cost of institutional survival. It gives an actor a morally complicated authority role with strong cross-examination material."
+      },
+      {
+        "name": "DR. HELEN ANDREWS",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 40s",
+        "hook": "Dr. Andrews is the one still trying to see the patient inside the paperwork. She carries the film’s conscience inside a system that keeps asking her to stop looking too closely.",
+        "why_actor_wants_this": "This is the showcase lane of Amy Ryan in Spotlight or Cherry Jones in The Handmaid’s Tale — a professional woman whose decency is under pressure from the institution around her. It gives an actress a restrained but emotionally resonant role with real courtroom and hallway texture."
+      },
+      {
+        "name": "DR. LEVY",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Dr. Levy is the expert witness who translates the film’s emotional truth into clinical language without losing humanity. She’s calm, authoritative, and crucial to the film’s argument about what competent care should have looked like.",
+        "why_actor_wants_this": "This is the kind of expert-role showcase that gave Viola Davis in Doubt or Ann Dowd in The Leftovers its authority — a character whose clarity changes the temperature of the room. It gives a veteran actress a clean, high-trust performance slot in the courtroom."
+      },
+      {
+        "name": "GALLOWAY",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Galloway is the defense attorney who knows exactly how the system works and uses that knowledge without apology. He’s not a cartoon antagonist; he’s a polished, dangerous professional who understands grief and leverage equally well.",
+        "why_actor_wants_this": "This is the kind of adversarial role that gave Michael Stuhlbarg in The Trial of the Chicago 7 or John Lithgow in Bombshell its juice — a smart, controlled opponent with real verbal force. It gives a character actor a courtroom sparring part with bite and intelligence."
+      },
+      {
+        "name": "DR. WYATT",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Dr. Wyatt is the doctor who finally forces Adam to look at his own body as part of the story. He’s calm, unsentimental, and quietly important because he gives the film a sober counterpoint to the emotional chaos.",
+        "why_actor_wants_this": "This is the kind of small but memorable authority role that gave Richard Jenkins in The Visitor or Brian d’Arcy James in Spotlight its texture — a professional who lands because he feels real. It gives a seasoned actor a concise, grounded scene or two with emotional consequence."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a grief drama that still moves like a legal thriller.",
+        "fit_profile": "Established indie directors with at least one or two features, or prestige-TV directors looking to step into features, who are drawn to performance-first material and emotionally precise realism. This is for filmmakers who like contained but expressive worlds, courtroom tension, and visual motifs that can carry feeling without needing spectacle.",
+        "detail": "The material rewards restraint, clean scene construction, and a strong sense of rhythm between memory, procedure, and private collapse. It will attract directors who know how to stage dialogue so that silence, geography, and repeated objects do as much work as the words."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige streaming drama / festival-to-platform lane",
+        "detail": "The film can be packaged around one strong lead and a credible supporting ensemble, so it does not require a giant cast or effects spend to look premium. The courtroom spine, regional specificity, and suicide-prevention subject matter give it both awards-season credibility and a clear adult-drama audience on streamers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The bridge imagery can be even more central.",
+        "detail": "The opening GWB sequence, the Verrazzano climax, and the final voicemail all already point in the same direction; a next pass could make the bridge motif the organizing visual language of the whole film. That would sharpen the emotional throughline and give the trailer a cleaner spine.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section leans reflective.",
+        "detail": "The hospital, bookstore, and apartment scenes are rich in feeling, but the film’s momentum would tighten if one of those sequences carried a more immediate turn in the argument or the case. The version where a key revelation arrives inside a scene rather than after it would keep the legal engine charging.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting women are strong but could be even more distinct in function.",
+        "detail": "Mary, Amy, Elena, and Shannon each bring a different emotional register, which is a real asset; a future pass could further separate their dramatic jobs so each one advances a different facet of Adam’s journey. That would deepen the ensemble without changing the film’s core shape.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is manageable but varied.",
+        "detail": "The film already lives in a producible lane, but the bridge work, courthouse, hospital, diner, boardwalk, and multiple night exteriors mean scheduling will matter. If needed, some of the memory beats could be consolidated into fewer recurring spaces without losing the emotional architecture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand references are plentiful.",
+        "detail": "Iron Maiden, Tito’s, Chili’s, Cinnamon Toast Crunch, Graceland, and Tic Tock Diner all add texture, but they also create a clearance pass that should be planned early. A production-minded version could keep the same cultural feel while simplifying a few named references if a buyer wants a cleaner legal path.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74,
+  "tier": "Optionable",
+  "inputTokens": 31256,
+  "outputTokens": 5151,
+  "cost": 0.046621499999999996,
+  "declaredFormat": "Feature film"
+}

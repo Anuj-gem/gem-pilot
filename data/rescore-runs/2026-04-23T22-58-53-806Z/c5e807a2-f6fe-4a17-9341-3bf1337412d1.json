@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:16:08.152Z",
+  "submission_id": "c5e807a2-f6fe-4a17-9341-3bf1337412d1",
+  "eval_id": "6e42866e-97dc-4f5a-bcd9-71b9d664ce33",
+  "title": "Justin Time 2.5",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Tom Justin",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s"
+    },
+    {
+      "name": "Stuart Justin",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s"
+    },
+    {
+      "name": "Kendra Shran",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s"
+    },
+    {
+      "name": "Freddie",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Javi Shran",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Sloane Shran",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Bree Marks",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Margaret",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "Tanker",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · 6'5\"+ heavy build"
+    },
+    {
+      "name": "Rufus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · 6'5\"+ heavy build"
+    },
+    {
+      "name": "Mags / Elderly Woman",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s"
+    },
+    {
+      "name": "Police Officer",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    }
+  ],
+  "positioning_hook": "A stoner Blockbuster owner and his vlogger son try to hide a corpse, a duffel bag of cash, and a drug lord’s wrath before dinner with the in-laws turns into a bloodbath.",
+  "cost_usd": 0.05145825,
+  "input_tokens": 36631,
+  "output_tokens": 5330,
+  "status": "wrote:leads_ok"
+}

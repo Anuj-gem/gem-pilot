@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-24T00:10:49.609Z",
+  "submission_id": "483f9755-62f8-4f6e-b974-c66565e0b299",
+  "eval_id": "55abdbf0-880e-4dd2-b9ed-164d14c9a8d2",
+  "title": "Forever Girl",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Nissa / Badr-un-Nissa Begum",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Mughal princess"
+    },
+    {
+      "name": "Durga",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Indian · warrior"
+    },
+    {
+      "name": "Santi",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Indian · servant"
+    },
+    {
+      "name": "The Baby",
+      "role_type": "Supporting",
+      "demographics": "Female infant"
+    },
+    {
+      "name": "Aurangzeb",
+      "role_type": "Supporting",
+      "demographics": "Male · late 70s · Mughal emperor"
+    }
+  ],
+  "positioning_hook": "A Mughal princess hides a miraculous infant, then rewrites the child’s fate with a singing bowl that can summon visions, erase memory, and bend time itself.",
+  "cost_usd": 0.03365025,
+  "input_tokens": 18347,
+  "output_tokens": 4420,
+  "status": "wrote:leads_ok"
+}

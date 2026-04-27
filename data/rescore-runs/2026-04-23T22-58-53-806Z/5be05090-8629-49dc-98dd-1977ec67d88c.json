@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:07:33.792Z",
+  "submission_id": "5be05090-8629-49dc-98dd-1977ec67d88c",
+  "eval_id": "21dc02f6-37e0-4d03-9b9e-c44c4b2cff45",
+  "title": "All I need is one dance….. the wedding g dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · bald, glasses, black goatee"
+    },
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · athletic, former pro basketball player"
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · 16-17 · high school basketball player"
+    },
+    {
+      "name": "Coach Winsil",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Tim Moss",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Coach Daniels",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Father Roger Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · priest"
+    }
+  ],
+  "positioning_hook": "A small-town custodian and a former pro coach race a championship season, a wedding, and a life-changing WNBA call before their found family can hold together.",
+  "cost_usd": 0.0722715,
+  "input_tokens": 67916,
+  "output_tokens": 4741,
+  "status": "wrote:leads_ok"
+}

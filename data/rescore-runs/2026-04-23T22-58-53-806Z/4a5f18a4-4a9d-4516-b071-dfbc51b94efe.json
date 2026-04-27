@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-23T23:04:34.677Z",
+  "submission_id": "4a5f18a4-4a9d-4516-b071-dfbc51b94efe",
+  "eval_id": "e07caeff-27d1-4d4e-bcfe-bb7e5dddd523",
+  "title": "TRUE OUTLAWS SHORT 7",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "TINK",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s · white · pregnant in the story"
+    },
+    {
+      "name": "CHARLIE",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · Native American"
+    },
+    {
+      "name": "POPS",
+      "role_type": "Supporting",
+      "demographics": "Male · late 60s"
+    },
+    {
+      "name": "JACKIE",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "GIRL",
+      "role_type": "Supporting",
+      "demographics": "Female · teens"
+    }
+  ],
+  "positioning_hook": "A pregnant getaway driver and her volatile lover try to outrun a botched gas-station robbery, but the real heist is the life they keep pretending they can still have.",
+  "cost_usd": 0.06819,
+  "input_tokens": 66950,
+  "output_tokens": 3995,
+  "status": "wrote:leads_ok"
+}

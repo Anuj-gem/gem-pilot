@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:25:38.824Z",
+  "submission_id": "65ff0171-ecf4-4c9e-8657-e4a15d799f7a",
+  "eval_id": "b898ea9d-f8d7-4dcf-89a1-add655e9d86d",
+  "title": "Out of his league final draft",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "HANK BRISCOE",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · working-class sportswriter/fantasy-football obsessive"
+    },
+    {
+      "name": "DENNIS MICHAELS",
+      "role_type": "Lead",
+      "demographics": "Male · early 40s · polished executive heir"
+    },
+    {
+      "name": "JEFF",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · slovenly comic sidekick"
+    },
+    {
+      "name": "KATE DALY",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s to early 30s · sports reporter"
+    },
+    {
+      "name": "STAN MICHAELS",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · wheelchair-bound team owner"
+    },
+    {
+      "name": "BRANDY",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s to early 30s · Hank’s girlfriend"
+    },
+    {
+      "name": "ISIAH WASHINGTON",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · star quarterback"
+    },
+    {
+      "name": "COACH ROGER PULLMAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · head coach"
+    },
+    {
+      "name": "NATE TRUMBOLD",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · assistant/bridge figure from the football world"
+    },
+    {
+      "name": "CHRISTIAN JENKS",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · rookie quarterback"
+    },
+    {
+      "name": "JOHN STANSFIELD",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · veteran rival GM"
+    }
+  ],
+  "positioning_hook": "A fantasy-football savant gets handed a real NFL front office, then has to survive owners, reporters, and a locker room that thinks he’s a joke.",
+  "cost_usd": 0.0544935,
+  "input_tokens": 40852,
+  "output_tokens": 5301,
+  "status": "wrote:leads_ok"
+}

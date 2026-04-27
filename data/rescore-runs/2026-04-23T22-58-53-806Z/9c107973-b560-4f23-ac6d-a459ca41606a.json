@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-23T23:20:16.378Z",
+  "submission_id": "9c107973-b560-4f23-ac6d-a459ca41606a",
+  "eval_id": "ec8522ad-1f98-443d-971a-e9b9bc377a24",
+  "title": "LOPEZ",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Lopez",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s · Cuban"
+    },
+    {
+      "name": "Silvia",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Cuban"
+    },
+    {
+      "name": "Jose",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Cuban"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Cuban"
+    },
+    {
+      "name": "Manuel",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · Cuban"
+    },
+    {
+      "name": "Don Martez",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Cuban"
+    },
+    {
+      "name": "The Uncle",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Cuban"
+    },
+    {
+      "name": "Conejo",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Cuban"
+    },
+    {
+      "name": "El Gordo",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · Cuban"
+    },
+    {
+      "name": "Fransisco",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s to 70s · Cuban"
+    },
+    {
+      "name": "Tito",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · Cuban"
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · Cuban"
+    }
+  ],
+  "positioning_hook": "A Havana farm boy falls for a gangster’s girlfriend, then claws his way into the drug trade and a blood-soaked power vacuum where love, loyalty, and survival all demand a price.",
+  "cost_usd": 0.05409,
+  "input_tokens": 43014,
+  "output_tokens": 4851,
+  "status": "wrote:leads_ok"
+}

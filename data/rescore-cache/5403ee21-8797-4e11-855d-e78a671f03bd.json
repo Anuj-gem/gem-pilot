@@ -1,0 +1,346 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy Adventure",
+      "genre_tags": [
+        "Historical",
+        "Religious"
+      ],
+      "tone": "Playful, mythic, irreverent, and earnest"
+    },
+    "positioning_hook": "A demi-god smuggler racing through wartime Europe must deliver a speaking Christ child to Bolivia before Christmas Eve, while gods, Nazis, and the Vatican all try to claim the miracle for themselves.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate holiday-movie lift, but it comes wrapped in wartime espionage, theology, and mythic fantasy, which narrows the lane while also making it memorable. The Christmas Eve deadline, the Vatican confessional, and the Nazi Prague sequence give it a clear audience promise for viewers who like elevated genre with a playful edge."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: Sir W is smuggling sacred cargo across Europe, then gets redirected into a divine errand involving the Infant Jesus of Prague and Bolivia. The opening already establishes the engine, the deadline, and the collision of sacred, comic, and wartime stakes."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sir W is a strong lead because he is all competence, vanity, curiosity, and buried vulnerability, and the Reverend Mother, Eva, Jesus, and the Infant each add a distinct flavor to the journey. The characters are vivid enough to carry the feature, though the script is most magnetic when it is letting Sir W’s self-image get punctured by the people he meets."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a wildly specific mythological framework without playing it safe, and it keeps escalating from Spain to Rome to Prague to Bolivia with confidence. The choice to make the Infant Jesus an active, speaking presence and to stage the climax around a Bolivian Christmas miracle gives the piece a bold identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through clear set pieces: the train station smuggling, the Vatican confessional, the Prague retrieval, and the Bolivia landing. The momentum is strongest when each stop reveals a new layer of the mission, though the long, ornate dialogue passages slow the propulsion in places."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a premise that could only exist in this exact form: a Black and Hispanic demi-god courier, wartime Europe, Catholic iconography, Incan cosmology, and a Christmas rescue mission all in one frame. The idea is strange in a way that quickly becomes legible, especially once the Infant’s voice and the Bolivia destination click into place."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is packed with usable texture: wartime rail logistics, Vatican ritual, Nazi bureaucracy, Carmelite convent life, and Bolivian religious syncretism all feel story-generating. The script keeps finding new institutional spaces with their own rules, which makes the journey feel larger than the plot mechanics."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: reverent but mischievous, historical but fantastical, and constantly undercut by Sir W’s dry self-awareness. The script can move from cosmic judgment to a joke about attire without losing its identity, which is a real signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the adventure is a story about faith, identity, service, and the first real crack in Sir W’s self-sufficiency. The script hints at a larger spiritual mythology and a deeper emotional life for Eva and Sir W, even as it keeps the surface plot brisk."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Sir W’s exchanges with Jesus, the Infant, the Reverend Mother, Eva, and even Heydrich create a web of distinct dynamics rather than a single-note hero journey. The ensemble is not sprawling, but the pairings are strong enough that different combinations generate fresh scenes."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 9,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead requires a Black and Hispanic mixed male performer in his 40s playing ageless",
+          "Jesus is written as an ageless male in his 30s with Sephardic features",
+          "Pope Pius XII is a male in his 60s",
+          "Reinhard Heydrich is a male in his late 30s",
+          "Eva is a teenage girl",
+          "The Infant Jesus is a speaking child-like role, likely voice performance with a physical prop or effects support"
+        ]
+      },
+      "locations": {
+        "distinct_count": 9,
+        "interior_exterior_ratio": "Mostly interior with several exterior travel and arrival beats",
+        "period_or_contemporary": "Period",
+        "notable_requirements": [
+          "Spain train station and freight yard",
+          "Vatican interiors including Saint Peter’s Basilica and a confessional booth",
+          "Prague church, church parlor, and airport hanger",
+          "Airplane cockpit and travel sequences",
+          "Bolivian farm, barn, and countryside night exterior",
+          "Cosmological Hanan Pacha realm with stylized visual design"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Cosmological realm visuals, divine projections, supernatural voice/appearance effects, storm and hailstorm sequences, and the speaking Infant likely require compositing and enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical hailstorm, plane damage, divine light effects, and physical prop handling for the statue and vestments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Pope Pius XII"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Reinhard Heydrich"
+        },
+        {
+          "type": "real_person",
+          "detail": "Saint Ambrose"
+        },
+        {
+          "type": "real_person",
+          "detail": "Saint Augustine of Hippo"
+        },
+        {
+          "type": "real_person",
+          "detail": "Jesus of Nazareth"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Infant Jesus of Prague and associated devotional iconography"
+        },
+        {
+          "type": "brand",
+          "detail": "RENFE"
+        },
+        {
+          "type": "brand",
+          "detail": "Lockheed Hudson"
+        },
+        {
+          "type": "brand",
+          "detail": "Tatra 87"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or festival-to-platform theatrical",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong holiday-event positioning and awards-friendly performance hooks"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained to a handful of interiors and travel setups, but period design, aircraft work, divine visuals, and wartime settings keep it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the lead requires a very specific identity profile and the script depends on recognizable historical and religious figures."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Spain, Rome, Prague, Bolivia, and the Hanan Pacha realm create a multi-country, multi-environment footprint even though many scenes are interior-driven."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes Nazi antagonists, religious conflict, wartime peril, and some racialized language in period dialogue, but it avoids graphic violence or explicit material."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names multiple real historical figures, religious icons, and branded entities, which creates a meaningful clearance and permissions layer."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "A buyer gets a holiday-adjacent adventure with a clean mission, a hard deadline, and a mythic payoff that can be sold in one sentence. That kind of high-concept clarity is attractive to streamer buyers and producers looking for a prestige-leaning genre feature with a memorable hook.",
+          "evidence": "The Christmas Eve deadline, the Vatican assignment, and the Bolivia destination all crystallize the mission quickly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sir W is a showcase lead.",
+          "what_it_means": "The role gives an actor swagger, wit, physicality, and a slow-burn spiritual awakening in one package, which is exactly the kind of part that can anchor a festival or prestige launch. Mid-career dramatic leads and actors looking for a signature genre role will see real value here.",
+          "evidence": "He moves from smug courier to reluctant confessor to a man forced into genuine faith by the end.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mythology is commercially legible.",
+          "what_it_means": "The script turns theology into adventure mechanics without making the audience do homework, which broadens the appeal beyond pure faith audiences. That makes it attractive to buyers who want something spiritually resonant but still playable as a mainstream genre feature.",
+          "evidence": "Jesus, the Infant, Inti, Pachacuti, and the Pope all function as active story forces rather than abstract lore.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period world has real texture.",
+          "what_it_means": "The wartime rail station, Vatican confessional, Nazi Prague, and Bolivian farm each feel like a distinct arena with its own rules, which gives the production a sense of scale without needing constant spectacle. Directors and buyers who like rich historical settings with built-in tension will respond to that density.",
+          "evidence": "The script moves from Malaga to Rome to Prague to Bolivia while keeping each stop specific and functional.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can pivot without breaking.",
+          "what_it_means": "The script can play as comic, reverent, and suspenseful in the same scene, which is a valuable tonal lane for audiences who like elevated genre with personality. That blend is especially appealing to filmmakers and buyers looking for something that feels authored rather than generic.",
+          "evidence": "The confessional booth scene, the Heydrich car ride, and the barn finale all carry different tonal colors but feel of one piece.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Eva gives the story a human center.",
+          "what_it_means": "She turns the mission from a clever caper into an emotional rescue, which deepens the audience’s investment and gives the ending a real release. Casting directors and actors will notice that she is not just cargo; she becomes the emotional witness to the miracle.",
+          "evidence": "Her silence, her care for the Infant, and her final spoken blessing all land as a meaningful turn.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax has event-movie scale.",
+          "what_it_means": "The Bolivian farm gathering, the storm, the crowd arriving from everywhere, and the final divine judgment give the feature a satisfying sense of culmination. That makes the script feel like it is building toward a holiday event rather than a small chamber piece.",
+          "evidence": "The farm becomes a gathering place for the whole country on Christmas night.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a wildly specific, high-concept holiday adventure with a real prestige spine: a smug demi-god courier, a speaking Christ child, Nazi Europe, Vatican intrigue, and a Christmas miracle in Bolivia. The script’s biggest asset is that it feels both commercially pitchable and unlike anything else on the shelf — the kind of feature that could attract a bold director, a charismatic lead, and a buyer looking for an event with soul."
+    },
+    "lead_characters": [
+      {
+        "name": "Sir W / Eztli",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Black and Hispanic mixed · ageless presence",
+        "hook": "Sir W is a swaggering, hyper-competent courier with demi-god abilities, a professional liar’s instinct, and a private hunger to be challenged. He reads as amused, worldly, and slightly untouchable, but the script keeps revealing the cracks: curiosity, guilt, pride, and a capacity for real faith that he does not yet know he has.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Mahershala Ali in Green Book — a role that lets an actor play charm, control, and inner fracture while the audience watches the mask soften. Leading men who want a performance that can carry wit, physical action, and a late emotional turn will chase this, and prestige buyers will see a star vehicle with range."
+      },
+      {
+        "name": "Jesus",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · ageless · Sephardic ancestry",
+        "hook": "Jesus is warm, sly, and quietly authoritative, with the kind of calm that makes everyone else in the room feel seen and slightly outmatched. He is not a distant icon here; he is a conversational, mischievous guide whose humor and tenderness keep redirecting Sir W toward something larger than himself.",
+        "why_actor_wants_this": "This is the kind of part that gave Tom Hanks in A Beautiful Day in the Neighborhood or Paul Bettany in WandaVision the chance to embody reassurance with edge — a figure whose stillness is the performance. Actors with a gift for serene authority and a subtle comic touch will be drawn to the role because it lets them play both spiritual gravity and playful intimacy."
+      },
+      {
+        "name": "The Infant",
+        "role_type": "Lead",
+        "demographics": "Male · child-like voice · physical statue/puppet/voice-performance hybrid",
+        "hook": "The Infant is a tiny sacred object with the voice and confidence of a royal child, equal parts adorable, commanding, and disarmingly wise. The character’s power comes from the contradiction: a devotional icon that behaves like a mischievous, emotionally intelligent co-pilot with a very specific agenda.",
+        "why_actor_wants_this": "This is the kind of voice-and-performance showcase that gave Warwick Davis in Willow or Alan Tudyk in voice-heavy genre work the chance to create a character through personality alone. A performer who can sell innocence, authority, and comic timing will want this because the role is memorable even when the body is small."
+      },
+      {
+        "name": "Ying",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Chinese",
+        "hook": "Ying is sharp, efficient, and visibly unimpressed by everyone around her, which makes her instantly readable and fun. She is the practical counterweight to Sir W’s theatricality, and her disguised, no-nonsense energy gives the smuggling operation a grounded intelligence.",
+        "why_actor_wants_this": "This is the kind of lean, cool-headed role that gave Michelle Yeoh in Crouching Tiger, Hidden Dragon the chance to project precision and authority with minimal exposition. Actors who specialize in controlled intensity and elegant command will be interested, and buyers will see a strong supporting lead who can hold the frame."
+      },
+      {
+        "name": "Eva",
+        "role_type": "Lead",
+        "demographics": "Female · late teens · European/Czech",
+        "hook": "Eva begins as a silent, watchful novice whose devotion is expressed through ritual, care, and restraint rather than speech. By the end, she becomes the emotional proof of the story’s miracle, and the script gives her a quiet but meaningful transformation from guarded witness to voiced believer.",
+        "why_actor_wants_this": "This is the kind of breakout role that gave Alicia Vikander in The Danish Girl or Saoirse Ronan in Brooklyn the chance to communicate interior life before the script finally lets the character speak. Young dramatic actors looking for a role that can build toward a cathartic release will see real value here."
+      },
+      {
+        "name": "Pachacuti",
+        "role_type": "Supporting",
+        "demographics": "Male · ageless divine ruler",
+        "hook": "Pachacuti is the stern, ceremonial authority inside the Hanan Pacha, a ruler who understands law, hierarchy, and the burden of judgment. He is less a villain than a cosmic magistrate, which gives the divine world a formal structure and a real sense of consequence.",
+        "why_actor_wants_this": "This is the kind of regal, voice-driven authority role that gave Ian McDiarmid in Star Wars or Ralph Fiennes in animated and mythic work the chance to dominate a scene through command alone. Character actors with classical presence will want it because the language and posture do the heavy lifting."
+      },
+      {
+        "name": "Inti",
+        "role_type": "Supporting",
+        "demographics": "Male · ageless divine figure",
+        "hook": "Inti is the blazing, offended force of the old order, all pride, volume, and wounded entitlement. He gives the script its most overtly antagonistic divine energy, but he also has enough personality to feel like a character rather than a symbol.",
+        "why_actor_wants_this": "This is the kind of larger-than-life vocal role that lets an actor do the theatrical force of Jeremy Irons in animated villain mode or James Earl Jones in mythic narration space. Performers who enjoy elevated language and operatic authority will be drawn to it."
+      },
+      {
+        "name": "Reinhard Heydrich",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s",
+        "hook": "Heydrich is chilling because he is polished, amused, and casually predatory, never needing to raise his voice to dominate a room. The script uses him as a human embodiment of menace, but it also gives him enough wit and vanity to make every exchange dangerous.",
+        "why_actor_wants_this": "This is the kind of prestige-antagonist role that gave Christoph Waltz in Inglourious Basterds or Michael Shannon in period menace pieces the chance to make intelligence feel terrifying. Actors who can play charm as a weapon will want it, and buyers will recognize the immediate tension he brings."
+      },
+      {
+        "name": "Reverend Mother",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s · Czech",
+        "hook": "The Reverend Mother is small, exacting, and spiritually formidable, with the kind of stillness that makes everyone else reveal themselves. She is one of the script’s best authority figures because she can smell a lie, but she also carries genuine compassion beneath the discipline.",
+        "why_actor_wants_this": "This is the kind of role that gave Olivia Colman in The Favourite or Vanessa Redgrave in prestige ensemble work the chance to command a scene through intelligence and moral force. Veteran actresses who like authority with warmth will be drawn to it."
+      },
+      {
+        "name": "Carlos",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Indigenous Bolivian",
+        "hook": "Carlos is a grounded, practical family man whose warmth makes the final act feel lived-in rather than symbolic. He functions as the human face of the Bolivian landing, giving the miracle a domestic, welcoming anchor.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actor the emotional credibility of a family patriarch in a prestige ensemble. Character actors who specialize in warmth and quiet authority will respond to it."
+      },
+      {
+        "name": "Carmen",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · Indigenous Bolivian",
+        "hook": "Carmen is efficient, nurturing, and immediately believable as the center of a busy household. She helps the finale feel communal and human, not just mythic.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the lived-in specificity of a family drama matriarch with only a few scenes. Supporting players who can make a home feel real will be interested."
+      },
+      {
+        "name": "Juan",
+        "role_type": "Supporting",
+        "demographics": "Male · 8 years old · Indigenous Bolivian",
+        "hook": "Juan is bold, instinctive, and spiritually open, the kind of child who can recognize wonder before the adults do. He functions as the story’s local herald, the one who turns the farm into a gathering place.",
+        "why_actor_wants_this": "This is the kind of child role that gives a young performer a clear emotional function and a memorable moment of recognition. Family audiences and casting directors alike will respond to the innocence and clarity of the part."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a faith-forward adventure without flattening it into piety.",
+        "fit_profile": "Established indie or prestige-leaning directors with at least one feature under their belt, especially those who like period settings, performance-forward storytelling, and tonal balancing acts. This material rewards filmmakers who can stage dialogue as spectacle, keep the mythology legible, and let humor and reverence coexist in the same frame.",
+        "detail": "The script gives a director a chance to build a world out of ritual, architecture, and performance rather than constant effects, while still delivering a few signature set pieces. It will attract directors who like elevated genre, historical texture, and actors doing precise work inside a stylized frame."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Prestige holiday adventure / elevated fantasy lane",
+        "detail": "The contained cast and mostly interior travel footprint mean a buyer can package this around one strong lead and a director with a clear visual point of view. The holiday timing, religious iconography, and wartime adventure frame give it a secondary seasonal marketing lane that most fantasy features do not have."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The dialogue runs long in a few set pieces.",
+        "detail": "The Vatican confessional, the Prague church exchange, and parts of the Hanan Pacha trial all lean into ornate back-and-forth that sometimes delays the next turn of the engine. A next pass could let a few of those exchanges land one beat earlier, which would keep the wit and preserve more forward motion.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The lead’s identity is doing heavy lifting.",
+        "detail": "Sir W’s Black and Hispanic mixed identity, his ageless quality, and his ability to move between languages and social codes are central to the script’s appeal. That is a strength, but it also means packaging should be intentional about finding a performer who can carry the role’s physicality, wit, and authority in one frame.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The historical names invite clearance work.",
+        "detail": "Pope Pius XII, Adolf Hitler, Reinhard Heydrich, Saint Ambrose, and Saint Augustine all appear by name, alongside the Infant Jesus of Prague and branded transport references. A producer will want to map those permissions early so the script’s historical specificity stays intact without slowing the path to finance.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The airplane and storm sequence carries the biggest production lift.",
+        "detail": "The hailstorm, cracked windshield, emergency landing, and cockpit action are the most effects-dependent stretch of the feature. One simplification lever would be to keep the geography of that sequence tight and avoid adding any extra travel beats around it, so the danger stays vivid without expanding the footprint.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Eva’s turn could be foregrounded even more.",
+        "detail": "Her silence, her care for the Infant, and her final spoken blessing already give her a moving arc, and the script is strongest when her interior life is visible through action. A next pass could consider giving her one earlier choice that makes her devotion feel even more active before the plane sequence, which would deepen the emotional payoff.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 38385,
+  "outputTokens": 5565,
+  "cost": 0.05383125,
+  "declaredFormat": "Feature film"
+}

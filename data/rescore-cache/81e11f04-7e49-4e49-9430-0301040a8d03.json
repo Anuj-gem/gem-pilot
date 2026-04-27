@@ -1,0 +1,345 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Family drama",
+      "genre_tags": [
+        "Romantic drama",
+        "Faith-based"
+      ],
+      "tone": "Melodramatic, earnest, heightened, sentimental"
+    },
+    "positioning_hook": "A gentle autistic janitor’s son inherits a British aristocratic dynasty, falls for a widow, and must survive a vindictive matriarch, a tabloid expose, and a house fire to claim his place.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear emotional lane: an outsider son, a forbidden romance, a family inheritance fight, and a faith-forward redemption arc. Its audience is identifiable, especially for faith-adjacent and melodrama-friendly viewers, though the tonal blend is more specialized than broad four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands cleanly once Billy’s DNA reveal and Donnatella’s control over the family are in play. The story engine is easy to explain in a sentence, and the inheritance pressure gives the feature a strong forward pull."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Billy’s innocence, work ethic, and spiritual openness make him easy to root for, and Donnatella is a vivid force of nature. The supporting cast functions well around them, though most characters are built to serve the central conflict rather than surprise on their own."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The collision of English aristocracy, small-town American simplicity, and overt Christian conversion gives the script a distinct flavor. The execution leans classical and declarative, which keeps the material accessible but less formally daring than the premise suggests."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through discovery, relocation, exposure, confrontation, and catastrophe, with the fire and inheritance reveal giving it a strong climax. Some stretches are more observational than propulsive, but the central question of Billy’s place in the family sustains interest."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A socially simple man discovering he is the firstborn heir to a royal-adjacent English family is an immediately legible and unusual engine. The later turn into faith, public scandal, and domestic restoration makes the premise feel singular rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Rigg Manor, the village, the church, the commodity office, and the newspaper all carry distinct social rules and class textures. The estate hierarchy, servant relationships, and village gossip create a world that feels story-generating rather than merely decorative."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script has a very particular blend of stately period manners, comic social awkwardness, soap-operatic reversals, and devotional uplift. That identity is recognizable, though the tone stays broad enough that it sometimes reads as earnest pageant rather than a sharply singular voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the inheritance plot sits a story about shame, control, class performance, and the emotional cost of abandonment. Donnatella’s late confession and Billy’s spiritual transformation suggest deeper reserves, even though the script keeps most of its meaning in plain view."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Billy/May/Ariel triangle, the Billy/Timothy brother dynamic, the Donnatella/Florence alliance, and the servant network all generate usable story energy. Multiple pairings can carry scenes on their own, which gives the feature a sturdy ensemble backbone."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Autistic-coded lead performance for Billy",
+          "Child role for Ariel",
+          "Multiple English class/age-specific supporting roles",
+          "Potentially strong British dialect requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Contemporary with period-leaning estate and village texture",
+        "notable_requirements": [
+          "Large English manor house",
+          "Village street and church",
+          "Commodity office",
+          "Newspaper newsroom",
+          "Candy shop",
+          "Stable, pond, and wooded estate grounds",
+          "Fire-damaged manor interior for climax"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily fire enhancement and smoke/house-fire cleanup in the climax, with little else requiring digital work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fire sequence, smoke effects, burning interior, and controlled collapse/charred aftermath.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "The Tubes' 'Sushi Girl' and The Beatles' 'Birthday' are specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Brooks Brothers, Armani, Bentley, and other branded references are used prominently in dialogue and description."
+        },
+        {
+          "type": "real_person",
+          "detail": "Mick Jagger is directly referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable feature with faith-adjacent and family-drama appeal",
+        "content_level": "PG-13 equivalent with mature themes, mild sexuality, class prejudice, and a fire climax",
+        "series_engine_or_release_model": "Festival-to-platform or specialty streamer release; the hook is character and premise-driven rather than effects-driven."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contained to manor, village, office, and church settings, but the estate build, period styling, and fire climax push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a strong Billy, a formidable Donnatella, a sympathetic May, a child performer for Ariel, and a credible British ensemble around them."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through a manageable number of locations, but the manor, village, church, office, and fire aftermath each need distinct production value."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Faith material, marital sex, class cruelty, drunkenness, and a house-fire climax shape the content envelope without pushing into extreme territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named songs, brands, and a real public figure reference all require clearance attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Billy is a showcase lead.",
+          "what_it_means": "The role gives an actor a rare combination of innocence, comic literalness, emotional transparency, and eventual authority, which is exactly the kind of part that can become a calling card. Character-driven buyers and actors looking for a disarming, awards-friendly transformation role will see the appeal immediately.",
+          "evidence": "Billy’s repeated 'I like to work,' his confusion around tea, his gentle bond with Ariel, and his final decision to reject the inheritance and go home.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Donnatella is a formidable antagonist-matriarch.",
+          "what_it_means": "She gives the movie a true engine: a woman whose pride, class obsession, and buried shame can drive every turn of the plot. Prestige actresses and producers looking for a scene-stealing matriarch role with both menace and eventual confession will respond to her.",
+          "evidence": "Her tea-table humiliations, the blood-test demand, the will threat, the piano breakdown, and the late-life confession in bed.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The estate world has strong class texture.",
+          "what_it_means": "Rigg Manor, the servants, the village, and the family rituals create a world that feels expensive, rule-bound, and story-generating, which helps the script play as more than a simple domestic drama. Buyers who like heritage settings, social hierarchy, and contained ensemble storytelling will understand the lane quickly.",
+          "evidence": "The tea service, the drawing room, the stable, the butler/groundskeeper dynamic, and the village gossip network around the church and candy shop.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The faith turn is built into the climax.",
+          "what_it_means": "Billy’s conversion is not a decorative add-on; it becomes the emotional mechanism that lets him withstand Donnatella, save her from the fire, and choose grace over inheritance. Faith-based distributors and audience segments that want uplift without losing family-drama stakes have a clear entry point here.",
+          "evidence": "Ariel’s Jesus conversations, Father Del’s prayer, Billy’s surrender in the bedroom, and his final 'Thank you, Jesus' after the rescue.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance has a clean emotional engine.",
+          "what_it_means": "Billy and May’s connection gives the story a human center that can carry the middle of the movie while the inheritance plot escalates around them. Romantic-drama audiences and actors who want a tender, old-fashioned love story with social pressure will be drawn to it.",
+          "evidence": "Their private walks, the hidden relationship, the proposal-by-proxy with Ariel, and May’s final return to him after the exposure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax is cinematic and legible.",
+          "what_it_means": "The house fire gives the feature a clear visual peak and a built-in emotional payoff: the family’s old order literally burns away as Billy chooses rescue over revenge. Producers looking for a contained climax with real spectacle, but not tentpole spend, will see the value.",
+          "evidence": "Florence’s cigarette butt, the smoke in Billy’s room, the rescue through the burning hall, and the manor collapsing behind them.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates usable story pairs.",
+          "what_it_means": "Billy/Timothy, Billy/May, Billy/Ariel, Donnatella/Florence, and Davees/Carson all have distinct chemistry, which means the movie can keep generating scenes without depending on one relationship alone. That makes the script attractive to directors and producers who like ensemble pressure-cookers with multiple playable lanes.",
+          "evidence": "The office promotion scene, the picnic and church sequences, the mother-daughter alliance, and the servant late-night drinking scene.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big-hearted, class-conscious family melodrama with a faith spine and a genuinely unusual lead role at its center. Billy’s journey from overlooked outsider to rightful heir gives the movie a clean emotional engine, while Donnatella’s matriarchal control, the English estate world, and the fire climax give it scale, texture, and a memorable finish."
+    },
+    "lead_characters": [
+      {
+        "name": "Billy",
+        "role_type": "Lead",
+        "demographics": "Male · 20s/30s · autistic-coded, working-class American",
+        "hook": "Billy is a gentle, literal-minded man whose decency is so unforced that it reads as innocence to everyone around him. He is the emotional center of the story: a son who has been kept small by circumstance, then discovers he is the firstborn heir to a dynasty he never knew existed, and chooses grace over entitlement.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in *Forrest Gump* crossed with the emotional transformation space of Colin Firth in *The King’s Speech* — a role where sincerity itself becomes the performance engine. Actors who want to play kindness, confusion, spiritual awakening, and quiet authority in one arc will chase this, and prestige-minded buyers will see a lead who can carry an audience through a full emotional conversion."
+      },
+      {
+        "name": "Donnatella Rigg",
+        "role_type": "Lead",
+        "demographics": "Female · 60s/70s · English aristocratic matriarch",
+        "hook": "Donnatella is a grand, imperious woman who has spent a lifetime turning control into identity. She is vain, funny, cruel, wounded, and finally exposed as a mother who abandoned her son and built a kingdom around the lie.",
+        "why_actor_wants_this": "This is the late-career powerhouse space of Glenn Close in *The Wife* or Meryl Streep in *August: Osage County* — a matriarch role that lets an actor command every room, then reveal the fracture underneath. Prestige actresses and awards-facing buyers will respond to a part that can play command, humiliation, confession, and spiritual surrender."
+      },
+      {
+        "name": "May",
+        "role_type": "Lead",
+        "demographics": "Female · 30s/40s · English, working-class by marriage",
+        "hook": "May is warm, practical, and emotionally brave, the kind of woman who keeps a household and a heart together under pressure. She becomes Billy’s love interest and moral ally, but she also has her own history of compromise, loyalty, and quiet rebellion against the Rigg order.",
+        "why_actor_wants_this": "This is the emotional lane of Rachel Weisz in *The Favourite* or Michelle Williams in *Blue Valentine* — a woman whose tenderness and resolve are both visible on the page. Actors who want a romantic lead with dignity, restraint, and a lived-in sense of sacrifice will be drawn to her."
+      },
+      {
+        "name": "Timothy Rigg",
+        "role_type": "Lead",
+        "demographics": "Male · 30s/40s · English executive, upper-class",
+        "hook": "Timothy is the polished son who understands the family system well enough to survive it, and maybe improve it. He is courteous, strategic, and quietly humane, making him the rare Rigg who can translate Billy into the family without losing the family’s language.",
+        "why_actor_wants_this": "This is the polished-supporting-to-lead space of Matthew Macfadyen in *Succession* or Paul Bettany in *A Very British Scandal* — a role built on restraint, intelligence, and the ability to reveal feeling through etiquette. Actors who like controlled, high-status characters with a moral center will want it."
+      },
+      {
+        "name": "Ariel",
+        "role_type": "Lead",
+        "demographics": "Female · 9-12 · English child",
+        "hook": "Ariel is bright, observant, and emotionally fearless in the way children often are before adults teach them caution. She becomes the story’s innocence compass, seeing Billy clearly long before the rest of the family can admit what he means to them.",
+        "why_actor_wants_this": "This is the kind of child role that has the emotional clarity of Abigail Breslin in *Little Miss Sunshine* — a part where the child is not decorative but spiritually central. Families and casting directors looking for a memorable young performer with real scene-sharing ability will notice her immediately."
+      },
+      {
+        "name": "Boyle Taylor / Tug Taylor",
+        "role_type": "Lead",
+        "demographics": "Male · 50s/60s and Male · late 20s/30s · English father and son",
+        "hook": "Boyle is a weathered fisherman with a moral streak and a dry wit; Tug is the ambitious, slightly comic reporter son who wants a bigger life and gets pulled back into the village’s buried truth. Together they function as the story’s outside pressure, turning private shame into public exposure.",
+        "why_actor_wants_this": "Boyle has the lived-in gravitas of Albert Finney in *Under the Volcano*, while Tug has the comic-investigative energy of Peter Falk in *The In-Laws* — both roles give actors texture, voice, and a strong point of view. Character actors and scene-stealers will chase these parts because they can pivot from local color to plot catalyst."
+      },
+      {
+        "name": "Davees",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s/50s · English butler",
+        "hook": "Davees is the loyal house servant who sees everything and says only enough to survive the room he is in. He has the dry intelligence of someone who understands the family better than they understand themselves.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor the precision of Stephen Fry in *Gosford Park* — elegant, observant, and quietly loaded with subtext. Actors who enjoy playing the smartest person in the room without ever claiming the title will want it."
+      },
+      {
+        "name": "Carson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s/60s · English groundskeeper",
+        "hook": "Carson is gruff, practical, and more emotionally honest than anyone in the manor. He functions as the estate’s conscience, the man who can speak plain truth to power while still belonging to the system.",
+        "why_actor_wants_this": "This is the weathered, humane authority space of Brendan Gleeson in *The Banshees of Inisherin* — a role that lets an actor carry wisdom, humor, and blunt force in the same breath. Character actors who can make a single line feel like a worldview will chase it."
+      },
+      {
+        "name": "Florence Rigg",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s/40s · English aristocratic daughter",
+        "hook": "Florence is the family’s sharpest blade: bitter, self-protective, and delighted by cruelty when it serves her. She is the sibling who most openly resents Billy because his arrival threatens the inheritance structure she has learned to live inside.",
+        "why_actor_wants_this": "This is the acid-tongued sister territory of Olivia Colman in *The Favourite* — a role where sarcasm, vanity, and desperation all live in the same performance. Actors who like playing venom with comic timing will have a field day."
+      },
+      {
+        "name": "Janet Rigg",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s/40s · English",
+        "hook": "Janet is the polished wife who knows exactly how precarious her place in the family is. She is composed on the surface, but every conversation about Billy and the will tightens the screws on her sense of security.",
+        "why_actor_wants_this": "This is the controlled, socially alert role space of Rosamund Pike in *Gone Girl* before the mask drops — a part that lets an actor play status anxiety with elegance. Actors who specialize in contained tension and social precision will be interested."
+      },
+      {
+        "name": "Sue Chi",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s/50s · Asian-American",
+        "hook": "Sue is the practical social worker who has been quietly holding Billy’s life together from the start. She is compassionate, organized, and one of the few adults in the story who treats Billy’s vulnerability as something to protect rather than exploit.",
+        "why_actor_wants_this": "This is the grounded, emotionally intelligent support role of Amy Ryan in *The Office* or *Win Win* — a part that gives an actor warmth, competence, and moral clarity. Character actresses who can make care feel active rather than sentimental will want it."
+      },
+      {
+        "name": "Li Chi",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s/50s · Asian-American",
+        "hook": "Li is playful, musical, and unexpectedly wise, a father figure who brings rhythm and humor into Billy’s life. He is the story’s comic relief with heart, but he also understands loyalty and belonging in a way the Riggs do not.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the easy charm and emotional utility of Ken Jeong in *The Hangover* but in a warmer, family-drama register. Performers who can pivot from comic color to sincere support will be drawn to it."
+      },
+      {
+        "name": "Father Del Perry",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s/60s · English priest",
+        "hook": "Father Del is a sturdy, plainspoken man of faith who offers Billy a moral home outside the Rigg machine. He is paternal without sentimentality, and his blessing becomes one of the story’s key spiritual pivots.",
+        "why_actor_wants_this": "This is the compassionate authority lane of Albert Finney in *The Gathering Storm* or Brendan Gleeson in *Calvary* — a role where faith is lived, not preached. Actors who can make spiritual conviction feel human and unshowy will want it."
+      },
+      {
+        "name": "Cora Perry",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s/60s · English",
+        "hook": "Cora is the warm, irreverent mother who sees through the family drama and says what everyone else is thinking. She gives the story a grounded domestic intelligence and a welcome comic edge.",
+        "why_actor_wants_this": "This is the sharp maternal support space of Brenda Blethyn in *Secrets & Lies* — a role that lets an actor be funny, blunt, and deeply loving in the same scene. Character actresses who can turn plain speech into emotional truth will chase it."
+      },
+      {
+        "name": "Agnes Hodges",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s/60s · English shopkeeper",
+        "hook": "Agnes is the village gossip with a nose for hidden structure and a taste for spectacle. She is nosy, theatrical, and exactly the kind of local operator who can turn a private family matter into a public crisis.",
+        "why_actor_wants_this": "This is the deliciously nosy ensemble role of Imelda Staunton in *Vera Drake* or *Paddington 2* — a part that lets an actor weaponize curiosity. Character actors who enjoy playing social catalysts will love it."
+      },
+      {
+        "name": "Dr. Welsh",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s/60s · English physician",
+        "hook": "Dr. Welsh is the family doctor who has spent years serving the Riggs’ private needs and is now forced to confront the moral cost of their secrecy. He is professional, cautious, and quietly appalled when the truth finally lands in his lap.",
+        "why_actor_wants_this": "This is the measured, conscience-bearing role space of Jim Broadbent in *Iris* — a part that lets an actor play authority, discomfort, and ethical pressure without grandstanding. Veteran character actors will see the value immediately."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a family melodrama with real class architecture and a faith-driven emotional payoff.",
+        "fit_profile": "Established indie directors with at least one or two features, or TV directors moving into features, who already work well with performance-forward material and controlled visual storytelling. The right fit is someone drawn to social hierarchy, domestic tension, and emotional catharsis more than spectacle.",
+        "detail": "The material rewards careful blocking, actor-centered scenes, and a director who can make tea rooms, drawing rooms, and a manor corridor feel like pressure chambers. It will appeal to filmmakers who like prestige family drama, heritage texture, and a climax that can be staged with practical fire rather than heavy effects."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "Faith-adjacent prestige drama / contained family melodrama",
+        "detail": "The project can be packaged around one standout lead performance for Billy and one formidable matriarch role for Donnatella, which gives buyers a clean casting hook without needing a large ensemble of name talent. The English estate setting, inheritance premise, and spiritual uplift give it a clear lane for specialty theatrical, festival-to-platform, or streamer acquisition."
+      }
+    },
+    "considerations": [
+      {
+        "area": "Billy’s inner life stays mostly declarative.",
+        "detail": "The script clearly knows who Billy is, but much of his transformation is explained in dialogue or narration rather than dramatized through a few sharper choice-points. A next pass could let one or two early scenes force him to choose between obedience and self-assertion so the final 'king' turn lands with even more force.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section repeats the same pressure.",
+        "detail": "Several scenes in the manor and village circle the same question — whether Billy belongs — before the plot fully escalates into exposure and confrontation. Tightening a few of the tea, work, and walk-and-talk passages would protect the momentum and make the later reveal feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The faith material could be staged more economically.",
+        "detail": "The story already has a strong spiritual spine, so the version of the script where a few repeated Jesus conversations are consolidated would keep the same message while giving the feature a cleaner dramatic shape. That would also help the movie play more broadly outside the core faith lane without changing its identity.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The estate and fire sequence define the budget ceiling.",
+        "detail": "The manor, village, church, office, and fire aftermath are all producible, but the climax needs a convincing practical burn and aftermath coverage. If the production target wants to stay in the lower end of the lane, the house-fire sequence is the one place to concentrate resources rather than spread them across more set-piece moments.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast is strongest when it stays focused.",
+        "detail": "Billy, Donnatella, May, Timothy, Ariel, and the servant network are the core engine; the newspaper and village threads add texture but also expand the speaking roster. A leaner version of the supporting village commentary would protect the central family dynamics without losing the world.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 65,
+  "tier": "Optionable",
+  "inputTokens": 63880,
+  "outputTokens": 5983,
+  "cost": 0.07483350000000001,
+  "declaredFormat": "Feature film"
+}

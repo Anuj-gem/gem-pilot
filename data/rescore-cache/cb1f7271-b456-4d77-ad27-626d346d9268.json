@@ -1,0 +1,348 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Satire",
+        "Drama"
+      ],
+      "tone": "Wry, meta, affectionate, profane, and ultimately heartfelt"
+    },
+    "positioning_hook": "A broke comic-shop hustler, a burned-out director, and a Vietnamese pre-med writer try to mount a forbidden fan film using washed-up sci-fi legends, and accidentally expose everyone’s real-life damage.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean, sellable engine: fandom, showbiz desperation, and a behind-the-scenes race to make a movie with real actors and fake rights. The audience is specific rather than four-quadrant, but the emotional hook around creative obsession and found-family gives it real reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script announces its engine early with the pitch reel, the deposition framing, and Kevin’s obsession with turning fan culture into a real production. By the time the warehouse and convention sequences kick in, the story is easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Kevin, Jon, Tam, and Manny each have a distinct comic engine and a personal wound that keeps paying off across the script. The Kevin/Tam/Jon triangle, plus Manny’s devotion and sincerity, gives the feature a durable emotional core."
+      },
+      "creative_originality_and_boldness": {
+        "score": 9,
+        "reasoning": "This is a very specific, very lived-in satire of fan filmmaking, rights anxiety, and the economics of nostalgia, and it keeps finding new comic angles. The deposition frame, the convention ecosystem, the fake-prop hustle, and the North Dakota fan set all feel authored rather than assembled."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps escalating through concrete turns: the convention scouting, the script fight, the North Dakota trip, the conservatorship reveal, the Sienna/Brian power struggle, and the final production takeover. Even when it gets sprawling, the momentum stays tied to a clear goal: get the movie made."
+      },
+      "resonant_originality": {
+        "score": 9,
+        "reasoning": "It has that rare 'of course this exists' quality: a fan film about making a fan film, where the real drama is authorship, ownership, and who gets to define the story. The emotional reveal that the project is really about sacrifice, belonging, and validation lands as both surprising and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The collectibles shop, convention floor, assisted-living home, Big 5, and fan-film set all have distinct social rules and comic behavior. The world feels populated by people who know exactly how this subculture works, from eBay pricing to autograph alley to Kickstarter logic."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unmistakable: profane workplace comedy, fandom satire, and sincere emotional uplift all living in the same scene. It can pivot from a Rickroll gag to a father-daughter wound to a legal/creative argument without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the jokes, the script keeps revealing deeper material about family obligation, creative identity, immigrant pressure, aging, and the need to be seen. The Armando/Penelope material and Tam’s family storyline add emotional reserves that make the comedy feel earned."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Any pairing here generates material: Kevin and Manny, Jon and Sarah, Tam and Jon, Tam and Sienna, Kevin and Brian, Armando and Jack. The ensemble is not decorative; it is the engine that keeps the story generating new conflict and new alliances."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple lead roles with specific age ranges and ethnic identity requirements",
+          "One Vietnamese-American lead and family members with Vietnamese dialogue",
+          "Several older actor roles for sci-fi franchise alumni",
+          "One child role and one pre-teen role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with a meaningful exterior component",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Comic shop/warehouse build",
+          "Convention center and dealer hall",
+          "Assisted-living facility",
+          "North Dakota fan-film set built inside an abandoned big-box store",
+          "Suburban homes, bar/restaurant, Big 5-style retail, airport, church, and hotel rooms"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Stylized space-opera inserts, ship interiors, laser effects, hologram-style imagery, and compositing for fan-film footage and bridge scenes.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical sci-fi props, costumes, makeup scar/plate effects, fire for the Nazi/confederate burn, and prop breakage.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Space Fleet franchise material is central to the premise and repeatedly referenced as the story world."
+        },
+        {
+          "type": "brand",
+          "detail": "Big 5 Sporting Goods, Starbucks, Uber, Target, Walmart, Chick-fil-A, Applebee’s, United, and other brands are named on the page."
+        },
+        {
+          "type": "named_music",
+          "detail": "Rick Astley’s 'Never Gonna Give You Up' is used in a plot gag."
+        },
+        {
+          "type": "real_person",
+          "detail": "Catherine Bach, Orson Welles, Anne Francis, Marlon Brando, Britney Spears, Donald Rumsfeld, and other real people are referenced by name."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable comedy feature with festival potential",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-original fit; the hook is the making-of story and the ensemble’s escalating production chaos."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained, but the North Dakota fan set, convention material, sci-fi inserts, and multiple company moves create a mid-level production footprint."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The script depends on several specific lead performances, older franchise actors, a Vietnamese-American lead, child casting, and strong chemistry across the ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "There are many distinct contemporary locations, but most are practical interiors and exteriors rather than large-scale builds or travel-heavy set pieces."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes profanity, sexual pressure, racism, Nazi imagery, and emotionally charged family material, but it stays in a playable adult-comedy lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The premise is built around a fictionalized franchise, named real-world brands, and multiple real-person references, with the franchise IP itself driving the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "This gives a buyer a clean, high-concept comedy engine: a fan-film hustle that becomes a story about authorship, ego, and who gets to own a beloved universe. It’s the kind of hook that can attract streamer buyers, indie financiers, and genre-savvy producers who want something specific enough to market and broad enough to travel.",
+          "evidence": "The opening pitch reel, the deposition framing, and Kevin’s obsession with making a 'real' Space Fleet film using real actors.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble is built for chemistry.",
+          "what_it_means": "Each lead has a distinct comic function and emotional need, which creates multiple packaging paths and makes the project feel actor-friendly. Ensemble-driven buyers and reps will see a project where four strong performances can carry the movie, not just one star turn.",
+          "evidence": "Kevin’s hustle, Jon’s restraint, Manny’s devotion, and Tam’s intelligence and ambition all drive separate scenes and conflicts.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It turns fandom into a real-world workplace story.",
+          "what_it_means": "That gives the movie a fresh commercial lane: it’s not just about geeks loving a property, it’s about labor, hierarchy, and creative control inside a fandom economy. Producers looking for a comedy with a specific subculture and a built-in audience will recognize the value immediately.",
+          "evidence": "The warehouse, convention floor, autograph alley, Kickstarter talk, prop sales, and set logistics all function as story engines.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tam is a breakout lead role.",
+          "what_it_means": "She’s the kind of part that can launch a new face: smart, funny, emotionally guarded, and eventually the author of the story’s moral center. Casting directors and rising actresses looking for a role with intelligence, bite, and heart will respond fast.",
+          "evidence": "Tam’s script notes, her family pressure, her convention conversations, and her final authorship of the story’s dramatic argument.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jon gives the film emotional credibility.",
+          "what_it_means": "He’s the grounded adult who makes the comedy feel human, which broadens the project beyond pure parody and gives it a prestige-comedy lane. Mid-career dramatic actors who can play decency, regret, and quiet longing will see a showcase here.",
+          "evidence": "His marriage, his Big 5 job, his old Hollywood disappointment, and his eventual recommitment to directing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a real satirical target.",
+          "what_it_means": "It’s not just making jokes about nerd culture; it’s skewering entitlement, nostalgia monetization, and the way creative communities can become little power kingdoms. That gives the movie a sharper edge for buyers who want comedy with bite and not just cosplay.",
+          "evidence": "Kevin’s salesmanship, Brian’s authoritarian fandom, the fake props, the Kickstarter logic, and the rights anxiety.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional turn lands hard.",
+          "what_it_means": "The story ultimately pays off as a movie about sacrifice, belonging, and the people who show up for your work, which gives it a stronger aftertaste than a standard industry comedy. Festival audiences and word-of-mouth buyers tend to respond when a comedy closes on genuine feeling.",
+          "evidence": "Tam’s final realization about what you give up for a perfect world, and Jon’s baseball/family speech about who loves you when you make something imperfect.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharply observed, highly specific comedy about fandom, creative ownership, and the ridiculous lengths people go to make a dream feel real. Beneath the jokes, it has a real emotional spine: a young writer claiming her voice, a failed director reclaiming his, and a hustler learning that love of the thing is not the same as control of it."
+    },
+    "lead_characters": [
+      {
+        "name": "Kevin Marshall",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · white",
+        "hook": "Kevin is a fast-talking collector-hustler with a salesman’s grin and a bottomless need to prove he’s not the family screwup. He’s funny, manipulative, needy, and weirdly sincere all at once, which makes him both infuriating and impossible to ignore; he wants money, status, and the right to be taken seriously, and he’ll weaponize fandom to get there.",
+        "why_actor_wants_this": "This is the showcase territory of Jonah Hill in *The Wolf of Wall Street* — a comic engine who can pivot from bluster to wounded sincerity in the same breath. Character actors who can play speed, vanity, and vulnerability without losing the audience will chase this, and comedy buyers will see a scene-stealing lead with franchise-level energy."
+      },
+      {
+        "name": "Jon Cooper",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · white",
+        "hook": "Jon is the quiet center of the movie: a former Hollywood hopeful now living a modest life, still carrying the ache of the career he didn’t get to have. He’s a husband, father, and reluctant craftsman whose decency is constantly being tested by Kevin’s chaos and Tam’s ambition, and whose real power is that he actually knows how stories work.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in *Birdman* or Paul Giamatti in *Sideways* — a man whose restraint and self-knowledge become the emotional engine of the film. Mid-career actors who can play intelligence, regret, and dry humor will want it because it lets them carry the movie without ever shouting for attention."
+      },
+      {
+        "name": "Tam Nguyen",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s · Vietnamese-American",
+        "hook": "Tam is a whip-smart, overqualified pre-med student who slowly realizes she’s been living someone else’s life and writing her way toward her own. She’s funny, observant, guarded, and deeply hungry for a future that belongs to her, and the script lets her evolve from side-eyeing intern to the actual author of the story’s meaning.",
+        "why_actor_wants_this": "This is the showcase territory of Greta Gerwig in *Frances Ha* or Awkwafina in *The Farewell* — a role where wit, self-protection, and emotional awakening all live in the same performance. Rising actresses and prestige-comedy leads will chase it because it offers both a breakout voice and a real identity arc."
+      },
+      {
+        "name": "Manny Bell",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Black",
+        "hook": "Manny is the pure-hearted fan who treats Space Fleet like a religion and every prop like a relic. He’s comic, earnest, socially awkward, and unexpectedly profound, with a childlike devotion that makes him the emotional conscience of the whole enterprise.",
+        "why_actor_wants_this": "This is the showcase territory of John C. Reilly in *Walk Hard* or Richard Jenkins in *The Visitor* — a role that can play broad comedy and genuine pathos without changing costumes. Character actors who can make sincerity funny, and funny sincerity moving, will see a feast here."
+      },
+      {
+        "name": "Armando Garcia",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · Latino",
+        "hook": "Armando is the aging genre icon who knows exactly what he means to fans and exactly how much of his life has been spent in the machinery of performance. He carries dignity, fatigue, and a sly sense of humor, and every time he appears the movie gets a little more adult.",
+        "why_actor_wants_this": "This is the showcase territory of Albert Brooks in *Drive* or Burt Reynolds in *Boogie Nights* — a veteran presence whose every line carries history, vanity, and regret. Older name actors with genre cachet will want it because it lets them play legend, labor, and mortality in one part."
+      },
+      {
+        "name": "Brian Schmidt",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · white",
+        "hook": "Brian is the fan-film captain who thinks authority, taste, and masculinity are all the same thing. He’s controlling, funny, self-mythologizing, and increasingly unhinged, but he’s also a guy who genuinely believes he’s building something important.",
+        "why_actor_wants_this": "This is the showcase territory of Steve Coogan in *The Trip* or Will Ferrell in *The Other Guys* when the ego is the joke — a role that lets an actor play delusion as leadership. Comic actors with a taste for menace and vanity will chase it because Brian is both ridiculous and dangerous."
+      },
+      {
+        "name": "Sienna Bailey",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens/early 20s · white",
+        "hook": "Sienna is a pageant-trained, eager-to-please young actress who wants to be taken seriously but keeps getting used as a symbol by everyone around her. She’s sweet, pliable, and more perceptive than people assume, which makes her both vulnerable and unexpectedly pivotal.",
+        "why_actor_wants_this": "This is the showcase territory of Jennifer Lawrence in *Winter’s Bone* before the industry knew what to do with her — a young woman whose innocence and steel can coexist in the same frame. Emerging actresses who want a part that starts as eye candy and becomes a real emotional player will want it."
+      },
+      {
+        "name": "Christine Schmidt",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · white",
+        "hook": "Christine is the wife who sees the whole mess clearly and has learned how to survive inside it. She’s funny, sharp, and quietly dangerous, with the kind of social intelligence that makes her more formidable than the men in the room realize.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Dern in *Big Little Lies* or Patricia Clarkson in *Sharp Objects* — a woman who can smile while the room tilts under her. Strong supporting actresses will chase it because she has authority, irony, and a hidden blade."
+      },
+      {
+        "name": "JoJo",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · white",
+        "hook": "JoJo is the editor with the purple hair, the sharp eye, and the patience of someone who has spent years cleaning up other people’s messes. She’s cool, competent, and not easily impressed, which makes her one of the few people who can stand up to Kevin and Brian on equal footing.",
+        "why_actor_wants_this": "This is the showcase territory of Jena Malone in *The Neon Demon* or Aubrey Plaza in *Ingrid Goes West* — a sharp, modern supporting role with attitude and authority. Indie actresses with edge and timing will want it because she feels like the smartest person in the room without ever announcing it."
+      },
+      {
+        "name": "Gerry Shapiro",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · white",
+        "hook": "Gerry is the soft-spoken sci-fi writer whose need for validation is almost as important as the work itself. He’s funny, wounded, and unexpectedly moving, with a melancholy that gives the whole project a literary soul.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in *The Visitor* or Alan Arkin in *Little Miss Sunshine* — a late-life role where quietness becomes the performance. Veteran character actors will want it because it lets them play vanity, hurt, and grace without ever raising the volume."
+      },
+      {
+        "name": "Penelope Stein",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · white",
+        "hook": "Penelope is the exhausted daughter trying to keep her father alive, protected, and out of the hands of people who want to use him. She’s practical, defensive, and emotionally cornered, which gives her scenes a real adult pressure.",
+        "why_actor_wants_this": "This is the showcase territory of Carrie Coon in *The Leftovers* — a woman carrying responsibility, grief, and anger in the same frame. Strong dramatic actresses will respond to the authority and heartbreak baked into the role."
+      },
+      {
+        "name": "Jack Garcia",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Latino",
+        "hook": "Jack is Armando’s damaged, charismatic son: funny, seductive, self-destructive, and always one step from turning charm into manipulation. He’s the kind of guy who can make a room lean in and then make everyone wish they hadn’t.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in *Traffic* or Adam Driver in *Girls* — a volatile, magnetic role where danger and charisma are inseparable. Actors with edge and sex appeal will want it because Jack can be charming, repellent, and wounded in the same scene."
+      },
+      {
+        "name": "Tyrell",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · Black",
+        "hook": "Tyrell is the exploited geek laborer who’s trying to do his job while everyone else treats the set like a playground. He’s small but useful, and his presence gives the production world a lived-in, working-class texture.",
+        "why_actor_wants_this": "This is the showcase territory of Lakeith Stanfield in a small but memorable role — a character who can register the whole system in a few looks. Young actors with comic timing will want it because it’s a clean, scene-efficient part with personality."
+      },
+      {
+        "name": "Gordon",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · white",
+        "hook": "Gordon is the meek director who keeps trying to keep the machine moving while stronger personalities hijack the frame. He’s not the center of the movie, but he gives the production world a believable middle layer of competence and fatigue.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Rudd’s straight-man energy in a workplace comedy — a role that rewards timing, patience, and reaction. Character actors who can play exasperated professionalism will fit it well."
+      },
+      {
+        "name": "Marlon Stein",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · white",
+        "hook": "Marlon is the aging actor whose body and mind are betraying him even as his appetite for performance remains intact. He’s funny, tragic, and weirdly heroic, and the script gives him a late-life burst of theatricality that lands hard.",
+        "why_actor_wants_this": "This is the showcase territory of Christopher Plummer in *Beginners* or Mickey Rourke in *The Wrestler* — a role where the body itself becomes part of the drama. Veteran actors with gravitas will chase it because it’s both comic and devastating."
+      },
+      {
+        "name": "Miriam Shapiro",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s-70s · white",
+        "hook": "Miriam is Gerry’s wife and the keeper of the practical truth around him. She’s sharp, protective, and not interested in anyone’s fantasy version of the man she lives with.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in a few lines — a spouse role with authority and no patience for nonsense. Strong character actresses will want it because she cuts through the sentimentality."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a comedy about creative people without flattening them into jokes.",
+        "fit_profile": "Second- or third-feature directors with festival-comedy or indie-drama experience, especially those who like ensemble work, workplace ecosystems, and dialogue-driven scenes. The material rewards directors who can balance satire with sincerity, keep a large comic ensemble legible, and make the production process itself feel like story rather than background.",
+        "detail": "The movie gives a director a chance to choreograph a big ensemble while still landing intimate emotional turns, especially in the Kevin/Jon/Tam triangle and the final production takeover. It will attract directors who like performance-first material, subcultural specificity, and the challenge of making a contained, talky movie feel cinematic."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "Streaming comedy / festival indie / premium-cable adjacent",
+        "detail": "It can be packaged around a strong ensemble and a sharp director rather than a single giant star, though the Armando and Kevin roles would benefit from recognizable faces. The fandom/industry satire lane is exportable, and the contained warehouse/convention/set footprint makes it feasible for a buyer looking for a mid-budget comedy with a distinct hook."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The script is carrying a lot of locations.",
+        "detail": "The story moves through the warehouse, convention center, assisted-living home, multiple houses, bars, hotels, Big 5, church, airport, and the North Dakota set. A next pass could consider whether a few of those beats can be folded into the warehouse/convention spine without losing the social texture.",
+        "is_primary_lever": true,
+        "source": "production"
+      },
+      {
+        "area": "The rights and references are doing heavy lifting.",
+        "detail": "The script leans on a fictional franchise, real brands, named songs, and a long list of real people. For packaging, the cleanest path is to keep the fictional franchise concept front and center and be prepared to clear or replace the named-world references that are not essential to the joke.",
+        "source": "production"
+      },
+      {
+        "area": "Tam’s family story is the deepest emotional lever.",
+        "detail": "The scenes with her mother, father, and grandfather give the script its most personal charge, and the version of the movie where that pressure is foregrounded a little earlier would make her final choice feel even more inevitable. The material is already there; the next pass could keep returning to the cost of leaving home so the climax lands with maximum force.",
+        "source": "script"
+      },
+      {
+        "area": "Jon’s marriage could carry more on-page pressure.",
+        "detail": "The Jon/Sarah scenes are warm and specific, and they already define his emotional stakes. A next pass could keep one or two more moments where the career temptation visibly collides with the family life he’s trying to protect, so his final choice feels even more earned.",
+        "source": "script"
+      },
+      {
+        "area": "Kevin’s manipulations are strongest when they cost him something.",
+        "detail": "The movie is at its sharpest when Kevin’s hustle collides with real human consequence, like the Armando and Sienna material. The version where one more of his schemes visibly backfires before the final reconciliation would sharpen the arc without changing the character.",
+        "source": "script"
+      },
+      {
+        "area": "The fan-film set pieces are the biggest production lift.",
+        "detail": "The North Dakota bridge, the ship interiors, the makeup, and the practical sci-fi dressing are the main spend drivers. If the production ever needed simplification, the story would still hold with fewer distinct set modules as long as the bridge, the office, and one hero corridor remain intact.",
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 80.7,
+  "tier": "Optionable",
+  "inputTokens": 115033,
+  "outputTokens": 6139,
+  "cost": 0.11390025,
+  "declaredFormat": "Feature film"
+}

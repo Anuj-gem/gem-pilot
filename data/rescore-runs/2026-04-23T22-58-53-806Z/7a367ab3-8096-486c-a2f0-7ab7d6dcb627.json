@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-23T23:03:15.572Z",
+  "submission_id": "7a367ab3-8096-486c-a2f0-7ab7d6dcb627",
+  "eval_id": "1031ec72-8526-4901-82cd-26e2160ceedd",
+  "title": "the legend of ninja clan",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Kai",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · athletic fighter"
+    },
+    {
+      "name": "Akira",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · mentor/fighter"
+    },
+    {
+      "name": "Kage",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · antagonist with strong physical presence"
+    },
+    {
+      "name": "Servant",
+      "role_type": "Supporting",
+      "demographics": "Any gender · adult"
+    }
+  ],
+  "positioning_hook": "A scarred ninja warrior hunts the shadowy force that destroyed his village, but every battle forces him to become the weapon he swore to bury.",
+  "cost_usd": 0.0303885,
+  "input_tokens": 21852,
+  "output_tokens": 3111,
+  "status": "wrote:leads_ok"
+}

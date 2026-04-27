@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-04-23T23:26:49.158Z",
+  "submission_id": "9d59f0bd-29cb-4872-b1c0-227f8ac1a492",
+  "eval_id": "a66a8452-f373-4f53-9796-f91b8c14421b",
+  "title": "WHITE HORSE",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 21,
+  "lead_characters_summary": [
+    {
+      "name": "Cyrus Aarons",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · U.S. astronaut / former fighter pilot"
+    },
+    {
+      "name": "Oleg Grosni / Major William Easter",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Russian/Soviet military officer posing as American astronaut"
+    },
+    {
+      "name": "Hugh Vellum",
+      "role_type": "Lead",
+      "demographics": "Male · 70s · senior White House advisor"
+    },
+    {
+      "name": "Chet Haynes",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · DARPA director / intelligence veteran"
+    },
+    {
+      "name": "Betty Aarons",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · seamstress / Cyrus Aarons' sister"
+    },
+    {
+      "name": "Susan Harper",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · KGB operative embedded in Washington"
+    },
+    {
+      "name": "Maxwell Libas",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · NASA Astronaut Office director"
+    },
+    {
+      "name": "Bernard Calloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · President of the United States"
+    },
+    {
+      "name": "Hugh Vellum's Secretary",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · White House secretary"
+    },
+    {
+      "name": "Henry McMasters",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · CIA Deputy Director"
+    },
+    {
+      "name": "Douglas Quintel",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · astronaut / pilot"
+    },
+    {
+      "name": "Neil Merek",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · shuttle commander"
+    },
+    {
+      "name": "Paul Cole",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Deputy Assistant Secretary of Defense for Space Policy"
+    },
+    {
+      "name": "Raymond Briggs",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · National Security Council staffer"
+    },
+    {
+      "name": "George Harwick",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · CIA-linked government official"
+    },
+    {
+      "name": "Mrs. Susan Harper",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · KGB courier / operative"
+    },
+    {
+      "name": "Benjamin Powell",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · weather specialist / family man"
+    },
+    {
+      "name": "Henkloe",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Air Force colonel"
+    },
+    {
+      "name": "Cratcher",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · CIA field agent"
+    },
+    {
+      "name": "Grosni's KGB Supervisor",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · KGB senior officer"
+    },
+    {
+      "name": "Betty's Children",
+      "role_type": "Supporting",
+      "demographics": "Boy · 8 · Girl · 9"
+    }
+  ],
+  "positioning_hook": "A hotshot NASA astronaut is pulled into a covert Cold War cover-up when a classified shuttle mission, a Soviet spy, and a weather weapon collide over the Atlantic.",
+  "cost_usd": 0.06081225,
+  "input_tokens": 42227,
+  "output_tokens": 6476,
+  "status": "wrote:leads_ok"
+}

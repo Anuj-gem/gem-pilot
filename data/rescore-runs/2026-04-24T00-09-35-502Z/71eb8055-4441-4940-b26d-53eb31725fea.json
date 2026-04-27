@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-04-24T00:12:16.374Z",
+  "submission_id": "71eb8055-4441-4940-b26d-53eb31725fea",
+  "eval_id": "dea8b920-2354-4436-887d-51a25ae3bff4",
+  "title": "saved by his grace screenplay converted1",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 20,
+  "lead_characters_summary": [
+    {
+      "name": "Reverend Michael Xhosa",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Zimbabwean/Nigerian heritage · strong Zimbabwean accent"
+    },
+    {
+      "name": "Dan Xhosa",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s · African"
+    },
+    {
+      "name": "Felicia Abia",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · African"
+    },
+    {
+      "name": "Pastor Bode Cole",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · African"
+    },
+    {
+      "name": "Deaconess Damilola Cole",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-50s · African"
+    },
+    {
+      "name": "Craig Alli",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s · African"
+    },
+    {
+      "name": "Mark Cole",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s to 30s · African"
+    },
+    {
+      "name": "Pastor Henry Alli",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · African"
+    },
+    {
+      "name": "Brother John",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · African"
+    },
+    {
+      "name": "Brother David",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · African"
+    },
+    {
+      "name": "Brother Matthew",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · African"
+    },
+    {
+      "name": "Brother Mark Thomson",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · African"
+    },
+    {
+      "name": "Sister Daisy",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · African"
+    },
+    {
+      "name": "Randy Wesley",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · Irish"
+    },
+    {
+      "name": "Mrs. Sophie Wyse",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-60s · American"
+    },
+    {
+      "name": "Elder Mark",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · African"
+    },
+    {
+      "name": "Dr. Jake Peters",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · African"
+    },
+    {
+      "name": "Pastor Micah James",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · African"
+    },
+    {
+      "name": "Pastor Graham G. Campbell",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · African"
+    },
+    {
+      "name": "Felicia",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · African"
+    }
+  ],
+  "positioning_hook": "A Zimbabwean ex-con turned pastor builds a transnational church empire, then must save his prodigal son from scandal, shame, and the collapse of their ministry.",
+  "cost_usd": 0.060903,
+  "input_tokens": 44532,
+  "output_tokens": 6112,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:18:16.213Z",
+  "submission_id": "bde8a7db-2e68-490f-b139-d9eb5062fa20",
+  "eval_id": "4be0bf2e-2598-4df3-af44-fecfa7fb0077",
+  "title": "Timmy Adventurous   Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Timmy Adventurous",
+      "role_type": "Lead",
+      "demographics": "Male · 10-12 · Caucasian"
+    },
+    {
+      "name": "Chris Jackson",
+      "role_type": "Lead",
+      "demographics": "Male · 10-12 · African American"
+    },
+    {
+      "name": "Charles \"Chubbles\" Thompson",
+      "role_type": "Lead",
+      "demographics": "Male · 10-12 · Asian Pacific Islander"
+    },
+    {
+      "name": "Mike Peterson",
+      "role_type": "Lead",
+      "demographics": "Male · 9-11 · Caucasian"
+    },
+    {
+      "name": "Isabela Evans",
+      "role_type": "Lead",
+      "demographics": "Female · 10-12 · Caucasian"
+    },
+    {
+      "name": "Jessie Daniels",
+      "role_type": "Lead",
+      "demographics": "Female · 12-14 · Asian Pacific Islander"
+    },
+    {
+      "name": "Ally Stevens",
+      "role_type": "Lead",
+      "demographics": "Female · 8-10 · Hispanic"
+    },
+    {
+      "name": "Mama Wanda",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · African American"
+    }
+  ],
+  "positioning_hook": "A sky-roaming boy with magical powers lands in a treehouse full of foster kids, and their first night together turns into a globe-hopping adventure.",
+  "cost_usd": 0.03526725,
+  "input_tokens": 19879,
+  "output_tokens": 4524,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-04-23T23:11:53.182Z",
+  "submission_id": "e35d2bee-a383-4110-8f42-6338b1a13a91",
+  "eval_id": "0c5ed2f0-aa70-4847-82e4-8d098ade0c51",
+  "title": "Gang Warfare",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 24,
+  "lead_characters_summary": [
+    {
+      "name": "MACHET-T / Curtis Townsend",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "SPARK-P",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · Anglo"
+    },
+    {
+      "name": "COLD-C",
+      "role_type": "Lead",
+      "demographics": "Male · late teens-20s · Black"
+    },
+    {
+      "name": "RASHID AGA ROAAD",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Afghan"
+    },
+    {
+      "name": "ANDREA",
+      "role_type": "Supporting",
+      "demographics": "Female · child to early teen · Afghan"
+    },
+    {
+      "name": "SGT. SULLIVAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · White"
+    },
+    {
+      "name": "HAMID",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Afghan"
+    },
+    {
+      "name": "KENDRA",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Afghan"
+    },
+    {
+      "name": "BRANNIGAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · White"
+    },
+    {
+      "name": "STAFF GENERAL BAIN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · White"
+    },
+    {
+      "name": "PRESIDENT HOWARD WENDT",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · White"
+    },
+    {
+      "name": "COL. JOSEPH",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · White"
+    },
+    {
+      "name": "SAYID",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Afghan"
+    },
+    {
+      "name": "OWEN",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · White"
+    },
+    {
+      "name": "DAVIS",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · White"
+    },
+    {
+      "name": "RICO",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Hispanic"
+    },
+    {
+      "name": "LASLO",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Italian-American"
+    },
+    {
+      "name": "CHARLAY",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens-20s · Irish"
+    },
+    {
+      "name": "YING-K",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Asian"
+    },
+    {
+      "name": "COLD-C",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens-20s · Black"
+    },
+    {
+      "name": "DURANNI",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Afghan"
+    },
+    {
+      "name": "PASHTU",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Afghan"
+    },
+    {
+      "name": "SUNNI",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Afghan"
+    },
+    {
+      "name": "DARI",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Afghan"
+    }
+  ],
+  "positioning_hook": "A streetwise gang leader and six convicted killers are dropped into Afghanistan as expendable shock troops, then turn a covert death sentence into a rogue battlefield takeover.",
+  "cost_usd": 0.063501,
+  "input_tokens": 45296,
+  "output_tokens": 6562,
+  "status": "wrote:leads_ok"
+}

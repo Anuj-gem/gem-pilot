@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:14:58.004Z",
+  "submission_id": "5d12d406-128b-42c8-9eef-87a41bc59181",
+  "eval_id": "2822fc3e-7c5e-493d-ac86-6586e9717689",
+  "title": "Stalker",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Caroline Walker",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Alice Hewitt",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Shane Morris",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Damon Lewis",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Erik Ross",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Mark Sanders",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Thomas Moore",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Brooke Taylor",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Tanya Wilfred",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Dean Fraser",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Detective Darrius Mathews",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    }
+  ],
+  "positioning_hook": "A college student is terrorized by a secret admirer whose notes, gifts, and campus stalking spiral into murder — until her closest friends expose the killer hiding in plain sight.",
+  "cost_usd": 0.05175,
+  "input_tokens": 40296,
+  "output_tokens": 4784,
+  "status": "wrote:leads_ok"
+}

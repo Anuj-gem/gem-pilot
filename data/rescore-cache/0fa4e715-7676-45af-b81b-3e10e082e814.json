@@ -1,0 +1,339 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action thriller",
+      "genre_tags": [
+        "Crime",
+        "Romantic drama"
+      ],
+      "tone": "Heightened, operatic, violent, and melodramatic with pulpy noir-romance energy"
+    },
+    "positioning_hook": "A legendary female assassin and the mercenary who recognizes the girl beneath her are forced into a war with her former handlers, a corrupt crime boss, and their own history.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The core promise is clear and exportable: a masked assassin, a mercenary with a conscience, and a citywide showdown. The audience is obvious for action buyers, though the romance-heavy detours and sprawling backstory narrow the immediate four-quadrant pull."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early with Mia/Yuan Fen, Alan, and the Palermo assignment, and the roof fight gives the premise a clean ignition point. The script then expands into a larger web of flashbacks and side missions, but the central engine stays legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Alan has a playable contradiction as a violent man trying to wound instead of kill, and Mia’s arc from weapon to self-named person is strong material. Irene, Angus, and Long all carry distinct emotional lanes, though the script often gives them function inside Alan and Mia’s orbit."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The assassin-romance frame is familiar, but the script leans into operatic sincerity, multilingual identity, and a very specific emotional code around fate, names, and chosen family. The boldness comes from how fully it commits to that heightened register."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The opening run is propulsive, with the rooftop ambush and stairwell escape doing strong action-story work. Momentum softens in the long flashback passages and repeated confrontations, though the final siege restores urgency."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a mute assassin reclaiming her name while being pulled toward a mercenary family has a fresh emotional signature. The script’s mix of fate mythology, crime-world romance, and martial-arts melodrama feels specific rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The pub safehouse, police-crime ecosystem, mercenary past, and international underworld references create a lived-in criminal network. The world is story-generating, especially around the Redemption bar and the Santa Cecilia history, even when the geography jumps widely."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very identifiable tone: romanticized violence, banter under fire, and emotional declarations inside gunfights. The script knows exactly how to move from bruising action to tender confession without trying to hide the pulp."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the action, the script is really about identity theft, trauma inheritance, and whether love can rehumanize someone trained to erase herself. The repeated name changes, family imagery, and flashback structure suggest more emotional layers than the surface plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Alan/Mia, Alan/Irene, Angus/Sami, and the Alan/John brotherhood all generate usable tension, and the ensemble can play off one another in multiple combinations. The script’s best scenes come when the team is in the room together, arguing, teasing, or protecting each other."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Asian female lead in her 20s",
+          "Latina female supporting lead in her 30s",
+          "Cuban-American male supporting lead in his 40s",
+          "Asian male antagonist in his 50s",
+          "Child performer for Soul and younger Mia/Paula flashbacks",
+          "Multiple martial-arts-capable performers"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary with extensive flashbacks",
+        "notable_requirements": [
+          "Airport runway and airport interiors",
+          "High-rise rooftop and office tower interiors",
+          "Pub/bar safehouse as recurring hub",
+          "Apartment building siege locations",
+          "Factory/warehouse action set piece",
+          "Hospital/ambulance interiors",
+          "International flashback settings including Shanghai, Hong Kong, South America, and Myanmar jungle"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Helicopter work, explosions, gunfire impacts, vehicle flips, fireball crash, and some crowd/action enhancement",
+        "stunts_level": "heavy",
+        "sfx_needs": "Gunfire, grenade blasts, vehicle collisions, glass breakage, fire effects, and blood effects",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "\"Brazil,\" \"Looks That Kill,\" \"She’s Gone,\" \"Allumer le Feu,\" \"Panic Attack,\" \"Crimson and Clover,\" \"When Estoy Contigo,\" \"Love Don’t Bother Me,\" and other named songs are plot and tone markers."
+        },
+        {
+          "type": "brand",
+          "detail": "Sun Wukong toy, business card branding for The Redemption, and visible real-world music references may require clearance depending on final use."
+        },
+        {
+          "type": "real_person",
+          "detail": "No clearly named real people are central to the plot."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming action thriller or mid-budget theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a festival-to-platform or genre-theatrical title with action-forward marketing"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is contemporary and often contained, but the rooftop gunfight, helicopter assault, factory siege, vehicle stunts, and multiple flashback locations push it above lean indie scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead roles are clear, but the project benefits from strong martial-arts performers and specific age/ethnicity casting across several principal roles."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script spans airport, pub, rooftops, apartments, factory, hospital, and multiple international flashback settings across several countries."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent gun violence, close-quarters killings, bloodshed, and mature romantic material narrow the platform lane."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The named songs and repeated music cues create a meaningful clearance layer, though there is no major real-person or franchise dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Mia is a true showcase role.",
+          "what_it_means": "The script gives an actress a rare action lead that can play lethal control, childlike vulnerability, silence, and emotional rebirth in one package. That is the kind of role that attracts performers who want a physical star-making part with festival credibility and genre heat.",
+          "evidence": "Mia’s rooftop fight, the ambulance escape, the childhood flashbacks, and the moment she finally speaks her own name all build a full transformation arc.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Alan has a clean commercial contradiction.",
+          "what_it_means": "He is a violent man trying to become a protector, which gives the film a male lead who can carry action while still playing tenderness and regret. That combination is attractive to actors who want a bruised hero role with romance, banter, and physicality.",
+          "evidence": "Alan repeatedly chooses to wound instead of kill, rescues Mia on the roof, and keeps trying to build a safer life out of the Redemption bar.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Redemption bar is a built-in franchise hub.",
+          "what_it_means": "The pub/safehouse functions as a recurring home base, which gives the project a recognizable center and a place for ensemble chemistry to keep paying off. Buyers and producers can immediately see how this world supports repeatable story energy without needing a huge footprint.",
+          "evidence": "The bar becomes the team’s meeting point, safehouse, armory, and emotional reset space across the script.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has strong pairings.",
+          "what_it_means": "Alan/Irene, Angus/Sami, and Alan/Mia each carry their own emotional voltage, so the movie is not dependent on one relationship alone. That makes the script more castable and gives the marketing team multiple hooks inside the same title.",
+          "evidence": "The Alan-Irene banter, Angus and Sami’s history, and Mia’s gradual trust in Alan all create distinct relationship lanes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action is character-driven, not decorative.",
+          "what_it_means": "The fights are doing story work: every brawl reveals loyalty, trauma, or a shift in power. That helps the movie feel more premium than a generic shoot-’em-up and gives a director room to stage action with emotional punctuation.",
+          "evidence": "The rooftop grapple, the stairwell descent, the pub siege, and the final rooftop confrontation all change the relationships as they escalate.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The identity theme is commercially legible.",
+          "what_it_means": "The script’s central idea — a weaponized identity being reclaimed through love and chosen family — gives the movie a clear emotional brand beyond the gunplay. That kind of thematic spine helps a buyer position the film as both action and romance.",
+          "evidence": "Mia’s shift from Yuan Fen to Mia, plus the repeated emphasis on fate, names, and family, is the movie’s emotional engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The music cues give it a stylized signature.",
+          "what_it_means": "The named songs and needle-drop energy create a very marketable tonal identity, especially for trailers and action-montage marketing. That appeals to buyers who want a film that feels curated rather than anonymous.",
+          "evidence": "The script explicitly uses songs like “Looks That Kill,” “Allumer le Feu,” and “Love Don’t Bother Me” as scene punctuation.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a pulpy, emotionally committed action feature with a real star-making female lead, a bruised romantic hero, and an ensemble that can actually carry a world. The Redemption bar, the fate-driven identity arc, and the heavy-action set pieces give producers a clear commercial lane: stylish, violent, and built around performances audiences can root for."
+    },
+    "lead_characters": [
+      {
+        "name": "Mia / Yuan Fen",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Asian",
+        "hook": "A silent, hyper-controlled assassin who has been turned into a myth by the underworld and a weapon by her handlers. Under the black glasses and blank stare is a girl whose identity has been buried so deeply that even her name has to be fought for.",
+        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Atomic Blonde and Rooney Mara in The Girl with the Dragon Tattoo — a physically commanding lead who can carry menace, vulnerability, and self-reinvention in the same frame. An actress gets the rare chance to do elite action work while also playing a full emotional awakening, including the first spoken words that redefine the character."
+      },
+      {
+        "name": "Alan",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "A charming bar owner and underground mercenary who talks like a flirt and fights like a man trying to outrun his own past. He is the story’s moral hinge: a killer who has decided he wants to save people instead of erase them.",
+        "why_actor_wants_this": "This is the showcase lane of Matthew McConaughey in True Detective and Keanu Reeves in John Wick — a damaged, physically capable lead whose restraint is as important as his violence. It gives an actor a role that can play cool, wounded, romantic, and lethal without ever losing the audience’s sympathy."
+      },
+      {
+        "name": "Irene Lombard / Estevez",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "A sharp police chief with a flirtatious edge, a marriage, and a conscience that keeps getting pulled into Alan’s orbit. She is both authority figure and emotional wildcard, which makes her feel like the one person in the room who can actually move the chessboard.",
+        "why_actor_wants_this": "This is the kind of part that gave Jodie Comer in Killing Eve and Regina King in Watchmen room to be formidable, funny, and emotionally complicated at once. It offers an actress a power role with romantic tension, procedural authority, and the kind of scene-stealing presence that can anchor a studio thriller."
+      },
+      {
+        "name": "Angus",
+        "role_type": "Lead",
+        "demographics": "Male · 40s",
+        "hook": "A scarred Cuban-American bartender with one eye, a tattooed heartbreak, and the dry wit of a man who has survived too many wars to believe in clean endings. He is the team’s bruised conscience and the movie’s most lived-in source of gallows humor.",
+        "why_actor_wants_this": "This is the showcase space of Javier Bardem in No Country for Old Men and Walton Goggins in Justified — a dangerous man whose stillness and humor carry as much weight as his violence. Character actors will chase this because it gives them a memorable, textured role with emotional history built into the body."
+      },
+      {
+        "name": "Long",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Asian",
+        "hook": "A lethal patriarch who treats love, loyalty, and ownership as the same thing. He is calm, elegant, and terrifying, which makes him feel less like a gangster than a force of nature with a personal grudge.",
+        "why_actor_wants_this": "This is the kind of villain territory that gave Mads Mikkelsen in Hannibal and Michael Shannon in Boardwalk Empire their best material — controlled menace with emotional intelligence underneath. A veteran actor gets a prestige antagonist role that can play authority, seduction, and brutality without ever raising his voice."
+      },
+      {
+        "name": "John",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Alan’s underground business partner and the guy who can turn a joke into a warning in the same breath. He is polished, pragmatic, and always one step away from being the adult in the room.",
+        "why_actor_wants_this": "This is the kind of part that works for a character actor in the Brian Tyree Henry / Shea Whigham lane — a scene partner who can deliver humor, loyalty, and tactical intelligence. The role gives an actor a memorable supporting presence in a movie that keeps needing someone to ground the chaos."
+      },
+      {
+        "name": "Sean Palermo",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "A polished crime boss who weaponizes optics, leverage, and public respectability as much as guns. He is the kind of antagonist who understands that power is mostly paperwork until it becomes blood.",
+        "why_actor_wants_this": "This is the showcase territory of a performer like Ben Mendelsohn in Animal Kingdom — a civilized predator whose menace comes from control rather than volume. It gives an actor a sleek, modern-crime villain with enough authority to dominate every room he enters."
+      },
+      {
+        "name": "Sami",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s",
+        "hook": "A hard-edged mercenary leader with ideological fire and a personal vendetta that never cooled. She carries herself like a revolutionary, but the script keeps revealing how much of that posture is built on heartbreak.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the same combustible material as Michelle Rodriguez in Widows or Eva Green in Penny Dreadful — physical command plus emotional damage. It is a fierce supporting part with action, history, and a real emotional payoff."
+      },
+      {
+        "name": "Kelly Duran",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Long’s second-in-command, all military discipline and cold efficiency until the fight turns personal. She reads like someone who has chosen the job over the soul and is good enough at it to be dangerous.",
+        "why_actor_wants_this": "This is strong supporting-action territory for an actress who wants a hard-edged military role with real screen presence, like the kind of part that elevated Jessica Henwick in action ensemble work. It gives a performer a clean physical lane and a memorable antagonist slot inside the siege."
+      },
+      {
+        "name": "Victor Estevez",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s",
+        "hook": "Irene’s husband, a calm judicial presence who understands exactly how much of her life belongs to the job. He is not flashy, but he gives the story a domestic counterweight and a quiet emotional baseline.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that works for a steady dramatic actor in the Mark Ruffalo / Michael Stuhlbarg lane — present, intelligent, and emotionally legible without needing big speeches. It gives the film a real-world anchor outside the gunfire."
+      },
+      {
+        "name": "Matt Fox",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "A cocky MMA-built mercenary who talks like he’s already won the fight before it starts. He is the kind of antagonist who exists to test the hero’s patience and then get humbled in public.",
+        "why_actor_wants_this": "This is a clean physical-supporting role for a younger action actor or stunt performer who wants a bruiser part with attitude. It gives the performer a showcase fight and a memorable entrance without needing a huge emotional backstory."
+      },
+      {
+        "name": "Carol",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "A desperate mother whose fear is immediate and human, not stylized. She brings the movie back to ordinary stakes, which makes the larger violence feel personal again.",
+        "why_actor_wants_this": "This is the kind of role that gives a dramatic actress a contained but affecting emotional beat, similar to the civilian pressure-cooker parts in crime thrillers like Prisoners. It offers a clear, audience-facing emotional function and a strong scene partner in Alan."
+      },
+      {
+        "name": "Soul",
+        "role_type": "Supporting",
+        "demographics": "Female · 8 years old",
+        "hook": "A frightened child who becomes the clearest mirror for Mia’s lost childhood. Her presence lets the movie externalize the idea that Mia is still capable of tenderness.",
+        "why_actor_wants_this": "This is a small but emotionally potent child role that gives the film a humanizing pivot, the kind of part that can land hard in a trailer or final act. It also gives the young performer a memorable rescue scene and a direct emotional exchange with the lead."
+      },
+      {
+        "name": "Panna Jaa",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "A frightened prisoner whose brief appearance helps widen the world of Long’s operations. He exists as a pressure point in the larger mercenary network.",
+        "why_actor_wants_this": "This is a compact character role for an actor who wants a vivid, high-stakes scene in an international action film. It is the kind of part that can be cast for texture and authenticity."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage operatic action around wounded intimacy and chosen-family emotion.",
+        "fit_profile": "Second- or third-feature directors, or established genre filmmakers with at least one action or crime title, who already work in performance-forward, emotionally heightened material. This is for a filmmaker who likes clean fight geography, romantic tension inside violence, and a world where music, color, and gesture do as much storytelling as dialogue.",
+        "detail": "The material rewards directors who can make a bar, a rooftop, and a stairwell feel like emotional battlegrounds rather than just set pieces. It also gives a filmmaker a chance to balance sleek action with sincere character turns, which is exactly the lane that can separate a competent thriller from a memorable one."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Streaming action thriller / premium genre romance lane",
+        "detail": "The project can be packaged around two strong lead performances rather than a giant ensemble of names, which helps a buyer greenlight off chemistry and action execution. The combination of martial-arts action, romantic melodrama, and a recurring safehouse setting gives it a clear trailer hook and an exportable genre identity."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The flashback stack is carrying a lot of narrative weight.",
+        "detail": "The childhood trauma, mercenary origin story, Daoyuan history, Paula material, and multiple international backstory sequences all deepen the mythology, but they also ask the audience to track several emotional timelines at once. A next pass could consider which one or two flashback threads are truly essential to Mia’s present-tense turn, so the emotional spine stays as sharp as the action.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The action set pieces are sized for a real stunt plan.",
+        "detail": "The rooftop fight, stairwell descent, ambulance escape, helicopter assault, vehicle flips, and pub siege all point to a substantial choreography and effects package. One simplification lever would be to protect the biggest three set pieces and let a few of the smaller transitional fights happen in tighter spaces, which would preserve escalation while keeping the production footprint disciplined.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The music cues are a meaningful clearance lane.",
+        "detail": "The script names multiple recognizable songs and uses them as scene punctuation, so music supervision will matter early. A buyer or producer will want to know which cues are must-haves versus tonal placeholders, because that choice affects both budget and final marketing texture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Mia’s voice reveal is a major emotional turn.",
+        "detail": "The moment she speaks for the first time lands as a release, and the script already earns it through the silence and the relationship build. A future pass could consider giving that first spoken beat a slightly cleaner runway by trimming a few lines around the immediate lead-in, so the audience feels the turn hit even harder.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble chemistry is a selling point.",
+        "detail": "The Alan/Irene/Angus/John dynamic is one of the movie’s most marketable assets, and the safehouse scenes prove the group can carry banter, tension, and loyalty in equal measure. The version of the script where a few more scenes let that quartet breathe together would strengthen the emotional payoff without changing the core plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The international backstory broadens the scope.",
+        "detail": "Shanghai, Hong Kong, South America, and Myanmar give the film a global crime texture that helps the title feel bigger than a single-city thriller. The tradeoff is logistical complexity, so a producer may want to explore whether some of those memories can be suggested through fewer, more concentrated locations without losing the mythic scale.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 69.7,
+  "tier": "Optionable",
+  "inputTokens": 42653,
+  "outputTokens": 6393,
+  "cost": 0.06075825000000001,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,364 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Political thriller",
+      "genre_tags": [
+        "Conspiracy",
+        "Historical drama"
+      ],
+      "tone": "Gritty, paranoid, procedural, and occasionally wry"
+    },
+    "positioning_hook": "A hotshot NASA astronaut is pulled into a covert Cold War fight over a Soviet weather weapon, forcing him to expose a buried shuttle conspiracy before his own crew disappears into space.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial lane: Cold War intrigue, aerospace spectacle, and a lone operator fighting a hidden state secret. The appeal is strongest for adult thriller audiences and prestige-minded genre buyers rather than four-quadrant viewers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early with the 1962 air-show disaster, then sharpens into a shuttle-era conspiracy around White Horse and a weather weapon. The story engine is easy to explain in two sentences, and the stakes keep tightening as Aarons gets boxed out, watched, and finally forced to act."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Aarons is a vivid lead: cocky, wounded, funny, and driven by a private history that keeps surfacing in his behavior. Grosni and Vellum add strong counterweights, though the script is most magnetic when Aarons is carrying the emotional and ideological load."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The blend of shuttle-era espionage, classified aerospace history, and a weather-weapon conspiracy gives the material a distinctive identity. The script commits to a big, specific Cold War alt-history frame and keeps finding fresh ways to make bureaucracy, flight procedure, and paranoia feel cinematic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The opening incident, the White House maneuvering, the surveillance pressure, and the final shuttle confrontation all create forward motion. The middle leans into dialogue-heavy intelligence scenes, but the escalating secrecy and the eventual airborne payoff keep the read moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "An astronaut who becomes the accidental center of a decades-long covert operation is a clean, memorable engine. The idea feels both strange and inevitable once the script reveals how the 1962 incident, the shuttle program, and the Soviet asset thread are all connected."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script is packed with institutional texture: Air Force procedure, NASA hierarchy, CIA tradecraft, White House politics, and Soviet command culture. The specific spaces — mission control, safehouses, briefing rooms, flight decks, and base offices — all feel like active parts of the story rather than neutral backdrops."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone has a sharp identity: serious geopolitical suspense punctuated by dry, masculine banter and aviation bravado. It knows when to play procedural, when to play paranoid, and when to let the cockpit and command-room rhythms carry the tension."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the spy mechanics, the script is really about betrayal, loyalty, and the way institutions use people up while asking them to stay patriotic. The emotional material is present and meaningful, especially in Aarons and Grosni, though the script keeps most of that depth in dialogue rather than sustained dramatic turns."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Aarons/Libas, Aarons/Betty, Aarons/Grosni, and Vellum/Harper all generate usable tension, and the shuttle crew gives the climax a real ensemble shape. The script is still lead-driven, but the supporting relationships are strong enough to keep the world active around him."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 24,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple military and intelligence roles across U.S. and Soviet sides",
+          "One child role in the Harper household",
+          "Specific age ranges for late-career officials and flight crew",
+          "Astronaut and pilot casting benefits from physical credibility"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "period (1962, 1983, early 1980s)",
+        "notable_requirements": [
+          "Space shuttle launch and orbit environments",
+          "White House interiors",
+          "NASA Mission Control",
+          "Air Force bases and runways",
+          "KGB and Soviet interiors",
+          "Safehouse and surveillance setups",
+          "Multiple cockpit and aerial sequences"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Extensive aircraft and shuttle compositing, orbital shuttle work, satellite destruction, weather-weapon visuals, and sky-based action coverage.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Jet maneuvers, explosions, ejection, cockpit action, shuttle spin, and practical debris/impact beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Historical figures and public-office equivalents are referenced or dramatized, including the President, CIA leadership, DARPA leadership, and Soviet-era officials."
+        },
+        {
+          "type": "brand",
+          "detail": "Named vehicles, aircraft, and consumer references appear throughout, including F-100D Super Sabre, MiG-19, KC-135, T-38, F-16, F-4, Dom Pérignon, Johnny Carson, and USA Today."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"From Russia With Love\" and \"Stormy Weather\" are specifically referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "NASA, CIA, DARPA, White House, and shuttle-era program references may require careful clearance and factual vetting depending on production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or prestige theatrical thriller",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical positioning"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The shuttle, aircraft, cockpit, and orbital material push this above a contained indie, but it still sits below full tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a credible lead for Aarons plus a sizable supporting bench of military, intelligence, and Soviet roles."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through airfields, White House spaces, NASA facilities, D.C. interiors, safehouses, and multiple aerial environments across different periods."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes espionage, assassinations, military conflict, and tense coercive scenes, but it stays within mainstream thriller boundaries."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses real institutions, public figures, named music, and recognizable brands and aircraft, which calls for clearance attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening is built on a real-world-scale incident.",
+          "what_it_means": "The 1962 air-show disaster gives the movie an immediate historical charge and a clean mythic wound that can power the entire conspiracy. Buyers who want prestige thriller material with a factual spine and a built-in hook will respond to that opening engine.",
+          "evidence": "The Paris Air Show sequence where the U.S. and Soviet jets collide and Aarons survives while his crew is erased.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Aarons is a showcase lead.",
+          "what_it_means": "He has the kind of combustible, contradictory presence that gives an actor swagger, anger, humor, and grief in one role. That makes the project attractive to star-driven buyers looking for a lead who can carry both cockpit spectacle and emotional fallout.",
+          "evidence": "His banter with Peartree, his fury in the debriefing, his restless home scenes, and his later decision to confront the shuttle crew on live comms.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The institutional world feels lived-in.",
+          "what_it_means": "NASA, the White House, DARPA, the CIA, the Air Force, and Soviet command all have distinct textures, which gives the script a premium-thriller production value without relying only on action. That kind of layered bureaucracy is catnip for buyers who like adult conspiracy stories with procedural credibility.",
+          "evidence": "The White House bedroom/Oval Office scenes, the NASA crew meeting, the CIA safehouse/debriefing, and the KGB office material.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The shuttle climax is a genuine set piece.",
+          "what_it_means": "The final act moves from talk to orbital jeopardy, giving the movie a big visual payoff that can justify a theatrical or premium-streaming push. The material is especially attractive to directors and buyers who want a contained but cinematic space sequence rather than a full effects tentpole.",
+          "evidence": "Atlantia spinning in orbit, White Horse being manipulated in the cargo bay, and the weather weapon being destroyed in space.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The spy reveal has a strong emotional engine.",
+          "what_it_means": "Grosni is not just a twist; he is a second tragic lead whose betrayal is rooted in grief, loyalty, and long memory. That gives the film a deeper adult audience appeal and a performance lane for an actor who can play intelligence, hurt, and moral fracture.",
+          "evidence": "The 1962 Soviet aftermath, the KGB recruitment scene, and the later confrontation where Grosni explains he acted out of revenge and disillusionment.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has a confident period voice.",
+          "what_it_means": "The script knows how to make pilots, bureaucrats, and spooks sound like people who live inside institutions and still have personality. That voice helps the material stand out in a crowded historical-thriller field and gives the project a clear trailerable attitude.",
+          "evidence": "The cockpit banter, the White House sparring, and the dry exchanges between Aarons, Libas, Haynes, and Vellum.",
+          "source": "script"
+        }
+      ],
+      "headline": "WHITE HORSE is a smart, muscular Cold War thriller with a built-in cinematic engine: a decorated astronaut, a buried shuttle conspiracy, and a Soviet weather-weapon secret that turns the sky into a battlefield. It has the scale of a prestige espionage movie, the specificity of aerospace procedural detail, and a lead role actors will want to attack."
+    },
+    "lead_characters": [
+      {
+        "name": "Cyrus Aarons",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · U.S. astronaut / Air Force pilot",
+        "hook": "Aarons is a hard-charging, funny, deeply suspicious flyer who treats every room like a cockpit and every conversation like a test of loyalty. He is proud, volatile, and emotionally sealed, but the script keeps revealing the grief underneath the bravado, which makes him feel like a man who has spent years outrunning one unresolved event.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, damaged man whose worldview, cadence, and private obsession are the performance. It gives an actor the chance to play swagger, paranoia, comic timing, and buried trauma while still driving a high-stakes thriller plot."
+      },
+      {
+        "name": "Hugh Vellum",
+        "role_type": "Lead",
+        "demographics": "Male · 70s · White House senior aide",
+        "hook": "Vellum is polished, poisonous, and always three moves ahead, the kind of operator who can smile while tightening the noose. He reads as a court insider who has spent a lifetime surviving power by becoming indispensable to it, and the script lets him carry both menace and wit.",
+        "why_actor_wants_this": "This is the performance lane of Tom Wilkinson in Michael Clayton — a man whose authority is built on intelligence, restraint, and the ability to weaponize calm. Character actors who like playing elegant predators with political access will chase this immediately."
+      },
+      {
+        "name": "Chet Haynes",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · Director of DARPA",
+        "hook": "Haynes is the polished intelligence professional who knows exactly how much he can say and still keep the room under control. He is less flamboyant than the others, which makes him useful dramatically: he becomes the face of institutional caution, and the script gives him enough edge to feel like a man who has spent his career managing secrets.",
+        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in Trumbo or Michael Stuhlbarg in a prestige political drama — a role built on controlled intelligence, clipped authority, and the tension between public composure and private calculation. Actors who thrive on verbal sparring and contained pressure will want it."
+      },
+      {
+        "name": "Betty Aarons",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · Seamstress / civilian family member",
+        "hook": "Betty is the grounded center of the story, a working woman whose warmth and domestic competence make the espionage machinery feel personal. She has a quiet resilience and an intuitive emotional intelligence, and the script uses her to show what the men’s secrets cost at home.",
+        "why_actor_wants_this": "This is the emotional territory of Frances McDormand in a grounded family drama — a woman whose plainspoken strength carries the movie’s human stakes. It gives an actress the chance to play tenderness, suspicion, and dignity without being reduced to a support function."
+      },
+      {
+        "name": "Hugh Vellum",
+        "role_type": "Lead",
+        "demographics": "Male · 70s · White House senior aide",
+        "hook": "Vellum is polished, poisonous, and always three moves ahead, the kind of operator who can smile while tightening the noose. He reads as a court insider who has spent a lifetime surviving power by becoming indispensable to it, and the script lets him carry both menace and wit.",
+        "why_actor_wants_this": "This is the performance lane of Tom Wilkinson in Michael Clayton — a man whose authority is built on intelligence, restraint, and the ability to weaponize calm. Character actors who like playing elegant predators with political access will chase this immediately."
+      },
+      {
+        "name": "Susan Harper",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · KGB operative posing as a communications worker",
+        "hook": "Harper is elegant, controlled, and quietly dangerous, a woman who can move through domestic and bureaucratic spaces without ever looking like she belongs to either side. The script gives her a cool surface and a private agenda, which makes her feel like a sleeper agent with real screen presence.",
+        "why_actor_wants_this": "This is the kind of role that plays like Elizabeth Jennings in The Americans — composed, strategic, and emotionally split between mission and self-preservation. Actors who like intelligence work with a human pulse will be drawn to it."
+      },
+      {
+        "name": "Oleg Grosni / Major William Easter",
+        "role_type": "Lead",
+        "demographics": "Male · 20s in flashback / 40s-50s present day · Soviet pilot / U.S. shuttle specialist",
+        "hook": "Grosni is the script’s most elegant double identity: a Soviet flyer whose life is built around a lie, then a U.S. astronaut whose loyalty is still being tested. He carries grief, discipline, and ideological conflict in the same frame, and the reveal that he has been living inside both systems gives him enormous dramatic weight.",
+        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in The Constant Gardener or Michael Shannon in a prestige espionage role — a man whose stillness hides a lifetime of moral pressure. It offers an actor a rare chance to play betrayal, patriotism, and self-reinvention in one part."
+      },
+      {
+        "name": "Maxwell Libas",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · NASA Astronaut Office director",
+        "hook": "Libas is the blunt, battle-tested NASA insider who knows the system well enough to fight it and still keep his job. He has a dry sense of humor, a protective streak toward Aarons, and the authority of a man who has spent decades in rooms where the stakes are classified.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the authority space of J.K. Simmons in a procedural drama — a seasoned professional whose every line carries institutional memory. Veteran character actors who can play command and frustration in the same breath will want it."
+      },
+      {
+        "name": "Raymond Briggs",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · National Security Council staffer",
+        "hook": "Briggs is the polished government intermediary who speaks in policy language while helping move the machinery of secrecy. He is less colorful than the leads, but he helps define the pressure of the White House side of the story and gives the film another face of official control.",
+        "why_actor_wants_this": "This is the kind of role that fits the procedural authority of actors like William Sadler in a political thriller — efficient, credible, and useful in scenes where the room needs a government voice. It’s a clean supporting slot for a recognizable character actor."
+      },
+      {
+        "name": "Paul Cole",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Deputy Assistant Secretary of Defense for Space Policy",
+        "hook": "Cole is the younger policy man trying to keep the room on script while the older power players dominate the conversation. He functions as a pressure valve and a bureaucratic foil, which gives the White House material a sharper institutional texture.",
+        "why_actor_wants_this": "This is the kind of role that benefits from the clipped, controlled energy of a prestige political drama supporting player. It gives an actor the chance to play competence under pressure without needing a huge amount of screen time."
+      },
+      {
+        "name": "George Harwick",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · CIA representative",
+        "hook": "Harwick is the cold, almost unreadable intelligence man who never gives the room more than he intends. He is a useful embodiment of the state’s hidden hand, and the script uses him to make the conspiracy feel larger than any one agency.",
+        "why_actor_wants_this": "This is the kind of role that recalls the controlled menace of a veteran intelligence figure in a political thriller. Actors who specialize in stillness, authority, and subtext will know exactly how to play it."
+      },
+      {
+        "name": "Douglas Quintel",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Astronaut / co-pilot",
+        "hook": "Quintel is the likable, quick-witted pilot who gives the crew scenes some warmth and rhythm. He is the humanizing counterpart to Aarons’ intensity, and the script uses him well as a grounded professional who can still joke under pressure.",
+        "why_actor_wants_this": "This is the kind of buddy-pilot role that gives an actor the easy authority of a Ron Livingston-style supporting part in a procedural ensemble. It’s a strong fit for someone who can play competence, humor, and loyalty without overplaying it."
+      },
+      {
+        "name": "Bernard Calloway",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · President of the United States",
+        "hook": "Calloway is the impatient, politically burdened president who wants answers without getting buried in the machinery. He has enough personality to feel human, but the script wisely keeps him as a pressure source rather than a full second lead.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the presidential authority space of a prestige political thriller — a few scenes with real gravity and sharp lines. Name actors who like compact, high-impact authority roles will be interested."
+      },
+      {
+        "name": "Hank McMasters",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · CIA Deputy Director",
+        "hook": "McMasters is the hard-edged intelligence enforcer who can turn from charm to violence in a beat. He gives the CIA side a physical, dangerous presence and helps the conspiracy feel operational rather than abstract.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the hard-nosed command energy of a classic intelligence thriller. It’s a strong fit for performers who can make authority feel dangerous."
+      },
+      {
+        "name": "Susan Harper",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · KGB operative posing as a communications worker",
+        "hook": "Harper is elegant, controlled, and quietly dangerous, a woman who can move through domestic and bureaucratic spaces without ever looking like she belongs to either side. The script gives her a cool surface and a private agenda, which makes her feel like a sleeper agent with real screen presence.",
+        "why_actor_wants_this": "This is the kind of role that plays like Elizabeth Jennings in The Americans — composed, strategic, and emotionally split between mission and self-preservation. Actors who like intelligence work with a human pulse will be drawn to it."
+      },
+      {
+        "name": "Merek",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Shuttle commander",
+        "hook": "Merek is the seasoned mission commander who carries the professional burden of the final act. He is less psychologically foregrounded than Aarons or Grosni, but he gives the shuttle sequence a credible command center and a steady hand under pressure.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded command presence of a veteran military or space drama lead in supporting form. It’s a clean, authoritative part for someone who can play leadership without speeches."
+      },
+      {
+        "name": "Benjamin Powell",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · Civilian scientist / family friend",
+        "hook": "Powell is the civilian intelligence bridge who helps Aarons connect the weather anomaly to something larger. He has a smart, slightly nervous energy that makes him feel like a real working expert rather than a plot device.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the smart-supporting-scientist lane seen in prestige thrillers and disaster movies. It’s a good fit for someone who can make exposition feel like discovery."
+      },
+      {
+        "name": "Hugh Vellum",
+        "role_type": "Lead",
+        "demographics": "Male · 70s · White House senior aide",
+        "hook": "Vellum is polished, poisonous, and always three moves ahead, the kind of operator who can smile while tightening the noose. He reads as a court insider who has spent a lifetime surviving power by becoming indispensable to it, and the script lets him carry both menace and wit.",
+        "why_actor_wants_this": "This is the performance lane of Tom Wilkinson in Michael Clayton — a man whose authority is built on intelligence, restraint, and the ability to weaponize calm. Character actors who like playing elegant predators with political access will chase this immediately."
+      },
+      {
+        "name": "Oleg Grosni / Major William Easter",
+        "role_type": "Lead",
+        "demographics": "Male · 20s in flashback / 40s-50s present day · Soviet pilot / U.S. shuttle specialist",
+        "hook": "Grosni is the script’s most elegant double identity: a Soviet flyer whose life is built around a lie, then a U.S. astronaut whose loyalty is still being tested. He carries grief, discipline, and ideological conflict in the same frame, and the reveal that he has been living inside both systems gives him enormous dramatic weight.",
+        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in The Constant Gardener or Michael Shannon in a prestige espionage role — a man whose stillness hides a lifetime of moral pressure. It offers an actor a rare chance to play betrayal, patriotism, and self-reinvention in one part."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn institutional paranoia into propulsion.",
+        "fit_profile": "Established indie or prestige-thriller directors with at least one or two features, or a seasoned TV director ready to step into features, especially those drawn to procedural tension, period detail, and performance-first suspense. The material rewards directors who can make briefing rooms, cockpits, and command centers feel as charged as action scenes.",
+        "detail": "The movie gives a director a chance to stage intelligence, flight, and political pressure with clean visual geography and escalating reveals. It will attract filmmakers who like adult conspiracy material, controlled period design, and a final-act set piece that pays off the entire premise."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Prestige thriller / historical conspiracy lane",
+        "detail": "The script is lead-driven and can be packaged around one strong male star for Aarons plus a credible supporting bench, so it does not require a giant ensemble to function. The Cold War aerospace angle, shuttle climax, and conspiracy frame give it a clear premium-streaming and limited-theatrical export path."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on briefing-room dialogue.",
+        "detail": "The NASA, White House, and CIA scenes do important work, and the material is strongest when those rooms feel like pressure cookers rather than explanation hubs. A next pass could look for one or two places where the emotional turn arrives before the information, especially in the Aarons/Libas and Aarons/Powell exchanges.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The opening and ending frame the same conflict twice.",
+        "detail": "The script begins with the 1962 air-show disaster and closes by returning to the same emotional territory through the shuttle-era reveal. One lever would be to sharpen the transition between those two time periods so the audience feels the causal chain earlier and more cleanly.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad.",
+        "detail": "The story moves through airfields, White House spaces, NASA facilities, D.C. streets, safehouses, Soviet interiors, and multiple cockpit environments. A simplification lever would be to see whether any of the intelligence exchanges could be folded into fewer recurring spaces without losing the institutional texture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast is built around several authority figures.",
+        "detail": "The script asks for a credible lead, multiple senior government roles, military personnel, Soviet counterparts, and a child role in the Harper household. Packaging will be strongest if the Aarons role is anchored first, because the supporting bench works best as a ring of pressure around him.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The shuttle finale carries moderate effects demands.",
+        "detail": "The orbital sequence, satellite destruction, and shuttle spin all need careful visual execution. The version of the script that keeps the shuttle geography crystal clear will protect the climax and make the effects spend feel purposeful rather than decorative.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 44053,
+  "outputTokens": 6334,
+  "cost": 0.06154275,
+  "declaredFormat": "Feature film"
+}

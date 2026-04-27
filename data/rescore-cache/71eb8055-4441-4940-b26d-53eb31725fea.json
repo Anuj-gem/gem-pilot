@@ -1,0 +1,369 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Faith drama",
+      "genre_tags": [
+        "family saga",
+        "redemption"
+      ],
+      "tone": "earnest, sermon-driven, melodramatic"
+    },
+    "positioning_hook": "A Zimbabwean ex-con turned pastor builds a transnational church empire, then must save his prodigal son from scandal, shame, and the collapse of their ministry.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "There is a clear faith audience here, and the script is built around salvation, testimony, and church expansion across Zimbabwe, Nigeria, South Africa, the UK, and the U.S. The appeal is specific rather than broad, but the emotional promise of redemption, family restoration, and public testimony is legible throughout."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise lands as a church-centered redemption story with a strong throughline: Reverend Michael Xhosa’s testimony becomes the engine for a growing ministry, and Dan’s fall tests that message. The script is long and repetitive in presentation, but the core hook is understandable and arrives early enough."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Reverend Michael has a vivid backstory and Dan has a clear fall-and-return arc, which gives the leads some shape. The supporting players mostly function as church roles, so the character field is serviceable but not especially layered."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The choice to make the sermon itself the dramatic container is distinctive, and the script commits fully to that mode. The material is also unusually expansive in its international church network and testimony structure, even though the execution stays close to familiar faith-drama language."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "The script has forward motion in the sense that it keeps moving from service to service, testimony to testimony, and then into campus and family fallout. But the scenes often repeat the same emotional and thematic beat, so the escalation feels more cumulative than propulsive."
+      },
+      "resonant_originality": {
+        "score": 5,
+        "reasoning": "The idea of a church founder whose own son becomes the cautionary tale gives the story an immediately understandable moral engine. The later turn into HIV stigma, public testimony, and ministry restoration adds a memorable layer, though the overall shape remains familiar to the faith-drama lane."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The church ecosystem is detailed: branches, councils, ushers, choir, campus fellowships, conferences, and international expansion all create a visible institutional world. That said, the world is presented more as a series of ministry functions than as a textured social ecosystem with competing pressures."
+      },
+      "tonal_specificity": {
+        "score": 5,
+        "reasoning": "The tone is consistently devotional, declarative, and testimonial, with occasional comic beats in the church banter and public recognition moments. It has a recognizable faith-program cadence, but not yet a sharply singular tonal signature beyond that lane."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the surface testimony structure, the script is really about fatherhood, public holiness versus private failure, and the cost of ministry ambition. Those themes are present in Reverend Michael’s history, Dan’s collapse, and the church politics around Bode and Henry, which gives the material more depth than a simple conversion story."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The Michael/Dan/Felicia triangle and the Michael/Bode/Henry church-politics axis give the script some relationship fuel. Still, many supporting figures are defined by function rather than independent dynamic, so the ensemble is useful more than combustible."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 6,
+        "series_regulars": 10,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple adult male church leaders with distinct ages and authority levels",
+          "One child role at the end",
+          "Several roles require Zimbabwean, Nigerian, South African, UK, and American identity flavor",
+          "A lead role with a strong Zimbabwean accent requirement"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Large church auditorium with stage, screens, choir, and overflow crowd",
+          "University campus settings",
+          "Hospital and isolation center settings",
+          "Conference room and office spaces",
+          "International-feeling church spaces across multiple countries"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX requirements beyond simple signage, screens, and projected scripture text.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical crowd management, live music playback, microphones, projection screens, and church-service staging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Amazing Grace, Lord I Lift Your Name on High, and other named worship songs are specifically referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "Mr. Bigg’s and DHL are named on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "Oscar Wilde and Albert Einstein are referenced by name in dialogue."
+        },
+        {
+          "type": "real_person",
+          "detail": "Nelson Mandela Stadium is named as a location."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "faith-based theatrical or streaming drama",
+        "content_level": "PG-13 equivalent with mature sexual-health and stigma material",
+        "series_engine_or_release_model": "Feature release model; strongest as faith-market theatrical, church-circuit, or streaming with faith-drama positioning"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The script is mostly dialogue and crowd-driven, but the repeated large church services, campus events, hospital scenes, and international settings push it beyond microbudget."
+        },
+        "cast": {
+          "level": "high",
+          "note": "The story leans on a sizable adult ensemble, multiple authority figures, and a child role, with several characters carrying specific national and accent identity markers."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through churches, homes, campuses, hospitals, conference spaces, and multiple country-specific settings across Africa, the UK, and the U.S."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes fornication, HIV/AIDS, shame, and suicide ideation, but it stays within a faith-drama frame rather than explicit depiction."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named songs, brands, and real-person references appear on the page and would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The church is the engine, not the backdrop.",
+          "what_it_means": "The script gives producers a built-in world with services, testimonies, councils, choir numbers, campus fellowships, and international branches, which creates a repeatable faith-franchise framework. Faith buyers, church-audience distributors, and producers looking for a ministry-centered title with built-in community reach will recognize the lane immediately.",
+          "evidence": "The opening service, the testimony segment, the choir performance, the campus fellowship launch, and the later international expansion all function as story events.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Reverend Michael has a showcase backstory.",
+          "what_it_means": "The long prison-to-pulpit testimony gives an actor a full-spectrum role: street life, violence, repentance, grief, authority, and public charisma. Prestige-minded faith buyers and actors who want a transformational lead with sermon authority and emotional range will see the appeal fast.",
+          "evidence": "Michael’s prison conversion, his missionary encounter with Felicia, his marriage, her death, and his rise as founder all land in one extended testimony.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-son arc gives the story a human spine.",
+          "what_it_means": "The Michael/Dan relationship turns the script from a church pageant into a family drama with moral stakes, which broadens the audience beyond purely devotional viewers. Mid-career dramatic actors and faith buyers looking for a generational redemption story will respond to that emotional center.",
+          "evidence": "Michael’s advice to Dan about campus life, Dan’s fall, the hospital reconciliation, and the final restoration all hinge on their bond.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The HIV storyline raises the stakes beyond doctrine.",
+          "what_it_means": "The move from sermon language into sexual consequence, stigma, and public testimony gives the script a sharper emotional hook than a standard church drama. Buyers in the faith-drama and social-issue lane will see a story that can travel as both inspiration and cautionary tale.",
+          "evidence": "Dan’s unprotected relationships, the hospital diagnosis, the isolation-center letter, and the later public testimony at the stadium.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The international church network feels expandable.",
+          "what_it_means": "The branches in Zimbabwe, Nigeria, South Africa, the UK, and the U.S. create a scalable franchise world that could support sequels, spin-offs, or a broader ministry slate. Producers targeting diaspora audiences and faith communities across multiple territories will see export value.",
+          "evidence": "The council roll call, the branch expansion conversations, the campus fellowship rollout, and the later stadium convention all point to a transnational ministry.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a faith-drama with a built-in franchise world: a prison-born pastor, a prodigal son, and a church empire that stretches across continents. The script’s real commercial asset is its combination of sermon spectacle, family redemption, and public testimony — a lane that speaks directly to faith audiences while giving actors showcase roles with emotional scale."
+    },
+    "lead_characters": [
+      {
+        "name": "Reverend Michael Xhosa",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Zimbabwean/Nigerian heritage · strong Zimbabwean accent",
+        "hook": "Michael is a former street criminal turned global pastor who speaks like a man who has survived both the underworld and the altar. He carries himself with authority, but the script keeps returning to the grief under that authority: orphanhood, prison, conversion, widowhood, and the burden of raising Dan while building a ministry empire.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Fences or Forest Whitaker in The Last King of Scotland — a commanding lead whose authority is inseparable from pain, memory, and moral witness. Actors who want a sermon-heavy prestige role with transformation, public charisma, and a long emotional runway will chase this."
+      },
+      {
+        "name": "Dan Xhosa",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to early 20s · African",
+        "hook": "Dan begins as the polished son of a famous pastor, then becomes the cautionary tale his father fears: curious, impressionable, romantic, and eventually reckless. He is written as a young man caught between inherited faith and campus temptation, which gives him a clear arc from innocence to collapse to restoration.",
+        "why_actor_wants_this": "This is the coming-of-age collapse-and-redemption space of Timothée Chalamet in Beautiful Boy or Jharrel Jerome in When They See Us — a role where the actor gets to play charm, shame, denial, and spiritual rebirth. Young dramatic leads looking for a breakout part with emotional extremes and a public testimony payoff will want it."
+      },
+      {
+        "name": "Felicia Abia",
+        "role_type": "Lead",
+        "demographics": "Female · late teens to early 20s · African",
+        "hook": "Felicia is the campus catalyst: flirtatious, spiritually curious, emotionally direct, and ultimately the bridge between Dan’s private life and his public reckoning. She starts as the romantic spark and becomes the woman whose choices shape the story’s most consequential turns.",
+        "why_actor_wants_this": "This is the showcase lane of Zendaya in Malcolm & Marie or Aunjanue Ellis in King Richard — a role that can hold romantic charge, moral intelligence, and emotional consequence in the same frame. Young actresses who want a part with warmth, agency, and a pivotal turn in a faith drama will pursue it."
+      },
+      {
+        "name": "Pastor Bode Cole",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · African",
+        "hook": "Bode is the church operator: polished, strategic, status-aware, and always thinking in terms of structure, loyalty, and control. He presents as a kingdom builder, but the script also lets him play political calculation and domestic authority, especially in the way he manages Mark and the church hierarchy.",
+        "why_actor_wants_this": "This is the power-player territory of Jeremy Strong in Succession or Jeffrey Wright in The Inevitable Defeat of Mister & Pete — a role where institutional intelligence and private maneuvering are the performance. Actors who like authority with subtext and a little danger in the smile will chase it."
+      },
+      {
+        "name": "Deaconess Damilola Cole",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-50s · African",
+        "hook": "Damilola is the church’s social glue: warm, organized, publicly gracious, and deeply embedded in the ministry’s machinery. She moves between hospitality, administration, and spiritual language with ease, giving the script a female authority figure who is both relational and operational.",
+        "why_actor_wants_this": "This is the kind of grounded authority Viola Davis brought to Fences and Octavia Spencer brought to The Help — a role that lets an actress play competence, warmth, and moral clarity without shrinking the room. Mid-career actresses who want a respected matriarchal part with institutional weight will respond to it."
+      },
+      {
+        "name": "Craig Alli",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to 20s · African",
+        "hook": "Craig is the smooth-talking church son who knows how to move between piety and opportunism. He is charming enough to be trusted, slippery enough to be dangerous, and useful enough to keep around, which makes him one of the story’s clearest embodiments of hypocrisy.",
+        "why_actor_wants_this": "This is the morally elastic young-man slot of Lakeith Stanfield in Atlanta or Kelvin Harrison Jr. in Waves — a role that can play charm, manipulation, and self-interest without losing charisma. Actors who like playing a smile that may be hiding a scheme will be drawn to it."
+      },
+      {
+        "name": "Mark Cole",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s to 30s · African",
+        "hook": "Mark is the dutiful church son who wants to be seen as disciplined, successful, and worthy of the ministry’s trust. He is less volatile than Dan, but the script gives him ambition, loyalty, and a strong sense of being the responsible one in the room.",
+        "why_actor_wants_this": "This is the polished supporting-lead territory of John David Washington in Ballers or Yahya Abdul-Mateen II in The Trial of the Chicago 7 — a role that plays composure, intelligence, and quiet competition. Actors who want a clean, controlled performance with room for moral tension will chase it."
+      },
+      {
+        "name": "Pastor Henry Alli",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · African",
+        "hook": "Henry is a church insider with money, influence, and a taste for back-channel control. He reads as a man who understands systems and uses them, which makes him a useful pressure point in the church politics around Dan and Craig.",
+        "why_actor_wants_this": "This is the institutional operator lane of Michael Kelly in House of Cards — a role built on quiet leverage, not speeches. Character actors who like playing the man behind the curtain will be interested."
+      },
+      {
+        "name": "Brother John",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · African",
+        "hook": "Brother John is the energetic service opener, a crowd-starter with a prayer-warrior identity and a gift for public momentum. He functions as the first burst of communal energy and helps establish the church’s performance style.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do live-wire crowd work in the spirit of the opening church emcee in The Five Heartbeats. Performers with stage presence and comic timing will enjoy the room."
+      },
+      {
+        "name": "Brother David",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · African",
+        "hook": "David is one of the service’s prayer leaders, steady and devotional, with a voice that reinforces the church’s collective rhythm. He is less individualized than Michael or Dan, but he helps build the ritual texture of the opening act.",
+        "why_actor_wants_this": "This is ensemble church texture in the lane of the supporting congregants in The Preacher’s Wife. It gives a performer a clean, functional role inside a larger spiritual pageant."
+      },
+      {
+        "name": "Brother Matthew",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · African",
+        "hook": "Matthew is another prayer-and-affirmation voice in the opening service, carrying the theme of grace in a declarative, public way. He helps establish the sermon cadence and the communal call-and-response energy.",
+        "why_actor_wants_this": "This is a solid faith-ensemble role for an actor who can land conviction and rhythm without needing a private subplot. It suits performers who like being part of a larger worship machine."
+      },
+      {
+        "name": "Brother Mark Thomson",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · African",
+        "hook": "Mark Thomson is one of the named church elders and part of the visible leadership structure. He reads as a formal authority figure whose presence helps the church feel organized and institutionally large.",
+        "why_actor_wants_this": "This is the elder-state role that gives an actor status and gravitas in a faith ensemble. Character actors with a commanding voice and a dignified screen presence will fit."
+      },
+      {
+        "name": "Sister Daisy",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-40s · African",
+        "hook": "Daisy is the choir’s front-facing voice, a performer inside the story who helps turn doctrine into music and movement. She has warmth, confidence, and a public-facing charisma that makes the worship scenes feel alive.",
+        "why_actor_wants_this": "This is the musical-showcase lane of Jennifer Hudson in Dreamgirls or Cynthia Erivo in a stage-to-screen performance — a role that lets an actress sing, lead, and command a room. Performers with vocal power and church-music authenticity will chase it."
+      },
+      {
+        "name": "Randy Wesley",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-40s · Irish",
+        "hook": "Randy is one of the testimony voices, a convert whose identity broadens the church’s international reach. He exists to show the ministry’s cross-cultural pull and to give the testimony segment a global flavor.",
+        "why_actor_wants_this": "This is the testimonial cameo lane of a faith ensemble like the witness slots in The Apostle. Actors who can make a brief public confession feel sincere will fit."
+      },
+      {
+        "name": "Mrs. Sophie Wyse",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-60s · American",
+        "hook": "Sophie is the survivor testimony in the service, a woman whose near-death history becomes public evidence of grace. She gives the congregation a lived example of deliverance and makes the room feel emotionally invested.",
+        "why_actor_wants_this": "This is the kind of testimony role that lets an actress play relief, gratitude, and public witness in one scene. Character actresses who can make a short monologue land with sincerity will want it."
+      },
+      {
+        "name": "Elder Mark",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · African",
+        "hook": "Elder Mark is the prayer-and-blessing authority who helps formalize the service’s spiritual structure. He is part of the church’s visible hierarchy and gives the proceedings a sense of order and legitimacy.",
+        "why_actor_wants_this": "This is the elder role that gives an actor ceremonial authority and a clean, dignified presence. It suits performers who specialize in institutional gravitas."
+      },
+      {
+        "name": "Dr. Jake Peters",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · African",
+        "hook": "Dr. Jake is the medical voice of the story, the one character who translates Dan’s crisis into clinical reality. He is compassionate, direct, and positioned as a bridge between faith language and medical consequence.",
+        "why_actor_wants_this": "This is the grounded professional role of a doctor in a prestige drama like The Good Doctor’s more serious hospital scenes or a faith film’s conscience figure. Actors who can play empathy without sentimentality will be interested."
+      },
+      {
+        "name": "Pastor Micah James",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · African",
+        "hook": "Micah James is one of the church’s public-facing ministers, handling offering and service flow with confidence. He helps reinforce the scale of the ministry and the professionalism of the operation.",
+        "why_actor_wants_this": "This is the polished ministry-support role that gives an actor authority in a large church setting. It suits performers who can project trust and leadership quickly."
+      },
+      {
+        "name": "Pastor Graham G. Campbell",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s · African",
+        "hook": "Campbell is the convention-stage pastor who frames Dan’s final testimony. He functions as the public witness to the story’s climax and helps give the ending a ceremonial scale.",
+        "why_actor_wants_this": "This is the emcee/pastor role that lets an actor anchor a public event and hand off the spotlight. It fits seasoned character actors with a strong speaking voice."
+      },
+      {
+        "name": "Felicia",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · African",
+        "hook": "Felicia is Dan’s later-life romantic counterpart and the final emotional bridge back into family and faith. She re-enters the story as a mature, spiritually aligned woman whose presence helps close the circle on Dan’s arc.",
+        "why_actor_wants_this": "This is the late-story romantic redemption slot of a faith drama like The Shack’s emotional guide figures. Actresses who can play grace, history, and quiet authority will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage faith as public spectacle and private reckoning.",
+        "fit_profile": "First- or second-feature directors with experience in dialogue-heavy drama, or established indie directors looking to move into faith material without losing seriousness. The material rewards performance-forward staging, crowd choreography, and the ability to make sermons feel like dramatic set pieces rather than static exposition.",
+        "detail": "The script gives a director a chance to orchestrate large church sequences, testimony scenes, and a final stadium-scale confession without needing heavy VFX or action coverage. It will attract directors who like institutional worlds, ensemble blocking, and emotional crescendos built from speech, music, and ritual."
+      },
+      "buyer_appeal": {
+        "tier": "$2-8M feature",
+        "lane": "faith-based theatrical / streamer faith-drama lane",
+        "detail": "The project can be mounted around a strong lead and a largely contained production design footprint, so it does not require star-driven spectacle to function. The faith audience is built in, and the church-circuit plus streaming release path gives it a clear secondary runway beyond a standard theatrical weekend."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening service runs long before the story turns.",
+        "detail": "The first stretch is rich in church atmosphere, but the script spends a lot of pages establishing the service mechanics before the central family conflict fully takes over. One lever would be to let Michael’s personal testimony or Dan’s campus story surface earlier so the audience feels the dramatic engine sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The testimony scenes repeat the same emotional beat.",
+        "detail": "Several service passages return to the same grace/salvation language in slightly different forms, which gives the piece devotional consistency but also stretches the runtime. A next pass could consolidate some of the prayer-and-response material so the strongest testimony moments land with more lift.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad for a faith drama.",
+        "detail": "The story moves through churches, homes, campuses, hospitals, conference rooms, a stadium, and multiple country-specific settings. The version of the script that collapses a few of the office and conference-room scenes into fewer recurring spaces would protect the scale while making the production easier to schedule.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The cast is built around a large church ecosystem.",
+        "detail": "There are many named pastors, elders, ushers, choir members, and student characters, plus a child role at the end. That gives the project community texture, and it also means casting will benefit from a strong ensemble plan rather than a handful of stars alone.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The HIV turn wants careful tonal framing.",
+        "detail": "Dan’s diagnosis, the isolation-center letter, and the later healing testimony are the story’s most emotionally loaded material. A next pass could keep the faith-forward framing while making sure the medical and stigma beats are handled with clarity and specificity so the climax lands cleanly.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Several named songs and brands need clearance review.",
+        "detail": "Amazing Grace, Lord I Lift Your Name on High, Mr. Bigg’s, DHL, and other named references appear on the page. Those details help the world feel specific, and they also mean the production team would want an early clearance pass.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 53.3,
+  "tier": "Needs Development",
+  "inputTokens": 44532,
+  "outputTokens": 6112,
+  "cost": 0.060903,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,57 @@
+{
+  "sorted_middleware": [
+    "/report/[id]/opengraph-image/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/report/[id]/opengraph-image/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/report/[id]/opengraph-image/route_client-reference-manifest.js",
+        "server/edge/chunks/0wac__next-internal_server_app_report_[id]_opengraph-image_route_actions_0x6dg.6.js",
+        "server/edge/chunks/[root-of-the-server]__0dmb2a0._.js",
+        "server/edge/chunks/0c5b_next_dist_esm_build_templates_edge-app-route_0iodjo9.js",
+        "server/edge/chunks/0c5b_0ncccne._.js",
+        "server/edge/chunks/0c5b_next_dist_compiled_@vercel_og_0cjern3._.js",
+        "server/edge/chunks/0c5b_@supabase_supabase-js_dist_index_mjs_0qd87qw._.js",
+        "server/edge/chunks/0i0f_next_dist_esm_build_templates_edge-wrapper_0cnqtgg.js"
+      ],
+      "name": "app/report/[id]/opengraph-image/route",
+      "page": "/report/[id]/opengraph-image/route",
+      "entrypoint": "server/edge/chunks/0i0f_next_dist_esm_build_templates_edge-wrapper_0cnqtgg.js",
+      "matchers": [
+        {
+          "regexp": "^/report/(?P<nxtPid>[^/]+?)/opengraph-image(?:/)?$",
+          "originalSource": "/report/[id]/opengraph-image"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/0c5b_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/0c5b_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "qBqW6aFupqqVP4kU_fJNJ",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "yFzgEqd9xJ2Vr8klqleud5wI7MIzufRfap62UOagxI8=",
+        "__NEXT_PREVIEW_MODE_ID": "6fa36213a32769a7131b738379549d41",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "8d85f0dfc328f353886da2042b6a41fdb78010b51bdd2b5ca1a6850fe692d636",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "b0bba1648b1793f2e5a3155f56d56411782bfb2f6b7fe9269469bce492245cba"
+      }
+    }
+  }
+}

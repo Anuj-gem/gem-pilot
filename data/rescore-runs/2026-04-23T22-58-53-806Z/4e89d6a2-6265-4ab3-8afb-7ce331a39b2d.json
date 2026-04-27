@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-04-23T23:24:57.917Z",
+  "submission_id": "4e89d6a2-6265-4ab3-8afb-7ce331a39b2d",
+  "eval_id": "0884f087-fd90-43c1-af1f-d738904c1dbd",
+  "title": "the christian matrix 4 4 1 converted",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 25,
+  "lead_characters_summary": [
+    {
+      "name": "Grant",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · father"
+    },
+    {
+      "name": "Dan",
+      "role_type": "Lead",
+      "demographics": "Male · 12"
+    },
+    {
+      "name": "Nat",
+      "role_type": "Lead",
+      "demographics": "Male · 10"
+    },
+    {
+      "name": "Rev. Thomas Cleverson",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · white missionary"
+    },
+    {
+      "name": "Thomas",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Adam",
+      "role_type": "Lead",
+      "demographics": "Male · 14"
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Lead",
+      "demographics": "Male · 15-21"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Ken",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "Frank",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Ms. Sandra",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s · mother"
+    },
+    {
+      "name": "Pastor Israel",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Sanjay",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "Mira",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "Pastor Matthew",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Pastor Lake Peters",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "Kendrick",
+      "role_type": "Lead",
+      "demographics": "Male · late teens-20s"
+    },
+    {
+      "name": "Miss Helen",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-70s"
+    },
+    {
+      "name": "Brother Wisdom",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-60s"
+    },
+    {
+      "name": "Sister Deborah",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-50s"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "Reverend Thompson",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Mrs. Ron",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Daniela",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    }
+  ],
+  "positioning_hook": "An anthology of faith testimonies follows pastors, parents, and converts as prayer, scripture, and public witness reshape families, neighborhoods, and entire congregations.",
+  "cost_usd": 0.047032500000000005,
+  "input_tokens": 24232,
+  "output_tokens": 6413,
+  "status": "wrote:leads_ok"
+}

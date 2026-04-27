@@ -1,0 +1,350 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Slasher",
+        "Action",
+        "Mystery"
+      ],
+      "tone": "Heightened, grotesque, satirical, and aggressively stylized"
+    },
+    "positioning_hook": "A queer, rave-going friend group stumbles into a Midwestern town where patriotism is a flesh-processing ritual, and the killer is manufacturing them into the next harvest.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible as a crowd-pleasing horror engine with a strong visual promise: a masked killer, a trapped ensemble, and a town-wide conspiracy. The extreme stylization and hard R content narrow the lane, but the hook is vivid enough to travel with genre buyers and midnight audiences."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening flagpole execution, the sawmill rave, and the later reveal of the town as a manufacturing cult give the movie a clear engine very early. The script keeps escalating the same central idea—Americana as industrial body horror—so the premise stays easy to track even as the mythology deepens."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sofia, Coyotl, and Nicole each have a distinct survival mode, and the ensemble chemistry gives the movie a real pulse. The supporting players are colorful and usable, though the script’s strongest character energy lives in the central trio and the antagonist reveal rather than in a broad web of independent arcs."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a ferocious visual language: flag-folding as ritual, sewing machines as weapons, and patriotism rendered as literal industrial processing. The boldness is not just in the gore but in the conceptual architecture, which keeps turning American iconography into story mechanics."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The movie is built like a pressure cooker, with each location shift revealing a deeper layer of the town’s machinery and a new form of attack. The constant reversals, betrayals, and set-piece escalations keep the story moving hard toward the final reveal."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a fresh horror myth because the central metaphor is both specific and immediately playable: a town that literally grades, cuts, and recycles outsiders into its own identity. The idea lands fast and keeps paying off in new images, which is exactly the kind of originality that can become a calling card."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "Gully Creek is not just a setting; it is a system with ranks, rituals, infrastructure, and a hidden economy of bodies, memory, and labor. The library archives, the loom, the sawmill, the diorama hall, and the town square all feel like connected organs in one machine."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: savage body horror colliding with camp, queer swagger, and deadpan survival banter. The script knows exactly when to go operatic, when to go funny, and when to let the grotesque image do the talking."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the gore, the script is really about inheritance, assimilation, class, and the violence of being turned into a product. The braid mythology and the town’s fifty-year cycle suggest a larger historical engine that could support a franchise or prequel world if the material ever wanted to expand."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The group dynamics generate constant friction: Coyotl and Sofia’s chemistry, Nicole’s suspicion, Liam’s shifting allegiance, and the romantic/sexual tension threaded through the ensemble. Even in chaos, the relationships keep producing new angles, betrayals, and alliances."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 17,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Ensemble of 20s/30s leads",
+          "One child role (Bobby)",
+          "Multiple masked/duplicate killer appearances",
+          "Queer-coded lead energy",
+          "Specific regional and identity texture across the ensemble"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary with stylized Americana and historical inserts",
+        "notable_requirements": [
+          "Large industrial sawmill",
+          "Working farm and flagpole yard",
+          "Town library/archive set",
+          "Textile plant/factory interiors",
+          "Diorama hall / museum-style build",
+          "Sears kit-house interior with hidden wall cavities",
+          "Town square crowd scene"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Primarily practical-looking gore augmentation, crowd extension, and environmental transformation effects for the town shift, multiple Paul appearances, and the final town reconfiguration.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy practical gore, prosthetics, mechanical rigs, breakaway sets, fire effects, hydraulic/loom machinery gags, and vehicle action.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "American flag imagery and patriotic iconography are central, though not clearance-dependent in the same way as a named brand."
+        },
+        {
+          "type": "brand",
+          "detail": "Specific consumer objects and industrial tools are repeatedly foregrounded, but no major real-world brand is essential to the plot."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable horror lane; theatrical midnight/genre release possible",
+        "content_level": "Explicit",
+        "series_engine_or_release_model": "Feature release with strong festival-to-platform or genre-theatrical path"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is driven by multiple large practical set pieces, heavy gore, fire, and several distinct environments, but it remains fundamentally contained to a small ensemble and a few core locations."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is sizable and the lead roles need strong chemistry, but there is no single star dependency baked into the concept."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through a farm, rave sawmill, textile plant, archive library, diorama hall, and kit-house interiors, with several large night exteriors and crowd scenes."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script is built around explicit gore, mutilation, torture imagery, and sustained body-horror violence."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The material uses broad Americana iconography and original fictional institutions rather than named real people, songs, or licensed IP."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Americana becomes a horror machine.",
+          "what_it_means": "The script turns flags, folding rituals, looms, sewing tools, and patriotic pageantry into a single commercial horror language that is easy to market in one image. That gives genre buyers a clean hook and gives horror fans a movie with a strong, repeatable visual identity.",
+          "evidence": "The opening flag-folding execution, the sawmill rave, the loom archives, and the final Sears-house showroom all weaponize American iconography.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a real internal system.",
+          "what_it_means": "Gully Creek is built like an ecosystem of labor, memory, and hierarchy, which makes the movie feel bigger than a single slasher chase. That kind of world density is attractive to producers because it can support sequels, prequels, or a larger mythology without needing to invent new rules.",
+          "evidence": "The Grade system, the braid archive, the fifty-year harvest cycle, and the town’s institutional roles all connect across multiple locations.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are built around tools.",
+          "what_it_means": "The killer’s weapons are not random props; they are industrial and domestic objects with a thematic logic, which makes every kill feel designed rather than generic. That gives the movie a practical-effects showcase that horror audiences and effects-driven buyers can immediately understand.",
+          "evidence": "Flagpole hardware, upholstery staplers, sewing machines, looms, presses, shears, and measuring tools recur as murder instruments.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sofia is a strong action lead.",
+          "what_it_means": "She has the physical authority, attitude, and emotional heat to anchor a franchise-level final girl role that can fight, lead, and carry the movie’s style. That is the kind of part that attracts actors who want a bruised, ferocious showcase with both swagger and grief.",
+          "evidence": "She repeatedly takes command in the sawmill, the house, the archive, and the final assault on the Loom.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Coyotl gives the movie star energy.",
+          "what_it_means": "He brings charisma, fashion, humor, and danger into a horror ensemble, which broadens the movie beyond pure victim-survival mechanics. That makes the project more castable for a performer who wants to play charm and ferocity in the same role.",
+          "evidence": "His rave entrance, his banter in the car, and his physical defiance in the final act all make him pop.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mystery keeps mutating.",
+          "what_it_means": "The script keeps re-framing who is behind the mask, what the town is doing, and what the survivors are actually trapped inside, which sustains audience curiosity through a long feature runtime. That kind of shifting reveal structure is valuable to buyers because it keeps the movie from feeling like a one-note slasher.",
+          "evidence": "The Paul doubles, the town conspiracy, the archive reveal, and the final Liam/Miles turns all recontextualize the threat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending leaves a franchise scar.",
+          "what_it_means": "The final transfer of debt and the post-credits sting create a built-in continuation engine without needing to over-explain the mythology. Buyers like that because it preserves sequel optionality while still delivering a complete feature experience.",
+          "evidence": "The survivors are marked as the new management, and the final hand in the mud suggests the system survives.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a ferocious, highly marketable body-horror feature with a real signature: Americana turned into a meat-processing cult. The script has a vivid villain language, a strong action-horror lead in Sofia, and a world dense enough to feel like a mythology rather than a one-off kill spree."
+    },
+    "lead_characters": [
+      {
+        "name": "Sofia",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · stylish, physically capable, queer-coded",
+        "hook": "Sofia is the movie’s steel spine: sharp-tongued, image-conscious, and far more dangerous than she first appears. She starts as the friend who looks like she’s here for the party, but she becomes the one who can read the room, take command, and turn grief into tactical violence.",
+        "why_actor_wants_this": "This is the showcase territory of Milla Jovovich in Resident Evil or Jamie Lee Curtis in Halloween Ends — a survivor who becomes the engine of the action and the emotional center at the same time. Actors who want a bruised, stylish, physically assertive final-girl role with real attitude and late-film authority will chase this."
+      },
+      {
+        "name": "Coyotl",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · queer, fashion-forward, Latinx-coded",
+        "hook": "Coyotl is pure screen electricity: vain, funny, sexually charged, and unexpectedly brave when the movie turns lethal. He’s the kind of character who can flirt, provoke, and then step into the fight with a wounded animal’s fury.",
+        "why_actor_wants_this": "This is the showcase space of Oscar Isaac in Ex Machina or Jonathan Groff in Looking when the role lets charm and vulnerability collide with menace. Actors who want a scene-stealing, high-style part that can pivot from comic bite to feral survival will want in."
+      },
+      {
+        "name": "Nicole",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · brainy, anxious, local",
+        "hook": "Nicole is the pattern-reader: anxious, observant, and constantly trying to make the chaos legible before it kills everyone. Her arc gives the movie its investigative intelligence, and her eventual hardening into action gives the ensemble a second center of gravity.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Winona Ryder in Stranger Things when the role lets intelligence become survival instinct. Actors who want a smart, spiraling, then steel-voiced role with emotional and procedural payoff will chase it."
+      },
+      {
+        "name": "Liam",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · academic, local, seemingly mild",
+        "hook": "Liam is the movie’s most deceptive presence: soft-spoken, helpful, and always one step ahead in a way that can read as comfort or control. The role carries the story’s biggest turn because his calmness is the thing the audience learns to distrust.",
+        "why_actor_wants_this": "This is the showcase territory of Michael C. Hall in Dexter or Jake Gyllenhaal in Nightcrawler — a controlled, intelligent presence whose composure becomes the performance. Actors who want to play a character whose stillness hides a terrifying agenda will be drawn to it."
+      },
+      {
+        "name": "Charlotte Brown",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Sofia’s best friend",
+        "hook": "Charlotte is the emotional touchstone of the group: loyal, funny, and the one person Sofia can soften around. Her survival thread gives the movie a human heartbeat amid the carnage.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional resonance of Maika Monroe in It Follows before the genre machinery closes in. It offers a warm, grounded presence that makes the later horror land harder."
+      },
+      {
+        "name": "Lily",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · local family member",
+        "hook": "Lily is the most haunted member of the group, carrying the burden of being tied to the town’s history and the Chester family line. She gives the story a personal, inherited dimension that makes the conspiracy feel intimate.",
+        "why_actor_wants_this": "This is the kind of role that recalls the haunted-family pressure of Toni Collette in Hereditary, but in a younger, more vulnerable register. Actors who want a role where lineage and dread are inseparable will respond to it."
+      },
+      {
+        "name": "Charlotte Brown",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Sofia’s best friend",
+        "hook": "Charlotte is the emotional touchstone of the group: loyal, funny, and the one person Sofia can soften around. Her survival thread gives the movie a human heartbeat amid the carnage.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional resonance of Maika Monroe in It Follows before the genre machinery closes in. It offers a warm, grounded presence that makes the later horror land harder."
+      },
+      {
+        "name": "Miles Overton",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · local law enforcement",
+        "hook": "Miles is the town’s velvet-gloved enforcer: calm, official, and always speaking like he’s already inside the system he’s protecting. He reads as authority until the movie reveals how deeply he belongs to the machine.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in a prestige-crime role or J.K. Simmons when menace is delivered through institutional calm. Character actors who can play civic charm with buried threat will want this part."
+      },
+      {
+        "name": "Sheriff Overton",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · lawman, local patriarch",
+        "hook": "Sheriff Overton is the public face of the town’s order, the man who turns ritual violence into procedure. He gives the conspiracy a civic seal and makes the town feel organized rather than chaotic.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the authority-and-corruption territory of Denis Leary in Rescue Me or Michael Shannon in a lawman register. Strong character actors who can make bureaucracy feel predatory will chase it."
+      },
+      {
+        "name": "Quinn Price",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · volatile, queer-coded, emotionally unstable",
+        "hook": "Quinn is the ensemble’s live wire: jealous, wounded, performative, and always one beat away from either a breakdown or a betrayal. He keeps the movie unstable in exactly the way a good horror ensemble needs.",
+        "why_actor_wants_this": "This is the showcase territory of Barry Keoghan in The Banshees of Inisherin or Joe Alwyn when a role lets fragility curdle into threat. Actors who want a volatile, scene-stealing pressure valve will go after it."
+      },
+      {
+        "name": "Farah Masri",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · local, mechanically capable",
+        "hook": "Farah is the practical survivor in the group, the one who can actually get a truck running and keep moving when everyone else is spiraling. She brings competence and suspicion in equal measure.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded competence of Auliʻi Cravalho in a survival mode or Jurnee Smollett in a genre ensemble. It’s a useful, kinetic part for someone who can play action and distrust without overexplaining either."
+      },
+      {
+        "name": "Luis Fraijo",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · charismatic, physically vulnerable",
+        "hook": "Luis starts as the social glue and ends up as one of the story’s most visibly transformed survivors. He gives the movie a body-and-soul casualty whose damage is both emotional and visual.",
+        "why_actor_wants_this": "This is the showcase territory of Justice Smith in a genre role where charm gives way to terror and endurance. Actors who want a part that can be funny, wounded, and physically punishing will respond to it."
+      },
+      {
+        "name": "Bill Green",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · nerdy, anxious",
+        "hook": "Bill is the anxious tech-brain of the group, the kind of guy who feels the danger before he can articulate it. His presence helps the ensemble feel like a real friend group rather than a slasher lineup.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the nervous, sympathetic energy of Justice Smith in a horror ensemble or Jesse Eisenberg in a survival context. It’s a strong supporting slot for someone who can make panic feel specific."
+      },
+      {
+        "name": "Acadia Nikolaou",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · rave scene socialite",
+        "hook": "Acadia is the loud, chemically elevated social spark who makes the rave feel alive before it turns lethal. She gives the movie a burst of chaos and a very readable party-world texture.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the manic social energy of a Rachel Sennott-type performance in a horror setting. It’s a vivid, quotable supporting part for someone who can make excess feel dangerous."
+      },
+      {
+        "name": "Elijah Brown",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · Sofia-adjacent, observant",
+        "hook": "Elijah is the quieter witness in the ensemble, the one whose fear and loyalty keep shifting as the truth gets uglier. He helps widen the emotional field around Sofia and Charlotte.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the anxious, watchful energy of a young Lucas Hedges performance. It’s a good fit for someone who can make uncertainty feel active."
+      },
+      {
+        "name": "Mia Anderson",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · rave attendee",
+        "hook": "Mia is one of the movie’s most vivid casualties, a face in the crowd who becomes a brutal proof of the town’s method. She helps the world feel populated and the threat feel indiscriminate.",
+        "why_actor_wants_this": "This is the kind of horror-support role that gives an actor a memorable, high-impact genre death and a strong visual imprint. It’s useful for performers who want a sharp, festival-friendly genre credit."
+      },
+      {
+        "name": "Tiffany Dubois",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · local rival / social antagonist",
+        "hook": "Tiffany is the social knife in the room, the kind of character who weaponizes class, style, and contempt before the real horror arrives. She gives the movie a human-scale antagonism that sharpens the ensemble friction.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the sharp, venomous energy of a Mean Girls-era Rachel McAdams or a horror-mean-girl archetype with bite. It’s a compact but memorable part for someone who can make cruelty entertaining."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn iconography into carnage and make a horror movie feel like a fever dream of American industry.",
+        "fit_profile": "Mid-career genre directors with at least one visually ambitious feature, or first/second-feature filmmakers coming out of horror shorts and music-video work. This material rewards directors who care about production design, practical gore, and tonal control more than clean realism.",
+        "detail": "The movie gives a director a chance to build a signature visual world out of flags, looms, archives, and kit-house interiors, then pay it off with escalating set pieces. It is especially attractive to filmmakers who like performance-forward ensemble horror but also want enough spectacle to make the trailer cut itself."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming horror, premium cable genre, or midnight theatrical",
+        "detail": "It can be packaged around a strong ensemble rather than a single expensive star, which helps buyers finance it off concept and execution. The explicit body-horror lane and the instantly marketable Americana hook give it a clean trailer, poster, and festival-midnight path."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The mythology is doing a lot of work.",
+        "detail": "The braid archive, the Grade system, the fifty-year harvest cycle, and the Liam/Miles reveal all pay off, but they arrive in a dense stream. A next pass could consider where one or two of those ideas are introduced earlier in simpler form so the final-act reveal lands with even more force.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble is large for a feature.",
+        "detail": "The movie has six leads and a long supporting roster, which is part of its energy but also its scale. One simplification lever would be to fold a couple of the supporting friend-group functions together so the audience can track the emotional map more cleanly without losing the group texture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The town locations are ambitious.",
+        "detail": "The farm, sawmill, archive library, textile plant, diorama hall, and Sears-house interiors all create great variety, but they also ask for a lot of distinct builds and night work. The version of the script where one or two of those spaces are combined into a shared industrial complex would protect the escalation while easing the footprint.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final reveal wants maximum clarity.",
+        "detail": "The Liam/Miles/Quinn turn is a strong late-game shock, and the script already seeds it with enough visual and behavioral clues. A future pass could sharpen the exact moment the audience realizes who has been steering the town so the last-act betrayal feels inevitable as well as surprising.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The gore language is the brand.",
+        "detail": "The explicit body-horror is a major selling point, but it also defines the release lane and audience ceiling. That is not a note to soften it; it is a positioning fact that should guide packaging, festival strategy, and buyer targets.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 79.7,
+  "tier": "Optionable",
+  "inputTokens": 59868,
+  "outputTokens": 5786,
+  "cost": 0.070938,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,235 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Supernatural horror",
+      "genre_tags": [
+        "Mystery",
+        "Thriller"
+      ],
+      "tone": "Gritty, eerie, claustrophobic, nostalgic"
+    },
+    "positioning_hook": "A laid-off night guard takes a job at a reopened Freddy Fazbear’s Pizza and discovers the animatronics, a missing-child case, and his own buried past are all closing in on him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The Freddy’s brand gives this immediate recognition, and the script leans into the core horror promise of a night shift that turns into a survival trap. The appeal is strongest for genre audiences and fans of the game mythology, with broader reach coming from the missing-child mystery and the father-daughter emotional thread."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands quickly: Damien needs work, takes the night job, and the pizzeria becomes a haunted pressure cooker. The hook is easy to explain, though the script layers in multiple identity threads — the charm, the child ghost, Jesse’s history, Mia’s missing father — that make the engine feel more expansive than the opening setup alone."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Damien has a usable everyman quality, plus a personal tether through Mia and the daughter photo that gives him emotional texture. Jesse and Mia add useful relational friction, but the script is still building toward the deeper contradiction in Damien’s past, so the character engine is promising more than fully realized."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script uses familiar FNaF iconography but gives it a rewritten, more narrative-forward frame with Damien, Jesse, and a mystery trail of incident files and charms. The boldest move is the ghost-child thread tied to a specific personal history, which gives the material a more story-driven shape than a simple game adaptation."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The first-night structure is propulsive and the escalation from camera glitches to direct manifestation keeps the pages moving. The draft spends substantial time on setup and repeated camera beats, so the forward drive is solid but not yet razor-tight."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A haunted night guard at Freddy’s is instantly legible, and the script adds a personal mystery through the golden charm, the CD initials, and the incident files. That combination gives the material a fresh narrative spine, even though the underlying horror framework remains familiar."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The pizzeria is rendered with enough operational detail — backstage repairs, music box handling, camera monitoring, locker notes, incident reports — to feel like a functioning system rather than a generic haunted building. The newspaper clipping, Fredbear poster, and old incident lore suggest a larger mythology beyond the room."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone sits in a recognizable lane of low-lit, game-adjacent horror with occasional domestic softness in the Damien/Mia scenes. The contrast between breakfast-at-home tenderness and the brutal springlock ending gives the script a distinct flavor, though the tonal identity is still settling into its final shape."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The charm marked CD, the missing-child newspaper, Jesse’s reaction to the Fredbear poster, and Damien’s line about being there when it happened all point to a deeper backstory waiting underneath the immediate scares. The script clearly wants to be more than a haunted-shift story, and those buried connections create real slow-burn promise."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Damien, Mia, and Jesse give the script a workable triangle, with emotional and informational tension between them. The relationships are functional and story-useful, but the material still lives primarily on Damien’s shoulders rather than generating a broader ensemble web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead is a male night-shift worker in his 20s-30s",
+          "One lead is a female friend/partner in her 20s-30s",
+          "One lead is an older male office/contact role",
+          "Ghost child presence may be cast as a child performer or visual effect"
+        ]
+      },
+      "locations": {
+        "distinct_count": 5,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary with retro-lore elements",
+        "notable_requirements": [
+          "Contained pizzeria interior with office, hallway, stage, backstage, kitchen, bathrooms, and supply areas",
+          "Apartment interior",
+          "Office interior",
+          "Exterior dawn exit shots"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Animatronic movement, camera glitches, ghost-child appearances, static effects, and the springlock transformation ending require compositing and creature enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical animatronic builds, door mechanisms, power-outage effects, blood effects, and springlock gore.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Freddy Fazbear's Pizza, Fredbear, Chica, Bonnie, Foxy, and related FNaF iconography are prominently used."
+        },
+        {
+          "type": "brand",
+          "detail": "McMuffin and Hotcakes are named as breakfast items in the apartment scene."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror / theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong franchise-adjacent audience potential and a clear midnight-movie / streamer-horror path."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained locations and limited cast keep the footprint manageable, while animatronic builds, creature work, and gore effects push it above micro-budget."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story centers on a small trio of speaking roles, with no star-dependent ensemble or child-heavy cast requirement."
+        },
+        "location": {
+          "level": "low",
+          "note": "The action is largely contained to the pizzeria, apartment, and office spaces, with only a few exterior dawn beats."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes horror violence, blood, child-death lore, and a springlock body-horror ending that places it firmly in mature territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is built directly on Freddy Fazbear/FNaF brand elements and named iconography, which makes licensing central."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The pizzeria is an engine, not a backdrop.",
+          "what_it_means": "The backstage repair rules, camera system, music box logic, and locker notes turn the setting into a playable horror machine, which is exactly what buyers want from a franchise-adjacent feature. Genre audiences and producers looking for a contained, high-concept scare space will immediately understand the commercial lane.",
+          "evidence": "The script details Freddy repair instructions, Bonnie’s button, the camera monitors, the power meter, and the office doors as survival mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Damien gives the story a human anchor.",
+          "what_it_means": "The laid-off apartment scene, the daughter photo, and the way he protects Mia from the truth give the movie an emotional center that broadens the appeal beyond pure jump-scare fandom. Actors who want a grounded lead inside a genre frame, and buyers who like horror with a heartline, will respond to that balance.",
+          "evidence": "Damien is introduced after losing his job, keeps a photo of his daughter, and tries to comfort Mia when her father goes missing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mystery trail is commercially sticky.",
+          "what_it_means": "The golden charm marked CD, the incident file, the Fredbear poster, and Jesse’s evasive behavior create a breadcrumb structure that invites audience theorizing and sequel conversation. That kind of layered mythology is catnip for horror buyers who want a feature that can live as a standalone and also seed a larger universe.",
+          "evidence": "Damien finds the golden charm, flips it to reveal CD, and later discovers the Fredbear and Freddy incident files.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on body-horror escalation.",
+          "what_it_means": "The springlock sequence gives the feature a memorable final image and a hard genre stamp, which helps the movie leave a mark beyond the standard haunted-shift setup. Horror buyers and directors who like practical gore with a mythic sting will see a clear showcase moment here.",
+          "evidence": "Damien wakes inside the suit and the springlocks snap one by one as blood spills to the floor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lore is legible to fans and accessible to newcomers.",
+          "what_it_means": "The script uses recognizable FNaF elements while still explaining the job, the hauntings, and the missing-children history in scene-based terms, which helps it travel to both built-in fans and casual genre viewers. That dual lane is valuable to buyers because it widens the audience without requiring prior knowledge.",
+          "evidence": "The phone calls explain the night shift, while the newspaper clipping and incident reports introduce the town’s history.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, franchise-aware horror feature with a clear commercial spine: a broke night guard, a haunted pizzeria, and a buried past that turns the job into a trap. The script’s best asset is that it doesn’t just recreate FNaF imagery — it gives the material a human lead, a mystery trail, and a final-body-horror payoff that can sell to both fans and genre buyers."
+    },
+    "lead_characters": [
+      {
+        "name": "Damien",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s",
+        "hook": "Damien is a broke, tired, emotionally guarded night worker who tries to keep life moving with jokes, routine, and stubbornness. He has the kind of lived-in vulnerability that shows up in small tells — ruffling his hair, clutching the daughter photo, pretending he’s fine — while the script slowly reveals that Freddy’s is not just a job to him, but a place tied to buried memory.",
+        "why_actor_wants_this": "This is the showcase territory of Ethan Hawke in First Reformed — a man whose restraint becomes the performance, with dread, grief, and buried history all playing under a calm surface. Actors who want a genre lead with emotional interiority and a late-film breakdown will chase this, especially if they want to carry a horror feature without becoming a stock scream machine."
+      },
+      {
+        "name": "Mia",
+        "role_type": "Lead",
+        "demographics": "Female · 20s-30s",
+        "hook": "Mia is warm, observant, and emotionally direct, the kind of friend who can walk into a room with breakfast and still immediately sense when something is off. She gives the script its human pulse, moving from playful plushie enthusiasm to genuine fear and concern as Damien starts slipping into the same haunted orbit she’s trying to understand.",
+        "why_actor_wants_this": "This is the grounded-support showcase of Carrie Coon in The Leftovers — a character who can carry tenderness, alarm, and emotional intelligence in the same scene. Actresses who want a role that plays as the audience’s emotional translator inside a horror story will be drawn to her."
+      },
+      {
+        "name": "Jesse",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-50s",
+        "hook": "Jesse is the old friend with access, authority, and just enough evasiveness to make every answer feel loaded. He reads like a man who knows more than he says, and his calm office demeanor, clipped job offer, and reaction to the Fredbear history give him the texture of someone carrying guilt, loyalty, or both.",
+        "why_actor_wants_this": "This is the kind of role Brian Cox had in Succession — a controlled, information-rich presence whose authority is itself the drama. Character actors who specialize in ambiguity and quiet menace will want this because every scene can pivot on what Jesse chooses not to say."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn game mythology into a tense, character-led horror feature.",
+        "fit_profile": "First- or second-feature directors, or established indie genre directors, who are comfortable building dread through blocking, sound, and practical creature work rather than spectacle. This material rewards someone who likes contained spaces, escalating rules, and a final act that lands as both mythic payoff and visceral shock.",
+        "detail": "The script gives a director a playable horror box: office, hallways, stage, backstage, and a single night of escalation. It also offers a clean opportunity to stage animatronic movement and body-horror with practical-forward design, which is attractive to directors who want a signature genre calling card."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming horror / genre theatrical lane",
+        "detail": "The cast is small and the story is largely contained, so a buyer can package this around one strong lead and a practical-effects plan rather than a large ensemble. The built-in FNaF audience and recognizable iconography give it exportable genre value, especially for streamers and distributors looking for franchise-adjacent horror with a clear fan base."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening could arrive on Damien sooner.",
+        "detail": "The first pages spend time inside the Phone Guy repair sequence before the story settles on Damien’s apartment and job-loss setup. One lever would be to bring Damien’s personal need forward earlier so the audience locks onto the lead before the pizzeria mechanics take over.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The camera-beat escalation repeats a familiar rhythm.",
+        "detail": "The first-night sequence uses several rounds of switch-camera / flicker / disappear / reappear before the pressure fully changes shape. A next pass could tighten that progression so each camera beat reveals a new layer of threat rather than revisiting the same motion.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Jesse-Damien history wants one sharper reveal.",
+        "detail": "Their office scene already carries subtext about the old diner and the incident, and Jesse’s line about his kid gives the exchange weight. What would it look like if one more concrete detail surfaced there — a name, a date, or a specific memory — so the tension between them lands even harder?",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The pizzeria footprint is already efficient.",
+        "detail": "The story lives mostly in the apartment, office, hallways, stage, backstage, and kitchen, which keeps the production footprint contained. That makes the project easier to mount as a practical-effects horror feature without needing to expand the world beyond what the script already uses.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand dependency should be planned early.",
+        "detail": "Freddy Fazbear, Fredbear, Bonnie, Chica, Foxy, and the incident mythology are central to the script’s identity. Any packaging path should account for rights and clearance from the start, since the material’s commercial identity is tied directly to that iconography.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 63.3,
+  "tier": "Optionable",
+  "inputTokens": 17560,
+  "outputTokens": 3698,
+  "cost": 0.029810999999999997,
+  "declaredFormat": "Feature film"
+}

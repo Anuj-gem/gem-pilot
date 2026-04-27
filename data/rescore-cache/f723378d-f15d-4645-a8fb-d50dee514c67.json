@@ -1,0 +1,296 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sports drama",
+      "genre_tags": [
+        "Crime thriller",
+        "Family melodrama"
+      ],
+      "tone": "Grounded, gritty, emotional, propulsive"
+    },
+    "positioning_hook": "A retired cage fighter with a brain cyst and a dying daughter is forced back into illegal bouts by the man who ruined his life — and the only way out is winning with his head intact.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional promise is immediate: a father fighting to save his child, with the added hook of a damaged ex-fighter being pushed back into violence. The material has clear commercial traction for adult drama and genre buyers, though the subject matter is narrower than a broad four-quadrant crowd-pleaser."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the opening pages: Billy is an aging MMA brawler, he blacks out in the cage, and the story quickly reveals the medical and criminal pressure closing in on him. The fight-for-your-child engine is easy to explain in two sentences and stays legible all the way through."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Billy has a strong contradiction at the center — gentle cook and father at home, feral survivor in the cage — and Rollie, Jasmine, Claudia, and Cisco each sharpen a different side of him. The character set is effective and actor-friendly, though the script’s strongest magnet is Billy rather than a deeply layered ensemble."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The illegal swamp-fight ecosystem, the brain-cyst ticking clock, and the father-daughter dialysis storyline give the script a specific lane rather than a generic combat movie. It’s built from familiar genre parts, but the combination of medical urgency, bayou fight culture, and family sacrifice gives it a confident identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps escalating with clean pressure turns: the diagnosis, the money need, the illegal promotion, the return of Cisco, the kidnapping, and the final Vegas showdown. Each major sequence either raises the stakes or narrows Billy’s options, which keeps the read moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a damaged ex-fighter whose body is literally failing while he’s asked to keep fighting for his child has a built-in inevitability that feels fresh. The script’s best hook is that the thing making him dangerous is also what could kill him, and that contradiction is dramatized repeatedly."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a vivid underworld of ballroom fights, swamp bouts, casino bars, and Vegas media spectacle, with enough detail to make the fight economy feel lived-in. The world is strongest when it shows how money, violence, and local hustles intersect, especially through Frank’s promotion and Cisco’s laundering operation."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone blends bruising physicality with sincere family emotion and a slightly pulpy criminal edge, and it stays consistent across the whole feature. The cooking scenes, the dialysis routines, and the fight violence all belong to the same emotional register, which gives the script a recognizable identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the fight plot, the script is carrying a story about identity, self-control, fatherhood, and whether violence can ever be redirected into care. The ending and epilogue suggest a fuller emotional life beyond the immediate plot, even though the surface engine is already doing most of the work."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Billy/Rollie, Billy/Jasmine, and Billy/Claudia all generate real story energy, and Cisco gives the script a strong antagonist relationship. The supporting cast functions well, but the story remains centered on Billy’s choices more than on a web of equally active relationships."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in his 40s/50s with credible fighter physicality",
+          "Female supporting lead in late 30s, pregnant in early sections",
+          "Child actor age 10 and later teenage version of the same character",
+          "Several fighters and goons with strong physical presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior fight and travel scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Las Vegas strip and hotel interiors",
+          "Shreveport bayou and riverbank fight locations",
+          "Hospital, casino, gym, apartment, barn, parking garage, cemetery, and swamp-adjacent exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action; limited enhancement for fight coverage, crowd extension, and medical imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fight choreography, blood effects, gunshot wound makeup, hospital practicals, and water-based fight safety.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Mickey Rourke appears as himself in a cameo-like role."
+        },
+        {
+          "type": "brand",
+          "detail": "T-Mobile Arena is named in the opening Vegas establishing sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "UFC is referenced repeatedly as a real-world fight brand."
+        },
+        {
+          "type": "brand",
+          "detail": "Las Vegas Strip, riverboat casinos, and specific hospital names are used as recognizable real-world settings."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable feature",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as a festival-to-platform or streamer acquisition title with genre-drama appeal."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary locations, fight scenes, hospital work, and a few specialty exteriors keep it above microbudget, but it remains far from effects-heavy scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project needs a physically credible lead, a strong antagonist, a child performer, and a pregnant supporting lead, but the ensemble is still manageable."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across Vegas, Shreveport, hospitals, gyms, bars, barns, cemeteries, and swamp fight spaces, which creates a real but controllable footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent brutal fights, blood, a child in medical jeopardy, a kidnapping, and a death-in-the-cage threat push this firmly into mature territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses real-world brands and a named celebrity cameo, but it does not hinge on a single IP property."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Billy is a showcase role built on contradiction.",
+          "what_it_means": "The lead gives an actor a bruised physical part with real emotional range: father, husband, laborer, and cage-fighter all in one body. Mid-career dramatic leads who want a role that can play toughness, shame, tenderness, and feral release will see the appeal immediately.",
+          "evidence": "Billy cooks chorizo omelettes for Jasmine, builds the crib, then blacks out and nearly kills Sergio in the cage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-daughter engine is unusually strong.",
+          "what_it_means": "The Claudia storyline gives the movie a clean emotional spine that can carry audience investment even through the hardest fight scenes. Buyers looking for a genre title with heart, and actors who want a performance anchored by parental devotion rather than macho posturing, will respond to that center of gravity.",
+          "evidence": "Claudia’s dialysis, the pills, the experimental treatment, and Billy’s promise that he’ll never let her die all drive the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The fight world has a specific, exportable texture.",
+          "what_it_means": "The ballroom bouts, swamp fights, barn matches, and casino-bar brawls create a distinct underworld that feels local without becoming obscure. Genre buyers and producers who want a contained but flavorful action-drama can package this as a world with repeatable visual rules.",
+          "evidence": "The script moves from a dingy Vegas ballroom to Red River mud fights to a barn ring and a parking-garage bout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Cisco is a clean, playable antagonist.",
+          "what_it_means": "He’s not just a villain; he’s a manipulator, financier, and emotional parasite who can dominate scenes without needing constant action. That makes the project attractive to a strong character actor and gives the movie a villain with both menace and business logic.",
+          "evidence": "Cisco pays doctors, controls fights, threatens family, and keeps Billy financially and emotionally trapped.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The medical clock gives the story urgency.",
+          "what_it_means": "The cyst, the kidney failure, and the experimental drug create a ticking-clock structure that keeps the stakes legible and immediate. Streamers and financiers like this kind of built-in urgency because it turns every fight into a life-or-death financial decision.",
+          "evidence": "Billy is told he can die from head trauma, and Claudia needs expensive treatment to stay stable.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone balances grit with warmth.",
+          "what_it_means": "The script can move from blood and bruises to pancakes, chess, and kitchen banter without losing its identity, which broadens the emotional entry point. That tonal blend is attractive to buyers who want something tougher than a family drama but more heartfelt than a pure fight movie.",
+          "evidence": "Billy and Claudia’s cooking scenes, the chess games, and the final restaurant epilogue all sit alongside brutal cage violence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on earned catharsis.",
+          "what_it_means": "The final restaurant reveal gives the movie a clean emotional payoff and a marketable aftertaste: survival, healing, and a family rebuilt. That kind of closing image is useful for festival audiences and for buyers who want a title that leaves viewers with uplift after the bruises.",
+          "evidence": "Years later, Billy is cooking in Claudia’s restaurant and finally likes his reflection.",
+          "source": "script"
+        }
+      ],
+      "headline": "THE BRAWLER is a bruising, emotionally legible feature with a strong commercial spine: an aging cage fighter, a sick daughter, and a criminal fixer who turns fatherhood into leverage. It has the kind of lead role actors chase, a fight-world setting with real texture, and a clean high-stakes engine that keeps tightening until the final cage bell."
+    },
+    "lead_characters": [
+      {
+        "name": "Billy \"The Brawler\" Butler",
+        "role_type": "Lead",
+        "demographics": "Male · 40s/50s · physically weathered former MMA fighter",
+        "hook": "Billy is a man split between tenderness and violence: a gifted cook and devoted father whose body is falling apart, but whose fight instincts still ignite like a switch. He carries shame, love, rage, and exhaustion in the same frame, which makes him feel lived-in rather than generic.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a damaged man whose interior weather is as playable as his physical presence. Actors who want a role that lets them do bruised masculinity, parental devotion, and primal eruption in one performance will line up for it."
+      },
+      {
+        "name": "Jasmine Butler",
+        "role_type": "Lead",
+        "demographics": "Female · late 30s · dark-skinned pregnant wife / partner",
+        "hook": "Jasmine is the emotional conscience of the movie: loving, practical, and unafraid to challenge Billy when he starts confusing survival with self-destruction. She’s warm without being passive, and her pregnancy gives every scene with Billy an added layer of future-facing urgency.",
+        "why_actor_wants_this": "This is the kind of grounded, emotionally commanding role that gave Regina King in If Beale Street Could Talk the chance to be both intimate and morally centered. Actresses who want to play the person holding the family together while still landing sharp, memorable dialogue will be drawn to her."
+      },
+      {
+        "name": "Rollie",
+        "role_type": "Lead",
+        "demographics": "Male · 60s · grizzled trainer/mentor",
+        "hook": "Rollie is the old-school mentor who knows exactly how much damage the fight game can do, because he’s spent a lifetime inside it. He’s stern, funny, and deeply loyal, with the ache of a man trying to save his fighter from becoming a casualty.",
+        "why_actor_wants_this": "This is the mentor-showcase lane of Morgan Freeman in Million Dollar Baby — a weathered guide whose authority comes from history, not speeches. Veteran character actors who can play toughness, regret, and paternal love in the same breath will want this part."
+      },
+      {
+        "name": "Francisco \"Cisco\" Montes",
+        "role_type": "Lead",
+        "demographics": "Male · 30s/40s · muscular manager / criminal operator",
+        "hook": "Cisco is polished menace: a suit over a fighter’s body, a smile over coercion, and a businessman who treats people like assets. He’s charismatic enough to enter a room like a friend and cold enough to turn that room into a trap.",
+        "why_actor_wants_this": "This is the kind of villain role that gave Javier Bardem in No Country for Old Men its chilling authority — controlled, intelligent, and terrifying without needing volume. Actors who want a prestige antagonist with business savvy and physical threat will chase it."
+      },
+      {
+        "name": "Claudia Butler",
+        "role_type": "Lead",
+        "demographics": "Female · 10s, later teen · sick child growing into a healthy daughter",
+        "hook": "Claudia is bright, funny, and resilient, never defined only by illness even though illness shapes her life. She gives the movie its innocence and its future, and the final time jump lets her become the living proof of Billy’s sacrifice.",
+        "why_actor_wants_this": "This is the kind of child-to-teen emotional anchor that gave Brooklynn Prince in The Florida Project such vivid, scene-stealing humanity. A young performer who can play intelligence, humor, and vulnerability will have a memorable part here."
+      },
+      {
+        "name": "Frank Stevens",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · small-time fight promoter",
+        "hook": "Frank is a hustler with a grin, the kind of guy who can sell danger as entertainment and still seem like he’s doing you a favor. He’s comic relief with teeth, and his opportunism keeps the fight world feeling transactional.",
+        "why_actor_wants_this": "This is the fast-talking operator lane of John Turturro in Miller’s Crossing — a character who can be funny, slippery, and slightly pathetic without losing authority. Character actors who like rhythm, banter, and moral flexibility will have fun with him."
+      },
+      {
+        "name": "Jimmy",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · construction worker / friend",
+        "hook": "Jimmy is Billy’s working-class pressure valve: crude, loyal, funny, and unexpectedly useful when the fists start flying. He gives the movie a grounded buddy energy and keeps the world from feeling sealed off inside the fight plot.",
+        "why_actor_wants_this": "This is the blue-collar sidekick space of Ben Foster in 3:10 to Yuma — a role that gets laughs, loyalty, and a few sharp emotional beats without needing to carry the whole movie. Actors who can play comic timing and sincerity in the same scene will want it."
+      },
+      {
+        "name": "Dr. Bui",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · physician",
+        "hook": "Dr. Bui is the voice of medical reality, but he’s not written as a cold bureaucrat; he’s a professional trying to navigate a desperate family and a dangerous man. He gives the script credibility and keeps the stakes from floating into melodrama.",
+        "why_actor_wants_this": "This is the grounded professional role that gave Jeffrey Wright in The Good Nurse its quiet authority — a character whose calm becomes dramatic because everyone else is spiraling. Actors who specialize in controlled intensity and moral clarity will be interested."
+      },
+      {
+        "name": "Eduardo Cruz",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s · elite champion fighter",
+        "hook": "Eduardo is vengeance with a body: younger, faster, and trained to turn grief into violence. He’s not just an opponent; he’s the living consequence of Billy’s past, which makes every exchange feel personal and inevitable.",
+        "why_actor_wants_this": "This is the showcase lane of Michael B. Jordan in Creed — a physically dominant fighter whose emotional engine is legacy and revenge. Younger leading men with athletic credibility and dramatic ambition will want the chance to play a champion with a wound underneath the swagger."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make violence feel personal, not ornamental.",
+        "fit_profile": "Established indie or prestige-leaning genre directors with at least one feature under their belt, especially those who care about performance-forward action and emotionally legible stakes. The material rewards someone who can stage fights with clarity while keeping the father-daughter and mentor dynamics alive in every scene.",
+        "detail": "The movie gives a director a contained but muscular canvas: intimate interiors, repeatable fight spaces, and a final arena payoff that can be built toward with precision. It will attract filmmakers who like grounded action, bruised masculinity, and emotional escalation that plays as cleanly as the punches."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streamer / festival-to-platform genre drama",
+        "detail": "The project can be packaged around one physically credible lead and one strong antagonist, with the rest of the cast supporting a clear father-daughter spine. The fight-world hook, mature tone, and emotional core fit the current streamer appetite for elevated genre titles that travel well without needing franchise scale."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening fight is doing a lot of setup.",
+        "detail": "The ballroom bout efficiently establishes Billy’s condition, the crowd, Rollie, and the rage switch, but it also carries a lot of exposition in one stretch. A next pass could consider trimming a few explanatory beats so the emotional shock of Billy’s blackout lands even faster.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Cisco’s leverage escalates in strong steps.",
+        "detail": "The script already has a clear pressure ladder, but the version where one or two of Cisco’s threats are seeded a little earlier could make his final kidnapping move feel even more inevitable. That would protect the momentum while giving the last act a sharper sense of doom.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The fight geography is broad but manageable.",
+        "detail": "The story moves through Vegas, Shreveport, hospitals, bars, barns, garages, cemeteries, and swamp-adjacent exteriors. If production wanted to protect budget without changing the story, one lever would be to consolidate a couple of the mid-story fight locations so the visual variety stays high while the footprint tightens.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The medical storyline is the emotional engine.",
+        "detail": "Billy’s cyst and Claudia’s kidney failure are the two pressure systems that make the plot move, and the script already uses them well. A future pass could deepen the contrast between Billy’s self-destruction and Claudia’s resilience by letting one or two quieter scenes carry even more of that emotional exchange before the next fight turn.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final fight payoff is strong and expensive-looking.",
+        "detail": "The Vegas arena sequence gives the movie a big finish, but it also asks for media, crowd, and broadcast coverage that will want careful planning. The version of the climax that leans hardest on clean coverage and selective crowd extension would preserve the scale without overbuilding the whole production.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 71.7,
+  "tier": "Optionable",
+  "inputTokens": 45456,
+  "outputTokens": 4829,
+  "cost": 0.055822500000000004,
+  "declaredFormat": "Feature film"
+}

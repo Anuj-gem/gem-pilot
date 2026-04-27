@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-23T23:19:29.211Z",
+  "submission_id": "c959bd73-bf17-418b-9e7a-69cd2479297f",
+  "eval_id": "7f4a0687-fe80-45d1-8bcd-3f0b1372ce3b",
+  "title": "UNICORNS EXIST (Free) Greenlight Coverage 04 16 2026",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Alma",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "David",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s"
+    },
+    {
+      "name": "Gas Station Clerk",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "Rude Customer",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-50s"
+    }
+  ],
+  "positioning_hook": "Alma’s childhood unicorn fantasy turns real when a gas-station encounter and a bleeding horn force her to confront the queerness she’s been translating into magic.",
+  "cost_usd": 0.023837999999999998,
+  "input_tokens": 10262,
+  "output_tokens": 3587,
+  "status": "wrote:leads_ok"
+}

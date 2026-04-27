@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-23T23:05:50.584Z",
+  "submission_id": "bf621902-8774-4458-8f13-f7a55a579ddc",
+  "eval_id": "b85bd8a2-ad9f-452f-8e15-5d6a89b960da",
+  "title": "NO",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Ada Morris",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · ethnically ambiguous / part Native-American"
+    },
+    {
+      "name": "Quinn Anderson",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Parker",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "Chris Marsh",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "Samuel",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 19"
+    },
+    {
+      "name": "Andy",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "Rep. Jones",
+      "role_type": "Supporting",
+      "demographics": "Male · late 60s"
+    },
+    {
+      "name": "Rep. Goldman",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Benny",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    }
+  ],
+  "positioning_hook": "After a public panic attack on the House floor, a rising progressive congresswoman cuts a deal with a disgraced lobbyist to save her career — and maybe her soul.",
+  "cost_usd": 0.03265875,
+  "input_tokens": 16329,
+  "output_tokens": 4536,
+  "status": "wrote:leads_ok"
+}

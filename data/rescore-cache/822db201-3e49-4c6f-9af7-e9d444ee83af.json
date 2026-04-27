@@ -1,0 +1,307 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction romance",
+      "genre_tags": [
+        "Drama",
+        "Melodrama"
+      ],
+      "tone": "Lyrical, emotional, wistful, and high-concept with grounded romantic intimacy"
+    },
+    "positioning_hook": "A woman on a generation ship keeps falling in love with the same man across simulated lives, until she discovers he may be the only thing worth saving from the system itself.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise has immediate emotional pull: love, memory, mortality, and a visually legible spacefaring frame. The Anne/Sam relationship gives the movie a broad romantic entry point while the simulation conceit adds a clean genre engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early with the ship, the sleep chamber, and the repeated lives, then sharpens when Sam becomes the recurring mystery. The story engine is easy to explain in a sentence and the stakes become clear as Anne realizes the system may erase him."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Anne is built as a contradiction machine: cynical, sensual, funny, and deeply romantic, with a desire for experience that keeps colliding with her fear of loss. Sam is equally playable as the elusive, emotionally intelligent counterweight, and Judy gives the story a strong relational anchor."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a big emotional sci-fi premise without hiding behind exposition, and it keeps finding fresh ways to dramatize the same love story through resets, simulations, and altered memory. The choice to make the romance span multiple lives and multiple versions of reality gives the material a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps renewing its engine: first the mystery of Sam, then the question of whether he is real, then the revelation of the ship simulation, then the final choice to preserve him. The repeated returns to the chamber and the escalating emotional cost keep the read moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a traveler living multiple simulated lives while searching for one recurring love has that rare 'of course this exists' feeling. The emotional logic is simple and sticky, but the structure keeps revealing new layers through each reset."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The generation ship, the sleep chambers, the AI Musoka, and the simulation-lobby ecosystem create a specific world with rules that matter to the story. The setting is strongest when it becomes a lived-in social system of sleepers, techs, and training cycles rather than just a backdrop for romance."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: romantic, melancholy, playful, and occasionally cheeky about sex and mortality. The script can move from a joke about 'the sex is bad' to a devastating goodbye without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the love story is a meditation on identity, consent, memory, faith, and what counts as a real life. The repeated lives, the erased simulations, and the final horizon image all suggest a larger philosophical afterlife without over-explaining it."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Anne/Sam is the core engine, but Judy and Vivian add meaningful pressure and contrast, especially when Judy becomes the voice of social reality and Vivian becomes the bridge to the system. The ensemble is compact rather than sprawling, but the key relationships do generate distinct scenes and choices."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Two child twins required for Liza and Mindy",
+          "Lead roles span multiple ages of the same characters",
+          "Strong chemistry casting between Anne and Sam is central"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "near-future / futuristic with contemporary Earth-life simulations",
+        "notable_requirements": [
+          "Spaceship interiors",
+          "Sleep chamber hold",
+          "Simulation environments across multiple global locations",
+          "Alien-world exterior/bubble city"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Spaceship exterior, hypersleep interface, white-out transitions, holograms, simulated environments, alien planet/bubble city, and a few large-scale cosmic views.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical sleep-chamber rigs, sedative effects, white-out transitions, and simulated environment resets.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Tinder"
+        },
+        {
+          "type": "brand",
+          "detail": "NYU"
+        },
+        {
+          "type": "brand",
+          "detail": "FCC Hotel Siem Reap"
+        },
+        {
+          "type": "brand",
+          "detail": "Life board game"
+        },
+        {
+          "type": "brand",
+          "detail": "Machu Picchu"
+        },
+        {
+          "type": "brand",
+          "detail": "Angkor Wat"
+        },
+        {
+          "type": "brand",
+          "detail": "Seven Sisters"
+        },
+        {
+          "type": "brand",
+          "detail": "Brooklyn Heights"
+        },
+        {
+          "type": "brand",
+          "detail": "Alpha Centauri"
+        },
+        {
+          "type": "brand",
+          "detail": "Proxima Centauri"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming feature or festival-to-platform theatrical romance-drama with sci-fi elements",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival launch potential and streamer-friendly emotional sci-fi positioning"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is mostly contained to interiors, simulations, and a limited set of recurring environments, but the spaceship, alien-world, and multiple global simulation looks push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project depends on a compelling Anne/Sam pairing, plus child casting for the twin daughters and age-spanning continuity across multiple life stages."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves through many distinct simulation settings, plus ship interiors, a bubble city on Proxima Centauri, and several international-feeling locations."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes suicide, grief, sex, and emotional distress, but it stays within a prestige-drama range rather than explicit territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and place references appear on the page, including Tinder, NYU, Machu Picchu, Angkor Wat, and the Seven Sisters."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The romance is the engine.",
+          "what_it_means": "This gives buyers a clean emotional promise: a love story that can sell on feeling first and concept second, which broadens the lane beyond hard sci-fi audiences. Actors who want a sweeping, romantic lead with real stakes will see immediate value here, especially in the prestige-streaming space.",
+          "evidence": "Anne and Sam keep finding each other across simulations, then build a life, children, and a final goodbye that lands as the movie's emotional climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Anne is a showcase role.",
+          "what_it_means": "The part lets one actor play wit, erotic charge, grief, obsession, and maternal devastation in a single feature, which is exactly the kind of range that attracts top-tier dramatic talent. Mid-career actresses looking for a career-defining lead and festival buyers looking for a performance centerpiece will both respond.",
+          "evidence": "Anne moves from sardonic New Year banter to simulated lives, to the discovery that Sam is real, to the collapse after losing him and their daughters.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise has a clean high-concept hook.",
+          "what_it_means": "A generation-ship romance with memory resets and simulated lives is easy to pitch and easy to market, while still feeling emotionally specific. That combination is valuable for streamers and specialty theatrical buyers who want a concept that can travel in a thumbnail and still reward a full watch.",
+          "evidence": "The opening establishes hypersleep on a ship to Alpha Centauri, then reveals Anne is living multiple lives inside simulations while searching for Sam.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a strong governing idea.",
+          "what_it_means": "The ship, the AI Musoka, the training cycles, and the simulation-lobby structure create a rules-based world that can support both spectacle and intimate drama. Buyers looking for contained sci-fi with a premium feel will see a world that is legible, producible, and story-generating.",
+          "evidence": "Musoka administers simulations, sedates Anne, manages memory, and eventually reveals the ship simulation itself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It balances humor with heartbreak.",
+          "what_it_means": "The script can pivot from flirtation and sexual comedy into existential grief without losing its voice, which gives the material broad tonal appeal and rewatch value. That tonal blend is attractive to directors who like emotional precision and to audiences who want something moving but not solemn.",
+          "evidence": "Anne jokes with Sam about wet lips, the sex being bad, and missionaries at Angkor Wat before the story turns toward loss, memory, and death.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending image is haunting.",
+          "what_it_means": "The final horizon shot of Sam as a shadow in the distance gives the movie a memorable closing metaphor that feels both romantic and unresolved. That kind of ending is catnip for festival programmers and prestige buyers because it lingers after the credits.",
+          "evidence": "Anne finishes her painting wall on Proxima Centauri, then looks out and sees Sam's shadow on the horizon before walking out of frame.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, emotional sci-fi romance built around a star-making female lead and a clean, marketable hook: a woman on a generation ship keeps finding the same man across simulated lives. The script’s real asset is that it never treats the concept as the point — it uses the concept to build a love story with grief, wit, sex, and existential stakes that can play prestige, genre, and date-night all at once."
+    },
+    "lead_characters": [
+      {
+        "name": "ANNE WEST",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s to late 50s across the feature",
+        "hook": "Anne is sharp, sensual, funny, and stubbornly alive to experience, even when she’s trapped inside systems that want to flatten her into routine. She starts as a woman who treats reality like a nuisance and becomes someone willing to fight the universe for one person she cannot bear to lose.",
+        "why_actor_wants_this": "This is the showcase territory of Cate Blanchett in *Blue Jasmine* meeting the emotional sweep of Jessie Buckley in *The Lost Daughter* — a role that lets an actor move from brittle wit to romantic surrender to raw grief. Prestige actresses looking for a part with range, heat, and awards-caliber emotional escalation will circle this immediately."
+      },
+      {
+        "name": "SAM RIVERS",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 50s across the feature",
+        "hook": "Sam is the rare male romantic lead who feels both elusive and emotionally legible: funny, tender, a little self-mythologizing, and deeply responsive to Anne. He carries the mystery of whether he is a person, a projection, or something in between, which makes him feel like a love interest and a metaphysical question at once.",
+        "why_actor_wants_this": "This is the showcase space of Andrew Garfield in *Tick, Tick... Boom!* or Paul Mescal in *Aftersun* — a role where vulnerability is the charisma and the audience falls for the actor’s interior life. Actors who want to be seen as romantic leads with depth, not just presence, will want this part."
+      },
+      {
+        "name": "JUDY",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s to 30s",
+        "hook": "Judy is Anne’s social mirror: funny, frank, pleasure-seeking, and emotionally practical until the story asks her to choose between friendship and self-preservation. She gives the movie its lived-in human texture and the kind of friend dynamic that makes Anne’s loneliness feel real.",
+        "why_actor_wants_this": "This is the kind of sharp supporting-lead territory that made Beanie Feldstein in *Booksmart* or Ayo Edebiri in *The Bear* pop — fast, funny, emotionally readable, and scene-stealing without needing the whole movie to orbit her. Actors with comic timing who want a role that still lands dramatic weight will chase it."
+      },
+      {
+        "name": "VIVIAN",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-20s",
+        "hook": "Vivian is the practical human interface between Anne and the system: calm, competent, and just sympathetic enough to make the rules feel humane. She’s the kind of supporting character who can carry exposition because she’s also carrying the audience’s trust.",
+        "why_actor_wants_this": "This is the grounded, procedural-support role that gives an actor the authority of Gugu Mbatha-Raw in *Loki* or Rebecca Ferguson in *Doctor Sleep* — intelligence, composure, and the ability to make institutional dialogue feel alive. Actors who play smart, controlled characters with emotional undertow will be drawn to it."
+      },
+      {
+        "name": "MUSOKA",
+        "role_type": "Supporting",
+        "demographics": "Non-human AI voice",
+        "hook": "Musoka is the ship’s omnipresent intelligence, equal parts caretaker, gatekeeper, and cosmic bureaucrat. The voice has to feel soothing enough to trust and cold enough to make every decision feel like a moral boundary.",
+        "why_actor_wants_this": "This is the kind of voice role that benefits from the performance territory of Scarlett Johansson in *Her* — intimate, uncanny, and emotionally loaded even without a body. A recognizable voice with warmth and precision would make this instantly memorable."
+      },
+      {
+        "name": "DEBRAH",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Debrah is Anne’s party-world companion in the early lives: loose, rich, and socially fearless. She’s less about plot than about giving Anne a credible social ecosystem before the story narrows into obsession.",
+        "why_actor_wants_this": "This is the kind of glossy, scene-forward supporting part that plays like the best friend energy in *Girls* or *The White Lotus* — stylish, funny, and instantly legible. Actors who like playing social voltage and comic texture will have fun with it."
+      },
+      {
+        "name": "MELISSA",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s",
+        "hook": "Melissa is the blunt, modern companion who helps define the social rules of the ship’s simulation culture. She’s a quick hit of attitude and perspective, useful because she tells the audience how normalized this world has become for everyone else.",
+        "why_actor_wants_this": "This is a compact, attitude-rich role in the vein of the sharp ensemble players in *Girls* or *Broad City* — the kind of part that lets an actor land a character in a few lines. It’s a clean showcase for comic timing and social authority."
+      },
+      {
+        "name": "MOTHER",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Anne’s mother is part of the emotional architecture of Anne’s remembered childhood, a stabilizing presence in the lives that shape her sense of home. She functions as memory, warmth, and the baseline of family that Anne keeps trying to preserve.",
+        "why_actor_wants_this": "This is the kind of emotionally resonant family role that gives an actor a single, memorable imprint in a prestige feature, similar to the parental presence in *The Tree of Life* or *Aftersun*. Character actors who can communicate history quickly will be interested."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a romantic sci-fi film that plays like an emotional memory loop, not a spectacle reel.",
+        "fit_profile": "First- or second-feature directors with a strong festival short background, or established indie filmmakers who already work in performance-forward drama and restrained genre. The material rewards directors who care about emotional continuity across time jumps, elegant visual transitions, and making high-concept ideas feel intimate rather than mechanical.",
+        "detail": "The script gives a director a chance to stage a love story through resets, altered identities, and recurring visual motifs, which is a strong craft signature if they like formal repetition with emotional payoff. It will attract filmmakers who can balance clean sci-fi design with actor-centered storytelling and who want a project that can travel from festival conversation to streamer audience."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Prestige streaming romance-drama with sci-fi hooks",
+        "detail": "It can be packaged around one major female lead and one strong male romantic counterpart, with the rest of the cast kept compact and functional. The contained ship/simulation structure and emotionally legible premise make it attractive to streamers and specialty theatrical buyers looking for a concept that can sell on a thumbnail and still deliver awards-friendly performances."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The simulation structure is the main lever.",
+        "detail": "The draft already has a strong emotional spine, so the biggest next-pass opportunity is to keep clarifying the rules of what Anne remembers, when she remembers it, and how Musoka controls the resets. The version where each life has one unmistakable governing rule would make the audience lean in even harder and would sharpen the reveal when the ship simulation is exposed.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section can be even more selective.",
+        "detail": "The London, temple, and multiple-life material is rich, but there are stretches where the movie is carrying the same emotional beat through several beautiful locations. A next pass could consider compressing one or two of those life chapters so the Anne/Sam connection and the mystery of his recurrence arrive with even more force.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ship world invites simplification.",
+        "detail": "The story already works with a compact core of Anne, Sam, Judy, Vivian, and Musoka, so the production footprint can stay disciplined even with the many simulation settings. One useful version would be to let a few of the travel beats share the same visual language, which would preserve the emotional sweep while keeping the build manageable.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights list should be cleaned for release.",
+        "detail": "The draft names several real-world places and brands, including Tinder, NYU, Machu Picchu, Angkor Wat, the Seven Sisters, and Brooklyn Heights. A clearance pass that swaps any plot-irrelevant brand references for generic equivalents would protect distribution flexibility without changing the story.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final act earns its emotional scale.",
+        "detail": "The ending with the daughter years, the final loss, and the return to the chamber is already potent, and the script knows how to land the grief. A next pass could consider foregrounding the emotional cost of the children a touch earlier so the final collapse feels even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76.3,
+  "tier": "Optionable",
+  "inputTokens": 37944,
+  "outputTokens": 5370,
+  "cost": 0.052622999999999996,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi horror",
+      "genre_tags": [
+        "Disaster thriller",
+        "Ensemble survival"
+      ],
+      "tone": "Heightened, apocalyptic, pulpy, grimly comic"
+    },
+    "positioning_hook": "A hard-drinking war reporter and a bunkerful of rivals descend into a Japanese apocalypse shelter, then fight to survive when giant rats overrun the world above and below.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible as a survival spectacle with a clear monster engine, and the reporter-at-ground-zero setup gives it a broad commercial entry point. The appeal is strongest for genre audiences and buyers who like high-concept disaster escalation, though the period-political framing and ensemble density keep it from feeling four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: a nuclear-age peace summit, an underground shelter, and a rat invasion that turns the bunker into a trap. The opening Beirut report, the Apocalypse House reveal, and the first rat attack all establish the engine cleanly and fast."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Chad Abraham has a strong screen presence as a cynical, alcoholic journalist who becomes the moral center, and Brook, Anderson, and Miyoki each bring a distinct survival posture. The characters are vivid in function and voice, though most of the supporting cast serves the pressure-cooker more than carrying fully separate emotional arcs."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a big, strange premise with a satirical edge: world peace pageantry colliding with subterranean extermination. The blend of Cold War anxiety, newsroom cynicism, bunker engineering, and giant-rat apocalypse gives it a distinct pulp identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the rats arrive, the story keeps tightening through breaches, failed exits, ration loss, and escalating internal conflict. The middle section does spend time on bunker logistics and character banter, but the pressure keeps renewing itself with each new attack and containment failure."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a peace summit collapsing into a subterranean rat apocalypse is the kind of premise that feels both outrageous and inevitable once you hear it. The bunker-as-civilization metaphor, especially with the final voiceover about humanity losing the food chain, gives the concept a memorable aftertaste."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific geopolitical and media ecosystem: war-zone reporting, Japanese defense bureaucracy, a global peace alliance, and a highly engineered underground facility. The world is story-generating and tactile, though the setting is primarily in service of the central survival chamber rather than a broader institutional web."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "It has a very identifiable tone: deadpan newsroom banter, macho military posturing, and absurdly large monster mayhem played with straight-faced seriousness. The script keeps returning to ironic lines like \"A real trip\" and \"When they do\" while the world collapses around them, which gives it a sharp pulp voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the monster plot, there are seeds of guilt, faith, masculinity, and survival ethics, especially in Abraham’s Beirut trauma and Anderson’s religious fatalism. The script gestures toward those layers, but the surface engine is so dominant that the deeper material mostly arrives through dialogue and final-image symbolism."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The ensemble is one of the script’s best assets: Abraham/Anderson/Brook, Abraham/Miyoki, Rawling/Yakamoto, and the military pair all generate friction and alliance shifts. Nearly every pairing has a different temperature, which keeps the bunker scenes alive even when the plot is temporarily in containment mode."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child role with sustained screen time",
+          "Ensemble of adults with distinct age and type requirements",
+          "Two female bodyguard/assistant roles with physical presence",
+          "One role with explicit gay identity reveal",
+          "One role with Japanese-language and bilingual requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior, roughly 70/30",
+        "period_or_contemporary": "Near-future / late-20th-century contemporary",
+        "notable_requirements": [
+          "Tokyo city exteriors",
+          "Beirut war-zone street",
+          "Sweden peace-gathering exterior",
+          "Large underground bunker set with multiple sectors, elevator shaft, access towers, control room, food prep areas, and hallway network",
+          "Crowd-heavy hotel lobby and summit spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Large-scale rat swarms, destruction, underground facility scale, broadcast screens, and final post-apocalyptic world imagery.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical rat effects, blood, creature attack choreography, collapsing set elements, electrical barrier effects, and debris/tremor effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "CNN"
+        },
+        {
+          "type": "brand",
+          "detail": "Real Magazine"
+        },
+        {
+          "type": "brand",
+          "detail": "Channel 33"
+        },
+        {
+          "type": "brand",
+          "detail": "Gideons Bible"
+        },
+        {
+          "type": "real_person",
+          "detail": "King Carl of England"
+        },
+        {
+          "type": "real_person",
+          "detail": "Hiroshima reference via Yakamoto's family history"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical genre feature or premium streamer genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform, genre theatrical, or streamer event title"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The bunker can be built as a controlled set, but the rat swarms, destruction, and multiple broadcast/worldwide inserts push it above a small indie budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script depends on a strong ensemble with several distinct adult leads, plus a child role and a few physically specific parts."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story spans Beirut, Tokyo, Sweden, a hotel summit, and a large underground complex, though much of it can be concentrated into the bunker build."
+        },
+        "content": {
+          "level": "high",
+          "note": "Creature violence, mutilation, profanity, and apocalyptic imagery narrow the lane to mature genre buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names CNN, Real Magazine, Channel 33, and a King Carl of England figure, which creates clear clearance and naming decisions."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A buyer can understand the movie in one breath: war reporter, underground shelter, giant rats, civilization under siege. That kind of clean, high-concept engine is exactly what helps a genre feature travel in the marketplace and sell from a logline alone.",
+          "evidence": "The Beirut opening, the Apocalypse House reveal, and the first rat attack all establish the survival engine within the first act.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has real friction.",
+          "what_it_means": "The script gives producers a playable group dynamic instead of a single-note hero chase, which opens the door to strong casting across multiple roles. Actors who like sharp banter, status games, and survival pressure will see material in Abraham, Brook, Anderson, Miyoki, Rawling, and Yakamoto.",
+          "evidence": "Abraham and Anderson trade insults, Brook needles Rawling, Miyoki pushes through the men, and Yakamoto keeps trying to hold the room together.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The bunker is a story engine.",
+          "what_it_means": "This is not just a setting; it is a pressure chamber with rules, sectors, ration limits, access towers, and a single point of failure. That gives a producer a contained build with escalating set pieces and a clear production identity that can be staged efficiently while still feeling large.",
+          "evidence": "The shelter’s sectors, elevator timer, access towers, food modules, and control center all become active parts of the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Chad Abraham is a showcase lead.",
+          "what_it_means": "The role gives an actor cynicism, guilt, heroism, and dry comic timing in one package, which is the kind of part that can anchor a genre feature and attract name talent looking for a reset. Mid-career dramatic leads and actors with prestige credibility but genre appetite would be drawn to the emotional turn from self-protective reporter to reluctant rescuer.",
+          "evidence": "His Beirut guilt over the little girl, his drinking, his sarcasm, and his repeated choice to go back into danger for Hely define him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a sharp pulp identity.",
+          "what_it_means": "The script knows how to play apocalypse with a straight face and a wink, which makes it easier to market than a purely grim survival piece. Buyers looking for a genre title with personality will respond to the newsroom banter, military swagger, and absurdly specific rat-catastrophe imagery.",
+          "evidence": "Lines like \"A real trip,\" \"When they do,\" and \"Burn, you bastards!\" sit right beside the bunker siege.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a strong metaphor.",
+          "what_it_means": "The final voiceover about humanity losing its place in the food chain gives the movie a thematic button that elevates it beyond a simple creature feature. That kind of closing image helps festival programmers, genre fans, and buyers remember the title after the credits roll.",
+          "evidence": "The final ascent from the bunker to a rat-dominated world, followed by the cockroach emergence, seals the idea.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a big, weird, highly sellable apocalypse feature with a clean monster engine and a memorable ensemble. The script’s best commercial asset is that it gives you both a contained survival movie and a showcase lead in Chad Abraham, while the bunker setting keeps the production footprint focused enough to package intelligently."
+    },
+    "lead_characters": [
+      {
+        "name": "Chad Abraham",
+        "role_type": "Lead",
+        "demographics": "Male · middle-aged · American war reporter",
+        "hook": "A Pulitzer-winning CNN reporter with a handsome, worn face, a drinking habit, and a conscience he keeps trying to outrun. He talks like a cynic, moves like a survivor, and keeps getting pulled back into responsibility by the people around him.",
+        "why_actor_wants_this": "This is the showcase territory of Jeff Bridges in *Crazy Heart* crossed with the moral pivot of Denzel Washington in *Flight* — a damaged professional whose charisma is inseparable from self-destruction. Actors who want a role that can play wit, guilt, physical danger, and redemption in one arc will chase this, especially those looking for a prestige-leaning genre lead."
+      },
+      {
+        "name": "Saran Mioyki",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · Japanese news reporter and mother",
+        "hook": "A sharp, working journalist trying to keep her career alive while parenting a ten-year-old in a world that keeps demanding she choose one or the other. She is practical, fast on her feet, and emotionally exposed in a way that makes her instantly human.",
+        "why_actor_wants_this": "This is the showcase space of Frances McDormand in *Three Billboards Outside Ebbing, Missouri* — a woman whose authority comes from lived-in pressure, not polish. Actresses who want a role that balances competence, maternal urgency, and emotional directness will see a lot to play here."
+      },
+      {
+        "name": "Ivan Brook",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · American survivalist magazine editor",
+        "hook": "A big, swaggering survivalist with a hunter’s confidence, a hidden claustrophobia, and a late-revealed sexuality that reframes his bravado. He is funny, combative, and unexpectedly tender, which makes him one of the script’s most volatile and memorable presences.",
+        "why_actor_wants_this": "This is the kind of role John Goodman had in *The Big Lebowski* with the emotional reveal space of Richard Jenkins in *The Visitor* — a larger-than-life personality that keeps opening into vulnerability. Character actors who can weaponize humor and then pivot into pain will be drawn to it."
+      },
+      {
+        "name": "Joe Anderson",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Black magazine editor",
+        "hook": "A sharp-tongued editor with a cigarette, a Bible, and a fatalistic sense of humor who slowly becomes the movie’s spiritual center. He starts as a cynic and ends as the clearest voice of faith in the room.",
+        "why_actor_wants_this": "This is the showcase lane of Morgan Freeman in *The Shawshank Redemption* — a man whose calm authority and philosophical clarity become the emotional ballast of the story. Actors who can play intelligence, wit, and quiet conviction will see a role that rewards restraint and gravitas."
+      },
+      {
+        "name": "Professor Van Yakamoto",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Japanese scientist",
+        "hook": "A brilliant, guarded engineer whose bunker is both his life’s work and his moral burden. He is proud of the shelter, ashamed of what it may become, and increasingly crushed by the gap between invention and consequence.",
+        "why_actor_wants_this": "This is the kind of role Ben Kingsley had in *Sexy Beast* in terms of controlled intelligence under pressure, with the tragic burden of a scientist in *Oppenheimer*. Actors who like playing authority that slowly fractures will be attracted to the part."
+      },
+      {
+        "name": "General Donald Rawling",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · American brigadier general",
+        "hook": "A hard-edged military man who sees every crisis as a battlefield and every person as a unit to be managed. He is disciplined, authoritarian, and increasingly cornered by a threat he cannot command.",
+        "why_actor_wants_this": "This is the kind of role Ed Harris often gets in *The Rock* or *Apollo 13* — a command figure whose authority creates tension the moment he enters a room. Actors who like playing steel, pride, and tactical pressure will want this."
+      },
+      {
+        "name": "Steele",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · military guard",
+        "hook": "A loyal, physically imposing soldier who functions as Rawling’s shadow and muscle. He speaks sparingly, moves with precision, and becomes one of the movie’s most efficient action presences.",
+        "why_actor_wants_this": "This is the showcase territory of a Michael Biehn-style action lieutenant — a role built on physical authority, tactical movement, and terse loyalty. Actors with a strong physical reel will see a clean, playable genre part."
+      },
+      {
+        "name": "Stone",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · military guard",
+        "hook": "Rawling’s other enforcer, all discipline and no ornament. He is the kind of soldier who makes the bunker feel more dangerous just by standing in it.",
+        "why_actor_wants_this": "This is the kind of part that gives an actor the same utility as the silent heavy in *Aliens* or *Heat* — a physical, tactical presence that sells danger without speeches. It suits performers who can communicate command through posture and action."
+      },
+      {
+        "name": "Tak",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Japanese assistant/bodyguard",
+        "hook": "One half of Yakamoto’s silent, disciplined pair, she is composed, watchful, and physically capable. Her restraint makes her feel like part of the facility’s architecture until the pressure starts to crack the room open.",
+        "why_actor_wants_this": "This is the kind of role that works like the silent bodyguard parts in *Crouching Tiger, Hidden Dragon* or *The Matrix* — minimal dialogue, strong physical presence, and a cool, controlled screen image. Action performers and martial-arts-trained actors will see an efficient showcase."
+      },
+      {
+        "name": "Min",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Japanese assistant/bodyguard",
+        "hook": "The other half of Yakamoto’s pair, equally poised and unreadable, with a calm that becomes eerie once the shelter starts failing. She reads as ceremonial until the reveal that changes how the audience sees her.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the same appeal as the quiet operative in *Kill Bill* or *Ghost in the Shell* — elegant physicality with a late reveal that recontextualizes the character. It is a strong fit for performers who want a cool, image-driven genre part."
+      },
+      {
+        "name": "Hely",
+        "role_type": "Supporting",
+        "demographics": "Female · 10 years old · Japanese child",
+        "hook": "Mioyki’s daughter is observant, self-possessed, and more emotionally legible than most of the adults around her. She gives the movie a child’s-eye innocence that keeps the apocalypse from becoming abstract.",
+        "why_actor_wants_this": "This is the kind of child role that functions like the kid in *The Road* or *A Quiet Place* — a performance that gives the film its emotional stakes and audience identification. Young actors with strong naturalism would make this a memorable part."
+      },
+      {
+        "name": "Terry Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · station manager",
+        "hook": "A blunt newsroom boss who knows Abraham’s value and his liabilities. He is the practical gatekeeper who sends the story into motion.",
+        "why_actor_wants_this": "This is a compact authority role in the tradition of newsroom managers in *Broadcast News* or *Spotlight* — a part built on timing, impatience, and institutional realism. Character actors who can make a few scenes feel lived-in will be interested."
+      },
+      {
+        "name": "King Carl",
+        "role_type": "Supporting",
+        "demographics": "Male · older adult · English monarch figure",
+        "hook": "A ceremonial world leader presiding over the peace alliance with polished optimism. He exists as a symbol of international order just before that order starts to collapse.",
+        "why_actor_wants_this": "This is the kind of brief but memorable authority role that carries the prestige texture of a statesman in *The Crown* or *Gandhi*. A seasoned actor can make the peace-alliance pageantry feel real in very little screen time."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a contained apocalypse into a character-driven pressure cooker.",
+        "fit_profile": "Established indie genre directors or second-feature filmmakers with at least one tension-forward feature under their belt, especially those who like ensemble conflict, contained survival setups, and practical-creature energy. This material rewards directors who can stage escalation cleanly, keep banter alive under pressure, and make a single location feel like a world-ending machine.",
+        "detail": "The craft opportunity is in balancing monster spectacle with status games, so the right director gets to build dread from blocking, rhythm, and ensemble behavior rather than constant scale. It will attract filmmakers who like the discipline of contained production but still want room for big set pieces and a memorable final-image payoff."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M genre feature",
+        "lane": "Premium streamer horror-thriller / theatrical genre lane",
+        "detail": "The bunker footprint and ensemble can be packaged around a strong director and one recognizable lead, rather than requiring a full name-cast across the board. Giant-rat creature horror, apocalypse stakes, and a contained interior build give it a clean streamer hook and a practical production path that can travel internationally."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on broadcast setup.",
+        "detail": "The Beirut prologue and the early TV montage establish Chad’s worldview, but the version of the opening where the rat-apocalypse premise arrives a little sooner would put the movie’s engine in gear faster. One lever would be to compress some of the broadcast-satire material so the audience reaches Apocalypse House with even more momentum.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The bunker ensemble can be streamlined.",
+        "detail": "The script already has a strong central triangle in Abraham, Brook, and Miyoki, plus Yakamoto and Rawling as pressure points. A next pass could consider whether one or two of the supporting authority figures can be folded together so the emotional and tactical beats stay concentrated without losing the ensemble energy.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The clearance list should be cleaned early.",
+        "detail": "CNN, Real Magazine, Channel 33, and King Carl of England all create naming and rights decisions that a producer will want settled before packaging. The good news is that these are mostly straightforward substitutions or fictionalizations, so the story can keep its media-world texture without depending on the exact references.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rat attack set pieces are the budget driver.",
+        "detail": "The creature swarms, destruction, and collapsing bunker systems are the main cost centers, so the most efficient version of the film will keep the action concentrated inside a few repeatable spaces. The story already supports that approach because the elevator, control room, food module, and access tower become recurring battlegrounds.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Brook’s reveal deserves room to breathe.",
+        "detail": "The claustrophobia and gay reveal land as a sharp character turn, and the movie benefits from that surprise because it deepens the ensemble’s emotional texture. A next pass could consider giving the reveal a beat of aftermath so the audience can feel how it changes the room, not just the joke.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.3,
+  "tier": "Optionable",
+  "inputTokens": 45243,
+  "outputTokens": 5328,
+  "cost": 0.057908249999999994,
+  "declaredFormat": "Feature film"
+}

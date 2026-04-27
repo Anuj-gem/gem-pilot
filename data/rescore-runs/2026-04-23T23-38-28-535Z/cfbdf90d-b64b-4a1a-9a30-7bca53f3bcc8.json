@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:42:27.657Z",
+  "submission_id": "cfbdf90d-b64b-4a1a-9a30-7bca53f3bcc8",
+  "eval_id": "299c55f2-722e-4bd2-ade3-0c5ae6288dbc",
+  "title": "Battle for the Ages",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Thomas Clay",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Arizona sheriff / Old West lawman"
+    },
+    {
+      "name": "Lt. Benjamin Ellis-Green",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · U.S. Navy SEAL"
+    },
+    {
+      "name": "Captain Francois Leon",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Pirate captain"
+    },
+    {
+      "name": "Matsuno Noriaki",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Samurai"
+    },
+    {
+      "name": "Victorio",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Apache warrior"
+    },
+    {
+      "name": "Winston the Brave",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Medieval knight"
+    },
+    {
+      "name": "Asmund Berg",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Viking warrior"
+    },
+    {
+      "name": "Diences",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Spartan warrior"
+    },
+    {
+      "name": "Angela the Activist",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · mobility aid user"
+    },
+    {
+      "name": "Zechariah",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · future prison guard"
+    },
+    {
+      "name": "Xander",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · future prison guard"
+    },
+    {
+      "name": "Lucy",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · 1970s discotheque styling"
+    },
+    {
+      "name": "Vice-Commissioner",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · future authority figure"
+    },
+    {
+      "name": "Sheriff Taylor",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Old West sheriff"
+    },
+    {
+      "name": "Kevin Clay",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Old West townsman"
+    },
+    {
+      "name": "Susan",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Old West townswoman"
+    },
+    {
+      "name": "Aadela Jan",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Afghan woman"
+    }
+  ],
+  "positioning_hook": "A hard-bitten Arizona sheriff wakes in a time-scrambled prison where warriors from every era are forced into a televised death game—and he starts playing for power instead of escape.",
+  "cost_usd": 0.055107,
+  "input_tokens": 36966,
+  "output_tokens": 6085,
+  "status": "wrote:leads_ok"
+}

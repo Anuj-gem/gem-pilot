@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-23T23:16:34.087Z",
+  "submission_id": "b6b51437-38d8-4126-812b-bb35e38c592f",
+  "eval_id": "406c7b7c-b16e-476a-bfbe-92f92303dee7",
+  "title": "Fleabag",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "FLEABAG",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · Londoner"
+    },
+    {
+      "name": "CLAIRE",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · Londoner"
+    },
+    {
+      "name": "DAD",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Londoner"
+    },
+    {
+      "name": "HARRY",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Londoner"
+    },
+    {
+      "name": "BOO",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Londoner"
+    },
+    {
+      "name": "THE BANKER",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "WOMEN SPEAK HOST",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "SISTER'S HUSBAND",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    }
+  ],
+  "positioning_hook": "A self-destructive London café owner tries to keep her business alive, her family at bay, and her sex life from becoming a public disaster — while her dead best friend keeps haunting the margins.",
+  "cost_usd": 0.028861500000000002,
+  "input_tokens": 12988,
+  "output_tokens": 4249,
+  "status": "wrote:leads_ok"
+}

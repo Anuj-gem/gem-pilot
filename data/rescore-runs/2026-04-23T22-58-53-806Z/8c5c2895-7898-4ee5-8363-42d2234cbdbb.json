@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:05:10.483Z",
+  "submission_id": "8c5c2895-7898-4ee5-8363-42d2234cbdbb",
+  "eval_id": "3a0bd615-2f0e-4cda-b7b8-f94c4654b70d",
+  "title": "As Everything Falls Apart",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Kevin",
+      "role_type": "Lead",
+      "demographics": "Male · teen"
+    },
+    {
+      "name": "Claire",
+      "role_type": "Lead",
+      "demographics": "Female · teen"
+    },
+    {
+      "name": "Mike",
+      "role_type": "Lead",
+      "demographics": "Male · teen"
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Lily",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Ben",
+      "role_type": "Supporting",
+      "demographics": "Male · teen"
+    },
+    {
+      "name": "Stephanie",
+      "role_type": "Supporting",
+      "demographics": "Female · teen"
+    },
+    {
+      "name": "Ms. Williams",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Ms. Platty",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Mr. Jones",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    }
+  ],
+  "positioning_hook": "Kevin, a bullied teen trapped between a food obsession, a strict Christian home, and a first love, spirals toward self-destruction when his closest friend and his girlfriend each reveal their own hidden pain.",
+  "cost_usd": 0.03169949999999999,
+  "input_tokens": 15974,
+  "output_tokens": 4382,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-23T23:20:54.577Z",
+  "submission_id": "797afabc-494e-4beb-a9dc-6da6ac3c8b6f",
+  "eval_id": "85c620ef-d366-4894-ba15-e78b567f0216",
+  "title": "Being Others",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "HARRIS HOTCHKISS",
+      "role_type": "Lead",
+      "demographics": "Male · 16"
+    },
+    {
+      "name": "TERRY MICHAELS",
+      "role_type": "Lead",
+      "demographics": "Male · 16"
+    },
+    {
+      "name": "TOM HOTCHKISS",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "BEVERLY HOTCHKISS",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "MISSY HOTCHKISS",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "STEWART HOTCHKISS",
+      "role_type": "Supporting",
+      "demographics": "Male · 11"
+    },
+    {
+      "name": "TAYLOR MAJORS",
+      "role_type": "Supporting",
+      "demographics": "Female · 16"
+    },
+    {
+      "name": "JOSH BOSON",
+      "role_type": "Supporting",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "LISA MINETTI",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "AVERY WESKER",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "ANDREW BOSON",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "BARTHOLOMEW MEADE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "DR. KRAMER",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "MR. BELTRAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "COACH",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "NURSE WALKER",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "DOCTOR FINE",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s"
+    }
+  ],
+  "positioning_hook": "A bullied teen who absorbs other people’s skills through touch must stop a sabotage plot at his father’s new roller coaster before his borrowed gifts run out.",
+  "cost_usd": 0.05515199999999999,
+  "input_tokens": 38304,
+  "output_tokens": 5872,
+  "status": "wrote:leads_ok"
+}

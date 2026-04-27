@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-23T23:22:01.518Z",
+  "submission_id": "f8aa7d25-d983-483b-8512-cd0dd234f057",
+  "eval_id": "e8e9fdde-19ec-462f-8947-cb6cecfa6736",
+  "title": "screenplay what my experiences have taught me 777",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "BEN",
+      "role_type": "Lead",
+      "demographics": "Male · 0s to 30s · Nigerian · facial deformity/prosthetic continuity across ages"
+    },
+    {
+      "name": "MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-50s · Nigerian"
+    },
+    {
+      "name": "FATHER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-60s · Nigerian"
+    },
+    {
+      "name": "MIRIAM",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-to-late teens · ebony-looking, plus-sized"
+    },
+    {
+      "name": "QUADRI",
+      "role_type": "Supporting",
+      "demographics": "Male · early teens · Nigerian"
+    },
+    {
+      "name": "EMEKA",
+      "role_type": "Supporting",
+      "demographics": "Male · early teens · Nigerian"
+    },
+    {
+      "name": "SHADE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · Nigerian"
+    },
+    {
+      "name": "TIM",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · Nigerian"
+    },
+    {
+      "name": "PRINCE",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · Nigerian"
+    },
+    {
+      "name": "AMAKA",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · Nigerian"
+    },
+    {
+      "name": "JOKE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · ebony, petite, Nigerian"
+    },
+    {
+      "name": "GRACE",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · Nigerian"
+    },
+    {
+      "name": "ANTONIA",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · Nigerian"
+    },
+    {
+      "name": "PASTOR THOMAS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · Nigerian"
+    },
+    {
+      "name": "PASTOR'S WIFE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · Nigerian"
+    },
+    {
+      "name": "FRIEND",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Nigerian"
+    },
+    {
+      "name": "FOREIGNER",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 30s-60s · non-Nigerian"
+    },
+    {
+      "name": "AUTHOR",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 30s-60s"
+    }
+  ],
+  "positioning_hook": "Ben, a Nigerian boy born with a facial deformity, fights through family neglect, public humiliation, and romantic rejection to become a published writer and define his own name.",
+  "cost_usd": 0.051442499999999995,
+  "input_tokens": 32254,
+  "output_tokens": 6056,
+  "status": "wrote:leads_ok"
+}

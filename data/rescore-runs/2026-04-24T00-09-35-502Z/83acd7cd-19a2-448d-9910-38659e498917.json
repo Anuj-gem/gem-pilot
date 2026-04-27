@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-24T00:12:22.748Z",
+  "submission_id": "83acd7cd-19a2-448d-9910-38659e498917",
+  "eval_id": "0a89cdc4-c983-4588-8ed7-f83bb0cec172",
+  "title": "The Coin",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "Joe",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · rugged, physically capable"
+    },
+    {
+      "name": "Big Tony",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · large, imposing, charismatic"
+    },
+    {
+      "name": "Mr LA",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Black / Dominican / African American"
+    },
+    {
+      "name": "Bamboo",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · Japanese / Black Japanese heritage"
+    },
+    {
+      "name": "Hatsuko",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Japanese"
+    },
+    {
+      "name": "Scorpio",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Mexican"
+    },
+    {
+      "name": "Kitano",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Japanese"
+    },
+    {
+      "name": "Anika",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Japanese"
+    },
+    {
+      "name": "John Dolan",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Brian",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Dimitri",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Russian"
+    },
+    {
+      "name": "Vlad",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · Russian"
+    },
+    {
+      "name": "Jill",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "The Snatcher",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · Black"
+    },
+    {
+      "name": "Akari",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Japanese"
+    },
+    {
+      "name": "The Boss / Father",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · Japanese"
+    },
+    {
+      "name": "Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-70s · Japanese"
+    },
+    {
+      "name": "Old Man / Marvin Vincent",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s-80s"
+    }
+  ],
+  "positioning_hook": "A parolee hunting a mythic coin through LA’s criminal underworld discovers the real prize is a betrayal that reaches from car lots to cartel estates.",
+  "cost_usd": 0.07452825,
+  "input_tokens": 60503,
+  "output_tokens": 6478,
+  "status": "wrote:leads_ok"
+}

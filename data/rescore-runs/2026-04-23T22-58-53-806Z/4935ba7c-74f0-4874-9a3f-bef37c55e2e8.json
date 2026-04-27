@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-23T23:13:29.325Z",
+  "submission_id": "4935ba7c-74f0-4874-9a3f-bef37c55e2e8",
+  "eval_id": "5ba811fc-8e46-4b6a-bad1-f7e06fe9e438",
+  "title": "Samurai Cowboy",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Dan Chan",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · Japanese"
+    },
+    {
+      "name": "Midge Johnson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Japanese-American"
+    },
+    {
+      "name": "Shorty Alverez",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · Hispanic"
+    },
+    {
+      "name": "Charisse",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · White"
+    },
+    {
+      "name": "Mitchell Feeney",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · White"
+    },
+    {
+      "name": "Jake Feeney",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · White"
+    },
+    {
+      "name": "Tom McClaine",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · White"
+    }
+  ],
+  "positioning_hook": "Japanese country singer Dan Chan lands in Texas, where a saloon war turns into a one-man gauntlet of wrestlers, racists, and oil-money thugs.",
+  "cost_usd": 0.05393025,
+  "input_tokens": 43575,
+  "output_tokens": 4722,
+  "status": "wrote:leads_ok"
+}

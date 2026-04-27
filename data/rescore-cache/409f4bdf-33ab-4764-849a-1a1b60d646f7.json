@@ -1,0 +1,345 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_tags": [
+        "Crime",
+        "Superhero"
+      ],
+      "tone": "Pulp, kinetic, comic-book, heightened"
+    },
+    "positioning_hook": "A newspaper heir and his lethal driver moonlight as the Green Hornet and Kato, racing to expose a heroin-smuggling conspiracy inside their own media empire before the killers erase the paper’s next generation.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean commercial promise: masked vigilantes, a media-world conspiracy, and a steady stream of set-piece action. The appeal is strongest for genre audiences and franchise-minded buyers rather than the broadest four-quadrant crowd."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands quickly: Britt Reid and Kato investigate a murder that opens into a narcotics pipeline running through the Sentinel and its TV arm. The Green Hornet identity, the Black Beauty, and the numbers-game cover operation give the story a clear engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Britt, Kato, Casey, and Dan Reid give the story a workable core, with Britt’s double life and Kato’s competence carrying the most pull. The supporting players mostly serve the conspiracy plot, so the character draw is solid rather than especially deep."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script leans into a retro pulp property with a modern crime-thriller spine, which gives it a recognizable but lively angle. The media-company corruption and gadget-forward crimefighting add flavor, though the execution stays close to genre tradition."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with real propulsion, repeatedly escalating from murder investigation to surveillance, abduction, dockside raids, and the final ship showdown. The action scenes are frequent and the conspiracy keeps widening, which sustains momentum well."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The strongest fresh element is the use of a TV-news numbers game as a covert criminal communications system, which is a smart, story-specific twist. Beyond that, the plot follows familiar vigilante-versus-smuggling beats in a straightforward way."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Sentinel newsroom, the TV department, the docks, Chinatown, and the Black Beauty all feel like parts of a functioning ecosystem with their own rules. The media-and-crime overlap gives the world enough texture to support the plot and the gadgets."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is knowingly pulpy, with hardboiled banter, broad villainy, and comic-book action staged with a straight face. The script knows it wants to be a flashy, old-school crime adventure, and it stays committed to that lane."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "The surface pleasures are clear and immediate, but the script is mostly invested in plot mechanics and action escalation. Britt, Kato, and Casey hint at richer personal dynamics, though the draft keeps those reserves mostly in the background."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Britt/Kato is the anchor, and Casey, Dan, Frank, Rex, and CC create enough cross-pressure to keep scenes alive. The ensemble works as a conspiracy web, though the story still lives primarily on the lead duo."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Action-capable lead duo",
+          "Asian male supporting lead with martial-arts and physicality requirements",
+          "Multiple supporting roles with specific ethnic identity requirements",
+          "Several villain roles with stunt/fight coordination needs"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Large newsroom and TV studio spaces",
+          "Luxury home with secret garage/elevator",
+          "Dockside industrial area",
+          "Chinatown streets and warehouse frontage",
+          "Ship deck and cabin set or practical docked vessel",
+          "Police station/lab interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical-looking gadget effects, the bee camera, the Black Beauty transformations, and a few explosion/firework moments.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Car transformations, explosions, gunfire, smoke devices, breakaway glass, vehicle impacts, and fight choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "CNN, KSFI, Daily Sentinel, Global Marketing, and Explosive Entertainment are named in dialogue and signage."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"I Feel Good\" is performed at the anniversary party."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Green Hornet, Kato, Britt Reid, Dan Reid, and the Black Beauty are pre-existing characters and elements."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Theatrical action-adventure or premium streaming action feature",
+        "content_level": "PG-13 equivalent mature",
+        "series_engine_or_release_model": "Feature release model with franchise/IP positioning; best suited to a theatrical or event-streaming launch."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Action set pieces, vehicle work, explosions, and a dockside climax push this above a contained indie budget, but it stays well below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story needs a credible lead duo and a handful of specific supporting roles, but it does not depend on a huge ensemble or child casting."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves through newsroom, home, Chinatown, docks, a ship, and multiple night exteriors, which creates a manageable but active footprint."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Gun violence, beatdowns, abduction, and drug trafficking keep the material in mature PG-13 territory with some standards-and-practices attention."
+        },
+        "rights": {
+          "level": "high",
+          "note": "This is built on Green Hornet IP and also uses named brands, a named song, and media-company identifiers that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The media-world cover is the hook.",
+          "what_it_means": "The Sentinel/KSFI setup gives the movie a built-in engine that is both plot-functional and commercially legible: the newsroom is the front, the broadcast is the code, and the conspiracy lives inside the institution. That kind of premise is catnip for buyers who want a recognizable world with a clean, marketable gimmick and for audiences who like their action tied to a workplace they understand.",
+          "evidence": "The numbers game on KSFI becomes the smuggling signal, and Britt uses the newsroom to track the conspiracy while Rex weaponizes the station.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Britt and Kato are a real action duo.",
+          "what_it_means": "The lead pairing gives the movie a two-hander dynamic instead of a solo hero template, which broadens casting appeal and makes the action feel collaborative rather than generic. That is the kind of setup that attracts actors who want chemistry, contrast, and a shared showcase rather than a lone vigilante lane.",
+          "evidence": "Britt drives the investigation and disguise work while Kato handles the physical execution, surveillance, and driving.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Black Beauty is a sellable toy.",
+          "what_it_means": "The car is not just transportation; it is a signature piece of IP that gives the movie a visual identity, trailer moments, and merchandising value. Franchise buyers and directors who like practical spectacle will immediately see the appeal of a hero vehicle that transforms, tracks, smokes, and fights back.",
+          "evidence": "The garage flip reveals the Black Beauty, complete with hidden tech, bee launch, smoke systems, and mounted weapons.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The villainy is corporate and criminal.",
+          "what_it_means": "The story’s antagonists are not random street crooks; they are embedded in the station, the docks, and the distribution chain, which gives the conflict a bigger institutional feel. That makes the movie easier to pitch as a conspiracy thriller with action muscle, a lane that plays well with buyers looking for genre plus system-level corruption.",
+          "evidence": "Rex, Tommy, Xchan, and their crew use the TV station and shipping network to move heroin under the cover of a numbers game and fireworks company.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are frequent and legible.",
+          "what_it_means": "The script keeps delivering clear action turns — apartment raid, freeway chase, cannery break-in, dock assault, office siege — so the movie has a trailer-friendly rhythm and a steady escalation pattern. That kind of momentum helps both theatrical packaging and streamer browsing because the promise is obvious from scene to scene.",
+          "evidence": "The Hornet and Kato repeatedly move from surveillance to assault to escape, with each sequence escalating the stakes and the scale.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Casey gives the movie a human face.",
+          "what_it_means": "Casey is more than a love-interest placeholder; she becomes the emotional hostage and the audience’s access point into Britt’s double life, which gives the movie a cleaner emotional spine. That makes the script more attractive to actors and buyers who want a genre piece with a recognizable romantic and rescue engine.",
+          "evidence": "Casey is present at the party, notices the conspiracy, is kidnapped, resists Tommy, and then helps operate the bee during the climax.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, packageable Green Hornet feature with a strong commercial spine: newsroom corruption, a coded broadcast conspiracy, and a hero vehicle built for trailer moments. The script knows exactly what it is — a pulpy, action-forward crime movie with a distinctive media-world hook — and it keeps paying that promise off with momentum."
+    },
+    "lead_characters": [
+      {
+        "name": "Britt Reid / The Green Hornet",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · white · affluent newspaper heir",
+        "hook": "Britt is a polished media heir who can move from boardroom charm to masked vigilantism without breaking stride. He has the easy confidence of a man born into power, but the script keeps revealing a sharper instinct underneath: he reads people fast, improvises under pressure, and treats the Hornet identity like both a weapon and a responsibility.",
+        "why_actor_wants_this": "This is the Robert Downey Jr. in Iron Man lane — a charismatic, fast-talking lead whose wit and physical swagger have to coexist with real authority. Actors who want a franchise anchor with banter, disguise work, and action-command presence will chase this because the role lets them play billionaire polish, detective intelligence, and comic-book heroics in one package."
+      },
+      {
+        "name": "Kato",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · Asian · athletic, martial-arts trained",
+        "hook": "Kato is the quiet center of gravity: disciplined, observant, and devastatingly capable when the gloves come off. He speaks sparingly, but the script gives him a vivid physical identity — driver, mechanic, fighter, tech operator — so every scene with him feels precise, efficient, and dangerous.",
+        "why_actor_wants_this": "This is the showcase territory of Tony Jaa in Ong-Bak — a role where physical mastery is the storytelling, not decoration. Action performers and crossover martial-arts actors will want it because it offers clean hero beats, tactical intelligence, and a signature partnership that makes every fight feel like a demonstration of skill."
+      },
+      {
+        "name": "Casey Case",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s · red-haired office professional",
+        "hook": "Casey is the sharp, socially agile center of the Sentinel office, equally comfortable trading barbs, reading a room, and stepping into danger when the conspiracy closes in. She starts as a polished insider and becomes an active participant in the investigation, which gives her a nice blend of wit, vulnerability, and nerve.",
+        "why_actor_wants_this": "This is the Sandra Bullock in The Net / action-thriller heroine lane — a smart, modern woman who gets pulled from professional competence into real jeopardy and then starts fighting back. Actors looking for a role that can play charm, fear, resourcefulness, and romantic charge will see a strong showcase here."
+      },
+      {
+        "name": "Dan Reid",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s · white · frail, elder statesman",
+        "hook": "Dan is the old-guard newspaper patriarch, physically diminished but still emotionally central to the Reid family and the Sentinel legacy. He carries history in the room and gives the story a generational anchor, especially in the scenes where grief and loyalty are part of the same conversation.",
+        "why_actor_wants_this": "This is the Michael Caine in The Cider House Rules / elder mentor space — a role where gravitas comes from history, not volume. Veteran character actors will chase it because it lets them embody legacy, loss, and moral authority in a compact but meaningful way."
+      },
+      {
+        "name": "Frank Scanlon",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Black · district attorney",
+        "hook": "Frank is the grounded law-and-order counterweight who knows the city, the players, and the limits of the system. He is pragmatic, loyal, and just cynical enough to feel real, which makes him the bridge between Britt’s vigilante world and the official investigation.",
+        "why_actor_wants_this": "This is the Tommy Lee Jones in The Fugitive lane — a lawman with authority, dry humor, and the ability to make exposition feel like pressure. Actors who specialize in grounded institutional power will want it because the part gives them scene-stealing command without needing to dominate the movie."
+      },
+      {
+        "name": "Rex Damon",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · white · polished executive",
+        "hook": "Rex is the smiling corporate climber whose ambition curdles into panic once the tape and the money trail close around him. He plays like a man who wants to look modern and in control, even as he becomes increasingly trapped by the people he thought he could manage.",
+        "why_actor_wants_this": "This is the Aaron Eckhart in The Dark Knight / polished operator role — a character who starts as a credible professional and gradually reveals the rot underneath. Actors who like playing charm turning to desperation will be drawn to the escalation and the eventual collapse."
+      },
+      {
+        "name": "Tommy Chew",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s · Asian · greasy-haired, intimidating",
+        "hook": "Tommy is the enforcer with a manager’s brain: he is the one who keeps the machine moving, threatens the weak links, and speaks in the language of leverage. He has a nasty, efficient presence that makes him feel like the real operational threat long before the final showdown.",
+        "why_actor_wants_this": "This is the Benicio del Toro in Sicario lane — a controlled, dangerous operator whose menace comes from calm pressure rather than theatrics. Character actors who like playing intelligence with cruelty will want the role because it gives them a steady climb into villain authority."
+      },
+      {
+        "name": "Yau Xchan",
+        "role_type": "Supporting",
+        "demographics": "Male · mid 30s · Asian · muscular, tattooed, dockworker/smuggler",
+        "hook": "Xchan is the blunt-force street enforcer who gives the conspiracy its physical edge. He is volatile, heavily armed, and always one step from violence, which makes him the kind of antagonist who can carry a scene with pure threat.",
+        "why_actor_wants_this": "This is the Michael Madsen in Reservoir Dogs lane — a hard-edged, physically imposing criminal whose menace is immediate and cinematic. Actors with a strong physical presence will want it because it offers a memorable villain turn with fight work and intimidation built in."
+      },
+      {
+        "name": "CC Fuller",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · shapely, stylish marketing executive",
+        "hook": "CC is the glamorous office insider who can flirt, deflect, and read the room faster than most of the men around her. She starts as a social complication and becomes a useful pressure point in the conspiracy, giving the movie a sleek, adult edge.",
+        "why_actor_wants_this": "This is the Catherine Zeta-Jones in Entrapment lane — a stylish, intelligent woman whose allure is matched by her utility in the plot. Actors who want a role that can play sophistication, jealousy, and covert intelligence will see a strong fit."
+      },
+      {
+        "name": "Mike Axford",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · veteran reporter",
+        "hook": "Mike is the streetwise reporter who keeps the story moving by asking the questions everyone else is too cautious to ask. He has the blunt, working-journalist energy that gives the Sentinel world texture and keeps Britt honest.",
+        "why_actor_wants_this": "This is the J.K. Simmons in Spotlight lane — a newsroom pro whose authority comes from lived-in skepticism and relentless curiosity. Character actors who can make exposition feel like momentum will want the part."
+      },
+      {
+        "name": "Bill",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · European-born camera man",
+        "hook": "Bill is the old-school crewman whose loyalty and frustration make the newsroom feel lived-in. He is practical, wounded, and easy to underestimate until the violence around him makes him part of the story.",
+        "why_actor_wants_this": "This is the Albert Brooks in Drive / working-man supporting role lane — a grounded, recognizable presence who can carry humor and alarm in the same beat. Character actors who like ensemble texture will gravitate to it."
+      },
+      {
+        "name": "Lisa",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · dark-haired",
+        "hook": "Lisa is the bright, observant friend who becomes crucial at the moment Casey disappears. She has a clean, sympathetic presence and gives the story a civilian witness whose fear feels immediate.",
+        "why_actor_wants_this": "This is the kind of grounded supporting part that works in the Allison Janney / ensemble witness lane — brief but emotionally legible. Young actors looking for a scene that can land hard without carrying the whole movie will want it."
+      },
+      {
+        "name": "Maj",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · office assistant",
+        "hook": "Maj is the efficient office presence who keeps the machine moving around Rex’s chaos. She is a small but useful part of the Sentinel ecosystem, helping the world feel operational rather than abstract.",
+        "why_actor_wants_this": "This is the kind of compact, lived-in supporting role that working character actors use to make a world feel real. It gives an actor a clean professional texture without needing a large arc."
+      },
+      {
+        "name": "Helen",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · temp replacement",
+        "hook": "Helen is the temporary office stand-in who signals that the Sentinel is in flux. She is functional, quick, and part of the background machinery that makes the workplace feel active.",
+        "why_actor_wants_this": "This is a practical ensemble role for a character actor who can make a few beats feel specific. It sits in the same lane as the dependable office-world supporting parts that add realism to a larger genre piece."
+      },
+      {
+        "name": "Jerry",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · waiter with accent",
+        "hook": "Jerry is a brief but colorful service-world presence who adds texture to the restaurant sequence. He is polished, slightly theatrical, and helps the date scene feel like a real social environment.",
+        "why_actor_wants_this": "This is the kind of small but flavorful role that character actors enjoy because it can leave a memorable impression in one scene. It gives a performer a clean, specific beat in a polished adult setting."
+      },
+      {
+        "name": "Kingpin",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Black · criminal associate",
+        "hook": "Kingpin is one of Tommy’s armed lieutenants, a street-level muscle presence in the larger operation. He is part of the final pressure-cooker ensemble and helps give the climax its layered threat.",
+        "why_actor_wants_this": "This is the kind of compact action-villain role that can play like the Michael K. Williams / criminal lieutenant lane — a small part with real attitude and physical presence. Actors with strong screen command will see a chance to make an impression fast."
+      },
+      {
+        "name": "Captain",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · white · ship captain",
+        "hook": "The Captain is the practical authority figure on the ship who suddenly finds himself in the middle of a criminal handoff. He gives the climax a civilian power center and a believable reason the operation can fracture under pressure.",
+        "why_actor_wants_this": "This is a solid authority-role lane, similar to the kind of grounded part that lets an actor bring calm before the chaos. It is a useful, scene-steadying supporting turn for a veteran performer."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a glossy, practical, old-school action movie with a comic-book identity.",
+        "fit_profile": "Established genre directors or second-feature filmmakers moving up from action-thriller or comic-book-adjacent work will recognize the lane immediately. This material rewards clean geography, punchy set-piece staging, and a confident sense of pulp tone more than it does heavy abstraction or experimental form.",
+        "detail": "The movie gives a director a chance to stage vehicles, fights, and a shipboard climax with clear visual rules, while also leaning into newsroom and broadcast-world texture. It is especially attractive to directors who like practical spectacle, crisp blocking, and a hero image that can carry a poster."
+      },
+      "buyer_appeal": {
+        "tier": "$25-50M feature",
+        "lane": "Studio-adjacent action adventure / premium streamer franchise lane",
+        "detail": "The project can be packaged around a strong lead duo and a recognizable IP title, which reduces the need to invent the brand from scratch. The media-conspiracy angle and the Black Beauty set pieces give it a trailer-ready hook that travels well across theatrical and streaming buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The newsroom conspiracy can be sharpened earlier.",
+        "detail": "The numbers-game reveal is a smart engine, and the draft already pays it off well; a next pass could foreground the broadcast-code idea a little sooner so the audience starts connecting the dots before Britt does. That would make the midpoint investigation feel even more inevitable and give the final decode a stronger snap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Casey’s agency can carry more of the investigation.",
+        "detail": "She already has a strong presence in the office, the kidnapping, and the bee-control sequence, which makes her a natural candidate for more active participation in the clue trail. One direction would be to let her drive one key discovery rather than only reacting to Britt and Kato, which would deepen the romantic and ensemble engine at the same time.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting villains run in a single lane.",
+        "detail": "Tommy, Xchan, Rex, and the dock crew all serve the same criminal machine, which keeps the plot clean but concentrates the antagonistic energy in one register. A future pass could give one of the lieutenants a more distinct function or voice so the final act has an even sharper hierarchy.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is active but manageable.",
+        "detail": "The script moves through the Sentinel, Britt’s home, Chinatown, the docks, a ship, and several night exteriors, so the production wants disciplined scheduling and smart company moves. The version of the shoot that clusters the dock, ship, and industrial material most tightly would protect the action while keeping the footprint efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The IP and clearance package needs early attention.",
+        "detail": "Green Hornet elements, named brands, and the song cue all sit inside the draft, so the rights path should be mapped early in development. That is standard for a legacy-property feature, but it does mean packaging should be built with clearance in mind from the start.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 46794,
+  "outputTokens": 5831,
+  "cost": 0.061335,
+  "declaredFormat": "Feature film"
+}

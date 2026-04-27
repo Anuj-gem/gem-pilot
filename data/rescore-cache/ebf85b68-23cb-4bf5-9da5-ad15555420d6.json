@@ -1,0 +1,335 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Action",
+        "Buddy comedy"
+      ],
+      "tone": "Gritty, profane, satirical, and escalating with darkly comic racial sparring"
+    },
+    "positioning_hook": "A white ex-Marine and a Black ex-Marine turn a wrong-number feud into a corrupt-cop conspiracy, then have to survive each other long enough to expose it.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean, easy-to-sell engine: two hostile men, one phone call, and a conspiracy that keeps widening from harassment to murder and planted evidence. The appeal is strongest for adult genre buyers who like profanity, reversals, and a central rivalry that can play as both tension and banter."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The wrong-number setup lands immediately in the opening pages, and the script keeps converting that simple mistake into bigger complications: home invasion, surveillance, a planted heart, and a frame job. The story engine is easy to explain in one breath and the escalation is legible throughout."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jake and Deshon are built as combustible opposites with shared military history, wounded pride, and a grudging respect that finally clicks in the restaurant scene. Ronnie, Haley, and the judge add useful pressure, though the script is most alive when the two leads are trading insults or forced into cooperation."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a racially charged verbal duel that keeps mutating into action, and the late reveal that the men are both Marines gives the feud a sharper emotional logic. The voice is confident and specific, even when it leans into broad profanity and heightened confrontation."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The piece keeps moving through calls, break-ins, surveillance, arrests, and reversals, with each new beat forcing the characters into a more dangerous position. The back half especially benefits from the conspiracy widening into the cops, the judge, and the hitman, which keeps the pressure active."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A wrong-number feud that becomes a corrupt-law-enforcement conspiracy is a fresh enough hook to stand out, especially because the antagonism is rooted in personality and prejudice rather than a generic crime setup. The eventual alliance between the two men gives the premise an inevitable-but-surprising turn."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a recognizable ecosystem of used-car lots, apartment lobbies, pool halls, back-door deals, and police/judicial corruption. The recurring locations and the hidden hierarchy around Ronnie and Sargoza give the world enough texture to feel story-generating rather than merely functional."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakable: hard-edged crime banter, racial provocation, and sudden violence played with a wink of dark comedy. The script knows exactly how far to push the insults, then pivots into action and conspiracy without losing its nasty, street-level flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the surface feud, the script hints at shame, lost ambition, military brotherhood, and men trapped in jobs they never wanted. Those reserves are present and useful, though the draft keeps the emotional material mostly in dialogue rather than letting it accumulate through quieter turns."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Jake/Deshon pairing carries the movie, and Ronnie/Molloy/Hailey/Kendra add enough connective tissue to keep the plot moving. The supporting relationships are functional and useful, but the script’s real engine is the central duo rather than a broad ensemble web."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 2,
+        "series_regulars": 6,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Two male leads with strong verbal chemistry",
+          "African American lead and white lead are structurally central",
+          "Child role for Sean, age 6-7",
+          "Several supporting roles require law-enforcement or authority presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Used car lot",
+          "Multiple residential houses and apartments",
+          "Pool hall",
+          "Police station / jail",
+          "Restaurant",
+          "Judge's office",
+          "Parking lots, alleyways, and street exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No significant VFX; story is driven by practical action, phone calls, and location work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, physical fights, a few practical blood beats, and simple prop effects such as the pig heart package.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "T-Mobile is specifically named in the phone-number notice."
+        },
+        {
+          "type": "brand",
+          "detail": "Walmart is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Craig's List is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Johnny D's Pizza is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "SpongeBob is specifically named in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Sanford and Son is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Miles Davis - Kind of Blue is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "Battle Creek is specifically named."
+        },
+        {
+          "type": "real_person",
+          "detail": "Phil Ivey is referenced by name."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming crime thriller / adult action-comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: limited theatrical or festival-to-platform, with strongest fit as a streamer acquisition for adult genre audiences."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary locations, modest action, and no VFX keep it contained, but the multiple company moves and night exteriors push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project depends on two strong lead performances and several authority figures, plus a child role and a few supporting women with meaningful screen time."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through homes, apartments, streets, a pool hall, a restaurant, a judge's office, and police spaces, creating a moderate footprint."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent profanity, racial slurs, threats, gun violence, kidnapping, and coercive sexual content narrow the lane to mature buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands and a few specific cultural references appear on the page, but there is no major IP dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly legible.",
+          "what_it_means": "The wrong-number premise gives the movie a clean commercial doorway and a simple trailer engine that can be explained in one sentence. That makes it attractive to streamers and genre buyers looking for a high-concept crime setup with immediate audience comprehension.",
+          "evidence": "The opening phone calls between Jake and Deshon turn a mistaken number into a death threat and then into a larger conspiracy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The two leads are built to collide.",
+          "what_it_means": "Jake and Deshon are both loud, wounded, and funny in different ways, which gives the project a built-in star vehicle for two actors who can spar and then pivot into uneasy alliance. That is exactly the kind of dual-lead package that attracts casting directors, managers, and buyers looking for chemistry-driven genre material.",
+          "evidence": "Their phone insults, the parking-lot fight, and the restaurant scene where they finally admit they were both Marines.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a sharp, ownable bite.",
+          "what_it_means": "The script lives in a lane of profane crime banter and escalating danger, which gives it a distinct voice rather than a generic thriller feel. Buyers who want adult, edgy material with a comic undercurrent will recognize the lane immediately.",
+          "evidence": "The repeated racial one-upmanship, the pig-heart package, and the way violence lands with a darkly comic snap.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Corruption is embedded in the world.",
+          "what_it_means": "The cops, the judge, and the fixer network create a conspiracy that expands the story beyond a simple feud and gives the project a broader crime-thriller engine. That kind of institutional rot is catnip for buyers who want a world that can support escalating reversals and a satisfying takedown.",
+          "evidence": "Ronnie, Molloy, Sargoza, and the Domino all sit inside the same hidden chain of control.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The military backstory adds a second layer.",
+          "what_it_means": "The Marine connection reframes the rivalry as two men who share discipline, trauma, and lost identity, which deepens the emotional hook without slowing the genre drive. That gives the material extra appeal for actors who want subtext under the action and for audiences who like character-based thrillers.",
+          "evidence": "The restaurant scene reveals both men served in the Marines and both ended up in jobs they never wanted.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting world is usable and specific.",
+          "what_it_means": "Haley, Ronnie, Kendra, the judge, and the hitman all serve clear functions and keep the plot moving through different social spaces, which makes the script feel producible and castable. Buyers can see the movie’s footprint and the kinds of performers who would populate it.",
+          "evidence": "Apartment lobbies, pool halls, a judge's office, and back-door criminal exchanges recur throughout the script.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a lean, adult crime feature with a clean hook, two combustible leads, and a corrupt-system conspiracy that keeps widening without losing its street-level bite. The script’s real selling point is the chemistry: once Jake and Deshon stop trying to kill each other, the movie finds a fresh, character-driven engine that can carry a strong genre package."
+    },
+    "lead_characters": [
+      {
+        "name": "Jake Corelli",
+        "role_type": "Lead",
+        "demographics": "Male · mid-30s · white · former Marine · used car salesman",
+        "hook": "Jake is a hard-edged, wounded salesman with a soldier's reflexes and a civilian life that has curdled into anger. He talks like a guy who always needs the last word, but underneath the swagger is a man who feels cornered by money, humiliation, and the sense that his life never became what he thought it would be.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, verbally agile man whose confidence is always shading into self-destruction. The role gives an actor the chance to play menace, comic timing, paranoia, and bruised masculinity in the same frame, which is exactly the kind of lead that can reframe a career in adult genre."
+      },
+      {
+        "name": "Deshon Dunn",
+        "role_type": "Lead",
+        "demographics": "Male · mid-30s · Black · former Marine · doorman / hustler",
+        "hook": "Deshon is a fast-talking, street-smart hustler with a soldier's discipline and a hustler's grin, forever performing toughness while trying to stay ahead of the men above him. He is funny, defensive, and sharper than the people who underestimate him, and the prosthetic leg gives the character a lived-in physical edge without turning him into a symbol.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Training Day — a magnetic, verbally dominant character whose charm and danger are inseparable. It gives an actor a chance to own the room with rhythm, authority, and volatility, while also landing the emotional turn when the mask drops and the survival stakes become personal."
+      },
+      {
+        "name": "Ronnie Dyson",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-40s · white · police officer / corrupt enforcer",
+        "hook": "Ronnie is the kind of cop who can smile while tightening the noose, a polished predator who uses authority as camouflage. He is calm, businesslike, and quietly sadistic, which makes him feel more dangerous than the loudmouths around him.",
+        "why_actor_wants_this": "This is the territory of Bryan Cranston in Breaking Bad when the mask is fully in place — a controlled, ordinary-looking man whose menace comes from composure rather than volume. Character actors who specialize in authority with a hidden blade will chase this because it lets them play institutional evil with precision."
+      },
+      {
+        "name": "Haley",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · Black · apartment building maid / thief",
+        "hook": "Haley is smart, sexually self-possessed, and pragmatic enough to know exactly how far she can push before the floor gives out. She has a survivor's humor and a clear-eyed understanding of the system around her, which makes her feel like more than a side player in the men’s war.",
+        "why_actor_wants_this": "This is the showcase space of Regina Hall in Support the Girls — a woman whose wit and self-awareness carry the scene even when the world around her is transactional. It gives an actor a chance to play flirtation, moral compromise, and street-level intelligence in a role that can pop in a crowded ensemble."
+      },
+      {
+        "name": "Kendra",
+        "role_type": "Supporting",
+        "demographics": "Female · early 40s · Black · office worker",
+        "hook": "Kendra is the practical sibling who sees through the noise and keeps the family tethered to reality. She has warmth, exasperation, and a no-nonsense intelligence that makes her the emotional adult in the room.",
+        "why_actor_wants_this": "This is the kind of grounded family-anchor role that Octavia Spencer often makes memorable in ensemble dramas — a character who can deliver humor, pressure, and emotional truth in a few clean scenes. It gives a performer a chance to be the audience's sanity check inside a chaotic crime story."
+      },
+      {
+        "name": "Officer Molloy / Special Agent Buckman",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-30s to 40s · white · police officer / FBI cover identity",
+        "hook": "Molloy reads as competent, cool, and quietly complicit until the reveal that she is operating under a deeper cover identity. She has the kind of controlled presence that lets her move through scenes as both ally and threat.",
+        "why_actor_wants_this": "This is the showcase territory of Carrie Coon in The Leftovers — a contained, watchful authority figure whose real allegiance is only gradually understood. Actors who like playing layered institutional power will be drawn to the reveal and the chance to shift the audience's read of the character."
+      },
+      {
+        "name": "Judge Sargoza",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · white · judge / criminal fixer",
+        "hook": "Sargoza is polished corruption in a robe, a man who can speak in legal calm while steering murder and cover-ups. He has the air of someone who believes power has already absolved him.",
+        "why_actor_wants_this": "This is the kind of late-stage authority role that actors like Michael Keaton in Spotlight or J.K. Simmons in Whiplash can make electric — a man whose respectability is the disguise. It offers a performer the chance to play institutional rot with restraint, then let the mask crack under pressure."
+      },
+      {
+        "name": "Buck",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · white · redneck / violent enforcer",
+        "hook": "Buck is a blunt-force antagonist with a chip on his shoulder and a hair-trigger temper, the kind of guy who turns every room into a dare. He is physically imposing, emotionally primitive, and useful as a walking escalation device.",
+        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Justified — a volatile, memorable antagonist who can be funny, ugly, and dangerous in the same breath. Character actors who specialize in combustible menace will see a scene-stealing lane here."
+      },
+      {
+        "name": "The Domino",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · unspecified ethnicity · hitman",
+        "hook": "The Domino is a patient, methodical killer who feels more like a system than a person. He is the movie's coldest instrument, the man sent in when the conspiracy wants a problem erased rather than solved.",
+        "why_actor_wants_this": "This is the territory of Javier Bardem in No Country for Old Men — a near-silent predator whose stillness is the performance. Actors who can project dread with minimal dialogue will be drawn to the role because every entrance changes the temperature of the movie."
+      },
+      {
+        "name": "Davey",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · white · surveillance helper",
+        "hook": "Davey is the awkward, underestimated outsider who thinks he is helping solve a problem and instead walks into a trap. He has a nervous, ordinary quality that makes him useful to the plot and vulnerable in the room.",
+        "why_actor_wants_this": "This is the kind of pressure-cooker supporting role that Paul Dano has turned into a specialty — a seemingly mild man whose fear becomes the point of the scene. It gives an actor a chance to play dread, confusion, and helplessness in a compact but memorable run."
+      },
+      {
+        "name": "Nilah Jefferson",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · Black · Haley's friend",
+        "hook": "Nilah is sharp, skeptical, and unafraid to call out the self-deception around her. She gives the script a second female point of view and a cleaner moral read on the mess Haley is in.",
+        "why_actor_wants_this": "This is the kind of scene-stealing friend role that Taraji P. Henson has made pop in ensemble work — direct, funny, and emotionally clear without needing a huge page count. It gives an actor a chance to land truth and attitude in a few sharp exchanges."
+      },
+      {
+        "name": "Sean",
+        "role_type": "Supporting",
+        "demographics": "Male · 6-7 years old · child actor",
+        "hook": "Sean is the emotional ballast inside Kendra and Deshon's family life, the kid who reminds the movie what is at stake beyond the criminal games. He is small, affectionate, and present enough to make the adult choices feel consequential.",
+        "why_actor_wants_this": "This is the kind of child role that gives a young performer a clean, memorable emotional function without overcomplicating the part. It helps the movie ground the adult chaos in something tender and human."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage a two-hander crime movie where dialogue is the weapon and every location move tightens the vise.",
+        "fit_profile": "Second- or third-feature directors with a strong festival or indie-genre track record, especially those who like performance-forward crime stories, contained action, and morally compromised institutions. This material rewards directors who can keep the banter sharp, the geography clear, and the violence punchy without losing the comic edge.",
+        "detail": "The movie gives a director a clean tonal control exercise: start with verbal warfare, widen into conspiracy, then pay it off with a contained action finish. It is especially attractive to filmmakers who know how to get heat from actors in rooms, cars, lobbies, and parking lots rather than relying on spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Adult streamer crime lane / indie action-thriller lane",
+        "detail": "The package can be built around two strong lead performances and a compact supporting ensemble, so it does not require a giant cast or effects spend to work. The wrong-number hook, corrupt-cop angle, and racially charged buddy dynamic give it a clear trailer promise and an exportable genre frame for streamers and limited theatrical buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening feud can turn faster.",
+        "detail": "The first stretch spends a lot of time on the insult exchange before the larger engine fully locks in. A next pass could let the home-invasion or pig-heart turn arrive a little earlier so the audience feels the conspiracy pressure sooner while keeping the same combustible relationship.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The conspiracy reveal can be simplified.",
+        "detail": "The chain of Ronnie, Molloy, Sargoza, the Domino, and the Butcher gives the movie texture, but it also asks the audience to track several layers of control. One lever would be to clarify the hierarchy earlier so the final act lands with even more force and the audience can follow the power structure at a glance.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The emotional turn can be foregrounded more.",
+        "detail": "The restaurant scene where Jake and Deshon realize they were both Marines is the movie's cleanest human pivot. A next pass could give that shared history one earlier echo so the eventual alliance feels even more inevitable and less like a late reveal.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is moderately wide.",
+        "detail": "The script moves through homes, apartments, a pool hall, a judge's office, a restaurant, a police station, and multiple street exteriors. The story would still play if a few of those spaces were combined or doubled up, which would protect the pace and make the production footprint even cleaner.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand references invite cleanup.",
+        "detail": "The draft names several real brands and cultural references, including T-Mobile, Walmart, Craig's List, Johnny D's Pizza, SpongeBob, Sanford and Son, Miles Davis, and Battle Creek. A production pass could swap or generalize those references where needed without changing the story engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70.7,
+  "tier": "Optionable",
+  "inputTokens": 45028,
+  "outputTokens": 5323,
+  "cost": 0.0577245,
+  "declaredFormat": "Feature film"
+}

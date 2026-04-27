@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-23T23:39:52.364Z",
+  "submission_id": "ed73dfa9-004d-4724-8176-a49d559be34b",
+  "eval_id": "33da6d7c-ee54-44b5-b5d9-f42ca12b8559",
+  "title": "31   TOLUCA LAKE by Mark Fleming",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "GAVIN",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s · mixed race, one-half Asian"
+    },
+    {
+      "name": "ALLIE",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "RUBY",
+      "role_type": "Lead",
+      "demographics": "Female · 3 years old · Cambodian"
+    },
+    {
+      "name": "THANH",
+      "role_type": "Lead",
+      "demographics": "Female · 60s · Vietnamese"
+    },
+    {
+      "name": "DR. FISHER",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "DR. NAKAMURA",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "ELAINE",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "GREGORY",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "SAMUEL",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "CHERYL",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "TARA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    }
+  ],
+  "positioning_hook": "A brain-tumor diagnosis forces a young man to choose between saving his life and preserving the woman only he can see — while his undocumented little sister and grieving mother depend on him.",
+  "cost_usd": 0.05136525,
+  "input_tokens": 36141,
+  "output_tokens": 5391,
+  "status": "wrote:leads_ok"
+}
