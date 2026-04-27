@@ -370,55 +370,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Visitor-only snapshot banner — frames the page as a writer-curated
-            view so producers don't feel they're looking at a full dev report. */}
-        {!isOwnerOrAdmin && !isAnonymousSubmission && anyPublic && (
-          <div
-            className="flex items-start gap-3 p-4 rounded-xl mb-6"
-            style={{
-              background: 'rgba(124,58,237,0.06)',
-              border: '1px solid rgba(124,58,237,0.22)',
-            }}
-          >
-            <div
-              className="flex-shrink-0 w-8 h-8 rounded-full grid place-items-center text-white text-sm"
-              style={{ background: 'var(--gem-accent)' }}
-            >
-              <span className="text-[12px] font-bold">i</span>
-            </div>
-            <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
-              <strong className="text-[var(--gem-gray-50)] font-semibold">
-                {writerName}&apos;s public snapshot.
-              </strong>{' '}
-              They choose what&apos;s visible here. The full report stays with them — reach out below if you want to go deeper.
-            </p>
-          </div>
-        )}
-
-        {/* Owner privacy review banner — shown once for writers whose reports
-            got migrated to the new default privacy settings. Pro-only since
-            free writers can't do anything with privacy yet. */}
-        {isOwner && ownerIsSubscribed && needsPrivacyReview && (
-          <div
-            className="flex items-start gap-3 p-4 rounded-xl mb-4"
-            style={{
-              background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(212,160,23,0.04))',
-              border: '1px solid rgba(124,58,237,0.28)',
-            }}
-          >
-            <div
-              className="flex-shrink-0 w-7 h-7 rounded-full grid place-items-center text-white text-[11px] font-bold mt-0.5"
-              style={{ background: 'var(--gem-accent)' }}
-            >
-              !
-            </div>
-            <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
-              We just shipped granular privacy. Your report was set to{' '}
-              <strong className="font-semibold">Balanced</strong>{' '}
-              defaults — review what visitors see below.
-            </p>
-          </div>
-        )}
+        {/* Visitor snapshot banner + owner privacy-review banner removed
+            (Selznick-4 v4): they were chrome the writer / visitor didn't
+            need every time the page loads. The qualification banner above
+            already carries the publish CTA, and the privacy modal opens
+            on demand from there. */}
 
         {/* Privacy is now fully handled by the publish/privacy modal
             triggered from the VisibilityToggle button above. The in-page
@@ -441,7 +397,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           authorName={
             isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
           }
-          isGemSelect={typeof commercialScore === 'number' && commercialScore >= 75}
           headerActionsLeft={
             isOwnerOrAdmin ? (
               <DownloadButton
@@ -480,7 +435,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
         >
           {allStrengths.length > 0 && (
-            <Section label="Why this is a hit" subtitle={whatsSpecial.headline}>
+            <Section
+              label="Why this is a hit"
+              subtitle={whatsSpecial.headline}
+              summary={`${allStrengths.length} ${allStrengths.length === 1 ? 'reason' : 'reasons'}`}
+            >
               <div className="space-y-3">
                 {allStrengths.map((s, i) => (
                   <Collapsible
@@ -519,6 +478,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <Section
               label="Lead characters"
               subtitle="The parts inside this script and why an actor would chase them."
+              summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
             >
               <div className="space-y-3">
                 {leadCharacters.map((c, i) => (
@@ -570,7 +530,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
         >
           {packageAngles && (
-            <Section label="Package angles" subtitle="Who would direct it, and who would buy it.">
+            <Section
+              label="Package angles"
+              subtitle="Who would direct it, and who would buy it."
+              summary={`Director appeal · ${packageAngles.buyer_appeal?.tier ?? 'buyer appeal'}`}
+            >
               <div className="space-y-3">
                 <Collapsible
                   title="Why a director wants this"
@@ -645,7 +609,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
         >
           {production?.risk_rubric && (
-            <Section label="Production Planning Overview" subtitle="Cost, cast, and content complexity at a glance.">
+            <Section
+              label="Production planning overview"
+              subtitle="Cost, cast, and content complexity at a glance."
+              summary={[
+                production.risk_rubric.cost ? `Cost ${production.risk_rubric.cost.level}` : null,
+                production.risk_rubric.cast ? `Cast ${production.risk_rubric.cast.level}` : null,
+                production.risk_rubric.content ? `Content ${production.risk_rubric.content.level}` : null,
+              ].filter(Boolean).join(' · ')}
+            >
               <div
                 className="grid grid-cols-1 sm:grid-cols-3 gap-3"
                 style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
@@ -703,8 +675,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const secondary = considerations.filter((c) => c.is_primary_lever !== true)
             return (
               <Section
-                label="Development Priorities"
+                label="Development priorities"
                 subtitle="The sharpest places to push on the next pass — positioning notes and directions a producer or collaborator might lean on in conversation."
+                summary={[
+                  primary ? '1 sharpest lever' : null,
+                  secondary.length > 0 ? `${secondary.length} ${secondary.length === 1 ? 'note' : 'notes'}` : null,
+                ].filter(Boolean).join(' · ') || 'Notes for the next pass'}
               >
                 <div className="space-y-3">
                   {primary && (
@@ -787,6 +763,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <Section
               label="Narrative breakdown"
               subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+              summary="10 craft dimensions"
             >
               <div className="space-y-3">
                 {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
@@ -818,8 +795,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         >
           {production && (
             <Section
-              label="Production Planning Details"
+              label="Production planning details"
               subtitle="Everything the script tells us about how it would actually get made."
+              summary="Cast · Locations · Technical · Platform · Rights"
             >
               <div className="space-y-3">
                 <Collapsible

@@ -14,6 +14,7 @@ export function PackagingSection({ data }: Props) {
     <Section
       label="Packaging"
       subtitle="How a producer would frame this project for a buyer — comps, audience, budget tier, lane, and franchise upside."
+      summary="Comps · Audience · Budget tier · Lane fit · IP"
     >
       <div className="space-y-3">
         <CompSetCard comps={data.comp_set} />

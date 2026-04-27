@@ -12,8 +12,9 @@ interface Props {
 export function RiskDetailsSection({ data }: Props) {
   return (
     <Section
-      label="Project Risks"
+      label="Project risks"
       subtitle="Where the producer-side risk lives — budget, casting, and development. Each card calls out the level and the underlying reason."
+      summary={`Budget ${data.budget?.level ?? '—'} · Casting ${data.casting?.level ?? '—'} · Development ${data.development?.level ?? '—'}`}
     >
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <RiskCard title="Budget Risk" axis={data.budget} />

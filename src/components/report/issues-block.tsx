@@ -17,6 +17,7 @@ export function IssuesSection({ data }: Props) {
     <Section
       label="Issues"
       subtitle={data.headline}
+      summary={`${data.items.length} ${data.items.length === 1 ? 'issue' : 'issues'}${primary ? ' · 1 sharpest' : ''}`}
     >
       <div className="space-y-3">
         {primary && (

@@ -44,11 +44,6 @@ interface Props {
    *  or the profile has no name set, in which case the line is omitted.
    *  Full profile editing comes later — for now this is display-only. */
   authorName?: string | null
-  /** Whether this eval's commercial score clears the GEM Select bar (≥75).
-   *  Drives the gold badge shown next to the title in display mode. The
-   *  designation itself is already public (it's the only tier surfaced on
-   *  Discover), so this badge is safe to render for any viewer. */
-  isGemSelect?: boolean
 }
 
 // Tag editor constants — mirror src/components/dashboard/script-tags-editor.tsx
@@ -81,7 +76,7 @@ function dedupeTags(tags: string[]): string[] {
   return out
 }
 
-export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, isGemSelect, headerActionsLeft }: Props) {
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'

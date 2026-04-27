@@ -1,30 +1,67 @@
 // v5 shared building blocks — used by the live /report/[id] page.
-// Mirrors the preview-v5 admin layout: collapsible cards, big click targets,
-// progressive disclosure. Every discrete item is its own <details> element.
+//
+// Selznick-4 v4 (2026-04-25): top-level Section is now collapsed by default.
+// The page renders almost empty until the reader clicks a row open. Each
+// section's summary is a single line — title on the left, optional count/
+// summary text on the right ("7 reasons", "3 leads · 5 supporting"), with a
+// chevron. The previous always-open layout is available via `defaultOpen`
+// for callers (e.g. producer-side detail page) that want eyes on by default.
 import { ChevronDown } from 'lucide-react'
 
 export function Section({
   label,
   subtitle,
+  summary,
+  defaultOpen = false,
   children,
 }: {
   label: string
+  /** Optional verbose intro text shown when the section is OPEN. Kept out
+   *  of the collapsed summary row to keep that row scannable. */
   subtitle?: string
+  /** Short one-line count/summary shown in the collapsed row, right-aligned.
+   *  e.g. "7 reasons", "3 leads · 5 supporting", "Indie · Contemporary · Low VFX". */
+  summary?: string
+  defaultOpen?: boolean
   children: React.ReactNode
 }) {
   return (
-    <section className="mb-14">
-      <div className="w-12 h-0.5 mb-3 rounded" style={{ background: 'var(--gem-gold)' }} />
-      <h2 className="text-[16px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-50)] m-0 mb-3">
-        {label}
-      </h2>
-      {subtitle && (
-        <p className="text-[17px] text-[var(--gem-gray-200)] leading-[1.6] mb-6 max-w-[62ch]">
-          {subtitle}
-        </p>
-      )}
-      {children}
-    </section>
+    <details
+      {...(defaultOpen ? { open: true } : {})}
+      className="group rounded-xl mb-3 transition-colors hover:border-[var(--gem-gray-600)] [&_summary::-webkit-details-marker]:hidden"
+      style={{
+        border: '1px solid var(--gem-gray-700)',
+        background: '#fff',
+      }}
+    >
+      <summary className="flex items-center gap-4 cursor-pointer list-none px-5 sm:px-6 py-4">
+        <div className="flex-1 min-w-0">
+          <p className="text-[15px] sm:text-[16px] font-semibold text-[var(--gem-gray-50)] leading-tight m-0">
+            {label}
+          </p>
+          {summary && (
+            <p className="text-[12.5px] sm:text-[13px] text-[var(--gem-gray-400)] leading-snug m-0 mt-1">
+              {summary}
+            </p>
+          )}
+        </div>
+        <ChevronDown
+          size={18}
+          className="flex-shrink-0 text-[var(--gem-gray-500)] transition-transform duration-200 group-open:rotate-180"
+        />
+      </summary>
+      <div
+        className="px-5 sm:px-6 pb-6 pt-2"
+        style={{ borderTop: '1px solid var(--gem-gray-700)' }}
+      >
+        {subtitle && (
+          <p className="text-[14.5px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] mt-4 mb-5 max-w-[62ch] m-0">
+            {subtitle}
+          </p>
+        )}
+        <div>{children}</div>
+      </div>
+    </details>
   )
 }
 
