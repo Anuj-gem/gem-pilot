@@ -74,8 +74,8 @@ export function VisibilityToggle({
         {isPublic
           ? `Live · ${presetLabel}`
           : isSubscribed
-            ? 'Publish for Industry Visibility'
-            : 'Publish for Industry Visibility — Pro'}
+            ? 'Make visible to industry partners'
+            : 'Make visible to industry partners — Pro'}
       </button>
       {showModal && (
         <PublishPreviewModal

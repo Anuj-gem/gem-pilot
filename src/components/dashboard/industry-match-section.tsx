@@ -13,6 +13,7 @@
 import { useRouter } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
 import { useMemo, useState } from 'react'
+import { UnmatchButton } from './unmatch-button'
 
 export type MatchStatus =
   | 'pending'
@@ -24,13 +25,15 @@ export type MatchStatus =
 export interface DashboardMatch {
   id: string
   status: MatchStatus
-  partnerLabel: string // "Producer" | "Lit rep" | "Talent rep" — inferred upstream
+  partnerLabel: string // generic role label — "Producer" / "Lit rep" pre-Interested
+  producerName: string | null // real name, only filled in once Interested+
   laneSummary: string // truncated "Looking for ..." text
   comment: string | null
   createdAt: string // ISO
   openedAt: string | null
   reactedAt: string | null
   expiresAt: string | null
+  unmatchedAt: string | null
 }
 
 const STATUS_PRIORITY: Record<MatchStatus, number> = {
@@ -186,6 +189,12 @@ function MatchRow({
     metaTail = 'Read your full report.'
   }
 
+  // Identity reveal: pre-Interested rows stay anonymous (generic role label).
+  // Once the producer marks Interested/Commented, we show their real name —
+  // it's the central trust handshake of the two-sided flow.
+  const headerLabel =
+    interested && match.producerName ? match.producerName : match.partnerLabel
+
   return (
     <div
       className="rounded-xl px-5 py-4 grid items-start"
@@ -204,7 +213,7 @@ function MatchRow({
     >
       <div className="min-w-0">
         <div className="text-[14px] sm:text-[15px] font-bold text-[var(--gem-gray-50)] leading-snug tracking-tight">
-          {match.partnerLabel}
+          {headerLabel}
           {match.laneSummary ? (
             <>
               <span className="text-[var(--gem-gray-500)] font-normal mx-1.5">·</span>
@@ -221,7 +230,9 @@ function MatchRow({
         </div>
       </div>
 
-      <StatusPill status={match.status} />
+      <div className="flex items-center gap-2 self-start">
+        <StatusPill status={match.status} />
+      </div>
 
       {match.comment && (
         <div
@@ -239,9 +250,10 @@ function MatchRow({
 
       {interested && (
         <div
-          className="flex justify-end"
+          className="flex items-center justify-end gap-3 flex-wrap"
           style={{ gridColumn: '1 / 3', marginTop: '4px' }}
         >
+          <UnmatchButton matchId={match.id} />
           <SendDraftButton matchId={match.id} isSubscribed={isSubscribed} />
         </div>
       )}

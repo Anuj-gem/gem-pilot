@@ -11,24 +11,28 @@
 // engine care about. Already-reacted statuses (interested/passed/commented)
 // stay put — we only promote the very first view.
 //
-// Render: a stripped-down producer view of the writer report. We re-use the
-// existing report components where possible (PackagingSection,
-// RiskDetailsSection, IssuesSection, Section/Collapsible) so the visual
-// vocabulary stays consistent with what writers see when they preview their
-// own report.
+// Two distinct render modes, gated on status:
 //
-// Sections (in order):
-//   1. Top hero (title + score + tier + headline + actions)
-//   2. Why this could be a hit (whats_special.headline + strengths)
-//   3. Packaging (PackagingSection)
-//   4. Project Risks (RiskDetailsSection)
-//   5. Lead Characters (re-uses Collapsible pattern from the writer report)
-//   6. Issues (IssuesSection)
-//   7. Sticky bottom action bar repeats the actions
+//   PRE-INTERESTED  (status = pending | opened, not unmatched)
+//     - Title + score + headline + tags + a single "what's special" headline
+//     - Big violet "Mark Interested to unlock" card explaining what opens
+//     - Interested + Pass buttons only (Comment is part of the post-unlock
+//       message thread, not a one-off field)
+//     - Lead characters / packaging / risk / issues / strengths list / script
+//       download button are all hidden.
+//
+//   POST-INTERESTED (status = interested | commented, not unmatched)
+//     - Full report: strengths, packaging, risks, leads, issues
+//     - Script download button (signed URL, gated server-side too)
+//     - Message thread at the bottom for ongoing back-and-forth
+//
+//   ENDED           (unmatched_at != null)
+//     - Same as post-interested visually, but the message thread is
+//       read-only and we surface a "Match ended" notice up top.
 
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Lock, Sparkles, Download, MessageCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { Section, Collapsible } from '@/components/report/v5-components'
@@ -37,6 +41,8 @@ import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { IssuesSection } from '@/components/report/issues-block'
 import { MatchActions } from '@/components/partner/match-actions'
 import { StickyMatchActions } from '@/components/partner/sticky-actions'
+import { MessageThread, type ThreadMessage } from '@/components/partner/message-thread'
+import { ScriptDownloadButton } from '@/components/partner/script-download-button'
 import type { GEMEvaluation, LeadCharacter } from '@/types'
 
 export const dynamic = 'force-dynamic'
@@ -53,6 +59,10 @@ interface MatchRow {
   status: MatchStatus
   comment: string | null
   submission_id: string
+  unmatched_at: string | null
+  unmatched_by: string | null
+  unmatch_reason: string | null
+  messages: unknown
   script_submissions: {
     id: string
     title: string
@@ -122,12 +132,15 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     redirect('/onboarding/producer')
   }
 
-  // Fetch the match + joined submission + most-recent evaluation.
+  // Fetch the match + joined submission + most-recent evaluation, plus all
+  // the new fields (unmatched_*, messages) so the gate + thread render in
+  // the same round trip.
   const { data: matchRaw } = await supabase
     .from('script_matches')
     .select(
       `
       id, producer_id, status, comment, submission_id,
+      unmatched_at, unmatched_by, unmatch_reason, messages,
       script_submissions (
         id, title, declared_format, user_id,
         script_evaluations ( id, weighted_score, tier, evaluation, edited_fields )
@@ -157,10 +170,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
 
   // Promote pending → opened on first view. We only update if status is
   // pending; once a producer has reacted (interested/passed/commented),
-  // their action stays the source of truth. We don't await this —
-  // technically we should, since RLS / no-cache means the row will be
-  // re-read on next refresh anyway, but doing it inline keeps the side
-  // effect transparent and keeps the page render in sync within a request.
+  // their action stays the source of truth.
   if (match.status === 'pending') {
     await supabase
       .from('script_matches')
@@ -225,6 +235,16 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
   const riskDetails = evaluation.risk_details
   const issues = evaluation.issues
 
+  // Gate state. `interested` and `commented` both unlock the full report
+  // and the message thread; `passed` falls through to the gated view but
+  // shows the "passed" pill in the action bar.
+  const isUnlocked = match.status === 'interested' || match.status === 'commented'
+  const isUnmatched = !!match.unmatched_at
+
+  const messages: ThreadMessage[] = Array.isArray(match.messages)
+    ? (match.messages as ThreadMessage[])
+    : []
+
   return (
     <>
       <Nav />
@@ -238,6 +258,24 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
           <ArrowLeft size={14} />
           Back to your inbox
         </Link>
+
+        {/* Unmatched notice — surfaced above the hero so the producer sees
+            why the action surface is locked down. */}
+        {isUnmatched && (
+          <div
+            className="mb-4 rounded-lg px-4 py-3 text-[13px] text-[var(--gem-gray-200)]"
+            style={{
+              background: 'var(--gem-gray-900)',
+              border: '1px solid var(--gem-gray-700)',
+            }}
+          >
+            <span className="font-semibold text-[var(--gem-gray-50)]">
+              Match ended
+            </span>
+            {match.unmatched_by === 'writer' ? ' by the writer.' : '.'}
+            {match.unmatch_reason ? ` Reason: ${match.unmatch_reason}` : ''}
+          </div>
+        )}
 
         {/* Top hero */}
         <div
@@ -329,110 +367,232 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               className="mt-5 pt-4"
               style={{ borderTop: '1px solid rgba(124,58,237,0.18)' }}
             >
+              {/* Pre-Interested + post-Interested both expose Interested/Pass.
+                  Comment is gone — the message thread below replaces it. */}
               <MatchActions
                 matchId={match.id}
                 status={match.status}
                 variant="detail"
+                hideComment
               />
-              {match.comment && match.status === 'commented' && (
-                <div
-                  className="mt-3 rounded-lg p-3 text-[13px] text-[var(--gem-gray-200)] leading-snug"
-                  style={{
-                    background: 'rgba(124,58,237,0.06)',
-                    border: '1px solid rgba(124,58,237,0.20)',
-                  }}
-                >
-                  <span className="block text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] mb-1">
-                    Your note to the writer
-                  </span>
-                  {match.comment}
-                </div>
-              )}
             </div>
           </div>
         </div>
 
-        {/* WHY THIS COULD BE A HIT — re-frames "What's Working" for a
-            buyer-side audience. Same data, producer-voiced subtitle. */}
+        {/* WHY THIS COULD BE A HIT — pre-Interested shows ONLY the headline
+            (no expandable strengths). Post-Interested gets the full
+            collapsible strengths list. */}
         {whatsSpecial && (whatsSpecial.headline || (whatsSpecial.strengths?.length ?? 0) > 0) && (
           <Section
             label="Why this could be a hit"
             subtitle={whatsSpecial.headline}
           >
-            <div className="space-y-3">
-              {(whatsSpecial.strengths ?? []).map((s, i) => (
-                <Collapsible
-                  key={i}
-                  number={i + 1}
-                  title={s.dimension_or_area}
-                  defaultOpen={i === 0}
-                >
-                  <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                    {s.what_it_means}
-                  </p>
-                </Collapsible>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* PACKAGING — comps, audience, budget tier, lane fit, IP. */}
-        {packaging && <PackagingSection data={packaging} />}
-
-        {/* PROJECT RISKS — budget / casting / development cards. */}
-        {riskDetails && <RiskDetailsSection data={riskDetails} />}
-
-        {/* LEAD CHARACTERS — names + actor-bait. Mirrors the writer report
-            pattern at /report/[id] but without the paywall blur. */}
-        {leadCharacters.length > 0 && (
-          <Section
-            label="Lead characters"
-            subtitle="The parts inside this script and why an actor would chase them."
-          >
-            <div className="space-y-3">
-              {leadCharacters.map((c, i) => (
-                <Collapsible
-                  key={i}
-                  title={c.name}
-                  meta={`${c.role_type} · ${c.demographics}`}
-                  defaultOpen={i === 0}
-                >
-                  <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
-                    {c.hook}
-                  </p>
-                  <div
-                    className="rounded-lg p-5"
-                    style={{
-                      background: 'rgba(5,150,105,0.07)',
-                      border: '1px solid rgba(5,150,105,0.20)',
-                    }}
+            {isUnlocked ? (
+              <div className="space-y-3">
+                {(whatsSpecial.strengths ?? []).map((s, i) => (
+                  <Collapsible
+                    key={i}
+                    number={i + 1}
+                    title={s.dimension_or_area}
+                    defaultOpen={i === 0}
                   >
-                    <p
-                      className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                      style={{ color: '#059669' }}
-                    >
-                      Why an actor would want this part
+                    <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                      {s.what_it_means}
                     </p>
-                    <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                      {c.why_actor_wants_this}
-                    </p>
-                  </div>
-                </Collapsible>
-              ))}
-            </div>
+                  </Collapsible>
+                ))}
+              </div>
+            ) : (
+              // Pre-Interested: headline only. We render the
+              // <Section subtitle> above as the entire body in this mode.
+              <p className="text-[13px] italic text-[var(--gem-gray-400)] m-0">
+                Mark Interested below to read the full breakdown.
+              </p>
+            )}
           </Section>
         )}
 
-        {/* ISSUES — producer-voiced case-against. Re-uses the v5.4 component
-            which already does the primary-lever red-accent treatment. */}
-        {issues && (issues.items?.length > 0 || issues.headline) && (
-          <IssuesSection data={issues} />
+        {/* GATE CARD — shown pre-Interested. Tells the producer what the
+            unlock buys them. Big violet panel, intentionally heavy so it
+            reads as the next step on the page. */}
+        {!isUnlocked && !isUnmatched && (
+          <div
+            className="rounded-2xl px-6 sm:px-8 py-7 mb-12"
+            style={{
+              background:
+                'linear-gradient(135deg, rgba(124,58,237,0.10), rgba(124,58,237,0.04) 65%), #fff',
+              border: '1.5px solid var(--gem-accent)',
+              boxShadow:
+                '0 4px 20px rgba(124,58,237,0.10), 0 1px 4px rgba(0,0,0,0.04)',
+            }}
+          >
+            <div className="flex items-start gap-3 mb-4">
+              <span
+                className="inline-flex items-center justify-center rounded-full"
+                style={{
+                  width: 36,
+                  height: 36,
+                  background: 'rgba(124,58,237,0.14)',
+                  color: 'var(--gem-accent)',
+                  flexShrink: 0,
+                }}
+              >
+                <Lock size={16} strokeWidth={2.5} />
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-[18px] sm:text-[20px] font-extrabold tracking-tight text-[var(--gem-gray-50)] m-0 mb-1 leading-tight">
+                  Mark Interested to unlock
+                </h3>
+                <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-snug max-w-[60ch]">
+                  Interested signals to the writer that you want to read the
+                  script. Once you mark it, you&apos;ll see:
+                </p>
+              </div>
+            </div>
+            <ul className="grid gap-2 mb-5 ml-12 list-none p-0">
+              <UnlockBullet
+                icon={<Download size={14} />}
+                label="The full script PDF, downloadable"
+              />
+              <UnlockBullet
+                icon={<Sparkles size={14} />}
+                label="Lead characters, packaging notes, risk profile, and the full case-against"
+              />
+              <UnlockBullet
+                icon={<MessageCircle size={14} />}
+                label="A direct message thread with the writer"
+              />
+            </ul>
+            <div className="ml-12">
+              <MatchActions
+                matchId={match.id}
+                status={match.status}
+                variant="detail"
+                hideComment
+              />
+            </div>
+          </div>
+        )}
+
+        {/* POST-INTERESTED full report — packaging, risks, leads, issues. */}
+        {isUnlocked && (
+          <>
+            {/* Script download — the producer's single most important
+                unlock. Surfaced first so they don't have to scroll. */}
+            <div
+              className="rounded-xl px-5 py-5 mb-10 flex items-start gap-4 flex-wrap"
+              style={{
+                background: 'rgba(5,150,105,0.06)',
+                border: '1px solid rgba(5,150,105,0.30)',
+              }}
+            >
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1" style={{ color: '#059669' }}>
+                  Script unlocked
+                </p>
+                <p className="text-[14.5px] text-[var(--gem-gray-100)] m-0 leading-snug">
+                  Download the PDF — link is signed and good for 10 minutes.
+                </p>
+              </div>
+              <ScriptDownloadButton matchId={match.id} />
+            </div>
+
+            {packaging && <PackagingSection data={packaging} />}
+            {riskDetails && <RiskDetailsSection data={riskDetails} />}
+
+            {leadCharacters.length > 0 && (
+              <Section
+                label="Lead characters"
+                subtitle="The parts inside this script and why an actor would chase them."
+              >
+                <div className="space-y-3">
+                  {leadCharacters.map((c, i) => (
+                    <Collapsible
+                      key={i}
+                      title={c.name}
+                      meta={`${c.role_type} · ${c.demographics}`}
+                      defaultOpen={i === 0}
+                    >
+                      <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
+                        {c.hook}
+                      </p>
+                      <div
+                        className="rounded-lg p-5"
+                        style={{
+                          background: 'rgba(5,150,105,0.07)',
+                          border: '1px solid rgba(5,150,105,0.20)',
+                        }}
+                      >
+                        <p
+                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                          style={{ color: '#059669' }}
+                        >
+                          Why an actor would want this part
+                        </p>
+                        <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          {c.why_actor_wants_this}
+                        </p>
+                      </div>
+                    </Collapsible>
+                  ))}
+                </div>
+              </Section>
+            )}
+
+            {issues && (issues.items?.length > 0 || issues.headline) && (
+              <IssuesSection data={issues} />
+            )}
+
+            {/* MESSAGE THREAD — producer-side. Reads + writes
+                script_matches.messages via /api/partner/match/[id]/react
+                action='message'. Disabled if the writer unmatched. */}
+            <Section
+              label="Conversation"
+              subtitle="Message the writer directly. They see your name and reply here."
+            >
+              <MessageThread
+                matchId={match.id}
+                viewerRole="producer"
+                messages={messages}
+                disabled={isUnmatched}
+                disabledHint="The writer ended this match — the thread is read-only."
+              />
+            </Section>
+          </>
         )}
       </div>
 
       {/* Sticky bottom action bar — repeats the hero CTAs so a producer can
-          react from anywhere on the page. */}
-      <StickyMatchActions matchId={match.id} status={match.status} />
+          react from anywhere on the page. Hidden once the match is ended. */}
+      {!isUnmatched && (
+        <StickyMatchActions matchId={match.id} status={match.status} />
+      )}
     </>
+  )
+}
+
+function UnlockBullet({
+  icon,
+  label,
+}: {
+  icon: React.ReactNode
+  label: string
+}) {
+  return (
+    <li className="flex items-start gap-2.5 text-[14px] text-[var(--gem-gray-100)] leading-snug">
+      <span
+        className="inline-flex items-center justify-center rounded-md mt-0.5"
+        style={{
+          width: 22,
+          height: 22,
+          background: 'rgba(124,58,237,0.10)',
+          color: 'var(--gem-accent)',
+          flexShrink: 0,
+        }}
+      >
+        {icon}
+      </span>
+      <span>{label}</span>
+    </li>
   )
 }

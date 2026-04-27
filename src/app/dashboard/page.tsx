@@ -24,7 +24,6 @@ import {
   Plus,
   Eye,
   EyeOff,
-  Compass,
   ArrowRight,
   Lock,
   Pencil,
@@ -117,7 +116,10 @@ export default async function DashboardPage({
   const usedFreeEval = completedCount >= 1
 
   // Fetch script_matches for all visible submissions in one pass, then
-  // join in the producer profile so we can show partner label + lane.
+  // join in the producer profile so we can show partner label + lane +
+  // (post-Interested) the producer's real name. Unmatched rows are filtered
+  // out — the writer ended them, they shouldn't keep cluttering the
+  // industry strip.
   const submissionIds: string[] = submissions.map((s: any) => s.id)
   type RawMatch = {
     id: string
@@ -129,42 +131,64 @@ export default async function DashboardPage({
     opened_at: string | null
     reacted_at: string | null
     expires_at: string | null
+    unmatched_at: string | null
   }
   let matchesBySubmission = new Map<string, DashboardMatch[]>()
   if (submissionIds.length > 0) {
     const { data: rawMatches } = await supabase
       .from('script_matches')
       .select(
-        'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, expires_at'
+        'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, expires_at, unmatched_at'
       )
       .in('submission_id', submissionIds)
+      .is('unmatched_at', null)
 
     const producerIds = Array.from(
       new Set(((rawMatches ?? []) as RawMatch[]).map(m => m.producer_id))
     )
-    let producerLanes = new Map<string, { format?: string | null; audience?: string | null; looking_for_text?: string | null } | null>()
+    type ProducerRow = {
+      id: string
+      lane: { format?: string | null; audience?: string | null; looking_for_text?: string | null } | null
+      full_name: string | null
+      email: string | null
+    }
+    let producerInfo = new Map<string, ProducerRow | null>()
     if (producerIds.length > 0) {
       const { data: producers } = await supabase
         .from('profiles')
-        .select('id, lane')
+        .select('id, lane, full_name, email')
         .in('id', producerIds)
-      for (const p of (producers ?? []) as { id: string; lane: any }[]) {
-        producerLanes.set(p.id, p.lane ?? null)
+      for (const p of (producers ?? []) as ProducerRow[]) {
+        producerInfo.set(p.id, p)
       }
     }
 
     for (const m of (rawMatches ?? []) as RawMatch[]) {
-      const lane = producerLanes.get(m.producer_id) ?? null
+      const info = producerInfo.get(m.producer_id) ?? null
+      const lane = info?.lane ?? null
+      // Real-name reveal once Interested. Falls back to email local-part
+      // if full_name isn't set (producers can be onboarded without it).
+      let producerName: string | null = null
+      if (m.status === 'interested' || m.status === 'commented') {
+        const fn = info?.full_name?.trim()
+        if (fn) {
+          producerName = fn
+        } else if (info?.email) {
+          producerName = info.email.split('@')[0]
+        }
+      }
       const dm: DashboardMatch = {
         id: m.id,
         status: m.status,
         partnerLabel: inferPartnerLabel(lane),
+        producerName,
         laneSummary: laneSummary(lane),
         comment: m.comment ?? null,
         createdAt: m.created_at,
         openedAt: m.opened_at,
         reactedAt: m.reacted_at,
         expiresAt: m.expires_at,
+        unmatchedAt: m.unmatched_at,
       }
       const arr = matchesBySubmission.get(m.submission_id) ?? []
       arr.push(dm)
@@ -621,13 +645,6 @@ export default async function DashboardPage({
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
               >
                 Submit your first script
-              </Link>
-              <Link
-                href="/discover"
-                className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] transition-colors"
-              >
-                <Compass size={14} />
-                Browse Discover
                 <ArrowRight size={14} />
               </Link>
             </div>

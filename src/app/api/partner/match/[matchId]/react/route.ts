@@ -1,10 +1,17 @@
 // POST /api/partner/match/[matchId]/react
 //
 // Producer reaction endpoint. Called from the partner dashboard cards and
-// the script detail page. Three actions:
+// the script detail page. Four actions:
 //   - 'interested' → status='interested', reacted_at=now()
 //   - 'pass'       → status='passed',     reacted_at=now()
 //   - 'comment'    → status='commented',  reacted_at=now(), comment=<text>
+//                    (legacy single-field action; kept for compat with cards
+//                     that still POST { action: 'comment' })
+//   - 'message'    → appends { sender_role: 'producer', text, at } to the
+//                    `messages` jsonb thread. If status was 'interested',
+//                    flips to 'commented' so the writer sees a "Replied" pill.
+//                    Producer must already be 'interested' or 'commented' —
+//                    pre-Interested rows can't post messages.
 //
 // Auth: producer must be signed in. RLS on script_matches enforces that
 // they own the row (producer_id = auth.uid()), but we also do an explicit
@@ -16,19 +23,14 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 
-type Action = 'interested' | 'pass' | 'comment'
+type Action = 'interested' | 'pass' | 'comment' | 'message'
 
-const VALID_ACTIONS: ReadonlyArray<Action> = ['interested', 'pass', 'comment']
+const VALID_ACTIONS: ReadonlyArray<Action> = ['interested', 'pass', 'comment', 'message']
 
-function actionToStatus(action: Action): 'interested' | 'passed' | 'commented' {
-  switch (action) {
-    case 'interested':
-      return 'interested'
-    case 'pass':
-      return 'passed'
-    case 'comment':
-      return 'commented'
-  }
+interface ThreadMessage {
+  sender_role: 'producer' | 'writer'
+  text: string
+  at: string
 }
 
 export async function POST(
@@ -58,14 +60,25 @@ export async function POST(
   const action = body.action
   if (!action || !VALID_ACTIONS.includes(action as Action)) {
     return NextResponse.json(
-      { error: 'action must be one of: interested, pass, comment' },
+      { error: 'action must be one of: interested, pass, comment, message' },
       { status: 400 }
     )
   }
 
   const text = typeof body.text === 'string' ? body.text.trim() : ''
-  if (action === 'comment') {
-    if (text.length < 5 || text.length > 2000) {
+  if (action === 'comment' || action === 'message') {
+    if (text.length < 1 || text.length > 2000) {
+      return NextResponse.json(
+        {
+          error:
+            action === 'message'
+              ? 'Message must be 1-2000 characters.'
+              : 'Comment must be 5-2000 characters.',
+        },
+        { status: 400 }
+      )
+    }
+    if (action === 'comment' && text.length < 5) {
       return NextResponse.json(
         { error: 'Comment must be 5-2000 characters.' },
         { status: 400 }
@@ -73,10 +86,11 @@ export async function POST(
     }
   }
 
-  // Explicit ownership check before the update so the 404 is clean.
+  // Explicit ownership check before the update so the 404 is clean. Pull
+  // status + messages too — we need both for the message-append path.
   const { data: existing, error: lookupErr } = await supabase
     .from('script_matches')
-    .select('id, producer_id')
+    .select('id, producer_id, status, messages')
     .eq('id', matchId)
     .maybeSingle()
 
@@ -88,12 +102,43 @@ export async function POST(
   }
 
   const nowIso = new Date().toISOString()
-  const updates: Record<string, unknown> = {
-    status: actionToStatus(action as Action),
-    reacted_at: nowIso,
-  }
-  if (action === 'comment') {
+  const updates: Record<string, unknown> = {}
+
+  if (action === 'interested') {
+    updates.status = 'interested'
+    updates.reacted_at = nowIso
+  } else if (action === 'pass') {
+    updates.status = 'passed'
+    updates.reacted_at = nowIso
+  } else if (action === 'comment') {
+    // Legacy single-field comment. We keep this for cards that still POST
+    // {action: 'comment'}; the new gated detail page uses 'message'.
+    updates.status = 'commented'
+    updates.reacted_at = nowIso
     updates.comment = text
+  } else if (action === 'message') {
+    // Producer must have already marked Interested before they can post
+    // into the thread. The pre-Interested UI doesn't expose this anyway,
+    // but defense in depth.
+    if (existing.status !== 'interested' && existing.status !== 'commented') {
+      return NextResponse.json(
+        { error: 'Mark this match Interested before sending a message.' },
+        { status: 409 }
+      )
+    }
+    const prevMessages: ThreadMessage[] = Array.isArray(existing.messages)
+      ? (existing.messages as ThreadMessage[])
+      : []
+    const newMessage: ThreadMessage = {
+      sender_role: 'producer',
+      text,
+      at: nowIso,
+    }
+    updates.messages = [...prevMessages, newMessage]
+    // Surface to the writer via the "Replied" pill.
+    if (existing.status === 'interested') {
+      updates.status = 'commented'
+    }
   }
 
   const { data: updated, error: updateErr } = await supabase

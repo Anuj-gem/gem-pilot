@@ -214,11 +214,11 @@ export function PublishPreviewModal({
     ? 'Go Pro — $20/mo'
     : isAlreadyPublished
       ? 'Save changes'
-      : 'Publish for Industry Visibility'
+      : 'Make visible to industry partners'
 
   const headerEyebrow = isAlreadyPublished
     ? 'Industry visibility'
-    : 'Publish for Industry Visibility'
+    : 'Make visible to industry partners'
 
   const headerTitle = isAlreadyPublished
     ? `Control what industry partners see on ${title || 'your report'}`

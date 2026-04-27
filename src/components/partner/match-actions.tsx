@@ -22,6 +22,13 @@ interface Props {
    * Cards use the inline textarea; the detail page uses a modal.
    */
   inlineComment?: boolean
+  /**
+   * When true, hide the Comment button entirely. Used by the gated detail
+   * page (pre-Interested) and any list card where messaging happens through
+   * the post-Interested message thread instead of a single comment field.
+   * Defaults to true now that messaging is the main thread surface.
+   */
+  hideComment?: boolean
 }
 
 export function MatchActions({
@@ -29,6 +36,7 @@ export function MatchActions({
   status,
   variant = 'card',
   inlineComment = true,
+  hideComment = true,
 }: Props) {
   const router = useRouter()
   const [busy, setBusy] = useState<null | 'interested' | 'pass' | 'comment'>(null)
@@ -161,23 +169,25 @@ export function MatchActions({
           Pass
         </button>
 
-        <button
-          type="button"
-          disabled={busy !== null}
-          onClick={() => setCommentOpen((v) => !v)}
-          className={`inline-flex items-center gap-1.5 rounded-md font-medium transition-colors disabled:opacity-60 ml-auto ${btnSize}`}
-          style={{
-            background: '#fff',
-            border: '1px solid var(--gem-gray-700)',
-            color: 'var(--gem-gray-200)',
-          }}
-        >
-          <MessageCircle size={14} />
-          Comment
-        </button>
+        {!hideComment && (
+          <button
+            type="button"
+            disabled={busy !== null}
+            onClick={() => setCommentOpen((v) => !v)}
+            className={`inline-flex items-center gap-1.5 rounded-md font-medium transition-colors disabled:opacity-60 ml-auto ${btnSize}`}
+            style={{
+              background: '#fff',
+              border: '1px solid var(--gem-gray-700)',
+              color: 'var(--gem-gray-200)',
+            }}
+          >
+            <MessageCircle size={14} />
+            Comment
+          </button>
+        )}
       </div>
 
-      {commentOpen && (
+      {commentOpen && !hideComment && (
         <div className="mt-3 rounded-lg p-3" style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}>
           <textarea
             value={commentText}

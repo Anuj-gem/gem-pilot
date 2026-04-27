@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Plus, Compass, LogIn, UserPlus } from 'lucide-react'
+import { Menu, X, Plus, LogIn, UserPlus } from 'lucide-react'
 
 /**
  * Landing-page mobile nav.
@@ -75,13 +75,6 @@ export function MobileNav() {
       {open && (
         <div className="absolute top-full left-0 right-0 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)] shadow-lg z-50">
           <div className="px-4 py-3 flex flex-col gap-2">
-            <MenuRow
-              href="/discover"
-              onClick={() => setOpen(false)}
-              icon={<Compass size={15} />}
-              label="Industry"
-              hint="Discover qualified scripts"
-            />
             <MenuRow
               href="/signup"
               onClick={() => setOpen(false)}

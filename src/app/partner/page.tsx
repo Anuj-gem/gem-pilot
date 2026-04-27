@@ -23,19 +23,19 @@
 //     if no new ones)
 //   - Lane chip + edit-lane link
 //   - Filter row (static for v1)
-//   - <InboxToggle> client component: default = hero + top 8 by score with
-//     a "Browse all N" link; full-list = sortable cards (score / recent /
-//     status). Server fetches everything; client just toggles slices.
+//   - <DashboardTabs> client component: 3 tabs (Inbox / Slate / Passed)
+//     with per-tab sort + per-tab empty states. Server fetches every
+//     status (LIMIT 100); client splits into the buckets and renders a
+//     hero + list for Inbox, plain list for Slate, compact list for
+//     Passed (which also includes unmatched rows).
 //   - Empty state when no rows
 
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
 import { Inbox, Zap } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { LaneChip } from '@/components/partner/lane-chip'
-import { type MatchCardData } from '@/components/partner/match-card'
-import { InboxToggle } from '@/components/partner/inbox-toggle'
+import { DashboardTabs, type DashboardMatchData } from '@/components/partner/dashboard-tabs'
 
 export const dynamic = 'force-dynamic'
 
@@ -75,6 +75,7 @@ interface RawMatchRow {
   id: string
   status: MatchStatus
   created_at: string
+  unmatched_at: string | null
   script_submissions: {
     id: string
     title: string
@@ -104,7 +105,7 @@ interface RawMatchRow {
   } | null
 }
 
-function shapeMatch(row: RawMatchRow): MatchCardData | null {
+function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
   const sub = row.script_submissions
   if (!sub) return null
   const evalRaw = Array.isArray(sub.script_evaluations)
@@ -162,6 +163,7 @@ function shapeMatch(row: RawMatchRow): MatchCardData | null {
     headline,
     tags,
     createdAt: row.created_at,
+    unmatchedAt: row.unmatched_at,
   }
 }
 
@@ -213,15 +215,16 @@ export default async function PartnerDashboardPage() {
     user.email?.split('@')[0] ||
     'there'
 
-  // Fetch matches. RLS already filters by producer_id, but we add an
-  // explicit predicate so it's obvious in the code path. Pull joined
+  // Fetch matches. RLS already filters by producer_id. Pull joined
   // submission + most-recent evaluation for the card render. LIMIT 100
-  // so producers see effectively all of their lane.
+  // so producers see effectively all of their lane. We pull every status
+  // including 'passed' and rows with unmatched_at so the Passed tab can
+  // surface them; the client-side tabs do the bucket split.
   const { data: rawMatches } = await supabase
     .from('script_matches')
     .select(
       `
-      id, status, created_at,
+      id, status, created_at, unmatched_at,
       script_submissions (
         id, title, declared_format,
         script_evaluations ( weighted_score, tier, evaluation, edited_fields )
@@ -229,13 +232,12 @@ export default async function PartnerDashboardPage() {
       `
     )
     .eq('producer_id', user.id)
-    .neq('status', 'passed')
     .order('created_at', { ascending: false })
     .limit(100)
 
   const matches = ((rawMatches ?? []) as unknown as RawMatchRow[])
     .map(shapeMatch)
-    .filter((m): m is MatchCardData => m !== null)
+    .filter((m): m is DashboardMatchData => m !== null)
     .sort((a, b) => {
       const ar = STATUS_RANK[a.status] ?? 99
       const br = STATUS_RANK[b.status] ?? 99
@@ -243,36 +245,27 @@ export default async function PartnerDashboardPage() {
       return 0 // created_at order is preserved by the SQL sort
     })
 
-  // The hero slot is the highest-scoring pending/opened match. Falls back
-  // to the highest-scoring match overall if everything has been reacted to.
-  const heroCandidates = matches.filter(
-    (m) => m.status === 'pending' || m.status === 'opened'
+  // "Active" = anything not unmatched and not passed. Drives the greeting
+  // strip + new-since-visit copy; we keep the broader `matches` list around
+  // so the Passed tab still has rows to show.
+  const activeMatches = matches.filter(
+    (m) => !m.unmatchedAt && m.status !== 'passed'
   )
-  const sortedByScore = [...(heroCandidates.length > 0 ? heroCandidates : matches)].sort(
-    (a, b) => (b.score ?? -1) - (a.score ?? -1)
-  )
-  const hero = sortedByScore[0] ?? null
 
-  // Everything except the hero, sorted by score DESC. The InboxToggle's
-  // default mode shows the top 8 of these as the rail.
-  const restByScore = matches
-    .filter((m) => !hero || m.matchId !== hero.matchId)
-    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1))
-
-  // "New since last visit": any match created after the OLD timestamp.
+  // "New since last visit": any active match created after the OLD timestamp.
   // Only meaningful if the producer has visited before; on the very
   // first visit (oldLastVisitedAt === null) we don't show the strip or
   // pills — everything is technically "new" and the noise isn't useful.
   const newSinceMatches =
     oldLastVisitedAt != null
-      ? matches.filter(
+      ? activeMatches.filter(
           (m) => new Date(m.createdAt).getTime() > new Date(oldLastVisitedAt).getTime()
         )
       : []
   const newMatchIds = newSinceMatches.map((m) => m.matchId)
   const newSinceCount = newSinceMatches.length
 
-  const totalActiveCount = matches.length
+  const totalActiveCount = activeMatches.length
 
   return (
     <>
@@ -377,7 +370,10 @@ export default async function PartnerDashboardPage() {
           </span>
         </div>
 
-        {/* Hero + rest, or empty state */}
+        {/* Tabs (Inbox / Slate / Passed) — or empty state when there are
+            literally zero matches at all. The DashboardTabs component
+            handles its own per-tab empty states once at least one row
+            exists. */}
         {matches.length === 0 ? (
           <div
             className="text-center rounded-2xl px-6 py-16"
@@ -396,21 +392,9 @@ export default async function PartnerDashboardPage() {
             <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0">
               We&apos;ll notify you the moment a script in your lane comes through.
             </p>
-            <Link
-              href="/discover"
-              className="inline-block mt-4 text-[13px] font-medium text-[var(--gem-accent)] hover:text-[var(--gem-accent-hover)]"
-            >
-              Browse Discover →
-            </Link>
           </div>
         ) : (
-          <InboxToggle
-            hero={hero}
-            restByScore={restByScore}
-            allMatches={matches}
-            newMatchIds={newMatchIds}
-            totalCount={totalActiveCount}
-          />
+          <DashboardTabs matches={matches} newMatchIds={newMatchIds} />
         )}
       </div>
     </>

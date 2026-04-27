@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { LayoutDashboard, Compass, LogOut, Menu, X, FileText, Plus, Sparkles } from 'lucide-react'
+import { LayoutDashboard, LogOut, Menu, X, FileText, Plus, Sparkles } from 'lucide-react'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -23,9 +23,11 @@ export default function Nav() {
     router.refresh()
   }
 
+  // Industry tab intentionally removed from the signed-in nav as part of the
+  // two-sided pivot — visibility happens via the Publish button on the
+  // report, not a public Discover tab.
   const links = user ? [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'Industry', icon: Compass },
   ] : []
 
   return (
@@ -113,14 +115,9 @@ export default function Nav() {
           </>
         ) : (
           <>
-            {/* Desktop logged-out — full nav listed, no hamburger */}
+            {/* Desktop logged-out — Industry tab removed as part of the
+                two-sided pivot. */}
             <div className="hidden md:flex items-center gap-3">
-              <Link
-                href="/discover"
-                className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
-              >
-                Industry
-              </Link>
               <Link
                 href="/login"
                 className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
@@ -199,13 +196,6 @@ export default function Nav() {
             </>
           ) : (
             <>
-              <NavMenuRow
-                href="/discover"
-                onClick={() => setMobileOpen(false)}
-                icon={<Compass size={15} />}
-                label="Industry"
-                hint="Discover qualified scripts"
-              />
               <NavMenuRow
                 href="/signup"
                 onClick={() => setMobileOpen(false)}
