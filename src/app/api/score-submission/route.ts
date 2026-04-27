@@ -12,8 +12,11 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 import { cookies } from "next/headers"
-// SELZNICK-4 TEST BRANCH — using v5.4 prompt (producer decision packet)
-import { buildGemEvaluationPromptV54 as buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt-v5-4"
+// SELZNICK-4 TEST BRANCH — using Selznick 3.8 prompt (sub-generation of v5.4
+// with: split-rubric IP/franchise potential, single canonical character names,
+// strict Lead rule with Sopranos calibration, peer-grade dev-exec voice across
+// all issue items, comp set in same tier as script).
+import { buildGemEvaluationPromptSelznick38 as buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt-selznick-3-8"
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types"
 import type { GEMEvaluation } from "@/types"
 import { sendEmail } from "@/lib/email"
