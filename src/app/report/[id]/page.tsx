@@ -249,6 +249,74 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     userLiked = !!existingLike
   }
 
+  // Industry activity for this submission — drives the "Industry activity"
+  // item in the owner "···" menu. Owner-only fetch (skip for non-owners).
+  let ownerActivity: import('@/components/dashboard/industry-activity-button').IndustryActivityRow[] = []
+  if (isOwner && !isAnonymousSubmission) {
+    type RawMatchRow = {
+      id: string
+      producer_id: string
+      status: 'pending' | 'opened' | 'interested' | 'commented' | 'passed'
+      comment: string | null
+      created_at: string
+      opened_at: string | null
+      reacted_at: string | null
+      producer_emailed_at: string | null
+      unmatched_at: string | null
+    }
+    const { data: rawMatchRows } = await serviceClient
+      .from('script_matches')
+      .select(
+        'id, producer_id, status, comment, created_at, opened_at, reacted_at, producer_emailed_at, unmatched_at'
+      )
+      .eq('submission_id', submission.id)
+      .in('status', ['opened', 'interested', 'commented', 'passed'])
+    const rawRows: RawMatchRow[] = (rawMatchRows ?? []) as RawMatchRow[]
+    const producerIds = Array.from(new Set(rawRows.map((r) => r.producer_id)))
+    const producerInfo = new Map<
+      string,
+      { full_name: string | null; email: string | null; company_name: string | null }
+    >()
+    if (producerIds.length > 0) {
+      const { data: producers } = await serviceClient
+        .from('profiles')
+        .select('id, full_name, email, company_name')
+        .in('id', producerIds)
+      for (const p of (producers ?? []) as any[]) {
+        producerInfo.set(p.id, {
+          full_name: p.full_name ?? null,
+          email: p.email ?? null,
+          company_name: p.company_name ?? null,
+        })
+      }
+    }
+    ownerActivity = rawRows
+      .map((row) => {
+        const info = producerInfo.get(row.producer_id) ?? null
+        const computedName = (() => {
+          const fn = info?.full_name?.trim()
+          if (fn) return fn
+          if (info?.email) return info.email.split('@')[0]
+          return null
+        })()
+        return {
+          matchId: row.id,
+          status: row.status,
+          producerName: computedName,
+          producerCompany: info?.company_name ?? null,
+          happenedAt: row.reacted_at ?? row.opened_at ?? row.created_at ?? null,
+          comment: row.comment,
+          producerEmailedAt: row.producer_emailed_at,
+          unmatchedAt: row.unmatched_at,
+        }
+      })
+      .sort((a, b) => {
+        const av = a.happenedAt ? new Date(a.happenedAt).getTime() : 0
+        const bv = b.happenedAt ? new Date(b.happenedAt).getTime() : 0
+        return bv - av
+      })
+  }
+
   const allStrengths = whatsSpecial.strengths ?? []
   const leadCharacters = report.lead_characters ?? []
   const considerations = report.considerations ?? []
@@ -369,6 +437,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   title={submission.title}
                   declaredFormat={submission.declared_format ?? null}
                   isSubscribed={ownerIsSubscribed}
+                  activity={ownerActivity}
                 />
               )}
             </div>

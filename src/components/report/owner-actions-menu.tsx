@@ -19,8 +19,13 @@ import {
   RefreshCw,
   Trash2,
   Loader2,
+  Activity,
 } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
+import {
+  IndustryActivitySheet,
+  type IndustryActivityRow,
+} from '@/components/dashboard/industry-activity-button'
 
 interface Props {
   submissionId: string
@@ -28,6 +33,10 @@ interface Props {
   title: string
   declaredFormat: 'Feature film' | 'Series' | null
   isSubscribed: boolean
+  /** Per-producer activity rows for this script. When provided, the menu
+   *  exposes an "Industry activity" item that opens the same sheet the
+   *  dashboard uses. */
+  activity?: IndustryActivityRow[]
 }
 
 export function OwnerActionsMenu({
@@ -36,12 +45,14 @@ export function OwnerActionsMenu({
   title,
   declaredFormat,
   isSubscribed,
+  activity,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [removeConfirm, setRemoveConfirm] = useState(false)
   const [removing, setRemoving] = useState(false)
   const [downloading, setDownloading] = useState(false)
+  const [activityOpen, setActivityOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
 
   // Close on outside click.
@@ -145,6 +156,20 @@ export function OwnerActionsMenu({
           }}
           role="menu"
         >
+          {activity !== undefined && (
+            <>
+              <MenuItem
+                icon={<Activity size={14} />}
+                onClick={() => {
+                  setOpen(false)
+                  setActivityOpen(true)
+                }}
+              >
+                Industry activity
+              </MenuItem>
+              <div className="my-1 border-t border-[var(--gem-gray-700)]" />
+            </>
+          )}
           <MenuItem icon={<Pencil size={14} />} onClick={triggerEdit}>
             Edit title, headline, tags
           </MenuItem>
@@ -193,6 +218,14 @@ export function OwnerActionsMenu({
         onConfirm={confirmRemove}
         onClose={() => setRemoveConfirm(false)}
       />
+
+      {activity !== undefined && (
+        <IndustryActivitySheet
+          open={activityOpen}
+          onClose={() => setActivityOpen(false)}
+          rows={activity}
+        />
+      )}
     </div>
   )
 }

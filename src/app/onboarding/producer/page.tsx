@@ -62,13 +62,14 @@ export default function ProducerOnboardingPage() {
 
   const [authChecked, setAuthChecked] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
+  const [companyName, setCompanyName] = useState('')
   const [genres, setGenres] = useState<string[]>([])
   const [format, setFormat] = useState<FormatChoice | null>(null)
   const [budgetTier, setBudgetTier] = useState<BudgetTier | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
-  // Auth gate + pre-fill from existing lane (edit mode).
+  // Auth gate + pre-fill from existing lane / company (edit mode).
   useEffect(() => {
     let cancelled = false
     ;(async () => {
@@ -78,10 +79,9 @@ export default function ProducerOnboardingPage() {
         router.replace('/login?redirect=/onboarding/producer')
         return
       }
-      // Pre-fill from any existing lane so the form acts as an editor too.
       const { data: profile } = await supabase
         .from('profiles')
-        .select('lane')
+        .select('lane, company_name, email')
         .eq('id', user.id)
         .single()
       if (cancelled) return
@@ -90,10 +90,20 @@ export default function ProducerOnboardingPage() {
         if (Array.isArray(lane.genres)) setGenres(lane.genres)
         if (lane.format) setFormat(lane.format as FormatChoice)
         if (lane.budget_tier) setBudgetTier(lane.budget_tier as BudgetTier)
-        // If the user already has any lane data, treat this as edit mode.
         if (lane.genres?.length || lane.format || lane.budget_tier) {
           setIsEditing(true)
         }
+      }
+      // Company name pre-fill: existing value wins. For Anuj's test
+      // producer account, default to "GEM" so he can sanity-check the
+      // writer-facing UI without typing it every time.
+      if (profile?.company_name) {
+        setCompanyName(profile.company_name)
+      } else if (
+        typeof profile?.email === 'string' &&
+        profile.email.toLowerCase().startsWith('anuj+producer')
+      ) {
+        setCompanyName('GEM')
       }
       setAuthChecked(true)
     })()
@@ -110,7 +120,11 @@ export default function ProducerOnboardingPage() {
   }
 
   const canSubmit =
-    genres.length > 0 && format !== null && budgetTier !== null && !submitting
+    companyName.trim().length > 0 &&
+    genres.length > 0 &&
+    format !== null &&
+    budgetTier !== null &&
+    !submitting
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -132,7 +146,11 @@ export default function ProducerOnboardingPage() {
 
     const { error: updateError } = await supabase
       .from('profiles')
-      .update({ lane, account_type: 'producer' })
+      .update({
+        lane,
+        account_type: 'producer',
+        company_name: companyName.trim(),
+      })
       .eq('id', user.id)
 
     if (updateError) {
@@ -175,6 +193,30 @@ export default function ProducerOnboardingPage() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Company / shingle */}
+          <section>
+            <label
+              htmlFor="company-name"
+              className="block text-sm font-semibold text-[var(--gem-gray-50)] mb-1"
+            >
+              Company
+            </label>
+            <p className="text-xs text-[var(--gem-gray-400)] mb-3">
+              Producers, shingle, or org name. Writers see this on their report
+              when you mark Interested.
+            </p>
+            <input
+              id="company-name"
+              type="text"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value.slice(0, 80))}
+              maxLength={80}
+              placeholder="e.g. Plan B Entertainment"
+              className="w-full text-[15px] text-[var(--gem-gray-100)] bg-transparent border border-[var(--gem-gray-700)] focus:border-[var(--gem-gold)] focus:outline-none rounded-md px-3 py-2.5"
+              autoComplete="organization"
+            />
+          </section>
+
           {/* Genres */}
           <section>
             <label className="block text-sm font-semibold text-[var(--gem-gray-50)] mb-1">

@@ -43,6 +43,10 @@ import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
+import {
+  IndustryActivityButton,
+  type IndustryActivityRow,
+} from '@/components/dashboard/industry-activity-button'
 import type { ReportPrivacy } from '@/lib/report-privacy'
 
 export const dynamic = 'force-dynamic'
@@ -60,6 +64,10 @@ interface ScriptSummary {
   isLockedReport: boolean
   interestedCount: number
   reportPrivacy: ReportPrivacy | null
+  /** Full producer-side activity for this script, sorted newest first.
+   *  Drives the "Activity" button on the card. Empty array if nobody's
+   *  engaged yet. */
+  activity: IndustryActivityRow[]
 }
 
 export default async function DashboardPage({
@@ -107,22 +115,101 @@ export default async function DashboardPage({
 
   const submissionIds: string[] = visible.map((s: any) => s.id)
 
-  // Count interested/commented matches per submission so we can render the
-  // small "N producers interested" pill on each card. We deliberately don't
-  // pull names/emails/comments — that detail belongs on the report page.
+  // Pull every meaningful match for the writer's visible scripts so the
+  // dashboard activity card can show the per-producer breakdown (name +
+  // company + status + date). We exclude `pending` rows — those haven't
+  // even been opened yet and would be noise.
   const interestedBySubmission = new Map<string, number>()
+  const activityBySubmission = new Map<string, IndustryActivityRow[]>()
   if (submissionIds.length > 0) {
+    type RawMatchRow = {
+      id: string
+      submission_id: string
+      producer_id: string
+      status: 'pending' | 'opened' | 'interested' | 'commented' | 'passed'
+      comment: string | null
+      created_at: string
+      opened_at: string | null
+      reacted_at: string | null
+      producer_emailed_at: string | null
+      unmatched_at: string | null
+    }
     const { data: matchRows } = await supabase
       .from('script_matches')
-      .select('submission_id, status')
-      .in('submission_id', submissionIds)
-      .in('status', ['interested', 'commented'])
-      .is('unmatched_at', null)
-    for (const row of (matchRows ?? []) as any[]) {
-      interestedBySubmission.set(
-        row.submission_id,
-        (interestedBySubmission.get(row.submission_id) ?? 0) + 1
+      .select(
+        'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, producer_emailed_at, unmatched_at'
       )
+      .in('submission_id', submissionIds)
+      .in('status', ['opened', 'interested', 'commented', 'passed'])
+
+    const rawRows: RawMatchRow[] = (matchRows ?? []) as RawMatchRow[]
+
+    // Producer profile lookup for name + company.
+    const producerIds = Array.from(new Set(rawRows.map((r) => r.producer_id)))
+    const producerInfo = new Map<
+      string,
+      { full_name: string | null; email: string | null; company_name: string | null }
+    >()
+    if (producerIds.length > 0) {
+      const { data: producers } = await supabase
+        .from('profiles')
+        .select('id, full_name, email, company_name')
+        .in('id', producerIds)
+      for (const p of (producers ?? []) as any[]) {
+        producerInfo.set(p.id, {
+          full_name: p.full_name ?? null,
+          email: p.email ?? null,
+          company_name: p.company_name ?? null,
+        })
+      }
+    }
+
+    for (const row of rawRows) {
+      // Live (non-unmatched) interested counts drive the small
+      // "N producers interested" pill on the title row.
+      if (
+        !row.unmatched_at &&
+        (row.status === 'interested' || row.status === 'commented')
+      ) {
+        interestedBySubmission.set(
+          row.submission_id,
+          (interestedBySubmission.get(row.submission_id) ?? 0) + 1
+        )
+      }
+
+      const info = producerInfo.get(row.producer_id) ?? null
+      const computedName = (() => {
+        const fn = info?.full_name?.trim()
+        if (fn) return fn
+        if (info?.email) return info.email.split('@')[0]
+        return null
+      })()
+      const happenedAt =
+        row.reacted_at ?? row.opened_at ?? row.created_at ?? null
+
+      const shaped: IndustryActivityRow = {
+        matchId: row.id,
+        status: row.status,
+        producerName: computedName,
+        producerCompany: info?.company_name ?? null,
+        happenedAt,
+        comment: row.comment,
+        producerEmailedAt: row.producer_emailed_at,
+        unmatchedAt: row.unmatched_at,
+      }
+      const arr = activityBySubmission.get(row.submission_id) ?? []
+      arr.push(shaped)
+      activityBySubmission.set(row.submission_id, arr)
+    }
+
+    // Sort each submission's activity newest first.
+    for (const [k, arr] of activityBySubmission) {
+      arr.sort((a, b) => {
+        const av = a.happenedAt ? new Date(a.happenedAt).getTime() : 0
+        const bv = b.happenedAt ? new Date(b.happenedAt).getTime() : 0
+        return bv - av
+      })
+      activityBySubmission.set(k, arr)
     }
   }
 
@@ -166,6 +253,7 @@ export default async function DashboardPage({
       isLockedReport,
       interestedCount: interestedBySubmission.get(sub.id) ?? 0,
       reportPrivacy: (sub.report_privacy as ReportPrivacy | null) ?? null,
+      activity: activityBySubmission.get(sub.id) ?? [],
     }
   })
 
@@ -653,11 +741,14 @@ function CompactCard({ script }: { script: ScriptSummary }) {
       </div>
       <div className="shrink-0 flex items-center gap-1.5 sm:gap-2 flex-wrap">
         {script.hasReport && !script.isLockedReport && (
-          <DashboardPrivacyButton
-            submissionId={script.id}
-            initialPrivacy={script.reportPrivacy}
-            initialIsPublic={script.is_public}
-          />
+          <>
+            <IndustryActivityButton rows={script.activity} />
+            <DashboardPrivacyButton
+              submissionId={script.id}
+              initialPrivacy={script.reportPrivacy}
+              initialIsPublic={script.is_public}
+            />
+          </>
         )}
         {action}
       </div>
