@@ -11,57 +11,39 @@ import { ChevronDown } from 'lucide-react'
 export function Section({
   label,
   subtitle,
-  summary,
-  defaultOpen = false,
+  summary: _summary,
+  defaultOpen: _defaultOpen,
   children,
 }: {
   label: string
-  /** Optional verbose intro text shown when the section is OPEN. Kept out
-   *  of the collapsed summary row to keep that row scannable. */
+  /** Optional verbose intro text shown beneath the section heading. */
   subtitle?: string
-  /** Short one-line count/summary shown in the collapsed row, right-aligned.
-   *  e.g. "7 reasons", "3 leads · 5 supporting", "Indie · Contemporary · Low VFX". */
+  /** Legacy prop kept for back-compat (was the collapsed summary line).
+   *  No longer rendered now that sections are always open. */
   summary?: string
+  /** Legacy prop kept for back-compat — sections are always open now. */
   defaultOpen?: boolean
   children: React.ReactNode
 }) {
+  void _summary
+  void _defaultOpen
   return (
-    <details
-      {...(defaultOpen ? { open: true } : {})}
-      className="group rounded-xl mb-3 transition-colors hover:border-[var(--gem-gray-600)] [&_summary::-webkit-details-marker]:hidden"
-      style={{
-        border: '1px solid var(--gem-gray-700)',
-        background: '#fff',
-      }}
-    >
-      <summary className="flex items-center gap-4 cursor-pointer list-none px-5 sm:px-6 py-4">
-        <div className="flex-1 min-w-0">
-          <p className="text-[15px] sm:text-[16px] font-semibold text-[var(--gem-gray-50)] leading-tight m-0">
-            {label}
-          </p>
-          {summary && (
-            <p className="text-[12.5px] sm:text-[13px] text-[var(--gem-gray-400)] leading-snug m-0 mt-1">
-              {summary}
-            </p>
-          )}
-        </div>
-        <ChevronDown
-          size={18}
-          className="flex-shrink-0 text-[var(--gem-gray-500)] transition-transform duration-200 group-open:rotate-180"
-        />
-      </summary>
+    <section className="mb-12 sm:mb-14">
       <div
-        className="px-5 sm:px-6 pb-6 pt-2"
-        style={{ borderTop: '1px solid var(--gem-gray-700)' }}
-      >
-        {subtitle && (
-          <p className="text-[14.5px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] mt-4 mb-5 max-w-[62ch] m-0">
-            {subtitle}
-          </p>
-        )}
-        <div>{children}</div>
-      </div>
-    </details>
+        aria-hidden
+        className="w-12 h-0.5 mb-3 rounded-sm"
+        style={{ background: 'var(--gem-gold)' }}
+      />
+      <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-tight m-0 mb-2">
+        {label}
+      </h2>
+      {subtitle && (
+        <p className="text-[14.5px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] m-0 mb-5 max-w-[62ch]">
+          {subtitle}
+        </p>
+      )}
+      <div>{children}</div>
+    </section>
   )
 }
 

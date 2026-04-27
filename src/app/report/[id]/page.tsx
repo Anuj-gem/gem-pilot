@@ -516,48 +516,31 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
         >
           {(whatsSpecial.headline || allStrengths.length > 0) && (
-            <EditorialSection label="Why this is a hit" accent="gold">
-              {/* Lede paragraph — always visible. `whatsSpecial.headline` is
-                  GEM's one-line read on what's working. The full numbered
-                  list lives behind a "See all N reasons" disclosure so a
-                  reader gets the read at a glance and chooses whether to
-                  drill in. */}
+            <EditorialSection label="Why this can be a hit" accent="gold">
+              {/* Lede paragraph — always visible. */}
               {whatsSpecial.headline && (
-                <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-6 max-w-[62ch] font-medium">
+                <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
                   {whatsSpecial.headline}
                 </p>
               )}
+              {/* Each reason is its own small drop-down — title + tap to
+                  expand the body. Section is always open at the parent
+                  level; the per-row toggles keep the page calm without
+                  hiding the structure. */}
               {allStrengths.length > 0 && (
-                <details className="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary
-                    className="cursor-pointer list-none inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gold)] transition-colors mb-2"
-                  >
-                    <span>
-                      See all {allStrengths.length}{' '}
-                      {allStrengths.length === 1 ? 'reason' : 'reasons'}
-                    </span>
-                    <span
-                      aria-hidden
-                      className="transition-transform duration-150 group-open:rotate-180"
-                    >
-                      ▾
-                    </span>
-                  </summary>
-                  <ol className="list-none m-0 p-0 mt-5 sm:mt-6 space-y-5 sm:space-y-7">
-                    {allStrengths.map((s, i) => (
-                      <li
-                        key={i}
-                        className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4"
-                      >
-                        <span
-                          className="text-[18px] sm:text-[22px] font-bold tabular-nums leading-tight"
-                          style={{ color: 'var(--gem-gold)' }}
-                        >
-                          {String(i + 1).padStart(2, '0')}
-                        </span>
-                        <div className="min-w-0">
+                <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
+                  {allStrengths.map((s, i) => (
+                    <li key={i}>
+                      <details className="group [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
+                          <span
+                            className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
+                            style={{ color: 'var(--gem-gold)' }}
+                          >
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
                           <p
-                            className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-tight"
+                            className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0"
                             style={
                               applyPaywallBlur && i > 0
                                 ? { filter: 'blur(8px)', userSelect: 'none' }
@@ -566,17 +549,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           >
                             {s.dimension_or_area}
                           </p>
+                          <span
+                            aria-hidden
+                            className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
+                          >
+                            ▾
+                          </span>
+                        </summary>
+                        <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
+                          <div />
                           <p
-                            className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0"
+                            className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
                             style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
                           >
                             {s.what_it_means}
                           </p>
                         </div>
-                      </li>
-                    ))}
-                  </ol>
-                </details>
+                      </details>
+                    </li>
+                  ))}
+                </ol>
               )}
             </EditorialSection>
           )}
@@ -775,12 +767,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             if (empty) return null
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
-            const moreCount =
-              secondary.length + (craftNote ? 1 : 0)
             return (
-              <EditorialSection label="Issues" accent="violet">
+              <EditorialSection label="Development considerations" accent="violet">
                 {issuesHeadline && (
-                  <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-6 max-w-[62ch] font-medium">
+                  <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
                     {issuesHeadline}
                   </p>
                 )}
@@ -822,57 +812,40 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </div>
                 ) : null}
 
-                {/* See-more disclosure: collapses craft note + the rest of
-                    the secondary considerations behind a single tap. The
-                    page stays calm by default; readers who want to drill in
-                    expand to read the full development write-up. */}
-                {moreCount > 0 && (
-                  <details className="group [&_summary::-webkit-details-marker]:hidden">
-                    <summary
-                      className="cursor-pointer list-none inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-accent)] transition-colors"
+                {/* Craft note (always visible, emerald aside). */}
+                {craftNote && (
+                  <div className="relative pl-5 sm:pl-6 mb-5 sm:mb-7">
+                    <div
+                      aria-hidden
+                      className="absolute left-0 top-1 bottom-1 rounded-sm"
+                      style={{ width: 3, background: '#059669' }}
+                    />
+                    <p
+                      className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+                      style={{ color: '#059669' }}
                     >
-                      <span>
-                        See {moreCount} more{' '}
-                        {moreCount === 1 ? 'note' : 'notes'}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="transition-transform duration-150 group-open:rotate-180"
-                      >
-                        ▾
-                      </span>
-                    </summary>
-                    <div className="mt-5 sm:mt-6 space-y-5 sm:space-y-6">
-                      {craftNote && (
-                        <div className="relative pl-5 sm:pl-6">
-                          <div
-                            aria-hidden
-                            className="absolute left-0 top-1 bottom-1 rounded-sm"
-                            style={{ width: 3, background: '#059669' }}
-                          />
-                          <p
-                            className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
-                            style={{ color: '#059669' }}
-                          >
-                            Craft note
-                          </p>
-                          <p
-                            className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                            style={bodyBlur}
-                          >
-                            {craftNote}
-                          </p>
-                        </div>
-                      )}
-                      {/* If we used secondary[0] as the lede above, skip it
-                          here so it's not duplicated. Otherwise render every
-                          secondary note. */}
-                      {secondary
-                        .slice(primary ? 0 : 1)
-                        .map((c, i) => (
-                          <div key={i}>
+                      Craft note
+                    </p>
+                    <p
+                      className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0 max-w-[62ch]"
+                      style={bodyBlur}
+                    >
+                      {craftNote}
+                    </p>
+                  </div>
+                )}
+
+                {/* Secondary considerations as per-note drop-downs — title
+                    visible, body collapsed per item so the page doesn't
+                    get heavy. */}
+                {secondary.slice(primary ? 0 : 1).length > 0 && (
+                  <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
+                    {secondary.slice(primary ? 0 : 1).map((c, i) => (
+                      <li key={i}>
+                        <details className="group [&_summary::-webkit-details-marker]:hidden">
+                          <summary className="cursor-pointer list-none flex items-center gap-3 py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
                             <p
-                              className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1 leading-tight"
+                              className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0 flex-1"
                               style={
                                 applyPaywallBlur
                                   ? { filter: 'blur(8px)', userSelect: 'none' }
@@ -881,16 +854,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                             >
                               {c.area}
                             </p>
-                            <p
-                              className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
-                              style={bodyBlur}
+                            <span
+                              aria-hidden
+                              className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px] shrink-0"
                             >
-                              {c.detail}
-                            </p>
-                          </div>
-                        ))}
-                    </div>
-                  </details>
+                              ▾
+                            </span>
+                          </summary>
+                          <p
+                            className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 pt-2 pb-1 max-w-[62ch]"
+                            style={bodyBlur}
+                          >
+                            {c.detail}
+                          </p>
+                        </details>
+                      </li>
+                    ))}
+                  </ol>
                 )}
               </EditorialSection>
             )
