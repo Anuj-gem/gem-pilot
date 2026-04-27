@@ -133,6 +133,15 @@ export default async function DashboardPage({
     expires_at: string | null
     unmatched_at: string | null
   }
+  // Lookup so each match row knows its own script title (used to build
+  // the "Reply via email" mailto subject).
+  const subTitleById = new Map<string, string>()
+  for (const s of submissions as any[]) {
+    if (s?.id && typeof s.title === 'string') {
+      subTitleById.set(s.id, s.title)
+    }
+  }
+
   let matchesBySubmission = new Map<string, DashboardMatch[]>()
   if (submissionIds.length > 0) {
     const { data: rawMatches } = await supabase
@@ -166,9 +175,13 @@ export default async function DashboardPage({
     for (const m of (rawMatches ?? []) as RawMatch[]) {
       const info = producerInfo.get(m.producer_id) ?? null
       const lane = info?.lane ?? null
-      // Real-name reveal once Interested. Falls back to email local-part
-      // if full_name isn't set (producers can be onboarded without it).
+      // Real-name + email reveal once Interested. Pre-Interested rows stay
+      // anonymous (no name, no email — just the generic role label) for
+      // privacy. Falls back to the email local-part for the name when
+      // full_name isn't set (producers can be onboarded without one).
       let producerName: string | null = null
+      let producerEmail: string | null = null
+      const titleStr = (subTitleById.get(m.submission_id) ?? '').trim()
       if (m.status === 'interested' || m.status === 'commented') {
         const fn = info?.full_name?.trim()
         if (fn) {
@@ -176,12 +189,15 @@ export default async function DashboardPage({
         } else if (info?.email) {
           producerName = info.email.split('@')[0]
         }
+        producerEmail = info?.email ?? null
       }
       const dm: DashboardMatch = {
         id: m.id,
         status: m.status,
         partnerLabel: inferPartnerLabel(lane),
         producerName,
+        producerEmail,
+        scriptTitle: titleStr || null,
         laneSummary: laneSummary(lane),
         comment: m.comment ?? null,
         createdAt: m.created_at,

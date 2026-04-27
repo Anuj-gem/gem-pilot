@@ -11,7 +11,7 @@
 // + lane summary so this component doesn't need to do any DB work.
 
 import { useRouter } from 'next/navigation'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Mail } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { UnmatchButton } from './unmatch-button'
 
@@ -27,6 +27,8 @@ export interface DashboardMatch {
   status: MatchStatus
   partnerLabel: string // generic role label — "Producer" / "Lit rep" pre-Interested
   producerName: string | null // real name, only filled in once Interested+
+  producerEmail: string | null // real email, only filled in once Interested+
+  scriptTitle: string | null // used to build the "Reply via email" subject line
   laneSummary: string // truncated "Looking for ..." text
   comment: string | null
   createdAt: string // ISO
@@ -191,9 +193,18 @@ function MatchRow({
 
   // Identity reveal: pre-Interested rows stay anonymous (generic role label).
   // Once the producer marks Interested/Commented, we show their real name —
-  // it's the central trust handshake of the two-sided flow.
+  // it's the central trust handshake of the two-sided flow. Email is shown
+  // alongside the name in the same gate so the writer can reach back out.
   const headerLabel =
     interested && match.producerName ? match.producerName : match.partnerLabel
+
+  // mailto: subject template matches the producer-side panel for symmetry.
+  const mailtoHref =
+    interested && match.producerEmail
+      ? `mailto:${match.producerEmail}?subject=${encodeURIComponent(
+          `Re: ${match.scriptTitle ?? 'your script'} — via GEM`
+        )}`
+      : null
 
   return (
     <div
@@ -221,6 +232,17 @@ function MatchRow({
             </>
           ) : null}
         </div>
+        {interested && match.producerEmail && (
+          <div
+            className="text-[12px] text-[var(--gem-gray-400)] mt-0.5 truncate"
+            style={{
+              fontFamily:
+                'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+            }}
+          >
+            {match.producerEmail}
+          </div>
+        )}
         <div className="flex items-center gap-2 text-[12.5px] text-[var(--gem-gray-400)] mt-1">
           {dateStr && <span>{dateStr}</span>}
           {dateStr && metaTail && (
@@ -250,10 +272,24 @@ function MatchRow({
 
       {interested && (
         <div
-          className="flex items-center justify-end gap-3 flex-wrap"
+          className="flex items-center justify-end gap-2 flex-wrap"
           style={{ gridColumn: '1 / 3', marginTop: '4px' }}
         >
           <UnmatchButton matchId={match.id} />
+          {mailtoHref && (
+            <a
+              href={mailtoHref}
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold rounded-lg px-3 py-2 transition-all duration-150 hover:brightness-105 active:scale-[0.97]"
+              style={{
+                background: 'transparent',
+                color: 'var(--gem-accent)',
+                border: '1px solid var(--gem-accent)',
+              }}
+            >
+              <Mail size={13} strokeWidth={2.25} />
+              Reply via email
+            </a>
+          )}
           <SendDraftButton matchId={match.id} isSubscribed={isSubscribed} />
         </div>
       )}

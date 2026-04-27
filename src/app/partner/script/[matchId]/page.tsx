@@ -16,23 +16,23 @@
 //   PRE-INTERESTED  (status = pending | opened, not unmatched)
 //     - Title + score + headline + tags + a single "what's special" headline
 //     - Big violet "Mark Interested to unlock" card explaining what opens
-//     - Interested + Pass buttons only (Comment is part of the post-unlock
-//       message thread, not a one-off field)
+//     - Interested + Pass buttons only
 //     - Lead characters / packaging / risk / issues / strengths list / script
 //       download button are all hidden.
 //
 //   POST-INTERESTED (status = interested | commented, not unmatched)
 //     - Full report: strengths, packaging, risks, leads, issues
 //     - Script download button (signed URL, gated server-side too)
-//     - Message thread at the bottom for ongoing back-and-forth
+//     - "Reach out to the writer" panel — writer name + email + mailto button.
+//       All actual conversation happens over email; GEM just tracks the intro.
 //
 //   ENDED           (unmatched_at != null)
-//     - Same as post-interested visually, but the message thread is
-//       read-only and we surface a "Match ended" notice up top.
+//     - Same as post-interested visually, but the reach-out panel is hidden
+//       and we surface a "Match ended" notice up top.
 
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Lock, Sparkles, Download, MessageCircle } from 'lucide-react'
+import { ArrowLeft, Lock, Sparkles, Download, Mail } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { Section, Collapsible } from '@/components/report/v5-components'
@@ -41,7 +41,6 @@ import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { IssuesSection } from '@/components/report/issues-block'
 import { MatchActions } from '@/components/partner/match-actions'
 import { StickyMatchActions } from '@/components/partner/sticky-actions'
-import { MessageThread, type ThreadMessage } from '@/components/partner/message-thread'
 import { ScriptDownloadButton } from '@/components/partner/script-download-button'
 import type { GEMEvaluation, LeadCharacter } from '@/types'
 
@@ -62,12 +61,15 @@ interface MatchRow {
   unmatched_at: string | null
   unmatched_by: string | null
   unmatch_reason: string | null
-  messages: unknown
   script_submissions: {
     id: string
     title: string
     declared_format: string | null
     user_id: string | null
+    profiles: {
+      full_name: string | null
+      email: string | null
+    } | null
     script_evaluations:
       | Array<{
           id: string
@@ -132,17 +134,18 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     redirect('/onboarding/producer')
   }
 
-  // Fetch the match + joined submission + most-recent evaluation, plus all
-  // the new fields (unmatched_*, messages) so the gate + thread render in
-  // the same round trip.
+  // Fetch the match + joined submission + most-recent evaluation + writer
+  // profile (so the post-Interested "reach out" panel can show name + email
+  // without a second round trip).
   const { data: matchRaw } = await supabase
     .from('script_matches')
     .select(
       `
       id, producer_id, status, comment, submission_id,
-      unmatched_at, unmatched_by, unmatch_reason, messages,
+      unmatched_at, unmatched_by, unmatch_reason,
       script_submissions (
         id, title, declared_format, user_id,
+        profiles ( full_name, email ),
         script_evaluations ( id, weighted_score, tier, evaluation, edited_fields )
       )
       `
@@ -236,14 +239,26 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
   const issues = evaluation.issues
 
   // Gate state. `interested` and `commented` both unlock the full report
-  // and the message thread; `passed` falls through to the gated view but
+  // and the reach-out panel; `passed` falls through to the gated view but
   // shows the "passed" pill in the action bar.
   const isUnlocked = match.status === 'interested' || match.status === 'commented'
   const isUnmatched = !!match.unmatched_at
 
-  const messages: ThreadMessage[] = Array.isArray(match.messages)
-    ? (match.messages as ThreadMessage[])
-    : []
+  // Writer identity for the post-Interested reach-out panel. Falls back to
+  // the email local-part if full_name isn't set (writers can sign up via
+  // OAuth without one).
+  const writerProfile = sub.profiles ?? null
+  const writerEmail = writerProfile?.email ?? null
+  const writerName = (() => {
+    const fn = writerProfile?.full_name?.trim()
+    if (fn) return fn
+    if (writerEmail) return writerEmail.split('@')[0]
+    return null
+  })()
+  const mailtoSubject = `Re: ${title} — via GEM`
+  const mailtoHref = writerEmail
+    ? `mailto:${writerEmail}?subject=${encodeURIComponent(mailtoSubject)}`
+    : null
 
   return (
     <>
@@ -459,8 +474,8 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                 label="Lead characters, packaging notes, risk profile, and the full case-against"
               />
               <UnlockBullet
-                icon={<MessageCircle size={14} />}
-                label="A direct message thread with the writer"
+                icon={<Mail size={14} />}
+                label="The writer's name and email — reach out directly"
               />
             </ul>
             <div className="ml-12">
@@ -543,21 +558,71 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               <IssuesSection data={issues} />
             )}
 
-            {/* MESSAGE THREAD — producer-side. Reads + writes
-                script_matches.messages via /api/partner/match/[id]/react
-                action='message'. Disabled if the writer unmatched. */}
-            <Section
-              label="Conversation"
-              subtitle="Message the writer directly. They see your name and reply here."
-            >
-              <MessageThread
-                matchId={match.id}
-                viewerRole="producer"
-                messages={messages}
-                disabled={isUnmatched}
-                disabledHint="The writer ended this match — the thread is read-only."
-              />
-            </Section>
+            {/* REACH OUT TO THE WRITER — producer-side. Replaces the old
+                in-app thread; all conversation now happens over email and
+                GEM just tracks that the introduction happened. The writer
+                also got an email with the producer's name + email when
+                Interested fired. Hidden once the match is unmatched. */}
+            {!isUnmatched && (
+              <Section
+                label="Reach out to the writer"
+                subtitle="GEM facilitated this introduction. All further conversation happens over email."
+              >
+                <div
+                  className="rounded-xl px-5 py-5 flex flex-wrap items-start gap-4"
+                  style={{
+                    background: '#fff',
+                    border: '1.5px solid var(--gem-accent)',
+                    boxShadow: '0 2px 10px rgba(124,58,237,0.08)',
+                  }}
+                >
+                  <span
+                    className="inline-flex items-center justify-center rounded-full"
+                    style={{
+                      width: 40,
+                      height: 40,
+                      background: 'rgba(124,58,237,0.10)',
+                      color: 'var(--gem-accent)',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Mail size={18} strokeWidth={2.25} />
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
+                      {writerName ?? 'Writer'}
+                    </p>
+                    {writerEmail && (
+                      <p
+                        className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug"
+                        style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace' }}
+                      >
+                        {writerEmail}
+                      </p>
+                    )}
+                  </div>
+
+                  {mailtoHref ? (
+                    <a
+                      href={mailtoHref}
+                      className="inline-flex items-center gap-2 rounded-lg font-semibold text-white px-5 py-2.5 text-[14px] transition-all duration-150 hover:brightness-110 active:scale-[0.97] shrink-0"
+                      style={{
+                        background: 'var(--gem-accent)',
+                        boxShadow: '0 2px 8px rgba(124,58,237,0.25)',
+                      }}
+                    >
+                      <Mail size={15} strokeWidth={2.25} />
+                      Reply via email
+                    </a>
+                  ) : (
+                    <span className="text-[12.5px] text-[var(--gem-gray-500)] italic shrink-0">
+                      Writer email unavailable
+                    </span>
+                  )}
+                </div>
+              </Section>
+            )}
           </>
         )}
       </div>
