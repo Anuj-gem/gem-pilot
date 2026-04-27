@@ -233,6 +233,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
   const craftNote = evaluation.craft_note ?? null
   const riskDetails = evaluation.risk_details
   const packaging = evaluation.packaging
+  const issues = (evaluation as { issues?: { items?: { area: string; detail: string; is_primary_lever?: boolean }[] } }).issues
 
   // Gate state.
   const isUnlocked =
@@ -553,12 +554,33 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
             {/* PACKAGING (v5.4) */}
             {packaging && <PackagingSection data={packaging} />}
 
-            {/* ISSUES — same lede + see-more as the writer's view. */}
-            {(considerations.length > 0 || craftNote) && (() => {
-              const primary = considerations.find(
+            {/* ISSUES — same lede + see-more as the writer's view.
+                Sources: prefer legacy `considerations`, fall back to v5.4
+                `issues.items`. Same shape; merging means newer evals that
+                only emit the v5.4 field still render here. */}
+            {(() => {
+              type IssueRow = {
+                area: string
+                detail: string
+                is_primary_lever?: boolean
+              }
+              const fromIssues: IssueRow[] = (issues?.items ?? []).map((i) => ({
+                area: i.area,
+                detail: i.detail,
+                is_primary_lever: i.is_primary_lever,
+              }))
+              const fromConsiderations: IssueRow[] = considerations.map((c) => ({
+                area: c.area,
+                detail: c.detail,
+                is_primary_lever: c.is_primary_lever,
+              }))
+              const merged: IssueRow[] =
+                fromConsiderations.length > 0 ? fromConsiderations : fromIssues
+              if (merged.length === 0 && !craftNote) return null
+              const primary = merged.find(
                 (c) => c.is_primary_lever === true
               )
-              const secondary = considerations.filter(
+              const secondary = merged.filter(
                 (c) => c.is_primary_lever !== true
               )
               const moreCount = secondary.length + (craftNote ? 1 : 0)

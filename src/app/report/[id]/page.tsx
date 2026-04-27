@@ -741,9 +741,33 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
         >
-          {(considerations.length > 0 || craftNote) && (() => {
-            const primary = considerations.find((c) => c.is_primary_lever === true)
-            const secondary = considerations.filter((c) => c.is_primary_lever !== true)
+          {(() => {
+            // Issues source. v5.4 evals emit `issues.items` (newer shape).
+            // Older evals emit `considerations` (legacy shape). Same data
+            // shape — area + detail + is_primary_lever — so merge them so
+            // the writer always sees something on this section regardless
+            // of which prompt version produced their report.
+            type IssueRow = {
+              area: string
+              detail: string
+              is_primary_lever?: boolean
+            }
+            const fromIssues: IssueRow[] = (issues?.items ?? []).map((i) => ({
+              area: i.area,
+              detail: i.detail,
+              is_primary_lever: i.is_primary_lever,
+            }))
+            const fromConsiderations: IssueRow[] = considerations.map((c) => ({
+              area: c.area,
+              detail: c.detail,
+              is_primary_lever: c.is_primary_lever,
+            }))
+            const merged: IssueRow[] =
+              fromConsiderations.length > 0 ? fromConsiderations : fromIssues
+            const empty = merged.length === 0 && !craftNote
+            if (empty) return null
+            const primary = merged.find((c) => c.is_primary_lever === true)
+            const secondary = merged.filter((c) => c.is_primary_lever !== true)
             const moreCount =
               secondary.length + (craftNote ? 1 : 0)
             return (
