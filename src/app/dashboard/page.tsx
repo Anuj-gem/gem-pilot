@@ -132,6 +132,7 @@ export default async function DashboardPage({
     reacted_at: string | null
     expires_at: string | null
     unmatched_at: string | null
+    producer_emailed_at: string | null
   }
   // Lookup so each match row knows its own script title (used to build
   // the "Reply via email" mailto subject).
@@ -147,7 +148,7 @@ export default async function DashboardPage({
     const { data: rawMatches } = await supabase
       .from('script_matches')
       .select(
-        'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, expires_at, unmatched_at'
+        'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, expires_at, unmatched_at, producer_emailed_at'
       )
       .in('submission_id', submissionIds)
       .is('unmatched_at', null)
@@ -179,17 +180,25 @@ export default async function DashboardPage({
       // anonymous (no name, no email — just the generic role label) for
       // privacy. Falls back to the email local-part for the name when
       // full_name isn't set (producers can be onboarded without one).
+      //
+      // Pass-with-comment case: we ALSO reveal the producer's name (but
+      // never the email) so the writer can see who passed and why. Email
+      // stays gated to Interested+ since a pass shouldn't open an inbound
+      // channel.
       let producerName: string | null = null
       let producerEmail: string | null = null
       const titleStr = (subTitleById.get(m.submission_id) ?? '').trim()
-      if (m.status === 'interested' || m.status === 'commented') {
+      const computedName = (() => {
         const fn = info?.full_name?.trim()
-        if (fn) {
-          producerName = fn
-        } else if (info?.email) {
-          producerName = info.email.split('@')[0]
-        }
+        if (fn) return fn
+        if (info?.email) return info.email.split('@')[0]
+        return null
+      })()
+      if (m.status === 'interested' || m.status === 'commented') {
+        producerName = computedName
         producerEmail = info?.email ?? null
+      } else if (m.status === 'passed' && (m.comment ?? '').trim().length > 0) {
+        producerName = computedName
       }
       const dm: DashboardMatch = {
         id: m.id,
@@ -205,6 +214,7 @@ export default async function DashboardPage({
         reactedAt: m.reacted_at,
         expiresAt: m.expires_at,
         unmatchedAt: m.unmatched_at,
+        producerEmailedAt: m.producer_emailed_at ?? null,
       }
       const arr = matchesBySubmission.get(m.submission_id) ?? []
       arr.push(dm)

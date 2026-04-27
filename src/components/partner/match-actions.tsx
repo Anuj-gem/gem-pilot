@@ -43,6 +43,12 @@ export function MatchActions({
   const [error, setError] = useState<string | null>(null)
   const [commentOpen, setCommentOpen] = useState(false)
   const [commentText, setCommentText] = useState('')
+  // Pass-with-comment inline form. Click Pass → open form. The form has
+  // a "Skip + pass" text-link (fires pass with no comment) and a primary
+  // "Pass" button (fires pass with the typed comment). The producer can
+  // also leave the textarea empty and hit Pass — same as Skip.
+  const [passOpen, setPassOpen] = useState(false)
+  const [passText, setPassText] = useState('')
 
   // Once the producer has reacted, lock the row visually so they don't keep
   // double-tapping. They can still see the comment if they wrote one.
@@ -63,6 +69,8 @@ export function MatchActions({
       }
       setCommentOpen(false)
       setCommentText('')
+      setPassOpen(false)
+      setPassText('')
       router.refresh()
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Something went wrong.'
@@ -153,7 +161,7 @@ export function MatchActions({
         <button
           type="button"
           disabled={busy !== null}
-          onClick={() => react('pass')}
+          onClick={() => setPassOpen(v => !v)}
           className={`inline-flex items-center gap-1.5 rounded-md font-medium transition-colors disabled:opacity-60 ${btnSize}`}
           style={{
             background: '#fff',
@@ -186,6 +194,57 @@ export function MatchActions({
           </button>
         )}
       </div>
+
+      {passOpen && (
+        <div
+          className="mt-3 rounded-lg p-3"
+          style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
+        >
+          <textarea
+            value={passText}
+            onChange={(e) => setPassText(e.target.value)}
+            rows={3}
+            placeholder="Why are you passing? (optional, helps the writer — they'll see this)"
+            className="w-full text-sm"
+            style={{
+              border: '1px solid var(--gem-gray-700)',
+              borderRadius: 8,
+              padding: '10px 12px',
+            }}
+            maxLength={2000}
+            disabled={busy !== null}
+          />
+          <div className="flex items-center gap-2 mt-2">
+            <span className="text-[11px] text-[var(--gem-gray-400)]">
+              {passText.length}/2000
+            </span>
+            <button
+              type="button"
+              disabled={busy !== null}
+              onClick={() => react('pass')}
+              className="ml-auto text-[12.5px] font-medium text-[var(--gem-gray-500)] hover:text-[var(--gem-gray-200)]"
+            >
+              Skip + pass
+            </button>
+            <button
+              type="button"
+              disabled={busy !== null}
+              onClick={() =>
+                react('pass', passText.trim().length > 0 ? passText : undefined)
+              }
+              className="inline-flex items-center gap-1.5 rounded-md font-semibold text-white px-3.5 py-2 text-[13px] disabled:opacity-50"
+              style={{ background: 'var(--gem-accent)' }}
+            >
+              {busy === 'pass' ? (
+                <Loader2 size={14} className="animate-spin" />
+              ) : (
+                <X size={14} strokeWidth={2.5} />
+              )}
+              Pass
+            </button>
+          </div>
+        </div>
+      )}
 
       {commentOpen && !hideComment && (
         <div className="mt-3 rounded-lg p-3" style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}>

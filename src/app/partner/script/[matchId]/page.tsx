@@ -42,6 +42,7 @@ import { IssuesSection } from '@/components/report/issues-block'
 import { MatchActions } from '@/components/partner/match-actions'
 import { StickyMatchActions } from '@/components/partner/sticky-actions'
 import { ScriptDownloadButton } from '@/components/partner/script-download-button'
+import { EmailWriterButton } from '@/components/partner/email-writer-button'
 import type { GEMEvaluation, LeadCharacter } from '@/types'
 
 export const dynamic = 'force-dynamic'
@@ -61,6 +62,7 @@ interface MatchRow {
   unmatched_at: string | null
   unmatched_by: string | null
   unmatch_reason: string | null
+  producer_emailed_at: string | null
   script_submissions: {
     id: string
     title: string
@@ -142,7 +144,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     .select(
       `
       id, producer_id, status, comment, submission_id,
-      unmatched_at, unmatched_by, unmatch_reason,
+      unmatched_at, unmatched_by, unmatch_reason, producer_emailed_at,
       script_submissions (
         id, title, declared_format, user_id,
         profiles ( full_name, email ),
@@ -604,17 +606,11 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                   </div>
 
                   {mailtoHref ? (
-                    <a
-                      href={mailtoHref}
-                      className="inline-flex items-center gap-2 rounded-lg font-semibold text-white px-5 py-2.5 text-[14px] transition-all duration-150 hover:brightness-110 active:scale-[0.97] shrink-0"
-                      style={{
-                        background: 'var(--gem-accent)',
-                        boxShadow: '0 2px 8px rgba(124,58,237,0.25)',
-                      }}
-                    >
-                      <Mail size={15} strokeWidth={2.25} />
-                      Reply via email
-                    </a>
+                    <EmailWriterButton
+                      matchId={match.id}
+                      mailtoHref={mailtoHref}
+                      producerEmailedAt={match.producer_emailed_at}
+                    />
                   ) : (
                     <span className="text-[12.5px] text-[var(--gem-gray-500)] italic shrink-0">
                       Writer email unavailable

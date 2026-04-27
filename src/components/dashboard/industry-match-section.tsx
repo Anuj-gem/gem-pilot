@@ -11,7 +11,7 @@
 // + lane summary so this component doesn't need to do any DB work.
 
 import { useRouter } from 'next/navigation'
-import { ChevronDown, Mail } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { UnmatchButton } from './unmatch-button'
 
@@ -28,7 +28,7 @@ export interface DashboardMatch {
   partnerLabel: string // generic role label — "Producer" / "Lit rep" pre-Interested
   producerName: string | null // real name, only filled in once Interested+
   producerEmail: string | null // real email, only filled in once Interested+
-  scriptTitle: string | null // used to build the "Reply via email" subject line
+  scriptTitle: string | null // historical: was used for mailto subjects, kept for context
   laneSummary: string // truncated "Looking for ..." text
   comment: string | null
   createdAt: string // ISO
@@ -36,6 +36,7 @@ export interface DashboardMatch {
   reactedAt: string | null
   expiresAt: string | null
   unmatchedAt: string | null
+  producerEmailedAt: string | null // first time the producer clicked "Email writer"
 }
 
 const STATUS_PRIORITY: Record<MatchStatus, number> = {
@@ -198,14 +199,6 @@ function MatchRow({
   const headerLabel =
     interested && match.producerName ? match.producerName : match.partnerLabel
 
-  // mailto: subject template matches the producer-side panel for symmetry.
-  const mailtoHref =
-    interested && match.producerEmail
-      ? `mailto:${match.producerEmail}?subject=${encodeURIComponent(
-          `Re: ${match.scriptTitle ?? 'your script'} — via GEM`
-        )}`
-      : null
-
   return (
     <div
       className="rounded-xl px-5 py-4 grid items-start"
@@ -256,7 +249,24 @@ function MatchRow({
         <StatusPill status={match.status} />
       </div>
 
-      {match.comment && (
+      {match.comment && match.status === 'passed' ? (
+        // Pass comments: dashboard fills `producerName` for passed-with-comment
+        // rows so we can attribute the quote to a real person. Email stays
+        // gated to Interested+ so a pass doesn't open an inbound channel.
+        <div
+          className="text-[13.5px] leading-snug"
+          style={{
+            gridColumn: '1 / 3',
+            marginTop: '4px',
+            color: 'var(--gem-gray-300)',
+          }}
+        >
+          <span className="font-semibold text-[var(--gem-gray-200)]">
+            {match.producerName ?? match.partnerLabel} passed:
+          </span>{' '}
+          <span className="italic">&ldquo;{match.comment}&rdquo;</span>
+        </div>
+      ) : match.comment ? (
         <div
           className="text-[13.5px] leading-snug"
           style={{
@@ -268,7 +278,7 @@ function MatchRow({
         >
           &ldquo;{match.comment}&rdquo;
         </div>
-      )}
+      ) : null}
 
       {interested && (
         <div
@@ -276,20 +286,6 @@ function MatchRow({
           style={{ gridColumn: '1 / 3', marginTop: '4px' }}
         >
           <UnmatchButton matchId={match.id} />
-          {mailtoHref && (
-            <a
-              href={mailtoHref}
-              className="inline-flex items-center gap-1.5 text-[13px] font-semibold rounded-lg px-3 py-2 transition-all duration-150 hover:brightness-105 active:scale-[0.97]"
-              style={{
-                background: 'transparent',
-                color: 'var(--gem-accent)',
-                border: '1px solid var(--gem-accent)',
-              }}
-            >
-              <Mail size={13} strokeWidth={2.25} />
-              Reply via email
-            </a>
-          )}
           <SendDraftButton matchId={match.id} isSubscribed={isSubscribed} />
         </div>
       )}
@@ -322,6 +318,9 @@ export function IndustryMatchSection({
   )
   const passedCount = sorted.filter(m => m.status === 'passed').length
   const activeCount = sorted.filter(m => m.status !== 'passed').length
+  // Producers who actually clicked through to email the writer. Read off
+  // each match's producer_emailed_at timestamp; only render if > 0.
+  const emailedCount = sorted.filter(m => !!m.producerEmailedAt).length
 
   if (matches.length === 0) {
     return (
@@ -373,6 +372,18 @@ export function IndustryMatchSection({
 
       {open && (
         <div className="px-6 sm:px-8 pb-5 pt-1 flex flex-col gap-2.5">
+          {emailedCount > 0 && (
+            <div
+              className="rounded-lg px-3.5 py-2 text-[12.5px] font-semibold leading-snug self-start"
+              style={{
+                background: 'rgba(124,58,237,0.08)',
+                border: '1px solid rgba(124,58,237,0.25)',
+                color: 'var(--gem-accent)',
+              }}
+            >
+              {emailedCount} producer{emailedCount === 1 ? ' has' : 's have'} reached out via email
+            </div>
+          )}
           {visible.map(m => (
             <MatchRow key={m.id} match={m} isSubscribed={isSubscribed} />
           ))}
