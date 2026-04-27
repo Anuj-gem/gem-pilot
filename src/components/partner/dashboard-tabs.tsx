@@ -14,6 +14,7 @@
 
 import { useMemo, useState } from 'react'
 import { HeroMatchCard, MatchCard, type MatchCardData } from './match-card'
+import { MatchViewTracker } from './match-view-tracker'
 
 export interface DashboardMatchData extends MatchCardData {
   unmatchedAt: string | null
@@ -303,17 +304,21 @@ function InboxBody({
     <>
       {hero && (
         <div className="mb-8">
-          <HeroMatchCard data={hero} />
+          <MatchViewTracker matchId={hero.matchId} initialStatus={hero.status}>
+            <HeroMatchCard data={hero} />
+          </MatchViewTracker>
         </div>
       )}
       {visibleRest.length > 0 && (
         <div className="space-y-3">
           {visibleRest.map((m) => (
-            <MatchCard
+            <MatchViewTracker
               key={m.matchId}
-              data={m}
-              isNew={newIdSet.has(m.matchId)}
-            />
+              matchId={m.matchId}
+              initialStatus={m.status}
+            >
+              <MatchCard data={m} isNew={newIdSet.has(m.matchId)} />
+            </MatchViewTracker>
           ))}
         </div>
       )}
