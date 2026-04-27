@@ -52,6 +52,7 @@ import { ContactWriter } from '@/components/report/contact-writer'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
+import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
@@ -320,23 +321,38 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Selznick-4 v4 (2026-04-27): the giant publish CTA + qualification
-            banner are gone. Every new post is public by default; writers
-            adjust visibility per-section via the small pills, hide their
-            score with the eye next to it, and remove a post entirely from
-            the "···" menu. Status line below tells them where they stand. */}
+        {/* Selznick-4 v4 (2026-04-27): no giant publish CTA. Every new post
+            is public by default. The status line below tells the owner
+            where they stand and links into the same privacy panel the
+            dashboard uses (master toggle + per-section + score). */}
         {!isAnonymousSubmission && (isOwner || (!isOwner && !isAdmin)) && (
           <div className="flex items-center justify-between gap-3 flex-wrap mb-6">
-            <div className="flex items-center gap-2 min-w-0">
+            <div className="flex items-center gap-2 min-w-0 flex-wrap">
               {isOwner && (
-                <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
-                  <span
-                    aria-hidden
-                    className="inline-block w-1.5 h-1.5 rounded-full"
-                    style={{ background: '#059669' }}
+                <>
+                  <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
+                    <span
+                      aria-hidden
+                      className="inline-block w-1.5 h-1.5 rounded-full"
+                      style={{
+                        background: submission.is_public
+                          ? '#059669'
+                          : 'var(--gem-gray-500)',
+                      }}
+                    />
+                    {submission.is_public
+                      ? 'Visible to industry'
+                      : 'Unpublished'}
+                  </span>
+                  <span className="text-[var(--gem-gray-600)]">·</span>
+                  <DashboardPrivacyButton
+                    submissionId={submission.id}
+                    initialPrivacy={privacy}
+                    initialIsPublic={submission.is_public ?? false}
+                    triggerLabel="Privacy settings"
+                    triggerVariant="link"
                   />
-                  Visible to industry
-                </span>
+                </>
               )}
             </div>
             <div className="flex items-center gap-2">

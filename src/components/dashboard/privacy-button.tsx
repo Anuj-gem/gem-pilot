@@ -27,20 +27,34 @@ import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 interface Props {
   submissionId: string
   initialPrivacy: ReportPrivacy | null
+  /** Whether the post is currently visible to industry (script_submissions.is_public).
+   *  Master toggle at the top of the panel flips this. */
+  initialIsPublic: boolean
+  /** Optional custom trigger label — defaults to "Privacy". The report
+   *  page uses something like "Privacy settings" instead. */
+  triggerLabel?: string
+  /** Render the trigger inline as a text link rather than a bordered pill.
+   *  Used when the trigger sits inside the report-page status line. */
+  triggerVariant?: 'pill' | 'link'
 }
 
 export function DashboardPrivacyButton({
   submissionId,
   initialPrivacy,
+  initialIsPublic,
+  triggerLabel = 'Privacy',
+  triggerVariant = 'pill',
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [privacy, setPrivacy] = useState<ReportPrivacy>(() =>
     normalizePrivacy(initialPrivacy)
   )
+  const [isPublic, setIsPublic] = useState<boolean>(initialIsPublic)
   const [pendingConfirm, setPendingConfirm] = useState<
     | { kind: 'section'; key: SectionKey; nextVis: Visibility }
     | { kind: 'score'; nextShown: boolean }
+    | { kind: 'visibility'; nextPublic: boolean }
     | null
   >(null)
   const [busy, setBusy] = useState(false)
@@ -65,7 +79,11 @@ export function DashboardPrivacyButton({
     return () => document.removeEventListener('keydown', onKey)
   }, [open])
 
-  async function persist(next: ReportPrivacy) {
+  async function persist(payload: {
+    privacy?: ReportPrivacy
+    show_score?: boolean
+    is_public?: boolean
+  }) {
     setBusy(true)
     try {
       const res = await fetch(
@@ -74,15 +92,26 @@ export function DashboardPrivacyButton({
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            privacy: { sections: next.sections },
-            ...(next.show_score !== undefined
-              ? { show_score: next.show_score }
+            ...(payload.privacy
+              ? { privacy: { sections: payload.privacy.sections } }
+              : {}),
+            ...(payload.show_score !== undefined
+              ? { show_score: payload.show_score }
+              : {}),
+            ...(payload.is_public !== undefined
+              ? { is_public: payload.is_public }
               : {}),
           }),
         }
       )
       if (res.ok) {
-        setPrivacy(next)
+        const json = await res.json().catch(() => ({}))
+        if (json?.report_privacy) {
+          setPrivacy(normalizePrivacy(json.report_privacy))
+        }
+        if (typeof json?.is_public === 'boolean') {
+          setIsPublic(json.is_public)
+        }
         router.refresh()
       }
     } catch {
@@ -106,28 +135,41 @@ export function DashboardPrivacyButton({
           ? { show_score: privacy.show_score }
           : {}),
       }
-      persist(next)
+      persist({ privacy: next })
+    } else if (pendingConfirm.kind === 'score') {
+      persist({ show_score: pendingConfirm.nextShown })
     } else {
-      const next: ReportPrivacy = {
-        ...privacy,
-        show_score: pendingConfirm.nextShown,
-      }
-      persist(next)
+      // Master visibility flip — server also rewrites all section pills to
+      // match (all-private on unpublish, all-public on publish), so we
+      // just send the is_public field and let the response tell us the
+      // new shape.
+      persist({ is_public: pendingConfirm.nextPublic })
     }
   }
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-1.5 text-[12px] text-[var(--gem-gray-400)] hover:text-[var(--gem-gold)] transition-colors px-2.5 py-1 rounded-md border border-[var(--gem-gray-700)]"
-        aria-label="Privacy settings"
-        title="Adjust what industry partners see"
-      >
-        <Shield size={12} />
-        Privacy
-      </button>
+      {triggerVariant === 'link' ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="text-[12.5px] font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-gold)] transition-colors underline-offset-2 hover:underline"
+          aria-label="Privacy settings"
+        >
+          {triggerLabel}
+        </button>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="inline-flex items-center gap-1.5 text-[12px] text-[var(--gem-gray-400)] hover:text-[var(--gem-gold)] transition-colors px-2.5 py-1 rounded-md border border-[var(--gem-gray-700)]"
+          aria-label="Privacy settings"
+          title="Adjust what industry partners see"
+        >
+          <Shield size={12} />
+          {triggerLabel}
+        </button>
+      )}
 
       {open && (
         <div
@@ -172,11 +214,59 @@ export function DashboardPrivacyButton({
             </div>
 
             <div className="flex-1 min-h-0 overflow-y-auto px-5 sm:px-6 py-4">
-              {/* Score toggle */}
+              {/* Master toggle — "Visible to industry". Flipping it OFF
+                  hides the post entirely from producers AND auto-flips
+                  every section pill below to Private. Flipping it back ON
+                  republishes + auto-flips every section back to Public. */}
+              <div
+                className="rounded-xl p-3.5 mb-3"
+                style={{
+                  background: isPublic
+                    ? 'rgba(5,150,105,0.06)'
+                    : 'var(--gem-gray-900)',
+                  border: isPublic
+                    ? '1px solid rgba(5,150,105,0.30)'
+                    : '1px solid var(--gem-gray-700)',
+                }}
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[14px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+                      Visible to industry
+                    </p>
+                    <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug">
+                      {isPublic
+                        ? 'Industry partners can see your report. Section pills below let you narrow what\u2019s shown.'
+                        : 'Your post is hidden from industry. Only you can see this report.'}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setPendingConfirm({
+                        kind: 'visibility',
+                        nextPublic: !isPublic,
+                      })
+                    }
+                    className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
+                      isPublic
+                        ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
+                        : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+                    }`}
+                  >
+                    {isPublic ? <Eye size={11} /> : <Lock size={11} />}
+                    {isPublic ? 'Public' : 'Unpublished'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Score toggle — disabled when unpublished (the master
+                  toggle controls everything in that state). */}
               <PrivacyRow
                 label="GEM score"
                 hint="Whether the score badge shows on your report cover."
-                visible={isScoreVisible(privacy)}
+                visible={isScoreVisible(privacy) && isPublic}
+                disabled={!isPublic}
                 onTap={() =>
                   setPendingConfirm({
                     kind: 'score',
@@ -185,7 +275,7 @@ export function DashboardPrivacyButton({
                 }
               />
               <div className="my-3 border-t border-[var(--gem-gray-800)]" />
-              {/* Section toggles */}
+              {/* Section toggles — same disabled treatment when unpublished. */}
               {SECTION_KEYS.map((k) => {
                 const meta = SECTION_META[k]
                 const vis = resolveVisibility(privacy, k)
@@ -194,7 +284,8 @@ export function DashboardPrivacyButton({
                     key={k}
                     label={meta.label}
                     hint={meta.hint}
-                    visible={vis === 'public'}
+                    visible={vis === 'public' && isPublic}
+                    disabled={!isPublic}
                     onTap={() =>
                       setPendingConfirm({
                         kind: 'section',
@@ -214,6 +305,11 @@ export function DashboardPrivacyButton({
         open={pendingConfirm !== null}
         title={(() => {
           if (!pendingConfirm) return ''
+          if (pendingConfirm.kind === 'visibility') {
+            return pendingConfirm.nextPublic
+              ? 'Publish to industry?'
+              : 'Unpublish from industry?'
+          }
           if (pendingConfirm.kind === 'score') {
             return pendingConfirm.nextShown
               ? 'Show your score to industry partners?'
@@ -226,6 +322,11 @@ export function DashboardPrivacyButton({
         })()}
         body={(() => {
           if (!pendingConfirm) return ''
+          if (pendingConfirm.kind === 'visibility') {
+            return pendingConfirm.nextPublic
+              ? 'Your post will appear in producer feeds again, with all sections visible by default. You can narrow individual sections after.'
+              : 'Your post will be hidden from every industry partner. You\u2019ll still see your full report. Republish anytime.'
+          }
           if (pendingConfirm.kind === 'score') {
             return pendingConfirm.nextShown
               ? 'Industry partners will see your score on the report cover.'
@@ -237,6 +338,9 @@ export function DashboardPrivacyButton({
         })()}
         confirmLabel={(() => {
           if (!pendingConfirm) return 'Yes'
+          if (pendingConfirm.kind === 'visibility') {
+            return pendingConfirm.nextPublic ? 'Publish' : 'Unpublish'
+          }
           if (pendingConfirm.kind === 'score') {
             return pendingConfirm.nextShown ? 'Show score' : 'Hide score'
           }
@@ -246,6 +350,9 @@ export function DashboardPrivacyButton({
         })()}
         tone={(() => {
           if (!pendingConfirm) return 'primary'
+          if (pendingConfirm.kind === 'visibility') {
+            return pendingConfirm.nextPublic ? 'success' : 'primary'
+          }
           if (pendingConfirm.kind === 'score') {
             return pendingConfirm.nextShown ? 'success' : 'primary'
           }
@@ -263,15 +370,20 @@ function PrivacyRow({
   label,
   hint,
   visible,
+  disabled = false,
   onTap,
 }: {
   label: string
   hint: string
   visible: boolean
+  disabled?: boolean
   onTap: () => void
 }) {
   return (
-    <div className="flex items-start gap-3 py-2.5">
+    <div
+      className="flex items-start gap-3 py-2.5"
+      style={{ opacity: disabled ? 0.5 : 1 }}
+    >
       <div className="flex-1 min-w-0">
         <p className="text-[14px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
           {label}
@@ -283,7 +395,9 @@ function PrivacyRow({
       <button
         type="button"
         onClick={onTap}
-        className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
+        disabled={disabled}
+        title={disabled ? 'Publish to industry first to control this' : undefined}
+        className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors disabled:cursor-not-allowed ${
           visible
             ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
             : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'

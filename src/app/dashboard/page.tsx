@@ -656,6 +656,7 @@ function CompactCard({ script }: { script: ScriptSummary }) {
           <DashboardPrivacyButton
             submissionId={script.id}
             initialPrivacy={script.reportPrivacy}
+            initialIsPublic={script.is_public}
           />
         )}
         {action}
