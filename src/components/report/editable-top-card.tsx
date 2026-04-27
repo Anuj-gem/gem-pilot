@@ -13,10 +13,10 @@
 // Non-owners see the same layout without the pencil; edit mode can also be
 // pre-opened from dashboard via ?edit=1 which auto-scrolls + flips the card.
 
-import { useEffect, useMemo, useRef, useState, useTransition } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Pencil, Check, X, RotateCcw, Loader2, Plus } from 'lucide-react'
+import { Pencil, Check, X, RotateCcw, Loader2 } from 'lucide-react'
 import {
   LOGLINE_WORD_CAP,
   LOCKED_GENRE_VOCAB,
@@ -91,62 +91,23 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
   const [reverting, setReverting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Tags state — independent of the bundled "Save" flow because tags persist
-  // to a different endpoint (/api/scripts/[id]/tags) and writers expect chip
-  // edits to feel immediate. Add/remove are optimistic with rollback on
-  // failure. Source of truth is `script_submissions.tags`, refetched on
-  // router.refresh() after each successful change.
-  const [tags, setTags] = useState<string[]>(() => dedupeTags(initial.tags ?? []))
+  // Tags are part of the bundled edit-mode state — they're displayed in
+  // display mode as read-only chips, and only become editable when the
+  // writer is in the edit form. On Save we PATCH /api/scripts/[id]/tags in
+  // parallel with the eval-fields edit endpoint (only if they actually
+  // changed, to avoid a no-op write).
+  const initialTagsList = useMemo(() => dedupeTags(initial.tags ?? []), [initial.tags])
+  const [tags, setTags] = useState<string[]>(() => initialTagsList)
   const [tagDraft, setTagDraft] = useState('')
-  const [tagAdding, setTagAdding] = useState(false)
   const [tagError, setTagError] = useState<string | null>(null)
-  const [tagPending, startTagTransition] = useTransition()
-  const tagInputRef = useRef<HTMLInputElement | null>(null)
-
-  // Re-seed local tags whenever the server-rendered initial.tags shifts
-  // (e.g. another tab edited them, or router.refresh just landed). Without
-  // this the optimistic state can drift from the persisted value.
-  useEffect(() => {
-    setTags(dedupeTags(initial.tags ?? []))
-  }, [initial.tags])
-
-  async function persistTags(next: string[], rollback: string[]) {
-    setTagError(null)
-    try {
-      const res = await fetch(
-        `/api/scripts/${encodeURIComponent(submissionId)}/tags`,
-        {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ tags: next }),
-        }
-      )
-      const json = await res.json().catch(() => ({}))
-      if (!res.ok) {
-        setTags(rollback)
-        setTagError(json?.error || 'Could not save tags.')
-        return
-      }
-      const serverTags: string[] = Array.isArray(json?.tags) ? json.tags : next
-      setTags(serverTags)
-      // Refresh server data so dashboards / discover pick up the new tags.
-      startTagTransition(() => router.refresh())
-    } catch (err) {
-      setTags(rollback)
-      setTagError(err instanceof Error ? err.message : 'Could not save tags.')
-    }
-  }
+  const tagsAtCap = tags.length >= MAX_TAGS
 
   function handleRemoveTag(tag: string) {
-    if (!isOwner) return
-    const rollback = tags
-    const next = tags.filter((t) => t !== tag)
-    setTags(next)
-    persistTags(next, rollback)
+    setTags((prev) => prev.filter((t) => t !== tag))
+    setTagError(null)
   }
 
   function handleAddTag() {
-    if (!isOwner) return
     const norm = normalizeTag(tagDraft)
     if (!norm) {
       setTagError('Tag must be letters, numbers, or hyphens.')
@@ -160,22 +121,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
       setTagError(`Max ${MAX_TAGS} tags per script.`)
       return
     }
-    const rollback = tags
-    const next = [...tags, norm]
-    setTags(next)
-    setTagDraft('')
-    persistTags(next, rollback)
-  }
-
-  function openTagAdd() {
-    setTagAdding(true)
-    setTagError(null)
-    // Defer focus to the next paint so the input has mounted.
-    requestAnimationFrame(() => tagInputRef.current?.focus())
-  }
-
-  function closeTagAdd() {
-    setTagAdding(false)
+    setTags((prev) => [...prev, norm])
     setTagDraft('')
     setTagError(null)
   }
@@ -184,13 +130,8 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
     if (e.key === 'Enter') {
       e.preventDefault()
       handleAddTag()
-    } else if (e.key === 'Escape') {
-      e.preventDefault()
-      closeTagAdd()
     }
   }
-
-  const tagsAtCap = tags.length >= MAX_TAGS
 
   // Editable state — seeded from what's currently being rendered.
   // Genre primary + secondary are normalized into the locked vocab so the
@@ -242,17 +183,19 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
         .slice(0, 2)
     )
     setTone(initial.tone)
+    setTags(initialTagsList)
+    setTagDraft('')
+    setTagError(null)
   }
 
   async function save() {
     setSaving(true)
     setError(null)
-    // We send each field's desired final value. Empty string clears the edit
-    // server-side, which is the right behavior when the writer blanks a field.
-    // Secondary genres write to `genre_secondary` (v5.4 canonical key); we
-    // also clear the legacy `genre_tags` key so any old edit doesn't keep
-    // bleeding through after a save.
-    const body: Record<string, any> = {
+    // Eval-fields edit body (title/logline/genre/tone). Empty strings clear
+    // the edit server-side. Secondary genres write to `genre_secondary` (v5.4
+    // canonical key); we also clear the legacy `genre_tags` key so any old
+    // edit doesn't keep bleeding through after a save.
+    const editBody: Record<string, any> = {
       title,
       logline,
       genre_primary: genrePrimary,
@@ -260,18 +203,46 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
       genre_secondary: genreSecondary.filter((t) => t.trim().length > 0).slice(0, 2),
       genre_tags: [],
     }
+
+    // Tags persist to a different endpoint (/api/scripts/[id]/tags) — only
+    // PATCH if they actually changed. Compare normalized lists so order +
+    // casing don't trigger a no-op write.
+    const cleanedTags = dedupeTags(tags)
+    const tagsChanged =
+      cleanedTags.length !== initialTagsList.length ||
+      cleanedTags.some((t, i) => t !== initialTagsList[i])
+
     try {
-      const res = await fetch(`/api/evaluations/${evaluationId}/edit`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      })
-      const json = await res.json().catch(() => ({}))
-      if (!res.ok) {
-        setError(json?.error ?? `Save failed (${res.status})`)
+      // Run both writes in parallel; either failing surfaces an error and
+      // keeps the writer in the editor so they can retry.
+      const [editRes, tagsRes] = await Promise.all([
+        fetch(`/api/evaluations/${evaluationId}/edit`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(editBody),
+        }),
+        tagsChanged
+          ? fetch(`/api/scripts/${encodeURIComponent(submissionId)}/tags`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ tags: cleanedTags }),
+            })
+          : Promise.resolve(null),
+      ])
+
+      if (!editRes.ok) {
+        const j = await editRes.json().catch(() => ({}))
+        setError(j?.error ?? `Save failed (${editRes.status})`)
         setSaving(false)
         return
       }
+      if (tagsRes && !tagsRes.ok) {
+        const j = await tagsRes.json().catch(() => ({}))
+        setError(j?.error ?? `Tags save failed (${tagsRes.status})`)
+        setSaving(false)
+        return
+      }
+
       setEditing(false)
       setSaving(false)
       // Let the server re-render with the new display values
@@ -398,121 +369,29 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           )}
         </div>
 
-        {/* Freeform tags row — `script_submissions.tags`. Distinct visual
-            treatment from genre pills (filled, lowercase, smaller) so a
-            producer scanning the card can tell at a glance what's a
-            controlled-vocab classifier vs a writer-supplied descriptor.
-            Owners get inline edit affordances (X to remove, "+ Add tag"
-            pill at the end); non-owners see plain read-only chips. */}
-        {(tags.length > 0 || isOwner) && (
-          <div className="mb-5 sm:mb-10">
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              {tags.map((tag, i) => (
-                <span
-                  key={`${tag}-${i}`}
-                  className="inline-flex items-center gap-1 rounded-full pl-2.5 py-1 text-[12px] sm:text-[12.5px] font-medium"
-                  style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid var(--gem-gray-800)',
-                    color: 'var(--gem-gray-300)',
-                    paddingRight: isOwner ? 4 : 10,
-                  }}
-                >
-                  {tag}
-                  {isOwner && (
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveTag(tag)}
-                      aria-label={`Remove tag ${tag}`}
-                      className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full transition-colors hover:bg-[var(--gem-gray-800)] hover:text-[var(--gem-gray-50)]"
-                      style={{ color: 'var(--gem-gray-500)' }}
-                    >
-                      <X size={11} strokeWidth={2.5} />
-                    </button>
-                  )}
-                </span>
-              ))}
-
-              {isOwner && !tagAdding && !tagsAtCap && (
-                <button
-                  type="button"
-                  onClick={openTagAdd}
-                  className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[12px] sm:text-[12.5px] font-medium transition-colors hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]"
-                  style={{
-                    background: 'transparent',
-                    border: '1px dashed var(--gem-gray-700)',
-                    color: 'var(--gem-gray-400)',
-                  }}
-                  aria-label="Add a tag"
-                >
-                  <Plus size={12} strokeWidth={2.5} />
-                  Add tag
-                </button>
-              )}
-
-              {isOwner && tagAdding && (
-                <span
-                  className="inline-flex items-center gap-1 rounded-full pl-2.5 pr-1 py-0.5"
-                  style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px dashed var(--gem-gray-600)',
-                  }}
-                >
-                  <Plus size={12} className="text-[var(--gem-gray-400)] shrink-0" />
-                  <input
-                    ref={tagInputRef}
-                    type="text"
-                    value={tagDraft}
-                    onChange={(e) => {
-                      setTagDraft(e.target.value)
-                      if (tagError) setTagError(null)
-                    }}
-                    onKeyDown={handleTagKeyDown}
-                    onBlur={() => {
-                      // Close the add-pill if the writer clicked away without
-                      // entering anything; preserves the "Add tag" affordance.
-                      if (!tagDraft.trim()) closeTagAdd()
-                    }}
-                    placeholder="add tag"
-                    maxLength={MAX_TAG_LEN}
-                    className="bg-transparent outline-none text-[12px] sm:text-[12.5px] text-[var(--gem-gray-100)] placeholder:text-[var(--gem-gray-500)] py-1 px-0 w-[100px] sm:w-[120px]"
-                    aria-label="New tag"
-                  />
-                  <button
-                    type="button"
-                    onMouseDown={(e) => e.preventDefault() /* keep input focus during click */}
-                    onClick={handleAddTag}
-                    disabled={!tagDraft.trim()}
-                    className="text-[11px] font-semibold rounded-full px-2 py-0.5 transition-all disabled:opacity-40"
-                    style={{
-                      background: 'var(--gem-gold)',
-                      color: 'var(--gem-black)',
-                    }}
-                  >
-                    Add
-                  </button>
-                </span>
-              )}
-
-              {isOwner && tagPending && (
-                <Loader2
-                  size={12}
-                  className="animate-spin text-[var(--gem-gray-500)]"
-                />
-              )}
-            </div>
-
-            {isOwner && tagError && (
-              <p className="text-[12px] text-red-400 mt-1.5 m-0">{tagError}</p>
-            )}
-            {isOwner && tagsAtCap && (
-              <p className="text-[12px] text-[var(--gem-gray-500)] italic mt-1.5 m-0">
-                You&apos;ve reached the {MAX_TAGS}-tag limit. Remove one to add another.
-              </p>
-            )}
+        {/* Freeform tags row — read-only chips in display mode. Editing
+            happens inside the edit form (Tags field) so it lives next to
+            title/genre/tone/headline rather than as a separate sub-panel.
+            Distinct visual treatment from genre pills (filled, lowercase,
+            smaller) so a producer scanning the card can tell at a glance
+            what's a controlled-vocab classifier vs a writer-supplied tag. */}
+        {initialTagsList.length > 0 ? (
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-5 sm:mb-10">
+            {initialTagsList.map((tag, i) => (
+              <span
+                key={`${tag}-${i}`}
+                className="px-2.5 py-1 rounded-full text-[12px] sm:text-[12.5px] font-medium"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid var(--gem-gray-800)',
+                  color: 'var(--gem-gray-300)',
+                }}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-        )}
-        {tags.length === 0 && !isOwner && (
+        ) : (
           <div className="mb-5 sm:mb-10" />
         )}
 
@@ -693,6 +572,75 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
         <span className="block text-[11px] text-[var(--gem-gray-500)] mt-2">
           Pick up to two more genres from the same list — leave blank if the script lives in one lane.
         </span>
+      </div>
+
+      {/* Tags — freeform descriptors stored on script_submissions.tags.
+          Persist on Save (parallel with the eval-fields edit). */}
+      <div className="mb-5">
+        <span className="block text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
+          Tags
+        </span>
+        <div
+          className="flex flex-wrap items-center gap-1.5 sm:gap-2 rounded-md px-3 py-2 border border-[var(--gem-gray-700)]"
+          style={{ background: 'rgba(255,255,255,0.015)' }}
+        >
+          {tags.map((tag, i) => (
+            <span
+              key={`${tag}-${i}`}
+              className="inline-flex items-center gap-1 rounded-full pl-2.5 pr-1 py-0.5 text-[12.5px] font-medium"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid var(--gem-gray-800)',
+                color: 'var(--gem-gray-200)',
+              }}
+            >
+              {tag}
+              <button
+                type="button"
+                onClick={() => handleRemoveTag(tag)}
+                aria-label={`Remove tag ${tag}`}
+                className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full transition-colors hover:bg-[var(--gem-gray-800)] hover:text-[var(--gem-gray-50)]"
+                style={{ color: 'var(--gem-gray-500)' }}
+              >
+                <X size={11} strokeWidth={2.5} />
+              </button>
+            </span>
+          ))}
+          {!tagsAtCap && (
+            <span className="inline-flex items-center gap-1 flex-1 min-w-[160px]">
+              <input
+                type="text"
+                value={tagDraft}
+                onChange={(e) => {
+                  setTagDraft(e.target.value)
+                  if (tagError) setTagError(null)
+                }}
+                onKeyDown={handleTagKeyDown}
+                placeholder={tags.length === 0 ? 'Add tags — press Enter after each' : 'Add another'}
+                maxLength={MAX_TAG_LEN}
+                className="flex-1 min-w-0 bg-transparent outline-none text-[13px] text-[var(--gem-gray-100)] placeholder:text-[var(--gem-gray-500)] py-1 px-1"
+                aria-label="Add a tag"
+              />
+              {tagDraft.trim() && (
+                <button
+                  type="button"
+                  onClick={handleAddTag}
+                  className="text-[11px] font-semibold rounded-full px-2 py-0.5"
+                  style={{ background: 'var(--gem-gold)', color: 'var(--gem-black)' }}
+                >
+                  Add
+                </button>
+              )}
+            </span>
+          )}
+        </div>
+        <span className="block text-[11px] text-[var(--gem-gray-500)] mt-1">
+          Short, hyphenated descriptors (e.g. <span className="text-[var(--gem-gray-400)]">female-lead, single-location, character-driven</span>). Press Enter to add.
+          {tagsAtCap && ` Max ${MAX_TAGS} — remove one to add another.`}
+        </span>
+        {tagError && (
+          <p className="text-[12px] text-red-400 mt-1.5 m-0">{tagError}</p>
+        )}
       </div>
 
       {/* Headline (stored as edited_fields.logline / positioning_hook) */}
