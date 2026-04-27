@@ -49,7 +49,6 @@ type LanePayload = {
   genres: string[]
   format: FormatChoice
   budget_tier: BudgetTier
-  audience: string
   looking_for_text: string
 }
 
@@ -58,25 +57,44 @@ export default function ProducerOnboardingPage() {
   const supabase = createClient()
 
   const [authChecked, setAuthChecked] = useState(false)
+  const [isEditing, setIsEditing] = useState(false)
   const [genres, setGenres] = useState<string[]>([])
   const [format, setFormat] = useState<FormatChoice | null>(null)
   const [budgetTier, setBudgetTier] = useState<BudgetTier | null>(null)
-  const [audience, setAudience] = useState('')
   const [lookingForText, setLookingForText] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
-  // Auth gate: redirect to login if not signed in.
+  // Auth gate + pre-fill from existing lane (edit mode).
   useEffect(() => {
     let cancelled = false
-    supabase.auth.getUser().then(({ data: { user } }) => {
+    ;(async () => {
+      const { data: { user } } = await supabase.auth.getUser()
       if (cancelled) return
       if (!user) {
         router.replace('/login?redirect=/onboarding/producer')
         return
       }
+      // Pre-fill from any existing lane so the form acts as an editor too.
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('lane')
+        .eq('id', user.id)
+        .single()
+      if (cancelled) return
+      const lane = profile?.lane as Partial<LanePayload> | null
+      if (lane) {
+        if (Array.isArray(lane.genres)) setGenres(lane.genres)
+        if (lane.format) setFormat(lane.format as FormatChoice)
+        if (lane.budget_tier) setBudgetTier(lane.budget_tier as BudgetTier)
+        if (typeof lane.looking_for_text === 'string') setLookingForText(lane.looking_for_text)
+        // If the user already has any lane data, treat this as edit mode.
+        if (lane.genres?.length || lane.format || lane.budget_tier) {
+          setIsEditing(true)
+        }
+      }
       setAuthChecked(true)
-    })
+    })()
     return () => {
       cancelled = true
     }
@@ -108,7 +126,6 @@ export default function ProducerOnboardingPage() {
       genres,
       format,
       budget_tier: budgetTier,
-      audience: audience.trim(),
       looking_for_text: lookingForText.trim(),
     }
 
@@ -140,7 +157,7 @@ export default function ProducerOnboardingPage() {
     <div className="min-h-[calc(100vh-56px)] px-4 py-8 sm:py-12">
       <div className="max-w-xl mx-auto">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--gem-gray-50)] mb-2">
-          Tell us what you&apos;re looking for
+          {isEditing ? 'Edit your lane' : 'Tell us what you\u2019re looking for'}
         </h1>
         <p className="text-sm text-[var(--gem-gray-400)] mb-8">
           This shapes which scripts we surface for you. You can change these
@@ -261,26 +278,6 @@ export default function ProducerOnboardingPage() {
                 )
               })}
             </div>
-          </section>
-
-          {/* Audience focus */}
-          <section>
-            <label
-              htmlFor="audience"
-              className="block text-sm font-semibold text-[var(--gem-gray-50)] mb-1"
-            >
-              Audience focus
-            </label>
-            <p className="text-xs text-[var(--gem-gray-400)] mb-2">
-              Who are you trying to reach?
-            </p>
-            <input
-              id="audience"
-              type="text"
-              value={audience}
-              onChange={e => setAudience(e.target.value)}
-              placeholder="e.g., adult women 35+, female-led elevated horror"
-            />
           </section>
 
           {/* Free text */}

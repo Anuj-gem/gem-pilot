@@ -8,7 +8,6 @@ interface Lane {
   genres?: string[]
   format?: string
   budget_tier?: string
-  audience?: string
 }
 
 const BUDGET_LABEL: Record<string, string> = {
@@ -45,9 +44,6 @@ export function LaneChip({ lane }: { lane: Lane | null | undefined }) {
   if (lane.budget_tier) {
     parts.push(BUDGET_LABEL[lane.budget_tier.toLowerCase()] || titleCase(lane.budget_tier))
   }
-  if (lane.audience && lane.audience.trim().length > 0) {
-    parts.push(lane.audience.trim())
-  }
   if (parts.length === 0) return null
 
   return (
@@ -72,7 +68,7 @@ export function LaneChip({ lane }: { lane: Lane | null | undefined }) {
         </span>
       </span>
       <Link
-        href="/partner/settings"
+        href="/onboarding/producer"
         className="text-[12.5px] text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-200)] transition-colors"
         style={{
           borderBottom: '1px dashed var(--gem-gray-600)',

@@ -348,12 +348,13 @@ The case AGAINST. What a producer would flag. What's broken about this script th
 - Still avoid *unfortunately, broken, fails, sucks*. Direct, not editorial.
 - Each issue must point to a specific element on the page — a scene, a structural choice, a casting requirement, a content flag — not generic gripes.
 
-**Coverage requirements:**
-- **Minimum 3 items in \`issues.items\`** unless \`craft_note\` is set instead. No skipping. Even a strong script has friction worth surfacing.
+**Coverage requirements (NO ESCAPE HATCH — these are mandatory):**
+- **\`issues.items\` MUST have at least 3 entries. Always. Every script. No exceptions.** Even a polished 9+ script has friction — name it. Casting requirements, budget realities, comp-set positioning concerns, audience reach limits, content-rating sensitivities, packaging dependencies, scoring dimensions that scored below the band — there is ALWAYS something a producer would flag.
+- **\`issues.headline\` MUST be a non-empty 1-2 sentence synthesis.**
 - If a scoring dimension landed below the script's overall band (e.g., 4s and 5s on a 7-band script), at least one issue must call out that gap and name what's driving it.
 - If risk_details flagged a HIGH on any axis, at least one issue must surface that risk in the context of greenlight.
 - If a strength in STEP 8 is conditional on something (needs a name to open, requires period costume budget), the conditionality belongs in issues.
-- A 9+ scoring script may have only 2 items, but \`issues.items\` is still NEVER empty unless \`craft_note\` explicitly explains why.
+- The \`craft_note\` field is RESERVED for legacy edge cases and MUST NOT be used as a shortcut to skip the issues section. If you find yourself reaching for craft_note, write 3 issues instead.
 
 **Each issue:**
 - **area**: SPECIFIC, CONCISE SENTENCE naming the issue. Under ~10 words. Producer voice.
@@ -368,7 +369,7 @@ The case AGAINST. What a producer would flag. What's broken about this script th
 
 THEN write a **headline**: 1-2 sentences synthesizing the case against. Honest assessment of where the friction concentrates. *"The script is sharp on character but its 22-location footprint and dependency on attaching a name actor will be the two conversations every producer has before saying yes."*
 
-If the script is genuinely so polished that no real issues land, leave \`issues.items\` shorter and set the top-level field \`craft_note\` to a 1-sentence statement. Example: *"This draft reads as polished to a near-production level — the remaining levers are positioning, not craft."*
+**Reminder: \`issues.items\` is mandatory and must have ≥3 entries. Do not skip. Do not produce \`considerations\`. Do not silently omit the field.**
 
 ---
 
@@ -494,5 +495,23 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
    **CRITICAL:** The top-level \`issues\` field is REQUIRED on every eval. \`issues.items\` MUST have at least 3 entries unless \`craft_note\` is set. Do not produce a \`considerations\` field — use \`issues\` only. \`issues.headline\` must be a non-empty 1-2 sentence synthesis.
 8. **Lead characters is mandatory, non-empty, covers every protagonist.** Performance comp + showcase dimension required.
 9. **Scoring stays honest.** Reasoning prose is calibrated to the band. Advocate voice operates within honest scoring.
-10. **Format-aware.** The writer has declared this as a ${declaredFormat} — every judgment is made through that lens.`;
+10. **Format-aware.** The writer has declared this as a ${declaredFormat} — every judgment is made through that lens.
+
+---
+
+## FINAL VALIDATION (do this BEFORE returning the JSON)
+
+Before you return the response, scan your JSON and confirm ALL of these top-level keys are present:
+
+- \`classification\`
+- \`positioning_hook\`
+- \`scores\` (all 10 dimensions)
+- \`lead_characters\` (non-empty)
+- \`production_reality\`
+- \`risk_details\` (with budget, casting, development cards)
+- \`packaging\` (with comp_set, audience_target, budget_tier, lane_fit, ip_potential)
+- \`whats_special\` (with strengths array AND headline)
+- \`issues\` — **CRITICAL: items array with ≥3 entries AND headline string. If this field is missing, the entire response is INVALID and you must regenerate it.**
+
+If \`issues\` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.`;
 }
