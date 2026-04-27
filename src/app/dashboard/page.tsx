@@ -42,6 +42,8 @@ import { FileText, Plus, ArrowRight, Lock, Upload } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
+import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
+import type { ReportPrivacy } from '@/lib/report-privacy'
 
 export const dynamic = 'force-dynamic'
 
@@ -57,6 +59,7 @@ interface ScriptSummary {
   positioningHook: string | null
   isLockedReport: boolean
   interestedCount: number
+  reportPrivacy: ReportPrivacy | null
 }
 
 export default async function DashboardPage({
@@ -91,6 +94,7 @@ export default async function DashboardPage({
     .from('script_submissions')
     .select(`
       id, title, status, is_public, created_at, hidden_at, declared_format,
+      report_privacy,
       script_evaluations ( id, evaluation, edited_fields, created_at, weighted_score )
     `)
     .eq('user_id', user.id)
@@ -161,6 +165,7 @@ export default async function DashboardPage({
       positioningHook,
       isLockedReport,
       interestedCount: interestedBySubmission.get(sub.id) ?? 0,
+      reportPrivacy: (sub.report_privacy as ReportPrivacy | null) ?? null,
     }
   })
 
@@ -628,7 +633,15 @@ function CompactCard({ script }: { script: ScriptSummary }) {
           Submitted {dateStr}
         </p>
       </div>
-      {action && <div className="shrink-0">{action}</div>}
+      <div className="shrink-0 flex items-center gap-2 flex-wrap">
+        {script.hasReport && !script.isLockedReport && (
+          <DashboardPrivacyButton
+            submissionId={script.id}
+            initialPrivacy={script.reportPrivacy}
+          />
+        )}
+        {action}
+      </div>
     </div>
   )
 }

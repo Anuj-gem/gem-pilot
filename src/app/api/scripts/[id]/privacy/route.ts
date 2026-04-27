@@ -43,9 +43,35 @@ export async function PATCH(
   }
 
   const body = await request.json().catch(() => ({}))
-  const privacy = normalizePrivacy(body?.privacy)
+  // Two ways callers can adjust privacy:
+  //   - Full shape: body.privacy = { sections: {...}, show_score: ... }
+  //   - Targeted: body.show_score (top-level) — merged into existing privacy
+  // Both end up normalized through normalizePrivacy before write so we never
+  // persist garbage. For the targeted case, fetch the current row, layer the
+  // new show_score on top, and write the merged object back.
+  const privacyInput = body?.privacy ?? {}
+  const topLevelShowScore =
+    typeof body?.show_score === 'boolean' ? body.show_score : undefined
   const contactEnabled =
     typeof body?.contact_enabled === 'boolean' ? body.contact_enabled : undefined
+
+  let privacy = normalizePrivacy(privacyInput)
+
+  // If the caller didn't send a full privacy shape, preserve any existing
+  // sections/show_score on the row so a targeted score-only flip doesn't
+  // wipe per-section choices.
+  if (!body?.privacy && topLevelShowScore !== undefined) {
+    const { data: existing } = await supabase
+      .from('script_submissions')
+      .select('report_privacy')
+      .eq('id', submissionId)
+      .eq('user_id', user.id)
+      .single()
+    privacy = normalizePrivacy(existing?.report_privacy)
+  }
+  if (topLevelShowScore !== undefined) {
+    privacy = { ...privacy, show_score: topLevelShowScore }
+  }
 
   const update: Record<string, unknown> = {
     report_privacy: privacy,

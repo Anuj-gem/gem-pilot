@@ -355,10 +355,17 @@ export async function POST(request: NextRequest) {
         throw new Error("Failed to store evaluation");
       }
 
-      // 9. Mark submission as completed
+      // 9. Mark submission as completed + public by default. Selznick-4 v4
+      // (2026-04-27): every new post is visible to industry from the
+      // moment GEM finishes scoring it. Writers narrow visibility per
+      // section (or remove the post entirely) via the report page UI.
+      // Anonymous submissions stay private until claimed by signup.
       await serviceClient
         .from("script_submissions")
-        .update({ status: "completed" })
+        .update({
+          status: "completed",
+          ...(user ? { is_public: true } : {}),
+        })
         .eq("id", submission.id);
 
       // 10. Send post-submission email. MUST be awaited — without await,

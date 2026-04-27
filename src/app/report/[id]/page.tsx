@@ -36,7 +36,6 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/nav'
-import { QualificationBanner } from '@/components/report/qualification-banner'
 import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
@@ -52,7 +51,7 @@ import { SectionGate } from '@/components/report/section-gate'
 import { ContactWriter } from '@/components/report/contact-writer'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { EditableTopCard } from '@/components/report/editable-top-card'
-import { DownloadButton } from '@/components/report/download-button'
+import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
@@ -321,50 +320,42 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Owner action row — just the like button now. The Submit Revision
-            button (Selznick-4 v4) was removed from the qualified path because
-            it duplicated the action that already lives inline inside the
-            QualificationBanner's not-qualified amber state. Writers who DO
-            need to revise still see the button in that banner. */}
-        {!isAnonymousSubmission && isOwner && (
-          <div className="flex items-center gap-3 flex-wrap mb-6">
-            <LikeButton
-              evaluationId={id}
-              initialLiked={userLiked}
-              initialCount={likeCount ?? 0}
-              loggedIn={!!user}
-            />
-          </div>
-        )}
-
-        {/* Qualification banner — the writer's primary signal. Persistent
-            for unpublished reports (qualifies ≥ 50 → publish CTA; below
-            50 → "not ready yet" + submit revision). Disappears into a
-            small success pill once published. */}
-        {!isAnonymousSubmission && isOwner && (
-          <QualificationBanner
-            submissionId={submission.id}
-            evaluationId={id}
-            title={submission.title}
-            initialPublic={submission.is_public ?? false}
-            initialPrivacy={privacy}
-            initialContactEnabled={contactEnabled}
-            commercialScore={commercialScore}
-            isSubscribed={ownerIsSubscribed}
-            declaredFormat={submission.declared_format ?? null}
-            autoOpenModal={autoOpenPrivacy}
-          />
-        )}
-
-        {/* Non-owner: just the like button on its own row. */}
-        {!isAnonymousSubmission && !isOwner && !isAdmin && (
-          <div className="flex items-center gap-3 flex-wrap mb-6">
-            <LikeButton
-              evaluationId={id}
-              initialLiked={userLiked}
-              initialCount={likeCount ?? 0}
-              loggedIn={!!user}
-            />
+        {/* Selznick-4 v4 (2026-04-27): the giant publish CTA + qualification
+            banner are gone. Every new post is public by default; writers
+            adjust visibility per-section via the small pills, hide their
+            score with the eye next to it, and remove a post entirely from
+            the "···" menu. Status line below tells them where they stand. */}
+        {!isAnonymousSubmission && (isOwner || (!isOwner && !isAdmin)) && (
+          <div className="flex items-center justify-between gap-3 flex-wrap mb-6">
+            <div className="flex items-center gap-2 min-w-0">
+              {isOwner && (
+                <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
+                  <span
+                    aria-hidden
+                    className="inline-block w-1.5 h-1.5 rounded-full"
+                    style={{ background: '#059669' }}
+                  />
+                  Visible to industry
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-2">
+              <LikeButton
+                evaluationId={id}
+                initialLiked={userLiked}
+                initialCount={likeCount ?? 0}
+                loggedIn={!!user}
+              />
+              {isOwner && (
+                <OwnerActionsMenu
+                  submissionId={submission.id}
+                  evaluationId={id}
+                  title={submission.title}
+                  declaredFormat={submission.declared_format ?? null}
+                  isSubscribed={ownerIsSubscribed}
+                />
+              )}
+            </div>
           </div>
         )}
 
@@ -397,18 +388,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
           commercialScore={
             // Owner / admin always sees their own score. Non-owners only see
-            // it if the writer hasn't toggled it off in the privacy modal.
+            // it if the writer hasn't toggled it off via the score eye.
             isOwnerOrAdmin || isScoreVisible(privacy) ? commercialScore : null
           }
-          headerActionsLeft={
-            isOwnerOrAdmin ? (
-              <DownloadButton
-                evaluationId={id}
-                isSubscribed={ownerIsSubscribed}
-                title={topCard.title}
-              />
-            ) : undefined
-          }
+          scoreShownToIndustry={isScoreVisible(privacy)}
         />
 
         {/* Mini score card removed 2026-04-23 — qualification banner above

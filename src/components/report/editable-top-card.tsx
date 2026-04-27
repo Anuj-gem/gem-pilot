@@ -16,7 +16,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Pencil, Check, X, RotateCcw, Loader2 } from 'lucide-react'
+import { Pencil, Check, X, RotateCcw, Loader2, Eye, EyeOff } from 'lucide-react'
+import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 import {
   LOGLINE_WORD_CAP,
   LOCKED_GENRE_VOCAB,
@@ -44,9 +45,13 @@ interface Props {
    *  or the profile has no name set, in which case the line is omitted. */
   authorName?: string | null
   /** Commercial score (0-100). Surfaced as a small color-coded badge inline
-   *  with the title (Selznick-4 v4 design pass — Anuj wants the score visible
-   *  in the cover). Null/undefined hides the badge entirely. */
+   *  with the title. Null/undefined hides the badge entirely. */
   commercialScore?: number | null
+  /** Whether the score is currently visible to industry partners (i.e.
+   *  privacy.show_score !== false). Owner-only — drives the eye-toggle UI
+   *  on the score badge. Non-owners ignore this; their visibility is
+   *  decided by the parent (which passes commercialScore=null when hidden). */
+  scoreShownToIndustry?: boolean
 }
 
 // Tag editor constants — mirror src/components/dashboard/script-tags-editor.tsx
@@ -79,7 +84,7 @@ function dedupeTags(tags: string[]): string[] {
   return out
 }
 
-export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, commercialScore, headerActionsLeft }: Props) {
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, commercialScore, scoreShownToIndustry = true, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -169,6 +174,24 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
       cardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [autoEdit])
+
+  // External "Edit" trigger — fired by the OwnerActionsMenu's Edit item.
+  // Lets the menu live outside this component while still flipping the
+  // card into edit mode + scrolling it into view.
+  useEffect(() => {
+    if (!isOwner) return
+    const handler = () => {
+      resetLocalToInitial()
+      setEditing(true)
+      setError(null)
+      requestAnimationFrame(() => {
+        cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+    window.addEventListener('gem:edit-top-card', handler)
+    return () => window.removeEventListener('gem:edit-top-card', handler)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOwner])
 
   function resetLocalToInitial() {
     setTitle(initial.title)
@@ -290,30 +313,10 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             collapsed expander. Everything sized for narrow screens first;
             desktop just has more breathing room. */}
 
-        {/* Top action row — Download (admin/owner) + Edit (owner). Sits
-            inline in normal flow so it never overlaps the title on mobile.
-            Hidden entirely if there's nothing to render. */}
-        {(isOwner || headerActionsLeft) && (
-          <div className="flex items-center justify-end gap-1.5 sm:gap-2 mb-3 sm:mb-4 flex-wrap">
-            {headerActionsLeft}
-            {isOwner && (
-              <button
-                type="button"
-                onClick={() => {
-                  resetLocalToInitial()
-                  setEditing(true)
-                  setError(null)
-                }}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] sm:text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors"
-                aria-label="Edit title, genre, tone, and headline"
-                title="Edit title, genre, tone, and headline"
-              >
-                <Pencil size={13} />
-                Edit
-              </button>
-            )}
-          </div>
-        )}
+        {/* Inline Edit + Download buttons removed (Selznick-4 v4): owner
+            actions now live in the "···" menu rendered by the report page,
+            outside this component. The headerActionsLeft slot is no longer
+            used; left in props for back-compat with non-owner callers. */}
 
         {/* Title row — title + inline score badge. On mobile the badge sits
             right of the title and shrinks to a compact pill. Title is sized
@@ -323,7 +326,12 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             {initial.title}
           </h1>
           {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
-            <ScoreBadge score={commercialScore} />
+            <ScoreBadge
+              score={commercialScore}
+              isOwner={isOwner}
+              shownToIndustry={scoreShownToIndustry}
+              submissionId={submissionId}
+            />
           )}
         </div>
 
@@ -632,10 +640,21 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
 
 // ─── Helpers (Selznick-4 v4) ───────────────────────────────────────
 
-/** Compact color-coded score badge used inline with the title. Three tiers:
- *  green ≥75, amber 50-74, gray <50. Renders as one numeric pill on mobile
- *  and adds a small "Score" eyebrow on desktop. */
-function ScoreBadge({ score }: { score: number }) {
+/** Color-coded score badge inline with the title. Three tiers: green ≥75,
+ *  amber 50-74, gray <50. For owners, a tiny eye toggle next to the badge
+ *  shows whether industry partners can see the score; tap → quick confirm
+ *  to flip. */
+function ScoreBadge({
+  score,
+  isOwner,
+  shownToIndustry,
+  submissionId,
+}: {
+  score: number
+  isOwner: boolean
+  shownToIndustry: boolean
+  submissionId: string
+}) {
   const palette =
     score >= 75
       ? {
@@ -656,29 +675,144 @@ function ScoreBadge({ score }: { score: number }) {
           }
   const display = score.toFixed(0)
   return (
-    <div
-      className="shrink-0 flex flex-col items-center justify-center rounded-lg tabular-nums"
-      style={{
-        background: palette.bg,
-        border: `1px solid ${palette.border}`,
-        minWidth: 56,
-        padding: '6px 10px',
-      }}
-      aria-label={`GEM score ${display}`}
-    >
-      <span
-        className="hidden sm:block text-[9.5px] uppercase tracking-[0.16em] font-bold leading-none mb-1"
-        style={{ color: palette.fg, opacity: 0.85 }}
+    <div className="shrink-0 flex items-center gap-1.5">
+      <div
+        className="flex flex-col items-center justify-center rounded-lg tabular-nums"
+        style={{
+          background: palette.bg,
+          border: `1px solid ${palette.border}`,
+          minWidth: 56,
+          padding: '6px 10px',
+        }}
+        aria-label={`GEM score ${display}`}
       >
-        Score
-      </span>
-      <span
-        className="font-bold leading-none"
-        style={{ color: palette.fg, fontSize: 22 }}
-      >
-        {display}
-      </span>
+        <span
+          className="hidden sm:block text-[9.5px] uppercase tracking-[0.16em] font-bold leading-none mb-1"
+          style={{ color: palette.fg, opacity: 0.85 }}
+        >
+          Score
+        </span>
+        <span
+          className="font-bold leading-none"
+          style={{ color: palette.fg, fontSize: 22 }}
+        >
+          {display}
+        </span>
+      </div>
+      {isOwner && (
+        <ScoreEyeToggle
+          shownToIndustry={shownToIndustry}
+          submissionId={submissionId}
+        />
+      )}
     </div>
+  )
+}
+
+/** Tiny eye/eye-off button next to the score badge. Tap → confirm sheet →
+ *  flips privacy.show_score. Owner-only. Survives router refresh because
+ *  parent re-renders with the new privacy state. */
+function ScoreEyeToggle({
+  shownToIndustry,
+  submissionId,
+}: {
+  shownToIndustry: boolean
+  submissionId: string
+}) {
+  const router = useRouter()
+  const [open, setOpen] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [localShown, setLocalShown] = useState(shownToIndustry)
+  useEffect(() => {
+    setLocalShown(shownToIndustry)
+  }, [shownToIndustry])
+
+  // Listen for sibling-driven privacy changes so the icon stays in sync
+  // when other components save show_score (rare but possible).
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const ce = e as CustomEvent<{ privacy?: { show_score?: boolean } }>
+      if (ce.detail?.privacy && typeof ce.detail.privacy.show_score === 'boolean') {
+        setLocalShown(ce.detail.privacy.show_score)
+      }
+    }
+    window.addEventListener('gem:report-state-changed', handler)
+    return () => window.removeEventListener('gem:report-state-changed', handler)
+  }, [])
+
+  const next = !localShown
+
+  async function handleConfirm() {
+    setBusy(true)
+    try {
+      const res = await fetch(
+        `/api/scripts/${encodeURIComponent(submissionId)}/privacy`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ show_score: next }),
+        }
+      )
+      if (res.ok) {
+        setLocalShown(next)
+        window.dispatchEvent(
+          new CustomEvent('gem:report-state-changed', {
+            detail: { privacy: { show_score: next } },
+          })
+        )
+        router.refresh()
+      }
+    } catch {
+      /* swallow — UI state stays as-is on failure */
+    } finally {
+      setBusy(false)
+      setOpen(false)
+    }
+  }
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label={
+          localShown
+            ? 'Score is visible to industry — tap to hide'
+            : 'Score is hidden from industry — tap to show'
+        }
+        title={
+          localShown
+            ? 'Score visible to industry. Tap to hide.'
+            : 'Score hidden from industry. Tap to show.'
+        }
+        className="inline-flex items-center justify-center w-7 h-7 rounded-full transition-colors hover:bg-[var(--gem-gray-800)]"
+        style={{
+          color: localShown
+            ? 'var(--gem-gray-400)'
+            : 'var(--gem-gray-500)',
+        }}
+      >
+        {localShown ? <Eye size={14} /> : <EyeOff size={14} />}
+      </button>
+      <PrivacyConfirmSheet
+        open={open}
+        title={
+          next
+            ? 'Show your score to industry partners?'
+            : 'Hide your score from industry partners?'
+        }
+        body={
+          next
+            ? 'Your score will appear at the top of your report for any industry partner viewing it.'
+            : 'Your score will be hidden — industry partners will read the report on its own merit. You\u2019ll still see it.'
+        }
+        confirmLabel={next ? 'Show score' : 'Hide score'}
+        tone={next ? 'success' : 'primary'}
+        busy={busy}
+        onConfirm={handleConfirm}
+        onClose={() => setOpen(false)}
+      />
+    </>
   )
 }
 

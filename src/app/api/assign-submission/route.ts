@@ -69,12 +69,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Already assigned" }, { status: 400 });
     }
 
-    // Assign to user and clear expiry
+    // Assign to user, clear expiry, flip to public. Selznick-4 v4 default
+    // is "every claimed post is visible to industry"; the writer can
+    // narrow per-section privacy or remove the post via the report page.
     await serviceClient
       .from("script_submissions")
       .update({
         user_id: user.id,
         expires_at: null,
+        is_public: true,
       })
       .eq("id", submission_id);
 

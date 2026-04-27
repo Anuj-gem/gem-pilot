@@ -114,9 +114,11 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (evalRow?.submission_id) {
+      // Claim the anonymous submission, flip to public (Selznick-4 v4
+      // default — every claimed post is visible to industry).
       await adminSupabase
         .from('script_submissions')
-        .update({ user_id: userId })
+        .update({ user_id: userId, is_public: true })
         .eq('id', evalRow.submission_id)
         .is('user_id', null) // only claim if still anonymous
     }
