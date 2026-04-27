@@ -189,6 +189,7 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
 
   return {
     matchId: row.id,
+    submissionId: sub.id,
     status: row.status,
     title: sub.title || 'Untitled',
     score: typeof score === 'number' && !Number.isNaN(score) ? score : null,
@@ -278,6 +279,61 @@ export default async function PartnerDashboardPage() {
       if (ar !== br) return ar - br
       return 0 // created_at order is preserved by the SQL sort
     })
+
+  // Aggregate engagement stats across the whole industry for each script
+  // in this producer's feed. Producers don't see per-person breakdowns
+  // (that's writer-side only), but they DO see "X views · Y interested ·
+  // Z emailed" inline on each card so they can read social signal at a
+  // glance. Excludes unmatched rows.
+  const submissionIdsInFeed = Array.from(
+    new Set(
+      matches
+        .map((m) => m.submissionId)
+        .filter((s): s is string => typeof s === 'string' && s.length > 0)
+    )
+  )
+  const statsBySubmission = new Map<
+    string,
+    { views: number; interested: number; emailed: number }
+  >()
+  if (submissionIdsInFeed.length > 0) {
+    const { data: aggRows } = await supabase
+      .from('script_matches')
+      .select('submission_id, status, producer_emailed_at, unmatched_at')
+      .in('submission_id', submissionIdsInFeed)
+      .in('status', ['opened', 'interested', 'commented', 'passed'])
+      .is('unmatched_at', null)
+    for (const row of (aggRows ?? []) as Array<{
+      submission_id: string
+      status: string
+      producer_emailed_at: string | null
+    }>) {
+      const cur = statsBySubmission.get(row.submission_id) ?? {
+        views: 0,
+        interested: 0,
+        emailed: 0,
+      }
+      cur.views += 1
+      if (row.status === 'interested' || row.status === 'commented') {
+        cur.interested += 1
+      }
+      if (row.producer_emailed_at) {
+        cur.emailed += 1
+      }
+      statsBySubmission.set(row.submission_id, cur)
+    }
+  }
+  // Hydrate each match with its aggregate stats so MatchCard can render
+  // the stats strip without a second client-side fetch.
+  for (const m of matches) {
+    if (m.submissionId) {
+      m.stats = statsBySubmission.get(m.submissionId) ?? {
+        views: 0,
+        interested: 0,
+        emailed: 0,
+      }
+    }
+  }
 
   // "New since last visit": active matches created after the OLD timestamp.
   // Only meaningful if the producer has visited before; on the very first

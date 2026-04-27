@@ -17,6 +17,7 @@
 
 import Link from 'next/link'
 import { MatchActions } from './match-actions'
+import { StatsStrip } from '@/components/dashboard/stats-strip'
 
 type MatchStatus = 'pending' | 'opened' | 'interested' | 'passed' | 'commented'
 
@@ -28,6 +29,17 @@ export interface MatchCardData {
   headline: string | null
   tags: string[]
   createdAt: string
+  /** Underlying script_submissions.id — used by the partner-side aggregate
+   *  stats fetch to key into the per-script counts. Optional only for
+   *  back-compat with any caller that hasn't been updated. */
+  submissionId?: string
+  /** Aggregate engagement counts across the whole industry for this
+   *  script. Read-only on the producer side. */
+  stats?: {
+    views: number
+    interested: number
+    emailed: number
+  }
 }
 
 export function MatchCard({
@@ -67,6 +79,19 @@ export function MatchCard({
               {data.tags.map((t, i) => (
                 <Tag key={i} text={t} />
               ))}
+            </div>
+          )}
+          {/* Industry-wide engagement stats — read-only on producer side.
+              Lets a producer see at a glance whether others have already
+              engaged with this script (social signal). */}
+          {data.stats && (
+            <div className="mt-2.5">
+              <StatsStrip
+                views={data.stats.views}
+                interested={data.stats.interested}
+                emailed={data.stats.emailed}
+                size="compact"
+              />
             </div>
           )}
         </div>

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Activity, Eye, Check, X, Mail, MessageCircle, X as CloseIcon } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
+import { StatsStrip } from '@/components/dashboard/stats-strip'
 
 export type ActivityStatus =
   | 'pending'
@@ -35,12 +36,25 @@ export interface IndustryActivityRow {
 
 interface Props {
   rows: IndustryActivityRow[]
-  /** How the trigger renders. 'pill' = small bordered button (dashboard
-   *  cards). 'menu-item' = full-width row used inside OwnerActionsMenu. */
-  triggerVariant?: 'pill' | 'menu-item'
-  /** Optional pre-computed counts so the dashboard pill can show "3 new"
-   *  without forcing the consumer to recompute. */
-  triggerLabelOverride?: string
+  /** How the trigger renders.
+   *   - 'stats' (default): inline 3-stat strip (views · interested · emailed)
+   *     that doubles as the "open details" button. Used on dashboard cards.
+   *   - 'menu-item': full-width row used inside OwnerActionsMenu.
+   *   - 'pill': small bordered "Activity" button (legacy compact trigger). */
+  triggerVariant?: 'stats' | 'pill' | 'menu-item'
+}
+
+function computeCounts(rows: IndustryActivityRow[]) {
+  const live = rows.filter((r) => !r.unmatchedAt)
+  return {
+    views: live.filter((r) =>
+      ['opened', 'interested', 'commented', 'passed'].includes(r.status)
+    ).length,
+    interested: live.filter((r) =>
+      ['interested', 'commented'].includes(r.status)
+    ).length,
+    emailed: live.filter((r) => !!r.producerEmailedAt).length,
+  }
 }
 
 /** Standalone activity sheet — renderable by any caller that wants its
@@ -244,14 +258,14 @@ export function IndustryActivitySheet({
 
 export function IndustryActivityButton({
   rows,
-  triggerVariant = 'pill',
-  triggerLabelOverride,
+  triggerVariant = 'stats',
 }: Props) {
   const [open, setOpen] = useState(false)
-  const triggerLabel = triggerLabelOverride ?? buildTriggerLabel(rows)
+  const counts = computeCounts(rows)
 
-  const trigger =
-    triggerVariant === 'menu-item' ? (
+  let trigger: React.ReactNode
+  if (triggerVariant === 'menu-item') {
+    trigger = (
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -261,7 +275,9 @@ export function IndustryActivityButton({
         <Activity size={14} className="shrink-0" />
         <span className="flex-1">Industry activity</span>
       </button>
-    ) : (
+    )
+  } else if (triggerVariant === 'pill') {
+    trigger = (
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -269,9 +285,20 @@ export function IndustryActivityButton({
         title="See who's viewed and engaged"
       >
         <Activity size={12} />
-        {triggerLabel}
+        Activity
       </button>
     )
+  } else {
+    // 'stats' (default): inline strip becomes the open trigger.
+    trigger = (
+      <StatsStrip
+        views={counts.views}
+        interested={counts.interested}
+        emailed={counts.emailed}
+        onOpen={() => setOpen(true)}
+      />
+    )
+  }
 
   return (
     <>
@@ -494,11 +521,3 @@ function ActivityRow({
   )
 }
 
-function buildTriggerLabel(rows: IndustryActivityRow[]): string {
-  const live = rows.filter((r) => !r.unmatchedAt)
-  const viewed = live.filter((r) =>
-    ['opened', 'interested', 'commented', 'passed'].includes(r.status)
-  ).length
-  if (viewed === 0) return 'Activity'
-  return `Activity · ${viewed}`
-}
