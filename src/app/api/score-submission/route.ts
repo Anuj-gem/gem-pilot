@@ -17,6 +17,7 @@ import { buildGemEvaluationPromptV54 as buildGemEvaluationPrompt, type DeclaredF
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types"
 import type { GEMEvaluation } from "@/types"
 import { sendEmail } from "@/lib/email"
+import { createMatchesForSubmission } from "@/lib/matching"
 
 export const maxDuration = 60
 
@@ -210,6 +211,21 @@ export async function POST(request: NextRequest) {
       .from("script_submissions")
       .update({ status: "completed" })
       .eq("id", submission.id)
+
+    // Producer matching — fan out to producer dashboards for any whose lane
+    // overlaps. Don't block the response if anything goes wrong; the cron
+    // backfill / admin trigger can recover.
+    try {
+      const matchResult = await createMatchesForSubmission(
+        submission.id,
+        serviceClient
+      )
+      console.log(
+        `[score-submission] matching: created=${matchResult.matchesCreated} skipped=${matchResult.matchesSkipped} candidates=${matchResult.candidatesEvaluated} submission=${submission.id}`
+      )
+    } catch (err) {
+      console.error("[score-submission] matching failed:", err)
+    }
 
     // Post-submission email — only when the row is already owned by a user.
     // Anon rows email after the assign-submission step claims them.

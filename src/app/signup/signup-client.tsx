@@ -16,6 +16,8 @@ interface SignupPageClientProps {
   topScripts?: any[]
 }
 
+type AccountType = 'writer' | 'producer'
+
 export function SignupPageClient({ topScripts }: SignupPageClientProps) {
   return (
     <Suspense>
@@ -29,6 +31,7 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect')
   const supabase = createClient()
+  const [accountType, setAccountType] = useState<AccountType>('writer')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -40,6 +43,8 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
     if (googleLoading) return
     setGoogleLoading(true)
     setError('')
+    // OAuth users default to 'writer' (account_type defaults in the DB).
+    // They can change this in settings later if we add producer-OAuth flows.
     const next = redirect || '/submit'
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
@@ -82,6 +87,21 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
       })
     }
 
+    // If they picked producer, write account_type='producer' to the profile
+    // row that was auto-created by the auth trigger. The default is 'writer'
+    // so we only need to update on the producer path.
+    if (accountType === 'producer' && data.user?.id) {
+      const { error: updateError } = await supabase
+        .from('profiles')
+        .update({ account_type: 'producer' })
+        .eq('id', data.user.id)
+      if (updateError) {
+        // Don't block signup on this — log and continue. The user can
+        // re-attempt to set their account type from settings later.
+        console.error('[signup] failed to set account_type=producer:', updateError)
+      }
+    }
+
     trackSignupComplete()
     gtagSignupCompleted()
 
@@ -98,7 +118,13 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
       keepalive: true,
     }).catch(() => {})
 
-    router.push(redirect || '/submit')
+    // Producers go through a quick onboarding to populate their lane.
+    // Writers continue to the submit flow (or wherever they were headed).
+    const destination =
+      accountType === 'producer'
+        ? '/onboarding/producer'
+        : redirect || '/submit'
+    router.push(destination)
     router.refresh()
   }
 
@@ -119,6 +145,41 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
           <p className="text-xs text-[var(--gem-gray-400)] mb-5">
             Free forever. No credit card required.
           </p>
+
+          {/* Account type segmented toggle. Writer is the default. */}
+          <div className="mb-5">
+            <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1.5">
+              I&apos;m a
+            </label>
+            <div
+              role="radiogroup"
+              aria-label="Account type"
+              className="grid grid-cols-2 gap-1 p-1 rounded-lg border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]"
+            >
+              {(['writer', 'producer'] as const).map(opt => {
+                const isSelected = accountType === opt
+                return (
+                  <button
+                    key={opt}
+                    type="button"
+                    role="radio"
+                    aria-checked={isSelected}
+                    onClick={() => setAccountType(opt)}
+                    className="px-3 py-2 rounded-md text-sm font-medium transition-all duration-150"
+                    style={{
+                      background: isSelected ? 'var(--gem-accent)' : 'transparent',
+                      color: isSelected ? '#fff' : 'var(--gem-gray-300)',
+                      boxShadow: isSelected
+                        ? '0 1px 3px rgba(124,58,237,0.20)'
+                        : 'none',
+                    }}
+                  >
+                    {opt === 'writer' ? 'Writer' : 'Producer'}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
 
           <button
             type="button"

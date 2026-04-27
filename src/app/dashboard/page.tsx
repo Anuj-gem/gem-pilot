@@ -1,3 +1,20 @@
+// Writer dashboard — Selznick-4 v3 layout.
+//
+// Per-script card now reads as one editorial unit:
+//   1) Top: title + headline + tags on the left, GEM score + band copy on the right
+//   2) Bottom: collapsible Industry Match sub-section listing script_matches
+//      rows with status pills, comments, and a Send-new-draft CTA on Interested
+//      (paywalled for free tier).
+//
+// A Pro upsell card hangs below the project list when a free-tier writer has
+// at least one Interested match waiting on them.
+//
+// We preserve the existing flows that aren't visually replaced: drafts that
+// need a PDF still get the Upload PDF CTA, the publish/private state pill is
+// still here, the Remove + Edit + View report buttons are still here. The
+// stats-grid and "What's next" rail from the prior version are removed —
+// the v3 layout treats the project card itself as the summary.
+
 import { createClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
@@ -9,18 +26,52 @@ import {
   EyeOff,
   Compass,
   ArrowRight,
-  Sparkles,
-  Users,
   Lock,
   Pencil,
   Upload,
 } from 'lucide-react'
 import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { RemoveButton } from '@/components/dashboard/remove-button'
-import { QUALIFICATION_THRESHOLD } from '@/lib/report-privacy'
-import { Check } from 'lucide-react'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
+import {
+  IndustryMatchSection,
+  type DashboardMatch,
+  type MatchStatus,
+} from '@/components/dashboard/industry-match-section'
+import { ProUpsellCard } from '@/components/dashboard/pro-upsell-card'
 
 export const dynamic = 'force-dynamic'
+
+// Score band copy — surfaced as the small italic line under the GEM score.
+function scoreBand(score: number | null): string | null {
+  if (score === null) return null
+  if (score >= 85) return 'Greenlight Material — top of the pool'
+  if (score >= 70) return 'Optionable — strong commercial work'
+  if (score >= 60) return 'Optionable — solid foundation'
+  if (score >= 50) return 'Needs Development — real elements present'
+  return 'Needs Development — early-stage draft'
+}
+
+// Producer category label inferred from `lane.format`. We don't store the
+// partner category directly; v1 buckets everyone as "Producer" unless the
+// producer's lane.format reads "series" (rep-style buyers tend to use
+// agnostic/both formats — this is intentionally simple for v1, refine later).
+function inferPartnerLabel(_lane: { format?: string | null } | null | undefined): string {
+  // Until we add an explicit partner_category column, default to "Producer"
+  // for everybody — keeps copy consistent and sidesteps mislabeling.
+  return 'Producer'
+}
+
+function laneSummary(lane: {
+  audience?: string | null
+  looking_for_text?: string | null
+} | null | undefined): string {
+  if (!lane) return ''
+  const raw = (lane.looking_for_text ?? lane.audience ?? '').trim()
+  if (!raw) return ''
+  if (raw.length <= 60) return `Looking for ${raw}`
+  return `Looking for ${raw.slice(0, 57).trimEnd()}…`
+}
 
 export default async function DashboardPage({
   searchParams,
@@ -34,9 +85,6 @@ export default async function DashboardPage({
     redirect('/login?redirect=/dashboard')
   }
 
-  // Surface a small banner when the writer just bounced back from the OAuth
-  // flow. `welcome_back=1` means they were a returning user (account already
-  // existed) so we frame it as recognition instead of a celebration.
   const sp = await searchParams
   const justDraftSaved = sp.draft_saved === '1'
   const justSignedUp = sp.just_signed_up === '1'
@@ -50,9 +98,9 @@ export default async function DashboardPage({
 
   const isSubscribed = profile?.subscription_status === 'active'
 
-  // Pull ALL submissions (including soft-hidden) so the free-eval check
-  // counts them — a writer who hides their first script is still considered
-  // to have used their free evaluation.
+  // Pull ALL submissions (incl. soft-hidden) so the free-eval check sees
+  // them — a writer who hides their first script still counts as having
+  // used their free evaluation.
   const { data: allSubmissions } = await supabase
     .from('script_submissions')
     .select(`
@@ -62,65 +110,108 @@ export default async function DashboardPage({
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
-  // Visible list for the dashboard render — hidden rows are filtered out.
-  const submissions = (allSubmissions ?? []).filter(
-    (s: any) => !s.hidden_at
-  )
-
+  const submissions = (allSubmissions ?? []).filter((s: any) => !s.hidden_at)
   const totalSubmissions = submissions.length
-  const publicCount = submissions.filter((s: any) => s.is_public).length
   const completedCount =
     (allSubmissions ?? []).filter((s: any) => s.status === 'completed').length
   const usedFreeEval = completedCount >= 1
 
-  // Score coercion happens inline in the per-card loop now — dropped the
-  // scoreMap to remove an indirection that was hiding the string-vs-number
-  // bug from view.
+  // Fetch script_matches for all visible submissions in one pass, then
+  // join in the producer profile so we can show partner label + lane.
+  const submissionIds: string[] = submissions.map((s: any) => s.id)
+  type RawMatch = {
+    id: string
+    submission_id: string
+    producer_id: string
+    status: MatchStatus
+    comment: string | null
+    created_at: string
+    opened_at: string | null
+    reacted_at: string | null
+    expires_at: string | null
+  }
+  let matchesBySubmission = new Map<string, DashboardMatch[]>()
+  if (submissionIds.length > 0) {
+    const { data: rawMatches } = await supabase
+      .from('script_matches')
+      .select(
+        'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, expires_at'
+      )
+      .in('submission_id', submissionIds)
+
+    const producerIds = Array.from(
+      new Set(((rawMatches ?? []) as RawMatch[]).map(m => m.producer_id))
+    )
+    let producerLanes = new Map<string, { format?: string | null; audience?: string | null; looking_for_text?: string | null } | null>()
+    if (producerIds.length > 0) {
+      const { data: producers } = await supabase
+        .from('profiles')
+        .select('id, lane')
+        .in('id', producerIds)
+      for (const p of (producers ?? []) as { id: string; lane: any }[]) {
+        producerLanes.set(p.id, p.lane ?? null)
+      }
+    }
+
+    for (const m of (rawMatches ?? []) as RawMatch[]) {
+      const lane = producerLanes.get(m.producer_id) ?? null
+      const dm: DashboardMatch = {
+        id: m.id,
+        status: m.status,
+        partnerLabel: inferPartnerLabel(lane),
+        laneSummary: laneSummary(lane),
+        comment: m.comment ?? null,
+        createdAt: m.created_at,
+        openedAt: m.opened_at,
+        reactedAt: m.reacted_at,
+        expiresAt: m.expires_at,
+      }
+      const arr = matchesBySubmission.get(m.submission_id) ?? []
+      arr.push(dm)
+      matchesBySubmission.set(m.submission_id, arr)
+    }
+  }
+
+  // Pro upsell trigger: free tier with at least one Interested match.
+  const hasInterestedMatch = (() => {
+    if (isSubscribed) return false
+    for (const arr of matchesBySubmission.values()) {
+      if (arr.some(m => m.status === 'interested' || m.status === 'commented')) {
+        return true
+      }
+    }
+    return false
+  })()
+
+  const activeMatchCount = (() => {
+    let n = 0
+    for (const arr of matchesBySubmission.values()) {
+      n += arr.filter(m => m.status !== 'passed').length
+    }
+    return n
+  })()
 
   const firstName =
     profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
 
+  // Find the oldest completed submission — that one is free. All others
+  // are locked for non-subscribers. Pull from the FULL list so a hidden
+  // first script still consumes the free-eval slot.
+  const completedSubs = ((allSubmissions ?? []) as any[])
+    .filter((s: any) => s.status === 'completed')
+    .sort(
+      (a: any, b: any) =>
+        new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+    )
+  const firstFreeId: string | null = completedSubs[0]?.id ?? null
+
   return (
     <>
       <Nav />
+      {!isSubscribed && <UpgradeModalListener />}
       <div className="max-w-4xl mx-auto px-4 py-8 sm:py-10">
-        {/* Upgrade banner — only for non-subscribers who've used their free eval */}
-        {!isSubscribed && usedFreeEval && (
-          <div className="mb-8 rounded-xl border border-[var(--gem-gray-700)] p-5 sm:p-6">
-            <p className="text-sm font-semibold text-[var(--gem-white)] mb-1">
-              Your report is ready. Now get it seen.
-            </p>
-            <p className="text-sm text-[var(--gem-gray-400)] mb-4">
-              Go Pro to publish on Discover, let producers contact you, and evaluate unlimited scripts.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4 text-xs text-[var(--gem-gray-300)]">
-              <div className="flex items-center gap-2">
-                <Sparkles size={12} className="text-[var(--gem-accent)] shrink-0" />
-                Unlimited evaluations
-              </div>
-              <div className="flex items-center gap-2">
-                <Compass size={12} className="text-[var(--gem-accent)] shrink-0" />
-                Feature scripts on Discover
-              </div>
-              <div className="flex items-center gap-2">
-                <Users size={12} className="text-[var(--gem-accent)] shrink-0" />
-                Producers contact you directly
-              </div>
-            </div>
-            <UnlockTrigger
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all"
-              ariaLabel="Upgrade to Pro"
-            >
-              Go Pro — $20/mo
-            </UnlockTrigger>
-          </div>
-        )}
-
         {/* Post-flow banner — surfaced when the writer just came back from
-            the guided submit flow's OAuth round-trip. welcome_back=1 means
-            their account predated this session (they're a returning user
-            who just OAuth'd in again), draft_saved=1 / just_signed_up=1
-            means we just created their submission row. */}
+            the guided submit flow's OAuth round-trip. */}
         {(welcomeBack || justDraftSaved || justSignedUp) && (
           <div
             className="mb-6 rounded-xl px-4 py-3 flex items-start gap-3"
@@ -159,52 +250,60 @@ export default async function DashboardPage({
           </div>
         )}
 
-        {/* Header */}
-        <div className="flex items-start justify-between mb-8 gap-4 flex-wrap">
+        {/* Greeting strip — gold rule, big editorial title, supporting line */}
+        <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)] leading-tight">
+            <div
+              className="w-12 h-0.5 mb-3.5 rounded-sm"
+              style={{ background: 'var(--gem-gold)' }}
+            />
+            <h1 className="text-3xl sm:text-[32px] font-extrabold font-[family-name:var(--font-display)] tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
               Welcome back, {firstName}.
             </h1>
-            <p className="text-sm text-[var(--gem-gray-400)] mt-2">
-              {totalSubmissions === 0
-                ? 'Submit your first script to get a full evaluation and positioning report.'
-                : isSubscribed
-                  ? `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} in your portfolio · ${publicCount} on Discover`
-                  : `${totalSubmissions} script${totalSubmissions === 1 ? '' : 's'} evaluated. Go Pro to publish on Discover and let producers reach you.`}
+            <p className="text-[15px] text-[var(--gem-gray-300)] m-0">
+              {totalSubmissions === 0 ? (
+                <>Submit your first script to get a full evaluation.</>
+              ) : (
+                <>
+                  <span className="font-bold text-[var(--gem-gray-50)]">
+                    {totalSubmissions}
+                  </span>{' '}
+                  active script{totalSubmissions === 1 ? '' : 's'}
+                  <span className="text-[var(--gem-gray-500)] mx-2">·</span>
+                  <span className="font-bold text-[var(--gem-gray-50)]">
+                    {activeMatchCount}
+                  </span>{' '}
+                  industry match{activeMatchCount === 1 ? '' : 'es'} active
+                </>
+              )}
             </p>
           </div>
           <Link
             href="/submit"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors shrink-0"
+            className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors shrink-0"
+            style={{ boxShadow: '0 1px 2px rgba(124,58,237,0.30)' }}
           >
             <Plus size={16} />
-            New Script
+            Submit a script
           </Link>
         </div>
 
         {submissions && submissions.length > 0 ? (
           <>
-            {/* Script cards */}
-            <div className="space-y-3 mb-10">
-              {(() => {
-                // Find the oldest completed submission — that one is free.
-                // All others are locked for non-subscribers. Pull from the
-                // FULL list (not the visible one) so a hidden first script
-                // still consumes the free-eval slot; any visible row is then
-                // correctly shown as locked.
-                const completedSubs = ((allSubmissions ?? []) as any[])
-                  .filter((s: any) => s.status === 'completed')
-                  .sort((a: any, b: any) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
-                const firstFreeId = completedSubs[0]?.id ?? null
+            {/* Section header */}
+            <div className="flex items-baseline gap-3 mb-4">
+              <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-400)]">
+                Your projects
+              </span>
+              <span className="flex-1 h-px bg-[var(--gem-gray-700)]" />
+            </div>
 
-                return (submissions as any[]).map((sub: any) => {
+            {/* Project cards */}
+            <div className="space-y-4">
+              {(submissions as any[]).map((sub: any) => {
                 const rawEval = sub.script_evaluations
                 const eval_ = Array.isArray(rawEval) ? rawEval[0] : rawEval
                 const hasReport = !!eval_
-                // Prefer the writer-edited headline (edited_fields.logline)
-                // over the generated positioning_hook so dashboard cards reflect
-                // edits immediately after save. See src/lib/edited-fields.ts
-                // for the same fallback logic used on the report page.
                 const editedLogline =
                   typeof eval_?.edited_fields?.logline === 'string' &&
                   eval_.edited_fields.logline.trim().length > 0
@@ -212,217 +311,306 @@ export default async function DashboardPage({
                     : null
                 const positioningHook: string | null =
                   editedLogline ?? eval_?.evaluation?.positioning_hook ?? null
-                const isLockedReport = !isSubscribed && hasReport && sub.status === 'completed' && sub.id !== firstFreeId
+                const isLockedReport =
+                  !isSubscribed &&
+                  hasReport &&
+                  sub.status === 'completed' &&
+                  sub.id !== firstFreeId
 
-                const dateStr = new Date(sub.created_at).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })
-
-                // Compute qualification inline off the eval we already have
-                // in hand — removes the scoreMap indirection so there's one
-                // less place for the "string vs number" mismatch to hide.
                 const rawScore = eval_?.weighted_score
                 const scoreNum =
-                  typeof rawScore === 'number' ? rawScore :
-                  typeof rawScore === 'string' ? Number(rawScore) : NaN
-                const qualifies =
-                  !Number.isNaN(scoreNum) && scoreNum >= QUALIFICATION_THRESHOLD
+                  typeof rawScore === 'number'
+                    ? rawScore
+                    : typeof rawScore === 'string'
+                      ? Number(rawScore)
+                      : NaN
+                const scoreDisplay = !Number.isNaN(scoreNum)
+                  ? scoreNum.toFixed(1)
+                  : null
+                const band = !Number.isNaN(scoreNum) ? scoreBand(scoreNum) : null
+
+                const classification = eval_?.evaluation?.classification ?? null
+                const genrePrimary: string | null =
+                  classification?.genre_primary ?? null
+                const budgetTier: string | null =
+                  eval_?.evaluation?.packaging?.budget_tier?.tier ?? null
+                const formatLabel: string | null = sub.declared_format ?? null
+
+                const dateStr = new Date(sub.created_at).toLocaleDateString(
+                  'en-US',
+                  { month: 'short', day: 'numeric', year: 'numeric' }
+                )
+
+                const matches = matchesBySubmission.get(sub.id) ?? []
 
                 return (
-                  <div key={sub.id} className="flex items-start gap-3">
+                  <div
+                    key={sub.id}
+                    className="rounded-2xl overflow-hidden bg-white"
+                    style={{
+                      border: '1px solid var(--gem-gray-700)',
+                      boxShadow:
+                        '0 2px 10px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03)',
+                    }}
+                  >
+                    {/* Project body */}
                     <div
-                      className={`flex-1 min-w-0 group rounded-xl border transition-colors p-5 ${
-                        isLockedReport
-                          ? 'border-[var(--gem-gold)]/30 bg-[var(--gem-gold)]/5'
-                          : !hasReport
-                            ? 'border-[var(--gem-gray-700)] opacity-60'
-                            : 'border-[var(--gem-gray-700)] hover:border-[var(--gem-gray-500)]'
-                      }`}
+                      className="px-6 sm:px-8 py-6 sm:py-7"
+                      style={{
+                        background:
+                          'radial-gradient(ellipse at 0% 0%, rgba(212,160,23,0.05) 0%, transparent 55%), radial-gradient(ellipse at 100% 0%, rgba(124,58,237,0.04) 0%, transparent 55%), #fff',
+                      }}
                     >
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
-                      <div className="flex-1 min-w-0 w-full">
-                        {/* Title + state pills */}
-                        <div className="flex items-center gap-2 flex-wrap mb-1.5">
-                          <h3 className="text-base font-semibold text-[var(--gem-white)] truncate">
-                            {sub.title}
-                          </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-5 sm:gap-9 items-start">
+                        <div className="min-w-0">
+                          {/* Title row */}
+                          <div className="flex items-center gap-2 flex-wrap mb-2">
+                            <h3 className="text-[22px] sm:text-[26px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0">
+                              {sub.title}
+                            </h3>
+                            {isLockedReport ? (
+                              <span
+                                className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold"
+                                style={{
+                                  border: '1px solid rgba(212,160,23,0.4)',
+                                  background: 'rgba(212,160,23,0.10)',
+                                  color: 'var(--gem-gold)',
+                                }}
+                              >
+                                <Lock size={10} />
+                                Upgrade to view
+                              </span>
+                            ) : sub.is_public ? (
+                              <Link
+                                href={`/report/${eval_.id}?privacy=1`}
+                                className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold transition-colors"
+                                style={{
+                                  border: '1px solid rgba(16,185,129,0.35)',
+                                  background: 'rgba(16,185,129,0.10)',
+                                  color: '#059669',
+                                }}
+                              >
+                                <Eye size={10} />
+                                Visible to industry
+                              </Link>
+                            ) : hasReport ? (
+                              <Link
+                                href={`/report/${eval_.id}?privacy=1`}
+                                className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold transition-colors"
+                                style={{
+                                  border: '1px solid var(--gem-gray-700)',
+                                  color: 'var(--gem-gray-500)',
+                                }}
+                                title="Click to publish to industry"
+                              >
+                                <EyeOff size={10} />
+                                Private
+                              </Link>
+                            ) : null}
+                            {sub.status === 'failed' && (
+                              <span
+                                className="text-[10px] px-2 py-0.5 rounded-full font-semibold"
+                                style={{
+                                  border: '1px solid rgba(220,38,38,0.30)',
+                                  background: 'rgba(220,38,38,0.08)',
+                                  color: '#dc2626',
+                                }}
+                              >
+                                Failed
+                              </span>
+                            )}
+                            {sub.status === 'processing' && (
+                              <span
+                                className="text-[10px] px-2 py-0.5 rounded-full font-semibold animate-pulse"
+                                style={{
+                                  border: '1px solid rgba(217,119,6,0.35)',
+                                  background: 'rgba(217,119,6,0.10)',
+                                  color: 'var(--gem-warning)',
+                                }}
+                              >
+                                Processing
+                              </span>
+                            )}
+                            {sub.status === 'awaiting_pdf' && (
+                              <span
+                                className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold"
+                                style={{
+                                  border: '1px solid rgba(212,160,23,0.4)',
+                                  background: 'rgba(212,160,23,0.10)',
+                                  color: 'var(--gem-gold)',
+                                }}
+                              >
+                                Draft — needs PDF
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Headline / positioning hook */}
                           {isLockedReport ? (
-                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
-                              <Lock size={10} />
-                              Upgrade to view
-                            </span>
-                          ) : sub.is_public ? (
-                            /* Published — links to the privacy modal so the
-                                writer can adjust what's visible or unpublish. */
-                            <Link
-                              href={`/report/${eval_.id}?privacy=1`}
-                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium hover:bg-emerald-500/20 transition-colors"
-                            >
-                              <Eye size={10} />
-                              Visible to industry partners
-                            </Link>
+                            <p className="text-[15px] text-[var(--gem-gray-400)] leading-[1.55] m-0 mb-3 max-w-[58ch]">
+                              Your report is ready — upgrade to Pro to read it.
+                            </p>
+                          ) : positioningHook ? (
+                            <p className="text-[14.5px] sm:text-[15.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0 mb-3 max-w-[58ch]">
+                              {positioningHook}
+                            </p>
                           ) : hasReport ? (
-                            /* Private — button that opens the publish modal
-                                on the report page so the writer can pick a
-                                preset + go live in one flow. */
-                            <Link
-                              href={`/report/${eval_.id}?privacy=1`}
-                              className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gray-700)] text-[var(--gem-gray-500)] font-medium hover:text-[var(--gem-gray-300)] hover:border-[var(--gem-gray-500)] transition-colors"
-                              title="Click to publish to the Discover Portal"
-                            >
-                              <EyeOff size={10} />
-                              Private
-                            </Link>
+                            <p className="text-[14.5px] text-[var(--gem-gray-500)] italic leading-[1.55] m-0 mb-3 max-w-[58ch]">
+                              Report ready — open to see the positioning.
+                            </p>
+                          ) : sub.status === 'awaiting_pdf' ? (
+                            <p className="text-[14.5px] text-[var(--gem-gray-400)] leading-[1.55] m-0 mb-3 max-w-[58ch]">
+                              Drop in your PDF anytime to unlock your full GEM read.
+                            </p>
                           ) : null}
-                          {sub.status === 'failed' && (
-                            <span className="text-[10px] px-2 py-0.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 font-medium">
-                              Failed
-                            </span>
-                          )}
-                          {sub.status === 'processing' && (
-                            <span className="text-[10px] px-2 py-0.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-medium animate-pulse">
-                              Processing
-                            </span>
-                          )}
+
+                          {/* Tags */}
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {formatLabel && <Tag>{formatLabel}</Tag>}
+                            {genrePrimary && <Tag>{genrePrimary}</Tag>}
+                            {budgetTier && <Tag>{budgetTier}</Tag>}
+                          </div>
+
+                          <div className="text-[12px] text-[var(--gem-gray-500)]">
+                            Submitted {dateStr}
+                          </div>
+
+                          {/* Action row — drafts get Upload PDF, completed
+                              reports get Remove + Edit + View report. Locked
+                              reports get the Upgrade pill. */}
                           {sub.status === 'awaiting_pdf' && (
-                            <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border border-[var(--gem-gold)]/40 bg-[var(--gem-gold)]/10 text-[var(--gem-gold)] font-medium">
-                              Draft — needs PDF
-                            </span>
+                            <div className="flex flex-wrap items-center gap-2 mt-4">
+                              <Link
+                                href={`/submit?resume=${sub.id}${
+                                  sub.declared_format
+                                    ? `&format=${encodeURIComponent(sub.declared_format)}`
+                                    : ''
+                                }`}
+                                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.97]"
+                                style={{
+                                  background: 'var(--gem-accent)',
+                                  boxShadow:
+                                    '0 2px 8px rgba(124,58,237,0.25)',
+                                }}
+                              >
+                                <Upload size={14} strokeWidth={2.5} />
+                                Upload PDF
+                              </Link>
+                            </div>
+                          )}
+                          {hasReport && (
+                            <div className="flex flex-wrap items-center gap-2 mt-4">
+                              {isLockedReport ? (
+                                <UnlockTrigger
+                                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold text-white transition-all"
+                                  ariaLabel="Upgrade to view report"
+                                >
+                                  <span
+                                    style={{
+                                      background: 'var(--gem-gold)',
+                                      padding: '8px 14px',
+                                      borderRadius: '8px',
+                                      margin: '-8px -14px',
+                                      display: 'inline-block',
+                                    }}
+                                  >
+                                    Upgrade — $20/mo
+                                  </span>
+                                </UnlockTrigger>
+                              ) : (
+                                <>
+                                  <RemoveButton
+                                    submissionId={sub.id}
+                                    title={sub.title}
+                                  />
+                                  <Link
+                                    href={`/report/${eval_.id}?edit=1`}
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] hover:border-[var(--gem-gray-500)] transition-colors"
+                                    title="Edit title, genre, tone, and headline"
+                                  >
+                                    <Pencil size={12} />
+                                    Edit
+                                  </Link>
+                                  <Link
+                                    href={`/report/${eval_.id}`}
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-colors"
+                                    style={{
+                                      background: 'var(--gem-accent)',
+                                    }}
+                                  >
+                                    View report
+                                    <ArrowRight size={12} />
+                                  </Link>
+                                </>
+                              )}
+                            </div>
                           )}
                         </div>
 
-                        {/* Positioning hook or placeholder */}
-                        {isLockedReport ? (
-                          <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-                            Your report is ready — upgrade to Pro to read it.
-                          </p>
-                        ) : positioningHook ? (
-                          <p className="text-sm text-[var(--gem-gray-300)] leading-snug line-clamp-2 mb-2">
-                            {positioningHook}
-                          </p>
-                        ) : hasReport ? (
-                          <p className="text-sm text-[var(--gem-gray-500)] italic mb-2">
-                            Report ready — open to see the positioning.
-                          </p>
-                        ) : sub.status === 'awaiting_pdf' ? (
-                          <p className="text-sm text-[var(--gem-gray-400)] mb-2">
-                            Drop in your PDF anytime to unlock your full GEM read.
-                          </p>
-                        ) : null}
-
-                        <div className="text-xs text-[var(--gem-gray-500)]">{dateStr}</div>
-
-                        {/* Qualified-for-Discover badge — prominent, shown on
-                            every unpublished report whose eval clears the bar
-                            (including locked 2nd+ reports, as a Pro nudge).
-                            Hides once the writer publishes, since "Visible
-                            to industry partners" takes over that role. */}
-                        {qualifies && !sub.is_public && hasReport && (
-                          <Link
-                            href={`/report/${eval_.id}?privacy=1`}
-                            className="mt-3 inline-flex items-start gap-2 px-3 py-2 rounded-lg border border-emerald-500/35 bg-emerald-500/[0.06] hover:bg-emerald-500/10 transition-colors"
-                          >
-                            <Check size={13} className="text-emerald-400 mt-0.5 shrink-0" />
-                            <div className="min-w-0">
-                              <p className="text-[12px] font-semibold text-emerald-400 m-0 leading-tight">
-                                This Qualifies for Industry Partner Visibility
-                              </p>
-                              <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
-                                This script is very promising — it should be seen by GEM industry users on the Discover Page.
-                              </p>
+                        {/* Score column */}
+                        {hasReport && !isLockedReport && scoreDisplay && (
+                          <div className="flex flex-col items-start sm:items-end min-w-[140px]">
+                            <div
+                              className="text-[44px] sm:text-[52px] font-extrabold leading-none tabular-nums"
+                              style={{
+                                color: 'var(--gem-accent)',
+                                letterSpacing: '-0.035em',
+                              }}
+                            >
+                              {scoreDisplay}
                             </div>
-                          </Link>
+                            <div className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[var(--gem-gray-500)] mt-1.5">
+                              GEM score
+                            </div>
+                            {band && (
+                              <div className="text-[12px] italic text-[var(--gem-gray-400)] mt-1.5 sm:text-right max-w-[200px]">
+                                {band}
+                              </div>
+                            )}
+                          </div>
                         )}
                       </div>
-
-                      {/* Actions — drafts get an Upload PDF CTA, completed reports get the report links.
-                          Resume URL skips the format step (already declared on the draft) and routes
-                          straight to the script-upload step on /submit. */}
-                      {sub.status === 'awaiting_pdf' && (
-                        <div className="flex flex-wrap items-center gap-2 sm:shrink-0 w-full sm:w-auto">
-                          <Link
-                            href={`/submit?resume=${sub.id}${sub.declared_format ? `&format=${encodeURIComponent(sub.declared_format)}` : ''}`}
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white shadow-[0_2px_8px_rgba(124,58,237,0.25)] transition-all duration-150 hover:brightness-110 hover:shadow-[0_4px_12px_rgba(124,58,237,0.35)] active:scale-[0.97]"
-                            style={{ background: 'var(--gem-accent)' }}
-                          >
-                            <Upload size={14} strokeWidth={2.5} />
-                            Upload PDF
-                          </Link>
-                        </div>
-                      )}
-                      {hasReport && (
-                        <div className="flex flex-wrap items-center gap-2 sm:shrink-0 w-full sm:w-auto">
-                          {isLockedReport ? (
-                            <UnlockTrigger
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-gold)] text-white hover:brightness-110 transition-all"
-                              ariaLabel="Upgrade to view report"
-                            >
-                              Upgrade — $20/mo
-                            </UnlockTrigger>
-                          ) : (
-                            <>
-                              <RemoveButton submissionId={sub.id} title={sub.title} />
-                              <Link
-                                href={`/report/${eval_.id}?edit=1`}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--gem-gray-700)] text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] hover:border-[var(--gem-gray-500)] transition-colors"
-                                title="Edit title, genre, tone, and logline"
-                              >
-                                <Pencil size={12} />
-                                Edit
-                              </Link>
-                              <Link
-                                href={`/report/${eval_.id}`}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-                              >
-                                View report
-                                <ArrowRight size={12} />
-                              </Link>
-                            </>
-                          )}
-                        </div>
-                      )}
-                      </div>
                     </div>
+
+                    {/* Industry match sub-section — only render when we have a
+                        completed report and the writer can actually see it
+                        (locked reports have no actionable matches yet). */}
+                    {hasReport && !isLockedReport && (
+                      <IndustryMatchSection
+                        matches={matches}
+                        isSubscribed={!!isSubscribed}
+                      />
+                    )}
                   </div>
                 )
-              })
-              })()}
+              })}
             </div>
 
-            {/* What's next rail */}
-            <div className="border-t border-[var(--gem-gray-700)] pt-8">
-              <h2 className="text-xs uppercase tracking-[0.14em] text-[var(--gem-gray-500)] font-semibold mb-4">
-                What&apos;s next
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-3">
-                <Link
-                  href="/submit"
-                  className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
-                >
-                  <Plus size={16} className="text-[var(--gem-accent)] mb-2" />
-                  <div className="text-sm font-semibold mb-1">Submit another draft</div>
-                  <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
-                    Test a new angle, a rewrite, or a different script.
-                  </div>
-                </Link>
+            {/* Pro upsell — free tier with at least one Interested match */}
+            {hasInterestedMatch && <ProUpsellCard />}
 
-                <Link
-                  href="/discover"
-                  className="group rounded-xl border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] p-4 transition-colors"
+            {/* Free-tier upgrade banner stays as a quieter follow-up for
+                writers who've used their free eval but don't yet have an
+                Interested match (no upsell card above). */}
+            {!isSubscribed && usedFreeEval && !hasInterestedMatch && (
+              <div className="mt-8 rounded-xl border border-[var(--gem-gray-700)] p-5 sm:p-6 bg-white">
+                <p className="text-sm font-semibold text-[var(--gem-gray-50)] mb-1">
+                  Ready for unlimited drafts?
+                </p>
+                <p className="text-sm text-[var(--gem-gray-400)] mb-4">
+                  Pro keeps your scripts in continuous rotation, unlocks unlimited evaluations, and lets producers reach you directly.
+                </p>
+                <UnlockTrigger
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all"
+                  ariaLabel="Upgrade to Pro"
                 >
-                  <Compass size={16} className="text-[var(--gem-accent)] mb-2" />
-                  <div className="text-sm font-semibold mb-1">Browse Discover</div>
-                  <div className="text-xs text-[var(--gem-gray-400)] leading-snug">
-                    See what other writers are putting in front of the industry.
-                  </div>
-                </Link>
+                  Go Pro — $20/mo
+                </UnlockTrigger>
               </div>
-            </div>
+            )}
           </>
         ) : (
-          <div className="text-center py-20 border border-dashed border-[var(--gem-gray-700)] rounded-xl">
+          <div className="text-center py-20 border border-dashed border-[var(--gem-gray-700)] rounded-xl bg-white">
             <FileText size={32} className="mx-auto text-[var(--gem-gray-500)] mb-3" />
             <p className="text-[var(--gem-gray-400)] text-sm mb-4">
               No scripts submitted yet.
@@ -436,7 +624,7 @@ export default async function DashboardPage({
               </Link>
               <Link
                 href="/discover"
-                className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] transition-colors"
               >
                 <Compass size={14} />
                 Browse Discover
@@ -447,5 +635,20 @@ export default async function DashboardPage({
         )}
       </div>
     </>
+  )
+}
+
+function Tag({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="text-[12px] font-medium rounded-full px-2.5 py-1"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        color: 'var(--gem-gray-300)',
+      }}
+    >
+      {children}
+    </span>
   )
 }
