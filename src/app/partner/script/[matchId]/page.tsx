@@ -233,7 +233,12 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
   const craftNote = evaluation.craft_note ?? null
   const riskDetails = evaluation.risk_details
   const packaging = evaluation.packaging
-  const issues = (evaluation as { issues?: { items?: { area: string; detail: string; is_primary_lever?: boolean }[] } }).issues
+  const issues = (evaluation as {
+    issues?: {
+      headline?: string
+      items?: { area: string; detail: string; is_primary_lever?: boolean }[]
+    }
+  }).issues
 
   // Gate state.
   const isUnlocked =
@@ -576,7 +581,12 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               }))
               const merged: IssueRow[] =
                 fromConsiderations.length > 0 ? fromConsiderations : fromIssues
-              if (merged.length === 0 && !craftNote) return null
+              const issuesHeadline =
+                typeof issues?.headline === 'string' &&
+                issues.headline.trim().length > 0
+                  ? issues.headline.trim()
+                  : null
+              if (merged.length === 0 && !craftNote && !issuesHeadline) return null
               const primary = merged.find(
                 (c) => c.is_primary_lever === true
               )
@@ -586,6 +596,11 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               const moreCount = secondary.length + (craftNote ? 1 : 0)
               return (
                 <EditorialSection label="Issues" accent="violet">
+                  {issuesHeadline && (
+                    <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-6 max-w-[62ch] font-medium">
+                      {issuesHeadline}
+                    </p>
+                  )}
                   {primary ? (
                     <div className="relative pl-5 sm:pl-6 mb-5 sm:mb-6">
                       <div

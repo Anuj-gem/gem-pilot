@@ -764,7 +764,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             }))
             const merged: IssueRow[] =
               fromConsiderations.length > 0 ? fromConsiderations : fromIssues
-            const empty = merged.length === 0 && !craftNote
+            // Section-level lede ("the GEM read on what's wrong"). v5.4
+            // emits this as `issues.headline`; older evals don't have one.
+            const issuesHeadline =
+              typeof issues?.headline === 'string' &&
+              issues.headline.trim().length > 0
+                ? issues.headline.trim()
+                : null
+            const empty = merged.length === 0 && !craftNote && !issuesHeadline
             if (empty) return null
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
@@ -772,6 +779,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               secondary.length + (craftNote ? 1 : 0)
             return (
               <EditorialSection label="Issues" accent="violet">
+                {issuesHeadline && (
+                  <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-6 max-w-[62ch] font-medium">
+                    {issuesHeadline}
+                  </p>
+                )}
                 {/* Sharpest lever as the always-visible lede — primary lever
                     becomes a pull-quote with red rule + "Sharpest lever"
                     eyebrow. Stays crisp for free owners (paired with bullet 01
