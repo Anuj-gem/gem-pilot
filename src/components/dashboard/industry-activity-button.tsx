@@ -6,7 +6,9 @@
 // (per-card) and on the report page (via the "···" menu).
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Activity, Eye, Check, X, Mail, MessageCircle, X as CloseIcon } from 'lucide-react'
+import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 
 export type ActivityStatus =
   | 'pending'
@@ -20,6 +22,9 @@ export interface IndustryActivityRow {
   status: ActivityStatus
   producerName: string | null
   producerCompany: string | null
+  /** Industry role — 'producer' or 'representative'. Set at invite time
+   *  by GEM staff. Null for legacy rows; UI falls back to a generic label. */
+  producerRole: 'producer' | 'representative' | null
   /** Timestamp of the most relevant action — reacted_at when present, else
    *  opened_at, else created_at. Used as the "happened on" date. */
   happenedAt: string | null
@@ -50,6 +55,49 @@ export function IndustryActivitySheet({
   onClose: () => void
   rows: IndustryActivityRow[]
 }) {
+  const router = useRouter()
+  // Local "ended" set — when the writer ends a match, we mark it ended in
+  // the UI right away (without waiting for router.refresh) so the row
+  // updates immediately. The server-side row gets unmatched_at on the
+  // next refresh.
+  const [locallyEnded, setLocallyEnded] = useState<Set<string>>(new Set())
+  const [endConfirm, setEndConfirm] = useState<IndustryActivityRow | null>(null)
+  const [ending, setEnding] = useState(false)
+  const [endError, setEndError] = useState<string | null>(null)
+
+  async function confirmEnd() {
+    if (!endConfirm) return
+    setEnding(true)
+    setEndError(null)
+    try {
+      const res = await fetch(
+        `/api/writer/match/${encodeURIComponent(endConfirm.matchId)}/unmatch`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}),
+        }
+      )
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}))
+        throw new Error(j?.error || 'Could not end the match.')
+      }
+      setLocallyEnded((prev) => {
+        const next = new Set(prev)
+        next.add(endConfirm.matchId)
+        return next
+      })
+      setEndConfirm(null)
+      router.refresh()
+    } catch (err) {
+      setEndError(
+        err instanceof Error ? err.message : 'Could not end the match.'
+      )
+    } finally {
+      setEnding(false)
+    }
+  }
+
   // Lock body scroll when sheet's open.
   useEffect(() => {
     if (!open) return
@@ -72,7 +120,15 @@ export function IndustryActivitySheet({
 
   if (!open) return null
 
-  const live = rows.filter((r) => !r.unmatchedAt)
+  // Apply local "ended" overrides so freshly ended matches reflect in
+  // the stats and per-row state without a server round trip.
+  const effectiveRows: IndustryActivityRow[] = rows.map((r) =>
+    locallyEnded.has(r.matchId)
+      ? { ...r, unmatchedAt: r.unmatchedAt ?? new Date().toISOString() }
+      : r
+  )
+
+  const live = effectiveRows.filter((r) => !r.unmatchedAt)
   const viewed = live.filter((r) =>
     ['opened', 'interested', 'commented', 'passed'].includes(r.status)
   ).length
@@ -136,7 +192,7 @@ export function IndustryActivitySheet({
         )}
 
         <div className="flex-1 min-h-0 overflow-y-auto px-5 sm:px-6 py-4 mt-2">
-          {rows.length === 0 ? (
+          {effectiveRows.length === 0 ? (
             <div className="text-center py-8">
               <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0">
                 No industry activity yet.
@@ -147,13 +203,41 @@ export function IndustryActivitySheet({
             </div>
           ) : (
             <ul className="list-none m-0 p-0 space-y-2.5">
-              {rows.map((r) => (
-                <ActivityRow key={r.matchId} row={r} />
+              {effectiveRows.map((r) => (
+                <ActivityRow
+                  key={r.matchId}
+                  row={r}
+                  onEnd={() => setEndConfirm(r)}
+                />
               ))}
             </ul>
           )}
         </div>
       </div>
+
+      <PrivacyConfirmSheet
+        open={endConfirm !== null}
+        title={
+          endConfirm?.producerName
+            ? `End match with ${endConfirm.producerName}?`
+            : 'End this match?'
+        }
+        body="This producer will lose access to your script and won&rsquo;t see it on their dashboard. They&rsquo;ll be notified the match ended. You can&rsquo;t undo this."
+        confirmLabel="End match"
+        cancelLabel="Keep the match"
+        tone="danger"
+        busy={ending}
+        onConfirm={confirmEnd}
+        onClose={() => {
+          setEndConfirm(null)
+          setEndError(null)
+        }}
+      />
+      {endError && (
+        <p className="fixed bottom-3 left-1/2 -translate-x-1/2 z-[60] text-[12px] text-red-600 bg-white px-3 py-1.5 rounded-md border border-red-200 shadow-md">
+          {endError}
+        </p>
+      )}
     </div>
   )
 }
@@ -242,7 +326,13 @@ function StatCell({
   )
 }
 
-function ActivityRow({ row }: { row: IndustryActivityRow }) {
+function ActivityRow({
+  row,
+  onEnd,
+}: {
+  row: IndustryActivityRow
+  onEnd: () => void
+}) {
   // Display name. Names + emails reveal once a producer has marked
   // Interested or Commented (or Passed-with-comment); pre-Interested rows
   // stay anonymous as "A producer".
@@ -254,6 +344,17 @@ function ActivityRow({ row }: { row: IndustryActivityRow }) {
     ? row.producerName ?? 'A producer'
     : 'A producer'
   const company = showName ? row.producerCompany?.trim() : ''
+  // Role display — surface "Producer" / "Representative" alongside the
+  // name once the identity has been revealed. Pre-reveal we use a generic
+  // fallback so the writer still gets a sense of the surface.
+  const roleLabel = (() => {
+    if (!row.producerRole) return showName ? 'Industry partner' : 'Producer'
+    if (row.producerRole === 'representative') return 'Representative'
+    return 'Producer'
+  })()
+  const showEndAction =
+    !row.unmatchedAt &&
+    (row.status === 'interested' || row.status === 'commented')
 
   // Status pill copy + color.
   const pill = (() => {
@@ -326,30 +427,34 @@ function ActivityRow({ row }: { row: IndustryActivityRow }) {
         <div className="min-w-0 flex-1">
           <p className="text-[13.5px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight truncate">
             {displayName}
-            {company ? (
-              <span className="text-[var(--gem-gray-400)] font-normal">
-                {' '}
-                · {company}
-              </span>
-            ) : null}
           </p>
-          {dateStr && (
-            <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-0.5">
-              {dateStr}
-              {row.producerEmailedAt && (
-                <>
-                  <span className="mx-1.5 text-[var(--gem-gray-600)]">·</span>
-                  <span
-                    className="inline-flex items-center gap-1"
-                    style={{ color: 'var(--gem-accent)' }}
-                  >
-                    <Mail size={10} />
-                    Emailed you
-                  </span>
-                </>
-              )}
-            </p>
-          )}
+          <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-0.5">
+            {roleLabel}
+            {company && (
+              <>
+                <span className="text-[var(--gem-gray-600)] mx-1">·</span>
+                {company}
+              </>
+            )}
+            {dateStr && (
+              <>
+                <span className="text-[var(--gem-gray-600)] mx-1.5">·</span>
+                {dateStr}
+              </>
+            )}
+            {row.producerEmailedAt && (
+              <>
+                <span className="text-[var(--gem-gray-600)] mx-1.5">·</span>
+                <span
+                  className="inline-flex items-center gap-1"
+                  style={{ color: 'var(--gem-accent)' }}
+                >
+                  <Mail size={10} />
+                  Emailed you
+                </span>
+              </>
+            )}
+          </p>
         </div>
         <span
           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold shrink-0"
@@ -373,6 +478,17 @@ function ActivityRow({ row }: { row: IndustryActivityRow }) {
         >
           &ldquo;{row.comment}&rdquo;
         </p>
+      )}
+      {showEndAction && (
+        <div className="mt-2 flex justify-end">
+          <button
+            type="button"
+            onClick={onEnd}
+            className="text-[11.5px] text-[var(--gem-gray-500)] hover:text-red-600 transition-colors"
+          >
+            End match with this {row.producerRole === 'representative' ? 'rep' : 'producer'}
+          </button>
+        </div>
       )}
     </li>
   )

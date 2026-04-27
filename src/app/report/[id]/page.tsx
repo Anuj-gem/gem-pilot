@@ -275,18 +275,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     const producerIds = Array.from(new Set(rawRows.map((r) => r.producer_id)))
     const producerInfo = new Map<
       string,
-      { full_name: string | null; email: string | null; company_name: string | null }
+      {
+        full_name: string | null
+        email: string | null
+        company_name: string | null
+        industry_role: 'producer' | 'representative' | null
+      }
     >()
     if (producerIds.length > 0) {
       const { data: producers } = await serviceClient
         .from('profiles')
-        .select('id, full_name, email, company_name')
+        .select('id, full_name, email, company_name, industry_role')
         .in('id', producerIds)
       for (const p of (producers ?? []) as any[]) {
         producerInfo.set(p.id, {
           full_name: p.full_name ?? null,
           email: p.email ?? null,
           company_name: p.company_name ?? null,
+          industry_role:
+            p.industry_role === 'producer' || p.industry_role === 'representative'
+              ? p.industry_role
+              : null,
         })
       }
     }
@@ -304,6 +313,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           status: row.status,
           producerName: computedName,
           producerCompany: info?.company_name ?? null,
+          producerRole: info?.industry_role ?? null,
           happenedAt: row.reacted_at ?? row.opened_at ?? row.created_at ?? null,
           comment: row.comment,
           producerEmailedAt: row.producer_emailed_at,

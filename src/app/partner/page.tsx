@@ -116,12 +116,19 @@ interface RawMatchRow {
 function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
   const sub = row.script_submissions
   if (!sub) return null
-  // Belt + suspenders: even if propagation didn't fire (older data, or
-  // any future drift), drop matches whose underlying submission is now
-  // hidden or no longer public. Keeps removed posts out of the producer
-  // feed regardless of whether unmatched_at got set.
+  // Removed posts (hidden_at set) are dropped regardless — that's the
+  // writer ending the post entirely.
   if (sub.hidden_at) return null
-  if (sub.is_public !== true) return null
+  // Unpublished posts (is_public=false) only get hidden from producers
+  // who hadn't already engaged. Producers already in the slate
+  // (interested/commented) keep access — the writer can mark the post
+  // private to limit comms from new producers while continuing to work
+  // with the ones already in flight. (Anuj 2026-04-27.)
+  if (sub.is_public !== true) {
+    if (row.status !== 'interested' && row.status !== 'commented') {
+      return null
+    }
+  }
   const evalRaw = Array.isArray(sub.script_evaluations)
     ? sub.script_evaluations[0]
     : sub.script_evaluations
