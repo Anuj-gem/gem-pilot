@@ -35,9 +35,16 @@ interface Props {
   newMatchIds: string[]
 }
 
+// Inbox pagination — producers see a stable inbox of 10 (hero + 9 cards) on
+// first render. Clicking "Load more" reveals the next batch. The window
+// resets when the producer switches tabs so the count badge always reflects
+// real inventory, not what's been disclosed.
+const INBOX_PAGE_SIZE = 10
+
 export function DashboardTabs({ matches, newMatchIds }: Props) {
   const [tab, setTab] = useState<TabKey>('inbox')
   const [sort, setSort] = useState<SortMode>('score')
+  const [inboxVisible, setInboxVisible] = useState<number>(INBOX_PAGE_SIZE)
 
   const newIdSet = useMemo(() => new Set(newMatchIds), [newMatchIds])
 
@@ -156,24 +163,17 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
       {active.length === 0 ? (
         <EmptyState tab={tab} />
       ) : tab === 'inbox' ? (
-        <>
-          {hero && (
-            <div className="mb-8">
-              <HeroMatchCard data={hero} />
-            </div>
-          )}
-          {restWithoutHero.length > 0 && (
-            <div className="space-y-3">
-              {restWithoutHero.map((m) => (
-                <MatchCard
-                  key={m.matchId}
-                  data={m}
-                  isNew={newIdSet.has(m.matchId)}
-                />
-              ))}
-            </div>
-          )}
-        </>
+        <InboxBody
+          hero={hero}
+          rest={restWithoutHero}
+          newIdSet={newIdSet}
+          visibleCount={inboxVisible}
+          onLoadMore={() =>
+            setInboxVisible((n) =>
+              Math.min(n + INBOX_PAGE_SIZE, inbox.length)
+            )
+          }
+        />
       ) : tab === 'slate' ? (
         <div className="space-y-3">
           {sorted.map((m) => (
@@ -275,6 +275,68 @@ function SortButton({
     >
       {label}
     </button>
+  )
+}
+
+// InboxBody — wraps the hero + paginated list. The hero counts as 1 of the
+// 10 default-visible cards, so the list below it shows up to (visibleCount
+// - 1) cards. The "Load more" button stays put until the producer has seen
+// every card in their lane, at which point it disappears.
+function InboxBody({
+  hero,
+  rest,
+  newIdSet,
+  visibleCount,
+  onLoadMore,
+}: {
+  hero: DashboardMatchData | null
+  rest: DashboardMatchData[]
+  newIdSet: Set<string>
+  visibleCount: number
+  onLoadMore: () => void
+}) {
+  const restCap = hero ? Math.max(0, visibleCount - 1) : visibleCount
+  const visibleRest = rest.slice(0, restCap)
+  const remaining = Math.max(0, rest.length - visibleRest.length)
+
+  return (
+    <>
+      {hero && (
+        <div className="mb-8">
+          <HeroMatchCard data={hero} />
+        </div>
+      )}
+      {visibleRest.length > 0 && (
+        <div className="space-y-3">
+          {visibleRest.map((m) => (
+            <MatchCard
+              key={m.matchId}
+              data={m}
+              isNew={newIdSet.has(m.matchId)}
+            />
+          ))}
+        </div>
+      )}
+      {remaining > 0 && (
+        <div className="mt-5 flex justify-center">
+          <button
+            type="button"
+            onClick={onLoadMore}
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold rounded-lg px-4 py-2 transition-all duration-150 hover:brightness-105 active:scale-[0.98]"
+            style={{
+              border: '1px solid var(--gem-gray-700)',
+              background: '#fff',
+              color: 'var(--gem-gray-200)',
+            }}
+          >
+            Load more
+            <span className="text-[var(--gem-gray-500)] font-normal">
+              ({remaining} more in your lane)
+            </span>
+          </button>
+        </div>
+      )}
+    </>
   )
 }
 

@@ -145,12 +145,17 @@ export default async function DashboardPage({
 
   let matchesBySubmission = new Map<string, DashboardMatch[]>()
   if (submissionIds.length > 0) {
+    // Pending matches are hidden from the writer dashboard — they flip in
+    // and out as producers' lanes shift, with no real engagement, and have
+    // proven confusing. We surface only statuses where a producer has
+    // actually done something with the script.
     const { data: rawMatches } = await supabase
       .from('script_matches')
       .select(
         'id, submission_id, producer_id, status, comment, created_at, opened_at, reacted_at, expires_at, unmatched_at, producer_emailed_at'
       )
       .in('submission_id', submissionIds)
+      .in('status', ['opened', 'interested', 'commented', 'passed'])
       .is('unmatched_at', null)
 
     const producerIds = Array.from(
@@ -323,7 +328,7 @@ export default async function DashboardPage({
                   <span className="font-bold text-[var(--gem-gray-50)]">
                     {activeMatchCount}
                   </span>{' '}
-                  industry match{activeMatchCount === 1 ? '' : 'es'} active
+                  active producer {activeMatchCount === 1 ? 'signal' : 'signals'}
                 </>
               )}
             </p>
@@ -622,13 +627,18 @@ export default async function DashboardPage({
                       </div>
                     </div>
 
-                    {/* Industry match sub-section — only render when we have a
-                        completed report and the writer can actually see it
-                        (locked reports have no actionable matches yet). */}
+                    {/* Industry activity sub-section — only render when we
+                        have a completed report and the writer can actually
+                        see it (locked reports have no actionable matches
+                        yet). The Opportunities checklist inside this
+                        section reads `isPublic` to decide whether to
+                        prompt the writer to publish to industry. */}
                     {hasReport && !isLockedReport && (
                       <IndustryMatchSection
                         matches={matches}
                         isSubscribed={!!isSubscribed}
+                        isPublic={!!sub.is_public}
+                        submissionId={sub.id}
                       />
                     )}
                   </div>

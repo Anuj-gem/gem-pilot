@@ -1,6 +1,6 @@
 'use client'
 
-// Industry Match — collapsible sub-section that hangs off each writer
+// Industry Activity — collapsible sub-section that hangs off each writer
 // script card. Renders the script_matches rows for that submission, sorted
 // by status priority, with an optional "Send new draft" CTA on Interested
 // rows. Pro writers get the active CTA; free writers get a paywalled
@@ -9,9 +9,16 @@
 // The shape of the `matches` prop is whatever the dashboard server page
 // hands us — a normalized row per match plus a denormalized producer label
 // + lane summary so this component doesn't need to do any DB work.
+//
+// Above the activity rows we render a small Opportunities checklist —
+// currently a single "Posted to industry" step that flips `is_public` on
+// click (or fires the upgrade modal for free writers). Until the script is
+// posted to industry, the activity rows below are dimmed with a small
+// nudge — we still show what's been happening, but make it clear the
+// writer hasn't opened the door yet.
 
 import { useRouter } from 'next/navigation'
-import { ChevronDown } from 'lucide-react'
+import { Check, ChevronDown, Loader2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { UnmatchButton } from './unmatch-button'
 
@@ -47,6 +54,13 @@ const STATUS_PRIORITY: Record<MatchStatus, number> = {
   passed: 4,
 }
 
+// Dashboard now shows passed matches ONLY when the producer left a comment
+// (otherwise it's noise). Pending rows are filtered server-side and never
+// reach this component, so they're ignored everywhere below.
+function isVisiblePassed(m: DashboardMatch): boolean {
+  return m.status === 'passed' && (m.comment ?? '').trim().length > 0
+}
+
 function fmtShortDate(iso: string | null): string {
   if (!iso) return ''
   const d = new Date(iso)
@@ -74,45 +88,38 @@ function StatusPill({ status }: { status: MatchStatus }) {
             boxShadow: '0 0 0 3px rgba(255,255,255,0.4)',
           }}
         />
-        {status === 'commented' ? 'Replied' : 'Interested'}
-      </span>
-    )
-  }
-  if (status === 'pending') {
-    return (
-      <span
-        className="inline-flex items-center text-[11px] font-bold uppercase tracking-[0.10em] rounded-full px-2.5 py-1 whitespace-nowrap self-start"
-        style={{
-          color: 'var(--gem-warning)',
-          background: 'rgba(217,119,6,0.08)',
-          border: '1px solid rgba(217,119,6,0.30)',
-        }}
-      >
-        Pending
+        {status === 'commented' ? 'Interested · replied' : 'Interested'}
       </span>
     )
   }
   if (status === 'opened') {
+    // "Opened" is renamed "Viewed" — gray pill, less prominent than the
+    // Interested pills above. The producer cracked the report but hasn't
+    // committed either way yet.
     return (
       <span
-        className="inline-flex items-center text-[11px] font-bold uppercase tracking-[0.10em] rounded-full px-2.5 py-1 whitespace-nowrap self-start"
+        className="inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.10em] rounded-full px-2.5 py-1 whitespace-nowrap self-start"
         style={{
-          color: 'var(--gem-gray-300)',
-          background: 'var(--gem-gray-800)',
+          color: 'var(--gem-gray-400)',
+          background: 'var(--gem-gray-900)',
           border: '1px solid var(--gem-gray-700)',
         }}
       >
-        Opened
+        Viewed
       </span>
     )
   }
+  // 'passed' — only rendered when the producer left a comment (the
+  // isVisiblePassed gate filters silent passes out upstream). Dimmed so it
+  // reads as historical context, not active activity.
   return (
     <span
       className="inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.10em] rounded-full px-2.5 py-1 whitespace-nowrap self-start"
       style={{
-        color: 'var(--gem-gray-400)',
+        color: 'var(--gem-gray-500)',
         background: 'var(--gem-gray-900)',
         border: '1px solid var(--gem-gray-700)',
+        opacity: 0.85,
       }}
     >
       Passed
@@ -184,12 +191,9 @@ function MatchRow({
   let metaTail: string | null = null
   if (match.status === 'opened' && match.expiresAt) {
     const exp = fmtShortDate(match.expiresAt)
-    if (exp) metaTail = `Read your full report. Auto-passes ${exp}.`
-  } else if (match.status === 'pending' && match.expiresAt) {
-    const exp = fmtShortDate(match.expiresAt)
-    if (exp) metaTail = `Window closes ${exp}.`
+    if (exp) metaTail = `Viewed your full report. Auto-passes ${exp}.`
   } else if (match.status === 'opened') {
-    metaTail = 'Read your full report.'
+    metaTail = 'Viewed your full report.'
   }
 
   // Identity reveal: pre-Interested rows stay anonymous (generic role label).
@@ -296,11 +300,19 @@ function MatchRow({
 export function IndustryMatchSection({
   matches,
   isSubscribed,
+  isPublic,
+  submissionId,
 }: {
   matches: DashboardMatch[]
   isSubscribed: boolean
+  /** Whether the script's report is published to industry partners. Drives
+   *  the Opportunities checklist row + dims the activity list while false. */
+  isPublic: boolean
+  /** Used by the inline "post to industry" action to flip is_public via
+   *  /api/scripts/[id]/visibility. */
+  submissionId: string
 }) {
-  const [showPassed, setShowPassed] = useState(false)
+  const [showPassedComments, setShowPassedComments] = useState(false)
   const [open, setOpen] = useState(true)
 
   const sorted = useMemo(() => {
@@ -312,36 +324,32 @@ export function IndustryMatchSection({
     })
   }, [matches])
 
-  const visible = useMemo(
-    () => sorted.filter(m => m.status !== 'passed' || showPassed),
-    [sorted, showPassed]
+  // Visible passed = passes that include a comment (silent passes are noise
+  // and stay hidden). They're tucked behind a disclosure so the live
+  // Viewed/Interested rows stay above the fold.
+  const visiblePassed = useMemo(
+    () => sorted.filter(isVisiblePassed),
+    [sorted]
   )
-  const passedCount = sorted.filter(m => m.status === 'passed').length
+  const passedWithCommentCount = visiblePassed.length
+  const visible = useMemo(
+    () =>
+      sorted.filter(m => {
+        if (m.status === 'passed') {
+          // Silent passes never appear; passes with comments only appear
+          // once the writer has expanded the disclosure.
+          return showPassedComments && isVisiblePassed(m)
+        }
+        return true
+      }),
+    [sorted, showPassedComments]
+  )
+  // Active = anything not passed. Pending is filtered out server-side, so
+  // this collapses to viewed + interested + commented.
   const activeCount = sorted.filter(m => m.status !== 'passed').length
   // Producers who actually clicked through to email the writer. Read off
   // each match's producer_emailed_at timestamp; only render if > 0.
   const emailedCount = sorted.filter(m => !!m.producerEmailedAt).length
-
-  if (matches.length === 0) {
-    return (
-      <div
-        className="border-t px-6 sm:px-8 py-5"
-        style={{
-          borderColor: 'var(--gem-gray-700)',
-          background: 'var(--gem-gray-900)',
-        }}
-      >
-        <div className="flex items-baseline gap-2 mb-1.5">
-          <span className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-200)]">
-            Industry match
-          </span>
-        </div>
-        <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0 leading-snug">
-          Awaiting first match — we send these in your lane as they come up.
-        </p>
-      </div>
-    )
-  }
 
   return (
     <div
@@ -358,11 +366,13 @@ export function IndustryMatchSection({
         aria-expanded={open}
       >
         <span className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-200)]">
-          Industry match
+          Industry activity
         </span>
-        <span className="text-[12.5px] text-[var(--gem-gray-400)] font-medium">
-          {activeCount} active
-        </span>
+        {matches.length > 0 && (
+          <span className="text-[12.5px] text-[var(--gem-gray-400)] font-medium">
+            {activeCount} active
+          </span>
+        )}
         <ChevronDown
           size={16}
           className="ml-auto text-[var(--gem-gray-400)] transition-transform duration-200"
@@ -371,46 +381,186 @@ export function IndustryMatchSection({
       </button>
 
       {open && (
-        <div className="px-6 sm:px-8 pb-5 pt-1 flex flex-col gap-2.5">
-          {emailedCount > 0 && (
+        <div className="px-6 sm:px-8 pb-5 pt-1 flex flex-col gap-3">
+          {/* Opportunities checklist — single step today (post to industry).
+              Sits above the activity list so the writer always sees the
+              gating action before any of the rows below. */}
+          <OpportunitiesChecklist
+            isPublic={isPublic}
+            isSubscribed={isSubscribed}
+            submissionId={submissionId}
+          />
+
+          {matches.length === 0 ? (
+            <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0 leading-snug">
+              {isPublic
+                ? 'Awaiting first signal — producers in your lane will land here as they engage.'
+                : 'Once your script is visible to industry, producer activity will land here.'}
+            </p>
+          ) : (
             <div
-              className="rounded-lg px-3.5 py-2 text-[12.5px] font-semibold leading-snug self-start"
+              className="flex flex-col gap-2.5"
               style={{
-                background: 'rgba(124,58,237,0.08)',
-                border: '1px solid rgba(124,58,237,0.25)',
-                color: 'var(--gem-accent)',
+                opacity: isPublic ? 1 : 0.55,
+                pointerEvents: isPublic ? undefined : 'none',
               }}
+              aria-disabled={!isPublic}
             >
-              {emailedCount} producer{emailedCount === 1 ? ' has' : 's have'} reached out via email
+              {!isPublic && (
+                <p className="text-[12.5px] text-[var(--gem-gray-500)] italic m-0 -mb-0.5">
+                  This script isn&apos;t visible to industry yet — make it visible to start matching.
+                </p>
+              )}
+              {emailedCount > 0 && (
+                <div
+                  className="rounded-lg px-3.5 py-2 text-[12.5px] font-semibold leading-snug self-start"
+                  style={{
+                    background: 'rgba(124,58,237,0.08)',
+                    border: '1px solid rgba(124,58,237,0.25)',
+                    color: 'var(--gem-accent)',
+                  }}
+                >
+                  {emailedCount} producer{emailedCount === 1 ? ' has' : 's have'} reached out via email
+                </div>
+              )}
+              {visible.map(m => (
+                <MatchRow key={m.id} match={m} isSubscribed={isSubscribed} />
+              ))}
+              {passedWithCommentCount > 0 && !showPassedComments && (
+                <button
+                  type="button"
+                  onClick={() => setShowPassedComments(true)}
+                  className="rounded-lg py-2.5 px-4 text-[13px] font-medium text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-200)] transition-colors"
+                  style={{
+                    border: '1px dashed var(--gem-gray-600)',
+                    background: 'transparent',
+                  }}
+                >
+                  + {passedWithCommentCount} producer{passedWithCommentCount === 1 ? '' : 's'} passed with feedback
+                </button>
+              )}
+              {passedWithCommentCount > 0 && showPassedComments && (
+                <button
+                  type="button"
+                  onClick={() => setShowPassedComments(false)}
+                  className="text-[12.5px] text-[var(--gem-gray-500)] hover:text-[var(--gem-gray-300)] self-center transition-colors"
+                >
+                  Hide pass feedback
+                </button>
+              )}
             </div>
-          )}
-          {visible.map(m => (
-            <MatchRow key={m.id} match={m} isSubscribed={isSubscribed} />
-          ))}
-          {passedCount > 0 && !showPassed && (
-            <button
-              type="button"
-              onClick={() => setShowPassed(true)}
-              className="rounded-lg py-2.5 px-4 text-[13px] font-medium text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-200)] transition-colors"
-              style={{
-                border: '1px dashed var(--gem-gray-600)',
-                background: 'transparent',
-              }}
-            >
-              + {passedCount} earlier match{passedCount === 1 ? '' : 'es'} passed without engaging
-            </button>
-          )}
-          {passedCount > 0 && showPassed && (
-            <button
-              type="button"
-              onClick={() => setShowPassed(false)}
-              className="text-[12.5px] text-[var(--gem-gray-500)] hover:text-[var(--gem-gray-300)] self-center transition-colors"
-            >
-              Hide passed matches
-            </button>
           )}
         </div>
       )}
+    </div>
+  )
+}
+
+// OpportunitiesChecklist — minimal one-step list today. When the script
+// isn't public, surfaces a "Make visible to industry partners" CTA that
+// flips is_public via the existing PATCH /api/scripts/[id]/visibility
+// route. Free writers are routed to the upgrade modal instead — same gate
+// the API enforces server-side, surfaced earlier so they don't see a 403.
+function OpportunitiesChecklist({
+  isPublic,
+  isSubscribed,
+  submissionId,
+}: {
+  isPublic: boolean
+  isSubscribed: boolean
+  submissionId: string
+}) {
+  const router = useRouter()
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  async function makeVisible() {
+    if (!isSubscribed) {
+      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+      return
+    }
+    setBusy(true)
+    setError(null)
+    try {
+      const res = await fetch(
+        `/api/scripts/${encodeURIComponent(submissionId)}/visibility`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ is_public: true }),
+        }
+      )
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(json.error || 'Could not publish.')
+      router.refresh()
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.')
+      setBusy(false)
+    }
+  }
+
+  if (isPublic) {
+    return (
+      <div
+        className="flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 self-start"
+        style={{
+          border: '1px solid rgba(16,185,129,0.30)',
+          background: 'rgba(16,185,129,0.06)',
+        }}
+      >
+        <span
+          className="inline-flex items-center justify-center w-4 h-4 rounded-full shrink-0"
+          style={{ background: 'var(--gem-success)' }}
+          aria-hidden
+        >
+          <Check size={11} strokeWidth={3} color="#fff" />
+        </span>
+        <span className="text-[13px] font-semibold text-[#15803d]">
+          Visible to industry partners
+        </span>
+      </div>
+    )
+  }
+
+  return (
+    <div
+      className="rounded-lg px-3.5 py-3 flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3"
+      style={{
+        border: '1px solid var(--gem-gray-700)',
+        background: '#fff',
+      }}
+    >
+      <span
+        className="inline-flex items-center gap-2 text-[13px] font-semibold text-[var(--gem-gray-100)] min-w-0"
+      >
+        <span
+          className="inline-flex items-center justify-center w-4 h-4 rounded-full shrink-0"
+          style={{ border: '1.5px solid var(--gem-gray-500)' }}
+          aria-hidden
+        />
+        Posted to industry
+      </span>
+      <div className="sm:ml-auto flex items-center gap-2">
+        {error && (
+          <span className="text-[12px] text-red-600">{error}</span>
+        )}
+        <button
+          type="button"
+          onClick={makeVisible}
+          disabled={busy}
+          className="inline-flex items-center gap-1.5 rounded-lg text-[12.5px] font-semibold px-3 py-1.5 transition-all duration-150 disabled:opacity-60"
+          style={{
+            background: 'var(--gem-accent)',
+            color: '#fff',
+            boxShadow: '0 1px 2px rgba(124,58,237,0.25)',
+          }}
+        >
+          {busy && <Loader2 size={12} className="animate-spin" />}
+          {isSubscribed
+            ? 'Make visible to industry partners'
+            : 'Make visible to industry partners — Pro'}
+        </button>
+      </div>
     </div>
   )
 }
