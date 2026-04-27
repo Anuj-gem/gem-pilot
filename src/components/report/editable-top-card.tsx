@@ -655,8 +655,19 @@ function ScoreBadge({
   shownToIndustry: boolean
   submissionId: string
 }) {
-  const palette =
-    score >= 75
+  // Owner-with-score-hidden state: render the badge muted (grey, no tier
+  // color) with a diagonal strikethrough across the number + a "Hidden"
+  // eyebrow. Makes it visually unmissable that industry can't see it
+  // anymore, while the writer still sees what GEM scored them.
+  const isHiddenForOwner = isOwner && !shownToIndustry
+
+  const palette = isHiddenForOwner
+    ? {
+        bg: 'var(--gem-gray-900)',
+        fg: 'var(--gem-gray-400)',
+        border: 'var(--gem-gray-700)',
+      }
+    : score >= 75
       ? {
           bg: 'rgba(5,150,105,0.10)',
           fg: '#059669',
@@ -677,24 +688,34 @@ function ScoreBadge({
   return (
     <div className="shrink-0 flex items-center gap-1.5">
       <div
-        className="flex flex-col items-center justify-center rounded-lg tabular-nums"
+        className="flex flex-col items-center justify-center rounded-lg tabular-nums relative"
         style={{
           background: palette.bg,
           border: `1px solid ${palette.border}`,
           minWidth: 56,
           padding: '6px 10px',
+          opacity: isHiddenForOwner ? 0.7 : 1,
         }}
-        aria-label={`GEM score ${display}`}
+        aria-label={
+          isHiddenForOwner
+            ? `GEM score ${display}, hidden from industry`
+            : `GEM score ${display}`
+        }
       >
         <span
           className="hidden sm:block text-[9.5px] uppercase tracking-[0.16em] font-bold leading-none mb-1"
           style={{ color: palette.fg, opacity: 0.85 }}
         >
-          Score
+          {isHiddenForOwner ? 'Hidden' : 'Score'}
         </span>
         <span
           className="font-bold leading-none"
-          style={{ color: palette.fg, fontSize: 22 }}
+          style={{
+            color: palette.fg,
+            fontSize: 22,
+            textDecoration: isHiddenForOwner ? 'line-through' : undefined,
+            textDecorationThickness: isHiddenForOwner ? 2 : undefined,
+          }}
         >
           {display}
         </span>

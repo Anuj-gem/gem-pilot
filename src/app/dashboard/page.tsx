@@ -549,7 +549,7 @@ function CompactCard({ script }: { script: ScriptSummary }) {
     }
   }
 
-  // Primary action varies by state.
+  // Primary action varies by state. Slim sizing to match the trimmer card.
   let action: React.ReactNode = null
   if (script.status === 'awaiting_pdf') {
     action = (
@@ -559,16 +559,16 @@ function CompactCard({ script }: { script: ScriptSummary }) {
             ? `&format=${encodeURIComponent(script.declared_format)}`
             : ''
         }`}
-        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12.5px] font-semibold text-white"
         style={{ background: 'var(--gem-accent)' }}
       >
-        <Upload size={13} /> Upload PDF
+        <Upload size={12} /> Upload PDF
       </Link>
     )
   } else if (script.isLockedReport) {
     action = (
       <UnlockTrigger
-        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12.5px] font-semibold text-white"
         ariaLabel="Upgrade to view"
       >
         Upgrade — $20/mo
@@ -578,30 +578,53 @@ function CompactCard({ script }: { script: ScriptSummary }) {
     action = (
       <Link
         href={`/report/${script.evaluationId}`}
-        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12.5px] font-semibold text-white"
         style={{ background: 'var(--gem-accent)' }}
       >
-        View report <ArrowRight size={13} />
+        View <ArrowRight size={12} />
       </Link>
     )
   }
 
+  // Format pill — Feature vs Series. Anuj 2026-04-27: this is the only
+  // metadata that's load-bearing for a writer scanning their own list
+  // (lets them tell two scripts on the same idea apart). Genre / tone /
+  // headline noise was dropped to keep cards small + scannable on mobile.
+  const formatPill =
+    script.declared_format === 'Series'
+      ? 'Series'
+      : script.declared_format === 'Feature film'
+        ? 'Feature'
+        : null
+
   return (
     <div
-      className="rounded-xl bg-white px-5 sm:px-6 py-4 sm:py-5 flex items-center gap-4 flex-wrap"
+      className="rounded-xl bg-white px-4 sm:px-5 py-3 sm:py-3.5 flex items-center gap-3 flex-wrap"
       style={{
         border: '1px solid var(--gem-gray-700)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
       }}
     >
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap mb-1">
-          <h3 className="text-[16px] sm:text-[17px] font-bold text-[var(--gem-gray-50)] leading-tight m-0">
+        <div className="flex items-center gap-2 flex-wrap mb-0.5">
+          <h3 className="text-[14.5px] sm:text-[15.5px] font-semibold text-[var(--gem-gray-50)] leading-tight m-0 truncate">
             {script.title}
           </h3>
+          {formatPill && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded-full font-medium"
+              style={{
+                border: '1px solid var(--gem-gray-700)',
+                color: 'var(--gem-gray-500)',
+                background: 'transparent',
+              }}
+            >
+              {formatPill}
+            </span>
+          )}
           {statusLabel && (
             <span
-              className="text-[10px] px-2 py-0.5 rounded-full font-semibold"
+              className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
               style={{
                 border: `1px solid ${statusLabel.border}`,
                 background: statusLabel.bg,
@@ -613,27 +636,22 @@ function CompactCard({ script }: { script: ScriptSummary }) {
           )}
           {script.interestedCount > 0 && (
             <span
-              className="text-[10px] px-2 py-0.5 rounded-full font-semibold"
+              className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
               style={{
                 border: '1px solid rgba(16,185,129,0.35)',
                 background: 'rgba(16,185,129,0.10)',
                 color: '#059669',
               }}
             >
-              {script.interestedCount} producer{script.interestedCount === 1 ? '' : 's'} interested
+              {script.interestedCount} interested
             </span>
           )}
         </div>
-        {script.positioningHook && !script.isLockedReport && (
-          <p className="text-[13px] text-[var(--gem-gray-300)] leading-snug m-0 mb-1.5 max-w-[60ch]">
-            {script.positioningHook}
-          </p>
-        )}
-        <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0">
-          Submitted {dateStr}
+        <p className="text-[11px] text-[var(--gem-gray-500)] m-0">
+          {dateStr}
         </p>
       </div>
-      <div className="shrink-0 flex items-center gap-2 flex-wrap">
+      <div className="shrink-0 flex items-center gap-1.5 sm:gap-2 flex-wrap">
         {script.hasReport && !script.isLockedReport && (
           <DashboardPrivacyButton
             submissionId={script.id}
