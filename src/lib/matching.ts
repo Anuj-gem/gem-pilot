@@ -153,6 +153,21 @@ type SubmissionRow = {
   declared_format: string | null
   user_id?: string | null
   status?: string | null
+  is_public?: boolean | null
+  is_sample?: boolean | null
+  hidden_at?: string | null
+}
+
+// A script is eligible for industry matching only when the writer has
+// explicitly published it (is_public=true), it has a real owner (user_id not
+// null), it isn't a sample/test, isn't hidden, and is fully scored.
+function isEligibleForMatching(s: SubmissionRow): boolean {
+  if (s.is_sample === true) return false
+  if (!s.user_id) return false
+  if (s.is_public !== true) return false
+  if (s.hidden_at) return false
+  if (s.status && s.status !== "completed") return false
+  return true
 }
 
 type EvaluationJson = {
@@ -183,7 +198,7 @@ export async function createMatchesForSubmission(
 ): Promise<MatchingResult> {
   const { data: submissionRaw, error: subErr } = await supabase
     .from("script_submissions")
-    .select("id, declared_format")
+    .select("id, declared_format, user_id, status, is_public, is_sample, hidden_at")
     .eq("id", submissionId)
     .single()
 
@@ -192,6 +207,11 @@ export async function createMatchesForSubmission(
     return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
   }
   const submission = submissionRaw as SubmissionRow
+
+  // Eligibility gate — never route writer's private/sample/hidden scripts.
+  if (!isEligibleForMatching(submission)) {
+    return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
+  }
 
   const { data: evalRaw } = await supabase
     .from("script_evaluations")
@@ -303,7 +323,7 @@ export async function createMatchesForProducer(
     .from("script_evaluations")
     .select(
       `id, weighted_score, evaluation,
-       submission:script_submissions!inner ( id, declared_format, status )`
+       submission:script_submissions!inner ( id, declared_format, user_id, status, is_public, is_sample, hidden_at )`
     )
     .order("weighted_score", { ascending: false })
     .limit(500)
@@ -325,7 +345,9 @@ export async function createMatchesForProducer(
   let candidatesEvaluated = 0
   for (const row of rawCandidates) {
     const submission = Array.isArray(row.submission) ? row.submission[0] : row.submission
-    if (!submission || submission.status !== "completed") continue
+    if (!submission) continue
+    // Eligibility gate — same rules as createMatchesForSubmission.
+    if (!isEligibleForMatching(submission)) continue
     candidatesEvaluated += 1
 
     const { scriptGenres, scriptBudget, scriptFormat } = scriptSignals(
