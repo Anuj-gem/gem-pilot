@@ -19,12 +19,19 @@ export interface MatchCardData {
   score: number | null
   headline: string | null
   tags: string[]
+  createdAt: string
 }
 
-export function MatchCard({ data }: { data: MatchCardData }) {
+export function MatchCard({
+  data,
+  isNew = false,
+}: {
+  data: MatchCardData
+  isNew?: boolean
+}) {
   return (
     <div
-      className="rounded-xl p-5 sm:px-6 sm:py-5"
+      className="relative rounded-xl p-5 sm:px-6 sm:py-5"
       style={{
         background: '#fff',
         border: '1px solid var(--gem-gray-700)',
@@ -32,6 +39,7 @@ export function MatchCard({ data }: { data: MatchCardData }) {
           '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
       }}
     >
+      {isNew && <NewPill />}
       <div className="grid sm:grid-cols-[1fr_auto] gap-x-6 gap-y-1 items-start">
         <div className="min-w-0">
           <Link
@@ -184,6 +192,21 @@ function Tag({ text }: { text: string }) {
       }}
     >
       {text}
+    </span>
+  )
+}
+
+function NewPill() {
+  return (
+    <span
+      className="absolute top-3 right-3 inline-flex items-center text-[10px] uppercase tracking-[0.16em] font-bold px-2 py-0.5 rounded-full"
+      style={{
+        color: 'var(--gem-accent)',
+        background: 'rgba(124,58,237,0.10)',
+        border: '1px solid rgba(124,58,237,0.30)',
+      }}
+    >
+      New
     </span>
   )
 }

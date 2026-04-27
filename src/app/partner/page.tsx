@@ -8,24 +8,34 @@
 //
 // Data shape: pull all script_matches for the current producer where
 // status != 'passed', join in submission + evaluation. Sort interested →
-// commented → opened → pending, then created_at DESC. Cap at 50.
+// commented → opened → pending, then created_at DESC. Cap at 100.
+//
+// Visit tracking: read the OLD `profiles.last_visited_partner_at` BEFORE
+// updating it so we can compute "new since last visit". Then write
+// now() back so the next page load knows when this visit happened.
 //
 // Layout mirrors `Selznick_3/gem-app/../GEM/partner_dashboard_mockup_v2.html`:
+//   - Optional "N new since [date]" strip (only if last_visited is non-null
+//     and there are matches newer than it)
 //   - Header: "Welcome back, X" + Industry partner badge
-//   - Greeting strip: gold rule + "Your inbox this week — N new matches"
+//   - Greeting strip: gold rule + "Your inbox this week — N new since you
+//     last visited · M total active" (or "M active matches in your lane"
+//     if no new ones)
 //   - Lane chip + edit-lane link
 //   - Filter row (static for v1)
-//   - Hero "top choice" card (highest-score pending/opened)
-//   - Rest-of-list cards
+//   - <InboxToggle> client component: default = hero + top 8 by score with
+//     a "Browse all N" link; full-list = sortable cards (score / recent /
+//     status). Server fetches everything; client just toggles slices.
 //   - Empty state when no rows
 
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Inbox } from 'lucide-react'
+import { Inbox, Zap } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { LaneChip } from '@/components/partner/lane-chip'
-import { HeroMatchCard, MatchCard, type MatchCardData } from '@/components/partner/match-card'
+import { type MatchCardData } from '@/components/partner/match-card'
+import { InboxToggle } from '@/components/partner/inbox-toggle'
 
 export const dynamic = 'force-dynamic'
 
@@ -151,7 +161,14 @@ function shapeMatch(row: RawMatchRow): MatchCardData | null {
     score: typeof score === 'number' && !Number.isNaN(score) ? score : null,
     headline,
     tags,
+    createdAt: row.created_at,
   }
+}
+
+function formatShortDate(iso: string): string {
+  // "Apr 23" — short month + day, no year, in the server's locale.
+  const d = new Date(iso)
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
 export default async function PartnerDashboardPage() {
@@ -164,9 +181,12 @@ export default async function PartnerDashboardPage() {
     redirect('/login?redirect=/partner')
   }
 
+  // Read the profile, including the OLD last_visited_partner_at value
+  // BEFORE we update it. We'll compare match.created_at against this
+  // timestamp to compute the "new since last visit" set.
   const { data: profile } = await supabase
     .from('profiles')
-    .select('full_name, account_type, lane')
+    .select('full_name, account_type, lane, last_visited_partner_at')
     .eq('id', user.id)
     .single()
 
@@ -177,6 +197,17 @@ export default async function PartnerDashboardPage() {
     redirect('/onboarding/producer')
   }
 
+  const oldLastVisitedAt: string | null =
+    profile?.last_visited_partner_at ?? null
+
+  // Stamp this visit so the next load knows when the producer was last
+  // here. Fire-and-forget — if the write fails (e.g. transient RLS
+  // hiccup), the dashboard should still render.
+  await supabase
+    .from('profiles')
+    .update({ last_visited_partner_at: new Date().toISOString() })
+    .eq('id', user.id)
+
   const firstName =
     profile?.full_name?.split(' ')[0] ||
     user.email?.split('@')[0] ||
@@ -184,7 +215,8 @@ export default async function PartnerDashboardPage() {
 
   // Fetch matches. RLS already filters by producer_id, but we add an
   // explicit predicate so it's obvious in the code path. Pull joined
-  // submission + most-recent evaluation for the card render.
+  // submission + most-recent evaluation for the card render. LIMIT 100
+  // so producers see effectively all of their lane.
   const { data: rawMatches } = await supabase
     .from('script_matches')
     .select(
@@ -199,7 +231,7 @@ export default async function PartnerDashboardPage() {
     .eq('producer_id', user.id)
     .neq('status', 'passed')
     .order('created_at', { ascending: false })
-    .limit(50)
+    .limit(100)
 
   const matches = ((rawMatches ?? []) as unknown as RawMatchRow[])
     .map(shapeMatch)
@@ -220,16 +252,54 @@ export default async function PartnerDashboardPage() {
     (a, b) => (b.score ?? -1) - (a.score ?? -1)
   )
   const hero = sortedByScore[0] ?? null
-  const restOfList = matches.filter((m) => !hero || m.matchId !== hero.matchId)
 
-  const newMatchCount = matches.filter(
-    (m) => m.status === 'pending' || m.status === 'opened'
-  ).length
+  // Everything except the hero, sorted by score DESC. The InboxToggle's
+  // default mode shows the top 8 of these as the rail.
+  const restByScore = matches
+    .filter((m) => !hero || m.matchId !== hero.matchId)
+    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1))
+
+  // "New since last visit": any match created after the OLD timestamp.
+  // Only meaningful if the producer has visited before; on the very
+  // first visit (oldLastVisitedAt === null) we don't show the strip or
+  // pills — everything is technically "new" and the noise isn't useful.
+  const newSinceMatches =
+    oldLastVisitedAt != null
+      ? matches.filter(
+          (m) => new Date(m.createdAt).getTime() > new Date(oldLastVisitedAt).getTime()
+        )
+      : []
+  const newMatchIds = newSinceMatches.map((m) => m.matchId)
+  const newSinceCount = newSinceMatches.length
+
+  const totalActiveCount = matches.length
 
   return (
     <>
       <Nav />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16">
+        {/* "New since last visit" strip — only renders when the producer
+            has been here before AND there are matches newer than that
+            visit. Click anchor scrolls down to the inbox section. */}
+        {newSinceCount > 0 && oldLastVisitedAt && (
+          <a
+            href="#inbox"
+            className="flex items-center gap-2 mb-4 px-3.5 py-2 rounded-lg text-[12.5px] font-medium transition-colors"
+            style={{
+              background: 'rgba(124,58,237,0.06)',
+              border: '1px solid rgba(124,58,237,0.20)',
+              color: 'var(--gem-accent)',
+            }}
+          >
+            <Zap size={13} strokeWidth={2.5} />
+            <span>
+              <strong className="font-bold">{newSinceCount} new</strong>{' '}
+              {newSinceCount === 1 ? 'match' : 'matches'} since{' '}
+              {formatShortDate(oldLastVisitedAt)} · click to scroll to inbox
+            </span>
+          </a>
+        )}
+
         {/* Top row — welcome + industry partner badge + edit lane link */}
         <div className="flex items-start justify-between gap-4 flex-wrap mb-5">
           <div>
@@ -251,7 +321,8 @@ export default async function PartnerDashboardPage() {
           </div>
         </div>
 
-        {/* Greeting strip — gold rule + "Your inbox this week" */}
+        {/* Greeting strip — gold rule + "Your inbox this week".
+            Copy adapts based on whether there are new-since-visit matches. */}
         <div className="mb-6">
           <div
             aria-hidden
@@ -265,10 +336,22 @@ export default async function PartnerDashboardPage() {
           />
           <h2 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-1">
             Your inbox this week —{' '}
-            <span style={{ color: 'var(--gem-accent)' }}>
-              {newMatchCount} new {newMatchCount === 1 ? 'match' : 'matches'}
-            </span>{' '}
-            in your lane
+            {newSinceCount > 0 ? (
+              <>
+                <span style={{ color: 'var(--gem-accent)' }}>
+                  {newSinceCount} new
+                </span>{' '}
+                since you last visited · {totalActiveCount} total active
+              </>
+            ) : (
+              <>
+                <span style={{ color: 'var(--gem-accent)' }}>
+                  {totalActiveCount}{' '}
+                  {totalActiveCount === 1 ? 'active match' : 'active matches'}
+                </span>{' '}
+                in your lane
+              </>
+            )}
           </h2>
           <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0 mb-4">
             Curated against the lane you set up. Newest at the top.
@@ -278,6 +361,7 @@ export default async function PartnerDashboardPage() {
 
         {/* Filter row — static label for v1, no filter switching yet. */}
         <div
+          id="inbox"
           className="flex items-center gap-3 flex-wrap py-3 mb-6"
           style={{ borderBottom: '1px solid var(--gem-gray-700)' }}
         >
@@ -290,9 +374,6 @@ export default async function PartnerDashboardPage() {
             }}
           >
             Showing matches in your lane
-          </span>
-          <span className="text-[12.5px] text-[var(--gem-gray-400)] ml-auto">
-            Sort: most recent
           </span>
         </div>
 
@@ -323,31 +404,13 @@ export default async function PartnerDashboardPage() {
             </Link>
           </div>
         ) : (
-          <>
-            {hero && (
-              <div className="mb-8">
-                <HeroMatchCard data={hero} />
-              </div>
-            )}
-            {restOfList.length > 0 && (
-              <>
-                <div className="flex items-baseline gap-3 mb-3">
-                  <h3 className="text-[11px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-400)] m-0">
-                    More matches in your lane
-                  </h3>
-                  <span className="text-[12.5px] text-[var(--gem-gray-400)]">
-                    {restOfList.length}{' '}
-                    {restOfList.length === 1 ? 'script' : 'scripts'}
-                  </span>
-                </div>
-                <div className="space-y-3">
-                  {restOfList.map((m) => (
-                    <MatchCard key={m.matchId} data={m} />
-                  ))}
-                </div>
-              </>
-            )}
-          </>
+          <InboxToggle
+            hero={hero}
+            restByScore={restByScore}
+            allMatches={matches}
+            newMatchIds={newMatchIds}
+            totalCount={totalActiveCount}
+          />
         )}
       </div>
     </>
