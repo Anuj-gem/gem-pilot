@@ -140,7 +140,7 @@ export function SectionGate({
           title={`Tap to make ${sectionLabel} ${nextVis}`}
         >
           {currentVis === 'public' ? <Eye size={10} /> : <Lock size={10} />}
-          {currentVis === 'public' ? 'Public' : 'Private'}
+          {currentVis === 'public' ? 'Visible' : 'Private'}
         </button>
       )}
       {children}

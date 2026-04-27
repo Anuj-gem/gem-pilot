@@ -255,7 +255,7 @@ export function DashboardPrivacyButton({
                     }`}
                   >
                     {isPublic ? <Eye size={11} /> : <Lock size={11} />}
-                    {isPublic ? 'Public' : 'Unpublished'}
+                    {isPublic ? 'Published' : 'Unpublished'}
                   </button>
                 </div>
               </div>
@@ -404,7 +404,7 @@ function PrivacyRow({
         }`}
       >
         {visible ? <Eye size={11} /> : <Lock size={11} />}
-        {visible ? 'Public' : 'Private'}
+        {visible ? 'Visible' : 'Private'}
       </button>
     </div>
   )

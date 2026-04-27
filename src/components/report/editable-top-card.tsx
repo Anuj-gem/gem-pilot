@@ -710,12 +710,7 @@ function ScoreBadge({
         </span>
         <span
           className="font-bold leading-none"
-          style={{
-            color: palette.fg,
-            fontSize: 22,
-            textDecoration: isHiddenForOwner ? 'line-through' : undefined,
-            textDecorationThickness: isHiddenForOwner ? 2 : undefined,
-          }}
+          style={{ color: palette.fg, fontSize: 22 }}
         >
           {display}
         </span>

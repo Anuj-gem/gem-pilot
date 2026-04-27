@@ -640,7 +640,7 @@ function CompactCard({ script }: { script: ScriptSummary }) {
     }
   } else if (script.hasReport) {
     statusLabel = {
-      text: 'Private',
+      text: 'Unpublished',
       color: 'var(--gem-gray-500)',
       bg: 'transparent',
       border: 'var(--gem-gray-700)',

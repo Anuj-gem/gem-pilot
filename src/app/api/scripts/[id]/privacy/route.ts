@@ -89,10 +89,10 @@ export async function PATCH(
     privacy = normalizePrivacy(existing?.report_privacy)
   }
 
-  // Master "Visible to industry" toggle: when the caller flips is_public,
-  // also rewrite the section sheet so the writer's per-section pills
-  // mirror the new visibility state. Unpublish → all sections private.
-  // Publish → all sections public (default state).
+  // Master "Published / Unpublished" toggle: when the caller flips
+  // is_public, rewrite the entire privacy shape so the writer's pills +
+  // score badge mirror the new state. Unpublish → all sections private +
+  // score hidden. Publish → all sections public + score visible.
   if (isPublic !== undefined) {
     const visibility: Visibility = isPublic ? 'public' : 'private'
     const sectionsAll: Partial<Record<SectionKey, Visibility>> = {}
@@ -100,9 +100,7 @@ export async function PATCH(
     privacy = {
       version: 1,
       sections: sectionsAll,
-      ...(privacy.show_score !== undefined
-        ? { show_score: privacy.show_score }
-        : {}),
+      show_score: isPublic,
     }
   }
 
