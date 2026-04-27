@@ -152,6 +152,7 @@ type SubmissionRow = {
   id: string
   declared_format: string | null
   user_id?: string | null
+  status?: string | null
 }
 
 type EvaluationJson = {
