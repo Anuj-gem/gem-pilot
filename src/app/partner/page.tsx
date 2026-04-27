@@ -78,6 +78,8 @@ interface RawMatchRow {
     title: string
     declared_format: string | null
     tags: string[] | null
+    hidden_at: string | null
+    is_public: boolean | null
     script_evaluations:
       | Array<{
           weighted_score: number | null
@@ -114,6 +116,12 @@ interface RawMatchRow {
 function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
   const sub = row.script_submissions
   if (!sub) return null
+  // Belt + suspenders: even if propagation didn't fire (older data, or
+  // any future drift), drop matches whose underlying submission is now
+  // hidden or no longer public. Keeps removed posts out of the producer
+  // feed regardless of whether unmatched_at got set.
+  if (sub.hidden_at) return null
+  if (sub.is_public !== true) return null
   const evalRaw = Array.isArray(sub.script_evaluations)
     ? sub.script_evaluations[0]
     : sub.script_evaluations
@@ -245,7 +253,7 @@ export default async function PartnerDashboardPage() {
       `
       id, status, created_at, unmatched_at,
       script_submissions (
-        id, title, declared_format, tags,
+        id, title, declared_format, tags, hidden_at, is_public,
         script_evaluations ( weighted_score, tier, evaluation, edited_fields )
       )
       `
