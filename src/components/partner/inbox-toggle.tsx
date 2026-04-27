@@ -148,7 +148,7 @@ export function InboxToggle({
           <MatchCard
             key={m.matchId}
             data={m}
-            isNew={newMatchIds.has(m.matchId)}
+            isNew={newIdSet.has(m.matchId)}
           />
         ))}
       </div>
