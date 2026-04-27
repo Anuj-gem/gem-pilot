@@ -140,6 +140,15 @@ export default function ProducerOnboardingPage() {
       return
     }
 
+    // Backfill matches for this producer against all existing v5.4 evals
+    // that fit the new lane. Non-blocking — if it fails, the producer just
+    // sees an empty inbox until new submissions land.
+    try {
+      await fetch('/api/partner/backfill-matches', { method: 'POST' })
+    } catch (err) {
+      console.warn('[onboarding] backfill-matches failed (non-blocking):', err)
+    }
+
     router.push('/partner')
     router.refresh()
   }
