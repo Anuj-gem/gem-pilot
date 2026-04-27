@@ -140,7 +140,7 @@ export function SectionGate({
           title={`Tap to make ${sectionLabel} ${nextVis}`}
         >
           {currentVis === 'public' ? <Eye size={10} /> : <Lock size={10} />}
-          {currentVis === 'public' ? 'Visible' : 'Private'}
+          {currentVis === 'public' ? 'Visible' : 'Hidden'}
         </button>
       )}
       {children}
@@ -148,15 +148,15 @@ export function SectionGate({
         open={confirmOpen}
         title={
           nextVis === 'private'
-            ? `Make "${sectionLabel}" private?`
-            : `Make "${sectionLabel}" public?`
+            ? `Hide "${sectionLabel}"?`
+            : `Show "${sectionLabel}"?`
         }
         body={
           nextVis === 'private'
             ? 'Industry partners won\u2019t see this section. You can flip it back anytime.'
             : 'Industry partners will see this section. You can flip it back anytime.'
         }
-        confirmLabel={nextVis === 'private' ? 'Make private' : 'Make public'}
+        confirmLabel={nextVis === 'private' ? 'Hide section' : 'Show section'}
         tone={nextVis === 'private' ? 'primary' : 'success'}
         busy={pending}
         onConfirm={handleConfirm}

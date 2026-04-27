@@ -317,8 +317,8 @@ export function DashboardPrivacyButton({
           }
           const label = SECTION_META[pendingConfirm.key]?.label ?? 'this section'
           return pendingConfirm.nextVis === 'private'
-            ? `Make "${label}" private?`
-            : `Make "${label}" public?`
+            ? `Hide "${label}"?`
+            : `Show "${label}"?`
         })()}
         body={(() => {
           if (!pendingConfirm) return ''
@@ -345,8 +345,8 @@ export function DashboardPrivacyButton({
             return pendingConfirm.nextShown ? 'Show score' : 'Hide score'
           }
           return pendingConfirm.nextVis === 'private'
-            ? 'Make private'
-            : 'Make public'
+            ? 'Hide section'
+            : 'Show section'
         })()}
         tone={(() => {
           if (!pendingConfirm) return 'primary'
@@ -404,7 +404,7 @@ function PrivacyRow({
         }`}
       >
         {visible ? <Eye size={11} /> : <Lock size={11} />}
-        {visible ? 'Visible' : 'Private'}
+        {visible ? 'Visible' : 'Hidden'}
       </button>
     </div>
   )
