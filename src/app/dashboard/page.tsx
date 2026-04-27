@@ -684,83 +684,82 @@ function CompactCard({ script }: { script: ScriptSummary }) {
     )
   }
 
-  // Format pill — Feature vs Series. Anuj 2026-04-27: this is the only
-  // metadata that's load-bearing for a writer scanning their own list
-  // (lets them tell two scripts on the same idea apart). Genre / tone /
-  // headline noise was dropped to keep cards small + scannable on mobile.
-  const formatPill =
+  // Format label — Feature vs Series. Anuj 2026-04-27: helps the writer
+  // tell two scripts on the same story apart. Inlined into the metadata
+  // line below the title rather than rendered as a chip up top.
+  const formatLabel =
     script.declared_format === 'Series'
       ? 'Series'
       : script.declared_format === 'Feature film'
         ? 'Feature'
         : null
 
+  const showActivity = script.hasReport && !script.isLockedReport
+
   return (
     <div
-      className="rounded-xl bg-white px-4 sm:px-5 py-3 sm:py-3.5 flex items-center gap-3 flex-wrap"
+      className="rounded-xl bg-white px-4 sm:px-5 py-3 sm:py-3.5"
       style={{
         border: '1px solid var(--gem-gray-700)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
       }}
     >
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap mb-0.5">
-          <h3 className="text-[14.5px] sm:text-[15.5px] font-semibold text-[var(--gem-gray-50)] leading-tight m-0 truncate">
-            {script.title}
-          </h3>
-          {formatPill && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded-full font-medium"
-              style={{
-                border: '1px solid var(--gem-gray-700)',
-                color: 'var(--gem-gray-500)',
-                background: 'transparent',
-              }}
-            >
-              {formatPill}
-            </span>
-          )}
-          {statusLabel && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
-              style={{
-                border: `1px solid ${statusLabel.border}`,
-                background: statusLabel.bg,
-                color: statusLabel.color,
-              }}
-            >
-              {statusLabel.text}
-            </span>
-          )}
-          {script.interestedCount > 0 && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
-              style={{
-                border: '1px solid rgba(16,185,129,0.35)',
-                background: 'rgba(16,185,129,0.10)',
-                color: '#059669',
-              }}
-            >
-              {script.interestedCount} interested
-            </span>
+      {/* Row 1 — status pill in the top-right corner. Empty when no
+          status applies (anonymous edge case). */}
+      <div className="flex justify-end min-h-[20px] mb-0.5">
+        {statusLabel && (
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
+            style={{
+              border: `1px solid ${statusLabel.border}`,
+              background: statusLabel.bg,
+              color: statusLabel.color,
+            }}
+          >
+            {statusLabel.text}
+          </span>
+        )}
+      </div>
+
+      {/* Row 2 — title. */}
+      <h3 className="text-[15px] sm:text-[16px] font-semibold text-[var(--gem-gray-50)] leading-tight m-0 truncate">
+        {script.title}
+      </h3>
+
+      {/* Row 3 — format · date. */}
+      <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-0.5">
+        {formatLabel}
+        {formatLabel && ' · '}
+        {dateStr}
+      </p>
+
+      {/* Row 4 — industry stats on the left, action buttons on the right.
+          The stats block has its own "Industry activity" header so it's
+          unmistakably about engagement (and not, say, the privacy
+          button next to it). */}
+      <div className="flex items-end justify-between gap-3 flex-wrap mt-3">
+        <div className="min-w-0">
+          {showActivity ? (
+            <>
+              <p className="text-[10px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
+                Industry activity
+              </p>
+              <IndustryActivityButton rows={script.activity} />
+            </>
+          ) : (
+            <span aria-hidden />
           )}
         </div>
-        <p className="text-[11px] text-[var(--gem-gray-500)] m-0">
-          {dateStr}
-        </p>
-      </div>
-      <div className="shrink-0 flex items-center gap-1.5 sm:gap-2 flex-wrap">
-        {script.hasReport && !script.isLockedReport && (
-          <>
-            <IndustryActivityButton rows={script.activity} />
+        <div className="shrink-0 flex items-center gap-1.5 sm:gap-2">
+          {showActivity && (
             <DashboardPrivacyButton
               submissionId={script.id}
               initialPrivacy={script.reportPrivacy}
               initialIsPublic={script.is_public}
             />
-          </>
-        )}
-        {action}
+          )}
+          {action}
+        </div>
       </div>
     </div>
   )

@@ -72,10 +72,22 @@ export function StatsStrip({
         compact={isCompact}
       />
       {isInteractive && (
-        <ChevronRight
-          size={isCompact ? 12 : 13}
-          className="ml-0.5 text-[var(--gem-gray-500)] group-hover:text-[var(--gem-gold)] transition-colors"
-        />
+        <>
+          <span
+            aria-hidden
+            className="text-[var(--gem-gray-700)] mx-0.5"
+            style={{ fontSize: isCompact ? 11 : 12 }}
+          >
+            ·
+          </span>
+          <span
+            className="text-[var(--gem-gray-400)] group-hover:text-[var(--gem-gold)] transition-colors inline-flex items-center gap-0.5 font-medium"
+            style={{ fontSize: isCompact ? 11 : 12 }}
+          >
+            view details
+            <ChevronRight size={isCompact ? 11 : 12} />
+          </span>
+        </>
       )}
     </>
   )
