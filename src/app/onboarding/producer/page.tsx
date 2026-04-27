@@ -45,11 +45,15 @@ const BUDGET_TIERS: { id: BudgetTier; label: string; caption: string }[] = [
   { id: 'agnostic', label: 'Agnostic', caption: 'Open to any' },
 ]
 
+// Lane payload is now strictly structured — `looking_for_text` was
+// removed because the matching engine couldn't index on free-text and the
+// producer-side tag filters give a much sharper signal. Existing producers'
+// `looking_for_text` values stay in the JSONB column (we don't migrate
+// them out) but are no longer surfaced or written to.
 type LanePayload = {
   genres: string[]
   format: FormatChoice
   budget_tier: BudgetTier
-  looking_for_text: string
 }
 
 export default function ProducerOnboardingPage() {
@@ -61,7 +65,6 @@ export default function ProducerOnboardingPage() {
   const [genres, setGenres] = useState<string[]>([])
   const [format, setFormat] = useState<FormatChoice | null>(null)
   const [budgetTier, setBudgetTier] = useState<BudgetTier | null>(null)
-  const [lookingForText, setLookingForText] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
@@ -87,7 +90,6 @@ export default function ProducerOnboardingPage() {
         if (Array.isArray(lane.genres)) setGenres(lane.genres)
         if (lane.format) setFormat(lane.format as FormatChoice)
         if (lane.budget_tier) setBudgetTier(lane.budget_tier as BudgetTier)
-        if (typeof lane.looking_for_text === 'string') setLookingForText(lane.looking_for_text)
         // If the user already has any lane data, treat this as edit mode.
         if (lane.genres?.length || lane.format || lane.budget_tier) {
           setIsEditing(true)
@@ -126,7 +128,6 @@ export default function ProducerOnboardingPage() {
       genres,
       format,
       budget_tier: budgetTier,
-      looking_for_text: lookingForText.trim(),
     }
 
     const { error: updateError } = await supabase
@@ -289,28 +290,9 @@ export default function ProducerOnboardingPage() {
             </div>
           </section>
 
-          {/* Free text */}
-          <section>
-            <label
-              htmlFor="looking_for"
-              className="block text-sm font-semibold text-[var(--gem-gray-50)] mb-1"
-            >
-              Looking for, in your own words
-              <span className="ml-1 text-xs font-normal text-[var(--gem-gray-400)]">
-                (optional)
-              </span>
-            </label>
-            <p className="text-xs text-[var(--gem-gray-400)] mb-2">
-              The more specific, the better the matches.
-            </p>
-            <textarea
-              id="looking_for"
-              value={lookingForText}
-              onChange={e => setLookingForText(e.target.value)}
-              rows={4}
-              placeholder="Anything specific you're hunting right now?"
-            />
-          </section>
+          {/* The "looking for, in your own words" textarea was removed —
+              its free-text values couldn't be indexed for matching, and
+              the producer-side tag filters give a much sharper signal. */}
 
           {error && <p className="text-sm text-red-500">{error}</p>}
 

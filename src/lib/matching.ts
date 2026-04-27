@@ -10,13 +10,20 @@
 //
 // Predicate (shared, intentionally forgiving for v1):
 //   - Genre: ANY overlap between the producer's lane.genres and the union of
-//     {classification.genre_primary, ...classification.genre_tags}, using
+//     {classification.genre_primary, ...classification.genre_secondary}, using
 //     loose matching: lowercase + alias map + substring containment.
 //     "drama" matches "dramedy", "dark drama"; "sci-fi" matches "sci-fi
 //     thriller", "science fiction"; "rom-com" matches "romantic comedy".
+//     Legacy evals (pre-v5.4 standardization) used `genre_tags` instead of
+//     `genre_secondary` — we still read that field as a fallback so old
+//     evals keep matching.
 //   - Format: producer's lane.format ∈ {script's declared_format, 'both'}.
 //   - Budget: producer's lane.budget_tier ∈ {eval.packaging.budget_tier.tier,
 //     'agnostic'}. Legacy evals without packaging fall through as agnostic.
+//   - Tags: NOT a hard predicate — `script_submissions.tags` is plumbed
+//     through into the script signal vector so producer-side filter UI can
+//     narrow on it client-side, but a missing-tags overlap doesn't kill a
+//     match.
 //
 // Cap at 10 matches per submission; cap at 50 backfilled matches per producer
 // (to avoid flooding their inbox on first signup). Existing rows protected by
@@ -123,16 +130,33 @@ function uniqNonEmpty(values: (string | null | undefined)[]): string[] {
   return Array.from(out)
 }
 
-// Extract the script's signal vector from an evaluation row.
-function scriptSignals(evaluation: EvaluationJson | null, declaredFormat: string | null) {
+// Extract the script's signal vector from an evaluation row + the
+// submission's denormalized tags column.
+//
+// Genre union: prefer the v5.4 standardized fields (genre_primary +
+// genre_secondary), fall back to the legacy `genre_tags` array on older
+// evals so they keep matching after the cutover.
+//
+// Tags: the new `script_submissions.tags` column (writer-editable). Plumbed
+// through to the producer side as a script signal so filter UIs can narrow
+// the inbox on tag overlap. Tag overlap is NOT a hard predicate — a missing
+// tag intersection doesn't kill the match.
+function scriptSignals(
+  evaluation: EvaluationJson | null,
+  declaredFormat: string | null,
+  scriptTags: string[] | null = null
+) {
   const classification = evaluation?.classification ?? {}
   const scriptGenres = uniqNonEmpty([
     classification.genre_primary,
+    ...(classification.genre_secondary ?? []),
+    // Legacy fallback — pre-v5.4 evals stored secondary genres in genre_tags.
     ...(classification.genre_tags ?? []),
   ])
   const scriptBudget = normalize(evaluation?.packaging?.budget_tier?.tier)
   const scriptFormat = normalize(declaredFormat)
-  return { scriptGenres, scriptBudget, scriptFormat }
+  const tags = uniqNonEmpty(scriptTags ?? [])
+  return { scriptGenres, scriptBudget, scriptFormat, scriptTags: tags }
 }
 
 type ProducerLane = {
@@ -156,6 +180,7 @@ type SubmissionRow = {
   is_public?: boolean | null
   is_sample?: boolean | null
   hidden_at?: string | null
+  tags?: string[] | null
 }
 
 // A script is eligible for industry matching only when the writer has
@@ -173,7 +198,10 @@ function isEligibleForMatching(s: SubmissionRow): boolean {
 type EvaluationJson = {
   classification?: {
     genre_primary?: string
+    genre_secondary?: string[]
+    /** @deprecated pre-v5.4 — keep reading for backward compat. */
     genre_tags?: string[]
+    tags?: string[]
   }
   packaging?: {
     budget_tier?: {
@@ -198,7 +226,7 @@ export async function createMatchesForSubmission(
 ): Promise<MatchingResult> {
   const { data: submissionRaw, error: subErr } = await supabase
     .from("script_submissions")
-    .select("id, declared_format, user_id, status, is_public, is_sample, hidden_at")
+    .select("id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags")
     .eq("id", submissionId)
     .single()
 
@@ -222,9 +250,13 @@ export async function createMatchesForSubmission(
     .single()
 
   const evaluation = (evalRaw as { evaluation: EvaluationJson | null } | null)?.evaluation ?? null
+  // scriptTags is read here for plumbing parity with the producer-side
+  // backfill — the matching predicate doesn't gate on tags today, but
+  // pulling the data keeps the call sites symmetric.
   const { scriptGenres, scriptBudget, scriptFormat } = scriptSignals(
     evaluation,
-    submission.declared_format
+    submission.declared_format,
+    submission.tags ?? null
   )
 
   const { data: producersRaw, error: prodErr } = await supabase
@@ -323,7 +355,7 @@ export async function createMatchesForProducer(
     .from("script_evaluations")
     .select(
       `id, weighted_score, evaluation,
-       submission:script_submissions!inner ( id, declared_format, user_id, status, is_public, is_sample, hidden_at )`
+       submission:script_submissions!inner ( id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags )`
     )
     .order("weighted_score", { ascending: false })
     .limit(500)
@@ -352,7 +384,8 @@ export async function createMatchesForProducer(
 
     const { scriptGenres, scriptBudget, scriptFormat } = scriptSignals(
       row.evaluation,
-      submission.declared_format
+      submission.declared_format,
+      submission.tags ?? null
     )
 
     if (!genreOverlap(scriptGenres, laneGenres)) continue

@@ -37,7 +37,9 @@ import {
   type DashboardMatch,
   type MatchStatus,
 } from '@/components/dashboard/industry-match-section'
+import { ScriptTagsEditor } from '@/components/dashboard/script-tags-editor'
 import { ProUpsellCard } from '@/components/dashboard/pro-upsell-card'
+import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 
 export const dynamic = 'force-dynamic'
 
@@ -103,7 +105,7 @@ export default async function DashboardPage({
   const { data: allSubmissions } = await supabase
     .from('script_submissions')
     .select(`
-      id, title, status, is_public, created_at, hidden_at, declared_format,
+      id, title, status, is_public, created_at, hidden_at, declared_format, tags,
       script_evaluations ( id, evaluation, edited_fields, created_at, weighted_score )
     `)
     .eq('user_id', user.id)
@@ -264,6 +266,11 @@ export default async function DashboardPage({
     <>
       <Nav />
       {!isSubscribed && <UpgradeModalListener />}
+      {/* Live-update when a producer reacts to one of this writer's scripts.
+          Scoped to the writer's visible submissions so the channel is tight. */}
+      {submissionIds.length > 0 && (
+        <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
+      )}
       <div className="max-w-4xl mx-auto px-4 py-8 sm:py-10">
         {/* Post-flow banner — surfaced when the writer just came back from
             the guided submit flow's OAuth round-trip. */}
@@ -387,9 +394,22 @@ export default async function DashboardPage({
                 const classification = eval_?.evaluation?.classification ?? null
                 const genrePrimary: string | null =
                   classification?.genre_primary ?? null
+                // v5.4 standardizes secondary genres into `genre_secondary`;
+                // legacy evals stored them under `genre_tags`. Read both so
+                // this card stays correct across the cutover.
+                const genreSecondary: string[] = Array.isArray(
+                  classification?.genre_secondary
+                )
+                  ? classification.genre_secondary
+                  : Array.isArray(classification?.genre_tags)
+                    ? classification.genre_tags
+                    : []
                 const budgetTier: string | null =
                   eval_?.evaluation?.packaging?.budget_tier?.tier ?? null
                 const formatLabel: string | null = sub.declared_format ?? null
+                const tagsForScript: string[] = Array.isArray(sub.tags)
+                  ? sub.tags
+                  : []
 
                 const dateStr = new Date(sub.created_at).toLocaleDateString(
                   'en-US',
@@ -519,10 +539,19 @@ export default async function DashboardPage({
                             </p>
                           ) : null}
 
-                          {/* Tags */}
+                          {/* Tags — small chips summarizing format / genre /
+                              budget. Genre row prefers the v5.4 controlled
+                              vocab (genre_primary + genre_secondary) so the
+                              card lines up with the producer-side filters. */}
                           <div className="flex flex-wrap gap-1.5 mb-3">
                             {formatLabel && <Tag>{formatLabel}</Tag>}
                             {genrePrimary && <Tag>{genrePrimary}</Tag>}
+                            {genreSecondary
+                              .filter(g => typeof g === 'string' && g.trim().length > 0)
+                              .slice(0, 2)
+                              .map(g => (
+                                <Tag key={`genre-secondary-${g}`}>{g}</Tag>
+                              ))}
                             {budgetTier && <Tag>{budgetTier}</Tag>}
                           </div>
 
@@ -626,6 +655,19 @@ export default async function DashboardPage({
                         )}
                       </div>
                     </div>
+
+                    {/* Tags sub-section — collapsible, sits above Industry
+                        Activity. Writer-editable so they can rename/remove
+                        anything the v5.4 prompt got wrong. Only render once
+                        a report exists and isn't paywalled — the editor
+                        writes through to script_submissions.tags which is
+                        what producer-side filters read. */}
+                    {hasReport && !isLockedReport && (
+                      <ScriptTagsEditor
+                        submissionId={sub.id}
+                        initialTags={tagsForScript}
+                      />
+                    )}
 
                     {/* Industry activity sub-section — only render when we
                         have a completed report and the writer can actually

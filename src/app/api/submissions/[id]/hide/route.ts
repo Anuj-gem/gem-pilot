@@ -88,6 +88,33 @@ export async function POST(
       return NextResponse.json({ error: updErr.message }, { status: 500 })
     }
 
+    // 4. Propagate the removal to any active script_matches so producers
+    //    stop seeing the script in their Inbox/Slate. We treat the writer's
+    //    "remove from dashboard" as an implicit unmatch from their side.
+    //    Wrapped in try/catch — if propagation fails we still want the hide
+    //    to succeed (the writer's primary intent is honoured).
+    //
+    //    Note: we only flip rows that aren't already unmatched. If the
+    //    writer later un-hides via support, matches stay unmatched — they
+    //    do NOT auto-restore (would need an explicit re-trigger).
+    try {
+      await svc
+        .from('script_matches')
+        .update({
+          unmatched_at: new Date().toISOString(),
+          unmatched_by: 'writer',
+          unmatch_reason: 'post_removed',
+        })
+        .eq('submission_id', submissionId)
+        .is('unmatched_at', null)
+    } catch (propagationErr) {
+      // Log but don't fail the request — the hide already succeeded.
+      console.error(
+        '[submissions/hide] Failed to propagate to script_matches:',
+        propagationErr
+      )
+    }
+
     return NextResponse.json({ ok: true })
   } catch (err: any) {
     return NextResponse.json(

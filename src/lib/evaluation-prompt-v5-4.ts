@@ -42,8 +42,33 @@ ${formatLine}
 ## STEP 1: Classification
 
 - **Format**: ${declaredFormat} (declared by the writer — do not reclassify)
-- **Genre**: Primary genre + up to 2 secondary tags
+- **Genre**: Primary genre + 0–2 secondary genres (locked vocabulary, see KEY RULE below)
 - **Tone**: (e.g., grounded, heightened, satirical, gritty, comedic, etc.)
+- **Tags**: 5–10 entries describing lead profile, production reality, themes, and 1–3 distinctive specifics
+
+### KEY RULE — Genre vocabulary is LOCKED
+
+Genre vocabulary is locked to this list, and only this list:
+
+> Drama, Comedy, Thriller, Horror, Sci-Fi, Fantasy, Action, Crime, Mystery, Romance, Western, Musical, Family, Historical, War, Sports, Documentary
+
+**Never combine genres.** "Crime Drama" is wrong — it's "Crime" OR "Drama" but not both. Pick the MORE dominant lane as \`genre_primary\`. Up to 2 additional values from the same vocabulary may go in \`genre_secondary\` (optional but encouraged when a script genuinely lives in more than one lane).
+
+\`tone\` stays free-form — that's where nuance like "grounded crime drama with comedic edge" can live.
+
+### Tags — controlled vocab + 1–3 distinctive specifics
+
+Output 5–10 tags total. Lowercase, hyphenated. Mix of:
+
+**Lead profile tags** (pick when applicable): \`female-lead\`, \`male-lead\`, \`ensemble\`, \`child-lead\`, \`black-lead\`, \`latine-lead\`, \`asian-lead\`, \`indigenous-lead\`, \`queer-lead\`, \`disability-lead\`, \`older-lead\`, \`multi-protag\`
+
+**Production tags** (pick when applicable): \`single-location\`, \`bottle-episode\`, \`period-piece\`, \`contemporary\`, \`near-future\`, \`multi-decade\`, \`procedural\`, \`franchise-potential\`, \`limited-series\`, \`ongoing-series\`, \`feature-anchored\`, \`low-budget-friendly\`, \`prestige\`, \`high-concept\`, \`character-driven\`, \`slow-burn\`, \`propulsive\`, \`multilingual\`, \`non-english\`
+
+**Theme tags** (pick when applicable): \`family-dynamics\`, \`coming-of-age\`, \`identity\`, \`grief\`, \`addiction\`, \`class\`, \`race\`, \`religion\`, \`politics\`, \`crime\`, \`mental-health\`, \`redemption\`, \`revenge\`, \`survival\`, \`power\`, \`corruption\`, \`love\`, \`marriage\`, \`motherhood\`, \`fatherhood\`, \`friendship\`, \`loneliness\`
+
+**Distinctive tags** (free-form, max 3): 1–3 specific tags that capture something unique about THIS script that doesn't fit the categories above. Examples: \`chess\`, \`detroit\`, \`1970s-bronx\`, \`competitive-baking\`, \`indian-wedding\`, \`astronaut\`, \`nba\`. Lowercase, hyphenated.
+
+**Don't pad.** If only 5 fit honestly, output 5. Total range: 5–10.
 
 ---
 
@@ -381,9 +406,10 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 {
   "classification": {
     "format": "",
-    "genre_primary": "",
-    "genre_tags": [],
-    "tone": ""
+    "genre_primary": "",        // exactly one from the locked vocab
+    "genre_secondary": [],       // 0-2 additional values from the locked vocab
+    "tone": "",
+    "tags": []                   // 5-10 tags: controlled lists + up to 3 distinctive
   },
   "positioning_hook": "",
   "scores": {

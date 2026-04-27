@@ -12,12 +12,17 @@
 // Server passes in everything pre-shaped + the "new since visit" id set as
 // an array. Sorting + filtering happens entirely client-side.
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { X } from 'lucide-react'
 import { HeroMatchCard, MatchCard, type MatchCardData } from './match-card'
 import { MatchViewTracker } from './match-view-tracker'
 
 export interface DashboardMatchData extends MatchCardData {
   unmatchedAt: string | null
+  /** Writer-editable tag tokens from script_submissions.tags. Drives the
+   *  filter chips above the tabs. Distinct from the display `tags` on the
+   *  card itself (which are pretty format/genre/budget summary chips). */
+  scriptTags: string[]
 }
 
 type SortMode = 'score' | 'recent' | 'status'
@@ -46,15 +51,30 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
   const [tab, setTab] = useState<TabKey>('inbox')
   const [sort, setSort] = useState<SortMode>('score')
   const [inboxVisible, setInboxVisible] = useState<number>(INBOX_PAGE_SIZE)
+  // Tag filter — applies to all 3 tabs. AND semantics (a script must
+  // include EVERY selected tag to stay visible) since that's the most
+  // common pattern for narrowing an inbox.
+  const [tagFilter, setTagFilter] = useState<string[]>([])
 
   const newIdSet = useMemo(() => new Set(newMatchIds), [newMatchIds])
+
+  // Filtered matches — apply the tag filter BEFORE splitting into tab
+  // buckets so the badge counts reflect what's visible under the active
+  // filter, not the raw inventory.
+  const filteredMatches = useMemo(() => {
+    if (tagFilter.length === 0) return matches
+    return matches.filter((m) => {
+      const set = new Set((m.scriptTags ?? []).map((t) => t.toLowerCase()))
+      return tagFilter.every((t) => set.has(t.toLowerCase()))
+    })
+  }, [matches, tagFilter])
 
   // Tab buckets — kept stable so badge counts don't flicker mid-navigation.
   const { inbox, slate, passed } = useMemo(() => {
     const inbox: DashboardMatchData[] = []
     const slate: DashboardMatchData[] = []
     const passed: DashboardMatchData[] = []
-    for (const m of matches) {
+    for (const m of filteredMatches) {
       if (m.unmatchedAt || m.status === 'passed') {
         passed.push(m)
         continue
@@ -66,7 +86,7 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
       }
     }
     return { inbox, slate, passed }
-  }, [matches])
+  }, [filteredMatches])
 
   const active =
     tab === 'inbox' ? inbox : tab === 'slate' ? slate : passed
@@ -102,8 +122,39 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
     return sorted.filter((m) => m.matchId !== hero.matchId)
   }, [sorted, hero])
 
+  // Suggestion universe — every tag that appears anywhere across the
+  // producer's full inventory. Sorted alphabetically for predictability.
+  const allKnownTags = useMemo(() => {
+    const set = new Set<string>()
+    for (const m of matches) {
+      for (const t of m.scriptTags ?? []) {
+        if (typeof t === 'string' && t.trim()) set.add(t.toLowerCase())
+      }
+    }
+    return Array.from(set).sort()
+  }, [matches])
+
   return (
     <div>
+      {/* Tag filter — sits ABOVE the tab strip and applies to every tab.
+          Producers can pile up multiple tags (AND semantics) to narrow on
+          things like "female-lead + period-piece + indie". */}
+      {allKnownTags.length > 0 && (
+        <TagFilterBar
+          allTags={allKnownTags}
+          selected={tagFilter}
+          onAdd={(t) =>
+            setTagFilter((prev) =>
+              prev.includes(t) ? prev : [...prev, t]
+            )
+          }
+          onRemove={(t) =>
+            setTagFilter((prev) => prev.filter((x) => x !== t))
+          }
+          onClear={() => setTagFilter([])}
+        />
+      )}
+
       {/* Tab strip */}
       <div
         className="flex items-center gap-1 mb-6"
@@ -389,6 +440,175 @@ function CompactPassedRow({ data }: { data: DashboardMatchData }) {
         </span>
       )}
     </a>
+  )
+}
+
+// TagFilterBar — autocomplete + selected chips. Producers narrow their
+// inbox by piling up tags (AND semantics applied by the parent).
+//
+// Suggestions: any tag that appears on at least one match in the producer's
+// inventory. Filtered as the producer types. Click a suggestion or hit
+// Enter on an exact-match query to add it. Each selected tag renders as a
+// chip with an "x" to remove. "Clear filters" resets the list.
+function TagFilterBar({
+  allTags,
+  selected,
+  onAdd,
+  onRemove,
+  onClear,
+}: {
+  allTags: string[]
+  selected: string[]
+  onAdd: (tag: string) => void
+  onRemove: (tag: string) => void
+  onClear: () => void
+}) {
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const wrapRef = useRef<HTMLDivElement>(null)
+
+  // Click-outside to close the suggestion popover.
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (!wrapRef.current) return
+      if (!wrapRef.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onDocClick)
+    return () => document.removeEventListener('mousedown', onDocClick)
+  }, [])
+
+  const suggestions = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    const selectedSet = new Set(selected)
+    return allTags
+      .filter((t) => !selectedSet.has(t))
+      .filter((t) => (q.length === 0 ? true : t.includes(q)))
+      .slice(0, 12)
+  }, [allTags, selected, query])
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      const q = query.trim().toLowerCase()
+      if (!q) return
+      // Prefer an exact suggestion match; otherwise add the typed token if
+      // it exists in the universe (no point filtering on a tag no script
+      // has).
+      const match =
+        suggestions.find((s) => s === q) ?? suggestions[0] ?? null
+      if (match) {
+        onAdd(match)
+        setQuery('')
+      }
+    } else if (e.key === 'Escape') {
+      setOpen(false)
+    }
+  }
+
+  return (
+    <div ref={wrapRef} className="mb-5">
+      <div className="flex items-start gap-3 flex-wrap">
+        <span className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] pt-2 shrink-0">
+          Filter by tag
+        </span>
+        <div className="flex-1 min-w-[220px] relative">
+          <div
+            className="flex items-center gap-1.5 flex-wrap rounded-lg px-2 py-1.5"
+            style={{
+              background: '#fff',
+              border: '1px solid var(--gem-gray-700)',
+            }}
+          >
+            {selected.map((t) => (
+              <FilterChip key={t} tag={t} onRemove={() => onRemove(t)} />
+            ))}
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value)
+                setOpen(true)
+              }}
+              onFocus={() => setOpen(true)}
+              onKeyDown={handleKeyDown}
+              placeholder={
+                selected.length === 0 ? 'Add a tag (e.g. female-lead)' : 'Add another'
+              }
+              className="bg-transparent outline-none text-[13px] text-[var(--gem-gray-100)] placeholder:text-[var(--gem-gray-500)] py-1 px-1 flex-1 min-w-[120px]"
+              aria-label="Filter matches by tag"
+            />
+          </div>
+          {open && suggestions.length > 0 && (
+            <div
+              className="absolute left-0 right-0 mt-1 z-10 rounded-lg overflow-hidden max-h-[260px] overflow-y-auto"
+              style={{
+                background: '#fff',
+                border: '1px solid var(--gem-gray-700)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+              }}
+            >
+              {suggestions.map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onMouseDown={(e) => {
+                    // Use mousedown so the click fires before the input
+                    // blur handler closes the popover.
+                    e.preventDefault()
+                    onAdd(s)
+                    setQuery('')
+                    inputRef.current?.focus()
+                  }}
+                  className="w-full text-left px-3 py-2 text-[13px] text-[var(--gem-gray-200)] hover:bg-[var(--gem-gray-900)] transition-colors"
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        {selected.length > 0 && (
+          <button
+            type="button"
+            onClick={onClear}
+            className="text-[12.5px] font-medium text-[var(--gem-gray-400)] hover:text-[var(--gem-accent)] transition-colors pt-2 shrink-0"
+          >
+            Clear filters
+          </button>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function FilterChip({
+  tag,
+  onRemove,
+}: {
+  tag: string
+  onRemove: () => void
+}) {
+  return (
+    <span
+      className="inline-flex items-center gap-1 rounded-full pl-2 pr-1 py-0.5 text-[12px] font-medium"
+      style={{
+        background: 'rgba(124,58,237,0.08)',
+        border: '1px solid rgba(124,58,237,0.30)',
+        color: 'var(--gem-accent)',
+      }}
+    >
+      {tag}
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={`Remove tag ${tag}`}
+        className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full hover:bg-white transition-colors"
+      >
+        <X size={11} strokeWidth={2.5} />
+      </button>
+    </span>
   )
 }
 

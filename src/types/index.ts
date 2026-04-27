@@ -154,8 +154,16 @@ export function calculateTier(weightedScore: number): Tier {
 export interface Classification {
   format: string;
   genre_primary: string;
+  /** v5.4 standardized — 0-2 secondary genres from the locked vocabulary. */
+  genre_secondary?: string[];
+  /** @deprecated pre-v5.4 — replaced by `genre_secondary` (controlled vocab)
+   *  and `tags` (mixed lead/production/theme/distinctive). Kept for backward
+   *  compat with legacy evals. */
   genre_tags: string[];
   tone: string;
+  /** v5.4 — 5-10 lowercase-hyphenated tags. Mix of lead profile, production,
+   *  theme, and distinctive specifics. Drives producer-side filter chips. */
+  tags?: string[];
 }
 
 /** @deprecated use Classification — kept for v2 backward compat */

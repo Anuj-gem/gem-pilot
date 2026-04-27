@@ -36,6 +36,7 @@ import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { LaneChip } from '@/components/partner/lane-chip'
 import { DashboardTabs, type DashboardMatchData } from '@/components/partner/dashboard-tabs'
+import { RealtimeRefresh } from '@/components/partner/realtime-refresh'
 
 export const dynamic = 'force-dynamic'
 
@@ -80,12 +81,19 @@ interface RawMatchRow {
     id: string
     title: string
     declared_format: string | null
+    /** Writer-editable, denormalized from classification.tags on eval. */
+    tags: string[] | null
     script_evaluations:
       | Array<{
           weighted_score: number | null
           tier: string | null
           evaluation: {
-            classification?: { genre_primary?: string; genre_tags?: string[] }
+            classification?: {
+              genre_primary?: string
+              genre_secondary?: string[]
+              /** @deprecated pre-v5.4 backward compat */
+              genre_tags?: string[]
+            }
             positioning_hook?: string
             packaging?: { budget_tier?: { tier?: string } }
           } | null
@@ -95,7 +103,12 @@ interface RawMatchRow {
           weighted_score: number | null
           tier: string | null
           evaluation: {
-            classification?: { genre_primary?: string; genre_tags?: string[] }
+            classification?: {
+              genre_primary?: string
+              genre_secondary?: string[]
+              /** @deprecated pre-v5.4 backward compat */
+              genre_tags?: string[]
+            }
             positioning_hook?: string
             packaging?: { budget_tier?: { tier?: string } }
           } | null
@@ -135,11 +148,18 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
     ? FORMAT_LABEL[formatRaw.toLowerCase()] || titleCase(formatRaw)
     : null
 
+  // Genre union — prefer the v5.4 standardized `genre_secondary` field;
+  // fall back to legacy `genre_tags` so older evals keep showing both their
+  // primary and secondary genre chips.
   const genreTags: string[] = []
   if (evaluation?.classification?.genre_primary) {
     genreTags.push(titleCase(evaluation.classification.genre_primary))
   }
-  for (const t of evaluation?.classification?.genre_tags ?? []) {
+  const secondaryGenres =
+    evaluation?.classification?.genre_secondary ??
+    evaluation?.classification?.genre_tags ??
+    []
+  for (const t of secondaryGenres) {
     if (typeof t === 'string' && t.trim() && !genreTags.includes(titleCase(t))) {
       genreTags.push(titleCase(t))
     }
@@ -150,10 +170,19 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
     ? BUDGET_TAG_LABEL[budgetTier.toLowerCase()] || titleCase(budgetTier)
     : null
 
+  // Display tags shown on the match card (format / genre / budget summary).
   const tags: string[] = []
   if (formatTag) tags.push(formatTag)
   for (const g of genreTags.slice(0, 2)) tags.push(g)
   if (budgetTag) tags.push(budgetTag)
+
+  // scriptTags = the writer-editable lowercase-hyphenated descriptors from
+  // script_submissions.tags. These drive the producer-side filter chips
+  // and are kept separate from the display `tags` so we can keep the
+  // pretty UI on the card and still index on the canonical token form.
+  const scriptTags: string[] = Array.isArray(sub.tags)
+    ? sub.tags.filter((t): t is string => typeof t === 'string' && t.trim().length > 0)
+    : []
 
   return {
     matchId: row.id,
@@ -162,6 +191,7 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
     score: typeof score === 'number' && !Number.isNaN(score) ? score : null,
     headline,
     tags,
+    scriptTags,
     createdAt: row.created_at,
     unmatchedAt: row.unmatched_at,
   }
@@ -226,7 +256,7 @@ export default async function PartnerDashboardPage() {
       `
       id, status, created_at, unmatched_at,
       script_submissions (
-        id, title, declared_format,
+        id, title, declared_format, tags,
         script_evaluations ( weighted_score, tier, evaluation, edited_fields )
       )
       `
@@ -270,6 +300,10 @@ export default async function PartnerDashboardPage() {
   return (
     <>
       <Nav />
+      {/* Live-update on script_matches changes scoped to this producer.
+          Picks up writer unmatches and writer "remove from dashboard"
+          (which now propagates to script_matches) without a hard reload. */}
+      <RealtimeRefresh producerId={user.id} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-16">
         {/* "New since last visit" strip — only renders when the producer
             has been here before AND there are matches newer than that
