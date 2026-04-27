@@ -141,13 +141,22 @@ export async function GET(
 }
 
 // Merge writer edits over the raw eval. Same fields editable-top-card.tsx
-// touches: title, logline (positioning_hook), genre_primary, genre_tags, tone.
+// touches: title, logline (positioning_hook), genre_primary, genre_secondary
+// (v5.4) / genre_tags (legacy), tone.
 function applyEdits(evaluation: any, edited: any | null) {
   if (!edited) return evaluation
   const out = { ...evaluation }
   out.classification = { ...(evaluation.classification || {}) }
   if (edited.logline) out.positioning_hook = edited.logline
   if (edited.genre_primary) out.classification.genre_primary = edited.genre_primary
+  // v5.4 canonical secondary genres write to classification.genre_secondary.
+  if (Array.isArray(edited.genre_secondary)) {
+    out.classification.genre_secondary = edited.genre_secondary
+  }
+  // Legacy edited.genre_tags is still respected for older edits that haven't
+  // been resaved yet — keep mirroring it onto classification.genre_tags so
+  // downstream readers (matching engine fallback, partner page, etc.) still
+  // see the writer's pick.
   if (Array.isArray(edited.genre_tags)) out.classification.genre_tags = edited.genre_tags
   if (edited.tone) out.classification.tone = edited.tone
   return out

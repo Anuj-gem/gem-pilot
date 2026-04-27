@@ -1,7 +1,7 @@
 // POST /api/evaluations/[id]/edit
 //
 // Writer-owned edit of the report top card. Accepts any subset of four fields —
-// title, logline, genre_primary, genre_tags, tone. Title is written in-place on
+// title, logline, genre_primary, genre_secondary, tone. Title is written in-place on
 // script_submissions; the other three are merged into script_evaluations.edited_fields.
 //
 // Authorization: the authenticated user must own the script_submissions row
@@ -11,7 +11,12 @@
 //   - Omitted key      → leave the current edited value untouched
 //   - Empty string     → clear that edit (falls back to the generated value)
 //   - Non-empty string → set / overwrite that edit
-//   - genre_tags: array (max 2 entries); empty array clears the override
+//   - genre_secondary: array (max 2 entries) of locked-vocab genres; empty
+//     array clears the override. New canonical key.
+//   - genre_tags: legacy alias still accepted on input for backward compat;
+//     internally written into edited_fields.genre_secondary so reads stay clean.
+//     The client always sends `genre_tags: []` alongside a write to clear any
+//     stale legacy override left over from pre-v5.4 edits.
 //
 // Revert-all: send { revert: true } to null out edited_fields entirely.
 //
@@ -52,7 +57,7 @@ async function createAuthClient() {
 }
 
 const MAX_STR = 500
-const MAX_GENRE_TAGS = 2
+const MAX_SECONDARY_GENRES = 2
 
 export async function POST(
   request: NextRequest,
@@ -135,22 +140,35 @@ export async function POST(
       }
     }
 
-    if ('genre_tags' in body) {
-      const v = body.genre_tags
-      if (v === null || v === undefined || (Array.isArray(v) && v.length === 0)) {
+    // Secondary genres — accept either the canonical `genre_secondary` key
+    // (v5.4 onward) or the legacy `genre_tags` key (older clients / scripts).
+    // Both paths write into edited_fields.genre_secondary; we also clear the
+    // legacy `genre_tags` slot whenever we see EITHER key in the body, so
+    // pre-v5.4 overrides can't keep bleeding through after a save.
+    const secondaryKeyInBody = 'genre_secondary' in body || 'genre_tags' in body
+    if (secondaryKeyInBody) {
+      // Prefer the canonical key when both are present.
+      const raw = 'genre_secondary' in body ? body.genre_secondary : body.genre_tags
+      const sourceKey = 'genre_secondary' in body ? 'genre_secondary' : 'genre_tags'
+      if (raw === null || raw === undefined || (Array.isArray(raw) && raw.length === 0)) {
+        delete next.genre_secondary
         delete next.genre_tags
       } else if (
-        !Array.isArray(v) ||
-        !v.every((t) => typeof t === 'string' && t.trim().length > 0 && t.length <= MAX_STR)
+        !Array.isArray(raw) ||
+        !raw.every((t) => typeof t === 'string' && t.trim().length > 0 && t.length <= MAX_STR)
       ) {
-        return NextResponse.json({ error: 'genre_tags must be an array of strings.' }, { status: 400 })
-      } else if (v.length > MAX_GENRE_TAGS) {
         return NextResponse.json(
-          { error: `genre_tags accepts up to ${MAX_GENRE_TAGS} entries.` },
+          { error: `${sourceKey} must be an array of strings.` },
+          { status: 400 }
+        )
+      } else if (raw.length > MAX_SECONDARY_GENRES) {
+        return NextResponse.json(
+          { error: `${sourceKey} accepts up to ${MAX_SECONDARY_GENRES} entries.` },
           { status: 400 }
         )
       } else {
-        next.genre_tags = v.map((t: string) => t.trim())
+        next.genre_secondary = raw.map((t: string) => t.trim())
+        delete next.genre_tags
       }
     }
 

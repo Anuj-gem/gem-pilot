@@ -13,11 +13,17 @@
 // Non-owners see the same layout without the pencil; edit mode can also be
 // pre-opened from dashboard via ?edit=1 which auto-scrolls + flips the card.
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Pencil, Check, X, RotateCcw, Loader2 } from 'lucide-react'
-import { LOGLINE_WORD_CAP, loglineWordCount, type TopCardDisplay } from '@/lib/edited-fields'
+import {
+  LOGLINE_WORD_CAP,
+  LOCKED_GENRE_VOCAB,
+  canonicalizeGenre,
+  loglineWordCount,
+  type TopCardDisplay,
+} from '@/lib/edited-fields'
 
 interface Props {
   evaluationId: string
@@ -51,12 +57,35 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
   const [reverting, setReverting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Editable state — seeded from what's currently being rendered
+  // Editable state — seeded from what's currently being rendered.
+  // Genre primary + secondary are normalized into the locked vocab so the
+  // dropdowns line up with what's stored. Anything that doesn't match the
+  // vocab (e.g. a legacy free-text entry) collapses to '' / drops out, and
+  // the writer is free to pick a fresh value from the list.
   const [title, setTitle] = useState(initial.title)
   const [logline, setLogline] = useState(initial.logline)
-  const [genrePrimary, setGenrePrimary] = useState(initial.genre_primary)
-  const [genreTags, setGenreTags] = useState<string[]>(initial.genre_tags.slice(0, 2))
+  const [genrePrimary, setGenrePrimary] = useState<string>(
+    () => canonicalizeGenre(initial.genre_primary) ?? ''
+  )
+  const [genreSecondary, setGenreSecondary] = useState<string[]>(() =>
+    initial.genre_secondary
+      .map((g) => canonicalizeGenre(g))
+      .filter((g): g is NonNullable<typeof g> => g !== null)
+      .slice(0, 2)
+  )
   const [tone, setTone] = useState(initial.tone)
+
+  // Secondary dropdown options exclude whatever's selected as primary, so a
+  // writer can't pick "Drama" twice.
+  const secondaryOptionsForSlot = useMemo(() => {
+    return (slotIndex: number) =>
+      LOCKED_GENRE_VOCAB.filter((g) => {
+        if (g === genrePrimary) return false
+        const otherSlot = genreSecondary[1 - slotIndex]
+        if (otherSlot && g === otherSlot) return false
+        return true
+      })
+  }, [genrePrimary, genreSecondary])
 
   const cardRef = useRef<HTMLDivElement>(null)
 
@@ -70,8 +99,13 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
   function resetLocalToInitial() {
     setTitle(initial.title)
     setLogline(initial.logline)
-    setGenrePrimary(initial.genre_primary)
-    setGenreTags(initial.genre_tags.slice(0, 2))
+    setGenrePrimary(canonicalizeGenre(initial.genre_primary) ?? '')
+    setGenreSecondary(
+      initial.genre_secondary
+        .map((g) => canonicalizeGenre(g))
+        .filter((g): g is NonNullable<typeof g> => g !== null)
+        .slice(0, 2)
+    )
     setTone(initial.tone)
   }
 
@@ -80,12 +114,16 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
     setError(null)
     // We send each field's desired final value. Empty string clears the edit
     // server-side, which is the right behavior when the writer blanks a field.
+    // Secondary genres write to `genre_secondary` (v5.4 canonical key); we
+    // also clear the legacy `genre_tags` key so any old edit doesn't keep
+    // bleeding through after a save.
     const body: Record<string, any> = {
       title,
       logline,
       genre_primary: genrePrimary,
       tone,
-      genre_tags: genreTags.filter((t) => t.trim().length > 0).slice(0, 2),
+      genre_secondary: genreSecondary.filter((t) => t.trim().length > 0).slice(0, 2),
+      genre_tags: [],
     }
     try {
       const res = await fetch(`/api/evaluations/${evaluationId}/edit`, {
@@ -196,7 +234,7 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
               <span>{initial.genre_primary}</span>
             </>
           )}
-          {initial.genre_tags?.map((t, i) => (
+          {initial.genre_secondary?.map((t, i) => (
             <span
               key={i}
               className="px-3 py-1 rounded-full text-[13px] text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)]"
@@ -316,19 +354,33 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
         />
       </label>
 
-      {/* Genre + Tone row */}
+      {/* Genre (primary) + Tone row.
+          Genre primary is now a locked-vocab dropdown — see LOCKED_GENRE_VOCAB.
+          Tone stays a free-text input but with a 1-2-word hint and a tighter
+          maxLength to keep it from drifting into tag territory. */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <label className="block">
           <span className="block text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
             Genre (primary)
           </span>
-          <input
-            type="text"
+          <select
             value={genrePrimary}
-            onChange={(e) => setGenrePrimary(e.target.value.slice(0, 100))}
+            onChange={(e) => {
+              const v = e.target.value
+              setGenrePrimary(v)
+              // If the new primary collides with an existing secondary slot,
+              // clear that slot so we never duplicate a value.
+              setGenreSecondary((prev) => prev.filter((g) => g !== v))
+            }}
             className="w-full text-[15px] text-[var(--gem-gray-100)] bg-transparent border border-[var(--gem-gray-700)] focus:border-[var(--gem-gold)] focus:outline-none rounded-md px-3 py-2"
-            placeholder="e.g. Thriller"
-          />
+          >
+            <option value="">Select a genre…</option>
+            {LOCKED_GENRE_VOCAB.map((g) => (
+              <option key={g} value={g}>
+                {g}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="block">
           <span className="block text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
@@ -337,34 +389,57 @@ export function EditableTopCard({ evaluationId, initial, isOwner, hasEdits, post
           <input
             type="text"
             value={tone}
-            onChange={(e) => setTone(e.target.value.slice(0, 100))}
+            onChange={(e) => setTone(e.target.value.slice(0, 40))}
+            maxLength={40}
             className="w-full text-[15px] text-[var(--gem-gray-100)] bg-transparent border border-[var(--gem-gray-700)] focus:border-[var(--gem-gold)] focus:outline-none rounded-md px-3 py-2"
-            placeholder="e.g. grounded, heightened, satirical"
+            placeholder="1-2 words — gritty, elevated, campy"
           />
+          <span className="block text-[11px] text-[var(--gem-gray-500)] mt-1">
+            One short stylistic word (or two). Anything longer belongs in the prose sections.
+          </span>
         </label>
       </div>
 
-      {/* Genre tags (up to 2) */}
+      {/* Genre (secondary) — up to 2, picked from the same locked vocab.
+          Each slot omits the value already chosen in the primary slot and the
+          other secondary slot, so a writer can't pick the same genre twice. */}
       <div className="mb-5">
         <span className="block text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] mb-2">
-          Secondary tags (up to 2)
+          Genre (secondary, up to 2)
         </span>
         <div className="grid grid-cols-2 gap-3">
-          {[0, 1].map((i) => (
-            <input
-              key={i}
-              type="text"
-              value={genreTags[i] ?? ''}
-              onChange={(e) => {
-                const next = [...genreTags]
-                next[i] = e.target.value.slice(0, 50)
-                setGenreTags(next)
-              }}
-              className="w-full text-[14px] text-[var(--gem-gray-100)] bg-transparent border border-[var(--gem-gray-700)] focus:border-[var(--gem-gold)] focus:outline-none rounded-md px-3 py-2"
-              placeholder={i === 0 ? 'e.g. neo-noir' : 'e.g. character study'}
-            />
-          ))}
+          {[0, 1].map((i) => {
+            const value = genreSecondary[i] ?? ''
+            const options = secondaryOptionsForSlot(i)
+            return (
+              <select
+                key={i}
+                value={value}
+                onChange={(e) => {
+                  const next = [...genreSecondary]
+                  const v = e.target.value
+                  if (v === '') {
+                    next.splice(i, 1) // collapse the slot when cleared
+                  } else {
+                    next[i] = v
+                  }
+                  setGenreSecondary(next.slice(0, 2))
+                }}
+                className="w-full text-[14px] text-[var(--gem-gray-100)] bg-transparent border border-[var(--gem-gray-700)] focus:border-[var(--gem-gold)] focus:outline-none rounded-md px-3 py-2"
+              >
+                <option value="">{i === 0 ? 'Optional secondary' : 'Optional third'}</option>
+                {options.map((g) => (
+                  <option key={g} value={g}>
+                    {g}
+                  </option>
+                ))}
+              </select>
+            )
+          })}
         </div>
+        <span className="block text-[11px] text-[var(--gem-gray-500)] mt-2">
+          Pick up to two more genres from the same list — leave blank if the script lives in one lane.
+        </span>
       </div>
 
       {/* Headline (stored as edited_fields.logline / positioning_hook) */}

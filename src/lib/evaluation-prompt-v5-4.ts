@@ -43,7 +43,7 @@ ${formatLine}
 
 - **Format**: ${declaredFormat} (declared by the writer — do not reclassify)
 - **Genre**: Primary genre + 0–2 secondary genres (locked vocabulary, see KEY RULE below)
-- **Tone**: (e.g., grounded, heightened, satirical, gritty, comedic, etc.)
+- **Tone**: 1-2 word stylistic descriptor (see KEY RULE on tone below)
 - **Tags**: 5–10 entries describing lead profile, production reality, themes, and 1–3 distinctive specifics
 
 ### KEY RULE — Genre vocabulary is LOCKED
@@ -54,7 +54,11 @@ Genre vocabulary is locked to this list, and only this list:
 
 **Never combine genres.** "Crime Drama" is wrong — it's "Crime" OR "Drama" but not both. Pick the MORE dominant lane as \`genre_primary\`. Up to 2 additional values from the same vocabulary may go in \`genre_secondary\` (optional but encouraged when a script genuinely lives in more than one lane).
 
-\`tone\` stays free-form — that's where nuance like "grounded crime drama with comedic edge" can live.
+### KEY RULE — Tone is 1-2 words MAX
+
+**Tone**: 1-2 words ONLY. A short stylistic descriptor — "gritty", "elevated", "campy", "lyrical", "satirical", "deadpan", "earnest", "bleak", "sun-baked". NOT a comma-separated list. NOT "grounded, darkly comic, tense, intimate" — that's tag territory. Pick the ONE word that captures the script's stylistic register; add a second only if genuinely needed for color.
+
+**Tone is 1-2 words MAX.** Multi-word tonal descriptions belong in tags or in the prose sections, not in \`tone\`.
 
 ### Tags — controlled vocab + 1–3 distinctive specifics
 
@@ -408,7 +412,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
     "format": "",
     "genre_primary": "",        // exactly one from the locked vocab
     "genre_secondary": [],       // 0-2 additional values from the locked vocab
-    "tone": "",
+    "tone": "",                  // 1-2 words ONLY (e.g. "gritty", "elevated satire")
     "tags": []                   // 5-10 tags: controlled lists + up to 3 distinctive
   },
   "positioning_hook": "",
