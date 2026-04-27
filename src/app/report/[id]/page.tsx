@@ -61,6 +61,7 @@ import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } f
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
 import { scoreDesignation, DESIGNATION_STYLE, DESIGNATION_COPY } from '@/lib/designation'
 import {
+  isScoreVisible,
   normalizePrivacy,
   publicSectionCount,
   resolveVisibility,
@@ -394,7 +395,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           authorName={
             isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
           }
-          commercialScore={commercialScore}
+          commercialScore={
+            // Owner / admin always sees their own score. Non-owners only see
+            // it if the writer hasn't toggled it off in the privacy modal.
+            isOwnerOrAdmin || isScoreVisible(privacy) ? commercialScore : null
+          }
           headerActionsLeft={
             isOwnerOrAdmin ? (
               <DownloadButton

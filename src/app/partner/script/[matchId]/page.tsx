@@ -1,49 +1,56 @@
 // /partner/script/[matchId] — producer-facing script detail page.
 //
-// Server component. Auth gates mirror /partner:
+// Selznick-4 v4 (2026-04-27): rebuilt to mirror the writer's report page so
+// the layout reads as a single artifact for both audiences. Producers see
+// the SAME top card (title + score + headline + "show details") and the
+// SAME section structure, plus producer-specific surfaces:
+//
+//   - Pre-Interested: top card + "Why this is a hit" lede + a gate card
+//     that explains what marking Interested unlocks. Everything else hidden.
+//   - Post-Interested: full report (all sections, same order as writer view)
+//     plus a Script download panel and a "Reach out to the writer" panel.
+//   - Ended (unmatched_at): same as post-Interested visually, with a "Match
+//     ended" notice up top and the reach-out panel hidden.
+//
+// Auth gates mirror /partner:
 //   1. Not signed in            → /login
 //   2. Signed in, not producer  → /dashboard
 //   3. Producer, lane null      → /onboarding/producer
 //   4. Match not owned by user  → notFound (RLS would hide it anyway)
 //
-// Side effect on load: any 'pending' match flips to 'opened' with
-// opened_at = now(). That's the "viewed" signal the writer + matching
-// engine care about. Already-reacted statuses (interested/passed/commented)
-// stay put — we only promote the very first view.
-//
-// Two distinct render modes, gated on status:
-//
-//   PRE-INTERESTED  (status = pending | opened, not unmatched)
-//     - Title + score + headline + tags + a single "what's special" headline
-//     - Big violet "Mark Interested to unlock" card explaining what opens
-//     - Interested + Pass buttons only
-//     - Lead characters / packaging / risk / issues / strengths list / script
-//       download button are all hidden.
-//
-//   POST-INTERESTED (status = interested | commented, not unmatched)
-//     - Full report: strengths, packaging, risks, leads, issues
-//     - Script download button (signed URL, gated server-side too)
-//     - "Reach out to the writer" panel — writer name + email + mailto button.
-//       All actual conversation happens over email; GEM just tracks the intro.
-//
-//   ENDED           (unmatched_at != null)
-//     - Same as post-interested visually, but the reach-out panel is hidden
-//       and we surface a "Match ended" notice up top.
+// Side effect on load: any 'pending' match flips to 'opened'.
 
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Lock, Sparkles, Download, Mail } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
-import { Section, Collapsible } from '@/components/report/v5-components'
+import {
+  Section,
+  EditorialSection,
+  Collapsible,
+  FactList,
+  Fact,
+} from '@/components/report/v5-components'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
-import { IssuesSection } from '@/components/report/issues-block'
+import { EditableTopCard } from '@/components/report/editable-top-card'
 import { MatchActions } from '@/components/partner/match-actions'
 import { StickyMatchActions } from '@/components/partner/sticky-actions'
 import { ScriptDownloadButton } from '@/components/partner/script-download-button'
 import { EmailWriterButton } from '@/components/partner/email-writer-button'
-import type { GEMEvaluation, LeadCharacter } from '@/types'
+import { getDisplayTopCard } from '@/lib/edited-fields'
+import { isScoreVisible, normalizePrivacy } from '@/lib/report-privacy'
+import {
+  normalizeEvaluation,
+  calculateWeightedScore,
+  DIMENSION_META,
+} from '@/types'
+import type {
+  GEMEvaluation,
+  LeadCharacter,
+  DimensionId,
+} from '@/types'
 
 export const dynamic = 'force-dynamic'
 
@@ -68,6 +75,8 @@ interface MatchRow {
     title: string
     declared_format: string | null
     user_id: string | null
+    tags: string[] | null
+    report_privacy: unknown
     profiles: {
       full_name: string | null
       email: string | null
@@ -91,25 +100,20 @@ interface MatchRow {
   } | null
 }
 
-function titleCase(s: string): string {
-  return s
-    .split(/[\s_-]+/)
-    .filter(Boolean)
-    .map((w) => w[0]?.toUpperCase() + w.slice(1).toLowerCase())
-    .join(' ')
-}
-
-const FORMAT_LABEL: Record<string, string> = {
-  feature: 'Feature',
-  series: 'Series',
-  'feature film': 'Feature',
-}
-
-const BUDGET_TAG_LABEL: Record<string, string> = {
-  micro: 'Sub-$1M',
-  indie: '$1–15M',
-  mid: '$15–50M',
-  studio: '$50M+',
+interface V5Extras {
+  positioning_hook?: string
+  lead_characters?: LeadCharacter[]
+  considerations?: {
+    area: string
+    detail: string
+    source?: string
+    is_primary_lever?: boolean
+  }[]
+  craft_note?: string
+  package_angles?: {
+    director_appeal: { hook: string; fit_profile?: string; detail: string }
+    buyer_appeal: { tier: string; lane: string; detail: string }
+  }
 }
 
 export default async function PartnerScriptDetailPage({ params }: PageProps) {
@@ -136,9 +140,6 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     redirect('/onboarding/producer')
   }
 
-  // Fetch the match + joined submission + most-recent evaluation + writer
-  // profile (so the post-Interested "reach out" panel can show name + email
-  // without a second round trip).
   const { data: matchRaw } = await supabase
     .from('script_matches')
     .select(
@@ -146,7 +147,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
       id, producer_id, status, comment, submission_id,
       unmatched_at, unmatched_by, unmatch_reason, producer_emailed_at,
       script_submissions (
-        id, title, declared_format, user_id,
+        id, title, declared_format, user_id, tags, report_privacy,
         profiles ( full_name, email ),
         script_evaluations ( id, weighted_score, tier, evaluation, edited_fields )
       )
@@ -157,8 +158,6 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
 
   const match = matchRaw as unknown as MatchRow | null
 
-  // Defense in depth — RLS already filters by producer_id, but guarantee the
-  // 404 if anyone slips through (e.g. preview env without RLS).
   if (!match || match.producer_id !== user.id) {
     notFound()
   }
@@ -170,36 +169,28 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     : sub.script_evaluations
   if (!evalRaw) notFound()
 
-  const evaluation = evalRaw.evaluation
+  const evaluation = evalRaw.evaluation as
+    | (GEMEvaluation & V5Extras)
+    | null
   if (!evaluation) notFound()
 
-  // Promote pending → opened on first view. We only update if status is
-  // pending; once a producer has reacted (interested/passed/commented),
-  // their action stays the source of truth.
+  // Promote pending → opened on first view.
   if (match.status === 'pending') {
     await supabase
       .from('script_matches')
       .update({ status: 'opened', opened_at: new Date().toISOString() })
       .eq('id', matchId)
       .eq('status', 'pending')
-    // mutate the local copy so the actions render reflects the new status.
     match.status = 'opened'
   }
 
-  // Compute display-ready bits.
-  const editedTitle =
-    typeof evalRaw.edited_fields?.title === 'string' &&
-    evalRaw.edited_fields.title.trim().length > 0
-      ? evalRaw.edited_fields.title.trim()
-      : null
-  const title = editedTitle ?? sub.title ?? 'Untitled'
-
-  const editedHeadline =
-    typeof evalRaw.edited_fields?.logline === 'string' &&
-    evalRaw.edited_fields.logline.trim().length > 0
-      ? evalRaw.edited_fields.logline.trim()
-      : null
-  const headline = editedHeadline ?? evaluation.positioning_hook ?? null
+  // Display-ready top card, identical to the writer's view.
+  const topCard = getDisplayTopCard(
+    evaluation,
+    evalRaw.edited_fields ?? null,
+    sub.title,
+    sub.tags ?? []
+  )
 
   const score =
     typeof evalRaw.weighted_score === 'number'
@@ -207,48 +198,48 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
       : evalRaw.weighted_score != null
         ? Number(evalRaw.weighted_score)
         : null
-  const tier = evalRaw.tier ?? null
 
-  const formatRaw = sub.declared_format ?? evaluation.classification?.format ?? ''
-  const formatTag = formatRaw
-    ? FORMAT_LABEL[formatRaw.toLowerCase()] || titleCase(formatRaw)
-    : null
+  // Score visibility: producer is a non-owner. Honor the writer's privacy
+  // toggle. If unset, default is visible.
+  const privacy = normalizePrivacy(sub.report_privacy)
+  const scoreShown =
+    typeof score === 'number' && !Number.isNaN(score) && isScoreVisible(privacy)
 
-  const genreTags: string[] = []
-  if (evaluation.classification?.genre_primary) {
-    genreTags.push(titleCase(evaluation.classification.genre_primary))
-  }
-  for (const t of evaluation.classification?.genre_tags ?? []) {
-    if (typeof t === 'string' && t.trim() && !genreTags.includes(titleCase(t))) {
-      genreTags.push(titleCase(t))
+  // Compute commercial score from per-dim scores when weighted_score isn't
+  // already on the eval row (legacy data path).
+  let commercialScore: number | null =
+    typeof score === 'number' && !Number.isNaN(score) ? score : null
+  if (commercialScore === null) {
+    try {
+      const s = (evaluation as GEMEvaluation).scores ?? {}
+      if (Object.keys(s).length >= 10) {
+        commercialScore = calculateWeightedScore(
+          s as Record<DimensionId, { score: number }>
+        )
+      }
+    } catch {
+      commercialScore = null
     }
   }
 
-  const budgetTier = evaluation.packaging?.budget_tier?.tier
-  const budgetTag = budgetTier
-    ? BUDGET_TAG_LABEL[budgetTier.toLowerCase()] || titleCase(budgetTier)
-    : null
-
-  const tags: string[] = []
-  if (formatTag) tags.push(formatTag)
-  for (const g of genreTags.slice(0, 3)) tags.push(g)
-  if (budgetTag) tags.push(budgetTag)
-
-  const whatsSpecial = evaluation.whats_special
-  const leadCharacters: LeadCharacter[] = evaluation.lead_characters ?? []
-  const packaging = evaluation.packaging
+  // Body data — same shape as the writer's report page.
+  const { whatsSpecial } = normalizeEvaluation(evaluation)
+  const allStrengths = whatsSpecial.strengths ?? []
+  const leadCharacters = evaluation.lead_characters ?? []
+  const considerations = evaluation.considerations ?? []
+  const packageAngles = evaluation.package_angles
+  const production = evaluation.production_reality
+  const scores = evaluation.scores ?? {}
+  const craftNote = evaluation.craft_note ?? null
   const riskDetails = evaluation.risk_details
-  const issues = evaluation.issues
+  const packaging = evaluation.packaging
 
-  // Gate state. `interested` and `commented` both unlock the full report
-  // and the reach-out panel; `passed` falls through to the gated view but
-  // shows the "passed" pill in the action bar.
-  const isUnlocked = match.status === 'interested' || match.status === 'commented'
+  // Gate state.
+  const isUnlocked =
+    match.status === 'interested' || match.status === 'commented'
   const isUnmatched = !!match.unmatched_at
 
-  // Writer identity for the post-Interested reach-out panel. Falls back to
-  // the email local-part if full_name isn't set (writers can sign up via
-  // OAuth without one).
+  // Writer identity for the post-Interested reach-out panel.
   const writerProfile = sub.profiles ?? null
   const writerEmail = writerProfile?.email ?? null
   const writerName = (() => {
@@ -257,7 +248,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     if (writerEmail) return writerEmail.split('@')[0]
     return null
   })()
-  const mailtoSubject = `Re: ${title} — via GEM`
+  const mailtoSubject = `Re: ${topCard.title} — via GEM`
   const mailtoHref = writerEmail
     ? `mailto:${writerEmail}?subject=${encodeURIComponent(mailtoSubject)}`
     : null
@@ -265,8 +256,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
   return (
     <>
       <Nav />
-      {/* pb-24 leaves room for the sticky bottom action bar */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-24">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10 pb-24">
         {/* Back link */}
         <Link
           href="/partner"
@@ -276,11 +266,10 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
           Back to your inbox
         </Link>
 
-        {/* Unmatched notice — surfaced above the hero so the producer sees
-            why the action surface is locked down. */}
+        {/* Match-ended notice. */}
         {isUnmatched && (
           <div
-            className="mb-4 rounded-lg px-4 py-3 text-[13px] text-[var(--gem-gray-200)]"
+            className="mb-6 rounded-lg px-4 py-3 text-[13px] text-[var(--gem-gray-200)]"
             style={{
               background: 'var(--gem-gray-900)',
               border: '1px solid var(--gem-gray-700)',
@@ -294,144 +283,93 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Top hero */}
-        <div
-          className="relative rounded-2xl overflow-hidden mb-10"
-          style={{
-            background:
-              'radial-gradient(ellipse at 0% 0%, rgba(212,160,23,0.07) 0%, transparent 55%), radial-gradient(ellipse at 100% 0%, rgba(124,58,237,0.06) 0%, transparent 55%), #fff',
-            border: '1.5px solid var(--gem-accent)',
-            boxShadow:
-              '0 4px 20px rgba(124,58,237,0.10), 0 1px 4px rgba(0,0,0,0.04)',
-          }}
-        >
-          <div className="px-6 sm:px-8 pt-6 pb-5">
-            <div className="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-3 items-start">
-              <div className="min-w-0">
-                <div
-                  aria-hidden
-                  style={{
-                    width: 48,
-                    height: 2,
-                    background: 'var(--gem-gold)',
-                    borderRadius: 1,
-                    marginBottom: 12,
-                  }}
-                />
-                <h1 className="text-[28px] sm:text-[34px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.1] m-0">
-                  {title}
-                </h1>
-                {headline && (
-                  <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.5] mt-3 m-0 max-w-[64ch]">
-                    {headline}
-                  </p>
-                )}
-                {tags.length > 0 && (
-                  <div className="flex gap-1.5 flex-wrap mt-4">
-                    {tags.map((t, i) => (
-                      <span
-                        key={i}
-                        className="text-[12px] font-medium px-2.5 py-1 rounded-full"
-                        style={{
-                          background: '#fff',
-                          border: '1px solid var(--gem-gray-700)',
-                          color: 'var(--gem-gray-300)',
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
+        {/* TOP CARD — same component the writer sees. Read-only here
+            (isOwner=false hides the Edit button + tag editing). Score badge
+            honors the writer's privacy toggle. */}
+        <EditableTopCard
+          evaluationId={evalRaw.id}
+          submissionId={sub.id}
+          initial={topCard}
+          isOwner={false}
+          hasEdits={false}
+          postedAt={null}
+          authorName={writerName}
+          commercialScore={scoreShown ? commercialScore : null}
+        />
 
-              {typeof score === 'number' && (
-                <div className="flex flex-col items-end shrink-0 min-w-[130px]">
-                  <div
-                    className="leading-none tabular-nums font-extrabold tracking-tight"
-                    style={{
-                      fontSize: 56,
-                      color: 'var(--gem-accent)',
-                    }}
-                  >
-                    {score.toFixed(1)}
-                    <span
-                      className="font-bold ml-0.5"
-                      style={{ fontSize: 24, color: 'var(--gem-gray-500)' }}
-                    >
-                      /100
-                    </span>
-                  </div>
-                  <p
-                    className="text-[10px] uppercase tracking-[0.18em] font-semibold m-0 mt-1.5"
-                    style={{ color: 'var(--gem-gray-500)' }}
-                  >
-                    GEM score
-                  </p>
-                  {tier && (
-                    <p
-                      className="text-[11px] uppercase tracking-[0.16em] font-bold m-0 mt-2"
-                      style={{ color: 'var(--gem-gold)' }}
-                    >
-                      {tier}
-                    </p>
-                  )}
-                </div>
-              )}
-            </div>
-
-            <div
-              className="mt-5 pt-4"
-              style={{ borderTop: '1px solid rgba(124,58,237,0.18)' }}
-            >
-              {/* Pre-Interested + post-Interested both expose Interested/Pass.
-                  Comment is gone — the message thread below replaces it. */}
-              <MatchActions
-                matchId={match.id}
-                status={match.status}
-                variant="detail"
-                hideComment
-              />
-            </div>
+        {/* Producer action row — Interested / Pass. Sits right under the
+            top card so the primary decision is unmissable. */}
+        {!isUnmatched && (
+          <div className="mb-10">
+            <MatchActions
+              matchId={match.id}
+              status={match.status}
+              variant="detail"
+              hideComment
+            />
           </div>
-        </div>
-
-        {/* WHY THIS COULD BE A HIT — pre-Interested shows ONLY the headline
-            (no expandable strengths). Post-Interested gets the full
-            collapsible strengths list. */}
-        {whatsSpecial && (whatsSpecial.headline || (whatsSpecial.strengths?.length ?? 0) > 0) && (
-          <Section
-            label="Why this could be a hit"
-            subtitle={whatsSpecial.headline}
-          >
-            {isUnlocked ? (
-              <div className="space-y-3">
-                {(whatsSpecial.strengths ?? []).map((s, i) => (
-                  <Collapsible
-                    key={i}
-                    number={i + 1}
-                    title={s.dimension_or_area}
-                    defaultOpen={i === 0}
-                  >
-                    <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                      {s.what_it_means}
-                    </p>
-                  </Collapsible>
-                ))}
-              </div>
-            ) : (
-              // Pre-Interested: headline only. We render the
-              // <Section subtitle> above as the entire body in this mode.
-              <p className="text-[13px] italic text-[var(--gem-gray-400)] m-0">
-                Mark Interested below to read the full breakdown.
-              </p>
-            )}
-          </Section>
         )}
 
-        {/* GATE CARD — shown pre-Interested. Tells the producer what the
-            unlock buys them. Big violet panel, intentionally heavy so it
-            reads as the next step on the page. */}
+        {/* WHY THIS IS A HIT — exposed lede for everyone (pre + post
+            Interested). Lede is always visible because it IS the pitch.
+            Post-Interested also gets the "See all reasons" disclosure
+            below. */}
+        {(whatsSpecial.headline || allStrengths.length > 0) && (
+          <EditorialSection label="Why this is a hit" accent="gold">
+            {whatsSpecial.headline && (
+              <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-6 max-w-[62ch] font-medium">
+                {whatsSpecial.headline}
+              </p>
+            )}
+            {isUnlocked && allStrengths.length > 0 && (
+              <details className="group [&_summary::-webkit-details-marker]:hidden">
+                <summary className="cursor-pointer list-none inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gold)] transition-colors mb-2">
+                  <span>
+                    See all {allStrengths.length}{' '}
+                    {allStrengths.length === 1 ? 'reason' : 'reasons'}
+                  </span>
+                  <span
+                    aria-hidden
+                    className="transition-transform duration-150 group-open:rotate-180"
+                  >
+                    ▾
+                  </span>
+                </summary>
+                <ol className="list-none m-0 p-0 mt-5 sm:mt-6 space-y-5 sm:space-y-7">
+                  {allStrengths.map((s, i) => (
+                    <li
+                      key={i}
+                      className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4"
+                    >
+                      <span
+                        className="text-[18px] sm:text-[22px] font-bold tabular-nums leading-tight"
+                        style={{ color: 'var(--gem-gold)' }}
+                      >
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-tight">
+                          {s.dimension_or_area}
+                        </p>
+                        <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0">
+                          {s.what_it_means}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            )}
+            {!isUnlocked && allStrengths.length > 0 && (
+              <p className="text-[13px] italic text-[var(--gem-gray-500)] m-0">
+                Mark Interested to read the full breakdown.
+              </p>
+            )}
+          </EditorialSection>
+        )}
+
+        {/* PRE-INTERESTED GATE — the producer's clear next step. Tells them
+            what marking Interested unlocks. Hidden post-Interested. */}
         {!isUnlocked && !isUnmatched && (
           <div
             className="rounded-2xl px-6 sm:px-8 py-7 mb-12"
@@ -458,7 +396,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               </span>
               <div className="min-w-0">
                 <h3 className="text-[18px] sm:text-[20px] font-extrabold tracking-tight text-[var(--gem-gray-50)] m-0 mb-1 leading-tight">
-                  Mark Interested to unlock
+                  Mark Interested to unlock the full report
                 </h3>
                 <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-snug max-w-[60ch]">
                   Interested signals to the writer that you want to read the
@@ -473,7 +411,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               />
               <UnlockBullet
                 icon={<Sparkles size={14} />}
-                label="Lead characters, packaging notes, risk profile, and the full case-against"
+                label="Lead characters, packaging, project risks, and the issues breakdown"
               />
               <UnlockBullet
                 icon={<Mail size={14} />}
@@ -491,11 +429,12 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* POST-INTERESTED full report — packaging, risks, leads, issues. */}
+        {/* POST-INTERESTED — full report sections, same order as writer's
+            view: Lead characters → Package angles → Packaging → Issues →
+            Project risks → Narrative breakdown → Production planning. */}
         {isUnlocked && (
           <>
-            {/* Script download — the producer's single most important
-                unlock. Surfaced first so they don't have to scroll. */}
+            {/* Script download — surfaced first on unlock. */}
             <div
               className="rounded-xl px-5 py-5 mb-10 flex items-start gap-4 flex-wrap"
               style={{
@@ -504,7 +443,10 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               }}
             >
               <div className="min-w-0 flex-1">
-                <p className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1" style={{ color: '#059669' }}>
+                <p
+                  className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1"
+                  style={{ color: '#059669' }}
+                >
                   Script unlocked
                 </p>
                 <p className="text-[14.5px] text-[var(--gem-gray-100)] m-0 leading-snug">
@@ -514,13 +456,12 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               <ScriptDownloadButton matchId={match.id} />
             </div>
 
-            {packaging && <PackagingSection data={packaging} />}
-            {riskDetails && <RiskDetailsSection data={riskDetails} />}
-
+            {/* LEAD CHARACTERS */}
             {leadCharacters.length > 0 && (
               <Section
                 label="Lead characters"
                 subtitle="The parts inside this script and why an actor would chase them."
+                summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
               >
                 <div className="space-y-3">
                   {leadCharacters.map((c, i) => (
@@ -528,7 +469,6 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                       key={i}
                       title={c.name}
                       meta={`${c.role_type} · ${c.demographics}`}
-                      defaultOpen={i === 0}
                     >
                       <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
                         {c.hook}
@@ -556,19 +496,386 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               </Section>
             )}
 
-            {issues && (issues.items?.length > 0 || issues.headline) && (
-              <IssuesSection data={issues} />
+            {/* PACKAGE ANGLES */}
+            {packageAngles && (
+              <Section
+                label="Package angles"
+                subtitle="Who would direct it, and who would buy it."
+                summary={`Director appeal · ${packageAngles.buyer_appeal?.tier ?? 'buyer appeal'}`}
+              >
+                <div className="space-y-3">
+                  <Collapsible
+                    title="Why a director wants this"
+                    accent="#059669"
+                  >
+                    <p className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0">
+                      {packageAngles.director_appeal.hook}
+                    </p>
+                    {packageAngles.director_appeal.fit_profile && (
+                      <div
+                        className="rounded-lg p-5 mb-4"
+                        style={{
+                          background: 'rgba(5,150,105,0.07)',
+                          border: '1px solid rgba(5,150,105,0.20)',
+                        }}
+                      >
+                        <p
+                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                          style={{ color: '#059669' }}
+                        >
+                          Director fit profile
+                        </p>
+                        <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                          {packageAngles.director_appeal.fit_profile}
+                        </p>
+                      </div>
+                    )}
+                    <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                      {packageAngles.director_appeal.detail}
+                    </p>
+                  </Collapsible>
+                  <Collapsible
+                    title="Why a buyer wants this"
+                    meta={packageAngles.buyer_appeal.tier}
+                    accent="#059669"
+                  >
+                    <p className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0">
+                      {packageAngles.buyer_appeal.lane}
+                    </p>
+                    <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                      {packageAngles.buyer_appeal.detail}
+                    </p>
+                  </Collapsible>
+                </div>
+              </Section>
             )}
 
-            {/* REACH OUT TO THE WRITER — producer-side. Replaces the old
-                in-app thread; all conversation now happens over email and
-                GEM just tracks that the introduction happened. The writer
-                also got an email with the producer's name + email when
-                Interested fired. Hidden once the match is unmatched. */}
+            {/* PACKAGING (v5.4) */}
+            {packaging && <PackagingSection data={packaging} />}
+
+            {/* ISSUES — same lede + see-more as the writer's view. */}
+            {(considerations.length > 0 || craftNote) && (() => {
+              const primary = considerations.find(
+                (c) => c.is_primary_lever === true
+              )
+              const secondary = considerations.filter(
+                (c) => c.is_primary_lever !== true
+              )
+              const moreCount = secondary.length + (craftNote ? 1 : 0)
+              return (
+                <EditorialSection label="Issues" accent="violet">
+                  {primary ? (
+                    <div className="relative pl-5 sm:pl-6 mb-5 sm:mb-6">
+                      <div
+                        aria-hidden
+                        className="absolute left-0 top-1 bottom-1 rounded-sm"
+                        style={{ width: 3, background: '#dc2626' }}
+                      />
+                      <p
+                        className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+                        style={{ color: '#dc2626' }}
+                      >
+                        Sharpest lever
+                      </p>
+                      <p className="text-[18px] sm:text-[22px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0 mb-2.5">
+                        {primary.area}
+                      </p>
+                      <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0">
+                        {primary.detail}
+                      </p>
+                    </div>
+                  ) : secondary[0] ? (
+                    <div className="mb-5 sm:mb-6">
+                      <p className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-2 leading-tight">
+                        {secondary[0].area}
+                      </p>
+                      <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]">
+                        {secondary[0].detail}
+                      </p>
+                    </div>
+                  ) : null}
+                  {moreCount > 0 && (
+                    <details className="group [&_summary::-webkit-details-marker]:hidden">
+                      <summary className="cursor-pointer list-none inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-accent)] transition-colors">
+                        <span>
+                          See {moreCount} more{' '}
+                          {moreCount === 1 ? 'note' : 'notes'}
+                        </span>
+                        <span
+                          aria-hidden
+                          className="transition-transform duration-150 group-open:rotate-180"
+                        >
+                          ▾
+                        </span>
+                      </summary>
+                      <div className="mt-5 sm:mt-6 space-y-5 sm:space-y-6">
+                        {craftNote && (
+                          <div className="relative pl-5 sm:pl-6">
+                            <div
+                              aria-hidden
+                              className="absolute left-0 top-1 bottom-1 rounded-sm"
+                              style={{ width: 3, background: '#059669' }}
+                            />
+                            <p
+                              className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+                              style={{ color: '#059669' }}
+                            >
+                              Craft note
+                            </p>
+                            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0">
+                              {craftNote}
+                            </p>
+                          </div>
+                        )}
+                        {secondary.slice(primary ? 0 : 1).map((c, i) => (
+                          <div key={i}>
+                            <p className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 mb-1 leading-tight">
+                              {c.area}
+                            </p>
+                            <p className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+                              {c.detail}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+                </EditorialSection>
+              )
+            })()}
+
+            {/* PROJECT RISKS */}
+            {riskDetails ? (
+              <RiskDetailsSection data={riskDetails} />
+            ) : production?.risk_rubric ? (
+              <Section
+                label="Project risks"
+                subtitle="Cost, cast, and content complexity at a glance."
+                summary={[
+                  production.risk_rubric.cost
+                    ? `Cost ${production.risk_rubric.cost.level}`
+                    : null,
+                  production.risk_rubric.cast
+                    ? `Cast ${production.risk_rubric.cast.level}`
+                    : null,
+                  production.risk_rubric.content
+                    ? `Content ${production.risk_rubric.content.level}`
+                    : null,
+                ]
+                  .filter(Boolean)
+                  .join(' · ')}
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {production.risk_rubric.cost && (
+                    <RiskTile
+                      label="Production cost"
+                      axis={production.risk_rubric.cost}
+                    />
+                  )}
+                  {production.risk_rubric.cast && (
+                    <RiskTile
+                      label="Cast complexity"
+                      axis={production.risk_rubric.cast}
+                    />
+                  )}
+                  {production.risk_rubric.content && (
+                    <RiskTile
+                      label="Content maturity"
+                      axis={production.risk_rubric.content}
+                    />
+                  )}
+                </div>
+              </Section>
+            ) : null}
+
+            {/* NARRATIVE BREAKDOWN */}
+            {scores &&
+              Object.values(scores).some((s) => typeof s?.score === 'number') && (
+                <Section
+                  label="Narrative breakdown"
+                  subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+                  summary="10 craft dimensions"
+                >
+                  <div className="space-y-3">
+                    {(Object.keys(DIMENSION_META) as DimensionId[]).map(
+                      (dimId) => {
+                        const s = scores?.[dimId]
+                        if (typeof s?.score !== 'number') return null
+                        const meta = DIMENSION_META[dimId]
+                        return (
+                          <DimensionRow
+                            key={dimId}
+                            label={meta.label}
+                            score={s.score}
+                            reasoning={s.reasoning}
+                          />
+                        )
+                      }
+                    )}
+                  </div>
+                </Section>
+              )}
+
+            {/* PRODUCTION PLANNING DETAILS */}
+            {production && (
+              <Section
+                label="Production planning details"
+                subtitle="Everything the script tells us about how it would actually get made."
+                summary="Cast · Locations · Technical · Platform · Rights"
+              >
+                <div className="space-y-3">
+                  <Collapsible
+                    title="Cast"
+                    meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
+                  >
+                    <FactList>
+                      <Fact
+                        k="Speaking roles"
+                        v={production.cast?.speaking_roles}
+                      />
+                      <Fact k="Leads" v={production.cast?.leads} />
+                      {(production.cast?.series_regulars ?? 0) > 0 && (
+                        <Fact
+                          k="Series regulars"
+                          v={production.cast?.series_regulars}
+                        />
+                      )}
+                      {production.cast?.child_actors && (
+                        <Fact k="Child actors" v="Yes" />
+                      )}
+                      {production.cast?.casting_challenges?.length ? (
+                        <Fact
+                          k="Casting"
+                          v={production.cast.casting_challenges.join(', ')}
+                        />
+                      ) : null}
+                    </FactList>
+                  </Collapsible>
+                  <Collapsible
+                    title="Locations & Scale"
+                    meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
+                  >
+                    <FactList>
+                      <Fact
+                        k="Distinct locations"
+                        v={production.locations?.distinct_count}
+                      />
+                      <Fact
+                        k="Int / Ext"
+                        v={
+                          production.locations?.interior_exterior_ratio ??
+                          production.locations?.interior_exterior_mix
+                        }
+                      />
+                      <Fact
+                        k="Era"
+                        v={production.locations?.period_or_contemporary}
+                      />
+                      {production.locations?.expensive_flags?.length ? (
+                        <Fact
+                          k="Notable"
+                          v={production.locations.expensive_flags.join(', ')}
+                        />
+                      ) : null}
+                    </FactList>
+                  </Collapsible>
+                  <Collapsible
+                    title="Technical"
+                    meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
+                  >
+                    <FactList>
+                      <Fact
+                        k="VFX"
+                        v={
+                          (production.technical?.vfx_level ?? '') +
+                          (production.technical?.vfx_details
+                            ? ` — ${production.technical.vfx_details}`
+                            : '')
+                        }
+                      />
+                      <Fact
+                        k="Stunts"
+                        v={
+                          production.technical?.stunts_level ??
+                          production.technical?.stunts
+                        }
+                      />
+                      {production.technical?.sfx_needs && (
+                        <Fact k="SFX" v={production.technical.sfx_needs} />
+                      )}
+                      {production.technical?.night_shoots && (
+                        <Fact
+                          k="Night shoots"
+                          v={production.technical.night_shoots}
+                        />
+                      )}
+                      {production.technical?.animals && (
+                        <Fact k="Animals" v="Yes" />
+                      )}
+                    </FactList>
+                  </Collapsible>
+                  <Collapsible
+                    title="Platform & Content"
+                    meta={production.platform_fit?.recommended_lane}
+                  >
+                    <FactList>
+                      <Fact
+                        k="Lane"
+                        v={production.platform_fit?.recommended_lane}
+                      />
+                      <Fact
+                        k="Content"
+                        v={production.platform_fit?.content_level}
+                      />
+                      {production.platform_fit?.series_engine_or_release_model && (
+                        <Fact
+                          k="Model"
+                          v={
+                            production.platform_fit
+                              .series_engine_or_release_model
+                          }
+                        />
+                      )}
+                    </FactList>
+                  </Collapsible>
+                  {production.rights_flags?.length ? (
+                    <Collapsible
+                      title="Rights & Clearance"
+                      meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
+                    >
+                      <ul className="space-y-3 list-none p-0 m-0">
+                        {production.rights_flags.map((r, i) => {
+                          const text =
+                            typeof r === 'string'
+                              ? r
+                              : `${r.type}: ${r.detail}`
+                          return (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[16px] text-[var(--gem-gray-100)] leading-[1.55]"
+                            >
+                              <span className="text-[var(--gem-gold)] flex-shrink-0">
+                                •
+                              </span>
+                              <span>{text}</span>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </Collapsible>
+                  ) : null}
+                </div>
+              </Section>
+            )}
+
+            {/* REACH OUT TO THE WRITER — producer-only. Hidden once
+                unmatched. */}
             {!isUnmatched && (
               <Section
                 label="Reach out to the writer"
                 subtitle="GEM facilitated this introduction. All further conversation happens over email."
+                defaultOpen
+                summary={writerName ?? 'Writer'}
               >
                 <div
                   className="rounded-xl px-5 py-5 flex flex-wrap items-start gap-4"
@@ -590,7 +897,6 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                   >
                     <Mail size={18} strokeWidth={2.25} />
                   </span>
-
                   <div className="min-w-0 flex-1">
                     <p className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
                       {writerName ?? 'Writer'}
@@ -598,13 +904,15 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                     {writerEmail && (
                       <p
                         className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug"
-                        style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace' }}
+                        style={{
+                          fontFamily:
+                            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+                        }}
                       >
                         {writerEmail}
                       </p>
                     )}
                   </div>
-
                   {mailtoHref ? (
                     <EmailWriterButton
                       matchId={match.id}
@@ -623,8 +931,9 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
         )}
       </div>
 
-      {/* Sticky bottom action bar — repeats the hero CTAs so a producer can
-          react from anywhere on the page. Hidden once the match is ended. */}
+      {/* Sticky bottom action bar — repeats Interested/Pass so the producer
+          can react from anywhere on the page. Hidden when the match has
+          ended. */}
       {!isUnmatched && (
         <StickyMatchActions matchId={match.id} status={match.status} />
       )}
@@ -655,5 +964,104 @@ function UnlockBullet({
       </span>
       <span>{label}</span>
     </li>
+  )
+}
+
+function RiskTile({
+  label,
+  axis,
+}: {
+  label: string
+  axis: { level: 'low' | 'medium' | 'high'; note: string }
+}) {
+  const palette =
+    axis.level === 'low'
+      ? {
+          border: 'rgba(5,150,105,0.35)',
+          bg: 'rgba(5,150,105,0.07)',
+          text: '#059669',
+        }
+      : axis.level === 'medium'
+        ? {
+            border: 'rgba(217,119,6,0.35)',
+            bg: 'rgba(217,119,6,0.07)',
+            text: '#d97706',
+          }
+        : {
+            border: 'rgba(220,38,38,0.35)',
+            bg: 'rgba(220,38,38,0.07)',
+            text: '#dc2626',
+          }
+  return (
+    <div
+      className="rounded-xl p-5"
+      style={{ border: `1px solid ${palette.border}`, background: palette.bg }}
+    >
+      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+        {label}
+      </p>
+      <p
+        className="text-[20px] font-bold capitalize m-0 mb-2"
+        style={{ color: palette.text }}
+      >
+        {axis.level}
+      </p>
+      <p className="text-[13px] text-[var(--gem-gray-300)] leading-[1.5] m-0">
+        {axis.note}
+      </p>
+    </div>
+  )
+}
+
+function DimensionRow({
+  label,
+  score,
+  reasoning,
+}: {
+  label: string
+  score: number
+  reasoning: string
+}) {
+  const palette =
+    score >= 8
+      ? { text: '#059669', fill: '#059669' }
+      : score >= 5
+        ? { text: '#d97706', fill: '#d97706' }
+        : { text: '#dc2626', fill: '#dc2626' }
+  const pct = Math.max(0, Math.min(100, score * 10))
+  return (
+    <div
+      className="rounded-xl p-5"
+      style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
+    >
+      <div className="flex items-baseline justify-between gap-4 mb-3">
+        <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+          {label}
+        </p>
+        <div className="flex items-baseline gap-1 flex-shrink-0">
+          <span
+            className="text-[26px] font-bold tabular-nums"
+            style={{ color: palette.text }}
+          >
+            {score}
+          </span>
+          <span className="text-[13px] text-[var(--gem-gray-400)]">/ 10</span>
+        </div>
+      </div>
+      <div
+        className="h-1.5 rounded-full mb-4 overflow-hidden"
+        style={{ background: 'var(--gem-gray-800)' }}
+      >
+        <div
+          className="h-full rounded-full"
+          style={{ width: `${pct}%`, background: palette.fill }}
+        />
+      </div>
+      {reasoning && (
+        <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+          {reasoning}
+        </p>
+      )}
+    </div>
   )
 }

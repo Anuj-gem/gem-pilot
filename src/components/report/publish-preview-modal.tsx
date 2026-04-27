@@ -389,6 +389,28 @@ export function PublishPreviewModal({
             </p>
           </div>
 
+          {/* Score visibility toggle — separate from sections because score
+              isn't a section, it's a top-card element. Default is on (score
+              shown). Owners always see their own score regardless. */}
+          <div className="rounded-xl border border-[var(--gem-gray-700)] px-4 py-3 flex items-center gap-3 mb-3">
+            <Eye size={16} className="flex-shrink-0 text-[var(--gem-gray-500)]" />
+            <div className="flex-1 min-w-0">
+              <p className="text-[13px] font-semibold text-[var(--gem-gray-50)] m-0">
+                Show your score to industry partners
+              </p>
+              <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-0.5 leading-snug">
+                Hide if you&apos;d rather they read the report on its own merit.
+              </p>
+            </div>
+            <Switch
+              on={privacy.show_score !== false}
+              onChange={(on) =>
+                setPrivacy((p) => ({ ...p, show_score: on }))
+              }
+              disabled={submitting}
+            />
+          </div>
+
           {/* Contact toggle — lives inside the modal now instead of a
               separate panel. */}
           <div className="rounded-xl border border-[var(--gem-gray-700)] px-4 py-3 flex items-center gap-3 mb-4">

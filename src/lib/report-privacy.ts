@@ -116,6 +116,10 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
 export interface ReportPrivacy {
   version: 1
   sections: Partial<Record<SectionKey, Visibility>>
+  /** Whether the commercial score badge is visible to non-owners on the
+   *  report page top card. Defaults to true (score visible) when unset.
+   *  Owners always see their own score regardless. */
+  show_score?: boolean
   migrated_at?: string
 }
 
@@ -244,7 +248,7 @@ export function matchPreset(privacy: ReportPrivacy | null | undefined): PresetKe
 export function normalizePrivacy(input: unknown): ReportPrivacy {
   const empty: ReportPrivacy = { version: 1, sections: {} }
   if (!input || typeof input !== 'object') return empty
-  const maybe = input as { version?: number; sections?: Record<string, unknown> }
+  const maybe = input as { version?: number; sections?: Record<string, unknown>; show_score?: unknown }
   const sections: Partial<Record<SectionKey, Visibility>> = {}
   if (maybe.sections && typeof maybe.sections === 'object') {
     for (const k of SECTION_KEYS) {
@@ -254,7 +258,20 @@ export function normalizePrivacy(input: unknown): ReportPrivacy {
       }
     }
   }
-  return { version: 1, sections }
+  const out: ReportPrivacy = { version: 1, sections }
+  if (typeof maybe.show_score === 'boolean') {
+    out.show_score = maybe.show_score
+  }
+  return out
+}
+
+/** Whether the score badge should render for a non-owner viewer. Defaults to
+ *  true; only false if the writer explicitly turned it off. Owners always
+ *  see their own score regardless of this flag. */
+export function isScoreVisible(
+  privacy: ReportPrivacy | null | undefined
+): boolean {
+  return privacy?.show_score !== false
 }
 
 /** Default privacy used when creating a new published report. */
