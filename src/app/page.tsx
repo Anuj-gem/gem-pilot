@@ -121,10 +121,22 @@ export default async function Home({
           </Link>
           <div className="hidden sm:flex items-center gap-4">
             <Link
-              href="/discover"
+              href="/writers"
+              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
+            >
+              Writers
+            </Link>
+            <Link
+              href="/industry"
               className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
             >
               Industry
+            </Link>
+            <Link
+              href="/selznick"
+              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
+            >
+              Selznick
             </Link>
             <Link
               href="/login"
@@ -147,6 +159,113 @@ export default async function Home({
 
       {/* HERO (client) */}
       <LandingHero />
+
+      <div className="h-px bg-[var(--gem-gray-700)]" />
+
+      {/* THREE PILLARS — dual-audience teases. Each card links to its
+          dedicated product page (/writers, /industry, /selznick).
+          Anuj 2026-04-28: GEM is a network now, not a writer-only tool.
+          The pillars frame both sides + the methodology in one row. */}
+      <section className="px-4 sm:px-6 py-12 sm:py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-[11px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-400)] m-0 mb-3">
+              How it works
+            </p>
+            <h2 className="text-[28px] sm:text-[36px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-[1.15] m-0 max-w-[24ch] mx-auto font-[family-name:var(--font-display)]">
+              A network that connects writers and industry through one rubric.
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
+            <Link
+              href="/writers"
+              className="group rounded-2xl p-6 transition-all hover:border-[var(--gem-gold)]"
+              style={{
+                background: '#fff',
+                border: '1px solid var(--gem-gray-700)',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+              }}
+            >
+              <p
+                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
+                style={{ color: 'var(--gem-gold)' }}
+              >
+                For writers
+              </p>
+              <h3 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
+                A real read on your script — and the industry to actually see it.
+              </h3>
+              <p className="text-[14px] text-[var(--gem-gray-300)] leading-snug m-0 mb-4">
+                Upload your screenplay. Get a producer&apos;s-eye report in 60
+                seconds. Decide who in the industry sees it.
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-gold)] transition-colors">
+                See the writer product
+                <ArrowRight size={13} />
+              </span>
+            </Link>
+
+            <Link
+              href="/industry"
+              className="group rounded-2xl p-6 transition-all hover:border-[var(--gem-accent)]"
+              style={{
+                background: '#fff',
+                border: '1px solid var(--gem-gray-700)',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+              }}
+            >
+              <p
+                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
+                style={{ color: 'var(--gem-accent)' }}
+              >
+                For industry
+              </p>
+              <h3 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
+                A curated, matched feed of new screenplays.
+              </h3>
+              <p className="text-[14px] text-[var(--gem-gray-300)] leading-snug m-0 mb-4">
+                Producer and rep accounts are vetted. Scripts come pre-read and
+                lane-matched. Intros routed by GEM, replies straight to your
+                inbox.
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-accent)] transition-colors">
+                See the industry product
+                <ArrowRight size={13} />
+              </span>
+            </Link>
+
+            <Link
+              href="/selznick"
+              className="group rounded-2xl p-6 transition-all hover:border-[var(--gem-gold)]"
+              style={{
+                background: '#fff',
+                border: '1px solid var(--gem-gray-700)',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+              }}
+            >
+              <p
+                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
+                style={{ color: 'var(--gem-gold)' }}
+              >
+                The rubric
+              </p>
+              <h3 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
+                Selznick — the producer&apos;s-eye lens.
+              </h3>
+              <p className="text-[14px] text-[var(--gem-gray-300)] leading-snug m-0 mb-4">
+                Narrative, cast, production, packaging — calibrated to the
+                signals that historically predict whether a project finds an
+                audience.
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-gold)] transition-colors">
+                See how GEM reads scripts
+                <ArrowRight size={13} />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
 
@@ -592,21 +711,33 @@ export default async function Home({
             />
           </div>
 
-          <div className="flex items-center gap-4 flex-wrap">
-            <a
-              href={INDUSTRY_APPLY_URL}
+          <div className="flex items-center gap-3 flex-wrap">
+            <Link
+              href="/industry"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[14px] font-semibold text-white transition-colors hover:brightness-110"
               style={{
                 background: 'var(--gem-accent)',
                 boxShadow: '0 4px 14px rgba(124,58,237,0.18)',
               }}
             >
-              Apply for industry access
+              See the industry product
+              <ArrowRight size={14} />
+            </Link>
+            <a
+              href={INDUSTRY_APPLY_URL}
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-semibold transition-colors hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]"
+              style={{
+                border: '1px solid var(--gem-gray-700)',
+                background: 'transparent',
+                color: 'var(--gem-gray-50)',
+              }}
+            >
+              Apply for access
             </a>
-            <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
-              Hand-reviewed · most replies within 48 hours
-            </p>
           </div>
+          <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-3">
+            Hand-reviewed · most replies within 48 hours
+          </p>
         </div>
       </section>
 
