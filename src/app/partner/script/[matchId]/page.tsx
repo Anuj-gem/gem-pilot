@@ -724,24 +724,31 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               </Section>
             ) : null}
 
-            {/* REFERENCE — Score detail + Production planning grouped under
-                a collapsible disclosure folded by default. Anuj
-                2026-04-28. */}
+            {/* REFERENCE — collapsible disclosure folded by default.
+                Anuj 2026-04-28. */}
             <details className="group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="cursor-pointer list-none mb-3">
-                <div className="flex items-center gap-3">
-                  <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-500)] group-hover:text-[var(--gem-gray-300)] transition-colors">
+              <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
+                <div
+                  aria-hidden
+                  className="w-12 h-0.5 mb-3 rounded-sm"
+                  style={{ background: 'var(--gem-accent)' }}
+                />
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-tight m-0">
                     Reference
-                  </span>
-                  <span className="flex-1 h-px bg-[var(--gem-gray-800)]" />
+                  </h2>
                   <span
                     aria-hidden
-                    className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                    className="text-[var(--gem-gray-400)] transition-transform duration-200 group-open:rotate-180 text-[18px]"
                   >
                     ▾
                   </span>
                 </div>
+                <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-1.5">
+                  Tap to see the per-dimension scores and full production planning facts.
+                </p>
               </summary>
+              <div className="mt-5">
 
             {/* SCORE DETAIL (was "Narrative breakdown") */}
             {scores &&
@@ -925,6 +932,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                 </div>
               </Section>
             )}
+              </div>
             </details>
 
             {/* REACH OUT TO THE WRITER — producer-only. Hidden once
