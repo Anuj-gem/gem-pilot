@@ -39,7 +39,7 @@ import { EditableTopCard } from '@/components/report/editable-top-card'
 import { MatchActions } from '@/components/partner/match-actions'
 import { StickyMatchActions } from '@/components/partner/sticky-actions'
 import { ScriptDownloadButton } from '@/components/partner/script-download-button'
-import { EmailWriterButton } from '@/components/partner/email-writer-button'
+import { ProducerIntroButton } from '@/components/partner/producer-intro-button'
 import { getDisplayTopCard } from '@/lib/edited-fields'
 import { isScoreVisible, normalizePrivacy, resolveVisibility } from '@/lib/report-privacy'
 import {
@@ -246,19 +246,17 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     match.status === 'interested' || match.status === 'commented'
   const isUnmatched = !!match.unmatched_at
 
-  // Writer identity for the post-Interested reach-out panel.
+  // Writer display name for the reach-out panel. The writer's EMAIL is
+  // intentionally never exposed to the producer — intros go through the
+  // /api/partner/match/[id]/intro endpoint which sends a Postmark email
+  // with ReplyTo set to the producer.
   const writerProfile = sub.profiles ?? null
-  const writerEmail = writerProfile?.email ?? null
   const writerName = (() => {
     const fn = writerProfile?.full_name?.trim()
     if (fn) return fn
-    if (writerEmail) return writerEmail.split('@')[0]
+    if (writerProfile?.email) return writerProfile.email.split('@')[0]
     return null
   })()
-  const mailtoSubject = `Re: ${topCard.title} — via GEM`
-  const mailtoHref = writerEmail
-    ? `mailto:${writerEmail}?subject=${encodeURIComponent(mailtoSubject)}`
-    : null
 
   return (
     <>
@@ -902,11 +900,16 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
             </details>
 
             {/* REACH OUT TO THE WRITER — producer-only. Hidden once
-                unmatched. */}
-            {!isUnmatched && (
+                unmatched. Selznick-4 v9 (2026-04-28): we no longer expose
+                the writer's email. The producer adds an optional note and
+                hits Send Intro; we fire a Postmark email FROM
+                anuj@gem.studio TO the writer with ReplyTo set to the
+                producer's email so the writer's Reply lands directly in
+                the producer's inbox. */}
+            {!isUnmatched && isUnlocked && (
               <Section
                 label="Reach out to the writer"
-                subtitle="GEM facilitated this introduction. All further conversation happens over email."
+                subtitle="Send your intro by email — we'll deliver it. The writer can hit Reply to land in your inbox directly."
                 defaultOpen
                 summary={writerName ?? 'Writer'}
               >
@@ -934,29 +937,14 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                     <p className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
                       {writerName ?? 'Writer'}
                     </p>
-                    {writerEmail && (
-                      <p
-                        className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug"
-                        style={{
-                          fontFamily:
-                            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
-                        }}
-                      >
-                        {writerEmail}
-                      </p>
-                    )}
+                    <p className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+                      Reachable via GEM
+                    </p>
                   </div>
-                  {mailtoHref ? (
-                    <EmailWriterButton
-                      matchId={match.id}
-                      mailtoHref={mailtoHref}
-                      producerEmailedAt={match.producer_emailed_at}
-                    />
-                  ) : (
-                    <span className="text-[12.5px] text-[var(--gem-gray-500)] italic shrink-0">
-                      Writer email unavailable
-                    </span>
-                  )}
+                  <ProducerIntroButton
+                    matchId={match.id}
+                    producerEmailedAt={match.producer_emailed_at}
+                  />
                 </div>
               </Section>
             )}

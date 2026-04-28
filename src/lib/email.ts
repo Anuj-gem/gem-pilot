@@ -22,6 +22,11 @@ export type TemplateAlias =
   | 'post_submission_free'
   | 'post_submission_pro'
   | 'post_upgrade'
+  // Producer-to-writer intro. Triggered from the partner script detail
+  // page when a producer hits "Send intro." The writer is the recipient;
+  // ReplyTo is set to the producer's email so a Reply lands in the
+  // producer's inbox directly.
+  | 'producer_intro_to_writer'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias
@@ -30,6 +35,10 @@ interface SendEmailOptions {
   /** Unique key per-email. Same (templateAlias, dedupeKey) = skip. */
   dedupeKey?: string
   tag?: string
+  /** Override the default Reply-To (anuj@gem.studio). Used by the
+   *  producer→writer intro so that when the writer hits Reply, the
+   *  conversation goes directly to the producer. */
+  replyTo?: string
 }
 
 /**
@@ -99,7 +108,7 @@ export async function sendEmail(
       },
       body: JSON.stringify({
         From: FROM_EMAIL,
-        ReplyTo: REPLY_TO,
+        ReplyTo: opts.replyTo ?? REPLY_TO,
         To: opts.to,
         TemplateAlias: opts.templateAlias,
         TemplateModel: opts.variables,
