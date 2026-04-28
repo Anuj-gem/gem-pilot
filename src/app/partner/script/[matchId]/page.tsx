@@ -22,7 +22,7 @@
 
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Lock, Sparkles, Download, Mail } from 'lucide-react'
+import { ArrowLeft, Lock, Mail } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import {
@@ -41,7 +41,7 @@ import { StickyMatchActions } from '@/components/partner/sticky-actions'
 import { ScriptDownloadButton } from '@/components/partner/script-download-button'
 import { EmailWriterButton } from '@/components/partner/email-writer-button'
 import { getDisplayTopCard } from '@/lib/edited-fields'
-import { isScoreVisible, normalizePrivacy } from '@/lib/report-privacy'
+import { isScoreVisible, normalizePrivacy, resolveVisibility } from '@/lib/report-privacy'
 import {
   normalizeEvaluation,
   calculateWeightedScore,
@@ -317,17 +317,26 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* WHY THIS CAN BE A HIT — same shell as the writer's view. Lede
-            always visible. Post-Interested unlocks the per-reason drop-
-            downs (title visible, body collapsed per item). */}
-        {(whatsSpecial.headline || allStrengths.length > 0) && (
+        {/* Selznick-4 v9 (2026-04-28): the producer page now mirrors the
+            writer's report. Sections respect the writer's per-section
+            privacy (resolveVisibility). The Interested gate only controls
+            the producer-only items: script PDF download + writer's name /
+            email. The Interested/Pass buttons live at the top (under the
+            top card) AND in a sticky bar at the bottom — producer can
+            mark interest from anywhere. The big "Mark Interested to
+            unlock the full report" card is gone — content was always
+            available, the gate was misleading. */}
+
+        {/* WHY THIS CAN BE A HIT — full layout, same as writer view. */}
+        {(isUnlocked || resolveVisibility(privacy, 'whats_working') === 'public') &&
+          (whatsSpecial.headline || allStrengths.length > 0) && (
           <EditorialSection label="Why this can be a hit" accent="gold">
             {whatsSpecial.headline && (
               <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
                 {whatsSpecial.headline}
               </p>
             )}
-            {isUnlocked && allStrengths.length > 0 && (
+            {allStrengths.length > 0 && (
               <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
                 {allStrengths.map((s, i) => (
                   <li key={i}>
@@ -360,81 +369,13 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                 ))}
               </ol>
             )}
-            {!isUnlocked && allStrengths.length > 0 && (
-              <p className="text-[13px] italic text-[var(--gem-gray-500)] m-0">
-                Mark Interested to read the full breakdown.
-              </p>
-            )}
           </EditorialSection>
         )}
 
-        {/* PRE-INTERESTED GATE — the producer's clear next step. Tells them
-            what marking Interested unlocks. Hidden post-Interested. */}
-        {!isUnlocked && !isUnmatched && (
-          <div
-            className="rounded-2xl px-6 sm:px-8 py-7 mb-12"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(124,58,237,0.10), rgba(124,58,237,0.04) 65%), #fff',
-              border: '1.5px solid var(--gem-accent)',
-              boxShadow:
-                '0 4px 20px rgba(124,58,237,0.10), 0 1px 4px rgba(0,0,0,0.04)',
-            }}
-          >
-            <div className="flex items-start gap-3 mb-4">
-              <span
-                className="inline-flex items-center justify-center rounded-full"
-                style={{
-                  width: 36,
-                  height: 36,
-                  background: 'rgba(124,58,237,0.14)',
-                  color: 'var(--gem-accent)',
-                  flexShrink: 0,
-                }}
-              >
-                <Lock size={16} strokeWidth={2.5} />
-              </span>
-              <div className="min-w-0">
-                <h3 className="text-[18px] sm:text-[20px] font-extrabold tracking-tight text-[var(--gem-gray-50)] m-0 mb-1 leading-tight">
-                  Mark Interested to unlock the full report
-                </h3>
-                <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-snug max-w-[60ch]">
-                  Interested signals to the writer that you want to read the
-                  script. Once you mark it, you&apos;ll see:
-                </p>
-              </div>
-            </div>
-            <ul className="grid gap-2 mb-5 ml-12 list-none p-0">
-              <UnlockBullet
-                icon={<Download size={14} />}
-                label="The full script PDF, downloadable"
-              />
-              <UnlockBullet
-                icon={<Sparkles size={14} />}
-                label="Lead characters, packaging, project risks, and the issues breakdown"
-              />
-              <UnlockBullet
-                icon={<Mail size={14} />}
-                label="The writer's name and email — reach out directly"
-              />
-            </ul>
-            <div className="ml-12">
-              <MatchActions
-                matchId={match.id}
-                status={match.status}
-                variant="detail"
-                hideComment
-              />
-            </div>
-          </div>
-        )}
-
-        {/* POST-INTERESTED — full report sections, same order as writer's
-            view: Lead characters → Package angles → Packaging → Issues →
-            Project risks → Narrative breakdown → Production planning. */}
+        {/* SCRIPT DOWNLOAD — gated on Interested. The PDF + writer's
+            email are the producer-only artifacts. */}
         {isUnlocked && (
           <>
-            {/* Script download — surfaced first on unlock. */}
             <div
               className="rounded-xl px-5 py-5 mb-10 flex items-start gap-4 flex-wrap"
               style={{
@@ -455,11 +396,32 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               </div>
               <ScriptDownloadButton matchId={match.id} />
             </div>
+          </>
+        )}
 
-            {/* LEAD CHARACTERS — Lead vs Supporting split (2026-04-28).
-                Same component as the writer page so the producer reads the
-                ensemble the same way. */}
-            {leadCharacters.length > 0 && (() => {
+        {/* Inline nudge for not-yet-Interested producers — much smaller
+            than the old gate card. Shows ONLY when producer hasn't reacted
+            yet, sits inline below the hit thesis so it doesn't dominate. */}
+        {!isUnlocked && !isUnmatched && (
+          <div
+            className="rounded-xl px-5 py-4 mb-10 flex items-center gap-3 flex-wrap"
+            style={{
+              background: 'rgba(124,58,237,0.05)',
+              border: '1px solid rgba(124,58,237,0.25)',
+            }}
+          >
+            <Lock size={14} className="text-[var(--gem-accent)] shrink-0" />
+            <p className="text-[13.5px] text-[var(--gem-gray-200)] m-0 leading-snug flex-1 min-w-[200px]">
+              Mark Interested to download the script PDF and reach out to the writer directly.
+            </p>
+          </div>
+        )}
+
+        {/* CAST — gated on writer's deep_dive_characters privacy OR
+            isUnlocked (interested producers retain visibility even if
+            writer narrows after the fact). */}
+        {(isUnlocked || resolveVisibility(privacy, 'deep_dive_characters') === 'public') &&
+          leadCharacters.length > 0 && (() => {
               const leads = leadCharacters.filter(
                 (c) => (c.role_type ?? '').toLowerCase() === 'lead'
               )
@@ -515,8 +477,9 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               )
             })()}
 
-            {/* PACKAGE ANGLES */}
-            {packageAngles && (
+            {/* PACKAGE ANGLES — gated on deep_dive_package privacy */}
+            {(isUnlocked || resolveVisibility(privacy, 'deep_dive_package') === 'public') &&
+              packageAngles && (
               <Section
                 label="Package angles"
                 subtitle="Who would direct it, and who would buy it."
@@ -569,8 +532,9 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               </Section>
             )}
 
-            {/* PACKAGING (v5.4) */}
-            {packaging && <PackagingSection data={packaging} />}
+            {/* PACKAGING (v5.4) — same key as Package angles */}
+            {(isUnlocked || resolveVisibility(privacy, 'deep_dive_package') === 'public') &&
+              packaging && <PackagingSection data={packaging} />}
 
             {/* ISSUES — same lede + see-more as the writer's view.
                 Sources: prefer legacy `considerations`, fall back to v5.4
@@ -680,13 +644,12 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               )
             })()}
 
-            {/* PROJECT RISKS */}
-            {/* Project Complexity card. Producer-side has no privacy gate
-                (producers always see everything for matches they've
-                opened). */}
-            {riskDetails ? (
-              <RiskDetailsSection data={riskDetails} production={production} />
-            ) : production?.risk_rubric ? (
+            {/* PROJECT COMPLEXITY — gated on writer's project_complexity
+                privacy OR isUnlocked. */}
+            {(isUnlocked || resolveVisibility(privacy, 'project_complexity') === 'public') &&
+              (riskDetails ? (
+                <RiskDetailsSection data={riskDetails} production={production} />
+              ) : production?.risk_rubric ? (
               <Section
                 label="Project risks"
                 subtitle="Cost, cast, and content complexity at a glance."
@@ -725,7 +688,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                   )}
                 </div>
               </Section>
-            ) : null}
+            ) : null)}
 
             {/* REFERENCE — collapsible disclosure folded by default.
                 Anuj 2026-04-28. */}
@@ -997,8 +960,6 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                 </div>
               </Section>
             )}
-          </>
-        )}
       </div>
 
       {/* Sticky bottom action bar — repeats Interested/Pass so the producer
@@ -1008,32 +969,6 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
         <StickyMatchActions matchId={match.id} status={match.status} />
       )}
     </>
-  )
-}
-
-function UnlockBullet({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode
-  label: string
-}) {
-  return (
-    <li className="flex items-start gap-2.5 text-[14px] text-[var(--gem-gray-100)] leading-snug">
-      <span
-        className="inline-flex items-center justify-center rounded-md mt-0.5"
-        style={{
-          width: 22,
-          height: 22,
-          background: 'rgba(124,58,237,0.10)',
-          color: 'var(--gem-accent)',
-          flexShrink: 0,
-        }}
-      >
-        {icon}
-      </span>
-      <span>{label}</span>
-    </li>
   )
 }
 
