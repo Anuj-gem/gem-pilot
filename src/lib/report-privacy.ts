@@ -1,7 +1,7 @@
 // Writer-controlled per-section privacy for report pages.
 //
 // Mental model:
-//   - is_public (on submissions) = "is this report on Discover"
+//   - is_public (on submissions) = "is this report visible to industry"
 //   - report_privacy (JSONB on submissions) = "what does a non-owner see"
 //
 // Owner (or admin) always sees everything. Non-owners see only the sections
@@ -10,6 +10,15 @@
 //
 // Source of truth for section keys, defaults, and presets lives here so the
 // DB shape (JSONB) stays stable as we iterate on what's public by default.
+//
+// Selznick-4 v9 (2026-04-28): the privacy panel is now aligned with the
+// new report layout — four section toggles (Why this is a hit, Cast,
+// Packaging, Project Complexity) plus the score badge toggle. The
+// Development considerations and Reference sections always render when
+// the post is published. Dropped section keys: production_signal,
+// deep_dive_production, deep_dive_development, deep_dive_narrative.
+// `normalizePrivacy` silently strips entries for those keys from any old
+// DB row, so writers fall back to all-public defaults until they re-tune.
 
 export type Visibility = 'public' | 'private'
 
@@ -19,38 +28,20 @@ export type Visibility = 'public' | 'private'
  *  dashboard + report page can import it without build-time caveats. */
 export const QUALIFICATION_THRESHOLD = 50
 
-/** Section keys map 1:1 to bounded chunks of the report UI. Names mirror the
- *  actual section headings in the report page (keep these aligned so writers
- *  see the same labels in the privacy modal and in the report body).
- *
- *  Internal key names stay as-is for DB compatibility with rows written before
- *  the label rename (2026-04-23). Only the UI labels in SECTION_META changed. */
-// NOTE (2026-04-23): `headline` was removed from this enum. The top card
-// (title + author + format + tags + posted date + headline) is ALWAYS
-// visible whenever a report is published — it's the bare minimum context a
-// visitor needs for anything else to make sense. Old DB rows with
-// `headline: 'private'` are silently ignored by normalizePrivacy.
+/** Section keys map 1:1 to the four visible sections in the report UI.
+ *  Keys are persisted in the DB; the labels in SECTION_META are what the
+ *  writer reads. */
 export type SectionKey =
-  | 'whats_working'         // "Why this is a hit" strengths
-  | 'production_signal'     // Production Planning Overview (at-a-glance cards)
-  | 'deep_dive_characters'  // Lead Characters + actor appeal
-  | 'deep_dive_package'     // Package Angles (director + buyer)
-  | 'deep_dive_production'  // Production Planning Details (full)
-  | 'deep_dive_development' // Development Priorities (incl. primary lever + craft note)
-  | 'deep_dive_narrative'   // Narrative Breakdown (10-dim)
+  | 'whats_working'         // "Why this is a hit"
+  | 'deep_dive_characters'  // "Cast" (was Lead Characters)
+  | 'deep_dive_package'     // "Packaging"
+  | 'project_complexity'    // "Project Complexity" (Production + Cast cards)
 
-/** Score is deliberately NOT a section. Anuj's 2026-04-23 call: the numeric
- *  score is never shown to writers directly, and shouldn't be a toggle
- *  visitors can opt into. Qualification (≥50) is the only score-derived
- *  signal that surfaces publicly, via the qualification banner. */
 export const SECTION_KEYS: SectionKey[] = [
   'whats_working',
-  'production_signal',
   'deep_dive_characters',
   'deep_dive_package',
-  'deep_dive_production',
-  'deep_dive_development',
-  'deep_dive_narrative',
+  'project_complexity',
 ]
 
 export interface SectionMeta {
@@ -58,11 +49,9 @@ export interface SectionMeta {
   label: string
   /** Short description shown in the privacy panel. */
   hint: string
-  /** Grouping for the modal UI:
-   *    'pitch'       — the 4 sections that make up the producer pitch
-   *                    (headline, why this is a hit, lead characters, package angles)
-   *    'development' — everything else: score, production overview/details,
-   *                    development priorities, narrative breakdown. */
+  /** Grouping for the modal UI. With the slim 4-section model this is
+   *  effectively cosmetic — kept for back-compat with components that
+   *  still import the type. */
   group: 'pitch' | 'development'
 }
 
@@ -75,38 +64,20 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
   },
   deep_dive_characters: {
     key: 'deep_dive_characters',
-    label: 'Lead Characters',
-    hint: 'Full character breakdown + actor appeal.',
+    label: 'Cast',
+    hint: 'Lead and supporting characters with actor appeal.',
     group: 'pitch',
   },
   deep_dive_package: {
     key: 'deep_dive_package',
-    label: 'Package Angles',
-    hint: 'Who would direct it, who would buy it.',
+    label: 'Packaging',
+    hint: 'Audience, budget tier, franchise potential.',
     group: 'pitch',
   },
-  production_signal: {
-    key: 'production_signal',
-    label: 'Production Planning Overview',
-    hint: 'Cost, cast, and content complexity at a glance.',
-    group: 'development',
-  },
-  deep_dive_production: {
-    key: 'deep_dive_production',
-    label: 'Production Planning Details',
-    hint: 'Cast count, locations, VFX/stunts, rights flags.',
-    group: 'development',
-  },
-  deep_dive_development: {
-    key: 'deep_dive_development',
-    label: 'Development Priorities',
-    hint: 'Sharpest lever, craft note, and all other development notes.',
-    group: 'development',
-  },
-  deep_dive_narrative: {
-    key: 'deep_dive_narrative',
-    label: 'Narrative Breakdown',
-    hint: '10 dimension scores + reasoning.',
+  project_complexity: {
+    key: 'project_complexity',
+    label: 'Project Complexity',
+    hint: 'Production and cast lift — what to plan for.',
     group: 'development',
   },
 }
@@ -125,22 +96,14 @@ export interface ReportPrivacy {
 
 /** Default visibility for a NEW report that's never been adjusted.
  *
- *  2026-04-27: Flipped to ALL PUBLIC by default per Anuj. Posts default to
- *  100% visible; writers narrow visibility from the privacy modal if they
- *  want. This is a deliberate posture change — we'd rather a producer
- *  reading a report sees the whole picture than a writer's guarded subset.
- *
- *  Note: existing rows with explicit per-section privacy in the DB are
- *  unaffected by this change — `resolveVisibility` returns the explicit
- *  override first, falls through to this default only when unset. */
+ *  2026-04-27: All public by default. Writers narrow visibility from the
+ *  privacy modal if they want.
+ */
 const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
-  whats_working:         'public',
-  deep_dive_characters:  'public',
-  deep_dive_package:     'public',
-  production_signal:     'public',
-  deep_dive_production:  'public',
-  deep_dive_development: 'public',
-  deep_dive_narrative:   'public',
+  whats_working:        'public',
+  deep_dive_characters: 'public',
+  deep_dive_package:    'public',
+  project_complexity:   'public',
 }
 
 export type PresetKey = 'pitch_only' | 'pitch_plus_dev'
@@ -152,34 +115,30 @@ export interface Preset {
   sections: Record<SectionKey, Visibility>
 }
 
-/** Named presets — the fast path. Custom is a separate mode (all-private,
- *  writer toggles sections individually via the preview grid), not a preset. */
+/** Named presets — fast paths for the privacy modal. With the slim
+ *  4-section model these effectively become "show pitch only" vs
+ *  "show everything". Custom is anything in between. */
 export const PRESETS: Record<PresetKey, Preset> = {
   pitch_only: {
     key: 'pitch_only',
     label: 'Pitch only',
-    blurb: 'Why this is a hit, lead characters, and package angles. (Top card always shown.)',
+    blurb: 'Why this is a hit, cast, and packaging. (Top card always shown.)',
     sections: {
-      ...allPrivate(),
-      whats_working: 'public',
+      whats_working:        'public',
       deep_dive_characters: 'public',
-      deep_dive_package: 'public',
+      deep_dive_package:    'public',
+      project_complexity:   'private',
     },
   },
   pitch_plus_dev: {
     key: 'pitch_plus_dev',
-    label: 'Pitch + development notes',
-    blurb: 'Everything — pitch sections plus all development details.',
+    label: 'Everything',
+    blurb: 'All four sections visible to industry.',
     sections: {
-      // Everything public. This is the "open book" option, renamed to
-      // match the two-tier mental model writers asked for.
-      whats_working:         'public',
-      production_signal:     'public',
-      deep_dive_characters:  'public',
-      deep_dive_package:     'public',
-      deep_dive_production:  'public',
-      deep_dive_development: 'public',
-      deep_dive_narrative:   'public',
+      whats_working:        'public',
+      deep_dive_characters: 'public',
+      deep_dive_package:    'public',
+      project_complexity:   'public',
     },
   },
 }
@@ -226,8 +185,7 @@ export function sectionIsPublic(
   return resolveVisibility(privacy, key) === 'public'
 }
 
-/** Count how many sections are currently public. Drives the privacy summary
- *  line ("3 of 10 sections visible") in the writer UI. */
+/** Count how many sections are currently public. */
 export function publicSectionCount(privacy: ReportPrivacy | null | undefined): number {
   return SECTION_KEYS.filter((k) => sectionIsPublic(privacy, k)).length
 }
@@ -244,7 +202,9 @@ export function matchPreset(privacy: ReportPrivacy | null | undefined): PresetKe
 }
 
 /** Validate/normalize a privacy object coming in from the API. Drops unknown
- *  keys so we don't accidentally persist garbage. */
+ *  keys so we don't accidentally persist garbage — and so that retired
+ *  section keys (production_signal, deep_dive_production, etc.) silently
+ *  fall away. */
 export function normalizePrivacy(input: unknown): ReportPrivacy {
   const empty: ReportPrivacy = { version: 1, sections: {} }
   if (!input || typeof input !== 'object') return empty

@@ -681,6 +681,9 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
             })()}
 
             {/* PROJECT RISKS */}
+            {/* Project Complexity card. Producer-side has no privacy gate
+                (producers always see everything for matches they've
+                opened). */}
             {riskDetails ? (
               <RiskDetailsSection data={riskDetails} production={production} />
             ) : production?.risk_rubric ? (

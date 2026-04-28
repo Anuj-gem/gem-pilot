@@ -744,14 +744,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             Merges what was previously two sections ("Sharpest lever" + secondary
             Development Priorities) into a single coherent section that mirrors
             the structure of the actual report. */}
-        <SectionGate
-          section="deep_dive_development"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-        >
-          {(() => {
+        {/* Development considerations — no per-section privacy toggle.
+            Anuj 2026-04-28: only the four "pitch" sections + score have
+            writer-controlled toggles. Dev considerations always render
+            when the post is published; non-owners just don't see them
+            on unpublished reports. */}
+        {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
+          (() => {
             // Issues source. v5.4 evals emit `issues.items` (newer shape).
             // Older evals emit `considerations` (legacy shape). Same data
             // shape — area + detail + is_primary_lever — so merge them so
@@ -871,8 +870,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 )}
               </EditorialSection>
             )
-          })()}
-        </SectionGate>
+          })()
+        )}
 
         {/* PROJECT RISKS — moved here (after Issues, before Narrative
             breakdown) per Anuj's 2026-04-27 reorder. Prefer the v5.4
@@ -881,15 +880,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             the older eval shape is available, so we never double-render
             the same axes. */}
         {riskDetails ? (
-          <div
-            style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-            aria-hidden={applyPaywallBlur ? true : undefined}
+          <SectionGate
+            section="project_complexity"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+            isPublic={submission.is_public ?? false}
           >
-            <RiskDetailsSection data={riskDetails} production={production} />
-          </div>
+            <div
+              style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+              aria-hidden={applyPaywallBlur ? true : undefined}
+            >
+              <RiskDetailsSection data={riskDetails} production={production} />
+            </div>
+          </SectionGate>
         ) : (
           <SectionGate
-            section="production_signal"
+            section="project_complexity"
             privacy={privacy}
             isOwnerOrAdmin={isOwnerOrAdmin}
             submissionId={privacyControlId}
@@ -960,15 +967,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </summary>
           <div className="mt-5">
 
-        {/* SCORE DETAIL (was "Narrative breakdown") — 10 dim scores */}
-        <SectionGate
-          section="deep_dive_narrative"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-        >
-          {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
+        {/* SCORE DETAIL (was "Narrative breakdown") — 10 dim scores.
+            No per-section privacy toggle (Reference is bundled). */}
+        {(isOwnerOrAdmin || (submission.is_public ?? false)) &&
+          scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
             <Section
               label="Additional scored dimensions"
               subtitle="Ten craft axes the model tracks while reading the script — bonus signal beyond the top-line read."
@@ -992,22 +994,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </div>
             </Section>
           )}
-        </SectionGate>
 
-        {/* PRODUCTION PLANNING DETAILS — legacy fallback only.
-            v5.4+ evals (riskDetails present) now embed production data
-            inside the Project Complexity cards' unfolds, so this entire
-            standalone section is suppressed for them. Old evals without
-            risk_details still get the original section because it's the
-            only place that data surfaces. Anuj 2026-04-28. */}
-        {!riskDetails && (
-          <SectionGate
-            section="deep_dive_production"
-            privacy={privacy}
-            isOwnerOrAdmin={isOwnerOrAdmin}
-            submissionId={privacyControlId}
-            isPublic={submission.is_public ?? false}
-          >
+        {/* PRODUCTION PLANNING DETAILS — legacy fallback only. */}
+        {!riskDetails &&
+          (isOwnerOrAdmin || (submission.is_public ?? false)) && (
+            <>
             {production && (
               <Section
                 label="Production planning details"
@@ -1126,8 +1117,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
               </Section>
             )}
-          </SectionGate>
-        )}
+            </>
+          )}
           </div>
         </details>
 
