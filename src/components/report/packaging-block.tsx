@@ -23,13 +23,19 @@ export function PackagingSection({ data }: Props) {
   return (
     <Section
       label="Packaging"
-      subtitle="How a producer would frame this project for a buyer — audience, budget tier, and franchise upside."
-      summary="Audience · Budget tier · IP"
+      subtitle="How a producer would frame this project for a buyer — audience and budget tier at a glance."
+      summary="Audience · Budget tier"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      {/* IP / Franchise Potential card hidden from the live UI 2026-04-28
+          (Anuj). The model's binary "Standalone vs Franchise" read is too
+          incendiary for marginal value — most great scripts read as
+          standalone on a single-script eval, but writers see that and
+          interpret it as a market knock. The prompt still emits
+          `ip_potential` so the data stays on the eval row; resurrect the
+          card from git history if we ever surface this signal again. */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <AudienceCard target={data.audience_target} />
         <BudgetTierCard tier={data.budget_tier} />
-        <IpPotentialCard ip={data.ip_potential} />
       </div>
     </Section>
   )
