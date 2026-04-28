@@ -43,7 +43,6 @@ import { InlineSignup } from '@/components/report/inline-signup'
 import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
-import { ShareSection } from '@/components/report/share-section'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
 import { PublicContactCard } from '@/components/report/public-contact-card'
@@ -493,14 +492,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             now handles the owner's primary signal. Free-tier owners still
             hit the upgrade modal through the banner's Publish CTA. */}
 
-        {/* Share section — only when the report is actually public, or owner
-            is Pro (Pro writers can pre-share via the private link before hitting
-            publish). Free writers see the upgrade CTA above instead. */}
-        {(submission.is_public || (isOwner && ownerIsSubscribed)) && (
-          <div className="mb-8">
-            <ShareSection evaluationId={id} title={topCard.title} />
-          </div>
-        )}
+        {/* Share section removed 2026-04-28 — clogged the UI for what
+            was effectively a copy-link helper. Anyone who wants to share
+            can grab the URL from their browser. */}
 
         {/* Commercial Viability Score card removed entirely 2026-04-23.
             Score is now an internal ranking signal only — not a section
