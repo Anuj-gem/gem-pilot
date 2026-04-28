@@ -207,10 +207,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
   const locked = !ownerIsSubscribed
-  // Paywall blur: free-tier owner sees body content blurred on deep dives.
-  // Admin never blurs. Non-owners don't use this axis — privacy gate handles
-  // their visibility.
-  const applyPaywallBlur = locked && isOwner && !isAdmin
+  // Paywall blur retired 2026-04-28 (Anuj). The writer's first free eval
+  // now renders fully unblurred — the conversion driver is the SECOND
+  // eval (locked behind Pro via `lockedAfterFreeEval` → LockedAfterEval-
+  // Screen). Side benefit: producers see exactly the same surface free
+  // writers see, so industry-side experience is uniform regardless of
+  // whether the writer is paid. Variable kept (always false) so the
+  // existing `bodyBlur` plumbing across the file is a no-op without a
+  // big refactor; safe to clean up later.
+  // Original: const applyPaywallBlur = locked && isOwner && !isAdmin
+  void locked
+  const applyPaywallBlur = false
   // Inline per-section privacy pills — shown for ANY owner (free or Pro).
   // Anuj's 2026-04-23 call: writers want to see "this is private" labels as
   // they scroll so they understand exactly what's exposed. Toggles save
