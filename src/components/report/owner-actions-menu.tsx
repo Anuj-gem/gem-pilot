@@ -189,14 +189,20 @@ export function OwnerActionsMenu({
               href={downloadHref}
               onClick={() => setOpen(false)}
             >
-              Download PDF
+              <span className="inline-flex items-center gap-1.5">
+                Download PDF
+                {!isSubscribed && <ProMarker />}
+              </span>
             </MenuLink>
           ) : (
             <MenuItem
               icon={<Download size={14} />}
               onClick={triggerDownload}
             >
-              Download PDF
+              <span className="inline-flex items-center gap-1.5">
+                Download PDF
+                {!isSubscribed && <ProMarker />}
+              </span>
             </MenuItem>
           )}
           <MenuLink
@@ -270,6 +276,20 @@ function MenuItem({
       <span className="shrink-0">{icon}</span>
       <span className="flex-1">{children}</span>
     </button>
+  )
+}
+
+// Tiny "Pro" pill rendered inline next to gated menu items so a free
+// writer can see at a glance which actions require an upgrade. Anuj
+// 2026-04-28.
+function ProMarker() {
+  return (
+    <span
+      className="inline-block px-1.5 py-[1px] rounded text-[9px] font-bold uppercase tracking-wider"
+      style={{ background: 'var(--gem-accent)', color: '#fff' }}
+    >
+      Pro
+    </span>
   )
 }
 

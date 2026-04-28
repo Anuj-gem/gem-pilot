@@ -901,18 +901,45 @@ function CompactCard({
       </p>
 
       {/* Row 4 — industry stats on the left, action buttons on the right.
-          The stats block has its own "Industry activity" header so it's
-          unmistakably about engagement (and not, say, the privacy
-          button next to it). */}
+          For Pro writers we show real engagement; for free writers there
+          is no engagement (the script isn't being matched), so we surface
+          a "Get matched — Pro" upsell pill in the same slot. Anuj
+          2026-04-28: free writers should see the upgrade carrot inline
+          on every card, not just in the header banner. */}
       <div className="flex items-end justify-between gap-3 flex-wrap mt-3">
         <div className="min-w-0">
           {showActivity ? (
-            <>
-              <p className="text-[10px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
-                Industry activity
-              </p>
-              <IndustryActivityButton rows={script.activity} />
-            </>
+            isSubscribed ? (
+              <>
+                <p className="text-[10px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
+                  Industry activity
+                </p>
+                <IndustryActivityButton rows={script.activity} />
+              </>
+            ) : (
+              <>
+                <p className="text-[10px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
+                  Industry matching
+                </p>
+                <UnlockTrigger
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-semibold transition-colors hover:bg-[var(--gem-gray-900)]"
+                  ariaLabel="Get matched with producers — upgrade to Pro"
+                >
+                  <span
+                    className="inline-block px-1.5 py-[1px] rounded text-[9.5px] font-bold uppercase tracking-wider"
+                    style={{
+                      background: 'var(--gem-accent)',
+                      color: '#fff',
+                    }}
+                  >
+                    Pro
+                  </span>
+                  <span style={{ color: 'var(--gem-gray-50)' }}>
+                    Get matched with producers
+                  </span>
+                </UnlockTrigger>
+              </>
+            )
           ) : (
             <span aria-hidden />
           )}
