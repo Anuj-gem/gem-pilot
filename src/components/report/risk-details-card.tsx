@@ -73,16 +73,16 @@ function ComplexityCard({
   axis: RiskDetailCardType
   details?: React.ReactNode
 }) {
-  // Anuj 2026-04-28: card stays neutral regardless of level — only the
-  // small pill carries the color, so a "Complex" badge doesn't paint
-  // the whole section red. Yellow palette tightened to a clean
-  // yellow-100 / yellow-800 (no amber-orange undertone).
+  // Anuj 2026-04-28: card stays neutral; only the small pill carries
+  // the color. Pill text is black on the tinted backgrounds — no
+  // amber/yellow text undertones. Backgrounds: green-100, yellow-100,
+  // red-100.
   const pill =
     axis.level === 'low'
-      ? { bg: '#d1fae5', fg: '#047857', border: '#10b981' }
+      ? { bg: '#d1fae5', fg: 'var(--gem-gray-50)', border: '#10b981' }
       : axis.level === 'medium'
-        ? { bg: '#fef9c3', fg: '#854d0e', border: '#facc15' }
-        : { bg: '#fee2e2', fg: '#b91c1c', border: '#ef4444' }
+        ? { bg: '#fef9c3', fg: 'var(--gem-gray-50)', border: '#facc15' }
+        : { bg: '#fee2e2', fg: 'var(--gem-gray-50)', border: '#ef4444' }
   const palette = {
     border: 'var(--gem-gray-700)',
   }

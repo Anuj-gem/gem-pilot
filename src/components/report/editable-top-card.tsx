@@ -677,33 +677,22 @@ function ScoreBadge({
   // anymore, while the writer still sees what GEM scored them.
   const isHiddenForOwner = isOwner && !shownToIndustry
 
-  // Anuj 2026-04-28: every tier gets a colored pill (not gray) for
-  // consistency. Yellow swapped from amber (#d97706 — read as orange)
-  // to a clearer yellow palette (#a16207 fg / yellow-100 bg) so it
-  // doesn't blur into red. Low scores now show red instead of grey.
+  // Anuj 2026-04-28: score badge stays one neutral palette regardless
+  // of score. No green / yellow / red tier coloring on the score
+  // itself — the score is the score, the writer doesn't need it
+  // dressed up. Hidden state still grays further so the writer sees
+  // when industry partners can't see it.
   const palette = isHiddenForOwner
     ? {
         bg: 'var(--gem-gray-900)',
         fg: 'var(--gem-gray-400)',
         border: 'var(--gem-gray-700)',
       }
-    : score >= 75
-      ? {
-          bg: '#d1fae5',
-          fg: '#047857',
-          border: '#10b981',
-        }
-      : score >= 50
-        ? {
-            bg: '#fef9c3',
-            fg: '#854d0e',
-            border: '#facc15',
-          }
-        : {
-            bg: '#fee2e2',
-            fg: '#b91c1c',
-            border: '#ef4444',
-          }
+    : {
+        bg: 'var(--gem-gray-800)',
+        fg: 'var(--gem-gray-50)',
+        border: 'var(--gem-gray-700)',
+      }
   const display = score.toFixed(0)
   return (
     <div className="shrink-0 flex items-center gap-1.5">
