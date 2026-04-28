@@ -247,14 +247,14 @@ function SectionUpgradePrompt({
             aria-label="Close"
             className="-mr-1 -mt-1 w-7 h-7 rounded-full grid place-items-center hover:bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)]"
           >
-            \u00d7
+            &times;
           </button>
         </div>
         <h3 className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
           Upgrade to Pro
         </h3>
         <p className="text-[13.5px] text-[var(--gem-gray-300)] m-0 mt-1.5 leading-snug">
-          Hide specific sections and publish to industry partners \u2014 Pro only.
+          Hide specific sections and publish to industry partners &mdash; Pro only.
         </p>
         {error && (
           <p className="text-[12px] text-red-600 m-0 mt-3">{error}</p>
