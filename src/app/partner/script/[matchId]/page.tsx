@@ -686,7 +686,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
 
             {/* PROJECT RISKS */}
             {riskDetails ? (
-              <RiskDetailsSection data={riskDetails} />
+              <RiskDetailsSection data={riskDetails} production={production} />
             ) : production?.risk_rubric ? (
               <Section
                 label="Project risks"
@@ -768,8 +768,11 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
                 </Section>
               )}
 
-            {/* PRODUCTION PLANNING DETAILS */}
-            {production && (
+            {/* PRODUCTION PLANNING DETAILS — legacy fallback only.
+                v5.4+ evals embed this data inside the Project Complexity
+                cards' unfolds; the standalone section is suppressed for
+                them. Anuj 2026-04-28. */}
+            {!riskDetails && production && (
               <Section
                 label="Production planning details"
                 subtitle="Everything the script tells us about how it would actually get made."

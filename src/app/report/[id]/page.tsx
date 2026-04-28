@@ -913,7 +913,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
             aria-hidden={applyPaywallBlur ? true : undefined}
           >
-            <RiskDetailsSection data={riskDetails} />
+            <RiskDetailsSection data={riskDetails} production={production} />
           </div>
         ) : (
           <SectionGate
@@ -1007,133 +1007,140 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* PRODUCTION PLANNING DETAILS */}
-        <SectionGate
-          section="deep_dive_production"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-        >
-          {production && (
-            <Section
-              label="Production planning details"
-              subtitle="Everything the script tells us about how it would actually get made."
-              summary="Cast · Locations · Technical · Platform · Rights"
-            >
-              <div className="space-y-3">
-                <Collapsible
-                  title="Cast"
-                  meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
-                >
-                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                    <FactList>
-                      <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
-                      <Fact k="Leads" v={production.cast?.leads} />
-                      {(production.cast?.series_regulars ?? 0) > 0 && (
-                        <Fact k="Series regulars" v={production.cast?.series_regulars} />
-                      )}
-                      {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
-                      {production.cast?.casting_challenges?.length ? (
-                        <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
-                      ) : null}
-                    </FactList>
-                  </div>
-                </Collapsible>
-                <Collapsible
-                  title="Locations & Scale"
-                  meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
-                >
-                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                    <FactList>
-                      <Fact k="Distinct locations" v={production.locations?.distinct_count} />
-                      <Fact
-                        k="Int / Ext"
-                        v={
-                          production.locations?.interior_exterior_ratio ??
-                          production.locations?.interior_exterior_mix
-                        }
-                      />
-                      <Fact k="Era" v={production.locations?.period_or_contemporary} />
-                      {production.locations?.expensive_flags?.length ? (
-                        <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
-                      ) : null}
-                    </FactList>
-                  </div>
-                </Collapsible>
-                <Collapsible
-                  title="Technical"
-                  meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
-                >
-                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                    <FactList>
-                      <Fact
-                        k="VFX"
-                        v={
-                          (production.technical?.vfx_level ?? '') +
-                          (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
-                        }
-                      />
-                      <Fact
-                        k="Stunts"
-                        v={production.technical?.stunts_level ?? production.technical?.stunts}
-                      />
-                      {production.technical?.sfx_needs && (
-                        <Fact k="SFX" v={production.technical.sfx_needs} />
-                      )}
-                      {production.technical?.night_shoots && (
-                        <Fact k="Night shoots" v={production.technical.night_shoots} />
-                      )}
-                      {production.technical?.animals && <Fact k="Animals" v="Yes" />}
-                    </FactList>
-                  </div>
-                </Collapsible>
-                <Collapsible
-                  title="Platform & Content"
-                  meta={production.platform_fit?.recommended_lane}
-                >
-                  <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                    <FactList>
-                      <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
-                      <Fact k="Content" v={production.platform_fit?.content_level} />
-                      {production.platform_fit?.series_engine_or_release_model && (
-                        <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
-                      )}
-                    </FactList>
-                  </div>
-                </Collapsible>
-                {production.rights_flags?.length ? (
+        {/* PRODUCTION PLANNING DETAILS — legacy fallback only.
+            v5.4+ evals (riskDetails present) now embed production data
+            inside the Project Complexity cards' unfolds, so this entire
+            standalone section is suppressed for them. Old evals without
+            risk_details still get the original section because it's the
+            only place that data surfaces. Anuj 2026-04-28. */}
+        {!riskDetails && (
+          <SectionGate
+            section="deep_dive_production"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+            isPublic={submission.is_public ?? false}
+          >
+            {production && (
+              <Section
+                label="Production planning details"
+                subtitle="Everything the script tells us about how it would actually get made."
+                summary="Cast · Locations · Technical · Platform · Rights"
+              >
+                <div className="space-y-3">
                   <Collapsible
-                    title="Rights & Clearance"
-                    meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
+                    title="Cast"
+                    meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
                   >
-                    <ul
-                      className="space-y-3 list-none p-0 m-0"
-                      style={bodyBlur}
-                      aria-hidden={applyPaywallBlur ? true : undefined}
-                    >
-                      {production.rights_flags.map((r, i) => {
-                        const text =
-                          typeof r === 'string'
-                            ? r
-                            : `${r.type}: ${r.detail}`
-                        return (
-                          <li
-                            key={i}
-                            className="flex gap-3 text-[16px] text-[var(--gem-gray-100)] leading-[1.55]"
-                          >
-                            <span className="text-[var(--gem-gold)] flex-shrink-0">•</span>
-                            <span>{text}</span>
-                          </li>
-                        )
-                      })}
-                    </ul>
+                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                      <FactList>
+                        <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
+                        <Fact k="Leads" v={production.cast?.leads} />
+                        {(production.cast?.series_regulars ?? 0) > 0 && (
+                          <Fact k="Series regulars" v={production.cast?.series_regulars} />
+                        )}
+                        {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
+                        {production.cast?.casting_challenges?.length ? (
+                          <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
+                        ) : null}
+                      </FactList>
+                    </div>
                   </Collapsible>
-                ) : null}
-              </div>
-            </Section>
-          )}
-        </SectionGate>
+                  <Collapsible
+                    title="Locations & Scale"
+                    meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
+                  >
+                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                      <FactList>
+                        <Fact k="Distinct locations" v={production.locations?.distinct_count} />
+                        <Fact
+                          k="Int / Ext"
+                          v={
+                            production.locations?.interior_exterior_ratio ??
+                            production.locations?.interior_exterior_mix
+                          }
+                        />
+                        <Fact k="Era" v={production.locations?.period_or_contemporary} />
+                        {production.locations?.expensive_flags?.length ? (
+                          <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
+                        ) : null}
+                      </FactList>
+                    </div>
+                  </Collapsible>
+                  <Collapsible
+                    title="Technical"
+                    meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
+                  >
+                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                      <FactList>
+                        <Fact
+                          k="VFX"
+                          v={
+                            (production.technical?.vfx_level ?? '') +
+                            (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
+                          }
+                        />
+                        <Fact
+                          k="Stunts"
+                          v={production.technical?.stunts_level ?? production.technical?.stunts}
+                        />
+                        {production.technical?.sfx_needs && (
+                          <Fact k="SFX" v={production.technical.sfx_needs} />
+                        )}
+                        {production.technical?.night_shoots && (
+                          <Fact k="Night shoots" v={production.technical.night_shoots} />
+                        )}
+                        {production.technical?.animals && <Fact k="Animals" v="Yes" />}
+                      </FactList>
+                    </div>
+                  </Collapsible>
+                  <Collapsible
+                    title="Platform & Content"
+                    meta={production.platform_fit?.recommended_lane}
+                  >
+                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
+                      <FactList>
+                        <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
+                        <Fact k="Content" v={production.platform_fit?.content_level} />
+                        {production.platform_fit?.series_engine_or_release_model && (
+                          <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
+                        )}
+                      </FactList>
+                    </div>
+                  </Collapsible>
+                  {production.rights_flags?.length ? (
+                    <Collapsible
+                      title="Rights & Clearance"
+                      meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
+                    >
+                      <ul
+                        className="space-y-3 list-none p-0 m-0"
+                        style={bodyBlur}
+                        aria-hidden={applyPaywallBlur ? true : undefined}
+                      >
+                        {production.rights_flags.map((r, i) => {
+                          const text =
+                            typeof r === 'string'
+                              ? r
+                              : `${r.type}: ${r.detail}`
+                          return (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[16px] text-[var(--gem-gray-100)] leading-[1.55]"
+                            >
+                              <span className="text-[var(--gem-gold)] flex-shrink-0">•</span>
+                              <span>{text}</span>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </Collapsible>
+                  ) : null}
+                </div>
+              </Section>
+            )}
+          </SectionGate>
+        )}
 
         {/* Free-tier soft upgrade CTA */}
         {showUpgradeCTA && isOwner && (
