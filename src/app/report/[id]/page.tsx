@@ -962,8 +962,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         >
           {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
             <Section
-              label="Score detail"
-              subtitle="Per-dimension score and reasoning. Useful when you want to see why the overall number landed where it did."
+              label="Additional scored dimensions"
+              subtitle="Ten craft axes the model tracks while reading the script — bonus signal beyond the top-line read."
               summary="10 craft dimensions"
             >
               <div className="space-y-3">
