@@ -32,14 +32,13 @@ export default function IndustryPage() {
             For industry partners
           </p>
           <h1 className="text-[36px] sm:text-[52px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-5 font-[family-name:var(--font-display)]">
-            New screenplays. Already read. Already matched to your lane.
+            Filter, find, and reach out — without the inbox.
           </h1>
           <p className="text-[17px] sm:text-[19px] text-[var(--gem-gray-200)] leading-[1.55] m-0 mb-7 max-w-[60ch]">
-            GEM is a curated feed of evaluated screenplays — every one with a
-            structured report covering Cast, Packaging, Project Complexity,
-            and the case for greenlight. Mark Interested, send a one-click
-            intro, and the writer&apos;s reply lands in your inbox. No cold
-            inbox triage.
+            GEM gives producers and reps a searchable feed of new
+            screenplays — every one already read. Filter by genre, format,
+            and budget. Skim the structured report. Email the writer in one
+            click. No portals, no triage.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -67,26 +66,29 @@ export default function IndustryPage() {
           </div>
         </div>
 
+        {/* MATCHED FEED MOCK */}
+        <FeedFilterMock />
+
         {/* WHAT YOU GET */}
-        <Section eyebrow="What you get" title="A signal-rich slate, not an inbox.">
+        <Section eyebrow="What you get" title="A searchable slate, not an inbox.">
           <div className="grid sm:grid-cols-2 gap-3">
             <ValueBlock
-              icon={<Inbox size={16} />}
-              title="A matched feed"
-              body="Scripts filtered to your lane: genre, format, budget tier. New-since-last-visit signal so you only triage what's actually new."
+              icon={<Filter size={16} />}
+              title="Filter by your lane"
+              body="Genre, format, budget tier — narrow the feed in two clicks. Save your filter as your default and the slate refreshes against it."
             />
             <ValueBlock
               icon={<FileText size={16} />}
-              title="Structured reports"
-              body="Every script comes with a producer's-eye read — Why this can be a hit, Cast, Packaging, Project Complexity, Development considerations."
+              title="Full report on every script"
+              body="Headline, Why this is a hit, Cast, Packaging, Project Complexity, Development considerations — already there before you click in."
             />
             <ValueBlock
               icon={<Mail size={16} />}
-              title="Intros routed by GEM"
-              body="Mark Interested, send a one-line intro. We deliver it to the writer with your email as the Reply-To. Their reply lands in your inbox directly."
+              title="Email the writer in one click"
+              body="Mark Interested or send a one-line intro. We route it with your email as the Reply-To; their reply lands directly in your inbox."
             />
             <ValueBlock
-              icon={<Filter size={16} />}
+              icon={<Inbox size={16} />}
               title="Slate management"
               body="Inbox / Slate / Passed columns. Pass-with-comment lets you give the writer a private note even when the script isn't for you."
             />
@@ -199,6 +201,140 @@ export default function IndustryPage() {
         </div>
       </main>
     </>
+  )
+}
+
+// FeedFilterMock — full-width producer-side preview: filter chips on
+// top, three matched-script rows underneath. Sells the "easy to filter
+// + skim" experience as the centerpiece of /industry.
+function FeedFilterMock() {
+  return (
+    <section className="mt-14 sm:mt-16">
+      <div
+        className="rounded-2xl p-5 sm:p-6"
+        style={{
+          background: '#fff',
+          border: '1px solid var(--gem-gray-700)',
+          boxShadow: '0 18px 40px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03)',
+        }}
+      >
+        <div className="flex items-center justify-between gap-3 mb-4">
+          <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
+            Your matched feed
+          </p>
+          <span className="text-[10px] italic" style={{ color: 'var(--gem-gray-500)' }}>
+            demo
+          </span>
+        </div>
+
+        {/* Filter chips */}
+        <div className="flex flex-wrap items-center gap-2 mb-5 pb-4" style={{ borderBottom: '1px solid var(--gem-gray-800)' }}>
+          <FilterChip label="Genre: Drama" active />
+          <FilterChip label="Format: Series" active />
+          <FilterChip label="Budget: Premium cable" active />
+          <FilterChip label="+ Tone" />
+          <FilterChip label="+ Setting" />
+          <span className="ml-auto text-[11px] text-[var(--gem-gray-500)]">
+            12 scripts in your lane
+          </span>
+        </div>
+
+        {/* Feed rows */}
+        <div className="space-y-2.5">
+          <FeedRow
+            title="Untitled mob therapy pilot"
+            meta="Series · 1 hr drama · Premium cable"
+            score="78"
+            interested={5}
+            isNew
+          />
+          <FeedRow
+            title="The Northern Line"
+            meta="Series · 1 hr drama · Premium cable"
+            score="74"
+            interested={3}
+          />
+          <FeedRow
+            title="Glass Cathedral"
+            meta="Series · 1 hr drama · Premium cable"
+            score="71"
+            interested={2}
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function FilterChip({ label, active = false }: { label: string; active?: boolean }) {
+  return (
+    <span
+      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11.5px] font-semibold"
+      style={{
+        background: active ? 'rgba(124,58,237,0.08)' : 'transparent',
+        border: `1px solid ${active ? 'rgba(124,58,237,0.30)' : 'var(--gem-gray-700)'}`,
+        color: active ? 'var(--gem-accent)' : 'var(--gem-gray-400)',
+      }}
+    >
+      {label}
+    </span>
+  )
+}
+
+function FeedRow({
+  title,
+  meta,
+  score,
+  interested,
+  isNew = false,
+}: {
+  title: string
+  meta: string
+  score: string
+  interested: number
+  isNew?: boolean
+}) {
+  return (
+    <div
+      className="rounded-xl px-4 py-3 flex items-center gap-3"
+      style={{
+        background: 'var(--gem-gray-900)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2 mb-1">
+          <p className="text-[14px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
+            {title}
+          </p>
+          {isNew && (
+            <span
+              className="text-[8.5px] font-bold uppercase tracking-wider px-1 py-[1px] rounded text-white"
+              style={{ background: '#16a34a' }}
+            >
+              New
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <p className="text-[11.5px] text-[var(--gem-gray-400)] m-0">{meta}</p>
+          <span className="text-[var(--gem-gray-700)]">·</span>
+          <p className="text-[11.5px] m-0" style={{ color: '#15803d' }}>
+            {interested} interested
+          </p>
+        </div>
+      </div>
+      <span
+        className="shrink-0 text-[12px] font-bold px-2.5 py-1 rounded-md tabular-nums"
+        style={{
+          background: 'rgba(124,58,237,0.08)',
+          border: '1px solid rgba(124,58,237,0.25)',
+          color: 'var(--gem-gray-50)',
+        }}
+      >
+        {score}
+      </span>
+    </div>
   )
 }
 

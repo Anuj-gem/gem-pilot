@@ -32,10 +32,11 @@ export default function WritersPage() {
             A real read on your script. And the industry to actually see it.
           </h1>
           <p className="text-[17px] sm:text-[19px] text-[var(--gem-gray-200)] leading-[1.55] m-0 mb-7 max-w-[60ch]">
-            Upload your screenplay. In 60 seconds, GEM gives you the report a
-            producer would write before greenlight: what works, what to plan
-            for, who would chase it. Then we put it in front of working
-            industry partners — only the ones you choose to share with.
+            Upload your screenplay. In 60 seconds, GEM gives you a producer&apos;s-eye
+            report: what works, who would star in it, what it would take to make,
+            and the case a producer would walk into a meeting with. Then we put
+            it in front of working industry partners — only the ones you choose
+            to share with.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -85,7 +86,7 @@ export default function WritersPage() {
         </Section>
 
         {/* WHAT YOU GET */}
-        <Section eyebrow="What's in the report" title="The packet a producer would write before greenlight.">
+        <Section eyebrow="What's in the report" title="A structured read on every dimension a producer weighs.">
           <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-6 max-w-[64ch]">
             Every GEM evaluation produces a structured report covering the
             same axes a producer would weigh in a development meeting. Full
@@ -94,33 +95,33 @@ export default function WritersPage() {
           <div className="space-y-3">
             <ReportBlock
               number="01"
-              title="Commercial-potential score"
-              body="A 0–100 read calibrated by the Selznick rubric. Greenlight, optionable, needs development, or early-stage — at a glance."
+              title="Headline + Why this is a hit"
+              body="A sharpened version of your headline plus the strongest commercial notes about the script — the case a manager could forward verbatim."
             />
             <ReportBlock
               number="02"
-              title="Why this can be a hit"
-              body="The strongest commercial notes about the script. The case a manager could forward verbatim."
-            />
-            <ReportBlock
-              number="03"
               title="Cast"
               body="Lead and supporting characters with the actor-want angle: who chases this part, what performance comp it pulls from."
             />
             <ReportBlock
-              number="04"
+              number="03"
               title="Packaging"
               body="Audience target, budget tier (per-episode for series), and whether the project has franchise upside."
             />
             <ReportBlock
-              number="05"
+              number="04"
               title="Project Complexity"
               body="What a producer would plan for on production and casting — the lift, the dependencies, the heads-up."
             />
             <ReportBlock
-              number="06"
+              number="05"
               title="Development considerations"
               body="The case against: the sharpest lever and every other note a buyer would weigh before saying yes."
+            />
+            <ReportBlock
+              number="06"
+              title="A GEM Score on the cover"
+              body="One number for fast triage — but the substance is the report underneath. The score sits on the cover; the read is what you (and producers) actually use."
             />
           </div>
         </Section>

@@ -41,8 +41,8 @@ export default function SelznickPage() {
             Named after David O. Selznick — the producer who turned <em>Gone
             with the Wind</em> and <em>Rebecca</em> into events. The Selznick
             rubric is GEM&apos;s evaluation lens: a producer&apos;s-eye read on
-            every script we score, distilled into a 0–100 commercial-potential
-            score and a structured report.
+            every script, returned as a structured report covering story,
+            character, packaging, and production reality.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function SelznickPage() {
             <Lens
               icon={<Layers size={16} />}
               title="Production"
-              body="Period vs contemporary. Locations. Stunts, VFX, kids, animals, music clearances. What a buyer would actually need to greenlight."
+              body="Period vs contemporary. Locations. Stunts, VFX, kids, animals, music clearances. The lift a buyer would actually need to plan for."
             />
             <Lens
               icon={<Compass size={16} />}
@@ -79,35 +79,20 @@ export default function SelznickPage() {
           </div>
         </Section>
 
-        {/* THE SCORE */}
-        <Section eyebrow="The score" title="One number, calibrated to producer judgment.">
+        {/* THE REPORT */}
+        <Section eyebrow="The report" title="A structured read, not a score.">
           <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4 max-w-[64ch]">
-            Every script gets a single 0–100 commercial-potential score. The
-            score isn&apos;t a literary grade and it isn&apos;t a vibe — it&apos;s
-            a calibrated read built from the four lenses above, weighted toward
-            the signals that historically predict whether a project finds an
-            audience.
+            The report is the product. Each evaluation comes back with a
+            sharpened headline, the strongest reasons the script lands,
+            character profiles, packaging signals, and a margin-note read on
+            production reality — the same shape a producer would write up
+            before walking into a development meeting.
           </p>
           <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-4 max-w-[64ch]">
-            We use it the way a producer would use coverage in a development
-            meeting: a fast read on whether something is greenlight-grade,
-            optionable, or needs more time.
+            A single number sits on the cover for fast triage. It&apos;s a
+            quick-glance signal, not a verdict — the substance is the read
+            underneath, and that&apos;s what producers actually use.
           </p>
-          <div
-            className="rounded-xl p-5 mt-6"
-            style={{
-              background: 'rgba(124,58,237,0.05)',
-              border: '1px solid rgba(124,58,237,0.25)',
-            }}
-          >
-            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-3">
-              How to read the score
-            </p>
-            <ScoreRow label="85–100" tier="Greenlight material" body="Distinctive on craft, commercially legible, low friction to package. Rare." />
-            <ScoreRow label="60–84" tier="Optionable" body="Real signal. The kind of script that earns a meeting and shows up on a producer's slate." />
-            <ScoreRow label="40–59" tier="Needs development" body="Promise on one or more axes; gaps elsewhere. Worth working on." />
-            <ScoreRow label="Below 40" tier="Early-stage" body="Honest read: the script isn't ready for industry yet. Often a craft or premise gap." />
-          </div>
         </Section>
 
         {/* WHAT WE DON'T DO */}
@@ -217,35 +202,6 @@ function Lens({
       <p className="text-[14.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
         {body}
       </p>
-    </div>
-  )
-}
-
-function ScoreRow({
-  label,
-  tier,
-  body,
-}: {
-  label: string
-  tier: string
-  body: string
-}) {
-  return (
-    <div className="flex items-baseline gap-3 sm:gap-4 py-2.5 border-b last:border-0 border-[var(--gem-gray-800)]">
-      <span
-        className="text-[12.5px] font-bold tabular-nums shrink-0"
-        style={{ color: 'var(--gem-accent)', minWidth: 64 }}
-      >
-        {label}
-      </span>
-      <div className="min-w-0">
-        <p className="text-[14.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
-          {tier}
-        </p>
-        <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-snug m-0 mt-0.5">
-          {body}
-        </p>
-      </div>
     </div>
   )
 }

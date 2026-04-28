@@ -357,18 +357,25 @@ export default async function Home({
               flip={true}
             />
             <FeatureBlock
+              eyebrow="Project complexity"
+              title="What it actually takes to make this thing."
+              body="A fast read on production reality — cost lift, cast lift, rights and clearance flags. The heads-up a producer would write into the margin of the script before pitching it up."
+              visual={<ProjectComplexityMock />}
+              flip={false}
+            />
+            <FeatureBlock
               eyebrow="Industry matching"
               title="Producers and reps reach out directly."
               body="When your script qualifies, GEM puts it on the dashboards of producers and representatives actively scouting your lane. Their interest lands in your inbox — no submission portals, no chasing."
               visual={<MatchingDashboardMock />}
-              flip={false}
+              flip={true}
             />
             <FeatureBlock
               eyebrow="Private by default"
               title="You decide what the industry sees."
               body="Hide your score. Hide individual sections. Take the post down anytime. Your report URL stays sharable with anyone you choose, separately from industry visibility."
               visual={<PrivacyControlsMock />}
-              flip={true}
+              flip={false}
             />
           </div>
         </div>
@@ -1160,6 +1167,76 @@ function ProducerRow({
           {status === 'reached out' ? 'Reached out' : 'Marked interested'} · {time}
         </p>
       </div>
+    </div>
+  )
+}
+
+// Project complexity mock — three Smooth/Manageable/Complex cards on
+// neutral backgrounds, each with a margin note from a producer's lens.
+function ProjectComplexityMock() {
+  return (
+    <div className="space-y-3">
+      <ComplexityMockCard
+        title="Cost"
+        level="medium"
+        note="Premium-cable budget tier. One signature location and a recurring crew keep this manageable."
+      />
+      <ComplexityMockCard
+        title="Cast"
+        level="low"
+        note="One star-driving lead, three strong supporting roles. Castable without a name attachment."
+      />
+      <ComplexityMockCard
+        title="Clearance"
+        level="high"
+        note="Music-driven set pieces and a real institution name in the title. Plan for licensing + legal review."
+      />
+    </div>
+  )
+}
+
+function ComplexityMockCard({
+  title,
+  level,
+  note,
+}: {
+  title: string
+  level: 'low' | 'medium' | 'high'
+  note: string
+}) {
+  const pill =
+    level === 'low'
+      ? { bg: '#d1fae5', fg: 'var(--gem-gray-50)', border: '#10b981', label: 'Smooth' }
+      : level === 'medium'
+        ? { bg: '#fef9c3', fg: 'var(--gem-gray-50)', border: '#facc15', label: 'Manageable' }
+        : { bg: '#fee2e2', fg: 'var(--gem-gray-50)', border: '#ef4444', label: 'Complex' }
+  return (
+    <div
+      className="rounded-xl p-4 sm:p-5"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+      }}
+    >
+      <div className="flex items-baseline justify-between gap-2 mb-2">
+        <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
+          {title}
+        </p>
+        <span
+          className="text-[10px] uppercase tracking-[0.14em] font-bold px-2 py-0.5 rounded-full"
+          style={{
+            color: pill.fg,
+            background: pill.bg,
+            border: `1px solid ${pill.border}`,
+          }}
+        >
+          {pill.label}
+        </span>
+      </div>
+      <p className="text-[13px] text-[var(--gem-gray-100)] leading-[1.5] m-0">
+        {note}
+      </p>
     </div>
   )
 }
