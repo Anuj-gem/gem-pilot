@@ -799,47 +799,92 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {issuesHeadline}
                   </p>
                 )}
-                {/* Sharpest lever as the always-visible lede — primary lever
-                    becomes a pull-quote with red rule + "Sharpest lever"
-                    eyebrow. Stays crisp for free owners (paired with bullet 01
-                    of "Why this is a hit" as the two pieces a free writer
-                    walks away with).
-                    If there's no primary, fall back to the first secondary
-                    consideration so the section is never empty when expanded. */}
-                {primary ? (
-                  <div className="relative pl-5 sm:pl-6 mb-5 sm:mb-6">
-                    <div
-                      aria-hidden
-                      className="absolute left-0 top-1 bottom-1 rounded-sm"
-                      style={{ width: 3, background: '#dc2626' }}
-                    />
-                    <p
-                      className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
-                      style={{ color: '#dc2626' }}
-                    >
-                      Sharpest lever
-                    </p>
-                    <p className="text-[18px] sm:text-[22px] font-semibold text-[var(--gem-gray-50)] leading-[1.35] m-0 mb-2.5">
-                      {primary.area}
-                    </p>
-                    <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0">
-                      {primary.detail}
-                    </p>
-                  </div>
-                ) : secondary[0] ? (
-                  <div className="mb-5 sm:mb-6">
-                    <p className="text-[16px] sm:text-[18px] font-semibold text-[var(--gem-gray-50)] m-0 mb-2 leading-tight">
-                      {secondary[0].area}
-                    </p>
-                    <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]">
-                      {secondary[0].detail}
-                    </p>
-                  </div>
-                ) : null}
+                {/* Unified numbered list — same shape as "Why this can be
+                    a hit". Sharpest lever is always #1, given a red number
+                    + small inline pill so it still reads as the priority,
+                    and is open by default. The previous red-rule pull-
+                    quote was visually too jarring against the rest of the
+                    page. Anuj 2026-04-28. */}
+                {(() => {
+                  const ordered: IssueRow[] = primary
+                    ? [primary, ...secondary]
+                    : secondary
+                  if (ordered.length === 0) return null
+                  return (
+                    <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
+                      {ordered.map((c, i) => {
+                        const isPrimary = i === 0 && !!primary
+                        return (
+                          <li key={i}>
+                            <details
+                              {...(isPrimary ? { open: true } : {})}
+                              className="group [&_summary::-webkit-details-marker]:hidden"
+                            >
+                              <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
+                                <span
+                                  className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
+                                  style={{
+                                    color: isPrimary
+                                      ? '#dc2626'
+                                      : 'var(--gem-accent)',
+                                  }}
+                                >
+                                  {String(i + 1).padStart(2, '0')}
+                                </span>
+                                <div className="min-w-0 flex items-baseline gap-2 flex-wrap">
+                                  <p
+                                    className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug"
+                                    style={
+                                      applyPaywallBlur
+                                        ? {
+                                            filter: 'blur(8px)',
+                                            userSelect: 'none',
+                                          }
+                                        : undefined
+                                    }
+                                  >
+                                    {c.area}
+                                  </p>
+                                  {isPrimary && (
+                                    <span
+                                      className="text-[9.5px] uppercase tracking-[0.15em] font-bold px-1.5 py-0.5 rounded-sm"
+                                      style={{
+                                        color: '#dc2626',
+                                        background: 'rgba(220,38,38,0.07)',
+                                        border: '1px solid rgba(220,38,38,0.25)',
+                                      }}
+                                    >
+                                      Sharpest lever
+                                    </span>
+                                  )}
+                                </div>
+                                <span
+                                  aria-hidden
+                                  className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
+                                >
+                                  ▾
+                                </span>
+                              </summary>
+                              <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
+                                <div />
+                                <p
+                                  className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
+                                  style={bodyBlur}
+                                >
+                                  {c.detail}
+                                </p>
+                              </div>
+                            </details>
+                          </li>
+                        )
+                      })}
+                    </ol>
+                  )
+                })()}
 
                 {/* Craft note (always visible, emerald aside). */}
                 {craftNote && (
-                  <div className="relative pl-5 sm:pl-6 mb-5 sm:mb-7">
+                  <div className="relative pl-5 sm:pl-6 mt-5 sm:mt-6">
                     <div
                       aria-hidden
                       className="absolute left-0 top-1 bottom-1 rounded-sm"
@@ -858,44 +903,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       {craftNote}
                     </p>
                   </div>
-                )}
-
-                {/* Secondary considerations as per-note drop-downs — title
-                    visible, body collapsed per item so the page doesn't
-                    get heavy. */}
-                {secondary.slice(primary ? 0 : 1).length > 0 && (
-                  <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
-                    {secondary.slice(primary ? 0 : 1).map((c, i) => (
-                      <li key={i}>
-                        <details className="group [&_summary::-webkit-details-marker]:hidden">
-                          <summary className="cursor-pointer list-none flex items-center gap-3 py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
-                            <p
-                              className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0 flex-1"
-                              style={
-                                applyPaywallBlur
-                                  ? { filter: 'blur(8px)', userSelect: 'none' }
-                                  : undefined
-                              }
-                            >
-                              {c.area}
-                            </p>
-                            <span
-                              aria-hidden
-                              className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px] shrink-0"
-                            >
-                              ▾
-                            </span>
-                          </summary>
-                          <p
-                            className="text-[14.5px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 pt-2 pb-1 max-w-[62ch]"
-                            style={bodyBlur}
-                          >
-                            {c.detail}
-                          </p>
-                        </details>
-                      </li>
-                    ))}
-                  </ol>
                 )}
               </EditorialSection>
             )
