@@ -199,10 +199,10 @@ export default async function Home({
                 with full reports already in hand.
               </p>
               <ul className="list-none p-0 m-0 mb-7 space-y-2.5">
-                <IndustryFeature text="Lane-matched feed of qualified scripts" />
-                <IndustryFeature text="Full producer-grade report on every project" />
-                <IndustryFeature text="Direct line to the writer when something fits" />
-                <IndustryFeature text="No inbound submissions to triage" />
+                <IndustryFeature text="Always-on feed of new scripts matched to your lane" />
+                <IndustryFeature text="Complete GEM report on every single script" />
+                <IndustryFeature text="One-click direct line to the writer" />
+                <IndustryFeature text="Live signal of which projects other partners are tracking" />
               </ul>
               <TrackedCTA
                 href="/signup"
@@ -504,17 +504,23 @@ function IndustryDashboardMock() {
           title="Untitled mob therapy pilot"
           format="Series · 1 hr drama"
           score="78"
+          interested={5}
+          passed={1}
           isNew
         />
         <MatchRow
           title="The Northern Line"
           format="Feature · Action thriller"
           score="71"
+          interested={3}
+          passed={2}
         />
         <MatchRow
           title="Glass Ceiling"
           format="Feature · Workplace comedy"
           score="68"
+          interested={2}
+          passed={4}
         />
       </div>
       <div
@@ -531,11 +537,15 @@ function MatchRow({
   title,
   format,
   score,
+  interested,
+  passed,
   isNew = false,
 }: {
   title: string
   format: string
   score: string
+  interested: number
+  passed: number
   isNew?: boolean
 }) {
   return (
@@ -560,7 +570,17 @@ function MatchRow({
             </span>
           )}
         </div>
-        <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-0.5">{format}</p>
+        <div className="flex items-center gap-2 mt-0.5">
+          <p className="text-[11px] text-[var(--gem-gray-400)] m-0">{format}</p>
+          <span className="text-[var(--gem-gray-700)]">·</span>
+          <p className="text-[11px] m-0" style={{ color: '#15803d' }}>
+            {interested} interested
+          </p>
+          <span className="text-[var(--gem-gray-700)]">·</span>
+          <p className="text-[11px] m-0 text-[var(--gem-gray-500)]">
+            {passed} passed
+          </p>
+        </div>
       </div>
       <span
         className="shrink-0 text-[12px] font-bold px-2 py-1 rounded-md tabular-nums"
@@ -837,13 +857,13 @@ function MatchingDashboardMock() {
       <div className="space-y-2.5">
         <ProducerRow
           name="Lena Park"
-          company="Plan B Entertainment"
+          company="Westview Pictures"
           status="interested"
           time="2h ago"
         />
         <ProducerRow
           name="Marcus Hill"
-          company="Anonymous Content"
+          company="Lighthouse Studios"
           status="reached out"
           time="yesterday"
         />
