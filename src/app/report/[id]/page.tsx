@@ -940,17 +940,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             producer-direct framing somewhere. */}
 
         {/* REFERENCE — Score detail + Production specs grouped under a
-            quieter eyebrow so the page narrative ends with editorial
-            energy (Hit case → Issues → Project Complexity) before
-            slipping into the deeper detail dump. Anuj 2026-04-28. */}
-        <div className="mt-12 sm:mt-14 mb-3">
-          <div className="flex items-center gap-3">
-            <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-500)]">
-              Reference
-            </span>
-            <span className="flex-1 h-px bg-[var(--gem-gray-800)]" />
-          </div>
-        </div>
+            collapsible "Reference" disclosure, folded by default so the
+            editorial flow (Hit case → Issues → Project Complexity) is
+            what the reader lands on. Tap to unfold the deeper data.
+            Anuj 2026-04-28. */}
+        <details className="group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
+          <summary className="cursor-pointer list-none mb-3">
+            <div className="flex items-center gap-3">
+              <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-500)] group-hover:text-[var(--gem-gray-300)] transition-colors">
+                Reference
+              </span>
+              <span className="flex-1 h-px bg-[var(--gem-gray-800)]" />
+              <span
+                aria-hidden
+                className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+              >
+                ▾
+              </span>
+            </div>
+          </summary>
 
         {/* SCORE DETAIL (was "Narrative breakdown") — 10 dim scores */}
         <SectionGate
@@ -1120,6 +1128,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )}
           </SectionGate>
         )}
+        </details>
 
         {/* Free-tier soft upgrade CTA */}
         {showUpgradeCTA && isOwner && (
