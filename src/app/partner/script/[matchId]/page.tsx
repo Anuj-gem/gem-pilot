@@ -33,6 +33,7 @@ import {
   Fact,
 } from '@/components/report/v5-components'
 import { PackagingSection } from '@/components/report/packaging-block'
+import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { MatchActions } from '@/components/partner/match-actions'
@@ -455,45 +456,64 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               <ScriptDownloadButton matchId={match.id} />
             </div>
 
-            {/* LEAD CHARACTERS */}
-            {leadCharacters.length > 0 && (
-              <Section
-                label="Lead characters"
-                subtitle="The parts inside this script and why an actor would chase them."
-                summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
-              >
-                <div className="space-y-3">
-                  {leadCharacters.map((c, i) => (
-                    <Collapsible
-                      key={i}
-                      title={c.name}
-                      meta={`${c.role_type} · ${c.demographics}`}
-                    >
-                      <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
-                        {c.hook}
-                      </p>
-                      <div
-                        className="rounded-lg p-5"
-                        style={{
-                          background: 'rgba(5,150,105,0.07)',
-                          border: '1px solid rgba(5,150,105,0.20)',
-                        }}
+            {/* LEAD CHARACTERS — Lead vs Supporting split (2026-04-28).
+                Same component as the writer page so the producer reads the
+                ensemble the same way. */}
+            {leadCharacters.length > 0 && (() => {
+              const leads = leadCharacters.filter(
+                (c) => (c.role_type ?? '').toLowerCase() === 'lead'
+              )
+              const supporting = leadCharacters.filter(
+                (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
+              )
+              return (
+                <Section
+                  label="Lead characters"
+                  subtitle="The parts inside this script and why an actor would chase them."
+                  summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
+                >
+                  <div className="space-y-3">
+                    {leads.map((c, i) => (
+                      <Collapsible
+                        key={`lead-${i}`}
+                        title={c.name}
+                        meta={`${c.role_type} · ${c.demographics}`}
+                        defaultOpen
                       >
-                        <p
-                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                          style={{ color: '#059669' }}
+                        <p className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5">
+                          {c.hook}
+                        </p>
+                        <div
+                          className="rounded-lg p-5"
+                          style={{
+                            background: 'rgba(5,150,105,0.07)',
+                            border: '1px solid rgba(5,150,105,0.20)',
+                          }}
                         >
-                          Why an actor would want this part
-                        </p>
-                        <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                          {c.why_actor_wants_this}
-                        </p>
-                      </div>
-                    </Collapsible>
-                  ))}
-                </div>
-              </Section>
-            )}
+                          <p
+                            className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                            style={{ color: '#059669' }}
+                          >
+                            Why an actor would want this part
+                          </p>
+                          <p className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                            {c.why_actor_wants_this}
+                          </p>
+                        </div>
+                      </Collapsible>
+                    ))}
+                  </div>
+                  {supporting.length > 0 && (
+                    <div className="mt-6">
+                      <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+                        Supporting cast · {supporting.length}
+                      </p>
+                      <SupportingCharactersCarousel characters={supporting} />
+                    </div>
+                  )}
+                </Section>
+              )
+            })()}
 
             {/* PACKAGE ANGLES */}
             {packageAngles && (

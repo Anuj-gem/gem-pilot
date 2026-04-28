@@ -13,11 +13,14 @@ export function PackagingSection({ data }: Props) {
   return (
     <Section
       label="Packaging"
-      subtitle="How a producer would frame this project for a buyer — comps, audience, budget tier, lane, and franchise upside."
-      summary="Comps · Audience · Budget tier · Lane fit · IP"
+      subtitle="How a producer would frame this project for a buyer — audience, budget tier, lane, and franchise upside."
+      summary="Audience · Budget tier · Lane fit · IP"
     >
       <div className="space-y-3">
-        <CompSetCard comps={data.comp_set} />
+        {/* Comp Set hidden in UI as of 2026-04-28. The prompt still emits
+            `comp_set` so the data is on the eval row; we can re-mount this
+            card by re-introducing <CompSetCard comps={data.comp_set} /> here.
+            Kept the component definition below for the same reason. */}
         <AudienceCard target={data.audience_target} />
         <BudgetTierCard tier={data.budget_tier} />
         <LaneFitCard lane={data.lane_fit} />
@@ -47,36 +50,9 @@ function SubCard({
   )
 }
 
-function CompSetCard({ comps }: { comps: Packaging['comp_set'] }) {
-  if (!comps?.length) return null
-  return (
-    <SubCard label="Comp Set">
-      <div className="space-y-3">
-        {comps.map((c, i) => (
-          <div
-            key={i}
-            className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4 pb-3 last:pb-0 border-b last:border-0"
-            style={{ borderColor: 'var(--gem-gray-700)' }}
-          >
-            <div className="sm:w-48 flex-shrink-0 mb-1 sm:mb-0">
-              <span className="text-[16px] font-semibold text-[var(--gem-gray-50)]">
-                {c.title}
-              </span>
-              {c.year != null && (
-                <span className="text-[14px] text-[var(--gem-gray-400)] ml-2">
-                  ({c.year})
-                </span>
-              )}
-            </div>
-            <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.55] m-0 flex-1">
-              {c.why_it_comps}
-            </p>
-          </div>
-        ))}
-      </div>
-    </SubCard>
-  )
-}
+// CompSetCard removed from the live render 2026-04-28. The prompt still
+// emits `comp_set` on the eval row — re-mount via git history when we want
+// to bring it back.
 
 function AudienceCard({ target }: { target: Packaging['audience_target'] }) {
   return (
@@ -111,6 +87,11 @@ function AudienceCard({ target }: { target: Packaging['audience_target'] }) {
 }
 
 function BudgetTierCard({ tier }: { tier: Packaging['budget_tier'] }) {
+  // Selznick 3.8 (2026-04-28): series evals now emit per_episode AND
+  // season_total. Show both stacked under the tier label so a producer
+  // can read the per-episode and season costs at the same time. Features
+  // continue to show just the total range.
+  const isSeries = !!(tier.per_episode || tier.season_total)
   return (
     <SubCard label="Budget Tier">
       <div className="flex items-baseline gap-3 flex-wrap mb-2">
@@ -120,12 +101,36 @@ function BudgetTierCard({ tier }: { tier: Packaging['budget_tier'] }) {
         >
           {tier.tier}
         </span>
-        {tier.range && (
+        {!isSeries && tier.range && (
           <span className="text-[16px] font-semibold text-[var(--gem-gray-100)] tabular-nums">
             {tier.range}
           </span>
         )}
       </div>
+      {isSeries && (
+        <div className="flex flex-col gap-1 mb-2">
+          {tier.per_episode && (
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <span className="text-[11.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)]">
+                Per episode
+              </span>
+              <span className="text-[15px] font-semibold text-[var(--gem-gray-100)] tabular-nums">
+                {tier.per_episode}
+              </span>
+            </div>
+          )}
+          {tier.season_total && (
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <span className="text-[11.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)]">
+                Season total
+              </span>
+              <span className="text-[15px] font-semibold text-[var(--gem-gray-100)] tabular-nums">
+                {tier.season_total}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
       {tier.note && (
         <p className="text-[15px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
           {tier.note}

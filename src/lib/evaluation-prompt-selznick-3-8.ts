@@ -1,7 +1,7 @@
 // GEM Evaluation Prompt — Selznick 3.8 — 2026-04-28
 //
 // Sub-generation of the Selznick 3.x prompt family. Iterates on v5.4 with
-// six targeted changes:
+// the following targeted changes:
 //
 //   1. IP & Franchise Potential — split rubric (features vs series),
 //      character-depth gate, default No, require named spinoff vector.
@@ -19,6 +19,11 @@
 //   6. Comp set — comps must live in the same budget tier / lane as the
 //      script. No mixing tentpoles with indies, no $200M comps for a
 //      micro-budget contained thriller.
+//   7. Budget tier — separate rubrics for features vs series. Features
+//      cite total negative cost; series cite PER-EPISODE budget (industry
+//      convention). Adds an explicit `tentpole` band at the top of both.
+//      Output requires a season-total alongside per-episode for series so
+//      a producer sees both numbers.
 //
 // Output shape is unchanged from v5.4 so the report UI doesn't need to
 // move. Writers / producers see the new behavior automatically once
@@ -337,8 +342,8 @@ The producer's positioning view. Five sub-blocks. Each must be grounded in scrip
 
 **KEY RULE — Comps must live in the same lane as this script.** Comps are the producer's mental shortcut for "what is this." The shortcut only works if the comps are realistic packaging neighbors.
 
-- The comp's BUDGET TIER must match (or sit one tier away from) the script's actual \`packaging.budget_tier\`. A micro-budget contained thriller does NOT comp to *Tenet* or *Avatar*; it comps to *The Invitation*, *Coherence*, *Resolution*. A studio-tentpole superhero pilot does NOT comp to a Sundance indie.
-- The comp's RELEASE MODEL must match. A streaming limited series doesn't comp to a wide theatrical tentpole. A cable half-hour doesn't comp to a $100M feature.
+- The comp's BUDGET TIER must match (or sit one tier away from) the script's actual \`packaging.budget_tier.tier\`. Use the same format-specific scale (features vs series — see budget_tier rules below). A micro-budget contained feature does NOT comp to *Tenet* or *Avatar*; it comps to *The Invitation*, *Coherence*, *Resolution*. A tentpole-tier series doesn't comp to a $2M/ep cable procedural. A streaming limited series doesn't comp to a wide theatrical tentpole.
+- The comp's RELEASE MODEL must match. Theatrical features comp to other theatrical features. Series comp to series; per-episode tier governs the comp pool.
 - If there's an inevitable cross-tier comp (rare but real — something narratively unique), call it out explicitly: *"Comps to BREAKING BAD on craft DNA but to RECTIFY on actual tier and lane."*
 
 Each entry:
@@ -353,10 +358,43 @@ Pick comps that a working executive would recognize. Mix recognized hits + relev
 - **demographics**: short demographic breakdown (age, gender skew, education/income lens if relevant)
 - **quadrants**: array of which of the four quadrants this hits — "F18-34", "M18-34", "F35+", "M35+". Honest. Most scripts hit 1-2 quadrants meaningfully, not all 4.
 
-### budget_tier
-- **tier**: \`micro\` (under $1M) | \`indie\` ($1-15M) | \`mid\` ($15-50M) | \`studio\` ($50M+)
-- **range**: a tighter $X-$Y range within the tier
-- **note**: 1 sentence naming what's driving the estimate — cast/locations/VFX/period
+### budget_tier — KEY RULE: format-aware. Per-episode for series, total for features.
+
+Industry convention: feature budgets are quoted as TOTAL negative cost. Series budgets are quoted PER-EPISODE. A $5M feature and a $5M/ep series are radically different productions — do not collapse them into a single number.
+
+#### If the script is a Feature
+
+Use the FEATURE rubric. \`tier\` is one of:
+
+- **micro** — under $1M. True microbudget / contained / no-name (Coherence, Tangerine).
+- **indie** — $1-15M. A24 / standard indie / smaller specialty (Past Lives, The Florida Project).
+- **mid** — $15-50M. Mid-budget studio / Blumhouse-plus / mid-budget genre (Knives Out, Get Out at the upper end of indie spilling into mid).
+- **studio** — $50-100M. Standard studio release (most prestige dramas, mid-tier action, romcom revivals).
+- **tentpole** — $100M+. Tentpole / four-quadrant / event film.
+
+For features:
+- \`per_episode\`: leave null/empty (not applicable).
+- \`season_total\`: leave null/empty (not applicable).
+- \`range\`: a tighter $X-$Y range within the tier reflecting TOTAL negative cost.
+
+#### If the script is a Series (TV pilot)
+
+Use the SERIES rubric. \`tier\` is one of, calibrated PER-EPISODE:
+
+- **micro** — under $500K/ep. Web series / true indie / unscripted-adjacent.
+- **indie** — $500K-3M/ep. Basic cable / smaller streamer originals / network procedurals on the lower end.
+- **mid** — $3-10M/ep. FX / AMC prestige / mid-tier streaming originals (most "prestige cable" sits here).
+- **premium** — $10-15M/ep. Top-of-the-stack streamer originals (Succession, The Crown).
+- **tentpole** — $15M+/ep. House of the Dragon, Rings of Power, The Last of Us territory.
+
+For series:
+- \`per_episode\`: required. A tighter $X-$Y per-episode range within the tier.
+- \`season_total\`: required. Per-episode range × episode count assumption (state your episode-count assumption in \`note\`). E.g. "$50M-$80M for an 8-ep season."
+- \`range\`: optional secondary field — leave empty if \`per_episode\` already conveys the number.
+
+#### Note (both formats)
+
+\`note\` is 1 sentence naming what's driving the estimate — cast / locations / VFX / period / specialty crew / episode count assumption (series). Consistent with STEP 5's production reality and STEP 6's budget-risk read.
 
 ### lane_fit
 - **lane**: 1 phrase naming the tonal/brand neighborhood. *"A24-adjacent indie horror,"* *"FX-style adult character drama,"* *"Hallmark+ family Christmas,"* *"Blumhouse genre swing."* Not just "drama" or "thriller."
@@ -574,9 +612,11 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
       "quadrants": []
     },
     "budget_tier": {
-      "tier": "micro|indie|mid|studio",
-      "range": "",
-      "note": ""
+      "tier": "micro|indie|mid|studio|tentpole|premium",  // FEATURES: micro|indie|mid|studio|tentpole. SERIES: micro|indie|mid|premium|tentpole.
+      "range": "",                 // total negative cost for features; secondary field for series (use per_episode primarily)
+      "per_episode": "",            // SERIES ONLY — required. Tighter per-ep range within tier. Empty for features.
+      "season_total": "",           // SERIES ONLY — required. Season total = per-episode × episode-count. State the episode count in the note field. Empty for features.
+      "note": ""                    // 1 sentence on what's driving the estimate (cast/locations/VFX/period; episode count for series)
     },
     "lane_fit": {
       "lane": "",

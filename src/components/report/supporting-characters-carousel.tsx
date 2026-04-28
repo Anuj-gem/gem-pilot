@@ -1,0 +1,190 @@
+// Supporting-character carousel — 2026-04-28.
+//
+// Lead characters get the full <Collapsible> card treatment (one per row,
+// expanded with hook + actor-want copy). Supporting characters were getting
+// the same treatment which made the section read as a 12-row brick. This
+// carousel collapses Supporting into a horizontally-scrolling strip of
+// compact cards: name + role pill + 1-line teaser pulled from the hook.
+// Tap a card to expand its full detail in a panel directly below the strip.
+//
+// Mobile: native horizontal scroll (snap to card). Desktop: chevron arrow
+// buttons paginate left/right by one card-width.
+'use client'
+
+import { useRef, useState } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+export interface SupportingCharacter {
+  name: string
+  role_type: string
+  demographics: string
+  hook: string
+  why_actor_wants_this: string
+}
+
+interface Props {
+  characters: SupportingCharacter[]
+  /** Apply paywall blur to the body content of the expanded panel. */
+  blurred?: boolean
+}
+
+function teaser(hook: string, max = 110): string {
+  const trimmed = (hook ?? '').trim()
+  if (!trimmed) return ''
+  if (trimmed.length <= max) return trimmed
+  // Cut at the last word boundary before max.
+  const slice = trimmed.slice(0, max)
+  const lastSpace = slice.lastIndexOf(' ')
+  return (lastSpace > 60 ? slice.slice(0, lastSpace) : slice).replace(/[,;:.\-—\s]+$/, '') + '…'
+}
+
+export function SupportingCharactersCarousel({ characters, blurred = false }: Props) {
+  const scrollerRef = useRef<HTMLDivElement | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
+  if (!characters || characters.length === 0) return null
+
+  const blurStyle: React.CSSProperties | undefined = blurred
+    ? { filter: 'blur(5px)', userSelect: 'none' }
+    : undefined
+
+  function scrollByCard(dir: 1 | -1) {
+    const el = scrollerRef.current
+    if (!el) return
+    // Card width + gap. Cards are ~240px wide on desktop with a 12px gap.
+    const step = 252
+    el.scrollBy({ left: dir * step, behavior: 'smooth' })
+  }
+
+  const active = activeIndex !== null ? characters[activeIndex] : null
+
+  return (
+    <div>
+      <div className="relative">
+        {/* Scroll arrows — desktop only. Hidden on mobile (use swipe). */}
+        <button
+          type="button"
+          aria-label="Scroll supporting cast left"
+          onClick={() => scrollByCard(-1)}
+          className="hidden sm:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full bg-white shadow-md border border-[var(--gem-gray-700)] text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] hover:border-[var(--gem-gray-500)] transition-colors"
+        >
+          <ChevronLeft size={16} />
+        </button>
+        <button
+          type="button"
+          aria-label="Scroll supporting cast right"
+          onClick={() => scrollByCard(1)}
+          className="hidden sm:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full bg-white shadow-md border border-[var(--gem-gray-700)] text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] hover:border-[var(--gem-gray-500)] transition-colors"
+        >
+          <ChevronRight size={16} />
+        </button>
+
+        <div
+          ref={scrollerRef}
+          className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scroll-smooth"
+          style={{ scrollbarWidth: 'thin' }}
+        >
+          {characters.map((c, i) => {
+            const isActive = activeIndex === i
+            return (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(isActive ? null : i)}
+                className="flex-shrink-0 snap-start w-[240px] text-left rounded-xl p-4 transition-colors"
+                style={{
+                  border: `1px solid ${isActive ? 'var(--gem-gold)' : 'var(--gem-gray-700)'}`,
+                  background: isActive ? 'rgba(212,175,55,0.05)' : '#fff',
+                }}
+              >
+                <p
+                  className="text-[15px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight mb-1.5"
+                  style={blurStyle}
+                >
+                  {c.name}
+                </p>
+                <p
+                  className="text-[11.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] m-0 mb-2"
+                  style={blurStyle}
+                >
+                  {c.role_type} · {c.demographics}
+                </p>
+                <p
+                  className="text-[13px] text-[var(--gem-gray-300)] leading-[1.5] m-0"
+                  style={blurStyle}
+                >
+                  {teaser(c.hook)}
+                </p>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Expanded detail panel — appears directly below the strip when a
+          card is tapped. */}
+      {active && (
+        <div
+          className="rounded-xl p-5 mt-4"
+          style={{
+            border: '1px solid var(--gem-gold)',
+            background: 'rgba(212,175,55,0.04)',
+          }}
+        >
+          <div className="flex items-baseline justify-between gap-3 mb-3">
+            <div className="min-w-0">
+              <p
+                className="text-[18px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight"
+                style={blurStyle}
+              >
+                {active.name}
+              </p>
+              <p
+                className="text-[12px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mt-1"
+                style={blurStyle}
+              >
+                {active.role_type} · {active.demographics}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setActiveIndex(null)}
+              className="text-[12px] text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-100)] flex-shrink-0"
+              aria-label="Close"
+            >
+              Close ✕
+            </button>
+          </div>
+          <p
+            className="text-[15.5px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4"
+            style={blurStyle}
+          >
+            {active.hook}
+          </p>
+          {active.why_actor_wants_this && (
+            <div
+              className="rounded-lg p-4"
+              style={{
+                background: 'rgba(5,150,105,0.07)',
+                border: '1px solid rgba(5,150,105,0.20)',
+              }}
+            >
+              <p
+                className="text-[11px] uppercase tracking-[0.18em] font-bold mb-1.5 m-0"
+                style={{ color: '#059669' }}
+              >
+                Why an actor would want this part
+              </p>
+              <p
+                className="text-[14.5px] text-[var(--gem-gray-100)] leading-[1.55] m-0"
+                style={blurStyle}
+              >
+                {active.why_actor_wants_this}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}

@@ -50,6 +50,7 @@ import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { ContactWriter } from '@/components/report/contact-writer'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
+import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
@@ -582,51 +583,75 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
         >
-          {leadCharacters.length > 0 && (
-            <Section
-              label="Lead characters"
-              subtitle="The parts inside this script and why an actor would chase them."
-              summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
-            >
-              <div className="space-y-3">
-                {leadCharacters.map((c, i) => (
-                  <Collapsible
-                    key={i}
-                    title={c.name}
-                    meta={`${c.role_type} · ${c.demographics}`}
-                    titleBlurred={applyPaywallBlur}
-                  >
-                    <p
-                      className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
-                      style={bodyBlur}
-                    >
-                      {c.hook}
-                    </p>
-                    <div
-                      className="rounded-lg p-5"
-                      style={{
-                        background: 'rgba(5,150,105,0.07)',
-                        border: '1px solid rgba(5,150,105,0.20)',
-                      }}
+          {leadCharacters.length > 0 && (() => {
+            // Split Lead vs Supporting (2026-04-28). Leads keep the full
+            // <Collapsible> card treatment. Supporting drops into a
+            // horizontal carousel underneath so a 12-character ensemble
+            // doesn't read as a 12-row brick.
+            const leads = leadCharacters.filter(
+              (c) => (c.role_type ?? '').toLowerCase() === 'lead'
+            )
+            const supporting = leadCharacters.filter(
+              (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
+            )
+            return (
+              <Section
+                label="Lead characters"
+                subtitle="The parts inside this script and why an actor would chase them."
+                summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
+              >
+                <div className="space-y-3">
+                  {leads.map((c, i) => (
+                    <Collapsible
+                      key={`lead-${i}`}
+                      title={c.name}
+                      meta={`${c.role_type} · ${c.demographics}`}
+                      titleBlurred={applyPaywallBlur}
+                      defaultOpen
                     >
                       <p
-                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                        style={{ color: '#059669' }}
-                      >
-                        Why an actor would want this part
-                      </p>
-                      <p
-                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
                         style={bodyBlur}
                       >
-                        {c.why_actor_wants_this}
+                        {c.hook}
                       </p>
-                    </div>
-                  </Collapsible>
-                ))}
-              </div>
-            </Section>
-          )}
+                      <div
+                        className="rounded-lg p-5"
+                        style={{
+                          background: 'rgba(5,150,105,0.07)',
+                          border: '1px solid rgba(5,150,105,0.20)',
+                        }}
+                      >
+                        <p
+                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
+                          style={{ color: '#059669' }}
+                        >
+                          Why an actor would want this part
+                        </p>
+                        <p
+                          className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                          style={bodyBlur}
+                        >
+                          {c.why_actor_wants_this}
+                        </p>
+                      </div>
+                    </Collapsible>
+                  ))}
+                </div>
+                {supporting.length > 0 && (
+                  <div className="mt-6">
+                    <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+                      Supporting cast · {supporting.length}
+                    </p>
+                    <SupportingCharactersCarousel
+                      characters={supporting}
+                      blurred={applyPaywallBlur}
+                    />
+                  </div>
+                )}
+              </Section>
+            )
+          })()}
         </SectionGate>
 
         {/* PACKAGE ANGLES */}

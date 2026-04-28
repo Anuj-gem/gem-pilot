@@ -358,8 +358,20 @@ export interface AudienceTarget {
 }
 
 export interface BudgetTier {
-  tier: "micro" | "indie" | "mid" | "studio";
+  // Selznick 3.8 (2026-04-28) widened the tier vocab + made the rubric
+  // format-aware. FEATURES use micro|indie|mid|studio|tentpole; SERIES use
+  // micro|indie|mid|premium|tentpole. The two scales share the bottom
+  // three tier names but mean different dollar amounts (features = total
+  // negative cost; series = per-episode). Older v5.4 evals only emit one
+  // of micro/indie/mid/studio.
+  tier: "micro" | "indie" | "mid" | "studio" | "premium" | "tentpole";
   range: string;
+  /** SERIES ONLY — per-episode dollar range. Undefined on feature evals
+   *  and on legacy series evals from before Selznick 3.8. */
+  per_episode?: string;
+  /** SERIES ONLY — season-total dollar range. Episode-count assumption
+   *  lives in the `note`. Undefined on feature evals and legacy series. */
+  season_total?: string;
   note: string;
 }
 
