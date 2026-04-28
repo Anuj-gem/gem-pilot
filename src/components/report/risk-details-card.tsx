@@ -1,17 +1,23 @@
 // Project Complexity — producer-facing complexity cards.
 //
 // Selznick-4 v6 (2026-04-28): renamed from "Project Risks" to "Project
-// Complexity" so the framing reads as forward-looking ("smooth sailing or
-// a complicated shoot — what to plan for") rather than a flaw audit. UI
+// Complexity" so the framing reads forward-looking ("smooth sailing or a
+// complicated shoot — what to plan for") rather than a flaw audit. UI
 // maps low|medium|high to Smooth / Manageable / Complex.
 //
-// Selznick-4 v7 (2026-04-28, second pass): each card now owns the slice
-// of `production_reality` data that belongs to it — Production card holds
-// locations + technical, Cast card holds the cast facts, Clearance card
-// holds rights_flags + content rating. Tap a card to unfold the raw
-// reference details. The standalone "Production planning details"
-// section is gone — its content is now distributed inside the cards
-// where it actually belongs.
+// Selznick-4 v7 (2026-04-28): each card owns the slice of
+// `production_reality` that belongs to it — Production card holds
+// locations + technical, Cast card holds the cast facts. The standalone
+// "Production planning details" section is gone.
+//
+// Selznick-4 v8 (2026-04-28): Clearance card removed. The model kept
+// drifting into creative-musing notes ("the show's long-term identity
+// will depend on..." / "needs disciplined episode architecture") despite
+// three rounds of fence-building. Rather than fight it, we drop the card
+// entirely. The underlying rights_flags + content rating data is now
+// folded into the Production card's Details unfold so producers still
+// see clearance signal when it matters. The prompt still emits
+// risk_details.development on the eval row for forward compat.
 import type {
   RiskDetails,
   RiskDetailCard as RiskDetailCardType,
@@ -37,10 +43,10 @@ export function RiskDetailsSection({ data, production }: Props) {
   return (
     <Section
       label="Project Complexity"
-      subtitle="Smooth sailing or a complicated shoot — what to plan for on production, cast, and clearance. Tap any card for the raw production details."
-      summary={`Production ${LEVEL_LABEL[data.budget?.level ?? 'medium']} · Cast ${LEVEL_LABEL[data.casting?.level ?? 'medium']} · Clearance ${LEVEL_LABEL[data.development?.level ?? 'medium']}`}
+      subtitle="Smooth sailing or a complicated shoot — what to plan for on production and casting. Tap any card for the raw production details."
+      summary={`Production ${LEVEL_LABEL[data.budget?.level ?? 'medium']} · Cast ${LEVEL_LABEL[data.casting?.level ?? 'medium']}`}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <ComplexityCard
           title="Production"
           axis={data.budget}
@@ -52,13 +58,6 @@ export function RiskDetailsSection({ data, production }: Props) {
           title="Cast"
           axis={data.casting}
           details={production ? <CastDetails production={production} /> : null}
-        />
-        <ComplexityCard
-          title="Clearance"
-          axis={data.development}
-          details={
-            production ? <ClearanceDetails production={production} /> : null
-          }
         />
       </div>
     </Section>
@@ -143,6 +142,8 @@ function FactRow({ k, v }: { k: string; v: string | number | null | undefined })
 function ProductionDetails({ production }: { production: ProductionReality }) {
   const loc = production.locations
   const tech = production.technical
+  const platform = production.platform_fit
+  const rights = production.rights_flags ?? []
   const ier = loc?.interior_exterior_ratio ?? loc?.interior_exterior_mix
   return (
     <div>
@@ -160,7 +161,7 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
       <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
         Technical
       </p>
-      <div>
+      <div className="mb-3">
         <FactRow
           k="VFX"
           v={
@@ -173,6 +174,44 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
         {tech?.night_shoots && <FactRow k="Night shoots" v={tech.night_shoots} />}
         {tech?.animals && <FactRow k="Animals" v="Yes" />}
       </div>
+      {(platform?.content_level || rights.length > 0) && (
+        <>
+          <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
+            Rights & Clearance
+          </p>
+          <div className="mb-1">
+            {platform?.content_level && (
+              <FactRow k="Content rating" v={platform.content_level} />
+            )}
+          </div>
+          {rights.length > 0 ? (
+            <ul className="space-y-1.5 list-none p-0 m-0 mt-1.5">
+              {rights.map((r, i) => {
+                const text =
+                  typeof r === 'string' ? r : `${r.type}: ${r.detail}`
+                return (
+                  <li
+                    key={i}
+                    className="flex gap-2 text-[13.5px] text-[var(--gem-gray-100)] leading-snug"
+                  >
+                    <span
+                      className="text-[var(--gem-gold)] flex-shrink-0"
+                      aria-hidden
+                    >
+                      •
+                    </span>
+                    <span>{text}</span>
+                  </li>
+                )
+              })}
+            </ul>
+          ) : (
+            <p className="text-[12.5px] italic text-[var(--gem-gray-500)] m-0 mt-1.5">
+              No clearance flags on the script.
+            </p>
+          )}
+        </>
+      )}
     </div>
   )
 }
@@ -190,51 +229,6 @@ function CastDetails({ production }: { production: ProductionReality }) {
       {cast?.casting_challenges?.length ? (
         <FactRow k="Casting" v={cast.casting_challenges.join(', ')} />
       ) : null}
-    </div>
-  )
-}
-
-function ClearanceDetails({ production }: { production: ProductionReality }) {
-  const platform = production.platform_fit
-  const rights = production.rights_flags ?? []
-  return (
-    <div>
-      {platform?.content_level && (
-        <div className="mb-3">
-          <FactRow k="Content rating" v={platform.content_level} />
-        </div>
-      )}
-      {rights.length > 0 ? (
-        <>
-          <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
-            Rights & Clearance
-          </p>
-          <ul className="space-y-1.5 list-none p-0 m-0">
-            {rights.map((r, i) => {
-              const text =
-                typeof r === 'string' ? r : `${r.type}: ${r.detail}`
-              return (
-                <li
-                  key={i}
-                  className="flex gap-2 text-[13.5px] text-[var(--gem-gray-100)] leading-snug"
-                >
-                  <span
-                    className="text-[var(--gem-gold)] flex-shrink-0"
-                    aria-hidden
-                  >
-                    •
-                  </span>
-                  <span>{text}</span>
-                </li>
-              )
-            })}
-          </ul>
-        </>
-      ) : (
-        <p className="text-[13px] italic text-[var(--gem-gray-500)] m-0 mt-2">
-          No clearance flags on the script.
-        </p>
-      )}
     </div>
   )
 }
