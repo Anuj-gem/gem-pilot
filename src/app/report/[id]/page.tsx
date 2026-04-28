@@ -406,7 +406,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             where they stand and links into the same privacy panel the
             dashboard uses (master toggle + per-section + score). */}
         {!isAnonymousSubmission && (isOwner || (!isOwner && !isAdmin)) && (
-          <div className="flex items-center justify-between gap-3 flex-wrap mb-6">
+          <div className="gem-no-print flex items-center justify-between gap-3 flex-wrap mb-6">
             <div className="flex items-center gap-2 min-w-0 flex-wrap">
               {isOwner && (
                 <>

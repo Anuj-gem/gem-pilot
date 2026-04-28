@@ -52,7 +52,54 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
 
   return (
     <div>
-      <div className="relative">
+      {/* Print-only flat list. The interactive carousel below is hidden
+          in print via .gem-no-print, and this list takes over so every
+          supporting character + their full hook/actor-want copy lands
+          in the PDF. Anuj 2026-04-28. */}
+      <div className="hidden print:block space-y-4">
+        {characters.map((c, i) => (
+          <div
+            key={`print-${i}`}
+            className="rounded-lg p-4 break-inside-avoid"
+            style={{
+              border: '1px solid var(--gem-gray-700)',
+              background: '#fff',
+            }}
+          >
+            <p className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+              {c.name}
+            </p>
+            <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] m-0 mt-1 mb-2">
+              {c.role_type} · {c.demographics}
+            </p>
+            <p className="text-[14px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-3">
+              {c.hook}
+            </p>
+            {c.why_actor_wants_this && (
+              <div
+                className="rounded-md p-3"
+                style={{
+                  background: 'rgba(5,150,105,0.06)',
+                  border: '1px solid rgba(5,150,105,0.20)',
+                }}
+              >
+                <p
+                  className="text-[10.5px] uppercase tracking-[0.18em] font-bold mb-1 m-0"
+                  style={{ color: '#059669' }}
+                >
+                  Why an actor would want this part
+                </p>
+                <p className="text-[13.5px] text-[var(--gem-gray-100)] leading-[1.55] m-0">
+                  {c.why_actor_wants_this}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Interactive carousel — screen only. */}
+      <div className="gem-no-print relative">
         {/* Scroll arrows — desktop only. Hidden on mobile (use swipe). */}
         <button
           type="button"
@@ -108,10 +155,12 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
       </div>
 
       {/* Expanded detail panel — appears directly below the strip when a
-          card is tapped. */}
+          card is tapped. Hidden in print so we don't duplicate the
+          content (the print-only flat list above already renders every
+          character expanded). */}
       {active && (
         <div
-          className="rounded-xl p-5 mt-4"
+          className="gem-no-print rounded-xl p-5 mt-4"
           style={{
             border: '1px solid var(--gem-gold)',
             background: 'rgba(212,175,55,0.04)',

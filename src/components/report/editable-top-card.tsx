@@ -326,7 +326,14 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             {initial.title}
           </h1>
           {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
-            <span data-pdf-section="score">
+            <span
+              data-pdf-section="score"
+              // If the writer has hidden the score from industry, don't
+              // bake it into the PDF either — the PDF is the artifact
+              // they'd share, so respect the same posture. Anuj
+              // 2026-04-28.
+              className={!scoreShownToIndustry ? 'gem-no-print' : undefined}
+            >
               <ScoreBadge
                 score={commercialScore}
                 isOwner={isOwner}
@@ -718,10 +725,12 @@ function ScoreBadge({
         </span>
       </div>
       {isOwner && (
-        <ScoreEyeToggle
-          shownToIndustry={shownToIndustry}
-          submissionId={submissionId}
-        />
+        <span className="gem-no-print">
+          <ScoreEyeToggle
+            shownToIndustry={shownToIndustry}
+            submissionId={submissionId}
+          />
+        </span>
       )}
     </div>
   )

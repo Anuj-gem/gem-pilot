@@ -188,4 +188,22 @@ input::placeholder, textarea::placeholder {
      preview captures the report behind it, not the modal itself. */
   nav { display: none !important; }
   .gem-no-print { display: none !important; }
+
+  /* Force every <details> element fully open in print so the PDF shows
+     all body content for each numbered item / collapsible card. Each
+     summary's chevron arrow (everything tagged aria-hidden inside a
+     summary) is hidden — they only confuse a static PDF reader. */
+  details > *:not(summary) { display: revert !important; }
+  details > summary { list-style: none !important; cursor: default !important; }
+  details > summary [aria-hidden="true"] { display: none !important; }
+
+  /* Don't break a section across pages mid-card if we can avoid it. */
+  section, [data-pdf-section] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Strip the global page padding so the report header sits at the top
+     of the printed page rather than 80px down. */
+  body { padding: 0 !important; margin: 0 !important; }
 }
