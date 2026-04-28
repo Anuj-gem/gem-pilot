@@ -77,13 +77,20 @@ export function DashboardPrivacyButton({
   >(null)
   const [busy, setBusy] = useState(false)
 
-  // Privacy gating (Anuj 2026-04-28, revised v2): publishing to industry
-  // partners is Pro-only — every toggle in this panel goes through
-  // gateOrAct. Free writers see the panel + Pro pills in place of the
-  // Visible/Hidden controls; tapping any pill fires the upgrade modal.
+  // Inline "upgrade prompt" sheet — a small contextual modal shown when a
+  // free writer taps any Pro-gated pill in this panel. Replaces the
+  // heavier global PaywallModal so the user gets a focused message in
+  // context. Anuj 2026-04-28.
+  const [proPromptOpen, setProPromptOpen] = useState(false)
+
+  // Privacy gating (Anuj 2026-04-28, revised v3): publishing to industry
+  // partners and per-section privacy are Pro-only — every toggle in
+  // this panel goes through gateOrAct. Free writers see Pro pills in
+  // place of the Visible/Hidden controls; tapping any pill opens the
+  // small in-panel upgrade prompt.
   function gateOrAct(action: () => void) {
     if (!isProSubscriber) {
-      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+      setProPromptOpen(true)
       return
     }
     action()
@@ -265,12 +272,7 @@ export function DashboardPrivacyButton({
               {!isProSubscriber && (
                 <button
                   type="button"
-                  onClick={() => {
-                    setOpen(false)
-                    window.dispatchEvent(
-                      new CustomEvent('gem:open-upgrade-modal')
-                    )
-                  }}
+                  onClick={() => setProPromptOpen(true)}
                   className="w-full text-left rounded-xl px-4 py-3 mb-3 flex items-center justify-between gap-3 transition-colors hover:opacity-95"
                   style={{
                     background:
@@ -470,7 +472,96 @@ export function DashboardPrivacyButton({
         onConfirm={handleConfirm}
         onClose={() => setPendingConfirm(null)}
       />
+
+      <UpgradePromptSheet
+        open={proPromptOpen}
+        onClose={() => setProPromptOpen(false)}
+      />
     </>
+  )
+}
+
+// Small contextual modal shown when a free writer taps a Pro-gated pill
+// inside the privacy panel. One message, one button — kicks off the
+// Stripe checkout the same way the full PaywallModal does. Anuj
+// 2026-04-28.
+function UpgradePromptSheet({
+  open,
+  onClose,
+}: {
+  open: boolean
+  onClose: () => void
+}) {
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+
+  async function handleSubscribe() {
+    setBusy(true)
+    setError('')
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Failed to start checkout')
+      window.location.href = data.url
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Something went wrong')
+      setBusy(false)
+    }
+  }
+
+  if (!open) return null
+  return (
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-[60] bg-black/55 backdrop-blur-sm flex items-end sm:items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white w-full sm:max-w-sm rounded-2xl shadow-xl p-5 sm:p-6"
+        style={{ paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+      >
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <span
+            className="inline-block px-1.5 py-[2px] rounded text-[9.5px] font-bold uppercase tracking-wider text-white"
+            style={{ background: 'var(--gem-accent)' }}
+          >
+            Pro
+          </span>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="-mr-1 -mt-1 w-7 h-7 rounded-full grid place-items-center hover:bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)]"
+          >
+            <X size={14} />
+          </button>
+        </div>
+        <h3 className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+          Upgrade to Pro
+        </h3>
+        <p className="text-[13.5px] text-[var(--gem-gray-300)] m-0 mt-1.5 leading-snug">
+          Hide specific sections and publish to industry partners — Pro only.
+        </p>
+        {error && (
+          <p className="text-[12px] text-red-600 m-0 mt-3">{error}</p>
+        )}
+        <button
+          type="button"
+          onClick={handleSubscribe}
+          disabled={busy}
+          className="w-full mt-4 py-2.5 rounded-lg font-semibold text-white text-[14px] disabled:opacity-60 transition-opacity hover:opacity-95"
+          style={{ background: 'var(--gem-accent)' }}
+        >
+          {busy ? 'Redirecting…' : 'Upgrade — $20/mo'}
+        </button>
+      </div>
+    </div>
   )
 }
 
