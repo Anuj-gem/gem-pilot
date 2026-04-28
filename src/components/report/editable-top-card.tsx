@@ -52,6 +52,10 @@ interface Props {
    *  on the score badge. Non-owners ignore this; their visibility is
    *  decided by the parent (which passes commercialScore=null when hidden). */
   scoreShownToIndustry?: boolean
+  /** Whether the OWNER has an active Pro subscription. The score-eye
+   *  toggle is Pro-only — for free writers the icon opens the same
+   *  small upgrade prompt the per-section pills use. Anuj 2026-04-28. */
+  isProSubscriber?: boolean
 }
 
 // Tag editor constants — mirror src/components/dashboard/script-tags-editor.tsx
@@ -84,7 +88,7 @@ function dedupeTags(tags: string[]): string[] {
   return out
 }
 
-export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, commercialScore, scoreShownToIndustry = true, headerActionsLeft }: Props) {
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, commercialScore, scoreShownToIndustry = true, isProSubscriber = true, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -339,6 +343,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
                 isOwner={isOwner}
                 shownToIndustry={scoreShownToIndustry}
                 submissionId={submissionId}
+                isProSubscriber={isProSubscriber}
               />
             </span>
           )}
@@ -658,11 +663,13 @@ function ScoreBadge({
   isOwner,
   shownToIndustry,
   submissionId,
+  isProSubscriber,
 }: {
   score: number
   isOwner: boolean
   shownToIndustry: boolean
   submissionId: string
+  isProSubscriber: boolean
 }) {
   // Owner-with-score-hidden state: render the badge muted (grey, no tier
   // color) with a diagonal strikethrough across the number + a "Hidden"
@@ -729,6 +736,7 @@ function ScoreBadge({
           <ScoreEyeToggle
             shownToIndustry={shownToIndustry}
             submissionId={submissionId}
+            isProSubscriber={isProSubscriber}
           />
         </span>
       )}
@@ -742,12 +750,17 @@ function ScoreBadge({
 function ScoreEyeToggle({
   shownToIndustry,
   submissionId,
+  isProSubscriber,
 }: {
   shownToIndustry: boolean
   submissionId: string
+  isProSubscriber: boolean
 }) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
+  const [proPromptOpen, setProPromptOpen] = useState(false)
+  const [proBusy, setProBusy] = useState(false)
+  const [proError, setProError] = useState('')
   const [busy, setBusy] = useState(false)
   const [localShown, setLocalShown] = useState(shownToIndustry)
   useEffect(() => {
@@ -801,7 +814,13 @@ function ScoreEyeToggle({
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          if (!isProSubscriber) {
+            setProPromptOpen(true)
+            return
+          }
+          setOpen(true)
+        }}
         aria-label={
           localShown
             ? 'Score is visible to industry partners — tap to hide'
@@ -839,6 +858,72 @@ function ScoreEyeToggle({
         onConfirm={handleConfirm}
         onClose={() => setOpen(false)}
       />
+
+      {proPromptOpen && (
+        <div
+          onClick={() => setProPromptOpen(false)}
+          className="fixed inset-0 z-[60] bg-black/55 backdrop-blur-sm flex items-end sm:items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white w-full sm:max-w-sm rounded-2xl shadow-xl p-5 sm:p-6"
+            style={{ paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+          >
+            <div className="flex items-start justify-between gap-3 mb-2">
+              <span
+                className="inline-block px-1.5 py-[2px] rounded text-[9.5px] font-bold uppercase tracking-wider text-white"
+                style={{ background: 'var(--gem-accent)' }}
+              >
+                Pro
+              </span>
+              <button
+                type="button"
+                onClick={() => setProPromptOpen(false)}
+                aria-label="Close"
+                className="-mr-1 -mt-1 w-7 h-7 rounded-full grid place-items-center hover:bg-[var(--gem-gray-800)] text-[var(--gem-gray-500)]"
+              >
+                ×
+              </button>
+            </div>
+            <h3 className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+              Upgrade to Pro
+            </h3>
+            <p className="text-[13.5px] text-[var(--gem-gray-300)] m-0 mt-1.5 leading-snug">
+              Hide specific sections and publish to industry partners — Pro only.
+            </p>
+            {proError && (
+              <p className="text-[12px] text-red-600 m-0 mt-3">{proError}</p>
+            )}
+            <button
+              type="button"
+              disabled={proBusy}
+              onClick={async () => {
+                setProBusy(true)
+                setProError('')
+                try {
+                  const res = await fetch('/api/stripe/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({}),
+                  })
+                  const data = await res.json()
+                  if (!res.ok) throw new Error(data.error || 'Failed to start checkout')
+                  window.location.href = data.url
+                } catch (err: unknown) {
+                  setProError(err instanceof Error ? err.message : 'Something went wrong')
+                  setProBusy(false)
+                }
+              }}
+              className="w-full mt-4 py-2.5 rounded-lg font-semibold text-white text-[14px] disabled:opacity-60 transition-opacity hover:opacity-95"
+              style={{ background: 'var(--gem-accent)' }}
+            >
+              {proBusy ? 'Redirecting…' : 'Upgrade — $20/mo'}
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 }

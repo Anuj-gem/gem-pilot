@@ -501,6 +501,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isOwnerOrAdmin || isScoreVisible(privacy) ? commercialScore : null
           }
           scoreShownToIndustry={isScoreVisible(privacy)}
+          isProSubscriber={ownerIsSubscribed || isAdmin}
         />
 
         {/* Inline industry stats — owner/admin, always visible while
@@ -539,6 +540,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
+          isProSubscriber={ownerIsSubscribed || isAdmin}
         >
           {(whatsSpecial.headline || allStrengths.length > 0) && (
             <div data-pdf-section="whats_working">
@@ -608,6 +610,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
+          isProSubscriber={ownerIsSubscribed || isAdmin}
         >
           {leadCharacters.length > 0 && (
             <div data-pdf-section="cast">
@@ -692,6 +695,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
+          isProSubscriber={ownerIsSubscribed || isAdmin}
         >
           <div data-pdf-section="packaging">
           {packageAngles && (
@@ -924,6 +928,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isOwnerOrAdmin={isOwnerOrAdmin}
             submissionId={privacyControlId}
             isPublic={submission.is_public ?? false}
+          isProSubscriber={ownerIsSubscribed || isAdmin}
           >
             <div
               data-pdf-section="project_complexity"
@@ -940,6 +945,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isOwnerOrAdmin={isOwnerOrAdmin}
             submissionId={privacyControlId}
             isPublic={submission.is_public ?? false}
+          isProSubscriber={ownerIsSubscribed || isAdmin}
           >
             {production?.risk_rubric && (
               <Section
