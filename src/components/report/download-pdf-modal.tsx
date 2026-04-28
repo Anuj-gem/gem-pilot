@@ -182,7 +182,7 @@ function DownloadPdfModal({ open, onClose }: ModalProps) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-end sm:items-center justify-center"
+      className="gem-no-print fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-end sm:items-center justify-center"
       role="dialog"
       aria-modal="true"
       aria-labelledby="pdf-modal-title"

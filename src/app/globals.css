@@ -182,6 +182,10 @@ input::placeholder, textarea::placeholder {
    gets .gem-pdf-printing for the duration of the print dialog so any
    layout-only adjustments can hook into that class. */
 @media print {
-  body.gem-pdf-printing nav { display: none !important; }
+  /* Always hide the global nav and any element tagged .gem-no-print
+     during print (modal, owner action pills, sticky CTAs, etc.). The
+     download modal's outer wrapper carries .gem-no-print so the print
+     preview captures the report behind it, not the modal itself. */
+  nav { display: none !important; }
   .gem-no-print { display: none !important; }
 }
