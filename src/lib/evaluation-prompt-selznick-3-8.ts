@@ -332,32 +332,53 @@ What's the hardest single casting lift? Name the role and what makes it narrow. 
 
 ### Card 3 — Clearance
 
-**STRICT SCOPE — money/legal items only.** This card is exclusively about line items a lawyer, business affairs, or rating board would flag — things that cost real money, narrow the buyer pool, or block greenlight until cleared. It is NOT about creative sustainability, story execution, showrunning challenge, or whether the writer can keep the engine going across episodes — those don't belong here.
+**STRICT SCOPE — money/legal items only.** This card is exclusively about line items a lawyer, business affairs, or rating board would flag — things that cost real money, narrow the buyer pool, or block greenlight until cleared. It is NOT about creative sustainability, story execution, showrunning challenge, the central dynamic of the series, or the show's long-term identity. Those don't belong here under any circumstance.
 
-Scan the script ONLY for:
+#### How to write the note (HARD RULE)
+
+The Clearance \`note\` must be a **direct producer-readable summary of the items you are putting in \`production_reality.rights_flags\`** plus any \`production_reality.platform_fit.content_level\` rating that narrows the buyer pool. Nothing else.
+
+Mechanical procedure — follow it literally:
+
+1. First, finalize \`production_reality.rights_flags\` (real people, named music, IP licensing, brand prominence, true-story rights — listed individually).
+2. Then count: how many flags are there? Note the content rating from \`platform_fit.content_level\`.
+3. Now write the \`note\`:
+   - **Zero flags + content rating that fits the buyer pool naturally** → mark Smooth. Note must say so directly (one sentence, naming what you scanned for and didn't find — e.g. "Original IP, fictional characters, no named music, no real-person depictions; mature content lives comfortably on premium cable. No clearance work needed.").
+   - **One or more flags** → mark Manageable (1–2 substantive flags) or Complex (multiple substantive flags or a rating that narrows the buyer pool). Note must NAME each flag in producer-actionable language. If \`rights_flags\` contains a brand item like "OnlyFans," your note must mention OnlyFans clearance specifically.
+
+If your \`note\` does not reference at least one of the actual rights_flags or the content rating, you have failed this card.
+
+#### Items to scan for (and if found, list in rights_flags)
+
 - **Real people depicted** (named or recognizable; living or estate-protected) → life rights / depiction risk
 - **Named music** that is plot-critical or specifically referenced → sync clearance + budget
 - **IP licensing** — adapted from existing book/article/comic/podcast/game; references to other copyrighted works that aren't fair use
 - **Real-organization depiction** when potentially defamatory or litigious (religious orgs, named corporations, government agencies in unflattering light)
 - **True-story material** requiring rights from participants
-- **Content rating** that meaningfully narrows the buyer pool — typically NC-17, or hard-R sexual violence on a script aiming theatrical wide release. R-rated content for premium cable / streaming is NOT a problem; say so plainly.
-- **Trademark / brand** prominence that needs clearance
+- **Trademark / brand** prominence that needs clearance — apps, products, services that are central to the premise (OnlyFans, TikTok, Apple, etc.)
+- **Content rating** that meaningfully narrows the buyer pool — typically NC-17, hard-R sexual violence on a script aiming theatrical wide release, or graphic content beyond what most streamers will buy. R-rated content for premium cable / streaming is NOT a problem; say so plainly.
 
-If NONE of the above applies → mark **Smooth** and say so plainly (e.g. "Original IP, fictional characters, no named music or real-person depictions, mature content lives comfortably on premium cable — no clearance work needed."). Most original scripts ARE smooth on clearance — don't manufacture friction.
+If NONE of the above applies → mark **Smooth**. Most original scripts ARE smooth on clearance — don't manufacture friction.
 
-**OUT OF SCOPE — do NOT write here:**
+**OUT OF SCOPE — do NOT write here under any circumstance:**
+
 - "The series will need to sustain the engine across episodes"
 - "The writer will need to maintain tone over a season"
 - "The premise depends on the showrunner's execution"
 - "Whether the central dynamic can carry multiple seasons"
-- Any creative, story-execution, or sustainability note. Those belong nowhere on this card.
+- "The show's long-term identity will depend on..."
+- "How much of [thread X] versus [thread Y] becomes the center of gravity"
+- Any creative, story-execution, sustainability, or tonal-balance note. Those belong nowhere on this card. They're for the Issues section if anywhere.
 
 Examples:
 
 - Good (smooth, original IP): *"Original story, fictional characters, no named music or real-person depictions. Mature content sits comfortably on premium cable — no rating constraint on buyers. No clearance work needed."*
-- Good (manageable): *"Plan for life-rights work on at least two participants in the true-crime backbone, a legal pass on the depiction of the police investigation, and music budget for the two plot-critical licensed songs."*
+- Good (smooth, naming a brand that doesn't matter): *"Original IP, fictional characters, no named music. The Twitter mentions are passing references and don't require trademark clearance. Mature content sits on streaming naturally. No real clearance work."*
+- Good (manageable, brand-driven): *"Plan for OnlyFans trademark clearance — the platform is central to the premise and named throughout. Otherwise: original story, no real people, no named music, mature content fine on streaming."*
+- Good (manageable, life rights + music): *"Plan for life-rights work on at least two participants in the true-crime backbone, a legal pass on the depiction of the police investigation, and music budget for the two plot-critical licensed songs."*
 - Good (complex): *"Plan extensive pre-greenlight legal work: hard-R graphic sexual violence narrows the streamer pool to two buyers, a sitting senator named in the antagonist role, and the depicted cult is a real religious organization with a litigious history."*
-- Bad (out of scope — DO NOT WRITE THIS): *"The pilot is already highly defined, but the series will need to sustain the engine across episodes."* — that's creative sustainability, not clearance.
+- Bad (out of scope — DO NOT WRITE THIS): *"The pilot is already highly defined, but the series will need to sustain the engine across episodes."*
+- Bad (out of scope — DO NOT WRITE THIS): *"The pilot's premise is clear, but the show's long-term identity will depend on how much of [thread X] versus [thread Y] becomes the series' center of gravity."* — that's creative direction, not clearance. Move it to Issues.
 
 **Rules:**
 - Ratings must be consistent with the facts in STEP 5.

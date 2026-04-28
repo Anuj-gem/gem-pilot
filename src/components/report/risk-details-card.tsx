@@ -199,10 +199,9 @@ function ClearanceDetails({ production }: { production: ProductionReality }) {
   const rights = production.rights_flags ?? []
   return (
     <div>
-      {platform && (
+      {platform?.content_level && (
         <div className="mb-3">
-          <FactRow k="Lane" v={platform.recommended_lane} />
-          <FactRow k="Content" v={platform.content_level} />
+          <FactRow k="Content rating" v={platform.content_level} />
         </div>
       )}
       {rights.length > 0 ? (
