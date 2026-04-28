@@ -799,12 +799,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {issuesHeadline}
                   </p>
                 )}
-                {/* Unified numbered list — same shape as "Why this can be
-                    a hit". Sharpest lever is always #1, given a red number
-                    + small inline pill so it still reads as the priority,
-                    and is open by default. The previous red-rule pull-
-                    quote was visually too jarring against the rest of the
-                    page. Anuj 2026-04-28. */}
+                {/* Numbered list — IDENTICAL shape to "Why this can be a
+                    hit". Sharpest lever is just #1; no special tag, no
+                    differentiated number color, no auto-open. Sort just
+                    puts the primary lever first so it's positionally
+                    weighted. Anuj 2026-04-28. */}
                 {(() => {
                   const ordered: IssueRow[] = primary
                     ? [primary, ...secondary]
@@ -812,72 +811,45 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   if (ordered.length === 0) return null
                   return (
                     <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
-                      {ordered.map((c, i) => {
-                        const isPrimary = i === 0 && !!primary
-                        return (
-                          <li key={i}>
-                            <details
-                              {...(isPrimary ? { open: true } : {})}
-                              className="group [&_summary::-webkit-details-marker]:hidden"
-                            >
-                              <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
-                                <span
-                                  className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
-                                  style={{
-                                    color: isPrimary
-                                      ? '#dc2626'
-                                      : 'var(--gem-accent)',
-                                  }}
-                                >
-                                  {String(i + 1).padStart(2, '0')}
-                                </span>
-                                <div className="min-w-0 flex items-baseline gap-2 flex-wrap">
-                                  <p
-                                    className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug"
-                                    style={
-                                      applyPaywallBlur
-                                        ? {
-                                            filter: 'blur(8px)',
-                                            userSelect: 'none',
-                                          }
-                                        : undefined
-                                    }
-                                  >
-                                    {c.area}
-                                  </p>
-                                  {isPrimary && (
-                                    <span
-                                      className="text-[9.5px] uppercase tracking-[0.15em] font-bold px-1.5 py-0.5 rounded-sm"
-                                      style={{
-                                        color: '#dc2626',
-                                        background: 'rgba(220,38,38,0.07)',
-                                        border: '1px solid rgba(220,38,38,0.25)',
-                                      }}
-                                    >
-                                      Sharpest lever
-                                    </span>
-                                  )}
-                                </div>
-                                <span
-                                  aria-hidden
-                                  className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
-                                >
-                                  ▾
-                                </span>
-                              </summary>
-                              <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
-                                <div />
-                                <p
-                                  className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
-                                  style={bodyBlur}
-                                >
-                                  {c.detail}
-                                </p>
-                              </div>
-                            </details>
-                          </li>
-                        )
-                      })}
+                      {ordered.map((c, i) => (
+                        <li key={i}>
+                          <details className="group [&_summary::-webkit-details-marker]:hidden">
+                            <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
+                              <span
+                                className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
+                                style={{ color: 'var(--gem-gold)' }}
+                              >
+                                {String(i + 1).padStart(2, '0')}
+                              </span>
+                              <p
+                                className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0"
+                                style={
+                                  applyPaywallBlur
+                                    ? { filter: 'blur(8px)', userSelect: 'none' }
+                                    : undefined
+                                }
+                              >
+                                {c.area}
+                              </p>
+                              <span
+                                aria-hidden
+                                className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
+                              >
+                                ▾
+                              </span>
+                            </summary>
+                            <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
+                              <div />
+                              <p
+                                className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
+                                style={bodyBlur}
+                              >
+                                {c.detail}
+                              </p>
+                            </div>
+                          </details>
+                        </li>
+                      ))}
                     </ol>
                   )
                 })()}
