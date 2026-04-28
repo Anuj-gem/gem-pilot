@@ -677,11 +677,11 @@ function ScoreBadge({
   // anymore, while the writer still sees what GEM scored them.
   const isHiddenForOwner = isOwner && !shownToIndustry
 
-  // Anuj 2026-04-28: score badge stays one neutral palette regardless
-  // of score. No green / yellow / red tier coloring on the score
-  // itself — the score is the score, the writer doesn't need it
-  // dressed up. Hidden state still grays further so the writer sees
-  // when industry partners can't see it.
+  // Anuj 2026-04-28: score badge stays one palette regardless of score
+  // — the score is the score, the writer doesn't need it dressed up.
+  // Background is a very light tint of the GEM purple so it ties to
+  // brand instead of reading as a dead gray chip. Hidden state grays
+  // out so the writer sees when industry partners can't see it.
   const palette = isHiddenForOwner
     ? {
         bg: 'var(--gem-gray-900)',
@@ -689,9 +689,9 @@ function ScoreBadge({
         border: 'var(--gem-gray-700)',
       }
     : {
-        bg: 'var(--gem-gray-800)',
+        bg: 'rgba(124,58,237,0.08)',
         fg: 'var(--gem-gray-50)',
-        border: 'var(--gem-gray-700)',
+        border: 'rgba(124,58,237,0.25)',
       }
   const display = score.toFixed(0)
   return (
@@ -707,8 +707,8 @@ function ScoreBadge({
         }}
         aria-label={
           isHiddenForOwner
-            ? `GEM score ${display}, hidden from industry partners`
-            : `GEM score ${display}`
+            ? `GEM Score ${display}, hidden from industry partners`
+            : `GEM Score ${display}`
         }
       >
         <span

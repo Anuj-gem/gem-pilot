@@ -77,7 +77,7 @@ export function ReportHeader({
             </div>
           )}
           <div className="text-[11px] uppercase tracking-widest text-[var(--gem-gray-500)] mt-0.5">
-            GEM score
+            GEM Score
           </div>
           {blurred && (
             <div className="text-[10px] text-[var(--gem-accent)] mt-1 font-medium">

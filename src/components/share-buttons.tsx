@@ -59,7 +59,7 @@ export default function ShareButtons({
     : `Just got my script "${title}" read by GEM. Get yours in under a minute:`
 
   const emailSubject = scoreStr
-    ? `My GEM score: ${scoreStr}/100 — "${title}"`
+    ? `My GEM Score: ${scoreStr}/100 — "${title}"`
     : `Check out my script on GEM — "${title}"`
 
   const track = (channel: string) => {

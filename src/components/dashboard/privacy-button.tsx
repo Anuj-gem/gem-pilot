@@ -355,7 +355,7 @@ export function DashboardPrivacyButton({
                   for free writers we render a Pro pill in place of the
                   Visible/Hidden toggle and tap fires the upgrade modal. */}
               <PrivacyRow
-                label="GEM score"
+                label="GEM Score"
                 hint="Whether the score badge shows on your report cover."
                 visible={isScoreVisible(privacy) && isPublic}
                 disabled={!isPublic}
