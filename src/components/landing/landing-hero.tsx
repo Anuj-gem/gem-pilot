@@ -74,8 +74,8 @@ export function LandingHero() {
           </h1>
           <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed mb-6 max-w-[540px]">
             Upload your screenplay. GEM gives you a producer&apos;s-eye read
-            in 60 seconds — and matches it with the producers, reps, and dev
-            execs scouting your lane. The first read is on us.
+            in 60 seconds — a structured report you can share with anyone, and
+            a path to industry matching when you&apos;re ready. First read on us.
           </p>
 
           <label

@@ -63,28 +63,25 @@ export default function WritersPage() {
           </div>
         </div>
 
-        {/* THE TRIAL */}
-        <Section eyebrow="The trial" title="Free first eval. 7 free days on Industry. Engagement extends.">
+        {/* THE FREE TIER */}
+        <Section eyebrow="The free tier" title="One full evaluation. Yours forever. Sharable with anyone.">
           <div className="grid sm:grid-cols-3 gap-3">
             <TrialBlock
               icon={<Sparkles size={16} />}
               label="1 free evaluation"
-              body="Upload your first screenplay free. Full report, no blur, no asterisk."
+              body="Upload your first screenplay free. Full report, full score, no blur."
             />
             <TrialBlock
               icon={<Eye size={16} />}
-              label="7 days on Industry"
-              body="Every report you publish goes live to matched producers and reps for 7 days at no charge."
+              label="Sharable URL"
+              body="Send your report link to anyone — agents, producers in your network, friends. They see the same report you see."
             />
             <TrialBlock
               icon={<Clock size={16} />}
-              label="Producers extend it"
-              body="Any producer engagement — view, interest, intro — extends the post past day 7. If nobody bites, it auto-unpublishes."
+              label="Pro for the network"
+              body="Industry matching, privacy controls, unlimited evaluations, and producer intros to your inbox are on Pro."
             />
           </div>
-          <p className="text-[14px] text-[var(--gem-gray-400)] leading-snug m-0 mt-5 max-w-[60ch]">
-            Your <em>report itself</em> is yours forever. The 7-day window is just for industry exposure.
-          </p>
         </Section>
 
         {/* WHAT YOU GET */}

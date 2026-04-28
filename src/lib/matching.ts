@@ -241,6 +241,21 @@ export async function createMatchesForSubmission(
     return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
   }
 
+  // Anuj 2026-04-28: industry matching is now a Pro-only feature. Free
+  // writers get a sharable URL but their posts don't propagate to
+  // producer feeds. Skip match creation entirely if the writer isn't
+  // on an active subscription.
+  if (submission.user_id) {
+    const { data: writerProfile } = await supabase
+      .from("profiles")
+      .select("subscription_status")
+      .eq("id", submission.user_id)
+      .single<{ subscription_status: string | null }>()
+    if (writerProfile?.subscription_status !== "active") {
+      return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
+    }
+  }
+
   const { data: evalRaw } = await supabase
     .from("script_evaluations")
     .select("evaluation")
@@ -372,6 +387,34 @@ export async function createMatchesForProducer(
   }
   const rawCandidates = (candidatesRaw ?? []) as unknown as CandidateRow[]
 
+  // 3a. Anuj 2026-04-28: industry matching is Pro-only on the writer
+  //     side. Pre-fetch the subscription_status for every candidate
+  //     submission's owner so we can filter out free writers in the loop
+  //     below. One query keeps this O(1) per candidate.
+  const candidateUserIds = Array.from(
+    new Set(
+      rawCandidates
+        .map((r) => {
+          const sub = Array.isArray(r.submission) ? r.submission[0] : r.submission
+          return sub?.user_id
+        })
+        .filter((u): u is string => typeof u === "string" && u.length > 0)
+    )
+  )
+  const proWriterIds = new Set<string>()
+  if (candidateUserIds.length > 0) {
+    const { data: subStatusRows } = await supabase
+      .from("profiles")
+      .select("id, subscription_status")
+      .in("id", candidateUserIds)
+    for (const row of (subStatusRows ?? []) as Array<{
+      id: string
+      subscription_status: string | null
+    }>) {
+      if (row.subscription_status === "active") proWriterIds.add(row.id)
+    }
+  }
+
   // 3. Filter — only completed scripts whose signals match.
   const matchedSubmissionIds: string[] = []
   let candidatesEvaluated = 0
@@ -380,6 +423,8 @@ export async function createMatchesForProducer(
     if (!submission) continue
     // Eligibility gate — same rules as createMatchesForSubmission.
     if (!isEligibleForMatching(submission)) continue
+    // Pro-only gate. Free writers aren't on Industry.
+    if (!submission.user_id || !proWriterIds.has(submission.user_id)) continue
     candidatesEvaluated += 1
 
     const { scriptGenres, scriptBudget, scriptFormat } = scriptSignals(

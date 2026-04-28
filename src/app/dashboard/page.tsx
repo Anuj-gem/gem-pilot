@@ -402,16 +402,10 @@ function HeroCard({
     year: 'numeric',
   })
 
-  // 7-day free trial — computed from the submission's created_at.
-  // The actual auto-unpublish cron isn't built yet (placeholder messaging
-  // for now), but exposing the timeline here sets the right expectation
-  // and matches the conversion model. Producer engagement extends the
-  // window; we'll wire the cron + extension logic in a follow-up. Anuj
-  // 2026-04-28.
-  const TRIAL_DAYS = 7
-  const ageMs = Date.now() - new Date(script.created_at).getTime()
-  const daysIn = Math.max(0, Math.floor(ageMs / (1000 * 60 * 60 * 24)))
-  const daysLeft = Math.max(0, TRIAL_DAYS - daysIn)
+  // Anuj 2026-04-28: time-gated trial removed. Free tier = 1 evaluation,
+  // sharable URL, no Industry matching. The conversion gate is on volume
+  // (second eval) and industry matching, not on a clock.
+  void script.created_at
 
   if (script.status === 'processing') {
     return (
@@ -533,31 +527,28 @@ function HeroCard({
     )
   }
 
-  // Completed + viewable for a NON-Pro writer = the free 7-day trial
-  // experience. Surface the trial day count, stats, and the View Report
-  // CTA. Pro writers don't see trial messaging — they're already paid.
-  const showTrialBadge = !isSubscribed && script.is_public
+  // Free-tier badge — soft "Free read" indicator (no time pressure). Pro
+  // writers don't see it; they're already paid.
+  const showFreeBadge = !isSubscribed
 
   return (
     <HeroShell title={script.title}>
       <div className="flex flex-col items-center text-center">
-        {showTrialBadge && (
+        {showFreeBadge && (
           <span
             className="inline-flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.18em] font-bold px-2.5 py-1 rounded-full mb-4"
             style={{
-              border: '1px solid var(--gem-accent)',
-              background: 'rgba(124,58,237,0.06)',
-              color: 'var(--gem-accent)',
+              border: '1px solid var(--gem-gold)',
+              background: 'rgba(212,160,23,0.06)',
+              color: 'var(--gem-gold)',
             }}
           >
             <span
               aria-hidden
               className="inline-block w-1.5 h-1.5 rounded-full"
-              style={{ background: 'var(--gem-accent)' }}
+              style={{ background: 'var(--gem-gold)' }}
             />
-            {daysLeft > 0
-              ? `Free trial · ${daysLeft} day${daysLeft === 1 ? '' : 's'} left`
-              : 'Trial ending — go Pro to keep going'}
+            Free read · share with anyone
           </span>
         )}
         <h2 className="text-[22px] font-extrabold m-0 mb-1.5 text-[var(--gem-gray-50)]">
@@ -610,16 +601,15 @@ function HeroCard({
             Privacy controls
           </Link>
         )}
-        {script.is_public && showTrialBadge && (
+        {script.is_public && showFreeBadge && (
           <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-4 max-w-[420px] leading-snug">
-            Your script auto-published to industry. Producer interest extends
-            the post past day 7; if no engagement, it un-publishes
-            automatically.
+            Share the report URL with anyone — your network sees the full read.
+            Industry matching is on Pro.
           </p>
         )}
-        {script.is_public && !showTrialBadge && (
+        {script.is_public && !showFreeBadge && (
           <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-4">
-            Visible to producers
+            Visible to industry
           </p>
         )}
       </div>
@@ -868,6 +858,7 @@ function CompactCard({
               submissionId={script.id}
               initialPrivacy={script.reportPrivacy}
               initialIsPublic={script.is_public}
+              isProSubscriber={isSubscribed}
               triggerLabel={statusLabel.text}
               triggerVariant="status-pill"
               statusPillStyle={{

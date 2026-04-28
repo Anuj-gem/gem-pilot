@@ -48,6 +48,10 @@ interface Props {
     bg: string
     border: string
   }
+  /** Anuj 2026-04-28: privacy is a Pro-only feature. Free writers can
+   *  open the panel (so they can see what they'd get) but tapping any
+   *  toggle fires the global upgrade modal instead of saving. */
+  isProSubscriber?: boolean
 }
 
 export function DashboardPrivacyButton({
@@ -57,6 +61,7 @@ export function DashboardPrivacyButton({
   triggerLabel = 'Privacy',
   triggerVariant = 'pill',
   statusPillStyle,
+  isProSubscriber = true,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
@@ -71,6 +76,18 @@ export function DashboardPrivacyButton({
     | null
   >(null)
   const [busy, setBusy] = useState(false)
+
+  // Privacy is Pro-only (Anuj 2026-04-28). Free users can OPEN the
+  // panel and tap toggles, but each tap fires the global upgrade modal
+  // instead of saving — they get to see exactly what's behind the
+  // paywall, and the upgrade prompt arrives with full context.
+  function gateOrAct(action: () => void) {
+    if (!isProSubscriber) {
+      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+      return
+    }
+    action()
+  }
 
   // Lock body scroll when the sheet's open.
   useEffect(() => {
@@ -271,10 +288,12 @@ export function DashboardPrivacyButton({
                   <button
                     type="button"
                     onClick={() =>
-                      setPendingConfirm({
-                        kind: 'visibility',
-                        nextPublic: !isPublic,
-                      })
+                      gateOrAct(() =>
+                        setPendingConfirm({
+                          kind: 'visibility',
+                          nextPublic: !isPublic,
+                        })
+                      )
                     }
                     className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
                       isPublic
@@ -296,10 +315,12 @@ export function DashboardPrivacyButton({
                 visible={isScoreVisible(privacy) && isPublic}
                 disabled={!isPublic}
                 onTap={() =>
-                  setPendingConfirm({
-                    kind: 'score',
-                    nextShown: !isScoreVisible(privacy),
-                  })
+                  gateOrAct(() =>
+                    setPendingConfirm({
+                      kind: 'score',
+                      nextShown: !isScoreVisible(privacy),
+                    })
+                  )
                 }
               />
               <div className="my-3 border-t border-[var(--gem-gray-800)]" />
@@ -315,11 +336,13 @@ export function DashboardPrivacyButton({
                     visible={vis === 'public' && isPublic}
                     disabled={!isPublic}
                     onTap={() =>
-                      setPendingConfirm({
-                        kind: 'section',
-                        key: k,
-                        nextVis: vis === 'public' ? 'private' : 'public',
-                      })
+                      gateOrAct(() =>
+                        setPendingConfirm({
+                          kind: 'section',
+                          key: k,
+                          nextVis: vis === 'public' ? 'private' : 'public',
+                        })
+                      )
                     }
                   />
                 )

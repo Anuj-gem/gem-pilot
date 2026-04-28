@@ -266,7 +266,7 @@ export default async function PartnerDashboardPage() {
       `
       id, status, created_at, unmatched_at,
       script_submissions (
-        id, title, declared_format, tags, hidden_at, is_public,
+        id, title, declared_format, tags, hidden_at, is_public, user_id,
         script_evaluations ( weighted_score, tier, evaluation, edited_fields )
       )
       `
@@ -276,7 +276,41 @@ export default async function PartnerDashboardPage() {
     .order('created_at', { ascending: false })
     .limit(100)
 
+  // Anuj 2026-04-28: industry matching is Pro-only on the writer side.
+  // Pull the subscription_status of every writer in this feed so we can
+  // hide free-writer rows (defense in depth — the matching engine
+  // already skips them at write time, but stale rows from before the
+  // gate could still surface).
+  const writerUserIds = Array.from(
+    new Set(
+      ((rawMatches ?? []) as Array<{
+        script_submissions?: { user_id?: string | null } | null
+      }>)
+        .map((r) => r.script_submissions?.user_id)
+        .filter((u): u is string => typeof u === 'string' && u.length > 0)
+    )
+  )
+  const proWriterIds = new Set<string>()
+  if (writerUserIds.length > 0) {
+    const { data: subRows } = await supabase
+      .from('profiles')
+      .select('id, subscription_status')
+      .in('id', writerUserIds)
+    for (const row of (subRows ?? []) as Array<{
+      id: string
+      subscription_status: string | null
+    }>) {
+      if (row.subscription_status === 'active') proWriterIds.add(row.id)
+    }
+  }
+
   const matches = ((rawMatches ?? []) as unknown as RawMatchRow[])
+    .filter((r) => {
+      const sub = r.script_submissions
+      if (!sub) return false
+      const ownerId = (sub as unknown as { user_id?: string | null }).user_id
+      return !!ownerId && proWriterIds.has(ownerId)
+    })
     .map(shapeMatch)
     .filter((m): m is DashboardMatchData => m !== null)
     .sort((a, b) => {

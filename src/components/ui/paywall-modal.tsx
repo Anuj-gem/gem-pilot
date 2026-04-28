@@ -48,16 +48,16 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
 
         <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
           <Clock size={12} />
-          Trial → Pro
+          Get matched
         </p>
         <h2 className="text-xl font-bold text-[var(--gem-white)] mb-2">
-          Keep producers engaged with your script.
+          Get producers and reps in front of your script.
         </h2>
         <p className="text-sm text-[var(--gem-gray-400)] mb-2 leading-relaxed">
-          Your first evaluation is yours forever. The 7-day window where producers can find and reach out about it is what runs out.
+          Your first evaluation is yours forever — share the link with anyone. Pro is what puts your script in front of the producers and reps actively scouting your lane.
         </p>
         <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
-          Pro keeps your scripts live indefinitely, unlocks unlimited evaluations, and routes every producer intro straight to your inbox.
+          Industry matching, intro routing, unlimited evaluations, and privacy controls — for the price of one coffee a week.
         </p>
 
         <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">
@@ -67,9 +67,9 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           </div>
           <ul className="space-y-2 mt-3">
             {[
+              'Industry matching — producers and reps scouting your lane',
+              'Producer intros routed straight to your inbox',
               'Unlimited script evaluations',
-              'Posts stay live on Industry indefinitely',
-              'Producers reach you via email through GEM',
               'Submit revisions and rescore old reports',
               'Per-section privacy + score-eye toggles',
               'Branded PDF download of every report',

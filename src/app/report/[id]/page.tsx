@@ -440,6 +440,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     submissionId={submission.id}
                     initialPrivacy={privacy}
                     initialIsPublic={submission.is_public ?? false}
+                    isProSubscriber={ownerIsSubscribed || isAdmin}
                     triggerLabel="Privacy settings"
                     triggerVariant="link"
                   />
