@@ -24,6 +24,12 @@
 //      convention). Adds an explicit `tentpole` band at the top of both.
 //      Output requires a season-total alongside per-episode for series so
 //      a producer sees both numbers.
+//   8. Project Complexity (was "Risk Details") — STEP 6 reframed as a
+//      forward-looking "what to plan for" read, not a flaw audit. Cards
+//      renamed to Cost / Cast / Clearance. The note leads with the
+//      actionable plan-for, not the level word — UI maps low|medium|high
+//      to Smooth / Manageable / Complex. Cost card explicitly told NOT to
+//      restate the budget tier (Packaging already shows it).
 //
 // Output shape is unchanged from v5.4 so the report UI doesn't need to
 // move. Writers / producers see the new behavior automatically once
@@ -297,39 +303,46 @@ List each individually:
 
 ---
 
-## STEP 6: Risk Details (producer-facing 3-card synthesis)
+## STEP 6: Project Complexity (producer-facing 3-card synthesis)
 
-Three cards. Each one is the producer's instant read on a specific category of greenlight friction. **Force commitment** — do NOT default everything to medium. If there's nothing driving a high rating, rate it Low and say why.
+Three cards — Cost, Cast, Clearance. Each one tells the producer at a glance whether THIS axis of the project is **smooth sailing**, **manageable**, or **complex**, AND — much more importantly — names the **specific thing they should plan for** if they greenlight.
+
+The reader already saw the budget tier in Packaging. Don't restate it. The job here is:
+> "OK if I were to develop this, here's what I'd watch out for on this axis."
+
+**Force commitment** on the level — do NOT default everything to medium. If there's nothing driving complexity, rate it Low (= "Smooth") and say so directly. Smooth is a real and useful answer.
 
 For each card output:
-- **level**: \`low\` | \`medium\` | \`high\`
-- **note**: 1-2 sentences naming the specific drivers from the script. Concrete, not abstract.
+- **level**: \`low\` (= Smooth) | \`medium\` (= Manageable) | \`high\` (= Complex). Schema name stays the same; UI maps to the words.
+- **note**: 1-2 sentences. **Lead with the specific thing to plan for** — the line item, the role, the clearance question. Skip the level adjective ("the budget is high-risk") — the level pill carries that. The note is the actionable read a producer would write down.
 
-### Card 1 — Budget Risk
-Beyond the project's stated budget tier, what could balloon costs? Period setting, foreign locations, kids/animals, VFX-heavy sequences, music that must be cleared, large action set pieces, weather-dependent shoots, expensive specialty crew. If the script is contemporary, contained, and clean, that's Low — say so.
+### Card 1 — Cost
+Where could this go off-tier? Period setting, foreign locations, kids/animals/twins, VFX-heavy sequences, named music that must be cleared, large action set pieces, weather-dependent shoots, expensive specialty crew, episode count for series. If the script is contemporary and contained, say so plainly.
 
-- Good (low): *"Contemporary, contained to four interiors and a parking garage, no VFX, no animals, no specialty crew. Nothing pushes beyond the stated tier."*
-- Good (medium): *"The Vegas casino interior and the cross-country drive sequences add 4-5 location days; a music-festival climax will need needledrop budget. Manageable but not ignorable at this tier."*
-- Good (high): *"1940s period setting requires built sets and full period costume; the climactic battle is a 30-page action sequence with vehicle stunts and 200 extras. Budget will run 30-50% over the tier estimate without aggressive scope cuts."*
+- Good (smooth): *"Contemporary, four interiors and a parking garage, no VFX, no specialty crew — production should sit comfortably inside the stated tier."*
+- Good (manageable): *"Plan for 4-5 location days at the Vegas casino interior and a needledrop budget for the music-festival climax. Both are scope-able down without losing the script."*
+- Good (complex): *"The 1940s period setting forces built sets and full period costume, and the climactic 30-page battle sequence (vehicle stunts, 200 extras) will run 30-50% over the tier estimate without aggressive scope cuts up front."*
 
-### Card 2 — Casting Risk
-Distinct from budget — what's hard about casting this? Do you need a name attached to open it theatrically? Are there roles that are extremely specific (very narrow age, identity, dialect, physical requirement)? Is the ensemble too deep for the budget tier (15 named characters, all needing actors with chops)? Are there twins, kids in heavy roles, or characters who must be played by an actor with rare combined skills (e.g. fluent in Mandarin AND classically trained)?
+### Card 2 — Cast
+What's the hardest single casting lift? Name the role and what makes it narrow. Name attachment dependency only when it's actually load-bearing for the buy — not as boilerplate.
 
-- Good (low): *"Two-hander with a third supporting role. All age-flexible 30s-50s. Cast off any indie character actor with a tape — no name dependency, no specialty requirements."*
-- Good (medium): *"The lead role's combination of physical demands (parkour, fight choreo) and emotional range (a bottled grief that has to read in close-up) narrows the pool. Will need a workout-package or attached name to greenlight."*
-- Good (high): *"Three child leads, including one who carries the climactic 8-page emotional sequence. Identical twin requirement for the brother characters. The lead must be Mandarin-fluent in adult dialogue. Casting will be the longest pre-production lift."*
+- Good (smooth): *"Two-hander plus a third supporting role, all age-flexible 30s-50s. Cast off any indie character actor with a tape; no name dependency, no specialty requirements."*
+- Good (manageable): *"Plan for an extended search on the lead — the role's combination of parkour-level physicality and bottled-grief close-up emotional range narrows the pool. A workout-package or attached name shortens the lift."*
+- Good (complex): *"Plan a 3-month casting window. Three child leads including one carrying the climactic 8-page sequence, an identical-twin requirement for the brother characters, and a Mandarin-fluent lead in adult dialogue. Casting is the longest pre-production lift on this project."*
 
-### Card 3 — Development Risk
-Mature content / rating challenges, IP rights complexity (real people, music clearances, true-story rights), legal sensitivities, and any content that limits platform options. This is the "lawyers and execs are going to ask questions" axis.
+### Card 3 — Clearance
+The lawyers-and-execs question. Real people, named music, life rights, IP licensing, content rating that limits the streamer pool, sensitivities that need a legal pass.
 
-- Good (low): *"Original story, no real people, no named music, contemporary setting with no political third rails. Standard development path."*
-- Good (medium): *"Based on a true crime — needs life rights from at least two participants. The depiction of the police investigation will need a legal pass for liability. Two licensed songs are plot-critical."*
-- Good (high): *"R-rated for graphic sexual violence — limits the streamer pool to two buyers. Names a sitting senator in the antagonist role. The cult depicted is a real religious organization with a litigious history. Significant legal and clearance work before greenlight."*
+- Good (smooth): *"Original story, no real people, no named music, contemporary setting with no political third rails. Standard development path."*
+- Good (manageable): *"Plan for life-rights work on at least two participants in the true-crime backbone, a legal pass on the depiction of the police investigation, and music budget for the two plot-critical licensed songs."*
+- Good (complex): *"Plan extensive pre-greenlight legal work: R-rated graphic sexual violence narrows the streamer pool to two buyers, a sitting senator named in the antagonist role, and the depicted cult is a real religious organization with a litigious history."*
 
 **Rules:**
 - Ratings must be consistent with the facts in STEP 5.
-- The note must name a specific driver from the script.
-- Force commitment — if a card has no real friction, say so directly. Do not default to Medium for safety.
+- The note leads with the actionable plan-for read, not the level word.
+- Each note names a SPECIFIC element from the script — a role, a setting, a content flag — not abstract risk language.
+- Force commitment. If a card has no real complexity, say so directly. Do not default to Manageable for safety.
+- Don't restate the budget tier in the Cost card — the Packaging section already showed it. Your job here is what could push it off-tier.
 
 ---
 

@@ -728,12 +728,24 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               </Section>
             ) : null}
 
-            {/* NARRATIVE BREAKDOWN */}
+            {/* REFERENCE — Score detail + Production planning grouped under
+                a quieter eyebrow so the page narrative ends with editorial
+                energy before slipping into deeper detail. Anuj 2026-04-28. */}
+            <div className="mt-12 sm:mt-14 mb-3">
+              <div className="flex items-center gap-3">
+                <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-500)]">
+                  Reference
+                </span>
+                <span className="flex-1 h-px bg-[var(--gem-gray-800)]" />
+              </div>
+            </div>
+
+            {/* SCORE DETAIL (was "Narrative breakdown") */}
             {scores &&
               Object.values(scores).some((s) => typeof s?.score === 'number') && (
                 <Section
-                  label="Narrative breakdown"
-                  subtitle="How the script reads on each of the ten craft dimensions. Scores are honest; commentary reflects the score, not a pitch of it."
+                  label="Score detail"
+                  subtitle="Per-dimension score and reasoning. Useful when you want to see why the overall number landed where it did."
                   summary="10 craft dimensions"
                 >
                   <div className="space-y-3">
