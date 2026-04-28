@@ -175,6 +175,13 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
     | null
   if (!evaluation) notFound()
 
+  // Writer-unmatched (or post-removed) → producer should have NO view.
+  // Bounce them back to the inbox. Anuj 2026-04-28. Velocity > closure
+  // banners — we'll add a "rematched" path later if needed.
+  if (match.unmatched_at) {
+    redirect('/partner')
+  }
+
   // Promote pending → opened on first view.
   if (match.status === 'pending') {
     await supabase

@@ -255,6 +255,11 @@ export default async function PartnerDashboardPage() {
     user.email?.split('@')[0] ||
     'there'
 
+  // Drop unmatched rows entirely. When the writer unmatches (or removes
+  // the post), the producer should have NO view of the match anymore —
+  // can't see it, can't act on it, can't email. Anuj 2026-04-28: better
+  // to disappear the row than park it in Passed where it competes for
+  // attention but can't be acted on.
   const { data: rawMatches } = await supabase
     .from('script_matches')
     .select(
@@ -267,6 +272,7 @@ export default async function PartnerDashboardPage() {
       `
     )
     .eq('producer_id', user.id)
+    .is('unmatched_at', null)
     .order('created_at', { ascending: false })
     .limit(100)
 
