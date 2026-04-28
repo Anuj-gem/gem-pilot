@@ -697,7 +697,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
 
             {/* REFERENCE — collapsible disclosure folded by default.
                 Anuj 2026-04-28. */}
-            <details className="group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
+            <details className="gem-no-print group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
               <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
                 <div
                   aria-hidden

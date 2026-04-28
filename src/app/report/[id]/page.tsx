@@ -954,7 +954,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             collapsible "Reference" disclosure, folded by default so the
             editorial flow (Hit case → Issues → Project Complexity) is
             what the reader lands on. Anuj 2026-04-28. */}
-        <details className="group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
+        <details className="gem-no-print group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
           <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
             <div
               aria-hidden
