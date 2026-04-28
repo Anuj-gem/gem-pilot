@@ -1,4 +1,7 @@
-// Landing hero — client component.
+// Landing hero — client component. Single-column, focused on the
+// writer's first action (drop in a PDF). Anuj 2026-04-28: dropped the
+// right-side floating report card; the rich product mockups now live in
+// the dedicated features section further down the page.
 //
 // Two ways in from here:
 //   1) User drags / picks a PDF in the drop zone → we stash it via
@@ -47,37 +50,36 @@ export function LandingHero() {
 
   return (
     <section
-      className="relative px-6 sm:px-8 pt-14 pb-12 sm:pt-20 sm:pb-16"
+      className="relative px-6 sm:px-8 pt-16 pb-14 sm:pt-24 sm:pb-20"
       style={{
         background:
           'radial-gradient(ellipse at 50% 0%, rgba(212,160,23,0.06) 0%, transparent 60%)',
       }}
     >
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-[1fr_0.95fr] gap-8 sm:gap-10 items-center">
-        {/* LEFT — copy + action */}
-        <div>
-          <div
-            className="text-[11px] tracking-[0.32em] uppercase font-semibold mb-4"
-            style={{ color: 'var(--gem-gold)' }}
-          >
-            Where Hollywood meets its hidden gems
-          </div>
-          <h1
-            className="font-semibold leading-[1.05] tracking-tight mb-4 text-[var(--gem-gray-50)]"
-            style={{
-              fontFamily: 'Georgia, "Times New Roman", serif',
-              fontSize: 'clamp(32px, 5vw, 44px)',
-            }}
-          >
-            The screenwriter<br />
-            network for industry.
-          </h1>
-          <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed mb-6 max-w-[540px]">
-            Upload your screenplay. GEM gives you a producer&apos;s-eye read
-            in 60 seconds — a structured report you can share with anyone, and
-            a path to industry matching when you&apos;re ready. First read on us.
-          </p>
+      <div className="max-w-3xl mx-auto text-center">
+        <div
+          className="text-[11px] tracking-[0.32em] uppercase font-semibold mb-5"
+          style={{ color: 'var(--gem-gold)' }}
+        >
+          Where Hollywood meets its hidden gems
+        </div>
+        <h1
+          className="font-semibold leading-[1.05] tracking-tight mb-5 text-[var(--gem-gray-50)]"
+          style={{
+            fontFamily: 'Georgia, "Times New Roman", serif',
+            fontSize: 'clamp(34px, 6vw, 54px)',
+          }}
+        >
+          We connect promising writers
+          <br className="hidden sm:block" /> to the industry.
+        </h1>
+        <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-300)] leading-relaxed mb-8 max-w-[560px] mx-auto">
+          Upload your screenplay. Selznick reads it like a producer would
+          and gives you a structured report. If it qualifies, our industry
+          partners reach out directly. First read on us.
+        </p>
 
+        <div className="max-w-[460px] mx-auto">
           <label
             onDragOver={(e) => {
               e.preventDefault()
@@ -119,7 +121,7 @@ export function LandingHero() {
             >
               <Upload size={16} />
             </div>
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 text-left">
               <p className="text-[14px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
                 Drop your PDF here
               </p>
@@ -144,13 +146,13 @@ export function LandingHero() {
           >
             Get Started — Free <ArrowRight size={15} />
           </button>
-          <p className="text-center text-[12px] text-[var(--gem-gray-500)] m-0">
+          <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
             First read free · No credit card
           </p>
 
           {error && (
             <div
-              className="mt-3 rounded-lg px-3.5 py-2.5 text-[13px]"
+              className="mt-3 rounded-lg px-3.5 py-2.5 text-[13px] text-left"
               style={{
                 background: 'rgba(220,38,38,0.06)',
                 border: '1px solid rgba(220,38,38,0.25)',
@@ -161,148 +163,7 @@ export function LandingHero() {
             </div>
           )}
         </div>
-
-        {/* RIGHT — sample report preview. On mobile this falls below the
-            upload block (grid stacks to one column) — still visible because
-            the card is strong visual proof of what comes back. */}
-        <div className="relative min-h-[240px] sm:min-h-[300px] mt-2 sm:mt-0">
-          <FloatingReportCard />
-        </div>
       </div>
     </section>
-  )
-}
-
-function FloatingReportCard() {
-  return (
-    <div
-      className="landing-float-card relative rounded-2xl p-5"
-      style={{
-        background: '#fff',
-        border: '1px solid var(--gem-gray-700)',
-        boxShadow: '0 18px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04)',
-        transform: 'rotate(-1deg)',
-      }}
-    >
-      <div
-        className="flex items-center justify-between gap-2 mb-3 pb-3"
-        style={{ borderBottom: '1px solid var(--gem-gray-800)' }}
-      >
-        {/* Qualification pill — instead of the generic "Your Pitch" label,
-            lead with the moment writers actually want: the green "you
-            qualified" verdict. Lands the hook before they read the rest. */}
-        <div
-          className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full"
-          style={{
-            background: 'rgba(5,150,105,0.10)',
-            border: '1px solid rgba(5,150,105,0.35)',
-          }}
-        >
-          <span
-            aria-hidden
-            className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full text-white text-[8px] font-bold"
-            style={{ background: '#059669' }}
-          >
-            ✓
-          </span>
-          <span
-            className="text-[9.5px] font-bold uppercase whitespace-nowrap"
-            style={{ letterSpacing: '0.14em', color: '#047857' }}
-          >
-            Qualifies for industry matching
-          </span>
-        </div>
-        <span className="text-[10px] italic" style={{ color: 'var(--gem-gray-500)' }}>
-          demo
-        </span>
-      </div>
-      {/* Real example — actual v5.3 eval of the Sopranos pilot. Concrete
-          beats hypothetical: writers see the exact format and quality of
-          what they'd get back from their own script. */}
-      <div
-        className="rounded-xl p-3.5 mb-2.5"
-        style={{
-          background:
-            'linear-gradient(135deg, rgba(212,160,23,0.08), #fff 70%)',
-          border: '1px solid rgba(212,160,23,0.3)',
-        }}
-      >
-        <div
-          className="text-[9px] font-bold uppercase mb-1.5"
-          style={{ letterSpacing: '0.18em', color: '#92710f' }}
-        >
-          Headline
-        </div>
-        <p
-          className="text-[12px] font-semibold m-0 leading-[1.4] text-[var(--gem-gray-50)]"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          A New Jersey mob boss in therapy races to hide panic attacks before family, crew, and rivals expose him.
-        </p>
-      </div>
-      <div>
-        <div
-          className="text-[9px] font-bold uppercase mb-1.5"
-          style={{ letterSpacing: '0.18em', color: 'var(--gem-accent)' }}
-        >
-          Why this is a hit
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <div className="flex gap-1.5">
-            <span
-              className="text-[10px] font-bold"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              01
-            </span>
-            <p
-              className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
-            >
-              The premise is a built-in engine
-            </p>
-          </div>
-          <div className="flex gap-1.5">
-            <span
-              className="text-[10px] font-bold"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              02
-            </span>
-            <p
-              className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
-            >
-              Tony is a star-making contradiction
-            </p>
-          </div>
-          <div className="flex gap-1.5">
-            <span
-              className="text-[10px] font-bold"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              03
-            </span>
-            <p
-              className="text-[11px] font-medium m-0 leading-[1.4] text-[var(--gem-gray-100)]"
-            >
-              The family is as dramatic as the crime
-            </p>
-          </div>
-        </div>
-      </div>
-      <style jsx>{`
-        .landing-float-card {
-          animation: float 5s ease-in-out infinite;
-        }
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) rotate(-1deg);
-          }
-          50% {
-            transform: translateY(-4px) rotate(-1deg);
-          }
-        }
-      `}</style>
-    </div>
   )
 }
