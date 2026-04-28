@@ -69,15 +69,23 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Already assigned" }, { status: 400 });
     }
 
-    // Assign to user, clear expiry, flip to public. Selznick-4 v4 default
-    // is "every claimed post is visible to industry"; the writer can
-    // narrow per-section privacy or remove the post via the report page.
+    // Assign to user, clear expiry. is_public defaults to true ONLY for
+    // Pro subscribers — free writers' scripts stay private until they
+    // upgrade and publish. Anuj 2026-04-28: publishing is Pro-gated;
+    // auto-publishing on claim left free users with a "Published" report
+    // they couldn't unpublish without paying.
+    const { data: ownerProfile } = await serviceClient
+      .from("profiles")
+      .select("subscription_status")
+      .eq("id", user.id)
+      .single();
+    const ownerIsPro = ownerProfile?.subscription_status === "active";
     await serviceClient
       .from("script_submissions")
       .update({
         user_id: user.id,
         expires_at: null,
-        is_public: true,
+        ...(ownerIsPro ? { is_public: true } : {}),
       })
       .eq("id", submission_id);
 

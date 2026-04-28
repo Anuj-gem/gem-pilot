@@ -355,16 +355,26 @@ export async function POST(request: NextRequest) {
         throw new Error("Failed to store evaluation");
       }
 
-      // 9. Mark submission as completed + public by default. Selznick-4 v4
-      // (2026-04-27): every new post is visible to industry from the
-      // moment GEM finishes scoring it. Writers narrow visibility per
-      // section (or remove the post entirely) via the report page UI.
-      // Anonymous submissions stay private until claimed by signup.
+      // 9. Mark submission as completed. is_public defaults to true ONLY
+      // for Pro subscribers — free writers' scripts stay private until
+      // they upgrade and choose to publish. Anuj 2026-04-28: publishing
+      // to industry partners is a Pro-only feature; auto-publishing on
+      // score for free users created a confusing state where the report
+      // showed "Published" but couldn't be unpublished without paying.
+      let ownerIsPro = false;
+      if (user) {
+        const { data: ownerProfile } = await serviceClient
+          .from("profiles")
+          .select("subscription_status")
+          .eq("id", user.id)
+          .single();
+        ownerIsPro = ownerProfile?.subscription_status === "active";
+      }
       await serviceClient
         .from("script_submissions")
         .update({
           status: "completed",
-          ...(user ? { is_public: true } : {}),
+          ...(ownerIsPro ? { is_public: true } : {}),
         })
         .eq("id", submission.id);
 
