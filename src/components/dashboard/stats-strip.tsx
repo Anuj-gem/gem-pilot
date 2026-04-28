@@ -9,12 +9,15 @@
 // the strip renders read-only (producers see aggregate counts but no
 // per-person breakdown).
 
-import { Eye, Check, Mail, ChevronRight } from 'lucide-react'
+import { Eye, Check, Mail, ChevronRight, X } from 'lucide-react'
 
 interface Props {
   views: number
   interested: number
   emailed: number
+  /** Writer-only — number of producers who passed. When undefined the
+   *  Pass column is hidden (producer-side stats don't show it). */
+  passed?: number
   /** When provided, the entire strip becomes a clickable trigger (cursor
    *  pointer, hover style, chevron hint). Used by the writer to open the
    *  full activity sheet. Omit for read-only display (producer side). */
@@ -28,6 +31,7 @@ export function StatsStrip({
   views,
   interested,
   emailed,
+  passed,
   onOpen,
   size = 'default',
 }: Props) {
@@ -57,6 +61,24 @@ export function StatsStrip({
         color="#059669"
         compact={isCompact}
       />
+      {passed !== undefined && (
+        <>
+          <span
+            aria-hidden
+            className="text-[var(--gem-gray-700)]"
+            style={{ fontSize: isCompact ? 11 : 12 }}
+          >
+            ·
+          </span>
+          <Stat
+            label="Passed"
+            value={passed}
+            icon={<X size={isCompact ? 11 : 12} strokeWidth={2.5} />}
+            color="var(--gem-gray-400)"
+            compact={isCompact}
+          />
+        </>
+      )}
       <span
         aria-hidden
         className="text-[var(--gem-gray-700)]"

@@ -18,7 +18,6 @@ import {
   Download,
   RefreshCw,
   Trash2,
-  Loader2,
   Activity,
 } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
@@ -41,6 +40,12 @@ interface Props {
    *  the in-page `gem:edit-top-card` event. Used on the dashboard, where
    *  the editable top card lives on a different page (the report). */
   editHref?: string
+  /** When set, the Download PDF item navigates to this href instead of
+   *  dispatching the in-page `gem:open-download-pdf` event. Used on the
+   *  dashboard so the download modal lives on the report page (where the
+   *  rendered report DOM is available). The href should include
+   *  `?download=1` so the report page auto-opens the modal. */
+  downloadHref?: string
 }
 
 export function OwnerActionsMenu({
@@ -51,13 +56,18 @@ export function OwnerActionsMenu({
   isSubscribed,
   activity,
   editHref,
+  downloadHref,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [removeConfirm, setRemoveConfirm] = useState(false)
   const [removing, setRemoving] = useState(false)
-  const [downloading, setDownloading] = useState(false)
   const [activityOpen, setActivityOpen] = useState(false)
+  // Avoid unused param warnings for `evaluationId` and `title` — they're
+  // still in the public API surface for future callers (e.g. a server-
+  // side PDF endpoint we may bring back).
+  void evaluationId
+  void title
   const wrapRef = useRef<HTMLDivElement>(null)
 
   // Close on outside click.
@@ -86,35 +96,20 @@ export function OwnerActionsMenu({
     window.dispatchEvent(new CustomEvent('gem:edit-top-card'))
   }
 
-  async function triggerDownload() {
+  function triggerDownload() {
     setOpen(false)
     if (!isSubscribed) {
-      // Free writers — DownloadButton's flow gates on subscription too;
-      // mirror the same upgrade prompt by dispatching to the global
-      // upgrade modal listener.
+      // Free writers — gate on subscription. Reuse the global upgrade
+      // modal listener so the path matches every other Pro action.
       window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
       return
     }
-    setDownloading(true)
-    try {
-      const res = await fetch(`/api/evaluations/${evaluationId}/download-pdf`, {
-        method: 'POST',
-      })
-      if (!res.ok) throw new Error('Download failed')
-      const blob = await res.blob()
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `${title.replace(/[^a-zA-Z0-9]+/g, '-')}-GEM-report.pdf`
-      document.body.appendChild(a)
-      a.click()
-      a.remove()
-      window.URL.revokeObjectURL(url)
-    } catch {
-      /* swallow — keep UI clean */
-    } finally {
-      setDownloading(false)
-    }
+    // Anuj 2026-04-28: download is now a client-side print path through
+    // <DownloadPdfModalHost> on the report page. We dispatch a global
+    // event; the host listens and pops the modal with the 5 toggles.
+    // The dashboard variant of this menu sets `editHref` to
+    // /report/[id]?download=1, which the host auto-opens.
+    window.dispatchEvent(new CustomEvent('gem:open-download-pdf'))
   }
 
   async function confirmRemove() {
@@ -188,19 +183,22 @@ export function OwnerActionsMenu({
               Edit title, headline, tags
             </MenuItem>
           )}
-          <MenuItem
-            icon={
-              downloading ? (
-                <Loader2 size={14} className="animate-spin" />
-              ) : (
-                <Download size={14} />
-              )
-            }
-            onClick={triggerDownload}
-            disabled={downloading}
-          >
-            {downloading ? 'Preparing PDF…' : 'Download PDF'}
-          </MenuItem>
+          {downloadHref ? (
+            <MenuLink
+              icon={<Download size={14} />}
+              href={downloadHref}
+              onClick={() => setOpen(false)}
+            >
+              Download PDF
+            </MenuLink>
+          ) : (
+            <MenuItem
+              icon={<Download size={14} />}
+              onClick={triggerDownload}
+            >
+              Download PDF
+            </MenuItem>
+          )}
           <MenuLink
             icon={<RefreshCw size={14} />}
             href={reviseHref}

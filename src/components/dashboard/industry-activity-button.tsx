@@ -53,6 +53,7 @@ function computeCounts(rows: IndustryActivityRow[]) {
     interested: live.filter((r) =>
       ['interested', 'commented'].includes(r.status)
     ).length,
+    passed: live.filter((r) => r.status === 'passed').length,
     emailed: live.filter((r) => !!r.producerEmailedAt).length,
   }
 }
@@ -294,6 +295,7 @@ export function IndustryActivityButton({
       <StatsStrip
         views={counts.views}
         interested={counts.interested}
+        passed={counts.passed}
         emailed={counts.emailed}
         onOpen={() => setOpen(true)}
       />

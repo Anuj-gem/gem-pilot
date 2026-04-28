@@ -5,7 +5,8 @@
 //     (upload now / come back later) — never trap the writer.
 'use client'
 
-import { Loader2, Check, Upload } from 'lucide-react'
+import Link from 'next/link'
+import { Loader2, Check, Upload, ArrowRight, Plus } from 'lucide-react'
 
 export function ScoringTerminal({ progressLabel }: { progressLabel?: string }) {
   return (
@@ -45,9 +46,34 @@ export function ScoringTerminal({ progressLabel }: { progressLabel?: string }) {
           }}
         />
       </div>
-      <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
-        Hang tight — we&apos;ll redirect to your report when it&apos;s ready.
+      <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mb-6">
+        Hang tight — we&apos;ll redirect to your report when it&apos;s ready. Or
+        keep moving:
       </p>
+
+      {/* Outlets so the user isn't trapped staring at a spinner. The score
+          job runs server-side (Vercel keeps the lambda alive after the
+          client navigates away), so leaving this page is safe — they'll
+          see the report on their dashboard when it lands. Anuj 2026-04-28. */}
+      <div className="flex flex-col sm:flex-row gap-2 justify-center max-w-[360px] mx-auto">
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-[13.5px] font-semibold text-[var(--gem-gray-50)] border transition-colors hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] flex-1"
+          style={{ borderColor: 'var(--gem-gray-700)', background: '#fff' }}
+        >
+          Go to dashboard
+          <ArrowRight size={14} />
+        </Link>
+        <Link
+          href="/submit"
+          className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-[13.5px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] flex-1"
+          style={{ background: 'var(--gem-accent)' }}
+        >
+          <Plus size={14} />
+          Submit another
+        </Link>
+      </div>
+
       <style jsx>{`
         @keyframes scoring-progress {
           0% { width: 4%; }

@@ -326,12 +326,14 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             {initial.title}
           </h1>
           {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
-            <ScoreBadge
-              score={commercialScore}
-              isOwner={isOwner}
-              shownToIndustry={scoreShownToIndustry}
-              submissionId={submissionId}
-            />
+            <span data-pdf-section="score">
+              <ScoreBadge
+                score={commercialScore}
+                isOwner={isOwner}
+                shownToIndustry={scoreShownToIndustry}
+                submissionId={submissionId}
+              />
+            </span>
           )}
         </div>
 

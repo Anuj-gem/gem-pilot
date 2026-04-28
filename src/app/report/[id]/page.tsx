@@ -49,6 +49,7 @@ import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
+import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
@@ -70,7 +71,7 @@ import {
 
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string }>
+  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string; download?: string }>
 }
 
 interface V5Extras {
@@ -113,8 +114,9 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam, pending: pendingParam } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam, pending: pendingParam, download: downloadParam } = await searchParams
   const autoOpenPrivacy = openPrivacyParam === '1'
+  const autoOpenDownload = downloadParam === '1'
   const supabase = await createClient()
   const serviceClient = createServiceClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -388,6 +390,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
       )}
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
+      {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24">
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
@@ -510,6 +513,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
         >
           {(whatsSpecial.headline || allStrengths.length > 0) && (
+            <div data-pdf-section="whats_working">
             <EditorialSection label="Why this can be a hit" accent="gold">
               {/* Lede paragraph — always visible. */}
               {whatsSpecial.headline && (
@@ -565,6 +569,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </ol>
               )}
             </EditorialSection>
+            </div>
           )}
         </SectionGate>
 
@@ -576,7 +581,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
         >
-          {leadCharacters.length > 0 && (() => {
+          {leadCharacters.length > 0 && (
+            <div data-pdf-section="cast">
+            {(() => {
             // Split Lead vs Supporting (2026-04-28). Leads keep the full
             // <Collapsible> card treatment. Supporting drops into a
             // horizontal carousel underneath so a 12-character ensemble
@@ -645,9 +652,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </Section>
             )
           })()}
+            </div>
+          )}
         </SectionGate>
 
-        {/* PACKAGE ANGLES */}
+        {/* PACKAGE ANGLES + PACKAGING — both fall under the
+            "packaging" PDF section toggle. */}
         <SectionGate
           section="deep_dive_package"
           privacy={privacy}
@@ -655,6 +665,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
         >
+          <div data-pdf-section="packaging">
           {packageAngles && (
             <Section
               label="Package angles"
@@ -724,20 +735,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </div>
             </Section>
           )}
-        </SectionGate>
-
-        {/* PACKAGING (v5.4) — comps, audience, budget tier, lane fit, IP.
-            Sits right after Package Angles so the two pitch-side blocks are
-            adjacent. Both render when the data is present; older evals
-            without v5.4 fields just see Package Angles. */}
-        {packaging && (
-          <div
-            style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-            aria-hidden={applyPaywallBlur ? true : undefined}
-          >
-            <PackagingSection data={packaging} />
+          {/* PACKAGING (v5.4) — comps, audience, budget tier, lane fit, IP.
+              Sits right after Package Angles inside the same SectionGate +
+              same data-pdf-section so the print toggle covers both. */}
+          {packaging && (
+            <div
+              style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+              aria-hidden={applyPaywallBlur ? true : undefined}
+            >
+              <PackagingSection data={packaging} />
+            </div>
+          )}
           </div>
-        )}
+        </SectionGate>
 
         {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
             craft note as an inline callout, then all other considerations.
@@ -888,6 +898,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isPublic={submission.is_public ?? false}
           >
             <div
+              data-pdf-section="project_complexity"
               style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
               aria-hidden={applyPaywallBlur ? true : undefined}
             >

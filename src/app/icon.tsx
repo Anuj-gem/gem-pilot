@@ -4,6 +4,10 @@ export const runtime = 'edge'
 export const size = { width: 32, height: 32 }
 export const contentType = 'image/png'
 
+// Crisp purple diamond favicon. Transparent background so it shows
+// cleanly on both light and dark browser tab themes. The dark wrapper
+// the previous version used made the icon look "blank" against most
+// browser chrome. Anuj 2026-04-28.
 export default function Icon() {
   return new ImageResponse(
     (
@@ -14,17 +18,17 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0a0a0a',
+          background: 'transparent',
         }}
       >
         <div
           style={{
-            width: 18,
-            height: 18,
+            width: 22,
+            height: 22,
             background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
             transform: 'rotate(45deg)',
+            borderRadius: 3,
             display: 'flex',
-            boxShadow: '0 0 8px rgba(167, 139, 250, 0.6)',
           }}
         />
       </div>

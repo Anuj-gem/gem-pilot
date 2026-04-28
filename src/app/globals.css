@@ -173,3 +173,15 @@ input:focus, textarea:focus, select:focus {
 input::placeholder, textarea::placeholder {
   color: var(--gem-gray-500);
 }
+
+/* ── Print / PDF download styling (Anuj 2026-04-28) ─────────────────
+   The owner's "Download PDF" modal triggers window.print() after
+   adding a <style> tag that hides excluded sections. We also tag chrome
+   elements (Nav, owner pill, action menus, sticky bars, etc.) with
+   .gem-no-print so they disappear from the printed output. The body
+   gets .gem-pdf-printing for the duration of the print dialog so any
+   layout-only adjustments can hook into that class. */
+@media print {
+  body.gem-pdf-printing nav { display: none !important; }
+  .gem-no-print { display: none !important; }
+}

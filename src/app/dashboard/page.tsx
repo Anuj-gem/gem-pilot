@@ -736,13 +736,19 @@ function CompactCard({
             />
           ) : (
             <span
-              className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
+              className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
               style={{
                 border: `1px solid ${statusLabel.border}`,
                 background: statusLabel.bg,
                 color: statusLabel.color,
               }}
             >
+              {script.status === 'processing' && (
+                <span
+                  aria-hidden
+                  className="inline-block w-2 h-2 rounded-full border border-current border-t-transparent animate-spin"
+                />
+              )}
               {statusLabel.text}
             </span>
           )
@@ -797,6 +803,7 @@ function CompactCard({
               }
               isSubscribed={isSubscribed}
               editHref={`/report/${script.evaluationId}`}
+              downloadHref={`/report/${script.evaluationId}?download=1`}
             />
           )}
           {action}
