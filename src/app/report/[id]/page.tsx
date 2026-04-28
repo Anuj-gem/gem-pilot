@@ -34,7 +34,7 @@
 // {writer}" card at the bottom. No blur anywhere — clean writer-curated snapshot.
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Nav from '@/components/nav'
 import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
@@ -44,7 +44,6 @@ import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
-import { LockedAfterEvalScreen } from '@/components/report/locked-after-eval-screen'
 import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
@@ -53,6 +52,7 @@ import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
+import { IndustryActivityButton } from '@/components/dashboard/industry-activity-button'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
@@ -358,22 +358,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const designation = scoreDesignation(commercialScore)
 
-  // Early return for free-tier 2nd+ eval — dump them on the upgrade screen
-  // instead of letting them scroll a report they won't be able to unlock.
+  // Anuj 2026-04-28: free-tier 2nd+ eval used to land on
+  // <LockedAfterEvalScreen> as a dedicated upgrade bridge. Dropped — the
+  // dashboard now handles this surface (locked card + value-prop upsell
+  // + the writer's industry stats so they see the carrot inline). Bounce
+  // them back to the dashboard so they pick up that context instead of
+  // the bridge screen.
   if (lockedAfterFreeEval) {
-    return (
-      <>
-        <Nav />
-        <ReportAnalytics evaluationId={id} isBlurred={true} />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 pb-24">
-          <LockedAfterEvalScreen
-            evaluationId={id}
-            title={submission.title}
-            commercialScore={commercialScore}
-          />
-        </div>
-      </>
-    )
+    redirect('/dashboard')
   }
 
   // Count hidden sections (for the visitor contact card copy).
@@ -497,6 +489,22 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
           scoreShownToIndustry={isScoreVisible(privacy)}
         />
+
+        {/* Inline industry stats — owner-only, always visible while
+            published. Doubles as the always-on conversion carrot for
+            free writers ("3 producers viewed — upgrade to keep posts
+            live") and as live engagement signal for Pro. Anuj
+            2026-04-28. */}
+        {isOwner &&
+          !isAnonymousSubmission &&
+          (submission.is_public ?? false) && (
+            <div className="gem-no-print mb-6">
+              <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+                Industry activity
+              </p>
+              <IndustryActivityButton rows={ownerActivity} />
+            </div>
+          )}
 
         {/* Mini score card removed 2026-04-23 — qualification banner above
             now handles the owner's primary signal. Free-tier owners still

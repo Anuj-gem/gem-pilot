@@ -378,24 +378,8 @@ export default async function DashboardPage({
             (multi-script dashboards). When the heroScript is showing,
             the richer FirstScriptProUpsell sits under the hero instead. */}
         {!isSubscribed && usedFreeEval && !heroScript && (
-          <div
-            className="mt-10 rounded-xl border border-[var(--gem-gray-700)] p-5 sm:p-6 bg-white flex items-center justify-between gap-4 flex-wrap"
-            style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
-          >
-            <div>
-              <p className="text-sm font-semibold text-[var(--gem-gray-50)] m-0 mb-1">
-                Ready for unlimited scripts?
-              </p>
-              <p className="text-sm text-[var(--gem-gray-400)] m-0">
-                Pro unlocks unlimited evaluations and lets producers reach you directly.
-              </p>
-            </div>
-            <UnlockTrigger
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all"
-              ariaLabel="Upgrade to Pro"
-            >
-              Go Pro — $20/mo
-            </UnlockTrigger>
+          <div className="mt-10">
+            <FirstScriptProUpsell />
           </div>
         )}
       </div>
@@ -851,7 +835,15 @@ function CompactCard({
         ? 'Feature'
         : null
 
-  const showActivity = script.hasReport && !script.isLockedReport
+  // Show stats inline whenever there's a report — even on locked
+  // (free-tier 2nd+) cards. Surfacing the stats is the carrot ("3
+  // producers viewed — upgrade to keep your post live"). Anuj
+  // 2026-04-28.
+  const showActivity = script.hasReport
+  // Owner-actions menu (3-dot) only on cards where the owner has
+  // unlocked access — the locked card's primary CTA is the upgrade
+  // button so the menu would compete.
+  const showOwnerActions = script.hasReport && !script.isLockedReport
 
   return (
     <div
@@ -935,7 +927,7 @@ function CompactCard({
           )}
         </div>
         <div className="shrink-0 flex items-center gap-1.5 sm:gap-2">
-          {showActivity && script.evaluationId && (
+          {showOwnerActions && script.evaluationId && (
             // 3-dot actions menu — Edit (links to report page), Download,
             // Submit revision, Remove. Activity is intentionally omitted
             // here because the dashboard already shows it inline at left

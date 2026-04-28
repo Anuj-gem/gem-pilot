@@ -48,27 +48,31 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
 
         <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
           <Clock size={12} />
-          Free evaluation used
+          Trial → Pro
         </p>
         <h2 className="text-xl font-bold text-[var(--gem-white)] mb-2">
-          Your report is ready. Now get it seen.
+          Keep producers engaged with your script.
         </h2>
+        <p className="text-sm text-[var(--gem-gray-400)] mb-2 leading-relaxed">
+          Your first evaluation is yours forever. The 7-day window where producers can find and reach out about it is what runs out.
+        </p>
         <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
-          Go Pro to publish on Discover, let producers and reps contact you directly, and evaluate unlimited scripts.
+          Pro keeps your scripts live indefinitely, unlocks unlimited evaluations, and routes every producer intro straight to your inbox.
         </p>
 
         <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">
-          <div className="flex items-baseline gap-1 mb-1">
+          <div className="flex items-baseline gap-1 mb-3">
             <span className="text-3xl font-bold text-[var(--gem-white)]">$20</span>
-            <span className="text-sm text-[var(--gem-gray-400)]">/ month</span>
+            <span className="text-sm text-[var(--gem-gray-400)]">/ month · cancel anytime</span>
           </div>
           <ul className="space-y-2 mt-3">
             {[
               'Unlimited script evaluations',
-              'Feature scripts on Discover',
-              'Producers and reps can contact you',
-              'Full reports with production analysis',
-              'All formats — features, pilots, shorts',
+              'Posts stay live on Industry indefinitely',
+              'Producers reach you via email through GEM',
+              'Submit revisions and rescore old reports',
+              'Per-section privacy + score-eye toggles',
+              'Branded PDF download of every report',
             ].map(item => (
               <li
                 key={item}
