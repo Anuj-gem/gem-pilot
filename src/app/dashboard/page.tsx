@@ -588,7 +588,7 @@ function HeroCard({
             {showFreeBadge && (
               <UnlockTrigger
                 className="inline-flex items-center gap-1.5 mt-2.5 text-[12px] font-semibold transition-colors hover:text-[var(--gem-accent-hover)]"
-                ariaLabel="Upgrade to Pro for industry access"
+                ariaLabel="Upgrade to Pro for industry partner access"
               >
                 <span
                   className="inline-block px-1.5 py-[1px] rounded text-[9.5px] font-bold uppercase tracking-wider"
@@ -597,7 +597,7 @@ function HeroCard({
                   Pro
                 </span>
                 <span style={{ color: 'var(--gem-accent)' }}>
-                  Upgrade for industry access
+                  Upgrade for industry partner access
                 </span>
               </UnlockTrigger>
             )}
@@ -636,12 +636,12 @@ function HeroCard({
         {script.is_public && showFreeBadge && (
           <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-4 max-w-[420px] leading-snug">
             Share the report URL with anyone — your network sees the full read.
-            Industry matching is on Pro.
+            Industry partner matching is on Pro.
           </p>
         )}
         {script.is_public && !showFreeBadge && (
           <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-4">
-            Visible to industry
+            Visible to industry partners
           </p>
         )}
       </div>
@@ -677,7 +677,7 @@ function FirstScriptProUpsell() {
             Go Pro · $20/mo
           </p>
           <h3 className="text-[20px] sm:text-[22px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-1">
-            Unlimited evaluations.<br className="sm:hidden" /> Indefinite industry visibility.
+            Unlimited evaluations.<br className="sm:hidden" /> Indefinite industry partner visibility.
           </h3>
           <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0 leading-snug max-w-[60ch]">
             Same price as before — way more in the box. Pro is the new
@@ -796,7 +796,7 @@ function CompactCard({
     }
   } else if (script.is_public) {
     statusLabel = {
-      text: 'Visible to industry',
+      text: 'Visible to industry partners',
       color: '#059669',
       bg: 'rgba(16,185,129,0.10)',
       border: 'rgba(16,185,129,0.35)',

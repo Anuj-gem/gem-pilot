@@ -133,7 +133,7 @@ export const PRESETS: Record<PresetKey, Preset> = {
   pitch_plus_dev: {
     key: 'pitch_plus_dev',
     label: 'Everything',
-    blurb: 'All four sections visible to industry.',
+    blurb: 'All four sections visible to industry partners.',
     sections: {
       whats_working:        'public',
       deep_dive_characters: 'public',

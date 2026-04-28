@@ -277,7 +277,7 @@ function UpgradeNudge({ evaluationId }: { evaluationId: string }) {
       <ul className="text-[13.5px] sm:text-[14px] text-[var(--gem-gray-200)] m-0 mb-4 leading-[1.6] list-none p-0 space-y-1">
         <li className="flex items-start gap-2">
           <Check size={14} className="flex-shrink-0 mt-1" style={{ color: 'var(--gem-accent)' }} strokeWidth={3} />
-          <span>Publish to industry — producers, agents, and dev execs find your script in the Discover Portal</span>
+          <span>Publish to industry partners — producers, agents, and dev execs find your script in the Discover Portal</span>
         </li>
         <li className="flex items-start gap-2">
           <Check size={14} className="flex-shrink-0 mt-1" style={{ color: 'var(--gem-accent)' }} strokeWidth={3} />
@@ -324,7 +324,7 @@ function PublishBanner({ onPublishClick }: { onPublishClick: () => void }) {
         className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13.5px] font-semibold text-white transition-all hover:brightness-110 active:scale-[0.985]"
         style={{ background: '#059669' }}
       >
-        Publish to industry
+        Publish to industry partners
         <ArrowRight size={13} />
       </button>
       <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0">
@@ -390,7 +390,7 @@ function StickyUpgradeBar({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-[13px] sm:text-[14px] font-semibold text-white m-0 leading-tight">
-            Publish to industry + unlock the full report
+            Publish to industry partners + unlock the full report
           </p>
           <p className="text-[11.5px] sm:text-[12px] text-white/60 m-0 mt-0.5 leading-tight">
             $20/mo · unlimited submissions · cancel anytime

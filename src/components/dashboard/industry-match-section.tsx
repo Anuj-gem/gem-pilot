@@ -395,7 +395,7 @@ export function IndustryMatchSection({
             <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0 leading-snug">
               {isPublic
                 ? 'Awaiting first signal — producers in your lane will land here as they engage.'
-                : 'Once your script is visible to industry, producer activity will land here.'}
+                : 'Once your script is visible to industry partners, producer activity will land here.'}
             </p>
           ) : (
             <div
@@ -408,7 +408,7 @@ export function IndustryMatchSection({
             >
               {!isPublic && (
                 <p className="text-[12.5px] text-[var(--gem-gray-500)] italic m-0 -mb-0.5">
-                  This script isn&apos;t visible to industry yet — make it visible to start matching.
+                  This script isn&apos;t visible to industry partners yet — make it visible to start matching.
                 </p>
               )}
               {emailedCount > 0 && (

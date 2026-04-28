@@ -77,11 +77,10 @@ export function DashboardPrivacyButton({
   >(null)
   const [busy, setBusy] = useState(false)
 
-  // Privacy gating (Anuj 2026-04-28, revised): the master "Visible to
-  // industry" toggle is FREE — every writer needs the ability to take
-  // their post down, regardless of plan. The per-section pills + the
-  // score-eye toggle stay Pro-only. Free taps on those fire the global
-  // upgrade modal instead of saving.
+  // Privacy gating (Anuj 2026-04-28, revised v2): publishing to industry
+  // partners is Pro-only — every toggle in this panel goes through
+  // gateOrAct. Free writers see the panel + Pro pills in place of the
+  // Visible/Hidden controls; tapping any pill fires the upgrade modal.
   function gateOrAct(action: () => void) {
     if (!isProSubscriber) {
       window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
@@ -284,7 +283,7 @@ export function DashboardPrivacyButton({
                       Per-section privacy controls
                     </p>
                     <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
-                      Hide your score or any section from industry — Pro.
+                      Hide your score or any section from industry partners — Pro.
                     </p>
                   </div>
                   <span
@@ -296,10 +295,10 @@ export function DashboardPrivacyButton({
                 </button>
               )}
 
-              {/* Master toggle — "Visible to industry". Flipping it OFF
-                  hides the post entirely from producers AND auto-flips
-                  every section pill below to Private. Flipping it back ON
-                  republishes + auto-flips every section back to Public. */}
+              {/* Master toggle — "Visible to industry partners". Pro-only;
+                  for free writers we render a Pro pill in place of the
+                  Published/Unpublished pill, and tap fires the upgrade
+                  modal via gateOrAct. */}
               <div
                 className="rounded-xl p-3.5 mb-3"
                 style={{
@@ -314,31 +313,50 @@ export function DashboardPrivacyButton({
                 <div className="flex items-start gap-3">
                   <div className="flex-1 min-w-0">
                     <p className="text-[14px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
-                      Visible to industry
+                      Visible to industry partners
                     </p>
                     <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug">
                       {isPublic
                         ? 'Industry partners can see your report. Section pills below let you narrow what\u2019s shown.'
-                        : 'Your post is hidden from industry. Only you can see this report.'}
+                        : 'Your post is hidden from industry partners. Only you can see this report.'}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setPendingConfirm({
-                        kind: 'visibility',
-                        nextPublic: !isPublic,
-                      })
-                    }
-                    className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
-                      isPublic
-                        ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-                        : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
-                    }`}
-                  >
-                    {isPublic ? <Eye size={11} /> : <Lock size={11} />}
-                    {isPublic ? 'Published' : 'Unpublished'}
-                  </button>
+                  {isProSubscriber ? (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setPendingConfirm({
+                          kind: 'visibility',
+                          nextPublic: !isPublic,
+                        })
+                      }
+                      className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
+                        isPublic
+                          ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
+                          : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+                      }`}
+                    >
+                      {isPublic ? <Eye size={11} /> : <Lock size={11} />}
+                      {isPublic ? 'Published' : 'Unpublished'}
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        gateOrAct(() =>
+                          setPendingConfirm({
+                            kind: 'visibility',
+                            nextPublic: !isPublic,
+                          })
+                        )
+                      }
+                      aria-label="Upgrade to Pro to publish to industry partners"
+                      className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-white transition-colors hover:opacity-90"
+                      style={{ background: 'var(--gem-accent)' }}
+                    >
+                      Pro
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -397,8 +415,8 @@ export function DashboardPrivacyButton({
           if (!pendingConfirm) return ''
           if (pendingConfirm.kind === 'visibility') {
             return pendingConfirm.nextPublic
-              ? 'Publish to industry?'
-              : 'Unpublish from industry?'
+              ? 'Publish to industry partners?'
+              : 'Unpublish from industry partners?'
           }
           if (pendingConfirm.kind === 'score') {
             return pendingConfirm.nextShown
@@ -414,7 +432,7 @@ export function DashboardPrivacyButton({
           if (!pendingConfirm) return ''
           if (pendingConfirm.kind === 'visibility') {
             return pendingConfirm.nextPublic
-              ? 'Your post will appear in producer feeds again, with all sections visible by default. You can narrow individual sections after.'
+              ? 'Your post will appear in industry partner feeds again, with all sections visible by default. You can narrow individual sections after.'
               : 'Your post will be hidden from every industry partner. You\u2019ll still see your full report. Republish anytime.'
           }
           if (pendingConfirm.kind === 'score') {

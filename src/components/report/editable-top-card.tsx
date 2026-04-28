@@ -707,7 +707,7 @@ function ScoreBadge({
         }}
         aria-label={
           isHiddenForOwner
-            ? `GEM score ${display}, hidden from industry`
+            ? `GEM score ${display}, hidden from industry partners`
             : `GEM score ${display}`
         }
       >
@@ -804,13 +804,13 @@ function ScoreEyeToggle({
         onClick={() => setOpen(true)}
         aria-label={
           localShown
-            ? 'Score is visible to industry — tap to hide'
-            : 'Score is hidden from industry — tap to show'
+            ? 'Score is visible to industry partners — tap to hide'
+            : 'Score is hidden from industry partners — tap to show'
         }
         title={
           localShown
-            ? 'Score visible to industry. Tap to hide.'
-            : 'Score hidden from industry. Tap to show.'
+            ? 'Score visible to industry partners. Tap to hide.'
+            : 'Score hidden from industry partners. Tap to show.'
         }
         className="inline-flex items-center justify-center w-7 h-7 rounded-full transition-colors hover:bg-[var(--gem-gray-800)]"
         style={{

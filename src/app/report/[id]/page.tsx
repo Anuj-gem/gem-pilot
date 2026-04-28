@@ -420,7 +420,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       }}
                     />
                     {submission.is_public
-                      ? 'Visible to industry'
+                      ? 'Visible to industry partners'
                       : 'Unpublished'}
                     {isAdmin && !isOwner && (
                       <span
