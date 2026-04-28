@@ -17,7 +17,7 @@
 // setPendingFile() and routes to /submit?from=hero.
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { ArrowRight, Upload, Sparkles, Users, Eye, Mail, CheckCircle, Activity } from 'lucide-react'
+import { ArrowRight, Eye, Mail, CheckCircle, Activity } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackedCTA } from '@/components/tracked-cta'
 import { MobileNav } from '@/components/mobile-nav'
@@ -137,25 +137,27 @@ export default async function Home({
             </p>
           </div>
 
-          {/* Three-step strip */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-12">
-            <StepCard
+          {/* Three-step strip — each step leads with the actual product
+              surface (mini report → producer feed → writer inbox) so the
+              path reads as concrete, not abstract. Anuj 2026-04-28. */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-12">
+            <GraphicStepCard
               n="01"
-              icon={<Upload size={18} />}
-              title="Upload your screenplay"
-              body="PDF only. Final Draft, WriterSolo, Highland — they all export. Sixty seconds from drag to result."
+              title="Get a detailed report"
+              body="Selznick scores story, character, packaging, and production reality — every dimension a producer would weigh."
+              visual={<StepReportMini />}
             />
-            <StepCard
+            <GraphicStepCard
               n="02"
-              icon={<Sparkles size={18} />}
-              title="Selznick reads it end-to-end"
-              body="Every dimension — story, character, audience, packaging, production — scored against what wins greenlights."
+              title="Producers find and match"
+              body="Strong scripts land on the matched feed of producers and reps actively scouting your genre, format, and budget."
+              visual={<StepFeedMini />}
             />
-            <StepCard
+            <GraphicStepCard
               n="03"
-              icon={<Users size={18} />}
-              title="Industry partners reach out"
-              body="If your script qualifies, producers and reps in your lane see it on their dashboard and contact you directly."
+              title="They reach out directly"
+              body="When a partner is interested, they email you through GEM — straight to your inbox. No portals, no chasing."
+              visual={<StepInboxMini />}
             />
           </div>
 
@@ -419,44 +421,43 @@ export default async function Home({
   )
 }
 
-// ─── Step card (How it works) ────────────────────────────────────────
-function StepCard({
+// ─── How it works (graphic step cards) ───────────────────────────────
+function GraphicStepCard({
   n,
-  icon,
   title,
   body,
+  visual,
 }: {
   n: string
-  icon: React.ReactNode
   title: string
   body: string
+  visual: React.ReactNode
 }) {
   return (
     <div
-      className="rounded-2xl p-6 flex flex-col"
+      className="rounded-2xl p-5 flex flex-col"
       style={{
         background: '#fff',
         border: '1px solid var(--gem-gray-700)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
       }}
     >
-      <div className="flex items-center gap-3 mb-4">
-        <span
-          className="inline-flex items-center justify-center w-9 h-9 rounded-xl"
-          style={{
-            background: 'rgba(124,58,237,0.10)',
-            color: 'var(--gem-accent)',
-          }}
-        >
-          {icon}
-        </span>
-        <span
-          className="text-[11px] font-bold uppercase tracking-[0.18em]"
-          style={{ color: 'var(--gem-gray-500)' }}
-        >
-          Step {n}
-        </span>
+      <div
+        className="rounded-xl mb-4 p-3"
+        style={{
+          background: 'var(--gem-gray-900)',
+          border: '1px solid var(--gem-gray-700)',
+          minHeight: 180,
+        }}
+      >
+        {visual}
       </div>
+      <span
+        className="text-[10.5px] font-bold uppercase tracking-[0.18em] mb-1.5"
+        style={{ color: 'var(--gem-accent)' }}
+      >
+        Step {n}
+      </span>
       <h3
         className="text-[17px] sm:text-[18px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2"
         style={{ fontFamily: 'Georgia, serif' }}
@@ -466,6 +467,245 @@ function StepCard({
       <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
         {body}
       </p>
+    </div>
+  )
+}
+
+// Step 1 — tiny report card (score badge + headline + 2 why-this-hits)
+function StepReportMini() {
+  return (
+    <div
+      className="rounded-lg p-3"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+      }}
+    >
+      <div className="flex items-start gap-2 mb-2.5">
+        <div className="min-w-0 flex-1">
+          <p className="text-[8px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-500)] m-0 mb-0.5">
+            Your script
+          </p>
+          <p
+            className="text-[11px] font-bold m-0 leading-tight text-[var(--gem-gray-50)] truncate"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            Untitled mob therapy pilot
+          </p>
+        </div>
+        <div
+          className="shrink-0 flex flex-col items-center justify-center rounded tabular-nums"
+          style={{
+            background: 'rgba(124,58,237,0.08)',
+            border: '1px solid rgba(124,58,237,0.25)',
+            minWidth: 38,
+            padding: '3px 6px',
+          }}
+        >
+          <span
+            className="text-[7px] uppercase tracking-[0.14em] font-bold leading-none mb-0.5"
+            style={{ color: 'var(--gem-gray-50)', opacity: 0.85 }}
+          >
+            Score
+          </span>
+          <span
+            className="font-bold leading-none text-[var(--gem-gray-50)]"
+            style={{ fontSize: 14 }}
+          >
+            78
+          </span>
+        </div>
+      </div>
+      <div
+        className="rounded px-2 py-1.5 mb-2"
+        style={{
+          background:
+            'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%)',
+          border: '1px solid rgba(212,160,23,0.30)',
+        }}
+      >
+        <div
+          className="text-[7px] font-bold uppercase mb-0.5"
+          style={{ letterSpacing: '0.16em', color: '#92710f' }}
+        >
+          Headline
+        </div>
+        <p
+          className="text-[9.5px] font-semibold m-0 leading-[1.3] text-[var(--gem-gray-50)]"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          A mob boss in therapy races to hide panic attacks before family expose him.
+        </p>
+      </div>
+      <div>
+        <div
+          className="text-[7px] font-bold uppercase mb-1"
+          style={{ letterSpacing: '0.16em', color: 'var(--gem-accent)' }}
+        >
+          Why this is a hit
+        </div>
+        <ol className="list-none p-0 m-0 space-y-0.5">
+          <li className="flex gap-1.5">
+            <span className="text-[8.5px] font-bold tabular-nums" style={{ color: 'var(--gem-gold)' }}>
+              01
+            </span>
+            <p className="text-[9.5px] font-medium m-0 leading-[1.25] text-[var(--gem-gray-100)]">
+              The premise is a built-in engine
+            </p>
+          </li>
+          <li className="flex gap-1.5">
+            <span className="text-[8.5px] font-bold tabular-nums" style={{ color: 'var(--gem-gold)' }}>
+              02
+            </span>
+            <p className="text-[9.5px] font-medium m-0 leading-[1.25] text-[var(--gem-gray-100)]">
+              Tony is a star-making contradiction
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  )
+}
+
+// Step 2 — tiny producer feed (matched scripts list)
+function StepFeedMini() {
+  return (
+    <div
+      className="rounded-lg p-3"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+      }}
+    >
+      <div className="flex items-center justify-between mb-2.5">
+        <p className="text-[8px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-500)] m-0">
+          Producer feed
+        </p>
+        <span
+          className="text-[7px] font-bold uppercase tracking-wider px-1 py-[1px] rounded text-white"
+          style={{ background: '#16a34a' }}
+        >
+          3 new
+        </span>
+      </div>
+      <div className="space-y-1.5">
+        <StepFeedRow title="Untitled mob therapy pilot" meta="Series · 1 hr drama" score="78" highlight />
+        <StepFeedRow title="The Northern Line" meta="Feature · Action thriller" score="71" />
+        <StepFeedRow title="Glass Ceiling" meta="Feature · Comedy" score="68" />
+      </div>
+    </div>
+  )
+}
+
+function StepFeedRow({
+  title,
+  meta,
+  score,
+  highlight = false,
+}: {
+  title: string
+  meta: string
+  score: string
+  highlight?: boolean
+}) {
+  return (
+    <div
+      className="rounded px-2 py-1.5 flex items-center gap-2"
+      style={{
+        background: highlight ? 'rgba(124,58,237,0.05)' : 'var(--gem-gray-900)',
+        border: highlight
+          ? '1px solid rgba(124,58,237,0.30)'
+          : '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <div className="min-w-0 flex-1">
+        <p className="text-[10px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
+          {title}
+        </p>
+        <p className="text-[8.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-tight">{meta}</p>
+      </div>
+      <span
+        className="shrink-0 text-[9.5px] font-bold px-1.5 py-0.5 rounded tabular-nums"
+        style={{
+          background: 'rgba(124,58,237,0.08)',
+          border: '1px solid rgba(124,58,237,0.25)',
+          color: 'var(--gem-gray-50)',
+        }}
+      >
+        {score}
+      </span>
+    </div>
+  )
+}
+
+// Step 3 — tiny writer inbox (producer reach-out rows)
+function StepInboxMini() {
+  return (
+    <div
+      className="rounded-lg p-3"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+      }}
+    >
+      <p className="text-[8px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-500)] m-0 mb-2.5">
+        Industry inbox
+      </p>
+      <div className="space-y-1.5">
+        <StepInboxRow name="Lena Park" company="Westview Pictures" status="interested" />
+        <StepInboxRow name="Marcus Hill" company="Lighthouse Studios" status="reached out" />
+        <StepInboxRow name="Priya Shah" company="Halcyon Films" status="interested" />
+      </div>
+    </div>
+  )
+}
+
+function StepInboxRow({
+  name,
+  company,
+  status,
+}: {
+  name: string
+  company: string
+  status: 'interested' | 'reached out'
+}) {
+  const Icon = status === 'reached out' ? Mail : Eye
+  const accent = status === 'reached out' ? 'var(--gem-accent)' : '#16a34a'
+  return (
+    <div
+      className="rounded px-2 py-1.5 flex items-center gap-2"
+      style={{
+        background: 'var(--gem-gray-900)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <span
+        className="inline-flex items-center justify-center w-5 h-5 rounded-full shrink-0"
+        style={{ background: 'rgba(124,58,237,0.08)', color: accent }}
+      >
+        <Icon size={10} />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="text-[10px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
+          {name}
+          <span className="text-[var(--gem-gray-400)] font-normal"> · {company}</span>
+        </p>
+      </div>
+      <span
+        className="shrink-0 text-[7.5px] font-bold uppercase tracking-wider px-1 py-[1px] rounded"
+        style={{
+          color: accent,
+          background:
+            status === 'reached out'
+              ? 'rgba(124,58,237,0.10)'
+              : 'rgba(22,163,74,0.10)',
+        }}
+      >
+        {status === 'reached out' ? 'Reached out' : 'Interested'}
+      </span>
     </div>
   )
 }
