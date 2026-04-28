@@ -331,18 +331,41 @@ What's the hardest single casting lift? Name the role and what makes it narrow. 
 - Good (complex): *"Plan a 3-month casting window. Three child leads including one carrying the climactic 8-page sequence, an identical-twin requirement for the brother characters, and a Mandarin-fluent lead in adult dialogue. Casting is the longest pre-production lift on this project."*
 
 ### Card 3 — Clearance
-The lawyers-and-execs question. Real people, named music, life rights, IP licensing, content rating that limits the streamer pool, sensitivities that need a legal pass.
 
-- Good (smooth): *"Original story, no real people, no named music, contemporary setting with no political third rails. Standard development path."*
+**STRICT SCOPE — money/legal items only.** This card is exclusively about line items a lawyer, business affairs, or rating board would flag — things that cost real money, narrow the buyer pool, or block greenlight until cleared. It is NOT about creative sustainability, story execution, showrunning challenge, or whether the writer can keep the engine going across episodes — those don't belong here.
+
+Scan the script ONLY for:
+- **Real people depicted** (named or recognizable; living or estate-protected) → life rights / depiction risk
+- **Named music** that is plot-critical or specifically referenced → sync clearance + budget
+- **IP licensing** — adapted from existing book/article/comic/podcast/game; references to other copyrighted works that aren't fair use
+- **Real-organization depiction** when potentially defamatory or litigious (religious orgs, named corporations, government agencies in unflattering light)
+- **True-story material** requiring rights from participants
+- **Content rating** that meaningfully narrows the buyer pool — typically NC-17, or hard-R sexual violence on a script aiming theatrical wide release. R-rated content for premium cable / streaming is NOT a problem; say so plainly.
+- **Trademark / brand** prominence that needs clearance
+
+If NONE of the above applies → mark **Smooth** and say so plainly (e.g. "Original IP, fictional characters, no named music or real-person depictions, mature content lives comfortably on premium cable — no clearance work needed."). Most original scripts ARE smooth on clearance — don't manufacture friction.
+
+**OUT OF SCOPE — do NOT write here:**
+- "The series will need to sustain the engine across episodes"
+- "The writer will need to maintain tone over a season"
+- "The premise depends on the showrunner's execution"
+- "Whether the central dynamic can carry multiple seasons"
+- Any creative, story-execution, or sustainability note. Those belong nowhere on this card.
+
+Examples:
+
+- Good (smooth, original IP): *"Original story, fictional characters, no named music or real-person depictions. Mature content sits comfortably on premium cable — no rating constraint on buyers. No clearance work needed."*
 - Good (manageable): *"Plan for life-rights work on at least two participants in the true-crime backbone, a legal pass on the depiction of the police investigation, and music budget for the two plot-critical licensed songs."*
-- Good (complex): *"Plan extensive pre-greenlight legal work: R-rated graphic sexual violence narrows the streamer pool to two buyers, a sitting senator named in the antagonist role, and the depicted cult is a real religious organization with a litigious history."*
+- Good (complex): *"Plan extensive pre-greenlight legal work: hard-R graphic sexual violence narrows the streamer pool to two buyers, a sitting senator named in the antagonist role, and the depicted cult is a real religious organization with a litigious history."*
+- Bad (out of scope — DO NOT WRITE THIS): *"The pilot is already highly defined, but the series will need to sustain the engine across episodes."* — that's creative sustainability, not clearance.
 
 **Rules:**
 - Ratings must be consistent with the facts in STEP 5.
 - The note leads with the actionable plan-for read, not the level word.
 - Each note names a SPECIFIC element from the script — a role, a setting, a content flag — not abstract risk language.
-- Force commitment. If a card has no real complexity, say so directly. Do not default to Manageable for safety.
+- Force commitment. If a card has no real complexity, say so directly. Do not default to Manageable for safety. Smooth is a real and useful answer.
 - Don't restate the budget tier in the Cost card — the Packaging section already showed it. Your job here is what could push it off-tier.
+- **Stay in your lane.** Cost = production budget drivers. Cast = the casting lift. Clearance = legal/rights/rating items only. Do NOT write creative-execution or showrunning notes on any of these cards — those belong in STEP 9 (Issues), not here.
 
 ---
 
