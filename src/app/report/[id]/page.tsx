@@ -36,7 +36,6 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound, redirect } from 'next/navigation'
 import Nav from '@/components/nav'
-import { LikeButton } from '@/components/report/like-button'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
@@ -241,22 +240,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     }
   }
 
-  const { count: likeCount } = await supabase
-    .from('script_likes')
-    .select('*', { count: 'exact', head: true })
-    .eq('evaluation_id', id)
-
-  let userLiked = false
-  if (user) {
-    const { data: existingLike } = await supabase
-      .from('script_likes')
-      .select('id')
-      .eq('evaluation_id', id)
-      .eq('user_id', user.id)
-      .maybeSingle()
-    userLiked = !!existingLike
-  }
-
   // Industry activity for this submission — drives the "Industry activity"
   // item in the owner "···" menu. Owner-only fetch (skip for non-owners).
   let ownerActivity: import('@/components/dashboard/industry-activity-button').IndustryActivityRow[] = []
@@ -448,12 +431,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               )}
             </div>
             <div className="flex items-center gap-2">
-              <LikeButton
-                evaluationId={id}
-                initialLiked={userLiked}
-                initialCount={likeCount ?? 0}
-                loggedIn={!!user}
-              />
               {(isOwner || isAdmin) && (
                 <OwnerActionsMenu
                   submissionId={submission.id}

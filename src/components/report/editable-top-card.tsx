@@ -677,6 +677,10 @@ function ScoreBadge({
   // anymore, while the writer still sees what GEM scored them.
   const isHiddenForOwner = isOwner && !shownToIndustry
 
+  // Anuj 2026-04-28: every tier gets a colored pill (not gray) for
+  // consistency. Yellow swapped from amber (#d97706 — read as orange)
+  // to a clearer yellow palette (#a16207 fg / yellow-100 bg) so it
+  // doesn't blur into red. Low scores now show red instead of grey.
   const palette = isHiddenForOwner
     ? {
         bg: 'var(--gem-gray-900)',
@@ -685,20 +689,20 @@ function ScoreBadge({
       }
     : score >= 75
       ? {
-          bg: 'rgba(5,150,105,0.10)',
-          fg: '#059669',
-          border: 'rgba(5,150,105,0.30)',
+          bg: '#d1fae5',
+          fg: '#047857',
+          border: '#6ee7b7',
         }
       : score >= 50
         ? {
-            bg: 'rgba(217,119,6,0.10)',
-            fg: 'var(--gem-warning)',
-            border: 'rgba(217,119,6,0.30)',
+            bg: '#fef9c3',
+            fg: '#a16207',
+            border: '#fde047',
           }
         : {
-            bg: 'var(--gem-gray-900)',
-            fg: 'var(--gem-gray-400)',
-            border: 'var(--gem-gray-700)',
+            bg: '#fee2e2',
+            fg: '#b91c1c',
+            border: '#fca5a5',
           }
   const display = score.toFixed(0)
   return (
