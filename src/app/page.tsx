@@ -162,114 +162,214 @@ export default async function Home({
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
 
-      {/* THREE PILLARS — dual-audience teases. Each card links to its
-          dedicated product page (/writers, /industry, /selznick).
-          Anuj 2026-04-28: GEM is a network now, not a writer-only tool.
-          The pillars frame both sides + the methodology in one row. */}
-      <section className="px-4 sm:px-6 py-12 sm:py-16">
+      {/* NETWORK CONNECTOR — the brand story in a graphic. Writers on
+          one side, industry on the other, GEM (Selznick) in the middle
+          as the connector. Anuj 2026-04-28: GEM is a network; this
+          section visually communicates it. */}
+      <section
+        className="px-4 sm:px-6 py-14 sm:py-20"
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.08) 0%, transparent 60%), var(--gem-black)',
+        }}
+      >
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-[11px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-400)] m-0 mb-3">
-              How it works
+          <div className="text-center max-w-[640px] mx-auto mb-12 sm:mb-16">
+            <p
+              className="text-[11px] uppercase tracking-[0.32em] font-semibold m-0 mb-3"
+              style={{ color: 'var(--gem-gold)' }}
+            >
+              How GEM works
             </p>
-            <h2 className="text-[28px] sm:text-[36px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-[1.15] m-0 max-w-[24ch] mx-auto font-[family-name:var(--font-display)]">
-              A network that connects writers and industry through one rubric.
+            <h2
+              className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-3"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              We connect Hollywood with hidden gems.
             </h2>
+            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-[1.6] m-0">
+              Writers upload. Selznick reads every script the way a producer
+              would. Industry partners see the work that fits their lane —
+              and reach the writers behind it directly.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
+          {/* Three nodes: Writers → Selznick → Industry. Horizontal on
+              desktop with connecting lines, vertical stack on mobile with
+              down-arrows. Each node clickable → its dedicated product page. */}
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 sm:gap-2 items-stretch">
             <Link
               href="/writers"
-              className="group rounded-2xl p-6 transition-all hover:border-[var(--gem-gold)]"
+              className="group rounded-2xl p-6 sm:p-7 transition-all hover:border-[var(--gem-gold)] flex flex-col"
               style={{
                 background: '#fff',
                 border: '1px solid var(--gem-gray-700)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
               }}
             >
+              <div
+                aria-hidden
+                className="inline-flex items-center justify-center rounded-xl mb-4"
+                style={{
+                  width: 44,
+                  height: 44,
+                  background: 'rgba(212,160,23,0.10)',
+                  color: 'var(--gem-gold)',
+                }}
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path
+                    d="M5 4h9l3 3v11H5z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
+                  />
+                  <path d="M14 4v3h3" stroke="currentColor" strokeWidth="1.5" />
+                </svg>
+              </div>
               <p
-                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
+                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
                 style={{ color: 'var(--gem-gold)' }}
               >
-                For writers
+                Writers
               </p>
-              <h3 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
-                A real read on your script — and the industry to actually see it.
+              <h3
+                className="text-[18px] sm:text-[20px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                Upload your script.
               </h3>
-              <p className="text-[14px] text-[var(--gem-gray-300)] leading-snug m-0 mb-4">
-                Upload your screenplay. Get a producer&apos;s-eye report in 60
-                seconds. Decide who in the industry sees it.
+              <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-[1.55] m-0 flex-1">
+                Get a real read in 60 seconds. Decide who in the industry sees
+                it. Free first eval, free first 7 days on Industry.
               </p>
-              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-gold)] transition-colors">
-                See the writer product
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-gold)] transition-colors mt-4">
+                For writers
                 <ArrowRight size={13} />
               </span>
             </Link>
 
-            <Link
-              href="/industry"
-              className="group rounded-2xl p-6 transition-all hover:border-[var(--gem-accent)]"
-              style={{
-                background: '#fff',
-                border: '1px solid var(--gem-gray-700)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
-              }}
-            >
-              <p
-                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
-                style={{ color: 'var(--gem-accent)' }}
-              >
-                For industry
-              </p>
-              <h3 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
-                A curated, matched feed of new screenplays.
-              </h3>
-              <p className="text-[14px] text-[var(--gem-gray-300)] leading-snug m-0 mb-4">
-                Producer and rep accounts are vetted. Scripts come pre-read and
-                lane-matched. Intros routed by GEM, replies straight to your
-                inbox.
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-accent)] transition-colors">
-                See the industry product
-                <ArrowRight size={13} />
-              </span>
-            </Link>
+            <NodeConnector />
 
             <Link
               href="/selznick"
-              className="group rounded-2xl p-6 transition-all hover:border-[var(--gem-gold)]"
+              className="group rounded-2xl p-6 sm:p-7 transition-all flex flex-col relative"
+              style={{
+                background:
+                  'linear-gradient(135deg, rgba(124,58,237,0.06), rgba(124,58,237,0.02) 65%), #fff',
+                border: '1.5px solid var(--gem-accent)',
+                boxShadow: '0 4px 18px rgba(124,58,237,0.12)',
+              }}
+            >
+              <div
+                aria-hidden
+                className="inline-flex items-center justify-center rounded-xl mb-4"
+                style={{
+                  width: 44,
+                  height: 44,
+                  background: 'rgba(124,58,237,0.10)',
+                  color: 'var(--gem-accent)',
+                }}
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path
+                    d="M11 3l2.5 5 5.5.8-4 3.9.9 5.5L11 15.5 6.1 18.2 7 12.7 3 8.8 8.5 8z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+                style={{ color: 'var(--gem-accent)' }}
+              >
+                Selznick
+              </p>
+              <h3
+                className="text-[18px] sm:text-[20px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                The producer&apos;s-eye lens.
+              </h3>
+              <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-[1.55] m-0 flex-1">
+                Reads narrative, cast, production, packaging — calibrated to
+                the signals that predict whether a project finds an audience.
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-accent)] transition-colors mt-4">
+                The rubric
+                <ArrowRight size={13} />
+              </span>
+            </Link>
+
+            <NodeConnector />
+
+            <Link
+              href="/industry"
+              className="group rounded-2xl p-6 sm:p-7 transition-all hover:border-[var(--gem-accent)] flex flex-col"
               style={{
                 background: '#fff',
                 border: '1px solid var(--gem-gray-700)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
               }}
             >
-              <p
-                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
-                style={{ color: 'var(--gem-gold)' }}
+              <div
+                aria-hidden
+                className="inline-flex items-center justify-center rounded-xl mb-4"
+                style={{
+                  width: 44,
+                  height: 44,
+                  background: 'rgba(22,163,74,0.10)',
+                  color: '#16a34a',
+                }}
               >
-                The rubric
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.5" />
+                  <circle cx="15" cy="14" r="3" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M3 19c0-2.5 2.2-4.5 5-4.5M11 19c0-2.5 2.2-4.5 5-4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </div>
+              <p
+                className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+                style={{ color: '#16a34a' }}
+              >
+                Industry
               </p>
-              <h3 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2">
-                Selznick — the producer&apos;s-eye lens.
+              <h3
+                className="text-[18px] sm:text-[20px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                Find the work that fits.
               </h3>
-              <p className="text-[14px] text-[var(--gem-gray-300)] leading-snug m-0 mb-4">
-                Narrative, cast, production, packaging — calibrated to the
-                signals that historically predict whether a project finds an
-                audience.
+              <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-[1.55] m-0 flex-1">
+                A curated, lane-matched feed of pre-read scripts. Producers and
+                reps reach writers directly through GEM-routed intros.
               </p>
-              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-gold)] transition-colors">
-                See how GEM reads scripts
+              <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-gray-50)] group-hover:text-[var(--gem-accent)] transition-colors mt-4">
+                For industry
                 <ArrowRight size={13} />
               </span>
             </Link>
           </div>
+
+          <p
+            className="text-center text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] italic m-0 mt-10 max-w-[60ch] mx-auto"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            In the lineage of the producers who decided what got made —
+            Selznick, Thalberg, Goldwyn — built for everyone shaping what gets
+            made next.
+          </p>
         </div>
       </section>
 
       <div className="h-px bg-[var(--gem-gray-700)]" />
 
-      {/* WHAT YOU GET — three distinct value props */}
+      {/* WHAT YOU GET — three distinct value props (writer-side
+          mockups). Kept for the "show what the report looks like"
+          beat. Anuj 2026-04-28: this is now writer-focused proof, not
+          the brand-frame section (which moved to the network connector
+          above). */}
       <section
         className="px-4 sm:px-6 py-14 sm:py-16"
         style={{ background: 'var(--gem-gray-900)' }}
@@ -280,16 +380,17 @@ export default async function Home({
               className="text-[11px] uppercase font-semibold mb-3"
               style={{ letterSpacing: '0.32em', color: 'var(--gem-gold)' }}
             >
-              What you get
+              What writers get
             </div>
             <h2
               className="text-[26px] sm:text-[32px] font-bold leading-[1.15] tracking-tight m-0 mb-3"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Three things every writer needs.
+              The packet a producer would write before greenlight.
             </h2>
             <p className="text-[14px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
-              A pitch you can send. Notes only you see. A match with the right industry partner.
+              A sharable pitch. Private development notes. A match with the
+              industry partners scouting your lane.
             </p>
           </div>
 
@@ -526,7 +627,9 @@ export default async function Home({
         </>
       )}
 
-      {/* MEET SELZNICK — the reader behind the tech */}
+      {/* MEET SELZNICK — kept as a brand beat on the landing, but the
+          deep methodology page lives at /selznick now. This section
+          stays compact and links into the deep page. */}
       <section
         className="px-4 sm:px-6 py-14 sm:py-16"
         style={{
@@ -654,9 +757,18 @@ export default async function Home({
             style={{ fontFamily: 'Georgia, serif' }}
           >
             In the lineage of the producers who decided what got made —
-            Selznick, Thalberg, Goldwyn — built for the writers shaping what
+            Selznick, Thalberg, Goldwyn — built for everyone shaping what
             gets made next.
           </p>
+          <div className="text-center mt-7">
+            <Link
+              href="/selznick"
+              className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--gem-accent)] hover:text-[var(--gem-gray-50)] transition-colors"
+            >
+              How GEM reads scripts, in detail
+              <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -878,6 +990,50 @@ export default async function Home({
           document.head.appendChild(s);
         })();
       `}</Script>
+    </div>
+  )
+}
+
+// NodeConnector — sits between the three nodes in the network connector
+// graphic. Horizontal arrow on desktop (between writers ↔ Selznick ↔
+// industry), vertical down-arrow on mobile.
+function NodeConnector() {
+  return (
+    <div className="flex items-center justify-center px-2 py-2 sm:px-0 sm:py-0">
+      {/* Mobile: down arrow */}
+      <svg
+        className="sm:hidden text-[var(--gem-gray-600)]"
+        width="16"
+        height="20"
+        viewBox="0 0 16 20"
+        fill="none"
+        aria-hidden
+      >
+        <path
+          d="M8 2v14M2 12l6 6 6-6"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      {/* Desktop: right arrow */}
+      <svg
+        className="hidden sm:block text-[var(--gem-gray-600)]"
+        width="32"
+        height="14"
+        viewBox="0 0 32 14"
+        fill="none"
+        aria-hidden
+      >
+        <path
+          d="M2 7h26M22 2l6 5-6 5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     </div>
   )
 }

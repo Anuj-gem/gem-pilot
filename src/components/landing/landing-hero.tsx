@@ -60,7 +60,7 @@ export function LandingHero() {
             className="text-[11px] tracking-[0.32em] uppercase font-semibold mb-4"
             style={{ color: 'var(--gem-gold)' }}
           >
-            For Screenwriters
+            Where Hollywood meets its hidden gems
           </div>
           <h1
             className="font-semibold leading-[1.05] tracking-tight mb-4 text-[var(--gem-gray-50)]"
@@ -69,13 +69,13 @@ export function LandingHero() {
               fontSize: 'clamp(32px, 5vw, 44px)',
             }}
           >
-            Built to help<br />
-            screenwriters succeed.
+            The screenwriter<br />
+            network for industry.
           </h1>
           <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed mb-6 max-w-[540px]">
-            Upload your screenplay. We give you the pitch you can use, notes
-            you can use to improve, and we match you with the industry
-            partners looking for work like yours.
+            Upload your screenplay. GEM gives you a producer&apos;s-eye read
+            in 60 seconds — and matches it with the producers, reps, and dev
+            execs scouting your lane. The first read is on us.
           </p>
 
           <label
