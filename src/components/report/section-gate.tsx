@@ -135,31 +135,29 @@ export function SectionGate({
   return (
     <div className="relative">
       {isOwnerOrAdmin && !hideOwnerPill && submissionId && (
-        isProSubscriber ? (
-          <button
-            onClick={() => setConfirmOpen(true)}
-            disabled={pending}
-            className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold transition-colors ${
-              currentVis === 'public'
-                ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-                : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
-            } ${pending ? 'opacity-60 cursor-wait' : ''}`}
-            title={`Tap to make ${sectionLabel} ${nextVis}`}
-          >
-            {currentVis === 'public' ? <Eye size={10} /> : <Lock size={10} />}
-            {currentVis === 'public' ? 'Visible' : 'Hidden'}
-          </button>
-        ) : (
-          <button
-            onClick={() => setProPromptOpen(true)}
-            className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] hover:text-[var(--gem-accent)] transition-colors`}
-            title="Per-section privacy is a Pro feature — tap to upgrade"
-            aria-label={`Per-section privacy for ${sectionLabel} — Pro`}
-          >
-            <Lock size={10} />
-            Pro
-          </button>
-        )
+        <button
+          onClick={() => {
+            if (!isProSubscriber) {
+              setProPromptOpen(true)
+              return
+            }
+            setConfirmOpen(true)
+          }}
+          disabled={pending}
+          className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold transition-colors ${
+            currentVis === 'public'
+              ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
+              : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+          } ${pending ? 'opacity-60 cursor-wait' : ''} ${!isProSubscriber ? 'opacity-60' : ''}`}
+          title={
+            !isProSubscriber
+              ? 'Privacy controls are a Pro feature — tap to upgrade'
+              : `Tap to make ${sectionLabel} ${nextVis}`
+          }
+        >
+          {currentVis === 'public' ? <Eye size={10} /> : <Lock size={10} />}
+          {currentVis === 'public' ? 'Visible' : 'Hidden'}
+        </button>
       )}
       {children}
       <PrivacyConfirmSheet

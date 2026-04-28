@@ -572,37 +572,39 @@ function HeroCard({
           </p>
         )}
 
-        {/* Stats strip — only shown when the script is on Industry. The
-            stats sheet opens on tap (writer can drill into who engaged).
-            Anuj 2026-04-28: label the row "Industry activity" so the
-            zero-state ("0 views · 0 interested · ...") doesn't read as
-            ambient noise. For free writers we follow the stats with a
-            one-line Pro upsell — those zeros aren't going to move
-            without industry matching. */}
-        {script.is_public && (
+        {/* Stats strip — Pro writers see live engagement; free writers
+            see the same surface, greyed out, with a small "Pro" pill
+            next to the heading and the whole block tappable to open
+            the upgrade modal. Showing the locked feature (rather than
+            hiding it behind a separate upsell pill) lets the writer
+            see exactly what they're unlocking. Anuj 2026-04-28. */}
+        {script.is_public ? (
           <div className="mb-5 flex flex-col items-center">
             <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
               Industry activity
             </p>
             <IndustryActivityButton rows={script.activity} />
-            {showFreeBadge && (
-              <UnlockTrigger
-                className="inline-flex items-center gap-1.5 mt-2.5 text-[12px] font-semibold transition-colors hover:text-[var(--gem-accent-hover)]"
-                ariaLabel="Upgrade to Pro for industry partner access"
-              >
-                <span
-                  className="inline-block px-1.5 py-[1px] rounded text-[9.5px] font-bold uppercase tracking-wider"
-                  style={{ background: 'var(--gem-accent)', color: '#fff' }}
-                >
-                  Pro
-                </span>
-                <span style={{ color: 'var(--gem-accent)' }}>
-                  Upgrade for industry partner access
-                </span>
-              </UnlockTrigger>
-            )}
           </div>
-        )}
+        ) : showFreeBadge ? (
+          <UnlockTrigger
+            as="div"
+            className="mb-5 inline-flex flex-col items-center cursor-pointer group"
+            ariaLabel="Industry matching — upgrade to Pro"
+          >
+            <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5 inline-flex items-center gap-1.5">
+              Industry matching
+              <span className="inline-flex items-center gap-1 px-1.5 py-[1px] rounded text-[8.5px] font-bold uppercase tracking-wider text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] group-hover:border-[var(--gem-accent)] group-hover:text-[var(--gem-accent)] transition-colors">
+                Pro
+              </span>
+            </p>
+            <div
+              className="opacity-50 grayscale pointer-events-none select-none"
+              aria-hidden
+            >
+              <IndustryActivityButton rows={script.activity} />
+            </div>
+          </UnlockTrigger>
+        ) : null}
 
         <div className="flex items-center gap-3 flex-wrap justify-center">
           <Link

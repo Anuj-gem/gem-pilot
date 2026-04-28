@@ -282,10 +282,10 @@ export function DashboardPrivacyButton({
                 >
                   <div className="min-w-0">
                     <p className="text-[13.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
-                      Per-section privacy controls
+                      Privacy controls are a Pro feature
                     </p>
                     <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
-                      Hide your score or any section from industry partners — Pro.
+                      Hide specific sections and publish to industry partners.
                     </p>
                   </div>
                   <span
@@ -323,43 +323,30 @@ export function DashboardPrivacyButton({
                         : 'Your post is hidden from industry partners. Only you can see this report.'}
                     </p>
                   </div>
-                  {isProSubscriber ? (
-                    <button
-                      type="button"
-                      onClick={() =>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      gateOrAct(() =>
                         setPendingConfirm({
                           kind: 'visibility',
                           nextPublic: !isPublic,
                         })
-                      }
-                      className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
-                        isPublic
-                          ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-                          : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
-                      }`}
-                    >
-                      {isPublic ? <Eye size={11} /> : <Lock size={11} />}
-                      {isPublic ? 'Published' : 'Unpublished'}
-                    </button>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() =>
-                        gateOrAct(() =>
-                          setPendingConfirm({
-                            kind: 'visibility',
-                            nextPublic: !isPublic,
-                          })
-                        )
-                      }
-                      aria-label="Upgrade to Pro to publish to industry partners"
-                      title="Pro feature — tap to upgrade"
-                      className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] hover:text-[var(--gem-accent)] transition-colors"
-                    >
-                      <Lock size={11} />
-                      Pro
-                    </button>
-                  )}
+                      )
+                    }
+                    title={
+                      !isProSubscriber
+                        ? 'Pro feature — tap to upgrade'
+                        : undefined
+                    }
+                    className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
+                      isPublic
+                        ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
+                        : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+                    } ${!isProSubscriber ? 'opacity-60' : ''}`}
+                  >
+                    {isPublic ? <Eye size={11} /> : <Lock size={11} />}
+                    {isPublic ? 'Published' : 'Unpublished'}
+                  </button>
                 </div>
               </div>
 
@@ -578,16 +565,23 @@ function PrivacyRow({
   hint: string
   visible: boolean
   disabled?: boolean
-  /** When false, the row renders a Pro pill instead of the
-   *  Visible/Hidden toggle — tapping anywhere on the pill fires the
-   *  upgrade modal via the parent's gateOrAct handler. Anuj 2026-04-28. */
+  /** When false, the toggle is rendered greyed-out and tapping the row
+   *  fires the upgrade modal via the parent's gateOrAct handler. We
+   *  keep showing the actual Visible/Hidden control (rather than a
+   *  separate Pro badge) so the writer can see exactly what they'd be
+   *  unlocking. Anuj 2026-04-28. */
   isPro?: boolean
   onTap: () => void
 }) {
+  // For free writers we don't dim the row when the script is unpublished
+  // (everyone's script is unpublished by default and the row would just
+  // look broken). The Pro upsell card at the top of the panel carries
+  // the gating message instead.
+  const rowOpacity = !isPro ? 0.6 : disabled ? 0.5 : 1
   return (
     <div
       className="flex items-start gap-3 py-2.5"
-      style={{ opacity: disabled && isPro ? 0.5 : 1 }}
+      style={{ opacity: rowOpacity }}
     >
       <div className="flex-1 min-w-0">
         <p className="text-[14px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
@@ -597,33 +591,26 @@ function PrivacyRow({
           {hint}
         </p>
       </div>
-      {isPro ? (
-        <button
-          type="button"
-          onClick={onTap}
-          disabled={disabled}
-          title={disabled ? 'Publish to industry first to control this' : undefined}
-          className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors disabled:cursor-not-allowed ${
-            visible
-              ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-              : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
-          }`}
-        >
-          {visible ? <Eye size={11} /> : <Lock size={11} />}
-          {visible ? 'Visible' : 'Hidden'}
-        </button>
-      ) : (
-        <button
-          type="button"
-          onClick={onTap}
-          aria-label="Upgrade to Pro to use this control"
-          title="Pro feature — tap to upgrade"
-          className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] hover:text-[var(--gem-accent)] transition-colors"
-        >
-          <Lock size={11} />
-          Pro
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={onTap}
+        disabled={isPro && disabled}
+        title={
+          !isPro
+            ? 'Pro feature — tap to upgrade'
+            : disabled
+              ? 'Publish to industry partners first to control this'
+              : undefined
+        }
+        className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors disabled:cursor-not-allowed ${
+          visible
+            ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
+            : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+        }`}
+      >
+        {visible ? <Eye size={11} /> : <Lock size={11} />}
+        {visible ? 'Visible' : 'Hidden'}
+      </button>
     </div>
   )
 }
