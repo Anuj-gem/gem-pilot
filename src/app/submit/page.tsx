@@ -356,15 +356,19 @@ function SubmitPageInner() {
   }
 
   async function waitForEvalAndRouteAsLoggedInUser() {
-    // Wait for evaluation_id (phase 2) — that's the one we need to route
-    // them to /report. If scoring takes too long, dashboard fallback.
-    const deadline = Date.now() + 120_000
+    // Anuj 2026-04-28: short look-ahead window only. If the eval is
+    // already done by ~4s, route straight to the report (best UX);
+    // otherwise route to /dashboard so the user lands on the processing
+    // card with trial messaging and Pro upsell instead of staring at a
+    // spinner. RealtimeRefresh on the dashboard picks up the eval
+    // completion automatically.
+    const lookAheadDeadline = Date.now() + 4000
     while (
       !evalResultRef.current?.evaluation_id &&
       !evalFailedRef.current &&
-      Date.now() < deadline
+      Date.now() < lookAheadDeadline
     ) {
-      await new Promise((r) => setTimeout(r, 400))
+      await new Promise((r) => setTimeout(r, 200))
     }
     if (evalFailedRef.current) {
       setError(evalFailedRef.current)
@@ -510,16 +514,21 @@ function SubmitPageInner() {
           body: JSON.stringify({ submission_id: submissionId }),
         })
       } catch {}
-      // Wait for phase 2 (evaluation_id) so we can route straight to the
-      // finished report. If it doesn't land in 90s, send them to dashboard
-      // — the eval keeps running on the server and shows up there.
-      const phase2Deadline = Date.now() + 90_000
+      // Anuj 2026-04-28: route to the dashboard immediately after the
+      // account is created. Don't make the user stare at the scoring
+      // terminal while the eval finishes — the dashboard's processing
+      // card + RealtimeRefresh hook picks up the completion and surfaces
+      // "Your report is ready" automatically. They also see the trial
+      // badge + Pro value props while waiting, which is useful dead time.
+      // Short wait so we can route straight to the report when scoring
+      // finishes ahead of the dashboard navigation (lucky-fast path).
+      const lookAheadDeadline = Date.now() + 4000
       while (
         !evalResultRef.current?.evaluation_id &&
         !evalFailedRef.current &&
-        Date.now() < phase2Deadline
+        Date.now() < lookAheadDeadline
       ) {
-        await new Promise((r) => setTimeout(r, 400))
+        await new Promise((r) => setTimeout(r, 200))
       }
       if (evalFailedRef.current) {
         setError(evalFailedRef.current)

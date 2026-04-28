@@ -336,7 +336,18 @@ export default async function DashboardPage({
         {scripts.length === 0 && <EmptyState />}
 
         {/* First-script hero treatment */}
-        {heroScript && <HeroCard script={heroScript} />}
+        {heroScript && (
+          <HeroCard script={heroScript} isSubscribed={isSubscribed} />
+        )}
+
+        {/* Pro upsell — richer value-prop card under the hero, only when
+            the free writer has a completed first script. Replaces the slim
+            footer banner so the conversion message lands before they
+            scroll past. Anuj 2026-04-28. */}
+        {heroScript &&
+          heroScript.status === 'completed' &&
+          !heroScript.isLockedReport &&
+          !isSubscribed && <FirstScriptProUpsell />}
 
         {/* Returning user — compact card list */}
         {scripts.length > 1 && (
@@ -356,9 +367,10 @@ export default async function DashboardPage({
         )}
 
         {/* Slim Pro upsell footer — only after the writer has used their
-            free eval. The Pro upsell card with multiple bullets is gone;
-            this single inline banner is enough nudge for repeat visits. */}
-        {!isSubscribed && usedFreeEval && (
+            free eval AND they're past the heroScript single-card view
+            (multi-script dashboards). When the heroScript is showing,
+            the richer FirstScriptProUpsell sits under the hero instead. */}
+        {!isSubscribed && usedFreeEval && !heroScript && (
           <div
             className="mt-10 rounded-xl border border-[var(--gem-gray-700)] p-5 sm:p-6 bg-white flex items-center justify-between gap-4 flex-wrap"
             style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.03)' }}
@@ -386,12 +398,29 @@ export default async function DashboardPage({
 
 // ─── Card components ─────────────────────────────────────────────────
 
-function HeroCard({ script }: { script: ScriptSummary }) {
+function HeroCard({
+  script,
+  isSubscribed,
+}: {
+  script: ScriptSummary
+  isSubscribed: boolean
+}) {
   const dateStr = new Date(script.created_at).toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
   })
+
+  // 7-day free trial — computed from the submission's created_at.
+  // The actual auto-unpublish cron isn't built yet (placeholder messaging
+  // for now), but exposing the timeline here sets the right expectation
+  // and matches the conversion model. Producer engagement extends the
+  // window; we'll wire the cron + extension logic in a follow-up. Anuj
+  // 2026-04-28.
+  const TRIAL_DAYS = 7
+  const ageMs = Date.now() - new Date(script.created_at).getTime()
+  const daysIn = Math.max(0, Math.floor(ageMs / (1000 * 60 * 60 * 24)))
+  const daysLeft = Math.max(0, TRIAL_DAYS - daysIn)
 
   if (script.status === 'processing') {
     return (
@@ -513,24 +542,54 @@ function HeroCard({ script }: { script: ScriptSummary }) {
     )
   }
 
-  // Completed and viewable. Two sub-states inside the hero: not-yet-public
-  // (publish CTA visible) vs already public (visibility line + interested
-  // count).
+  // Completed + viewable for a NON-Pro writer = the free 7-day trial
+  // experience. Surface the trial day count, stats, and the View Report
+  // CTA. Pro writers don't see trial messaging — they're already paid.
+  const showTrialBadge = !isSubscribed && script.is_public
+
   return (
     <HeroShell title={script.title}>
       <div className="flex flex-col items-center text-center">
+        {showTrialBadge && (
+          <span
+            className="inline-flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.18em] font-bold px-2.5 py-1 rounded-full mb-4"
+            style={{
+              border: '1px solid var(--gem-accent)',
+              background: 'rgba(124,58,237,0.06)',
+              color: 'var(--gem-accent)',
+            }}
+          >
+            <span
+              aria-hidden
+              className="inline-block w-1.5 h-1.5 rounded-full"
+              style={{ background: 'var(--gem-accent)' }}
+            />
+            {daysLeft > 0
+              ? `Free trial · ${daysLeft} day${daysLeft === 1 ? '' : 's'} left`
+              : 'Trial ending — go Pro to keep going'}
+          </span>
+        )}
         <h2 className="text-[22px] font-extrabold m-0 mb-1.5 text-[var(--gem-gray-50)]">
           Your report is ready
         </h2>
         {script.positioningHook ? (
-          <p className="text-[14px] text-[var(--gem-gray-300)] m-0 mb-6 max-w-[420px] leading-snug">
+          <p className="text-[14px] text-[var(--gem-gray-300)] m-0 mb-5 max-w-[420px] leading-snug">
             {script.positioningHook}
           </p>
         ) : (
-          <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mb-6">
+          <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mb-5">
             Open the report to see what producers will see.
           </p>
         )}
+
+        {/* Stats strip — only shown when the script is on Industry. The
+            stats sheet opens on tap (writer can drill into who engaged). */}
+        {script.is_public && (
+          <div className="mb-5">
+            <IndustryActivityButton rows={script.activity} />
+          </div>
+        )}
+
         <div className="flex items-center gap-3 flex-wrap justify-center">
           <Link
             href={`/report/${script.evaluationId}`}
@@ -551,6 +610,7 @@ function HeroCard({ script }: { script: ScriptSummary }) {
             </Link>
           )}
         </div>
+
         {!script.is_public && (
           <Link
             href={`/report/${script.evaluationId}?privacy=1`}
@@ -559,21 +619,104 @@ function HeroCard({ script }: { script: ScriptSummary }) {
             Privacy controls
           </Link>
         )}
-        {script.is_public && (
+        {script.is_public && showTrialBadge && (
+          <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0 mt-4 max-w-[420px] leading-snug">
+            Your script auto-published to industry. Producer interest extends
+            the post past day 7; if no engagement, it un-publishes
+            automatically.
+          </p>
+        )}
+        {script.is_public && !showTrialBadge && (
           <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-4">
             Visible to producers
-            {script.interestedCount > 0 && (
-              <>
-                <span className="mx-1.5">·</span>
-                <span className="font-semibold" style={{ color: '#059669' }}>
-                  {script.interestedCount} interested
-                </span>
-              </>
-            )}
           </p>
         )}
       </div>
     </HeroShell>
+  )
+}
+
+// ── First-script Pro upsell ──────────────────────────────────────────
+//
+// Anuj 2026-04-28: replaces the slim "Ready for unlimited scripts?"
+// banner with a richer value-prop card that lands the new pricing
+// equation — same $20/mo, more value than before. Sits right under the
+// HeroCard so the free writer reads it after their View Report click.
+
+function FirstScriptProUpsell() {
+  return (
+    <div
+      className="rounded-2xl bg-white px-6 sm:px-8 py-6 sm:py-7 mb-6"
+      style={{
+        border: '1.5px solid var(--gem-accent)',
+        background:
+          'linear-gradient(135deg, rgba(124,58,237,0.06), rgba(124,58,237,0.02) 65%), #fff',
+        boxShadow:
+          '0 4px 20px rgba(124,58,237,0.08), 0 1px 4px rgba(0,0,0,0.03)',
+      }}
+    >
+      <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
+        <div className="min-w-0">
+          <p
+            className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
+            style={{ color: 'var(--gem-accent)' }}
+          >
+            Go Pro · $20/mo
+          </p>
+          <h3 className="text-[20px] sm:text-[22px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-1">
+            Unlimited evaluations.<br className="sm:hidden" /> Indefinite industry visibility.
+          </h3>
+          <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0 leading-snug max-w-[60ch]">
+            Same price as before — way more in the box. Pro is the new
+            screenwriter operating system.
+          </p>
+        </div>
+        <UnlockTrigger
+          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-all shrink-0"
+          ariaLabel="Upgrade to Pro"
+        >
+          Upgrade — $20/mo
+          <ArrowRight size={14} />
+        </UnlockTrigger>
+      </div>
+
+      <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2.5 list-none m-0 p-0">
+        <ProUpsellBullet>Unlimited script evaluations</ProUpsellBullet>
+        <ProUpsellBullet>Posts stay on Industry indefinitely</ProUpsellBullet>
+        <ProUpsellBullet>Submit revisions and rescore old reports</ProUpsellBullet>
+        <ProUpsellBullet>Producer intros delivered straight to your inbox</ProUpsellBullet>
+        <ProUpsellBullet>Per-section privacy + score-eye toggles</ProUpsellBullet>
+        <ProUpsellBullet>Download branded PDFs of every report</ProUpsellBullet>
+      </ul>
+    </div>
+  )
+}
+
+function ProUpsellBullet({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-2 text-[13.5px] text-[var(--gem-gray-100)] leading-snug">
+      <span
+        aria-hidden
+        className="inline-flex items-center justify-center rounded-full mt-0.5 shrink-0"
+        style={{
+          width: 16,
+          height: 16,
+          background: 'rgba(124,58,237,0.10)',
+          color: 'var(--gem-accent)',
+        }}
+      >
+        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+          <path
+            d="M2 4.5L4 6.5L7.5 2.5"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      <span>{children}</span>
+    </li>
   )
 }
 
