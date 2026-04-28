@@ -353,9 +353,10 @@ export function DashboardPrivacyButton({
                         )
                       }
                       aria-label="Upgrade to Pro to publish to industry partners"
-                      className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-white transition-colors hover:opacity-90"
-                      style={{ background: 'var(--gem-accent)' }}
+                      title="Pro feature — tap to upgrade"
+                      className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] hover:text-[var(--gem-accent)] transition-colors"
                     >
+                      <Lock size={11} />
                       Pro
                     </button>
                   )}
@@ -616,9 +617,10 @@ function PrivacyRow({
           type="button"
           onClick={onTap}
           aria-label="Upgrade to Pro to use this control"
-          className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-white transition-colors hover:opacity-90"
-          style={{ background: 'var(--gem-accent)' }}
+          title="Pro feature — tap to upgrade"
+          className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] hover:text-[var(--gem-accent)] transition-colors"
         >
+          <Lock size={11} />
           Pro
         </button>
       )}

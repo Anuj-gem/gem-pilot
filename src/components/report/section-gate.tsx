@@ -152,11 +152,11 @@ export function SectionGate({
         ) : (
           <button
             onClick={() => setProPromptOpen(true)}
-            className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold text-white transition-opacity hover:opacity-90`}
-            style={{ background: 'var(--gem-accent)' }}
-            title="Per-section privacy is a Pro feature"
+            className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:border-[var(--gem-accent)] hover:text-[var(--gem-accent)] transition-colors`}
+            title="Per-section privacy is a Pro feature — tap to upgrade"
             aria-label={`Per-section privacy for ${sectionLabel} — Pro`}
           >
+            <Lock size={10} />
             Pro
           </button>
         )
