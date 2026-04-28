@@ -933,11 +933,11 @@ function CompactCard({
       </p>
 
       {/* Row 4 — industry stats on the left, action buttons on the right.
-          For Pro writers we show real engagement; for free writers there
-          is no engagement (the script isn't being matched), so we surface
-          a "Get matched — Pro" upsell pill in the same slot. Anuj
-          2026-04-28: free writers should see the upgrade carrot inline
-          on every card, not just in the header banner. */}
+          Free writers see the same stats block, but greyed out, with a
+          small "Pro" pill next to the heading — tapping anywhere fires
+          the upgrade modal. Showing the same surface (instead of a
+          separate "Get matched" pill) keeps the carrot honest: this is
+          the engagement view they unlock with Pro. Anuj 2026-04-28. */}
       <div className="flex items-end justify-between gap-3 flex-wrap mt-3">
         <div className="min-w-0">
           {showActivity ? (
@@ -949,28 +949,26 @@ function CompactCard({
                 <IndustryActivityButton rows={script.activity} />
               </>
             ) : (
-              <>
-                <p className="text-[10px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
+              <UnlockTrigger
+                as="div"
+                className="inline-flex flex-col items-start gap-1 cursor-pointer group"
+                ariaLabel="Industry matching — upgrade to Pro"
+              >
+                <p className="text-[10px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 inline-flex items-center gap-1.5">
                   Industry matching
-                </p>
-                <UnlockTrigger
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-semibold transition-colors hover:bg-[var(--gem-gray-900)]"
-                  ariaLabel="Get matched with producers — upgrade to Pro"
-                >
                   <span
-                    className="inline-block px-1.5 py-[1px] rounded text-[9.5px] font-bold uppercase tracking-wider"
-                    style={{
-                      background: 'var(--gem-accent)',
-                      color: '#fff',
-                    }}
+                    className="inline-flex items-center gap-1 px-1.5 py-[1px] rounded text-[8.5px] font-bold uppercase tracking-wider text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] group-hover:border-[var(--gem-accent)] group-hover:text-[var(--gem-accent)] transition-colors"
                   >
                     Pro
                   </span>
-                  <span style={{ color: 'var(--gem-gray-50)' }}>
-                    Get matched with producers
-                  </span>
-                </UnlockTrigger>
-              </>
+                </p>
+                <div
+                  className="opacity-50 grayscale pointer-events-none select-none"
+                  aria-hidden
+                >
+                  <IndustryActivityButton rows={script.activity} />
+                </div>
+              </UnlockTrigger>
             )
           ) : (
             <span aria-hidden />
