@@ -298,13 +298,21 @@ export default async function DashboardPage({
         active={scripts.some((s) => s.status === 'processing')}
       />
       <div className="max-w-3xl mx-auto px-4 py-8 sm:py-10">
-        {(welcomeBack || justDraftSaved || justSignedUp) && (
-          <WelcomeBanner
-            welcomeBack={welcomeBack}
-            justDraftSaved={justDraftSaved}
-            justSignedUp={justSignedUp}
-            firstName={firstName}
-          />
+        {/* Free writers with their first script see a Pro upsell at the
+            very top of the dashboard — replaces the lighter "you're
+            signed up" banner with a banner that lands the upgrade pitch
+            on the most attention-rich moment we have. Anuj 2026-04-28. */}
+        {!isSubscribed && totalSubmissions === 1 ? (
+          <FirstScriptUpsellBanner />
+        ) : (
+          (welcomeBack || justDraftSaved || justSignedUp) && (
+            <WelcomeBanner
+              welcomeBack={welcomeBack}
+              justDraftSaved={justDraftSaved}
+              justSignedUp={justSignedUp}
+              firstName={firstName}
+            />
+          )
         )}
 
         {/* Greeting strip — gold rule, big editorial title, supporting line */}
@@ -548,7 +556,7 @@ function HeroCard({
               className="inline-block w-1.5 h-1.5 rounded-full"
               style={{ background: 'var(--gem-gold)' }}
             />
-            Free read · share with anyone
+            Free report · share with anyone
           </span>
         )}
         <h2 className="text-[22px] font-extrabold m-0 mb-1.5 text-[var(--gem-gray-50)]">
@@ -565,10 +573,34 @@ function HeroCard({
         )}
 
         {/* Stats strip — only shown when the script is on Industry. The
-            stats sheet opens on tap (writer can drill into who engaged). */}
+            stats sheet opens on tap (writer can drill into who engaged).
+            Anuj 2026-04-28: label the row "Industry activity" so the
+            zero-state ("0 views · 0 interested · ...") doesn't read as
+            ambient noise. For free writers we follow the stats with a
+            one-line Pro upsell — those zeros aren't going to move
+            without industry matching. */}
         {script.is_public && (
-          <div className="mb-5">
+          <div className="mb-5 flex flex-col items-center">
+            <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
+              Industry activity
+            </p>
             <IndustryActivityButton rows={script.activity} />
+            {showFreeBadge && (
+              <UnlockTrigger
+                className="inline-flex items-center gap-1.5 mt-2.5 text-[12px] font-semibold transition-colors hover:text-[var(--gem-accent-hover)]"
+                ariaLabel="Upgrade to Pro for industry access"
+              >
+                <span
+                  className="inline-block px-1.5 py-[1px] rounded text-[9.5px] font-bold uppercase tracking-wider"
+                  style={{ background: 'var(--gem-accent)', color: '#fff' }}
+                >
+                  Pro
+                </span>
+                <span style={{ color: 'var(--gem-accent)' }}>
+                  Upgrade for industry access
+                </span>
+              </UnlockTrigger>
+            )}
           </div>
         )}
 
@@ -968,6 +1000,41 @@ function CompactCard({
           )}
           {action}
         </div>
+      </div>
+    </div>
+  )
+}
+
+// Top-of-dashboard upsell shown to free writers on their very first
+// script. Replaces the soft "you're signed up" banner with a banner
+// that does the upgrade pitch when the writer has the most attention to
+// give. Anuj 2026-04-28.
+function FirstScriptUpsellBanner() {
+  return (
+    <div
+      className="mb-6 rounded-xl px-4 py-3 flex items-start gap-3"
+      style={{
+        background: 'rgba(124,58,237,0.06)',
+        border: '1px solid rgba(124,58,237,0.25)',
+      }}
+    >
+      <span
+        className="text-[15px] leading-none mt-0.5"
+        style={{ color: 'var(--gem-accent)' }}
+      >
+        ✦
+      </span>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-3 flex-wrap">
+        <p className="text-[14px] text-[var(--gem-gray-100)] leading-snug m-0">
+          Your free evaluation is ready. Upgrade to Pro for unlimited reports
+          plus direct publishing to industry partners.
+        </p>
+        <UnlockTrigger
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[12.5px] font-semibold text-white shrink-0 bg-[var(--gem-accent)] hover:bg-[var(--gem-accent-hover)] transition-colors"
+          ariaLabel="Upgrade to Pro"
+        >
+          Upgrade — $20/mo
+        </UnlockTrigger>
       </div>
     </div>
   )
