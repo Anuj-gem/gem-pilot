@@ -44,6 +44,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
+import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import {
   IndustryActivityButton,
   type IndustryActivityRow,
@@ -290,6 +291,12 @@ export default async function DashboardPage({
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
+      {/* Poll while any script is in `processing` so the hero card flips
+          from "We're reading your script" to "Your report is ready"
+          without a manual refresh. Anuj 2026-04-28. */}
+      <ProcessingPoller
+        active={scripts.some((s) => s.status === 'processing')}
+      />
       <div className="max-w-3xl mx-auto px-4 py-8 sm:py-10">
         {(welcomeBack || justDraftSaved || justSignedUp) && (
           <WelcomeBanner
