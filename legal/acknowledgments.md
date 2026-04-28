@@ -25,7 +25,3 @@ Shown as a single checkbox at producer / representative signup, before the accou
 > - Any option, development, or production conversation happens directly with the writer, not through GEM.
 
 Implementation note: required checkbox at producer onboarding (not at general signup, since account_type is selected during a separate onboarding step). Logged with timestamp + IP at the moment the user finalizes their producer account.
-
----
-
-*Draft for legal review. Not legal advice.*

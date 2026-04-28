@@ -55,7 +55,3 @@ We'll post updates here. If a change is meaningful, we'll let you know by email.
 ## Contact
 
 privacy@gem.studio
-
----
-
-*Draft for legal review. Not legal advice.*

@@ -80,7 +80,3 @@ We may update these Terms. If a change is material, we'll post the updated versi
 ## 14. Contact
 
 support@gem.studio
-
----
-
-*Draft for legal review. Not legal advice.*
