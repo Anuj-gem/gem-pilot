@@ -77,10 +77,11 @@ export function DashboardPrivacyButton({
   >(null)
   const [busy, setBusy] = useState(false)
 
-  // Privacy is Pro-only (Anuj 2026-04-28). Free users can OPEN the
-  // panel and tap toggles, but each tap fires the global upgrade modal
-  // instead of saving — they get to see exactly what's behind the
-  // paywall, and the upgrade prompt arrives with full context.
+  // Privacy gating (Anuj 2026-04-28, revised): the master "Visible to
+  // industry" toggle is FREE — every writer needs the ability to take
+  // their post down, regardless of plan. The per-section pills + the
+  // score-eye toggle stay Pro-only. Free taps on those fire the global
+  // upgrade modal instead of saving.
   function gateOrAct(action: () => void) {
     if (!isProSubscriber) {
       window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
@@ -244,9 +245,6 @@ export function DashboardPrivacyButton({
                 >
                   Privacy
                 </h2>
-                <p className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-1">
-                  Tap any pill to flip what industry partners see.
-                </p>
               </div>
               <button
                 type="button"
@@ -259,6 +257,45 @@ export function DashboardPrivacyButton({
             </div>
 
             <div className="flex-1 min-h-0 overflow-y-auto px-5 sm:px-6 py-4">
+              {/* Free-writer upsell — sits above everything so the upgrade
+                  pitch isn't buried in tiny gray hint text. The
+                  per-section + score-eye rows below render with a "Pro"
+                  pill in place of the Visible/Hidden toggle, and tapping
+                  any of them re-opens this same upgrade modal. Anuj
+                  2026-04-28. */}
+              {!isProSubscriber && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false)
+                    window.dispatchEvent(
+                      new CustomEvent('gem:open-upgrade-modal')
+                    )
+                  }}
+                  className="w-full text-left rounded-xl px-4 py-3 mb-3 flex items-center justify-between gap-3 transition-colors hover:opacity-95"
+                  style={{
+                    background:
+                      'linear-gradient(135deg, rgba(124,58,237,0.10), rgba(124,58,237,0.04))',
+                    border: '1px solid rgba(124,58,237,0.35)',
+                  }}
+                >
+                  <div className="min-w-0">
+                    <p className="text-[13.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+                      Per-section privacy controls
+                    </p>
+                    <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+                      Hide your score or any section from industry — Pro.
+                    </p>
+                  </div>
+                  <span
+                    className="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-[11.5px] font-semibold text-white"
+                    style={{ background: 'var(--gem-accent)' }}
+                  >
+                    Upgrade — $20/mo
+                  </span>
+                </button>
+              )}
+
               {/* Master toggle — "Visible to industry". Flipping it OFF
                   hides the post entirely from producers AND auto-flips
                   every section pill below to Private. Flipping it back ON
@@ -288,12 +325,10 @@ export function DashboardPrivacyButton({
                   <button
                     type="button"
                     onClick={() =>
-                      gateOrAct(() =>
-                        setPendingConfirm({
-                          kind: 'visibility',
-                          nextPublic: !isPublic,
-                        })
-                      )
+                      setPendingConfirm({
+                        kind: 'visibility',
+                        nextPublic: !isPublic,
+                      })
                     }
                     className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors ${
                       isPublic
@@ -308,12 +343,15 @@ export function DashboardPrivacyButton({
               </div>
 
               {/* Score toggle — disabled when unpublished (the master
-                  toggle controls everything in that state). */}
+                  toggle controls everything in that state). Pro-only;
+                  for free writers we render a Pro pill in place of the
+                  Visible/Hidden toggle and tap fires the upgrade modal. */}
               <PrivacyRow
                 label="GEM score"
                 hint="Whether the score badge shows on your report cover."
                 visible={isScoreVisible(privacy) && isPublic}
                 disabled={!isPublic}
+                isPro={isProSubscriber}
                 onTap={() =>
                   gateOrAct(() =>
                     setPendingConfirm({
@@ -335,6 +373,7 @@ export function DashboardPrivacyButton({
                     hint={meta.hint}
                     visible={vis === 'public' && isPublic}
                     disabled={!isPublic}
+                    isPro={isProSubscriber}
                     onTap={() =>
                       gateOrAct(() =>
                         setPendingConfirm({
@@ -422,18 +461,23 @@ function PrivacyRow({
   hint,
   visible,
   disabled = false,
+  isPro = true,
   onTap,
 }: {
   label: string
   hint: string
   visible: boolean
   disabled?: boolean
+  /** When false, the row renders a Pro pill instead of the
+   *  Visible/Hidden toggle — tapping anywhere on the pill fires the
+   *  upgrade modal via the parent's gateOrAct handler. Anuj 2026-04-28. */
+  isPro?: boolean
   onTap: () => void
 }) {
   return (
     <div
       className="flex items-start gap-3 py-2.5"
-      style={{ opacity: disabled ? 0.5 : 1 }}
+      style={{ opacity: disabled && isPro ? 0.5 : 1 }}
     >
       <div className="flex-1 min-w-0">
         <p className="text-[14px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
@@ -443,20 +487,32 @@ function PrivacyRow({
           {hint}
         </p>
       </div>
-      <button
-        type="button"
-        onClick={onTap}
-        disabled={disabled}
-        title={disabled ? 'Publish to industry first to control this' : undefined}
-        className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors disabled:cursor-not-allowed ${
-          visible
-            ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-            : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
-        }`}
-      >
-        {visible ? <Eye size={11} /> : <Lock size={11} />}
-        {visible ? 'Visible' : 'Hidden'}
-      </button>
+      {isPro ? (
+        <button
+          type="button"
+          onClick={onTap}
+          disabled={disabled}
+          title={disabled ? 'Publish to industry first to control this' : undefined}
+          className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold transition-colors disabled:cursor-not-allowed ${
+            visible
+              ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
+              : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
+          }`}
+        >
+          {visible ? <Eye size={11} /> : <Lock size={11} />}
+          {visible ? 'Visible' : 'Hidden'}
+        </button>
+      ) : (
+        <button
+          type="button"
+          onClick={onTap}
+          aria-label="Upgrade to Pro to use this control"
+          className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] uppercase tracking-[0.12em] font-bold text-white transition-colors hover:opacity-90"
+          style={{ background: 'var(--gem-accent)' }}
+        >
+          Pro
+        </button>
+      )}
     </div>
   )
 }
