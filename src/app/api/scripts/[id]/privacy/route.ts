@@ -55,6 +55,21 @@ export async function PATCH(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  // Admin override (Anuj 2026-04-28): anuj@gem.studio can flip any post's
+  // privacy — used to take down problematic content while we sort out a
+  // proper content-management surface. We promote the supabase client to
+  // a service-role client when admin, so the existing user_id filters
+  // below silently match any submission. Easier than rewriting all the
+  // .eq('user_id', user.id) calls into branched queries.
+  const isAdmin = user.email === 'anuj@gem.studio'
+  const writeClient = isAdmin
+    ? createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        { cookies: { getAll() { return [] }, setAll() {} } }
+      )
+    : supabase
+
   const body = await request.json().catch(() => ({}))
   const topLevelShowScore =
     typeof body?.show_score === 'boolean' ? body.show_score : undefined
@@ -80,12 +95,13 @@ export async function PATCH(
     !privacyProvided &&
     (topLevelShowScore !== undefined || isPublic !== undefined)
   ) {
-    const { data: existing } = await supabase
+    const existingQuery = writeClient
       .from('script_submissions')
       .select('report_privacy')
       .eq('id', submissionId)
-      .eq('user_id', user.id)
-      .single()
+    const { data: existing } = await (isAdmin
+      ? existingQuery.single()
+      : existingQuery.eq('user_id', user.id).single())
     privacy = normalizePrivacy(existing?.report_privacy)
   }
 
@@ -115,13 +131,22 @@ export async function PATCH(
   if (isPublic !== undefined) update.is_public = isPublic
   if (contactEnabled !== undefined) update.contact_enabled = contactEnabled
 
-  const { data, error } = await supabase
+  const updateQuery = writeClient
     .from('script_submissions')
     .update(update)
     .eq('id', submissionId)
-    .eq('user_id', user.id)
-    .select('id, report_privacy, contact_enabled, privacy_review_needed, is_public')
-    .single()
+  const { data, error } = await (isAdmin
+    ? updateQuery
+        .select(
+          'id, report_privacy, contact_enabled, privacy_review_needed, is_public'
+        )
+        .single()
+    : updateQuery
+        .eq('user_id', user.id)
+        .select(
+          'id, report_privacy, contact_enabled, privacy_review_needed, is_public'
+        )
+        .single())
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 400 })

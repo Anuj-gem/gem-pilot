@@ -260,7 +260,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Industry activity for this submission — drives the "Industry activity"
   // item in the owner "···" menu. Owner-only fetch (skip for non-owners).
   let ownerActivity: import('@/components/dashboard/industry-activity-button').IndustryActivityRow[] = []
-  if (isOwner && !isAnonymousSubmission) {
+  if ((isOwner || isAdmin) && !isAnonymousSubmission) {
     type RawMatchRow = {
       id: string
       producer_id: string
@@ -404,10 +404,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             is public by default. The status line below tells the owner
             where they stand and links into the same privacy panel the
             dashboard uses (master toggle + per-section + score). */}
-        {!isAnonymousSubmission && (isOwner || (!isOwner && !isAdmin)) && (
+        {!isAnonymousSubmission && (
           <div className="gem-no-print flex items-center justify-between gap-3 flex-wrap mb-6">
             <div className="flex items-center gap-2 min-w-0 flex-wrap">
-              {isOwner && (
+              {(isOwner || isAdmin) && (
                 <>
                   <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
                     <span
@@ -422,6 +422,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {submission.is_public
                       ? 'Visible to industry'
                       : 'Unpublished'}
+                    {isAdmin && !isOwner && (
+                      <span
+                        className="ml-1 text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
+                        style={{
+                          color: '#dc2626',
+                          background: 'rgba(220,38,38,0.07)',
+                          border: '1px solid rgba(220,38,38,0.25)',
+                        }}
+                      >
+                        Admin
+                      </span>
+                    )}
                   </span>
                   <span className="text-[var(--gem-gray-600)]">·</span>
                   <DashboardPrivacyButton
@@ -441,13 +453,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 initialCount={likeCount ?? 0}
                 loggedIn={!!user}
               />
-              {isOwner && (
+              {(isOwner || isAdmin) && (
                 <OwnerActionsMenu
                   submissionId={submission.id}
                   evaluationId={id}
                   title={submission.title}
                   declaredFormat={submission.declared_format ?? null}
-                  isSubscribed={ownerIsSubscribed}
+                  isSubscribed={ownerIsSubscribed || isAdmin}
                   activity={ownerActivity}
                 />
               )}
@@ -490,12 +502,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           scoreShownToIndustry={isScoreVisible(privacy)}
         />
 
-        {/* Inline industry stats — owner-only, always visible while
+        {/* Inline industry stats — owner/admin, always visible while
             published. Doubles as the always-on conversion carrot for
-            free writers ("3 producers viewed — upgrade to keep posts
-            live") and as live engagement signal for Pro. Anuj
-            2026-04-28. */}
-        {isOwner &&
+            free writers and as live engagement signal for Pro. Admin
+            sees the same stats so they can review activity on any post.
+            Anuj 2026-04-28. */}
+        {(isOwner || isAdmin) &&
           !isAnonymousSubmission &&
           (submission.is_public ?? false) && (
             <div className="gem-no-print mb-6">

@@ -69,7 +69,11 @@ export async function POST(
     if (subErr || !sub) {
       return NextResponse.json({ error: 'Submission not found.' }, { status: 404 })
     }
-    if (sub.user_id !== user.id) {
+    // Anuj 2026-04-28: admin (anuj@gem.studio) can take down any post
+    // — used to remove problematic content while we sort out a proper
+    // content-management surface. Owner check is bypassed in that case.
+    const isAdmin = user.email === 'anuj@gem.studio'
+    if (sub.user_id !== user.id && !isAdmin) {
       return NextResponse.json({ error: 'Not your submission.' }, { status: 403 })
     }
 
