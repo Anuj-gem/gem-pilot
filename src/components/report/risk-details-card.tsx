@@ -73,38 +73,23 @@ function ComplexityCard({
   axis: RiskDetailCardType
   details?: React.ReactNode
 }) {
-  // Anuj 2026-04-28: color tokens shared with the report-card score
-  // pill so every level reads consistent. Yellow uses a clearer
-  // yellow-100/600 palette (was orange-amber) and the pill itself
-  // carries the color (filled bg) rather than just colored text.
-  const palette =
+  // Anuj 2026-04-28: card stays neutral regardless of level — only the
+  // small pill carries the color, so a "Complex" badge doesn't paint
+  // the whole section red. Yellow palette tightened to a clean
+  // yellow-100 / yellow-800 (no amber-orange undertone).
+  const pill =
     axis.level === 'low'
-      ? {
-          border: 'rgba(5,150,105,0.35)',
-          card_bg: 'rgba(5,150,105,0.05)',
-          pill_bg: '#d1fae5',
-          pill_fg: '#047857',
-          pill_border: '#6ee7b7',
-        }
+      ? { bg: '#d1fae5', fg: '#047857', border: '#10b981' }
       : axis.level === 'medium'
-        ? {
-            border: 'rgba(202,138,4,0.45)',
-            card_bg: 'rgba(234,179,8,0.06)',
-            pill_bg: '#fef9c3',
-            pill_fg: '#a16207',
-            pill_border: '#fde047',
-          }
-        : {
-            border: 'rgba(220,38,38,0.35)',
-            card_bg: 'rgba(220,38,38,0.05)',
-            pill_bg: '#fee2e2',
-            pill_fg: '#b91c1c',
-            pill_border: '#fca5a5',
-          }
+        ? { bg: '#fef9c3', fg: '#854d0e', border: '#facc15' }
+        : { bg: '#fee2e2', fg: '#b91c1c', border: '#ef4444' }
+  const palette = {
+    border: 'var(--gem-gray-700)',
+  }
   return (
     <div
       className="rounded-xl p-5 flex flex-col"
-      style={{ border: `1px solid ${palette.border}`, background: palette.card_bg }}
+      style={{ border: `1px solid ${palette.border}`, background: '#fff' }}
     >
       <div className="flex items-baseline justify-between gap-2 mb-3">
         <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
@@ -113,9 +98,9 @@ function ComplexityCard({
         <span
           className="text-[10.5px] uppercase tracking-[0.14em] font-bold px-2 py-0.5 rounded-full"
           style={{
-            color: palette.pill_fg,
-            background: palette.pill_bg,
-            border: `1px solid ${palette.pill_border}`,
+            color: pill.fg,
+            background: pill.bg,
+            border: `1px solid ${pill.border}`,
           }}
         >
           {LEVEL_LABEL[axis.level]}

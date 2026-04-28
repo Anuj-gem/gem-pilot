@@ -691,18 +691,18 @@ function ScoreBadge({
       ? {
           bg: '#d1fae5',
           fg: '#047857',
-          border: '#6ee7b7',
+          border: '#10b981',
         }
       : score >= 50
         ? {
             bg: '#fef9c3',
-            fg: '#a16207',
-            border: '#fde047',
+            fg: '#854d0e',
+            border: '#facc15',
           }
         : {
             bg: '#fee2e2',
             fg: '#b91c1c',
-            border: '#fca5a5',
+            border: '#ef4444',
           }
   const display = score.toFixed(0)
   return (
