@@ -43,6 +43,7 @@ import { UnlockTrigger } from '@/components/dashboard/unlock-trigger'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
+import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import {
   IndustryActivityButton,
   type IndustryActivityRow,
@@ -348,7 +349,7 @@ export default async function DashboardPage({
             </div>
             <div className="space-y-3">
               {scripts.map((s) => (
-                <CompactCard key={s.id} script={s} />
+                <CompactCard key={s.id} script={s} isSubscribed={isSubscribed} />
               ))}
             </div>
           </>
@@ -593,7 +594,13 @@ function HeroShell({ title, children }: { title: string; children: React.ReactNo
   )
 }
 
-function CompactCard({ script }: { script: ScriptSummary }) {
+function CompactCard({
+  script,
+  isSubscribed,
+}: {
+  script: ScriptSummary
+  isSubscribed: boolean
+}) {
   const dateStr = new Date(script.created_at).toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -704,20 +711,41 @@ function CompactCard({ script }: { script: ScriptSummary }) {
         boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
       }}
     >
-      {/* Row 1 — status pill in the top-right corner. Empty when no
-          status applies (anonymous edge case). */}
+      {/* Row 1 — status pill in the top-right corner. When the pill
+          represents a publish/unpublish state ("Visible to industry" or
+          "Unpublished"), the pill itself becomes the trigger that opens
+          the privacy modal — one-click publish/unpublish from the card.
+          For non-toggleable states (Failed, Processing, Awaiting PDF,
+          Upgrade to view) the pill stays static.
+          Anuj 2026-04-28: removes the awkward standalone privacy row;
+          the pill now does double duty as status + control. */}
       <div className="flex justify-end min-h-[20px] mb-0.5">
         {statusLabel && (
-          <span
-            className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
-            style={{
-              border: `1px solid ${statusLabel.border}`,
-              background: statusLabel.bg,
-              color: statusLabel.color,
-            }}
-          >
-            {statusLabel.text}
-          </span>
+          script.hasReport && !script.isLockedReport ? (
+            <DashboardPrivacyButton
+              submissionId={script.id}
+              initialPrivacy={script.reportPrivacy}
+              initialIsPublic={script.is_public}
+              triggerLabel={statusLabel.text}
+              triggerVariant="status-pill"
+              statusPillStyle={{
+                color: statusLabel.color,
+                bg: statusLabel.bg,
+                border: statusLabel.border,
+              }}
+            />
+          ) : (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold"
+              style={{
+                border: `1px solid ${statusLabel.border}`,
+                background: statusLabel.bg,
+                color: statusLabel.color,
+              }}
+            >
+              {statusLabel.text}
+            </span>
+          )
         )}
       </div>
 
@@ -751,11 +779,24 @@ function CompactCard({ script }: { script: ScriptSummary }) {
           )}
         </div>
         <div className="shrink-0 flex items-center gap-1.5 sm:gap-2">
-          {showActivity && (
-            <DashboardPrivacyButton
+          {showActivity && script.evaluationId && (
+            // 3-dot actions menu — Edit (links to report page), Download,
+            // Submit revision, Remove. Activity is intentionally omitted
+            // here because the dashboard already shows it inline at left
+            // (no point listing it twice). Privacy lives on the top-right
+            // status pill now. Anuj 2026-04-28.
+            <OwnerActionsMenu
               submissionId={script.id}
-              initialPrivacy={script.reportPrivacy}
-              initialIsPublic={script.is_public}
+              evaluationId={script.evaluationId}
+              title={script.title}
+              declaredFormat={
+                script.declared_format === 'Feature film' ||
+                script.declared_format === 'Series'
+                  ? script.declared_format
+                  : null
+              }
+              isSubscribed={isSubscribed}
+              editHref={`/report/${script.evaluationId}`}
             />
           )}
           {action}

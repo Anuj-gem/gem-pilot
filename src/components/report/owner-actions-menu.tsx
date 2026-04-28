@@ -37,6 +37,10 @@ interface Props {
    *  exposes an "Industry activity" item that opens the same sheet the
    *  dashboard uses. */
   activity?: IndustryActivityRow[]
+  /** When set, the Edit item navigates to this href instead of dispatching
+   *  the in-page `gem:edit-top-card` event. Used on the dashboard, where
+   *  the editable top card lives on a different page (the report). */
+  editHref?: string
 }
 
 export function OwnerActionsMenu({
@@ -46,6 +50,7 @@ export function OwnerActionsMenu({
   declaredFormat,
   isSubscribed,
   activity,
+  editHref,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
@@ -170,9 +175,19 @@ export function OwnerActionsMenu({
               <div className="my-1 border-t border-[var(--gem-gray-700)]" />
             </>
           )}
-          <MenuItem icon={<Pencil size={14} />} onClick={triggerEdit}>
-            Edit title, headline, tags
-          </MenuItem>
+          {editHref ? (
+            <MenuLink
+              icon={<Pencil size={14} />}
+              href={editHref}
+              onClick={() => setOpen(false)}
+            >
+              Edit title, headline, tags
+            </MenuLink>
+          ) : (
+            <MenuItem icon={<Pencil size={14} />} onClick={triggerEdit}>
+              Edit title, headline, tags
+            </MenuItem>
+          )}
           <MenuItem
             icon={
               downloading ? (

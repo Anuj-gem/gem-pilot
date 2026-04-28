@@ -34,8 +34,20 @@ interface Props {
    *  page uses something like "Privacy settings" instead. */
   triggerLabel?: string
   /** Render the trigger inline as a text link rather than a bordered pill.
-   *  Used when the trigger sits inside the report-page status line. */
-  triggerVariant?: 'pill' | 'link'
+   *  - 'pill' (default): bordered "Privacy" pill with shield icon.
+   *  - 'link': plain text link, used inside the report-page status line.
+   *  - 'status-pill': renders an existing visibility status pill (e.g.
+   *    "Visible to industry" / "Unpublished") AS the trigger — used by the
+   *    dashboard card so the writer can publish/unpublish from one click.
+   *    Pass `statusPillStyle` to set the pill colors. */
+  triggerVariant?: 'pill' | 'link' | 'status-pill'
+  /** Required when triggerVariant === 'status-pill'. Provides the pill
+   *  colors so the trigger matches the surrounding card's status palette. */
+  statusPillStyle?: {
+    color: string
+    bg: string
+    border: string
+  }
 }
 
 export function DashboardPrivacyButton({
@@ -44,6 +56,7 @@ export function DashboardPrivacyButton({
   initialIsPublic,
   triggerLabel = 'Privacy',
   triggerVariant = 'pill',
+  statusPillStyle,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
@@ -155,6 +168,21 @@ export function DashboardPrivacyButton({
           onClick={() => setOpen(true)}
           className="text-[12.5px] font-medium text-[var(--gem-gray-300)] hover:text-[var(--gem-gold)] transition-colors underline-offset-2 hover:underline"
           aria-label="Privacy settings"
+        >
+          {triggerLabel}
+        </button>
+      ) : triggerVariant === 'status-pill' ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold transition-opacity hover:opacity-80 cursor-pointer"
+          style={{
+            border: `1px solid ${statusPillStyle?.border ?? 'var(--gem-gray-700)'}`,
+            background: statusPillStyle?.bg ?? 'transparent',
+            color: statusPillStyle?.color ?? 'var(--gem-gray-500)',
+          }}
+          aria-label="Open privacy settings"
+          title="Tap to open privacy controls"
         >
           {triggerLabel}
         </button>
