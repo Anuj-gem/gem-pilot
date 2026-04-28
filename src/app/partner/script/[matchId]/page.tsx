@@ -468,7 +468,7 @@ export default async function PartnerScriptDetailPage({ params }: PageProps) {
               )
               return (
                 <Section
-                  label="Lead characters"
+                  label="Cast"
                   subtitle="The parts inside this script and why an actor would chase them."
                   summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
                 >

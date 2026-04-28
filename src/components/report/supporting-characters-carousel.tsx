@@ -28,15 +28,9 @@ interface Props {
   blurred?: boolean
 }
 
-function teaser(hook: string, max = 110): string {
-  const trimmed = (hook ?? '').trim()
-  if (!trimmed) return ''
-  if (trimmed.length <= max) return trimmed
-  // Cut at the last word boundary before max.
-  const slice = trimmed.slice(0, max)
-  const lastSpace = slice.lastIndexOf(' ')
-  return (lastSpace > 60 ? slice.slice(0, lastSpace) : slice).replace(/[,;:.\-—\s]+$/, '') + '…'
-}
+// Card stride matches the new compact card (200px + 12px gap). Tweak if
+// the card width changes.
+const CARD_STRIDE = 212
 
 export function SupportingCharactersCarousel({ characters, blurred = false }: Props) {
   const scrollerRef = useRef<HTMLDivElement | null>(null)
@@ -51,9 +45,7 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
   function scrollByCard(dir: 1 | -1) {
     const el = scrollerRef.current
     if (!el) return
-    // Card width + gap. Cards are ~240px wide on desktop with a 12px gap.
-    const step = 252
-    el.scrollBy({ left: dir * step, behavior: 'smooth' })
+    el.scrollBy({ left: dir * CARD_STRIDE, behavior: 'smooth' })
   }
 
   const active = activeIndex !== null ? characters[activeIndex] : null
@@ -91,29 +83,23 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
                 key={i}
                 type="button"
                 onClick={() => setActiveIndex(isActive ? null : i)}
-                className="flex-shrink-0 snap-start w-[240px] text-left rounded-xl p-4 transition-colors"
+                className="flex-shrink-0 snap-start w-[200px] text-left rounded-xl px-4 py-3 transition-colors"
                 style={{
                   border: `1px solid ${isActive ? 'var(--gem-gold)' : 'var(--gem-gray-700)'}`,
                   background: isActive ? 'rgba(212,175,55,0.05)' : '#fff',
                 }}
               >
                 <p
-                  className="text-[15px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight mb-1.5"
+                  className="text-[15px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight mb-1"
                   style={blurStyle}
                 >
                   {c.name}
                 </p>
                 <p
-                  className="text-[11.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] m-0 mb-2"
+                  className="text-[11.5px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] m-0"
                   style={blurStyle}
                 >
                   {c.role_type} · {c.demographics}
-                </p>
-                <p
-                  className="text-[13px] text-[var(--gem-gray-300)] leading-[1.5] m-0"
-                  style={blurStyle}
-                >
-                  {teaser(c.hook)}
                 </p>
               </button>
             )
