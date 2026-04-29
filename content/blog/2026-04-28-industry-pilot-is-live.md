@@ -7,17 +7,9 @@ author: "Anuj Kommareddy"
 draft: false
 ---
 
-Hello — I'm Anuj, founder of GEM.
-
-GEM exists to bring Hollywood closer to the most promising
-screenwriters. We're using the most powerful evaluation technology ever
-built for this industry to make that happen. You can read more about us
-on [/selznick](https://www.gem.studio/selznick) — and more about
-today's changes below.
-
-— Anuj
-
----
+Today we're shipping a whole new set of changes that mark the future of
+GEM. We're bringing the industry directly into the app — and much more.
+Here's what's new.
 
 ## 1. Industry partners are now in the app
 
