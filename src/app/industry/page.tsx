@@ -9,9 +9,6 @@ import Link from 'next/link'
 import Nav from '@/components/nav'
 import { ArrowRight, Inbox, Filter, Mail, FileText, Shield } from 'lucide-react'
 
-const INDUSTRY_APPLY_URL =
-  'mailto:industry@gem.studio?subject=Apply%20for%20industry%20access'
-
 export const metadata = {
   title: 'For industry partners — GEM',
   description:
@@ -41,8 +38,8 @@ export default function IndustryPage() {
             click. No portals, no triage.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
-              href={INDUSTRY_APPLY_URL}
+            <Link
+              href="/apply"
               className="inline-flex items-center gap-1.5 px-5 py-3 rounded-lg text-[15px] font-semibold text-white"
               style={{
                 background: 'var(--gem-accent)',
@@ -51,7 +48,7 @@ export default function IndustryPage() {
             >
               Apply for access
               <ArrowRight size={15} />
-            </a>
+            </Link>
             <Link
               href="/selznick"
               className="inline-flex items-center gap-1.5 px-5 py-3 rounded-lg text-[15px] font-semibold border transition-colors hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]"
@@ -165,8 +162,8 @@ export default function IndustryPage() {
             what you&apos;re looking for — we&apos;ll get back within a few
             business days.
           </p>
-          <a
-            href={INDUSTRY_APPLY_URL}
+          <Link
+            href="/apply"
             className="inline-flex items-center gap-1.5 px-5 py-3 rounded-lg text-[15px] font-semibold text-white"
             style={{
               background: 'var(--gem-accent)',
@@ -175,7 +172,7 @@ export default function IndustryPage() {
           >
             Apply for access
             <ArrowRight size={15} />
-          </a>
+          </Link>
         </Section>
 
         {/* CROSS-LINKS */}

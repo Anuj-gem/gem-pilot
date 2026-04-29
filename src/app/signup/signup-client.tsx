@@ -16,7 +16,10 @@ interface SignupPageClientProps {
   topScripts?: any[]
 }
 
-type AccountType = 'writer' | 'producer'
+// Anuj 2026-04-28: producer signup is now invite-only — Anuj vets every
+// industry partner and sends a personal invite. Producers reach the
+// platform via /apply (form → email to Anuj) or via a personal invite
+// link he sends after vetting. Public /signup is writer-only.
 
 export function SignupPageClient({ topScripts }: SignupPageClientProps) {
   return (
@@ -31,7 +34,6 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect')
   const supabase = createClient()
-  const [accountType, setAccountType] = useState<AccountType>('writer')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -44,7 +46,8 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
     setGoogleLoading(true)
     setError('')
     // OAuth users default to 'writer' (account_type defaults in the DB).
-    // They can change this in settings later if we add producer-OAuth flows.
+    // Producer accounts are invite-only — they never come through this
+    // public signup path.
     const next = redirect || '/submit'
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
@@ -87,21 +90,6 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
       })
     }
 
-    // If they picked producer, write account_type='producer' to the profile
-    // row that was auto-created by the auth trigger. The default is 'writer'
-    // so we only need to update on the producer path.
-    if (accountType === 'producer' && data.user?.id) {
-      const { error: updateError } = await supabase
-        .from('profiles')
-        .update({ account_type: 'producer' })
-        .eq('id', data.user.id)
-      if (updateError) {
-        // Don't block signup on this — log and continue. The user can
-        // re-attempt to set their account type from settings later.
-        console.error('[signup] failed to set account_type=producer:', updateError)
-      }
-    }
-
     trackSignupComplete()
     gtagSignupCompleted()
 
@@ -118,12 +106,9 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
       keepalive: true,
     }).catch(() => {})
 
-    // Producers go through a quick onboarding to populate their lane.
     // Writers continue to the submit flow (or wherever they were headed).
-    const destination =
-      accountType === 'producer'
-        ? '/onboarding/producer'
-        : redirect || '/submit'
+    // Producers don't reach this path — invite-only.
+    const destination = redirect || '/submit'
     router.push(destination)
     router.refresh()
   }
@@ -146,40 +131,15 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
             Free forever. No credit card required.
           </p>
 
-          {/* Account type segmented toggle. Writer is the default. */}
-          <div className="mb-5">
-            <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1.5">
-              I&apos;m a
-            </label>
-            <div
-              role="radiogroup"
-              aria-label="Account type"
-              className="grid grid-cols-2 gap-1 p-1 rounded-lg border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]"
-            >
-              {(['writer', 'producer'] as const).map(opt => {
-                const isSelected = accountType === opt
-                return (
-                  <button
-                    key={opt}
-                    type="button"
-                    role="radio"
-                    aria-checked={isSelected}
-                    onClick={() => setAccountType(opt)}
-                    className="px-3 py-2 rounded-md text-sm font-medium transition-all duration-150"
-                    style={{
-                      background: isSelected ? 'var(--gem-accent)' : 'transparent',
-                      color: isSelected ? '#fff' : 'var(--gem-gray-300)',
-                      boxShadow: isSelected
-                        ? '0 1px 3px rgba(124,58,237,0.20)'
-                        : 'none',
-                    }}
-                  >
-                    {opt === 'writer' ? 'Writer' : 'Producer'}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
+          {/* Producer signup is invite-only — Anuj vets every industry
+              partner. The link below routes producers to the application
+              form. */}
+          <p className="mb-4 text-[12px] text-[var(--gem-gray-400)] leading-snug">
+            Are you a producer or rep?{' '}
+            <Link href="/apply" className="text-[var(--gem-accent)] hover:underline font-medium">
+              Apply for industry access →
+            </Link>
+          </p>
 
           <button
             type="button"

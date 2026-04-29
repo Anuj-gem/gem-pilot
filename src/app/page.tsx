@@ -157,7 +157,7 @@ export default async function Home({
                 <IndustryFeature text="Live signal of which projects other partners are tracking" />
               </ul>
               <TrackedCTA
-                href="/signup"
+                href="/apply"
                 event="cta_clicked"
                 properties={{ location: 'industry_section', label: 'Apply for industry access' }}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
