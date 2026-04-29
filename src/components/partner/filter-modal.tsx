@@ -88,6 +88,22 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
     })
   }
 
+  function selectAll(axis: FilterAxis) {
+    setDraft((prev) => {
+      const next = cloneFilter(prev)
+      next[axis] = new Set(options[axis].map((o) => o.token))
+      return next
+    })
+  }
+
+  function clearAxis(axis: FilterAxis) {
+    setDraft((prev) => {
+      const next = cloneFilter(prev)
+      next[axis] = new Set()
+      return next
+    })
+  }
+
   function clearAll() {
     setDraft({
       format: new Set(),
@@ -198,20 +214,48 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
             const opts = options[axis]
             if (!opts || opts.length === 0) return null
             const selected = draft[axis]
+            const allSelected =
+              opts.length > 0 && opts.every((o) => selected.has(o.token))
             return (
               <div key={axis} style={{ marginBottom: 20 }}>
-                <p
+                <div
                   style={{
-                    fontSize: 11,
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                    fontWeight: 700,
-                    color: 'var(--gem-gray-500)',
+                    display: 'flex',
+                    alignItems: 'baseline',
+                    justifyContent: 'space-between',
+                    gap: 8,
                     margin: '0 0 10px 0',
                   }}
                 >
-                  {AXIS_LABEL[axis]}
-                </p>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      letterSpacing: '0.18em',
+                      textTransform: 'uppercase',
+                      fontWeight: 700,
+                      color: 'var(--gem-gray-500)',
+                    }}
+                  >
+                    {AXIS_LABEL[axis]}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      allSelected ? clearAxis(axis) : selectAll(axis)
+                    }
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: 'var(--gem-accent)',
+                      background: 'transparent',
+                      border: 0,
+                      padding: 0,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {allSelected ? 'Clear' : 'Select all'}
+                  </button>
+                </div>
                 <div
                   style={{
                     display: 'flex',
