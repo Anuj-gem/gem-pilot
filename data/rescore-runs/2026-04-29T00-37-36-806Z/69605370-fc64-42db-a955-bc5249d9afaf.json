@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:17:24.741Z",
+  "submission_id": "69605370-fc64-42db-a955-bc5249d9afaf",
+  "eval_id": "3e0ef311-35cc-4606-a612-5aa89a247752",
+  "title": "Haven",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Luke",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s playing younger · white"
+    },
+    {
+      "name": "Leanne Jackson",
+      "role_type": "Lead",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Brian Jackson",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s to 50s · physical impairment"
+    },
+    {
+      "name": "Pastor Caius",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "FATHER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "LEANNE JACKSON",
+      "role_type": "Lead",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "BRIAN JACKSON",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s to 50s · physical impairment"
+    }
+  ],
+  "positioning_hook": "A newlywed couple leasing a remote house from a devout young landlord discover he’s a scarred killer with a scripture-soaked code — and the house itself is part of the trap.",
+  "cost_usd": 0.0442515,
+  "input_tokens": 28684,
+  "output_tokens": 5053,
+  "status": "wrote:leads_ok"
+}

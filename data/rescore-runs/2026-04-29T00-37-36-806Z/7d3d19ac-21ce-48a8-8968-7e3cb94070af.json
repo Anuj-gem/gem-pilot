@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:19:30.951Z",
+  "submission_id": "7d3d19ac-21ce-48a8-8968-7e3cb94070af",
+  "eval_id": "6b0c4567-b0c1-41cf-9c98-28bc289aa890",
+  "title": "WWEIM jan 25",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "John Davey",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 60s · British · working-class Essex businessman"
+    },
+    {
+      "name": "Tom Davey",
+      "role_type": "Lead",
+      "demographics": "Male · 14 to 30s across the story · British"
+    },
+    {
+      "name": "Hazel Davey",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 50s · British"
+    },
+    {
+      "name": "Grace Davey",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s to 80s · British"
+    },
+    {
+      "name": "Brian Williams",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Afro-Caribbean British"
+    },
+    {
+      "name": "Martin Donaldson",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · British"
+    },
+    {
+      "name": "Bernie",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · British"
+    },
+    {
+      "name": "Paul",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · British"
+    },
+    {
+      "name": "Detective Sergeant Wilson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · British"
+    },
+    {
+      "name": "Daniel Cocklin",
+      "role_type": "Lead",
+      "demographics": "Male · 13 to 40s across the story · British"
+    }
+  ],
+  "positioning_hook": "A cocky Essex salesman becomes obsessed with proving Hitler was a hidden British prince, dragging his teenage son through Europe, tabloids, and police scrutiny as the delusion consumes their family.",
+  "cost_usd": 0.06496125,
+  "input_tokens": 55511,
+  "output_tokens": 5184,
+  "status": "wrote:leads_ok"
+}

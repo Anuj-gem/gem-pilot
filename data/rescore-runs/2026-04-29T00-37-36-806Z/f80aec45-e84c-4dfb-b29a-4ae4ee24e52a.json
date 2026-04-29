@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:16:21.183Z",
+  "submission_id": "f80aec45-e84c-4dfb-b29a-4ae4ee24e52a",
+  "eval_id": "5957b569-d3c2-4a1a-8828-de924e6b3836",
+  "title": "INTO THE MYSTIC",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "BRANDON",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · short, overweight, geeky-presenting"
+    },
+    {
+      "name": "SEAN",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · rugged, working-class"
+    },
+    {
+      "name": "DEREK",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · tall, handsome, polished"
+    },
+    {
+      "name": "KYLE",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · average build, scruffy"
+    },
+    {
+      "name": "ARIANNA",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · regal, island queen"
+    },
+    {
+      "name": "TREENA / TINA",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s to 30s · beautiful, mermaid/siren identity"
+    },
+    {
+      "name": "CHIRON",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s to 30s · siren princess, later revealed mermaid heritage"
+    },
+    {
+      "name": "NEMERITIAS",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · queenly, severe"
+    },
+    {
+      "name": "THANOS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · polished, serpent-like"
+    },
+    {
+      "name": "TREY",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · rugged, stranded human"
+    },
+    {
+      "name": "LOU",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s to 60s · fatherly, working-class"
+    },
+    {
+      "name": "JESSA",
+      "role_type": "Supporting",
+      "demographics": "Female · late 40s to 50s · beautiful, maternal"
+    },
+    {
+      "name": "ALISON",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · office worker"
+    },
+    {
+      "name": "BUD",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · foreman, rugged"
+    },
+    {
+      "name": "TRISTA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s · Bahamian local"
+    }
+  ],
+  "positioning_hook": "A broke Miami drifter and his three dead-end friends vanish into the Bermuda Triangle, where mermaids, sirens, and pirate ghosts turn a boys’ getaway into a mythic survival test.",
+  "cost_usd": 0.061215,
+  "input_tokens": 45794,
+  "output_tokens": 5971,
+  "status": "wrote:leads_ok"
+}

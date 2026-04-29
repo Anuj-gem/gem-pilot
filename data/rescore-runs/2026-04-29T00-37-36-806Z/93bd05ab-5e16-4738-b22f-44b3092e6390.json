@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:24:04.879Z",
+  "submission_id": "93bd05ab-5e16-4738-b22f-44b3092e6390",
+  "eval_id": "78ded1f4-14b7-4d5c-ab7e-f70b48f53458",
+  "title": "the long walk to destiny 800 1 converted",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Samuel Isaacs",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 60s · South African"
+    },
+    {
+      "name": "Ms. Diana",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 50s · South African"
+    },
+    {
+      "name": "Craig",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s · South African"
+    },
+    {
+      "name": "Van Brussels",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 70s · South African"
+    },
+    {
+      "name": "Grace",
+      "role_type": "Supporting",
+      "demographics": "Female · teens · South African"
+    },
+    {
+      "name": "Mama / Adanna Jenifer Ezekwe",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · Nigerian"
+    },
+    {
+      "name": "Khadijah",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · North African / Egyptian-Libyan"
+    },
+    {
+      "name": "Mercy Laurent",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · Cameroonian"
+    },
+    {
+      "name": "Daniel Young",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · South African / international business elite"
+    },
+    {
+      "name": "Van Brussels / Henry Yale / Henry Racks / Principal / Judge / Tracy Brooks / Carr Singles / Jen Robins / Mama / Mercy / Khadijah / Miss Sandra Brooks",
+      "role_type": "Supporting",
+      "demographics": "Mixed genders · various ages"
+    }
+  ],
+  "positioning_hook": "A Durban schoolgirl searching for her identity is pulled into a predatory youth cult, then fights to reclaim her life, her body, and the father who raised her.",
+  "cost_usd": 0.06352050000000001,
+  "input_tokens": 53074,
+  "output_tokens": 5270,
+  "status": "wrote:leads_ok"
+}

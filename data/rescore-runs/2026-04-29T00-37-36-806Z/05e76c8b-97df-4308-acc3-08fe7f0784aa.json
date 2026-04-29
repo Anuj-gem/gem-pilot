@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:14:33.948Z",
+  "submission_id": "05e76c8b-97df-4308-acc3-08fe7f0784aa",
+  "eval_id": "2c9268c4-48a7-4c5e-b03a-c4f8d208cdab",
+  "title": "A Working Girl",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Monica Johnson",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · Black"
+    },
+    {
+      "name": "Lisa Johnson",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · Black"
+    },
+    {
+      "name": "Andre",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Mr. Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Black"
+    },
+    {
+      "name": "Jessica",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s to early 30s · Black"
+    },
+    {
+      "name": "Mrs. Johnson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Black"
+    },
+    {
+      "name": "Terry",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Jordan",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Jeramey",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Big Frank",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Black"
+    },
+    {
+      "name": "Kim",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Black"
+    },
+    {
+      "name": "Johnny",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    }
+  ],
+  "positioning_hook": "A college-bound young woman takes a job at her sister’s strip club to help her family survive, then gets pulled into a love triangle that detonates the household.",
+  "cost_usd": 0.0501315,
+  "input_tokens": 36206,
+  "output_tokens": 5106,
+  "status": "wrote:leads_ok"
+}

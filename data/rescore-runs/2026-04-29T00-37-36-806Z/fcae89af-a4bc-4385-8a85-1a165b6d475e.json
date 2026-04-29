@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T01:15:52.432Z",
+  "submission_id": "fcae89af-a4bc-4385-8a85-1a165b6d475e",
+  "eval_id": "da0eb446-70df-4672-b913-50961316dda1",
+  "title": "Passion storms Interview with the Rizqians",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Anya",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · regal, human/Rizqian hybrid presence"
+    },
+    {
+      "name": "Job",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · physically imposing, warrior-coded"
+    },
+    {
+      "name": "Agent Sterling",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · human, government/intelligence background"
+    },
+    {
+      "name": "Cory",
+      "role_type": "Supporting",
+      "demographics": "Male · child to young adult across the story"
+    },
+    {
+      "name": "Kaci",
+      "role_type": "Supporting",
+      "demographics": "Female · child to young adult across the story"
+    },
+    {
+      "name": "Leo",
+      "role_type": "Supporting",
+      "demographics": "Male · 8-10"
+    },
+    {
+      "name": "Luna",
+      "role_type": "Supporting",
+      "demographics": "Female · 6-8"
+    },
+    {
+      "name": "Aris Thorne",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s"
+    },
+    {
+      "name": "Commander Jax",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Dr. Aris Thorne",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s"
+    },
+    {
+      "name": "Commander Krok",
+      "role_type": "Supporting",
+      "demographics": "Male-coded alien antagonist · imposing, reptilian"
+    },
+    {
+      "name": "Jian",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Kael",
+      "role_type": "Supporting",
+      "demographics": "Male · child to young adult across the story"
+    },
+    {
+      "name": "Lyra",
+      "role_type": "Supporting",
+      "demographics": "Female · child to young adult across the story"
+    }
+  ],
+  "positioning_hook": "A mother from an alien paradise returns to a dying Earth to recover her stolen children, only to uncover a cosmic sanctuary that could save both worlds.",
+  "cost_usd": 0.061158000000000004,
+  "input_tokens": 49000,
+  "output_tokens": 5424,
+  "status": "wrote:leads_ok"
+}

@@ -617,7 +617,11 @@ function HeroCard({
           >
             View report <ArrowRight size={14} />
           </Link>
-          {!script.is_public && (
+          {/* Anuj 2026-04-28: Publish/Privacy buttons hidden for free
+              writers — both routes land on the Pro-gated privacy panel,
+              so the labels were promising actions a free user can't
+              actually take. Pro users still get them. */}
+          {!script.is_public && !showFreeBadge && (
             <Link
               href={`/report/${script.evaluationId}?privacy=1`}
               className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold text-[var(--gem-gray-50)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors"
@@ -627,7 +631,7 @@ function HeroCard({
           )}
         </div>
 
-        {!script.is_public && (
+        {!script.is_public && !showFreeBadge && (
           <Link
             href={`/report/${script.evaluationId}?privacy=1`}
             className="text-[12px] text-[var(--gem-gray-500)] mt-4 hover:text-[var(--gem-gray-300)] transition-colors"

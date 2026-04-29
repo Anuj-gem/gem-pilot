@@ -1,0 +1,155 @@
+{
+  "timestamp": "2026-04-29T01:16:43.941Z",
+  "submission_id": "b5115bb2-3402-4f5e-81c5-6ece2c67d420",
+  "eval_id": "18d6c1c4-206e-486b-89e3-1bbddf8e59d5",
+  "title": "Life In Space 5 1",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 27,
+  "lead_characters_summary": [
+    {
+      "name": "Kyle Russell",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s at launch, 118 in epilogue · African-Caucasian-Jewish background"
+    },
+    {
+      "name": "Stanley Simmons",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s at launch, 118 in epilogue · German-English-Australian-American Gaucho background"
+    },
+    {
+      "name": "Michael Olsson",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s at launch, 117 in epilogue · African-Arabian-Asian-Irish background"
+    },
+    {
+      "name": "Catherine Sand-Backer",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s across the story"
+    },
+    {
+      "name": "Dr. Charles L. Grant",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Dr. Lake Gore",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "Mr. Neil Coleman",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "Mrs. Jane Russell",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s"
+    },
+    {
+      "name": "Mrs. Maria Olsson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "Helen",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Tracy",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Maxwell",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Dr. Lucas",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Dr. Luke Marshal",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "George Shaw",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s"
+    },
+    {
+      "name": "Venusia",
+      "role_type": "Supporting",
+      "demographics": "Female · ageless"
+    },
+    {
+      "name": "Mercuria",
+      "role_type": "Supporting",
+      "demographics": "Female · ageless"
+    },
+    {
+      "name": "Martian God",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "Jove",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "Saturn",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "Uranusia",
+      "role_type": "Supporting",
+      "demographics": "Female · ageless"
+    },
+    {
+      "name": "Neptunia",
+      "role_type": "Supporting",
+      "demographics": "Female · ageless"
+    },
+    {
+      "name": "Plutonian",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "Hercolubus",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "PUFG Leader",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "PUFE Leader",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    },
+    {
+      "name": "God of Neutrality",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless"
+    }
+  ],
+  "positioning_hook": "Three childhood friends launch a world-funded mission to visit every planet, only to discover the voyage is powered by a cosmic bargain that will rewrite their lives, loves, and legacy.",
+  "cost_usd": 0.0686625,
+  "input_tokens": 49874,
+  "output_tokens": 6946,
+  "status": "wrote:leads_ok"
+}

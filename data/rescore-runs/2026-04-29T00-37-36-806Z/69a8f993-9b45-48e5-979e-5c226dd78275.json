@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:17:46.132Z",
+  "submission_id": "69a8f993-9b45-48e5-979e-5c226dd78275",
+  "eval_id": "21de11c2-7d19-4ca1-bb00-69b7759e9b1f",
+  "title": "30 ROCK Will You Go To Lunch!",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Liz Lemon",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · white TV writer/showrunner type"
+    },
+    {
+      "name": "Tracy Jordan",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Black celebrity performer"
+    },
+    {
+      "name": "Jenna Maroney",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · white actress/singer"
+    },
+    {
+      "name": "Dr. Leo Spaceman",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white doctor"
+    },
+    {
+      "name": "Tracy’s Wife Angie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Black woman"
+    },
+    {
+      "name": "Kenneth Parcell",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · white page / NBC staffer type"
+    },
+    {
+      "name": "Dot.Com",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Black man"
+    },
+    {
+      "name": "Secretary",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · office staffer"
+    },
+    {
+      "name": "Hillary Clinton",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s · public figure"
+    }
+  ],
+  "positioning_hook": "Jack Donaghy’s office implodes into flashbacks, rehab confessions, and Mamet mania when Tracy’s breakdown turns a 30 Rock party into a live-wire satire of TV, ego, and showbiz delusion.",
+  "cost_usd": 0.036282,
+  "input_tokens": 19738,
+  "output_tokens": 4773,
+  "status": "wrote:leads_ok"
+}

@@ -2,54 +2,54 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Character Drama",
+      "genre_primary": "Drama",
       "genre_tags": [
-        "Immigration Drama",
-        "Romantic Drama"
+        "Romance",
+        "Immigration"
       ],
-      "tone": "Grounded, intimate, reflective, quietly observational"
+      "tone": "Grounded, intimate, reflective"
     },
-    "positioning_hook": "An American designer in suburban London faces a ten-year residency proposal that could define his future, while his casual relationship with a nurse turns into a search for belonging.",
+    "positioning_hook": "An American designer in Beckenham starts to fear London may never be home when a ten-year residency proposal turns his casual life with a nurse into a referendum on belonging.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The emotional promise is clear and adult, and the immigration angle gives the premise a timely entry point. The audience is more selective than broad, though, because the engine is conversation-driven and built around interior shifts rather than overt plot escalation."
+        "reasoning": "The emotional promise is clear and adult, with a recognizable relationship core and a timely immigration pressure point. The audience is more selective than broad, though the final stadium sequence gives it a public-facing hook that could widen interest."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The central premise lands cleanly: a proposed ten-year residency rule reframes Ben's life in London, and the final stadium sequence gives the idea a visible endpoint. The series engine is understandable, though the improvised-scriptment format makes the ongoing episode shape feel more atmospheric than sharply serialized."
+        "reasoning": "The premise lands cleanly: a residency rule changes how Ben sees his future, and the pilot tracks that shift through conversations and a final public test. It takes a little while to reveal the full engine because the scriptment format is built from prompts rather than dramatized turns."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Ben and Klara both have specific inner lives, and their contrast — his evangelical self-scrutiny versus her fluid, outward-looking worldview — gives the relationship some durable tension. The characters are more compelling as a pair than as separate engines, so the long-term pull depends on how much future episodes can keep mining that dynamic."
+        "reasoning": "Ben and Klara both have distinct inner lives, and their contrast — his evangelical self-scrutiny versus her fluid, outward-looking worldview — gives the series a durable relational engine. The characters are more contemplative than explosive, so the appeal comes from nuance and repetition of pressure rather than big volatility."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The improvised-film / scriptment approach is a distinctive formal choice, and the script commits to everyday talk as the main dramatic device. The final stadium interviews, where strangers casually debate Ben's right to stay, give the piece a fresh public-facing turn without abandoning its intimate core."
+        "reasoning": "The improvised scriptment approach is a distinctive formal choice, and the final stadium street-interview sequence gives the piece a public, documentary-like release valve. The combination of private intimacy and civic belonging feels specific rather than generic."
       },
       "narrative_momentum_engagement": {
         "score": 5,
-        "reasoning": "The piece has a clear emotional progression from private uncertainty to public exposure, and the stadium finale gives it a satisfying outward release. Much of the middle is built on adjacent conversations and mood, so the propulsion is steady rather than urgent."
+        "reasoning": "The pilot has a clear emotional progression from private uncertainty to public confrontation, and the stadium ending opens the story outward. Much of the middle is intentionally conversational, so the propulsion comes from accumulation rather than escalation."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The combination of migration anxiety, queer self-interrogation, and ordinary domestic life in Beckenham feels specific and lived-in. The idea of ending with football fans informally judging a migrant's belonging is simple, legible, and memorable."
+        "reasoning": "A migration story told through vegan cooking, quiet prayer, hospital anecdotes, and football crowds has an immediately legible freshness. It feels like a show that understands belonging as lived ritual, not just policy or romance."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "Beckenham, the NHS hospital, commuter trains, and Selhurst Park create a recognizable social geography with enough texture to support recurring scenes. The world is specific, but it functions more as a carefully observed container for conversation than as a fully layered institutional ecosystem."
+        "reasoning": "Beckenham, the commuter trains, the NHS hospital, and Selhurst Park all give the series a grounded social map with real texture. The world is specific and usable, though it functions more as a lived container for the relationship than as a fully layered institutional ecosystem."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone is quietly comic, reflective, and emotionally restrained, with small observational details doing the heavy lifting. The script's best tonal signature is the way it lets intimate identity questions sit beside mundane acts like cooking, walking, and buying pies outside a stadium."
+        "reasoning": "The tone is quietly observant, lightly humorous, and emotionally searching, with the stadium finale adding a communal lift. The improvised, conversational mode gives it a recognizable intimacy that would be hard to confuse with a conventional scripted drama."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "There are clear reserves beneath the surface: faith, sexuality, migration, class, and the difference between temporary and permanent belonging. The pilot suggests more to explore, though the depth is mostly implied through dialogue and thematic framing rather than through a strongly dramatized hidden engine."
+        "reasoning": "Beneath the immediate question of residency, the script suggests deeper material around faith, sexuality, migration, and self-invention. The pilot hints at that depth through Ben’s private talks with God and Klara’s transnational background, even as it keeps the surface deliberately simple."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 5,
-        "reasoning": "Ben and Klara generate the main story energy, and their conversations can clearly sustain more than one episode. Beyond them, the supporting world is present but not yet built as a web of recurring relationship combinations that would independently generate story."
+        "reasoning": "The Ben/Klara dynamic is the engine, and it has enough contrast to sustain scenes across multiple settings. The supporting world is vivid in moments — patients, fans, vendors — but the series lives primarily on the central pair rather than a broad ensemble web."
       }
     },
     "production_reality": {
@@ -59,157 +59,177 @@
         "series_regulars": 2,
         "child_actors": false,
         "casting_characteristics": [
-          "American male 30s",
-          "Central/Eastern European female late 20s",
-          "Football fans of varied ages and backgrounds",
-          "NHS patients referenced but not cast as regulars"
+          "American male lead in his early 30s",
+          "Central/Eastern European female lead in her late 20s",
+          "Crowd/fan extras at stadium"
         ]
       },
       "locations": {
         "distinct_count": 5,
-        "interior_exterior_ratio": "Mostly interior with some exterior night walks and stadium frontage",
+        "interior_exterior_ratio": "Mostly interior with recurring exterior walks and one large exterior finale",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
           "Rented flat in Beckenham",
-          "Commuter train environment",
-          "Suburban streets at night",
-          "Outside Selhurst Park before a match"
+          "Commuter train setting",
+          "Night suburban streets",
+          "Exterior outside Selhurst Park with crowd control"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visual effects requirements indicated.",
+        "vfx_details": "No VFX indicated beyond standard crowd coverage and editorial assembly.",
         "stunts_level": "none",
-        "sfx_needs": "Crowd ambience and stadium atmosphere; practical food and drink handling.",
+        "sfx_needs": "Minimal practical food prep, stadium crowd ambience, and street vendor dressing.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Crystal Palace is named through Selhurst Park, team colours, scarves, and match-day context."
+          "detail": "Crystal Palace is named through Selhurst Park, team colours, scarves, and football program references."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or arthouse-adjacent limited series",
+        "recommended_lane": "Premium streaming or public-broadcaster drama lane",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Serialized character drama driven by conversations, domestic rituals, and evolving questions of belonging."
+        "series_engine_or_release_model": "Serialized relationship drama driven by conversations, with each episode using a lived setting or public space to pressure the couple’s evolving sense of belonging."
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary, contained to a flat, nearby streets, trains, and a stadium exterior, with no VFX or stunt load."
+          "note": "Contemporary interiors, a handful of exterior walks, and one crowd-managed stadium sequence keep the footprint contained."
         },
         "cast": {
-          "level": "low",
-          "note": "The core cast is small and centered on two leads, with crowd players only for the stadium sequence."
+          "level": "medium",
+          "note": "The project depends on two specific lead performances plus a usable stadium crowd and a few speaking fan voices."
         },
         "location": {
           "level": "medium",
-          "note": "The footprint is modest but includes multiple exterior night scenes and a match-day stadium environment."
+          "note": "The script stays in a small set of recurring spaces, but the Selhurst Park exterior and night street work add coordination."
         },
         "content": {
-          "level": "medium",
-          "note": "Sexual content, faith language, and immigration politics are present, but the material stays conversational rather than explicit."
+          "level": "low",
+          "note": "The material is intimate and adult, with sexuality and identity conversation but no explicit violence or heavy procedural content."
         },
         "rights": {
           "level": "medium",
-          "note": "Crystal Palace and Selhurst Park are specifically named, creating a clear brand-clearance consideration."
+          "note": "Crystal Palace references are woven into the finale and would need clearance attention if the production leans into the named club identity."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise turns belonging into a daily-life question.",
-          "what_it_means": "That gives the series a clean emotional engine that can play across multiple episodes without needing procedural machinery. Buyers looking for intimate, issue-adjacent drama will see a timely hook that stays human rather than policy-heavy.",
-          "evidence": "The ten-year residency proposal reframes Ben's future, and the final stadium sequence literalizes the question by having fans debate whether he should be allowed to stay.",
+          "dimension_or_area": "Belonging is dramatized through ritual.",
+          "what_it_means": "That gives the series a clean commercial thesis: identity is not argued in speeches, it is earned through food, prayer, trains, football, and who hands you a scarf. Buyers looking for adult relationship drama with a social point of view will see a show that can be intimate and culturally legible at the same time.",
+          "evidence": "Ben’s vegan/meat oscillation, the commuter-train walks, the stadium interviews, and the final scarf-and-pie ritual all turn belonging into behavior.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ben is built around a playable contradiction.",
-          "what_it_means": "The evangelical self-talk, vegan discomfort, and quiet uncertainty about sexuality create a role an actor can inhabit with restraint, humor, and ache. Mid-career dramatic leads who want a performance piece with internal tension will respond to this immediately.",
-          "evidence": "Ben literally has private conversations with God, cooks vegan food while resenting what it signals, and sometimes cooks meat again to reassure himself.",
+          "dimension_or_area": "The central couple has built-in contrast.",
+          "what_it_means": "Ben and Klara are not just romantic leads; they are two different philosophies of selfhood, which gives the series a durable engine for scenes, reversals, and long-term emotional tension. That kind of two-hander is attractive to actors who want a relationship piece that can carry prestige attention and to buyers who want a repeatable, low-footprint series core.",
+          "evidence": "Ben’s private conversations with God sit opposite Klara’s fluid, outward-facing worldview and her instinct to narrate the world as a correspondent.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Klara gives the series a second engine.",
-          "what_it_means": "She is not just a romantic counterpart; her NHS work, migration history, and foreign-correspondent dream create an independent point of view that can carry story. That makes the project more attractive to buyers who want a two-hander with real ensemble expansion potential.",
-          "evidence": "Klara talks about Caribbean women and older immigrants at the hospital, remembers childhood years in Uganda, and uses Ben's phone to interview football fans like a reporter.",
+          "dimension_or_area": "The final stadium sequence opens the show outward.",
+          "what_it_means": "The pilot doesn’t stay trapped in a flat; it expands into a public arena where the premise becomes socially testable, which is exactly what helps a series feel larger than its setting. That finale gives the project a memorable trailer moment and a scene that could attract directors who like mixing intimacy with street-level spontaneity.",
+          "evidence": "Klara’s improvised fan interviews outside Selhurst Park turn Ben’s residency anxiety into a public conversation with strangers.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The final stadium scene opens the show outward.",
-          "what_it_means": "The script moves from intimate apartment talk to a public civic space, which gives the pilot a memorable release and a repeatable series device. Directors and buyers alike get a scene that can scale emotionally without scaling the budget.",
-          "evidence": "Outside Selhurst Park, Klara interviews fans about whether Ben should be allowed to stay, and the crowd's responses range from welcoming to skeptical to absurd.",
+          "dimension_or_area": "The improvised form is part of the brand.",
+          "what_it_means": "Because the dialogue is designed as prompt-based performance, the series can market itself as lived-in, spontaneous, and actor-forward rather than overwritten. That is catnip for performers with strong naturalism and for buyers who want a distinctive formal identity without a heavy production burden.",
+          "evidence": "The scriptment explicitly instructs actors to treat scene descriptions as prompts and let conversations wander naturally.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world is specific without becoming expensive.",
-          "what_it_means": "Beckenham, commuter trains, a rented flat, and a stadium exterior create a grounded London texture that feels lived-in and producible. That combination is attractive to premium streamers and indie-minded buyers who want authenticity without a heavy footprint.",
-          "evidence": "Most scenes are in the kitchen, living room, suburban walks at night, commuter trains, and outside the football stadium.",
-          "source": "both"
+          "dimension_or_area": "The world feels lived-in without being expensive.",
+          "what_it_means": "Beckenham, the flat, the hospital stories, the train, and the stadium create a specific social map that reads as real but stays producible. That combination is attractive to streamers and public broadcasters that want adult authenticity without a large-scale budget ask.",
+          "evidence": "Most scenes recur in the kitchen, living room, suburban walks, commuter trains, and the stadium exterior.",
+          "source": "production"
         }
       ],
-      "headline": "This is a quietly distinctive two-hander with a real series engine: a migrant's future, a nurse's evolving worldview, and a relationship that keeps turning private identity questions into public ones. The script's best asset is how it makes a big social issue feel intimate, playable, and emotionally specific — then lands it in a stadium crowd where the city itself answers back."
+      "headline": "This is a quietly distinctive relationship series about migration, faith, sexuality, and the small rituals that make a city feel like home. The hook is simple enough to sell and specific enough to remember: a two-hander in Beckenham that ends by asking strangers whether one of them belongs there."
     },
     "lead_characters": [
       {
         "name": "BEN",
         "role_type": "Lead",
         "demographics": "Male · 32 · American · freelance designer",
-        "hook": "Ben is a soft-spoken American transplant in London whose life is organized around private negotiations with God, food, and identity. He is thoughtful and polite on the surface, but every ordinary choice — what he eats, where he lives, who he desires — carries the pressure of a man trying not to name himself too soon.",
-        "why_actor_wants_this": "This is the showcase territory of Andrew Scott in Fleabag or Paul Mescal in Normal People — a role where stillness, self-surveillance, and emotional leakage do the heavy lifting. Actors who can play interior conflict with precision will want the chance to make Ben's silence, rituals, and small reversals feel like the whole drama."
+        "hook": "Ben is a self-monitoring, soft-spoken man whose life is organized around trying not to misread himself. He comes from a conservative evangelical background, talks to God like a private counselor, cooks vegan until he panics and reaches for meat, and lives in the uneasy space between outward composure and inward uncertainty.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in *The Power of the Dog* — a restrained, inward performance where the audience watches a man’s self-concept shift in real time. Actors who excel at stillness, subtext, and slow-burn identity fracture will want the chance to make small behavioral choices carry the whole series."
       },
       {
         "name": "KLARA",
         "role_type": "Lead",
         "demographics": "Female · 28 · Central European · NHS nurse",
-        "hook": "Klara is practical, curious, and cosmopolitan in a way that feels earned rather than curated. She moves easily between care work, migration memory, and flirtation, and she has the unusual ability to make other people's uncertainty feel like material for discovery rather than judgment.",
-        "why_actor_wants_this": "This is the kind of part that gave Jodie Comer in Killing Eve or Michaela Coel in I May Destroy You room to be playful, observant, and emotionally self-authoring at once. An actor gets a character who can pivot from intimate partner to public storyteller, with the stadium interview sequence offering a real showcase for wit and presence."
+        "hook": "Klara is observant, socially fluent, and already living in motion, with a childhood split between Europe and Uganda and a mind that naturally turns experience into story. She is comfortable with ambiguity in sex, identity, and home, and she brings a reporter’s curiosity to the people around her even before she has the title.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in *Killing Eve* — a role that can pivot between wit, intimacy, intelligence, and a quietly dangerous amount of self-possession. Actors who want a part with charm, specificity, and room to reveal a larger inner life over time will chase this."
+      },
+      {
+        "name": "BEN'S PASTOR",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · American evangelical pastor",
+        "hook": "Ben’s pastor exists as a formative voice in his head, the kind of authority figure whose advice still shapes adult behavior long after the relationship has become distant. He is less a scene partner than a moral imprint, but a vivid one.",
+        "why_actor_wants_this": "This is the kind of brief but memorable authority role that carries the moral weight of *Manchester by the Sea*’s family voices — a part that can land in a few lines because the audience feels the history behind it. Character actors who specialize in spiritual or paternal authority will recognize the value of a role that defines the lead’s inner conflict without overstaying its welcome."
+      },
+      {
+        "name": "HOSPITAL PATIENTS / CARIBBEAN WOMEN",
+        "role_type": "Supporting",
+        "demographics": "Female · older adults · Caribbean diaspora",
+        "hook": "These women function as a chorus of lived migration experience inside Klara’s work life, giving the series a textured social field beyond the central couple. They are not individualized in the outline, but they carry the emotional authority of people whose stories have been heard and remembered.",
+        "why_actor_wants_this": "This is ensemble texture in the spirit of the patient voices around *Nurse Jackie* or the community figures in *This Is Us* — roles that can become scene-stealing through specificity even when they are brief. Veteran character actors and recognizable local performers will be drawn to material that lets them deliver a whole life in a handful of exchanges."
       },
       {
         "name": "FOOTBALL FANS",
         "role_type": "Supporting",
-        "demographics": "Mixed gender · 20s-60s · local crowd",
-        "hook": "The fans function as a living civic chorus: funny, skeptical, welcoming, and unfiltered. They are not individualized as a single character, but together they give the finale its public voice and its sense of London as a place that judges and absorbs people at the same time.",
-        "why_actor_wants_this": "This is ensemble-crowd material in the spirit of the street voices in The Wire or the neighborhood texture in Atlanta, where small exchanges create a larger social portrait. Character actors and improvisers who thrive on spontaneous rhythm would enjoy the freedom to make each response feel specific without carrying plot."
+        "demographics": "Mixed gender · adults · local crowd",
+        "hook": "The fans outside Selhurst Park are the public face of the city’s judgment and welcome, a shifting chorus of skepticism, humor, and casual generosity. They turn the finale into a social test rather than a private resolution.",
+        "why_actor_wants_this": "This is crowd-scene material with the flavor of the street voices in *The Full Monty* or the neighborhood chorus in *Shameless* — a chance for small roles to feel alive and specific. Local casting and improvisational performers will want the freedom to make the scene feel spontaneous rather than ornamental."
+      },
+      {
+        "name": "STADIUM VENDOR",
+        "role_type": "Supporting",
+        "demographics": "Adult · any gender",
+        "hook": "The vendor is a practical, grounded presence who completes the ritual of the finale by handing over food and drink as Ben steps into the crowd. The role is small, but it helps seal the sense that belonging is something you buy, carry, and share.",
+        "why_actor_wants_this": "This is the kind of compact, scene-defining role that recalls the best small turns in *Paterson* — a few lines that make a world feel inhabited. Character actors who enjoy precise, naturalistic beats will see a clean opportunity to leave an impression fast."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to turn conversation into cinema.",
-        "fit_profile": "First- or second-feature directors, or TV auteurs moving into more intimate longform work, who already favor performance-forward storytelling over plot mechanics. This material rewards directors who care about naturalistic rhythm, urban texture, and the choreography of small emotional turns inside contained spaces.",
-        "detail": "The script gives a director a chance to shape tone through blocking, pauses, and environment rather than coverage-heavy plotting. It will attract filmmakers who want to make a city feel lived-in and who understand how to land a final public scene that expands the emotional frame without requiring spectacle."
+        "hook": "A director who wants to make intimacy feel public and political without turning it into a speech.",
+        "fit_profile": "First- or second-feature directors, or TV auteurs moving into a more performance-led lane, who already work in naturalism, improvisation, and observational drama. The ideal fit is someone drawn to conversational scenes, street-level realism, and the craft of making small emotional shifts feel cinematic.",
+        "detail": "The material rewards a director who can shape improvisation into rhythm and make ordinary spaces carry dramatic charge. It also gives them a rare finale tool: a public crowd scene that can land like a social experiment while still feeling emotionally personal."
       },
       "buyer_appeal": {
-        "tier": "Low-budget premium streaming limited series",
-        "lane": "Adult character drama with arthouse and social-realism appeal",
-        "detail": "The two-lead, contained-location setup means the project can be packaged around strong performances rather than a large ensemble or effects spend. The immigration-and-belonging angle gives it a timely exportable hook, while the football-stadium finale adds a distinctly British public-space image that helps it stand out in the premium-drama lane."
+        "tier": "Low-budget premium streaming series or public-broadcaster drama",
+        "lane": "Adult relationship drama with social realism and a light arthouse edge",
+        "detail": "It can be greenlit around two lead performances and a contained recurring location set, so the package does not need a large ensemble or heavy effects to justify itself. The immigration premise and football-stadium finale give it a topical hook and an exportable British setting that travels cleanly in the premium-drama lane."
       }
     },
     "considerations": [
       {
         "area": "The middle lives in conversation.",
-        "detail": "The script's identity is strongest when Ben and Klara are revealing themselves through small reversals and lived-in detail; a next pass could make sure each conversation turns on a fresh emotional move, so the middle episodes keep accumulating pressure rather than simply deepening atmosphere. The stadium finale proves the material can open up, so the room is really about making the intervening scenes feel like they are moving toward that public release.",
+        "detail": "The script’s conversational middle is the right container for this material, and a next pass could make sure each scene turns on a distinct emotional move rather than repeating the same pressure in different rooms. The version where the prayer, food, hospital, and walk scenes each reveal a new facet of Ben and Klara would keep the intimacy while sharpening the episode engine.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The finale already has a public engine.",
-        "detail": "The outside-Selhurst-Park sequence is a strong series-facing device because it turns the show's central question into something strangers can answer on camera. One lever would be to think of future episodes in terms of other public spaces or civic rituals that can externalize Ben's private dilemma without changing the show's scale.",
+        "area": "The finale carries the biggest public-facing lift.",
+        "detail": "The Selhurst Park sequence is the clearest trailer moment and the most saleable expression of the premise, so it deserves to stay bold and legible. One lever would be to foreground the street-interview idea even earlier in the episode so the ending feels like a culmination rather than a sudden expansion.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "Crystal Palace needs a clear clearance path.",
-        "detail": "The named stadium, team colors, scarves, and match-day context create a specific brand footprint. If the production wants maximum flexibility, one direction would be to preserve the football-crowd energy while keeping the club references at a level that can be cleared cleanly.",
+        "area": "The stadium exterior adds coordination.",
+        "detail": "The crowd, vendor, team colors, and fan reactions create the largest production footprint in the piece. The version of the finale where the same emotional beat is preserved with fewer visible extras would protect the intimacy if the production wants to stay lean.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The cast can stay lean.",
-        "detail": "The script is naturally built around two leads and a small number of speaking roles, which is a strong fit for a contained series order. That also means the production can protect the intimacy of the piece by keeping the supporting world selective rather than expanding it for its own sake.",
+        "area": "Crystal Palace naming needs clearance attention.",
+        "detail": "The finale leans on Selhurst Park, Crystal Palace scarves, and a football program, so the production path should account for brand and venue permissions early. If the script ever needed simplification, the ritual of the scene could survive with generic club language while keeping the same emotional turn.",
         "is_primary_lever": false,
         "source": "production"
       }
@@ -219,7 +239,7 @@
   "weightedScore": 58.7,
   "tier": "Needs Development",
   "inputTokens": 10828,
-  "outputTokens": 3333,
-  "cost": 0.0231195,
+  "outputTokens": 3849,
+  "cost": 0.0254415,
   "declaredFormat": "Series"
 }

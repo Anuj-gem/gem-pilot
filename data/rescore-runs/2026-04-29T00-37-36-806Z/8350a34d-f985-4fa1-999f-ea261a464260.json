@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:14:48.359Z",
+  "submission_id": "8350a34d-f985-4fa1-999f-ea261a464260",
+  "eval_id": "cd7edb0c-3bdd-40f6-a3c1-3956ebbe6506",
+  "title": "The Father Gallagher Mysteries: The Mystery of the Rose Vestments",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Deacon Dave Smith",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s to early 60s · practical, working-class parish deacon"
+    },
+    {
+      "name": "Debbie Runner",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to early 40s · parish choir member and youth leader"
+    },
+    {
+      "name": "Monsignor Bill Lesnar",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · commanding diocesan official"
+    },
+    {
+      "name": "Bishop Albert Smirk",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · senior diocesan bishop"
+    },
+    {
+      "name": "Eileen Cordella",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · loyal parishioner"
+    },
+    {
+      "name": "Mrs. Barlowe",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s · devout parishioner"
+    },
+    {
+      "name": "Lou Rinaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · local parish insider"
+    },
+    {
+      "name": "The Man",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · former parish boy"
+    }
+  ],
+  "positioning_hook": "Father Keith Gallagher investigates stolen rose vestments in a small Pennsylvania parish and uncovers a decades-old church cover-up that forces the town to choose truth over silence.",
+  "cost_usd": 0.03591,
+  "input_tokens": 20202,
+  "output_tokens": 4613,
+  "status": "wrote:leads_ok"
+}

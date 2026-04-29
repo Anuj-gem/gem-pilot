@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:20:39.784Z",
+  "submission_id": "83acd7cd-19a2-448d-9910-38659e498917",
+  "eval_id": "0a89cdc4-c983-4588-8ed7-f83bb0cec172",
+  "title": "The Coin",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Joe",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · rugged, physically capable, prison-hardened"
+    },
+    {
+      "name": "Bamboo",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · Japanese/British, athletic, action-capable"
+    },
+    {
+      "name": "Mr LA",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Black, Dominican and African American, polished, commanding"
+    },
+    {
+      "name": "Hatsuko",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · Japanese, clan heir, physically capable"
+    },
+    {
+      "name": "Scorpio",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Mexican, cartel boss, authoritative"
+    },
+    {
+      "name": "Big Tony",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · large, comic, physically imposing"
+    },
+    {
+      "name": "Brian",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · flashy, American, criminal middleman"
+    },
+    {
+      "name": "Dimitri",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Russian, enforcer, physically intimidating"
+    },
+    {
+      "name": "Scorpio's Mother / Hatsuko's Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s · Japanese matriarch"
+    },
+    {
+      "name": "Kitano",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Japanese, younger brother"
+    },
+    {
+      "name": "Akari",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Japanese, assassin, tattooed, action-capable"
+    },
+    {
+      "name": "Diagoro",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Japanese, master swordsman, disciplined"
+    },
+    {
+      "name": "The Snatcher",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Black British, gang leader"
+    },
+    {
+      "name": "Jill",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · contemporary, working-class daughter"
+    },
+    {
+      "name": "Marvin Vincent",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · terminally ill, older man"
+    },
+    {
+      "name": "Klara",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Joe’s wife, warm, luminous"
+    }
+  ],
+  "positioning_hook": "A prison-hardened fixer hunts sacred coins said to buy heaven, only to discover the job is a cartel power play that turns his grief into a blood-soaked reckoning.",
+  "cost_usd": 0.07291275,
+  "input_tokens": 60503,
+  "output_tokens": 6119,
+  "status": "wrote:leads_ok"
+}

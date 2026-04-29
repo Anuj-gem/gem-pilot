@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:21:48.149Z",
+  "submission_id": "109127da-b828-44db-84ec-13471251efe1",
+  "eval_id": "ca8b6959-b901-4bb4-8c49-f0d48025c65b",
+  "title": "Frostbite",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Mark Warner",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-60s · Veteran detective"
+    },
+    {
+      "name": "Captain Samuel Lewis",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Police captain"
+    },
+    {
+      "name": "Andrea Russell",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Senate candidate / political operator"
+    },
+    {
+      "name": "Yuri Bukhanov",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Russian club owner / criminal organizer"
+    },
+    {
+      "name": "The Bodyguard",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Large, physically imposing enforcer"
+    },
+    {
+      "name": "Natalya Fedulov",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Russian/Eastern European"
+    },
+    {
+      "name": "Lester",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Street dealer / informant"
+    },
+    {
+      "name": "Dmitri Govsky",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Lawyer / fixer"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Forensics technician"
+    },
+    {
+      "name": "The Coroner",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Medical examiner"
+    },
+    {
+      "name": "Main Instructor",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Police academy instructor"
+    },
+    {
+      "name": "Forensic Instructor",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Police academy instructor"
+    },
+    {
+      "name": "Driving Instructor",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · Police academy instructor"
+    }
+  ],
+  "positioning_hook": "A rookie NYPD cadet with a gun aversion is thrown into a blue-drug conspiracy with a hardcase detective, uncovering a political corruption ring that reaches the precinct captain and a Senate candidate.",
+  "cost_usd": 0.053988749999999995,
+  "input_tokens": 38949,
+  "output_tokens": 5506,
+  "status": "wrote:leads_ok"
+}

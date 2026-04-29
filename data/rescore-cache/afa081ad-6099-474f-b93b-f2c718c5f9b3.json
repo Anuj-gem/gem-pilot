@@ -2,287 +2,305 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Crime thriller",
+      "genre_primary": "Drama",
       "genre_tags": [
-        "coming-of-age",
-        "social drama"
+        "Crime",
+        "Coming-of-age"
       ],
-      "tone": "melodramatic, cautionary, heightened, didactic"
+      "tone": "Melodramatic, didactic, heightened, cautionary"
     },
-    "positioning_hook": "A Durban schoolgirl searching for her identity is pulled into a predatory juvenile cult, then has to claw her way back before the people who groomed her turn her into a criminal for life.",
+    "positioning_hook": "A Durban schoolgirl searching for her mother’s identity is pulled into a predatory juvenile cult, then has to claw her way back before the life she’s chasing destroys her.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The core promise is easy to grasp — a young woman is manipulated, exploited, and eventually fights back — which gives the material a clear audience lane. The scale is broad enough for a social-thriller crowd, but the heavily sermonized dialogue and sprawling life-story structure narrow the immediate commercial snap."
+        "reasoning": "The core promise is legible — a young woman, a hidden parentage mystery, and a criminal youth cult — but the script’s long-form, sermon-like delivery narrows the immediate commercial read. The material has a clear audience in socially conscious drama and cautionary crime stories, especially where family rupture and exploitation are central."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The hook lands early through Maya’s search for her mother and the reveal of the ALC as a juvenile recruitment machine. The premise is understandable, though the script keeps widening into long explanatory speeches and time jumps that delay the cleanest version of the engine."
+        "reasoning": "The premise lands: Maya wants the truth about her mother, and that search leads her into the ALC. The hook is clear in concept, though the script takes a long runway and a lot of explanatory dialogue before the engine fully locks in."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "Maya has a strong central trajectory: obedient child, manipulated teen, then self-aware survivor. Samuel, Craig, and Ms. Diana each carry clear functions, but most of the supporting figures serve the plot more than they reveal independent inner lives."
+        "reasoning": "Maya has a strong central journey from obedient daughter to manipulated initiate to self-aware adult, and Samuel carries real emotional weight in the father reveal. Craig and Ms. Diana are vivid as operators, but they function more as engines than layered people, which keeps the character ceiling in the solid range."
       },
       "creative_originality_and_boldness": {
-        "score": 5,
-        "reasoning": "The juvenile cult angle, the South African setting, and the blend of domestic drama with organized exploitation give the script a distinct premise. The execution leans heavily on exposition and moral declaration, which keeps the voice from feeling fully singular on the page."
+        "score": 6,
+        "reasoning": "The juvenile cult premise, the marriage lesson as a gateway to identity, and the South African setting give the script a distinct lane. The execution leans heavily on exposition and moral declaration, so the originality is more in the premise and social angle than in the scene-level approach."
       },
       "narrative_momentum_engagement": {
         "score": 5,
-        "reasoning": "The story keeps moving through school, home, cult, prison, and corporate life, so there is always a next beat. At the same time, many scenes are built as speeches or summaries rather than dramatized turns, which softens the propulsion."
+        "reasoning": "The story has clear turns — school, recruitment, initiation, arrest, prison, redemption — but many sequences are driven by explanation rather than escalation. The momentum is strongest when Maya is making irreversible choices, and softer when the script pauses to teach or summarize."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "A teenage girl being recruited into a criminalized, pseudo-spiritual youth organization has a fresh, immediately legible charge. The later corporate and prison material broadens the canvas, but the script’s most memorable idea is the cult’s manipulation of broken-home identity."
+        "reasoning": "A teenager’s search for identity becoming a pipeline into organized exploitation is a fresh and immediately understandable dramatic engine. The idea feels specific to its setting and subject matter, even though the presentation often spells out what the audience could infer."
       },
       "world_density_and_texture": {
-        "score": 6,
-        "reasoning": "The script builds a specific social world around Durban schools, family structure, religious language, cross-border criminal logistics, and prison hierarchy. The texture is strongest when it stays inside the school and ALC ecosystem; the later international business material adds breadth but also shifts the world into a more generalized soap-opera register."
+        "score": 7,
+        "reasoning": "The script builds a large social world around Durban schools, family structures, police, courts, prisons, hotels, and cross-border criminal logistics. The ALC’s rules, ranks, and rituals give the world a system, even if the exposition sometimes arrives in blocks rather than through dramatized discovery."
       },
       "tonal_specificity": {
-        "score": 4,
-        "reasoning": "The tone is consistent in its earnestness, but it swings between domestic melodrama, social warning, crime thriller, and inspirational uplift without a single dominant flavor. The result is readable, though not yet sharply branded as one unmistakable tonal identity."
+        "score": 5,
+        "reasoning": "The tone is consistent in its moral urgency and heightened seriousness, with occasional thriller and melodrama elements. It has a recognizable voice, but the script’s register stays close to declarative explanation, which keeps the tonal signature from becoming more singular."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the plot mechanics, the script is circling questions of identity, parental control, shame, and the hunger to belong. The prison conversations and Maya’s final reconciliation with her father suggest a deeper emotional movie inside the plot-heavy surface."
+        "reasoning": "Beneath the plot mechanics is a deeper story about fatherhood, shame, identity, coercion, and the hunger to belong. The prison section especially suggests a larger thematic frame, though the draft tends to state its ideas directly rather than letting them accumulate through subtext."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 5,
-        "reasoning": "The Maya/Samuel/Craig/Ms. Diana triangle carries the story, and the prison women add a useful secondary web. Most other relationships are functional rather than generative, so the ensemble supports the lead instead of creating a fully combinatorial engine."
+        "reasoning": "The Maya-Samuel, Maya-Craig, and Maya-Ms. Diana relationships each have clear function, and the prison women add a useful secondary dynamic. Still, the script lives primarily on Maya’s path, with most supporting characters serving the central line rather than generating independent story energy."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 20,
-        "leads": 5,
-        "series_regulars": 6,
+        "leads": 4,
+        "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Child and teen casting for Maya and the school ensemble",
-          "Multiple age ranges for Maya across childhood, teen years, and adulthood",
-          "Large supporting ensemble of schoolchildren, inmates, police, lawyers, executives, and family members"
+          "Multiple child and teen roles",
+          "Several adult authority figures",
+          "South African setting with some cross-border and international casting flexibility"
         ]
       },
       "locations": {
-        "distinct_count": 20,
-        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
-        "period_or_contemporary": "period-spanning contemporary drama with flashbacks from the 1970s through 2008",
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior school, street, airport, and institutional scenes",
+        "period_or_contemporary": "Contemporary with flashbacks to the 1970s, 1980s, 1990s, and early 2000s",
         "notable_requirements": [
-          "Durban school and home environments",
-          "Prison cell and courtroom settings",
-          "Hotel, office, mansion, airport, nightclub, and boardroom locations",
-          "Cross-border South African/African travel implied by the script"
+          "Durban school and neighborhood settings",
+          "Prison and courtroom environments",
+          "Airport and hotel interiors",
+          "A few period flashback looks for earlier decades"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly practical storytelling; limited needs for travel transitions, screen inserts, and montage coverage.",
+        "vfx_details": "Limited to simple screen inserts, travel montages, and a brief spirit-like apparition during initiation.",
         "stunts_level": "minor",
-        "sfx_needs": "Physical assault, gunshots, and injury makeup in a few scenes.",
+        "sfx_needs": "Gunshots, blood makeup, assault aftermath, and practical crowd control in school, hotel, and prison scenes.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Adidas, Dr. Pepper, Cadillac, Harvard, Oxford, Cambridge, South African Airways, and other named brands/institutions are referenced on the page."
+          "detail": "Adidas, Cadillac, Dr. Pepper, Harvard, Oxford, Cambridge, South African Airways, and Louisville Shipping Company are named on the page."
         },
         {
           "type": "real_person",
-          "detail": "Maya Priest, Dr. Steven Micah, Miriam Song, and other named public-facing figures are referenced in dialogue and backstory."
+          "detail": "Maya Priest, Dr. Steven Micah, Miriam Song, Henry Song, and other named public figures are referenced in the backstory and mythology."
         },
         {
           "type": "ip_licensing",
-          "detail": "The script references specific schools, companies, and media outlets as plot texture, which may require clearance depending on production approach."
+          "detail": "The script references a blog URL and named institutions and organizations that may require clearance depending on use."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming social-thriller / prestige melodrama lane",
-        "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model fits festival-to-platform or streaming original; the material is dialogue-forward and issue-driven with crime-thriller escalation."
+        "recommended_lane": "Streaming or festival-to-platform social drama / crime melodrama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong issue-driven positioning and a clear afterlife on streaming where provocative social themes travel well."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The story is mostly interior and dialogue-driven, but the many locations, period spans, travel beats, and prison/courtroom coverage push it above micro-budget."
+          "note": "The footprint is mostly contained, but the school, prison, hotel, airport, courtroom, and period flashback coverage create a mid-range production profile."
         },
         "cast": {
-          "level": "high",
-          "note": "The script spans child, teen, and adult versions of Maya plus a large supporting ensemble of school, prison, law-enforcement, and corporate characters."
+          "level": "medium",
+          "note": "The story needs a sizable supporting cast across child, teen, and adult roles, plus several authority figures and named ensemble players."
         },
         "location": {
-          "level": "high",
-          "note": "The story moves across homes, schools, hotels, airports, a nightclub, prison, courtrooms, offices, and multiple countries/cities in flashback and present-day action."
+          "level": "medium",
+          "note": "There are many distinct interiors and exteriors, with recurring institutional spaces and some period-flashback coverage."
         },
         "content": {
           "level": "high",
-          "note": "The script includes child exploitation, sexual coercion, assault, drug trafficking, murder, and prison violence."
+          "note": "The script includes assault, coercion, sexual exploitation, drug trafficking, murder, prison violence, and explicit criminal instruction."
         },
         "rights": {
           "level": "medium",
-          "note": "There are numerous named brands, institutions, and public figures woven into dialogue and backstory, but no single franchise dependency."
+          "note": "The page names multiple brands, public figures, institutions, and a blog URL that would need clearance review."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The ALC is a built-in villain engine.",
-          "what_it_means": "The Alternative Lifestyle Club gives the movie a repeatable antagonist system instead of a one-off bad guy, which is valuable for both tension and marketing. Buyers who want issue-driven thriller material with a clear moral center and a strong female lead will understand the lane immediately.",
-          "evidence": "Ms. Diana’s office reveal, the 39-member doctrine, the initiation room, and the assignment lists for stealing, prostitution, and drug trafficking.",
+          "dimension_or_area": "The premise turns identity into danger.",
+          "what_it_means": "That gives the movie a clean commercial engine: a girl’s search for truth becomes the doorway into exploitation, crime, and self-definition. Buyers who want issue-driven thrillers and social dramas with a built-in moral engine will recognize the hook immediately.",
+          "evidence": "Maya asks who her mother is, then gets pulled from school into the ALC and its initiation pipeline.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Maya has a strong transformation arc.",
-          "what_it_means": "The role moves from obedient child to manipulated teen to self-aware adult, which gives the project a clear emotional spine and a performance-friendly centerpiece. Actors who want a role that can play innocence, confusion, rage, and hard-won agency will see the appeal right away.",
-          "evidence": "Young Maya’s punishment, the teenage recruitment, the prison testimony, and the final reconciliation with her father’s letter.",
+          "dimension_or_area": "Maya has a strong central transformation.",
+          "what_it_means": "The role moves from obedient child to confused teen to manipulated initiate to self-aware survivor, which gives an actor a full emotional arc and a lot of playable turns. Festival-minded buyers and performers looking for a showcase lead would respond to that kind of journey.",
+          "evidence": "Her scenes with Samuel, Craig, Ms. Diana, the prison women, and Daniel each show a different version of Maya.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The setting has regional specificity.",
-          "what_it_means": "Durban, Gauteng, Lesotho, Zimbabwe, Botswana, and South Africa’s institutional spaces give the script a footprint that feels rooted rather than generic. That kind of specificity helps the project travel as a distinctive African-set crime drama with export value.",
-          "evidence": "The school, airport, court, prison, and cross-border references throughout the script.",
+          "dimension_or_area": "The ALC is a built-in story engine.",
+          "what_it_means": "The club’s rules, ranks, initiation rites, and assignment structure create a repeatable criminal system that can drive multiple set pieces and keep the plot moving. Producers looking for a contained but expandable underworld framework will see usable architecture here.",
+          "evidence": "The 39-member requirement, the creed, the manual, and the assignment lists for stealing, prostitution, and drug trafficking.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The prison section adds emotional ballast.",
-          "what_it_means": "The later prison material broadens the movie beyond crime mechanics into female solidarity, confession, and survival, which gives the ending a more reflective aftertaste. Prestige-minded buyers and actors looking for a redemption arc will respond to that tonal expansion.",
-          "evidence": "Mama, Khadijah, Mercy, and Maya sharing backstories in the cell and Maya’s final speech to the inmates.",
+          "dimension_or_area": "The father-daughter material has real emotional weight.",
+          "what_it_means": "Samuel is not just an obstacle; he is the emotional anchor of the story, and the late reveal reframes the whole movie as a family tragedy. That kind of relationship gives the project prestige-drama appeal and a role older actors can really inhabit.",
+          "evidence": "Samuel’s private monologue about Cynthia, his custody of Maya, and the final letter reveal.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The father-daughter wound drives the engine.",
-          "what_it_means": "Samuel and Maya’s relationship gives the story an emotional hook that can carry audiences through the more procedural criminal material. Family-drama buyers and actors who specialize in wounded authority figures will see a role with real dramatic weight.",
-          "evidence": "Samuel’s strict discipline, the long confession about Cynthia, and Maya’s final discovery of his letter.",
+          "dimension_or_area": "The prison section widens the movie’s emotional scope.",
+          "what_it_means": "The jail conversations turn the script from a single-character cautionary tale into a broader portrait of women shaped by exploitation, violence, and survival. That gives the film a deeper social lane and a more awards-friendly emotional register than the crime plot alone.",
+          "evidence": "Mama, Khadijah, Mercy, and Maya each tell their histories in the cell.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The setting has exportable specificity.",
+          "what_it_means": "Durban, Johannesburg, Lesotho, Zimbabwe, Botswana, and South African institutional spaces give the script a regional identity that feels lived-in rather than generic. That helps the project stand out in the international social-thriller lane and gives it cross-border appeal.",
+          "evidence": "School, airport, hotel, court, prison, and city references across southern Africa.",
           "source": "script"
         }
       ],
-      "headline": "This is a socially charged crime melodrama with a clear central engine: a Durban girl’s search for identity leads her into a predatory youth cult, then into a fight for her own soul. The script’s strongest commercial asset is the combination of a female-led transformation role, a built-in villain organization, and a distinctly South African world that gives the material exportable texture.",
-      "strengths_summary": ""
+      "headline": "This is a socially charged crime melodrama with a clear engine: a girl’s search for her origins leads her into a predatory youth cult, then into a fight for her own soul. The script’s biggest asset is the combination of a strong female lead, a vivid father-daughter wound, and a criminal system with enough structure to feel cinematic and marketable."
     },
     "lead_characters": [
       {
         "name": "Maya Isaacs",
         "role_type": "Lead",
-        "demographics": "Female · 10 to 20s across the script · South African",
-        "hook": "Maya is the story’s emotional center: a bright, obedient child who becomes a hungry, questioning teen and then a woman forced to reckon with the cost of being told who she is. She carries innocence, shame, curiosity, rebellion, and eventual self-possession in one role, which makes her the kind of part that can anchor a whole feature if cast with force.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Accused or Lupita Nyong’o in Us — a role that asks an actor to move from vulnerability to steel without losing the audience’s empathy. Performers who want a career-defining transformation part, especially actresses looking for a prestige lead with emotional range and moral complexity, will chase this."
+        "demographics": "Female · 10 to early 20s across the story · South African",
+        "hook": "Maya begins as a dutiful child shaped by strict rules, then becomes a teenager hungry for identity, belonging, and truth. She is emotionally open, easily influenced, and ultimately capable of hard-earned self-recognition, which makes her both vulnerable and compelling as the story’s center.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Lady Bird and Jodie Comer in The End We Start From — a young woman whose inner life is the movie, and whose choices visibly reshape her identity. An actor gets to play innocence, seduction, shame, defiance, and awakening in one arc, which is exactly the kind of role that can define a career."
       },
       {
         "name": "Samuel Isaacs",
         "role_type": "Lead",
-        "demographics": "Male · 40s to 60s · South African father figure",
-        "hook": "Samuel is a stern, emotionally sealed father whose control masks grief, shame, and a lifetime of private compromise. He reads as authoritarian on the surface, but the script keeps revealing a man trying to protect a child from truths he cannot bear to say aloud.",
-        "why_actor_wants_this": "This is the territory of Bryan Cranston in Breaking Bad’s early domestic scenes or Ben Mendelsohn in Animal Kingdom — a man whose authority is constantly undercut by what he is hiding from himself. Character actors who excel at conflicted paternal figures and prestige dramas built on buried pain will be drawn to it."
+        "demographics": "Male · 40s to 50s · South African",
+        "hook": "Samuel is a stern, controlling father figure whose discipline is rooted in fear, shame, and a desperate need to protect the child he loves. He carries the story’s deepest contradiction: a man who can sound cruel in the moment while being emotionally devastated underneath.",
+        "why_actor_wants_this": "This is the emotional territory of Bryan Cranston in Breaking Bad’s domestic scenes and Ben Mendelsohn in Animal Kingdom — a man whose authority is constantly undercut by private pain. It gives a seasoned actor a role built on repression, confession, and the kind of late reveal that can land with real force."
       },
       {
         "name": "Craig",
         "role_type": "Lead",
         "demographics": "Male · late teens to 20s · South African",
-        "hook": "Craig is the smooth-talking intermediary who can read as charming, predatory, loyal, or opportunistic depending on the scene. He has the slippery charisma of someone who knows how to sell a lie, which makes him one of the story’s most watchable pressure points.",
-        "why_actor_wants_this": "This is the kind of role Michael Shannon had in Take Shelter or Walton Goggins often gets in crime drama — a man whose charm and menace are inseparable. Young male actors who want a morally elastic part with scene-stealing dialogue and a dangerous edge will want this."
+        "hook": "Craig is the smooth-talking intermediary who knows how to read people, recruit them, and keep them moving inside the ALC system. He presents as charming and helpful, but the part is really about a young man who has made himself useful to power and learned to weaponize intimacy.",
+        "why_actor_wants_this": "This is the kind of slippery, charismatic role that gave Lakeith Stanfield in Atlanta and Barry Keoghan in Calm with Horses their edge — a character who can pivot from charm to menace without changing volume. It’s a strong part for a young actor who wants to play intelligence, seduction, and moral drift in the same frame."
       },
       {
         "name": "Ms. Diana",
         "role_type": "Lead",
         "demographics": "Female · 30s to 50s · South African",
-        "hook": "Ms. Diana is the script’s most theatrical force: polished, maternal, manipulative, and fully committed to her own mythology. She can pivot from schoolteacher warmth to cult authority without blinking, which makes her feel like the face of a system rather than just one villain.",
-        "why_actor_wants_this": "This is the performance lane of Kathy Bates in Misery or Viola Davis when she’s allowed to dominate a room — a role built on command, intelligence, and the pleasure of watching a woman weaponize authority. Strong dramatic actresses who want a memorable antagonist with speeches, control, and a real presence will chase it."
+        "hook": "Ms. Diana is the polished public face of the ALC, a teacher and organizer who uses authority, warmth, and spiritual language to control vulnerable kids. She is theatrical, strategic, and chillingly composed, with the kind of charisma that makes manipulation feel like mentorship.",
+        "why_actor_wants_this": "This is the prestige-villain territory of Toni Collette in Hereditary and Jodie Foster in The Silence of the Lambs — a woman whose calm surface is the engine of dread. It gives an actress a commanding role with intelligence, seduction, and menace, the kind of part that can dominate a film even when she’s not on screen."
+      },
+      {
+        "name": "Mama / Adanna Jenifer Ezekwe",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · Nigerian",
+        "hook": "Mama is the prison elder whose life story carries the scars of trafficking, coercion, and survival across multiple countries. She has the authority of someone who has been broken and rebuilt by experience, and she becomes a moral counterweight inside the cell.",
+        "why_actor_wants_this": "This is the kind of lived-in, devastating supporting showcase that won Lupita Nyong’o attention in 12 Years a Slave — a character whose history arrives in one concentrated, unforgettable speech. Character actors and prestige ensemble buyers will see immediate value in a role that can land a whole film’s emotional truth."
+      },
+      {
+        "name": "Khadijah",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · Muslim / North African background",
+        "hook": "Khadijah is educated, restrained, and torn between inherited discipline and the desire to live freely. Her story carries the emotional charge of a woman whose choices have consequences she cannot undo, which gives the prison ensemble another distinct moral perspective.",
+        "why_actor_wants_this": "This is the kind of confessional supporting role that gave Sarah Snook in The Dressmaker and Ruth Negga in Passing room to play interior conflict with precision. An actor gets a contained but potent showcase for shame, longing, and self-judgment."
+      },
+      {
+        "name": "Mercy Laurent",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s · Cameroonian",
+        "hook": "Mercy is street-smart, sexually hardened, and emotionally alert, but the prison story reveals how much of that armor was built from abandonment and exploitation. She brings volatility and survival instinct to the ensemble, with a voice that feels shaped by the street rather than by institutions.",
+        "why_actor_wants_this": "This is the kind of raw, lived-in role that gave Jurnee Smollett in Lovecraft Country and Letitia Wright in Mangrove room to play pain with force and intelligence. It’s a strong part for an actor who wants to bring edge, history, and emotional volatility into a supporting role."
       },
       {
         "name": "Van Brussels",
         "role_type": "Supporting",
-        "demographics": "Male · 50s to 70s · wheelchair user",
-        "hook": "Van Brussels is a wealthy, connected power broker whose public benevolence masks a much larger web of influence. He functions as both benefactor and gatekeeper, and the script uses his disability and status to complicate how power is read in the room.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas of Michael Gambon in The King’s Speech or Richard Jenkins in The Visitor — a figure whose stillness carries authority. Veteran character actors who like playing polished men with hidden leverage will be interested."
+        "demographics": "Male · 50s to 70s · South African / international business figure",
+        "hook": "Van Brussels is the wealthy, wounded patron whose power sits at the intersection of business, mentorship, and exploitation. He is physically diminished but socially formidable, which makes him a complicated figure in the film’s moral landscape.",
+        "why_actor_wants_this": "This is the kind of late-career authority role that gave Michael Gambon in Gosford Park and Richard Jenkins in The Visitor their gravitas — a man whose stillness carries history. It offers an actor the chance to play power, vulnerability, and moral ambiguity in one contained package."
+      },
+      {
+        "name": "Daniel Young",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · South African / American-linked business heir",
+        "hook": "Daniel is polished, educated, and emotionally available, but he also functions as the story’s clean alternative to the chaos around Maya. He becomes the film’s late-stage stabilizer, a man whose sincerity helps close the story on a note of earned hope.",
+        "why_actor_wants_this": "This is the romantic-supporting territory of John Boyega in The Woman King’s gentler scenes and Dev Patel in The Personal History of David Copperfield — a role that lets an actor play warmth, intelligence, and emotional steadiness. It’s attractive to actors who want a grounded, likable part with real narrative payoff."
+      },
+      {
+        "name": "Tracy Brooks",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 50s · Lawyer",
+        "hook": "Tracy is the practical legal voice in the story, the person who translates consequence into plain language. She is not ornamental; she gives the court material a professional spine and helps ground the film in procedural reality.",
+        "why_actor_wants_this": "This is the concise authority lane of Viola Davis in Doubt or Carrie Coon in The Leftovers when she’s all precision and no excess — a role built on command, clarity, and controlled pressure. It’s a clean supporting part for an actor who can make competence feel dramatic."
       },
       {
         "name": "Grace",
         "role_type": "Supporting",
         "demographics": "Female · mid-teens · South African",
-        "hook": "Grace is Maya’s grounded school friend, the one character who keeps the teenage world feeling socially lived-in rather than purely plot-driven. She is observant, lightly teasing, and useful as a reality check when Maya starts drifting toward Craig’s orbit.",
-        "why_actor_wants_this": "This is the kind of supporting part that works like the best friend roles in Lady Bird or Booksmart — a grounded peer who gives the lead someone to bounce off. Young actors who want a sharp, naturalistic teen role with real chemistry potential will like it."
-      },
-      {
-        "name": "Mama / Adanna Jenifer Ezekwe",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s to 50s · Nigerian",
-        "hook": "Mama is the prison elder with the deepest lived-in authority, carrying pain with discipline and a hard-earned sense of order. Her long backstory gives her the weight of someone who has survived systems that tried to erase her, and she becomes a moral anchor inside the cell.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the moral authority of Octavia Spencer in The Help or Alfre Woodard in Clemency — a woman whose stillness and testimony carry the room. Experienced dramatic actresses who want a late-film emotional anchor will respond to it."
-      },
-      {
-        "name": "Khadijah",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s to 30s · Muslim / Egyptian-Libyan background",
-        "hook": "Khadijah is a high-achieving, rule-bound woman whose rebellion turns catastrophic, giving the prison ensemble a sharp contrast between discipline and impulse. She brings a cosmopolitan, cross-cultural dimension to the cell and helps widen the movie’s social scope.",
-        "why_actor_wants_this": "This is the kind of role that recalls the confessional force of women in Orange Is the New Black or A Raisin in the Sun-style family pressure dramas — a character whose story is built on the collision between expectation and desire. Actors who like emotionally loaded monologues and cultural specificity will be interested."
-      },
-      {
-        "name": "Mercy",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s to 30s · Cameroonian",
-        "hook": "Mercy is streetwise, sexually hardened, and unexpectedly reflective, which gives the prison section another distinct voice. She reads as someone who has learned survival through motion, appetite, and adaptation, and the script lets her history feel lived rather than symbolic.",
-        "why_actor_wants_this": "This is the kind of part that has the raw, lived-in energy of a supporting role in Precious or Hustle & Flow — a woman with a hard exterior and a story that lands in one long confession. Actors who want a vivid, adult supporting showcase with bite will chase it."
-      },
-      {
-        "name": "Daniel Young",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · South African / U.S.-educated",
-        "hook": "Daniel is polished, educated, and emotionally available in a way that makes him feel like the story’s clean alternative to the chaos around Maya. He functions as a stabilizing romantic and professional presence, with enough status to shift the movie into its later corporate register.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded romantic intelligence of a modern prestige-drama lead, like the emotional clarity of Dev Patel in The Newsroom-style dialogue scenes or John Krasinski in A Quiet Place’s domestic beats. Charismatic leading men who can play warmth without losing authority will want it."
+        "hook": "Grace is Maya’s peer and social tether, the friend who keeps the teenage world feeling lived-in and ordinary before the plot turns darker. She gives Maya a normal adolescent relationship that makes the later isolation more painful.",
+        "why_actor_wants_this": "This is the kind of best-friend role that gave Auli’i Cravalho in early ensemble work and Haley Lu Richardson in support parts a chance to make a small role memorable through warmth and timing. It’s a useful, scene-friendly part for a young actor with natural ease."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to turn social warning into propulsive character drama.",
-        "fit_profile": "Second- or third-feature directors, or established indie filmmakers, who already work comfortably with performance-forward material and morally charged subject matter. The right fit is someone drawn to grounded melodrama, institutional corruption, and female-centered transformation rather than spectacle-first crime filmmaking.",
-        "detail": "The material rewards a director who can keep the emotional line clear while staging school, prison, and cult spaces with distinct visual grammar. It will attract filmmakers who like to build tension from performance, testimony, and social systems rather than from action set pieces."
+        "hook": "A director who wants to turn a social cautionary tale into a propulsive character drama with a strong moral spine.",
+        "fit_profile": "Mid-career indie directors or TV-to-feature filmmakers who already work comfortably with performance-first material, institutional settings, and emotionally charged subject matter. The right fit is someone drawn to social realism, family fracture, and controlled melodrama rather than spectacle.",
+        "detail": "The material rewards a director who can keep the emotional line clear while staging school, prison, court, and hotel spaces with momentum. It also gives a filmmaker a chance to shape a morally urgent story around a strong lead performance, which is attractive to directors looking for a festival-to-platform calling card."
       },
       "buyer_appeal": {
         "tier": "$3-8M feature",
-        "lane": "streaming original / festival-to-platform social thriller",
-        "detail": "The movie can be anchored by one breakout female lead and a strong supporting antagonist package, so it does not require tentpole-level casting to function. Its South African setting, crime-thriller spine, and issue-driven hook give it export value for streamers and festival programmers looking for distinctive international genre material."
+        "lane": "Streaming social drama / crime melodrama lane",
+        "detail": "The project can be packaged around a strong young female lead and a handful of adult authority roles, so it does not need a giant ensemble or heavy star dependency to function. The South African setting, cross-border criminal material, and issue-driven premise give it export value and a clear streaming audience for socially charged genre drama."
       }
     },
     "considerations": [
       {
-        "area": "The middle section runs on explanation.",
-        "detail": "A lot of the script’s most important information arrives in speeches — Samuel’s long confession, Ms. Diana’s doctrine, Craig’s blueprint, and the prison backstories. One primary lever would be to let a few of those ideas arrive through action or confrontation so the emotional turns land before the explanation does.",
+        "area": "The opening runs long before the engine locks.",
+        "detail": "The early pages spend a lot of time on domestic discipline and classroom explanation before the ALC threat fully takes over. One lever would be to let the first clear sign of the club’s pull arrive earlier, so the audience feels the story’s central danger sooner.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The timeline spans a lot of ground.",
-        "detail": "The story moves from childhood to adulthood, then through prison, corporate life, marriage, and a final father search, which gives the feature a very broad footprint. A next pass could consider compressing one of the later life chapters so the central Maya/Samuel/ALC conflict stays the dominant spine.",
+        "area": "The dialogue often explains the idea outright.",
+        "detail": "Several scenes, especially the classroom marriage lesson, Craig’s ALC briefing, and Ms. Diana’s initiation speech, tell the audience the theme in full sentences. A next pass could let the same information emerge through sharper conflict or behavior so the scenes play more cinematically.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The cast footprint is wide.",
-        "detail": "There are many speaking roles across schoolchildren, prison inmates, executives, police, lawyers, and family members. The version of the script that trims a few of the secondary voices without losing the prison ensemble or the ALC hierarchy would protect focus and simplify casting.",
+        "area": "The ALC mythology is carrying a lot of exposition.",
+        "detail": "The 39-member structure, the creed, the mystical language, and the assignment lists all arrive in dense blocks. The version of the script where one or two of those ideas are dramatized instead of explained would keep the world rich while making the momentum cleaner.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The prison ensemble could be used even more economically.",
+        "detail": "The cell stories are one of the script’s strongest emotional sections, and they also introduce several new backstories at once. If the goal is to protect runtime and focus, one simplification lever would be to let one inmate story carry more of the thematic load while the others stay more pointed.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The production footprint is mid-range, not minimal.",
+        "detail": "The script moves through school, home, restaurant, airport, hotel, prison, court, office, and mansion settings across multiple time periods. A producer could protect the story by consolidating some of the travel and institutional beats into fewer recurring locations without changing the core arc.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The story leans on many locations.",
-        "detail": "Homes, schools, offices, airports, hotels, a nightclub, a prison, a courtroom, and multiple travel stops all appear on the page. A simplification pass that combines a few of the office and meeting spaces could preserve the scope while making the production easier to mount.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The content is firmly adult.",
-        "detail": "The script includes child exploitation, sexual coercion, assault, murder, drug trafficking, and prison violence. That places it squarely in mature-content territory and makes the strongest home a streamer or premium feature lane rather than family-adjacent distribution.",
+        "area": "The content lane is firmly mature.",
+        "detail": "Assault, coercion, sexual exploitation, drug trafficking, murder, and prison violence all sit on the page. That positions the film for adult audiences and a streamer or festival-to-platform release model rather than a broad theatrical family lane.",
         "is_primary_lever": false,
         "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 52,
+  "weightedScore": 56,
   "tier": "Needs Development",
   "inputTokens": 53074,
-  "outputTokens": 4751,
-  "cost": 0.061185,
+  "outputTokens": 5093,
+  "cost": 0.062724,
   "declaredFormat": "Feature film"
 }

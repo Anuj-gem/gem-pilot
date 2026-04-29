@@ -4,325 +4,338 @@
       "format": "Feature film",
       "genre_primary": "Historical action thriller",
       "genre_tags": [
-        "revenge",
+        "revenge drama",
         "crime"
       ],
-      "tone": "Gritty, heightened, pulpy, sexually charged"
+      "tone": "Gritty, pulpy, heightened, and melodramatic"
     },
-    "positioning_hook": "A haunted assassin in ancient Thebes hunts the men who destroyed his family, then discovers the city’s corruption reaches the magistrate, the temple, and the underworld itself.",
+    "positioning_hook": "A traumatized assassin in ancient Thebes hunts the men who destroyed his family, then discovers the city’s power brokers are trafficking women and protecting each other.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The revenge engine is immediate and easy to sell, with a masked killer, corrupt officials, and a temple under siege giving the premise a clear genre promise. The audience is narrower than a broad four-quadrant action title because the script’s ancient setting, explicit violence, and sexual content point to a more specific adult lane."
+        "reasoning": "The revenge engine is immediate and easy to sell, and the ancient-world setting gives it a clear shelf identity. The audience is narrower than a modern thriller because the script leans hard into mythic dialogue, period politics, and explicit brutality."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The central premise lands early: Xander is the Harbinger, a feared assassin whose personal revenge collides with a wider corruption network. The script keeps adding layers through Messina, Giannis, Kami, and the temple, which gives the hook momentum even as the mythology and backstory expand."
+        "reasoning": "The core premise lands quickly: Xander is a feared assassin whose family trauma drives him toward a corrupt network in Thebes. The repeated returns to Messina, Giannis, Kami, and Karin keep the engine legible, even as the script expands into multiple targets and backstory loops."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Xander has a strong core contradiction — grieving, disciplined, and lethal, but still emotionally reachable through Helaine, Aria, and Palos in memory. The supporting players mostly orbit his mission, though Helaine and Aria each bring enough presence to give the lead role more texture than a standard lone-avenger vehicle."
+        "reasoning": "Xander has a strong wounded-warrior center, and Helaine, Aria, Tallen, and Palos each add a distinct pressure point around him. The supporting cast mostly serves the revenge path, so the character web is functional rather than especially layered."
       },
       "creative_originality_and_boldness": {
-        "score": 6,
-        "reasoning": "The ancient-Greek criminal underworld angle gives the material a distinctive wrapper, and the temple/assassin/underworld blend is commercially legible. The execution leans on familiar revenge beats, but the setting, god-language, and moral code give it a recognizable stamp."
+        "score": 7,
+        "reasoning": "The ancient-Greek setting, assassin guild framing, and temple-as-safehouse setup give the script a specific identity. The boldness comes from how openly it mixes myth, sex work, corruption, and revenge rather than playing the period as museum drama."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The script keeps Xander moving from rooftop confession to kill, arrest, jailbreak, road trip, and final showdown, so the forward drive is consistent. The middle section repeats several capture/escape beats, but each turn still advances the corruption web and keeps the story in motion."
+        "reasoning": "The script keeps moving through a chain of confrontations, arrests, escapes, and reprisals, so it rarely sits still. It also revisits the same emotional beats and explanatory exchanges several times, which softens the forward pull."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "The idea of a temple-based assassin in ancient Thebes who answers to Hades has a fresh surface and a clean commercial image. The deeper emotional structure — family slaughter, revenge, hidden corruption, and a code-bound killer — is familiar, but the combination lands with enough specificity to feel ownable."
+        "reasoning": "The idea of a mythic assassin avenging his family inside a corrupt ancient city has a clean, marketable shape. What keeps it from landing higher is that the story often plays as familiar revenge material with a period skin rather than a fully surprising new engine."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The script builds a visible social ecosystem: temple politics, city guards, magistrates, tax collection, assassins, merchants, and a criminal network tied to Kami. The road to Thebes, the temple, the prison, and Primis all feel like functioning parts of the same world rather than isolated backdrops."
+        "reasoning": "Thebes, Primis, the Temple of Aphrodite, the magistrate’s office, the docks, and the road all feel like part of a functioning social order with money, protection, and coercion moving through it. The repeated references to taxes, tithes, guilds, patrons, and city authority give the world a usable hierarchy."
       },
       "tonal_specificity": {
-        "score": 6,
-        "reasoning": "The tone is unmistakably pulpy and adult, mixing revenge melodrama, mythic language, erotic tension, and graphic violence. It is consistent, though the script sometimes shifts from solemn grief to broad sexual banter and back again, which gives it a rough-edged rather than fully singular tonal signature."
+        "score": 7,
+        "reasoning": "The script has a very particular tone: mythic, sexual, violent, and emotionally earnest all at once. The voice is unmistakably heightened, with formal god-language colliding against blunt criminal behavior and intimate melodrama."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the action, the script keeps opening questions about Xander’s identity, Hades, the meaning of his code, and the corruption binding the city together. The emotional material around grief, loyalty, and chosen family suggests more room than the plot initially advertises."
+        "reasoning": "Beneath the revenge plot, there are seeds of a larger story about corruption, faith, identity, and the cost of becoming a weapon. The draft gestures toward that depth through Hades, the temple, and Xander’s moral code, though the surface engine remains the dominant experience."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Xander/Helaine, Xander/Aria, and Xander/Tallen each generate a different kind of friction, and Palos in memory gives the lead an emotional anchor. The ensemble is functional and story-active, though the script still lives primarily on Xander’s shoulders."
+        "reasoning": "Xander/Helaine, Xander/Aria, Xander/Tallen, and Xander/Palos each have a distinct charge, and those pairings do generate scenes. The script still lives primarily on Xander’s shoulders, with the ensemble functioning more as orbiting pressure than as an independent engine."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 15,
+        "speaking_roles": 17,
         "leads": 4,
         "series_regulars": 0,
-        "child_actors": false,
+        "child_actors": true,
         "casting_characteristics": [
-          "Male lead in 20s/30s with physical action ability",
-          "Female lead in late 20s/30s with strong romantic and dramatic presence",
-          "Supporting roles include a dark-skinned crime boss, a queenly Amazon, and several authority figures",
-          "One child version of the protagonist appears in flashbacks"
+          "Multiple age versions of Xander and Kyra",
+          "Ancient-world period casting",
+          "Several roles with specific gendered and physical presentation requirements",
+          "One prominent Black antagonist and one Amazon queen"
         ]
       },
       "locations": {
-        "distinct_count": 12,
+        "distinct_count": 14,
         "interior_exterior_ratio": "roughly 55/45",
         "period_or_contemporary": "Period",
         "notable_requirements": [
-          "Ancient Greek city streets and temple exteriors",
-          "Prison/jailhouse interiors",
-          "Dockside boat set",
-          "Road and forest locations",
-          "Village execution square",
-          "Brothel/temple interiors"
+          "Ancient Greek city streets and plazas",
+          "Temple interior and roof access",
+          "Jailhouse and magistrate office",
+          "Road, clearing, stream, and village exteriors",
+          "Docked boat and interior ship set"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Dream/underworld sequences with Hades and Charon, plus fire effects on the boat finale and some stylized transitions.",
+        "vfx_details": "Dream-world and underworld imagery for Hades/Charon, plus fire and smoke enhancement in the boat sequence.",
         "stunts_level": "moderate",
-        "sfx_needs": "Sword fights, knife kills, fire ignition, blood effects, bruising/injury makeup, practical wound work.",
+        "sfx_needs": "Blood effects, throat cuts, beheadings, fire ignition, smoke, and practical wound makeup.",
         "night_shoots": "significant",
-        "animals": false
+        "animals": true
       },
       "rights_flags": [
         {
           "type": "real_person",
-          "detail": "None"
-        },
-        {
-          "type": "named_music",
-          "detail": "None"
-        },
-        {
-          "type": "brand",
-          "detail": "None"
+          "detail": "Thermopylae is referenced as a historical battle."
         },
         {
           "type": "ip_licensing",
-          "detail": "Greek mythological figures and names are used as source-myth material rather than specific licensed IP."
+          "detail": "Greek gods, Charon, Hades, Aphrodite, Artemis, Zeus, and related mythological figures are used as story elements."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium cable feature with genre-forward adult positioning",
-        "content_level": "Mature / explicit",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform or direct streaming genre title"
+        "recommended_lane": "Streaming or premium cable feature lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or genre-streaming release model"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The footprint is mostly practical period sets, interiors, and road locations, with one boat-fire climax and recurring fight choreography."
+          "note": "The footprint is mostly contained, but period dressing, night work, blood effects, fire, and a boat-burning climax push it above micro-budget."
         },
         "cast": {
           "level": "medium",
-          "note": "The script needs a strong lead, a strong female co-lead, and several distinct authority and villain roles, but it does not depend on a huge ensemble."
+          "note": "The story is lead-driven, but it needs multiple age versions, a child performer, and several distinct supporting roles with clear presence."
         },
         "location": {
           "level": "medium",
-          "note": "Multiple period locations across Thebes, Primis, roads, temple spaces, prison interiors, and docks create a varied but manageable footprint."
+          "note": "The script moves through a temple, city offices, homes, roads, a clearing, and a docked ship, all in period environments."
         },
         "content": {
           "level": "high",
-          "note": "Graphic violence, sexual assault, nudity, prostitution, and explicit sexual content narrow the platform lane."
+          "note": "The script includes executions, rape, sexual coercion, nudity, torture-adjacent violence, and repeated killings."
         },
         "rights": {
           "level": "low",
-          "note": "The script uses mythological names and original characters without named songs, brands, or real-person life-rights dependencies."
+          "note": "The script uses mythological figures and historical references, but no named contemporary brands, songs, or living people."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The lead role is built for an actor.",
-          "what_it_means": "Xander is a grief-driven killer with a strict code, romantic vulnerability, and physical command, which creates a showcase part that can play action, anguish, and intimacy in one package. Mid-career male leads who want a prestige-genre calling card, plus actors looking to anchor a franchiseable antihero, will see the appeal immediately.",
-          "evidence": "Xander’s rooftop confession to Helaine, the Messina kill, the prison fight, and the final boat showdown all show different facets of the same character.",
+          "dimension_or_area": "The revenge engine is instantly legible.",
+          "what_it_means": "A buyer can understand the movie in one sentence: a feared assassin hunts the men tied to his family’s destruction while the city’s corruption keeps widening the target list. That clarity makes it easy to package for genre buyers who want a clean hook with built-in momentum.",
+          "evidence": "Xander’s repeated confrontations with Messina, Giannis, Karin, Ionos, and Kami all trace back to the execution of his mother and the murder of Kyra.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has a clean commercial wrapper.",
-          "what_it_means": "Ancient Thebes, temple politics, and a mythic assassin code give the project a built-in visual identity that separates it from standard revenge thrillers. Buyers who want a period genre piece with a recognizable hook and a strong poster image will understand the lane fast.",
-          "evidence": "The Temple of Aphrodite, the Harbinger identity, Hades’ appearances, and the city’s corrupt power structure all define the world.",
+          "dimension_or_area": "The ancient setting has real commercial texture.",
+          "what_it_means": "This is not generic sword-and-sandal wallpaper; the temple, magistrate, tax collector, guild, and dockside power structure create a world that can carry a feature and invite franchise thinking. Period buyers and genre labels looking for a fresh historical lane would respond to that specificity.",
+          "evidence": "The Temple of Aphrodite functions as a safehouse, business front, and emotional center while Thebes itself runs on bribes, fines, and protection money.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The female roles have real heat.",
-          "what_it_means": "Helaine and Aria are not decorative; they each carry agency, desire, and moral pressure around Xander, which gives the project more than a single masculine engine. Actresses looking for adult, sensual, emotionally active roles in a genre setting will have something to play.",
-          "evidence": "Helaine hides Xander, treats his wounds, and becomes his lover; Aria shifts from helper to confidante to romantic partner on the road.",
+          "dimension_or_area": "Xander is built as a wounded antihero.",
+          "what_it_means": "The role gives an actor a bruised, haunted center with action, grief, and moral code all in the same frame — the kind of part that can anchor a prestige genre vehicle. Mid-career leads who want a physical showcase with emotional weight will see the appeal immediately.",
+          "evidence": "He breaks down over Kyra, speaks to Hades in dream space, and still moves through the story as a disciplined killer with a code.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The action is story-motivated.",
-          "what_it_means": "The fights are not random set pieces; each kill advances the revenge plot, exposes corruption, or changes who trusts whom. That makes the material easier to package as a character-driven action feature rather than a pure spectacle play.",
-          "evidence": "Messina’s death triggers the Kami thread, the prison fight exposes the conspiracy, and the boat climax rescues Helaine while burning down Kami’s operation.",
+          "dimension_or_area": "Helaine gives the movie its human pulse.",
+          "what_it_means": "She is more than a love interest; she is the moral and practical counterweight who keeps the story from becoming pure blood-and-vengeance. That makes the script attractive to actresses who want a role with sensuality, authority, and emotional leverage in a male-driven genre piece.",
+          "evidence": "Helaine runs the temple, treats Xander’s injuries, protects her girls, and repeatedly chooses him over the men who control the city.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble creates shifting alliances.",
-          "what_it_means": "Xander, Helaine, Aria, and Tallen each move between suspicion, attraction, and loyalty, which gives the project multiple relationship engines inside one feature. That kind of dynamic is attractive to buyers who want a contained cast that still feels expandable and actor-friendly.",
-          "evidence": "Tallen goes from arresting Xander to helping him; Helaine moves from employer to lover to co-conspirator; Aria becomes both medic and accomplice.",
+          "dimension_or_area": "The women’s-world angle broadens the audience.",
+          "what_it_means": "The temple, Aria, Velma, Giselle, and Gabrielle give the story a secondary emotional lane about protection, survival, and agency inside a violent system. That opens the door to buyers who want genre with a social undercurrent rather than pure combat spectacle.",
+          "evidence": "Aria’s bruises, Velma’s abuse, Giselle’s rescue, and Gabrielle’s captivity all connect the action to a larger pattern of exploitation.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The mythic framing gives the revenge arc lift.",
-          "what_it_means": "Hades, Charon, and the underworld language turn a familiar vengeance story into something operatic and marketable as elevated pulp. Genre buyers and directors who like grounded action with a mythic skin will respond to that blend.",
-          "evidence": "Xander’s dream encounters with Hades and Charon, plus the repeated language of being the hand of Hades, shape the story’s identity.",
-          "source": "script"
+          "dimension_or_area": "The action is practical and producible.",
+          "what_it_means": "Most of the set pieces are sword fights, ambushes, chases, and one fire-driven climax, which keeps the movie in a manageable production lane compared with effects-heavy historical epics. That makes it attractive to indie genre financiers and streamer buyers who want scale without tentpole spend.",
+          "evidence": "The biggest spectacle is the burning boat sequence; the rest is largely hand-to-hand combat, arrests, and street-level confrontations.",
+          "source": "production"
         }
       ],
-      "headline": "This is a revenge feature with a strong, castable center: a haunted assassin in ancient Thebes, a corrupt city network, and a love story that keeps colliding with the body count. The script has a clear poster image, a physical lead role, and a world that feels built for adult genre buyers who want something mythic but playable."
+      "headline": "This script has a clean genre engine, a vivid ancient-world setting, and a lead role built for an actor who wants bruised intensity with real physical action. The Temple of Aphrodite, the corrupt Thebes power structure, and the women Xander keeps trying to protect give the movie a commercial lane beyond a standard revenge tale."
     },
     "lead_characters": [
       {
-        "name": "XANDER / The Harbinger",
+        "name": "XANDER aka The Harbinger",
         "role_type": "Lead",
-        "demographics": "Male · 20s/30s · athletic build, combat-ready, masked assassin",
-        "hook": "Xander is a grief-forged assassin who speaks like a man trying to keep his soul intact while doing brutal work. He is disciplined, romantic, and deeply wounded, with a code that makes him feel both dangerous and strangely honorable; the mask, the Hades language, and the private tears all work together to make him feel like a mythic antihero with a beating heart.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Fassbender in *Assassin’s Creed* crossed with the emotional interiority of Viggo Mortensen in *A History of Violence* — a man whose violence is inseparable from shame, memory, and self-mythology. Actors who want a role that can carry swordplay, erotic tension, and raw grief in the same frame will chase this."
+        "demographics": "Male · late 20s to 30s",
+        "hook": "A feared assassin with a private code, Xander is all restraint on the surface and raw grief underneath. He moves like a professional killer, talks like a man raised by gods and violence, and carries the emotional weight of a child who never got to stop mourning.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in *Bronson* or Cillian Murphy in *Peaky Blinders* — a physically dangerous man whose interior damage is always visible under the performance. Actors who want a role that lets them combine stillness, menace, vulnerability, and action will chase this immediately.",
+        "source": "script"
       },
       {
         "name": "HELAINE",
         "role_type": "Lead",
-        "demographics": "Female · late 20s/30s · beautiful, sensual, authoritative temple madame",
-        "hook": "Helaine runs the Temple of Aphrodite with poise, wit, and a practical understanding of power. She is flirtatious without being flimsy, maternal without being passive, and politically savvy enough to survive in a city where every kindness has a price; she becomes the emotional hinge between Xander’s violence and his humanity.",
-        "why_actor_wants_this": "This is the kind of role Rachel Weisz had in *The Favourite* — a woman who can weaponize intelligence, desire, and composure in the same scene. Actresses looking for a part that plays seduction, authority, and moral courage without leaving the genre lane will want it."
+        "demographics": "Female · late 20s",
+        "hook": "The Madame of the Temple of Aphrodite, Helaine is sensual, strategic, and emotionally braver than the men around her. She knows exactly how the city works, uses charm as leverage, and still has enough heart to become Xander’s safest place.",
+        "why_actor_wants_this": "This is the showcase space of Charlize Theron in *Mad Max: Fury Road* or Jodie Comer in *Killing Eve* — a woman who can command a room, flirt with danger, and still carry emotional authority. Actresses looking for a role that blends power, wit, and romantic charge will want this part.",
+        "source": "script"
       },
       {
         "name": "ARIA",
         "role_type": "Lead",
-        "demographics": "Female · early/mid 20s · apprentice medicus, vulnerable but observant",
-        "hook": "Aria starts as a helper and becomes a confidante, then a romantic partner and moral witness to Xander’s world. She is young enough to be impressionable, smart enough to see through the lies, and brave enough to stay in the room when the truth gets ugly.",
-        "why_actor_wants_this": "This is the showcase space of Florence Pugh in *Midsommar* or *Lady Macbeth* — a young woman whose emotional intelligence and physical presence keep changing the temperature of the scene. Emerging actresses who want a role that grows from support into co-lead energy will be drawn to it."
+        "demographics": "Female · early to mid 20s",
+        "hook": "Aria starts as the young medicus-in-training and becomes the audience’s moral witness inside the temple’s chaos. She is curious, bruised, funny, and increasingly brave, with a clear-eyed intelligence that lets her see Xander more fully than anyone else does.",
+        "why_actor_wants_this": "This is the kind of breakout-supporting-to-lead showcase Saoirse Ronan had in *Atonement* or Florence Pugh in *Midsommar* — a young woman whose emotional awakening is inseparable from the story’s danger. Emerging actresses who want a role that can travel from innocence to complicity to agency will be drawn to it.",
+        "source": "script"
       },
       {
         "name": "TALLEN",
         "role_type": "Lead",
-        "demographics": "Male · 30s/40s · city guard/captain, disciplined, honorable",
-        "hook": "Tallen is the lawman who actually believes in the law, which makes him the perfect counterweight to Xander’s vigilante code. He is skeptical, proud, and increasingly forced to admit the city is rotten, and that tension gives him a real moral spine.",
-        "why_actor_wants_this": "This is the kind of role Jeffrey Wright had in *The Batman* — a grounded authority figure whose intelligence and restraint make every scene feel consequential. Character actors who want a principled foil with action credibility will respond to it."
-      },
-      {
-        "name": "KAMI",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s/50s · dark-skinned crime boss, physically imposing",
-        "hook": "Kami is the polished center of the corruption web: calm, intelligent, and terrifyingly self-possessed. He does not posture like a brute; he speaks like a man who owns the room, which makes him feel more dangerous than the louder villains around him.",
-        "why_actor_wants_this": "This is the kind of antagonist role Javier Bardem had in *No Country for Old Men* — controlled, philosophical, and lethal without needing to raise his voice. A major character actor looking for a memorable villain with intelligence and menace will want it."
-      },
-      {
-        "name": "GIANNIS",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s/50s · corrupt money man, office-bound, opportunistic",
-        "hook": "Giannis is a cowardly operator who survives by bribery, leverage, and panic. He is not the top of the food chain, which makes him useful as a pressure valve for the larger conspiracy and a vivid face of civic rot.",
-        "why_actor_wants_this": "This is the kind of role Paul Dano had in *There Will Be Blood* — a man whose nervous intelligence and moral collapse make him fascinating to watch. Character actors who excel at slippery, self-protective energy will have fun with it."
+        "demographics": "Male · 30s",
+        "hook": "A city guard with a conscience, Tallen is the lawman who keeps getting forced to look at the rot underneath the law. He begins as an obstacle and becomes one of the few men in the story who can actually stand beside Xander without collapsing into corruption.",
+        "why_actor_wants_this": "This is the showcase lane of David Harbour in *Hellboy* or Michael Shannon in *Take Shelter* — a grounded authority figure whose decency has to survive pressure from every side. Character actors who want a role with moral friction and action utility will see the value.",
+        "source": "script"
       },
       {
         "name": "PALOS",
         "role_type": "Supporting",
-        "demographics": "Male · mid-40s · Trojan warrior, mentor figure",
-        "hook": "Palos is the father-figure Xander never got to keep, a warrior with warmth, discipline, and a practical code. He gives the story its moral inheritance, and even in memory he feels like the person who taught Xander how to survive without becoming empty.",
-        "why_actor_wants_this": "This is the mentor role of Liam Neeson in *Taken* before the action takes over — a grounded, protective presence that gives the younger lead emotional ballast. Actors with gravitas who want to play tenderness inside a warrior frame will be drawn to it."
+        "demographics": "Male · mid-40s",
+        "hook": "Palos is the mentor-warrior who gives Xander his code, his training, and his first real model of manhood. He is warm, practical, battle-tested, and quietly paternal, which makes his presence echo long after he leaves the story.",
+        "why_actor_wants_this": "This is the mentor territory of Sean Bean in *Game of Thrones* or Jeff Bridges in *True Grit* — a seasoned warrior whose warmth makes the eventual loss or absence matter. Actors with gravitas who want to be the emotional origin point for a hero will chase this.",
+        "source": "script"
+      },
+      {
+        "name": "KAMI",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · dark-skinned",
+        "hook": "Kami is the polished predator at the top of the food chain, a man who can speak in business language while holding a knife to someone’s face. He is elegant, controlled, and terrifying because he understands power as a system, not a tantrum.",
+        "why_actor_wants_this": "This is the villain showcase of Giancarlo Esposito in *Breaking Bad* or Mahershala Ali in *Luke Cage* — a calm, intelligent operator whose stillness is more frightening than rage. Actors who want a sophisticated antagonist with command and menace will want this role.",
+        "source": "script"
+      },
+      {
+        "name": "GIANNIS",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Giannis is the greasy middleman who thinks money can solve every moral and legal problem. He is cowardly, opportunistic, and always one step away from panic, which makes him a perfect pressure valve for the story’s corruption engine.",
+        "why_actor_wants_this": "This is the kind of role John Turturro or Paul Giamatti can turn into a feast — a slippery bureaucratic parasite with comic panic and real danger. Character actors who enjoy playing men who are always bargaining for their lives will gravitate to it.",
+        "source": "script"
       },
       {
         "name": "IONOS",
         "role_type": "Supporting",
-        "demographics": "Male · 40s/50s · solicitor, predatory, abusive",
-        "hook": "Ionos presents as a respectable family man and reveals himself as a predator hiding behind civility. He is the kind of villain who makes betrayal feel intimate because he weaponizes trust, paperwork, and domestic access.",
-        "why_actor_wants_this": "This is the sort of role David Thewlis had in *Naked* — a character whose charm curdles into something deeply unsettling. Actors who like playing civilized menace with a hard edge will chase it."
+        "demographics": "Male · 40s",
+        "hook": "Ionos presents as the family fixer and turns out to be one of the story’s ugliest betrayals. He is the kind of man who hides predation behind respectability, which makes his scenes land with real disgust.",
+        "why_actor_wants_this": "This is the dark, socially poisonous territory of Ralph Fiennes in *The Grand Budapest Hotel* or David Thewlis in *Naked* — a role where charm curdles into menace. Actors who like playing civilized monsters will be interested.",
+        "source": "script"
       },
       {
         "name": "KARIN",
         "role_type": "Supporting",
-        "demographics": "Male · 30s/40s · regional tax collector, official enforcer",
-        "hook": "Karin is the face of state violence in Primis, a bureaucrat who uses tax law as a weapon and hides predation inside procedure. He is less mythic than Kami, but that makes him feel more immediate and hateful.",
-        "why_actor_wants_this": "This is the kind of role Tom Wilkinson had in *Michael Clayton* — a man whose institutional authority makes his cruelty feel especially corrosive. Actors who can play polished menace with administrative calm will want it."
+        "demographics": "Male · 30s",
+        "hook": "Karin is the tax collector turned local tyrant, the man whose authority is built on humiliation and public violence. He is the face of the system that destroyed Xander’s family, and he carries that cruelty with bureaucratic ease.",
+        "why_actor_wants_this": "This is the kind of role Ben Mendelsohn or Tobias Menzies can make unforgettable — a petty official whose authority is all poison and no nobility. Actors who enjoy playing institutional villains with a personal edge will chase it.",
+        "source": "script"
+      },
+      {
+        "name": "MESSINA",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Messina is the swaggering mercenary predator whose violence is casual, sexualized, and humiliating. He is the first major embodiment of the world Xander is trying to burn down, and he makes the threat feel immediate.",
+        "why_actor_wants_this": "This is the kind of role Walton Goggins or Boyd Holbrook can make electric — a charming brute who turns menace into performance. Actors who like playing a villain with style and physicality will want the part.",
+        "source": "script"
+      },
+      {
+        "name": "TEIBA",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Teiba is Xander’s father in the afterlife, a warrior presence that confirms the family myth Xander has been carrying. He is brief but emotionally load-bearing, giving the story a spiritual inheritance rather than just a revenge motive.",
+        "why_actor_wants_this": "This is the brief but resonant father-figure territory of Liam Neeson in *The Grey* or Brian Cox in *Succession* — a role that lands because it carries authority in a few scenes. Established actors who want a mythic, emotionally efficient appearance will like it.",
+        "source": "script"
+      },
+      {
+        "name": "EPHEME",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Epheme is the mother whose execution becomes the wound that shapes the entire story. She appears in memory and death, but her presence is the emotional origin of Xander’s code and rage.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the tragic authority of Frances McDormand in *Three Billboards* or Nicole Kidman in *Lion* — a character whose absence drives the whole movie. Actors who want a brief but defining dramatic imprint will be drawn to it.",
+        "source": "script"
+      },
+      {
+        "name": "KYRA",
+        "role_type": "Supporting",
+        "demographics": "Female · early teens",
+        "hook": "Kyra is Xander’s older sister and first protector, the child who has to become the adult too early. She is tough, impatient, and loving, which makes her loss feel like the loss of the family’s last shield.",
+        "why_actor_wants_this": "This is the kind of emotionally central child role that gave Saoirse Ronan in *Atonement* or Abigail Breslin in *Little Miss Sunshine* a memorable early showcase — a young character who has to carry adult weight. Young performers with strong dramatic instincts would stand out here.",
+        "source": "script"
       },
       {
         "name": "VELMA",
         "role_type": "Supporting",
-        "demographics": "Female · 40s/50s · household servant, battered, loyal",
-        "hook": "Velma is one of the story’s quiet moral witnesses, a woman who has endured long enough to recognize danger before anyone else does. Her loyalty to Xander’s family gives the Primis material a human cost beyond the revenge plot.",
-        "why_actor_wants_this": "This is the kind of supporting role Octavia Spencer can make unforgettable in a handful of scenes — a person whose pain and dignity register instantly. Strong character actresses will see the emotional value in it."
-      },
-      {
-        "name": "ELENA",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s/50s · Xander’s aunt",
-        "hook": "Elena is a practical family anchor in Thebes, mentioned as the place the children were meant to run toward. She functions as a connective tissue character, the promise of safety that never quite arrives on time.",
-        "why_actor_wants_this": "This is the kind of role that gives an experienced actress a clean, grounded scene of family history and consequence, similar to the aunt/guardian energy in *Moonlight*. It suits performers who can make one or two scenes feel like a whole life."
+        "demographics": "Female · 40s to 50s",
+        "hook": "Velma is the battered household worker whose quiet endurance reveals how deep the abuse runs in Primis. She is soft-spoken, observant, and heartbreaking because she has learned to survive by shrinking herself.",
+        "why_actor_wants_this": "This is the kind of role that can land with the quiet force of Octavia Spencer in *The Help* or Kathy Bates in *Misery* — a character whose stillness carries a whole history of harm. Experienced character actresses will respond to the emotional truth in it.",
+        "source": "script"
       },
       {
         "name": "GABRIELLE",
         "role_type": "Supporting",
-        "demographics": "Female · 30s · Amazon queen, warrior presence",
-        "hook": "Gabrielle arrives late but lands like a mythic reward: regal, grateful, and battle-tested. She broadens the world beyond Thebes and confirms that Xander’s actions have a reputation larger than the city itself.",
-        "why_actor_wants_this": "This is the kind of entrance role that gives an actor the authority of Lupita Nyong’o in *Black Panther* — brief, elegant, and instantly memorable. Performers who want a high-impact warrior cameo with dignity will be interested."
-      },
-      {
-        "name": "HADES",
-        "role_type": "Supporting",
-        "demographics": "Male-presenting deity · ageless",
-        "hook": "Hades is the story’s mythic conscience and temptation, appearing as both guide and recruiter. He gives Xander’s revenge a cosmic frame, making the assassin feel chosen rather than merely damaged.",
-        "why_actor_wants_this": "This is the kind of role Ian McKellen had in *The Lord of the Rings* — a voice of authority that can make the whole story feel larger than life. A performer with gravitas and vocal command would relish it."
-      },
-      {
-        "name": "CHARON",
-        "role_type": "Supporting",
-        "demographics": "Male-presenting deity/figure · ageless",
-        "hook": "Charon is a brief but vivid underworld presence, a gatekeeper who reinforces the story’s death-obsessed worldview. He is less a character than a ritual image, which makes him memorable in a mythic feature.",
-        "why_actor_wants_this": "This is the kind of cameo that gives a performer the eerie stillness of Doug Jones in creature work — a role defined by presence more than dialogue. Character actors with a taste for iconography will like it."
+        "demographics": "Female · 30s",
+        "hook": "Gabrielle arrives late but lands as a regal, capable outsider with her own mission and code. She expands the world beyond Thebes and gives the ending a sense of larger mythic consequence.",
+        "why_actor_wants_this": "This is the kind of late-entry authority role that lets an actress do the cool, composed work of Lupita Nyong’o in *Black Panther* or Jodie Turner-Smith in *Queen & Slim* — a brief but memorable burst of command. Actors who want a strong, elegant entrance will like it.",
+        "source": "script"
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage adult revenge with mythic texture and physical intimacy.",
-        "fit_profile": "Second- or third-feature directors with a festival or genre-drama background, especially those who already work in period, crime, or elevated pulp. This material rewards a filmmaker who likes performance-forward action, sensual atmosphere, and clean visual world-building over VFX-heavy spectacle.",
-        "detail": "The script gives a director room to choreograph sword fights, underworld imagery, and erotic tension without losing the emotional spine. It is especially attractive to filmmakers who can make contained period spaces feel larger than the budget and who know how to keep a lead performance at the center of genre material."
+        "hook": "A director who wants to stage intimate brutality inside a mythic period world.",
+        "fit_profile": "Established indie or genre-feature directors with at least one or two completed features, especially those whose work leans on performance, atmosphere, and clean action geography. This material rewards directors who can make a temple, a magistrate’s office, and a road feel like a single corrupt ecosystem while keeping the emotional line on Xander readable.",
+        "detail": "The movie gives a director a chance to balance swordplay, erotic tension, and moral outrage without needing a giant VFX canvas. It will appeal to filmmakers who like contained period worlds, strong central performances, and violence that feels character-driven rather than ornamental."
       },
       "buyer_appeal": {
         "tier": "$5-15M feature",
-        "lane": "Streaming genre feature / premium cable-adjacent adult action",
-        "detail": "It can be packaged around one strong male lead and one strong female lead, with the rest of the cast built from character actors rather than expensive names. The ancient-world revenge lane travels well internationally, and the contained period footprint plus one boat-fire climax keeps it in a manageable production band."
+        "lane": "Streaming genre feature / premium cable historical thriller lane",
+        "detail": "The project is lead-driven and can be packaged around one strong male role plus a strong female counterweight, which helps a buyer lean on performance rather than ensemble star power. The contained period footprint, practical action, and mythic branding give it export value in the revenge-thriller lane while keeping the budget below tentpole scale."
       }
     },
     "considerations": [
       {
-        "area": "The opening can arrive faster.",
-        "detail": "The rooftop grief scene is a strong mood-setter, and the script already has the revenge engine in place by the Messina kill. A next pass could consider compressing some of the early childhood backstory so the audience reaches Xander’s present-day objective a little sooner while preserving the emotional wound.",
+        "area": "The opening spends time in memory before the engine fully turns.",
+        "detail": "The childhood material does important emotional work, and the version of the opening where Xander’s present-day mission lands a little earlier could sharpen the immediate propulsion without losing the tragedy. One lever would be to let the first assassination objective arrive sooner, then braid the backstory through the pursuit.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The middle repeats capture-and-release beats.",
-        "detail": "The prison escape, the temple recovery, the road trip, and the Giannis confrontation all keep the story moving, but several turns use a similar rhythm of concealment, discovery, and rescue. One direction would be to let one of those sequences carry a bigger irreversible choice so the escalation feels even more distinct from beat to beat.",
+        "area": "The middle repeats the same reveal pattern.",
+        "detail": "Several scenes follow the same rhythm of Xander confesses, Helaine reacts, then a new authority figure raises the stakes. A next pass could vary that pattern by letting one of the supporting characters drive a scene with an independent objective, which would deepen the ensemble and keep the momentum from feeling episodic.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The corruption web could be clarified earlier.",
-        "detail": "Kami, Giannis, Messina, Karin, and Ionos all connect into the same rot, and the reveal is satisfying once it lands. The version of the script where one or two of those links are seeded a little earlier would make the conspiracy feel even more inevitable and give the final Primis turn extra charge.",
+        "area": "The city footprint is broader than it needs to be.",
+        "detail": "The story moves through the temple, the Crown, the magistrate’s office, the jailhouse, Giannis’ office, the docks, Primis, multiple roads, and several memory locations. The version of the script where one or two of those spaces are combined — especially the administrative interiors — would protect the scale while simplifying the shoot.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The violence and sexual content set a hard lane.",
+        "detail": "Executions, rape, nudity, torture-adjacent imagery, and repeated throat-cutting place the movie firmly in mature territory. That is a clear brand choice, but it also means the best buyers are the ones already comfortable with explicit historical crime material.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The afterlife scenes are a tonal signature.",
+        "detail": "Hades, Charon, and the dream-world visits give the script a mythic overlay that distinguishes it from a purely grounded revenge thriller. A next pass could decide how much of that supernatural language is essential to the feature’s identity so the tone stays unified from start to finish.",
         "is_primary_lever": false,
         "source": "script"
-      },
-      {
-        "area": "The boat finale is a strong production anchor.",
-        "detail": "The burning-ship rescue gives the script a clear climax and a contained set-piece that can carry the marketing image. If the production team wants to protect budget, this is the sequence to preserve as the big practical spectacle while keeping the rest of the action grounded and location-efficient.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The explicit content narrows the lane.",
-        "detail": "The script includes graphic violence, nudity, prostitution, rape, and coercive sex, which places it firmly in mature territory. That is workable for the right buyer, but it means the packaging should target adult genre homes rather than broad theatrical family-facing lanes.",
-        "is_primary_lever": false,
-        "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 63,
+  "weightedScore": 65,
   "tier": "Optionable",
-  "inputTokens": 52490,
-  "outputTokens": 5513,
-  "cost": 0.064176,
+  "inputTokens": 104980,
+  "outputTokens": 10844,
+  "cost": 0.127533,
   "declaredFormat": "Feature film"
 }

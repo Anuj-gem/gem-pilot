@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:23:15.738Z",
+  "submission_id": "09ad9ba8-5823-4a9a-b55f-c572b540e431",
+  "eval_id": "0596f6db-801c-4a8f-a4f4-72e8296c2321",
+  "title": "Clout   4.15   II",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "WALKER JONES",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · athletic fighter build"
+    },
+    {
+      "name": "RANDALL WORTHINGTON",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "JAMES ANTHONY",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "LOGAN JACKSON",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "AMANDA BAKER",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "COACH RIGGS",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "MALAKAI CALLISTER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "ASH YANKER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    }
+  ],
+  "positioning_hook": "A frustrated MMA fighter and his internet-savvy roommates turn a celebrity’s art stunt into a cross-country flag heist, chasing fame, cash, and a real fight.",
+  "cost_usd": 0.045408750000000005,
+  "input_tokens": 32495,
+  "output_tokens": 4675,
+  "status": "wrote:leads_ok"
+}

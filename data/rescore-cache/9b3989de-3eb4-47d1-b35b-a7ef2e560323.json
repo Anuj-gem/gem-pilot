@@ -2,54 +2,54 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural horror",
+      "genre_primary": "Supernatural thriller",
       "genre_tags": [
-        "psychological thriller",
+        "psychological horror",
         "mystery"
       ],
-      "tone": "Grounded, eerie, melancholic, escalating"
+      "tone": "Moody, eerie, intimate, and increasingly paranoid"
     },
-    "positioning_hook": "A sleep-deprived boarding-school student uncovers a dorm room that erases students from memory every eleven years — and learns the only way to save his friend may be to vanish himself.",
+    "positioning_hook": "A sleep-deprived dorm student discovers a locked room erases the forgotten, and must choose whether to save his friend or vanish into the same curse.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is easy to sell in one sentence and sits in a proven horror-thriller lane with a clean emotional spine: save the friend, survive the room, keep your name. The boarding-school setting and the 1:11 motif give it a recognizable hook that can travel well with genre audiences."
+        "reasoning": "The premise is easy to sell in one sentence and sits in a proven horror-thriller lane with a strong hook around memory, disappearance, and a cursed room. The appeal is strongest for genre audiences and streamers looking for a contained, high-concept scare with emotional stakes."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The script establishes the engine quickly: a dorm, a missing student, a repeating 11-year pattern, and a room that seems to take names. The notebook, yearbook pattern, and James Walker reveal all sharpen the central mystery into something a casual viewer can track."
+        "reasoning": "The hook lands early: Room 111, the 1:11 clock motif, the missing students, and the notebook all point to a clear supernatural engine. The script keeps the mystery legible while steadily widening the rules, especially once James Walker explains the eleven-year pattern."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Ryan has a usable internal contradiction — he wants to matter but behaves like someone already half-erased — and James Walker gives the story a memorable antagonist voice. Rhea adds emotional texture, though the script mostly uses her as the human counterweight to Ryan’s investigation rather than giving her a fully separate engine."
+        "reasoning": "Ryan has a usable inner engine — a boy who feels invisible and is forced to confront that feeling literally — and Rhea gives the story a second emotional anchor. The characters are effective for the premise, though the script is still leaning more on concept and atmosphere than on sharply individualized behavior."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The idea of a room feeding on social disappearance, not just physical death, gives the horror a fresh psychological angle. The 1:11 clock, the eleven-year cycle, and the notebook/yearbook mechanics make the mythology feel authored rather than generic."
+        "reasoning": "The dorm-school setting, the attendance motif, and the idea of being erased through social invisibility give the material a distinct angle. The script’s boldest move is turning adolescent alienation into a supernatural mechanism, which gives the horror a specific emotional logic."
       },
       "narrative_momentum_engagement": {
-        "score": 6,
-        "reasoning": "The mystery keeps turning over with new clues, and the final confrontation in Room 111 delivers a clear payoff. The middle section spends a fair amount of time in observational dorm-life passages and repeated hallway beats, which gives the script atmosphere more than forward pressure."
+        "score": 7,
+        "reasoning": "The investigation into Zach’s disappearance, the yearbook pattern, and the Room 111 confrontation create a steady pull forward. The script is most propulsive once Ryan and Rhea start connecting the dates to the notebook, and the final room sequence pays off the setup with real escalation."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The script lands on a strong, inevitable-feeling idea: students don’t just disappear, they get socially edited out of existence. That combination of supernatural horror and adolescent invisibility feels immediately legible and emotionally specific."
+        "reasoning": "The central idea feels fresh because it fuses a haunted-room mystery with the social experience of being overlooked. The line between supernatural erasure and emotional invisibility is the script’s most memorable invention, and it gives the ending a clean thematic snap."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The dorm-school environment has useful rules — roll call, curfew, sign-out desks, mailboxes, yearbooks — and those details help the mystery feel lived-in. The world is still primarily a container for the central haunting rather than a fully layered institutional ecosystem."
+        "reasoning": "The dorm, roll-call desk, hallways, curfew rules, and school routines create a specific enclosed ecosystem that supports the story well. The world is vivid enough to carry the premise, though it remains primarily a pressure-cooker container rather than a deeply layered social system."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone blends quiet teen alienation, procedural clue-hunting, and ghost-story dread in a way that feels coherent. The voiceover about sleep deprivation and social invisibility gives the script a reflective, haunted quality that distinguishes it from a standard haunted-house setup."
+        "reasoning": "The tone is consistently hushed, uncanny, and adolescent in a way that suits the material, with voiceover used to build a reflective, haunted mood. The script has a recognizable blend of teen routine and supernatural dread that would be identifiable from a scene or two."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the horror engine is a clear thematic layer about being unseen, performing normalcy, and the emotional cost of disappearing into routine. The ending, with Rhea’s note and the final Room 111 selection, suggests the mythology can keep opening outward."
+        "reasoning": "Beneath the mystery is a clear emotional thesis about being seen, named, and remembered, and that gives the story more staying power than a standard haunted-dorm setup. James’s monologue about names disappearing and Ryan’s final admission that he cared if he vanished both point to a deeper psychological layer."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "Ryan and Rhea carry the emotional center, and James gives the story a strong opposing force, but most other characters function as gatekeepers or witnesses. The script has enough relationship energy for the feature, though it is not built as a broad ensemble engine."
+        "score": 6,
+        "reasoning": "Ryan/Rhea is the strongest relationship engine, and Jeff, Mrs. Wesman, and James each add useful pressure points. The ensemble supports the story well, but the script is still primarily driven by Ryan’s perspective rather than by a web of equally active relationships."
       }
     },
     "production_reality": {
@@ -60,8 +60,9 @@
         "child_actors": false,
         "casting_characteristics": [
           "Teen/young adult ensemble",
-          "One principal male antagonist with a strong physical silhouette",
-          "Boarding-school age specificity"
+          "One principal male antagonist/guide role",
+          "One principal female co-lead",
+          "School staff supporting roles"
         ]
       },
       "locations": {
@@ -70,158 +71,207 @@
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
           "Dormitory hallways and rooms",
-          "School classroom",
+          "Classroom",
           "Dorm office",
-          "Bathroom",
           "Café",
-          "Art museum",
-          "Library",
-          "Exterior dorm establishing shots"
+          "Art museum restroom",
+          "School exterior/quad",
+          "Library/basement epilogue"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly practical atmosphere with selective shadow/mirror effects, flickering lights, and a final selection/title-card style visual beat.",
+        "vfx_details": "Primarily atmospheric effects: shadow movement, flickering lights, darkness transitions, and a few stylized hallway/dorm visual beats.",
         "stunts_level": "minor",
-        "sfx_needs": "Door movement, light flicker, blood-smeared key, practical darkness and sound design-driven scares.",
+        "sfx_needs": "Practical blood on key, dragging body illusion, light flicker effects, door movement, notebook burn effect.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Streaming or theatrical genre lane",
+        "recommended_lane": "Streaming or festival-to-platform supernatural thriller lane",
         "content_level": "PG-13 equivalent to mature",
-        "series_engine_or_release_model": "Feature release model; best positioned as a festival-to-platform or genre-platform title."
+        "series_engine_or_release_model": "Feature release model; contained mystery-horror with a clean hook for genre audiences and platform discovery."
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary, mostly contained to dorm interiors and school spaces, with minor effects and no large-scale set pieces."
+          "note": "The story is largely contained to dorm interiors, classrooms, and a few nearby public spaces, with only light atmospheric effects."
         },
         "cast": {
-          "level": "low",
-          "note": "A small teen/young adult cast centered on Ryan, Rhea, and James keeps the casting footprint manageable."
+          "level": "medium",
+          "note": "The core cast is small, but the teen ensemble and school staff roles require age-specific casting and a strong central Ryan/Rhea/James triangle."
         },
         "location": {
           "level": "low",
-          "note": "The story lives in a compact set of recurring locations: dorm hallways, rooms, office, classroom, and a few nearby public spaces."
+          "note": "Most scenes live in a dorm corridor, rooms, office, and classroom spaces, with no international or large-scale set demands."
         },
         "content": {
           "level": "medium",
-          "note": "The horror is driven by dread, disappearance, and a few bloody details, with language and psychological pressure rather than explicit gore."
+          "note": "The material leans into dread, disappearance, implied death, and psychological distress, which shapes the platform lane but stays within mainstream thriller bounds."
         },
         "rights": {
           "level": "low",
-          "note": "No named music, brands, or real-person references appear to drive the story."
+          "note": "No named music, brands, or real-person references appear to drive clearance needs."
         }
       }
     },
     "whats_special": {
-      "strengths": [],
-      "headline": "ROOM 111 has a clean, marketable horror engine: a boarding-school dorm room that erases students from existence unless someone is willing to take their place. The script pairs that concept with a strong emotional undercurrent about loneliness, social invisibility, and the terror of realizing you’ve already started disappearing."
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns invisibility into horror.",
+          "what_it_means": "That gives the movie a clean commercial engine: a supernatural thriller with a built-in emotional thesis about being overlooked, which is easy to market and easy to remember. Genre buyers and actors looking for elevated horror with a human wound at the center will respond to that combination.",
+          "evidence": "James’s rule that people stop noticing you before you disappear, plus Ryan’s voiceover about feeling half-asleep, half-present, and the final reveal that the room selects students who already feel erased.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dorm setting is a pressure cooker.",
+          "what_it_means": "The contained school-residential environment keeps the footprint producible while giving the story a built-in surveillance culture, curfew rules, and social isolation that generate tension for free. Producers looking for a contained thriller with a clear visual identity and manageable scope will see the upside immediately.",
+          "evidence": "Roll call desks, leave requests, locked doors, hallway patrols, and the repeated movement between dorm room, office, classroom, and hallway.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "James Walker is a memorable antagonist-guide.",
+          "what_it_means": "He gives the film a scene-stealing role that can play menace, wit, and tragic resignation in the same performance, which is exactly the kind of part that attracts name actors in genre. Buyers and casting directors will see a showcase for someone who can hold the room with stillness and then turn dangerous.",
+          "evidence": "His trench coat, red tie, watch at 1:11, the “I’m not killing anyone, I’m just not saving them” speech, and the final confrontation over the notebook.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mystery unfolds with a clean rule set.",
+          "what_it_means": "The eleven-year pattern, the notebook, the yearbooks, and the transfer records create a puzzle box that is easy to follow and satisfying to unravel, which helps both audience retention and trailer construction. This is the kind of structure that gives a buyer confidence the movie can deliver both scares and a coherent payoff.",
+          "evidence": "The dates in the notebook, the missing names in yearbooks, the 2014 case, and the final reveal of the replacement name in Room 111.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ryan and Rhea give the story an emotional spine.",
+          "what_it_means": "Their relationship broadens the movie beyond pure mystery into a teen emotional drama, which makes the ending land harder and gives the project a wider audience entry point. Young leads, YA-leaning genre buyers, and directors who like intimacy inside genre will all see the value in that pairing.",
+          "evidence": "Their café conversation, the note Rhea leaves in Ryan’s bag, the photo frame in her room, and the final goodbye that lands as both romantic and haunting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The voiceover gives the film a reflective identity.",
+          "what_it_means": "Ryan’s narration adds a literary, inward-facing layer that can distinguish the movie from more generic haunted-school fare and help the audience live inside his isolation. That kind of first-person texture is attractive to directors who want mood and subjectivity, not just plot mechanics.",
+          "evidence": "The repeated voiceover passages about sleep deprivation, being half-present, and practicing absence.",
+          "source": "script"
+        }
+      ],
+      "headline": "ROOM 111 has a clean, marketable horror engine and a strong emotional thesis: a dorm student discovers that being forgotten is not a metaphor, it’s the curse. The contained setting, the eleven-year mystery pattern, and the James Walker role give the project real buyer and casting appeal, while Ryan and Rhea keep it human enough to travel beyond pure genre."
     },
     "lead_characters": [
       {
         "name": "Ryan",
         "role_type": "Lead",
         "demographics": "Male · late teens",
-        "hook": "Ryan is a sleep-deprived boarding-school kid who moves through life like he’s already half out of frame. He’s observant, emotionally guarded, and quietly aching to matter, which makes him both the story’s investigator and its most vulnerable target.",
-        "why_actor_wants_this": "This is the showcase territory of Justice Smith in *The Get Down* or Jaeden Martell in *It* — a young lead whose stillness, anxiety, and buried feeling become the engine of the performance. Actors will want the chance to play a character who starts as an internalized observer and ends up carrying a full emotional breakdown, survival drive, and moral choice in one role."
+        "hook": "Ryan is a sleep-starved dorm student who moves through school like he’s already half gone, masking loneliness with routine and dry humor until the room’s curse forces him to confront how invisible he’s become. He’s observant, emotionally guarded, and quietly desperate to matter, which makes him both a believable teen and a strong horror protagonist.",
+        "why_actor_wants_this": "This is the showcase territory of Justice Smith in *The Get Down* or Kelvin Harrison Jr. in *Waves* — a young lead who has to carry interiority, panic, tenderness, and dawning self-recognition in the same role. Actors who want a performance that starts as contained and ends as emotionally exposed will chase this because the movie lives or dies on the lead’s ability to make invisibility feel personal."
       },
       {
         "name": "Rhea",
         "role_type": "Lead",
         "demographics": "Female · late teens",
-        "hook": "Rhea is the emotionally intuitive counterpoint to Ryan: present enough to notice what’s wrong, but drifting enough to recognize herself in the story’s theme of being overlooked. She has warmth, guardedness, and a lived-in sadness that gives the movie its human pulse.",
-        "why_actor_wants_this": "This is the showcase space of Auliʻi Cravalho in *The Power* or Rachel Zegler in *West Side Story* — a role that lets an actor carry tenderness, romantic tension, and a dawning sense of dread without losing naturalism. Young actresses looking for a part that can play intimacy, fear, and emotional recognition in the same frame will chase this."
+        "hook": "Rhea is the kind of girl who looks composed until you realize she’s been quietly drifting too, carrying her own private grief while trying to stay useful to everyone around her. She has warmth, restraint, and a buried sadness that makes her feel like more than the love interest — she’s the story’s second emotional frequency.",
+        "why_actor_wants_this": "This is the emotional territory of Hailee Steinfeld in *The Edge of Seventeen* or Auliʻi Cravalho in *The Little Mermaid*’s quieter dramatic beats — a role that lets an actor play intelligence, vulnerability, and the ache of not saying the thing that matters. Young actresses looking for a grounded genre role with real feeling and a final-note sting will see this as a strong showcase."
       },
       {
         "name": "James Walker",
         "role_type": "Lead",
-        "demographics": "Male · 30s playing 17",
-        "hook": "James Walker is the room’s resident ghost with a human face: elegant, controlled, and unnervingly calm, with a predator’s patience and a philosopher’s language. He feels like someone who has spent years turning isolation into doctrine.",
-        "why_actor_wants_this": "This is the kind of late-reveal villain role that gave Ralph Fiennes in *The Menu* or Matthew McConaughey in *True Detective* their scene-commanding showcase space — a character whose intelligence and menace arrive together. Character actors and prestige genre leads will want the monologue territory, the age-defying mystery, and the chance to make the antagonist feel seductive before he turns terrifying."
+        "demographics": "Male · appears 17, actually 30",
+        "hook": "James is a trapped, unnervingly calm figure who reads like a campus ghost story until his bitterness reveals a man who has spent years learning how to weaponize resignation. He’s charismatic, cruel, funny, and wounded, with the kind of stillness that makes every line feel like a threat or a confession.",
+        "why_actor_wants_this": "This is the showcase space of Matthew McConaughey in *True Detective* or Michael Shannon in *Take Shelter* — a role where the actor’s control, menace, and philosophical monologues are the engine. Mid-career dramatic leads and prestige-leaning genre actors will chase it because James gets the best speeches and the most volatile emotional turns in the script."
+      },
+      {
+        "name": "Zach",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Zach is the absent center of the mystery: a dorm kid whose presence is felt through the notebook, the room, and Ryan’s memory more than through direct action. Even with limited screen time, he functions as the emotional proof that the curse is personal, not abstract.",
+        "why_actor_wants_this": "This is the kind of haunting supporting part that resembles the missing-presence roles in *The Sixth Sense* or *Aftersun* — a character whose absence is the performance. Actors who like playing memory, aftermath, and emotional residue would be drawn to it if expanded slightly in production or flashback framing."
       },
       {
         "name": "Mrs. Wesman",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-60s",
-        "hook": "Mrs. Wesman is the office authority who keeps the dorm machine running while never quite seeing how strange it has become. She reads as practical, distracted, and institutionally trained to smooth over anything that threatens routine.",
-        "why_actor_wants_this": "This is the kind of grounded authority role that gives an actor the same functional texture as Frances McDormand in *Fargo* or Patricia Clarkson in *Sharp Objects* — a seemingly ordinary adult whose calm becomes ominous by proximity. Experienced character actors will like the chance to play institutional denial with just enough warmth to keep the audience unsure."
-      },
-      {
-        "name": "Mr. Brusco",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-60s",
-        "hook": "Mr. Brusco is the dorm enforcer who floats between joke, warning, and gatekeeper. He has the kind of casual authority that makes him feel harmless right up until the room starts bending around him.",
-        "why_actor_wants_this": "This is the sort of supporting authority part that lets an actor do the dry, unsettling utility work seen in *The Leftovers* or *The OA* — a character who can land exposition while still feeling like part of the mystery. Character actors who specialize in ambiguous institutional figures will be drawn to it."
-      },
-      {
-        "name": "Ms. Henzy",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "Ms. Henzy is the softer adult presence in the school, the one who makes the place feel normal until the normality itself starts to feel haunted. She’s lightly comic, lightly maternal, and useful as a reminder that the system keeps moving even when people vanish.",
-        "why_actor_wants_this": "This is the kind of small but memorable role that gives an actor the same lived-in utility as a teacher or counselor in *Eighth Grade* or *The Holdovers* — a part that can ground the world with a few precise beats. Supporting players who like to make a room feel real with minimal screen time will be interested."
+        "demographics": "Female · 40s-50s",
+        "hook": "Mrs. Wesman is the administrative face of the dorm system: practical, busy, and just warm enough to feel real, which makes her casual authority unsettling in a story about people slipping through institutional cracks. She embodies the normal world that keeps moving while something impossible is happening under it.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that character actresses enjoy in films like *The Holdovers* or *The Banshees of Inisherin* — a part built on timing, small reactions, and the ability to make bureaucracy feel human. Experienced supporting players who can turn a few scenes into texture will be attracted to it."
       },
       {
         "name": "Jeff",
         "role_type": "Supporting",
         "demographics": "Male · late teens",
-        "hook": "Jeff is the comic-pressure valve of the dorm, the guy who keeps showing up at the edge of the mystery with snacks, bad timing, and casual social noise. He makes the school feel populated, which is exactly why his presence matters.",
-        "why_actor_wants_this": "This is the kind of scene-stealing teen supporting role that works like the friend parts in *Booksmart* or *The Breakfast Club* — a character who can bring levity while still living inside the same haunted social ecosystem. Young actors who want a memorable supporting turn with personality and rhythm will gravitate toward it."
+        "hook": "Jeff is the comic-pressure valve of the dorm, the guy who can walk into a scene with hot Cheetos and a half-serious question and make the world feel lived-in. He gives the film social texture and helps normalize the environment before the horror reasserts itself.",
+        "why_actor_wants_this": "This is the kind of scene-stealing teen supporting role that works in the lane of *Booksmart*’s side characters or *Superbad*’s friend-group energy — a part built on rhythm, attitude, and easy chemistry. Young actors with comedic instincts will want it because it can pop without carrying the whole movie."
       },
       {
-        "name": "Roommate",
+        "name": "Rhea’s Roommate",
         "role_type": "Supporting",
         "demographics": "Female · late teens",
-        "hook": "Rhea’s roommate is a quiet witness with just enough perspective to sharpen Rhea’s emotional state. She functions like the script’s private mirror, catching what Rhea won’t say out loud.",
-        "why_actor_wants_this": "This is the kind of intimate supporting role that gives an actor the same conversational, revealing space as the roommate/friend parts in *Lady Bird* or *Euphoria* — a scene partner who can land emotional truth without needing a large arc. Actors who excel at naturalistic dialogue and subtle reaction work will see the value immediately."
+        "hook": "Rhea’s roommate is a quiet witness who gives the story a second perspective on drifting, loneliness, and the way people hide emotional distance behind routine. She’s not there to drive plot; she’s there to make Rhea’s inner life legible in a single room.",
+        "why_actor_wants_this": "This is the kind of intimate supporting role that recalls the roommate/friend scenes in *Lady Bird* or *Eighth Grade* — a performance built on listening, small observations, and emotional precision. Emerging actors who excel at naturalism will see it as a clean showcase for subtle work."
+      },
+      {
+        "name": "Ms. Henzy",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Ms. Henzy is part teacher, part institutional background hum, the adult who keeps the school moving while the students quietly disappear into themselves. She helps sell the normality of the world, which makes the supernatural intrusion feel sharper.",
+        "why_actor_wants_this": "This is the kind of grounded educator role that character actors can make memorable in the mold of *Freaks and Geeks* or *Abbott Elementary*’s more restrained dramatic turns. It offers a performer a few clean beats of authority and concern without needing to dominate the frame."
+      },
+      {
+        "name": "Mr. Brusco",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Mr. Brusco is the dorm’s casual gatekeeper, the kind of adult who jokes through the rules and makes the institution feel both safe and vaguely complicit. He adds a layer of everyday normalcy that the horror can quietly corrupt.",
+        "why_actor_wants_this": "This is the sort of supporting authority role that character actors use to anchor genre films, similar to the school-adult texture in *It Follows* or *The Faculty*. It gives a performer a few memorable exchanges and a chance to make the system feel real."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make dread out of routine.",
-        "fit_profile": "First- or second-feature directors with a strong short-film reel in psychological horror, elevated thriller, or contained genre drama. This material rewards precision, atmosphere, and performance-forward tension more than spectacle, so it fits filmmakers who already think in terms of hallway geometry, sound design, and emotional unease.",
-        "detail": "The movie gives a director a contained playground where lighting, blocking, and silence can do as much work as the mythology. It will appeal to directors who like genre stories that stay intimate while still landing a clean, high-concept payoff."
+        "hook": "A director who wants to make dread out of routine and loneliness out of architecture.",
+        "fit_profile": "First- or second-feature directors with a strong short-film background in psychological horror, elevated genre, or intimate coming-of-age drama. This material rewards directors who care about blocking, silence, hallway geography, and performance-first suspense more than spectacle.",
+        "detail": "The movie gives a director a clean visual grammar — doors, hallways, mirrors, clocks, and attendance — that can be turned into a signature language. It’s especially attractive to filmmakers who like to build fear from repetition and emotional subjectivity rather than from big set pieces."
       },
       "buyer_appeal": {
-        "tier": "$2-8M feature",
-        "lane": "Streamer horror / festival genre lane",
-        "detail": "The cast can be anchored by three young leads and a handful of adult support roles, so it does not require a heavy-name ensemble to function. The contained dorm-and-school footprint and minor effects package make it a natural fit for buyers looking for a low-to-mid budget horror title with a clean hook and exportable premise."
+        "tier": "$2-5M contained feature",
+        "lane": "Streaming-friendly elevated horror / psychological thriller",
+        "detail": "It can be greenlit off a strong lead, a strong antagonist, and a contained production footprint rather than a heavy effects package. The dorm-school setting and teen mystery hook fit the current buyer appetite for elevated genre that can travel on premise, mood, and a clean trailer concept."
       }
     },
     "considerations": [
       {
-        "area": "The middle leans atmospheric before the mythology locks.",
-        "detail": "The dorm-life passages, hallway repetition, and voiceover sections build mood effectively, and the version of the script where one or two of those beats are folded into the clue trail would keep the mystery charging forward. The strongest lever is to let each observational passage also move the investigation one step, so the atmosphere and the engine arrive together.",
+        "area": "Ryan’s inner turn arrives through voiceover.",
+        "detail": "The voiceover is doing a lot of the emotional lifting, especially in the middle stretch where Ryan’s sense of invisibility is explained rather than dramatized. One lever would be to let a key realization land first in behavior — a missed connection, a choice not to speak, a moment of social erasure — and then let the narration sharpen it after the fact.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Rhea’s final note can carry more setup.",
-        "detail": "The ending lands emotionally because it reframes her as someone who has been disappearing in plain sight, and a next pass could seed that emotional state earlier in her scenes with Ryan. That would make the final note feel less like a reveal and more like the inevitable emotional destination of the relationship.",
+        "area": "The middle investigation can tighten around one spine.",
+        "detail": "The yearbooks, transfer records, notebook pages, and dorm-office beats all serve the mystery, but they currently spread the audience’s attention across several discovery paths. A next pass could consider collapsing one of those investigative tracks so each clue lands with more force and the forward drive stays laser-focused on Room 111.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The Room 111 rules are clear, but one clean line could sharpen them.",
-        "detail": "The notebook, the eleven-year cycle, and the name-erasure logic all track, and the version of the confrontation where James states the transfer mechanism in one distilled sentence would make the mythology even easier to carry in marketing and audience memory. This is a small clarity pass, not a structural change.",
+        "area": "The final epilogue opens a second story lane.",
+        "detail": "The years-later library button and the reappearance of Rhea create a strong final chill, but they also shift the movie into a new emotional register right at the end. If the goal is a cleaner feature landing, one direction would be to decide whether that last beat is a haunting tag or the seed of a larger mythology and shape the final image accordingly.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The production footprint stays contained.",
-        "detail": "The script already lives in a practical, shootable lane, so the main simplification lever is protecting the recurring dorm locations and avoiding any expansion beyond the school ecosystem. Keeping the story inside the dorm, classroom, office, café, and library spaces preserves the feature’s atmosphere while protecting budget.",
+        "area": "The cast footprint stays efficiently contained.",
+        "detail": "The script is already built for a modest production lane, with most scenes living in dorm interiors, classrooms, and nearby public spaces. That containment is a commercial advantage, and the main packaging focus should stay on the Ryan/James/Rhea triangle rather than expanding the ensemble.",
         "is_primary_lever": false,
         "source": "production"
+      },
+      {
+        "area": "The hallway and mirror beats are the signature visuals.",
+        "detail": "The flickering lights, silhouette reveals, mirror moments, and dragging-body imagery are the movie’s most memorable visual language. A production-minded next pass could protect those motifs by keeping the rest of the staging simple, so the signature scares stay distinct and don’t get diluted.",
+        "is_primary_lever": false,
+        "source": "both"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 64.7,
+  "weightedScore": 66.7,
   "tier": "Optionable",
   "inputTokens": 20847,
-  "outputTokens": 4137,
-  "cost": 0.03425175,
+  "outputTokens": 4681,
+  "cost": 0.03669975,
   "declaredFormat": "Feature film"
 }
