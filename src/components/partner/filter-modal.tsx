@@ -279,55 +279,49 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
             gap: 12,
           }}
         >
-          {/* Two-line layout that doesn't depend on flex/grid for the
-              text container width. Line 1: checkbox + bold title on one
-              row. Line 2: description as a normal block paragraph, left-
-              indented to align under the title. Avoids the flex-collapse
-              bug where minWidth:0 + flex:1 wasn't expanding the text
-              column on the deployed build. Anuj 2026-04-30. */}
+          {/* Layout: a single inline label "[checkbox] Save as my
+              defaults" rendered as a normal text line via display:block
+              + the checkbox aligned with verticalAlign. Description
+              follows as its own paragraph. No flex container — flex
+              span was rendering the title outside the modal on the
+              deployed build for reasons we couldn't pin down. Plain
+              inline-block layout sidesteps the issue entirely.
+              Anuj 2026-04-30. */}
           <label
             style={{
               display: 'block',
               cursor: 'pointer',
               userSelect: 'none',
+              fontSize: 13.5,
+              fontWeight: 600,
+              color: 'var(--gem-gray-50)',
+              lineHeight: 1.4,
             }}
           >
-            <span
+            <input
+              type="checkbox"
+              checked={saveDefaults}
+              onChange={(e) => setSaveDefaults(e.target.checked)}
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 10,
+                cursor: 'pointer',
+                marginRight: 8,
+                verticalAlign: 'middle',
               }}
-            >
-              <input
-                type="checkbox"
-                checked={saveDefaults}
-                onChange={(e) => setSaveDefaults(e.target.checked)}
-                style={{ cursor: 'pointer', flexShrink: 0 }}
-              />
-              <span
-                style={{
-                  fontSize: 13.5,
-                  fontWeight: 600,
-                  color: 'var(--gem-gray-50)',
-                }}
-              >
-                Save as my defaults
-              </span>
-            </span>
-            <p
-              style={{
-                fontSize: 12,
-                color: 'var(--gem-gray-400)',
-                margin: '6px 0 0 28px',
-                lineHeight: 1.45,
-              }}
-            >
-              Persists Format, Budget, and Genre to your lane so the next
-              session lands on the same view. Other filters stay
-              session-only.
-            </p>
+            />
+            Save as my defaults
           </label>
+          <p
+            style={{
+              fontSize: 12,
+              color: 'var(--gem-gray-400)',
+              margin: '4px 0 0 24px',
+              lineHeight: 1.45,
+            }}
+          >
+            Persists Format, Budget, and Genre to your lane so the next
+            session lands on the same view. Other filters stay
+            session-only.
+          </p>
           {error && (
             <p style={{ fontSize: 12.5, margin: 0, color: 'var(--gem-warning)' }}>
               {error}
