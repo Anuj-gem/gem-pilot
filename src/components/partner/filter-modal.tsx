@@ -2,13 +2,11 @@
 
 // FilterModal — full filter editor for the producer Discover tab.
 //
-// Anuj 2026-04-30: the inline filter bar was too noisy on first paint
-// (especially on mobile — a wall of chips before the producer sees any
-// scripts). The new pattern is a one-line summary above the feed with
-// a "Filter" button that opens this modal. Inside the modal: the full
-// chip list, an Apply button, and a "Save as my defaults" toggle that
-// persists genre / format / budget back to profiles.lane so the next
-// session lands on the same view automatically.
+// Anuj 2026-04-30: rewritten with all layout-critical CSS as inline
+// styles after the Tailwind className-driven version was rendering with
+// broken column widths in the deployed build (text wrapping one word
+// per line on the right side, body axes vanishing). Inline styles
+// can't fall victim to Tailwind compile/scan issues.
 
 import { useEffect, useState } from 'react'
 import { createBrowserClient } from '@supabase/ssr'
@@ -43,11 +41,7 @@ interface Props {
   open: boolean
   onClose: () => void
   options: FilterOptionsByAxis
-  /** Currently-applied filter, used as the modal's initial state. */
   current: FilterState
-  /** Called when the producer hits Apply. The new filter replaces the
-   *  current one; "save as defaults" is handled separately inside the
-   *  modal itself (writes to profiles.lane). */
   onApply: (next: FilterState) => void
 }
 
@@ -75,9 +69,6 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Re-sync draft to the current filter every time the modal opens.
-  // Producer expects "open modal, see what's actually applied" not
-  // "see whatever I had typed last time and bailed on."
   useEffect(() => {
     if (open) {
       setDraft(cloneFilter(current))
@@ -128,93 +119,157 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
       role="dialog"
       aria-modal="true"
       onClick={onClose}
-      className="fixed inset-0 z-[60] bg-black/55 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 60,
+        background: 'rgba(0,0,0,0.55)',
+        backdropFilter: 'blur(4px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+      }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white w-full sm:max-w-lg sm:rounded-2xl rounded-t-2xl shadow-xl flex flex-col"
         style={{
+          background: '#fff',
+          width: '100%',
+          maxWidth: 520,
           maxHeight: '90vh',
-          paddingBottom: 'env(safe-area-inset-bottom)',
+          borderRadius: 16,
+          boxShadow: '0 20px 50px rgba(0,0,0,0.25)',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
         }}
       >
         {/* Header */}
         <div
-          className="flex items-center justify-between px-5 sm:px-6 py-4"
-          style={{ borderBottom: '1px solid var(--gem-gray-800)' }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '16px 24px',
+            borderBottom: '1px solid var(--gem-gray-800)',
+          }}
         >
-          <h2 className="text-[17px] font-bold text-[var(--gem-gray-50)] m-0">
+          <h2
+            style={{
+              fontSize: 17,
+              fontWeight: 700,
+              color: 'var(--gem-gray-50)',
+              margin: 0,
+            }}
+          >
             Filter
           </h2>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close filter"
-            className="-mr-1 w-8 h-8 rounded-full grid place-items-center hover:bg-[var(--gem-gray-900)] text-[var(--gem-gray-500)] transition-colors"
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: 999,
+              display: 'grid',
+              placeItems: 'center',
+              background: 'transparent',
+              border: 0,
+              cursor: 'pointer',
+              color: 'var(--gem-gray-500)',
+            }}
           >
             <X size={18} />
           </button>
         </div>
 
-        {/* Scrollable axis sections */}
-        <div className="overflow-y-auto px-5 sm:px-6 py-4 flex-1">
+        {/* Scrollable body */}
+        <div
+          style={{
+            overflowY: 'auto',
+            padding: '16px 24px',
+            flex: 1,
+            minHeight: 0,
+          }}
+        >
           {AXIS_ORDER.map((axis) => {
             const opts = options[axis]
             if (!opts || opts.length === 0) return null
             const selected = draft[axis]
             return (
-              <div key={axis} className="mb-5">
+              <div key={axis} style={{ marginBottom: 20 }}>
                 <p
-                  className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-2.5"
-                  style={{ color: 'var(--gem-gray-500)' }}
+                  style={{
+                    fontSize: 11,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    fontWeight: 700,
+                    color: 'var(--gem-gray-500)',
+                    margin: '0 0 10px 0',
+                  }}
                 >
                   {AXIS_LABEL[axis]}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {opts.map((opt) => (
-                    <button
-                      key={opt.token}
-                      type="button"
-                      onClick={() => toggle(axis, opt.token)}
-                      className="inline-flex items-baseline gap-1 text-[12.5px] font-semibold transition-colors"
-                      style={{
-                        color: selected.has(opt.token)
-                          ? 'var(--gem-gray-50)'
-                          : 'var(--gem-gray-300)',
-                        background: selected.has(opt.token)
-                          ? 'rgba(124,58,237,0.10)'
-                          : 'var(--gem-gray-900)',
-                        border: selected.has(opt.token)
-                          ? '1px solid rgba(124,58,237,0.30)'
-                          : '1px solid var(--gem-gray-700)',
-                        padding: '5px 11px',
-                        borderRadius: 999,
-                        lineHeight: 1.1,
-                      }}
-                    >
-                      {opt.label}
-                      <span
-                        className="text-[10.5px] tabular-nums"
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 6,
+                  }}
+                >
+                  {opts.map((opt) => {
+                    const isOn = selected.has(opt.token)
+                    return (
+                      <button
+                        key={opt.token}
+                        type="button"
+                        onClick={() => toggle(axis, opt.token)}
                         style={{
-                          color: selected.has(opt.token)
-                            ? 'var(--gem-gray-300)'
-                            : 'var(--gem-gray-500)',
-                          fontWeight: 500,
+                          display: 'inline-flex',
+                          alignItems: 'baseline',
+                          gap: 4,
+                          fontSize: 12.5,
+                          fontWeight: 600,
+                          color: isOn
+                            ? 'var(--gem-gray-50)'
+                            : 'var(--gem-gray-300)',
+                          background: isOn
+                            ? 'rgba(124,58,237,0.10)'
+                            : 'var(--gem-gray-900)',
+                          border: isOn
+                            ? '1px solid rgba(124,58,237,0.30)'
+                            : '1px solid var(--gem-gray-700)',
+                          padding: '5px 11px',
+                          borderRadius: 999,
+                          lineHeight: 1.1,
+                          cursor: 'pointer',
                         }}
                       >
-                        {opt.count}
-                      </span>
-                    </button>
-                  ))}
+                        {opt.label}
+                        <span
+                          style={{
+                            fontSize: 10.5,
+                            fontVariantNumeric: 'tabular-nums',
+                            color: isOn
+                              ? 'var(--gem-gray-300)'
+                              : 'var(--gem-gray-500)',
+                            fontWeight: 500,
+                          }}
+                        >
+                          {opt.count}
+                        </span>
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             )
           })}
         </div>
 
-        {/* Footer — explicit inline styles for the row layouts so the
-            description copy can't fall back to one-word-per-line if a
-            Tailwind class fails to compile on a fresh build. */}
+        {/* Footer */}
         <div
           style={{
             borderTop: '1px solid var(--gem-gray-800)',
@@ -329,10 +384,6 @@ function cloneFilter(src: FilterState): FilterState {
   }
 }
 
-// Persist Format / Budget / Genre back to profiles.lane. The other
-// axes (Production complexity, Cast complexity, Tags) stay session-
-// only — those aren't part of the matching engine's lane predicate
-// and shouldn't bake into the saved preference.
 async function persistLane(draft: FilterState) {
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -346,9 +397,7 @@ async function persistLane(draft: FilterState) {
   const formatToken =
     draft.format.size === 1
       ? Array.from(draft.format)[0]
-      : draft.format.size === 0
-        ? 'both'
-        : 'both' // multi-select on format collapses to "both"
+      : 'both'
   const budgetToken =
     draft.budgetTier.size === 1
       ? Array.from(draft.budgetTier)[0]
