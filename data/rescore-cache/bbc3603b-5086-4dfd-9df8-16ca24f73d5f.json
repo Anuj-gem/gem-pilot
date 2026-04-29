@@ -1,0 +1,320 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Supernatural thriller",
+        "Dark comedy"
+      ],
+      "tone": "Playful, escalating, and gruesome with a heartfelt family-drama core"
+    },
+    "positioning_hook": "A heartbroken Iranian-American teacher discovers his beloved cat is the vessel for an ancient demon hunting his family, forcing him to save his bloodline before the cat reaches full power.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and easy to sell: a cat, a demon, a family under siege, and a lead who has to fight for the people he loves. The hook has broad genre appeal, though the Iranian-Jewish family specificity and the supernatural mechanics make it a sharper genre play than a four-quadrant crowd-pleaser."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script announces its engine early with Ben’s nightmares, Neda’s memory loss, and Cletus’s eerie behavior, then turns that into a clear demon-possession chase. By the time Jillian, Levi, and Theo are killed, the audience understands exactly what the movie is doing and why."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ben is a strong center: tender, anxious, funny, and emotionally cornered by family, love, and self-worth. Holly, Darius, and Neda each add distinct energy, and the family web gives the story emotional traction beyond the monster plot."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The cat-as-demon vessel is a memorable, commercially clean twist, and the script commits to a very specific folklore-and-family texture. The blend of Jewish and Iranian spiritual iconography, domestic comedy, and splatter-horror gives the material a confident point of view."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps escalating through a clean chain of deaths, revelations, and set pieces, with each new family member raising the stakes. The midpoint-to-third-act run is especially propulsive, as the demon’s reach widens and Ben is forced into direct action."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It feels fresh in the way the best genre premises do: immediately understandable, but with a specific cultural and emotional engine underneath it. The family curse, the cat vessel, and the grandmother’s soul trapped in the demon’s orbit all feel both surprising and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has real texture through the Jewish symbols, Iranian family dynamics, occult tools, and the academic debate around demons versus metaphor. The Midge’s Magic shop, the shiva, the cemetery, and the family homes all help the setting feel lived-in rather than generic."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct tonal signature: affectionate family banter, queer and romantic subtext, and outrageous gore all coexist without feeling random. The cat’s deadpan menace and the family’s bickering give the horror a comic, intimate edge that is easy to recognize."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the possession plot is a story about grief, inheritance, identity, and the fear of becoming your parents. Neda’s dementia, Ben’s stalled life, and the family’s buried history give the movie more emotional afterlife than a standard creature feature."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "This is built on a strong web: Ben/Darius, Ben/Holly, Ben/Neda, Ben/Jillian, and the larger Shirazi/Torkan family all generate story. The ensemble keeps producing new friction, and the family dinner/shiva/funeral scenes show that the relationships can carry scenes even without the demon."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Iranian American family members",
+          "African American best friend",
+          "Chinese American nurse",
+          "Caucasian romantic and law-enforcement roles",
+          "Cat performer with VFX augmentation"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with several key exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Apartment, college classroom, diner, doctor’s office, residence interiors, occult shop, cemetery, condo, Death Valley exterior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Demon manifestations, mirror mist, possession visuals, hallucination overlays, Grimalkin transformation, Lilith/vulture ending, and some supernatural environmental effects.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical gore, creature mauling, body horror, blood effects, broken glass, fire, and impact deaths.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Midge’s Magic, Mysticism, & More is a fictional storefront brand used prominently."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror-comedy or mid-budget theatrical genre lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release with strong festival-to-platform or genre-theatrical potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is mostly contained, but the creature work, gore, and multiple supernatural set pieces push it above microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The ensemble is manageable, but the story depends on a specific family network and a strong lead trio around Ben, Holly, and Darius."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script uses a moderate number of distinct interiors plus a few exteriors, including a final Death Valley sequence."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic maulings, dismemberment, self-harm imagery, possession violence, and body horror define the movie’s content profile."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script is built on original characters and original occult mythology, with no obvious real-person or licensed-IP dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The cat is a killer engine.",
+          "what_it_means": "That single image gives the movie an instantly marketable poster, trailer, and title-card promise: a domestic pet becomes the vessel for apocalyptic evil. Horror buyers love a clean, high-recognition hook like this because it sells in one glance and travels well across platforms and territories.",
+          "evidence": "Cletus repeatedly appears in the wrong place at the wrong time, his eyes glow red, and the reveal that he becomes Grimalkin turns the cat into the story’s central threat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family drama is baked into the horror.",
+          "what_it_means": "The demon plot is powered by grief, inheritance, and unresolved family history, which gives the movie emotional weight beyond the kills. Actors and buyers alike respond to horror that can play as a family reckoning, because it broadens the audience without softening the genre.",
+          "evidence": "Neda’s dementia, David’s old nightmares, Mina’s bitterness, Farah’s guilt, and Ben’s stalled life all feed the possession story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ben is a strong, playable lead.",
+          "what_it_means": "Ben’s mix of sweetness, embarrassment, romantic longing, and rising courage gives the movie a clear audience surrogate and a role with range. That is exactly the kind of part that can attract a rising actor looking for a breakout genre lead with emotional credibility.",
+          "evidence": "He’s dumped, displaced, mocked by his family, then forced to become the person who can save them all.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating story.",
+          "what_it_means": "This is not a one-note monster movie; the supporting cast keeps creating fresh pressure, humor, and conflict, which makes the script feel fuller and more castable. That kind of relationship web is attractive to producers because it gives the film multiple scene-stealing roles and more trailer moments.",
+          "evidence": "Darius, Holly, Neda, Farah, Cyra, Esteban, and Kallie all have distinct voices and active scene presence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The occult texture feels specific, not generic.",
+          "what_it_means": "The use of Jewish symbols, Iranian family history, salt, black tourmaline, the demon box, and the debate over demons versus metaphor gives the movie a recognizable identity. Buyers and directors looking for elevated genre material will see a world with enough detail to stand apart from standard possession fare.",
+          "evidence": "The Hamsa, Nazar, mezuzah, Tanakh, shiva, and Midge’s Magic all appear as part of the story’s operating system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It balances comedy with gore.",
+          "what_it_means": "The script can pivot from a joke about a small penis to a savage mauling without losing its voice, which is a valuable tonal lane in the current horror market. That balance is catnip for audiences who want scares with personality and for buyers who want a trailer that can sell laughs and shocks together.",
+          "evidence": "Ben’s awkward banter with Darius, the family insults, and the absurdity of Cletus coexist with brutal deaths and body-horror set pieces.",
+          "source": "script"
+        }
+      ],
+      "headline": "BAD KITTY has a clean, instantly pitchable horror premise and a surprisingly rich emotional core: a broken young man, a sharp ensemble, and a demon hiding inside the family cat. The script’s real advantage is that it plays as both a creature-feature crowd-pleaser and a family curse story, which gives producers a genre hook with actual heart and actors roles worth chasing."
+    },
+    "lead_characters": [
+      {
+        "name": "Ben Shirazi",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s · Iranian American",
+        "hook": "Ben is a gentle, self-doubting teacher and aspiring writer who has spent so long being the nice guy that he’s almost disappeared inside the role. He’s romantic, funny in a dry way, and emotionally porous, which makes him easy to root for and painful to watch as his life collapses around him.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Squid and the Whale or Paul Dano in Little Miss Sunshine — a soft-spoken, internally combusting lead whose humiliation slowly turns into resolve. It gives an actor the chance to play awkward comedy, romantic ache, grief, and eventual heroism in one clean arc."
+      },
+      {
+        "name": "Holly Martin",
+        "role_type": "Lead",
+        "demographics": "Female · mid 30s · Caucasian",
+        "hook": "Holly is the grounded occult expert with a warm, teasing presence and a real emotional intelligence that keeps the movie from tipping into pure chaos. She’s competent without being cold, flirtatious without being ornamental, and she carries the movie’s supernatural logic with confidence.",
+        "why_actor_wants_this": "This is the kind of grounded-but-electric support lead that Alison Brie had in GLOW or Rose Byrne has in genre-comedy work — smart, funny, and emotionally available while still driving the plot. It gives an actress a chance to be the audience’s guide, the romantic spark, and the person who can credibly stand in a ritual circle and own the room."
+      },
+      {
+        "name": "Darius Walker",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s · African American",
+        "hook": "Darius is Ben’s best friend and the movie’s pressure-release valve: confident, flirtatious, physically capable, and emotionally direct. He’s the guy who can call Ben on his nonsense, keep the story funny, and still land as the loyal friend you want beside you when the blood starts flying.",
+        "why_actor_wants_this": "This is the showcase lane of Donald Glover in Atlanta or Lakeith Stanfield in Sorry to Bother You — a charismatic best-friend role with comic rhythm, emotional intelligence, and scene-stealing ease. It gives an actor a chance to be the coolest person in the room while still carrying real loyalty and heart."
+      },
+      {
+        "name": "Neda Shirazi",
+        "role_type": "Lead",
+        "demographics": "Female · late 70s · Iranian American",
+        "hook": "Neda is a formidable matriarch whose wit, pride, and intellectual authority make her feel larger than life even as dementia begins to erode her grip on reality. She’s funny, caustic, loving, and terrifyingly vulnerable, which makes her the emotional center of the family and the story’s most haunting presence.",
+        "why_actor_wants_this": "This is the kind of late-career showcase that Jessica Tandy had in Driving Miss Daisy or Olivia Colman had in The Father — a role where memory, dignity, and terror all live in the same face. It gives a veteran actress a prestige part with humor, pathos, and supernatural stakes."
+      },
+      {
+        "name": "Jillian Napier",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s · Caucasian",
+        "hook": "Jillian is Ben’s ex-fiancée, all impatience and sharpened disappointment, the person who can see his drift more clearly than he can. She’s not just a breakup device; she’s the movie’s early proof that Ben’s life has stalled and that his passivity has consequences.",
+        "why_actor_wants_this": "This is the kind of sharp, scene-forward breakup role that Rachel McAdams had in The Notebook or Rebecca Hall has in emotionally charged relationship dramas — a part that can turn on a dime from warmth to fury. It gives an actress a compact but memorable role with real bite and a devastating turn."
+      },
+      {
+        "name": "Farah Torkan",
+        "role_type": "Supporting",
+        "demographics": "Female · early 50s · Iranian American",
+        "hook": "Farah is the polished, controlled family member who carries guilt and responsibility like a second skin. She’s emotionally restrained on the surface, but the script gives her enough private pain and maternal force to make her feel like a real branch of the family tree, not just exposition.",
+        "why_actor_wants_this": "This is the kind of emotionally contained family role that Marisa Tomei or Jennifer Jason Leigh can make devastating with very little screen time — a part built on subtext, history, and one or two loaded breakdown moments. It gives an actress a chance to play grief, guilt, and authority without ever needing to announce them."
+      },
+      {
+        "name": "Cyra Tate",
+        "role_type": "Supporting",
+        "demographics": "Female · early 70s · Iranian American",
+        "hook": "Cyra is glamorous, prickly, and performatively above it all, the kind of aunt who can turn a family gathering into a battlefield with one sentence. She has the vanity and vanity’s opposite — real pain under the polish — which makes her a vivid supporting presence.",
+        "why_actor_wants_this": "This is the sort of deliciously acidic elder-family role that Margo Martindale or Jane Alexander can turn into a scene magnet — a part with status, vanity, and emotional history. It gives an actress a chance to be funny, cutting, and then suddenly heartbreaking."
+      },
+      {
+        "name": "Tristian Tate",
+        "role_type": "Supporting",
+        "demographics": "Male · early 50s · handsome, dapper",
+        "hook": "Tristian is polished, charming, and quietly absurd, the kind of man who can glide through a room while hiding a lot of personal baggage. He plays as a social lubricant in the family ecosystem, but the script also lets him become part of the supernatural chaos in a memorable way.",
+        "why_actor_wants_this": "This is the kind of suave supporting role that Stanley Tucci or David Strathairn can make feel effortless — a part that starts as elegant support and then gets a sharp genre turn. It gives an actor a chance to play charm, irony, and sudden terror."
+      },
+      {
+        "name": "Mina Shirazi",
+        "role_type": "Supporting",
+        "demographics": "Female · early 50s · Iranian American",
+        "hook": "Mina is Ben’s mother, bitter, guarded, and emotionally complicated in a way that feels lived-in rather than written for convenience. She carries old resentments and old love at the same time, which makes her one of the story’s most painful family mirrors.",
+        "why_actor_wants_this": "This is the kind of mother role that Patricia Clarkson or S. Epatha Merkerson can turn into a full emotional event — a part where love and damage are inseparable. It gives an actress a chance to play denial, regret, and maternal fracture in a single scene."
+      },
+      {
+        "name": "Aaron Shirazi",
+        "role_type": "Supporting",
+        "demographics": "Male · mid 20s · Iranian American",
+        "hook": "Aaron is the family outsider: shy, awkward, and carrying a lot more private life than anyone in the family suspects. The script gives him a memorable contrast between his public discomfort and his hidden sexual identity, which makes him feel specific even in a supporting slot.",
+        "why_actor_wants_this": "This is the kind of revealing supporting role that Lucas Hedges or Justice Smith can make resonate — a part where the audience gets to discover a private self under the family surface. It gives an actor a chance to play embarrassment, secrecy, and sudden horror."
+      },
+      {
+        "name": "Detective Kallie Douglas",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 40s · Caucasian",
+        "hook": "Kallie is the no-nonsense detective who keeps trying to drag the supernatural story back into the realm of evidence and procedure. She’s tough, skeptical, and increasingly outmatched, which makes her a strong genre anchor and a useful audience proxy for disbelief.",
+        "why_actor_wants_this": "This is the kind of procedural authority role that Regina King or Carrie Coon can elevate instantly — a part that starts with control and ends in full-blown genre panic. It gives an actress a chance to play competence, skepticism, and physical jeopardy."
+      },
+      {
+        "name": "Detective Esteban Cruz",
+        "role_type": "Supporting",
+        "demographics": "Male · mid 30s · tall, muscular, handsome",
+        "hook": "Esteban is Kallie’s partner and the more openly playful half of the detective duo, bringing flirtation and swagger into a story that otherwise keeps tightening the screws. He’s a useful counterweight to Kallie’s severity and a welcome source of energy in the ensemble.",
+        "why_actor_wants_this": "This is the kind of charismatic law-enforcement role that Michael Peña or Pedro Pascal can make instantly likable — a part with banter, physicality, and a late-story action turn. It gives an actor a chance to be funny, competent, and sexy without losing the genre stakes."
+      },
+      {
+        "name": "Levi Shirazi",
+        "role_type": "Supporting",
+        "demographics": "Male · early 70s · Iranian American",
+        "hook": "Levi is the family’s bitter, combative uncle, a man whose resentment is so baked in that every line feels like it could start a feud. He’s a vivid irritant in the family ecosystem, which makes his death both darkly funny and narratively useful.",
+        "why_actor_wants_this": "This is the kind of venomous family supporting role that Richard Jenkins or Stephen Root can make unforgettable — a part built on attitude, grievance, and comic cruelty. It gives an actor a chance to be a memorable thorn in everyone’s side before the horror takes over."
+      },
+      {
+        "name": "Van Torkan",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s · Iranian American",
+        "hook": "Van is stylish, vain, and emotionally brittle, the kind of cousin who looks like he has it together until the family pressure hits. He’s also one of the movie’s best examples of how the demon turns private shame into public catastrophe.",
+        "why_actor_wants_this": "This is the kind of glossy-to-deranged supporting role that Nicholas Hoult or Ben Schwartz can have a field day with — a part that lets an actor play vanity, panic, and grotesque physical transformation. It’s a juicy genre turn with a strong before-and-after contrast."
+      },
+      {
+        "name": "Rashne Torkan",
+        "role_type": "Supporting",
+        "demographics": "Male · mid 50s · Iranian American",
+        "hook": "Rashne is the blustery, resentful family patriarch type, carrying old grudges and a lot of performative authority. He’s a pressure point in the family’s inheritance politics and a strong target for the demon’s manipulations.",
+        "why_actor_wants_this": "This is the kind of blustering family authority role that John Turturro or Jeffrey Wright can make crackle — a part where ego, resentment, and fear all sit right under the surface. It gives an actor a chance to play status and collapse in the same role."
+      },
+      {
+        "name": "Holly Martin",
+        "role_type": "Lead",
+        "demographics": "Female · mid 30s · Caucasian",
+        "hook": "Holly is the grounded occult expert with a warm, teasing presence and a real emotional intelligence that keeps the movie from tipping into pure chaos. She’s competent without being cold, flirtatious without being ornamental, and she carries the movie’s supernatural logic with confidence.",
+        "why_actor_wants_this": "This is the kind of grounded-but-electric support lead that Alison Brie had in GLOW or Rose Byrne has in genre-comedy work — smart, funny, and emotionally available while still driving the plot. It gives an actress a chance to be the audience’s guide, the romantic spark, and the person who can credibly stand in a ritual circle and own the room."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a creature feature with actual family feeling.",
+        "fit_profile": "Established indie genre directors or first-time feature filmmakers coming out of shorts, especially those with a taste for horror-comedy, practical gore, and performance-forward ensemble work. This material rewards a director who can keep the scares legible while letting the family banter, cultural specificity, and emotional grief stay alive in the frame.",
+        "detail": "The movie gives a director a clean monster engine, a memorable central image, and enough character interplay to make the set pieces feel earned. It’s especially attractive to directors who like contained horror with a strong tonal signature and a few showcase roles rather than a VFX-heavy spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming horror-comedy / mid-budget theatrical genre lane",
+        "detail": "It can be packaged around one breakout lead and a strong supporting ensemble rather than requiring expensive name talent across the board. The cat-demon hook, family curse angle, and contained interiors give it a clean trailer and a platform-friendly genre lane with exportable supernatural imagery."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The family tree is doing a lot of work.",
+        "detail": "The script’s emotional engine is strongest when Ben, Neda, Darius, Holly, and the extended family are all in play, but the number of relatives and scene partners creates a fairly busy ensemble footprint. One direction would be to keep the same emotional beats while considering whether a couple of the family branches could be combined, which would preserve the curse-story momentum and make the cast easier to track.",
+        "is_primary_lever": true,
+        "source": "production"
+      },
+      {
+        "area": "The demon rules arrive in layers.",
+        "detail": "The movie’s mythology is fun and specific, but the mechanics of possession, soul transfer, Grimalkin, Lilith, the demon box, and the salt/tourmaline protections are introduced across several scenes. A next pass could clarify the rule set a little earlier in the Ben/Holly research scenes so the third-act ritual lands with even more inevitability.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Ben’s emotional turn can land even harder.",
+        "detail": "The breakup, the Neda diagnosis, and the demon escalation all hit quickly, which keeps the movie moving, but Ben’s shift from passive heartbreak to active protector is the story’s biggest emotional payoff. One lever would be to foreground a single choice earlier — a moment where he acts for someone else before he fully believes in himself — so the final sacrifice feels even more personal.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The finale is built for practical spectacle.",
+        "detail": "The Death Valley coda, the demon-box burial, and the Lilith reveal give the movie a strong ending image, but they also define the production lane as a moderate effects feature rather than a cheap contained thriller. The version of the script where the final geography stays simple and the supernatural payoff is concentrated in a few signature images would protect the budget while keeping the ending memorable.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 39495,
+  "outputTokens": 5817,
+  "cost": 0.05579775000000001,
+  "declaredFormat": "Feature film"
+}

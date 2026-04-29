@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:43:39.541Z",
+  "submission_id": "fdfc9be8-92e8-4539-9e95-d422ffb4c94b",
+  "eval_id": "523a4c48-a349-4a6f-a913-4b3105481f17",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Lead",
+      "demographics": "Male · 12-14 at introduction, aging into late teens"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "Doris Parker",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s"
+    },
+    {
+      "name": "Jeffery Parker",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "Grandma McTyler",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Rachel Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Ben Stone",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s"
+    }
+  ],
+  "positioning_hook": "A Brooklyn boy band of misfits turns a local talent-show hustle into a national pop phenomenon, then fights to keep their brotherhood intact as fame, addiction, and betrayal hit.",
+  "cost_usd": 0.13422,
+  "input_tokens": 111154,
+  "output_tokens": 11301,
+  "status": "wrote:leads_ok"
+}

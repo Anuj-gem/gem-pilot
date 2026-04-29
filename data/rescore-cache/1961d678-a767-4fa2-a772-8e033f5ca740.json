@@ -1,0 +1,288 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Dystopian thriller",
+      "genre_tags": [
+        "romantic drama",
+        "political satire"
+      ],
+      "tone": "Grounded, controlled, unsettling, and increasingly paranoid"
+    },
+    "positioning_hook": "A rule-trained young man in a state-run marriage system falls for the one woman who makes him feel real, then gets pulled into the regime’s propaganda machine.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is immediately legible and commercially legible: state control over intimacy, a forbidden connection, and a protagonist caught between private feeling and public messaging. The final stretch, where Lewis is turned into a polished public face for the system, gives the concept a broader hook than a standard romance-thriller."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening graduation ritual, the outing app, and the cross-local request make the engine clear very early. By the time Lewis is summoned to Chance Hunter’s compound, the story has a clean pressure line and a strong escalation path."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Lewis has a strong internal contradiction: obedient on the surface, increasingly alive underneath. Emma, Chance, and even Darren/Dana each give the story a different pressure point, though Lewis remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s most distinctive move is making romance, bureaucracy, and ideological capture all part of the same system. The interview/propaganda turn near the end is a smart, confident escalation that reframes the love story as a public narrative being manufactured."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script builds with steady escalation: apprenticeship, outings, cross-local obsession, executive review, the road trip, the gas-station incident, and the final public-facing turn. The middle is intentionally procedural, but the pressure keeps tightening and the ending lands with forward motion."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a fresh social-thriller premise rather than a familiar dystopia wrapper. The Union’s marriage marketplace, scorekeeping, and behavioral review create a system that is easy to grasp and rich enough to feel inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world has rules, rituals, branding, and visible enforcement: apprenticeship ranks, outing scores, approved restaurants, behavioral centers, border escorts, and propaganda language. The details make the setting feel operational rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually controlled and precise, with sterile institutional imagery colliding against intimate emotional longing. The script knows exactly when to go quiet, when to let unease breathe, and when to sharpen into menace."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface romance-thriller, the script is tracking consent, social conditioning, and how institutions turn private desire into public product. The final montage suggests a deeper critique of narrative control that could support a larger thematic read."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Lewis/Emma is the engine, with Darren/Dana and Chance adding meaningful pressure, but the story is still built around one central relationship axis. The supporting dynamics are functional and specific, though not yet generating the same level of combinatorial energy as the lead pairing."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Two mid-20s romantic leads",
+          "Two 50s parental roles",
+          "One 40s/50s authority figure with strong public-facing charisma"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "near-future contemporary",
+        "notable_requirements": [
+          "border checkpoint",
+          "compound residence",
+          "approved restaurant interiors",
+          "behavioral center/admin floor",
+          "news studio",
+          "multiple road-trip exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily interface graphics, broadcast screens, signage, and a few composited propaganda-style displays.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunshot at gas station, practical blood effect, vehicle convoy movement, screen/UI overlays.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Union app, Union-approved establishments, and branded propaganda materials are fictional in-script brands."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or prestige theatrical thriller",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; festival-to-platform or prestige limited theatrical with streamer follow-through"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is mostly dialogue-driven and contained, but the road convoy, compound, studio, and multiple branded environments push it above micro-budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script can be built around a few strong faces, but Lewis, Emma, Chance, and the parents all need clear casting presence."
+        },
+        "location": {
+          "level": "medium",
+          "note": "It spans offices, restaurants, apartments, a compound, a gas station, a studio, and multiple highway exteriors, with several night sequences."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes coercive social control, a fatal shooting, sexual intimacy, and ideological propaganda, which keeps it in mature territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses fictional institutions, fictional media, and no named real-world IP or music."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns romance into state infrastructure.",
+          "what_it_means": "That gives the movie a clean commercial engine: a love story with a built-in antagonist, rules, and escalating consequences. Buyers who want elevated genre with a social hook will see a prestige thriller that can travel beyond the romance lane.",
+          "evidence": "The outing app, pair-bond scoring, behavioral review, and cross-local approval system all govern Lewis and Emma’s connection.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lewis is built for a breakout lead performance.",
+          "what_it_means": "The role gives an actor a visible arc from compliance to self-possession, with enough restraint early to make the later turn land hard. Mid-career dramatic leads and rising names looking for a defining role would both see a showcase here.",
+          "evidence": "Lewis’s careful posture, repeated self-corrections, and the final interview where he learns to perform the system publicly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Chance Hunter is a polished antagonist.",
+          "what_it_means": "He plays as the kind of soft-power villain that sells a movie: warm, reasonable, and controlling in the same breath. That gives the project a prestige-caliber authority figure role that strong character actors will want.",
+          "evidence": "Chance’s compound, his calm interview language, and the way he turns Lewis’s honesty into leverage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a strong branded visual language.",
+          "what_it_means": "The Union’s signage, app prompts, approved venues, and broadcast messaging create a repeatable visual identity that helps marketing and production design alike. Streamers and genre buyers like worlds that can be summarized in one image and expanded through design.",
+          "evidence": "“Real Stories. Verified Outcomes,” Union-approved restaurants, the behavioral center board, and the propaganda screens.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending reframes the story as propaganda.",
+          "what_it_means": "That final public-facing montage gives the film a sharper aftertaste than a simple escape-or-romance ending. It opens the door to a conversation about how institutions absorb dissent and sell it back as aspiration, which is catnip for prestige buyers.",
+          "evidence": "Lewis’s televised interview, the wedding broadcast, the book cover, and the final “SESSION STATUS — STABLE” image.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept prestige thriller with a real emotional engine: a young man in a state-run marriage system falls for the one person who makes him feel human, then gets absorbed into the machine that polices that feeling. The script’s biggest asset is that it never treats the romance and the politics as separate tracks — they’re the same story, which makes the concept feel both commercial and specific."
+    },
+    "lead_characters": [
+      {
+        "name": "LEWIS",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s",
+        "hook": "Lewis is a rule-trained young man who has learned to perform the right posture before he’s learned what he actually believes. He’s observant, self-monitoring, and emotionally legible in tiny fractures — a swallowed word, a corrected gesture, a glance that lasts half a beat too long — which makes him feel like someone waking up inside a system built to keep him compliant.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in *Breaking Bad* or Andrew Garfield in *Under the Banner of Heaven* — a contained, inward performance that slowly reveals steel under obedience. Actors who want a role that starts with restraint and ends with moral clarity will chase this because the turn is built into the body language, not just the dialogue."
+      },
+      {
+        "name": "EMMA",
+        "role_type": "Lead",
+        "demographics": "Female · mid-20s",
+        "hook": "Emma is the rare person in this world who moves like she hasn’t fully internalized the rules, and that gives her an immediate charge. She’s not a rebel caricature; she’s perceptive, lightly defiant, and emotionally direct, with the kind of calm confidence that makes Lewis feel seen instead of managed.",
+        "why_actor_wants_this": "This is the showcase space of Carey Mulligan in *Promising Young Woman* or Daisy Edgar-Jones in *Normal People* — a role where intelligence, vulnerability, and self-possession all have to coexist in the same glance. Young leading actresses will want it because Emma gets to be the person who changes the temperature of every scene without ever becoming a speechifying symbol."
+      },
+      {
+        "name": "CHANCE HUNTER",
+        "role_type": "Lead",
+        "demographics": "Male · 40s/50s",
+        "hook": "Chance is the kind of leader who makes coercion feel like hospitality. He’s warm, articulate, and physically relaxed, which makes him more dangerous than a blunt authoritarian; he understands that the best control is the kind people thank you for.",
+        "why_actor_wants_this": "This is the performance lane of Michael Shannon in *Take Shelter* or Matthew McConaughey in *True Detective* season 1 — a charismatic authority figure who can pivot from charm to threat without changing volume. Prestige character actors will chase it because the role lets them play ideology as seduction."
+      },
+      {
+        "name": "DARREN",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Darren is a man who believes structure is love’s best container, and he says it with the calm certainty of someone who has built a life around that belief. He’s not a cartoon enforcer; he’s a father whose certainty comes from fear of disorder, which makes him emotionally legible even when he’s wrongheaded.",
+        "why_actor_wants_this": "This is the kind of grounded, morally complicated parent role that actors like Bryan Cranston in *The Upside* or Michael Stuhlbarg in prestige drama gravitate toward — a man whose love and control are inseparable. Character actors who can make rigidity feel human will be drawn to it."
+      },
+      {
+        "name": "DANA",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Dana is the emotional counterweight in the house: careful, intuitive, and quietly resistant to the idea that love should be reduced to procedure. She reads as someone who has spent years smoothing the edges of a system she doesn’t fully trust, which gives her scenes a lived-in ache.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Linney in *Ozark* or Patricia Clarkson in family drama — a role where intelligence lives in subtext and the emotional turn arrives through listening, not speeches. Experienced dramatic actresses will see a part that can carry warmth, skepticism, and maternal authority at once."
+      },
+      {
+        "name": "SHANNON",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-20s",
+        "hook": "Shannon is polished, measured, and just self-aware enough to feel like she’s already learned how to survive the system from the inside. She’s the kind of date who can sound compliant while quietly testing the boundaries of what compliance means.",
+        "why_actor_wants_this": "This is the territory of a sharp supporting turn like Jodie Comer in *The Last Duel* or Zoey Deutch in a prestige ensemble — a role that plays intelligence, ambiguity, and social calibration in a compact space. Actors who like playing the person who knows more than they say will want it."
+      },
+      {
+        "name": "LILA",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-20s",
+        "hook": "Lila is Emma’s freer, less filtered counterpoint — the friend who says the thing everyone else is too managed to say. She brings oxygen into the coastal scenes, giving Emma a social mirror that feels lived-in rather than functional.",
+        "why_actor_wants_this": "This is the kind of scene-stealing friend role that gives an actor the *Booksmart* or *Girls* adjacent showcase of wit, ease, and emotional honesty in a few well-placed scenes. Supporting players with strong comic timing and naturalism will chase it because it pops without needing to dominate."
+      },
+      {
+        "name": "MATT",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Matt is the guy who has already learned how to game the system without ever sounding like he’s gaming it. He’s loose, socially fluent, and a little too comfortable with the culture around him, which makes him a useful contrast to Lewis’s self-consciousness.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the swaggering, lived-in energy of a *Friday Night Lights* or *Euphoria* peer character — someone who can make the world feel socially real in a few scenes. Young actors with charisma and timing will want the chance to own the room briefly and memorably."
+      },
+      {
+        "name": "TIM R",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s/40s",
+        "hook": "Tim R is the procedural face of the machine: calm, clipped, and visibly comfortable inside the system’s language. He’s not the villain; he’s the person who makes the villainy feel administratively normal.",
+        "why_actor_wants_this": "This is the kind of precise supporting role that actors like Shea Whigham or Michael Kelly can make unforgettable — a bureaucratic operator whose authority comes from tone, not speeches. Character actors who specialize in institutional menace will see immediate value."
+      },
+      {
+        "name": "RECEPTIONIST",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "The receptionist is the face of procedural calm, the person who can turn a life-altering escalation into a normal business transaction. Her power comes from how little she appears to need to use it.",
+        "why_actor_wants_this": "This is the kind of compact, high-function supporting role that actors like Ann Dowd or Cherry Jones can elevate instantly — a scene where authority is carried through stillness and precision. Veteran character actresses will recognize it as a small part with outsized control."
+      },
+      {
+        "name": "WAITRESS / BARTENDER / HOST / GUARDS / INTERVIEWER / OWNER",
+        "role_type": "Supporting",
+        "demographics": "Mixed gender · 20s-50s",
+        "hook": "These roles collectively build the social pressure system around Lewis: service workers, gatekeepers, and observers who register the Union’s reach in everyday life. They’re less about individual arcs than about making the world feel monitored, normalized, and socially coded.",
+        "why_actor_wants_this": "This is the kind of ensemble texture that gives working actors and recognizable character players useful, scene-specific material in the vein of prestige TV supporting turns. The parts are compact but functional, and they help the film feel populated rather than abstract."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make control feel intimate, not explosive.",
+        "fit_profile": "Established indie or prestige-leaning directors with at least one or two features, especially those whose work already lives in restraint, social unease, or performance-forward genre. This material rewards filmmakers who can stage bureaucracy, romance, and menace with the same visual discipline and who know how to let a final-act turn land through tone rather than spectacle.",
+        "detail": "The movie gives a director a clean visual system to own: sterile interiors, branded public spaces, and the contrast between controlled and uncontrolled environments. It also offers a strong actor’s movie inside a genre frame, which is exactly the kind of project directors use to level up from festival credibility to broader commercial attention."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M prestige thriller",
+        "lane": "Premium streaming / festival-to-platform / elevated social-thriller lane",
+        "detail": "It can be mounted around two strong leads and one major antagonist, so it does not require tentpole casting to function. The state-control premise, romance hook, and propaganda turn give it exportable genre appeal and a marketing angle that plays cleanly in the current elevated-thriller marketplace."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle is intentionally procedural.",
+        "detail": "The outing sequences, app checks, and behavioral sessions do the world-building work, and they mostly earn their place. A next pass could consider where one or two of those beats can be combined so the emotional turn arrives a little sooner without losing the system’s texture.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The final propaganda turn is the biggest swing.",
+        "detail": "The interview, wedding montage, book cover, and televised messaging create a strong ending shape, but they also ask the audience to absorb a lot of narrative reframing in a short span. One direction would be to clarify the emotional bridge from Lewis’s private choice to his public role so the last movement feels even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The road-trip section expands the footprint.",
+        "detail": "The convoy, checkpoint, forest road, gas station, hotel, and studio all add scale and company movement. If the production wants to keep the budget in the lower end of the range, the version of the script where one stop is absorbed into another would protect the escalation while trimming logistics.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Lewis and Emma carry the movie.",
+        "detail": "That is a strength, and it also means the packaging should prioritize two actors with enough emotional range to make restraint feel active. The right pair will sell the movie’s intimacy before the concept even lands.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The Union brand language is doing real work.",
+        "detail": "The app, signage, and approved-space branding are memorable and marketable, and they help the movie feel like a complete system rather than a single premise. A future pass could keep foregrounding the most repeatable visual motifs so the marketing team has even more to build from.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 31482,
+  "outputTokens": 4649,
+  "cost": 0.044532,
+  "declaredFormat": "Feature film"
+}

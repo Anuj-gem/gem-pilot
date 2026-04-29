@@ -1,0 +1,326 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "War drama",
+      "genre_tags": [
+        "Historical drama",
+        "Ensemble",
+        "Social issue"
+      ],
+      "tone": "Grounded, earnest, emotionally charged, and politically pointed"
+    },
+    "positioning_hook": "A Jewish Army lieutenant and his Black best friend fight for survival in New Guinea while the war exposes the country’s racism at home and abroad.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional promise is immediate: brotherhood under fire, prejudice inside the ranks, and a WWII setting with built-in prestige appeal. It’s not four-quadrant escapism, but the Jacob/Nate bond and the historical injustice angle give it a clear, saleable lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast: a Jewish officer and Black enlisted men are trapped in a Pacific war zone while the script crosscuts to the civilian and military prejudice that shaped them. The jungle combat engine and the home-front material are both legible early and reinforce each other."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jacob has a strong internal arc from insulated idealist to disillusioned witness, and Nate is a steady, charismatic counterweight with real moral authority. The supporting players function well as a unit, though the story is most alive when it’s centered on the Jacob/Nate bond."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldness comes from pairing Pacific-war survival with an explicit examination of anti-Semitism and anti-Black racism inside the same military machine. The choice to make the friendship between a Jewish lieutenant and a Black corporal the emotional spine gives the material a distinct identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The jungle sequences are propulsive and the repeated ambushes create a strong survival rhythm, especially once the unit is cut off and the base is under siege. The home-front sections slow the pace in service of theme, but the script keeps returning to a clear forward drive toward the final defense of the base."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a war story with a specific moral engine rather than a generic combat piece: the battlefield is also a test of American identity, and the script keeps proving that point through action, dialogue, and institutional humiliation. The final graveyard coda and historical supers deepen the sense that this is telling a story larger than the plot."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The New Guinea base, the segregated Army structure, the Fort Dix training environment, and the civilian Jewish household all feel lived-in and socially specific. The script uses signs, procedures, ranks, and daily routines to make the world feel like a system with rules, not just a backdrop."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is a serious war drama with flashes of humor in the banter between Jacob, Nate, and O’Connor, which keeps the piece human rather than purely grim. The script is most distinctive when it lets camaraderie and cruelty sit side by side."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the combat story is a deeper identity drama about who gets to belong, who gets recognized, and what it costs to believe in a country that excludes you. The cemetery ending and the historical supers suggest a larger memory project, not just a closed wartime adventure."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jacob/Nate is the core engine, but the script also gives Carter, Harris, Brown, Young, O’Connor, Ruth, Mary, Samuel, and Chava enough friction to create multiple relationship lanes. The ensemble is strongest in the barracks and the jungle unit dynamics, where loyalty and prejudice keep generating scenes."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Two co-leads with distinct identity requirements",
+          "Large supporting military ensemble",
+          "Multiple African American male roles in 20s",
+          "Jewish family roles in flashbacks and home-front scenes",
+          "Older versions of Ruth and Nate in the coda"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Approximately 45/55",
+        "period_or_contemporary": "Period (1930, 1941-1944, 1992 coda)",
+        "notable_requirements": [
+          "Pacific jungle and military base build",
+          "Fort Dix training environments",
+          "Jewish home and temple flashbacks",
+          "1940s street, bus depot, bar/jazz club, hospital, cemetery",
+          "Period vehicles, uniforms, signage, and practical military set dressing"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Battlefield scale, smoke, explosions, gunfire impacts, body hits, and destruction of base structures; mostly practical-looking war effects with some enhancement likely needed.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, grenade explosions, blood hits, body falls, melee brawls, and practical destruction of latrine, communications shack, and base areas.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "General Douglas MacArthur is referenced by name and depicted in a speaking scene."
+        },
+        {
+          "type": "real_person",
+          "detail": "President Roosevelt is referenced by name in dialogue and radio address."
+        },
+        {
+          "type": "real_person",
+          "detail": "The 1992 Department of Defense / U.S. Army study is referenced in the closing supers."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical or premium streaming historical drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform, awards-leaning limited theatrical, or prestige streamer launch"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The war setting, period design, jungle action, and destruction beats push this above a contained indie, but it stays below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Two co-leads plus a sizable military ensemble and older coda casting create some packaging breadth, but there is no single-star dependency baked into the premise."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Multiple period locations, jungle exteriors, military bases, and flashback environments require careful production planning without becoming globe-trotting."
+        },
+        "content": {
+          "level": "high",
+          "note": "Frequent combat violence, racial slurs, and explicit depictions of prejudice narrow the lane to mature audiences and prestige buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named historical figures and a cited government study introduce clearance and portrayal considerations, though the script is not built on a single life-rights subject."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The central friendship is the engine.",
+          "what_it_means": "That bond gives the film a clean emotional spine that can carry both combat spectacle and awards-minded character drama. Actors and buyers looking for a two-hander with moral weight will immediately understand the slot this fills.",
+          "evidence": "Jacob and Nate’s repeated battlefield rescues, their childhood friendship, and the final hospital scene where Jacob gives Nate the Star of David.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The war story is also an identity story.",
+          "what_it_means": "The script turns WWII into a pressure cooker for American belonging, which broadens the appeal beyond combat fans into prestige historical drama territory. Buyers who want socially resonant genre material will see a clear awards and conversation hook.",
+          "evidence": "The segregated buses, the “No Jews allowed” sign, the Fort Dix abuse, and the MacArthur latrine scene all dramatize exclusion through action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The New Guinea setting has real cinematic muscle.",
+          "what_it_means": "The jungle, the base, and the siege structure create a visual and logistical canvas that feels bigger than a standard character drama while still staying legible. Directors who like turning environment into tension will see a strong production canvas.",
+          "evidence": "The birdcalls, treetop ambushes, tall grass firefight, and the final defense of the base all use terrain as story mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has a clear unit identity.",
+          "what_it_means": "Jacob, Nate, Carter, Harris, Brown, Young, Allen, and O’Connor function like a tight military company with distinct rhythms, which gives the film repeatable scene energy. Ensemble-friendly buyers and casting directors will see multiple playable roles rather than a single lead surrounded by placeholders.",
+          "evidence": "The men communicate through birdcalls, cover each other in battle, and banter in barracks and mess hall scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a strong historical aftertaste.",
+          "what_it_means": "The closing supers and cemetery coda widen the movie from a wartime survival tale into a memory piece about recognition, legacy, and delayed justice. Prestige distributors and festival programmers tend to respond to endings that reframe the story’s meaning after the plot is over.",
+          "evidence": "The 1992 graveyard scene, the medal statistics, and the note about African American service and recognition.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige war drama with a built-in emotional engine: a Jewish lieutenant and his Black best friend survive the Pacific while the Army’s racism keeps proving the movie’s larger point. The jungle action is vivid, the ensemble is playable, and the ending lands as both tribute and indictment."
+    },
+    "lead_characters": [
+      {
+        "name": "Jacob Specter",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s · Caucasian/Jewish",
+        "hook": "Jacob is a bright, principled engineer turned officer whose identity is split between assimilation and conscience. He starts as a man who believes in merit, order, and American ideals, then gets forced to confront how little those ideals protect him when his Jewishness becomes visible and his authority is tested by both the enemy and his own side. He has wit, restraint, and a simmering moral anger that finally finds a direction.",
+        "why_actor_wants_this": "This is the showcase territory of Adrien Brody in The Pianist or Matthew McConaughey in True Detective season 1 — a man whose intelligence and interiority are constantly being tested by a world that misreads him. It gives an actor the chance to play command, humiliation, tenderness, and hard-earned resolve in one arc, with the kind of emotional transformation prestige leads chase."
+      },
+      {
+        "name": "Nate Washington",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s · African American",
+        "hook": "Nate is Jacob’s oldest friend and the story’s moral center: calm, observant, funny, and tougher than he first appears. He carries the burden of being the smartest person in the room without ever needing to announce it, and his relationship to Jacob lets him be both brother and mirror, ally and truth-teller. He’s the kind of character whose quiet authority deepens every scene he enters.",
+        "why_actor_wants_this": "This is the showcase space of Mahershala Ali in Green Book or Chadwick Boseman in 42 — dignity under pressure, intelligence expressed through stillness, and a role that lets an actor command a room without raising his voice. Actors looking for a prestige-supporting lead that can become the audience’s moral anchor will chase this immediately."
+      },
+      {
+        "name": "Samuel Specter",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · Caucasian/Jewish",
+        "hook": "Samuel is a proud, old-world father who loves his son but filters that love through caution, class anxiety, and inherited prejudice. He’s not a villain; he’s a man whose worldview is smaller than his affection, which makes his eventual blessing of Jacob’s enlistment land with real emotional force.",
+        "why_actor_wants_this": "This is the kind of father role that gives an actor the layered authority of Albert Brooks in Drive or Mark Rylance in Bridge of Spies — warmth, defensiveness, and moral contradiction in the same frame. Character actors who specialize in men carrying history in their posture will want it."
+      },
+      {
+        "name": "Chava Specter",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s to 60s · Caucasian/Jewish",
+        "hook": "Chava is sharp, protective, funny, and deeply class-conscious, with a mother’s instinct that often arrives as control. Her prejudice is ugly, but the script gives her enough domestic specificity and emotional panic that she reads as a product of fear and survival, not a stock antagonist.",
+        "why_actor_wants_this": "This is the kind of role that sits in the territory of Frances McDormand in Almost Famous or Dianne Wiest in Parenthood — a mother whose comedy and cruelty are inseparable. Actors who like playing formidable women with teeth will see a lot to do here."
+      },
+      {
+        "name": "Ruth Goldman",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s · Caucasian/Jewish",
+        "hook": "Ruth is Jacob’s romantic equal: smart, modern, teasing, and emotionally direct. She’s not just the waiting girlfriend; she’s the person who keeps asking the movie’s hardest questions about duty, love, and whether action actually changes anything.",
+        "why_actor_wants_this": "This is the kind of grounded romantic role that gives an actress the Annie Hall / Rachel McAdams in The Notebook lane — wit, longing, and the ability to make a relationship feel lived-in rather than ornamental. Young leads who want a part with intelligence and emotional clarity will respond to it."
+      },
+      {
+        "name": "Mary Washington",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 20s · African American",
+        "hook": "Mary is sharp, furious, and morally unblinking, the character who says out loud what everyone else is trying to soften. She’s a working woman with no patience for self-pity, and her scenes give the film its clearest articulation of the difference between being excluded and being merely uncomfortable.",
+        "why_actor_wants_this": "This is the kind of scene-stealing role that lives in the Viola Davis in Doubt or Regina King in If Beale Street Could Talk zone — a woman who can stop a room and tell the truth in one breath. Actors who want a compact but unforgettable moral-force part will chase it."
+      },
+      {
+        "name": "Private Carter",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · African American",
+        "hook": "Carter is the big-hearted bruiser of the unit, funny and physically imposing but emotionally open. He gives the group warmth and momentum, and his instinct to protect Jacob and the others makes him feel like the division’s muscle and conscience at once.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the breakout-supporting energy of Delroy Lindo in Da 5 Bloods or Winston Duke in Black Panther — charisma, physical presence, and emotional loyalty. It’s a part that can turn a strong ensemble player into a memorable face."
+      },
+      {
+        "name": "Private Harris",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · African American",
+        "hook": "Harris is the dry, skeptical one, always ready with a line that cuts through panic without breaking the unit’s rhythm. He’s a classic war-ensemble utility player, but the script gives him enough personality to feel like a real man rather than a function.",
+        "why_actor_wants_this": "This is the kind of sharp ensemble role that recalls the bantering authority of Michael B. Jordan in Fruitvale Station’s supporting world or Corey Hawkins in Straight Outta Compton — a part with rhythm, attitude, and battlefield credibility. Actors who can make a line land without overplaying will want it."
+      },
+      {
+        "name": "Private Brown",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · African American",
+        "hook": "Brown is one of the unit’s steadier presences, handsome and capable, with enough warmth to make his injury and sacrifice land hard. He’s less about speeches than about the emotional cost of being one more body in a system that doesn’t value you enough.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded pathos of Andre Braugher in Glory’s ensemble or Stephan James in If Beale Street Could Talk — dignity, vulnerability, and a deathbeat that matters. Supporting actors looking for a memorable wartime turn will see the value immediately."
+      },
+      {
+        "name": "Private Young",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · African American",
+        "hook": "Young is the lankier, more nervous member of the group, which gives him a slightly off-center comic and emotional texture. He helps keep the unit human, and his reactions make the danger feel immediate without turning him into a pure comic relief slot.",
+        "why_actor_wants_this": "This is the kind of ensemble role that lets an actor do the nervous-energy work of Lakeith Stanfield in an early supporting turn or Jharrel Jerome in When They See Us — alertness, humor, and fear all at once. It’s a good part for an actor who can make vulnerability feel active."
+      },
+      {
+        "name": "Private Allen",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · African American",
+        "hook": "Allen is the small, bespectacled one, which makes him the most visibly vulnerable member of the squad and gives the unit a built-in emotional contrast. His presence helps the group feel like a real cross-section of personalities, and his death lands because he’s been given enough texture to register as a person.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional utility of a young supporting player in Saving Private Ryan or 1917 — a part that can be brief but memorable because the audience understands the person before the loss. Character actors and emerging talent will both see the showcase value."
+      },
+      {
+        "name": "Sergeant O’Connor",
+        "role_type": "Supporting",
+        "demographics": "Male · mid 20s · Caucasian",
+        "hook": "O’Connor is the unit’s blunt, sarcastic white ally, a man whose rough humor keeps the room moving while his loyalty keeps the story from becoming monochrome. He’s a useful pressure valve and a credible military presence, with enough personality to feel like more than a rank.",
+        "why_actor_wants_this": "This is the kind of role that sits in the territory of Brendan Gleeson in The Guard or Stephen Root in a prestige ensemble — comic timing with real emotional allegiance. Actors who can play gruff competence and warmth in the same beat will want it."
+      },
+      {
+        "name": "Anderson",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · Caucasian",
+        "hook": "Anderson is Jacob’s white war buddy, initially open and decent, then painfully exposed to the social pressure of the unit’s racism. He’s the character who shows how fragile allyship can be when the room turns hostile, which gives him a real dramatic function beyond simple friendship.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the conflicted-buddy energy of Ben Foster in 3:10 to Yuma or Paul Dano in a war ensemble — a man whose loyalty is tested in public. It’s a strong part for an actor who can play decency under social pressure."
+      },
+      {
+        "name": "Major",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Caucasian",
+        "hook": "The Major is the institutional face of the Army’s prejudice: polished, dismissive, and comfortable translating racism into policy. He’s not colorful, but he’s effective, because he gives the film a human embodiment of the system Jacob is fighting.",
+        "why_actor_wants_this": "This is the kind of authority role that gives an actor the cold institutional power of Tommy Lee Jones in Lincoln or J.K. Simmons in Whiplash — controlled, intimidating, and memorable because the character believes his own logic. Veteran character actors will know exactly how to play it."
+      },
+      {
+        "name": "MacArthur",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Caucasian",
+        "hook": "MacArthur appears as a larger-than-life historical authority figure whose arrogance instantly escalates the film’s critique of military hierarchy. The scene is brief, but it’s pointed, and it gives the movie a sharp encounter with power at the top of the chain.",
+        "why_actor_wants_this": "This is the kind of cameo that gives an actor the imperial snap of John Lithgow in Bombshell or Bryan Cranston in a historical authority role — a few minutes of command that can dominate a sequence. Name actors who enjoy a high-contrast, scene-stealing historical turn will be interested."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a war film about identity, not just combat.",
+        "fit_profile": "Established indie or prestige-drama directors with at least one or two features, especially those who have already handled ensemble performance and period detail. The material rewards directors who care about emotional geography, institutional power, and making action feel like character pressure rather than spectacle for its own sake.",
+        "detail": "The movie gives a director a chance to stage jungle warfare, barracks tension, and social humiliation with the same visual grammar, which is a strong calling card for filmmakers who like thematic cohesion. It also offers a clean prestige lane: historical subject matter, a two-hander emotional spine, and a final coda that reframes the whole story as legacy cinema."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget prestige feature",
+        "lane": "Awards-leaning historical drama / premium streamer prestige lane",
+        "detail": "The project is anchored by two strong lead roles and a contained military ensemble, so it can be packaged around performance rather than heavy star dependency. WWII prestige dramas with social relevance remain exportable on streamers and in limited theatrical runs, especially when the hook is as clear as race, faith, and brotherhood under fire."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The home-front material carries the theme.",
+        "detail": "The Jacob/Ruth/Samuel/Chava scenes do a lot of thematic lifting, and the version of the script where those sequences are slightly more concentrated could protect momentum while keeping the emotional argument intact. One lever would be to preserve the best confrontation beats and let the rest of the domestic material breathe around them rather than expanding the number of family exchanges.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The battle geography is doing heavy work.",
+        "detail": "The jungle action is vivid, but it also asks the audience to track a lot of movement across trees, logs, grass, and base structures. A next pass could keep the same tactical variety while clarifying a few of the larger set-piece transitions so the escalation reads even more cleanly on first watch.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The historical coda broadens the lane.",
+        "detail": "The 1992 cemetery ending and the supers about medals and discrimination position this as a prestige historical feature rather than a pure combat picture. That helps awards and streamer positioning, and it also means the marketing conversation can lean on legacy and recognition as much as on wartime action.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The period scope is manageable but specific.",
+        "detail": "This is not a globe-spanning war epic; it lives in a handful of military and domestic spaces, with the jungle and base carrying most of the scale. That makes it a good fit for a mid-budget production plan, especially if the production design team can reuse and redress core locations efficiently.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The MacArthur material introduces clearance attention.",
+        "detail": "Named historical figures and the closing government-study references mean legal and factual review will matter in prep. That is manageable, but it should be accounted for early so the production can move cleanly through historical and portrayal approvals.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 36355,
+  "outputTokens": 5710,
+  "cost": 0.05296125,
+  "declaredFormat": "Feature film"
+}

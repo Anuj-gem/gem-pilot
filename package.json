@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/build-blog-index.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/build-blog-index.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "blog:index": "node scripts/build-blog-index.mjs"
   },
   "dependencies": {
     "@stripe/stripe-js": "^9.0.1",

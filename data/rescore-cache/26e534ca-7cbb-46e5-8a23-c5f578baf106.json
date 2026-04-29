@@ -1,0 +1,268 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Coming-of-age drama",
+      "genre_tags": [
+        "magical realism",
+        "romance"
+      ],
+      "tone": "Tender, lyrical, intimate, wistful"
+    },
+    "positioning_hook": "A queer Latina teen, drifting from her childhood faith and her best friend’s unicorn obsession, follows a shimmering secret into a first love revelation that changes how she sees herself.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and the queer coming-of-age lane has a real audience, especially with the faith, family, and first-love elements all in play. It is more of a specialty theatrical/streaming play than a broad four-quadrant commercial engine, but the final identity reveal gives it a memorable hook."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early through the childhood unicorn promise and the adult search that follows, so the audience understands the story engine quickly. The script keeps the exact nature of the unicorns and Alma’s transformation partially withheld, which gives the hook atmosphere and mystery without losing the thread."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Alma and David are both built around recognizable longing: he is the believer chasing proof, and she is the skeptic who is already changing before she admits it. Their bond carries the feature, and the mother figures add warmth and pressure, though the story is still most alive in the central pair."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar childhood-promise structure and gives it a queer, bilingual, magical-realist charge with a very specific visual language. The unicorn reveal as an identity metaphor is emotionally legible and the final horn image is the kind of bold choice that can stick with viewers."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The piece has a clear forward motion from memory to search to revelation, and the gas-station and woods sequences give it a steady pull. The middle is more mood-driven than plot-driven, so the engagement comes from tone and relationship tension more than from escalating external turns."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A unicorn hunt that resolves into queer self-recognition is a fresh and immediately understandable emotional conceit. It feels specific rather than gimmicky because the childhood promise, the church memory, and the final bodily transformation all point to the same inner truth."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The world has lived-in details — the bilingual family home, the church, the gas station, the car rides, the slushy machine, the rosary, the vinyl records — that give it texture. It is still primarily a character-and-mood container rather than a fully layered social ecosystem, but the specificity is enough to make the setting feel personal."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very identifiable tone: soft-spoken magical realism, adolescent awkwardness, and emotional revelation shot through with sound design and visual hush. The repeated silence, shimmer cues, and intimate close observation create a signature mood that would be recognizable from a single scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "On the surface this is a simple search story, but underneath it is carrying identity, faith, friendship, family expectation, and the fear of becoming legible to yourself. The final transformation suggests the script is really about self-acceptance, which gives the material more afterglow than the premise alone would imply."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Alma-David bond is the engine, and the parents and sister add useful pressure and tenderness around it. The supporting relationships are functional and emotionally specific, though the feature still lives primarily on the central duo rather than on a web of independently generative dynamics."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Latina family casting for Alma and her parents",
+          "Teen/young adult casting for Alma and David",
+          "Child casting for the opening birthday sequence and younger flashback versions",
+          "Bilingual Spanish-English performance ability for several roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "family home kitchen and bedroom",
+          "church interior and exterior",
+          "gas station convenience store and lot",
+          "field/woods/creek edge",
+          "David's car as a recurring playable space"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Shimmer transitions, split-screen/double-exposure moments, stylized sound design cues, and the final unicorn horn/forehead glow effect.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical birthday-party, slushy spill, and subtle transformation makeup/prosthetic work for the final horn reveal.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Skyline To by Frank Ocean"
+        },
+        {
+          "type": "named_music",
+          "detail": "If I Got My Ticket, Can I Ride? by The Boys Choir of Harlem"
+        },
+        {
+          "type": "named_music",
+          "detail": "Anything by Adriene Lanker"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "festival-to-streaming feature, indie theatrical, prestige streamer original",
+        "content_level": "PG-13 equivalent with mature emotional themes",
+        "series_engine_or_release_model": "Feature release model with strong festival launch potential and a streamer-friendly emotional payoff"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, contained to homes, a car, a gas station, a church, and a wooded search area, with only minor VFX and practical transformation work."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story is driven by two strong teen/young adult leads plus a small family ensemble, with bilingual casting and child performers in the opening and flashback material."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable but includes multiple distinct play spaces — home, church, gas station, car, field, woods, and work — that need careful scheduling."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material is emotionally mature but not content-heavy; language is occasional, and the intensity comes from identity and family conflict rather than explicit material."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Three named songs are script-specific and would need clearance if retained in production."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The unicorn is an identity metaphor with a payoff.",
+          "what_it_means": "That gives the film a clean emotional engine buyers can understand instantly: a magical search that resolves into self-recognition. It will attract festival programmers, prestige streamers, and actors who want a role that can land as both romance and identity story.",
+          "evidence": "The final reveal of the horn growing from Alma’s forehead reframes the childhood unicorn promise as her own becoming.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Alma and David are a playable central duo.",
+          "what_it_means": "The movie has a built-in two-hander structure that keeps the budget contained while giving the cast real chemistry to sell. Young actors with strong naturalism, plus indie buyers looking for relationship-forward material, will respond to that setup.",
+          "evidence": "Their birthday pact, gas-station argument, woods confrontation, and final reunion all turn on the same bond.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The bilingual family texture feels lived-in.",
+          "what_it_means": "The Spanish-English household details give the film cultural specificity without needing exposition, which helps it travel as something personal rather than generic. Latino audiences and buyers looking for authentic family worlds will notice that immediately.",
+          "evidence": "Alma’s mother and father switch between English and Spanish, and the home is defined by food, discipline, and affection in both languages.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The sound-and-image language is distinctive.",
+          "what_it_means": "The shimmer cues, slowed time, silence, and recurring musical motifs create a signature sensory identity that can separate the film from standard coming-of-age fare. Directors and editors who like expressive formal storytelling will see room to make this feel authored.",
+          "evidence": "The script repeatedly uses silence, whooshes, horse steps, shimmer sounds, split-screen, and double exposure to mark emotional shifts.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a memorable visual.",
+          "what_it_means": "The horn reveal gives the film a marketable final image that can anchor trailers, posters, and word-of-mouth. Buyers like endings that are both emotionally resolved and visually sticky, and this one has that shape.",
+          "evidence": "Alma’s horn appears grotesque and beautiful at once as David watches and accepts it.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, emotionally legible feature with a strong festival-to-streamer lane: a queer coming-of-age story that turns a childhood unicorn promise into a self-revelation. The script’s biggest asset is how specific it feels — bilingual family life, a two-hander friendship, and a sensory magical-realist style that gives the ending a real afterimage."
+    },
+    "lead_characters": [
+      {
+        "name": "Alma",
+        "role_type": "Lead",
+        "demographics": "Female · late teens/early 20s · Latina · bilingual Spanish-English",
+        "hook": "Alma is guarded, observant, and more emotionally advanced than she wants to admit; she performs skepticism as armor while quietly carrying the pressure of family expectation, identity confusion, and a desire to stay unexposed. She has the kind of stillness that reads as cool until it starts to look like fear, and the script lets that fear turn into recognition rather than melodrama.",
+        "why_actor_wants_this": "This is the showcase territory of Rachel Zegler in The Hunger Games: The Ballad of Songbirds & Snakes — a young woman whose interior life has to register in glances, restraint, and sudden emotional rupture. It gives an actor the chance to play denial, tenderness, queer awakening, and physical transformation in one role, which is exactly the kind of part that can announce a new leading presence."
+      },
+      {
+        "name": "David",
+        "role_type": "Lead",
+        "demographics": "Male · late teens/early 20s · likely Latino or ethnically flexible as written · bilingual Spanish-English",
+        "hook": "David is the believer, the recorder, the one who keeps trying to make wonder concrete; he is earnest to the point of embarrassment, but that sincerity is his power. He carries a boyish devotion that never turns cynical, and the script uses that purity to make him both comic and moving.",
+        "why_actor_wants_this": "This is the showcase space of Lucas Hedges in Manchester by the Sea — a young man whose emotional life is visible in the way he keeps trying to hold something together for someone else. It gives an actor a chance to play innocence, persistence, and heartbreak without ever needing to become flashy, which is catnip for sensitive young leads."
+      },
+      {
+        "name": "Alma's Mom",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s · Latina",
+        "hook": "Alma’s mom is the household’s emotional ballast: warm, practical, bilingual, and capable of moving from teasing to discipline to tenderness in a single beat. She feels like a real parent rather than a function, especially in the way she feeds David, worries about Alma, and lands the line that she no longer knows who her daughter is.",
+        "why_actor_wants_this": "This is the kind of role that recalls Patricia Clarkson in Pieces of April — a parent whose love is expressed through friction, food, and blunt honesty. Character actresses who can make a kitchen scene feel like a whole life will want it, because it gives them warmth, authority, and one devastating emotional turn."
+      },
+      {
+        "name": "Alma's Dad",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · Latino",
+        "hook": "Alma’s father is quieter and more judgmental, the kind of parent whose disappointment lands before he raises his voice. He gives the home a harder edge and helps define the pressure Alma is trying to escape without ever turning into a cartoon authority figure.",
+        "why_actor_wants_this": "This is the territory of Javier Bardem in Biutiful — a father figure whose presence can shift a room with very little dialogue. Actors who specialize in contained authority and wounded masculinity will see a role that lets them do a lot with posture, silence, and one or two pointed confrontations."
+      },
+      {
+        "name": "David's Mom",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s · Latina",
+        "hook": "David’s mom is the more openly expressive counterweight to Alma’s household: affectionate, nosy, funny, and unafraid to call out nonsense. She makes David’s home feel lived-in and gives the story a second maternal voice that broadens the emotional world around the leads.",
+        "why_actor_wants_this": "This is the kind of role that plays like Melissa Leo in The Fighter — a mother who can be comic, exasperated, and deeply invested in the same breath. Character actors who like scene-stealing domestic authority will be drawn to the chance to make a few lines feel like a whole family history."
+      },
+      {
+        "name": "Denise",
+        "role_type": "Supporting",
+        "demographics": "Female · pre-teen/early teen · Latina",
+        "hook": "Denise is a small but useful presence that helps locate David in a real family system rather than a vacuum. Her piano lesson detail and easy rapport with Alma add a lived-in domestic texture that makes the home feel specific.",
+        "why_actor_wants_this": "This is the kind of part that recalls the younger sibling energy in Little Miss Sunshine — brief, but memorable because it helps define the family around the lead. Young performers and casting directors looking for natural, unforced child work will see an easy fit."
+      },
+      {
+        "name": "The Clerk",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens/20s · alt-presenting",
+        "hook": "The clerk is a quiet mirror for Alma: observant, slightly mysterious, and present just long enough to trigger the shimmer of recognition. She functions less as a plot mover than as a charged glance that suggests the world is larger than the boys’ search.",
+        "why_actor_wants_this": "This is the kind of brief but magnetic role that recalls the gas-station encounter energy in The Florida Project — a small part that can linger because it carries atmosphere and subtext. Emerging actors with strong face presence will want it because a single look does real work here."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make magical realism feel intimate, not ornamental.",
+        "fit_profile": "First- or second-feature directors, or established indie filmmakers, who already work in performance-forward drama and have an eye for lyrical visual motifs. This material rewards restraint, sound design, and emotional precision more than spectacle, so it suits directors who like to build meaning through framing, silence, and recurring visual language.",
+        "detail": "The film gives a director room to choreograph memory, identity, and first love through image and sound rather than exposition. It is especially attractive to filmmakers who can make a car, a kitchen, and a field feel like emotional architecture."
+      },
+      "buyer_appeal": {
+        "tier": "$2-8M indie feature / streamer original",
+        "lane": "festival-friendly prestige drama with YA crossover and queer audience appeal",
+        "detail": "The project can be packaged around two young leads and a small family ensemble, so it does not require a heavy name-talent stack to make sense. The queer coming-of-age lane, bilingual family texture, and magical-realist ending give it both festival visibility and a clean streamer marketing hook."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle lives in mood more than escalation.",
+        "detail": "The gas-station, car, and woods passages are beautifully observed, and a next pass could look at where one emotional turn can arrive a beat earlier so the search keeps tightening. The version of the script where the argument in the woods and the disappearance of Alma land with a slightly sharper cause-and-effect chain would keep the feature’s momentum humming without changing its tone.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The opening birthday sequence is doing a lot of setup.",
+        "detail": "The childhood material establishes the pact, the family world, and the unicorn mythology all at once, which is elegant, but it also carries a lot of information before the present-day engine fully takes over. One lever would be to streamline a few beats in that opening so the emotional premise arrives with even more snap.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The named music choices shape the release path.",
+        "detail": "Frank Ocean, The Boys Choir of Harlem, and Adriene Lanker are all script-specific musical anchors, so a production pass would want to decide early whether those are must-haves or placeholders. If they stay, the film’s emotional identity gets a strong soundtrack signature; if not, the same scenes will need equivalent tonal support from score and sound design.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The bilingual family scenes deserve clean subtitle strategy.",
+        "detail": "The Spanish-English exchanges are one of the film’s best texture points, and the version of the movie where subtitle treatment is planned as part of the visual language will protect that authenticity. This is especially useful for streamer and festival audiences, where bilingual specificity can travel well if it is presented cleanly.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The final transformation can stay practical and elegant.",
+        "detail": "The horn reveal is the one effects beat that needs to land with precision, and it can likely be achieved with a modest prosthetic, makeup, and lighting approach rather than a heavy VFX build. That keeps the film in a very producible lane while preserving the image that gives the ending its afterimage.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 18123,
+  "outputTokens": 4324,
+  "cost": 0.03305025,
+  "declaredFormat": "Feature film"
+}

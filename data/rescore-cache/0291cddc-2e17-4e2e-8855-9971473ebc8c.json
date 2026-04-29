@@ -1,0 +1,307 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Anthology",
+        "Dark Comedy"
+      ],
+      "tone": "Grounded, wry, melancholy, quietly absurd"
+    },
+    "positioning_hook": "A series of small humiliations and private reckonings, where ordinary men, marriages, and friendships crack open under the pressure of mistaken identity, separation, and the need to feel seen.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The emotional territory is recognizable and human, and the short-form structure makes it easy to sample. The audience is likely to be more niche than broad, though, because the appeal lives in mood, observation, and character texture rather than a single high-concept engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The pilot makes its shape clear: discrete life fragments linked by ambient music and a recurring sense of insignificance. The anthology/sketch-drama frame is understandable by the end, but the series engine lands more as an artistic proposition than a clean commercial premise."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Sean, Kevin, Paul, and the detective duo each have a distinct social register and a playable everyday contradiction, especially Kevin’s wounded dignity and Paul’s anxious repetition. The characters are vivid in moment, and the long-term potential comes from the format’s ability to keep finding new ordinary crises rather than from a single dominant lead."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a fragmented dramatic-sketch format with ambient music as connective tissue, which gives it a clear authorial stamp. The boldness is less about plot invention than about form and the willingness to treat tiny social collisions as the main event."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "Each vignette has a clean internal turn, especially the screwdriver misunderstanding and the prostitute/boots reveal, but the overall pilot moves in a deliberately loose, episodic way. The ending with Norman writing the writers gives the series a meta jolt, though the propulsion is more reflective than urgent."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a dramatic anthology built from small, socially specific embarrassments and linked by music feels immediately ownable. The final self-referential reveal that the writers are themselves being written adds a second layer that makes the format feel more than just a collection of sketches."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The world is specific in class detail, domestic routine, and workplace texture, from the boiler install to the loft clear-out to the bus ride through a worn urban landscape. It is not a heavily rule-bound world, but it does have enough social texture to keep generating material."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusually consistent: deadpan, melancholy, lightly comic, and often painfully ordinary. The ambient music cues and the focus on small social discomforts give the piece a recognizable emotional signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The pilot keeps suggesting larger emotional lives beneath the surface: Kevin’s separation, Paul’s vulnerability, Lawrence’s worldview, Norman’s authorship obsession. The format invites the audience to read between the lines, which gives the series room to deepen over time."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The strongest recurring energy comes from pairs: Sean/customer, Kevin/Jane, Paul/Janice/Cath, Lawrence/Adams, Tom/Jay/Norman. The ensemble is more modular than interwoven, but that modularity also suits the anthology design and gives the series multiple playable relationship lanes."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 7,
+        "series_regulars": 5,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Adult male leads across 30s to 50s",
+          "One autistic adult role",
+          "One young female sex worker role",
+          "Two child roles",
+          "Working-class British regional specificity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "Mostly interior with some exterior transitions",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Suburban house kitchen and driveway",
+          "Flat with loft and communal stairwell",
+          "Bus interior",
+          "Garage",
+          "Cafe/bar writers' group space"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical needs; ambient music cues are editorial rather than effects-driven.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Ambient piano music and ambient music cues are specified, but no commercial songs are named."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script references Insignificance as a TV show and the Nic Roeg film, plus Sherlock Holmes, Dracula, and Banksy in dialogue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable anthology/drama lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized anthology of self-contained dramatic vignettes linked by tone, music, and recurring thematic concerns about insignificance, identity, and social embarrassment."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary interiors, modest cast, and no VFX or stunt load keep the budget footprint contained."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project needs a broad spread of specific adult character types, plus an autistic adult role and child performers in the family material."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The pilot uses multiple everyday locations across homes, a bus, a garage, and a cafe, but all are practical contemporary spaces."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Sex work, marital separation, and social prejudice language place it in a mature lane without pushing into explicit territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The dialogue references named IP and cultural figures, though the script does not depend on licensed material to function."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The format turns small embarrassment into the engine.",
+          "what_it_means": "That gives a producer a repeatable anthology structure built on human-scale conflict, which is easier to sustain than a plot-heavy premise and easier to cast in strong guest turns. It will appeal to buyers looking for a distinctive British voice piece that can attract character actors and an audience that likes observational, emotionally precise drama.",
+          "evidence": "The screwdriver dispute, the loft clear-out, Paul’s bus monologue, and the writers’ group scene all play as self-contained dramatic units.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is locked to a single emotional frequency.",
+          "what_it_means": "The ambient music cues, restrained dialogue, and focus on awkward social exchanges create a clear brand identity that a buyer can market as authored and mood-driven. Directors and streamers who like quiet, performance-led, slightly off-center drama will recognize the lane immediately.",
+          "evidence": "Every vignette ends on a music cue, and the scenes consistently hold on pauses, silences, and small reversals rather than plot mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kevin and Sean are built around dignity under pressure.",
+          "what_it_means": "Those roles give the series two highly playable male leads who can carry shame, tenderness, and comic frustration in the same scene, which is the kind of material actors use to reset perception. Mid-career British character actors and performers known for grounded emotional realism would circle these parts.",
+          "evidence": "Sean loses his screwdriver and tries to keep professional composure; Kevin’s encounter with Caz ends with him realizing he has been robbed while trying to preserve face.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has a built-in meta hook.",
+          "what_it_means": "The final writers’ group reveal reframes the whole piece as a story about authorship, originality, and who gets to own ordinary lives, which gives the series a second-layer conversation point beyond the vignettes themselves. That kind of self-aware framing is attractive to buyers who want a show with a critical angle and to directors who enjoy material that comments on its own form.",
+          "evidence": "Norman explains that Insignificance was his idea and that the show is a series of linked dramatic sketches with ambient music.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is specific without needing scale.",
+          "what_it_means": "The script gets a lot of mileage from kitchens, lofts, buses, garages, and cafes, which keeps production practical while still feeling socially observed and lived-in. That makes it attractive to buyers who want a contained footprint with enough texture to feel premium rather than cheap.",
+          "evidence": "The thermostat job, the divorce loft clear-out, the bus journey, and the writers’ group all live in ordinary but sharply observed spaces.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a sharply observed anthology-drama with a very clear authorial fingerprint: ordinary people, small humiliations, and emotional aftershocks, all linked by ambient music and a quietly meta sense of authorship. It’s the kind of series that gives actors playable, human-sized showcase roles while staying contained enough to be practical for a buyer who wants tone, not spectacle."
+    },
+    "lead_characters": [
+      {
+        "name": "Sean",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · working-class British",
+        "hook": "A careful, self-contained tradesman who takes pride in being competent, Sean is the kind of man whose whole identity sits inside his tools, his routine, and his ability to stay polite under pressure. He is quietly tender too — the dairy-free tea, the mention of his allergic son, the way he tries to keep his dignity when the customer turns the job into a power game.",
+        "why_actor_wants_this": "This is the showcase territory of a Ricky Gervais or Steve Coogan-style performance in its more vulnerable register — a man whose embarrassment is the drama and whose restraint is the joke. Character actors who can play humiliation, class tension, and wounded professionalism in one beat will see a lot of range here."
+      },
+      {
+        "name": "The Customer",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · working-class British",
+        "hook": "A confident, slightly domineering homeowner who reads as friendly until the social balance shifts and he starts controlling the room. He is funny, prickly, and performatively practical, with just enough warmth to make the screwdriver confrontation land as both absurd and threatening.",
+        "why_actor_wants_this": "This is the kind of scene-stealing part that recalls the social menace of Mark Rylance in *Jerusalem* or the comic authority of a great sitcom alpha — a role built on timing, status play, and the pleasure of turning a small domestic space into a battlefield. Actors who like to dominate a scene with precision rather than volume will chase it."
+      },
+      {
+        "name": "Kevin",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · white working-class British",
+        "hook": "Kevin is a man in the middle of a breakup who keeps trying to behave correctly while his life quietly falls apart around him. He is awkward, decent, horny, defensive, and emotionally exposed, which makes him both funny and painfully legible.",
+        "why_actor_wants_this": "This is the kind of role that gave Martin Freeman in *The Office* or David Tennant in *Staged* the chance to make discomfort feel intimate and specific — a lead whose face does half the writing. Actors who can carry sadness, vanity, and self-mockery without losing sympathy will want it."
+      },
+      {
+        "name": "Jane",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · white British",
+        "hook": "Jane is the practical ex-partner who has already moved the emotional furniture before Kevin has caught up. She is terse, efficient, and not interested in re-litigating the marriage, which gives her a calm authority that makes the loft scene sting more.",
+        "why_actor_wants_this": "This is the sort of grounded, emotionally controlled part that lets an actor do more with silence than speech, similar to the contained force of Olivia Colman in domestic drama scenes. It will appeal to actors who like playing the person who has already done the grieving."
+      },
+      {
+        "name": "Paul",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s · autistic adult",
+        "hook": "Paul is a man whose inner life arrives in loops, repetitions, and self-soothing rituals, but the script never treats him as a symbol; he is specific, funny, wary, and trying hard to stay safe. His phone call is both comic and heartbreaking because every reassurance is doing real work.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the precision and audience-empathy territory of Toby Jones in *The Detectorists* or Daniel Day-Lewis in *My Left Foot* without imitation — a performance built on rhythm, vulnerability, and the dignity of a singular voice. Actors looking for a part that can be both humane and technically exact will respond."
+      },
+      {
+        "name": "Janice",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s · voice role / off-screen",
+        "hook": "Janice exists as a stabilizing presence on the other end of Paul’s call, the person who knows how to keep him moving through the day. She is not overexplained, which makes her feel like part of a lived support network rather than a plot device.",
+        "why_actor_wants_this": "This is a compact but meaningful voice role in the tradition of the off-screen emotional anchor in *After Life* or *The End of the F***ing World* support structures — a part that matters because of what it holds, not how much it says. Character actors and recognizable voice performers would both see utility in it."
+      },
+      {
+        "name": "Cath",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s · working-class British",
+        "hook": "Cath is the trusted companion in Paul’s world, the person who helps make the day feel navigable. She is defined through Paul’s affection and dependence, which gives the role a warm, stabilizing presence even in brief appearances.",
+        "why_actor_wants_this": "This is the kind of role that functions like the emotional ballast in a Mike Leigh ensemble — small on the page, but rich in implied history and trust. Actors who specialize in lived-in realism will know how to make this feel bigger than its screen time."
+      },
+      {
+        "name": "Tom",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s · British",
+        "hook": "Tom is a writer who thinks in riffs, irony, and social observation, but he is also the audience surrogate whose certainty starts to wobble when Norman’s story turns inward. He has a smart, slightly defensive wit and the kind of curiosity that can become obsession in a single scene.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the verbal intelligence and self-consciousness of Jesse Eisenberg in *The Social Network* while still landing the emotional confusion underneath it. It will attract actors who can make intellectual sparring feel alive and personal."
+      },
+      {
+        "name": "Jay",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s · British",
+        "hook": "Jay is Tom’s friend and creative counterpart, more open, more casual, and a little more willing to float an idea without protecting it too hard. He gives the writers’ group scenes their easy chemistry and their sense of shared ambition.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the relaxed, conversational energy of a Simon Pegg-type ensemble part, but with more emotional self-awareness than a pure comic sidekick. It’s a good fit for actors who can make banter feel like friendship history."
+      },
+      {
+        "name": "Norman",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s · faded rock-star energy",
+        "hook": "Norman is the older, slightly drunk writer who arrives like a warning and a provocation, then turns out to be the pilot’s meta engine. He is self-mythologizing, articulate, wounded, and just unstable enough to make his authorship claim feel both comic and dangerous.",
+        "why_actor_wants_this": "This is the kind of late-entry monologue role that recalls Tom Wilkinson in *Michael Clayton* or Peter Mullan in *The Magdalene Sisters* in terms of authority and lived-in intensity — a part where the actor gets to own the room with story, not action. Character actors who like verbal dominance and a little chaos will chase it."
+      },
+      {
+        "name": "D.I. Lawrence",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · British police detective",
+        "hook": "Lawrence is a detective who uses provocation as a way of testing the room, mixing banter, prejudice, and self-awareness in a way that keeps everyone slightly off balance. He is funny and abrasive, but the scene also lets him reveal a worldview that is more complicated than the first impression.",
+        "why_actor_wants_this": "This is the showcase territory of a Philip Seymour Hoffman-style scene leader — a man who can turn a conversation into a performance of intelligence, menace, and charm all at once. Actors who enjoy playing authority with a crackling edge will want the part."
+      },
+      {
+        "name": "D.C. Adams",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · British",
+        "hook": "Adams is the younger detective trying to stay professional while Lawrence keeps pushing him into philosophical and social territory. He is patient, slightly defensive, and observant, which makes him the straight man in a scene that keeps trying to become something else.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded response work of Martin Freeman opposite a bigger personality — a part built on listening, timing, and the slow reveal of irritation. It will appeal to actors who can make restraint feel active."
+      },
+      {
+        "name": "Caz",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens to early 20s · sex worker",
+        "hook": "Caz is casual, practical, and more alert than Kevin realizes, which gives the scene its sting when the transaction turns into a con. She reads as ordinary rather than glamorized, and that normality is exactly what makes her feel sharp.",
+        "why_actor_wants_this": "This is the kind of part that recalls Juno Temple in *Dirty John* or Billie Piper in *I Hate Suzie* in the sense of a young woman whose surface ease hides tactical intelligence. Actors who want a brief but memorable turn with edge and ambiguity will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make the ordinary feel cinematic without inflating it.",
+        "fit_profile": "First- or second-feature directors, or TV auteurs moving into authored drama, who already work in restraint, performance-forward staging, and social realism. This material rewards directors who can hold on pauses, let awkwardness breathe, and make a room, a bus, or a kitchen carry emotional charge.",
+        "detail": "The craft opportunity is in shaping a series of small reversals so they feel inevitable rather than merely observed, while the ambient music and recurring tonal pattern give the director a formal signature to own. It will attract directors who like character-first work with a clear point of view and enough modularity to build a distinctive episode rhythm."
+      },
+      "buyer_appeal": {
+        "tier": "Low-budget streaming or premium cable series",
+        "lane": "British anthology drama with dark-comic edges",
+        "detail": "It can be greenlit without star-driven spectacle because the scenes are built around contained interiors, strong dialogue, and recurring character types rather than expensive set pieces. The anthology structure and short-form vignette design make it exportable as a mood piece for streamers that program distinctive, adult, performance-led drama."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The anthology engine is the main commercial lever.",
+        "detail": "The pilot’s strongest identity is its modular vignette structure, so a next pass could foreground the series promise a little earlier in the opening pages rather than waiting for the writers’ group reveal. That would help a buyer immediately understand the repeatable engine while preserving the same material.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The final meta reveal does a lot of heavy lifting.",
+        "detail": "Norman’s explanation of the show’s concept arrives late and lands as a satisfying turn, but the version of the pilot where a hint of that self-aware authorship appears earlier could make the hour feel more propulsive. One lever would be to seed the idea that these lives are being observed or authored before the last scene.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast footprint is practical but broad.",
+        "detail": "The script stays in contemporary, shootable spaces, but it does ask for a spread of distinct adult types, two children, and an autistic adult role. A producer could protect the budget by keeping the vignette count lean per episode while preserving the same social range.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The rights references are manageable but worth tracking.",
+        "detail": "The script names Insignificance, Sherlock Holmes, Dracula, Banksy, and the Nic Roeg film in dialogue, so a production pass should separate what is essential to the scene from what is just color. The version of the script that keeps the same argument about originality while trimming any unnecessary named references would simplify clearance.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "Paul’s scene invites even more specificity.",
+        "detail": "The bus monologue is one of the pilot’s most memorable stretches, and a next pass could deepen the episode engine by giving Paul one concrete external objective in the scene alongside the verbal repetition. That would preserve the voice while giving the sequence an even stronger dramatic spine.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 60.7,
+  "tier": "Optionable",
+  "inputTokens": 17779,
+  "outputTokens": 5221,
+  "cost": 0.03682875,
+  "declaredFormat": "Series"
+}

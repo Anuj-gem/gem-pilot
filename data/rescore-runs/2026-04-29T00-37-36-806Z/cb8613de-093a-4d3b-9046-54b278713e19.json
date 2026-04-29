@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T01:42:55.198Z",
+  "submission_id": "cb8613de-093a-4d3b-9046-54b278713e19",
+  "eval_id": "e6dbf5e3-cbb0-4be1-a288-d0d89f088779",
+  "title": "Vineyard Haven Lukas Kendall 4 22 26",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "SCOTT MORGAN",
+      "role_type": "Lead",
+      "demographics": "Male · 24 · white · Vineyard native"
+    },
+    {
+      "name": "BEN CARTER",
+      "role_type": "Lead",
+      "demographics": "Male · 52 · white · wealthy producer type"
+    },
+    {
+      "name": "KATE",
+      "role_type": "Lead",
+      "demographics": "Female · 47 · African descent · adopted · singer/performer background"
+    },
+    {
+      "name": "REBECCA HARDING",
+      "role_type": "Lead",
+      "demographics": "Female · 23 · white · beauty-queen polish with volatile edge"
+    },
+    {
+      "name": "MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · white"
+    },
+    {
+      "name": "GEORGE",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · white · builder"
+    },
+    {
+      "name": "TODD STRAITE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · white · congressman"
+    },
+    {
+      "name": "REBECCA'S MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s · white"
+    },
+    {
+      "name": "ROB KELLEY",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · white · state trooper"
+    },
+    {
+      "name": "MARIO",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Italian-American"
+    },
+    {
+      "name": "HOLLY JANE",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · blonde bombshell / adult performer type"
+    }
+  ],
+  "positioning_hook": "A Vineyard-born screenwriter chasing a break gets trapped in a day with a rich, broken producer, a volatile ex-fiancée, and the island’s class warfare — and learns what he actually wants.",
+  "cost_usd": 0.10606950000000001,
+  "input_tokens": 75978,
+  "output_tokens": 10908,
+  "status": "wrote:leads_ok"
+}

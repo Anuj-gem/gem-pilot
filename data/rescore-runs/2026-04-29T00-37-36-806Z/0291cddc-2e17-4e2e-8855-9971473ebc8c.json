@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:46:36.331Z",
+  "submission_id": "0291cddc-2e17-4e2e-8855-9971473ebc8c",
+  "eval_id": "a28f5d7d-cef9-46c2-9aef-6b0b8310dc90",
+  "title": "Insignificance (complete)",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Sean",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · working-class British"
+    },
+    {
+      "name": "The Customer",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · working-class British"
+    },
+    {
+      "name": "Kevin",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · white working-class British"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · white British"
+    },
+    {
+      "name": "Paul",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · autistic adult"
+    },
+    {
+      "name": "Janice",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · voice role / off-screen"
+    },
+    {
+      "name": "Cath",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · working-class British"
+    },
+    {
+      "name": "Tom",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · British"
+    },
+    {
+      "name": "Jay",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · British"
+    },
+    {
+      "name": "Norman",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · faded rock-star energy"
+    },
+    {
+      "name": "D.I. Lawrence",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · British police detective"
+    },
+    {
+      "name": "D.C. Adams",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · British"
+    },
+    {
+      "name": "Caz",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · sex worker"
+    }
+  ],
+  "positioning_hook": "A series of small humiliations and private reckonings, where ordinary men, marriages, and friendships crack open under the pressure of mistaken identity, separation, and the need to feel seen.",
+  "cost_usd": 0.03682875,
+  "input_tokens": 17779,
+  "output_tokens": 5221,
+  "status": "wrote:leads_ok"
+}

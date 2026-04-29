@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:43:18.537Z",
+  "submission_id": "7eb04f36-a215-4f13-92d2-aaa609b2a35b",
+  "eval_id": "76d973a7-a0b3-43e3-9ed6-5b9509cb5d9e",
+  "title": "The Union (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "LEWIS",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "EMMA",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "CHANCE HUNTER",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "DARREN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "TIM R",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "CLARE",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s"
+    },
+    {
+      "name": "BOB",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "LILA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "WAITRESS",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "RECEPTIONIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "INTERVIEWER",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    }
+  ],
+  "positioning_hook": "A young Union apprentice risks exile to see the woman he chose himself, then gets pulled into the movement’s public face as his private rebellion becomes propaganda.",
+  "cost_usd": 0.04651875,
+  "input_tokens": 31485,
+  "output_tokens": 5090,
+  "status": "wrote:leads_ok"
+}

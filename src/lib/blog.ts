@@ -1,28 +1,17 @@
-// Blog — single source of truth for reading posts off disk.
+// Blog — single source of truth for blog post data.
 //
-// Posts live in /content/blog/*.md as plain markdown with YAML frontmatter:
-//   ---
-//   title: "Selznick is here."
-//   slug: launch
-//   date: 2026-04-28
-//   summary: "What changed and why it matters."
-//   author: "Anuj Kommareddy"
-//   og_image: /og/blog-launch.png   # optional, defaults to /og/blog-default.png
-//   draft: false                     # optional; true hides from index + sitemap
-//   ---
+// Posts live in /content/blog/*.md as plain markdown with YAML
+// frontmatter (see content/blog/README.md for the contract).
 //
-// Add a new post = drop a .md file in /content/blog. Filename and slug
-// don't have to match — the slug field in frontmatter wins.
+// At BUILD time, scripts/build-blog-index.mjs reads every post and
+// writes them as a static array into src/lib/blog-data.generated.ts.
+// This module imports from there — no fs at runtime, no Next.js
+// build-tracer guesswork, no path-resolution drama.
 //
-// File org (Anuj 2026-04-28): we keep posts as plain files in /content/
-// so anyone can author them in markdown without spinning up a CMS. If we
-// later want React components inside posts (interactive widgets,
-// embedded charts), switch from react-markdown to next-mdx-remote and
-// rename .md → .mdx.
+// To add a post: drop a .md file in content/blog/, then run
+// `npm run build` (which kicks the prebuild codegen).
 
-import fs from 'node:fs/promises'
-import path from 'node:path'
-import matter from 'gray-matter'
+import { BLOG_POSTS } from './blog-data.generated'
 
 export interface BlogPost {
   slug: string
@@ -30,65 +19,24 @@ export interface BlogPost {
   date: string // ISO yyyy-mm-dd
   summary: string
   author: string
-  og_image?: string
+  og_image: string | null
   draft: boolean
   content: string
 }
 
-const POSTS_DIR = path.join(process.cwd(), 'content', 'blog')
-
-async function readDirSafe(dir: string): Promise<string[]> {
-  try {
-    return await fs.readdir(dir)
-  } catch {
-    return []
-  }
-}
-
-function normalizePost(raw: matter.GrayMatterFile<string>, fallbackSlug: string): BlogPost | null {
-  const data = raw.data as Record<string, unknown>
-  const title = typeof data.title === 'string' ? data.title : ''
-  const slug = typeof data.slug === 'string' && data.slug.trim() ? data.slug.trim() : fallbackSlug
-  const date = typeof data.date === 'string' ? data.date : ''
-  const summary = typeof data.summary === 'string' ? data.summary : ''
-  const author = typeof data.author === 'string' ? data.author : 'Anuj Kommareddy'
-  const og_image = typeof data.og_image === 'string' ? data.og_image : undefined
-  const draft = data.draft === true
-  if (!title || !slug || !date) return null
-  return {
-    slug,
-    title,
-    date,
-    summary,
-    author,
-    og_image,
-    draft,
-    content: raw.content,
-  }
-}
-
 /** All published posts (drafts excluded), sorted newest first. */
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const files = await readDirSafe(POSTS_DIR)
-  const posts: BlogPost[] = []
-  for (const file of files) {
-    if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue
-    const raw = await fs.readFile(path.join(POSTS_DIR, file), 'utf-8')
-    const post = normalizePost(matter(raw), file.replace(/\.(md|mdx)$/, ''))
-    if (!post || post.draft) continue
-    posts.push(post)
-  }
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+  return BLOG_POSTS.filter((p) => !p.draft)
 }
 
 /** A single published post by slug. Returns null if not found / drafted. */
 export async function getPost(slug: string): Promise<BlogPost | null> {
   const all = await getAllPosts()
-  return all.find(p => p.slug === slug) ?? null
+  return all.find((p) => p.slug === slug) ?? null
 }
 
 /** Slug list for static params + sitemap. */
 export async function getAllPostSlugs(): Promise<string[]> {
   const all = await getAllPosts()
-  return all.map(p => p.slug)
+  return all.map((p) => p.slug)
 }

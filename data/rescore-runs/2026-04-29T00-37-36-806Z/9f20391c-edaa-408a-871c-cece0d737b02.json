@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:44:36.172Z",
+  "submission_id": "9f20391c-edaa-408a-871c-cece0d737b02",
+  "eval_id": "a8a2b43e-3970-4b88-b165-d41e1c7e75fb",
+  "title": "Vineyard Haven Lukas Kendall 4 23 26A",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "SCOTT MORGAN",
+      "role_type": "Lead",
+      "demographics": "Male · 24 · Vineyard native"
+    },
+    {
+      "name": "BEN CARTER",
+      "role_type": "Lead",
+      "demographics": "Male · 52 · wealthy island insider"
+    },
+    {
+      "name": "KATE",
+      "role_type": "Lead",
+      "demographics": "Female · 47 · Black / African descent · adopted · English-Jewish identity"
+    },
+    {
+      "name": "REBECCA HARDING",
+      "role_type": "Lead",
+      "demographics": "Female · 23 · white"
+    },
+    {
+      "name": "TODD STRAITE",
+      "role_type": "Supporting",
+      "demographics": "Male · 34 · Congressman"
+    },
+    {
+      "name": "BEN'S MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s · elite island matriarch"
+    },
+    {
+      "name": "KATE'S MOTHER / MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · working mother"
+    },
+    {
+      "name": "GEORGE",
+      "role_type": "Supporting",
+      "demographics": "Male · 65 · island builder"
+    },
+    {
+      "name": "RICK",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · tavern worker"
+    },
+    {
+      "name": "WAITRESS",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "ROB KELLEY / TROOPER",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · state trooper"
+    },
+    {
+      "name": "MEREDITH",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    }
+  ],
+  "positioning_hook": "A Vineyard-born aspiring screenwriter gets pulled into a rich family’s breakup scheme, then finds love, class warfare, and his own adulthood on the ferry home.",
+  "cost_usd": 0.052884,
+  "input_tokens": 38196,
+  "output_tokens": 5386,
+  "status": "wrote:leads_ok"
+}

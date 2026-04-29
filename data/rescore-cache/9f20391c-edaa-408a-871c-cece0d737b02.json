@@ -1,0 +1,332 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic dramedy",
+      "genre_tags": [
+        "ensemble comedy",
+        "coming-of-age"
+      ],
+      "tone": "Wry, sunlit, emotionally candid, and lightly satirical"
+    },
+    "positioning_hook": "A Vineyard-born aspiring screenwriter gets pulled into a rich family’s breakup scheme, then finds love, class warfare, and his own adulthood on the ferry home.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The island setting, romantic tension, and class-comedy engine give this a clear audience lane, especially for viewers who like adult relationship stories with bite. The appeal is more targeted than four-quadrant, but the emotional promise is easy to grasp and the ferry-to-island world gives it a clean commercial identity."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands quickly: Scott meets Ben on the ferry, gets recruited into a messy breakup, and the story keeps tightening around money, love, and belonging. The script is easy to explain in a sentence or two, and the island-specific social engine is established early."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Scott, Ben, Kate, and Rebecca all have distinct comic and emotional functions, and the script gives each of them a recognizable point of view. Scott’s arc is the clearest, while Ben and Rebecca are especially vivid as scene partners who keep generating new friction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The Martha’s Vineyard milieu is used as more than scenery; it becomes a pressure cooker for class, identity, and inherited privilege. The script’s willingness to let the comedy sit beside grief, money shame, and political hypocrisy gives it a confident, specific voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through ferry crossings, confrontations, and social set pieces, and each stop adds a new layer to the central triangle of Scott, Ben, and Rebecca. The momentum is strongest when the breakup plot and Scott’s personal awakening are braided together, which they usually are."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A Vineyard-set class comedy about a broke rich fixer, a furious local writer, and a politically radioactive ex is fresh in a way that feels immediately playable. The brass-ring, ferry, and island-as-limbo motifs make the premise feel both specific and emotionally legible."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script is packed with island texture: ferries, Black Dog, Chappaquiddick, Jaws references, Illumination Night, the Tabernacle, and the social codes around off-islanders versus locals. That density makes the setting feel like a living system with its own hierarchy and memory."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a distinctive blend of coastal hangout comedy, romantic yearning, and sharp class satire, with dialogue that can pivot from absurd to sincere in a beat. It has a recognizable flavor: sunlit, profane, self-aware, and emotionally open."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the comedy, the script keeps revealing grief, inherited shame, and the longing to be seen by family and community. The father-loss material, the mother/son dynamics, and Ben’s buried history give the story more emotional reserve than the surface banter first suggests."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Scott/Ben, Scott/Rebecca, Ben/Kate, and Scott/Kate all generate distinct energy, and the ensemble keeps reconfiguring in ways that create fresh scenes. The script is strongest when the four of them are in motion together, because nearly every pairing produces a different comic or emotional charge."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "African descent / Black actress for Kate",
+          "Older female authority role for Ben's Mother",
+          "Congressman role with polished public-facing charisma",
+          "Several 20s-60s supporting roles with local-island specificity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "Contemporary with recurring 1950s wardrobe and car styling motifs",
+        "notable_requirements": [
+          "Martha's Vineyard island locations",
+          "Ferry terminal and ferry interiors",
+          "Beach Plum Inn / upscale wedding venue",
+          "Black Dog Tavern",
+          "private beach, harbor, and scenic island roads",
+          "period car hero vehicle (1958 Thunderbird)"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly scenic enhancement and the Illumination Night flash-cut montage; no major creature or action VFX.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical car work, party chaos, and a few physical altercations; no large-scale effects package.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Ted Danson and Mary Steenburgen appear as themselves in the restaurant montage."
+        },
+        {
+          "type": "real_person",
+          "detail": "John Barry is referenced by name in a music joke."
+        },
+        {
+          "type": "real_person",
+          "detail": "Sandy Koufax is referenced by name in a key speech."
+        },
+        {
+          "type": "real_person",
+          "detail": "Teddy Kennedy and Mary Jo Kopechne are referenced by name."
+        },
+        {
+          "type": "real_person",
+          "detail": "Doug Liman is referenced by name in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Fox News, TMZ, IMDB, Venmo, Heineken, Black Dog, Red Sox, Sam Adams, and C.B. Stark Jewelers are named on the page."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Jaws, The Twilight Zone, The Godfather, The Wild Bunch, Charlie Brown, and Looney Tunes are all directly referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable feature lane; also viable as a festival-to-platform title",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: character-driven ensemble comedy-drama with a strong festival launch and platform-friendly adult audience."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary island locations, a small principal cast, and one hero car keep the budget in a contained feature range."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The four leads need strong chemistry, and the script benefits from recognizable adult performers plus a specific casting lane for Kate and Ben's Mother."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across multiple Martha's Vineyard spots, ferries, beaches, and wedding venues, but all within a single geographic footprint."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Frequent profanity, political insults, cocaine use, a suicide attempt, and sexual banter push it into mature territory without becoming extreme."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names multiple real people, brands, and film/music properties, including several pop-culture references that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Vineyard is a story engine, not scenery.",
+          "what_it_means": "The island’s ferry culture, seasonal class split, and local memory give the film a built-in identity that buyers can market immediately. That kind of place-specific texture is catnip for directors and audiences who respond to worlds with social rules, not just pretty backdrops.",
+          "evidence": "The ferry terminal, Black Dog, Chappaquiddick, Illumination Night, the Tabernacle, and the repeated off-island/on-island crossings all shape the action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Scott has a clean, playable arc.",
+          "what_it_means": "The script gives a young adult male lead a real emotional journey: from entitled, angry observer to someone who can apologize, grieve, and choose a life beyond his own resentment. That makes the role attractive to actors looking for a showcase that can play comedy, romantic longing, and emotional release in one package.",
+          "evidence": "His clashes with Ben, his fixation on getting his script read, his breakdown over his father, and the final decision to leave the island all track a visible transformation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ben is a star-making supporting lead.",
+          "what_it_means": "Ben’s mix of privilege, self-loathing, comic authority, and buried grief gives the film a scene-stealing engine that can anchor the whole ensemble. Mid-career actors who want a role with swagger, pain, and quotable dialogue will see immediate value here.",
+          "evidence": "His rapid-fire advice, his coke-fueled volatility, the dead-baby reveal, and the final break with his mother all give him range.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The class comedy lands with teeth.",
+          "what_it_means": "This has the kind of social friction that makes a dramedy feel current without chasing headlines: locals versus second-home money, public virtue versus private behavior, and the humiliation of needing rich people to survive. That gives the film a buyer-friendly hook for adult audiences who like their laughs with bite.",
+          "evidence": "Scott’s anger at the Carters, Ben’s inheritance dependence, Todd’s political hypocrisy, and the wedding-money negotiations all keep the class tension active.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Rebecca is a volatile, magnetic wildcard.",
+          "what_it_means": "Rebecca gives the movie a female lead who can swing from comic provocation to genuine vulnerability, which is exactly the kind of role that can turn a supporting actress into a breakout. Casting directors and actors chasing a messy, alive, unpredictable part will notice her immediately.",
+          "evidence": "Her political baiting, her breakdown in the motel, the suicide attempt, and the final beach-day honesty all make her feel dangerous and human.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating fresh combinations.",
+          "what_it_means": "The script is built so that almost any pairing can carry a scene, which is a real asset for casting and for the finished movie’s rewatch value. That gives the project appeal to ensemble-friendly directors and buyers who want a film with multiple audience entry points.",
+          "evidence": "Scott/Ben, Scott/Rebecca, Ben/Kate, and Kate/Rebecca all produce different tonal registers and emotional outcomes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It has a strong festival-to-platform shape.",
+          "what_it_means": "The movie feels intimate enough for a festival launch but accessible enough for a streamer or specialty distributor to sell on cast, setting, and adult romance. That combination is especially attractive to buyers looking for modest-budget titles with a clear voice and a defined audience.",
+          "evidence": "The story is contained, dialogue-driven, and emotionally legible, with a scenic setting and a recognizable romantic-comedy-dramedy spine.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a smart, highly placeable feature: a Vineyard-set ensemble dramedy with class tension, romantic volatility, and a lead role that can carry both laughs and heartbreak. The script has the kind of specific world, quotable dialogue, and actor-friendly dynamics that make producers lean in fast."
+    },
+    "lead_characters": [
+      {
+        "name": "SCOTT MORGAN",
+        "role_type": "Lead",
+        "demographics": "Male · 24 · Vineyard native",
+        "hook": "Scott is a smart, prickly, self-mythologizing young writer who thinks he’s above the island even as he’s emotionally trapped by it. He’s funny, defensive, and wounded in equal measure, with the kind of chip-on-the-shoulder energy that can read as arrogance until the grief underneath starts to surface.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — fast, brittle intelligence masking deep insecurity, with the added lift of a romantic awakening and a genuine emotional breakdown. Actors who want a role that can play verbal sparring, romantic confusion, and cathartic release in one arc will chase this."
+      },
+      {
+        "name": "BEN CARTER",
+        "role_type": "Lead",
+        "demographics": "Male · 52 · wealthy island insider",
+        "hook": "Ben is a rich, charming, self-destructive fixer who performs ease as a survival skill and uses humor like a weapon and a sedative. He’s the kind of man who can dominate a room, then suddenly reveal the loneliness and shame that made him that way.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — charismatic verbal control, philosophical swagger, and a buried ache that keeps leaking through the performance. Mid-career actors looking for a role that lets them be funny, dangerous, and unexpectedly tender will line up for it."
+      },
+      {
+        "name": "KATE",
+        "role_type": "Lead",
+        "demographics": "Female · 47 · Black / African descent · adopted · English-Jewish identity",
+        "hook": "Kate is elegant, sharp, and emotionally disciplined, but she’s also carrying a lifetime of self-editing around race, faith, belonging, and desire. She reads as the most composed person in the room until the script lets her reveal how much of that composure is performance.",
+        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences or Regina King in If Beale Street Could Talk — a woman whose restraint is as expressive as any outburst, with identity, love, and self-definition all in play. Actors who want a role with intelligence, wit, and a late-blooming emotional reveal will be drawn to her."
+      },
+      {
+        "name": "REBECCA HARDING",
+        "role_type": "Lead",
+        "demographics": "Female · 23 · white",
+        "hook": "Rebecca is a beautiful, furious, politically loaded ex-fiancée who uses provocation to keep from feeling abandoned. Under the sarcasm and volatility, she’s a young woman desperate not to be discarded, and the script keeps letting that pain peek through the armor.",
+        "why_actor_wants_this": "This is the showcase territory of Jennifer Lawrence in Silver Linings Playbook — combustible energy, comic aggression, and a hidden fragility that makes the character impossible to dismiss. Younger actresses looking for a role that can be funny, sexy, wounded, and dangerous all at once will want this part."
+      },
+      {
+        "name": "TODD STRAITE",
+        "role_type": "Supporting",
+        "demographics": "Male · 34 · Congressman",
+        "hook": "Todd is a polished political operator who knows how to smile, flatter, and threaten in the same breath. He’s not just a villain; he’s a man who understands image, leverage, and the transactional nature of power.",
+        "why_actor_wants_this": "This is the showcase territory of Billy Crudup in The Morning Show — public charm with private menace, and the ability to pivot from affable to icy in a single beat. Actors who like playing high-status hypocrisy with a real pulse will be interested."
+      },
+      {
+        "name": "BEN'S MOTHER",
+        "role_type": "Supporting",
+        "demographics": "Female · 80s · elite island matriarch",
+        "hook": "Ben’s Mother is an ice-cold matriarch who speaks in polished, surgical sentences and never confuses sentiment with power. She carries the family’s money, rules, and emotional damage like a private empire.",
+        "why_actor_wants_this": "This is the showcase territory of Jane Alexander in The Great White Hope or Faye Dunaway in Network — authority, wit, and the pleasure of watching a formidable woman control a room without raising her voice. Veteran actresses who want a late-career role with command and bite will notice her immediately."
+      },
+      {
+        "name": "KATE'S MOTHER / MOM",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · working mother",
+        "hook": "Scott’s mother is exhausted, practical, and emotionally sharper than the men around her realize. She’s the adult in the room, but the script also lets her be lonely, funny, and quietly fed up with everyone’s self-absorption.",
+        "why_actor_wants_this": "This is the showcase territory of Laurie Metcalf in Lady Bird — a mother whose love is real, complicated, and expressed through friction rather than speeches. Character actresses who can make domestic realism feel alive will want this role."
+      },
+      {
+        "name": "GEORGE",
+        "role_type": "Supporting",
+        "demographics": "Male · 65 · island builder",
+        "hook": "George is the kind of older local who seems like a hanger-on until you realize he’s carrying his own bruised dignity and romantic disappointment. He functions as a grounded counterweight to the louder men, with a lived-in, slightly wounded presence.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in The Visitor — understated, humane, and quietly funny, with emotional weight hiding in plain sight. Actors who specialize in grounded supporting work will see a clean fit."
+      },
+      {
+        "name": "RICK",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · tavern worker",
+        "hook": "Rick is a blunt, blue-collar island guy who talks too much, jokes too hard, and keeps the social temperature high. He gives the movie local texture and a rougher comic register.",
+        "why_actor_wants_this": "This is the showcase territory of John C. Reilly in a grounded comic supporting part — loose, funny, and fully inhabited without needing a big arc. Character actors who can make a few scenes feel lived-in will want it."
+      },
+      {
+        "name": "WAITRESS",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s",
+        "hook": "The waitress is a practical island observer who sees more than she says and keeps the machinery of the place moving. She’s a small role, but she helps make the world feel populated and real.",
+        "why_actor_wants_this": "This is the kind of grounded, scene-stealing territory that actors like Patricia Clarkson often elevate in ensemble films — efficient, specific, and memorable. Working character actors who know how to land a moment will enjoy it."
+      },
+      {
+        "name": "ROB KELLEY / TROOPER",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · state trooper",
+        "hook": "Rob is a local law-enforcement presence with enough familiarity to feel like part of the island social web rather than an outside force. He’s useful, recognizable, and quietly embedded in the community.",
+        "why_actor_wants_this": "This is the kind of clean supporting role that gives an actor the Michael Kelly lane — competent, watchful, and socially connected without overplaying it. Actors who play authority with ease will fit right in."
+      },
+      {
+        "name": "MEREDITH",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Meredith is the niece caught in the blast radius of everyone else’s choices, and her presence gives the wedding stakes a human face. She’s not a big speech character, but she anchors the family fallout.",
+        "why_actor_wants_this": "This is the kind of supporting role that can benefit from the energy of an actress like Zoey Deutch — present, reactive, and able to make a brief part feel alive. Young actresses who want to be part of an ensemble with prestige-adjacent texture will notice it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sunlit adult dramedy where every joke is carrying emotional freight.",
+        "fit_profile": "Established indie feature directors with at least one or two character-driven films under their belt, especially those who care about ensemble blocking, tonal control, and dialogue that can pivot from comic to aching without losing rhythm. This material rewards directors who like social ecosystems, scenic specificity, and performance-first storytelling more than spectacle.",
+        "detail": "The film gives a director a contained but textured island world, a four-hander with real chemistry demands, and a tonal lane that can hold both farce and heartbreak. It’s especially attractive to directors who can make adults talking feel cinematic and who know how to turn place into emotional pressure."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "Premium streamer / specialty theatrical dramedy lane",
+        "detail": "The project can be packaged around a strong ensemble rather than heavy effects or large-scale set pieces, which keeps the financing conversation manageable. The Martha’s Vineyard setting, adult romance, and class-comedy angle give it a clean marketing hook for festival buyers and streamers looking for a distinctive, exportable feature."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening takes its time finding the central engine.",
+        "detail": "The ferry arrival and Ben/Scott meet-cute are vivid, but the script could tighten the first stretch by getting the Ben-Rebecca-Scott triangle into motion a little sooner. One lever would be to let the breakup assignment or the money pressure surface earlier so the audience feels the story’s main current immediately.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Scott’s screenplay thread can be foregrounded more.",
+        "detail": "Scott’s identity as a writer is central to his self-image, and the script already uses it well in the ferry reading and Ben’s blunt notes. A next pass could give that ambition one more concrete on-page consequence so the career dream feels as emotionally active as the romantic plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The island footprint is broad but manageable.",
+        "detail": "The story moves through ferries, beaches, restaurants, a tavern, a motel, a wedding venue, and several scenic public spaces. If needed for budget or schedule, a few of those stops could be combined or staged as adjacent spaces without changing the emotional shape of the movie.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The clearance list deserves an early pass.",
+        "detail": "The script names multiple real people, brands, and IP-heavy references, including Jaws, The Twilight Zone, The Godfather, Sandy Koufax, Ted Danson, and TMZ. A producer would want to sort which references are essential flavor and which can be swapped or softened before packaging.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Ben and Rebecca’s emotional turn can be sharpened.",
+        "detail": "Their final alignment is compelling, and the beach-day material already gives them a shared language of hurt and self-protection. One direction would be to make the pivot from antagonism to trust land on a single cleaner beat so the audience feels the shift with even more force.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 77,
+  "tier": "Optionable",
+  "inputTokens": 38196,
+  "outputTokens": 5386,
+  "cost": 0.052884,
+  "declaredFormat": "Feature film"
+}

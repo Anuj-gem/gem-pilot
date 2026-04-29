@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T01:41:30.203Z",
+  "submission_id": "844ddc18-6a45-4f25-bbb9-a0bcff91bdd1",
+  "eval_id": "a4c5b869-c990-4314-9b41-ad96fbf90caf",
+  "title": "Risaldi",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Smith",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · white · Catholic father"
+    },
+    {
+      "name": "Jodie Smith",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to early 40s · white · police officer"
+    },
+    {
+      "name": "Ethan Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · black hair · Catholic-adjacent, morally conflicted"
+    },
+    {
+      "name": "Victor Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s · composed, physically imposing, Italian-American-coded crime patriarch"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s to 60s · Catholic priest"
+    }
+  ],
+  "positioning_hook": "A grief-stricken Catholic father hunts the crime family that murdered his wife and children, only to discover the killer is his own brother and the only path forward is confession, not revenge.",
+  "cost_usd": 0.053757,
+  "input_tokens": 47022,
+  "output_tokens": 4109,
+  "status": "wrote:leads_ok"
+}

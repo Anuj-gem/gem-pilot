@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:44:53.208Z",
+  "submission_id": "e4a0fa60-00d8-4af0-888c-4b7fda98e811",
+  "eval_id": "6a5bc0cc-0997-4b9e-8235-877fef54ce07",
+  "title": "The Union",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "LEWIS",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "EMMA",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "CHANCE HUNTER",
+      "role_type": "Lead",
+      "demographics": "Male · 40s/50s"
+    },
+    {
+      "name": "DARREN",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "DANA",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "LILA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "TIM R",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "BOB",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "CLARE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "WAITRESS",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s/30s"
+    },
+    {
+      "name": "RECEPTIONIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "INTERVIEWER",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s/40s"
+    },
+    {
+      "name": "GUARD #1",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s/30s"
+    },
+    {
+      "name": "GUARD #2",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s/30s"
+    }
+  ],
+  "positioning_hook": "A young Union apprentice falls for a woman outside his assigned pool, then gets pulled into the regime’s inner circle and forced to sell the very system that’s controlling his life.",
+  "cost_usd": 0.04735275,
+  "input_tokens": 30635,
+  "output_tokens": 5417,
+  "status": "wrote:leads_ok"
+}

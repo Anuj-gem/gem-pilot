@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:46:04.834Z",
+  "submission_id": "44802074-ccab-4e17-a843-2296cf7090cd",
+  "eval_id": "35f15f18-bfe7-48de-ad27-6efd9f79ef67",
+  "title": "THE ANIMAL CATCHERS LATEST",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Ted Maxwell",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · white · safari hunter / animal catcher"
+    },
+    {
+      "name": "Nancy Maxwell",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-50s · paraplegic"
+    },
+    {
+      "name": "Jen",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · white"
+    },
+    {
+      "name": "Webb",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to 20s · white"
+    },
+    {
+      "name": "Mike Ryan",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · white · South African trapper"
+    },
+    {
+      "name": "Nguru",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · African catcher"
+    },
+    {
+      "name": "Alex Ritchie",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · white · park official / landowner"
+    }
+  ],
+  "positioning_hook": "A veteran African big-game catcher races to move endangered rhinos through a collapsing colony, while his ward, his wife, and a rival hunter turn the expedition into a volatile love-and-survival test.",
+  "cost_usd": 0.050214,
+  "input_tokens": 40402,
+  "output_tokens": 4425,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:46:31.892Z",
+  "submission_id": "cc558f13-273a-4cc1-97f2-78d3853fad93",
+  "eval_id": "fcd43e62-4ba7-45fb-88aa-45b2f182a4d4",
+  "title": "STORIES MY FATHER NEVER TOLD ME",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Specter",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · Caucasian/Jewish"
+    },
+    {
+      "name": "Nate Washington",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · African American"
+    },
+    {
+      "name": "Samuel Specter",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Caucasian/Jewish"
+    },
+    {
+      "name": "Chava Specter",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s to 60s · Caucasian/Jewish"
+    },
+    {
+      "name": "Ruth Goldman",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · Caucasian/Jewish"
+    },
+    {
+      "name": "Mary Washington",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 20s · African American"
+    },
+    {
+      "name": "Private Carter",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · African American"
+    },
+    {
+      "name": "Private Harris",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · African American"
+    },
+    {
+      "name": "Private Brown",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · African American"
+    },
+    {
+      "name": "Private Young",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · African American"
+    },
+    {
+      "name": "Private Allen",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · African American"
+    },
+    {
+      "name": "Sergeant O’Connor",
+      "role_type": "Supporting",
+      "demographics": "Male · mid 20s · Caucasian"
+    },
+    {
+      "name": "Anderson",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · Caucasian"
+    },
+    {
+      "name": "Major",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Caucasian"
+    },
+    {
+      "name": "MacArthur",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Caucasian"
+    }
+  ],
+  "positioning_hook": "A Jewish Army lieutenant and his Black best friend fight for survival in New Guinea while the war exposes the country’s racism at home and abroad.",
+  "cost_usd": 0.05296125,
+  "input_tokens": 36355,
+  "output_tokens": 5710,
+  "status": "wrote:leads_ok"
+}

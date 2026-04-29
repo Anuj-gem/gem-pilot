@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T01:45:06.912Z",
+  "submission_id": "0ee46cff-6dcb-4591-980b-5da7c9b4761e",
+  "eval_id": "e5a5344c-1980-40dc-9de9-91e923a70d59",
+  "title": "il giardino delle ceneri",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Elara",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · physically active, rainforest-raised, marked with botanical tattoos"
+    },
+    {
+      "name": "Kael",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · botanist/scientist, weathered, travel-worn, emotionally guarded"
+    },
+    {
+      "name": "Margot",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · member of the Madri Verdi community"
+    },
+    {
+      "name": "The Madri Verdi",
+      "role_type": "Supporting",
+      "demographics": "Female ensemble · varied ages · matriarchal community"
+    },
+    {
+      "name": "The Patriarchal Technocrats",
+      "role_type": "Supporting",
+      "demographics": "Mixed ensemble · adults · antagonistic off-screen/attack force"
+    },
+    {
+      "name": "The Child of Elara and Kael",
+      "role_type": "Supporting",
+      "demographics": "Child · 0-5 in epilogue"
+    }
+  ],
+  "positioning_hook": "A botanist from a matriarchal rainforest enclave shelters a fugitive scientist, then races to save a sacred plant before a toxic patriarchal virus wipes out the last green world.",
+  "cost_usd": 0.0379935,
+  "input_tokens": 25614,
+  "output_tokens": 4174,
+  "status": "wrote:leads_ok"
+}

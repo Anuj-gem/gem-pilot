@@ -1,0 +1,276 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Coming-of-age comedy-drama",
+      "genre_tags": [
+        "road trip",
+        "romantic dramedy"
+      ],
+      "tone": "Loose, awkward, heartfelt, and lightly chaotic"
+    },
+    "positioning_hook": "A shy teen filmmaker’s road trip to shoot a class short turns into a messy first-love detour, a friendship fracture, and the movie they were too distracted to plan.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional lane is easy to grasp: first crushes, best-friend tension, and a scrappy teen road trip with a filmmaking frame. It plays to a clear youth audience and can travel on charm, though the appeal is more intimate than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise lands quickly in the classroom and the road-trip objective is simple to track. The meta-film structure gives it a clean engine, though the story’s destination is more emotional than conceptually high-impact."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Brian, Cole, June, and Kat each have a readable social function and the Brian/June/Cole triangle gives the piece its main charge. The characters are appealing in a lived-in way, though most of the supporting energy is routed through the central quartet."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The film-within-the-film setup and the handheld, self-aware teen production texture give it a distinct flavor. The execution stays close to recognizable coming-of-age territory, but the DIY filmmaking frame adds a personal stamp."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The road trip keeps the story moving through a series of escalating inconveniences, from the forgotten snacks to the gas run to the motel fallout. The momentum is steady and watchable, with the emotional turn arriving through the friendship blowup rather than a bigger external engine."
+      },
+      "resonant_originality": {
+        "score": 5,
+        "reasoning": "The core shape is familiar, but the specific teen-filmmaker context and the final project reveal give it a modestly fresh frame. It feels personal and playable rather than radically new."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world is grounded in a school film class, a van, a diner, a motel, and a wooded shoot location, which gives it a clear lived-in footprint. The setting is functional and specific enough for the story, but it is primarily a container for the trip."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script settles into a breezy, awkward, teen-road-movie tone with bursts of romantic tension and comic chaos. The tone is consistent and accessible, even when it leans into broad behavior and improv-style banter."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are seeds of a deeper story about friendship, jealousy, and the way creative collaboration exposes feelings people would rather hide. The draft mostly plays those emotions in the moment, with less subtext than the premise could eventually hold."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Brian/Cole friendship, Brian/June tension, and Cole/Kat chemistry create a workable web of dynamics that can keep scenes alive. The ensemble is functional and often playful, though the story still lives most strongly on the central pairings."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen/young adult ensemble",
+          "One non-speaking or near-non-speaking supporting presence in Seth",
+          "No special physical requirements beyond age-appropriate casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Classroom",
+          "Brian's house/bedroom",
+          "Van interior",
+          "Random store/convenience store",
+          "Gas station",
+          "Diner",
+          "Motel room/pool area/parking lot",
+          "Wooded forest shoot location"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Handheld camera overlays, simple montage transitions, and a brief alien short-film sequence that can be staged practically with makeup and editing.",
+        "stunts_level": "minor",
+        "sfx_needs": "Alien makeup, blood effects for the short film, a car bump/hit beat, and practical breakup/fight choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Keyomani tracks are named in the script, including 'When we met' and 'Harmony Machine' and 'Soap.'"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or festival-to-platform coming-of-age feature",
+        "content_level": "PG-13 equivalent with mature teen language, drug use, and sexual humor",
+        "series_engine_or_release_model": "Feature release model: modest theatrical, festival launch, or streamer original; the engine is the road trip and the emotional fallout of the class project."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary teen road movie with a small cast, practical locations, and a short alien-film sequence that can be done without heavy effects."
+        },
+        "cast": {
+          "level": "low",
+          "note": "Four central teen roles carry the movie, with a small supporting footprint and no star-dependent concept."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through multiple practical stops — classroom, house, van, store, gas station, diner, motel, woods — which is manageable but not contained."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Teen smoking, sexual banter, a roadside injury beat, and a brief bloody alien short-film sequence narrow the lane slightly."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named Keyomani songs appear in the script and would need clearance if retained."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The film-class frame gives the story a built-in engine.",
+          "what_it_means": "That classroom assignment turns a teen hangout into a clear commercial premise: a road trip with a deadline, a creative goal, and emotional stakes baked into the structure. Buyers who like contained, character-forward youth stories will see a producible feature with a clean hook and a natural audience for school-age and young-adult viewers.",
+          "evidence": "Mrs. Akin assigns the final short-film project, and the group’s entire road trip is organized around getting to the shoot on time.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Brian/Cole friendship carries the movie.",
+          "what_it_means": "The best commercial asset here is the central bromance: one friend is the romantic risk-taker, the other is the anxious observer, and the trip keeps forcing those roles to collide. That gives the project a strong actor-facing lane for two young leads who can play comedy, jealousy, and hurt in the same scene.",
+          "evidence": "Brian’s crush on June, Cole’s teasing interference, and the highway fight after the SD card goes missing all turn on their dynamic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "June is a clean audience-entry character.",
+          "what_it_means": "June gives the story a fresh point of view without overcomplicating the setup, and her quiet confidence lets the movie pivot from buddy comedy into first-love tension. That makes the script attractive to buyers looking for a breakout female lead role that can anchor a youth ensemble and to young actors who want a part with warmth, mystery, and romantic pull.",
+          "evidence": "She starts as the girl Brian can’t speak to, then becomes the one who joins the trip, smokes with the group, and meets Brian at the motel pool.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The road-trip escalation is easy to market.",
+          "what_it_means": "Each stop adds a new playable set piece — forgotten snacks, a gas run, a diner delay, a motel detour, and a roadside blowup — which gives the movie a trailer-friendly rhythm. That kind of escalating inconvenience is attractive to indie producers because it promises momentum without requiring expensive set pieces.",
+          "evidence": "The van runs out of gas, the group walks to a station, they linger too long at the diner, and the motel night ends in a fight over the missing SD card.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The short-film-within-the-film adds a meta hook.",
+          "what_it_means": "The alien romance short gives the feature a second visual identity and a payoff structure that feels bigger than a simple hangout movie. That opens the door for buyers who like coming-of-age stories with a creative-process angle and for directors who can make the embedded short feel like a signature sequence.",
+          "evidence": "The group writes, shoots, and then screens the alien-human kiss-and-devour short at the end of the trip.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending reframes the whole trip as memory.",
+          "what_it_means": "The final classroom screening turns the movie into a bittersweet recollection of a summer-sized emotional event, which gives the feature a clean aftertaste and a festival-friendly emotional button. That kind of ending plays well for buyers who want a crowd-pleasing youth piece that lands on feeling rather than plot mechanics.",
+          "evidence": "Mrs. Atkins watches the finished project, which is a compilation of the road trip moments rather than the original alien short.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a scrappy, producible coming-of-age road movie with a built-in deadline, a strong teen ensemble, and a romantic triangle that keeps the emotional engine alive. The film-class premise and the final-project reveal give it a clean commercial frame, while the DIY handheld texture and practical locations keep it in a buyer-friendly lane."
+    },
+    "lead_characters": [
+      {
+        "name": "Brian Slate",
+        "role_type": "Lead",
+        "demographics": "Male · late teens",
+        "hook": "Brian is the anxious center of the movie: a shy, observant teen who wants to make the film, wants June, and wants to keep the group from falling apart. He’s the kind of lead whose face does a lot of the acting for him — embarrassed, hopeful, jealous, and finally furious when the trip exposes how much he has been swallowing.",
+        "why_actor_wants_this": "This is the Jesse Eisenberg in The Social Network lane — fast internal processing, social discomfort, and a character whose intelligence shows up as overthinking. Young actors who can play vulnerability without losing comic timing will want it, because the role gives them a full arc from quiet crush to emotional eruption."
+      },
+      {
+        "name": "Cole",
+        "role_type": "Lead",
+        "demographics": "Male · late teens",
+        "hook": "Cole is the loud, impulsive best friend who keeps the movie moving and keeps making things worse in ways that feel affectionate until they don’t. He’s a natural scene-stealer: funny, cocky, a little reckless, and secretly invested in Brian’s happiness even when he sabotages it.",
+        "why_actor_wants_this": "This is the Jonah Hill in Superbad territory — a comic engine with real emotional teeth, where the performance has to pivot from swagger to guilt to hurt. Actors who want a role that lets them dominate scenes, then reveal the tenderness underneath, will chase this."
+      },
+      {
+        "name": "June",
+        "role_type": "Lead",
+        "demographics": "Female · late teens",
+        "hook": "June is the cool, self-possessed outsider who quietly changes the temperature of every room she enters. She’s observant, a little guarded, and just open enough to make Brian think he might actually have a chance, which gives her a soft power that the movie uses well.",
+        "why_actor_wants_this": "This is the Zoey Deutch in Set It Up space — a romantic lead who can be funny, grounded, and emotionally legible without overplaying it. Young actresses looking for a role that reads as effortless on the surface but carries the movie’s romantic voltage will want this."
+      },
+      {
+        "name": "Katherine",
+        "role_type": "Lead",
+        "demographics": "Female · late teens",
+        "hook": "Katherine is the girlfriend who keeps the group loose, flirty, and slightly off-balance, but she’s not just comic support — she has her own chemistry with Cole and her own social authority in the van. She feels like the friend who can joke, smoke, and clock the room instantly, which makes her a useful pressure valve in the ensemble.",
+        "why_actor_wants_this": "This is the Beanie Feldstein in Booksmart lane — a sharp, funny presence who can turn a supporting social role into a memorable engine. Actors who want a part with attitude, timing, and the ability to steal scenes without carrying the entire plot will be drawn to her."
+      },
+      {
+        "name": "Seth",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Seth is the quiet camera guy, the observer who mostly communicates through the lens and the occasional dry beat. He functions as the group’s visual witness, which gives him a low-key, almost documentary presence inside the chaos.",
+        "why_actor_wants_this": "This is the Michael Cera in Juno-adjacent territory — a restrained, deadpan presence whose stillness becomes the joke and the emotional contrast. Character actors or emerging performers who want a memorable, low-dialogue role with a distinct point of view will like the part."
+      },
+      {
+        "name": "Mrs. Akin",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s",
+        "hook": "Mrs. Akin is the teacher who sets the whole machine in motion with one assignment and then disappears, which makes her feel like the adult authority the kids are trying to outgrow. She’s brief but functional, the kind of role that establishes the school-world frame cleanly.",
+        "why_actor_wants_this": "This is the kind of role that lives in the Allison Janney-in-a-few-scenes lane — a teacher with authority, timing, and just enough presence to define the room. Working character actors who enjoy making a small amount of screen time feel specific will be interested."
+      },
+      {
+        "name": "Mr. Slate",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "Mr. Slate is Brian’s dad, a brief domestic anchor who helps ground the home-life side of the story. He’s functional, familiar, and gives the film a small but clear parental texture.",
+        "why_actor_wants_this": "This is the kind of brief parental role that can play in the Bryan Cranston-in-a-small-drama register — a grounded adult presence that makes the teen world feel real. Reliable character actors who can establish a family dynamic in a few beats will fit it."
+      },
+      {
+        "name": "Motel Attendant",
+        "role_type": "Supporting",
+        "demographics": "Any gender · 30s-60s",
+        "hook": "The motel attendant is a small but useful color role that helps sell the road-trip geography and the late-night stopover texture. The part is brief, but it contributes to the lived-in, low-budget travel feel of the movie.",
+        "why_actor_wants_this": "This is the kind of role that sits in the Frances McDormand-in-a-small-town-scene lane — a quick, specific adult beat that can make a location feel inhabited. Local hires and strong character actors will know exactly how to make it land."
+      },
+      {
+        "name": "Store Clerk",
+        "role_type": "Supporting",
+        "demographics": "Any gender · 20s-50s",
+        "hook": "The store clerk is a friction point in the middle of the trip, the adult who sees the kids as exactly what they are: broke, sweaty, and a little ridiculous. It’s a sharp utility role that helps the movie’s road texture feel real.",
+        "why_actor_wants_this": "This is the kind of one-scene authority role that gives an actor a clean comic beat, like the convenience-store energy in Dazed and Confused. Character actors who can turn irritation into a memorable moment will enjoy it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a funny, intimate road movie out of teen embarrassment and first-love chaos.",
+        "fit_profile": "First- or second-feature directors, or indie filmmakers coming out of shorts, who already lean toward performance-first storytelling and naturalistic ensemble work. The material rewards someone who likes handheld intimacy, awkward comedy, and letting emotional turns emerge from behavior rather than speeches.",
+        "detail": "The movie gives a director a contained ensemble, a clear travel structure, and a final-project reveal that can be staged as a satisfying emotional payoff. It’s especially attractive to filmmakers who can make small locations feel alive and who know how to keep a teen cast feeling spontaneous without losing shape."
+      },
+      "buyer_appeal": {
+        "tier": "$1-5M indie feature",
+        "lane": "Streaming-friendly coming-of-age lane with festival potential",
+        "detail": "It can be packaged around four young leads and a director with a strong reel, so it does not need a star-driven financing model. The road-trip structure and youth-comedy tone fit the current appetite for modestly budgeted, character-led features that can launch at festivals and move to a streamer or limited theatrical run."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The final-project reveal can be sharpened as the emotional payoff.",
+        "detail": "The ending already lands on the class screening, and the version of the script where the compilation feels more specifically tied to Brian and Cole’s fracture would make the payoff hit harder. One lever would be to foreground a few more images from the trip that echo the friendship and crush dynamics, so the last beat feels like a memory with shape rather than just a recap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The road-trip stops could be slightly more selective.",
+        "detail": "The van, store, gas station, diner, motel, and woods all do useful work, but the story would stay just as playable if one of the middle stops were absorbed into another. That would protect the momentum and make the escalation feel even cleaner without changing the core journey.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Brian and June’s connection has room for one more defining beat.",
+        "detail": "Their motel-pool conversation and the first-kiss energy already give the romance a soft glow, and a next pass could consider one earlier exchange that gives June a more singular point of view on Brian. That would deepen the romantic spine and make the final hand-hold feel even more earned.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The alien short can stay practical and still pop.",
+        "detail": "The embedded film only needs a few clear visual ideas — makeup, blood, and editing rhythm — so there is room to keep the effects simple and still make it feel like a real student short. That keeps the production in a low-budget lane while preserving the fun of the genre exercise.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 57.3,
+  "tier": "Needs Development",
+  "inputTokens": 21511,
+  "outputTokens": 4494,
+  "cost": 0.03635624999999999,
+  "declaredFormat": "Feature film"
+}

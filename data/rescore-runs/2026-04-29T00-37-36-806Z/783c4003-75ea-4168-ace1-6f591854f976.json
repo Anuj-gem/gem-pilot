@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T01:43:37.827Z",
+  "submission_id": "783c4003-75ea-4168-ace1-6f591854f976",
+  "eval_id": "bd585470-1462-4a87-9fe0-a86b2d9a8015",
+  "title": "The Union",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "LEWIS",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "EMMA",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "CHANCE HUNTER",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "DARREN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "DANA",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "SHANNON",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "TIM R",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "LILA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "WAITRESS",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "RECEPTIONIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "GUARD #1",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "GUARD #2",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "OWNER",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "INTERVIEWER",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    }
+  ],
+  "positioning_hook": "A young apprentice in a state-run marriage system falls for a woman outside his approved zone, then gets pulled into the regime’s propaganda machine when his feelings become politically useful.",
+  "cost_usd": 0.046677,
+  "input_tokens": 31408,
+  "output_tokens": 5138,
+  "status": "wrote:leads_ok"
+}

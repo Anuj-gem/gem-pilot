@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T01:45:55.139Z",
+  "submission_id": "592ad3c0-1179-43aa-891c-549e903c1796",
+  "eval_id": "e17748b8-4d98-4d45-84bc-d7aece6681a7",
+  "title": "qb1 426revisions  name",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Carson King",
+      "role_type": "Lead",
+      "demographics": "Male · 41 · NFL quarterback"
+    },
+    {
+      "name": "Phoebe Merchant",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · executive in a pro football front office"
+    },
+    {
+      "name": "Thomas Merchant",
+      "role_type": "Lead",
+      "demographics": "Male · 70s · billionaire team owner"
+    },
+    {
+      "name": "Johnny Howard",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s · quarterback prospect"
+    },
+    {
+      "name": "Elle King",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · supermodel wife / entrepreneur"
+    },
+    {
+      "name": "Don Welsh",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · head coach"
+    },
+    {
+      "name": "Jake Turley",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · offensive lineman"
+    },
+    {
+      "name": "Bart Bartkowski",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · tight end"
+    },
+    {
+      "name": "Elaine Carson",
+      "role_type": "Supporting",
+      "demographics": "Female · late 60s · Carson’s mother"
+    },
+    {
+      "name": "Evan Leonard",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · tech-bro boyfriend"
+    },
+    {
+      "name": "Henry Guerrero",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · wellness / retreat guide"
+    },
+    {
+      "name": "Willie Howard",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Johnny’s father"
+    },
+    {
+      "name": "Will Caldwell",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · head coach / former lineman"
+    },
+    {
+      "name": "George Bellamy",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · commissioner"
+    },
+    {
+      "name": "Colin Bluestone",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · venture capitalist"
+    },
+    {
+      "name": "Gil Hartline",
+      "role_type": "Supporting",
+      "demographics": "Male · late 60s · veteran scout"
+    },
+    {
+      "name": "Jeremy Barnett",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · sports reporter"
+    }
+  ],
+  "positioning_hook": "A fading NFL icon and a reckless rookie quarterback are forced into a power struggle over the same franchise, while the owner’s daughter tries to decide which one can save the team.",
+  "cost_usd": 0.0474405,
+  "input_tokens": 27140,
+  "output_tokens": 6019,
+  "status": "wrote:leads_ok"
+}
