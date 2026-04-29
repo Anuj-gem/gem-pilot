@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:25:51.138Z",
+  "submission_id": "c41d4933-c4a1-4bcb-bab5-a2a776dea2d9",
+  "eval_id": "8995c490-daff-406f-9663-4a231e5cbede",
+  "title": "santa in two worlds screenplay 161",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "SANTA",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 40s · Afro-Latin or Latin American-presenting"
+    },
+    {
+      "name": "MARIA",
+      "role_type": "Lead",
+      "demographics": "Female · 40s to 60s · Afro-Latin or Latin American-presenting"
+    },
+    {
+      "name": "MARIO",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s"
+    },
+    {
+      "name": "VASQUEZ",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s"
+    },
+    {
+      "name": "ROBERTO",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s"
+    },
+    {
+      "name": "LILLE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 50s"
+    },
+    {
+      "name": "WARDEN",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s"
+    },
+    {
+      "name": "BEING OF POLARITY",
+      "role_type": "Supporting",
+      "demographics": "Ageless voice / entity"
+    }
+  ],
+  "positioning_hook": "A jailed Santiago hustler discovers his criminal life is a reincarnation loop, and a mystical tree sends him through past lives to confront the force shaping his fate.",
+  "cost_usd": 0.0446805,
+  "input_tokens": 34530,
+  "output_tokens": 4174,
+  "status": "wrote:leads_ok"
+}

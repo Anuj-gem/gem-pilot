@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:29:07.801Z",
+  "submission_id": "dfc7b428-8032-4cbe-8944-179b3333f295",
+  "eval_id": "3e680b23-1adb-4123-a704-27c57380c8d2",
+  "title": "JACK  &  HANK",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Dixie Jordan",
+      "role_type": "Lead",
+      "demographics": "Female · 18 to 66 across the script · white · wife, narrator, and emotional caretaker"
+    },
+    {
+      "name": "Hank Williams",
+      "role_type": "Lead",
+      "demographics": "Male · 29 in the present-day hallucination / ghost presence · iconic country legend"
+    },
+    {
+      "name": "Piney Ryan",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to 20s · white · fiddle player and bandmate"
+    },
+    {
+      "name": "Sam Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · white · record producer and label executive"
+    },
+    {
+      "name": "Bernie Wagner",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · white · manager/executive"
+    },
+    {
+      "name": "Seymore",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · white · journalist/press aide"
+    },
+    {
+      "name": "Riley Roberts",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s · white · singer"
+    },
+    {
+      "name": "Mabel",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · white · Jack’s mother"
+    },
+    {
+      "name": "Clyde Jordon",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · white · Jack’s father"
+    },
+    {
+      "name": "Riley's bandmate Race",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · white · guitarist"
+    },
+    {
+      "name": "Smokey Skinner",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · white · club owner/entrepreneur"
+    },
+    {
+      "name": "Bill Cody",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · white · band member/road professional"
+    },
+    {
+      "name": "JB Vance",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · white · manager"
+    },
+    {
+      "name": "Dr. Van Vuren",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · white · psychiatrist"
+    },
+    {
+      "name": "Doctor Gilford",
+      "role_type": "Supporting",
+      "demographics": "Male · early 40s · white · hospital doctor"
+    },
+    {
+      "name": "Elvis Presley",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · white · singer"
+    }
+  ],
+  "positioning_hook": "A self-destructive country legend haunted by his murdered father and an imaginary Hank Williams must survive fame, addiction, and a near-fatal crash before he can reclaim his life.",
+  "cost_usd": 0.1261725,
+  "input_tokens": 98150,
+  "output_tokens": 11680,
+  "status": "wrote:leads_ok"
+}

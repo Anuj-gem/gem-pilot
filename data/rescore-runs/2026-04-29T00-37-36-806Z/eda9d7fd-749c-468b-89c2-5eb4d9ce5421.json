@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:31:05.906Z",
+  "submission_id": "eda9d7fd-749c-468b-89c2-5eb4d9ce5421",
+  "eval_id": "5f25d685-5de6-4c49-9a8b-d383b28897c0",
+  "title": "Vineyard Haven rev 4-17-26",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Scott Morgan",
+      "role_type": "Lead",
+      "demographics": "Male · 24"
+    },
+    {
+      "name": "Ben Carter",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Kate",
+      "role_type": "Lead",
+      "demographics": "Female · late 40s · African descent · adopted Jewish"
+    },
+    {
+      "name": "Rebecca Harding",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Todd Straite",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "GEORGE",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "KATE’S MOTHER / BEN’S MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s+"
+    },
+    {
+      "name": "KATE",
+      "role_type": "Lead",
+      "demographics": "Female · late 40s · African descent · adopted Jewish"
+    },
+    {
+      "name": "REBECCA",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s"
+    }
+  ],
+  "positioning_hook": "A broke Vineyard writer gets dragged into a rich family’s wedding chaos by a washed-up producer, then discovers love, class warfare, and his own voice are all on the same ferry.",
+  "cost_usd": 0.051486000000000004,
+  "input_tokens": 38024,
+  "output_tokens": 5104,
+  "status": "wrote:leads_ok"
+}

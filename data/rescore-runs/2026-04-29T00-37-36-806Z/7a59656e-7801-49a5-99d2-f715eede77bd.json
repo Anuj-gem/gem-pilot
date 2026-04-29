@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-04-29T01:30:23.493Z",
+  "submission_id": "7a59656e-7801-49a5-99d2-f715eede77bd",
+  "eval_id": "5469de1b-cc07-4d2f-8e68-7e967276a130",
+  "title": "chritmas time script final",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 22,
+  "lead_characters_summary": [
+    {
+      "name": "Sean",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · Black"
+    },
+    {
+      "name": "Frances",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · Black"
+    },
+    {
+      "name": "Ron",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 50s"
+    },
+    {
+      "name": "Sandra",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s"
+    },
+    {
+      "name": "Grace",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s · wheelchair user / paralysis"
+    },
+    {
+      "name": "Grant",
+      "role_type": "Lead",
+      "demographics": "Male · 5"
+    },
+    {
+      "name": "Yates",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 50s"
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · Black"
+    },
+    {
+      "name": "Ted",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Black"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s"
+    },
+    {
+      "name": "Harriet",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s"
+    },
+    {
+      "name": "Jake",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · speech impediment"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s"
+    },
+    {
+      "name": "Rebecca",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s · petite, soft voice"
+    },
+    {
+      "name": "Franca",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s"
+    },
+    {
+      "name": "Jasmine",
+      "role_type": "Supporting",
+      "demographics": "Female · 12"
+    },
+    {
+      "name": "Mom",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 50s"
+    },
+    {
+      "name": "Yale",
+      "role_type": "Supporting",
+      "demographics": "Male · child to teen"
+    },
+    {
+      "name": "Frank",
+      "role_type": "Supporting",
+      "demographics": "Male · child to teen"
+    }
+  ],
+  "positioning_hook": "A Christmas anthology of intercut family vignettes, where money trouble, friendship fractures, disability, and faith all collide around one question: what does the season actually mean?",
+  "cost_usd": 0.0465555,
+  "input_tokens": 24082,
+  "output_tokens": 6332,
+  "status": "wrote:leads_ok"
+}

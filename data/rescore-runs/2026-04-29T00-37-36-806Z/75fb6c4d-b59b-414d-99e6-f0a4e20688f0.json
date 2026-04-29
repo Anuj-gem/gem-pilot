@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:25:39.080Z",
+  "submission_id": "75fb6c4d-b59b-414d-99e6-f0a4e20688f0",
+  "eval_id": "b7f3c140-7b18-4e45-93d5-3d0a5ab4bcf0",
+  "title": "wake up dream boy 7 screenplay",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tom",
+      "role_type": "Lead",
+      "demographics": "Male · teen/late teen · student"
+    },
+    {
+      "name": "Dan Dunne / Gary Don",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · celebrity actor"
+    },
+    {
+      "name": "Ms. Frances",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s · TV host"
+    },
+    {
+      "name": "Alisha",
+      "role_type": "Supporting",
+      "demographics": "Female · teen · student"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · teen · student"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · teen · student"
+    },
+    {
+      "name": "Miriam",
+      "role_type": "Supporting",
+      "demographics": "Female · teen · student"
+    },
+    {
+      "name": "Vivian",
+      "role_type": "Supporting",
+      "demographics": "Female · teen · student"
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male · teen/young adult · friend"
+    },
+    {
+      "name": "Tasha",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · bookstore clerk"
+    }
+  ],
+  "positioning_hook": "A lonely schoolboy, rejected by five girls and seduced by a forbidden book, falls into a dream realm where every choice becomes a moral test.",
+  "cost_usd": 0.03216,
+  "input_tokens": 16912,
+  "output_tokens": 4328,
+  "status": "wrote:leads_ok"
+}

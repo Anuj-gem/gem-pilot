@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:27:36.400Z",
+  "submission_id": "8e939e9c-bf79-4ad9-957e-e1b8d4820213",
+  "eval_id": "0a2734a7-9275-42f6-be68-1cc78ce81569",
+  "title": "Masters of Doom",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "John Carmack",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to early 30s · white"
+    },
+    {
+      "name": "John Romero",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s · white"
+    },
+    {
+      "name": "Tom Hall",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    },
+    {
+      "name": "Jay Wilbur",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    },
+    {
+      "name": "Sandy Petersen",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s"
+    },
+    {
+      "name": "American McGee",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "Kevin Cloud",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    },
+    {
+      "name": "Adrian Carmack",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    },
+    {
+      "name": "Scott Miller",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s"
+    },
+    {
+      "name": "Al Vekovios",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s"
+    },
+    {
+      "name": "Steve Ash",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s"
+    },
+    {
+      "name": "Stevie Case",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s"
+    }
+  ],
+  "positioning_hook": "Two game-design legends build id Software from a Shreveport office into a cultural force, then collide when Carmack’s machine-like discipline and Romero’s showman instincts can no longer share the same empire.",
+  "cost_usd": 0.060554250000000004,
+  "input_tokens": 49059,
+  "output_tokens": 5280,
+  "status": "wrote:leads_ok"
+}

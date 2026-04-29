@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:35:24.979Z",
+  "submission_id": "f8a0f630-8fce-4bbe-9e8f-4baca117530b",
+  "eval_id": "7b745dfa-802d-4f5a-af37-a2415f269f44",
+  "title": "OLDFELLAS  Rewrite",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "PAUL CICCOLINI / PAULIE",
+      "role_type": "Lead",
+      "demographics": "Male · late 70s · Italian-American"
+    },
+    {
+      "name": "BOBBO MANGIANI",
+      "role_type": "Lead",
+      "demographics": "Male · 80s · Italian-American"
+    },
+    {
+      "name": "DANTE MANGIANI",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · Italian-American"
+    },
+    {
+      "name": "MICHAEL CICCOLINI",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · Italian-American"
+    },
+    {
+      "name": "BONNIE BURNS",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s · white"
+    },
+    {
+      "name": "RAGS",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Italian-American"
+    },
+    {
+      "name": "WHISTLER",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Italian-American"
+    },
+    {
+      "name": "NAILS",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Italian-American"
+    },
+    {
+      "name": "GABRIELLA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · Italian-American"
+    },
+    {
+      "name": "TIMO PEREZ",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · gay Latino"
+    },
+    {
+      "name": "DUPREY",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · FBI agent"
+    },
+    {
+      "name": "CRUZ",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · FBI agent"
+    },
+    {
+      "name": "BUD",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s to 70s · driver"
+    },
+    {
+      "name": "IRIS",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · white"
+    },
+    {
+      "name": "LASHONDA",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · Black"
+    },
+    {
+      "name": "PARNIK",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s to 70s · Indian"
+    }
+  ],
+  "positioning_hook": "An aging mob boss turns a retirement community into his new territory, only to discover his son’s criminal empire and his own family legacy are on a collision course.",
+  "cost_usd": 0.0589695,
+  "input_tokens": 44498,
+  "output_tokens": 5688,
+  "status": "wrote:leads_ok"
+}

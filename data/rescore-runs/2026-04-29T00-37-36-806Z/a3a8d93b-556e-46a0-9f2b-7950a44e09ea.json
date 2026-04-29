@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T01:36:17.958Z",
+  "submission_id": "a3a8d93b-556e-46a0-9f2b-7950a44e09ea",
+  "eval_id": "d6b083dc-0b88-4a8b-b5fc-4f8e50b4b7cf",
+  "title": "OF GODS AND DOLLS",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W / Eztli",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Black and Hispanic mixed heritage · ageless/demi-god presentation"
+    },
+    {
+      "name": "Ying",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · Chinese"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Sephardic-presenting / ageless spiritual figure"
+    },
+    {
+      "name": "The Infant Jesus of Prague",
+      "role_type": "Lead",
+      "demographics": "Male voice · appears as a 19-inch devotional statue with a childlike voice"
+    },
+    {
+      "name": "Reverend Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · Czech"
+    },
+    {
+      "name": "Eva",
+      "role_type": "Supporting",
+      "demographics": "Female · teenage · European; silent/near-silent for much of the film"
+    },
+    {
+      "name": "Pachacuti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless divine figure presented as an Incan ruler"
+    },
+    {
+      "name": "Inti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless divine figure presented as the Incan Sun God"
+    },
+    {
+      "name": "Reinhard Heydrich",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s · German"
+    },
+    {
+      "name": "Pope Pius XII",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Italian"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Indigenous Bolivian"
+    }
+  ],
+  "positioning_hook": "A demi-god smuggler races from wartime Spain to Bolivia with a talking Infant Jesus, outwitting Nazis, the Vatican, and Incan gods before Christmas Eve.",
+  "cost_usd": 0.103995,
+  "input_tokens": 76770,
+  "output_tokens": 10315,
+  "status": "wrote:leads_ok"
+}

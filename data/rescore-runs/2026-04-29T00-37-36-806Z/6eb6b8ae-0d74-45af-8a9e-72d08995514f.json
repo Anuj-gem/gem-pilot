@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T01:31:54.915Z",
+  "submission_id": "6eb6b8ae-0d74-45af-8a9e-72d08995514f",
+  "eval_id": "98ae7401-66ab-4986-9ff5-21dcfea4f52d",
+  "title": "Commuter, Computer, Computer, Commuter",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "FRANK",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "WIFE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "DAUGHTER",
+      "role_type": "Supporting",
+      "demographics": "Female · child"
+    },
+    {
+      "name": "MAN ON TRAIN",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    }
+  ],
+  "positioning_hook": "A bored commuter discovers his exact double’s grave, then lets the obsession curdle into a violent reinvention of his own life.",
+  "cost_usd": 0.02217225,
+  "input_tokens": 10447,
+  "output_tokens": 3186,
+  "status": "wrote:leads_ok"
+}

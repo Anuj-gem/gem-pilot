@@ -2,54 +2,54 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Family sitcom",
+      "genre_primary": "Kids' sitcom",
       "genre_tags": [
-        "Kids",
-        "Showbiz satire"
+        "meta-comedy",
+        "showbiz"
       ],
-      "tone": "Bright, nostalgic, heightened, comedic"
+      "tone": "bright, nostalgic, heightened, family-friendly"
     },
-    "positioning_hook": "A pop-culture-obsessed autistic teen lands on a fading kids’ sketch show and has one season to save it from cancellation by reviving its most ridiculous classic bit.",
+    "positioning_hook": "A pop-culture-obsessed autistic teen joins his favorite sketch-comedy show just as a rival drama threatens cancellation, and his throwback idea becomes the save.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is easy to grasp and has a clean emotional promise: a kid chasing his dream inside a beloved TV institution. The kids/family lane is clear, though the showbiz-specific setup narrows the audience somewhat compared with broader family sitcoms."
+        "reasoning": "The premise is easy to grasp and built for a broad kids-and-family audience: a dream-fulfillment entry into a beloved TV world, a rival show, and a save-the-series engine. The appeal is strongest for viewers who like backstage comedy and nostalgia, while the exact tween-network lane keeps it from feeling fully four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The pilot establishes its engine quickly: Andy joins a long-running sketch show, learns it may be canceled, and helps save it with a legacy sketch. The competition with Moonlight Creek and the 20th-anniversary pressure give the series a simple, readable engine."
+        "reasoning": "The hook lands early in the cold open and stays legible throughout: Andy joins the cast of That's So Friday's, learns the show may be canceled, and helps revive it with a classic sketch. The rival-show pressure and the anniversary episode give the pilot a clean engine that is easy to explain in one breath."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Andy has an appealing dreamer energy, and Ella gives the pilot a warm anchor, but most of the ensemble is defined by one-note comic functions. The cast dynamic is workable for a sitcom, with room for the characters to deepen into more durable weekly engines."
+        "reasoning": "Andy has a clear want, a warm family support system, and a built-in outsider perspective that can carry episodes. The ensemble is likable and playable, though most of the supporting cast currently functions around the premise more than generating independent long-run story engines."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The show-within-a-show premise and the legacy-sketch revival angle give it a specific lane, and the autistic lead adds a meaningful point of view. The execution stays close to familiar kids-sitcom rhythms, so the originality comes more from premise than from form."
+        "reasoning": "The meta-TV setting and the live-sketch framework give the pilot a distinct wrapper, and the autistic lead adds a specific point of view. The execution leans on familiar kids-sitcom rhythms and rivalry beats, so the originality comes more from the container than from a sharply singular narrative voice."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The pilot keeps moving: arrival, rivalry, cancellation threat, inspiration from the old sketch, live performance payoff, and a final ratings win. The structure is clean and propulsive, with a satisfying pilot-shaped escalation into the closing tag."
+        "reasoning": "The pilot keeps moving: arrival, tour, rivalry reveal, crisis, inspiration, performance, resolution. The Happy Burger comeback gives Act Two and Act Three a clear target, and the ending opens the series door by making Andy part of the cast and the show a hit again."
       },
       "resonant_originality": {
-        "score": 6,
-        "reasoning": "The idea of a legacy kids’ sketch show fighting for relevance in the streaming era has a fresh, instantly legible hook. It lands as a familiar entertainment-world premise with one strong, ownable twist rather than a truly singular reinvention."
+        "score": 7,
+        "reasoning": "A new kid saving a legacy sketch show with an old sketch is a simple idea that clicks quickly, and the show-within-a-show structure gives it a built-in identity. The specific blend of nostalgia, tween-network satire, and live audience performance makes it feel more ownable than a standard backstage comedy."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The studio, green room, cafeteria, rival set, and PopTube/Primeflix ecosystem give the world some industry texture. It functions more as a playful container for sitcom stories than as a deeply layered institutional world."
+        "reasoning": "The studio lot, green room, cafeteria, dressing room, and rival set create a workable ecosystem with clear social lanes. The world is vivid enough to support episodes, but most of the texture is centered on the production bubble rather than a broader institutional or community web."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The script has a clear Disney Channel-style brightness, with live-audience energy, sketch-comedy exaggeration, and sincere friendship beats. The tonal identity is consistent and marketable, especially for viewers who want nostalgia with a contemporary media-world frame."
+        "reasoning": "The script commits to a cheerful, self-aware kids-network tone with exaggerated sketch-comedy energy and sincere underdog emotion. The live-show framing, fake commercials, and pop-culture references give it a recognizable flavor that would be easy to market in the right lane."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 5,
-        "reasoning": "The pilot hints at deeper material around Andy’s autism, his move from Chicago, and the pressure of being the new kid in a legacy machine. Those seeds are present, but the episode mostly plays the surface-level victory story rather than letting the deeper emotional engine fully open."
+        "score": 6,
+        "reasoning": "Andy’s autism, his move from Chicago, and the grandfather memory suggest a deeper emotional life under the sitcom surface. The pilot gestures toward identity, belonging, and performance anxiety, though the episode mostly keeps those threads in service of the immediate save-the-show plot."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "There is a functional ensemble web: Andy with Tracy, Eddie, J.T., Olivia, Lily, Lloyd, and Ella all have playable dynamics. The cast mostly serves the A-story, but the rival-show and family relationships give the series enough recurring combinations to sustain episodes."
+        "reasoning": "Andy/Tracy, Andy/Lloyd, Andy/Ella, and the built-in cast rivalry all have usable energy. The ensemble can generate scenes, but the strongest recurring engine still sits on Andy as the center of gravity rather than a fully interlocking web."
       }
     },
     "production_reality": {
@@ -59,238 +59,252 @@
         "series_regulars": 7,
         "child_actors": true,
         "casting_characteristics": [
-          "Autistic teen lead",
-          "Ensemble of teens and young adults",
-          "One recurring adult creator/producer role",
-          "One recurring mother role",
-          "One original cast member returning as an older version of a legacy character"
+          "Teen and pre-teen ensemble",
+          "Autistic lead character",
+          "African American, Hispanic, Asian Pacific Islander, and Caucasian roles",
+          "Adult recurring roles for mother, creator/EP, stage manager, and original cast member"
         ]
       },
       "locations": {
         "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interior",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Soundstage / studio set for the sketch show",
-          "Green room and cafeteria sets",
-          "Rival studio exterior and fan-greeting exterior",
-          "Apartment interior",
-          "Multiple in-show sketch sets within the pilot"
+          "Studio lot and soundstage build",
+          "Green room, cafeteria, dressing room, apartment, and rival-show set",
+          "Live audience/stage-performance setup"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly simple sketch-show transitions, logo graphics, and stylized on-screen TV moments.",
+        "vfx_details": "Simple cartoonish glove effects, logo graphics, freeze-frame/commercial-style transitions, and TV-within-TV inserts.",
         "stunts_level": "minor",
-        "sfx_needs": "Cartoonish physical comedy, prop gags, and simple practical effects for the Bully-Be-Gone Power Glove and sketch beats.",
+        "sfx_needs": "Practical slapstick, locker shove, slide crash, and sketch-comedy physical bits.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "PopTube, Primeflix, and Teen Tiger Magazine are named fictional media brands."
+          "detail": "PopTube, Primeflix, Teen Tiger Magazine, and Entertainment Choice Awards are named as in-world media brands."
         },
         {
           "type": "brand",
-          "detail": "That's So Friday's, Moonlight Creek, Happy Burger, Bro Perfect, and Foxy Cop are in-world show/sketch titles."
-        },
-        {
-          "type": "brand",
-          "detail": "Action: Impossible, The Spring I Turned Beautiful, and My Life With The Wilson Boys are named in-world entertainment titles."
+          "detail": "That's So Friday's, Moonlight Creek, Happy Burger, Bro Perfect, Mandy & Sandy, and The Foxy Cop are in-script fictional franchise/property names."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Family streaming or kids/teen cable comedy",
-        "content_level": "Family / PG",
-        "series_engine_or_release_model": "Serialized workplace-family sitcom built around weekly sketch ideas, rival-show pressure, and the ongoing question of whether the legacy series can stay relevant."
+        "recommended_lane": "kids/family streaming or youth-skewing cable",
+        "content_level": "family / PG equivalent",
+        "series_engine_or_release_model": "Serialized sitcom with a weekly sketch-of-the-week engine, anchored by backstage rivalry, cast dynamics, and the ongoing life of the show."
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary studio, apartment, and cafeteria sets with simple sketch inserts keep the budget in a contained sitcom range."
+          "note": "Contemporary studio-set comedy with a small number of repeatable interiors and only minor effects keeps the budget footprint contained."
         },
         "cast": {
           "level": "medium",
-          "note": "The ensemble is teen-heavy with an autistic lead, a recurring adult producer, a mother role, and a returning legacy performer."
+          "note": "The teen ensemble and child-actor requirements create a sizable recurring cast, with the lead role also carrying a specific neurodivergent identity."
         },
         "location": {
           "level": "low",
-          "note": "The story stays mostly on a few recurring interiors and one studio exterior."
+          "note": "The action stays largely on a studio lot and in a handful of interiors, with no period build or remote production demands."
         },
         "content": {
           "level": "low",
-          "note": "The material is built for family viewing, with bullying, mild rivalry, and cartoon violence rather than mature content."
+          "note": "The material is clean, upbeat, and aimed at a family audience, with slapstick bullying and mild rivalry as the main tension points."
         },
         "rights": {
           "level": "low",
-          "note": "The script uses fictional in-world brands and titles rather than real-world IP or named music."
+          "note": "The named brands and shows are fictional in-world creations rather than outside IP, real people, or licensed music."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is built for a series engine.",
-          "what_it_means": "A legacy sketch show fighting for survival gives the buyer a repeatable workplace format with built-in episode stakes, guest-star opportunities, and a clean season-long question. This is the kind of setup that can attract family-comedy buyers, youth-skewing streamers, and actors who want a playful ensemble with a clear hook.",
-          "evidence": "The network threatens cancellation, the cast debates what sketch to do, and the season premiere becomes a ratings-save mission centered on Happy Burger.",
+          "dimension_or_area": "The show-within-a-show engine is instantly playable.",
+          "what_it_means": "This gives a buyer a repeatable episode machine: backstage comedy, on-camera sketch performance, and the ongoing question of whether the legacy show can stay relevant. Kids and family streamers looking for a clean, high-concept sitcom wrapper will understand the lane immediately.",
+          "evidence": "The pilot opens with the TSF cold open, then cuts to Andy arriving on set and ends with the full Happy Burger sketch saving the season premiere.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Andy is a clear audience entry point.",
-          "what_it_means": "The new-kid perspective lets the show explain its world naturally while giving the lead a fish-out-of-water path into an established ensemble. That is attractive to casting directors and buyers because it creates a role that can carry comedy, sincerity, and emotional identification at once.",
-          "evidence": "Andy arrives as the newest cast member, knows the show by heart, and becomes the one who spots the value in reviving Happy Burger.",
+          "dimension_or_area": "Andy is a clear audience surrogate with a specific point of view.",
+          "what_it_means": "The lead role gives an actor a likable, emotionally legible center who can carry comedy, fandom, and overwhelm in the same frame. Casting teams looking for a young breakout with warmth and specificity will see a role that can become the face of the series.",
+          "evidence": "Andy arrives starstruck, knows every season, gets overwhelmed in the argument, and later finds his footing by solving the ratings crisis.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The show has a built-in nostalgia lever.",
-          "what_it_means": "Reviving an old sketch inside the pilot gives the series a repeatable way to mine the show’s history while still feeling current, which is valuable for both long-time fans and new viewers. Buyers looking for a family title with cross-generational appeal will see the upside immediately.",
-          "evidence": "Happy Burger is framed as a discontinued first-season classic that returns for the 20th anniversary episode and drives the ratings surge.",
+          "dimension_or_area": "The autistic lead adds identity and texture without turning the pilot into issue TV.",
+          "what_it_means": "That combination broadens the show’s emotional reach and gives the series a modern, inclusive center that can travel across episodes. Buyers chasing family programming with a fresh lead perspective and actors looking for a role with visibility will both notice it.",
+          "evidence": "Andy is introduced as an upbeat, talented autistic young man, and his overwhelm in the Green Room argument is dramatized as part of his experience.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble has playable comic contrast.",
-          "what_it_means": "Tracy, Eddie, J.T., Olivia, and Lily each bring a distinct comic lane, which gives the series multiple pairings and argument engines for future episodes. That kind of ensemble is attractive to network and streamer buyers because it supports both A-stories and fast, repeatable B-story combinations.",
-          "evidence": "The cast debates sketches, clashes over ego and taste, and splits into different comic identities around the table and in the green room.",
+          "dimension_or_area": "The legacy-versus-relevance conflict has built-in series fuel.",
+          "what_it_means": "A long-running kids show fighting a younger rival creates a durable premise for episodic stories about reinvention, fandom, and generational taste. Network and streamer buyers can see a clean hook for nostalgia-driven audiences and younger viewers at the same time.",
+          "evidence": "Moonlight Creek is taking the audience, the network threatens cancellation, and the old Happy Burger sketch becomes the comeback plan.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The pilot is production-friendly.",
-          "what_it_means": "The story lives on recurring sets and uses sketch inserts rather than expensive external action, which makes it easier to mount as a modest-budget series. That footprint is appealing to buyers who want a youth-skewing comedy they can produce efficiently and return to every week.",
-          "evidence": "Most of the action stays in the studio, green room, cafeteria, apartment, and a handful of sketch sets.",
-          "source": "both"
+          "dimension_or_area": "The ensemble has clear comic lanes.",
+          "what_it_means": "Each cast member has a readable function — the wildcard, the cool guy, the best-friend duo, the straight man, the creator — which makes the show easy to cast and easy to generate scenes from. That kind of ensemble is attractive to youth-skewing buyers because it supports rotating pairings and fan-favorite dynamics.",
+          "evidence": "J.T. is the wildcard, Eddie is the California flirt, Olivia and Lily are inseparable, Tracy is the grounded one, and Lloyd is the anxious creator.",
+          "source": "script"
         },
         {
-          "dimension_or_area": "The tone is cleanly family-forward.",
-          "what_it_means": "The script keeps the humor broad, the stakes emotional, and the violence cartoonish, which makes it easy to place in a family-safe programming lane. That opens the door to buyers looking for a nostalgic, all-ages comedy that parents and kids can watch together.",
-          "evidence": "The Bully-Be-Gone Power Glove, live-audience sketch energy, and the final celebratory bow all keep the show in a bright, accessible register.",
+          "dimension_or_area": "The live sketch finale gives the pilot a payoff moment.",
+          "what_it_means": "The episode earns a performance climax instead of just talking about the show’s value, which helps the pilot feel like an event rather than a setup. That finale is the kind of set-piece that can sell a series in a trailer and give a buyer confidence in repeatable spectacle on a modest footprint.",
+          "evidence": "The Happy Burger sketch brings back original cast member Kyle Mitchell, lands with the audience, and drives the ratings turnaround.",
           "source": "script"
         }
       ],
-      "headline": "This pilot has a very sellable engine: a legacy kids’ sketch show fighting cancellation, with a new autistic teen cast member who becomes the key to its comeback. It’s a contained, ensemble-friendly family sitcom with nostalgia, showbiz satire, and a clear weekly format that can keep generating stories."
+      "headline": "This pilot has a clean, pitchable engine: a new kid joins a beloved sketch-comedy show, then helps save it by reviving the legacy bit that made it famous. The result is a family-friendly backstage sitcom with a built-in nostalgia hook, a clear ensemble, and a lead role that can become a breakout for the right young actor."
     },
     "lead_characters": [
       {
         "name": "Andy Morris",
         "role_type": "Lead",
-        "demographics": "Male · mid-to-late teens · African American · autistic",
-        "hook": "Andy is an eager, pop-culture-fluent dreamer who arrives in Hollywood carrying equal parts innocence, comic timing, and emotional sensitivity. He’s the kind of kid who can light up at a studio hallway, then get overwhelmed by the noise of the room, which gives the role a built-in blend of enthusiasm and vulnerability.",
-        "why_actor_wants_this": "This is the showcase territory of Keir Gilchrist in *Atypical* or Woody Norman in *C’mon C’mon* — a young performer gets to play charm, sensory overwhelm, and genuine emotional leadership in the same role. Teen actors looking for a breakout lead, especially those who can balance comedy with sincerity, will see a rare chance to anchor a family series with real point of view."
-      },
-      {
-        "name": "Ella Morris",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · African American",
-        "hook": "Ella is the grounded, protective mother who knows exactly how much Hollywood can chew up a kid and still lets Andy chase the dream. She has warmth, skepticism, and a sharp comic edge, which makes her feel like the adult in the room without flattening her into a lecture machine.",
-        "why_actor_wants_this": "This is the warm-but-steely parent territory of Phylicia Rashad in *The Cosby Show* or Tichina Arnold in *Everybody Hates Chris* — a mother role that can land jokes, set boundaries, and still carry real emotional authority. Experienced TV actresses who want a recurring family anchor with heart and bite will be drawn to it."
-      },
-      {
-        "name": "Lloyd Van Dale",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · Creator/Executive Producer",
-        "hook": "Lloyd is the frazzled showrunner-creator who loves the show, fears the network, and tries to keep the whole machine from collapsing in public. He plays as a comic authority figure with just enough panic underneath to make every pep talk feel earned.",
-        "why_actor_wants_this": "This is the executive-comic territory of Jeffrey Tambor in *Arrested Development* or Ken Marino in *Party Down* — a role where the comedy comes from a man trying to project control while the room keeps slipping away. Character actors who can do fast, nervous authority will chase this as a recurring scene-stealer."
+        "demographics": "Male · mid-teens · African American · autistic",
+        "hook": "Andy is a bright, eager, pop-culture-devoted kid who arrives in Hollywood carrying equal parts wonder and nerves. He wants the spotlight, but what makes him specific is that his enthusiasm is matched by sensitivity: he can light up a room, then get overwhelmed by it, and the pilot lets both sides live on the page.",
+        "why_actor_wants_this": "This is the breakout-center territory of Ke Huy Quan in Everything Everywhere All at Once — a performance that turns sincerity, comic timing, and emotional vulnerability into one irresistible engine. Young actors who can play charm, specificity, and a real inner life will chase this because it gives them the rare chance to become the face of a series while carrying both laughs and heart."
       },
       {
         "name": "Tracy Brown",
         "role_type": "Lead",
         "demographics": "Female · mid-teens · African American",
-        "hook": "Tracy is the sharp, capable cast member who reads as one of the show’s emotional adults even while she’s still a teenager. She’s funny, practical, and competitive, with enough self-possession to make her a natural foil and ally for Andy.",
-        "why_actor_wants_this": "This is the smart, grounded ensemble-lead territory of Quinta Brunson in *Abbott Elementary* or Yara Shahidi in *Grown-ish* — a young performer gets to play wit, leadership, and dry comic authority. Teen actresses who want a role that can grow from supporting-player energy into a true co-lead will want this."
+        "hook": "Tracy is the grounded veteran of the Friday's cast, the one who can welcome Andy, steer a conversation, and still land a joke with authority. She reads as the smart, steady center of the ensemble, with enough warmth and edge to feel like someone who has survived years inside the machine.",
+        "why_actor_wants_this": "This is the grounded-best-friend territory of Issa Rae in Insecure — the role of the smart center who can carry comedy, exasperation, and leadership without losing ease. Young comedic actresses with timing and presence will want it because it offers a steady series anchor with room to become the audience’s favorite voice in the room."
       },
       {
         "name": "Eddie Server",
         "role_type": "Lead",
         "demographics": "Male · late teens · Caucasian",
-        "hook": "Eddie is the swagger-first performer who treats every hallway like a stage and every conversation like a chance to sell his own brand. He’s vain, funny, and self-aware enough to know he’s vain, which makes him an easy comic engine for the ensemble.",
-        "why_actor_wants_this": "This is the showy, self-mythologizing lane of Jacob Elordi in *The Kissing Booth* or Noah Centineo in *To All the Boys* — a role that lets an actor play charm as both armor and punchline. Young actors with natural charisma will chase the chance to turn a cocky comic type into a recurring fan favorite."
+        "hook": "Eddie is the smooth, self-mythologizing California kid who thinks charisma is a lifestyle and hair is a brand. He’s funny because he believes his own coolness, which makes him a useful comic foil and a dependable source of swagger, vanity, and surprise loyalty.",
+        "why_actor_wants_this": "This is the showy-comic-sidekick lane of Jacob Elordi in Euphoria season 1 — a role built on surface confidence, vanity, and the ability to let the mask crack for a beat. Actors who can play cocky charm with a hint of insecurity will chase it because it gives them a recurring comic identity and a lot of scene-stealing oxygen."
       },
       {
         "name": "J.T. Alexander",
         "role_type": "Lead",
         "demographics": "Male · early teens · Hispanic",
-        "hook": "J.T. is the youngest cast member and the most openly impulsive, a kid who can go from clowning to panic to loyalty in a single beat. He gives the ensemble a scrappier, more physical comic rhythm and keeps the show feeling like a real teen workplace instead of a polished brand machine.",
-        "why_actor_wants_this": "This is the comic sidekick energy of Rico Rodriguez in *Modern Family* or the younger-kid chaos of Noah Munck in *iCarly* — a role that lets a young actor steal scenes through timing, physicality, and blunt honesty. Younger teen performers who want a high-visibility ensemble part will gravitate to it."
+        "hook": "J.T. is the youngest cast member and the most openly chaotic, a kid who treats every room like a playground and every idea like a dare. He’s the kind of character who can be impulsive, loud, and funny without ever feeling disposable, which makes him ideal for physical comedy and fast banter.",
+        "why_actor_wants_this": "This is the hyperactive-buddy energy of Noah Schnapp in Stranger Things season 1 before the mythology took over — a kid role that gets to be funny, reactive, and emotionally readable in the same breath. Young actors with comic instincts will want it because it offers a reliable laugh engine and a path to becoming a fan-favorite sidekick."
       },
       {
         "name": "Olivia Brooks",
         "role_type": "Lead",
         "demographics": "Female · mid-teens · Caucasian",
-        "hook": "Olivia is the self-styled prettier, louder half of the duo with Lily, and she knows exactly how to weaponize confidence for comic effect. She’s vain in a way that stays playful rather than mean, which makes her a strong source of energy and friction.",
-        "why_actor_wants_this": "This is the glossy, self-aware comic territory of Jennette McCurdy in *iCarly* or Ashley Tisdale in *High School Musical* — a role that lets an actor play vanity, timing, and emotional insecurity under the sparkle. Young actresses who can do fast banter and big reaction comedy will want the part."
+        "hook": "Olivia is the self-aware, image-conscious half of the best-friend duo, always ready with a pose, a comment, or a little vanity. She’s funny because she knows she’s being watched, and the pilot uses that to make her both shallow on the surface and deeply usable in ensemble scenes.",
+        "why_actor_wants_this": "This is the glossy-comic-girlfriend territory of Jennette McCurdy in iCarly — a role that gets mileage from vanity, timing, and the ability to turn self-absorption into comedy. Young actresses who can play sharp, social, and slightly ridiculous will chase it because it gives them a recognizable brand inside the ensemble."
       },
       {
         "name": "Lily Morgan",
         "role_type": "Lead",
-        "demographics": "Female · early-to-mid teens · Asian Pacific Islander",
-        "hook": "Lily is the dry, smarter half of the Olivia duo, the one who can puncture a bad idea with a single line and still stay loyal to her best friend. She gives the ensemble a sharper, more observational comic voice and helps keep the show’s teen world from feeling one-note.",
-        "why_actor_wants_this": "This is the deadpan best-friend territory of Liza Koshy in *Liza on Demand* or Brenda Song in *The Suite Life* — a role that rewards timing, side-eye, and the ability to make a reaction shot feel like a punchline. Young actresses with a dry comic instrument will see a lot to play here."
+        "demographics": "Female · early teens · Asian Pacific Islander",
+        "hook": "Lily is the sharper, more observant half of the duo, the one who can puncture Olivia’s ego while still staying in the friendship. She has a dry, slightly skeptical energy that makes her a good counterweight to the louder personalities around her.",
+        "why_actor_wants_this": "This is the dry-best-friend lane of Miranda Cosgrove in Drake & Josh or iCarly — the role of the smart, reactive character who gets to land the cleanest lines in the room. Young actresses with timing and a cool, understated presence will want it because it gives them a steady comic identity inside a highly playable duo."
+      },
+      {
+        "name": "Lloyd Van Dale",
+        "role_type": "Lead",
+        "demographics": "Male · 50s",
+        "hook": "Lloyd is the anxious creator-executive who loves his show, fears the network, and is always one bad call away from panic. He gives the pilot its adult showbiz pressure while also playing as a slightly frazzled father figure to the kids around him.",
+        "why_actor_wants_this": "This is the frantic-showrunner territory of Jeffrey Tambor in Arrested Development or Steve Carell in The Office when the boss is both authority and comic damage. Character actors who can play desperation, vanity, and affection in the same scene will chase it because it gives them a recurring adult anchor with broad comic range."
+      },
+      {
+        "name": "Ella Morris",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s · African American",
+        "hook": "Ella is Andy’s protective, no-nonsense mother, the person who can read Hollywood in a second and still keep her son emotionally steady. She brings grounded family energy and a clear protective instinct, which gives the pilot a home base outside the studio.",
+        "why_actor_wants_this": "This is the warm-but-firm parent territory of Regina King in Watchmen or Tichina Arnold in Everybody Hates Chris — a role that can be funny, watchful, and emotionally authoritative in a few lines. Experienced TV actresses who can play maternal steel with warmth will see an easy recurring fit."
       },
       {
         "name": "Michelle Anne Collins",
         "role_type": "Supporting",
-        "demographics": "Female · 16-18 · Caucasian",
-        "hook": "Michelle is the polished rival-star whose fame, poise, and public image make her feel like the other side of Andy’s Hollywood dream. She’s not just a love interest or competitor; she’s the face of the show that threatens to eclipse the one Andy just joined.",
-        "why_actor_wants_this": "This is the polished teen-star territory of Dove Cameron in *Liv and Maddie* or Olivia Holt in *Cruel Summer* — a role that lets an actor play public perfection with a hint of competitive edge. Young actresses with a strong fanbase and a clean screen image will be drawn to the part."
+        "demographics": "Female · mid-to-late teens · Caucasian",
+        "hook": "Michelle is the polished teen star from the rival show, all public poise and easy camera confidence. She’s written as the glamorous competition, but the pilot also gives her a softer edge through her friendly note to Andy and her final smile at his attention.",
+        "why_actor_wants_this": "This is the polished-rival territory of Elizabeth Gillies in Victorious or Dove Cameron in Liv and Maddie — a role that lets an actor play star power, social ease, and a little competitive heat. Young actresses with a strong camera presence will want it because it gives them the kind of glossy, high-visibility part that can become a fan magnet."
       },
       {
-        "name": "Kyle Mitchell",
+        "name": "Kyle Mitchell / Adult Terry",
         "role_type": "Supporting",
         "demographics": "Male · 40s-50s · African American",
-        "hook": "Kyle is the original cast member who returns as the older Terry, carrying the history of the show inside one familiar face. He has the easy charisma of a legacy performer who can step back into a beloved bit and make it feel both nostalgic and current.",
-        "why_actor_wants_this": "This is the legacy-return showcase of John Goodman in *The Conners* or Jaleel White revisiting Steve Urkel territory — a role that lets an actor play recognition, continuity, and comic authority at once. Established performers with franchise goodwill will be interested because the part turns nostalgia into an on-screen event."
+        "hook": "Kyle is the original cast legend who returns as the adult version of a beloved sketch character, carrying both nostalgia and authority. He functions as the living proof that the old show still has cultural memory, and his presence gives the finale a celebratory, legacy-boosting lift.",
+        "why_actor_wants_this": "This is the legacy-guest showcase of Kenan Thompson returning to a familiar comic lane — a role that lets an actor play history, authority, and crowd-pleasing recognition at once. Veteran comedic performers and recognizable TV faces will chase it because it offers a built-in applause moment and a clean nostalgia payoff."
+      },
+      {
+        "name": "Terry Jr.",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-teens · African American",
+        "hook": "Terry Jr. is the younger version of the Happy Burger sketch character, a goofy, off-key, eager kid who inherits the bit and keeps it alive. He’s a pure comic-performance role inside the finale sketch, built for physical rhythm and audience affection.",
+        "why_actor_wants_this": "This is the kid-comic showcase territory of a young performer in a Nickelodeon sketch slot — a role that lets an actor play broad physical comedy, musical silliness, and audience-facing charm. Young comedic actors with strong timing will want it because it’s a memorable, scene-stealing sketch role inside the pilot."
+      },
+      {
+        "name": "Adult Terry",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · African American",
+        "hook": "Adult Terry is the grown-up continuation of the Happy Burger bit, still carrying the same rhythm and charm as the original character. He functions as the nostalgic payoff inside the sketch, giving the finale a sense of continuity and show-history.",
+        "why_actor_wants_this": "This is the legacy-comic return slot of a veteran sitcom guest spot — a role that lets an actor play familiarity, timing, and audience recognition in one appearance. Established comedic actors or original-series alumni would chase it because it offers a crowd-pleasing, applause-ready cameo."
+      },
+      {
+        "name": "Shelby Clark / The Foxy Cop",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s · African American",
+        "hook": "Shelby is the hard-boiled, stylish cop character inside the Happy Burger sketch, all attitude, rhythm, and comic authority. She gives the finale a strong female comic presence and helps the sketch feel like a full ensemble event rather than a one-note callback.",
+        "why_actor_wants_this": "This is the sketch-comedy authority lane of Wanda Sykes in a guest role or a classic SNL character turn — a part that lets an actor command the frame with voice, posture, and punchline control. Comedic actresses with a strong persona will want it because it offers a memorable, high-energy showcase inside the episode."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a bright, performance-driven family comedy with built-in sketch spectacle.",
-        "fit_profile": "First- or second-series directors, or TV comedy directors moving into a more character-forward lane, who already like ensemble timing, live-audience energy, and clean visual comedy. The material rewards someone who can keep the pace snappy while letting the cast play big, because the sketch inserts and backstage scenes both need a confident comic hand.",
-        "detail": "The pilot gives a director a chance to stage two worlds at once: the backstage workplace and the on-air sketch performance. That combination is especially attractive to directors who enjoy choreography, ensemble blocking, and making broad comedy feel polished rather than chaotic."
+        "hook": "A director who wants to make backstage kids comedy feel like an event.",
+        "fit_profile": "First- or second-feature directors, or TV comedy directors moving into series leadership, who already like performance-forward material, clean visual comedy, and ensemble blocking. This is for filmmakers who enjoy live-audience energy, sketch transitions, and keeping the camera playful without losing the emotional spine.",
+        "detail": "The material rewards crisp comic timing, strong ensemble staging, and a confident handle on the fake-show-within-the-show grammar. It will attract directors who can make a soundstage feel kinetic and who like balancing broad sketch performance with a sincere underdog arc."
       },
       "buyer_appeal": {
-        "tier": "Low-budget half-hour series",
-        "lane": "Family streaming / kids cable comedy lane",
-        "detail": "The show can be greenlit around a teen ensemble and one or two recognizable adult faces, without needing heavy effects or location travel. Its nostalgia hook and all-ages tone make it exportable across family platforms, especially where legacy IP, backstage comedy, and short-form social clips all travel well."
+        "tier": "Half-hour family streaming series",
+        "lane": "kids/family comedy with nostalgia and showbiz meta-energy",
+        "detail": "The pilot can be packaged around a young lead and a contained studio-set footprint, so it does not need a giant effects spend or a sprawling location plan to get moving. The nostalgia hook plus the built-in sketch-of-the-week engine gives streamers and youth-skewing buyers a repeatable format with easy clipability and franchise extension potential."
       }
     },
     "considerations": [
       {
-        "area": "Andy’s overwhelm could become a recurring engine.",
-        "detail": "The pilot already gives Andy a clear sensory and emotional response when the cast argument gets loud and he bolts from the green room. A next pass could foreground that response a little earlier and let it shape one more choice in the episode, so his point of view becomes not just heartfelt but structurally defining.",
+        "area": "The rival-show stakes are clear but can be sharpened further.",
+        "detail": "The Moonlight Creek pressure is easy to follow, and the cancellation clock gives the pilot urgency. A next pass could foreground one concrete consequence of losing the time slot earlier in the episode so the save-the-show drive hits even harder before Act Two.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The ensemble arguments can carry more independent story weight.",
-        "detail": "The sketch debate in the green room is a strong sitcom setup, and the version of the series where Tracy, Eddie, J.T., Olivia, and Lily each have a more distinct personal stake in the choice would deepen the engine. That would make future episodes easier to break because the cast would generate story even when Andy is not driving the scene.",
+        "area": "The ensemble argument scene carries the episode’s biggest emotional turn.",
+        "detail": "The Green Room bickering is the moment Andy bolts, which makes it the cleanest place to deepen his overwhelm and the group’s dependence on him. One lever would be to let the argument reveal one more personal stake for Tracy, J.T., or Eddie so the scene plays as character collision, not just plot noise.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The pilot lives in a very specific budget lane.",
-        "detail": "The recurring studio, apartment, cafeteria, and green room footprint keeps this comfortably in a low-budget half-hour range. Protecting that contained footprint will help the series stay efficient while preserving the backstage-show format that makes it distinctive.",
+        "area": "The Happy Burger sketch is the pilot’s signature set-piece.",
+        "detail": "The finale sketch already delivers nostalgia, guest-star payoff, and a ratings win, so it is the right place to protect the show’s identity. A future pass could consider trimming a beat or two of explanatory setup inside the sketch so the comic escalation arrives even faster.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The studio-lot footprint is already efficient.",
+        "detail": "Most of the action lives in repeatable interiors — set, green room, cafeteria, dressing room, apartment, rival set — which is a strong fit for a half-hour series. That containment supports a modest production plan and makes the pilot easy to replicate week to week.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The sketch inserts are the show’s biggest production signature.",
-        "detail": "The Happy Burger sequence, the Bully-Be-Gone Power Glove gag, and the live-audience sign-off all give the pilot its identity. One direction would be to keep future sketch worlds simple and repeatable so the series can deliver variety without expanding the production footprint.",
+        "area": "The cast size is manageable but ensemble-forward.",
+        "detail": "The pilot introduces a teen-heavy regular group plus a few adult anchors, so casting will want chemistry across age bands. The version of the series that keeps the core regulars tight and lets guest stars rotate through the sketch world would preserve the ensemble energy without expanding the footprint too far.",
         "is_primary_lever": false,
         "source": "both"
-      },
-      {
-        "area": "Michelle and the rival show can be sharpened as a season engine.",
-        "detail": "The Moonlight Creek rivalry gives the series a clean external pressure, and the final fan-circle beat shows the audience wants to see that competition play out. A next pass could keep that rivalry active beyond the pilot so the show has a recurring outside force, not just a one-episode obstacle.",
-        "is_primary_lever": false,
-        "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 65.3,
+  "weightedScore": 66,
   "tier": "Optionable",
   "inputTokens": 23027,
-  "outputTokens": 4932,
-  "cost": 0.03946425,
+  "outputTokens": 5478,
+  "cost": 0.04192125,
   "declaredFormat": "Series"
 }

@@ -1,5 +1,5 @@
 ---
-title: "The industry pilot is live."
+title: "We're bringing the Industry directly into GEM."
 slug: industry-pilot-is-live
 date: 2026-04-28
 summary: "Producers and reps are reading scripts on GEM. Reports are rescored on Selznick 3.8. Privacy is end-to-end. And the public Discover page is gone."

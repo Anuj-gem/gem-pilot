@@ -2,324 +2,336 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural drama",
+      "genre_primary": "Supernatural faith drama",
       "genre_tags": [
-        "Faith-based",
-        "Horror"
+        "horror",
+        "family drama"
       ],
-      "tone": "Gritty, earnest, sermon-driven, and visually heightened"
+      "tone": "earnest, heightened, sermon-driven, melodramatic"
     },
-    "positioning_hook": "A grieving pastor and his estranged daughter are dragged through visions of Hell, addiction, and redemption when a drunk-driving tragedy turns their family into a spiritual battleground.",
+    "positioning_hook": "A prison-bound father races to save his drug-addicted daughter from a demonic spiral, only to discover her near-death visions may be the only thing that can bring their family back.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The faith audience is clearly identifiable, and the father-daughter recovery arc gives the material an emotional entry point beyond the supernatural imagery. The lane is more specialized than broad four-quadrant commercial fare, but the church setting, addiction angle, and afterlife spectacle give it a defined buyer-facing promise."
+        "reasoning": "The faith audience is clearly defined, and the father-daughter rescue engine gives the movie an immediate emotional promise. Its reach is narrower than a mainstream thriller because the supernatural testimony framework and overt sermon language will most strongly connect with faith-based buyers and viewers."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The premise lands early: Pastor George’s hell dreams, Jack’s violent temper, Jenn’s drug spiral, and the final revelation that the family is being pulled into a spiritual war are all legible. The script is most clear when it stays on the Buck family’s collision with Hell and redemption, and the opening dream language establishes the engine quickly."
+        "reasoning": "The premise lands early: a pastor’s son, then Jack and Jenn, are pulled into a spiritual war that becomes literal through dreams, addiction, and visions of hell. The movie is easy to explain in one breath, though the repeated dream logic and testimony structure make the central engine feel more expansive than streamlined."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Jack has a strong actor-facing contradiction — hard-edged, funny, self-destructive, and then spiritually awakened — and Jenn gets a full transformation from rebellious teen to testimony speaker. The supporting players mostly serve the central conversion arc, so the character appeal is strongest in the leads rather than across the full cast."
+        "reasoning": "Jack has a strong contradiction on the page — tough, funny, faith-curious, and self-destructive — and Jenn gets a vivid arc from contempt to conviction. The supporting players mostly function as spiritual or moral sounding boards, so the character web is solid but centered heavily on the two leads."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The script commits hard to its religious cosmology, with demons, visions, and a literal tour of Hell that gives it a distinct lane. At the same time, the storytelling leans on familiar faith-drama structures and direct moral address, so the boldness comes more from subject matter and imagery than from form."
+        "reasoning": "The script commits hard to a literalized hellscape and a conversion-through-vision structure, which gives it a distinct lane inside faith material. Much of the dialogue and scene design leans familiar, but the prison, hospital, and hell imagery keep it from feeling generic."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The story keeps moving through a chain of escalating set pieces: the prom-night assault, the crash, prison, relapse, overdose, and the final heaven/hell journey. Some stretches are dialogue-forward and sermon-like, but the plot engine is active and the stakes keep tightening around Jenn’s life and soul."
+        "reasoning": "The story keeps moving through a chain of escalating crises — prom night, the crash, prison, Jenn’s addiction, the near-death visions, and the final testimony. The momentum is steady, though the middle section spends a lot of time reiterating the spiritual argument before the final escalation pays off."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "A father in prison while his daughter is spiritually and physically consumed by addiction gives the material a memorable emotional spine. The Hell imagery is familiar in broad strokes, but the combination of domestic melodrama, prison faith narrative, and afterlife testimony creates a specific, ownable package."
+        "reasoning": "A father in prison while his daughter is spiritually and physically endangered gives the premise a memorable emotional contradiction. The hell-vision material is not subtle, but the combination of addiction melodrama, prison redemption, and supernatural testimony creates a package that is immediately legible and ownable."
       },
       "world_density_and_texture": {
         "score": 5,
-        "reasoning": "The contemporary world has some texture through the church, bar, prison, hospital, and suburban home spaces, but the settings function mainly as stages for the central message. The prison hierarchy and church community add some social structure, yet the world is not built as a deeply layered ecosystem."
+        "reasoning": "The church, prison, hospital, bar, and suburban home all have enough detail to support the story, and the prison hierarchy adds some texture. Still, the world is primarily a container for the moral argument rather than a fully layered ecosystem with many story-generating institutions."
       },
       "tonal_specificity": {
-        "score": 6,
-        "reasoning": "The tone is unmistakably earnest and evangelical, with bursts of melodrama, horror imagery, and blunt moral certainty. That specificity is part of the identity, though the script’s shifts between family drama, supernatural horror, and sermon cadence make the tonal signature more declared than subtly controlled."
+        "score": 7,
+        "reasoning": "This knows exactly what it wants to be: a heightened, evangelical, afterlife-driven melodrama with horror imagery and broad emotional declarations. The tone is highly specific and easy to identify from a page, even when it pushes hard into pulpit-style dialogue."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "There are deeper themes about guilt, addiction, marriage, and spiritual belief, and the prison relationship with Parker hints at a larger moral universe. Still, the script largely states its beliefs openly, so the subtext is present but not especially withheld."
+        "reasoning": "There are real thematic layers around guilt, addiction, family fracture, and salvation, and Jack’s self-loathing gives the story a human core. The script mostly states its beliefs directly rather than withholding them, so the depth is present but not especially hidden."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "Jack/Dixie/Jenn is a strong family triangle, and Parker gives Jack a meaningful secondary relationship that carries the prison section. The ensemble is functional and story-generating, though the script remains centered on the Buck family rather than building a broad web of independent relationship engines."
+        "score": 5,
+        "reasoning": "Jack, Jenn, Dixie, Parker, Ellie, and Jamesy all matter, and the Jack/Parker and Jack/Dixie dynamics give the movie some recurring energy. Even so, most relationships serve the central redemption arc rather than generating independent story engines of their own."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 16,
-        "leads": 3,
+        "leads": 4,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Three lead roles spanning father, mother, and daughter dynamics",
-          "Child actor required for young Jack in opening scenes",
-          "Multiple demon roles and crowd/parishioner/prisoner extras",
-          "Adult female lead requires strong emotional and testimonial presence"
+          "one child role (Jack at 10)",
+          "one teen lead (Jenn)",
+          "one prison ensemble with several adult male types",
+          "one pastor/faith mentor role",
+          "one hospital/authority ensemble"
         ]
       },
       "locations": {
-        "distinct_count": 12,
-        "interior_exterior_ratio": "Mostly interior with some exterior driving, road, church, and prison yard scenes",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 16,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Church interior and sanctuary",
-          "Modest family home and kitchen",
-          "Bar and restaurant",
-          "Hospital rooms and hallway",
-          "Prison cell block, yard, showers, visitation, and warden office",
-          "Hell and Heaven environments requiring stylized production design"
+          "church",
+          "modest home",
+          "hospital rooms and hallway",
+          "bar",
+          "restaurant",
+          "car interiors/exteriors",
+          "prison cell block, yard, showers, visitation, warden office",
+          "nightclub",
+          "highway crash sequence",
+          "multiple hell environments requiring stylized builds or VFX"
         ]
       },
       "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Extensive demon transformations, Hell environments, spirit travel, mirror attack, heaven imagery, and supernatural manifestations.",
-        "stunts_level": "minor",
-        "sfx_needs": "Practical blood, burns, collision aftermath, prosthetic demon makeup, and hospital effects.",
+        "vfx_level": "heavy",
+        "vfx_details": "Multiple hell realms, demon transformations, spirit travel, mirror attack, heaven imagery, flames, supernatural light effects, and a final resurrection-style beat.",
+        "stunts_level": "moderate",
+        "sfx_needs": "car crash, fight choreography, prison assault beats, practical burns/fire looks, blood and injury makeup, demon prosthetics or creature effects",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Gucci, Prada, Valentino, BMW, Taco Bell, Ecstasy, and Benz are named in dialogue and action."
+          "detail": "Gucci, Prada, Valentino, BMW, Taco Bell, Ecstasy, crystal meth references, and named consumer items are used in dialogue and action."
         },
         {
-          "type": "real_person",
-          "detail": "Dr. Phil is referenced in dialogue."
+          "type": "named_music",
+          "detail": "No specific songs are named, but church music, prom music, and nightclub music are implied."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Faith-based theatrical or streaming feature lane with horror elements",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Best suited to a festival-to-platform or targeted faith-audience release model rather than a wide four-quadrant launch."
+        "recommended_lane": "faith-based theatrical or streaming feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; strongest as a faith-market theatrical play or streaming title with church-group word of mouth."
       },
       "risk_rubric": {
         "cost": {
-          "level": "medium",
-          "note": "Contemporary locations keep the base footprint manageable, but Hell, Heaven, demon effects, and the crash sequence push the package above a simple indie drama."
+          "level": "high",
+          "note": "The hell sequences, demon effects, spirit travel, crash aftermath, and prison coverage push this above a modest drama budget."
         },
         "cast": {
           "level": "medium",
-          "note": "The project centers on three demanding leads, a child performer in the opening, and multiple supporting roles across church, prison, and hospital settings."
+          "note": "The script centers on a few leads, but it also needs a teen, a child, prison players, hospital staff, and a credible faith ensemble."
         },
         "location": {
-          "level": "medium",
-          "note": "The story moves through a church, home, bar, restaurant, prison, hospital, road, and supernatural realms, but most live in contained interiors."
+          "level": "high",
+          "note": "Church, home, bar, restaurant, prison, hospital, nightclub, highway, and multiple supernatural spaces create a broad footprint."
         },
         "content": {
           "level": "high",
-          "note": "Drug use, overdose, prison violence, a fatal crash, suicide attempt, and graphic Hell imagery narrow the audience and platform lane."
+          "note": "Drug use, overdose, prison violence, a fatal crash, suicide attempt, and explicit hell imagery narrow the lane."
         },
         "rights": {
           "level": "medium",
-          "note": "Several prominent brands and a named public figure are referenced, creating clearance work but not an IP-heavy package."
+          "note": "The script uses several recognizable brands and product names, but it does not hinge on life rights or major IP."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The faith-horror lane is unmistakable.",
-          "what_it_means": "This gives buyers a clean audience promise: spiritual warfare, family redemption, and supernatural spectacle in one package. Faith-based distributors, genre streamers, and regional theatrical buyers will immediately understand who this is for.",
-          "evidence": "The opening sermon, the demon visitation in George’s kitchen, and the later full Hell/Heaven journeys all commit to the same worldview.",
+          "dimension_or_area": "The father-daughter engine is emotionally legible.",
+          "what_it_means": "That gives the movie a clean commercial spine: a parent trying to save a child is instantly understandable, and the faith-horror overlay gives the rescue stakes a bigger-than-life charge. Faith buyers, older audiences, and actors who want a tear-jerker with genre muscle will all see the lane immediately.",
+          "evidence": "Jack’s guilt over Dixie’s death, Jenn’s anger, the prison furlough, and the final hospital reconciliation all orbit the same family wound.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Jack is built for an actor.",
-          "what_it_means": "The role moves from swaggering, funny, hot-tempered father to broken husband to repentant believer, which is exactly the kind of arc that can anchor a performance-driven feature. Mid-career male leads who want a showcase with grit, humor, and emotional collapse will see the appeal immediately.",
-          "evidence": "His Taco Bell fight, the bar scenes with Jamesy, the drunk-driving crash, and the prison baptism all reveal different registers of the same character.",
+          "dimension_or_area": "The hell imagery is vivid and marketable.",
+          "what_it_means": "The funnel descent, the pits of fire, the mirror attack, and the Satan throne sequence give the project trailer-ready imagery that can sell the premise fast. Horror-leaning faith audiences and genre buyers looking for a bold visual hook will respond to that iconography.",
+          "evidence": "George’s descent into hell, Jenn’s guided tour with Jesus, and the final Satan confrontation are all written as set-piece visions.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Jenn’s transformation is the emotional engine.",
-          "what_it_means": "The daughter’s journey from resentful teen to near-death witness gives the film a second lead role with a built-in climax and testimony payoff. Young actresses with dramatic range, especially those looking for a role that can move from rebellion to spiritual authority, would chase this.",
-          "evidence": "Jenn’s prom-night confrontation, drug spiral, overdose, Hell vision, and final church testimony all belong to her arc.",
+          "dimension_or_area": "Jack is built for a strong actor.",
+          "what_it_means": "He gets humor, rage, remorse, faith struggle, and physicality in one role, which creates a showcase part that can anchor the whole movie. Mid-career male leads who want a redemptive, emotionally loaded turn will chase this, especially in the faith and indie lanes.",
+          "evidence": "The Taco Bell fight, the bar scenes with Jamesy, the crash guilt, and the prison conversion all show different colors of the same character.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The prison section adds a distinct middle act.",
-          "what_it_means": "The Quentin prison material gives the feature a contained, male-driven second movement that broadens the movie beyond domestic melodrama and opens a separate marketing lane. Character actors and directors who like institutional pressure-cooker storytelling will respond to that stretch.",
-          "evidence": "Jack’s cellmate Parker, the gang hierarchy, the baptism in the showers, and the yard confrontations create a self-contained world.",
+          "dimension_or_area": "Jenn’s arc has a built-in transformation.",
+          "what_it_means": "The role moves from sarcastic teen to damaged addict to spiritual witness, giving an actress a rare chance to play rebellion, vulnerability, terror, and conviction in one package. Young female leads in the faith, indie, and crossover drama space would see real showcase value here.",
+          "evidence": "Jenn’s prom-night defiance, drug spiral, hospital collapse, hell vision, and final church testimony form a clear performance journey.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The supernatural imagery is saleable.",
-          "what_it_means": "The funnel descent, the mirror attack, the burning pits, and the throne-room of Satan give the movie trailer moments and poster art. Horror buyers and faith audiences both have clear visual hooks to latch onto.",
-          "evidence": "George’s fall into Hell, Jenn’s spirit journey, and the repeated demon manifestations are written as set pieces.",
+          "dimension_or_area": "The prison material adds a second engine.",
+          "what_it_means": "Jack’s incarceration gives the movie a contained, producible stretch with its own rules, hierarchy, and mentor dynamic, which helps the middle of the film feel active rather than purely reactive. Character actors and directors who like institutional pressure-cooker scenes will be drawn to that section.",
+          "evidence": "Parker, Jake, the gangs, the showers, the yard, and the baptism sequence all create a distinct prison world.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The family triangle carries real emotional weight.",
-          "what_it_means": "Jack, Dixie, and Jenn create a clean domestic core that keeps the movie from becoming only a sermon or only a horror piece. Buyers looking for a faith title with a human center will see a mother-father-daughter dynamic that can hold audience sympathy through the supernatural material.",
-          "evidence": "The marriage breakdown, the prom-night tension, the hospital reconciliation, and Dixie’s deathbed vows all pivot on the family unit.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending is built for testimony marketing.",
-          "what_it_means": "The final church speech gives the project a built-in outreach angle, because the movie ends with a public witness rather than a closed dramatic button. Faith distributors and church-based exhibitors can sell this as an event film with a message.",
-          "evidence": "The “Jenn Buck: To Hell and Back” church appearance and her survey-driven sermon are designed as a public-facing climax.",
+          "dimension_or_area": "The faith testimony angle is built for audience conversation.",
+          "what_it_means": "The ending turns the story into a public witness piece, which is exactly the kind of thing that can travel through churches, ministries, and faith-based communities after release. Buyers in the inspirational lane will see a built-in outreach hook beyond standard theatrical marketing.",
+          "evidence": "The final church event with Jenn presenting her hell-and-heaven experience is structured like a testimony tour stop.",
           "source": "script"
         }
       ],
-      "headline": "HELLBOUND is a faith-horror feature with a very clear commercial identity: a broken family, a literal spiritual war, and a daughter who returns from Hell with a testimony. The script’s strongest asset is that it gives actors, buyers, and audiences something concrete to grab — a repentant father, a transformed daughter, and a supernatural world that plays like a sermon with trailer-ready imagery."
+      "headline": "HELLBOUND is a bold faith-horror feature with a clear emotional engine: a broken father, a spiraling daughter, and a supernatural battle that turns guilt into salvation. The script’s biggest asset is how cleanly it packages sermon, prison drama, addiction tragedy, and hell imagery into a single, easy-to-sell movie with strong lead roles and unmistakable trailer moments."
     },
     "lead_characters": [
       {
         "name": "Jack Buck",
         "role_type": "Lead",
-        "demographics": "Male · 40s · white · physically sturdy, working-class, recovering drinker",
-        "hook": "Jack is a proud, funny, combustible father who has built his identity around providing, controlling, and protecting — and then has to face the fact that money, muscle, and bluster cannot save his family. He’s the kind of man who can crack a joke in one breath, throw a punch in the next, and then collapse into remorse when the damage finally lands.",
-        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, damaged man whose swagger and self-loathing are both playable in the same scene. Actors who want a role that lets them move from tough-guy comedy to spiritual breakdown to redemption will chase this, especially if they want a performance that can carry a feature on presence alone."
+        "demographics": "Male · 40s",
+        "hook": "Jack is a hard-edged, funny, deeply wounded father whose swagger keeps cracking open into guilt. He’s the kind of man who can throw a punch, crack a joke, and then collapse into prayer, which makes him feel like a real person inside a faith-driven redemption story.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, self-contradicting man whose inner damage is always leaking through the surface. It gives an actor the chance to play toughness, remorse, comic timing, and spiritual awakening in one lead role."
       },
       {
         "name": "Jenn Buck",
         "role_type": "Lead",
-        "demographics": "Female · late teens/early 20s · white · physically slight, later visibly ravaged by drug use",
-        "hook": "Jenn starts as a sharp-tongued, self-protective daughter with a wicked sense of humor and ends as the film’s witness, carrying the story from rebellion into revelation. She’s smart enough to see through people, wounded enough to self-destruct, and ultimately chosen to speak with authority.",
-        "why_actor_wants_this": "This is the kind of arc that gave Brie Larson in Short Term 12 and Jennifer Lawrence in Winter’s Bone their early heat — a young woman whose toughness is inseparable from pain, then flips into moral clarity. Emerging actresses looking for a role that can play attitude, addiction, terror, and testimony in one package will see real showcase value here."
+        "demographics": "Female · late teens",
+        "hook": "Jenn starts as a sharp-tongued, image-conscious teenager and becomes the emotional and spiritual center of the movie. She’s rebellious without being generic, and the script gives her a full descent-and-return arc that turns her into a witness rather than just a victim.",
+        "why_actor_wants_this": "This is the kind of transformation role that gave Jodie Comer in Help or Kaitlyn Dever in Unbelievable the chance to move from pain into authority. It offers an actress a full-spectrum performance: sarcasm, fear, addiction, spiritual awe, and public testimony."
       },
       {
         "name": "Dixie Buck",
-        "role_type": "Lead",
-        "demographics": "Female · 40s · white · elegant, grounded, emotionally worn",
-        "hook": "Dixie is the quiet center of the family: loving, disappointed, observant, and far more emotionally awake than the men around her realize. She carries the ache of a marriage that has been starved of time, and her scenes give the film its most intimate adult texture.",
-        "why_actor_wants_this": "This is the emotional authority space of Toni Collette in Hereditary or Patricia Clarkson in Pieces of April — a woman whose stillness holds the room and whose pain arrives with devastating clarity. Mid-career dramatic actresses looking for a role that can play love, resignation, and final grace will be drawn to it."
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Dixie is the emotional memory of the family — warm, disappointed, still loving, and carrying the quiet ache of a marriage that never got enough attention. Even in limited scenes, she has the kind of lived-in presence that makes the family fracture feel personal.",
+        "why_actor_wants_this": "This is the intimate, heartbreaking territory of Patricia Clarkson in Pieces of April or Laura Linney in The Savages — a woman whose stillness carries the weight of a whole marriage. Character actresses who specialize in emotional precision will be drawn to the role’s tenderness and finality."
       },
       {
         "name": "Parker Simmons",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · white · prison inmate, calm, articulate, spiritually intense",
-        "hook": "Parker is the prison’s unlikely conscience: a former atheist turned believer who speaks with the certainty of someone who has seen the other side and come back changed. He’s gentle without being soft, and his faith gives the prison material its clearest moral counterweight.",
-        "why_actor_wants_this": "This is the kind of role that gave Stephen Root in The Ballad of Buster Scruggs or John Hawkes in Winter’s Bone their scene-stealing authority — a quiet man whose stillness carries belief. Character actors who like playing intelligence, warmth, and spiritual conviction without showboating will want it."
+        "demographics": "Male · 40s-50s",
+        "hook": "Parker is the prison’s spiritual counterweight: calm, articulate, a little sly, and fully committed to his testimony. He functions as both mentor and pressure valve, giving the movie a grounded believer who can spar verbally without losing warmth.",
+        "why_actor_wants_this": "This is the showcase lane of Morgan Freeman in The Shawshank Redemption — a wise inmate whose faith and patience become the movie’s moral ballast. Veteran character actors who can play authority without aggression will see a strong supporting anchor here."
       },
       {
         "name": "Jamesy",
         "role_type": "Supporting",
-        "demographics": "Male · 60s · white · bartender, plainspoken, observant, faith-forward",
-        "hook": "Jamesy is the bartender as moral witness: dry, patient, and just sharp enough to see through Jack’s defenses without ever sounding preachy. He functions like a worldly confessor, giving the bar scenes a lived-in adult rhythm.",
-        "why_actor_wants_this": "This is the kind of supporting part that gave JK Simmons in Juno or Nick Offerman in The Last of Us a memorable lane — a grounded, no-nonsense truth-teller with comic timing. Veteran character actors who can make a few scenes feel indispensable will be attracted to it."
-      },
-      {
-        "name": "Dylan",
-        "role_type": "Supporting",
-        "demographics": "Male · late teens · white · preppy, entitled, physically average",
-        "hook": "Dylan is the polished predator in prom-night clothing: charming enough to pass, entitled enough to push, and ugly the moment he thinks he has control. He gives the movie a clean, immediate human antagonist before the supernatural material takes over.",
-        "why_actor_wants_this": "This is the kind of villainous teen role that gave actors like Ezra Miller in We Need to Talk About Kevin or Nicholas Braun in a smaller menace mode a chance to weaponize likability. Young actors who want to play charm curdling into threat will see a sharp, playable part."
-      },
-      {
-        "name": "Dixie Gilley",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · white · Jack’s ex-wife, attractive, emotionally guarded",
-        "hook": "Dixie is the ex-wife who still carries the residue of a real marriage: hurt, attraction, fatigue, and a practical intelligence about what the family has become. She’s not written as a device; she’s the adult who can still see the truth in the room.",
-        "why_actor_wants_this": "This is the kind of role that gave Laura Linney in The Savages or Julianne Nicholson in August: Osage County a chance to play adult disappointment with precision. Actresses who can make a few scenes feel like the emotional history of a whole marriage will want it."
+        "demographics": "Male · 60s",
+        "hook": "Jamesy is the bartender as conscience: dry, observant, and quietly more spiritually serious than he first appears. He gives the movie a worldly, lived-in adult voice and becomes one of the few people who can tell Jack the truth without preaching.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what John Goodman did in The Big Lebowski or Nick Offerman does when he plays grounded wisdom with a comic edge. It’s a compact, memorable part for a seasoned actor who can turn a few scenes into a moral anchor."
       },
       {
         "name": "Ellie Wolfe",
         "role_type": "Supporting",
-        "demographics": "Female · 60s · white · Jack’s sister, heavyset, thrift-store practical",
-        "hook": "Ellie is the family’s blunt caretaker, the one who can move between comic irritation and real concern without losing her footing. She gives the script a lived-in sibling texture and a practical adult presence when the family starts to fall apart.",
-        "why_actor_wants_this": "This is the sort of supporting role that gives character actresses the same utility and bite as Frances McDormand in smaller ensemble work — a woman who can land a line and still feel like a real person. Experienced actresses who specialize in grounded, no-frills authority will be interested."
+        "demographics": "Female · 60s",
+        "hook": "Ellie is the family’s practical caretaker, carrying the burden of cleanup, updates, and emotional triage. She’s not flashy, but she gives the story a believable adult sibling presence and a steady hand in the aftermath.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives Frances McDormand in a smaller register or Margo Martindale in a family drama the chance to ground chaos with plainspoken authority. Character actresses who specialize in lived-in realism will know exactly how to make this land."
       },
       {
         "name": "Beth Gilmore",
         "role_type": "Supporting",
-        "demographics": "Female · 40s · white · therapist, professional, composed",
-        "hook": "Beth is the outside professional who keeps naming Jack’s behavior in plain language, which makes her a useful pressure point in the story. She’s calm, observant, and gives the script a secular countervoice.",
-        "why_actor_wants_this": "This is the kind of role that lets an actress play intelligence and restraint in the mold of Laura Dern’s quieter dramatic work. Character actresses who can make authority feel humane will be drawn to it."
-      },
-      {
-        "name": "Chase Miller",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · white · governor’s office contact, off-screen presence",
-        "hook": "Chase is the off-screen institutional ally who helps move Jack’s furlough and keeps the plot machinery turning. He’s more function than personality, but he gives the story a political bridge out of prison.",
-        "why_actor_wants_this": "This is a compact utility role in the vein of a well-cast procedural fixer — useful for a recognizable face or a strong local actor. It’s the kind of part that can be filled by a dependable character player without heavy lift."
-      },
-      {
-        "name": "Warden Barrington",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s · authority figure",
-        "hook": "Barrington is the prison authority who grants Jack the furlough and keeps the institutional stakes legible. He’s controlled, procedural, and gives the prison section a face of power.",
-        "why_actor_wants_this": "This is the kind of role that gives a seasoned actor the same clipped authority as a courtroom or prison administrator in prestige drama. It’s a clean, efficient part for a recognizable character actor."
-      },
-      {
-        "name": "Dr. White",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · white · hospital doctor",
-        "hook": "Dr. White is the medical voice of consequence, translating the crash and its aftermath into clinical stakes. He’s not flashy, but he grounds the hospital material in reality.",
-        "why_actor_wants_this": "This is a straightforward authority role that suits a reliable dramatic actor in the mold of a network medical guest lead. It gives the performer a few clean, high-stakes scenes without overcomplication."
-      },
-      {
-        "name": "Doctor Marty",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · white · hospital doctor",
-        "hook": "Doctor Marty handles Jenn’s recovery and becomes the voice of her medical fragility. He functions as the practical counterpoint to the spiritual language around her condition.",
-        "why_actor_wants_this": "This is the kind of grounded medical role that gives an actor a chance to play calm competence under pressure. It fits a dependable character performer who can make exposition feel human."
-      },
-      {
-        "name": "Nurse Willis",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s-50s · hospital nurse",
-        "hook": "Nurse Willis is a small but steady presence in the hospital scenes, helping translate the crisis into plain terms. She adds texture and humanizes the medical setting.",
-        "why_actor_wants_this": "This is a useful supporting role for a strong character actress who can make a few lines feel lived-in. It’s the kind of part that benefits from natural authority and warmth."
+        "demographics": "Female · 40s",
+        "hook": "Beth is the therapist who sees through Jack’s defenses without turning into a caricature. She’s a clean, functional authority figure who helps define Jack’s volatility and gives the movie a contemporary, secular counterpoint.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the calm intelligence of Laura Dern in Marriage Story or Annette Bening in a grounded drama scene. It’s a concise, scene-stealing part for an actress who can make listening feel active."
       },
       {
         "name": "Rance McDonald",
         "role_type": "Supporting",
-        "demographics": "Male · 50s · white · defense attorney",
-        "hook": "Rance is the practical legal voice trying to keep Jack from getting buried by the system. He’s dry, experienced, and gives the post-crash section a procedural spine.",
-        "why_actor_wants_this": "This is a classic lawyer role in the vein of a seasoned prestige-drama supporting turn. Character actors who can deliver competence with a little weariness will fit it well."
+        "demographics": "Male · 50s",
+        "hook": "Rance is the no-nonsense lawyer who translates Jack’s disaster into legal reality. He’s efficient, dry, and useful in exactly the way a good supporting professional should be.",
+        "why_actor_wants_this": "This is the sort of role that gives a working character actor the crisp authority of William H. Macy in a legal or procedural support part. It’s a clean, professional scene role with just enough personality to register."
+      },
+      {
+        "name": "Warden Barrington",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Barrington is the institutional face of mercy, giving Jack the furlough that keeps the story moving. He’s restrained, procedural, and important as the gatekeeper between prison and family crisis.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the controlled authority of J.K. Simmons in a smaller institutional scene. It’s a strong fit for a veteran who can make a few lines feel consequential."
+      },
+      {
+        "name": "Dr. White",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Dr. White is the clinical voice of the hospital, the man who translates injury into prognosis. He’s functional, but he helps give the medical stakes a credible professional frame.",
+        "why_actor_wants_this": "This is the kind of part that suits a dependable character actor who can do the grounded authority of Richard Jenkins in a hospital drama beat. It’s a concise, believable professional role."
+      },
+      {
+        "name": "Dr. Marty",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Dr. Marty is the second medical authority, carrying the bad news and the recovery updates. He exists to keep the hospital world legible and to move the emotional stakes forward.",
+        "why_actor_wants_this": "This is a clean supporting role for an actor who can play the calm, humane precision of a hospital drama regular. It gives a few scenes of emotional delivery without needing a large footprint."
+      },
+      {
+        "name": "Dylan",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Dylan is the polished, entitled prom-date who turns predatory the moment the mask slips. He’s written as a clear threat, which makes him useful as the human face of the movie’s corruption and temptation theme.",
+        "why_actor_wants_this": "This is the kind of villainous teen role that lets an actor play the charming-to-menacing shift seen in performances like Logan Miller in Escape Room or a young antagonist in a prestige teen drama. It’s a sharp, scene-specific part with a clean turn."
+      },
+      {
+        "name": "Harris",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Harris is the smooth, drug-world seducer who helps pull Jenn deeper into the spiral. He’s less a full person than a dangerous presence, which makes him function as temptation with a face.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the sleek menace of a supporting antagonist in a drug drama. It’s a compact part for someone who can play charm and threat in the same breath."
+      },
+      {
+        "name": "Red",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Red is the follower who becomes a witness to the supernatural rot around him. He starts as part of the party scene and ends up as a useful barometer for how far the darkness has spread.",
+        "why_actor_wants_this": "This is a solid supporting role for a younger actor who can play the bewildered sidekick energy of a crime or addiction drama. It gives a few memorable beats without demanding a huge arc."
+      },
+      {
+        "name": "Jake",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Jake is the prison’s hard-edged enforcer, a self-appointed general of intimidation. He gives the prison world a clear antagonist and lets the movie externalize the spiritual battle through institutional violence.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor the brutal authority of a prison antagonist in Oz or Shot Caller. It’s a strong supporting villain part for someone who can dominate a room fast."
+      },
+      {
+        "name": "Pastor George Buck / Pastor Fletcher",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "The opening pastor is the movie’s spiritual setup: a weary country preacher whose sermon frames the whole cosmic war. He establishes the faith-world language that the rest of the script lives inside.",
+        "why_actor_wants_this": "This is the kind of brief but defining role that lets an actor play the solemn conviction of a church leader in a faith drama opening. It’s a small part with thematic weight."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage faith, addiction, and supernatural terror without irony.",
-        "fit_profile": "First- or second-feature directors with a taste for performance-forward genre material, especially those coming out of indie drama, elevated horror, or faith-adjacent storytelling. The material rewards a filmmaker who can hold emotional sincerity, stylized Hell imagery, and domestic realism in the same frame without flattening any of them.",
-        "detail": "The craft opportunity is in balancing intimate family scenes with bold supernatural set pieces so the movie feels emotionally earned rather than merely illustrated. Directors who like contained worlds, strong actor turns, and clear visual symbolism will recognize a lane they can own."
+        "hook": "A director who wants to stage faith as a literal battle and make emotional conversion feel cinematic.",
+        "fit_profile": "Established indie or faith-genre directors with at least one or two features, especially those who already work in performance-forward drama, horror-adjacent imagery, or redemption stories. This material rewards a filmmaker who can balance sermon language, family melodrama, and creature imagery without losing emotional sincerity.",
+        "detail": "The movie gives a director a chance to build set pieces out of visions, prison pressure, and hospital grief rather than pure spectacle, which keeps the emotional line visible even when the imagery goes big. It will attract directors who like clear moral stakes, strong lead performances, and a chance to make genre language serve testimony."
       },
       "buyer_appeal": {
-        "tier": "$2-8M feature",
-        "lane": "Faith-based genre feature / streamer acquisition / targeted theatrical",
-        "detail": "The movie can be packaged around one strong male lead, one strong young female lead, and a contained contemporary footprint, which makes it viable without a giant ensemble or star-heavy cast. The faith audience gives it a built-in outreach runway, while the Hell imagery and addiction angle widen it beyond pure church-market programming."
+        "tier": "$3-8M feature",
+        "lane": "faith-based theatrical / streaming drama with horror elements",
+        "detail": "The package can be built around one or two recognizable leads, but the hell imagery and prison coverage mean a buyer will want a director who can stage supernatural material efficiently. The faith audience gives it a built-in church-group and word-of-mouth runway that most mid-budget horror or drama titles do not have."
       }
     },
     "considerations": [
       {
-        "area": "The opening church setup can move faster.",
-        "detail": "The sermon and home-prayer material establish the worldview clearly, and the next pass could consider trimming a few lines so the demon visit arrives with even more snap. The story already knows what it is; a slightly quicker launch would let the supernatural engine hit sooner.",
+        "area": "The opening sermon sets the thesis fast.",
+        "detail": "The script announces its spiritual worldview immediately, which is useful for the target audience, but the version of the opening where George’s sermon is a little more dramatized through action or conflict could make the hook land even faster on a first read.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The prison section could be streamlined.",
-        "detail": "Jack’s time with Parker, the gang pressure, the baptism, and the yard confrontation all serve the same spiritual turn, so one lever would be to protect the strongest beats and fold any repeated explanation into action. That would keep the middle act moving while preserving the prison world’s impact.",
+        "area": "The middle leans heavily on explanation.",
+        "detail": "A number of the prison and bar scenes repeat the same spiritual argument in different registers, especially in the Jack/Parker/Jamesy conversations. One direction would be to let a few of those ideas arrive through choice or consequence instead of dialogue, which would keep the momentum moving while preserving the message.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The Hell tour is the movie’s biggest production swing.",
-        "detail": "The funnel descent, multiple demon types, burning pits, Satan’s throne room, and Heaven imagery all point to a moderate VFX and design load. A producer version that consolidates a few of the repeated hell vistas into fewer signature spaces would protect the spectacle while keeping the budget in the intended lane.",
+        "area": "The hell sequences drive the budget.",
+        "detail": "The funnel descent, demon transformations, spirit travel, mirror attack, and Satan throne all point to a heavy effects load. A simplification pass that preserves the same spiritual beats but trims the number of distinct hell environments would protect the movie’s producibility without changing the core experience.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The brand references will need a clearance pass.",
-        "detail": "Gucci, Prada, Valentino, BMW, Taco Bell, Benz, Ecstasy, and Dr. Phil are all named on the page, so a production draft would want to decide which ones are essential to character and which can be generalized. That keeps the script’s contemporary texture while reducing paperwork in prep.",
+        "area": "The prison section could be more compact.",
+        "detail": "The cell block, yard, showers, visitation, warden office, and gang beats all work, but they create a broad footprint for a stretch of the movie that is mostly about Jack’s internal change. One lever would be to combine a couple of those prison beats into fewer locations so the emotional arc stays front and center.",
         "is_primary_lever": false,
-        "source": "production"
+        "source": "both"
       },
       {
-        "area": "Jenn’s final testimony is the payoff to protect.",
-        "detail": "The church speech gives the movie its public-facing climax, so the version of the script that keeps that sequence clean and emotionally direct will maximize the audience’s takeaway. It’s the scene that turns the story from private trauma into a shareable faith event.",
+        "area": "Jenn’s drug spiral is the second engine.",
+        "detail": "The script gives her a strong fall, but the scenes with Harris, Red, Margie, and Paige mostly function as atmosphere around the descent. A next pass could sharpen one or two of those relationships so the audience feels a more specific human pull before the overdose turn.",
         "is_primary_lever": false,
         "source": "script"
+      },
+      {
+        "area": "The final testimony is the release valve.",
+        "detail": "The church ending gives the movie a clean public-facing payoff and a natural faith-market endpoint. If the goal is church screenings and inspirational outreach, this ending is already pointed in the right direction and can be positioned as the movie’s calling card.",
+        "is_primary_lever": false,
+        "source": "production"
       }
     ],
     "craft_note": ""
@@ -327,7 +339,7 @@
   "weightedScore": 59,
   "tier": "Needs Development",
   "inputTokens": 48521,
-  "outputTokens": 5643,
-  "cost": 0.06178425,
+  "outputTokens": 5490,
+  "cost": 0.061095750000000004,
   "declaredFormat": "Feature film"
 }

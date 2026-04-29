@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-29T01:25:24.910Z",
+  "submission_id": "bce77c44-42b6-4818-a5c2-19a52e53e1a5",
+  "eval_id": "15154ab8-a0cd-4289-8b1b-ac60419e4414",
+  "title": "INTO THE MYSTIC II",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "Brandon",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · athletic Florida everyman with mythic reveal"
+    },
+    {
+      "name": "Treena",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s · mermaid with human life and pregnancy arc"
+    },
+    {
+      "name": "Thanos",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 50s · blond, imposing, shape-shifting sea prophet"
+    },
+    {
+      "name": "Jessa",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · mermaid living in the human world"
+    },
+    {
+      "name": "Lou",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Florida patriarch, human"
+    },
+    {
+      "name": "Derek",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · son, brother, and comic commentator"
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · friend and comic sidekick"
+    },
+    {
+      "name": "Annabelle / Belladine",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s to 60s present-day, younger in flashback · mermaid"
+    },
+    {
+      "name": "Arianna",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · mermaid elder / community member"
+    },
+    {
+      "name": "Tina",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · mermaid community member"
+    },
+    {
+      "name": "Sean",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 40s · island resident / reluctant ally"
+    },
+    {
+      "name": "Glaukos",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless, mythic sea ruler"
+    },
+    {
+      "name": "Peter",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · fisherman turned human again"
+    },
+    {
+      "name": "Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · exact twin image of Thanos"
+    },
+    {
+      "name": "Joshua",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · father figure / later body-snatched presence"
+    },
+    {
+      "name": "Trista",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · Joshua's daughter"
+    },
+    {
+      "name": "Wilson",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · police officer"
+    },
+    {
+      "name": "Gomez",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · police officer"
+    }
+  ],
+  "positioning_hook": "A Florida millionaire and his mermaid wife race to protect their half-human son from an immortal sea prophet who believes the boy will rule both land and ocean.",
+  "cost_usd": 0.064773,
+  "input_tokens": 48264,
+  "output_tokens": 6350,
+  "status": "wrote:leads_ok"
+}

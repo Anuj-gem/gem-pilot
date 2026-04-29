@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T01:27:39.423Z",
+  "submission_id": "4fa89f9c-7595-43dc-b26e-9c2bb452bf0b",
+  "eval_id": "80bde1dc-137d-4da4-b299-df92268ccff0",
+  "title": "THE FATHER GALLAGHER MYSTERIES   MYSTERY OF THE COVERED STATUES",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Father Keith Gallagher",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s to early 70s"
+    },
+    {
+      "name": "Deacon Dave Smith",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s to early 60s"
+    },
+    {
+      "name": "Debbie Runner",
+      "role_type": "Lead",
+      "demographics": "Female · late 50s to early 60s"
+    },
+    {
+      "name": "Monsignor Bill Lesnar",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Bishop Albert Smirk",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s to 70s"
+    },
+    {
+      "name": "Anna Bernadette",
+      "role_type": "Supporting",
+      "demographics": "Female · early 60s"
+    }
+  ],
+  "positioning_hook": "A small-town priest and his parish team uncover a thirty-year-old church cover-up after covered statues start sending warnings, forcing the diocese to choose truth over silence.",
+  "cost_usd": 0.0326835,
+  "input_tokens": 19278,
+  "output_tokens": 4050,
+  "status": "wrote:leads_ok"
+}

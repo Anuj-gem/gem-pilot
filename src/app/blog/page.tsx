@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Nav from '@/components/nav'
+import { BlogMasthead } from '@/components/blog/blog-masthead'
 import { ArrowRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 
@@ -21,24 +22,15 @@ export default async function BlogIndexPage() {
   return (
     <>
       <Nav />
+      <BlogMasthead />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14 pb-24">
         <header className="mb-10 sm:mb-14">
-          <p
-            className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-3"
-            style={{ color: 'var(--gem-accent)' }}
-          >
-            Blog
-          </p>
           <h1 className="text-[36px] sm:text-[48px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-4 font-[family-name:var(--font-display)]">
             Notes from GEM.
           </h1>
           <p className="text-[15.5px] sm:text-[16px] text-[var(--gem-gray-300)] leading-[1.6] m-0 max-w-[60ch]">
-            Product updates, how Selznick reads, and what makes a script
-            qualify. Subscribe by following along — every post lands at
-            <code className="mx-1 px-1.5 py-0.5 rounded bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] text-[13px]">
-              /blog
-            </code>
-            and on the homepage.
+            Product updates, how Selznick reads, and behind-the-scenes notes
+            on the engine.
           </p>
         </header>
 

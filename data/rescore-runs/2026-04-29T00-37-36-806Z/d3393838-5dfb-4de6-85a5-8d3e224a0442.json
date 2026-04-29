@@ -1,0 +1,170 @@
+{
+  "timestamp": "2026-04-29T01:28:52.863Z",
+  "submission_id": "d3393838-5dfb-4de6-85a5-8d3e224a0442",
+  "eval_id": "19b03fad-2db9-4ad6-8596-f32e4f8d0f9e",
+  "title": "twists of life final converted",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 30,
+  "lead_characters_summary": [
+    {
+      "name": "Bode",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · Nigerian"
+    },
+    {
+      "name": "Barrister Shade Johnson",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · Nigerian"
+    },
+    {
+      "name": "Mahjid Chippo",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Nigerian"
+    },
+    {
+      "name": "Alice George",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Nigerian"
+    },
+    {
+      "name": "James Peters",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · Nigerian"
+    },
+    {
+      "name": "Mr. Smith",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · Nigerian"
+    },
+    {
+      "name": "Mr. Peter Johnson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · Nigerian"
+    },
+    {
+      "name": "John Philips",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Nigerian"
+    },
+    {
+      "name": "Ken",
+      "role_type": "Lead",
+      "demographics": "Male · late teens-20s · unspecified"
+    },
+    {
+      "name": "Spencer Hill",
+      "role_type": "Lead",
+      "demographics": "Male · late teens-20s · unspecified"
+    },
+    {
+      "name": "Scott",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · unspecified"
+    },
+    {
+      "name": "Rodriguez Mata",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-70s · Brazilian"
+    },
+    {
+      "name": "Gloria Garcia",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-60s · Brazilian"
+    },
+    {
+      "name": "Park",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-50s · Korean"
+    },
+    {
+      "name": "Jin Sung",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-70s · Korean"
+    },
+    {
+      "name": "David",
+      "role_type": "Lead",
+      "demographics": "Male · 5 to 38 · mixed African-American / European features"
+    },
+    {
+      "name": "Candice / Candy",
+      "role_type": "Supporting",
+      "demographics": "Female · 15-30s · Arabic / Jamaican ancestry"
+    },
+    {
+      "name": "Eunice",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · unspecified"
+    },
+    {
+      "name": "Alice",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-40s · Caucasian"
+    },
+    {
+      "name": "Hough Marshal",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s · unspecified"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s · unspecified"
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · unspecified"
+    },
+    {
+      "name": "John Philip",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · unspecified"
+    },
+    {
+      "name": "Justice Amos Jakande",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · Nigerian"
+    },
+    {
+      "name": "Justice Kayode Hughes",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · Nigerian"
+    },
+    {
+      "name": "Mr. Mark Fisher",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s · unspecified"
+    },
+    {
+      "name": "Antonio Santos",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s · Brazilian"
+    },
+    {
+      "name": "The Accountant",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s · unspecified"
+    },
+    {
+      "name": "Elsey",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · African-American"
+    },
+    {
+      "name": "Sam",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · mixed European features"
+    }
+  ],
+  "positioning_hook": "A sprawling anthology of moral cautionary tales — from a gang informant’s redemption to a political showdown, a hypnotist’s empire, and a writer’s rise — all tied together by ambition, betrayal, and consequence.",
+  "cost_usd": 0.05181225,
+  "input_tokens": 22997,
+  "output_tokens": 7681,
+  "status": "wrote:leads_ok"
+}

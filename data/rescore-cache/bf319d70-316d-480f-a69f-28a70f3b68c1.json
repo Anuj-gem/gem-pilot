@@ -2,128 +2,133 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Melodrama",
+      "genre_primary": "Family melodrama",
       "genre_tags": [
-        "Family saga",
-        "Crime thriller"
+        "Domestic tragedy",
+        "Revenge thriller"
       ],
-      "tone": "Heightened, tragic, moralistic, soap-operatic"
+      "tone": "Heightened, operatic, moralistic"
     },
-    "positioning_hook": "A Nigerian family saga follows a battered wife, a self-destructive husband, and their twin daughters as betrayal, revenge, and mistaken identity tear one household into a generational tragedy.",
+    "positioning_hook": "A Nigerian doctor’s marriage implodes into abuse, separation, and revenge as his twin daughters grow up to inherit the damage — and weaponize it.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The emotional engine is easy to grasp — marriage collapse, family separation, revenge, and death — and the title-level premise has clear soap-opera pull. The audience is narrower than a mainstream thriller because the script leans heavily on moral speeches and long-form domestic tragedy rather than a clean, universal genre engine."
+        "reasoning": "The emotional engine is legible — marriage, children, betrayal, revenge — and the material clearly aims at a broad melodrama audience. The scale and dialogue style, though, keep it in a more niche lane than a clean commercial crowd-pleaser."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The core setup lands early: an abusive marriage, a divorce that splits the twins, and a later revenge plot built on identity confusion. The story becomes more diffuse as it moves through hospital conspiracies, time jumps, and multiple adult-era reversals, but the central hook remains legible."
+        "reasoning": "The premise is understandable early: a marriage breaks, the family splits, and the consequences echo across years. The hook becomes more specific once the twin-swap/revenge thread arrives, but the script takes a while to settle into that engine."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "Bode and Cynthia are defined by strong external conflict and the twins give the story a built-in emotional split, especially in the custody and separation material. The characters are more functional than surprising, with much of their expression carried through speeches and plot turns rather than private contradiction."
+        "reasoning": "Bode and Cynthia have strong emotional polarity, and the twins give the story a built-in inheritance of conflict. The characters are more functional than psychologically layered, with most of the supporting players serving the plot rather than opening new dimensions."
       },
       "creative_originality_and_boldness": {
         "score": 4,
-        "reasoning": "The script has a distinctive Nigerian family-drama frame and commits to an operatic scale of betrayal, but the execution is highly familiar in its reversals, moral declarations, and revenge mechanics. The twin-switch and long-lost-family beats are recognizable melodrama devices rather than a fresh formal angle."
+        "reasoning": "The script leans into big melodramatic turns, identity confusion, and revenge plotting, but the execution stays close to familiar soap-opera and cautionary-drama patterns. The title and framing promise a sharper conceptual angle than the page consistently delivers."
       },
       "narrative_momentum_engagement": {
-        "score": 4,
-        "reasoning": "The opening assault and divorce create immediate urgency, but the middle stretches into repeated argument scenes, explanatory monologues, and time-jump transitions that soften forward drive. The later kidnapping/revenge material restores motion, yet the path there is long and episodic."
+        "score": 5,
+        "reasoning": "There is constant movement across time jumps, hospital scenes, court scenes, and revenge setups, so the script rarely sits still. At the same time, the momentum is more episodic than escalating, with several stretches that repeat the same emotional argument in different rooms."
       },
       "resonant_originality": {
         "score": 4,
-        "reasoning": "The premise has a memorable local texture — 1960s/70s Nigeria, hospital politics, family honor, and a revenge plot tied to twins — but the underlying shape is familiar domestic melodrama. The story feels specific in setting more than in structural surprise."
+        "reasoning": "The twin-based family fracture and long-tail revenge structure give the story a recognizable hook, but the beats themselves often feel familiar in execution. The idea is memorable; the page-to-page surprise level is more modest."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "Hospitals, courts, schools, offices, churches, train stations, and family homes give the script a broad social canvas, and the Nigerian institutional backdrop is visible throughout. The world is more expansive than intimate, though many locations function as staging areas for dialogue rather than as fully dramatized systems."
+        "reasoning": "The Nigerian hospital, court, school, church, and corporate spaces give the story a real social footprint, and the time-period shifts add some texture. The world is present and usable, though it functions more as a backdrop for melodrama than as a fully generating system."
       },
       "tonal_specificity": {
-        "score": 5,
-        "reasoning": "The tone is consistent in its heightened seriousness, with public confrontations, moralizing speeches, and tragic reversals. It has a clear melodramatic identity, but the emotional register stays fairly uniform rather than developing a sharper tonal signature."
+        "score": 4,
+        "reasoning": "The script has a consistent heightened soap-opera register, with speeches, moral pronouncements, and broad reversals. That consistency is clear, but the tone does not yet feel sharply singular enough to separate it from adjacent domestic melodramas."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "There are seeds of deeper material in the marriage breakdown, the daughters’ split loyalties, and the long shadow of parental damage across generations. The script states those themes directly, though it leaves less room for subtext than for declaration."
+        "reasoning": "Under the surface are themes of inheritance, gendered power, family memory, and the way children absorb parental damage. Those themes are present, but the script states them more directly than it dramatizes them, so the deeper layer is visible without fully blooming."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "The family triangle, the twins, the school friendships, and the adult revenge alliance create multiple relationship lanes that can generate story. Still, the script ultimately centers on a few dominant pairings, with many supporting characters serving the main plot rather than generating independent energy."
+        "reasoning": "The Bode/Cynthia marriage, the twin sister dynamic, the mother-son bond, and the Esther/Joke conspiracy all create usable relationship engines. The ensemble is active, though the story still lives primarily on a few central pairings rather than a web of equally generative dynamics."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 25,
         "leads": 6,
-        "series_regulars": 0,
+        "series_regulars": 8,
         "child_actors": true,
         "casting_characteristics": [
-          "Twin children and twin adults are central to the story",
-          "Multiple age spans for the same characters",
-          "Several roles require 1960s-1980s period styling",
-          "Some characters are described with specific height, complexion, and build details"
+          "Identical twin girls required in childhood and adult timelines",
+          "Multiple age-specific casting tracks for the same characters",
+          "Several roles require Nigerian identity and period-appropriate casting",
+          "One lead role spans illness, rage, remorse, and late-life decline"
         ]
       },
       "locations": {
         "distinct_count": 20,
-        "interior_exterior_ratio": "roughly balanced, with a slight interior lean",
-        "period_or_contemporary": "Period, spanning 1964 through 1983",
+        "interior_exterior_ratio": "Mostly interior with frequent exterior inserts",
+        "period_or_contemporary": "Period, spanning 1964 to 1983",
         "notable_requirements": [
-          "Hospital wards, corridors, morgue, and administrative offices",
-          "Courtroom and church interiors",
-          "Schoolyard and classroom scenes",
-          "Train station, airport, hotel, cemetery, and multiple family homes",
-          "Period vehicles, costumes, signage, and production design across multiple decades"
+          "Hospital wards, corridors, morgue, and loading dock",
+          "Courtroom and administrative office spaces",
+          "Schoolyard and classroom",
+          "Church wedding and hotel room",
+          "Train station, airport, and car interiors",
+          "Period Nigerian residential and office environments"
         ]
       },
       "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Mostly invisible continuity and period enhancement; no major effects set pieces are written.",
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirement beyond basic period dressing and editorial transitions.",
         "stunts_level": "minor",
-        "sfx_needs": "Physical assault scenes, a kidnapping restraint setup, gunfire, and a car-crash aftermath are implied or shown.",
+        "sfx_needs": "Practical blood, bruising, gunshot aftermath, ambulance and hospital action, and a fire aftermath referenced in dialogue.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Nigerian Television Authority (NTA) logo is shown on-screen."
+          "detail": "Nigerian Television Authority (NTA) logo appears on-screen."
         },
         {
           "type": "brand",
-          "detail": "Specific institutions and businesses are named, including Paterson Accounting, Ltd., St. Andrews Hospital, St. Vincent Nursery and Primary School, Hotel De Royale, Point of Truths Ministries, and Bode and Associates."
+          "detail": "Specific institutions and businesses are named, including Paterson Accounting, St. Andrews Hospital, St. Vincent Nursery and Primary School, Hotel De Royale, and Point of Truths Ministries."
         },
         {
           "type": "real_person",
           "detail": "Mary Slessor is referenced by name at the cemetery."
+        },
+        {
+          "type": "named_music",
+          "detail": "The Jackson 5 song 'I’ll Be There' is sung in the hospital scene."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Festival-to-platform feature drama / prestige African family melodrama",
+        "recommended_lane": "Streaming or festival-to-platform melodrama lane",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strongest fit as a festival launch or platform acquisition; the story is self-contained and spans multiple decades."
+        "series_engine_or_release_model": "Feature release model; best suited to a contained, performance-driven drama with strong diaspora or regional audience appeal."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The story is mostly dialogue-driven but spans many period locations, multiple decades, and a large cast."
+          "note": "The story is mostly contained to homes, hospitals, offices, and a few public spaces, but the period span and multiple age tracks add production design and scheduling weight."
         },
         "cast": {
           "level": "high",
-          "note": "Twin casting across childhood and adulthood, plus a sizable supporting ensemble, makes casting coordination central."
+          "note": "The script requires twin casting across childhood and adulthood, several age-specific supporting roles, and a large enough ensemble to cover the hospital, family, and corporate worlds."
         },
         "location": {
-          "level": "high",
-          "note": "The script moves through hospitals, homes, schools, courts, churches, hotels, airports, train stations, and cemeteries across several time periods."
+          "level": "medium",
+          "note": "The footprint is not enormous, but it spans many distinct interiors and exteriors across multiple cities and time periods."
         },
         "content": {
           "level": "high",
-          "note": "Domestic violence, child separation, kidnapping, gun violence, and death drive the material."
+          "note": "Domestic violence, infidelity, revenge, kidnapping, gun violence, illness, and death all sit prominently on the page."
         },
         "rights": {
-          "level": "low",
-          "note": "The script uses a few named institutions and one historical reference, but no major IP or music dependency is written in."
+          "level": "medium",
+          "note": "The script uses a named song, a real historical figure, and several branded institutions and media references."
         }
       }
     },
@@ -131,171 +136,163 @@
       "strengths": [
         {
           "dimension_or_area": "The family fracture is the engine.",
-          "what_it_means": "This gives the project a built-in emotional spine that can travel as a prestige domestic drama rather than a one-note revenge story. Producers looking for African-set melodrama with a clear audience promise will see a story that can play to diaspora viewers, faith-adjacent audiences, and fans of big family tragedy.",
-          "evidence": "The opening assault, the court-ordered split of the twins, and the later adult revenge plot all grow out of the same marital collapse.",
+          "what_it_means": "This gives the project a built-in emotional hook that can travel beyond the immediate plot mechanics, because the central conflict is marriage, children, and the long memory of harm. Buyers looking for elevated domestic drama with a clear audience promise will understand the lane immediately, and actors who want a generational family saga will see the scope.",
+          "evidence": "Bode and Cynthia’s marriage collapses into abuse and divorce, and the twins are split between them by court order.",
           "source": "script"
         },
         {
           "dimension_or_area": "The twins create a built-in identity engine.",
-          "what_it_means": "Twin daughters separated by custody, mistaken for each other, and later used in a revenge scheme create a strong commercial hook and a memorable poster image. Casting directors and actors will respond to the dual-role possibilities and the emotional contrast between the sisters.",
-          "evidence": "Shade and Joke are split between parents, later one is impersonated, and the story turns on who is who.",
+          "what_it_means": "The twin structure gives the story a commercial twist that can support mistaken-identity tension, emotional doubling, and revenge plotting without needing a large-scale premise. Casting teams and producers will respond to the dual-role opportunity, and audiences drawn to family melodrama with a twist will know exactly what kind of ride this is.",
+          "evidence": "Shade and Joke are separated, grow up under different influences, and later one twin impersonates the other.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Nigerian period setting has texture.",
-          "what_it_means": "The 1960s-to-1980s sweep gives the script a production-design identity and a sense of social history that can distinguish it from generic domestic melodrama. Buyers interested in African stories with period scope and cultural specificity will see exportable value here.",
-          "evidence": "The script moves from 1964 through 1983, with hospitals, schools, courts, trains, and Lagos/Calabar geography anchoring the timeline.",
+          "dimension_or_area": "Bode has a showcase arc.",
+          "what_it_means": "The role moves from rage, self-destruction, and public humiliation into remorse, sobriety, and late-life reckoning, which is the kind of arc that can anchor a prestige-minded performance. Mid-career dramatic actors who want a role with emotional range and moral contradiction would see a lot to play here.",
+          "evidence": "Bode drinks, smokes, beats Cynthia, loses his job, later renounces the habits, and ends as an aging father trying to repair what remains.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The story has a large, playable ensemble.",
-          "what_it_means": "There are enough family members, doctors, lawyers, school figures, and conspirators to create a rich casting package and multiple scene partners for leads. That makes the project attractive to actors who want a full dramatic ecosystem around them, not just a single two-hander.",
-          "evidence": "Bode, Cynthia, Shade, Joke, Ken, Justin, Esther, Emeka, Raheem, the Administrator, Dr. Mike, and others all carry speaking scenes.",
+          "dimension_or_area": "The Nigerian institutional world has texture.",
+          "what_it_means": "Hospitals, courts, schools, churches, offices, and train stations give the story a social ecosystem that feels specific rather than abstract, which helps the drama feel rooted in a lived place. That kind of setting detail is attractive to producers looking for culturally specific material with exportable emotional stakes, especially in the African and diaspora marketplace.",
+          "evidence": "The script moves through Paterson Accounting, St. Andrews Hospital, a courtroom, St. Vincent Nursery and Primary School, and Point of Truths Ministries.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The hospital conspiracy adds a second engine.",
-          "what_it_means": "The theft-and-coverup thread gives the script a procedural corruption layer that broadens it beyond domestic conflict and opens the door to a more commercial thriller lane. Buyers who like institutional betrayal stories will see an additional hook beyond the marriage plot.",
-          "evidence": "The missing medical equipment, the framing of Tom, the tape recorder, and the later management takedown create a separate corruption storyline.",
+          "dimension_or_area": "The story spans generations.",
+          "what_it_means": "The time-jump structure lets the project play as both a family origin story and a legacy drama, which broadens its emotional reach and gives it a sense of consequence. That makes it appealing to buyers who want a feature that can speak to older audiences while still carrying younger characters and a long-view payoff.",
+          "evidence": "The script moves from 1964 through 1978 and 1983, following the children into adulthood and closing on Raheem’s diary framing.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ending lands on operatic revenge.",
-          "what_it_means": "The final gunfire and reveal of the twin switch give the project a big, tragic finish that can be sold as event melodrama. That kind of climax is attractive to audiences who want betrayal, catharsis, and a final moral reckoning.",
-          "evidence": "Joke reveals herself, shoots Emeka, and is killed in the final confrontation while the bodies are discovered and recorded.",
+          "dimension_or_area": "There is a strong revenge-melodrama spine.",
+          "what_it_means": "The Esther/Joke conspiracy gives the back half of the film a clear propulsion mechanism and a payoff structure that can keep an audience leaning forward. Thriller-minded buyers and actors who like morally charged antagonists will respond to the turn from grievance into active retaliation.",
+          "evidence": "Esther and Joke plan the abduction, the impersonation, the money theft, and the final shooting.",
           "source": "script"
         }
       ],
-      "headline": "This script has the bones of a sweeping Nigerian family tragedy: a brutal marriage, separated twins, a revenge conspiracy, and a period canvas that gives the story scale. The strongest commercial angle is the combination of emotional melodrama and a built-in identity twist, which creates a clear role package for actors and a distinctive lane for buyers looking for African-set prestige drama."
+      "headline": "This is a big, emotionally legible family melodrama with a built-in hook: a broken marriage, separated twins, and a revenge plot that keeps mutating across decades. The material has the kind of heightened, performance-forward roles that can attract strong actors, while the contained domestic and institutional settings keep it in a producible feature lane."
     },
     "lead_characters": [
       {
-        "name": "Bode",
+        "name": "BODE",
         "role_type": "Lead",
-        "demographics": "Male · 30s to 50s across the story · Nigerian",
-        "hook": "Bode is a proud, volatile man whose self-destruction keeps curdling into shame. He begins as an abusive husband, slides through drinking, smoking, and womanizing, then spends the back half of the story trying to claw back some moral authority as a father and provider.",
-        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Fences — a man whose charisma and damage live in the same body, and whose authority keeps collapsing under the weight of his choices. Actors who want a role that can move from menace to remorse to late-life reckoning will chase this, especially performers who like playing a flawed patriarch with big speeches and emotional reversals."
+        "demographics": "Male · 30s to 50s · Nigerian",
+        "hook": "A proud, volatile doctor whose authority collapses at home and at work, Bode is defined by contradiction: educated but self-destructive, controlling but easily humiliated, capable of cruelty and, later, genuine remorse. He is the story’s emotional center because the film tracks how a man who thinks he is owed respect slowly learns what his family has paid for his pride.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Fences or Bryan Cranston in Breaking Bad — a man whose charisma and damage are inseparable, and whose moral collapse becomes the performance. Actors who want a role that can move from swagger to shame to late-life reckoning will chase this, especially those looking for a prestige lead with real emotional range."
       },
       {
-        "name": "Cynthia",
+        "name": "CYNTHIA",
         "role_type": "Lead",
-        "demographics": "Female · 30s to 50s across the story · Nigerian",
-        "hook": "Cynthia is the story’s moral center and its most wounded survivor, a working woman who endures abuse, fights for her children, and eventually chooses separation over submission. She carries the script’s pain, dignity, and righteous anger in a way that makes her both victim and engine.",
-        "why_actor_wants_this": "This is the showcase space of Viola Davis in Fences or Taraji P. Henson in Acrimony — a woman whose endurance is active, not passive, and whose emotional truth has to hold the screen through confrontation and collapse. Mid-career dramatic actresses looking for a bruising, audience-facing lead would see a role with tears, fury, and maternal authority."
+        "demographics": "Female · 30s to 50s · Nigerian",
+        "hook": "Cynthia is the wounded center of the marriage: sharp-tongued, exhausted, and increasingly determined to survive on her own terms. She carries the emotional cost of the household, the children, and the public face of endurance, which gives her a fierce, lived-in presence even when the script keeps her in reaction to Bode.",
+        "why_actor_wants_this": "This is the showcase space of Viola Davis in Fences or Taraji P. Henson in Empire — a woman who can hold pain, anger, and dignity in the same frame. Actresses looking for a bruised but commanding dramatic lead will see a role that can anchor a family saga and carry audience sympathy through the breakup."
       },
       {
-        "name": "Shade / Shade Teen / Shade Adult",
+        "name": "SHADE / SHADE TEEN / SHADE ADULT",
         "role_type": "Lead",
-        "demographics": "Female · child to 20s across the story · Nigerian",
-        "hook": "Shade is the obedient twin, the daughter who stays closest to her father and becomes the emotional bridge between generations. As she grows, she becomes the story’s witness figure — the one who absorbs the family’s damage, then inherits the adult consequences of everyone else’s choices.",
-        "why_actor_wants_this": "This is the kind of coming-of-age-to-adult-drama showcase seen in Beasts of the Southern Wild or Lady Bird, where the performance has to carry innocence, confusion, and eventual emotional awakening. Young actresses and rising leads would be drawn to the chance to play a character who starts as a child in a family rupture and ends as the adult center of the story."
+        "demographics": "Female · 5 to 30s · Nigerian",
+        "hook": "Shade is the daughter who absorbs the family’s fractures and grows into the version of the story that can inherit power, grief, and confusion all at once. She is the more emotionally legible twin, the one who carries the father’s attention and later the burden of adulthood, which makes her the story’s bridge between innocence and consequence.",
+        "why_actor_wants_this": "This is the kind of multi-age role that gave Saoirse Ronan in Atonement or Jurnee Smollett in Eve’s Bayou the chance to play innocence under pressure and then carry the adult aftermath. Young actresses and adult dramatic leads alike will be drawn to the emotional span and the chance to play a character whose identity is shaped by family mythology."
       },
       {
-        "name": "Joke / Joke 18 / Joke Adult",
+        "name": "JOKE / JOKE 18 / JOKE ADULT",
         "role_type": "Lead",
-        "demographics": "Female · child to 20s across the story · Nigerian",
-        "hook": "Joke is the angry twin, the one shaped by abandonment, poverty, and grievance into a character who weaponizes intelligence and resentment. She is the story’s dark mirror: sharper, colder, and ultimately more dangerous because she turns pain into strategy.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Jennifer Jason Leigh in The Hateful Eight — a role where charm, instability, and menace can all live in the same performance. Actors who want a volatile, scene-stealing part with a late reveal and a violent payoff will chase this immediately."
+        "demographics": "Female · 5 to 30s · Nigerian",
+        "hook": "Joke is the twin shaped by absence, resentment, and a hunger to reclaim what she believes was denied to her. She hardens into the story’s most dangerous emotional force, because her anger is not just personal — it becomes strategic, theatrical, and finally lethal.",
+        "why_actor_wants_this": "This is the showcase lane of Rosamund Pike in Gone Girl or Jodie Comer in Killing Eve — a character who can pivot from wounded intelligence to controlled menace. Actors who want a role with volatility, disguise, and a final act that detonates the room will see this as a juicy antagonist-lead."
       },
       {
-        "name": "Esther / Esther Adult",
+        "name": "ESTHER / ESTHER ADULT",
         "role_type": "Lead",
-        "demographics": "Female · 18 to 30s across the story · Nigerian",
-        "hook": "Esther is the long-game operator, a friend who becomes an architect of revenge and financial theft. She is socially agile, patient, and quietly ruthless, which makes her one of the story’s most modern and playable characters.",
-        "why_actor_wants_this": "This is the showcase space of Rosamund Pike in Gone Girl — a character whose intelligence is the performance and whose calm surface hides a predatory plan. Actors who like playing controlled, strategic women with a hidden agenda will see a juicy villain/antihero opportunity here."
+        "demographics": "Female · 5 to 20s and 20s to 30s · Nigerian",
+        "hook": "Esther begins as a school-age friend and grows into the story’s quiet operator, the one who can move between intimacy, deception, and business with unnerving ease. She is the practical mind behind the revenge machinery, which gives her a cool, calculating presence that contrasts with Joke’s raw fury.",
+        "why_actor_wants_this": "This is the kind of role that gave Lupita Nyong’o in Us or Sarah Snook in Succession the chance to play intelligence as a weapon. Actors who like controlled, strategic characters with a hidden agenda will chase this because it offers both social polish and criminal intent."
       },
       {
-        "name": "Emeka",
+        "name": "RAHEEM / RAHEEM 18",
         "role_type": "Lead",
-        "demographics": "Male · late teens to 20s across the story · Nigerian",
-        "hook": "Emeka is the romantic bridge between the younger generation and the adult conspiracy, a man who believes he is entering a stable future while being pulled into a trap. He functions as the story’s innocent center in the later sections, which gives the betrayal material its sting.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the earnest, doomed-romantic space of Romeo in a prestige adaptation or the unsuspecting husband in a domestic thriller. Young leading men who want a part that starts as charm and ends in shock will find a clean showcase here."
+        "demographics": "Male · 5 to 20s and 20s to 30s · Nigerian",
+        "hook": "Raheem is the observer who becomes the witness, the friend who starts as a schoolyard presence and ends as the keeper of the story. He gives the film its moral memory, and his diary framing turns him into the one character who can translate chaos into testimony.",
+        "why_actor_wants_this": "This is the narrative witness territory of Mahershala Ali in Moonlight or the framing-voice role in The Wonder Years — a character who carries the emotional afterimage of the whole story. Actors who want a quieter but essential role with reflective authority will respond to the final diary framing and the chance to become the keeper of the legend."
       },
       {
-        "name": "Raheem",
+        "name": "KEN",
         "role_type": "Supporting",
-        "demographics": "Male · child to 20s across the story · Nigerian",
-        "hook": "Raheem is the observer and connector, the boy who notices the twins’ confusion early and later becomes the witness who helps the truth surface. He is less emotionally central than the leads, but he gives the story a conscience and a memory bank.",
-        "why_actor_wants_this": "This is the kind of supporting role that recalls the witness/observer function in Moonlight or The Shawshank Redemption — a character who sees the whole tragedy and helps the audience orient inside it. A young actor with strong listening skills would use this as a credibility-building part with real scene utility."
+        "demographics": "Male · 30s · Nigerian",
+        "hook": "Ken is the stabilizing outside man who represents legal order, emotional refuge, and a cleaner version of masculinity than Bode can offer. He functions as Cynthia’s ally and the story’s bridge into the divorce process, giving the film a calm counterweight to the domestic chaos.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gave Jeffrey Wright in The Manchurian Candidate or Courtney B. Vance in The Preacher’s Wife a chance to play intelligence and steadiness without stealing the movie. Character actors who specialize in authority, warmth, and moral clarity will see an efficient, scene-useful part."
       },
       {
-        "name": "Ken",
+        "name": "MRS. FUNKE COLE",
         "role_type": "Supporting",
-        "demographics": "Male · 30s to 40s · Nigerian",
-        "hook": "Ken is the lawyer-friend who represents order, legitimacy, and the possibility of a cleaner life after Bode. He is not the emotional center, but he gives Cynthia a path out and functions as a stabilizing adult presence.",
-        "why_actor_wants_this": "This is the kind of steady, morally legible role that works in the Paul Rudd-in-ordinary-drama lane or the grounded professional in a prestige family film. Actors who play intelligence and decency well will like the clean authority of the part."
-      },
-      {
-        "name": "Justin",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s to 40s · Nigerian",
-        "hook": "Justin is the returning friend from abroad who briefly offers Bode a lifeline and a mirror of what a different life might look like. He functions as a catalyst and a tragic off-ramp, which gives his scenes a melancholy aftertaste.",
-        "why_actor_wants_this": "This is the kind of brief but memorable role that has the emotional utility of a key confidant in a family saga. Actors who like playing the one person who almost changes the story will respond to the quiet poignancy of it."
-      },
-      {
-        "name": "Mrs. Funke Cole",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s to 60s · Nigerian",
-        "hook": "Mrs. Funke Cole is the maternal elder who tries to restore order through patience, storytelling, and moral instruction. She is the script’s conscience in domestic form, the person who names the broken mirror metaphor and tries to keep the family from splintering further.",
-        "why_actor_wants_this": "This is the kind of elder-matriarch role that gives an actress the warmth and authority of Cicely Tyson in family drama or Angela Bassett in a quieter maternal mode. Character actresses who command a room with voice and presence will be drawn to it."
+        "demographics": "Female · 50s to 70s · Nigerian",
+        "hook": "Bode’s mother is the story’s conscience and folk-philosopher, the one who speaks in proverbs and tries to redirect a broken family toward something survivable. She brings warmth, cultural grounding, and a maternal authority that the film uses as its clearest voice of repair.",
+        "why_actor_wants_this": "This is the kind of elder-matriarch role that gave Cicely Tyson in Sounder or Alfre Woodard in family dramas the chance to be the emotional spine of the room. Veteran actresses who want a role with wisdom, humor, and moral weight will be drawn to it."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage a sweeping family tragedy with period texture and emotional punishment.",
-        "fit_profile": "Established indie or prestige-drama directors with at least one or two features, especially those who work well with performance-forward material and large emotional swings. This material rewards directors who care about family systems, moral collapse, and period detail more than spectacle, and who can keep a melodrama feeling grounded and culturally specific.",
-        "detail": "The material gives a director a chance to shape a multi-decade tragedy with clear visual markers, ensemble blocking, and emotionally charged reversals. It will attract filmmakers who like actor-driven scenes, period production design, and stories where the audience comes for the feelings but stays for the family architecture."
+        "hook": "A director who wants to stage family collapse as operatic tragedy, not kitchen-sink realism.",
+        "fit_profile": "Established indie or prestige-drama directors with at least one feature behind them, especially those who already work in performance-forward material and can handle heightened emotion without losing control. This material rewards directors who like family systems, moral pressure, and long emotional arcs more than spectacle.",
+        "detail": "The film gives a director a chance to orchestrate big emotional reversals across a long timeline while keeping the storytelling contained to homes, hospitals, offices, and courts. It will attract directors who can make speeches feel cinematic and who understand how to turn domestic spaces into pressure chambers."
       },
       "buyer_appeal": {
         "tier": "$2-8M feature",
-        "lane": "Prestige diaspora drama / African family melodrama / festival-to-platform lane",
-        "detail": "The cast can be anchored by a few strong leads rather than a heavy effects package, which makes it viable for a director-driven package or a regional star play. The period sweep, Nigerian setting, and family-revenge engine give it a clear festival and streaming acquisition path, especially for buyers looking to broaden African-language and African-set drama offerings."
+        "lane": "African diaspora drama / elevated melodrama / festival-to-streaming lane",
+        "detail": "The contained interiors and limited effects footprint make this viable without heavy action or VFX, but the twin casting and period coverage mean a buyer will want a director with a strong reel and a cast strategy. The Nigerian setting, family-drama core, and revenge spine give it export value for diaspora audiences and a clear festival-to-platform path."
       }
     },
     "considerations": [
       {
-        "area": "The opening runs long on setup.",
-        "detail": "The assault, flashbacks, hospital transfer, job loss, and early domestic scenes all establish the premise, but the version of the opening where one or two of those beats are combined would get to the emotional engine faster. The strongest lever is to let the audience feel the marriage fracture sooner, then use the later details to deepen it rather than introduce it.",
+        "area": "The opening frames are doing a lot of setup.",
+        "detail": "The mirror super, the flashback stack, and the immediate jump into abuse establish the premise, but the version of the opening where one emotional turn lands before the explanatory material would give the audience a cleaner entry point. The primary lever is to let the central wound arrive with a little more force and a little less narration.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Several speeches carry plot information.",
-        "detail": "A number of scenes — especially the hospital explanations, the courtroom exchanges, and the long adult confrontations — deliver backstory in extended dialogue. A next pass could let a few of those facts arrive through action, interruption, or a sharper visual turn so the emotional pressure does more of the work.",
+        "area": "Several reversals are carried by dialogue.",
+        "detail": "A number of the major turns — the divorce, the split custody, the revenge reveal, the later impersonation — are explained in speeches rather than dramatized through a decisive action or visual turn. A next pass could look for one or two places where the same information lands through behavior, which would sharpen the emotional impact without changing the story.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The twin confusion can be sharpened earlier.",
-        "detail": "The adult switch and mistaken-identity reveal are the most commercially memorable pieces of the story, so there is room to foreground that engine sooner in the build. What would it look like if the audience felt the possibility of the swap before the hotel abduction, so the reveal lands with more dread and inevitability?",
+        "area": "The middle section repeats the same marital argument.",
+        "detail": "The Bode/Cynthia confrontations are effective as pressure, but several scenes circle the same accusations about drinking, womanizing, and neglect. One lever would be to compress a few of those exchanges so each confrontation reveals a new layer rather than restating the last one.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The period sweep asks for disciplined production design.",
-        "detail": "The story moves from 1964 through 1983 across hospitals, schools, courts, homes, trains, airports, and hotels, so the cleanest production version would consolidate a few recurring spaces. That would protect the emotional scale while keeping the period footprint elegant and controllable.",
+        "area": "The twin identity engine could be foregrounded sooner.",
+        "detail": "The story’s most ownable device is the twin split and later impersonation, yet the early stretch spends a long time in domestic conflict before that engine fully takes over. What would it look like if the audience felt the twin-specific tension earlier, so the back half lands with more inevitability?",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The period span asks for careful production planning.",
+        "detail": "The script moves from 1964 through 1983, with childhood, teen, and adult versions of the same characters, plus hospitals, schools, courts, churches, trains, and offices. A simplification lever would be to consolidate any non-essential locations or time jumps so the emotional arc stays intact while the production footprint stays disciplined.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The cast spans multiple life stages.",
-        "detail": "Child, teen, and adult versions of Shade and Joke, plus the aging of Bode and Cynthia, make the casting process central to the package. The opportunity is strong, but the next packaging pass should think in terms of family resemblance, performance continuity, and a clear age-map for each timeline.",
+        "area": "The cast plan needs twin and age continuity.",
+        "detail": "Because Shade, Joke, Esther, and Raheem all have younger and older versions, the casting process will benefit from a clear visual and performance strategy across ages. That is a packaging opportunity as much as a logistics one, since the right casting concept can become part of the film’s appeal.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The content sits firmly in mature territory.",
-        "detail": "Domestic violence, child separation, kidnapping, gunfire, and death define the material, so the buyer conversation should be framed around adult drama and prestige melodrama rather than broad family viewing. That clarity helps position the film for festival, platform, or specialty theatrical lanes that welcome intense subject matter.",
+        "area": "The rights and clearance list should be cleaned early.",
+        "detail": "The NTA logo, Mary Slessor reference, and the Jackson 5 song all create clearance touchpoints that are manageable but worth addressing before packaging hardens. Clearing or replacing those elements early protects the schedule and keeps the film easier to finance and distribute.",
         "is_primary_lever": false,
         "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 53.7,
+  "weightedScore": 52.3,
   "tier": "Needs Development",
   "inputTokens": 30434,
-  "outputTokens": 5027,
-  "cost": 0.045447,
+  "outputTokens": 4950,
+  "cost": 0.0451005,
   "declaredFormat": "Feature film"
 }

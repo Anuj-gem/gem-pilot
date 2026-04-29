@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:31:54.178Z",
+  "submission_id": "93a04f6c-5011-45a9-8ed9-43cf08de0c62",
+  "eval_id": "90718e19-890b-4bac-ae51-11fe7a14d089",
+  "title": "PEPPERMINT TWIST CHRONICLES",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "JOEY DEE",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 80s · Italian-American / New Jersey musician"
+    },
+    {
+      "name": "JOANIE",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to 60s · New Jersey wife / mother"
+    },
+    {
+      "name": "MORRIS LEVY",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · record executive / mob-connected operator"
+    },
+    {
+      "name": "DAVE BRIGATI",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to 20s · Black musician"
+    },
+    {
+      "name": "WILLIE DAVIS",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · Black drummer"
+    },
+    {
+      "name": "CARL",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · Black keyboard player"
+    },
+    {
+      "name": "JOLLY JOYCE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · agent / manager"
+    },
+    {
+      "name": "DON DAVIS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · club operator / promoter"
+    },
+    {
+      "name": "JOE PEPITONE",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · athlete / celebrity friend"
+    },
+    {
+      "name": "JIMMI MAYES / MAURICE / JIMI HENDRIX",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black guitarist"
+    },
+    {
+      "name": "LOIS LEE",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s · singer / performer"
+    },
+    {
+      "name": "JOE DURANTE",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · large-bodied musician / friend"
+    }
+  ],
+  "positioning_hook": "A New Jersey bandleader rides the Twist from neighborhood clubs to national fame, while mob pressure, segregation, and his own appetites threaten to undo everything he builds.",
+  "cost_usd": 0.06106125,
+  "input_tokens": 46837,
+  "output_tokens": 5763,
+  "status": "wrote:leads_ok"
+}

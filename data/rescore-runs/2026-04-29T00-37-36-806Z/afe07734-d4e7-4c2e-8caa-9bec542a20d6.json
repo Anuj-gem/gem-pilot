@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:33:13.852Z",
+  "submission_id": "afe07734-d4e7-4c2e-8caa-9bec542a20d6",
+  "eval_id": "3cfb1558-d7c2-46df-a74c-3751a969b402",
+  "title": "TERMINATOR EXTINCTION",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "John Connor",
+      "role_type": "Lead",
+      "demographics": "Male · 18 / 35-ish in future-war sequences · white"
+    },
+    {
+      "name": "Lora",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · military medic / resistance officer"
+    },
+    {
+      "name": "XO-47 / Gabriel",
+      "role_type": "Lead",
+      "demographics": "Male-presenting synthetic · ageless · humanoid machine"
+    },
+    {
+      "name": "Sara Freeman",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-50s · general / resistance commander"
+    },
+    {
+      "name": "Tim",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · resistance fighter"
+    },
+    {
+      "name": "Maya",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · resistance fighter"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · resistance fighter"
+    },
+    {
+      "name": "Gregory",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · grizzled resistance fighter"
+    },
+    {
+      "name": "Klaus",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · German-accented gym trainer"
+    },
+    {
+      "name": "Spots",
+      "role_type": "Supporting",
+      "demographics": "Female cat · adult"
+    },
+    {
+      "name": "XO-52",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting synthetic · ageless"
+    },
+    {
+      "name": "XO-67",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting synthetic · ageless"
+    },
+    {
+      "name": "The Young Man",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · withered leg / disabled resistance fighter"
+    }
+  ],
+  "positioning_hook": "John Connor is pulled into a future war he thought he escaped, only to discover Skynet’s latest lie has made him the key to humanity’s last stand.",
+  "cost_usd": 0.049404750000000004,
+  "input_tokens": 33965,
+  "output_tokens": 5318,
+  "status": "wrote:leads_ok"
+}

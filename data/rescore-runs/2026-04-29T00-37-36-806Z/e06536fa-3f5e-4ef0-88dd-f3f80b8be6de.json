@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T01:27:54.390Z",
+  "submission_id": "e06536fa-3f5e-4ef0-88dd-f3f80b8be6de",
+  "eval_id": "44767de8-cd52-4bb4-beff-67ce77ec14e6",
+  "title": "MAKE UP YOUR MIND",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Kevin Murphy",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s · preppy, average build, everyman charm"
+    },
+    {
+      "name": "Nikki Murphy",
+      "role_type": "Lead",
+      "demographics": "Female · mid-40s · attractive, sharp-tongued ex-wife"
+    },
+    {
+      "name": "Alison",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to mid-40s · attractive, office worker, twin"
+    },
+    {
+      "name": "Amber",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to mid-40s · Alison’s twin, exotic dancer"
+    },
+    {
+      "name": "Eric Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · early-to-mid 50s · thin, cynical, receding hairline"
+    },
+    {
+      "name": "Dave",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s · stocky, bearded, therapist, gay"
+    },
+    {
+      "name": "Margo",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · older, heavyset, flamboyant"
+    },
+    {
+      "name": "Jesse",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · stocky, unkempt, physical"
+    },
+    {
+      "name": "Matt",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-50s · handsome, devilish grin"
+    },
+    {
+      "name": "Lacy",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · attractive, date-night presence"
+    },
+    {
+      "name": "Leah",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · glamorous, transactional"
+    }
+  ],
+  "positioning_hook": "A recently divorced salesman stumbles through Florida’s dating scene, until the women, the ex-wife, and his golf buddies turn his midlife panic into a full-contact romance game.",
+  "cost_usd": 0.052281,
+  "input_tokens": 37578,
+  "output_tokens": 5355,
+  "status": "wrote:leads_ok"
+}

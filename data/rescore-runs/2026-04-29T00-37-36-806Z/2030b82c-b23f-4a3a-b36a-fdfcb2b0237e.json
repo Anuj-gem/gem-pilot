@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:29:03.709Z",
+  "submission_id": "2030b82c-b23f-4a3a-b36a-fdfcb2b0237e",
+  "eval_id": "c50cff25-4aa1-4a87-abed-9a7dca231239",
+  "title": "winds of change1 converted",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Mike",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · musician / entrepreneur"
+    },
+    {
+      "name": "Adriana Peterscu",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · wealthy cult leader"
+    },
+    {
+      "name": "Stanley",
+      "role_type": "Lead",
+      "demographics": "Male · teens to 20s · student / later intelligence worker"
+    },
+    {
+      "name": "Emily",
+      "role_type": "Lead",
+      "demographics": "Female · teens to 20s · student"
+    },
+    {
+      "name": "Justin",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · friend / colonel / advisor"
+    },
+    {
+      "name": "Linda",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · romantic rival"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-50s · drug lord"
+    },
+    {
+      "name": "Santiago",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · criminal associate"
+    },
+    {
+      "name": "Franklin",
+      "role_type": "Lead",
+      "demographics": "Male · 3 to 40s · soldier / gangster"
+    },
+    {
+      "name": "Charles",
+      "role_type": "Lead",
+      "demographics": "Male · teens to early 20s · seminarian"
+    },
+    {
+      "name": "Lennon",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s · mixed-race"
+    },
+    {
+      "name": "Benjamin",
+      "role_type": "Lead",
+      "demographics": "Male · 6 to 20s · facial deformity"
+    },
+    {
+      "name": "Grace",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s · church-going student"
+    },
+    {
+      "name": "Dale",
+      "role_type": "Lead",
+      "demographics": "Male · teens to mid-40s · student to executive"
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · wife / mother"
+    }
+  ],
+  "positioning_hook": "An anthology of morality tales where ambition, lust, and power destroy families, lovers, and kingdoms — each chapter ends with a hard-earned reckoning.",
+  "cost_usd": 0.0383325,
+  "input_tokens": 19778,
+  "output_tokens": 5222,
+  "status": "wrote:leads_ok"
+}

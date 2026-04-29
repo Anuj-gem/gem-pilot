@@ -1,0 +1,195 @@
+{
+  "timestamp": "2026-04-29T01:30:44.435Z",
+  "submission_id": "6728d9a4-4ef2-40e3-af60-3f88534ec293",
+  "eval_id": "8543f7a1-c0d7-40c7-9c7b-89afea48786e",
+  "title": "the christian matrix 4 4 1 converted",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 35,
+  "lead_characters_summary": [
+    {
+      "name": "Grant",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · father"
+    },
+    {
+      "name": "Dan",
+      "role_type": "Lead",
+      "demographics": "Male · 12"
+    },
+    {
+      "name": "Nat",
+      "role_type": "Lead",
+      "demographics": "Male · 10"
+    },
+    {
+      "name": "Rev. Thomas Cleverson",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · white missionary"
+    },
+    {
+      "name": "The Elderly Man",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "The Wife",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "The Son",
+      "role_type": "Supporting",
+      "demographics": "Male · 4-22 across the story"
+    },
+    {
+      "name": "Adam",
+      "role_type": "Lead",
+      "demographics": "Male · 14"
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Lead",
+      "demographics": "Male · 15-21"
+    },
+    {
+      "name": "Greg",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · father"
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · mother"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Ken",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Ms. Sandra",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s · mother"
+    },
+    {
+      "name": "Frank",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Pastor Israel",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Mira",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Sanjay",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-40s · writer"
+    },
+    {
+      "name": "Pastor Matthew",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Pastor Lake Peters",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s"
+    },
+    {
+      "name": "Kendrick",
+      "role_type": "Lead",
+      "demographics": "Male · 19-20s"
+    },
+    {
+      "name": "Miss Helen",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "Brother Yale",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Rev. Clem",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · athletic build"
+    },
+    {
+      "name": "Brother Wisdom",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Sister Deborah",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "Michael",
+      "role_type": "Lead",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Elizabeth",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "Monique",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · tall, athletic build"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "Reverend Thompson",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Mrs. Ron",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "Daniela",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    }
+  ],
+  "positioning_hook": "A faith anthology follows pastors, converts, families, and doubters as Scripture collides with grief, illness, temptation, and redemption in everyday life.",
+  "cost_usd": 0.051739499999999994,
+  "input_tokens": 24232,
+  "output_tokens": 7459,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-04-29T01:30:43.833Z",
+  "submission_id": "590fd4b4-7f8a-4ec3-a520-67743d699b9c",
+  "eval_id": "a7b6172a-8e4b-4c81-bf94-ad96d1da9ebf",
+  "title": "chritmas time script final",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 22,
+  "lead_characters_summary": [
+    {
+      "name": "Sean",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · contemporary father/husband"
+    },
+    {
+      "name": "Frances",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · contemporary mother/wife"
+    },
+    {
+      "name": "Ron",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · contemporary businessman/friend"
+    },
+    {
+      "name": "Sandra",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · contemporary shopper/friend"
+    },
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · paraplegic / mobility-impaired"
+    },
+    {
+      "name": "Grace",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s · contemporary friend"
+    },
+    {
+      "name": "Yates",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · community host / organizer"
+    },
+    {
+      "name": "Ted",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · father/husband"
+    },
+    {
+      "name": "Maria",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · mother/wife"
+    },
+    {
+      "name": "Grant",
+      "role_type": "Lead",
+      "demographics": "Male · 5 years old"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · spouse/partner"
+    },
+    {
+      "name": "Tania",
+      "role_type": "Supporting",
+      "demographics": "Female · 7 years old"
+    },
+    {
+      "name": "Juliana",
+      "role_type": "Supporting",
+      "demographics": "Female · 7 years old"
+    },
+    {
+      "name": "Nick",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · contemporary passerby/acquaintance"
+    },
+    {
+      "name": "The Santa-suited men",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-50s · ensemble of six men"
+    },
+    {
+      "name": "Harriet",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · contemporary participant"
+    },
+    {
+      "name": "Franca",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · contemporary participant"
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · contemporary participant"
+    },
+    {
+      "name": "Jake",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · speech impediment"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · contemporary participant"
+    },
+    {
+      "name": "Rebecca",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · petite, soft voice"
+    },
+    {
+      "name": "Jasmine",
+      "role_type": "Supporting",
+      "demographics": "Female · 12 years old"
+    }
+  ],
+  "positioning_hook": "A holiday anthology of families, friends, and strangers whose Christmases turn on money, mercy, and belief — each story asking what the season is really for.",
+  "cost_usd": 0.0456015,
+  "input_tokens": 24082,
+  "output_tokens": 6120,
+  "status": "wrote:leads_ok"
+}

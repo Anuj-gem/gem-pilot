@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T01:29:33.273Z",
+  "submission_id": "ac25284c-0fbd-445c-b400-ef4c3a970d07",
+  "eval_id": "94682be2-bb39-44b5-ac57-58a6a87f4785",
+  "title": "the journey to love screenplay 12 final",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "THOMAS",
+      "role_type": "Lead",
+      "demographics": "Male · late teens/early 20s"
+    },
+    {
+      "name": "PAUL SIMMONS",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · tall, light-skinned, athletic build"
+    },
+    {
+      "name": "GRACE",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "JADE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "BRIDGET",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "TAMA",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens/early 20s"
+    },
+    {
+      "name": "SAMANTHA",
+      "role_type": "Supporting",
+      "demographics": "Female · college age · mixed-race features"
+    },
+    {
+      "name": "TANYA",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s"
+    },
+    {
+      "name": "HENRY GREEN",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "ANDREW",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "ULM",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless / otherworldly"
+    }
+  ],
+  "positioning_hook": "A wheelchair-bound student keeps getting rejected until a mystical encounter reframes his life, then a wounded womanizer’s search for love turns into a spiritual reckoning in Gauteng.",
+  "cost_usd": 0.04133325,
+  "input_tokens": 24313,
+  "output_tokens": 5133,
+  "status": "wrote:leads_ok"
+}

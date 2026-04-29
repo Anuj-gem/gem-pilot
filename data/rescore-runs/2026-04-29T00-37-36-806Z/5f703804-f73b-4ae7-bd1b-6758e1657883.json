@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:36:55.161Z",
+  "submission_id": "5f703804-f73b-4ae7-bd1b-6758e1657883",
+  "eval_id": "70ee92e7-f026-498d-b41a-eca4329ad338",
+  "title": "The Famous Andy Morris",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Andy Morris",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens · African American · autistic"
+    },
+    {
+      "name": "Tracy Brown",
+      "role_type": "Lead",
+      "demographics": "Female · mid-teens · African American"
+    },
+    {
+      "name": "Eddie Server",
+      "role_type": "Lead",
+      "demographics": "Male · late teens · Caucasian"
+    },
+    {
+      "name": "J.T. Alexander",
+      "role_type": "Lead",
+      "demographics": "Male · early teens · Hispanic"
+    },
+    {
+      "name": "Olivia Brooks",
+      "role_type": "Lead",
+      "demographics": "Female · mid-teens · Caucasian"
+    },
+    {
+      "name": "Lily Morgan",
+      "role_type": "Lead",
+      "demographics": "Female · early teens · Asian Pacific Islander"
+    },
+    {
+      "name": "Lloyd Van Dale",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Ella Morris",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · African American"
+    },
+    {
+      "name": "Michelle Anne Collins",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-to-late teens · Caucasian"
+    },
+    {
+      "name": "Kyle Mitchell / Adult Terry",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · African American"
+    },
+    {
+      "name": "Terry Jr.",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-teens · African American"
+    },
+    {
+      "name": "Adult Terry",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · African American"
+    },
+    {
+      "name": "Shelby Clark / The Foxy Cop",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · African American"
+    }
+  ],
+  "positioning_hook": "A pop-culture-obsessed autistic teen joins his favorite sketch-comedy show just as a rival drama threatens cancellation, and his throwback idea becomes the save.",
+  "cost_usd": 0.04192125,
+  "input_tokens": 23027,
+  "output_tokens": 5478,
+  "status": "wrote:leads_ok"
+}

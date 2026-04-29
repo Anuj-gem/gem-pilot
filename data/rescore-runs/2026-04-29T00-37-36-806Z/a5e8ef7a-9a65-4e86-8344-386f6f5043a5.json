@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-04-29T01:35:00.327Z",
+  "submission_id": "a5e8ef7a-9a65-4e86-8344-386f6f5043a5",
+  "eval_id": "6a1e27a1-e708-45f7-9221-feea3af93570",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 21,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens · African American"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Lead",
+      "demographics": "Male · 12-14 at introduction, aging into late teens · Caucasian · autistic"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s · Hispanic/Latino"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Lead",
+      "demographics": "Male · mid-teens · Asian Pacific Islander"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late teens · African American"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    },
+    {
+      "name": "Grace Oliver",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-teens to early 20s · Caucasian"
+    },
+    {
+      "name": "Jeffery Parker",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · African American"
+    },
+    {
+      "name": "Doris Parker",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · African American"
+    },
+    {
+      "name": "Rachel Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · African American"
+    },
+    {
+      "name": "Ben Stone",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s to 40s · Caucasian"
+    },
+    {
+      "name": "Phil Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · African American"
+    },
+    {
+      "name": "Buddy Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Caucasian"
+    },
+    {
+      "name": "Sammy Smooth",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · African American"
+    },
+    {
+      "name": "Eddie 'Mr. Showtime' Curly",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · African American"
+    },
+    {
+      "name": "Trevor McTyler",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Caucasian"
+    },
+    {
+      "name": "Grandma McTyler",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Caucasian"
+    },
+    {
+      "name": "Jamal Brown",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · African American"
+    },
+    {
+      "name": "Joey J.",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Caucasian"
+    },
+    {
+      "name": "Grace's Friends",
+      "role_type": "Supporting",
+      "demographics": "Female teens · Caucasian / Asian Pacific Islander / Hispanic"
+    }
+  ],
+  "positioning_hook": "Five Brooklyn teens build a multiracial boy band from rec-center rehearsals to Madison Square Garden, but fame, family pressure, and betrayal threaten to break their brotherhood.",
+  "cost_usd": 0.0729495,
+  "input_tokens": 55566,
+  "output_tokens": 6950,
+  "status": "wrote:leads_ok"
+}

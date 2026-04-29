@@ -5,388 +5,398 @@
       "genre_primary": "Faith-based drama",
       "genre_tags": [
         "anthology",
-        "moral parable"
+        "didactic"
       ],
-      "tone": "earnest, didactic, devotional"
+      "tone": "earnest, devotional, sermon-like"
     },
-    "positioning_hook": "An anthology of faith testimonies follows pastors, parents, and converts as prayer, scripture, and public witness reshape families, neighborhoods, and entire congregations.",
+    "positioning_hook": "A faith anthology where each episode dramatizes a Christian testimony — from village conversion to healing, redemption, and church succession — through direct, sermon-driven storytelling.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 4,
-        "reasoning": "The audience is clear and real: faith-forward viewers who want scripture-driven stories, testimony arcs, and church-centered uplift. The material is much narrower than mainstream drama, though, because the episodes are built as sermonized case studies rather than character-first entertainment."
+        "reasoning": "There is a clear faith audience and the material speaks directly to churchgoing viewers, but the appeal is highly specific to viewers who want overtly instructional Christian stories. The anthology structure gives it a defined lane, yet the presentation is so text-forward that broader browsing appeal is limited."
       },
       "conceptual_hook_clarity": {
         "score": 5,
-        "reasoning": "The anthology frame is understandable once the pattern settles in: each segment presents a Christian dilemma and resolves it through prayer, counsel, or conversion. The hook is present, but it arrives as a sequence of moral examples rather than a single sharp series engine."
+        "reasoning": "The premise is easy to state: a series of Christian testimonies and moral lessons told through dramatized vignettes. The hook lands immediately, but it reads more as a collection of devotional episodes than a sharply engine-driven series concept."
       },
       "character_appeal_and_long_term_potential": {
         "score": 4,
-        "reasoning": "The script introduces many named figures, but most function as vessels for testimony rather than as people with durable contradictions. Grant, Michael, Pastor Israel, Kendrick, and Daniel each have a clear spiritual purpose, yet the series would need more individualized desire and friction to create long-run attachment."
+        "reasoning": "The script introduces many figures with clear spiritual functions, but most are built to deliver testimony rather than carry layered ongoing arcs. Grant, Michael, Kendrick, and the others each have a usable faith journey, yet the characters are largely serviceable to the message rather than durable as long-running dramatic leads."
       },
       "creative_originality_and_boldness": {
-        "score": 3,
-        "reasoning": "The anthology of Christian witness is straightforward and highly legible, but the execution stays close to sermon illustration. The repeated structure of prayer, scripture quotation, conversion, and testimony keeps the material from feeling formally adventurous."
+        "score": 4,
+        "reasoning": "The anthology-of-testimonies format is unusual in a TV submission, and the script commits fully to its devotional mode. At the same time, the execution is highly familiar in structure and language, leaning on familiar conversion, healing, and exhortation beats."
       },
       "narrative_momentum_engagement": {
         "score": 3,
-        "reasoning": "Each segment moves toward a conversion or lesson, but the scenes often play as extended explanation rather than escalating drama. The forward drive is strongest when a crisis is concrete, like Frank’s illness or Kendrick’s hospital visit, and softer when the script becomes pure exposition."
+        "reasoning": "Each segment moves in a straight line from problem to prayer to resolution, which keeps the intent clear but flattens suspense. The scenes rarely generate turn-by-turn escalation, so the reading experience feels episodic and declarative rather than propulsive."
       },
       "resonant_originality": {
         "score": 4,
-        "reasoning": "The premise of dramatizing Christian testimony has a recognizable audience value, and the script’s anthology shape gives it a clear identity. What keeps it from landing higher is that the episodes largely share the same emotional mechanism, so the freshness comes more from subject matter than from a surprising dramatic angle."
+        "reasoning": "The series has a distinct devotional identity, and the anthology approach gives it a recognizable lane. Still, the underlying storytelling pattern is familiar enough that the material feels more like a collection of illustrated sermons than a fresh dramatic engine."
       },
       "world_density_and_texture": {
         "score": 4,
-        "reasoning": "The world is specific to churches, homes, schools, hospitals, and prayer meetings, but it functions more as a delivery system for lessons than as a layered social ecosystem. There are enough institutions to sustain episodes, yet the setting rarely generates conflict on its own."
+        "reasoning": "The script moves through villages, homes, churches, a hospital, a prison, a bar, and a library, so there is range in setting. But the world is not built with layered institutions or competing systems; each location mainly serves the next moral lesson."
       },
       "tonal_specificity": {
         "score": 5,
-        "reasoning": "The tone is consistent and unmistakably devotional, with a strong emphasis on uplift, testimony, and biblical authority. It is specific in message, though not especially varied in dramatic texture, so it reads as a clear lane rather than a highly distinctive voice signature."
+        "reasoning": "The tone is unmistakably devotional, earnest, and declarative, which gives the series a clear identity. The voice is consistent across all segments, though the tonal palette stays in one register rather than creating a more varied dramatic texture."
       },
       "latent_depth_slow_burn_potential": {
         "score": 3,
-        "reasoning": "The script is direct about what it believes and what each story means, which makes the thematic intent easy to read. That clarity leaves less room for hidden layers or slow-burn revelation beneath the surface."
+        "reasoning": "What the script presents is largely what it intends to deliver: testimony, conversion, healing, and exhortation. There are seeds of family, church politics, and personal guilt, but the pilot does not yet suggest much hidden complexity beneath the surface."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 4,
-        "reasoning": "There are many pairs and family units on the page, but most relationships exist to support a single spiritual lesson. The strongest recurring dynamic is mentor-to-seeker, while the broader ensemble does not yet create a web of independently generative relationships."
+        "score": 3,
+        "reasoning": "Most relationships are functional pairings built around instruction, confession, or testimony. There are several duos and family units, but the script does not yet create a web where multiple character combinations generate independent ongoing story energy."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 20,
-        "leads": 10,
-        "series_regulars": 10,
+        "speaking_roles": 28,
+        "leads": 12,
+        "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
           "multiple child and teen roles",
-          "some roles specify age and physical build",
-          "one white missionary role is explicitly identified"
+          "several faith-leader roles",
+          "one white missionary role",
+          "some roles with specific height/build notes"
         ]
       },
       "locations": {
         "distinct_count": 18,
-        "interior_exterior_ratio": "roughly balanced",
-        "period_or_contemporary": "contemporary and ancient-period story segments",
+        "interior_exterior_ratio": "roughly 2:1 interior",
+        "period_or_contemporary": "contemporary framing with multiple historical/ancient story worlds",
         "notable_requirements": [
-          "church interiors",
-          "homes",
-          "classrooms",
-          "hospital rooms",
-          "airport terminal",
-          "bar interior",
           "ancient village setting",
-          "seashore"
+          "church interiors",
+          "hospital ward",
+          "prison visitation room",
+          "bar interior",
+          "library and airport scenes"
         ]
       },
       "technical": {
-        "vfx_level": "none",
-        "vfx_details": "No visible VFX requirements on the page.",
+        "vfx_level": "minor",
+        "vfx_details": "primarily title cards, time jumps, and simple scene transitions; no major effects language on the page",
         "stunts_level": "none",
-        "sfx_needs": "Practical prayer, illness, and crowd staging; no major effects indicated.",
-        "night_shoots": "significant",
+        "sfx_needs": "practical hospital and church dressing, plus period/ancient village dressing for the embedded stories",
+        "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "The Passion of The Christ is referenced as a television movie title."
+          "detail": "\"The Passion of The Christ\" is specifically named on the television set."
         },
         {
-          "type": "ip_licensing",
-          "detail": "Multiple Bible passages are quoted directly and repeatedly."
+          "type": "brand",
+          "detail": "King James Bible is explicitly named as a prop/text reference."
+        },
+        {
+          "type": "brand",
+          "detail": "Several named churches, ministries, and books are used as in-world titles, including \"Christ: The Savior of Our Age\" and \"God’s Own Children Faith Mission\"."
         }
       ],
       "platform_fit": {
         "recommended_lane": "faith-based streaming or cable anthology",
         "content_level": "family to PG-13 equivalent",
-        "series_engine_or_release_model": "Serialized anthology of standalone testimony episodes, each built around a Christian dilemma resolved through prayer, scripture, and conversion."
+        "series_engine_or_release_model": "serialized anthology of standalone testimonies and moral lessons, each episode built around a conversion, healing, or church-life transformation"
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "The material is mostly homes, churches, classrooms, and a hospital room, with no effects-heavy set pieces."
+          "note": "The scenes are mostly dialogue-driven and contained to homes, churches, and modest public interiors, with no heavy action or effects load."
         },
         "cast": {
           "level": "medium",
-          "note": "The script uses a large rotating ensemble with children, teens, pastors, and multiple featured adult roles."
+          "note": "The anthology format introduces many named roles, including children, teens, pastors, and one white missionary, which broadens casting needs across episodes."
         },
         "location": {
           "level": "medium",
-          "note": "There are many distinct settings, including an ancient village, a bar, a hospital, a seashore, and multiple church interiors."
+          "note": "The script spans multiple distinct settings, including an ancient village, hospital, prison, bar, airport, and several church spaces."
         },
         "content": {
-          "level": "low",
-          "note": "The content is devotional and non-explicit, with illness, conversion, and moral instruction as the main dramatic material."
+          "level": "medium",
+          "note": "The material includes illness, criminal history, adultery, and spiritual warfare language, but it stays within a broadly family-accessible faith register."
         },
         "rights": {
-          "level": "medium",
-          "note": "Direct Bible quotations and the named reference to The Passion of The Christ create clearance and attribution considerations."
+          "level": "low",
+          "note": "The only notable clearance items are a named film reference, a named Bible translation, and a few branded ministry/book titles used in dialogue and props."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "It is built as a faith anthology.",
-          "what_it_means": "The anthology structure gives a buyer multiple self-contained episodes or segments that can be produced and marketed around distinct Christian testimony arcs. Faith-based streamers, church-adjacent distributors, and family-safe platforms are the natural home for a format that can deliver one uplifting story per installment.",
-          "evidence": "The script presents separate titled segments such as “The Christian Matrix,” “Raising Children the Godly Way,” “Ken: The Criminal Saved by God,” and “My Pastor’s Last Letter.”",
+          "dimension_or_area": "The series has a built-in faith audience.",
+          "what_it_means": "This is immediately legible to churches, ministry networks, and faith-forward streamers looking for content that can be marketed as uplifting and testimonial. It gives buyers a clear audience lane with built-in community screening, discussion, and word-of-mouth potential.",
+          "evidence": "Every segment centers prayer, scripture, conversion, healing, or church testimony, from Grant’s bedtime story to Kendrick’s mother’s final words.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The material has a built-in devotional audience.",
-          "what_it_means": "The script speaks directly to viewers who want scripture, prayer, and conversion stories framed as dramatic entertainment, which creates a clear niche with repeatable demand. Church groups, Christian broadcasters, and faith-oriented streamers are the most obvious chasers because the content is already aligned with their programming mission.",
-          "evidence": "Characters repeatedly quote Ephesians, Colossians, John 3:16, and other passages while scenes end in testimony and praise.",
+          "dimension_or_area": "The anthology structure is easy to program.",
+          "what_it_means": "Each episode can stand alone around a different testimony, which makes the series flexible for scheduling, production, and audience entry points. Faith buyers and low-budget producers will like that the format can scale episode by episode without requiring a single serialized mythology.",
+          "evidence": "The script presents multiple titled stories — \"Ken: The Criminal Saved by God,\" \"God’s Healing Power over Me,\" \"My Pastor’s Last Letter,\" and others.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The stories are highly producible.",
-          "what_it_means": "Most of the action lives in homes, churches, classrooms, hospital rooms, and streets, which keeps the footprint accessible for a modest-budget production model. That makes the project attractive to producers who want volume, repeatability, and low-location logistics without needing spectacle.",
-          "evidence": "The pages move from living rooms to huts, classrooms, church interiors, a hospital corridor, and a bar, with no effects-driven sequences.",
+          "dimension_or_area": "Prayer is the engine, not decoration.",
+          "what_it_means": "The series gives producers a repeatable dramatic device: a problem, a prayer, a scripture response, and a visible outcome. That makes it easy to package as inspirational television for viewers who want explicit spiritual causality on screen.",
+          "evidence": "Michael prays over Ken, Pastor Israel prays over Frank, and Daniel receives guidance through tongues and the Spirit’s voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The material is producible on a modest footprint.",
+          "what_it_means": "Most scenes live in homes, churches, classrooms, and a few public interiors, which keeps the production in a controllable budget lane. That makes it attractive to faith producers, regional financiers, and buyers who want volume without tentpole spend.",
+          "evidence": "The action stays in living rooms, huts, church rooms, a hospital corridor, a prison visitation room, a bar, and a library.",
           "source": "production"
         },
         {
-          "dimension_or_area": "Prayer is the story engine.",
-          "what_it_means": "The series has a repeatable dramatic mechanism: a problem is named, scripture is invoked, prayer is offered, and a transformation follows. That gives the show a dependable episode shape that can be branded, serialized, and easily understood by a faith audience.",
-          "evidence": "Michael prays over Ken, Pastor Israel prays over Frank, and Daniel follows a Spirit-led instruction to rescue James from the bar.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The script offers multiple showcase roles for clergy.",
-          "what_it_means": "Pastors, reverends, and spiritual mentors are positioned as central agents of change, which opens the door to recognizable character actors who can carry authority, warmth, and conviction. Faith-based buyers often package around trusted adult leads, and this material gives them several such slots instead of only one.",
-          "evidence": "Rev. Thomas, Pastor Israel, Pastor Matthew, Brother Wisdom, Brother Yale, and Daniel all function as spiritual drivers of their segments.",
+          "dimension_or_area": "The script offers multiple showcase roles for faith actors.",
+          "what_it_means": "Pastors, converts, parents, and struggling believers all get scenes of confession, exhortation, and testimony, which creates a roster of parts that can be cast with recognizable Christian performers or strong regional talent. That is useful for buyers who want a rotating ensemble of sermon-ready leads.",
+          "evidence": "Grant, Michael, Pastor Israel, Pastor Matthew, Kendrick, Daniel, and Sanjay each get a self-contained spiritual arc.",
           "source": "script"
         }
       ],
-      "headline": "This is a faith anthology with a clear, repeatable engine: a spiritual crisis, a scripture-based intervention, and a testimony payoff. For the right buyer, it is a low-cost, audience-specific series that can be packaged around clergy, families, and conversion stories with built-in devotional appeal."
+      "headline": "This is a faith anthology with a clear, marketable lane: each episode is a self-contained testimony built around prayer, scripture, and visible transformation. For the right buyer, the appeal is straightforward — low-cost, audience-specific, and easy to program as inspirational television with repeatable episode engines."
     },
     "lead_characters": [
-      {
-        "name": "Grant",
-        "role_type": "Lead",
-        "demographics": "Male · 30s-40s · father",
-        "hook": "A widowed father trying to hold a household together while carrying the emotional weight of grief, work, and spiritual responsibility. He is framed as a man whose authority comes less from force than from testimony, patience, and the need to reconnect with his sons.",
-        "why_actor_wants_this": "This is the James Stewart territory of *It’s a Wonderful Life* — a decent man whose inner life is the engine of the scene, not just the setup. Actors who want to play warmth, regret, and moral steadiness in the same role will see a clean showcase here, especially in family-drama and faith-film lanes."
-      },
       {
         "name": "Dan",
         "role_type": "Lead",
         "demographics": "Male · 12",
-        "hook": "A bright, insistent child who already speaks in the language of faith and obligation. He is less a passive kid than a little moral witness, the kind of son who can push an adult into telling the truth.",
-        "why_actor_wants_this": "This is the child-performance lane of *The Pursuit of Happyness* — a young role that gets to be emotionally legible, spiritually alert, and scene-driving without being decorative. Casting directors looking for a gifted child actor with natural authority will notice the part immediately."
+        "hook": "A bright, earnest child who wants answers and wants his father to keep his promises. He functions as the listener and emotional trigger for the opening story, giving the pilot a child’s-eye entry into the faith material.",
+        "why_actor_wants_this": "This is the kind of sincere, scene-stealing child role that recalls the emotional clarity of Jacob Tremblay in Room — a young character whose innocence becomes the audience’s access point. Child actors with strong naturalism and families looking for wholesome, high-visibility material would be drawn to it."
       },
       {
         "name": "Nat",
         "role_type": "Lead",
         "demographics": "Male · 10",
-        "hook": "The younger son in the opening frame, tuned to the emotional temperature of the room and eager for the promised story. He gives the family scene a child’s immediacy and helps turn the father’s attention back toward home.",
-        "why_actor_wants_this": "This is the kind of role that gives a young actor the innocence-and-attention showcase seen in family dramas like *The Blind Side*. It offers a clean emotional function, a few memorable lines, and the chance to be the audience surrogate inside the home."
+        "hook": "Dan’s younger brother, even more direct and emotionally open. He is less about argument than pure need, which gives the opening domestic scene a second child voice and a warmer, simpler pressure point.",
+        "why_actor_wants_this": "The role sits in the emotional lane of the younger child in The Pursuit of Happyness — a part that wins by sincerity and reaction rather than speeches. It gives a young performer a clean, memorable family role with immediate audience sympathy."
       },
       {
         "name": "Rev. Thomas Cleverson",
         "role_type": "Lead",
         "demographics": "Male · 30s-50s · white missionary",
-        "hook": "A missionary outsider who enters a hostile village and becomes the catalyst for a generational conversion story. He is defined by vulnerability, conviction, and the willingness to be misunderstood in service of his calling.",
-        "why_actor_wants_this": "This is the missionary-hero showcase of *The Mission* — a role built around conviction under pressure and the dignity of being rejected for what you believe. Character actors who can carry moral intensity and physical fragility in the same performance will chase it."
+        "hook": "A foreign missionary who enters a hostile village and persists through fear, fever, and rejection. He is the catalyst for the conversion story, carrying the outsider energy that turns the village episode into a mission narrative.",
+        "why_actor_wants_this": "This is the kind of missionary role that gives an actor the moral-steadfastness showcase of Jim Caviezel in The Passion of the Christ, but in a speaking, relational context. It will appeal to actors who want a spiritually charged lead with physical vulnerability and missionary gravitas."
       },
       {
-        "name": "Thomas",
-        "role_type": "Lead",
-        "demographics": "Male · 20s-30s",
-        "hook": "The child who grows into the village’s future preacher, carrying the memory of the missionary who changed his life. He is the story’s conversion-to-calling figure, moving from listener to public witness.",
-        "why_actor_wants_this": "This is the spiritual-formation arc of *A Man for All Seasons* translated into a younger, more accessible faith lane — a role that lets an actor play growth, conviction, and public leadership. It is a strong fit for emerging leads who want a role that can mature across time."
+        "name": "The Elderly Man",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s",
+        "hook": "A skeptical village patriarch who moves from suspicion to curiosity to conversion. He is the human gatekeeper of the hut sequence, and his shift gives the missionary story its domestic emotional turn.",
+        "why_actor_wants_this": "This is the kind of conversion arc that gives a character actor the late-scene turn of Morgan Freeman in The Shawshank Redemption — a skeptical listener whose change becomes the payoff. Veteran supporting actors who like authority figures with a visible inner pivot will chase it."
       },
       {
         "name": "Adam",
         "role_type": "Lead",
         "demographics": "Male · 14",
-        "hook": "A frustrated teenager who feels spiritually correct but emotionally mistreated at home. He is the kind of adolescent lead whose pain is real, but whose breakthrough comes through learning how to speak the language of scripture back to his parents.",
-        "why_actor_wants_this": "This is the teen-drama confession space of *Boyhood* with a faith-based payoff — a role that lets a young actor play resentment, intelligence, and relief in one arc. It will appeal to teen performers who can carry dialogue-heavy scenes and still land the emotional turn."
+        "hook": "A frustrated teenager trying to reconcile obedience with the way his parents treat him. He is the emotional engine of the parenting episode, and his honesty gives the script a youth-facing conflict with clear stakes.",
+        "why_actor_wants_this": "This is the kind of teen role that gives a young actor the confessional intensity of Lucas Hedges in Manchester by the Sea — a character whose pain is expressed through conversation rather than action. It will attract emerging actors who want a grounded, dialogue-driven showcase."
       },
       {
         "name": "Andrew",
         "role_type": "Lead",
         "demographics": "Male · 15-21",
-        "hook": "The calm, scripture-fluent friend who knows how to translate doctrine into practical family behavior. He functions as a peer counselor and a model believer, with enough confidence to guide others without losing his easygoing tone.",
-        "why_actor_wants_this": "This is the mentor-peer territory of *Friday Night Lights* — a role that gives an actor authority, warmth, and the chance to be the wise friend in a youth ensemble. It suits a performer who can play grounded charisma rather than overt showiness."
+        "hook": "A calm, scripture-literate friend who functions as a peer counselor and moral explainer. He is less a rebel than a guide, which makes him the series’ cleanest mouthpiece for the parenting and discipline theme.",
+        "why_actor_wants_this": "This is the kind of wise-beyond-his-years role that gives an actor the steadying authority of Mahershala Ali in Moonlight, but in a youth-fellowship register. It offers a performer the chance to play intelligence, warmth, and spiritual confidence without needing overt spectacle."
       },
       {
         "name": "Michael",
         "role_type": "Lead",
-        "demographics": "Male · 20s-30s",
-        "hook": "A prayerful believer whose concern for a neighbor becomes the catalyst for a supernatural visitation and a conversion mission. He is earnest, spiritually receptive, and built to carry scenes of private devotion and public witness.",
-        "why_actor_wants_this": "This is the devotional lead space of *The Chosen* — a role that asks an actor to make prayer, patience, and spiritual listening feel active. Faith-audience leads and stage-trained performers who can sustain sincerity without flattening it will be drawn to it."
+        "demographics": "Male · 20s",
+        "hook": "A prayerful believer who carries the burden of intercession for his neighbor Ken. He is earnest, spiritually alert, and positioned as the kind of man whose faith becomes action.",
+        "why_actor_wants_this": "This is the showcase territory of Sterling K. Brown in This Is Us — a man whose emotional life is carried through devotion, concern, and quiet intensity. Actors who want a sincere, emotionally legible lead with room for spiritual conviction will respond to it."
       },
       {
         "name": "Ken",
         "role_type": "Lead",
         "demographics": "Male · 20s-40s",
-        "hook": "A notorious neighborhood criminal who is haunted by guilt and unexpectedly ready to change. He carries the most overt before-and-after transformation in the script, moving from violence and shame toward repentance and mission.",
-        "why_actor_wants_this": "This is the redemption-role territory of *The Shawshank Redemption* and *American Gangster* in miniature — a part that lets an actor play menace, remorse, and rebirth. It is especially attractive to performers who want a conversion arc with visible emotional stakes."
+        "hook": "A hardened criminal carrying guilt, shame, and the possibility of change. He arrives as a neighborhood menace and becomes the clearest redemption arc in the script, which gives the episode its conversion payoff.",
+        "why_actor_wants_this": "This is the kind of redemption role that gives an actor the transformation space of Bryan Cranston in Breaking Bad’s moral reversal, but in reverse — a man moving from darkness toward testimony. It will attract actors who want a big before-and-after turn with emotional and spiritual stakes."
+      },
+      {
+        "name": "Ms. Sandra",
+        "role_type": "Lead",
+        "demographics": "Female · 40s-60s",
+        "hook": "A mother holding her son’s life together with faith, grief, and urgency. She is the emotional witness in the healing story, and her tears and testimony give the episode its human anchor.",
+        "why_actor_wants_this": "This is the kind of maternal showcase that gives an actress the emotional authority of Viola Davis in Fences — a woman whose love and pain are both visible in every scene. It will appeal to seasoned dramatic actresses and faith-market performers who can carry a testimony episode."
       },
       {
         "name": "Frank",
         "role_type": "Lead",
         "demographics": "Male · 30s-40s",
-        "hook": "A man facing AIDS who becomes the center of a healing testimony and a public declaration of faith. He is physically vulnerable but spiritually receptive, which gives the role a built-in emotional pivot from fear to witness.",
-        "why_actor_wants_this": "This is the hospital-bed showcase territory of *Philadelphia* filtered through a faith testimony structure — a role that asks an actor to play bodily fragility, fear, and relief with dignity. Dramatic leads looking for a performance that can anchor a church or festival audience will notice it."
+        "hook": "A man facing AIDS who moves from physical collapse to spiritual renewal. He is written as both patient and witness, which makes him the center of the healing-and-salvation episode.",
+        "why_actor_wants_this": "This is the kind of illness-and-redemption role that gives an actor the vulnerability and dignity of Tom Hanks in Philadelphia, but within a faith-healing framework. It offers a performer a serious emotional arc with visible transformation and testimony payoff."
       },
       {
-        "name": "Ms. Sandra",
+        "name": "Mira",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-60s · mother",
-        "hook": "A mother whose love for her son is expressed through prayer, endurance, and public gratitude. She is the emotional witness around Frank’s healing, giving the story a maternal anchor and a face for faith under pressure.",
-        "why_actor_wants_this": "This is the kind of maternal showcase seen in *Steel Magnolias* — a role that lets an actress play devotion, fear, and relief in a contained emotional space. Character actresses and respected supporting players will see a clear, audience-facing part."
-      },
-      {
-        "name": "Pastor Israel",
-        "role_type": "Lead",
-        "demographics": "Male · 40s-60s",
-        "hook": "A calm, authoritative pastor who speaks in scripture and expects miracles to follow obedience. He is part healer, part counselor, part institutional center of gravity.",
-        "why_actor_wants_this": "This is the commanding-clergy lane of *The Apostle* — a role that gives an actor sermon authority, emotional steadiness, and the chance to be the room’s moral center. Veteran character actors and faith-film regulars will chase it for its built-in gravitas."
+        "demographics": "Female · 20s-30s",
+        "hook": "A loyal friend who exists to witness Sanjay’s success and affirm his journey. She is warm, supportive, and mostly functions as the audience’s congratulatory proxy.",
+        "why_actor_wants_this": "This is the kind of supportive best-friend role that gives an actor the easy charm of Octavia Spencer in The Help — a part built on warmth, reaction, and emotional support. It suits performers who can make a secondary role feel lived-in and generous."
       },
       {
         "name": "Sanjay",
         "role_type": "Lead",
         "demographics": "Male · 20s-40s",
-        "hook": "A writer who has survived rejection long enough to become a public success story. He is reflective, grateful, and positioned as proof that persistence and faith can turn private struggle into public recognition.",
-        "why_actor_wants_this": "This is the literary-success monologue space of *Julie & Julia* — a role that lets an actor play ambition, humility, and earned confidence in one package. It will appeal to performers who can carry dialogue-heavy scenes about craft and vocation."
-      },
-      {
-        "name": "Mira",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-40s",
-        "hook": "A loyal friend who functions as the celebratory witness to Sanjay’s rise. She is warm, admiring, and there to give the success story a relational frame.",
-        "why_actor_wants_this": "This is the supportive-best-friend lane of *The Devil Wears Prada* without the satire — a role that gives an actress charm, reaction beats, and the chance to be the audience’s emotional proxy. It suits performers who know how to make support feel alive."
+        "hook": "A writer who has endured rejection and finally finds public success. He is the series’ creative-achievement testimony, turning perseverance into a faith victory story.",
+        "why_actor_wants_this": "This is the kind of success-story role that gives an actor the reflective, self-made energy of Adrien Brody in The Pianist’s later survival register — a man whose persistence becomes the performance. It will appeal to actors who want a quieter, aspirational lead with public-facing payoff."
       },
       {
         "name": "Pastor Matthew",
         "role_type": "Lead",
         "demographics": "Male · 30s-50s",
-        "hook": "A newly affirmed pastor who receives a posthumous letter that confirms his calling and hands him a church future. He is defined by transition, inheritance, and the emotional lift of being chosen.",
-        "why_actor_wants_this": "This is the succession-and-affirmation territory of *The Crown* in a church register — a role that lets an actor play humility, ambition, and spiritual legitimacy. It will attract performers who want a leadership arc with emotional payoff rather than conflict alone."
+        "hook": "A young pastor stepping into leadership and receiving a final letter that confirms his calling. He is a succession-story protagonist, carrying both institutional pressure and spiritual affirmation.",
+        "why_actor_wants_this": "This is the kind of leadership role that gives an actor the institutional gravitas of Jason Clarke in Zero Dark Thirty, but in a church setting where authority is earned through humility. It will attract actors who want a prestige-adjacent role with public speaking, emotional inheritance, and legacy stakes."
       },
       {
         "name": "Pastor Lake Peters",
         "role_type": "Supporting",
         "demographics": "Male · 50s-70s",
-        "hook": "A deceased mentor whose voice continues to shape the church after his death. He exists as a spiritual father figure, a legacy presence, and the author of the letter that changes the story’s direction.",
-        "why_actor_wants_this": "This is the legacy-mentor territory of *Field of Dreams* — a role that can be brief on screen but enormous in impact. A respected older actor can make the letter feel like an event and give the series a memorable spiritual patriarch."
+        "hook": "A dying senior pastor whose final letter becomes a passing-of-the-torch moment. He is less a plot mover than a spiritual patriarch whose words define the next generation.",
+        "why_actor_wants_this": "This is the kind of farewell role that gives an actor the late-career dignity of James Earl Jones in Field of Dreams — a voice of authority whose final words carry the episode. Veteran character actors and respected stage performers would be drawn to it."
       },
       {
         "name": "Kendrick",
         "role_type": "Lead",
         "demographics": "Male · late teens-20s",
-        "hook": "A grieving son trying to keep faith while his mother is dying and the church hesitates to help. He is the emotional center of the hospital storyline, carrying sorrow, loyalty, and eventual vocation.",
-        "why_actor_wants_this": "This is the grief-and-transformation showcase of *This Is Us* — a role that lets an actor move from helplessness to purpose in a deeply emotional register. Young dramatic leads and actors with strong emotional range will be drawn to the hospital and aftermath scenes."
+        "hook": "A son and believer trying to hold onto faith while his mother dies and the church refuses immediate help. He is the most emotionally volatile lead in the script, moving from grief to testimony to ministry.",
+        "why_actor_wants_this": "This is the kind of grief-to-purpose role that gives an actor the emotional range of Chadwick Boseman in Ma Rainey’s Black Bottom — a character carrying pain, dignity, and forward motion at once. It will attract younger dramatic leads who want a role with tears, faith, and eventual uplift."
       },
       {
         "name": "Miss Helen",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-70s",
-        "hook": "A dying mother whose final words become the moral compass for her son. She is tender, spiritually resolved, and designed to leave a lasting emotional imprint in a short span.",
-        "why_actor_wants_this": "This is the deathbed-emotion lane of *Terms of Endearment* — a role that gives an actress a concentrated, high-impact farewell. Experienced dramatic performers will recognize the chance to land a scene that the audience remembers."
+        "demographics": "Female · 40s-60s",
+        "hook": "A dying mother whose final words become the moral instruction that shapes her son’s life. She is brief but central, functioning as the emotional and theological handoff in the episode.",
+        "why_actor_wants_this": "This is the kind of farewell maternal role that gives an actress the concentrated emotional force of Frances McDormand in Nomadland — a few scenes that carry the weight of a life. Character actresses who can make a small role feel monumental will want it."
       },
       {
         "name": "Brother Wisdom",
         "role_type": "Lead",
-        "demographics": "Male · 30s-60s",
-        "hook": "A church teacher who turns a youth class into a live scripture workshop. He is authoritative but interactive, using humor, correction, and structure to keep the room engaged.",
-        "why_actor_wants_this": "This is the classroom-preacher showcase of *Dead Poets Society* translated into a church setting — a role that lets an actor command a room while still playing warmth and wit. It will appeal to performers who can teach, entertain, and lead all at once."
+        "demographics": "Male · 30s-50s",
+        "hook": "A church teacher who turns a youth class into a live scripture lesson about sex and morality. He is part educator, part preacher, part facilitator, and he gives the series one of its most overtly interactive group scenes.",
+        "why_actor_wants_this": "This is the kind of teaching role that gives an actor the authority and comic timing of Jeffrey Wright in a lecture scene — a character who controls the room through language. It will appeal to performers who like public-speaking roles with ensemble interaction and clear didactic momentum."
       },
       {
         "name": "Sister Deborah",
         "role_type": "Supporting",
-        "demographics": "Female · 20s-50s",
-        "hook": "A co-teacher and institutional partner who helps shape the youth fellowship lesson. She is practical, observant, and part of the show’s church-education machinery.",
-        "why_actor_wants_this": "This is the co-leader support slot seen in ensemble workplace or classroom stories — a role that gives an actress authority without needing to dominate the scene. It suits performers who can play smart, steady, and responsive."
+        "demographics": "Female · 20s-40s",
+        "hook": "A church leader who helps frame the youth discussion and validates the lesson. She is a steady institutional presence, giving the classroom scene balance and authority.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actress the practical authority of Regina King in a community meeting scene — a person who can hold the room without needing the spotlight. It suits performers who excel at calm, credible leadership."
+      },
+      {
+        "name": "Michael (youth class)",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "A youth-fellowship participant who offers the class’s first answer and sets the tone for the discussion. He is playful, slightly cheeky, and useful as the scene’s opening voice.",
+        "why_actor_wants_this": "This is the kind of ensemble utility role that gives an actor the quick-hit energy of a TV debate scene — a chance to land a memorable line and then hand the room off. It works for emerging actors who want a crisp, dialogue-forward church ensemble credit."
+      },
+      {
+        "name": "Elizabeth",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "A young woman in the youth class who answers with more nuance than the others. She gives the scene a slightly more reflective female perspective and helps widen the discussion.",
+        "why_actor_wants_this": "This is the kind of smart supporting role that gives an actress the conversational intelligence of Ayo Edebiri in a group scene — a part that wins by precision and timing. It suits performers who can make a brief appearance feel sharp and memorable."
+      },
+      {
+        "name": "Andrew (youth class)",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "A youth-class participant who answers simply and directly. He is one of the group’s cleanest straight-line voices, helping the teacher land the lesson.",
+        "why_actor_wants_this": "This is the kind of clean supporting part that gives an actor the functional clarity of a courtroom witness scene — a role built to land information with confidence. It works for performers who can make a small part feel grounded and useful."
+      },
+      {
+        "name": "Monique",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "A youth-class participant who frames sex through gendered perspective. She adds a slightly more textured answer and gives the classroom a broader social range.",
+        "why_actor_wants_this": "This is the kind of brief but pointed supporting role that gives an actress the conversational bite of a panel-discussion scene. It suits performers who can make a single exchange feel specific and alive."
       },
       {
         "name": "Daniel",
         "role_type": "Lead",
-        "demographics": "Male · 20s-40s",
-        "hook": "A Spirit-led believer who leaves ordinary life to rescue a friend from self-destruction. He is active, obedient, and positioned as the kind of man whose faith becomes intervention.",
-        "why_actor_wants_this": "This is the mission-driven lead space of *The Book of Eli* without the action wrapper — a role that asks an actor to play conviction as behavior. It will attract performers who want a spiritually motivated protagonist with forward motion."
+        "demographics": "Male · 20s-30s",
+        "hook": "A spiritually sensitive believer who follows the Spirit’s prompting to rescue James from self-destruction. He is the series’ most active interventionist lead, moving from prayer to action to restoration.",
+        "why_actor_wants_this": "This is the kind of spiritually guided lead that gives an actor the conviction and urgency of Forest Whitaker in The Last King of Scotland, but in a redemption context. It offers a performer a role that combines inner listening, physical movement, and moral authority."
       },
       {
         "name": "James",
         "role_type": "Lead",
         "demographics": "Male · 20s-40s",
-        "hook": "A wounded church insider whose collapse into drinking comes from betrayal, shame, and lost love. He is the most psychologically bruised figure in the script, and his recovery gives the story a redemption arc with real ache.",
-        "why_actor_wants_this": "This is the emotional territory of *Manchester by the Sea* filtered through a faith-recovery arc — a role that lets an actor play humiliation, anger, and restoration. Dramatic leads who want a bruised, confessional part will see the opportunity immediately."
+        "hook": "A man broken by church betrayal, addiction, and humiliation. He begins as a collapsed figure in a bar and becomes a restored believer, giving the episode a full repentance arc.",
+        "why_actor_wants_this": "This is the kind of fall-and-rise role that gives an actor the emotional sweep of Ben Foster in Leave No Trace — a character whose pain is visible before his recovery is earned. It will attract actors who want a raw, testimony-driven transformation part."
       },
       {
         "name": "Reverend Thompson",
         "role_type": "Supporting",
         "demographics": "Male · 30s-50s",
-        "hook": "A charismatic church leader whose private conduct collides with his public office. He functions as the cautionary figure in James’s backstory and gives the series a morally compromised authority figure.",
-        "why_actor_wants_this": "This is the morally compromised clergy role that actors often relish in prestige drama — the kind of part that can be magnetic even in limited screen time. It gives a performer the chance to play charm, hypocrisy, and collapse."
-      },
-      {
-        "name": "Mrs. Ron",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "A church leader’s wife whose private choices become part of the scandal that breaks James. She is a catalyst figure in the backstory, tied to desire, betrayal, and institutional fallout.",
-        "why_actor_wants_this": "This is the scandalous-supporting role that can land with the force of a prestige soap turn. An actress who likes morally charged material will see a compact but memorable part."
+        "hook": "A church authority whose public holiness masks private betrayal. He is the episode’s moral counterweight, and his duplicity gives James’s collapse its cause.",
+        "why_actor_wants_this": "This is the kind of morally compromised authority role that gives an actor the chilling duality of Bryan Cranston in a prestige drama — a man whose public face and private life are in collision. Character actors who enjoy playing institutional hypocrisy will be drawn to it."
       },
       {
         "name": "Daniela",
         "role_type": "Supporting",
         "demographics": "Female · 20s-30s",
-        "hook": "James’s vanished fiancée, remembered through betrayal and loss. She is more absence than presence, but that absence drives the emotional wound in James’s story.",
-        "why_actor_wants_this": "This is the off-screen heartbreak role that can still carry major emotional weight, similar to the absent love interests in many recovery dramas. If expanded, it becomes a potent flashback or reveal part for an actress with strong dramatic presence."
+        "hook": "A woman whose offscreen choices become part of James’s wound. She is more absence than presence, but she still functions as a key emotional reference point in the betrayal story.",
+        "why_actor_wants_this": "This is the kind of offscreen-but-consequential role that gives an actress the haunting afterimage of a noir betrayal figure. It suits performers who can make a character memorable even with limited page time."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage conviction, testimony, and moral transformation without irony.",
-        "fit_profile": "First- or second-feature directors, or TV directors moving into authored faith or character drama, who already work comfortably with performance-forward scenes and contained locations. The material rewards clean blocking, emotional clarity, and the ability to make scripture-driven dialogue feel alive rather than static.",
-        "detail": "The right director can turn a series of testimony scenes into a recognizable house style, especially because the show repeats a clear dramatic pattern across multiple episodes. This is attractive to directors who like ensemble church worlds, intimate interiors, and actor-led storytelling more than spectacle."
+        "hook": "A director who wants to stage faith as lived experience, not irony.",
+        "fit_profile": "Mid-career TV directors or first-feature filmmakers with a background in dialogue-heavy drama, performance-first storytelling, or inspirational content. The material rewards clean blocking, emotional clarity, and the ability to make prayer, testimony, and group scenes feel active rather than static.",
+        "detail": "The right director can turn a sermon-heavy page into a watchable human scene by finding rhythm in call-and-response, pauses, and reaction shots. It is especially attractive to directors who already work comfortably in contained interiors and can make church, home, and classroom spaces feel distinct without needing spectacle."
       },
       "buyer_appeal": {
-        "tier": "low-budget anthology series",
-        "lane": "faith-based streaming, Christian cable, family-safe anthology",
-        "detail": "The project does not require name-talent to function because the episodes are built around testimony structure and recognizable church roles, which makes it packageable off a director reel or a faith-facing cast. The anthology format and modest location footprint fit the current appetite for niche streaming libraries and church-adjacent programming that can be delivered in volume."
+        "tier": "Low-budget anthology series",
+        "lane": "faith-based streaming, church-network, and inspirational cable lane",
+        "detail": "The project does not require name-talent to explain the format, but it would benefit from a recognizable faith performer or pastor-host to help market the anthology. Its standalone episode structure and modest locations make it easy to produce in batches and export to audiences that already consume devotional, testimony, and church-adjacent programming."
       }
     },
     "considerations": [
       {
-        "area": "The series leans on repeated sermon structure.",
-        "detail": "A next pass could vary the dramatic shape of the episodes so each one feels like a distinct story event rather than a new illustration of the same spiritual principle. The opening family scene, the hospital prayer, and the youth class all already contain the ingredients for different engines; the opportunity is to let each segment arrive through a different kind of pressure.",
+        "area": "The anthology could be framed more cleanly as a repeatable series engine.",
+        "detail": "Right now the script reads as a sequence of standalone devotionals, which is workable, but a next pass could clarify the recurring on-screen promise that brings viewers back each week. One lever would be to define a host, framing device, or recurring family/church anchor so the episodes feel connected without losing the testimony format.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Several protagonists are defined by testimony more than contradiction.",
-        "detail": "The page gives Grant, Michael, Pastor Israel, and Brother Wisdom clear spiritual function, and one lever would be to sharpen what each of them wants outside of being faithful. Even a small added pressure — pride, fear, ambition, or a personal cost — would make the roles more castable and deepen the long-run engine.",
+        "area": "Several scenes are built as explanation rather than dramatized turn.",
+        "detail": "The opening bedtime story, the youth fellowship lesson, and the closing church testimonies all communicate the intended message clearly, and the version of the script where one key beat arrives through a choice or interruption would create more forward motion. A next pass could let one emotional beat land before the scripture explanation so the scene plays as discovery, not only instruction.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The location footprint is broad for a low-budget lane.",
-        "detail": "The script moves through homes, churches, classrooms, a hospital, a bar, an airport, a seashore, and an ancient village, so a simplification pass could protect the story by consolidating some of those spaces. The version where a few of the church-adjacent scenes share the same standing sets would preserve the anthology feel while making production more efficient.",
+        "area": "The cast footprint is broad for a low-budget lane.",
+        "detail": "The anthology structure introduces many named players across separate stories, including children, teens, pastors, and supporting church members. A simplification lever would be to consolidate a few of the supporting church voices or reuse a smaller core ensemble across episodes, which would protect the budget while keeping the format intact.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "Bible quotations drive the dialogue.",
-        "detail": "Because the script leans heavily on direct scripture citation, a producer would want to confirm the intended clearance approach and whether the production is treating those passages as quoted text or adapted paraphrase. That is a manageable lane, but it is worth defining early so the series bible and episode scripts stay consistent.",
+        "area": "The script leans on many distinct locations.",
+        "detail": "Homes, churches, classrooms, a hospital, a prison, a bar, an airport, a library, and an ancient village all appear on the page. The version of the series where some of the public spaces are folded into a smaller number of recurring sets would preserve the anthology feel and make the production easier to schedule.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The anthology could support clearer episode branding.",
-        "detail": "The titles already signal a testimony format, and one direction would be to make each installment’s central question even more legible in the opening minutes. That would help the series read as a repeatable faith-event package for viewers who want to know exactly what spiritual dilemma each episode is built around.",
+        "area": "The dialogue is highly declarative.",
+        "detail": "The speeches consistently state the moral and spiritual takeaway, which keeps the message unmistakable. One direction would be to let a few exchanges carry more subtext or interruption so the characters feel like they are discovering the lesson in real time rather than delivering it after the fact.",
         "is_primary_lever": false,
         "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 41.7,
+  "weightedScore": 40.3,
   "tier": "Needs Development",
   "inputTokens": 24232,
-  "outputTokens": 6413,
-  "cost": 0.047032500000000005,
+  "outputTokens": 6688,
+  "cost": 0.04827,
   "declaredFormat": "Series"
 }

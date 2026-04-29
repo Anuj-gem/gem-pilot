@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:34:41.014Z",
+  "submission_id": "bfc14dba-f26b-495e-bb5c-acb1b01c7a86",
+  "eval_id": "fdf42792-0a52-4399-9959-30d2cc020881",
+  "title": "SkyBorne 2026 Script 3rd Act Rewrite",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "SkyBorne",
+      "role_type": "Lead",
+      "demographics": "Male · 18 · human"
+    },
+    {
+      "name": "Lila",
+      "role_type": "Lead",
+      "demographics": "Female · 18 · human"
+    },
+    {
+      "name": "Jake",
+      "role_type": "Lead",
+      "demographics": "Male · 18 · human"
+    },
+    {
+      "name": "Zane",
+      "role_type": "Lead",
+      "demographics": "Male · 18 · human"
+    },
+    {
+      "name": "Admiral Verloren",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · alien"
+    },
+    {
+      "name": "The Supreme Ruler",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless alien"
+    },
+    {
+      "name": "Keely",
+      "role_type": "Supporting",
+      "demographics": "Female · 18 · human"
+    },
+    {
+      "name": "Jenny",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · human"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · human"
+    },
+    {
+      "name": "Quirkney",
+      "role_type": "Supporting",
+      "demographics": "Male · 17-18 · human"
+    },
+    {
+      "name": "Mr. Helms",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · human"
+    },
+    {
+      "name": "Principal Feldman",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · human"
+    }
+  ],
+  "positioning_hook": "A lonely suburban teen discovers he’s the prophesied light-wielding Sauven, then must choose between first love and saving Earth from a genocidal space warlord.",
+  "cost_usd": 0.0672495,
+  "input_tokens": 58280,
+  "output_tokens": 5231,
+  "status": "wrote:leads_ok"
+}

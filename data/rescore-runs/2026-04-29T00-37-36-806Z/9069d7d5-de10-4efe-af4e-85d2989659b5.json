@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:34:36.520Z",
+  "submission_id": "9069d7d5-de10-4efe-af4e-85d2989659b5",
+  "eval_id": "f010477c-61fe-45ef-a348-e31a0166afa5",
+  "title": "Vineyard Haven Lukas Kendall 4 21 26",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "SCOTT MORGAN",
+      "role_type": "Lead",
+      "demographics": "Male · 24 · Vineyard native"
+    },
+    {
+      "name": "BEN CARTER",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "KATE",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · African descent"
+    },
+    {
+      "name": "REBECCA HARDING",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "GEORGE",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "TODD STRAITE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "BEN’S MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s"
+    },
+    {
+      "name": "REBECCA'S MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s"
+    },
+    {
+      "name": "ROB KELLEY",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "RICK",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "WAITRESS / MARJORIE / HOLLY JANE / MARIO / BRUNHILDA / LITTLE GIRL / FRAT GUYS / STOCKBROKER DUDE / BOUNCER / NURSE / etc.",
+      "role_type": "Supporting",
+      "demographics": "Mixed ages and genders"
+    }
+  ],
+  "positioning_hook": "A Vineyard-born screenwriter gets dragged through a wealthy island fixer’s chaotic family orbit, then discovers love, class warfare, and self-respect all arrive on the same ferry.",
+  "cost_usd": 0.053124000000000005,
+  "input_tokens": 38108,
+  "output_tokens": 5454,
+  "status": "wrote:leads_ok"
+}

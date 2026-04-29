@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T01:24:47.856Z",
+  "submission_id": "c21ca558-ec53-4245-a208-5b6e7ef16665",
+  "eval_id": "e1d4b01f-d1f8-4705-8ab0-934f4721a86f",
+  "title": "modern woman tells tales screenplay (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Keisha",
+      "role_type": "Lead",
+      "demographics": "Female · 18 to mid-20s · Black/African"
+    },
+    {
+      "name": "Juliana",
+      "role_type": "Lead",
+      "demographics": "Female · 40s to 50s · Black/African"
+    },
+    {
+      "name": "Lin",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · Black/African"
+    },
+    {
+      "name": "Betty",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · Black/African · petite/short stature noted"
+    },
+    {
+      "name": "Anthony",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to early 30s · Black/African"
+    },
+    {
+      "name": "Sam",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Black/African"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Black/African"
+    },
+    {
+      "name": "Candice",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · Black/African"
+    },
+    {
+      "name": "Betty's Dad / Jeff",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Black/African"
+    },
+    {
+      "name": "Monique",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged · Black/African"
+    },
+    {
+      "name": "Theresa",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged · Black/African"
+    },
+    {
+      "name": "Son",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · Black/African"
+    },
+    {
+      "name": "Mark",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · Black/African"
+    },
+    {
+      "name": "Tye",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · Black/African"
+    }
+  ],
+  "positioning_hook": "An Amber slum daughter chases escape through campus hustling, only to watch her choices, her friends, and her mother’s buried past collide in a brutal reckoning.",
+  "cost_usd": 0.050529,
+  "input_tokens": 36118,
+  "output_tokens": 5209,
+  "status": "wrote:leads_ok"
+}

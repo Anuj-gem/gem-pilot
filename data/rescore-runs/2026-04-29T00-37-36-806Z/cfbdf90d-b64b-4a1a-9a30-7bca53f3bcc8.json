@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:33:57.293Z",
+  "submission_id": "cfbdf90d-b64b-4a1a-9a30-7bca53f3bcc8",
+  "eval_id": "299c55f2-722e-4bd2-ade3-0c5ae6288dbc",
+  "title": "Battle for the Ages",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "THOMAS CLAY",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · frontier sheriff / Old West lawman"
+    },
+    {
+      "name": "LT. BENJAMIN ELLIS-GREEN",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · U.S. Navy SEAL"
+    },
+    {
+      "name": "CAPTAIN FRANCOIS LEON",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · 18th-century pirate captain"
+    },
+    {
+      "name": "LUCY",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · 1970s-presenting combatant"
+    },
+    {
+      "name": "WINSTON THE BRAVE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · medieval knight"
+    },
+    {
+      "name": "MATSUNO NORIAKI",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · samurai"
+    },
+    {
+      "name": "VICTORIO",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Apache warrior"
+    },
+    {
+      "name": "ASMUND BERG",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Viking warrior"
+    },
+    {
+      "name": "DIENCES",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Spartan warrior"
+    },
+    {
+      "name": "ANGELA THE ACTIVIST",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · future activist with a metal cane"
+    },
+    {
+      "name": "ZECHARIAH",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · future guard / operator"
+    },
+    {
+      "name": "XANDER",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · future guard / operator"
+    },
+    {
+      "name": "VICE-COMMISSIONER",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · future political operator"
+    },
+    {
+      "name": "NEWSREPORTER",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · future media personality"
+    },
+    {
+      "name": "CAMERAMAN",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · future media crew"
+    }
+  ],
+  "positioning_hook": "A frontier sheriff trapped with warriors from every era must unite them against a future death sport—before the prison turns their survival into the next spectacle.",
+  "cost_usd": 0.0531405,
+  "input_tokens": 36966,
+  "output_tokens": 5648,
+  "status": "wrote:leads_ok"
+}

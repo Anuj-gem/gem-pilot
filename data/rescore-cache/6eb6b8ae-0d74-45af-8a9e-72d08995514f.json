@@ -7,49 +7,49 @@
         "Crime",
         "Drama"
       ],
-      "tone": "Grounded, bleak, unsettling"
+      "tone": "Grounded, eerie, minimalist, unsettling"
     },
-    "positioning_hook": "A bored commuter discovers his own name on a grave, then starts mirroring the dead man’s life until a train-platform obsession turns into a brutal act of self-erasure.",
+    "positioning_hook": "A bored commuter discovers his exact double’s grave, then lets the obsession curdle into a violent reinvention of his own life.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The premise has a clear thriller audience and a clean central mystery, but it plays to a narrower lane than a broad four-quadrant feature. The hook is strongest for viewers who like psychological descent, identity dread, and compact crime stories."
+        "reasoning": "The premise has a clean, unsettling hook and a clear thriller lane, but it plays very small and very internal, which narrows the immediate audience. The final turn into violence gives it a commercial edge, yet the appeal is more art-house genre than broad four-quadrant."
       },
       "conceptual_hook_clarity": {
-        "score": 6,
-        "reasoning": "The core engine lands plainly: Frank sees a grave with his name, researches the dead man, then begins to imitate him. The escalation is easy to track, though the script’s scene-by-scene presentation is so spare that the larger dramatic shape arrives more as a premise than a fully articulated feature arc."
+        "score": 7,
+        "reasoning": "The central engine is easy to grasp: Frank sees a grave with his own name, finds a newspaper story about a man who looks like him, and begins changing himself. The script takes a while to reveal the full shape of that obsession, but once the moustache and pursuit kick in, the premise lands cleanly."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 4,
-        "reasoning": "Frank has a strong central predicament and a readable descent, but he is mostly defined through routine and reaction until the final violent turn. The wife and daughter give the story human stakes, yet they function more as pressure points than as fully dimensional counterweights."
+        "score": 5,
+        "reasoning": "Frank has a strong visual premise and a readable descent, but he is mostly defined by observation, repetition, and the eventual act of violence. The wife and daughter give him a domestic frame, yet the script keeps them functional rather than deeply interactive, so the character engine stays contained."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The dead-man-identification conceit is a striking starting point, and the moustache detail gives the imitation a memorable visual marker. The execution stays very stripped-down and literal, which keeps the idea legible but leaves room for a more distinctive dramatic shape around it."
+        "reasoning": "The commuter routine, the grave discovery, and the mirror-image murderer create a distinctive psychological setup. The execution is spare and confident in its repetition, though the overall dramatic shape remains familiar to the obsession-to-violence thriller tradition."
       },
       "narrative_momentum_engagement": {
-        "score": 4,
-        "reasoning": "The script moves in a series of repeated commute/work/grave beats before the central discovery arrives, so the early stretch feels cyclical rather than escalating. Once Frank finds the article and later follows the stranger, the story gains charge, but the overall feature drive is still quite thin on page."
+        "score": 5,
+        "reasoning": "The repetition of train, office, cemetery, and home establishes mood effectively, but the middle section circles the same beats before the story fully turns. Once Frank adopts the moustache and follows the stranger, the momentum sharpens, but the earlier stretch is more atmospheric than propulsive."
       },
       "resonant_originality": {
-        "score": 6,
-        "reasoning": "There is a fresh, eerie logic to a man becoming the life of the person buried under his own name. The idea feels memorable and specific, though the script currently presents it in a very bare form rather than building a larger inevitability around the concept."
+        "score": 7,
+        "reasoning": "The exact-name grave and the identical-looking dead man give the story that rare 'of course this exists' quality. It feels like a compact nightmare built from ordinary commuter life, which makes the central image stick immediately."
       },
       "world_density_and_texture": {
-        "score": 3,
-        "reasoning": "The world is mostly train, office, home, and cemetery, with little social or institutional texture beyond Frank’s routine. That minimalism keeps the footprint lean, but it does not yet generate much story beyond the central obsession."
+        "score": 4,
+        "reasoning": "The world is intentionally stripped down to train, office, cemetery, and home, which supports the minimalist mood but leaves little institutional or social texture. The commuter routine is specific, yet the setting functions more as a container than a layered system."
       },
       "tonal_specificity": {
-        "score": 5,
-        "reasoning": "The tone is consistently bleak and detached, with a slow-burn unease that suits the material. What’s missing is a more singular tonal signature — the script stays in one register, so the mood is clear but not especially distinctive."
+        "score": 7,
+        "reasoning": "The tone is stark, repetitive, and quietly menacing, with a strong sense of dread building from mundane routine. The final smile and home-entry turn the piece into something colder and more sinister than a standard identity thriller."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 5,
-        "reasoning": "The grave, the family photo, and Frank’s final return home suggest buried identity material and possible psychological fracture beneath the surface. The draft hints at that depth, but it mostly withholds rather than dramatizes the inner life that could make the turn feel richer."
+        "score": 6,
+        "reasoning": "There is a suggestive psychological undercurrent in the grave, the family photo, and Frank’s gradual self-revision. The script hints at a larger interior collapse, though it keeps that depth implicit rather than dramatizing many layers beyond the central obsession."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 2,
-        "reasoning": "This is almost entirely a solo-protagonist piece. The wife, daughter, and the man on the train are functional story contacts, but the script does not build a web of recurring relationships that would generate much independent scene energy."
+        "score": 3,
+        "reasoning": "This is almost entirely a solo-protagonist piece, with the wife, daughter, and stranger serving the central arc rather than generating independent relationship engines. The domestic scenes add context, but the script does not build a web of recurring dynamics."
       }
     },
     "production_reality": {
@@ -59,162 +59,165 @@
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Male lead in an ordinary working-age range",
-          "Wife and daughter roles",
-          "One featured commuter/stranger role"
+          "Male lead in 30s-50s",
+          "Wife in adult range",
+          "Daughter is a child",
+          "Need a striking physical double for the grave-photo resemblance"
         ]
       },
       "locations": {
-        "distinct_count": 4,
-        "interior_exterior_ratio": "Mostly interior with some exterior",
+        "distinct_count": 5,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior walk-and-transit scenes",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "Train platform and train carriage access",
-          "Office interior",
-          "House interior/exterior",
-          "Church cemetery"
+          "Train platform",
+          "Commuter train carriage",
+          "Office",
+          "House/interior domestic space",
+          "Cemetery/church cemetery",
+          "Busy street/side street"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visible VFX requirements on the page.",
+        "vfx_details": "No visible VFX requirements beyond basic editorial continuity.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical fight choreography for the alley assault.",
+        "sfx_needs": "Practical fight choreography for the alley attack.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Low-budget theatrical or streamer psychological thriller lane",
+        "recommended_lane": "Festival-to-platform psychological thriller lane",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Festival-to-platform or modest theatrical release model"
+        "series_engine_or_release_model": "Feature release model suited to limited theatrical, festival launch, or streamer acquisition."
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary, contained locations, no VFX, and one brief fight sequence keep the budget footprint small."
+          "note": "Contemporary, contained locations, no VFX, and one brief fight sequence keep the budget footprint modest."
         },
         "cast": {
           "level": "low",
-          "note": "One lead, a small family unit, and a single featured commuter keep casting straightforward."
+          "note": "The story centers on one lead with a small supporting cast, though the wife, daughter, and stranger all need clean, specific casting."
         },
         "location": {
           "level": "low",
-          "note": "The story lives in four practical locations: train platform, train, office, home, plus the cemetery."
+          "note": "The script stays within a small set of recurring contemporary locations: train, office, cemetery, street, and home."
         },
         "content": {
           "level": "medium",
-          "note": "The alley beating and the murder story referenced in dialogue push the material into mature thriller territory."
+          "note": "The alley assault and the murder-suicide backstory place it firmly in mature thriller territory."
         },
         "rights": {
           "level": "low",
-          "note": "No real people, brands, music, or licensed material are referenced on the page."
+          "note": "No named real people, brands, music, or licensed IP are referenced."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The grave-name premise is instantly ownable.",
-          "what_it_means": "That single image gives a producer a clean hook for a contained psychological thriller with a built-in mystery and a strong trailer moment. Actors and buyers who respond to identity-driven genre pieces will immediately understand the appeal of a man confronting his own name on a headstone.",
-          "evidence": "Frank discovers the grave bears his exact name, then researches the dead man and begins mirroring him.",
+          "dimension_or_area": "The commuter routine is instantly cinematic.",
+          "what_it_means": "The repeated train-platform-office-cemetery rhythm gives the script a visual identity that can be sold in a single image and shot economically. Buyers who like contained psychological thrillers and directors who build dread from repetition will see the appeal immediately.",
+          "evidence": "Frank cycles through the platform, train, office, cemetery, and home in a repeated pattern before the story turns.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The production footprint is lean.",
-          "what_it_means": "The story is built around a small number of practical locations and a tiny cast, which makes it viable for a modest-budget package and easier to mount without heavy infrastructure. That is attractive to indie financiers, streamer buyers looking for contained thrillers, and directors who can deliver tension on limited means.",
-          "evidence": "Train platform, train carriage, office, cemetery, and home are the recurring settings.",
-          "source": "production"
-        },
-        {
-          "dimension_or_area": "Frank’s routine becomes the engine.",
-          "what_it_means": "The commuter rhythm gives the script a repeatable visual and emotional pattern that can be cut into a clean escalation toward obsession. Buyers looking for a simple, high-concept spine will see a premise that can be communicated in one sentence and tracked scene by scene.",
-          "evidence": "The repeated platform/train/office/cemetery cycle, followed by the moustache change and the pursuit of the stranger.",
+          "dimension_or_area": "The grave reveal is a clean high-concept engine.",
+          "what_it_means": "A single uncanny discovery launches the entire story, which makes the premise easy to pitch and easy to remember. Thriller buyers and actors looking for a role that pivots from ordinary routine into obsession will respond to that hook.",
+          "evidence": "Frank finds a grave with his own name and then discovers a newspaper article about a man who looks exactly like him.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The final turn lands on a chilling image.",
-          "what_it_means": "Frank’s return home after the assault, followed by the silent entry into the house, gives the ending a bleak, memorable aftertaste that suits festival programmers and genre buyers alike. It leaves the audience with a final question about what version of Frank is now inside that door.",
-          "evidence": "After the attack, Frank adjusts his suit, smiles at work, ignores the grave, and walks into his house before the cut to black.",
+          "dimension_or_area": "Frank’s descent is built on a strong visual transformation.",
+          "what_it_means": "The moustache detail gives the character arc a simple, filmable marker of psychological change that audiences can track without exposition. That kind of visible evolution is attractive to performance-driven buyers and actors who want a role with a physical, behavioral turn.",
+          "evidence": "Frank grows a moustache to match the dead man’s photo before following and attacking the stranger.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a chilling behavioral shift.",
+          "what_it_means": "The final image gives the film a clean aftertaste of menace, which helps a buyer imagine a memorable closing beat rather than a generic resolution. Festival programmers and streamer thriller audiences both respond to endings that reframe the protagonist as the threat.",
+          "evidence": "After the attack, Frank returns to work with a sinister smile and walks into his house at the end.",
           "source": "script"
         }
       ],
-      "headline": "This is a lean, eerie psychological thriller with a clean trailer hook: a commuter finds his own name on a grave and starts becoming the dead man. The footprint is modest, the central image is memorable, and the ending lands on a cold, unsettling note that buyers can immediately package."
+      "headline": "This is a lean, eerie psychological thriller with a memorable central image: a commuter who finds his own name on a grave and slowly starts becoming the dead man’s shadow. The contained footprint, the visual repetition, and the final turn into violence make it easy to package as a low-cost, actor-forward genre piece with festival-to-platform upside."
     },
     "lead_characters": [
       {
         "name": "FRANK",
         "role_type": "Lead",
-        "demographics": "Male · 30s-50s · ordinary working professional",
-        "hook": "Frank is a dead-eyed commuter whose life is built from repetition: train, office, home, cemetery, repeat. He reads as emotionally sealed, then gradually reveals a dangerous vacancy — the kind of man who can be bored, haunted, and predatory in the same frame.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter — a man whose internal weather is the performance, with silence, stillness, and sudden rupture doing the heavy lifting. Character actors who can play repression curdling into menace will chase this because the role offers a slow-burn descent with a final violent release."
+        "demographics": "Male · 30s-50s",
+        "hook": "Frank is an exhausted commuter whose life has been reduced to routine, silence, and private drift. He reads as ordinary until the grave discovery gives him a fixation that turns his boredom into something colder, and the script tracks that shift with almost no dialogue, making his face, posture, and small choices do the work.",
+        "why_actor_wants_this": "This is the showcase territory of Jake Gyllenhaal in Nightcrawler — a role where stillness, fixation, and a slow moral slide become the performance. Actors who want a contained but psychologically escalating lead, especially those looking to play menace without speeches, will chase this hard."
       },
       {
-        "name": "FRANK'S WIFE",
+        "name": "WIFE",
         "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "She is the domestic anchor in Frank’s life, present in the breakfast and dinner-table scenes and the phone call where his obsession leaks into the family space. She reads as grounded and ordinary, which makes her the clearest human counterweight to his drift.",
-        "why_actor_wants_this": "This is the kind of contained, emotionally legible supporting part that Toni Collette had in Hereditary before the floor dropped out — a role that lets an actor register normalcy, concern, and dawning unease in a few scenes. Strong character actresses who can make a small number of beats feel lived-in will be drawn to it."
+        "demographics": "Female · 30s-40s",
+        "hook": "Frank’s wife is the domestic anchor of the film, the person who keeps the home world intact while Frank drifts further from it. She reads as grounded and practical, with just enough presence in the dinner-table and phone-call scenes to remind us what Frank stands to lose or abandon.",
+        "why_actor_wants_this": "This is the kind of grounded domestic role that gave Laura Linney in The Savages its quiet authority — a character who makes the home feel real without needing to dominate the frame. Character actors who specialize in lived-in realism and emotional precision will be drawn to that space."
       },
       {
-        "name": "FRANK'S DAUGHTER",
+        "name": "DAUGHTER",
         "role_type": "Supporting",
-        "demographics": "Female · child/teen",
-        "hook": "She is part of the family image Frank keeps returning to, a quiet presence at the dinner table and in the family photo. The role functions as emotional ballast, giving the home life a face and making Frank’s inward turn feel more corrosive.",
-        "why_actor_wants_this": "This is the kind of child role that works in the Haley Joel Osment lane in The Sixth Sense — a small part that gains force from being the emotional witness to an adult’s unraveling. Young performers with natural stillness and strong reaction work would fit it well."
+        "demographics": "Female · child",
+        "hook": "Frank’s daughter is a simple but effective emotional pressure point, present in the family-table scenes as part of the life Frank is drifting away from. She gives the film a human cost without needing a large amount of screen time.",
+        "why_actor_wants_this": "This is the kind of child role that works the way the daughter does in Manchester by the Sea — brief, emotionally legible, and part of the film’s moral weather. Young performers and parents looking for a contained, prestige-adjacent credit would see the appeal."
       },
       {
-        "name": "THE MAN ON THE TRAIN",
+        "name": "MAN ON TRAIN",
         "role_type": "Supporting",
         "demographics": "Male · 30s-50s",
-        "hook": "A stranger whose only function is to trigger Frank’s fixation and become the target of the film’s most physical turn. He is less a full character than a pressure valve, but he gives the story a human face for Frank’s projection.",
-        "why_actor_wants_this": "This is the kind of compact, high-impact supporting role that actors take for one memorable sequence, like the stranger energy in Blue Ruin or the victim/antagonist turns in small-scale revenge thrillers. Character actors who like a scene-stealing physical beat will see the appeal."
+        "hook": "The man on the train is less a full character than the trigger for Frank’s final act, a stranger whose ordinary presence becomes enough to ignite the obsession. His function is simple but crucial: he gives Frank a body to project onto and then attack.",
+        "why_actor_wants_this": "This is the kind of compact, memorable pressure-cooker role that works in the same lane as the stranger in No Country for Old Men — a part defined by presence and implication rather than pages of dialogue. Character actors who can make an ordinary man feel loaded will be interested."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make dread out of routine.",
-        "fit_profile": "First- or second-feature directors with a taste for psychological minimalism, restrained violence, and visual repetition will recognize the lane immediately. This material rewards precise framing, performance control, and the ability to turn ordinary transit spaces into a pressure cooker.",
-        "detail": "The script gives a director a clean formal device — the commute loop — and asks for escalation through behavior rather than spectacle. That is catnip for filmmakers building a reputation on controlled tension, austere imagery, and character-first genre work."
+        "hook": "A director who wants to turn repetition, silence, and ordinary transit into dread.",
+        "fit_profile": "First- or second-feature directors with a strong short-film background in psychological drama or elevated thriller, especially those who favor restraint, visual patterning, and performance-led tension. The material rewards filmmakers who can make a commuter routine feel like a tightening trap without needing spectacle.",
+        "detail": "The script gives a director a clean visual grammar — train, office, cemetery, home — and asks them to escalate meaning through framing, rhythm, and the actor’s face. That is catnip for directors who build atmosphere from behavior and want a contained feature that can travel on mood and precision."
       },
       "buyer_appeal": {
         "tier": "$1-5M contained feature",
-        "lane": "Psychological thriller / elevated genre lane",
-        "detail": "The cast can be anchored by one strong lead without name-heavy support, which makes it viable as a director-driven package or a modest streamer buy. The contained footprint and high-concept premise fit the current market for compact thrillers that can travel well on a poster and a one-line pitch."
+        "lane": "Festival-to-platform psychological thriller lane",
+        "detail": "It can be packaged around one strong lead performance and a small supporting cast, so a buyer can greenlight it without a large ensemble or effects spend. The contained footprint and mature thriller hook fit the current streamer appetite for compact, high-concept genre pieces that can launch from festival buzz."
       }
     },
     "considerations": [
       {
-        "area": "The commute loop carries the whole first half.",
-        "detail": "The repeated train-platform, train, office, and cemetery beats establish Frank’s routine clearly, and a next pass could look for one sharper turn earlier so the audience feels the obsession beginning to tilt before the grave reveal. The primary lever is to let the first half carry a little more internal escalation, which would make the later discovery and moustache transformation hit with more force.",
+        "area": "The middle repeats the same commuter loop.",
+        "detail": "The train-platform-office-cemetery pattern is a strong mood engine, and the next pass could decide where one repetition becomes a turn. What would it look like if the grave discovery or the family scene arrived a little earlier, so the second half can spend more time in escalation than in reiteration?",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Frank’s inner life stays mostly external.",
-        "detail": "The script communicates his boredom and fixation through staring, walking, and following, which keeps the concept legible but leaves room for one or two scenes that dramatize what he wants before the grave discovery. A small number of choices that reveal his private need would deepen the descent without changing the premise.",
+        "area": "Frank’s inner shift stays mostly implicit.",
+        "detail": "The script communicates obsession through behavior, which is elegant, and a future pass could give one or two scenes a sharper internal turn on the page. One lever would be to let a single conversation or private moment show the exact instant Frank decides the dead man’s life is now his to inhabit.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The family scenes can carry more pressure.",
-        "detail": "The breakfast, phone call, and dinner-table moments already give the wife and daughter a domestic frame, and the version of the script where one of those scenes turns on a sharper emotional beat would strengthen the human stakes around Frank’s drift. That would protect the intimate scale while giving the home life more dramatic charge.",
+        "area": "The wife and daughter are functional anchors.",
+        "detail": "The domestic scenes establish stakes cleanly, and the version of the script where the wife has one more pointed exchange with Frank would deepen the emotional contrast without changing the footprint. That would also give the home life a little more independent charge before the final turn.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The cemetery and train access define the shoot.",
-        "detail": "The story depends on practical access to a platform, carriage, and church cemetery, so production planning should protect those locations and consider consolidating any additional exterior beats into those same spaces. The contained setting is an advantage, and keeping the footprint tight will preserve the low-budget appeal.",
+        "area": "The footprint is already lean.",
+        "detail": "The contemporary locations, small cast, and absence of VFX make this a straightforward contained feature to mount. The production path is strongest if the cemetery, train, office, and home remain the core geography rather than expanding into additional locations.",
         "is_primary_lever": false,
         "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 41.7,
+  "weightedScore": 51.3,
   "tier": "Needs Development",
   "inputTokens": 10447,
-  "outputTokens": 3221,
-  "cost": 0.022329750000000002,
+  "outputTokens": 3186,
+  "cost": 0.02217225,
   "declaredFormat": "Feature film"
 }

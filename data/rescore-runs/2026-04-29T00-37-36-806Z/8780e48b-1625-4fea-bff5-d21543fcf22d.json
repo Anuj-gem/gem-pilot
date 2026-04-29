@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:31:28.135Z",
+  "submission_id": "8780e48b-1625-4fea-bff5-d21543fcf22d",
+  "eval_id": "76ebac42-abad-4f49-9f49-daeabeebde88",
+  "title": "THE FARMGIRL",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Ginny Armstrong / Virginia Leonetti",
+      "role_type": "Lead",
+      "demographics": "Female · 10s to 30s · white Southern woman"
+    },
+    {
+      "name": "Maxie Leonetti",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 30s, aging into 40s · white"
+    },
+    {
+      "name": "Charlie",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 60s · white"
+    },
+    {
+      "name": "Billy Riley",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 50s · white"
+    },
+    {
+      "name": "Ruth Armstrong",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · white"
+    },
+    {
+      "name": "Robert Armstrong",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · white"
+    },
+    {
+      "name": "Detective Adler",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · white"
+    },
+    {
+      "name": "Vern",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · white"
+    },
+    {
+      "name": "Vic",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · white"
+    },
+    {
+      "name": "Jimmy",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · white"
+    },
+    {
+      "name": "Bud",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · white"
+    },
+    {
+      "name": "Billy's / Charlie's associates and family figures",
+      "role_type": "Supporting",
+      "demographics": "Mixed · adult ensemble"
+    }
+  ],
+  "positioning_hook": "A farm-raised Florida woman who learned to shoot before she learned to drive spends decades hunting the men behind her father’s murder — and builds a criminal empire to do it.",
+  "cost_usd": 0.05542875,
+  "input_tokens": 41739,
+  "output_tokens": 5361,
+  "status": "wrote:leads_ok"
+}
