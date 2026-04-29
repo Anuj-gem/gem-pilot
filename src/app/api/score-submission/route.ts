@@ -216,25 +216,34 @@ export async function POST(request: NextRequest) {
     // Pro-only feature; auto-publishing on score for free users created
     // a confusing state where the report showed "Published" but couldn't
     // be unpublished without paying.
+    //
+    // Anuj 2026-04-30: producer accounts (industry partners submitting
+    // their OWN scripts via /partner/submit) are always private — never
+    // auto-published, never matched. Detected here so the rest of this
+    // route's gating short-circuits cleanly.
     const { data: ownedCheck } = await serviceClient
       .from("script_submissions")
       .select("user_id")
       .eq("id", submission.id)
       .single()
     let ownerIsPro = false
+    let ownerIsProducer = false
     if (ownedCheck?.user_id) {
       const { data: ownerProfile } = await serviceClient
         .from("profiles")
-        .select("subscription_status")
+        .select("subscription_status, account_type")
         .eq("id", ownedCheck.user_id)
         .single()
       ownerIsPro = ownerProfile?.subscription_status === "active"
+      ownerIsProducer = ownerProfile?.account_type === "producer"
     }
     await serviceClient
       .from("script_submissions")
       .update({
         status: "completed",
-        ...(ownerIsPro ? { is_public: true } : {}),
+        // Producer-owned scripts stay private regardless of subscription.
+        // Pro writers default to public on completion.
+        ...(ownerIsPro && !ownerIsProducer ? { is_public: true } : {}),
       })
       .eq("id", submission.id)
 
@@ -252,17 +261,20 @@ export async function POST(request: NextRequest) {
 
     // Producer matching — fan out to producer dashboards for any whose lane
     // overlaps. Don't block the response if anything goes wrong; the cron
-    // backfill / admin trigger can recover.
-    try {
-      const matchResult = await createMatchesForSubmission(
-        submission.id,
-        serviceClient
-      )
-      console.log(
-        `[score-submission] matching: created=${matchResult.matchesCreated} skipped=${matchResult.matchesSkipped} candidates=${matchResult.candidatesEvaluated} submission=${submission.id}`
-      )
-    } catch (err) {
-      console.error("[score-submission] matching failed:", err)
+    // backfill / admin trigger can recover. Skipped entirely for producer-
+    // owned submissions since those are private to the submitting producer.
+    if (!ownerIsProducer) {
+      try {
+        const matchResult = await createMatchesForSubmission(
+          submission.id,
+          serviceClient
+        )
+        console.log(
+          `[score-submission] matching: created=${matchResult.matchesCreated} skipped=${matchResult.matchesSkipped} candidates=${matchResult.candidatesEvaluated} submission=${submission.id}`
+        )
+      } catch (err) {
+        console.error("[score-submission] matching failed:", err)
+      }
     }
 
     // Post-submission email — only when the row is already owned by a user.
@@ -273,7 +285,11 @@ export async function POST(request: NextRequest) {
       .eq("id", submission.id)
       .single()
 
-    if (ownedRow?.user_id) {
+    // Producer-owned submissions skip the writer-facing post-submission
+    // email entirely. Producers submitting their own scripts already see
+    // the result in-app on /partner; no need for the "your eval is ready"
+    // upsell template that's targeted at writers.
+    if (ownedRow?.user_id && !ownerIsProducer) {
       try {
         const { data: profile } = await serviceClient
           .from("profiles")

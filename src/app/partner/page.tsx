@@ -482,6 +482,153 @@ export default async function PartnerDashboardPage() {
     }
   }
 
+  // Producer's own submissions — the private scripts they've added via
+  // /partner/submit. Surfaced on the In Development tab alongside their
+  // GEM-script slate so they can flip between curated reads and their
+  // own work in one place. Anuj 2026-04-30.
+  const { data: ownedSubs } = await supabase
+    .from('script_submissions')
+    .select(
+      `
+      id, title, declared_format, tags, hidden_at, is_public, status, created_at, report_privacy,
+      script_evaluations ( id, weighted_score, tier, evaluation, edited_fields )
+      `
+    )
+    .eq('user_id', user.id)
+    .is('hidden_at', null)
+    .order('created_at', { ascending: false })
+
+  const ownedMatches: DashboardMatchData[] = []
+  for (const row of (ownedSubs ?? []) as Array<{
+    id: string
+    title: string | null
+    declared_format: string | null
+    tags: string[] | null
+    is_public: boolean | null
+    status: string | null
+    created_at: string
+    report_privacy: unknown
+    script_evaluations:
+      | Array<{
+          id: string
+          weighted_score: number | null
+          tier: string | null
+          evaluation: unknown
+          edited_fields?: { logline?: string } | null
+        }>
+      | {
+          id: string
+          weighted_score: number | null
+          tier: string | null
+          evaluation: unknown
+          edited_fields?: { logline?: string } | null
+        }
+      | null
+  }>) {
+    const evalRaw = Array.isArray(row.script_evaluations)
+      ? row.script_evaluations[0]
+      : row.script_evaluations
+    if (!evalRaw?.id) continue // skip drafts that haven't scored yet
+    const evaluation = (evalRaw.evaluation ?? null) as {
+      classification?: { genre_primary?: string; genre_secondary?: string[] }
+      positioning_hook?: string
+      packaging?: { budget_tier?: { tier?: string } }
+      risk_details?: {
+        budget?: { level?: string }
+        casting?: { level?: string }
+      }
+    } | null
+
+    const editedHeadline =
+      typeof evalRaw.edited_fields?.logline === 'string' &&
+      evalRaw.edited_fields.logline.trim().length > 0
+        ? evalRaw.edited_fields.logline.trim()
+        : null
+    const headline = editedHeadline ?? evaluation?.positioning_hook ?? null
+    const rawScore =
+      typeof evalRaw.weighted_score === 'number'
+        ? evalRaw.weighted_score
+        : null
+
+    // Format + genre + budget tags for the card chips.
+    const formatRaw =
+      row.declared_format ?? evaluation?.classification?.genre_primary ?? ''
+    const formatTag = formatRaw
+      ? FORMAT_LABEL[formatRaw.toLowerCase()] || titleCase(formatRaw)
+      : null
+    const genreTags: string[] = []
+    if (evaluation?.classification?.genre_primary) {
+      genreTags.push(titleCase(evaluation.classification.genre_primary))
+    }
+    for (const t of evaluation?.classification?.genre_secondary ?? []) {
+      if (typeof t === 'string' && t.trim() && !genreTags.includes(titleCase(t))) {
+        genreTags.push(titleCase(t))
+      }
+    }
+    const budgetTier = evaluation?.packaging?.budget_tier?.tier
+    const budgetTag = budgetTier
+      ? BUDGET_TAG_LABEL[budgetTier.toLowerCase()] || titleCase(budgetTier)
+      : null
+    const tags: string[] = []
+    if (formatTag) tags.push(formatTag)
+    for (const g of genreTags.slice(0, 2)) tags.push(g)
+    if (budgetTag) tags.push(budgetTag)
+
+    type Level = 'low' | 'medium' | 'high'
+    const normLevel = (raw: unknown): Level | null => {
+      if (raw === 'low' || raw === 'medium' || raw === 'high') return raw
+      return null
+    }
+
+    ownedMatches.push({
+      // matchId is unused for owned cards — they don't have a script_match
+      // row. Using the eval id keeps React keys unique across matches +
+      // owned scripts mixed in the same list.
+      matchId: `owned:${evalRaw.id}`,
+      submissionId: row.id,
+      // 'owned' is a synthetic status outside the script_matches enum.
+      // The producer-side card render path treats it specially (no
+      // Interested/Pass actions, just open report).
+      status: 'owned' as never,
+      title: row.title || 'Untitled',
+      score: typeof rawScore === 'number' && !Number.isNaN(rawScore) ? rawScore : null,
+      sortScore: rawScore,
+      headline,
+      tags,
+      scriptTags: Array.isArray(row.tags)
+        ? row.tags.filter(
+            (t): t is string => typeof t === 'string' && t.trim().length > 0
+          )
+        : [],
+      createdAt: row.created_at,
+      unmatchedAt: null,
+      stats: { views: 0, interested: 0, emailed: 0 },
+      filterAxes: {
+        productionLevel: normLevel(evaluation?.risk_details?.budget?.level),
+        castLevel: normLevel(evaluation?.risk_details?.casting?.level),
+        budgetTier: budgetTier ? budgetTier.toLowerCase() : null,
+        format: formatRaw
+          ? formatRaw.toLowerCase().includes('series')
+            ? 'series'
+            : formatRaw.toLowerCase().includes('feature')
+              ? 'feature'
+              : formatRaw.toLowerCase()
+          : null,
+        genres: uniqueLowercase([
+          evaluation?.classification?.genre_primary,
+          ...(evaluation?.classification?.genre_secondary ?? []),
+        ]),
+        scriptTags: Array.isArray(row.tags)
+          ? row.tags
+              .filter((t): t is string => typeof t === 'string')
+              .map((t) => t.toLowerCase().trim())
+              .filter(Boolean)
+          : [],
+      },
+      ownedEvalId: evalRaw.id,
+    })
+  }
+
   // "New since last visit": active matches created after the OLD timestamp.
   // Only meaningful if the producer has visited before; on the very first
   // visit (oldLastVisitedAt === null) we don't tag anything as new.
@@ -547,7 +694,7 @@ export default async function PartnerDashboardPage() {
           )}
         </div>
 
-        {matches.length === 0 ? (
+        {matches.length === 0 && ownedMatches.length === 0 ? (
           <div
             className="text-center rounded-2xl px-6 py-16 bg-white"
             style={{ border: '1px dashed var(--gem-gray-700)' }}
@@ -564,7 +711,11 @@ export default async function PartnerDashboardPage() {
             </p>
           </div>
         ) : (
-          <DashboardTabs matches={matches} newMatchIds={newMatchIds} />
+          <DashboardTabs
+            matches={matches}
+            ownedMatches={ownedMatches}
+            newMatchIds={newMatchIds}
+          />
         )}
       </div>
     </>

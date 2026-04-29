@@ -34,6 +34,11 @@ export interface MatchCardData {
   headline: string | null
   tags: string[]
   createdAt: string
+  /** Producer-owned (own-script) marker. When set, the card links to
+   *  /report/[ownedEvalId] instead of /partner/script/[matchId], hides
+   *  the Interested / Pass action row, and shows a "Yours · private"
+   *  pill in its place. Anuj 2026-04-30. */
+  ownedEvalId?: string
   /** Underlying script_submissions.id — used by the partner-side aggregate
    *  stats fetch to key into the per-script counts. Optional only for
    *  back-compat with any caller that hasn't been updated. */
@@ -67,7 +72,11 @@ export function MatchCard({
         <ScoreBadge score={data.score} />
         <div className="min-w-0 flex-1">
           <Link
-            href={`/partner/script/${data.matchId}`}
+            href={
+              data.ownedEvalId
+                ? `/report/${data.ownedEvalId}`
+                : `/partner/script/${data.matchId}`
+            }
             className="block group"
           >
             <h3 className="text-[18px] sm:text-[19px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 group-hover:text-[var(--gem-accent)] transition-colors">
@@ -87,9 +96,9 @@ export function MatchCard({
             </div>
           )}
           {/* Industry-wide engagement stats — read-only on producer side.
-              Lets a producer see at a glance whether others have already
-              engaged with this script (social signal). */}
-          {data.stats && (
+              Hidden on owned (private) cards since those have no industry
+              audience to count. */}
+          {data.stats && !data.ownedEvalId && (
             <div className="mt-2.5">
               <StatsStrip
                 views={data.stats.views}
@@ -105,8 +114,39 @@ export function MatchCard({
         className="mt-4 pt-3"
         style={{ borderTop: '1px solid var(--gem-gray-700)' }}
       >
-        <MatchActions matchId={data.matchId} status={data.status} variant="card" />
+        {data.ownedEvalId ? (
+          <OwnedActions evalId={data.ownedEvalId} />
+        ) : (
+          <MatchActions matchId={data.matchId} status={data.status} variant="card" />
+        )}
       </div>
+    </div>
+  )
+}
+
+function OwnedActions({ evalId }: { evalId: string }) {
+  // Producer's private script — no Interested/Pass affordance; just a
+  // "Yours · private" pill on the left and an "Open report →" link on
+  // the right. Anuj 2026-04-30.
+  return (
+    <div className="flex items-center justify-between gap-2 flex-wrap">
+      <span
+        className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] font-bold px-2 py-1 rounded-full"
+        style={{
+          background: 'rgba(124,58,237,0.08)',
+          color: 'var(--gem-accent)',
+          border: '1px solid rgba(124,58,237,0.25)',
+        }}
+      >
+        Yours · private
+      </span>
+      <Link
+        href={`/report/${evalId}`}
+        className="text-[13px] font-semibold transition-colors"
+        style={{ color: 'var(--gem-accent)' }}
+      >
+        Open report →
+      </Link>
     </div>
   )
 }

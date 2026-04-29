@@ -249,12 +249,19 @@ export async function createMatchesForSubmission(
   // writers get a sharable URL but their posts don't propagate to
   // producer feeds. Skip match creation entirely if the writer isn't
   // on an active subscription.
+  // Anuj 2026-04-30: producer accounts can submit their own private
+  // scripts via /partner/submit; those are ALWAYS private and never
+  // propagate. Belt-and-suspenders here in case a future bug ever
+  // flipped is_public on a producer-owned row.
   if (submission.user_id) {
     const { data: writerProfile } = await supabase
       .from("profiles")
-      .select("subscription_status")
+      .select("subscription_status, account_type")
       .eq("id", submission.user_id)
-      .single<{ subscription_status: string | null }>()
+      .single<{ subscription_status: string | null; account_type: string | null }>()
+    if (writerProfile?.account_type === 'producer') {
+      return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
+    }
     if (writerProfile?.subscription_status !== "active") {
       return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
     }

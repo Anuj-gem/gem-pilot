@@ -40,8 +40,16 @@ export interface DashboardMatchData extends MatchCardData {
     genres: string[]
     scriptTags: string[]
   }
+  /** Set on producer-owned (own-script) cards. Drives "open report" link
+   *  + the owned-card render path which suppresses Interested/Pass.
+   *  Undefined for normal GEM-script match rows. Anuj 2026-04-30. */
+  ownedEvalId?: string
 }
 
+// Tab keys: 'inbox' renders as "Discover" (lane-matched feed), 'slate'
+// renders as "In development" (interested + commented matches PLUS the
+// producer's own privately-submitted scripts), 'passed' is unchanged.
+// Anuj 2026-04-30.
 type TabKey = 'inbox' | 'slate' | 'passed'
 type SortKey = 'score' | 'recent' | 'views'
 
@@ -81,10 +89,14 @@ const BUDGET_LABELS: Record<string, string> = {
 
 interface Props {
   matches: DashboardMatchData[]
+  /** Producer's own privately-submitted scripts. Rendered on the In
+   *  development tab alongside interested matches. Empty array when the
+   *  producer hasn't submitted any. */
+  ownedMatches?: DashboardMatchData[]
   newMatchIds: string[]
 }
 
-export function DashboardTabs({ matches, newMatchIds }: Props) {
+export function DashboardTabs({ matches, ownedMatches = [], newMatchIds }: Props) {
   const [tab, setTab] = useState<TabKey>('inbox')
   const [sort, setSort] = useState<SortKey>('score')
   const [filter, setFilter] = useState<FilterState>(() => ({ ...EMPTY_FILTER }))
@@ -119,9 +131,14 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
     filter.scriptTags.size > 0
 
   // Tab buckets — stable so the count badges don't flicker mid-navigation.
+  // Inbox = lane-matched scripts the producer hasn't acted on yet.
+  // Slate = interested + commented matches AND the producer's own
+  //         private scripts (mixed; own scripts come first in the list
+  //         so the producer sees their own work before their slate).
+  // Passed = passed or unmatched.
   const { inbox, slate, passed } = useMemo(() => {
     const inbox: DashboardMatchData[] = []
-    const slate: DashboardMatchData[] = []
+    const slateMatches: DashboardMatchData[] = []
     const passed: DashboardMatchData[] = []
     for (const m of matches) {
       if (m.unmatchedAt || m.status === 'passed') {
@@ -131,11 +148,11 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
       if (m.status === 'pending' || m.status === 'opened') {
         inbox.push(m)
       } else if (m.status === 'interested' || m.status === 'commented') {
-        slate.push(m)
+        slateMatches.push(m)
       }
     }
-    return { inbox, slate, passed }
-  }, [matches])
+    return { inbox, slate: [...ownedMatches, ...slateMatches], passed }
+  }, [matches, ownedMatches])
 
   const active = tab === 'inbox' ? inbox : tab === 'slate' ? slate : passed
 
@@ -149,9 +166,11 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
   )
 
   // Apply filters before sort. Empty axis = no constraint on that axis.
-  // Within an axis multi-select is OR. Across axes is AND.
+  // Within an axis multi-select is OR. Across axes is AND. Filters only
+  // run on the Discover (inbox) tab — In development and Passed always
+  // show every item regardless of any chips left active.
   const filtered = useMemo(() => {
-    if (!hasActiveFilters) return active
+    if (tab !== 'inbox' || !hasActiveFilters) return active
     return active.filter((m) => {
       const ax = m.filterAxes
       if (filter.format.size > 0 && !(ax?.format && filter.format.has(ax.format))) return false
@@ -185,7 +204,7 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
       }
       return true
     })
-  }, [active, filter, hasActiveFilters])
+  }, [active, filter, hasActiveFilters, tab])
 
   // Sort by the user-selected key. Score uses the always-raw sortScore so
   // writers who hide their number from view still rank correctly. Recent
@@ -227,13 +246,13 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
         <TabLink
           active={tab === 'inbox'}
           onClick={() => setTab('inbox')}
-          label="New"
+          label="Discover"
           count={inbox.length}
         />
         <TabLink
           active={tab === 'slate'}
           onClick={() => setTab('slate')}
-          label="Slate"
+          label="In development"
           count={slate.length}
         />
         <TabLink
@@ -267,17 +286,25 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
         </div>
       </div>
 
-      {/* Filter bar — multi-select chips per axis. Anuj 2026-04-30:
-          producer-side narrowing without leaving the page. Default state
-          (no chips active) shows everything; clicking a chip toggles it
-          on. Clear all wipes the whole bar. */}
-      <FilterBar
-        options={filterOptions}
-        filter={filter}
-        onToggle={toggleFilter}
-        onClear={clearAllFilters}
-        active={hasActiveFilters}
-      />
+      {/* Filter bar — only on Discover. The In development tab is the
+          producer's own slate + private scripts, so genre/budget filters
+          would mostly produce empty states there; they belong on the
+          curated feed. Anuj 2026-04-30. */}
+      {tab === 'inbox' && (
+        <FilterBar
+          options={filterOptions}
+          filter={filter}
+          onToggle={toggleFilter}
+          onClear={clearAllFilters}
+          active={hasActiveFilters}
+        />
+      )}
+
+      {/* In development top-of-list "Submit your script" CTA. Always
+          visible on this tab — even when the slate already has items —
+          because the producer should always know they CAN add their own
+          private read. */}
+      {tab === 'slate' && <SubmitYourScriptCTA />}
 
       {active.length === 0 ? (
         <EmptyState tab={tab} />
@@ -588,6 +615,46 @@ function FilterChip({
   )
 }
 
+function SubmitYourScriptCTA() {
+  return (
+    <a
+      href="/partner/submit"
+      className="block rounded-xl px-5 py-4 mb-3 transition-colors"
+      style={{
+        background: 'rgba(124,58,237,0.06)',
+        border: '1px dashed rgba(124,58,237,0.30)',
+      }}
+    >
+      <div className="flex items-center gap-3">
+        <span
+          className="w-9 h-9 rounded-full grid place-items-center shrink-0 text-[18px] font-bold"
+          style={{
+            background: 'var(--gem-accent)',
+            color: '#fff',
+          }}
+        >
+          +
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[14.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+            Submit your own script
+          </p>
+          <p className="text-[12.5px] text-[var(--gem-gray-300)] m-0 mt-0.5 leading-snug">
+            Always private to you. Submit as many as you want — every script
+            you add helps tune your matched feed.
+          </p>
+        </div>
+        <span
+          className="text-[var(--gem-accent)] text-[18px] font-bold shrink-0"
+          aria-hidden
+        >
+          →
+        </span>
+      </div>
+    </a>
+  )
+}
+
 function FilteredEmptyState({ onClear }: { onClear: () => void }) {
   return (
     <div
@@ -622,11 +689,12 @@ function EmptyState({ tab }: { tab: TabKey }) {
   let title = 'Nothing here yet.'
   let body = ''
   if (tab === 'inbox') {
-    title = 'Inbox is clear.'
-    body = 'New matches in your lane will land here.'
+    title = 'Discover feed is clear.'
+    body = 'New scripts in your lane will land here.'
   } else if (tab === 'slate') {
-    title = 'Your slate is empty.'
-    body = 'Mark a match Interested in your inbox to start your slate.'
+    title = 'Nothing in development yet.'
+    body =
+      'Mark a Discover script Interested or submit one of your own — both land here.'
   } else {
     title = 'Nothing passed yet.'
     body = 'Anything you pass on or unmatch ends up here.'
