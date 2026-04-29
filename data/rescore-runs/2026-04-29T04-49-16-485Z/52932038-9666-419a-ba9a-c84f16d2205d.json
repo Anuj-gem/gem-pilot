@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:05:49.437Z",
+  "submission_id": "52932038-9666-419a-ba9a-c84f16d2205d",
+  "eval_id": "850ec3db-4787-4f2c-b4eb-a380dcaaf75f",
+  "title": "Rigid",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Preston Rigid",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, British, ex-special forces, physically elite, emotionally guarded, estranged family man."
+    },
+    {
+      "name": "Titus McCallister",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, white, mayor, patriarch, criminal power broker."
+    },
+    {
+      "name": "Sheriff Right",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, muscular, law enforcement, physically imposing."
+    },
+    {
+      "name": "Flag Rigid",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s-70s, white, working-class father, physically impaired, coastal labor background."
+    },
+    {
+      "name": "Maggie Rigid",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, white, sister, mother, local resident."
+    },
+    {
+      "name": "Billy Rigid",
+      "role_type": "Supporting",
+      "demographics": "Male, pre-teen/early teen, white, skateboarder, nephew/son figure."
+    },
+    {
+      "name": "Becca Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, local office worker, romantic interest, working-class."
+    },
+    {
+      "name": "Larry McCallister",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, white, privileged, aggressive, physically fit."
+    },
+    {
+      "name": "Beau McCallister",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, mixed-race, athletic, enforcer sibling."
+    },
+    {
+      "name": "Carl McCallister",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, mixed-race, older brother, athletic, strategic."
+    },
+    {
+      "name": "Paige",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, FBI informant, office worker, offscreen-heavy role."
+    },
+    {
+      "name": "Dawn",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, ex-wife, offscreen/deceased in present timeline."
+    }
+  ],
+  "positioning_hook": "A British ex-commando returns to his coastal hometown, uncovers a mayor’s oyster-smuggling empire, and turns a family reunion into a one-man war.",
+  "cost_usd": 0.050048999999999996,
+  "input_tokens": 35952,
+  "output_tokens": 5130,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:01:08.448Z",
+  "submission_id": "3f7ddb55-7c4e-48a4-b1d6-6a30f9c9d26d",
+  "eval_id": "5df125ff-c01e-4fa0-8f92-43be0e256014",
+  "title": "Script - The Last Call",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, white, New Jersey lawyer, brother and son in a working-class family context."
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s-70s, white, mother."
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens through 30s across flashbacks and memory, white, brother, teacher."
+    },
+    {
+      "name": "Marty",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white, friend and legal ally."
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, former romantic partner."
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, former partner of Marc, medical-adjacent background implied."
+    },
+    {
+      "name": "Dr. Myers",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, medical professional."
+    },
+    {
+      "name": "Dr. Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-40s to 50s, medical professional."
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, defense attorney."
+    },
+    {
+      "name": "Dr. Levy",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s-60s, expert witness."
+    },
+    {
+      "name": "Dr. Reynolds",
+      "role_type": "Supporting",
+      "demographics": "Male or female, 40s-60s, coroner."
+    },
+    {
+      "name": "Amy",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, artist and spouse/ex-spouse figure."
+    }
+  ],
+  "positioning_hook": "A grief-stricken lawyer sues the hospital that discharged his suicidal brother, only to discover the real case is against the silence, guilt, and missed calls that defined their family.",
+  "cost_usd": 0.0490245,
+  "input_tokens": 32684,
+  "output_tokens": 5447,
+  "status": "wrote:leads_ok"
+}

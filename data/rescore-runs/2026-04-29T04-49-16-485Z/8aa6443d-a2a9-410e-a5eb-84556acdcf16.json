@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:04:07.907Z",
+  "submission_id": "8aa6443d-a2a9-410e-a5eb-84556acdcf16",
+  "eval_id": "0ab5bde2-7191-4520-962b-879c73c2cbb9",
+  "title": "n/a",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Champ Granger",
+      "role_type": "Lead",
+      "demographics": "White male, late 40s to early 50s, married father, middle-class professional, Flagstaff resident."
+    },
+    {
+      "name": "Gene Alterno",
+      "role_type": "Supporting",
+      "demographics": "White male, 40s to 50s, physically imposing but adaptable, performer-to-suburban-father range."
+    },
+    {
+      "name": "Cheyenne Granger",
+      "role_type": "Supporting",
+      "demographics": "White female, 40s, wife, mother, artistically inclined, Flagstaff housewife with a latent creative life."
+    },
+    {
+      "name": "Gerry Granger",
+      "role_type": "Supporting",
+      "demographics": "Male child, about 12, insecure, observant, emotionally guarded."
+    },
+    {
+      "name": "Becky Granger",
+      "role_type": "Supporting",
+      "demographics": "Female teen, about 17, independent, sharp, socially aware."
+    },
+    {
+      "name": "Trish",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, assistant, industry-savvy, fast-talking."
+    },
+    {
+      "name": "Mikey",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s to 40s, director, creative professional, self-assured but not fully in control."
+    },
+    {
+      "name": "Dan Huntington",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, office rival, polished, socially successful."
+    },
+    {
+      "name": "Todd",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, boss, older professional authority figure."
+    },
+    {
+      "name": "Sandy",
+      "role_type": "Supporting",
+      "demographics": "Ambiguous gender presentation, teen to older adult, arthouse theater attendant."
+    }
+  ],
+  "positioning_hook": "A frustrated Flagstaff accountant makes a wish for a second life, then discovers the man who took it is living his family, his career, and his worst impulses.",
+  "cost_usd": 0.055248000000000005,
+  "input_tokens": 42758,
+  "output_tokens": 5151,
+  "status": "wrote:leads_ok"
+}

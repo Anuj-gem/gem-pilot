@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:00:42.178Z",
+  "submission_id": "3574d824-9619-4f3d-9710-2b5f9d4b6010",
+  "eval_id": "737ef4a5-bf2e-4402-a248-a9f3d0dfbe56",
+  "title": "Bounty Across the Cosmos Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Daryl Hattens",
+      "role_type": "Lead",
+      "demographics": "African-American/Navajo male, 16"
+    },
+    {
+      "name": "Kitara Provence",
+      "role_type": "Supporting",
+      "demographics": "female, 14, alien-presenting, teen"
+    },
+    {
+      "name": "Solace Provence",
+      "role_type": "Supporting",
+      "demographics": "female, early 20s, alien-presenting"
+    },
+    {
+      "name": "Madame N'Vati Provence",
+      "role_type": "Supporting",
+      "demographics": "female, older, alien matriarch"
+    },
+    {
+      "name": "Abudallah Gonallah",
+      "role_type": "Supporting",
+      "demographics": "female, age unknown, alien queen"
+    },
+    {
+      "name": "Topher Gace",
+      "role_type": "Supporting",
+      "demographics": "male, 40s, small-statured alien strategist"
+    },
+    {
+      "name": "Lyoar Growleth",
+      "role_type": "Supporting",
+      "demographics": "male, 30s, muscular lion-like alien general"
+    },
+    {
+      "name": "Damon Hattens",
+      "role_type": "Supporting",
+      "demographics": "African-American male, 30s, doctor"
+    },
+    {
+      "name": "Astha Provence",
+      "role_type": "Supporting",
+      "demographics": "female, early 20s, alien-presenting"
+    },
+    {
+      "name": "General Growleth",
+      "role_type": "Supporting",
+      "demographics": "male, 30s, military commander"
+    }
+  ],
+  "positioning_hook": "A restless Georgia teen gets stranded with a bounty-hunting alien girl while a telekinetic war queen closes in on Earth, turning a coming-of-age road trip into a cosmic conquest.",
+  "cost_usd": 0.03935325,
+  "input_tokens": 23077,
+  "output_tokens": 4899,
+  "status": "wrote:leads_ok"
+}

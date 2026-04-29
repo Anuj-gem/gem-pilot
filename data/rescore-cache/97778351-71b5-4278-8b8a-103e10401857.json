@@ -1,0 +1,361 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "surreal",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "identity",
+        "grief",
+        "loneliness",
+        "mall",
+        "brain-aneurysm"
+      ]
+    },
+    "positioning_hook": "A middle-aged woman spends a day hunting for her younger boyfriend in a mall, only to be cornered by the people she’s wronged and forced into a reckoning that ends in sudden collapse.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The emotional engine is clear, but the premise is highly specific and inward-facing: a mall-bound, dialogue-heavy reckoning with a fatal ending. That narrows the audience to prestige-drama buyers and actor-driven viewers rather than a broad commercial crowd."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands immediately: Brenda is searching a mall for Tim, and each encounter turns into a mirror on her life. The concept is easy to explain in one breath, though the script’s surreal memory cuts and moral confrontations make the full shape feel more literary than high-concept."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Brenda is vivid, contradictory, and playable, with vanity, shame, and vulnerability all on the page. The supporting figures are memorable in the moment, but most function as thematic stations rather than deeply durable characters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The mall-as-purgatory structure, the escalating encounters, and the final aneurysm give the script a distinct formal identity. It’s bold in concept and execution, though the emotional and thematic territory is closer to allegorical drama than wholly fresh narrative terrain."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The search gives the script forward motion, and each new encounter adds pressure or revelation. Still, the middle section is episodic by design, with the momentum coming from accumulation more than from a tightening external objective."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A woman hunting for her boyfriend in a mall while being confronted by the human cost of her own self-absorption is a clean, ownable engine. The ending makes the premise feel inevitable in hindsight, even if the path there is more symbolic than plot-driven."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The mall is rendered as a full social ecosystem: security, retail hierarchies, food court etiquette, teen subcultures, and class-coded stores all create texture. The setting generates story at every turn and gives the script a strong, specific container."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusual: part social satire, part spiritual reckoning, part surreal memory drift. The script knows exactly how it wants to feel, even when the shifts between comic humiliation, confession, and metaphysical release are intentionally abrupt."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Brenda’s encounters keep revealing older wounds, class shame, sexual vanity, and moral blindness, so the script suggests more beneath the surface than the plot initially advertises. The final collapse reframes the whole day as a last chance at self-knowledge, which gives the material real aftertaste."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The script has a strong lead-plus-encounter structure, and several pairings pop immediately — Brenda/Tim, Brenda/Nicole, Brenda/Maddy, Brenda/Aldridge. But the relationships are mostly one-scene pressure points rather than a fully interlocking ensemble engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Brenda Scott",
+        "role_type": "Lead",
+        "demographics": "Female, middle-aged, white; professionally ambitious, socially performative, emotionally guarded.",
+        "hook": "A polished, self-regarding businesswoman who enters the mall looking for her younger boyfriend and spends the day getting stripped down by strangers who know exactly who she used to be. Brenda is funny, vain, needy, and wounded in equal measure; the script lets her perform confidence while quietly exposing how fragile that confidence is.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Fargo or Toni Collette in Hereditary — a role that starts as control and vanity, then opens into humiliation, confession, and spiritual reckoning. It gives an actor a full-spectrum descent with comic timing, shame, and a final tragic stillness."
+      },
+      {
+        "name": "Tim Donnely",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s to early 30s, white; attractive, manipulative, economically unstable.",
+        "hook": "Brenda’s younger boyfriend, a swaggering opportunist who takes money, sex, and attention without offering much back. He’s more absence than presence for most of the script, but his contempt in the opening scene defines the emotional wound that drives Brenda’s day.",
+        "why_actor_wants_this": "This is the kind of role that gave James Franco in 127 Hours or Paul Dano in Little Miss Sunshine a chance to be memorable with limited page count — a sharply drawn, morally slippery character who lands hard in a few scenes. It’s a compact part with real bite for a young actor who can play charm and cruelty."
+      },
+      {
+        "name": "Nicole",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged, white; working-class edge, emotionally volatile, socially wounded.",
+        "hook": "Brenda’s accuser and living conscience, a woman who turns out to be carrying the long tail of a high-school betrayal. Nicole is the script’s sharpest antagonist because she’s not abstractly angry — she’s personal, specific, and relentless about making Brenda feel the cost of her own history.",
+        "why_actor_wants_this": "This is the showcase lane of Amy Ryan in Gone Baby Gone or Jodie Comer in The Last Duel — a role built on controlled fury, moral clarity, and the ability to make every entrance feel like a threat. It gives an actor a fierce, scene-stealing confrontation part."
+      },
+      {
+        "name": "Madeline Edwards",
+        "role_type": "Supporting",
+        "demographics": "Female, older adult, Black; former executive, now constrained by legal and professional fallout.",
+        "hook": "A once-powerful business consultant Brenda idolized, now reduced to selling hats after an insider-trading conviction and prison term. Madeline is the script’s clearest example of hard-earned wisdom: she’s funny, worldly, and quietly devastating because she knows exactly what Brenda still hasn’t learned.",
+        "why_actor_wants_this": "This is the kind of role that gave Viola Davis in Fences or Regina King in If Beale Street Could Talk a chance to dominate a scene with authority and lived-in regret. It offers an actor a prestige monologue-and-counterpoint part with real gravitas."
+      },
+      {
+        "name": "Aldridge",
+        "role_type": "Supporting",
+        "demographics": "Male, older adult, white; minister, calm, observant, spiritually grounded.",
+        "hook": "A gentle mall minister who becomes Brenda’s brief confessor and helps her articulate the emotional truth she’s been avoiding. He’s not flashy, but he gives the script a humane, stabilizing voice and a clean spiritual counterweight to the mall’s consumer chaos.",
+        "why_actor_wants_this": "This is the kind of understated, scene-owning role that gave Richard Jenkins in The Visitor or Tom Wilkinson in Michael Clayton a chance to make stillness feel loaded. It’s a quiet prestige part for an actor who can project warmth, authority, and moral patience."
+      },
+      {
+        "name": "Randall Davis",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, white; former athlete, family man, socially confident.",
+        "hook": "A high-school football hero whose family life becomes a painful mirror for Brenda’s own loneliness and social self-mythology. Randall is less a plot mover than a symbol of the life Brenda thought she was supposed to have, and the script uses him to puncture her fantasy of specialness.",
+        "why_actor_wants_this": "This is the kind of role that gave Kyle Chandler in Friday Night Lights or Ben Mendelsohn in Animal Kingdom a chance to play charm with an undercurrent of judgment. It’s a clean supporting part with social authority and a strong ensemble presence."
+      },
+      {
+        "name": "Sarah Davis",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged, white; wife, mother, socially alert.",
+        "hook": "Randall’s wife, who reads Brenda instantly and never fully lets her into the family bubble. Sarah is a sharp, watchful presence whose polite surface carries real territorial intelligence.",
+        "why_actor_wants_this": "This is the kind of role that gave Laura Linney in You Can Count on Me or Amy Ryan in supporting-drama work a chance to play intelligence under restraint. It’s a compact but pointed part for an actor who can weaponize politeness."
+      },
+      {
+        "name": "Luna",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, South Asian; business owner, composed, grateful, self-made.",
+        "hook": "The woman Brenda once helped hire, now thriving as an independent business owner in the mall. Luna functions as a living rebuttal to Brenda’s self-importance: she’s proof that Brenda can do good without owning the outcome.",
+        "why_actor_wants_this": "This is the kind of role that gave Mindy Kaling in The Mindy Project or Priyanka Chopra in supporting prestige work a chance to play competence with warmth. It’s a graceful, scene-lifting part with a satisfying emotional turn."
+      },
+      {
+        "name": "Maddy",
+        "role_type": "Supporting",
+        "demographics": "Female, older adult, white; former executive, retail worker, ex-convict.",
+        "hook": "A hat seller Brenda initially mistakes for a stranger, then realizes is the older, chastened version of the business titan she once admired. Maddy’s value is in the reversal: she’s living proof that power can vanish, and that humility can arrive late but still matter.",
+        "why_actor_wants_this": "This is the kind of role that gave Margo Martindale in Justified or Ann Dowd in The Leftovers a chance to make a small amount of screen time feel enormous. It’s a character-actor gift with authority, irony, and emotional weight."
+      },
+      {
+        "name": "Security Guard",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, unspecified; mall security, procedural, mildly exasperated.",
+        "hook": "The mall’s bureaucratic gatekeeper, alternately helpful and dismissive, who keeps Brenda’s search grounded in institutional reality. He’s a useful pressure valve and a reminder that the mall is a system, not just a backdrop.",
+        "why_actor_wants_this": "This is the kind of part that gives a working character actor a chance to steal scenes with deadpan authority, like John C. Reilly in Magnolia or Shea Whigham in any number of ensemble dramas. It’s a small role with clean comic friction."
+      },
+      {
+        "name": "Young Man",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens to 20s, white or ambiguous; predatory, unstable, physically threatening.",
+        "hook": "A streetwise mall drifter who first asks Brenda for money and later turns into a direct physical threat. He’s the script’s most overt danger spike, shifting the story from emotional reckoning into survival mode.",
+        "why_actor_wants_this": "This is the kind of role that gave Jack O’Connell in Starred Up or Shia LaBeouf in supporting menace parts a chance to be volatile and unforgettable. It’s a brief but high-impact turn with real danger."
+      },
+      {
+        "name": "Agnes",
+        "role_type": "Supporting",
+        "demographics": "Female, older adult, white; kindly stranger, widowed, plainspoken.",
+        "hook": "A brief but important stranger who gives Brenda the bluntest emotional diagnosis in the script. Agnes is the kind of ordinary observer who can puncture denial with one or two lines and leave a bruise.",
+        "why_actor_wants_this": "This is the kind of role that gave June Squibb in Nebraska or Frances Sternhagen in countless character parts a chance to land a scene with plainspoken authority. It’s a small, memorable role built on timing and truth."
+      },
+      {
+        "name": "Betsy Ross",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, unspecified; Brenda’s friend, office peer.",
+        "hook": "One of Brenda’s lunch companions in the flashback, used to establish Brenda’s social and professional world before the day in the mall begins to unravel it. She’s light, functional, and part of the script’s social texture.",
+        "why_actor_wants_this": "This is a quick supporting role for an actor who can make office camaraderie feel lived-in, like a strong recurring guest in a workplace drama. It’s not a showcase part, but it helps build the world."
+      },
+      {
+        "name": "Alisha Smith",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, unspecified; Brenda’s friend, law-firm colleague, savvy and irreverent.",
+        "hook": "The most socially agile of Brenda’s lunch friends, she introduces the script’s work-world banter and under-the-table pragmatism. Alisha helps establish the professional confidence Brenda wants to project.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor pop in a scene the way Regina Hall or Sanaa Lathan can in ensemble work — quick wit, authority, and ease. It’s a sharp supporting beat with personality."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child role in the high-school/family memory material",
+          "Lead requires a performer who can play middle-aged vanity, humiliation, and emotional collapse",
+          "Several supporting roles are age-specific character parts"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior, roughly 90/10",
+        "period_or_contemporary": "Contemporary with flashback material",
+        "notable_requirements": [
+          "Large enclosed mall with multiple distinct retail zones",
+          "Multiplex lobby and ticketing area",
+          "Department store makeover area",
+          "Toy store, restaurant, restroom, and security desk interiors",
+          "Brief high-school football field flashback"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond basic editorial transitions and memory cuts.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical crowd control, escalator movement, and a final medical collapse/aneurysm beat.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "John Cusack is referenced by name in the movie conversation."
+        },
+        {
+          "type": "brand",
+          "detail": "Burger Prince is a named restaurant brand in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "Spencers is named as a mall store."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium-cable feature drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Theatrical specialty release or streaming original feature"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The mall footprint is the main cost driver: multiple distinct retail interiors, a multiplex, crowd movement, and a flashback football field sequence keep this above a simple contained drama."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Brenda has to carry the entire film and play vanity, shame, comic timing, and breakdown in one role; the supporting cast also depends on sharply specific age-coded character actors."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s episodic encounter structure and surreal memory cuts are distinctive, but they also make the emotional throughline highly dependent on execution and performance discipline."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Last Picture Show",
+          "year": 1971,
+          "why_it_comps": "A small-town social reckoning built around humiliation, memory, and the way a public place becomes an emotional map of a life."
+        },
+        {
+          "title": "Magnolia",
+          "year": 1999,
+          "why_it_comps": "The interlocking encounters and confessional pressure-cooker structure echo the way one day can become a moral gauntlet."
+        },
+        {
+          "title": "The Savages",
+          "year": 2007,
+          "why_it_comps": "A character-driven adult drama that finds comedy and pain in a protagonist’s self-justification and late-life reckoning."
+        },
+        {
+          "title": "The Station Agent",
+          "year": 2003,
+          "why_it_comps": "The script’s quiet, observational humanism and emphasis on small encounters carrying emotional weight fit this indie-drama lane."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to actor-driven prestige dramas about regret, self-deception, and late-life reckoning.",
+        "demographics": "35+, skew female but not exclusively; urban/suburban, educated, streaming-leaning, specialty-theatrical friendly.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary mall setting, limited VFX, and mostly interior coverage keep this in the indie range, though the crowd work and multiple retail builds prevent it from feeling micro."
+      },
+      "lane_fit": {
+        "lane": "Prestige indie drama",
+        "types_of_buyers": [
+          "Specialty distributors looking for actor-forward adult drama",
+          "Streaming originals teams building prestige female-led features",
+          "Indie producers seeking contained, performance-driven material",
+          "Festival-minded buyers who like formal or tonal specificity"
+        ],
+        "detail": "This sits naturally in the adult prestige lane: one strong lead role, a highly specific public setting, and a moral-reckoning structure that plays well with critics and actor-driven marketing."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed emotional arc; no clear sequel or spinoff vector beyond the central Brenda story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The mall is a story engine.",
+          "what_it_means": "The setting is not just economical; it gives the film a built-in social maze where every store can produce a different kind of confrontation. That makes the project attractive to buyers who want a contained production without a flat single-room feel.",
+          "evidence": "Brenda moves from the music store to Jungle Cat, the multiplex, the department store, the restroom, and the toy store, with each space triggering a different emotional beat.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Brenda is a real lead role.",
+          "what_it_means": "The part offers a rare combination of vanity, comic defensiveness, sexual insecurity, and late-life shame, which is exactly the kind of material that can attract a serious actress. That gives the package a clear casting hook and awards-adjacent prestige appeal.",
+          "evidence": "Her opening fight with Tim, her humiliation with Nicole, and her final collapse all expose different versions of the same wound.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script turns encounters into revelations.",
+          "what_it_means": "Each new person Brenda meets adds a fresh moral angle, so the film keeps paying off without needing action set pieces or heavy plot machinery. That’s useful commercially because it gives the movie a clear trailer shape: one woman, one day, one reckoning.",
+          "evidence": "Agnes, Randall and Sarah, Luna, Maddy, and Aldridge each shift Brenda’s understanding of herself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending recontextualizes the whole day.",
+          "what_it_means": "The aneurysm ending turns the film from a simple search story into a final-hours reckoning, which gives the material a memorable aftertaste and a strong festival conversation point. Buyers looking for elevated drama with a twist of mortality will understand the appeal immediately.",
+          "evidence": "Brenda’s renewed purpose at the exit is cut short by the final reveal that she dies of a brain aneurism at the mall entrance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting women have bite.",
+          "what_it_means": "Nicole, Maddy, Luna, and Agnes each bring a different social register, which keeps the film from becoming a one-note monologue piece. That broadens the acting appeal and gives the project multiple scene-stealing opportunities for recognizable character actors.",
+          "evidence": "Nicole’s accusation, Maddy’s insider-trading confession, Luna’s gratitude, and Agnes’s blunt advice all land as distinct tonal colors.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, actor-forward prestige drama with a highly ownable setting and a lead role that can carry a serious actress’s package. The mall structure keeps production efficient while the encounter-driven design gives the film a clear trailerable premise and festival-friendly emotional payoff."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The ending is built on a medical reveal.",
+          "detail": "The final aneurysm twist reframes the entire day, but it also means the film’s emotional climax arrives through a sudden medical event rather than a dramatized external resolution. That makes the ending memorable, but it also narrows the audience to buyers comfortable with a more literary, fatalistic finish.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle is intentionally episodic.",
+          "detail": "Brenda’s encounters with the clerk, Agnes, Randall and Sarah, Luna, Maddy, and Nicole are effective as moral stations, but they do not build in a conventional escalating plot line. A producer will read that as a strength of form and a commercial limitation at the same time.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Brenda carries nearly all the weight.",
+          "detail": "The film lives or dies on the lead performance because the supporting characters are mostly there to reflect Brenda back to herself. That is a real asset for casting prestige, but it also means the package is highly conditional on finding an actress who can hold comedy, vanity, shame, and collapse in one register.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The mall footprint is wider than it first appears.",
+          "detail": "Although the story feels contained, it requires multiple distinct retail interiors, a multiplex, a department store makeover area, a restroom sequence, and crowd-heavy mall coverage. That keeps it in indie territory, but it is not a bare-bones contained piece.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The brand references need a legal pass.",
+          "detail": "John Cusack is named in dialogue, and Burger Prince and Spencers are both explicitly referenced as brands/retailers. None of that is fatal, but it does mean the clearance conversation is not zero-work.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s biggest commercial friction is that it plays as a character reckoning first and a plot engine second, with a fatal medical ending that will feel bold to some buyers and limiting to others. It’s also more production-specific than a pure contained drama, because the mall world needs enough scale and texture to feel alive."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 64.7,
+  "tier": "Optionable",
+  "inputTokens": 35998,
+  "outputTokens": 5533,
+  "cost": 0.051897,
+  "declaredFormat": "Feature film"
+}

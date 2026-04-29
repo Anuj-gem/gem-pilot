@@ -1,0 +1,332 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "supporting-female",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "grief",
+        "family-dynamics",
+        "law",
+        "baseball",
+        "true-story"
+      ]
+    },
+    "positioning_hook": "A grief-stricken law professor returns to practice to sue the hospital that discharged his suicidal brother, then has to survive the case while his own guilt starts to crack open.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional engine is clear and accessible: a brother’s death, a hospital negligence case, and a man trying to hold himself together long enough to get justice. The audience is real, but this is a prestige adult drama rather than a broad commercial play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands quickly in the opening pages: a former lawyer/professor takes on a hospital after his brother dies by suicide following discharge. The courtroom spine and the personal guilt thread are easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Adam is built as a wounded, stubborn lead with a strong contradiction: he teaches law but has to relearn how to practice it under the pressure of grief and addiction. Marty, Mary, Shannon, and Julia all add texture, though Adam remains the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script’s most distinctive move is pairing a legal procedural spine with intimate family grief and a self-destructive lead. The material is sincere and specific, but the execution stays within familiar prestige-drama language."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The case progression gives the script a clean engine: denial, discovery, deposition, motion practice, and trial. The momentum is strongest in the courtroom and deposition sequences; the domestic and reflective passages slow the drive but deepen the emotional stakes."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script’s hook is immediately legible and emotionally sticky: a brother’s suicide becomes a legal fight against institutional negligence. It feels fresh enough to stand out in the adult-drama lane, even if the form itself is familiar."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The legal world has enough specificity to feel lived in, especially through the deposition tactics, motion practice, and courtroom sparring. Outside the case, the world is more a container for grief than a fully generative ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently earnest, mournful, and procedural, with occasional warmth from the family and boardwalk material. It’s coherent, but not yet singular enough to feel unmistakable from similar prestige dramas."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The script keeps revealing new layers of guilt, family history, and self-destruction, especially through Adam’s drinking, his missed call from Marc, and Mary’s quiet pressure. The material suggests more emotional depth than the surface courtroom plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Adam/Mary, Adam/Marty, Adam/Shannon, and Adam/Julia all generate distinct energy, and the family scenes give the story recurring emotional pressure. It’s still a lead-driven feature, but the supporting relationships are strong enough to keep the drama from feeling solitary."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Adam Lamparello",
+        "role_type": "Lead",
+        "demographics": "Male, 40s, white, law professor and former attorney, New Jersey/Georgia-based, recovering alcoholic tendencies implied.",
+        "hook": "A brilliant but fraying law professor who returns to practice after his younger brother’s suicide, Adam is all control on the outside and self-punishment underneath. He’s the kind of man who can cross-examine a doctor into a corner and then go home to vodka, sleeplessness, and the memory of the one call he didn’t answer.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 or Paul Mescal in Aftersun: a man carrying private ruin behind precision and intelligence. It gives an actor the full range of grief, guilt, courtroom authority, and self-erasure in one role."
+      },
+      {
+        "name": "Mary Lamparello",
+        "role_type": "Supporting",
+        "demographics": "Female, 70s, white, mother.",
+        "hook": "Mary is the emotional ballast of the film: observant, unsentimental, and deeply protective without ever becoming soft or passive. She sees Adam’s collapse before he admits it, and her scenes carry the quiet authority of a parent who has already buried too much.",
+        "why_actor_wants_this": "This is the kind of role that gave Frances McDormand in Nomadland or Ann Dowd in Mass the chance to turn restraint into force. It’s a late-career showcase built on stillness, moral clarity, and devastating subtext."
+      },
+      {
+        "name": "Marty",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-50s, white, attorney, longtime friend.",
+        "hook": "Marty is the scrappy, loyal legal wingman who keeps the case moving and keeps Adam tethered to the world. He’s funny, blunt, and more wounded than he first appears, especially once his own loss surfaces.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Bobby Cannavale did in The Station Agent or what Michael Stuhlbarg often does in prestige drama: bring humor, history, and emotional surprise into a supporting part that keeps deepening."
+      },
+      {
+        "name": "Shannon",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, white, former high-school peer, divorced teacher.",
+        "hook": "Shannon is the unresolved past that keeps re-entering Adam’s present, first as nostalgia and then as a witness to his grief. She’s warm, grounded, and quietly destabilizing because she knows who he was before the case became his identity.",
+        "why_actor_wants_this": "This is the kind of intimate, emotionally loaded supporting role that gave Michelle Williams in Manchester by the Sea or Rebecca Hall in The Night House room to play tenderness without sentimentality. It offers a strong emotional counterweight to the male lead’s collapse."
+      },
+      {
+        "name": "Julia",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, law student or young legal assistant, family connection to suicide loss.",
+        "hook": "Julia enters as a helper and becomes a mirror: another person carrying suicide grief into the legal fight. She gives the case generational contrast and a cleaner, less self-destructive version of Adam’s obsession.",
+        "why_actor_wants_this": "This is the kind of role that gave Auli’i Cravalho in The Power or Kaitlyn Dever in Unbelievable a chance to play intelligence, empathy, and moral urgency without being ornamental."
+      },
+      {
+        "name": "Marc Lamparello",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, white, Adam’s younger brother.",
+        "hook": "Marc is the absent center of the film: vivid in memory, devastating in absence, and defined by warmth, restlessness, and vulnerability. Even though he’s gone early, the script keeps making him feel present through family stories, flashbacks, and the case itself.",
+        "why_actor_wants_this": "This is the kind of memory-role that can land like Lucas Hedges in Manchester by the Sea or Jack Dylan Grazer in It: a performance that has to make the audience feel the loss before the plot even starts."
+      },
+      {
+        "name": "Galloway",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, defense attorney.",
+        "hook": "Galloway is polished, strategic, and quietly contemptuous, the kind of defense lawyer who never raises his voice because he doesn’t need to. He gives the film its institutional resistance and a credible adversarial presence.",
+        "why_actor_wants_this": "This is strong character-actor material in the vein of Michael Shannon in a prestige legal drama or Billy Crudup in Spotlight: controlled, intelligent, and built for verbal sparring."
+      },
+      {
+        "name": "Dr. Myers",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, psychiatrist.",
+        "hook": "Dr. Myers is the face of clinical detachment in the case, calm on the surface and increasingly exposed under questioning. She’s not a cartoon villain; the script lets her sound procedural while revealing the consequences of that distance.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the chance to play authority under pressure, similar to Laura Linney in The Big C or Cherry Jones in Succession: composed, defensive, and slowly cornered."
+      },
+      {
+        "name": "Dr. Andrews",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, psychiatrist.",
+        "hook": "Dr. Andrews is another institutional witness whose certainty erodes under Adam’s questioning. She helps the film dramatize how systems hide behind process until someone forces them to answer for a human life.",
+        "why_actor_wants_this": "This is a clean, high-pressure supporting role in the tradition of Patricia Clarkson in The Station Agent or J. Smith-Cameron in Succession: polished, defensive, and vulnerable in the right hands."
+      },
+      {
+        "name": "Dr. Sandler",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s-60s, psychiatrist.",
+        "hook": "Dr. Sandler is the deposition and trial witness who finally cracks, giving the case its most explicit admission of fault. She’s the script’s clearest pressure-release valve and one of its strongest institutional reversals.",
+        "why_actor_wants_this": "This is the kind of scene-rich supporting role that lets an actor do what Kathryn Hahn did in Transparent or Carrie Coon in The Leftovers: hold composure until the truth breaks through."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Adult lead in 40s with sustained emotional and courtroom range",
+          "Supporting roles skew 40s-70s",
+          "No special physical requirements beyond age-appropriate casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary with flashbacks spanning 1986-2023",
+        "notable_requirements": [
+          "Courthouse interiors",
+          "Law office and home interiors",
+          "Boardwalk and stadium flashbacks",
+          "Hospital/legal document-heavy environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Limited visual work for bridge/stadium/boardwalk transitions and any crowd or memory inserts; no effects-driven set pieces.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical courtroom, bar, and hospital environments; no major stunt package beyond a fall/ER sequence and archival-style flashback staging.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Based on a true story and centered on Adam Lamparello and Marc Lamparello; life-rights and defamation review are required for the real-family depiction."
+        },
+        {
+          "type": "brand",
+          "detail": "Yankees, USC, Ohio State, and named locations like the Verrazzano Bridge and George Washington Bridge are referenced on the page and should be cleared/checked for legal and trademark use."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Rainbow Connection,\" \"Eternal Flame\" by The Bangles, \"He Ain't Heavy, He's My Brother,\" and ABBA's \"Our Last Summer\" are plot- and mood-critical needle drops."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or prestige theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; awards-leaning adult drama with courtroom and true-story appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary, mostly interior, and dialogue-driven, but the flashback boardwalk material, courthouse work, and multiple named songs will keep this above a bare-bones indie footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Adam needs an actor who can carry grief, addiction, legal authority, and courtroom escalation without losing sympathy; Mary, Marty, Shannon, and the doctors all need strong character-actor support to land the ensemble."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script is built on a true-story legal claim and repeatedly leans on exposition-heavy deposition and trial dialogue, so buyer confidence will depend on legal vetting, factual precision, and a clean rights path."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Manchester by the Sea",
+          "year": 2016,
+          "why_it_comps": "A grief-driven adult drama where the emotional wound is the engine, and the lead has to carry private devastation without melodrama."
+        },
+        {
+          "title": "Spotlight",
+          "year": 2015,
+          "why_it_comps": "The institutional-accountability angle, legal investigation texture, and procedural momentum all live in the same prestige lane."
+        },
+        {
+          "title": "A Civil Action",
+          "year": 1998,
+          "why_it_comps": "A lawyer-versus-system story built on moral persistence, document work, and the pressure of proving negligence against a powerful institution."
+        },
+        {
+          "title": "The Judge",
+          "year": 2014,
+          "why_it_comps": "Family grief, legal conflict, and a damaged protagonist trying to function inside a courtroom spine."
+        },
+        {
+          "title": "The Trial of the Chicago 7",
+          "year": 2020,
+          "why_it_comps": "The courtroom sparring, ensemble legal pressure, and speech-driven escalation point to the same adult-prestige audience."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to prestige legal dramas and emotionally bruising true-story films about grief, accountability, and family.",
+        "demographics": "35+, skewing educated, adult female slightly but not exclusively, with strong appeal to viewers who like courtroom dramas and awards-season dramas.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary feature with a modest location count, courtroom interiors, and limited effects, but the true-story cast, flashbacks, and music clearances keep it in the upper indie lane."
+      },
+      "lane_fit": {
+        "lane": "prestige adult legal drama",
+        "types_of_buyers": [
+          "prestige indie financiers",
+          "streamer original-film executives",
+          "awards-focused production companies",
+          "adult-drama specialty distributors",
+          "actor-driven package buyers"
+        ],
+        "detail": "This sits naturally beside adult prestige dramas that combine legal stakes with emotional catharsis. The script is especially attractive to buyers looking for a strong lead role, a true-story hook, and a contained production profile."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature based on a specific family case; no clear sequel or spinoff vector beyond the original true-story frame."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "A clean, emotionally legible hook",
+          "what_it_means": "The premise is easy to sell in one sentence, which helps both buyers and audiences immediately understand the stakes. That makes it viable for streamer browsing, awards positioning, and actor-driven packaging.",
+          "evidence": "The opening smash-cut from the baseball collapse to the courtroom and the repeated framing of the hospital case as a fight for Marc’s memory.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Adam is a real showcase role",
+          "what_it_means": "The lead combines grief, intelligence, addiction, and courtroom authority, which is exactly the kind of part that can reframe an actor’s lane. That makes the project attractive to name talent and to reps looking for a serious performance vehicle.",
+          "evidence": "The deposition and trial sequences, plus the private scenes where Adam drinks, can’t sleep, and admits he missed Marc’s call.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The courtroom spine has momentum",
+          "what_it_means": "The case progression gives the film a built-in escalation path that keeps the audience oriented. That structure helps the movie play as both an emotional drama and a procedural engine.",
+          "evidence": "Motion to dismiss, depositions, settlement pressure, trial testimony, and the final opening statement.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Family scenes deepen the commercial appeal",
+          "what_it_means": "Mary, Marty, Shannon, and Julia each give the film a different emotional register, which broadens the audience beyond pure legal-drama fans. Those relationships also create the kind of ensemble texture that helps word of mouth.",
+          "evidence": "Mary confronting Adam about the drinking, Marty revealing his own loss, Shannon’s bridge confession, and Julia’s parallel suicide grief.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The true-story angle adds credibility",
+          "what_it_means": "The based-on-a-true-story framing gives the film built-in seriousness and a marketing hook without requiring franchise mechanics. That can help with prestige buyers, adult audiences, and awards-minded positioning.",
+          "evidence": "The script’s repeated legal specificity around discharge, medication changes, and the bridge death.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a strong adult prestige package: a lead role with real awards-caliber range, a clear courtroom engine, and a contained production profile that stays inside the indie lane. The true-story hook and family-grief spine make it legible to streamer buyers, specialty financiers, and actor-driven producers looking for a serious, emotionally resonant legal drama."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The script leans hard on exposition.",
+          "detail": "A lot of the case is delivered through deposition dialogue, legal summaries, and repeated explanation of the hospital’s failures. That keeps the facts clear, but it also makes several stretches feel more argued than dramatized, which is the main pressure point for buyer enthusiasm.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The true-story rights path needs clean vetting.",
+          "detail": "The film is explicitly based on a real family case and names the Lamparello family, the hospitals, and the bridges involved. That means life-rights, defamation review, and factual accuracy will be part of the greenlight conversation rather than a postscript.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The named music adds clearance and budget friction.",
+          "detail": "\"Rainbow Connection,\" \"Eternal Flame,\" \"He Ain't Heavy, He's My Brother,\" and ABBA's \"Our Last Summer\" are all used as emotional punctuation. Those songs are not decorative; they’re part of the film’s memory structure, so the clearance and sync spend will matter.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Adam is carrying a lot of narrative weight.",
+          "detail": "The film lives or dies on one lead’s ability to hold grief, legal authority, addiction, and self-loathing in the same performance. That’s a strong showcase, but it narrows the casting conversation to actors who can credibly play both competence and collapse.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The biggest friction is structural: the film is strongest when it’s in the room with Adam, but it often explains the case instead of letting the case play. Add the true-story rights work and the music clearances, and the project becomes a very attractive package that still needs careful legal and casting handling before it can move cleanly."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 65.3,
+  "tier": "Optionable",
+  "inputTokens": 34793,
+  "outputTokens": 4761,
+  "cost": 0.04751925,
+  "declaredFormat": "Feature film"
+}

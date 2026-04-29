@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:05:25.687Z",
+  "submission_id": "f0e14ec6-da79-4a15-b202-6593102afb67",
+  "eval_id": "8cccd978-59ca-410b-8f50-5fb3333a7b1f",
+  "title": "Sound Bites",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Rick Motson",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, hearing-impaired/deaf-identifying office worker and teacher"
+    },
+    {
+      "name": "Able Motson",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, affluent father, hearing-impaired/deaf"
+    },
+    {
+      "name": "Madge Motson",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s-60s, mother, upper-class household"
+    },
+    {
+      "name": "Rosemary Sirkos",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, deaf psychiatrist"
+    },
+    {
+      "name": "Teddy Lavinski",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, deaf friend and activist"
+    },
+    {
+      "name": "Walford",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, CFO, corporate authority figure"
+    },
+    {
+      "name": "Margo Alvarez",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, office secretary, hearing"
+    },
+    {
+      "name": "Joe Harris",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, purchasing manager, working-class office bully"
+    },
+    {
+      "name": "Carl Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, deaf administrative assistant"
+    },
+    {
+      "name": "Ann Greenway",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, institute director"
+    }
+  ],
+  "positioning_hook": "A hearing-impaired office worker who secretly gets a cochlear implant must juggle a deaf school, a demanding father, and two women who each want a different version of him.",
+  "cost_usd": 0.053068500000000005,
+  "input_tokens": 40368,
+  "output_tokens": 5065,
+  "status": "wrote:leads_ok"
+}

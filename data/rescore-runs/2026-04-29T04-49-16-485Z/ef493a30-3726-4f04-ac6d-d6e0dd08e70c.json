@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T05:01:38.293Z",
+  "submission_id": "ef493a30-3726-4f04-ac6d-d6e0dd08e70c",
+  "eval_id": "309c9823-cde1-4cae-8992-d0e20f071671",
+  "title": "All I need is one dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Woman, 18-27, elite basketball player; likely white or unspecified; athlete build; emotionally guarded."
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-40s, church custodian / school worker, father, widower."
+    },
+    {
+      "name": "Beth",
+      "role_type": "Supporting",
+      "demographics": "Woman, 40s-50s, mother, grieving spouse."
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Supporting",
+      "demographics": "Girl, 5-10 initially, later preteen/teen; Ralph's daughter."
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s-30s, Skylar's partner or romantic option, urban/professional, emotionally direct."
+    },
+    {
+      "name": "Coach Winsil",
+      "role_type": "Supporting",
+      "demographics": "Adult, likely 30s-60s, coach, authority figure."
+    },
+    {
+      "name": "Frank",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s-50s, father, deceased by the present-day story."
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Adult male, priest, 40s-70s."
+    },
+    {
+      "name": "Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Adult, basketball professional/scout/coach, likely 30s-50s."
+    },
+    {
+      "name": "Lindsey",
+      "role_type": "Supporting",
+      "demographics": "Adult, basketball professional, likely 30s-50s."
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, church or cemetery office worker, 30s-60s."
+    },
+    {
+      "name": "Coach",
+      "role_type": "Supporting",
+      "demographics": "Adult, school or team coach, 30s-60s."
+    },
+    {
+      "name": "Jack",
+      "role_type": "Supporting",
+      "demographics": "Adult male, family member or relative, 30s-60s."
+    },
+    {
+      "name": "Hill",
+      "role_type": "Supporting",
+      "demographics": "Adult, basketball professional or team staff, 30s-50s."
+    }
+  ],
+  "positioning_hook": "A rising basketball star sidelined by injury returns to her small hometown, where a quiet church custodian and a family still carrying grief force her to choose between the life she built and the one that might actually hold her.",
+  "cost_usd": 0.0382785,
+  "input_tokens": 18728,
+  "output_tokens": 5385,
+  "status": "wrote:leads_ok"
+}

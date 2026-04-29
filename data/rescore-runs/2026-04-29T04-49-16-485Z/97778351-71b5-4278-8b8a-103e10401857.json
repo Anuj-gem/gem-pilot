@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T05:04:50.233Z",
+  "submission_id": "97778351-71b5-4278-8b8a-103e10401857",
+  "eval_id": "3c2a6573-332d-4eaf-8e15-720e6d964380",
+  "title": "Close Out",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Brenda Scott",
+      "role_type": "Lead",
+      "demographics": "Female, middle-aged, white; professionally ambitious, socially performative, emotionally guarded."
+    },
+    {
+      "name": "Tim Donnely",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s to early 30s, white; attractive, manipulative, economically unstable."
+    },
+    {
+      "name": "Nicole",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged, white; working-class edge, emotionally volatile, socially wounded."
+    },
+    {
+      "name": "Madeline Edwards",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, Black; former executive, now constrained by legal and professional fallout."
+    },
+    {
+      "name": "Aldridge",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, white; minister, calm, observant, spiritually grounded."
+    },
+    {
+      "name": "Randall Davis",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, white; former athlete, family man, socially confident."
+    },
+    {
+      "name": "Sarah Davis",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged, white; wife, mother, socially alert."
+    },
+    {
+      "name": "Luna",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, South Asian; business owner, composed, grateful, self-made."
+    },
+    {
+      "name": "Maddy",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, white; former executive, retail worker, ex-convict."
+    },
+    {
+      "name": "Security Guard",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, unspecified; mall security, procedural, mildly exasperated."
+    },
+    {
+      "name": "Young Man",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to 20s, white or ambiguous; predatory, unstable, physically threatening."
+    },
+    {
+      "name": "Agnes",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, white; kindly stranger, widowed, plainspoken."
+    },
+    {
+      "name": "Betsy Ross",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, unspecified; Brenda’s friend, office peer."
+    },
+    {
+      "name": "Alisha Smith",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, unspecified; Brenda’s friend, law-firm colleague, savvy and irreverent."
+    }
+  ],
+  "positioning_hook": "A middle-aged woman spends a day hunting for her younger boyfriend in a mall, only to be cornered by the people she’s wronged and forced into a reckoning that ends in sudden collapse.",
+  "cost_usd": 0.051897,
+  "input_tokens": 35998,
+  "output_tokens": 5533,
+  "status": "wrote:leads_ok"
+}

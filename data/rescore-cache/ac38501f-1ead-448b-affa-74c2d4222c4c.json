@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Mystery",
+        "Crime"
+      ],
+      "tone": "campy",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "prestige",
+        "grief",
+        "identity",
+        "power",
+        "fashion",
+        "vampires"
+      ]
+    },
+    "positioning_hook": "A tabloid reporter chasing a fashion-house scandal uncovers a vampire cult using beauty trends, body horror, and a killer CAD-CAM machine to turn style into a blood-soaked weapon.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is immediate and genre-friendly — fashion, vampires, and a newsroom investigation give it a clean sell. The audience is real, but the script’s aggressively satirical, grotesque register narrows it away from broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast: Coltrane investigates a fashion event, discovers Christina Marquand’s vampiric takeover, and the CAD-CAM machine becomes the mechanism of the conspiracy. The opening massacre, the runway attack, and the A.D. Design reveal make the engine easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Markie Coltrane has a usable underdog angle — insecure, hungry, and stubborn enough to keep digging after getting fired. Christina Marquand is the bigger character on the page, but the supporting cast mostly functions as colorful types rather than deeply durable roles."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s blend of fashion satire, vampire mythology, and industrial body-horror is unusually specific, especially the CAD-CAM dress-making sequence that literally manufactures death. The voice commits hard to grotesque excess, which gives it a distinct lane even when the dialogue is broad."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first half moves with strong escalation — theater attack, newsroom dismissal, corporate infiltration, then the Marquand backstory. The final stretch is propulsive, though the middle spends a fair amount of time on satirical set-pieces and side characters before the endgame locks in."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a fashion empire run by vampires using beauty standards as predation feels fresh and instantly legible. The CAD-CAM machine as both industrial innovation and murder device is the kind of specific invention that makes the premise stick."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "A.D. Design, the newsroom, the talk-show circuit, and the fashion-show ecosystem all feel like parts of one corrupt media machine. The world is story-generating because every institution in it is complicit, though the script keeps the focus on a few emblematic spaces rather than building a fully layered social system."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably lurid, satirical, and gleefully grotesque — from the runway carnage to the bug-eating Hackwell to the final dress-manufacturing kill. It has a strong midnight-movie identity that would be hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real thematic seeds around beauty, control, body shame, and media complicity, especially in Coltrane’s insecurity and Marquand’s seduction of the culture. The script mostly plays those ideas as heightened genre satire rather than opening them into deeper psychological or social complexity."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Coltrane/Truio/Hindley/DuBois gives the movie a workable triangle-plus-villain structure, and the office/fashion ecosystem creates recurring friction. But the script is still driven primarily by Coltrane’s investigation and Marquand’s domination, not by a truly elastic ensemble engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Markie Coltrane",
+        "role_type": "Lead",
+        "demographics": "Woman, 30s, working journalist, insecure but determined, physically ordinary rather than glamorous.",
+        "hook": "A pixieish, slightly plump tabloid reporter who talks herself into danger because she can’t let a story go. She’s funny, self-conscious, and stubbornly observant, with a real underdog charge: the one person in the room who still thinks the truth matters, even when everyone else is selling image.",
+        "why_actor_wants_this": "This is the showcase territory of Parker Posey in Party Girl or Ally Sheedy in High Art — a role that lets an actor play comic awkwardness, vulnerability, and sudden steel in the same frame."
+      },
+      {
+        "name": "Christina Marquand",
+        "role_type": "Supporting",
+        "demographics": "Woman, ageless-presenting, aristocratic/elite, supernatural vampire.",
+        "hook": "The true power center of the script: a former royal wife turned immortal beauty tyrant who weaponizes seduction, status, and body shame. She’s icy, theatrical, and predatory, but the script also gives her a conversion-story origin that makes her feel like a zealot, not just a monster.",
+        "why_actor_wants_this": "This is the kind of role that gave Charlize Theron in Monster or Tilda Swinton in Only Lovers Left Alive a full-spectrum showcase — glamour, menace, control, and a mythic screen presence."
+      },
+      {
+        "name": "Bianca Truio",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s-40s, designer, working-class edge, blunt, sexually frank.",
+        "hook": "A loud, combative designer who looks like she should be part of the machine but keeps revealing she has a conscience and a survival instinct. She’s the script’s best pressure-release valve: funny, abrasive, and increasingly trapped between loyalty and self-preservation.",
+        "why_actor_wants_this": "This is prime Catherine O’Hara in Schitt’s Creek or Jennifer Coolidge in Best in Show territory — a scene-stealing comic role with enough bite to make every entrance count."
+      },
+      {
+        "name": "Austin Hindley",
+        "role_type": "Supporting",
+        "demographics": "Man, 20s-30s, tech/design worker, socially awkward, physically slight.",
+        "hook": "A mousy CAD-CAM technician who starts as a nervous explainer and ends as a quietly sinister insider. He’s the script’s best example of a character whose awkwardness is also camouflage, which makes his turn feel both surprising and inevitable.",
+        "why_actor_wants_this": "This is the kind of role that gave Jesse Eisenberg in The Social Network or Michael Cera in Scott Pilgrim vs. the World a chance to play intelligence, discomfort, and hidden menace at once."
+      },
+      {
+        "name": "Pierre DuBois",
+        "role_type": "Supporting",
+        "demographics": "Man, middle-aged, fashion mogul, flamboyant, elite, supernatural vampire.",
+        "hook": "A camp tyrant who treats fashion like empire and employees like disposable assets. He’s vain, cruel, and absurdly funny, but the script also makes him a predator whose vanity is inseparable from his appetite for control.",
+        "why_actor_wants_this": "This is the kind of larger-than-life villain role that lets an actor do what John Malkovich did in Dangerous Liaisons or Jeremy Irons in The Borgias — elegance, rot, and theatrical authority."
+      },
+      {
+        "name": "Donald Hackwell",
+        "role_type": "Supporting",
+        "demographics": "Man, middle-aged, critic/media personality, pompous, physically deteriorating.",
+        "hook": "A venomous fashion critic whose contempt is so loud it becomes self-parody, then literal bodily decay. He’s a grotesque comic antagonist whose decline is one of the script’s most memorable running bits.",
+        "why_actor_wants_this": "This is the sort of role that gives an actor the same deranged comic runway as John Turturro in Barton Fink or Stephen Root in Office Space — a chance to go big, ugly, and unforgettable."
+      },
+      {
+        "name": "Evelyn Prood",
+        "role_type": "Supporting",
+        "demographics": "Woman, middle-aged, moral crusader, puritanical, public-facing activist.",
+        "hook": "A sanctimonious anti-fashion crusader who thinks she’s fighting corruption and instead becomes another casualty of Marquand’s influence. She’s a sharp satirical counterweight, and her public collapse gives the movie one of its best media-spectacle beats.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Holly Hunter did in Broadcast News or Frances McDormand in Burn After Reading — righteous certainty that curdles into humiliation."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child in the sidewalk reaction beat",
+          "fashion-model body expectations across multiple roles",
+          "vampire transformation makeup on principal cast",
+          "distinct comic character types"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 80/20 interior-heavy",
+        "period_or_contemporary": "contemporary with a 16th-century flashback",
+        "notable_requirements": [
+          "fashion-show runway and backstage",
+          "newsroom and office tower",
+          "industrial design/factory spaces",
+          "castle flashback set or period insert",
+          "hospital room and estate interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Creature transformations, vampire effects, the CAD-CAM manufacturing sequence, and the final dress/body fusion beat require compositing and practical-enhancement work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Heavy practical blood effects, prosthetic wounds, body-horror makeup, and a few impact/fall beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Throbbing Mineral magazine"
+        },
+        {
+          "type": "brand",
+          "detail": "CAD-CAM"
+        },
+        {
+          "type": "brand",
+          "detail": "Vogue"
+        },
+        {
+          "type": "brand",
+          "detail": "Mademoiselle"
+        },
+        {
+          "type": "brand",
+          "detail": "Time"
+        },
+        {
+          "type": "brand",
+          "detail": "Newsweek"
+        },
+        {
+          "type": "brand",
+          "detail": "Reynaldo"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium-cable horror satire",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Original feature release; best positioned as a cult-leaning genre title for streaming, specialty theatrical, or late-night home entertainment."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary interiors keep the base footprint contained, but the vampire makeup, blood effects, runway spectacle, and the CAD-CAM sequence will need disciplined scope control."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Markie Coltrane needs an actor who can sell insecurity, comic timing, and investigative drive, while Christina Marquand needs a commanding villain with real screen magnetism."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The satire is clear, but the script leans heavily on broad character types and heightened set-pieces, so buyer conversations will center on tonal calibration and audience targeting."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Hunger",
+          "year": 1983,
+          "why_it_comps": "Shares the elegant vampire-world sensuality and fashion-forward predation, with beauty and immortality fused into one decadent nightmare."
+        },
+        {
+          "title": "Death Becomes Her",
+          "year": 1992,
+          "why_it_comps": "Matches the campy body-horror satire and the way vanity becomes a literal engine of destruction."
+        },
+        {
+          "title": "Jawbreaker",
+          "year": 1999,
+          "why_it_comps": "Has the same mean-girl social satire energy, heightened style, and obsession with image as a weapon."
+        },
+        {
+          "title": "The Neon Demon",
+          "year": 2016,
+          "why_it_comps": "Comps on fashion-industry predation, stylized horror imagery, and the use of beauty as a cannibalistic system."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre viewers who like stylish horror with a satirical edge and a strong cult-movie identity.",
+        "demographics": "Skews 18-44, slightly female-leaning, with strong appeal to horror fans, fashion-culture viewers, and midnight-movie audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary interiors, a limited number of principal locations, and moderate creature/VFX work keep it in specialty-indie territory."
+      },
+      "lane_fit": {
+        "lane": "cult-leaning elevated horror satire",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer originals execs building horror-comedy lanes",
+          "specialty distributors",
+          "producer-directors with practical-effects taste",
+          "mid-budget indie horror labels"
+        ],
+        "detail": "The script sits naturally in the lane where style, provocation, and a clean high-concept hook matter more than four-quadrant reach. The fashion-world setting and vampire body-horror give it a strong poster image and a clear late-night audience promise."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed ending; Christina Marquand is vivid, but the script does not build a separate spin-off vector beyond this story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Fashion-world vampire satire",
+          "what_it_means": "This gives the project a clean, ownable hook that can be sold in a single sentence and marketed off image alone. Buyers looking for a cult genre title get a premise with immediate poster value and a built-in visual identity.",
+          "evidence": "The A.D. Design takeover, the dead-look runway, and Marquand’s beauty-as-control speeches all fuse fashion and predation into one engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "CAD-CAM as murder machine",
+          "what_it_means": "The machine gives the movie a signature set-piece that turns the climax into something more than standard vampire combat. That kind of specific, story-native spectacle is exactly what helps a low-to-mid budget genre feature feel bigger than its spend.",
+          "evidence": "Coltrane and Hindley activate CAD-CAM, and Marquand is literally woven into the dress-making process.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Markie Coltrane is a usable underdog lead",
+          "what_it_means": "The role offers a clear audience surrogate who can carry exposition, comedy, and escalating fear without needing star glamour. That makes the script more castable and gives the movie a human entry point inside the excess.",
+          "evidence": "Her fired-from-the-job arc, her insecurity about weight and hair, and her refusal to drop the story define her through action.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Midnight-movie tonal identity",
+          "what_it_means": "The script has a strong cult lane because it commits to excess instead of smoothing itself into generic horror. That makes it attractive to buyers who want a title with a loud trailer, a memorable first-look image, and repeat-viewing value.",
+          "evidence": "The runway bloodbath, bug-eating Hackwell, and the final body-horror fashion kill all push the movie into outrageous territory.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "A villain with real screen authority",
+          "what_it_means": "Christina Marquand is the kind of antagonist who can anchor marketing and elevate the entire movie if cast well. Her mix of seduction, aristocratic disdain, and supernatural menace gives the project a premium-feeling centerpiece role.",
+          "evidence": "Her seduction of DuBois, her origin flashback, and her command over the A.D. models all frame her as the power source.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a cult-ready horror satire with a genuinely ownable hook: fashion-industry vampirism powered by a killer industrial set-piece. It has the kind of visual identity, contained production footprint, and villain-forward casting opportunity that can make a specialty buyer lean in fast."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The script leans hard on broad types.",
+          "detail": "Several supporting roles play as vivid caricatures — Hackwell, Prood, Reynaldo, DuBois, Truio — which helps the satire but also limits emotional range. That’s a buyer conversation about whether the movie is being sold as sharp camp or as something with more dramatic depth.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The tone is cult-specific, not broad.",
+          "detail": "The movie’s pleasure comes from grotesque excess, body horror, and fashion satire, which is a strong lane but not a mass-market one. That narrows the audience to viewers who actively want midnight-movie energy rather than mainstream horror polish.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The middle is set-piece driven.",
+          "detail": "The script spends a lot of time on fashion-world vignettes, TV appearances, and corporate weirdness before the final CAD-CAM confrontation locks in. That creates a slight development risk around pacing and whether the central investigation feels like a straight line or a series of satirical detours.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The rights scan is not clean.",
+          "detail": "The page names Throbbing Mineral magazine, CAD-CAM, Vogue, Mademoiselle, Time, Newsweek, and Reynaldo as branded or publication references. Those are not fatal, but they do create a legal pass and clearance conversation that a buyer would flag early.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is tonal and structural, not conceptual: this is a sharp cult premise, but it lives in broad satire and set-piece escalation more than in layered character drama. The other buyer-facing issue is clearance discipline, since the script leans on named publications and branded references throughout the fashion-media ecosystem."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 35773,
+  "outputTokens": 4434,
+  "cost": 0.04678275,
+  "declaredFormat": "Feature film"
+}

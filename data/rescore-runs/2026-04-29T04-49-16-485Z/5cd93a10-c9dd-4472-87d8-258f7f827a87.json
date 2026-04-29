@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:02:41.591Z",
+  "submission_id": "5cd93a10-c9dd-4472-87d8-258f7f827a87",
+  "eval_id": "ce81c9dd-f83e-4283-95ee-5ebb1f19d857",
+  "title": "The Thing",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "MacReady",
+      "role_type": "Lead",
+      "demographics": "Male, mid-30s, helicopter pilot, working-class, white."
+    },
+    {
+      "name": "Blair",
+      "role_type": "Supporting",
+      "demographics": "Male, around 50, senior biologist, white."
+    },
+    {
+      "name": "Childs",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, mechanic, Black."
+    },
+    {
+      "name": "Garry",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-40s, station manager, ex-army officer, white."
+    },
+    {
+      "name": "Copper",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-40s, doctor, white."
+    },
+    {
+      "name": "Palmer",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, second-string pilot and mechanic, white."
+    },
+    {
+      "name": "Nauls",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, cook, Black."
+    },
+    {
+      "name": "Fuchs",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, assistant biologist, white."
+    },
+    {
+      "name": "Norris",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-40s, geophysicist, stocky, white, heart condition."
+    },
+    {
+      "name": "Clark",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, dog handler, white."
+    },
+    {
+      "name": "Sanchez",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, radio operator, white or unspecified."
+    }
+  ],
+  "positioning_hook": "A stranded Antarctic crew discovers an alien that can perfectly imitate any living thing, forcing a hard-bitten helicopter pilot to decide who to trust before the camp turns on itself.",
+  "cost_usd": 0.06174675,
+  "input_tokens": 53109,
+  "output_tokens": 4870,
+  "status": "wrote:leads_ok"
+}

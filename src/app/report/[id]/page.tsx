@@ -55,7 +55,6 @@ import { IndustryActivityButton } from '@/components/dashboard/industry-activity
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
-import { bridgeRiskDetails, bridgePackaging } from '@/lib/legacy-bridge'
 // Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
 // industry partner views this report. The surface is the same as the
 // retired /partner/script/[matchId] page; that route now redirects here.
@@ -91,11 +90,6 @@ interface V5Extras {
     hook: string
     why_actor_wants_this: string
   }[]
-  considerations?: { area: string; detail: string; source?: string; is_primary_lever?: boolean }[]
-  package_angles?: {
-    director_appeal: { hook: string; fit_profile?: string; detail: string }
-    buyer_appeal: { tier: string; lane: string; detail: string }
-  }
   craft_note?: string
 }
 
@@ -373,16 +367,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const allStrengths = whatsSpecial.strengths ?? []
   const leadCharacters = report.lead_characters ?? []
-  const considerations = report.considerations ?? []
   const production = report.production_reality
   const scores = report.scores ?? {}
   const craftNote = report.craft_note ?? null
-  // v5.4 (Selznick interim) fields. Evals scored on the legacy
-  // `evaluation-prompt.ts` (incl. the Selznick 3.8 rescore batch) only
-  // emit `package_angles` + `production_reality.risk_rubric`. The bridge
-  // derives the modern shape so every eval renders the same UI.
-  const riskDetails = bridgeRiskDetails(report)
-  const packaging = bridgePackaging(report)
+  // Selznick 3.8 fields — every eval has these directly. The legacy
+  // bridge (and the legacy `considerations` / `package_angles` /
+  // `risk_rubric` reads) was retired 2026-04-29 after the rescore moved
+  // every row onto the modern shape.
+  const riskDetails = report.risk_details ?? null
+  const packaging = report.packaging ?? null
   const issues = report.issues
 
   let commercialScore: number | null = null
@@ -797,30 +790,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             on unpublished reports. */}
         {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
           (() => {
-            // Issues source. v5.4 evals emit `issues.items` (newer shape).
-            // Older evals emit `considerations` (legacy shape). Same data
-            // shape — area + detail + is_primary_lever — so merge them so
-            // the writer always sees something on this section regardless
-            // of which prompt version produced their report.
+            // Selznick 3.8: every eval emits `issues.items` directly.
+            // Legacy `considerations` reads removed 2026-04-29.
             type IssueRow = {
               area: string
               detail: string
               is_primary_lever?: boolean
             }
-            const fromIssues: IssueRow[] = (issues?.items ?? []).map((i) => ({
+            const merged: IssueRow[] = (issues?.items ?? []).map((i) => ({
               area: i.area,
               detail: i.detail,
               is_primary_lever: i.is_primary_lever,
             }))
-            const fromConsiderations: IssueRow[] = considerations.map((c) => ({
-              area: c.area,
-              detail: c.detail,
-              is_primary_lever: c.is_primary_lever,
-            }))
-            const merged: IssueRow[] =
-              fromConsiderations.length > 0 ? fromConsiderations : fromIssues
-            // Section-level lede ("the GEM read on what's wrong"). v5.4
-            // emits this as `issues.headline`; older evals don't have one.
             const issuesHeadline =
               typeof issues?.headline === 'string' &&
               issues.headline.trim().length > 0

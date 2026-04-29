@@ -1,0 +1,318 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_secondary": [
+        "Crime",
+        "Sci-Fi"
+      ],
+      "tone": "raunchy",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "crime",
+        "addiction",
+        "drug-culture",
+        "new-york"
+      ]
+    },
+    "positioning_hook": "A party-hungry college kid loses his ability to get high after tasting a miracle jungle sap, then gets dragged into his gangster brother’s plan to weaponize sobriety.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The premise is instantly legible as a broad, outrageous comedy engine, and the drug-culture angle gives it a clear hook. But the extremely crude language, dated sensibility, and niche tonal register narrow the buyer pool beyond the concept’s surface accessibility."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly: Bud tastes the root sap, discovers he can’t get high, and the story pivots into a criminal business opportunity. The script keeps restating the central engine through Percy’s experiments and the street-level escalation, so the premise is never in doubt."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Bud, Percy, Will, and Laticia all have distinct comic functions, and Percy in particular has a strong, scene-stealing presence. Still, most characters are built as broad types rather than layered contradictions, so they play hard in the moment but don’t suggest much beyond the immediate premise."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The central idea of a de-drug is unusual and commercially memorable, and the script commits to an aggressively absurd crime-comedy lane. The execution, though, leans heavily on shock humor, profanity, and broad caricature rather than a fresher formal or emotional angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving from jungle discovery to street-level exploitation to gang war to federal attention, so the escalation is clear. The middle section repeats variations on the same gag—people test the sap, react, and escalate—so the momentum is solid but not especially dynamic."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script has a genuinely ownable core: a miracle substance that cures addiction becomes a criminal commodity, then a political problem. That idea is fresh enough to stick, even if the surrounding execution often feels like a broad 90s-era urban farce."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The pimp/bar ecosystem has enough internal hierarchy, slang, and power dynamics to feel story-generating, and the jungle prologue adds a second texture. But the world is mostly a comic container for the premise rather than a deeply layered social system."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "This has a very specific raunch-comedy voice: loud, profane, swaggering, and intentionally outrageous. The tonal identity is unmistakable, even if it’s also highly dated and dependent on a very particular comic taste."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "The script is mostly surface-forward: the joke, the hustle, the reversal, the payoff. There are hints of a larger satire about addiction, commerce, and institutional control, but the page stays committed to the gag rather than opening that depth."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Bud/Percy is the core engine, and the supporting players around the bar create enough friction for scenes to keep generating. The ensemble works as a comic pressure cooker, but most relationships are functional rather than richly evolving."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Bud",
+        "role_type": "Lead",
+        "demographics": "Black male, college-age to early 20s, urban, party-oriented, sexually active, substance-using.",
+        "hook": "Bud is the audience surrogate and the story’s comic conscience-by-accident: a swaggering, foul-mouthed college kid who thinks his life is built around getting loaded, only to discover he’s been cured against his will. He’s funny because he’s vain, defensive, and deeply dependent on intoxication as identity; once that’s taken away, his panic becomes the engine of the movie.",
+        "why_actor_wants_this": "This is the showcase territory of Chris Tucker in Friday — fast-talking panic, physical comedy, and a lead role built around escalating reactions. It gives an actor a constant stream of comic reversals while still anchoring the audience’s point of entry."
+      },
+      {
+        "name": "Percy Kelly",
+        "role_type": "Supporting",
+        "demographics": "Black male, 30s-40s, gangster, street-smart, flamboyant, authoritative.",
+        "hook": "Percy is Bud’s older brother and the movie’s true scene engine: a stylish, ruthless pimp-gangster who immediately recognizes the D-drug as a market opportunity. He’s funny because he’s both absurdly theatrical and genuinely dangerous, which lets him pivot from comic menace to outright threat without losing momentum.",
+        "why_actor_wants_this": "This is the showcase territory of Samuel L. Jackson in Pulp Fiction — a magnetic, quotable alpha with danger in every line. The role gives an actor swagger, comic authority, and the chance to dominate every room he enters."
+      },
+      {
+        "name": "Will Jackson",
+        "role_type": "Supporting",
+        "demographics": "Black male, early 20s, chemistry student, chain-smoking, educated, street-adjacent.",
+        "hook": "Will is the pseudo-scientist who turns the miracle sap into a business proposition and a pseudo-mission. He’s the straightest of the comic trio, but the script gives him a nice contradiction: he talks like a hustler while insisting he’s acting in the interest of science.",
+        "why_actor_wants_this": "This is the showcase territory of Ice Cube in Friday — deadpan authority inside a comic world, with enough intelligence to make the absurdity feel grounded. It gives an actor a smart-ass counterweight role that still gets to drive plot."
+      },
+      {
+        "name": "Laticia",
+        "role_type": "Supporting",
+        "demographics": "Black female, 20s, sex worker, streetwise, physically worn down at first, later transformed.",
+        "hook": "Laticia starts as a junkie prostitute and becomes the clearest proof of the D-drug’s effect when she emerges refreshed, sharper, and suddenly self-possessed. She’s the script’s most visible transformation role, and she also becomes Bud’s romantic counterweight once the story shifts from experiment to attraction.",
+        "why_actor_wants_this": "This is the showcase territory of Regina King in a sharp supporting turn — a role that lets an actor play degradation, surprise, and reinvention in one arc. The transformation gives real before-and-after contrast, which is catnip for a performer."
+      },
+      {
+        "name": "Twit",
+        "role_type": "Supporting",
+        "demographics": "White male, 20s-30s, British, pharmacist, educated, dryly observant.",
+        "hook": "Twit is Percy’s British pharmacist and the script’s most overtly comic outsider voice inside the criminal machine. He functions as the pseudo-intellectual who can translate the miracle sap into business logic, which makes him useful, slippery, and slightly ridiculous.",
+        "why_actor_wants_this": "This is the showcase territory of Stephen Fry-style dry comic support — the outsider who punctures the room with precision. It gives an actor a chance to play verbal sophistication inside a very broad ensemble."
+      },
+      {
+        "name": "Fat Jack",
+        "role_type": "Supporting",
+        "demographics": "Black male, 30s-40s, heavyset bodyguard, appetite-driven, loyal.",
+        "hook": "Fat Jack is Percy’s hungry enforcer, a physical comic presence whose appetite becomes a running gag once the D-drug starts changing behavior. He’s not subtle, but he’s useful: the script keeps using him to show how the drug rewires even the most basic impulses.",
+        "why_actor_wants_this": "This is the showcase territory of John Goodman in a broad ensemble comedy — a big, physical character who can land laughs through presence alone. It’s a role with strong physical business and easy scene ownership."
+      },
+      {
+        "name": "B.K.",
+        "role_type": "Supporting",
+        "demographics": "Black male, 20s-30s, bodyguard, bulky, dim, loyal.",
+        "hook": "B.K. is Percy’s other enforcer, a blunt instrument who becomes one of the clearest examples of the D-drug’s behavioral shift when he stops wanting food. He’s mostly a reaction machine, but the script gives him enough oddity to stay memorable.",
+        "why_actor_wants_this": "This is the showcase territory of a classic broad-supporting comic heavy — the kind of role that lets an actor play physicality and deadpan confusion. It’s a good fit for someone who can steal scenes with minimal dialogue."
+      },
+      {
+        "name": "Ted Mack",
+        "role_type": "Supporting",
+        "demographics": "Black male, 30s-40s, rival pimp-gangster, sharp, volatile.",
+        "hook": "Ted Mack is one of Percy’s rivals and the face of the pushback once the D-drug starts threatening the street economy. He’s a useful antagonist because he’s not abstract; he’s another hustler whose business model is directly endangered.",
+        "why_actor_wants_this": "This is the showcase territory of a strong character-actor antagonist — the guy who can make a threat feel funny and dangerous at the same time. It gives an actor a clean, confrontational lane with memorable dialogue."
+      },
+      {
+        "name": "Pimpernickle",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, federal agent, polished, corporate, white-collar.",
+        "hook": "Pimpernickle is the late-arriving federal pressure valve, the clean suit in a dirty story. He reframes the whole hustle as a national-security/pharmaceutical problem, which widens the movie’s scope without changing its comic DNA.",
+        "why_actor_wants_this": "This is the showcase territory of a smooth, controlled authority figure like Tommy Lee Jones in a procedural or conspiracy role — calm menace and institutional power. It gives an actor a sharp tonal contrast to the street-level chaos."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble of adult male street characters",
+          "multiple roles require strong comic timing and profanity comfort",
+          "one prominent female supporting role with transformation arc",
+          "one British supporting role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "jungle/village prologue",
+          "bar/interior club world",
+          "garage/interrogation space",
+          "suburban home exterior",
+          "federal office/interrogation room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical storytelling; limited needs for jungle establishing shots, the burning root ending, and a few stylized montage transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical gunfire, body impacts, burns, and a battering-ram wall collapse in the climax.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "R. Kelly’s 'I Believe I Can Fly' is specifically named and used as a recurring musical cue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is a theatrical comedy with strong home-entertainment and cable afterlife; the material is built around broad adult humor, crime, and drug content."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary interiors, a small number of recurring sets, and only a few specialty moments keep this inside a contained feature footprint. The jungle prologue and climax add some scope, but nothing here suggests a budget breakout."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Bud and Percy need actors who can sell rapid-fire profanity, physical comedy, and escalating menace without flattening the joke. The movie also depends on a strong Laticia and a sharp ensemble of gangsters, which makes chemistry more important than any single star requirement."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s premise is clear, but the dated comic language, repeated gag structure, and broad caricature approach will be the main buyer conversation. The R. Kelly needle-drop also creates a concrete clearance issue that needs to be addressed in packaging."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Friday",
+          "year": 1995,
+          "why_it_comps": "Shares the street-level Black comedy rhythm, profanity-forward banter, and a lead who is dragged into chaos by a drug-related premise."
+        },
+        {
+          "title": "How High",
+          "year": 2001,
+          "why_it_comps": "Matches the stoner-comedy lane where intoxication itself becomes the engine, with broad comic escalation and youth-skewing drug humor."
+        },
+        {
+          "title": "B.A.P.S.",
+          "year": 1997,
+          "why_it_comps": "The heightened, broad, character-first comedy style and the emphasis on outsized personalities over realism sit in the same commercial neighborhood."
+        },
+        {
+          "title": "The Pest",
+          "year": 1997,
+          "why_it_comps": "Shares the manic, hyper-verbal, joke-dense energy of a lead being bounced through absurd set pieces and social worlds."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who buy broad, raunchy, character-driven comedies with crime energy and a heavy nostalgia factor for 90s urban humor.",
+        "demographics": "18-34 skew male, with secondary appeal to 35-49 viewers who respond to Black ensemble comedy and high-concept drug humor.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary, dialogue-driven, and mostly set in bars, apartments, offices, and streets, with one jungle prologue and a modest climax."
+      },
+      "lane_fit": {
+        "lane": "raunchy urban crime comedy",
+        "types_of_buyers": [
+          "indie comedy financiers",
+          "genre-comedy distributors",
+          "streamer development execs looking for adult-skewing Black ensemble material",
+          "producer-financed specialty comedy buyers"
+        ],
+        "detail": "This sits naturally in the lane of broad, adult, profanity-forward crime comedy with a Black ensemble and a high-concept drug premise. The hook is easy to pitch, the sets are manageable, and the comic tone is loud enough to cut through if the cast is right."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. Percy is vivid, but the script does not build a clean sequel or spinoff vector beyond the core premise."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A buyer can understand the movie in one sentence, which lowers development friction and makes marketing easy to frame. That clarity is useful for indie financiers and comedy buyers who need a clean hook before they commit to a read.",
+          "evidence": "Bud tastes the jungle sap, discovers he can’t get high, and immediately turns to Will and Percy to explain the problem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Percy is a breakout supporting role.",
+          "what_it_means": "The script gives the project a scene-stealing antagonist/antihero who can anchor trailers, clips, and word of mouth. That kind of role is attractive to a recognizable character actor who wants swagger, menace, and quotable dialogue.",
+          "evidence": "Percy turns the D-drug into a business proposition, then escalates from experimentation to extortion to armed standoff.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The D-drug is a clean commercial engine.",
+          "what_it_means": "The concept turns addiction upside down in a way that can generate repeatable comic set pieces and a strong poster-level idea. Buyers like premises that create their own scenes, and this one does that without needing heavy worldbuilding.",
+          "evidence": "Laticia sobers up, B.K. stops overeating, and the pimps realize the substance can be monetized as a cure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has usable comic friction.",
+          "what_it_means": "Bud, Percy, Will, Laticia, Twit, Fat Jack, and B.K. create a playable group dynamic that can keep scenes alive even when the plot pauses. That gives the script more than a one-joke premise; it has a roomful of personalities to bounce off each other.",
+          "evidence": "The bar meetings, the garage interrogation, and the rival-pimp summit all generate different combinations of pressure and comedy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax broadens the premise into public stakes.",
+          "what_it_means": "The story doesn’t stay in one private hustle; it escalates into gang conflict, federal attention, and a larger social question about who controls the cure. That makes the movie feel bigger than a sketch and gives a producer a clearer third-act escalation path.",
+          "evidence": "The rival pimps mobilize, Bud is kidnapped, and federal agents interrogate him about undermining the pharmaceutical business.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept comedy engine with a vivid breakout role in Percy and a contained production footprint that keeps the economics friendly. If a buyer wants a raunchy, adult-skewing Black ensemble piece with a one-sentence hook and trailer-ready set pieces, this is easy to understand fast."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The comedy is heavily dated.",
+          "detail": "The script’s language, sexual politics, and broad caricature style are very much of a specific era, which narrows the contemporary buyer pool. A producer will immediately weigh whether the material plays as nostalgic cult comedy or reads as too locked to its original moment.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle section repeats the same beat.",
+          "detail": "A lot of the second act is built on variations of the same discovery/test/reaction pattern: someone tastes the sap, changes behavior, and the room escalates. That keeps the premise clear, but it also means the script’s momentum depends on performance and attitude more than on fresh structural turns.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Bud is more reactive than dimensional.",
+          "detail": "Bud carries the movie, but most of his scenes are built around panic, profanity, and surprise rather than a deeper want beyond getting high again. That makes the lead easy to track, but it also means the project leans hard on the actor to supply the personality the page only sketches.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The R. Kelly cue needs clearance.",
+          "detail": "The script specifically names 'I Believe I Can Fly' and uses it as a recurring musical motif, which creates a real sync-clearance and budget conversation. That is a concrete packaging item, not a theoretical one, and it has to be addressed before a buyer can treat the script as clean.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is tonal and market-facing: this is a very specific era of raunch comedy, and the script doesn’t disguise that. The other buyer conversation is practical rather than creative — Bud needs a strong comic lead, and the named R. Kelly song is a real clearance item."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 61,
+  "tier": "Optionable",
+  "inputTokens": 34327,
+  "outputTokens": 4756,
+  "cost": 0.04714725,
+  "declaredFormat": "Feature film"
+}

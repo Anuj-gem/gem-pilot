@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:00:31.069Z",
+  "submission_id": "5b122823-6dcf-46fd-adf5-4034e67924d8",
+  "eval_id": "db7c8e89-3d3c-401b-9049-ce0c69dfb162",
+  "title": "Back in Blood",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Cam",
+      "role_type": "Lead",
+      "demographics": "Black male, early 20s"
+    },
+    {
+      "name": "KJ",
+      "role_type": "Supporting",
+      "demographics": "Black male, early 20s"
+    },
+    {
+      "name": "Trey",
+      "role_type": "Supporting",
+      "demographics": "Black male, late teens"
+    },
+    {
+      "name": "Scooter",
+      "role_type": "Supporting",
+      "demographics": "Black male, mid-to-late teens"
+    },
+    {
+      "name": "Serena",
+      "role_type": "Supporting",
+      "demographics": "Black female, 20s-30s, nurse"
+    },
+    {
+      "name": "Kevin Edwards",
+      "role_type": "Supporting",
+      "demographics": "White male, 30s-40s, police officer, married father"
+    },
+    {
+      "name": "Collins",
+      "role_type": "Supporting",
+      "demographics": "White male, 40s-50s, police officer"
+    },
+    {
+      "name": "Arturo Rivera",
+      "role_type": "Supporting",
+      "demographics": "Latino male, 40s-60s, cartel leader"
+    },
+    {
+      "name": "G",
+      "role_type": "Supporting",
+      "demographics": "Latino male, 20s-30s, gang lieutenant"
+    },
+    {
+      "name": "Officer Knox",
+      "role_type": "Supporting",
+      "demographics": "White male, older adult, retired police officer"
+    }
+  ],
+  "positioning_hook": "A foster-brother drug crew’s eldest son is forced to choose between loyalty and revenge after a cop kills his younger brother, pushing him toward a cartel-backed hit that could erase his whole family.",
+  "cost_usd": 0.06361575,
+  "input_tokens": 53471,
+  "output_tokens": 5225,
+  "status": "wrote:leads_ok"
+}

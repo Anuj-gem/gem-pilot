@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:00:15.927Z",
+  "submission_id": "98b654a0-2b27-4789-a70d-cc86ffe41191",
+  "eval_id": "9ed31e26-8389-4d12-8a72-012c81db407c",
+  "title": "Aftermath   N.G.Davis   2021",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Eric Daniels",
+      "role_type": "Lead",
+      "demographics": "Male, early 30s, white, U.S. Army veteran, married father, physically imposing, injured shoulder, PTSD"
+    },
+    {
+      "name": "Madeleine Daniels",
+      "role_type": "Supporting",
+      "demographics": "Female, 12, white, Eric and Katherine’s daughter"
+    },
+    {
+      "name": "Bryan Saint",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, high-profile TV journalist"
+    },
+    {
+      "name": "Romeo Roken",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, former Army major, militant extremist leader"
+    },
+    {
+      "name": "Ozzie",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, Middle Eastern, father, civilian trapped on the bridge"
+    },
+    {
+      "name": "Hutchinson",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, white, Vietnam veteran, civilian driver"
+    },
+    {
+      "name": "Katherine Daniels",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, white, Eric’s wife, working mother"
+    }
+  ],
+  "positioning_hook": "A traumatized Iraq veteran takes his daughter to a Red Sox game, then has to outfight a militarized terror cell that turns the Bourne Bridge into a live-streamed hostage execution.",
+  "cost_usd": 0.05299425000000001,
+  "input_tokens": 41919,
+  "output_tokens": 4790,
+  "status": "wrote:leads_ok"
+}

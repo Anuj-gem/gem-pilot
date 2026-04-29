@@ -1,0 +1,346 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Historical",
+        "Drama"
+      ],
+      "tone": "mythic",
+      "tags": [
+        "male-lead",
+        "period-piece",
+        "prestige",
+        "high-concept",
+        "character-driven",
+        "multi-decade",
+        "identity",
+        "love",
+        "family-dynamics",
+        "buddha",
+        "historical-icons"
+      ]
+    },
+    "positioning_hook": "A 400-year-old mixed-race fixer gambles his way through a Christmas Eve audience with Chaplin, Roosevelt, and Einstein, then reveals the impossible mission that made him a legend.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is vivid and the cast of historical icons gives it immediate curiosity value, but the audience is still specialized by tone, period, and philosophical fantasy framing. The strongest commercial pull is for prestige-minded adults and awards-adjacent buyers rather than a broad four-quadrant crowd."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast: a mysterious immortal host in 1930s New York uses a game of chance to draw out a story from Chaplin, Roosevelt, and Einstein. The script makes the engine legible early and keeps returning to the wager as the organizing device."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sir W is a strong central figure: elegant, dangerous, funny, and wounded, with a clear contradiction between worldly confidence and deep loneliness. Amethyst also has real intrigue, but the supporting ensemble is more functional than fully dimensional."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a wildly specific blend of historical fantasia, oral storytelling, and mythic self-mythologizing. The choice to place Chaplin, Roosevelt, Einstein, the Dalai Lama, Gandhi, Hitler, and the Buddha inside one frame is audacious and unmistakable."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The frame has momentum because each reveal escalates the mystery of Sir W, but the long storytelling passages slow the forward drive. The piece is most engaging when the room is reacting to him; it loosens when the script settles into extended anecdotal exposition."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels singular: an immortal Black adventurer-fixer whose life intersects with world history and spiritual artifacts. It is fresh in concept and immediately understandable in emotional terms, even when the mythology gets expansive."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is unusually rich: colonial India, Bethlehem, Greenwich Village, Tibet, Berlin, and the Mughal/pirate corridors all feel story-generating rather than decorative. The artifact economy and the rules around provenance give the script a lived-in, collectible texture."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The voice is highly specific: ornate, theatrical, slyly comic, and reverent toward both history and performance. The Chaplin-Roosevelt-Einstein banter gives the piece a distinct social rhythm that is hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the adventure surface, the script is really about loneliness, legacy, race, faith, and the burden of being outside ordinary time. Sir W’s relationship to Amethyst and the final reveal of the child give the story a deeper emotional afterlife than the premise initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The central table scene is a strong ensemble engine because Chaplin, Roosevelt, and Einstein each bring a different pressure point to Sir W. The dynamic is lively and playable, though the script is still fundamentally anchored to Sir W rather than a truly interdependent ensemble."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Sir W",
+        "role_type": "Lead",
+        "demographics": "Male, 40s in the frame story; mixed-race Black man; ageless/immortal; globally traveled; elite physicality; multilingual; spiritually literate.",
+        "hook": "A polished, dangerous, self-mythologizing fixer who moves through history like a ghost with a code. Sir W is equal parts adventurer, con man, scholar, and avenger, but the performance underneath is loneliness: he has lived too long, seen too much, and still wants his life to mean something larger than survival.",
+        "why_actor_wants_this": "This is the showcase territory of a Ralph Fiennes or Mahershala Ali type role: controlled charisma, verbal precision, physical authority, and the chance to pivot from wit to menace to grief in the same scene. It gives an actor a signature part that can carry a prestige feature on voice alone."
+      },
+      {
+        "name": "Amethyst",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-40s; ageless presentation; mixed-ethnicity/undefined beauty; elegant, cosmopolitan, spiritually attuned.",
+        "hook": "Sir W’s poised partner in the emporium and the only person in the room who seems to understand the scale of his myth without being seduced by it. She is warm, watchful, and quietly dangerous, with a sensual intelligence that makes her feel like both confidante and keeper of secrets.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the cool authority of Tilda Swinton in Michael Clayton or Lupita Nyong’o in Us: composed, enigmatic, and loaded with subtext. It offers glamour, mystery, and the chance to play the one character who can meet Sir W beat for beat."
+      },
+      {
+        "name": "Charlie Chaplin",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s; silent-era film icon; English; public genius with private vanity.",
+        "hook": "A dazzling observer who uses charm and wit as both shield and weapon. He is the first to enjoy the game, the first to sense the danger, and the one whose vanity keeps slipping through the cracks in the room’s polite conversation.",
+        "why_actor_wants_this": "This is rich, high-wire character work in the vein of Gary Oldman in Darkest Hour or Kenneth Branagh in My Week with Marilyn: a famous public figure rendered as a live, contradictory human being. The role offers comic timing, ego, vulnerability, and a chance to play iconography without imitation."
+      },
+      {
+        "name": "Franklin Roosevelt",
+        "role_type": "Supporting",
+        "demographics": "Male, late 40s; American politician; wheelchair user; charismatic, strategic, socially fluent.",
+        "hook": "A political operator who reads a room instantly and uses warmth as leverage. Roosevelt is the most outwardly relaxed man at the table, but the script keeps revealing the calculation under the charm, especially when the stakes turn geopolitical.",
+        "why_actor_wants_this": "This is prestige-support territory in the mode of Bill Murray in Hyde Park on Hudson or Michael Gambon in Churchill’s Secret: a famous leader with wit, power, and private calculation. It gives an actor a scene-stealing role with authority and humor rather than pure impersonation."
+      },
+      {
+        "name": "Albert Einstein",
+        "role_type": "Supporting",
+        "demographics": "Male, early 50s; Jewish scientist; German; intellectually exacting, socially prickly.",
+        "hook": "The sharpest skeptic in the room, and the one most willing to puncture Sir W’s performance. He is funny without trying to be, skeptical without being dull, and emotionally the most alert to the possibility that the story is true even while he resists it.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play intelligence as rhythm, not just exposition, in the vein of Geoffrey Rush in The King’s Speech or Stanley Tucci in Spotlight. It offers dry humor, moral seriousness, and the pleasure of being the room’s most dangerous listener."
+      },
+      {
+        "name": "Shahzadi Badr-un-Nissa Begum",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s; Indian royal daughter; disguised mystic; romantic lead energy.",
+        "hook": "A luminous, spiritually receptive woman who sees Sir W before anyone else does. She is not just a love interest; she is the emotional proof that his long life has not made him untouchable, and the story’s final image gives her mythic weight.",
+        "why_actor_wants_this": "This is the kind of late-reveal romantic role that can become unforgettable in the mold of Penélope Cruz in Vicky Cristina Barcelona or Rachel Weisz in The Fountain: sensual, mysterious, and emotionally catalytic. It gives an actor a brief but potent arc with real mythic resonance."
+      },
+      {
+        "name": "Buddha",
+        "role_type": "Supporting",
+        "demographics": "Male, elderly; spiritual figure; ageless presence.",
+        "hook": "A serene, almost impossibly calm spiritual authority who frames Sir W’s mission in moral rather than merely adventurous terms. He functions less as a character in the conventional sense than as the story’s ethical north star.",
+        "why_actor_wants_this": "This is prestige cameo territory with enormous symbolic weight, the kind of role that can be played with stillness and gravity rather than dialogue. It gives an actor the chance to embody wisdom as presence."
+      },
+      {
+        "name": "Adolf Hitler",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s; German political figure; historical antagonist.",
+        "hook": "A brief but chilling embodiment of the future catastrophe Sir W is trying to warn the world about. He is not a character study here so much as a loaded historical pressure point that sharpens the stakes of the final act.",
+        "why_actor_wants_this": "This is the kind of small but explosive historical role that can dominate a scene through menace alone, similar to the impact of a strong villain cameo in a prestige drama. It offers immediate dramatic voltage, even in limited screen time."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Historical likenesses for Chaplin, Roosevelt, Einstein, Gandhi, Hitler, and the Dalai Lama",
+          "Lead requires physical charisma, period authority, and multilingual delivery",
+          "Amethyst and Shahzadi require strong screen presence and specific exoticized-period styling"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "Bethlehem/Church of the Nativity",
+          "Greenwich Village emporium and private museum",
+          "Bombay/Kanheri caves",
+          "Berlin restaurant backroom",
+          "Kushinagar temple and forest",
+          "shipboard pirate sequence",
+          "grave/Taj Mahal exterior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Period recreations, invisible/heightened physical feats, the materialization ending, and selective crowd/ship enhancement; mostly practical-facing but with some supernatural polish.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fire effects for the self-immolation beat, shipboard action, physical combat, and practical vibration/hypnosis beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Charlie Chaplin"
+        },
+        {
+          "type": "real_person",
+          "detail": "Franklin D. Roosevelt"
+        },
+        {
+          "type": "real_person",
+          "detail": "Albert Einstein"
+        },
+        {
+          "type": "real_person",
+          "detail": "Pope Pius XI"
+        },
+        {
+          "type": "real_person",
+          "detail": "Thupten Gyatso (Thirteenth Dalai Lama)"
+        },
+        {
+          "type": "real_person",
+          "detail": "Mahatma Gandhi"
+        },
+        {
+          "type": "real_person",
+          "detail": "Adolf Hitler"
+        },
+        {
+          "type": "real_person",
+          "detail": "Buddha"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "prestige theatrical or premium streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: prestige theatrical with awards-facing positioning, or premium-streaming event feature."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "high",
+        "note": "The script spans Bethlehem, Greenwich Village, Bombay, Tibet, Berlin, Kushinagar, the Arabian Sea, and a shipboard pirate attack, with period recreation and a supernatural ending. Even with selective scope control, this is not a contained-cost feature."
+      },
+      "casting": {
+        "level": "high",
+        "note": "The lead has to carry an immortal, multilingual, physically commanding, emotionally layered role, and the supporting cast depends on credible historical likenesses for Chaplin, Roosevelt, Einstein, Gandhi, Hitler, and the Dalai Lama. That is a narrow and highly specific casting conversation."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The frame-story game is clear, but the script asks the audience to accept a large amount of mythic exposition and historical interpolation. The buyer conversation will center on whether the storytelling voice is the asset or the barrier."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Fountain",
+          "year": 2006,
+          "why_it_comps": "A mythic, spiritually charged feature that uses romance and immortality to turn history into emotional allegory."
+        },
+        {
+          "title": "The Green Knight",
+          "year": 2021,
+          "why_it_comps": "Prestige fantasy with a literary, elevated tone and a protagonist whose journey is as internal as it is physical."
+        },
+        {
+          "title": "The Man Who Killed Hitler and Then the Bigfoot",
+          "year": 2018,
+          "why_it_comps": "A wildly specific high-concept feature that sells on the audacity of its premise and the singularity of its lead."
+        },
+        {
+          "title": "The Last Temptation of Christ",
+          "year": 1988,
+          "why_it_comps": "A spiritually provocative feature that treats faith, temptation, and myth as dramatic engine rather than background."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who buy prestige fantasy, historical epics, and actor-forward films with a philosophical or spiritual edge.",
+        "demographics": "35-64 skew, educated, urban/suburban, art-house and awards-aware viewers, with a secondary male-skew from history/adventure interest.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$15M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "The cast is compact, but the period settings, international locations, shipboard action, and supernatural finish push this above micro and into specialty-indie territory."
+      },
+      "lane_fit": {
+        "lane": "prestige fantasy drama",
+        "types_of_buyers": [
+          "prestige indie financiers",
+          "streamer original film teams",
+          "awards-focused specialty distributors",
+          "director-driven production companies",
+          "actor-led package buyers"
+        ],
+        "detail": "This sits in the lane of elevated, literary fantasy with historical scale and a strong lead performance engine. The script is most attractive to buyers who want something original enough to stand out but still anchored by recognizable prestige cues."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is expansive, but the story resolves as a single mythic tale rather than setting up a clean sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Sir W is a star-making lead role.",
+          "what_it_means": "This gives a buyer a single, marketable performance engine that can anchor the entire film and justify a prestige package around one actor. It is the kind of part that attracts actor-producers looking for a signature role with range, authority, and mythic scale.",
+          "evidence": "The Christmas Eve table scene lets Sir W shift from charm to menace to confession to moral command, then the final reveal recontextualizes his entire life.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The historical-cameo frame is instantly ownable.",
+          "what_it_means": "The Chaplin-Roosevelt-Einstein dinner gives the film a clean marketing image and a built-in curiosity engine. Buyers looking for a prestige hook can sell the room before they even explain the mythology.",
+          "evidence": "The long dinner sequence where the three icons interrogate Sir W’s stories is the film’s central frame device.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The artifact mythology creates a premium world.",
+          "what_it_means": "The bowl, the museum, and the provenance logic give the script a collectible, story-generating universe that feels richer than a standard period adventure. That makes the material attractive to buyers who want a world with texture rather than just plot.",
+          "evidence": "The private museum of global artifacts, the singing bowl’s rules, and the repeated emphasis on true home/provenance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional reveal lands with real aftertaste.",
+          "what_it_means": "The Shahzadi thread turns the film from clever historical fantasia into something with romantic and spiritual ache, which broadens its appeal beyond pure concept. That kind of late emotional turn is valuable for prestige buyers and awards-minded talent.",
+          "evidence": "The final materialization of Shahzadi Badr-un-Nissa Begum after the bowls vibrate together.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The voice is theatrical and unmistakable.",
+          "what_it_means": "The script has a confident, performative register that can make the film feel like an event rather than just another period piece. That distinctiveness is what helps a buyer justify a riskier original concept.",
+          "evidence": "The ornate dialogue, the formal wagers, and the comic-polished exchanges among Sir W, Chaplin, Roosevelt, and Einstein.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige fantasy built around a genuinely star-making lead and a marketing-friendly frame: Chaplin, Roosevelt, and Einstein trapped at a Christmas Eve table with an immortal fixer. The concept is unusual enough to cut through, and the period scale is still manageable for an indie-to-specialty buyer if the package lands."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The runtime lives on exposition.",
+          "detail": "A large share of the script is Sir W narrating past exploits rather than scenes unfolding in the present. That makes the film intellectually rich, but it also means the buying conversation will center on whether audiences will stay engaged through extended oral-history passages.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Historical likeness rights will need a legal pass.",
+          "detail": "Chaplin, Roosevelt, Einstein, Gandhi, Hitler, the Dalai Lama, Pope Pius XI, and Buddha are all named and dramatized. Even when some are public-domain or historical, the sheer number of real-person depictions means business affairs will want a careful rights and defamation review.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The period geography pushes the budget up.",
+          "detail": "Bethlehem, Greenwich Village, Bombay, Tibet, Berlin, Kushinagar, and the pirate ship sequence all require distinct period looks and travel logic. Even with smart consolidation, this is not a cheap contained feature and will be priced as a specialty period piece.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The lead role is unusually narrow to cast.",
+          "detail": "Sir W has to play immortal authority, seduction, physical competence, multilingual intelligence, and a controlled menace that never tips into parody. That combination narrows the pool to a very specific class of actor who can sell both prestige and genre.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The tonal blend is a buyer filter.",
+          "detail": "The script moves from comic dinner banter to spiritual myth to political warning to romantic transcendence. That range is part of the appeal, but it also means some buyers will see it as too literary for genre and too fantastical for straight prestige drama.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The biggest friction is structural: the film asks a lot of the audience before it pays off, because the core engine is a long-form story being told at a table. Add the period sprawl and the real-person clearance conversation, and this becomes a package that needs the right lead and the right buyer to clear the runway."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 40208,
+  "outputTokens": 4847,
+  "cost": 0.0519675,
+  "declaredFormat": "Feature film"
+}

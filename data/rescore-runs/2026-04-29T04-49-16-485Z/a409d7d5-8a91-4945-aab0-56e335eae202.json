@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:00:45.337Z",
+  "submission_id": "a409d7d5-8a91-4945-aab0-56e335eae202",
+  "eval_id": "fded386d-a823-435c-a4a3-75dc5b65ccc0",
+  "title": "You Can't Go Back",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, white, law professor and former attorney, New Jersey/Georgia-based, recovering alcoholic tendencies implied."
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Female, 70s, white, mother."
+    },
+    {
+      "name": "Marty",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, white, attorney, longtime friend."
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, white, former high-school peer, divorced teacher."
+    },
+    {
+      "name": "Julia",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, law student or young legal assistant, family connection to suicide loss."
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, Adam’s younger brother."
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-60s, defense attorney."
+    },
+    {
+      "name": "Dr. Myers",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, psychiatrist."
+    },
+    {
+      "name": "Dr. Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, psychiatrist."
+    },
+    {
+      "name": "Dr. Sandler",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-60s, psychiatrist."
+    }
+  ],
+  "positioning_hook": "A grief-stricken law professor returns to practice to sue the hospital that discharged his suicidal brother, then has to survive the case while his own guilt starts to crack open.",
+  "cost_usd": 0.04751925,
+  "input_tokens": 34793,
+  "output_tokens": 4761,
+  "status": "wrote:leads_ok"
+}

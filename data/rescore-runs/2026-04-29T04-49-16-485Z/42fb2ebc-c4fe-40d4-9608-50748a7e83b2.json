@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:02:49.007Z",
+  "submission_id": "42fb2ebc-c4fe-40d4-9608-50748a7e83b2",
+  "eval_id": "3416eb73-2c4f-4d7f-8978-65d7d7e40d47",
+  "title": "FIN",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Drake Finley",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, white, California surfer, former search-and-rescue PI, active addiction/recovery pressure."
+    },
+    {
+      "name": "Macy Jimenez",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Latina, attorney, family-connected to the surf community."
+    },
+    {
+      "name": "Detective Cindy Chiu",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, legacy police officer, Asian American, Ventura detective."
+    },
+    {
+      "name": "Sage Andersen",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, surfer/board shaper, physically limited by a limp."
+    },
+    {
+      "name": "Josh James",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, bald, local surf crew leader with criminal ties."
+    },
+    {
+      "name": "Pudge McNeely",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white, surf photographer, stoner, physically battered."
+    },
+    {
+      "name": "Yannick Goins",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, wealthy surf sponsor executive."
+    },
+    {
+      "name": "Gabriel",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-teens, Latino, local grom, eager to belong."
+    },
+    {
+      "name": "Tank",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, large physical build, local crew enforcer."
+    }
+  ],
+  "positioning_hook": "A washed-up surf sleuth is pulled back into the lineup when a missing photographer, a dead friend, and a local crew’s secret board pipeline point to a murder hidden inside Ventura’s surf culture.",
+  "cost_usd": 0.046255500000000005,
+  "input_tokens": 31188,
+  "output_tokens": 5081,
+  "status": "wrote:leads_ok"
+}

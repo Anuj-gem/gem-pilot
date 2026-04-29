@@ -1,0 +1,314 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Crime",
+        "Romance"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "love",
+        "redemption",
+        "las-vegas",
+        "gambling",
+        "urban-legend"
+      ]
+    },
+    "positioning_hook": "A washed-up Vegas gambler is mysteriously lucked into a winning streak, but the money only keeps flowing if he keeps helping a single mother and her children.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional engine is easy to grasp — a gambler, a single mother, a childlike guardian figure, and a redemption arc — but the appeal is narrower than a broad commercial genre play. The script leans on sentiment, faith, and Vegas texture more than on a high-concept engine, which makes it more specialty than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands immediately in the opening pages: Jim’s luck changes when Lily sends him to help Mary, and the rules of the bargain are clear enough to track. The hook is strong, though the supernatural element stays more atmospheric than fully dramatized until the late reveal."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Jim has a workable contradiction — cocky gambler, then humbled caretaker — and Mary has real emotional weight as a burned, overburdened foster mother. The supporting players are vivid, but most function as variations on the same moral pressure rather than as deeply surprising character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The Vegas-gambling setting and the ghost-child conceit give the script a distinct flavor, and the Christmas-to-redemption turn is cleanly legible. Still, the execution plays in a familiar lane of sentimental morality tale rather than taking a sharper formal or tonal risk."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story moves in clear cycles of win, relapse, consequence, and renewed resolve, with the slot tournament providing a solid endgame. The middle stretches repeat the same temptation pattern several times, so the escalation is steady but not especially surprising."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a ghostly child guiding a gambler toward redemption is memorable and easy to summarize, especially once Lily’s identity is revealed. What keeps it from a higher band is that the emotional destination is familiar and the supernatural rules remain more symbolic than story-generating."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The casino floor, pit boss tower, card room, slot tournament, collectors, and backroom gambling culture create a specific Vegas ecosystem with its own hierarchy and rituals. The world feels lived-in and story-generating, even if it remains mostly a backdrop for Jim’s moral journey."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script has a recognizable register: sentimental, old-school, lightly whimsical, and casino-noir adjacent. That tone is consistent, but it doesn’t have the sharp tonal signature of a truly hard-to-imitate piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The Lily reveal, Mary’s burn trauma, and Jim’s family history suggest a deeper spiritual and emotional layer beneath the gambling plot. The script gestures toward that depth, but most of it is delivered plainly rather than withheld in a way that creates major slow-burn tension."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Jim’s triangle with Mary, Lily, and Cassandra gives the script recurring relational friction, and the casino regulars add texture. But the piece is still fundamentally built around one lead and a few strong foils rather than a true ensemble engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jim Foster",
+        "role_type": "Lead",
+        "demographics": "Male, 30s-40s, white, Vegas gambler with a family legacy in the casino world.",
+        "hook": "A cocky, wounded gambler who believes luck is a birthright until a mysterious child forces him into acts of generosity that expose how empty his winning streak really is. He starts as a man chasing the next hand and ends as someone trying to become worthy of a family, a home, and a life that isn’t built on odds.",
+        "why_actor_wants_this": "This is the showcase territory of a classic redemption lead like Nicolas Cage in Leaving Las Vegas or Matthew McConaughey in Mud — a role that lets an actor play swagger, shame, romance, and spiritual collapse in one arc. It offers the rare chance to be both charming and self-destructive, then earn the audience back."
+      },
+      {
+        "name": "Mary Waters",
+        "role_type": "Supporting",
+        "demographics": "Female, late 30s, white, working-class foster mother.",
+        "hook": "A tough, affectionate foster mother holding together five children, a damaged house, and her own bruised sense of worth. She’s wary of men, hungry for stability, and quietly desperate to believe that kindness can still be real after life has taught her otherwise.",
+        "why_actor_wants_this": "This is strong dramatic territory in the vein of Melissa Leo in Frozen River or Frances McDormand in Nomadland — a woman carrying exhaustion, dignity, and guarded vulnerability at once. The role gives an actor a lived-in emotional center and a late-blooming romantic payoff."
+      },
+      {
+        "name": "Lily",
+        "role_type": "Supporting",
+        "demographics": "Female, child, ghost/urban-legend figure.",
+        "hook": "An angelic little girl who appears at the edge of the casino world and speaks with unnerving certainty, guiding Jim toward the people he needs to help. She reads at first like a lucky charm and only later reveals herself as the emotional key to the story’s moral logic.",
+        "why_actor_wants_this": "This is the kind of haunting, iconic child role that can define a film’s memory the way Haley Joel Osment in The Sixth Sense did — brief, eerie, and emotionally loaded. For a young performer, it’s a rare part that is both mysterious and heartbreaking."
+      },
+      {
+        "name": "Cassandra Peterson",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, glamorous, sexually assertive, working-class edge.",
+        "hook": "A brassy, self-possessed woman who offers Jim easy pleasure, easy excuses, and a hard stop on his fantasy of being a better man than he is. She’s not a villain so much as a reality check with lipstick and a cigarette.",
+        "why_actor_wants_this": "This is the kind of sharp, scene-stealing supporting role that gives an actor a full comic-dramatic swing, like Jennifer Jason Leigh in Miami Blues or Regina Hall in Support the Girls. It lets someone play seduction, irritation, and emotional damage without ever becoming a stock femme fatale."
+      },
+      {
+        "name": "Jack",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, pit boss, casino insider.",
+        "hook": "A watchful pit boss who seems to know more than he says and functions as the casino’s moral weather vane. He’s part enforcer, part conscience, and part mythic guide, with just enough warmth to keep Jim from reading him as pure authority.",
+        "why_actor_wants_this": "This is the kind of quietly commanding supporting role that recalls Albert Brooks in Drive or Michael Keaton in Spotlight — a character who can carry authority, irony, and hidden compassion in the same scene. It gives an actor a memorable presence without needing volume."
+      },
+      {
+        "name": "Bill Williams",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, affluent, sharp, corporate gambler.",
+        "hook": "A polished, smug high-roller who turns from amused observer to predatory creditor the moment Jim’s luck stops serving him. He’s the script’s cleanest human antagonist: civilized on the surface, ruthless underneath.",
+        "why_actor_wants_this": "This is juicy antagonist material in the vein of Philip Seymour Hoffman in Owning Mahowny or Michael Shannon in 99 Homes — a role that lets an actor weaponize intelligence, charm, and menace. It’s a great showcase for controlled escalation."
+      },
+      {
+        "name": "Paul Trivialli",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s-70s, Italian-American mob boss.",
+        "hook": "A genial, old-school mob figure who treats gambling like a social ritual and danger like good manners. He’s warm, theatrical, and always one smile away from reminding everyone who owns the room.",
+        "why_actor_wants_this": "This is classic character-actor territory in the mold of James Gandolfini’s more convivial mob work or Vincent Pastore-style authority — a role that lets an actor play charm as threat. It’s a fun, quotable part with instant texture."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child lead presence across the film",
+          "five foster children in recurring scenes",
+          "one adult female lead with burn-scar makeup in later scenes",
+          "one older pit-boss role with strong personality",
+          "one glamorous supporting female role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Las Vegas casino interiors",
+          "casino watch tower / overhead platform",
+          "slot tournament floor build",
+          "foster house interior and exterior",
+          "hospital burn unit",
+          "alley and parking lot exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical casino and slot-machine action; only modest enhancement needed for the Lily apparition, the fire sequence, and the oversized mega-machine finale.",
+        "stunts_level": "minor",
+        "sfx_needs": "Fire sequence in Mary’s house, slot-machine alarms/lights, practical burn makeup, and casino machine effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Mary Kay representative"
+        },
+        {
+          "type": "brand",
+          "detail": "LeBaron car reference"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming / premium cable / theatrical specialty",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical or streaming original with adult drama positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary Vegas is manageable, but the casino interiors, slot tournament build, fire sequence, burn-unit scenes, and multiple night exteriors keep this above a simple contained indie."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs charm, desperation, and romantic credibility, while Mary must carry warmth, toughness, and post-burn vulnerability; Lily also has to feel uncanny without becoming precious."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s emotional logic is clear, but the repeated win-relapse-help cycle and the late Lily reveal put pressure on pacing and on how much mystery the buyer wants preserved."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Leaving Las Vegas",
+          "year": 1995,
+          "why_it_comps": "A Vegas-set adult drama built around self-destruction, redemption, and a lead performance that has to carry the whole emotional weight."
+        },
+        {
+          "title": "The Cooler",
+          "year": 2003,
+          "why_it_comps": "Casino-world texture, gambling superstition, and a protagonist whose luck becomes the story engine."
+        },
+        {
+          "title": "Hard Eight",
+          "year": 1996,
+          "why_it_comps": "A character-driven gambling underworld piece with a mentor-like casino figure and a moralized view of luck and debt."
+        },
+        {
+          "title": "The Sixth Sense",
+          "year": 1999,
+          "why_it_comps": "The child-ghost reveal and the emotional afterlife of a dead child give the story its supernatural hook and late-film recontextualization."
+        },
+        {
+          "title": "A Christmas Carol",
+          "year": 1984,
+          "why_it_comps": "A redemption structure where a morally compromised man is pushed toward generosity by a guiding spirit and seasonal pressure."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like emotional redemption stories with a Vegas setting, a supernatural wrinkle, and a strong character-actor lead.",
+        "demographics": "35-64, slightly female-skewing, adult drama audience, specialty theatrical and streaming viewers.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary Vegas locations, modest VFX, practical fire work, and a cast anchored by one lead keep this in indie feature territory."
+      },
+      "lane_fit": {
+        "lane": "adult redemption drama with casino-world texture",
+        "types_of_buyers": [
+          "specialty theatrical distributors",
+          "streamer original film teams",
+          "prestige indie financiers",
+          "adult-drama acquisition executives",
+          "actor-driven production companies"
+        ],
+        "detail": "This sits naturally with buyers looking for a performance-forward, emotionally legible feature that can be sold on lead casting and a clean Vegas hook. The casino setting gives it a commercial wrapper without requiring franchise-scale spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; Lily’s mythology and the casino world are evocative, but there is no clear spinoff character or universe vector that justifies franchise planning."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Vegas world is vivid and usable.",
+          "what_it_means": "The casino floor, pit-boss tower, card room, and slot tournament give the film a sellable setting that feels specific rather than generic. That helps buyers market the movie on atmosphere alone and gives directors a clear visual lane without needing expensive world-building.",
+          "evidence": "The repeated movement between slot floor, watch tower, card parlor, and the annual tournament creates a full casino ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jim is a playable lead role.",
+          "what_it_means": "The part gives a star or strong character actor a full arc from swagger to humiliation to earned grace, which is exactly the kind of role that can unlock financing. Casting teams will see a meaty, emotionally legible lead with room for charm, comedy, and collapse.",
+          "evidence": "Jim’s progression from losing at the slots to helping Mary, then falling back into temptation, then returning to save her house.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Lily reveal reframes the story.",
+          "what_it_means": "The late disclosure that Lily is Mary’s dead daughter gives the script a clean emotional twist that can revalue the entire movie in retrospect. That kind of reveal can create strong word-of-mouth if the film is positioned as a heartfelt mystery rather than a straight gambling drama.",
+          "evidence": "Jack’s flashback explaining Lily’s death in the hot car and the final photograph linking Lily to Mary.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mary is more than a love interest.",
+          "what_it_means": "Mary’s foster-home burden, burn trauma, and guarded dignity make her a substantive female role that broadens the film beyond the gambler’s POV. That gives the project a stronger emotional center for adult audiences and a more attractive casting conversation.",
+          "evidence": "Her house full of children, her work as a Mary Kay rep, and her later burn-unit scenes after the fire.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The slot tournament gives the third act shape.",
+          "what_it_means": "The tournament is a clean, visual endgame that turns the movie’s abstract luck theme into a concrete competition. Producers can see the finish line, and audiences get a built-in payoff event instead of a purely conversational climax.",
+          "evidence": "The timed elimination rounds, the mega-machine finale, and Jim’s final win for Mary and the kids.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a performance-forward Vegas redemption feature with a clean, marketable hook: a gambler’s luck is tied to helping a vulnerable family, and the story pays off in a tournament finale. The setting is specific, the lead role is castable, and the supernatural wrinkle gives the film a memorable emotional aftertaste without requiring tentpole economics."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle repeats the same temptation loop.",
+          "detail": "Jim wins, gives money away, relapses, and gets pulled back into the casino several times before the tournament arrives. That pattern keeps the premise legible, but it also flattens the escalation and makes the second act feel more cyclical than cumulative.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Lily’s rules stay symbolic, not operational.",
+          "detail": "The ghost-child element is emotionally effective, but the script never fully defines what Lily can do, how she appears, or what the limits of her influence are. Buyers will read that as a tonal choice, but also as a sign that the supernatural engine is more poetic than plot-driving.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Mary’s burn trauma arrives late and hard.",
+          "detail": "The house fire and burn-unit material land as a major tonal and emotional turn near the end, after the film has spent most of its time in romantic-gambling mode. That makes the back half heavier and more sensitive than the earlier sections suggest, which is a real consideration for audience expectation and marketing.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The casino world is vivid but male-dominated.",
+          "detail": "Most of the recurring energy comes from Jim, Jack, Paul, Manny, Bill, and the tournament floor, with Mary and Cassandra functioning as the main female counterweights. That gives the movie a strong masculine texture, but it also narrows the emotional range of the ensemble.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the script has a clear premise and a strong finish, but the center section circles the same luck-and-relapse beat more than once. The other buyer conversation will be tonal — a sentimental casino romance that suddenly turns into burn-trauma drama and supernatural revelation is distinctive, but it asks for careful positioning."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 63,
+  "tier": "Optionable",
+  "inputTokens": 41310,
+  "outputTokens": 4420,
+  "cost": 0.0508725,
+  "declaredFormat": "Feature film"
+}

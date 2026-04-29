@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:02:15.860Z",
+  "submission_id": "8c63df53-ec5b-4be1-8e50-f5e0c40bb537",
+  "eval_id": "d1696caa-2a82-46eb-bcd5-b33e86e433fe",
+  "title": "Cinderella Cinderella",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Cinderella",
+      "role_type": "Lead",
+      "demographics": "female, early 30s, fairy-blessed, royal identity hidden from herself and others"
+    },
+    {
+      "name": "Evelyn",
+      "role_type": "Supporting",
+      "demographics": "female, 50s, stepmother, matriarch of Chateau Henriette"
+    },
+    {
+      "name": "Archibald",
+      "role_type": "Supporting",
+      "demographics": "male, early 30s, father, deceased by the present timeline"
+    },
+    {
+      "name": "Charlotte",
+      "role_type": "Supporting",
+      "demographics": "female, early 30s, Cinderella’s stepsister"
+    },
+    {
+      "name": "Bridgette",
+      "role_type": "Supporting",
+      "demographics": "female, early 30s, Cinderella’s stepsister"
+    },
+    {
+      "name": "Hubert",
+      "role_type": "Supporting",
+      "demographics": "male, 50s, merchant-turned-noble patriarch"
+    },
+    {
+      "name": "Toby",
+      "role_type": "Supporting",
+      "demographics": "male, late teens, youngest Davenport son"
+    },
+    {
+      "name": "Vincent",
+      "role_type": "Supporting",
+      "demographics": "male, late 40s, captain of the guard, physically imposing, Black"
+    },
+    {
+      "name": "Lyle",
+      "role_type": "Supporting",
+      "demographics": "male, mid-20s, outsider, nonhuman or partially nonhuman"
+    },
+    {
+      "name": "Ella",
+      "role_type": "Supporting",
+      "demographics": "female, early 30s, queen, Cinderella’s double"
+    },
+    {
+      "name": "Josephine",
+      "role_type": "Supporting",
+      "demographics": "female, mid-30s, queen of Landria, mother"
+    }
+  ],
+  "positioning_hook": "A colorless Cinderella wakes in a cursed kingdom where her own life has been stolen, and must survive a court full of doubles, wolves, and witches to reclaim her name.",
+  "cost_usd": 0.049113000000000004,
+  "input_tokens": 34842,
+  "output_tokens": 5107,
+  "status": "wrote:leads_ok"
+}

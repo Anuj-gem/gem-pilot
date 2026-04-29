@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:06:37.128Z",
+  "submission_id": "ea455189-7652-466f-82e1-25a32452cf7f",
+  "eval_id": "e4df0bd6-81a3-4533-b47c-7cf9aa1cd0d2",
+  "title": "Shadow Wolves",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "John Scout",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s to early 30s, border patrol officer, Native American-coded by the script’s language and surrounding characters."
+    },
+    {
+      "name": "Fernando Rey",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, Mexican drug lord, charismatic, well-dressed, bilingual."
+    },
+    {
+      "name": "Emillo Cortz",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, Latino, hacker, college-age intelligence type."
+    },
+    {
+      "name": "Malcom Kinney",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, FBI Director, seasoned institutional authority."
+    },
+    {
+      "name": "Beau Dama",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, African-American president, public-facing statesman with hidden extremist allegiance."
+    },
+    {
+      "name": "Faruk Pink",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, presidential aide, Muslim-coded, cyber/intelligence specialist."
+    },
+    {
+      "name": "Imani Chaqueri",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Scout’s fiancée, secretly tied to the terrorist network."
+    },
+    {
+      "name": "Brock Lindbergh",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, Vice President turned President, military background."
+    }
+  ],
+  "positioning_hook": "A border patrol officer and a Mexican drug lord are forced into an uneasy alliance when a sleeper-cell plot turns the U.S. president into the mastermind behind a White House terror attack.",
+  "cost_usd": 0.048903749999999996,
+  "input_tokens": 37965,
+  "output_tokens": 4540,
+  "status": "wrote:leads_ok"
+}

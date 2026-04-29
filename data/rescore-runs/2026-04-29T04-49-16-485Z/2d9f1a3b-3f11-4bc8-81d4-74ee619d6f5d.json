@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:00:06.479Z",
+  "submission_id": "2d9f1a3b-3f11-4bc8-81d4-74ee619d6f5d",
+  "eval_id": "80fbe07e-dec1-4cff-b30b-2a70c2a9f1fd",
+  "title": "Until Next Time",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Vance Carmichael",
+      "role_type": "Lead",
+      "demographics": "Male, late 30s to early 40s, white, charismatic TV host and former prosecutor."
+    },
+    {
+      "name": "Serena Carmichael",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, producer and Vance’s wife/ex-wife."
+    },
+    {
+      "name": "Shawn Moriarty",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, white, ex-director of the show."
+    },
+    {
+      "name": "Heather Jenkins",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s to early 50s across the story, white, lighting technician and survivor."
+    },
+    {
+      "name": "Willie Reams",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, condemned prisoner and occult vessel."
+    },
+    {
+      "name": "Sasha Reams",
+      "role_type": "Supporting",
+      "demographics": "Female, child, white, deceased daughter appearing as a ghostly presence."
+    },
+    {
+      "name": "Brian",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, production crew member."
+    },
+    {
+      "name": "Simon",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, white, video technician."
+    },
+    {
+      "name": "Jesse",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, white, sound technician."
+    },
+    {
+      "name": "Richard Hines",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s-70s, white, network executive."
+    },
+    {
+      "name": "Father Franklin",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, white, priest."
+    }
+  ],
+  "positioning_hook": "A ruthless daytime TV host who turned televised executions into ratings gold must confront the demon he unleashed when his final broadcast becomes a live reckoning with a murdered child’s ghost.",
+  "cost_usd": 0.055914,
+  "input_tokens": 40574,
+  "output_tokens": 5663,
+  "status": "wrote:leads_ok"
+}

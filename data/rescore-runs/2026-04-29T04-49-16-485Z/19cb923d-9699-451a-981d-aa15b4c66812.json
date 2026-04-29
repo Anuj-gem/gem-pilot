@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:02:07.425Z",
+  "submission_id": "19cb923d-9699-451a-981d-aa15b4c66812",
+  "eval_id": "aa652d68-a8a1-4dad-9324-02ee4e130dac",
+  "title": "WICKED WYOMING",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Jane Flint Arbuckle",
+      "role_type": "Lead",
+      "demographics": "Female, 30s, white, frontier wife and mother, socially elevated but emotionally trapped."
+    },
+    {
+      "name": "Abraham Arbuckle",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s across the episode’s time jump, white, frontier laborer turned family man."
+    },
+    {
+      "name": "Jacob Arbuckle",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, mine owner and family patriarch, physically imposing and spiritually severe."
+    },
+    {
+      "name": "Buddy Davenport",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, white, wealthy industrialist, charismatic, devout, physically formidable."
+    },
+    {
+      "name": "Zoma",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, white-presenting, bounty hunter body with shifting identity and supernatural possession."
+    },
+    {
+      "name": "Gus Davenport",
+      "role_type": "Supporting",
+      "demographics": "Male, 10, white, timid child, sheltered and observant."
+    },
+    {
+      "name": "Ernest Davenport",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, white, polished businessman, urbane and manipulative."
+    },
+    {
+      "name": "Bennie Middleton",
+      "role_type": "Supporting",
+      "demographics": "Male, 8, white, plucky child, rural and impulsive."
+    },
+    {
+      "name": "Archie Kettle",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, mountain man, mentally fractured, physically capable."
+    }
+  ],
+  "positioning_hook": "In 1848 Wyoming, a gold-rush town is swallowed by a supernatural bloodline war as one family, a gunslinger, and a shape-shifting bounty hunter fight to survive the night.",
+  "cost_usd": 0.05015625,
+  "input_tokens": 37451,
+  "output_tokens": 4904,
+  "status": "wrote:leads_ok"
+}

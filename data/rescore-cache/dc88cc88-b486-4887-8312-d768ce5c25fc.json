@@ -1,0 +1,382 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Drama",
+        "Sci-Fi"
+      ],
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "slow-burn",
+        "family-dynamics",
+        "grief",
+        "identity",
+        "reincarnation",
+        "vermont"
+      ]
+    },
+    "positioning_hook": "A Vermont sheriff’s deputy starts seeing patterns in a child murder-suicide, then discovers a town of people remembering other lives — and a buried corpse that proves the dreams are real.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The pilot has a clean, high-concept engine — a small-town mystery that opens into reincarnation and past-life revelation — with strong emotional stakes around mothers, children, and grief. The audience is real and potentially broad, but the premise is stranger and more serialized than a mainstream procedural, which narrows the immediate buyer pool."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: Ferine is pulled into a hostage crisis, then the script reveals a larger pattern of dream-memory, dead children, and a hidden corpse. By the end, the show’s governing question is clear and ownable: who are these people remembering, and why now?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ferine is a strong anchor — competent, maternal, and emotionally porous — and the child ensemble gives the series a durable emotional engine. The supporting adults are functional and specific, but the pilot is still more invested in premise revelation than in fully differentiating the long-term character ecosystem."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a familiar small-town crime setup and pushes it into reincarnation, simulation-like dream logic, and cosmic imagery without losing the human scale. The purple Saturn world and the final past-life reveal give it a confident, unusual signature."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The hostage sequence is immediate and tense, and the back half keeps escalating through the Womack case, the missing girl, and the buried body. There is some sprawl in the middle as the pilot broadens its cast and mythology, but the ending lands with real propulsion."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script’s central idea feels fresh in a way that is easy to grasp: children and adults in one town are remembering other lives, and those memories are tied to violence and identity. The buried corpse reveal and the final Cherene/Pierre turn make the premise feel both surprising and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Eden feels lived-in: sheriff’s station, school, hospital, pottery studio, house party, university, and family homes all feed the same social web. The town has enough relational texture to generate episodes, though the world is still being assembled around the central mystery rather than fully operating on its own rules."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct tonal blend of earnest family drama, eerie metaphysical mystery, and small-town procedural urgency. The purple dream imagery and the emotional bluntness of the hostage scenes create a flavor that is hard to mistake for a generic network drama."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot suggests a much larger mythology beneath the surface — dream memory, past lives, Saturn imagery, and a possible pattern across multiple characters. The final reveal only opens the door, which is exactly the kind of withholding that can support a long burn."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Ferine’s relationships with Crystal, Jonah, Chuck, Latonya, Elizabeth, and the kids create multiple recurring lanes, and the town’s parents/kids network is story-generative. The ensemble is promising, though the pilot still centers most of its energy on Ferine and the mystery rather than on fully interlocking subplots."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Ferine Davenport",
+        "role_type": "Lead",
+        "demographics": "Woman, 30s, white, sheriff's deputy / soon-to-be promoted law enforcement officer, mother, wife.",
+        "hook": "Ferine is the emotional and procedural center of the pilot: a capable Vermont deputy trying to hold together a family, a career transition, and a town-wide trauma while privately carrying a childhood wound that keeps resurfacing in dream logic. She reads as controlled on the surface, but the script keeps exposing how quickly her composure gives way when children, loss, and memory collide.",
+        "why_actor_wants_this": "This is the showcase territory of Amy Adams in Sharp Objects — a woman whose competence is the mask and whose interior fracture is the performance. It gives an actor authority, maternal vulnerability, and a slow-burn unraveling that can carry a series."
+      },
+      {
+        "name": "Crystal Davenport",
+        "role_type": "Supporting",
+        "demographics": "Girl, 8, white, Ferine's daughter.",
+        "hook": "Crystal is unusually perceptive for her age and functions as both emotional ballast and uncanny witness. She’s the child who understands more than she should, and the script uses her to bridge Ferine’s domestic life with the show’s metaphysical mystery.",
+        "why_actor_wants_this": "This is the kind of role that gave Millie Bobby Brown in Stranger Things early heat — a child part with emotional authority, eerie intelligence, and scene-stealing stillness. It offers a young performer a rare mix of innocence and narrative importance."
+      },
+      {
+        "name": "Jonah Davenport",
+        "role_type": "Supporting",
+        "demographics": "Man, early 30s, white, Ferine's husband.",
+        "hook": "Jonah is warm, steady, and quietly supportive, the kind of husband role that makes Ferine’s home life feel real without demanding the spotlight. He’s less a plot engine than a stabilizing presence, which makes his absence or vulnerability more meaningful if the series leans into it.",
+        "why_actor_wants_this": "This is the grounded, emotionally legible husband role that can play like the best of Peter Krause in Six Feet Under — understated, humane, and quietly devastating when the family dynamic turns. It gives an actor a chance to be the calm center in a high-concept show."
+      },
+      {
+        "name": "Amy Roland",
+        "role_type": "Supporting",
+        "demographics": "Girl, 9, white, sheriff's daughter.",
+        "hook": "Amy is the pilot’s tragic ignition point: a child whose dream-memory fractures into violence, identity confusion, and a hostage crisis. Even in limited screen time, she’s written with enough intensity to feel like the first major symptom of a much larger phenomenon.",
+        "why_actor_wants_this": "This is the kind of child role that made the early seasons of The Americans or The Leftovers so memorable when young performers were asked to carry adult-level dread. It offers a young actor a rare chance to play innocence, mania, and tragedy in one turn."
+      },
+      {
+        "name": "Matt Roland",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, white, sheriff, father.",
+        "hook": "Matt is the public authority figure who collapses under private catastrophe, and the pilot uses him as both hostage and emotional casualty. He’s a classic small-town lawman with enough vulnerability to keep him from feeling generic.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the bruised authority of Kyle Chandler in Friday Night Lights — a man who looks like the system until the system breaks him. It’s a strong, emotionally accessible part for a recognizable character actor."
+      },
+      {
+        "name": "Chuck Stainer",
+        "role_type": "Supporting",
+        "demographics": "Man, late 40s, white, chief investigator / superior officer.",
+        "hook": "Chuck is Ferine’s shaken superior, a man who knows the town and the case history but is visibly out of his depth once the hostage situation turns metaphysical. He functions as a procedural pressure valve and a useful institutional foil.",
+        "why_actor_wants_this": "This is the kind of steady, world-weary authority role that character actors love — think David Harbour in Stranger Things when the job is equal parts competence and emotional fatigue. It gives an actor a lot of reaction work and a credible law-enforcement presence."
+      },
+      {
+        "name": "Latonya Chester",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, Black, governor, mother.",
+        "hook": "Latonya is a polished political operator forced into intimate grief, and the script smartly lets her move between public image management and private collapse. She’s one of the few adult characters whose social power changes the stakes of the town’s tragedy.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the layered command of Regina King in Watchmen — authority, grief, and political intelligence in the same frame. It’s a prestige part with real scene-stealing potential."
+      },
+      {
+        "name": "Elizabeth McCarren",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, white, adoptive mother, community parent.",
+        "hook": "Elizabeth is the town-mom who tries to hold the social fabric together and then gets hit with the emotional fallout of the girls’ secret. She’s practical, loving, and increasingly destabilized as the story reveals how little control any parent has here.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the full spectrum of maternal panic and social authority, in the vein of Laura Linney in Ozark. It offers a strong emotional showcase without needing a flashy premise turn."
+      },
+      {
+        "name": "Bethanie McCarren",
+        "role_type": "Supporting",
+        "demographics": "Girl, 9, white, child in special education, sister of Stacy.",
+        "hook": "Bethanie is one of the pilot’s most striking pieces of casting-on-the-page: quiet, observant, and eventually the key to the corpse reveal and the past-life mechanism. Her emotional stillness makes the final turn land harder.",
+        "why_actor_wants_this": "This is the kind of child role that can become a breakout if played with restraint, like the early eerie precision of Abby Ryder Fortson in The Leftovers. It gives a young actor a haunting, central-mystery function."
+      },
+      {
+        "name": "Cherene Chester",
+        "role_type": "Supporting",
+        "demographics": "Girl, 9, Black, Latonya's daughter, intellectually precocious.",
+        "hook": "Cherene is the smartest kid in the room and knows it, but the script gives her more than a gimmick by tying her intellect to the show’s memory mythology. Her final reveal as Pierre Boisclair gives her a genuine series-launch identity.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the verbal snap and scene ownership of a young Auli'i Cravalho or Iain Armitage-type breakout, but with more mystery. It’s a smart, high-visibility child part with franchise-level intrigue."
+      },
+      {
+        "name": "Austin Pacello",
+        "role_type": "Supporting",
+        "demographics": "Man, 18, white, college-bound son, grieving brother.",
+        "hook": "Austin is awkward, earnest, and emotionally overwhelmed, which makes him a useful audience surrogate inside the younger ensemble. He’s not the flashiest character, but he gives the show a grounded teen male perspective amid the supernatural confusion.",
+        "why_actor_wants_this": "This is the kind of role that lets a young actor play raw grief and social awkwardness with real specificity, similar to the emotional register of Justice Smith in early ensemble work. It’s a strong stepping-stone part for a rising actor."
+      },
+      {
+        "name": "Jessica McCarren",
+        "role_type": "Supporting",
+        "demographics": "Woman, 18, white, college student, friend in the teen ensemble.",
+        "hook": "Jessica is socially agile, funny, and observant, and she helps keep the teen material from becoming purely mournful. She’s a connective character who can move between the kids, the parents, and the town’s gossip network.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the sharp, lived-in energy of a Maude Apatow-type part — quick wit, emotional access, and ensemble utility. It’s a good showcase for timing and grounded charm."
+      },
+      {
+        "name": "Stacy Roland",
+        "role_type": "Supporting",
+        "demographics": "Girl, 17, white, popular teen, sheriff's daughter.",
+        "hook": "Stacy starts as a classic mean-girl type but the pilot quickly complicates her with grief, guilt, and dream-memory confusion. She’s one of the clearest examples of the show turning a familiar teen archetype into something stranger and sadder.",
+        "why_actor_wants_this": "This is the kind of role that lets a young actor pivot from social confidence to breakdown, in the vein of early Euphoria or Yellowjackets teen material. It gives a performer a lot of volatility and emotional range."
+      },
+      {
+        "name": "Vincent Pacello",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, white, father, husband, grieving parent.",
+        "hook": "Vincent is one of the adult grief carriers, and the pilot uses him to widen the emotional fallout around the deaths. He’s a blunt, wounded presence who helps make the town feel like a real community under strain.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the raw, bruised intensity of a Ben Mendelsohn-type supporting part — not flashy, but deeply playable. It’s a strong emotional utility role for a seasoned character actor."
+      },
+      {
+        "name": "Ashley Roland",
+        "role_type": "Supporting",
+        "demographics": "Woman, late 30s, white, mother, wife.",
+        "hook": "Ashley is the parent who arrives after the damage and has to absorb the impossible. The script gives her a sharp grief reaction and enough volatility to feel like a real person rather than a plot function.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the kind of devastated, socially exposed work that earned Patricia Clarkson so much attention in prestige drama. It’s a compact but emotionally loaded part."
+      },
+      {
+        "name": "Carol Verne",
+        "role_type": "Supporting",
+        "demographics": "Woman, 60s, white, artist, great-aunt / guardian figure.",
+        "hook": "Carol is eccentric, guarded, and unexpectedly central to the mythology through Emma’s art and the hidden room. She feels like a local oddball until the script reveals she’s sitting on the show’s most important evidence.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actor the offbeat authority of Frances McDormand in a prestige ensemble — eccentricity with real narrative weight. It’s a juicy, scene-rich supporting part."
+      },
+      {
+        "name": "Emma Wynn",
+        "role_type": "Supporting",
+        "demographics": "Girl, 6, white, special education student, artist.",
+        "hook": "Emma is the quiet prodigy whose drawings become a map of the show’s hidden reality. Her lack of verbal expression is offset by the startling precision of her art, which makes her one of the pilot’s most memorable mystery carriers.",
+        "why_actor_wants_this": "This is the kind of child role that can become a calling card if cast well — think the eerie specificity of a young performer in The OA or The Leftovers. It gives a child actor a visually distinctive, emotionally mysterious showcase."
+      },
+      {
+        "name": "Beau Hadler",
+        "role_type": "Supporting",
+        "demographics": "Man, 70s, white, truck driver, possible predator / antagonist.",
+        "hook": "Beau is introduced as the lurking threat at the edge of the town’s social world, and the final reveal makes him feel like the human face of the show’s danger. He’s a classic small-town menace with mythic implications.",
+        "why_actor_wants_this": "This is the kind of late-breaking antagonist role that lets a veteran actor play menace with minimal exposition, similar to the best of Michael Shannon’s grounded threat work. It’s a compact but memorable villain part."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 24,
+        "leads": 1,
+        "series_regulars": 10,
+        "child_actors": true,
+        "casting_characteristics": [
+          "multiple child roles with significant emotional weight",
+          "one lead adult female role with law-enforcement credibility",
+          "several supporting roles across 30s-70s",
+          "special-ed child casting considerations",
+          "ensemble requires strong regional authenticity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with recurring exteriors",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Vermont small-town sheriff's station",
+          "high school and university campus",
+          "hospital ICU and waiting room",
+          "ceramic studio with hidden room",
+          "woods clearing and buried-body location",
+          "stylized purple dream-world exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Purple Saturn sky, dream-world transitions, floating crystal shard, storm and cosmic-scale imagery, and a few stylized atmospheric effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, blood effects, body reveal in plastic sack, practical corpse makeup, and police-response crowd control.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mystery with a case-of-the-week surface and a mythology engine underneath; each episode can pivot between local incidents and the larger reincarnation pattern."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary small-town production is manageable, but the pilot carries multiple child roles, a large ensemble, night woods work, hospital coverage, and recurring stylized dream-world imagery."
+      },
+      "casting": {
+        "level": "high",
+        "note": "The lead has to carry procedural authority, maternal warmth, and metaphysical credibility, while the child ensemble — especially Crystal, Cherene, Bethanie, and Emma — needs unusually precise casting to land the premise."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s mystery is clear, but the mythology expands quickly across Ferine, the children, the Womack case, and the Saturn imagery, so the buyer conversation will focus on how cleanly the series organizes that material."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Leftovers",
+          "year": 2014,
+          "why_it_comps": "Shares the emotional architecture of ordinary people confronting an unexplainable metaphysical event, with grief and belief driving the series engine."
+        },
+        {
+          "title": "Twin Peaks",
+          "year": 1990,
+          "why_it_comps": "The small-town murder mystery opening into surreal cosmic logic and eccentric community texture is the same buyer-facing promise."
+        },
+        {
+          "title": "Wayward Pines",
+          "year": 2015,
+          "why_it_comps": "A mystery-box series that starts in a recognizable town and then reveals a much stranger governing reality beneath it."
+        },
+        {
+          "title": "The OA",
+          "year": 2016,
+          "why_it_comps": "The show’s dream-memory, identity-shift, and past-life mechanics sit in the same elevated, metaphysical lane."
+        },
+        {
+          "title": "Rectify",
+          "year": 2013,
+          "why_it_comps": "The emotional pace, small-town texture, and grief-forward character writing give it the same prestige-drama gravity."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult streaming viewers who like emotionally serious mystery shows with a supernatural or metaphysical spine.",
+        "demographics": "35-64, slightly female-skewing, prestige-drama audience, high tolerance for serialized ambiguity and ensemble grief stories.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M/ep",
+        "season_total": "$24M-$48M for an 8-ep season",
+        "note": "Contemporary locations keep it grounded, but the ensemble cast, child performers, night exteriors, and recurring dream-world visuals push it into mid-tier prestige series territory."
+      },
+      "lane_fit": {
+        "lane": "prestige mystery-drama with supernatural undertow",
+        "types_of_buyers": [
+          "streamer originals teams building adult mystery brands",
+          "prestige cable drama buyers",
+          "producer-financed elevated genre shops",
+          "buyers looking for female-led serialized mystery with awards-adjacent ambition"
+        ],
+        "detail": "This sits naturally in the lane where emotional grief drama and high-concept mystery can coexist. The pilot has enough procedural surface to orient a broad viewer, but the Saturn mythology and past-life reveal make it feel like a premium serialized buy."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a clear spinoff franchise; the supporting characters are vivid, but no separate character or world branch is yet distinct enough to anchor a separate title."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Ferine is a real series anchor.",
+          "what_it_means": "A buyer can package the show around a lead who is both procedural and emotional, which is the sweet spot for adult serialized drama. That makes the project attractive to streamer and prestige-cable buyers looking for a female-led anchor with room to grow.",
+          "evidence": "Her hostage-room work, her mothering with Crystal, and her private reaction to the dream imagery all define her in active, playable terms.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise escalates cleanly.",
+          "what_it_means": "The pilot starts as a hostage crisis and ends as a metaphysical mystery with a corpse, a past-life reveal, and a town-wide secret, which is a strong buyer-facing escalation pattern. That kind of structural lift helps the show feel like it can deliver both episode tension and season mythology.",
+          "evidence": "Amy’s breakdown, the Womack article, Bethanie’s body discovery, and the final Cherene/Pierre reveal all stack in sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The child ensemble is unusually distinctive.",
+          "what_it_means": "The series has multiple child roles with real narrative function, which broadens the emotional engine and gives the show a memorable point of difference. Buyers looking for a family-adjacent mystery with real stakes will notice that the kids are not decorative.",
+          "evidence": "Crystal, Cherene, Bethanie, Emma, Luella, and Stacy each carry different pieces of the mystery and emotional fallout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a strong visual signature.",
+          "what_it_means": "The purple Saturn imagery, dream-plane language, and cosmic exteriors give the show a recognizable brand that can travel in marketing. That visual identity helps the series stand out in a crowded mystery field.",
+          "evidence": "The purple dawn beach, Saturn filling the sky, the floating crystal shard, and the final clearing reveal.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It balances grief with genre.",
+          "what_it_means": "The script can sell to viewers who want emotional seriousness without giving up the engine of a mystery or supernatural premise. That balance is especially attractive to buyers chasing elevated genre with awards-adjacent credibility.",
+          "evidence": "The hospital scenes, parent-child confrontations, and the town’s mourning all sit beside the dream-memory mythology.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a female-led prestige mystery with a real emotional engine and a clean, bingeable escalation path: a small-town hostage crisis opens into reincarnation, buried bodies, and a cosmic mythology. The contemporary Vermont footprint keeps it producible, while the Saturn imagery and child ensemble give it a brand buyers can market as elevated genre rather than generic supernatural drama."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology arrives in a big stack.",
+          "detail": "The pilot moves from hostage crisis to Womack history to dream-memory rules to Saturn imagery to past-life revelation in one hour. That creates a strong hook, but it also means the buyer conversation will immediately focus on how much exposition the audience is expected to absorb before the series settles into its engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The child ensemble is a casting gauntlet.",
+          "detail": "Crystal, Cherene, Bethanie, Emma, Amy, Luella, Stacy, and the other kids are not background flavor; they carry the premise. That makes the show more distinctive, but it also means the series lives or dies on unusually precise child casting across multiple age ranges and performance styles.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The pilot depends on a lot of moving parts.",
+          "detail": "The episode uses the sheriff’s station, hospital, school, house party, pottery studio, woods, university, and dream-world imagery, which keeps the world active but also broadens the production footprint. For a buyer, that means the show is not a simple contained buy; it needs enough scope to support the ensemble and the visual language.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Ferine carries most of the weight.",
+          "detail": "The pilot is clearly built around her point of view, and the supporting adults are vivid but still orbit her investigation and emotional state. That is a strength, but it also means the series will be judged heavily on whether the lead performance can sustain both procedural authority and metaphysical wonder.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The strongest friction is structural: the pilot is asking the audience to absorb a lot of mythology very quickly, and the show’s success will depend on whether that feels intriguing or overpacked. The other major conversation is casting — especially the child roles — because the premise is only as credible as the kids who carry it."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 32937,
+  "outputTokens": 6087,
+  "cost": 0.05209425000000001,
+  "declaredFormat": "Series"
+}

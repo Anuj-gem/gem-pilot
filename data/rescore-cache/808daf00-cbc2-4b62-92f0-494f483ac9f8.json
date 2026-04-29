@@ -1,0 +1,322 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "character-driven",
+        "contemporary",
+        "coming-of-age",
+        "grief",
+        "family-dynamics",
+        "sports",
+        "basketball",
+        "small-town"
+      ]
+    },
+    "positioning_hook": "A star basketball phenom returns to her Pennsylvania hometown after a career-threatening knee injury and has to decide whether the life she built still fits the woman she’s becoming.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional lane is clear and accessible: elite sports, injury, homecoming, and a late-blooming romance all have built-in audience hooks. The market is narrower than a high-concept genre play because the script is intimate and character-first, but the basketball setting gives it a clean, sellable frame."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early through Skylar’s buzzer-beater, her injury, and the return to Pottsville, then keeps tightening around the question of whether she can stay or has to leave again. It’s easy to explain in two sentences, though the script is more mood-and-decision driven than engine-driven."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Skylar is defined by a strong contradiction: hyper-competent on the court, emotionally evasive off it. Ralph, Maddie, Beth, and Jason each add a different pressure point, giving the lead role real acting territory and the supporting cast enough texture to matter."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The basketball-and-grief combination is familiar, but the script’s restraint and the Pottsville return give it a quieter, more adult register than a standard sports drama. The boldest choice is the refusal to turn the injury into a clean comeback story."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script has a strong opening, a clear injury turn, and a steady emotional pull through the town return and dance-floor ending. It does loosen in the middle because several scenes play as reflective conversation rather than escalation, so the forward drive is more measured than propulsive."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The core idea is instantly legible — a basketball star forced to confront the life beneath the career — but the script’s specific emotional geometry is what gives it lift. The grandmother’s burial plots, the small-town gym, and the final dance create a fresh enough shape around a recognizable premise."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Pottsville, the church, the cemetery, the school gym, and the local basketball ecosystem create a lived-in social world with its own rhythms and obligations. The town feels story-generating because every institution — family, church, school, team — presses on Skylar in a different way."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a consistent, restrained tone that blends sports intensity with quiet domestic pressure and a soft romantic finish. It doesn’t chase big melodrama, which makes the emotional beats feel more grounded and specific."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "There’s more under the surface than the plot initially advertises: inheritance, place, identity, and the fear of shrinking one’s life all keep deepening the material. The Beth and Ralph conversations suggest a larger emotional history without over-explaining it."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Skylar’s relationships with Jason, Ralph, Beth, Maddie, and her family each produce a different kind of friction, so the script isn’t dependent on a single partner dynamic. The ensemble is not sprawling, but it is functional and emotionally interlocked."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Skylar Monroe",
+        "role_type": "Lead",
+        "demographics": "Woman, 20s, elite basketball player; identity-specific casting should read as a high-level athlete with grounded Midwestern/Pennsylvania roots.",
+        "hook": "Skylar is a gifted, self-contained point guard who sees the floor before everyone else does, but that same instinct makes her emotionally evasive. She can command a game with one decision and then refuse to answer the simplest question about her own life; after the injury, the script tracks whether her identity is bigger than the sport that made her.",
+        "why_actor_wants_this": "This is the showcase territory of a performance like Auli'i Cravalho in 'The Power' or Brie Larson in 'Short Term 12' — a role that asks for physical authority, interior restraint, and the slow reveal of vulnerability. It gives an actor a clean star-making arc: athlete, survivor, daughter, lover, and reluctant homecomer all in one part."
+      },
+      {
+        "name": "Ralph",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-40s, small-town church/school worker and widowed father figure.",
+        "hook": "Ralph is steady, observant, and emotionally disciplined, the kind of man who fixes things before he names them. He carries grief without theatrics, and the script uses that restraint to make him both grounding and quietly combustible when Skylar’s uncertainty collides with his need for clarity.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the contained ache of Paul Mescal in 'Aftersun' or Ben Mendelsohn in 'The Outsider' — quiet authority with emotional pressure underneath. The payoff is in stillness, subtext, and the moment the mask finally slips."
+      },
+      {
+        "name": "Beth",
+        "role_type": "Supporting",
+        "demographics": "Older woman, grandmother figure, family matriarch.",
+        "hook": "Beth is the script’s moral ballast: warm, direct, and unsentimental, with enough history to speak in lines that land like inheritance. Even weakened in the hospital, she remains the person who can tell Skylar the truth without making it feel like a lecture.",
+        "why_actor_wants_this": "This is prime Oscar-bait supporting territory in the vein of June Squibb in 'Nebraska' or Frances McDormand in 'Nomadland' — a role where every line carries lived experience. It offers an actor the chance to be funny, stern, tender, and devastating without ever raising the volume."
+      },
+      {
+        "name": "Jason",
+        "role_type": "Supporting",
+        "demographics": "Man, 20s-30s, romantic partner/ex-partner, contemporary professional class.",
+        "hook": "Jason is the person who loves Skylar enough to keep asking the question she keeps dodging, which makes him both supportive and threatening to her self-protective habits. He’s not written as a villain; he’s the pressure of ordinary adulthood, the life that asks for answers instead of highlights.",
+        "why_actor_wants_this": "This is the kind of emotionally legible, scene-stealing relationship role that can play like Adam Driver in 'Marriage Story' or Paul Dano in 'Ruby Sparks' — grounded, wounded, and specific. The actor gets the breakup scene, the confrontation scenes, and the chance to be the one who finally says what the audience has been feeling."
+      },
+      {
+        "name": "Maddie",
+        "role_type": "Supporting",
+        "demographics": "Girl, 5-10, child athlete/fan with sharp observational intelligence.",
+        "hook": "Maddie is small but not soft, a kid who watches basketball like a scout and speaks with the bluntness adults usually spend years learning. She gives the script its clearest bridge between fandom and future, and she’s the one character who can make Skylar feel seen without asking for anything in return.",
+        "why_actor_wants_this": "For a child performer, this is the kind of role that recalls Brooklynn Prince in 'The Florida Project' — funny, precise, and emotionally alert beyond her years. It’s a scene-stealing part with real personality, not just cute utility."
+      },
+      {
+        "name": "Coach Green",
+        "role_type": "Supporting",
+        "demographics": "Adult coach, professional authority figure.",
+        "hook": "Coach Green is the practical adult in the room, the one who values order but can recognize leadership when it arrives in an unexpected form. He’s not there to sermonize; he’s there to measure whether Skylar can function inside a team after the injury and the emotional drift.",
+        "why_actor_wants_this": "This is a strong character-actor role in the lane of J.K. Simmons in 'Whiplash' or Holly Hunter in 'Broadcast News' — authority with wit and pressure. The appeal is in playing someone who can command a room without becoming a caricature."
+      },
+      {
+        "name": "Coach Wensil",
+        "role_type": "Supporting",
+        "demographics": "Adult coach, local school authority.",
+        "hook": "Coach Wensil is the local coach who sees Skylar’s value immediately and uses her pragmatically, not reverently. He’s a useful counterweight to the more emotionally loaded relationships, giving the town’s basketball culture a working-class, no-nonsense texture.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do efficient, lived-in work in the vein of Stephen Root in 'The Ballad of Buster Scruggs' or Richard Jenkins in 'The Visitor' — small scenes, strong imprint. It’s a credibility role that can steal a beat without needing a speech."
+      },
+      {
+        "name": "Father Phillips",
+        "role_type": "Supporting",
+        "demographics": "Older male priest, Catholic authority figure.",
+        "hook": "Father Phillips functions as a calm, nonjudgmental listener who can still land a line with weight. He gives the church and cemetery material a lived-in institutional presence and helps externalize the script’s theme of staying versus leaving.",
+        "why_actor_wants_this": "This is the kind of understated supporting role that rewards actors like Brendan Gleeson in 'Calvary' or Tom Wilkinson in 'Michael Clayton' — authority, warmth, and moral texture. The part is small but memorable because it speaks in truths, not exposition."
+      },
+      {
+        "name": "Sharon",
+        "role_type": "Supporting",
+        "demographics": "Adult woman, church office administrator.",
+        "hook": "Sharon is efficient, kind, and quietly essential, the kind of supporting character who makes the town feel administratively real. She’s a functional but useful presence in the burial-plots sequence, giving the script a procedural texture inside the emotional material.",
+        "why_actor_wants_this": "This is a clean, grounded character role in the lane of Ann Dowd in 'Mass' — brief, precise, and human. It gives an actor a chance to make a small role feel indispensable."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead must credibly play an elite basketball player across multiple ages/eras",
+          "Child role for Maddie requires strong basketball awareness and sharp dialogue timing",
+          "Athletic ensemble needed for team sequences"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "High school gym",
+          "college/arena basketball spaces",
+          "church and cemetery",
+          "small-town house and hotel room",
+          "restaurant interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond basic scoreboard and broadcast-style game coverage.",
+        "stunts_level": "minor",
+        "sfx_needs": "Basketball game choreography, crowd control, stretcher move, practical injury beat, and arena sound design.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Indiana Fever is named as the team Skylar joins."
+        },
+        {
+          "type": "brand",
+          "detail": "WNBA Draft is depicted by name."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or theatrical specialty drama",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical with streaming afterlife, or direct-to-streaming prestige drama."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly practical locations, no VFX, and basketball scenes that are choreographic rather than effects-driven keep this inside an indie feature footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Skylar has to read as an elite athlete, a reserved romantic lead, and a wounded daughter in the same role, while Maddie needs a child performer with real basketball and dialogue instincts."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The injury-to-homecoming-to-romance arc is clear, but the middle section leans heavily on reflective dialogue and repeated emotional beats, so the script’s buying case depends on the strength of the lead performance and tone."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "King Richard",
+          "year": 2021,
+          "why_it_comps": "Like this script, it uses sports as a family-and-identity engine rather than a pure competition movie, with the athlete’s future shaped by home pressure and personal sacrifice."
+        },
+        {
+          "title": "The Way Back",
+          "year": 2020,
+          "why_it_comps": "Shares the injury/recovery emotional lane and the sense of a protagonist trying to rebuild a life around a body that no longer behaves the same way."
+        },
+        {
+          "title": "Bend It Like Beckham",
+          "year": 2002,
+          "why_it_comps": "The sports ambition versus family/place tension is the same structural pleasure, even though this script is quieter and more adult in tone."
+        },
+        {
+          "title": "The Spectacular Now",
+          "year": 2013,
+          "why_it_comps": "The romance is less central, but the emotional register of a young person confronting the limits of momentum and self-mythology is very similar."
+        },
+        {
+          "title": "The Last Black Man in San Francisco",
+          "year": 2019,
+          "why_it_comps": "The return-to-place emotional logic and the question of whether home is refuge or trap give the script a comparable ache, even in a different genre lane."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to character-driven sports dramas, especially viewers drawn to female-led emotional stories about injury, identity, and homecoming.",
+        "demographics": "Skews 25-54, female-leaning but accessible to sports-drama audiences across genders; strongest with viewers who like prestige indie drama and athlete biographies.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$9M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary small-town locations, practical basketball coverage, and a modest cast keep this in the indie feature range."
+      },
+      "lane_fit": {
+        "lane": "prestige sports drama",
+        "types_of_buyers": [
+          "specialty distributors looking for awards-adjacent character drama",
+          "streamer original film teams building female-led prestige lanes",
+          "indie financiers who like sports as an accessible wrapper for emotional material",
+          "talent-driven producers seeking a breakout lead role"
+        ],
+        "detail": "This sits naturally in the lane of intimate, actor-forward sports dramas where the game is the surface and identity is the engine. The basketball material gives it market clarity, while the homecoming and romance elements broaden it beyond a niche athlete story."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or spinoff vector; the supporting characters are vivid but not built as franchise anchors."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Skylar is a star role with real contradiction.",
+          "what_it_means": "This is the kind of lead that can attract an actor looking for a career-defining turn because it combines physical authority with emotional withholding. Buyers chasing female-led prestige material will see a clean showcase role that can carry the movie without needing a high-concept gimmick.",
+          "evidence": "The opening buzzer-beater, the injury collapse, and the repeated refusal to answer direct questions all define her as controlled but internally unsettled.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Basketball is story engine, not wallpaper.",
+          "what_it_means": "The game scenes are doing narrative work: they reveal leadership, injury, belonging, and the cost of staying in motion. That makes the script easier to market to sports-drama buyers because the action is emotionally legible even for non-sports audiences.",
+          "evidence": "The Indiana Fever sequences, the playoff injury, and the school-gym coaching scenes all turn basketball into character pressure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Pottsville gives the film a specific emotional geography.",
+          "what_it_means": "The town, church, cemetery, and school create a contained world with enough texture to feel lived-in and ownable. That helps the script stand out in the prestige-drama lane because the setting is not generic small-town America; it has institutional and family memory baked into it.",
+          "evidence": "The burial plots, the church office, the cemetery service, and the school-gym return all root the story in place.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting cast creates usable pressure points.",
+          "what_it_means": "Ralph, Beth, Jason, Maddie, and the coaches each give a different angle on Skylar’s identity, which makes the script more castable and more playable in the room. Buyers and actors alike can see a movie with multiple scene partners, not just a solo showcase.",
+          "evidence": "The hospital scenes with Beth, the breakup with Jason, and the gym sequences with Ralph and Maddie all generate distinct relationship energy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on choice, not speech.",
+          "what_it_means": "The final dance and the soft kiss give the film a commercially satisfying emotional release without over-explaining the resolution. That’s useful for buyers because it suggests a movie that can play as adult, restrained, and still audience-friendly.",
+          "evidence": "The spring dance sequence ends with Skylar choosing to stay for the night rather than declaring a permanent future.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean prestige-sports package: a star-making female lead role, a practical indie production footprint, and a marketable emotional wrapper built around basketball, injury, and homecoming. The script’s best commercial asset is that it feels actor-forward without being expensive, which makes it attractive to both specialty buyers and streamer film teams looking for grounded, female-led drama."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle leans on repeated emotional conversations.",
+          "detail": "After the injury, several scenes circle the same question — stay, leave, shrink, change — without always advancing the external situation. That makes the buying case more dependent on performance and tone than on page-turning momentum.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The basketball arc is more emotional than procedural.",
+          "detail": "The games establish Skylar’s authority, but the script doesn’t build a detailed competitive ladder or a strong season-long sports engine. Buyers will read this as a character drama with basketball, not a sports movie with escalating competition stakes.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Jason is functional, but not fully differentiated.",
+          "detail": "He works as the pressure of ordinary adulthood, but his scenes mostly serve as a mirror for Skylar’s avoidance rather than giving him a sharply ownable point of view. That narrows the relationship’s long-tail appeal compared with the stronger Skylar/Ralph and Skylar/Beth dynamics.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending is emotionally satisfying but deliberately modest.",
+          "detail": "The final dance and soft kiss close the movie on a feeling rather than a decisive life turn, which is right for the material but may leave some buyers wanting a more emphatic payoff. It’s a tasteful ending, not a high-voltage one.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not concept clarity; it’s momentum. The script is strongest as a restrained, actor-led drama, which is also what makes it vulnerable to buyers who want a more overt sports engine or a bigger third-act payoff."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 22092,
+  "outputTokens": 4851,
+  "cost": 0.0383985,
+  "declaredFormat": "Feature film"
+}

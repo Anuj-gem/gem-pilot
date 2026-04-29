@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T05:02:42.251Z",
+  "submission_id": "0f71ea21-99d3-4662-aad6-0718c299d0ce",
+  "eval_id": "b7075834-dece-4e30-8d08-58ce690a34df",
+  "title": "The Winning Plan",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Victoria Ivanov",
+      "role_type": "Lead",
+      "demographics": "Woman, early 40s, Strakovian political elite, one-eyed, physically impaired, authoritarian-leaning, high-status."
+    },
+    {
+      "name": "Boris Glazkov",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, Strakovian political aide/chief of staff, loyalist, working in elite government circles."
+    },
+    {
+      "name": "Anika Osokin",
+      "role_type": "Supporting",
+      "demographics": "Woman, late teens/early 20s, deaf, scientist, socially awkward, working-class-coded within the elite lab environment."
+    },
+    {
+      "name": "Dr. Elena Emin",
+      "role_type": "Supporting",
+      "demographics": "Woman, late 20s, scientist, obsessive, high-strung, emotionally fraying."
+    },
+    {
+      "name": "Lia Emsky",
+      "role_type": "Supporting",
+      "demographics": "Woman, late 30s, high-ranking military officer, disciplined, authoritative, Strakovian."
+    },
+    {
+      "name": "Vance Yelchin",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-30s, celebrity actor, physically imposing, politically adjacent, intimate partner to Victoria."
+    },
+    {
+      "name": "Janus",
+      "role_type": "Supporting",
+      "demographics": "Artificial intelligence, self-identified male-presenting consciousness, non-human, voice/avatar modeled on Christopher Reeve."
+    },
+    {
+      "name": "Major Alex Ozerov",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, retired military officer, world-weary, laconic, Strakovian."
+    },
+    {
+      "name": "Julian Anikin",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-20s, fighter pilot, cocky, high-skill, military."
+    },
+    {
+      "name": "Emma Baranovsky",
+      "role_type": "Supporting",
+      "demographics": "Woman, mid-20s, military officer, physically capable, sharp, brash."
+    },
+    {
+      "name": "Roman Timoshenko",
+      "role_type": "Supporting",
+      "demographics": "Man, early 30s, military officer, arrogant, rigid, Strakovian."
+    },
+    {
+      "name": "President Natalia Petrova",
+      "role_type": "Supporting",
+      "demographics": "Woman, 70s, sitting head of state, stern, composed, Strakovian."
+    },
+    {
+      "name": "Senator Damien Pleshkin",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-40s, politician, bureaucratic, suspicious, Strakovian."
+    },
+    {
+      "name": "Garry Akhremenko",
+      "role_type": "Supporting",
+      "demographics": "Man, early 30s, state security agent, father, coerced, Strakovian."
+    }
+  ],
+  "positioning_hook": "A one-eyed Strakovian senator races to weaponize a sentient AI before an invasion, then discovers the machine’s real ask is power, not protection.",
+  "cost_usd": 0.05461575,
+  "input_tokens": 37499,
+  "output_tokens": 5887,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,345 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Crime",
+        "Comedy"
+      ],
+      "tone": "sun-baked",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "propulsive",
+        "crime",
+        "friendship",
+        "addiction",
+        "survival",
+        "surfing"
+      ]
+    },
+    "positioning_hook": "A washed-up surf sleuth is pulled back into the lineup when a missing photographer, a dead friend, and a local crew’s secret board pipeline point to a murder hidden inside Ventura’s surf culture.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is easy to sell: a surf-world detective with a dead-friend wound, a missing-person case, and cartel-adjacent danger. The audience is real but somewhat specific, and the heavy surf-culture vernacular narrows the immediate mass-market read."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot announces its engine fast: Fin is a burned-out surf PI dragged into a missing-person case that opens into a larger conspiracy. The teaser, the Pudge search, and the final board/tattoo reveal all keep the premise legible."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Fin has a strong contradiction set-up — gifted, self-destructive, funny, and emotionally stranded — and Chiu, Macy, Sage, Skull, and Pudge all add usable friction. The lead is durable, though several supporting players are more texture than fully independent engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific surf-noir voice, with casework filtered through wave-reading, localism, and a stoner-detective sensibility. The car-surfing climax and the board-as-smuggling-object conceit give it a distinctive commercial angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The episode keeps moving through a clean chain of leads: Macy, Skull, Pudge, Yannick, Tank, Sage, then the board-shack fire and boat confrontation. There is some repetition in Fin’s drunken wandering and interrogations, but the act breaks do escalate."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels fresh because the surf world is not just backdrop; it is the logic system for the mystery. The board thefts, localism, and paddle-out culture make the conspiracy feel native to the setting rather than pasted on."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The pilot builds a lived-in Ventura surf ecosystem with local breaks, surf brands, magazine culture, board shaping, paddle-outs, and crew hierarchies. The world generates story naturally because every social group has a stake in access, status, and sponsorship."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: sun-baked, self-aware, and bro-y without losing the noir spine. Fin’s voice-over, the surf jargon, and the comic contempt for ska/reggae culture create a recognizable register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The pilot hints at deeper guilt around Ricky’s death, Fin’s addiction, and the hidden economy around boards and sponsorships. The Turtle tattoo and the final flash drive suggest a larger conspiracy, though the episode still plays most of its depth cards fairly openly."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Fin’s relationships with Macy, Chiu, Sage, Skull, Pudge, and Gabriel all produce usable scenes and future tension. It is not a true ensemble machine yet, but the social web is strong enough to support recurring story."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Drake Finley",
+        "role_type": "Lead",
+        "demographics": "Male, 30s, white, California surfer, former search-and-rescue PI, active addiction/recovery pressure.",
+        "hook": "Known as Fin, Drake Finley is a brilliant, self-sabotaging surf-world investigator living on a boat, numbing himself with Jager and weed while pretending he’s done with the coast. He’s funny, physically capable, and emotionally allergic to intimacy, but the Ricky wound keeps dragging him back into the water whether he wants it or not.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, wounded monologist whose voice-over, physicality, and self-destructive magnetism are the performance. It gives an actor a swagger role with real emotional collapse underneath."
+      },
+      {
+        "name": "Macy Jimenez",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, Latina, attorney, family-connected to the surf community.",
+        "hook": "Macy is the smart, grounded Jimenez family lawyer who keeps trying to turn Fin’s chaos into something useful while carrying her own loyalty to Ricky, the family business, and the practical realities of money. She reads like the adult in the room until the script reveals how much she’s also compromised by the same surf economy she’s trying to manage.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Linney in Ozark — the steady, intelligent counterweight who can play authority, disappointment, and private compromise in the same scene. It gives an actor sharp dialogue and the chance to be the moral center without being passive."
+      },
+      {
+        "name": "Detective Cindy Chiu",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, legacy police officer, Asian American, Ventura detective.",
+        "hook": "Chiu is the new detective with a chip on her shoulder and a family legacy that makes every interaction feel personal. She’s the cleanest institutional foil in the pilot: competent, annoyed, and just open enough to become a recurring ally or adversary.",
+        "why_actor_wants_this": "This is the showcase territory of Regina King in Watchmen — a smart, controlled law-enforcement role with authority, wit, and emotional subtext. It gives an actor the pleasure of playing someone who can dominate a room without ever over-explaining herself."
+      },
+      {
+        "name": "Sage Andersen",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, surfer/board shaper, physically limited by a limp.",
+        "hook": "Sage is the bookish, exacting board shaper who knows the local ecosystem better than Fin does and is not interested in rescuing him from himself. She has history with him, business ties to the surf economy, and enough withheld feeling to make every scene with Fin sting.",
+        "why_actor_wants_this": "This is the showcase territory of Carrie Coon in The Leftovers — a contained, intelligent role with emotional restraint and a lot of subtext. It gives an actor the chance to play competence, hurt, and unresolved history without speeches."
+      },
+      {
+        "name": "Josh James",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, white, bald, local surf crew leader with criminal ties.",
+        "hook": "Skull is the quiet, commanding localist who understands the beach as territory and social order as muscle memory. He’s funny in a deadpan way, dangerous when crossed, and clearly more complicated than the crew muscle around him.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Boardwalk Empire — a still, intimidating presence who can make a room feel dangerous without raising his voice. It gives an actor authority, menace, and a surprising amount of dry humor."
+      },
+      {
+        "name": "Pudge McNeely",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, white, surf photographer, stoner, physically battered.",
+        "hook": "Pudge is the flaky, funny photographer whose laziness masks the fact that he’s sitting on the key evidence. He’s comic relief until he isn’t, and the pilot smartly uses him as both a liability and a plot engine.",
+        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Vice Principals — a slippery, comic, slightly pathetic role that can pivot into panic and betrayal. It gives an actor a lot of behavioral detail and a late-episode emotional turn."
+      },
+      {
+        "name": "Yannick Goins",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, white, wealthy surf sponsor executive.",
+        "hook": "Yannick is the polished money guy who speaks in sponsorship language while quietly moving pieces behind the scenes. He’s the kind of antagonist who can smile through a threat, which makes him useful as a long-game pressure source.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew Goode in The Offer — sleek, controlled, and socially dangerous. It gives an actor the chance to play charm as a weapon."
+      },
+      {
+        "name": "Gabriel",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-teens, Latino, local grom, eager to belong.",
+        "hook": "Gabriel is the kid who wants in so badly he’ll ignore every warning sign to get a board, a crew, and a sense of identity. He gives the pilot its younger emotional stake and lets Fin look like a mentor even when he’s barely holding himself together.",
+        "why_actor_wants_this": "This is the showcase territory of the young cast in Euphoria — a role built on vulnerability, hunger, and the need to belong. It gives a young actor a clear emotional engine and a real coming-of-age edge."
+      },
+      {
+        "name": "Tank",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, large physical build, local crew enforcer.",
+        "hook": "Tank is the muscle with enough presence to feel like a threat the second he enters a scene. He’s not just a goon; he’s the visible face of the crew’s intimidation economy and a useful escalation lever.",
+        "why_actor_wants_this": "This is the showcase territory of Dave Bautista in Blade Runner 2049 — a physically imposing role that can still carry menace and restraint. It gives an actor a strong physical silhouette and a few moments of real authority."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "lead requires surfer physicality and credible comic voice-over",
+          "Gabriel is mid-teen casting",
+          "Tank requires a notably large physical presence",
+          "Sage has a limp as a character detail"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "ocean and beach access",
+          "boat interior and marina work",
+          "surf shop/board-shaping warehouse",
+          "vineyard-boat setup on land",
+          "bar, motel, law office, hospital, and mansion exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical ocean work and a few enhancement shots for waves, fire, and the boat explosion.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fire sequence at the board shack, vehicle collision, roof-riding/car-surfing action, flare-gun ignition, and boat explosion.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "No Doubt is specifically used in the flashback and Gwen Stefani is referenced by name."
+        },
+        {
+          "type": "brand",
+          "detail": "Jägermeister is repeatedly named and used as a character prop."
+        },
+        {
+          "type": "brand",
+          "detail": "Tesla is prominently referenced in the localism/gate sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "UCSB is visible on a bumper sticker in a scene that uses the school as a recognizable marker."
+        },
+        {
+          "type": "brand",
+          "detail": "Surfer Magazine is plot-critical as the client/publication driving the case."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mystery with a case-of-the-pilot engine that opens into an ongoing surf-world crime lane."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly grounded, but the ocean work, fire, car-surfing stunt, boat explosion, and multiple coastal locations will keep this above a simple contained indie."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Fin needs a very specific lead: surfer-cool, funny, physically credible, and able to carry voice-over without sounding like a parody. The supporting ensemble is castable, but the lead is the key lift."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s surf-noir voice is distinctive, but the mythology around Ricky, the board pipeline, and the Turtle reveal will need careful calibration so the mystery stays legible as the series expands."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Veronica Mars",
+          "year": 2004,
+          "why_it_comps": "A smart, wisecracking investigator moves through a specific social ecosystem where class, loyalty, and secrets are the real case engine."
+        },
+        {
+          "title": "Big Little Lies",
+          "year": 2017,
+          "why_it_comps": "The coastal setting, hidden social hierarchies, and murder-adjacent community pressure give this the same upscale, sunlit-danger feel."
+        },
+        {
+          "title": "Terriers",
+          "year": 2010,
+          "why_it_comps": "A scrappy, character-first detective story with a lived-in local world and a lead whose charm is inseparable from his damage."
+        },
+        {
+          "title": "Outer Banks",
+          "year": 2020,
+          "why_it_comps": "Youth surf culture, local territory, and a treasure-hunt-style conspiracy energy make the setting feel story-generating and commercially legible."
+        },
+        {
+          "title": "The Lincoln Lawyer",
+          "year": 2022,
+          "why_it_comps": "A charismatic investigator operating in a sun-soaked California world with casework, class tension, and recurring legal-adjacent allies."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like character-driven mystery with a distinctive regional world, especially viewers drawn to coastal crime stories and flawed male leads.",
+        "demographics": "25-54, slightly male-skewing but workable across genders, streaming-savvy, fans of crime/mystery with humor and local texture.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Assuming an 8-episode season, the coastal locations, ocean work, stunt beats, and recurring ensemble sit in mid-tier streaming drama territory."
+      },
+      "lane_fit": {
+        "lane": "sun-soaked mystery-drama with comic surf-noir flavor",
+        "types_of_buyers": [
+          "streamer originals teams building adult mystery lanes",
+          "premium cable drama buyers looking for a distinct regional hook",
+          "producer-led indie TV shops with crime-comedy sensibility",
+          "buyers seeking a male-lead antihero with a lighter tonal wrapper"
+        ],
+        "detail": "This sits naturally in the lane of adult, character-forward mystery with a strong setting identity. The surf world is not decorative; it is the engine, which makes the show easier to pitch than a generic PI series."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a franchise engine; no clear spinoff vector beyond the main Fin-led show."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Surf culture is the mystery engine.",
+          "what_it_means": "Commercially, this gives the show a built-in world rule that feels fresh without needing a high-concept gimmick. Buyers looking for a recognizable but ownable lane will see a series that can generate cases from access, localism, sponsorship, and board culture.",
+          "evidence": "The pilot repeatedly uses wave-reading, localism, board shaping, surf magazine access, and the board pipeline as plot mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Fin is a strong antihero lead.",
+          "what_it_means": "This creates a casting-forward role that can attract an actor who wants swagger, comedy, and damage in one package. That kind of lead is valuable to streamers and premium buyers because the role can carry both procedural momentum and character drama.",
+          "evidence": "Fin’s Jager-fueled self-destruction, voice-over, physical competence, and emotional guilt over Ricky all coexist on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels lived-in and social.",
+          "what_it_means": "A dense local ecosystem means recurring story can come from relationships, not just cases, which is a real asset in series development. Buyers respond to worlds where every supporting player has a stake in the same economy.",
+          "evidence": "Macy, Chiu, Sage, Skull, Yannick, Tank, Pudge, and Gabriel all occupy different positions in the same surf economy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The board-smuggling reveal is ownable.",
+          "what_it_means": "The board-as-object conceit gives the mystery a physical, visual hook that is easy to market and easy to remember. That kind of specificity helps a buyer distinguish the show from generic coastal crime.",
+          "evidence": "The final reveal ties Ricky’s death, Pudge’s photos, and the Andersen boards together as the hidden object of value.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has a clean act engine.",
+          "what_it_means": "The episode moves from missing photographer to local crew to sponsor conspiracy to board fire to boat showdown, which is exactly the kind of momentum buyers want in a pilot. It suggests a series that can open with a case and then widen into a larger conspiracy without losing propulsion.",
+          "evidence": "Each act ends on a new lead or escalation, culminating in the flash drive reveal and the Turtle tattoo tag.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a character-actor showcase wrapped in a sun-soaked mystery engine, with a surf-world specificity that makes the premise feel ownable rather than generic. The production footprint is contemporary and controllable enough for streaming or premium cable, while the localism/board-culture hook gives buyers a clear lane to market.",
+      "issues": {
+        "items": [
+          {
+            "area": "The voice-over carries a lot of the pilot.",
+            "detail": "Fin’s surf-philosophy narration is doing heavy lifting for tone, theme, and exposition across the teaser and multiple act transitions. That makes the voice distinctive, but it also means the pilot is leaning on a single stylistic device to keep momentum and clarity aligned.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The mystery is still broad in the middle.",
+            "detail": "The Pudge/Yannick/Tank/Sage trail is clear enough to follow, but the pilot spends a long stretch bouncing between suspects before the board reveal locks the conspiracy into place. A buyer will notice that the central engine only fully sharpens late in the hour.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "Fin’s addiction is a tonal and legal sensitivity.",
+            "detail": "The repeated Jager, weed, and blackout behavior gives the lead his edge, but it also pushes the show into mature territory that narrows some buyers and requires a consistent handling of intoxication as character, not just color. The content is fine for streaming, but it is not broad-network friendly.",
+            "is_primary_lever": false,
+            "source": "both"
+          },
+          {
+            "area": "The surf jargon narrows the entry point.",
+            "detail": "The pilot is rich in local language, but terms like tomb-stoning, zonies, kooks, and board-shaping specifics create a strong insider texture that may ask a little more of casual viewers. That specificity is an asset, but it is also a market filter.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The supporting cast is vivid before it is deep.",
+            "detail": "Macy, Chiu, Sage, Skull, and Yannick all pop immediately, but only Fin is carrying a fully articulated internal engine on the page. That is fine for a pilot, but it means the series sale will still hinge heavily on the lead and the surf-world premise rather than on a true ensemble architecture.",
+            "is_primary_lever": false,
+            "source": "script"
+          }
+        ],
+        "headline": "The pilot’s biggest friction is that its style is doing a lot of the work: the voice-over, surf slang, and intoxicated POV are memorable, but they also concentrate the burden of clarity on Fin’s narration. The mystery pays off, but buyers will weigh whether the middle stretch is sufficiently sharp before the board-and-tattoo reveal lands."
+      },
+      "craft_note": ""
+    }
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 31188,
+  "outputTokens": 5081,
+  "cost": 0.046255500000000005,
+  "declaredFormat": "Series"
+}

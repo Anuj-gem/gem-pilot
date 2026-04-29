@@ -1,0 +1,334 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller",
+        "Crime"
+      ],
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "feature-anchored",
+        "high-concept",
+        "character-driven",
+        "family-dynamics",
+        "grief",
+        "survival",
+        "truck-stop"
+      ]
+    },
+    "positioning_hook": "A highway patrol captain hunting a string of drained bodies discovers the killer is a trucker keeping his vampire wife alive with stolen blood.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is immediately legible and genre-forward: a rural serial-killer investigation that detonates into vampire horror. The hook is strong enough for horror buyers and elevated-genre streamers, though the blood-soaked material and bleakness narrow the audience more than a four-quadrant thriller."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening truck-stop abduction, the drained corpses, and the eventual reveal of Layla as a vampire make the engine clear and escalating. The script earns its concept by turning a procedural body trail into a contained monster story with a family wound at the center."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Alissa has a strong, playable contradiction: hard-edged cop, exhausted mother, and emotionally compromised ex-wife. Hud is equally vivid as a grief-driven predator, and Clara gives the story a sharp generational pressure point, though the supporting cast is more functional than expansive."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is the genre pivot from highway murders to a vampire domestic tragedy, and it commits to that turn without apology. The truck-stop Americana, the blood-as-medication conceit, and the sunrise ending give it a distinct commercial identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The investigation keeps producing new bodies, new locations, and new pressure on Alissa’s family life, so the story rarely stalls. The middle section leans on repeated discovery beats and procedural conversation, but the escalation into the station siege pays off the setup."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of a long-haul trucker feeding his vampire wife with victims found along the interstate is both strange and instantly understandable. It feels like a fresh monster premise that still plugs into familiar fears about isolation, predation, and family loyalty."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a specific corridor world: truck stops, rest areas, rural diners, highway patrol offices, and the social ecosystem of drivers, clerks, and roadside travelers. Those spaces are not just backdrop; they generate the story’s method of attack and its visual identity."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually controlled: mournful, nocturnal, and grimly romantic, with bursts of savage gore. The Cindy Lee needle drops, the empty-road imagery, and the final sunrise give it a signature mood that feels hard to mistake for a generic horror script."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the monster plot is a real emotional engine about divorce, parental failure, and the lengths people go to avoid loss. The script gestures toward bigger thematic territory—rot, dependency, and the cost of love—but it stays mostly on the surface of that material until the final stretch."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Alissa/Peter/Clara gives the script a workable family triangle, and Hud/Layla is a strong second relationship engine. The ensemble is not sprawling, but the key pairings generate enough friction and reversals to keep the story alive."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Alissa Forrest",
+        "role_type": "Lead",
+        "demographics": "Female, 40s, Oklahoma Highway Patrol captain, white, working-class, mother.",
+        "hook": "A sharp, tired highway patrol captain who has built her life around control, competence, and emotional containment. She’s still carrying the wreckage of her marriage to Peter, trying to protect Clara from the same world she spends her nights policing, and the case forces her to confront how little control any of that actually gives her.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Carrie Coon in The Leftovers: a woman whose authority is constantly undercut by private grief, with scenes that let an actor play command, shame, tenderness, and fury in the same frame."
+      },
+      {
+        "name": "Hudson Carol",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, long-haul truck driver, white, working-class, husband.",
+        "hook": "A soft-spoken, weathered trucker who presents as trustworthy until the script reveals the full machinery of his desperation. He is not a cackling monster; he’s a man who has turned predation into caretaking and keeps trying to convince himself that makes it different.",
+        "why_actor_wants_this": "This is the kind of role Bryan Cranston got in Breaking Bad or Michael Shannon gets in Take Shelter: a deeply human man whose decency and monstrosity coexist, giving an actor a chance to play regret, menace, and self-justification without ever losing the audience."
+      },
+      {
+        "name": "Clara Forrest",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens, Alissa and Peter’s daughter.",
+        "hook": "A sharp, angry teenager who sees through her parents’ damage faster than they do and refuses to perform gratitude for it. She starts as a resentful kid stuck in the fallout of adult choices and becomes the story’s moral witness, then its final act of survival instinct.",
+        "why_actor_wants_this": "This is the kind of breakout teen role that gave Kaitlyn Dever in Short Term 12 or Hailee Steinfeld in The Edge of Seventeen a chance to be funny, wounded, and ferociously specific. The final confrontation gives the actor a real emotional turn, not just a scream track."
+      },
+      {
+        "name": "Peter Forrest",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, FBI agent, white, Alissa’s ex-husband.",
+        "hook": "A smug, intellectually agile federal agent who uses wit as both armor and seduction. He’s still emotionally entangled with Alissa, still trying to prove he can be useful, and the script gives him enough charm that his death lands as both plot shock and personal collapse.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the polished, wounded intelligence of Matthew McConaughey in True Detective or Kyle Chandler in Bloodline: a man who can flirt, diagnose, and fail in the same breath."
+      },
+      {
+        "name": "Michael Faro",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, Oklahoma Highway Patrol trooper, white.",
+        "hook": "A young, queasy, eager rookie who starts as the audience’s entry point into the grisly case and gradually becomes a steadier presence beside Alissa. He’s not built as a showy character, but he has a clean arc from green discomfort to earned resolve.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded, reactive lift of a Ben Schwartz in The Afterparty or a young Jesse Plemons-type supporting turn: the chance to play fear, competence, and dry humor without carrying the whole movie."
+      },
+      {
+        "name": "Layla Carol",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, vampire, Hud’s wife.",
+        "hook": "A once-human wife whose illness has been replaced by something predatory, beautiful, and unstable. She is the movie’s most unsettling presence because she’s both victim and engine: needy, childlike, monstrous, and finally impossible to contain.",
+        "why_actor_wants_this": "This is the kind of transformation role that gave Toni Collette in Hereditary or Rebecca Hall in Resurrection a full-body showcase: physical horror, emotional ambiguity, and a late-film escalation into pure nightmare."
+      },
+      {
+        "name": "Evie Standard",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s, sex worker.",
+        "hook": "A pragmatic, wary woman who reads danger fast but still has to make the bad choice because the money matters. She functions as one of the script’s clearest victims, but the scene gives her enough skepticism and nerve to register as a person, not just a body count.",
+        "why_actor_wants_this": "This is the kind of compact, high-impact role that can become a calling card if played with specificity, like the best single-scene turns in Green Room or The Invitation. It gives an actor a fear-to-fight transition in a very short runway."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child role with meaningful emotional weight",
+          "one vampire transformation role requiring physical and prosthetic specificity",
+          "several working-class regional roles that benefit from authentic Midwest/Southern cadence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "multiple rural highway and truck-stop locations",
+          "police station/interrogation room",
+          "trailer home interior",
+          "one RV interior with practical blood effects",
+          "night highway exteriors and dawn sunrise coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "A few blood-drain and creature-enhancement moments, but the horror is mostly practical and performance-driven.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy practical blood, gore, prosthetic teeth/mandibles, body-mutilation effects, and a few creature attack beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Cindy Lee songs 'Diamond Jubilee,' 'Dreams of You,' and 'Flesh and Blood' are specifically cued in the script."
+        },
+        {
+          "type": "named_music",
+          "detail": "Adrianne Lenker/Buck Meek's 'Indiana' is specifically cued in the script."
+        },
+        {
+          "type": "named_music",
+          "detail": "Gordon Lightfoot's 'Carefree Highway' is specifically cued in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "U-Haul is prominently used as the moving truck brand."
+        },
+        {
+          "type": "brand",
+          "detail": "Subway is prominently featured in the truck-stop travel center."
+        },
+        {
+          "type": "brand",
+          "detail": "TikTok is referenced in the police station scene."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: elevated horror-thriller with strong streamer and specialty theatrical upside."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is contemporary and mostly contained, but the night highway work, multiple rural locations, heavy practical gore, and the final station siege will push above a simple contained-thriller footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Alissa and Hud need actors who can carry authority and emotional fracture at the same time, and Layla needs a performer who can sell both intimacy and creature horror. Clara also has enough attitude and emotional specificity to narrow the pool."
+      },
+      "development": {
+        "level": "low",
+        "note": "The premise is clear, the escalation is legible, and the third-act siege gives the movie a clean commercial shape. The main development conversation is tonal calibration, not story architecture."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "Like this script, it starts as a social/psychological unease piece and reveals a contained horror engine underneath."
+        },
+        {
+          "title": "It Comes at Night",
+          "year": 2017,
+          "why_it_comps": "The rural isolation, family pressure, and dread-first pacing line up with the script’s nocturnal, end-of-the-road atmosphere."
+        },
+        {
+          "title": "Near Dark",
+          "year": 1987,
+          "why_it_comps": "The truck-stop Americana and romanticized monster logic echo the script’s blend of road movie texture and vampire horror."
+        },
+        {
+          "title": "The Night House",
+          "year": 2020,
+          "why_it_comps": "It shares the same grief-driven genre reveal and the same sense that the monster story is really about a damaged relationship."
+        },
+        {
+          "title": "Fresh",
+          "year": 2022,
+          "why_it_comps": "The script’s body-horror mechanics and predatory intimacy have the same commercial appeal as a horror premise built around appetite and control."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult horror audiences who like elevated, character-driven genre films with a strong female lead and a nasty central reveal.",
+        "demographics": "18-44 skew, slightly female-leaning, genre-literate, streamer-friendly, specialty theatrical viable.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, limited cast, and mostly practical effects keep it in indie feature territory, though the night exteriors and gore package require disciplined execution."
+      },
+      "lane_fit": {
+        "lane": "elevated rural horror",
+        "types_of_buyers": [
+          "streamer originals dev execs building the elevated-genre lane",
+          "specialty distributors looking for a horror title with awards-adjacent craft",
+          "indie genre financiers who like contained but distinctive high-concept horror",
+          "producer-directors with a strong visual reel and practical-effects appetite"
+        ],
+        "detail": "The script sits naturally in the lane where atmosphere, character, and a clean monster reveal matter as much as body count. It has enough hook for genre buyers and enough emotional spine for buyers who want horror with a human center."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. Hud and Layla’s story resolves cleanly, and the supporting characters do not suggest a separate franchise vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The truck-stop world is instantly ownable.",
+          "what_it_means": "That setting gives the movie a commercial identity buyers can pitch in one sentence and a visual lane that separates it from generic suburban horror. It will attract genre execs looking for a fresh American landscape and directors who can turn roadside Americana into menace.",
+          "evidence": "The opening diner, the travel centers, the highway patrol stops, and the repeated use of rest areas and scenic byways all feel story-specific rather than decorative.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The monster reveal is emotionally motivated.",
+          "what_it_means": "The vampire turn is not just a twist; it’s tied to grief, illness, and a husband’s refusal to let go, which makes the horror more marketable to elevated-genre buyers. That gives the film a hook for audiences who want scares with a tragic core.",
+          "evidence": "Hud’s confession about the blood transfusions and Layla’s deterioration reframes the killings as a grotesque form of caretaking.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Alissa is a strong anchor role.",
+          "what_it_means": "This is the kind of lead that can attract a serious actress looking for authority, vulnerability, and genre credibility in one package. It also gives the movie a human entry point that broadens it beyond pure creature-feature buyers.",
+          "evidence": "Her scenes with Clara, Peter, Michael, and Hud all show different registers: command, regret, tenderness, and procedural focus.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final siege is a clean third-act engine.",
+          "what_it_means": "The police-station showdown gives the movie a contained, high-intensity climax that is easy to market and easy to visualize in a trailer. Buyers like a horror script that knows exactly where the set-piece lands.",
+          "evidence": "The tornado shelter lockdown, the team-up with axes and shotguns, and Layla’s rooftop entry all build to a clear survival battle.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family triangle adds real emotional leverage.",
+          "what_it_means": "Alissa, Peter, and Clara give the script a relationship engine that makes the horror feel personal rather than abstract. That helps the movie play to audiences who respond to genre stories with domestic stakes and gives casting a stronger conversation.",
+          "evidence": "The dinner scene, the ex-spouse tension, and Clara’s confrontation with both parents all deepen the case beyond the monster plot.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, pitchable elevated-horror feature with a distinctive American roadside world, a strong female lead, and a monster reveal that turns grief into genre. It has the kind of contained-but-not-small production profile that can attract streamer, specialty, or indie-finance attention without needing franchise math."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The Layla reveal arrives late in the movie.",
+          "detail": "For a buyer, the first half plays as a procedural serial-killer hunt before the vampire premise fully lands. That delay is not fatal, but it means the script is asking the audience to invest in a genre shape-shift before the core monster logic is on the table.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle section repeats the same discovery pattern.",
+          "detail": "Bodies, reports, diner interviews, and highway stops create momentum, but several beats function as variations on the same investigative move. That can read as controlled build in the room, but it also creates a pacing conversation for buyers looking for a tighter escalation curve.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The lead role is only as good as the cast.",
+          "detail": "Alissa has authority and emotional texture, but the script depends on an actor who can play procedural competence, marital history, and maternal exhaustion without flattening any of them. That is a real upside if attached well, and a real casting conversation if not.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The gore package will narrow some buyers.",
+          "detail": "The drained corpses, throat-ripping, head removal, and child-family massacre push the film into hard-R horror territory. That is fine for streaming and genre specialty, but it does narrow the theatrical buyer pool and raises the bar on execution.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "Hud’s backstory is functional, not expansive.",
+          "detail": "His grief and devotion explain the killings, but the script keeps him in a fairly narrow emotional lane once the vampire premise is revealed. That makes him effective as a monster-antagonist, though not especially franchiseable or unusually layered beyond the central conceit.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s main friction is structural, not conceptual: it withholds the vampire engine long enough that the first half has to carry a lot of procedural weight. Add in the hard-R gore and the need for a very specific lead cast, and the buy becomes more selective even though the premise itself is strong."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 43791,
+  "outputTokens": 4676,
+  "cost": 0.053885249999999996,
+  "declaredFormat": "Feature film"
+}

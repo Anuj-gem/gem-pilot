@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T05:04:49.199Z",
+  "submission_id": "e35d2bee-a383-4110-8f42-6338b1a13a91",
+  "eval_id": "0c5ed2f0-aa70-4847-82e4-8d098ade0c51",
+  "title": "Gang Warfare",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Machet-t",
+      "role_type": "Lead",
+      "demographics": "Black male, late teens to mid-20s, street criminal with military-imposed leadership"
+    },
+    {
+      "name": "Brannigan",
+      "role_type": "Supporting",
+      "demographics": "Older white male, military command authority"
+    },
+    {
+      "name": "Spark-P",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, white gang member"
+    },
+    {
+      "name": "Rico",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Hispanic gang member"
+    },
+    {
+      "name": "Cold-C",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to 20s, Black gang member"
+    },
+    {
+      "name": "Charlay",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to 20s, Irish gang member"
+    },
+    {
+      "name": "Laslo",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Italian-American gang member"
+    },
+    {
+      "name": "Ying-K",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Asian gang member"
+    },
+    {
+      "name": "Rashid",
+      "role_type": "Supporting",
+      "demographics": "Middle-aged Afghan male, freedom-fighter leader, Muslim"
+    },
+    {
+      "name": "Andrea",
+      "role_type": "Supporting",
+      "demographics": "Afghan girl, pre-teen/early teen, armed combatant"
+    },
+    {
+      "name": "Kendra",
+      "role_type": "Supporting",
+      "demographics": "Afghan female fighter, young adult"
+    },
+    {
+      "name": "Sullivan",
+      "role_type": "Supporting",
+      "demographics": "White male, 30s-40s, U.S. Army sergeant"
+    },
+    {
+      "name": "Mustiban",
+      "role_type": "Supporting",
+      "demographics": "Middle-aged male, Afghan/Iraqi-coded antagonist, insurgent leader"
+    },
+    {
+      "name": "Bain",
+      "role_type": "Supporting",
+      "demographics": "Older white male, senior military/political authority"
+    },
+    {
+      "name": "Wendt",
+      "role_type": "Supporting",
+      "demographics": "White male, U.S. President, middle-aged to older"
+    },
+    {
+      "name": "Joseph",
+      "role_type": "Supporting",
+      "demographics": "White male, commanding officer, middle-aged"
+    }
+  ],
+  "positioning_hook": "A street-hardened gang leader is forced to command a squad of convicted killers in Afghanistan, where survival, loot, and loyalty collide under a military experiment that treats them as expendable.",
+  "cost_usd": 0.062393250000000004,
+  "input_tokens": 47701,
+  "output_tokens": 5915,
+  "status": "wrote:leads_ok"
+}

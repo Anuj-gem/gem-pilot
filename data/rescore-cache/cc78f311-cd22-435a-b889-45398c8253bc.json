@@ -1,0 +1,326 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller"
+      ],
+      "tone": "gruesome",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "low-budget-friendly",
+        "character-driven",
+        "survival",
+        "friendship",
+        "pregnancy",
+        "werewolves",
+        "college-road-trip"
+      ]
+    },
+    "positioning_hook": "A pregnant college swimmer on a spring-break bike trip gets trapped in a rural werewolf pact, and the only way out is a silver medal and a brutal truth about her friends.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clean horror engine, a female ensemble, and a strong final-girl survival lane, which gives it a definable audience. The marketability is held back by the very graphic body-horror turns and the shaggy first half, which delay the monster payoff until the road trip reaches the woods."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook is easy to state once the girls enter the Vanish Woods: a spring-break bike trip turns into a werewolf trap with a pregnancy twist. The opening pages spend a long time on the swim-team banter and rural stopovers before the horror engine fully locks in."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Angie, Lauren, Kendall, Devina, and May each have a distinct social function, and Kendall’s local knowledge gives the group a useful internal guide. But only Angie and Kendall carry real emotional weight, while the others are mostly defined by attitude, appetite, or sexual banter."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The pregnancy reveal, the silver-medal weapon, and the rural werewolf pact give the script a few memorable hooks. The execution leans heavily on familiar slasher-beat escalation, with the monster reveal and body-count structure playing in well-worn genre territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "Once the girls split up and the town empties out, the script starts stacking danger efficiently: the abandoned garage, the cabin discovery, the cellar, and the final chase all escalate cleanly. The middle section still spends a lot of time on travel, banter, and local color before the threat becomes unavoidable."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script’s strongest originality comes from the collision of collegiate road-trip comedy, rural folk-horror, and the pregnancy reveal that reframes Angie’s survival. The silver medal as a literal anti-werewolf weapon is a smart, inevitable-feeling payoff to the swim-team setup."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The rural world is specific: the general store, cabins, no-cell-service woods, local superstition, and the town’s hidden bargain all create a usable horror ecosystem. The pact mythology and the family’s role in feeding the woods add enough texture to make the setting feel story-generating rather than generic."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script has a clear grindhouse-folk-horror register, with bawdy locker-room comedy giving way to grotesque creature violence. The tone is consistent, but the dialogue often pushes hard into broad, dated, and repetitive profanity, which blunts some of the intended menace and wit."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material in Angie’s pregnancy, Kendall’s guilt over Lauralee, and the town’s sacrifice pact. Those threads suggest more emotional and mythic depth than the script fully cashes in, but the page mostly uses them as setup for the next scare."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The swim-team dynamic gives the feature a ready-made ensemble rhythm, and the friendship/jealousy triangle between Angie, Lauren, and Michael adds real friction. Once the group splits, the relationships continue to generate stakes because each girl’s fate is tied to the others’ choices."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Angie",
+        "role_type": "Lead",
+        "demographics": "Female, early 20s, college swimmer, pregnant, likely white.",
+        "hook": "Angie is the script’s emotional center: disciplined, observant, and increasingly cornered by a secret pregnancy and a betrayal she can’t outrun. She starts as the calm, sensible one in the group, then becomes the only character forced to carry both the horror plot and the emotional fallout of the Michael affair.",
+        "why_actor_wants_this": "This is the showcase territory of Neve Campbell in Scream or Alison Lohman in Drag Me to Hell — a role that starts as grounded ensemble glue and ends as a full-body survival performance under extreme pressure."
+      },
+      {
+        "name": "Lauren",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college swimmer, wealthy, likely white.",
+        "hook": "Lauren is the alpha friend: vain, status-conscious, sexually active, and quick to weaponize class and shame when she feels disrespected. She’s not just a mean-girl function; the Michael betrayal gives her real emotional volatility, and her rage helps drive the group fracture.",
+        "why_actor_wants_this": "This is the kind of sharp, combustible supporting role that gave Rachel McAdams in Mean Girls or Jena Malone in Saved! room to dominate scenes — a character who gets laughs, then pivots into real hurt."
+      },
+      {
+        "name": "Kendall",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens to early 20s, college swimmer, local to the area.",
+        "hook": "Kendall is the local bridge into the woods: sweet, proud of her roots, and carrying the guilt of a childhood disappearance that the story slowly turns into a trap. She’s the most structurally important supporting character because her family, her medal, and her memory all connect the girls to the woods’ mythology.",
+        "why_actor_wants_this": "This is the kind of role that gave Brittany Murphy in Cherry Falls or Emily Meade in The Deuce a chance to play innocence with a buried wound — warm, funny, and then devastating when the backstory lands."
+      },
+      {
+        "name": "Devina",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college swimmer, Black.",
+        "hook": "Devina is the loudest comic engine in the group: sexually open, socially fearless, and always ready with a joke or a provocation. Underneath the banter, she functions as the friend who keeps the group moving and gives the ensemble its most overtly playful energy before the violence hits.",
+        "why_actor_wants_this": "This is the kind of scene-stealing ensemble part that let Regina Hall in Scary Movie or Teyonah Parris in Dear White People show timing, swagger, and warmth in the same role."
+      },
+      {
+        "name": "May",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college swimmer, Asian.",
+        "hook": "May is the soft-spoken, flirtier member of the group, but her blood-sugar issue gives her a recurring vulnerability that the script uses for both humor and suspense. She’s the most physically fragile of the friends, which makes her horror beats especially effective once the body count starts climbing.",
+        "why_actor_wants_this": "This is the kind of role that gave Awkwafina in The Farewell or Jessica Henwick in The Royal Hotel a chance to balance comic texture with real vulnerability and fear."
+      },
+      {
+        "name": "Jeremiah",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, massive build, rural survivalist, likely white.",
+        "hook": "Jeremiah is the patriarchal monster at the center of the woods: harsh, survival-obsessed, and openly predatory toward his own son and the prey he keeps. He reads like a feral father figure until the werewolf reveal turns him into the story’s final brute-force antagonist.",
+        "why_actor_wants_this": "This is the kind of role that gave Michael Shannon in Take Shelter or Stephen Root in Get Out a chance to play menace with a human face before the full monster turn."
+      },
+      {
+        "name": "Lucan",
+        "role_type": "Supporting",
+        "demographics": "Male, from childhood to late teens/young adult, feral rural upbringing, likely white.",
+        "hook": "Lucan is the most unsettling figure in the script: raised like an animal, trained to hunt, and gradually revealed as a beautiful, predatory werewolf. He’s both victim and killer, which gives the monster side of the story a tragic, corrupted-child energy.",
+        "why_actor_wants_this": "This is the kind of transformation role that gave Dane DeHaan in Chronicle or Jack O'Connell in Starred Up a chance to play innocence curdling into danger, with a physical metamorphosis built into the part."
+      },
+      {
+        "name": "Aunt Dee",
+        "role_type": "Supporting",
+        "demographics": "Female, 60s-70s, rural matriarch, likely white.",
+        "hook": "Aunt Dee is the warm face of the town’s rot: hospitable, maternal, and increasingly ominous once the food, the house, and the family history start to feel wrong. She sells comfort first, then becomes part of the machinery that keeps the pact alive.",
+        "why_actor_wants_this": "This is the kind of deceptively warm horror role that gave Toni Collette in Hereditary or Frances Conroy in American Horror Story room to turn maternal presence into dread."
+      },
+      {
+        "name": "Uncle Red",
+        "role_type": "Supporting",
+        "demographics": "Male, 70s, rural patriarch, likely white.",
+        "hook": "Uncle Red is the genial old-country host with a buried bargain and a shotgun nearby. He plays as comic local color until the script reveals he’s been feeding the woods to protect Kendall, which makes him one of the story’s key moral compromises.",
+        "why_actor_wants_this": "This is the kind of role that gave John Goodman in 10 Cloverfield Lane or Richard Jenkins in The Shape of Water a chance to weaponize warmth, authority, and secrecy."
+      },
+      {
+        "name": "Nathan",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens to early 20s, rural, developmentally childlike/man-child energy, likely white.",
+        "hook": "Nathan is the oddball cousin who reads as harmless comic relief until he becomes the story’s local truth-teller and last-minute rescuer. His horror-comic obsession pays off as a survival manual, which makes him one of the script’s more memorable supporting pivots.",
+        "why_actor_wants_this": "This is the kind of offbeat supporting part that gave Michael Angarano in The Big Sick or Paul Dano in Little Miss Sunshine a chance to play awkwardness, sincerity, and surprise in one package."
+      },
+      {
+        "name": "Michael",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college football player, handsome, likely white.",
+        "hook": "Michael is the offscreen emotional detonator: Lauren’s boyfriend, Angie’s affair partner, and the father of Angie’s baby. He matters less as a present-tense character than as the wound that drives the central friendship fracture.",
+        "why_actor_wants_this": "This is the kind of compact but consequential role that gave Penn Badgley in Easy A or Armie Hammer in The Social Network a chance to be the object of desire and damage without needing huge page count."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Five college-age female leads with distinct ethnic and body-type profiles",
+          "One older rural couple",
+          "One child-to-young-adult male role with a feral physical transformation arc",
+          "Creature performance for werewolf forms"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Remote wooded road and forest corridor",
+          "General store / cabin compound",
+          "Abandoned town street and auto shop",
+          "College campus and fraternity interiors",
+          "Lake and night exterior work"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Practical creature work plus digital augmentation for werewolf transformations, mauling shots, and gore cleanup; no large-scale spectacle but repeated creature reveals and body effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Heavy practical gore, prosthetic wounds, blood rigs, rat effects, trap effects, severed-head and dismemberment effects, creature makeup.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-horror lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best suited to a streamer genre launch or specialty theatrical horror release."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is contemporary and mostly location-based, but the werewolf transformations, heavy gore, rat swarm, trap kills, and multiple night forest sequences will push practical effects and post beyond a lean indie baseline."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to carry pregnancy, betrayal, and final-girl survival in the same performance, while the ensemble depends on five distinct college-age women with clear chemistry and comic timing."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The opening stretch spends substantial time on banter and travel before the horror engine fully takes over, so the buyer conversation will focus on how quickly the premise locks and how much of the ensemble setup is essential."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Descent",
+          "year": 2005,
+          "why_it_comps": "Like this script, it uses a female ensemble, a remote location, and escalating claustrophobic horror to turn friendship into survival."
+        },
+        {
+          "title": "Wrong Turn",
+          "year": 2003,
+          "why_it_comps": "The rural road-trip-to-monster territory and backwoods predator energy are directly in this lane, with the same kind of isolated, hostile geography."
+        },
+        {
+          "title": "Jennifer's Body",
+          "year": 2009,
+          "why_it_comps": "The female friendship fracture, sexual politics, and horror-comedy edge make this a close tonal cousin even though the monster mythology is different."
+        },
+        {
+          "title": "The Final Girls",
+          "year": 2015,
+          "why_it_comps": "The ensemble horror setup and self-aware genre play give it a similar audience-facing hook, especially for viewers who like character banter before the bloodletting."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Horror fans who like female-led survival stories, rural monster mythology, and a nasty body-count payoff.",
+        "demographics": "18-34 skew, with a meaningful female audience and strong genre-core male interest; secondary appeal to college-age viewers and horror-comedy fans.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary rural locations keep the footprint contained, but creature effects, gore, night exteriors, and multiple monster reveals keep it above micro."
+      },
+      "lane_fit": {
+        "lane": "elevated rural creature-horror",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-film horror teams",
+          "specialty theatrical distributors",
+          "indie producers with creature-feature experience",
+          "female-led horror development execs"
+        ],
+        "detail": "The script sits naturally in the lane where character-driven ensemble horror meets practical-creature spectacle. The college-road-trip setup broadens the entry point, while the woods, pact mythology, and body horror keep it squarely genre-forward."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the story resolves the woods pact and Angie’s survival arc cleanly, and the supporting characters do not create a separate franchise vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The silver medal becomes the weapon.",
+          "what_it_means": "That payoff gives the script a clean, memorable object-based hook that buyers can market in a single image. It also gives the final act a satisfying emotional logic because the team’s achievement literally becomes the thing that saves the survivor.",
+          "evidence": "Kendall’s medal is introduced early, then Angie uses it to kill Jeremiah in the lake.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Female ensemble friction is built in.",
+          "what_it_means": "The swim-team dynamic gives the movie a ready-made social engine, which helps the horror feel like it’s tearing apart an actual friend group rather than a generic victim pool. That makes the project more attractive to actors and to buyers looking for a castable, youth-skewing genre package.",
+          "evidence": "The locker-room banter, the Lauren/Angie/Michael triangle, and the group chant all establish a lived-in clique before the trip turns deadly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pregnancy reveal sharpens the survival stakes.",
+          "what_it_means": "Angie’s secret pregnancy gives the climax a built-in emotional and commercial differentiator, turning the final girl into a future mother fighting for two lives. That kind of twist is the sort of late-story hook that can help a horror title stand out in a crowded release slate.",
+          "evidence": "Angie’s positive pregnancy test appears early, and the final image is her giving birth to wolf-like pups.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The rural pact mythology has a usable engine.",
+          "what_it_means": "The town’s bargain with the woods creates a contained folklore system that feels expandable without needing a huge mythology dump. Buyers like horror worlds that can be explained fast but still feel old, local, and dangerous.",
+          "evidence": "Uncle Red and Aunt Dee’s sacrifice history, the vanished children rhyme, and the abandoned town reveal all point to a functioning occult bargain.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Practical gore is a selling point here.",
+          "what_it_means": "The script is built around effects moments that can be staged with tactile impact, which is useful for genre buyers who want a visceral trailer and a clear audience promise. It also keeps the movie in a practical-effects lane that can feel more premium than pure digital creature work at this budget.",
+          "evidence": "The rat swarm, the pit trap, the severed head, the body-feeding, and the werewolf transformations all lean into physical horror.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a clean, marketable female-led creature feature with a built-in ensemble, a rural horror world, and one killer object payoff: the silver medal that becomes the weapon. It sits in a buyer-friendly indie horror lane where practical gore, a contained location footprint, and a late pregnancy twist can do real trailer work without requiring franchise-scale spend."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The opening takes a long route to the monster.",
+          "detail": "The script spends a substantial stretch on swim-team banter, the bike trip, and rural hospitality before the horror engine fully takes over. That makes the first act feel more like setup than propulsion, which is a real buyer conversation on a feature that needs to announce itself fast.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The dialogue leans hard on broad profanity.",
+          "detail": "A lot of the ensemble voice is built from repeated insults, sexual taunts, and regional caricature, which gives the script energy but also a dated, one-note texture in places. That can narrow the audience response if the buyer is looking for sharper, more character-specific banter.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting girls are vivid but thinly differentiated.",
+          "detail": "Lauren, Devina, and May each have a clear function, but beyond the surface traits the script gives them limited interiority before they start dying. That matters because the movie’s emotional loss depends on the audience caring about more than the lead and the local guide.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The creature mythology arrives in pieces.",
+          "detail": "The pact, the werewolf reveal, the silver weakness, and the town’s sacrifice history are all effective, but they’re distributed late and somewhat piecemeal. A producer will notice that the rules are more felt than cleanly established, which can make the back half feel like revelation-by-revelation rather than a single escalating design.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the script takes its time getting from road-trip banter to the actual horror engine, and the ensemble voice is often broader than it needs to be. The concept is strong enough to carry that, but the buyer will still ask whether the first act can be made to hit faster and cleaner."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 65,
+  "tier": "Optionable",
+  "inputTokens": 41451,
+  "outputTokens": 5003,
+  "cost": 0.053601750000000004,
+  "declaredFormat": "Feature film"
+}

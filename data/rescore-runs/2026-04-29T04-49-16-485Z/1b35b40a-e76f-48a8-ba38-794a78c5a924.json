@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:03:58.135Z",
+  "submission_id": "1b35b40a-e76f-48a8-ba38-794a78c5a924",
+  "eval_id": "30159432-40ce-4fc1-8442-3386f15bd698",
+  "title": "THE FOREVER MAN",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W",
+      "role_type": "Lead",
+      "demographics": "Male, 40s in the frame story; mixed-race Black man; ageless/immortal; globally traveled; elite physicality; multilingual; spiritually literate."
+    },
+    {
+      "name": "Amethyst",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-40s; ageless presentation; mixed-ethnicity/undefined beauty; elegant, cosmopolitan, spiritually attuned."
+    },
+    {
+      "name": "Charlie Chaplin",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s; silent-era film icon; English; public genius with private vanity."
+    },
+    {
+      "name": "Franklin Roosevelt",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s; American politician; wheelchair user; charismatic, strategic, socially fluent."
+    },
+    {
+      "name": "Albert Einstein",
+      "role_type": "Supporting",
+      "demographics": "Male, early 50s; Jewish scientist; German; intellectually exacting, socially prickly."
+    },
+    {
+      "name": "Shahzadi Badr-un-Nissa Begum",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s; Indian royal daughter; disguised mystic; romantic lead energy."
+    },
+    {
+      "name": "Buddha",
+      "role_type": "Supporting",
+      "demographics": "Male, elderly; spiritual figure; ageless presence."
+    },
+    {
+      "name": "Adolf Hitler",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s; German political figure; historical antagonist."
+    }
+  ],
+  "positioning_hook": "A 400-year-old mixed-race fixer gambles his way through a Christmas Eve audience with Chaplin, Roosevelt, and Einstein, then reveals the impossible mission that made him a legend.",
+  "cost_usd": 0.0519675,
+  "input_tokens": 40208,
+  "output_tokens": 4847,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:04:53.813Z",
+  "submission_id": "c21dbbee-e030-4793-9d0b-9cfc4cac7e82",
+  "eval_id": "4a0bab84-f600-4c02-920d-619e8f3b424d",
+  "title": "Societys Ills",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Terrance Connoly",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, white, Southern working-class criminal with a hard-edged, outlaw presence."
+    },
+    {
+      "name": "Terry Fields",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, white, Southern sheriff, family man, physically imposing."
+    },
+    {
+      "name": "Dr. Margaret Fletcher",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, physician/scientist, professional and socially polished."
+    },
+    {
+      "name": "Weilland Rogers",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, white, affluent former celebrity plastic surgeon, gay or socially coded as such by context, AIDS-affected household."
+    },
+    {
+      "name": "Katy Rogers",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, wheelchair user, terminally ill with AIDS."
+    },
+    {
+      "name": "Cameron Frye",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white, escaped convict, violent and unstable."
+    },
+    {
+      "name": "Norris West",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, white, federal agent, authoritarian, polished, confrontational."
+    },
+    {
+      "name": "Johnny Fields",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens-20s, white, sheriff’s son, rebellious, romantic, impulsive."
+    },
+    {
+      "name": "Paige Webber",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens-20s, white, goth/bohemian-coded, sexually assertive."
+    }
+  ],
+  "positioning_hook": "A cop-killer on the run discovers his blood may cure AIDS, forcing a hard-edged sheriff and a dying Beverly Hills couple to choose between justice, faith, and a miracle.",
+  "cost_usd": 0.052227,
+  "input_tokens": 38820,
+  "output_tokens": 5136,
+  "status": "wrote:leads_ok"
+}

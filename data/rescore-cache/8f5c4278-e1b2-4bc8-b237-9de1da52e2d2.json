@@ -1,0 +1,363 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Thriller",
+        "Action"
+      ],
+      "tone": "apocalyptic",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "survival",
+        "power",
+        "rat-siege",
+        "underground-bunker",
+        "apocalypse-house"
+      ]
+    },
+    "positioning_hook": "A disgraced war reporter is trapped underground with a Japanese scientist, a hardline general, and a handful of strangers when giant rats overrun the world above and turn their bunker into a last stand.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and genre-clean: a bunker siege, a global catastrophe, and a survival clock. The rat invasion gives it a strong trailer image, though the period of the piece and the pulpy execution narrow it more to genre buyers than broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and hard: a peace summit in an underground apocalypse shelter becomes a trapped survival story when rats breach the facility. The script keeps restating the core engine through the elevator descent, the sealed sectors, and the escalating breaches."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Chad Abraham has a usable contradiction — cynical alcoholic reporter who still acts when it counts — and Brook, Miyoki, Rawling, and Yakamoto each have a clear function. The issue is that most of the supporting cast reads as archetype-first, with only a few scenes, like Brook’s confession and Yakamoto’s Hiroshima backstory, giving them real dimensional lift."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a big, oddball disaster premise and doesn’t apologize for the pulp: giant rats, underground civilization, and a global peace summit collapsing into carnage. The boldness is in the mashup of political pageantry and creature-feature mayhem, even if the execution leans more cult-genre than formally fresh."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the rats breach Apocalypse House, the script becomes a clean survival escalation with repeated pressure points: elevator failure, access-tower escape, ration loss, and final containment. The opening spends time on setup and satirical world-building, but the back half is strongly propulsive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea is simple enough to pitch in one breath and strange enough to stick: humanity’s last shelter becomes a rat trap. The combination of war-reporting cynicism, Japanese bunker tech, and apocalyptic creature siege gives it a memorable, ownable shape."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has specific institutions and textures — CNN-style field reporting, a Peace Alliance summit, Japanese defense bureaucracy, a subterranean facility with sectors and access towers. It feels story-generating, though the script mostly uses the world as a pressure cooker rather than exploring its social rules in depth."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is a distinctive mix of deadpan newsroom banter, macho military posturing, and grotesque creature-feature horror. Scenes like the Dent-B-Gone fight, Brook’s irreverent one-liners, and the rat attacks give it a recognizable pulp register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real thematic seeds here — guilt, faith, survival ethics, national defense, and the cost of technological hubris — but the script mostly states them through dialogue rather than building layered subtext. Yakamoto’s Hiroshima trauma and Abraham’s Beirut guilt hint at more depth than the plot ultimately has room to mine."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The ensemble has usable friction: Abraham and Anderson spar, Brook needles Rawling, Miyoki humanizes Abraham, and Yakamoto sits at the center of competing agendas. It’s not a true any-two-characters-in-a-room machine, but the bunker setup gives the relationships enough recurring energy to sustain the feature."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Chad Abraham",
+        "role_type": "Lead",
+        "demographics": "Male, middle-aged, war correspondent, likely 40s-50s, American.",
+        "hook": "A Pulitzer-winning CNN reporter who has turned hard, drinks too much, and hides his guilt behind sarcasm. He starts as a cynical media operator and becomes the one man in the bunker willing to move toward danger when everyone else is freezing, posturing, or breaking.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Spotlight or Jeff Daniels in The Newsroom — a fast-talking, weathered professional with a buried conscience, giving an actor both verbal snap and late-breaking moral weight."
+      },
+      {
+        "name": "Saran Mioyki",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, Japanese, television reporter, mother.",
+        "hook": "A sharp, working journalist whose professional urgency collides with maternal panic the second her daughter is in danger. She gives the film its emotional stakes and a grounded civilian perspective inside the bunker chaos.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded urgency of Naomi Watts in 21 Grams — professional competence under pressure, then a raw maternal edge that can break through the genre machinery."
+      },
+      {
+        "name": "Ivan Brook",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, survivalist magazine editor, physically imposing, gay.",
+        "hook": "A big, swaggering survivalist who performs macho certainty until the bunker strips him down to fear, confession, and self-awareness. His claustrophobia and sexuality disclosure give him the script’s most surprising human turn, and his volatility makes him a live wire in every group scene.",
+        "why_actor_wants_this": "This is the showcase lane of John Goodman in Barton Fink or Walton Goggins in Justified — a charismatic, funny, threatening presence who gets to pivot into vulnerability without losing the room."
+      },
+      {
+        "name": "Professor Van Yakamoto",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, Japanese scientist, defense contractor, intellectual.",
+        "hook": "A brilliant, guarded inventor whose bunker is both his life’s work and his moral burden. He’s proud, secretive, and increasingly crushed by the fact that the machine built to save lives becomes the stage for mass death.",
+        "why_actor_wants_this": "This is the kind of prestige-supporting role that gives an actor the gravitas of Ken Watanabe in Letters from Iwo Jima — authority, restraint, and a late emotional collapse that lands because the character has held so much in."
+      },
+      {
+        "name": "General Rawling",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s-60s, American military officer, career soldier.",
+        "hook": "A hard-edged military man who sees every crisis as a battlefield and every person as a resource. He’s the bunker’s most overtly authoritarian presence, and the script uses him to embody the survivalist logic that keeps turning human beings into expendable assets.",
+        "why_actor_wants_this": "This is classic Donald Sutherland in A Time to Kill or J.K. Simmons in Whiplash energy — a command-heavy role where the actor gets to weaponize authority, then crack under pressure."
+      },
+      {
+        "name": "Hely",
+        "role_type": "Supporting",
+        "demographics": "Female, child, Japanese schoolgirl.",
+        "hook": "Mioyki’s daughter and the story’s innocence anchor, she gives the apocalypse a human face. Her vulnerability is the emotional engine for the rescue beats and the reason the film keeps snapping back from spectacle to survival.",
+        "why_actor_wants_this": "This is a child role with real emotional function, the kind that gives a young performer the direct, scene-stealing clarity of the child in The Sixth Sense — simple behavior carrying enormous stakes."
+      },
+      {
+        "name": "Joe Anderson",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, Black, magazine editor, wounded leg late in story.",
+        "hook": "A sharp-tongued editor whose cynicism gives way to faith under pressure. He starts as a provocateur and ends up as the script’s most overt spiritual voice, which makes him both comic friction and thematic ballast.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the arc work of Laurence Fishburne in Boyz n the Hood — wit, authority, and a late-stage moral clarity that changes the temperature of the room."
+      },
+      {
+        "name": "Min",
+        "role_type": "Supporting",
+        "demographics": "Female, young adult, Japanese, bodyguard/assistant.",
+        "hook": "One half of Yakamoto’s silent, disciplined pair, she initially reads as ornamental security but is later revealed as an android. That reveal retroactively gives her presence a genre charge and turns her into part of the film’s hidden machinery.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the cool precision of a Terminator-style supporting part — minimal dialogue, strong physical presence, and a late reveal that reframes every earlier beat."
+      },
+      {
+        "name": "Tak",
+        "role_type": "Supporting",
+        "demographics": "Female, young adult, Japanese, bodyguard/assistant.",
+        "hook": "The second silent aide in Yakamoto’s orbit, she mirrors Min in discipline and composure. Like Min, she becomes more interesting once the script reveals the pair are not merely attendants but manufactured beings.",
+        "why_actor_wants_this": "This is a clean physical-support role with a late reveal, the kind that gives an actor the controlled, enigmatic presence of a sci-fi henchperson before the script flips the meaning of the part."
+      },
+      {
+        "name": "Stone",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, military guard.",
+        "hook": "Rawling’s loyal soldier, defined by obedience and competence until the mission turns fatal. He functions as the cost of Rawling’s worldview and gives the action beats a human casualty the audience can track.",
+        "why_actor_wants_this": "This is the dependable military-support role that lets an actor play stoic professionalism in the mold of a Michael Biehn type — efficient, physical, and ultimately disposable in a way that still matters."
+      },
+      {
+        "name": "Steele",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, military guard.",
+        "hook": "The other half of Rawling’s security pair, Steele is the colder, more procedural soldier who survives longer than Stone and becomes part of the bunker’s tactical spine. He’s less emotional than Rawling, but the script gives him enough presence to feel like a real operator rather than a faceless guard.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the clipped, tactical energy of a military thriller supporting part — a chance to play competence under siege and then vanish into the machinery."
+      },
+      {
+        "name": "King Carl",
+        "role_type": "Supporting",
+        "demographics": "Male, older adult, British monarch.",
+        "hook": "A ceremonial world leader used to frame the Peace Alliance as a global response to catastrophe. He’s more symbolic than dramatic, but he helps establish the film’s geopolitical scale before the creature plot takes over.",
+        "why_actor_wants_this": "This is a brief prestige cameo role, the kind that gives an actor the stately authority of a political figure in a disaster film — a few lines that set the world in motion."
+      },
+      {
+        "name": "Terry Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, station manager.",
+        "hook": "Abraham’s boss, who functions as the inciting pressure that sends him to Japan. He’s a practical authority figure rather than a full character, but he establishes Abraham’s professional instability.",
+        "why_actor_wants_this": "This is a compact authority role in the Ed Harris / newsroom-boss lane — a scene or two of managerial friction that helps launch the lead’s story."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child role with sustained emotional function",
+          "one older British monarch role",
+          "Japanese-speaking roles and bilingual dialogue",
+          "one physically imposing survivalist",
+          "one military command role",
+          "one black supporting editor role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "underground bunker set with multiple sectors",
+          "elevator shaft and access tower build",
+          "Tokyo exterior/interior coverage",
+          "Sweden peace-gathering coverage",
+          "newsroom, hotel, apartment, and street scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Large-scale rat swarms, creature attack composites, destruction of screens/walls, underground environment extensions, and global broadcast inserts.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical rat effects, blood/gore, collapsing set pieces, elevator movement, electrical barrier effects, and creature attack rigs.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "CNN, Pulitzer prize-winning reporter Chad Abraham is a fictional character, but the script explicitly names CNN and Real Magazine as media entities."
+        },
+        {
+          "type": "brand",
+          "detail": "CNN, Real Magazine, and Orkin are named on the page; Orkin is used as a joke reference and CNN is central to the protagonist’s identity."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is a mid-budget theatrical genre release with strong home-entertainment and cult-video potential."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The bunker is contained, but the rat-swarm attacks, elevator descent, underground set build, and destruction-heavy finale will push this above a simple contained thriller if not tightly scoped."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Chad Abraham needs a lead who can play newsroom wit, alcoholism, guilt, and action competence; Brook and Rawling also need actors who can carry big tonal swings without tipping into parody."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s satirical newsroom opening, geopolitical setup, and creature-feature back half all work, but the tonal handoff between them is the main development conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Mist",
+          "year": 2007,
+          "why_it_comps": "Contained survival horror with a pressure-cooker ensemble and escalating creature attacks that turn a sealed environment into a moral and physical trap."
+        },
+        {
+          "title": "Deep Rising",
+          "year": 1998,
+          "why_it_comps": "Big, pulpy creature-feature energy with a stranded group, broad character types, and a practical-monster escalation model."
+        },
+        {
+          "title": "The Divide",
+          "year": 2011,
+          "why_it_comps": "Claustrophobic bunker survival where the real threat is as much the human group under stress as the external catastrophe."
+        },
+        {
+          "title": "Cloverfield",
+          "year": 2008,
+          "why_it_comps": "Disaster panic, broadcast-era immediacy, and a high-concept survival premise that sells on image and escalation."
+        },
+        {
+          "title": "The Last Days on Mars",
+          "year": 2013,
+          "why_it_comps": "A sealed-location genre piece where scientific hubris and creature infection drive the final act."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre audiences who want a high-concept survival movie with creature attacks, bunker tension, and a cynical lead who can carry the ride.",
+        "demographics": "Adults 18-49, skew male but with crossover for horror/thriller fans and viewers who like ensemble disaster setups.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contained interiors help, but the underground facility build, creature work, destruction, and multiple global news/event setups keep this in mid-budget feature territory."
+      },
+      "lane_fit": {
+        "lane": "mid-budget creature-feature thriller",
+        "types_of_buyers": [
+          "genre-focused studio execs",
+          "indie genre financiers",
+          "streamer originals buyers seeking elevated pulp",
+          "mid-budget theatrical distributors",
+          "producer-packagers with horror-thriller slates"
+        ],
+        "detail": "This sits naturally in the lane of high-concept, effects-assisted survival genre with a strong hook and a contained core cast. The script’s mix of newsroom cynicism, military tension, and creature siege makes it easy to position for buyers who want a commercial genre swing without tentpole spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the bunker siege resolves the core premise, and no side character or world element is developed enough to support a clean sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "That makes the script easy to sell in a room and easy to market with a single image: a bunker full of people trapped beneath a rat apocalypse. Buyers can understand the movie immediately, which is a real advantage in a crowded genre field.",
+          "evidence": "The Apocalypse House reveal, the rat breach, and the repeated elevator/tower escape attempts all reinforce one clean engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Chad Abraham is a usable lead role.",
+          "what_it_means": "The lead has enough contradiction to attract a name actor: cynical, alcoholic, funny, and still capable of decisive action. That combination gives the project a face that can sell both the character drama and the genre ride.",
+          "evidence": "His Beirut guilt, his newsroom blowup, the flask motif, and his rescue of Hely all define the role.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The bunker is a story machine.",
+          "what_it_means": "The sector layout, access towers, ration pressure, and sealed-door logic create a built-in escalation system that keeps generating scenes. That kind of contained architecture is attractive to producers because it gives the movie a strong production spine and a clear visual grammar.",
+          "evidence": "Sectors A through Z, the elevator shaft, the access tower, and the ration-cutting after the breach.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "It has a cult-friendly tonal mix.",
+          "what_it_means": "The script can play as serious enough to matter while still delivering outrageous genre moments, which is the sweet spot for midnight-movie and genre-fan enthusiasm. That gives it a better shot at afterlife than a straight, generic disaster movie.",
+          "evidence": "The newsroom banter, Brook’s irreverence, the giant-rat attacks, and the final apocalyptic voiceover.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has usable friction.",
+          "what_it_means": "Abraham, Rawling, Brook, Miyoki, Anderson, and Yakamoto each occupy a different survival philosophy, which creates repeatable conflict inside the bunker. That makes the movie more castable and gives buyers multiple entry points for audience identification.",
+          "evidence": "The Abraham/Anderson sparring, Brook/Rawling confrontation, and Yakamoto’s moral burden.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept creature-feature with a contained production spine and a lead role that can attract real talent. The bunker setting, ensemble friction, and rat-siege escalation make it easy to package as a mid-budget theatrical genre play with cult upside."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The opening spends a long time setting the board.",
+          "detail": "The Beirut prologue, Peace Alliance broadcast, Tokyo setup, and multiple reporter introductions delay the first major rat breach. That’s not a fatal flaw, but it is the first thing a buyer will notice when weighing how quickly the movie gets to its core engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast leans archetypal.",
+          "detail": "Rawling is the hardline soldier, Yakamoto is the brilliant scientist, Anderson is the faith voice, Brook is the swaggering wildcard, and Mioyki is the mother. They work functionally, but the script only occasionally deepens them beyond their lane, which limits the sense of surprise in the ensemble.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The rat premise is the whole movie.",
+          "detail": "Once the bunker breach happens, the script is committed to one central threat and one central survival pattern. That gives it clarity, but it also means the movie has limited room for secondary escalation beyond bigger rat attacks and tighter confinement.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tone swings from satire to sincerity fast.",
+          "detail": "The script moves from newsroom comedy and macho banter into apocalyptic horror and spiritual monologue without much cushioning. That can be part of the appeal, but it also narrows the range of directors and buyers who will trust the balance on first read.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The creature work drives the spend.",
+          "detail": "The rat swarms, wall breaches, blood effects, elevator destruction, and underground set pieces all need to land convincingly for the movie to work. If the effects package underdelivers, the entire premise loses its leverage.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s biggest friction is structural, not conceptual: it takes a while to get to the rat siege, and once it does, the movie is heavily dependent on one creature engine carrying the entire feature. The ensemble is functional but not especially deep, so the package will live or die on tone control, effects execution, and the lead attachment."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 70,
+  "tier": "Optionable",
+  "inputTokens": 47648,
+  "outputTokens": 5300,
+  "cost": 0.059586,
+  "declaredFormat": "Feature film"
+}

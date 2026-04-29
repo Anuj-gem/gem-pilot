@@ -1,0 +1,322 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Horror",
+        "Western"
+      ],
+      "tone": "mythic",
+      "tags": [
+        "multi-protag",
+        "ensemble",
+        "period-piece",
+        "ongoing-series",
+        "high-concept",
+        "character-driven",
+        "franchise-potential",
+        "survival",
+        "power",
+        "religion",
+        "wyoming",
+        "vampires"
+      ]
+    },
+    "positioning_hook": "In 1848 Wyoming, a gold-rush town is swallowed by a supernatural bloodline war as one family, a gunslinger, and a shape-shifting bounty hunter fight to survive the night.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is immediate and easy to sell: frontier town, monsters, blood feud, and a contained survival crisis. The audience is narrower than a broad procedural or prestige family drama because the period Western-fantasy lane is specific, but the imagery is strong and trailer-friendly."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot announces its engine fast: a Wyoming mining town, a hidden creature threat, and a family/corporate conflict that detonates into supernatural carnage. The opening spider attack, the mine collapse, and the town-wide death event make the premise legible in minutes."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Abraham, Jane, Jacob, and Zoma each have a distinct dramatic lane, and the script gives them strong pressure points rather than generic hero beats. The downside is that several supporting players function more as vivid forces than durable series engines, so the long-term character bench is still being built."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a frontier supernatural register that feels specific rather than generic, especially in the spider opening, the mine-as-abyss imagery, and the vampire-western collision. It is bold in scale and iconography, even when it leans on familiar monster-myth language."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The pilot is relentlessly eventful: attack, mine discovery, town confrontation, family dinner ambush, massacre, escape, and a final transformation. The escalation is strong and the act breaks are built on reversals that keep the episode moving."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea of a frontier town under supernatural siege is familiar, but the specific blend of mining, family inheritance, and vampiric possession gives it a fresh enough identity. The strongest originality comes from the way the town’s gold-rush ambition is fused to the monster mythology."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world feels story-generating: mining hierarchy, immigrant labor, town politics, religious dread, and a supernatural blood economy all coexist in the same frame. The mine, the mansion, the tavern, and the street duel each feel like parts of a larger social machine."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually committed: operatic, gruesome, and frontier-mythic, with bursts of dark humor and grotesque sensuality. The script knows exactly what kind of show it wants to be, and that confidence is a major asset."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "There are real seeds of deeper mythology in Jacob’s drawings, the devil imagery, the mine’s hidden chamber, and the identity shifts around Zoma/Burt. The pilot hints at a larger cosmology, though much of the episode is still driven by immediate shock and survival."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The family unit, the Davenport faction, the mine workers, and the town authorities create multiple relationship clusters that can generate scenes. The strongest recurring engine is Abraham/Jane/Jacob/Buddy/Zoma, but the supporting ensemble is still somewhat top-heavy around a few vivid players."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jane Flint Arbuckle",
+        "role_type": "Lead",
+        "demographics": "Female, 30s, white, frontier wife and mother, socially elevated but emotionally trapped.",
+        "hook": "Jane is the script’s clearest emotional center: intelligent, observant, and deeply constrained by the men and bargains around her. She begins as the wife trying to keep a family intact, then becomes the survivor who has to metabolize grief, blood, and vengeance into action. Her arc is not just endurance; it is the slow emergence of a woman who can finally choose violence on her own terms.",
+        "why_actor_wants_this": "This is the showcase territory of Elisabeth Moss in The Handmaid's Tale — a woman forced into impossible circumstances whose internal pressure becomes the performance. It gives an actor the full range from contained domestic tension to feral survival mode."
+      },
+      {
+        "name": "Abraham Arbuckle",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-40s across the episode’s time jump, white, frontier laborer turned family man.",
+        "hook": "Abraham is the script’s most tragic human figure: tender, stubborn, and always one step behind the larger horror until it is too late. The opening makes him emotionally legible through his fear, his faith questions, and his bond with Jacob, and the later dinner sequence turns him into a man trying to keep his family alive while being manipulated by forces he barely understands.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in The Power of the Dog — a quiet, wounded man whose decency and confusion make every turn hurt more. It gives an actor the chance to play vulnerability, panic, and moral collapse in the same role."
+      },
+      {
+        "name": "Jacob Arbuckle",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, white, mine owner and family patriarch, physically imposing and spiritually severe.",
+        "hook": "Jacob is the hard-edged brother who seems to have made a pact with certainty itself. He is both protector and threat, a man who speaks in absolutes, manages labor with ruthless pragmatism, and carries the sense that he knows more than he says. The scar, the drawings, and the mine all suggest a man whose authority is built on contact with something monstrous.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad — a man whose control and intelligence conceal a much darker engine. It gives an actor authority, menace, and the chance to let the mask crack in layers."
+      },
+      {
+        "name": "Buddy Davenport",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, white, wealthy industrialist, charismatic, devout, physically formidable.",
+        "hook": "Buddy is the most dangerous kind of antagonist: polished, articulate, and convinced of his own righteousness. He can host a dinner, quote history, whip himself in prayer, and then reveal a predatory appetite without ever losing his gentlemanly surface. He reads like a man who has already surrendered to a larger power and now treats everyone else as collateral.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Boardwalk Empire — controlled intensity with a spiritual rot underneath. It gives an actor a role that can pivot from civilized charm to terrifying conviction without changing the temperature."
+      },
+      {
+        "name": "Zoma",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, white-presenting, bounty hunter body with shifting identity and supernatural possession.",
+        "hook": "Zoma is the pilot’s wild card: cocky, amused, cruel, and apparently inhabited by multiple selves. He moves through the desert like a trickster, then reveals that Burt Mulhollen is only one mask in a larger, more unstable entity. He is the kind of character who can become the show’s most unpredictable engine because every scene with him carries the threat of a different person emerging.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in Taboo — a physically commanding role with unstable interiority and a dangerous charisma. It gives an actor a chance to play menace, humor, and identity fracture as performance texture."
+      },
+      {
+        "name": "Gus Davenport",
+        "role_type": "Supporting",
+        "demographics": "Male, 10, white, timid child, sheltered and observant.",
+        "hook": "Gus is the child witness who sees more than the adults realize and reacts with fear, curiosity, and a strange moral innocence. He is not just a kid in danger; he is a sensor for the supernatural logic of the world, especially in the telescope and bank-vault sequences where his perspective sharpens the horror.",
+        "why_actor_wants_this": "This is the showcase territory of Noah Jupe in A Quiet Place — a child role that is emotionally legible but not decorative, with real suspense built around what he notices and how he responds. It gives a young actor a rare mix of vulnerability and narrative importance."
+      },
+      {
+        "name": "Ernest Davenport",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-50s, white, polished businessman, urbane and manipulative.",
+        "hook": "Ernest is the civilized face of predation, the man who can talk about progress, economics, and family while arranging murder in the same breath. He is less physically imposing than Buddy but arguably more slippery, because he weaponizes reason and etiquette as much as threat.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew Macfadyen in Succession — a smooth operator whose politeness is part of the menace. It gives an actor a chance to make verbal precision feel like a weapon."
+      },
+      {
+        "name": "Bennie Middleton",
+        "role_type": "Supporting",
+        "demographics": "Male, 8, white, plucky child, rural and impulsive.",
+        "hook": "Bennie is the scrappy kid who keeps moving even when the world is clearly too large and too dangerous for him. He has the kind of stubborn innocence that can anchor a survival thread, and his relationship with Archie gives the pilot a strange, tender counterweight to the horror.",
+        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room — a child role that is active, emotionally specific, and not just reactive. It gives a young performer a real relationship engine and a survival arc."
+      },
+      {
+        "name": "Archie Kettle",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, white, mountain man, mentally fractured, physically capable.",
+        "hook": "Archie is one of the script’s strangest and most memorable figures: a grown man who believes he is a child, then briefly reveals a much darker, more competent self. He can be comic, tragic, and terrifying in the same breath, which makes him feel like a character the audience will keep trying to decode.",
+        "why_actor_wants_this": "This is the showcase territory of Willem Dafoe in The Lighthouse — a role that lets an actor play instability, physicality, and sudden menace. It offers a rare chance to make confusion and ferocity coexist."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "child lead/supporting roles for Gus and Bennie",
+          "identical-triplet casting requirement for the Davenport women",
+          "multiple strong male authority roles in 30s-50s",
+          "Spanish-speaking miners and subtitled dialogue",
+          "one role with unstable identity/performance shift in Zoma/Burt"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "1848 Wyoming frontier town build",
+          "mine tunnels and cavern set pieces",
+          "mansion interior with ritual bath/prayer room/dining room",
+          "desert, canyon, farmhouse, and town street exteriors",
+          "period wagons, horses, and mining infrastructure"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "giant spiders, supernatural regeneration, bird die-off, identity-shift effects, and cavern-scale atmospheric menace require creature and compositing work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "explosions, collapses, blood effects, practical gore, burning creature effects, and gunshot/impact work.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "premium streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized supernatural western with a family-vs-faction engine and episode-to-episode monster/myth escalation."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "high",
+        "note": "The period frontier setting, mine build, creature work, horse work, and multiple large-scale supernatural set pieces will push this above a simple contained-drama cost profile."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The hardest lift is the central adult ensemble, especially Jane, Abraham, Jacob, Buddy, and Zoma, because the show needs actors who can carry both frontier realism and heightened supernatural intensity."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot is clear on spectacle and mythology, but the series identity will depend on how the Arbuckle/Davenport conflict, the mine mythology, and the Zoma/Burt thread are balanced across episodes."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Penny Dreadful",
+          "year": 2014,
+          "why_it_comps": "Like this pilot, it blends period atmosphere, gothic horror, and ensemble melodrama into a premium, creature-forward world."
+        },
+        {
+          "title": "Westworld",
+          "year": 2016,
+          "why_it_comps": "It shares the high-concept, mythic escalation and the sense of a hidden system underneath a seemingly familiar frontier setting."
+        },
+        {
+          "title": "Deadwood",
+          "year": 2004,
+          "why_it_comps": "The town politics, frontier language, and power struggles around land and money echo the social texture of a prestige Western."
+        },
+        {
+          "title": "From Dusk Till Dawn: The Series",
+          "year": 2014,
+          "why_it_comps": "It lives in the same supernatural-genre lane where a crime or frontier setup gives way to full monster mythology."
+        },
+        {
+          "title": "The Terror",
+          "year": 2018,
+          "why_it_comps": "The survival-horror pressure, period setting, and escalating dread are structurally close to this pilot’s creature and isolation mechanics."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like elevated genre television with strong mythology, frontier texture, and violent family conflict.",
+        "demographics": "Skews 25-54, slightly male-leaning but with strong female appeal through Jane’s survival arc; premium-streaming audience comfortable with period genre and horror.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "premium",
+        "range": "",
+        "per_episode": "$10M-$14M",
+        "season_total": "$80M-$112M for an 8-episode season",
+        "note": "Period frontier production, creature effects, mine sets, horses, and multiple large-scale night and action sequences drive the per-episode spend."
+      },
+      "lane_fit": {
+        "lane": "premium supernatural western",
+        "types_of_buyers": [
+          "premium streamer genre originals teams",
+          "prestige cable drama buyers",
+          "elevated horror development execs",
+          "period-series buyers looking for franchiseable mythology",
+          "producer groups with creature/VFX experience"
+        ],
+        "detail": "This sits naturally in the lane where prestige period drama meets monster mythology. The script has enough family melodrama and world-building to attract buyers who want both character and spectacle."
+      },
+      "ip_potential": {
+        "has_potential": true,
+        "detail": "Zoma/Burt is the clearest spinoff vector: the shifting identity and supernatural bounty-hunter mythology could anchor a separate character-driven offshoot, while the mine mythology could support adjacent prequel material."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening is a monster-movie gut punch.",
+          "what_it_means": "The pilot earns immediate attention and tells a buyer exactly what kind of event television this can be. That kind of cold-open confidence is attractive to premium genre buyers looking for a strong hook in the first five minutes.",
+          "evidence": "Abraham’s campfire sequence escalates from intimate faith talk to giant spiders, cocooning, and a fire-driven kill.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The frontier world feels lived-in.",
+          "what_it_means": "The mining camp, town, mansion, tavern, and tunnels create a social ecosystem rather than a generic backdrop. That gives the series repeatable settings and a clear premium-period identity buyers can market.",
+          "evidence": "The script moves from the mine to Spider Springs to Green River City, each with its own class and power structure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jane has a real survival arc.",
+          "what_it_means": "A female lead who moves from constrained spouse to blooded survivor gives the show a durable emotional spine and a strong audience entry point. That is especially valuable in a genre lane where buyers want both horror and a human anchor.",
+          "evidence": "Jane ends the episode wounded, infected, and then weaponized, riding out with new resolve after the massacre.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The villainy is theatrical but specific.",
+          "what_it_means": "Buddy, Ernest, and Zoma each represent a different flavor of threat, which broadens the show’s appeal beyond a single monster. That gives casting and marketing multiple faces to sell, not just one antagonist.",
+          "evidence": "Buddy’s prayer room, Ernest’s business-polished murder talk, and Zoma’s identity shifts all play as distinct menace modes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mine mythology suggests a bigger engine.",
+          "what_it_means": "The hidden cavern, the dead canaries, the strange symbols, and the suffocating gas imply a world with rules and secrets beyond this episode. That kind of latent mythology helps a buyer see season-long value.",
+          "evidence": "Tunnel six opens into a vast cavern where the air itself becomes the killer and the canaries die first.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a premium-streaming supernatural western with a real event-pilot engine: a period frontier world, a female survival lead, and monster-scale set pieces that feel built for trailer marketing. The script’s strongest commercial asset is that it combines prestige-period texture with creature horror and a family blood-feud, giving buyers both audience clarity and franchise-adjacent mythology.",
+      "issues": {
+        "items": [
+          {
+            "area": "The pilot is carrying a lot of mythology at once.",
+            "detail": "Spider attack, mine abyss, vampire bloodline, identity-shifting bounty hunter, religious visions, and devil imagery all arrive in the same episode. That density is exciting, but it also means a buyer will immediately ask which mythology is the core engine and which are supporting colors.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The ensemble is vivid, but unevenly durable.",
+            "detail": "Jane, Abraham, Jacob, Buddy, and Zoma all read as series-level roles, but several other figures function more as striking pressure points than as fully bankable long-term regulars. That matters because the show’s relationship engine is strongest when those secondary players can keep generating story after the initial shock.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The period creature scale will not be cheap.",
+            "detail": "The 1848 setting, mine build, horses, night exteriors, creature effects, and large-scale death imagery all push this into premium territory fast. It is a real buyer conversation about whether the show is being developed with the resources to match the page.",
+            "is_primary_lever": false,
+            "source": "production"
+          },
+          {
+            "area": "Zoma’s identity shift needs careful handling.",
+            "detail": "The Burt Mulhollen/Zoma turn is one of the pilot’s most ownable ideas, but it also introduces a performance and mythology requirement that narrows the casting conversation. A buyer will want confidence that the role can sustain both the swaggering bounty-hunter surface and the supernatural possession underneath.",
+            "is_primary_lever": false,
+            "source": "both"
+          }
+        ],
+        "headline": "The script’s main friction is not clarity of event, but density of engine: it introduces enough mythology for several shows, which makes the core lane feel powerful but crowded. The other conversation is practical — this is a premium-scale period creature series, so the buyer has to believe the concept justifies the spend and the casting lift."
+      },
+      "craft_note": ""
+    }
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 37451,
+  "outputTokens": 4904,
+  "cost": 0.05015625,
+  "declaredFormat": "Series"
+}

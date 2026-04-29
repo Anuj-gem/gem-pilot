@@ -1,0 +1,359 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Comedy",
+        "Crime"
+      ],
+      "tone": "rowdy",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "feature-anchored",
+        "high-concept",
+        "propulsive",
+        "character-driven",
+        "family-dynamics",
+        "identity",
+        "revenge",
+        "country-music",
+        "martial-arts",
+        "wrestling"
+      ]
+    },
+    "positioning_hook": "A Japanese country singer with samurai training lands in a Texas honky-tonk, then has to fight his way through racist rivals, crooked promoters, and a land grab to save his uncle’s saloon.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for crowd-pleasing escalation: music, martial arts, and a Texas showdown all have easy trailer value. The audience is real, but the script’s period sensibility, racial language, and niche country-music angle narrow the lane from four-quadrant to cult-commercial."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "You understand the engine almost immediately: Dan Chan arrives to sing, gets tested in a hostile honky-tonk, and is forced into a fight-for-the-saloon contest. The title, the opening nightclub performance, and the later wrestling gauntlet all reinforce the same clean hook."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Dan Chan is a strong lead because he’s both disciplined and vulnerable, with a performer’s vanity and a fighter’s code. Bob Johnson and Shorty give the movie a workable support spine, though most of the secondary characters function as colorful obstacles rather than deep character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The mash-up of Japanese country crooner, martial-arts hero, and Texas honky-tonk underdog is unusual in a way that feels specific rather than random. The script commits hard to the bit, especially in the stage-to-ring escalation and the comic-serious crowd reactions."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The movie keeps finding new ways to raise the stakes: barroom hostility, radio breakthrough, training montage, the ten-match gauntlet, then the kidnapping and estate showdown. It’s built like a series of set pieces, and the momentum rarely stalls."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea is simple enough to pitch in one breath, but the specific collision of identity, music, and combat gives it a memorable hook. Dan’s outsider status is not just decorative; it drives the conflict, the comedy, and the eventual audience payoff."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Texas club, radio, wrestling, and ranch worlds all feel lived-in and mutually reinforcing. The social texture is strongest in the honky-tonk and wrestling arena, though the broader world is still mostly there to service the central showdown."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very particular register: rowdy, macho, self-aware, and knowingly outrageous without losing the underdog heart. The script’s tone is most distinctive when it lets the crowd banter, the music, and the fight choreography play off each other."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real seeds here — cultural identity, belonging, labor resentment, and the father/uncle honor code — but the script keeps them mostly in service of momentum. It suggests more depth than it fully explores, which is enough for a feature but not a major prestige signal."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Dan/Bob/Midge/Shorty/Charisse form a functional ensemble with recurring friction and affection, and the Feeney rivalry gives the relationships a clear axis. The movie benefits from that group dynamic, even if Dan remains the clear center of gravity."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Dan Chan",
+        "role_type": "Lead",
+        "demographics": "Japanese man, late 20s to early 30s, professional singer and martial artist",
+        "hook": "Dan is a polished performer with a strict internal code: he wants applause, but he wants honor more. He arrives in Texas as an outsider who can sing, fight, and charm, yet the movie keeps testing whether he can belong without compromising who he is. His contradiction is the engine — he’s both showman and warrior, romantic and disciplined, vulnerable to rejection but never physically outclassed for long.",
+        "why_actor_wants_this": "This is the showcase territory of a young Jackie Chan or a breakout like Ke Huy Quan in a role that demands physical precision, comic timing, and emotional dignity in the same frame. It gives an actor the rare chance to be a star performer, action lead, and cultural outsider all at once."
+      },
+      {
+        "name": "Bob Johnson",
+        "role_type": "Supporting",
+        "demographics": "White man, 40s-50s, Texas rancher/nightclub owner, veteran",
+        "hook": "Bob is a blustery, affectionate Texas patriarch whose bravado masks real fear about losing his business and his place in the world. He’s funny, impulsive, and deeply loyal, but he’s also compromised by pride and old history with Feeney. He functions as the movie’s emotional bridge between Dan’s outsider energy and the local world that either accepts him or spits him out.",
+        "why_actor_wants_this": "This is the kind of role Wilford Brimley or John Goodman would make memorable — a big, funny, wounded authority figure with real heart. It gives an actor the chance to play bluster, paternal warmth, and late-blooming vulnerability."
+      },
+      {
+        "name": "Midge Johnson",
+        "role_type": "Supporting",
+        "demographics": "Japanese woman, 40s-50s, Bob Johnson’s wife and Dan’s aunt",
+        "hook": "Midge is the script’s quiet moral center: observant, supportive, and far more emotionally intelligent than the men around her. She understands both Dan’s ambition and Bob’s fear, and she’s the one who keeps the family story from turning into pure macho noise. Her presence gives the movie tenderness and a sense of generational continuity.",
+        "why_actor_wants_this": "This is strong character-actress material in the lane of Frances McDormand or Sissy Spacek — a role that plays wisdom, restraint, and emotional authority without speeches. The appeal is in being the person everyone listens to when the room gets loud."
+      },
+      {
+        "name": "Shorty Alverez",
+        "role_type": "Supporting",
+        "demographics": "Hispanic man, 30s-50s, ranch hand/bar helper",
+        "hook": "Shorty is the dry, practical sidekick who sees the absurdity of everything before anyone else does. He’s loyal to Bob, skeptical of hype, and gradually becomes one of Dan’s most reliable allies. He’s the pressure-release valve, but he also gets real utility in the fight and training material.",
+        "why_actor_wants_this": "This is classic scene-stealing support in the spirit of Joe Pesci or Danny Trejo — a role built on timing, attitude, and physical presence. It gives an actor the chance to be funny without being ornamental."
+      },
+      {
+        "name": "Charisse",
+        "role_type": "Supporting",
+        "demographics": "Woman, 20s-30s, stripper and Bob’s employee",
+        "hook": "Charisse is flirtatious, self-possessed, and more emotionally aware than she first appears. She’s not just eye candy; she’s a social connector who sees Dan’s loneliness and the business stakes around her. The script uses her as both romantic spark and a reminder of the saloon’s precarious, transactional world.",
+        "why_actor_wants_this": "This is the kind of role that lets an actress play seduction, humor, and unexpected sincerity, similar to Jennifer Tilly in a sharp genre piece. It’s a showcase for charisma with a little danger underneath."
+      },
+      {
+        "name": "Mitchell Feeney",
+        "role_type": "Supporting",
+        "demographics": "White man, 50s-60s, rival businessman and former partner",
+        "hook": "Feeney is the movie’s human rot: petty, greedy, and increasingly unhinged as his business scheme collapses. He has enough charm to function in public, but the script steadily reveals him as a predator who weaponizes money, muscle, and humiliation. He’s the antagonist who turns a local rivalry into a full-blown siege.",
+        "why_actor_wants_this": "This is prime villain territory in the vein of Dennis Hopper in Blue Velvet or Christopher Walken in a bad-guy mode — theatrical, nasty, and memorable. It gives an actor a chance to chew scenery while still feeling dangerous."
+      },
+      {
+        "name": "Jake Feeney",
+        "role_type": "Supporting",
+        "demographics": "White man, 20s-30s, Mitchell Feeney’s son and enforcer",
+        "hook": "Jake is the younger, meaner extension of his father’s resentment, all swagger and physical aggression. He’s less strategic than Mitchell, but he’s the one who makes the threat feel immediate and personal in the action scenes. He’s a bruiser with a chip on his shoulder and a body count mentality.",
+        "why_actor_wants_this": "This is a solid heavy role in the mold of a young Michael Madsen type — physical menace with a little vanity. It gives an actor a chance to be the face of the beatdowns and still register as a character, not just muscle."
+      },
+      {
+        "name": "Tom McClaine",
+        "role_type": "Supporting",
+        "demographics": "White man, 40s-50s, music manager and opportunist",
+        "hook": "McClaine is the slick intermediary who turns Dan’s talent into a business proposition, then into a trap. He’s charming, industry-savvy, and always a half-step away from betrayal, which makes him more dangerous than the obvious bruisers. He’s the movie’s reminder that exploitation can wear a smile and a bolo tie.",
+        "why_actor_wants_this": "This is the kind of slippery, fast-talking role that lets an actor play charm and menace in equal measure, like a Dennis Farina or James Woods type. The fun is in making the audience like him right before they shouldn’t."
+      },
+      {
+        "name": "Charley Kendall",
+        "role_type": "Supporting",
+        "demographics": "White man, 40s-60s, radio DJ",
+        "hook": "Charley is a small but important ally who helps convert Dan’s talent into regional momentum. He’s part hype man, part gatekeeper, and part local color, giving the movie a believable media pipeline. He’s not deep, but he’s useful and memorable.",
+        "why_actor_wants_this": "This is a compact character role in the spirit of a great regional-radio cameo — the kind of part that lets an actor land a few lines and own the scene. It’s a clean showcase for personality and timing."
+      },
+      {
+        "name": "Arnold Logan",
+        "role_type": "Supporting",
+        "demographics": "White man, 30s-40s, world heavyweight champion wrestler",
+        "hook": "Logan is the final boss of the wrestling gauntlet: physically absurd, arrogant, and built to make Dan look small before the payoff lands. He’s less a person than a spectacle, but the script gives him enough swagger to feel like a true championship obstacle. He’s the apex of the movie’s escalation logic.",
+        "why_actor_wants_this": "This is a larger-than-life bruiser role in the tradition of a pro-wrestling movie heavy — pure physical presence and crowd reaction. It gives a performer the chance to be iconic in a handful of scenes."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Japanese male lead with credible singing and martial-arts ability",
+          "ensemble of Texas character types with distinct regional flavor",
+          "multiple wrestler roles requiring large, physical performers",
+          "supporting female roles with adult sexuality"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "nightclub/honky-tonk interior",
+          "radio station",
+          "barn/training space",
+          "wrestling arena/cititorium",
+          "ranch house and estate interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful visual effects beyond simple crowd and fight staging.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fight choreography, wrestling bumps, practical blood/injury makeup, breakaway props, and controlled weapon work.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "\"Hello, Mary Lou\" is performed on page and functions as a recognizable song cue."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Bob Wills is still the king\" is quoted as a lyric/reference."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"The Girl I Never Knew\" is a plot-critical original song title."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"If You Don't Stand Up\" is a plot-critical original song title."
+        },
+        {
+          "type": "brand",
+          "detail": "Japan Air is named in the airport arrival sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Lone Star beer is prominently referenced throughout the saloon scenes."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Standalone feature with a crowd-pleasing theatrical release model; the material is built for a mid-budget genre-comedy-action audience."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the wrestling arena, crowd scenes, stunt-heavy fights, and repeated night exteriors push this above a simple indie footprint."
+      },
+      "casting": {
+        "level": "high",
+        "note": "The lead needs a Japanese actor who can credibly sing country, carry action choreography, and play comic dignity; several supporting roles also depend on strong regional character casting and large physical wrestlers."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear, but the script’s tonal balance between comedy, action, romance, and racial conflict will be a key buyer conversation because the material leans hard into all four."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Last Dragon",
+          "year": 1985,
+          "why_it_comps": "A genre-blending underdog story built around a charismatic martial-arts lead, music performance, and a larger-than-life villain ecosystem."
+        },
+        {
+          "title": "Road House",
+          "year": 1989,
+          "why_it_comps": "A rowdy, barroom-set crowd-pleaser where the hero’s physicality and the local business under siege drive the entertainment."
+        },
+        {
+          "title": "Pure Country",
+          "year": 1992,
+          "why_it_comps": "Country-music identity and performance are central to the emotional engine, even though this script adds action and combat."
+        },
+        {
+          "title": "8 Mile",
+          "year": 2002,
+          "why_it_comps": "An outsider performer fighting for legitimacy in a hostile local scene, with music as both identity and proof of worth."
+        },
+        {
+          "title": "The Karate Kid",
+          "year": 1984,
+          "why_it_comps": "Training, mentorship, and a final public showdown give the movie a familiar crowd-pleasing structure beneath its more unusual surface."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like crowd-pleasing underdog movies with music, fights, and a big payoff, especially viewers drawn to offbeat genre hybrids.",
+        "demographics": "18-49 skew, male-leaning but with real crossover for music and character-driven audiences; strongest with viewers who like action-comedy and Americana.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, practical fight work, and a contained set of recurring interiors keep it in indie territory, though the wrestling crowd scenes and stunt load add scope."
+      },
+      "lane_fit": {
+        "lane": "crowd-pleasing indie action-comedy",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "indie distributors seeking a high-concept crowd-pleaser",
+          "streamer feature buyers building an adult action-comedy lane",
+          "producer-directors who can stage fights on a controlled budget",
+          "music-forward specialty buyers"
+        ],
+        "detail": "The script sits in a lane where a distinctive hook can compensate for modest scale: a charismatic lead, a clean underdog engine, and a finale that pays off both the music and the action. It’s the kind of project that can travel on premise and performance more than on spectacle."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; Dan Chan’s story resolves cleanly with the saloon and wrestling conflict, and no secondary character is developed enough to anchor a separate franchise."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly ownable.",
+          "what_it_means": "A buyer can understand and market the movie in one sentence, which is a real advantage in a crowded indie marketplace. That makes it attractive to distributors and streamers looking for a clean, high-concept package with a clear trailer promise.",
+          "evidence": "The opening nightclub performance, the Texas saloon arrival, and the later wrestling gauntlet all orbit the same identity: a Japanese country singer who can also fight.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Dan Chan is a star-making lead role.",
+          "what_it_means": "The role gives an actor a rare combination of physical showcase, musical performance, and emotional underdog appeal, which can elevate the package above its budget tier. That is exactly the kind of part that attracts a breakout performer or a martial-arts star looking for a crossover vehicle.",
+          "evidence": "Dan’s stage performances, his quiet reactions to racism, and the repeated fight victories all let him play charisma and discipline at once.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The movie has built-in crowd-pleaser escalation.",
+          "what_it_means": "Each set piece raises the stakes in a way that feels legible to an audience, which is valuable for theatrical playability and word-of-mouth. Buyers who want a movie that can play in a room — not just on a page — will respond to that structure.",
+          "evidence": "The story moves from barroom hostility to radio breakthrough to the ten-match wrestling challenge and then to the kidnapping showdown.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Texas honky-tonk world has texture.",
+          "what_it_means": "The setting is specific enough to feel like a place, not a backdrop, which helps the movie stand out from generic action fare. That specificity gives the script a regional flavor that can be sold as Americana with attitude.",
+          "evidence": "The saloon, the strip stage, the mechanical bull, the radio station, and the ranch-house training all create a coherent local ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble gives the movie warmth.",
+          "what_it_means": "Bob, Midge, Shorty, and Charisse create a support network around Dan, which broadens the emotional appeal beyond the action beats. That makes the project more attractive to buyers who want a crowd-pleaser with heart, not just a stunt reel.",
+          "evidence": "Midge’s encouragement, Shorty’s dry commentary, and Bob’s paternal pride all recur as Dan’s success builds.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable genre hybrid: a martial-arts showcase wrapped in a country-music underdog story, with a contained production footprint and a finale built for audience payoff. The script’s biggest commercial asset is that it gives a buyer both a memorable hook and a practical indie budget path, which is exactly the combination that can turn a weird title into a real package."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The racial language is a buyer sensitivity.",
+          "detail": "The script leans hard on slurs and hostile crowd behavior in multiple saloon and arena scenes, which makes the material sharper but also narrows the buyer pool. That’s a real conversation in theatrical and streamer packaging, especially if the goal is broad commercial positioning rather than cult exploitation.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The lead role is casting-dependent.",
+          "detail": "Dan Chan has to sing, fight, carry comedy, and hold emotional dignity under pressure; that is a narrow ask even before the cultural specificity is considered. Buyers will want a very clear attachment strategy or a credible discovery path before they lean in.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The finale is stunt-heavy for the tier.",
+          "detail": "The wrestling gauntlet, repeated beatdowns, weapon work, and the estate assault all stack into a physically demanding third act. It’s still manageable, but it will need disciplined choreography and a producer comfortable with action coverage inside an indie budget.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The music clearances add real friction.",
+          "detail": "\"Hello, Mary Lou\" and the Bob Wills reference are named on the page, and the song-performance structure makes music part of the movie’s identity rather than background flavor. That means sync and clearance work is not optional, even though the original songs can be owned.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The supporting cast is colorful, not deep.",
+          "detail": "Bob, Shorty, Charisse, McClaine, and the Feeneys all pop, but most of them are defined by function in Dan’s journey rather than by independent arcs. That’s fine for a feature, but it limits franchise or awards-style depth and keeps the movie squarely in commercial genre territory.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction points are clear: the script’s aggressive racial language will narrow some buyers, and the lead role is a demanding casting lift that can’t be faked. Add in the music clearances and the stunt-heavy finale, and this is a package that will need a confident champion rather than a passive buyer."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 73.3,
+  "tier": "Optionable",
+  "inputTokens": 45980,
+  "outputTokens": 5366,
+  "cost": 0.058632000000000004,
+  "declaredFormat": "Feature film"
+}

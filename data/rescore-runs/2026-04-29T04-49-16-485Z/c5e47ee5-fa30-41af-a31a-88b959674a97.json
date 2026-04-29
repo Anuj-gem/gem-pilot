@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:01:23.861Z",
+  "submission_id": "c5e47ee5-fa30-41af-a31a-88b959674a97",
+  "eval_id": "1cd3c6c1-ba51-4c90-93e4-694caa11f9cc",
+  "title": "All I need is one dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Woman, late 20s; elite basketball player; Midwestern; emotionally guarded but warm; physically active lead."
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Supporting",
+      "demographics": "Man, early 40s; widowed father; church/school maintenance worker; working-class; emotionally restrained."
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Supporting",
+      "demographics": "Girl, 8-14 across the story; Ralph’s daughter; basketball player; observant, earnest, emotionally open."
+    },
+    {
+      "name": "Beth Rose",
+      "role_type": "Supporting",
+      "demographics": "Woman, late 60s to 70s; grandmother; warm, faith-centered, emotionally articulate."
+    },
+    {
+      "name": "Frank Rose",
+      "role_type": "Supporting",
+      "demographics": "Man, 70s; grandfather; faith-filled, basketball-loving, quietly wise."
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Man, late 20s; Skylar’s ex; emotionally steady but increasingly frustrated."
+    },
+    {
+      "name": "Coach Wensil",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s; high school coach; blunt, practical, community-minded."
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s; professional basketball coach; calm, commanding, team-first."
+    },
+    {
+      "name": "Sharon Maid",
+      "role_type": "Supporting",
+      "demographics": "Woman, early 40s; parish administrator; warm, organized, local connective tissue."
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s; priest; calm, pastoral, reflective."
+    }
+  ],
+  "positioning_hook": "A WNBA star returns to her Missouri hometown to bury her grandparents’ ashes in the town where they fell in love, and finds a new life — and a new love — in the man who helps her do it.",
+  "cost_usd": 0.04789125,
+  "input_tokens": 32391,
+  "output_tokens": 5244,
+  "status": "wrote:leads_ok"
+}

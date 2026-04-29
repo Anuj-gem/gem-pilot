@@ -1,0 +1,344 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Action",
+        "Thriller"
+      ],
+      "tone": "pulpy",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "contemporary",
+        "high-concept",
+        "feature-anchored",
+        "propulsive",
+        "identity",
+        "survival",
+        "clone-rebellion",
+        "motorcycle-chase"
+      ]
+    },
+    "positioning_hook": "A broke ex-soldier discovers he’s a cloned fugitive in a society that classifies human beings like contraband, then races a relentless cop to the truth with a dangerous woman at his side.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for genre buyers: a man learns he’s a clone, then gets hunted through a militarized future by a near-unstoppable enforcer. The audience is narrower than a four-quadrant studio play because the world is specific and the material is aggressively pulpy, but the hook is strong."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the bank reveal, where Zack is told he’s a clone and the script immediately turns into a chase. The story engine is easy to explain in one breath, and the clone-classification concept gives the premise a clean, ownable twist."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Zack has a solid everyman-to-identity-crisis arc, and Mia and Trent are vivid enough to carry scenes. The characters are more functional than deeply surprising, though, and the emotional range is narrower than the concept suggests."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a full-bore clone-society mythology, with counterfeit identities, civil-police oppression, and a clone commune hidden inside an amusement park. That’s a distinctive lane, even if the dialogue and scene construction often play like a classic B-movie adventure."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is built on pursuit, reversals, and set-piece escalation: the bank escape, warehouse siege, highway chase, gas-station robbery, and final records-office confrontation all keep the engine moving. The road-movie structure gives it a strong forward pull."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea feels fresh because the clone premise is tied to labor, identity, and state control rather than just a generic sci-fi mystery. It’s not subtle, but it is immediately graspable and commercially distinct."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a specific social order: clone classification, south-country bureaucracy, counterfeit identity work, a hidden clone settlement, and a corporate medical takeover. The amusement-park compound and the Global Care bureaucracy give the world a lived-in, story-generating texture."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unmistakably pulpy, with comic bluntness, hard-edged violence, and romantic banter running alongside dystopian stakes. It has a clear B-movie swagger, though the script sometimes leans on exposition and broad characterization rather than a fully singular voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real thematic seeds around personhood, class, and manufactured identity, especially in Mia’s status and Audrey’s underground work. But the script mostly surfaces those ideas in dialogue rather than letting them deepen through behavior or contradiction."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Zack/Mia has a workable friction-to-romance dynamic, and Trent/Zed/Audrey add pressure points, but the story is still fundamentally lead-driven. The supporting cast is colorful without becoming a true ensemble engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Zack Freeling",
+        "role_type": "Lead",
+        "demographics": "Male, middle-aged, white, ex-special-forces veteran, working-class, divorced.",
+        "hook": "A bruised, self-contained man trying to rebuild his life after a divorce learns his entire identity has been manufactured. Zack starts as a guy who wants a bank job and ends as a fugitive forced to decide whether bloodline, memory, or chosen allegiance makes him real.",
+        "why_actor_wants_this": "This is the showcase territory of a Harrison Ford in Blade Runner-style role: stoic competence under existential pressure, with the added lift of action, confusion, and emotional recalibration. It gives an actor a full arc from wounded everyman to reluctant mythic figure."
+      },
+      {
+        "name": "Mia",
+        "role_type": "Supporting",
+        "demographics": "Female, early 30s, white, tough, sexually frank, survival-minded, identity-unstable.",
+        "hook": "Mia is the script’s most volatile wildcard: a sharp-tongued, gun-toting survivor who can be ally, flirtation, guide, or betrayer depending on what keeps her alive. She’s defined by hunger for autonomy, resentment toward her father, and a pragmatic willingness to use people before they use her.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the swagger-and-vulnerability lane of a Jennifer Jason Leigh in The Hateful Eight or a Rebecca Ferguson in a genre thriller. The part offers attitude, danger, romantic charge, and a late-turn betrayal that re-frames everything."
+      },
+      {
+        "name": "Trent",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, authority figure, physically imposing, heavily damaged by mutation.",
+        "hook": "Trent is the story’s human weapon: a cold, punitive civil officer whose body and ideology both harden over the course of the script. He’s not just an antagonist but a walking embodiment of state violence, and the reveal that he’s Zack’s uncle gives the pursuit a family rot dimension.",
+        "why_actor_wants_this": "This is the kind of villain role that lets an actor do the Anton Chigurh / T-1000 lane of controlled menace, then escalate into grotesque physical transformation. It’s a performance showcase for stillness, authority, and body-horror escalation."
+      },
+      {
+        "name": "Audrey Freeling",
+        "role_type": "Supporting",
+        "demographics": "Female, 60s, white, maternal, resourceful, politically radical in practice.",
+        "hook": "Audrey is the emotional and ideological center behind the story’s hidden resistance. She reads at first as a worried mother, then reveals herself as the architect of clone survival through forged identities, covert aid, and long-term sacrifice.",
+        "why_actor_wants_this": "This is prestige-maternal territory in the vein of Frances McDormand in a grounded genre role: authority, warmth, and moral steel in the same frame. The part gives an actor the chance to play secret history and quiet command."
+      },
+      {
+        "name": "Darrick",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, muscular, charismatic, clone community leader.",
+        "hook": "Darrick is the swaggering face of the clone underground, equal parts host, tactician, and provocateur. He carries the warehouse scenes with a mix of contempt, loyalty, and street-level charisma that makes the clone world feel organized rather than abstract.",
+        "why_actor_wants_this": "This is a strong supporting-lane role in the tradition of a Michael K. Williams or Walton Goggins type part: sharp presence, authority, and a lot of scene-stealing texture. It gives an actor a chance to define a whole subculture in a few scenes."
+      },
+      {
+        "name": "Zed",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, white, countercultural scientist/leader, father.",
+        "hook": "Zed is the eccentric patriarch of the clone enclave, a Ferris-wheel-dwelling philosopher-scientist who treats cloning as both rebellion and lifestyle. He’s charming, evasive, and ideologically slippery, which keeps him from reading as a simple mentor.",
+        "why_actor_wants_this": "This is the kind of offbeat mentor role that lets an actor play eccentric authority with a little mythic weirdness, like a Sam Elliott or Jeff Bridges genre turn. It offers world-building, charisma, and a late-story reveal of real power."
+      },
+      {
+        "name": "Gilcrest",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, scientist, corporate-adjacent, clone identity implied.",
+        "hook": "Gilcrest is the bureaucratic hinge between the clone underground and the state’s genetic apparatus. He’s nervous, explanatory, and tragically disposable, which makes him feel like a man who knows too much and has too little protection.",
+        "why_actor_wants_this": "This is a compact but juicy character-actor role in the vein of a Paul Dano or Michael Stuhlbarg scene part: intelligence, panic, and exposition with stakes. It gives an actor a chance to make a plot-delivery role feel human."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child role with plot leverage",
+          "older female lead required",
+          "physically imposing antagonist",
+          "multiple clone variants and doubles implied",
+          "action-capable lead pair"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "near-future contemporary",
+        "notable_requirements": [
+          "downtown bank interior",
+          "warehouse hideout",
+          "desert highway stretches",
+          "amusement-park compound",
+          "corporate medical headquarters",
+          "bureaucratic records office",
+          "irrigation-field finale"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Clone-classification screens, futuristic weapons, travel pod flight, explosion work, and the final mutated Trent makeup/visual effects all require controlled effects support.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Vehicle chases, gunfire, explosions, crane sequence, and practical destruction across the warehouse, gas station, and ravine beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Elton John, 'Someone Saved My Life Tonight'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin, 'Stairway to Heaven'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin, 'Kashmir'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin, 'Houses of the Holy'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin, 'Trampled Under Foot'"
+        },
+        {
+          "type": "brand",
+          "detail": "Pepsi"
+        },
+        {
+          "type": "brand",
+          "detail": "Toyota Corolla"
+        },
+        {
+          "type": "brand",
+          "detail": "Nissan"
+        },
+        {
+          "type": "brand",
+          "detail": "Trans Am"
+        },
+        {
+          "type": "brand",
+          "detail": "Global Care"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or premium-cable sci-fi action thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: genre-forward theatrical or streamer-premiere play with action and sci-fi positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is mostly contemporary and road-based, but the warehouse battle, multiple vehicle chases, explosion-heavy finale, futuristic weapons, and mutated Trent effects push it above a simple contained indie."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Zack needs an actor who can play wounded restraint, action competence, and existential confusion; Mia needs a performer who can pivot from flirtation to betrayal without losing heat. Trent is a specialized villain role with heavy physical presence and prosthetic/makeup demands."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The clone-rebellion mythology is clear, but the script leans on exposition at the records-office and Gilcrest scenes to deliver the governing rules. The emotional turn with Mia’s betrayal and the Audrey reveal are strong beats, but they arrive in a way that will invite buyer questions about character motivation and payoff balance."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Blade Runner",
+          "year": 1982,
+          "why_it_comps": "Shares the identity-crisis engine of a man learning he may be manufactured, with a noir-ish chase structure and a world that treats human status as a legal question."
+        },
+        {
+          "title": "The Running Man",
+          "year": 1987,
+          "why_it_comps": "Matches the chase-forward, authoritarian-society energy and the pleasure of a protagonist hunted by a system that controls the narrative."
+        },
+        {
+          "title": "Repo Man",
+          "year": 1984,
+          "why_it_comps": "The offbeat, punky sci-fi texture and deadpan attitude toward a broken social order feel adjacent, especially in the roadside Americana and outsider-community material."
+        },
+        {
+          "title": "Dark City",
+          "year": 1998,
+          "why_it_comps": "Comps on the memory/identity mystery and the sense of a hidden architecture governing ordinary life, even though this script plays more pulpy and less gothic."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre audiences who like high-concept sci-fi with action momentum and a strong identity mystery.",
+        "demographics": "Adults 18-49, male-skewing but accessible to women through the Mia/Zack dynamic; strongest with viewers who like cult sci-fi, dystopian action, and mid-budget genre.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary road production with multiple action set pieces, practical destruction, vehicle work, and moderate effects for the clone-tech and Trent transformation."
+      },
+      "lane_fit": {
+        "lane": "mid-budget elevated sci-fi action thriller",
+        "types_of_buyers": [
+          "streamer genre originals team",
+          "mid-budget theatrical genre financier",
+          "boutique studio genre label",
+          "producer looking for a star-driven sci-fi vehicle",
+          "director with action chops and cult-genre credibility"
+        ],
+        "detail": "This sits naturally in the lane where concept clarity, action momentum, and a distinctive world matter more than tentpole scale. The script has enough chase, mythology, and iconography to attract genre buyers without needing franchise-level spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The clone world is expandable in theory, but the script resolves Zack’s identity journey as a single-run arc and does not introduce a separate spinoff anchor with comparable depth."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is immediate and visual.",
+          "what_it_means": "A buyer can understand the premise in seconds, which is a real advantage in a crowded sci-fi marketplace. That makes it easy to pitch to genre execs, directors, and actors looking for a clean high-concept lane.",
+          "evidence": "The bank interview flips into the clone reveal almost immediately, and the story launches into a chase before the first act can stall.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a usable social system.",
+          "what_it_means": "The clone-classification bureaucracy, counterfeit identity economy, and north/south legal split give the script more than just a premise; they give it a marketable world. That kind of texture helps buyers see posters, trailers, and sequel-adjacent mythology even if the story remains standalone.",
+          "evidence": "Birth records, state files, clone classification, and the hidden clone settlement all point to a functioning social order rather than a vague dystopia.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Trent is a strong antagonist package.",
+          "what_it_means": "A relentless, physically transformed lawman gives the project a memorable face of danger, which is crucial for marketing and casting conversations. Buyers can immediately see the villain silhouette and the action promise.",
+          "evidence": "Trent’s motorcycle pursuit, his escalating brutality, and the final mutated body reveal make him more than a generic pursuer.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mia adds heat and volatility.",
+          "what_it_means": "She gives the movie a romantic, dangerous counterweight to Zack’s stoicism, which broadens the emotional pitch beyond pure chase mechanics. That makes the script more attractive to actors and helps the material play as more than a male-driven action piece.",
+          "evidence": "Mia is introduced as a getaway driver, becomes Zack’s guide, then flips into a self-interested betrayer at the end.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are legible and trailer-friendly.",
+          "what_it_means": "The bank escape, warehouse siege, gas-station theft, and final records-office confrontation all translate cleanly into marketing beats. That gives the project a practical path to selling the experience, not just the premise.",
+          "evidence": "The script repeatedly escalates through vehicles, gunfire, and public-space confrontations that are easy to visualize.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept sci-fi action package with a strong chase engine, a memorable villain, and a world that feels commercially legible rather than abstract. It’s the kind of mid-budget genre feature that can attract a star, a cult-leaning director, and a streamer or specialty buyer looking for a contained but expandable identity thriller."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The exposition arrives in long rule-dumps.",
+          "detail": "The records-office, Gilcrest, and Zed scenes spend a lot of time explaining clone law, north-country politics, and identity mechanics in dialogue. That makes the premise clear, but it also signals a development pass where the buyer will ask how much of the mythology is being carried by conversation instead of dramatized discovery.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Mia’s betrayal is structurally abrupt.",
+          "detail": "Her turn from ally and flirtation to bounty-minded captor lands late and hard, but the script does not seed enough internal contradiction to make the pivot feel inevitable. That’s not a deal-breaker, but it is the kind of turn that will be flagged in packaging because it affects audience trust in the central relationship.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Trent’s final mutation raises effects expectations.",
+          "detail": "The melted-helmet, fiberglass-body climax turns the antagonist into a prosthetic/VFX hybrid, which is a meaningful production and tone commitment. It’s a strong image, but it pushes the project away from a clean indie action lane and into a more managed effects conversation.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The music and brands are not free.",
+          "detail": "Elton John and multiple Led Zeppelin cues are named on the page, and Pepsi, Nissan, Toyota, Trans Am, and Global Care are all explicitly used. That creates a real clearance and budget conversation before greenlight, especially if the script wants those needle drops to stay central to the tone.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is not the premise; it’s the amount of explanatory dialogue needed to deliver the clone-world rules and the late-story trust break with Mia. Add the named music, brand usage, and Trent’s effects-heavy finale, and this becomes a package that needs careful execution planning even though the core hook is strong."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 70.7,
+  "tier": "Optionable",
+  "inputTokens": 39362,
+  "outputTokens": 4687,
+  "cost": 0.050613,
+  "declaredFormat": "Feature film"
+}

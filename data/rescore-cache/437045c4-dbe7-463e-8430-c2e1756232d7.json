@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Comedy",
+        "Musical"
+      ],
+      "tone": "campy",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "feature-anchored",
+        "low-budget-friendly",
+        "character-driven",
+        "high-concept",
+        "music-industry",
+        "haunted-house",
+        "vampire",
+        "goth-rock"
+      ]
+    },
+    "positioning_hook": "A vain rock frontman and his feuding band get trapped at a haunted English manor, where a vampire ghost turns their vanity, sex, and ego into a blood-soaked comeback.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clean genre promise — a haunted-house bloodbath inside a rock-video shoot — and the final image of the band’s comeback gives it a sellable hook. The audience is real, but the very specific music-industry satire and broad, vulgar comedy keep it from feeling four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately: a band shoots a video at a cursed manor and gets picked off by the house’s vampire ghost. The script keeps that engine legible all the way through, with the video shoot, the missing crew, and the final performance all reinforcing the premise."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Napoleon is a strong engine — arrogant, insecure, musically gifted, and ridiculous in equal measure — and Griffith/Paul/Miranda give the ensemble some texture. The supporting players are vivid, but most of them function as comic or horror fodder rather than fully durable character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a very specific mash-up: rock-band vanity, gothic manor folklore, and a vampire who responds to music. The choice to make the climax a stage-show blood ritual rather than a conventional escape sequence gives it a confident, offbeat identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The setup is strong and the body count escalates, but the middle spends a lot of time on banter, atmosphere, and repeated suspicion before the horror engine fully takes over. Once Nina starts feeding, the momentum improves, but the first half is more shaggy than propulsive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A vampire haunting that is activated by music and culminates in a band’s undead comeback is a fresh, instantly graspable twist. It is still built on familiar haunted-house and slasher mechanics, but the music-video frame gives it a memorable spin."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The manor, the local pub, the police station, and the band’s production bubble create a usable little ecosystem with class tension, local superstition, and industry friction. The world is story-generating, though it remains mostly in service of the central location rather than expanding into something broader."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The voice is unmistakably bawdy, cheeky, and grotesque — it swings from music-biz snark to explicit gore without losing its punkish attitude. The script knows exactly what kind of bad taste it is selling."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are hints of deeper material around Napoleon’s insecurity, Griffith’s sexuality, and the house’s history, but the script mostly plays those elements for immediate effect. The surface pleasures are the point, not a hidden second layer."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Napoleon vs. Brush, the band’s internal resentments, Meloe’s mediation, and Griffith/Miranda’s odd emotional bond all generate recurring friction. It’s not a true any-two-characters-in-a-room machine, but the ensemble does have enough combustible pairings to keep scenes alive."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Artemus Napoleon",
+        "role_type": "Lead",
+        "demographics": "Male, late 20s to 30s, rock frontman; coded as Latino under the reveal of his real name Julio Rodriquez.",
+        "hook": "The Streaks’ self-mythologizing lead singer, Napoleon is a vain, gifted, deeply insecure performer who believes the world is too small for his art. He hides behind swagger, insults, and theatrical contempt, but the script keeps exposing how badly he needs to be seen as exceptional — by the band, by Parker, and finally by Nina.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the full rock-star vanity package the way Gary Oldman in Sid and Nancy or Joaquin Phoenix in Walk the Line did, but with more comic venom. It offers performance range: ego, humiliation, seduction, musicality, and a final monstrous transformation."
+      },
+      {
+        "name": "Malcom Parker",
+        "role_type": "Supporting",
+        "demographics": "Male, late 60s, talent manager, British.",
+        "hook": "Parker is the old-school industry operator who can still bully a room with a phone call and a deadline. He’s not sentimental, not impressed, and not wrong about the band’s dysfunction, which makes him a useful pressure-cooker antagonist rather than a cartoon villain.",
+        "why_actor_wants_this": "This is the kind of sharp, scene-stealing manager role that gives an actor the clipped authority of a John Turturro or Bob Balaban type part. The fun is in playing a man who thinks he controls the circus until the circus starts eating him."
+      },
+      {
+        "name": "Chris Meloe",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, location manager.",
+        "hook": "Meloe is the exhausted fixer trying to keep the shoot alive while improvising around bad timing, bad weather, bad talent, and eventually the supernatural. He’s the practical center of the movie’s chaos, the guy who keeps making the wrong compromise for understandable reasons.",
+        "why_actor_wants_this": "This is a solid working-actor role in the vein of a Paul Giamatti or David Harbour pressure-valve part — a man trying to stay professional while everything around him becomes absurd. It gives an actor lots of reactive comedy and a slow slide into panic."
+      },
+      {
+        "name": "Travis Stanton",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, music video director.",
+        "hook": "Stanton is the creative professional who starts out trying to shape the shoot and ends up mostly surviving it. He’s a useful audience surrogate for the production side of the story, with enough dry skepticism to puncture Napoleon’s ego without ever fully escaping the mess.",
+        "why_actor_wants_this": "This is the kind of dry, exasperated role that lets an actor play straight-man authority under siege, similar to the best parts for a Jason Schwartzman or Martin Starr type. The showcase is controlled irritation gradually giving way to fear."
+      },
+      {
+        "name": "Bill Brush",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, guitarist.",
+        "hook": "Brush is Napoleon’s chief rival inside the band: cool, cutting, and just self-aware enough to weaponize the truth. He’s the one who punctures Napoleon’s myth, and the script uses him as both comic antagonist and eventual horror victim.",
+        "why_actor_wants_this": "This is a juicy band-rival role in the tradition of a sharp supporting turn like Adam Driver in a prestige ensemble — the player who gets to needle the lead and then pay for it. It gives an actor attitude, timing, and a memorable death."
+      },
+      {
+        "name": "Roy Paul",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, bassist, queer-coded / gay.",
+        "hook": "Paul is greasy, cynical, and more emotionally entangled with the band than he admits, especially through his relationship with Griffith. He’s one of the script’s more interesting contradictions: crude on the surface, but capable of real loyalty and vulnerability.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the messy, lived-in energy of a supporting turn in a British ensemble comedy-horror. The showcase is playing sleaze without losing the human core."
+      },
+      {
+        "name": "Derek Griffith",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, drummer, queer-coded / gay.",
+        "hook": "Griffith is the most emotionally open of the band members, and the script gives him a surprisingly tender arc around love, shame, and loyalty. He’s funny, horny, wounded, and more self-aware than the others, which makes him one of the movie’s strongest secondary characters.",
+        "why_actor_wants_this": "This is the kind of role that can break out for an actor the way a standout ensemble part in a horror-comedy can — equal parts comic relief and emotional truth. It offers a real showcase for vulnerability, sexual frankness, and grief."
+      },
+      {
+        "name": "Miranda",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, groupie / hanger-on.",
+        "hook": "Miranda is chaotic, needy, funny, and more emotionally perceptive than she first appears. The script lets her move from comic hanger-on to someone with genuine grief and desire, which gives her more shape than the average genre side character.",
+        "why_actor_wants_this": "This is a high-energy supporting role with the kind of unruly, sexually frank material that can become a calling card for a young actor. It’s the showcase territory of a scene-stealing ensemble turn where comedy and pathos coexist."
+      },
+      {
+        "name": "Chloe",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, groupie / hanger-on.",
+        "hook": "Chloe is the sharper, meaner half of the groupie duo, all attitude until the house turns her into prey. She functions as a comic pressure point and then as one of the movie’s most graphic horror victims.",
+        "why_actor_wants_this": "This is a compact but memorable horror-comedy role that gives an actor a strong attitude turn and a brutal set-piece death. It’s the kind of part that can pop in a trailer and in audience memory."
+      },
+      {
+        "name": "Nina Hall",
+        "role_type": "Supporting",
+        "demographics": "Female, appears 20s-30s but undead; aristocratic ghost/vampire.",
+        "hook": "Nina is the house’s spectral predator, beautiful and monstrous, drawn to music and blood in equal measure. She is less a conventional villain than a seductive force of appetite, and the script smartly keeps her mysterious enough to feel mythic.",
+        "why_actor_wants_this": "This is a prestige-monster role with real physical and visual payoff, in the lane of a memorable horror icon rather than a standard ghost. It gives an actor the chance to play stillness, menace, seduction, and feral violence."
+      },
+      {
+        "name": "Wilt",
+        "role_type": "Supporting",
+        "demographics": "Male, older adult, gardener / local drunk.",
+        "hook": "Wilt is the local warning system: half con man, half prophet, and fully aware that the house is cursed. He’s a great genre utility character because he can be played as comic nuisance or ominous truth-teller.",
+        "why_actor_wants_this": "This is the kind of flavorful supporting role character actors love — a small part with a distinct voice and a crucial information drop. It has the texture of a great British local in a horror ensemble."
+      },
+      {
+        "name": "Agnes",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged to older, pub owner.",
+        "hook": "Agnes is the town’s practical gatekeeper, serving food and folklore with the same no-nonsense energy. She gives the script a grounded local presence and helps sell the idea that everyone in the area knows the house’s reputation.",
+        "why_actor_wants_this": "This is a compact character role with authority, wit, and local color — the sort of part that can be played by a strong British character actress and instantly feel lived-in. It’s a scene-setting role with a memorable voice."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "one lead rock-frontman role with strong comic and musical demands",
+          "ensemble of band members and crew with distinct British character types",
+          "one undead female antagonist requiring heavy makeup/VFX support"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "roughly 70/30 interior",
+        "period_or_contemporary": "contemporary with a medieval-period manor setting",
+        "notable_requirements": [
+          "large English manor house",
+          "servants' quarters / outbuilding",
+          "local pub",
+          "small police station",
+          "rural road and grounds"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "ghost materialization, hallway distortion, spectral transitions, blood effects, and a final undead crowd / performance look",
+        "stunts_level": "minor",
+        "sfx_needs": "heavy practical gore, prosthetic bites, decapitation, blood spray, corpse makeup, and creature makeup for Nina and the undead band",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "The Streaks’ song 'Transition' is specifically named, and the script references Michael Jackson’s 'Thriller' as a comparison point inside the dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "McDonalds is referenced by name in dialogue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical genre release",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a midnight-movie / genre specialty theatrical play or streaming horror-comedy acquisition"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary production with one main manor, a pub, a police station, and a small number of exterior rural setups keeps the footprint contained, but the heavy gore, ghost effects, and final undead stage spectacle will need disciplined scope control."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead requires a performer who can sell vanity, musicality, comic cruelty, and eventual monstrous transformation; the band ensemble also needs distinct chemistry so the rivalries read instantly."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear, but the script leans hard on broad banter and repeated escalation beats before the horror engine fully takes over, so buyers will weigh the tonal balance and the final-act payoff carefully."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Lost Boys",
+          "year": 1987,
+          "why_it_comps": "Teen/young-adult subculture, rock music, and vampire mythology collide in a glossy, crowd-pleasing horror package."
+        },
+        {
+          "title": "From Dusk Till Dawn",
+          "year": 1996,
+          "why_it_comps": "A genre pivot from crime/comedy setup into full-bore vampire carnage, with a strong ensemble and a baroque final stretch."
+        },
+        {
+          "title": "Shaun of the Dead",
+          "year": 2004,
+          "why_it_comps": "The script’s comic ensemble friction and escalating undead chaos sit in the same crowd-pleasing horror-comedy lane."
+        },
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "A contained, socially awkward gathering at a remote property that slowly reveals a deadly supernatural threat."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre fans who like horror with a comic edge, plus music-culture audiences drawn to backstage ego, band rivalry, and undead spectacle.",
+        "demographics": "18-44 skew, male-leaning but playable for mixed genre audiences; strongest with horror-comedy viewers and rock-music nostalgia buyers.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "One primary manor location, a small ensemble, and contemporary settings keep it indie-sized, while the practical gore, makeup, and night work push it above micro."
+      },
+      "lane_fit": {
+        "lane": "elevated horror-comedy",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer genre acquisition teams",
+          "indie distributors with horror labels",
+          "mid-budget horror producers",
+          "director-driven genre shops"
+        ],
+        "detail": "This sits naturally in the lane of a cheeky, blood-forward horror-comedy with a strong hook and a contained production footprint. The music-industry setting gives it a marketing angle beyond the usual haunted-house package."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed supernatural event and no clear sequel or spinoff vector beyond the core band story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is immediate and ownable.",
+          "what_it_means": "A buyer can understand the movie in one sentence, which is a real advantage in a crowded horror market. That makes it easier to sell to genre financiers, streamers, and a director looking for a clean high-concept debut.",
+          "evidence": "The band is forced to shoot a video at a haunted manor, and the house’s vampire ghost starts feeding on them.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Napoleon is a castable antihero.",
+          "what_it_means": "The lead role gives an actor a full vanity-to-vulnerability arc, which is the kind of part that can attract a recognizable name or launch a breakout performance. That is especially valuable in a genre package where the lead has to carry both comedy and menace.",
+          "evidence": "Napoleon’s solo-album failure, his feud with Brush, and his private piano scenes with Nina all expose his insecurity under the swagger.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final act turns the premise into spectacle.",
+          "what_it_means": "The ending doesn’t just resolve the horror; it converts the band’s nightmare into a grotesque comeback image, which is a strong trailer and poster engine. Buyers like endings that reframe the whole movie into a single sellable image.",
+          "evidence": "The undead band performs on stage, Parker arrives, and Napoleon bites him before the song goes to number one.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a clear commercial lane.",
+          "what_it_means": "The script knows it is selling vulgar, cheeky, blood-soaked fun rather than prestige dread, which helps define the buyer and audience. That clarity makes it easier to position as a midnight-movie style genre acquisition.",
+          "evidence": "The dialogue is packed with insults, sexual banter, and comic British friction even as the body count rises.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The manor is a story engine, not just a backdrop.",
+          "what_it_means": "The house gives the movie a contained production base and a built-in mythology, which is useful both economically and narratively. A single strong location is a real asset for a genre buyer looking for scope without runaway cost.",
+          "evidence": "The Hall manor, servants’ quarters, tower room, and surrounding woods all feed the curse and the escalating disappearances.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a clean, marketable horror-comedy package: a contained English manor, a vivid antihero frontman, and a finale that turns the band’s undead chaos into a headline image. It has the kind of high-concept hook and indie-friendly footprint that can attract genre buyers without needing a giant cast or tentpole spend."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle repeats the same friction beats.",
+          "detail": "A lot of the first half cycles through Napoleon’s ego, Brush’s provocation, and Meloe’s damage control before the supernatural threat fully takes over. That’s not a fatal flaw, but it does mean the script asks the audience to enjoy attitude and atmosphere for a while before the horror engine really accelerates.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The explicit gore narrows the buyer pool.",
+          "detail": "Chloe’s prolonged sexualized death, the decapitations, and the final body-horror imagery push the material hard into mature-only territory. That is fine for streaming and genre specialty, but it will limit more mainstream theatrical buyers.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The lead role depends on a very specific performer.",
+          "detail": "Napoleon has to play arrogance, musical genius, comic self-delusion, and genuine vulnerability, then sell a vampire transformation on top of it. That combination narrows the casting conversation more than the budget suggests, because a generic rock-star type won’t carry the role.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The final spectacle needs disciplined execution.",
+          "detail": "The undead stage show, crowd makeup, Parker’s arrival, and the band’s transformed look all land at once in the climax. If the effects or staging feel underpowered, the movie loses the payoff that justifies the whole concept.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The script’s main friction is that it spends a long stretch on banter and band politics before the horror fully cashes in, so the first half has to do a lot of heavy lifting. The other pressure point is execution: the climax promises a big undead spectacle, and the material will be judged on whether that payoff feels as outrageous as the setup."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 70.3,
+  "tier": "Optionable",
+  "inputTokens": 40839,
+  "outputTokens": 5148,
+  "cost": 0.05379525,
+  "declaredFormat": "Feature film"
+}

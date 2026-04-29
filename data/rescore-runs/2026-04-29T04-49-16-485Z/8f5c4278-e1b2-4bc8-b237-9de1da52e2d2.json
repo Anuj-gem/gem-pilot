@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T05:06:00.431Z",
+  "submission_id": "8f5c4278-e1b2-4bc8-b237-9de1da52e2d2",
+  "eval_id": "8274c989-22be-494f-8e91-d5ba4055e473",
+  "title": "Subterranean Sector C",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Chad Abraham",
+      "role_type": "Lead",
+      "demographics": "Male, middle-aged, war correspondent, likely 40s-50s, American."
+    },
+    {
+      "name": "Saran Mioyki",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, Japanese, television reporter, mother."
+    },
+    {
+      "name": "Ivan Brook",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, survivalist magazine editor, physically imposing, gay."
+    },
+    {
+      "name": "Professor Van Yakamoto",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, Japanese scientist, defense contractor, intellectual."
+    },
+    {
+      "name": "General Rawling",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, American military officer, career soldier."
+    },
+    {
+      "name": "Hely",
+      "role_type": "Supporting",
+      "demographics": "Female, child, Japanese schoolgirl."
+    },
+    {
+      "name": "Joe Anderson",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, Black, magazine editor, wounded leg late in story."
+    },
+    {
+      "name": "Min",
+      "role_type": "Supporting",
+      "demographics": "Female, young adult, Japanese, bodyguard/assistant."
+    },
+    {
+      "name": "Tak",
+      "role_type": "Supporting",
+      "demographics": "Female, young adult, Japanese, bodyguard/assistant."
+    },
+    {
+      "name": "Stone",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, military guard."
+    },
+    {
+      "name": "Steele",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, military guard."
+    },
+    {
+      "name": "King Carl",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, British monarch."
+    },
+    {
+      "name": "Terry Reynolds",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, station manager."
+    }
+  ],
+  "positioning_hook": "A disgraced war reporter is trapped underground with a Japanese scientist, a hardline general, and a handful of strangers when giant rats overrun the world above and turn their bunker into a last stand.",
+  "cost_usd": 0.059586,
+  "input_tokens": 47648,
+  "output_tokens": 5300,
+  "status": "wrote:leads_ok"
+}

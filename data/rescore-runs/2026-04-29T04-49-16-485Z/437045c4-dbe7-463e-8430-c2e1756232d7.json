@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:06:05.093Z",
+  "submission_id": "437045c4-dbe7-463e-8430-c2e1756232d7",
+  "eval_id": "e61f8c4e-68a6-466e-a661-2a9c62385e78",
+  "title": "Video Shoot",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Artemus Napoleon",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s to 30s, rock frontman; coded as Latino under the reveal of his real name Julio Rodriquez."
+    },
+    {
+      "name": "Malcom Parker",
+      "role_type": "Supporting",
+      "demographics": "Male, late 60s, talent manager, British."
+    },
+    {
+      "name": "Chris Meloe",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, location manager."
+    },
+    {
+      "name": "Travis Stanton",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, music video director."
+    },
+    {
+      "name": "Bill Brush",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, guitarist."
+    },
+    {
+      "name": "Roy Paul",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, bassist, queer-coded / gay."
+    },
+    {
+      "name": "Derek Griffith",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, drummer, queer-coded / gay."
+    },
+    {
+      "name": "Miranda",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, groupie / hanger-on."
+    },
+    {
+      "name": "Chloe",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, groupie / hanger-on."
+    },
+    {
+      "name": "Nina Hall",
+      "role_type": "Supporting",
+      "demographics": "Female, appears 20s-30s but undead; aristocratic ghost/vampire."
+    },
+    {
+      "name": "Wilt",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, gardener / local drunk."
+    },
+    {
+      "name": "Agnes",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged to older, pub owner."
+    }
+  ],
+  "positioning_hook": "A vain rock frontman and his feuding band get trapped at a haunted English manor, where a vampire ghost turns their vanity, sex, and ego into a blood-soaked comeback.",
+  "cost_usd": 0.05379525,
+  "input_tokens": 40839,
+  "output_tokens": 5148,
+  "status": "wrote:leads_ok"
+}

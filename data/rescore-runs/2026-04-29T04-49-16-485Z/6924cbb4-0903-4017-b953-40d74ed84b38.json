@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:05:59.376Z",
+  "submission_id": "6924cbb4-0903-4017-b953-40d74ed84b38",
+  "eval_id": "fa2d6a8c-4d5b-4ea4-8e64-c5963d57a921",
+  "title": "True Being",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Zack Freeling",
+      "role_type": "Lead",
+      "demographics": "Male, middle-aged, white, ex-special-forces veteran, working-class, divorced."
+    },
+    {
+      "name": "Mia",
+      "role_type": "Supporting",
+      "demographics": "Female, early 30s, white, tough, sexually frank, survival-minded, identity-unstable."
+    },
+    {
+      "name": "Trent",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, authority figure, physically imposing, heavily damaged by mutation."
+    },
+    {
+      "name": "Audrey Freeling",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s, white, maternal, resourceful, politically radical in practice."
+    },
+    {
+      "name": "Darrick",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, muscular, charismatic, clone community leader."
+    },
+    {
+      "name": "Zed",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, white, countercultural scientist/leader, father."
+    },
+    {
+      "name": "Gilcrest",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, scientist, corporate-adjacent, clone identity implied."
+    }
+  ],
+  "positioning_hook": "A broke ex-soldier discovers he’s a cloned fugitive in a society that classifies human beings like contraband, then races a relentless cop to the truth with a dangerous woman at his side.",
+  "cost_usd": 0.050613,
+  "input_tokens": 39362,
+  "output_tokens": 4687,
+  "status": "wrote:leads_ok"
+}

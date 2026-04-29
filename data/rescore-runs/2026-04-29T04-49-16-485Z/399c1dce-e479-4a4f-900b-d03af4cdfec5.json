@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:00:22.170Z",
+  "submission_id": "399c1dce-e479-4a4f-900b-d03af4cdfec5",
+  "eval_id": "dc64bdd1-92c0-4e21-9f75-673364ea7b48",
+  "title": "Project cross",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Damian Cross",
+      "role_type": "Lead",
+      "demographics": "Male, early 30s, British, elite criminal strategist with a personal stake in institutional fraud."
+    },
+    {
+      "name": "Liam Carter",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, British, outsider with covert tactical skill and a guarded emotional life."
+    },
+    {
+      "name": "Eleanor Cross",
+      "role_type": "Supporting",
+      "demographics": "Female, early 30s, British, forensic accountant, Damian's fiancée and operational equal."
+    },
+    {
+      "name": "Rico Santoro",
+      "role_type": "Supporting",
+      "demographics": "Male, late 30s, Latino, explosives specialist with a gruff, paternal edge."
+    },
+    {
+      "name": "Felix Novak",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, tech specialist, likely white or ethnically ambiguous, socially anxious and hyper-competent."
+    },
+    {
+      "name": "Milo Reyes",
+      "role_type": "Supporting",
+      "demographics": "Male, mid 30s, Latino, driver/mechanic with a calm, grounded presence."
+    },
+    {
+      "name": "Andrea Calcale",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Italian, wealthy fixer with criminal-adjacent influence and social ease."
+    },
+    {
+      "name": "Agent Theadore Collins",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, federal agent, composed and methodical."
+    },
+    {
+      "name": "Agent Gabriel Morales",
+      "role_type": "Supporting",
+      "demographics": "Male, mid 30s, federal agent, observant and more emotionally open than his partner."
+    }
+  ],
+  "positioning_hook": "A British fixer is pulled back by an old friend into a globe-spanning heist that turns out to be cover for exposing a corruption network and returning stolen wealth to its victims.",
+  "cost_usd": 0.04615275,
+  "input_tokens": 31741,
+  "output_tokens": 4966,
+  "status": "wrote:leads_ok"
+}

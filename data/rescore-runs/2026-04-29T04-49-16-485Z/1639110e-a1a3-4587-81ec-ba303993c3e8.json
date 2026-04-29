@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:02:05.809Z",
+  "submission_id": "1639110e-a1a3-4587-81ec-ba303993c3e8",
+  "eval_id": "29890b19-185a-485c-ba7f-b5dc2d755b05",
+  "title": "Who Lukas Kendall 4 8 26",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Ava",
+      "role_type": "Lead",
+      "demographics": "Female, 16, high-school student, white, working-class suburban/small-town background."
+    },
+    {
+      "name": "June",
+      "role_type": "Supporting",
+      "demographics": "Female, 35, mother, blue-collar, working-class, white."
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, high-school student, teen friend, plus-size, curly-haired."
+    },
+    {
+      "name": "Priscilla",
+      "role_type": "Supporting",
+      "demographics": "Female, late 40s, security executive, corporate, hard-edged."
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "Male, 90s body / adult male consciousness, shapeshifter, mentally fragmented."
+    },
+    {
+      "name": "Wolcott",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, scientist/executive, white, corporate villain."
+    },
+    {
+      "name": "Jamieson",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, private security, physically imposing."
+    },
+    {
+      "name": "Mills",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, security operative, ex-military, father."
+    },
+    {
+      "name": "Wilma",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, medical staff, corporate employee."
+    }
+  ],
+  "positioning_hook": "A self-doubting teen girl in a quiet Midwest town discovers she can copy anyone she touches, then gets trapped between a biotech cover-up, a missing billionaire, and the life she was never supposed to have.",
+  "cost_usd": 0.05544825,
+  "input_tokens": 44003,
+  "output_tokens": 4988,
+  "status": "wrote:leads_ok"
+}

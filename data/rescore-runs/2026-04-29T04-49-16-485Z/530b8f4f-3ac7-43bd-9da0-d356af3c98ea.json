@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:05:28.058Z",
+  "submission_id": "530b8f4f-3ac7-43bd-9da0-d356af3c98ea",
+  "eval_id": "fc132f23-9d85-4927-aafa-f2f7d8b5ec57",
+  "title": "Warhorses",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Ray Sallinger",
+      "role_type": "Lead",
+      "demographics": "Male, middle-aged, white/Nordic-featured, married, working-class, superhero identity hidden from family."
+    },
+    {
+      "name": "Trac Man",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, superhero, physically altered/part-machine, age-flexible."
+    },
+    {
+      "name": "H20",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, superhero, aquatic-themed, age-flexible."
+    },
+    {
+      "name": "Watta Gal",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, superhero, married, emotionally volatile, power-linked to electricity."
+    },
+    {
+      "name": "Extreme",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, superhero, younger than WarHorse, arrogant, physically powerful."
+    },
+    {
+      "name": "Connie Sallinger",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, married, working-class, Ray’s wife."
+    },
+    {
+      "name": "Ron Davis",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, Connie’s father, working-class, patriotic, physically imposing."
+    },
+    {
+      "name": "Deviant",
+      "role_type": "Supporting",
+      "demographics": "Non-human alien creature, small-bodied, male-coded voice/personality."
+    }
+  ],
+  "positioning_hook": "A washed-up suburban superhero is forced back into action when an alien weapon turns his team’s weaknesses into citywide chaos, and his marriage, pride, and dignity go up with the refinery.",
+  "cost_usd": 0.05074875,
+  "input_tokens": 39399,
+  "output_tokens": 4711,
+  "status": "wrote:leads_ok"
+}

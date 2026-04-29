@@ -1,0 +1,328 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime",
+      "genre_secondary": [
+        "Thriller",
+        "Mystery"
+      ],
+      "tone": "gritty",
+      "tags": [
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "prestige",
+        "crime",
+        "family-dynamics",
+        "corruption",
+        "podcast",
+        "small-town-pennsylvania"
+      ]
+    },
+    "positioning_hook": "A local podcast host and a school custodian uncover a buried trafficking network beneath a Pennsylvania town, forcing them into a conspiracy that reaches the police chief, the church, and the tunnels under both.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The missing-girl / buried-corruption engine is immediately legible and commercially familiar, with a built-in true-crime-adjacent audience. The hook is strong, but the small-town Pennsylvania specificity and procedural texture make it more targeted than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast: a podcast investigation into a missing teen opens into a deeper trafficking conspiracy tied to the school and church. The act-one escalation from a single case to a hidden system is clear and easy to pitch in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Ralph has a sturdy everyman-investigator quality, and Savannah has drive and authority, but both are defined more by function than by contradiction on the page. Tingling gives the story a strong antagonist presence, yet the emotional interior of the leads stays fairly lean."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The podcast-plus-small-town-conspiracy frame is current and usable, and the church/school/tunnel architecture gives it a specific flavor. Still, the execution sits close to familiar missing-person thriller language rather than taking a sharply unexpected swing."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Act one moves efficiently from the tip-off to the first raid, and act two keeps widening the conspiracy with clear reversals and new information. The final act delivers a clean descent into the tunnels and a confrontation, though some beats read as summary rather than lived escalation."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The buried-system reveal is effective and the church-school tunnel network gives the story a memorable physical spine. What keeps it from a higher band is that the central reveal pattern is recognizable, even if the local texture is strong."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a usable civic ecosystem: school, church, police, archives, podcast studio, community center, and the tunnel infrastructure beneath them. That network creates story-generating pressure and suggests a town where institutions are all implicated."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently serious, procedural, and ominous, with a few pulpy flourishes in the final act. It has a clear lane, but not yet a highly singular tonal signature that would make it instantly distinguishable from adjacent crime thrillers."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The K.D. initials, the rotating Director, and the older institutional history hint at a larger system beyond the immediate case. The script suggests a deeper conspiracy architecture without fully cashing in that mythology yet."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Ralph and Savannah have a workable partnership, and Daniels adds a useful pressure point, but the supporting ensemble mostly serves the plot rather than generating many distinct relationship combinations. The engine is solid, not especially elastic."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Ralph Cipplone",
+        "role_type": "Lead",
+        "demographics": "Male, late 40s, working-class local man; school custodian / groundskeeper type with deep town familiarity.",
+        "hook": "Ralph is the quiet, observant local who sees what everyone else walks past. He starts as the guy mopping the hallway after the game and becomes the one person willing to keep looking when the town tells him to move on; his power is patience, memory, and the fact that he knows the buildings better than the people running them.",
+        "why_actor_wants_this": "This is the showcase territory of a Richard Jenkins or Michael Keaton-style performance: contained, watchful, and morally forceful without ever needing to announce itself. The role gives an actor the chance to play stillness, menace, and emotional resolve in the same frame."
+      },
+      {
+        "name": "Savannah McMullen",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, local podcast host / investigator, professionally credible and socially embedded in the town.",
+        "hook": "Savannah is the engine with a microphone and a badge-adjacent instinct for pressure. She’s warm enough to build trust, sharp enough to smell a lie, and stubborn enough to keep pushing when the case starts pushing back.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the newsroom-to-thriller pivot of Amy Adams in Sharp Objects or Jodie Comer in The Last Duel: intelligence, urgency, and authority under pressure. It offers a strong close-up role with momentum, credibility, and a lot of reactive listening."
+      },
+      {
+        "name": "Chief Daniels",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, police chief, locally rooted, morally compromised or strategically trapped.",
+        "hook": "Daniels is the town authority who knows more than he says and says more than he should. He reads as a gatekeeper with a conscience problem: part protector, part participant, part man trying to survive a system he helped maintain.",
+        "why_actor_wants_this": "This is strong supporting-territory for a character actor who likes conflicted authority, in the lane of Jeffrey Wright or Shea Whigham. The role gives an actor the pleasure of playing ambiguity, institutional pressure, and the slow reveal of where his loyalties actually sit."
+      },
+      {
+        "name": "Rick Tingling",
+        "role_type": "Supporting",
+        "demographics": "Male, late 70s, elderly civic power broker / hidden operator.",
+        "hook": "Tingling is the polished old man at the center of the machine, the one who turns corruption into procedure. He’s calm, refined, and terrifying because he treats the whole operation like civic maintenance rather than criminal behavior.",
+        "why_actor_wants_this": "This is the kind of late-career villain role that lets an actor do quiet authority instead of scenery-chewing, in the vein of Bryan Cranston in Your Honor or Ben Kingsley in Sexy Beast. The showcase is controlled menace: a man who barely raises his voice and still owns the room."
+      },
+      {
+        "name": "Kayla Morris",
+        "role_type": "Supporting",
+        "demographics": "Female, teen/young adult, victim-survivor figure tied to the missing-girl network.",
+        "hook": "Kayla is the human proof that the conspiracy is real. She arrives as a frightened survivor with just enough presence to make the rescue feel personal and just enough damage to remind the audience what’s at stake.",
+        "why_actor_wants_this": "This is a breakout-supporting role for a young actor who can play fear, relief, and trauma without overplaying any of it, similar to the emotional specificity of Kaitlyn Dever in Unbelievable. The role is brief but memorable because it turns the abstract case into a face."
+      },
+      {
+        "name": "Emily Harper",
+        "role_type": "Supporting",
+        "demographics": "Female, 17, missing teen.",
+        "hook": "Emily is the absence that starts the story and the name that keeps widening the case. Even though she’s mostly off-screen, she functions as the emotional and investigative center of gravity for the entire plot.",
+        "why_actor_wants_this": "This is a high-impact missing-person role that can become the emotional anchor of the film through flashbacks, photos, and revelation scenes. For the right young actor, it’s the kind of part that can define the audience’s emotional memory of the movie."
+      },
+      {
+        "name": "Holmes",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, police/task-force member.",
+        "hook": "Holmes is the efficient operator on the team, the one feeding the board with the data that turns instinct into proof. She’s less about personality than competence, which makes her useful in a procedural ensemble and credible in the field.",
+        "why_actor_wants_this": "This is a clean, grounded supporting role for an actor who excels at precision and dry authority, in the lane of Carrie Coon or Aunjanue Ellis in procedural mode. The showcase is professional command under pressure."
+      },
+      {
+        "name": "Gilbert",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, police/task-force member.",
+        "hook": "Gilbert is the steady body in the room, the kind of cop who makes the operation feel real without demanding the spotlight. He functions as part of the team’s muscle and institutional texture.",
+        "why_actor_wants_this": "This is a solid utility role for a character actor who can bring lived-in authority and tactical presence, similar to Michael Kelly-type supporting work. It offers ensemble credibility and a few moments of grounded reaction."
+      },
+      {
+        "name": "Minadi",
+        "role_type": "Supporting",
+        "demographics": "Adult, police/task-force member; identity not fully specified on the page.",
+        "hook": "Minadi adds team texture and field credibility, helping the task force feel like a functioning unit rather than a two-person show. The role is lean but present, with enough operational function to matter in the raid and aftermath.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor a chance to build specificity inside a procedural ensemble, similar to the best utility turns in network and prestige crime work. It’s a good fit for someone who can make a small amount of screen time feel operationally real."
+      },
+      {
+        "name": "Man #3",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, member of the hidden operation.",
+        "hook": "Man #3 is a pressure-point antagonist rather than a full character, the kind of operative who can instantly shift a scene from investigation to threat. He’s useful because he makes the conspiracy feel staffed.",
+        "why_actor_wants_this": "This is a functional but playable antagonist beat for a strong character actor who can make a few lines feel dangerous. It’s not a star role, but it gives an actor a clean villain moment inside a larger machine."
+      },
+      {
+        "name": "Undercover Officer",
+        "role_type": "Supporting",
+        "demographics": "Adult, law-enforcement figure, identity not specified.",
+        "hook": "The undercover officer is a brief but important sign that the corruption reaches into law enforcement itself. The role exists to widen the sense of institutional contamination.",
+        "why_actor_wants_this": "This is a compact role for an actor who can project threat and ambiguity quickly, the kind of part that benefits from strong presence in a short scene. It’s a useful utility turn in a crime ensemble."
+      },
+      {
+        "name": "Worker",
+        "role_type": "Supporting",
+        "demographics": "Adult, male, tunnel/operation laborer.",
+        "hook": "The Worker is part of the hidden infrastructure, a face of the system rather than an individual with a separate arc. He helps make the operation feel organized and ongoing.",
+        "why_actor_wants_this": "This is a background-to-supporting utility role for a character actor who can make the machinery of the conspiracy feel inhabited. It’s the kind of part that adds realism and texture."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One central male lead in his late 40s",
+          "One strong female investigator in her 30s",
+          "Older antagonist role for a late-70s actor",
+          "Teen missing-girl role is referenced but not materially dramatized on the page"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "high school football field and interior hallways",
+          "podcast studio",
+          "police department / archive / interrogation rooms",
+          "church interior, office, basement, and tunnel access",
+          "community center",
+          "hospital",
+          "courthouse exterior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirement beyond basic editorial enhancement for lights, police activity, and tunnel atmosphere.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fight beats, car impact, flashlight-driven suspense, police raid coverage, and tunnel atmosphere.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult crime thriller with a strong streaming-first path and limited theatrical upside."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, interior-heavy, and largely practical: school, police, church, podcast studio, hospital, and tunnel spaces can be staged without VFX or specialty builds beyond a few dressed locations."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Ralph and Savannah need actors who can carry procedural momentum and emotional credibility without leaning on genre shorthand, and Tingling needs an older performer who can play calm institutional menace."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The act-one-to-act-three conspiracy reveal is clear, but the script leans on familiar missing-girl / hidden-network beats, so the buyer conversation will center on execution and distinctiveness."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Wind River",
+          "year": 2017,
+          "why_it_comps": "Shares the same cold, local-investigation energy where a missing-person case opens into a wider community conspiracy and institutional failure."
+        },
+        {
+          "title": "Prisoners",
+          "year": 2013,
+          "why_it_comps": "The escalating search for a missing girl, the moral rot underneath a seemingly ordinary community, and the pressure-cooker suspense are closely aligned."
+        },
+        {
+          "title": "The Vanishing",
+          "year": 2018,
+          "why_it_comps": "A missing-person mystery that uses a local setting, procedural pressure, and buried secrets to drive a steadily darkening investigation."
+        },
+        {
+          "title": "Spotlight",
+          "year": 2015,
+          "why_it_comps": "The institutional corruption angle, investigative teamwork, and methodical uncovering of a protected system give it a similar adult-audience appeal."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like grounded crime thrillers about buried institutional corruption, especially viewers drawn to missing-person investigations and true-crime-adjacent storytelling.",
+        "demographics": "35-64, slightly male-skewing but viable for women; middle-income and up; strong appeal to prestige-thriller and true-crime audiences.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$9M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest cast, practical suspense, and no VFX-heavy set pieces keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "prestige crime thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original film executives",
+          "indie producers with true-crime adjacency",
+          "director-driven crime-thriller buyers"
+        ],
+        "detail": "This sits comfortably in the adult, grounded-investigation lane: serious stakes, local texture, and a conspiracy reveal that can be sold on premise and mood. The church/school/tunnel architecture gives it a marketable hook without requiring tentpole spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the story resolves the central conspiracy and the supporting characters do not yet present a clean spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly legible.",
+          "what_it_means": "A buyer can understand and sell the movie in one sentence, which lowers development friction and makes the project easy to position in a crowded crime-thriller market. That clarity is attractive to streamer film execs and boutique financiers who need a clean premise to justify a greenlight conversation.",
+          "evidence": "The act-one tip-off through the podcast, the missing teen, and the immediate link to the school and church create a fast, pitchable engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The town institutions feel implicated.",
+          "what_it_means": "The school, church, police, archives, and community center create a web of complicity that gives the story more weight than a simple serial-killer chase. That kind of institutional texture is what adult thriller buyers look for when they want the case to feel bigger than the crime.",
+          "evidence": "Altered records, the church office, the police archive room, and the tunnel system under St. Andrew’s all point to a shared infrastructure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ralph is a strong everyman anchor.",
+          "what_it_means": "A grounded, working-class male lead gives the film a durable emotional center and a casting lane that can attract respected character actors. Buyers know how to sell a quiet, observant protagonist who becomes the town’s conscience.",
+          "evidence": "He starts mopping the school hallway after the game and is the one who notices the clue, follows the trail, and keeps going after the attack.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tunnel reveal gives the movie a physical spine.",
+          "what_it_means": "The hidden infrastructure under the church and school turns the conspiracy into a place, not just a theory, which makes the climax more cinematic and easier to market. That gives the film a memorable visual asset without requiring expensive VFX.",
+          "evidence": "The altar seam, hidden panel, tunnel chamber, and organized underground operation all land in the final act.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, adult crime-thriller package: a legible missing-girl hook, a morally compromised small-town ecosystem, and a contained contemporary footprint that keeps the budget in indie range. The result is the kind of prestige-leaning genre feature a streamer or boutique financier can evaluate quickly because the premise, cast lane, and production scale all line up."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The conspiracy reveal is familiar.",
+          "detail": "The missing-girl-to-hidden-network progression, the corrupt chief, and the church-school cover-up are all effective, but they sit in a well-traveled crime-thriller lane. That makes the buyer conversation more dependent on execution, performances, and local specificity than on pure novelty.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Savannah reads more functional than singular.",
+          "detail": "She drives the investigation, but the page gives her less contradiction and private pressure than Ralph, so the role lands as capable rather than unforgettable. That matters because the film is leaning on a two-hander dynamic, even if Ralph is the structural lead.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The final act moves in summary mode.",
+          "detail": "The tunnel descent, Tingling reveal, and courthouse coda are clear, but several beats are presented as declarative turns rather than fully dramatized reversals. A producer will notice that the climax is efficient, but not yet as textured as the setup.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting ensemble is thinly individualized.",
+          "detail": "Holmes, Gilbert, Minadi, and the undercover officer all serve the procedural machinery, but none of them yet feels like a breakout role. That limits relationship density and keeps the movie from feeling like a fully populated ensemble piece.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script is commercially clear, but its main friction is that the central conspiracy architecture lives in a familiar thriller lane, so the project will rise or fall on execution and casting rather than on a radically new premise. The other buyer-level note is that the supporting ensemble is functional more than vivid, which keeps the film anchored to Ralph and Savannah instead of opening up broader relationship energy."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 66.3,
+  "tier": "Optionable",
+  "inputTokens": 16843,
+  "outputTokens": 4816,
+  "cost": 0.03430425,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,304 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime",
+      "genre_secondary": [
+        "Drama",
+        "Thriller"
+      ],
+      "tone": "darkly comic",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "crime",
+        "family-dynamics",
+        "friendship",
+        "class",
+        "drug-world",
+        "working-class"
+      ]
+    },
+    "positioning_hook": "A lonely warehouse clerk gets pulled into a San Diego drug conspiracy when a missing rich kid’s family hires him to find the truth, forcing him to choose between loyalty, love, and survival.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The script has a clear hook, a relatable underdog lead, and crime stakes that are easy to grasp, but the tone is abrasive and the sexual/drug material narrows the audience. The strongest commercial lane is adult genre buyers, not broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early: David Green is hired by Mrs. Hampton to find Bobby, and that simple job opens into a drug-and-murder conspiracy. The hook is clear, though the script takes a while to reveal the full criminal engine behind Bobby, Meryl, and Ian."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Green is a likable, sexually frustrated, morally conflicted everyman with enough awkwardness and decency to carry the movie. Brandon, Meryl, and Ian are vivid foils, though Green remains the only truly durable center."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script has a distinctive off-kilter voice, especially in the warehouse banter, the dating-club material, and the absurdly specific social textures around race, sex, and class. It is still built on familiar crime beats, but the execution has personality."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through a series of encounters, reversals, and escalating threats, especially once Green reaches Bobby and then Ian’s house. Some stretches lean on conversation and anecdote more than forward-driving action, which softens urgency between major turns."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core engine is fresh enough to stick: a timid office worker gets dragged into a grotesque family-drug war and ends up as the witness who survives it. The combination of workplace comedy, sexual frustration, and criminal danger gives the premise a memorable shape."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Yamyung warehouse, the dating service, the Hampton money world, and Ian’s drug-party mansion all feel specific and socially distinct. Those spaces generate story, though the world is more a chain of vivid set pieces than a fully layered system."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very particular register: deadpan, profane, sexually charged, and oddly earnest underneath the grime. The warehouse comedy, the awkward romance, and the violent crime material coexist in a way that feels authored rather than generic."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real undercurrents about class resentment, masculinity, loneliness, and moral compromise, especially in Green’s father scenes and his relationship with Akino. But the script mostly surfaces those ideas through dialogue and situation rather than building a deeper hidden architecture."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Green and Brandon have a strong buddy dynamic, the warehouse crew gives the movie a recurring comic engine, and Meryl/Ian create a volatile criminal triangle. It is not an ensemble piece, but the supporting relationships are lively enough to keep scenes generating."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "David Green",
+        "role_type": "Lead",
+        "demographics": "Male, early 20s to early 30s, working-class, white.",
+        "hook": "A soft-spoken warehouse billing rep with a bruised conscience, David is the kind of guy who wants to do right even when his instincts, his friends, and his circumstances keep dragging him toward compromise. He is awkward with women, loyal to a fault, and increasingly trapped between his father’s moral code and the criminal mess he stumbles into while trying to help the Hamptons.",
+        "why_actor_wants_this": "This is the showcase territory of a young John Cusack in Say Anything... or a pre-fame Ethan Hawke in Reality Bites: a wounded, funny, self-aware romantic lead whose interior life is the performance. It gives an actor the chance to play comic embarrassment, moral panic, and genuine romantic sincerity in one role."
+      },
+      {
+        "name": "Brandon Thomas",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, working-class, white.",
+        "hook": "David’s best friend and the movie’s chaos engine, Brandon is horny, impulsive, self-pitying, and weirdly charming in the way only a guy with no plan can be. He starts as comic relief and becomes the story’s most dangerous mirror: the version of David who stops pretending to be good.",
+        "why_actor_wants_this": "This is the kind of role that gave Steve Zahn in Happy, Texas or Philip Seymour Hoffman in Boogie Nights a chance to steal scenes by making a mess feel human. It offers a comic actor a full descent arc, with a late-film turn into betrayal and physical danger."
+      },
+      {
+        "name": "Meryl Hampton",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s to early 30s, white, wealthy background.",
+        "hook": "Meryl is the script’s most complicated secondary figure: beautiful, damaged, ashamed, and still emotionally tethered to the man who made her powerful and complicit. She carries the movie’s best contradiction, because she is both victim and architect, and she knows it.",
+        "why_actor_wants_this": "This is the kind of morally compromised, emotionally exposed role that gave Charlize Theron in Monster or Patricia Arquette in True Romance real heat. It lets an actress play seduction, regret, and self-loathing without ever becoming a simple villain."
+      },
+      {
+        "name": "Ian",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, white, physically imposing, predatory charisma.",
+        "hook": "Ian is the movie’s engine of menace: a drug-dealing manipulator with a surfer-cult swagger and a sadistic streak that never fully drops. He is funny, obscene, and terrifying, which makes him feel like a real threat rather than a generic bad guy.",
+        "why_actor_wants_this": "This is the kind of villain role that lets an actor do what Dennis Hopper did in Blue Velvet or Ben Mendelsohn in Animal Kingdom: charm first, then reveal the rot underneath. It gives a performer room to be magnetic, grotesque, and dangerous in the same scene."
+      },
+      {
+        "name": "Tom Corn",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, white, blue-collar.",
+        "hook": "Corn is David’s warehouse buddy and the movie’s bluntest comic voice, a guy who treats vice, debt, and humiliation like normal weather. He gives the film its working-class texture and its most casual, lived-in banter.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting part that made actors like Michael Rapaport in True Romance or David Koechner in Anchorman memorable. It gives a comic actor a steady stream of attitude, rhythm, and blue-collar swagger."
+      },
+      {
+        "name": "Akino",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Asian, culturally traditional but modern-presenting.",
+        "hook": "Akino is David’s romantic possibility and the script’s clearest emotional counterweight to the sleazier world around him. She is composed, observant, and quietly principled, which makes her feel like the one person in the movie who might actually see David clearly.",
+        "why_actor_wants_this": "This is the kind of restrained romantic role that gave Joan Chen in The Joy Luck Club or Constance Wu in early dramatic work a chance to play intelligence and emotional stillness. It offers an actress a grounded, luminous counterpoint to the film’s chaos."
+      },
+      {
+        "name": "Mrs. Hampton",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged to older, white, upper-class.",
+        "hook": "Mrs. Hampton is polished on the surface and desperate underneath, the kind of woman who can hire a man to solve a family problem while still pretending the family is intact. She is the story’s quiet pressure point, because her concern is real even when her ethics are not.",
+        "why_actor_wants_this": "This is the kind of controlled, morally ambiguous supporting role that gives an actress the same kind of authority Diane Wiest brought to Bullets Over Broadway or Frances Sternhagen brought to character-heavy dramas. It’s a compact part with real subtext and authority."
+      },
+      {
+        "name": "Mr. Green",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged to older, white, incarcerated.",
+        "hook": "David’s father is a prison-hardened moralist who speaks in blunt aphorisms and carries the emotional weight of the film’s conscience. Even from inside prison, he shapes David’s choices and gives the story its bleak moral frame.",
+        "why_actor_wants_this": "This is the kind of brief but memorable authority role that lets an actor land the movie’s thesis in a handful of scenes, like Brian Cox in smaller dramatic turns. It offers gravitas, menace, and a final emotional echo."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Lead is a young male everyman with strong comic timing and emotional vulnerability",
+          "Requires a physically credible but not action-star-heavy antagonist in Ian",
+          "Several supporting roles depend on sharp comic rhythm and specific regional/working-class texture"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "warehouse office and loading area",
+          "suburban family house",
+          "motel room",
+          "San Diego apartment",
+          "mansion/pool party location",
+          "courthouse and prison visitation room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX requirements beyond basic screen inserts and simple vehicle coverage.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical gunfire, car impact beats, broken glass, and a few bruising fight moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Billy Squier's 'Everybody Wants You' is specifically named and used as a scene cue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or theatrical specialty",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best suited to adult genre distribution, specialty theatrical, or streamer acquisition."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly practical locations, no VFX load, and only modest stunt work; the main cost pressure is the number of distinct locations and the night-driving chase sequence."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a very specific blend of awkward charm, romantic sincerity, and escalating desperation, while Ian has to project menace without turning into a cartoon. The supporting ensemble also depends on precise comic timing."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s tonal mix of workplace comedy, sexual frankness, and crime thriller material is distinctive, but the long middle section is heavily dialogue-driven and the final act pivots hard into conspiracy and action."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Go",
+          "year": 1999,
+          "why_it_comps": "Shares the same late-90s crime-comedy energy, ensemble misbehavior, and sexually charged, fast-talking tone."
+        },
+        {
+          "title": "Very Bad Things",
+          "year": 1998,
+          "why_it_comps": "Matches the darkly comic escalation from bad decisions into lethal consequences and moral collapse."
+        },
+        {
+          "title": "The Last Seduction",
+          "year": 1994,
+          "why_it_comps": "Comps on the sleazy crime texture, sexual manipulation, and the sense that desire is just another form of leverage."
+        },
+        {
+          "title": "True Romance",
+          "year": 1993,
+          "why_it_comps": "Shares the profane, heightened crime-world voice and the feeling of ordinary people getting swallowed by dangerous criminals."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like profane, character-driven crime stories with a comic edge and a romantic undercurrent.",
+        "demographics": "Skews 25-54, male-leaning but with real appeal to women who respond to offbeat romantic leads and dark ensemble crime pieces.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, practical violence, and no VFX keep this in indie territory; the main spend is on multiple company moves and night work."
+      },
+      "lane_fit": {
+        "lane": "indie crime-comedy with romantic edge",
+        "types_of_buyers": [
+          "specialty distributors looking for adult genre titles",
+          "streamer acquisition teams buying character-driven crime films",
+          "indie producers in the dark-comedy lane",
+          "director-driven companies seeking a breakout feature vehicle"
+        ],
+        "detail": "This sits naturally in the adult indie crime lane: profane, character-forward, and commercially legible without needing franchise mechanics. The romance thread and workplace texture give it a little more warmth than a pure crime picture."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or spinoff vector; the supporting characters are vivid but not built as franchise anchors."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "David Green is a real lead role.",
+          "what_it_means": "This gives the project a casting hook that can attract an actor looking for a breakout: funny, wounded, romantic, and morally tested. Buyers who want a star-making part for a younger male lead will see immediate value here.",
+          "evidence": "Green’s awkward dating-club calls, his loyalty to Brandon, his refusal to sleep with the hookers, and his final breakdown after losing everything.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The warehouse world has lived-in comic texture.",
+          "what_it_means": "That texture makes the movie feel specific rather than generic, which helps both audience memory and actor interest. It also gives the film a cheap-to-stage recurring engine that can support scenes between bigger plot turns.",
+          "evidence": "The lunchroom bets on Green’s date, the Andy Griffith TV ritual, the roach-coach lunches, and the crew’s constant banter.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The crime reveal is clean and ownable.",
+          "what_it_means": "The Hampton family-drug conspiracy gives the movie a simple commercial spine that can be pitched fast and understood fast. That clarity helps the script travel to buyers who need a hook they can summarize in one breath.",
+          "evidence": "Bobby’s confession about Meryl and Ian using the family money to buy and sell drugs, followed by the DEA raid.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a distinct authorial stamp.",
+          "what_it_means": "A strong tonal identity is a real packaging asset because it helps the project stand out in a crowded indie-crime field. This is the kind of voice that can attract a director who wants material with attitude.",
+          "evidence": "The mix of crude workplace comedy, romantic awkwardness, and sudden violence throughout the motel, mansion, and warehouse sequences.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a castable, indie-scale crime feature with a real breakout lead role and a clear commercial spine. The script’s mix of profane comedy, romantic frustration, and escalating criminal danger gives it a buyer-friendly identity without needing expensive scope."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle section runs on talk more than turn.",
+          "detail": "Once Green reaches Bobby and then gets pulled toward Ian, the script spends a long stretch in explanation, anecdote, and relationship banter before the plot fully detonates. That is a real pacing conversation for buyers, because the movie’s best material is strongest when the danger is active, not just discussed.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The sexual material narrows the audience.",
+          "detail": "The hookers, the explicit motel material, the drug-party imagery, and the profanity all push the film firmly into mature territory. That is fine for streaming or specialty, but it limits broad theatrical reach and narrows the buyer pool to adult-genre lanes.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Ian is vivid but close to cartoon menace.",
+          "detail": "He has strong presence, but the script pushes him into overtly grotesque behavior and broad villain signaling, especially in the mansion and party scenes. Buyers will read that as a performance-dependent role: it works if the actor lands the charisma, but it can tip into excess fast.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending leans hard on coincidence and reveal.",
+          "detail": "The undercover-agent turn, the DEA raid, and the final witness-protection-style exit resolve the conspiracy efficiently, but they arrive as a fairly abrupt procedural wrap. That makes the climax feel more like a clean-up than a fully earned dramatic culmination.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s main friction is structural, not conceptual: the premise is clear and marketable, but the long explanatory middle and abrupt procedural ending will be the two biggest buyer conversations. The material also lives squarely in mature, adult-genre territory, which is a strength for the right lane and a limit everywhere else."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 69.3,
+  "tier": "Optionable",
+  "inputTokens": 37473,
+  "outputTokens": 4368,
+  "cost": 0.04776075,
+  "declaredFormat": "Feature film"
+}

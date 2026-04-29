@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:01:23.210Z",
+  "submission_id": "da052e51-71e9-47e9-9561-12184b460ec2",
+  "eval_id": "3e5cc50b-ea26-4301-b547-31c58858b4c9",
+  "title": "All I need is one dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Woman, late 20s; elite athlete; Midwestern; white."
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Supporting",
+      "demographics": "Man, early-to-mid 40s; widowed father; church/school worker; white."
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Supporting",
+      "demographics": "Girl, 5-14 across the script; child/teen athlete; white."
+    },
+    {
+      "name": "Beth Rose",
+      "role_type": "Supporting",
+      "demographics": "Woman, late 60s to 70s; grandmother; white; Catholic."
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s to 50s; father; white."
+    },
+    {
+      "name": "Renee Monroe",
+      "role_type": "Supporting",
+      "demographics": "Woman, 40s to 50s; mother; white."
+    },
+    {
+      "name": "Lisa Monroe",
+      "role_type": "Supporting",
+      "demographics": "Woman, mid-20s to 30s; older sister; white."
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Man, late 20s; romantic partner/ex; white."
+    },
+    {
+      "name": "Coach Wensil",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s; high school coach; white."
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s; pro coach; white."
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Woman, early 20s; pro athlete; white."
+    }
+  ],
+  "positioning_hook": "After a career-ending injury, a WNBA star returns to her Missouri hometown to bury her grandparents and finds a second life in the church gym, the school team, and a slow-burn romance she never planned.",
+  "cost_usd": 0.0465945,
+  "input_tokens": 32588,
+  "output_tokens": 4923,
+  "status": "wrote:leads_ok"
+}

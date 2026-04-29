@@ -1,0 +1,325 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Romance",
+        "Sports"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "male-lead",
+        "family-dynamics",
+        "grief",
+        "love",
+        "coming-of-age",
+        "sports",
+        "character-driven",
+        "contemporary",
+        "basketball"
+      ]
+    },
+    "positioning_hook": "A rising basketball star with a career-defining offer and a fresh injury returns home to bury her family’s dead, then has to choose between the life she built and the one that finally asks her to stay.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: a sports-driven woman at a life crossroads, with romance, family grief, and a career decision all in play. The audience is real, but this is a quieter adult drama rather than a broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early through Skylar’s basketball identity, the injury, and the return to Pottsville with an Indiana offer hanging over her. The premise is easy to explain, though the script is more about emotional decision-making than a single sharp external engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Skylar has a strong contradiction: hyper-competent on the court, emotionally delayed off it, and resistant to stillness. Ralph is a solid counterweight, and Maddie adds a useful younger perspective, but the supporting cast is more functional than deeply surprising."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script leans into a familiar prestige-drama lane, but the basketball-to-homecoming-to-dance structure gives it a clean, ownable emotional shape. The writing is controlled and sincere rather than formally daring."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The injury, the Indiana deadline, and the home-town return create forward motion, and the final dance sequence gives the story a satisfying release. Some middle passages play as repeated emotional variations on the same choice, which softens urgency."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The core idea is immediately legible and emotionally resonant, but it sits in a recognizable lane of sports injury, family grief, and romantic self-reckoning. The dance motif gives it a memorable signature without fully transforming the premise."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "There’s enough texture in the church, school gym, cemetery, and small-town routines to give the story a lived-in frame. Still, the world mainly serves the emotional arc rather than generating a dense system of its own."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistently restrained, intimate, and quietly romantic, with a strong preference for pauses and subtext over speeches. The final dance scene crystallizes that register well, even if the overall lane is familiar."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The repeated references to staying, leaving, and quiet suggest a deeper thematic spine about fear of stillness and the cost of choosing a life. The script hints at more interior complexity than it fully dramatizes on the page."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Skylar/Ralph is the engine, with Beth, Maddie, Jason, and Coach Winsil providing useful pressure points. The relationships are cleanly drawn, but this is not an ensemble that keeps generating new combinations of story on its own."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Skylar Monroe",
+        "role_type": "Lead",
+        "demographics": "Woman, 18-27, elite basketball player, white or unspecified, emotionally guarded, physically athletic.",
+        "hook": "A gifted basketball phenom who trusts instinct more than people, Skylar is all forward motion until an injury forces her to confront what she’s been outrunning. She’s disciplined, self-contained, and quietly afraid that choosing a life can also mean shrinking it.",
+        "why_actor_wants_this": "This is the showcase territory of Kaitlyn Dever in Unbelievable or Florence Pugh in Fighting with My Family — a physically credible lead who can carry stillness, pressure, and private emotional fracture in the same frame."
+      },
+      {
+        "name": "Ralph Monroe",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-40s, father, widower, working-class, church-adjacent small-town caretaker.",
+        "hook": "Ralph is the kind of man who says very little and means all of it. He’s steady, emotionally withheld, and carrying grief in a way that makes him both a grounding force and a mirror for Skylar’s fear of commitment.",
+        "why_actor_wants_this": "This is the showcase lane of Ben Mendelsohn in Leave No Trace or Paul Mescal in Aftersun-adjacent restraint — a role built on contained pain, moral steadiness, and the ability to make silence feel loaded."
+      },
+      {
+        "name": "Beth",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s-60s, mother, family anchor, emotionally perceptive.",
+        "hook": "Beth is the quiet keeper of the family’s emotional history, the one who can name the truth without forcing it. Her scenes carry the script’s most direct articulation of staying, leaving, and the cost of both.",
+        "why_actor_wants_this": "This is the kind of role that gives Laura Linney in The Savages or Patricia Clarkson in Pieces of April a chance to do devastating work with understatement, subtext, and one or two perfectly placed lines."
+      },
+      {
+        "name": "Maddie",
+        "role_type": "Supporting",
+        "demographics": "Girl, 5-10, child, observant, emotionally intuitive.",
+        "hook": "Maddie is the youngest presence in the story, but she sees more than most of the adults around her. Her bluntness and attention give the script a clean emotional truth test, especially around family loyalty and inherited choices.",
+        "why_actor_wants_this": "This is the kind of child role that can break out if cast right — the showcase is not volume, but precision, like Brooklynn Prince in The Florida Project, where the performance lands because the child sees everything."
+      },
+      {
+        "name": "Jason",
+        "role_type": "Supporting",
+        "demographics": "Man, 20s-30s, romantic partner, career-minded, emotionally direct.",
+        "hook": "Jason is the outside-world pressure valve: supportive until support starts to look like a deadline. He’s not a villain, which makes his exit and his honesty land harder than a conventional breakup scene.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charm, frustration, and emotional clarity without turning into an antagonist — similar territory to Jesse Plemons in a grounded relationship drama."
+      },
+      {
+        "name": "Coach Winsil",
+        "role_type": "Supporting",
+        "demographics": "Adult, gender unspecified, coach, authority figure.",
+        "hook": "Coach Winsil is the practical voice of the basketball world, the person who measures Skylar by what she can still do rather than what she’s lost. The character functions as institutional pressure with a human face.",
+        "why_actor_wants_this": "This is strong character-actor material in the J.K. Simmons / Holly Hunter lane — a role that gets to be blunt, funny, and emotionally exact in short bursts."
+      },
+      {
+        "name": "Fr. Phillips",
+        "role_type": "Supporting",
+        "demographics": "Older adult, priest, community figure.",
+        "hook": "Fr. Phillips is the script’s quiet philosophical pressure, offering permission without sentimentality. He’s there to articulate the story’s central question about whether stillness is surrender or truth.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actor a clean, scene-stealing lane — the kind of understated authority seen in Richard Jenkins in The Visitor."
+      },
+      {
+        "name": "Clarkson",
+        "role_type": "Supporting",
+        "demographics": "Adult, professional basketball decision-maker, industry voice.",
+        "hook": "Clarkson represents the career machine on the other end of Skylar’s talent: deadlines, leverage, and the reality that opportunity doesn’t wait for grief. The character is mostly functional, but important as the voice of consequence.",
+        "why_actor_wants_this": "This is a concise, efficient role for a strong supporting actor who can make institutional pressure feel personal, in the mold of a sports-office scene-stealer."
+      },
+      {
+        "name": "Lindsey",
+        "role_type": "Supporting",
+        "demographics": "Adult, basketball staff or team figure.",
+        "hook": "Lindsey appears as part of the professional pressure surrounding Skylar’s decision, helping externalize the stakes of the Indiana offer and the end-of-season deadline.",
+        "why_actor_wants_this": "This is a functional supporting role with enough specificity for a sharp actor to make it memorable in a few scenes."
+      },
+      {
+        "name": "Jack",
+        "role_type": "Supporting",
+        "demographics": "Adult, family member, likely older male relative.",
+        "hook": "Jack is a brief but telling family presence, the kind of character who can say one line and expose the emotional architecture of the household. He helps widen the family world without taking over the frame.",
+        "why_actor_wants_this": "This is a compact character role that rewards an actor who can make one exchange feel lived-in and specific."
+      },
+      {
+        "name": "Sharon",
+        "role_type": "Supporting",
+        "demographics": "Adult, church or cemetery office staff.",
+        "hook": "Sharon is a practical gatekeeper in the town’s institutional spaces, handling the paperwork side of grief with no ornament. She gives the small-town world procedural texture.",
+        "why_actor_wants_this": "This is a grounded utility role for a strong local-casting type who can make bureaucracy feel human."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one athletic lead with credible basketball movement",
+          "one child performer with strong observational presence",
+          "supporting roles skew adult and age-flexible",
+          "no star-dependent role architecture"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "high school gym",
+          "college/pro arena basketball spaces",
+          "church interior and cemetery",
+          "small-town home and diner",
+          "road/highway travel sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond standard sports coverage and crowd enhancement if desired.",
+        "stunts_level": "minor",
+        "sfx_needs": "Basketball game choreography, crowd noise, injury beat, funeral burial practicals, dance sequence staging.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a streaming original or specialty theatrical drama with awards-adjacent aspirations."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, character-led, and largely grounded in gyms, homes, churches, cemeteries, and a few restaurant/interior scenes; the basketball material is coverage-driven rather than effects-driven."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Skylar needs a performer who can credibly play elite basketball and carry restrained emotional interiority, while Ralph needs a quiet, adult presence that can hold the final dance sequence without overplaying it."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s appeal depends on the Skylar/Ralph emotional turn and the final dance landing as earned rather than declarative; the material is clear, but the buyer conversation will focus on whether the central choice feels fully dramatized."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Way Back",
+          "year": 2020,
+          "why_it_comps": "Sports injury and emotional recovery are the engine, with a lead whose identity is built around what the game can no longer protect."
+        },
+        {
+          "title": "Pieces of April",
+          "year": 2003,
+          "why_it_comps": "The family grief and homecoming texture resemble a quiet, emotionally specific return-to-family drama with small gestures carrying the weight."
+        },
+        {
+          "title": "Fighting with My Family",
+          "year": 2019,
+          "why_it_comps": "A young woman’s athletic ambition collides with family identity and the cost of leaving home, anchored by a physically demanding lead role."
+        },
+        {
+          "title": "The Spectacular Now",
+          "year": 2013,
+          "why_it_comps": "The romantic and coming-of-age pressure comes from a protagonist who is good at motion but uncertain about permanence."
+        },
+        {
+          "title": "The Holdovers",
+          "year": 2023,
+          "why_it_comps": "The small-town institutional spaces, restrained performances, and emotional payoff through accumulated quiet put it in a similar adult-drama lane."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to grounded relationship dramas with a sports spine, especially viewers who like emotionally restrained stories about choice, grief, and second chances.",
+        "demographics": "Skews 25-54, with a slight female lean; strongest with educated streaming audiences and specialty-theatrical drama viewers.",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "F18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest cast, no VFX, and sports scenes that can be staged economically keep this in the indie feature lane."
+      },
+      "lane_fit": {
+        "lane": "prestige sports drama",
+        "types_of_buyers": [
+          "streamer originals dev execs building adult female-led drama",
+          "specialty theatrical distributors",
+          "indie producers looking for actor-forward prestige material",
+          "sports-drama financiers seeking contained production value"
+        ],
+        "detail": "This sits naturally in the adult, emotionally restrained sports-drama lane: a female-led character piece with a clean hook, modest production demands, and a strong awards-friendly performance opportunity."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel, prequel, or spinoff vector; the supporting characters are vivid but not franchise-bearing."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Skylar is a clean star-making role.",
+          "what_it_means": "The lead gives a buyer a physically credible, emotionally contained performance vehicle that can launch or reframe a young actor. That is exactly the kind of part casting directors and streamer drama buyers chase when they want a fresh face with awards-adjacent range.",
+          "evidence": "The opening buzzer-beater, the injury collapse, and the final dance all ask for different registers from the same performer.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The basketball spine gives the story propulsion.",
+          "what_it_means": "The sports framework creates built-in momentum, deadlines, and visual stakes without requiring expensive set pieces. That makes the script easier to package for buyers who want emotional drama with a clear commercial engine.",
+          "evidence": "Final possessions, the knee tear, end-of-season deadlines, and practice sequences keep the story moving.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The final dance is an ownable emotional payoff.",
+          "what_it_means": "The title moment turns the romance into a release valve for the whole script, giving the ending a memorable, marketable image. Buyers respond to endings that feel both intimate and trailer-friendly, and this one does that.",
+          "evidence": "The spring dance sequence where Skylar and Ralph finally move from hesitation into a kiss and a decision.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Contained contemporary production footprint.",
+          "what_it_means": "The script can be made without period spend, VFX burden, or a large action footprint, which keeps it accessible to indie financiers and streamer originals alike. That lowers the barrier to attaching talent and getting to a greenlight conversation quickly.",
+          "evidence": "Gyms, homes, church spaces, cemetery, diner, and a few road scenes carry the story.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a contained, actor-forward sports drama with a clean emotional hook and a genuinely marketable lead role. It pairs indie-friendly production economics with a prestige-drama lane, making it the kind of package a streamer or specialty buyer can understand fast and sell on performance."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle repeats the same choice pressure.",
+          "detail": "Skylar’s injury, the Indiana offer, and the return home all point to the same emotional question: stay or go. That clarity is useful, but the Act II stretch leans on repeated variations of hesitation, which can flatten urgency for a buyer reading for propulsion.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Ralph is strong, but still more function than engine.",
+          "detail": "He’s a compelling counterweight to Skylar, especially in the church and cemetery scenes, but the script keeps him in the role of steady answer rather than a fully independent dramatic force. That makes the romance work as a frame, while limiting how much the supporting world can generate on its own.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The basketball world is emotionally clear, not deeply textured.",
+          "detail": "The gym, coach, and team material establish stakes efficiently, but the sports environment is mostly a container for Skylar’s decision rather than a world with its own hierarchy and pressure system. Buyers will understand the lane immediately, but they won’t be buying it for a richly layered sports ecosystem.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending depends on a very specific tonal landing.",
+          "detail": "The spring dance has to feel earned, not sentimental, because it resolves both the romance and the larger question of whether Skylar can choose stillness without losing herself. That makes the finale a real upside, but also the point where execution sensitivity is highest.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s main friction is concentration: almost everything important is asking the same emotional question, so the middle can feel like a controlled holding pattern before the final choice. That’s a good problem to have in a contained drama, but it means the buyer conversation will center on whether the ending pays off the restraint."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 63.3,
+  "tier": "Optionable",
+  "inputTokens": 18728,
+  "outputTokens": 4443,
+  "cost": 0.0340395,
+  "declaredFormat": "Feature film"
+}

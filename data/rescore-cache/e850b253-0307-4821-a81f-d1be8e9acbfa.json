@@ -1,0 +1,330 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller"
+      ],
+      "tone": "gruesome",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "low-budget-friendly",
+        "feature-anchored",
+        "character-driven",
+        "survival",
+        "friendship",
+        "skiing",
+        "body-horror"
+      ]
+    },
+    "positioning_hook": "A cocky snowboard crew takes a wrong turn to a remote lodge and learns too late that a skin-stealing mountain curse has been waiting for them in the dark.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The core promise is clean and genre-native: stranded young adults, a remote lodge, and a monster with a memorable skin-pelt mythology. The audience is obvious for horror fans, but the period of the script’s sensibility and the abrasive dialogue narrow the upside beyond the genre lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast in the opening stretch: a group of snowboarders, a creepy old storyteller, and a cursed Patamon legend that turns into a real threat. The premise is easy to explain in one breath and the story keeps returning to that simple engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Trent gives the script a workable center as the reluctant, more grounded brother, and Desmond’s cat-obsessed oddness adds flavor. But the crew is mostly defined by one-note behavior—Brandon as the jerk, Greg as the showoff, Jennifer as the girlfriend, Paul and Megan as the stoners—so the cast plays more as function than durable character."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The skin-pelt curse, the old Indian’s story-within-the-story, and the final reveal of Trent becoming the next Patamon give the script a distinct exploitation-horror identity. It’s not subtle, but it is committed to its grotesque mythology and doesn’t feel generic in its monster design."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "Once the group reaches the lodge, the disappearances and escalating storm keep the engine moving. The middle section does repeat the same survival-beat pattern a few times, though, and the script’s momentum depends heavily on the next attack rather than on evolving strategy."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a cursed mountain predator that skins victims and passes the curse on through pelts is instantly legible and visually sticky. The ending, where Trent is transformed rather than simply surviving, gives the premise a nasty inevitability that helps it stand out."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The lodge, lift, mountain road, and storm-bound terrain are all usable horror containers, and the old Indian’s legend gives the world a folklore spine. Still, the world is mostly a pressure-cooker setting rather than a layered social ecosystem with many moving parts."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "This has a very specific grindhouse-adjacent tone: crude teen banter, snowy isolation, and graphic body horror. The script knows exactly what kind of movie it wants to be, even when the dialogue pushes hard into broad, dated comic register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There is a little more going on beneath the surface in the curse transmission, the old Indian’s warning, and Trent’s final transformation. But the script mostly plays its hand openly; the emotional and mythic layers are there, yet not especially deep or withholding."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The brother dynamic between Trent and Desmond, the Trent/Jennifer tension, and Brandon’s friction with everybody else give the group enough internal conflict to fuel scenes. That said, most relationships are built on immediate conflict or banter rather than on a richer web of recurring dynamics."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Trent Harty",
+        "role_type": "Lead",
+        "demographics": "Male, early 20s, white, snowboarder, physically active, working-class/college-age",
+        "hook": "Trent is the script’s emotional anchor: the quieter, more observant Harty brother who gets forced into leadership when the loudmouths start falling apart. He’s not the flashiest guy in the room, but he carries the story’s conscience, and the ending turns him into the curse’s next vessel, which gives the role a tragic finality.",
+        "why_actor_wants_this": "This is the showcase territory of a young lead in a survival-horror breakout like Josh Hartnett in The Faculty or Thomas Jane in The Mist: the actor gets fear, decency, physical jeopardy, and a final transformation that redefines the character."
+      },
+      {
+        "name": "Brandon Duncan",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, white, aggressive, athletic, privileged",
+        "hook": "Brandon is the combustible alpha of the group, all swagger, profanity, and bad judgment until panic strips him down to raw self-preservation. He’s the kind of supporting role that can steal scenes because he keeps forcing the group into worse decisions, and his final betrayal gives him a nasty edge.",
+        "why_actor_wants_this": "This is the kind of scene-stealing, volatile supporting turn that gave actors like Michael Biehn in Aliens or Shea Whigham in countless genre pieces a chance to dominate every room they enter."
+      },
+      {
+        "name": "Greg Turner",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens/early 20s, white, handsome, elite snowboarder, girlfriend present",
+        "hook": "Greg is the polished, self-regarding ringleader whose confidence masks how little he actually knows about the terrain or the danger. He’s a useful pressure point because his disappearance kicks the second half of the movie into motion, and his arrogance makes the audience comfortable watching him get punished.",
+        "why_actor_wants_this": "This is the kind of cocky, doomed heartthrob role that lets an actor play charm first and terror second, in the vein of a young Skeet Ulrich or a genre-era James Marsden."
+      },
+      {
+        "name": "Jennifer Martin",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens/early 20s, white, college-age, girlfriend, outdoors-capable but uneasy",
+        "hook": "Jennifer is the smartest person in the SUV for long stretches, and the script uses her as the group’s reality check even when nobody wants to hear it. She’s emotionally tied to Greg but not defined by him, which gives her a little more spine than the average slasher girlfriend.",
+        "why_actor_wants_this": "This is the kind of grounded survival role that gives an actress the same mix of skepticism, fear, and emotional clarity that made Neve Campbell in Scream or Ali Larter in Final Destination so watchable."
+      },
+      {
+        "name": "Desmond Harty",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-to-late teens, white, geeky, younger brother, cat owner",
+        "hook": "Desmond is the oddball heart of the group: anxious, literal, and deeply attached to his cat Neebes, which makes him both comic relief and a vulnerability magnet. His innocence makes his death especially brutal, and the role has a memorable offbeat texture that sticks.",
+        "why_actor_wants_this": "This is the kind of eccentric, vulnerable supporting part that gives a young actor a real signature turn, similar to what Seth Green got to do in Idle Hands or what a young Michael Cera-type would do in a darker genre lane."
+      },
+      {
+        "name": "Paul Rogers",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens/early 20s, white, stoner, boyfriend, snowboarder",
+        "hook": "Paul is the laid-back comic counterweight, always half-baked, half-amused, and usually the first to turn danger into a joke. He’s not deep, but he’s useful: he keeps the group from becoming uniformly grim and gives the movie some breathing room before the violence spikes.",
+        "why_actor_wants_this": "This is the kind of relaxed, comic-genre supporting role that lets an actor do the easy charm work that made people notice supporting players in Cabin Fever or Tucker and Dale vs. Evil."
+      },
+      {
+        "name": "Megan",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens/early 20s, white, stoner, girlfriend, snowboarder",
+        "hook": "Megan is Paul’s partner in comic detachment, but she also gets some of the script’s most vulnerable beats once the attacks start. She’s a lightweight on the surface, yet the movie uses her panic and physical terror effectively when the body count rises.",
+        "why_actor_wants_this": "This is the kind of genre-support role that gives an actress a clean arc from flirtatious comic texture into full survival panic, similar to the utility roles that helped launch many early horror careers."
+      },
+      {
+        "name": "Old Indian",
+        "role_type": "Supporting",
+        "demographics": "Older Native American man, lodge/storekeeper, storyteller",
+        "hook": "The Old Indian is the folklore gatekeeper who warns the kids too late and frames the curse as a local legend with teeth. The script leans hard on him as the bridge between modern teen recklessness and the ancient horror underneath the mountain, though the characterization is broad and dated in its language.",
+        "why_actor_wants_this": "This is the kind of ominous, myth-bearing supporting role that lets a veteran character actor play warning, menace, and tragic authority in the same performance, like the best genre elders in Creepshow or The Burbs."
+      },
+      {
+        "name": "Patamon",
+        "role_type": "Supporting",
+        "demographics": "Male-presenting monster/curse figure, transformed Native warrior, ageless",
+        "hook": "Patamon is the movie’s monster engine: a cursed, skin-hungry figure whose body is literally built from stolen flesh. He starts as legend, becomes threat, and finally becomes the curse’s inheritance, which gives the creature a nasty mythic logic.",
+        "why_actor_wants_this": "This is creature-performance territory with heavy prosthetic and physicality appeal, the kind of role that lets a performer disappear into a signature horror monster and become the movie’s calling card."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble of late-teens/early-20s snowboarders",
+          "one older Native storyteller role",
+          "one creature/monster role with prosthetic transformation"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "remote mountain lodge",
+          "ski lift / chairlift infrastructure",
+          "snowbound forest and ridge exteriors",
+          "night storm conditions"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical horror with storm lighting, blood, skin effects, and a few transformation moments that could be handled with prosthetics and selective enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Heavy practical gore, skin-peel effects, cat mutilation effects, blood rigs, prosthetic monster makeup, lightning/storm atmosphere.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Platinum credit card"
+        },
+        {
+          "type": "brand",
+          "detail": "Snowboarding publication / letter to the editor website"
+        },
+        {
+          "type": "brand",
+          "detail": "SUV"
+        },
+        {
+          "type": "brand",
+          "detail": "TV / cable / transceiver-style consumer electronics references"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming horror",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best suited to a genre streamer or specialty theatrical horror rollout."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary mountain exteriors, a ski-lift setup, storm work, and repeated practical gore sequences are the main cost drivers; the movie stays contained, but weather and night coverage will matter."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead is straightforward, but the movie depends on a believable late-teen ensemble with distinct comic rhythms, plus an older Native storyteller and a physically convincing creature performer."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The old-legend framing, the Patamon mythology, and the final transformation into a new curse are the key story elements a buyer will want to see handled cleanly and without tonal drift."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Cabin Fever",
+          "year": 2002,
+          "why_it_comps": "Shares the isolated-young-adults-in-the-wilderness setup, practical gore emphasis, and mean-spirited body-horror escalation."
+        },
+        {
+          "title": "The Descent",
+          "year": 2005,
+          "why_it_comps": "Matches the survival pressure-cooker structure and the way a remote location becomes a trap once the group is cut off."
+        },
+        {
+          "title": "Wrong Turn",
+          "year": 2003,
+          "why_it_comps": "Comps on the backcountry danger, the outsider-in-the-wilderness threat, and the broad, crowd-pleasing slasher mechanics."
+        },
+        {
+          "title": "The Thing",
+          "year": 1982,
+          "why_it_comps": "The paranoia, isolation, and grotesque bodily transformation give this a clear creature-horror cousin in tone and escalation."
+        },
+        {
+          "title": "Tucker and Dale vs. Evil",
+          "year": 2010,
+          "why_it_comps": "Not for comedy level, but for the mountain-lodge misread of danger and the way a remote cabin setting drives escalating carnage."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Horror fans who want a snowy, practical-effects creature feature with a nasty mythology and a young ensemble they can watch get picked off.",
+        "demographics": "18-34 skew, male-leaning but viable for genre couples and horror regulars; strongest with audiences that like practical gore, backcountry survival, and cult-horror energy.",
+        "quadrants": [
+          "M18-34",
+          "F18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary contained horror with one primary lodge set, a handful of mountain exteriors, practical gore, and limited creature work keeps it in indie feature territory."
+      },
+      "lane_fit": {
+        "lane": "indie horror / creature feature",
+        "types_of_buyers": [
+          "boutique genre producers",
+          "streamer horror development execs",
+          "specialty distributors",
+          "indie financiers looking for contained elevated-gore plays"
+        ],
+        "detail": "This sits naturally in the snowy backcountry horror lane: a small cast, a single dominant location, and a monster concept that can sell on poster art alone. The practical-effects bias makes it attractive to buyers who want a contained genre swing with clear trailer moments."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. Patamon is a strong monster concept, but the script does not establish a broader world or secondary character vector that cleanly supports a franchise."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Patamon curse is a clean horror engine.",
+          "what_it_means": "That gives the project a marketable monster mythology with a simple trailer promise and a memorable visual hook. Buyers who want a practical-effects creature feature can understand the movie immediately.",
+          "evidence": "The old Indian’s story, the skin-pelt transformation, and the final reveal of Trent becoming the next Patamon.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mountain lodge is a strong pressure-cooker setting.",
+          "what_it_means": "A remote, snowbound lodge lets the movie deliver isolation, weather danger, and a limited-location production profile in the same package. That combination is attractive to genre buyers who want scope on screen without a sprawling budget.",
+          "evidence": "The ski lift, generator, storm blackout, and the group being trapped above the mountain road.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The ending turns survival into inheritance.",
+          "what_it_means": "Instead of a simple escape, the script ends on a curse transfer, which gives the movie a nastier aftertaste and a stronger final image. That kind of ending is useful for word-of-mouth horror and poster-driven marketing.",
+          "evidence": "Trent is skinned and transformed into the next Patamon in the cave sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble gives the movie multiple attack points.",
+          "what_it_means": "The group dynamic creates built-in conflict before the monster even appears, which helps the script generate scenes without relying only on chase beats. Buyers like genre pieces where the cast can fracture under pressure.",
+          "evidence": "Brandon vs. Trent, Greg vs. Jennifer, Desmond’s cat friction, and the group’s split once the disappearances begin.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, practical-effects horror feature with a memorable monster mythology and a built-in snowy production container. The script’s strongest commercial angle is that it can sell as both a backcountry survival thriller and a grotesque creature feature, which makes it an efficient indie genre package."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The dialogue leans hard into dated teen slang.",
+          "detail": "The snowboard crew’s banter is aggressively of its era, which gives the script personality but also dates the read fast. That matters in packaging because the movie’s audience is genre-first, but the dialogue will be a first-impression issue for buyers and cast.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The ensemble is more functional than dimensional.",
+          "detail": "Brandon, Greg, Jennifer, Paul, and Megan each have clear roles in the machine, but most are defined by one dominant trait or behavior. That keeps the story moving, but it limits the cast’s long-tail appeal and makes the movie live heavily on the monster concept.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The Old Indian framing is sensitive.",
+          "detail": "The script’s depiction of the Native storyteller and the language around him will trigger a careful buyer conversation, especially because he is the bridge into the mythology. That is not a creative note so much as a packaging reality: the role and its presentation will be scrutinized.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The gore level narrows the buyer pool.",
+          "detail": "The skinned cat, the flesh-wedgie kill, the peeled bodies, and the final transformation push the movie firmly into hard-R body-horror territory. That is a strength for horror buyers, but it limits the theatrical lane and makes the project streamer- or specialty-distributor-friendly rather than broad.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The middle section repeats the same survival beat.",
+          "detail": "Once the disappearances start, the script cycles through search, dread, and another attack several times before the final reveal. The escalation is effective, but the buying conversation will note that the engine is more attrition-based than surprise-based for a stretch.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The movie has a strong monster hook and a clean contained setting, but the dialogue, broad character writing, and culturally sensitive folklore framing will be the main conversations before anyone says yes. It is a genre package that can sell on concept and gore, while the execution risks sit in tone, characterization, and audience reach."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 63.3,
+  "tier": "Optionable",
+  "inputTokens": 41740,
+  "outputTokens": 3951,
+  "cost": 0.049084499999999996,
+  "declaredFormat": "Feature film"
+}

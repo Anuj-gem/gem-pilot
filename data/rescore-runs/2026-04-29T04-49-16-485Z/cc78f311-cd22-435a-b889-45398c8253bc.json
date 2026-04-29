@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:06:37.991Z",
+  "submission_id": "cc78f311-cd22-435a-b889-45398c8253bc",
+  "eval_id": "4db6283f-4bb0-441e-9e61-2ed7a31e404f",
+  "title": "The Vanish Woods",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Angie",
+      "role_type": "Lead",
+      "demographics": "Female, early 20s, college swimmer, pregnant, likely white."
+    },
+    {
+      "name": "Lauren",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, college swimmer, wealthy, likely white."
+    },
+    {
+      "name": "Kendall",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to early 20s, college swimmer, local to the area."
+    },
+    {
+      "name": "Devina",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, college swimmer, Black."
+    },
+    {
+      "name": "May",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, college swimmer, Asian."
+    },
+    {
+      "name": "Jeremiah",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, massive build, rural survivalist, likely white."
+    },
+    {
+      "name": "Lucan",
+      "role_type": "Supporting",
+      "demographics": "Male, from childhood to late teens/young adult, feral rural upbringing, likely white."
+    },
+    {
+      "name": "Aunt Dee",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s-70s, rural matriarch, likely white."
+    },
+    {
+      "name": "Uncle Red",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, rural patriarch, likely white."
+    },
+    {
+      "name": "Nathan",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, rural, developmentally childlike/man-child energy, likely white."
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, college football player, handsome, likely white."
+    }
+  ],
+  "positioning_hook": "A pregnant college swimmer on a spring-break bike trip gets trapped in a rural werewolf pact, and the only way out is a silver medal and a brutal truth about her friends.",
+  "cost_usd": 0.053601750000000004,
+  "input_tokens": 41451,
+  "output_tokens": 5003,
+  "status": "wrote:leads_ok"
+}
