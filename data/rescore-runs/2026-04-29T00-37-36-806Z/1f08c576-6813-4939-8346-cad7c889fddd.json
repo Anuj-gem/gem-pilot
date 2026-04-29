@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T00:40:08.528Z",
+  "submission_id": "1f08c576-6813-4939-8346-cad7c889fddd",
+  "eval_id": "477cca6d-e03c-4f02-82a5-1946503379ba",
+  "title": "Fire Keeper",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Dakota / Ko’la",
+      "role_type": "Lead",
+      "demographics": "Male · 18 years old · full-blooded Lakota"
+    },
+    {
+      "name": "Betty Burkhart / BB",
+      "role_type": "Lead",
+      "demographics": "Female · 17-20 in the period storyline · Irish-accented Caucasian"
+    },
+    {
+      "name": "The Warrior",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Lakota"
+    },
+    {
+      "name": "Chatan Running Sky",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Lakota"
+    },
+    {
+      "name": "Sage",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · full-blooded Lakota"
+    },
+    {
+      "name": "Wach",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · full-blooded Lakota"
+    },
+    {
+      "name": "Samuel Morning Star",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s to 40s · full-blooded Lakota"
+    },
+    {
+      "name": "Coach Marshall",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · African American"
+    },
+    {
+      "name": "Thunderhead",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s · Pawnee"
+    },
+    {
+      "name": "Curly",
+      "role_type": "Supporting",
+      "demographics": "Male dog · German shepherd"
+    },
+    {
+      "name": "Sister Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s · Caucasian"
+    }
+  ],
+  "positioning_hook": "A Lakota quarterback with concussion blackouts starts living the life of a 19th-century boy in his dreams, and the visions point him toward a sacred bundle, a lost love, and his real home.",
+  "cost_usd": 0.062499,
+  "input_tokens": 47542,
+  "output_tokens": 5965,
+  "status": "wrote:leads_ok"
+}

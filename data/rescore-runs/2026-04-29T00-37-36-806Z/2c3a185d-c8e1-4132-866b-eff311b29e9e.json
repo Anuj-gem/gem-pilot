@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T00:47:01.875Z",
+  "submission_id": "2c3a185d-c8e1-4132-866b-eff311b29e9e",
+  "eval_id": "06228de0-f871-40e1-8c01-c289843b4cbd",
+  "title": "Who Lukas Kendall 3 27 26",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Madison / Ava Mayfield",
+      "role_type": "Lead",
+      "demographics": "Female · 16-17 · teen"
+    },
+    {
+      "name": "June Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female · 16-17"
+    },
+    {
+      "name": "Priscilla Jones",
+      "role_type": "Supporting",
+      "demographics": "Female · late 40s"
+    },
+    {
+      "name": "Wilma",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Jamieson",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Mills",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Wolcott",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Christy",
+      "role_type": "Supporting",
+      "demographics": "Female · 17"
+    },
+    {
+      "name": "Liam",
+      "role_type": "Supporting",
+      "demographics": "Male · 17"
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "Male · 90s / adult forms"
+    },
+    {
+      "name": "Madison",
+      "role_type": "Supporting",
+      "demographics": "Female · 9"
+    }
+  ],
+  "positioning_hook": "A bullied teen discovers she’s a shapeshifting lab experiment in a town-wide coverup, and the only way to survive is to become everyone else first.",
+  "cost_usd": 0.0547095,
+  "input_tokens": 41482,
+  "output_tokens": 5244,
+  "status": "wrote:leads_ok"
+}

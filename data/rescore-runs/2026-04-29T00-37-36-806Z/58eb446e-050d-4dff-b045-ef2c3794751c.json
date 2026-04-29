@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T00:38:55.119Z",
+  "submission_id": "58eb446e-050d-4dff-b045-ef2c3794751c",
+  "eval_id": "a0ee5b72-a57f-44c9-8c59-d30336408f23",
+  "title": "In the Maze of Existence (14)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Amir",
+      "role_type": "Lead",
+      "demographics": "Male · 26 · South Asian / Middle Eastern-coded, exact background textually specific to the script"
+    },
+    {
+      "name": "Alexey",
+      "role_type": "Lead",
+      "demographics": "Male · 26 · Eastern European / Ukrainian-coded, exact background textually specific to the script"
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Lead",
+      "demographics": "Female · 26 · South Asian / Middle Eastern-coded, exact background textually specific to the script"
+    },
+    {
+      "name": "Alana",
+      "role_type": "Lead",
+      "demographics": "Female · 26 · unspecified, contemporary professional woman"
+    },
+    {
+      "name": "Virgil",
+      "role_type": "Supporting",
+      "demographics": "Male · 26 · privileged / LA-connected, exact ethnicity not specified"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · 26 · contemporary professional woman"
+    },
+    {
+      "name": "Mass",
+      "role_type": "Supporting",
+      "demographics": "Male · 26 · security worker"
+    },
+    {
+      "name": "Paolla",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · influencer persona"
+    },
+    {
+      "name": "Noor",
+      "role_type": "Supporting",
+      "demographics": "Female · 26 · South Asian / Middle Eastern-coded"
+    },
+    {
+      "name": "Catherine",
+      "role_type": "Supporting",
+      "demographics": "Female · 26 · contemporary"
+    }
+  ],
+  "positioning_hook": "A drifting Ukrainian-American defense-tech founder, his poet friends, and his messy orbit of lovers and roommates spiral through a vape-hazed startup basement as war, ambition, and desire keep colliding.",
+  "cost_usd": 0.0336015,
+  "input_tokens": 16218,
+  "output_tokens": 4764,
+  "status": "wrote:leads_ok"
+}

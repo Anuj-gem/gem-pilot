@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T00:46:22.885Z",
+  "submission_id": "982f2028-2354-4387-b2ea-91fe98c1757e",
+  "eval_id": "744227ee-e92d-4cca-94fa-6180117d61f8",
+  "title": "The Last Call   Marc Lamparello",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · lawyer · white"
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · white"
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Lead",
+      "demographics": "Female · 50s-60s · mother"
+    },
+    {
+      "name": "Marty",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · lawyer/friend"
+    },
+    {
+      "name": "Shannon Collins",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Adam’s former girlfriend"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s · tattoos · smoker"
+    },
+    {
+      "name": "Dr. Susan Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s · physician"
+    },
+    {
+      "name": "Dr. Helen Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-40s · physician"
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · defense attorney"
+    },
+    {
+      "name": "Amy",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Adam’s ex-wife or former partner"
+    },
+    {
+      "name": "Dr. Wyatt",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · physician"
+    }
+  ],
+  "positioning_hook": "A grief-stricken lawyer sues the hospital that discharged his brother after a suicide attempt, forcing his family’s buried guilt into a courtroom fight for accountability.",
+  "cost_usd": 0.08621100000000001,
+  "input_tokens": 56106,
+  "output_tokens": 9807,
+  "status": "wrote:leads_ok"
+}

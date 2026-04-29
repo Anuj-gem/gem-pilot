@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T00:40:41.502Z",
+  "submission_id": "01146053-3aa1-4190-909b-3137a976359a",
+  "eval_id": "7c5ff85d-e420-409d-a58e-e3a518a26b09",
+  "title": "CREATION CLUB",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Sage Smith",
+      "role_type": "Lead",
+      "demographics": "Male · 14 years old · Anglo teen"
+    },
+    {
+      "name": "Aisling / Ash",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Irish accent"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Lead",
+      "demographics": "Male · appears 30s · scrubs/doctor presentation"
+    },
+    {
+      "name": "Janis Joplin",
+      "role_type": "Lead",
+      "demographics": "Female · appears late 20s · iconic 1960s rock star"
+    },
+    {
+      "name": "Jim Morrison",
+      "role_type": "Lead",
+      "demographics": "Male · appears late 20s · iconic 1960s rock star"
+    },
+    {
+      "name": "Jimi Hendrix",
+      "role_type": "Lead",
+      "demographics": "Male · appears late 20s · iconic 1960s rock star"
+    },
+    {
+      "name": "Mother Superior",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Wallace March",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Suzy",
+      "role_type": "Supporting",
+      "demographics": "Female · 15 years old · surfer-girl energy"
+    }
+  ],
+  "positioning_hook": "A suicidal foster kid on Christmas Eve gets one night with the spirits of Jimi Hendrix, Jim Morrison, and Janis Joplin to choose life before his clock runs out.",
+  "cost_usd": 0.052468499999999994,
+  "input_tokens": 42328,
+  "output_tokens": 4605,
+  "status": "wrote:leads_ok"
+}

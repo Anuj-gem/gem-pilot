@@ -174,6 +174,126 @@ input::placeholder, textarea::placeholder {
   color: var(--gem-gray-500);
 }
 
+/* ── Blog post body styling (Anuj 2026-04-28) ───────────────────────
+   Used by ReactMarkdown output on /blog/[slug]. We don't pull in
+   @tailwindcss/typography because we already control the design tokens
+   directly — this gives us a tight, GEM-branded read without an extra
+   plugin dependency. */
+.gem-prose {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--gem-gray-100);
+}
+.gem-prose > * + * {
+  margin-top: 1.25em;
+}
+.gem-prose h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 2.25em;
+  margin-bottom: 0.6em;
+  color: var(--gem-gray-50);
+}
+.gem-prose h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: var(--gem-gray-50);
+}
+.gem-prose p {
+  margin: 0;
+}
+.gem-prose a {
+  color: var(--gem-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.gem-prose a:hover {
+  color: var(--gem-accent-hover);
+}
+.gem-prose strong {
+  color: var(--gem-gray-50);
+  font-weight: 700;
+}
+.gem-prose em {
+  font-style: italic;
+}
+.gem-prose ul, .gem-prose ol {
+  padding-left: 1.4em;
+  margin: 0;
+}
+.gem-prose ul {
+  list-style: disc;
+}
+.gem-prose ol {
+  list-style: decimal;
+}
+.gem-prose li {
+  margin: 0.4em 0;
+}
+.gem-prose blockquote {
+  border-left: 3px solid var(--gem-gold);
+  padding: 0.25em 0 0.25em 1.1em;
+  margin: 1.5em 0;
+  color: var(--gem-gray-200);
+  font-style: italic;
+}
+.gem-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--gem-gray-900);
+  border: 1px solid var(--gem-gray-700);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--gem-gray-50);
+}
+.gem-prose pre {
+  background: var(--gem-gray-900);
+  border: 1px solid var(--gem-gray-700);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.gem-prose pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--gem-gray-100);
+}
+.gem-prose hr {
+  border: 0;
+  border-top: 1px solid var(--gem-gray-800);
+  margin: 2.5em 0;
+}
+.gem-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--gem-gray-700);
+}
+.gem-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+.gem-prose th, .gem-prose td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gem-gray-800);
+}
+.gem-prose th {
+  font-weight: 700;
+  color: var(--gem-gray-50);
+}
+
 /* ── Print / PDF download styling (Anuj 2026-04-28) ─────────────────
    The owner's "Download PDF" modal triggers window.print() after
    adding a <style> tag that hides excluded sections. We also tag chrome

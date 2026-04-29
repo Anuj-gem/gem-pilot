@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T00:45:50.903Z",
+  "submission_id": "03e57a88-6baf-4e69-bc3a-7e6128996a3d",
+  "eval_id": "ef465c66-0690-4738-9fea-510ad230373b",
+  "title": "Demonologist 4 2 26 Lukas Kendall",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Carol Paxton",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to early 40s · possibly Latina / warm brown eyes / affluent Texas housewife"
+    },
+    {
+      "name": "D.J. Paxton",
+      "role_type": "Lead",
+      "demographics": "Male · 16 · athletic, sweet, musically gifted, racially ambiguous / offbeat"
+    },
+    {
+      "name": "Andrew Collinsworth",
+      "role_type": "Lead",
+      "demographics": "Male · 70s but ageless · debonair · English accent"
+    },
+    {
+      "name": "Matt Paxton",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s · fit, charismatic, all-American"
+    },
+    {
+      "name": "Beverly Paxton",
+      "role_type": "Supporting",
+      "demographics": "Female · late 70s · matriarch"
+    },
+    {
+      "name": "Roy Paxton",
+      "role_type": "Supporting",
+      "demographics": "Male · 80s · older patriarch"
+    },
+    {
+      "name": "Hayden",
+      "role_type": "Lead",
+      "demographics": "Female · 16 · Latina"
+    },
+    {
+      "name": "Christina Alvarez",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s · Latina"
+    },
+    {
+      "name": "Agent Amanda Lopez",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · FBI agent"
+    },
+    {
+      "name": "Emilia Rodriguez",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Latina lawyer"
+    }
+  ],
+  "positioning_hook": "A status-climbing Texas matriarch discovers her son’s exorcist is really a centuries-old parasite using demon lore to hijack her family, money, and will.",
+  "cost_usd": 0.0504555,
+  "input_tokens": 37766,
+  "output_tokens": 4918,
+  "status": "wrote:leads_ok"
+}

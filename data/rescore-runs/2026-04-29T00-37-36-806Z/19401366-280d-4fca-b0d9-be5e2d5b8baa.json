@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T00:48:44.433Z",
+  "submission_id": "19401366-280d-4fca-b0d9-be5e2d5b8baa",
+  "eval_id": "027dfc5f-28e1-4255-ab3c-b87773920eeb",
+  "title": "Delta & Dynasty",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Leona Calhoun",
+      "role_type": "Lead",
+      "demographics": "Female · early-to-mid 30s · Black"
+    },
+    {
+      "name": "Eleanor Cartwright",
+      "role_type": "Lead",
+      "demographics": "Female · 50s-60s · white Southern matriarch"
+    },
+    {
+      "name": "Beau Cartwright Jr.",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to 30s · white Southern heir"
+    },
+    {
+      "name": "Charlotte Dubois",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s to 30s · white Southern socialite"
+    },
+    {
+      "name": "Elijah Cartwright",
+      "role_type": "Lead",
+      "demographics": "Male · 60s-70s · white Southern patriarch"
+    },
+    {
+      "name": "Silas Cartwright",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · white Southern businessman"
+    },
+    {
+      "name": "Morton Haskell",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · white banker"
+    },
+    {
+      "name": "Darryl Simpson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s · white Southern society figure"
+    },
+    {
+      "name": "Earline Mae Cartwright",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-70s · Black"
+    },
+    {
+      "name": "Daniel Crawford",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s · white Southern lawyer"
+    },
+    {
+      "name": "Sheriff Henry Boyd",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · white sheriff"
+    }
+  ],
+  "positioning_hook": "A Black whistleblower infiltrates Mississippi’s bourbon dynasty, forcing the Cartwright family to choose between legacy, exposure, and the woman who can burn them down from inside.",
+  "cost_usd": 0.04099125,
+  "input_tokens": 24775,
+  "output_tokens": 4980,
+  "status": "wrote:leads_ok"
+}

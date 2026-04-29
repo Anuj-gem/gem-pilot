@@ -41,6 +41,11 @@ const LEARN_MORE_LINKS: { href: string; label: string; description: string }[] =
     label: 'About Selznick',
     description: 'How GEM reads every script.',
   },
+  {
+    href: '/blog',
+    label: 'Blog',
+    description: 'Product updates, behind-the-scenes notes, screenwriting deep-dives.',
+  },
 ]
 
 export default function Nav() {

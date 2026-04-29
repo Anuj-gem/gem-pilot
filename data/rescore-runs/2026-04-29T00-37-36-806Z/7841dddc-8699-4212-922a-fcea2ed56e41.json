@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T00:42:27.516Z",
+  "submission_id": "7841dddc-8699-4212-922a-fcea2ed56e41",
+  "eval_id": "71bab240-d6d9-40dd-9853-72fef17db15f",
+  "title": "Best Seller Matisse Haddad Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Anya Anderson",
+      "role_type": "Lead",
+      "demographics": "Female · 37 · white · writer/teacher · contemporary Brooklyn"
+    },
+    {
+      "name": "Chris Diniz",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · writer/professor · contemporary New York"
+    },
+    {
+      "name": "Marcus Cadman",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · writer/divorcé · contemporary New York"
+    },
+    {
+      "name": "Lorelei Palacio",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · publisher/editor · contemporary New York"
+    },
+    {
+      "name": "Ron",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · editor · contemporary New York"
+    },
+    {
+      "name": "Izzy",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s to early 30s · student/divorced mother · contemporary New York"
+    },
+    {
+      "name": "Teeny",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · library boss · contemporary New York"
+    },
+    {
+      "name": "Kaley Kovalava",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · author/moderator · contemporary New York"
+    },
+    {
+      "name": "Nicholas",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · dean · contemporary New York"
+    },
+    {
+      "name": "Max",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · editor · contemporary New York"
+    },
+    {
+      "name": "Nora’s Husband, Eli",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · father/husband · contemporary New York"
+    },
+    {
+      "name": "Anya’s Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · contemporary New York"
+    },
+    {
+      "name": "Anya’s Father",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · contemporary New York"
+    },
+    {
+      "name": "Bartender",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · contemporary New York"
+    },
+    {
+      "name": "Doctor",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · OBGYN · contemporary New York"
+    }
+  ],
+  "positioning_hook": "A self-publishing Brooklyn writer turns her husband’s literary fame into a viral confession, then watches the internet, her marriage, and her ambition all weaponize each other.",
+  "cost_usd": 0.05740275,
+  "input_tokens": 41881,
+  "output_tokens": 5776,
+  "status": "wrote:leads_ok"
+}

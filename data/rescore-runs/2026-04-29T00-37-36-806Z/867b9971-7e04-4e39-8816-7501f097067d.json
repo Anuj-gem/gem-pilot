@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T00:45:51.241Z",
+  "submission_id": "867b9971-7e04-4e39-8816-7501f097067d",
+  "eval_id": "571f56f8-c901-43ae-9b69-e00fee158a31",
+  "title": "Bad boys the final heist",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Pat rick (ben)",
+      "role_type": "Lead",
+      "demographics": "Male · adult · wrestler/ex-criminal"
+    },
+    {
+      "name": "Billy (billy)",
+      "role_type": "Lead",
+      "demographics": "Male · adult · cop/ex-criminal"
+    },
+    {
+      "name": "Alejandro (ally)",
+      "role_type": "Lead",
+      "demographics": "Male · adult · Dollar Tree worker/ex-criminal"
+    },
+    {
+      "name": "Michal (maddie)",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · criminal"
+    },
+    {
+      "name": "Paul (?)",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · boss/mission giver"
+    },
+    {
+      "name": "Jerry (Jerry)",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · stay-at-home dad"
+    },
+    {
+      "name": "Abigail (?)",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · real estate agent/wife"
+    },
+    {
+      "name": "Skeleton Star (?)",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · rival wrestler"
+    },
+    {
+      "name": "kid 1 (?)",
+      "role_type": "Supporting",
+      "demographics": "Male · 7 years old"
+    },
+    {
+      "name": "kid 2 (?)",
+      "role_type": "Supporting",
+      "demographics": "Male · 4 years old"
+    },
+    {
+      "name": "Baby girl (?)",
+      "role_type": "Supporting",
+      "demographics": "Female · 1-2 years old"
+    }
+  ],
+  "positioning_hook": "A wrestler-ex-con leads a ragtag crew of ex-criminals on one last heist, while a stay-at-home dad, a cop, and a plotting rival turn the job into a comic free-for-all.",
+  "cost_usd": 0.02933775,
+  "input_tokens": 9801,
+  "output_tokens": 4886,
+  "status": "wrote:leads_ok"
+}

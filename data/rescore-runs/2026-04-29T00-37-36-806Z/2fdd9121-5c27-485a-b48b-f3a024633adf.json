@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T00:48:57.884Z",
+  "submission_id": "2fdd9121-5c27-485a-b48b-f3a024633adf",
+  "eval_id": "13b711d2-67dd-4756-addd-cba165a2c868",
+  "title": "Script    The Last Call (Revised)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · white · lawyer/professor"
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male · late teens in flashbacks / 30s in present-day scenes"
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Lead",
+      "demographics": "Female · 50s-60s"
+    },
+    {
+      "name": "Marty",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Susan Myers",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Dr. Helen Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Dr. Wyatt",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "MARC (young)",
+      "role_type": "Supporting",
+      "demographics": "Male · 11-17 depending on flashback"
+    },
+    {
+      "name": "AMY",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    }
+  ],
+  "positioning_hook": "A grief-stricken lawyer sues the hospital that discharged his suicidal brother, while his family, his marriage, and his own sobriety buckle under the case.",
+  "cost_usd": 0.045470250000000004,
+  "input_tokens": 30279,
+  "output_tokens": 5058,
+  "status": "wrote:leads_ok"
+}

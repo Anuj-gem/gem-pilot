@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T00:44:43.833Z",
+  "submission_id": "059cf10c-65eb-42b0-bdf0-c149e072bcee",
+  "eval_id": "5d1cbe6b-17aa-4bb7-b50c-6c92cdd27119",
+  "title": "CAPSULE (11.08.12)   Ian Shorr",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Elliot Lockhart / Radius",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Korean-American"
+    },
+    {
+      "name": "Robyn Gilmore",
+      "role_type": "Lead",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Jonathan Wilkes",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Craig Bollinger",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "David Prescott",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Harold",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "Meredith Rothert",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Franklin Gantt",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Maguire",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Lola",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    }
+  ],
+  "positioning_hook": "A disgraced tech prodigy starts receiving capsules from his future self, only to learn his comeback is built on a murder conspiracy that can erase people from time.",
+  "cost_usd": 0.05946749999999999,
+  "input_tokens": 49800,
+  "output_tokens": 4915,
+  "status": "wrote:leads_ok"
+}

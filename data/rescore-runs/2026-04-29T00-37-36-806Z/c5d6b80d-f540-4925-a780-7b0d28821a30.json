@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T00:46:25.807Z",
+  "submission_id": "c5d6b80d-f540-4925-a780-7b0d28821a30",
+  "eval_id": "3b2027fc-a8ef-4d0f-a695-f4aac93938a6",
+  "title": "Shotgun Wedding",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "MICKEY DOURKE",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s"
+    },
+    {
+      "name": "TRAVIS DOURKE",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s"
+    },
+    {
+      "name": "AMBER SNELLING",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "BRENDA LUMPKINS",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s"
+    },
+    {
+      "name": "BUCK LUMPKINS",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s"
+    },
+    {
+      "name": "MARYANNE",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s"
+    },
+    {
+      "name": "CAPTAIN",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s"
+    },
+    {
+      "name": "ROSE",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s"
+    },
+    {
+      "name": "MRS. MEENE",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "STERLING",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-teens"
+    },
+    {
+      "name": "ANGEL LUMPKINS",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-teens"
+    },
+    {
+      "name": "DARRIN",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens"
+    },
+    {
+      "name": "TERREL JEFFERSON",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "TIFFANY",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "FATHER LUMPKINS",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    }
+  ],
+  "positioning_hook": "A lovelorn Ohio amusement-park worker races to stop his brother from forcing a shotgun wedding, only to find the girl he lost is back in the chaos.",
+  "cost_usd": 0.06001125,
+  "input_tokens": 45527,
+  "output_tokens": 5748,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T00:50:02.091Z",
+  "submission_id": "449e526c-4455-484f-ba35-83d41a94e1c8",
+  "eval_id": "252820e1-e84e-4a5d-a624-4b7d08c865d5",
+  "title": "FNaF Rewritten",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Damien",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · working-class"
+    },
+    {
+      "name": "Mia",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Jesse",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Phone Guy",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Ghost Child / Girl with Purple Top Hat",
+      "role_type": "Supporting",
+      "demographics": "Female · child · ghostly presence"
+    },
+    {
+      "name": "Freddy Fazbear / Bonnie / Chica / Golden Freddy",
+      "role_type": "Supporting",
+      "demographics": "Animatronic characters"
+    }
+  ],
+  "positioning_hook": "A laid-off young man takes a night-shift job at Freddy Fazbear’s Pizza to pay rent, then finds the place is wired to his own buried memory of a child-murdering past.",
+  "cost_usd": 0.032439,
+  "input_tokens": 17560,
+  "output_tokens": 4282,
+  "status": "wrote:leads_ok"
+}

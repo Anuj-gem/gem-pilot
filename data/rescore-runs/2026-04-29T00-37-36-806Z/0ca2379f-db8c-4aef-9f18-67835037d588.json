@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-04-29T00:50:35.258Z",
+  "submission_id": "0ca2379f-db8c-4aef-9f18-67835037d588",
+  "eval_id": "ea3dd274-034c-4711-a5b8-e1f9095491cf",
+  "title": "Spare",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 20,
+  "lead_characters_summary": [
+    {
+      "name": "Sophia French",
+      "role_type": "Lead",
+      "demographics": "Female · 17 · white / tan-skinned teen"
+    },
+    {
+      "name": "Evelyn",
+      "role_type": "Supporting",
+      "demographics": "Female · 16 · teen"
+    },
+    {
+      "name": "Bonnie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Sophia’s mother"
+    },
+    {
+      "name": "Ryan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Sophia’s father"
+    },
+    {
+      "name": "Ruth",
+      "role_type": "Supporting",
+      "demographics": "Female · golden retriever"
+    },
+    {
+      "name": "Sam Rain",
+      "role_type": "Lead",
+      "demographics": "Female · 16 · goth teen"
+    },
+    {
+      "name": "Phoebe Talls",
+      "role_type": "Supporting",
+      "demographics": "Female · 17 · teen"
+    },
+    {
+      "name": "Jake Williams",
+      "role_type": "Lead",
+      "demographics": "Male · 17 · teen"
+    },
+    {
+      "name": "Kyle Smith",
+      "role_type": "Lead",
+      "demographics": "Male · 16-17 · teen"
+    },
+    {
+      "name": "Nancy Luna",
+      "role_type": "Lead",
+      "demographics": "Female · 17 · teen"
+    },
+    {
+      "name": "Maddy West",
+      "role_type": "Lead",
+      "demographics": "Female · 18 · senior teen"
+    },
+    {
+      "name": "Bryan Fawn",
+      "role_type": "Lead",
+      "demographics": "Male · 16-17 · teen"
+    },
+    {
+      "name": "Emma Rain",
+      "role_type": "Lead",
+      "demographics": "Female · 16 · identical twin to Sam"
+    },
+    {
+      "name": "Jade Summers",
+      "role_type": "Lead",
+      "demographics": "Female · 16 · teen"
+    },
+    {
+      "name": "Tina Louis",
+      "role_type": "Supporting",
+      "demographics": "Female · 17 · teen"
+    },
+    {
+      "name": "Parker Jones",
+      "role_type": "Supporting",
+      "demographics": "Male · 17 · teen"
+    },
+    {
+      "name": "Nate Washington-Anderson",
+      "role_type": "Lead",
+      "demographics": "Male · 17 · teen"
+    },
+    {
+      "name": "Luna",
+      "role_type": "Supporting",
+      "demographics": "Female · 16 · teen"
+    },
+    {
+      "name": "Tori Summers",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Jade’s mother"
+    },
+    {
+      "name": "Zoey Cornwall",
+      "role_type": "Supporting",
+      "demographics": "Female · 16-17 · teen"
+    }
+  ],
+  "positioning_hook": "A recovering teen addict tries to reclaim her life through a farewell party, but a masked killer starts executing her friend group for their secrets one by one.",
+  "cost_usd": 0.056906250000000005,
+  "input_tokens": 37313,
+  "output_tokens": 6427,
+  "status": "wrote:leads_ok"
+}

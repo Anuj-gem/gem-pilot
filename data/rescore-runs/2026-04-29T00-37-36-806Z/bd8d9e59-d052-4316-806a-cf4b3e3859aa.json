@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T00:51:30.964Z",
+  "submission_id": "bd8d9e59-d052-4316-806a-cf4b3e3859aa",
+  "eval_id": "626e25e0-8698-4b1c-a6d0-a088db9ae4e9",
+  "title": "DIM (Draft 1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "DONNA COLLINS",
+      "role_type": "Lead",
+      "demographics": "Female · late 60s · African-American"
+    },
+    {
+      "name": "TERRY COLLINS",
+      "role_type": "Lead",
+      "demographics": "Male · 70s · African-American"
+    },
+    {
+      "name": "ANTHONY COLLINS",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · African-American"
+    },
+    {
+      "name": "ASHLEY MORTON",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s · Caucasian"
+    },
+    {
+      "name": "PRINCIPAL WHITFIELD",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Caucasian"
+    },
+    {
+      "name": "EMILY GIBSON",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-teens · Caucasian"
+    },
+    {
+      "name": "AMANDA GIBSON",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Caucasian"
+    },
+    {
+      "name": "DARRYL GIBSON",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s · African-American"
+    }
+  ],
+  "positioning_hook": "A veteran Black history teacher in the Bronx starts losing her memory just as her husband’s health collapses, forcing her family to watch the woman who held them together slip away.",
+  "cost_usd": 0.035173499999999996,
+  "input_tokens": 21974,
+  "output_tokens": 4154,
+  "status": "wrote:leads_ok"
+}

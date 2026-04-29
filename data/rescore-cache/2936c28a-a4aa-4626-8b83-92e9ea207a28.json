@@ -2,249 +2,254 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi adventure",
+      "genre_primary": "Sci-fi",
       "genre_tags": [
-        "dark fantasy",
-        "coming-of-age"
+        "Dark fantasy",
+        "Coming-of-age"
       ],
-      "tone": "surreal, grotesque, darkly comic, childlike, unsettling"
+      "tone": "Surreal, grotesque, darkly comic, and emotionally earnest"
     },
-    "positioning_hook": "A brainwashed fourteen-year-old clone escapes his subterranean labor colony after a mysterious voice reveals his mother built him to be disposable — and his father may be the only way out.",
+    "positioning_hook": "A brainwashed child laborer escapes his mother’s underground bio-factory after a disembodied entity reveals his creator is his father—and that his “home” is a trap built to recycle him.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise has a clear emotional spine — a child discovering his life is manufactured and controlled — which gives it a real hook for genre audiences. Its strangeness will narrow the lane, but the father/mother/creator triangle and escape engine are easy to sell to viewers who want offbeat sci-fi with a coming-of-age pulse."
+        "reasoning": "The premise has a clear hook for genre audiences who like strange, unsettling worlds and child-centered rebellion, but it’s still a specialized lane rather than a broad four-quadrant play. The vomiting, body-horror imagery, and surreal logic give it a cult-friendly identity that could travel well with the right packaging."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The opening establishes a vivid setup quickly: Kit is created, wakes in a pod colony, and is pushed into a labor system overseen by a mother figure. The later reveal that the voice is his father and that the mother has been managing his life gives the premise a clean story engine."
+        "reasoning": "The central engine lands early: Kit is a child worker in a bizarre underground system, he’s contacted by an entity, and he learns the people raising him are not what they seem. The story is easy to summarize in two sentences, and the escalating discovery structure is legible even through the dreamlike presentation."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Kit has a strong childlike voice, a physical vulnerability, and a built-in arc from obedience to first choice, which makes him easy to root for. The mother, Entity, and Kelto create a usable triangle, though the supporting players mostly serve Kit’s journey rather than opening fully independent lanes."
+        "reasoning": "Kit has a strong innocence-versus-instinct engine, especially in the way he keeps defaulting to “mom” even as the world turns on him. Mother, Kelto, and the Entity each have distinct functions, though the supporting cast mostly serves Kit’s awakening rather than generating fully separate dramatic lanes."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a highly specific bio-organic world with vomiting as a control mechanism, living tunnels, and a retirement box that becomes a death trap. The language and imagery are unusually committed, and the piece leans into grotesque whimsy rather than smoothing itself into familiar sci-fi grammar."
+        "reasoning": "The script commits to a deeply odd visual and behavioral vocabulary: vomit as a system reset, children as industrial labor units, and a maternal authority figure who dispenses pills with ritual precision. The voice is confident enough to make the grotesque feel playful, which gives the material a real signature."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The story keeps moving through a sequence of discoveries, punishments, and escapes, and each turn gives Kit a new pressure point. The momentum is strongest when the mystery of Entity and the mother’s control are colliding; the middle section is more episodic, but the escape into the outside world restores forward drive."
+        "reasoning": "The piece keeps moving through a sequence of discoveries and humiliations, and each turn pushes Kit farther from obedience toward agency. At the same time, the script is more episodic than tightly escalatory, with several beats functioning as atmosphere or world display rather than clean cause-and-effect propulsion."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A child labor colony run like a warped family unit, with vomiting as both symptom and signal, feels fresh and immediately legible. The idea lands because it is strange in surface detail but emotionally simple underneath: a boy learns the people telling him what love is may be lying."
+        "reasoning": "The core idea feels fresh in a way that immediately suggests its own movie: a child labor dystopia filtered through body-horror absurdism and a warped family dynamic. The combination of industrial child-rearing, memory tampering, and a tenderly manipulative entity gives the premise a memorable afterimage."
       },
       "world_density_and_texture": {
-        "score": 8,
-        "reasoning": "The script builds a memorable ecosystem of pods, gas masks, ang sacs, retirement units, excavation tunnels, and a mother-managed hierarchy with its own rituals. The world feels governed by rules and routines, and the details suggest a larger off-screen system beyond the scenes shown."
+        "score": 7,
+        "reasoning": "The world has specific rules, rituals, and objects—the pods, gas masks, Ang sacs, retirement boxes, and entertainment controls all imply a larger system beyond the page. It’s not just a backdrop; it feels like a functioning ecosystem with its own language and hierarchy."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unmistakably its own: deadpan child logic, body-horror imagery, and absurd workplace routine all coexist in the same register. The repeated vomiting, the polite obedience, and the bizarre tenderness between Kit and the Entity create a tonal signature that would be hard to confuse with another script."
+        "reasoning": "The script has a very identifiable tonal blend: childlike confusion, bureaucratic cruelty, and grotesque physical comedy all sit in the same frame. The repeated vomiting, deadpan exchanges, and sincere emotional beats create a tone that would be hard to mistake for another project."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 6,
-        "reasoning": "Beneath the immediate escape story, there are clear seeds around identity, parental manipulation, and what memory means when a life has been engineered. The script hints at a larger mythology through the creator/father reveal and the mother’s emotional performance, though this draft keeps most of that depth in suggestion rather than fully dramatizing it."
+        "score": 7,
+        "reasoning": "Beneath the surreal surface, there’s a real emotional engine around identity, parental attachment, and the difference between care and control. The Entity’s relationship to Kit and Mother’s contradictory tenderness suggest a larger mythology that could deepen meaningfully in a feature-length version."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 5,
-        "reasoning": "The Kit/Mother/Entity triangle is the core engine, and Kelto adds a useful peer dynamic with friction and betrayal. Beyond that, the supporting cast is functional rather than combinatorially rich, so the script lives primarily on the lead relationship web rather than a broad ensemble system."
+        "reasoning": "Kit and Mother are the primary relationship engine, with Kelto adding a useful peer dynamic and the Entity adding a second authority figure. The interactions are memorable, but the story still lives mostly on Kit’s shoulders rather than on a web of equally generative relationships."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 8,
+        "speaking_roles": 7,
         "leads": 3,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Multiple child performers playing similar-aged boys",
+          "Multiple child performers of similar age and size",
           "One older female authority role",
-          "One older male inventor/creator role",
-          "Several roles with stylized, heightened dialogue"
+          "One older male authority role",
+          "Voice performance for the Entity"
         ]
       },
       "locations": {
-        "distinct_count": 8,
-        "interior_exterior_ratio": "roughly 6:2",
-        "period_or_contemporary": "contemporary but heavily stylized",
+        "distinct_count": 9,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary with speculative/fantastical design",
         "notable_requirements": [
-          "Subterranean tunnel environments",
-          "Bio-organic lab and pod chamber builds",
-          "Contained retirement box / coffin-like practical set",
-          "Surreal exterior landscape with red ground and purple river"
+          "Contained underground industrial sets",
+          "Bio-lab / pod chamber build",
+          "Retirement box / confinement unit",
+          "Surreal mind-space environment"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Organic environments, the Entity voice/screen realm, the collapsing box, vomiting effects, and the surreal exterior landscape will require digital enhancement and compositing.",
+        "vfx_details": "Organic tunnels, memory-space visuals, floating screens, creature design, and stylized bodily transformations/vomit effects.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical vomit effects, collapsing set elements, body-fluid makeup, and creature/organic texture work.",
+        "sfx_needs": "Practical vomit effects, collapsing box mechanics, creature props, acid/melt effects, blood and body debris.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
-          "type": "brand",
-          "detail": "Pachinko is referenced as a specific entertainment object."
+          "type": "named_music",
+          "detail": "Pachinko is referenced as a specific entertainment property."
         },
         {
           "type": "brand",
-          "detail": "Hibachi restaurant imagery is shown as a specific real-world setting."
+          "detail": "Hibachi restaurant imagery is generic rather than branded; no prominent real-world brand dependency is apparent."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming genre feature / festival-forward sci-fi fantasy",
-        "content_level": "PG-13 equivalent to mature, depending on how far the body-horror is pushed",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform potential; the hook is self-contained and the world can sell on trailer imagery."
+        "recommended_lane": "Streaming or premium-cable genre lane; festival-to-platform is the cleanest path.",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with cult-festival positioning and streamer acquisition potential."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The footprint is contained, but the bio-organic sets, creature textures, and surreal environments push it above a simple indie scale."
+          "note": "Contained locations keep the footprint manageable, but creature work, stylized sets, and repeated effects sequences push it above microbudget."
         },
         "cast": {
           "level": "medium",
-          "note": "The story depends on child performers carrying stylized dialogue and a few distinctive adult roles, but the cast size remains manageable."
+          "note": "The child ensemble and the need for a very specific lead child performance create some casting precision, though the role count stays contained."
         },
         "location": {
           "level": "medium",
-          "note": "Several distinct interiors plus a stylized exterior world require multiple builds and visual continuity across environments."
+          "note": "The story lives in a handful of specialized interiors plus one exterior world reveal, with several bespoke environments that need design."
         },
         "content": {
           "level": "medium",
-          "note": "Vomiting, body horror, child endangerment, and chopped bodies in the discipline chamber narrow the content lane somewhat."
+          "note": "Body-horror imagery, vomiting, child endangerment, and implied violence narrow the lane to mature buyers."
         },
         "rights": {
           "level": "low",
-          "note": "The script uses a few generic real-world references, but there is no heavy IP or life-rights dependency."
+          "note": "The script appears largely original, with no major life-rights or IP licensing dependency visible on the page."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Kit is a showcase child lead.",
-          "what_it_means": "The role gives a young actor physical comedy, fear, confusion, tenderness, and first-choice agency in one part, which is exactly the kind of performance package that can break out in genre. Casting directors and managers looking for a young lead with range will notice it, and family-adjacent genre buyers will see a memorable face to build around.",
-          "evidence": "Kit’s childlike reactions to vomiting, the retirement box, and his first real decision to trust Entity all sit on the same character track.",
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "This is the kind of high-concept genre piece that can be sold in one breath: a child worker discovers his mother is running a grotesque system and the voice in his head may be his only ally. That makes it attractive to streamer buyers and festival programmers looking for a fresh, marketable calling card with a strong visual identity.",
+          "evidence": "Kit’s retirement box, the Entity’s reveal, and the final escape into the outside world all crystallize the central engine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has a strong visual moat.",
-          "what_it_means": "The pod chambers, gas masks, ang sacs, and organic tunnels create trailer-ready imagery that can sell the movie before anyone explains the mythology. Buyers looking for a distinctive sci-fi fantasy package will respond to a world that feels designed rather than generic.",
-          "evidence": "The pod release sequence, the excavation tunnels, and the retirement box all introduce memorable physical rules and textures.",
+          "dimension_or_area": "Kit is a vivid lead role.",
+          "what_it_means": "The role gives a young actor innocence, panic, physical comedy, and a real emotional turn from obedience to self-assertion. Casting directors and managers will see a breakout child-performance opportunity, especially for an actor who can play confusion and sincerity without losing the audience.",
+          "evidence": "Kit’s repeated vomiting, his childlike bargaining with Kelto, and the whispered “can you be my mom?” moment define the part.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The mother figure is commercially loaded.",
-          "what_it_means": "She can play as nurturing, authoritarian, and quietly monstrous in the same scene, which gives the project a strong adult performance anchor and a built-in emotional contradiction. Mid-career actresses who excel at controlled intensity, and buyers who want a prestige-friendly genre role, will see the appeal immediately.",
-          "evidence": "Mother feeds Kit pills, hugs him, disciplines him, and then sends him to the retirement unit with the language of care.",
+          "dimension_or_area": "The world has a strong visual system.",
+          "what_it_means": "The pods, gas masks, Ang sacs, retirement units, and bio-computer language create a production design package that feels marketable in stills and trailers. That gives a producer a clear art-direction lane and a director a world that can be branded immediately.",
+          "evidence": "The pod chamber, gear room, excavation tunnels, discipline chamber, and mind-space all carry distinct visual rules.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Entity reveal gives the story a clean engine.",
-          "what_it_means": "The voice-in-the-head device becomes more than a gimmick once it is tied to Kit’s creator and father, because it turns the movie into a mystery of allegiance and origin. That gives producers a simple pitch line and gives audiences a reason to keep following the escape beyond the first surreal reveal.",
-          "evidence": "Entity guides Kit through the memory, the box escape, and the final reveal that he is Kit’s father.",
+          "dimension_or_area": "The tone is memorably weird but emotionally legible.",
+          "what_it_means": "The script can play as cult-friendly genre entertainment without becoming purely abstract, because the emotional spine is simple: a child wants safety and love. That balance is attractive to buyers who want something distinctive enough to cut through but still accessible enough to sell on premise.",
+          "evidence": "Mother’s pill ritual, the Entity’s deadpan guidance, and Kit’s attachment to “mom” keep the emotional line clear inside the surrealism.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone is memorably off-center.",
-          "what_it_means": "The script can live in a lane where grotesque imagery and childlike innocence coexist, which is a distinctive brand position in the genre market. Festival programmers and streaming buyers who like singular tonal signatures will recognize that this is not trying to sound like anything else.",
-          "evidence": "Kit’s vomiting, his polite obedience, and his questions about squiggly fish all play in the same scene language.",
+          "dimension_or_area": "The maternal relationship is the engine.",
+          "what_it_means": "Mother is not just an antagonist; she’s a twisted caregiver role that gives the story emotional friction and marketing texture. That kind of role can attract a strong character actor and gives the film a memorable central relationship beyond the genre mechanics.",
+          "evidence": "Mother hugs Kit, doses him, praises him, then retires him into a coffin-like box.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Entity adds a second hook.",
+          "what_it_means": "A disembodied guide with ambiguous motives gives the movie a voice-driven companion dynamic that can carry trailers, posters, and audience speculation. Voice talent and performance-capture-friendly buyers will notice the opportunity to make the unseen character feel like a star turn.",
+          "evidence": "The Entity speaks only to Kit, orchestrates the memory reveal, and ultimately becomes the voice of escape.",
           "source": "script"
         }
       ],
-      "headline": "This is a highly ownable sci-fi fantasy feature with a vivid visual identity and a lead role that could make a young actor. The script’s strongest commercial asset is its combination of grotesque imagery, childlike innocence, and a father/mother/creator mystery that gives the movie both trailer appeal and emotional pull."
+      "headline": "This script has a real cult-genre calling card: a grotesque child-labor dystopia with a clear emotional spine, a memorable lead role, and a visual world built for trailers and festival conversation. The combination of body-horror, dark comedy, and sincere coming-of-age stakes gives producers something that feels both original and packageable."
     },
     "lead_characters": [
       {
-        "name": "Kit",
+        "name": "Kelto",
         "role_type": "Lead",
         "demographics": "Male · 14",
-        "hook": "Kit is a pale, sickly, deeply impressionable boy whose body seems to betray him before his mind can catch up. He talks like a child who has been trained to obey, but the script keeps revealing a stubborn little self underneath the conditioning — curious, funny, frightened, and finally capable of choosing trust for himself.",
-        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room — a child performance built on innocence under pressure, where the audience watches a young character discover agency in real time. Young actors with emotional range will chase it because the part asks for physical comedy, panic, tenderness, and a genuine first act of rebellion."
-      },
-      {
-        "name": "Mother",
-        "role_type": "Lead",
-        "demographics": "Female · 40s-50s",
-        "hook": "Mother is a warm-voiced authority figure who weaponizes care so completely that every hug feels like part of the system. She can soothe, medicate, discipline, and discard in the same breath, which makes her feel less like a villain than a person who has made control into a form of love.",
-        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary — a role that lets an actor pivot between maternal intimacy and terrifying command without changing the emotional key. Character actresses who want a prestige genre part with real scene authority will chase it, especially those who can make menace feel intimate rather than operatic."
+        "hook": "Kelto is Kit’s peer and mirror: pragmatic, socially conditioned, and just self-aware enough to know the rules without ever questioning the system. He has a dry, almost bureaucratic way of talking that makes the child world feel eerily normalized.",
+        "why_actor_wants_this": "This is the showcase territory of the kids in Stand by Me — a supporting youth role that can steal scenes through timing, specificity, and the ability to make group dynamics feel lived-in. A young actor with comic timing and a slightly older-than-his-years presence would jump at it."
       },
       {
         "name": "Entity",
         "role_type": "Lead",
-        "demographics": "Male voice · ageless",
-        "hook": "Entity is a disembodied, omniscient voice that starts as an intrusion and slowly becomes the first source of protection Kit has ever trusted. He is playful, cryptic, and finally tender, with the strange authority of a god who may also be a father trying to make amends.",
-        "why_actor_wants_this": "This is the showcase territory of Javier Bardem in The Little Mermaid’s vocal villain mode crossed with the intimacy of a performance like Her — a voice role where tone, timing, and emotional subtext do the heavy lifting. A recognizable male star with a distinctive voice would chase it because the part can be iconic without ever needing a physical entrance."
+        "demographics": "Voice · ageless",
+        "hook": "The Entity is an unseen intelligence that speaks with cosmic confidence but gradually reveals tenderness, mischief, and a personal stake in Kit’s survival. It’s part guide, part manipulator, part parent substitute, which keeps every line charged with ambiguity.",
+        "why_actor_wants_this": "This is the showcase territory of HAL 9000 in 2001: A Space Odyssey and the unseen voice work in Her — a performance where tone, timing, and subtext do the heavy lifting. Name voice talent and actors with strong vocal identity will see a rare chance to create a character the audience remembers without ever seeing a face."
       },
       {
-        "name": "Kelto",
+        "name": "Dr. Stentz",
         "role_type": "Supporting",
-        "demographics": "Male · 14",
-        "hook": "Kelto is Kit’s peer and mirror: equally conditioned, equally small, but a little more socially fluent and a little quicker to protect himself. He reads like the kind of kid who has learned how to survive by staying just inside the rules, which makes his turn against Kit sting and feel believable.",
-        "why_actor_wants_this": "This is the kind of sharp supporting turn that gave Noah Jupe in A Quiet Place a memorable emotional lane — a young performer gets to play loyalty, fear, and betrayal in a compact but scene-stealing part. Casting directors looking for a second young face with attitude and vulnerability will see easy value here."
+        "demographics": "Male · 50s",
+        "hook": "Stentz is the origin-point scientist whose grief and obsession seem to have created the entire nightmare. He appears briefly, but his presence gives the story a mythic, tragic backstory and a human source for the world’s cruelty.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Spider-Man: Homecoming’s early scenes or Vincent Price-style mad-scientist energy — a brief role that can leave a strong imprint through intensity and pathos. Character actors who like to make a small amount of screen time feel consequential will be interested."
       },
       {
         "name": "Plowtrough",
         "role_type": "Supporting",
         "demographics": "Male · 40s-60s",
-        "hook": "Plowtrough is the smiling functionary of the system, the man who can talk about chopping bodies and retirement units with the casualness of a maintenance worker. He gives the world its bureaucratic cruelty, which makes him feel like the kind of adult who has long since stopped noticing what he is doing.",
-        "why_actor_wants_this": "This is the showcase territory of Stephen Root in Barry — a supporting role that can be funny, chilling, and matter-of-fact in the same beat. Character actors who specialize in deadpan menace will want it because the part lets them make institutional horror feel ordinary."
+        "hook": "Plowtrough is the smiling functionary of the system, the man who turns retirement into a coffin and cruelty into procedure. He’s casual, chatty, and chillingly normal, which makes him feel like the face of institutional violence.",
+        "why_actor_wants_this": "This is the showcase territory of the bureaucratic villains in Brazil — a role that lets an actor play menace through politeness and deadpan routine. Actors who excel at dry, controlled authority will want the part because it can become instantly memorable with very little screen time."
       },
       {
         "name": "Kandid",
         "role_type": "Supporting",
         "demographics": "Male · 14",
-        "hook": "Kandid is one of the other boys in the colony, a nervous, rule-bound kid who seems to process danger by turning it into procedure. He adds texture to the peer group and helps show how thoroughly the system has trained the children to police one another.",
-        "why_actor_wants_this": "This is the kind of ensemble youth role that gave the kids in Stranger Things a clear group identity — a small part with enough specificity to stand out inside a larger child cast. Young actors who want a defined comic-fear beat will find it playable."
+        "hook": "Kandid is one of the other brainoids, a nervous peer whose fear is always just under the surface. He helps make the child colony feel populated by distinct personalities rather than background bodies.",
+        "why_actor_wants_this": "This is the kind of youth ensemble role that recalls the group texture in Stand by Me or It — a small but flavorful part that lets a young actor define a social type quickly. It’s appealing to casting teams building a believable child ecosystem."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make body-horror feel tender instead of cynical.",
-        "fit_profile": "First- or second-feature directors coming out of genre shorts, or established indie filmmakers looking to pivot into stylized sci-fi fantasy. The material rewards directors who care about performance under prosthetic or surreal pressure, and who can make a strange world feel emotionally legible without sanding off the weirdness.",
-        "detail": "The craft opportunity is in balancing grotesque imagery with child logic so the movie never loses its emotional center. Directors with a strong visual sense and a taste for controlled absurdity will be drawn to the chance to build a world that can live in trailers, festivals, and genre conversation at the same time."
+        "hook": "A director who wants to make grotesque imagery feel emotionally innocent.",
+        "fit_profile": "First- or second-feature directors with a strong shorts reel in elevated genre, or established indie directors looking to pivot into surreal sci-fi with performance-forward storytelling. The material rewards filmmakers who care about production design, tonal control, and making strange behavior feel emotionally specific rather than merely bizarre.",
+        "detail": "The craft challenge here is balancing childlike logic with nightmare imagery so the audience stays inside Kit’s point of view. Directors who can stage practical effects, stylized interiors, and intimate performance in the same frame will see a rare chance to build a cult object with real heart."
       },
       "buyer_appeal": {
         "tier": "$5-15M feature",
-        "lane": "festival-forward streaming sci-fi fantasy",
-        "detail": "The contained cast and mostly interior footprint make it plausible to package around a director and one or two recognizable adult voices rather than a full-name ensemble. The trailer-friendly creature imagery and coming-of-age mystery give it export value in the genre lane buyers use for elevated, original-feeling features."
+        "lane": "Festival-to-streamer genre lane",
+        "detail": "The contained cast and mostly interior footprint make this viable without star-level ensemble packaging, while the lead child role and voice-driven Entity give it a clear attachment strategy. The body-horror / coming-of-age blend is exportable and streamer-friendly, with a trailer-friendly visual identity that can travel beyond English-language dialogue."
       }
     },
     "considerations": [
       {
-        "area": "Kit’s arc is strongest when choice arrives physically.",
-        "detail": "The draft already gives him a clean first choice in the retirement box escape, and that is the emotional high point of the feature. A next pass could keep looking for one more moment where his decision changes the scene in a visible way, so the ending feels like the culmination of agency rather than only revelation.",
+        "area": "The opening mythology lands in fragments.",
+        "detail": "The Stentz prologue, the pod chamber, and the Entity reveal all arrive quickly, which gives the script a fever-dream charge. A next pass could decide which single image or event should carry the first-page promise so the audience gets oriented even faster.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The middle section is built from repeated control beats.",
-        "detail": "The vomiting, the work assignment, the mask failure, and the retirement unit all reinforce the same oppression pattern, which is effective but also creates room for one more distinct turn in the center stretch. One lever would be to let a new kind of pressure enter before the retirement box sequence so the back half escalates on a fresh axis.",
+        "area": "Kit’s emotional turn can be foregrounded even more.",
+        "detail": "The moment where he chooses the Entity over Mother is the feature’s cleanest emotional pivot, and it already plays with real force. One lever would be to let that choice arrive with a slightly clearer before-and-after contrast so the final escape lands as a true self-authored step.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The world can be simplified without losing its signature.",
-        "detail": "The script introduces a lot of named objects and systems — ang sacs, trits, brainoids, retirement units, gas masks, DNA transmitters — and that density is part of the charm. A production-minded pass could consider consolidating one or two of the terms or functions so the audience tracks the rules faster while the design language stays intact.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The Entity reveal can be seeded earlier.",
-        "detail": "The final father reveal lands as a clean turn, and the memory sequence already points in that direction. What would it look like if the script planted one more emotional or visual breadcrumb before the reveal so the audience feels the answer arriving even as Kit does?",
+        "area": "The child ensemble could carry more independent energy.",
+        "detail": "Kelto and the other brainoids are vivid enough to populate the world, and the script already gives them distinct rhythms. A future pass could give one or two of them a more specific relationship to Kit so the social ecosystem feels even more active around the central escape.",
         "is_primary_lever": false,
         "source": "script"
+      },
+      {
+        "area": "The production design is doing a lot of the storytelling.",
+        "detail": "The pods, masks, tunnels, and retirement box are all bespoke, which is part of the appeal and part of the budget shape. If the goal is to keep the footprint lean, one simplification lever would be to combine a couple of the interior spaces while preserving the same visual logic and hierarchy.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The content lane is firmly mature.",
+        "detail": "Vomiting, child endangerment, body recycling, and implied slaughter place this squarely outside family or broad four-quadrant territory. That clarity is useful for positioning, because it points the project toward genre buyers who actively want transgressive material.",
+        "is_primary_lever": false,
+        "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 68,
+  "weightedScore": 66.3,
   "tier": "Optionable",
   "inputTokens": 15246,
-  "outputTokens": 4021,
-  "cost": 0.029529,
+  "outputTokens": 4173,
+  "cost": 0.030212999999999997,
   "declaredFormat": "Feature film"
 }

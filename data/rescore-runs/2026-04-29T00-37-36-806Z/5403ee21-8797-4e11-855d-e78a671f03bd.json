@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T00:39:26.103Z",
+  "submission_id": "5403ee21-8797-4e11-855d-e78a671f03bd",
+  "eval_id": "6765f266-753a-46b7-beb7-8f3d589bf0d1",
+  "title": "OF GODS AND DOLLS",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W / Eztli",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Black and Hispanic mixed · ageless quality"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Sephardic-leaning appearance"
+    },
+    {
+      "name": "Pope Pius XII",
+      "role_type": "Lead",
+      "demographics": "Male · 60s-70s · European"
+    },
+    {
+      "name": "Reinhard Heydrich",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · German"
+    },
+    {
+      "name": "The Reverend Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s · Czech"
+    },
+    {
+      "name": "Eva",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens · European"
+    },
+    {
+      "name": "The Infant",
+      "role_type": "Supporting",
+      "demographics": "Male voice · childlike presence · ageless sacred object"
+    },
+    {
+      "name": "Inti",
+      "role_type": "Supporting",
+      "demographics": "Male voice · ageless divine figure"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Indigenous Bolivian"
+    },
+    {
+      "name": "Carmen",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Indigenous Bolivian"
+    },
+    {
+      "name": "Juan",
+      "role_type": "Supporting",
+      "demographics": "Male · 8 · Bolivian"
+    }
+  ],
+  "positioning_hook": "A globe-trotting Black-and-Hispanic smuggler with divine gifts races from Nazi Europe to Bolivia, carrying a talking Christ Child before Christmas Eve can break a fragile truce between gods and church.",
+  "cost_usd": 0.05169375,
+  "input_tokens": 38385,
+  "output_tokens": 5090,
+  "status": "wrote:leads_ok"
+}

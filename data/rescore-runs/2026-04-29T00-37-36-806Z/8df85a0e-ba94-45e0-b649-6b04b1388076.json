@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T00:41:22.252Z",
+  "submission_id": "8df85a0e-ba94-45e0-b649-6b04b1388076",
+  "eval_id": "bd0cc03f-af23-47b7-bcbb-c4c70c89bcbf",
+  "title": "Vineyard Haven",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "SCOTT MORGAN",
+      "role_type": "Lead",
+      "demographics": "Male · 24 · Vineyard native · aspiring screenwriter"
+    },
+    {
+      "name": "BEN CARTER",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · wealthy island-connected producer/fixer"
+    },
+    {
+      "name": "KATE",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · African descent · adopted · Ben’s fiancée"
+    },
+    {
+      "name": "REBECCA HARDING",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · beauty-queen polish with volatile edge"
+    },
+    {
+      "name": "BEN’S MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s · formidable matriarch"
+    },
+    {
+      "name": "GEORGE",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · island builder / family friend"
+    },
+    {
+      "name": "RICK",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · fry cook"
+    },
+    {
+      "name": "TODD STRAITE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Congressman / polished political operator"
+    },
+    {
+      "name": "MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · Scott’s mother"
+    },
+    {
+      "name": "PHIL",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Ben’s older brother"
+    },
+    {
+      "name": "ROB KELLEY",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · state trooper / local tough"
+    },
+    {
+      "name": "REBECCA'S MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · off-screen voice / phone presence"
+    }
+  ],
+  "positioning_hook": "A Vineyard-dwelling aspiring screenwriter gets pulled into a rich family’s breakup scheme by a washed-up producer, and discovers love, class, and belonging are all part of the same con.",
+  "cost_usd": 0.051554249999999996,
+  "input_tokens": 36195,
+  "output_tokens": 5424,
+  "status": "wrote:leads_ok"
+}

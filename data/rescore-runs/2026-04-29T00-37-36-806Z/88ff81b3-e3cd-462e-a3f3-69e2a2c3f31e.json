@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T00:41:47.887Z",
+  "submission_id": "88ff81b3-e3cd-462e-a3f3-69e2a2c3f31e",
+  "eval_id": "c0990fd9-b037-4e79-bf4d-744d0ec6aac6",
+  "title": "Zenith",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "JOHN",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · human fighter pilot with cybernetic interface"
+    },
+    {
+      "name": "MO",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · human gunner, all-natural"
+    },
+    {
+      "name": "BRYANT",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · human scientist/operator"
+    },
+    {
+      "name": "PAUL",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · human officer/attaché"
+    },
+    {
+      "name": "DESCANO",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · human admiral"
+    },
+    {
+      "name": "FATHER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s appearing ageless in memory visions"
+    },
+    {
+      "name": "K LEADER",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · voice role / off-screen pilot leader"
+    },
+    {
+      "name": "HARDCASE",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · voice role / pilot"
+    }
+  ],
+  "positioning_hook": "A hacked fighter pilot and his all-natural gunner race through a collapsing alien war, only to discover the enemy may be rewriting their memories to choose humanity’s next evolution.",
+  "cost_usd": 0.05196225,
+  "input_tokens": 41215,
+  "output_tokens": 4678,
+  "status": "wrote:leads_ok"
+}

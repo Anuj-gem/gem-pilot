@@ -2,282 +2,292 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Thriller",
+      "genre_primary": "Crime thriller",
       "genre_tags": [
-        "Crime",
-        "Revenge"
+        "revenge thriller",
+        "serial killer",
+        "neo-noir"
       ],
-      "tone": "Gritty, propulsive, morally charged, with pulpy menace and bleak emotional undercurrent"
+      "tone": "gritty, propulsive, morally dark, with flashes of bleak irony"
     },
-    "positioning_hook": "A traumatized Marine posing as a missing addict hunts a highway serial predator across I-80, only to uncover a deeper conspiracy and her own hidden vigilante past.",
+    "positioning_hook": "A feral ex-Marine posing as a missing addict hunts a highway predator across the Nevada desert, only to uncover a deeper conspiracy and a body count she helped create.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 8,
-        "reasoning": "The premise has a clean, high-stakes engine: a woman weaponizes her own damaged identity to hunt predators along a lonely interstate. The abduction, revenge, and serial-killer elements give it immediate genre traction, while the final identity reversal adds a strong conversation-starting twist."
+        "score": 7,
+        "reasoning": "The premise has a clean commercial engine: a woman weaponizes her own damaged identity to bait a predator, then the story widens into a larger missing-girls conspiracy. The audience promise is immediate and genre-native, though the material is more intense and specific than four-quadrant."
       },
       "conceptual_hook_clarity": {
-        "score": 9,
-        "reasoning": "The hook lands fast in the opening stretch: Minnow is introduced as a drifter with a record, then the script reveals she is actively baiting truckers and building a pattern from the road. By the time the truck-cabin captivity sequence begins, the story engine is unmistakable and easy to pitch in two sentences."
+        "score": 8,
+        "reasoning": "The hook lands early with Minnow’s roadside setup, the truck-stop hustle, and the reveal that she is actively hunting men who target vulnerable women. The later turn into Buck’s pattern board and the final identity reveal deepen the premise without muddying the core engine."
       },
       "character_appeal_and_long_term_potential": {
         "score": 8,
-        "reasoning": "Minnow is built as a contradiction machine: feral, funny, wounded, tactical, and capable of both seduction and violence. Buck adds a second strong engine as the data-obsessed father whose grief turns him into an amateur profiler, and their friction gives the film a durable emotional spine."
+        "reasoning": "Minnow is built as a vivid contradiction: feral, wounded, funny, and terrifyingly capable, with the sister wound giving her pursuit real emotional charge. Buck adds a strong counterweight as the data-driven grief-stricken ally, and the Trooper’s double role gives the story a memorable human face."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script keeps finding fresh angles inside familiar thriller territory: a highway predator, a fake-victim infiltration, a truck-cabin survival ordeal, and then a late-stage identity reframe that changes the meaning of everything before it. The final reveal that Minnow is not who she claims to be gives the material a real swing."
+        "reasoning": "The script commits to a hard-edged, female-forward predator story with a vigilante twist and a desert-road texture that feels specific rather than generic. The final identity reframing and the idea of a missing-girl hunter who is herself a serial avenger give it a confident, unusual shape."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script is built to keep moving: roadside hustle, abduction, escape, investigation, transformation, confrontation, mountain pursuit, and a final house-of-horrors reveal. Each act turns the screw with a new physical objective, and the truck, salt flats, and mountain sections all escalate the pressure cleanly."
+        "reasoning": "The opening abduction, the truck-cabin survival sequence, the investigation, and the mountain pursuit all create strong forward pull. The script keeps escalating from survival to conspiracy to revenge, and the final house sequence pays off the pressure with force."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The most memorable idea here is the collision of roadside Americana, trafficking horror, and a protagonist who can pass as prey because she has already lived like one. The ending recontextualizes the entire movie into a revenge mythology with a serial-killer afterlife, which gives the premise a sticky aftertaste."
+        "reasoning": "It feels fresh in the way the best genre pieces do: a damaged woman using the system’s blind spots against predators, then revealing she is part of the violence she’s chasing. The missing-persons angle, the highway geography, and the identity reveal combine into something that feels both surprising and inevitable."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The I-80 corridor feels lived-in: truck stops, stockyards, rest areas, motels, encampments, and law-enforcement dead zones all contribute to a specific ecosystem. The world is strongest when it stays on the road and in the margins, where every stop feels like a new hunting ground."
+        "reasoning": "The I-80 corridor, truck stops, stockyards, rest areas, and remote desert house create a lived-in criminal ecosystem with clear social texture. The world is strongest when it stays on the road and in the margins of law enforcement and transient labor."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is sharply defined: grimy, predatory, and darkly playful, with Minnow’s flirtation and Buck’s deadpan data-brain cutting against the brutality. The script knows when to lean into menace, when to let the road feel lonely, and when to hit with almost mythic violence."
+        "reasoning": "The tone is sharply defined: brutal, ironic, and emotionally bruised, with moments of dark humor in the Buck/Minnow exchanges and the roadside hustles. The script knows when to lean into dread, when to let Minnow charm, and when to go fully feral."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "Beneath the thriller mechanics, the script is carrying grief, self-erasure, addiction, foster-system damage, and the question of whether justice can ever be separated from appetite. The final reveal opens a deeper psychological layer that makes the whole story feel like it could keep unfolding beyond the last frame."
+        "score": 7,
+        "reasoning": "Under the thriller mechanics, there’s a deeper story about trauma, self-invention, and the way institutions erase vulnerable people. The final reveal that Minnow is a serial avenger opens a larger moral universe without undoing the emotional spine."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Minnow/Buck is the core relationship and it has real friction, wit, and emotional asymmetry. The Trooper and Bartender add strong secondary pressure, but the film is still primarily powered by the lead duo rather than a broad ensemble web."
+        "reasoning": "Minnow/Buck is a strong lead-partner engine, and the Trooper’s shifting role gives the story a second major relational axis. The supporting cast is functional rather than sprawling, but the central triangle generates enough tension to carry the feature."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 9,
+        "speaking_roles": 10,
         "leads": 2,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Female lead with intense physicality, age range 20s-30s",
-          "Male supporting lead in his 50s-60s, cerebral and emotionally weathered",
-          "Female law-enforcement role with authority and ambiguity",
-          "Child role in flashback and abduction context",
-          "Truckers, bartenders, deputies, mechanics, and federal agents as supporting roles"
+          "Female lead with athletic, physically punishing action requirements",
+          "Male supporting lead in his 50s with COPD and computer-nerd specificity",
+          "Female state trooper in 30s-40s with authority and duplicity",
+          "One child role in the truck-cabin sequence",
+          "Several age-specific victim photos and missing-girl identities"
         ]
       },
       "locations": {
         "distinct_count": 18,
-        "interior_exterior_ratio": "Approximately 55/45",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Long stretches of highway and roadside Americana",
-          "Big rig interior and sleeper-cab build",
-          "Remote desert/salt-flat exteriors",
-          "Mountain hiking terrain",
+          "Desert highway and salt-flat exteriors",
+          "Truck cab/sleeper build",
+          "Remote house with cellar",
           "Hospital and FBI office interiors",
-          "Remote house/cellar practical set"
+          "Stockyard, diner, motel, rest stop, motorhome, and mountain terrain"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Primarily environmental enhancement, helicopter rescue coverage, and a few scale/roadway extensions; the action is mostly practical.",
+        "vfx_details": "Mostly practical storytelling with a few helicopter, fire, and injury-enhancement moments; no major creature or digital-world requirements.",
         "stunts_level": "moderate",
-        "sfx_needs": "Blood, injury makeup, fire/smoke in the truck cabin, practical violence, vehicle movement, and collapse/impact beats.",
+        "sfx_needs": "Blood, wounds, smoke, fire, broken-bone and injury makeup, vehicle movement, and confined-fight choreography in the truck and cellar sequences.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Big Thief's 'Vampire Empire,' Benson Boone's 'Beautiful Things,' and 'Blue Moon of Kentucky' are specifically used in scene transitions and action beats."
+          "detail": "Big Thief's 'Vampire Empire,' Benson Boone's 'Beautiful Things,' and 'Blue Moon of Kentucky' are specifically used in scene transitions and mood beats."
         },
         {
           "type": "brand",
-          "detail": "Colt McCoy, Longhorns, Mastercard, Amazon, Beretta M9, and Intelius are referenced on the page."
-        },
-        {
-          "type": "real_person",
-          "detail": "Colt McCoy is referenced by name in dialogue."
+          "detail": "Colt McCoy, Longhorns, Mastercard, Amazon, Beretta, Jack Daniel's, and Intelius are referenced on the page."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming thriller / premium cable crime lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or direct-streaming potential; the hook is a contained, high-concept crime thriller with a twist ending."
+        "recommended_lane": "premium streaming or theatrical genre lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or specialty theatrical potential; the hook is built around a contained survival-thriller spine that broadens into a serial-killer conspiracy."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The movie is mostly practical and contained, but it still needs multiple road locations, a truck rig build, mountain work, hospital coverage, and night exteriors."
+          "note": "The script is contemporary and mostly contained, but it spans multiple road locations, a truck build, mountain exteriors, hospital/FBI interiors, and several action-heavy set pieces."
         },
         "cast": {
           "level": "medium",
-          "note": "The film can be carried by two leads, but it depends on a very specific Minnow performance, a strong Buck, and a child role plus several memorable supporting turns."
+          "note": "The story can be carried by two leads, but it needs a physically commanding female lead, a distinct older male co-lead, a credible state trooper, and a child role."
         },
         "location": {
-          "level": "high",
-          "note": "The story moves across truck stops, diners, motels, rest areas, a stockyard, a mountain, a remote house, a cellar, and a salt-flat finale."
+          "level": "medium",
+          "note": "The footprint is manageable but spread across highways, desert flats, a mountain climb, a remote house, and multiple roadside interiors."
         },
         "content": {
           "level": "high",
-          "note": "Abduction, torture, drugging, sexual predation, graphic injury, and serial-killer material place it firmly in mature territory."
+          "note": "Abduction, torture, drugging, sexual predation, graphic violence, and child endangerment push the material firmly into mature territory."
         },
         "rights": {
           "level": "medium",
-          "note": "Several named songs, brands, and a real public figure reference will need clearance attention."
+          "note": "Several named songs and recognizable brands are used specifically enough to require clearance attention."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Minnow is a showcase role built on contradiction.",
-          "what_it_means": "This gives the project a true actor magnet: a woman who can be seductive, feral, wounded, funny, and physically ferocious in the same movie. That kind of role is catnip for prestige-minded actresses who want a part with range, volatility, and a final-act identity turn.",
-          "evidence": "She hustles truckers, gets abducted, escapes with improvised brutality, and later reveals a completely different life and name history.",
+          "dimension_or_area": "Minnow is a knockout lead role.",
+          "what_it_means": "The part gives a producer a ferocious, physically active centerpiece who can carry action, vulnerability, and dark humor in the same frame. Actors who want a career-defining turn in the Charlize Theron / Jodie Comer / Riley Keough lane will see a showcase built for range and transformation.",
+          "evidence": "Minnow’s roadside hustle, the truck-cabin escape, the mountain pursuit, and the final reveal that she has been living under shifting identities all build a role with real star voltage.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The road world feels specific and saleable.",
-          "what_it_means": "The I-80 corridor, truck-stop ecosystem, and Nevada/Utah borderland give the film a clear visual lane that buyers can instantly picture and market. Thriller audiences and directors who like American-margin settings will respond to the lived-in roadside texture.",
-          "evidence": "Wolf’s Mouth, Sierra Sid’s, Diamond Horseshoe, stockyards, rest stops, encampments, and the salt flats all recur as story spaces.",
+          "dimension_or_area": "The opening hooks immediately.",
+          "what_it_means": "The script starts with a roadside predator setup that tells the buyer exactly what kind of movie this is and why it will move. That kind of instant genre clarity is valuable for streamers and specialty theatrical buyers looking for a clean, high-concept entry point.",
+          "evidence": "The Wolf’s Mouth opening, the diner hustle, and the sudden abduction into the truck sleeper establish the engine within the first act.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The truck-cabin captivity sequence is a set-piece engine.",
-          "what_it_means": "This is the kind of contained, escalating survival sequence that can become the movie’s calling card and trailer centerpiece. Genre buyers and directors who like practical tension over VFX spectacle will see immediate value in it.",
-          "evidence": "Minnow is chained in the sleeper cab, forced to improvise escape tools, and eventually turns the rig into a battleground.",
+          "dimension_or_area": "The road-world feels lived in.",
+          "what_it_means": "The I-80 corridor, truck stops, stockyards, rest areas, and transient encampments create a specific American margin that feels story-generating rather than decorative. Buyers who like grounded genre with a strong regional identity will respond to a world that already has its own rules and social pressure.",
+          "evidence": "Sierra Sid’s, the Diamond Horseshoe, the stockyard, the salt flats, and the remote house all feel like pieces of one ecosystem.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Buck gives the film a second strong lead engine.",
-          "what_it_means": "The grieving father turned data analyst brings a different flavor of obsession, which broadens the movie beyond a single revenge track. That makes the project more attractive to actors who want a bruised, intelligent supporting lead and to buyers who like a two-hander dynamic.",
-          "evidence": "His missing-daughter wall, actuarial language, and FBI pitch scenes make him more than a sidekick.",
+          "dimension_or_area": "Buck gives the movie a second engine.",
+          "what_it_means": "The grief-stricken data analyst adds a complementary point of view that turns the story from a solo revenge run into a partnership with tension, irony, and emotional counterweight. That gives the project a stronger packaging story for actors and a more durable audience relationship than a lone-wolf thriller.",
+          "evidence": "Buck’s pattern board, his FBI humiliation, and his uneasy alliance with Minnow create a distinct lead-partner dynamic.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The final identity reveal reframes the whole movie.",
-          "what_it_means": "The ending turns the story from a straightforward rescue-revenge thriller into something more mythic and unsettling, which is the kind of twist that drives word of mouth. Buyers looking for a genre piece with a memorable last-act turn will notice that immediately.",
-          "evidence": "The journalist’s file shows Minnow has used multiple names and may be a serial vigilante with a long body count.",
+          "dimension_or_area": "The final identity reveal reframes everything.",
+          "what_it_means": "The ending opens the movie beyond a single missing-person case into a larger vigilante mythology, which gives the script franchise-adjacent aftertaste without needing to behave like a franchise. Buyers looking for a thriller with a memorable final turn will see a hook that lingers after the credits.",
+          "evidence": "The journalist’s reveal that Minnow is actually Margot Reynolds, with multiple identities and a trail of dead predators, changes the meaning of the entire story.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone balances menace with dark wit.",
-          "what_it_means": "Minnow’s flirtation, Buck’s deadpan logic, and the script’s blunt roadside humor keep the material from becoming one-note grim. That tonal blend widens the audience beyond pure horror-thriller fans and gives a director room to shape a distinctive voice.",
-          "evidence": "The diner banter, Buck’s data jokes, and Minnow’s blunt one-liners sit alongside abduction and torture.",
+          "dimension_or_area": "The Trooper is a strong late-game reveal.",
+          "what_it_means": "The state trooper’s shift from helpful authority figure to hidden architect of the horror gives the movie a clean betrayal turn and a memorable antagonist face. That kind of reveal is attractive to directors and buyers because it gives the third act a human villain with emotional and institutional weight.",
+          "evidence": "She first helps Minnow at the Wolf’s Mouth, then later leads her into the cellar and reveals the family connection to the killer.",
           "source": "script"
         }
       ],
-      "headline": "MINNOW is a hard-driving highway thriller with a real star-making female lead, a vivid roadside America setting, and a final-act reveal that redefines the entire story. It has the kind of contained, practical, trailer-friendly set pieces producers can package, while still carrying enough emotional damage and moral ambiguity to feel premium."
+      "headline": "MINNOW is a hard-charging, female-led revenge thriller with a real commercial engine: a damaged ex-Marine uses her own disposable identity to hunt predators along the I-80 corridor, then discovers the system around her is part of the trap. It has a vivid lead role, a specific American road-world, and a final-turn reveal that makes the whole movie snap into a darker, more memorable shape."
     },
     "lead_characters": [
       {
-        "name": "Minnow / Lucy Henning / Margot Reynolds",
+        "name": "Minnow / Margot Reynolds / Lucy Henning",
         "role_type": "Lead",
-        "demographics": "Female · 20s-30s · physically intense, tattooed/drifter presentation with later transformation",
-        "hook": "Minnow is a survivalist chameleon: a road-hardened hustler with track marks, a sharp smile, and a body that carries both damage and discipline. She can pass as prey, weaponize that perception, and then reveal a Marine-trained core that makes her far more dangerous than anyone on the page first assumes.",
-        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in *Monster* crossed with the physical command of Jodie Comer in *Killing Eve* — a role that lets an actor toggle between vulnerability, seduction, menace, and brutal competence. Leading actresses looking for a career-redefining part will chase the emotional whiplash and the late-film identity reveal that changes how the audience reads every earlier scene."
+        "demographics": "Female · late 20s to early 30s · physically battered, tattooed / later multiple disguises",
+        "hook": "Minnow is a feral, hyper-competent survivor who can flip from flirty roadside drifter to lethal predator in a breath. She carries herself like someone who has already been written off by the world, which makes her charm, rage, and precision feel dangerous in the best way.",
+        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Mad Max: Fury Road or Jodie Comer in Killing Eve — a role where physicality, wit, and emotional damage all live in the same body. Actors who want a transformation part with action, vulnerability, and a late-story identity reveal will chase this hard."
       },
       {
         "name": "Buck Conroy",
         "role_type": "Lead",
-        "demographics": "Male · 50s-60s · white, COPD, computer-nerd / ex-corporate analyst energy",
-        "hook": "Buck is a grieving father whose brain never stops pattern-matching, even when his heart is wrecked. He’s funny in a dry, self-protective way, pathologically honest, and emotionally exposed enough that his certainty feels both useful and tragic.",
-        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in *Breaking Bad* or Matthew McConaughey in *True Detective* — a man whose intelligence is inseparable from obsession and grief. Character actors and prestige leads in their late 40s to 60s will want the chance to play a wounded, articulate investigator whose emotional life is as active as his detective work."
+        "demographics": "Male · 50s to early 60s · COPD, computer-nerd energy, civilian",
+        "hook": "Buck is a grief-struck pattern hunter who talks like a spreadsheet and feels like a man trying to outthink his own heartbreak. He’s awkward, obsessive, and unexpectedly tender, which makes him the perfect counterweight to Minnow’s volatility.",
+        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in Breaking Bad or Matthew McConaughey in True Detective season 1 — a man whose intelligence and pain are both visible in every scene. Character actors and prestige leads looking for a role with emotional authority, dry humor, and moral ambiguity will want in."
       },
       {
         "name": "Senior Trooper",
         "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · law-enforcement authority with a calm, watchful presence",
-        "hook": "The Trooper reads as competent, humane, and quietly dangerous from her first scene, which makes her one of the film’s most useful pressure valves. She can play ally, gatekeeper, and final-act predator without ever losing the grounded authority that sells the world.",
-        "why_actor_wants_this": "This is the kind of role that gave Regina King in *Watchmen* or Carrie Coon in *The Leftovers* a chance to project intelligence and moral ambiguity in a single frame. Actors who specialize in grounded authority and layered law-enforcement roles will see a part that can steal scenes without needing volume."
+        "demographics": "Female · 30s to 40s · law enforcement authority",
+        "hook": "The Trooper reads as calm, humane, and professionally grounded until the story reveals how much of that kindness is a mask. She has the kind of stillness that can hold a scene, then turn it inside out.",
+        "why_actor_wants_this": "This is the kind of late-reveal authority role that gave Patricia Clarkson in Sharp Objects or Carrie Coon in Gone Girl a lot to play — controlled surface, devastating second meaning. Actors who like playing intelligence, restraint, and betrayal in one package will be drawn to it."
       },
       {
-        "name": "The Trucker / Willard Janus",
+        "name": "Willard Janus / The Trucker",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · white, long-haul trucker, physically imposing",
-        "hook": "The Trucker is a roadside predator who hides inside ordinary Americana: a working man, a veteran, a fatherly face, and a body that can move freight and terror with the same ease. He’s built to feel banal until the movie reveals how much violence he’s been carrying in plain sight.",
-        "why_actor_wants_this": "This is the kind of unnerving antagonist role that Javier Bardem in *No Country for Old Men* or Michael Shannon in *Take Shelter* made unforgettable — a man whose stillness is the threat. Character actors who can project charm, menace, and physical authority will want the chance to turn a familiar blue-collar image into nightmare fuel."
-      },
-      {
-        "name": "The Bartender / Mark W. Downs",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · handsome, muscular, scarred, physically controlled",
-        "hook": "The Bartender is the movie’s most deceptive face: kind on the surface, predatory underneath, and eventually revealed as something far more ritualized and self-mythologizing. His scarred body and calm manner make him feel like a man who has turned violence into a private religion.",
-        "why_actor_wants_this": "This is the kind of late-reveal villain role that gave actors like Ben Mendelsohn in *Bloodline* or Walton Goggins in *The Shield* a chance to weaponize charm and stillness. Actors who like playing a smiling threat with a hidden chamber of darkness will see a juicy, scene-stealing part."
+        "demographics": "Male · 30s to 40s · long-haul trucker, military background",
+        "hook": "Janus is a blandly ordinary predator, which is exactly what makes him chilling: he can pass as background noise until the violence is already underway. He’s physically imposing, methodical, and built to feel like the kind of man the world overlooks too easily.",
+        "why_actor_wants_this": "This is the kind of contained monster role that gave Michael Shannon in Take Shelter or Ben Mendelsohn in Animal Kingdom its charge — a character whose menace comes from control, not volume. Actors who want to disappear into a terrifyingly ordinary face of evil will be interested."
       },
       {
         "name": "Agent Mike Townsend",
         "role_type": "Supporting",
-        "demographics": "Male · 30s · FBI agent, clean-cut, skeptical",
-        "hook": "Townsend is the institutional face of disbelief: polished, dismissive, and just sympathetic enough to feel real. He functions as the system’s polite refusal, which gives the movie a credible wall for Minnow and Buck to keep hitting.",
-        "why_actor_wants_this": "This is the kind of contained authority role that actors like Shea Whigham or David Harbour have used to make bureaucratic resistance feel alive. It’s a strong supporting slot for someone who can play skepticism without flattening into a stock obstacle."
+        "demographics": "Male · 30s · FBI agent",
+        "hook": "Townsend is the institutional face of polite dismissal: competent enough to be credible, detached enough to be infuriating. He gives the movie a clean law-enforcement pressure point without turning into a cartoon bureaucrat.",
+        "why_actor_wants_this": "This is the kind of grounded procedural authority role that lets an actor play skepticism, fatigue, and eventual recalibration the way Shea Whigham or David Harbour often do in prestige crime material. It’s a sharp supporting slot for someone who can make a conference room scene feel alive."
       },
       {
-        "name": "Texas",
+        "name": "The Bartender / Mark W. Downs",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · truck-stop regular, older than Minnow, working-class",
-        "hook": "Texas is a brief but useful piece of roadside texture: lonely, flattered, and easy to read, which makes him a perfect early example of how Minnow works the world. He helps establish the film’s social ecosystem and the way Minnow can turn charm into access.",
-        "why_actor_wants_this": "This is the kind of small but memorable character role that gives a character actor a clean, funny, human beat in a thriller. It’s the sort of part that can land with the specificity of a scene in *Fargo* or *Hell or High Water* without needing much screen time."
+        "demographics": "Male · 30s to 40s · handsome, physically capable, scarred",
+        "hook": "He first plays as the charming, protective bartender and later reveals a far more intimate, self-destructive violence. The scars, the calm, and the final cellar reveal make him feel like a man who has built a private mythology around pain.",
+        "why_actor_wants_this": "This is the kind of dual-purpose supporting role that gave Boyd Holbrook in Logan or Tom Pelphrey in Ozark a lot of juice — attractive surface, then a hard pivot into menace. Actors who like playing charm that curdles will see a juicy slot here."
       },
       {
-        "name": "Scrawny Man",
+        "name": "Do-Gooder / Buck Conroy",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · socially awkward, creepy, physically slight",
-        "hook": "Scrawny is the movie’s early warning flare: awkward enough to seem harmless, predatory enough to turn the air bad fast. He helps define the film’s moral landscape by showing how quickly Minnow can read danger and how little room the road gives her to misread it.",
-        "why_actor_wants_this": "This is the kind of compact, unsettling role that lets an actor play discomfort, entitlement, and menace in a few scenes. Character actors who specialize in off-kilter behavior will see a memorable, high-contrast part."
+        "demographics": "Male · 50s to 60s · rain slicker, outreach volunteer",
+        "hook": "The Do-Gooder is the road’s conscience: a man handing out water and Narcan while carrying his own grief in plain sight. He’s compassionate without being sentimental, which makes his scenes feel human instead of ornamental.",
+        "why_actor_wants_this": "This is the kind of quiet, lived-in supporting role that actors like Stephen Root or John Carroll Lynch can make unforgettable with very little screen time. It gives a performer a humane, textured presence in a movie otherwise driven by danger."
+      },
+      {
+        "name": "Katherine Henning / Katie",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-teens in photos / missing person",
+        "hook": "Katie exists as memory, absence, and the emotional center of Minnow’s mission. Even in still photos, she gives the movie its ache and its moral urgency.",
+        "why_actor_wants_this": "This is not a performance-heavy role, but it is the kind of emotionally resonant presence that anchors a thriller’s heart. For a young actor, the material functions as a haunting before/after image that the whole movie is built around."
+      },
+      {
+        "name": "Lily Conroy",
+        "role_type": "Supporting",
+        "demographics": "Female · teen / missing person",
+        "hook": "Lily is another missing-girl presence that expands the story from one family tragedy into a wider pattern of disappearance. She gives Buck’s grief a face and the conspiracy a second emotional stake.",
+        "why_actor_wants_this": "Like many off-screen but story-critical missing-person roles, this is about impact rather than volume. It gives a young performer a meaningful emotional footprint in a prestige thriller structure."
+      },
+      {
+        "name": "Female State Trooper",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · law enforcement",
+        "hook": "The opening trooper is the story’s first face of mercy and the last face of betrayal. She has a calm, maternal authority that makes her eventual reveal land with real force.",
+        "why_actor_wants_this": "This is the kind of deceptively small role that can become a calling card because it flips audience expectation twice. Actors who like playing warmth with a hidden blade will respond to it."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a female-driven road thriller with real physical danger and a final-act identity gut punch.",
-        "fit_profile": "Second- or third-feature directors, or established indie genre filmmakers, who already work comfortably with contained tension, character-forward violence, and American roadside realism. This material rewards directors who like practical suspense, strong visual geography, and performance-driven reversals more than glossy action coverage.",
-        "detail": "The movie gives a director a clear visual spine: truck stops, sleeper cabs, salt flats, a mountain climb, and a remote house that can all be staged with strong geography. It also offers a rare chance to build a thriller around a female lead who can carry both action and psychological ambiguity without needing a giant effects canvas."
+        "hook": "A director who wants to stage a brutal, character-driven road thriller with a female lead who can carry both action and emotional damage.",
+        "fit_profile": "Established indie directors with at least one or two features, or elevated-genre filmmakers moving up from festival horror/thriller work. The material rewards directors who care about performance under pressure, tactile geography, and controlled escalation more than spectacle for its own sake.",
+        "detail": "The movie gives a director a clean tonal lane: roadside realism, contained violence, and a final-act reveal that recontextualizes the whole story. It’s especially attractive to filmmakers who can make confined spaces — a truck cab, a cellar, a motel room, a remote house — feel cinematic and psychologically loaded."
       },
       "buyer_appeal": {
         "tier": "$5-15M feature",
-        "lane": "Streaming thriller / premium genre buyer lane",
-        "detail": "The project can be packaged around one breakout female lead and one strong supporting male lead, with the rest of the cast largely character parts, which keeps the attachment burden manageable. The road-thriller lane, the serial-predator hook, and the twist-ending reveal are all highly legible to streamers and genre buyers looking for a contained, marketable original."
+        "lane": "premium streamer thriller / specialty theatrical genre lane",
+        "detail": "It can be packaged around one major female lead and one strong supporting male counterpart, with the rest of the cast kept lean and functional. The road-thriller and missing-persons angle travels well internationally, and the contained footprint makes it viable for a buyer looking for a genre title with festival heat and platform upside."
       }
     },
     "considerations": [
       {
-        "area": "The opening stretch can sharpen the central engine.",
-        "detail": "The diner hustle, the trucker text chain, and the first abduction all work, but a next pass could make the audience understand Minnow’s larger objective a beat earlier. The version of the opening where her sister’s absence is seeded more directly would give the road-game setup even more forward charge.",
+        "area": "The final reveal opens a second movie.",
+        "detail": "The ending’s identity turn is a strong aftertaste, and a next pass could consider how much of that larger vigilante mythology you want to foreground before the last pages. The version where the audience feels the pattern earlier would make the final journalist scene land even harder without changing the core story.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Buck’s investigative role can stay more active.",
-        "detail": "His profile-building and FBI pitch are compelling, and the material already gives him a distinct voice. One direction would be to let him make one decisive move earlier in the middle stretch so his grief-driven intelligence feels like a parallel engine rather than only a commentary track.",
+        "area": "The road footprint is broad but manageable.",
+        "detail": "The script moves through diners, truck stops, a stockyard, a motel, an FBI office, a mountain climb, a remote house, and a hospital, which gives the movie texture but asks for disciplined scheduling. One lever would be to protect the strongest road locations and consider whether any of the smaller interiors can be folded together without losing the chase energy.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The music cues are doing real work.",
+        "detail": "Big Thief, Benson Boone, and 'Blue Moon of Kentucky' are all used as emotional punctuation, so clearance strategy matters early. A practical pass could explore whether any cue can be swapped for a similar-feel alternative if a rights conversation gets expensive, while preserving the scene transitions they support.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Buck’s FBI scenes carry the exposition load.",
+        "detail": "The conference-room sequence and the later journalist conversation both do important information delivery, but they also sit close together in the back half. One direction would be to let one of those scenes carry more emotional discovery and a little less explanation so the investigation feels more like a turn than a report.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The road footprint is the main production load.",
-        "detail": "The script lives across many roadside spaces, a mountain climb, a remote house, and multiple interiors tied to the truck and motel world. A simplification lever would be to see whether one or two of the roadside stops can be combined without losing the sense of the corridor.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The music cues are part of the identity.",
-        "detail": "The script uses named songs as emotional punctuation and transition devices, which is a strong stylistic choice but does mean clearance planning should happen early. If the production wants flexibility, the version of the cut where one or two cues are replaceable would protect the budget without changing the story.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The final reveal deserves room to breathe.",
-        "detail": "The journalist’s late-file dump is a strong twist mechanism, and it lands because the script has already trained us to trust Minnow’s surface identity. A next pass could consider how much of that information is delivered in one burst versus in smaller, earlier fragments so the ending feels even more inevitable.",
+        "area": "Minnow’s transformation is the movie’s engine.",
+        "detail": "The haircut, tattoos, track marks, arrest, and baiting behavior all make the disguise sequence vivid, and the script already has the bones of a great metamorphosis. A next pass could sharpen the emotional logic of the makeover beats so the audience feels the cost of each step as much as the strategy.",
         "is_primary_lever": false,
         "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 77.3,
+  "weightedScore": 74.3,
   "tier": "Optionable",
   "inputTokens": 34290,
-  "outputTokens": 4820,
-  "cost": 0.0474075,
+  "outputTokens": 4894,
+  "cost": 0.047740500000000005,
   "declaredFormat": "Feature film"
 }

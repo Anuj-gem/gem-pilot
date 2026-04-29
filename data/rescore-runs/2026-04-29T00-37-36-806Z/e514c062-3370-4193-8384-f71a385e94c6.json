@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T00:43:51.847Z",
+  "submission_id": "e514c062-3370-4193-8384-f71a385e94c6",
+  "eval_id": "7f78aa21-2cfb-4994-85a5-5f0c4c4af7a2",
+  "title": "07   ZADDY by Sarah Ramos",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Ellie Noone",
+      "role_type": "Lead",
+      "demographics": "Female · 25 · former gymnast / barre instructor"
+    },
+    {
+      "name": "Zack Shaw / Brett Henderson / Eugene Beake",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · wealthy tech developer / physically transformed"
+    },
+    {
+      "name": "Harper Hines",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · influencer / party planner"
+    },
+    {
+      "name": "Morgan",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · aspiring actor / filmmaker"
+    },
+    {
+      "name": "Detective Heller",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · detective"
+    },
+    {
+      "name": "Carrie Elaine Lauren",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · franchise owner / wellness entrepreneur"
+    },
+    {
+      "name": "Jess Weisberg",
+      "role_type": "Supporting",
+      "demographics": "Female · 19 · privileged barre student"
+    },
+    {
+      "name": "Harper's boyfriend Damien Sharp",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · wealthy married businessman"
+    },
+    {
+      "name": "Mackenzie Lewis",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · gymnastics coach"
+    },
+    {
+      "name": "Brett Henderson / Masked Man",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · acid-burned man with voice box"
+    },
+    {
+      "name": "Dr. Krivitsky",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · cosmetic surgeon"
+    },
+    {
+      "name": "Jia Tolentino",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · writer / interviewer"
+    }
+  ],
+  "positioning_hook": "A broke barre instructor chasing status in Los Angeles falls for a rich, image-obsessed older man — then discovers he’s building her into the face of a dead woman.",
+  "cost_usd": 0.05591175,
+  "input_tokens": 41993,
+  "output_tokens": 5426,
+  "status": "wrote:leads_ok"
+}

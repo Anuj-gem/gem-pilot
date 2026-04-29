@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T00:51:40.487Z",
+  "submission_id": "d7ab437b-0c6f-485a-afca-a0dd271bf569",
+  "eval_id": "22de2187-83ad-4e9b-8845-4b19cb1f6def",
+  "title": "The free trial",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "David Calloway",
+      "role_type": "Lead",
+      "demographics": "Male · 32"
+    },
+    {
+      "name": "Zara",
+      "role_type": "Lead",
+      "demographics": "Female · ageless adult"
+    },
+    {
+      "name": "Marcus Green",
+      "role_type": "Lead",
+      "demographics": "Male · 33"
+    },
+    {
+      "name": "Caroline Price",
+      "role_type": "Lead",
+      "demographics": "Female · 34"
+    },
+    {
+      "name": "Priya Anand",
+      "role_type": "Lead",
+      "demographics": "Female · 31"
+    },
+    {
+      "name": "Miranda",
+      "role_type": "Supporting",
+      "demographics": "Female · 30"
+    },
+    {
+      "name": "Jessica",
+      "role_type": "Supporting",
+      "demographics": "Female · 29"
+    },
+    {
+      "name": "Claire",
+      "role_type": "Supporting",
+      "demographics": "Female · 31"
+    },
+    {
+      "name": "Helen",
+      "role_type": "Supporting",
+      "demographics": "Female · 44"
+    }
+  ],
+  "positioning_hook": "A lonely thirtysomething man gets one wish from a genie and accidentally becomes irresistible to women for exactly 24 hours—until he chooses real connection over the shortcut.",
+  "cost_usd": 0.0370875,
+  "input_tokens": 22222,
+  "output_tokens": 4538,
+  "status": "wrote:leads_ok"
+}

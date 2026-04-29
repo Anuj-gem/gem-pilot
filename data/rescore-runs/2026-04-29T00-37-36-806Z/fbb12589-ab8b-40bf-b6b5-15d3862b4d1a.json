@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-04-29T00:51:07.759Z",
+  "submission_id": "fbb12589-ab8b-40bf-b6b5-15d3862b4d1a",
+  "eval_id": "c9dd6224-9996-4702-b96a-967b0e71ceb1",
+  "title": "Pieces",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 2,
+  "lead_characters_summary": [
+    {
+      "name": "Pierre",
+      "role_type": "Lead",
+      "demographics": "Male · Teen/late teens"
+    },
+    {
+      "name": "Celia",
+      "role_type": "Lead",
+      "demographics": "Female · Teen/late teens"
+    }
+  ],
+  "positioning_hook": "A lonely teenage poet falls hard for the first girl who sees him, then has to carry their love through illness, grief, and the promise he made to remember her.",
+  "cost_usd": 0.024719249999999998,
+  "input_tokens": 11683,
+  "output_tokens": 3546,
+  "status": "wrote:leads_ok"
+}

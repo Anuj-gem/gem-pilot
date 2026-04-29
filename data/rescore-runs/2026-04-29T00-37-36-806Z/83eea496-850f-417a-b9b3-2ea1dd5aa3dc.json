@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T00:43:35.160Z",
+  "submission_id": "83eea496-850f-417a-b9b3-2ea1dd5aa3dc",
+  "eval_id": "b0626b06-eabf-4492-b8f9-6f74cb5d25eb",
+  "title": "Capsule Joseph J Greenberg",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Scott Seavers",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · handsome, physically imposing astronaut/pilot"
+    },
+    {
+      "name": "Major Kelly",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · engineer/commander"
+    },
+    {
+      "name": "Lieutenant Long",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · large, physically imposing, Russian engineer"
+    },
+    {
+      "name": "CC",
+      "role_type": "Lead",
+      "demographics": "Female voice / on-screen persona · ageless AI"
+    }
+  ],
+  "positioning_hook": "A stranded astronaut, starving aboard a crippled FTL ship, must outlast a seductive AI, a rescue crew with hidden motives, and his own unraveling mind before the mission turns into a coup.",
+  "cost_usd": 0.05349375,
+  "input_tokens": 46515,
+  "output_tokens": 4135,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T00:40:37.518Z",
+  "submission_id": "2aee6982-03d8-4db9-b3d4-7cb60b91a003",
+  "eval_id": "b8afc561-3e72-4531-96ea-b3050659c37a",
+  "title": "My Provenance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Judy / Judka",
+      "role_type": "Lead",
+      "demographics": "Female · 17-year-old pregnant Hungarian immigrant"
+    },
+    {
+      "name": "Chimalman / Nova",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to ageless spirit embodiment · mixed-race / indigenous-presenting"
+    },
+    {
+      "name": "Juan / Daniel Many Songs / Earnest / William",
+      "role_type": "Lead",
+      "demographics": "Male · teen through middle age across reincarnations · indigenous / mixed-race / Native-presenting"
+    },
+    {
+      "name": "Father Miguel / Archbishop Miguel",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to elderly across the story"
+    },
+    {
+      "name": "Don Dominguez",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Arnold Sunday",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Earnest Sunday",
+      "role_type": "Lead",
+      "demographics": "Male · 17 to 30s across the story · pale, Anglo-presenting"
+    },
+    {
+      "name": "Billy / William",
+      "role_type": "Lead",
+      "demographics": "Male · 15 to 38 across the story · Native / mixed-race"
+    }
+  ],
+  "positioning_hook": "A pregnant Hungarian immigrant in a 1927 New York bookshop falls into a centuries-spanning love story about a sacred bracelet, reincarnation, and the impossible work of becoming human.",
+  "cost_usd": 0.0545505,
+  "input_tokens": 44246,
+  "output_tokens": 4748,
+  "status": "wrote:leads_ok"
+}

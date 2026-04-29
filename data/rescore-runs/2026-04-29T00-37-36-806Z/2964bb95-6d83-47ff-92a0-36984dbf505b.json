@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T00:40:05.096Z",
+  "submission_id": "2964bb95-6d83-47ff-92a0-36984dbf505b",
+  "eval_id": "9903cdee-4844-498c-ac3b-3de1eb9a1935",
+  "title": "The Shadow Player",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Len Claw",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s · half Navajo / half White"
+    },
+    {
+      "name": "Rick Havoc",
+      "role_type": "Lead",
+      "demographics": "Male · early 30s · white rock star"
+    },
+    {
+      "name": "Ming",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · mixed Asian heritage"
+    },
+    {
+      "name": "Arja Nilsson",
+      "role_type": "Supporting",
+      "demographics": "Female · early 30s · Nordic / European blend"
+    },
+    {
+      "name": "The Warlord",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · Chinese"
+    },
+    {
+      "name": "Yichan",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Chinese"
+    },
+    {
+      "name": "Jianyu",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Chinese"
+    },
+    {
+      "name": "Zhang",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Chinese"
+    },
+    {
+      "name": "Niyol",
+      "role_type": "Supporting",
+      "demographics": "Male · late 70s · Navajo"
+    },
+    {
+      "name": "Ric Hard",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Native Taiwanese / Indigenous-coded rock-band frontman"
+    }
+  ],
+  "positioning_hook": "A washed-up rock star and a Navajo roadie chase a stolen sacred pipa through Taiwan, where a centuries-old legend keeps bleeding into the present.",
+  "cost_usd": 0.0599775,
+  "input_tokens": 49334,
+  "output_tokens": 5106,
+  "status": "wrote:leads_ok"
+}

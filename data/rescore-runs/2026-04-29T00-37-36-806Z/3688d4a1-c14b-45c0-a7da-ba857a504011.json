@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T00:39:33.793Z",
+  "submission_id": "3688d4a1-c14b-45c0-a7da-ba857a504011",
+  "eval_id": "d03b4d4f-377c-4bc3-b5b6-6d6a3a3ddbd6",
+  "title": "THE FOREVER MAN",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · African and Hispanic ancestry · physically imposing, ageless, supernatural abilities"
+    },
+    {
+      "name": "Amethyst",
+      "role_type": "Lead",
+      "demographics": "Female · ageless · undefinably mixed beauty · distinctive soothing accent"
+    },
+    {
+      "name": "Charlie Chaplin",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · English"
+    },
+    {
+      "name": "Franklin Roosevelt",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · wheelchair user"
+    },
+    {
+      "name": "Albert Einstein",
+      "role_type": "Supporting",
+      "demographics": "Male · early 50s · German"
+    },
+    {
+      "name": "Thupten Gyatso, the Thirteenth Dalai Lama",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Tibetan"
+    },
+    {
+      "name": "Shahzadi Badr-un-Nissa Begum",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Indian royal"
+    },
+    {
+      "name": "Adolf Hitler",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · German"
+    },
+    {
+      "name": "Henry Every",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · English pirate captain"
+    },
+    {
+      "name": "The Mystic",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Indian"
+    }
+  ],
+  "positioning_hook": "A four-hundred-year-old fixer recounts impossible missions to Chaplin, Roosevelt, and Einstein on Christmas Eve, then uses their wagers to expose the coming fascist nightmare.",
+  "cost_usd": 0.05195775,
+  "input_tokens": 37825,
+  "output_tokens": 5242,
+  "status": "wrote:leads_ok"
+}

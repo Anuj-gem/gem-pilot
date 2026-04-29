@@ -2,236 +2,271 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Comedy-Drama",
+      "genre_primary": "Comedy",
       "genre_tags": [
-        "Character Comedy",
-        "Relationship Drama"
+        "Character comedy",
+        "Crime-adjacent"
       ],
-      "tone": "Grounded, awkward, deadpan, emotionally exposed"
+      "tone": "Dry, awkward, grounded, lightly absurd"
     },
-    "positioning_hook": "A broke New Yorker’s girlfriend leaves, his debt collector demands payment, and one humiliating night with a stoned friend forces him to choose between bravado and growing up.",
+    "positioning_hook": "A broke New Jersey deadbeat loses his girlfriend, his money, and his nerve in one day, then stumbles into an unlikely bond with the stoner who owes him cash.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The emotional promise is easy to grasp: a guy gets dumped, owes money, and has to face his own self-image. The appeal is strongest for adult viewers who like relationship comedy with a melancholy edge, rather than a broad four-quadrant crowd."
+        "reasoning": "The emotional promise is easy to grasp: a guy with money trouble and relationship trouble gets forced into a humiliating day that turns unexpectedly human. The appeal is real, especially for viewers who like hangout comedies with bruised male ego and sports-bar texture, but the premise stays intimate rather than broad."
       },
       "conceptual_hook_clarity": {
-        "score": 7,
-        "reasoning": "The premise lands quickly through the opening money-transfer call, Lara’s breakup, and Carmy’s pressure to handle the debt in person. The story engine is clear, though it plays more as a character-pressure setup than a sharply high-concept feature premise."
+        "score": 6,
+        "reasoning": "The central engine is clear by the time Bobby is chasing Alf and then ends up stuck in his house, but the script plays more as a comic character spiral than a sharply defined feature premise. The hook lands through behavior and voice more than through a big, instantly legible concept."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Bobby has a readable contradiction: swagger on the surface, panic underneath, and the script keeps exposing that gap through his calls, his baseball chatter, and his collapse at Alf’s house. Lara, Alf, Carmy, and Mom each add a different pressure point, but Bobby remains the main draw."
+        "reasoning": "Bobby has a strong comic posture — bluster, shame, and self-mythologizing all show up in the same scenes — and Lara gives the story a clean emotional exit wound. Alf is a useful counterweight, but the supporting cast mostly serves Bobby's arc rather than opening a wider character web."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The script’s voice comes from the specific rhythm of the dialogue and the way sports, debt, and breakup shame collide in one night. It stays in a familiar indie-comedy lane, but the baseball obsession and the mug-beer detail give it a distinct local flavor."
+        "reasoning": "The script leans into a very specific male-ego comedy lane, and the baseball-betting banter gives it a recognizable voice. What makes it stand out is the combination of debt, breakup, and sports obsession in a single contained night, though the overall shape remains familiar."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The opening sequence keeps stacking pressure efficiently, and the Alf confrontation gives the story a satisfying release valve. The ending shifts into a softer, more reflective register, which fits the piece, though it plays more as a character landing than a full feature escalation."
+        "reasoning": "The opening sequence moves briskly from the unpaid transfer to the breakup to the confrontation at Alf's house, so the first half has good forward motion. The back half settles into a looser hangout rhythm, which suits the tone, though the feature engine is more conversational than escalating."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "The core idea is familiar on paper, but the specific combination of a deadbeat boyfriend, a stoner debtor, and baseball-fueled emotional avoidance gives it a lived-in, recognizable snap. It feels like a real night rather than a constructed premise."
+        "reasoning": "The script has the pleasingly specific feeling of a story that could only happen to this guy on this day, especially once the money owed turns out to be tied to a sports bet. It is fresh in texture and voice, even if the underlying dramatic shape is built from familiar breakup-and-debt ingredients."
       },
       "world_density_and_texture": {
         "score": 5,
-        "reasoning": "The world is contemporary and specific in its details — money apps, delivery work, Yankees talk, a rundown house, yoga-class dating — but it functions mainly as a container for Bobby’s night. The texture is real, though not yet expansive."
+        "reasoning": "The world is grounded in a recognizable slice of working-class New Jersey life: car interiors, a rundown house, Yankees talk, money apps, and casual sports gambling. That texture is vivid, but the world functions mainly as a container for the central interaction rather than as a larger system with many moving parts."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone is sharply defined: embarrassed, funny, and quietly sad, with dialogue that keeps undercutting macho posturing. The script knows exactly how long to stay in awkward silence before letting a joke or a confession break it."
+        "reasoning": "The tone is distinct: deadpan, profane, and emotionally embarrassed, with jokes that come from timing and self-delusion rather than punchline construction. The scene where Bobby rehearses his own angry phone call and the later couch confession with Alf give the script a very specific comic temperature."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 6,
-        "reasoning": "Beneath the banter, there’s a clear story about shame, dependency, and the gap between the life Bobby performs and the life he’s actually living. The final beach/yoga image suggests a fuller emotional turn, though the draft keeps that depth mostly implied."
+        "score": 5,
+        "reasoning": "There is a modest emotional undercurrent beneath the jokes — Bobby's shame around money, his mother's health, and the breakup all point to a fuller interior life. The script hints at that depth more than it fully explores it, which keeps the piece light and immediate."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 5,
-        "reasoning": "The Bobby-Lara-Carmy-Alf-Mom web gives the script enough relational pressure to move, but the story is still built around Bobby’s orbit. The supporting characters are memorable in scene, though the ensemble is not yet generating many independent story lines."
+        "reasoning": "Bobby and Alf have a workable odd-couple dynamic, and Lara and Mom each add a different pressure point, but the script is still fundamentally powered by Bobby's solo spiral. The relationships are effective in scene, though they do not yet create a dense ensemble machine."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 5,
-        "leads": 1,
+        "leads": 2,
         "series_regulars": 0,
-        "child_actors": true,
+        "child_actors": false,
         "casting_characteristics": [
-          "Late-20s male lead with strong comedic timing",
-          "Late-20s female supporting role",
-          "Voice role for mother",
-          "One child voice role in background"
+          "Late-20s male lead with strong comic timing",
+          "Late-20s female supporting role with sharp breakup energy",
+          "Voice-only mother role",
+          "One supporting male role with stoner/comic specificity"
         ]
       },
       "locations": {
         "distinct_count": 5,
-        "interior_exterior_ratio": "Mostly interior with a few exterior car/driveway/beach beats",
+        "interior_exterior_ratio": "Mostly interior with a few car and driveway exteriors",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "Car interiors",
-          "Residential house interior",
-          "Beach/day exterior",
-          "Baseball broadcast playback"
+          "Car interior coverage",
+          "Rundown suburban house",
+          "Beach/yoga coda"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visible VFX requirements.",
-        "stunts_level": "minor",
-        "sfx_needs": "A baseball game on TV, phone interfaces, and simple practical action with a bat.",
+        "vfx_details": "",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical action; bat carried but no major stunt or effects requirements",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Money transfer app interface is shown generically; if a real app UI is used, clearance may be needed."
+          "detail": "Yankees"
         },
         {
           "type": "brand",
-          "detail": "Yankees, Clippers, Rockies, Marlins, Jets, Coors Field, and Judge are named."
+          "detail": "BMW"
+        },
+        {
+          "type": "brand",
+          "detail": "Clippers"
+        },
+        {
+          "type": "brand",
+          "detail": "Coors Field"
+        },
+        {
+          "type": "brand",
+          "detail": "Jets"
+        },
+        {
+          "type": "brand",
+          "detail": "Cancun"
+        },
+        {
+          "type": "brand",
+          "detail": "Yoga"
+        },
+        {
+          "type": "brand",
+          "detail": "money transfer app open on dash"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Indie theatrical / streamer character comedy-drama",
+        "recommended_lane": "Streaming comedy-drama or indie theatrical",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Best suited to a festival-to-platform or limited theatrical release model."
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or modest theatrical rollout"
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary, small cast, and a short list of practical locations keep the budget footprint contained."
+          "note": "Contemporary, contained to a handful of practical locations with no VFX or stunt load."
         },
         "cast": {
           "level": "low",
-          "note": "One clear lead and a handful of supporting roles, with no star-dependent ensemble or specialty casting."
+          "note": "A small cast anchored by two late-20s leads and a few voice or supporting roles keeps casting straightforward."
         },
         "location": {
           "level": "low",
-          "note": "A car, a house, and a beach tag make this straightforward to stage in a compact production plan."
+          "note": "The story lives in a car, a house, and a few simple exteriors, with no period build or remote travel."
         },
         "content": {
-          "level": "low",
-          "note": "Language is profane but the material stays in relationship-comedy territory without heavy violence or explicit sexual content."
+          "level": "medium",
+          "note": "Profanity, marijuana use, and a bat-wielding confrontation keep it in an adult lane without pushing into extreme territory."
         },
         "rights": {
           "level": "medium",
-          "note": "The script names multiple sports teams, players, and a money-transfer app interface, which invites some clearance attention."
+          "note": "Multiple named brands and sports references appear on the page, including Yankees, Clippers, BMW, Coors Field, and the Jets."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Bobby is a showcase of embarrassed masculinity.",
-          "what_it_means": "The role gives an actor a full comic-to-dramatic range inside one night: swagger, denial, panic, and the tiny surrender that follows. Mid-career actors who want a performance piece with both laughs and ache will see a clean festival lead here.",
-          "evidence": "Bobby rehearses his own threat speech after Alf hangs up, then lowers the bat and ends up drinking beer on the couch instead of swinging it.",
+          "dimension_or_area": "Bobby is a showcase comic lead.",
+          "what_it_means": "The role gives an actor a full range of humiliation, swagger, denial, and sudden vulnerability in a compact feature package. Mid-career comic actors who want to prove they can carry a bruised, talky lead will see immediate value here, and indie buyers will recognize a performance-first hook.",
+          "evidence": "Bobby rehearsing his own angry phone call, then collapsing into shame on the couch after Lara leaves.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The dialogue has a lived-in, local snap.",
-          "what_it_means": "The script can be sold on voice as much as premise, which is a real advantage in the indie-comedy lane where buyers respond to specificity and quotable exchanges. Actors with strong comedic timing and directors who like performance-first material will be drawn to the rhythm of the banter.",
-          "evidence": "Lines like “Fourth quarter buzzer went off. No overtime,” “You do karate. Yoga!,” and “Well namaste motherfucker” give the piece a distinct verbal identity.",
+          "dimension_or_area": "The breakup lands as a clean emotional engine.",
+          "what_it_means": "Lara's exit gives the story a sharp personal wound that keeps the comedy from floating away from consequence. Actors and buyers looking for a relationship-driven male spiral will respond to the way the breakup reframes every later choice Bobby makes.",
+          "evidence": "Lara leaving for Jim, taking Cancun off the table, and calling Bobby out for not listening.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Sports talk becomes emotional camouflage.",
-          "what_it_means": "The baseball obsession is not just flavor; it gives the script a repeatable behavioral engine that makes Bobby’s avoidance legible and funny. That kind of motif helps a buyer see a clear tonal lane and helps an actor build a character with habits, not just dialogue.",
-          "evidence": "Bobby tracks the Yankees score while his life falls apart, and even the Alf confrontation is filtered through game language and betting terms.",
+          "dimension_or_area": "The dialogue has a lived-in sports-bro rhythm.",
+          "what_it_means": "The script has a voice that feels specific to a certain class of guy and a certain region, which helps it stand apart in a crowded comedy market. That specificity is attractive to directors and buyers who want dialogue that sounds overheard rather than written.",
+          "evidence": "The Yankees score updates, the 'fourth quarter buzzer' line, and the Coors Field / Jets betting exchange.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The cast footprint is lean and producible.",
-          "what_it_means": "This is the kind of contained feature that can be made without a giant company move, which is attractive to financiers looking for modest-budget upside. It fits actors and directors who want a calling-card project that can be mounted efficiently and still feel specific.",
-          "evidence": "The story lives mostly in a car, Bobby’s house, and Alf’s house, with a brief beach coda.",
+          "dimension_or_area": "The contained footprint is producer-friendly.",
+          "what_it_means": "A story that lives almost entirely in cars and houses can be mounted efficiently, which makes it easier to package around performance and tone instead of scale. That is the kind of footprint that appeals to indie financiers, streamers, and directors looking for a sharp calling-card feature.",
+          "evidence": "Most of the script takes place in Bobby's car, Bobby's house, Alf's house, and a brief beach coda.",
           "source": "production"
+        },
+        {
+          "dimension_or_area": "Alf gives the lead a comic mirror.",
+          "what_it_means": "The Bobby-Alf pairing creates a playable odd-couple dynamic that can carry scenes without needing plot machinery every page. Buyers who like hangout-driven comedy will see the value in a relationship that can generate laughs from contrast alone.",
+          "evidence": "Bobby arrives with a bat; Alf offers beer in a mug, a bong hit, and a completely different attitude toward money and responsibility.",
+          "source": "script"
         }
       ],
-      "headline": "This script has a clean commercial lane: a contained, contemporary character comedy with a lead role that lets an actor play bravado, shame, and surrender in one performance. The voice is specific, the footprint is manageable, and the emotional turn lands in a way that makes the project feel both producible and castable."
+      "headline": "This is a compact, actor-friendly comedy with a bruised heart and a very specific voice. It turns a simple debt chase into a portrait of male embarrassment, relationship collapse, and accidental friendship, all inside a producible footprint that keeps the focus on performance."
     },
     "lead_characters": [
       {
         "name": "Bobby",
         "role_type": "Lead",
         "demographics": "Male · late 20s",
-        "hook": "Bobby is all front — leather jacket, sports talk, fake confidence — until the night strips him down to a guy who cannot pay, cannot keep his girlfriend, and cannot stop performing even when nobody is buying it. He’s funny because he’s defensive, sympathetic because he’s cornered, and specific because every move he makes is a little too late.",
-        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Squid and the Whale — a fast-talking, self-protective lead whose comedy comes from panic and whose emotional landing comes from being seen without the armor. Actors who want a role that can pivot from verbal control to raw embarrassment will chase this, especially in the indie-comedy lane where a single performance can define the movie."
+        "hook": "Bobby is all front: leather jacket, sports talk, fake confidence, and a constant need to sound like he has control. Under that performance is a guy who is financially cornered, emotionally dependent, and deeply aware that everyone around him can see through him, which makes him funny even when he is trying hardest not to be.",
+        "why_actor_wants_this": "This is the showcase territory of Jason Segel in The End of the Tour or Adam Sandler in Uncut Gems — a lead who can pivot from comic bluster to raw embarrassment without losing momentum. Actors who want a role built on timing, self-delusion, and sudden emotional exposure will chase this because the performance is the engine."
+      },
+      {
+        "name": "Alf",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "Alf is the laid-back opposite of Bobby: stoned, evasive, half-checked-out, and somehow more honest than the guy holding the bat. He reads like a slacker, but the script lets him become the one person in the room who can absorb Bobby's panic without escalating it, which gives him a sly, disarming authority.",
+        "why_actor_wants_this": "This is the kind of scene-stealing support territory Steve Zahn had in Rescue Dawn or Michael Cera had in early hangout comedies — a character whose passivity is the joke until it becomes the emotional release valve. Character actors who can play deadpan, stoner-specific behavior, and unexpected warmth will want this because every scene gives them a new comic angle."
       },
       {
         "name": "Lara",
         "role_type": "Supporting",
         "demographics": "Female · late 20s",
-        "hook": "Lara is the clean break Bobby can’t talk his way out of: practical, tired, and already halfway into a life that doesn’t require his promises. She’s not written as a villain; she’s the person who has finally stopped confusing potential with progress.",
-        "why_actor_wants_this": "This is the kind of sharp, grounded breakup role that Rachel McAdams had in The Notebook’s emotional inverse — the partner who gets to define the terms of the scene and leave the other person scrambling. Actors looking for a concise but memorable turn that can register intelligence, disappointment, and finality will want it."
-      },
-      {
-        "name": "Alf",
-        "role_type": "Supporting",
-        "demographics": "Male · late 20s to early 30s",
-        "hook": "Alf is a stoned, evasive, oddly gentle deadbeat whose laziness becomes a kind of accidental philosophy. He’s the guy who can turn a debt confrontation into a beer-and-bong hangout, which makes him both infuriating and weirdly disarming.",
-        "why_actor_wants_this": "This is the showcase space of Jonah Hill in Superbad — a comic side character with enough specificity to steal scenes and enough vulnerability to keep the joke human. Character actors and comic performers who like playing slippery charm with a hint of sadness will gravitate to him."
+        "hook": "Lara is done before the scene starts, which gives her a clean, unsentimental authority Bobby cannot talk his way around. She is practical, funny, and sharp enough to name the exact shape of his drift, making her the story's most efficient reality check.",
+        "why_actor_wants_this": "This has the crisp, no-nonsense exit energy of Rosamund Pike in Gone Girl's early domestic scenes or Allison Janney in a sharp breakup confrontation — a role that wins by being clear, controlled, and devastatingly specific. Actors who like playing the person who sees the truth first will be drawn to it because the scene does not ask for speeches, only precision."
       },
       {
         "name": "Carmy",
         "role_type": "Supporting",
         "demographics": "Male · 30s to 40s",
-        "hook": "Carmy is pressure in human form: clipped, impatient, and always one step from losing his temper, even while dealing with a kid in the background. He reads like the kind of boss who has no patience for excuses because he’s already made peace with his own chaos.",
-        "why_actor_wants_this": "This is the kind of terse authority role Brian Cox had in Succession — a voice on the phone that can dominate a scene without ever entering the room. Actors who specialize in controlled intensity and comic menace will see a clean utility role with bite."
+        "hook": "Carmy is the off-screen pressure system: blunt, impatient, and more interested in results than explanations. Even through the phone, he feels like the kind of guy who has already decided Bobby's excuses are entertainment, which gives the script a useful dose of external authority.",
+        "why_actor_wants_this": "This is the compact, command-heavy territory of a John Turturro or Bobby Cannavale type role — a phone-call part that lands because the voice has instant authority and comic bite. Character actors who can make a few lines feel like a whole world will want it, especially if they like playing the guy who can puncture the lead in one sentence."
       },
       {
-        "name": "MOM",
+        "name": "Mom",
         "role_type": "Supporting",
-        "demographics": "Female · 60s",
-        "hook": "Bobby’s mother is warm, weary, and quietly burdened, the kind of parent who still calls her son ‘Sweety’ while carrying her own medical and financial strain. She gives the story its emotional baseline: love that doesn’t stop asking for help.",
-        "why_actor_wants_this": "This is the kind of lived-in maternal role Frances McDormand had in Nomadland — a character whose plainspoken lines carry a whole history of endurance. Veteran actresses who can make a phone call feel like a full relationship will be drawn to it."
+        "demographics": "Female · 50s to 70s",
+        "hook": "Mom is warm, tired, and quietly burdened, calling Bobby with the kind of affection that makes his lies feel worse. She gives the story its emotional ballast: the house repairs, the surgeries, and the sense that Bobby's money problems are tied to a family history of strain.",
+        "why_actor_wants_this": "This is the kind of voice role that can carry the emotional weight Frances McDormand had in Nomadland's quieter family exchanges or June Squibb in Nebraska — a part where a few lines can reshape the audience's understanding of the lead. Veteran actresses who specialize in lived-in authority will want it because the role turns ordinary concern into the story's moral center."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make embarrassment cinematic.",
-        "fit_profile": "First- or second-feature directors with a strong short-film or microbudget drama background, especially those who care about dialogue rhythm, awkward silences, and behavioral comedy. This material rewards close observation, performance calibration, and a confident hand with tonal balance rather than spectacle.",
-        "detail": "The movie lives or dies on timing, framing, and the ability to make a small emotional collapse feel like an event. That attracts directors who already work in intimate, actor-forward spaces and want a feature that can travel on voice."
+        "hook": "A director who wants to make a performance-first comedy about shame, male ego, and the tiny humiliations that define a bad day.",
+        "fit_profile": "First- or second-feature directors, or established indie directors between projects, who already work comfortably in contained, dialogue-driven material. The material rewards actors' timing, close observation, and a clean sense of rhythm more than visual spectacle, so it fits directors who care about behavioral comedy and emotional precision.",
+        "detail": "The script gives a director a contained canvas where blocking, timing, and performance can do the heavy lifting, especially in the car and couch scenes. It is the kind of feature that lets a filmmaker prove they can turn small-scale material into something that feels lived-in and watchable."
       },
       "buyer_appeal": {
         "tier": "$1-5M feature",
-        "lane": "Indie theatrical / streamer character-comedy lane",
-        "detail": "It can be packaged around one strong lead and a small supporting ensemble, so a buyer does not need a giant cast or effects spend to make the movie work. The contemporary sports-and-relationship setting plays cleanly for festival discovery and streamer acquisition, where voice-driven, contained features still have a clear lane."
+        "lane": "Indie comedy-drama / streamer original comedy lane",
+        "detail": "It can be packaged around one strong male lead and a small supporting cast, so a buyer does not need a large ensemble or effects spend to make the movie work. The contemporary, contained setup and sports-bro voice give it exportable genre familiarity while still feeling specific enough to stand out in the adult-comedy lane."
       }
     },
     "considerations": [
       {
-        "area": "The ending lands as a quiet coda.",
-        "detail": "The beach/yoga finish is emotionally apt and gives the piece a graceful exhale; a next pass could consider whether Bobby’s final choice needs one more visible action so the turn feels as active as the opening pressure. The version of the ending where he does something unmistakable — even something small — would give the last image more aftertaste.",
+        "area": "The feature engine is very contained.",
+        "detail": "The script already benefits from a small footprint, so the next pass should protect that simplicity rather than widen it. One lever would be to keep the emotional and comic pressure inside the car/house/night structure, which preserves the producible scale and keeps the focus on Bobby's unraveling.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Bobby's interior turn could land earlier.",
+        "detail": "The page where he repeats his own angry phone call is a strong behavioral beat, and a next pass could consider letting that self-rehearsal do a little more story work before the Alf confrontation. If the audience feels Bobby's shame sharpen one beat sooner, the later couch confession and the final beach image will carry more lift.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The opening spends time on repeated phone beats.",
-        "detail": "The money-transfer refreshes and the repeated calls do useful character work, but the opening could be tightened by letting one or two of those beats carry more story load. That would preserve the anxious rhythm while getting Bobby into the breakup and debt pressure a little faster.",
+        "area": "Lara's exit is the cleanest emotional pivot.",
+        "detail": "Her breakup scene already gives the script a clear wound, and the version of the feature where that moment echoes a little more through Bobby's later choices would deepen the emotional throughline. The material is strongest when the comedy is carrying a real bruise underneath it.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "Sports references invite clearance attention.",
-        "detail": "The Yankees, Clippers, Rockies, Marlins, Jets, Judge, and Coors Field references are part of the script’s texture, and they also create a small rights pass to manage. A production-minded version could keep the sports identity while reducing any single dependency on named broadcast or brand elements.",
+        "area": "The brand names are doing a lot of work.",
+        "detail": "Yankees, BMW, Clippers, Coors Field, and the Jets all help locate the world quickly, but they also create a modest clearance layer for production. A practical next step would be to decide which references are essential to the voice and which can be generalized without changing the scene's comic function.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The cast is compact and easy to package.",
-        "detail": "The current footprint is one lead, a few strong supporting roles, and a handful of voice or off-screen presences, which is a clean lane for a modest-budget feature. That makes the project especially friendly to a director-led package or a lead-actor attachment strategy.",
+        "area": "Alf can carry a little more story weight.",
+        "detail": "The Bobby-Alf scenes already have a strong comic rhythm, and one direction would be to let Alf's own logic or private code surface a bit more so the relationship feels less one-sided. That would give the odd-couple dynamic a little more engine without changing the movie's scale.",
         "is_primary_lever": false,
-        "source": "production"
+        "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 59,
+  "weightedScore": 57.7,
   "tier": "Needs Development",
   "inputTokens": 12867,
-  "outputTokens": 3528,
-  "cost": 0.02552625,
+  "outputTokens": 3936,
+  "cost": 0.02736225,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T00:38:12.943Z",
+  "submission_id": "2edfc204-b956-46f9-8f04-578b4cf6ddd4",
+  "eval_id": "9514c299-d2fe-463a-9c71-b99521597843",
+  "title": "How To Disappear Completely",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Samir",
+      "role_type": "Lead",
+      "demographics": "Male · 26 · South Asian"
+    },
+    {
+      "name": "Elseid",
+      "role_type": "Supporting",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Othello",
+      "role_type": "Supporting",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Rahul",
+      "role_type": "Supporting",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Samir's Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-60s"
+    },
+    {
+      "name": "Potential Investor #1",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 30s-50s"
+    }
+  ],
+  "positioning_hook": "A disillusioned startup engineer in a drone-battery lab watches his cofounder steal the spotlight, while his own obsession with power, history, and violence starts to swallow the company whole.",
+  "cost_usd": 0.026514000000000003,
+  "input_tokens": 11982,
+  "output_tokens": 3895,
+  "status": "wrote:leads_ok"
+}

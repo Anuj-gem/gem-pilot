@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T00:51:09.266Z",
+  "submission_id": "4e22fc04-f16c-4d5d-88cc-4a4d6207fc77",
+  "eval_id": "fbf48ba0-d059-46f5-ba05-aaf95d25c928",
+  "title": "FINE LINED FINISHED",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Danny",
+      "role_type": "Lead",
+      "demographics": "Male · teen · nerdy private-school student"
+    },
+    {
+      "name": "Arnon Falton",
+      "role_type": "Lead",
+      "demographics": "Male · teen · Danny’s friend / later revealed as his brother"
+    },
+    {
+      "name": "Emma",
+      "role_type": "Supporting",
+      "demographics": "Female · teen · classmate"
+    },
+    {
+      "name": "Mr. Quill",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · teacher"
+    },
+    {
+      "name": "Principal Palmer",
+      "role_type": "Supporting",
+      "demographics": "Male · middle-aged · school principal"
+    },
+    {
+      "name": "Arnon's Mom",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged · mother"
+    }
+  ],
+  "positioning_hook": "A grief-stricken teen at a private school keeps seeing his dead best friend everywhere — until the hallucination turns out to be the last thing standing between him and a fatal overdose.",
+  "cost_usd": 0.029613749999999998,
+  "input_tokens": 16379,
+  "output_tokens": 3851,
+  "status": "wrote:leads_ok"
+}
