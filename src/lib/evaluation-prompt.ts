@@ -1,4 +1,12 @@
-// GEM Evaluation Prompt — Selznick 3.8 — 2026-04-28
+// GEM Evaluation Prompt — Selznick 3.8.1 — 2026-04-30
+//
+// 3.8.1 patch: do not invent race or ethnicity in character demographics.
+// A writer (Lisa Hagen) flagged that her 3.8 report tagged 10/11
+// characters as "white" despite the script never naming a single
+// ethnicity. Confirmed by direct script search — zero ethnicity terms
+// in 77K characters of source. Adding an explicit guard so the model
+// stops back-filling unstated demographics with a default race.
+//
 //
 // Sub-generation of the Selznick 3.x prompt family. Iterates on v5.4 with
 // the following targeted changes:
@@ -255,7 +263,15 @@ If you find yourself marking 3+ characters as Lead, stop. Reread the script's st
 
 - **name**: single canonical name per the rule above. NO SLASHES.
 - **role_type**: "Lead" or "Supporting" (apply the strict Lead rule above).
-- **demographics**: gender, age range, identity requirements.
+- **demographics**: gender, age range, and identity requirements that
+  are EXPLICITLY stated in the script. **Do not invent race, ethnicity,
+  nationality, or skin color.** If the script does not name a
+  character's race/ethnicity, leave it out of demographics entirely —
+  do NOT default to "white" or any other race. Same rule for
+  disability, sexual orientation, religion, and similar identity
+  attributes: name them only when the script names them, otherwise
+  omit. The goal is a faithful read of what's on the page, not an
+  invented casting brief.
 - **hook**: one dense paragraph describing who the character IS — voice, contradictions, emotional engine. This is also where any aliases / alter egos / multiple identities are mentioned.
 - **why_actor_wants_this**: one paragraph naming **the performance comp AND the showcase dimension** — what specific acting opportunity this unlocks.
   - Required shape: name a comp performance, then name what that performance GAVE the actor that this role also gives.
