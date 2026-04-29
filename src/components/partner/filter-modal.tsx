@@ -212,26 +212,52 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
           })}
         </div>
 
-        {/* Footer */}
+        {/* Footer — explicit inline styles for the row layouts so the
+            description copy can't fall back to one-word-per-line if a
+            Tailwind class fails to compile on a fresh build. */}
         <div
-          className="px-5 sm:px-6 py-4 flex flex-col gap-3"
-          style={{ borderTop: '1px solid var(--gem-gray-800)' }}
+          style={{
+            borderTop: '1px solid var(--gem-gray-800)',
+            padding: '16px 24px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 12,
+          }}
         >
           <label
-            className="flex items-start gap-2.5 cursor-pointer select-none"
-            title="Persists Format / Budget / Genre back to your saved lane"
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: 10,
+              cursor: 'pointer',
+              userSelect: 'none',
+            }}
           >
             <input
               type="checkbox"
               checked={saveDefaults}
               onChange={(e) => setSaveDefaults(e.target.checked)}
-              className="mt-1 cursor-pointer"
+              style={{ marginTop: 4, cursor: 'pointer', flexShrink: 0 }}
             />
-            <div className="min-w-0 flex-1">
-              <p className="text-[13.5px] font-semibold text-[var(--gem-gray-50)] m-0">
+            <div style={{ minWidth: 0, flex: 1 }}>
+              <p
+                style={{
+                  fontSize: 13.5,
+                  fontWeight: 600,
+                  color: 'var(--gem-gray-50)',
+                  margin: 0,
+                }}
+              >
                 Save as my defaults
               </p>
-              <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+              <p
+                style={{
+                  fontSize: 12,
+                  color: 'var(--gem-gray-400)',
+                  margin: '2px 0 0 0',
+                  lineHeight: 1.4,
+                }}
+              >
                 Persists Format, Budget, and Genre to your lane so the next
                 session lands on the same view. Other filters stay
                 session-only.
@@ -239,23 +265,29 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
             </div>
           </label>
           {error && (
-            <p
-              className="text-[12.5px] m-0"
-              style={{ color: 'var(--gem-warning)' }}
-            >
+            <p style={{ fontSize: 12.5, margin: 0, color: 'var(--gem-warning)' }}>
               {error}
             </p>
           )}
-          <div className="flex items-center justify-between gap-3">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 12,
+            }}
+          >
             <button
               type="button"
               onClick={clearAll}
-              className="text-[13px] font-semibold transition-colors"
               style={{
+                fontSize: 13,
+                fontWeight: 600,
                 color: 'var(--gem-gray-400)',
                 background: 'transparent',
                 padding: '8px 0',
                 border: 0,
+                cursor: 'pointer',
               }}
             >
               Clear all
@@ -264,8 +296,9 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
               type="button"
               onClick={handleApply}
               disabled={busy}
-              className="text-[14px] font-semibold transition-opacity"
               style={{
+                fontSize: 14,
+                fontWeight: 600,
                 background: 'var(--gem-accent)',
                 color: '#fff',
                 padding: '10px 22px',
@@ -273,6 +306,7 @@ export function FilterModal({ open, onClose, options, current, onApply }: Props)
                 opacity: busy ? 0.6 : 1,
                 cursor: busy ? 'not-allowed' : 'pointer',
                 boxShadow: '0 4px 14px rgba(124,58,237,0.25)',
+                border: 0,
               }}
             >
               {busy ? 'Saving…' : 'Apply'}
