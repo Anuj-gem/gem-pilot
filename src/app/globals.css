@@ -322,23 +322,53 @@ input::placeholder, textarea::placeholder {
   color: var(--gem-gray-500);
   margin: 0 0 12px;
 }
-/* Development considerations row — mirrors src/app/report/[id]/page.tsx.
-   Anuj 2026-04-29: gold-numbered, no boxed background. The number lives
-   in its own grid column so the title + detail align cleanly under each
-   other in a single 28px-gutter ladder. */
+/* Default mock row — used by Industry activity, Send-intro, etc.
+   Restored 2026-04-29 after a numbered-list rewrite accidentally
+   force-grid-broke every other row that didn't have the new __num
+   element. The Development considerations rows now opt into the
+   numbered styling via `gem-blog-row--num` — see below. */
 .gem-prose .gem-blog-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--gem-gray-900);
+  border: 1px solid var(--gem-gray-700);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 6px 0;
+}
+.gem-prose .gem-blog-row + .gem-blog-row { margin-top: 8px; }
+.gem-prose .gem-blog-row__title {
+  font-weight: 600;
+  color: var(--gem-gray-50);
+  font-size: 13.5px;
+  margin: 0;
+}
+.gem-prose .gem-blog-row__meta {
+  font-size: 11.5px;
+  color: var(--gem-gray-400);
+  margin: 2px 0 0;
+}
+/* Development considerations row — mirrors src/app/report/[id]/page.tsx.
+   Opt-in modifier so the styling only applies where it should. Gold-
+   numbered, no boxed background. */
+.gem-prose .gem-blog-row--num {
   display: grid;
   grid-template-columns: 32px 1fr;
   column-gap: 14px;
   align-items: baseline;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
   padding: 10px 0;
   margin: 0;
 }
-.gem-prose .gem-blog-row + .gem-blog-row {
+.gem-prose .gem-blog-row--num + .gem-blog-row--num {
   margin-top: 0;
   border-top: 1px solid var(--gem-gray-800);
 }
-.gem-prose .gem-blog-row__num {
+.gem-prose .gem-blog-row--num .gem-blog-row__num {
   grid-row: 1 / span 2;
   font-weight: 700;
   color: var(--gem-gold);
@@ -347,7 +377,7 @@ input::placeholder, textarea::placeholder {
   line-height: 1.3;
   margin: 0;
 }
-.gem-prose .gem-blog-row__title {
+.gem-prose .gem-blog-row--num .gem-blog-row__title {
   grid-column: 2;
   font-weight: 700;
   color: var(--gem-gray-50);
@@ -355,7 +385,7 @@ input::placeholder, textarea::placeholder {
   margin: 0;
   line-height: 1.35;
 }
-.gem-prose .gem-blog-row__meta {
+.gem-prose .gem-blog-row--num .gem-blog-row__meta {
   grid-column: 2;
   font-size: 13px;
   color: var(--gem-gray-300);
@@ -386,6 +416,39 @@ input::placeholder, textarea::placeholder {
 .gem-prose .gem-blog-pill--new { background: #16a34a; color: #fff; }
 .gem-prose .gem-blog-pill--interested { background: rgba(22,163,74,0.10); color: #15803d; border: 1px solid rgba(22,163,74,0.30); }
 .gem-prose .gem-blog-pill--reachedout { background: rgba(124,58,237,0.10); color: var(--gem-accent); border: 1px solid rgba(124,58,237,0.30); }
+/* Privacy panel pills — mirror src/components/report/section-gate.tsx.
+   Visible = green eye, Hidden = neutral lock. Anuj 2026-04-29. */
+.gem-prose .gem-blog-pill--visible {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+.gem-prose .gem-blog-pill--visible::before { content: "👁  "; }
+.gem-prose .gem-blog-pill--hidden {
+  background: #fff;
+  color: var(--gem-gray-500);
+  border: 1px solid var(--gem-gray-700);
+}
+.gem-prose .gem-blog-pill--hidden::before { content: "🔒  "; }
+
+/* Privacy controls row — flat list of section labels with the
+   Visible/Hidden pill on the right. Mirrors what the writer sees on
+   the live report page (one pill per section). */
+.gem-prose .gem-blog-privacy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+}
+.gem-prose .gem-blog-privacy-row + .gem-blog-privacy-row {
+  border-top: 1px solid var(--gem-gray-800);
+}
+.gem-prose .gem-blog-privacy-row__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gem-gray-50);
+}
 
 .gem-prose .gem-blog-callout {
   border-radius: 12px;

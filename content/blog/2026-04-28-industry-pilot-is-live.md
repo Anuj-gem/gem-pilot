@@ -23,9 +23,8 @@ directly through GEM.
 - **Direct contact.** When something fits their slate, they email you
   through GEM. Their identity is revealed in your inbox; their reply-to
   is their actual address.
-- **Slow start, real signal.** We're onboarding partners deliberately.
-  Stats and inbound will be modest at first — they grow as more
-  partners come on.
+- **Live engagement counts on your dashboard.** Views, interested,
+  passed — see what's happening on your scripts in real time.
 
 <div class="gem-blog-producer-action">
   <p class="gem-blog-mock-title" style="margin-bottom:14px">Producer view · your script</p>
@@ -69,23 +68,6 @@ directly through GEM.
   </div>
 </div>
 
-## 2. End-to-end privacy by default
-
-The other paradigm shift. **The public Discover page is gone.** Scripts
-are no longer browsable by strangers.
-
-- **Your report URL is private to you to share.** Send it to anyone you
-  want — agents, producers in your network, your writing group. Only
-  people with the link see your report.
-- **Industry visibility is opt-in and Pro-only.** Free reads stay
-  private end-to-end. Pro publishes you to the matched feed.
-- **Your contact info isn't exposed.** Industry partners never get
-  your email or phone. To start a conversation, they have to send a
-  note through GEM. Once you reply, they have your email — and you
-  take it from there.
-- **Live engagement counts on your dashboard.** Views, interested,
-  passed — see what's happening on your scripts in real time.
-
 <div class="gem-blog-mock">
   <p class="gem-blog-mock-title">Industry activity</p>
   <div class="gem-blog-stat-strip">
@@ -105,6 +87,21 @@ are no longer browsable by strangers.
     </div>
   </div>
 </div>
+
+## 2. End-to-end privacy by default
+
+The other paradigm shift. **The public Discover page is gone.** Scripts
+are no longer browsable by strangers.
+
+- **Your report URL is private to you to share.** Send it to anyone you
+  want — agents, producers in your network, your writing group. Only
+  people with the link see your report.
+- **Industry visibility is opt-in and Pro-only.** Free reads stay
+  private end-to-end. Pro publishes you to the matched feed.
+- **Your contact info isn't exposed.** Industry partners never get
+  your email or phone. To start a conversation, they have to send a
+  note through GEM. Once you reply, they have your email — and you
+  take it from there.
 
 ## 3. Selznick 3.8 — an entirely new evaluation model
 
@@ -128,7 +125,7 @@ rescore only updates the underlying read.
 
 <div class="gem-blog-grid-2">
   <div class="gem-blog-tile gem-blog-tile--smooth">
-    <p class="gem-blog-tile__label">Cost</p>
+    <p class="gem-blog-tile__label">Production</p>
     <p class="gem-blog-tile__value">Smooth</p>
   </div>
   <div class="gem-blog-tile gem-blog-tile--manageable">
@@ -139,17 +136,17 @@ rescore only updates the underlying read.
 
 <div class="gem-blog-mock">
   <p class="gem-blog-mock-title">Development considerations</p>
-  <div class="gem-blog-row">
+  <div class="gem-blog-row gem-blog-row--num">
     <p class="gem-blog-row__num">01</p>
     <p class="gem-blog-row__title">Tighten the second-act midpoint</p>
     <p class="gem-blog-row__meta">The sharpest lever — Tony's first crisis lands at p52, ten pages later than it should.</p>
   </div>
-  <div class="gem-blog-row">
+  <div class="gem-blog-row gem-blog-row--num">
     <p class="gem-blog-row__num">02</p>
     <p class="gem-blog-row__title">Clarify Carmela's arc in the back half</p>
     <p class="gem-blog-row__meta">Strong setup, less defined turn. A scene-level pass does it.</p>
   </div>
-  <div class="gem-blog-row">
+  <div class="gem-blog-row gem-blog-row--num">
     <p class="gem-blog-row__num">03</p>
     <p class="gem-blog-row__title">Trim the FBI subplot by ~6 pages</p>
     <p class="gem-blog-row__meta">Pulls focus from the family/crew triangulation that's actually working.</p>
@@ -164,12 +161,44 @@ version of your work you want to industry. More on that in
 ## 4. Enhanced privacy controls
 
 - **Per-section privacy.** Show or hide each section of your report
-  individually — score, Cast, Packaging, Project Complexity. Industry
-  partners only see what you choose.
+  individually — Why this is a hit, Cast, Packaging, Project
+  Complexity, Development considerations. Industry partners only see
+  what you choose.
 - **Score-eye toggle.** One tap to hide just the GEM Score from
   industry while keeping the rest visible.
 - **One-click unpublish.** Take your post off the matched feed at any
   time. Your report URL still works for anyone you've shared it with.
+
+<div class="gem-blog-mock">
+  <p class="gem-blog-mock-title">Privacy controls · your report</p>
+  <div class="gem-blog-privacy-row">
+    <span class="gem-blog-privacy-row__label">GEM Score</span>
+    <span class="gem-blog-pill gem-blog-pill--visible">Visible</span>
+  </div>
+  <div class="gem-blog-privacy-row">
+    <span class="gem-blog-privacy-row__label">Why this is a hit</span>
+    <span class="gem-blog-pill gem-blog-pill--visible">Visible</span>
+  </div>
+  <div class="gem-blog-privacy-row">
+    <span class="gem-blog-privacy-row__label">Cast</span>
+    <span class="gem-blog-pill gem-blog-pill--visible">Visible</span>
+  </div>
+  <div class="gem-blog-privacy-row">
+    <span class="gem-blog-privacy-row__label">Packaging</span>
+    <span class="gem-blog-pill gem-blog-pill--visible">Visible</span>
+  </div>
+  <div class="gem-blog-privacy-row">
+    <span class="gem-blog-privacy-row__label">Project Complexity</span>
+    <span class="gem-blog-pill gem-blog-pill--hidden">Hidden</span>
+  </div>
+  <div class="gem-blog-privacy-row">
+    <span class="gem-blog-privacy-row__label">Development considerations</span>
+    <span class="gem-blog-pill gem-blog-pill--hidden">Hidden</span>
+  </div>
+  <p style="font-size:11.5px;color:var(--gem-gray-500);margin:10px 0 0;text-align:center;font-style:italic">
+    Tap any pill to flip a section. Industry partners only see Visible.
+  </p>
+</div>
 
 ## 5. Enhanced downloads
 
