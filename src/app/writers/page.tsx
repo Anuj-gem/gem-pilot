@@ -446,84 +446,179 @@ function ProdFeedRow({
   )
 }
 
-// Producer-side script detail with Interested / Pass action buttons.
+// Producer-side script detail (Interested/Pass) → arrow → email-this-
+// writer preview. Tells the cause/effect: tap Interested, the email
+// writer surface opens. Mirrors the actual app flow on the producer
+// side without going overboard on detail.
 function ProducerDetailMock() {
   return (
-    <div
-      className="rounded-xl p-4"
-      style={{
-        background: '#fff',
-        border: '1px solid var(--gem-gray-700)',
-        boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
-      }}
-    >
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div className="min-w-0 flex-1">
-          <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-0.5">
-            From the producer&apos;s side
-          </p>
-          <p
-            className="text-[14px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
-            style={{ fontFamily: 'Georgia, serif' }}
-          >
-            Untitled mob therapy pilot
-          </p>
-        </div>
-        <span
-          className="shrink-0 text-[10.5px] font-bold px-2 py-1 rounded tabular-nums"
-          style={{
-            background: 'rgba(124,58,237,0.08)',
-            border: '1px solid rgba(124,58,237,0.25)',
-            color: 'var(--gem-gray-50)',
-          }}
-        >
-          78
-        </span>
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-3 sm:gap-2 items-stretch">
+      {/* Detail card */}
       <div
-        className="rounded-lg px-3 py-2 mb-3"
+        className="rounded-xl p-3.5 flex flex-col"
         style={{
-          background:
-            'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%)',
-          border: '1px solid rgba(212,160,23,0.30)',
+          background: '#fff',
+          border: '1px solid var(--gem-gray-700)',
+          boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
         }}
       >
-        <div
-          className="text-[8px] font-bold uppercase mb-0.5"
-          style={{ letterSpacing: '0.16em', color: '#92710f' }}
-        >
-          Headline
+        <div className="flex items-start justify-between gap-3 mb-2.5">
+          <div className="min-w-0 flex-1">
+            <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-0.5">
+              Producer view
+            </p>
+            <p
+              className="text-[12.5px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              Untitled mob therapy pilot
+            </p>
+          </div>
+          <span
+            className="shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded tabular-nums"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.25)',
+              color: 'var(--gem-gray-50)',
+            }}
+          >
+            78
+          </span>
         </div>
-        <p
-          className="text-[11.5px] font-semibold m-0 leading-[1.35] text-[var(--gem-gray-50)]"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          A mob boss in therapy races to hide panic attacks before family expose him.
-        </p>
-      </div>
-      <div className="flex gap-2">
-        <button
-          type="button"
-          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-semibold text-white"
-          style={{ background: '#16a34a', cursor: 'default' }}
-        >
-          <ThumbsUp size={12} />
-          Interested
-        </button>
-        <button
-          type="button"
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-semibold"
+        <div
+          className="rounded-lg px-2.5 py-1.5 mb-3"
           style={{
-            background: '#fff',
-            border: '1px solid var(--gem-gray-700)',
-            color: 'var(--gem-gray-300)',
+            background:
+              'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%)',
+            border: '1px solid rgba(212,160,23,0.30)',
+          }}
+        >
+          <p
+            className="text-[10.5px] font-semibold m-0 leading-[1.35] text-[var(--gem-gray-50)]"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            A mob boss in therapy races to hide panic attacks before family expose him.
+          </p>
+        </div>
+        <div className="flex gap-1.5 mt-auto">
+          <button
+            type="button"
+            className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded-lg text-[11px] font-semibold text-white"
+            style={{ background: '#16a34a', cursor: 'default' }}
+          >
+            <ThumbsUp size={11} />
+            Interested
+          </button>
+          <button
+            type="button"
+            className="inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold"
+            style={{
+              background: '#fff',
+              border: '1px solid var(--gem-gray-700)',
+              color: 'var(--gem-gray-400)',
+              cursor: 'default',
+            }}
+          >
+            <XIcon size={11} />
+            Pass
+          </button>
+        </div>
+      </div>
+
+      {/* Arrow connector — horizontal on desktop, vertical (down) on mobile */}
+      <div className="flex items-center justify-center px-1">
+        <svg
+          aria-hidden
+          className="hidden sm:block text-[var(--gem-gray-500)]"
+          width="28"
+          height="14"
+          viewBox="0 0 28 14"
+          fill="none"
+        >
+          <path
+            d="M2 7h22M18 2l5 5-5 5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <svg
+          aria-hidden
+          className="sm:hidden text-[var(--gem-gray-500)]"
+          width="14"
+          height="22"
+          viewBox="0 0 14 22"
+          fill="none"
+        >
+          <path
+            d="M7 2v18M2 14l5 5 5-5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {/* Email-this-writer preview */}
+      <div
+        className="rounded-xl p-3.5 flex flex-col"
+        style={{
+          background: '#fff',
+          border: '1px solid var(--gem-gray-700)',
+          boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
+        }}
+      >
+        <div className="flex items-center gap-1.5 mb-2.5">
+          <span
+            className="inline-flex items-center justify-center w-5 h-5 rounded-md"
+            style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}
+          >
+            <Mail size={11} />
+          </span>
+          <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
+            Email writer
+          </p>
+        </div>
+        <div className="space-y-1.5 mb-2.5">
+          <EmailRow label="To" value="anuj@gem.studio" />
+          <EmailRow label="Subject" value="Loved the mob therapy pilot — open to a chat?" />
+        </div>
+        <div
+          className="rounded-md px-2.5 py-2 text-[10.5px] text-[var(--gem-gray-300)] leading-[1.4] mb-3"
+          style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
+        >
+          Hi Anuj — read your pilot through Selznick. The Tony voice and the
+          family/crew triangulation are exactly the lane I&apos;m scouting.
+          Free to grab fifteen this week?
+        </div>
+        <button
+          type="button"
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-white mt-auto"
+          style={{
+            background: 'var(--gem-accent)',
             cursor: 'default',
           }}
         >
-          <XIcon size={12} />
-          Pass
+          Send email
+          <ArrowRight size={11} />
         </button>
       </div>
+    </div>
+  )
+}
+
+function EmailRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-baseline gap-2 text-[10px]">
+      <span
+        className="font-bold uppercase tracking-[0.14em] shrink-0"
+        style={{ color: 'var(--gem-gray-500)', minWidth: 38 }}
+      >
+        {label}
+      </span>
+      <span className="text-[var(--gem-gray-50)] truncate">{value}</span>
     </div>
   )
 }
