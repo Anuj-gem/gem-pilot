@@ -321,16 +321,27 @@ function FeedRow({
           </p>
         </div>
       </div>
-      <span
-        className="shrink-0 text-[12px] font-bold px-2.5 py-1 rounded-md tabular-nums"
-        style={{
-          background: 'rgba(124,58,237,0.08)',
-          border: '1px solid rgba(124,58,237,0.25)',
-          color: 'var(--gem-gray-50)',
-        }}
-      >
-        {score}
-      </span>
+      <div className="shrink-0 flex items-center gap-1.5">
+        <span
+          className="text-[11px] font-bold px-2.5 py-1 rounded leading-none"
+          style={{
+            background: 'var(--gem-accent)',
+            color: '#fff',
+          }}
+        >
+          ✓ Interested
+        </span>
+        <span
+          className="text-[11px] font-bold px-2.5 py-1 rounded leading-none"
+          style={{
+            background: '#fff',
+            color: 'var(--gem-gray-500)',
+            border: '1px solid var(--gem-gray-700)',
+          }}
+        >
+          × Pass
+        </span>
+      </div>
     </div>
   )
 }
