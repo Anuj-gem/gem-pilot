@@ -7,7 +7,7 @@
 
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { ArrowRight, Check, Eye, Clock, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, Eye, Clock, Sparkles, ThumbsUp, X as XIcon, Mail } from 'lucide-react'
 
 export const metadata = {
   title: 'For writers — GEM',
@@ -122,6 +122,37 @@ export default function WritersPage() {
               number="06"
               title="A GEM Score on the cover"
               body="One number for fast triage — but the substance is the report underneath. The score sits on the cover; the read is what you (and producers) actually use."
+            />
+          </div>
+        </Section>
+
+        {/* WHAT HAPPENS NEXT — show writers the matching loop end-to-end:
+            producer-side feed, producer-side mark Interested / Pass, then
+            writer-side stats. Demystifies what actually happens after the
+            read, which is the part most writers undersell when they hear
+            "AI script reader." Anuj 2026-04-28. */}
+        <Section eyebrow="What happens next" title="Producers find it. Mark interest. You see it all.">
+          <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-6 max-w-[64ch]">
+            The report isn&apos;t the end. Once your script qualifies, it lands
+            in the matched feed of producers and reps actively scouting your
+            lane. They mark Interested or Pass in one tap — and you see the
+            engagement live on your dashboard.
+          </p>
+          <div className="space-y-5">
+            <FlowCard
+              caption="They see your script in their lane"
+              body="Producers filter to their genre, format, and budget. Your script appears in the feed of every partner who matches."
+              visual={<ProducerFeedMock />}
+            />
+            <FlowCard
+              caption="One tap: Interested or Pass"
+              body="Each script opens to a full report. Interested moves the writer's script onto their slate; Pass closes the loop with an optional note."
+              visual={<ProducerDetailMock />}
+            />
+            <FlowCard
+              caption="You see it all happen"
+              body="Your dashboard shows live engagement — views, interested partners, who emailed you, who passed. No guessing whether the script is being read."
+              visual={<WriterActivityMock />}
             />
           </div>
         </Section>
@@ -306,6 +337,285 @@ function ProBullet({ children }: { children: React.ReactNode }) {
       </span>
       <span>{children}</span>
     </li>
+  )
+}
+
+// ─── "What happens next" mocks ───────────────────────────────────────
+function FlowCard({
+  caption,
+  body,
+  visual,
+}: {
+  caption: string
+  body: string
+  visual: React.ReactNode
+}) {
+  return (
+    <div
+      className="rounded-2xl p-5 sm:p-6 grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-5 md:gap-7 items-center"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+      }}
+    >
+      <div>
+        <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2" style={{ color: 'var(--gem-accent)' }}>
+          {caption}
+        </p>
+        <p className="text-[14.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
+          {body}
+        </p>
+      </div>
+      <div>{visual}</div>
+    </div>
+  )
+}
+
+// Producer-side feed showing the writer's script in their lane.
+function ProducerFeedMock() {
+  return (
+    <div
+      className="rounded-xl p-3.5"
+      style={{
+        background: 'var(--gem-gray-900)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <div className="flex items-center justify-between mb-3 pb-2.5" style={{ borderBottom: '1px solid var(--gem-gray-800)' }}>
+        <p className="text-[9.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
+          Producer feed · drama
+        </p>
+        <span className="text-[8.5px] italic" style={{ color: 'var(--gem-gray-500)' }}>demo</span>
+      </div>
+      <div className="space-y-2">
+        <ProdFeedRow title="Untitled mob therapy pilot" meta="Series · 1 hr drama" score="78" highlight />
+        <ProdFeedRow title="The Northern Line" meta="Series · 1 hr drama" score="74" />
+        <ProdFeedRow title="Glass Cathedral" meta="Series · 1 hr drama" score="71" />
+      </div>
+    </div>
+  )
+}
+
+function ProdFeedRow({
+  title,
+  meta,
+  score,
+  highlight = false,
+}: {
+  title: string
+  meta: string
+  score: string
+  highlight?: boolean
+}) {
+  return (
+    <div
+      className="rounded-lg px-3 py-2 flex items-center gap-2.5"
+      style={{
+        background: highlight ? 'rgba(124,58,237,0.06)' : '#fff',
+        border: highlight ? '1px solid rgba(124,58,237,0.30)' : '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2">
+          <p className="text-[12px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
+            {title}
+          </p>
+          {highlight && (
+            <span
+              className="text-[8px] font-bold uppercase tracking-wider px-1 py-[1px] rounded text-white"
+              style={{ background: 'var(--gem-accent)' }}
+            >
+              You
+            </span>
+          )}
+        </div>
+        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-tight">{meta}</p>
+      </div>
+      <span
+        className="shrink-0 text-[10.5px] font-bold px-1.5 py-0.5 rounded tabular-nums"
+        style={{
+          background: 'rgba(124,58,237,0.08)',
+          border: '1px solid rgba(124,58,237,0.25)',
+          color: 'var(--gem-gray-50)',
+        }}
+      >
+        {score}
+      </span>
+    </div>
+  )
+}
+
+// Producer-side script detail with Interested / Pass action buttons.
+function ProducerDetailMock() {
+  return (
+    <div
+      className="rounded-xl p-4"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
+      }}
+    >
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="min-w-0 flex-1">
+          <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-0.5">
+            From the producer&apos;s side
+          </p>
+          <p
+            className="text-[14px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            Untitled mob therapy pilot
+          </p>
+        </div>
+        <span
+          className="shrink-0 text-[10.5px] font-bold px-2 py-1 rounded tabular-nums"
+          style={{
+            background: 'rgba(124,58,237,0.08)',
+            border: '1px solid rgba(124,58,237,0.25)',
+            color: 'var(--gem-gray-50)',
+          }}
+        >
+          78
+        </span>
+      </div>
+      <div
+        className="rounded-lg px-3 py-2 mb-3"
+        style={{
+          background:
+            'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%)',
+          border: '1px solid rgba(212,160,23,0.30)',
+        }}
+      >
+        <div
+          className="text-[8px] font-bold uppercase mb-0.5"
+          style={{ letterSpacing: '0.16em', color: '#92710f' }}
+        >
+          Headline
+        </div>
+        <p
+          className="text-[11.5px] font-semibold m-0 leading-[1.35] text-[var(--gem-gray-50)]"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          A mob boss in therapy races to hide panic attacks before family expose him.
+        </p>
+      </div>
+      <div className="flex gap-2">
+        <button
+          type="button"
+          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-semibold text-white"
+          style={{ background: '#16a34a', cursor: 'default' }}
+        >
+          <ThumbsUp size={12} />
+          Interested
+        </button>
+        <button
+          type="button"
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-semibold"
+          style={{
+            background: '#fff',
+            border: '1px solid var(--gem-gray-700)',
+            color: 'var(--gem-gray-300)',
+            cursor: 'default',
+          }}
+        >
+          <XIcon size={12} />
+          Pass
+        </button>
+      </div>
+    </div>
+  )
+}
+
+// Writer-side activity dashboard — shows live engagement signals.
+function WriterActivityMock() {
+  return (
+    <div
+      className="rounded-xl p-4"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+        boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
+      }}
+    >
+      <p className="text-[9.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+        Industry activity
+      </p>
+      <div className="flex items-center gap-4 mb-4">
+        <ActivityStat label="Views" value="14" />
+        <span className="text-[var(--gem-gray-700)]">·</span>
+        <ActivityStat label="Interested" value="3" />
+        <span className="text-[var(--gem-gray-700)]">·</span>
+        <ActivityStat label="Passed" value="2" />
+        <span className="text-[var(--gem-gray-700)]">·</span>
+        <ActivityStat label="Emailed" value="2" />
+      </div>
+      <div className="space-y-1.5">
+        <ActivityRow name="Lena Park" company="Westview Pictures" status="reached out" />
+        <ActivityRow name="Marcus Hill" company="Lighthouse Studios" status="interested" />
+        <ActivityRow name="Priya Shah" company="Halcyon Films" status="passed" />
+      </div>
+    </div>
+  )
+}
+
+function ActivityStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <p className="text-[16px] font-bold tabular-nums m-0 leading-none text-[var(--gem-gray-50)]">
+        {value}
+      </p>
+      <p className="text-[9px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mt-1">
+        {label}
+      </p>
+    </div>
+  )
+}
+
+function ActivityRow({
+  name,
+  company,
+  status,
+}: {
+  name: string
+  company: string
+  status: 'reached out' | 'interested' | 'passed'
+}) {
+  const config =
+    status === 'reached out'
+      ? { Icon: Mail, color: 'var(--gem-accent)', bg: 'rgba(124,58,237,0.10)', label: 'Reached out' }
+      : status === 'interested'
+        ? { Icon: ThumbsUp, color: '#16a34a', bg: 'rgba(22,163,74,0.10)', label: 'Interested' }
+        : { Icon: XIcon, color: 'var(--gem-gray-500)', bg: 'var(--gem-gray-800)', label: 'Passed' }
+  const Icon = config.Icon
+  return (
+    <div
+      className="rounded-lg px-2.5 py-1.5 flex items-center gap-2"
+      style={{
+        background: 'var(--gem-gray-900)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <span
+        className="inline-flex items-center justify-center w-5 h-5 rounded-full shrink-0"
+        style={{ background: config.bg, color: config.color }}
+      >
+        <Icon size={10} />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="text-[11px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
+          {name}
+          <span className="text-[var(--gem-gray-400)] font-normal"> · {company}</span>
+        </p>
+      </div>
+      <span
+        className="shrink-0 text-[8.5px] font-bold uppercase tracking-wider px-1.5 py-[1px] rounded"
+        style={{ color: config.color, background: config.bg }}
+      >
+        {config.label}
+      </span>
+    </div>
   )
 }
 
