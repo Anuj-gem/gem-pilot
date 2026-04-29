@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:15:17.810Z",
+  "submission_id": "bf319d70-316d-480f-a69f-28a70f3b68c1",
+  "eval_id": "4c905e5b-2a2c-49cc-903e-4fd01918c107",
+  "title": "The Broken Mirror",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Bode",
+      "role_type": "Lead",
+      "demographics": "Male, 30s to 50s across the story, Nigerian, husband/father, professional class doctor/medical worker turned disgraced ex-employee and later executive."
+    },
+    {
+      "name": "Cynthia",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s to 50s across the story, Nigerian, wife, mother, working professional, later ill and estranged."
+    },
+    {
+      "name": "Shade",
+      "role_type": "Supporting",
+      "demographics": "Female, child to adult, Nigerian, twin daughter, later educated professional and family heir."
+    },
+    {
+      "name": "Joke",
+      "role_type": "Supporting",
+      "demographics": "Female, child to adult, Nigerian, twin daughter, later vengeful adult antagonist."
+    },
+    {
+      "name": "Esther",
+      "role_type": "Supporting",
+      "demographics": "Female, child to adult, Nigerian, school friend turned conspirator and business operator."
+    },
+    {
+      "name": "Emeka",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to 20s, Nigerian, suitor/husband, later victim."
+    },
+    {
+      "name": "Raheem",
+      "role_type": "Supporting",
+      "demographics": "Male, child to adult, Nigerian, schoolmate, observer, later witness and chronicler."
+    },
+    {
+      "name": "Ken",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s to 50s, Nigerian, lawyer and later husband."
+    },
+    {
+      "name": "Mrs. Funke Cole",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s to 70s, Nigerian, mother/grandmother figure."
+    }
+  ],
+  "positioning_hook": "A battered Nigerian wife and her twin daughters are pulled into a decades-spanning cycle of betrayal, revenge, and mistaken identity that ends in murder, inheritance, and ruin.",
+  "cost_usd": 0.04608975,
+  "input_tokens": 32839,
+  "output_tokens": 4769,
+  "status": "wrote:leads_ok"
+}

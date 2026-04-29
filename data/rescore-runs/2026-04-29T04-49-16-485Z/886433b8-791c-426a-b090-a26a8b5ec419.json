@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:14:57.023Z",
+  "submission_id": "886433b8-791c-426a-b090-a26a8b5ec419",
+  "eval_id": "05d8fe40-0311-4c62-ad0e-01b7f52fa49b",
+  "title": "the long walk to destiny 800 1 converted",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Maya Isaacs",
+      "role_type": "Lead",
+      "demographics": "Black South African female, ages 10-26 across the script; schoolgirl to young adult."
+    },
+    {
+      "name": "Samuel Isaacs",
+      "role_type": "Supporting",
+      "demographics": "Black South African male, 40s-60s; father figure, widower/divorced parent."
+    },
+    {
+      "name": "Craig",
+      "role_type": "Supporting",
+      "demographics": "Black South African male, late teens to early 20s."
+    },
+    {
+      "name": "Ms. Diana",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, 30s-50s; South African, authority figure, educator facade."
+    },
+    {
+      "name": "Van Brussels",
+      "role_type": "Supporting",
+      "demographics": "Adult male, older; wealthy businessman with disability."
+    },
+    {
+      "name": "Daniel Young",
+      "role_type": "Supporting",
+      "demographics": "Adult male, 20s-30s; educated, affluent, South African/American business heir."
+    },
+    {
+      "name": "Mama",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, 30s-50s; inmate, Nigerian."
+    },
+    {
+      "name": "Khadijah",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, 20s-40s; inmate, Muslim background."
+    },
+    {
+      "name": "Mercy",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, 20s-40s; inmate, Cameroonian."
+    },
+    {
+      "name": "Carr Singles",
+      "role_type": "Supporting",
+      "demographics": "Adult male, 20s-40s; police informant / criminal intermediary."
+    }
+  ],
+  "positioning_hook": "A Durban schoolgirl chasing the truth about her birth is groomed by a predatory youth cult, then must claw back her life after the people who promised destiny turn her into a criminal.",
+  "cost_usd": 0.06436575,
+  "input_tokens": 55479,
+  "output_tokens": 5057,
+  "status": "wrote:leads_ok"
+}

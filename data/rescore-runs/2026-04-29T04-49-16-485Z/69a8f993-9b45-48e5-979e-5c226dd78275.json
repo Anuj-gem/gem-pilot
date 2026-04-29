@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:11:45.187Z",
+  "submission_id": "69a8f993-9b45-48e5-979e-5c226dd78275",
+  "eval_id": "21de11c2-7d19-4ca1-bb00-69b7759e9b1f",
+  "title": "30 ROCK Will You Go To Lunch!",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Liz Lemon",
+      "role_type": "Lead",
+      "demographics": "Female, late 30s to early 40s, white, professional TV writer/producer."
+    },
+    {
+      "name": "Jack Donaghy",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 50s, white, corporate executive."
+    },
+    {
+      "name": "Tracy Jordan",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s to 40s, Black, celebrity performer."
+    },
+    {
+      "name": "Jenna Maroney",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s to 40s, white, performer/actress."
+    },
+    {
+      "name": "Kenneth Parcell",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 30s, white, page/assistant."
+    },
+    {
+      "name": "Dot.Com",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 30s, Black, assistant/entourage member."
+    },
+    {
+      "name": "Leo Spaceman",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 60s, white, doctor."
+    },
+    {
+      "name": "Angie Jordan",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s to 40s, Black, Tracy’s wife."
+    },
+    {
+      "name": "Secretary",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s to 40s, office staff."
+    },
+    {
+      "name": "Jenna's flashback cool guy",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 30s, white, teen/young adult in flashback."
+    }
+  ],
+  "positioning_hook": "At a network sitcom party, Jack Donaghy spirals into Mamet-obsessed mania while Liz, Tracy, Jenna, and Kenneth scramble to keep the show — and Tracy’s sanity — from collapsing.",
+  "cost_usd": 0.03885975,
+  "input_tokens": 22143,
+  "output_tokens": 4945,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T05:17:59.191Z",
+  "submission_id": "6728d9a4-4ef2-40e3-af60-3f88534ec293",
+  "eval_id": "8543f7a1-c0d7-40c7-9c7b-89afea48786e",
+  "title": "the christian matrix 4 4 1 converted",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Grant",
+      "role_type": "Lead",
+      "demographics": "Adult male, father, widower, Christian believer."
+    },
+    {
+      "name": "Adam",
+      "role_type": "Supporting",
+      "demographics": "Teen male, early teens, Christian student."
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Supporting",
+      "demographics": "Teen male, mid-teens, Christian student."
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Adult male, church member, evangelically minded."
+    },
+    {
+      "name": "Ken",
+      "role_type": "Supporting",
+      "demographics": "Adult male, criminal background, neighborhood outsider."
+    },
+    {
+      "name": "Ms. Sandra",
+      "role_type": "Supporting",
+      "demographics": "Adult female, mother, caregiver."
+    },
+    {
+      "name": "Frank",
+      "role_type": "Supporting",
+      "demographics": "Adult male, HIV/AIDS patient, son."
+    },
+    {
+      "name": "Sanjay",
+      "role_type": "Supporting",
+      "demographics": "Adult male, writer, public figure."
+    },
+    {
+      "name": "Pastor Matthew",
+      "role_type": "Supporting",
+      "demographics": "Adult male, pastor, church leader."
+    },
+    {
+      "name": "Kendrick",
+      "role_type": "Supporting",
+      "demographics": "Young adult male, son, church member, student."
+    },
+    {
+      "name": "Brother Wisdom",
+      "role_type": "Supporting",
+      "demographics": "Adult male, church teacher, youth leader."
+    },
+    {
+      "name": "Daniel",
+      "role_type": "Supporting",
+      "demographics": "Adult male, apostolic believer."
+    },
+    {
+      "name": "James",
+      "role_type": "Supporting",
+      "demographics": "Adult male, church worker, recovering alcoholic."
+    }
+  ],
+  "positioning_hook": "A series of faith-testimony vignettes follows pastors, parents, and converts as prayer, scripture, and public witness collide with family crises, illness, addiction, and church politics.",
+  "cost_usd": 0.04219875,
+  "input_tokens": 26637,
+  "output_tokens": 4938,
+  "status": "wrote:leads_ok"
+}

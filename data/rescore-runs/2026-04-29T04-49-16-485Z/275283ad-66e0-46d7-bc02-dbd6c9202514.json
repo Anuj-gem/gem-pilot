@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-04-29T05:12:42.641Z",
+  "submission_id": "275283ad-66e0-46d7-bc02-dbd6c9202514",
+  "eval_id": "f9d20366-9fcc-4b35-9e33-e423a61f175c",
+  "title": "Darkness Falls",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 1,
+  "lead_characters_summary": [
+    {
+      "name": "Rex Stevens",
+      "role_type": "Lead",
+      "demographics": "Male, late 30s to 50s, white, working-class-to-middle-class, author, phobia-driven"
+    }
+  ],
+  "positioning_hook": "A bestselling mystery novelist with nyctophobia gets stranded at dusk on a deserted highway, and every mile of his breakdown turns the dark into a predator.",
+  "cost_usd": 0.0313005,
+  "input_tokens": 20572,
+  "output_tokens": 3527,
+  "status": "wrote:leads_ok"
+}

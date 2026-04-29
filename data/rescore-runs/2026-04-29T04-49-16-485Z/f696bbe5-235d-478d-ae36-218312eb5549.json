@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T05:14:40.191Z",
+  "submission_id": "f696bbe5-235d-478d-ae36-218312eb5549",
+  "eval_id": "dbaba4eb-3168-45b9-8590-81f1eac996a9",
+  "title": "Mama Squad",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Sergeant Waldo",
+      "role_type": "Lead",
+      "demographics": "Male, older adult, U.S. Army sergeant first class, working-class, white"
+    },
+    {
+      "name": "Maude",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, resident of Sunnyside Home"
+    },
+    {
+      "name": "Gladys",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, resident of Sunnyside Home"
+    },
+    {
+      "name": "Wanda",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, resident of Sunnyside Home, cane user"
+    },
+    {
+      "name": "Pauline",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, resident of Sunnyside Home, heavy drinker"
+    },
+    {
+      "name": "Hilda",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, wheelchair user, resident of Sunnyside Home"
+    }
+  ],
+  "positioning_hook": "A retired Army sergeant recruits a scrappy crew of elderly women into a fake commando unit, then has to turn their joke into a real rescue mission when a foreign dictator takes American hostages.",
+  "cost_usd": 0.05409075,
+  "input_tokens": 45283,
+  "output_tokens": 4473,
+  "status": "wrote:leads_ok"
+}

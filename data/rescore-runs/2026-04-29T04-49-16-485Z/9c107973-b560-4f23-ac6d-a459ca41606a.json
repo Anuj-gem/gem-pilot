@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T05:13:22.729Z",
+  "submission_id": "9c107973-b560-4f23-ac6d-a459ca41606a",
+  "eval_id": "ec8522ad-1f98-443d-971a-e9b9bc377a24",
+  "title": "LOPEZ",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Lopez",
+      "role_type": "Lead",
+      "demographics": "Male, late teens to late 20s, Cuban, working-class/farm background."
+    },
+    {
+      "name": "Silvia",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, Cuban, tied to the criminal underworld through Don Martez."
+    },
+    {
+      "name": "Jose",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Cuban, Lopez’s closest friend and eventual right hand."
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Cuban, Lopez’s friend and early partner in the scheme."
+    },
+    {
+      "name": "Don Martez",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, Cuban, local criminal boss."
+    },
+    {
+      "name": "Manuel",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, Cuban, criminal operator and eventual rival."
+    },
+    {
+      "name": "Uncle",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-60s, Cuban, Jose’s uncle and criminal mentor figure."
+    },
+    {
+      "name": "Conejo",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, Cuban, major criminal power broker."
+    },
+    {
+      "name": "El Gordo",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, Cuban, major trafficking figure."
+    },
+    {
+      "name": "Fransisco",
+      "role_type": "Supporting",
+      "demographics": "Male, older, Cuban, arms supplier and old-school fixer."
+    },
+    {
+      "name": "Tito",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, Cuban, Manuel’s trusted man."
+    },
+    {
+      "name": "Alejandro",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, Latin American, higher-level drug distributor."
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Cuban, waitress/bar presence in Santa Cruz."
+    }
+  ],
+  "positioning_hook": "A Havana farm boy falls for a gangster’s girlfriend, then claws his way into the drug trade by outthinking the men who want him dead.",
+  "cost_usd": 0.05892225000000001,
+  "input_tokens": 45419,
+  "output_tokens": 5524,
+  "status": "wrote:leads_ok"
+}

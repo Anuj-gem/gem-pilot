@@ -1,0 +1,378 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_secondary": [
+        "Sci-Fi",
+        "Fantasy"
+      ],
+      "tone": "irreverent",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "high-concept",
+        "feature-anchored",
+        "propulsive",
+        "character-driven",
+        "identity",
+        "faith",
+        "time-travel",
+        "jesus"
+      ]
+    },
+    "positioning_hook": "A washed-up Vegas astronaut gets stranded in 33 A.D. Nazareth and must help Jesus survive Friday while a rogue time machine turns the crucifixion into a last-minute stage illusion.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly pitchable and the comedy engine is broad: a modern, vain astronaut colliding with the Jesus story gives the script a clear hook for genre buyers and word-of-mouth curiosity. The ceiling is higher than a niche indie because the concept is legible in one sentence, but the religious satire angle will naturally narrow some buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands immediately: Sky is stranded in Nazareth after the MK-1 wormhole jump, and the script quickly frames the central pressure around Jesus' impending crucifixion. The premise is easy to explain in two sentences and the story keeps returning to that core engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sky has a strong vanity-to-virtue arc, and Jesus is written as playful, charismatic, and unexpectedly human, which gives the central pairing real appeal. The supporting cast is vivid, but the script is still primarily powered by the Sky/Jesus dynamic rather than a deep bench of equally durable characters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script takes a very specific swing: a time-travel comedy that reimagines the crucifixion as a showbiz illusion and treats the Bible as a pop-culture ecosystem. That combination of Vegas performance DNA, sci-fi accident, and irreverent biblical worldbuilding is unusually confident."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story moves with real momentum once Sky lands in Nazareth, and the escalating deadline toward Friday gives the second half a clean engine. The middle is episodic by design, but the set pieces keep resetting the stakes and the final stage-plan gives the climax a satisfying forward drive."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script feels fresh because the joke is not just that Jesus is in the story, but that the story becomes about how myth, commerce, and performance get manufactured in real time. The idea of the first Christian iconography emerging from a literal stage illusion is both surprising and structurally inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Nazareth is rendered with a lot of playful social texture: the apostles as a publishing house, Pilate as a political operator, Caiaphas as a shadowy power broker, and the crowd as an early fandom. The world is specific and story-generating, though it is more a comic playground than a deeply layered dramatic system."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very distinct comic register: irreverent, bawdy, pop-culture-savvy, and strangely earnest underneath the blasphemy. The tonal blend of Vegas swagger, biblical anachronism, and sincere friendship is hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the jokes, the script is about fame, faith, authorship, and the way stories outlive the people inside them, which gives it more depth than a simple spoof. That said, the emotional material is kept in service of the comic engine, so the deeper layer is present but not fully mined."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Sky and Jesus are a strong two-hander, and the apostles, Rachel, Julia, Pilate, Judas, and Caiaphas all create usable relational friction. The ensemble is not as generative as a classic workplace or family engine, but there is enough recurring interplay to keep scenes alive beyond the lead."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Sky Walker",
+        "role_type": "Lead",
+        "demographics": "Male, 30, white, American, former NASA astronaut turned washed-up Vegas celebrity.",
+        "hook": "A cocky, self-mythologizing astronaut who never got the glory he expected, Sky is equal parts wounded ego and genuine boyish wonder. He starts as a fame-hungry fraud who loves the sound of his own legend, then gets forced into actual sacrifice when he realizes the story he wants to own is bigger than him.",
+        "why_actor_wants_this": "This is the showcase territory of Ryan Gosling in The Nice Guys or Robert Downey Jr. in Kiss Kiss Bang Bang — fast-talking vanity with real emotional bruising underneath, plus a redemption arc that lets the actor play comedy, panic, and sincerity in the same role."
+      },
+      {
+        "name": "Jesus Rosenberg",
+        "role_type": "Supporting",
+        "demographics": "Male, 33, Jewish, carpenter, charismatic, physically fit, romantic lead energy.",
+        "hook": "This Jesus is magnetic, funny, sensual, and far more self-aware than Sky expects, which is what makes him such a strong comic counterweight. He is not written as a solemn icon but as a man trying to do good, protect his love life, and survive the machinery of his own legend.",
+        "why_actor_wants_this": "This is the kind of role that gave Joaquin Phoenix in Her or Andrew Garfield in The Social Network a chance to be charming, wounded, and unexpectedly modern — a famous figure played as a living, breathing person with wit and romantic tension."
+      },
+      {
+        "name": "Rachel",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s, Jewish, Nazareth local, Jesus' older sister.",
+        "hook": "Rachel is the script’s sharpest female skeptic: funny, observant, and not remotely impressed by the mythology around her brother. She wants a life beyond the town and becomes the one person who can challenge Sky without being seduced by his mythology.",
+        "why_actor_wants_this": "This is the kind of smart, dry, scene-stealing role that gave Jennifer Jason Leigh in The Hateful Eight or Allison Janney in I, Tonya a chance to dominate scenes with precision and bite."
+      },
+      {
+        "name": "Julia",
+        "role_type": "Supporting",
+        "demographics": "Female, 30, Roman, Pilate's daughter, secret lover of Jesus.",
+        "hook": "Julia is the forbidden-romance pressure point in the story, and she gives Jesus a private life that collides with his public destiny. She is romantic, impulsive, and structurally important because her relationship with Jesus helps force the political and emotional stakes into the open.",
+        "why_actor_wants_this": "This is the kind of lush, emotionally charged supporting role that gave Rachel Weisz in The Favourite or Emilia Clarke in Me Before You a chance to play desire, defiance, and vulnerability in a highly visible lane."
+      },
+      {
+        "name": "Pilate",
+        "role_type": "Supporting",
+        "demographics": "Male, 60, Roman governor, political operator.",
+        "hook": "Pilate is less a villain than a weary power broker trying to keep the peace while his personal and political life collapse around him. He has comic menace, bureaucratic frustration, and a surprising capacity to bend when the emotional stakes get personal.",
+        "why_actor_wants_this": "This is the kind of role that gave Ralph Fiennes in The Grand Budapest Hotel or Stanley Tucci in Spotlight a chance to play authority with wit, vanity, and controlled irritation."
+      },
+      {
+        "name": "Caiaphas",
+        "role_type": "Supporting",
+        "demographics": "Male, 70, Jewish high priest, shadowy political antagonist.",
+        "hook": "Caiaphas is the story’s theatrical pressure valve: a lurking, hyperbolic power figure who appears like a punchline and a threat at the same time. He gives the script a comic villain with real institutional leverage.",
+        "why_actor_wants_this": "This is the kind of deliciously nasty supporting role that gave Christoph Waltz in Django Unchained or Ben Mendelsohn in Rogue One a chance to make every entrance count."
+      },
+      {
+        "name": "Judas",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s, Jewish, jealous rival, political hanger-on.",
+        "hook": "Judas is a resentful, breathless antagonist whose grievance is both personal and absurdly petty, which makes him funny and dangerous at once. He is the script’s most overt betrayal engine and the one who turns the story from romantic farce into public crisis.",
+        "why_actor_wants_this": "This is the kind of volatile, scene-chewing role that gave Jesse Plemons in Game Night or Walton Goggins in The Hateful Eight a chance to play menace with comic timing."
+      },
+      {
+        "name": "Mary",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, Jewish, Jesus' mother.",
+        "hook": "Mary is warm, grounded, and quietly hilarious, with a maternal authority that keeps the household human. She gives the story emotional ballast and a domestic reality that makes the myth feel lived-in.",
+        "why_actor_wants_this": "This is the kind of role that gave Frances McDormand in Almost Famous or Laurie Metcalf in Lady Bird a chance to be funny, loving, and emotionally exact without overplaying the sentiment."
+      },
+      {
+        "name": "Joseph",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, Jewish, carpenter, father figure.",
+        "hook": "Joseph is practical, dry, and deeply rooted in the physical world, which makes him a useful comic foil to the script’s more cosmic ideas. He also carries the father-son emotional thread that keeps Jesus from becoming purely mythic.",
+        "why_actor_wants_this": "This is the kind of grounded, quietly authoritative role that gave Brian Cox in Succession or Richard Jenkins in The Shape of Water a chance to bring weight and warmth without stealing the movie."
+      },
+      {
+        "name": "Toby",
+        "role_type": "Supporting",
+        "demographics": "Male, 30, Las Vegas entrepreneur, hustler.",
+        "hook": "Toby is the fast-talking Vegas operator who sees Sky as a brand before anyone else does. He’s a useful comic mirror for the movie’s theme of turning people into products.",
+        "why_actor_wants_this": "This is the kind of slick, opportunistic supporting role that gave Paul Rudd in Anchorman or Jason Bateman in Horrible Bosses a chance to weaponize charm."
+      },
+      {
+        "name": "Vivian Goodwell",
+        "role_type": "Supporting",
+        "demographics": "Female, 60, NASA legend, mission director.",
+        "hook": "Vivian is the institutional authority Sky both worships and resents, and she functions as the adult in the room when his ego starts to outrun reality. She has the gravitas of a legend and the impatience of someone who has seen too much nonsense.",
+        "why_actor_wants_this": "This is the kind of prestige authority role that gave Viola Davis in Air or Meryl Streep in The Devil Wears Prada a chance to command the room with minimal screen time."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child lead in the opening and one baby implied in the ending",
+          "Jesus must play charismatic, physically credible, and comic",
+          "Sky requires a performer who can sell vanity, panic, and sincerity",
+          "Ensemble includes multiple age-specific supporting roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "hybrid: contemporary Vegas opening and ancient biblical period",
+        "notable_requirements": [
+          "Vegas Strip and convention-center exteriors",
+          "Nazareth village build or controlled period location work",
+          "Barn, square, tavern, Pilate office, apostles' hangout, field, and crucifixion-stage setup"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Wormhole jump, time-machine arrival/disappearance, glowing Knight Light effect, and a few stylized illusion beats; mostly contained and practical-looking.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical stage illusion, crowd reactions, blood makeup, cross reveal, and a few physical scuffles.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "NASA"
+        },
+        {
+          "type": "brand",
+          "detail": "Star Wars"
+        },
+        {
+          "type": "brand",
+          "detail": "Star Trek"
+        },
+        {
+          "type": "brand",
+          "detail": "Mortal Kombat"
+        },
+        {
+          "type": "brand",
+          "detail": "Super Bowl"
+        },
+        {
+          "type": "brand",
+          "detail": "Elon Musk"
+        },
+        {
+          "type": "brand",
+          "detail": "Bono"
+        },
+        {
+          "type": "brand",
+          "detail": "South Park"
+        },
+        {
+          "type": "brand",
+          "detail": "Wrath of Khan"
+        },
+        {
+          "type": "brand",
+          "detail": "The Adventures of Jesus"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-comedy lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a streaming-first or specialty theatrical comedy with adult-skewing marketing."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The opening Vegas material is contained, but the biblical-period world requires a built Nazareth environment, crowd scenes, and a staged crucifixion finale with practical illusion work."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Sky and Jesus both need highly specific comic timing, and the movie lives or dies on the chemistry between them; Rachel, Julia, Pilate, and Caiaphas also need actors who can play straight through the absurdity."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s satire depends on balancing irreverence with sincerity, especially in the second half when the story shifts from time-travel farce into crucifixion mechanics and myth-making."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Bill & Ted's Excellent Adventure",
+          "year": 1989,
+          "why_it_comps": "A time-displaced buddy comedy built around a modern slacker colliding with history, with the same easy-to-pitch fish-out-of-water engine."
+        },
+        {
+          "title": "The Life of Brian",
+          "year": 1979,
+          "why_it_comps": "Religious satire that plays the sacred material through absurdity while still treating the world and its characters with enough seriousness to land the comedy."
+        },
+        {
+          "title": "The Last Temptation of Christ",
+          "year": 1988,
+          "why_it_comps": "Not in tone, but in the way it humanizes Jesus and centers the tension between destiny, desire, and public myth."
+        },
+        {
+          "title": "The Adjustment Bureau",
+          "year": 2011,
+          "why_it_comps": "A high-concept romance/fate story where a larger cosmic system collides with a personal love story and a ticking deadline."
+        },
+        {
+          "title": "Jojo Rabbit",
+          "year": 2019,
+          "why_it_comps": "A taboo-adjacent comedy that uses a childlike or outsider perspective to make a dangerous historical world feel emotionally accessible."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like irreverent high-concept comedies with a pop-culture edge and a sincere emotional spine.",
+        "demographics": "18-49 skew, slightly male-leaning but playable to couples and genre-comedy fans; strongest with viewers who like smart, blasphemous, quote-heavy comedy.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A modest ensemble, limited VFX, and a mix of contemporary Vegas and controlled biblical-period sets keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "irreverent high-concept indie comedy",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-comedy execs",
+          "specialty theatrical distributors",
+          "producer-financed indie comedy shops",
+          "director-driven buyers looking for a bold calling-card feature"
+        ],
+        "detail": "This sits naturally with buyers who want a conversation-starting comedy that can be sold on premise alone but still has enough character work to feel like more than a sketch. The biblical setting gives it a built-in marketing angle, while the Vegas opener and time-travel device keep it from feeling like a straight religious parody."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The premise is self-contained, and the supporting characters are vivid but not built as spinoff anchors."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is a one-sentence sell.",
+          "what_it_means": "That makes the script easy to package, easy to market, and easy for a buyer to understand in a single meeting. It is the kind of concept that can get a read off the logline alone from streamer comedy execs and indie financiers alike.",
+          "evidence": "Sky falls through a wormhole into 33 A.D. Nazareth and has to help Jesus survive the week.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sky has a real arc, not just a gimmick.",
+          "what_it_means": "The movie gives an actor a vanity-to-sacrifice transformation, which is the kind of role that can elevate a mid-career comic lead into a more durable star vehicle. That is attractive to performers looking for a showcase that is funny first but still emotionally legible.",
+          "evidence": "He starts as a glory-chasing astronaut and ends up risking his life to save Jesus and preserve the story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jesus is written as a person, not a statue.",
+          "what_it_means": "That humanization gives the movie a fresh angle on familiar material and makes the role playable rather than reverential. It also broadens the casting conversation because the part wants charisma, wit, and romantic heat more than solemnity.",
+          "evidence": "Jesus jokes, flirts, argues, gets jealous, and worries about Julia and the stories being written about him.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The biblical world is treated like a living media ecosystem.",
+          "what_it_means": "That gives the script a commercial moat: the story is not just about events, but about how stories become canon, merchandise, and public belief. Buyers can see the marketing hook in the apostles as publishers and the crowd as an early fandom.",
+          "evidence": "The apostles are selling 'The Adventures of Jesus' as illustrated booklets and the crowd treats them like sacred collectibles.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax turns myth into stagecraft.",
+          "what_it_means": "That finale gives the movie a clean visual payoff and ties the Vegas illusionist opening directly to the biblical ending, which is elegant commercial design. It also gives the production a contained, achievable climax instead of a VFX blowout.",
+          "evidence": "Joseph builds a crucifixion stage and the Knight Light makes Jesus appear to ascend in a burst of light.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a high-concept comedy with a real packaging edge: a clean logline, a contained feature footprint, and a lead role that can launch or reframe a comic actor. The script’s best commercial trick is that its biggest set piece is also its cheapest-looking one — a stage illusion that turns the crucifixion into a finale buyers can actually imagine financing."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The satire will be a buyer filter.",
+          "detail": "The script is built around irreverent biblical comedy, including repeated blasphemous jokes, sexual banter, and a very loose relationship to sacred iconography. That is a real positioning strength for some buyers, but it will immediately narrow the field to platforms and distributors comfortable with religious provocation.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle runs on episodic set pieces.",
+          "detail": "Once Sky lands in Nazareth, the movie moves through a sequence of comic encounters — the apostles, the bakery, the lake, the Pilate/Judas machinery — that are fun individually but less obviously cumulative than the premise. Buyers will notice that the propulsion depends on the charm of the scenes rather than a hard external engine until the crucifixion deadline reasserts itself.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Sky and Jesus carry the whole movie.",
+          "detail": "The script has vivid supporting players, but the emotional and comic load sits overwhelmingly on the Sky/Jesus pairing. That is a strength when the chemistry lands, and a real casting dependency when it does not.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The brand references are clearance noise.",
+          "detail": "NASA, Star Wars, Star Trek, Mortal Kombat, the Super Bowl, Elon Musk, Bono, South Park, and Wrath of Khan are all used as shorthand in dialogue. None of them appear to be plot-critical, but they do create a legal pass and trademark-cleanup burden before production.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending depends on a very specific tonal balance.",
+          "detail": "The final stage-illusion crucifixion has to land as both a comic payoff and an emotional resolution, because the movie is asking the audience to accept a joke that also functions as the birth of a religion. That is a high-wire finish and the kind of thing buyers will read as either inspired or precarious depending on execution.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not the premise — it’s the buyer pool. This is a sharp, marketable concept with a contained production profile, but the religious satire, brand-clearance clutter, and chemistry-dependent two-hander make it a selective greenlight rather than a universal one."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 74,
+  "tier": "Optionable",
+  "inputTokens": 42391,
+  "outputTokens": 5316,
+  "cost": 0.055715249999999994,
+  "declaredFormat": "Feature film"
+}

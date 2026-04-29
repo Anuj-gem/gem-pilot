@@ -1,0 +1,462 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Comedy",
+        "Crime"
+      ],
+      "tone": "darkly comic",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "feature-anchored",
+        "character-driven",
+        "propulsive",
+        "crime",
+        "identity",
+        "relationship-density",
+        "los-angeles",
+        "serial-killer",
+        "acting-world"
+      ]
+    },
+    "positioning_hook": "A struggling hot actor becomes the prime suspect when every woman he dates turns up murdered, forcing him to outwit a serial killer and a hostile detective before Hollywood brands him guilty.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and easy to sell: a handsome actor, a serial-killer frame job, and a Hollywood-adjacent dating pool. The audience is clear, though the adult, R-rated sexual and crime material keeps it in a narrower lane than a four-quadrant thriller."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly with Erika's murder, then sharpens when Jericho realizes every woman he has dated is ending up dead. The script keeps returning to that central engine through the police suspicion, the social-media trail, and the final reveal with Zoe."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jericho is a strong lead because he is vain, funny, needy, and genuinely vulnerable at once, which gives the role range. Ben, Nikki, Courtney, Valerie, and the detectives all have enough personality to support the ride, but Jericho is still carrying most of the weight."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script has a fresh comic-crime angle by making the dating life of an aspiring actor the murder trail. The boldness comes from the self-aware industry jokes, the social-media mechanics, and the way the police procedural is filtered through a shallow-but-charming protagonist."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps escalating with each new death, each new suspect, and each new step toward Jericho becoming the cops' target. The middle section does repeat the same pattern of date, murder, suspicion, and investigation, but the momentum stays active because the stakes keep tightening."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a pretty-boy actor being both the romantic lead and the serial-killer magnet is immediately ownable. It feels fresh because the joke and the danger are fused into the same premise rather than layered on top of each other."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The acting, audition, agent, streamer, comic, and low-rent LA apartment ecosystem gives the script a usable social world. It is not sprawling, but it is specific enough that the murders feel embedded in a recognizable creative-class scene."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistent in its mix of horny banter, industry satire, and murder-mystery tension. The script knows what kind of movie it is, and the repeated jokes about scripts, casting, and dating give it a distinct register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "The surface engine is strong, but the script is mostly playing the premise straight rather than opening deeper thematic layers. Jericho's insecurity and the police bias suggest more underneath, yet the movie is primarily built to move rather than to reveal."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jericho and Ben have a reliable comic engine, and the detectives create a second strong dynamic on the other side of the case. The supporting women are vivid, but most relationships are functional to the plot rather than generating lots of independent story energy."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jericho Hardcastle",
+        "role_type": "Lead",
+        "demographics": "Male, early 20s, white, aspiring actor, working-class background",
+        "hook": "A vain, charming, underemployed actor with a ridiculous name and just enough self-awareness to know he is not as special as he thinks he is. Jericho is all surface confidence until the murders turn his dating life into evidence, and then the movie becomes a test of whether his ego can survive being treated like a killer.",
+        "why_actor_wants_this": "This is the showcase territory of Glen Powell in a sharp studio comedy-thriller or Ryan Reynolds in his more self-mocking mode: a handsome lead who gets to weaponize charm, panic, and wounded vanity in the same role. The part gives an actor constant banter, physical jeopardy, and the rare chance to play both the joke and the target of the joke."
+      },
+      {
+        "name": "Ben Sanchez",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, Latino, writer, roommate",
+        "hook": "Jericho's roommate and creative conscience, a writer who is smarter than he looks and more grounded than Jericho deserves. Ben is the movie's pressure valve and reality check, but he also has enough comic bite and industry frustration to feel like a real person rather than a sidekick machine.",
+        "why_actor_wants_this": "This is the kind of role that gives a scene-stealer like Paul Walter Hauser or Michael Angarano a lot to do with very little screen time: fast dialogue, dry commentary, and the chance to be the smartest person in the room without ever becoming smug. It is a strong supporting turn for an actor who can make exposition feel like personality."
+      },
+      {
+        "name": "Logan Smith",
+        "role_type": "Supporting",
+        "demographics": "Male, mid 40s, white, agent, polished professional",
+        "hook": "Jericho's agent, a smooth operator who treats the business like a poker game and Jericho like a promising asset that still needs managing. Logan is funny because he is both supportive and transactional, which makes him feel like a real Hollywood gatekeeper rather than a stock mentor.",
+        "why_actor_wants_this": "This is the kind of role that lets a veteran character actor like Rob Corddry or David Krumholtz play authority with a grin. The appeal is the ability to deliver industry-savvy comedy while still carrying the subtext that he is always calculating the next move."
+      },
+      {
+        "name": "Nikki Patel",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 20s, South Asian, screenwriter",
+        "hook": "A sharp, skeptical writer who clocks Jericho immediately and has enough edge to make their chemistry feel earned. Nikki is one of the script's best examples of a woman who is not just a victim or a love interest; she has her own voice, her own career pressure, and her own comic rhythm.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor like Geraldine Viswanathan or Ayo Edebiri a quick, memorable showcase: intelligence, flirtation, and the ability to make a scene feel alive in a few exchanges. Even with limited screen time, the part has enough snap to register as a calling card."
+      },
+      {
+        "name": "Cinnamon",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 20s, exotic dancer, red-haired, sexually confident",
+        "hook": "A larger-than-life sex worker with a comic self-awareness and a hard-edged vulnerability under the performance. Cinnamon is written as a vivid, specific presence, and the movie uses her to sharpen both Jericho's appetite and the killer's pattern.",
+        "why_actor_wants_this": "This is the kind of role that can become a breakout scene for an actor willing to play glamour and danger at once, in the vein of a standout turn by someone like Juno Temple or Riley Keough. It offers boldness, humor, and a fast, memorable impression."
+      },
+      {
+        "name": "Denise Slater",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 30s, police detective, rookie partner",
+        "hook": "A competent rookie detective who is sharper than her partner gives her credit for and more skeptical of the easy narrative than the department around her. Denise gives the police side a human pulse and quietly becomes the audience's best proxy for common sense.",
+        "why_actor_wants_this": "This is strong supporting territory for someone like Jurnee Smollett or Auli'i Cravalho in a more grounded register: a role that gets to play intelligence, frustration, and moral clarity without being the loudest person in the room. The appeal is the slow accumulation of authority."
+      },
+      {
+        "name": "Alan James",
+        "role_type": "Supporting",
+        "demographics": "Male, mid 50s, homicide detective, white",
+        "hook": "A hard-charging detective who trusts his gut, leans on old-school instincts, and is willing to bulldoze procedure if he thinks he has the right guy. Alan is the script's best source of institutional pressure because he is not cartoonishly corrupt; he is just convinced enough to become dangerous.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran like Shea Whigham or Michael Shannon a lot of room to play menace, certainty, and procedural obsession. The showcase is the ability to make a cop feel both funny and threatening in the same scene."
+      },
+      {
+        "name": "Valerie Jane",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 20s, streamer, brunette, internet-famous",
+        "hook": "A polished online celebrity who understands branding, attention, and how to turn a date into content without losing control of the room. Valerie is one of the script's smartest modern touches because she feels like a real digital-age operator, not a generic influencer placeholder.",
+        "why_actor_wants_this": "This is a juicy contemporary role for someone like Haley Lu Richardson or Kathryn Newton: charismatic, media-savvy, and just slippery enough to keep the audience guessing. It gives an actor a chance to play charm as strategy."
+      },
+      {
+        "name": "Courtney Willis",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, Black, stand-up comic",
+        "hook": "A fast, funny comic with a sharp point of view and the kind of stage confidence that makes her instantly likable. Courtney brings the movie its most overtly performative energy, and her scenes help widen the world beyond Jericho's self-absorption.",
+        "why_actor_wants_this": "This is the kind of role that can pop for a comedian-actor like Ayo Edebiri, Quinta Brunson, or Zainab Johnson, because it lets the performer do actual stand-up energy inside a narrative feature. The showcase is timing, charisma, and the ability to make the audience wish there were more of her."
+      },
+      {
+        "name": "Zoe Walsh",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, actress, ex-girlfriend",
+        "hook": "Jericho's ex, whose resentment and ambition make her the most emotionally combustible figure in the movie. Zoe is the final reveal's emotional fuse, and the script gives her enough grievance and volatility to make the turn feel personal rather than arbitrary.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a late-film gear shift, similar to the kind of turn that can reframe a performer in a thriller. The appeal is the chance to go from wounded ex to full antagonist with real emotional specificity."
+      },
+      {
+        "name": "Taylor Werner",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s, ex-boyfriend, low-level producer",
+        "hook": "A jealous, knife-owning ex who initially reads as a plausible threat and then becomes part of the movie's misdirection machinery. Taylor is less textured than the best supporting players, but he functions cleanly as a pressure point in the final act.",
+        "why_actor_wants_this": "This is a compact, scene-based role for an actor who can project threat without overplaying it, the kind of part that lets someone like Jake Lacy or Josh Segarra make a quick impression. The showcase is controlled hostility."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Lead requires a handsome, charismatic actor who can play comic vanity and panic",
+          "Several supporting roles are age-specific 20s-50s",
+          "Police roles benefit from strong character-actor casting",
+          "No twins or special physical doubles required"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Los Angeles urban locations",
+          "Apartment interiors",
+          "Police station/interrogation room",
+          "Comedy club",
+          "Strip club parking lot",
+          "Mid-tier restaurant",
+          "Ranch home / town home exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical crime-scene and blood work; no major digital effects beyond occasional cleanup and possible camera/security monitor inserts.",
+        "stunts_level": "minor",
+        "sfx_needs": "Knife stabbings, blood effects, body aftermath, one vehicle hit-and-run style impact for Jericho, police gunfire in the finale.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "OnlyFans"
+        },
+        {
+          "type": "brand",
+          "detail": "Twitch"
+        },
+        {
+          "type": "brand",
+          "detail": "DoorDash"
+        },
+        {
+          "type": "brand",
+          "detail": "Facebook"
+        },
+        {
+          "type": "brand",
+          "detail": "CAA"
+        },
+        {
+          "type": "brand",
+          "detail": "TMZ"
+        },
+        {
+          "type": "brand",
+          "detail": "Script Revolution"
+        },
+        {
+          "type": "brand",
+          "detail": "AirPods"
+        },
+        {
+          "type": "brand",
+          "detail": "Uber"
+        },
+        {
+          "type": "brand",
+          "detail": "Comedy Store"
+        },
+        {
+          "type": "brand",
+          "detail": "Big Moon Entertainment"
+        },
+        {
+          "type": "brand",
+          "detail": "Nicholl"
+        },
+        {
+          "type": "brand",
+          "detail": "SAG"
+        },
+        {
+          "type": "brand",
+          "detail": "Mickey's"
+        },
+        {
+          "type": "brand",
+          "detail": "Beverly"
+        },
+        {
+          "type": "brand",
+          "detail": "West Hollywood"
+        },
+        {
+          "type": "brand",
+          "detail": "405"
+        },
+        {
+          "type": "brand",
+          "detail": "Vin Diesel"
+        },
+        {
+          "type": "brand",
+          "detail": "Brad Pitt"
+        },
+        {
+          "type": "brand",
+          "detail": "Bill Burr"
+        },
+        {
+          "type": "brand",
+          "detail": "Mugsy Bogues"
+        },
+        {
+          "type": "brand",
+          "detail": "Dikembe Mutombo"
+        },
+        {
+          "type": "brand",
+          "detail": "Rambo"
+        },
+        {
+          "type": "brand",
+          "detail": "Muppets"
+        },
+        {
+          "type": "brand",
+          "detail": "Batman"
+        },
+        {
+          "type": "brand",
+          "detail": "Romeo & Juliet"
+        },
+        {
+          "type": "brand",
+          "detail": "Shakespeare"
+        },
+        {
+          "type": "brand",
+          "detail": "Castlevania"
+        },
+        {
+          "type": "brand",
+          "detail": "Summoning Salt"
+        },
+        {
+          "type": "brand",
+          "detail": "DC Sniper"
+        },
+        {
+          "type": "brand",
+          "detail": "OnlyFans"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a streamer original or specialty theatrical thriller with a strong marketing hook."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary LA, mostly apartments, offices, streets, bars, and a handful of night exteriors; the main spend is blood work, police scenes, and night coverage rather than scale."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Jericho has to carry charm, vanity, comic timing, and genuine fear, while the detectives and women around him need to feel specific enough that the dating trail stays alive."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear, but the movie leans on a repeated date-to-murder pattern and a late reveal that depends on Zoe's grievance landing as more than a twist."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Nice Guys",
+          "year": 2016,
+          "why_it_comps": "The banter-forward crime engine and LA-specific texture make this feel like a cousin in tone, with comedy and danger sharing the same frame."
+        },
+        {
+          "title": "Game Night",
+          "year": 2018,
+          "why_it_comps": "It shares the clean commercial trick of turning a social situation into a life-or-death mystery while keeping the jokes active."
+        },
+        {
+          "title": "The Blackening",
+          "year": 2022,
+          "why_it_comps": "The script has the same self-aware, pop-culture-savvy comic rhythm and a premise that can be sold in one sentence."
+        },
+        {
+          "title": "I Care a Lot",
+          "year": 2020,
+          "why_it_comps": "The movie's appeal comes from a morally slippery protagonist trapped in a system that starts treating him like the villain."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like sexy, fast-moving crime comedies with a strong hook and a lead who can talk his way into and out of trouble.",
+        "demographics": "18-49 skew, slightly male-leaning but with real female appeal through the dating, industry, and true-crime angles; strongest with streaming audiences and genre fans.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest stunt work, practical blood effects, and a cast that can be built around one bankable lead keep this in indie feature territory."
+      },
+      "lane_fit": {
+        "lane": "streamer-friendly elevated crime comedy-thriller",
+        "types_of_buyers": [
+          "streaming originals execs building a male-skewing genre slate",
+          "specialty theatrical buyers looking for a high-concept crowd-pleaser",
+          "indie financiers who like contained LA-set commercial hooks",
+          "production companies that package actor-forward genre vehicles",
+          "buyers seeking a mid-budget thriller with comedy lift"
+        ],
+        "detail": "This sits in the lane where a charismatic lead, a clean premise, and a contained production footprint can all be sold together. The script has enough sex, danger, and industry satire to feel current without requiring tentpole scale."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the premise is strongest as a one-off escalation of Jericho's dating life into a murder mystery, not as a franchise engine."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "That gives the project a real marketing advantage because the buyer can understand the movie in one breath and immediately see the trailer. It is the kind of hook that can attract streamer buyers, genre financiers, and an actor looking for a clean commercial swing.",
+          "evidence": "Jericho dates women who then turn up dead, and the police start treating him like the common denominator.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jericho is a usable star vehicle.",
+          "what_it_means": "The lead role has vanity, panic, charm, and humiliation, which is exactly the mix that can reset how an actor is perceived. That makes the script attractive to mid-career movie stars and rising leads who want a showcase with comic and dramatic range.",
+          "evidence": "His audition nerves, his DoorDash side hustle, his self-conscious texting, and his meltdown under interrogation all build a specific persona.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The LA industry world feels lived-in.",
+          "what_it_means": "The acting, agent, streamer, comic, and audition material gives the movie a contemporary ecosystem that feels current and sellable. Buyers looking for a recognizable but not overused Hollywood-adjacent setting will see a ready-made texture layer.",
+          "evidence": "Big Moon auditions, Logan's office, Twitch fame, the Comedy Store, and the screenwriter apartment all create a coherent creative-class world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The comedy is embedded in the danger.",
+          "what_it_means": "That makes the script easier to market than a straight procedural because the jokes are not decorative; they are part of the engine. It should play to audiences who want tension but do not want the movie to take itself too seriously.",
+          "evidence": "The banter between Jericho and Ben, the interrogation-room threats, and the absurdly specific industry jokes all keep the tone buoyant.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The detective duo adds procedural traction.",
+          "what_it_means": "Alan and Denise give the movie a second engine beyond Jericho's point of view, which helps the story feel like a real investigation rather than a single-character chase. That broadens the appeal to buyers who want a crime framework with some ensemble life.",
+          "evidence": "Their whiteboard work, social-media sleuthing, and escalating suspicion of Jericho create a parallel track that keeps the case moving.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable thriller-comedy with a star-making lead role and a contemporary LA industry backdrop that feels current without being expensive. The premise is easy to sell, the production footprint stays in indie territory, and the tone gives buyers both suspense and laughs in the same package."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle repeats the same murder-beat pattern.",
+          "detail": "Several stretches work through the same cycle of date, flirtation, murder, and police suspicion. That keeps the premise clear, but it also means the movie's propulsion depends on how much variation a buyer feels in the escalation rather than on a constantly changing engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Zoe's reveal carries the whole final turn.",
+          "detail": "The ending hinges on Zoe as the killer and on her grievance feeling big enough to justify the frame-up logic. That is a meaningful buy-level question because the movie needs the audience to accept her as more than a late twist and more than Jericho's ex.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Jericho is the whole movie's load-bearing role.",
+          "detail": "The script lives or dies on an actor who can be funny, vain, sexy, frightened, and slightly ridiculous without losing sympathy. That is a strong star-vehicle feature, but it also narrows the casting conversation to performers who can carry both the comedy and the suspicion.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The police suspicion can feel procedurally convenient.",
+          "detail": "Alan's gut-driven certainty and the social-media check-ins make for a clean thriller engine, but the case sometimes advances because the script needs Jericho cornered. Buyers will notice that the procedural logic is strongest when Denise pushes back and softer when Alan steamrolls.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand-heavy dialogue will need cleanup.",
+          "detail": "The script is packed with named references like Twitch, DoorDash, CAA, TMZ, Comedy Store, OnlyFans, and Script Revolution. That gives the world texture, but it also creates a real clearance pass and a likely need to decide which references are essential versus ornamental.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The movie has a strong hook and a clear commercial lane, but the central risk is that the middle can feel like variations on the same setup until the Zoe reveal lands. The other pressure point is casting: the lead has to be unusually specific, and the script's brand-saturated world will need a careful legal pass before it is buyer-ready."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 70.3,
+  "tier": "Optionable",
+  "inputTokens": 34244,
+  "outputTokens": 5792,
+  "cost": 0.051747,
+  "declaredFormat": "Feature film"
+}

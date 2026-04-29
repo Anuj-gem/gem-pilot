@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T05:12:08.393Z",
+  "submission_id": "b6a039b0-91cd-4e45-bcfc-1dfc208464c5",
+  "eval_id": "8b51e1bb-cc2f-4077-aba7-cf3a4b57fc4e",
+  "title": "APEX PREDATOR (Default Document)",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Macy",
+      "role_type": "Lead",
+      "demographics": "Female, 16-17, high-school student, affluent suburban setting."
+    },
+    {
+      "name": "Jessica",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens, high-school student, socially polished."
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens, high-school student, popular athlete type."
+    },
+    {
+      "name": "Nina",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-to-late teens, high-school student, sharp-tongued."
+    },
+    {
+      "name": "Ethan",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens, high-school student, jokester-athlete type."
+    },
+    {
+      "name": "Alex",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens, high-school student."
+    },
+    {
+      "name": "Ryan",
+      "role_type": "Supporting",
+      "demographics": "Male, 17, high-school student, ex-boyfriend, murder victim."
+    },
+    {
+      "name": "Lillian Crawford",
+      "role_type": "Supporting",
+      "demographics": "Female, teen at time of death, deceased or possibly alive depending on series mythology."
+    },
+    {
+      "name": "Principal Hawthorne",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, school administrator."
+    },
+    {
+      "name": "Sheriff Sanders",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-50s, law enforcement."
+    },
+    {
+      "name": "Mom",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Macy’s mother."
+    },
+    {
+      "name": "Dad",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, Macy’s father."
+    },
+    {
+      "name": "Gabby",
+      "role_type": "Supporting",
+      "demographics": "Male, 10, younger brother."
+    },
+    {
+      "name": "Mia",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens, student-athlete."
+    }
+  ],
+  "positioning_hook": "After her ex-boyfriend is murdered at school, Macy digs into a buried teen death and discovers the girl everyone thought was dead may be hunting her classmates.",
+  "cost_usd": 0.039536249999999995,
+  "input_tokens": 20609,
+  "output_tokens": 5351,
+  "status": "wrote:leads_ok"
+}

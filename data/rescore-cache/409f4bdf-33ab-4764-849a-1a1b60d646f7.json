@@ -1,0 +1,340 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Crime",
+        "Thriller"
+      ],
+      "tone": "pulpy",
+      "tags": [
+        "male-lead",
+        "supporting-ensemble",
+        "contemporary",
+        "feature-anchored",
+        "propulsive",
+        "franchise-potential",
+        "crime",
+        "revenge",
+        "green-hornet",
+        "black-beauty"
+      ]
+    },
+    "positioning_hook": "A newspaper heir moonlighting as the Green Hornet uncovers a heroin-smuggling ring inside his own TV station, forcing him and Kato to fight their way through a corrupt newsroom, a kidnapped colleague, and a dockside conspiracy.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The Green Hornet brand gives this immediate recognition, and the action-forward heroics, secret car, and newsroom corruption create a clear commercial lane. The reach is narrower than a fresh IP because the script leans on legacy familiarity and a fairly specific pulp-adventure vibe."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early: Britt Reid is a newspaper man with a secret vigilante identity, and the story quickly ties that identity to a murder, a drug ring, and a media conspiracy. The premise is easy to explain, though the number-game mechanics and layered criminal scheme take a while to fully sort."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Britt has a clean dual identity and Kato is a strong sidekick with physical and technical utility, which gives the lead pair some lift. The supporting players are functional but mostly operate as plot nodes rather than deeply surprising personalities."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The script has a retro-pulp confidence and a few fun gadget-driven set pieces, but the execution stays close to familiar vigilante-action beats. The newsroom angle and numbers-game smuggling scheme add flavor, yet the overall approach is more revival than reinvention."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving with arrests, kidnappings, surveillance, ambushes, and escalating set pieces that keep Britt and Kato active. The middle section is busy in a good way, though the investigation sometimes advances through exposition and coincidence rather than a clean chain of cause and effect."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The strongest original engine is the collision of a media empire, a covert vigilante operation, and a drug-smuggling conspiracy hidden inside a TV promotion. That combination is distinctive, but the underlying crime-thriller mechanics remain familiar enough that the script’s novelty is more packaging than reinvention."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Sentinel newsroom, the Black Beauty garage, the docks, the cannery, and the Chinese New Year street activity give the script a usable civic texture. The world feels operational and specific, with enough moving parts to support action and intrigue."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is committed to old-school pulp: broad, fast, gadgety, and lightly comic without fully tipping into parody. That register is clear and consistent across the action scenes, even when the dialogue gets on-the-nose."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are hints of deeper material in the Britt/Dan legacy, the Britt/Casey tension, and Kato’s backstory, but the script keeps those threads secondary to the plot. What you see is mostly what you get: a clean genre engine rather than a layered character study."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Britt/Kato is the core engine, and the newsroom gives the story a workable supporting web with Casey, Mike, Dan, Rex, and CC. The relationships are useful and recurring, but the script doesn’t build a truly generative ensemble where multiple pairings can carry scenes on their own."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Britt Reid",
+        "role_type": "Lead",
+        "demographics": "Male, 30s, white, affluent newspaper heir, urban professional, physically capable but not superhuman.",
+        "hook": "The polished publisher of the Daily Sentinel who moonlights as the Green Hornet, Britt is a privileged operator with a real moral center and a taste for control. He can sell the room, flirt with Casey, spar with criminals, and still carry the weight of his father’s legacy and his own double life.",
+        "why_actor_wants_this": "This is the showcase territory of Robert Downey Jr. in Iron Man — a charismatic, fast-talking lead who gets to play wit, authority, and concealed vulnerability in the same frame. It also gives an actor the rare two-mode performance of public mogul and masked vigilante, with action, banter, and emotional inheritance all built in."
+      },
+      {
+        "name": "Kato",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-20s, Asian, athletic, highly skilled driver/fighter/technician.",
+        "hook": "Britt’s quiet, lethal partner and the operational brain behind the Black Beauty, Kato is the script’s coolest piece of machinery in human form. He’s reserved, observant, and physically elite, but the story also gives him a private emotional history that hints at deeper loyalty and pain.",
+        "why_actor_wants_this": "This is the showcase territory of Donnie Yen in Ip Man — a controlled physical virtuoso whose stillness makes the action hit harder. The role offers precision combat, deadpan humor, and the kind of sidekick presence that can steal a movie without ever asking for the spotlight."
+      },
+      {
+        "name": "Casey Case",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s to early 30s, white, newsroom staffer/assistant, stylish and socially agile.",
+        "hook": "Casey is Britt’s sharp, attractive, emotionally legible ally inside the Sentinel, and she becomes the story’s most useful civilian pressure point once the conspiracy closes in. She’s flirtatious, perceptive, and increasingly brave, with enough chemistry and agency to matter beyond exposition delivery.",
+        "why_actor_wants_this": "This is the showcase territory of Emily Blunt in Edge of Tomorrow — a smart, capable woman who gets to be funny, vulnerable, and active inside a genre machine. The role gives an actor a strong mix of charm, danger, and hostage-survival intensity."
+      },
+      {
+        "name": "Rex Damon",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, white, ambitious media executive, polished and compromised.",
+        "hook": "Rex is the sleek corporate climber whose new authority at the station masks a deeper criminal entanglement. He plays reasonable in the office and cornered in private, which gives him a nice double-face villain energy.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Boardwalk Empire — a man whose calm surface keeps cracking to reveal panic, greed, and threat. It gives an actor a chance to play the slippery executive who can pivot from polished to predatory in a beat."
+      },
+      {
+        "name": "Tommy Chew",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s to 40s, Asian, criminal enforcer/organizer, physically imposing.",
+        "hook": "Tommy is the story’s primary enforcer and the most overtly dangerous face of the conspiracy, moving between intimidation, logistics, and violence. He’s ruthless, impatient, and increasingly unhinged as the operation starts to collapse around him.",
+        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Justified — a volatile operator who can turn a room with a look and then explode into menace. The role offers a strong villain turn with authority, cruelty, and a late-stage unraveling."
+      },
+      {
+        "name": "Frank Scanlon",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, Black, district attorney, authoritative, politically connected.",
+        "hook": "Frank is the law-side ally who helps Britt navigate the murder and smuggling investigation without becoming a full procedural anchor. He has a grounded, no-nonsense presence and gives the story a civic legitimacy that keeps the vigilante action from floating away.",
+        "why_actor_wants_this": "This is the showcase territory of Jeffrey Wright in The Batman — a smart, grounded authority figure who can carry exposition without losing gravity. The role gives an actor a clean, credible lawman presence with just enough edge to feel lived-in."
+      },
+      {
+        "name": "Dan Reid",
+        "role_type": "Supporting",
+        "demographics": "Male, 70s, white, aging patriarch, newspaper founder, frail but mentally alert.",
+        "hook": "Dan is the legacy figure whose history with John Paul and the Sentinel gives Britt’s mission emotional weight. He’s physically diminished but still carries the moral and institutional memory of the paper.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Caine in The Dark Knight — the elder statesman whose presence instantly deepens the hero’s burden. It gives an actor a concise but meaningful legacy role with emotional authority."
+      },
+      {
+        "name": "CC Fuller",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, white, marketing/executive type, glamorous and socially sharp.",
+        "hook": "CC is the elegant, slightly dangerous social operator who moves between Britt, Rex, and the station’s power structure with ease. She’s flirtatious, observant, and more useful than she first appears, which keeps her from being just decorative support.",
+        "why_actor_wants_this": "This is the showcase territory of Rebecca Ferguson in a sleek studio thriller — a woman who can play glamour, ambiguity, and intelligence without over-explaining herself. The role gives an actor a polished, high-status presence with a real undercurrent of suspicion."
+      },
+      {
+        "name": "Mike Axford",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, white, veteran reporter, hard-nosed and streetwise.",
+        "hook": "Mike is the old-school reporter who keeps the investigation honest and keeps Britt connected to the street-level reality of the story. He’s gruff, loyal, and useful in a way that makes the newsroom feel like a working machine rather than a backdrop.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in Spotlight — a seasoned pro who can make every line feel earned and lived-in. It’s a great character-actor role with authority, humor, and newsroom texture."
+      },
+      {
+        "name": "Lisa",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, white, young adult, friend of Casey, civilian witness.",
+        "hook": "Lisa is a smaller but important civilian presence who helps trigger the Casey kidnapping sequence and keeps the social world around Britt and Casey feeling populated. She’s mostly reactive, but she has enough urgency to matter in the abduction beat.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor a sharp, high-stakes panic beat in a major set piece, similar to the witness roles that pop in crime thrillers. It’s brief but memorable if played with real fear."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "one lead with action and charm",
+          "strong supporting villain bench",
+          "Asian male lead-supporting roles are central to the story",
+          "multiple newsroom and criminal ensemble roles",
+          "no child casting requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "newsroom floor and executive offices",
+          "luxury home with hidden garage and secret car bay",
+          "docks/cannery/ship sequence",
+          "suburban house used as a hideout",
+          "Chinatown street and Chinese New Year exterior activity"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical gadget work with a few compositing needs for the bee camera, the Black Beauty transformations, and the dockside explosion/fireworks coverage.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Vehicle impacts, explosions, gunfire, smoke, practical breakaway glass, and fight choreography for multiple hand-to-hand sequences.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "The Green Hornet and Kato are pre-existing characters based on George Trendle and Fran Striker."
+        },
+        {
+          "type": "brand",
+          "detail": "KSFI, Daily Sentinel, CNN, and other broadcast/media references are used as fictionalized or real-world media identifiers."
+        },
+        {
+          "type": "brand",
+          "detail": "Enter The Dragon is specifically referenced as on-screen viewing material."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release with four-quadrant action branding skewing male and nostalgia-aware; best positioned as a studio or streamer theatrical-style action title."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The contemporary setting keeps the base manageable, but the Black Beauty build, multiple vehicle chases, dockside fire/explosion work, and repeated night exteriors will push this above a lean action-comedy footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a performer who can sell charm, physicality, and comic timing, while Kato and Tommy both require strong martial-arts credibility; the Asian supporting roles are structurally important, not optional flavor."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script is clear on plot but leans on a legacy IP frame, a fairly busy conspiracy, and a lot of exposition about the numbers game and smuggling operation; those elements are understandable but not especially elegant."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Shadow",
+          "year": 1994,
+          "why_it_comps": "A pulp hero operating inside a stylized crime plot with gadgets, secret identity play, and a retro-commercial tone."
+        },
+        {
+          "title": "The Rocketeer",
+          "year": 1991,
+          "why_it_comps": "A legacy comic-book hero adaptation that leans on period-flavored adventure energy, clear heroism, and broad studio action."
+        },
+        {
+          "title": "Batman",
+          "year": 1989,
+          "why_it_comps": "A masked vigilante with a signature vehicle, a secret lair, and a city-scale criminal conspiracy driving the action."
+        },
+        {
+          "title": "The Nice Guys",
+          "year": 2016,
+          "why_it_comps": "A buddy-driven crime caper with banter, corruption, and a propulsive investigation through a specific urban world."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult action audiences who like legacy IP, gadget-driven heroics, and crime conspiracies with a light pulp sheen.",
+        "demographics": "Men 18-49 are the clearest core, with secondary appeal to women 25-44 who respond to charismatic lead chemistry and polished genre entertainment.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$25M-$45M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "The contemporary urban setting keeps it out of studio-tentpole territory, but the custom hero car, multiple action set pieces, and dockside climax require a real mid-budget action spend."
+      },
+      "lane_fit": {
+        "lane": "legacy-action studio feature",
+        "types_of_buyers": [
+          "studio genre executives looking for recognizable IP",
+          "streamer film buyers building a male-skewing action slate",
+          "producer-financiers who like comic-book-adjacent properties",
+          "director-driven action packages with practical stunt appeal"
+        ],
+        "detail": "This sits naturally in the lane of polished, accessible action built around a known hero, a signature vehicle, and a clean good-vs-bad engine. The newsroom setting and crime conspiracy give it enough specificity to feel more grounded than pure superhero fare."
+      },
+      "ip_potential": {
+        "has_potential": true,
+        "detail": "The Green Hornet/Kato brand supports sequel-style continuation through new criminal conspiracies and recurring gadget/vehicle mythology, with Kato as a viable breakout co-brand."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Green Hornet brand is instantly legible.",
+          "what_it_means": "That gives the project a built-in awareness layer that can shorten the buyer conversation and make the package easier to position. It is especially attractive to buyers who want recognizable IP without the cost and scale of a full tentpole superhero property.",
+          "evidence": "The script opens by establishing Britt Reid, Kato, and the Black Beauty, then quickly moves into the vigilante identity and the legacy of the Hornet.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The Britt/Kato duo has real commercial chemistry.",
+          "what_it_means": "A strong two-hander gives the movie a repeatable engine for action, banter, and contrast, which is exactly what franchise-minded buyers want from a legacy property. It also creates a clean casting conversation around one charismatic lead and one elite physical performer.",
+          "evidence": "Britt handles the social and investigative side while Kato drives the car, runs the tech, and dominates the hand-to-hand fights.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Black Beauty is a signature asset.",
+          "what_it_means": "A memorable hero vehicle is a real marketing and production advantage because it gives the movie an iconography beyond the title character. Buyers can see trailer moments, toy potential, and a recurring visual hook immediately.",
+          "evidence": "The garage reveal, the hidden flip mechanism, the bee launcher, smoke systems, and onboard computer all make the car feel like a character.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The newsroom conspiracy gives the story a fresh workplace spine.",
+          "what_it_means": "Putting the criminal operation inside a media company creates a cleaner, more ownable hook than a generic mob plot and gives the movie a built-in social world. That helps the project appeal to buyers who want genre with a contemporary institutional angle.",
+          "evidence": "The Sentinel staff changes, the numbers game, the TV promotion, and the use of the station as a smuggling communication channel all tie the plot to the newsroom.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action is frequent and easy to visualize.",
+          "what_it_means": "The script repeatedly delivers clear set pieces — interrogations, ambushes, vehicle chases, dock fights, and a house crash — which is valuable for both packaging and trailer construction. Buyers can see the movie in motion, not just in concept.",
+          "evidence": "The cannery raid, the freeway chase, the rental-house rescue, and the dockside climax all read as playable action sequences.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a recognizable legacy-action package with a clean two-hander, a signature vehicle, and a crime-conspiracy engine that plays well in a theatrical buyer conversation. The newsroom setting and dockside climax give it enough specificity to feel like more than generic superhero material, while the practical action footprint keeps it in a financeable mid-budget lane."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The conspiracy is over-explained in dialogue.",
+          "detail": "A lot of the middle section is characters spelling out the numbers game, the smuggling route, and who knows what when. That makes the plot easy to follow, but it also flattens some of the suspense and turns several scenes into information delivery rather than discovery.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The villain chain is more functional than memorable.",
+          "detail": "Rex, Tommy, and Xchan each do their job in the plot, but they read more like tiers of the same criminal machine than distinct, scene-stealing antagonists. For a buyer, that means the movie’s selling power rests more on the Hornet brand and action than on a truly standout rogue’s gallery.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The script leans hard on legacy familiarity.",
+          "detail": "Because this is built on an existing property, the pitch depends on audience recognition of the Hornet mythos and the Black Beauty iconography. That helps packaging, but it also means the material has to work harder to feel essential rather than simply revived.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The action footprint is not cheap.",
+          "detail": "The dock sequence, the house crash, the freeway chase, the custom car mechanics, and the repeated night exteriors all add up to a real mid-budget action spend. It is financeable, but not as a lean contained play.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Kato is strong, but the supporting bench is thin.",
+          "detail": "The script gives Kato a lot of utility and a little emotional history, but most other supporting characters function primarily as plot connectors. That limits the ensemble upside and makes the movie more dependent on the lead pair than on a broader character ecosystem.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not concept — it’s executional density: the conspiracy is explained more than it’s dramatized, and the villain stack is serviceable rather than unforgettable. On the production side, the movie wants enough action and custom hardware to live in a real mid-budget lane, so the buyer has to like the brand and the set pieces enough to justify the spend."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 64.3,
+  "tier": "Optionable",
+  "inputTokens": 49199,
+  "outputTokens": 5132,
+  "cost": 0.05999325,
+  "declaredFormat": "Feature film"
+}

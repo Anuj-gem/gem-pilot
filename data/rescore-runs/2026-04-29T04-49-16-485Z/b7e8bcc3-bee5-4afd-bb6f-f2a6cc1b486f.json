@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:12:20.533Z",
+  "submission_id": "b7e8bcc3-bee5-4afd-bb6f-f2a6cc1b486f",
+  "eval_id": "e13319d5-4d19-4a27-a3ca-e93bb302b6e0",
+  "title": "MNG DEC24",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tim Bliss",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, white, working/middle-class, married once, father of three daughters, salon owner and obsessive amateur triathlete."
+    },
+    {
+      "name": "Juliet",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, white, widowed, emotionally guarded, mother-to-be."
+    },
+    {
+      "name": "Andy",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, stylish, business partner, socially sharper than Tim."
+    },
+    {
+      "name": "Lauren",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, white, salon manager, socially confident, blunt, maternal but mischievous."
+    },
+    {
+      "name": "Katie",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens, Tim’s eldest daughter, sharp, practical, school-age."
+    },
+    {
+      "name": "Bethany",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-teens, Tim’s middle daughter, angry, smart, socially bruised."
+    },
+    {
+      "name": "Tilly",
+      "role_type": "Supporting",
+      "demographics": "Female, pre-teen, Tim’s youngest daughter, cheeky, observant, disruptive."
+    },
+    {
+      "name": "Hilary",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s, swim partner, older, no-nonsense."
+    },
+    {
+      "name": "Sylvie",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s, swim partner, older, teasing, socially direct."
+    },
+    {
+      "name": "Anna",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Tim’s ex-wife, absent but emotionally present."
+    }
+  ],
+  "positioning_hook": "A Lycra-obsessed Walthamstow salon owner with three daughters stumbles into a late-life romance, then has to survive the fallout when his “Monday night girlfriend” scheme collides with real love.",
+  "cost_usd": 0.0522975,
+  "input_tokens": 40354,
+  "output_tokens": 4896,
+  "status": "wrote:leads_ok"
+}

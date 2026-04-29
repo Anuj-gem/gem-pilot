@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:13:57.740Z",
+  "submission_id": "109127da-b828-44db-84ec-13471251efe1",
+  "eval_id": "ca8b6959-b901-4bb4-8c49-f0d48025c65b",
+  "title": "Frostbite",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Amanda Smith",
+      "role_type": "Lead",
+      "demographics": "Female, mid-20s, NYPD cadet; young adult, working-class-coded, gun-averse."
+    },
+    {
+      "name": "Mark Warner",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, veteran detective; white, New York cop, physically imposing."
+    },
+    {
+      "name": "Samuel Lewis",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, precinct captain; polished, authoritative, politically connected."
+    },
+    {
+      "name": "Andrea Russell",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Senate candidate; polished, affluent, politically ambitious."
+    },
+    {
+      "name": "Yuri Bukhanov",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, club owner / organized-crime figure; Russian-speaking, affluent, intimidating."
+    },
+    {
+      "name": "Dmitri Govsky",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, lawyer; slim, polished, legal fixer."
+    },
+    {
+      "name": "Natalya Fedulov",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, clubgoer / witness; Russian-speaking, vulnerable, emotionally exposed."
+    },
+    {
+      "name": "Lester",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, street-level dealer; rough, urban, vulnerable under pressure."
+    },
+    {
+      "name": "The Bodyguard",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, physically imposing, Russian-speaking enforcer."
+    }
+  ],
+  "positioning_hook": "A gun-averse police cadet is paired with a brutal veteran detective to crack a blue-pill drug ring, only to uncover a citywide conspiracy reaching from Manhattan docks to Alaska.",
+  "cost_usd": 0.053286,
+  "input_tokens": 41354,
+  "output_tokens": 4949,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,326 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "supporting-cast",
+        "contemporary",
+        "character-driven",
+        "family-dynamics",
+        "grief",
+        "motherhood",
+        "fatherhood",
+        "road-trip",
+        "north-philly"
+      ]
+    },
+    "positioning_hook": "A son drives his frail mother 800 miles north, and every mile forces them to confront the men, absences, and choices that shaped their family.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional premise is clear and accessible, especially for viewers who respond to family reckoning and intergenerational pain. It is not a broad four-quadrant sell, though; the appeal is strongest in adult drama buyers and audiences drawn to intimate, performance-led material."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The road-trip frame gives the episode an immediate engine: Elliott and MaryAnn are physically trapped together long enough for buried history to surface. The hook is legible early, though the script is more about emotional excavation than a sharply novel premise."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "MaryAnn is vivid, contradictory, and playable — frail but still controlling the room, withholding but never passive, with a lifetime of regret and self-justification in every line. Elliott is equally durable as the quiet son carrying old injuries, and the family triangle around Jacque and Iszel suggests a strong ongoing emotional engine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script leans into a specific Black family memory-space rather than generic prestige-drama language, and the flashback structure is emotionally disciplined. It is still operating in a familiar intimate-drama register, but the specificity of North Philly, the road-trip container, and the mother-son dynamic give it a distinct angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The episode moves with purpose through the drive, restaurant stop, and flashbacks, and each reveal deepens the emotional stakes. The momentum is reflective rather than propulsive, so the engagement comes from revelation and performance more than plot escalation."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea — a son finally hearing his mother name the men and absences that defined the family — feels specific and emotionally inevitable. The road-trip structure and the way the flashbacks are triggered by present-tense conversation make the material feel lived-in rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "North Philly, the Cracker Barrel stop, the highway corridor, and the rowhouse flashbacks all carry lived-in detail that feels story-generating rather than decorative. The family’s social world — jail, absent fathers, churchless domestic ritual, neighborhood surveillance, and caregiving labor — gives the series a strong texture base."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is quietly devastating without becoming melodramatic, and the script knows how to let small gestures carry emotional weight. The combination of plainspoken dialogue, memory-laced flashbacks, and restrained grief gives it a distinct, hard-to-fake register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The episode suggests a much larger family history than it states outright, and the repeated naming of the three fathers opens a deeper long-form emotional map. The script is built on withheld history, which gives it strong slow-burn potential."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Elliott-MaryAnn relationship is the center of gravity, but Jacque, Iszel, and the absent fathers create a broader family system with real recurring energy. It is not a sprawling ensemble engine, but the relationships are specific enough to sustain multiple episodes."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Elliott Glover",
+        "role_type": "Lead",
+        "demographics": "Black man, 40s, working-age adult son and caregiver.",
+        "hook": "Elliott is the steady, emotionally contained son who has built a life around being useful, reliable, and hard to read. In this episode he becomes the driver, the caretaker, and the witness, quietly realizing that his mother’s history is also the blueprint for his own wounds — especially the wound of being chosen last, or not at all.",
+        "why_actor_wants_this": "This is the showcase territory of Sterling K. Brown in This Is Us — a restrained, interior lead whose stillness carries the scene and whose emotional release lands because it has been earned. It gives an actor the chance to play subtext, hurt, and love without speeches doing the work."
+      },
+      {
+        "name": "MaryAnn Glover",
+        "role_type": "Supporting",
+        "demographics": "Black woman, late 60s, disabled, mother and matriarch.",
+        "hook": "MaryAnn is frail in body but formidable in presence, a woman who has spent a lifetime performing control, then dropping it in flashes when the truth gets too heavy to keep carrying. She is funny, sharp, withholding, and deeply self-aware in the way people become when they have survived more than they can comfortably name.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Nomadland or Regina King in If Beale Street Could Talk — a role built on lived-in authority, contradiction, and the ability to make silence feel like a full scene. It gives an actor the rare chance to play age, regret, and dignity without softening any of them."
+      },
+      {
+        "name": "Jacque Glover",
+        "role_type": "Supporting",
+        "demographics": "Black man, 30s-40s, eldest son energy, family anchor.",
+        "hook": "Jacque is the brother who has learned to translate family chaos into practical questions and guarded concern. He reads as the child who had to grow up early, and his phone calls suggest a man who knows the family history well enough to fear what happens when it starts speaking out loud.",
+        "why_actor_wants_this": "This is the showcase territory of Brian Tyree Henry in Atlanta or Moonlight-era Mahershala Ali — a role where the actor can play intelligence, restraint, and hurt that lives just under the surface. It gives a performer a chance to make a supporting role feel like the emotional spine of the family system."
+      },
+      {
+        "name": "Iszel Glover",
+        "role_type": "Supporting",
+        "demographics": "Black man, adult son, off-screen presence in this episode.",
+        "hook": "Iszel is mostly present through memory and consequence, but the script frames him as the son whose injury and history carry enormous emotional weight in the family. Even when he is not physically in the episode, he functions as one of the central pressure points in MaryAnn’s guilt and Elliott’s understanding of what was lost.",
+        "why_actor_wants_this": "This is the kind of role that can become a breakout if the series keeps revealing him the way The Wire used supporting family members to deepen the world. It gives an actor the opportunity to build a character from aftermath, not exposition."
+      },
+      {
+        "name": "Franky Peaches",
+        "role_type": "Supporting",
+        "demographics": "Black man, early 20s in flashback, neighborhood older-boy type.",
+        "hook": "Franky is the first man in the episode who makes MaryAnn feel specifically chosen, and that makes him emotionally dangerous even before the script names his limitations. He is charm, attention, and immaturity in one package — the kind of man who can alter a life without ever being built to sustain it.",
+        "why_actor_wants_this": "This is the showcase territory of Algee Smith in Euphoria or Kelvin Harrison Jr. in Waves — a role that lets an actor play charisma as both seduction and liability. It is a compact but memorable part with real scene-stealing potential."
+      },
+      {
+        "name": "George Butts",
+        "role_type": "Supporting",
+        "demographics": "Black man, adult, father of Iszel, incarcerated in the backstory.",
+        "hook": "George is the one father MaryAnn remembers as wanting to stay, which makes his absence feel less like abandonment than fate. He is defined by the cruel interruption of a life that had begun to organize itself around fatherhood.",
+        "why_actor_wants_this": "This is the showcase territory of Colman Domingo in a brief but devastating dramatic turn — a role where the actor can make a few scenes feel like an entire lost life. It gives a performer a chance to embody hope cut short rather than simple absence."
+      },
+      {
+        "name": "Alton Jones",
+        "role_type": "Supporting",
+        "demographics": "Black man, adult, married father in the backstory.",
+        "hook": "Alton is the father who chose another family, and the script uses him as the cleanest version of rejection in the family mythology. He is less a full person on the page than a wound with a name, which is exactly why he matters.",
+        "why_actor_wants_this": "This is the kind of role that can be devastating in a small amount of screen time, like the absent father energy in Fences or Moonlight. It gives an actor the chance to play moral weight without needing a large footprint."
+      },
+      {
+        "name": "Mother",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 30s in flashback, MaryAnn’s mother.",
+        "hook": "MaryAnn’s mother is a woman so overextended by poverty and responsibility that even her love arrives as labor. She is not sentimental; she is efficient, exhausted, and emotionally unavailable in ways that clearly shaped MaryAnn’s own performance of survival.",
+        "why_actor_wants_this": "This is the showcase territory of Aunjanue Ellis-Taylor in King Richard or Viola Davis in Fences — a role where the actor can turn a few scenes into a generational thesis. It offers the kind of authority that comes from making pressure visible without speeches."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": true,
+        "casting_characteristics": [
+          "flashback casting for younger versions of Elliott, Iszel, and MaryAnn",
+          "disabled performer or careful physical continuity for MaryAnn's one-leg mobility",
+          "age-specific casting across three generations",
+          "strong voice and stillness required for the lead pair"
+        ]
+      },
+      "locations": {
+        "distinct_count": 7,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary with 1950s-1980s flashbacks",
+        "notable_requirements": [
+          "interstate road-driving coverage",
+          "Cracker Barrel-style restaurant interior",
+          "North Philly rowhouse and street flashback build or stand-in",
+          "rest stop and parking lot work",
+          "period flashback dressing for 1950s, 1970s, and 1981"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly invisible period cleanup, road process work, and flashback continuity; no major effects language on the page.",
+        "stunts_level": "minor",
+        "sfx_needs": "Ambulance pass-by, car transfer choreography, wheelchair handling, period street atmosphere, and practical flashback dressing.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Harold Melvin and the Blue Notes, 'If You Don't Know Me By Now'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Frankie Beverly & Maze referenced in the North Philly street flashback"
+        },
+        {
+          "type": "brand",
+          "detail": "Cracker Barrel"
+        },
+        {
+          "type": "brand",
+          "detail": "Jeep Grand Cherokee"
+        },
+        {
+          "type": "brand",
+          "detail": "Miller High Life"
+        },
+        {
+          "type": "brand",
+          "detail": "Winston"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming family-drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized emotional drama with a road-trip present tense and flashback-driven family history; episode engine is the gradual revelation of the Glover family’s past through present-day caregiving and confrontation."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary road work is manageable, but the 1950s-1980s flashbacks add period dressing, younger-cast coverage, and multiple time periods to support."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead requires an actor who can play quiet authority, grief, and restraint, while MaryAnn needs a performer who can carry frailty without losing command of the frame."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The episode is emotionally rich, but the buyer conversation will focus on how the family-history revelations scale into a season engine beyond this road-trip hour."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "This Is Us",
+          "year": 2016,
+          "why_it_comps": "The family-memory structure and emotional reveal engine are closest to this kind of intergenerational domestic drama, especially in the way present-tense scenes trigger flashbacks."
+        },
+        {
+          "title": "Queen Sugar",
+          "year": 2016,
+          "why_it_comps": "The Black family texture, generational pain, and lived-in Southern/Black domestic specificity sit in the same prestige-drama neighborhood."
+        },
+        {
+          "title": "The Chi",
+          "year": 2018,
+          "why_it_comps": "The neighborhood-rooted family system and the way past trauma shapes present relationships feel aligned with this ensemble-adjacent lane."
+        },
+        {
+          "title": "Maid",
+          "year": 2021,
+          "why_it_comps": "The caregiving labor, emotional realism, and intimate portrait of survival through movement and memory make this a close tonal neighbor."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to emotionally grounded family drama, especially viewers drawn to Black family stories, caregiving narratives, and intergenerational reckoning.",
+        "demographics": "35-64, slightly female-skewing, broad Black audience appeal with crossover to prestige-drama viewers who favor character-first storytelling.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-ep season",
+        "note": "The contemporary road-trip spine is economical, but the period flashbacks, multiple age casts, and location work across several time periods push this into mid-tier series territory."
+      },
+      "lane_fit": {
+        "lane": "prestige family drama",
+        "types_of_buyers": [
+          "premium-streaming drama buyers",
+          "character-first limited/ongoing series execs",
+          "Black-led prestige development teams",
+          "adult-skewing platform buyers looking for awards-capable emotional material"
+        ],
+        "detail": "This sits naturally with buyers who want intimate, performance-forward family drama with a clear emotional engine and enough specificity to feel authored. The road-trip frame gives it a clean pilot hook, while the flashbacks create the kind of memory architecture prestige buyers understand how to market."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone family drama; no clear spinoff vector beyond the core Glover family story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "MaryAnn is a knockout matriarch role.",
+          "what_it_means": "This gives the project immediate actor-facing heat: a late-career, emotionally complex role that can attract serious talent and signal awards-level intent. Buyers looking for a prestige female supporting turn or a star vehicle for an older actress will notice it fast.",
+          "evidence": "Her plainspoken lines in the Jeep and Cracker Barrel scenes, plus the flashback where she sits in the doorway watching all three boys breathe, define her as both hard and vulnerable.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The road-trip frame is a clean engine.",
+          "what_it_means": "A contained present-tense journey gives the series an easy pitch and a repeatable emotional structure without needing procedural mechanics. That makes it legible to streamers and premium buyers who want a character drama with a simple, marketable spine.",
+          "evidence": "The entire episode tracks the 800-mile drive from South Carolina toward Harrisburg, with each stop opening a new layer of memory.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The flashbacks feel earned, not ornamental.",
+          "what_it_means": "The memory structure adds depth without feeling like a gimmick, which helps the show play as prestige rather than soap. That is attractive to buyers who want emotional payoff but still need the pilot to feel authored and controlled.",
+          "evidence": "The Cracker Barrel conversation triggers the 1950s kitchen memory, then the Franky/George/Alton material opens the family history in clean, specific beats.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "North Philly texture gives the show a moat.",
+          "what_it_means": "The specificity of place and class creates a world that feels lived-in and ownable, which is a real differentiator in a crowded family-drama market. Buyers chasing culturally specific prestige material will respond to that authenticity.",
+          "evidence": "The 1981 street sequence, the rowhouse cleanup, the stoop culture, and the neighborhood details all feel observed rather than generic.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The son wound is commercially durable.",
+          "what_it_means": "Elliott’s emotional engine — the child of a man who chose another family — is a clean, repeatable source of conflict that can sustain long-form storytelling. That gives the series a strong center for an actor who wants quiet intensity rather than overt melodrama.",
+          "evidence": "The highway conversation about Alton Jones and the final image of Elliott tucking the blanket over MaryAnn crystallize his need to care for the person who could not fully care for him.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige family drama with a built-in emotional engine: a son and mother trapped in a road trip that keeps opening the family’s buried history. The contained present-tense structure, period flashbacks, and knockout older-matriarch role make it especially attractive to premium-streaming buyers looking for awards-capable character material without a huge production footprint."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot is emotionally rich but plot-light.",
+          "detail": "Most of the hour is revelation and memory rather than forward action, so the buyer conversation will center on whether the emotional excavation alone is enough to sustain the series’ momentum. That is a dev-pass note, not a flaw in the writing, but it is the first thing a commercial buyer will weigh.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The flashback load raises production complexity.",
+          "detail": "The 1950s, 1970s, and 1981 material all require different period looks, younger casting, and careful continuity against the contemporary road scenes. It is still manageable, but it is not a simple contemporary drama package.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "MaryAnn’s mobility is a casting and staging requirement.",
+          "detail": "The one-leg/walker/wheelchair reality is central to the episode’s emotional and physical grammar, so the role needs an actor who can carry both the body language and the authority. That narrows the casting pool and makes physical continuity a real pre-production consideration.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The music and brands need a legal pass.",
+          "detail": "Harold Melvin and the Blue Notes’ 'If You Don't Know Me By Now,' the Frankie Beverly & Maze reference, Cracker Barrel, Jeep Grand Cherokee, Miller High Life, and Winston are all on the page and should be cleared or scoped intentionally. None of this is fatal, but it is real business affairs work.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is commercial, not creative: this is a deeply felt family drama that asks buyers to lean into memory, grief, and performance rather than plot mechanics. The period flashbacks and the MaryAnn role both add value and complexity, so the greenlight conversation will be about packaging and scope as much as story."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 72.7,
+  "tier": "Optionable",
+  "inputTokens": 19413,
+  "outputTokens": 4799,
+  "cost": 0.03615525,
+  "declaredFormat": "Series"
+}

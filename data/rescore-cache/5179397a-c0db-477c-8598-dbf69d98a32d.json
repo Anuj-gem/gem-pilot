@@ -1,0 +1,371 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Horror",
+        "Drama"
+      ],
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "ongoing-series",
+        "high-concept",
+        "character-driven",
+        "slow-burn",
+        "grief",
+        "mental-health",
+        "time-travel",
+        "college-campus"
+      ]
+    },
+    "positioning_hook": "A hyper-achieving college sophomore starts slipping through time on a haunted New Hampshire campus, and the only man who can explain it may be the professor who’s already weaponizing her trauma.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is immediately legible: smart young woman, haunted campus, time-slip mystery, and a dangerous professor. It has a clear streaming audience, though the intellectual/psychological register is more selective than broad four-quadrant genre fare."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot lands its premise early and keeps sharpening it: Jessica is chased by a black void, then discovers campus mythology, then realizes she can move through time. The final reveal that Maddox is using her vulnerability to pull her deeper gives the concept a clean engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Jessica is a strong series anchor because she’s overachieving, emotionally brittle, funny, and intellectually hungry, with a real contradiction between control and collapse. Maddox, Henry, and Kerri each add durable friction, though Jessica is still the clear center of gravity."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s blend of campus satire, trauma psychology, time travel, and supernatural dread feels specific rather than generic. The Penderecki sequence, the Discord mythology, and the two-reality moon image give it a confident, unusual voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The episode escalates well from drunken unease to campus conspiracy to temporal rupture, and the final door-close is a strong act-out. Some middle passages lean on explanation and atmosphere, but the momentum holds because each reveal changes Jessica’s understanding of the world."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The show’s core idea is fresh in a way that clicks fast: a high-achieving student discovers her trauma may be the mechanism for time travel. The campus ghost-story wrapper makes the premise feel both novel and immediately playable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Morgan College feels like a story engine, not just a backdrop: elite-school status, student gossip, Discord lore, old tunnels, a burned frat house, and institutional memory all feed the plot. The campus has enough social and physical layers to generate episodes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: collegiate, eerie, funny, and psychologically destabilizing at once. The script can pivot from frat-house banter to body-level dread without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot suggests a bigger architecture around trauma, memory, institutional myth, and causality without over-explaining it. Maddox’s journal, Henry’s death, and Jessica’s mother all imply a deeper mythology that can unfold over time."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jessica/Kerri gives the show a reliable emotional base, and Jessica/Maddox and Jessica/Henry each create different kinds of tension. It’s not a full ensemble machine yet, but the campus setting and recurring social circles give it enough relational fuel."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jessica Wolfe",
+        "role_type": "Lead",
+        "demographics": "Female, 19, college sophomore, elite liberal-arts student, white.",
+        "hook": "Jessica is the kind of overachiever who has built her identity out of competence, wit, and control, which makes her collapse into fear and dissociation feel especially dangerous. She’s grieving her mother, allergic to appearing weak, and increasingly convinced that the campus is bending around her in ways she can’t explain. The role is built on the tension between polished intelligence and raw emotional exposure, with a sharp comic edge that keeps her from becoming purely tragic.",
+        "why_actor_wants_this": "This is the showcase territory of Tatiana Maslany in Orphan Black — a technically demanding lead who has to play intelligence, panic, denial, and self-reinvention in the same scene. It gives an actor the rare chance to carry a genre engine while also landing intimate breakdowns, comedy, and psychological volatility."
+      },
+      {
+        "name": "Kerri",
+        "role_type": "Supporting",
+        "demographics": "Female, 19, college sophomore, Jessica’s close friend.",
+        "hook": "Kerri is Jessica’s best friend and emotional ballast: funny, blunt, socially fluent, and just grounded enough to puncture Jessica’s spirals without abandoning her. She’s the kind of friend who can call Jessica out, protect her, and still keep the scene alive. The script uses her as both comic pressure valve and loyalty test.",
+        "why_actor_wants_this": "This is the kind of best-friend role that made Beanie Feldstein pop in Booksmart — fast, specific, and scene-stealing without needing the whole show on her shoulders. It gives an actor sharp banter, emotional loyalty, and the chance to be the audience’s sanity check."
+      },
+      {
+        "name": "William Maddox",
+        "role_type": "Supporting",
+        "demographics": "Male, early 60s, professor, father, white.",
+        "hook": "Maddox is brilliant, handsome, and deeply unsettling: a professor who speaks in therapeutic riddles while quietly steering Jessica toward dependence. He presents as a guide, but the pilot makes him feel like a manipulator who understands exactly how to weaponize authority, grief, and intellectual vanity. He’s the show’s most dangerous adult presence, and the ambiguity around his motives is a major engine.",
+        "why_actor_wants_this": "This is the kind of role that gave Matthew McConaughey in True Detective season 1 a full reinvention — charismatic, cerebral, and morally slippery. It offers a mature actor a prestige villain/mentor hybrid with long monologues, menace, and seduction."
+      },
+      {
+        "name": "Henry Maddox",
+        "role_type": "Supporting",
+        "demographics": "Male, 19, college student, white.",
+        "hook": "Henry is the wounded, brilliant, self-mythologizing son at the center of the campus lore, and he plays like a young man who has already started disappearing from his own life. He’s charming, needy, paranoid, and intermittently tender, which makes him feel both romantic and unstable. The pilot positions him as a tragic mirror for Jessica: another gifted kid being shaped by trauma and institutional mythology.",
+        "why_actor_wants_this": "This is the kind of role that gave Timothée Chalamet in Beautiful Boy and The King a chance to play fragility with charisma. It gives a young actor emotional volatility, romantic charge, and the chance to be both alluring and alarming."
+      },
+      {
+        "name": "Donovan",
+        "role_type": "Supporting",
+        "demographics": "Male, 20, college student, awkward, bearded.",
+        "hook": "Donovan is the campus obsessive: socially awkward, intellectually performative, and desperate to be taken seriously through his Henry mythology and conspiracy-art instincts. He’s comic, needy, and potentially useful, which makes him feel like a real campus nuisance rather than a stock nerd. He helps build the show’s social texture and keeps the mystery from becoming too solemn.",
+        "why_actor_wants_this": "This is the kind of role that let Paul Dano in Little Miss Sunshine and The Fabelmans turn awkwardness into a full character engine. It gives an actor a chance to be funny, pathetic, and unexpectedly pivotal."
+      },
+      {
+        "name": "Nicole",
+        "role_type": "Supporting",
+        "demographics": "Female, 19, Korean-American, college student.",
+        "hook": "Nicole is a lighter but useful campus presence: observant, socially plugged in, and part of the student ecosystem that normalizes the weirdness around Jessica. She’s not yet deeply developed, but she adds specificity to the world and helps the campus feel populated by real peers rather than plot devices.",
+        "why_actor_wants_this": "This is the kind of supporting campus role that gives an actor the chance to make a small part memorable through specificity and timing, like the sharper supporting turns in The Sex Lives of College Girls. It’s a clean scene-stealer slot with room to grow."
+      },
+      {
+        "name": "Jessica's Mother",
+        "role_type": "Supporting",
+        "demographics": "Female, deceased in present day, appears in flashbacks at 23 and as a younger mother in memory/vision.",
+        "hook": "Jessica’s mother is the emotional wound at the center of the pilot: loving, unstable, and remembered through a child’s trauma and adult longing. The script keeps her image contradictory — warm in one flash, frightening in another — which makes her feel like the source of both grief and power. She is less a conventional character than a haunting force shaping Jessica’s identity.",
+        "why_actor_wants_this": "This is the kind of emotionally loaded flashback role that gave Laura Linney in Ozark and Toni Collette in Hereditary the chance to make memory itself feel dangerous. It offers an actor the chance to define the emotional mythology of the series in a handful of scenes."
+      },
+      {
+        "name": "Jessica's Father",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, physician, Jessica’s father.",
+        "hook": "Jessica’s father is a calm, loving offscreen stabilizer whose warmth contrasts with the chaos around Jessica. He’s not a plot driver in the pilot, but his voice and concern give Jessica a believable home base and deepen the family wound. He functions as the sane, affectionate counterweight to the mother’s instability.",
+        "why_actor_wants_this": "This is the kind of grounded parental role that gives an actor a chance to bring quiet authority and emotional credibility, like the father figures in Mare of Easttown or The Bear. It’s a smaller part, but one that can land with real warmth."
+      },
+      {
+        "name": "Will",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, fraternity student, preppy jock.",
+        "hook": "Will is one of the frat-house power brokers: polished, evasive, and socially dangerous in the way he can make coercion sound like misunderstanding. He helps turn the frat house into a place of threat rather than just campus color. He’s a useful recurring pressure point in the world’s social hierarchy.",
+        "why_actor_wants_this": "This is the kind of morally slippery campus antagonist role that lets an actor play charm as menace, like the fraternity-adjacent predators in The White Lotus. It gives a performer a chance to be smooth, threatening, and instantly legible."
+      },
+      {
+        "name": "Pete",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, fraternity student, preppy jock.",
+        "hook": "Pete is Will’s counterpart in the frat hierarchy: physically intimidating, socially insulated, and part of the wall Jessica runs into when she tries to intervene. He’s less individualized than Will, but he helps make the house feel like a system. The role supports the show’s institutional menace.",
+        "why_actor_wants_this": "This is a solid supporting antagonist slot for an actor who can project entitlement and physical confidence without overplaying it, similar to the fraternity enforcers in Animal House’s darker descendants. It’s a clean utility role with menace."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "college-age ensemble",
+          "one mature professor role in his early 60s",
+          "flashback casting for Jessica's mother and father at younger ages",
+          "supporting roles skew toward 19-22"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary with 1999 time-period sequences",
+        "notable_requirements": [
+          "college campus exteriors",
+          "dorm interiors",
+          "steam tunnels",
+          "frat house interior and exterior",
+          "professor office",
+          "apartment complex stairwell",
+          "bird sanctuary/pond",
+          "period dressing for 1999 campus inserts"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "The black void monster, reality-shift moon/sky compositions, temporal transitions, and campus replacement effects require visible but contained VFX.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical lighting shifts, blackout/timer effects, phone signal effects, bloodless suicide playback on video, and environmental distortion cues.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Krzysztof Penderecki's 'Threnody for the Victims of Hiroshima' is specifically named and used as a plot/scene cue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Martin Eden is specifically referenced in dialogue as a literary touchstone."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Twilight is specifically referenced in flashback dialogue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Matrix is specifically referenced in dialogue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Animal House is specifically referenced in dialogue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Griswold v. Connecticut is specifically referenced in classroom dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Discord is a named platform used for the campus ghost-chat thread."
+        },
+        {
+          "type": "brand",
+          "detail": "YouTube is specifically used as a music playback platform in the pilot."
+        },
+        {
+          "type": "brand",
+          "detail": "The New York Times is specifically referenced in a text message link."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mystery-horror with a campus-episode engine built around Jessica's time slips, trauma triggers, and the Maddox/Henry mythology."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary campus production with one moderate VFX creature, temporal-reality effects, and multiple night exteriors; the steam tunnels, frat house, and period 1999 inserts are the main scope drivers."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Jessica has to carry intelligence, panic, comedy, and dissociation in the same role, while Maddox needs authority and seduction without losing menace. The show also depends on a strong Kerri and a believable 19-year-old ensemble."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s mythology is compelling, but the Maddox/Jessica dynamic and the time-travel rules are still being revealed in layers, so buyers will want confidence in the series’ governing logic."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Russian Doll",
+          "year": 2019,
+          "why_it_comps": "A psychologically driven genre series where the protagonist’s internal state is inseparable from the time-bending engine."
+        },
+        {
+          "title": "The OA",
+          "year": 2016,
+          "why_it_comps": "It shares the eerie, metaphysical campus-adjacent mystery energy and the sense that trauma and reality are entangled."
+        },
+        {
+          "title": "Yellowjackets",
+          "year": 2021,
+          "why_it_comps": "The show mixes female-centered psychological dread, memory fracture, and a mystery box that keeps recontextualizing the past."
+        },
+        {
+          "title": "Legion",
+          "year": 2017,
+          "why_it_comps": "The pilot’s subjective reality shifts and mental-health-inflected supernatural language sit in the same elevated-genre lane."
+        },
+        {
+          "title": "The Magicians",
+          "year": 2015,
+          "why_it_comps": "College-age characters, dark fantasy logic, and a campus setting that becomes a portal into stranger rules."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like smart, eerie, female-led genre series with emotional stakes and a mystery engine.",
+        "demographics": "18-49 skew, strongest with women and genre-literate viewers; educated, streaming-native audience that likes prestige mystery and psychological horror.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$4M-$7M/episode",
+        "season_total": "$32M-$56M for an 8-episode season",
+        "note": "A contemporary college setting keeps the base cost controlled, but the moderate VFX, night work, and multiple specialized locations push it into mid-tier prestige series territory."
+      },
+      "lane_fit": {
+        "lane": "premium-streaming elevated mystery-horror",
+        "types_of_buyers": [
+          "streamer originals teams building female-led genre",
+          "premium cable drama buyers",
+          "indie-leaning genre production companies",
+          "prestige horror labels",
+          "YA-adjacent but adult-skew development execs"
+        ],
+        "detail": "This sits naturally in the lane where psychological horror, campus mystery, and character drama overlap. It has enough genre propulsion for a streamer and enough emotional specificity for a prestige buyer looking to stand out from standard supernatural fare."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series with strong ongoing-series potential, but no clear spinoff vector yet: the supporting characters are vivid, but none is currently deep enough to anchor a separate franchise branch."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Jessica is a real lead role.",
+          "what_it_means": "This is the kind of protagonist that can attract an actor who wants both prestige and genre heat, because the part is built on contradiction rather than archetype. Buyers chasing elevated female-led series will see a clear centerpiece with emotional and commercial range.",
+          "evidence": "Her drunken Martin Eden recitation, the campus chase, the dissociation in Maddox’s office, and the final choice to walk back into his room all show a lead who is smart but unstable, defiant but vulnerable.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The campus is a story engine.",
+          "what_it_means": "Morgan College gives the series a contained but expandable world with built-in social hierarchies, folklore, and institutional memory. That makes the show easier to market as a repeatable mystery format rather than a one-off supernatural premise.",
+          "evidence": "Discord lore, the steam tunnels, the burned frat house, the admissions board, and the old yearbooks all feed the same mythology.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a clean signature.",
+          "what_it_means": "The script can move from campus comedy to psychological horror without feeling generic, which is exactly what helps a buyer picture the trailer and the audience promise. That tonal control is attractive to streamers looking for genre with intelligence.",
+          "evidence": "The PFAS protest banter, the frat-house menace, the Penderecki sequence, and the two-moons reality shift all coexist in one pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Maddox is a premium antagonist.",
+          "what_it_means": "A charismatic older male authority figure who can read as mentor, manipulator, and emotional predator gives the series a strong long-tail engine. That kind of role is catnip for prestige casting and gives the show a clear human face for the mystery.",
+          "evidence": "He uses trauma language, withholds information, logs Jessica in his journal, and ends the episode by inviting her back into his office.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The time-slip reveal lands cleanly.",
+          "what_it_means": "The pilot doesn’t just promise mystery; it pays off with a concrete mechanism that can drive future episodes. That makes the concept easier to sell because the audience understands the rules enough to want more.",
+          "evidence": "Jessica’s walk through the quad shifts the campus into 1999, and the photo proof on her phone confirms the event.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, castable, premium-streaming genre pilot with a strong female lead, a contained campus world, and a clean supernatural/time-slip engine. The combination of psychological horror, college mythology, and a manipulative professor gives buyers both a marketable hook and a series engine that feels expensive on screen without being tentpole-scale.",
+      "issues": {
+        "items": [
+          {
+            "area": "The time-travel rules stay impressionistic.",
+            "detail": "The pilot gives you the emotional logic of the phenomenon before it gives you the operational logic. That’s fine for a first episode, but buyers will notice that the mechanism is still being defined through mood, trauma language, and selective proof rather than a clear governing system.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "Maddox’s authority is a buyer-sensitive lane.",
+            "detail": "He reads as charismatic, manipulative, and sexually charged in a way that will be attractive to some buyers and sensitive for others, especially because the pilot ends with Jessica walking back into his office. That’s a strong dramatic choice, but it narrows the conversation to platforms comfortable with predatory-power dynamics.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The pilot leans hard on explanation scenes.",
+            "detail": "Several key stretches are Jessica sitting across from Maddox or talking through the mythology with Donovan and Kerri, which keeps the episode intelligible but slows the propulsion in the middle. Producers will clock that the show’s best material is the experiential stuff — chase, rupture, reveal — not the explanatory dialogue.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The VFX ask is contained but visible.",
+            "detail": "The black void monster, the dual-reality sky, and the campus replacement effects are not massive, but they are not invisible either. A buyer will need confidence that the show can deliver those moments consistently without drifting into cheap-looking supernatural TV.",
+            "is_primary_lever": false,
+            "source": "production"
+          },
+          {
+            "area": "The clearance list is not empty.",
+            "detail": "Penderecki’s 'Threnody for the Victims of Hiroshima' is specifically named, and the pilot also references Martin Eden, Twilight, The Matrix, Animal House, Discord, YouTube, and the New York Times. None of that is fatal, but it means business affairs will have a real pass to do before greenlight.",
+            "is_primary_lever": false,
+            "source": "production"
+          }
+        ],
+        "headline": "The biggest buyer conversation is not whether the pilot has a hook — it does — but whether the time-slip mythology and Maddox’s power dynamic are being framed in a way that feels controlled rather than merely intriguing. The production is manageable, but the visible VFX and the non-trivial clearance pass mean this still needs a buyer who wants elevated genre, not just a cheap supernatural swing."
+      },
+      "craft_note": ""
+    }
+  },
+  "weightedScore": 76.3,
+  "tier": "Optionable",
+  "inputTokens": 28380,
+  "outputTokens": 5466,
+  "cost": 0.045882,
+  "declaredFormat": "Series"
+}

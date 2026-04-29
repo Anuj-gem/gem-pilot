@@ -1,0 +1,353 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "family-dynamics",
+        "grief",
+        "identity",
+        "motherhood",
+        "multi-decade",
+        "memoir-adaptation",
+        "road-trip"
+      ]
+    },
+    "positioning_hook": "A guarded middle-aged son drives his estranged, high-maintenance mother north for a family move, and the highway drags him back to the Pennsylvania group home where silence, shame, and brotherhood were forged.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional hook is clear and relatable — adult family reckoning, caregiving, and buried childhood trauma — but it is a specific, adult-skewing lane rather than broad four-quadrant fare. The memoir basis and intimate mother-son engine give it buyer interest, though the subject matter is more prestige-drama than mass-market."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot’s engine lands immediately: a present-day road trip becomes a memory-triggered reckoning with a brutal group-home past. The opening image of Elliott packing for his mother, then the flashback to Avondale, makes the premise easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Elliott is built with restraint, hurt, and a strong internal code, and MaryAnn is vivid enough to generate conflict on contact. The brothers and the group-home figures add durability, though the pilot is still primarily powered by Elliott’s interiority."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The cold-as-memory motif and the dual-time structure give the pilot a distinct emotional grammar, and the group-home setting is specific without feeling generic. It is not formally radical, but the voice is confident and personal."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The episode moves with purpose through the road trip, the flashback, and the mother pickup, but the momentum is reflective rather than propulsive. The final question — 'Why'd you call me weird?' — is a strong button, though much of the hour is built on mood and accumulation."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A memoir-rooted adult son confronting a childhood institutional wound through a simple caregiving errand feels fresh and immediately legible. The specificity of the rural Pennsylvania group home and the Philly family texture makes the premise feel earned rather than generic."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Avondale Group Home has real social texture: Henry and Janine’s authority, the chore list, the locked door, the boys’ hierarchy, and the Philly-to-rural displacement all suggest a lived-in system. The present-day world is thinner, but the memory world is rich and story-generating."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very controlled tonal identity: quiet, cold, intimate, and emotionally withheld, with flashes of warmth and humor inside the pain. The contrast between the predawn road, the family voices, and the childhood cold gives it a hard-to-fake register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot suggests a much larger emotional and institutional story beneath the surface — the locked door, the unnamed system, the brothers’ different roles, and MaryAnn’s performance all imply deeper layers. It feels like the first chapter of a long excavation rather than a closed emotional statement."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Elliott/MaryAnn is the central relationship, and the brothers plus Henry/Janine/Derek create useful pressure points. Still, the pilot is structurally a lead-driven memory piece more than an ensemble engine where any pairing immediately generates story."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Elliott Glover",
+        "role_type": "Lead",
+        "demographics": "Black man, 40s, working- and family-bound, Philadelphia-rooted, adult son and brother.",
+        "hook": "A controlled, observant man who has spent decades surviving by not saying the thing out loud. In the present, he is the competent son moving his mother; in the past, he is the quiet child who files away every humiliation, every locked door, and every slight until the pressure finally breaks.",
+        "why_actor_wants_this": "This is the showcase territory of Stephan James in If Beale Street Could Talk — contained, wounded, and emotionally precise, with the chance to play silence as active behavior. It also gives the kind of internal, prestige lead role that lets an actor build a slow-burn breakdown without ever losing dignity."
+      },
+      {
+        "name": "MaryAnn Glover",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 70s-80s, frail physically, forceful socially, mother of adult sons.",
+        "hook": "A performative, manipulative, funny, and deeply familiar mother who knows how to work a room and how to work her son. She is both pitiable and infuriating, and the pilot smartly lets her be all of it at once: charming in public, controlling in private, and never fully accountable.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Olive Kitteridge — a role that lets an actor weaponize contradiction, humor, and emotional abrasion in the same scene. It offers the kind of late-career, scene-stealing part that can dominate a prestige series without needing to be likable."
+      },
+      {
+        "name": "Jacque Glover",
+        "role_type": "Supporting",
+        "demographics": "Black man, late 30s-40s in present-day framing; 12 in flashback; Elliott’s brother.",
+        "hook": "The oldest-brother energy in the group-home flashbacks, Jacque is already reading adults, setting rules, and protecting the younger boys. He has the sharpest mouth and the clearest survival instincts, which makes him feel like the brother who learned earliest that authority only respects force.",
+        "why_actor_wants_this": "This is the kind of role that gave Jharrel Jerome in When They See Us its emotional authority — a young man with command, vulnerability, and the burden of being the one who sees the room first. It gives an actor a memorable, protective presence that can deepen across the series."
+      },
+      {
+        "name": "Iszel Glover",
+        "role_type": "Supporting",
+        "demographics": "Black man, late 30s-40s in present-day framing; 9 in flashback; Elliott’s brother.",
+        "hook": "The softest and most openly childlike of the brothers, Iszel survives by staying funny, small, and emotionally direct. His cereal question is the pilot’s quietest character beat and one of its most revealing: he is still trying to make the world manageable by naming the simplest need in the room.",
+        "why_actor_wants_this": "This is the kind of role that gave Michael Gandolfini in The Many Saints of Newark its ache — a character whose tenderness is the point, not the garnish. It offers an actor a memorable emotional register that can age into something heartbreaking."
+      },
+      {
+        "name": "Henry Hill",
+        "role_type": "Supporting",
+        "demographics": "White man, mid-50s in flashback, rural Pennsylvania group-home operator.",
+        "hook": "A stiff, cigarette-smoking authority figure who treats children like inventory and rules like leverage. He is not theatrical; that’s what makes him dangerous — the casual cruelty, the locked door, the discretionary allowance, the way he normalizes control.",
+        "why_actor_wants_this": "This is the kind of morally compromised authority role that gave Paul Sparks in Boardwalk Empire its menace — controlled, specific, and quietly oppressive. It gives an actor a chance to make institutional cruelty feel personal without ever raising his voice."
+      },
+      {
+        "name": "Janine Hill",
+        "role_type": "Supporting",
+        "demographics": "White woman, 50s in flashback, Henry’s partner and co-authority in the home.",
+        "hook": "A sharp, judgmental house mother who clocks the boys instantly and decides they are a problem before they’ve spoken twice. She is funny in a cutting way, practical in a punitive way, and fully invested in the social order of the house.",
+        "why_actor_wants_this": "This is the kind of role that gave Margo Martindale in Justified its bite — a character who can turn a line into a verdict. It offers a strong supporting showcase for an actor who can play humor, menace, and institutional complicity at once."
+      },
+      {
+        "name": "Derek",
+        "role_type": "Supporting",
+        "demographics": "Black boy, 14 in flashback, Philly-rooted resident at Avondale.",
+        "hook": "A charismatic, athletic kid who knows how to read the house and how to make the boys feel less alone. He is the first peer energy in the pilot, and his easy confidence makes him feel like a future force inside the series world.",
+        "why_actor_wants_this": "This is the kind of breakout supporting role that gave Shameik Moore in Dope its spark — cool, funny, and instantly watchable. It gives a young actor a chance to become the audience’s entry point into the boys’ peer world."
+      },
+      {
+        "name": "Jiggs",
+        "role_type": "Supporting",
+        "demographics": "Black boy, 15 in flashback, resident at Avondale; also called Anthony.",
+        "hook": "A slightly older resident with enough confidence to joke, observe, and move comfortably between the boys and the house rules. He feels like one of the first kids who has learned how to survive the place without disappearing inside it.",
+        "why_actor_wants_this": "This is the kind of role that gave Caleb McLaughlin in Stranger Things early traction — a vivid supporting part with attitude and texture. It gives an actor a chance to build a memorable presence from very little screen time."
+      },
+      {
+        "name": "Shawn",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 30s-40s, Elliott’s partner in the present day.",
+        "hook": "A calm, emotionally literate off-screen presence who knows exactly what the road trip costs Elliott. She is not written as a plot device; she is the one person who can say 'come home' and make it land like a moral instruction.",
+        "why_actor_wants_this": "This is the kind of grounded, emotionally intelligent partner role that gave Regina Hall in Support the Girls its warmth and authority. It offers an actor a clean, adult counterweight to the family chaos and a chance to play love as steadiness."
+      },
+      {
+        "name": "Aunt Gwen",
+        "role_type": "Supporting",
+        "demographics": "Black woman, older adult, family elder in the present-day orbit.",
+        "hook": "A family voice of practical pressure and emotional shorthand, she exists in the pilot as one of the people who knows the family system and keeps it moving. Even through text and voice, she feels like part of the household infrastructure.",
+        "why_actor_wants_this": "This is the kind of elder-family role that gave Alfre Woodard in Clemency its authority — brief, specific, and loaded with history. It gives an actor a chance to make a small amount of screen time feel structurally important."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one lead in his 40s",
+          "multiple child versions of the brothers in flashback",
+          "older female lead role with frailty requirements",
+          "supporting roles require strong Philly-rooted dialect work"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary with 1970s/1985 flashbacks",
+        "notable_requirements": [
+          "winter road and highway exteriors",
+          "rural Pennsylvania group-home exterior and interiors",
+          "physical therapy facility",
+          "apartment and stoop sequence",
+          "flashback barn/court and cornfield drive approach"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond basic screen inserts and possible weather enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical winter weather, vehicle work, smoke, and light crowd/background action.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Eagles"
+        },
+        {
+          "type": "brand",
+          "detail": "Google Maps"
+        },
+        {
+          "type": "brand",
+          "detail": "Winston"
+        },
+        {
+          "type": "brand",
+          "detail": "Miller Genuine Draft"
+        },
+        {
+          "type": "brand",
+          "detail": "Newport"
+        },
+        {
+          "type": "brand",
+          "detail": "7-Up"
+        },
+        {
+          "type": "brand",
+          "detail": "Jeep Grand Cherokee"
+        },
+        {
+          "type": "brand",
+          "detail": "Chuck Taylors"
+        },
+        {
+          "type": "brand",
+          "detail": "Magic Johnson"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "prestige streaming drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized, memoir-based family reckoning with present-day caregiving framing and flashback-driven episode structure."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary present-day scenes, modest interiors, and contained flashback environments keep the pilot in a controlled production footprint; the main cost pressure is winter exteriors and period dressing for the 1970s/1985 material."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs quiet authority, emotional restraint, and the ability to carry memory-heavy scenes without overt exposition, while MaryAnn needs an actor who can play charm, manipulation, and vulnerability in the same beat."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The memoir adaptation gives the pilot authority, but the series will be judged on how cleanly it expands beyond this first road-trip reckoning into a repeatable episode engine."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Mare of Easttown",
+          "year": 2021,
+          "why_it_comps": "A Pennsylvania-rooted prestige drama with a working-class family wound at the center and a lived-in regional voice."
+        },
+        {
+          "title": "This Is Us",
+          "year": 2016,
+          "why_it_comps": "The present-day family caregiving frame opening into memory-driven emotional excavation is structurally adjacent."
+        },
+        {
+          "title": "Rectify",
+          "year": 2013,
+          "why_it_comps": "Quiet, reflective, trauma-saturated storytelling that treats interior reckoning as the engine."
+        },
+        {
+          "title": "When They See Us",
+          "year": 2019,
+          "why_it_comps": "The childhood institutional trauma and the long shadow of a system failing Black boys give it similar emotional gravity."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to prestige family drama, memoir adaptation, and emotionally specific Black stories about memory, caregiving, and survival.",
+        "demographics": "35+, skewing female but with strong adult male appeal; urban and suburban prestige-drama viewers; college-educated audience comfortable with slower-burn emotional storytelling.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M/ep",
+        "season_total": "$24M-$48M for an 8-ep season",
+        "note": "A modest cast, contemporary present-day settings, and a limited number of flashback environments keep this in mid-tier prestige drama territory; winter exteriors and period flashbacks are the main cost drivers."
+      },
+      "lane_fit": {
+        "lane": "FX-style prestige family drama",
+        "types_of_buyers": [
+          "prestige-streaming drama buyers",
+          "limited-series-to-ongoing development execs",
+          "literary-adaptation buyers",
+          "actor-driven drama producers",
+          "regional-authenticity-focused buyers"
+        ],
+        "detail": "The script sits naturally in the adult, emotionally exacting lane where family trauma, memory, and social specificity are the product. It is strongest for buyers looking for a serious acting vehicle with a clear regional voice and a built-in memoir pedigree."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone memoir adaptation with a strong central lead and supporting characters who deepen the world, but no clear separate spinoff vector beyond the core Elliott family story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The cold is a memory engine.",
+          "what_it_means": "The script has a clean, ownable emotional device that turns weather, road texture, and physical discomfort into story. That gives buyers a hook that is both cinematic and easy to market to prestige-drama audiences who respond to mood with meaning.",
+          "evidence": "The predawn packing, the frost on the Jeep, and the repeated return of cold across the highway and flashbacks all tie the present to the group-home past.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Elliott is built for a restrained lead performance.",
+          "what_it_means": "This is the kind of role that can anchor a prestige series on actor heat alone because the character’s conflict lives in what he withholds. That makes it attractive to buyers looking for a serious male lead vehicle and to actors who want a quiet, awards-adjacent showcase.",
+          "evidence": "He packs in silence, deletes the text, absorbs the family voices, and only at the end asks MaryAnn the question he has carried for forty years.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "MaryAnn is a scene-stealing obstacle.",
+          "what_it_means": "The mother role is not just backstory; it is a live, volatile engine that can generate conflict in every episode she appears in. That is valuable to buyers because it gives the series a second major performance lane and a built-in emotional antagonist who is still human.",
+          "evidence": "She performs for neighbors, manipulates the pickup, smokes on the stoop, and shifts from public charm to private control in a single beat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The group-home world feels lived in.",
+          "what_it_means": "The Avondale material has enough institutional detail to feel like a real system, not just a trauma backdrop. That kind of specificity helps a series feel authored and gives development buyers confidence there is more world to mine.",
+          "evidence": "The locked door, chore list, allowance system, house rules, and the boys’ hierarchy all appear in the first flashback sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot lands a strong emotional button.",
+          "what_it_means": "The final question gives the episode a clean, memorable end-state that invites continuation without feeling gimmicky. Buyers like a pilot that closes on a line that reframes the whole hour and signals a season-long emotional investigation.",
+          "evidence": "Elliott finally asks, 'Why'd you call me weird?' as the Jeep drives north into the dark.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige, actor-forward family drama with a memoir pedigree and a highly marketable emotional device: the road trip as a trigger for buried institutional trauma. The contained present-day footprint keeps it in a buyer-friendly mid-tier lane while the lead role and mother-son conflict give it real awards-season and streamer-drama upside."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot is built on reflection more than propulsion.",
+          "detail": "The hour is strongest as an emotional excavation, but the present-day engine is mostly a drive, a pickup, and a final question. That makes the episode feel deliberate rather than urgent, which is fine for prestige buyers but narrows the audience and raises the bar on the series engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "MaryAnn’s volatility is the series’ biggest casting lift.",
+          "detail": "The mother role has to play funny, manipulative, frail, and emotionally evasive without tipping into caricature. That is a real upside if cast well, but it is also the role most likely to determine whether the pilot feels lived-in or overplayed.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The flashback world is richer than the present-day world.",
+          "detail": "Avondale, Henry, Janine, Derek, and Jiggs all arrive with texture, while the contemporary road-trip material is intentionally spare. Buyers will notice that the series’ most vivid story engine currently lives in memory, not in a fully populated present-tense world.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The memoir adaptation narrows the lane.",
+          "detail": "The specificity is a strength, but it also places the project squarely in prestige-drama territory rather than broad commercial TV. That is a good lane if the buyer wants authored adult drama, but it limits the pool compared with a more genre-forward series.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The script’s main friction is that it plays like a beautifully controlled emotional reckoning rather than a high-velocity pilot, so the buyer has to believe in the lead performance and the memoir pedigree. The flashback material is the richest part of the package, which means the present-day series frame will be closely scrutinized in development."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 69.3,
+  "tier": "Optionable",
+  "inputTokens": 22129,
+  "outputTokens": 5082,
+  "cost": 0.03946575,
+  "declaredFormat": "Series"
+}

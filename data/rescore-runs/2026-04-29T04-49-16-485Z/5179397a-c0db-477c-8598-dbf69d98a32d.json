@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:12:15.381Z",
+  "submission_id": "5179397a-c0db-477c-8598-dbf69d98a32d",
+  "eval_id": "73de7f51-8189-4563-a607-0f4448c076a9",
+  "title": "Boundaries",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Jessica Wolfe",
+      "role_type": "Lead",
+      "demographics": "Female, 19, college sophomore, elite liberal-arts student, white."
+    },
+    {
+      "name": "Kerri",
+      "role_type": "Supporting",
+      "demographics": "Female, 19, college sophomore, Jessica’s close friend."
+    },
+    {
+      "name": "William Maddox",
+      "role_type": "Supporting",
+      "demographics": "Male, early 60s, professor, father, white."
+    },
+    {
+      "name": "Henry Maddox",
+      "role_type": "Supporting",
+      "demographics": "Male, 19, college student, white."
+    },
+    {
+      "name": "Donovan",
+      "role_type": "Supporting",
+      "demographics": "Male, 20, college student, awkward, bearded."
+    },
+    {
+      "name": "Nicole",
+      "role_type": "Supporting",
+      "demographics": "Female, 19, Korean-American, college student."
+    },
+    {
+      "name": "Jessica's Mother",
+      "role_type": "Supporting",
+      "demographics": "Female, deceased in present day, appears in flashbacks at 23 and as a younger mother in memory/vision."
+    },
+    {
+      "name": "Jessica's Father",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, physician, Jessica’s father."
+    },
+    {
+      "name": "Will",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, fraternity student, preppy jock."
+    },
+    {
+      "name": "Pete",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, fraternity student, preppy jock."
+    }
+  ],
+  "positioning_hook": "A hyper-achieving college sophomore starts slipping through time on a haunted New Hampshire campus, and the only man who can explain it may be the professor who’s already weaponizing her trauma.",
+  "cost_usd": 0.045882,
+  "input_tokens": 28380,
+  "output_tokens": 5466,
+  "status": "wrote:leads_ok"
+}

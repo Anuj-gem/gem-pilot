@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:16:02.521Z",
+  "submission_id": "c41d4933-c4a1-4bcb-bab5-a2a776dea2d9",
+  "eval_id": "8995c490-daff-406f-9663-4a231e5cbede",
+  "title": "santa in two worlds screenplay 161",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Santa",
+      "role_type": "Lead",
+      "demographics": "Male, 20s-40s, Afro-Latin or Latin American identity implied by setting; formerly incarcerated, street-raised, working-class."
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-60s, Santa's mother; sex worker, addict, survivor, working-class."
+    },
+    {
+      "name": "Mario",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, inmate; older than Santa, prison peer."
+    },
+    {
+      "name": "Vasquez",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, inmate; physically imposing, comic-aggressive."
+    },
+    {
+      "name": "Roberto",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, inmate; prison peer."
+    },
+    {
+      "name": "Warden",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-60s, prison authority figure."
+    },
+    {
+      "name": "Lille",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-60s, family friend / dream interpreter."
+    }
+  ],
+  "positioning_hook": "A jailed thief from Santiago is forced to confront the criminal inheritance of his family, then stumbles into a mystical reckoning that lets him revisit the lives that made him.",
+  "cost_usd": 0.04697475000000001,
+  "input_tokens": 36935,
+  "output_tokens": 4283,
+  "status": "wrote:leads_ok"
+}

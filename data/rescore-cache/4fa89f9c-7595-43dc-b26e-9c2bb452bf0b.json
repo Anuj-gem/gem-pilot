@@ -1,0 +1,294 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Drama",
+        "Crime"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "supporting-ensemble",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "slow-burn",
+        "family-dynamics",
+        "religion",
+        "crime",
+        "church-investigation"
+      ]
+    },
+    "positioning_hook": "A small-town priest and his parish allies uncover a 30-year-old cover-up after someone starts tampering with covered statues and leaving warnings in a Pennsylvania church garden.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is clean and accessible, with a built-in mystery engine and a faith-community setting that gives it a clear audience lane. It’s more specialty than four-quadrant, though, because the appeal depends on viewers wanting a church-set investigation with moral rather than action-driven stakes."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The covered statues, the note reading 'He was warned,' and the parish history all establish the premise quickly and legibly. The mystery is easy to explain in two sentences, though the script’s broader institutional backstory takes a beat to fully crystallize."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Father Gallagher has authority and calm, Debbie has perceptive drive, and Deacon Dave brings tension and dry humor. They function well together, but the page is still more about the case than about deeply idiosyncratic character contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The church-statue inciting incident is a fresh entry point, and the script commits to sacred imagery as a mystery language rather than decoration. The execution is still fairly classical, but the setting-specific premise gives it a distinct angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Each reveal escalates cleanly from vandalism to accusation to institutional cover-up, and the act breaks land on new information rather than repetition. The momentum is solid, though the piece is more investigative than propulsive in a thriller sense."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script’s core idea feels immediately usable: a parish mystery that turns into a reckoning with buried truth. It’s fresh because the statue imagery, diocesan politics, and small-town Catholic texture are doing real story work, not just providing atmosphere."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Mary Queen of Peace, St. Cecile, the rectory, the prayer garden, and the diocesan office all feel like parts of a functioning ecclesiastical ecosystem. The world has enough hierarchy, ritual, and local memory to generate story, especially around parish gossip and diocesan authority."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is steady, reverent, and lightly wry, with Deacon Dave supplying the pressure-release valve. The script knows what kind of mystery it is and doesn’t chase irony or melodrama, which gives it a clear register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The Patrick Donnelly notes and the unresolved clergy-conduct thread suggest a larger moral history beneath the surface case. The script implies institutional memory and long-buried damage without over-explaining it, which gives the material some depth beyond the immediate mystery."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Gallagher-Dave-Debbie triangle has usable friction, and Lesnar gives the story a strong opposing force. Still, the piece is anchored more by the central investigation than by a truly elastic ensemble engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Father Keith Gallagher",
+        "role_type": "Lead",
+        "demographics": "Male, late 60s to early 70s, Catholic priest, small-town Pennsylvania.",
+        "hook": "A seasoned parish priest with a calm surface and a conscience that won’t let him leave a wound buried, Gallagher is the moral center of the story and the one person in the room who can speak both faith and accountability. He’s observant, measured, and quietly formidable, with the authority of a man who knows the town’s history and the burden of being the one expected to carry it.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Wilkinson in In the Bedroom or Brendan Gleeson in Calvary — a restrained authority role where stillness, moral pressure, and late-life resolve do the heavy lifting. It gives an actor the chance to play interior conflict, institutional weight, and a final-act moral stand without ever needing to overplay."
+      },
+      {
+        "name": "Deacon Dave Smith",
+        "role_type": "Supporting",
+        "demographics": "Male, late 50s to early 60s, Catholic deacon, working-class local.",
+        "hook": "Dave is the parish’s practical operator: funny, skeptical, and more dangerous than he first appears because he understands how people hide things. He starts as the comic realist and becomes the story’s pressure point, especially once Lesnar recognizes he can be turned or tested.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor the dry, scene-stealing authority of Michael Stuhlbarg in a prestige drama or Richard Jenkins in The Visitor — the supporting part that quietly controls the temperature of every room. The appeal is the turn from banter to moral ambiguity."
+      },
+      {
+        "name": "Debbie Runner",
+        "role_type": "Supporting",
+        "demographics": "Female, late 50s to early 60s, choir director and youth leader, lifelong parishioner.",
+        "hook": "Debbie is the parish’s emotional intelligence: organized, perceptive, and not remotely passive, she sees the social weather before anyone else does. She’s the one who keeps the case moving, notices what doesn’t fit, and refuses to let the men in authority define the terms of the truth.",
+        "why_actor_wants_this": "This is strong supporting-lead territory in the vein of Laura Linney in The Savages or Amy Ryan in Gone Baby Gone — a woman with competence, grief, and moral clarity who can carry scenes through precision rather than volume. It gives an actor a grounded, adult role with real authority in the ensemble."
+      },
+      {
+        "name": "Monsignor Bill Lesnar",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s to 70s, senior Catholic cleric.",
+        "hook": "Lesnar is the story’s institutional antagonist: polished, controlled, and always speaking in the language of order, containment, and consequences. He’s not a cartoon villain; he’s the kind of man who can make silence sound responsible, which makes him more dangerous in every scene.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the controlled menace of Ralph Fiennes in Conclave or John Lithgow in a prestige authority role — all subtext, pressure, and weaponized calm. The showcase is in playing a man whose composure is itself the threat."
+      },
+      {
+        "name": "Bishop Albert Smirk",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s to 70s, bishop, diocesan authority figure.",
+        "hook": "Smirk arrives as the higher authority who can either bury the matter or force it into the light, and the script smartly lets him feel like a real institutional decision-maker rather than a plot device. He’s formal, measured, and ultimately the person who turns the story from private accusation into public acknowledgment.",
+        "why_actor_wants_this": "This is prestige-utility casting in the mode of David Strathairn in Lincoln or Mark Rylance in a procedural drama — a role built on authority, restraint, and the power of a single decisive scene. It gives an actor a clean, memorable pivot from bureaucracy to conscience."
+      },
+      {
+        "name": "Anna Bernadette",
+        "role_type": "Supporting",
+        "demographics": "Female, early 60s, widow or close parish family member, grieving.",
+        "hook": "Anna is the keeper of the late monsignor’s personal history, and her scenes give the story a human doorway into the old notes and old loyalties. She’s gentle but not naïve, and her grief gives the exposition emotional weight instead of making it feel procedural.",
+        "why_actor_wants_this": "This is the kind of brief but meaningful role that can play like Frances McDormand in a small-town drama or Ann Dowd in a faith-adjacent character piece — a few scenes with real emotional residue. The showcase is in the quiet devastation of recognition."
+      },
+      {
+        "name": "Mrs. Eileen Cordella",
+        "role_type": "Supporting",
+        "demographics": "Female, 70s, devout parishioner.",
+        "hook": "Eileen is the parish gossip with a conscience, the kind of older local who can move information through a community faster than any official channel. She’s funny, watchful, and useful, but she also grounds the story in the lived texture of a church where everyone knows everyone else’s business.",
+        "why_actor_wants_this": "This is a delicious character turn in the tradition of Margo Martindale or Jane Curtin — a small role with sharp comic timing and real local authority. It gives an actor a chance to steal scenes with precision and personality."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 7,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Older adult ensemble",
+          "Faith-community authenticity",
+          "No child roles required",
+          "Age-specific clerical casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Church sanctuary",
+          "Prayer garden with statues",
+          "Rectory kitchen and sitting room",
+          "Parish office",
+          "Diocesan office",
+          "Residential home",
+          "Road travel between towns"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond basic atmospheric storm work and simple title supers.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical rain/storm effects, flickering lights, candle atmospherics, and prop handling for cloth coverings, note, and rosary ring.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical or streaming original with adult mystery positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, church-and-parish interiors, a handful of exteriors, no VFX, no action set pieces, and no specialty production requirements keep this comfortably contained."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead and key supporting roles are all older adults, and the project benefits from actors who can play institutional authority, parish familiarity, and moral pressure without flattening the material."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The mystery is clear, but the buyer conversation will focus on whether the clergy-cover-up material lands as a compelling feature engine rather than a TV-style procedural setup."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Calvary",
+          "year": 2014,
+          "why_it_comps": "A faith-centered mystery built around a priest under moral pressure, with dialogue-driven scenes and a serious spiritual register."
+        },
+        {
+          "title": "The Two Popes",
+          "year": 2019,
+          "why_it_comps": "Institutional Catholic politics, authority figures in conversation, and the appeal of adult actors carrying the drama through moral debate."
+        },
+        {
+          "title": "Mass",
+          "year": 2021,
+          "why_it_comps": "A church-adjacent reckoning with buried harm, grief, and accountability, driven by performance rather than spectacle."
+        },
+        {
+          "title": "The Last Thing He Wanted",
+          "year": 2020,
+          "why_it_comps": "A low-key investigative structure where the protagonist follows a paper trail into a larger institutional truth."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to prestige mysteries with moral stakes, especially viewers drawn to Catholic texture, small-town secrets, and character-first investigations.",
+        "demographics": "35+, skewing adult and educated, with strongest pull for viewers who like faith-adjacent drama, procedural mystery, and ensemble dialogue scenes.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary, interior-heavy mystery with a small older ensemble and modest practical effects should live in the indie feature range."
+      },
+      "lane_fit": {
+        "lane": "prestige faith-adjacent mystery",
+        "types_of_buyers": [
+          "specialty film financiers",
+          "streamer original-film development execs",
+          "prestige indie producers",
+          "adult-drama distributors",
+          "actor-driven package buyers"
+        ],
+        "detail": "This sits naturally in the lane of adult, dialogue-forward mysteries where moral authority and institutional secrecy are the engine. The church setting gives it a clear identity for buyers looking for elevated genre with a built-in audience hook."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature mystery; Father Gallagher is a usable recurring character, but the script as written does not yet establish a separate spinoff vector with enough depth to justify franchise positioning."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The statue inciting incident is instantly ownable.",
+          "what_it_means": "The covered-statues image gives the project a visual hook that buyers can remember and market in a single frame. That kind of specific, symbolic opening is attractive to streamers and specialty distributors looking for a mystery with a distinct face.",
+          "evidence": "The opening night sequence with the veiled statues, the torn cloth, the rosary ring, and the black beads immediately turns a parish ritual into a mystery engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Catholic world feels story-generating.",
+          "what_it_means": "The rectory, parish office, prayer garden, and diocesan hierarchy create a contained but layered ecosystem that can support both the feature and future adjacent stories. Buyers looking for a specific adult world will see a setting with rules, rituals, and built-in conflict.",
+          "evidence": "Mary Queen of Peace, St. Cecile, the bishop’s office, and the parish gossip network all function as active parts of the plot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble gives the lead real support.",
+          "what_it_means": "Gallagher is not carrying the movie alone; Dave, Debbie, Lesnar, and Smirk all create playable scene dynamics that make the package more castable. That broadens the appeal to actors who want a strong role in a prestige ensemble rather than a solo star vehicle.",
+          "evidence": "The Gallagher-Dave-Debbie triangle, plus the Lesnar and bishop confrontations, keeps the story relational rather than purely investigative.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The moral turn is commercially legible.",
+          "what_it_means": "The story moves from a local mystery into an institutional accountability drama, which gives it emotional seriousness without losing the hook. That combination is attractive to buyers who want elevated material with a clean audience promise.",
+          "evidence": "The reveal of O’Connell’s notes and the final diocesan acknowledgment turn the case into a public reckoning.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, actor-friendly prestige mystery with a memorable visual hook and a clearly defined Catholic world. The production footprint stays modest while the moral stakes and institutional texture give buyers a clean lane for an adult streaming or specialty release."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The feature plays close to a pilot engine.",
+          "detail": "The script is built around a case-opening, clue-following, authority-confronting structure that feels very natural for a recurring mystery format. As a feature, it will need buyers to believe the emotional payoff of this one case is enough to stand alone without the comfort of an ongoing parish-investigation engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Dave’s turn needs careful handling.",
+          "detail": "The sacristy scene where Dave seems to align with Lesnar creates useful tension, but it also shifts him into a more ambiguous lane than the earlier banter suggests. That makes him one of the project’s biggest casting and performance variables because the audience has to buy both his loyalty and his suspicion.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The climax is dialogue-forward, not event-forward.",
+          "detail": "The final confrontation in the bishop’s office resolves the story through acknowledgment and institutional action rather than a more kinetic reveal. That is a strength for the lane, but it also narrows the audience to viewers who want moral reckoning over procedural payoff or thriller escalation.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The clergy-cover-up material narrows the buyer pool.",
+          "detail": "The script’s central accusation involves clergy conduct, diocesan failure, and a public reopening of a buried case. That is viable for streaming and specialty buyers, but it will be a harder fit for more conservative or broad commercial theatrical lanes.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is format and lane: this is a strong mystery premise, but the script’s structure and payoff language are closer to a prestige series engine than a broad feature event. The other buyer conversation will be around Dave’s ambiguous turn and whether the final diocesan resolution delivers enough cinematic lift for the intended release model."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 66,
+  "tier": "Optionable",
+  "inputTokens": 21683,
+  "outputTokens": 4236,
+  "cost": 0.03532425,
+  "declaredFormat": "Feature film"
+}

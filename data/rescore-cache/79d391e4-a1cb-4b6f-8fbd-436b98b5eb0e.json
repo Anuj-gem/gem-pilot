@@ -1,0 +1,327 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_secondary": [
+        "Fantasy",
+        "Romance"
+      ],
+      "tone": "broad",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "high-concept",
+        "low-budget-friendly",
+        "family-dynamics",
+        "love",
+        "identity",
+        "dog-transformation"
+      ]
+    },
+    "positioning_hook": "A germ-phobic salesman accidentally turns into a pug after dosing himself with his girlfriend’s canine-gene arthritis cure, forcing him to win her back while trapped in the body of the dog he never respected.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is instantly legible and broadly funny, with a clear romantic-comedy engine and a clean transformation gag. The audience is real, but the humor is very specific and the appeal is narrower than a four-quadrant studio comedy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: Jim, Trish, the dog-sitting setup, and the accidental Cani-Med exposure all arrive in the first act. The script keeps the premise simple enough to explain in one breath, which is a real commercial asset."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Jim has a workable comic flaw stack—vain, jealous, germ-obsessed, and then humbled by the transformation—but he’s more a comic engine than a deeply surprising lead. Trish has stronger values and clearer competence, while Ryan and Stuart function well as foils rather than fully durable characters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The dog-transformation conceit is playful and the script commits to the bit with gusto, especially in the physical comedy and canine POV reversals. The execution, though, stays in familiar broad-comedy territory rather than finding a sharper or stranger comic voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps moving through escalating dog behavior, the trade show, the hotel, and the final reveal, so it rarely stalls. Still, the middle is built more on repeated gag escalation than on a strong sequence of irreversible turns, which softens urgency."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea is fresh in a way that clicks immediately: a man who treats dogs like nuisances becomes one. That irony is clean, commercial, and easy to remember, even if the surrounding execution is more familiar than the premise."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world is mostly a functional container for the premise: cafe, gym-equipment store, apartment, trade show, hotel, pet store. There’s enough specificity in the dog-care routines and the Tunnel Toner invention to give it texture, but not enough social depth to make the world itself a draw."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script has a clear broad-comedy register and commits to animal-body humor, jealousy jokes, and romantic slapstick. It’s consistent, but the tone is more familiar studio comedy than a truly hard-to-imitate comic signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There’s a decent thematic spine about listening, empathy, and respecting what you don’t understand, but the script plays those ideas pretty openly. The emotional subtext is there, though it doesn’t hide much beneath the surface."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Jim/Trish/Bubbles gives the script a workable triangle, and Stuart, Ryan, Nelson, and Orange add comic pressure. The relationships generate material, but the movie is still fundamentally carried by Jim’s transformation and the romantic triangle around it."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jim",
+        "role_type": "Lead",
+        "demographics": "Male, early 30s, straight, working-class sales rep, body-conscious, contemporary.",
+        "hook": "A vain, germ-averse salesman who thinks he’s above the messiness of dogs, relationships, and emotional honesty until he’s literally forced to live as one. He starts as a comic jerk with real insecurity underneath, and the transformation turns his flaws into the engine of the movie.",
+        "why_actor_wants_this": "This is the kind of physical-comedy-to-emotional-redemption showcase that gave Jim Carrey in Liar Liar and Brendan Fraser in George of the Jungle room to be wildly funny while still winning the audience back. It asks for an actor who can sell humiliation, body comedy, and a late-arriving sincerity reset."
+      },
+      {
+        "name": "Trish",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s to early 30s, scientist/researcher, intelligent, empathetic, contemporary.",
+        "hook": "A dog-loving researcher with real professional ambition and a strong moral center, caught between the immature boyfriend who doesn’t listen and the polished funder who seems to. She’s the emotional and ethical anchor of the story, and the script gives her enough competence to feel like more than a romantic prize.",
+        "why_actor_wants_this": "This is the grounded, self-possessed romantic lead territory of someone like Sandra Bullock in While You Were Sleeping or Jennifer Garner in 13 Going on 30—warmth, intelligence, and the chance to play exasperation without losing likability. The role gives an actor a clean arc from patience to disappointment to renewed belief."
+      },
+      {
+        "name": "Bubbles",
+        "role_type": "Supporting",
+        "demographics": "Male dog, small breed, male-presenting voice/personality.",
+        "hook": "Trish’s pampered dog becomes Jim’s unwilling roommate, comic conscience, and eventual ally. He’s funny because he’s both pet and commentator: needy, judgmental, and weirdly wise about the human behavior around him.",
+        "why_actor_wants_this": "This is voice-performance showcase territory in the vein of the talking-animal energy in The Secret Life of Pets or the sidekick wit of a Disney side character, where attitude is the whole game. It gives an actor or voice performer a chance to land punchlines, emotional beats, and a surprising amount of scene-stealing authority."
+      },
+      {
+        "name": "Ryan",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s to 30s, attractive, fit, business-minded, contemporary.",
+        "hook": "Trish’s polished research partner and funding conduit, he reads as charming until the script lets his entitlement and opportunism show through. He’s a clean romantic rival because he’s not a cartoon villain; he’s the guy who knows how to look useful while quietly taking up space.",
+        "why_actor_wants_this": "This is the slick rival role that lets an actor play charm with a blade underneath, similar to the polished romantic obstruction in many studio comedies. The appeal is in playing the smile that curdles once the audience sees the self-interest."
+      },
+      {
+        "name": "Stuart",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, big, jockish, sales-floor coworker, contemporary.",
+        "hook": "Jim’s blunt, physically confident coworker who functions as a comic mirror and occasional truth-teller. He’s the guy who can talk masculinity in a way Jim half-understands and half-needs, and he keeps the sales-world subplot moving.",
+        "why_actor_wants_this": "This is classic scene-stealing supporting-comic territory, the kind of role that lets an actor do big physical business and deadpan advice in the same breath. It’s the sort of part that can pop the way a strong supporting turn does in a broad studio comedy."
+      },
+      {
+        "name": "Mr. Nelson",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, boss, short, bald, gruff, contemporary.",
+        "hook": "Jim’s impatient boss, a small-business pressure source who keeps the trade-show stakes alive and gives the movie a working-world clock. He’s not deep, but he’s useful: every scene with him reminds us Jim’s life has consequences beyond the romance.",
+        "why_actor_wants_this": "This is the kind of compact authority role that lets a veteran character actor play irritation, skepticism, and dry comic judgment with very little setup. It’s a neat pressure-cooker part rather than a showy one."
+      },
+      {
+        "name": "Orange",
+        "role_type": "Supporting",
+        "demographics": "Female cat, adult, female-presenting voice/personality.",
+        "hook": "A sarcastic cat who appears late and immediately becomes the movie’s most openly judgmental observer. She’s a comic wildcard, but also a useful reminder that the house is a whole ecosystem of animals with their own agendas.",
+        "why_actor_wants_this": "This is a voice role with built-in attitude, the kind that lets an actor play superiority and deadpan contempt for easy laughs. It’s a small part with strong scene-stealing potential."
+      },
+      {
+        "name": "Bob Sargent",
+        "role_type": "Supporting",
+        "demographics": "Male, late 50s, corporate chairman, polished, contemporary.",
+        "hook": "The Biomed gatekeeper who turns the research pitch into a business hurdle and gives the climax an external audience. He’s a functional but effective reminder that Trish’s work has to survive the real world, not just the relationship drama.",
+        "why_actor_wants_this": "This is the polished executive role that lets an actor play polite skepticism and corporate authority without needing big screen time. It’s a clean, efficient supporting turn."
+      },
+      {
+        "name": "Michelle",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, receptionist, contemporary.",
+        "hook": "The daycare receptionist who helps establish Jim’s new life at the end and gives the epilogue a lived-in workplace feel. She’s light, functional, and part of the movie’s final reset into a more humane version of Jim’s world.",
+        "why_actor_wants_this": "This is a small but useful working-comedy role, the kind that gives an actor a few clean beats and a professional, naturalistic presence. It’s not a showcase, but it’s a solid utility part."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 9,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Requires a lead who can carry broad physical comedy and romantic humiliation",
+          "Dog voices/performances are central if the animals are vocalized",
+          "Several animal performers required, including a pug, a small white dog, a bulldog, a cat, and a puppy"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Cafe exterior",
+          "gym-equipment store",
+          "Trish's apartment",
+          "bar",
+          "street runs",
+          "trade show floor",
+          "hotel room",
+          "pet store",
+          "restaurant",
+          "doggy daycare"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Practical transformation effects for Jim's dog body, plus possible cleanup/compositing for the final reveal and any talking-animal moments if not handled purely through performance.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical animal handling, vomit/gag gags, dog behavior beats, and a few physical-comedy falls/chases.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "SPCA"
+        },
+        {
+          "type": "brand",
+          "detail": "Biomed Corp."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming or theatrical comedy",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Standalone feature release"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly interior, with modest street work and no heavy VFX or large-scale action. The main cost drivers are animal handling, multiple locations, and practical transformation cleanup rather than scope."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead has to sell broad physical comedy, romantic frustration, and a believable emotional turn without losing audience sympathy. Animal performance is also load-bearing, especially if the dog dialogue is played as voiced character work."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear, but the movie lives or dies on whether the broad canine-comedy register feels charming rather than repetitive. The final romantic and transformation payoff is straightforward, but the script’s comic voice will be the key buyer conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Liar Liar",
+          "year": 1997,
+          "why_it_comps": "A broad high-concept comedy built around a lead whose body and behavior become the joke while the emotional lesson is learning to stop being selfish."
+        },
+        {
+          "title": "13 Going on 30",
+          "year": 2004,
+          "why_it_comps": "A romantic comedy where a transformation premise drives both physical comedy and a sincerity reset in the central relationship."
+        },
+        {
+          "title": "The Secret Life of Pets",
+          "year": 2016,
+          "why_it_comps": "The animal-perspective comedy, pet behavior gags, and scene-stealing dog personalities all live in the same broad, audience-friendly lane."
+        },
+        {
+          "title": "Beethoven",
+          "year": 1992,
+          "why_it_comps": "A family-friendly dog comedy built on chaos, affection, and the comic friction between humans and a very opinionated pet world."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who like broad, high-concept romantic comedies with animal gags and a redemption arc.",
+        "demographics": "Adults 18-49, with a slight female skew because of the romance, but accessible to couples and family-adjacent comedy audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest cast, practical animal work, and light effects keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "broad studio-style comedy at indie scale",
+        "types_of_buyers": [
+          "indie comedy financiers",
+          "streamer feature acquisitions teams",
+          "family-adjacent comedy distributors",
+          "producer-led genre-comedy shops",
+          "director-driven first-feature packages"
+        ],
+        "detail": "This sits naturally in the lane of accessible, premise-forward comedy that can be sold on concept and cast. The animal hook gives it poster value, while the romance and workplace stakes keep it from feeling like a pure gag reel."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the premise resolves cleanly and the supporting characters do not suggest a separate franchise vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "That makes it easy to sell in a room, easy to market in a trailer, and easy for a buyer to understand in one sentence. This is the kind of concept that can attract comedy buyers, streamer acquisitions teams, and cast looking for a clean hook.",
+          "evidence": "Jim accidentally doses himself with Cani-Med, turns into a pug, and has to survive the weekend while his girlfriend’s dog-sitting and research life keep moving.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The transformation is tied to character flaw.",
+          "what_it_means": "The movie isn’t just a gimmick; the body-swap logic is a punishment for Jim’s inability to listen, which gives the comedy a built-in emotional payoff. That kind of premise-to-theme alignment is attractive to buyers because it feels commercial and complete.",
+          "evidence": "Jim ignores Trish’s dog, dismisses her work, and literally becomes the animal he treats as an inconvenience.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Animal behavior drives the set pieces.",
+          "what_it_means": "The comedy is visual, physical, and trailer-friendly, which helps the movie play beyond dialogue-only joke writing. Buyers can see the movie in the dog-walk, garbage-dive, toilet-water, and crate beats.",
+          "evidence": "Jim sniffs strangers, eats garbage, drinks from the toilet, and gets trapped in a crate while Bubbles comments on the chaos.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romantic triangle has a clean engine.",
+          "what_it_means": "Trish, Jim, and Ryan create an easy-to-track emotional conflict that gives the movie a second lane beyond the transformation premise. That helps the script play as both comedy and romance, which broadens the buyer conversation.",
+          "evidence": "Ryan’s funding and charm pull Trish away while Jim’s jealousy becomes literal dog behavior.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dog world has comic personality.",
+          "what_it_means": "Bubbles and Orange give the movie a playful animal ensemble that can generate extra laughs and merchandising-friendly imagery. That makes the script feel more ownable than a one-note transformation comedy.",
+          "evidence": "Bubbles talks, judges Jim, and pursues his own romantic agenda; Orange appears as a sarcastic cat observer.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept comedy package: a one-sentence premise, a built-in redemption arc, and a lot of physical dog-business that can sell in trailer form. At indie-feature scale, it’s the kind of premise-forward, castable comedy that can attract a buyer without needing VFX spend or franchise math.",
+      "issues": {
+        "items": [
+          {
+            "area": "The middle leans on repeated dog gags.",
+            "detail": "Once Jim turns, a lot of the second act is built from variations on sniffing, eating, barking, and humiliating body behavior. That keeps the movie lively, but it also means the buyer conversation will center on whether the comic escalation feels fresh enough across the full feature.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "Jim is broad before he becomes sympathetic.",
+            "detail": "The opening version of Jim is intentionally selfish and oblivious, but the script asks the audience to stay with him through a lot of immature behavior before the transformation pays off. That is workable for comedy, but it narrows the margin for error on casting and performance.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The romance resolves through a fairly direct reset.",
+            "detail": "The ending lands on Trish recognizing Jim, forgiving him, and the movie moving into a tidy new-life montage. It’s satisfying and commercial, but it’s also a familiar rom-com finish rather than a surprising emotional turn.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The animal workload is real.",
+            "detail": "The script depends on multiple animal performers, dog behavior beats, and a cat with personality, plus a pug transformation that needs to read clearly. That is manageable, but it is still the main production conversation after the concept itself.",
+            "is_primary_lever": false,
+            "source": "production"
+          }
+        ],
+        "headline": "The main friction is comic repetition: the premise is strong, but the second act has to keep finding new versions of the same dog joke without losing momentum. Beyond that, the movie is straightforward and buyer-friendly, with the biggest practical conversation being animal handling rather than story complexity."
+      },
+      "craft_note": ""
+    }
+  },
+  "weightedScore": 60,
+  "tier": "Optionable",
+  "inputTokens": 38203,
+  "outputTokens": 4622,
+  "cost": 0.04945125,
+  "declaredFormat": "Feature film"
+}

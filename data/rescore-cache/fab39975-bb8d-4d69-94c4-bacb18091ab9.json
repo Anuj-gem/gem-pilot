@@ -1,0 +1,288 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "tone": "surreal",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "high-concept",
+        "character-driven",
+        "survival",
+        "identity",
+        "family-dynamics",
+        "body-horror",
+        "biological-world"
+      ]
+    },
+    "positioning_hook": "A naïve worker named Kit eats a forbidden living sac, absorbs a manipulative voice in his head, and stumbles toward freedom in a grotesque bio-engineered world that wants to own him.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is vivid and easy to pitch, with a clear underdog protagonist and a memorable grotesque world. The audience is narrower than mainstream because the script leans hard into surreal body-horror and abstract mythology rather than a familiar procedural or clean genre engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The pilot establishes its premise early: Kit ingests an Ang sac, becomes host to an intrusive Entity, and is pushed out of a controlled labor system. The central question is understandable, though the larger world and rules remain intentionally opaque by the end."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Kit is a strong series anchor because his innocence, compliance, and emerging selfhood create a durable contradiction. Mother and Kelto add a workable pressure triangle, but the supporting cast is still more functional than deeply individualized."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a bizarre biological-industrial mythology with a distinct visual language: living converters, retirement pods, ang sacs, and a world that behaves like flesh. That level of invention gives the pilot a real signature, even when the emotional beats are more familiar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The escalation is clear — ingestion, possession, punishment, retirement, escape — and the pilot keeps moving. Some stretches linger in repetition of Kit’s confusion and the Entity’s persuasion, which softens the propulsion before the final breakout."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea lands as both strange and legible: a controlled worker discovers he may be a manufactured tool and starts to outgrow his programming. The originality comes from the bio-surreal setting and the emotional inversion of the 'naïve' lead, even if the underlying liberation arc is recognizable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world feels engineered rather than decorative, with specific systems like ang sac collection, converter punishment, retirement boxes, and a wall-bound society. Those details generate story pressure and suggest a larger ecology beyond the pilot."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably off-kilter: childlike, grotesque, funny, and unsettling in the same breath. Kit’s earnestness against the body-horror imagery gives the pilot a tonal identity that would be hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The reveal that Kit’s memories are false and that he may not be real opens a deeper identity engine beneath the immediate escape plot. The pilot hints at larger questions of control, manufactured personhood, and the Entity’s agenda without fully cashing them in yet."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Kit/Mother/Kelto form a usable triangle with clear friction, affection, and threat, and the brainoid group gives the world some social mass. Still, most relationships are defined by Kit’s condition rather than by independent dramatic agendas."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Kit",
+        "role_type": "Lead",
+        "demographics": "male, young adult, non-human / manufactured worker, emotionally childlike, physically small-to-average, biologically altered",
+        "hook": "Kit is a sweet, obedient, painfully literal worker who treats abuse like affection and danger like a scheduling problem. He starts the pilot as a compliant laborer with a shovel and a canister, then becomes the host for an intrusive Entity that may be his first real chance at selfhood. His innocence is not passive; it becomes the engine of the show as he slowly learns that the world has lied to him about what he is.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in Breaking Bad — a deceptively gentle presence whose stillness hides dread, then turns into revelation. It gives an actor the chance to play innocence, confusion, physical comedy, and existential terror in one role."
+      },
+      {
+        "name": "Mother",
+        "role_type": "Supporting",
+        "demographics": "female, middle-aged, authority figure, caretaker/manager, non-human or altered worker-class supervisor",
+        "hook": "Mother is the pilot’s most volatile authority figure: sarcastic, punitive, and oddly tender, with a cigarette always in hand and discipline always on her lips. She can mock Kit, threaten him, and then fold into genuine grief in the same scene, which makes her feel like both parent and prison guard. Her final confession that Kit’s memories are false reframes her as a tragic functionary trapped inside the system she enforces.",
+        "why_actor_wants_this": "This is the showcase territory of Patricia Clarkson in Sharp Objects — a character who can weaponize warmth and then reveal the damage underneath. It offers an actor sharp tonal shifts, authority, and a late-scene emotional collapse."
+      },
+      {
+        "name": "Kelto",
+        "role_type": "Supporting",
+        "demographics": "male, young adult, worker-class enforcer, physically capable, emotionally immature",
+        "hook": "Kelto is the eager, jealous, rule-bending peer who enjoys Kit’s vulnerability a little too much and wants approval from Mother almost as much as he wants Kit gone. He reads as comic relief until the pilot lets him swing into real menace, then back into wounded resentment. He’s the kind of supporting character who can become a recurring pressure point because he’s both rival and follower.",
+        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Vice Principals — a volatile, funny, needy antagonist who can pivot from clowning to threat without losing momentum. It gives an actor a lot of behavioral color and room for escalation."
+      },
+      {
+        "name": "Entity",
+        "role_type": "Supporting",
+        "demographics": "voice-only presence, genderless or fluid, non-human intelligence, parasitic/embedded consciousness",
+        "hook": "The Entity is the voice inside the Ang sac that becomes Kit’s unwanted companion, manipulator, and possible liberator. It speaks with a mix of pleading, sarcasm, and eerie intimacy, and the pilot keeps its motives unstable enough to make every intervention feel suspect. It is less a sidekick than a second agenda living inside the lead’s body.",
+        "why_actor_wants_this": "This is the showcase territory of the voice performance in Her — a role where personality is everything and the actor has to sell seduction, loneliness, and control without a body. It’s a rare chance to build a character entirely through vocal texture and timing."
+      },
+      {
+        "name": "Ang Sac Converter",
+        "role_type": "Supporting",
+        "demographics": "non-human machine/organism, voice role, institutional function",
+        "hook": "The converter is a grotesque bureaucrat of the world: wet, sarcastic, and weirdly chatty, with a mouth that processes labor into food and punishment into policy. It gives the pilot one of its best tonal signatures because it turns industrial procedure into body-horror comedy. It also reinforces the sense that this world’s systems are alive and complicit.",
+        "why_actor_wants_this": "This is the showcase territory of the talking-machine energy in WALL-E or the HAL-style voice presence in 2001 — a role where a performer can make an inhuman system feel memorable. It’s a fun, scene-stealing voice part with strong tonal identity."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 5,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "voice performance for the Entity",
+          "voice performance for the Ang Sac Converter",
+          "non-human or heavily stylized physicality for the world",
+          "no child casting required"
+        ]
+      },
+      "locations": {
+        "distinct_count": 7,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "bio-organic production design across caves, tunnels, cafeteria, restroom, basement, retirement box, and exterior wall",
+          "heavy prosthetic or practical set dressing to create flesh-like environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Environmental transformations, living surfaces, the Entity’s manifestations, the wall-growth bridge, and the final bio-landscape will likely need compositing and digital enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, slime, acid, organ splatter, and body-horror effects throughout the retirement sequence and converter scenes.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Ween's 'Don't Laugh, I Love You' is specifically named and used in the opening."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized character-driven fantasy/sci-fi with an ongoing escape-and-discovery engine."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary, but the bio-organic production design and repeated practical effects work will push this above a simple contained drama. The wall escape, retirement box, and final landscape all need enough design money to preserve the script’s identity."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Kit needs an actor who can play innocence, physical comedy, and existential dread without losing sympathy, while Mother and Kelto need sharply differentiated voices. The voice roles also need performers who can make the Entity and converter feel alive rather than gimmicky."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s mythology is distinctive, but the buyer conversation will focus on how much of the world’s rules are meant to be understood now versus later. The memory reveal and the Entity’s agenda create intrigue, but they also leave the series’ larger operating logic intentionally partial."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Undone",
+          "year": 2019,
+          "why_it_comps": "Shares the surreal identity-revelation engine and the sense of reality bending around a damaged or uncertain protagonist."
+        },
+        {
+          "title": "Scavengers Reign",
+          "year": 2023,
+          "why_it_comps": "Matches the bio-organic worldbuilding and the feeling of a strange ecology that is both beautiful and threatening."
+        },
+        {
+          "title": "Mandy",
+          "year": 2018,
+          "why_it_comps": "Comps on the feverish, grotesque visual imagination and the willingness to make the world feel chemically and physically alive."
+        },
+        {
+          "title": "The Midnight Gospel",
+          "year": 2020,
+          "why_it_comps": "Shares the offbeat, philosophical, animated-surreal lane where existential ideas are carried by bizarre imagery and tonal whiplash."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who like surreal, adult animated or animation-adjacent genre stories with emotional undercurrents and a strong visual hook.",
+        "demographics": "Adults 18-44, slightly male-skewing but viable with genre-forward women; likely college-educated streaming audience with appetite for elevated weirdness.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Assuming an 8-episode season, the bio-organic environments, practical effects, and recurring creature/texture work place this in mid-tier prestige streaming."
+      },
+      "lane_fit": {
+        "lane": "prestige surreal sci-fi/fantasy",
+        "types_of_buyers": [
+          "streamer originals teams building adult animation or animation-adjacent genre",
+          "prestige genre labels looking for visually distinctive IP",
+          "buyers seeking elevated, creator-driven fantasy with a strong art-direction hook",
+          "development execs chasing cult-friendly, high-concept worldbuilding"
+        ],
+        "detail": "This sits naturally in the lane of adult, visually ambitious genre storytelling where the world itself is the selling point. The script’s combination of body-horror, innocence, and philosophical identity play makes it feel built for a buyer who wants something cultable but still emotionally legible."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series as written; the supporting cast is vivid, but no side character yet reads as a clean spinoff anchor."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The world is a living organism.",
+          "what_it_means": "That gives the show a visual moat: every episode can generate new story from the environment itself, not just from plot. Buyers looking for a signature art-direction piece or a premium streamer calling card will notice that immediately.",
+          "evidence": "The converter has a wet tongue, the retirement box breathes, the wall grows a bridge, and the final landscape is made of biological forms.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kit is a durable anti-cynic lead.",
+          "what_it_means": "A protagonist who is sweet, confused, and slowly awakening can carry long-form storytelling because every new revelation changes how the audience reads him. That is attractive to casting and to buyers who want a lead role that can evolve without becoming abrasive.",
+          "evidence": "Kit keeps apologizing, treats abuse as normal, and only gradually realizes the Entity and Mother are not telling him the truth.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has a clean emotional turn.",
+          "what_it_means": "The reveal that Kit’s memories are false and that Mother has been managing him creates a strong pivot from grotesque comedy into identity drama. That kind of turn helps a buyer see both the hook and the deeper series engine in one pass.",
+          "evidence": "Mother tells Kit he came here last month and that he is 'a tool, and a naive one at that.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is instantly ownable.",
+          "what_it_means": "The blend of childlike sincerity, body horror, and deadpan absurdity gives the project a memorable voice in a crowded genre field. That makes it easier to position for buyers who want something cult-forward rather than generic fantasy.",
+          "evidence": "Kit sings with a worm, gets chewed by a living converter, and still responds with polite confusion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting triangle is functional and playable.",
+          "what_it_means": "Kit, Mother, and Kelto create a compact pressure system that can generate conflict without requiring a huge cast. That is useful for a buyer because it suggests a manageable core ensemble with room to expand.",
+          "evidence": "Mother disciplines Kit, Kelto needles him, and the Entity complicates every interaction from inside Kit’s body.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a visually distinctive, creator-forward series with a real cult lane: a naïve manufactured worker, a manipulative voice in his body, and a bio-organic world that feels designed to generate episodes. The combination of premium-surreal worldbuilding and a sympathetic lead role gives buyers a clear art-house genre package that can be sold on tone, design, and character at once."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot withholds the world rules aggressively.",
+          "detail": "The Ang sacs, brainoids, retirement boxes, and the Entity are all compelling, but the pilot keeps their operating logic mostly impressionistic. That creates intrigue, but it also means a buyer has to trust the series bible more than the page for how the engine actually functions.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Kit’s passivity can read as repetitive.",
+          "detail": "A lot of the pilot’s middle section is Kit being told what to do, apologizing, or misunderstanding danger while the Entity explains the stakes. That supports the character, but it also narrows the active dramatic range until the final escape sequence.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast is vivid but thinly differentiated.",
+          "detail": "Mother and Kelto have clear functions and strong behavior, but neither yet has the kind of independent agenda that would deepen the ensemble beyond Kit’s orbit. That matters because the series currently leans heavily on the lead and the Entity for long-term momentum.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The body-horror tone will narrow some buyers.",
+          "detail": "The retirement box sequence, the acid, the flesh-like machinery, and the bio-soup imagery push the content into a very specific mature lane. That is a feature for some streamers, but it will immediately rule out more conservative buyers and animation-adjacent platforms that want softer entry points.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is not the imagination; it’s the amount of trust the pilot asks a buyer to place in a mythology that is still mostly felt rather than explained. The other conversation is casting and audience lane: this is a strong niche package, but the body-horror intensity and lead-passivity will keep it in the cult-premium corner rather than broad commercial territory."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 70.3,
+  "tier": "Optionable",
+  "inputTokens": 18834,
+  "outputTokens": 4201,
+  "cost": 0.03303,
+  "declaredFormat": "Series"
+}

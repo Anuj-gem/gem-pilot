@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T05:13:05.084Z",
+  "submission_id": "2f12f041-e113-4a9d-ac14-c7475e1808bb",
+  "eval_id": "c06aa8c2-9944-4daa-bb54-b5dcfd0ebd24",
+  "title": "Untitled Psychological Horror Benoit",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Emily Blake",
+      "role_type": "Lead",
+      "demographics": "Female, 18, white, high-school senior; working-class Midwestern teen with trauma history and self-harm behavior."
+    },
+    {
+      "name": "Levi",
+      "role_type": "Supporting",
+      "demographics": "Male, 18, white; high-school peer with alternative/art-kid presentation and a hidden family history."
+    },
+    {
+      "name": "Sylvia Blake",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, white; mother, caretaker, small-town adult with emotional fatigue and guarded warmth."
+    },
+    {
+      "name": "Greg Blake",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s, white; estranged father, recovering or unstable adult with visible shame."
+    },
+    {
+      "name": "Kat",
+      "role_type": "Supporting",
+      "demographics": "Female, 16-18, white; teen friend, socially visible, emotionally guarded."
+    },
+    {
+      "name": "Principal Reed",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, white; high-school administrator with punk-adjacent edge."
+    },
+    {
+      "name": "Dr. Catherine Whittaker",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, white; therapist with polished, curated warmth and hidden menace."
+    },
+    {
+      "name": "Vernon Walters",
+      "role_type": "Supporting",
+      "demographics": "Male, 18, white; quiet art student, socially isolated, visually distinctive."
+    },
+    {
+      "name": "Victor Whitman",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white; yearbook advisor and teacher with polished, predatory affect."
+    },
+    {
+      "name": "Officer Dane",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white; local cop with swagger and institutional entitlement."
+    },
+    {
+      "name": "Tyler",
+      "role_type": "Supporting",
+      "demographics": "Male, 17-18, white; grocery clerk, wrestler-adjacent teen, socially functional and outwardly harmless."
+    },
+    {
+      "name": "Josie",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, white; socially visible teen girl with online presence and party-world access."
+    },
+    {
+      "name": "Haley Simms",
+      "role_type": "Supporting",
+      "demographics": "Female, 18, white; popular teen, athlete-adjacent, socially strategic."
+    },
+    {
+      "name": "Rachel Blake",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, white; deceased sister, remembered through flashbacks, journal entries, and memory fractures."
+    }
+  ],
+  "positioning_hook": "After a fatal crash and a year of gaslighting, a grieving Ohio teen uncovers a predator hiding in plain sight — and realizes the monster may be the story she’s been forced to believe.",
+  "cost_usd": 0.06093,
+  "input_tokens": 45996,
+  "output_tokens": 5874,
+  "status": "wrote:leads_ok"
+}

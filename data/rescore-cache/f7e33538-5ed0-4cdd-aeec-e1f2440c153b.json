@@ -1,0 +1,263 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "lyrical",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "slow-burn",
+        "ongoing-series",
+        "identity",
+        "immigration",
+        "love",
+        "friendship",
+        "beckenham"
+      ]
+    },
+    "positioning_hook": "An American designer in suburban London starts to question his future when a proposed immigration rule makes belonging feel conditional, and his quiet relationship with an NHS nurse turns into a search for home.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The emotional premise is legible and adult, but it is intimate, talk-driven, and culturally specific rather than broad. The strongest audience is viewers who respond to relationship dramas and immigration-adjacent identity stories, not a mass-appeal genre crowd."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook is clear early: a residency proposal threatens Ben’s sense of future in London, and the pilot tracks how that pressure changes his conversations with Klara. It is more of a mood-and-idea engine than a plot engine, which keeps it elegant but less instantly high-concept."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ben and Klara both have durable contradictions: he is a conservative evangelical American who cooks vegan, talks to God, and is quietly unmoored; she is a nurse with a migratory past and a fluid, outward-looking worldview. They can sustain a series because the tension is internal and relational, though the supporting bench is still thin."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The improvised-scriptment approach, the suburban London texture, and the final stadium street-interview sequence give the piece a distinct authorial identity. It feels more like a formalized observational drama than a conventional pilot, which is fresh but also narrows the buyer pool."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The pilot has a clean emotional progression from morning prayer to the stadium finale, but most scenes are conversational rather than event-driven. The final sequence provides lift, yet the middle plays as a series of reflective exchanges more than escalating turns."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of immigration anxiety, evangelical self-surveillance, and ordinary London rituals lands as specific and memorable. The stadium coda makes the premise feel inevitable rather than merely thematic, even if the overall engine is understated."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "Beckenham, the commuter trains, the NHS ward, and the football-stadium exterior all give the world lived-in specificity. Still, the world functions primarily as a container for conversation rather than a system with many story-generating institutions."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is quietly reflective with a light observational wit, and the improvised dialogue model supports that register well. The final fan-interview sequence adds a subtle public-facing release valve that keeps the piece from becoming purely inward."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "There are real seeds of deeper material in Ben’s faith, sexuality, migration status, and self-concept, and Klara’s own transnational history suggests more story beneath the surface. The pilot withholds rather than explains, which creates room, though the depth is still mostly implied rather than dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The series is built on the Ben/Klara dynamic, and that pairing has enough friction and tenderness to carry the pilot. Beyond them, the supporting world is vivid but not yet an ensemble engine with multiple recurring relationship combinations."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Ben",
+        "role_type": "Lead",
+        "demographics": "Male, 32, American, freelance designer, raised evangelical, living in London.",
+        "hook": "Ben is a thoughtful, polite, quietly self-policing American expat whose faith, sexuality, and lifestyle choices all feel like open questions he is trying to manage in private. He literally has conversations with God, cooks vegan food while resenting what it signals, and keeps testing himself by slipping back toward meat and certainty.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Mescal in Aftersun or Andrew Scott in All of Us Strangers — a restrained, inward lead who lets micro-shifts in posture and speech carry the emotional load. The role gives an actor the chance to play contradiction, repression, and self-revelation in close-up."
+      },
+      {
+        "name": "Klara",
+        "role_type": "Supporting",
+        "demographics": "Female, 28, Central European, NHS nurse, transnational upbringing.",
+        "hook": "Klara is worldly without being cynical, a nurse whose childhood in Uganda and present-day work with migrant and Caribbean patients have made her fluent in movement, adaptation, and provisional belonging. She treats sexuality as fluid and identity as something that evolves, which makes her both a counterpoint to Ben and the pilot’s clearest source of outward-looking energy.",
+        "why_actor_wants_this": "This is the showcase territory of Jessie Buckley in Wild Rose or Jodie Comer in Help — a role that combines warmth, intelligence, and a lived-in sense of self-invention. An actor gets to play the person who can listen, provoke, and quietly reframe the room."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 1,
+        "series_regulars": 1,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Two central roles with strong conversational chemistry required",
+          "Ben needs an American accent and credible interiority",
+          "Klara needs a grounded, multilingual-adjacent European presence without requiring a specific language on the page"
+        ]
+      },
+      "locations": {
+        "distinct_count": 5,
+        "interior_exterior_ratio": "mostly interior with a small exterior coda",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "rented flat in Beckenham",
+          "commuter train environment",
+          "night suburban walk routes",
+          "outside Selhurst Park before a match"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No VFX requirements indicated.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical crowd and stadium ambience; food prep and street-vendor dressing.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Crystal Palace"
+        },
+        {
+          "type": "brand",
+          "detail": "Selhurst Park"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming character drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized relationship drama with each episode built around conversational scenes, migration/identity pressure, and a recurring observational public-space coda."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, contained to a flat, nearby streets, trains, and one stadium exterior; no VFX, no stunts, and no specialty build beyond modest crowd dressing."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead pair has to carry the series through chemistry, subtext, and long conversational takes, and Ben specifically needs an actor who can play repression without flattening into passivity."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The improvised-scriptment form and the low-event middle make the pilot feel more like a tone and character proposition than a conventional engine, which will be a buyer conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Normal People",
+          "year": 2020,
+          "why_it_comps": "Shares the intimate, performance-led relationship focus and the sense that small conversations can carry major emotional consequence."
+        },
+        {
+          "title": "This Is Going to Hurt",
+          "year": 2022,
+          "why_it_comps": "Matches the contemporary UK setting, the NHS-adjacent texture, and the blend of wit with emotional unease."
+        },
+        {
+          "title": "Conversations with Friends",
+          "year": 2022,
+          "why_it_comps": "Comps on the talk-driven, adult, identity-and-desire register, with scenes built around shifting intimacy rather than plot machinery."
+        },
+        {
+          "title": "Fleabag",
+          "year": 2016,
+          "why_it_comps": "Not for comedy volume, but for the confessional intimacy and the feeling that the lead’s inner life is the real engine."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like intimate relationship dramas about identity, migration, and emotional self-recognition.",
+        "demographics": "Skews 25-54, slightly female, urban/educated, streamer-native viewers who respond to character-first British drama.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "",
+        "per_episode": "$500K-$1.5M",
+        "season_total": "$3M-$12M for an assumed 6-8 episode season",
+        "note": "Two-hander-heavy contemporary production with a small location footprint; the stadium exterior and night work add some cost, but the show stays in a contained indie series lane."
+      },
+      "lane_fit": {
+        "lane": "intimate premium character drama",
+        "types_of_buyers": [
+          "streamer originals teams building adult relationship drama",
+          "premium-cable development executives",
+          "boutique production companies with UK co-production appetite",
+          "actor-led indie series buyers",
+          "festival-adjacent prestige drama buyers"
+        ],
+        "detail": "This sits naturally with buyers looking for performance-forward, low-to-moderate cost series that trade on emotional specificity rather than plot escalation. The Beckenham/NHS/immigration texture gives it enough specificity to feel authored without requiring a large-scale production footprint."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone relationship series; no clear spinoff vector beyond the core Ben/Klara dynamic, and the supporting world is not yet deep enough to anchor a separate project."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Ben is a rare, playable contradiction.",
+          "what_it_means": "That kind of lead can anchor a buyer-facing pitch because the role is built on internal conflict, not plot gimmick, which is exactly what premium drama buyers and actor-driven producers want. It is the sort of part that attracts actors looking for a quiet reset role with emotional prestige.",
+          "evidence": "Ben’s evangelical background, literal conversations with God, vegan/meat oscillation, and uncertainty about attraction all sit on the page as one coherent tension.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The immigration premise is emotionally immediate.",
+          "what_it_means": "A policy headline becomes a personal clock, which gives the series a clean commercial entry point without needing procedural mechanics. That makes it legible to streamer dev teams looking for socially aware drama with a human center.",
+          "evidence": "The proposed ten-year residence rule lands in Scene 1 and reframes Ben’s future before the pilot has even settled in.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The stadium finale gives the pilot a public release valve.",
+          "what_it_means": "Ending in a crowded civic space broadens the show beyond apartment talk and gives the pilot a memorable visual and tonal payoff. Buyers who worry about static dialogue pieces will see a built-in way to externalize the theme.",
+          "evidence": "Klara’s improvised fan interviews about whether Ben should be allowed to stay turn the private question of belonging into a public one.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Beckenham/NHS texture feels lived-in.",
+          "what_it_means": "Specific local detail helps the series avoid generic expat-drama sameness and gives it a credible British social world. That specificity is attractive to buyers looking for authored, place-based drama that still travels internationally.",
+          "evidence": "Commuter trains, modest terraces, hospital stories, and suburban night walks all recur as story spaces.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a performance-led, low-footprint series with a clean emotional engine: a man whose future in London is suddenly conditional, and the woman beside him who knows how to live between places. The script’s commercial appeal comes from pairing that intimate contradiction with a contained production profile and a finale that turns a private identity crisis into a public, memorable image."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle is conversation-heavy.",
+          "detail": "Scenes 2 through 6 are mostly reflective exchanges, which means the pilot’s momentum depends on performance and subtext more than on visible turns. That is viable for the right buyer, but it will read as low-event to anyone expecting a more conventional pilot engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Klara is vivid but still secondary.",
+          "detail": "She has a strong worldview and useful contrast with Ben, but the pilot is structurally Ben’s story, so the series currently reads as a one-lead relationship drama rather than a true two-hander. That limits ensemble leverage and makes the show more dependent on the lead casting conversation.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The improvised format narrows the buyer pool.",
+          "detail": "A director’s scriptment with improvised dialogue is a meaningful artistic choice, but it also signals a more experimental development path than many buyers want at pilot stage. Some executives will see that as a strength; others will read it as a process risk.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The stadium coda needs brand comfort.",
+          "detail": "Crystal Palace and Selhurst Park are named in the material, so the football-world finish carries trademark/clearance attention even though the use is relatively light. It is not a blocker, but it is a real business item to track before production.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is structural rather than conceptual: the pilot is elegant and specific, but it lives in a low-event conversational lane that will ask a lot of the cast. Buyers will also clock the improvised-scriptment approach and the football-brand references as part of the package conversation."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 60.7,
+  "tier": "Optionable",
+  "inputTokens": 13233,
+  "outputTokens": 3439,
+  "cost": 0.02540025,
+  "declaredFormat": "Series"
+}

@@ -1,0 +1,328 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_secondary": [
+        "Crime",
+        "Action"
+      ],
+      "tone": "irreverent",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "feature-anchored",
+        "propulsive",
+        "character-driven",
+        "friendship",
+        "crime",
+        "mma",
+        "social-media",
+        "celebrity-culture"
+      ]
+    },
+    "positioning_hook": "A broke MMA fighter and his two hustling roommates turn internet pranks into a cash grab, then keep escalating until they’re stealing a celebrity’s flag under gunfire.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to sell: an MMA fighter weaponizes internet culture to chase money and notoriety, with celebrity humiliation and escalating heists as the engine. The audience is real and commercial, though the humor is specific enough that it plays strongest with younger, online, male-skewing viewers rather than broad four-quadrant buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the gym and stays legible: Walker needs attention to get a fight, so he and his friends build pranks around a celebrity’s public stunt. The flag-heist structure gives the script a clean, repeatable premise that keeps resetting the game in new locations."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Walker, Randall, and James each have a usable comic function and a distinct relationship to ambition, but Walker is the only one with a truly load-bearing arc. Randall’s political-strategist brain and James’s online-manager cynicism give the trio shape, though the emotional depth is lighter than the concept’s energy."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s specific collision of MMA, influencer culture, and prank-economy escalation is fresh and very current. It’s still built on a familiar buddy-crime engine, but the celebrity-art-installation angle and the internet hive-mind mechanics give it a sharper identity than most genre comedies."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps moving because each prank creates a bigger, riskier version of the same game, from the warehouse stunt to Kentucky to Iowa to the art institute and theater finale. The escalation is easy to follow and the set pieces keep paying off with new complications, reversals, and near-misses."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script feels like it found a real-world absurdity and built a movie around it: online clout as a literal criminal economy. The idea is novel and immediately understandable, though the underlying mechanics are still a recognizable heist-comedy framework."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The MMA gym, the 4chan/Discord ecosystem, the celebrity PR machine, and the rural Midwest locations all feel specific and story-generating. The world is strongest when it leans into internet subculture and fight-business economics, which gives the script a lived-in texture beyond the central prank."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually confident: bro-y, profane, internet-brained, and self-aware without becoming detached. It has a distinct comic voice in the way it treats online culture, masculinity, and fame as equally ridiculous systems."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are seeds of a deeper satire about attention, masculinity, and manufactured fame, but the script mostly plays those ideas as propulsion rather than subtext. The movie is fun on the surface, though it doesn’t suggest a lot of hidden emotional architecture."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Walker-James-Randall triangle has real comic chemistry, with each character pushing a different angle on the same bad idea. Logan and Amanda add a second engine on the celebrity side, giving the script enough relationship interplay to keep scenes alive beyond the plot mechanics."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Walker Jones",
+        "role_type": "Lead",
+        "demographics": "Male, 30s, athletic MMA fighter, white or ethnically ambiguous with tribal tattoos as written.",
+        "hook": "A disciplined, underappreciated MMA grinder who knows he’s good enough to win but not flashy enough to get paid, Walker is the straight man inside a very stupid plan. He wants legitimacy, money, and eventually a real shot, but his pride keeps dragging him toward bigger, dumber public stunts that can finally force the world to notice him.",
+        "why_actor_wants_this": "This is the showcase territory of Glen Powell in Hit Man or Adam Driver in Logan Lucky — a physically credible lead who can play deadpan frustration, vanity, and sudden athletic authority in the same role. The part gives an actor fight credibility, comic timing, and the chance to anchor a movie that keeps asking him to look cooler than he should."
+      },
+      {
+        "name": "Randall Worthington",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, former political strategist, white, messy/bohemian presentation.",
+        "hook": "Randall is the smartest guy in the room and the most self-destructive, a former campaign operator who can turn any bad idea into a logistics plan. He’s the script’s chaos manager: smug, hyperverbal, internet-fluent, and always one rationalization away from making the situation worse.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Walter Hauser in Black Bird or Jesse Plemons in Game Night — a character actor role that lets someone weaponize intelligence, insecurity, and comic escalation. The fun is in playing a man who sounds like he’s in control while clearly spiraling."
+      },
+      {
+        "name": "James Anthony",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, tall, thin, social-media-savvy, terminally online.",
+        "hook": "James is the group’s digital translator and moral brake, except he’s too invested in the bit to stop it when it matters. He’s the one who understands the internet economy best, which makes him both the most useful and the most trapped by the stupidity of the plan.",
+        "why_actor_wants_this": "This is the showcase territory of LaKeith Stanfield in Sorry to Bother You or Donald Glover in Atlanta — a sharp, reactive role where the actor gets to play skepticism, wit, and exasperation as the audience surrogate. It’s a great part for someone who can make commentary feel like character."
+      },
+      {
+        "name": "Logan Jackson",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, movie star, wealthy, image-conscious, physically handsome.",
+        "hook": "Logan is a fading star who can still command a room but can’t stop needing to prove he matters. He’s vain, performative, and weirdly sincere about his own relevance, which makes him both the target and the mirror image of the younger guys chasing clout.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Nicolas Cage in The Unbearable Weight of Massive Talent — a self-aware star role that lets an actor play ego, insecurity, and public humiliation at once. The part is built for someone who can make vanity funny without losing the sting."
+      },
+      {
+        "name": "Amanda Baker",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, assistant to Logan, polished, socially agile.",
+        "hook": "Amanda is the smartest person in Logan’s orbit and the one who can see the absurdity of the whole machine without being able to fully escape it. She’s professional, flirtatious, and quietly strategic, with enough warmth to become the emotional bridge between the celebrity world and Walker’s side of the story.",
+        "why_actor_wants_this": "This is the showcase territory of Sarah Snook in Succession or Zoey Deutch in Not Okay — a role that lets an actor play competence, flirtation, and hidden judgment in the same scene. It’s a strong supporting part because she gets to control tone while still feeling human."
+      },
+      {
+        "name": "Coach Riggs",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, MMA coach, grizzled, working-class, veteran energy.",
+        "hook": "Riggs is the blunt old-school fight guy who keeps reminding everyone that talent only matters if it sells. He’s not sentimental, but he’s loyal, and his pragmatism gives the movie its fight-business reality check.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in The Upside or J.K. Simmons in Whiplash — a tough-love authority figure who can be funny, intimidating, and unexpectedly grounded. It’s a role with instant texture for a seasoned character actor."
+      },
+      {
+        "name": "Malakai Callister",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, talent agent, effeminate voice, surgically polished, Hollywood insider.",
+        "hook": "Malakai is the gatekeeper who understands exactly how absurd Logan is and still has to monetize him. He’s a great pressure-release character: sharp, vain, and constantly trying to turn a disaster into a deliverable.",
+        "why_actor_wants_this": "This is the showcase territory of Ben Mendelsohn in The Outsider or Stanley Tucci in The Devil Wears Prada — a polished industry operator who gets to be funny by being ruthlessly specific. The role gives an actor a lot of verbal control and social dominance."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One athletic lead with credible fight movement",
+          "One major movie-star supporting role",
+          "Several age-flexible male supporting roles",
+          "A few internet-culture supporting roles and day players"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with multiple exteriors",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "MMA gym",
+          "Los Angeles celebrity spaces",
+          "Kentucky rural farm",
+          "Iowa hotel and strip club",
+          "New Mexico art institute",
+          "Mann's Chinese Theater / Hollywood premiere environment"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond basic screen inserts, livestreams, and possible signage/cleanup.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Fight choreography, rooftop jumps, tackles, gunfire beats, and practical crowd-control moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Dana White is named and depicted in a scene tied to the UFC/Youtube fight ecosystem."
+        },
+        {
+          "type": "real_person",
+          "detail": "Martin Scorsese is named and directly referenced as the filmmaker attached to Logan's next project."
+        },
+        {
+          "type": "brand",
+          "detail": "Instagram, Discord, 4chan, Twitch, YouTube, Venmo, Uber Eats, Papa John's, Subway, Facebook, and Apple are all named in the script."
+        },
+        {
+          "type": "brand",
+          "detail": "UFC, Paramount, and DC are referenced as real entertainment brands and business entities."
+        },
+        {
+          "type": "brand",
+          "detail": "Tom Ford, Star Wars, and Bon-Bon are specifically named in dialogue and action."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-comedy lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a streaming-first or specialty theatrical comedy with broad digital marketing potential."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly grounded, but the script spans multiple cities and includes gyms, hotels, a farm, an art institute, a theater premiere, and several crowd-control set pieces that need careful scheduling."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Walker needs a credible fighter who can also carry comedy, and Logan needs a recognizable star who can play vanity and humiliation without flattening the joke. The ensemble is accessible, but the movie benefits from at least one meaningful name."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear, but the script depends on balancing two worlds — MMA hustle and celebrity satire — without losing the emotional throughline of Walker’s need for legitimacy."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Logan Lucky",
+          "year": 2017,
+          "why_it_comps": "A blue-collar criminal scheme driven by comic competence and regional specificity, with a crew of underdogs improvising their way through a bigger game."
+        },
+        {
+          "title": "Game Night",
+          "year": 2018,
+          "why_it_comps": "The escalation of a stupid idea into a real-world danger zone, with a strong comic ensemble and a plot that keeps turning public spectacle into chaos."
+        },
+        {
+          "title": "The Unbearable Weight of Massive Talent",
+          "year": 2022,
+          "why_it_comps": "Celebrity self-parody, image management, and the joke of a famous man trying to control his own narrative."
+        },
+        {
+          "title": "The Nice Guys",
+          "year": 2016,
+          "why_it_comps": "A mismatched male duo/trio, fast banter, and a crime-comedy structure that keeps finding new ways to humiliate its leads."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like fast, profane, internet-aware crime comedies with a strong male trio and a celebrity-satire angle.",
+        "demographics": "18-44 skew, male-leaning but accessible to women who respond to sharp ensemble comedy and fame satire; strongest with streaming-native audiences.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$15M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, moderate stunt work, and a few crowd scenes keep this in indie-feature territory rather than micro."
+      },
+      "lane_fit": {
+        "lane": "streaming-friendly elevated crime comedy",
+        "types_of_buyers": [
+          "streamer feature buyers looking for male-skewing comedy",
+          "specialty distributors with crime-comedy appetite",
+          "indie producers chasing a star-driven ensemble package",
+          "director-driven buyers who like internet-culture satire"
+        ],
+        "detail": "This sits naturally in the lane of contemporary, profanity-forward ensemble crime comedy with a clear hook and a marketable celebrity target. The MMA angle gives it a built-in visual identity, while the internet prank structure makes it easy to market in clips and trailers."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The supporting characters are vivid, but there is no clear sequel or spinoff vector beyond this one-off prank economy."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly pitchable.",
+          "what_it_means": "A buyer can understand the movie in one sentence, which lowers development friction and makes it easy to market to both talent and distributors. That kind of clarity is especially attractive to streamer feature teams and indie financiers looking for a clean hook.",
+          "evidence": "Walker needs money and legitimacy, so he turns to internet pranks and escalates all the way to stealing a celebrity’s flag under gunfire.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The MMA world gives the movie a real engine.",
+          "what_it_means": "The fight-business backdrop makes Walker’s need for attention feel economically and emotionally grounded, not just comic. That gives the project a specific lane for buyers who want genre comedy with a credible subculture attached.",
+          "evidence": "The opening gym scenes, the Contender Series talk, the weight-class negotiations, and Walker’s frustration at being “good” but not exciting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The trio has usable comic chemistry.",
+          "what_it_means": "Walker, Randall, and James each bring a different skill set, which creates a repeatable ensemble engine and gives casting multiple entry points. That’s valuable for a producer because the movie can flex around chemistry rather than depending on one single comic persona.",
+          "evidence": "Walker’s physical confidence, Randall’s strategic mania, and James’s online-savvy skepticism drive the pranks and the arguments.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The celebrity satire is current and saleable.",
+          "what_it_means": "The Logan Jackson storyline gives the film a second, parallel engine that broadens the appeal beyond fight fans and lets marketing lean into fame, image, and humiliation. Buyers like projects that can generate clips, and this one is built around public embarrassment in public spaces.",
+          "evidence": "Logan’s listening booth, his PR panic, the art-installation stunt, and the way his ego keeps escalating the response.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are designed for escalation.",
+          "what_it_means": "Each prank gets bigger, riskier, and more public, which is exactly what a comedy-thriller buyer wants from a feature with trailer moments. The movie keeps converting internet nonsense into physical jeopardy, which is a strong commercial rhythm.",
+          "evidence": "Warehouse prank, Kentucky farm heist, Iowa hotel grab, art institute rooftop jump, and Mann’s Chinese Theater finale.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable crime-comedy engine: a legit MMA fighter chasing relevance through internet-fueled pranks, with a celebrity-satire sidecar that gives the movie a second audience. It’s contemporary, clip-friendly, and producible in indie-feature territory, which makes it the kind of package a streamer or specialty buyer can actually move on."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The celebrity satire depends on named real-world targets.",
+          "detail": "Dana White and Martin Scorsese are both directly named, and the script also leans on UFC, Paramount, DC, Instagram, Discord, 4chan, Twitch, YouTube, Venmo, Uber Eats, Papa John's, Subway, Facebook, Apple, and Tom Ford. That creates a real clearance and business-affairs pass before anyone can package the script cleanly.",
+          "is_primary_lever": true,
+          "source": "production"
+        },
+        {
+          "area": "The movie asks for a star on the Logan role.",
+          "detail": "Logan is the kind of part that gets materially better with a recognizable actor who can sell vanity, humiliation, and self-mythology in the same beat. Without that attachment, the celebrity-satire half of the movie loses some of its snap in the market conversation.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The footprint is wider than the premise suggests.",
+          "detail": "The script moves from Los Angeles to Kentucky, Iowa, New Mexico, and back into multiple performance and public-event spaces, which means this is not a simple contained comedy. It’s still manageable, but the travel and company moves will need to be planned carefully to keep the budget inside indie-feature expectations.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Walker’s arc is clearer than the emotional payoff.",
+          "detail": "The script is strongest when Walker is chasing legitimacy through the fight game, but the emotional landing is mostly externalized through pranks, fights, and public wins. That makes the movie feel commercially energetic, while leaving the deeper character payoff lighter than the concept promises.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The internet-comedy language is very specific.",
+          "detail": "The 4chan/Discord/Twitch/crypto/terminally-online dialogue gives the script a strong voice, but it also narrows the audience to viewers who are fluent in that register. That specificity is part of the appeal, but it can also make the comedy feel more niche than broad in a buyer conversation.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The biggest friction is packaging, not premise: the script is commercially legible, but the named real-world brands and celebrity references will require a serious clearance pass, and Logan really wants a star to fully land. Beyond that, the movie is a little wider in geography and a little narrower in emotional payoff than the clean hook initially implies."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 72.3,
+  "tier": "Optionable",
+  "inputTokens": 34900,
+  "outputTokens": 4837,
+  "cost": 0.0479415,
+  "declaredFormat": "Feature film"
+}

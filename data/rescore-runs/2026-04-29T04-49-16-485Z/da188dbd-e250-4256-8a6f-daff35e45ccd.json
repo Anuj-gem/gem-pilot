@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:12:21.416Z",
+  "submission_id": "da188dbd-e250-4256-8a6f-daff35e45ccd",
+  "eval_id": "66cdd0ff-a702-4120-b8ee-9ce11333a3bb",
+  "title": "HELP, WE ARE FALLING (screenplay)",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Woman",
+      "role_type": "Lead",
+      "demographics": "Adult woman, likely 30s-40s, wife and mother."
+    },
+    {
+      "name": "Man",
+      "role_type": "Supporting",
+      "demographics": "Adult man, likely 30s-40s, husband and father."
+    },
+    {
+      "name": "Horsie",
+      "role_type": "Supporting",
+      "demographics": "Boy, roughly 10-14, son of the couple."
+    },
+    {
+      "name": "Blonde",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, likely 20s-40s, traveler and later flight attendant."
+    },
+    {
+      "name": "Stewardess",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, likely 20s-40s, airline crew."
+    },
+    {
+      "name": "Captain",
+      "role_type": "Supporting",
+      "demographics": "Adult man, likely 40s-60s, airline pilot."
+    },
+    {
+      "name": "Tower",
+      "role_type": "Supporting",
+      "demographics": "Adult voice role, likely male or neutral, air traffic control."
+    },
+    {
+      "name": "Policeman",
+      "role_type": "Supporting",
+      "demographics": "Adult man, likely 30s-50s, police officer."
+    }
+  ],
+  "positioning_hook": "A stranded family and a deadpan flight crew turn an airport delay into a runaway airborne farce, until the plane itself becomes the punchline and the emergency landing turns into a second act.",
+  "cost_usd": 0.04413,
+  "input_tokens": 35404,
+  "output_tokens": 3906,
+  "status": "wrote:leads_ok"
+}

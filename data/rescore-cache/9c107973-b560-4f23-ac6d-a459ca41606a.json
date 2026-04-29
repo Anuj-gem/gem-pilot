@@ -1,0 +1,361 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime",
+      "genre_secondary": [
+        "Drama",
+        "Historical"
+      ],
+      "tone": "gritty",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "period-piece",
+        "prestige",
+        "character-driven",
+        "crime",
+        "family-dynamics",
+        "loyalty",
+        "revenge",
+        "scarface-prequel"
+      ]
+    },
+    "positioning_hook": "A Havana farm boy falls for a gangster’s girlfriend, then claws his way into the drug trade by outthinking the men who want him dead.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The Scarface-adjacent criminal rise story gives the script an immediately legible audience promise, and the romance/revenge engine is easy to sell in one sentence. The limitation is that the material is very specific in setting and heavily dependent on crime-drama appetite rather than broad four-quadrant reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands quickly: Lopez falls for Silvia, crosses Don Martez, survives a death sentence, and turns that pressure into a criminal ascent. The premise is clear, though the script keeps expanding into multiple power plays before the central engine fully settles."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Lopez has a clean underdog-to-kingpin trajectory, and Silvia gives the story a romantic counterweight with real emotional stakes. The supporting men are functional but mostly operate as variations on loyalty, betrayal, or menace rather than fully differentiated character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The Cuba setting and prequel framing give the material a distinct wrapper, but the underlying rise-and-betrayal architecture is familiar. The script’s boldest move is its unabashed Scarface lineage, which is also the thing that makes it feel most derivative."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps moving through threats, reversals, and betrayals, and it understands how to end scenes on power shifts. The momentum is sometimes more declarative than dramatic, with several stretches driven by dialogue about the plan rather than the plan itself."
+      },
+      "resonant_originality": {
+        "score": 5,
+        "reasoning": "A Cuban criminal origin story with a romantic trigger is a usable hook, but the beats themselves are recognizable: jealous boss, loyal friend, uncle betrayal, drug-route power grab, final shootout. The script’s freshness comes more from locale and franchise adjacency than from a truly new dramatic engine."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The Havana/Santa Cruz dock-and-club ecosystem has enough texture to feel lived in, with festivals, brothels, docks, smugglers, and local codes of respect. It is still mostly a container for criminal transactions rather than a deeply layered social world with many independent pressure systems."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistent in its macho, romantic, street-level register, with a soap-operatic undercurrent that fits the material. What keeps it from a higher score is that the script leans heavily on familiar gangster cadence and broad declarations of loyalty and power."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are seeds of class resentment, political change, and the cost of ambition, especially in Lopez’s farm-boy identity and the governor’s crackdown. But the script mostly plays those ideas as backdrop to the criminal plot rather than letting them accumulate into deeper subtext."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Lopez/Jose/Carlos gives the story a workable friendship core, and the Lopez/Silvia/Martez triangle supplies recurring tension. The ensemble is active, but most relationships are defined by one dominant function, so the room does not yet generate endless combinations of story."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Lopez",
+        "role_type": "Lead",
+        "demographics": "Male, late teens to late 20s, Cuban, working-class/farm background.",
+        "hook": "A charming farm boy with ambition and a romantic streak, Lopez starts as the least powerful man in the room and keeps discovering he can outmaneuver bigger predators. He is driven by love, pride, and the need to become somebody, but the script keeps testing whether his decency can survive the business he enters.",
+        "why_actor_wants_this": "This is the showcase territory of a young Al Pacino in The Godfather Part II or Michael Corleone-style rise material: a man whose stillness, charm, and buried violence all have to coexist. It gives an actor the full arc from vulnerable outsider to feared operator, with romance, betrayal, and moral corrosion on the same track."
+      },
+      {
+        "name": "Silvia",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, Cuban, tied to the criminal underworld through Don Martez.",
+        "hook": "Silvia is the emotional hinge of the script: a woman trapped inside a violent relationship who recognizes Lopez as a possible exit, even as she understands the cost of choosing him. She is not just a love interest; she carries the story’s conscience, danger, and longing in the same frame.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the wounded intelligence of Penelope Cruz in Volver or Michelle Pfeiffer in Scarface: glamour with bruises, desire with fear. The part offers close-up emotional volatility, romantic charge, and the chance to play a woman who sees the trap before the men do."
+      },
+      {
+        "name": "Jose",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, Cuban, Lopez’s closest friend and eventual right hand.",
+        "hook": "Jose is the loyal friend who keeps the story human, funny, and grounded until the business catches up with him. He talks big, jokes hard, and believes in the brotherhood, which makes his death land as the script’s clearest emotional rupture.",
+        "why_actor_wants_this": "This is strong supporting territory in the vein of a young Michael Imperioli in Goodfellas: fast, funny, loyal, and doomed by proximity to the lead. It gives an actor a chance to make the audience love him before the plot takes him away."
+      },
+      {
+        "name": "Carlos",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, Cuban, Lopez’s friend and early partner in the scheme.",
+        "hook": "Carlos is the skeptical realist of the trio, always measuring risk, money, and survival against Lopez’s bigger dreams. He provides the street-level caution that makes Lopez’s ambition feel dangerous rather than merely inspirational.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the grounded skeptic in a crime ensemble, similar to the best friend energy in City of God or Training Day. The showcase is in the push-pull between fear and loyalty, especially when he has to decide whether to follow Lopez into the next level."
+      },
+      {
+        "name": "Don Martez",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, Cuban, local criminal boss.",
+        "hook": "Don Martez is the jealous, possessive first obstacle in Lopez’s rise, a man whose love for Silvia curdles into control and violence. He is volatile, theatrical, and increasingly self-destructive, which makes him a dangerous but readable antagonist.",
+        "why_actor_wants_this": "This is classic villain-showcase material in the lane of Javier Bardem in No Country for Old Men or Benicio del Toro in Traffic: menace, vanity, and emotional instability all in one role. It gives an actor a chance to dominate scenes with volatility and then collapse under the weight of his own appetite."
+      },
+      {
+        "name": "Manuel",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, Cuban, criminal operator and eventual rival.",
+        "hook": "Manuel is the cold strategist in the room, the one who can smile through a deal while setting up the next betrayal. He is less impulsive than Martez and more dangerous because he understands leverage, timing, and how to weaponize loyalty.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled menace of a Michael Shannon or a Ray Liotta-style operator: calm, watchful, and always calculating the angle. The showcase is in the slow reveal that he is not just a lieutenant but a future kingmaker."
+      },
+      {
+        "name": "Uncle",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, Cuban, Jose’s uncle and criminal mentor figure.",
+        "hook": "The Uncle is the script’s hard-edged mentor, a man who speaks in proverbs, tests everyone, and treats betrayal as a business tool. He looks like guidance but functions like a trap, which makes him one of the story’s sharpest double-cross engines.",
+        "why_actor_wants_this": "This is rich character-actor territory in the tradition of Albert Brooks in Drive or a late-stage John Turturro crime mentor: warm on the surface, lethal underneath. It gives an actor the pleasure of playing authority that is never fully trustworthy."
+      },
+      {
+        "name": "Conejo",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, Cuban, major criminal power broker.",
+        "hook": "Conejo is the larger-scale boss who understands the game better than the younger men do and knows how to turn a trap into a negotiation. He is the script’s most efficient embodiment of criminal intelligence: calm, amused, and always one move ahead until he decides to let Lopez live.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play quiet authority with teeth, like a great crime-boss turn from Giancarlo Esposito or Ben Mendelsohn. The showcase is in the controlled stillness and the sense that every line is a test."
+      },
+      {
+        "name": "El Gordo",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, Cuban, major trafficking figure.",
+        "hook": "El Gordo is the muscle-and-money power center whose control of routes makes him a target rather than a protagonist. He is less psychologically developed than the others, but he functions well as the embodiment of the old order Lopez wants to replace.",
+        "why_actor_wants_this": "This is a strong supporting villain role for an actor who can project status and threat quickly, in the lane of a classic crime enforcer or kingpin. The appeal is the authority of the entrance and the inevitability of the fall."
+      },
+      {
+        "name": "Fransisco",
+        "role_type": "Supporting",
+        "demographics": "Male, older, Cuban, arms supplier and old-school fixer.",
+        "hook": "Fransisco is the old-world gatekeeper who understands violence as craft and survival as a trade. He gives Lopez the tools, the warning, and the blessing, making him feel like a mythic elder in a very practical criminal story.",
+        "why_actor_wants_this": "This is the kind of role that lets a veteran actor steal scenes with economy, like a John Cazale-type presence or a late-career character actor who can make a few lines feel loaded. The showcase is in the authority of age and the sense that he has seen every version of this story before."
+      },
+      {
+        "name": "Tito",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, Cuban, Manuel’s trusted man.",
+        "hook": "Tito is the loyal enforcer who helps turn Manuel’s plans into action and gives the script another layer of street-level threat. He is not the mastermind, but he is the kind of man who makes the mastermind dangerous.",
+        "why_actor_wants_this": "This is a solid supporting tough-guy role in the tradition of a crime-film lieutenant: physical, reactive, and always one step from violence. It gives an actor a chance to play loyalty with a hair-trigger edge."
+      },
+      {
+        "name": "Alejandro",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, Latin American, higher-level drug distributor.",
+        "hook": "Alejandro is the offscreen power player who represents the next tier of the business and the bigger world beyond Cuba. He is more concept than scene presence, but he widens the story’s horizon and gives the characters someone to chase upward toward.",
+        "why_actor_wants_this": "This is a prestige supporting role if expanded, the kind of part that lets an actor project international power with minimal screen time. The appeal is in making a few scenes feel like the top of the food chain."
+      },
+      {
+        "name": "Maria",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Cuban, waitress/bar presence in Santa Cruz.",
+        "hook": "Maria is a lighter, more open romantic possibility in the Santa Cruz section, a reminder that Lopez’s charisma still works outside the central tragedy. She also helps show how quickly he can be seen as desirable, even while he is building a criminal life.",
+        "why_actor_wants_this": "This is a compact but playable supporting role that gives an actor a few sharp scenes of flirtation and social intelligence. It’s the kind of part that can pop if cast with real charm."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "large male-heavy ensemble",
+          "Cuban/Spanish-language authenticity important",
+          "age-flexible supporting criminal roles",
+          "no child-specific requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "Havana and Santa Cruz street exteriors",
+          "dockyard and warehouse spaces",
+          "club/bar interiors",
+          "clock tower and hilltop overlook",
+          "country road and rural farm locations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action with a few explosion and gunfire beats, including the car explosion near the end.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood hits, car explosion, practical smoke/cocaine effects, and crowd-control moments in club and dock sequences.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "The script explicitly presents itself as a prequel to Scarface and the story of Frank Lopez, which creates an adaptation/IP licensing issue."
+        },
+        {
+          "type": "real_person",
+          "detail": "Frank Lopez is a named character from Scarface and the script positions him as the central figure."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Standalone feature release; crime-drama theatrical or premium-streaming play."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary-period Cuba, multiple street and dock locations, club interiors, practical gunplay, and a late car explosion keep this above a simple contained indie but still far from tentpole scale."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs charm, romantic credibility, and credible escalation into menace, while the supporting criminal roles all need distinct authority without collapsing into one-note heavies."
+      },
+      "development": {
+        "level": "high",
+        "note": "The Scarface prequel framing and Frank Lopez identification create an immediate rights/IP question, and the script’s relationship to the existing Scarface canon will be a central buyer conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Scarface",
+          "year": 1983,
+          "why_it_comps": "The rise-through-crime structure, Latin American trafficking world, and tragic ambition DNA are directly in the same lane."
+        },
+        {
+          "title": "The Godfather Part II",
+          "year": 1974,
+          "why_it_comps": "The prequel energy, criminal apprenticeship, and sense of a man becoming the version of himself history will remember are structurally similar."
+        },
+        {
+          "title": "Traffic",
+          "year": 2000,
+          "why_it_comps": "The cross-border drug economy, shifting power centers, and ensemble criminal ecosystem give it the same geopolitical-crime texture."
+        },
+        {
+          "title": "Blow",
+          "year": 2001,
+          "why_it_comps": "The romanticized rise-and-fall of a drug operator with a love story threaded through the criminal ascent is a close tonal neighbor."
+        },
+        {
+          "title": "Narcos",
+          "year": 2015,
+          "why_it_comps": "The Latin American drug-world specificity, period crime atmosphere, and power-network storytelling make it a useful packaging reference even though this is a feature."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult crime-drama viewers who like rise-and-fall gangster stories with romance, betrayal, and a strong Latin American setting.",
+        "demographics": "Mostly 25-54, male-skewing but with meaningful female audience pull through the Silvia romance and character drama.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Multiple period-feeling Cuban locations, club and dock sequences, practical action, and a modest ensemble keep it in indie-feature territory rather than studio scale."
+      },
+      "lane_fit": {
+        "lane": "prestige crime drama",
+        "types_of_buyers": [
+          "specialty distributors seeking adult crime material",
+          "streamer feature buyers looking for Latin American crime worlds",
+          "indie producers with crime-thriller slates",
+          "director-driven buyers who like gangster origin stories"
+        ],
+        "detail": "This sits naturally in the adult crime lane: romantic, violent, male-driven, and built around ambition, betrayal, and territorial control. The Cuba setting and Scarface lineage make it especially legible to buyers who want recognizable crime DNA with a specific cultural wrapper."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature as written; the script is already framed as a prequel/IP-adjacent property rather than a clean franchise engine."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Cuba setting gives the crime story a real wrapper.",
+          "what_it_means": "That specificity helps the project stand out in a crowded gangster market and gives buyers a clear visual and cultural identity to market. It will attract buyers who want recognizable crime DNA but with a fresher geographic angle.",
+          "evidence": "Havana clubs, Santa Cruz docks, the clock tower, and the rural farm/gun-supply sequence all build a distinct Cuban criminal world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Lopez has a clean rise-and-fall engine.",
+          "what_it_means": "The role can anchor the entire movie because it moves from romantic underdog to strategic operator to hunted kingpin. That is the kind of part that can attract a strong lead actor and give the film a clear emotional spine.",
+          "evidence": "He starts as a farm boy at the bar, survives Martez, builds the docks, and ends up in a final showdown with Manuel.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Silvia triangle gives the violence a human cost.",
+          "what_it_means": "The romance is not decorative; it is the emotional trigger that keeps the criminal plot from feeling purely procedural. That makes the material more attractive to buyers looking for a gangster story with a love-story hook.",
+          "evidence": "Silvia’s bruises, the clock-tower meetings, her leaving Martez, and Lopez’s repeated choice to risk everything for her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The friendship trio creates a usable emotional base.",
+          "what_it_means": "Lopez, Jose, and Carlos give the movie a brotherhood dynamic that can carry early scenes and make the later betrayals land harder. That kind of ensemble chemistry is useful for casting and for audience attachment.",
+          "evidence": "Their banter at the bar, the move to Santa Cruz, and Jose’s death all turn the friendship into story fuel.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The criminal ladder is easy to package.",
+          "what_it_means": "The script offers a straightforward escalation from local jealousy to dock control to national power, which is commercially legible and easy to pitch. Buyers can understand the movie in one pass because the stakes keep widening in a familiar but effective way.",
+          "evidence": "Don Martez, El Gordo, Conejo, Alejandro, and Manuel each represent a higher rung in the same power chain.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a recognizable gangster-rise feature with a specific Cuban wrapper, a strong central lead role, and a romance that gives the violence emotional stakes. The combination of period texture, dockside crime-world detail, and a clean underdog-to-kingpin arc makes it easy to position for adult crime buyers who want a marketable, actor-friendly package."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The Scarface prequel framing is a rights conversation.",
+          "detail": "The script openly brands itself as a prequel to Scarface and centers Frank Lopez, which means this is not just an original crime feature from a buyer’s perspective. That creates an immediate IP/licensing and canon question before anyone gets to casting or budget.",
+          "is_primary_lever": true,
+          "source": "production"
+        },
+        {
+          "area": "The middle section repeats the same power beat.",
+          "detail": "A lot of the script’s engine is variations on the same move: meet the boss, get threatened, outsmart the boss, move up a tier, repeat. That keeps the movie moving, but it also means the buying conversation will focus on whether the escalation feels cumulative enough to justify feature length.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Several supporting players are functionally interchangeable.",
+          "detail": "Don Martez, Manuel, Tito, El Gordo, Conejo, and Alejandro all operate as criminal pressure points, but only a few have sharply differentiated inner lives on the page. That narrows the ensemble’s long-tail value and makes the movie lean heavily on the lead performance.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The female lead is mostly defined by the men around her.",
+          "detail": "Silvia has emotional importance, but the script largely uses her as the catalyst for Lopez’s choices and Martez’s jealousy. Buyers will notice that the romantic spine is strong in function but thinner in independent agency than the premise suggests.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The violence and misogyny narrow the buyer pool.",
+          "detail": "The script is comfortably in mature territory, but the repeated sexualized degradation, threats, and brutal killings push it into a harder-edged lane. That is fine for premium crime buyers, but it narrows the audience compared with a more broadly accessible prestige gangster feature.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The biggest friction is not the crime-world premise; it is the IP-adjacent framing and the fact that the movie leans on familiar gangster escalations to carry a feature. Buyers will also notice that the supporting cast is built more as pressure than as fully distinct character capital, which puts a lot of weight on the lead and the rights conversation."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 60,
+  "tier": "Optionable",
+  "inputTokens": 45419,
+  "outputTokens": 5524,
+  "cost": 0.05892225000000001,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,332 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Comedy"
+      ],
+      "tone": "wry",
+      "tags": [
+        "male-lead",
+        "supporting-female",
+        "contemporary",
+        "single-location",
+        "character-driven",
+        "low-budget-friendly",
+        "family-dynamics",
+        "marble-racing",
+        "covid-19",
+        "queens"
+      ]
+    },
+    "positioning_hook": "A quarantined Queens costume designer and his immunocompromised actor husband turn marble racing into a viral lifeline, then discover their internet fame has attracted a desperate gambler with a gun.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate human relatability, pandemic recognition, and a clean escalation from domestic comedy to hostage thriller. Its audience is narrower than a broad four-quadrant play, but the emotional hook and viral-content angle are easy to sell."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast: a locked-down couple invents marble racing, builds an audience, and gets pulled into real-world danger through that fame. The script keeps the premise legible even as it widens into the hostage turn."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Will and Henry are sharply differentiated: one restless and performative, the other practical and protective, with a marriage that generates constant friction and affection. Rachel adds a volatile third point of view, though the script is still most durable on the couple."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The marble-racing conceit is unusual, playable, and deeply specific, and the script commits to it as both comic engine and emotional metaphor. The pandemic setting is used as lived-in texture rather than backdrop, which gives the piece a distinct identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first half is deliberately observational, then the DraftBros sponsorship and Rachel intrusion give the story a strong propulsion shift. The back half moves with real urgency, though the middle spends a lot of time on domestic repetition before the thriller engine fully ignites."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It feels fresh because the central absurdity is also emotionally inevitable: a trapped couple needs a game, the game becomes a business, and the business becomes a threat. The red-marble political joke and the gambling twist give the premise a sharp, contemporary sting."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The apartment, hallway, fire escape, and hospital create a coherent social world with neighbors, nurses, and the rhythms of lockdown life. It is still a contained world, but it generates story through routines, rules, and the building’s communal pressure."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very particular blend of domestic banter, pandemic melancholy, and escalating absurdity. The Proud Mary cues, the marble commentary, and the sudden violence create a tone that is hard to mistake for anything else."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the comedy, the script is about dependency, illness, work, and the need to feel useful when the world shuts down. The Blue Marble framing and the final hospital passages suggest more emotional weight than the premise initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Will/Henry is a strong engine, and Rachel, Mary, Nurse Becky, and Caroline all create usable relational pressure around them. The apartment-building ecosystem gives the piece recurring interaction points rather than a one-note two-hander."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Will Gregory",
+        "role_type": "Lead",
+        "demographics": "Male, 50s, white, gay, immunocompromised/heart condition.",
+        "hook": "A restless, theatrical regional actor stuck inside during COVID, Will turns boredom into performance and performance into a business. He’s funny, needy, inventive, and a little self-sabotaging; the marble channel gives him a stage, but it also exposes how badly he wants attention, purpose, and control.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Giamatti in Sideways or Richard Jenkins in The Visitor: a wounded, funny, deeply human lead whose comedy is inseparable from need. It gives an actor a full emotional range — vanity, charm, panic, tenderness, and the late-story reckoning when his play-acting collides with real consequence."
+      },
+      {
+        "name": "Henry Michaels",
+        "role_type": "Supporting",
+        "demographics": "Male, late 50s, white, gay, costume designer.",
+        "hook": "Henry is the steadier half of the marriage: practical, dry, and quietly romantic, with an artist’s eye and a caretaker’s reflex. He starts as the one managing the bubble, but the script lets him become the emotional ballast, the collaborator, and finally the person left to hold the wreckage together.",
+        "why_actor_wants_this": "This is the kind of role that gave Mark Ruffalo in The Normal Heart or Stanley Tucci in Supernova a chance to play love as labor, wit as defense, and grief as restraint. It’s a rich supporting turn with real scene-stealing potential, especially in the domestic sparring and the final hospital aftermath."
+      },
+      {
+        "name": "Rachel",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, masked, working-class, aunt/niece family connection.",
+        "hook": "Rachel enters as a frustrated neighbor and detonates into the story as a desperate gambler whose panic has turned predatory. She’s not a cartoon villain; she’s a woman who has convinced herself she’s one win away from fixing everything, which makes her volatile, funny, and dangerous in the same breath.",
+        "why_actor_wants_this": "This is the kind of role that gave Jodie Comer in Killing Eve or Regina King in Watchmen a chance to pivot between charm, threat, and emotional collapse. It’s a high-voltage antagonist part with a real breakdown scene and a lot of physical, verbal, and psychological range."
+      },
+      {
+        "name": "Mary",
+        "role_type": "Supporting",
+        "demographics": "Female, 70s, white, neighbor, aunt figure.",
+        "hook": "Mary is the building’s moral weather vane: blunt, exhausted, affectionate, and not easily impressed. She gives the story its neighborhood conscience, and her scenes carry the lived-in frustration of someone who has seen too much and still has to keep going.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor like June Squibb in Nebraska or Rita Moreno in One Day at a Time land every line with authority and surprise. It’s a compact but memorable character part with emotional payoff in the hospital and final neighborhood coda."
+      },
+      {
+        "name": "Nurse Becky",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, nurse, PPE throughout much of the script.",
+        "hook": "Becky is the script’s bridge between absurdity and reality: she watches the marble races, works the COVID wards, and becomes the story’s practical angel. She’s compassionate without being sentimental, and she gives the film its clearest sense of what the pandemic actually cost people on the front line.",
+        "why_actor_wants_this": "This is the kind of role that gave Aunjanue Ellis in King Richard or Kathryn Hahn in private-drama material a chance to be grounded, funny, and quietly heroic. It’s a scene-by-scene credibility role with a strong final-act payoff and a memorable audience-favorite quality."
+      },
+      {
+        "name": "Caroline Romero",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, NYPD officer.",
+        "hook": "Caroline is the calm voice outside the apartment when everything inside has gone feral. She’s procedural, patient, and unexpectedly humane, which lets her function as both pressure and relief in the hostage stretch.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that gives actors like Carrie Coon in The Leftovers or Amy Ryan in Gone Baby Gone a chance to play competence under strain. It’s a clean, playable law-enforcement part with a strong voice and a useful late-story presence."
+      },
+      {
+        "name": "Anne",
+        "role_type": "Supporting",
+        "demographics": "Female, teen, Rachel’s daughter.",
+        "hook": "Anne arrives late but matters because she reframes Rachel’s choices through consequence. She’s resilient, understated, and emotionally legible in very few lines, which makes her a useful coda character rather than a plot device.",
+        "why_actor_wants_this": "This is the kind of small but meaningful role that can launch a young actor the way the daughter roles in Manchester by the Sea or The Farewell did: brief, specific, and emotionally sticky. It’s a strong final-scene impression part."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "one immunocompromised lead performance requirement",
+          "one late-50s male lead with strong comic timing",
+          "PPE-heavy supporting roles",
+          "one teen daughter role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 7,
+        "interior_exterior_ratio": "roughly 80/20",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Queens apartment with fire escape",
+          "hospital interiors",
+          "COVID tent",
+          "building hallway and neighboring apartment doors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical coverage and screen inserts; only light digital cleanup or broadcast-interface work appears necessary.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, broken glass, flooding bathroom, practical track destruction, and a few physical struggle beats.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Tina Turner’s 'Proud Mary' is repeatedly used as a recurring needle-drop and structural motif."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Twilight Zone episode 'Where Is Everybody?' and the Rod Serling narration are specifically referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Blue Marble photograph is specifically named and used as an opening thematic reference."
+        },
+        {
+          "type": "brand",
+          "detail": "DraftBros is a central fictional betting-app brand and would need clearance if retained as a real-world analog or branded product."
+        },
+        {
+          "type": "brand",
+          "detail": "WatchTube and InstantVid are named platform analogs that may need trademark review depending on final naming and release strategy."
+        },
+        {
+          "type": "brand",
+          "detail": "Clorox is prominently named in the decontamination routine."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a streaming original or specialty theatrical-to-streaming title."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary apartment-centered production with a handful of additional interiors, light practical effects, and no meaningful VFX load keeps this comfortably contained."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The buy depends on two late-50s male leads with very specific chemistry: one must play comic volatility, the other dry steadiness and emotional authority. Rachel also needs an actor who can pivot from neighborly irritation to armed desperation without losing credibility."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s tonal handoff from domestic pandemic comedy to hostage thriller is distinctive, but the middle section leans on repeated apartment routines before the external conflict fully arrives."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Farewell",
+          "year": 2019,
+          "why_it_comps": "Like this script, it turns a very specific family situation into a larger emotional portrait with humor, grief, and cultural texture."
+        },
+        {
+          "title": "The Big Sick",
+          "year": 2017,
+          "why_it_comps": "It shares the intimate, adult-relationship comedy-drama lane and the sense that domestic life can suddenly become high-stakes."
+        },
+        {
+          "title": "Palm Springs",
+          "year": 2020,
+          "why_it_comps": "Not for plot, but for the way a contained, high-concept situation becomes a relationship engine with a contemporary audience hook."
+        },
+        {
+          "title": "The Station Agent",
+          "year": 2003,
+          "why_it_comps": "The apartment-scale character focus, offbeat humor, and emotional payoff through small human interactions are closely aligned."
+        },
+        {
+          "title": "Together Together",
+          "year": 2021,
+          "why_it_comps": "It lives in the same intimate, dialogue-driven lane where a contained premise becomes a character study with warmth and bite."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like character-driven dramedies with a strong relationship core, pandemic-era recognition, and an offbeat premise that turns into a thriller.",
+        "demographics": "25-54, slightly female-skewing, urban/suburban, streamer-friendly, indie-drama audience with appetite for wit and emotional realism.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary, apartment-heavy feature with limited cast, practical effects, and modest location needs should live in the low indie range."
+      },
+      "lane_fit": {
+        "lane": "streaming-friendly contained dramedy-thriller",
+        "types_of_buyers": [
+          "specialty distributors",
+          "streamer original-film executives",
+          "indie producers seeking contained elevated genre",
+          "actor-driven financiers",
+          "festival-to-platform acquisition teams"
+        ],
+        "detail": "This sits naturally in the lane where relationship comedy, social specificity, and a late-breaking genre turn can all coexist. The contained footprint and clear lead roles make it attractive to buyers looking for a modestly priced, performance-forward feature with a memorable premise."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the core engine is the specific Will/Henry/Rachel crisis, not a reusable franchise world."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The marble premise is instantly ownable.",
+          "what_it_means": "This gives the project a clean marketing image and a visual hook that can travel in a thumbnail, trailer, or pitch meeting. Buyers looking for a contained concept with a fresh face will immediately understand the lane.",
+          "evidence": "Will’s first marble roll against the baseboard becomes the seed of the entire channel, then the apartment is transformed into a full racing circuit.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The marriage is the real engine.",
+          "what_it_means": "The script has a durable emotional center that can carry both comedy and crisis, which is what makes the premise feel bigger than a gimmick. That kind of relationship chemistry is exactly what actor-driven buyers and prestige-minded streamers want to see.",
+          "evidence": "The grocery decontamination ritual, the robe/slippers routine, and the repeated arguments over the marble track all reveal affection through friction.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Pandemic texture feels lived-in, not decorative.",
+          "what_it_means": "The film captures a very specific moment in recent history without turning into a lecture, which gives it both immediacy and period value. That makes it legible to audiences who lived through it and to buyers looking for a time-capsule story with emotional memory.",
+          "evidence": "Masks on the key rack, the sirens, the fire-escape applause, the PPE hospital imagery, and the decontamination choreography all feel observationally precise.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tonal pivot is a real selling point.",
+          "what_it_means": "The script can be pitched as a domestic dramedy that unexpectedly becomes a hostage thriller, which broadens the audience promise without losing the intimate scale. That hybrid identity is attractive to buyers who want something that feels fresh but still playable.",
+          "evidence": "Rachel’s entrance with the gun recontextualizes the marble channel, the DraftBros sponsorship, and the apartment itself as a pressure cooker.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Nurse Becky gives the film moral lift.",
+          "what_it_means": "Her emails and hospital scenes connect the absurdity of the marble races to real human need, which deepens the emotional payoff and keeps the movie from floating away into pure whimsy. That kind of audience surrogate is valuable for both tone and empathy.",
+          "evidence": "Her message about needing “all the silly” she can get, followed by the hospital and surgery material, grounds the story’s stakes.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, performance-forward feature with a genuinely ownable hook: a quarantined Queens couple turns marble racing into a viral business, then gets dragged into a hostage crisis by the very internet economy they created. The package is attractive because the concept is easy to market, the footprint is indie-friendly, and the marriage at the center can carry both laughs and heartbreak."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle repeats the quarantine routine.",
+          "detail": "The grocery decontamination, mask-making, pill-taking, and apartment banter are all specific, but the first half spends a lot of time circling the same domestic rhythms before the external threat arrives. For a buyer, that makes the opening feel more observational than propulsive until the DraftBros/Rachel turn kicks in.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Rachel’s turn needs a big casting answer.",
+          "detail": "She has to move from annoyed neighbor to armed hostage-taker to emotionally cornered addict without losing credibility, and that is a narrow ask. The role is strong, but the project will feel much safer with an actor who can sell volatility and vulnerability in the same scene.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The DraftBros betting logic is a buyer question.",
+          "detail": "The story hinges on a platform allowing wagers on marble races, then on a gambler losing life-changing money through that system. That premise is fun, but it raises legal/clearance and plausibility questions that a producer will want answered early.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The pandemic setting narrows the audience window.",
+          "detail": "The film is rooted in April 2020 specifics, from sirens to PPE to balcony applause, which gives it texture but also ties it to a very particular cultural memory. That can be a strength, but it also means the buyer is choosing a period piece about a moment many viewers may still feel close to.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The climax goes broad in a contained movie.",
+          "detail": "The final stretch stacks gunfire, SWAT, a flooded apartment, a collapsing track, a heart attack, and hospital surgery all at once. It plays as a big payoff, but it also shifts the film from intimate dramedy into heightened chaos in a way some buyers will see as a tonal and production escalation.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest friction is structural, not conceptual: it spends a long time in the quarantine groove before the thriller engine fully takes over. The other major conversation points are casting Rachel correctly and deciding how much legal/plausibility work the DraftBros betting premise needs before anyone can comfortably buy it."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 75,
+  "tier": "Optionable",
+  "inputTokens": 37678,
+  "outputTokens": 4684,
+  "cost": 0.049336500000000005,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:14:18.356Z",
+  "submission_id": "d8121cf9-dbf5-43df-8a0f-2f51b27becda",
+  "eval_id": "2c3ddfa0-16e9-47f1-904f-e623d6fef788",
+  "title": "Meet Cute, Meet Deadly   Draft, 10.21",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Jericho Hardcastle",
+      "role_type": "Lead",
+      "demographics": "Male, early 20s, white, aspiring actor, working-class background"
+    },
+    {
+      "name": "Ben Sanchez",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, Latino, writer, roommate"
+    },
+    {
+      "name": "Logan Smith",
+      "role_type": "Supporting",
+      "demographics": "Male, mid 40s, white, agent, polished professional"
+    },
+    {
+      "name": "Nikki Patel",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 20s, South Asian, screenwriter"
+    },
+    {
+      "name": "Cinnamon",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 20s, exotic dancer, red-haired, sexually confident"
+    },
+    {
+      "name": "Denise Slater",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 30s, police detective, rookie partner"
+    },
+    {
+      "name": "Alan James",
+      "role_type": "Supporting",
+      "demographics": "Male, mid 50s, homicide detective, white"
+    },
+    {
+      "name": "Valerie Jane",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 20s, streamer, brunette, internet-famous"
+    },
+    {
+      "name": "Courtney Willis",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, Black, stand-up comic"
+    },
+    {
+      "name": "Zoe Walsh",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, actress, ex-girlfriend"
+    },
+    {
+      "name": "Taylor Werner",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, ex-boyfriend, low-level producer"
+    }
+  ],
+  "positioning_hook": "A struggling hot actor becomes the prime suspect when every woman he dates turns up murdered, forcing him to outwit a serial killer and a hostile detective before Hollywood brands him guilty.",
+  "cost_usd": 0.051747,
+  "input_tokens": 34244,
+  "output_tokens": 5792,
+  "status": "wrote:leads_ok"
+}

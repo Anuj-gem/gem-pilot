@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:16:11.907Z",
+  "submission_id": "e5a4c0ab-8207-4b56-a1c0-b02e55655a20",
+  "eval_id": "8853cb39-dc0f-413c-b810-784c353b9938",
+  "title": "DECEPTION",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Joey Vincelli",
+      "role_type": "Lead",
+      "demographics": "Male, mid-to-late 30s, physically imposing, white/Italian-American implied by name and family background, San Francisco working-class criminal."
+    },
+    {
+      "name": "Nikki Ryan",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-30s, attractive, San Francisco police dispatcher with undercover-adjacent access and emotional intelligence."
+    },
+    {
+      "name": "Hector Domingo",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, Mexican/Latino, biker-coded drug dealer with family obligations and business ambition."
+    },
+    {
+      "name": "Tony Castello",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, polished, undercover police detective posing as a bar owner and drug trafficker."
+    },
+    {
+      "name": "Blake Johnson",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, well-built, street-presenting, later revealed as Detective Adler operating undercover."
+    },
+    {
+      "name": "Lester",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, beefy, obsessive ex-boyfriend, physically intimidating, emotionally unstable."
+    },
+    {
+      "name": "Captain Rizzo",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, San Francisco police captain, institutional authority."
+    },
+    {
+      "name": "Roberto",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s to 50s, Latino, limping street dealer with social fluency."
+    }
+  ],
+  "positioning_hook": "A locksmith-thief in San Francisco falls for a police dispatcher, then gets trapped between two drug crews and an undercover cop who knows exactly how to use his skills.",
+  "cost_usd": 0.05181524999999999,
+  "input_tokens": 41415,
+  "output_tokens": 4612,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,353 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Crime",
+        "Comedy"
+      ],
+      "tone": "breezy",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "propulsive",
+        "character-driven",
+        "crime",
+        "revenge",
+        "love",
+        "caribbean",
+        "airport-mixup",
+        "diamond-heist"
+      ]
+    },
+    "positioning_hook": "A sharp-tongued Ohio traveler gets mistaken for a diamond courier in Grand Cayman and has to outrun killers, cops, and a collapsing vacation while chasing her dead father’s last keepsake.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and commercially friendly: a wrong-bag mixup turns into a sunlit chase movie with romance, crime, and broad comic friction. The appeal is strongest for adult audiences who like fast, funny, travel-set genre pieces, though the very specific Caribbean, banter-heavy register keeps it from feeling four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands in the opening pages with the identical red plaid bags, the airport swap, and the killers tracking the wrong woman. The script keeps the premise simple enough to pitch in one breath while escalating the consequences cleanly."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jenn is a strong engine: funny, combative, wounded, and physically resourceful, with a clear emotional tether to her father. Callahan and Rafaelia add useful contrast, but the supporting players are more functional than deeply layered."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a very specific comic-action voice, with a heroine who weaponizes sarcasm and improvisation through a series of escalating set pieces. The airport mixup into Caribbean crime chase is familiar in shape, but the execution has enough personality to stand apart."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps moving: airport, hotel, bar, boat, shack, warehouse, plane, bank. Each sequence hands off to the next with a clear pressure increase, and the midpoint-to-climax stretch is especially propulsive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea is simple and sticky: a woman on vacation gets pulled into a diamond-heist mess because of a bag swap. What makes it resonate is the collision of screwball travel comedy with hard-edged pursuit mechanics, not a radically new premise."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "Grand Cayman is used well as a playable, sunny pressure cooker with hotels, bars, banks, ferries, and tourist chaos. The world is vivid in surface texture, but it functions mostly as a chase container rather than a deeply rule-bound social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a clear, hard-to-miss voice: profane, flirtatious, fast-talking, and lightly absurd without losing genre stakes. Jenn’s comic insults, the island patter, and the action beats all feel of one piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Jenn’s father wound gives the script a real emotional undercurrent, and the ending ties the adventure back to grief and memory. Still, most of the depth is stated rather than layered, so the script plays more as a lively ride than a slow-burn revelation."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Jenn and Callahan have a workable romantic-adventure dynamic, and Rafaelia/Schaar create a useful triangle of tension. But the script is still primarily powered by Jenn’s solo momentum; the supporting relationships don’t yet generate a dense ensemble engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jenn Taylor",
+        "role_type": "Lead",
+        "demographics": "Female, late 20s to early 30s, American, working professional, emotionally guarded, physically capable.",
+        "hook": "Jenn is a sharp-mouthed, nicotine-gum-chomping traveler from Ohio whose vacation turns into a survival sprint when she gets handed the wrong red plaid bag. She’s funny under pressure, allergic to sentiment until it cracks through, and carrying a father-shaped wound that gives the whole chase a private emotional stake.",
+        "why_actor_wants_this": "This is the showcase territory of Sandra Bullock in The Proposal or Cameron Diaz in The Holiday — a lead who gets to do rapid-fire comedy, physical scramble, and real vulnerability in the same role. It gives an actor a full-body star turn: banter, action, romantic chemistry, and a late-emerging emotional spine."
+      },
+      {
+        "name": "Callahan",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, British/Irish-coded international investigator, polished but underfunded, physically competent.",
+        "hook": "Callahan is the dry, self-possessed Interpol man who becomes Jenn’s reluctant ally, equal parts professional restraint and romantic counterweight. He’s smart, slightly buttoned-up, and funny in a way that plays beautifully against Jenn’s chaos, while still feeling like someone who can survive the same danger she does.",
+        "why_actor_wants_this": "This is the kind of role Colin Firth or Pierce Brosnan has made work in adventure-romance mode — elegant, amused, and quietly heroic. The appeal is the straight-man charisma: a controlled, attractive lead who gets to spar, chase, and slowly thaw."
+      },
+      {
+        "name": "Rafaelia",
+        "role_type": "Supporting",
+        "demographics": "Female, early 30s, Latina, glamorous, anxious, criminal-adjacent.",
+        "hook": "Rafaelia is the beautiful, watchful woman whose bag is at the center of the mixup and whose loyalty is compromised by fear, desire, and self-interest. She’s not just a plot device; she’s the script’s second female pressure point, a woman trying to stay ahead of men who think they own the board.",
+        "why_actor_wants_this": "This is strong supporting territory for an actress like Penélope Cruz in a thriller mode — seductive, volatile, and morally slippery. The role offers glamour with menace, plus the chance to pivot from victim to active player."
+      },
+      {
+        "name": "Schaar",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s-60s, European, sophisticated criminal mastermind.",
+        "hook": "Schaar is the elegant con man hiding in plain sight as a fisherman, then a clown, then the architect of the whole diamond scheme. He’s the story’s polished predator: charming enough to disarm, cold enough to betray, and theatrical enough to make the final reveal land.",
+        "why_actor_wants_this": "This is classic villain showcase material in the vein of Christoph Waltz in Inglourious Basterds — cultured menace with a smile. The role gives an actor verbal finesse, disguise play, and a late-game reveal that recontextualizes the whole chase."
+      },
+      {
+        "name": "Blum",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, American, criminal enforcer, physically imposing.",
+        "hook": "Blum is the burned, hard-edged crew leader who keeps the pursuit moving and escalates the violence whenever the plan slips. He’s less charming than Schaar and more dangerous for it — the kind of practical brute who turns every scene into a threat assessment.",
+        "why_actor_wants_this": "This is the kind of bruising antagonist role that gives an actor the Gary Oldman-in-True Romance or Michael Shannon-in-supporting-villain lane: menace, volatility, and physical presence. It’s a compact but memorable heavy with real scene-stealing potential."
+      },
+      {
+        "name": "Sherard",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, American, vain criminal, lecherous and opportunistic.",
+        "hook": "Sherard is the smirking, sex-obsessed member of the crew who keeps underestimating Jenn until it’s too late. He’s a useful pressure valve in the script’s comic violence, but also a credible threat because he’s willing to go ugly fast.",
+        "why_actor_wants_this": "This is a juicy supporting-villain part in the Ben Mendelsohn / Walton Goggins neighborhood — sleazy, funny, and dangerous. The role gives an actor a chance to be both repellent and entertaining, which is often the sweet spot for memorable genre support."
+      },
+      {
+        "name": "McKee",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, American, very large physical build, enforcer.",
+        "hook": "McKee is the hulking muscle who turns the hotel-room sequence into a full-on survival fight. He’s the most purely physical threat in the script, built to be feared before he even speaks.",
+        "why_actor_wants_this": "This is a classic physical-heavy role in the Dave Bautista / Liev Schreiber support lane — a part that lives on size, menace, and the ability to sell danger with minimal dialogue. It’s a clean showcase for an imposing actor who can also play humiliation when the tables turn."
+      },
+      {
+        "name": "Fish",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college-age American tourist.",
+        "hook": "Fish is one half of the frat-boy comic detour, a harmlessly horny tourist who gives Jenn a temporary social bridge in the middle of the chaos. He’s not essential to the plot mechanics, but he adds a useful burst of youthful, clueless energy.",
+        "why_actor_wants_this": "This is a fun, high-energy supporting turn in the Jonah Hill / early-2000s college-comedy orbit — broad, awkward, and easy to make memorable in a few scenes. It’s the kind of role that lets a younger actor pop without carrying the movie."
+      },
+      {
+        "name": "Loogie",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college-age American tourist.",
+        "hook": "Loogie is Fish’s goofy partner, a sweet-natured idiot with just enough charm to become one of the movie’s surprise allies. He’s comic relief, but the script gives him a little more warmth than the average disposable side character.",
+        "why_actor_wants_this": "This is the kind of role that can break out for a young comic actor — think the scene-stealing friend in a road movie or party comedy. It offers physical comedy, flirtation, and a small but real emotional payoff."
+      },
+      {
+        "name": "Fisherman",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, European-accented, weathered, sea-hardened.",
+        "hook": "The Fisherman is the gentle rescuer who seems like a local eccentric and turns out to be Schaar in disguise. He’s the script’s best bait-and-switch supporting role, because he plays as kindness before revealing calculation.",
+        "why_actor_wants_this": "This is elegant character-actor material in the Christopher Plummer / Michael Caine late-career disguise lane — warm, worldly, then suddenly dangerous. The reveal gives the actor a clean, memorable pivot."
+      },
+      {
+        "name": "Maid",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-40s, Caymanian hotel staff.",
+        "hook": "The Maid is a small but useful comic witness who helps turn Jenn from victim to fugitive by misreading the hotel-room violence. She’s a practical, local presence that keeps the island world feeling inhabited.",
+        "why_actor_wants_this": "This is a crisp utility role for a strong character actress — the kind of part that can land a laugh, a scream, and a memorable reaction beat. It’s not a star vehicle, but it’s the sort of role that makes a scene feel lived-in."
+      },
+      {
+        "name": "Hemingway",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, white-bearded, European-accented, sea-weathered.",
+        "hook": "Hemingway is the alias Schaar uses while posing as a kindly old fisherman, and the script uses the name as a playful literary echo. The character is a disguise first and a person second, which makes the reveal land with a little extra irony.",
+        "why_actor_wants_this": "This is a fun, sly supporting disguise role in the vein of a prestige thriller cameo — the kind of part that lets an actor play charm with a hidden blade. The literary wink gives it extra flavor without overcomplicating the function."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead with strong comic timing and physical comedy",
+          "Several supporting roles require Caribbean or British/Irish accents",
+          "Two female roles with distinct glamour/edge contrast",
+          "Multiple antagonist roles benefit from imposing physical presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Grand Cayman airport, hotel, bar, beach, pier, warehouse, bank, and runway settings",
+          "Open-water and boat work",
+          "Airport/tarmac access and controlled watercraft sequences"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action with a few enhancement moments for explosions, plane movement, and water safety/compositing.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Explosions, fire effects, vehicle impacts, balcony fall, jet ski chase, plane landing, and practical fight choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "House of Pain's 'Jump Around' is specifically named during the party-boat sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "KFC is prominently featured as a recurring restaurant and meal beat."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-adjacent action-comedy",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best suited to a streamer or specialty theatrical play with broad adult appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and not period-bound, but the airport, hotel, boat chase, jet ski pursuit, plane sequence, warehouse fire, and crash landing all add up to a real action package."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Jenn needs a lead who can sell rapid-fire comedy, physical danger, and romantic chemistry, while Callahan and the villains need clean, specific casting to keep the tone balanced."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script is clear and playable, but the tonal balance between broad comedy, romance, and hard-edged crime will be the main development conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Lost City",
+          "year": 2022,
+          "why_it_comps": "A female-led adventure-comedy built around a reluctant heroine, a handsome ally, and escalating travel-set danger."
+        },
+        {
+          "title": "Romancing the Stone",
+          "year": 1984,
+          "why_it_comps": "The DNA is very close: a woman in over her head, a romantic partner in the field, and a globe-trotting chase through danger and flirtation."
+        },
+        {
+          "title": "Knight and Day",
+          "year": 2010,
+          "why_it_comps": "The script shares the breezy action-romance rhythm, with a smart-mouthed lead dragged through a series of comic set pieces."
+        },
+        {
+          "title": "The Heat",
+          "year": 2013,
+          "why_it_comps": "The banter-forward, profanity-laced comic energy and female lead confidence put it in the same broad commercial neighborhood."
+        },
+        {
+          "title": "Fool's Gold",
+          "year": 2008,
+          "why_it_comps": "Sun-soaked treasure-chase mechanics, romantic friction, and a vacation setting that keeps turning into a problem."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like fast, funny, romantic action movies with a smart-mouthed heroine and a tropical escape gone wrong.",
+        "demographics": "Skews 25-54, slightly female-leaning, with strong appeal to date-night and streamer audiences that like accessible genre entertainment.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$20M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, moderate stunt work, water action, and a handful of effects-driven set pieces keep this above indie but below studio scale."
+      },
+      "lane_fit": {
+        "lane": "streaming-friendly action-comedy romance",
+        "types_of_buyers": [
+          "streamer original feature buyers",
+          "mid-budget genre producers",
+          "female-led commercial comedy buyers",
+          "specialty theatrical distributors",
+          "director-driven action-comedy financiers"
+        ],
+        "detail": "This sits naturally in the lane of adult, star-led genre entertainment that can travel on premise and personality. The script’s mix of banter, romance, and chase mechanics makes it attractive to buyers looking for a clean, marketable hook without tentpole spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; Jenn’s story resolves cleanly, and the supporting characters do not currently suggest a separate franchise vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Jenn is a real star role.",
+          "what_it_means": "This gives the project a clear casting and marketing center: a female lead who can carry comedy, action, and romance without losing the audience. Buyers looking for a vehicle for a bankable actress will immediately understand the appeal.",
+          "evidence": "Jenn’s airport sarcasm, hotel-room fight, jet ski escape, and plane-landing sequence all belong to her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The hook is immediate and easy to sell.",
+          "what_it_means": "The wrong-bag premise creates a clean commercial engine that can be explained fast and understood instantly. That makes it easier to pitch to buyers who want a high-concept entry point without a complicated setup.",
+          "evidence": "The identical red plaid bags, the airport swap, and the killers tracking the wrong woman establish the premise almost immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a usable action-comedy lane.",
+          "what_it_means": "The movie can be positioned as adult, accessible, and eventful without needing superhero-scale spend. That is valuable in a market that still wants recognizable genre motion with a human lead.",
+          "evidence": "Hotel fight, harbor chase, warehouse explosion, and emergency landing all escalate cleanly from one set piece to the next.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The Caribbean setting is doing work.",
+          "what_it_means": "The island backdrop gives the movie a vacation-fantasy sheen while also creating a contained chase geography. Buyers like settings that feel aspirational but still practical to stage.",
+          "evidence": "Grand Cayman hotels, beaches, piers, bars, banks, and boats all become part of the engine.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The emotional spine is not decorative.",
+          "what_it_means": "Jenn’s father thread gives the movie a reason to matter beyond the chase mechanics, which broadens the audience promise and helps the ending land. That kind of emotional anchor is what turns a fun genre piece into something actors can champion.",
+          "evidence": "The taped-together letter, the coin pendant, and the final voiceover tie the adventure back to her father.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable female-led action-comedy with a real star vehicle at the center and a premise that can be pitched in one sentence. The Caribbean setting, contained chase geography, and moderate production footprint make it especially attractive to buyers who want a commercial genre swing without tentpole risk."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The tone leans hard on broad banter.",
+          "detail": "Jenn’s voice is the movie’s biggest asset, but the script repeatedly pushes into very broad profanity and comic insult mode. That can be a selling point for the right buyer, but it also narrows the lane toward audiences who want their action-comedy loud and unapologetic.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The villains are more functional than dimensional.",
+          "detail": "Blum, Sherard, and McKee do their job as pressure generators, but they are mostly defined by menace, greed, and physical threat. That keeps the chase moving, but it limits the movie’s secondary character value and reduces the sense of a truly memorable rogues’ gallery.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The set-piece chain is strong but repetitive in shape.",
+          "detail": "A lot of the movie’s momentum comes from Jenn being chased, cornered, or escaping by improvisation. That works, but buyers will notice that the escalation is more about location changes than about a major shift in the underlying dramatic engine.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The romance is undercooked relative to the chase.",
+          "detail": "Jenn and Callahan have chemistry and banter, but the relationship is still mostly built out of shared danger and flirtation. For a buyer looking at this as an action-romance, the emotional payoff is present but lighter than the action machinery.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The named music and KFC beats need planning.",
+          "detail": "House of Pain’s 'Jump Around' and the recurring KFC usage are both specific enough to require attention in packaging and clearance conversations. Neither is a deal-breaker, but both are real line items a producer would flag before greenlight.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The script’s main friction is tonal and structural rather than conceptual: it has a strong hook and a clear lead, but it leans heavily on broad comic energy and chase escalation. Buyers will also note that the villains are serviceable more than iconic, and the romance is lighter than the action-comedy promise suggests."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 38654,
+  "outputTokens": 5295,
+  "cost": 0.052818000000000004,
+  "declaredFormat": "Feature film"
+}

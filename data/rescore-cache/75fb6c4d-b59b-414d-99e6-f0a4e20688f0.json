@@ -1,0 +1,333 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama"
+      ],
+      "tone": "didactic",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "coming-of-age",
+        "identity",
+        "religion",
+        "low-budget-friendly",
+        "dream-sequence",
+        "book-magic"
+      ]
+    },
+    "positioning_hook": "A lonely schoolboy, rejected by five girls and haunted by a celebrity’s advice, opens a forbidden book and is pulled into a dream labyrinth where desire, morality, and escape become one test.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 3,
+        "reasoning": "The emotional premise is legible, but the script’s appeal is narrow: a moral fable built around repeated rejection scenes and a long metaphysical dream sequence. It has a clear youth-facing angle, but not a broad commercial engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 4,
+        "reasoning": "The hook arrives in pieces rather than as a clean engine: celebrity advice, five failed approaches, then a supernatural book and dream realm. By the time the fantasy premise lands, the script has already spent a lot of page time on setup."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 3,
+        "reasoning": "Tom has a defined want, but he’s written more as a vessel for the lesson than a character with layered contradiction. Dan Dunne and the girls function mostly as devices to move him toward the book and the dream."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The shift from schoolyard romantic frustration into a metaphysical book-and-labyrinth sequence is unusual, and the script commits to it. The execution, though, is heavily expository and sermon-like, which blunts the boldness."
+      },
+      "narrative_momentum_engagement": {
+        "score": 3,
+        "reasoning": "The first half repeats a similar rejection pattern five times, which slows the drive before the supernatural turn. The dream sequence then becomes a lecture rather than a sequence of escalating choices."
+      },
+      "resonant_originality": {
+        "score": 4,
+        "reasoning": "There is a fresh collision between teen romance anxiety and spiritual allegory, especially once the Book of Evils and the Land of Infinity appear. But the script explains its ideas more than it dramatizes them, so the originality lands more as concept than as story."
+      },
+      "world_density_and_texture": {
+        "score": 4,
+        "reasoning": "The school and apartment material is generic, while the fantasy lands are imaginative in name but thin in lived texture. The world has symbolic variety, but not yet the social specificity that makes it story-generating."
+      },
+      "tonal_specificity": {
+        "score": 3,
+        "reasoning": "The script settles into a didactic, earnest register, but it doesn’t yet have a sharply ownable tonal blend. The celebrity talk-show framing, school comedy, and cosmic allegory don’t fully cohere into one distinct voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "The book, the dream labyrinth, and the seven lands suggest a larger moral cosmology, but the script states that depth directly instead of letting it accumulate. There’s a seed of a bigger mythic world, but the page doesn’t yet reward slow-burn discovery."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 2,
+        "reasoning": "The relationships are functional rather than generative: Tom with the five girls, Tom with Kyle, Tom with Dan Dunne. Each scene resets the same dynamic instead of building a web of recurring friction."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Tom",
+        "role_type": "Lead",
+        "demographics": "Male, late teens / high-school age.",
+        "hook": "A physically imposing but emotionally inexperienced student who mistakes persistence for maturity. He’s earnest, self-conscious, and easily swayed by outside authority, first by celebrity advice and then by a supernatural book that promises a way out of his confusion.",
+        "why_actor_wants_this": "This is the showcase territory of a young lead carrying a coming-of-age role like Lucas Hedges in Manchester by the Sea or Justice Smith in The Get Down — the chance to play awkwardness, yearning, humiliation, and awakening in one arc."
+      },
+      {
+        "name": "Dan Dunne",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, celebrity actor persona.",
+        "hook": "A polished TV star whose interview becomes the script’s moral trigger. He presents himself as disciplined and principled, but his function is less as a full character than as the glamorous authority Tom projects onto.",
+        "why_actor_wants_this": "This is the kind of self-mythologizing, scene-stealing supporting role that gives an actor a clean monologue platform, like the celebrity-cameo energy of Robert Downey Jr. in Tropic Thunder — a chance to own the room with polish and authority."
+      },
+      {
+        "name": "Ms. Frances",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged, TV host.",
+        "hook": "The anchor of the in-universe celebrity program, she is polished, inquisitive, and built to keep the interview moving. She mainly functions as the conduit for Dan’s backstory and the show’s relationship advice framing.",
+        "why_actor_wants_this": "This is a crisp host role in the vein of a strong TV interviewer performance like Jane Lynch in The 40-Year-Old Virgin’s ensemble orbit — a chance to play authority, timing, and controlled curiosity."
+      },
+      {
+        "name": "Alisha",
+        "role_type": "Supporting",
+        "demographics": "Female, high-school age.",
+        "hook": "Tom’s first target and the first hard rejection. She’s direct, unimpressed, and immediately punctures his fantasy of a simple yes, which gives her the clearest edge of the five girls.",
+        "why_actor_wants_this": "This is a sharp teen-supporting turn with a clean rejection beat, the kind of role that lets an actor land a memorable scene fast, similar to the blunt social authority of a standout teen in Easy A."
+      },
+      {
+        "name": "Jane",
+        "role_type": "Supporting",
+        "demographics": "Female, high-school age.",
+        "hook": "The most openly hostile of the five girls, she reads Tom’s approach as absurd and threatening. Her scene gives the script its most overt social humiliation beat.",
+        "why_actor_wants_this": "This is a compact, high-contrast reaction role — the kind of scene that lets an actor play comic contempt and social power in a single exchange."
+      },
+      {
+        "name": "Michelle",
+        "role_type": "Supporting",
+        "demographics": "Female, high-school age.",
+        "hook": "Cooler and more dismissive than the others, she treats Tom’s request as a waste of time. She adds to the pattern of rejection without changing the underlying dynamic.",
+        "why_actor_wants_this": "This is a clean, efficient supporting beat that gives an actor a fast, readable attitude turn — useful territory for a young performer building a reel."
+      },
+      {
+        "name": "Miriam",
+        "role_type": "Supporting",
+        "demographics": "Female, high-school age.",
+        "hook": "The most verbally forceful of the five girls, she pushes Tom into the clearest confrontation about what he’s actually asking for. Her scene carries the script’s most explicit social rebuke.",
+        "why_actor_wants_this": "This is the strongest of the rejection scenes for an actor who wants a sharp, speech-driven confrontation and a chance to dominate the exchange."
+      },
+      {
+        "name": "Vivian",
+        "role_type": "Supporting",
+        "demographics": "Female, high-school age.",
+        "hook": "The final girl in Tom’s five-day plan, she is the most measured and the most reflective, but still unavailable. She gives the script a softer, more mature refusal than the others.",
+        "why_actor_wants_this": "This is the most nuanced of the five girl roles, with a chance to play warmth, restraint, and finality rather than simple dismissal."
+      },
+      {
+        "name": "Kyle",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens / young adult.",
+        "hook": "Tom’s friend and sounding board, Kyle is the only human character who offers practical advice instead of rejection. He functions as the script’s grounded counterweight before the fantasy turn.",
+        "why_actor_wants_this": "This is the classic best-friend support role that lets an actor play grounded realism opposite a more heightened lead, similar to the straight-man function in a teen dramedy."
+      },
+      {
+        "name": "Tasha",
+        "role_type": "Supporting",
+        "demographics": "Female, adult or older teen, bookstore clerk/customer.",
+        "hook": "A brief, eerie helper figure who seems to hand Tom access to the forbidden book. She has a dreamlike, almost enchanted quality that pushes the plot into the supernatural lane.",
+        "why_actor_wants_this": "This is a small but memorable mystical-support role, the kind of part that can become a calling card if played with mystery and stillness."
+      },
+      {
+        "name": "Truth",
+        "role_type": "Supporting",
+        "demographics": "Non-human / symbolic entity, voice role.",
+        "hook": "A guide figure inside the dream sequence who explains the Land of Infinity and the seven escape routes. The character is less person than oracle, delivering the script’s cosmology in full.",
+        "why_actor_wants_this": "This is the kind of voice/performance role that lets an actor go fully declarative and mythic, similar to a narrator-oracle part in fantasy allegory."
+      },
+      {
+        "name": "Mike",
+        "role_type": "Supporting",
+        "demographics": "Male, student age.",
+        "hook": "A lightly sketched peer who reacts to Tom’s abrupt departure from the open area. He exists mainly to register social normalcy around Tom’s odd behavior.",
+        "why_actor_wants_this": "This is a small ensemble utility role with a clean reaction beat, useful for a young actor building credits."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "late-teen school-age ensemble",
+          "one celebrity-actor role",
+          "one voice/oracle role",
+          "female teen roles with distinct rejection beats"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 6:4",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "school interiors and exteriors",
+          "living room and bedroom interiors",
+          "bookstore",
+          "marketplace",
+          "open area / dream-space environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Dream sequence, abyss/labyrinth imagery, and the seven fantasy lands would benefit from stylized visual treatment, though not full-scale effects.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical atmosphere and dream-transition effects; no major practical effects set pieces.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "family",
+        "series_engine_or_release_model": "Feature release; best positioned as a modestly budgeted streaming original or faith-adjacent specialty title."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary school, home, bookstore, and street locations keep the footprint contained; the only real spend pressure is the dream sequence and fantasy-land imagery."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Tom needs a young actor who can carry awkward romantic comedy, moral earnestness, and a supernatural turn without losing credibility. The five girls also need distinct personalities so the repeated rejection scenes don’t blur together."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s first half is built on five similar rejection scenes, and the second half turns into a long explanatory dream lecture. That structure is the main greenlight conversation because it affects both pacing and audience engagement."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Akeelah and the Bee",
+          "year": 2006,
+          "why_it_comps": "A youth-centered, values-forward story built around a young protagonist’s self-definition and the adults who shape it."
+        },
+        {
+          "title": "The Book of Clarence",
+          "year": 2023,
+          "why_it_comps": "A spiritual allegory that uses a quest structure and symbolic worldbuilding to explore belief, identity, and moral choice."
+        },
+        {
+          "title": "The NeverEnding Story",
+          "year": 1984,
+          "why_it_comps": "A fantasy journey triggered by a book, with a young lead moving from ordinary life into a symbolic otherworld."
+        },
+        {
+          "title": "The Pursuit of Happyness",
+          "year": 2006,
+          "why_it_comps": "The earnest, self-improving emotional register and the emphasis on perseverance over humiliation."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Faith-friendly and family-adjacent viewers who respond to moral fables, plus younger audiences drawn to school-age wish-fulfillment and supernatural discovery.",
+        "demographics": "Skews teens through adults 35+, with a stronger family and faith audience than a mainstream four-quadrant theatrical crowd.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$500K-$2.5M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations keep costs low, with moderate visual spending concentrated in the dream sequence and the seven-land fantasy material."
+      },
+      "lane_fit": {
+        "lane": "faith-adjacent indie fantasy drama",
+        "types_of_buyers": [
+          "faith-based distributors",
+          "micro-to-low-indie specialty financiers",
+          "streamer development execs seeking family-safe original IP",
+          "festival-minded indie producers",
+          "regional production companies"
+        ],
+        "detail": "The script sits closest to earnest, values-forward indie storytelling with a supernatural wrapper. Its clean moral framing and low-cost contemporary footprint make it approachable for buyers who want uplift without a heavy production burden."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the book-and-dream framework is symbolic, but no clear sequel or spinoff vector is established on the page."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The book trigger gives the story a clean pivot.",
+          "what_it_means": "That gives the script a marketable hinge: ordinary teen frustration turns into supernatural consequence, which is easier to pitch than a purely internal drama. Buyers looking for a contained fantasy with a moral engine will understand the premise quickly once the book appears.",
+          "evidence": "Tom steals The Book of Evils, then the dream sequence opens into the Land of Infinity and the seven escape routes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The school rejection pattern is immediately legible.",
+          "what_it_means": "The five-girl structure creates a simple, repeatable engine that a younger audience can track without confusion. It also gives casting a clear set of short, distinct scenes for five young actresses.",
+          "evidence": "Tom approaches Alisha, Jane, Michelle, Miriam, and Vivian in sequence, each refusing him in a different register.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The fantasy cosmology has symbolic ambition.",
+          "what_it_means": "The seven lands give the project a built-in mythic vocabulary that could attract buyers looking for faith-adjacent or allegorical material. That kind of symbolic world can be a differentiator if the execution lands visually.",
+          "evidence": "Truth explains the Land of Contemplation, Damnation, Hate, Rulers, Immorality, Plenty, and Necessary Evils.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lead role is emotionally accessible.",
+          "what_it_means": "Tom is built around a universal adolescent problem — wanting love, status, and guidance — which makes the role easy to understand in packaging conversations. That gives the project a clear actor-facing entry point for a young performer.",
+          "evidence": "Tom’s bedroom monologues about being rejected and his decision to seek advice from Kyle and then the book.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The production footprint is manageable.",
+          "what_it_means": "The story lives mostly in contemporary interiors and school exteriors, which keeps the project inside a low-to-mid indie lane. That makes it easier to finance than a fantasy script with a larger physical world.",
+          "evidence": "Living room, bedroom, school, classroom, corridor, apartment, bookstore, market, and open-area scenes.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a low-cost, youth-facing fantasy fable with a clean market hinge: a rejected schoolboy steals a forbidden book and falls into a symbolic dream world. The contemporary footprint keeps the production approachable, while the moral-allegory lane gives faith-adjacent and family-friendly buyers a clear reason to lean in."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The first half repeats the same rejection beat five times.",
+          "detail": "Alisha, Jane, Michelle, Miriam, and Vivian each deliver a different flavor of no, but the scene pattern is structurally similar enough that the momentum flattens before the fantasy turn. That is the main development conversation because it affects whether the audience stays engaged long enough to reach the book-and-dream material.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The dream sequence becomes explanatory dialogue.",
+          "detail": "Once Truth appears, the script shifts from dramatized action into a long taxonomy of lands and moral categories. Buyers will read that as a pacing and cinematicity risk because the sequence is telling the audience what the world means instead of letting the world play.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Tom is more vessel than fully shaped lead.",
+          "detail": "He has a clear want, but most of his scenes are reactive: he gets rejected, consults Kyle, steals the book, then receives the dream lesson. That narrows the character appeal conversation because the role currently depends more on concept than on contradiction.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tonal blend is still unsettled.",
+          "detail": "The script moves from talk-show parody to teen rejection comedy to spiritual allegory without a fully unified register. A buyer will notice that the voice is earnest, but not yet singular enough to make the shifts feel like a deliberate brand.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The biggest friction is structural: the script spends a lot of pages on repeated rejection scenes, then hands the climax to a lecture-heavy dream sequence. That makes the concept easy to describe but harder to feel, which is the central buyer conversation on this material."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 32.3,
+  "tier": "Needs Development",
+  "inputTokens": 19317,
+  "outputTokens": 4460,
+  "cost": 0.03455775,
+  "declaredFormat": "Feature film"
+}

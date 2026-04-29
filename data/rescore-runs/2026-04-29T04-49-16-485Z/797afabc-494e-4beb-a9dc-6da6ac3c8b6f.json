@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T05:13:42.231Z",
+  "submission_id": "797afabc-494e-4beb-a9dc-6da6ac3c8b6f",
+  "eval_id": "85c620ef-d366-4894-ba15-e78b567f0216",
+  "title": "Being Others",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Harris Hotchkiss",
+      "role_type": "Lead",
+      "demographics": "Male, 16, high-school student; socially awkward, physically slight, intellectually curious, from a suburban middle-class family."
+    },
+    {
+      "name": "Terry Michaels",
+      "role_type": "Supporting",
+      "demographics": "Male, 16, high-school student; Harris’s best friend, geeky, lanky, socially anxious."
+    },
+    {
+      "name": "Taylor Majors",
+      "role_type": "Supporting",
+      "demographics": "Female, 16-17, high-school student; cheerleader, socially powerful, attractive, emotionally guarded."
+    },
+    {
+      "name": "Lisa Minetti",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, high-school student; cheerleader, socially dominant, secretly predatory."
+    },
+    {
+      "name": "Josh Boson",
+      "role_type": "Supporting",
+      "demographics": "Male, 16-18, high-school athlete; football player, physically imposing, aggressive, status-driven."
+    },
+    {
+      "name": "Tom Hotchkiss",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, father, engineer/roller-coaster designer, suburban professional."
+    },
+    {
+      "name": "Beverly Hotchkiss",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, mother, suburban homemaker/professional parent."
+    },
+    {
+      "name": "Missy Hotchkiss",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, high-school cheerleader; Harris’s older sister."
+    },
+    {
+      "name": "Stewart Hotchkiss",
+      "role_type": "Supporting",
+      "demographics": "Male, 11, younger brother; braces, comic, energetic."
+    },
+    {
+      "name": "Avery Wesker",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, amusement-park owner/executive."
+    },
+    {
+      "name": "Andrew Boson",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, father of Josh, businessman with criminal ties."
+    },
+    {
+      "name": "Bartholomew Meade",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, polished corporate fixer/industrial spy."
+    },
+    {
+      "name": "Doctor Horton",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, doctor."
+    },
+    {
+      "name": "Doctor Kramer",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, doctor with lightning-strike specialty interest."
+    },
+    {
+      "name": "Doctor Fine",
+      "role_type": "Supporting",
+      "demographics": "Female, late 20s, doctor."
+    },
+    {
+      "name": "Kobe Bryant",
+      "role_type": "Supporting",
+      "demographics": "Male, real person, professional basketball player."
+    }
+  ],
+  "positioning_hook": "A bullied teen who absorbs other people’s skills through touch must stop a sabotage plot at his father’s new roller coaster while juggling school, first love, and a power that makes him dangerous.",
+  "cost_usd": 0.05684775,
+  "input_tokens": 40709,
+  "output_tokens": 5848,
+  "status": "wrote:leads_ok"
+}

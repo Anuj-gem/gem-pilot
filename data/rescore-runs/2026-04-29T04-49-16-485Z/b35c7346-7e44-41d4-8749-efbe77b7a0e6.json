@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:15:34.887Z",
+  "submission_id": "b35c7346-7e44-41d4-8749-efbe77b7a0e6",
+  "eval_id": "f535df62-c0ad-4ca8-8d61-d31f33fd4c44",
+  "title": "the blueprint screenplay1",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "The Source",
+      "role_type": "Lead",
+      "demographics": "Ageless divine masculine-presenting creator entity; non-human; supreme ruler of the cosmos."
+    },
+    {
+      "name": "The Divider",
+      "role_type": "Supporting",
+      "demographics": "Ageless male-presenting exiled cosmic entity; non-human; former favored creation turned rebel ruler."
+    },
+    {
+      "name": "MOC-Man",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting human; first man; created as the earthly custodian and representative of humanity."
+    },
+    {
+      "name": "WOMOC-Woman",
+      "role_type": "Supporting",
+      "demographics": "Female-presenting human; first woman; created as MOC-Man’s complement and counterpart."
+    },
+    {
+      "name": "Wind",
+      "role_type": "Supporting",
+      "demographics": "Ageless non-human elemental entity; male-presenting kingdom representative."
+    },
+    {
+      "name": "Water",
+      "role_type": "Supporting",
+      "demographics": "Ageless non-human elemental entity; female-presenting kingdom representative."
+    },
+    {
+      "name": "Fire",
+      "role_type": "Supporting",
+      "demographics": "Ageless non-human elemental entity; male-presenting kingdom representative."
+    }
+  ],
+  "positioning_hook": "A cosmic ruler unveils creation to his rebellious former lieutenant, then must defend earth, humanity, and free will from the exiled deceiver who weaponizes the first couple’s fall.",
+  "cost_usd": 0.045829499999999995,
+  "input_tokens": 36614,
+  "output_tokens": 4082,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,372 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "soapy",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "identity",
+        "power",
+        "showbiz",
+        "new-york"
+      ]
+    },
+    "positioning_hook": "A reckless young showrunner and a cluster of hungry actors collide when one breakout series threatens to make or break all of their careers, relationships, and self-worth.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The showbiz engine is easy to grasp and the emotional stakes are legible: careers, ego, money, and status. The appeal is real, but the very specific industry milieu and melodramatic register narrow the buyer and audience conversation."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The pilot quickly establishes a clear engine: multiple aspiring creatives orbit a single prestige project, and the project itself becomes the pressure cooker. The hook is understandable, though the ensemble sprawl makes the central premise feel more diffuse than razor-sharp."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Theo, Cheryl, Maya, Jensen, Michael, and Sharni each arrive with a distinct wound or ambition, which gives the series a durable relational engine. The downside is that several of them are introduced through the same frustration beat—rejection, humiliation, or collapse—so the differentiation is more functional than fully dimensional on first pass."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The meta-showbiz premise has a built-in hook, and the pilot leans into the absurdity of creatives being consumed by the very industry they want to enter. But the execution lives in familiar territory—rejection, ego, addiction, career desperation—without yet finding a truly singular formal or tonal device."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The pilot moves briskly through introductions and humiliation beats, and the final escalation with Theo burning the studio gives the hour a clean spike. Still, much of the middle plays as repeated setback rather than escalating turn, so the propulsion is solid rather than relentless."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a showrunner writing himself into the story world has a fresh meta edge, and the pilot keeps returning to the collision between art and self-destruction. Even so, the emotional and industrial beats are recognizable enough that the script feels more clever than inevitable at this stage."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The pilot has a specific, story-generating world: casting rooms, studio meetings, set life, agents, producers, and the social hierarchy around fame. That texture is one of the script’s best assets, because every location naturally produces conflict and status games."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is glossy, heightened, and self-aware, with soap-opera energy and industry satire baked in. It is consistent, but it does not yet have the unmistakable tonal fingerprint that would make it instantly hard to imitate."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface-level career chaos, the pilot keeps hinting at addiction, shame, family pressure, and identity collapse, especially through Theo, Maya, Jensen, and Cheryl. Those threads suggest more depth than the pilot fully cashes in on, which is a good sign for a series engine."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "This is the script’s strongest structural asset: Theo and Zach, Theo and Maya, Cheryl and Will, Jensen and Kaya, Michael and Greg, Sharni and Brian all generate usable friction. The ensemble is built from interlocking professional and personal dependencies, which is exactly what keeps a show alive beyond the pilot."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Theo Marshall",
+        "role_type": "Lead",
+        "demographics": "young adult, gender-nonconforming presentation in script language, white, showrunner/writer, late 20s to early 30s",
+        "hook": "A brilliant, self-destructive showrunner who treats every room like a stage and every setback like a personal insult. Theo is charismatic, combative, and deeply wounded; he wants validation so badly that he will torch his own future to prove he matters. The pilot frames him as both the engine of the series and the person most likely to become its disaster.",
+        "why_actor_wants_this": "This is the showcase territory of Jeremy Strong in Succession or Rami Malek in Mr. Robot: a volatile, hyper-intelligent lead whose inner fracture is the performance. It gives an actor rage, seduction, humiliation, and self-mythology in the same role."
+      },
+      {
+        "name": "Cheryl Carpenter",
+        "role_type": "Supporting",
+        "demographics": "female, mid-20s, British, aspiring actress",
+        "hook": "A beautiful, vulnerable outsider who arrives in New York with hope, a suitcase, and almost no leverage. Cheryl is the kind of character who can be read as fragile until the script reveals how much humiliation she can absorb without losing the dream. She has a clear emotional lane: ambition colliding with the industry’s casual cruelty.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Daisy Edgar-Jones in Normal People: a role that lets an actor weaponize softness, then reveal steel under pressure. It gives the performer a big emotional range from hopeful to humiliated to quietly defiant."
+      },
+      {
+        "name": "Maya Booth",
+        "role_type": "Supporting",
+        "demographics": "female, mid-20s to early 30s, writer, working-class strain implied",
+        "hook": "A writer who has the talent to be in the room but not the insulation to survive it. Maya is defined by being underestimated—by casting, by family, by the industry—and the pilot gives her a bruised dignity that makes her easy to root for. She feels like the person most likely to become the audience’s moral anchor if the series deepens her arc.",
+        "why_actor_wants_this": "This is the showcase territory of Ayo Edebiri in The Bear or Rachel Sennott in Shiva Baby: a role built on embarrassment, intelligence, and the ability to play hurt without losing wit. It gives an actor a strong close-up engine and a real underdog arc."
+      },
+      {
+        "name": "Michael Day",
+        "role_type": "Supporting",
+        "demographics": "male, early 30s, actor",
+        "hook": "A desperate actor whose self-worth is welded to the idea of being remembered. Michael is the most openly volatile of the performers, and the pilot uses him to dramatize what happens when vanity, fear, and professional failure collapse into violence. He is ugly in the right way for a show about fame hunger.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Dano in Escape at Dannemora or Ben Whishaw in a more unhinged register: a role that lets an actor play fragility, entitlement, and eruption. It offers a breakdown performance with real scene-stealing potential."
+      },
+      {
+        "name": "Jensen Allen",
+        "role_type": "Supporting",
+        "demographics": "male, early 30s, actor, financially unstable, partnered",
+        "hook": "A struggling actor on his last shot, with eviction, debt, and a pregnant partner hanging over him. Jensen is sympathetic because he is trying to be responsible while still chasing the dream, which makes his desperation feel painfully adult. He reads as the series’ most grounded casualty of the business.",
+        "why_actor_wants_this": "This is the showcase territory of Andrew Garfield in Tick, Tick... Boom! or Ben Foster in Hell or High Water: a role where panic, tenderness, and self-delusion all live in the same body. It gives an actor a pressure-cooker emotional arc with real stakes."
+      },
+      {
+        "name": "Kaya Stewart",
+        "role_type": "Supporting",
+        "demographics": "female, around 30, partner to Jensen, working multiple jobs implied",
+        "hook": "A tired, practical partner who has run out of patience for dreams that don’t pay rent. Kaya is not written as a passive girlfriend; she is the person holding the real-world consequences while Jensen keeps reaching for fantasy. Her pregnancy reveal gives her immediate long-term weight.",
+        "why_actor_wants_this": "This is the showcase territory of Carrie Coon in The Leftovers or Jurnee Smollett in Lovecraft Country: a role that lets an actor play exhaustion, love, and hard-earned authority. It gives a performer the emotional center of the domestic side of the series."
+      },
+      {
+        "name": "Zach Williams",
+        "role_type": "Supporting",
+        "demographics": "male, 30s, music producer/executive",
+        "hook": "A cool, observant industry insider who sees through Theo immediately but still chooses to engage. Zach functions as both gatekeeper and confidant, and the pilot gives him enough wit and warmth to feel like more than a plot device. He is one of the few characters who can puncture Theo without disappearing under him.",
+        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in a lighter register or Billy Crudup in The Morning Show: a role that rewards charisma, intelligence, and controlled authority. It gives an actor the pleasure of being the smartest person in the room without becoming cold."
+      },
+      {
+        "name": "Sharni Vinson",
+        "role_type": "Supporting",
+        "demographics": "female, late 20s, Australian, TV personality/performer",
+        "hook": "A polished public figure who is privately exhausted by the machine that made her. Sharni’s scenes are about performance fatigue: she can sell joy on camera, then shut down the second the lights go off. That split gives her a strong series-long contradiction.",
+        "why_actor_wants_this": "This is the showcase territory of Jennifer Aniston in The Morning Show or Kate Hudson in Truth Be Told: a role that lets an actor play public sparkle and private collapse. It offers a strong duality between image and interior life."
+      },
+      {
+        "name": "Will",
+        "role_type": "Supporting",
+        "demographics": "male, 30s to 40s, casting/industry gatekeeper",
+        "hook": "A casual, slightly predatory industry operator who can be charming when it serves him and dismissive when it doesn’t. Will is the kind of character who makes the business feel transactional in every scene he enters. He gives Cheryl her first real taste of how the system works.",
+        "why_actor_wants_this": "This is the showcase territory of Jon Hamm in Mad Men or Matthew Macfadyen in a sharper, sleazier mode: a role that lets an actor weaponize charm. It gives a performer the chance to be both seductive and contemptible in the same breath."
+      },
+      {
+        "name": "Scott",
+        "role_type": "Supporting",
+        "demographics": "male, 40s to 50s, executive",
+        "hook": "A polished network executive who smiles while delivering the knife. Scott is not a villain in a cartoon sense; he is the institutional face of the show’s gatekeeping, and that makes him useful and dangerous. He understands exactly how to flatter Theo before shutting him out.",
+        "why_actor_wants_this": "This is the showcase territory of Peter Krause in 9-1-1 or Michael Stuhlbarg in a corporate register: a role that rewards precision, authority, and controlled menace. It gives an actor the chance to play power without raising his voice."
+      },
+      {
+        "name": "Greg",
+        "role_type": "Supporting",
+        "demographics": "male, 40s to 50s, producer",
+        "hook": "A blunt, practical producer who has stopped believing in the myth of the artist and started believing in damage control. Greg is useful because he says the quiet part out loud: talent is not the same thing as employability. He grounds Michael’s delusion in business reality.",
+        "why_actor_wants_this": "This is the showcase territory of John Turturro in Severance or David Harbour in a more grounded mode: a role that lets an actor play weary authority and dry exasperation. It gives a performer strong scene utility with bite."
+      },
+      {
+        "name": "Sandra",
+        "role_type": "Supporting",
+        "demographics": "female, 20s to 30s, actor/partner",
+        "hook": "Michael’s girlfriend, who is emotionally present enough to say the thing he refuses to answer. Sandra is lightly sketched, but her function is clear: she exposes Michael’s inability to reciprocate intimacy. She helps define his emotional vacancy.",
+        "why_actor_wants_this": "This is the showcase territory of a strong supporting turn like Merritt Wever in Unbelievable: a role that can do a lot with very little screen time. It gives an actor the chance to make a small part land emotionally."
+      },
+      {
+        "name": "Mason",
+        "role_type": "Supporting",
+        "demographics": "male, late teens to 20s, Maya’s brother",
+        "hook": "A chaotic younger brother whose addiction and bad decisions keep pulling the family into crisis. Mason is not just a problem; he is the living proof of the family’s instability, and that gives Maya a concrete burden. He adds a domestic pressure line that can recur.",
+        "why_actor_wants_this": "This is the showcase territory of a young actor in the vein of Jack Dylan Grazer in a dramatic mode: a role that can swing between charm, resentment, and self-destruction. It gives a performer room to be messy and human."
+      },
+      {
+        "name": "Teresa",
+        "role_type": "Supporting",
+        "demographics": "female, 50s to 60s, Maya’s mother",
+        "hook": "A mother who has learned to manage chaos instead of solving it. Teresa reads as someone who has been living with family damage for a long time, which gives her scenes a tired, lived-in quality. She is a useful pressure point for Maya’s home life.",
+        "why_actor_wants_this": "This is the showcase territory of a veteran character actor like Laurie Metcalf in Lady Bird: a role that can carry history in a few lines. It gives an actor the chance to make domestic realism feel specific."
+      },
+      {
+        "name": "Brian",
+        "role_type": "Supporting",
+        "demographics": "male, 20s to 30s, Sharni’s partner",
+        "hook": "A boyfriend who mistakes access for intimacy and support for entitlement. Brian’s scenes are about the gap between how he sees himself and how Sharni experiences him. He is a clean source of domestic friction.",
+        "why_actor_wants_this": "This is the showcase territory of a strong supporting boyfriend role like Adam Brody in Fleishman Is in Trouble: a part that can be charming, needy, and irritating all at once. It gives an actor a compact but memorable relational function."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble-heavy adult cast",
+          "multiple attractive/industry-presentable roles",
+          "one gender-nonconforming presentation in script language for Theo",
+          "Australian and British casting elements for Sharni and Cheryl"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "mostly interiors with some street, airport, and exterior night beats",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "New York studio and casting-office environments",
+          "Los Angeles apartment and industry interiors",
+          "Australia television-studio setting",
+          "one exterior fire/studio-front sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond basic editorial enhancement and possible fire/smoke augmentation in the studio-front burn beat.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fire, smoke, police response, and a few physical altercation beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Two Feet - 'Never Enough'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Rihanna - 'Needed Me'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Elder Island - 'Kape Fear'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Romare - 'Down the Line'"
+        },
+        {
+          "type": "brand",
+          "detail": "SpoilerTV"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized ensemble drama with a recurring industry-pressure engine and multiple character threads orbiting the same show-business ecosystem."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly interior, but the pilot spans New York, Los Angeles, and Australia, with a studio-front fire beat and multiple music cues that will need to be planned and cleared."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Theo is the load-bearing role: the actor has to play charisma, self-destruction, sexual magnetism, and volatility without losing audience access. Cheryl, Maya, Jensen, and Sharni also need immediate specificity to keep the ensemble from blending together."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s meta-showbiz premise is clear, but the series identity depends on whether the ensemble’s individual arcs stay distinct once the initial industry crisis settles."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Morning Show",
+          "year": 2019,
+          "why_it_comps": "Shares the glossy, industry-insider ecosystem where careers, image, and institutional power collide in public."
+        },
+        {
+          "title": "Entourage",
+          "year": 2004,
+          "why_it_comps": "The ensemble lives inside fame-chasing and entertainment-business status games, with ego and access driving the scenes."
+        },
+        {
+          "title": "Hacks",
+          "year": 2021,
+          "why_it_comps": "The pilot has the same mix of career desperation, sharp dialogue, and a show-business world that generates conflict from every relationship."
+        },
+        {
+          "title": "Industry",
+          "year": 2020,
+          "why_it_comps": "Young professionals under pressure, transactional relationships, and a high-friction entertainment workplace give it a similar engine."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like behind-the-scenes entertainment dramas with messy ambition, romantic fallout, and career humiliation.",
+        "demographics": "18-49, slightly female-skewing but playable across genders; strongest with viewers who like prestige soap, workplace power plays, and celebrity-adjacent storytelling.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Contemporary ensemble drama with multiple city settings, studio interiors, and a modest practical-fire sequence; the episode count assumption is 8."
+      },
+      "lane_fit": {
+        "lane": "premium showbiz ensemble drama",
+        "types_of_buyers": [
+          "premium-streaming drama buyers",
+          "adult-skewing ensemble-series development teams",
+          "buyers looking for industry-set prestige soap",
+          "talent-driven producers seeking actor-forward material"
+        ],
+        "detail": "This sits naturally in the lane of glossy, adult, relationship-driven entertainment-world drama. The script’s value is that every scene can be sold on character friction, while the setting itself supplies status, aspiration, and humiliation."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone ensemble series rather than a franchise engine; no clear spinoff vector emerges from the supporting cast beyond the core show-business ecosystem."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The ensemble is built for friction.",
+          "what_it_means": "That gives the show multiple buyer-facing entry points: casting, relationship drama, and episode-to-episode conflict all come from the same engine. Buyers who want a prestige soap with real scene partners will see immediate utility here.",
+          "evidence": "Theo/Zach, Cheryl/Will, Maya/industry, Jensen/Kaya, Michael/Greg, Sharni/Brian all create distinct pressure systems.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The show-business world is story-generating.",
+          "what_it_means": "Casting rooms, studio meetings, set life, and executive gatekeeping naturally produce conflict without needing forced procedural cases. That makes the series easier to market as an ongoing adult drama with built-in momentum.",
+          "evidence": "The pilot moves through casting offices, a studio pitch, a set meltdown, and executive rejection in one hour.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Theo is a volatile lead role.",
+          "what_it_means": "A lead this combustible can attract a serious actor looking for a signature part and gives the series a clear center of gravity. That is the kind of role that can anchor publicity and critical conversation if cast well.",
+          "evidence": "Theo pitches, seduces, drinks, gets rejected, and ends the hour by setting the studio front on fire.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has a clean escalation spike.",
+          "what_it_means": "The studio fire and arrest beat gives the hour a memorable end image that can sell the series as more than just industry chatter. Buyers like a pilot that ends with a headline-worthy turn.",
+          "evidence": "Theo throws a Molotov cocktail at the studio and waits for the police.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script understands humiliation.",
+          "what_it_means": "Humiliation is a reliable engine for bingeable drama because it keeps characters reactive and emotionally exposed. That makes the show attractive to viewers who like messy, status-driven storytelling.",
+          "evidence": "Cheryl is dismissed at the airport and casting; Maya is told she has 'nothing extra'; Jensen is ejected from the room; Michael is publicly cut loose.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a premium-streaming ensemble drama with a clear commercial lane: attractive, damaged people fighting for status inside the entertainment machine. The pilot’s biggest asset is that the world itself generates conflict, and the ending gives the hour a memorable escalation that helps it cut through the crowded showbiz-drama field."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "Theo dominates the pilot’s gravity.",
+          "detail": "The hour is structurally anchored to Theo’s collapse, which makes him the obvious lead but also means the ensemble can feel like satellites until the final pages. That is a real buying conversation because the show’s durability depends on whether the supporting players can hold attention once Theo is off-center.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Several characters enter through the same rejection beat.",
+          "detail": "Cheryl, Maya, Jensen, and Michael are all introduced via humiliation, dismissal, or professional failure, which creates a strong mood but also compresses their differentiation. A buyer will notice that the ensemble’s first impression is emotionally consistent but not yet sharply varied.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The meta-premise is clear but familiar.",
+          "detail": "A show about people trying to break into or survive show business is easy to pitch, but it also sits in a crowded lane where execution has to do the heavy lifting. The script’s industry texture helps, but the core premise still reads as a prestige-soap familiar rather than a truly new category.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The pilot leans on music cues heavily.",
+          "detail": "Multiple named tracks are embedded in the script, which means the emotional shape of several sequences is tied to specific songs rather than just scene construction. That is manageable, but it is a real clearance and budget conversation before greenlight.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is structural: Theo is the clear center, but the ensemble needs to prove it can stay distinct once the pilot’s initial humiliation engine has done its work. On top of that, the script sits in a crowded showbiz-drama lane, so the buyer conversation will hinge on whether the cast and tone feel specific enough to justify the spend."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 24819,
+  "outputTokens": 5713,
+  "cost": 0.04432275,
+  "declaredFormat": "Series"
+}

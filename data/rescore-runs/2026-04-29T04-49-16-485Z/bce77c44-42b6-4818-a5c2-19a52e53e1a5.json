@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:15:34.920Z",
+  "submission_id": "bce77c44-42b6-4818-a5c2-19a52e53e1a5",
+  "eval_id": "15154ab8-a0cd-4289-8b1b-ac60419e4414",
+  "title": "INTO THE MYSTIC II",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Brandon",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, human male with latent divine identity; wealthy Florida homeowner, husband, father."
+    },
+    {
+      "name": "Treena",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, mermaid woman living on land; pregnant mother, romantic lead, outsider to human life."
+    },
+    {
+      "name": "Thanos",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, immortal merman/shapeshifter; physically imposing, blond, predatory, aristocratic."
+    },
+    {
+      "name": "Jessa",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-40s, mermaid woman living on land; Treena’s ally and translator of the hidden world."
+    },
+    {
+      "name": "Lou",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, human father figure; Florida homeowner, practical, protective."
+    },
+    {
+      "name": "Annabelle",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s-70s, older mermaid woman; hidden community leader, keeper of lore."
+    },
+    {
+      "name": "Finley",
+      "role_type": "Supporting",
+      "demographics": "Male, infant to toddler, mermaid-human hybrid child with fins/feet and accelerated growth."
+    },
+    {
+      "name": "Glaukos",
+      "role_type": "Supporting",
+      "demographics": "Male, ageless mythic sea ruler; towering, fish-bodied, ancient authority figure."
+    },
+    {
+      "name": "Peter",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, human fisherman turned transformed husband; later restored to human form."
+    },
+    {
+      "name": "Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, Thanos’ twin brother; identical physical type, human/merman mythic hybrid."
+    }
+  ],
+  "positioning_hook": "A Florida millionaire discovers his mermaid son is prophesied to rule the sea and enslave humanity, forcing his family into a mythic war against a shape-shifting merman who wants the child first.",
+  "cost_usd": 0.061208250000000006,
+  "input_tokens": 50669,
+  "output_tokens": 5157,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:17:28.220Z",
+  "submission_id": "ac25284c-0fbd-445c-b400-ef4c3a970d07",
+  "eval_id": "94682be2-bb39-44b5-ac57-58a6a87f4785",
+  "title": "the journey to love screenplay 12 final",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Tyler",
+      "role_type": "Lead",
+      "demographics": "Male, late teens to early 20s, wheelchair user with paralysis from birth, student in secondary school and later university."
+    },
+    {
+      "name": "Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, able-bodied student and Tyler’s closest friend."
+    },
+    {
+      "name": "Jade",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to early 20s, student."
+    },
+    {
+      "name": "Bridget",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to early 20s, student."
+    },
+    {
+      "name": "Tama",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to early 20s, student, physically described as slim and 5'9\"."
+    },
+    {
+      "name": "Samantha",
+      "role_type": "Supporting",
+      "demographics": "Female, college-age, athletic build, tall, mixed-race features."
+    },
+    {
+      "name": "Grace",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged, Tyler’s mother."
+    },
+    {
+      "name": "Paul",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 40s across the script’s time jumps, affluent, socially powerful, later a public figure."
+    },
+    {
+      "name": "Tanya",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, later adult, Paul’s former partner."
+    },
+    {
+      "name": "Henry",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s to 30s, Tanya’s eventual partner."
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, Paul’s friend and social intermediary."
+    },
+    {
+      "name": "Ulm",
+      "role_type": "Supporting",
+      "demographics": "Gender-ambiguous or nonhuman spiritual entity, otherworldly presence."
+    }
+  ],
+  "positioning_hook": "A wheelchair-bound student in Gauteng keeps getting rejected in love until a mystical dream teacher reframes his life, his past, and the kind of man he has to become.",
+  "cost_usd": 0.0423045,
+  "input_tokens": 26718,
+  "output_tokens": 4948,
+  "status": "wrote:leads_ok"
+}

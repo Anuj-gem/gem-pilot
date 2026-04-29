@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:11:50.817Z",
+  "submission_id": "409f4bdf-33ab-4764-849a-1a1b60d646f7",
+  "eval_id": "631d3b4c-0919-4ac6-85a9-2c3aefe09d76",
+  "title": "The Green Hornet",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Britt Reid",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, white, affluent newspaper heir, urban professional, physically capable but not superhuman."
+    },
+    {
+      "name": "Kato",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, Asian, athletic, highly skilled driver/fighter/technician."
+    },
+    {
+      "name": "Casey Case",
+      "role_type": "Supporting",
+      "demographics": "Female, late 20s to early 30s, white, newsroom staffer/assistant, stylish and socially agile."
+    },
+    {
+      "name": "Rex Damon",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, ambitious media executive, polished and compromised."
+    },
+    {
+      "name": "Tommy Chew",
+      "role_type": "Supporting",
+      "demographics": "Male, late 30s to 40s, Asian, criminal enforcer/organizer, physically imposing."
+    },
+    {
+      "name": "Frank Scanlon",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Black, district attorney, authoritative, politically connected."
+    },
+    {
+      "name": "Dan Reid",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, white, aging patriarch, newspaper founder, frail but mentally alert."
+    },
+    {
+      "name": "CC Fuller",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, white, marketing/executive type, glamorous and socially sharp."
+    },
+    {
+      "name": "Mike Axford",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, veteran reporter, hard-nosed and streetwise."
+    },
+    {
+      "name": "Lisa",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, white, young adult, friend of Casey, civilian witness."
+    }
+  ],
+  "positioning_hook": "A newspaper heir moonlighting as the Green Hornet uncovers a heroin-smuggling ring inside his own TV station, forcing him and Kato to fight their way through a corrupt newsroom, a kidnapped colleague, and a dockside conspiracy.",
+  "cost_usd": 0.05999325,
+  "input_tokens": 49199,
+  "output_tokens": 5132,
+  "status": "wrote:leads_ok"
+}

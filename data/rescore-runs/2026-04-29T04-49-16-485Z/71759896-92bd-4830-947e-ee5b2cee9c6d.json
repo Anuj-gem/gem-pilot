@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:16:20.455Z",
+  "submission_id": "71759896-92bd-4830-947e-ee5b2cee9c6d",
+  "eval_id": "f03465a8-3062-4d81-8ee8-28793cd5a9ce",
+  "title": "Happy Birthday",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tom",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, aspiring actor, financially broke, emotionally fragile, likely white or unspecified."
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, assassin, physically capable, emotionally guarded."
+    },
+    {
+      "name": "John",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, rogue operative, armed, close partner to Sarah."
+    },
+    {
+      "name": "Blankett",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s to 60s, military authority figure, ideologically extreme."
+    },
+    {
+      "name": "Nancy",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, Tom's ex-girlfriend, financially strained, emotionally exhausted."
+    },
+    {
+      "name": "Christine Fu",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, Chinese intelligence contact, stylish, highly competent."
+    },
+    {
+      "name": "Glasswasher",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, powerful insider, wealthy, politically connected."
+    },
+    {
+      "name": "Flyboy",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, celebrity musician, flashy, under siege."
+    },
+    {
+      "name": "Weissman",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, rabbi, respected community figure."
+    },
+    {
+      "name": "Rychton",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, President of the United States."
+    }
+  ],
+  "positioning_hook": "A suicidal aspiring actor gets dragged into a rogue-assassin conspiracy to stop a nuclear coup, then has to survive the day by pretending to be a rabbi at a billionaire wedding.",
+  "cost_usd": 0.049482,
+  "input_tokens": 35802,
+  "output_tokens": 5029,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:15:14.590Z",
+  "submission_id": "5f0a69ad-3995-4537-a01b-82924a444ca2",
+  "eval_id": "2af4112d-ad9a-4638-9a4d-72520ad22fe1",
+  "title": "Vineyard Haven rev 4-17-26",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Scott Morgan",
+      "role_type": "Lead",
+      "demographics": "Male, 20s, white, Vineyard native, working-class-adjacent, aspiring screenwriter."
+    },
+    {
+      "name": "Ben Carter",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, white, wealthy, Vineyard-connected, family heir, producer/fixer type."
+    },
+    {
+      "name": "Rebecca Harding",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, white, working-class background, politically conservative, emotionally volatile."
+    },
+    {
+      "name": "Kate Rosenthal",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Black and English Jewish, adopted, performer-turned-adult-reinventing-herself."
+    },
+    {
+      "name": "Todd Straite",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, ambitious politician, polished public figure."
+    },
+    {
+      "name": "Mom",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, white, island working professional, Scott’s mother."
+    },
+    {
+      "name": "George",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, white, island builder/contractor, mother’s boyfriend."
+    },
+    {
+      "name": "Ben’s Mother",
+      "role_type": "Supporting",
+      "demographics": "Female, 80s, white, old-money matriarch."
+    },
+    {
+      "name": "Meredith",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, white, engaged to Todd Straite."
+    }
+  ],
+  "positioning_hook": "A Vineyard nepo baby with a stalled screenplay gets dragged through a chaotic island day by a rich, broken fixer, and discovers the life he wants may be the one he’s been mocking.",
+  "cost_usd": 0.0524415,
+  "input_tokens": 40084,
+  "output_tokens": 4973,
+  "status": "wrote:leads_ok"
+}

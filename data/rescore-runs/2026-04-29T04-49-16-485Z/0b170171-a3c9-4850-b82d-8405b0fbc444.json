@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:15:07.904Z",
+  "submission_id": "0b170171-a3c9-4850-b82d-8405b0fbc444",
+  "eval_id": "cce6f563-f72e-4768-ae6a-265faa2a668f",
+  "title": "Previously Viewed Final Draft V1",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Andy Anderson",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, white, LAPD detective, hard-drinking, physically capable, morally compromised but instinctively protective."
+    },
+    {
+      "name": "Tony Scampero",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, reporter, working journalist, middle-class, urban, white."
+    },
+    {
+      "name": "Tom Jensen",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, police captain, polished, authority figure, white."
+    },
+    {
+      "name": "Jesus Rodriguez",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, Latino, detective, physically compact, tattooed, streetwise."
+    },
+    {
+      "name": "Everett Banner",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, coroner, older, physically limping, forensic specialist."
+    },
+    {
+      "name": "Simon Garfunkel",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, socially awkward, movie-obsessed, college-age, white."
+    },
+    {
+      "name": "Amanda Payne",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to 30s, sex worker, addicted, street-involved, vulnerable."
+    },
+    {
+      "name": "Sam Notting",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, director, porn filmmaker, former studio filmmaker, white."
+    }
+  ],
+  "positioning_hook": "A hard-drinking L.A. detective and a crime reporter chase a killer who stages murders like movie scenes, only to discover the killer is a film-obsessed video-store clerk living in plain sight.",
+  "cost_usd": 0.05619,
+  "input_tokens": 45520,
+  "output_tokens": 4900,
+  "status": "wrote:leads_ok"
+}

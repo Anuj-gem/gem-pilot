@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:16:03.401Z",
+  "submission_id": "4ceb6cb4-071b-49fd-8258-d462fdc224e2",
+  "eval_id": "e42e5abc-b4d3-4ec8-ae9c-e9ef9d9a5df3",
+  "title": "Santa In Two Worlds",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Santa",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, Santiago-based former gang leader and inmate."
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, Santa’s mother, sex worker and survivor."
+    },
+    {
+      "name": "Mario",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, inmate and informal cell leader."
+    },
+    {
+      "name": "Vasquez",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, inmate."
+    },
+    {
+      "name": "Roberto",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, inmate."
+    },
+    {
+      "name": "Don",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, husband and father."
+    },
+    {
+      "name": "Valeria",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, wife and mother."
+    },
+    {
+      "name": "Marion",
+      "role_type": "Supporting",
+      "demographics": "Male, teenager, son of Don and Valeria."
+    },
+    {
+      "name": "Lille",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, family friend and counselor figure."
+    }
+  ],
+  "positioning_hook": "A jailed thief in Santiago is forced to confront his criminal bloodline, then stumbles into a cosmic time-matrix that shows him who he’s been across lifetimes.",
+  "cost_usd": 0.04818075000000001,
+  "input_tokens": 36935,
+  "output_tokens": 4551,
+  "status": "wrote:leads_ok"
+}

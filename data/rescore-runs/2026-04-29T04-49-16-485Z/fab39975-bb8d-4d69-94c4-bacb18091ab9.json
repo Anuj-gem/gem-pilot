@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T05:13:24.259Z",
+  "submission_id": "fab39975-bb8d-4d69-94c4-bacb18091ab9",
+  "eval_id": "21533000-cba6-4568-8e58-88fc3d03c7d6",
+  "title": "The Naive Tool (The Naive Tool)",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Kit",
+      "role_type": "Lead",
+      "demographics": "male, young adult, non-human / manufactured worker, emotionally childlike, physically small-to-average, biologically altered"
+    },
+    {
+      "name": "Mother",
+      "role_type": "Supporting",
+      "demographics": "female, middle-aged, authority figure, caretaker/manager, non-human or altered worker-class supervisor"
+    },
+    {
+      "name": "Kelto",
+      "role_type": "Supporting",
+      "demographics": "male, young adult, worker-class enforcer, physically capable, emotionally immature"
+    },
+    {
+      "name": "Entity",
+      "role_type": "Supporting",
+      "demographics": "voice-only presence, genderless or fluid, non-human intelligence, parasitic/embedded consciousness"
+    },
+    {
+      "name": "Ang Sac Converter",
+      "role_type": "Supporting",
+      "demographics": "non-human machine/organism, voice role, institutional function"
+    }
+  ],
+  "positioning_hook": "A naïve worker named Kit eats a forbidden living sac, absorbs a manipulative voice in his head, and stumbles toward freedom in a grotesque bio-engineered world that wants to own him.",
+  "cost_usd": 0.03303,
+  "input_tokens": 18834,
+  "output_tokens": 4201,
+  "status": "wrote:leads_ok"
+}

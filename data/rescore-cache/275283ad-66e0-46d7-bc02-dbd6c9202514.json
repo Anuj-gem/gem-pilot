@@ -1,0 +1,289 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Horror",
+        "Mystery"
+      ],
+      "tone": "noir",
+      "tags": [
+        "male-lead",
+        "single-location",
+        "contemporary",
+        "low-budget-friendly",
+        "character-driven",
+        "slow-burn",
+        "survival",
+        "grief",
+        "darkness",
+        "1950s-road-noir"
+      ]
+    },
+    "positioning_hook": "A bestselling mystery novelist with nyctophobia gets stranded at dusk on a deserted highway, and every mile of his breakdown turns the dark into a predator.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and genre-clean: a man, a car, a deadline, and a fear of darkness that becomes the engine of the movie. The audience is narrower than a broad four-quadrant thriller because the appeal is almost entirely in the concept and execution, but the hook is strong enough to sell."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands immediately in the opening pages: Rex Stevens, a writer with a phobia of the dark, is racing sunset on a lonely road when a tire failure strands him. The script keeps the premise simple and readable, which is a major commercial asset."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Rex is a workable lead because his fear, routine, and self-management are all visible in the car details and the pill bottle, but he is more functional than revelatory. The role gives an actor a sustained panic performance, though the character itself is built more as a vessel for the ordeal than as a deeply surprising personality."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a formal, almost silent visual grammar: dashboard clocks, road signs, lug nuts, wipers, and radio static become the suspense language. That precision, plus the black-and-white Saul Bass/Herrmann framing, gives it a distinct authorial identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The movie is built on a clean escalation chain — wrong turn, flat tire, failed repair, sunset, crash, hallucination, total darkness — and each beat tightens the vise. The final hospital reveal also gives the ending a hard stop rather than a soft fade."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea is simple enough to grasp instantly, but the way the script externalizes fear through mechanical failure and night-road imagery makes it feel fresh rather than generic. The lug-nut countdown and the dark-as-psychological-space conceit are especially ownable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world is specific in period texture — 1950s radio patter, motel signage, paperback-author culture, roadside Americana — and that texture actively generates suspense. It is still a contained world, though, not a sprawling one with multiple story systems."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually controlled: retro-noir, procedural, and increasingly hallucinatory without losing its clean genre spine. The black-and-white presentation and the sound design cues make the movie feel designed rather than merely written."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are hints of deeper psychological material in Rex’s phobia, medication, and the final blindness reveal, but the script mostly stays committed to the immediate ordeal. It suggests more than it fully explores, which is enough for intrigue but not a deep reservoir."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 2,
+        "reasoning": "This is almost entirely a one-man pressure cooker. The doctor at the end and the off-screen DJ patter add atmosphere, but there is no real ensemble engine or recurring relationship system."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Rex Stevens",
+        "role_type": "Lead",
+        "demographics": "Male, late 30s to 50s, white, working-class-to-middle-class, author, phobia-driven",
+        "hook": "A successful paperback mystery writer on a book-signing road trip, Rex is all self-management on the surface — checklists, cigarettes, pills, routines — until the day’s delay pushes him past sunset and into a full-blown panic spiral. He’s not a generic everyman; he’s a man whose profession is inventing danger, and whose body betrays him when danger becomes literal.",
+        "why_actor_wants_this": "This is the showcase territory of James Caan in Misery or Robert De Niro in Cape Fear in the sense of sustained, escalating distress — a role built around physical panic, humiliation, and the slow collapse of control. It gives an actor a near-solo endurance test with a final transformation into terror."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 2,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One dominant lead role with a brief off-screen/voice role for the doctor",
+          "Lead requires extended solo performance, physical panic, and sustained close-up work"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "mostly exterior with one primary vehicle interior and a brief hospital interior",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "1950s roadside Americana",
+          "period car hero vehicle",
+          "night highway and abandoned gas station setting",
+          "black-and-white presentation"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical/visual composition work for hallucination imagery, lightning reveals, and the final crash/firebeat; no large-scale digital effects are implied.",
+        "stunts_level": "minor",
+        "sfx_needs": "Car crash, fire/explosion, practical damage progression, tire blowout, and atmospheric lightning/rain effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Gargoyle Publishing"
+        },
+        {
+          "type": "brand",
+          "detail": "Bodega Estates"
+        },
+        {
+          "type": "brand",
+          "detail": "KXYB"
+        },
+        {
+          "type": "brand",
+          "detail": "KBOP"
+        },
+        {
+          "type": "brand",
+          "detail": "KLXO"
+        },
+        {
+          "type": "brand",
+          "detail": "KTCB"
+        },
+        {
+          "type": "brand",
+          "detail": "Buckeye's"
+        },
+        {
+          "type": "brand",
+          "detail": "Shinn's Five & Dime"
+        },
+        {
+          "type": "brand",
+          "detail": "Kenneth-XL"
+        },
+        {
+          "type": "brand",
+          "detail": "Sin Sin"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-leaning genre feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Standalone feature release; best positioned as a contained genre title for streaming, specialty theatrical, or a genre label."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary-feeling contained road movie with one hero car, a handful of roadside setups, and a single crash/explosion sequence; the main cost pressure is period dressing and night exterior coverage, not scale."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead has to carry nearly the entire film alone, and the role needs an actor who can play mounting panic without losing audience sympathy. That narrows the pool more than the page count suggests."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The concept is clean, but the movie is heavily dependent on visual execution and sound design to keep a one-man roadside ordeal from feeling repetitive. Buyers will want confidence that the hallucination language and final reveal can sustain feature length."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Duel",
+          "year": 1971,
+          "why_it_comps": "A lone driver, a road, and escalating mechanical dread create the same stripped-down suspense engine."
+        },
+        {
+          "title": "The Hitcher",
+          "year": 1986,
+          "why_it_comps": "The highway isolation and night-road menace put it in the same survival-thriller neighborhood."
+        },
+        {
+          "title": "The Vanishing",
+          "year": 1988,
+          "why_it_comps": "It shares the slow, inexorable tightening of a simple premise into existential terror."
+        },
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "Not in setting, but in the way a contained premise turns psychological unease into a feature-length pressure cooker."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre viewers who like contained, high-concept thrillers with a strong visual concept and a performance-driven lead.",
+        "demographics": "Adults 25-54, slightly male-skewing but viable for both genders, especially viewers who respond to classic suspense and retro genre styling.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "One lead, one hero car, limited locations, and mostly practical suspense keep it in indie-feature territory, with period styling and night exteriors as the main cost drivers."
+      },
+      "lane_fit": {
+        "lane": "contained elevated genre thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-film development execs",
+          "specialty theatrical distributors",
+          "director-driven indie producers",
+          "actor-led packaging teams"
+        ],
+        "detail": "This sits naturally in the lane of lean, concept-forward thrillers that can be sold on premise, mood, and a single strong performance. The black-and-white retro styling gives it a festival-friendly angle without requiring tentpole economics."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed ordeal structure; Rex Stevens does not present a clear sequel or spinoff vector beyond the central one-night survival story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "That makes the movie easy to sell in a room and easy to market with a single image: a man trapped by sunset and his own fear. Buyers looking for a clean, trailer-friendly concept can understand the value immediately.",
+          "evidence": "The dash clock, the sunset deadline, the flat tire, and the phobia prescription all establish the engine in the opening pages.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The visual grammar is unusually disciplined.",
+          "what_it_means": "The movie can be made to feel expensive and distinctive without needing expensive scale, because suspense is carried by composition, sound, and object detail. That is attractive to producers looking for a director-forward genre piece.",
+          "evidence": "Wipers, lug nuts, road stripes, radio static, and dashboard clocks become the suspense language.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Rex is built for a showcase performance.",
+          "what_it_means": "A lead role that is almost entirely panic, control, and physical deterioration is the kind of part that can attract a serious actor who wants a calling-card turn. That helps packaging because the movie can be sold around performance as much as premise.",
+          "evidence": "Rex’s checklist routine, medication, escalating fear at the intersection, and breakdown after the crash all keep the camera locked on his unraveling.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period-roadside texture is specific.",
+          "what_it_means": "The 1950s setting gives the film a built-in aesthetic identity that separates it from generic contemporary road thrillers. That helps festival positioning and gives marketing a clear visual lane.",
+          "evidence": "The Plymouth Fury, radio banter, motel signage, paperback-author culture, and black-and-white presentation all reinforce the era.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, high-concept contained thriller with a real actor bait role and a visual language that does a lot of the budget’s work for it. The period-road aesthetic and one-man pressure-cooker structure make it especially attractive to boutique genre buyers and streamer film teams looking for a distinctive, low-scope title that still feels cinematic."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The movie lives or dies on one performance.",
+          "detail": "Rex is on screen almost the entire time, and the script gives him panic, routine, and physical deterioration more than it gives him a broad social world. That makes the project very attractive when cast well, but it also means the buying conversation will immediately turn to who can carry a near-solo feature without flattening the tension.",
+          "is_primary_lever": true,
+          "source": "both"
+        },
+        {
+          "area": "The hallucination language risks repetition.",
+          "detail": "The back-seat monster, the face in the mud, the snakes in the engine, and the glowing eyes in the trunk all work as isolated beats, but they are all variations on the same fear-response mechanism. A producer will notice that the feature depends on how much variation the visual escalation can sustain before the final crash.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The period styling adds friction to a lean package.",
+          "detail": "The 1957 Plymouth Fury, 1950s radio world, and black-and-white presentation are a big part of the appeal, but they also lock the film into a period-specific production identity. That is manageable, but it means the project is not as frictionless as a contemporary contained thriller on the same budget tier.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The rights/clearance pass is not fully clean.",
+          "detail": "The script uses multiple named brands and services — Gargoyle Publishing, Bodega Estates, KXYB, KBOP, KLXO, KTCB, Buckeye's, Shinn's Five & Dime, Kenneth-XL, and Sin Sin — that would need a legal/clearance review if any are intended as real-world references rather than fictional placeholders. The content itself is fine for mature streaming or premium buyers, but the branded texture is dense enough that business affairs will want a pass.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The core sell is strong, but the project is highly dependent on one actor and on visual escalation that has to stay fresh across a very contained ordeal. The period identity and branded roadside texture are part of the charm, but they also create the main packaging and clearance conversations before anyone says yes."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 65.3,
+  "tier": "Optionable",
+  "inputTokens": 20572,
+  "outputTokens": 3527,
+  "cost": 0.0313005,
+  "declaredFormat": "Feature film"
+}

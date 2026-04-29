@@ -1,0 +1,295 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama",
+        "Historical"
+      ],
+      "tone": "mythic",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "low-budget-friendly",
+        "identity",
+        "ambition",
+        "music",
+        "new-orleans",
+        "blues",
+        "papa-legba"
+      ]
+    },
+    "positioning_hook": "A hungry young bluesman in New Orleans buys a cursed Robert Johnson record, then has to bargain with Papa Legba for the song that could make him immortal.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 5,
+        "reasoning": "The hook is vivid and cinematic, but the appeal is specialized: blues mythology, New Orleans folklore, and a compact supernatural bargain. That gives it a clear niche audience and some festival/arthouse upside, but it is not yet broad enough to read as an obvious four-quadrant commercial play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise lands quickly in the record shop and the crossroads sequence makes the supernatural bargain legible. The one complication is that the script reads more like a short-form mythic vignette than a feature engine, so the concept is clear but not yet fully expanded."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 5,
+        "reasoning": "Jean has drive, vanity, and hunger, which gives him a playable center, and Papa Legba is an excellent scene-stealing force. But Jean is still more archetypal than layered on the page, and Gaston/Sabine are evocative rather than deeply developed."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The Robert Johnson myth, Papa Legba, and the Seventh Ward setting give the script a distinct cultural and spiritual texture. The final image of Jean replacing Johnson in the portrait is a strong, bold mythic gesture that feels authored rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "The script moves in clean beats, but it is essentially a single bargain, a failed attempt, and a final transformation. For a feature, the escalation is too compact and the story resolves before it can generate sustained forward pressure."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "A young musician literally chasing the last song of Robert Johnson is immediately understandable and fresh in its folklore framing. The idea is memorable, but the script currently plays as a striking premise more than a fully surprising feature narrative."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Seventh Ward, Domino Sounds, the blues portraits, and the Papa Legba iconography create a world with real texture and identity. The setting feels story-generating, even though the script only samples a small slice of it."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The voice is lyrical, folkloric, and rooted in Southern oral storytelling, with a strong blend of menace and reverence. The closing image and the Dealer/Papa Legba reveal give the piece a tonal signature that is easy to remember."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The script hints at a larger mythic system around music, memory, and spiritual exchange, especially in the Dealer's dialogue about legend versus truth. There is depth suggested here, but the page only opens the door rather than building a deeper dramatic maze."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 3,
+        "reasoning": "This is built almost entirely around Jean and the Dealer/Papa Legba, with Gaston and Sabine functioning as brief atmospheric supports. The relationships are vivid in the moment, but there is not yet an ensemble engine or recurring relational system."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Jean Juneau",
+        "role_type": "Lead",
+        "demographics": "Male, 20s, Creole, New Orleans musician.",
+        "hook": "A hungry, proud young guitarist who believes he is destined for greatness and is willing to risk everything to get there. Jean is all appetite and self-mythology, which makes him compelling: he is not just chasing a song, he is chasing proof that he matters.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the swagger-and-vulnerability showcase of Taron Egerton in Rocketman or André Holland in The Eddy: a musician lead who has to sell ambition, obsession, and spiritual collapse in the same performance."
+      },
+      {
+        "name": "Dealer",
+        "role_type": "Supporting",
+        "demographics": "Older Black man, elderly, New Orleans shopkeeper / supernatural figure.",
+        "hook": "The record dealer is a sly gatekeeper with the warmth of a storyteller and the menace of a trickster. He reads as human until the script reveals him as Papa Legba, which retroactively turns every line into a test.",
+        "why_actor_wants_this": "This is juicy character-actor territory in the mode of Delroy Lindo in Da 5 Bloods or Glynn Turman in Ma Rainey's Black Bottom: a role built on authority, wit, and the pleasure of revealing hidden power."
+      },
+      {
+        "name": "Papa Legba",
+        "role_type": "Supporting",
+        "demographics": "Mythic male-presenting spiritual figure, ageless.",
+        "hook": "Papa Legba is the story's supernatural broker, equal parts tempter, judge, and gatekeeper at the crossroads. He is charming enough to invite trust and dangerous enough to make every bargain feel like a trap.",
+        "why_actor_wants_this": "This is the showcase of a performance like Keith David in The Thing or Forest Whitaker in Ghost Dog: a role that lives on presence, cadence, and the ability to make myth feel conversational."
+      },
+      {
+        "name": "Gaston",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, Cajun, record-shop owner.",
+        "hook": "Gaston is the grounded counterweight to the script's mythic energy: practical, skeptical, and armed when necessary. He gives the world a human texture and becomes the face of ordinary consequence when Jean comes crashing back into reality.",
+        "why_actor_wants_this": "This is a strong supporting turn in the vein of Michael Shannon in Take Shelter or John Goodman in Barton Fink: a grounded, specific presence who can pivot from dry humor to threat."
+      },
+      {
+        "name": "Sabine",
+        "role_type": "Supporting",
+        "demographics": "Female, 6 years old, child role.",
+        "hook": "Sabine is a small but memorable observer who gives the shop a lived-in domestic pulse. Her questions about sadness and cheating songs add innocence and thematic contrast without needing exposition.",
+        "why_actor_wants_this": "For a child actor, this is the kind of scene-stealing part that recalls Brooklynn Prince in The Florida Project: brief, naturalistic, and memorable because the child sees the world plainly."
+      },
+      {
+        "name": "Robert Johnson",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s in flashback, Black blues musician.",
+        "hook": "Robert Johnson appears as legend and image more than as a fully dramatized character, but he is the gravitational center of the myth. The script uses him as the source of the cursed song and the face Jean wants to replace.",
+        "why_actor_wants_this": "This is the kind of iconic, mythic supporting role that can attract an actor looking for a brief but memorable prestige turn, similar to the way supporting historical figures function in music biopics."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 5,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Creole lead in his 20s",
+          "elderly Black male supernatural figure",
+          "one child role",
+          "period-evocative Robert Johnson flashback casting"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "roughly 3:1 interior",
+        "period_or_contemporary": "contemporary with historical flashbacks",
+        "notable_requirements": [
+          "New Orleans street exteriors",
+          "record shop interior",
+          "apartment interior",
+          "crossroads exterior",
+          "brief 1930s-style flashback material"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Limited supernatural presentation, portrait transformation, and stylized crossfade/flashback work; no large-scale effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical glass breakage, shotgun threat, shattered record effect, portrait transformation.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Robert Johnson is depicted by name and as a central mythic figure."
+        },
+        {
+          "type": "real_person",
+          "detail": "Papa Legba is a named spiritual figure drawn from real-world Vodou tradition."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best suited to specialty theatrical or streaming acquisition."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary New Orleans exteriors, a record shop, an apartment, and a crossroads setup keep the footprint contained; the only cost creep comes from stylized supernatural inserts and period-flashback styling."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Jean needs a young actor who can carry musical charisma, spiritual obsession, and pride without losing sympathy, while Papa Legba/Dealer needs a performer with real authority and trickster timing."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script reads as a short-form mythic piece rather than a feature-length narrative, so the main development question is whether the Robert Johnson/Papa Legba premise can sustain a full feature arc."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Skeleton Key",
+          "year": 2005,
+          "why_it_comps": "Southern supernatural folklore, spiritual bargaining, and a grounded human lead moving through a haunted regional world."
+        },
+        {
+          "title": "Crossroads",
+          "year": 1986,
+          "why_it_comps": "Blues-myth ambition, a musician chasing transcendence, and the crossroads as the central symbolic engine."
+        },
+        {
+          "title": "The Devil's Backbone",
+          "year": 2001,
+          "why_it_comps": "Mythic atmosphere and a ghost-story register that treats the supernatural as emotionally real rather than effects-driven."
+        },
+        {
+          "title": "A Ghost Story",
+          "year": 2017,
+          "why_it_comps": "Lyrical, meditative supernatural storytelling with a strong visual idea and a compact production footprint."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to music mythology, Southern Gothic atmosphere, and prestige-leaning supernatural dramas.",
+        "demographics": "25-54, slightly male-skewing but with real crossover for art-house and music-culture audiences.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A small cast, limited locations, and modest supernatural effects keep this in indie-feature territory, with some added cost for stylized flashbacks and night exteriors."
+      },
+      "lane_fit": {
+        "lane": "elevated Southern Gothic indie",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "festival-facing indie distributors",
+          "streamer original-film dev execs",
+          "music-culture specialty producers"
+        ],
+        "detail": "This sits naturally in the lane of atmospheric, auteur-friendly genre pieces that sell on voice, setting, and a memorable mythic premise rather than on spectacle. The blues angle gives it a built-in cultural hook for buyers looking for something specific and adult."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the core appeal is the one-off mythic bargain around Jean Juneau and Robert Johnson, not a repeatable franchise engine."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The blues-myth premise is instantly ownable.",
+          "what_it_means": "This gives the project a clean marketing sentence and a cultural hook that can separate it from generic supernatural fare. Buyers looking for a distinctive specialty title can understand the promise immediately: music, legend, and temptation in one package.",
+          "evidence": "Jean's search for 'Mighty Fire,' the Robert Johnson record, and the final crossroads bargain all lock the story into a singular mythic lane.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Papa Legba is a strong scene-stealing antagonist.",
+          "what_it_means": "A memorable supernatural broker can carry trailers, posters, and word-of-mouth because he gives the film a face and a voice. That kind of role is attractive to character actors and can elevate the project's perceived value quickly.",
+          "evidence": "The Dealer's cane, pipe, and final reveal as Papa Legba turn every early exchange into a test of Jean's soul.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The New Orleans texture feels lived-in.",
+          "what_it_means": "Specific geography and local color make the script feel less generic and more marketable to buyers who want place-based storytelling. That specificity also helps the film stand out in a crowded supernatural marketplace.",
+          "evidence": "The Seventh Ward, Domino Sounds, the cracked sidewalks, and the blues portraits create a concrete regional world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final portrait image is a strong closing button.",
+          "what_it_means": "A clean, memorable ending image is valuable in packaging because it gives the project a trailer-friendly visual and a poster-ready identity. It also signals confidence in the film's mythic logic without needing a big effects spend.",
+          "evidence": "Robert Johnson's portrait becomes Jean Juneau's face, completing the story's identity transfer in one visual stroke.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a compact, atmospheric supernatural music myth with a real selling image: a young bluesman, a cursed Robert Johnson record, and Papa Legba at the crossroads. The concept is distinctive enough to attract specialty buyers and character-actor interest, while the contained locations and modest effects keep it financially approachable for the indie lane."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The feature engine is still short-form.",
+          "detail": "The script plays like a polished mythic short: one record-shop encounter, one failed listening, one break-in, one crossroads bargain, then a final image. For a feature buyer, that raises the immediate question of whether the premise has enough escalation and complication to justify a full-length release.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Jean is more archetype than fully dimensional lead.",
+          "detail": "Jean's hunger and pride are clear, but the page gives him limited interior contradiction beyond wanting greatness. That makes the role playable, but it also narrows the long-term casting conversation because the part currently lives more on attitude than on layered emotional turns.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Robert Johnson and Papa Legba trigger clearance questions.",
+          "detail": "Robert Johnson is named and central, and Papa Legba is a real-world spiritual figure drawn from Vodou tradition. Those elements are part of the script's identity, but they also mean legal and cultural sensitivity work before a buyer can move cleanly.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The supporting cast is atmospheric, not engine-building.",
+          "detail": "Gaston and Sabine add texture, but neither character currently generates a separate dramatic track that changes the story's buying profile. That leaves the film dependent on Jean and the Dealer/Papa Legba dynamic, which is strong but narrow.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the material has a striking mythic premise, but it currently behaves like a short film rather than a feature. The other buyer-level concerns are casting a lead who can carry obsession without flattening, and clearing the Robert Johnson/Papa Legba material cleanly."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 56,
+  "tier": "Needs Development",
+  "inputTokens": 15483,
+  "outputTokens": 3854,
+  "cost": 0.02895525,
+  "declaredFormat": "Feature film"
+}

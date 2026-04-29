@@ -1,0 +1,368 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "didactic",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "family-dynamics",
+        "coming-of-age",
+        "identity",
+        "grief",
+        "class",
+        "single-location",
+        "low-budget-friendly",
+        "amber-city"
+      ]
+    },
+    "positioning_hook": "A slum-raised college freshman gets pulled into a campus sex-for-cash ring, then spends years clawing back toward her mother’s grave and the life she burned down.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 4,
+        "reasoning": "The emotional subject matter is recognizable, but the script’s heavy sermonizing and repetitive debate scenes narrow the commercial lane. The strongest hook is Keisha’s fall-and-reckoning arc, yet the execution is more message-forward than audience-forward."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The premise is clear by the college section: a young woman is recruited into a hustle lane and the consequences follow her. The opening family arguments and extended ideological dialogue delay the cleanest version of the hook."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 4,
+        "reasoning": "Keisha has a defined wound and trajectory, but she is written more as a cautionary vessel than a fully surprising lead. Lin, Betty, Anthony, and the parents are vivid in function, yet they mostly serve arguments rather than revealing layered contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The campus exploitation angle and the later reckoning with motherhood give the script some specificity, but the overall approach is familiar morality-play territory. The dialogue leans on repetition and thesis-stating more than a fresh dramatic frame."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "The script moves in long blocks of conversation, especially in the family and men’s study-room scenes, which slows escalation. The strongest forward motion comes when Keisha recruits Lin and Betty, but the momentum is undercut by extended ideological exchanges."
+      },
+      "resonant_originality": {
+        "score": 4,
+        "reasoning": "The campus hustle and later single-mother fallout are immediately legible, but the script doesn’t yet turn those elements into a sharply ownable dramatic engine. It feels more like a cautionary tract than a premise that clicks into place with inevitability."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "Amber City, Amber Community College, the slum, the restaurant, and the Hustle’s Lane create a usable social map. Still, the world functions mostly as a backdrop for speeches rather than a system with layered rules and pressures."
+      },
+      "tonal_specificity": {
+        "score": 3,
+        "reasoning": "The tone is consistent, but it is consistently didactic and repetitive rather than distinctly cinematic. The script’s voice is recognizable, yet not in a way that feels hard to imitate or especially market-differentiated."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "There are seeds of deeper material in Keisha’s mother, the absent father, and the final graveyard reckoning. But most of that depth is stated directly rather than dramatized, so the script doesn’t yet suggest much hidden complexity beneath the surface."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Keisha/Lin/Betty and the family triads give the script recurring relationship energy, and the men’s study-room group adds a second social engine. The issue is that most interactions are argumentative rather than character-revealing, so the ensemble has motion but limited dramatic variety."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Keisha",
+        "role_type": "Lead",
+        "demographics": "Female, late teens to early 20s, slum-raised college student, single mother by the end of the story.",
+        "hook": "Keisha is the script’s center of gravity: sharp-tongued, defensive, hungry for status, and repeatedly seduced by the promise of easy money. She begins as a wounded daughter in a volatile home, becomes the recruiter and then the cautionary example, and ends as a broken young mother forced to face the cost of her choices.",
+        "why_actor_wants_this": "This is the showcase territory of a lead like Danielle Brooks in The Color Purple or Jurnee Smollett in Eve’s Bayou: a role that asks for swagger, shame, rage, and collapse in one arc. It gives an actor a full emotional descent and a final redemption beat at the graveyard and psychiatrist scenes."
+      },
+      {
+        "name": "Juliana",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged, mother, working-class, emotionally volatile.",
+        "hook": "Juliana is Keisha’s mother and the story’s first warning sign: controlling, verbally brutal, and visibly carrying her own history of bad choices. She is written as both antagonist and tragic mirror, especially once her letter reveals a softer, more loving private truth.",
+        "why_actor_wants_this": "This is strong character-actress material in the vein of Viola Davis in Fences or Taraji P. Henson in Empire when the role is built around ferocity and buried hurt. The part offers explosive confrontation scenes plus the late emotional reveal through the letter."
+      },
+      {
+        "name": "Monique",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged, neighbor, childless, single.",
+        "hook": "Monique is the neighborhood conscience, but she’s not written as a saint; she knows the cost of the life around her and carries her own loneliness. She functions as the bridge between the domestic conflict and the later grief, giving the script a grounded witness with emotional residue.",
+        "why_actor_wants_this": "This is the kind of role that can play like Octavia Spencer in The Help or Aunjanue Ellis in King Richard: observant, humane, and quietly devastating. It gives an actor the chance to play restraint, regret, and moral authority without needing the biggest speeches."
+      },
+      {
+        "name": "Theresa",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged to older, neighbor, socially corrective.",
+        "hook": "Theresa is the other neighborhood voice, more openly judgmental and socially protective than Monique. She exists to police the public behavior of the adults and to remind the audience that the community is always watching.",
+        "why_actor_wants_this": "This is a sharp supporting turn for an actor who can land authority and comic exasperation, similar to Loretta Devine in ensemble family drama. The role is smaller, but it has clear scene-stealing utility in the opening domestic conflict."
+      },
+      {
+        "name": "Jeff",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-30s, husband, father, middle-class.",
+        "hook": "Jeff is the polished, reassuring father whose calm presence masks a rigid worldview about masculinity and marriage. He is less volatile than Juliana, but his dialogue reveals the same ideological certainty that the script is interrogating.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charm with a hard edge, like Sterling K. Brown in family drama mode or Jeffrey Wright in a moral-pressure scene. The appeal is in the contradiction: warm dad on the surface, doctrinaire patriarch underneath."
+      },
+      {
+        "name": "Candice",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s, wife, mother, middle-class.",
+        "hook": "Candice is the composed spouse whose language about femininity and value reveals how deeply the script’s ideology has been internalized. She is affectionate, but the moment Betty presses her about purity, the performance cracks and the emotional cost becomes visible.",
+        "why_actor_wants_this": "This is strong material for an actor who can play warmth and repression in the same scene, like Regina Hall in a dramatic turn. The role offers a clean emotional break when the daughter’s questions force the character into vulnerability."
+      },
+      {
+        "name": "Betty",
+        "role_type": "Supporting",
+        "demographics": "Female, 17, college-bound daughter, middle-class.",
+        "hook": "Betty starts as the observant daughter in a stable home and becomes one of the girls tempted by Keisha’s hustle. She is less textured than Keisha, but she gives the script a useful innocence-to-complicity line and a later moral recoil.",
+        "why_actor_wants_this": "This is the kind of role that can launch a young actor in the mold of Amandla Stenberg in The Hate U Give: bright, curious, then morally tested. The part has a strong before-and-after shape, especially in the restaurant and Anthony apartment scenes."
+      },
+      {
+        "name": "Sam",
+        "role_type": "Supporting",
+        "demographics": "Male, early 40s, husband, father, traditionalist.",
+        "hook": "Sam is the polished patriarch of the Ling family, a man who speaks in aphorisms about legacy, purity, and male value. He is less a person than a worldview with a pulse, which makes him useful as a dramatic counterweight to the younger women.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do controlled authority, like Mahershala Ali in a domestic scene or Brian Cox in a family power conversation. The showcase is in the long, declarative speeches where the character’s certainty starts to feel brittle."
+      },
+      {
+        "name": "Jane",
+        "role_type": "Supporting",
+        "demographics": "Female, early 40s, wife, mother, traditionalist.",
+        "hook": "Jane is Sam’s partner in the script’s idealized marriage model, but she also carries the tension of a woman whose value is defined by purity and preservation. She is affectionate and proud, yet the scene where Lin presses her on purity exposes the fragility beneath the performance.",
+        "why_actor_wants_this": "This is a showcase for an actor who can play elegance under pressure, like Kerry Washington in a domestic confrontation. The role gives a strong emotional pivot when the daughter’s questions force the character to retreat."
+      },
+      {
+        "name": "Lin",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens to early 20s, college student, later wife and mother.",
+        "hook": "Lin is the bright, socially responsive friend who initially seems like the moral counterweight to Keisha, then gets pulled toward the hustle before backing away. She later becomes a conventional success story, which makes her useful as both foil and witness.",
+        "why_actor_wants_this": "This is a good young-actor role in the mold of Letitia Wright’s early-career intelligence and quickness: curious, reactive, and capable of turning on a dime. The part gives a performer the chance to play innocence, temptation, and eventual domestic resolution."
+      },
+      {
+        "name": "Anthony",
+        "role_type": "Supporting",
+        "demographics": "Male, early to mid-20s, college student, hustler, organizer.",
+        "hook": "Anthony is the smooth operator behind the Hustle’s Lane, presenting himself as business-minded while running a predatory sex-for-money pipeline. He is charismatic enough to recruit, cold enough to discard, and self-justifying enough to keep the men around him loyal.",
+        "why_actor_wants_this": "This is the kind of role that can give an actor a breakout villain turn, like Lakeith Stanfield in a darker register or Damson Idris when playing charm with menace. The appeal is the controlled surface and the ugly machinery underneath."
+      },
+      {
+        "name": "Son",
+        "role_type": "Supporting",
+        "demographics": "Male, college-age, traditional family background.",
+        "hook": "Son is the earnest countervoice in the men’s study-room scenes, the one who keeps trying to push back against the group’s misogyny. He is not fully developed, but he gives the script a needed internal dissenting voice.",
+        "why_actor_wants_this": "This is a solid supporting role for an actor who plays decency under pressure, like Kelvin Harrison Jr. in a moral ensemble. The part’s value is in the push-pull between his attraction to Lin and his resistance to the room’s ideology."
+      },
+      {
+        "name": "Mark",
+        "role_type": "Supporting",
+        "demographics": "Male, college-age, friend in Anthony’s circle.",
+        "hook": "Mark is the recorder of the group, the one who turns the men’s conversations into a pseudo-philosophical manifesto. He is less extreme than Tye but more pliable, which makes him a useful amplifier for the script’s worldview debates.",
+        "why_actor_wants_this": "This is a good ensemble role for an actor who can play smirking intelligence, like Ben Schwartz in a darker dramatic mode. The showcase is the rhythm of reaction, agreement, and escalation in the study-room scenes."
+      },
+      {
+        "name": "Tye",
+        "role_type": "Supporting",
+        "demographics": "Male, college-age, friend in Anthony’s circle, culturally specific background.",
+        "hook": "Tye is the script’s loudest ideological extremist, a provocateur whose speeches about women are intentionally outrageous and repetitive. He is written as a comic menace and a mouthpiece, though the character is more function than psychology.",
+        "why_actor_wants_this": "This is the kind of role that can become a scene-stealing antagonist if played with precision, similar to a volatile supporting turn by Walton Goggins. The appeal is the chance to weaponize rhetoric and dominate group scenes."
+      },
+      {
+        "name": "Beatrice",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, psychiatrist, educated professional.",
+        "hook": "Beatrice arrives late in the story as the professional who exposes Keisha’s past and refuses to offer comfort. She is less a therapist than a reckoning device, but she gives the ending a sharper sting by naming the damage out loud.",
+        "why_actor_wants_this": "This is a strong late-entry role for an actor who can bring authority and moral force, like Viola Davis or Niecy Nash in a confrontational scene. The showcase is the verbal duel with Keisha, where the character gets to control the room."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child actor as Sandra",
+          "teen/young-adult casting for Keisha, Lin, Betty, Son, Mark, Tye, Anthony",
+          "middle-aged casting for parents and neighbors",
+          "one psychiatrist role with strong authority presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "roughly 7:4",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "slum/apartment exterior",
+          "college campus and auditorium",
+          "dorm room",
+          "restaurant",
+          "library study rooms",
+          "psychiatrist office",
+          "cemetery",
+          "supermarket",
+          "day-care center"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements on the page.",
+        "stunts_level": "minor",
+        "sfx_needs": "No major practical effects; some crowd/background dressing for campus and street scenes.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Amber Community College / Amber City / Amber Reality Cemetery are fictional place names and do not require external clearance."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: modest theatrical specialty or streaming original."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, dialogue-driven, and mostly interiors with modest street, campus, restaurant, and cemetery coverage; no VFX or action set pieces to push the budget off a low-cost feature lane."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Keisha carries the film and needs a performer who can sell volatility, shame, and final remorse; the ensemble also requires a large number of age-specific supporting roles across teens and adults."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script is built around repeated ideological speeches and confrontations, so the buyer conversation will center on whether the material can be shaped into a more dramatically propulsive feature without losing its core message."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Precious",
+          "year": 2009,
+          "why_it_comps": "Shares the bruising social-reckoning lane of a young woman trapped by family dysfunction and exploitation, with a performance-forward lead role driving the emotional buy."
+        },
+        {
+          "title": "The Hate U Give",
+          "year": 2018,
+          "why_it_comps": "Like this script, it centers a young woman navigating identity, class pressure, and moral awakening inside a contemporary social environment."
+        },
+        {
+          "title": "Eve's Bayou",
+          "year": 1997,
+          "why_it_comps": "The family secrets, maternal fracture, and coming-of-age wound give it the same intimate, Southern-leaning domestic tension."
+        },
+        {
+          "title": "Pariah",
+          "year": 2011,
+          "why_it_comps": "The script’s identity pressure and young-woman self-definition arc sit in the same character-first indie drama lane."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to socially charged female-led dramas about family damage, sexual exploitation, and redemption.",
+        "demographics": "Women 25-54 skewing slightly female; urban and suburban adult drama audience; strongest with viewers who watch prestige social issue films and character-driven indie dramas.",
+        "quadrants": [
+          "F35+",
+          "F18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$1M-$4M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest cast, no VFX, and a dialogue-heavy structure keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "prestige social-issue indie drama",
+        "types_of_buyers": [
+          "boutique indie financiers",
+          "streamer original-film teams",
+          "festival-oriented producers",
+          "social-issue drama distributors",
+          "performance-driven casting directors"
+        ],
+        "detail": "The script sits naturally in the lane of intimate, message-forward dramas built around a young woman’s fall and reckoning. Its commercial appeal is strongest as a performance vehicle and a conversation starter rather than a broad four-quadrant play."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or spinoff vector; the supporting characters function as foils and foreshadowing rather than franchise anchors."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Keisha has a built-in fall-and-reckoning arc.",
+          "what_it_means": "That gives the project a clear performance engine and a marketable emotional spine: a young woman’s bad choices come back as lived consequence. Buyers who want a lead role with visible transformation can understand the appeal immediately.",
+          "evidence": "The campus hustle, the later single-mother collapse, and the graveyard confession all track one character’s downward spiral and attempted repair.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The campus hustle is an ownable social hook.",
+          "what_it_means": "The Hustle’s Lane material gives the film a contemporary exploitation angle that can be pitched quickly and understood without explanation. That makes it easier for streamer dev teams and indie financiers to see the hook beyond the moral message.",
+          "evidence": "Anthony’s apartment recruitment scene, the girls’ misunderstanding of “doing the needful,” and the reveal that the arrangement is transactional and predatory.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mother-daughter wound gives the ending weight.",
+          "what_it_means": "The Juliana letter and cemetery scene add a late emotional turn that can widen the film beyond campus melodrama into grief and inheritance. That kind of reveal helps a buyer see awards-adjacent potential in a low-cost package.",
+          "evidence": "Juliana’s posthumous letter, Monique’s revelation of her death, and Keisha’s apology at the graveside.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates multiple casting hooks.",
+          "what_it_means": "There are several scene-forward supporting roles for actors who want strong dialogue and clear moral positions, which helps packaging conversations. That broadens the attachment conversation beyond the lead and makes the project more castable at the indie level.",
+          "evidence": "Juliana, Monique, Jeff, Candice, Anthony, Beatrice, and the men’s study-room trio all have distinct speech patterns and positions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The production footprint is modest and contemporary.",
+          "what_it_means": "This is the kind of script a buyer can contemplate without a heavy effects or period premium, which matters in a market that likes contained, character-led features. It is especially attractive to producers looking for a low-risk shoot with a clear emotional premise.",
+          "evidence": "Mostly apartments, campus interiors, restaurant scenes, a library, a cemetery, and a psychiatrist office, with no VFX-heavy sequences.",
+          "source": "production"
+        }
+      ],
+      "headline": "This is a low-cost, contemporary female-led drama with a clear exploitation hook and a built-in emotional payoff in the mother-daughter reckoning. The package is most attractive to indie financiers and streamer film teams looking for a performance vehicle that can be made without expensive production risk."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The dialogue carries the thesis more than the drama.",
+          "detail": "A large share of the script is built from speeches about women, men, marriage, and value, especially in the family scenes and the men’s study-room sequence. That makes the material feel more like a position paper than a feature with escalating dramatic turns, which is the main development conversation a buyer will have.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Keisha’s arc is more emblematic than specific.",
+          "detail": "She functions as the cautionary example for most of the runtime, and the script tells us a lot about her choices without always giving her fresh behavior or contradiction. That limits the lead’s long-term pull unless the performance is doing a lot of heavy lifting.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting ensemble repeats the same argument.",
+          "detail": "Jeff/Candice, Sam/Jane, and Anthony/Tye/Mark/Son all circle the same ideological terrain from different angles, which creates redundancy rather than escalation. A producer will notice that several scenes are variations on the same debate instead of distinct dramatic functions.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The Hustle’s Lane reveal is bluntly expositional.",
+          "detail": "Anthony’s apartment scene explains the operation in direct terms, and the girls’ misunderstanding is resolved through dialogue rather than a more cinematic reveal. That keeps the sequence clear, but it also makes the turn feel announced rather than discovered.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending leans on summary after the climax.",
+          "detail": "The scroll of outcomes for Lin, Betty, Anthony, Tye, and Keisha compresses the aftermath into exposition instead of dramatized resolution. For a feature buyer, that signals a final stretch that resolves the story on paper more than on screen.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not the premise; it’s the script’s reliance on repeated ideological dialogue to carry scenes that need sharper dramatic turns. Buyers will also notice that the ending and several supporting arcs are summarized rather than fully dramatized, which makes the piece feel more like a message vehicle than a fully cinematic feature."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 44,
+  "tier": "Needs Development",
+  "inputTokens": 38523,
+  "outputTokens": 5558,
+  "cost": 0.05390325,
+  "declaredFormat": "Feature film"
+}

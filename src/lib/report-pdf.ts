@@ -474,22 +474,32 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
     })
   }
 
-  // ── PACKAGE ANGLES — Pitch + Full only ────────────────────────────
-  const pkg = input.evaluation?.package_angles
-  if (!isFree && pkg) {
-    sectionHeader(layout, 'Package Angles')
-    if (pkg.director_appeal) {
-      subhead(layout, 'Why a director wants this')
-      if (pkg.director_appeal.hook) body(layout, pkg.director_appeal.hook)
-      if (pkg.director_appeal.fit_profile) {
-        labeledBlock(layout, 'Director fit profile', pkg.director_appeal.fit_profile, C.emerald)
-      }
-      if (pkg.director_appeal.detail) body(layout, pkg.director_appeal.detail)
+  // ── PACKAGING — Pitch + Full only ─────────────────────────────────
+  // Reads the modern `packaging` block (Selznick 3.8). Mirrors the
+  // /report/[id] PackagingSection layout: audience teaser + budget tier
+  // amount + note. Lane fit / IP / comp_set live on the JSON but are
+  // hidden in the live UI, so the PDF skips them too for parity.
+  const packaging = input.evaluation?.packaging
+  if (!isFree && packaging) {
+    sectionHeader(layout, 'Packaging')
+    if (packaging.audience_target?.primary_audience) {
+      subhead(layout, 'Audience')
+      body(layout, packaging.audience_target.primary_audience)
     }
-    if (pkg.buyer_appeal) {
-      subhead(layout, 'Why a buyer wants this')
-      if (pkg.buyer_appeal.tier) {
-        drawWrapped(layout, pkg.buyer_appeal.tier, {
+    const tier = packaging.budget_tier
+    if (tier) {
+      subhead(layout, 'Budget Tier')
+      const tierLabel =
+        tier.tier ? tier.tier.charAt(0).toUpperCase() + tier.tier.slice(1) : ''
+      const amount =
+        tier.per_episode
+          ? `${tier.per_episode}/ep`
+          : tier.season_total
+            ? tier.season_total
+            : tier.range || ''
+      const headline = [tierLabel, amount].filter(Boolean).join(' · ')
+      if (headline) {
+        drawWrapped(layout, headline, {
           font: fonts.bold,
           size: 10,
           color: C.muted,
@@ -497,17 +507,22 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
           spaceAfter: 4,
         })
       }
-      if (pkg.buyer_appeal.lane) body(layout, pkg.buyer_appeal.lane, C.muted)
-      if (pkg.buyer_appeal.detail) body(layout, pkg.buyer_appeal.detail)
+      if (tier.note) body(layout, tier.note)
     }
   }
 
-  // ── DEVELOPMENT PRIORITIES (Full + Free first-bullet) ─────────────
-  const considerations: any[] = input.evaluation?.considerations ?? []
-  if (considerations.length > 0 && (input.scope === 'full' || isFree)) {
-    const primary = considerations.find((c) => c.is_primary_lever === true)
-    const secondary = considerations.filter((c) => c.is_primary_lever !== true)
-    sectionHeader(layout, 'Development Priorities')
+  // ── DEVELOPMENT CONSIDERATIONS (Full + Free first-bullet) ─────────
+  // Reads the modern `issues.items` array (Selznick 3.8). Same shape as
+  // the legacy `considerations` array — area + detail + is_primary_lever
+  // — so the rendering logic is unchanged from the prior version.
+  const issueItems: any[] = input.evaluation?.issues?.items ?? []
+  if (issueItems.length > 0 && (input.scope === 'full' || isFree)) {
+    const primary = issueItems.find((c) => c.is_primary_lever === true)
+    const secondary = issueItems.filter((c) => c.is_primary_lever !== true)
+    sectionHeader(layout, 'Development Considerations')
+    if (input.evaluation?.issues?.headline) {
+      body(layout, input.evaluation.issues.headline)
+    }
     if (primary) {
       subhead(layout, primary.area || 'Primary lever')
       drawWrapped(layout, 'PRIMARY LEVER', {
