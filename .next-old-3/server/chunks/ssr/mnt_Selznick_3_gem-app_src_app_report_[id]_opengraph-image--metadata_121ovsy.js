@@ -1,3 +1,0 @@
-module.exports=[95100,a=>{"use strict";a.i(30525),a.i(23053),a.i(10924);var b=a.i(47505);let c={alt:"GEM Script Evaluation",contentType:"image/png",runtime:"edge",size:{width:1200,height:630}};async function d(a){let{__metadata_id__:d,...e}=await a.params,f=(0,b.fillMetadataSegment)("/report/[id]",e,"opengraph-image",!1);return[function(a){let b={alt:a.alt,type:a.contentType||"image/png",url:f+"?4e99101d62cdbc5b"},{size:c}=a;return c&&(b.width=c.width,b.height=c.height),b}(c)]}a.s(["default",0,d],95100)},28631,a=>{a.n(a.i(95100))}];
-
-//# sourceMappingURL=mnt_Selznick_3_gem-app_src_app_report_%5Bid%5D_opengraph-image--metadata_121ovsy.js.map

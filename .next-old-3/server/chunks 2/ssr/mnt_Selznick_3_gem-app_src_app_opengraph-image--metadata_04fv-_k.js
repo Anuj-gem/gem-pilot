@@ -1,3 +1,0 @@
-module.exports=[50815,a=>{"use strict";a.i(30525),a.i(23053);var b=a.i(47505);let c={alt:"GEM — Get Read By A Selznick",contentType:"image/png",runtime:"edge",size:{width:1200,height:630}};async function d(a){let{__metadata_id__:d,...e}=await a.params,f=(0,b.fillMetadataSegment)("/",e,"opengraph-image",!1);return[function(a){let b={alt:a.alt,type:a.contentType||"image/png",url:f+"?6b093599f8751c55"},{size:c}=a;return c&&(b.width=c.width,b.height=c.height),b}(c)]}a.s(["default",0,d],50815)},6016,a=>{a.n(a.i(50815))}];
-
-//# sourceMappingURL=mnt_Selznick_3_gem-app_src_app_opengraph-image--metadata_04fv-_k.js.map

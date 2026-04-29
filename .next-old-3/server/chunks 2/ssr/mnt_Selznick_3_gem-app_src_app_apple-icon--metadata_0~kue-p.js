@@ -1,3 +1,0 @@
-module.exports=[5345,a=>{"use strict";a.i(30525),a.i(23053);var b=a.i(47505);let c={contentType:"image/png",runtime:"edge",size:{width:180,height:180}};async function d(a){let{__metadata_id__:d,...e}=await a.params,f=(0,b.fillMetadataSegment)("/",e,"apple-icon",!1);return[function(a){let b={alt:a.alt,type:a.contentType||"image/png",url:f+"?4670cbc7a935c8d2"},{size:c}=a;return c&&(b.sizes=`${c.width}x${c.height}`),b}(c)]}a.s(["default",0,d],5345)},72100,a=>{a.n(a.i(5345))}];
-
-//# sourceMappingURL=mnt_Selznick_3_gem-app_src_app_apple-icon--metadata_0~kue-p.js.map
