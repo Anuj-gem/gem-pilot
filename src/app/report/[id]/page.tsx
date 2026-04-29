@@ -525,9 +525,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
           }
           commercialScore={
-            // Owner / admin always sees their own score. Non-owners only see
-            // it if the writer hasn't toggled it off via the score eye.
-            isOwnerOrAdmin || isScoreVisible(privacy) ? commercialScore : null
+            // Anuj 2026-04-29: top-of-page score badge retired. The GEM
+            // Score now lives in its own dedicated section near the
+            // bottom of the report — readers have to actually scroll to
+            // it, which means the producer's first impression is the
+            // headline + Why this is a hit, not a number.
+            null
           }
           scoreShownToIndustry={isScoreVisible(privacy)}
           isProSubscriber={ownerIsSubscribed || isAdmin}
@@ -1043,6 +1046,80 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )}
           </SectionGate>
         )}
+
+        {/* OVERALL GEM SCORE — moved here from the top-of-page badge
+            (Anuj 2026-04-29). The score now lives at the bottom of the
+            editorial flow, after Why this is a hit / Cast / Packaging /
+            Project Complexity. Reader has to actually scroll to it,
+            which means the first impression is the WORK, not a number.
+            Owner / admin always see it. Non-owners see it only when the
+            writer hasn't toggled the score-eye off. */}
+        {typeof commercialScore === 'number' &&
+          (isOwnerOrAdmin || isScoreVisible(privacy)) && (
+            <section
+              data-pdf-section="gem_score"
+              className="mt-12 sm:mt-14 mb-2"
+            >
+              <p
+                className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-3"
+                style={{ color: 'var(--gem-accent)' }}
+              >
+                Overall GEM Score
+              </p>
+              <div
+                className="rounded-2xl p-6 sm:p-7 flex items-center gap-5 sm:gap-7 flex-wrap"
+                style={{
+                  background: 'rgba(124,58,237,0.08)',
+                  border: '1px solid rgba(124,58,237,0.25)',
+                }}
+              >
+                <div
+                  className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
+                  style={{
+                    background: '#fff',
+                    border: '1px solid rgba(124,58,237,0.30)',
+                    minWidth: 96,
+                    padding: '12px 18px',
+                  }}
+                >
+                  <span
+                    className="text-[10px] uppercase tracking-[0.18em] font-bold leading-none mb-1.5"
+                    style={{ color: 'var(--gem-gray-500)' }}
+                  >
+                    Score
+                  </span>
+                  <span
+                    className="font-bold leading-none text-[var(--gem-gray-50)]"
+                    style={{ fontSize: 44 }}
+                  >
+                    {Math.round(commercialScore)}
+                  </span>
+                  <span
+                    className="text-[11px] font-medium leading-none mt-2"
+                    style={{ color: 'var(--gem-gray-500)' }}
+                  >
+                    /100
+                  </span>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                    A single signal that captures how the script reads against
+                    the dimensions a producer would weigh — story, character,
+                    audience, packaging, production reality. Industry partners
+                    use it as one input alongside genre fit, lane, and what
+                    they&apos;re actively scouting. Not a gate, not a verdict —
+                    a quick read.
+                  </p>
+                  {isOwner && !isScoreVisible(privacy) && (
+                    <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
+                      You&apos;ve hidden this score from industry partners. Only
+                      you (and admins) see it here.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
 
         {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
             the Development Priorities EditorialSection above, which now
