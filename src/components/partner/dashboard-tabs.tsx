@@ -21,6 +21,8 @@
 import { useMemo, useState } from 'react'
 import { MatchCard, type MatchCardData } from './match-card'
 import { MatchViewTracker } from './match-view-tracker'
+import { FilterModal } from './filter-modal'
+import { SlidersHorizontal } from 'lucide-react'
 
 export interface DashboardMatchData extends MatchCardData {
   unmatchedAt: string | null
@@ -122,6 +124,7 @@ export function DashboardTabs({
 }: Props) {
   const [tab, setTab] = useState<TabKey>('inbox')
   const [sort, setSort] = useState<SortKey>('score')
+  const [filterModalOpen, setFilterModalOpen] = useState(false)
   const [filter, setFilter] = useState<FilterState>(() => {
     // Seed from lane defaults so the initial Discover view reflects the
     // producer's saved preferences. Toggling chips deviates from the
@@ -325,19 +328,32 @@ export function DashboardTabs({
         </div>
       </div>
 
-      {/* Filter bar — only on Discover. The In development tab is the
-          producer's own slate + private scripts, so genre/budget filters
-          would mostly produce empty states there; they belong on the
-          curated feed. Anuj 2026-04-30. */}
+      {/* Filter summary — single subtle line above the Discover feed
+          showing what's currently filtered, with a Filter button that
+          opens a full-screen modal/sheet for editing. Replaces the
+          earlier wall-of-chips bar (too noisy on first paint, awful
+          on mobile). Anuj 2026-04-30. */}
       {tab === 'inbox' && (
-        <FilterBar
-          options={filterOptions}
+        <FilterSummary
           filter={filter}
-          onToggle={toggleFilter}
+          options={filterOptions}
+          totalCount={filtered.length}
+          activeCount={inbox.length}
+          onOpen={() => setFilterModalOpen(true)}
           onClear={clearAllFilters}
-          active={hasActiveFilters}
         />
       )}
+
+      {/* Modal — mounted regardless of tab so closing the tab during
+          editing doesn't lose draft state, but the trigger only lives
+          on Discover. */}
+      <FilterModal
+        open={filterModalOpen}
+        onClose={() => setFilterModalOpen(false)}
+        options={filterOptions}
+        current={filter}
+        onApply={(next) => setFilter(next)}
+      />
 
       {/* In development top-of-list "Submit your script" CTA. Always
           visible on this tab — even when the slate already has items —
@@ -530,7 +546,142 @@ function bump(m: Map<string, number>, k: string) {
   m.set(k, (m.get(k) ?? 0) + 1)
 }
 
-function FilterBar({
+// Compact one-line summary above the Discover feed. Replaces the prior
+// chip-wall FilterBar — too noisy on first paint, especially mobile.
+// Tap the summary text or the "Filter" pill to open the full editor.
+// Anuj 2026-04-30.
+function FilterSummary({
+  filter,
+  options,
+  totalCount,
+  activeCount,
+  onOpen,
+  onClear,
+}: {
+  filter: FilterState
+  options: FilterOptions
+  totalCount: number
+  activeCount: number
+  onOpen: () => void
+  onClear: () => void
+}) {
+  // Build the summary chip strings from currently-applied tokens.
+  // Resolve each token through the options list so the displayed
+  // label matches what the producer sees in the modal (e.g. "indie"
+  // → "$1–15M").
+  const tokenLabel = (axis: FilterAxis, token: string): string => {
+    const opt = options[axis].find((o) => o.token === token)
+    return opt?.label ?? token
+  }
+  const chipParts: string[] = []
+  for (const axis of [
+    'format',
+    'genres',
+    'budgetTier',
+    'productionLevel',
+    'castLevel',
+    'scriptTags',
+  ] as FilterAxis[]) {
+    const tokens = Array.from(filter[axis])
+    for (const t of tokens) chipParts.push(tokenLabel(axis, t))
+  }
+
+  const hasAny = chipParts.length > 0
+  const MAX_CHIPS_INLINE = 4
+  const visibleChips = chipParts.slice(0, MAX_CHIPS_INLINE)
+  const overflow = chipParts.length - visibleChips.length
+
+  return (
+    <div className="flex items-center gap-3 mb-5 flex-wrap">
+      <button
+        type="button"
+        onClick={onOpen}
+        className="inline-flex items-center gap-2 text-[13px] font-semibold transition-colors"
+        style={{
+          color: hasAny ? 'var(--gem-gray-50)' : 'var(--gem-gray-300)',
+          background: hasAny
+            ? 'rgba(124,58,237,0.10)'
+            : 'var(--gem-gray-900)',
+          border: hasAny
+            ? '1px solid rgba(124,58,237,0.30)'
+            : '1px solid var(--gem-gray-700)',
+          padding: '6px 12px',
+          borderRadius: 999,
+          lineHeight: 1.1,
+        }}
+      >
+        <SlidersHorizontal size={13} />
+        Filter
+        {hasAny && (
+          <span
+            className="text-[11px] tabular-nums"
+            style={{
+              color: 'var(--gem-gray-300)',
+              fontWeight: 500,
+            }}
+          >
+            {chipParts.length}
+          </span>
+        )}
+      </button>
+      {hasAny ? (
+        <button
+          type="button"
+          onClick={onOpen}
+          className="text-[13px] text-left transition-colors min-w-0 flex-1"
+          style={{
+            color: 'var(--gem-gray-400)',
+            background: 'transparent',
+            padding: 0,
+            border: 0,
+          }}
+        >
+          {visibleChips.join(' · ')}
+          {overflow > 0 && (
+            <span style={{ color: 'var(--gem-gray-500)' }}>
+              {' '}
+              · +{overflow} more
+            </span>
+          )}
+        </button>
+      ) : (
+        <span
+          className="text-[13px]"
+          style={{ color: 'var(--gem-gray-400)' }}
+        >
+          {`Showing all ${activeCount} script${activeCount === 1 ? '' : 's'}`}
+        </span>
+      )}
+      {hasAny && totalCount !== activeCount && (
+        <span
+          className="text-[12.5px] ml-auto"
+          style={{ color: 'var(--gem-gray-500)' }}
+        >
+          {totalCount} of {activeCount}
+        </span>
+      )}
+      {hasAny && (
+        <button
+          type="button"
+          onClick={onClear}
+          className="text-[12px] font-semibold transition-colors"
+          style={{
+            color: 'var(--gem-accent)',
+            background: 'transparent',
+            padding: 0,
+            border: 0,
+          }}
+        >
+          Clear
+        </button>
+      )}
+    </div>
+  )
+}
+
+// Legacy chip-wall variant — kept temporarily during the migration in
+// case any caller still needs it. Remove once nothing imports it.
+function _FilterBar({
   options,
   filter,
   onToggle,
