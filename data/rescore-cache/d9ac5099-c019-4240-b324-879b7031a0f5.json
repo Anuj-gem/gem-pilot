@@ -1,0 +1,390 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action Horror",
+      "genre_tags": [
+        "Political Satire",
+        "Zombie Thriller"
+      ],
+      "tone": "Heightened, pulpy, confrontational, and satirical with grindhouse energy"
+    },
+    "positioning_hook": "A Black special-ops doctor races to stop a Confederate zombie uprising before a white supremacist cabal turns the South into an undead army.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for genre buyers: zombies, a ticking-clock mission, and a politically charged antagonist. The audience is narrower than a four-quadrant tentpole because the satire is pointed and the material leans hard into confrontation, but the hook is strong enough to travel."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script announces its engine early: the Spear of Destiny, Jefferson Davis reanimated, and a coordinated zombie outbreak across Confederate cemeteries. The mission, the clock, and the battlefield are all clear by the first act, and the story never loses sight of the central objective."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Nia has the clearest screen identity: competent, physically formidable, and morally locked in. The supporting trio of Carlos, Ben, and later Gavin/Ivy/Fisher give the movie energy, but most of the cast functions as mission support rather than deeply individualized counterweights."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a ferocious mash-up of zombie spectacle, Civil War iconography, and political provocation, and it does so without hedging. The choice to make the undead Confederate army the visual and ideological engine gives the material a sharp, unmistakable angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the mission is underway, the script moves with strong forward drive through set-piece after set-piece: cemetery, tunnel, library, fort, dock, and final confrontation. The momentum is real, though the movie is more episodic than elegantly braided, with the travel-and-combat structure doing most of the work."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a premise that could only exist in this exact political and cultural register: undead Confederates, a white supremacist media pipeline, and a Black heroine cutting through both. The idea lands immediately because the metaphor is baked into the action rather than explained around it."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has strong texture through the cemeteries, Fort Sumter, the library refuge, the radio propaganda, and the Southern roadside geography. It is less about intricate systems than about vivid, story-generating landmarks, but those landmarks are memorable and specific."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is aggressively pulpy, funny in a mean way, and willing to swing from gore to political venom to deadpan banter in the same breath. Fisher’s radio rhetoric, Ivy’s no-nonsense Southern wit, and Jefferson’s grotesque charm give the script a distinct tonal fingerprint."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Beneath the monster-movie surface, the script is clearly interested in propaganda, racial mythology, and the seduction of authoritarian nostalgia. That depth is present and usable, though the movie’s primary pleasure is still the immediate genre engine rather than layered ambiguity."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Nia and her team give the film a workable ensemble spine, and the library/ferry/Fort Sumter sections add some good group dynamics. Still, the movie is fundamentally driven by Nia’s mission, with most relationships serving the action rather than generating independent story engines."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Strong lead role for a Black woman in her 40s",
+          "Several Caucasian antagonist roles in 30s-50s",
+          "One Hispanic and one Korean American supporting lead",
+          "Ensemble includes Southern rural types, militia members, and military personnel"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Multiple cemetery exteriors",
+          "Fort Sumter / historic fort setting",
+          "Library interior with barricade action",
+          "Tunnel, ferry, marina, rooftop, and wooded road sequences",
+          "Large crowd and zombie-mass staging"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Zombie regeneration, decapitations, body reanimation, storm-light effects, spear glow, explosions, and crowd augmentation",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy prosthetic gore, blood rigs, severed limbs, bite effects, and practical zombie makeup",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Jefferson Davis"
+        },
+        {
+          "type": "real_person",
+          "detail": "Fisher Douglas"
+        },
+        {
+          "type": "real_person",
+          "detail": "Dr. Ingrid Schmidt"
+        },
+        {
+          "type": "real_person",
+          "detail": "Austin Jefferson Smith"
+        },
+        {
+          "type": "real_person",
+          "detail": "General Odette Walker"
+        },
+        {
+          "type": "real_person",
+          "detail": "Hollywood Cemetery, Arlington VA"
+        },
+        {
+          "type": "real_person",
+          "detail": "Fort Sumter"
+        },
+        {
+          "type": "real_person",
+          "detail": "Spear of Destiny"
+        },
+        {
+          "type": "brand",
+          "detail": "Ford Mustang GT"
+        },
+        {
+          "type": "brand",
+          "detail": "Glock"
+        },
+        {
+          "type": "brand",
+          "detail": "Smith & Wesson"
+        },
+        {
+          "type": "brand",
+          "detail": "Ferrari Pininfarina Sergio"
+        },
+        {
+          "type": "brand",
+          "detail": "Prius"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable genre lane with theatrical genre-festival upside",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or genre-platform launch"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The movie is built around multiple large zombie set pieces, night exteriors, prosthetic gore, and a handful of crowd-heavy locations."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "It needs a strong Black female lead and several recognizable supporting players, but it is not dependent on a huge star ensemble."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story moves through cemeteries, a tunnel, a ferry, a marina, a library, rooftops, and Fort Sumter, with significant night work."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic gore, racial slurs, white supremacist imagery, and political provocation narrow the lane to mature buyers."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script uses named historical figures, real landmarks, and several branded items that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "This is the kind of high-concept genre package that can be sold in one breath: a zombie apocalypse with a specific ideological target and a built-in final battleground. Buyers looking for a sharp hook with a clear poster image will immediately understand the lane, and genre fans who want their monsters to mean something will lean in.",
+          "evidence": "Jefferson Davis reanimated, Confederate cemeteries across the South, and the final showdown at Fort Sumter.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Nia is a showcase lead.",
+          "what_it_means": "The role gives an actress action, authority, dry humor, and moral clarity in one package, which is exactly the kind of part that can anchor a genre movie and elevate it. Mid-career dramatic leads with physicality, or actors looking to break into action without losing prestige credibility, will see real value here.",
+          "evidence": "Nia moves from lab authority to sword-and-gun combat, then carries the final confrontation with Jefferson herself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The satire has a sharp target.",
+          "what_it_means": "The script is not just using zombies as spectacle; it is aiming them at propaganda, nostalgia, and the machinery of extremist recruitment. That gives the movie a conversation-starting edge for buyers who want genre with a point of view and for audiences who respond to horror that feels culturally current.",
+          "evidence": "Fisher’s radio broadcasts, the white supremacist crowd welcoming the zombies, and the repeated rhetoric about taking the country back.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are built for trailers.",
+          "what_it_means": "The movie keeps delivering image-forward moments that sell the premise fast: cemetery resurrection, tunnel ambush, library siege, dock fire, and the Fort Sumter finale. That kind of sequence design is valuable because it gives marketing multiple cut points and makes the film easy to pitch visually.",
+          "evidence": "The cemetery awakenings, the ferry crossing, the library barricade, and the burning dock.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Southern texture is specific.",
+          "what_it_means": "This is not a generic apocalypse; it is rooted in roads, cemeteries, radio culture, church language, and regional social codes that make the world feel lived-in. That specificity helps the movie travel as a distinct Southern genre piece rather than another anonymous zombie title.",
+          "evidence": "The library refuge, the marina, the country roads, the Confederate cemeteries, and the Southern banter throughout.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble adds playable contrast.",
+          "what_it_means": "Nia, Ben, Carlos, Gavin, Ivy, Fisher, and Tristan each bring a different flavor of competence, attitude, or local color, which keeps the movie from living on one note. That gives casting directors multiple roles to target and lets the film feel larger than a single-hero survival piece.",
+          "evidence": "Ivy’s stock-car confidence, Gavin’s dry wit, Tristan’s flirtatious survivalist energy, and Fisher’s cowardly broadcaster persona.",
+          "source": "script"
+        }
+      ],
+      "headline": "This script has a genuine genre-seller at its core: a Black action lead cutting through a Confederate zombie uprising with a mythic artifact, a ticking clock, and a final battleground that’s instantly marketable. It’s pulpy, political, and visually aggressive in a way that gives producers a clear hook, buyers a clear lane, and actors a role worth chasing."
+    },
+    "lead_characters": [
+      {
+        "name": "NIA HARRIS",
+        "role_type": "Lead",
+        "demographics": "Female · early 40s · African American · athletic/muscular",
+        "hook": "Nia is the movie’s center of gravity: a doctor, former special-ops operator, and no-nonsense problem solver who can move from lab authority to battlefield command without losing her cool. She has a dry, grounded wit, a protective streak, and the physical confidence to read as both scientist and warrior, which makes her feel like a true genre lead rather than a generic action figure.",
+        "why_actor_wants_this": "This is the showcase territory of Sigourney Weaver in Aliens or Viola Davis in The Woman King — a role where intelligence and physical command are inseparable. An actress who wants to be seen as a full-spectrum leading force will chase this because it gives her authority scenes, fight scenes, and emotional leadership in the same package."
+      },
+      {
+        "name": "BEN WOO",
+        "role_type": "Lead",
+        "demographics": "Male · early 40s · Korean American · fit",
+        "hook": "Ben is the sharp, skeptical counterpoint in the team: practical, funny, and just cynical enough to keep the movie from becoming solemn. He reads like a former operator who has seen enough to distrust the mission but still has the discipline to execute it, which makes him a strong ensemble anchor.",
+        "why_actor_wants_this": "This is the kind of grounded action-support role that gave Don Cheadle in Out of Sight or Mahershala Ali in Green Book room to play intelligence, timing, and controlled intensity. Character actors who can carry humor under pressure and still feel dangerous will want this because it gives them a memorable lane inside a big genre engine."
+      },
+      {
+        "name": "CARLOS LOPEZ",
+        "role_type": "Lead",
+        "demographics": "Male · early 40s · Hispanic · fit",
+        "hook": "Carlos is the team’s most straightforwardly heroic operator, a competent former soldier whose calm is tested by the scale of the outbreak. He has less verbal color than Nia or Ben, but the role gives him physical credibility and the clean, readable urgency of a man trying to keep civilization from collapsing on his watch.",
+        "why_actor_wants_this": "This is the showcase lane of Michael Peña in End of Watch or Oscar Isaac in a grounded action role — a disciplined, emotionally legible professional under siege. Actors who want to be seen as reliable leading-men material in genre will respond to the physical stakes and the clean mission clarity."
+      },
+      {
+        "name": "IVY",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 50s · Caucasian · plump",
+        "hook": "Ivy is the movie’s surprise adult presence: warm, sharp, unafraid, and more capable than anyone initially expects. She brings local authority and plainspoken Southern humor, then reveals she can drive, shoot, and improvise under pressure, which makes her instantly memorable.",
+        "why_actor_wants_this": "This is the kind of scene-stealing territory Frances McDormand had in Fargo — a plainspoken woman whose competence becomes the joke and the payoff at once. Character actresses who want a role with wit, authority, and a late-breaking action turn will jump at it."
+      },
+      {
+        "name": "GAVIN",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · multi-racial · small, fit",
+        "hook": "Gavin is the dry, no-nonsense federal agent who keeps the movie moving and gives the ensemble a skeptical institutional voice. He’s practical, a little exasperated, and funny in a clipped way, which makes him a useful pressure valve in the chaos.",
+        "why_actor_wants_this": "This is the kind of role that gave Jeffrey Wright in The Batman or David Harbour in Stranger Things room to play competence with attitude. Actors who specialize in smart, grounded authority will like that the part gets to be both procedural and survivalist."
+      },
+      {
+        "name": "FISHER DOUGLAS",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s · obese · balding",
+        "hook": "Fisher is a cowardly, opportunistic broadcaster who sells the apocalypse as patriotism until the monster he helped promote turns on him. He’s funny, pathetic, and useful as a mouthpiece for the film’s propaganda satire, which makes him more than just a disposable villain.",
+        "why_actor_wants_this": "This is the kind of grotesque comic turn that gave Stephen Root in Barry or John Goodman in Barton Fink room to play charm curdling into self-preservation. Actors who enjoy playing spin, cowardice, and moral collapse will see a juicy character piece here."
+      },
+      {
+        "name": "JEFFERSON DAVIS",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · undead Confederate figure",
+        "hook": "Jefferson Davis is the film’s central monster: articulate, theatrical, predatory, and grotesquely self-justifying. He is not a mindless zombie; he is a charismatic corpse who weaponizes manners, religion, and Southern nostalgia, which makes him far more unsettling than a standard undead antagonist.",
+        "why_actor_wants_this": "This is the showcase territory of Anthony Hopkins in The Father or Javier Bardem in No Country for Old Men — a role where the performance is in the controlled menace and the verbal intelligence, not just the makeup. A veteran actor who wants to make a villain feel cultured, funny, and horrifying will be drawn to it."
+      },
+      {
+        "name": "AUSTIN SMITH",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · Caucasian · tall, thin",
+        "hook": "Austin is the human face of the conspiracy: eager, deluded, and desperate to believe he is steering history rather than being eaten by it. He has the brittle energy of a true believer who mistakes proximity to power for control.",
+        "why_actor_wants_this": "This is the kind of fanatic supporting role that gave Jesse Plemons in Breaking Bad or Shea Whigham in Boardwalk Empire room to play delusion with danger. Actors who like playing ambition curdling into humiliation will find a lot to do here."
+      },
+      {
+        "name": "DR. INGRID SCHMIDT",
+        "role_type": "Supporting",
+        "demographics": "Female · late 50s · Caucasian",
+        "hook": "Ingrid is the cold architect behind the science, a mother whose professional certainty has been fused to ideological rot. She carries herself like someone who believes history will vindicate her, which makes her betrayal of Hannah land with real force.",
+        "why_actor_wants_this": "This is the kind of morally armored role that gave Cate Blanchett in Tár or Tilda Swinton in Michael Clayton room to play intelligence as menace. Prestige actresses who like authority, secrecy, and a late-stage collapse of control will be attracted to it."
+      },
+      {
+        "name": "HANNAH SCHMIDT",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s · Caucasian · Aryan beauty",
+        "hook": "Hannah begins as the daughter who thinks she is helping cure the world and ends as one of the film’s most tragic instruments of violence. Her innocence is compromised by proximity to her mother’s work, which gives the role a clean emotional arc even inside the larger mayhem.",
+        "why_actor_wants_this": "This is the kind of tragic-turn role that gave Jena Malone in The Neon Demon or Alicia Vikander in Ex Machina room to play innocence sliding into dread. Younger actresses who want a part that starts sympathetic and ends unforgettable will be interested."
+      },
+      {
+        "name": "ODETTE WALKER",
+        "role_type": "Supporting",
+        "demographics": "Female · late 50s · African American · short, commanding",
+        "hook": "Odette is the hard-edged commander who knows more than she says and is willing to sacrifice almost anything to contain the outbreak. She has the clipped authority of someone who lives in classified spaces and makes ugly decisions without flinching.",
+        "why_actor_wants_this": "This is the kind of command role that gave Viola Davis in Air Force One-style material or Alfre Woodard in Luke Cage room to play institutional power with emotional steel. Veteran actresses who can project authority in a single line will be drawn to it."
+      },
+      {
+        "name": "TRISTAN",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · thin · scruffy yet sexy",
+        "hook": "Tristan is the flirtatious local survivor who uses charm, misdirection, and a little menace to stay alive. He’s a useful rogue element in the middle of the action, giving Nia a temporary ally who feels opportunistic but alive.",
+        "why_actor_wants_this": "This is the kind of sly survivalist part that gave Aaron Taylor-Johnson in Nocturnal Animals or Joe Keery in Fargo room to play charisma with a dark edge. Younger actors who want a sexy, dangerous, scene-stealing supporting turn will like it."
+      },
+      {
+        "name": "DANIEL SAWYER",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · Caucasian · muscular, ruggedly handsome",
+        "hook": "Daniel is the conscience inside the compound, the man who sees the truth too late and tries to protect Hannah from it. He’s a classic doomed insider: loyal, physically capable, and trapped in a system he can no longer defend.",
+        "why_actor_wants_this": "This is the kind of tragic insider role that gave Michael Shannon in Boardwalk Empire or Adam Driver in Silence room to play conviction under pressure. Actors who like playing moral clarity in a collapsing world will see the appeal."
+      },
+      {
+        "name": "LIAM",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · redneck type",
+        "hook": "Liam is one of the local zealots who mistakes apocalypse for vindication and treats violence like a civic duty. He’s crude, energized, and dangerous because he believes he is on the winning side of history.",
+        "why_actor_wants_this": "This is the kind of combustible supporting role that gives a young actor a chance to play menace with regional specificity, like the rougher edges of a Coen Brothers henchman. It’s a compact, memorable turn for someone who wants to make an impression fast."
+      },
+      {
+        "name": "MASON",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · redneck type",
+        "hook": "Mason is the smirking follower whose cruelty is amplified by groupthink. He’s less ideological than eager to belong, which makes him feel like the kind of guy who will laugh at anything if it keeps him inside the pack.",
+        "why_actor_wants_this": "This is the kind of nasty, reactive role that lets an actor play cowardice, cruelty, and comic timing in the same breath. Supporting players who specialize in volatile ensemble color will have fun with it."
+      },
+      {
+        "name": "WILLIAM",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · redneck type",
+        "hook": "William is the third leg of the local trio, another young zealot whose certainty is louder than his intelligence. He helps create the sense of a whole social ecosystem feeding the outbreak, not just one villainous faction.",
+        "why_actor_wants_this": "This is a useful ensemble role for an actor who can play swagger, stupidity, and menace without overplaying any one note. It’s the kind of part that can pop in a crowded genre cast."
+      },
+      {
+        "name": "IVY'S CAR / MUSTANG GT OWNER",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 50s · Caucasian",
+        "hook": "This is the kind of offscreen local presence that gives the world texture: a practical Southern woman whose car, attitude, and survival instincts all feel lived-in. Even in a brief appearance, she helps the movie feel rooted in a real community with its own rules.",
+        "why_actor_wants_this": "This is the sort of small but vivid role that character actors love because it lets them make a world feel inhabited in a single scene. It’s a quick, flavorful part for someone who can land a joke and a look."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage political horror with grindhouse propulsion and real crowd-pleasing gore.",
+        "fit_profile": "Established indie genre directors or second-feature filmmakers with a strong festival or streamer horror reel, especially those who already work in elevated pulp, political satire, or creature-action. The material rewards directors who can balance practical gore, clean action geography, and a pointed cultural attitude without sanding off the edge.",
+        "detail": "The movie gives a director big, legible set pieces and a final act that can be staged as a sustained siege rather than a series of disconnected beats. It also offers a rare chance to make a monster movie that is both commercially accessible and ideologically specific, which is exactly the kind of material directors use to define a voice."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming genre lane, premium cable horror, or festival-to-platform genre release",
+        "detail": "The script can be packaged around one strong lead performance and a contained ensemble, so it does not require a giant star stack to make sense in the market. The zombie-horror lane remains exportable and trailer-friendly, and the political angle gives it a sharper identity than a standard undead title."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The road-movie structure carries the middle.",
+        "detail": "The cemetery-to-tunnel-to-library-to-fort progression gives the film momentum, but the version of the script where one or two travel stops are combined could protect pace while keeping the same escalation. That would also make the geography easier to track without changing the core mission.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The supporting team could each get one sharper signature.",
+        "detail": "Nia is the clear lead, while Carlos and Ben mostly function as mission partners; a next pass could give each one a more distinct behavioral tell or personal stake so the ensemble pops even harder. The movie already has the bones of a team piece, and a little more individual texture would make the group dynamics more memorable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Fort Sumter finale is the biggest production lift.",
+        "detail": "The final siege uses a large historic location, multiple zombie groups, fire, and night work, so the cleanest simplification lever would be to concentrate more of the climax in one primary courtyard or deck area. That would preserve the scale while making the shoot more efficient and the action easier to stage.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The historical and brand references need a clearance pass.",
+        "detail": "Jefferson Davis, Fort Sumter, Hollywood Cemetery, the Spear of Destiny, and several named brands all point to a real-world clearance review. A producer should plan for that early so the script’s historical specificity can be preserved without slowing the package later.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The gore level locks the movie to mature buyers.",
+        "detail": "The script goes hard on decapitations, flesh-ripping, impalement, and body regeneration, which is exactly what the genre promise wants but also narrows the platform lane. That makes the piece best suited to buyers who actively want hard-R horror with a political edge.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Nia’s final confrontation is the clearest star moment.",
+        "detail": "The showdown where she outsmarts Jefferson by invoking the Spear’s Christian symbolism is the movie’s cleanest emotional and thematic payoff. If a future pass wanted to sharpen anything on the page, it would be to make sure that kind of character intelligence is seeded as early and as often as the action.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70.7,
+  "tier": "Optionable",
+  "inputTokens": 39443,
+  "outputTokens": 6267,
+  "cost": 0.057783749999999995,
+  "declaredFormat": "Feature film"
+}

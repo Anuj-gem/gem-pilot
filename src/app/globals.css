@@ -441,6 +441,20 @@ input::placeholder, textarea::placeholder {
   gap: 10px;
   margin: 1em 0;
 }
+.gem-prose .gem-blog-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 1em 0;
+}
+.gem-prose .gem-blog-row__score--quiet {
+  background: transparent;
+  border: 1px solid var(--gem-gray-700);
+  color: var(--gem-gray-500);
+  font-size: 11px;
+  padding: 2px 7px;
+  font-weight: 600;
+}
 .gem-prose .gem-blog-tile {
   background: var(--gem-gray-900);
   border: 1px solid var(--gem-gray-700);

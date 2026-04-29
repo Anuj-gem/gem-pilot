@@ -38,23 +38,23 @@ directly through GEM.
   <div class="gem-blog-row">
     <div>
       <p class="gem-blog-row__title">Untitled mob therapy pilot <span class="gem-blog-pill gem-blog-pill--new">New</span></p>
-      <p class="gem-blog-row__meta">Series · 1 hr drama · Premium cable</p>
+      <p class="gem-blog-row__meta">Series · 1 hr drama · <span style="color:#15803d">5 interested</span> · <span style="color:var(--gem-gray-500)">1 passed</span></p>
     </div>
-    <span class="gem-blog-row__score">78</span>
+    <span class="gem-blog-row__score gem-blog-row__score--quiet">78</span>
   </div>
   <div class="gem-blog-row">
     <div>
       <p class="gem-blog-row__title">The Northern Line</p>
-      <p class="gem-blog-row__meta">Series · 1 hr drama · Premium cable</p>
+      <p class="gem-blog-row__meta">Feature · Action thriller · <span style="color:#15803d">3 interested</span> · <span style="color:var(--gem-gray-500)">2 passed</span></p>
     </div>
-    <span class="gem-blog-row__score">74</span>
+    <span class="gem-blog-row__score gem-blog-row__score--quiet">74</span>
   </div>
   <div class="gem-blog-row">
     <div>
       <p class="gem-blog-row__title">Glass Cathedral</p>
-      <p class="gem-blog-row__meta">Series · 1 hr drama · Premium cable</p>
+      <p class="gem-blog-row__meta">Series · Workplace comedy · <span style="color:#15803d">2 interested</span> · <span style="color:var(--gem-gray-500)">4 passed</span></p>
     </div>
-    <span class="gem-blog-row__score">71</span>
+    <span class="gem-blog-row__score gem-blog-row__score--quiet">71</span>
   </div>
 </div>
 
@@ -109,7 +109,7 @@ development meeting.
 If you previously edited your headline, **your edit is preserved**. The
 rescore only updates the underlying read.
 
-<div class="gem-blog-grid-3">
+<div class="gem-blog-grid-2">
   <div class="gem-blog-tile gem-blog-tile--smooth">
     <p class="gem-blog-tile__label">Cost</p>
     <p class="gem-blog-tile__value">Smooth</p>
@@ -118,9 +118,27 @@ rescore only updates the underlying read.
     <p class="gem-blog-tile__label">Cast</p>
     <p class="gem-blog-tile__value">Manageable</p>
   </div>
-  <div class="gem-blog-tile gem-blog-tile--complex">
-    <p class="gem-blog-tile__label">Clearance</p>
-    <p class="gem-blog-tile__value">Complex</p>
+</div>
+
+<div class="gem-blog-mock">
+  <p class="gem-blog-mock-title">Development priorities</p>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">01 · Tighten the second-act midpoint</p>
+      <p class="gem-blog-row__meta">The sharpest lever — Tony's first crisis lands at p52, ten pages later than it should.</p>
+    </div>
+  </div>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">02 · Clarify Carmela's arc in the back half</p>
+      <p class="gem-blog-row__meta">Strong setup, less defined turn. A scene-level pass does it.</p>
+    </div>
+  </div>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">03 · Trim the FBI subplot by ~6 pages</p>
+      <p class="gem-blog-row__meta">Pulls focus from the family/crew triangulation that's actually working.</p>
+    </div>
   </div>
 </div>
 
