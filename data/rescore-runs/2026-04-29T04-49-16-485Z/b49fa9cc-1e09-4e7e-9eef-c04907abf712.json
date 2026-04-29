@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:07:01.789Z",
+  "submission_id": "b49fa9cc-1e09-4e7e-9eef-c04907abf712",
+  "eval_id": "a340da5c-801f-4596-a4bb-7b52076385b2",
+  "title": "Dead Battery",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Luke Helm",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, undead police officer, white, physically imposing, widower, religious."
+    },
+    {
+      "name": "Thomas Foster",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, living human police officer, white, rookie transfer from the live battery."
+    },
+    {
+      "name": "Commissioner Beacon",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, undead authority figure, white, senior police administrator."
+    },
+    {
+      "name": "Alicia Reynolds",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, living human chief coroner, white, recent widow."
+    },
+    {
+      "name": "Paddy McCallum",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, city medical examiner, white, human."
+    },
+    {
+      "name": "Cara",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, incarcerated human woman, addict, Foster’s sister."
+    },
+    {
+      "name": "Ronald Ho",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, Hawaiian, public servant, rotund build."
+    },
+    {
+      "name": "Thelma Louise",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, undead domestic abuse victim, wife."
+    },
+    {
+      "name": "Maria Cruz",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, Latina, homeowner, working-class."
+    }
+  ],
+  "positioning_hook": "A grieving undead cop in a segregated monster city uncovers a police conspiracy that turns his own precinct into a factory for controlled zombies, forcing him to choose between the law and the living.",
+  "cost_usd": 0.05194275,
+  "input_tokens": 41909,
+  "output_tokens": 4558,
+  "status": "wrote:leads_ok"
+}

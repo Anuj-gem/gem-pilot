@@ -1,0 +1,354 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Mystery"
+      ],
+      "tone": "bleak",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "slow-burn",
+        "family-dynamics",
+        "abuse",
+        "survival",
+        "crime",
+        "primary-school",
+        "domestic-captivity"
+      ]
+    },
+    "positioning_hook": "When a teacher’s child’s drawing exposes a family’s hidden captivity ring, a rookie cop and a trapped girl race to survive a house where love is just another word for ownership.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is immediately legible and the hostage/captive engine gives it a clear thriller audience, especially for viewers who like domestic nightmare stories. The limitation is that the material is very dark and the cast is small, so the commercial lane is more niche streamer than broad theatrical."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: a school drawing triggers suspicion, and the story quickly reveals a family hiding a captive woman in plain sight. The script keeps the central question clean — who is trapped, who is lying, and who will break first — which makes the premise easy to pitch in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Ashley has the strongest built-in sympathy and Becky gives the story an effective child witness, while George provides a functional outside-investigator POV. Rachel, Jimmy, and Charlie are vivid as threats, but they are more archetypal than layered, which keeps the character engine from feeling especially durable."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script’s boldest move is making the captors a family unit rather than a single villain, and that gives the material a nastier domestic texture than a standard abduction thriller. Even so, the execution leans on familiar captivity beats and escalation patterns, so the voice is clear but not yet singular."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story has a strong forward drive once Susan starts connecting the dots, and the reveal chain — police visit, school concern, basement captivity, Charlie’s identity, Rachel’s turn, Jimmy’s final break — keeps the pressure rising. There are a few stretches where the script pauses to explain the family system, but the overall propulsion is solid."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a child’s drawing becoming the first clue to a hidden domestic prison is memorable and instantly understandable. What keeps it from scoring higher is that the underlying reveal structure is more familiar than the premise suggests, with the story’s surprises arriving through escalation rather than a truly fresh dramatic mechanism."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world is specific in its school, police, and suburban-house texture, but it functions mostly as a container for the central captivity plot. The family’s internal rules are clear enough to follow, yet the surrounding social world does not generate many additional story lines or pressures."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently grim, intimate, and oppressive, with the house itself becoming a pressure cooker. That said, the script stays in one emotional register for most of its runtime, so the tonal identity is effective but not especially hard to imitate."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Charlie’s reveal as a missing boy from 31 years ago and the family’s long-running captivity dynamic suggest a deeper backstory than the script fully explores on the page. There is a real sense of buried history, but the script mostly uses that history as plot fuel rather than as a source of layered thematic complexity."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The family triangle of Rachel, Jimmy, and Charlie creates a strong internal pressure system, and Becky/Ashley/George add useful external friction. The relationships are the main engine of the script, and several pairings — Rachel/Jimmy, Charlie/Ashley, Becky/Susan, George/Rupert — each produce distinct dramatic energy."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Ashley",
+        "role_type": "Lead",
+        "demographics": "Woman, early 20s, captive girlfriend, vulnerable but increasingly defiant.",
+        "hook": "Ashley is the emotional center of the script: a young woman trapped inside a family’s private prison, forced to survive emotional coercion, physical abuse, and a warped version of love that keeps trying to rename itself as protection. She begins as a near-silent victim, but the script steadily turns her into the one person willing to name the truth and fight back.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Carey Mulligan in Promising Young Woman — a role that starts in fear and ends in steel, with a major emotional and physical survival arc."
+      },
+      {
+        "name": "Rachel",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 50s, mother, controlling domestic authority figure.",
+        "hook": "Rachel is the household’s emotional enforcer: polite to outsiders, ruthless inside the home, and fully committed to the idea that control equals care. She’s written as a chillingly ordinary matriarch whose warmth is a performance and whose violence is framed as family management.",
+        "why_actor_wants_this": "This is the kind of role that gave Toni Collette in Hereditary or Olivia Colman in The Night Manager a chance to weaponize domestic authority — a performance built on sudden shifts from charm to menace."
+      },
+      {
+        "name": "Jimmy",
+        "role_type": "Supporting",
+        "demographics": "Man, late 20s, adult son, abuser with a dependent, possessive streak.",
+        "hook": "Jimmy is the script’s most volatile presence: outwardly calm, inwardly predatory, and convinced that obsession is the same thing as devotion. He moves from son to captor to killer with almost no emotional friction, which makes him feel dangerous in every scene he enters.",
+        "why_actor_wants_this": "This is the showcase lane of Barry Keoghan in Calm with Horses or Jack O'Connell in Starred Up — a role that lets an actor play charm, threat, and emotional instability in the same breath."
+      },
+      {
+        "name": "Charlie",
+        "role_type": "Supporting",
+        "demographics": "Man, late 40s to early 50s, father, long-term captive and enabler.",
+        "hook": "Charlie is the story’s most tragic contradiction: a man who is both prisoner and participant, broken enough to comply and dangerous enough to kill when cornered. The reveal that he is Charlie Plen, the missing boy from 31 years ago, gives him a buried-history charge that reframes everything around him.",
+        "why_actor_wants_this": "This is the kind of role that gave Brendan Gleeson in Calvary or Ben Mendelsohn in Animal Kingdom a chance to play damaged authority with buried shame — a performance built on restraint, dread, and sudden violence."
+      },
+      {
+        "name": "Becky",
+        "role_type": "Supporting",
+        "demographics": "Girl, 6 years old, child witness inside an abusive home.",
+        "hook": "Becky is the story’s moral witness, a child trying to make sense of cruelty by asking the wrong questions in the right direction. Her innocence is constantly being weaponized by the adults around her, which makes her fear and confusion feel painfully specific.",
+        "why_actor_wants_this": "This is the kind of child role that gave Brooklynn Prince in The Florida Project or Brooklynn Prince in The Turning a chance to carry emotional truth without speeches — a performance built on reaction, fear, and instinct."
+      },
+      {
+        "name": "Susan",
+        "role_type": "Supporting",
+        "demographics": "Woman, around 30, primary school teacher, whistleblower.",
+        "hook": "Susan is the catalyst who refuses to let the drawing stay a drawing; she’s the adult who notices the pattern and then keeps pushing even after the system shrugs. Her disappearance turns her from concerned teacher into the first casualty of the truth.",
+        "why_actor_wants_this": "This is the kind of role that gave Emily Watson in The Third Day or Rebecca Hall in The Night House a chance to play intelligence under pressure — a grounded, urgent performance with real moral authority."
+      },
+      {
+        "name": "George",
+        "role_type": "Supporting",
+        "demographics": "Man, mid 20s, rookie police investigator.",
+        "hook": "George is the audience’s procedural entry point: young enough to still believe the system can be made to work, sharp enough to notice the gaps, and persistent enough to keep digging when everyone else has moved on. He gives the script its external investigation spine without taking over the emotional center.",
+        "why_actor_wants_this": "This is the kind of role that gave John Boyega in Detroit or Lakeith Stanfield in short-fuse investigator mode a chance to play intelligence, frustration, and moral urgency without becoming a stock cop."
+      },
+      {
+        "name": "Rupert",
+        "role_type": "Supporting",
+        "demographics": "Man, early 30s, police officer, casual and dismissive.",
+        "hook": "Rupert is the institutional shrug embodied: lazy, flippant, and more interested in moving the day along than in taking a missing-person report seriously. He’s not the villain, but he’s part of the machinery that lets the villainy continue.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the chance to play bureaucratic indifference with a human face, similar to the texture roles in Spotlight or Line of Duty."
+      },
+      {
+        "name": "Nicole",
+        "role_type": "Supporting",
+        "demographics": "Woman, police officer, adult.",
+        "hook": "Nicole is one of the first faces of official skepticism, the officer who accepts the family’s calm presentation and leaves the house without seeing what’s underneath it. She functions as a clean procedural contrast to George’s later persistence.",
+        "why_actor_wants_this": "This is a concise, professional role that gives an actor the chance to play procedural authority and subtle misread, the kind of grounded work seen in police ensemble dramas."
+      },
+      {
+        "name": "Alfie",
+        "role_type": "Supporting",
+        "demographics": "Man, police officer, adult.",
+        "hook": "Alfie is the other half of the initial police visit, another ordinary professional who mistakes politeness for innocence. His later conversation with George helps expose how easily the house passed as normal.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a clean, believable procedural beat — the sort of small but useful part that can anchor a scene without overplaying it."
+      },
+      {
+        "name": "Wendy",
+        "role_type": "Supporting",
+        "demographics": "Woman, head teacher, adult.",
+        "hook": "Wendy is the school’s calm institutional face, the adult who tries to keep the environment orderly while the real danger sits just outside the classroom. She helps make the school feel like a real place rather than just a plot stop.",
+        "why_actor_wants_this": "This is a solid supporting role for an actor who can project competence and concern quickly, similar to the grounded authority figures in British domestic thrillers."
+      },
+      {
+        "name": "Luke",
+        "role_type": "Supporting",
+        "demographics": "Man, substitute teacher, adult.",
+        "hook": "Luke is a functional school-world supporting character who helps establish the day-to-day normalcy around Becky’s silence. He’s not a plot driver, but he adds texture to the school setting.",
+        "why_actor_wants_this": "This is a straightforward supporting role that gives an actor a believable classroom presence and a few clean beats of professional normalcy."
+      },
+      {
+        "name": "Bell",
+        "role_type": "Supporting",
+        "demographics": "Woman, police officer, adult.",
+        "hook": "Bell is a small but useful office-world presence, part of the procedural texture that makes George’s investigation feel embedded in a real department. She helps sell the bureaucracy around the case.",
+        "why_actor_wants_this": "This is a practical supporting part for an actor who can make a few lines feel lived-in and credible."
+      },
+      {
+        "name": "Officer",
+        "role_type": "Supporting",
+        "demographics": "Adult police officer, unspecified gender.",
+        "hook": "The unnamed officer at the end functions as the final procedural reveal voice, delivering the grave discovery and closing the loop on the house’s hidden history. The role is functional but important for the ending’s institutional framing.",
+        "why_actor_wants_this": "This is a brief but scene-specific role that gives an actor a clean final beat in the aftermath of a thriller reveal."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child lead role with significant emotional reaction work",
+          "adult son role requires a convincing late-20s physical presence with menace",
+          "mother/father roles require strong domestic authority and emotional coldness",
+          "supporting police and school roles are age-flexible"
+        ]
+      },
+      "locations": {
+        "distinct_count": 7,
+        "interior_exterior_ratio": "mostly interior with a few exterior/public-facing scenes",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "suburban family house with basement and upstairs bedroom layout",
+          "primary school classroom and reading room",
+          "police station office and smoking area",
+          "pub interior",
+          "ambulance/exterior house aftermath"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond standard cleanup and blood continuity.",
+        "stunts_level": "minor",
+        "sfx_needs": "blood, bruising, corpse makeup, hanging body, basement restraint, knife wounds, practical dead-body effects",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: streamer original, specialty theatrical, or limited theatrical-to-streaming path."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly house-bound, with a school, police station, pub, and ambulance aftermath; no VFX-heavy sequences or large-scale set pieces. The main cost pressure is night work and practical blood/corpse effects, both of which stay contained."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Ashley has to carry fear, degradation, and late-film defiance, while Rachel and Jimmy need actors who can pivot between domestic warmth and menace. Becky also needs a child performer who can handle distress without flattening the emotional truth."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s central reveal is clear, but the family system is so extreme that buyers will weigh credibility and tonal control scene by scene. The Charlie Plen backstory and the basement-captivity mechanics are the main pressure points in development conversations."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Girl on the Train",
+          "year": 2016,
+          "why_it_comps": "Like this script, it turns domestic space into a psychological trap and uses a woman’s compromised perspective to drive suspense."
+        },
+        {
+          "title": "Promising Young Woman",
+          "year": 2020,
+          "why_it_comps": "It shares the same revenge-adjacent, female-centered tension and the sense of a social wound being exposed through genre mechanics."
+        },
+        {
+          "title": "The Lodge",
+          "year": 2019,
+          "why_it_comps": "The isolated-house dread, family dysfunction, and oppressive winter-thriller energy are close to the script’s domestic nightmare lane."
+        },
+        {
+          "title": "Fresh",
+          "year": 2022,
+          "why_it_comps": "It plays in the same captivity-and-control space, with a relationship that turns predatory inside an intimate domestic setting."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult thriller viewers who respond to domestic horror, captivity stories, and female-survival narratives with a strong moral outrage component.",
+        "demographics": "Skews 25-54, slightly female-leaning, streamer-native, genre-literate, with strongest pull among viewers who like dark relationship thrillers.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$1.5M-$4M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary contained thriller with a small cast, a handful of practical locations, and no VFX load; budget pressure comes from night shoots and practical violence, not scale."
+      },
+      "lane_fit": {
+        "lane": "streaming-friendly elevated thriller",
+        "types_of_buyers": [
+          "streamer originals dev execs building female-led genre",
+          "boutique thriller financiers",
+          "indie producers looking for contained high-concept material",
+          "specialty distributors with dark domestic-thriller taste"
+        ],
+        "detail": "The script sits naturally in the adult, morally charged, domestic-thriller lane: intimate, ugly, and easy to explain in one sentence. It is built for buyers who want a contained hook, a strong female survival center, and a production footprint that does not require tentpole scale."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed ending; no clear sequel or spinoff vector beyond the central house story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The child drawing is a clean ignition point.",
+          "what_it_means": "That image gives the script an instantly pitchable trigger and a visual clue that can sell the premise before the larger reveal lands. Buyers looking for a high-concept domestic thriller can grasp the engine in one beat.",
+          "evidence": "Susan’s parent-teacher meeting where Becky’s drawing of Jimmy with a rope around a girl’s neck sets the police report in motion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family unit is the villain.",
+          "what_it_means": "Making the captors a mother, father, and son turns the threat into a closed domestic system rather than a single bad actor, which gives the material a nastier and more memorable identity. That kind of setup is attractive to genre buyers because it feels intimate, contained, and morally corrosive.",
+          "evidence": "Rachel calmly covers for the house, Charlie enforces the captivity, and Jimmy escalates from possessive boyfriend to killer.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ashley gets a real survival arc.",
+          "what_it_means": "The role starts in helplessness and ends in decisive violence, which is exactly the kind of transformation that can anchor a strong lead performance and generate audience catharsis. That makes the script especially attractive to actors and buyers looking for a female-centered genre vehicle.",
+          "evidence": "Ashley moves from silent captive to the person who finally stabs Jimmy and survives the house.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The missing-boy reveal adds buried-history weight.",
+          "what_it_means": "Charlie being the vanished 17-year-old from 31 years ago gives the thriller a second layer of mystery and a sense that the house has been hiding a long-running crime, not just a recent one. That depth helps the script feel more than a simple rescue story.",
+          "evidence": "George and Rupert’s database search reveals Charlie Plen as a notorious missing-person case, then the script confirms he is the father in the house.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The school and police worlds are easy to track.",
+          "what_it_means": "The script uses familiar institutions to create a clean procedural spine around the domestic horror, which broadens accessibility and keeps the audience oriented. That makes the material easier to package because the hook is legible outside pure genre circles.",
+          "evidence": "Susan’s classroom concern, George’s case file work, and the police visit to Rachel’s house all connect cleanly.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, streamer-friendly domestic thriller with a strong female-survival center and a hook that lands immediately: a child’s drawing exposes a family prison. The small-location footprint and practical effects profile make it producible at indie scale, while the family-as-villain setup gives it a nasty, marketable edge for buyers in the elevated-genre lane."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The family logic needs a buyer’s leap.",
+          "detail": "Rachel, Charlie, and Jimmy’s shared captivity system is the script’s biggest dramatic engine, but it also asks the audience to accept an extreme domestic arrangement with very little outside context. That is the sharpest greenlight conversation here: the premise is clear, but the credibility of the household’s long-running behavior will be weighed closely by producers and actors.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Jimmy’s turn to murder is abrupt.",
+          "detail": "The move from possessive boyfriend to Rachel’s killer happens fast, and the script leans on escalation more than psychological transition. Buyers will notice that the final act depends on a hard pivot from obsession to patricide-level violence, which is effective as shock but still a development pressure point.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Ashley is strongest as a victim, not a strategist.",
+          "detail": "The role is compelling because of what she endures, but the page gives her relatively little active problem-solving until the final confrontation. That keeps the lead performance lane strong, but it also means the script’s emotional center is more reactive than dynamic for much of the runtime.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The police thread is functional, not gripping.",
+          "detail": "George’s investigation gives the story an outside spine, but the procedural material is mostly case-file discovery, database searching, and brief interviews. That keeps the plot moving, but it does not yet generate the kind of investigative texture that would make the police lane a major selling point on its own.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending is cathartic but narrow.",
+          "detail": "Ashley killing Jimmy closes the thriller cleanly, but the script does not leave much room for a larger thematic aftershock or a more layered aftermath beyond the police discovery. For buyers, that means the ending plays as a satisfying finish rather than a particularly expansive one.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction sits in the credibility of the family’s long-running captivity setup and in Jimmy’s fast escalation into final-act murder. Beyond that, the script is strongest as a contained survival thriller, but the police material and aftermath are more functional than distinctive, which keeps the package in a solid indie lane rather than a breakout one."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 62,
+  "tier": "Optionable",
+  "inputTokens": 26065,
+  "outputTokens": 5348,
+  "cost": 0.04361475,
+  "declaredFormat": "Feature film"
+}

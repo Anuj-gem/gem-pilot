@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:07:25.940Z",
+  "submission_id": "3bbb59f0-9aec-4911-bf40-56faa26b2da3",
+  "eval_id": "7b7180e5-a2ed-41d2-9a59-84d660fff361",
+  "title": "The War Zone",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Omar Epps",
+      "role_type": "Lead",
+      "demographics": "Black man, mid-20s to early-30s, ex-Marine, working-class, physically capable but socially impulsive."
+    },
+    {
+      "name": "Dex",
+      "role_type": "Supporting",
+      "demographics": "Black man, middle-aged, working-class, apartment resident and groundskeeper, veteran-adjacent in attitude if not explicitly in service."
+    },
+    {
+      "name": "Chui Perez",
+      "role_type": "Supporting",
+      "demographics": "Light-skinned Hispanic woman, late-20s to 30s, single mother, working-class, physically distinctive with braces/headgear."
+    },
+    {
+      "name": "Marta",
+      "role_type": "Supporting",
+      "demographics": "Girl, about 6 years old, Chui’s daughter."
+    },
+    {
+      "name": "Moco",
+      "role_type": "Supporting",
+      "demographics": "Asian man, middle-aged, criminal operator, gang leader, urban hustler."
+    },
+    {
+      "name": "Theodore Doty",
+      "role_type": "Supporting",
+      "demographics": "White British man, older adult, wheelchair user, groundskeeper."
+    },
+    {
+      "name": "Peter Graft",
+      "role_type": "Supporting",
+      "demographics": "White man, 30s-40s, police officer, physically imposing, Nordic-blond appearance."
+    },
+    {
+      "name": "Art Berro",
+      "role_type": "Supporting",
+      "demographics": "Older man, property owner, cigar-smoking landlord, working-class operator."
+    },
+    {
+      "name": "Schitz",
+      "role_type": "Supporting",
+      "demographics": "Man, adult, military mercenary, physically aggressive, veteran-coded."
+    }
+  ],
+  "positioning_hook": "A swaggering ex-Marine becomes apartment manager in a crime-ridden housing complex and turns a tenant war, a crooked cop, and his own love life into one escalating neighborhood uprising.",
+  "cost_usd": 0.055743,
+  "input_tokens": 44948,
+  "output_tokens": 4896,
+  "status": "wrote:leads_ok"
+}

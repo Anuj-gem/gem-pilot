@@ -1,0 +1,330 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Comedy",
+        "Crime"
+      ],
+      "tone": "rowdy",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "feature-anchored",
+        "propulsive",
+        "character-driven",
+        "family-dynamics",
+        "crime",
+        "father-son",
+        "blockbuster-video",
+        "car-2-go",
+        "strip-mall"
+      ]
+    },
+    "positioning_hook": "A laid-back Blockbuster owner and his vlogger son spend one disastrous day hiding a corpse, outrunning a drug courier, and trying to survive a dinner with the bride’s ex-cop father.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built for crowd-pleasing escalation: a dead body, a rental car, a drug runner, and a family dinner collision. The appeal is strongest for adult genre audiences and comedy-thriller buyers rather than four-quadrant theatrical."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and cleanly once Stu opens the Car 2 Go trunk and finds the body and cash. The script keeps the engine simple and readable: two men trying to solve one impossible problem while a second predator closes in."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Tom and Stuart are a strong odd-couple center, with Tom’s easygoing criminal pragmatism playing against Stu’s anxious, performative insecurity. Kendra and Javi add useful pressure, though the supporting cast is more functional than deeply surprising."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The Blockbuster-in-a-strip-mall setting, the Car 2 Go dead-body problem, and the probation-officer detour give the script a specific comic-crime identity. It feels like a writer leaning into odd, modern Americana rather than generic crime-comedy machinery."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script is built as a chain reaction, and each stop escalates the mess: the gas station, Bree’s inspection, the corner store, the highway stop, and the final cottage siege. It keeps introducing new complications before the previous one cools off."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea is fresh in a way that clicks immediately: a father-son repair job becomes a crime spiral inside a dead retail landscape. The execution is more familiar once the bodies, guns, and cartel reveal arrive, but the setup is ownable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script has a lived-in suburban-crime texture: the abandoned Blockbuster, the vlogger culture, the ex-cop father, the DEA-adjacent household, and the Car 2 Go logistics all feel specific. The world is story-generating, even if it stays mostly in service of the plot engine."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a confident mash of deadpan domestic comedy and escalating criminal absurdity, with broad set pieces that still keep the characters’ rhythms intact. The script knows when to play the joke straight, especially in the father-son banter and the Bree/Javi scenes."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material in Tom’s confession about taking the DUI for Stuart’s mother and in the father-son resentment underneath the chaos. But the script mostly uses that depth as emotional seasoning rather than building a larger thematic engine around it."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Tom/Stuart is the engine, but the script smartly keeps adding friction through Kendra, Javi, Sloane, Bree, Freddie, and Margaret so scenes can keep generating conflict. The ensemble is more than decorative; it repeatedly changes the survival math."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Tom Justin",
+        "role_type": "Lead",
+        "demographics": "Male, mid-50s, white, stoner-leaning ex-con / small-business owner, father.",
+        "hook": "Tom is a shaggy, unbothered former felon who runs a dead Blockbuster as a front for drug sales and treats disaster like a mild inconvenience. He’s funny because he’s lazy, dangerous because he’s calm, and emotionally loaded because his easygoing mask hides a lifetime of bad choices and one huge sacrifice for his family.",
+        "why_actor_wants_this": "This is the showcase territory of Jeff Bridges in The Big Lebowski and Bryan Cranston in Breaking Bad: a character who can be funny, slippery, and unexpectedly wounded in the same scene. It gives an actor the rare chance to play charm as camouflage and then crack it open in the father-son confession."
+      },
+      {
+        "name": "Stuart Justin",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s, white, overweight, vlogger/gamer, engaged.",
+        "hook": "Stuart is a performative online personality who talks like a swaggering alpha on camera and a nervous kid off it. He’s desperate to be seen as competent, but every choice he makes under pressure exposes how much he still needs his father and how little he trusts himself.",
+        "why_actor_wants_this": "This is the showcase territory of Jonah Hill in Superbad or Nick Frost in Shaun of the Dead: comic panic with real vulnerability underneath. The role lets an actor toggle between internet bravado, physical embarrassment, and genuine emotional release."
+      },
+      {
+        "name": "Kendra Shran",
+        "role_type": "Supporting",
+        "demographics": "Female, early 30s, white, athletic, engaged, from a wealthy law-enforcement family.",
+        "hook": "Kendra is the only person in the room who can match the men physically and emotionally without losing her composure. She’s warm with Stuart, sharp with her father, and fully capable of turning into the most dangerous person in the house when the situation demands it.",
+        "why_actor_wants_this": "This is the showcase territory of Mary Elizabeth Winstead in Birds of Prey or Jurnee Smollett in Lovecraft Country: a role that lets an actor be romantic, funny, and physically lethal. The fight work and the emotional authority both play."
+      },
+      {
+        "name": "Javi Shran",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, white, retired DEA / ex-cop, wealthy patriarch.",
+        "hook": "Javi is a hard-edged, status-conscious father who wants control over his house, his daughter, and the men entering his orbit. He’s funny when he’s dismissive, intimidating when he’s suspicious, and most interesting when the script lets him be wrong about the people he’s judging.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in Whiplash or Bryan Cox in Succession: a forceful authority figure who can dominate a room with a glance and still reveal insecurity under the bluster. It’s a great role for a seasoned actor who likes playing command and contempt."
+      },
+      {
+        "name": "Freddie Alvers",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, white, criminal enforcer / courier.",
+        "hook": "Freddie starts as a professional problem-solver and slowly degrades into a furious, battered survivalist as the day keeps humiliating him. He’s the script’s most volatile antagonist because he’s not a mastermind — he’s a man trying to recover one lost item and spiraling into violence.",
+        "why_actor_wants_this": "This is the showcase territory of Ben Foster in Hell or High Water or Walton Goggins in The Hateful Eight: a pressure-cooker antagonist who gets to escalate from controlled menace to full breakdown. The role offers a lot of physicality, rage, and dark comic humiliation."
+      },
+      {
+        "name": "Sloane Shran",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s-60s, white, wealthy homemaker with authority.",
+        "hook": "Sloane is the quiet center of the Shran household, all grace on the surface and steel underneath. She reads as the most socially fluent person in the room, which makes her a useful counterweight to Javi’s bluster and a credible ally once the violence starts.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Linney in Ozark or Margo Martindale in Justified: a polished adult woman who can shift from hostess to operator without changing volume. It gives an actor a chance to play intelligence and restraint as power."
+      },
+      {
+        "name": "Bree Marks",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, white, probation officer, no-nonsense authority figure.",
+        "hook": "Bree is the script’s most grounded authority figure, and that makes her dangerous in a different way than the criminals. She’s procedural, skeptical, and physically capable, which lets her puncture Tom’s easy charm every time he tries to skate by.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Fargo or Regina King in Watchmen: a role built on controlled authority and dry, devastating line readings. It’s a compact but memorable part for an actor who can make discipline feel alive."
+      },
+      {
+        "name": "Margaret Cole",
+        "role_type": "Supporting",
+        "demographics": "Female, 70s, white, British-accented drug boss.",
+        "hook": "Margaret is the late-film wildcard: elegant, polite, and completely lethal. The tea-party demeanor makes her more unnerving, not less, and the hallucinogen sequence gives her a surreal, high-impact entrance as the true top of the criminal food chain.",
+        "why_actor_wants_this": "This is the showcase territory of Helen Mirren in Red or Tilda Swinton in Snowpiercer: a refined performer getting to weaponize composure and then explode into menace. The role is brief but unforgettable, with a big tonal swing."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One older male lead with comedic ease and emotional access",
+          "One late-20s male supporting role with gamer/vlogger specificity",
+          "One athletic female supporting role with fight capability",
+          "One older female antagonist with British accent and authority"
+        ]
+      },
+      "locations": {
+        "distinct_count": 9,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Abandoned Blockbuster-style retail space",
+          "Strip mall parking lot and gas station",
+          "Wealthy suburban cottage compound with gym and kitchen",
+          "Forest clearing and roadside pull-off",
+          "Corner store interior and bathroom"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical action and blood work; limited cleanup for gunfire, impacts, and trunk/body gags.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood hits, dog attack choreography, practical body-in-trunk gags, smashed glass, and fight beats in the cottage finale.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Blockbuster"
+        },
+        {
+          "type": "brand",
+          "detail": "Car 2 Go"
+        },
+        {
+          "type": "brand",
+          "detail": "Wal-Mart"
+        },
+        {
+          "type": "brand",
+          "detail": "Apple Watch"
+        },
+        {
+          "type": "brand",
+          "detail": "Wonderboom"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-adjacent crime comedy",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best suited to streamer original, specialty theatrical, or platform-backed comedy-thriller launch."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the script still needs multiple company moves, a dog attack, gunfire, blood effects, a forest chase, and a finale with several speaking roles in one house."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Tom and Freddie both need actors who can play comedy, menace, and panic without flattening the tone, and Kendra needs real physical credibility for the fight beats."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The father-son emotional spine is clear, but the script also asks the audience to track a lot of moving criminal parts, including the drug boss reveal, the hallucinogen twist, and the late Margaret entrance."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Big Lebowski",
+          "year": 1998,
+          "why_it_comps": "The shaggy antihero energy, criminal misunderstanding, and deadpan comic drift through a weirdly specific world are the closest tonal cousin to Tom’s lane."
+        },
+        {
+          "title": "Game Night",
+          "year": 2018,
+          "why_it_comps": "A suburban night gone wrong keeps escalating through clean comic set pieces, with ordinary people trapped in a criminal spiral they barely understand."
+        },
+        {
+          "title": "The Nice Guys",
+          "year": 2016,
+          "why_it_comps": "The father-son-ish buddy friction, crime-comedy momentum, and constant collision between incompetence and real danger fit the script’s engine."
+        },
+        {
+          "title": "Logan Lucky",
+          "year": 2017,
+          "why_it_comps": "Working-class criminal improvisation, regional specificity, and a funny-but-capable ensemble make this a strong packaging neighbor."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like crime comedies with strong character banter, escalating bad decisions, and a little blood on the floor.",
+        "demographics": "25-54, slightly male-skewing but accessible to couples and ensemble-comedy audiences; strongest with viewers who like genre pieces with personality.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest action, practical effects, and a contained cast keep this in indie-feature territory despite the chase and finale escalation."
+      },
+      "lane_fit": {
+        "lane": "streamer-friendly elevated crime comedy",
+        "types_of_buyers": [
+          "streaming originals comedy-thriller buyers",
+          "specialty theatrical distributors",
+          "indie producers looking for a male-led genre swing",
+          "director-driven genre labels",
+          "actor-packaged mid-budget buyers"
+        ],
+        "detail": "This sits naturally in the lane of adult crime comedy with a strong hook, a playable lead role, and enough action to feel like an event without requiring tentpole spend. The Blockbuster/Car 2 Go specificity gives it a marketing angle that feels easy to pitch."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is specific, but there is no clear sequel or spinoff vector beyond this one-day crime spiral."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Blockbuster setting is instantly ownable.",
+          "what_it_means": "That single image gives the movie a marketing hook and a nostalgic visual identity buyers can sell in one sentence. It also gives the script a built-in audience of viewers who respond to dead retail Americana and pop-culture residue.",
+          "evidence": "Tom lives above a dead Blockbuster in a boarded-up strip mall, and the store becomes both his home and his criminal front.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-son dynamic has real commercial warmth.",
+          "what_it_means": "The emotional spine is broad enough to keep the movie from feeling like a pure gag machine, which widens the audience beyond hard genre fans. That makes it attractive to actors and buyers who want a crime-comedy with heart instead of just body count.",
+          "evidence": "Tom’s confession about taking the DUI for Stuart’s mother and the final hug give the chaos a genuine payoff.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces escalate cleanly.",
+          "what_it_means": "Each new complication is legible and cinematic, which makes the script easy to pitch and easy to cut a trailer from. Buyers can see the movie’s rhythm immediately: one bad decision becomes three worse ones.",
+          "evidence": "The body-in-trunk reveal, Bree’s inspection, the corner-store robbery, the highway stop, and the Margaret finale all build on each other.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kendra gives the movie a real action-comedy asset.",
+          "what_it_means": "She expands the movie beyond male banter and gives the finale a physical, crowd-pleasing release valve. That helps the package with female talent and broadens the audience promise.",
+          "evidence": "Kendra’s fight with Freddie and her later takedown of Tanker are among the script’s biggest payoff moments.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is commercially legible.",
+          "what_it_means": "The script knows how to play absurdity without losing stakes, which is exactly what makes crime-comedy packages travel. That balance is attractive to directors who can stage action and to buyers looking for a clean tonal lane.",
+          "evidence": "Tom’s deadpan reactions to the corpse, the probation visit, and the store robbery keep the movie funny even as the danger escalates.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, pitchable crime-comedy with a memorable hook, a nostalgic visual anchor, and a father-son emotional spine that gives the chaos some heart. It feels especially viable as a streamer-friendly indie feature because the locations are contained, the action is practical, and the lead role is a real actor piece."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The third-act drug-boss reveal is a hard pivot.",
+          "detail": "Margaret Cole’s entrance turns the movie from a contained crime-comedy into a larger cartel siege very late in the game. That escalation is fun, but it also changes the movie’s scale and villain language right when the audience has already locked onto Tom, Stu, and Freddie.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Freddie’s function is more engine than person.",
+          "detail": "He’s a strong pursuer, but most of his scenes are built around pursuit, frustration, and escalation rather than a distinct inner life. That keeps the momentum high, but it narrows the role’s long-tail appeal unless the buyer is specifically chasing a volatile antagonist part.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The hallucinogen sequence is a tonal outlier.",
+          "detail": "Tom slipping Devil’s Eyes into Sloane’s tea and Margaret hallucinating into a gunfight is a big comic swing, but it lands as a separate flavor from the rest of the movie’s grounded-crime mechanics. Buyers will notice the tonal jump because it briefly pushes the film into near-surreal territory.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand references need a legal pass.",
+          "detail": "Blockbuster, Car 2 Go, Wal-Mart, Apple Watch, and Wonderboom are all named on the page, and the movie leans on them as part of the joke and the plot mechanics. That is manageable, but it is still a real clearance conversation before greenlight.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s biggest friction is structural, not conceptual: it starts as a tight father-son crime scramble and then widens into a bigger criminal showdown with a late-arriving drug boss. The other buyer-facing note is practical — the named brands are part of the texture, but they will need a legal pass before anyone can move fast."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 73,
+  "tier": "Optionable",
+  "inputTokens": 39036,
+  "outputTokens": 4717,
+  "cost": 0.0505035,
+  "declaredFormat": "Feature film"
+}

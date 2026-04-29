@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:07:18.530Z",
+  "submission_id": "ec206570-3a3e-4386-80bd-a6566b081cd2",
+  "eval_id": "980624e8-7320-4db9-90fe-f195e556365b",
+  "title": "Misery Index",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Tyler Conroy",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, white, rural working-class hunter/outdoorsman."
+    },
+    {
+      "name": "Clem Monroe",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, working-class, unemployed auto worker, family man."
+    },
+    {
+      "name": "Sheriff Hatter",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, law enforcement, rural small-town authority figure."
+    },
+    {
+      "name": "Tom Haster",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, working-class, gun-obsessed, politically agitated father."
+    },
+    {
+      "name": "Debbie Haster",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, working-class mother, alcoholic, small-town wife."
+    },
+    {
+      "name": "Jerry Nash",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens, high-school athlete, working-class youth."
+    },
+    {
+      "name": "Michelle Reed",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens, high-school student, abuse survivor."
+    },
+    {
+      "name": "Pastor Fussel",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, clergy, small-town religious authority."
+    },
+    {
+      "name": "Mayor Granger",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, local politician, self-important civic figure."
+    },
+    {
+      "name": "Deputy White",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, law enforcement, young deputy."
+    },
+    {
+      "name": "Arlo Hawk",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, military, authoritative, physically imposing."
+    }
+  ],
+  "positioning_hook": "In a collapsing small town, a backwoods hunter and a hard-nosed sheriff uncover a government meat program that turns a free picnic into a flesh-eating outbreak.",
+  "cost_usd": 0.056061,
+  "input_tokens": 43860,
+  "output_tokens": 5148,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T05:07:52.266Z",
+  "submission_id": "e2a3f9ad-b9bf-4b55-bcb5-baacd385c84a",
+  "eval_id": "54cc5c66-9d28-4ba8-b669-0c2049a3fc8b",
+  "title": "Slug Life",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Jane",
+      "role_type": "Lead",
+      "demographics": "Woman, 20s, graduate student / Ph.D. candidate, bookish, socially awkward, white or unspecified."
+    },
+    {
+      "name": "Eve",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, influencer / content creator, socially polished, likely white or unspecified."
+    },
+    {
+      "name": "Capp",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, media entrepreneur / producer, polished, charismatic, controlling."
+    },
+    {
+      "name": "Sterling",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s-30s, influencer / on-camera personality, handsome, smug, performatively edgy."
+    },
+    {
+      "name": "Nancy",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s, producer / operator, polished, strategic, media-savvy."
+    },
+    {
+      "name": "Kevin",
+      "role_type": "Supporting",
+      "demographics": "Man, late 20s, grad student colleague, earnest, nerdy."
+    },
+    {
+      "name": "Dr. Buchanan",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s, professor, paternal, institutionally compromised."
+    },
+    {
+      "name": "Betty",
+      "role_type": "Supporting",
+      "demographics": "Woman, 40s, professional friend / legal expert, grounded."
+    },
+    {
+      "name": "Preston",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, meme-driven on-camera personality, edgy, immature."
+    },
+    {
+      "name": "Drew",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s, indie filmmaker / technical operator, world-weary."
+    },
+    {
+      "name": "Jane's Mom",
+      "role_type": "Supporting",
+      "demographics": "Woman, 60s, mother, suburban, practical."
+    },
+    {
+      "name": "Parking Officer Jo",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s, parking enforcement officer, no-nonsense."
+    },
+    {
+      "name": "Desperate Greg",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, nerdy grad student, socially awkward."
+    }
+  ],
+  "positioning_hook": "A Ph.D. candidate infiltrates a viral media cult of brain-slugged influencers to find her missing friend, only to discover the whole operation is built to weaponize attention, fear, and consent.",
+  "cost_usd": 0.0508905,
+  "input_tokens": 36666,
+  "output_tokens": 5198,
+  "status": "wrote:leads_ok"
+}

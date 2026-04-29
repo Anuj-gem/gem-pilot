@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T05:09:08.951Z",
+  "submission_id": "1162922c-7ef2-4f3f-9f9f-3132d9778cda",
+  "eval_id": "161ecca6-096d-4ff9-a574-c177da00b49a",
+  "title": "Hey",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s, morbidly obese, urban working-class, anxiety disorder implied, aspiring writer."
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, student and retail worker, psychologically literate, socially confident."
+    },
+    {
+      "name": "Waiter",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s, service worker."
+    },
+    {
+      "name": "Pharmacist",
+      "role_type": "Supporting",
+      "demographics": "Adult, any gender, service counter worker."
+    },
+    {
+      "name": "Dr. Watson",
+      "role_type": "Supporting",
+      "demographics": "Adult, any gender, physician or therapist voice only."
+    },
+    {
+      "name": "Neighbor",
+      "role_type": "Supporting",
+      "demographics": "Adult, any gender, neighborhood resident."
+    }
+  ],
+  "positioning_hook": "A panic-ridden Uber driver with crippling anxiety finally gets a Tinder match, then has to fight his own mind to make it to the date and send the message that could change his life.",
+  "cost_usd": 0.0299115,
+  "input_tokens": 15438,
+  "output_tokens": 4074,
+  "status": "wrote:leads_ok"
+}

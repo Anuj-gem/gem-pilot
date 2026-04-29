@@ -1,0 +1,342 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Fantasy"
+      ],
+      "tone": "pulpy",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "contemporary",
+        "feature-anchored",
+        "high-concept",
+        "propulsive",
+        "character-driven",
+        "crime",
+        "revenge",
+        "witchcraft",
+        "desert-road"
+      ]
+    },
+    "positioning_hook": "A Nevada detective tracks a vigilante witch in a black Ferrari, only to uncover a Saudi royal vendetta, psychic warfare, and a final showdown that could incinerate a casino full of killers.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The revenge-thriller engine is easy to grasp and the vigilante-killer premise has clear genre appeal, but the witchcraft/royalty/psychic layer narrows the buyer pool. The hook is strongest for elevated genre and exploitation-thriller audiences rather than broad four-quadrant play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands early: a detective chases a woman in a black Ferrari who is killing abusive men, and the mystery deepens into a royal-family and occult backstory. The script is clear about the chase, though the mythology arrives in layers rather than as a single clean premise statement."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Akila is vivid, dangerous, and emotionally legible once her abuse history is revealed, and Steve Mannings gives the story a grounded lawman center. That said, most supporting players function as plot conduits, so the character field is strong at the top but thinner underneath."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a rare mash-up: procedural manhunt, occult revenge, Saudi power politics, and a Ferrari-as-weapon motif. The boldness is real, even if the execution sometimes leans on familiar exposition and blunt dialogue to carry the mythology."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The case escalates through a steady chain of kills, reveals, and reversals, and the casino climax gives the story a clear destination. Some middle sections repeat the same investigative beat—crime scene, record check, new lead—so the propulsion is solid but not relentless."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A psychic witch using a Ferrari to hunt abusers is an immediately ownable image, and the reveal that the pursuit is tied to a royal household and a twin sister adds a fresh twist. The underlying revenge structure is familiar, but the specific combination of elements feels distinctive."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The script builds a workable world around Nevada highways, police procedure, Saudi court intrigue, and Wiccan ritual space. The texture is specific in bursts, but the world mostly serves the chase rather than generating a fully layered social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is a recognizable pulp blend of lurid violence, occult imagery, and dead-serious procedural stakes, with occasional dark humor from Mannings and the cops. It has a strong B-movie voltage that feels intentional rather than accidental."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Akila and Alia’s shared gift, Muhammad’s divided loyalties, and the abuse history under the revenge plot all suggest more emotional material than the surface chase initially promises. The script hints at depth, but it tends to state rather than withhold, so the subtext is present without being especially layered."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Steve and Muhammad create the clearest recurring dynamic, and Akila/Alia gives the story a strong sister axis. Beyond those pairs, most relationships are functional and plot-driven, so the ensemble has energy but not a lot of combinatorial depth."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Steve Mannings",
+        "role_type": "Lead",
+        "demographics": "Male, late 40s, Nevada detective, family man.",
+        "hook": "A plainspoken Nevada detective whose case turns into an international occult manhunt, Steve is the audience surrogate: skeptical, stubborn, and increasingly outmatched by forces he can’t explain. He’s at his best when he’s trying to keep the investigation rational while his family, his jurisdiction, and his sense of control all get pulled apart.",
+        "why_actor_wants_this": "This is the showcase territory of a grounded procedural lead like Josh Brolin in Sicario or Mark Ruffalo in Zodiac — an actor gets to play authority, fatigue, and dawning dread in the same role."
+      },
+      {
+        "name": "Akila",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Middle Eastern identity implied by backstory, psychic/occult abilities.",
+        "hook": "Akila is the script’s engine: a beautiful, lethal vigilante in a black Ferrari who uses seduction, psychic vision, and ritual power to hunt abusive men. Under the menace is a wound that gives the role its charge — she is not random violence, she is violence with a grievance, and the script keeps revealing how much of her rage was manufactured by abuse.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the feral, iconic showcase of Charlize Theron in Monster or Jennifer Jason Leigh in The Hateful Eight — transformation, danger, and a morally charged center that can dominate the frame."
+      },
+      {
+        "name": "Muhammad",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, Saudi royal household insider, Arabic-speaking.",
+        "hook": "Muhammad is the bridge between worlds: insider to the Brohayem household, spiritually connected to Akila, and eventually willing to betray power to stop a larger catastrophe. He carries the story’s moral ambiguity, because he understands the occult rules better than Steve but is never fully trusted by either side.",
+        "why_actor_wants_this": "This is strong supporting-territory in the vein of Benicio del Toro in Sicario or Mahershala Ali in Moonlight — a controlled, watchful role with authority, secrecy, and emotional restraint."
+      },
+      {
+        "name": "Alia",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Middle Eastern identity implied by backstory, Wiccan practitioner, twin sister.",
+        "hook": "Alia is the gentler twin who has chosen restraint, but the script makes her more than a moral contrast: she’s a spiritual counterweight with real power and real fear of what that power can become. Her scenes give the story its most poignant emotional hinge, because she loves Akila while also understanding she may have to stop her.",
+        "why_actor_wants_this": "This is the kind of emotionally loaded supporting role that lets an actor do the quiet devastation of Ruth Wilson in The Affair or Carrie Coon in Gone Girl — tenderness, intelligence, and a late-breaking moral burden."
+      },
+      {
+        "name": "Sergeant Stevens",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, law enforcement supervisor.",
+        "hook": "Stevens is the pragmatic boss trying to keep the case from becoming an international incident while Steve disappears into it. He’s a useful pressure valve for exposition and a steady institutional presence, but the script keeps him in the lane of competent authority rather than deep personal arc.",
+        "why_actor_wants_this": "This is the dependable, scene-stealing authority role that actors like J.K. Simmons or Jeffrey Wright often elevate — dry command, institutional friction, and a chance to play the man in the room who sees the cost first."
+      },
+      {
+        "name": "Abdalmalek",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, Saudi power broker, armed authority figure.",
+        "hook": "Abdalmalek is the hardline face of the royal response: controlled, threatening, and convinced that justice belongs inside his own system. He gives the story a geopolitical antagonist with real leverage, and his scenes sharpen the sense that Akila’s violence is colliding with a much larger machine.",
+        "why_actor_wants_this": "This is the kind of imposing, high-status antagonist role that gives an actor the gravitas of Fares Fares in Chernobyl or Oscar Isaac in Ex Machina — calm menace, authority, and a dangerous sense of entitlement."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one 9-year-old daughter role",
+          "multiple law-enforcement roles",
+          "Middle Eastern/Saudi casting requirements for Brohayem household and Riyadh scenes",
+          "physically attractive, commanding lead for Akila",
+          "twin sister casting for Akila and Alia"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Nevada desert roads",
+          "Saudi palace/interior stand-ins",
+          "casino interior and control room",
+          "hotel room kill scenes",
+          "airport, police station, and private jet interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Invisible/telekinetic effects, disappearing acts, psychic visions, helicopter disturbance, electrical overload/fire sequence, and animal coordination effects in the mountain-lion climax.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunshot deaths, practical blood effects, fire/smoke escalation in the casino, vehicle speed work, and a few body-impact moments.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Ferrari F8 Spider"
+        },
+        {
+          "type": "brand",
+          "detail": "Budweiser"
+        },
+        {
+          "type": "brand",
+          "detail": "Aria Resort & Casino"
+        },
+        {
+          "type": "brand",
+          "detail": "White Pelican casino"
+        },
+        {
+          "type": "brand",
+          "detail": "McCarran International Airport"
+        },
+        {
+          "type": "brand",
+          "detail": "Rambo"
+        },
+        {
+          "type": "real_person",
+          "detail": "Sheik Ali Brohayem"
+        },
+        {
+          "type": "real_person",
+          "detail": "Andrea Phillips"
+        },
+        {
+          "type": "real_person",
+          "detail": "Peterson"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical genre",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical or streaming-original genre launch."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the base spend in check, but the casino fire sequence, helicopter work, animal-heavy mountain climax, and multiple Saudi/Nevada stand-ins push this above a simple contained thriller."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a performer who can sell seductive menace, occult authority, and action credibility, while the Akila/Alia twin requirement and Saudi supporting roles narrow the casting pool."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s central engine depends on balancing procedural crime, occult rules, and royal-family politics, and the mythology is delivered through exposition-heavy dialogue rather than a single clean dramatic spine."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Bone Collector",
+          "year": 1999,
+          "why_it_comps": "A procedural investigator chasing a serial pattern through a city of clues, with the lead forced to interpret increasingly strange evidence."
+        },
+        {
+          "title": "The Gift",
+          "year": 2000,
+          "why_it_comps": "Psychic visions and occult intuition drive the investigation, with violence tied to supernatural perception rather than standard detective work."
+        },
+        {
+          "title": "The Brave One",
+          "year": 2007,
+          "why_it_comps": "A revenge-driven vigilante structure where moral ambiguity is the engine and the audience is asked to track justice versus vengeance."
+        },
+        {
+          "title": "Sicario",
+          "year": 2015,
+          "why_it_comps": "The law-enforcement POV collides with a morally opaque, cross-border power structure that keeps the protagonist out of his depth."
+        },
+        {
+          "title": "The Wailing",
+          "year": 2016,
+          "why_it_comps": "Occult menace, investigative dread, and a protagonist trying to rationalize events that keep slipping into the supernatural."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like elevated revenge thrillers with occult flavor, especially viewers drawn to morally charged antihero stories and lurid mystery.",
+        "demographics": "25-54, slightly male-skewing but with strong female audience potential through Akila’s revenge arc; genre-savvy streaming and specialty theatrical viewers.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary thriller scale with multiple practical locations, moderate VFX, night work, and a few set-piece sequences, but no large-scale action or heavy creature work."
+      },
+      "lane_fit": {
+        "lane": "elevated pulp thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer originals dev execs",
+          "specialty distributors",
+          "indie producers with thriller slates",
+          "director-driven genre labels"
+        ],
+        "detail": "This sits naturally in the lane where a strong hook, a morally complicated female avenger, and a contained but stylish production plan can sell the package. The script’s mix of procedural, occult, and revenge elements makes it attractive to buyers looking for a genre title with a distinct poster image and a clear trailer cut."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: Akila’s story resolves decisively, and no supporting character is developed enough to credibly spin off into a separate franchise entry."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Akila is a killer image.",
+          "what_it_means": "The black Ferrari, tarot cards, and psychic revenge ritual create a trailer-ready protagonist who can sell the movie in a single frame. That is exactly the kind of iconography genre buyers and casting directors respond to when they want a female antihero with a built-in hook.",
+          "evidence": "Akila repeatedly appears in the Ferrari, in purple nails and witch imagery, and kills men with a mix of seduction and ritual certainty.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The revenge target is morally legible.",
+          "what_it_means": "Because the victims are repeatedly identified as abusers, rapists, or violent men, the audience gets an immediate emotional contract for the violence. That clarity makes the premise easier to market than a generic assassin story and gives the script a strong audience-side justification.",
+          "evidence": "The gas-station victim, John Underwood, James Conners, Roy Berg, and others are all tied to sexual abuse or murder records.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The detective POV keeps it playable.",
+          "what_it_means": "Steve Mannings gives the script a grounded entry point that keeps the supernatural material from floating away into pure fantasy. Buyers can see a conventional thriller spine underneath the occult material, which broadens the packaging options.",
+          "evidence": "Mannings’ repeated crime-scene work, family scenes, and skepticism toward Muhammad’s claims anchor the story in procedural language.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The casino climax is a clean set piece.",
+          "what_it_means": "A crowded casino, electrical overload, fire, and a mass-casualty threat give the movie a contained finale with real trailer value. That kind of finale is useful to buyers because it promises scale without requiring a tentpole budget.",
+          "evidence": "Akila channels power into the White Pelican casino’s wiring, trapping the room and igniting the slot machines and walls.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The sister dynamic adds emotional ballast.",
+          "what_it_means": "Akila and Alia give the story a built-in emotional counterweight to the violence, which helps the movie feel less like a one-note revenge engine. That relationship can attract actors who want a role with grief, love, and moral conflict rather than just action.",
+          "evidence": "Alia’s refusal, her visions, and the final goodbye scene with Akila create the script’s most human beat.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a marketable elevated-genre feature with a poster image built in: a psychic vigilante in a black Ferrari, a grounded detective POV, and a finale that can deliver spectacle without tentpole economics. The script’s strongest commercial asset is that it combines a morally legible revenge engine with a distinctive occult hook, which makes it attractive to streamer genre buyers and specialty theatrical players alike."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology is delivered in exposition blocks.",
+          "detail": "The Brohayem backstory, the psychic rules, the twin-sister reveal, and the Saudi power politics are all explained through dialogue-heavy scenes rather than dramatized discovery. That makes the script easier to follow on paper, but it also means the development conversation will center on how much of the lore is carrying the movie versus the chase itself.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle repeats the same investigative beat.",
+          "detail": "Several sequences follow the same pattern: body found, records checked, new clue, new location, new explanation. The case keeps moving, but the repetition creates a buyer-level concern about whether the movie’s momentum is driven by escalation or by successive reveals of the same mechanism.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tone swings from procedural to occult abruptly.",
+          "detail": "The script moves from police banter and crime-scene procedure into tarot visions, telekinesis, animal control, and demonic imagery without much transitional shading. That boldness is part of the appeal, but it also narrows the audience to viewers who are comfortable with a hard genre pivot.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast is mostly functional.",
+          "detail": "Outside of Steve, Akila, Muhammad, and Alia, most characters exist to deliver clues, confirm records, or move the plot to the next location. That keeps the script efficient, but it limits ensemble value and reduces the number of roles that can be used as packaging leverage.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The VFX and animal climax are tier-sensitive.",
+          "detail": "The helicopter disturbance, disappearing acts, electrical fire sequence, and mountain-lion swarm all require effects coordination that is more involved than the rest of the movie’s footprint. The script is still indie-scaled, but those sequences are the first place a producer will test whether the concept can stay inside budget.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is not the hook; it’s the amount of explanation the hook needs to function, especially once the story moves from crime procedural into occult geopolitics. Buyers will also notice that the supporting cast is lean and that the finale’s effects/animal work is the first real budget pressure point."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 61.7,
+  "tier": "Optionable",
+  "inputTokens": 42144,
+  "outputTokens": 4630,
+  "cost": 0.052443,
+  "declaredFormat": "Feature film"
+}

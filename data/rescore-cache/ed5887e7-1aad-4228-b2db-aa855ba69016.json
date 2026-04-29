@@ -1,0 +1,348 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Comedy",
+      "genre_secondary": [],
+      "tone": "whimsical",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "family-dynamics",
+        "identity",
+        "friendship",
+        "small-town",
+        "wharf",
+        "pirate-charter"
+      ]
+    },
+    "positioning_hook": "A quirky harbor-town family scrambles to save their Victorian inn when a salacious guest-party scandal and a predatory developer threaten to blow up their wholesome brand.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is easy to grasp and the family-business stakes are accessible, but the humor is very specific and the sexualized guest-party material narrows the natural audience. The broadest hook is the town's eccentric ecosystem, not a single clean engine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The pilot quickly establishes the Big Harbor world, the Wilson family inn, and the immediate threat from Don Diego's pressure on the property. The hook is clear, though the episode spends a lot of time introducing the town's many moving parts before the central series engine fully locks."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Bob and Nancy have a warm, durable center, Linda has a strong rom-com/workhorse energy, and Debbi's late-blooming intelligence gives the family a useful wildcard. Uncle Jake is vivid, but several supporting players are more color than engine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The pirate-charter uncle, goat-yoga neighbor, techie swingers, and Japanese tourist gag create a very particular comic ecosystem. It feels authored rather than generic, even if the broad sitcom mechanics are familiar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The episode keeps introducing comic set pieces and cross-cutting between storylines, but the main pressure on the Wilsons doesn't fully dominate until late. The final reveal that the website scandal has accidentally saved the business is satisfying, though the middle section is more episodic than escalating."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The family-fun brand colliding with a hidden swingers-party ecosystem is a memorable premise, and the pirate-dog bit is a clean comic signature. Still, the underlying structure is a familiar small-town ensemble with a property-at-risk spine."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Big Harbor feels populated with repeatable businesses, recurring locals, and a tourism economy that can generate stories beyond the pilot. The wharf, B&B, pirate charter, sushi house, seaplane service, and tarot reader all suggest a usable comic map."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a distinct sunny-anarchic tone: wholesome coastal tourism on the surface, sexual farce and family chaos underneath. The voice is consistent and recognizable, even when it leans heavily on broad comedy."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Debbi's return home and her sense that the town is a kind of energy vortex hint at a deeper identity thread, and Bob/Nancy's marriage has lived-in history. But most of the pilot plays its cards openly rather than withholding much beneath the comic surface."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Wilson family has a workable relational engine: siblings, parents, uncle, and staff all generate friction and affection in different combinations. The town regulars add enough connective tissue that scenes can be built around almost any pairing."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Linda Wilson",
+        "role_type": "Lead",
+        "demographics": "Woman, mid-20s, white; family-business operator and front-desk manager.",
+        "hook": "The Wilson daughter who keeps the inn running with charm, hustle, and a permanently braced smile. Linda is the family's social translator, the one who can sell a room, defuse a scandal, and still look like she's one bad text away from panic.",
+        "why_actor_wants_this": "This is the showcase territory of a young Jennifer Aniston in a workplace ensemble — fast, flirty, wounded, and constantly carrying the comic burden of being the responsible one. It gives an actor both romantic-comedy sparkle and the pressure-cooker exasperation of a woman trying to hold a family brand together."
+      },
+      {
+        "name": "Bob Wilson",
+        "role_type": "Supporting",
+        "demographics": "Man, 60s, white; inn owner, family patriarch, and reluctant dreamer.",
+        "hook": "Bob is the calm center of the Wilson operation, a soft-spoken romantic who hides real financial pressure behind a Zen exterior and a taste for theatrical accents. He believes in the place almost to the point of delusion, which makes him both the heart of the family and its most vulnerable member.",
+        "why_actor_wants_this": "This is the kind of role Bob Newhart made singular — dry, understated, and quietly devastating when the mask slips. It gives an actor the pleasure of playing stillness, timing, and late-life dignity under pressure."
+      },
+      {
+        "name": "Nancy Wilson",
+        "role_type": "Supporting",
+        "demographics": "Woman, 60s, white; inn co-owner, matriarch, and emotional manager of the family.",
+        "hook": "Nancy is the warm, perceptive force who keeps the Wilsons from flying apart, even when she is the one most likely to panic first. She runs on affection, intuition, and a practical optimism that can turn into fear the second the family business is threatened.",
+        "why_actor_wants_this": "This is prime Mary Tyler Moore / Jane Kaczmarek territory — a matriarch role that can pivot from comic authority to raw maternal fear in a beat. It gives an actor the chance to play the emotional weather of the whole series."
+      },
+      {
+        "name": "Doug Wilson",
+        "role_type": "Supporting",
+        "demographics": "Man, mid-20s, white; water-taxi operator and family son.",
+        "hook": "Doug is the handsome, slightly overconfident brother who wants to look like he has life figured out even when he clearly doesn't. He is competitive, romantic, and easily rattled, which makes him a reliable source of comic vanity and genuine feeling.",
+        "why_actor_wants_this": "This is the kind of role Chris Pratt used to turn into a star-maker — likable, physical, and emotionally readable without losing the joke. It gives an actor a chance to play charm as a defense mechanism."
+      },
+      {
+        "name": "Debbi Wilson",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 20s, white; college dropout returning home.",
+        "hook": "Debbi comes home with a half-formed future and a sharper mind than her family expects. She reads the town as a system of energies and relationships, which makes her feel both like the odd one out and the person most capable of seeing what Big Harbor could become.",
+        "why_actor_wants_this": "This is a strong late-blooming ingenue role in the mold of a young Zooey Deschanel or Alison Brie — smart, off-center, and quietly transformative. It gives an actor a chance to play awakening, intelligence, and romantic possibility without losing the comic edge."
+      },
+      {
+        "name": "Bill Jones",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s, Black; harbor worker and tech-savvy local.",
+        "hook": "Bill is the steady, observant friend who can fix the problem behind the counter and still keep his distance from the family chaos. He reads as the town's practical adult, but the pilot gives him just enough loneliness and restraint to feel like more than utility.",
+        "why_actor_wants_this": "This is the kind of grounded, scene-stealing support role that lets an actor play competence with a dry comic undercurrent, like a quieter version of Donald Faison in an ensemble. It offers the satisfaction of being the smartest person in the room without ever needing to announce it."
+      },
+      {
+        "name": "Uncle Jake",
+        "role_type": "Supporting",
+        "demographics": "Man, 60s, white; pirate-charter captain with eccentric presentation.",
+        "hook": "Jake is the town's most visible eccentric, a man who has committed so fully to pirate life that the bit has become his identity. Under the costume and ARRGH-speak, though, he's unexpectedly tender, especially when the dog story turns him into the pilot's most sincere caretaker.",
+        "why_actor_wants_this": "This is Christopher Lloyd / John Lithgow eccentric-comic territory — a role that lets an actor go big without losing pathos. It gives a performer a signature character part with real room for physical comedy and emotional surprise."
+      },
+      {
+        "name": "Laura Lee",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s, Asian; restaurant owner and goat-yoga instructor.",
+        "hook": "Laura is the polished entrepreneur who has turned wellness, tourism, and food into one seamless local brand. She is breezy and self-possessed, but the pilot hints at a sharper social intelligence underneath the serene presentation.",
+        "why_actor_wants_this": "This is a Grace Park-style role — composed, attractive, and quietly in command of a room. It gives an actor a chance to play modern small-business authority with a comic twist."
+      },
+      {
+        "name": "Sally Kowalski",
+        "role_type": "Supporting",
+        "demographics": "Woman, 50s, white; seaplane operator and hard-partying local.",
+        "hook": "Sally is the town's chaos engine, a woman who treats sleep and restraint as optional. She is funny because she is so unapologetically over the top, but she also feels like someone who has built a life out of momentum and denial.",
+        "why_actor_wants_this": "This is Rebel Wilson-style comic territory, but with a more lived-in age and edge — a role that lets an actor dominate scenes through appetite and timing. It is a pure personality part with strong recurring value."
+      },
+      {
+        "name": "Don Diego DeLa Vega",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-40s, Latino; L.A. con man and developer pressure point.",
+        "hook": "Don Diego is the polished outsider who arrives with money, leverage, and a predatory smile. He is the pilot's clean external antagonist, but the script keeps him just theatrical enough to feel like a recurring nuisance rather than a one-note villain.",
+        "why_actor_wants_this": "This is a Michael Peña-type role in the sense of fast talk, menace, and comic slipperiness — a part that can be charming while still feeling dangerous. It gives an actor a chance to play the pressure-cooker antagonist with style."
+      },
+      {
+        "name": "Susan",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s, white; Doug's former college flame.",
+        "hook": "Susan is the glamorous complication who walks back into Doug's life with enough confidence to make him forget his own name. She is less a full series engine than a recurring romantic disruptor, but she lands as a vivid comic presence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a sexy, scene-stealing entrance and a long monologue runway, like a guest-star turn designed to reset the room. It offers flirtation, comic storytelling, and the power to derail the lead."
+      },
+      {
+        "name": "Maria Garcia",
+        "role_type": "Supporting",
+        "demographics": "Woman, 20s, Latina; overworked inn and restaurant staffer.",
+        "hook": "Maria is the hardworking young employee who sees more than she says and gets pulled into the family's orbit by necessity. She is practical, observant, and just underwritten enough to feel like a useful recurring piece of the town.",
+        "why_actor_wants_this": "This is a strong supporting utility role with room for comic reaction and romantic subplot energy, the kind of part that can grow into a fan favorite. It gives an actor the chance to play competence under pressure."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 1,
+        "series_regulars": 8,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble with multiple age bands",
+          "one Black male supporting role",
+          "one Asian female supporting role",
+          "one Latino male antagonist",
+          "several roles written with strong comic type specificity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "waterfront harbor town",
+          "Victorian bed-and-breakfast",
+          "pirate charter boat",
+          "restaurant and pub interiors",
+          "beach yoga setup",
+          "hospital room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly title-card style inserts, website/photo overlays, and a few stylized montage moments; no major effects dependency.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical rain, boat movement, and crowd-party coverage; no major stunt package.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Starbucks is referenced by name in the opening montage."
+        },
+        {
+          "type": "brand",
+          "detail": "Seahawks jerseys are prominently featured as a recurring visual gag."
+        },
+        {
+          "type": "brand",
+          "detail": "Greyhound Bus is shown by name."
+        },
+        {
+          "type": "brand",
+          "detail": "French Foreign Legion and CIA are referenced in dialogue as organizations tied to Jake and Susan's backstory."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized ensemble comedy with a town-of-the-week guest-business engine and recurring family/business pressure."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary waterfront production is manageable, but the harbor exteriors, boat work, night party coverage, and animal handling for Mr. Pickles/Long-John add schedule pressure."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The pilot depends on a very specific comic ensemble: a charismatic lead woman, an eccentric older uncle, a grounded family matriarch, and several sharply typed supporting roles that need to pop fast."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The episode introduces a lot of town color and multiple subplots before the central business threat fully takes over, so the buyer conversation will focus on how cleanly the series engine is defined."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Schitt's Creek",
+          "year": 2015,
+          "why_it_comps": "A family-run property under pressure, with comedy built from eccentric locals, romantic complications, and a business that becomes the emotional center of the series."
+        },
+        {
+          "title": "Northern Exposure",
+          "year": 1990,
+          "why_it_comps": "A quirky small-town ensemble where the setting itself is a character and the supporting locals are as important as the lead family."
+        },
+        {
+          "title": "The White Lotus",
+          "year": 2021,
+          "why_it_comps": "The guest-party ecosystem, sexual tension, and class-coded tourism energy echo the way this pilot turns a hospitality setting into a pressure cooker."
+        },
+        {
+          "title": "Kim's Convenience",
+          "year": 2016,
+          "why_it_comps": "A family business comedy with generational friction, immigrant-adjacent service-world texture, and a strong front-counter point of view."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like character-driven ensemble comedies about family businesses, romantic mess, and eccentric small-town ecosystems.",
+        "demographics": "35-64, mixed gender, skewing slightly female; viewers who respond to warm, lightly risqué workplace/family comedy.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$5M",
+        "season_total": "$24M-$40M for an 8-ep season",
+        "note": "A contemporary ensemble with multiple waterfront locations, a recurring boat, night party coverage, and a sizable regular cast points to a mid-tier per-episode spend."
+      },
+      "lane_fit": {
+        "lane": "streaming ensemble comedy",
+        "types_of_buyers": [
+          "streamer comedy development execs",
+          "indie TV production companies",
+          "buyer teams seeking warm adult ensemble fare",
+          "buyers building a small-town service-world slate"
+        ],
+        "detail": "This sits naturally in the lane of adult ensemble comedy with a strong sense of place and a family-business engine. The pilot's mix of wholesome branding, sexual farce, and local-color characters gives it a clear identity for platforms that want comfort-food comedy with a little edge."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone ensemble series; no clear spinoff vector with enough independent depth to anchor a separate project."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The harbor town feels saleable.",
+          "what_it_means": "Big Harbor is not just a backdrop; it is a repeatable comic marketplace with businesses, locals, and tourist traffic that can generate episodes. That gives a buyer a world that can sustain a season without needing a new premise every week.",
+          "evidence": "The opening montage and recurring storefronts — pirate charters, water taxi, seaplane, sushi house, tarot reader, B&B — establish a usable town map immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Linda is a strong series anchor.",
+          "what_it_means": "Her mix of competence, romantic frustration, and family loyalty gives the show a clear emotional center and a role that can carry both plot and tone. That is the kind of part that attracts actors looking for a lead in a warm ensemble rather than a single-note sitcom engine.",
+          "evidence": "She manages the front desk, handles the website crisis, juggles Tom and the family, and becomes the one trying to save the brand when the pictures go live.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has a clean commercial engine.",
+          "what_it_means": "A family-fun business accidentally exposed as a party hotspot is an easy pitch and a strong episode generator. Buyers can immediately see how hospitality, reputation management, and guest chaos can keep producing story.",
+          "evidence": "The Japanese tourists' photos, the tech-party scandal, and the final realization that the website traffic has booked the inn solid all turn the premise into a repeatable engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Uncle Jake is a signature comic asset.",
+          "what_it_means": "The pirate-charter captain and his dog create a memorable, promotable side-world that can recur as a brand within the brand. That kind of vivid supporting character helps marketing and gives the series a mascot-like hook.",
+          "evidence": "Jake's pirate speech, the eye-patched dog, and the hospital reunion with Mrs. O'Toole all make him both absurd and oddly sweet.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has usable chemistry.",
+          "what_it_means": "The family members and town regulars generate friction, affection, and comic triangulation in ways that can support multiple pairings. That matters because ensemble comedies live or die on whether secondary scenes feel alive, not just the lead plot.",
+          "evidence": "Linda/Doug sibling sparring, Bob/Nancy marital warmth, Debbi's return, Bill's quiet competence, and Sally's chaos all create different relational lanes.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a saleable, mid-tier streaming ensemble built around a vivid waterfront world and a lead role with real actor appeal. The pilot's strongest commercial card is that the premise is instantly legible — a wholesome family business threatened by scandal and debt — while the town texture gives buyers a repeatable series engine instead of a one-off joke."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot spends a long time introducing the town.",
+          "detail": "The opening pages move through Jake, Don Diego, the B&B, Laura, Sally, the tourists, and Debbi before the central business threat fully takes over. That gives the episode texture, but it also delays the moment when a buyer feels the series engine lock in around one dominant pressure.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The sexual farce narrows the audience.",
+          "detail": "The tech-party material, swingers-adjacent room coverage, and repeated salacious photo gag push the show away from broad family comedy and toward a more adult, niche lane. That is workable for streaming, but it will be a conversation for any buyer trying to place the show against a broader comfort-comedy slate.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Several supporting roles read as type first.",
+          "detail": "Sally, Laura, Maria, and even Don Diego are vivid on entry, but the pilot mostly uses them as comic functions or local-color markers. That is enough for a pilot, but it means the ensemble's long-term depth will be judged on future episodes rather than the page here.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand threat resolves very cleanly.",
+          "detail": "Once the website scandal accidentally books the inn solid, the financial danger softens into a happy accident. That makes for a satisfying pilot turn, but it also reduces the sense of ongoing jeopardy in the final stretch.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the pilot is rich in color, but it takes a while to arrive at a single, dominant series engine. Buyers will also clock the adult sexual material as a lane-defining choice, which helps identity but narrows the audience."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 67.3,
+  "tier": "Optionable",
+  "inputTokens": 26145,
+  "outputTokens": 5157,
+  "cost": 0.04281525,
+  "declaredFormat": "Series"
+}

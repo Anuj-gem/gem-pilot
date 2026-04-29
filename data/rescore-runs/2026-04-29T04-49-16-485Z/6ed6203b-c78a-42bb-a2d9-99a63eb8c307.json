@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:10:29.445Z",
+  "submission_id": "6ed6203b-c78a-42bb-a2d9-99a63eb8c307",
+  "eval_id": "506a32d4-bed7-4357-92a3-68b8521ffb42",
+  "title": "The Love App",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Jase Jewels",
+      "role_type": "Lead",
+      "demographics": "Black male, late teens to early 20s, former elite baseball prospect, working-class after career collapse"
+    },
+    {
+      "name": "Ron Dupree",
+      "role_type": "Supporting",
+      "demographics": "Black male, 20s, DJ / hustler / best friend"
+    },
+    {
+      "name": "Camilla",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, social-media personality / weather presenter"
+    },
+    {
+      "name": "Lance Kowalski",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s to 30s, software engineer, highly educated, socially awkward"
+    },
+    {
+      "name": "Kendra",
+      "role_type": "Supporting",
+      "demographics": "Black woman, 30s, Jase's older sister, mother of a toddler"
+    },
+    {
+      "name": "Lester Cline",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, sports-news host / media personality"
+    },
+    {
+      "name": "Gabby",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, bartender / paralegal, socially observant"
+    },
+    {
+      "name": "Shilo Kettle",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, wealthy, arrogant, socially dominant"
+    },
+    {
+      "name": "Izzy",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, gym-goer, socially warm"
+    }
+  ],
+  "positioning_hook": "A fallen baseball phenom with a failing heart builds a dating app to chase the woman he lost, only to discover the real match is rebuilding his life, his pride, and his future.",
+  "cost_usd": 0.052928249999999996,
+  "input_tokens": 41297,
+  "output_tokens": 4879,
+  "status": "wrote:leads_ok"
+}

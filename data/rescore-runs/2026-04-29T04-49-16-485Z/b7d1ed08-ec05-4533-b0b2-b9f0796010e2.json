@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:10:53.507Z",
+  "submission_id": "b7d1ed08-ec05-4533-b0b2-b9f0796010e2",
+  "eval_id": "05f2d937-8636-4088-a292-420866f4a012",
+  "title": "Bayou",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Leo Landry",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s to early 30s, Cajun/Louisiana crime-family heir"
+    },
+    {
+      "name": "Vincent Landry",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, Cajun crime patriarch"
+    },
+    {
+      "name": "Biere Landry",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, French sniper cousin"
+    },
+    {
+      "name": "Lydia Marcello",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, Italian-American/New Orleans crime-family daughter"
+    },
+    {
+      "name": "Lola",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Cajun family member"
+    },
+    {
+      "name": "T-Boy",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s, Cajun crew member"
+    },
+    {
+      "name": "Roy",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s, Cajun crew member"
+    },
+    {
+      "name": "Enzo Marcello",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s-60s, New Orleans Italian-American crime boss"
+    }
+  ],
+  "positioning_hook": "A Cajun mafia heir and his sniper cousin race through Gulf Coast bloodshed, smuggling, and a JFK hit-for-hire while protecting the family empire that made them.",
+  "cost_usd": 0.054871500000000004,
+  "input_tokens": 43444,
+  "output_tokens": 4953,
+  "status": "wrote:leads_ok"
+}

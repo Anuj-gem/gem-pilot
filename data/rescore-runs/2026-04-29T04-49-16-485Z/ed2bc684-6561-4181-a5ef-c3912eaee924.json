@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:08:53.625Z",
+  "submission_id": "ed2bc684-6561-4181-a5ef-c3912eaee924",
+  "eval_id": "b86ffc46-6eff-43ae-b701-0ad845e9f204",
+  "title": "Murder Burger",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Cheyenne",
+      "role_type": "Lead",
+      "demographics": "Female, 17, overweight teen, goth-leaning style, working-class, white."
+    },
+    {
+      "name": "Darla",
+      "role_type": "Supporting",
+      "demographics": "Female, late 40s, overweight, working-class mother, white."
+    },
+    {
+      "name": "Nicholas",
+      "role_type": "Supporting",
+      "demographics": "Male, 17, skinny nerd, glasses, socially awkward teen, white."
+    },
+    {
+      "name": "Eric",
+      "role_type": "Supporting",
+      "demographics": "Male, 17, lanky, attractive, teen cook, white."
+    },
+    {
+      "name": "Destiny",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, blonde cheerleader, teen, white."
+    },
+    {
+      "name": "Dirk",
+      "role_type": "Supporting",
+      "demographics": "Male, 17, husky jock, high-school athlete, white."
+    },
+    {
+      "name": "Charlie",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, injured drifter / former Monster Burger survivor, white."
+    },
+    {
+      "name": "Merle",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, store manager / owner, working-class, white."
+    },
+    {
+      "name": "Mrs. Munster",
+      "role_type": "Supporting",
+      "demographics": "Female, elderly, unkempt, local avenger, white."
+    },
+    {
+      "name": "Officer Lee",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, local police officer, white."
+    },
+    {
+      "name": "Sheila",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, pretty brunette teen, white."
+    }
+  ],
+  "positioning_hook": "A bullied teenage fast-food worker survives a murderous night shift at a cursed burger joint, then drives off to hunt the killer who got away.",
+  "cost_usd": 0.0470265,
+  "input_tokens": 33536,
+  "output_tokens": 4861,
+  "status": "wrote:leads_ok"
+}

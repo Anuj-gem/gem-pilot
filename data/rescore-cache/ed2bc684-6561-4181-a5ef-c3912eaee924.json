@@ -1,0 +1,323 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller",
+        "Comedy"
+      ],
+      "tone": "campy",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "low-budget-friendly",
+        "character-driven",
+        "propulsive",
+        "survival",
+        "friendship",
+        "body-shaming",
+        "fast-food",
+        "single-location"
+      ]
+    },
+    "positioning_hook": "A bullied teenage fast-food worker survives a murderous night shift at a cursed burger joint, then drives off to hunt the killer who got away.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is instantly legible and genre-friendly: a teen-nightmare survival setup with a revenge button at the end. The audience is narrower than a mainstream slasher because the humor is crude, the setting is specific, and the lead is written as an outsider rather than a broad wish-fulfillment protagonist."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands in the opening pages: a late-night burger joint, a local murder legend, and a locked-in-night-shift pressure cooker. The script keeps the central question clear throughout — who is in the dumpster, who is killing the staff, and what is the truth behind the old massacre."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Cheyenne has a clear wound, a defensible point of view, and a satisfying anger-release arc, especially in the final decision to chase Nicholas. The supporting teens are vivid but mostly archetypal — the jock, the nerd, the mean girl, the crush — so the character lift is functional more than deeply durable."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a trashy, mean, fast-food horror lane with a strong sense of place and a willingness to lean into ugly social dynamics. The burger-joint mythology and the reveal structure give it a distinctive B-movie identity without feeling generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the night shift starts turning, the script keeps escalating with bodies, reversals, and shifting alliances. It does spend a stretch on teen banter and misdirection before the killer pressure fully locks in, but the back-half momentum is strong and increasingly urgent."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea is simple in the best way: a bullied girl at a burger joint becomes the only person willing to face the monster in the trash. The final twist that the real killer is the nerdy co-worker, not the obvious outsider, gives the premise a satisfying snap."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "Monster Burger feels lived-in through the broken lock, the freezer, the drive-through window, the cheap phone line, and the staff hierarchy. The world is still mostly a container for the night’s events rather than a fully layered social ecosystem, but the restaurant itself has enough texture to carry the feature."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is aggressively juvenile, rude, and knowingly pulpy, with a grindhouse sense of humor under the horror mechanics. The script knows exactly what kind of movie it wants to be, even when the jokes and slurs push it into a very specific, not-for-everyone register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real seeds of class resentment, body shame, neglectful parenting, and social humiliation underneath the mayhem. The script gestures at those layers through Cheyenne and Darla, but it keeps them mostly in service of the horror engine rather than letting them deepen into something more surprising."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The staff and customers generate friction quickly: Cheyenne vs. Dirk, Cheyenne vs. Destiny, Cheyenne vs. Nicholas, and the mother-daughter thread all create usable conflict. The ensemble is not elegant, but it is active, and the shifting alliances keep the room playable."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Cheyenne",
+        "role_type": "Lead",
+        "demographics": "Female, 17, overweight teen, goth-leaning style, working-class, white.",
+        "hook": "Cheyenne is the bullied closing-shift worker who starts the night trying to survive her coworkers and ends it choosing violence on her own terms. She is defensive, observant, ashamed of how others see her, and quietly smarter than the people around her; the script gives her a real turn from passive target to active hunter.",
+        "why_actor_wants_this": "This is the showcase territory of Danielle Macdonald in Patti Cake$ or Kaitlyn Dever in Booksmart when the role lets an actor weaponize hurt, sarcasm, and finally righteous fury. It gives a young performer a full-body transformation: humiliation, fear, comic timing, and a final revenge sprint."
+      },
+      {
+        "name": "Darla",
+        "role_type": "Supporting",
+        "demographics": "Female, late 40s, overweight, working-class mother, white.",
+        "hook": "Darla is Cheyenne’s sloppy, enabling mother, equal parts comic liability and emotional reveal. She’s a drunk, a thief, and a survivor with a buried history at Monster Burger, which makes her more than just a punchline by the end.",
+        "why_actor_wants_this": "This is the kind of role Frances McDormand or Melissa Leo has made memorable in smaller-scale genre work: a messy parent with a hard-earned past and a late reveal that recontextualizes everything. The showcase is contradiction — funny, pathetic, guilty, and unexpectedly central."
+      },
+      {
+        "name": "Nicholas",
+        "role_type": "Supporting",
+        "demographics": "Male, 17, skinny nerd, glasses, socially awkward teen, white.",
+        "hook": "Nicholas starts as the harmless, self-deprecating fry guy and slowly reveals himself as the script’s true predator. His neediness, resentment, and sexual fixation are the engine of the final turn, and the reveal works because he’s been underestimated from the start.",
+        "why_actor_wants_this": "This is the kind of late-turn villain role that lets an actor play awkward charm first and full psychosis later, like Jack Quaid in Scream or a young Michael C. Hall-style pivot from mild to monstrous. The showcase is the reveal: the audience has to buy the mask before it drops."
+      },
+      {
+        "name": "Eric",
+        "role_type": "Supporting",
+        "demographics": "Male, 17, lanky, attractive, teen cook, white.",
+        "hook": "Eric is the self-regarding crush object who thinks he’s above the chaos until the night eats him too. He’s shallow, vain, and not nearly as competent as he believes, which makes him useful as both romantic bait and a casualty of the script’s cruelty.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the chance to play charm, cowardice, and sudden vulnerability in one package, similar to the disposable heartthrob lane in teen slashers. The showcase is the collapse of confidence once the danger becomes real."
+      },
+      {
+        "name": "Destiny",
+        "role_type": "Supporting",
+        "demographics": "Female, 17, blonde cheerleader, teen, white.",
+        "hook": "Destiny is the mean-girl foil who starts as Cheyenne’s social opposite and ends up sharing the same fear, grief, and survival instinct. She’s catty, sexual, and status-conscious, but the script gives her enough volatility to become more than a one-note antagonist.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor pivot from glossy teen cruelty to raw panic, like a slasher-era Rachel McAdams or a sharper version of the mean-girl archetype. The showcase is the emotional whiplash between smugness, lust, and terror."
+      },
+      {
+        "name": "Dirk",
+        "role_type": "Supporting",
+        "demographics": "Male, 17, husky jock, high-school athlete, white.",
+        "hook": "Dirk is the loud, entitled jock whose bullying masks insecurity and appetite. He’s comic, gross, and opportunistic, but the script also lets him become a frightened witness, which keeps him from being purely static.",
+        "why_actor_wants_this": "This is a classic scene-stealing bully role, the kind that lets an actor play swagger, humiliation, and panic in quick succession. The showcase is physical comedy turning into real fear."
+      },
+      {
+        "name": "Charlie",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, injured drifter / former Monster Burger survivor, white.",
+        "hook": "Charlie is the buried past of the restaurant made flesh: the man trapped in the dumpster, then revealed as a wounded survivor with a personal score against the old Monster Burger cover-up. He reads as a threat before becoming a tragic witness and final truth-teller.",
+        "why_actor_wants_this": "This is the kind of late-arriving genre role that gives an older actor a big reveal and a moral pivot, similar to the secret-history survivor in a horror mystery. The showcase is the shift from apparent monster to damaged witness."
+      },
+      {
+        "name": "Merle",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, store manager / owner, working-class, white.",
+        "hook": "Merle is the greasy, dismissive boss who seems like comic dead weight until the old murder tape exposes him as part of the original crime. He’s the kind of small-town authority figure who survives by being underestimated.",
+        "why_actor_wants_this": "This is a juicy character-actor part in the vein of a small-town rotter who can play affable, pathetic, and dangerous. The showcase is the late reveal that the schlubby manager is the real institutional villain."
+      },
+      {
+        "name": "Mrs. Munster",
+        "role_type": "Supporting",
+        "demographics": "Female, elderly, unkempt, local avenger, white.",
+        "hook": "Mrs. Munster is the eerie customer who initially reads as a horror gag and later becomes the script’s revenge endpoint. She carries the old wound of the original massacre and returns with a blunt, blood-soaked purpose.",
+        "why_actor_wants_this": "This is the kind of role that lets an older actor steal the movie in a few scenes, like a horror-mystery avenger with a hidden agenda. The showcase is the surprise authority of an elderly woman who is not there to be dismissed."
+      },
+      {
+        "name": "Officer Lee",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, local police officer, white.",
+        "hook": "Officer Lee is the dry, skeptical lawman who arrives too late but still gets to close the loop. He’s a straight-man presence in a movie full of idiots, and that makes him useful as the final reality check.",
+        "why_actor_wants_this": "This is a compact, scene-stealing authority role in the tradition of the deadpan cop who punctures the chaos at the end. The showcase is comic exasperation with a late burst of competence."
+      },
+      {
+        "name": "Sheila",
+        "role_type": "Supporting",
+        "demographics": "Female, 17, pretty brunette teen, white.",
+        "hook": "Sheila is the off-site girlfriend who becomes part of the final chaos through the phone and the parking lot. She’s not deeply developed, but she functions as a useful witness and a pressure valve for Dirk’s vanity.",
+        "why_actor_wants_this": "This is a small but functional teen-horror support role with a strong final-run energy. The showcase is the reaction beat: panic, confusion, and the sense that she’s just been dragged into a nightmare."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen ensemble with age-specific casting",
+          "Lead requires a performer who can play body shame, sarcasm, and physical fear",
+          "Older supporting roles for Darla, Merle, Charlie, Mrs. Munster, and Officer Lee"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "roughly 70/30 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Single primary restaurant build with back room, freezer, office, dining area, and exterior parking lot",
+          "Night exterior field/parking lot coverage",
+          "Drive-through window and dumpster access are story-critical"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX; all horror beats are practical and performance-driven.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood effects, knife wounds, freezer confinement, body drops, and a few impact beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical genre feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best suited to a streamer original, specialty theatrical, or genre-label release."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly one restaurant build plus parking lot and field exteriors, with practical gore and no VFX burden. The main cost pressure is night shooting and the need for a fully playable Monster Burger set."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Cheyenne has to carry humiliation, comedy, fear, and revenge, while Nicholas needs to pivot from awkward to monstrous without losing believability. The teen ensemble also needs to feel age-true and distinct enough that the bullying dynamics land."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s appeal depends on the audience buying the tonal swing from crude teen comedy into slasher violence and then into a buried-history reveal. The final act reveal of Nicholas and the old murder tape are the key pressure points for clarity and payoff."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Final Girls",
+          "year": 2015,
+          "why_it_comps": "A contained horror-comedy with a self-aware genre engine and a lead who turns pain into survival."
+        },
+        {
+          "title": "Tragedy Girls",
+          "year": 2017,
+          "why_it_comps": "Teen cruelty, dark humor, and a nasty, high-school social ecosystem driving the kills."
+        },
+        {
+          "title": "The Menu",
+          "year": 2022,
+          "why_it_comps": "A single-location pressure cooker where status games and humiliation are as important as the body count."
+        },
+        {
+          "title": "Ready or Not",
+          "year": 2019,
+          "why_it_comps": "A woman under siege in a contained setting, with escalating practical violence and a sharp revenge payoff."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre fans who like nasty, funny, contained horror with a bullied-outsider lead and a revenge payoff.",
+        "demographics": "Skews 18-34, slightly female-leaning, with strong horror-comedy and teen-slasher overlap.",
+        "quadrants": [
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A single restaurant build, a handful of night exteriors, and practical gore keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "contained horror-comedy",
+        "types_of_buyers": [
+          "boutique genre distributors",
+          "streamer original film teams",
+          "indie horror production companies",
+          "specialty theatrical buyers",
+          "mid-budget genre financiers"
+        ],
+        "detail": "This sits naturally in the lane of contained, character-forward horror with a comic edge and a clean hook. The restaurant setting and practical effects make it easy to pitch as a playable, low-friction genre package."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed-night structure and a resolved revenge ending; no clear franchise or spinoff vector beyond the core movie."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Cheyenne is a real lead role.",
+          "what_it_means": "The script gives a buyer a performance-first center that can attract a young actor looking for a breakout. That matters because the movie is not just about kills; it is about a lead who can carry humiliation, anger, and release in one package.",
+          "evidence": "Cheyenne starts as the bullied closer, gets trapped in the freezer, then returns to the dumpster and finally drives after Nicholas in the last shot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Monster Burger setting is playable.",
+          "what_it_means": "A buyer can see the movie immediately, which helps both financing and marketing. The restaurant, freezer, back room, dumpster, and parking lot create a clean contained production footprint that still feels cinematic.",
+          "evidence": "The script repeatedly uses the freezer, back door lock, drive-through window, and parking lot as story engines.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The reveal structure keeps recontextualizing the night.",
+          "what_it_means": "The script has a built-in mystery spine that gives the horror more than one gear. That makes it easier to sell to buyers who want a slasher with a story engine, not just a body count.",
+          "evidence": "The dumpster figure, the fake-outs around the homeless man, the murder tape, and the final Nicholas reveal all shift the audience’s understanding.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble generates friction fast.",
+          "what_it_means": "The script gives the room multiple playable conflict pairs, which is valuable for casting and for keeping the movie alive between kills. Buyers like projects where the supporting cast is not decorative but actively combustible.",
+          "evidence": "Cheyenne’s clashes with Dirk, Destiny, Eric, Nicholas, and Darla all create immediate scene energy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending gives the movie a revenge button.",
+          "what_it_means": "The final drive-off after Nicholas creates a clean audience-satisfaction beat that can help word of mouth. That last image also gives the film a sharper commercial aftertaste than a simple escape ending.",
+          "evidence": "Cheyenne clocks out, gets in her mother’s car, and floors it toward Nicholas in the final shot.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, performance-forward horror feature with a clear hook, a strong lead role, and a production footprint that stays inside indie genre economics. The Monster Burger setting, practical violence, and revenge ending make it easy to package for a streamer, boutique distributor, or specialty theatrical buyer looking for a nasty crowd-pleaser."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The teen banter runs long before the engine locks in.",
+          "detail": "The opening stretch spends a lot of time on workplace teasing, crush dynamics, and gross-out dialogue before the threat fully takes over. That is fine for tone, but it does delay the moment when the movie’s central danger becomes undeniable.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Nicholas’s turn needs the audience to buy the mask.",
+          "detail": "The final reveal depends on Nicholas reading as harmless, needy, and comic for most of the movie, then snapping into a credible killer. That is a narrow casting and performance lane, and it is the movie’s biggest make-or-break character choice.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The slur-heavy comedy narrows the buyer pool.",
+          "detail": "The script leans hard on body-shaming, sexual humiliation, and crude teen insults as its default comic language. That gives the movie a specific edge, but it also makes the tone more polarizing for buyers and audiences outside the horror-comedy lane.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The mystery logic is intentionally messy.",
+          "detail": "The dumpster figure, the fake homeless-man assumption, the old murder tape, and the final Nicholas reveal all work as genre misdirection, but the chain of truth is not especially clean. A producer will notice that the movie is selling vibe and reversals more than airtight procedural logic.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest friction is tonal and structural: it takes a while to fully lock the horror engine, and the whole movie depends on a very specific Nicholas performance to make the final reveal land. The crude comedy is part of the appeal, but it also defines the ceiling on who will buy and who will watch."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 66.3,
+  "tier": "Optionable",
+  "inputTokens": 33536,
+  "outputTokens": 4861,
+  "cost": 0.0470265,
+  "declaredFormat": "Feature film"
+}

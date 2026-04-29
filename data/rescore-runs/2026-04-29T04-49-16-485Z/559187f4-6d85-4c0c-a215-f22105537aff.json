@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T05:08:55.727Z",
+  "submission_id": "559187f4-6d85-4c0c-a215-f22105537aff",
+  "eval_id": "7a2a255b-6310-4e78-94db-4296d864cf15",
+  "title": "Dangerous Spaces",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Jessica Gutierrez",
+      "role_type": "Lead",
+      "demographics": "Latina woman, early 20s, unhoused, queer, artist/housekeeper."
+    },
+    {
+      "name": "Steve Sullivan",
+      "role_type": "Supporting",
+      "demographics": "White man, 50s, homeowner, socially polished, predatory."
+    },
+    {
+      "name": "Mai",
+      "role_type": "Supporting",
+      "demographics": "Asian woman, early 20s, Cambodian, captive, physically damaged."
+    },
+    {
+      "name": "Sheila Sullivan",
+      "role_type": "Supporting",
+      "demographics": "White woman, 40s-50s, Steve’s wife."
+    },
+    {
+      "name": "Agnes",
+      "role_type": "Supporting",
+      "demographics": "Older woman, neighbor."
+    }
+  ],
+  "positioning_hook": "A homeless young housekeeper trapped in a wealthy client’s home discovers he’s a predator using surveillance, isolation, and fertility obsession to turn her into his prisoner.",
+  "cost_usd": 0.046212,
+  "input_tokens": 37544,
+  "output_tokens": 4012,
+  "status": "wrote:leads_ok"
+}

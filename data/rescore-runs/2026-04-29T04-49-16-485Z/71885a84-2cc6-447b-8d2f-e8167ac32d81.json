@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:07:14.361Z",
+  "submission_id": "71885a84-2cc6-447b-8d2f-e8167ac32d81",
+  "eval_id": "54ebe261-3a85-4394-aaca-6618d3bab0e9",
+  "title": "Dad the Dude",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Marty Martin",
+      "role_type": "Lead",
+      "demographics": "Male, late teens, socially awkward high-school student, white."
+    },
+    {
+      "name": "Fletcher Martin",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, biker/DJ, white."
+    },
+    {
+      "name": "Jill Ginther",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, affluent suburban mother, white."
+    },
+    {
+      "name": "Turner Ford",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens, Marty’s friend, white."
+    },
+    {
+      "name": "Rick Stewart",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens, school bully / jock, white."
+    },
+    {
+      "name": "Roland Joffre",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, agent, white."
+    },
+    {
+      "name": "Austin Millhouse",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, wealthy businessman, white."
+    },
+    {
+      "name": "Barb",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, biker girlfriend, white."
+    },
+    {
+      "name": "Jack Resin",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, radio station manager, white."
+    }
+  ],
+  "positioning_hook": "A nerdy teen discovers his estranged DJ father is a local rock god, then gets pulled into a custody war, a biker subculture, and a tank-driven wedding crash.",
+  "cost_usd": 0.054705000000000004,
+  "input_tokens": 42838,
+  "output_tokens": 5017,
+  "status": "wrote:leads_ok"
+}

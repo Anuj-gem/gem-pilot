@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:08:43.734Z",
+  "submission_id": "092eee0a-8eb8-4a25-a716-5c7c0957f44a",
+  "eval_id": "cbdb17da-2443-4439-9610-ea09df9e0846",
+  "title": "Black Ops Girlfriend",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Jasmine Boone",
+      "role_type": "Lead",
+      "demographics": "Woman, 20s-30s, CIA black ops agent; physically elite; emotionally guarded; likely white or multi-ethnic as written."
+    },
+    {
+      "name": "Chrissy White",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, nurse; gentle, non-threatening, emotionally open; cis male with a feminine name as a running character detail."
+    },
+    {
+      "name": "Hastings",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, CIA boss; grizzled, manipulative, morally compromised."
+    },
+    {
+      "name": "Ainsley Marks",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, MI-6 agent; handsome, polished, physically elite, British."
+    },
+    {
+      "name": "Andrews",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s, CIA superior; hard-edged, politically ruthless."
+    },
+    {
+      "name": "Picasso",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s, criminal mastermind; Slavic accent; physically dangerous."
+    },
+    {
+      "name": "Ed White",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s, pediatrician; Chrissy’s father; warm, idealistic, slightly oblivious."
+    },
+    {
+      "name": "Esther White",
+      "role_type": "Supporting",
+      "demographics": "Woman, 60s, retired teacher; Chrissy’s mother; smothering, affectionate, politically soft-edged."
+    },
+    {
+      "name": "Gregorio",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s-30s, criminal muscle; working-class, street-smart."
+    }
+  ],
+  "positioning_hook": "A CIA black ops agent hiding from her own agency falls for a timid nurse with a pack of rescue dogs, then drags him into a runaway war over a Wi-Fi-triggered nuke.",
+  "cost_usd": 0.0658065,
+  "input_tokens": 55024,
+  "output_tokens": 5453,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,351 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_secondary": [
+        "Drama"
+      ],
+      "tone": "raunchy",
+      "tags": [
+        "ensemble",
+        "period-piece",
+        "feature-anchored",
+        "character-driven",
+        "prestige",
+        "satirical",
+        "hollywood",
+        "mexico",
+        "showbiz"
+      ]
+    },
+    "positioning_hook": "A foul-mouthed director corrals a vanity-fueled celebrity circus into a desert shoot where ego, sex, and bad judgment turn a low-budget movie into a full-scale disaster.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is immediately legible as a showbiz farce, and the movie-set chaos gives it a clear comic promise. But the humor is aggressively niche, very R-rated, and built around industry satire that will play strongest with adult movie-savvy audiences rather than broad four-quadrant buyers."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: a director, producer, writer, and a parade of celebrity types are trapped in a disastrous desert production. The script makes the engine obvious fast, and the repeated escalation around the shoot gives the premise a clean, explainable shape."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Benton Calamino, Horace Render, Candy Meyers, and Dave Palmer all have distinct comic identities and strong behavioral contrast. The issue is that most of the supporting players are broad types more than layered people, so the cast pops in scenes but doesn’t always deepen beyond the gag."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "This is a very specific Hollywood satire with a nasty, cartoonish edge and a willingness to go all the way with bodily chaos, vanity, and production absurdity. The desert shoot, the celebrity parade, and the fake-movie-within-the-movie structure give it a confident, ownable comic voice."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps generating set-piece mayhem, so it rarely feels inert. Still, the story is more a chain of comic incidents than a tightening dramatic engine, and the forward drive depends on the next gag rather than a steadily intensifying central objective."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a disastrous celebrity production is familiar, but the execution is unusually specific in its vulgarity, industry in-jokes, and desert-epic scale. It feels fresh enough to stand out, even if the underlying satirical target is recognizable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The world is richly populated with studio executives, star egos, press machinery, and production logistics that keep generating story. The fake movie ecosystem, the entertainment-news framing, and the desert location all create a lived-in showbiz machine with its own rules and status games."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably raunchy, manic, and self-aware, with a cartoon-bad behavior register that never really lets up. It knows exactly what kind of comedy it is and commits to that lane hard."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are hints of a deeper satire about control, image-making, and the machinery of fame, especially through Render and Calamino. But the script mostly plays those ideas as surface-level comic fuel, not as a layered emotional or thematic slow burn."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "This is built on combustible pairings: Calamino/Palmer, Render/Meyers, Calamino/Render, and the various star-versus-crew collisions. Almost any two characters in the same space generate friction, which gives the ensemble real recurring energy."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Benton Calamino",
+        "role_type": "Lead",
+        "demographics": "Male, 30s-40s, male filmmaker, flamboyant, verbally aggressive, sexually insecure, professionally ambitious.",
+        "hook": "A swaggering wunderkind director who talks like a live wire and treats every room like his set. He’s brilliant, abusive, insecure, and weirdly charismatic — the kind of auteur who can sell a disaster as destiny while making everyone around him miserable.",
+        "why_actor_wants_this": "This is the showcase territory of a young Al Pacino in full volcanic mode or Nicolas Cage at his most unhinged — a role built on manic authority, comic volatility, and big, quotable dominance."
+      },
+      {
+        "name": "Horace Render",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, studio executive/producer, middle-aged, controlling, cynical, physically imposing.",
+        "hook": "The producer as predator and pragmatist: a man who speaks in budget math, power plays, and barely concealed contempt. He’s the business brain of the operation, but the script keeps revealing how much of his control is just panic in a suit.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dry, weaponized authority of Gene Hackman in The Royal Tenenbaums or Albert Brooks in Broadcast News — a sharp, scene-owning executive with comic menace and wounded vanity."
+      },
+      {
+        "name": "Candy Meyers",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-40s, assistant/producer’s aide, sharp, sexually assertive, competent, sardonic.",
+        "hook": "Render’s aide who looks like she’s there to take notes and ends up running the room. She’s the script’s smartest operator — cool under pressure, openly transactional, and never as passive as the men assume.",
+        "why_actor_wants_this": "This is prime territory for a Jennifer Jason Leigh or Parker Posey type performance — fast, dry, sexually self-possessed, and funny in a way that turns every line into a power move."
+      },
+      {
+        "name": "Dave Palmer",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-40s, screenwriter, mild-mannered, passive, observant, sexually awkward.",
+        "hook": "The straight man in a world of maniacs, but not a blank one — his passivity becomes its own comic identity. He absorbs abuse, keeps his cool, and quietly becomes the audience’s entry point into the madness.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play deadpan endurance the way Michael C. Hall or Jason Schwartzman can — the showcase is restraint under constant humiliation."
+      },
+      {
+        "name": "Meryl Hepburn",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s-60s, Oscar-winning actress, glamorous, vain, status-conscious.",
+        "hook": "A grande dame who knows exactly how prestigious she is and expects the world to agree. She’s funny because she’s self-regarding without being stupid, and the script gives her a real comic vanity engine.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actress the delicious self-parody and command of status that made roles like Margo Channing or Joan Crawford-style diva parts so durable."
+      },
+      {
+        "name": "Ernest Hepburn",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, husband/pilot, older, reactive, long-suffering.",
+        "hook": "Meryl’s exhausted husband, always one beat behind the chaos and usually paying for it. He’s a comic pressure valve — the man who tries to stay calm while the world around him becomes physically impossible.",
+        "why_actor_wants_this": "This is solid character-actor territory in the vein of a John Mahoney or Richard Jenkins type part — dry reaction work, marital exasperation, and a steady comic undercurrent."
+      },
+      {
+        "name": "Trevor Treason",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, action star, martial-arts trained, intense, vain, physically imposing.",
+        "hook": "A hard-bodied action guy who thinks he’s above the material until the material starts beating him up. He’s all clenched menace and bruised ego, which makes him a great comic target and a credible threat.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the Arnold Schwarzenegger-style self-parody lane or the Dwayne Johnson ‘I’m too serious for this nonsense’ comic flex — physicality plus vanity plus controlled rage."
+      },
+      {
+        "name": "Arvis Clifford",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, playwright, intellectual, bitter, theatrical, self-important.",
+        "hook": "A literary snob who thinks he’s above the movie business until the paycheck gets real. He’s a great satirical foil because he’s both genuinely smart and completely full of himself.",
+        "why_actor_wants_this": "This is a juicy, dialogue-forward role in the tradition of a Philip Seymour Hoffman or Wallace Shawn type performance — verbal superiority, wounded vanity, and comic self-importance."
+      },
+      {
+        "name": "Harth Cookes",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, country star turned movie novice, folksy, vain, commercially branded.",
+        "hook": "A country superstar who treats movie stardom like the next merch line. He’s sweet, clueless, and aggressively branded, which makes him both ridiculous and weirdly lovable.",
+        "why_actor_wants_this": "This is a showcase for a performer who can do charm, musicality, and self-mythologizing in one package — the kind of role that gives someone the comic vanity of a Will Ferrell or Tim McGraw-style turn."
+      },
+      {
+        "name": "Lin Jai",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-40s, international actress, limited English, glamorous, patient, increasingly fed up.",
+        "hook": "An imported star who starts as a polished mystery and becomes one of the film’s clearest victims of the production’s chaos. Her repeated ‘Come again?’ refrain becomes a comic weapon and a sign of how little the set actually respects her.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play elegance under absurdity, with physical comedy and language-based repetition doing the work — a strong showcase for timing and deadpan control."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "large ensemble of celebrity types",
+          "one child role with major stunt/comic exposure",
+          "multiple roles with strong physical-comedy requirements",
+          "some roles depend on specific body type or age-coded star persona"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "desert ghost-town location",
+          "studio lot / production office spaces",
+          "airplane, helicopter, bus, trailer, saloon, dance hall, outhouse",
+          "multiple crowd scenes and press-event setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "A few large-scale gag effects and compositing moments: sinking set, helicopter/dirigible beats, skydiving, sinkholes, and the psycho-cycle finale.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical gags, vehicle chaos, sinkholes, snake handling, porta-potty crash, bodily-fluid effects, and large comic destruction beats.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "B.J. Thomas' 'Raindrops Keep Falling on My Head'"
+        },
+        {
+          "type": "brand",
+          "detail": "Maverick guitar"
+        },
+        {
+          "type": "brand",
+          "detail": "Hollywood Reporter"
+        },
+        {
+          "type": "brand",
+          "detail": "Playing Boy magazine"
+        },
+        {
+          "type": "brand",
+          "detail": "Filofax"
+        },
+        {
+          "type": "brand",
+          "detail": "Z.Z. Top"
+        },
+        {
+          "type": "brand",
+          "detail": "Depends"
+        },
+        {
+          "type": "brand",
+          "detail": "Clearasil"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable / streaming adult comedy",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as an R-rated ensemble comedy for specialty theatrical or streaming-first launch."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary production with a contained desert base, but the script repeatedly asks for helicopters, a sinking set, a psycho-cycle finale, snake work, and multiple crowd/press setups."
+      },
+      "casting": {
+        "level": "high",
+        "note": "The ensemble depends on a very specific comic register: Calamino needs manic authority, Render needs controlled menace, Meyers needs sexual confidence and deadpan intelligence, and several supporting roles are defined by star-persona parody."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The satirical target is clear, but the script plays as a long chain of comic set pieces more than a tightly escalating narrative, so buyer conversations will focus on shape and momentum."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Player",
+          "year": 1992,
+          "why_it_comps": "Shares the Hollywood-insider satire, the parade of industry types, and the pleasure of watching ego and commerce collide inside a movie business ecosystem."
+        },
+        {
+          "title": "Soapdish",
+          "year": 1991,
+          "why_it_comps": "Like this script, it turns showbiz vanity into broad ensemble comedy and keeps the humor rooted in performance, image management, and public humiliation."
+        },
+        {
+          "title": "Bowfinger",
+          "year": 1999,
+          "why_it_comps": "The low-budget movie-making chaos, celebrity delusion, and production-as-disaster engine are closely aligned with this script’s comic DNA."
+        },
+        {
+          "title": "Tropic Thunder",
+          "year": 2008,
+          "why_it_comps": "The self-aware industry satire, star egos, and escalating production mayhem sit in the same adult-comedy lane, even though this script is more desert-farce than action parody."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like insider Hollywood satire, broad R-rated ensemble comedy, and movies that turn production chaos into the joke.",
+        "demographics": "18-49 skew, slightly male-leaning but playable to both genders, strongest with film-industry-aware viewers and comedy fans who like vulgar, high-energy ensemble pieces.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary ensemble comedy with a desert location base, practical gag work, moderate stunt/VFX needs, and a cast that can be built around character actors rather than marquee tentpoles."
+      },
+      "lane_fit": {
+        "lane": "adult ensemble showbiz satire",
+        "types_of_buyers": [
+          "specialty comedy producers",
+          "streamer original-comedy execs",
+          "indie distributors seeking adult-skewing ensemble fare",
+          "director-driven comedy buyers",
+          "character-actor packaging shops"
+        ],
+        "detail": "This sits naturally in the lane of adult, profanity-forward industry satire with a strong ensemble and a clear comic engine. It is especially attractive to buyers who can package around a director with a taste for broad behavior comedy and a cast of recognizable character actors."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the premise is built around one production disaster and does not present a clean sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Hollywood satire is instantly legible.",
+          "what_it_means": "That clarity makes the script easy to pitch and easy to market because the buyer immediately understands the comic target. It is especially attractive to producers and comedians who know the industry from the inside and want a sharp, insider-facing ensemble piece.",
+          "evidence": "The entertainment-news framing, the studio executives, the celebrity parade, and the production meltdown all keep the joke centered on show business itself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Calamino is a big, castable comic engine.",
+          "what_it_means": "A role this loud and contradictory can anchor the whole movie and give a buyer a clear star vehicle. It’s the kind of part that can attract an actor looking to reset perception with a fearless, high-voltage performance.",
+          "evidence": "His nonstop profanity, self-mythologizing, and manic direction style drive nearly every major set piece.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates constant friction.",
+          "what_it_means": "That means the movie has repeatable scene energy, which is valuable for both development and casting because almost any pairing can generate a playable comic beat. Buyers looking for an ensemble with multiple scene-stealers will see a lot of usable material here.",
+          "evidence": "Calamino vs. Palmer, Render vs. Meyers, Calamino vs. Render, and the star-versus-crew collisions keep producing new comic combinations.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are vivid and saleable.",
+          "what_it_means": "The movie has trailer-friendly moments that can sell the tone fast and give marketing a lot of visual ammunition. That helps a specialty buyer or streamer justify the title as a distinctive adult comedy with memorable chaos.",
+          "evidence": "The sinkhole, the snakes, the porta-potty crash, the psycho-cycle finale, and the collapsing movie set all read as big comic moments.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The production footprint is ambitious but not prohibitive.",
+          "what_it_means": "The script feels bigger than a single-room indie but still lives in a controllable contemporary world, which is useful for buyers who want scale without tentpole spend. That makes it a plausible package for a mid-to-upper indie comedy slate.",
+          "evidence": "Most of the action stays in a desert town, trailers, offices, and a few controlled exterior setups, with effects used for gags rather than spectacle.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a sharp, highly marketable showbiz farce with a built-in comic engine: a manic director, a cynical producer, and a celebrity circus all trapped in one disastrous desert shoot. The script’s biggest commercial advantage is that it feels expensive on the page without actually requiring tentpole economics, which makes it attractive to indie comedy buyers and streamer originals looking for a loud, adult ensemble with a clear hook."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The movie is more sketch engine than escalation.",
+          "detail": "A lot of the script’s pleasure comes from one comic set piece after another — interviews, arrivals, gags, and production disasters — rather than from a single pressure that keeps tightening. That makes the buying conversation more about whether the buyer wants a satirical revue than a feature with a hard narrative spine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The ensemble is broad before it is deep.",
+          "detail": "Several supporting players are built as vivid types — the diva, the hick star, the action guy, the intellectual, the assistant — and that works for comedy, but it also means the script leans on persona more than interiority. A producer will see strong casting opportunities, but not a lot of hidden depth beyond the gag.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The vulgarity narrows the buyer pool.",
+          "detail": "The script’s sexual and bodily-fluid comedy is relentless, and the rating profile is firmly mature. That is fine for premium cable or streaming, but it will push away buyers looking for broader theatrical comedy or anything with a cleaner brand lane.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The production gag count adds real scope pressure.",
+          "detail": "Helicopters, snakes, sinkholes, a sinking set, a psycho-cycle finale, and multiple crowd scenes all stack up quickly. None of it reads as impossible, but the script does ask for enough specialty work that a producer will want to plan carefully around practical effects and stunt days.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is structural: the script delivers a lot of comic business, but the feature plays more like a sequence of industry gags than a tightening story engine. Add the mature content level and the practical-effects load, and the project will need a buyer who specifically wants this kind of loud, adult, insider satire."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 74,
+  "tier": "Optionable",
+  "inputTokens": 42832,
+  "outputTokens": 4957,
+  "cost": 0.0544305,
+  "declaredFormat": "Feature film"
+}

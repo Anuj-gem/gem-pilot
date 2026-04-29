@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:07:42.470Z",
+  "submission_id": "d3f1ad8f-b808-4794-8d2c-a16a8b21a713",
+  "eval_id": "ab261a56-7285-4717-9cdd-07ae4029ef34",
+  "title": "Kick Out",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Joe Quan",
+      "role_type": "Lead",
+      "demographics": "Vietnamese man, early 20s, martial artist, working-class family background"
+    },
+    {
+      "name": "Lisa Quan",
+      "role_type": "Supporting",
+      "demographics": "Vietnamese-American woman, college-age to early 20s, law student / aspiring lawyer"
+    },
+    {
+      "name": "Terrance English",
+      "role_type": "Supporting",
+      "demographics": "Hispanic man, 30s-40s, defense attorney"
+    },
+    {
+      "name": "Nancy Kellerman",
+      "role_type": "Supporting",
+      "demographics": "woman, 30s-40s, district attorney"
+    },
+    {
+      "name": "Jacque Richards",
+      "role_type": "Supporting",
+      "demographics": "white man, 30s-40s, inmate, highly trained fighter"
+    },
+    {
+      "name": "Madison",
+      "role_type": "Supporting",
+      "demographics": "black man, older adult, inmate"
+    },
+    {
+      "name": "Simon Firth",
+      "role_type": "Supporting",
+      "demographics": "white man, 40s-50s, lawyer"
+    },
+    {
+      "name": "Juan Perez",
+      "role_type": "Supporting",
+      "demographics": "Hispanic man, 20s-30s, gang leader"
+    }
+  ],
+  "positioning_hook": "A soft-spoken Vietnamese martial artist is framed for murder in a brutal county jail, forcing his sister and a compromised defense lawyer to expose a corrupt prosecution before the inmates kill him first.",
+  "cost_usd": 0.061433249999999995,
+  "input_tokens": 53819,
+  "output_tokens": 4682,
+  "status": "wrote:leads_ok"
+}

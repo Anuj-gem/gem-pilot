@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:10:11.776Z",
+  "submission_id": "05e76c8b-97df-4308-acc3-08fe7f0784aa",
+  "eval_id": "2c9268c4-48a7-4c5e-b03a-c4f8d208cdab",
+  "title": "A Working Girl",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Monica Johnson",
+      "role_type": "Lead",
+      "demographics": "Black woman, late teens to early 20s, working-class, college-bound"
+    },
+    {
+      "name": "Lisa Johnson",
+      "role_type": "Supporting",
+      "demographics": "Black woman, mid-20s, older sister, stripper, pregnant"
+    },
+    {
+      "name": "Jessica",
+      "role_type": "Supporting",
+      "demographics": "Black woman, early 20s, mother, Monica’s friend"
+    },
+    {
+      "name": "Mr. Johnson",
+      "role_type": "Supporting",
+      "demographics": "Black man, middle-aged, father, husband"
+    },
+    {
+      "name": "Mrs. Johnson",
+      "role_type": "Supporting",
+      "demographics": "Black woman, middle-aged, mother"
+    },
+    {
+      "name": "Andre",
+      "role_type": "Supporting",
+      "demographics": "Black man, 20s, romantic lead, working-class"
+    },
+    {
+      "name": "Jordan",
+      "role_type": "Supporting",
+      "demographics": "Black man, 20s, potential love interest"
+    },
+    {
+      "name": "Jeramey",
+      "role_type": "Supporting",
+      "demographics": "Black man, 20s, Lisa’s boyfriend"
+    },
+    {
+      "name": "Big Frank",
+      "role_type": "Supporting",
+      "demographics": "Black man, 20s-30s, local tough"
+    }
+  ],
+  "positioning_hook": "A college-bound young woman from a working-class Black family takes a job at her sister’s strip club to help pay the bills, then gets pulled into a betrayal that blows up her family and her future.",
+  "cost_usd": 0.048528749999999996,
+  "input_tokens": 38611,
+  "output_tokens": 4349,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:09:23.027Z",
+  "submission_id": "05d15352-110f-457d-92af-19e9a5efff50",
+  "eval_id": "eb8620ea-578c-4185-8427-230c75b6697b",
+  "title": "Inception",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Dom Cobb",
+      "role_type": "Lead",
+      "demographics": "Male, 30s-40s, American, professional thief/extractor, father, widower, emotionally compromised"
+    },
+    {
+      "name": "Ariadne",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, architecture student, intelligent, observant, emotionally direct"
+    },
+    {
+      "name": "Arthur",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, American, professional point man, disciplined, skeptical, tactical"
+    },
+    {
+      "name": "Eames",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, British, forger, charming, slippery, worldly"
+    },
+    {
+      "name": "Saito",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, Japanese businessman, powerful, composed, strategic"
+    },
+    {
+      "name": "Robert Fischer",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, heir to a global energy empire, emotionally repressed, vulnerable, privileged"
+    },
+    {
+      "name": "Mal",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, Cobb’s deceased wife, projection, seductive, volatile"
+    },
+    {
+      "name": "Yusuf",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, chemist, practical, eccentric, resourceful"
+    },
+    {
+      "name": "Maurice Fischer",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s-70s, dying patriarch, corporate titan, severe, emotionally withholding"
+    }
+  ],
+  "positioning_hook": "A haunted extractor recruits a dream architect and a crew of specialists to plant an idea inside a corporate heir’s mind, while his dead wife sabotages the job from inside his subconscious.",
+  "cost_usd": 0.06835050000000001,
+  "input_tokens": 60732,
+  "output_tokens": 5067,
+  "status": "wrote:leads_ok"
+}

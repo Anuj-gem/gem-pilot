@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:11:03.288Z",
+  "submission_id": "71eb8055-4441-4940-b26d-53eb31725fea",
+  "eval_id": "dea8b920-2354-4436-887d-51a25ae3bff4",
+  "title": "saved by his grace screenplay converted1",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Reverend Michael Xhosa",
+      "role_type": "Lead",
+      "demographics": "Male, 40s-50s, Zimbabwean/Nigerian background, Christian pastor, father."
+    },
+    {
+      "name": "Dan Xhosa",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, university student, Christian, son of a pastor."
+    },
+    {
+      "name": "Felicia Abia",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to early 20s, university student, Christian."
+    },
+    {
+      "name": "Pastor Bode Cole",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, church leader, husband, father."
+    },
+    {
+      "name": "Deaconess Damilola Cole",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, church leader, wife, mother."
+    },
+    {
+      "name": "Craig Alli",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, university student, pastor’s son."
+    },
+    {
+      "name": "Mark Cole",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, university student, church insider."
+    }
+  ],
+  "positioning_hook": "A former street criminal turned megachurch pastor must protect his son, his ministry, and his own hypocrisy when a campus romance and a hidden HIV diagnosis threaten to expose the life he built on grace.",
+  "cost_usd": 0.05512875,
+  "input_tokens": 46937,
+  "output_tokens": 4428,
+  "status": "wrote:leads_ok"
+}

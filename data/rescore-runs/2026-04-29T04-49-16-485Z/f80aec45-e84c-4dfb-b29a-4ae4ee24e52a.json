@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:11:00.077Z",
+  "submission_id": "f80aec45-e84c-4dfb-b29a-4ae4ee24e52a",
+  "eval_id": "5957b569-d3c2-4a1a-8828-de924e6b3836",
+  "title": "INTO THE MYSTIC",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Brandon",
+      "role_type": "Lead",
+      "demographics": "Male, early 40s, white, short, overweight, nerdy-presenting, working-class, emotionally underloved"
+    },
+    {
+      "name": "Sean",
+      "role_type": "Supporting",
+      "demographics": "Male, early 40s, white, rugged, working-class, sexually restless, emotionally defensive"
+    },
+    {
+      "name": "Derek",
+      "role_type": "Supporting",
+      "demographics": "Male, early 40s, white, polished, handsome, office worker, engaged"
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male, early 40s, white, average-looking, office worker, sarcastic, underachieving"
+    },
+    {
+      "name": "Arianna",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, mermaid queen, maternal authority figure, mythic identity"
+    },
+    {
+      "name": "Treena",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, mermaid, innocent, romantic, emotionally awakening"
+    },
+    {
+      "name": "Tina",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, siren, conflicted, newly self-aware, maternal lineage reveal"
+    },
+    {
+      "name": "Nemeritias",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, siren queen, authoritarian, mythic antagonist"
+    },
+    {
+      "name": "Thanos",
+      "role_type": "Supporting",
+      "demographics": "Male, ageless/immortal, serpent-like, mythic antagonist, human disguise"
+    }
+  ],
+  "positioning_hook": "A broke Miami slacker on a boys’ fishing trip washes up on a hidden island of mermaids and sirens, where he must fight dead pirates, survive a bloodline war, and decide what kind of man he wants to become.",
+  "cost_usd": 0.05835675,
+  "input_tokens": 48199,
+  "output_tokens": 4935,
+  "status": "wrote:leads_ok"
+}

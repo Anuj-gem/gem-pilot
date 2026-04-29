@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T05:10:51.506Z",
+  "submission_id": "65f5520d-7efc-4932-a423-15a9d98fed73",
+  "eval_id": "d0120b9e-edc2-47c4-a667-8f8502dddccf",
+  "title": "Risaldi",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Smith",
+      "role_type": "Lead",
+      "demographics": "Male, mid 40s, Catholic, white, grieving father, working-class-to-middle-class, emotionally repressed but volatile"
+    },
+    {
+      "name": "Jodie Jefferson",
+      "role_type": "Supporting",
+      "demographics": "Female, late 30s, Catholic background, police officer, Jacob’s sister, emotionally guarded"
+    },
+    {
+      "name": "Ethan Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, criminal family member, morally conflicted, younger brother/half-brother within the Risaldi clan"
+    },
+    {
+      "name": "Victor Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, late 60s, patriarch, criminal leader, cold, controlling, physically imposing"
+    },
+    {
+      "name": "Martin Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, criminal enforcer, sadistic, volatile, theatrical"
+    },
+    {
+      "name": "Frankie Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s to early 30s, criminal family member, calmer than his brothers, emotionally dependent"
+    },
+    {
+      "name": "Edward Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, physically imposing, criminal enforcer, brutal, taciturn"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s, priest, compassionate, wise, Catholic clergy"
+    },
+    {
+      "name": "Marcus Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, 8-11, child, criminal family member, emotionally vulnerable"
+    },
+    {
+      "name": "Alicia",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 50s, Victor’s wife, former stripper, emotionally abused, maternal"
+    },
+    {
+      "name": "Dr. Owens",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 30s, therapist, professional, empathetic"
+    },
+    {
+      "name": "Captain Ricks",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, police captain, hard-edged, pragmatic"
+    },
+    {
+      "name": "Chief Pitts",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s, police chief, experienced, respected, exhausted"
+    },
+    {
+      "name": "Officer Daniels",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, police officer, grizzled, observant"
+    },
+    {
+      "name": "Mayor Adams",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s, mayor, charismatic, political, public-facing"
+    }
+  ],
+  "positioning_hook": "A grieving Catholic father hunts the crime family that butchered his wife and children, but every step toward revenge drags him deeper into the same moral ruin he’s trying to escape.",
+  "cost_usd": 0.06695925,
+  "input_tokens": 52775,
+  "output_tokens": 6084,
+  "status": "wrote:leads_ok"
+}

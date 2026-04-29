@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:11:05.963Z",
+  "submission_id": "b5115bb2-3402-4f5e-81c5-6ece2c67d420",
+  "eval_id": "18d6c1c4-206e-486b-89e3-1bbddf8e59d5",
+  "title": "Life In Space 5 1",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Kyle Russell",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s to early 30s, African-Caucasian-Jewish background as described in the script."
+    },
+    {
+      "name": "Stanley Simmons",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s to early 30s, German-English-Australian-American background as described in the script."
+    },
+    {
+      "name": "Michael Olsson",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s to early 30s, African-Arabian-Asian-Irish background as described in the script."
+    },
+    {
+      "name": "Catherine Sand",
+      "role_type": "Supporting",
+      "demographics": "Female, late 20s to late 30s, executive banker."
+    },
+    {
+      "name": "Dr. Lake Gore",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged to older, astronomy professor and inventor."
+    },
+    {
+      "name": "Charles Russell",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s to 60s, father of Kyle, National Space Agency president."
+    },
+    {
+      "name": "Jane Russell",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s to 60s, mother of Kyle."
+    }
+  ],
+  "positioning_hook": "Three childhood friends launch a nine-year mission to explore the solar system, only to discover the voyage was engineered by cosmic powers and their return to Earth may cost them everything they left behind.",
+  "cost_usd": 0.059963249999999996,
+  "input_tokens": 52279,
+  "output_tokens": 4612,
+  "status": "wrote:leads_ok"
+}

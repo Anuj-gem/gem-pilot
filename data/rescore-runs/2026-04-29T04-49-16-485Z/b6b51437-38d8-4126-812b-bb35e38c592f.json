@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T05:09:39.702Z",
+  "submission_id": "b6b51437-38d8-4126-812b-bb35e38c592f",
+  "eval_id": "406c7b7c-b16e-476a-bfbe-92f92303dee7",
+  "title": "Fleabag",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Fleabag",
+      "role_type": "Lead",
+      "demographics": "Woman, late 20s to early 30s, London-based, financially precarious, sexually open, emotionally avoidant."
+    },
+    {
+      "name": "Claire",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s to early 40s, sister, professionally successful, image-conscious, likely upper-middle-class."
+    },
+    {
+      "name": "Dad",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s to 60s, widower, emotionally avoidant, remarried."
+    },
+    {
+      "name": "Harry",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, ex-boyfriend, emotionally available, socially awkward, physically affectionate."
+    },
+    {
+      "name": "Boo",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s to 30s, best friend, dead by the time of the pilot, formerly co-owned the café."
+    },
+    {
+      "name": "Godmother",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s to 60s, father's partner, socially polished, artistically self-regarding."
+    }
+  ],
+  "positioning_hook": "A self-sabotaging London café owner lurches through sex, family, and grief while trying to keep her life together long enough to ask for help.",
+  "cost_usd": 0.029000249999999998,
+  "input_tokens": 15393,
+  "output_tokens": 3879,
+  "status": "wrote:leads_ok"
+}

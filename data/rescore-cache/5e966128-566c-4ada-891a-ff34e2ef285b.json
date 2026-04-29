@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Horror",
+        "Drama"
+      ],
+      "tone": "eerie",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "slow-burn",
+        "coming-of-age",
+        "family-dynamics",
+        "friendship",
+        "small-town",
+        "supernatural"
+      ]
+    },
+    "positioning_hook": "When a small-town boy vanishes after a night of Dungeons & Dragons, his mother, friends, and a hard-bitten sheriff collide with a hidden nightmare bleeding through Hawkins.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 9,
+        "reasoning": "The hook is instantly legible and broadly saleable: missing child, terrified mother, kids in over their heads, and a supernatural threat that escalates fast. The pilot also has a built-in four-quadrant nostalgia engine through the kids, the family drama, and the horror mystery."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise lands immediately in the cold open and never lets go: a boy disappears, the town starts to fracture, and something inhuman is moving underneath the ordinary world. The D&D framing, the search for Will, and the parallel government/quarantine thread make the engine easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Mike, Joyce, Hopper, Nancy, Jonathan, Dustin, Lucas, and Eleven all have clear emotional functions and distinct voices, especially in the family and kid-group dynamics. The pilot still centers more on situation and ensemble chemistry than on a single deeply singular lead engine, but the cast is durable."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldness is in how it fuses suburban 1980s realism, kid-adventure language, and genuine horror without flattening any of them. The D&D vocabulary, the government quarantine imagery, and the domestic scenes with Joyce and Hopper give it a confident identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 9,
+        "reasoning": "The pilot is relentlessly propulsive: Will disappears, the search widens, Eleven enters the story, and the final moments keep tightening the noose. Nearly every scene either advances the mystery or deepens the emotional stakes, which is why it reads like a true pilot engine."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea is familiar in the best way — missing kid, secret government, monster in the dark — but the kid-group POV and 1980s texture make it feel fresh and immediately ownable. The D&D campaign opening is a particularly strong signature move because it turns genre play into story grammar."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Hawkins feels socially specific: school hierarchy, family strain, police skepticism, local gossip, and the lab/quarantine layer all create a living ecosystem. The world is not just a backdrop; it generates story through the town’s institutions and the kids’ subculture."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unusually precise: earnest kid-adventure, domestic grief, and creeping horror all coexist without canceling each other out. The script knows exactly when to be funny, when to be tender, and when to go cold."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot suggests a much larger mythology without over-explaining it, especially through Eleven, the lab, and the creature glimpsed only in fragments. There’s real depth in the emotional wounds too — Joyce, Hopper, Jonathan, and Nancy all point to longer arcs beyond the immediate disappearance."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 9,
+        "reasoning": "The kid trio, the Wheeler household, Joyce and Hopper, and the Jonathan/Nancy/Steve triangle all generate recurring friction and playable scenes. This is an ensemble where multiple pairings can carry episodes, not just a single protagonist orbit."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Mike Wheeler",
+        "role_type": "Lead",
+        "demographics": "white male, preteen/early teen",
+        "hook": "Mike is the emotional and tactical center of the kids’ search, a loyal, stubborn kid who treats friendship like a mission and imagination like a survival tool. He’s funny, bossy, and deeply invested in the rules of the game, which makes his panic over Will feel immediate rather than generic.",
+        "why_actor_wants_this": "This is the showcase territory of Finn Wolfhard in Stranger Things — a young performer gets to play command, fear, loyalty, and comic timing in the same role, with real scene-driving authority."
+      },
+      {
+        "name": "Joyce Byers",
+        "role_type": "Supporting",
+        "demographics": "white female, 30s-40s, working-class mother",
+        "hook": "Joyce is a mother running on instinct and exhaustion, and the pilot makes her certainty about Will feel more credible than the town’s skepticism. She’s frantic without being flimsy, and the script gives her the kind of emotional voltage that can carry whole episodes.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Fargo — a grounded, emotionally specific parent role where fear becomes action and the performance lives in the pressure of ordinary life breaking open."
+      },
+      {
+        "name": "Jim Hopper",
+        "role_type": "Supporting",
+        "demographics": "white male, 40s-50s, small-town sheriff",
+        "hook": "Hopper is a worn-down local authority figure who hides his competence under sarcasm, coffee, and contempt for bureaucracy. The pilot lets him be funny, skeptical, and slowly alarmed, which gives the role a strong engine for a long-running investigation.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a weathered investigator role that lets an actor turn attitude, weariness, and intelligence into a signature presence."
+      },
+      {
+        "name": "Nancy Wheeler",
+        "role_type": "Supporting",
+        "demographics": "white female, teen",
+        "hook": "Nancy is smart, socially alert, and already splitting between the person she is and the person her new boyfriend expects her to be. The script uses her as both a teen-world anchor and a pressure point in the family story, which gives her real series utility.",
+        "why_actor_wants_this": "This is the showcase territory of Keri Russell in Felicity — a young woman role where intelligence, romantic confusion, and self-definition all play at once."
+      },
+      {
+        "name": "Jonathan Byers",
+        "role_type": "Supporting",
+        "demographics": "white male, late teen/early 20s",
+        "hook": "Jonathan is the quiet, burdened older brother carrying adult responsibility before he’s ready for it. He’s observant, isolated, and emotionally restrained, which makes him a strong counterweight to the louder kid energy around him.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Dano in Little Miss Sunshine — a restrained, interior role that rewards subtlety, longing, and the ache of being the responsible one."
+      },
+      {
+        "name": "Eleven",
+        "role_type": "Supporting",
+        "demographics": "female, child, identity obscured",
+        "hook": "Eleven is a frightened, mysterious child with almost no social context and a dangerous amount of narrative gravity. The pilot turns her into a living question mark, and that mystery is the engine of her appeal.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve — a role built on controlled mystery, vulnerability, and the ability to make silence feel loaded."
+      },
+      {
+        "name": "Dustin Henderson",
+        "role_type": "Supporting",
+        "demographics": "white male, preteen/early teen",
+        "hook": "Dustin is the smartest comic pressure valve in the kid group, skeptical enough to be useful and funny enough to keep the show buoyant. He’s not just a sidekick; he’s a recurring engine for banter, logic, and fear.",
+        "why_actor_wants_this": "This is the showcase territory of Tony Hale in Arrested Development — a role where comic specificity and emotional sincerity can coexist in every scene."
+      },
+      {
+        "name": "Lucas Sinclair",
+        "role_type": "Supporting",
+        "demographics": "black male, preteen/early teen",
+        "hook": "Lucas is the skeptical, practical member of the kid group, the one most likely to challenge Mike’s instincts and keep the search grounded. He gives the ensemble a sharper edge and a real argumentative rhythm.",
+        "why_actor_wants_this": "This is the showcase territory of Donald Glover in Community — a role that gets to be the smart skeptic inside a larger ensemble machine."
+      },
+      {
+        "name": "Steve Harrington",
+        "role_type": "Supporting",
+        "demographics": "white male, teen",
+        "hook": "Steve is the polished, smug boyfriend with enough charm to be dangerous and enough immaturity to be a problem. He’s a clean social antagonist for Nancy’s storyline and a useful pressure source in the teen world.",
+        "why_actor_wants_this": "This is the showcase territory of Penn Badgley in Gossip Girl — a role that lets an actor weaponize charm, vanity, and social dominance."
+      },
+      {
+        "name": "Will Byers",
+        "role_type": "Supporting",
+        "demographics": "white male, preteen",
+        "hook": "Will is the missing center of gravity, present through absence and through the fear he leaves behind. Even with limited direct screen time, the pilot makes him feel like the emotional and mythic trigger for the whole series.",
+        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room — a child role where vulnerability and absence become the audience’s emotional anchor."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "multiple child and teen roles",
+          "one child role with limited but emotionally load-bearing screen time",
+          "ensemble requires strong period-appropriate teen chemistry",
+          "supporting adult roles skew 30s-50s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "1980s small-town American setting",
+          "school interiors",
+          "police station",
+          "government/lab facility",
+          "suburban homes",
+          "wooded exterior search areas"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Creature presence, dimensional effects, and selective supernatural imagery; most of the pilot is practical and character-based, but the monster and lab material require visible VFX support.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical creature effects, lights/power-outage effects, containment/quarantine dressing, and atmospheric effects for the lab and supernatural beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Dungeons & Dragons is a named game system and the pilot uses it as a structural and dialogue element."
+        },
+        {
+          "type": "brand",
+          "detail": "Poltergeist is specifically referenced as a movie title in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "X-Men is specifically referenced in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Lord of the Rings and The Hobbit are specifically referenced in dialogue."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming supernatural mystery",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mystery with a kid-group investigation engine, family drama, and a supernatural mythology thread."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The 1980s period setting, creature work, lab/quarantine material, and multiple night exteriors will keep this above a simple contemporary drama, though the pilot remains far from effects-heavy spectacle."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The child ensemble has to click immediately, and Eleven is a particularly narrow ask because the role depends on vulnerability, mystery, and physical specificity more than dialogue volume."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s mystery is clear, but the buyer will want confidence that the Hawkins lab, Eleven, and the creature mythology all stay in productive balance across the series."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Twin Peaks",
+          "year": 1990,
+          "why_it_comps": "Small-town mystery, eerie atmosphere, and a community slowly realizing something impossible is under the surface."
+        },
+        {
+          "title": "Freaks and Geeks",
+          "year": 1999,
+          "why_it_comps": "Teen ensemble specificity, period texture, and the feeling that every social interaction matters."
+        },
+        {
+          "title": "The X-Files",
+          "year": 1993,
+          "why_it_comps": "A serialized supernatural investigation with government secrecy and a case that keeps widening."
+        },
+        {
+          "title": "Wayward Pines",
+          "year": 2015,
+          "why_it_comps": "A town-scale mystery where the audience is asked to trust that the ordinary setting is hiding a larger, darker system."
+        },
+        {
+          "title": "Dark",
+          "year": 2017,
+          "why_it_comps": "A missing-child mystery that expands into a layered mythology and depends on ensemble relationships across generations."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who want a suspenseful supernatural mystery with strong kid and family dynamics, especially adults who respond to 1980s nostalgia and genre-forward ensemble storytelling.",
+        "demographics": "Broad adult audience with a strong 18-49 skew; especially male and female viewers who like mystery, horror, and nostalgia-driven ensemble series.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "premium",
+        "range": "",
+        "per_episode": "$10M-$14M/ep",
+        "season_total": "$80M-$112M for an 8-ep season",
+        "note": "Premium-series pricing reflects the period setting, child ensemble, creature/VFX needs, and the expectation of a polished 1980s production design package."
+      },
+      "lane_fit": {
+        "lane": "premium streaming supernatural mystery",
+        "types_of_buyers": [
+          "streamer originals teams building genre franchises",
+          "premium cable drama buyers with horror tolerance",
+          "executive producers looking for prestige-genre crossover material",
+          "buyers seeking youth-skewing ensemble IP with adult appeal"
+        ],
+        "detail": "This sits naturally in the lane of elevated, serialized genre with strong nostalgia and emotional accessibility. The pilot has enough mystery, character, and period texture to attract buyers who want both bingeability and cultural conversation."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a true spinoff engine; the supporting cast is strong, but no side character or alternate timeline is yet functioning as a separate franchise vector on the page."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The cold open is a perfect genre promise.",
+          "what_it_means": "It gives the buyer an immediate sense of the show’s engine and makes the pilot easy to sell in one sentence. That kind of instant readability is exactly what streamers and genre buyers want when they’re scanning for a new event series.",
+          "evidence": "The D&D game turns into a real monster encounter before the story cuts to the missing-child mystery.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The kid ensemble has real chemistry.",
+          "what_it_means": "That creates repeatable episode energy and gives the series a durable social engine beyond the central mystery. Buyers looking for youth-skewing ensemble shows will see a cast that can carry both banter and danger.",
+          "evidence": "Mike, Dustin, Lucas, and Will’s game-night banter and search planning feel specific and playable.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joyce and Hopper give the show adult gravity.",
+          "what_it_means": "The series can play to both younger and older viewers because the emotional stakes are not confined to the kids. That broadens the buyer pool and makes the show feel less like a niche genre piece.",
+          "evidence": "Joyce’s certainty about Will and Hopper’s skeptical but increasingly engaged investigation anchor the adult side of the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The period texture is commercially useful.",
+          "what_it_means": "The 1980s setting gives the show a built-in identity, a marketing hook, and a production design signature that helps it stand apart in a crowded genre field. Buyers know how to position a period genre series when the world feels this specific.",
+          "evidence": "The AV club, Poltergeist, X-Men, ham radio, and school-life details all lock the pilot into a vivid era.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The mythology is withheld with discipline.",
+          "what_it_means": "The pilot suggests a larger world without over-explaining it, which is a strong binge driver and a good sign for serialized mystery buyers. That restraint keeps the audience leaning forward instead of feeling front-loaded with exposition.",
+          "evidence": "Eleven, the lab quarantine, and the creature glimpses are introduced as fragments rather than full answers.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a premium-streaming supernatural mystery with real event-series packaging: a child-led hook, a strong adult emotional spine, and a period world that gives the buyer instant brand identity. The pilot is both commercially legible and production-aware enough to feel like a serious greenlight conversation, not just a good read."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The period package will carry the bill.",
+          "detail": "The 1980s setting, production design, wardrobe, and music-adjacent texture all push this above a simple contemporary mystery. It is still very buyable, but the buyer is signing up for a premium-series spend profile rather than a lean genre play.",
+          "is_primary_lever": true,
+          "source": "production"
+        },
+        {
+          "area": "Eleven is a narrow casting ask.",
+          "detail": "The role depends on a very specific mix of fear, blankness, and latent power, and the pilot gives her limited dialogue to do it with. That makes the casting conversation more conditional than the rest of the ensemble.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The mythology is still mostly promise.",
+          "detail": "The Hawkins lab, the creature, and the quarantine imagery are compelling, but the pilot is still selling the larger system more than cashing it in. Buyers will like the mystery, but they will also note how much of the series engine is still being held back.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The named IP references need a legal pass.",
+          "detail": "Dungeons & Dragons is structurally embedded in the opening, and the dialogue also names Poltergeist, X-Men, Lord of the Rings, and The Hobbit. None of that is a deal-breaker, but it is real clearance work before greenlight.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is cost and clearance: this is a premium-period series with creature/VFX needs, child casting, and a handful of named IP references that will need legal attention. The creative package is strong enough to justify that conversation, but buyers will still price the show as a serious commitment rather than a light lift."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 86.3,
+  "tier": "Greenlight Material",
+  "inputTokens": 18012,
+  "outputTokens": 4641,
+  "cost": 0.0343935,
+  "declaredFormat": "Series"
+}

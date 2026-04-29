@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:08:06.314Z",
+  "submission_id": "5d12d406-128b-42c8-9eef-87a41bc59181",
+  "eval_id": "2822fc3e-7c5e-493d-ac86-6586e9717689",
+  "title": "Stalker",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Caroline Walker",
+      "role_type": "Lead",
+      "demographics": "Female, 20s, college student, orphan/foster-care background."
+    },
+    {
+      "name": "Alice Hewitt",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, college student, psychology-track, roommate/best friend."
+    },
+    {
+      "name": "Shane Morris",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, college student, overweight, socially affable."
+    },
+    {
+      "name": "Damon Lewis",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, college-age, ex-boyfriend, bad-boy presentation."
+    },
+    {
+      "name": "Mark Sanders",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, college professor/teacher, authority figure."
+    },
+    {
+      "name": "Erik Ross",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, campus security, injured/limping, former cop."
+    },
+    {
+      "name": "Brooke Taylor",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, college student, ex-girlfriend, socially sharp."
+    },
+    {
+      "name": "Tanya Wilfred",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, college student, party host, roommate."
+    },
+    {
+      "name": "Dean Fraser",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, college dean, institutional authority."
+    },
+    {
+      "name": "Detective Mathews",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, detective, stubborn, law-enforcement authority."
+    }
+  ],
+  "positioning_hook": "A college writer is terrorized by a secret admirer, then discovers the stalking, the death, and the campus cover-up all point back to the people closest to her.",
+  "cost_usd": 0.05352225000000001,
+  "input_tokens": 42701,
+  "output_tokens": 4777,
+  "status": "wrote:leads_ok"
+}

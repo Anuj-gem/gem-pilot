@@ -1,0 +1,321 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Mystery",
+        "Drama"
+      ],
+      "tone": "tense",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "grief",
+        "survival",
+        "college-campus",
+        "stalker",
+        "twist-reveal"
+      ]
+    },
+    "positioning_hook": "A college writer is terrorized by a secret admirer, then discovers the stalking, the death, and the campus cover-up all point back to the people closest to her.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has an immediate hook — stalking, campus danger, and a whodunit engine — that gives it a clear thriller audience. The appeal is narrower than a broad four-quadrant play because the material is dialogue-heavy, campus-specific, and leans on twist mechanics rather than a big external spectacle."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The script announces its engine early with the letters, panties, and secret-admirer notes, then keeps tightening the mystery around Caroline’s social circle. The final reveal stack is clear, though the story spends a long stretch juggling suspects before the true pattern fully locks in."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Caroline, Alice, Shane, Damon, and Mark each have a distinct social function, and Alice in particular has a sharp, scene-driving intelligence. The characters are effective in the moment, but only Caroline and Alice feel fully durable as lead-level roles; the others are more plot-positioned than deeply surprising."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The campus-stalker setup is familiar, but the script adds a layered misdirection structure and a late-game identity reversal that gives it some bite. The boldest choice is the emotional betrayal inside the friend group, though the execution still lives in recognizable thriller territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The note deliveries, party escalation, dorm break-ins, and successive confrontations keep the story moving with a steady sense of threat. The back half is especially active once the investigation turns inward, though the middle section repeats suspicion beats before the reveal engine fully pays off."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The script’s strongest originality comes from making the stalker mystery emotionally intimate rather than procedural, with the campus friend group functioning as the pressure cooker. It is fresh enough to feel ownable, but the underlying structure still tracks as a familiar obsessive-thriller pattern."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The college setting is specific, with dorm politics, campus security, class pressure, and party culture all feeding the plot. Still, the world mostly serves as a container for the mystery rather than a fully self-generating social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script sits in a tense, soapier thriller register with bursts of dark humor from Alice, Shane, and Damon. That blend is workable and readable, but it is not yet so singular that the tone itself becomes the calling card."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The orphanage/foster-home material, the repeated references to abandonment, and Erik’s history with Shane give the story a deeper emotional substrate than the surface stalker plot suggests. The final reveal that the protector has been complicit adds a strong aftertaste and suggests more thematic weight than the early scenes advertise."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Caroline-Alice, Caroline-Thomas, Caroline-Damon, and Alice-Shane dynamics all generate playable scenes, and the campus friend group gives the script recurring friction. The ensemble is strong enough to sustain the mystery, though Caroline remains the clear center of gravity."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Caroline Walker",
+        "role_type": "Lead",
+        "demographics": "Female, 20s, college student, orphan/foster-care background.",
+        "hook": "Caroline is the emotional center of the film: outwardly a smart, resilient, slightly chaotic college writer, inwardly someone whose abandonment history makes her vulnerable to attention she mistakes for care. She wants normalcy, love, and control, but the story keeps forcing her to confront how badly she reads the people closest to her.",
+        "why_actor_wants_this": "This is the showcase territory of a lead like Maika Monroe in a genre role — a performance that has to carry fear, denial, tenderness, and survival instinct in the same frame. It gives an actor the chance to play the final-girl arc with real emotional bruising, not just scream-and-run mechanics."
+      },
+      {
+        "name": "Alice Hewitt",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, college student, psychology-track, roommate/best friend.",
+        "hook": "Alice is the script’s smartest engine: dry, loyal, skeptical, and increasingly the only person willing to say the ugly thing out loud. She reads as the friend who can weaponize intelligence, but the script also gives her warmth and genuine protectiveness, which makes her feel like more than a snark machine.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the sharp, scene-stealing authority of a Natasha Lyonne-style supporting turn — fast, funny, and emotionally legible. It offers the pleasure of playing the smartest person in the room while still landing the friendship and fear beats."
+      },
+      {
+        "name": "Shane Morris",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college student, overweight, socially affable.",
+        "hook": "Shane is built as the lovable best friend and comic pressure valve, but the script ultimately turns him into the story’s deepest betrayal. That pivot gives the character a tragic double life: the guy everyone underestimates, and the one whose need for love curdles into violence.",
+        "why_actor_wants_this": "This is strong territory for an actor who can do charm first and then fracture it, like a Paul Dano-style turn where sweetness becomes menace. The role offers a major tonal swing and a late reveal that can reframe the whole performance."
+      },
+      {
+        "name": "Damon Lewis",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college-age, ex-boyfriend, bad-boy presentation.",
+        "hook": "Damon is the volatile ex who looks like the obvious threat, then gradually reveals himself as a damaged, oddly sincere counterweight to the real danger. He’s crude, funny, and invasive, but the script keeps giving him enough vulnerability that he never becomes a flat red herring.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play swagger, threat, and wounded decency in one package — the showcase lane of a young John Cusack-type romantic troublemaker. It gives a performer a lot of room to be hated, then unexpectedly redeemed."
+      },
+      {
+        "name": "Mark Sanders",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, college professor/teacher, authority figure.",
+        "hook": "Mark is the polished authority figure whose concern reads as mentorship until it becomes controlling and predatory. The script uses him well as a false-safe adult presence, then flips him into a much darker version of the same need to possess Caroline.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor a delicious slow-burn turn, in the vein of a Michael Shannon or David Dastmalchian-style escalation from calm to unhinged. It offers the chance to play trust, menace, and humiliation in a single arc."
+      },
+      {
+        "name": "Erik Ross",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, campus security, injured/limping, former cop.",
+        "hook": "Erik is the weary guardian figure with a hidden history, carrying both authority and guilt. He looks like a campus enforcer, but the script gradually reveals him as someone trying to atone for a past failure that shaped the whole story.",
+        "why_actor_wants_this": "This is the kind of role that gives an older character actor a grounded, bruised authority part in the vein of a J.K. Simmons or Shea Whigham performance. The appeal is the slow reveal that the stoic protector is carrying a private moral debt."
+      },
+      {
+        "name": "Brooke Taylor",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, college student, ex-girlfriend, socially sharp.",
+        "hook": "Brooke starts as the obvious rival and social antagonist, then becomes one of the story’s key emotional misdirects. She’s vain, wounded, and defensive, but the script gives her enough hurt that she lands as a person rather than a stock mean girl.",
+        "why_actor_wants_this": "This is a juicy supporting role for an actor who can play status, resentment, and vulnerability in the same beat — the kind of part that lets someone do more than just be the villain of the dorm. It has a strong late-story payoff when the audience has to reassess her."
+      },
+      {
+        "name": "Tanya Wilfred",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, college student, party host, roommate.",
+        "hook": "Tanya is the social spark plug: loud, funny, sexually frank, and surprisingly loyal when the story needs her to be. She functions as the party-world connector, but she also gives the film some of its most lived-in comic energy.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor pop in a crowded ensemble, similar to a standout party-scene supporting turn in a teen thriller or dramedy. It gives real comic timing and social authority without requiring the whole movie to sit on her shoulders."
+      },
+      {
+        "name": "Dean Fraser",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, college dean, institutional authority.",
+        "hook": "Dean Fraser is the institutional face of calm, the person who wants order restored more than truth pursued. She’s not a villain, but she’s exactly the kind of authority figure who makes the campus feel protected and indifferent at the same time.",
+        "why_actor_wants_this": "This is a clean authority-role showcase for an actor who can play competence with a hint of evasiveness, like a Cherry Jones-style institutional presence. It gives the performer a chance to make bureaucracy feel human and uneasy."
+      },
+      {
+        "name": "Detective Mathews",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, detective, stubborn, law-enforcement authority.",
+        "hook": "Mathews is the skeptical investigator who initially dismisses the pattern, then becomes the procedural pressure point once the truth starts surfacing. He’s not deeply interior, but he gives the film a credible law-enforcement spine and a useful foil for Alice’s instincts.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor a solid procedural anchor, similar to a Denis O’Hare or Clark Gregg type of part. The appeal is authority, skepticism, and the eventual embarrassment of being wrong."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "college-age ensemble",
+          "one older authority cluster (30s-50s)",
+          "one injured/limping supporting role",
+          "no twins or specialty physical doubles required"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "college campus",
+          "dorm rooms",
+          "classroom",
+          "library",
+          "campus building under construction",
+          "police/administrative office"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond simple blood and cleanup continuity.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood effects, a fall down stairs, knife wound makeup, gunshot reaction beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: streamer original or specialty theatrical thriller with a strong genre hook."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary campus interiors, a handful of dorm/classroom/library spaces, no VFX-heavy sequences, and only minor practical stunt work keep this comfortably contained."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs an actor who can play vulnerability, intelligence, and escalating fear, while Shane and Mark both require late-story turns that reframe the audience’s read on them."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The mystery depends on a long chain of misdirection around Caroline, Brooke, Mark, and Shane, so the buyer conversation will focus on whether the reveal stack feels earned rather than merely surprising."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Invisible Man",
+          "year": 2020,
+          "why_it_comps": "Shares the stalking paranoia, intimate domestic threat, and female-centered survival engine that turns private fear into a commercial thriller."
+        },
+        {
+          "title": "Fear",
+          "year": 1996,
+          "why_it_comps": "Matches the obsessive-boyfriend pressure-cooker and the way romantic pursuit curdles into danger inside a young-adult world."
+        },
+        {
+          "title": "Promising Young Woman",
+          "year": 2020,
+          "why_it_comps": "Not in plot, but in the way a female lead navigates betrayal, social performance, and a late reveal that recontextualizes the men around her."
+        },
+        {
+          "title": "Scream",
+          "year": 1996,
+          "why_it_comps": "The campus-age ensemble, shifting suspect pool, and self-aware thriller energy place it in the same audience conversation."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like campus-set psychological thrillers with relationship betrayal, secret-admirer menace, and a final-reveal murder mystery.",
+        "demographics": "18-34 skew with a secondary 35+ thriller audience; female-leaning but playable for genre viewers across genders.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary college locations, modest cast size, and practical suspense beats keep this in the specialty-thriller indie lane."
+      },
+      "lane_fit": {
+        "lane": "elevated campus thriller",
+        "types_of_buyers": [
+          "streamer genre originals teams",
+          "specialty thriller financiers",
+          "indie producers looking for contained suspense",
+          "young-adult adjacent genre buyers",
+          "director-driven first-feature packages"
+        ],
+        "detail": "This sits naturally as a contained, character-forward thriller with a clear hook and a manageable production footprint. The campus setting and relationship web make it attractive to buyers who want a commercial genre piece that still feels actor-friendly."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed mystery and no clear sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The secret-admirer engine lands fast.",
+          "what_it_means": "The letters, panties, and escalating notes give the film a clean commercial hook that buyers can understand immediately. That makes it easy to market to thriller buyers looking for a high-concept stalking premise with a relationship twist.",
+          "evidence": "The bathroom mirror note, the panties in Caroline’s room, and the repeated Clara Lewinekor letters create a clear pattern of intrusion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Alice is a real scene weapon.",
+          "what_it_means": "A sharp supporting role like this can help attract a strong young actress and give the movie a quotable, memorable second lead energy without changing the feature’s center. Buyers like scripts where the best-friend role is not just support but a genuine engine of momentum.",
+          "evidence": "Alice’s rapid-fire takedowns of Damon and Brooke, plus her investigative persistence, make her the smartest person in the room.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The campus setting is story-generating.",
+          "what_it_means": "Dorms, classrooms, parties, security, and construction zones create a contained world with built-in movement and social pressure. That helps the movie feel bigger than its footprint and gives producers a practical, controllable production map.",
+          "evidence": "The story repeatedly uses the dorm room, classroom, library, party house, and unfinished building as pressure points.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The reveal stack keeps recontextualizing the story.",
+          "what_it_means": "Each new suspect shift changes the audience’s read on the relationships, which is the kind of twist architecture that can drive word of mouth. That gives the script a better commercial aftertaste than a single-suspect stalker movie.",
+          "evidence": "Mark, Brooke, and finally Shane each become plausible centers of the mystery before the final truth lands.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional betrayal is stronger than the mechanics.",
+          "what_it_means": "The real hook is not just who sent the notes, but how love, need, and abandonment distort the people Caroline trusts most. That gives the film a more durable emotional hook for buyers who want genre with feeling.",
+          "evidence": "Shane’s confession, Caroline’s foster-care history, and Erik’s protective guilt all deepen the thriller beyond simple whodunit mechanics.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, actor-friendly campus thriller with a clean stalking hook, a strong best-friend role, and a production footprint that stays inside an indie budget. The mystery is commercial enough for streamer genre buyers, but the emotional betrayal and foster-care subtext give it more depth than a standard secret-admirer thriller."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle section repeats suspect turns.",
+          "detail": "The script cycles through Damon, Brooke, Mark, and Shane as possible threats before the final reveal, which keeps the mystery alive but also stretches the same suspicion beat across multiple scenes. For a buyer, that reads as a development note about tightening the reveal economy rather than a fatal flaw.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Shane’s turn needs a very specific actor.",
+          "detail": "The final reveal asks the performer to pivot from comic best friend to obsessive killer to grieving child in a short span. That is a narrow casting lane, and the movie’s payoff depends on an actor who can sell the emotional fracture without telegraphing the villainy too early.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Mark’s predatory turn arrives late.",
+          "detail": "The teacher-stalker reveal adds a second villain layer, but the script spends a long stretch using Mark as a mostly benign authority figure before the turn. That can play as a satisfying reversal, but it also means the audience has to accept a fairly abrupt reframe of his earlier scenes.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The campus world stays functional, not vivid.",
+          "detail": "The dorms, classroom, library, and construction site all do their job, but the setting is mostly a thriller container rather than a deeply textured social ecosystem. That keeps the production manageable, but it limits the sense that this world could generate a more distinctive signature on its own.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The main friction is structural: the script keeps the mystery moving, but it leans on multiple suspect pivots before the final Shane reveal, which will be the first thing a producer tests. The other conversation is casting — the movie needs a very specific actor for Shane and a credible late reframe for Mark to make the back half land cleanly."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 63.3,
+  "tier": "Optionable",
+  "inputTokens": 42701,
+  "outputTokens": 4777,
+  "cost": 0.05352225000000001,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:08:01.150Z",
+  "submission_id": "5d9cea11-4ffb-45d6-99d3-4e0736f4d52d",
+  "eval_id": "7b4d24f0-51de-4c83-8c04-c2e2b442c9ae",
+  "title": "Good Girl",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Taryn Reese",
+      "role_type": "Lead",
+      "demographics": "Woman, mid-20s, Houston-based, audiobook narrator and aspiring real-estate agent; white."
+    },
+    {
+      "name": "Carter Pusset",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-20s, bartender and emerging artist; white."
+    },
+    {
+      "name": "Ali Khalid",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-20s, artist and museum worker; Arab-American."
+    },
+    {
+      "name": "Riley Thomas",
+      "role_type": "Supporting",
+      "demographics": "Woman, mid-20s, real-estate agent; likely white."
+    },
+    {
+      "name": "Joshua Cohen",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-20s, bartender/drug dealer; Jewish."
+    },
+    {
+      "name": "Evelyn Reese",
+      "role_type": "Supporting",
+      "demographics": "Woman, late 20s, model; white."
+    },
+    {
+      "name": "Tender",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, famous musician; Black."
+    },
+    {
+      "name": "Olivia Reese",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s, mother, bookbinder; white."
+    },
+    {
+      "name": "Simon Reese",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, chef and restaurateur; white."
+    },
+    {
+      "name": "Ima Myer",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, painter; likely white or ethnically ambiguous."
+    },
+    {
+      "name": "Dorothy",
+      "role_type": "Supporting",
+      "demographics": "Woman, 40s-50s, literary agent; white."
+    }
+  ],
+  "positioning_hook": "A Houston audiobook narrator caught between a guarded bartender, a magnetic artist, and a famous musician has to decide what she wants before everyone else decides for her.",
+  "cost_usd": 0.06556425,
+  "input_tokens": 51587,
+  "output_tokens": 5972,
+  "status": "wrote:leads_ok"
+}
