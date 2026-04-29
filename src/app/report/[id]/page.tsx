@@ -1103,12 +1103,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                    A single signal that captures how the script reads against
-                    the dimensions a producer would weigh — story, character,
-                    audience, packaging, production reality. Industry partners
-                    use it as one input alongside genre fit, lane, and what
-                    they&apos;re actively scouting. Not a gate, not a verdict —
-                    a quick read.
+                    Your GEM Score is calculated from every factor in the
+                    narrative analysis above — story, character, audience,
+                    packaging, production reality. Industry partners use it as
+                    one input alongside genre fit, lane, and what they&apos;re
+                    actively scouting. Not a gate, not a verdict — a quick
+                    read.
                   </p>
                   {isOwner && !isScoreVisible(privacy) && (
                     <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
@@ -1118,6 +1118,41 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   )}
                 </div>
               </div>
+
+              {/* Per-dimension breakdown — folded under the score so the
+                  read defaults to the headline number, with the math one
+                  click away. Anuj 2026-04-29: pulled out of the old
+                  "Reference" disclosure so the score and its components
+                  live in one place. */}
+              {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
+                <details className="group mt-5 [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="cursor-pointer list-none inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-accent)] hover:text-[var(--gem-accent-hover)] transition-colors">
+                    See the per-dimension breakdown
+                    <span
+                      aria-hidden
+                      className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                    >
+                      ▾
+                    </span>
+                  </summary>
+                  <div className="mt-4 space-y-3">
+                    {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+                      const s = scores?.[dimId]
+                      if (typeof s?.score !== 'number') return null
+                      const meta = DIMENSION_META[dimId]
+                      return (
+                        <DimensionRow
+                          key={dimId}
+                          label={meta.label}
+                          score={s.score}
+                          reasoning={s.reasoning}
+                          locked={applyPaywallBlur}
+                        />
+                      )
+                    })}
+                  </div>
+                </details>
+              )}
             </section>
           )}
 
@@ -1151,38 +1186,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </span>
             </div>
             <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-1.5">
-              Tap to see the per-dimension scores and full production planning facts.
+              Tap to see the full production planning facts pulled from the script.
             </p>
           </summary>
           <div className="mt-5">
 
-        {/* SCORE DETAIL (was "Narrative breakdown") — 10 dim scores.
-            No per-section privacy toggle (Reference is bundled). */}
-        {(isOwnerOrAdmin || (submission.is_public ?? false)) &&
-          scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-            <Section
-              label="Additional scored dimensions"
-              subtitle="Ten craft axes the model tracks while reading the script — bonus signal beyond the top-line read."
-              summary="10 craft dimensions"
-            >
-              <div className="space-y-3">
-                {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
-                  const s = scores?.[dimId]
-                  if (typeof s?.score !== 'number') return null
-                  const meta = DIMENSION_META[dimId]
-                  return (
-                    <DimensionRow
-                      key={dimId}
-                      label={meta.label}
-                      score={s.score}
-                      reasoning={s.reasoning}
-                      locked={applyPaywallBlur}
-                    />
-                  )
-                })}
-              </div>
-            </Section>
-          )}
+        {/* "Additional scored dimensions" Section moved into the GEM
+            Score block above (Anuj 2026-04-29). The per-dim breakdown
+            now lives next to the score itself, folded under a "See the
+            per-dimension breakdown" disclosure. */}
 
         {/* PRODUCTION PLANNING DETAILS — legacy fallback only. */}
         {!riskDetails &&
