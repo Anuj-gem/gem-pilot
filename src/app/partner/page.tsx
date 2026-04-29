@@ -109,6 +109,10 @@ interface RawMatchRow {
             }
             positioning_hook?: string
             packaging?: { budget_tier?: { tier?: string } }
+            risk_details?: {
+              budget?: { level?: string }
+              casting?: { level?: string }
+            }
           } | null
           edited_fields?: { logline?: string } | null
         }>
@@ -123,6 +127,10 @@ interface RawMatchRow {
             }
             positioning_hook?: string
             packaging?: { budget_tier?: { tier?: string } }
+            risk_details?: {
+              budget?: { level?: string }
+              casting?: { level?: string }
+            }
           } | null
           edited_fields?: { logline?: string } | null
         }
@@ -218,6 +226,38 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
   const sortScoreVal =
     typeof rawScore === 'number' && !Number.isNaN(rawScore) ? rawScore : null
 
+  // Filter axes — surface the eval's complexity levels + budget tier as
+  // canonical tokens so the producer-side filter pills can index on them
+  // (Anuj 2026-04-30). Stored separately from the display `tags` chips so
+  // matching stays exact instead of fuzzy-matching display strings.
+  type Level = 'low' | 'medium' | 'high'
+  const normalizeLevel = (raw: unknown): Level | null => {
+    if (typeof raw !== 'string') return null
+    const lc = raw.toLowerCase()
+    if (lc === 'low' || lc === 'medium' || lc === 'high') return lc
+    return null
+  }
+  const productionLevel = normalizeLevel(
+    evaluation?.risk_details?.budget?.level
+  )
+  const castLevel = normalizeLevel(evaluation?.risk_details?.casting?.level)
+  const budgetTierKey =
+    typeof budgetTier === 'string' && budgetTier.trim().length > 0
+      ? budgetTier.toLowerCase().trim()
+      : null
+  const formatKey = formatRaw
+    ? formatRaw.toLowerCase().includes('series')
+      ? 'series'
+      : formatRaw.toLowerCase().includes('feature')
+        ? 'feature'
+        : formatRaw.toLowerCase()
+    : null
+  const genreKeys = uniqueLowercase([
+    evaluation?.classification?.genre_primary,
+    ...(evaluation?.classification?.genre_secondary ?? []),
+    ...(evaluation?.classification?.genre_tags ?? []),
+  ])
+
   return {
     matchId: row.id,
     submissionId: sub.id,
@@ -230,7 +270,26 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
     scriptTags,
     createdAt: row.created_at,
     unmatchedAt: row.unmatched_at,
+    filterAxes: {
+      productionLevel,
+      castLevel,
+      budgetTier: budgetTierKey,
+      format: formatKey,
+      genres: genreKeys,
+      scriptTags,
+    },
   }
+}
+
+function uniqueLowercase(values: (string | undefined | null)[]): string[] {
+  const out = new Set<string>()
+  for (const v of values) {
+    if (typeof v === 'string') {
+      const norm = v.toLowerCase().trim()
+      if (norm) out.add(norm)
+    }
+  }
+  return Array.from(out)
 }
 
 function laneSummary(lane: any): string {
