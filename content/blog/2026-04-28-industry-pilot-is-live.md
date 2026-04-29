@@ -7,15 +7,29 @@ author: "Anuj Kommareddy"
 draft: false
 ---
 
-<div class="gem-blog-letter">
+Hi, gems. I'm Anuj, founder of GEM.
 
-[ANUJ — write your personal letter to writers here. A few paragraphs,
-casual, founder-voice. Why this release matters to you, what you're
-excited about, what's next.]
+I started this company to help screenwriters be successful — and to
+connect them to an industry that's notoriously difficult to penetrate.
+After a few days of our industry pilot exposing partners to the GEM
+community, the loudest ask we got back was for **more direct access.**
+
+So today, we're bringing Hollywood directly into GEM with our new
+**in-app industry partner accounts.** This is the headline change.
+Industry partners can now read your script, mark interest, and reach
+out to you directly — so you can actually work together. Details below.
+
+This is a huge change for our product, but the experience for the
+average GEM writer doesn't change. You still upload, get your read,
+share your report. The new piece is what happens on the other side.
+
+A couple of other exciting updates in this release: our new **Selznick
+3.8** evaluation model, and **enhanced privacy controls** that let you
+present exactly what you want to industry. Brief on both below.
 
 — Anuj
 
-</div>
+---
 
 ## 1. Industry partners are now in the app
 
