@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T05:28:12.445Z",
+  "submission_id": "29cf2abd-7562-48ea-a62f-263ee540df81",
+  "eval_id": "a5f4b8db-f98f-4cfe-bfb9-c5b5b2854d16",
+  "title": "Lucky Penny",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Peter Joff",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s to early 30s, working-class, white, poker player."
+    },
+    {
+      "name": "Suzy James",
+      "role_type": "Supporting",
+      "demographics": "Female, twenties, obese, working-class, white, Atlantic City beachcomber."
+    },
+    {
+      "name": "Jenny",
+      "role_type": "Supporting",
+      "demographics": "Female, twenties, thin, blonde, roommate/friend."
+    },
+    {
+      "name": "Timmy McMurter",
+      "role_type": "Supporting",
+      "demographics": "Male, thirties, slight build, former carney, white."
+    },
+    {
+      "name": "Louise",
+      "role_type": "Supporting",
+      "demographics": "Female, twenties, free-spirited, white."
+    },
+    {
+      "name": "Bernice Stillstrom",
+      "role_type": "Supporting",
+      "demographics": "Female, twenties, heavyset, carnival performer."
+    },
+    {
+      "name": "John Rydell",
+      "role_type": "Supporting",
+      "demographics": "Male, twenties to early 30s, white, junior stock trader."
+    },
+    {
+      "name": "Carol Smith",
+      "role_type": "Supporting",
+      "demographics": "Female, twenties, co-worker, white."
+    },
+    {
+      "name": "Ryan Stokes",
+      "role_type": "Supporting",
+      "demographics": "Male, thirties, white, trader, coworker."
+    },
+    {
+      "name": "Stanley Jackson",
+      "role_type": "Supporting",
+      "demographics": "Male, fifties, heavyset, white, powerful stock boss."
+    },
+    {
+      "name": "Lucy Thompson",
+      "role_type": "Supporting",
+      "demographics": "Female, twenties, blonde, casino drink server, white."
+    },
+    {
+      "name": "Tom Treswald",
+      "role_type": "Supporting",
+      "demographics": "Male, thirties, handsome, TV weather reporter, white."
+    },
+    {
+      "name": "Violet Jones",
+      "role_type": "Supporting",
+      "demographics": "Female, fifties, weathered, casino worker, white."
+    },
+    {
+      "name": "Spalding Stafford",
+      "role_type": "Supporting",
+      "demographics": "Male, older, billionaire, white, immaculate suit, powerful financier."
+    }
+  ],
+  "positioning_hook": "A string of unlucky outsiders keep finding the same enchanted penny, and each one’s life tilts until the coin lands in the hands of a poker prodigy who can’t afford to lose it.",
+  "cost_usd": 0.059598750000000006,
+  "input_tokens": 45415,
+  "output_tokens": 5675,
+  "status": "wrote:leads_ok"
+}

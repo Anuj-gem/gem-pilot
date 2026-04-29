@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:28:01.466Z",
+  "submission_id": "f9826d6e-cce1-468b-b6e3-eb9fc68c8328",
+  "eval_id": "8fa179c6-e904-4374-9cd1-f798ce26aea3",
+  "title": "Power Rangers Next Generation (Pilot)",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Marcus Howard",
+      "role_type": "Lead",
+      "demographics": "Black male, 16, high-school junior, karate champion, recent transplant from Chicago, grieving son."
+    },
+    {
+      "name": "Kayla Richards",
+      "role_type": "Supporting",
+      "demographics": "White female, 16, wealthy family background, student, dancer, recently affected by divorce."
+    },
+    {
+      "name": "Steven Bryant",
+      "role_type": "Supporting",
+      "demographics": "White male, 16, autistic, intelligent, shy, socially isolated."
+    },
+    {
+      "name": "Jordan Bradley",
+      "role_type": "Supporting",
+      "demographics": "Asian American male, 17, football captain, alpha jock, socially dominant."
+    },
+    {
+      "name": "Danni Gonzalez",
+      "role_type": "Supporting",
+      "demographics": "Hispanic female, 15, rebellious skateboarder, outsider energy."
+    },
+    {
+      "name": "Princess Adela",
+      "role_type": "Supporting",
+      "demographics": "Female, humanoid royal heir of Eltar, ageless/young adult presentation."
+    },
+    {
+      "name": "Zena Repulsa",
+      "role_type": "Supporting",
+      "demographics": "Female, sorceress, alien/otherworldly villain, daughter of Rita Repulsa."
+    },
+    {
+      "name": "Rorgar",
+      "role_type": "Supporting",
+      "demographics": "Male, lion-like warrior, henchman, adult."
+    },
+    {
+      "name": "Hornia",
+      "role_type": "Supporting",
+      "demographics": "Female, bee-like warrior, henchwoman, adult."
+    },
+    {
+      "name": "Marcus' Mother",
+      "role_type": "Supporting",
+      "demographics": "Black female, 45, registered nurse, widow."
+    },
+    {
+      "name": "Principal Collins",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, school principal."
+    }
+  ],
+  "positioning_hook": "A grieving karate champion becomes the Red Ranger when five mismatched teens inherit ancient Power Coins and have to defend Angel Grove from a sorceress’s first strike.",
+  "cost_usd": 0.047572500000000004,
+  "input_tokens": 31162,
+  "output_tokens": 5378,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T05:28:55.595Z",
+  "submission_id": "a79597e4-1e84-416f-bc7a-9799af9a852c",
+  "eval_id": "777dc528-6aa1-4acb-b12c-e59162853b6b",
+  "title": "Silent bruises",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Dinozzo",
+      "role_type": "Lead",
+      "demographics": "Male, late 40s, working-class, white, husband and father"
+    },
+    {
+      "name": "Diane Dinozzo",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 40s, wife, mother"
+    },
+    {
+      "name": "Eleanor",
+      "role_type": "Supporting",
+      "demographics": "Female, teen/young adult, daughter"
+    },
+    {
+      "name": "Father Sears",
+      "role_type": "Supporting",
+      "demographics": "Male, late 30s, priest"
+    }
+  ],
+  "positioning_hook": "A church custodian trapped in a coercive marriage finally speaks up, and the fight to protect his daughter turns into a custody battle that forces him to choose freedom over survival.",
+  "cost_usd": 0.02895225,
+  "input_tokens": 16193,
+  "output_tokens": 3735,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:30:18.966Z",
+  "submission_id": "7d25a715-6748-4079-94b1-a14dbb6c4e39",
+  "eval_id": "dacf9b74-75ed-419f-b02e-bfb2868bd7ed",
+  "title": "In the Maze of Existence",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Amir",
+      "role_type": "Lead",
+      "demographics": "Male, 20s, South Asian or Middle Eastern-coded, startup founder / engineer, urban, politically aware, drug-using"
+    },
+    {
+      "name": "Alexey",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, likely Eastern European or Slavic-coded, security guard / aspiring filmmaker, working-class, stoner"
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, writer/poet, likely South Asian or Middle Eastern-coded, professionally constrained, pseudonymous online identity"
+    },
+    {
+      "name": "Alana",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, partner/girlfriend in the core circle, college-educated, socially perceptive"
+    },
+    {
+      "name": "Virgil",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, LA-coded, privileged, corporate-lawyer family background, startup face"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, socially direct, part of the lab circle"
+    },
+    {
+      "name": "Mass",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, security worker / club-adjacent, working-class, crude comic presence"
+    },
+    {
+      "name": "Noor",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, educated, sexually self-possessed, creative"
+    },
+    {
+      "name": "Catherine",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, socially observant, part of the screenplay-read circle"
+    },
+    {
+      "name": "Samir",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, politically literate, anti-capitalist or left-coded, socially confrontational"
+    },
+    {
+      "name": "Ivan",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, battery-tech adjacent, ideological drift, possibly former activist"
+    }
+  ],
+  "positioning_hook": "A disaffected startup founder in a druggy lab-house maze of roommates, lovers, and rivals tries to turn military drone tech into a future while his personal life and politics collapse around him.",
+  "cost_usd": 0.039716249999999995,
+  "input_tokens": 19085,
+  "output_tokens": 5645,
+  "status": "wrote:leads_ok"
+}

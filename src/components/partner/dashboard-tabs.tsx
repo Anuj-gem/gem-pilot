@@ -67,7 +67,14 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
   // we no longer offer a sort toggle.
   const sorted = useMemo(() => {
     const arr = [...active]
-    arr.sort((a, b) => (b.score ?? -1) - (a.score ?? -1))
+    // Rank by the always-raw sortScore so writers who hide their score
+    // (Dan Stevens etc.) still rank correctly. Falls back to display
+    // score for back-compat.
+    arr.sort((a, b) => {
+      const av = a.sortScore ?? a.score ?? -1
+      const bv = b.sortScore ?? b.score ?? -1
+      return bv - av
+    })
     return arr
   }, [active])
 

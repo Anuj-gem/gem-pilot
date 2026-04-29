@@ -195,12 +195,21 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
     ? sub.tags.filter((t): t is string => typeof t === 'string' && t.trim().length > 0)
     : []
 
+  // sortScore is the always-raw score used ONLY for ranking the producer
+  // feed. The user-facing `score` respects the writer's score-eye toggle
+  // (null when hidden), but ranking still uses the real number — so a
+  // writer who hides their score (e.g. Dan Stevens) doesn't get sunk to
+  // the bottom of the producer feed. Anuj 2026-04-29.
+  const sortScoreVal =
+    typeof rawScore === 'number' && !Number.isNaN(rawScore) ? rawScore : null
+
   return {
     matchId: row.id,
     submissionId: sub.id,
     status: row.status,
     title: sub.title || 'Untitled',
     score: typeof score === 'number' && !Number.isNaN(score) ? score : null,
+    sortScore: sortScoreVal,
     headline,
     tags,
     scriptTags,

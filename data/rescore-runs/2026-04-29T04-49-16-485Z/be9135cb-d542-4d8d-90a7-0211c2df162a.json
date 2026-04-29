@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T05:29:38.213Z",
+  "submission_id": "be9135cb-d542-4d8d-90a7-0211c2df162a",
+  "eval_id": "d13d1222-d91e-4648-801b-d5b7d90b59bd",
+  "title": "Risaldi",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Smith",
+      "role_type": "Lead",
+      "demographics": "Male, late 30s to early 40s, Catholic, working-class father, grieving widower"
+    },
+    {
+      "name": "Jodie Smith",
+      "role_type": "Supporting",
+      "demographics": "Female, late 30s, police officer, Catholic, Jacob’s sister"
+    },
+    {
+      "name": "Ethan Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, Risaldi family member, morally conflicted, physically unassuming"
+    },
+    {
+      "name": "Victor Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male, late 60s, patriarch, criminal boss, controlling father"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s, Catholic priest, compassionate, wise"
+    }
+  ],
+  "positioning_hook": "After his family is massacred by a criminal clan, a grieving Catholic father is pulled into a revenge spiral that collides with his cop sister, his conscience, and the mob patriarch who orchestrated it all.",
+  "cost_usd": 0.05534175,
+  "input_tokens": 48133,
+  "output_tokens": 4276,
+  "status": "wrote:leads_ok"
+}

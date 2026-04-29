@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T05:28:35.729Z",
+  "submission_id": "552416e5-a15d-4b22-bddc-950e468fbacb",
+  "eval_id": "7ae1b0ba-4029-4f6e-899b-8aa0b4109b05",
+  "title": "when a mob boss takes interests in you (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Protagonist",
+      "role_type": "Lead",
+      "demographics": "30s, gender unspecified on the page, working-class, urban, identity intentionally open-ended."
+    },
+    {
+      "name": "Adrian Locke",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, imposing physical presence, elite, criminal power broker."
+    },
+    {
+      "name": "Elara",
+      "role_type": "Supporting",
+      "demographics": "Female, young adult, journalist."
+    },
+    {
+      "name": "Martha",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, elite insider."
+    },
+    {
+      "name": "Finn",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, nervous informant type."
+    },
+    {
+      "name": "Kai",
+      "role_type": "Supporting",
+      "demographics": "Male, young adult, employee/underling."
+    },
+    {
+      "name": "Marcus",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, lieutenant/enforcer."
+    },
+    {
+      "name": "Silas",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, high-level criminal/strategist."
+    },
+    {
+      "name": "Aurora",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, elite strategist."
+    },
+    {
+      "name": "Chloe",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, connected to Silas and the past."
+    },
+    {
+      "name": "Elias Thorne",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, mastermind figure."
+    },
+    {
+      "name": "Ava",
+      "role_type": "Supporting",
+      "demographics": "Female, adult, power-player, possibly successor figure."
+    },
+    {
+      "name": "Elijah",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, reflective insider."
+    }
+  ],
+  "positioning_hook": "A restless nobody is pulled into a mob boss’s shadow economy, then discovers the man offering him power is hiding a deeper conspiracy that could burn the city down.",
+  "cost_usd": 0.044845499999999996,
+  "input_tokens": 29740,
+  "output_tokens": 5009,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:30:04.992Z",
+  "submission_id": "718429e1-6076-4063-843f-f659176b3a31",
+  "eval_id": "438ae80b-4555-479f-96c4-260479066ee4",
+  "title": "Skyfall Talon",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Cipplone",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, widower, working-class, small-town Pennsylvania, father of a teenage daughter."
+    },
+    {
+      "name": "Abagail Cipplone",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, teenage daughter, emotionally observant."
+    },
+    {
+      "name": "Lexie Howard",
+      "role_type": "Supporting",
+      "demographics": "Female, 35, athletic trainer, returning local, twin sister."
+    },
+    {
+      "name": "Linsey Howard",
+      "role_type": "Supporting",
+      "demographics": "Female, 35, English teacher, twin sister of Lexie."
+    },
+    {
+      "name": "Debbie Runner",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s, church office administrator, local authority figure."
+    },
+    {
+      "name": "Tim",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, local ally and rescue partner."
+    },
+    {
+      "name": "Director Kane",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, antagonist, high-control authority figure."
+    }
+  ],
+  "positioning_hook": "A widowed church custodian in small-town Pennsylvania bonds with an alien armor system that chooses him as its host, then has to protect his daughter when a hidden force comes to reclaim it.",
+  "cost_usd": 0.03435525,
+  "input_tokens": 18885,
+  "output_tokens": 4487,
+  "status": "wrote:leads_ok"
+}

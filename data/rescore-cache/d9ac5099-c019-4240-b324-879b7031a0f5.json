@@ -1,0 +1,342 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Action",
+        "Thriller"
+      ],
+      "tone": "gritty",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "feature-anchored",
+        "high-concept",
+        "propulsive",
+        "survival",
+        "politics",
+        "race",
+        "zombies",
+        "civil-war"
+      ]
+    },
+    "positioning_hook": "A battle-hardened Black doctor and two ex-special-ops teammates race to stop a Confederate zombie uprising before a white-supremacist network turns the South into an undead army.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible as a high-energy zombie siege with a provocative political engine, which gives it a clear genre audience and strong trailer moments. The audience is narrower than a clean four-quadrant horror-action play because the script’s racial and Confederate iconography is the selling point and the filter."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: a secret Spear of Destiny project, Jefferson Davis reanimated, and a coordinated Confederate zombie outbreak across multiple cemeteries. The opening pages set the premise fast and the endgame is easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Nia is the clearest engine, with competence, attitude, and a personal stake, and Gavin/Ivy add useful texture once the library and marina sequences kick in. Several supporting players are functional more than memorable, and the villain side is more conceptually vivid than emotionally layered."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a politically charged zombie apocalypse built around Confederate iconography, fake-news media manipulation, and a Spear-of-Destiny mythology. That combination is distinctive and unapologetically specific, especially in the Fisher Douglas broadcast framing and the Fort Sumter climax."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the outbreak begins, the script keeps escalating through set-piece after set-piece: cemetery eruptions, the library siege, the marina escape, and the Fort Sumter assault. The middle does rely on repeated survival beats, but the forward motion stays clear and the geography keeps changing enough to maintain momentum."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It feels like a familiar zombie framework until the script reveals its own engine: Confederate dead, modern white-nationalist collaborators, and a weaponized myth of resurrection. The idea is immediately understandable and also weird enough to stand apart from standard undead fare."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The South is rendered as a story-generating landscape with cemeteries, back roads, ferries, tunnels, libraries, and Fort Sumter all functioning as tactical terrain. The political subculture around Fisher, Zed, and the red-cap militia adds social texture, though the world is still primarily in service of the action engine."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The voice mixes grindhouse gore, Southern-fried banter, and overt political provocation in a way that feels intentional rather than generic. The tonal identity is strong, though the script sometimes leans on broad villain speechifying and repeated comic one-liners to carry the register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are deeper currents here around race, propaganda, historical mythmaking, and institutional betrayal, especially in the Fisher broadcasts and Odette’s final turn. The script mostly plays those ideas as propulsion rather than as layered subtext, so the depth is present but not fully mined."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Nia/Gavin/Ivy form a workable survival trio, and the library sequence gives the ensemble some friction and personality. But the script is still driven more by set-piece survival than by a truly elastic relationship engine where any pairing generates fresh story."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Nia Harris",
+        "role_type": "Lead",
+        "demographics": "Black woman, early 40s, doctor/scientist, physically capable, military-trained.",
+        "hook": "Nia is the script’s center of gravity: a brilliant infectious-disease specialist with special-ops instincts, a dry sense of humor, and the physical authority to carry the action. She starts as a professional trying to get home for New Year’s and becomes the one person willing to cut through the mythology, the politics, and the undead chaos to finish the job.",
+        "why_actor_wants_this": "This is showcase territory in the vein of Viola Davis in The Woman King or Jurnee Smollett in Lovecraft Country: a role that lets an actor play intelligence, command, grief, and physical dominance in the same frame. It gives the performer a rare action-lead lane with emotional authority and franchise-level iconography."
+      },
+      {
+        "name": "Gavin Norris",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, federal agent, multi-racial.",
+        "hook": "Gavin is the dry, competent government operative who gives the movie a grounded procedural spine and a steady comic edge. He’s skeptical, fast on his feet, and increasingly forced to improvise as the mission collapses around him.",
+        "why_actor_wants_this": "This is the kind of role that gave Lakeith Stanfield in The Harder They Fall or Jesse Plemons in Game Night a chance to be smart, funny, and dangerous without being the obvious alpha. It’s a sharp supporting part with scene-stealing banter and action credibility."
+      },
+      {
+        "name": "Ivy",
+        "role_type": "Supporting",
+        "demographics": "White woman, mid-50s, rural local, practical, tough, maternal.",
+        "hook": "Ivy is the unexpected local survivor who keeps refusing to act like a victim, even when the town is collapsing around her. She brings warmth, plainspoken humor, and a blue-collar resourcefulness that makes her feel like a real person instead of a genre placeholder.",
+        "why_actor_wants_this": "This is the kind of role that gave Margo Martindale in Justified or Frances McDormand in Three Billboards room to be funny, blunt, and formidable all at once. It’s a late-career character-actor showcase with bite."
+      },
+      {
+        "name": "Jefferson Davis",
+        "role_type": "Supporting",
+        "demographics": "Male, undead historical figure, Confederate president, physically decayed but articulate.",
+        "hook": "Jefferson Davis is the movie’s grotesque centerpiece: a resurrected Confederate icon who speaks with courtly menace while embodying pure predatory rot. He’s not just a monster; he’s the ideological nightmare made flesh, and the script gives him a theatrical, poisonous charisma.",
+        "why_actor_wants_this": "This is the kind of villain role that gave Javier Bardem in No Country for Old Men or Christoph Waltz in Inglourious Basterds a chance to dominate scenes through language, stillness, and menace. It’s a prestige-bad-guy part with outrageous makeup and a memorable hook."
+      },
+      {
+        "name": "Odette Walker",
+        "role_type": "Supporting",
+        "demographics": "Black woman, late 50s, general, commanding, institutional authority.",
+        "hook": "Odette is the polished authority figure who appears to be the mission’s adult in the room, then reveals a colder, more transactional agenda. She’s controlled, strategic, and ultimately one of the story’s sharpest betrayals.",
+        "why_actor_wants_this": "This is the kind of role that gave Regina King in Watchmen or Viola Davis in Air the chance to project command while hiding a second agenda. It’s a strong authority part with a late-turn reveal that changes how the audience reads every prior scene."
+      },
+      {
+        "name": "Austin Smith",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, white, Confederate extremist, physically thin, uniformed.",
+        "hook": "Austin is the ideological true believer who thinks he’s steering the apocalypse but is really just feeding it. He’s petulant, self-important, and useful as a human face for the movement’s delusion before Jefferson outgrows him.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play delusion and entitlement with escalating humiliation, similar to Jesse Plemons in Civil War or Shea Whigham in Boardwalk Empire. It’s a juicy antagonist-supporting part with a sharp collapse."
+      },
+      {
+        "name": "Dr. Ingrid Schmidt",
+        "role_type": "Supporting",
+        "demographics": "White woman, late 50s, scientist, cold, severe, elite professional.",
+        "hook": "Ingrid is the scientist who helped build the catastrophe and then tries to control it through force of will. She carries the movie’s moral rot in a lab coat, and her final choices make her as dangerous as the monsters she helped create.",
+        "why_actor_wants_this": "This is the kind of role that gave Tilda Swinton in Michael Clayton or Rebecca Ferguson in Dune a chance to play intelligence with menace. It’s a prestige villain-adjacent part with authority, secrecy, and a brutal payoff."
+      },
+      {
+        "name": "Daniel Sawyer",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, white, muscular, rugged, scientist/operative.",
+        "hook": "Daniel is the conscience inside the compound, the one person trying to warn Hannah before the whole machine turns on her. He’s physically capable but emotionally cornered, which makes his torture and death land as a real loss rather than just a plot beat.",
+        "why_actor_wants_this": "This is the kind of role that gave Boyd Holbrook in Logan or Michael Shannon in Take Shelter a chance to play decency under pressure. It’s a strong supporting turn with vulnerability and a painful endgame."
+      },
+      {
+        "name": "Hannah Schmidt",
+        "role_type": "Supporting",
+        "demographics": "White woman, late 20s, scientist, Aryan beauty, conflicted insider.",
+        "hook": "Hannah begins as the sheltered daughter inside the machine and becomes one of the story’s most tragic casualties. Her arc is built on discovery, betrayal, and the horror of realizing too late what her family has unleashed.",
+        "why_actor_wants_this": "This is the kind of role that gave Anya Taylor-Joy in The Witch or Jodie Comer in Killing Eve early material to play innocence curdling into terror. It’s a strong emotional-turn role with horror payoff."
+      },
+      {
+        "name": "Fisher Douglas",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s, obese, balding, radio host, propagandist.",
+        "hook": "Fisher is the mouthpiece who sells the apocalypse as patriotism, then discovers too late that he’s also on the menu. He’s cowardly, performative, and crucial to the movie’s media-satire layer.",
+        "why_actor_wants_this": "This is the kind of role that gave Paul Walter Hauser in Richard Jewell or Patton Oswalt in Young Adult room to weaponize insecurity and verbal rhythm. It’s a memorable character part with a nasty comic edge."
+      },
+      {
+        "name": "Tristan",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, white, scruffy, sexy, local survivor.",
+        "hook": "Tristan is the flirtatious local guide who turns from useful ally to liability in a hurry. He brings swagger, sexual tension, and a little outlaw charm before the movie reminds us how disposable everyone is.",
+        "why_actor_wants_this": "This is the kind of role that gave Nicholas Hoult in Mad Max: Fury Road or Austin Butler in The Bikeriders a chance to be charming and dangerous in the same breath. It’s a compact but vivid supporting part."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One physically commanding female lead with action and authority",
+          "Several roles require Southern dialect work",
+          "Multiple antagonist roles are tied to Confederate/white-supremacist iconography",
+          "Undead makeup roles for Jefferson Davis, Austin, Hannah, Eugene, and mass zombie soldiers"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Multiple cemetery locations",
+          "Fort Sumter / historic fort setting",
+          "Library siege location",
+          "Tunnel, ferry, marina, and small-town main street sequences",
+          "Night exteriors across wooded roads and graveyards"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Primarily practical zombie makeup and gore with some enhancement for mass reanimation, storm effects, green lightning, and the Spear’s glow.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy blood, prosthetic wounds, decapitations, impalement, limb loss, and large-scale zombie attack effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Jefferson Davis is depicted as a resurrected, speaking antagonist."
+        },
+        {
+          "type": "real_person",
+          "detail": "The script references and dramatizes historical figures and institutions tied to the Confederacy, including Jefferson Davis and the New Confederacy."
+        },
+        {
+          "type": "brand",
+          "detail": "Fisher Douglas is a named radio/media personality within the story world, but no external trademarked brands are central to the premise."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is a genre theatrical or premium-streaming horror release with strong marketing emphasis on the premise and gore."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is contemporary, but the cemetery scale, Fort Sumter climax, multiple zombie set pieces, and heavy gore effects will push beyond a lean contained indie if not tightly scoped."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Nia needs a performer who can carry action, authority, and sharp comic timing, while Jefferson Davis requires a very specific villain presence under heavy makeup. The ensemble is castable, but the lead and antagonist are the real lift."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear and commercial, but the script’s political provocation, historical iconography, and repeated siege structure will be closely weighed by buyers for audience fit and positioning."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Overlord",
+          "year": 2018,
+          "why_it_comps": "Shares the pulpy WWII-zombie escalation, practical gore appetite, and genre-forward marketing lane built around a simple undead premise with a bigger ideological engine."
+        },
+        {
+          "title": "Train to Busan",
+          "year": 2016,
+          "why_it_comps": "Matches the propulsive survival structure and escalating set-piece pressure, with a small team fighting through a collapsing landscape toward a final stand."
+        },
+        {
+          "title": "The Dead Don't Die",
+          "year": 2019,
+          "why_it_comps": "Comps on the deadpan political satire around apocalypse behavior, though this script is more aggressive, more action-driven, and less ironic."
+        },
+        {
+          "title": "The Girl with All the Gifts",
+          "year": 2016,
+          "why_it_comps": "Shares the bio-horror logic, military containment feel, and a lead who has to move through a world where infection and survival are both tactical problems."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre fans who want a hard-R zombie movie with a political edge, practical gore, and a strong female action lead.",
+        "demographics": "Skews 18-44, male-leaning but with real female appeal through Nia; strongest with horror, action, and cult-genre audiences.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Multiple zombie set pieces, heavy makeup/gore, historic locations, and night exteriors keep this above a lean indie but still below studio-scale spectacle."
+      },
+      "lane_fit": {
+        "lane": "elevated genre horror-action",
+        "types_of_buyers": [
+          "genre-forward indie financiers",
+          "streamer original film teams",
+          "boutique horror labels",
+          "mid-budget action-horror producers",
+          "director-driven genre buyers"
+        ],
+        "detail": "This sits naturally in the lane where a buyer wants a loud, marketable hook, a strong lead role, and enough spectacle to sell internationally without needing tentpole spend. The political provocation makes it more specific than generic zombie fare, which is a plus for buyers looking for a sharper identity."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed apocalypse arc; the world is vivid, but there is no clear franchise vector beyond repeating the same outbreak premise."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A buyer can understand the movie in one sentence, which is a real advantage in a crowded horror market. That clarity helps both greenlight conversations and audience-facing marketing, especially for streamers and genre distributors.",
+          "evidence": "The script quickly establishes the Spear of Destiny, Jefferson Davis’s resurrection, and the coordinated Confederate zombie outbreak across Southern cemeteries.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Nia is a real action lead.",
+          "what_it_means": "The script gives the movie a bankable center: a smart, physically capable protagonist who can carry both set pieces and attitude. That opens the door to a performer who can elevate the material and gives the project a clear casting conversation.",
+          "evidence": "Nia moves from lab authority to sword-wielding combatant, and the Fort Sumter assault is built around her tactical competence and defiance.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The political hook is ownable.",
+          "what_it_means": "The Confederate-zombie concept gives the movie a sharper identity than standard undead fare and creates a built-in conversation starter. That kind of provocation can travel in press, social, and genre communities when the execution is confident.",
+          "evidence": "Fisher’s broadcasts, Zed’s militia rhetoric, and the Fort Sumter finale all tie the horror to propaganda and white-supremacist fantasy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces are easy to sell.",
+          "what_it_means": "The script is built around visual moments that trailers can lift immediately: cemetery reanimation, the library siege, the ferry crossing, and the Fort Sumter showdown. That makes the project easier to package than a purely dialogue-driven horror script.",
+          "evidence": "The cemetery awakenings and the final courtyard battle are written as large, image-forward sequences with clear escalation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone has a recognizable swagger.",
+          "what_it_means": "The banter, gore, and Southern-fried attitude give the script a distinct voice that can separate it from generic zombie material. Buyers looking for a genre piece with personality will respond to that confidence.",
+          "evidence": "The script repeatedly uses sharp one-liners, regional cadence, and comic beats inside extreme violence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a marketable, high-concept zombie feature with a strong female action lead, a politically charged hook, and a string of trailer-ready set pieces. It sits in a buyer-friendly mid-budget genre lane where the premise does a lot of the selling, and the Fort Sumter climax gives the movie a memorable finish."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The political provocation will narrow the buyer pool.",
+          "detail": "The Confederate-zombie premise is the movie’s biggest differentiator, but it also makes the project a more sensitive sell than a standard undead thriller. Buyers will immediately weigh audience backlash, regional sensitivity, and whether the satire reads as sharp or combustible.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle is built on repeated siege beats.",
+          "detail": "Once the outbreak starts, the script cycles through a series of escape-and-survive sequences across the cemetery, tunnel, library, marina, and fort. That keeps momentum alive, but it also means the movie’s shape is more repetition of pressure than escalation of a single emotional line.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Jefferson Davis is a strong image, not a deep antagonist.",
+          "detail": "He’s memorable as a grotesque historical monster, but the character mostly functions as ideological spectacle and threat delivery. That’s effective for horror, though it leaves the villain side more iconic than psychologically layered.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The final government betrayal arrives as a second engine.",
+          "detail": "Odette’s turn in the interrogation room introduces a new institutional conspiracy after the main zombie conflict has already been resolved. It’s a sharp sting, but it also signals a broader conspiracy layer that the feature doesn’t fully dramatize before the end.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest commercial asset is also its biggest friction point: the Confederate-zombie concept is memorable, but it is inherently polarizing and will require a buyer comfortable with provocation. Beyond that, the movie is strongest as a set-piece machine; the main development question is whether the repeated survival beats and broad villainy feel sufficiently fresh to justify the heat."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 41848,
+  "outputTokens": 5143,
+  "cost": 0.05452950000000001,
+  "declaredFormat": "Feature film"
+}

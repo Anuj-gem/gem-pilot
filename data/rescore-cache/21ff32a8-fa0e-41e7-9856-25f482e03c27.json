@@ -1,0 +1,340 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Drama"
+      ],
+      "tone": "sleek",
+      "tags": [
+        "female-lead",
+        "male-lead",
+        "supporting-ensemble",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "family-dynamics",
+        "identity",
+        "grief",
+        "corruption",
+        "charlotte",
+        "catfishing"
+      ]
+    },
+    "positioning_hook": "A Charlotte woman in recovery falls for a polished stranger who’s secretly grooming her daughter, her ex-husband, and her husband’s wife into one devastating con.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate hook value: betrayal, seduction, and a hidden predator moving through a recognizable adult domestic world. The audience is narrower than a broad four-quadrant thriller because the emotional engine is relationship-specific and the ending is more tragic than cathartic."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast and clean: one man is simultaneously courting multiple people in the same social orbit under different identities. The opening betrayal, the burner-phone reveal, and the late-script convergence make the premise easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sasha has a strong wounded-center role, Tonya pops immediately, and Rebeca has real bite. Terry is a compelling engine, but the women are written more as victims of his system than as fully independent drivers, which limits the durability of the ensemble."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar con-artist / homewrecker setup and gives it a specific Black Charlotte social texture, plus the multi-target deception structure. The boldness is in the overlap of romance, scam, and domestic collapse, though the underlying mechanics are still recognizable."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first half moves with strong forward pull through the dinner setup, the burner-phone reveals, and the escalating lies. The back half becomes more repetitive as the same deception pattern cycles through Sasha, Brittany, Byron, and Rebeca before the final convergence."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script’s strongest originality comes from making the con feel intimate rather than procedural: one predator weaponizes emotional need across an entire family network. It’s fresh in execution and social setting, even if the underlying scam structure is familiar."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Charlotte is used as more than backdrop: South End, NoDa, SouthPark, Myers Park, and the salon/lounge ecosystem create a clear class map. The world feels story-generating because status, image, and access are doing constant work in the scenes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct glossy-southern, class-coded, soap-thriller register, with Tonya supplying comic pressure and the rest playing sleek and dangerous. The tonal blend of salon humor, luxury surfaces, and emotional predation is specific and memorable."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material around addiction, shame, class performance, and female self-worth, especially in Sasha and Brittany. But the script mostly externalizes those themes through plot turns rather than letting them accumulate into a deeper psychological layer."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Sasha-Tonya-Brittany triangle has real recurring energy, and Byron/Rebeca add a second pressure system. Terry is the connective tissue, which makes the relationship web functional, though the ensemble is still more plot-linked than character-generated."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Sasha",
+        "role_type": "Lead",
+        "demographics": "Black woman, 40, mother, recovery-adjacent, upper-working-to-middle class Charlotte resident.",
+        "hook": "A polished but unraveling woman trying to hold onto dignity, sobriety, and motherhood while her marriage, self-image, and judgment all crack at once. Sasha is emotionally guarded, physically composed, and privately desperate, which makes her both vulnerable and dangerous when she finally starts seeing the truth.",
+        "why_actor_wants_this": "This is the showcase territory of Taraji P. Henson in a bruised, high-wire dramatic role — the kind of part that lets an actor toggle between glamour, shame, rage, and collapse in the same scene. It gives a performer a full emotional arc, plus the rare chance to play addiction, desire, and maternal fear without ever leaving the center of the movie."
+      },
+      {
+        "name": "Terry",
+        "role_type": "Supporting",
+        "demographics": "Black man, 30s, polished, physically fit, socially chameleon-like, identity-flexible.",
+        "hook": "A predator with elite social instincts who can move from gentleman to threat in a beat, using charm, class fluency, and emotional mirroring as weapons. He is the movie’s engine and its mask, a man who appears to be rescuing people while systematically isolating and exploiting them.",
+        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in a controlled, dangerous role — the kind of part that lets an actor weaponize stillness, voice, and micro-shifts in power. It offers the rare villain performance that can be seductive, terrifying, and emotionally legible without ever becoming broad."
+      },
+      {
+        "name": "Tonya",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 40s, salon owner/stylist, best friend, comic-pressure valve.",
+        "hook": "Loud, funny, loyal, and sharper than she first appears, Tonya is the friend who says the thing everyone else is too scared to say. She brings the movie its social oxygen, but she also has real emotional stakes because she sees Sasha’s relapse and Brittany’s drift before anyone else does.",
+        "why_actor_wants_this": "This is the showcase territory of Octavia Spencer in a fast-talking, scene-stealing best-friend role — the kind of part that can steal a movie with timing, warmth, and sudden emotional authority. It gives an actor a chance to pivot from comic relief into the moral center of the story."
+      },
+      {
+        "name": "Brittany",
+        "role_type": "Supporting",
+        "demographics": "Black girl, 17, high-school senior, college-bound, vulnerable to online manipulation.",
+        "hook": "A smart, hungry teenager who wants adulthood, romance, and escape so badly that she mistakes attention for safety. Brittany’s arc is the most painful in the script because her need to be seen makes her the easiest target in the room.",
+        "why_actor_wants_this": "This is the showcase territory of Amandla Stenberg in a vulnerable, high-stakes coming-of-age role — a part that asks for innocence, intelligence, and heartbreak without sentimentality. It gives a young actor a serious dramatic turn with real emotional consequence."
+      },
+      {
+        "name": "Byron",
+        "role_type": "Supporting",
+        "demographics": "Black man, 40s, husband, professional, image-conscious, sexually conflicted.",
+        "hook": "A man trapped between status, desire, and shame, Byron is easy for Terry to manipulate because he’s already living a double life. He’s not just a victim; he’s also a participant in the movie’s moral collapse, which gives him some bite beyond the usual cheating-husband function.",
+        "why_actor_wants_this": "This is the showcase territory of Brian Tyree Henry in a conflicted, self-undoing role — the kind of part that lets an actor play weakness, vanity, and remorse without losing humanity. It offers a strong dramatic turn for a performer who can make bad choices feel painfully human."
+      },
+      {
+        "name": "Rebeca",
+        "role_type": "Supporting",
+        "demographics": "White woman, early-to-mid 30s, polished spouse, socially strategic, affluent.",
+        "hook": "Controlled, elegant, and quietly ruthless, Rebeca is the spouse who understands optics and leverage better than anyone else in the room. She starts as a pressure source and ends as another casualty of Terry’s manipulation, but she never loses her edge.",
+        "why_actor_wants_this": "This is the showcase territory of Carrie Coon in a sharp, icy, prestige-drama wife role — a part that lets an actor play intelligence, humiliation, and retaliation with precision. It gives a performer a clean, high-status dramatic lane with real teeth."
+      },
+      {
+        "name": "Lisa",
+        "role_type": "Supporting",
+        "demographics": "Woman, mid-30s, vulnerable, HIV-positive, connected to Byron and Terry.",
+        "hook": "Lisa arrives late but detonates the story’s hidden truth, turning the movie from betrayal drama into something medically and morally devastating. She’s not just a plot device; she’s the human cost of Terry’s violence and the one character who reframes the entire night.",
+        "why_actor_wants_this": "This is the showcase territory of Regina King in a late-arriving confession role — the kind of scene that can land with devastating authority if played with restraint. It gives an actor a single, unforgettable sequence built around truth-telling and moral weight."
+      },
+      {
+        "name": "Veronica",
+        "role_type": "Supporting",
+        "demographics": "Black girl, late teens, Brittany’s friend, socially aware, skeptical.",
+        "hook": "Veronica functions as the friend who can see the danger before Brittany can, even if she doesn’t have the power to stop it. She adds peer-world texture and gives Brittany a believable outside voice.",
+        "why_actor_wants_this": "This is the showcase territory of a strong young ensemble player in a sharp supporting teen role — the kind of part that gives an actor quick, memorable scenes and a real point of view. It’s a useful breakout lane for a rising performer."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "adult ensemble with one central lead",
+          "Black female lead and Black supporting ensemble",
+          "one white supporting spouse role",
+          "age-specific teen casting for Brittany and Veronica"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "mostly interiors",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Charlotte metro locations including South End, NoDa, SouthPark, Myers Park, Uptown",
+          "salon, lounge, penthouse, hotel suite, office, apartment, library, doctor’s office"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond basic screen inserts and possible city-view enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical drinking continuity, phone-screen inserts, glass breakage, and a few emotional beat-driven crowd/background setups.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Tito’s"
+        },
+        {
+          "type": "brand",
+          "detail": "Uber Black"
+        },
+        {
+          "type": "brand",
+          "detail": "TikTok"
+        },
+        {
+          "type": "brand",
+          "detail": "Harris Teeter"
+        },
+        {
+          "type": "brand",
+          "detail": "Ruth’s Chris"
+        },
+        {
+          "type": "brand",
+          "detail": "Apple Pay"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-adjacent thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: streamer original or specialty theatrical with strong adult-skewing marketing."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly interior, but the script leans on multiple upscale Charlotte locations, night exteriors, a penthouse, hotel suite, lounge, salon, and car work that will need disciplined scheduling."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The hardest lift is Terry: he has to read as seductive, credible, predatory, and socially elite across multiple identities. Sasha and Tonya also need actors who can carry both drama and lived-in humor."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s central reveal structure depends on the audience accepting one man’s multi-target deception across Sasha, Brittany, Byron, and Rebeca; the late Lisa/HIV turn also shifts the movie into heavier territory that will be a buyer conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Perfect Find",
+          "year": 2023,
+          "why_it_comps": "Shares the polished adult-romance surface, Black professional milieu, and the danger of a charming man whose appeal is inseparable from the lie."
+        },
+        {
+          "title": "The Last Thing He Told Me",
+          "year": 2023,
+          "why_it_comps": "Matches the domestic-thriller lane where a woman’s private life becomes a web of secrets, missing truth, and emotional betrayal."
+        },
+        {
+          "title": "Acrimony",
+          "year": 2018,
+          "why_it_comps": "The emotional volatility, betrayal-forward structure, and female rage around a man who destabilizes the whole family system are directly in this lane."
+        },
+        {
+          "title": "Fatal Affair",
+          "year": 2020,
+          "why_it_comps": "The seductive stranger / home-invasion-by-emotion setup and the adult-skewing thriller packaging are close to this script’s commercial shape."
+        },
+        {
+          "title": "The Woman in the Window",
+          "year": 2021,
+          "why_it_comps": "Not in plot, but in the way private instability, unreliable perception, and a dangerous outsider drive the suspense."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who like relationship-driven thrillers with betrayal, seduction, and a strong female lead, especially Black women 30+ and adult streamer audiences.",
+        "demographics": "30-54 skew, female-leaning, urban/suburban adult audience, strong appeal to Black audiences and viewers who like glossy domestic suspense.",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "F18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$9M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary, dialogue-forward thriller with a modest location count, limited action, and no VFX-heavy set pieces."
+      },
+      "lane_fit": {
+        "lane": "adult domestic thriller",
+        "types_of_buyers": [
+          "streamer originals dev execs building adult-skewing suspense",
+          "specialty theatrical distributors looking for Black-led genre",
+          "indie producers in the elevated-thriller lane",
+          "star-driven financiers seeking a contained prestige vehicle"
+        ],
+        "detail": "This sits naturally in the lane where glossy surfaces hide emotional rot, and where a strong lead performance can sell the movie as much as the plot. The Charlotte class-map, salon energy, and multi-household betrayal give it a clean adult-thriller identity."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the core appeal is the one-time reveal of Terry’s multi-target manipulation, not a repeatable universe or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The con is built on intimacy, not gadgets.",
+          "what_it_means": "That makes the movie easier to market as adult, emotional suspense rather than a procedural scam story. Buyers looking for a contained thriller with a strong hook can sell this on character and betrayal, not spectacle.",
+          "evidence": "Terry uses three phones, different names, and tailored emotional scripts to manipulate Sasha, Brittany, Byron, and Rebeca.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sasha is a real lead role, not just a victim.",
+          "what_it_means": "The role gives a buyer a clear star vehicle for an actress who can carry shame, desire, and relapse in the same frame. That is exactly the kind of part that can attract a name and anchor the campaign.",
+          "evidence": "Her opening discovery, relapse beats, and final realization that she has been played all land through her point of view.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Charlotte gives the story a class map.",
+          "what_it_means": "The South End / NoDa / Myers Park / SouthPark spread creates a premium, specific world that feels sellable and lived-in. That texture helps the movie stand out from generic urban thrillers.",
+          "evidence": "The script repeatedly moves between the loft, salon, lounge, penthouse, office, and upscale neighborhoods.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Tonya gives the movie heat and relief.",
+          "what_it_means": "She keeps the script from becoming tonally flat and gives the audience a pressure valve between the darker turns. That kind of friend role is valuable in casting and in audience retention.",
+          "evidence": "Her salon scenes and dinner-night prep scenes are the script’s most alive comic exchanges.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a clean betrayal reveal.",
+          "what_it_means": "The final convergence of the three identities gives the movie a strong trailer-friendly payoff and a clear emotional aftertaste. That helps the project pitch as a full-throttle thriller with a memorable final turn.",
+          "evidence": "The reveal that Terry has been manipulating Sasha, Brittany, Byron, and Rebeca collapses the whole story into one predator’s system.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sleek, adult domestic thriller with a strong Black female lead, a vivid Charlotte class-map, and a villain role that can absolutely attract name talent. It’s commercially legible as a contained streamer/specialty feature: modest production footprint, high emotional hook, and a trailer-ready reveal structure that sells the movie fast."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "Terry’s scheme is doing a lot of heavy lifting.",
+          "detail": "The movie depends on the audience accepting that one man can sustain multiple identities, multiple emotional registers, and multiple live deceptions across Sasha, Brittany, Byron, and Rebeca without anyone clocking him sooner. That’s the sharpest greenlight conversation because the premise lives or dies on that plausibility.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The back half repeats the same betrayal beat.",
+          "detail": "Once Terry’s pattern is established, the script cycles through similar reveal-and-collapse beats for each target rather than escalating the mechanics in a new way. That keeps the movie moving, but it also flattens some of the suspense after the first major turn.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Brittany’s hotel sequence narrows the buyer pool.",
+          "detail": "The underage grooming / sexual exploitation material around Brittany and Marcus/Terry is the most sensitive content in the script and will be a major rating and marketing conversation. It is not a clearance issue, but it does shape who will want to buy and how the film can be positioned.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The Lisa/HIV turn changes the movie’s register.",
+          "detail": "Lisa’s confession pushes the story from domestic betrayal into public-health trauma and legal/medical fallout, which is a meaningful tonal and audience shift late in the script. Buyers will notice that the movie expands from sexy-thriller territory into something much heavier in the final stretch.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Terry is more engine than person.",
+          "detail": "He is highly effective as a manipulative force, but the script keeps him opaque enough that he functions primarily as a plot machine. That makes him strong as a thriller device, but it limits the emotional complexity of the antagonist role if a buyer is looking for a more layered villain.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The core risk is plausibility: the script asks a lot from the audience in believing one predator can sustain this many identities and this much access without the story feeling engineered. The other pressure point is tonal — the movie starts as glossy domestic suspense, then widens into sexual exploitation and HIV fallout, which is powerful but materially changes the buyer conversation."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 72.3,
+  "tier": "Optionable",
+  "inputTokens": 31039,
+  "outputTokens": 4803,
+  "cost": 0.04489275,
+  "declaredFormat": "Feature film"
+}

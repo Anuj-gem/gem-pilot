@@ -1,0 +1,299 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "tone": "pulpy",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "high-concept",
+        "propulsive",
+        "character-driven",
+        "survival",
+        "jungle",
+        "creature-feature"
+      ]
+    },
+    "positioning_hook": "A jungle expedition uncovers a colossal guardian serpent, then has to outrun mercenaries, ancient ruins, and a planetary-scale secret before the wilderness decides who gets to leave.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The creature-survival engine is instantly legible and has clear genre appeal, especially for audiences who want big-scale danger with a pulpy adventure frame. It is narrower than a four-quadrant event because the mythology gets dense and the script leans hard into jungle lore, but the core promise is strong."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: a research expedition in a remote jungle discovers a colossal serpent tied to an ancient nexus, then gets trapped in a fight for survival. The script keeps escalating the premise with the outpost, ruins, mercenaries, and crystal, so the central engine is easy to explain."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Thorne, Lena, and Carter each have a usable function in the survival triangle, and Thorne in particular has a strong obsessive-scientist angle. They are more archetypal than surprising, though, and the script spends more energy on the serpent mythology than on deepening their contradictions."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar creature-feature setup and pushes it into planetary-guardian, bioluminescent-nexus territory, which gives it a fresher mythic register than a standard monster chase. The boldness is in the scale and lore, not in the character construction."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script is built on repeated escalation: cave discovery, camp destruction, outpost attack, temple collapse, mercenary incursion, and aftermath. The momentum is strong scene-to-scene, though the repeated reveal structure can start to feel like successive variations on the same threat."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a serpent as a planetary immune system is a clean, ownable twist that gives the premise a memorable logic. It is still operating inside recognizable adventure-horror DNA, so the originality comes from the concept overlay rather than a wholly new form."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The jungle, ruins, cult carvings, nexus chamber, research outpost, and later global conservation framework all suggest a world with rules and history. The script keeps revealing layers of the same ecosystem, which makes the setting feel story-generating rather than merely decorative."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistently mythic, ominous, and adventure-forward, with a pulpy creature-feature charge. It has a clear flavor, though the script sometimes toggles between grounded survival and cosmic revelation in a way that softens the tonal edge."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The serpent mythology, the nexus/crystal system, and the conservation framing all imply a larger cosmology beyond the immediate chase. The ending suggests a broader world of hidden sanctuaries and recurring disturbances, which gives the material franchise-adjacent depth even as a standalone feature."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The Thorne-Lena-Carter triangle gives the script a workable core dynamic, and the mercenaries/rescuers add pressure. Still, most scenes are driven by the external threat rather than by relationship turns, so the ensemble energy is functional more than generative."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Dr. Aris Thorne",
+        "role_type": "Lead",
+        "demographics": "Male, 50s, seasoned scientist/explorer, white or unspecified ethnicity",
+        "hook": "A weathered, brilliant field scientist whose curiosity keeps outrunning his caution. Thorne starts as the expedition's intellectual authority and ends as the man trying to translate terror into meaning, with the script giving him a compelling arc from skeptic-adjacent observer to feverish believer in a hidden planetary order.",
+        "why_actor_wants_this": "This is the showcase territory of a Richard Dreyfuss in Jaws or a Michael Keaton in The Founder-style role: a man whose intelligence, obsession, and unraveling conviction all play in close-up. It gives an actor the chance to carry exposition as revelation and to pivot from authority to haunted prophet."
+      },
+      {
+        "name": "Lena Hanson",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, young scientist/conservation-minded field researcher",
+        "hook": "Bright, eager, and increasingly galvanized by what she sees, Lena functions as the audience's emotional bridge into the jungle's mystery. She begins as the junior observer and becomes the script's conscience, eventually turning the experience into public advocacy and institutional purpose.",
+        "why_actor_wants_this": "This is the kind of role that gave Bryce Dallas Howard in Jurassic World or Emily Blunt in A Quiet Place a mix of vulnerability, intelligence, and survival grit. It offers a rising actress a clean emotional arc plus a final-act authority turn."
+      },
+      {
+        "name": "Carter",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, rugged survivalist / expedition support",
+        "hook": "The hard-edged practical one who keeps the group moving when fear starts to take over. Carter is the most physically grounded of the trio, with a terse, watchful presence that reads like someone who has already made peace with danger and is now trying to keep everyone else alive.",
+        "why_actor_wants_this": "This is the kind of part that lets an actor do the stoic-action work of Josh Brolin in Sicario or Michael Shannon in Take Shelter: contained intensity, physical competence, and emotional pressure under the surface. It is a strong role for an actor who can make silence feel like strategy."
+      },
+      {
+        "name": "Dr. Elara Vance",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, geologist / scientist",
+        "hook": "A sharp scientific mind who helps turn the serpent from rumor into evidence. Elara is more functional than central, but she gives the script a credible expert voice and a useful bridge between field discovery and the larger mythic explanation.",
+        "why_actor_wants_this": "This is solid character-actor material in the vein of Rebecca Hall in The Night House or Jodie Foster in Contact: intelligent, skeptical, and capable of making technical dialogue feel urgent. It gives an actress a clean authority lane without requiring a huge emotional swing."
+      },
+      {
+        "name": "Dr. Kai Shimizu",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, scientist / tech specialist",
+        "hook": "The analytical specialist who keeps trying to quantify the impossible. Kai is the script's rationalist pressure valve, useful for grounding the mythology in data and for reacting with precision when the jungle stops behaving like a place and starts behaving like a system.",
+        "why_actor_wants_this": "This is the kind of role that can play like a younger version of Ken Watanabe's calm authority or John Cho's smart, observant supporting work. It gives an actor a chance to be the lucid one in a room full of panic."
+      },
+      {
+        "name": "Ben Carter",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s, expedition member / local guide or field hand",
+        "hook": "A pragmatic, wary survivor voice who keeps naming the danger before anyone else does. Ben is less individualized than the central trio, but he adds texture as the guy who understands the jungle's physical threat and refuses to romanticize it.",
+        "why_actor_wants_this": "This is dependable genre-supporting territory in the tradition of Michael Rooker in The Walking Dead or Walton Goggins in any survival ensemble: rough-edged, alert, and useful under pressure. It is a role for an actor who can make a few lines feel lived-in."
+      },
+      {
+        "name": "Captain Eva Rostova",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-50s, military rescue captain",
+        "hook": "A competent rescue authority who arrives late but helps reframe the story as something larger than a lost expedition. Rostova gives the back half a procedural edge and a credible institutional presence without taking over the narrative.",
+        "why_actor_wants_this": "This is the kind of efficient, commanding part that can showcase the same no-nonsense authority as Viola Davis in a supporting mode or Michelle Rodriguez in action-adjacent ensemble work. It is a clean, scene-stealing role for an actor who can project command fast."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 11,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble of adult scientists, survivalists, mercenaries, and officials",
+          "one major creature performance via VFX/animatronic pipeline",
+          "no child roles indicated"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 45/55",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "remote jungle exteriors",
+          "cave and temple interiors",
+          "research outpost",
+          "military helicopter interior",
+          "urban institutional interiors for epilogue material"
+        ]
+      },
+      "technical": {
+        "vfx_level": "heavy",
+        "vfx_details": "A colossal serpent appears repeatedly in full-body and close-up shots, with environmental destruction, bioluminescent effects, energy crystal sequences, holographic projections, and large-scale jungle/temple collapse work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical debris, collapses, smoke, flare effects, water work in swamp sequences, and creature interaction support.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-leaning genre feature",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model: streamer original, studio genre release, or effects-driven theatrical adventure with broad international appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "high",
+        "note": "The serpent is a full-scale recurring VFX character, and the script layers in jungle destruction, temple collapse, swamp action, mercenary combat, holographic lore, and multiple large-scale environment builds."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Thorne needs a credible older lead who can sell obsession and authority, while the supporting scientists and mercenaries are functional but still need a cohesive ensemble that can carry a heavy effects movie."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The mythology expands from survival thriller into planetary-balance sci-fi, so the buyer conversation will center on how much lore to foreground without losing the clean creature-feature promise."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Anaconda",
+          "year": 1997,
+          "why_it_comps": "Same jungle-creature survival lane, with a large predator driving a series of escalating set pieces through remote terrain."
+        },
+        {
+          "title": "The Ruins",
+          "year": 2008,
+          "why_it_comps": "Shares the trapped-in-the-jungle, ancient-site-discovery structure and the sense that the environment itself is hostile."
+        },
+        {
+          "title": "Kong: Skull Island",
+          "year": 2017,
+          "why_it_comps": "Matches the big-scale creature spectacle, expedition framework, and mythic ecosystem reveal."
+        },
+        {
+          "title": "The Lost City",
+          "year": 2022,
+          "why_it_comps": "Comps on the adventure-comedy-adjacent expedition energy and the commercial appeal of lush, escapist jungle settings, even though this script is darker."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who want a high-concept creature feature with adventure momentum, jungle spectacle, and a clean survival engine.",
+        "demographics": "Adults 18-49, with a slight male skew for the creature/action lane but broad appeal to genre fans and adventure audiences.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$25M-$45M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A recurring giant creature, extensive jungle work, temple/outpost destruction, swamp sequences, and heavy VFX push this above a contained indie and into mid-budget genre territory."
+      },
+      "lane_fit": {
+        "lane": "mid-budget creature-feature adventure",
+        "types_of_buyers": [
+          "streamer genre originals execs",
+          "studio genre development teams",
+          "independent producers with effects-financing partners",
+          "international pre-buy friendly adventure buyers",
+          "director-driven genre labels"
+        ],
+        "detail": "This sits naturally in the lane where spectacle, clear premise, and international-friendly action matter more than awards positioning. The serpent mythology gives it a hook that can sell on poster art and trailer imagery."
+      },
+      "ip_potential": {
+        "has_potential": true,
+        "detail": "The hidden sanctuary network and the Thorne Institute setup create a concrete spinoff vector: other guardian creatures in other biomes, with Thorne/Lena as the connective mythology."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The serpent is a real franchise image.",
+          "what_it_means": "The creature design and guardian mythology give the project a poster-ready centerpiece that can sell the movie in a single frame. That is the kind of visual asset buyers want when they are looking for a genre title with international trailer value.",
+          "evidence": "The repeated reveals of the colossal obsidian serpent, the golden eyes, the bioluminescent scale, and the final jungle-wide image of the creature sleeping in the canopy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise escalates cleanly.",
+          "what_it_means": "The script gives a buyer a clear escalation ladder from expedition mystery to survival chase to mythic revelation to mercenary conflict. That makes the movie easy to pitch and easy to market because each act adds a bigger version of the same promise.",
+          "evidence": "Riverbank arrival, cave discovery, camp destruction, outpost attack, temple collapse, mercenary intrusion, and the final nexus confrontation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels bigger than the plot.",
+          "what_it_means": "The jungle, cult carvings, crystal nexus, and global conservation aftermath suggest a mythology that can support more than one story. That gives the project value beyond a single monster chase and makes it easier to position as a launchable genre property.",
+          "evidence": "The serpent cult, the Thorne Institute for Unseen Ecosystems, the global tremor news, and the final image of other biomes reacting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Thorne has a strong actor-facing arc.",
+          "what_it_means": "The lead role gives a seasoned actor a chance to play authority, obsession, fear, and revelation in one package. That is valuable because it turns the movie from a pure effects vehicle into a performance-led genre buy.",
+          "evidence": "Thorne's shift from measured scientist to feverish interpreter of the serpent's purpose, especially in the debriefing and study scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The jungle is not just scenery.",
+          "what_it_means": "The setting behaves like an active system with rules, memory, and pressure, which gives the movie texture and makes the environment itself part of the hook. Buyers often respond to genre scripts where the world is doing story work, not just hosting it.",
+          "evidence": "The spinning compass, dead zones, silent canopy, mutated flora, and the sense that the jungle is reacting to disturbance.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable creature-feature with a premium visual centerpiece and a mythology that expands beyond the immediate movie. The combination of a contained expedition engine, a giant signature monster, and a franchise-friendly hidden-world setup makes it easy to imagine as a streamer or studio genre buy."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology keeps widening past the core hook.",
+          "detail": "The script starts as a jungle survival creature feature, then expands into planetary immune systems, ley lines, cosmic resets, and a hidden sanctuary network. That breadth gives it depth, but it also means buyers will ask where the movie's true center of gravity lives: monster chase, ecological fable, or sci-fi cosmology.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The creature is expensive on every page.",
+          "detail": "The serpent is not a one-scene reveal; it drives repeated action beats, environmental destruction, and multiple full-body interactions across jungle, swamp, temple, and ruins. That makes the effects package a real budget conversation rather than a single set-piece spend.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The supporting cast is functional, not deeply differentiated.",
+          "detail": "Thorne, Lena, Carter, Elara, Kai, Ben, and the mercenary/rescue figures all serve clear story functions, but only Thorne gets a strong internal arc on the page. For a buyer, that means the movie leans heavily on the creature and the lead performance rather than on a richly interlocking ensemble.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending opens a larger world without fully cashing the movie.",
+          "detail": "The final stretch moves into aftermath, institutional debriefing, conservation advocacy, and sequel-adjacent teases. That broadens the property, but it also dilutes the immediate payoff of the expedition story and will make some buyers ask whether the feature is ending or setting up the next one.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is scope: the script wants to be a creature feature, a mythic sci-fi adventure, and a larger franchise launch all at once. That ambition is attractive, but it also means the buyer conversation will focus on budget discipline and on whether the mythology is being used to elevate the movie or to overbuild it."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 71,
+  "tier": "Optionable",
+  "inputTokens": 33281,
+  "outputTokens": 4387,
+  "cost": 0.04470225,
+  "declaredFormat": "Feature film"
+}

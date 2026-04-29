@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:29:37.991Z",
+  "submission_id": "64eccee4-b392-4fd5-bd4d-0c893b2a0fb2",
+  "eval_id": "e62b1dea-a463-4082-a6e8-fd5ac54343ce",
+  "title": "second shift dreams",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male, late 40s, white, working-class, Pennsylvania coal-region custodian and church handyman."
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, Ralph’s daughter, high-school senior, college-bound."
+    },
+    {
+      "name": "Sarah Martin",
+      "role_type": "Supporting",
+      "demographics": "Female, early 30s, English teacher, film-club advisor."
+    },
+    {
+      "name": "Jayden",
+      "role_type": "Supporting",
+      "demographics": "Male, 17, high-school student, sharp, observant, likely working-class."
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, Catholic priest, community anchor."
+    },
+    {
+      "name": "Diane Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female, deceased in present timeline, Ralph’s late wife, seen in flashback."
+    },
+    {
+      "name": "Marcus Reed",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, Los Angeles producer, voice on the phone."
+    },
+    {
+      "name": "Mike",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s, school custodian, working father."
+    },
+    {
+      "name": "Ralph’s Father",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, Ralph’s father, seen in flashback."
+    },
+    {
+      "name": "Ralph’s Mother",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, Ralph’s mother, seen in flashback."
+    }
+  ],
+  "positioning_hook": "A burned-out school custodian in Pennsylvania races a 30-day screenplay deadline while juggling two jobs, a skeptical daughter, and a chance to reclaim the writer he buried.",
+  "cost_usd": 0.037412249999999994,
+  "input_tokens": 20681,
+  "output_tokens": 4867,
+  "status": "wrote:leads_ok"
+}

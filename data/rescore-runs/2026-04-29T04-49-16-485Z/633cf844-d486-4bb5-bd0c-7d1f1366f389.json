@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:30:14.109Z",
+  "submission_id": "633cf844-d486-4bb5-bd0c-7d1f1366f389",
+  "eval_id": "cff12cb1-b1e1-419d-a2b0-ac6d910362da",
+  "title": "In the Maze of Existence (17)",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Amir",
+      "role_type": "Lead",
+      "demographics": "Male, mid-20s, South Asian/Middle Eastern-coded, startup founder/engineer, college-age-to-early-career adult."
+    },
+    {
+      "name": "Alexey",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, likely Eastern European/Ukrainian background, security guard / aspiring filmmaker, adult."
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, writer/poet, likely South Asian or Middle Eastern-coded, adult."
+    },
+    {
+      "name": "Alana",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, Amir’s partner, adult."
+    },
+    {
+      "name": "Virgil",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, nepo-baby startup face, adult."
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, adult."
+    },
+    {
+      "name": "Mass",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, adult."
+    },
+    {
+      "name": "Noor",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, adult."
+    },
+    {
+      "name": "Catherine",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, adult."
+    },
+    {
+      "name": "Samir",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, adult."
+    },
+    {
+      "name": "Ivan",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, adult."
+    }
+  ],
+  "positioning_hook": "A disaffected startup founder trying to weaponize his battery breakthrough for the military gets pulled into a messy orbit of roommates, lovers, and ideological betrayals as his life starts to read like the script he can’t finish.",
+  "cost_usd": 0.036359249999999996,
+  "input_tokens": 19085,
+  "output_tokens": 4899,
+  "status": "wrote:leads_ok"
+}

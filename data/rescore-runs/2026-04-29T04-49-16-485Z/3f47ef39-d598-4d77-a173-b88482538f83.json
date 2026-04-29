@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:28:51.858Z",
+  "submission_id": "3f47ef39-d598-4d77-a173-b88482538f83",
+  "eval_id": "cd2bfd98-ec0c-4926-97f3-e0deb26d809e",
+  "title": "The Union",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Lewis",
+      "role_type": "Lead",
+      "demographics": "Male, early 20s, white, working-class, Union apprentice"
+    },
+    {
+      "name": "Emma",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, local to Northern California, Union participant"
+    },
+    {
+      "name": "Chance Hunter",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, public-facing Union president and board member"
+    },
+    {
+      "name": "Darren",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Lewis’s father, Union believer"
+    },
+    {
+      "name": "Dana",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, Lewis’s mother, Union believer with private doubts"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, Union participant, communications background"
+    },
+    {
+      "name": "Lila",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, Emma’s friend"
+    },
+    {
+      "name": "Tim R",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, Union behavioral-center observer"
+    }
+  ],
+  "positioning_hook": "A compliant young union member falls for a woman outside the system, forcing him into the heart of a state-controlled matchmaking machine that turns intimacy into surveillance.",
+  "cost_usd": 0.047499,
+  "input_tokens": 35126,
+  "output_tokens": 4701,
+  "status": "wrote:leads_ok"
+}

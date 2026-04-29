@@ -1,0 +1,338 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Crime",
+      "genre_secondary": [
+        "Thriller",
+        "Drama"
+      ],
+      "tone": "gritty",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "ongoing-series",
+        "propulsive",
+        "character-driven",
+        "crime",
+        "power",
+        "survival",
+        "charlotte"
+      ]
+    },
+    "positioning_hook": "Two West Side women inherit a dead kingpin’s debt and get forced into a Charlotte crime matriarch’s orbit, where every luxury purchase becomes evidence and every exit is a trap.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is immediate and easy to sell: two young women, a dead drug boss, a ruthless female power broker, and a ticking 48-hour pressure cooker. The audience lane is clear, though the crime-world specificity and regional setting make it more targeted than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The pilot announces its engine fast: Big Dre dies, Kiki and Tasha take the bag, and Sondra turns their mistake into a debt trap. The premise is easy to explain in one breath and the final reveal of the cop pressure keeps the hook active."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Kiki has the strongest long-term engine: she’s pragmatic, hungry, and increasingly cornered, while Tasha gives the show a more volatile emotional register. Sondra is a strong antagonist/mentor hybrid, but the pilot still leans more on situation than deep personal contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The Charlotte setting, the luxury-to-survival contrast, and the female-controlled criminal hierarchy give the script a distinct lane. The underlying structure is familiar crime pressure-cooker material, and the pilot mostly plays the expected beats cleanly."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The pilot keeps tightening the vise: death, suspicion, street pressure, Sondra’s takeover, the cop reveal, and the warehouse execution. There’s strong forward motion, though several beats repeat the same fear-state rather than escalating through new information."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The core idea is fresh enough to register — two women become disposable assets inside a female-led crime ecosystem — but it still reads as a recognizable crime-thriller setup. The most ownable element is the Charlotte-specific social geography and the contrast between Uptown polish and West Side survival."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script has a usable world: Uptown penthouses, West Side apartments, social clubs, lounges, warehouses, and the social code around Dre’s death all feel story-generating. Sondra’s operation, the street surveillance, and the police leverage suggest a larger ecosystem beyond the pilot."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is consistent and legible: glossy crime, street menace, and a hard-edged female power dynamic. The repeated contrast between designer luxury and imminent violence gives the pilot a recognizable flavor even when the plotting is familiar."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper material in Sondra’s backstory, Kiki’s ambition, and Tasha’s fragility, but the pilot mostly uses those elements as functional pressure points. The show hints at a larger criminal history and social ladder, though it doesn’t yet fully open that depth on the page."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Kiki/Tasha is a workable central pair, and Sondra/Marcus adds a second axis of tension, but the pilot is still driven by a few key relationships rather than a broad ensemble engine. The supporting cast is vivid enough to recur, but not yet dense enough to generate material from any combination."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Kiki",
+        "role_type": "Lead",
+        "demographics": "Black woman, early 20s, working-class, Charlotte-based.",
+        "hook": "Kiki is the sharper, colder half of the duo: a West Side survivor who can think under pressure, read danger fast, and talk herself into believing she can outplay a system that already has her name on it. She starts as the practical one, but the pilot quietly frames her as the more dangerous long-term player because she can adapt to criminal logic faster than she admits.",
+        "why_actor_wants_this": "This is the showcase territory of Jurnee Smollett in Lovecraft Country — a role that lets an actor play intelligence, fear, and hardening resolve in the same scene. It offers the kind of close-up transformation that can reframe a rising actor as a lead."
+      },
+      {
+        "name": "Tasha",
+        "role_type": "Supporting",
+        "demographics": "Black woman, early 20s, working-class, Charlotte-based.",
+        "hook": "Tasha is the emotional pressure valve: more visibly frightened, more easily manipulated, and more likely to crack under the weight of what she’s been pulled into. She’s not just the scared one; she’s the one whose panic can expose the whole operation, which makes her a liability and a human conscience at once.",
+        "why_actor_wants_this": "This is the showcase territory of Auli'i Cravalho in The Power — a role that gives an actor the chance to play vulnerability that keeps turning into moral danger. It’s a performance part built on escalating panic, betrayal, and the fear of becoming complicit."
+      },
+      {
+        "name": "Sondra",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 40s, criminal power broker, Charlotte-based.",
+        "hook": "Sondra is the series’ cold center of gravity: polished, strategic, and terrifyingly calm, with the authority of someone who built the machine and knows exactly where the bodies are buried. She reads like a mentor until she doesn’t, and the pilot makes clear that her mercy is just another form of control.",
+        "why_actor_wants_this": "This is the showcase territory of Viola Davis in How to Get Away with Murder — a role that lets an actor weaponize stillness, command, and sudden violence. It’s the kind of part that gives an actress authority scenes, threat scenes, and the pleasure of being the smartest person in the room."
+      },
+      {
+        "name": "Marcus",
+        "role_type": "Supporting",
+        "demographics": "Black man, mid-20s, street-level operator, Charlotte-based.",
+        "hook": "Marcus is the nervous intermediary who thinks he can survive by staying useful, which makes him exactly the kind of man Sondra can discard. He’s a classic pressure-cooker middleman: talkative enough to be dangerous, weak enough to be expendable.",
+        "why_actor_wants_this": "This is the showcase territory of Michael K. Williams in The Night Of — a role that lets an actor play street intelligence, fear, and doomed loyalty. It gives a performer the chance to make a supporting part feel like a live wire."
+      },
+      {
+        "name": "Gloria",
+        "role_type": "Supporting",
+        "demographics": "Black woman, late 40s, mother, West Side Charlotte.",
+        "hook": "Gloria is the hard boundary of the home world: a mother who sees the danger immediately and refuses to be dragged under with her daughter. She’s not sentimental, and that bluntness gives the pilot a moral counterweight to the criminal seduction around Kiki and Tasha.",
+        "why_actor_wants_this": "This is the showcase territory of Regina King in Seven Seconds — a role that gives an actor the authority to play love as discipline and fear as anger. It’s a compact but memorable mother role with real scene-stealing force."
+      },
+      {
+        "name": "Tray",
+        "role_type": "Supporting",
+        "demographics": "Black man, mid-20s, neighborhood hustler, Charlotte-based.",
+        "hook": "Tray is the street-level messenger who knows just enough to stir the pot and not enough to control it. He functions as a pressure-delivery system for the neighborhood rumor mill, which makes him useful to the plot and dangerous to everyone in it.",
+        "why_actor_wants_this": "This is the showcase territory of Lakeith Stanfield in Atlanta — a role that lets an actor make a small amount of screen time feel slippery, funny, and threatening. It’s a compact character part with real texture."
+      },
+      {
+        "name": "Frank",
+        "role_type": "Supporting",
+        "demographics": "White man, 40s, undercover cop, Charlotte-based.",
+        "hook": "Frank is the law wearing a blank face: calm, procedural, and just ambiguous enough to keep the women off balance until the trap closes. He’s less a personality than a mechanism, which works for the pilot’s final-turn reveal.",
+        "why_actor_wants_this": "This is the showcase territory of Shea Whigham in Boardwalk Empire — a role that lets an actor play menace through restraint and institutional authority. It’s a clean, efficient antagonist part with room for quiet intimidation."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 7,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": false,
+        "casting_characteristics": [
+          "black female lead pair in early 20s",
+          "black female antagonist in 40s",
+          "one white undercover cop role",
+          "regional Charlotte specificity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Charlotte urban exteriors",
+          "luxury penthouse/condo interiors",
+          "social club/lounge interiors",
+          "warehouse and industrial lot exteriors",
+          "modest residential interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX beyond basic city enhancement and practical screen inserts.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, body drop, practical blood, power-cut lighting cue, suppressed-shooting beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Gucci"
+        },
+        {
+          "type": "brand",
+          "detail": "Ace of Spades"
+        },
+        {
+          "type": "brand",
+          "detail": "Neiman Marcus"
+        },
+        {
+          "type": "brand",
+          "detail": "Louis Vuitton"
+        },
+        {
+          "type": "brand",
+          "detail": "Sephora"
+        },
+        {
+          "type": "brand",
+          "detail": "Dodge Charger"
+        },
+        {
+          "type": "brand",
+          "detail": "Mercedes"
+        },
+        {
+          "type": "brand",
+          "detail": "Porsche"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming crime drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized crime pressure-cooker with a recurring debt-and-coercion engine centered on Kiki and Tasha under Sondra’s control."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary urban settings, a modest cast, and no VFX-heavy sequences keep this comfortably contained; the main spend is night exteriors, multiple car moves, and a handful of controlled violence beats."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead pair needs two young Black actresses who can play fear, street intelligence, and escalating complicity without flattening into type. Sondra also needs a performer with real authority, because the pilot’s power dynamic depends on her landing instantly."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot’s engine is clear, but the series will need to keep differentiating Kiki and Tasha as the debt story continues and Sondra’s control deepens. The final cop reveal also sets up a larger law-enforcement thread that will need a clean ongoing shape."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Snowfall",
+          "year": 2017,
+          "why_it_comps": "The street-level criminal ecosystem, youth pulled into a larger drug economy, and the pressure of survival inside a city-specific underworld are the closest tonal and structural neighbors."
+        },
+        {
+          "title": "Queen Sugar",
+          "year": 2016,
+          "why_it_comps": "The Black Southern setting, family pressure, and character-first approach to community texture make it a useful comp for the emotional lane even though the crime engine is harder."
+        },
+        {
+          "title": "Power",
+          "year": 2014,
+          "why_it_comps": "The luxury-crime contrast, the polished criminal operator, and the sense that status is just another weapon all sit in the same commercial neighborhood."
+        },
+        {
+          "title": "BMF",
+          "year": 2021,
+          "why_it_comps": "The rise-and-fall criminal pressure, street hierarchy, and aspirational money imagery align with the show’s debt, power, and loyalty mechanics."
+        },
+        {
+          "title": "P-Valley",
+          "year": 2020,
+          "why_it_comps": "The regional specificity, female-centered power dynamics, and vivid local texture make it a useful comp for audience positioning even though the genre lane is different."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who like female-led crime stories with street realism, luxury imagery, and a strong regional identity.",
+        "demographics": "Women and men 25-54, with strongest pull among Black audiences and viewers who respond to serialized crime drama.",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "",
+        "per_episode": "$1.5M-$2.5M",
+        "season_total": "$12M-$20M for an 8-episode season",
+        "note": "Contemporary Charlotte locations, a modest recurring cast, and practical crime-world scenes keep this in the lower series tier; assume an 8-episode season."
+      },
+      "lane_fit": {
+        "lane": "premium streaming crime drama",
+        "types_of_buyers": [
+          "streamer originals execs building Black-led adult drama",
+          "premium cable development teams",
+          "independent producers seeking regional crime IP",
+          "buyers looking for female-forward crime worlds",
+          "executives chasing serialized street-level suspense"
+        ],
+        "detail": "This sits naturally in the lane of adult, serialized crime with strong character identity and a clear regional stamp. The luxury-versus-survival contrast gives it a visual hook, while the female power structure makes it easier to position than a generic street-crime piece."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a franchise engine; Sondra is vivid, but the page does not yet present a separate spinoff vector with enough independent depth to anchor another show."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise lands in the first pages.",
+          "what_it_means": "That gives buyers an immediate commercial read and reduces the amount of explanation needed in the room. Streamers and cable buyers chasing fast, high-concept crime setups can understand the engine almost instantly.",
+          "evidence": "Big Dre dies in the penthouse, Kiki and Tasha take the bag, and Sondra turns the death into a debt trap within the opening stretch.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Sondra is the series’ best asset.",
+          "what_it_means": "A polished female power broker with real menace is a strong casting and marketing anchor, especially in a lane where the antagonist can also function as a mentor. That kind of role attracts prestige actresses and gives the show a signature authority figure.",
+          "evidence": "Her first major scenes show her controlling Marcus, threatening blood debt, and later calmly executing the warehouse power play.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Charlotte contrast is ownable.",
+          "what_it_means": "The Uptown-versus-West-Side geography gives the series a visual and social identity that helps it stand apart from generic urban crime stories. Buyers like worlds that can be described in one image, and this one has that.",
+          "evidence": "The pilot repeatedly cuts between the neon penthouse, the West Side apartment, social clubs, and industrial lots.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kiki and Tasha create a usable engine.",
+          "what_it_means": "The pair gives the series a built-in friction point: one is colder and more adaptive, the other more panicked and exposed. That dynamic can sustain episode-to-episode tension and gives casting a two-role hook.",
+          "evidence": "Kiki wants to keep moving and survive; Tasha wants to flee, confess, and avoid jail, which repeatedly puts them at odds.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot has strong pressure escalation.",
+          "what_it_means": "The story keeps converting fear into action, which is what makes a serialized crime show feel propulsive rather than static. Buyers respond to pilots that end with a new, worse problem, and this one does that cleanly.",
+          "evidence": "The cop reveal, the warehouse execution, and Sondra’s final threat to kill Tasha all tighten the vise by the end.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, sellable crime series engine: a dead kingpin leaves two young women holding the bag, and a ruthless female operator turns their panic into labor. The contemporary Charlotte footprint keeps the production contained while the Sondra role and the Kiki/Tasha dynamic give the package real casting and buyer appeal."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot leans on repeated fear beats.",
+          "detail": "Several scenes cycle through the same emotional state — Kiki and Tasha panicking, then being re-cornered — before the next plot turn arrives. That keeps the pressure high, but it also means the hour is driven more by threat repetition than by distinct reversals in the middle stretch.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Tasha is more reactive than dimensional.",
+          "detail": "The pilot gives her panic, guilt, and a final betrayal impulse, but most of her function is to register danger rather than generate it. Buyers will notice that the series’ emotional volatility currently sits more on Kiki and Sondra than on the second lead engine.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The cop reveal is efficient but familiar.",
+          "detail": "The undercover-law-enforcement turn at the abandoned lot is a clean escalation, but it lands in a well-worn crime-thriller lane. It works as a pressure device, though it doesn’t yet feel like the show’s most distinctive move.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand-heavy luxury imagery needs clearance work.",
+          "detail": "Gucci, Ace of Spades, Neiman Marcus, Louis Vuitton, Sephora, Dodge Charger, Mercedes, and Porsche are all used as status markers throughout the pilot. That is manageable, but it is a real business affairs pass because the script relies on recognizable brands to define the world.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s main friction is that the pilot’s tension is strong but often runs on the same panic loop, with Tasha still functioning more as a liability than a fully active engine. The other buyer-facing issue is practical: the brand-saturated luxury world is part of the show’s identity, but it will require a real clearance pass."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 68.3,
+  "tier": "Optionable",
+  "inputTokens": 20165,
+  "outputTokens": 4611,
+  "cost": 0.035873249999999995,
+  "declaredFormat": "Series"
+}

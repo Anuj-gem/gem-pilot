@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:28:38.035Z",
+  "submission_id": "47b6ae4c-fab5-47ed-81ae-68b9bd926f6a",
+  "eval_id": "2e3ee145-d015-4056-94f3-a4a5eca59323",
+  "title": "hundred foot long python",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Dr. Aris Thorne",
+      "role_type": "Lead",
+      "demographics": "Male, 50s, seasoned scientist/explorer, white or unspecified ethnicity"
+    },
+    {
+      "name": "Lena Hanson",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, young scientist/conservation-minded field researcher"
+    },
+    {
+      "name": "Carter",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, rugged survivalist / expedition support"
+    },
+    {
+      "name": "Dr. Elara Vance",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, geologist / scientist"
+    },
+    {
+      "name": "Dr. Kai Shimizu",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, scientist / tech specialist"
+    },
+    {
+      "name": "Ben Carter",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, expedition member / local guide or field hand"
+    },
+    {
+      "name": "Captain Eva Rostova",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-50s, military rescue captain"
+    }
+  ],
+  "positioning_hook": "A jungle expedition uncovers a colossal guardian serpent, then has to outrun mercenaries, ancient ruins, and a planetary-scale secret before the wilderness decides who gets to leave.",
+  "cost_usd": 0.04470225,
+  "input_tokens": 33281,
+  "output_tokens": 4387,
+  "status": "wrote:leads_ok"
+}

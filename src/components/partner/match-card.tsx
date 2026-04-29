@@ -25,7 +25,12 @@ export interface MatchCardData {
   matchId: string
   status: MatchStatus
   title: string
+  /** Display score — null when the writer has hidden it via score-eye. */
   score: number | null
+  /** Always-raw score used only for ranking the producer feed. Never
+   *  shown on the card. Lets a writer hide their number from producers
+   *  while still being ranked correctly. */
+  sortScore?: number | null
   headline: string | null
   tags: string[]
   createdAt: string
