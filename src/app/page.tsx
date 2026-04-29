@@ -548,9 +548,9 @@ function StepFeedMini() {
         </span>
       </div>
       <div className="space-y-1.5">
-        <StepFeedRow title="Untitled mob therapy pilot" meta="Series · 1 hr drama" score="78" highlight />
-        <StepFeedRow title="The Northern Line" meta="Feature · Action thriller" score="71" />
-        <StepFeedRow title="Glass Ceiling" meta="Feature · Comedy" score="68" />
+        <StepFeedRow title="Untitled mob therapy pilot" meta="Series · 1 hr drama" highlight />
+        <StepFeedRow title="The Northern Line" meta="Feature · Action thriller" />
+        <StepFeedRow title="Glass Ceiling" meta="Feature · Comedy" />
       </div>
     </div>
   )
@@ -559,14 +559,16 @@ function StepFeedMini() {
 function StepFeedRow({
   title,
   meta,
-  score,
   highlight = false,
 }: {
   title: string
   meta: string
-  score: string
   highlight?: boolean
 }) {
+  // Anuj 2026-04-29: dropped the score badge in favor of the same
+  // Interested / Pass affordance shown in the blog post mock and the
+  // real producer app. Keeps the focus on the action a producer takes,
+  // not on a number.
   return (
     <div
       className="rounded px-2 py-1.5 flex items-center gap-2"
@@ -583,16 +585,27 @@ function StepFeedRow({
         </p>
         <p className="text-[8.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-tight">{meta}</p>
       </div>
-      <span
-        className="shrink-0 text-[9.5px] font-bold px-1.5 py-0.5 rounded tabular-nums"
-        style={{
-          background: 'rgba(124,58,237,0.08)',
-          border: '1px solid rgba(124,58,237,0.25)',
-          color: 'var(--gem-gray-50)',
-        }}
-      >
-        {score}
-      </span>
+      <div className="shrink-0 flex items-center gap-1">
+        <span
+          className="text-[8.5px] font-bold px-1.5 py-0.5 rounded leading-none"
+          style={{
+            background: 'var(--gem-accent)',
+            color: '#fff',
+          }}
+        >
+          ✓ Interested
+        </span>
+        <span
+          className="text-[8.5px] font-bold px-1.5 py-0.5 rounded leading-none"
+          style={{
+            background: '#fff',
+            color: 'var(--gem-gray-500)',
+            border: '1px solid var(--gem-gray-700)',
+          }}
+        >
+          × Pass
+        </span>
+      </div>
     </div>
   )
 }
