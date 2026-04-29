@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:37:29.219Z",
+  "submission_id": "9d59f0bd-29cb-4872-b1c0-227f8ac1a492",
+  "eval_id": "a66a8452-f373-4f53-9796-f91b8c14421b",
+  "title": "WHITE HORSE",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Cyrus Aarons",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · NASA astronaut / former Air Force pilot"
+    },
+    {
+      "name": "Maxwell Libas",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Director of the Astronaut Office"
+    },
+    {
+      "name": "Chet Haynes",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · DARPA director / intelligence veteran"
+    },
+    {
+      "name": "Hugh Vellum",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Senior White House aide"
+    },
+    {
+      "name": "Susan Harper",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · KGB lieutenant operating under civilian cover"
+    },
+    {
+      "name": "Oleg Grosni / Major William Easter",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 50s across the story · Soviet pilot / later U.S. shuttle specialist"
+    },
+    {
+      "name": "Betty Aarons",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · seamstress / Cyrus’s sister"
+    },
+    {
+      "name": "Bernard Calloway",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · President of the United States"
+    }
+  ],
+  "positioning_hook": "A hotshot NASA astronaut is pulled into a covert Cold War cover-up after a deadly air-show incident, then races to expose a Soviet weather weapon before his own shuttle mission becomes the next lie.",
+  "cost_usd": 0.05215875,
+  "input_tokens": 42227,
+  "output_tokens": 4553,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:39:23.259Z",
+  "submission_id": "9b30c35a-db87-4a28-b608-cfbff6913344",
+  "eval_id": "4dcb49a6-a8d4-4b97-9609-3ee5955c5691",
+  "title": "A LIST (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "SANTI",
+      "role_type": "Lead",
+      "demographics": "Male · 19 · Latino"
+    },
+    {
+      "name": "PAZ",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Latina"
+    },
+    {
+      "name": "GUS",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "REAGAN GARDNER",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "BEATRICE",
+      "role_type": "Lead",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "HOLLYWOOD",
+      "role_type": "Lead",
+      "demographics": "Male-presenting figure · 20s-40s under mask"
+    },
+    {
+      "name": "JADEN",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    }
+  ],
+  "positioning_hook": "A hungry young actor is trapped in a Hollywood massacre where the killer turns fame, casting, and image itself into weapons — and survival means becoming the star.",
+  "cost_usd": 0.05269125,
+  "input_tokens": 43471,
+  "output_tokens": 4464,
+  "status": "wrote:leads_ok"
+}

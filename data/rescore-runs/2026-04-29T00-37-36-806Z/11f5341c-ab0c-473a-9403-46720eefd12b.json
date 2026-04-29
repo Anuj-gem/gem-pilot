@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T01:38:51.709Z",
+  "submission_id": "11f5341c-ab0c-473a-9403-46720eefd12b",
+  "eval_id": "eb0aad39-5475-4b36-a8bd-5898202ff9b1",
+  "title": "THE INHERITANCE",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Gray",
+      "role_type": "Lead",
+      "demographics": "Male · 35-40 · physically fit, action-capable"
+    },
+    {
+      "name": "Salva",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · athletic, agile, Spanish-speaking"
+    },
+    {
+      "name": "Fister / Tronar",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-60s · shape-shifting, multilingual, physically commanding"
+    },
+    {
+      "name": "Philip Griswald",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · senior executive type"
+    },
+    {
+      "name": "Adam Gray’s Father",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s-70s · military/intelligence authority"
+    },
+    {
+      "name": "Sigers",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · congressman, polished public figure"
+    },
+    {
+      "name": "Tanar",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · extremely large, muscular, imposing"
+    },
+    {
+      "name": "Vic Simms",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · power plant supervisor"
+    },
+    {
+      "name": "Congressman Jacobs",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · politician"
+    },
+    {
+      "name": "Major Stuart Peartree",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · fighter pilot"
+    },
+    {
+      "name": "Lt. Francis Lee",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · weapons officer"
+    },
+    {
+      "name": "Philip Griswald's Secretary",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · office professional"
+    },
+    {
+      "name": "Inuri",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · intelligence agent"
+    },
+    {
+      "name": "The President",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · U.S. President, voice role"
+    },
+    {
+      "name": "Man",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · intelligence official, voice role"
+    },
+    {
+      "name": "Brewster",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s-30s · plant worker"
+    },
+    {
+      "name": "Walt Nichols",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · plant supervisor"
+    }
+  ],
+  "positioning_hook": "Adam Gray, a globe-trotting operative for a shadowy private bank, races to stop a Chinese-backed oil conspiracy that could trigger war, sabotage U.S. energy, and bury a Central American island.",
+  "cost_usd": 0.058008000000000004,
+  "input_tokens": 40918,
+  "output_tokens": 6071,
+  "status": "wrote:leads_ok"
+}

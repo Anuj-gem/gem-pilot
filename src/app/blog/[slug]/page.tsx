@@ -13,8 +13,17 @@ import { getAllPostSlugs, getPost } from '@/lib/blog'
 const SITE_URL = 'https://www.gem.studio'
 const DEFAULT_OG = '/og/blog-default.png'
 
-export const dynamic = 'force-static'
+// Read on each request — same reasoning as /blog page (build-time
+// content/ access on Vercel was returning empty, causing 404s for new
+// posts). outputFileTracingIncludes ensures content/ is bundled at
+// runtime. Anuj 2026-04-28.
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+export const dynamicParams = true
 
+// Kept for Next.js to discover the route surface — but unused while
+// dynamic='force-dynamic' is in effect. Safe to keep so we can flip
+// back to static rendering later without restoring this function.
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs()
   return slugs.map(slug => ({ slug }))

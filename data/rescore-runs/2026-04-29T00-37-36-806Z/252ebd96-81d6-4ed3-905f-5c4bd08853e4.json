@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:39:58.943Z",
+  "submission_id": "252ebd96-81d6-4ed3-905f-5c4bd08853e4",
+  "eval_id": "c520881f-ad78-4191-8b05-3c4f02e5ef35",
+  "title": "Emerging",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Benjamin",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · sharp, physically present, actor type with edge"
+    },
+    {
+      "name": "Levi",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · polished, controlled, same-age brother to Benjamin"
+    },
+    {
+      "name": "Todd Mahler",
+      "role_type": "Lead",
+      "demographics": "Male · late teens to early 20s · student, scholarship pressure, working-class edge"
+    },
+    {
+      "name": "Kathleen",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · student, earnest, observant"
+    },
+    {
+      "name": "Chelsea Andersen",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to early 20s · student, polished, socially sharp"
+    },
+    {
+      "name": "Sebastian Mueller",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · executive, predatory, polished"
+    },
+    {
+      "name": "Molly",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · assistant, observant, fast-moving"
+    },
+    {
+      "name": "Lucas Croft",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · student, technical, introverted"
+    },
+    {
+      "name": "Mira",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · student, sharp-eyed"
+    }
+  ],
+  "positioning_hook": "A volatile acting-school prodigy and his polished brother run a studio training program where every classmate is auditioning for a career, a role, or the truth.",
+  "cost_usd": 0.0315855,
+  "input_tokens": 15426,
+  "output_tokens": 4448,
+  "status": "wrote:leads_ok"
+}

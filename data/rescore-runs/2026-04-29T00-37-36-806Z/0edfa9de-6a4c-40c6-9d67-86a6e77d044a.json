@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T01:37:45.061Z",
+  "submission_id": "0edfa9de-6a4c-40c6-9d67-86a6e77d044a",
+  "eval_id": "eb787647-6c6b-4cd0-8cf4-d36ed35508bd",
+  "title": "OF PATRIOTS AND TYRANTS SCREENPLAY",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Abigail Knox",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · DOJ Special Agent"
+    },
+    {
+      "name": "Neron Soliz",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Mexican federal agent"
+    },
+    {
+      "name": "Quirce Garza",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · Latino/Mexican assassin"
+    },
+    {
+      "name": "Marilyn Reyes",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Latino"
+    },
+    {
+      "name": "Murray Goodman",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · FBI Agent"
+    },
+    {
+      "name": "Phillip Tunnellee",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · DOJ supervisor"
+    },
+    {
+      "name": "Kenneth Hughes",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Black · Secret Service Deputy Director"
+    },
+    {
+      "name": "Tyrone Mathers",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Congressman"
+    },
+    {
+      "name": "Marilyn Reyes",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · Latino"
+    },
+    {
+      "name": "Juanita Garza",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · Mexican"
+    },
+    {
+      "name": "Ted Wireman",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · DOJ driver/agent"
+    },
+    {
+      "name": "Leonard Hansen",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Treasury official"
+    },
+    {
+      "name": "Paul Werner",
+      "role_type": "Supporting",
+      "demographics": "Male · late 80s · former Federal Reserve head"
+    },
+    {
+      "name": "Stephen Holzmann",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · financier/executive"
+    },
+    {
+      "name": "Paul Manzine",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · financier/executive"
+    },
+    {
+      "name": "Carolyn Miller",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · financial executive"
+    },
+    {
+      "name": "Senator James Argyle",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Senator"
+    }
+  ],
+  "positioning_hook": "A Mexican federal agent and a hard-charging DOJ investigator chase a politically motivated assassin across Washington and Mexico, only to uncover a bailout-funded conspiracy rooted in family, revenge, and power.",
+  "cost_usd": 0.060921750000000004,
+  "input_tokens": 45535,
+  "output_tokens": 5949,
+  "status": "wrote:leads_ok"
+}

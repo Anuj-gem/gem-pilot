@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:39:36.529Z",
+  "submission_id": "b02a31ac-0097-4b4b-b543-09510c406055",
+  "eval_id": "f8f8a36e-d553-4f99-b936-3c0cb39b5bbe",
+  "title": "Oldest Friend",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Jill Mitchellson",
+      "role_type": "Lead",
+      "demographics": "Female · 36 · white · married mother of two"
+    },
+    {
+      "name": "Stefani",
+      "role_type": "Lead",
+      "demographics": "Female · 35 · white"
+    },
+    {
+      "name": "Lex",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · queer"
+    },
+    {
+      "name": "Sherri",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s"
+    },
+    {
+      "name": "Graham McDonald",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s"
+    },
+    {
+      "name": "Matt",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s"
+    },
+    {
+      "name": "Mama G",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s/60s"
+    },
+    {
+      "name": "Monica",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s"
+    }
+  ],
+  "positioning_hook": "A loud, happily married mom returns to her Missouri best friend’s wedding and finds the old hierarchy, old crushes, and old wounds still know her by heart.",
+  "cost_usd": 0.0400275,
+  "input_tokens": 25908,
+  "output_tokens": 4577,
+  "status": "wrote:leads_ok"
+}

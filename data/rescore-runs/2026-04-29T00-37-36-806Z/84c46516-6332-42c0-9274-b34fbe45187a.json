@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-29T01:40:59.098Z",
+  "submission_id": "84c46516-6332-42c0-9274-b34fbe45187a",
+  "eval_id": "52a584c6-dc03-4406-827b-35a75982323c",
+  "title": "BROADCAST RIGHTS",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "Steve Walton",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · network news anchor"
+    },
+    {
+      "name": "Rick Sterling",
+      "role_type": "Lead",
+      "demographics": "Male · 50s-60s · head of news programming"
+    },
+    {
+      "name": "Linda Smith",
+      "role_type": "Lead",
+      "demographics": "Female · late 50s-60s · network head"
+    },
+    {
+      "name": "Garrett Bellows",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · physically imposing prisoner"
+    },
+    {
+      "name": "Daniel Stevens",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · African American senator"
+    },
+    {
+      "name": "Jessica Walton",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · Steve’s wife"
+    },
+    {
+      "name": "Tom Nixon",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · network legal counsel"
+    },
+    {
+      "name": "Nathan Standing",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · head of WNN"
+    },
+    {
+      "name": "Ronny",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · cameraman/driver"
+    },
+    {
+      "name": "Pamela Stoneman",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · censor board liaison"
+    },
+    {
+      "name": "Bill Peters",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · entertainment executive"
+    },
+    {
+      "name": "Iona Berry",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Black mother of a victim"
+    },
+    {
+      "name": "Warden Dirk Randolph",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · prison warden"
+    },
+    {
+      "name": "Judge William Bannister",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s-70s · chief justice"
+    },
+    {
+      "name": "Senator J.C. Turnberry",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · Texas senator"
+    },
+    {
+      "name": "Sonia Jackson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Black mother"
+    },
+    {
+      "name": "Solomon Jackson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Black father"
+    },
+    {
+      "name": "Jeff Sampson",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · advertising executive"
+    }
+  ],
+  "positioning_hook": "A network news executive races to secure exclusive rights to televise a notorious killer’s execution, igniting a constitutional, political, and moral firestorm that turns America into the audience.",
+  "cost_usd": 0.059172,
+  "input_tokens": 41294,
+  "output_tokens": 6267,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T01:37:28.947Z",
+  "submission_id": "ebf85b68-23cb-4bf5-9da5-ad15555420d6",
+  "eval_id": "0d149bfa-9ca0-461e-b93d-054eb0c35051",
+  "title": "THE WRONG NUMBER",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Jake Corelli",
+      "role_type": "Lead",
+      "demographics": "Male · mid-30s · white · ex-Marine / used car salesman"
+    },
+    {
+      "name": "Deshon Dunn",
+      "role_type": "Lead",
+      "demographics": "Male · mid-30s to early 40s · Black · doorman / hustler / Marine veteran / amputee"
+    },
+    {
+      "name": "Ronnie Dyson",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · white · police officer / fixer"
+    },
+    {
+      "name": "Officer Molloy / Special Agent Buckman",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s to 40s · white · police officer / undercover federal agent"
+    },
+    {
+      "name": "Haley",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Black · apartment building maid / thief"
+    },
+    {
+      "name": "Buck",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · white · violent redneck / antagonist"
+    },
+    {
+      "name": "The Domino",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · white · hitman"
+    },
+    {
+      "name": "Kendra",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s · Black · Deshon's sister"
+    },
+    {
+      "name": "Davey",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · white · geeky surveillance helper"
+    },
+    {
+      "name": "Sargoza",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s to 60s · white · judge / corruption boss"
+    },
+    {
+      "name": "Maiya",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s · white · judge's assistant"
+    },
+    {
+      "name": "Nilah Jefferson",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Black · Haley's friend"
+    },
+    {
+      "name": "Detective Wilson",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-40s · white · detective"
+    },
+    {
+      "name": "Butcher",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · rough-looking · enforcer"
+    }
+  ],
+  "positioning_hook": "A white ex-Marine car salesman and a Black doorman turn mutual hate into an uneasy alliance when crooked cops frame them, forcing them to outgun a citywide corruption ring.",
+  "cost_usd": 0.058115999999999994,
+  "input_tokens": 45028,
+  "output_tokens": 5410,
+  "status": "wrote:leads_ok"
+}

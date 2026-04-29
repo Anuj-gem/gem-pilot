@@ -12,10 +12,14 @@ export const metadata = {
     'Notes on the screenwriter network for industry. Product updates, how Selznick reads, and what makes a script qualify.',
 }
 
-// Posts are read off disk at build time; no need for revalidation
-// since adding a post requires a deploy. Switch to ISR if we ever
-// support drafts/CMS authoring.
-export const dynamic = 'force-static'
+// Posts are read off disk on each request. We tried `force-static` but
+// Next's build-time tracer drops content/ from the bundle on Vercel,
+// so the build-time read returned empty and the index showed no posts.
+// `force-dynamic` reads at request time; outputFileTracingIncludes in
+// next.config keeps content/ in the deploy bundle so the read works.
+// This is a low-traffic page — perf cost is irrelevant. Anuj 2026-04-28.
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export default async function BlogIndexPage() {
   const posts = await getAllPosts()

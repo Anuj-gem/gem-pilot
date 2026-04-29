@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:37:39.273Z",
+  "submission_id": "c55c8f60-7281-4410-ab59-1a9ee4819f18",
+  "eval_id": "1b360179-25ab-4bbf-a744-4c07663de2f2",
+  "title": "The Domino Manifesto",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Grace Young",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · action-capable resistance agent"
+    },
+    {
+      "name": "Wolff Cummings",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · resistance agent"
+    },
+    {
+      "name": "Dean Lee Lewis / Larry LaPointe",
+      "role_type": "Lead",
+      "demographics": "Male · 20s-30s · Elvis impersonator / singer"
+    },
+    {
+      "name": "Professor Alexander Portman",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · intellectual resistance leader"
+    },
+    {
+      "name": "Ronald Canard",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s playing a president figure"
+    },
+    {
+      "name": "Olga Costalotta / Zena / Maleva / Monique",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s · multiple-identity First Lady / mystic vessel"
+    },
+    {
+      "name": "Yuri Yerkemov",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · oligarch / operator"
+    },
+    {
+      "name": "Louise Gilchrist",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-70s · Marine drill sergeant"
+    },
+    {
+      "name": "Mr. Hugo",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · social media investigator"
+    },
+    {
+      "name": "Melody / Sexy FBI Agent",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · undercover operative"
+    },
+    {
+      "name": "Benny LaPointe",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · Dean’s father"
+    },
+    {
+      "name": "Doris LaPointe",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s-70s · Dean’s mother"
+    },
+    {
+      "name": "Areola Ring",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · press secretary / performer"
+    },
+    {
+      "name": "Bambi",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · Secret Service agent"
+    },
+    {
+      "name": "Emilio",
+      "role_type": "Supporting",
+      "demographics": "Male · 10s-20s · Mexican peasant boy"
+    }
+  ],
+  "positioning_hook": "A resistance agent and a lounge-singer Elvis impersonator race to stop a 1952 communist infiltration before it rewrites America’s future — and their own love story.",
+  "cost_usd": 0.05709675,
+  "input_tokens": 41143,
+  "output_tokens": 5831,
+  "status": "wrote:leads_ok"
+}

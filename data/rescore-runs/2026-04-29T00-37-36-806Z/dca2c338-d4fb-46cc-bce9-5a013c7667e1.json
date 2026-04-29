@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:41:13.865Z",
+  "submission_id": "dca2c338-d4fb-46cc-bce9-5a013c7667e1",
+  "eval_id": "098b4c37-8ff3-4368-b393-cd20ae77c819",
+  "title": "I Work in Marketing   Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Kelly Rabino",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s · blonde · physically attractive · ex-con · mother"
+    },
+    {
+      "name": "Stevie Rabino",
+      "role_type": "Lead",
+      "demographics": "Male · 15 years old"
+    },
+    {
+      "name": "Dan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · brunette · polished"
+    },
+    {
+      "name": "Yuri",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Russian-accented"
+    },
+    {
+      "name": "Marco",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Latino"
+    },
+    {
+      "name": "Eric Rabino",
+      "role_type": "Supporting",
+      "demographics": "Male · deceased · 40s"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "Steven Jensen",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · burly"
+    }
+  ],
+  "positioning_hook": "A widowed ex-con mom with a mountain of debt stumbles into OnlyFans to save her house, then discovers her survival plan is the one thing her son can’t unknow.",
+  "cost_usd": 0.033648,
+  "input_tokens": 16562,
+  "output_tokens": 4717,
+  "status": "wrote:leads_ok"
+}
