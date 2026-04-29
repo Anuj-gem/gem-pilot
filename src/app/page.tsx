@@ -20,7 +20,7 @@ import { redirect } from 'next/navigation'
 import { ArrowRight, Eye, Mail, CheckCircle, Activity } from 'lucide-react'
 import { LandingTracking } from '@/components/landing-tracking'
 import { TrackedCTA } from '@/components/tracked-cta'
-import { MobileNav } from '@/components/mobile-nav'
+import Nav from '@/components/nav'
 import { LandingHero } from '@/components/landing/landing-hero'
 import { createClient } from '@/lib/supabase-server'
 
@@ -45,62 +45,12 @@ export default async function Home({
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
       <LandingTracking />
 
-      {/* Nav — fixed (not sticky) because layout.tsx's overflow-x-hidden
-          wrapper breaks sticky containing-block. Spacer below reserves the
-          slot so the hero starts below the nav. */}
-      <div className="h-14 sm:h-16" aria-hidden />
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span
-              aria-hidden
-              className="inline-block w-3 h-3 sm:w-3.5 sm:h-3.5 rotate-45"
-              style={{
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                boxShadow: '0 0 10px rgba(167,139,250,0.5)',
-              }}
-            />
-            <span className="text-lg sm:text-xl font-bold tracking-tight">GEM</span>
-          </Link>
-          <div className="hidden sm:flex items-center gap-4">
-            <Link
-              href="/writers"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
-            >
-              Writers
-            </Link>
-            <Link
-              href="/industry"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
-            >
-              Industry
-            </Link>
-            <Link
-              href="/selznick"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
-            >
-              Selznick
-            </Link>
-            <Link
-              href="/login"
-              className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] transition-colors"
-            >
-              Log in
-            </Link>
-            <TrackedCTA
-              href="/signup"
-              event="cta_clicked"
-              properties={{ location: 'nav', label: 'Sign Up' }}
-              className="text-sm px-4 py-2 rounded-lg bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-            >
-              Sign Up
-            </TrackedCTA>
-          </div>
-          <MobileNav />
-        </div>
-      </nav>
+      {/* Shared Nav — same chrome on every marketing page (Anuj
+          2026-04-28). Logo on the left, "Learn more" dropdown +
+          Submit / Sign up / Log in on the right. */}
+      <Nav />
 
-      {/* HERO (client) — single column, upload-first */}
+      {/* HERO (client) — upload-first */}
       <LandingHero />
 
       <div className="h-px bg-[var(--gem-gray-700)]" />

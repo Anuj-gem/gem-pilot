@@ -13,7 +13,7 @@
 
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { ArrowRight, Eye, Sparkles, Users, Layers, Compass, Shield } from 'lucide-react'
+import { ArrowRight, Sparkles, Users, Layers, Compass } from 'lucide-react'
 
 export const metadata = {
   title: 'Selznick — How GEM reads a script',
@@ -93,25 +93,6 @@ export default function SelznickPage() {
             quick-glance signal, not a verdict — the substance is the read
             underneath, and that&apos;s what producers actually use.
           </p>
-        </Section>
-
-        {/* WHAT WE DON'T DO */}
-        <Section eyebrow="What we don't do" title="A few principles.">
-          <Principle
-            icon={<Shield size={14} />}
-            title="We don't grade homework."
-            body="The Selznick rubric isn't a coverage service. We're not in the business of telling writers their dialogue is weak — we're telling them whether the project, as written, has a real shot at industry."
-          />
-          <Principle
-            icon={<Eye size={14} />}
-            title="We don't train on your scripts."
-            body="Your screenplay is run through the rubric and the report is yours. We don't license your text to model-training pipelines, and we don't share content beyond the producers you've explicitly published to."
-          />
-          <Principle
-            icon={<Sparkles size={14} />}
-            title="We update the rubric in the open."
-            body="The Selznick rubric is versioned. When we ship a new sub-generation — sharper guidance on a specific axis, a refined comp-set rule — we note it. The score philosophy doesn't drift; the precision does."
-          />
         </Section>
 
         {/* CROSS-LINKS */}
@@ -202,41 +183,6 @@ function Lens({
       <p className="text-[14.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
         {body}
       </p>
-    </div>
-  )
-}
-
-function Principle({
-  icon,
-  title,
-  body,
-}: {
-  icon: React.ReactNode
-  title: string
-  body: string
-}) {
-  return (
-    <div className="flex items-start gap-3 mb-5">
-      <span
-        aria-hidden
-        className="inline-flex items-center justify-center rounded-md mt-1 shrink-0"
-        style={{
-          width: 24,
-          height: 24,
-          background: 'rgba(124,58,237,0.10)',
-          color: 'var(--gem-accent)',
-        }}
-      >
-        {icon}
-      </span>
-      <div className="min-w-0">
-        <p className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug mb-1">
-          {title}
-        </p>
-        <p className="text-[14.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0 max-w-[60ch]">
-          {body}
-        </p>
-      </div>
     </div>
   )
 }
